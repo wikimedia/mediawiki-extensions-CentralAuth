@@ -72,7 +72,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 
 		if ( $this->params['movepages'] ) {
-			$this->movePages();
+			$this->movePages( $oldUser );
 		}
 
 		if ( $this->params['promotetoglobal'] ) {
@@ -102,11 +102,11 @@ class LocalRenameUserJob extends LocalRenameJob {
 	/**
 	 * Queue up jobs to move pages
 	 */
-	public function movePages() {
+	public function movePages( User $oldUser ) {
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
-		$fromTitle = User::newFromName( $from )->getUserPage();
+		$fromTitle = $oldUser->getUserPage();
 		$toTitle = Title::makeTitleSafe( NS_USER, $to );
 		$dbr = wfGetDB( DB_SLAVE );
 
