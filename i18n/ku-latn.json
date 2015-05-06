@@ -10,6 +10,7 @@
 	},
 	"centralauth-merge-dryrun-or": " '''an'''",
 	"centralauth-foreign-link": "Bikarhêner $1 di $2",
+	"centralauth-foreign-contributions": "di $2de {{PLURAL:$1|beşdarîyên}} $1",
 	"centralauth-merge-method-new": "hesabê nû",
 	"centralauth-finish-password": "Şîfre:",
 	"centralauth-finish-login": "Têketin",

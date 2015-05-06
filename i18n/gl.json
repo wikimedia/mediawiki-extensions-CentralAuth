@@ -493,6 +493,7 @@
 	"apihelp-query+globalgroups-example-2": "Mostrar ós grupos de usuarios globais cos dereitos que conceden",
 	"apihelp-query+globaluserinfo-description": "Amosar a información de un usuario global.",
 	"apihelp-query+globaluserinfo-param-user": "Usuario do que obter a información. Por defecto, o usuario actual.",
+	"apihelp-query+globaluserinfo-param-prop": "Que propiedades obter:\n;groups:Obtén unha lista de grupos globais ós que pertence o usuario.\n;rights:Obtén a lista de dereitos globais que ten o usuario.\n;merged:Obtén unha lista de contas fusionadas.\n;unattached:Obtén unha lista de contas que non están unidas.\n;editcount:Obtén o contador de edicións globais do usuario.",
 	"apihelp-query+globaluserinfo-example-1": "Obter información sobre o usuario global actual.",
 	"apihelp-query+globaluserinfo-example-2": "Obter información sobre o usuario global [[User:Example|Example]]",
 	"apihelp-query+wikisets-description": "Enumerar todos as coleccións wiki.",

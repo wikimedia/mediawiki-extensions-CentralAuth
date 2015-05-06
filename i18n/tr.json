@@ -65,7 +65,7 @@
 	"centralauth-merge-method-password": "şifre ile doğrulandı",
 	"centralauth-merge-method-admin": "admin hesabı birleştirdi",
 	"centralauth-merge-method-new": "yeni hesap",
-	"centralauth-merge-method-login": "giriş ile oluşturuldu",
+	"centralauth-merge-method-login": "oturum açarken oluşturuldu",
 	"centralauth-merge-method-primary-desc": "Bu, hesabın ilk birleştirildiği vikidir.\nBu hesabın, kullanıcının asıl ev vikisinden farklı olabileceğini unutmayın.",
 	"centralauth-merge-method-empty-desc": "Hiçbir değişiklik bulunmadığı için yerel hesabın birleştirildiğini gösterir.",
 	"centralauth-merge-method-mail-desc": "E-posta adresinin ana hesabın e-posta adresiyle uyumlu olması sebebiyle yerel hesabın birleştirildiğini gösterir.",
