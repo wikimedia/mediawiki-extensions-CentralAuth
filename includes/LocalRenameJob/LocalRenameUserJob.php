@@ -138,9 +138,10 @@ class LocalRenameUserJob extends LocalRenameJob {
 				preg_replace( '!^[^/]+!', $toTitle->getDBkey(), $row->page_title ) );
 			$jobs[] = new LocalPageMoveJob(
 				Title::newFromText( 'LocalRenameUserJob' ),
-				$jobParams + array( 'pages' => array(
-					$oldPage->getPrefixedText() => $newPage->getPrefixedText()
-				) )
+				$jobParams + array(
+					'old' => array( $oldPage->getNamespace(), $oldPage->getDBkey() ),
+					'new' => array( $newPage->getNamespace(), $newPage->getDBkey() ),
+				)
 			);
 		}
 
