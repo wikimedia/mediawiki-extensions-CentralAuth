@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_9014dbee",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-05-07T18:37:13Z",
+      "side": 1,
+      "message": "Is there some change that uses this? Also it would be nice to document the job parameters here.",
+      "revId": "1cd9e0ea621f2f1df423c9404c3b42cd52da9473",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
