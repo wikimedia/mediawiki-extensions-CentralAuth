@@ -1,7 +1,17 @@
 <?php
 
 /**
- * Job class to move a set of pages
+ * Job class to move a page
+ *
+ * Parameters:
+ * 'session' - Array of session data for RequestContext::importScopedSession()
+ * 'renamer' - Username of the user who should be attributed for the page move
+ * 'pages' (deprecated) - Array of old page title => new page title
+ * 'old' - array( namespace id, db key ) of old title
+ * 'new' - array( namespace id, db key ) of new title
+ * 'from' - Old username
+ * 'to' - New username
+ * 'suppressredirects' - Whether redirects should be suppressed
  */
 class LocalPageMoveJob extends Job {
 	/**
@@ -26,11 +36,18 @@ class LocalPageMoveJob extends Job {
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
 		}
 		$this->user = User::newFromName( $this->params['renamer'] );
-		foreach ( $this->params['pages'] as $current => $target ) {
-			$this->movePage(
-				Title::newFromText( $current ),
-				Title::newFromText( $target )
-			);
+		if ( isset( $this->params['pages'] ) ) {
+			// Old calling style for b/c
+			foreach ( $this->params['pages'] as $current => $target ) {
+				$this->movePage(
+					Title::newFromText( $current ),
+					Title::newFromText( $target )
+				);
+			}
+		} else {
+			$oldTitle = Title::makeTitle( $this->params['old'][0], $this->params['old'][1] );
+			$newTitle = Title::makeTitle( $this->params['new'][0], $this->params['new'][1] );
+			$this->movePage( $oldTitle, $newTitle );
 		}
 	}
 
