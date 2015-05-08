@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_327accb8",
+        "filename": "CentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-05-08T19:24:12Z",
+      "side": 0,
+      "message": "This change is good. Can you *just* do this in a separate patch?",
+      "revId": "e409dd1ad1f87def13261ac597478710d8a23143",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
