@@ -480,6 +480,12 @@
 	"apihelp-globaluserrights-param-reason": "변경 이유.",
 	"apihelp-globaluserrights-example-1": "사용자 FooBot을 전역 사용자 그룹 \"bot\"에 추가하고 전역 사용자 그룹 \"sysop\"과 \"bureaucrat\"에서 제거함.",
 	"apihelp-globaluserrights-example-2": "전역 사용자 ID가 123인 사용자를 전역 사용자 그룹 \"bot\"에 추가하고, 전역 사용자 그룹 \"sysop\"과 \"bureaucrat\"에서 제거함.",
+	"apihelp-query+globalallusers-example-1": "통합 사용자 목록",
+	"apihelp-query+globalallusers-example-2": "\"ABC\"에서 시작하는 통합 사용자의 약간의 정보를 봅니다",
+	"apihelp-query+wikisets-example-1": "위키 집합 목록",
+	"apihelp-query+wikisets-example-2": "종류별로 위키 집합을 봅니다",
+	"apihelp-setglobalaccountstatus-description": "통합 사용자의 통계를 설정합니다.",
+	"apihelp-setglobalaccountstatus-param-user": "사용자의 상태를 바꿉니다.",
 	"centralauth-log-gblrename-oldname": "이전 사용자 이름:",
 	"centralauth-contribs-locked": "이 계정은 이미 잠겨 있습니다.\n더 자세한 정보는 [[Special:CentralAuth/$1|통합 계정 정보]]를 참고하세요.",
 	"centralauth-contribs-locked-log": "이 계정은 전역 잠금되었습니다.\n해당 사용자의 잠금 기록은 다음과 같습니다:",
@@ -488,5 +494,6 @@
 	"centralauth-uwbr-registration": "등록 날짜",
 	"centralauth-uwbr-registration-nodate": "알수 없음",
 	"centralauth-uwbr-editcount": "편집 수",
-	"centralauth-uwbr-intro": "이 문서는 이 위키에 등록된 사용자 중 계정명이 변경될 사용자를 나열하고 있습니다."
+	"centralauth-uwbr-intro": "이 문서는 이 위키에 등록된 사용자 중 계정명이 변경될 사용자를 나열하고 있습니다.",
+	"centralauth-delete-empty-account": "빈 게정"
 }
