@@ -412,6 +412,7 @@
 	"centralauth-usermerge-form-adduser": "Lisa kasutaja",
 	"centralauth-usermerge-form-deleteuser": "Eemalda kasutaja",
 	"globalrenamerequest-status-text": "Sinu kasutajanime muutmise taotlus on praegu läbivaatamisel ja ootab stjuuardi kinnitust. Sind teavitatakse e-kirjatsi, kui taotlus on läbi vaadatud.\n\n;Praegune kasutajanimi:\n:$1\n;Soovitud kasutajanimi:\n:$2",
+	"globalrenamequeue-desc": "Globaalse ümbernimetamise taotluste läbivaatus",
 	"globalrenamequeue-request-cancel-text": "Loobu",
 	"globalrenamequeue-email-subject-approved": "Konto ümbernimetamise taotlus heakskiidetud",
 	"globalrenamequeue-email-subject-rejected": "Konto ümbernimetamise taotlus tagasi lükatud",
