@@ -132,6 +132,7 @@
 	"centralauth-admin-reason": "Причина:",
 	"centralauth-admin-reason-other": "Друга/дополнителна причина:",
 	"centralauth-admin-reason-other-select": "Друга причина:",
+	"centralauth-admin-rename-in-progress": "Оваа сметка е во тек на преименување. Стиснете [[Special:GlobalRenameProgress/$1|тука]] за да го погледате состојбата. Подолу е наведен глобалниот дневник на преименувања.",
 	"centralauth-admin-unhide-nonexistent": "Грешка: глобалната сметка „<nowiki>$1</nowiki>“ не постои.",
 	"centralauth-admin-status": "Постави статус на глобална корисничка сметка",
 	"centralauth-admin-status-intro": "Можете да го употребите овој образец за да го промените статусот на оваа глобална сметка",

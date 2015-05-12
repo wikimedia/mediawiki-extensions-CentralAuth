@@ -158,6 +158,7 @@
 	"centralauth-admin-reason": "原因：",
 	"centralauth-admin-reason-other": "其他/附加原因：",
 	"centralauth-admin-reason-other-select": "其他原因：",
+	"centralauth-admin-rename-in-progress": "此账户目前正在被重命名。请点击[[Special:GlobalRenameProgress/$1|此处]]以查看当前状态。此用户的全域更名日志在下方提供。",
 	"centralauth-admin-unhide-nonexistent": "错误：全域账户\"<nowiki>$1</nowiki>\"不存在。",
 	"centralauth-admin-status": "设置全域帐号状态",
 	"centralauth-admin-status-intro": "你可以使用这个表单来更改这个全域帐号的状态",

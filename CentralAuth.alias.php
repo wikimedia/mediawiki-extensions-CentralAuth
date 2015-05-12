@@ -51,7 +51,7 @@ $specialPageAliases['ar'] = array(
 	'UsersWhoWillBeRenamed' => array( 'المستخدمون_الذين_ستتم_إعادة_تسميتهم' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'CentralAuth' => array( 'تحقيق_مركزى' ),
 	'MergeAccount' => array( 'دمج_حساب' ),
@@ -282,7 +282,7 @@ $specialPageAliases['fr'] = array(
 	'GlobalUsers' => array( 'Utilisateurs_globaux', 'UtilisateursGlobaux' ),
 );
 
-/** Franco-Provençal (arpetan) */
+/** Arpitan (arpetan) */
 $specialPageAliases['frp'] = array(
 	'CentralAuth' => array( 'Administracion_des_comptos_fusionâs', 'AdministracionDesComptosFusionâs' ),
 	'MergeAccount' => array( 'Fusionar_los_comptos', 'FusionarLosComptos' ),
@@ -507,7 +507,7 @@ $specialPageAliases['lb'] = array(
 	'UsersWhoWillBeRenamed' => array( 'Benotzer_déi_wäerten_ëmbenannt_ginn' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'MergeAccount' => array( 'سریک_کاری_حساو' ),
 	'GlobalGroupMembership' => array( 'حقوق_مین_زایاره_یی_کاریار', 'اندوم_بیین_جهونی_گرو' ),

@@ -139,6 +139,7 @@
 	"centralauth-admin-reason": "סיבה:",
 	"centralauth-admin-reason-other": "סיבה אחרת/נוספת:",
 	"centralauth-admin-reason-other-select": "סיבה אחרת:",
+	"centralauth-admin-rename-in-progress": "שם החשבון הזה משתנה ברגעים אלה. נא ללחוץ [[Special:GlobalRenameProgress/$1|כאן]] כדי לראות את מצב ההתקדמות. יומן שינוי השם הגלובלי מוצג להלן.",
 	"centralauth-admin-unhide-nonexistent": "שגיאה: לא קיים חשבון כללי בשם \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-status": "שינוי מצב החשבון הכללי",
 	"centralauth-admin-status-intro": "באפשרותך להשתמש בטופס זה כדי לשנות את מצב החשבון הכללי.",

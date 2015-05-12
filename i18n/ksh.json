@@ -129,6 +129,7 @@
 	"centralauth-admin-reason": "Aanlaß:",
 	"centralauth-admin-reason-other": "Ene andere ov zohsäzlejje Jrund:",
 	"centralauth-admin-reason-other-select": "Ene andere Jrond:",
+	"centralauth-admin-rename-in-progress": "Heh dä Zohjang es ömjedeuf aam wähde. Mer han en Sigg för der [[Special:GlobalRenameProgress/$1|aktölle Zohschtand ze belohre]]. Et äntschpräschende Logbohch kütt tiräk heh.",
 	"centralauth-admin-unhide-nonexistent": "En jemeinsame Aanmeldung unger dämm Metmaacher-Name\n„<nowiki>$1</nowiki>“ jitt et nit, do künne mer och\nkei verstoche Aanmeldung widder seechba maache.",
 	"centralauth-admin-status": "Dä Zohshtand vun en jemeinsame Aanmeldung ändere",
 	"centralauth-admin-status-intro": "Hee kann De dä Shtatus för die jemeinsamme Aanmeldung ändere",

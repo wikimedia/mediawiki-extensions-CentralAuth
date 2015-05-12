@@ -142,6 +142,7 @@
 	"centralauth-admin-reason": "Grund:",
 	"centralauth-admin-reason-other": "Anderer/ergänzender Grund:",
 	"centralauth-admin-reason-other-select": "Anderer Grund:",
+	"centralauth-admin-rename-in-progress": "Dieses Benutzerkonto wird derzeit umbenannt. Klicke [[Special:GlobalRenameProgress/$1|hier]], um den aktuellen Fortschritt anzusehen. Das globale Umbenennungs-Logbuch für diesen Benutzer wird unten angezeigt.",
 	"centralauth-admin-unhide-nonexistent": "Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ ist nicht vorhanden.",
 	"centralauth-admin-status": "Globalen Kontenstatus ändern",
 	"centralauth-admin-status-intro": "Du kannst dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern",
