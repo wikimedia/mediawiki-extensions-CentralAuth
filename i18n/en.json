@@ -155,6 +155,7 @@
 	"centralauth-admin-reason": "Reason:",
 	"centralauth-admin-reason-other": "Other/additional reason:",
 	"centralauth-admin-reason-other-select": "Other reason:",
+	"centralauth-admin-rename-in-progress" : "This account is currently being renamed. Click [[Special:GlobalRenameProgress/$1|here]] to see the current progress. The global rename log for this user is provided below.",
 	"centralauth-admin-unhide-nonexistent": "Error: the global account \"<nowiki>$1</nowiki>\" does not exist.",
 	"centralauth-admin-status": "Set global account status",
 	"centralauth-admin-status-intro": "You can use this form to change the status of this global account.",
