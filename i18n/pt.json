@@ -148,6 +148,7 @@
 	"centralauth-admin-reason": "Motivo:",
 	"centralauth-admin-reason-other": "Motivo adicional ou outro:",
 	"centralauth-admin-reason-other-select": "Outro motivo:",
+	"centralauth-admin-rename-in-progress": "Esta conta está a ser renomeada. Clique [[Special:GlobalRenameProgress/$1|aqui]] para consultar o progresso. O registo de renomeação global para este utilizador é apresentado abaixo.",
 	"centralauth-admin-unhide-nonexistent": "Erro: a conta global \"<nowiki>$1</nowiki>\" não existe.",
 	"centralauth-admin-status": "Definir o estado da conta global",
 	"centralauth-admin-status-intro": "Pode usar este formulário para alterar o estado desta conta global.",

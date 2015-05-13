@@ -135,6 +135,7 @@
 	"centralauth-admin-reason": "Důvod:",
 	"centralauth-admin-reason-other": "Jiný/další důvod:",
 	"centralauth-admin-reason-other-select": "Jiný důvod:",
+	"centralauth-admin-rename-in-progress": "Tento účet se právě přejmenovává. Můžete si [[Special:GlobalRenameProgress/$1|zobrazit aktuální průběh]]. Níže je uveden výpis z knihy globálních přejmenování pro tohoto uživatele.",
 	"centralauth-admin-unhide-nonexistent": "Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.",
 	"centralauth-admin-status": "Změnit stav globálního účtu",
 	"centralauth-admin-status-intro": "Pomocí tohoto formuláře můžete změnit stav tohoto globálního účtu.",
