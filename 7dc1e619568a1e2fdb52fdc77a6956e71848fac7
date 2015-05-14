@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_baf8aec0",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 2026,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-05-14T16:22:11Z",
+      "side": 1,
+      "message": "I think a getLocalGroups function would be better, and then have callers filter and do the array_intersect.",
+      "revId": "7dc1e619568a1e2fdb52fdc77a6956e71848fac7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
