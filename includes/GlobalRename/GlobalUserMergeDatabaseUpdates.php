@@ -55,4 +55,45 @@ class GlobalUserMergeDatabaseUpdates {
 
 		$dbw->commit( __METHOD__ );
 	}
+
+	/**
+	 * Updates renameuser_queue table if enabled
+	 * @param int $fromId
+	 * @param int $toId
+	 */
+	public function mergeRenameUserQueue( $fromId, $toId ) {
+		global $wgCentralAuthEnableGlobalRenameRequest;
+		if ( !$wgCentralAuthEnableGlobalRenameRequest ) {
+			return;
+		}
+
+		$this->getDB()->update(
+			'renameuser_queue',
+			array( 'rq_performer' => $toId ),
+			array( 'rq_performer' => $fromId ),
+			__METHOD__
+		);
+	}
+
+	/**
+	 * Updates global_user_groups table
+	 * @param int $fromId
+	 * @param int $toId
+	 */
+	public function mergeGlobalUserGroups( $fromId, $toId ) {
+		$dbw = $this->getDB();
+		$dbw->update(
+			'global_user_groups',
+			array( 'gug_user' => $toId ),
+			array( 'gug_user' => $fromId ),
+			__METHOD__,
+			array( 'IGNORE' )
+		);
+		// Delete any duplicates left over
+		$dbw->delete(
+			'global_user_groups',
+			array( 'gug_user' => $fromId ),
+			__METHOD__
+		);
+	}
 }
