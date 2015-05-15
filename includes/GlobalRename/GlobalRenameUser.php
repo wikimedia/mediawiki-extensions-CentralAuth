@@ -114,9 +114,11 @@ class GlobalRenameUser {
 			$this->newUser->getName()
 		);
 
-		// Update CA's AntiSpoof
-		$spoof = new CentralAuthSpoofUser( $this->newUser->getName() );
-		$spoof->update( $this->oldUser->getName() );
+		// Update CA's AntiSpoof if enabled
+		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+			$spoof = new CentralAuthSpoofUser( $this->newUser->getName() );
+			$spoof->update( $this->oldUser->getName() );
+		}
 
 		// From this point on all code using CentralAuthUser
 		// needs to use the new username, except for
