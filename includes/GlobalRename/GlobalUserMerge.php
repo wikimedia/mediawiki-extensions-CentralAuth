@@ -116,6 +116,8 @@ class GlobalUserMerge {
 			) ) );
 
 			$this->databaseUpdates->merge( $oldName, $newName );
+			$this->databaseUpdates->mergeGlobalUserGroups( $oldId, $newId );
+			$this->databaseUpdates->mergeRenameUserQueue( $oldId, $newId );
 			$oldCAUser->removeAntiSpoof();
 
 			Hooks::run( 'CentralAuthGlobalUserMerged',
