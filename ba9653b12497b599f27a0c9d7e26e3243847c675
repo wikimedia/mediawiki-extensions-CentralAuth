@@ -16,6 +16,24 @@
       "revId": "ba9653b12497b599f27a0c9d7e26e3243847c675",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_022f043b",
+        "filename": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-05-15T20:19:27Z",
+      "side": 1,
+      "message": "Right now there are only 15K rows in the table. We could add an index if it\u0027s needed I think.",
+      "parentUuid": "0ed113e2_9c94bf3a",
+      "revId": "ba9653b12497b599f27a0c9d7e26e3243847c675",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
