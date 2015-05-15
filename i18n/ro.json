@@ -8,7 +8,8 @@
 			"Minisarm",
 			"Stelistcristi",
 			"Strainu",
-			"XXN"
+			"XXN",
+			"ImGelu"
 		]
 	},
 	"mergeaccount": "Statusul despre unificarea autentificării",
@@ -52,7 +53,7 @@
 	"centralauth-list-attached-dryrun": "{{PLURAL:$2|Contul cu numele de „$1” de pe următorul sit va fi atașat|Conturile cu numele de „$1” de pe următoarele situri vor fi atașate}} automat contului unificat:",
 	"centralauth-list-unattached-title": "Conturi neatașate",
 	"centralauth-list-unattached": "{{PLURAL:$2|Contul|Conturile}} cu numele de „$1” nu au putut fi confirmate automat ca aparținându-vă pe {{PLURAL:$2|următorul site|următoarele site-uri}}; \nprobabil {{PLURAL:$2|acesta folosește|acestea folosesc}} altă parolă decât cea a contului dumneavoastră primar:",
-	"centralauth-foreign-link": "Utilizator $1 pe $2",
+	"centralauth-foreign-link": "Utilizatorul $1 pe $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribuție|contribuții|de contribuții}} la $2",
 	"centralauth-merge-method-primary": "wiki principal",
 	"centralauth-merge-method-empty": "nici o contribuție",

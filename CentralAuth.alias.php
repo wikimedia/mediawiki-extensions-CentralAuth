@@ -507,7 +507,7 @@ $specialPageAliases['lb'] = array(
 	'UsersWhoWillBeRenamed' => array( 'Benotzer_déi_wäerten_ëmbenannt_ginn' ),
 );
 
-/** لوری مینجایی (لوری مینجایی) */
+/** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'MergeAccount' => array( 'سریک_کاری_حساو' ),
 	'GlobalGroupMembership' => array( 'حقوق_مین_زایاره_یی_کاریار', 'اندوم_بیین_جهونی_گرو' ),
