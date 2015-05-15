@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_dc32475b",
+        "filename": "includes/GlobalRename/GlobalUserMerge.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-05-15T19:35:41Z",
+      "side": 1,
+      "message": "If you use this message:\n\n  \u0027Merged \"{oldname}\" into \"{newname}\"\u0027\n\nthe PSR-3 logging layer will replace the tokens for you when the log event is emitted. \u003chttps://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md#12-message\u003e",
+      "revId": "f6e9c256d2afe3119de98fc3607d2b685968c521",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
