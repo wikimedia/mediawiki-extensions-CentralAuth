@@ -641,4 +641,8 @@ class SpecialMergeAccount extends SpecialPage {
 	private function dryRunError() {
 		$this->getOutput()->addWikiMsg( 'centralauth-disabled-dryrun' );
 	}
+
+	protected function getGroupName() {
+		return 'login';
+	}
 }

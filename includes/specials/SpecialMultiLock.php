@@ -475,4 +475,8 @@ class SpecialMultiLock extends SpecialPage {
 			);
 		}
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }

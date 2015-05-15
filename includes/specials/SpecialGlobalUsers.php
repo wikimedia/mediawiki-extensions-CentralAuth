@@ -37,6 +37,10 @@ class SpecialGlobalUsers extends SpecialPage {
 		$this->getOutput()->addHTML( Html::rawElement( 'ul', null, $pg->getBody() ) );
 		$this->getOutput()->addHTML( $pg->getNavigationBar() );
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }
 
 class GlobalUsersPager extends AlphabeticPager {
