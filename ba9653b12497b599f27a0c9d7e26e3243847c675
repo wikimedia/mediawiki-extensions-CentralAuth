@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_9c94bf3a",
+        "filename": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-05-15T19:28:14Z",
+      "side": 1,
+      "message": "There\u0027s no index on this field afais...is that going to be an issue?",
+      "revId": "ba9653b12497b599f27a0c9d7e26e3243847c675",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
