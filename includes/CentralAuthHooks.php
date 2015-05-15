@@ -491,13 +491,13 @@ class CentralAuthHooks {
 	 * Inform a user that their username was renamed as part of SUL
 	 * Finalization, if their previous username doesn't exist any more (winner
 	 * was renamed).
-	 * @param User|bool $user
+	 * @param User $user
 	 * @param string &$msg return error key, or return an array with key and params
 	 * @return bool
 	 */
 	public static function onLoginUserMigrated( $user, &$msg ) {
 		global $wgCentralAuthCheckSULMigration;
-		if ( $wgCentralAuthCheckSULMigration && $user instanceof User ) {
+		if ( $wgCentralAuthCheckSULMigration ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $user->getID() === 0 && !$centralUser->exists() ) {
 				// If the local and global accounts don't exist,
