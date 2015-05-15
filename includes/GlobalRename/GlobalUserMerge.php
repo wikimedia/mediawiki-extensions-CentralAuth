@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * Merge a global user
  *
@@ -107,13 +109,14 @@ class GlobalUserMerge {
 			$newName = $this->newCAUser->getName();
 			$newId = $this->newCAUser->getId();
 
-			wfDebugLog( 'CentralAuthUserMerge', FormatJson::encode( array(
+			$logger = LoggerFactory::getInstance( 'CentralAuthUserMerge' );
+			$logger->info( "Merged '{oldname}' into '{newname}'", array(
 				'oldname' => $oldName,
 				'oldid' => $oldId,
 				'newname' => $newName,
 				'newid' => $newId,
 				'attached' => $oldCAUser->listAttached(),
-			) ) );
+			) );
 
 			$this->databaseUpdates->merge( $oldName, $newName );
 			$this->databaseUpdates->mergeGlobalUserGroups( $oldId, $newId );
