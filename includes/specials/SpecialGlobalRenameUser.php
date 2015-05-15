@@ -104,7 +104,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-rename-badusername' );
 		}
 
-		if ( !$this->overrideAntiSpoof ) {
+		if ( !$this->overrideAntiSpoof && class_exists( 'CentralAuthSpoofUser' ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $newUser->getName() );
 			$conflicts = $this->processAntiSpoofConflicts(
 				$oldUser->getName(),
