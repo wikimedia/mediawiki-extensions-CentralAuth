@@ -6,7 +6,8 @@
 			"Skye Darcy",
 			"Vinhtantran",
 			"Trần Nguyễn Minh Huy",
-			"Max20091"
+			"Max20091",
+			"KhangND"
 		]
 	},
 	"mergeaccount": "Tình trạng hợp nhất tài khoản",
@@ -239,7 +240,7 @@
 	"centralauth-centralautologin-badstate-local": "Trạng thái “$1” không hợp lệ trên wiki địa phương",
 	"centralauth-centralautologin-badwiki": "Wiki “$1” không hợp lệ cho việc đăng nhập trung ương",
 	"centralauth-centralautologin-corsfail": "Kiểm tra nguồn gốc CORS thất bại",
-	"centralauth-centralautologin-p3p-explanation": "Một số trình duyệt yêu cầu gửi hoặc nhận chính sách thỏa thuận P3P về cookie trong một số trường hợp, bao gồm tình huống liên quan đến kiểm tra đăng nhập cho tài khoản hợp nhất. Đây là một trở ngại không cần thiết để khắc phục trong tình huống này, bởi vì tất cả các trang có liên quan thuộc cùng một nhóm wiki và P3P chủ yếu đã lỗi thời và không còn được sử dụng. May mắn thay, chính sách không hợp lệ liên kết đến trang này hiện nay có vẻ “đủ tốt” đối với cấu hình mặc định của các trình duyệt này.\n\nVui lòng xem lại quy định về quyền riêng tư cho người đọc của trang này để xác định thông tin nào được thu thập sẽ được sử dụng như thế nào.",
+	"centralauth-centralautologin-p3p-explanation": "Một số trình duyệt yêu cầu gửi hoặc nhận  [https://www.w3.org/TR/P3P/#compact_policies chính sách thỏa thuận P3P] về cookie trong một số trường hợp, bao gồm tình huống liên quan đến kiểm tra đăng nhập cho tài khoản hợp nhất. Đây là một trở ngại không cần thiết để khắc phục trong tình huống này, bởi vì tất cả các trang có liên quan thuộc cùng một nhóm wiki và P3P chủ yếu đã lỗi thời và không còn được sử dụng. May mắn thay, chính sách không hợp lệ liên kết đến trang này hiện nay có vẻ “đủ tốt” đối với cấu hình mặc định của các trình duyệt này.\n\nVui lòng xem lại quy định về quyền riêng tư cho người đọc của trang này để xác định thông tin nào được thu thập sẽ được sử dụng như thế nào.",
 	"centralauth-centralautologin-logged-in": "Bạn đã đăng nhập trung ương với tên $1. Hãy tải lại trang để kích hoạt thiết lập trang cá nhân của bạn.",
 	"centralauth-centralautologin-logged-in-nouser": "Bạn đã đăng nhập trung ương. Hãy tải lại trang để áp dụng các tùy chọn cá nhân của bạn.",
 	"globalgroupmembership": "Thành viên trong nhóm toàn cục",

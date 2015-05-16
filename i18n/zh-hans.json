@@ -264,7 +264,7 @@
 	"centralauth-centralautologin-badstate-local": "本地维基的“$1”状态无效",
 	"centralauth-centralautologin-badwiki": "维基“$1”不可使用中央登入",
 	"centralauth-centralautologin-corsfail": "CORS起源检查失败",
-	"centralauth-centralautologin-p3p-explanation": "某些浏览器于某些情况下需要使用P3P压缩政策以发送或接收cookie，包括所涉及的SUL登入检查。在此情况下，考虑到涉及的所有页面都位于相同的维基组而P3P本身大多已过时并遗弃，此跳转并不必要；幸运的是，连至此页的无效政策于浏览器的预设设定来说已是“足够”。\n\n请查看此网站的人类可读隐私权原则以确定收集到的任何资讯将如何使用。",
+	"centralauth-centralautologin-p3p-explanation": "某些浏览器于某些情况下需要使用[https://www.w3.org/TR/P3P/#compact_policies P3P压缩政策]以发送或接收cookie，包括所涉及的SUL登入检查。在此情况下，考虑到涉及的所有页面都位于相同的维基组而P3P本身大多已过时并遗弃，此跳转并不必要；幸运的是，连至此页的无效政策于浏览器的预设设定来说已是“足够”。\n\n请查看此网站的人类可读隐私权原则以确定收集到的任何资讯将如何使用。",
 	"centralauth-centralautologin-logged-in": "您目前以$1登录。刷新页面以加载您的用户设置。",
 	"centralauth-centralautologin-logged-in-nouser": "您已经中央登录。请刷新页面以加载您的用户设置。",
 	"globalgroupmembership": "在全域组中的成员",
