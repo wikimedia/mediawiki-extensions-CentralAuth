@@ -300,4 +300,8 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	public function requiresUnblock() {
 		return false;
 	}
+
+	protected function getGroupName() {
+		return 'login';
+	}
 }

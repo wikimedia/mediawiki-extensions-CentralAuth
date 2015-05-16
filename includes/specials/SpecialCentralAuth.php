@@ -847,4 +847,8 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 		return $mergeMethodDescriptions;
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }

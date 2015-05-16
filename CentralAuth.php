@@ -434,13 +434,6 @@ $wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
 $wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
 $wgSpecialPages['GlobalUserMerge'] = 'SpecialGlobalUserMerge';
 $wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
-$wgSpecialPageGroups['CentralAuth'] = 'users';
-$wgSpecialPageGroups['MergeAccount'] = 'login';
-$wgSpecialPageGroups['GlobalGroupMembership'] = 'users';
-$wgSpecialPageGroups['GlobalGroupPermissions'] = 'users';
-$wgSpecialPageGroups['WikiSets'] = 'wiki';
-$wgSpecialPageGroups['GlobalUsers'] = 'users';
-$wgSpecialPageGroups['MultiLock'] = 'users';
 
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';

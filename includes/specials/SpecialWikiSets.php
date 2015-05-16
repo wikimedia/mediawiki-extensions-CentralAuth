@@ -398,4 +398,7 @@ class SpecialWikiSets extends SpecialPage {
 		LogEventsList::showLogExtract( $out, 'gblrights', $title->getPrefixedText() );
 	}
 
+	protected function getGroupName() {
+		return 'wiki';
+	}
 }

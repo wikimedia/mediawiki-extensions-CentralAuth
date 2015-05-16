@@ -532,4 +532,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$cu->quickInvalidateCache();
 		}
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }

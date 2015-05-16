@@ -545,6 +545,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		);
 		return UserMailer::send( $to, $from, $subject, $body );
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }
 
 
