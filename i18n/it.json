@@ -483,9 +483,13 @@
 	"apihelp-query+globalallusers-param-prefix": "Ricerca per tutti gli utenti che iniziano con questo valore.",
 	"apihelp-query+globalallusers-example-1": "Elenco utenti globali",
 	"apihelp-query+globalgroups-example-1": "Elenco gruppi globali",
+	"apihelp-query+wikisets-param-orderbyname": "Ordina i risultati per nome.",
+	"apihelp-setglobalaccountstatus-param-reason": "Motivo per cambiare lo stato dell'utente.",
 	"centralauth-log-gblrename-oldname": "Nome utente precedente:",
+	"userswhowillberenamed": "Utenti che saranno rinominati",
 	"centralauth-uwbr-name": "Nome utente",
 	"centralauth-uwbr-registration": "Data di registrazione",
 	"centralauth-uwbr-registration-nodate": "Sconosciuto",
-	"centralauth-uwbr-editcount": "Conteggio delle modifiche"
+	"centralauth-uwbr-editcount": "Conteggio delle modifiche",
+	"centralauth-uwbr-intro": "Questa pagina elenca gli utenti registrati con questa wiki che saranno rinominati."
 }
