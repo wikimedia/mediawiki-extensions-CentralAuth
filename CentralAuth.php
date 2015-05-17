@@ -258,6 +258,12 @@ $wgCentralAuthEnableGlobalRenameRequest = false;
 $wgCentralAuthCheckSULMigration = false;
 
 /**
+ * Use the main db if this is set to false, to use a specific external db, just
+ * use any key defined in $wgExternalServers
+ */
+$wgCentralAuthCluster = false;
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
@@ -324,6 +330,8 @@ $wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/includes/UsersToRe
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/includes/EmailableUser.php";
+
+$wgAutoloadClasses['CentralAuthUpdaterHooks'] = __DIR__ . "/includes/CentralAuthUpdater.hooks.php";
 
 $wgMessagesDirs['SpecialCentralAuth'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SpecialCentralAuth'] = "$caBase/CentralAuth.i18n.php";
@@ -405,6 +413,9 @@ $wgHooks['LoadGlobalUserPage'][] = 'CentralAuthHooks::onLoadGlobalUserPage';
 
 // For UserMerge
 $wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
+
+# Schema changes
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'ConfirmAccountUpdaterHooks::onLoadExtensionSchemaUpdates';
 
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
