@@ -436,6 +436,7 @@
 	"globalrenamequeue-request-title": "\"$1\" تغییر نام یابد؟",
 	"globalrenamequeue-request-reason": "<strong>علت درخواست تغییر نام</strong>\n:$1",
 	"globalrenamequeue-request-movepages": "صفحات کاربری را انتقال بده",
+	"globalrenamequeue-request-approve-text": "پذیرفتن تغییرنام",
 	"globalrenamequeue-request-deny-text": "رد نمودن تغییر نام",
 	"globalrenamequeue-request-cancel-text": "لغو",
 	"globalrenamequeue-request-unknown-title": "درخواست پیدا نشد",
@@ -458,10 +459,13 @@
 	"apihelp-query+globalallusers-param-from": "حساب کاربری آغازین جهت شمارش.",
 	"apihelp-query+globalallusers-param-to": "حساب کاربری جهت توقف شمارش.",
 	"apihelp-query+globalallusers-example-1": "فهرست کاربران سراسری",
+	"apihelp-query+globalgroups-example-1": "فهرست گروه‌های سراسری",
 	"centralauth-log-gblrename-oldname": "نام کاربری قبلی:",
 	"userswhowillberenamed": "کاربرانی که تغییر نام خواهند یافت",
 	"centralauth-uwbr-name": "نام کاربری",
 	"centralauth-uwbr-registration": "تاریخ ثبت نام",
+	"centralauth-uwbr-registration-nodate": "نامشخص",
 	"centralauth-uwbr-editcount": "شمار ویرایش‌ها",
-	"centralauth-uwbr-intro": "این صفحه کاربرانی که در این ویکی ثبت شده‌اند و تغییر نام  خواهند یافت را فهرست می‌کند."
+	"centralauth-uwbr-intro": "این صفحه کاربرانی که در این ویکی ثبت شده‌اند و تغییر نام  خواهند یافت را فهرست می‌کند.",
+	"centralauth-delete-empty-account": "حساب خالی"
 }

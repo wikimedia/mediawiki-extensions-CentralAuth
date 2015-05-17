@@ -38,7 +38,8 @@
 			"Grind24",
 			"Weft",
 			"Hercule",
-			"Caliburn"
+			"Caliburn",
+			"Wladek92"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -167,6 +168,7 @@
 	"centralauth-admin-reason": "Motif :",
 	"centralauth-admin-reason-other": "Motif autre ou supplémentaire :",
 	"centralauth-admin-reason-other-select": "Autre motif :",
+	"centralauth-admin-rename-in-progress": "Ce compte va être renommé. Cliquez  [[Special:GlobalRenameProgress/$1|ici]] pour voir l'état actuel d'avancement. L'historique globale du renommage est fournie ci-après.",
 	"centralauth-admin-unhide-nonexistent": "Erreur : le compte global « <nowiki>$1</nowiki> » n’existe pas.",
 	"centralauth-admin-status": "Changer le statut du compte global",
 	"centralauth-admin-status-intro": "Vous pouvez utiliser ce formulaire pour changer le statut de ce compte global",
@@ -272,7 +274,7 @@
 	"centralauth-centralautologin-badstate-local": "L’état « $1 » n’est pas valide sur le wiki local",
 	"centralauth-centralautologin-badwiki": "Le wiki «$1 » n’est pas valide pour la connexion centralisée",
 	"centralauth-centralautologin-corsfail": "La vérification d’origine CORS a échoué",
-	"centralauth-centralautologin-p3p-explanation": "Certains navigateurs nécessitent une politique P3P compacte pour envoyer ou recevoir des cookies dans certains cas, y compris la situation impliquée dans la vérification de la connexion SUL. C’est une étape inutile à franchir dans cette situation, vu que toutes les pages impliquées sont dans le même groupe de wiki et que P3P lui-même est en grande partie obsolète et abandonné; heureusement, la politique non valide menant à cette page est actuellement considérée comme « suffisamment bonne » par les configurations par défaut de ces navigateurs.\n\nVeuillez relire la politique de confidentialité lisible de ce site pour savoir comment toute information collectée pourrait être utilisée.",
+	"centralauth-centralautologin-p3p-explanation": "Certains navigateurs nécessitent dans certains cas une [https://www.w3.org/TR/P3P/#compact_policies politique P3P compacte] pour envoyer ou recevoir des cookies, y compris la situation impliquée pour la vérification de la connexion SUL. C’est une étape inutile à sauter dans cette situation, vu que toutes les pages impliquées sont dans le même groupe de wiki et que le P3P lui-même est en grande partie obsolète et abandonné; heureusement, la politique non valide menant à cette page est actuellement considérée comme « suffisamment bonne » par les configurations par défaut de ces navigateurs.\n\nVeuillez relire la politique de confidentialité lisible de ce site pour savoir comment toute information collectée pourrait être utilisée.",
 	"centralauth-centralautologin-logged-in": "Vous être connecté de façon centralisée en tant que $1. Rechargez la page pour appliquer vos préférences utilisateur.",
 	"centralauth-centralautologin-logged-in-nouser": "Vous êtes connecté en central. Rechargez la page pour appliquer vos préférences utilisateur.",
 	"globalgroupmembership": "Appartenance aux groupes globaux",

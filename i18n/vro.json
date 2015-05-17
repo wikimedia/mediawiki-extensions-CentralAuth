@@ -5,6 +5,10 @@
 		]
 	},
 	"centralauth-groupname": "Tsihtasotus Wikimedia",
+	"centralauth-foreign-link": "Pruukja $1 projektin $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|toimõndus|toimõndust}} kotussõn $2",
+	"centralauth-merge-method-login": "luud nimega sisseminemise aol",
+	"centralauth-admin-blocklog": "Kinniqpidämisnimekiri",
 	"centralauth-login-progress": "Läät nimega sisse ka tõisihe {{int:Centralauth-groupname}} projektehe:",
 	"centralauth-logout-progress": "Läät nime alt vällä ka tõisist {{int:Centralauth-groupname}} projektest:"
 }

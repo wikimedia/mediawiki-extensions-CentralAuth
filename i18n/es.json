@@ -43,7 +43,8 @@
 			"Alan",
 			"Amitie 10g",
 			"Tusca",
-			"Jmvkrecords"
+			"Jmvkrecords",
+			"Ryo567"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -504,6 +505,18 @@
 	"apihelp-globaluserrights-param-user": "Nombre de usuario global.",
 	"apihelp-globaluserrights-param-userid": "ID de usuario global.",
 	"apihelp-globaluserrights-param-reason": "Razón para el cambio.",
+	"apihelp-globaluserrights-example-1": "Añadir la cuenta FooBot al grupo global «bot» y quitarla de los grupos globales «sysop» y «bureaucrat»",
+	"apihelp-globaluserrights-example-2": "Añadir la cuenta global con id. 123 al grupo global «bot» y quitarla de los grupos globales «sysop» y «bureaucrat»",
+	"apihelp-query+globalallusers-param-dir": "Dirección de ordenamiento.",
+	"apihelp-query+globalallusers-param-limit": "Cuántos nombres de usuarios se devolverán.",
+	"apihelp-query+globalallusers-example-1": "Listar cuentas globales",
+	"apihelp-query+globalgroups-description": "Enumerar todos los grupos globales.",
+	"apihelp-query+globalgroups-param-prop": "Qué piezas de información incluir.",
+	"apihelp-query+globalgroups-example-1": "Lista de grupos globales",
+	"apihelp-query+globaluserinfo-description": "Mostrar información acerca de una cuenta global.",
+	"apihelp-query+wikisets-param-orderbyname": "Ordenar los resultados por nombre.",
+	"apihelp-setglobalaccountstatus-param-reason": "Motivo para cambiar el estado del usuario.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Suma MD5 opcional del contenido <username>:<hidden>:<locked> esperado, para evitar conflictos de edición. Define 1 en <locked> para bloquear o 0 para desbloquear.",
 	"centralauth-log-gblrename-oldname": "Nombre de usuario anterior:",
 	"centralauth-contribs-locked": "Esta cuenta está bloqueada globalmente.\nVéase [[Special:CentralAuth/$1|detalles de cuenta global]] para más información.",
 	"centralauth-contribs-locked-log": "Esta cuenta está bloqueada globalmente.\nComo referencia, a continuación se muestra la última entrada del registro de bloqueos:",
