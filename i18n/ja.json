@@ -22,7 +22,8 @@
 			"SkyDaisy9",
 			"朝彦",
 			"Miya",
-			"W.CC"
+			"W.CC",
+			"2nd-player"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -446,5 +447,8 @@
 	"globalrenamequeue-request-unknown-title": "依頼が見つかりません",
 	"globalrenamequeue-request-unknown-body": "改名依頼が見つかりませんでした。",
 	"globalrenamequeue-request-status-title": "「$1」から「$2」への改名",
+	"apihelp-deleteglobalaccount-param-user": "削除対象の利用者。",
+	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
+	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
 	"centralauth-log-gblrename-oldname": "以前の利用者名"
 }
