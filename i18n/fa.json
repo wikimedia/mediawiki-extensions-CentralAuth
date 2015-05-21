@@ -363,6 +363,7 @@
 	"centralauth-rename-alreadyinprogress": "هم‌اکنون یک تغییرنام برای این کاربر [[Special:GlobalRenameProgress/$1|در حال انجام است]].",
 	"centralauth-renameuser-global-inprogress": "هم‌اکنون یک تغییرنام برای کاربر $1 [[Special:GlobalRenameProgress/$1|در حال انجام است]].",
 	"centralauth-rename-queued": "کار تغییر نام $1 به $3 در صف $3 قرار داده شد.\n\nپیشرفت آن را در [[Special:GlobalRenameProgress/$2]] مشاهده کنید.",
+	"centralauth-rename-conflict-hidden": "نام کاربری پنهان",
 	"centralauth-rename-progress-username": "نام کاربری",
 	"centralauth-rename-notinprogress": "هیچ پروسه‌ی تغییر نامی برای $1 وجود ندارد. احتمالا تمامی آن‌ها تمام شده‌اند.",
 	"centralauth-rename-table-domain": "ویکی محلی",

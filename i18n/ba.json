@@ -47,7 +47,7 @@
 	"centralauth-list-unattached-title": "Берләштерелмәгән иҫәп яҙмалары",
 	"centralauth-list-unattached": "\"$1\" иҫәп яҙмаһының һеҙҙеке булыуы түбәндәге сайттарҙа раҫлана алмай; уларҙағы серһүҙ һеҙҙең төп иҫәп яҙмаһы серһүҙе менән тап килмәй, булырға тейеш:",
 	"centralauth-foreign-link": "$1 ҡатнашыусыһы $2 сайтында",
-	"centralauth-foreign-contributions": "$2: $1 {{PLURAL:$1|төҙәтеү}}",
+	"centralauth-foreign-contributions": "$2 $1 {{PLURAL:$1|төҙәтеү}}",
 	"centralauth-merge-method-primary": "баш вики",
 	"centralauth-merge-method-empty": "ҡатнашыусы өлөшө юҡ",
 	"centralauth-merge-method-mail": "электрон почта ярҙамында раҫланған",
