@@ -520,7 +520,7 @@
 	"apihelp-query+globalallusers-param-group": "Limitar usuarios a los grupos globales.",
 	"apihelp-query+globalallusers-param-excludegroup": "Excluir usuarios en los grupos globales.",
 	"apihelp-query+globalallusers-param-prop": "Qué piezas de información incluir:\n;lockinfo: Si la cuenta del usuario está bloqueada.\n;groups: Lista los grupos globales en los que se encuentra el usuario. Esto emplea más recursos del servidor y puede devolver menos resultados que el límite.\n;existslocally: Añade la información si existe el usuario local.",
-	"apihelp-query+globalallusers-param-limit": "Cuántos nombres de usuarios se devolverán.",
+	"apihelp-query+globalallusers-param-limit": "Cuántos nombres de usuarios en total se devolverán.",
 	"apihelp-query+globalallusers-example-1": "Listar cuentas globales",
 	"apihelp-query+globalallusers-example-2": "Mostrar algo de información para los usuarios globales empezando desde \"ABC\"",
 	"apihelp-query+globalgroups-description": "Enumerar todos los grupos globales.",

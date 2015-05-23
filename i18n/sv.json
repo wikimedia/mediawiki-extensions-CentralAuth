@@ -151,6 +151,7 @@
 	"centralauth-admin-reason": "Anledning:",
 	"centralauth-admin-reason-other": "Annan/ytterligare anledning:",
 	"centralauth-admin-reason-other-select": "Annan anledning:",
+	"centralauth-admin-rename-in-progress": "Detta konto håller för närvarande att byta namn. Klicka [[Special:GlobalRenameProgress/$1|här]] för att se aktuella framsteg. Den globala namnbytesloggen för denna användare finns nedan.",
 	"centralauth-admin-unhide-nonexistent": "Fel: det globala kontot \"<nowiki>$1</nowiki>\" existerar inte.",
 	"centralauth-admin-status": "Sätt status för globalt konto",
 	"centralauth-admin-status-intro": "Du kan använda detta formulär för att ändra statusen för detta globala konto",

@@ -499,6 +499,7 @@
 	"apihelp-query+globaluserinfo-example-2": "Obter información sobre o usuario global [[User:Example|Example]]",
 	"apihelp-query+wikisets-description": "Enumerar todos as coleccións wiki.",
 	"apihelp-query+wikisets-param-from": "Nome da colección wiki dende a que comezar.",
+	"apihelp-query+wikisets-param-prop": "Que información incluír.\n;type:Baseada en inclusión (inclúe só as wikis especificadas) ou baseada en exclusión (inclúe todas as wikis excepto as especificadas).\n;wikisincluded:As wikis que están incluídas neste conxunto de wikis.\n;wikisnotincluded:As wikis que non están incluídas neste conxunto de wikis.",
 	"apihelp-query+wikisets-param-limit": "Cantas coleccións wikis devolver.",
 	"apihelp-query+wikisets-param-orderbyname": "Ordear resultados por nome.",
 	"apihelp-query+wikisets-example-1": "Lista de coleccións wiki",

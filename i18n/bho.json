@@ -1,13 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nepaboy"
+			"Nepaboy",
+			"SatyamMishra"
 		]
 	},
+	"centralauth-foreign-link": "$2 पर सदस्य $1",
+	"centralauth-foreign-contributions": "$2 {{PLURAL:$1|योगदान|योगदान सब}} $1",
+	"centralauth-merge-method-login": "खाता बनावस समय बनल",
 	"centralauth-ro": "वैश्विक खाता के जानकारी",
 	"centralauth-admin-view": "खाता के जानकारी देखीं",
 	"centralauth-admin-lookup-ro": "प्रयोगकर्ता के जानकारी देखीं",
 	"centralauth-admin-info-header": "वैश्विक खाता के जानकारी",
+	"centralauth-admin-blocklog": "बैकलॉग",
 	"centralauth-admin-title-ro": "$1 के वैश्विक खाता के जानकारी",
 	"centralauth-editset-nowikis": "(कौनो नाही)",
 	"right-centralauth-rename": "वैश्विक खाता के नाम परिवर्तन",
