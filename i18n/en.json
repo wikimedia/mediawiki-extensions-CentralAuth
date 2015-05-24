@@ -144,7 +144,7 @@
 	"centralauth-admin-already-unmerged": "Skipping $1, already unmerged",
 	"centralauth-admin-unmerge-success": "Successfully unmerged $1 {{PLURAL:$1|account|accounts}}",
 	"centralauth-admin-delete-title": "Delete account",
-	"centralauth-admin-delete-description": "Deleting the global account will delete any global preferences, unattach all local accounts, and leave the global name free for another user to take.\nAll local accounts will continue to exist.\nThe passwords for local accounts created before the merge will revert to their pre-merge values.",
+	"centralauth-admin-delete-description": "Deleting the global account will unattach all local accounts, and leave the global name free for another user to take.\nAll local accounts will continue to exist.",
 	"centralauth-admin-delete-button": "Delete this account",
 	"centralauth-admin-delete-confirm": "Do you really want to delete this account?",
 	"centralauth-admin-delete-success": "Successfully deleted the global account for \"<nowiki>$1</nowiki>\"",
