@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_cabd52d6",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-05-25T10:07:37Z",
+      "side": 1,
+      "message": "unattach \u003d detach?",
+      "revId": "3af5312396a4c0e109f03464e2197804081147b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
