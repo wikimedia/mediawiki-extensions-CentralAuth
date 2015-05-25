@@ -135,7 +135,7 @@
 	"centralauth-admin-reason": "Põhjus:",
 	"centralauth-admin-reason-other": "Muu või täiendav põhjus:",
 	"centralauth-admin-reason-other-select": "Muu põhjus:",
-	"centralauth-admin-rename-in-progress": "Selle konto ümbernimetamine on praegu pooleli. Klõpsa [[Special:GlobalRenameProgress/$1|siia]], et näha praegust seisu. Allpool on toodud globaalse ümbernimetamise logi sissekanded selle kasutaja kohta.",
+	"centralauth-admin-rename-in-progress": "Selle konto ümbernimetamine on praegu pooleli. Saad [[Special:GlobalRenameProgress/$1|vaadata ümbernimetamise edenemist]]. Allpool on toodud globaalse ümbernimetamise logi sissekanded selle kasutaja kohta.",
 	"centralauth-admin-unhide-nonexistent": "Tõrge: Globaalset kontot \"<nowiki>$1</nowiki>\" pole olemas.",
 	"centralauth-admin-status": "Globaalse konto seisundi määramine",
 	"centralauth-admin-status-intro": "Selle vormiga saad globaalse konto seisundit muuta.",

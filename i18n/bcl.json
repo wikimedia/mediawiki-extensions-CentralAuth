@@ -120,6 +120,7 @@
 	"centralauth-state-mismatch": "Kasalaan:Sarong kumplikto sa pagliwat para sa paragamit na ini an namansayan. Pakirekisaha tabi an saimong kaliwatan asin otroha giraray.",
 	"centralauth-admin-reason": "Rason:",
 	"centralauth-admin-reason-other": "Iba pa/kadugangan na rason:",
+	"centralauth-admin-rename-in-progress": "Ining panindog sa presente pinagriribayan nin pangaran. Ika [[Special:GlobalRenameProgress/$1|makakapagtanaw kan progreso]] sa pagribay kan pangaran. An pankinaban na talaan sa pagribay pangaran para sa paragamit na ini pinagtao sa ibaba.",
 	"centralauth-admin-unhide-nonexistent": "Kasalaan:an pankinaban na panindog ni \"<nowiki>$1</nowiki>\" dae tabi eksistido.",
 	"centralauth-admin-status": "Ikaag an kamugtakan kan pankinaban na panindog",
 	"centralauth-admin-status-intro": "Ika makakagamit kaining porma tanganing liwaton an estado kaining pankinaban na panindog.",

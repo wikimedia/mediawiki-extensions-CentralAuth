@@ -156,6 +156,7 @@
 	"centralauth-admin-reason": "Powód",
 	"centralauth-admin-reason-other": "Inny lub dodatkowy powód",
 	"centralauth-admin-reason-other-select": "Inny powód",
+	"centralauth-admin-rename-in-progress": "To konto ma obecnie zmienianą nazwę. Możesz [[Special:GlobalRenameProgress/$1|wyświetlić postęp]] zmiany nazwy. Rejestr globalnej zmiany nazwy dla tego użytkownika znajduje się poniżej.",
 	"centralauth-admin-unhide-nonexistent": "Błąd – nie istnieje konto uniwersalne „<nowiki>$1</nowiki>”.",
 	"centralauth-admin-status": "Ustaw status konta uniwersalnego",
 	"centralauth-admin-status-intro": "Użyj formularza, aby zmienić status konta uniwersalnego",
