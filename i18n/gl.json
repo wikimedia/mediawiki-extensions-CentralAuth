@@ -126,7 +126,7 @@
 	"centralauth-admin-already-unmerged": "Saltando $1, xa está anulada a fusión",
 	"centralauth-admin-unmerge-success": "Desfíxose con éxito a fusión {{PLURAL:$1|dunha conta|de $1 contas}}",
 	"centralauth-admin-delete-title": "Borrar a conta",
-	"centralauth-admin-delete-description": "Ao eliminar unha conta global bórranse todas as preferencias globais, todas as contas locais que non teñen relación e deixa libre o nome da conta global para que outro usuario a use.\nTodas as contas locais continuarán existindo.\nOs contrasinais das contas locais creados antes da fusión serán revertidos aos valores que tiñan antes da fusión.",
+	"centralauth-admin-delete-description": "Ao eliminar unha conta global sepáranse todas as contas locais, e deixa libre o nome da conta global para que outro usuario o use.\nTodas as contas locais continuarán existindo.",
 	"centralauth-admin-delete-button": "Borrar esta conta",
 	"centralauth-admin-delete-confirm": "Está seguro de querer borrar a conta?",
 	"centralauth-admin-delete-success": "A conta global chamada \"<nowiki>$1</nowiki>\" borrouse correctamente",

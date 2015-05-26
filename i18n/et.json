@@ -124,7 +124,7 @@
 	"centralauth-admin-already-unmerged": "$1 jäetakse vahele, juba lahutatud",
 	"centralauth-admin-unmerge-success": "{{PLURAL:$1|Üks konto|$1 kontot}} on edukalt lahutatud.",
 	"centralauth-admin-delete-title": "Konto kustutamine",
-	"centralauth-admin-delete-description": "Globaalse konto kustutamisega kustutatakse kõik globaalsed eelistused, kõik kohalikud kontod ühendatakse lahti ja vabaneva globaalse nime saab valida mõni teine kasutaja.\nKõik kohalikud kontod jäävad alles.\nKohalikud kontod saavad tagasi oma ühendamiseelsed paroolid.",
+	"centralauth-admin-delete-description": "Globaalse konto kustutamisega ühendatakse lahti kõik kohalikud kontod ja vabaneva globaalse nime saab valida mõni teine kasutaja.\nKõik kohalikud kontod jäävad alles.",
 	"centralauth-admin-delete-button": "Kustuta see konto",
 	"centralauth-admin-delete-confirm": "Kas tahad tõesti selle konto kustutada?",
 	"centralauth-admin-delete-success": "Globaalne konto \"<nowiki>$1</nowiki>\" on edukalt kustutatud.",

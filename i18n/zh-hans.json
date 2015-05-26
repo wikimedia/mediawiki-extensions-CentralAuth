@@ -147,7 +147,7 @@
 	"centralauth-admin-already-unmerged": "正在跳过$1，已经取消合并",
 	"centralauth-admin-unmerge-success": "已经取消合并$1个账户",
 	"centralauth-admin-delete-title": "删除账户",
-	"centralauth-admin-delete-description": "删除个全域账户会删除任何的全域参数设置，解除全部附加上去的账户，保留全域名称给另一位用户使用。\n全部的本地户口会继续存在。\n在合并之前已经建立了的本地账户会还原他们以前的值。",
+	"centralauth-admin-delete-description": "删除全域账户会分离所有本地账户，并保留全域名称给另一位用户使用。\n全部的本地账户将继续存在。",
 	"centralauth-admin-delete-button": "删除这个账户",
 	"centralauth-admin-delete-confirm": "确实要删除此帐户吗？",
 	"centralauth-admin-delete-success": "已经删除\"<nowiki>$1</nowiki>\"的全域账户",
