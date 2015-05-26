@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_e2439265",
+        "filename": "central-auth.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2015-05-26T21:52:41Z",
+      "side": 1,
+      "message": "Autoincremented varchar?",
+      "revId": "770c8b4c8a3e97432c59d7f281625671f7e6bf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_82288697",
+        "filename": "central-auth.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2015-05-26T21:52:41Z",
+      "side": 1,
+      "message": "Not needed for SQLite support, all shema munging is case-insensitive.",
+      "revId": "770c8b4c8a3e97432c59d7f281625671f7e6bf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_a2258abe",
+        "filename": "central-auth.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2015-05-26T21:52:41Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "770c8b4c8a3e97432c59d7f281625671f7e6bf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_42329e07",
+        "filename": "db_patches/patch-gu_hidden.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2015-05-26T21:52:41Z",
+      "side": 1,
+      "message": "Ideally, indexes should be prefixed with /*i*/",
+      "revId": "770c8b4c8a3e97432c59d7f281625671f7e6bf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_5d15a33f",
+        "filename": "db_patches/patch-wikisets.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2015-05-26T21:52:41Z",
+      "side": 1,
+      "message": "Again, autoincremented varchar.",
+      "revId": "770c8b4c8a3e97432c59d7f281625671f7e6bf1e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}

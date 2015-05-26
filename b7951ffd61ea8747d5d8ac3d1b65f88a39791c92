@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ed113e2_3d18df79",
+        "filename": "db_patches/patch-requestrename.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2015-05-26T21:52:41Z",
+      "side": 0,
+      "message": "Where is the patch that changes schema if /current/ patch has already been applied?",
+      "revId": "b7951ffd61ea8747d5d8ac3d1b65f88a39791c92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
