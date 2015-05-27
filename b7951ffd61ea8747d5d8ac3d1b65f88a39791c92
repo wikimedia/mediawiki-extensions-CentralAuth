@@ -16,6 +16,24 @@
       "revId": "b7951ffd61ea8747d5d8ac3d1b65f88a39791c92",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed113e2_83f408cd",
+        "filename": "db_patches/patch-requestrename.sql",
+        "patchSetId": 26
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-05-27T10:25:10Z",
+      "side": 0,
+      "message": "I doint think you can because centralauth doesent have an inbuilt web updater you have to do it through the command.",
+      "parentUuid": "0ed113e2_3d18df79",
+      "revId": "b7951ffd61ea8747d5d8ac3d1b65f88a39791c92",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
