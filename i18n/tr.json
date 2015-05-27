@@ -126,7 +126,7 @@
 	"centralauth-admin-already-unmerged": "$1 geçiliyor, zaten birleştirilmemiş",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|hesap|hesap}} başarıyla ayrıldı.",
 	"centralauth-admin-delete-title": "Hesabı sil",
-	"centralauth-admin-delete-description": "Küresel hesabı silmek, herhangi bir küresel tercihi silecek, bütün yerel hesapları ayıracak, ve küresel ismi başka bir kullanıcının alabilmesine olanak sağlayacak şekilde bırakacaktır.\nBütün yerel hesaplar varolmaya devam edecektir.\nBirleştirmeden önce oluşturulan yerel hesaplar için şifreler birleştirmeden önceki değerlerine geri döndürülecektir.",
+	"centralauth-admin-delete-description": "Küresel hesabı silmek, bütün yerel hesapları ayıracak ve küresel ismi başka bir kullanıcının alabilmesine olanak sağlayacak şekilde serbest bırakacaktır.\nBütün yerel hesaplar var olmaya devam edecektir.",
 	"centralauth-admin-delete-button": "Bu hesabı sil",
 	"centralauth-admin-delete-confirm": "Bu hesabı gerçekten silmek istiyor musunuz?",
 	"centralauth-admin-delete-success": "\"<nowiki>$1</nowiki>\" için küresel hesap başarıyla silindi.",

@@ -137,7 +137,7 @@
 	"centralauth-admin-already-unmerged": "Ignorando $1, fusão já foi desfeita",
 	"centralauth-admin-unmerge-success": "Fusão de $1 {{PLURAL:$1|conta|contas}} desfeita com sucesso",
 	"centralauth-admin-delete-title": "Eliminar conta",
-	"centralauth-admin-delete-description": "Eliminar a conta global irá remover as preferências globais, desacoplar todas as contas locais e deixar o nome global disponível para outro utilizador.\nTodas as contas locais continuarão a existir.\nAs palavras-chave das contas locais criadas antes da fusão serão revertidas para os seus valores anteriores à fusão.",
+	"centralauth-admin-delete-description": "Eliminar a conta global irá remover as preferências globais e deixar o nome global disponível para outro utilizador.\nTodas as contas locais continuarão a existir.",
 	"centralauth-admin-delete-button": "Eliminar esta conta",
 	"centralauth-admin-delete-confirm": "Tem a certeza que pretende eliminar esta conta?",
 	"centralauth-admin-delete-success": "A conta global \"<nowiki>$1</nowiki>\" foi eliminada com sucesso",

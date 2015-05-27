@@ -128,7 +128,7 @@
 	"centralauth-admin-already-unmerged": "החשבון $1 כבר מוזג",
 	"centralauth-admin-unmerge-success": "{{PLURAL:$1|חשבון אחד מוזג|$1 חשבונות מוזגו}} בהצלחה",
 	"centralauth-admin-delete-title": "מחיקת חשבון",
-	"centralauth-admin-delete-description": "מחיקת החשבון הכללי תמחק את כל ההעדפות הכלליות, תבטל את מיזוגם של כל החשבונות המקומיים, ותשאיר את השם הכללי חופשי למשתמשים אחרים. כל החשבונות הקיימים ימשיכו להתקיים. הסיסמאות לחשבונות מקומיים שנוצרו לפני המיזוג יוחזרו לערכיהם לפני המיזוג.",
+	"centralauth-admin-delete-description": "מחיקת החשבון הגלובלי תנתק את כל החשבונות המקומיים ותשאיר את השם הגלובלי לאחרים.\nכל החשבונות המקומיים ימשיכו להתקיים.",
 	"centralauth-admin-delete-button": "מחיקת חשבון זה",
 	"centralauth-admin-delete-confirm": "האם ברצונך באמת למחוק את החשבון הזה?",
 	"centralauth-admin-delete-success": "החשבון הראשי \"<nowiki>$1</nowiki>\" נמחק בהצלחה",
