@@ -19,7 +19,8 @@
 			"Revi",
 			"IRTC1015",
 			"콩가루",
-			"SeoJeongHo"
+			"SeoJeongHo",
+			"Ysjbserver"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -115,7 +116,7 @@
 	"centralauth-admin-yes": "예",
 	"centralauth-admin-no": "아니오",
 	"centralauth-admin-hidden-list": "공개 목록에서 숨겨짐",
-	"centralauth-admin-hidden-oversight": "오버사이트됨",
+	"centralauth-admin-hidden-oversight": "역사 숨겨짐",
 	"centralauth-admin-list-legend-ro": "로컬 계정 목록",
 	"centralauth-admin-list-legend-rw": "로컬 계정 분리하기",
 	"centralauth-admin-unattached": "묶이지 않음",
@@ -225,7 +226,7 @@
 	"centralauth-log-entry-chgstatus": "사용자가 \"$1\" 통합 계정의 상태를 바꿨습니다: $2 설정; $3 설정 해제",
 	"centralauth-log-status-locked": "잠금",
 	"centralauth-log-status-hidden": "숨김",
-	"centralauth-log-status-oversighted": "오버사이트됨",
+	"centralauth-log-status-oversighted": "역사 숨겨짐",
 	"centralauth-log-status-none": "(없음)",
 	"centralauth-rightslog-name": "공통 권한 기록",
 	"centralauth-rightslog-entry-usergroups": "사용자가 $1 사용자의 공통 권한 그룹 소속을 $2에서 $3으로 바꿨습니다",

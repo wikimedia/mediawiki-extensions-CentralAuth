@@ -6,7 +6,7 @@
 		]
 	},
 	"centralauth-foreign-link": "$1 आनी $2 वयले वापरपी",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|योगदान|योगदान}} $2 चेर",
+	"centralauth-foreign-contributions": "$1 {{बहुवचन:$1|योगदान|योगदान}} $2 चेर",
 	"centralauth-merge-method-login": "लॉग इनाचेर तयार केला",
 	"centralauth-admin-blocklog": "कार्यवळेरी आडयात"
 }

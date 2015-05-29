@@ -479,6 +479,7 @@
 	"apihelp-globaluserrights-param-remove": "Entfernt den Benutzer von diesen globalen Gruppen.",
 	"apihelp-globaluserrights-param-reason": "Grund für die Änderung.",
 	"apihelp-globaluserrights-example-1": "Fügt den Benutzer FooBot zur globalen Gruppe „Bot“ hinzu und entfernt ihn aus den globalen Gruppen „Administrator“ und „Bürokrat“",
+	"apihelp-globaluserrights-example-2": "Fügt den globalen Benutzer mit der Kennung 123 zur globalen Gruppe „Bot“ hinzu und entfernt ihn aus den globalen Gruppen „Administrator“ und „Bürokrat“.",
 	"apihelp-query+globalallusers-description": "Alle globalen Benutzer auflisten.",
 	"apihelp-query+globalallusers-param-from": "Der Benutzername, bei dem die Auflistung beginnen soll.",
 	"apihelp-query+globalallusers-param-to": "Der Benutzername, bei dem die Auflistung enden soll.",
