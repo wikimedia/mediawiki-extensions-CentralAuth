@@ -1,5 +1,13 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Poiuyt"
+		]
+	},
+	"centralauth-foreign-link": "$2上个用户$1",
+	"centralauth-foreign-contributions": "来$2贡献$1届",
+	"centralauth-merge-method-login": "因登录而创建",
+	"centralauth-admin-blocklog": "查封记录",
 	"centralauth-admin-reason": "理由：",
 	"centralauth-editgroup-reason": "理由：",
 	"centralauth-editset-reason": "理由："
