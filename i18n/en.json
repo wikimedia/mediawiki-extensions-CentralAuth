@@ -473,6 +473,7 @@
 	"globalrenamequeue-request-unknown-title": "Request not found",
 	"globalrenamequeue-request-unknown-body": "The rename request was not found.",
 	"globalrenamequeue-request-status-title": "Rename from \"$1\" to \"$2\"",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>The chosen username is similar to {{PLURAL:$2|an existing username|existing usernames}}:</strong> $1",
 	"globalrenamequeue-view": ";From:\n:[[Special:CentralAuth/$1|$1]]\n;To:\n:[[Special:CentralAuth/$2|$2]]\n;Reason:\n:$3\n;Status:\n:$4\n;Requested:\n:$5\n;Completed:\n:$6\n;Done by:\n:[$7 $8]\n;Notes:\n:$9",
 	"globalrenamequeue-view-approved": "approved",
 	"globalrenamequeue-view-rejected": "rejected",

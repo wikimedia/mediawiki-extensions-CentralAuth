@@ -124,7 +124,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		return $status;
 	}
 
-	protected function processAntiSpoofConflicts( $oldname, array $conflicts ) {
+	/**
+	 * This is also used in SpecialGlobalRenameQueue
+	 *
+	 * @param string $oldname User's old (current) name
+	 * @param array $conflicts Conflicting usernames
+	 * @return array Usernames that are safe for display
+	 */
+	public function processAntiSpoofConflicts( $oldname, array $conflicts ) {
 		$display = array();
 		foreach ( $conflicts as $name ) {
 			if ( $name === $oldname ) {
@@ -138,7 +145,6 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				$display[] = $name;
 			}
 		}
-
 		return $display;
 	}
 
