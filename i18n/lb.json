@@ -131,6 +131,7 @@
 	"centralauth-admin-reason": "Grond:",
 	"centralauth-admin-reason-other": "Aneren/zousätzleche Grond:",
 	"centralauth-admin-reason-other-select": "Anere Grond:",
+	"centralauth-admin-rename-in-progress": "Dëse Benotzerkont gëtt elo ëmbenannt. Dir kënnt [[Special:GlobalRenameProgress/$1|de Fortschrëtt vun der Ëmbenennung kucken]]. D'Logbuch vum globalen Ëmbenenne fir dëse Benotzer gesitt Dir hei drënner.",
 	"centralauth-admin-unhide-nonexistent": "Feeler: De globale Benotzerkont \"<nowiki>$1</nowiki>\" gëtt et net.",
 	"centralauth-admin-status": "Status vum globale Benotzerkont änneren",
 	"centralauth-admin-status-intro": "Dir kënnt dëse Formulaire benotze fir de Status vun engem globale Benotzerkont z'änneren",
