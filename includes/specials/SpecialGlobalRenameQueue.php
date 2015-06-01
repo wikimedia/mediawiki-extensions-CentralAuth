@@ -224,7 +224,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$steward->getName(),
 			$req->getComments()
 		)->parseAsBlock();
-
 		$this->getOutput()->addHtml( '<div class="plainlinks">' . $viewMsg . '</div>' );
 	}
 
@@ -329,6 +328,22 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getNewName()
 		);
 		$form->addHeaderText( $infoMsg->parseAsBlock() );
+
+		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+			$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
+			// @todo move this code somewhere else
+			$specialGblRename = new SpecialGlobalRenameUser();
+			$specialGblRename->setContext( $this->getContext() );
+			$conflicts = $specialGblRename->processAntiSpoofConflicts( $req->getName(), $spoofUser->getConflicts() );
+			if ( $conflicts ) {
+				$form->addHeaderText(
+					$this->msg(
+						'globalrenamequeue-request-antispoof-conflicts',
+						$this->getLanguage()->commaList( $conflicts )
+					)->numParams( count( $conflicts ) )->parse()
+				);
+			}
+		}
 
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
