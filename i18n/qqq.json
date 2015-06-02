@@ -456,6 +456,7 @@
 	"globalrenamerequest-save-error": "Used as error message.",
 	"globalrenamerequest-status-title": "Page title when request is pending.",
 	"globalrenamequeue-request-antispoof-conflicts": "Informational message shown when a user's requested name is similar to other existing usernames. $1 is a comma separated list of usernames, $2 is the number of usernames for PLURAL support.",
+	"globalrenamequeue-request-previous-renames": "Text for fieldset label surrounding log entries of the requesting username's previous renames. $1 is the number of log entries for PLURAL.",
 	"centralauth-usermerge-form-adduser": "Label on button that when clicked adds a new form field to input a username into.\n{{Identical|Add user}}",
 	"centralauth-usermerge-form-deleteuser": "Label on button that when clicked removes the associated form field.\n{{Identical|Remove user}}",
 	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",

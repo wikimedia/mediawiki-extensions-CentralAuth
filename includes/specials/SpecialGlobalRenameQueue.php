@@ -345,6 +345,20 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			}
 		}
 
+		// Show a log entry of previous renames under the requesting user's username
+		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $req->getName() );
+		$extract = '';
+		$extractCount = LogEventsList::showLogExtract( $extract, 'gblrename', $caTitle, '', array(
+			'showIfEmpty' => false,
+		) );
+		if ( $extractCount ) {
+			$form->addHeaderText(
+				Xml::fieldset( $this->msg( 'globalrenamequeue-request-previous-renames' )
+					->numParams( $extractCount )
+					->text(), $extract )
+			);
+		}
+
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
