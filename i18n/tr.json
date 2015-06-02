@@ -14,7 +14,8 @@
 			"Sayginer",
 			"Kafkasmurat",
 			"Violetanka",
-			"Stultiwikia"
+			"Stultiwikia",
+			"Meelo"
 		]
 	},
 	"mergeaccount": "Hesap birleştirme durumu",
@@ -324,6 +325,7 @@
 	"centralauth-warning-notattached": "Yerel hesap küresel olana bağlı değil.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} hesap onayı",
 	"globalrenameuser-legend": "Küresel kullanıcıyı yeniden adlandır",
+	"centralauth-rename-abortlogin": "Hesabınız şu anda yeniden adlandırıldı ya da birleştirildi. [[Special:GlobalRenameProgress/$1|Durumu görüntüleyin]].",
 	"centralauth-rename-form-oldname": "Mevcut kullanıcı adı",
 	"centralauth-rename-form-newname": "Yeni kullanıcı adı",
 	"centralauth-rename-form-reason": "Gerekçe",

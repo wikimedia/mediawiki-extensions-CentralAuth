@@ -149,7 +149,7 @@
 	"centralauth-admin-status": "تنظیم وضعیت حساب سراسری",
 	"centralauth-admin-status-intro": "شما می‌توانید فرم زیر را برای تغییر وضعیت این حساب سراسری استفاده کنید.",
 	"centralauth-admin-status-locked": "قفل‌شده:",
-	"centralauth-admin-status-locked-no": "حساب مسدود نشده‌است",
+	"centralauth-admin-status-locked-no": "حساب قفل نشده‌است",
 	"centralauth-admin-status-locked-yes": "حساب از ویرایش کردن مسدود شده‌است.",
 	"centralauth-admin-status-hidden": "پنهان:",
 	"centralauth-admin-status-hidden-no": "حساب مخفی نیست.",
