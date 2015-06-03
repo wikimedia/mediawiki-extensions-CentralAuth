@@ -110,7 +110,7 @@
 	"centralauth-admin-already-unmerged": "Piglalaktawan an $1, pinagsuhay na",
 	"centralauth-admin-unmerge-success": "Matrayumpong pinagsuhay na an $1 {{PLURAL:$1|panindog|mga panindog}}",
 	"centralauth-admin-delete-title": "Puraon an panindog",
-	"centralauth-admin-delete-description": "An pagpupura kan pankinaban na panindog magpupura kan arinman na pankinaban na mga kamuyahan, dae ipagdukot an gabos na mga lokal na panindog, asin bayaan an pankinaban na pangaran na libre para gamiton kan ibang paragamit.\nAn gabos na lokal na mga panindog magpapadagos na yaon.\nAn mga pasa-taramon para sa lokal na mga panindog bago pa man an pagkakasararo ibubuwelta sa dati nindang mga kabtangan.",
+	"centralauth-admin-delete-description": "An pagpupura kan pankinabanon na panindog magpuputol sa gabos na mga panindog sa lokal, asin magwawalat sa pankinaban na pangaran na libre para sa ibang paragamit na gumamit kaini. An gabos na mga lokal na panindog magpapadagos na mag-eksister.",
 	"centralauth-admin-delete-button": "Puraon ining panindog",
 	"centralauth-admin-delete-confirm": "Gusto mo talagang puraon ining panindog?",
 	"centralauth-admin-delete-success": "Matrayumpong pinagpura an pankinaban na panindog para ki \"<nowiki>$1</nowiki>\"",

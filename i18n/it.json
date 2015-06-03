@@ -17,7 +17,8 @@
 			"Wim b",
 			"Lucas2",
 			"Ricordisamoa",
-			"Toadino2"
+			"Toadino2",
+			"Alexmar983"
 		]
 	},
 	"mergeaccount": "Processo di unificazione delle utenze - status",
@@ -134,7 +135,7 @@
 	"centralauth-admin-already-unmerged": "Salto $1, già separato",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|utenza separata|utenze separate}} con successo",
 	"centralauth-admin-delete-title": "Elimina l'utenza",
-	"centralauth-admin-delete-description": "La cancellazione dell'utenza globale eliminerà tutte le preferenze globali, scollegherà tutte le utenze locali e lascerà il nome globale disponibile all'uso da parte di un altro utente.\nTutte le utenze locali continueranno a esistere.\nLe password per le utenze locali create prima della fusione torneranno ai loro valori precedenti l'unificazione.",
+	"centralauth-admin-delete-description": "Eliminare l'account globale scollegherà tutti gli account locali, e lascerà il nome globale libero per essere usato da un altro utente.\nTutti gli account locali continueranno ad esistere.",
 	"centralauth-admin-delete-button": "Elimina questa utenza globale",
 	"centralauth-admin-delete-confirm": "Vuoi veramente cancellare questa utenza?",
 	"centralauth-admin-delete-success": "Utenza globale \"<nowiki>$1</nowiki>\" eliminata con successo",
