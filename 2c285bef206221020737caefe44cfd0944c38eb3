@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aedf27f1_18fbc445",
+        "filename": "CentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-06-04T21:35:56Z",
+      "side": 1,
+      "message": "Should I change this to true to disable it by default so that upgraded doesent update sql tables. But a user can change back to false if they use it locally",
+      "revId": "2c285bef206221020737caefe44cfd0944c38eb3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
