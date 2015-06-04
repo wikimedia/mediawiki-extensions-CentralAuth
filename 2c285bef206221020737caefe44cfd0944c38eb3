@@ -16,6 +16,24 @@
       "revId": "2c285bef206221020737caefe44cfd0944c38eb3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aedf27f1_9821f4ae",
+        "filename": "CentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2015-06-04T21:46:24Z",
+      "side": 1,
+      "message": "No, you should look at the existing $wgCentralAuthDatabase instead of making a new one. However, even with that change, I would still object because DB updater currently ignores all other shared tables.",
+      "parentUuid": "aedf27f1_18fbc445",
+      "revId": "2c285bef206221020737caefe44cfd0944c38eb3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
