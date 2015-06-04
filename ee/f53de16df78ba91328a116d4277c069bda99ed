@@ -1,0 +1,9 @@
+Verified+2: jenkins-bot
+Code-Review+1: Alex Monk <krenair@gmail.com>
+Code-Review+1: Steinsplitter <steinsplitter@wikipedia.de>
+Code-Review+2: BryanDavis <bdavis@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 04 Jun 2015 16:44:55 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/215280
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
