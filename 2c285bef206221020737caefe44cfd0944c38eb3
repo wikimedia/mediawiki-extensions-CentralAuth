@@ -34,6 +34,24 @@
       "revId": "2c285bef206221020737caefe44cfd0944c38eb3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aedf27f1_9b756e95",
+        "filename": "CentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2015-06-04T21:58:40Z",
+      "side": 1,
+      "message": "Ok. And how does it ignore the other shared tables I use the tables in one database.",
+      "parentUuid": "aedf27f1_9821f4ae",
+      "revId": "2c285bef206221020737caefe44cfd0944c38eb3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
