@@ -460,6 +460,8 @@
 	"globalrenamequeue-request-unknown-title": "Pedido não encontrado",
 	"globalrenamequeue-request-unknown-body": "O pedido de renomeação de conta não foi encontrado.",
 	"globalrenamequeue-request-status-title": "Renomear de \"$1\" para \"$2\"",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>O nome de utilizador(a) escolhido é semelhante {{PLURAL:$2|a outro já existente|a outros já existentes}}:</strong> $1",
+	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Renomeação anterior|Renomeações anteriores}}",
 	"globalrenamequeue-view": ";De:\n:[[Special:CentralAuth/$1|$1]]\n;Para:\n:[[Special:CentralAuth/$2|$2]]\n;Motivo:\n:$3\n;Estado:\n:$4\n;Solicitado em:\n:$5\n;Concluído em:\n:$6\n;Realizado por:\n:[$7 $8]\n;Notas:\n:$9",
 	"globalrenamequeue-view-approved": "aprovado",
 	"globalrenamequeue-view-rejected": "rejeitado",

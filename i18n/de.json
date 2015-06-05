@@ -455,6 +455,8 @@
 	"globalrenamequeue-request-unknown-title": "Anfrage nicht gefunden",
 	"globalrenamequeue-request-unknown-body": "Die Umbenennungsanfrage wurde nicht gefunden.",
 	"globalrenamequeue-request-status-title": "„$1“ in „$2“ umbenennen",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>Der ausgewählte Benutzername ist ähnlich mit {{PLURAL:$2|einem vorhandenen Benutzernamen|vorhandenen Benutzernamen}}:</strong> $1",
+	"globalrenamequeue-request-previous-renames": "Vorherige {{PLURAL:$1|Umbenennung|Umbenennungen}}",
 	"globalrenamequeue-view": ";Von:\n:[[Special:CentralAuth/$1|$1]]\n;Nach:\n:[[Special:CentralAuth/$2|$2]]\n;Grund:\n:$3\n;Status:\n:$4\n;Beantragt:\n:$5\n;Abgeschlossen:\n:$6\n;Erledigt von:\n:[$7 $8]\n;Anmerkungen:\n:$9",
 	"globalrenamequeue-view-approved": "akzeptiert",
 	"globalrenamequeue-view-rejected": "abgelehnt",

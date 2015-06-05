@@ -125,7 +125,7 @@
 	"centralauth-admin-already-unmerged": "Přeskakuje se $1, již byl odloučen",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|účet úspěšně odloučen|účty úspěšně odloučeny|účtů úspěšně odloučeno}}",
 	"centralauth-admin-delete-title": "Smazat účet",
-	"centralauth-admin-delete-description": "Smazáním globálního účtu smažete všechny globální nastavení, odpojíte všechny účty a uvolníte globální jméno, takže si ho bude moci vzít jiný uživatel.\nVšechny lokální učty budou nadále existovat.\nHesla lokálních účtů vytvořených před sloučením se vrátí na svoje původní hodnoty, které měli před sloučením.",
+	"centralauth-admin-delete-description": "Smazáním globálního účtu odpojíte všechny lokální účty a uvolníte globální jméno, takže si ho bude moci vzít jiný uživatel. Všechny lokální účty budou existovat i nadále.",
 	"centralauth-admin-delete-button": "Smazat tento účet",
 	"centralauth-admin-delete-confirm": "Opravdu chcete tento účet smazat?",
 	"centralauth-admin-delete-success": "Globální účet „<nowiki>$1</nowiki>“ byl úspěšně smazán.",

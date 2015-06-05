@@ -487,6 +487,7 @@
 	"globalrenamequeue-request-unknown-title": "Solicitud no encontrada",
 	"globalrenamequeue-request-unknown-body": "No se encontró la solicitud de renombramiento.",
 	"globalrenamequeue-request-status-title": "Renombrar de \"$1\" a \"$2\"",
+	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Cambio de nombre previo|Cambios de nombre previos}}",
 	"globalrenamequeue-view": ";De:\n:[[Special:CentralAuth/$1|$1]]\n;A:\n:[[Special:CentralAuth/$2|$2]]\n;Motivo:\n:$3\n;Estado:\n:$4\n;Solicitado:\n:$5\n;Completado:\n:$6\n;Hecho por:\n:[$7 $8]\n;Notas:\n:$9",
 	"globalrenamequeue-view-approved": "aprobado",
 	"globalrenamequeue-view-rejected": "rechazado",

@@ -452,6 +452,8 @@
 	"globalrenamequeue-request-unknown-title": "הבקשה לא נמצאה",
 	"globalrenamequeue-request-unknown-body": "בקשת שינוי השם לא נמצאה.",
 	"globalrenamequeue-request-status-title": "שינוי מהשם \"$1\" על השם \"$2\"",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>השם שנבחר דומה {{PLURAL:$2|לשם קיים|לשמות קיימים}}:</strong> $1",
+	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|שינוי שם קודם|שינויי שם קודמים}}",
 	"globalrenamequeue-view": ";מאת:\n:[[Special:CentralAuth/$1|$1]]\n;אל:\n:[[Special:CentralAuth/$2|$2]]\n;סיבה:\n:$3\n;מצב:\n :$4\n;התבקש:\n:$5\n;הושלם:\n:$6\n;בוצע על־ידי:\n:[$7 $8]\n;הערות:\n:$9",
 	"globalrenamequeue-view-approved": "אושר",
 	"globalrenamequeue-view-rejected": "נדחה",

@@ -471,6 +471,8 @@
 	"globalrenamequeue-request-unknown-title": "找不到请求",
 	"globalrenamequeue-request-unknown-body": "找不到重命名请求。",
 	"globalrenamequeue-request-status-title": "从“$1”重命名至“$2”",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>选择的用户名与{{PLURAL:$2|现有用户名}}类似：</strong> $1",
+	"globalrenamequeue-request-previous-renames": "上次{{PLURAL:$1|更名}}",
 	"globalrenamequeue-view": ";从：\n:[[Special:CentralAuth/$1|$1]]\n;至：\n:[[Special:CentralAuth/$2|$2]]\n;原因：\n:$3\n;状态：\n:$4\n;请求于：\n:$5\n;完成于：\n:$6\n;执行者：\n:[$7 $8]\n;备注：\n:$9",
 	"globalrenamequeue-view-approved": "已批准",
 	"globalrenamequeue-view-rejected": "已拒绝",

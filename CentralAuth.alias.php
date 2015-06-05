@@ -509,19 +509,19 @@ $specialPageAliases['lb'] = array(
 
 /** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
-	'MergeAccount' => array( 'سریک_کاری_حساو' ),
-	'GlobalGroupMembership' => array( 'حقوق_مین_زایاره_یی_کاریار', 'اندوم_بیین_جهونی_گرو' ),
-	'GlobalGroupPermissions' => array( 'تصیقیا_جهونی_گرو' ),
-	'WikiSets' => array( 'میزونکاری_ویکی', 'ویرایشت_میزونکاری_ویکی' ),
-	'GlobalUsers' => array( 'کاریاریا_جهونی' ),
-	'MultiLock' => array( 'چن_قلفه' ),
-	'GlobalRenameUser' => array( 'د_نو_نوم_نیائن_جهونی_کاریار' ),
-	'GlobalRenameProgress' => array( 'پیشکرد_د_نو_نوم_نیائن_کاریار' ),
-	'GlobalUserMerge' => array( 'سریک_کاری_جهونی_کاریار' ),
-	'GlobalRenameRequest' => array( 'حاست_د_نو_نوم_نیائن_جهونی' ),
-	'GlobalRenameQueue' => array( 'گی_بنی_د_نو_نوم_نیائن_جهونی' ),
-	'SulRenameWarning' => array( 'هشدار_تک_کاری_د_نو_نوم_نیائن' ),
-	'UsersWhoWillBeRenamed' => array( 'کاریاری_که_د_نوم_نیائه_بوئه' ),
+	'MergeAccount' => array( 'سأریأک_کاری_حئساڤ' ),
+	'GlobalGroupMembership' => array( 'حقوق_مین_زایارە_یی_کاریار', 'أندوم_بییئن_جأھوٙنی_جأرغە' ),
+	'GlobalGroupPermissions' => array( 'تأصیقیا_جأھوٙنی_جأرغە' ),
+	'WikiSets' => array( 'میزوٙنکاری_ڤیکی', 'ڤیرایئشت_میزوٙنکاری_ڤیکی' ),
+	'GlobalUsers' => array( 'کاریاریا_جأھوٙنی' ),
+	'MultiLock' => array( 'چأن_قولفە' ),
+	'GlobalRenameUser' => array( 'د_نۊ_نوم_نیائن_جأھوٙنی_کاریار' ),
+	'GlobalRenameProgress' => array( 'پیشکئرد_د_نوٙ_نوٙم_نیائن_کاریار' ),
+	'GlobalUserMerge' => array( 'سأریأک_کاری_جأھوٙنی_کاریار' ),
+	'GlobalRenameRequest' => array( 'حاست_د_نۊ_نوٙم_نیائن_جأھوٙنی' ),
+	'GlobalRenameQueue' => array( 'گئی_بأنی_د_نۊ_نوٙم_نیائن_جأھوٙنی' ),
+	'SulRenameWarning' => array( 'ھشدار_تأک_کاری_د_نۊ_نوٙم_نیائن' ),
+	'UsersWhoWillBeRenamed' => array( 'کاریاری_کئ_د_نۊ_نوٙم_نیائە_بوئە' ),
 );
 
 /** Lithuanian (lietuvių) */

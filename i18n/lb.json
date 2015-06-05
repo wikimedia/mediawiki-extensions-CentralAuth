@@ -412,6 +412,7 @@
 	"globalrenamequeue-request-unknown-title": "Ufro net fonnt",
 	"globalrenamequeue-request-unknown-body": "D'Ufro fir d'Ëmbenenne gouf net fonnt.",
 	"globalrenamequeue-request-status-title": "\"$1\" an \"$2\" ëmbenennen",
+	"globalrenamequeue-request-previous-renames": "Vireg {{PLURAL:$1|Ëmbenennung|Ëmbenennungen}}",
 	"globalrenamequeue-view-approved": "akzeptéiert",
 	"globalrenamequeue-view-rejected": "refuséiert",
 	"centralauth-abortlogin-renamed": "Äre Benotzerkont gouf op \"$1\" ëmbenannt. Benotzt w.e.g. dee Benotzernumm aplaz.",
