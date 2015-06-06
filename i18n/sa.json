@@ -66,7 +66,7 @@
 	"centralauth-finish-password": "सङ्केतशब्द:",
 	"centralauth-finish-login": "प्रविश्यताम्",
 	"centralauth-finish-send-confirmation": "ई-मेल सङ्केतशब्द",
-	"centralauth-finish-problems": "भवतः कापि समस्या विद्यते किम् ? अथवा एतेषाम् अभिलेखानां स्वामी भवान् न किम् ?\n[[meta:Special:MyLanguage/Help:Unified login|सहाय्यं कथं प्राप्तव्यम्]]...",
+	"centralauth-finish-problems": "भवतः कापि समस्या विद्यते किम् ? अथवा एतेषाम् अभिलेखानां स्वामी भवान् न किम् ?\n[[meta:Special:MyLanguage/Help:Unified login|साहाय्यं कथं प्राप्तव्यम्]]...",
 	"centralauth-finish-noconfirms": "दत्तस्य कूटशब्दस्य उपयोगेन कोपि अभिलेखः दृढीकर्तुं न शक्यते ।",
 	"centralauth-finish-incomplete": "दत्तस्य कूटशब्दस्य उपयोगेन बहवः अभिलेखाः संयोजिताः ।\nअन्ये अभिलेखाः एतावता न दृढीकृताः ।",
 	"centralauth-merge-attempt": "'''भवता दत्तेन कूटशब्देन अवशिष्टेषु असंयुक्तेषु अभिलेखेषु अवलोकनं प्रचलति...'''",
