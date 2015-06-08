@@ -26,7 +26,8 @@
 			"MedShot",
 			"Trijnstel",
 			"Whaledad",
-			"Esketti"
+			"Esketti",
+			"Rangekill"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -467,6 +468,8 @@
 	"globalrenamequeue-request-unknown-title": "Verzoek niet gevonden",
 	"globalrenamequeue-request-unknown-body": "Hernoemingsverzoek is niet gevonden.",
 	"globalrenamequeue-request-status-title": "Hernoeming van \"$1\" naar \"$2\"",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>De gekozen gebruikersnaam is gelijk aan {{PLURAL:$2|een bestaande gebruikersnaam|bestaande gebruikersnamen}}:</strong> $1",
+	"globalrenamequeue-request-previous-renames": "Vorige {{PLURAL:$1|naam}}",
 	"globalrenamequeue-view": ";Van:\n:[[Special:CentralAuth/$1|$1]]\n;Naar:\n:[[Special:CentralAuth/$2|$2]]\n;Reden:\n:$3\n;Status:\n:$4\n;Verzocht op:\n:$5\n;Afgerond op:\n:$6\n;Verwerkt door:\n:[$7 $8]\n;Opmerkingen:\n:$9",
 	"globalrenamequeue-view-approved": "goedgekeurd",
 	"globalrenamequeue-view-rejected": "afgewezen",
