@@ -94,7 +94,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 					'mediawiki.ui',
 					'mediawiki.ui.button',
 					'mediawiki.ui.input',
-					'ext.centralauth.globalrenamerequest',
+					'ext.centralauth.globalrenamerequest.styles',
 				) );
 				$out->addModules( 'ext.centralauth.globalrenamerequest' );
 				parent::execute( $par );
