@@ -158,7 +158,7 @@
 	"centralauth-admin-suppressreason": "Dihapus secara global oleh $1 dengan alasan berikut: $2",
 	"centralauth-admin-not-authorized": "Anda tidak memiliki izin untuk melakukan tindakan ini",
 	"centralauth-admin-too-many-edits": "Akun global \"<nowiki>$1</nowiki>\" memiliki lebih dari $2 {{PLURAL:$2|suntingan|suntingan}} dan tidak dapat disembunyikan.",
-	"globalusers": "Daftar akun global",
+	"globalusers": "Daftar pengguna global",
 	"centralauth-listusers-locked": "terkunci",
 	"centralauth-listusers-attached": "[[User:$1|ada di wiki lokal]]",
 	"centralauth-listusers-nolocal": "bukan akun global atau tidak ada di wiki lokal",
@@ -216,7 +216,7 @@
 	"centralauth-rightslog-set-optin": "bergabung",
 	"centralauth-rightslog-set-optout": "tidak bergabung",
 	"globalgroupmembership": "Keanggotaan dalam kelompok global",
-	"globalgrouppermissions": "Manajemen kelompok global",
+	"globalgrouppermissions": "Manajemen hak kelompok global",
 	"centralauth-globalgroupperms-grouplist": "Kelompok global berikut telah dikonfigurasi.\nAnda dapat melihat dan menyunting hak yang diberikan ke setiap kelompok, jika Anda memiliki hak untuk itu.\nSuatu kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.",
 	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|lihat/sunting]])",
 	"centralauth-globalgroupperms-nogroups": "Tidak ada kelompok global didefinisikan.",
@@ -243,7 +243,7 @@
 	"centralauth-editgroup-success": "Perubahan hak kelompok telah tersimpan",
 	"centralauth-editgroup-success-text": "Anda telah berhasil mengubah hak kelompok $1.\n[[Special:GlobalGroupPermissions|Kembali ke manajemen kelompok]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|sunting]])",
-	"centralauth-editset": "Set wiki",
+	"centralauth-editset": "Sunting kelompok wiki",
 	"centralauth-editset-legend-rw": "Sunting atau buat set wiki",
 	"centralauth-editset-legend-ro": "Daftar set wiki",
 	"centralauth-editset-intro-rw": "Set wiki berikut telah dibuat.\nAnda dapat melihat dan mengubahnya, atau membuat set baru.",
@@ -307,5 +307,6 @@
 	"globalrenamerequest-save-error": "Gagal untuk menyimpan permintaan, silakan coba lagi.",
 	"globalrenamerequest-status-title": "Permintaan ubah nama menunggu persetujuan.",
 	"globalrenamerequest-status-text": "Permintaan perubahan nama sedang dalam proses dan menunggu persetujuan dari steward. Anda akan diberitahu melalui email ketika permintaan telah terproses",
-	"centralauth-abortlogin-renamed": "Akun anda telah berubah menjadi $1. Mohon gunakan nama pengguna itu"
+	"centralauth-abortlogin-renamed": "Akun anda telah berubah menjadi $1. Mohon gunakan nama pengguna itu",
+	"userswhowillberenamed": "Pengguna yang akan diganti namanya"
 }
