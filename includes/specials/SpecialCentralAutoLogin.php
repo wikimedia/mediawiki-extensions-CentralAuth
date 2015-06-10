@@ -79,9 +79,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'return',
 			'returnto',
 			'returntoquery',
-			'proto'
+			'proto',
+			'mobile'
 		);
-
 		switch ( strval( $par ) ) {
 		case 'P3P': // Explain the bogus P3P header
 			$this->setHeaders();
@@ -489,6 +489,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	private function do302Redirect( $target, $state, $params ) {
 		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
+		if ( wfWikiID() == $this->loginWiki
+			&& class_exists( 'MobileContext' )
+			&& isset( $params['mobile'] )
+			&& $params['mobile']
+		) {
+			$url = MobileContext::singleton()->getMobileUrl( $url );
+		}
+
 		if ( $url === false ) {
 			$this->doFinalOutput( false, 'Invalid target wiki' );
 		} else {
