@@ -465,6 +465,8 @@
 	"globalrenamequeue-request-unknown-title": "Запит не знайдено",
 	"globalrenamequeue-request-unknown-body": "Такий запит на перейменування не знайдено.",
 	"globalrenamequeue-request-status-title": "Перейменування із «$1» на «$2»",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>Обране ім'я користувача схоже на {{PLURAL:$2|уже наявне ім'я користувача|уже наявні імена користувачів}}:</strong> $1",
+	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Попереднє перейменування|Попереднє перейменування}}",
 	"globalrenamequeue-view": ";Із:\n:[[Special:CentralAuth/$1|$1]]\n;На:\n:[[Special:CentralAuth/$2|$2]]\n;Причина:\n:$3\n;Стан:\n:$4\n;Дата запиту:\n:$5\n;Завершено:\n:$6\n;{{GENDER:$8|Виконав|Виконала}}:\n:[$7 $8]\n;Примітки:\n:$9",
 	"globalrenamequeue-view-approved": "затверджено",
 	"globalrenamequeue-view-rejected": "відхилено",
