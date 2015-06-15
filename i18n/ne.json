@@ -6,7 +6,8 @@
 			"Krish Dulal",
 			"RajeshPandey",
 			"बिप्लब आनन्द",
-			"NehalDaveND"
+			"NehalDaveND",
+			"राम प्रसाद जोशी"
 		]
 	},
 	"mergeaccount": "प्रवेश एकीकरण स्थिति",
@@ -49,7 +50,7 @@
 	"centralauth-merge-method-admin": "प्रबन्धक-सम्मिलित खाता",
 	"centralauth-merge-method-new": "नयाँ खाता",
 	"centralauth-merge-method-login": "प्रवेशद्वारा निर्मित",
-	"centralauth-merge-method-empty-desc": "स्थानीय खाता मिलाइएको संकेत गर्छ जसमा सम्पादनहरु थिएनन्",
+	"centralauth-merge-method-empty-desc": "स्थानीय खाता मिलाइएको संकेत गर्छ जसमा सम्पादनहरू थिएनन्",
 	"centralauth-finish-title": "मिलाउने कार्य समाप्त गर्ने",
 	"centralauth-finish-password": "प्रवेशशव्द:",
 	"centralauth-finish-login": "प्रवेश",
@@ -74,7 +75,7 @@
 	"centralauth-admin-info-header": "वैश्विक खाता जानकारी",
 	"centralauth-admin-info-username": "प्रयोगकर्ता नाम:",
 	"centralauth-admin-info-registered": "पञ्जीकृत:",
-	"centralauth-admin-info-editcount": "जम्मा सम्पादनहरुको गणना:",
+	"centralauth-admin-info-editcount": "जम्मा सम्पादनहरूको गणना:",
 	"centralauth-admin-info-locked": "प्रतिबन्धित:",
 	"centralauth-admin-info-hidden": "लुप्त(लुकेको) स्तर",
 	"centralauth-admin-info-groups": "वैश्विक {{PLURAL:$1|समूह|समूहहरू}}:",
