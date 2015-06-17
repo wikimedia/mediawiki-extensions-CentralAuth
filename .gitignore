@@ -2,4 +2,4 @@
 *~
 *.kate-swp
 .*.swp
-/nbproject/private/
+/nbproject/private/node_modules/
