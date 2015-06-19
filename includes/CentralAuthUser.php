@@ -1536,22 +1536,18 @@ class CentralAuthUser extends AuthPluginUser {
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
-			$block = new Block(
-				/* $address */ $this->mName,
-				/* $user */ $data['id'],
-				/* $by */ 0,
-				/* $reason */ $blockReason,
-				/* $timestamp */ wfTimestampNow(),
-				/* $auto */ false,
-				/* $expiry */ $dbw->getInfinity(),
-				/* anonOnly */ false,
-				/* $createAccount */ true,
-				/* $enableAutoblock */ true,
-				/* $hideName (ipb_deleted) */ true,
-				/* $blockEmail */ true,
-				/* $allowUsertalk */ false,
-				/* $byName */ $by
-			);
+			$block = new Block( array(
+				'address' => $this->mName,
+				'user' => $data['id'],
+				'reason' => $blockReason,
+				'timestamp' => wfTimestampNow(),
+				'expiry' => $dbw->getInfinity(),
+				'createAccount' => true,
+				'enableAutoblock' => true,
+				'hideName' => true,
+				'blockEmail' => true,
+				'byText' => $by
+			) );
 
 			# On normal block, BlockIp hook would be run here, but doing
 			# that from CentralAuth doesn't seem a good idea...
