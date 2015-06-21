@@ -335,6 +335,7 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Ваш}} налог је преименован",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Ваш}} налог '''$1''' је аутоматски преименован у '''$2''' у склопу преласка на SUL систем {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Убудуће за пријављивање користите {{GENDER:$1|ваше}} ново корисничко име '''$1'''.",
+	"centralauth-log-gblrename-oldname": "Претходно корисничко име:",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
 	"centralauth-uwbr-name": "Корисничко име",
 	"centralauth-uwbr-registration": "Датум регистрације",

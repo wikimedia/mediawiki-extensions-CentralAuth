@@ -150,5 +150,7 @@
 	"centralauth-editset-return": "Qhapaq qhawanaman kutimuy",
 	"globalrenamequeue-column-rq-requested-ts": "Kichariy p'unchaw",
 	"globalrenamequeue-column-rq-completed-ts": "Wichq'ay p'unchaw",
+	"centralauth-contribs-locked": "Kay ruraqqa tukuy wikikunapi hark'asqam kachkan.\n[[Special:CentralAuth/$1|Tukuy wikikunapaq rakiqunamanta imaymanakunata]] qhaway willasunaykipaq.",
+	"centralauth-contribs-locked-log": "Kay ruraqqa tukuy wikikunapi hark'asqam kachkan.\nHark'ay hallch'api qhipaq hark'asqataqa kaypim rikunki willasunaykipaq:",
 	"centralauth-uwbr-registration": "Hallch'ay p'unchaw"
 }

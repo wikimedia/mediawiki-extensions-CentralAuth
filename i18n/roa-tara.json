@@ -120,7 +120,7 @@
 	"centralauth-admin-already-unmerged": "Salte $1, già scucchiáte",
 	"centralauth-admin-unmerge-success": "Scucchiáte cu successe $1 {{PLURAL:$1|cunde|cunde}}",
 	"centralauth-admin-delete-title": "Scangille 'u cunde utende",
-	"centralauth-admin-delete-description": "Scangellanne 'u cunde globbale avènene scangellate tutte le preferenze globbale, staccate tutte le cunde locale, e se lasse 'u nome globbale libbere pe otre utinde.\nTutte le cunde locale condinuane a esistere.\nLe password pe le cunde locale apprime d'u scuagghiamende avènene repristinate a 'u lore valore precedende.",
+	"centralauth-admin-delete-description": "Scangellanne 'u cunde globbale avènene scangellate tutte le preferenze globbale, staccate tutte le cunde locale, e se lasse 'u nome globbale libbere pe otre utinde.\nTutte le cunde locale condinuane a esistere.",
 	"centralauth-admin-delete-button": "Scangille stu cunde utende",
 	"centralauth-admin-delete-confirm": "Avveramende vuè ccu scangille stu cunde?",
 	"centralauth-admin-delete-success": "Scangellate 'u cunde globbale pe \"<nowiki>$1</nowiki>\"",

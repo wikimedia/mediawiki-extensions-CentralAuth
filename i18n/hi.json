@@ -13,7 +13,8 @@
 			"Vivek Rai",
 			"आलोक",
 			"Phoenix303",
-			"Hindustanilanguage"
+			"Hindustanilanguage",
+			"संजीव कुमार"
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
@@ -53,7 +54,7 @@
 	"centralauth-list-home-title": "होम विकी",
 	"centralauth-list-home-dryrun": "इस विकि का आपका सदस्यनाम और कूटशब्द एकत्रित खाते के लिये प्रयोग किया जाएगा।",
 	"centralauth-list-attached-title": "जुड़े हुए खाते",
-	"centralauth-list-attached": "नीचे दी गयी साइटों पर उपलब्ध \"$1\" सदस्यनाम स्वचालित रूप से एकत्रित खाते से जोड़ दिये गये हैं:",
+	"centralauth-list-attached": "नीचे दी गयी {{PLURAL:$2|साइट पर \"$1\" नामक खाता|प्रत्येक साइटों पर \"$1\" नामक खाता}} स्वचालित रूप से एकीकृत खाते से जोड़ दिये गये हैं:",
 	"centralauth-list-attached-dryrun": "नीचे दी गयी साइटों पर उपलब्ध \"$1\" सदस्यनाम स्वचालित रूप से एकत्रित खाते से जोड़ दिये जायेंगे:",
 	"centralauth-list-unattached-title": "न जुड़े हुए खाते",
 	"centralauth-list-unattached": "नीचे दी गयी {{PLURAL:$2|साइट|साइटों}} पर \"$1\" नामक {{PLURAL:$2|खाता आपका है|खाते आपके हैं}} इसकी पुष्टि स्वचालित रूप से नहीं की जा सकी;\nशायद {{PLURAL:$2|उसका|उनका}} कूटशब्द आपके मुख्य खाते से अलग है:",

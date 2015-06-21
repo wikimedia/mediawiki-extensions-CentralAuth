@@ -115,7 +115,7 @@
 	"centralauth-admin-already-unmerged": "Preskakujem $1, je že ločen",
 	"centralauth-admin-unmerge-success": "Uspešno sem ločil $1 {{PLURAL:$1|račun|računa|račune|računov}}",
 	"centralauth-admin-delete-title": "Izbriši račun",
-	"centralauth-admin-delete-description": "Brisanje globalnega računa bo izbrisalo vse globalne nastavitve, odpelo vse lokalne račune in pustilo globalno ime prosto za ostale uporabnike.\nVsi lokalni računi bodo še vedno obstajali.\nGesla lokalnih računov, ustvarjenih pred združitvijo, bodo povrnjena na njihovo vrednost pred združitvijo.",
+	"centralauth-admin-delete-description": "Brisanje globalnega računa bo odklopilo vse lokalne račune in pustilo globalno ime prosto za ostale uporabnike.\nVsi lokalni računi bodo še vedno obstajali.",
 	"centralauth-admin-delete-button": "Izbriši ta račun",
 	"centralauth-admin-delete-confirm": "Resnično želite izbrisati račun?",
 	"centralauth-admin-delete-success": "Globalni račun za »<nowiki>$1</nowiki>« je uspešno izbrisan",
