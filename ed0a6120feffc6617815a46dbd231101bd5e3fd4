@@ -16,6 +16,24 @@
       "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_02e0a1f5",
+        "filename": "includes/CreateLocalAccountJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-06-23T23:11:49Z",
+      "side": 1,
+      "message": "A race condition where the user got merged into another one since the job was scheduled? I might be misunderstanding how CA works, but it seemed like a possible error condition that\u0027s distinct from the other two.",
+      "parentUuid": "8ec42329_070f538e",
+      "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
