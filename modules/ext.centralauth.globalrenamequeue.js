@@ -4,10 +4,10 @@
 		/*global confirm */
 
 		// Confirm renames
-		$( '#mw-renamequeue-approve' ).click( function() {
+		$( '#mw-renamequeue-approve' ).click( function () {
 			return confirm( mw.msg( 'centralauth-rename-confirm' ) );
 		} );
-		$( '#mw-renamequeue-deny' ).click( function() {
+		$( '#mw-renamequeue-deny' ).click( function () {
 			return confirm( mw.msg( 'centralauth-rename-deny' ) );
 		} );
 	} );
