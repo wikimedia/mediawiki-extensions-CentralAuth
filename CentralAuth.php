@@ -315,8 +315,8 @@ $wgAutoloadClasses['GlobalUserMergeLogger'] = "$caBase/includes/GlobalRename/Glo
 $wgAutoloadClasses['GlobalUserMerge'] = "$caBase/includes/GlobalRename/GlobalUserMerge.php";
 $wgAutoloadClasses['GlobalUserMergeDatabaseUpdates'] = "$caBase/includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php";
 
-$wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/CentralAuthTestCaseUsingDatabase.php";
-$wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/CentralAuthTestUser.php";
+$wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/phpunit/CentralAuthTestCaseUsingDatabase.php";
+$wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/phpunit/CentralAuthTestUser.php";
 
 $wgAutoloadClasses['SpecialUsersWhoWillBeRenamed'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
 $wgAutoloadClasses['UsersWhoWillBeRenamedPager'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
