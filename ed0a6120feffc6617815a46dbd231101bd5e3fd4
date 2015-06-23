@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_070f538e",
+        "filename": "includes/CreateLocalAccountJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-06-23T22:19:26Z",
+      "side": 1,
+      "message": "What\u0027s the point of this check? We already know the local account does not exist...",
+      "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
