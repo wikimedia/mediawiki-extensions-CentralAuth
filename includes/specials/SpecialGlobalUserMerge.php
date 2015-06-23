@@ -42,7 +42,6 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-		$us = $this;
 		return array(
 			'finaluser' => array(
 				'id' => 'mw-globalusermerge-usernames',
