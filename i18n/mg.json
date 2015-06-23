@@ -23,6 +23,7 @@
 	"centralauth-merge-home-password": "Manana tenimiafina samihafa amin'ny tenimiafinao ny wiki renin'ireo kaonty voalisitra eo ambany ireo.\nAtsofohy ny tenimiafina ampiasaina eo amin'ny wiki reniny.",
 	"centralauth-complete": "Tapitra ny fampiraisana ny anaram-pikambana !",
 	"centralauth-incomplete": "Tsy vita tanteraka ny fampiraisana ny anaram-pikambana !",
+	"centralauth-foreign-link": "Mpikambana $1 eo amin'i $2",
 	"centralauth-merge-method-primary": "wiki trano",
 	"centralauth-merge-method-empty": "tsy misy fandraisan'anjara",
 	"centralauth-merge-method-mail": "voamarina tamin'ny alalan'ny mailaka",
@@ -30,6 +31,7 @@
 	"centralauth-merge-method-new": "kaonty vaovao",
 	"centralauth-merge-method-login": "noforonina tam-pidirana",
 	"centralauth": "Mpitantana ny mpikambana eraky ny wiki",
+	"centralauth-admin-blocklog": "laogim-panakanana",
 	"centralauth-prefs-status": "Ny kaontinao any amin'ny wiki hafa :",
 	"centralauth-prefs-complete": "Milamina daholo !",
 	"centralauth-prefs-count-attached": "Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}"
