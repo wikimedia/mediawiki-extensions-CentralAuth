@@ -1,31 +1,24 @@
 {
-	/* Common */
-
 	// Enforcing
-	"camelcase": true,
-	"curly": true,
+	"bitwise": true,
 	"eqeqeq": true,
-	"immed": true,
+	"freeze": true,
 	"latedef": true,
-	"newcap": true,
 	"noarg": true,
-	"noempty": true,
 	"nonew": true,
-	"quotmark": "single",
-	"trailing": true,
 	"undef": true,
 	"unused": true,
-	// Legacy
-	"onevar": true,
+	"strict": false,
 
-	/* Local */
+	// Relaxing
+	"es5": false,
 
 	// Environment
 	"browser": true,
+	"jquery": true,
 
-	"predef": [
-		"mediaWiki",
-		"jQuery",
-		"OO"
-	]
+	"globals": {
+		"mediaWiki": false,
+		"OO": false
+	}
 }

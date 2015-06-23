@@ -48,7 +48,7 @@
 			$( '<a>' )
 				.attr( 'href', '#' )
 				.text( mw.msg( 'centralauth-completelogin-back' ) )
-				.click( function( e ) {
+				.click( function ( e ) {
 					e.preventDefault();
 					parent.history.back();
 				} )
