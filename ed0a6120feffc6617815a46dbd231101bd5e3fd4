@@ -34,6 +34,24 @@
       "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_9d8f1678",
+        "filename": "includes/CreateLocalAccountJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-06-24T01:03:17Z",
+      "side": 1,
+      "message": "I can\u0027t think of a reason this would ever happen.. but it might be nice to have it logged if it ever did.",
+      "parentUuid": "8ec42329_02e0a1f5",
+      "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
