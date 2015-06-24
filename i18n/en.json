@@ -417,6 +417,7 @@
 	"centralauth-usermerge-confirm": "Do you really want to globally merge these users?",
 	"centralauth-usermerge-toomany": "Only $1 {{PLURAL:$1|user|users}} can be merged at once.",
 	"centralauth-usermerge-ratelimited": "As a security measure, you are only allowed to globally merge a user once per minute. Please try again after one minute.",
+	"centralauth-usermerge-nousers": "At least two valid global user accounts must be provided.",
 	"globalrenamerequest-desc": "Request a global account rename",
 	"globalrenamerequest": "Unification rename request",
 	"globalrenamerequest-legend" : "Unification rename request",
