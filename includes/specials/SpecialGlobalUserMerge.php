@@ -171,7 +171,8 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			 new GlobalRenameUserStatus( $newUser->getName() ),
 			'JobQueueGroup::singleton',
 			new GlobalUserMergeDatabaseUpdates(),
-			new GlobalUserMergeLogger( $this->getUser() )
+			new GlobalUserMergeLogger( $this->getUser() ),
+			$this->getContext()->exportSession()
 		);
 		$status = $globalUserMerge->merge( $data['reason'] );
 
