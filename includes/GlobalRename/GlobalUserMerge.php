@@ -47,6 +47,11 @@ class GlobalUserMerge {
 	private $logger;
 
 	/**
+	 * @var array
+	 */
+	private $session;
+
+	/**
 	 * @param User $performingUser
 	 * @param CentralAuthUser[] $oldCAUsers
 	 * @param CentralAuthUser $newCAUser
@@ -54,6 +59,7 @@ class GlobalUserMerge {
 	 * @param callable $jobQueueGroupGenerator Callable for getting a job queue group for a given wiki
 	 * @param GlobalUserMergeDatabaseUpdates $databaseUpdates
 	 * @param GlobalUserMergeLogger $logger
+	 * @param array $session
 	 */
 	public function __construct(
 		User $performingUser,
@@ -62,7 +68,8 @@ class GlobalUserMerge {
 		GlobalRenameUserStatus $renameuserStatus,
 		/* callable */ $jobQueueGroupGenerator,
 		GlobalUserMergeDatabaseUpdates $databaseUpdates,
-		GlobalUserMergeLogger $logger
+		GlobalUserMergeLogger $logger,
+		array $session
 	) {
 		$this->performingUser = $performingUser;
 		$this->oldCAUsers = $oldCAUsers;
@@ -71,6 +78,7 @@ class GlobalUserMerge {
 		$this->jobQueueGroupGenerator = $jobQueueGroupGenerator;
 		$this->databaseUpdates = $databaseUpdates;
 		$this->logger = $logger;
+		$this->session = $session;
 	}
 
 	private function addLogEntry( $reason ) {
@@ -188,6 +196,7 @@ class GlobalUserMerge {
 				'to' => $this->newCAUser->getName(),
 				'renamer' => $this->performingUser->getName(),
 				'from' => $users,
+				'session' => $this->session,
 			)
 		);
 	}

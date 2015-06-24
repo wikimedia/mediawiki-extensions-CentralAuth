@@ -31,14 +31,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 
-		if ( isset( $this->params['session'] ) ) {
-			// Don't carry over users or sessions because it's going to be wrong
-			// across wikis
-			$this->params['session']['userId'] = 0;
-			$this->params['session']['sessionId'] = '';
-			$callback = RequestContext::importScopedSession( $this->params['session'] );
-		}
-
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
 			// any normalization at all done by User or Title.

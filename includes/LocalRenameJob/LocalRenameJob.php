@@ -13,6 +13,13 @@ abstract class LocalRenameJob extends Job {
 
 	public function run() {
 		$this->setRenameUserStatus( new GlobalRenameUserStatus( $this->params['to'] ) );
+		if ( isset( $this->params['session'] ) ) {
+			// Don't carry over users or sessions because it's going to be wrong
+			// across wikis
+			$this->params['session']['userId'] = 0;
+			$this->params['session']['sessionId'] = '';
+			$callback = RequestContext::importScopedSession( $this->params['session'] );
+		}
 		try {
 			$this->doRun();
 		} catch ( Exception $e ) {
