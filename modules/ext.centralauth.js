@@ -9,7 +9,7 @@
 				.addClass( 'merge-method-help-div' )
 				.hide()
 				.click( function () {
-					$(this).fadeOut();
+					$( this ).fadeOut();
 				} );
 			mw.util.$content.append( $methodHint );
 		}
@@ -48,7 +48,7 @@
 			$( '<a>' )
 				.attr( 'href', '#' )
 				.text( mw.msg( 'centralauth-completelogin-back' ) )
-				.click( function( e ) {
+				.click( function ( e ) {
 					e.preventDefault();
 					parent.history.back();
 				} )
@@ -56,7 +56,7 @@
 
 		// OnClick event listener for the "(?)" tooltips on Special:CentralAuth
 		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function ( event ) {
-			showMethodHint( $(this).data( 'centralauth-mergemethod' ), event );
+			showMethodHint( $( this ).data( 'centralauth-mergemethod' ), event );
 		} );
 
 		// Confirm account deletions
