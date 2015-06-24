@@ -134,7 +134,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	public function onSubmit( array $data ) {
 		$newUser = User::newFromName( $data['finaluser'], 'creatable' );
 		if ( !$newUser ) {
-			return Status::newFatal( 'centralauth-usermerge-invalidname' );
+			return Status::newFatal( 'centralauth-usermerge-invalid' );
 		}
 
 		if ( !$this->checkRateLimit() ) {

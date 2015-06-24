@@ -427,6 +427,7 @@
 	"centralauth-usermerge-invalid": "Error message shown if the user enters invalid input. Parameters:\n* $1 - the invalid input",
 	"centralauth-usermerge-already": "Error message if a user is already being globally renamed or merged.\n\nParmaeters:\n* $1 - the user's username",
 	"centralauth-usermerge-noself": "Error message shown if a user tries merging accounts with themselves.",
+	"centralauth-usermerge-nousers": "Error message shown if a user does not provide two or more users to merge.",
 	"action-centralauth-usermerge": "{{doc-action|centralauth-usermerge}}",
 	"right-centralauth-usermerge": "{{doc-right|centralauth-usermerge}}",
 	"centralauth-usermerge-confirm": "Confirmation message displayed in a JavaScript alert before the form is submitted.\n\nSee also:\n* {{msg-mw|Centralauth-rename-confirm}}",
