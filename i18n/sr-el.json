@@ -114,7 +114,7 @@
 	"centralauth-admin-already-unmerged": "Preskačem $1, već je razdvojen",
 	"centralauth-admin-unmerge-success": "{{PLURAL:$1|Razdvojen je $1 nalog|Razdvojena su $1 naloga|Razdvojeno je $1 naloga}}",
 	"centralauth-admin-delete-title": "Brisanje naloga",
-	"centralauth-admin-delete-description": "Brisanje globalnog naloga će takođe obrisati globalna podešavanja, razdvojiti sve lokalne naloge, i omogućiti drugim korisnicima da preuzmu to globalno ime. Svi lokalni nalozi će i dalje postojati. Lozinke lokalnih naloga koje su važile pre spajanja u globalni nalog će biti vraćene na svoje pređašnje vrednosti.",
+	"centralauth-admin-delete-description": "Brisanje globalnog naloga će razdvojiti sve lokalne naloge i omogućiti drugim korisnicima da preuzmu to globalno ime.\nSvi lokalni nalozi će i dalje postojati.",
 	"centralauth-admin-delete-button": "Obriši ovaj nalog",
 	"centralauth-admin-delete-confirm": "Da li stvarno želite da obrišete ovaj nalog?",
 	"centralauth-admin-delete-success": "Uspešno obrisan globalni nalog za „<nowiki>$1</nowiki>“",
