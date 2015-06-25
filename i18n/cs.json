@@ -393,6 +393,7 @@
 	"centralauth-usermerge-confirm": "Opravdu chcete globálně sloučit tyto uživatele?",
 	"centralauth-usermerge-toomany": "Najednou jde slučovat jen $1 {{PLURAL:$1|uživatele|uživatele|uživatelů}}.",
 	"centralauth-usermerge-ratelimited": "Jako bezpečnostní opatření je povoleno globální slučování maximálně jednou za minutu. Za minutu to prosím zkuste znovu.",
+	"centralauth-usermerge-nousers": "Musí být uvedeny nejméně dva platné globální uživatelské účty.",
 	"globalrenamerequest-desc": "Žádost o přejmenování globálního účtu",
 	"globalrenamerequest": "Žádost o přejmenování pro sjednocení",
 	"globalrenamerequest-legend": "Žádost o přejmenování pro sjednocení",
