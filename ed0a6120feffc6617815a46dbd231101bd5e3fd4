@@ -69,6 +69,24 @@
       "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_790ee937",
+        "filename": "includes/CreateLocalAccountJob.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-06-25T18:46:13Z",
+      "side": 1,
+      "message": "Done. Opened T103887 for the generic case.",
+      "parentUuid": "8ec42329_bde3f230",
+      "revId": "ed0a6120feffc6617815a46dbd231101bd5e3fd4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
