@@ -92,6 +92,10 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	}
 
 	function onSubmit( array $data ) {
+		if ( !isset( $data['username'] ) || $data['username'] === null ) {
+			$this->showCurrentRenames();
+			return false;
+		}
 		$name = User::getCanonicalName( $data['username'], 'usable' );
 		if ( !$name ) {
 			$this->showCurrentRenames();
