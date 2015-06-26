@@ -395,6 +395,7 @@
 	"centralauth-usermerge-confirm": "Está seguro de querer fusionar globalmente estes usuarios?",
 	"centralauth-usermerge-toomany": "Só $1 {{PLURAL:$1|usuario|usuarios}} poden ser fusionados ao mesmo tempo.",
 	"centralauth-usermerge-ratelimited": "Como medida de seguridade, só se permite fusionar globalmente a un usuario unha vez por minuto. Por favor, inténtao de novo tras un minuto.",
+	"centralauth-usermerge-nousers": "Debe indicar polo menos dúas contas globais de usuario válidas.",
 	"globalrenamerequest-desc": "Solicitar un cambio de nome de conta global",
 	"globalrenamerequest": "Solicitude de cambio de nome para a unificación",
 	"globalrenamerequest-legend": "Solicitude de cambio de nome para a unificación",

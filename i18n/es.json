@@ -44,7 +44,8 @@
 			"Amitie 10g",
 			"Tusca",
 			"Jmvkrecords",
-			"Ryo567"
+			"Ryo567",
+			"Chris TR"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -431,6 +432,7 @@
 	"centralauth-usermerge-confirm": "¿Estás seguro de que quieres fusionar globalmente a estos usuarios?",
 	"centralauth-usermerge-toomany": "Sólo $1 {{PLURAL:$1|usuario puede|usuarios pueden}} fusionarse de una vez.",
 	"centralauth-usermerge-ratelimited": "Como medida de seguridad sólo se te permite fusionar globalmente a un usuario por minuto. Por favor, inténtalo transcurrido un minuto.",
+	"centralauth-usermerge-nousers": "Deben proporcionarse al menos dos cuentas de usuario válidas.",
 	"globalrenamerequest-desc": "Solicitar un cambio global de nombre de usuario",
 	"globalrenamerequest": "Solicitud de renombrado de unificación",
 	"globalrenamerequest-legend": "Solicitud de cambio de nombre de unificación",

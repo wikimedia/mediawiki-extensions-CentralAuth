@@ -367,6 +367,7 @@
 	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
 	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
 	"centralauth-usermerge-toomany": "Nëmme(n) $1 Benotzer {{Plural:$1|kann|kënnen}} an enger Kéier zesummegeluecht ginn.",
+	"centralauth-usermerge-nousers": "Et musse mindestens zwee valabel Global-Benotzerkonten ugi ginn.",
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
 	"globalrenamerequest": "Ufro fir eng eenheetlech Ëmbenennung",
 	"globalrenamerequest-username-label": "Aktuelle Benotzernumm:",

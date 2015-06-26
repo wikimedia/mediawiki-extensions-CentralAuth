@@ -405,6 +405,7 @@
 	"centralauth-usermerge-confirm": "Tem a certeza que pretende fundir estes utilizadores globalmente?",
 	"centralauth-usermerge-toomany": "Apenas $1 {{PLURAL:$1|utilizador pode ser fundido|utilizadores podem ser fundidos}} ao mesmo tempo.",
 	"centralauth-usermerge-ratelimited": "Como medida de segurança, só é permitido fundir uma conta por minuto. Por favor, tente novamente depois de passar um minuto.",
+	"centralauth-usermerge-nousers": "Devem ser fornecidas, pelo menos, duas contas globais válidas.",
 	"globalrenamerequest-desc": "Solicitar renomeação de conta global",
 	"globalrenamerequest": "Pedido de renomeação de unificação",
 	"globalrenamerequest-legend": "Pedido de renomeação de unificação",

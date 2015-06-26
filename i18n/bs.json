@@ -4,7 +4,8 @@
 			"CERminator",
 			"KWiki",
 			"Kolega2357",
-			"Palapa"
+			"Palapa",
+			"Srdjan m"
 		]
 	},
 	"mergeaccount": "Status spajanja korisničkih računa",
@@ -90,6 +91,7 @@
 	"centralauth-admin-info-editcount": "Ukupan broj izmjena:",
 	"centralauth-admin-info-locked": "Zaključano:",
 	"centralauth-admin-info-hidden": "Sakriveni nivo:",
+	"centralauth-admin-info-attached": "Broj povezanih računa:",
 	"centralauth-admin-yes": "da",
 	"centralauth-admin-no": "ne",
 	"centralauth-admin-hidden-list": "sa javnih spiskova",

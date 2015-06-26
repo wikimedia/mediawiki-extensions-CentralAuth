@@ -399,6 +399,7 @@
 	"centralauth-usermerge-confirm": "Möchtest du wirklich diese Benutzer global zusammenführen?",
 	"centralauth-usermerge-toomany": "Es {{PLURAL:$1|kann nur ein|können nur $1}} Benutzer gleichzeitig zusammengeführt werden.",
 	"centralauth-usermerge-ratelimited": "Aus Sicherheitsgründen bist du berechtigt nur einen Benutzer pro Minute global zusammenzuführen. Bitte versuche es nach einer Minute erneut.",
+	"centralauth-usermerge-nousers": "Es müssen mindestens zwei gültige globale Benutzerkonten angegeben werden.",
 	"globalrenamerequest-desc": "Eine globale Benutzerkontenumbenennung beantragen",
 	"globalrenamerequest": "Einheitliche Umbenennung beantragen",
 	"globalrenamerequest-legend": "Einheitliche Umbenennung beantragen",

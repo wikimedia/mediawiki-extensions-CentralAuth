@@ -396,6 +396,7 @@
 	"centralauth-usermerge-confirm": "האם ברצונך באמת למזג את החשבונות האלה גלובלית?",
 	"centralauth-usermerge-toomany": "אפשר למזג רק {{PLURAL:$1|משתמש אחד|$1 משתמשים}} בפעם אחת.",
 	"centralauth-usermerge-ratelimited": "בתור אמצעי אבטחה, מותר לך למזג משתמש גלובלי פעם בדקה. נא להמתין ולנסות שוב בעוד דקה.",
+	"centralauth-usermerge-nousers": "יש לתת לפחות שני חשבונות גלובליים תקינים.",
 	"globalrenamerequest-desc": "בקשת שינוי שם חשבון גלובלי",
 	"globalrenamerequest": "בקשת שינוי שם לצורך איחוד חשבונות",
 	"globalrenamerequest-legend": "בקשת שינוי שם לצורך איחוד חשבונות",
