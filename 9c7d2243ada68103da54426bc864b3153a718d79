@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_01a4ff9c",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-06-26T18:25:03Z",
+      "side": 1,
+      "message": "0 is a valid username",
+      "revId": "9c7d2243ada68103da54426bc864b3153a718d79",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
