@@ -4,7 +4,8 @@
 			"Abhirama",
 			"Nayvik",
 			"Omshivaprakash",
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Pavanaja"
 		]
 	},
 	"mergeaccount": "ಪ್ರವೇಶ ಏಕೀಕರಣ ಸ್ಥಿತಿ",
@@ -35,6 +36,7 @@
 	"centralauth-merge-method-new": "ಹೊಸ ಖಾತೆ",
 	"centralauth-finish-password": "ಪ್ರವೇಶಪದ:",
 	"centralauth-finish-login": "ಲಾಗ್ ಇನ್",
+	"centralauth-ro": "ಎಲ್ಲ ವಿಕಿಗಳ ಖಾತೆ ವಿವರ",
 	"centralauth-admin-username": "ಬಳಕೆದಾರ ಹೆಸರು:",
 	"centralauth-admin-info-username": "ಬಳಕೆದಾರ ಹೆಸರು:",
 	"centralauth-admin-info-registered": "ನೋಂದಾಯಿತ:",

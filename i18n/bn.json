@@ -283,6 +283,7 @@
 	"logentry-gblrename-promote": "$1 বৈশ্বিকভাবে $4 কে $5-এ {{GENDER:$2|নামান্তরিত করেছেন}}",
 	"centralauth-usermerge-form-usernames": "বর্তমান ব্যবহারকারী নাম",
 	"centralauth-usermerge-form-reason": "কারণ",
+	"centralauth-usermerge-nousers": "অন্তত দুটি বৈধ বৈশ্বিক ব্যবহারকারী অ্যাকাউন্ট প্রদান করতে হবে।",
 	"globalrenamerequest": "একীকরণ পুনঃনামকরণের অনুরোধ",
 	"globalrenamerequest-username-label": "বর্তমান ব্যবহারকারী নাম:",
 	"globalrenamerequest-username-help": "এটি এখন আপনার ব্যবহারকারী নাম।",

@@ -23,7 +23,8 @@
 			"朝彦",
 			"Miya",
 			"W.CC",
-			"2nd-player"
+			"2nd-player",
+			"Sujiniku"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -141,7 +142,7 @@
 	"centralauth-admin-already-unmerged": "既に統合解除されている$1をスキップ",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|アカウント}}を統合解除しました。",
 	"centralauth-admin-delete-title": "アカウントの削除",
-	"centralauth-admin-delete-description": "グローバルアカウントを削除すると、グローバルな個人設定がすべて削除され、ローカルアカウントがすべて統合解除され、他の利用者がこの利用者名のグローバルアカウントを取得できるようになります。\nローカルアカウントはすべて存続します。\n統合以前に作成したアカウントのパスワードは、統合以前のものに戻ります。",
+	"centralauth-admin-delete-description": "グローバルアカウントを削除すると、ローカルアカウントがすべて統合解除され、他の利用者がこの利用者名のグローバルアカウントを取得できるようになります。\nローカルアカウントはすべて存続します。",
 	"centralauth-admin-delete-button": "このアカウントを削除",
 	"centralauth-admin-delete-confirm": "このアカウントを本当に削除しますか?",
 	"centralauth-admin-delete-success": "グローバルアカウント「<nowiki>$1</nowiki>」を削除しました",

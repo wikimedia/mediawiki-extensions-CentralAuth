@@ -511,6 +511,7 @@
 	"apihelp-setglobalaccountstatus-param-locked": "Ändert, ob dieser Benutzer gesperrt ist oder nicht.",
 	"apihelp-setglobalaccountstatus-param-hidden": "Ändert, ob dieser Benutzer nicht versteckt ist, in Listen versteckt oder unterdrückt.",
 	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Optionaler MD5-Hash des erwarteten aktuellen <Benutzernamens>:<versteckt>:<gesperrt>, um Bearbeitungskonflikte festzustellen. Für gesperrt <gesperrt> auf 1 festlegen, 0 für freigegeben.",
 	"apihelp-setglobalaccountstatus-example-1": "Sperrt das globale Benutzerkonto für [[User:Example]] mit der Begründung „Spam“",
 	"apihelp-setglobalaccountstatus-example-2": "Entsperrt und unterdrückt das globale Benutzerkonto für [[User:Example]] mit der Begründung „Ich kann“",
 	"centralauth-log-gblrename-oldname": "Früherer Benutzername",

@@ -395,7 +395,7 @@
 	"centralauth-usermerge-notinstalled": "未安裝 UserMerge 擴充套件。",
 	"centralauth-usermerge-disabled": "已停用全域使用者合併工具。",
 	"logentry-gblrename-merge": "$1 已全域{{GENDER:$2|合併}} $4 至 $5",
-	"centralauth-usermerge-queued": "合併 $1 至 $2 已加入排程。\n\n可於 [[Special:GlobalRenameProgress/$3]] 檢視進度。",
+	"centralauth-usermerge-queued": "將 $1 合併至 $2 的工作已排程。\n\n可於 [[Special:GlobalRenameProgress/$3]] 檢視其進度。",
 	"centralauth-usermerge-invalid": "目前沒有使用名稱 \"$1\" 的全域帳號。",
 	"centralauth-usermerge-already": "目前已有 $1 的全域重新命名或合併正在進行中。",
 	"centralauth-usermerge-noself": "您無法合併您自己的帳號。",

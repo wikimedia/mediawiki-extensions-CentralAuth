@@ -22,7 +22,8 @@
 			"وهراني",
 			"Shbib Al-Subaie",
 			"Omda4wady",
-			"Khaled"
+			"Khaled",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -487,5 +488,9 @@
 	"apihelp-query+globaluserinfo-example-1": "احصل على المعلومات عن حساب الدخول الموحد",
 	"apihelp-query+wikisets-param-orderbyname": "رتب النتائج وفق الاسم.",
 	"apihelp-setglobalaccountstatus-param-reason": "سبب تغيير وضع المستخدم.",
-	"centralauth-log-gblrename-oldname": "أسم المستخدم السابق :"
+	"centralauth-log-gblrename-oldname": "أسم المستخدم السابق :",
+	"centralauth-uwbr-name": "اسم المستخدم",
+	"centralauth-uwbr-registration": "تاريخ التسجيل",
+	"centralauth-uwbr-registration-nodate": "غير معروف",
+	"centralauth-uwbr-editcount": "عدد التعديلات"
 }

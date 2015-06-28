@@ -8,7 +8,8 @@
 			"Subi",
 			"Unai Fdz. de Betoño",
 			"Xabier Armendaritz",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Sator"
 		]
 	},
 	"mergeaccount": "Saio-hasiera bateratua",
@@ -26,6 +27,7 @@
 	"centralauth-incomplete": "Saio-hasiera bateratua amaitu gabe!",
 	"centralauth-error-locked": "Ez duzu aldaketarik burutu zure kontua blokeatuta baitago.",
 	"centralauth-list-home-title": "Wiki nagusia",
+	"centralauth-foreign-link": "$1 lankidea $2(a)n",
 	"centralauth-foreign-contributions": "{{PLURAL:$1|Ekarpen $1|$1 ekarpen}} $2(e)n",
 	"centralauth-merge-method-primary": "wiki nagusia",
 	"centralauth-merge-method-empty": "ekarpenik gabe",
