@@ -266,6 +266,7 @@
 	"centralauth-rename-badusername": "Traženo korisničko ime nije ispravno.",
 	"centralauth-rename-progress-username": "Korisničko ime",
 	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",
+	"log-name-gblrename": "Zapisnik globalnih preimenovanja",
 	"globalrenamerequest": "Zahtjev ujedinjenog preimenovanja",
 	"globalrenamerequest-legend": "Zahtjev ujedinjenog preimenovanja",
 	"globalrenamerequest-pretext": "Ovdje podnosite zahtjev za promjenu korisničkog imena na svim projektima.\n\nSvi vaši prethodni doprinosi će biti pripisani novom korisničkom imenu.\n\nNakon što podnesete zahtjev za novo korisničko ime, Wikimedia stjuardi će dobiti obavještenje da izvrše preimenovanje. Bit ćete obaviješteni putem e-pošte kad preimenovanje bude završeno.",
