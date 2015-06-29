@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_e7a212f9",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 1196
+      },
+      "writtenOn": "2015-06-29T19:46:30Z",
+      "side": 1,
+      "message": "Have you considered moving this into a private helper function to avoid repetition? For example:\n\n    $params \u003d self::buildParams( array(\n      \u0027type\u0027 \u003d\u003e \u0027icon\u0027,\n      \u0027from\u0027 \u003d\u003e wfWikiID()\n    ) );\n\n    // ...\n\n    private static function buildParams( $baseParams ) {\n      if (\n        class_exists( \u0027MobileContext\u0027 )\n        \u0026\u0026 MobileContext::singleton()-\u003eisMobileDomainRequest()\n      ) {\n        $baseParams +\u003d array( \u0027mobile\u0027 \u003d\u003e 1 );\n      }\n\n      return $baseParams;\n    }",
+      "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
