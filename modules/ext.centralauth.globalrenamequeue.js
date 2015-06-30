@@ -1,14 +1,14 @@
-( function ( mw, $ ) {
+( function ( mw, $, OO ) {
 	'use strict';
 	$( function () {
 		/*global confirm */
 
 		// Confirm renames
-		$( '#mw-renamequeue-approve' ).click( function () {
+		OO.ui.infuse( 'mw-renamequeue-approve' ).on( 'click', function () {
 			return confirm( mw.msg( 'centralauth-rename-confirm' ) );
 		} );
-		$( '#mw-renamequeue-deny' ).click( function () {
+		OO.ui.infuse( 'mw-renamequeue-deny' ).on( 'click', function () {
 			return confirm( mw.msg( 'centralauth-rename-deny' ) );
 		} );
 	} );
-}( mediaWiki, jQuery ) );
+}( mediaWiki, jQuery, OO ) );

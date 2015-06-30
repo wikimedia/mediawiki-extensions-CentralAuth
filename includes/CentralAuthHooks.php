@@ -91,7 +91,10 @@ class CentralAuthHooks {
 				'messages' => array(
 					'centralauth-rename-confirm',
 					'centralauth-rename-deny'
-				)
+				),
+				'dependencies' => array(
+					'oojs-ui',
+				),
 			);
 			$wgResourceModules['ext.centralauth.globalrenamequeue.styles'] = array(
 				'position'		=> 'top',
