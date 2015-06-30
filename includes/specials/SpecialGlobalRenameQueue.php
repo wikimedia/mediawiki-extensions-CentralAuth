@@ -237,7 +237,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-title', array( $req->getName() )
 		);
 
-		$form = HTMLForm::factory( 'vform',
+		$form = HTMLForm::factory( 'ooui',
 			array(
 				'rid' => array(
 					'default' => $req->getId(),
@@ -283,22 +283,23 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->msg( 'globalrenamequeue-request-approve-text' )->text(),
 			'mw-renamequeue-approve',
 			array(
-				'class' => 'mw-ui-constructive mw-ui-flush-right',
+				'class' => 'mw-globalrenamequeue-submit',
+				'flags' => array( 'constructive', 'primary' ),
+				'infusable' => true,
 			)
 		);
 		$form->addButton( 'deny',
 			$this->msg( 'globalrenamequeue-request-deny-text' )->text(),
 			'mw-renamequeue-deny',
 			array(
-				'class' => 'mw-ui-destructive mw-ui-flush-right',
+				'class' => 'mw-globalrenamequeue-submit',
+				'flags' => array( 'destructive', 'primary' ),
+				'infusable' => true,
 			)
 		);
 		$form->addButton( 'cancel',
 			$this->msg( 'globalrenamequeue-request-cancel-text' )->text(),
-			'mw-renamequeue-cancel',
-			array(
-				'class' => 'mw-ui-quiet mw-ui-flush-left',
-			)
+			'mw-renamequeue-cancel'
 		);
 
 		$form->setId( 'mw-globalrenamequeue-request' );
