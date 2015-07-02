@@ -31,7 +31,8 @@ class LocalUserMergeJob extends LocalRenameJob {
 			$um = new MergeUser(
 				User::newFromName( $olduser ),
 				$toUser,
-				new UserMergeLogger()
+				new UserMergeLogger(),
+				MergeUser::USE_MULTI_COMMIT
 			);
 			$um->merge( $renamingUser );
 			$um->delete( $renamingUser, 'wfMessage' );
