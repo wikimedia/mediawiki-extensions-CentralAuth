@@ -116,7 +116,7 @@
 	"centralauth-admin-hidden-oversight": "پنهان‌شده",
 	"centralauth-admin-list-legend-ro": "فهرست حساب‌های محلی",
 	"centralauth-admin-list-legend-rw": "حساب‌های محلی را جدا کن",
-	"centralauth-admin-unattached": "متصل نشده‌است",
+	"centralauth-admin-unattached": "متصل نشده است",
 	"centralauth-admin-blocked2": "مسدودشده، $2 در $3 انقضا میابد",
 	"centralauth-admin-blocked2-indef": "نامحدود بسته شده‌است.",
 	"centralauth-admin-blocked-reason": "دلیل: $1",
