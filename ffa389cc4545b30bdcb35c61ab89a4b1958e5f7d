@@ -16,6 +16,24 @@
       "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_8197653c",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 1196
+      },
+      "writtenOn": "2015-07-02T10:39:21Z",
+      "side": 1,
+      "message": "As the above doesn\u0027t quite get you what you want, how about:\n\n    protected static function isMobileDomainRequest() {\n        return class_exists( \u0027MobileContext\u0027 ) \u0026\u0026 MobileContext::singleton()-\u003eisMobileDomainRequest();\n    }\n\nThen at least the methods you\u0027re modifying here will be agnostic to how you\u0027re detecting a mobile/desktop.",
+      "parentUuid": "8ec42329_e7a212f9",
+      "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
