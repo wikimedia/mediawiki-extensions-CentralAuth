@@ -2014,24 +2014,6 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * Returns a list of all groups where the user is a member of the group on at
-	 * least one wiki where their account is attached.
-	 * @return array of group names where the user is a member on at least one wiki
-	 */
-	public function getLocalGroups() {
-		$localgroups = array();
-		array_map(
-			function ( $local ) use ( &$localgroups ) {
-				$localgroups = array_unique( array_merge(
-					$localgroups, $local['groups']
-				) );
-			},
-			$this->queryAttached()
-		);
-		return $localgroups;
-	}
-
-	/**
 	 * Get information about each local user attached to this account
 	 *
 	 * @return array Map of database name to property table with members:
