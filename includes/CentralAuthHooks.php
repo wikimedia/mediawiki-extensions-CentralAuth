@@ -2061,28 +2061,4 @@ class CentralAuthHooks {
 			);
 		}
 	}
-
-	/**
-	 * Apply global password policies when calculating the effective policy for
-	 * a user.
-	 * @param User $user
-	 * @param array $effectivePolicy
-	 */
-	public static function onPasswordPoliciesForUser( User $user, array &$effectivePolicy ) {
-		global $wgCentralAuthGlobalPasswordPolicies;
-		$central = CentralAuthUser::getInstance( $user );
-		if ( $central->exists() ) {
-			$localPolicyGroups = array_intersect(
-				array_keys( $wgCentralAuthGlobalPasswordPolicies ),
-				$central->getLocalGroups()
-			);
-
-			$effectivePolicy = UserPasswordPolicy::getPoliciesForGroups(
-				$wgCentralAuthGlobalPasswordPolicies,
-				array_merge( $central->getGlobalGroups(), $localPolicyGroups ),
-				$effectivePolicy
-			);
-		}
-		return true;
-	}
 }
