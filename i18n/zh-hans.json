@@ -415,6 +415,7 @@
 	"centralauth-usermerge-confirm": "您真希望全域合并这些用户？",
 	"centralauth-usermerge-toomany": "每次只能合并$1位用户。",
 	"centralauth-usermerge-ratelimited": "出于安全原因，您只允许每分钟全域合并一位用户。请等待一分钟后再重试。",
+	"centralauth-usermerge-nousers": "必须至少提供两个有效的全域用户账户。",
 	"globalrenamerequest-desc": "申请全域账户重命名",
 	"globalrenamerequest": "统一账户重命名申请",
 	"globalrenamerequest-legend": "统一账户重命名申请",
