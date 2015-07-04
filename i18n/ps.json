@@ -171,6 +171,7 @@
 	"globalrenamequeue-request-reason": "<strong>د نوم بدلون د غوښتنې سبب</strong>\n:$1",
 	"globalrenamequeue-request-approve-text": "نوم بدلون منل",
 	"globalrenamequeue-request-cancel-text": "ناگارل",
+	"userswhowillberenamed": "هغه کارنان چې نوم به يې بدلېږي",
 	"centralauth-uwbr-name": "کارن-نوم",
 	"centralauth-uwbr-registration-nodate": "ناجوت",
 	"centralauth-uwbr-editcount": "د سمونونو شمېر",
