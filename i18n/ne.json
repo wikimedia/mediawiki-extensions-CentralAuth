@@ -145,7 +145,7 @@
 	"centralauth-prefs-view": "वैश्विक प्रयोगकर्ता खाता हेर्ने",
 	"centralauth-renameuser-reserved": "प्रयोगकर्ता $2 वैश्विक खाताको निम्ति आरक्षित छ।",
 	"centralauth-invalid-wiki": "त्यस्तो विकि आँकडा नभएको: $1",
-	"centralauth-login-progress": "तपाईंलाई {{int:Centralauth-groupname}}का विकीहरुमा प्रवेश गराइँदै:",
+	"centralauth-login-progress": "तपाईंलाई {{int:Centralauth-groupname}}का विकिहरूमा प्रवेश गराइँदै:",
 	"centralauth-log-status-hidden": "लुकाइएको",
 	"centralauth-log-status-none": "(कुनै पनि होइन)",
 	"centralauth-rightslog-name": "वैश्विक अधिकार लग",

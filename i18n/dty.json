@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"जनक राज भट्ट",
-			"रमेश सिंह बोहरा"
+			"रमेश सिंह बोहरा",
+			"राम प्रसाद जोशी"
 		]
 	},
 	"centralauth-foreign-link": "$2मी $1 प्रयोगकर्ता",
 	"centralauth-foreign-contributions": " $2मि $1 {{PLURAL:$1|योगदान|योगदानहरू}}",
 	"centralauth-merge-method-login": "झान्याद्वार बनौन्या",
-	"centralauth-admin-blocklog": "रोकावट लग"
+	"centralauth-admin-blocklog": "रोकावट लग",
+	"centralauth-login-progress": "तमलाई {{int:Centralauth-groupname}}का विकिहरूमी प्रवेश गराइँदै:"
 }
