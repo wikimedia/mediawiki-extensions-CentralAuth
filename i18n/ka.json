@@ -381,7 +381,7 @@
 	"globalrenamerequest-email2-label": "ელექტრონული ფოსტის მისამართის დადასტურება",
 	"globalrenamerequest-email-invalid": "გაუქმებული ელექტრონული ფოსტის მისამართი",
 	"globalrenamerequest-reason-label": "თხოვნის მიზეზი",
-	"globalrenamerequest-submit-text": "სახელის შეცვლის ხოვნა",
+	"globalrenamerequest-submit-text": "სახელის შეცვლის მოთხოვნა",
 	"globalrenamerequest-save-error": "მოთხოვნა არ იქნა შენახული. გთხოვთ, სცადეთ ხელახლა",
 	"globalrenamerequest-status-title": "გადარქმევის მოთხოვნა ელოდება დამტკიცებას",
 	"centralauth-usermerge-form-adduser": "მომხმარებლის დამატება",
