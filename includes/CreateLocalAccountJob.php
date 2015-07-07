@@ -50,7 +50,10 @@ class CentralAuthCreateLocalAccountJob extends Job {
 			return true;
 		}
 
-		CentralAuthHooks::attemptAddUser( $user );
+		$success = CentralAuthHooks::attemptAddUser( $user );
+		if ( $success ) {
+			$centralUser->invalidateCache();
+		}
 
 		return true;
 	}
