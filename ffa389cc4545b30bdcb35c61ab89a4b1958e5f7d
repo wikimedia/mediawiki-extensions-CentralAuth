@@ -52,6 +52,24 @@
       "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_d9b696d7",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-07-08T22:12:06Z",
+      "side": 1,
+      "message": "Yeah, I\u0027ll do that. Once I have the other fires in CA dealt with.",
+      "parentUuid": "8ec42329_3998fa7b",
+      "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
