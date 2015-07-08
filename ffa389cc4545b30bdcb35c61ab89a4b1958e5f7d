@@ -34,6 +34,24 @@
       "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_3998fa7b",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2015-07-08T22:06:19Z",
+      "side": 1,
+      "message": "Seems like a good idea to me (the 2nd suggestion).",
+      "parentUuid": "8ec42329_8197653c",
+      "revId": "ffa389cc4545b30bdcb35c61ab89a4b1958e5f7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
