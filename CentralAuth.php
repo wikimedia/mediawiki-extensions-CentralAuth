@@ -268,6 +268,13 @@ $wgCentralAuthEnableGlobalRenameRequest = false;
 $wgCentralAuthCheckSULMigration = false;
 
 /**
+ * Global Password Policies. These are applied like local password policies,
+ * the strongest policy applicable to a user is used.
+ * @var array
+ */
+$wgCentralAuthGlobalPasswordPolicies = array();
+
+/**
  * Initialization of the autoloaders, and special extension pages.
  */
 $caBase = __DIR__;
@@ -391,6 +398,7 @@ $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecia
 $wgHooks['SpecialPage_initList'][] = 'CentralAuthHooks::onSpecialPage_initList';
 $wgHooks['ResourceLoaderForeignApiModules'][] = 'CentralAuthHooks::onResourceLoaderForeignApiModules';
 $wgHooks['ResourceLoaderTestModules'][] = 'CentralAuthHooks::onResourceLoaderTestModules';
+$wgHooks['PasswordPoliciesForUser'][] = 'CentralAuthHooks::onPasswordPoliciesForUser';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
