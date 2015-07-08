@@ -2195,4 +2195,50 @@ class CentralAuthHooks {
 		);
 		return true;
 	}
+
+	/**
+	 * Apply global password policies when calculating the effective policy for
+	 * a user.
+	 * @param User $user
+	 * @param array $effectivePolicy
+	 */
+	public static function onPasswordPoliciesForUser( User $user, array &$effectivePolicy ) {
+		global $wgCentralAuthGlobalPasswordPolicies;
+		$central = CentralAuthUser::getInstance( $user );
+
+		if ( $central->exists() ) {
+			try {
+				$localPolicyGroups = array_intersect(
+					array_keys( $wgCentralAuthGlobalPasswordPolicies ),
+					$central->getLocalGroups()
+				);
+			} catch ( Exception $e ) {
+				// T104615 - race condition in attaching user and creating local
+				// wiki account can cause this Exception from
+				// CentralAuthUser::localUserData. Allow the password for now, and
+				// we'll catch them next login if their password isn't valid.
+				if ( $user->idForName() === 0
+					&& substr( $e->getMessage(), 0 , 34 ) === 'Could not find local user data for'
+				) {
+					wfDebugLog(
+						'CentralAuth',
+						sprintf( 'Bug T104615 hit for %s@%s',
+							$user->getName(),
+							wfWikiId()
+						)
+					);
+					return true;
+				}
+
+				throw $e;
+			}
+
+			$effectivePolicy = UserPasswordPolicy::getPoliciesForGroups(
+				$wgCentralAuthGlobalPasswordPolicies,
+				array_merge( $central->getGlobalGroups(), $localPolicyGroups ),
+				$effectivePolicy
+			);
+		}
+		return true;
+	}
 }
