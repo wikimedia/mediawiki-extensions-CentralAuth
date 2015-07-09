@@ -2713,16 +2713,18 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	static function getSession() {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
-		global $wgMemc;
+
 		if ( !$wgCentralAuthCookies ) {
 			return array();
 		}
 		if ( !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			return array();
 		}
+
 		$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		$key = self::memcKey( 'session', $id );
-		$data = $wgMemc->get( $key );
+		$data = ObjectCache::getMainStashInstance()->get( $key );
+
 		if ( $data === false || $data === null ) {
 			return array();
 		} else {
@@ -2747,19 +2749,23 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return string Session ID
 	 */
 	static function setSession( $data, $refreshId = false, $secure = null ) {
-		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix, $wgMemc;
+		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
+
 		if ( !$wgCentralAuthCookies ) {
 			return null;
 		}
+
 		if ( $refreshId || !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			$id = is_string( $refreshId ) ? $refreshId : MWCryptRand::generateHex( 32 );
 			self::setCookie( 'Session', $id, 0, $secure );
 		} else {
 			$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		}
+
 		$data['sessionId'] = $id;
 		$key = self::memcKey( 'session', $id );
-		$wgMemc->set( $key, $data, 86400 );
+		ObjectCache::getMainStashInstance()->set( $key, $data, 86400 );
+
 		return $id;
 	}
 
@@ -2768,17 +2774,18 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	static function deleteSession() {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
-		global $wgMemc;
+
 		if ( !$wgCentralAuthCookies ) {
 			return;
 		}
 		if ( !isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 			return;
 		}
+
 		$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		wfDebug( __METHOD__ . ": Deleting session $id\n" );
 		$key = self::memcKey( 'session', $id );
-		$wgMemc->delete( $key );
+		ObjectCache::getMainStashInstance()->delete( $key );
 	}
 
 	/**
