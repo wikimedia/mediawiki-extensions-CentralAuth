@@ -196,7 +196,7 @@
 	"centralauth-prefs-count-unattached": "Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit deinem Namen.",
 	"centralauth-prefs-detail-unattached": "Für dieses Projekt liegt keine Bestätigung für das zusammengeführte Benutzerkonto vor.",
 	"centralauth-prefs-manage": "Globales Benutzerkonto verwalten",
-	"centralauth-prefs-view": "Informationen zum globalen Benutzerkonto ansehen",
+	"centralauth-prefs-view": "Globales Benutzerkonto einsehen",
 	"centralauth-renameuser-merged": "Der Benutzer „$1“ wurde bereits in das globale Benutzerkontensystem übernommen.\nEine Umbenennung entfernt das lokale Benutzerkonto aus dem globalen Benutzerkontensystem.",
 	"centralauth-renameuser-reserved": "Der Benutzername „$2“ ist als globales Benutzerkonto reserviert.",
 	"centralauth-invalid-wiki": "Die Wiki-Datenbank ist nicht vorhanden: $1",
