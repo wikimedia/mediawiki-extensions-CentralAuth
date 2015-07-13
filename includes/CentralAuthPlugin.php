@@ -44,6 +44,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	function authenticate( $username, $password ) {
 		global $wgCentralAuthAutoMigrate, $wgCentralAuthCheckSULMigration;
 		global $wgCentralAuthAutoMigrateNonGlobalAccounts;
+		global $wgCentralAuthStrict;
 
 		$central = new CentralAuthUser( $username );
 		$passwordMatch = self::checkPassword( $central, $password );
@@ -63,6 +64,9 @@ class CentralAuthPlugin extends AuthPlugin {
 				// Remember that the user was authenticated under a different name.
 				if ( $passwordMatch ) {
 					$this->sulMigrationName = $renamedUsername;
+				} elseif ( $wgCentralAuthStrict ) {
+					// Will also create log entry
+					$this->checkAttached( $central, $username );
 				}
 
 				// Since we are falling back to check a force migrated user, we are done
@@ -102,6 +106,23 @@ class CentralAuthPlugin extends AuthPlugin {
 			$central->attemptPasswordMigration( $password );
 		}
 
+		// Will also create log entry
+		if ( $this->checkAttached( $central, $username ) === false ) {
+			return false;
+		}
+
+		return $passwordMatch;
+	}
+
+	/**
+	 * Check if the provided user is attached, if not generate a log
+	 * entry
+	 *
+	 * @param CentralAuthUser $central
+	 * @param $username
+	 * @return bool
+	 */
+	protected function checkAttached( CentralAuthUser $central, $username ) {
 		// Several possible states here:
 		//
 		// global exists, local exists, attached: require global auth
@@ -121,7 +142,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			}
 		}
 
-		return $passwordMatch;
+		return true;
 	}
 
 
