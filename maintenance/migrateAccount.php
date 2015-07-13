@@ -33,6 +33,7 @@ class MigrateAccount extends Maintenance {
 	}
 
 	public function execute() {
+		$this->cache = new MapCacheLRU( 100 );
 
 		$this->dbBackground = CentralAuthUser::getCentralSlaveDB();
 
@@ -97,10 +98,32 @@ class MigrateAccount extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
+	function beingRenamed( $username ) {
+		$dbw = CentralAuthUser::getCentralDB();
+		$rows = $dbw->select(
+			'users_to_rename',
+			array( 'utr_wiki' ),
+			array( 'utr_name' => $username ),
+			__METHOD__
+		);
+		$wikis = array();
+		foreach ( $rows as $row ) {
+			$wikis[] = $row->utr_wiki;
+		}
+
+		return $wikis;
+	}
+
 	function migrate( $username, $homewiki=null ) {
 		$this->total++;
 		$this->output( "CentralAuth account migration for: " . $username . "\n");
 
+		if ( $this->cache->has( $username ) ) {
+			$this->cache->get( $username );
+			return;
+		} else {
+			$this->cache->set( $username, true );
+		}
 		$central = new CentralAuthUser( $username );
 		try {
 			$unattached = $central->queryUnattached();
@@ -173,6 +196,17 @@ class MigrateAccount extends Maintenance {
 				}
 				$this->output( "INFO: Setting homewiki for '$username' to $homewiki\n" );
 				$central->mHomeWiki = $homewiki;
+			} else {
+				$beingRenamed = $this->beingRenamed( $username );
+				$diff = array_diff( array_keys( $unattached ), $beingRenamed );
+				if ( count( $diff ) === 1 ) {
+					$central->mHomeWiki = $diff[0];
+				} elseif ( !$diff ) {
+					$central->mHomeWiki = $central->chooseHomeWiki( $unattached );
+				} else {
+					$this->output( "Picking a homewiki for $username, possibly randomly!\n" );
+					$central->mHomeWiki = $central->chooseHomeWiki( $unattached );
+				}
 			}
 
 			// Check that all unattached (i.e. ALL) accounts have a confirmed email

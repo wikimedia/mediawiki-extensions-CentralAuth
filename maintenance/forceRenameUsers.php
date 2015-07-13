@@ -20,7 +20,7 @@ class ForceRenameUsers extends Maintenance {
 	public function __construct() {
 		$this->mDescription = 'Forcibly renames and migrates unattached accounts to global ones';
 		$this->addOption( 'reason', 'Reason to use for log summaries', true, true );
-		$this->setBatchSize( 10 );
+		$this->setBatchSize( 25 );
 	}
 
 	private function log( $msg ) {
@@ -34,8 +34,12 @@ class ForceRenameUsers extends Maintenance {
 		}
 		$dbw = CentralAuthUser::getCentralDB();
 		while ( true ) {
+			$this->output( "Querying for new users to rename...\n" );
 			$rowsToRename = $this->findUsers( wfWikiID(), $dbw );
-			if ( !$rowsToRename ) {
+			$rowCount = count( $rowsToRename );
+			$this->output( "Found $rowCount users!\n" );
+			if ( !$rowCount ) {
+				$this->output( "Breaking loop..." );
 				break;
 			}
 
@@ -44,12 +48,13 @@ class ForceRenameUsers extends Maintenance {
 			}
 			CentralAuthUser::waitForSlaves();
 			$count = $this->getCurrentRenameCount( $dbw );
-			while ( $count > 50 ) {
+			while ( $count > 30 ) {
 				$this->output( "There are currently $count renames queued, pausing...\n" );
 				sleep( 5 );
 				$count = $this->getCurrentRenameCount( $dbw );
 			}
 		}
+		$this->output( "broken!\n" );
 	}
 
 	protected function getCurrentRenameCount( DatabaseBase $dbw ) {
@@ -136,7 +141,10 @@ class ForceRenameUsers extends Maintenance {
 		foreach ( $rows as $row ) {
 			$user = User::newFromName( $row->utr_name );
 			$caUser = new CentralAuthUser( $row->utr_name );
-			if ( !$user->getId() ) {
+			if ( !$user ) {
+				$this->log( "Error: Invalid username: {$row->utr_name}" );
+				$updates->remove( $row->utr_name, $row->utr_wiki );
+			} elseif ( !$user->getId() ) {
 				$this->log( "'{$row->utr_name}' has been renamed since the last was list generated." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( $caUser->attachedOn( $row->utr_wiki ) ) {
