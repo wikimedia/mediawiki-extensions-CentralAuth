@@ -44,9 +44,11 @@ class CentralAuthPlugin extends AuthPlugin {
 	function authenticate( $username, $password ) {
 		global $wgCentralAuthAutoMigrate, $wgCentralAuthCheckSULMigration;
 		global $wgCentralAuthAutoMigrateNonGlobalAccounts;
+		global $wgCentralAuthStrict;
 
 		$central = new CentralAuthUser( $username );
-		$passwordMatch = self::checkPassword( $central, $password );
+		$passwordResult = self::checkPassword( $central, $password );
+		$passwordMatch = $passwordResult === 'ok';
 
 		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
 			// Check to see if this is a user who was affected by a global username
@@ -58,11 +60,14 @@ class CentralAuthPlugin extends AuthPlugin {
 				);
 
 				$renamed = new CentralAuthUser( $renamedUsername );
-				$passwordMatch = self::checkPassword( $renamed, $password );
+				$passwordResult = self::checkPassword( $renamed, $password );
+				$passwordMatch = $passwordResult === 'ok';
 
 				// Remember that the user was authenticated under a different name.
 				if ( $passwordMatch ) {
 					$this->sulMigrationName = $renamedUsername;
+				} elseif ( $wgCentralAuthStrict && !$central->isAttached() && $passwordResult === 'no user' ) {
+					wfDebugLog( 'CentralAuth', "plugin: login denied for $username due to strict mode" );
 				}
 
 				// Since we are falling back to check a force migrated user, we are done
@@ -133,7 +138,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return bool
 	 */
 	protected static function checkPassword( CentralAuthUser $user, $password ) {
-		return $user->authenticate( $password ) == "ok";
+		return $user->authenticate( $password );
 	}
 
 	/**
