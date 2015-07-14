@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Boukman",
-			"Masterches"
+			"Masterches",
+			"Bfpage"
 		]
 	},
 	"mergeaccount": "Estati fizyon kont itilizatè yo",
@@ -28,5 +29,6 @@
 	"centralauth-incomplete": "Fizyon kont yo poko fini !",
 	"centralauth-complete-text": "Kounye a, ou mèt konekte w nan nenpòt pwojè wiki {{int:Centralauth-groupname}} a san ou pa bezwen kreye yon nouvo kont.",
 	"centralauth-logout-progress": "Dekoneksyon de lòt pwojè {{int:Centralauth-groupname}} yo:",
-	"centralauth-logout-no-others": "Ou te otomatikman dekonekte de lòt pwojè {{int:Centralauth-groupname}} yo."
+	"centralauth-logout-no-others": "Ou te otomatikman dekonekte de lòt pwojè {{int:Centralauth-groupname}} yo.",
+	"centralauth-usermerge-nousers": "Ou dwe bay de kont itilizatè mondyal"
 }
