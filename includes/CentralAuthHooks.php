@@ -596,10 +596,17 @@ class CentralAuthHooks {
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
+				$params = array(
 					'type' => 'icon',
 					'from' => wfWikiID(),
-				) );
+				);
+				if ( self::isMobileDomain() ) {
+					$params['mobile'] = 1;
+				}
+				$url = wfAppendQuery(
+					$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+					$params
+				);
 				$inject_html .= Xml::element( 'img',
 					array(
 						'src' => $url,
@@ -728,6 +735,11 @@ class CentralAuthHooks {
 		}
 
 		return true;
+	}
+
+	private static function isMobileDomain() {
+		return class_exists( 'MobileContext' )
+			&& MobileContext::singleton()->usingMobileDomain();
 	}
 
 	/**
@@ -1316,10 +1328,14 @@ class CentralAuthHooks {
 				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
 			);
 			if ( $url !== false ) {
-				$vars['wgCentralAuthCheckLoggedInURL'] = wfAppendQuery( $url, array(
+				$params = array(
 					'type' => 'script',
 					'wikiid' => wfWikiID(),
-				) );
+				);
+				if ( self::isMobileDomain() ) {
+					$params['mobile'] = 1;
+				}
+				$vars['wgCentralAuthCheckLoggedInURL'] = wfAppendQuery( $url, $params );
 			}
 		}
 	}
@@ -1424,9 +1440,16 @@ class CentralAuthHooks {
 				// For non-JS clients. Use WikiMap to avoid localization of the
 				// 'Special' namespace, see bug 54195.
 				$wiki = WikiMap::getWiki( wfWikiID() );
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
+				$params = array(
 					'type' => '1x1',
-				) );
+				);
+				if ( self::isMobileDomain() ) {
+					$params['mobile'] = 1;
+				}
+				$url = wfAppendQuery(
+					$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+					$params
+				);
 				$out->addHTML( '<noscript>' . Xml::element( 'img',
 					array(
 						'src' => $url,
@@ -1481,10 +1504,24 @@ class CentralAuthHooks {
 		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$wiki = WikiMap::getWiki( $wiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/start' ), array(
+			$params = array(
 				'type' => '1x1',
 				'from' => wfWikiID(),
-			) );
+			);
+			$url = wfAppendQuery(
+				$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+				$params
+			);
+			if ( self::isMobileDomain() ) {
+				$params['mobile'] = 1;
+				// Do autologin on the mobile domain for each wiki
+				$url = MobileContext::singleton()->getMobileUrl(
+					wfAppendQuery(
+						$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+						$params
+					)
+				);
+			}
 			$html .= Xml::element( 'img',
 				array(
 					'src' => $url,
