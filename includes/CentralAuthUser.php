@@ -1225,9 +1225,9 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Status
 	 */
 	function adminDelete( $reason ) {
-		global $wgMemc;
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$centralDB = self::getCentralDB();
+		$wanCache = ObjectCache::getMainWANInstance();
 
 		# Synchronise passwords
 		$password = $this->getPassword();
@@ -1245,8 +1245,12 @@ class CentralAuthUser extends AuthPluginUser {
 				array( 'user_name' => $name ),
 				__METHOD__
 			);
-			$id = $localDB->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
-			$wgMemc->delete( "$wiki:user:id:$id" );
+
+			// @TODO: this has poor separation of concerns :/
+			$id = $localDB->selectField( 'user', 'user_id',
+				array( 'user_name' => $this->mName ), __METHOD__ );
+			$wanCache->delete( "$wiki:user:id:$id" );
+
 			$lb->reuseConnection( $localDB );
 		}
 		$wasSuppressed = $this->isOversighted();
