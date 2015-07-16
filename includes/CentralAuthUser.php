@@ -1163,7 +1163,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Status
 	 */
 	public function adminUnattach( $list ) {
-		global $wgMemc;
 		if ( !count( $list ) ) {
 			return Status::newFatal( 'centralauth-admin-none-selected' );
 		}
@@ -1201,8 +1200,9 @@ class CentralAuthUser extends AuthPluginUser {
 					'user_password' => $password
 				), array( 'user_name' => $this->mName ), __METHOD__
 			);
+
 			$id = $dblw->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
-			$wgMemc->delete( "$wikiName:user:id:$id" );
+			$this->clearLocalUserCache( $wikiName, $id );
 
 			$lb->reuseConnection( $dblw );
 
@@ -1225,7 +1225,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return Status
 	 */
 	function adminDelete( $reason ) {
-		global $wgMemc;
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$centralDB = self::getCentralDB();
 
@@ -1245,8 +1244,11 @@ class CentralAuthUser extends AuthPluginUser {
 				array( 'user_name' => $name ),
 				__METHOD__
 			);
-			$id = $localDB->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
-			$wgMemc->delete( "$wiki:user:id:$id" );
+
+			$id = $localDB->selectField( 'user', 'user_id',
+				array( 'user_name' => $this->mName ), __METHOD__ );
+			$this->clearLocalUserCache( $wiki, $id );
+
 			$lb->reuseConnection( $localDB );
 		}
 		$wasSuppressed = $this->isOversighted();
@@ -2823,5 +2825,14 @@ class CentralAuthUser extends AuthPluginUser {
 			$reason,
 			$params
 		);
+	}
+
+	/**
+	 * @param string $wiki
+	 * @param integer $id
+	 */
+	private function clearLocalUserCache( $wiki, $id ) {
+		// @TODO: this has poor separation of concerns :/
+		ObjectCache::getMainWANInstance()->delete( "$wiki:user:id:$id" );
 	}
 }
