@@ -323,8 +323,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 */
 	protected function loadFromCache( $cache = null, $fromMaster = false ) {
 		if ( $cache == null ) {
-			global $wgMemc;
-			$cache = $wgMemc->get( $this->getCacheKey() );
+			$cache = ObjectCache::getMainWANInstance()->get( $this->getCacheKey() );
 			$fromMaster = true;
 		}
 
@@ -383,8 +382,6 @@ class CentralAuthUser extends AuthPluginUser {
 	 * Save cachable data to memcached.
 	 */
 	protected function saveToCache() {
-		global $wgMemc;
-
 		// Make sure the data is fresh
 		if ( isset( $this->mGlobalId ) && !$this->mFromMaster ) {
 			$this->resetState();
@@ -392,7 +389,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 	 	$obj = $this->getCacheObject();
 	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
-	 	$wgMemc->set( $this->getCacheKey(), $obj, 86400 );
+		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400 );
 	 }
 
 	/**
@@ -2669,7 +2666,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 		wfDebugLog( 'CentralAuthVerbose', "Quick cache invalidation for global user {$this->mName}" );
 
-		$wgMemc->delete( $this->getCacheKey() );
+		ObjectCache::getMainWANInstance()->delete( $this->getCacheKey() );
+		$wgMemc->delete( $this->getCacheKey() ); // transition b/c
 	}
 
 	/**
