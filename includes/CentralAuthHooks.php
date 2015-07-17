@@ -1,6 +1,7 @@
 <?php
 
 class CentralAuthHooks {
+
 	/**
 	 * Callback to register with $wgExtensionFunctions to complete configuration
 	 * after other initial configuration has completed. This can be used to
@@ -111,6 +112,26 @@ class CentralAuthHooks {
 			$wgHooks['LoginUserMigrated'][] =
 				'CentralAuthHooks::onLoginUserMigrated';
 		}
+	}
+
+	public static function onRegisterExtension() {
+		global $wgExtensionCredits, $wgGroupPermissions;
+
+		/**
+		 * Extension credits
+		 */
+		$wgExtensionCredits['specialpage'][] = array(
+			'path'           => __DIR__ . '/../CentralAuth.php',
+			'name'           => 'MergeAccount',
+			'author'         => 'Brion Vibber',
+			'url'            => '//meta.wikimedia.org/wiki/Help:Unified_login',
+			'descriptionmsg' => 'centralauth-mergeaccount-desc',
+		);
+
+		$wgGroupPermissions['steward']['centralauth-unmerge'] = true;
+		$wgGroupPermissions['steward']['centralauth-lock'] = true;
+		$wgGroupPermissions['steward']['centralauth-oversight'] = true;
+		$wgGroupPermissions['*']['centralauth-merge'] = true;
 	}
 
 	/**
