@@ -1,6 +1,23 @@
 <?php
 
 class CentralAuthHooks {
+
+	public static function onRegisterExtension() {
+		global $wgExtensionCredits, $wgGroupPermissions, $wgWikimediaJenkinsCI, $wgDBname;
+
+		/**
+		 * Override $wgCentralAuthDatabase for Wikimedia Jenkins.
+		 */
+		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+			$wgCentralAuthDatabase = $wgDBname;
+		}
+
+		$wgGroupPermissions['steward']['centralauth-unmerge'] = true;
+		$wgGroupPermissions['steward']['centralauth-lock'] = true;
+		$wgGroupPermissions['steward']['centralauth-oversight'] = true;
+		$wgGroupPermissions['*']['centralauth-merge'] = true;
+	}
+
 	/**
 	 * Callback to register with $wgExtensionFunctions to complete configuration
 	 * after other initial configuration has completed. This can be used to
@@ -8,11 +25,21 @@ class CentralAuthHooks {
 	 * feature flags.
 	 */
 	public static function onRunExtensionFunctions() {
-		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
-		global $wgSpecialPages, $wgResourceModules;
-		global $wgCentralAuthEnableGlobalRenameRequest;
-		global $wgCentralAuthCheckSULMigration;
+		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks, $wgSpecialPages, $wgResourceModules,
+		$wgCentralAuthEnableGlobalRenameRequest, $wgCentralAuthCheckSULMigration,
+		$wgCentralIdLookupProviders, $wgCentralIdLookupProvider;
 		$caBase = __DIR__ . '/..';
+
+		/**
+		 * Extension credits
+		 */
+		$wgExtensionCredits['specialpage'][] = array(
+			'path'           => __DIR__ . '/../CentralAuth.php',
+			'name'           => 'MergeAccount',
+			'author'         => 'Brion Vibber',
+			'url'            => '//meta.wikimedia.org/wiki/Help:Unified_login',
+			'descriptionmsg' => 'centralauth-mergeaccount-desc',
+		);
 
 		if ( class_exists( 'RenameuserSQL' ) ) {
 			// Credits should only appear on wikis with Extension:Renameuser
@@ -114,6 +141,18 @@ class CentralAuthHooks {
 		if ( $wgCentralAuthCheckSULMigration ) {
 			$wgHooks['LoginUserMigrated'][] =
 				'CentralAuthHooks::onLoginUserMigrated';
+		}
+
+		if ( isset( $wgCentralIdLookupProviders ) ) {
+			$wgCentralIdLookupProviders['CentralAuth'] = array(
+				'class' => 'CentralAuthIdLookup',
+			);
+
+			// Assume they want CentralAuth as the default central ID provider, unless
+			// already configured otherwise.
+			if ( $wgCentralIdLookupProvider === 'local' ) {
+				$wgCentralIdLookupProvider = 'CentralAuth';
+			}
 		}
 	}
 
