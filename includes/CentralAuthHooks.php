@@ -1,6 +1,7 @@
 <?php
 
 class CentralAuthHooks {
+
 	/**
 	 * Callback to register with $wgExtensionFunctions to complete configuration
 	 * after other initial configuration has completed. This can be used to
@@ -110,6 +111,110 @@ class CentralAuthHooks {
 		if ( $wgCentralAuthCheckSULMigration ) {
 			$wgHooks['LoginUserMigrated'][] =
 				'CentralAuthHooks::onLoginUserMigrated';
+		}
+	}
+
+	public static function onRegisterExtension() {
+		global $wgExtensionCredits, $wgGroupPermissions;
+
+		/**
+		 * Extension credits
+		 */
+		$wgExtensionCredits['specialpage'][] = array(
+			'path' => __FILE__,
+			'name' => 'Central Auth',
+			'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
+			'author' => 'Brion Vibber',
+			'descriptionmsg' => 'centralauth-desc',
+		);
+
+		$wgExtensionCredits['specialpage'][] = array(
+			'path'           => __FILE__,
+			'name'           => 'MergeAccount',
+			'author'         => 'Brion Vibber',
+			'url'            => '//meta.wikimedia.org/wiki/Help:Unified_login',
+			'descriptionmsg' => 'centralauth-mergeaccount-desc',
+		);
+
+		$wgGroupPermissions['steward']['centralauth-unmerge'] = true;
+		$wgGroupPermissions['steward']['centralauth-lock'] = true;
+		$wgGroupPermissions['steward']['centralauth-oversight'] = true;
+		$wgGroupPermissions['*']['centralauth-merge'] = true;
+	}
+
+	/**
+	 * @param $type
+	 * @param $action
+	 * @param $title
+	 * @param $skin Skin|null If null, we want to use the wiki content language, since that will go to the IRC feed.
+	 * @param $params
+	 * @param $filterWikilinks bool
+	 * @return String
+	 */
+	public static function onHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+		if ( $skin ) {
+			$link = Linker::link( $title, htmlspecialchars( $params[0] ) );
+		} else {
+			$link = $params[0];
+		}
+
+		switch( $action ) {
+			case 'newset':
+				$args = array( WikiSet::formatType( $params[1] ), $params[2] );
+				break;
+			case 'setrename':
+				$args = array( $params[1] );
+				break;
+			case 'setnewtype':
+				$args = array( WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) );
+				break;
+			case 'setchange':
+				$args = array( $params[1]
+					? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() );
+				break;
+			default: //'deleteset'
+				$args = array();
+		}
+
+		// Give grep a chance to find the usages:
+		// centralauth-rightslog-entry-newset, centralauth-rightslog-entry-setrename,
+		// centralauth-rightslog-entry-setnewtype, centralauth-rightslog-entry-setchange,
+		// centralauth-rightslog-entry-deleteset
+		$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
+		if( $skin ) {
+			return $msg->text();
+		} else {
+			return $msg->inContentLanguage()->text();
+		}
+	}
+
+	/**
+	 * Format global group rename log entries
+	 *
+	 * @param $type
+	 * @param $action
+	 * @param $title
+	 * @param $skin Skin|null If null, we want to use the wiki content language, since that will go to the IRC feed.
+	 * @param $params
+	 * @param $filterWikilinks bool
+	 *
+	 * @return String
+	 */
+	public static function onHandleGrouprenameLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+		// $params[0] is the new one, $params[1] the old one
+		if ( $skin ) {
+			$params[0] = Linker::link( Title::newFromText( $params[0] ), htmlspecialchars( $params[0] ) );
+			$params[1] = Linker::link( Title::newFromText( $params[1] ), htmlspecialchars( $params[1] ) );
+		} else {
+			$params[0] = htmlspecialchars( $params[0] );
+			$params[1] = htmlspecialchars( $params[1] );
+		}
+
+		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )->rawParams( $params[0], $params[1] );
+		if ( $skin ) {
+			return $msg->text();
+		} else {
+			return $msg->inContentLanguage()->text();
 		}
 	}
 
