@@ -270,5 +270,15 @@
 	"centralloginsuccesful": "Identificacion capitada.",
 	"centralauth-completelogin-back": "Tornar a la pagina precedenta.",
 	"centralauth-finishglobaliseemail_subject": "Confirmacion de compte de {{SITENAME}}",
+	"globalrenameprogress": "Progression del cambiament de nom global",
+	"globalrenameprogress-legend": "Afichar la progression del cambiament de nom global",
+	"globalrenamerequest": "Demanda de cambiament de nom de l’unificacion",
+	"globalrenamerequest-legend": "Demanda de cambiament de nom de l’unificacion",
+	"globalrenamerequest-username-help": "Aquò es vòstre nom d’utilizaire actual.",
+	"globalrenamerequest-newname-help": "Entratz lo novèl nom d’utilizaire que volètz utilizar, per ex., « $1 ».",
+	"globalrenamerequest-reason-label": "Motiu de la demanda",
+	"globalrenamerequest-submit-text": "Demandar un cambiament de nom",
+	"globalrenamequeue-request-reason": "<strong>Rason per demandar lo cambiament de nom</strong>\n:$1",
+	"userswhowillberenamed": "Utilizaires que seràn renomenats",
 	"centralauth-uwbr-registration-nodate": "Desconegut"
 }
