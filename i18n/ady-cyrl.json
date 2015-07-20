@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bedynokue.nart"
+			"Bedynokue.nart",
+			"SamGamgee"
 		]
 	},
+	"centralauth-foreign-link": "Хэлэжьак1оу $1, $2-м хэтэу",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|хэгъэхъоныгъэ|хэгъэхъоныгъ}} $2-м хэтэу",
 	"centralauth-usermerge-nousers": "Мыхъуми нэбгырит1ум я уплъэк1ужьыгъэ глобал аккаунтхэр къэгъэлъэгъогъэн фае."
 }

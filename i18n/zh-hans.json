@@ -486,7 +486,7 @@
 	"sulrenamewarning-renamed": "在自动迁移至{{int:Centralauth-groupname}}的统一登录系统过程中，{{GENDER:$2|您}}的账户'''$1'''已被重命名至'''$2'''。",
 	"sulrenamewarning-usenew": "今后，请使用{{GENDER:$1|您}}的新用户名'''$1'''登录。",
 	"globalrenamequeue-request-reason-label": "公开日志记录评论（如果接受）",
-	"apihelp-centralauthtoken-description": "获取centralauthtoken用于已认证的一个附加到wiki的请求。",
+	"apihelp-centralauthtoken-description": "取得centralauthtoken用于已认证的一个附加到wiki的请求。",
 	"apihelp-centralauthtoken-example-1": "取得一个centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "删除一个全域用户。",
 	"apihelp-deleteglobalaccount-param-user": "要删除的用户。",
