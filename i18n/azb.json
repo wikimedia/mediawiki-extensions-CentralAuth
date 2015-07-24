@@ -155,7 +155,7 @@
 	"centralauth-prefs-unattached": "تصدیقلنممیش",
 	"centralauth-prefs-complete": "هر شئی قایداسیندا‌دیر!",
 	"centralauth-prefs-migration": "کئچید حالیندا",
-	"centralauth-prefs-count-attached": "سیزین حسابینیز {{PLURAL:$1|بیر|$1}} پروژه سایتیندا آکتیو‌دیر.",
+	"centralauth-prefs-count-attached": "سیزین حسابینیز {{PLURAL:$1|بیر|$1}} پروژه سایتیندا چالیشقان‌دیر.",
 	"centralauth-prefs-count-unattached": "{{PLURAL:$1|بیر|$1}} پروژه‌ده سیزین آدینیزدا دوغرولانمامیش حسابلار قالیر.",
 	"centralauth-prefs-detail-unattached": "بو لاییهه سایتی ایستفادچی حسابا عاید اولا‌راق تصدیقلنمه‌دی.",
 	"centralauth-prefs-manage": "ایستفاده چی حسابین ایداره ائدیلمه‌سی",
