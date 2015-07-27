@@ -226,7 +226,7 @@
 	"centralauth-prefs-complete": "¡Todo en orden!",
 	"centralauth-prefs-migration": "En migración",
 	"centralauth-prefs-count-attached": "Tu cuenta está activa en $1 {{PLURAL:$1|proyecto|proyectos}}.",
-	"centralauth-prefs-count-unattached": "Cuentas no confirmadas con su nombre permanecen en $1 {{PLURAL:$1|proyecto|proyectos}}.",
+	"centralauth-prefs-count-unattached": "Cuentas no confirmadas con tu nombre permanecen en $1 {{PLURAL:$1|proyecto|proyectos}}.",
 	"centralauth-prefs-detail-unattached": "No se ha confirmado que este sitio de proyecto es de la cuenta global.",
 	"centralauth-prefs-manage": "Gestiona tu cuenta global",
 	"centralauth-prefs-view": "Ver información global {{GENDER:|del usuario|de la usuaria}}",

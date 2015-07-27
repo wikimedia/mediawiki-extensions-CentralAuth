@@ -499,7 +499,7 @@
 	"apihelp-query+globaluserinfo-description": "מציג מידע על משתמש גלובלי",
 	"apihelp-query+globaluserinfo-param-user": "על איזה משתמש לקבל מידע. בררת המחדל היא המשתמש הנוכחי.",
 	"apihelp-query+globaluserinfo-param-prop": "אילו מאפיינים לקבל:\n;groups:קבלת רשימת הקבוצות הגלובליות שהמשתמש שייך אליהן.\n;rights:קבלת ההרשאות הגלובליות שיש למשתמש הזה.\n;merged:קבלת רשימת חשבונות ממוזגים.\n;unattached:קבלת רשימת חשבונות לא משויכים.\n;editcount:קבלת מניין עריכות גלובליות של המשתמש.",
-	"apihelp-query+globaluserinfo-example-1": "קבלת מידע על המשמש הגלובלי הנוכחי",
+	"apihelp-query+globaluserinfo-example-1": "קבלת מידע על המשתמש הגלובלי הנוכחי",
 	"apihelp-query+globaluserinfo-example-2": "קבלת מידע על המשתמש הגלובלי [[User:Example|Example]]",
 	"apihelp-query+wikisets-description": "מספור כל ערכות הוויקי.",
 	"apihelp-query+wikisets-param-from": "של ערכת הוויקי הראשונה.",
