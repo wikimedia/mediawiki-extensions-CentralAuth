@@ -150,7 +150,7 @@
 	"centralauth-days-ago": "{{PLURAL:$1|بیر|$1}} گون اؤنجه",
 	"centralauth-months-ago": "{{PLURAL:$1|بیر|$1}} آی اؤنجه",
 	"centralauth-years-ago": "$1{{PLURAL:$1|یل |یل}} اول",
-	"centralauth-prefs-status": "باشاباش اوْرتاق حسابین دۇرومو",
+	"centralauth-prefs-status": "قلوبال اوْرتاق حسابین دۇرومو",
 	"centralauth-prefs-not-managed": "بیرلشمیش حساب ایستیفاده",
 	"centralauth-prefs-unattached": "تصدیقلنممیش",
 	"centralauth-prefs-complete": "هر شئی قایداسیندا‌دیر!",
