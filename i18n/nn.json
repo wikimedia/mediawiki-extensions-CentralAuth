@@ -274,5 +274,13 @@
 	"globalrenameuser": "Døyp om global brukar",
 	"globalrenameuser-legend": "Døyp om global brukar",
 	"centralauth-rename-abortlogin": "Kontoen din held no på å døypast om. [[Special:GlobalRenameProgress/$1|Sjå stoda]].",
-	"centralauth-contribs-locked": "Denne kontoen er låst globalt.\nSjå [[Special:CentralAuth/$1|globale kontodetaljar]] for meir informasjon."
+	"centralauth-rename-form-oldname": "Gjeldande brukarnamn",
+	"centralauth-rename-form-newname": "Nytt brukarnamn",
+	"centralauth-rename-form-reason": "Årsak",
+	"centralauth-rename-form-movepages": "Flytt brukarsider",
+	"centralauth-rename-movelog": "Flytte sida automatisk under namnebyte av brukaren «[[Special:CentralAuth/$1|$1]]» til «[[Special:CentralAuth/$2|$2]]»",
+	"globalrenamerequest-email-why-label": "Kvifor?",
+	"centralauth-contribs-locked": "Denne kontoen er låst globalt.\nSjå [[Special:CentralAuth/$1|globale kontodetaljar]] for meir informasjon.",
+	"centralauth-uwbr-registration-nodate": "Ukjend",
+	"centralauth-uwbr-editcount": "Endringstal"
 }
