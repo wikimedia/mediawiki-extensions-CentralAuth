@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec42329_dfe236fe",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-08-04T01:41:44Z",
+      "side": 1,
+      "message": "Shouldn\u0027t WanObjectCache::delete() be called here? This invalidates an object in the cache of the User class, which uses WAN cache.",
+      "revId": "de339ea331151986d3c5b49724ee81422de0a127",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ec42329_7fed42ed",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1245,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-08-04T01:41:44Z",
+      "side": 1,
+      "message": "As above.",
+      "revId": "de339ea331151986d3c5b49724ee81422de0a127",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
