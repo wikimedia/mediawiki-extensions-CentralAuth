@@ -24,6 +24,7 @@
 	"centralauth-complete": "Tapitra ny fampiraisana ny anaram-pikambana !",
 	"centralauth-incomplete": "Tsy vita tanteraka ny fampiraisana ny anaram-pikambana !",
 	"centralauth-foreign-link": "Mpikambana $1 eo amin'i $2",
+	"centralauth-foreign-contributions": "Fandraisan'anjara {{PLURAL:$1}} amin'i $2",
 	"centralauth-merge-method-primary": "wiki trano",
 	"centralauth-merge-method-empty": "tsy misy fandraisan'anjara",
 	"centralauth-merge-method-mail": "voamarina tamin'ny alalan'ny mailaka",
