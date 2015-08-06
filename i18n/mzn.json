@@ -6,7 +6,7 @@
 		]
 	},
 	"centralauth-foreign-link": "$1 کاروری حساب، $2 دله",
-	"centralauth-foreign-contributions": "$1 مشارکت، $2 دله",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|کایری}} $2 دله",
 	"centralauth-merge-method-login": "بساته بَیی، دله بموئن په",
 	"centralauth-admin-blocklog": "دوسته‌بیّن سیاهه",
 	"centralauth-admin-multi-bot": "تازه دگاردسته‌ئون"
