@@ -291,9 +291,13 @@ class CentralAuthPlugin extends AuthPlugin {
 			if ( !$central->exists() && !$central->listUnattached() ) {
 				// Username is unused; set up as a global account
 				// @fixme is this even vaguely reliable? pah
-				$central->register( $password, $email );
-				$central->attach( wfWikiID(), 'new' );
-				$this->autoCreateAccounts( $central );
+				$ok = $central->register( $password, $email );
+				if ( $ok ) {
+					$central->attach( wfWikiID(), 'new' );
+					$this->autoCreateAccounts( $central );
+				} else {
+					return false;
+				}
 			}
 			// Note: If $wgCentralAuthPreventUnattached is enabled,
 			// accounts where a global does not exist, but there are
