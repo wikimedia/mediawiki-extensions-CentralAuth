@@ -218,7 +218,7 @@
 	"centralauth-log-entry-hide": "versteckte das globale Benutzerkonto „$1“",
 	"centralauth-log-entry-unhide": "machte das globale Benutzerkonto „$1“ wieder sichtbar",
 	"centralauth-log-entry-lockandhide": "sperrte und verbarg das globale Benutzerkonto „$1“",
-	"centralauth-log-entry-chgstatus": "hat den Status für das globale Konto „$1“ geändert: Eingestellt $2; gelöscht $3",
+	"centralauth-log-entry-chgstatus": "hat den Status für das globale Konto „$1“ geändert: $2 gesetzt; $3 gelöscht",
 	"centralauth-log-status-locked": "gesperrt",
 	"centralauth-log-status-hidden": "Versteckt",
 	"centralauth-log-status-oversighted": "unterdrückt",
