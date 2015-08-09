@@ -583,7 +583,7 @@ class CentralAuthUser extends AuthPluginUser {
 	function register( $password, $email ) {
 		$dbw = self::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
-		$ok = $dbw->insert(
+		$dbw->insert(
 			'globaluser',
 			array(
 				'gu_name'  => $this->mName,
@@ -599,8 +599,11 @@ class CentralAuthUser extends AuthPluginUser {
 
 				'gu_registration' => $dbw->timestamp(),
 			),
-			__METHOD__ );
+			__METHOD__,
+			array( 'IGNORE' )
+		);
 
+		$ok = $dbw->affectedRows() === 1;
 		if ( $ok ) {
 			wfDebugLog( 'CentralAuth',
 				"registered global account '$this->mName'" );

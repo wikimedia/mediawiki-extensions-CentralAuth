@@ -97,10 +97,14 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 */
 	public function testRegister() {
 		$caUserNew = new CentralAuthUser( 'RegTest' );
-		$caUserNew->register( "R3gT3stP@ssword", "user@localhost" );
+		$ok = $caUserNew->register( "R3gT3stP@ssword", "user@localhost" );
+		$this->assertSame( true, $ok );
 
 		$caUser = new CentralAuthUser( 'RegTest' );
 		$this->assertSame( true, $caUser->exists() );
+
+		// And duplicate registration doesn't throw an exception (T108541)
+		$this->assertFalse( $caUserNew->register( "R3gT3stP@ssword", "user@localhost" ) );
 	}
 
 	/**
