@@ -2723,7 +2723,13 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		$key = self::memcKey( 'session', $id );
+
+		$stime = microtime( true );
 		$data = $wgMemc->get( $key );
+		$real = microtime( true ) - $stime;
+
+		RequestContext::getMain()->getStats()->timing( "centralauth.session.read", $real );
+
 		if ( $data === false || $data === null ) {
 			return array();
 		} else {
@@ -2760,7 +2766,13 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		$data['sessionId'] = $id;
 		$key = self::memcKey( 'session', $id );
+
+		$stime = microtime( true );
 		$wgMemc->set( $key, $data, 86400 );
+		$real = microtime( true ) - $stime;
+
+		RequestContext::getMain()->getStats()->timing( "centralauth.session.write", $real );
+
 		return $id;
 	}
 
@@ -2778,7 +2790,13 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		$id =  $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'];
 		wfDebug( __METHOD__ . ": Deleting session $id\n" );
+
+		$stime = microtime( true );
 		$key = self::memcKey( 'session', $id );
+		$real = microtime( true ) - $stime;
+
+		RequestContext::getMain()->getStats()->timing( "centralauth.session.delete", $real );
+
 		$wgMemc->delete( $key );
 	}
 
