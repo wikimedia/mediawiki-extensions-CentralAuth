@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"JinJian"
+		]
+	},
+	"centralauth-foreign-link": "Gumaramit $1 ha $2",
+	"centralauth-foreign-contributions": "$1 nga {{PLURAL:$1|amot|mga amot}} ha $2",
+	"centralauth-merge-method-login": "nahimo han paglog-in",
+	"centralauth-admin-blocklog": "Talaan han pagpugong"
+}
