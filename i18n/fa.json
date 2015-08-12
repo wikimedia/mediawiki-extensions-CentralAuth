@@ -110,6 +110,7 @@
 	"centralauth-admin-info-locked": "قفل شده:",
 	"centralauth-admin-info-hidden": "میزان پنهان‌شدگی:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|گروه|گروه‌های}} سراسری:",
+	"centralauth-admin-info-attached": "تعداد حساب‌های متصل:",
 	"centralauth-admin-yes": "بله",
 	"centralauth-admin-no": "خیر",
 	"centralauth-admin-hidden-list": "از فهرست‌های عممومی",
