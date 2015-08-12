@@ -32,17 +32,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$contents = file_get_contents( $filePath );
 
 		// Try minified from cache
-		$key = wfMemcKey( 'centralauth', 'minify-js', md5( $contents ) );
-		$cache = wfGetCache( CACHE_ANYTHING );
+		$key = wfGlobalCacheKey( 'centralauth', 'minify-js', md5( $contents ) );
+		$cache = wfGetCache( wfIsHHVM() ? CACHE_ACCEL : CACHE_ANYTHING );
 		$cacheEntry = $cache->get( $key );
 		if ( is_string( $cacheEntry ) ) {
 			return $cacheEntry;
 		}
 
 		// Compute new value
-		$result = '';
 		try {
-			$result = JavaScriptMinifier::minify( $contents ) . "\n/* cache key: $key */";
+			$result = JavaScriptMinifier::minify( $contents );
 			$cache->set( $key, $result );
 		} catch ( Exception $e ) {
 			MWExceptionHandler::logException( $e );
