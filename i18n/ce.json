@@ -82,6 +82,7 @@
 	"centralauth-admin-info-locked": "ГӀорина:",
 	"centralauth-admin-info-hidden": "Хьулдаран локхалла:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальни тоба|Глобальни тобанаш}}:",
+	"centralauth-admin-info-attached": "Вовшахтесна декъашхочун дӀаяздарийн дукхалла:",
 	"centralauth-admin-yes": "хӀаъ",
 	"centralauth-admin-no": "яц",
 	"centralauth-admin-hidden-list": "массо тӀекхочу могӀанийн юкъара",
