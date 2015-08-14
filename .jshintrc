@@ -15,10 +15,11 @@
 
 	// Environment
 	"browser": true,
-	"jquery": true,
 
 	"globals": {
 		"mediaWiki": false,
-		"OO": false
+		"jQuery": false,
+		"OO": false,
+		"QUnit": false
 	}
 }
