@@ -2174,4 +2174,9 @@ class CentralAuthHooks {
 			);
 		}
 	}
+
+	public static function onResourceLoaderForeignApiModules( &$dependencies, ResourceLoaderContext $context = null ) {
+		$dependencies[] = 'ext.centralauth.ForeignApi';
+		return true;
+	}
 }
