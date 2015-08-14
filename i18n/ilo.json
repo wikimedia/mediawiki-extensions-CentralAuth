@@ -387,6 +387,7 @@
 	"centralauth-usermerge-confirm": "Kayatmo kadi a global nga itipon dagitoy nga agar-aramat?",
 	"centralauth-usermerge-toomany": "Ti laeng $1 {{PLURAL:$1|nga agar-aramat|kadagiti agar-aramat}} ti mabalin a maninsan a maitipon.",
 	"centralauth-usermerge-ratelimited": "Kas pamay-an iti seguridad, maipaluboka laeng ti global a mangitipon ti agar-aramat iti maminsan tunggal maysa a minuto. Pangngaasi a padasem manen kalpasan ti maysa a minuto.",
+	"centralauth-usermerge-nousers": "Nasken a maited dagiti saan a basbassit ngem dua nga umiso a global a pakabilangan ti agar-aramat.",
 	"globalrenamerequest-desc": "Akiddaw iti global a pakabilangan ti pananginagan manen",
 	"globalrenamerequest": "Kiddaw iti panagkaykaysa a pananginagan manen",
 	"globalrenamerequest-legend": "Kiddaw iti panagkaykaysa a pananginagan manen",
