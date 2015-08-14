@@ -6,9 +6,11 @@
 
 	// Do we already know we're logged out centrally?
 	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Userlogin' ) {
-		if ( 'localStorage' in window && window.localStorage && +localStorage.getItem( 'CentralAuthAnon' ) > new Date().getTime() ) {
-			return;
-		}
+		try {
+			if ( +localStorage.getItem( 'CentralAuthAnon' ) > new Date().getTime() ) {
+				return;
+			}
+		} catch ( e ) {}
 
 		// Can't use $.cookie(), because we want to check this at the top of
 		// the page and that isn't loaded until the bottom.
