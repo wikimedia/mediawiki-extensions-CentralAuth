@@ -2154,4 +2154,19 @@ class CentralAuthHooks {
 			);
 		}
 	}
+
+	public static function onResourceLoaderForeignApiModules( array &$dependencies, ResourceLoaderContext $context = null ) {
+		$dependencies[] = 'ext.centralauth.ForeignApi';
+		return true;
+	}
+
+	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader &$resourceLoader ) {
+		$testModules['qunit']['ext.centralauth.ForeignApi.test'] = array(
+			'scripts' => array( 'tests/qunit/ext.centralauth.ForeignApi.test' ),
+			'dependencies' => array( 'ext.centralauth.ForeignApi' ),
+			'localBasePath' => __DIR__,
+			'remoteExtPath' => 'CentralAuth',
+		);
+		return true;
+	}
 }
