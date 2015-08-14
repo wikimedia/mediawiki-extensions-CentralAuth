@@ -388,6 +388,7 @@ $wgHooks['SpecialLogAddLogSearchRelations'][] = 'CentralAuthHooks::onSpecialLogA
 $wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
 $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
 $wgHooks['SpecialPage_initList'][] = 'CentralAuthHooks::onSpecialPage_initList';
+$wgHooks['ResourceLoaderForeignApiModules'][] = 'CentralAuthHooks::onResourceLoaderForeignApiModules';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
@@ -567,6 +568,13 @@ $wgResourceModules['ext.centralauth.globalrenameuser'] = array(
 		'centralauth-rename-confirm',
 		'centralauth-usermerge-confirm',
 	)
+) + $commonModuleInfo;
+
+$wgResourceModules['ext.centralauth.ForeignApi'] = array(
+	'scripts' => 'ext.centralauth.ForeignApi.js',
+	'dependencies' => array(
+		'mediawiki.ForeignApi.core',
+	),
 ) + $commonModuleInfo;
 
 // Finish configuration after other extensions and settings are loaded.
