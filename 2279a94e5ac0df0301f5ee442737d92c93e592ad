@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_8dcd0265",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-08-15T21:06:00Z",
+      "side": 1,
+      "message": "Need to re-add the $1",
+      "revId": "2279a94e5ac0df0301f5ee442737d92c93e592ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_adca3e48",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-08-15T21:06:00Z",
+      "side": 1,
+      "message": "see above",
+      "revId": "2279a94e5ac0df0301f5ee442737d92c93e592ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
