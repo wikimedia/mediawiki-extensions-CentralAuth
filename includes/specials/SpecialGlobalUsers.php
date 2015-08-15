@@ -10,6 +10,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		$this->setHeaders();
 
 		$pg = new GlobalUsersPager( $this->getContext(), $par );
+		$req = $this->getRequest();
 
 		if ( $par ) {
 			if( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
@@ -18,7 +19,8 @@ class SpecialGlobalUsers extends SpecialPage {
 				$pg->setUsername( $par );
 			}
 		}
-		$rqGroup = $this->getRequest()->getVal( 'group' );
+
+		$rqGroup = $req->getVal( 'group' );
 		if ( $rqGroup ) {
 				$groupTitle = Title::newFromText( $rqGroup );
 				if ( $groupTitle ) {
@@ -26,16 +28,18 @@ class SpecialGlobalUsers extends SpecialPage {
 				}
 		}
 
-		$rqUsername = $wgContLang->ucfirst( $this->getRequest()->getVal( 'username' ) );
+		$rqUsername = $wgContLang->ucfirst( $req->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}
 
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalusers' );
-		$this->getOutput()->addHTML( $pg->getPageHeader() );
-		$this->getOutput()->addHTML( $pg->getNavigationBar() );
-		$this->getOutput()->addHTML( Html::rawElement( 'ul', null, $pg->getBody() ) );
-		$this->getOutput()->addHTML( $pg->getNavigationBar() );
+		$this->getOutput()->addHTML(
+			$pg->getPageHeader() .
+			$pg->getNavigationBar() .
+			Html::rawElement( 'ul', array(), $pg->getBody() ) .
+			$pg->getNavigationBar()
+		);
 	}
 
 	protected function getGroupName() {
@@ -44,7 +48,8 @@ class SpecialGlobalUsers extends SpecialPage {
 }
 
 class GlobalUsersPager extends AlphabeticPager {
-	public $requestedGroup = false, $requestedUser;
+	protected $requestedGroup = false;
+	protected $requestedUser = false;
 	private $wikiSets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
@@ -55,9 +60,8 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	/**
 	 * @param $group string
-	 * @return mixed
 	 */
-	function setGroup( $group = '' ) {
+	public function setGroup( $group = '' ) {
 		if ( !$group ) {
 			$this->requestedGroup = false;
 			return;
@@ -67,9 +71,8 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	/**
 	 * @param $username string
-	 * @return mixed
 	 */
-	function setUsername( $username = '' ) {
+	public function setUsername( $username = '' ) {
 		if ( !$username ) {
 			$this->requestedUser = false;
 			return;
@@ -99,7 +102,6 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return array
 	 */
 	function getQueryInfo() {
-		$localwiki = wfWikiID();
 		$conds = array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE );
 
 		if ( $this->requestedGroup ) {
@@ -112,11 +114,11 @@ class GlobalUsersPager extends AlphabeticPager {
 
 		return array(
 			'tables' => array( 'globaluser', 'localuser', 'global_user_groups' ),
-			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'lu_attached_method', 'COUNT(gug_group) AS gug_numgroups', 'MAX(gug_group) AS gug_singlegroup'  ),
+			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'lu_attached_method', 'gug_numgroups' => 'COUNT(gug_group)' ),
 			'conds' => $conds,
 			'options' => array( 'GROUP BY' => 'gu_name' ),
 			'join_conds' => array(
-				'localuser' => array( 'LEFT JOIN', array( 'gu_name = lu_name', 'lu_wiki' => $localwiki ) ),
+				'localuser' => array( 'LEFT JOIN', array( 'gu_name = lu_name', 'lu_wiki' => wfWikiID() ) ),
 				'global_user_groups' => array( 'LEFT JOIN', 'gu_id = gug_user' )
 			),
 		);
@@ -214,7 +216,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	function getBody() {
 		if ( !$this->mQueryDone ) {
