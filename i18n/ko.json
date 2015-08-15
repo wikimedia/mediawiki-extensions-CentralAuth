@@ -20,7 +20,8 @@
 			"IRTC1015",
 			"콩가루",
 			"SeoJeongHo",
-			"Ysjbserver"
+			"Ysjbserver",
+			"Hwangjy9"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -383,6 +384,7 @@
 	"log-name-gblrename": "통합 계정 이름 바꾸기 기록",
 	"log-description-gblrename": "이 기록은 사용자의 전역 이름 바꾸기를 추적합니다.",
 	"logentry-gblrename-rename": "$1 사용자가 모든 위키에서 $4 사용자를 $5 사용자로 {{GENDER:$2|바꾸었습니다}}",
+	"logentry-gblrename-promote": "$1 사용자가 모든 위키에서 $4 사용자를 $5 사용자로 {{GENDER:$2|바꾸었습니다}}",
 	"globalusermerge": "통합 계정 사용자 병합",
 	"globalusermerge-legend": "통합 계정 사용자 병합",
 	"centralauth-usermerge-form-newuser": "최종 사용자 이름",
