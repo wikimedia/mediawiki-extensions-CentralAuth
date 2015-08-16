@@ -174,7 +174,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuto|minute}} fà",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ora|ore}} fà",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|juorno|juorne}} fà",
-	"centralauth-months-ago": "$1 {{PLURAL:$1|mese}} fà",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|mese|mise}} fà",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|anne}} fà",
 	"centralauth-prefs-status": "Stato d' 'o cunto utente globale:",
 	"centralauth-prefs-not-managed": "Nun se stà ausanno 'o cunto globale aunito",

@@ -44,7 +44,7 @@
 	"centralauth-list-unattached-title": "رلے اکاؤنٹ وکھرے کرو",
 	"centralauth-list-unattached": "کھاتہ \"$1\" اپنے آپ پکا نئیں کیتا جاسکدا جے ایہ تواڈا اے تھلے دتیاں گیاں ساغیٹاں تے؛ زیادہ اے ای ہوسکدا اے جے اوناں کول اک وکھری کنجی ہووے تواڈے پرائمری کھاتے توں:",
 	"centralauth-foreign-link": "ورتن والا$1 $2 تے",
-	"centralauth-foreign-contributions": "$1 {{انیک : $1|کم|کم}}   2$ تے",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|کم|کماں}} تے $2",
 	"centralauth-merge-method-primary": "ہوم وکی",
 	"centralauth-merge-method-empty": "کوئی حصہ نئیں",
 	"centralauth-merge-method-mail": "ای-میل نال کنفرم کرو۔",
