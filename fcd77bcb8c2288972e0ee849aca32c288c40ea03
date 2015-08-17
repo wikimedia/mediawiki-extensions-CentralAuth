@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_7475fec7",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2015-08-17T17:27:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6ec1af18_3981afa4",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_f98a47bf",
         "filename": "modules/ext.centralauth.ForeignApi.js",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_147cbab3",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2015-08-17T17:27:52Z",
+      "side": 1,
+      "message": "Hmm, do you think we should try handling that? Or should I just correct the comment here?",
+      "parentUuid": "6ec1af18_f98a47bf",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_79b65787",
         "filename": "modules/ext.centralauth.ForeignApi.js",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-17T15:16:49Z",
       "side": 1,
       "message": "Can we differentiate the expected and unexpected cases?",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_142a7a8f",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2015-08-17T17:27:52Z",
+      "side": 1,
+      "message": "We can, but the code is still the same.\n\nCurrently we differentiate between \"needs a centralauthtoken for correct behavior\" and \"does need centralauthtoken for correct behavior\". We could instead do \"user is anonymous\", \"foreign wiki doesn\u0027t have CentralAuth\", \"user is logged in on foreign wiki\" and \"needs a centralauthtoken for correct behavior\", but the code for the first three cases would be the same. I don\u0027t think it would be clearer.",
+      "parentUuid": "6ec1af18_79b65787",
       "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
