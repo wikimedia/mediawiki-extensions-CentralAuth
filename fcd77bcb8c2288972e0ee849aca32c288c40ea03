@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_3981afa4",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-08-17T15:16:49Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_f98a47bf",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-08-17T15:16:49Z",
+      "side": 1,
+      "message": "Or too old of a version (that used action\u003dtokens\u0026type\u003dcentralauth instead).",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_79b65787",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-08-17T15:16:49Z",
+      "side": 1,
+      "message": "Can we differentiate the expected and unexpected cases?",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
