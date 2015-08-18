@@ -77,7 +77,11 @@ class SpecialCentralAuth extends SpecialPage {
 			)->plain()
 		) );
 
-		$this->mGlobalUser = $globalUser = new CentralAuthUser( $this->mUserName );
+		$globalUser = new CentralAuthUser(
+			$this->mUserName,
+			$this->getRequest()->wasPosted() ? CentralAuthUser::READ_LATEST : 0
+		);
+		$this->mGlobalUser = $globalUser;
 
 		if ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) && !$this->mCanOversight ) {
 			// Claim that there's nothing if the global account is hidden and the user is not

@@ -521,14 +521,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 */
 	function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.
-		// Use the master over here as this could go horribly wrong with newly created or just renamed groups
+		// Use the master over here as this could go horribly wrong with newly created or just
+		// renamed groups
 		$dbr = CentralAuthUser::getCentralDB();
 
 		$res = $dbr->select( array( 'global_user_groups', 'globaluser' ), 'gu_name', array( 'gug_group' => $group, 'gu_id=gug_user' ), __METHOD__ );
 
 		// Invalidate their rights cache.
 		foreach ( $res as $row ) {
-			$cu = new CentralAuthUser( $row->gu_name );
+			// Use READ_LATEST for paranoia, though the DB isn't used in this method
+			$cu = new CentralAuthUser( $row->gu_name, CentralAuthUser::READ_LATEST );
 			$cu->quickInvalidateCache();
 		}
 	}

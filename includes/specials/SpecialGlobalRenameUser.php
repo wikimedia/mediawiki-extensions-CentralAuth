@@ -139,7 +139,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				// Not a conflict since the old usage will go away
 				continue;
 			}
-			$ca = new CentralAuthUser( $name );
+			$ca = new CentralAuthUser( $name, CentralAuthUser::READ_LATEST );
 			if ( $ca->isHidden() ) {
 				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
 			} else {

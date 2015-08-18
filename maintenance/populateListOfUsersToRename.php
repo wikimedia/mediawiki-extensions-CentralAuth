@@ -72,7 +72,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 				$this->lWiki = $row->wiki;
 				$attachableWikis = $cache->get( $row->name );
 				if ( !$attachableWikis ) {
-					$ca = new CentralAuthUser( $row->name );
+					$ca = new CentralAuthUser( $row->name, CentralAuthUser::READ_LATEST );
 					$attachableWikis = array();
 					$unattached = $ca->queryUnattached();
 					if ( $ca->exists() ) {
