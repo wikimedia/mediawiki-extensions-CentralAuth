@@ -31,6 +31,7 @@ class PopulateHomeDB extends Maintenance {
 
 			foreach( $result as $row ) {
 				$central = new CentralAuthUser( $row->gu_name );
+				$central->setLoadFromMasterFlag();
 				$central->mStateDirty = true;
 				$central->saveSettings();
 				$count++;

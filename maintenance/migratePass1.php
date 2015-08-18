@@ -33,6 +33,7 @@ class MigratePass1 extends Maintenance {
 		foreach( $result as $row ) {
 			$this->fromPrefix = $row->gn_name;
 			$central = new CentralAuthUser( $row->gn_name );
+			$central->setLoadFromMasterFlag();
 			if ( $central->storeAndMigrate() ) {
 				$this->migrated++;
 			}

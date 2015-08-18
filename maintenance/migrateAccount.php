@@ -102,6 +102,7 @@ class MigrateAccount extends Maintenance {
 		$this->output( "CentralAuth account migration for: " . $username . "\n");
 
 		$central = new CentralAuthUser( $username );
+		$central->setLoadFromMasterFlag();
 		try {
 			$unattached = $central->queryUnattached();
 		} catch ( Exception $e ) {

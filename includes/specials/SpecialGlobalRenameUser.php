@@ -139,6 +139,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				continue;
 			}
 			$ca = new CentralAuthUser( $name );
+			$ca->setLoadFromMasterFlag();
 			if ( $ca->isHidden() ) {
 				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
 			} else {
