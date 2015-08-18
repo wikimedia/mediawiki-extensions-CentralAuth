@@ -74,7 +74,7 @@ class DeleteEmptyAccounts extends Maintenance {
 	}
 
 	function process( $username ) {
-		$central = new CentralAuthUser( $username );
+		$central = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
 		if ( !$central->exists() ) {
 			$this->output( "ERROR: [$username] Central account does not exist. So how'd we find it?\n" );
 			return;
