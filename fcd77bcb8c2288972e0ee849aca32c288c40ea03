@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_d3815fc9",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2015-08-18T19:39:19Z",
+      "side": 1,
+      "message": "Done\n\n…Actually I just noticed that this makes no sense. We\u0027re querying the local wiki here. I\u0027m axing this.\n\n…The \u0027notloggedin\u0027 check also makes little sense, we check if the user is logged in in the constructor.",
+      "parentUuid": "6ec1af18_f8cc788e",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_79b65787",
         "filename": "modules/ext.centralauth.ForeignApi.js",
         "patchSetId": 3
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "I meant differentiate between \"this error is expected, continue anyway\" and \"some other error occurred that we should report up the chain\".\n\nWhat exactly *are* the expected errors, anyway?",
       "parentUuid": "6ec1af18_142a7a8f",
+      "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_13f846e1",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2015-08-18T19:39:19Z",
+      "side": 1,
+      "message": "I\u0027m not sure if we should be reporting any errors from here, it\u0027s supposed to be transparent, doing it\u0027s best to keep the user logged in. We could maybe barf if we fail to get a centralauthtoken for a logged in user…\n\nIt might be worth documenting somewhere that you should pass  \u0027\u0026assert\u003duser\u0027 when using a ForeignApi and want to ensure that the remote user is logged in. I\u0027ll put it in the doc comments in the core change.",
+      "parentUuid": "6ec1af18_18c86476",
       "revId": "fcd77bcb8c2288972e0ee849aca32c288c40ea03",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
