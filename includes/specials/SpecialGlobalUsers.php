@@ -249,14 +249,18 @@ class GlobalUsersPager extends AlphabeticPager {
 	protected function getUserGroups( $id ) {
 		$rights = array();
 		foreach ( $this->globalIDGroups[$id] as $group ) {
+			$groupLink = User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) );
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
 				$rights[] = Html::element( 'span',
-					array( 'class' => 'groupnotappliedhere' ),
-					User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) )
+					array(
+						'class' => 'groupnotappliedhere',
+						'title' => $this->msg( 'centralauth-listusers-groupnotappliedhere' )->plain()
+					),
+					$groupLink
 				);
 			} else {
-				$rights[] = User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) );
+				$rights[] = $groupLink;
 			}
 		}
 
