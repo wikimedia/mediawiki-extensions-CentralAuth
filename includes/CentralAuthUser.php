@@ -2539,7 +2539,13 @@ class CentralAuthUser extends AuthPluginUser {
 		$sets = array();
 		foreach ( $this->mRights as $right ) {
 			if ( $right['set'] ) {
-				$set = isset( $sets[$right['set']] ) ?  $sets[$right['set']] : WikiSet::newFromID( $right['set'] );
+				$setId = $right['set'];
+				if ( isset( $sets[$setId] ) ) {
+					$set = $sets[$setId];
+				} else {
+					$set = WikiSet::newFromID( $setId );
+					$sets[$setId] = $set;
+				}
 				if ( $set->inSet() ) {
 					$rights[] = $right['right'];
 				}
