@@ -30,7 +30,7 @@ class PopulateHomeDB extends Maintenance {
 			);
 
 			foreach( $result as $row ) {
-				$central = new CentralAuthUser( $row->gu_name );
+				$central = new CentralAuthUser( $row->gu_name, CentralAuthUser::READ_LATEST );
 				$central->mStateDirty = true;
 				$central->saveSettings();
 				$count++;

@@ -191,7 +191,11 @@ class SpecialMergeAccount extends SpecialPage {
 
 	function doDryRunMerge() {
 		global $wgCentralAuthDryRun;
-		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
+
+		$globalUser = new CentralAuthUser(
+			$this->getUser()->getName(),
+			CentralAuthUser::READ_LATEST
+		);
 
 		if ( $globalUser->exists() ) {
 			// Already exists - race condition
@@ -250,7 +254,11 @@ class SpecialMergeAccount extends SpecialPage {
 
 	function doInitialMerge() {
 		global $wgCentralAuthDryRun;
-		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
+
+		$globalUser = new CentralAuthUser(
+			$this->getUser()->getName(),
+			CentralAuthUser::READ_LATEST
+		);
 
 		if ( $wgCentralAuthDryRun ) {
 			$this->dryRunError();
@@ -277,7 +285,11 @@ class SpecialMergeAccount extends SpecialPage {
 
 	function doCleanupMerge() {
 		global $wgCentralAuthDryRun;
-		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
+
+		$globalUser = new CentralAuthUser(
+			$this->getUser()->getName(),
+			CentralAuthUser::READ_LATEST
+		);
 
 		if ( !$globalUser->exists() ) {
 			throw new Exception( "User doesn't exist -- race condition?" );
@@ -310,7 +322,11 @@ class SpecialMergeAccount extends SpecialPage {
 
 	function doAttachMerge() {
 		global $wgCentralAuthDryRun;
-		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
+
+		$globalUser = new CentralAuthUser(
+			$this->getUser()->getName(),
+			CentralAuthUser::READ_LATEST
+		);
 
 		if ( !$globalUser->exists() ) {
 			throw new Exception( "User doesn't exist -- race condition?" );
