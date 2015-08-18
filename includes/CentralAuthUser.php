@@ -10,7 +10,7 @@ likely construction types...
 
 */
 
-class CentralAuthUser extends AuthPluginUser {
+class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * The username of the current user.
 	 * @var string
@@ -59,10 +59,14 @@ class CentralAuthUser extends AuthPluginUser {
 
 	/**
 	 * @param $username string
+	 * @param integer $flags Supports CentralAuthUser::READ_LATEST to use the master DB
 	 */
-	function __construct( $username ) {
+	function __construct( $username, $flags = 0 ) {
 		$this->mName = $username;
 		$this->resetState();
+		if ( $flags & self::READ_LATEST ) {
+			$this->mFromMaster = true;
+		}
 	}
 
 	/**
@@ -272,7 +276,8 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__,
 			array(),
 			array(
-				'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
+				'localuser' => array( 'LEFT OUTER JOIN',
+					array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
 			)
 		);
 

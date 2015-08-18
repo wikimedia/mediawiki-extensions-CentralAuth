@@ -32,7 +32,7 @@ class MigratePass1 extends Maintenance {
 			__METHOD__ );
 		foreach( $result as $row ) {
 			$this->fromPrefix = $row->gn_name;
-			$central = new CentralAuthUser( $row->gn_name );
+			$central = new CentralAuthUser( $row->gn_name, CentralAuthUser::READ_LATEST );
 			if ( $central->storeAndMigrate() ) {
 				$this->migrated++;
 			}
