@@ -1,3 +1,4 @@
-.groupnotappliedhere {
+.groupnotappliedhere a {
         color: grey;
+        font-style: italic;
 }

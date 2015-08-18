@@ -181,6 +181,7 @@
 	"centralauth-listusers-attached": "[[User:$1|exists locally]]",
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-nolocal": "unattached or doesn't exist locally",
+	"centralauth-listusers-groupnotappliedhere": "Group does not apply locally",
 	"multilock": "Lock multiple global accounts",
 	"centralauth-admin-multi-username": "Enter one or more usernames, separated by new-line",
 	"centralauth-admin-multi-notfound": "Search returned no usernames.",
