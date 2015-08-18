@@ -1804,7 +1804,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * @return array
 	 */
-	function doListUnattached() {
+	private function doListUnattached() {
 		$dbw = self::getCentralDB();
 
 		$result = $dbw->select(
