@@ -252,11 +252,14 @@ class GlobalUsersPager extends AlphabeticPager {
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
 				$rights[] = Html::element( 'span',
-					array( 'class' => 'groupnotappliedhere' ),
-					User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) )
+					array(
+						'class' => 'groupnotappliedhere',
+						'title' => $this->msg( 'centralauth-listusers-groupnotappliedhere' )->plain()
+					),
+					User::getGroupName( $group )
 				);
 			} else {
-				$rights[] = User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) );
+				$rights[] = User::makeGroupLinkWiki( $group );
 			}
 		}
 

@@ -197,6 +197,7 @@
 	"centralauth-listusers-attached": "This message is used as user's info. Parameters:\n* $1 - username\nSee also:\n* {{msg-mw|Centralauth-listusers-locked}}\n* {{msg-mw|Centralauth-listusers-attached}}\n* {{msg-mw|Centralauth-listusers-nolocal}}",
 	"centralauth-listusers-item": "{{optional}}\nParameters:\n* $1 - username\n* $2 - list of informations. Can contain the following messages:\n** {{msg-mw|Centralauth-listusers-locked}}\n** {{msg-mw|Centralauth-listusers-attached}}\n** {{msg-mw|Centralauth-listusers-nolocal}}",
 	"centralauth-listusers-nolocal": "This message is used as user's info:\n*{{msg-mw|centralauth-listusers-locked}}\n*{{msg-mw|centralauth-listusers-attached}}\n*{{msg-mw|centralauth-listusers-nolocal}}",
+	"centralauth-listusers-groupnotappliedhere": "This message is used as the tooltip for groups on [[Special:GlobalUsers]] which do not apply on the local wiki.",
 	"multilock": "{{doc-special|MultiLock}}",
 	"centralauth-admin-multi-username": "Instructions for text box where admin will enter usernames, one per line",
 	"centralauth-admin-multi-notfound": "Error message when seach returned no results",
