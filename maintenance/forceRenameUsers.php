@@ -76,6 +76,7 @@ class ForceRenameUsers extends Maintenance {
 		}
 		$this->log( "Beginning rename of $newNamePrefix" );
 		$newCAUser = new CentralAuthUser( $newNamePrefix );
+		$newCAUser->setLoadFromMasterFlag();
 		$count = 0;
 		// Edge case: Someone created User:Foo~wiki manually.
 		// So just start appending numbers to the end of the name
@@ -83,6 +84,7 @@ class ForceRenameUsers extends Maintenance {
 		while ( $newCAUser->exists() ) {
 			$count++;
 			$newCAUser = new CentralAuthUser( $newNamePrefix . (string)$count );
+			$newCAUser->setLoadFromMasterFlag();
 		}
 		if ( $newNamePrefix !== $newCAUser->getName() ) {
 			$this->log( "WARNING: New name is now {$newCAUser->getName()}" );
@@ -136,6 +138,8 @@ class ForceRenameUsers extends Maintenance {
 		foreach ( $rows as $row ) {
 			$user = User::newFromName( $row->utr_name );
 			$caUser = new CentralAuthUser( $row->utr_name );
+			$caUser->setLoadFromMasterFlag();
+
 			if ( !$user->getId() ) {
 				$this->log( "'{$row->utr_name}' has been renamed since the last was list generated." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );

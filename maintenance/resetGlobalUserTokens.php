@@ -94,6 +94,7 @@ class ResetGlobalUserTokens extends Maintenance {
 
 	private function updateUser( $username ) {
 		$user = new CentralAuthUser( $username );
+		$user->setLoadFromMasterFlag();
 		$this->output( 'Resetting user_token for "' . $username . '": ' );
 		// Change value
 		$user->resetAuthToken();

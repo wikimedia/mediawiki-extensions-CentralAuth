@@ -28,6 +28,7 @@ class CentralAuthSuppressUserJob extends Job {
 		$suppress = $this->params['suppress'];
 		$reason = $this->params['reason'];
 		$user = new CentralAuthUser( $username );
+		$user->setLoadFromMasterFlag();
 		if ( !$user->exists() ) {
 			wfDebugLog( 'suppressjob', "Requested to suppress non-existent user {$username} by {$by}." );
 		}

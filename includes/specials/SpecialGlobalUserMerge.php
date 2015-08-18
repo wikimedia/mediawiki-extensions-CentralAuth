@@ -95,6 +95,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		}
 
 		$caUser = new CentralAuthUser( $name );
+		$caUser->setLoadFromMasterFlag();
 		if ( !$caUser->exists() ) {
 			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
 		}
@@ -149,7 +150,9 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 					// DWIM and ignore it
 					continue;
 				}
-				$this->oldCAUsers[] = new CentralAuthUser( $name );
+				$caUser = new CentralAuthUser( $name );
+				$caUser->setLoadFromMasterFlag();
+				$this->oldCAUsers[] = $caUser;
 			}
 		}
 

@@ -179,6 +179,24 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * If loadState() was not called already, make sure the master DB is used
+	 * when it *is* called and needs to query the DB due to a cache miss
+	 *
+	 * The cache should normally be highly up-to-date in the master datacenter, where
+	 * data changing POST requests should be routed anyway, so it is not usually necessary
+	 * to bypass the cache.
+	 *
+	 * This can be called right after __construct() or getInstance() as needed
+	 *
+	 * @since 1.26
+	 */
+	public function setLoadFromMasterFlag() {
+		if ( !isset( $this->mGlobalId ) ) {
+			$this->mFromMaster = true;
+		}
+	}
+
+	/**
 	 * Clear state information cache
 	 * Does not clear $this->mName, so the state information can be reloaded with loadState()
 	 */
@@ -216,7 +234,7 @@ class CentralAuthUser extends AuthPluginUser {
 
 		wfDebugLog( 'CentralAuthVerbose', "Loading state for global user {$this->mName} from DB" );
 
-		$this->mFromMaster = self::centralLBHasRecentMasterChanges();
+		$this->mFromMaster = $this->mFromMaster ?: self::centralLBHasRecentMasterChanges();
 		if ( $this->mFromMaster ) {
 			$db = self::getCentralDB();
 		} else {
@@ -234,7 +252,8 @@ class CentralAuthUser extends AuthPluginUser {
 			__METHOD__,
 			array(),
 			array(
-				'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
+				'localuser' => array( 'LEFT OUTER JOIN',
+					array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
 			)
 		);
 
@@ -408,11 +427,9 @@ class CentralAuthUser extends AuthPluginUser {
 			$this->resetState();
 		}
 
-		$ttl = $this->mFromMaster ? 86400 : 30;
-
 	 	$obj = $this->getCacheObject();
 	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
-		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, $ttl );
+		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400 );
 	}
 
 	/**
@@ -2056,9 +2073,9 @@ class CentralAuthUser extends AuthPluginUser {
 			return $this->mAttachedInfo;
 		}
 
-		$dbw = self::getCentralDB();
+		$db = $this->mFromMaster ? self::getCentralDB() : self::getCentralSlaveDB();
 
-		$result = $dbw->select(
+		$result = $db->select(
 			'localuser',
 			array(
 				'lu_wiki',
