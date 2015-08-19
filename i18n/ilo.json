@@ -178,8 +178,6 @@
 	"centralauth-prefs-status": "Kasasaad ti global a pakabilangan:",
 	"centralauth-prefs-not-managed": "Saan nga agus-usar ti naipagkaykaysa a pakabilangan",
 	"centralauth-prefs-unattached": "Di napasingkedan",
-	"centralauth-prefs-complete": "Nalimpia aminen!",
-	"centralauth-prefs-migration": "Agdama a maiyakar",
 	"centralauth-prefs-count-attached": "Nasiglat ti pakabilangam iti $1 a gandat {{PLURAL:$1|ti sitio|dagiti sitio}}.",
 	"centralauth-prefs-count-unattached": "Dagiti saan a napasingkedan a pakabilangan ket addaan iti $1 {{PLURAL:$1|a gandat|a gangandat}}.",
 	"centralauth-prefs-detail-unattached": "global a pakabilangan.",

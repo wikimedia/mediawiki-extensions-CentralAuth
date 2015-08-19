@@ -179,8 +179,6 @@
 	"centralauth-prefs-status": "Stato d' 'o cunto utente globale:",
 	"centralauth-prefs-not-managed": "Nun se stà ausanno 'o cunto globale aunito",
 	"centralauth-prefs-unattached": "Nun cunfermato",
-	"centralauth-prefs-complete": "Tutt'appost!",
-	"centralauth-prefs-migration": "'N mmigraziune",
 	"centralauth-prefs-count-attached": "'O cunto vuosto è attivo ncopp'a $1 {{PLURAL:$1|pruggetto|pruggette}}.",
 	"centralauth-prefs-count-unattached": "'E cunte nun cunfermate c' 'o nomme vuosto rimaneno ncopp' 'a $1 {{PLURAL:$1|pruggetto|pruggette}}.",
 	"centralauth-prefs-detail-unattached": "Stu pruggetto nun è stato cunfermato comme appartenente 'o cunto globbale.",

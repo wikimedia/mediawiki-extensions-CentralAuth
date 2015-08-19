@@ -196,8 +196,6 @@
 	"centralauth-prefs-status": "통합 계정 상태:",
 	"centralauth-prefs-not-managed": "통합 계정 사용하지 않음",
 	"centralauth-prefs-unattached": "확인되지 않음",
-	"centralauth-prefs-complete": "통합 완료!",
-	"centralauth-prefs-migration": "통합하고 있음",
 	"centralauth-prefs-count-attached": "당신의 계정은 프로젝트 {{PLURAL:$1|사이트}} $1개에서 활동하고 있습니다.",
 	"centralauth-prefs-count-unattached": "당신과 같은 이름을 쓰는 확인되지 않은 계정이 {{PLURAL:$1|프로젝트}} $1개에 존재합니다.",
 	"centralauth-prefs-detail-unattached": "이 프로젝트 사이트에서는 통합 계정에 묶여 있음이 확인되지 않았습니다.",

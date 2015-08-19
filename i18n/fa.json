@@ -194,8 +194,6 @@
 	"centralauth-prefs-status": "وضعیت حساب کاربری مشترک",
 	"centralauth-prefs-not-managed": "عدم استفاده از حساب کاربری مشترک",
 	"centralauth-prefs-unattached": "تأیید نشده",
-	"centralauth-prefs-complete": "همه‌چیز مرتب است!",
-	"centralauth-prefs-migration": "در حال انتقال",
 	"centralauth-prefs-count-attached": "حساب کاربری شما در $1 {{PLURAL:$1|پروژه|پروژه}} فعال است.",
 	"centralauth-prefs-count-unattached": "حساب‌های کاربری تأیید نشده‌ای با نام شما در $1 {{PLURAL:$1|پروژه|پروژه}} باقی می‌مانند.",
 	"centralauth-prefs-detail-unattached": "تارنمای این پروژه مورد تأیید برای استفاده از حساب کاربری مشترک قرار نگرفته‌است.",

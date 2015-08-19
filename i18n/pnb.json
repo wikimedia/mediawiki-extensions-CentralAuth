@@ -142,8 +142,6 @@
 	"centralauth-prefs-status": "گلوبل اکاؤنٹ سٹیٹس:",
 	"centralauth-prefs-not-managed": "کٹھا اکاؤنٹ نئیں ورتیا جاریا",
 	"centralauth-prefs-unattached": "پکا نئیں",
-	"centralauth-prefs-complete": "ہر شے ٹھیک اے !",
-	"centralauth-prefs-migration": "تبدیلی چ",
 	"centralauth-prefs-count-attached": "تواڈا کھاتے $1 {{PLURAL:$1|وکی سائٹ|وکی سائٹاں}} تے مجود اے۔",
 	"centralauth-prefs-count-unattached": "تواڈے ناں دے انجانچے کھاتے $1 {{PLURAL:$1|وکی|وکیاں}} تے مجود نیں۔",
 	"centralauth-prefs-detail-unattached": "اس ویونت سائٹ نوں جانچیا نئیں گیا کے اے گلوبل کھاتے چ اے",
