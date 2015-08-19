@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_025f8a78",
+        "filename": "includes/specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-08-19T14:50:12Z",
+      "side": 1,
+      "message": "In PHP 5.6 you can just:\n$globalGroups \u003d array_merge( ...array_values( $this-\u003eglobalIDGroups ) );\nto unpack all $this-\u003eglobalIDGroup values into arguments to array_merge :/\nUnfortunately, we still support PHP 5.3, so:\n$globalGroups \u003d call_user_func_array( \u0027array_merge\u0027, array_values( $this-\u003eglobalIDGroups ) );\nPHP 5.4 still has security support until 14th of September, but PHP 5.5 is good for another year (security support ends 2016-07-10)",
+      "revId": "268a7eb55a7861369231d9f1b6f17579f83582a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
