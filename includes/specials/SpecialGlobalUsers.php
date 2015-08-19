@@ -40,6 +40,7 @@ class SpecialGlobalUsers extends SpecialPage {
 			Html::rawElement( 'ul', array(), $pg->getBody() ) .
 			$pg->getNavigationBar()
 		);
+
 	}
 
 	protected function getGroupName() {
@@ -50,7 +51,8 @@ class SpecialGlobalUsers extends SpecialPage {
 class GlobalUsersPager extends AlphabeticPager {
 	protected $requestedGroup = false;
 	protected $requestedUser = false;
-	private $wikiSets = array();
+	protected $globalIDGroups = array();
+	private $localWikisets = array();
 
 	function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context );
@@ -114,7 +116,11 @@ class GlobalUsersPager extends AlphabeticPager {
 
 		return array(
 			'tables' => array( 'globaluser', 'localuser', 'global_user_groups' ),
-			'fields' => array( 'gu_id', 'gu_name', 'gu_locked', 'lu_attached_method', 'gug_numgroups' => 'COUNT(gug_group)' ),
+			'fields' => array( 'gu_name',
+				'gu_id' => 'MAX(gu_id)',
+				'gu_locked' => 'MAX(gu_locked)',
+				'lu_attached_method' => 'MAX(lu_attached_method)',
+				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ), // | cannot be used in a group name
 			'conds' => $conds,
 			'options' => array( 'GROUP BY' => 'gu_name' ),
 			'join_conds' => array(
@@ -140,23 +146,42 @@ class GlobalUsersPager extends AlphabeticPager {
 		} else {
 			array_unshift( $info, $this->msg( 'centralauth-listusers-nolocal' )->text() );
 		}
-		$groups = $this->getUserGroups( $row );
-
-		if ( $groups ) {
+		if ( $row->gug_group ) {
+			$groups = $this->getUserGroups( $row->gu_id );
 			$info[] = $groups;
 		}
+
 		$info = $this->getLanguage()->commaList( $info );
 		return Html::rawElement( 'li', array(), $this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
 	}
 
 	function doBatchLookups() {
 		$batch = new LinkBatch();
-		# Give some pointers to make user links
 		foreach ( $this->mResult as $row ) {
-			$batch->add( NS_USER, $row->gu_name );
-			$batch->add( NS_USER_TALK, $row->gu_name );
+			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) ); // userpage existence link cache
+			if ( $row->gug_group ) { // no point in adding users that belong to any group
+				$this->globalIDGroups[$row->gu_id] = explode( '|', $row->gug_group );
+			}
 		}
 		$batch->execute();
+
+		// Make an array of global groups for all users in the current result set
+		$globalGroups = call_user_func_array( 'array_merge', array_values( $this->globalIDGroups ) );
+		if ( count( $globalGroups ) > 0 ) {
+			$wsQuery = $this->mDb->select(
+					array( 'global_group_restrictions', 'wikiset' ),
+					array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
+					array( 'ggr_set=ws_id', 'ggr_group' => array_unique( $globalGroups ) ),
+					__METHOD__
+			);
+			// Make an array of locally enabled wikisets
+			foreach ( $wsQuery as $wsRow ) {
+				if ( WikiSet::newFromRow( $wsRow )->inSet() ) {
+					$this->localWikisets[] = $wsRow->ggr_group;
+				}
+			}
+		}
+
 		$this->mResult->rewind();
 	}
 
@@ -216,61 +241,22 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
+	 * Note: Works only for users with $this->globalIDGroups set
+	 *
+	 * @param string $id
 	 * @return string
 	 */
-	function getBody() {
-		if ( !$this->mQueryDone ) {
-			$this->doQuery();
-		}
-		$batch = new LinkBatch;
-
-		$this->mResult->rewind();
-
-		foreach ( $this->mResult as $row ) {
-			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
-		}
-		$batch->execute();
-		$this->mResult->rewind();
-		return AlphabeticPager::getBody();
-	}
-
-	/**
-	 * @param $row
-	 * @return bool|string
-	 */
-	protected function getUserGroups( $row ) {
-		if ( !$row->gug_numgroups ) {
-			return false;
-		}
-
-		$result = $this->mDb->select( 'global_user_groups', 'gug_group', array( 'gug_user' => $row->gu_id ), __METHOD__ );
-		$globalgroups = array();
-		foreach ( $result as $row2 ) {
-			if ( !isset( $this->wikiSets[$row2->gug_group] ) ) { // We don't need to get the sets of groups we already know about.
-				$globalgroups[] = $row2->gug_group;
-			}
-		}
-
-		if ( count ( $globalgroups ) != 0 ) {
-			$wikiSetQuery = $this->mDb->select(
-				array( 'global_group_restrictions', 'wikiset' ),
-				array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
-				array( 'ggr_set=ws_id', 'ggr_group' => $globalgroups ),
-				__METHOD__
-			);
-
-			foreach ( $wikiSetQuery as $wikiSetRow ) {
-				$this->wikiSets[$wikiSetRow->ggr_group] = WikiSet::newFromRow( $wikiSetRow );
-			}
-		}
-
+	protected function getUserGroups( $id ) {
 		$rights = array();
-		foreach ( $result as $row2 ) {
-			if ( isset( $this->wikiSets[$row2->gug_group] ) && !$this->wikiSets[$row2->gug_group]->inSet() ) {
-				$group = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
-				$rights[] = Html::element( 'span', array( 'class' => 'groupnotappliedhere' ), $group );
+		foreach ( $this->globalIDGroups[$id] as $group ) {
+			if ( !in_array( $group, $this->localWikisets ) ) {
+				// Mark if the group is not applied on this wiki
+				$rights[] = Html::element( 'span',
+					array( 'class' => 'groupnotappliedhere' ),
+					User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) )
+				);
 			} else {
-				$rights[] = User::makeGroupLinkWiki( $row2->gug_group, User::getGroupMember( $row2->gug_group ) );
+				$rights[] = User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) );
 			}
 		}
 
