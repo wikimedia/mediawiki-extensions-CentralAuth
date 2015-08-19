@@ -16,6 +16,24 @@
       "revId": "268a7eb55a7861369231d9f1b6f17579f83582a1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_ada1c737",
+        "filename": "includes/specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-08-19T16:16:07Z",
+      "side": 1,
+      "message": "Thanks. I was wondering whether there was a better way to do it.",
+      "parentUuid": "6ec1af18_025f8a78",
+      "revId": "268a7eb55a7861369231d9f1b6f17579f83582a1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
