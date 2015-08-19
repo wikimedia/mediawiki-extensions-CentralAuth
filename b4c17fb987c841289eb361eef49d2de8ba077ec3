@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_d9c65d4e",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2015-08-19T00:46:47Z",
+      "side": 1,
+      "message": "All the above properties are a little confusing and could no with some comments to what they are for.",
+      "revId": "b4c17fb987c841289eb361eef49d2de8ba077ec3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_b9a4b19f",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2015-08-19T00:46:47Z",
+      "side": 1,
+      "message": "could we use mw.user.getName() here?\nIt seems cleaner then relying on config.",
+      "revId": "b4c17fb987c841289eb361eef49d2de8ba077ec3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_59b34de8",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2015-08-19T00:46:47Z",
+      "side": 1,
+      "message": "This property doesn\u0027t seem to be documented anywhere and requires lots of code groking to understand.",
+      "revId": "b4c17fb987c841289eb361eef49d2de8ba077ec3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
