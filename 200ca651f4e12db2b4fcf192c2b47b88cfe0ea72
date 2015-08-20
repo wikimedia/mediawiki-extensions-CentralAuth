@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_c1e977a8",
+        "filename": "maintenance/migratePass0.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-08-20T14:15:25Z",
+      "side": 1,
+      "message": "These two functions aren\u0027t used, shall we just get rid of them?",
+      "revId": "200ca651f4e12db2b4fcf192c2b47b88cfe0ea72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
