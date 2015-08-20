@@ -22,7 +22,8 @@
 			"Тест",
 			"NataChe",
 			"Olion",
-			"Piramidion"
+			"Piramidion",
+			"Dars"
 		]
 	},
 	"mergeaccount": "Стан об'єднання облікових записів",
@@ -196,14 +197,12 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|день|дні|днів}} тому",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|місяць|місяці|місяців}} тому",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|рік|роки|років}} тому",
-	"centralauth-prefs-status": "Стан глобального облікового запису:",
+	"centralauth-prefs-status": "Загальний обліковий запис:",
 	"centralauth-prefs-not-managed": "Не використовується єдиний обліковий запис",
-	"centralauth-prefs-unattached": "Непідтверджений",
-	"centralauth-prefs-complete": "Усе в порядку!",
-	"centralauth-prefs-migration": "Переноситься",
-	"centralauth-prefs-count-attached": "Ваш обліковий запис активний у $1 {{PLURAL:$1|проекті|проектах|проектах}}.",
+	"centralauth-prefs-unattached": "Не повністю об'єднаний",
+	"centralauth-prefs-count-attached": "Ваш обліковий запис активний у $1 {{PLURAL:$1|проекті|проектах}}.",
 	"centralauth-prefs-count-unattached": "Непідтверджені облікові записи з вашим ім'ям залишилися в $1 {{PLURAL:$1|1=проекті|проектах}}.",
-	"centralauth-prefs-detail-unattached": "Цей проект не був підтверджений як такий, що належить до вашого глобального облікового запису.",
+	"centralauth-prefs-detail-unattached": "Ваш обліковий запис не був підтверджений як такий, що належить глобальному обліковому запису.",
 	"centralauth-prefs-manage": "Керування глобальним обліковим записом",
 	"centralauth-prefs-view": "Переглянути дані глобального облікового запису",
 	"centralauth-renameuser-merged": "Користувач $1 перейшов на єдину систему входу. Його перейменування викличе втрату зв'язку локального облікового запису з глобальним.",

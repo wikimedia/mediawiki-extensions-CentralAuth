@@ -20,7 +20,8 @@
 			"Waldir",
 			"555",
 			"McDutchie",
-			"He7d3r"
+			"He7d3r",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Estado da autenticação unificada",
@@ -193,11 +194,9 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dia|dias}} atrás",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mês|meses}} atrás",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ano|anos}} atrás",
-	"centralauth-prefs-status": "Estado da conta global:",
+	"centralauth-prefs-status": "Conta global:",
 	"centralauth-prefs-not-managed": "Não está a usar a conta global",
 	"centralauth-prefs-unattached": "Não confirmado",
-	"centralauth-prefs-complete": "Tudo em ordem!",
-	"centralauth-prefs-migration": "Em migração",
 	"centralauth-prefs-count-attached": "A sua conta encontra-se activa {{PLURAL:$1|num sítio|em $1 sítios}}.",
 	"centralauth-prefs-count-unattached": "Ainda {{PLURAL:$1|existe uma conta não confirmada|existem contas não confirmadas}} com o seu nome de utilizador {{PLURAL:$1|numa wiki|em $1 wikis}}.",
 	"centralauth-prefs-detail-unattached": "Não foi confirmado que esta wiki esteja acoplada à conta global.",

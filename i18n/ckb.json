@@ -49,8 +49,6 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ساڵ}} لەمەو پێش",
 	"centralauth-prefs-status": "دۆخی ھەژماری گشتی:",
 	"centralauth-prefs-not-managed": "بەکارنەھێنانی ھەژماری یەکگرتوو",
-	"centralauth-prefs-complete": "ھەموو شتێک ڕێکوپێکە!",
-	"centralauth-prefs-migration": "لە گواستنەوەدا",
 	"centralauth-prefs-count-attached": "ھەژمارەکەت لە $1 {{PLURAL:$1|پێگە}}ی پرۆژەدا چالاکە.",
 	"centralauth-prefs-count-unattached": "ھەژماری پشتڕاست نەکراو بە ناوی تۆ لە $1 {{PLURAL:$1|پروژە}}دا دەمێنێتەوە.",
 	"centralauth-prefs-manage": "ھەژمارە گشتییەکەت سەرپەرشتی بکە",
