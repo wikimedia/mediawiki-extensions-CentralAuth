@@ -1,4 +1,5 @@
 ( function ( mw ) {
+	var url, params, len, param, i;
 	// Are we already logged in?
 	if ( mw.config.get( 'wgUserName' ) !== null ) {
 		return;
@@ -22,7 +23,6 @@
 	// Ok, perform the acutal logged-in check via a <script> tag. The
 	// referenced URL will 302 a few times and then return appropriate
 	// JavaScript to complete the process.
-	var url, params, len, param, i;
 
 	url = mw.config.get( 'wgCentralAuthCheckLoggedInURL' );
 	if ( url ) {
@@ -33,10 +33,10 @@
 			params = location.search.slice( 1 ).split( '&' );
 			len = params.length;
 			for ( i = 0; i < len; i++ ) {
-				param = params[i].split( '=' );
-				param = decodeURIComponent( param[0] );
+				param = params[ i ].split( '=' );
+				param = decodeURIComponent( param[ 0 ] );
 				if ( param === 'returnto' || param === 'returntoquery' ) {
-					url += '&' + params[i];
+					url += '&' + params[ i ];
 				}
 			}
 		}

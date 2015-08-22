@@ -8,7 +8,7 @@
 	config = {
 		fetch: function ( userInput ) {
 			var $textbox = this,
-				node = this[0];
+				node = this[ 0 ];
 
 			api = api || new mw.Api();
 
@@ -27,7 +27,7 @@
 			} ) );
 		},
 		cancel: function () {
-			var node = this[0],
+			var node = this[ 0 ],
 				request = $.data( node, 'request' );
 
 			if ( request ) {
