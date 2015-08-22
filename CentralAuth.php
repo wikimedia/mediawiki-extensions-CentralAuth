@@ -519,9 +519,8 @@ $wgResourceModules['ext.centralauth'] = array(
 	),
 ) + $commonModuleInfo;
 
-$wgResourceModules['ext.centralauth.centralautologin'] = array(
-	'scripts' => 'ext.centralauth.centralautologin.js',
-	'styles' => 'ext.centralauth.centralautologin.css',
+$wgResourceModules['ext.centralauth.utils'] = array(
+	'scripts' => 'ext.centralauth.utils.js',
 	'position' => 'top',
 	'targets' => array( 'mobile', 'desktop' ),
 	'dependencies' => array(
@@ -529,6 +528,25 @@ $wgResourceModules['ext.centralauth.centralautologin'] = array(
 		'mediawiki.jqueryMsg',
 	),
 ) + $commonModuleInfo;
+$wgResourceModules['ext.centralauth.centralautologin'] = array(
+	'scripts' => 'ext.centralauth.centralautologin.js',
+	'styles' => 'ext.centralauth.centralautologin.css',
+	'position' => 'top',
+	'targets' => array( 'mobile', 'desktop' ),
+	'dependencies' => array(
+		'ext.centralauth.utils',
+	),
+) + $commonModuleInfo;
+$wgResourceModules['ext.centralauth.centralautologin.mobile'] = array(
+	'scripts' => 'ext.centralauth.centralautologin.mobile.js',
+	'styles' => 'ext.centralauth.centralautologin.css',
+	'position' => 'top',
+	'targets' => array( 'mobile', 'desktop' ),
+	'dependencies' => array(
+		'ext.centralauth.utils',
+	),
+) + $commonModuleInfo;
+
 $wgResourceModules['ext.centralauth.centralautologin.clearcookie'] = array(
 	'scripts' => 'ext.centralauth.centralautologin.clearcookie.js',
 	'position' => 'top',
