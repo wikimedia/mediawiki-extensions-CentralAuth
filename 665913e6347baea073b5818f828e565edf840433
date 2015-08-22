@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_77439743",
+        "filename": "modules/ext.centralauth.globalusers.css",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-08-22T06:21:45Z",
+      "side": 1,
+      "message": "This would cause it to only be applied to links.. but it needs to be applied to groups with no grouppages too.",
+      "revId": "665913e6347baea073b5818f828e565edf840433",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
