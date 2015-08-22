@@ -27,6 +27,9 @@
 	url = mw.config.get( 'wgCentralAuthCheckLoggedInURL' );
 	if ( url ) {
 		url += '&proto=' + encodeURIComponent( location.protocol.replace( ':', '' ) );
+		if ( mw.config.get( 'wgCentralAuthMobileDomain' ) === true ) {
+			url += '&mobile=1';
+		}
 		if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
 			url += '&return=1';
 
