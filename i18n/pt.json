@@ -197,7 +197,7 @@
 	"centralauth-prefs-status": "Conta global:",
 	"centralauth-prefs-not-managed": "Não está a usar a conta global",
 	"centralauth-prefs-unattached": "Não confirmado",
-	"centralauth-prefs-count-attached": "A sua conta encontra-se activa {{PLURAL:$1|num sítio|em $1 sítios}}.",
+	"centralauth-prefs-count-attached": "A sua conta encontra-se ativa {{PLURAL:$1|numa wiki|em $1 wikis}}.",
 	"centralauth-prefs-count-unattached": "Ainda {{PLURAL:$1|existe uma conta não confirmada|existem contas não confirmadas}} com o seu nome de utilizador {{PLURAL:$1|numa wiki|em $1 wikis}}.",
 	"centralauth-prefs-detail-unattached": "Não foi confirmado que esta wiki esteja acoplada à conta global.",
 	"centralauth-prefs-manage": "Administrar a sua conta global",
