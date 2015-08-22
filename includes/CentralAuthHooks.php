@@ -1491,6 +1491,11 @@ class CentralAuthHooks {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
 		if ( $out->getUser()->isAnon() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
+				// Let the frontend know if this is a mobile domain, T100413
+				$out->addJsConfigVars(
+					'wgCentralAuthMobileDomain',
+					self::isMobileDomain()
+				);
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
 				// For non-JS clients. Use WikiMap to avoid localization of the
