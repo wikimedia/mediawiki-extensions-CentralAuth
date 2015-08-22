@@ -121,10 +121,10 @@ class SpecialWikiSets extends SpecialPage {
 			$type = $set ? $set->getType() : WikiSet::OPTIN;
 		}
 		if ( !$wikis ) {
-			$wikis = implode( "\n", $set ? $set->getWikisRaw() : array() );
-		} else {
-			$wikis = implode( "\n", $wikis );
+			$wikis = $set ? $set->getWikisRaw() : array();
 		}
+		sort( $wikis );
+		$wikis = implode( "\n", $wikis );
 		$url = SpecialPage::getTitleFor( 'WikiSets', $subpage )->getLocalUrl();
 		if ( $this->mCanEdit ) {
 			// Give grep a chance to find the usages:
