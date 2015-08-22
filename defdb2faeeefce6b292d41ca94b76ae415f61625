@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_d76e0ac4",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-08-22T16:29:07Z",
+      "side": 1,
+      "message": "This is redundant",
+      "revId": "defdb2faeeefce6b292d41ca94b76ae415f61625",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
