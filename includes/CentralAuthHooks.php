@@ -1491,8 +1491,11 @@ class CentralAuthHooks {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
 		if ( $out->getUser()->isAnon() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
-				$out->addModules( 'ext.centralauth.centralautologin' );
-
+				if ( self::isMobileDomain() ) {
+					$out->addModules( 'ext.centralauth.centralautologin.mobile' );
+				} else {
+					$out->addModules( 'ext.centralauth.centralautologin' );
+				}
 				// For non-JS clients. Use WikiMap to avoid localization of the
 				// 'Special' namespace, see bug 54195.
 				$wiki = WikiMap::getWiki( wfWikiID() );
