@@ -1,3 +1,3 @@
 ( function ( mw ) {
-	mw.centralauth.autologin( false );
+	mw.centralauth.autologin( true );
 }( mediaWiki ) );
