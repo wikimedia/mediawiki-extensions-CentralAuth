@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_b781fe50",
+        "filename": "modules/ext.centralauth.globalusers.css",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-08-22T16:44:09Z",
+      "side": 1,
+      "message": "latter is redundant; first one selects both.",
+      "revId": "279583d08e11ab758d0127c1a47dbf0d6f1bada2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
