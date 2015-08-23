@@ -472,5 +472,19 @@
 	"apihelp-globaluserrights-example-2": "Amestar l'usuariu global con ID 123 al grupu global \"bot\", y quitalu de los grupos globales \"alministrador\" y \"burócrata\"",
 	"apihelp-query+globalallusers-description": "Enumerar tolos usuarios globales.",
 	"apihelp-query+globalallusers-param-from": "Nome d'usuariu dende'l que principiar la enumeración.",
-	"apihelp-query+globalallusers-param-to": "Nome d'usuariu nel que acabar la enumeración."
+	"apihelp-query+globalallusers-param-to": "Nome d'usuariu nel que acabar la enumeración.",
+	"apihelp-query+globalallusers-param-prefix": "Buscar tolos usuarios qu'empiecen con esti valor.",
+	"apihelp-query+globalallusers-param-dir": "Direición na qu'ordenar.",
+	"apihelp-query+globalallusers-param-group": "Llendar los usuarios a los grupos globales indicaos.",
+	"apihelp-query+globalallusers-param-excludegroup": "Excluir a los usuarios de determinaos grupos globales.",
+	"apihelp-query+globalallusers-param-prop": "Qué información incluir:\n;lockinfo:Si la cuenta del usuariu ta bloquiada.\n;groups:Llista de grupos globales nos que ta l'usuariu. Usa más recursos del sirvidor y pué devolver menos resultaos que la llende.\n;existslocally:Amiesta la información si l'usuariu existe llocalmente.",
+	"apihelp-query+globalallusers-param-limit": "Númberu total de nomes de usuariu a devolver.",
+	"apihelp-query+globalallusers-example-1": "Llista d'usuarios globales",
+	"apihelp-query+globalallusers-example-2": "Amosar dalguna información de los usuarios globales principiando dende \"ABC\"",
+	"apihelp-query+globalgroups-description": "Enumerar tolos grupos globales.",
+	"apihelp-query+globalgroups-param-prop": "Pieces d'información a incluir.",
+	"apihelp-query+globalgroups-example-1": "Llista de grupos globales",
+	"apihelp-query+globalgroups-example-2": "Amosar los grupos globales colos permisos que conceden",
+	"apihelp-query+globaluserinfo-description": "Amosar información sobro un usuariu global.",
+	"apihelp-query+globaluserinfo-param-user": "Usuariu del qu'algamar la información. De mou predetermináu, ye l'usuariu actual."
 }
