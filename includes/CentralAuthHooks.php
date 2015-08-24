@@ -2129,9 +2129,12 @@ class CentralAuthHooks {
 	 */
 	public static function onSpecialLogAddLogSearchRelations( $type, WebRequest $request, array &$qc ) {
 		if ( $type === 'gblrename' ) {
-			$oldname = User::getCanonicalName( $request->getVal( 'oldname' ) );
-			if ( $oldname !== false ) {
-				$qc = array( 'ls_field' => 'oldname', 'ls_value' => $oldname );
+			$oldname = $request->getVal( 'oldname' );
+			if ( is_string( $oldname ) ) {
+				$canonicalOldname = User::getCanonicalName( $oldname );
+				if ( $oldname !== false ) {
+					$qc = array( 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname );
+				}
 			}
 		}
 
