@@ -576,6 +576,7 @@ $wgResourceModules['ext.centralauth.ForeignApi'] = array(
 	'dependencies' => array(
 		'mediawiki.ForeignApi.core',
 	),
+	'targets' => array( 'desktop', 'mobile' ),
 ) + $commonModuleInfo;
 
 // Finish configuration after other extensions and settings are loaded.
