@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_c0263963",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1196
+      },
+      "writtenOn": "2015-08-24T14:51:41Z",
+      "side": 1,
+      "message": "Perhaps this should be strictly limited to desktop.\n\nI understand that either this or the .mobile module is chosen in the onBeforePageDisplay handler but it a module\u0027s target also communicates to the developer where it\u0027s to be used.",
+      "revId": "94a32fc60a999a1cbe1df0b8604169648ba0b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_601d0514",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1196
+      },
+      "writtenOn": "2015-08-24T14:51:41Z",
+      "side": 1,
+      "message": "See above.",
+      "revId": "94a32fc60a999a1cbe1df0b8604169648ba0b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
