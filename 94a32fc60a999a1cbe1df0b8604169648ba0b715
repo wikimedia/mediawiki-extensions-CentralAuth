@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_43bc93b1",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-08-24T17:20:23Z",
+      "side": 1,
+      "message": "I honestly haven\u0027t looked into how the targets are implemented-- since we choose mobile/not based only on domain, not device, I wanted to make sure a desktop browser on the mobile domain, etc, get the script.\n\nIf that\u0027s going to happen, happy to update the target value.",
+      "parentUuid": "6ec1af18_c0263963",
+      "revId": "94a32fc60a999a1cbe1df0b8604169648ba0b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_601d0514",
         "filename": "CentralAuth.php",
         "patchSetId": 1
