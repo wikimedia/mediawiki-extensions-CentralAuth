@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_63818ffc",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2015-08-24T17:14:58Z",
+      "side": 1,
+      "message": "Don\u0027t need to .promise() an already-rejected Deferred",
+      "revId": "b7964f39cb67b5e6b5c916813fa5f4051e6be2fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_837cbb1c",
+        "filename": "modules/ext.centralauth.ForeignApi.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2015-08-24T17:14:58Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "b7964f39cb67b5e6b5c916813fa5f4051e6be2fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_63a0af8d",
+        "filename": "tests/qunit/ext.centralauth.ForeignApi.test.js",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2015-08-24T17:14:58Z",
+      "side": 1,
+      "message": "No need to .promise() when the deferred is already resolved or rejected",
+      "range": {
+        "startLine": 37,
+        "startChar": 22,
+        "endLine": 37,
+        "endChar": 25
+      },
+      "revId": "b7964f39cb67b5e6b5c916813fa5f4051e6be2fc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
