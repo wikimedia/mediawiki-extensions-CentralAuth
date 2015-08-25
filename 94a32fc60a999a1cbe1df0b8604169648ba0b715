@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_fdc51765",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1196
+      },
+      "writtenOn": "2015-08-25T11:08:13Z",
+      "side": 1,
+      "message": "I think you might be right.\n\nThe \"mobile\" target is set by the Minerva skin – and others, probably – but can be set by anything with a reference to the OutputPage object (see OutputPage#setTarget).\n\nWhen MobileFrontend is enabled and the host matches a certain pattern, then the current (default, maybe?) skin is overwritten with the Minerva skin.\n\nIf you were to set this target to mobile, then you\u0027re restricting the module to a skin and not to a domain, which I think is what I was assuming in my first comment.",
+      "parentUuid": "6ec1af18_43bc93b1",
+      "revId": "94a32fc60a999a1cbe1df0b8604169648ba0b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_601d0514",
         "filename": "CentralAuth.php",
         "patchSetId": 1
