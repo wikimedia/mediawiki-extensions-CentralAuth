@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "6ec1af18_b2201648",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 94
+      },
+      "writtenOn": "2015-08-25T22:11:48Z",
+      "side": 1,
+      "message": "The target is set on the skin level so yes you should set this to just target mobile or target desktop depending which skin you want to run it on.\n\nincludes/skins/SkinMinerva.php\n1164:\t\t$out-\u003esetTarget( \u0027mobile\u0027 );",
+      "parentUuid": "6ec1af18_fdc51765",
+      "revId": "94a32fc60a999a1cbe1df0b8604169648ba0b715",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6ec1af18_601d0514",
         "filename": "CentralAuth.php",
         "patchSetId": 1
