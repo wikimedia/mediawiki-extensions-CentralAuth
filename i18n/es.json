@@ -173,7 +173,7 @@
 	"centralauth-state-mismatch": "Error: se detectó un conflicto de edición para este usuario. Comprueba tu cambio e inténtalo de nuevo.",
 	"centralauth-admin-reason": "Motivo:",
 	"centralauth-admin-reason-other": "Razones adicionales/otras:",
-	"centralauth-admin-reason-other-select": "Otra razón:",
+	"centralauth-admin-reason-other-select": "Otro motivo:",
 	"centralauth-admin-rename-in-progress": "Esta cuenta está siendo renombrada. Puedes [[Special:GlobalRenameProgress/$1|ver el progreso]] del cambio de nombre. El registro global del nombre para este usuario se proporciona a continuación.",
 	"centralauth-admin-unhide-nonexistent": "Error: no existe la cuenta global «<nowiki>$1</nowiki>».",
 	"centralauth-admin-status": "Modificar el estado de la cuenta global",
