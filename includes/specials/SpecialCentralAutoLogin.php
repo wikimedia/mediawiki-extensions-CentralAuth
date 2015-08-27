@@ -127,10 +127,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
 
 				// Refresh 'remember me' preference
+				$user = $this->getUser();
 				$remember = (bool)$centralSession['remember'];
-				if ( $remember != $this->getUser()->getBoolOption( 'rememberpassword' ) ) {
-					$this->getUser()->setOption( 'rememberpassword', $remember ? 1 : 0 );
-					$this->getUser()->saveSettings();
+				if ( $remember != $user->getBoolOption( 'rememberpassword' ) ) {
+					$user->setOption( 'rememberpassword', $remember ? 1 : 0 );
+					DeferredUpdates::addCallableUpdate( function() use ( $user ) {
+						$user->saveSettings();
+					} );
 				}
 
 				$secureCookie = $centralSession['secureCookies'];
