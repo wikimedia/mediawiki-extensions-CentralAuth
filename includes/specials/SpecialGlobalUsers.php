@@ -166,7 +166,10 @@ class GlobalUsersPager extends AlphabeticPager {
 		$batch->execute();
 
 		// Make an array of global groups for all users in the current result set
-		$globalGroups = call_user_func_array( 'array_merge', array_values( $this->globalIDGroups ) );
+		$globalGroups = array();
+		foreach ( $this->globalIDGroups as $id => $gugGroup ) {
+			$globalGroups = array_merge( $globalGroups, $gugGroup );
+		}
 		if ( count( $globalGroups ) > 0 ) {
 			$wsQuery = $this->mDb->select(
 					array( 'global_group_restrictions', 'wikiset' ),
