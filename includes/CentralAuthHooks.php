@@ -706,7 +706,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser, &$inject_html ) {
-		global $wgCentralAuthLoginWiki, $wgMemc, $wgSecureLogin;
+		global $wgCentralAuthLoginWiki, $wgSecureLogin;
 
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
@@ -776,7 +776,7 @@ class CentralAuthHooks {
 				'currentProto'  => $request->detectProtocol() // current proto (in case login is https, but final page is http)
 			);
 			Hooks::run( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
-			$wgMemc->set( $key, $data, 60 );
+			CentralAuthUser::getSessionCache()->set( $key, $data, 60 );
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
