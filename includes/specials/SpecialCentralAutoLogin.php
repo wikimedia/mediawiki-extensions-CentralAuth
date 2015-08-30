@@ -53,9 +53,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	function execute( $par ) {
-		global $wgMemc, $wgCentralAuthLoginWiki;
+		global $wgCentralAuthLoginWiki;
 
 		$request = $this->getRequest();
+		$cache = CentralAuthUser::getSessionCache();
 
 		$this->loginWiki = $wgCentralAuthLoginWiki;
 		if ( !$this->loginWiki ) {
@@ -195,7 +196,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$memcData = array( 'gu_id' => $centralUser->getId() );
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token );
-			$wgMemc->set( $key, $memcData, 60 );
+			$cache->set( $key, $memcData, 60 );
 
 			$this->do302Redirect( $wikiid, 'createSession', array(
 				'token' => $token,
@@ -215,8 +216,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $token !== '' ) {
 				// Load memc data
 				$key = CentralAuthUser::memcKey( 'centralautologin-token', $token );
-				$memcData = $wgMemc->get( $key );
-				$wgMemc->delete( $key );
+				$casToken = null;
+				$memcData = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
+				$cache->delete( $key );
 
 				if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
 					$this->doFinalOutput( false, 'Invalid parameters' );
@@ -254,7 +256,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			);
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
-			$wgMemc->set( $key, $memcData, 60 );
+			$cache->set( $key, $memcData, 60 );
 
 			// Save memc token for the 'setCookies' step
 			$request->setSessionData( 'centralautologin-token', $token );
@@ -288,8 +290,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Load memc data
 			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
-			$memcData = $wgMemc->get( $key );
-			$wgMemc->delete( $key );
+			$casToken = null;
+			$memcData = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
+			$cache->delete( $key );
 
 			// Check memc data
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
@@ -313,7 +316,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'remember' => $centralSession['remember'],
 				'sessionId' => $centralSession['sessionId'],
 			);
-			$wgMemc->set( $key, $memcData, 60 );
+			$cache->set( $key, $memcData, 60 );
 
 			$this->do302Redirect( $wikiid, 'setCookies', $params );
 			return;
@@ -337,8 +340,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Load memc data
 			$wikiid = wfWikiID();
 			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
-			$memcData = $wgMemc->get( $key );
-			$wgMemc->delete( $key );
+			$casToken = null;
+			$memcData = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
+			$cache->delete( $key );
 
 			// Check memc data
 			if ( !$memcData ||
