@@ -1183,6 +1183,9 @@ class CentralAuthHooks {
 			throw new Exception( "AbortAutoAccount hook tried to change the user name" );
 		}
 
+		// Ignore warnings about master connections/writes...hard to avoid here
+		Profiler::instance()->getTransactionProfiler()->resetExpectations();
+
 		// Checks passed, create the user
 		$from = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'CLI';
 		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: $from\n" );
