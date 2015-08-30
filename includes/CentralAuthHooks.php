@@ -260,17 +260,18 @@ class CentralAuthHooks {
 			return null;
 		}
 
-		global $wgRequest, $wgMemc;
+		global $wgRequest;
 		static $cachedUser = false;
 
+		$cache = CentralAuthUser::getSessionCache();
 		if ( $cachedUser === false ) {
 			$loginToken = $wgRequest->getVal( 'centralauthtoken' );
 			$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
 			$cachedUser = null;
 
-			$data = $wgMemc->get( $key );
+			$data = $cache->get( $key );
 			if ( $invalidateToken ) {
-				$wgMemc->delete( $key );
+				$cache->delete( $key );
 			}
 			if ( !is_array( $data ) ) {
 				return null;
@@ -302,7 +303,7 @@ class CentralAuthHooks {
 		} elseif ( $invalidateToken ) {
 			$loginToken = $wgRequest->getVal( 'centralauthtoken' );
 			$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
-			$wgMemc->delete( $key );
+			$cache->delete( $key );
 		}
 
 		return $cachedUser;
@@ -1741,14 +1742,16 @@ class CentralAuthHooks {
 		if ( !$wgUser->isAnon() && !self::hasApiToken() ) {
 			$centralUser = CentralAuthUser::getInstance( $wgUser );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
+
 				$data = array(
 					'userName' => $wgUser->getName(),
 					'token' => $centralUser->getAuthToken(),
 				);
-				global $wgMemc;
-				$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
+
 				$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
-				$wgMemc->add( $key, $data, 60 );
+				CentralAuthUser::getSessionCache()->add( $key, $data, 60 );
+
 				return $loginToken;
 			}
 		}
