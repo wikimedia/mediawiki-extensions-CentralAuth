@@ -2680,12 +2680,9 @@ class CentralAuthUser extends AuthPluginUser {
 	 * For when speed is of the essence (e.g. when batch-purging users after rights changes)
 	 */
 	public function quickInvalidateCache() {
-		global $wgMemc;
-
 		wfDebugLog( 'CentralAuthVerbose', "Quick cache invalidation for global user {$this->mName}" );
 
 		ObjectCache::getMainWANInstance()->delete( $this->getCacheKey() );
-		$wgMemc->delete( $this->getCacheKey() ); // transition b/c
 	}
 
 	/**
