@@ -260,17 +260,18 @@ class CentralAuthHooks {
 			return null;
 		}
 
-		global $wgRequest, $wgMemc;
+		global $wgRequest;
 		static $cachedUser = false;
 
+		$cache = CentralAuthUser::getSessionCache();
 		if ( $cachedUser === false ) {
 			$loginToken = $wgRequest->getVal( 'centralauthtoken' );
 			$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
 			$cachedUser = null;
 
-			$data = $wgMemc->get( $key );
+			$data = $cache->get( $key );
 			if ( $invalidateToken ) {
-				$wgMemc->delete( $key );
+				$cache->delete( $key );
 			}
 			if ( !is_array( $data ) ) {
 				return null;
@@ -302,7 +303,7 @@ class CentralAuthHooks {
 		} elseif ( $invalidateToken ) {
 			$loginToken = $wgRequest->getVal( 'centralauthtoken' );
 			$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
-			$wgMemc->delete( $key );
+			$cache->delete( $key );
 		}
 
 		return $cachedUser;
@@ -339,9 +340,9 @@ class CentralAuthHooks {
 		// @see CentralAuthHooks::hasApiToken()
 		$centralUser = self::getApiCentralUser( false );
 		if ( $centralUser ) {
-			global $wgMemc;
+			$cache = CentralAuthUser::getSessionCache();
 			$key = CentralAuthUser::memcKey( 'api-cookies', md5( $centralUser->getName() ), wfWikiID() );
-			$cookies = $wgMemc->get( $key );
+			$cookies = $cache->get( $key );
 			if ( !is_array( $cookies ) ) {
 				$cookies = array();
 			}
@@ -352,7 +353,7 @@ class CentralAuthHooks {
 			if ( !isset( $cookies[$wgCentralAuthCookiePrefix . 'Session'] ) ) {
 				$cookies[$wgCentralAuthCookiePrefix . 'Session'] = MWCryptRand::generateHex( 32 );
 			}
-			$wgMemc->set( $key, $cookies, 86400 );
+			$cache->set( $key, $cookies, 86400 );
 			$_COOKIE = $cookies;
 			wfSetupSession( $cookies[session_name()] );
 		}
@@ -641,7 +642,7 @@ class CentralAuthHooks {
 	 * @return String
 	 */
 	public static function getDomainAutoLoginHtml( User $user, CentralAuthUser $centralUser ) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgMemc;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
 		// No other domains
 		if ( !$wgCentralAuthAutoLoginWikis ) {
@@ -962,7 +963,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
-		global $wgCentralAuthCookies, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgMemc;
+		global $wgCentralAuthCookies, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
 		if ( !$wgCentralAuthCookies ) {
 			return true;
@@ -1744,14 +1745,16 @@ class CentralAuthHooks {
 		if ( !$wgUser->isAnon() && !self::hasApiToken() ) {
 			$centralUser = CentralAuthUser::getInstance( $wgUser );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
+
 				$data = array(
 					'userName' => $wgUser->getName(),
 					'token' => $centralUser->getAuthToken(),
 				);
-				global $wgMemc;
-				$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
+
 				$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
-				$wgMemc->add( $key, $data, 60 );
+				CentralAuthUser::getSessionCache()->add( $key, $data, 60 );
+
 				return $loginToken;
 			}
 		}
