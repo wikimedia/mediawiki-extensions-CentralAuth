@@ -46,12 +46,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginStart( $token ) {
-		global $wgMemc;
-
 		$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
+		$cache = CentralAuthUser::getSessionCache();
 
 		// Get the token information
-		$info = $wgMemc->get( $key );
+		$casToken = null;
+		$info = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -89,7 +89,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$wgMemc->delete( $key );
+		$cache->delete( $key );
 
 		// Determine if we can use the default cookie security, or if we need
 		// to override it to insecure
@@ -112,7 +112,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
 		);
-		$wgMemc->set( $key, $data, 60 );
+		$cache->set( $key, $data, 60 );
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -134,16 +134,18 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginComplete( $token ) {
-		global $wgUser, $wgMemc, $wgSecureLogin;
+		global $wgUser;
 		global $wgCentralAuthCheckSULMigration;
 
 		$request = $this->getRequest();
+		$cache = CentralAuthUser::getSessionCache();
 
 		$key = CentralAuthUser::memcKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
-		$info = $wgMemc->get( $key );
+		$casToken = null;
+		$info = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -173,7 +175,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$wgMemc->delete( $key );
+		$cache->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		// This lets User::loadFromSession to initialize the User object from the local
