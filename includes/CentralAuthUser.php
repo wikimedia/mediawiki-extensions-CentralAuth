@@ -2822,7 +2822,7 @@ class CentralAuthUser extends AuthPluginUser {
 	/**
 	 * @return BagOStuff
 	 */
-	private static function getSessionCache() {
+	public static function getSessionCache() {
 		global $wgSessionsInObjectCache, $wgSessionCacheType;
 
 		return $wgSessionsInObjectCache
