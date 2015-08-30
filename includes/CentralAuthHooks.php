@@ -946,7 +946,9 @@ class CentralAuthHooks {
 
 		if ( $centralUser->exists() ) {
 			CentralAuthUser::deleteGlobalCookies();
-			$centralUser->resetAuthToken();
+			DeferredUpdates::addCallableUpdate( function() use ( $centralUser ) {
+				$centralUser->resetAuthToken();
+			} );
 		}
 
 		// Clean up any possible forced rename markers
