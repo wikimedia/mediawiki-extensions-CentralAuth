@@ -35,15 +35,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @param string $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
-		if ( !$this->getUser()->isLoggedIn() ) {
-			// Require user to be logged in
-			$loginpage = SpecialPage::getTitleFor( 'Userlogin' );
-			$loginurl = $loginpage->getFullUrl(
-				array( 'returnto' => $this->getPageTitle()->getPrefixedText() )
-			);
-			$this->getOutput()->redirect( $loginurl );
-			return;
-		}
+		$this->requireLogin();
 
 		switch ( $par ) {
 			case 'status':
