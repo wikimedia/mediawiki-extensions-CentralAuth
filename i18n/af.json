@@ -5,7 +5,8 @@
 			"Naudefj",
 			"SPQRobin",
 			"Spacebirdy",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Fwolff"
 		]
 	},
 	"mergeaccount": "Aanteken versmeltingstatus",
@@ -89,7 +90,7 @@
 	"centralauth-admin-list-legend-ro": "Lys van lokale gebruikers",
 	"centralauth-admin-list-legend-rw": "Uninstallen plaaslike rekeninge",
 	"centralauth-admin-unattached": "nie aangeheg",
-	"centralauth-admin-blocklog": "blokkeer-boekstaaf",
+	"centralauth-admin-blocklog": "blokkeerlogboek",
 	"centralauth-admin-list-localwiki": "Lokale wiki",
 	"centralauth-admin-list-attached-on": "Aangesluit op",
 	"centralauth-admin-list-method": "Metode",
