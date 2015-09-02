@@ -5,7 +5,8 @@
 			"Mikullovci11",
 			"Olsi",
 			"Techlik",
-			"Vinie007"
+			"Vinie007",
+			"Ammartivari"
 		]
 	},
 	"mergeaccount": "Identfikoni statusin  e unifikuar.",
@@ -97,6 +98,7 @@
 	"centralauth-admin-list-legend-ro": "Lista e llogarive lokale",
 	"centralauth-admin-list-legend-rw": "Çshkrini llogaritë lokale",
 	"centralauth-admin-unattached": "jo e bashkëngjitur",
+	"centralauth-admin-blocked-reason": "Arsyeja: $1",
 	"centralauth-admin-blocklog": "regjistri i bllokimeve",
 	"centralauth-admin-list-localwiki": "Wki lokal",
 	"centralauth-admin-list-attached-on": "Bashkangjitur në",
@@ -118,6 +120,7 @@
 	"centralauth-token-mismatch": "Na vjen keq, ne nuk mundëm ta procesonim paraqitjen tuaj të formularit për shkak të një humbje të të dhënave.",
 	"centralauth-admin-reason": "Arsyeja:",
 	"centralauth-admin-reason-other": "Arsye tjetër/shtesë:",
+	"centralauth-admin-reason-other-select": "Arsye tjetër:",
 	"centralauth-admin-unhide-nonexistent": "Gabim: llogaria e përgjithshme \"<nowiki>$1</nowiki>\" nuk ekziston.",
 	"centralauth-admin-status": "Vendosni statusin e llogarisë globale",
 	"centralauth-admin-status-intro": "Ju mund të përdorni këtë formular për të ndryshuar statusin e kësaj llogarie globale.",
@@ -147,8 +150,6 @@
 	"centralauth-prefs-status": "Statusi i llogarisë globale:",
 	"centralauth-prefs-not-managed": "Duke mos përdorur llogarinë e unifikuar",
 	"centralauth-prefs-unattached": "Pakonfirmuar",
-	"centralauth-prefs-complete": "Të gjitha në rregull!",
-	"centralauth-prefs-migration": "Në shkrirje",
 	"centralauth-prefs-count-attached": "Llogari juaj është aktive në {{PLURAL:$1|projekt|projekte}}.",
 	"centralauth-prefs-count-unattached": "Llogaritë e pakonfirmuara me emrin tuaj mbeten në $1 {{PLURAL:$1|projekt|projekte}}.",
 	"centralauth-prefs-detail-unattached": "Kjo faqe projekt nuk është konfirmuar si pjesëtarë të llogarisë globale.",
@@ -257,5 +258,10 @@
 	"right-centralauth-lock": "Bllokoni ose fsheheni llogarinë globale",
 	"right-centralauth-oversight": "Shtypni llogarit globale",
 	"right-centralauth-merge": "Bashkoni llogarit",
-	"right-globalgrouppermissions": "Menaxhoni grupet globale"
+	"right-globalgrouppermissions": "Menaxhoni grupet globale",
+	"centralauth-rename-form-reason": "Arsyeja",
+	"centralauth-usermerge-form-reason": "Arsyeja",
+	"globalrenamerequest-reason-label": "Arsyeja për kërkesë",
+	"apihelp-globaluserrights-param-reason": "Arsyeja për ndërrimin.",
+	"apihelp-setglobalaccountstatus-param-reason": "Arsyeja për ndërrimin e statusit të përdoruesit."
 }
