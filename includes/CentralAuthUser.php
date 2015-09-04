@@ -2310,7 +2310,7 @@ class CentralAuthUser extends AuthPluginUser {
 	 *  true: Force setting the secure attribute when setting the cookie
 	 *  false: Force NOT setting the secure attribute when setting the cookie
 	 *  null (default): Use the default ($wgCookieSecure) to set the secure attribute
-	 * @param $prefix cookie prefix, or false to use $wgCentralAuthCookiePrefix
+	 * @param string|bool $prefix cookie prefix; false to use $wgCentralAuthCookiePrefix
 	 * @throws Exception
 	 * @return void
 	 */
