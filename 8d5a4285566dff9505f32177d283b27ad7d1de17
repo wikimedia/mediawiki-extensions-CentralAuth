@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_8cd00cfc",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-09-04T03:15:36Z",
+      "side": 1,
+      "message": "Looks like this wants a getDB() method of sorts to avoid repeating this pattern.",
+      "revId": "8d5a4285566dff9505f32177d283b27ad7d1de17",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_ecfc306f",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-09-04T03:15:36Z",
+      "side": 1,
+      "message": "Is this needed because shouldUseMasterDB() caches its value? It\u0027s somewhat counter-intuitive.",
+      "revId": "8d5a4285566dff9505f32177d283b27ad7d1de17",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
