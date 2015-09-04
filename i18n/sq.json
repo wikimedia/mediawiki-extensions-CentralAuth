@@ -134,7 +134,7 @@
 	"centralauth-admin-status-submit": "Vendosni statusin",
 	"centralauth-admin-status-nonexistent": "Gabim: llogaria globale \"<nowiki>$1</nowiki>\" nuk ekziston.",
 	"centralauth-admin-setstatus-success": "Ju keni ndryshuar me sukses statusin e kaj llogarie globale.",
-	"centralauth-admin-status-reasons": "* Arsyet më të shpeshta të bllokimit\n** llogari vetëm për vandalizëm\n** llogari vetëm për spam\n* Arsyet më të shpeshta të bllokimt dhe fshehjes\n** emër përdoruesi abuziv\n** informacion personal i papërshtatshëm",
+	"centralauth-admin-status-reasons": "* Arsye të zakonshme të bllokimit\n** llogari vetëm për vandalizëm\n** llogari vetëm për spam\n* Arsye të zakonshme të bllokimt dhe fshehjes\n** emër abuziv i përdoruesit\n** të dhëna personale të papërshtatshme",
 	"centralauth-admin-logsnippet": "Ndryshimet e mëparshme të llogarisë globale",
 	"centralauth-admin-suppressreason": "U mbyll globalisht nga $1 për arsyen në vijim: $2",
 	"globalusers": "Lista e përdoruesve globalë",

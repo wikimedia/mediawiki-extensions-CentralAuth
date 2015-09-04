@@ -119,7 +119,7 @@
 	"centralauth-admin-delete-nonexistent": "Greška: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
 	"centralauth-token-mismatch": "Žao nam je, Vašu izmjenu nije bilo moguće obraditi zbog gubljenja podataka sesije.",
 	"centralauth-admin-reason": "Razlog:",
-	"centralauth-admin-reason-other": "Ostali/dodatni razlog:",
+	"centralauth-admin-reason-other": "Drugi/dodatni razlog:",
 	"centralauth-admin-unhide-nonexistent": "Greška: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
 	"centralauth-admin-status": "Postavi status globalnog računa",
 	"centralauth-admin-status-intro": "Možete koristiti ovaj obrazac za promjenu statusa ovog globalnog računa",

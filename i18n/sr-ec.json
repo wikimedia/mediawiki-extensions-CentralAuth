@@ -163,7 +163,7 @@
 	"centralauth-years-ago": "пре {{PLURAL:$1|годину дана|$1 године|$1 година}}",
 	"centralauth-prefs-status": "Глобални налог:",
 	"centralauth-prefs-not-managed": "Не користи се обједињени налог",
-	"centralauth-prefs-unattached": "Непотврђено",
+	"centralauth-prefs-unattached": "Није до краја обједињен",
 	"centralauth-prefs-count-attached": "Ваш налог је активан на $1 {{PLURAL:$1|викију|викија}}.",
 	"centralauth-prefs-count-unattached": "На $1 {{PLURAL:$1|викију|викија}} су остали непотврђени налози с вашим именом.",
 	"centralauth-prefs-detail-unattached": "За овај пројекат није потврђено да припада глобалном налогу.",
