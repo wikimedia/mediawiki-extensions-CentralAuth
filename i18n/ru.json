@@ -201,7 +201,7 @@
 	"centralauth-prefs-status": "Глобальная учётная запись:",
 	"centralauth-prefs-not-managed": "Не используется единая учётная запись",
 	"centralauth-prefs-unattached": "Не подтверждена",
-	"centralauth-prefs-count-attached": "Ваша учётная запись активна в $1 {{PLURAL:$1|проекте|проектах}}.",
+	"centralauth-prefs-count-attached": "Ваша учётная запись активна в $1 вики-проект{{PLURAL:$1|е|ах}}.",
 	"centralauth-prefs-count-unattached": "Неподтверждённые учётные записи с вашим именем остаются в $1 {{PLURAL:$1|проекте|проектах}}.",
 	"centralauth-prefs-detail-unattached": "Этот проект не был подтверждён как относящийся к вашей глобальной учётной записи.",
 	"centralauth-prefs-manage": "Управление глобальной учётной записью",
