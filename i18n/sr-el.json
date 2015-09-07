@@ -57,7 +57,7 @@
 	"centralauth-merge-method-admin-desc": "Označava da su lokalni nalog stjuardi ručno spojili.\nSada je ta funkcija onemogućena iz bezbednosnih razloga.",
 	"centralauth-merge-method-new-desc": "Označava da je globalni nalog bio automatski otvoren pri otvaranju lokalnog naloga.",
 	"centralauth-merge-method-login-desc": "Označava da je lokalni nalog bio automatski otvoren pri prijavljivanju korisnika.",
-	"centralauth-finish-title": "Završi spajanje",
+	"centralauth-finish-title": "Završavanje spajanja",
 	"centralauth-finish-text": "Ako ovi nalozi pripadaju vama, možete da završite postupak objedinjavanja tako što ćete uneti lozinke drugih naloga ovde:",
 	"centralauth-finish-password": "Lozinka:",
 	"centralauth-finish-login": "Prijava",

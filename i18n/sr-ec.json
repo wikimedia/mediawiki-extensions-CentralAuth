@@ -348,6 +348,7 @@
 	"sulrenamewarning-usenew": "Убудуће за пријављивање користите {{GENDER:$1|ваше}} ново корисничко име '''$1'''.",
 	"centralauth-log-gblrename-oldname": "Претходно корисничко име:",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
+	"centralauth-contribs-locked-log": "Овај налог је глобално закључан.\nПоследње закључавање је наведено испод:",
 	"centralauth-uwbr-name": "Корисничко име",
 	"centralauth-uwbr-registration": "Датум регистрације",
 	"centralauth-uwbr-editcount": "Број измена"
