@@ -493,6 +493,7 @@ class CentralAuthHooks {
 	 * @param integer &$retval
 	 * @param string &$msg
 	 * @return bool
+	 * @throws Exception
 	 */
 	static function onAbortLogin( $user, $pass, &$retval, &$msg ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
@@ -545,7 +546,6 @@ class CentralAuthHooks {
 			default:
 				throw new Exception( "Unexpected result from CentralAuthUser::canAuthenticate()" );
 		}
-		return true;
 	}
 
 	/**
@@ -606,7 +606,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthCookies;
+		global $wgCentralAuthCookies;
 		global $wgCentralAuthCheckSULMigration;
 
 		if ( $wgCentralAuthCheckSULMigration &&
@@ -1034,6 +1034,7 @@ class CentralAuthHooks {
 	 * @param $newName
 	 * @param $warnings
 	 * @return bool
+	 * @throws ErrorPageError
 	 */
 	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
 		$oldCentral = new CentralAuthUser( $oldName );
@@ -1910,6 +1911,8 @@ class CentralAuthHooks {
 	 * @param string $wgMWOAuthCentralWiki
 	 * @param User &$user the loca user object
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
+	 * @throws Exception
 	 */
 	public static function onOAuthGetLocalUserFromCentralId( $userId, $wgMWOAuthCentralWiki, &$user, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -1958,6 +1961,7 @@ class CentralAuthHooks {
 	 * @param string $wgMWOAuthCentralWiki
 	 * @param int &$id the user_id of the matching name on the central wiki
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
 	 */
 	public static function onOAuthGetCentralIdFromLocalUser( $user, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -1986,6 +1990,7 @@ class CentralAuthHooks {
 	 * @param string $wgMWOAuthCentralWiki
 	 * @param int &$id the user_id of the matching name on the central wiki
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
 	 */
 	public static function onOAuthGetCentralIdFromUserName( $username, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -2106,11 +2111,13 @@ class CentralAuthHooks {
 	 * @param string $returnTo The page to return to
 	 * @param array $returnToQuery Url parameters
 	 * @param string $type Type of login redirect
+	 * @return bool
 	 */
 	public static function onPostLoginRedirect(
 		&$returnTo, &$returnToQuery, &$type
 	) {
 		global $wgCentralAuthCheckSULMigration, $wgUser;
+
 		if ( $wgCentralAuthCheckSULMigration &&
 			$wgUser->getRequest()->getSessionData( 'CentralAuthForcedRename' ) === true &&
 			( $type == 'success' || $type == 'successredirect' )
@@ -2124,6 +2131,7 @@ class CentralAuthHooks {
 			) );
 			$returnTo = SpecialPageFactory::getLocalNameFor( 'Special:SulRenameWarning' );
 			$returnToQuery = array();
+
 			return false;
 		}
 		return true;
