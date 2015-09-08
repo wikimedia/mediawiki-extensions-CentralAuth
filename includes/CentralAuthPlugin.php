@@ -183,7 +183,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param $user User
 	 * @return bool
 	 */
-	public function updateUser( &$user ) {
+	public function updateUser( User &$user ) {
 		global $wgCentralAuthCheckSULMigration;
 
 		if ( $wgCentralAuthCheckSULMigration && $this->sulMigrationName !== null ) {
@@ -331,7 +331,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param $user User object.
 	 * @param $autocreate bool
 	 */
-	public function initUser( &$user, $autocreate = false ) {
+	public function initUser( User &$user, $autocreate = false ) {
 		if ( $autocreate ) {
 			$central = CentralAuthUser::getInstance( $user );
 			if ( $central->exists() ) {
