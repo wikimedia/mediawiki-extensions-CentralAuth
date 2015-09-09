@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_93d564ec",
+        "filename": "maintenance/backPopulateRenameQueueLogs.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-09-09T18:44:04Z",
+      "side": 1,
+      "message": "is this really just log_search?",
+      "revId": "e6de995a5ea2f4b4a34268c3eac5ddba6256fd07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_53d85c28",
+        "filename": "maintenance/backPopulateRenameQueueLogs.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-09-09T18:44:04Z",
+      "side": 1,
+      "message": "extra indentation here and a few times in the lines below",
+      "revId": "e6de995a5ea2f4b4a34268c3eac5ddba6256fd07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_73dd5817",
+        "filename": "maintenance/backPopulateRenameQueueLogs.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 98
+      },
+      "writtenOn": "2015-09-09T18:44:04Z",
+      "side": 1,
+      "message": "unused. Might be a good idea to echo it though, in case we want to refer back to the extra log entries later - or delete them all, fix the script and try again :)",
+      "revId": "e6de995a5ea2f4b4a34268c3eac5ddba6256fd07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
