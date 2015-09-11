@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_cf456b49",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-11T13:37:34Z",
+      "side": 1,
+      "message": "Does CentralAuthLatest need to be added to autologin.js? If the user creates an account, then immediately goes to another wiki and their browser didn\u0027t store cookies for this login (firefox), then the autologin.js will attempt to log them in.\n\nOr maybe as a rule, always use master when doing centralauth stuff on loginwiki?",
+      "revId": "95fdb3b5dc6e2fdc031039e85129628f5f74878a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
