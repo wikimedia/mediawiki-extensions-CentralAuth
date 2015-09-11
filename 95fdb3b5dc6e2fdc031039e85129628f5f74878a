@@ -16,6 +16,24 @@
       "revId": "95fdb3b5dc6e2fdc031039e85129628f5f74878a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_55ab4e6d",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-09-11T17:13:12Z",
+      "side": 1,
+      "message": "Login/autologin should really be highly available, so I\u0027d prefer to always using the master for the JS.",
+      "parentUuid": "6ec1af18_cf456b49",
+      "revId": "95fdb3b5dc6e2fdc031039e85129628f5f74878a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
