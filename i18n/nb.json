@@ -10,7 +10,8 @@
 			"Nghtwlkr",
 			"Njardarlogar",
 			"Stigmj",
-			"Kingu"
+			"Kingu",
+			"Cocu"
 		]
 	},
 	"mergeaccount": "Status for sammenslåing av kontoer",
@@ -134,7 +135,7 @@
 	"centralauth-admin-nonexistent": "Det er ingen global konto for «<nowiki>$1</nowiki>»",
 	"centralauth-admin-delete-nonexistent": "Feil: Den globale kontoen «<nowiki>$1</nowiki>» finnes ikke.",
 	"centralauth-token-mismatch": "Beklager, skjemaet kunne ikke lagres på grunn av et tap av øktdata.",
-	"centralauth-state-mismatch": "Feil: Det ble oppdaget en redigeringskonflikt for denne brukeren. Vær vennlig å sjekke dine endringer og prøve igjen.",
+	"centralauth-state-mismatch": "Feil: Det ble oppdaget en redigeringskollisjon for denne brukeren. Vær vennlig å sjekke dine endringer og prøve igjen.",
 	"centralauth-admin-reason": "Årsak:",
 	"centralauth-admin-reason-other": "Annen/utdypende grunn:",
 	"centralauth-admin-reason-other-select": "Annen årsak:",
@@ -185,8 +186,6 @@
 	"centralauth-prefs-status": "Status på sammenslått konto:",
 	"centralauth-prefs-not-managed": "Bruker ikke sammenslått konto",
 	"centralauth-prefs-unattached": "Ubekreftet",
-	"centralauth-prefs-complete": "Alt i orden!",
-	"centralauth-prefs-migration": "I ferd med å slås sammen",
 	"centralauth-prefs-count-attached": "Kontoen din er aktiv på $1 {{PLURAL:$1|prosjekt|prosjekter}}.",
 	"centralauth-prefs-count-unattached": "Det er fortsatt ubekreftede kontoer med ditt navn på $1 {{PLURAL:$1|prosjekt|prosjekter}}.",
 	"centralauth-prefs-detail-unattached": "Det er ikke bekreftet at denne kontoen er slått sammen med hovedkontoen.",

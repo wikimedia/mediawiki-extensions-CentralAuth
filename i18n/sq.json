@@ -261,7 +261,13 @@
 	"right-globalgrouppermissions": "Menaxhoni grupet globale",
 	"centralauth-rename-form-reason": "Arsyeja",
 	"centralauth-usermerge-form-reason": "Arsyeja",
+	"globalrenamerequest-pretext": "Kërkoni një emër të ri përdoruesi që ta përdorni në të gjitha projektet.\n\nTë gjitha kontributet tuaja të mëparshme do të lidhen me këtë emër të ri.\n\nSapo të kërkoni ndryshimin e emrit të përdoruesit, një njoftim do tu dërgohet kujdestarëve të Wikimedias për të kryer riemërtimin. Ju do të njoftoheni me email kur procesi të ketë përfunduar.",
+	"globalrenamerequest-username-label": "Emri i tanishëm:",
+	"globalrenamerequest-username-help": "Ky është emri juaj tani.",
+	"globalrenamerequest-newname-help": "Shkruani emrin e ri të përdoruesit që doni të përdorni, p.sh., \"$1\".",
 	"globalrenamerequest-reason-label": "Arsyeja për kërkesë",
+	"globalrenamerequest-submit-text": "Kërkoni ndryshimin e emrit",
+	"globalrenamequeue-column-rq-newname": "Emri i dëshiruar",
 	"apihelp-globaluserrights-param-reason": "Arsyeja për ndërrimin.",
 	"apihelp-setglobalaccountstatus-param-reason": "Arsyeja për ndërrimin e statusit të përdoruesit."
 }

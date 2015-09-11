@@ -9,7 +9,8 @@
 			"Stelistcristi",
 			"Strainu",
 			"XXN",
-			"ImGelu"
+			"ImGelu",
+			"Rsocol"
 		]
 	},
 	"mergeaccount": "Statusul despre unificarea autentificării",
@@ -184,8 +185,6 @@
 	"centralauth-prefs-status": "Statutul contului global:",
 	"centralauth-prefs-not-managed": "Contul unificat nu este folosit",
 	"centralauth-prefs-unattached": "Neconfirmat",
-	"centralauth-prefs-complete": "Totul este în ordine!",
-	"centralauth-prefs-migration": "În migrare",
 	"centralauth-prefs-count-attached": "Contul dumneavoastră este activ pe $1 {{PLURAL:$1|proiect|proiecte}}.",
 	"centralauth-prefs-count-unattached": "Conturi neconfirmate cu numele dumneavoastră rămân la $1 {{PLURAL:$1|proiect|proiecte}}.",
 	"centralauth-prefs-detail-unattached": "Acest site nu a fost confirmat ca aparținând contului global.",
@@ -359,6 +358,7 @@
 	"centralauth-usermerge-form-reason": "Motiv",
 	"centralauth-usermerge-notinstalled": "Extensia UserMerge nu este instalată.",
 	"action-centralauth-usermerge": "uniți la nivel global utilizatori multipli",
+	"globalrenamerequest-pretext": "Puteți solicita un nume de utilizator nou, sub care veți fi cunoscut în toate proiectele.\n\nToate contribuțiile dvs. precedente vor fi conectate cu acest nou nume de utilizator.\n\nDupă ce solicitați un nume nou de utilizator, se va trimite o notificare către Stewarzii Wikimedia pentru a efectua redenumirea. Veți fi notificat prin email atunci când acest proces este finalizat.",
 	"globalrenamerequest-username-label": "Numele de utilizator actual:",
 	"globalrenamerequest-username-help": "Acesta este numele dumneavoastră de utilizator în acest moment.",
 	"globalrenamerequest-newname-label": "Numele de utilizator solicitat:",
