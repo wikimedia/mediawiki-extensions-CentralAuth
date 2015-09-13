@@ -1121,7 +1121,7 @@ class CentralAuthHooks {
 	 * @return bool Success
 	 */
 	static function attemptAddUser( $user ) {
-		global $wgAuth, $wgCentralAuthCreateOnView;
+		global $wgAuth, $wgCentralAuthCreateOnView, $wgMemc;
 
 		$userName = $user->getName();
 		// Denied by configuration?
@@ -1181,6 +1181,7 @@ class CentralAuthHooks {
 			CentralAuthUser::setSession( $session );
 			return false;
 		}
+
 		// Make sure the name has not been changed
 		if ( $user->getName() !== $userName ) {
 			throw new Exception( "AbortAutoAccount hook tried to change the user name" );
@@ -1189,25 +1190,39 @@ class CentralAuthHooks {
 		// Ignore warnings about master connections/writes...hard to avoid here
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 
-		// Checks passed, create the user
-		$from = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'CLI';
-		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: $from\n" );
-		try {
-			$status = $user->addToDatabase();
-		} catch ( Exception $e ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
-				. " {$e->getMessage()}" );
-			throw $e;
-		}
-
-		if ( $status === null ) {
-			// MW before 1.21 -- ok, continue
-		} elseif ( !$status->isOK() ) {
-			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__.": failed with message " . $status->getWikiText() . "\n" );
+		$backoffKey = wfMemcKey( 'CentralAuth', 'autocreate-failed', md5( $userName ) );
+		if ( $wgMemc->get( $backoffKey ) ) {
+			wfDebug( __METHOD__ . ": denied by prior creation attempt failures" );
 			return false;
 		}
 
-		$wgAuth->initUser( $user, true );
+		// Checks passed, create the user...
+		$from = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'CLI';
+		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ .
+			": creating new user ($userName) - from: $from\n" );
+		try {
+			// Make sure the central DB master is availabe
+			CentralAuthUser::getCentralDB();
+			// Insert the user into the local DB master
+			$status = $user->addToDatabase();
+			if ( $status === null ) {
+				// MW before 1.21 -- ok, continue
+			} elseif ( !$status->isOK() ) {
+				wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ .
+					": failed with message " . $status->getWikiText() . "\n" );
+				return false;
+			}
+			// Attach the user to the central user and update prefs
+			$wgAuth->initUser( $user, true );
+		} catch ( Exception $e ) {
+			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ .
+				" User::addToDatabase for \"$userName\" threw an exception:"
+				. " {$e->getMessage()}" );
+			// Do not keep throwing errors for a while
+			$wgMemc->set( $backoffKey, 1, 60 * 10 );
+			// Bubble up error; which should normally trigger DB rollbacks
+			throw $e;
+		}
 
 		# Notify hooks (e.g. Newuserlog)
 		Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
