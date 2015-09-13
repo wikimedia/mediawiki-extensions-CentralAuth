@@ -1193,6 +1193,9 @@ class CentralAuthHooks {
 		$from = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : 'CLI';
 		wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": creating new user ($userName) - from: $from\n" );
 		try {
+			// Make sure the central DB master is availabe
+			CentralAuthUser::getCentralDB();
+			// Insert the user into the local DB master
 			$status = $user->addToDatabase();
 		} catch ( Exception $e ) {
 			wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . " User::addToDatabase for \"$userName\" threw an exception:"
