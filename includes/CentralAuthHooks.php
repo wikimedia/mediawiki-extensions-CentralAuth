@@ -61,7 +61,7 @@ class CentralAuthHooks {
 				'scripts'       => array(
 					'ext.centralauth.globalrenamerequest.js',
 				),
-				'dependencies' => array( 'oojs-ui' ),
+				'dependencies' => array( 'oojs-ui', 'oojs-ui.styles.icons' ),
 				'messages' => array(
 					'globalrenamerequest-email-why-label',
 					'globalrenamerequest-email-why-explain',
