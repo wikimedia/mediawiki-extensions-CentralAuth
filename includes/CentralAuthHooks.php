@@ -1123,19 +1123,21 @@ class CentralAuthHooks {
 	static function attemptAddUser( $user ) {
 		global $wgAuth, $wgCentralAuthCreateOnView;
 
-		$userName = $user->getName();
 		// Denied by configuration?
 		if ( !$wgAuth->autoCreate() ) {
 			wfDebug( __METHOD__ . ": denied by configuration\n" );
 			return false;
-		}
-
-		if ( !$wgCentralAuthCreateOnView ) {
+		} elseif ( !$wgCentralAuthCreateOnView ) {
 			// Only create local accounts when we perform an active login...
 			// Don't freak people out on every page view
 			wfDebug( __METHOD__ . ": denied by \$wgCentralAuthCreateOnView\n" );
 			return false;
+		} elseif ( wfReadOnly() ) {
+			wfDebug( __METHOD__ . ": denied by wfReadOnly()\n" );
+			return false;
 		}
+
+		$userName = $user->getName();
 
 		// Is the user blacklisted by the session?
 		// This is just a cache to avoid expensive DB queries in $user->isAllowedToCreateAccount().
