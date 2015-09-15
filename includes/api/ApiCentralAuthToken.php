@@ -62,7 +62,7 @@ class ApiCentralAuthToken extends ApiBase {
 
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
 		$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
-		CentralAuthUser::getSessionCache()->add( $key, $data, 60 );
+		CentralAuthUser::getSessionCache()->set( $key, $data, 60 );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), array(
 			'centralauthtoken' => $loginToken
