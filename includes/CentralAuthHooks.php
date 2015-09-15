@@ -1755,7 +1755,7 @@ class CentralAuthHooks {
 				);
 
 				$key = CentralAuthUser::memcKey( 'api-token', $loginToken );
-				CentralAuthUser::getSessionCache()->add( $key, $data, 60 );
+				CentralAuthUser::getSessionCache()->set( $key, $data, 60 );
 
 				return $loginToken;
 			}
