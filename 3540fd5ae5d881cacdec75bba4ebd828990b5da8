@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ec1af18_7f540e57",
+        "filename": "CentralAuth.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-09-15T15:12:36Z",
+      "side": 1,
+      "message": "empty line to separate would be nice",
+      "revId": "3540fd5ae5d881cacdec75bba4ebd828990b5da8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_ffbc7e69",
+        "filename": "CentralAuth.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2015-09-15T15:12:36Z",
+      "side": 1,
+      "message": "empty line to separate would be nice",
+      "revId": "3540fd5ae5d881cacdec75bba4ebd828990b5da8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
