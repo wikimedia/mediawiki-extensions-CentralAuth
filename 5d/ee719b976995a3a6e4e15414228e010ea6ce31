@@ -1,0 +1,8 @@
+Verified+2: jenkins-bot
+Code-Review+2: Legoktm <legoktm.wikipedia@gmail.com>
+Code-Review+1: Steinsplitter <steinsplitter@wikipedia.de>
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 17 Sep 2015 18:03:07 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/239050
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
