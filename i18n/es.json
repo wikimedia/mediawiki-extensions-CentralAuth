@@ -412,7 +412,7 @@
 	"log-name-gblrename": "Registro de renombramiento global",
 	"log-description-gblrename": "Este registro muestra una lista de los cambios de nombre de los usuarios.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5",
-	"logentry-gblrename-promote": "$1 globalmente {{GÉNERO:$2|renombró}} $4 como $5",
+	"logentry-gblrename-promote": "$1 globalmente {{GENDER:$2|renombró}} a $4 como $5",
 	"globalusermerge": "Fusionar usuario global",
 	"globalusermerge-legend": "Fusionar usuario global",
 	"centralauth-usermerge-form-newuser": "Nombre de usuario final",
