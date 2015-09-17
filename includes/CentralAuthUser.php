@@ -1689,7 +1689,10 @@ class CentralAuthUser extends AuthPluginUser {
 		if ( $status->isGood() ) {
 			wfDebugLog( 'CentralAuth',
 				"authentication for '$this->mName' succeeded" );
-			if ( User::getPasswordFactory()->needsUpdate( $status->getValue() ) ) {
+
+			$passwordFactory = new PasswordFactory();
+			$passwordFactory->init( RequestContext::getMain()->getConfig() );
+			if ( $passwordFactory->needsUpdate( $status->getValue() ) ) {
 				$this->setPassword( $password );
 				$this->saveSettings();
 			}
@@ -1770,7 +1773,8 @@ class CentralAuthUser extends AuthPluginUser {
 	private function getPasswordFromString( $encrypted, $salt ) {
 		global $wgPasswordSalt;
 
-		$passwordFactory = User::getPasswordFactory();
+		$passwordFactory = new PasswordFactory();
+		$passwordFactory->init( RequestContext::getMain()->getConfig() );
 
 		if ( preg_match( '/^[0-9a-f]{32}$/', $encrypted ) ) {
 			if ( $wgPasswordSalt ) {
@@ -2222,9 +2226,11 @@ class CentralAuthUser extends AuthPluginUser {
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {
+		$passwordFactory = new PasswordFactory();
+		$passwordFactory->init( RequestContext::getMain()->getConfig() );
 		return array(
 			'',
-			User::getPasswordFactory()->newFromPlaintext( $password )->toString()
+			$passwordFactory->newFromPlaintext( $password )->toString()
 		);
 	}
 
