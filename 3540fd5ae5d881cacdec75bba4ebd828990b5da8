@@ -33,6 +33,23 @@
       "revId": "3540fd5ae5d881cacdec75bba4ebd828990b5da8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ec1af18_c8321706",
+        "filename": "modules/ext.centralauth.centralautologin.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-09-17T05:18:43Z",
+      "side": 1,
+      "message": "Please avoid boolean parameters for seemingly arbitrary options like these. Consider using an object literal with key \u0027mobile\u0027 instead, or some other more descriptive parameter.",
+      "revId": "3540fd5ae5d881cacdec75bba4ebd828990b5da8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
