@@ -92,9 +92,12 @@ class CentralAuthTestUser {
 		$this->username = $username;
 		$this->password = $password;
 
+		$passwordFactory = new PasswordFactory();
+		$passwordFactory->init( RequestContext::getMain()->getConfig() );
+
 		$attrs += array(
 			'gu_id' => '1000',
-			'gu_password' => User::getPasswordFactory()->newFromPlaintext( $password )->toString(),
+			'gu_password' => $passwordFactory->newFromPlaintext( $password )->toString(),
 			'gu_salt' => '',
 			'gu_auth_token' => '1234',
 			'gu_locked' => 0,
@@ -143,8 +146,7 @@ class CentralAuthTestUser {
 			$user = User::newFromName( $this->username );
 			if ( $user->idForName() == 0 ) {
 				$user->addToDatabase();
-				$user->setPassword( $this->password );
-				$user->saveSettings();
+				TestUser::setPasswordForUser( $user, $this->password );
 			}
 		}
 
