@@ -76,16 +76,14 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$user = User::newFromName( 'GlobalConflictUser' );
 		if ( $user->idForName() == 0 ) {
 			$user->addToDatabase();
-			$user->setPassword( $this->password );
-			$user->saveSettings();
+			TestUser::setPasswordForUser( $user, $this->password );
 		}
 
 		// Local only account
 		$user = User::newFromName( 'AnotherNewUser' );
 		if ( $user->idForName() == 0 ) {
 			$user->addToDatabase();
-			$user->setPassword( 'ANUP@ssword' );
-			$user->saveSettings();
+			TestUser::setPasswordForUser( $user, 'ANUP@ssword' );
 		}
 
 		// Global user who was renamed when migrated
