@@ -432,7 +432,7 @@
 	"centralauth-usermerge-ratelimited": "Error message shown when a user hits the rate limit of one global merge per minute.",
 	"centralauth-usermerge-nousers": "Error message shown if a user does not provide two or more users to merge.",
 	"globalrenamerequest-desc": "{{desc|name=Request a global account rename|url=https://www.mediawiki.org/wiki/Extension:CentralAuth}}",
-	"globalrenamerequest": "{{doc-special|GlobalRenameRequest}}\n\n\"Unification\" refers to the process of unifying all the accounts.",
+	"globalrenamerequest": "{{doc-special|GlobalRenameRequest}}",
 	"globalrenamerequest-legend": "Used as fieldset label. \"Unification\" refers to the process of unifying all the accounts.",
 	"globalrenamerequest-forced": "Explanation for users that are being forced to rename.\n\nFollowed by the message {{msg-mw|globalrenamerequest-pretext}}",
 	"globalrenamerequest-pretext": "Instructions for rename process.",

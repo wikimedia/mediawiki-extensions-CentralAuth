@@ -417,7 +417,7 @@
 	"centralauth-usermerge-ratelimited": "As a security measure, you are only allowed to globally merge a user once per minute. Please try again after one minute.",
 	"centralauth-usermerge-nousers": "At least two valid global user accounts must be provided.",
 	"globalrenamerequest-desc": "Request a global account rename",
-	"globalrenamerequest": "Unification rename request",
+	"globalrenamerequest": "Global user account rename request",
 	"globalrenamerequest-legend" : "Unification rename request",
 	"globalrenamerequest-forced": "The Wikimedia Foundation is [[:mw:SUL_finalisation|unifying usernames across all Wikimedia projects]]. This username was identified as being in use in other Wikimedia wikis and must be changed in order to finalize this unification. As a result, you must select a new username.",
 	"globalrenamerequest-pretext" : "Request a new username to be known by across all projects.\n\nAll of your previous contributions will be connected with this new username.\n\nOnce you have requested a new username, a notification will be sent to Wikimedia stewards to perform the rename. You will be notified by email when this process is completed.",
