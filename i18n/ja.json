@@ -402,7 +402,7 @@
 	"centralauth-usermerge-toomany": "一度に統合できる利用者は $1 {{PLURAL:$1|名}}までです。",
 	"centralauth-usermerge-ratelimited": "セキュリティ対策として、アカウント統一は毎分1件しか受け付けることができません。1分後にお試しください。",
 	"globalrenamerequest-desc": "グローバル・アカウントの改名を依頼する",
-	"globalrenamerequest": "アカウント統一改名依頼",
+	"globalrenamerequest": "グローバル利用者アカウントの改名依頼",
 	"globalrenamerequest-legend": "アカウント統一改名依頼",
 	"globalrenamerequest-pretext": "全プロジェクトにわたって使用する新しい利用者名を依頼してください。\n\nあなたのこれまでの編集履歴はすべてこの新しい利用者名に結び付けられます。\n\n新しい利用者名への改名を依頼すると、ウィキメディアのスチュワードに改名を実施するよう通知が送られます。対処が完了したら、電子メールであなたに通知が届きます。",
 	"globalrenamerequest-username-label": "現在の利用者名:",

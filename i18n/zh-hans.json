@@ -415,7 +415,7 @@
 	"centralauth-usermerge-ratelimited": "出于安全原因，您只允许每分钟全域合并一位用户。请等待一分钟后再重试。",
 	"centralauth-usermerge-nousers": "必须至少提供两个有效的全域用户账户。",
 	"globalrenamerequest-desc": "申请全域账户重命名",
-	"globalrenamerequest": "统一账户重命名申请",
+	"globalrenamerequest": "全域用户账户重命名申请",
 	"globalrenamerequest-legend": "统一账户重命名申请",
 	"globalrenamerequest-forced": "维基媒体基金会[[:mw:SUL_finalisation|统一所有项目的用户账户]]。您的用户名已确定在其他wiki使用，因此为了完成统一登录步骤它必须更改。这意味着您必须选择一个新用户名才能继续。",
 	"globalrenamerequest-pretext": "请求一个用于跨项目登录的新用户名。您之前的贡献将连接到此新用户名中。一旦您申请了新用户名，将向维基媒体监管员发送通知以执行重命名操作。完成后您的电子邮件将收到通知。",

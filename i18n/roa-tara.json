@@ -388,7 +388,7 @@
 	"centralauth-usermerge-toomany": "Sulamende $1 {{PLURAL:$1|utende pò|utinde ponne}} essere scuagghiate 'na sola vote.",
 	"centralauth-usermerge-ratelimited": "Cumme mesure de securezze, tu puè scuagghià globbalmende 'n'utende sulamende 'na vote a 'u minute. Pe piacere pruéve 'mbrà 'nu minute.",
 	"globalrenamerequest-desc": "richieste 'nu renomene globbale d'u cunde",
-	"globalrenamerequest": "Richieste de renominamende e unificazzione",
+	"globalrenamerequest": "Richieste de renominamende globbale de l'utende",
 	"globalrenamerequest-legend": "Richieste de renominamende e unificazzione",
 	"globalrenamerequest-username-label": "Nome de l'utende de mò:",
 	"globalrenamerequest-username-help": "Quiste jè 'u nome de l'utende mò.",

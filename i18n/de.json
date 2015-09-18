@@ -399,7 +399,7 @@
 	"centralauth-usermerge-ratelimited": "Aus Sicherheitsgründen bist du berechtigt nur einen Benutzer pro Minute global zusammenzuführen. Bitte versuche es nach einer Minute erneut.",
 	"centralauth-usermerge-nousers": "Es müssen mindestens zwei gültige globale Benutzerkonten angegeben werden.",
 	"globalrenamerequest-desc": "Eine globale Benutzerkontenumbenennung beantragen",
-	"globalrenamerequest": "Umbenennung eines vereinheitlichten Benutzers beantragen",
+	"globalrenamerequest": "Umbenennung eines globalen Benutzerkontos beantragen",
 	"globalrenamerequest-legend": "Einheitliche Umbenennung beantragen",
 	"globalrenamerequest-forced": "Die Wikimedia Foundation [[:mw:SUL_finalisation|vereinheitlicht Benutzernamen auf allen Projekten]]. Dieser Benutzername wurde in anderen Wikimedia-Wikis verwendet und musste geändert werden, um diese Vereinheitlichung abzuschließen. Deshalb musst du einen neuen Benutzernamen auswählen.",
 	"globalrenamerequest-pretext": "Beantrage einen neuen Benutzernamen, der für alle Projekte verwendet werden soll.\n\nAll deine früheren Beiträge werden mit diesem neuen Benutzernamen verknüpft.\n\nSobald du einen neuen Benutzernamen beantragt hast, wird eine Benachrichtigung an die Wikimedia-Stewards versandt, um die Umbenennung auszuführen. Du wirst per E-Mail benachrichtigt, wenn dieser Prozess abgeschlossen wurde.",

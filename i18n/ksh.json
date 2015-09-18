@@ -377,7 +377,7 @@
 	"centralauth-usermerge-invalid": "Mer han keine Metmaacher met jemeinsamme Aanmäldonge un däm Nahme „$1“.",
 	"centralauth-usermerge-noself": "Do kanns kein Zohjäng met Dingem eije Zohjang zersamme lähje.",
 	"centralauth-usermerge-toomany": "Nit mih wi {{PLURAL:$1|eine|$1|keine}} Metmaacher kann nit op eijmohl zosammejelaht wähde.",
-	"globalrenamerequest": "Donn nohm Ömdeufe för ene zesammejelahte Metmaachernahme uß ongerscheidlejje Wikkis frohre",
+	"globalrenamerequest": "Nohm Ömdeufe för ene zesammejelahte Metmaachernahme uß ongerscheidlejje Wikkis frohre",
 	"globalrenamerequest-username-label": "De aktoälle Metmaacher_Nahme:",
 	"globalrenamerequest-username-help": "Dadd es em Momang Dinge Nahme als Metmaacher.",
 	"globalrenamerequest-newname-label": "Dä jewönschte Metmaacher_Nahme:",
