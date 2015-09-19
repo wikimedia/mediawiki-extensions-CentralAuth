@@ -39,7 +39,8 @@
 			"Weft",
 			"Hercule",
 			"Caliburn",
-			"Wladek92"
+			"Wladek92",
+			"Orlodrim"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -425,7 +426,7 @@
 	"centralauth-usermerge-ratelimited": "Par mesure de sécurité, vous n’êtes autorisé qu’à fusionner globalement un utilisateur qu’une fois par minute. Veuillez réessayer après une minute.",
 	"centralauth-usermerge-nousers": "Au moins deux comptes utilisateurs globaux valides doivent être fournis.",
 	"globalrenamerequest-desc": "Demander un renommage du compte global",
-	"globalrenamerequest": "Demande de renommage de l’unification",
+	"globalrenamerequest": "Demande de renommage global de compte utilisateur",
 	"globalrenamerequest-legend": "Demande de renommage de l’unification",
 	"globalrenamerequest-forced": "La Fondation Wikimédia [[:mw:SUL_finalisation|unifie les noms d’utilisateur entre tous les projets Wikimedia]]. Ce nom d’utilisateur a été identifié comme utilisé sur d’autres wikis de Wikimedia et doit être modifié pour terminer l’unification. Par conséquent, vous devez sélectionner un nouveau nom d’utilisateur.",
 	"globalrenamerequest-pretext": "Demander un nouveau nom d’utilisateur pour être connu par l’ensemble des projets.\n\nToutes vos contributions précédentes seront rattachées à ce nouveau nom d’utilisateur.\n\nUne fois votre nouveau nom d’utilisateur demandé, une notification sera envoyée aux responsables de Wikimedia pour effectuer le renommage. Vous serez informé par courriel quand cela aura été fait.",
