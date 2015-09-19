@@ -1289,7 +1289,7 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
 			$dbw->commit();
-			return Status::newFatal( 'centralauth-admin-lock-nonexistent', $this->mName );
+			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
 		$dbw->commit();
 
@@ -1310,7 +1310,7 @@ class CentralAuthUser extends AuthPluginUser {
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
 			$dbw->commit();
-			return Status::newFatal( 'centralauth-admin-unlock-nonexistent', $this->mName );
+			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
 		$dbw->commit();
 
