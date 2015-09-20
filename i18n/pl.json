@@ -376,7 +376,7 @@
 	"centralauth-usermerge-noself": "Nie możesz połączyć kont ze sobą.",
 	"centralauth-usermerge-toomany": "Tylko $1 {{PLURAL:$1|użytkownik może być zintegrowany|użytkowników może być zintegrowanych}} na raz.",
 	"globalrenamerequest-desc": "Żądanie zmiany nazwy globalnej konta",
-	"globalrenamerequest": "Prośba o zmianę nazwy użytkownika",
+	"globalrenamerequest": "Prośba o zmianę nazwy konta uniwersalnego",
 	"globalrenamerequest-pretext": "Poproś o nową nazwę użytkownika, pod którą chcesz być znany we wszystkich projektach.\n\nCały dotychczasowy wkład zostanie przypisany tej nazwie użytkownika.\n\nJeżeli poprosisz o nową nazwę użytkownika, zostanie wysłane powiadomienie do stewardów, by dokonali zmiany nazwy. Zostaniesz powiadomiony poprzez e-mail, gdy proces ten się zakończy.",
 	"globalrenamerequest-username-label": "Obecna nazwa użytkownika:",
 	"globalrenamerequest-username-help": "To twoja aktualna nazwa użytkownika.",

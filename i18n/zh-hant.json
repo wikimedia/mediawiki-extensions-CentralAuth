@@ -403,7 +403,7 @@
 	"centralauth-usermerge-toomany": "一次只能合併 $1 位{{PLURAL:$1|使用者}}。",
 	"centralauth-usermerge-ratelimited": "考量安全性問題，您每分鐘只允許全域合併一位使用者。 請稍後一分鐘再試。",
 	"globalrenamerequest-desc": "請求全域帳號重新命名",
-	"globalrenamerequest": "整合重新命名請求",
+	"globalrenamerequest": "全域使用者帳號重新命名請求",
 	"globalrenamerequest-legend": "整合重新命名請求",
 	"globalrenamerequest-forced": "維基媒體基金會正在[[:mw:SUL_finalisation|整合所有專案的使用者名稱]]，已辨識到您的使用者名稱在其他維基媒體基金會的 Wiki 中已被使用，您必須更改名稱以完成整合程序。因此您必須選擇新的使用者名稱以繼續。",
 	"globalrenamerequest-pretext": "請選擇一個要在所有專案使用的新使用者名稱。\n\n所有您先前所做的貢獻將會改連結至新使用者名稱。\n\n一旦您請求新使用者名稱，將會通知維基媒體監管員執行重新命名的動作，您將於程序完成後收到通知。",
