@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Huslåke",
-			"Ælsån"
+			"Ælsån",
+			"Jyllanj"
 		]
 	},
 	"mergeaccount": "Loĝ in unifikåsje ståt",
@@ -31,14 +32,12 @@
 	"centralauth-list-attached-title": "Attached bruger",
 	"centralauth-list-attached": "Den beretning benævnt \"$1\" oven på hver den næste steder nyde blevet automatisk attacheret den samlet beretning :",
 	"centralauth-list-attached-dryrun": "Den beretning benævnt \"$1\" oven på hver i den næste steder vil være automatisk attacheret den samlet beretning :",
-	"centralauth-foreign-link": "Bruger $1 åp $2",
+	"centralauth-foreign-link": "Bruge $1 på $2",
 	"centralauth-finish-password": "Password:",
 	"centralauth-finish-login": "Loĝge på",
 	"centralauth-finish-send-confirmation": "E-mail password",
 	"centralauth-attach-title": "Konfirmær bruger",
 	"centralauth-attach-submit": "Miigrær bruger",
 	"centralauth-admin-username": "Bruger:",
-	"centralauth-prefs-unattached": "Ukonfirmærn",
-	"centralauth-prefs-complete": "I'n årdnenge!",
-	"centralauth-prefs-migration": "I migråsje"
+	"centralauth-prefs-unattached": "Ukonfirmærn"
 }
