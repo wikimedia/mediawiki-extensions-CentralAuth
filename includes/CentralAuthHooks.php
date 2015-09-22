@@ -190,6 +190,87 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * Formats 'setstatus' action log entries inserted to globalauth log and suppress log.
+	 * Makes the target a link to Special:CentralAuth/username and also localize
+	 * the log parameters.
+	 *
+	 * @param string $type
+	 * @param string $action
+	 * @param Title|null $title
+	 * @param Skin|null $skin
+	 * @param array $params log parameters in the form array( set, unset )
+	 * @param bool $filterWikilinks
+	 *
+	 * @return string
+	 */
+	public static function onHandleSetStatusLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+		// If null, use content language as that will go to the IRC feed. Otherwise, use user language.
+		if ( $skin ) {
+			global $wgLang;
+			$lang = $wgLang;
+		} else {
+			global $wgContLang;
+			$lang = $wgContLang;
+		}
+
+		// Extract account name from title so that we can make a Special:CentralAuth link from it
+		preg_match( '/^' . MWNamespace::getCanonicalName( NS_USER ). ':(.*)@global$/', $title, $match );
+
+		$set = array();
+		$unset = array();
+
+		foreach( self::getSetStatusLogMessages( $params[0] ) as $setMsg ) {
+			$set[] = $setMsg->inLanguage( $lang )->text();
+		}
+		foreach( self::getSetStatusLogMessages( $params[1] ) as $unsetMsg ) {
+			$unset[] = $unsetMsg->inLanguage( $lang )->text();
+		}
+
+		return wfMessage( 'centralauth-log-entry-chgstatus' )
+			->rawParams( Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $match[1] ), $match[0] ) )
+			->params( $lang->commaList( $set ), $lang->commaList( $unset ) )
+			->inLanguage( $lang )->text();
+	}
+
+	/**
+	 * Get a list of messages from setstatus action log parameters
+	 * for use by CentralAuthHooks::onHandleSetStatusLogEntry()
+	 *
+	 * @param string $param
+	 *
+	 * @return Message[]
+	 */
+	private static function getSetStatusLogMessages( $param ) {
+		$status = array();
+		foreach( explode( ', ', $param ) as $par ) {
+			// params are stored inContentLanguage
+			switch ( $par ) {
+				case wfMessage( 'centralauth-log-status-locked' )->inContentLanguage()->text():
+					$status[] = 'locked';
+					break;
+				case wfMessage( 'centralauth-log-status-hidden' )->inContentLanguage()->text():
+					$status[] = 'hidden';
+					break;
+				case wfMessage( 'centralauth-log-status-oversighted' )->inContentLanguage()->text():
+					$status[] = 'oversighted';
+					break;
+				case wfMessage( 'centralauth-log-status-none' )->inContentLanguage()->text():
+					$status[] = 'none';
+					break;
+			}
+		}
+
+		$msgs = array();
+		foreach( $status as $s ) {
+			// centralauth-log-status-locked, centralauth-log-status-hidden
+			// centralauth-log-status-oversighted, centralauth-log-status-none
+			$msgs[] = wfMessage( "centralauth-log-status-$s" );
+		}
+
+		return $msgs;
+	}
+
+	/**
 	 * This hook is used in cases where SpecialPageFactory::getPageList() is called before
 	 * $wgExtensionFunctions are run, which happens when E:ShortUrl is installed.
 	 *

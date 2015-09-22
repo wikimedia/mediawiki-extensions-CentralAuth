@@ -1449,7 +1449,7 @@ class CentralAuthUser extends AuthPluginUser {
 			$this->logAction(
 				'setstatus',
 				$reason,
-				$returnStatus->success,
+				array_values( $returnStatus->success ),
 				$setHidden != self::HIDDEN_NONE
 			);
 
