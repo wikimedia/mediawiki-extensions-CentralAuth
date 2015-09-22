@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_3ae8fdae",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "Needs GPL header",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_bad38d04",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "@since",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_fac91556",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "Not sure what E:CentralAuth does, but class name should probably be upper-case, like other core maintenance scripts.",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5a2f09f4",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "Is this type name set in CentralAuth? Or would it be better to instead check if $firstType \u003d\u003d\u003d \u0027A\u0027?",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_1a39813e",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "Not a big deal, but the \"as max\" won\u0027t do anything.",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_9a4c91e6",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "This may have been intended, but just in case it wasn\u0027t I wanted to point it out. This technique of selecting the DB on $min \u003c gu_id \u003c $max will not actually process in batches of $this-\u003emBatchSize, because there will be user IDs in between that do not match the gu_password criteria. If we wanted to actually process $this-\u003emBatchSize users at a time, you need to remove the $max condition and just use a LIMIT clause.",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_5a1629ae",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "Missing semicolon",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_ba494dd5",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-22T22:04:39Z",
+      "side": 1,
+      "message": "Should be surrounded by \"if ( $backupFile ) { ... }\"",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
