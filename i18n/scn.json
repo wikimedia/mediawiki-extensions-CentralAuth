@@ -17,7 +17,7 @@
 	"centralauth-merge-denied": "N'aviti a scusari, nun hai lu pirmissu di accèdiri â sta pàggina",
 	"centralauth-merge-notlogged": "Pi fauri <span class=\"plainlinks\">[$1 trasiti cô login]</span> pi virificari siddu lu prucessu di unificazzioni dê propri utenzi è cumpletu.",
 	"centralauth-merge-welcome": "'''La tò utenza nun fu ancora mpurtata ntô sistema di idintificazzioni unificatu di {{int:Centralauth-groupname}}.'''\n\nSiddu dicidi di unificari li tò utenzi, puoi usari lu stissu nomu utenti e la stissa password pi tràsiri nti tutti li pruggetti wiki di {{int:Centralauth-groupname}} nti tutti li lingui dispunibbili.\n\nSiddu quarchid'un àutru usàu già lu tò nomu utenti supra n'autru situ, chistu nun lu distrubba, ma l'unificazzioni ti duna la pussibbilitati di arrisòrviri n futuru lu prubblema nsemi a l'àutru utenti o n'amministraturi.",
-	"centralauth-merge-step1-title": "Accuminza l'unificazzioni dê trasuti",
+	"centralauth-merge-step1-title": "Accumenza l'unificazzioni dê trasuti",
 	"centralauth-merge-step1-detail": "Nzirìsci ccà la password dâ tò utenza.\nLa tò password e lu nnirizzu di posta elittrònica arriggistratu sunu ora ncruciati cu l'utenzi n àutri wiki pi cunfirmari ca currispùnnunu.\nNuddu canciamenti è effittuatu prima dâ tò cunferma ca tuttu è n règula.",
 	"centralauth-merge-step1-submit": "Cunfirma li nfurnazzioni pâ trasuta",
 	"centralauth-merge-step2-title": "Cunfirma àutri utenzi",
