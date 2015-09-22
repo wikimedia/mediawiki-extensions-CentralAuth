@@ -231,7 +231,7 @@
 	"centralauth-log-entry-hide": "hid global account \"$1\"",
 	"centralauth-log-entry-unhide": "unhid global account \"$1\"",
 	"centralauth-log-entry-lockandhide": "locked and hid global account \"$1\"",
-	"centralauth-log-entry-chgstatus": "changed status for global account \"$1\": Set $2; Unset $3",
+	"centralauth-log-entry-chgstatus": "changed status for global account $1: Set $2; Unset $3",
 	"centralauth-log-status-locked": "locked",
 	"centralauth-log-status-hidden": "hidden",
 	"centralauth-log-status-oversighted": "oversighted",
