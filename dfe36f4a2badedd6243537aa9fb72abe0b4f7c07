@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_1a5e617c",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_3ae8fdae",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_bad38d04",
         "filename": "maintenance/wrapPasswordHash.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-22T22:04:39Z",
       "side": 1,
       "message": "@since",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_7a69a51c",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_bad38d04",
       "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_5a64e945",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_fac91556",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_5a2f09f4",
         "filename": "maintenance/wrapPasswordHash.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-09-22T22:04:39Z",
       "side": 1,
       "message": "Is this type name set in CentralAuth? Or would it be better to instead check if $firstType \u003d\u003d\u003d \u0027A\u0027?",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_ba770dfd",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_5a2f09f4",
       "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_baddcde3",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Yep. Selecting between gu_id\u0027s gives a more predictable query time. It probably takes longer overall, but seems to be less load on the db.",
+      "parentUuid": "2ecb373e_9a4c91e6",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_5a1629ae",
         "filename": "maintenance/wrapPasswordHash.php",
         "patchSetId": 1
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_25a9c2dc",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Where?",
+      "parentUuid": "2ecb373e_5a1629ae",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_ba494dd5",
         "filename": "maintenance/wrapPasswordHash.php",
         "patchSetId": 1
@@ -132,6 +240,24 @@
       "writtenOn": "2015-09-22T22:04:39Z",
       "side": 1,
       "message": "Should be surrounded by \"if ( $backupFile ) { ... }\"",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_85a43606",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-09-22T22:50:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ecb373e_ba494dd5",
       "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
