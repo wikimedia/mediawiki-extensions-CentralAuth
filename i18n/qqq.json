@@ -391,7 +391,7 @@
 	"centralauth-rename-alreadyinprogress": "Error message if the user is already being renamed. $1 the new username.",
 	"centralauth-renameuser-global-inprogress": "Error message shown on Special:RenameUser if a local rename is attempted while a global one is in progress.\n\n* $1 is the user being renamed's username",
 	"centralauth-rename-queued": "Message shown after the rename has started.\n\n* $1 is the user's old name\n* $2 is the user's new name\n* $3 is a list of the database names where rename jobs have been queued",
-	"centralauth-rename-antispoofconflicts2": "Error message shown if the username conflicts with an existing one in AntiSpoof. $1 is a comma-separated list of conflicting usernames",
+	"centralauth-rename-antispoofconflicts2": "Error message shown if the username conflicts with an existing one in AntiSpoof. $1 is a comma-separated list of conflicting usernames. $2 is number of conflicting usernames - for use with PLURAL.",
 	"centralauth-rename-conflict-hidden": "Text displayed instead of the username if the user has been hidden",
 	"centralauth-rename-progress-username": "{{identical|Username}}\nLabel for username form field on Special:RenameProgress",
 	"centralauth-rename-notinprogress": "Message shown when there is no rename in progress for the provided user\n* $1 is the username",

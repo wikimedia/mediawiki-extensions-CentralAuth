@@ -376,7 +376,7 @@
 	"centralauth-rename-alreadyinprogress" : "There is already a rename for this user in [[Special:GlobalRenameProgress/$1|progress]].",
 	"centralauth-renameuser-global-inprogress": "There is already a global rename for $1 in [[Special:GlobalRenameProgress/$1|progress]].",
 	"centralauth-rename-queued" : "Jobs to rename $1 to $2 have been queued on $3.\n\nView the progress at [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts2": "The chosen username is too similar to existing usernames: $1.",
+	"centralauth-rename-antispoofconflicts2": "The chosen username is too similar to {{PLURAL:$2|an existing username|existing usernames}}: $1.",
 	"centralauth-rename-conflict-hidden": "username hidden",
 	"centralauth-rename-progress-username" : "Username",
 	"centralauth-rename-notinprogress" : "There are no renames in progress for $1. They may have already finished.",
