@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_4a109604",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-09-23T11:41:52Z",
+      "side": 1,
+      "message": "We\u0027re not getting rid of @global in this patch. It would still appear like User:Username@global but it would now link to Special:CentralAuth/username (we currently have a gadget at meta for it) instead of a redlink. Is the new documentation confusing?",
+      "parentUuid": "2ecb373e_97dea713",
+      "revId": "223b230f643634578f146742301641c7ce116c43",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_17cab74a",
         "filename": "includes/CentralAuthHooks.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-23T10:16:46Z",
       "side": 1,
       "message": "IRC feed language should always be in English so the tools that watches it (ie: StewardBot) don\u0027t break.",
+      "revId": "223b230f643634578f146742301641c7ce116c43",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_0af28edf",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-09-23T11:41:52Z",
+      "side": 1,
+      "message": "Content language is English at Meta so it won\u0027t change.",
+      "parentUuid": "2ecb373e_17cab74a",
       "revId": "223b230f643634578f146742301641c7ce116c43",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
