@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ecb373e_97dea713",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2015-09-23T10:16:46Z",
+      "side": 1,
+      "message": "If we\u0027re getting rid of the User:A@global, maybe we should also get rid of it when searching the logs. A maintenance script may be needed to convert those log entries though.",
+      "revId": "223b230f643634578f146742301641c7ce116c43",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_17cab74a",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2015-09-23T10:16:46Z",
+      "side": 1,
+      "message": "IRC feed language should always be in English so the tools that watches it (ie: StewardBot) don\u0027t break.",
+      "revId": "223b230f643634578f146742301641c7ce116c43",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
