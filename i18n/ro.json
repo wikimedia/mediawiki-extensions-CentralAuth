@@ -358,7 +358,7 @@
 	"centralauth-usermerge-form-reason": "Motiv",
 	"centralauth-usermerge-notinstalled": "Extensia UserMerge nu este instalată.",
 	"action-centralauth-usermerge": "uniți la nivel global utilizatori multipli",
-	"globalrenamerequest-pretext": "Puteți solicita un nume de utilizator nou, sub care veți fi cunoscut în toate proiectele.\n\nToate contribuțiile dumnevoastră precedente vor fi conectate cu acest nou nume de utilizator.\n\nDupă ce solicitați un nume nou de utilizator, se va trimite o notificare către stewarzii Wikimedia pentru a efectua redenumirea. Veți primi o notificare prin e-mail atunci când acest proces este finalizat.",
+	"globalrenamerequest-pretext": "Puteți solicita un nume de utilizator nou, sub care veți fi cunoscut în toate proiectele.\n\nToate contribuțiile dumneavoastră precedente vor fi conectate cu acest nou nume de utilizator.\n\nDupă ce solicitați un nume nou de utilizator, se va trimite o notificare către stewarzii Wikimedia pentru a efectua redenumirea. Veți primi o notificare prin e-mail atunci când acest proces este finalizat.",
 	"globalrenamerequest-username-label": "Numele de utilizator actual:",
 	"globalrenamerequest-username-help": "Acesta este numele dumneavoastră de utilizator în acest moment.",
 	"globalrenamerequest-newname-label": "Numele de utilizator solicitat:",

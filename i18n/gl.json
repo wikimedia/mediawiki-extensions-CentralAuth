@@ -395,7 +395,7 @@
 	"centralauth-usermerge-ratelimited": "Como medida de seguridade, só se permite fusionar globalmente a un usuario unha vez por minuto. Por favor, inténtao de novo tras un minuto.",
 	"centralauth-usermerge-nousers": "Debe indicar polo menos dúas contas globais de usuario válidas.",
 	"globalrenamerequest-desc": "Solicitar un cambio de nome de conta global",
-	"globalrenamerequest": "Solicitude de cambio de nome para a unificación",
+	"globalrenamerequest": "Solicitude de cambio de nome para a conta de usuario Global",
 	"globalrenamerequest-legend": "Solicitude de cambio de nome para a unificación",
 	"globalrenamerequest-forced": "A Fundación Wikimedia está [[:mw:SUL_finalisation|unificando os nomes de usuario a través de todos os proxectos de Wikimedia]]. Este nome de usuario está sendo usando noutras wikis de Wikimedia e debe cambiarse para finalizar esta unificación. Como resultado, debe seleccionarse un novo nome de usuario.",
 	"globalrenamerequest-pretext": "Solicite un novo nome de usuario para todos os proxectos.\n\nTodas as súas contribucións previas serán asociadas a este novo nome de usuario.\n\nUnha vez solicite o seu novo nome de usuario, enviarase unha notificación aos stewards da Wikimedia para que fagan o cambio de nome. Recibirá unha notificación por correo electrónico unha vez remate este proceso.",
