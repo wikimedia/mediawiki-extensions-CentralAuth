@@ -229,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "2ecb373e_a0bcc01b",
+        "filename": "maintenance/wrapPasswordHash.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 278
+      },
+      "writtenOn": "2015-09-23T03:08:18Z",
+      "side": 1,
+      "message": "Nevermind. For some reason Gerrit decided to wrap the semicolon (and only the semicolon) onto a new line, even though my screen has plenty of space",
+      "parentUuid": "2ecb373e_25a9c2dc",
+      "revId": "dfe36f4a2badedd6243537aa9fb72abe0b4f7c07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ecb373e_ba494dd5",
         "filename": "maintenance/wrapPasswordHash.php",
         "patchSetId": 1
