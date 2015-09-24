@@ -2682,7 +2682,10 @@ class CentralAuthUser extends AuthPluginUser {
 	public function quickInvalidateCache() {
 		wfDebugLog( 'CentralAuthVerbose', "Quick cache invalidation for global user {$this->mName}" );
 
-		ObjectCache::getMainWANInstance()->delete( $this->getCacheKey() );
+		$key = $this->getCacheKey();
+		self::getCentralDB()->onTransactionPreCommitOrIdle( function() use ( $key ) {
+			ObjectCache::getMainWANInstance()->delete( $key );
+		} );
 	}
 
 	/**
