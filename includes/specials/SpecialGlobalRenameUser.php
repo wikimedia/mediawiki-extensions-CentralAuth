@@ -112,8 +112,9 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			);
 			if ( $conflicts ) {
 				return Status::newFatal(
-					'centralauth-rename-antispoofconflicts2',
-					$this->getLanguage()->commaList( $conflicts )
+					$this->msg( 'centralauth-rename-antispoofconflicts2' )
+						->params( $this->getLanguage()->listToText( $conflicts ) )
+						->numParams( count( $conflicts ) )
 				);
 			}
 		}
@@ -129,7 +130,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 *
 	 * @param string $oldname User's old (current) name
 	 * @param array $conflicts Conflicting usernames
-	 * @return array Usernames that are safe for display
+	 * @return array Usernames that are safe to display - non-hidden usernames are linked to Special:CA
 	 */
 	public function processAntiSpoofConflicts( $oldname, array $conflicts ) {
 		$display = array();
@@ -142,7 +143,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			if ( $ca->isHidden() ) {
 				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
 			} else {
-				$display[] = $name;
+				$display[] = "[[Special:CentralAuth/$name|$name]]";
 			}
 		}
 		return $display;
