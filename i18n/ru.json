@@ -25,7 +25,8 @@
 			"Striking Blue",
 			"Kopcap94",
 			"Mariya",
-			"Korol Bumi"
+			"Korol Bumi",
+			"INS Pirat"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -364,11 +365,12 @@
 	"centralauth-rename-doesnotexist": "Предоставленная учетная запись не существует.",
 	"centralauth-rename-alreadyexists": "Запрашиваемое имя участника уже существует.",
 	"centralauth-rename-unattached-intheway": "Есть неприсоединённые учётные записи, использующие запрашиваемое имя пользователя.",
-	"centralauth-rename-badusername": "Запрашиваемое имя пользователя является недопустимым.",
+	"centralauth-rename-badusername": "Запрошено недопустимое имя учётной записи.",
 	"centralauth-rename-cannotself": "Вы не можете переименовать сами себя.",
 	"centralauth-rename-alreadyinprogress": "Глобальное переименование для этого участника находится в [[Special:GlobalRenameProgress/$1|процессе]].",
 	"centralauth-renameuser-global-inprogress": "Глобальное переименование для $1 уже находится в [[Special:GlobalRenameProgress/$1|процессе]].",
 	"centralauth-rename-queued": "Задачи для переименования $1 в $2 были поставлены в очередь на $3.\n\nСостояние очереди можно посмотреть на [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-antispoofconflicts2": "Выбранное имя учётной записи слишком схоже с {{PLURAL:$2|именем уже существующей|именами уже существующих}}: $1.",
 	"centralauth-rename-conflict-hidden": "имя участника скрыто",
 	"centralauth-rename-progress-username": "Имя пользователя",
 	"centralauth-rename-notinprogress": "Для $1 нет переименований в процессе обработки. Возможно, они уже завершились.",

@@ -368,7 +368,7 @@
 	"centralauth-rename-cannotself": "自分自身の利用者名を変更することはできません。",
 	"centralauth-rename-alreadyinprogress": "対象に対する利用者名の変更が[[Special:GlobalRenameProgress/$1|進行]]しています。",
 	"centralauth-renameuser-global-inprogress": "$1 に対するグローバル利用者名の変更が[[Special:GlobalRenameProgress/$1|progress進行]]しています。",
-	"centralauth-rename-antispoofconflicts2": "指定した利用者名は既存の利用者名 $1 と似通いすぎています。",
+	"centralauth-rename-antispoofconflicts2": "指定した利用者名は{{PLURAL:$2|既存の利用者名}} $1 と似通いすぎています。",
 	"centralauth-rename-conflict-hidden": "利用者名は秘匿されています",
 	"centralauth-rename-progress-username": "利用者名",
 	"centralauth-rename-notinprogress": "$1 に対して進行している利用者名の変更はありません。既に完了している可能性があります。",

@@ -353,7 +353,7 @@
 	"centralauth-rename-alreadyexists": "Podana nazwa użytkownika już istnieje.",
 	"centralauth-rename-badusername": "Podana nazwa użytkownika jest nieprawidłowa.",
 	"centralauth-rename-cannotself": "Nie możesz zmienić swojej nazwy.",
-	"centralauth-rename-antispoofconflicts2": "Wybrana nazwa użytkownika jest zbyt podobna do tych, które już istnieją: $1.",
+	"centralauth-rename-antispoofconflicts2": "Wybrana nazwa użytkownika jest zbyt podobna do {{PLURAL:$2|tego, które już istnieje|tych, które już istnieją}}: $1.",
 	"centralauth-rename-progress-username": "Nazwa użytkownika",
 	"centralauth-rename-notinprogress": "Nie ma obecnie zmian nazw dla $1. Zostały już wykonane.",
 	"centralauth-rename-table-domain": "Lokalna wiki",

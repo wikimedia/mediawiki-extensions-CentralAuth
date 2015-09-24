@@ -157,6 +157,9 @@
 	"centralauth-rename-progress-username": "کارن-نوم",
 	"centralauth-rename-table-status": "دريځ",
 	"centralauth-rename-viewprogress": "پرمختگ کتل",
+	"centralauth-rename-progress-fieldset": "د سيمه ايزو گڼونونو لړليک",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|پرمختگ کتل]])",
+	"centralauth-rename-progress-list-header": "دم گړۍ لانديني نړېوال نوم بدلونونه د پرمختگ په حال کې دي:",
 	"centralauth-usermerge-form-usernames": "اوسني کارن-نومونه",
 	"globalrenamerequest": "د نوم بدلون يوځای کېدنې غوښتنه",
 	"globalrenamerequest-legend": "د نوم بدلون يوځای کېدنې غوښتنه",
@@ -172,6 +175,7 @@
 	"globalrenamequeue-request-cancel-text": "ناگارل",
 	"userswhowillberenamed": "هغه کارنان چې نوم به يې بدلېږي",
 	"centralauth-uwbr-name": "کارن-نوم",
+	"centralauth-uwbr-registration": "د نومليکنې نېټه",
 	"centralauth-uwbr-registration-nodate": "ناجوت",
 	"centralauth-uwbr-editcount": "د سمونونو شمېر",
 	"centralauth-delete-empty-account": "تش گڼون"
