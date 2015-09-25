@@ -355,7 +355,7 @@
 	"centralauth-rename-alreadyinprogress": "עבור המשתמש הזה כבר התחיל [[Special:GlobalRenameProgress/$1|תהליך שינוי שם]].",
 	"centralauth-renameuser-global-inprogress": "כבר [[Special:GlobalRenameProgress/$1|התחיל תהליך]] שינוי שם גלובלי עבור $1.",
 	"centralauth-rename-queued": "משימות לשינוי השם של $1 ל{{GRAMMAR:תחילית|$2}} הוכנסו לתור ב־$3.\n\nהצגת ההתקדמות בדף [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts2": "השם שנבחר דומה מדי לשמות הקיימים: $1.",
+	"centralauth-rename-antispoofconflicts2": "השם שנבחר דומה מדי {{PLURAL:$2|לשם קיים|לשמות קיימים}}: $1.",
 	"centralauth-rename-conflict-hidden": "שם המשתמש מוסתר",
 	"centralauth-rename-progress-username": "שם משתמש",
 	"centralauth-rename-notinprogress": "אין תהליכי שינוי שם נוכחי עבור $1. ייתכן שהם כבר הסתיימו.",
