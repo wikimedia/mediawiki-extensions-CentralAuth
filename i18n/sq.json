@@ -83,7 +83,7 @@
 	"centralauth-admin-intro": "Kjo interface mund të përdoret për administrimin e llogarive globale.",
 	"centralauth-admin-manage": "Manaxho të dhënat e pdoruesit",
 	"centralauth-admin-username": "Përdoruesi:",
-	"centralauth-admin-lookup-ro": "Shikoni informacionin e përdoruesit",
+	"centralauth-admin-lookup-ro": "Shfaq informacionet e përdoruesit",
 	"centralauth-admin-lookup-rw": "Manaxho llogarinë e përdoruesit",
 	"centralauth-admin-permission": "Vetëm kujdestarët mund të shkrijnë llogaritë e njerëzve të tjerë pë ta.",
 	"centralauth-admin-no-unified": "Nuk ka llogari të unifikuar për këtë emër.",
