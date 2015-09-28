@@ -34,6 +34,24 @@
       "revId": "95fdb3b5dc6e2fdc031039e85129628f5f74878a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ecb373e_8c650344",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-09-28T19:55:00Z",
+      "side": 1,
+      "message": "Also, given the speed of (creation, SUL handshake, time to navigate to another wiki), I think we\u0027d have to have a few good seconds of lag (not the normal ~0 during non-spikes). Having the JS maybe retry after a seconds would probably be the most we should do there.",
+      "parentUuid": "6ec1af18_cf456b49",
+      "revId": "95fdb3b5dc6e2fdc031039e85129628f5f74878a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
