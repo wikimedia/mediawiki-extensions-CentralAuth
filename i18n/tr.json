@@ -15,7 +15,9 @@
 			"Kafkasmurat",
 			"Violetanka",
 			"Stultiwikia",
-			"Meelo"
+			"Meelo",
+			"Mavrikant",
+			"McAang"
 		]
 	},
 	"mergeaccount": "Hesap birleştirme durumu",
@@ -105,6 +107,8 @@
 	"centralauth-admin-info-locked": "Kilitlenmiş:",
 	"centralauth-admin-info-hidden": "Gizlilik seviyesi:",
 	"centralauth-admin-info-groups": "Küresel {{PLURAL:$1|grup|gruplar}}:",
+	"centralauth-admin-info-attached": "Bağlı olan hesap sayısı:",
+	"centralauth-admin-info-unattached": "Bağlı olmayan hesp sayısı:",
 	"centralauth-admin-yes": "evet",
 	"centralauth-admin-no": "hayır",
 	"centralauth-admin-hidden-list": "umumi listelerden",
@@ -182,8 +186,6 @@
 	"centralauth-prefs-status": "Küresel hesap durumu:",
 	"centralauth-prefs-not-managed": "Birleşik hesap kullanmıyor",
 	"centralauth-prefs-unattached": "Doğrulanmamış",
-	"centralauth-prefs-complete": "Her şey yerli yerinde!",
-	"centralauth-prefs-migration": "Geçiş halinde",
 	"centralauth-prefs-count-attached": "Hesabınız $1 proje {{PLURAL:$1|sitesinde|sitesinde}} etkin.",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|projede|projede}} sizin adınızda doğrulanmamış hesaplar mevcut.",
 	"centralauth-prefs-detail-unattached": "Bu proje sitesi küresel hesaba ait olarak doğrulanmadı.",

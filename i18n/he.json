@@ -221,7 +221,7 @@
 	"centralauth-rightslog-name": "יומן הרשאות כלליות",
 	"centralauth-rightslog-entry-usergroups": "שינה את ההרשאות הכלליות של $1 מ־$2 ל־$3",
 	"centralauth-rightslog-entry-groupperms": "שינה את הרשאות הקבוצה $1 מ־$2 ל־$3",
-	"centralauth-rightslog-entry-groupperms2": "שינה את הרשאות הקבוצה $1. נוספו ההרשאות $2; הוסרו ההרשאות $3",
+	"centralauth-rightslog-entry-groupperms2": "שינה את הרשאות הקבוצה הגלובליות עבור $1: נוספו ההרשאות $2; הוסרו ההרשאות $3",
 	"centralauth-rightslog-entry-groupperms3": "שינה את קבוצת אתרי הוויקי של הקבוצה $1 מ־$2 ל־$3",
 	"centralauth-rightslog-entry-grouprename": "שם הקבוצה $2 שונה ל{{GRAMMAR:תחילית|$1}}",
 	"centralauth-rightslog-header": "יומן זה כולל פעולות על קבוצות כלליות, כולל חברות בקבוצות ושינויי הרשאות.",

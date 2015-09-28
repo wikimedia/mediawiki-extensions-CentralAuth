@@ -378,6 +378,8 @@
 	"centralauth-rename-viewprogress": "عرض التقدم",
 	"centralauth-rename-progress-fieldset": "قائمة الحسابات المحلية",
 	"centralauth-rename-progress-logs-fieldset": "ادخالات السجل",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|عرض التقدم]])",
+	"centralauth-rename-progress-list-header": "عمليات إعادة التسمية العالمية التالية قيد التنفيذ:",
 	"centralauth-rename-movelog": "تم نقل الصفحة آلياً خلال إعادة تسمية المستخدم «[[Special:CentralAuth/$1|$1]]» إلى «[[Special:CentralAuth/$2|$2]]».",
 	"centralauth-rename-confirm": "هل تريد حقاً تغيير اسم الحساب الموحد لهذا المستخدم؟",
 	"log-name-gblrename": "سجل إعادة التسمية الشاملة",

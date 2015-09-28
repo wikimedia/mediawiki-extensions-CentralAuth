@@ -385,7 +385,7 @@
 	"centralauth-rename-alreadyinprogress": "Il y a déjà un renommage [[Special:GlobalRenameProgress/$1|en cours]] pour cet utilisateur.",
 	"centralauth-renameuser-global-inprogress": "Il y a déjà un renommage global en [[Special:GlobalRenameProgress/$1|cours]] pour $1.",
 	"centralauth-rename-queued": "Les tâches pour renommer $1 en $2 ont été mises en file dans $3.\n\nAfficher la progression depuis [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts2": "Le nom d’utilisateur choisi est trop semblable {{PLURAL:$2|à nom d’utilisateur existant|aux noms d’utilisateur existants}} : $1.",
+	"centralauth-rename-antispoofconflicts2": "Le nom d’utilisateur choisi est trop semblable à {{PLURAL:$2|à un nom d’utilisateur existant|à des noms d’utilisateur existants}} : $1.",
 	"centralauth-rename-conflict-hidden": "nom d’utilisateur masqué",
 	"centralauth-rename-progress-username": "Nom d’utilisateur",
 	"centralauth-rename-notinprogress": "Il n’y a pas de renommage en cours pour $1. Ils peuvent s’être terminés.",

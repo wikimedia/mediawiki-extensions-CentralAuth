@@ -4,5 +4,8 @@
 			"Angpradesh"
 		]
 	},
-	"centralauth-merge-method-login": "लॉगिन उपरांत सृजित करलऽ गेलै"
+	"centralauth-foreign-link": "$2 पर सदस्य $1",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|योगदान}} $2 प॑",
+	"centralauth-merge-method-login": "लॉगिन उपरांत सृजित करलऽ गेलै",
+	"centralauth-admin-blocklog": "अवरोध लॉग"
 }

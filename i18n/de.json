@@ -224,7 +224,7 @@
 	"centralauth-rightslog-name": "Globales Rechte-Logbuch",
 	"centralauth-rightslog-entry-usergroups": "änderte die globale Gruppenzugehörigkeit für „$1“ von $2 auf $3",
 	"centralauth-rightslog-entry-groupperms": "änderte die Gruppenrechte für „$1“ von $2 auf $3",
-	"centralauth-rightslog-entry-groupperms2": "änderte die Gruppenberechtigung für $1. Ergänzt $2; entfernt $3",
+	"centralauth-rightslog-entry-groupperms2": "änderte die globale Gruppenberechtigung für $1: $2 ergänzt; $3 entfernt",
 	"centralauth-rightslog-entry-groupperms3": "änderte anwendbare Wikigruppen für $1 von $2 auf $3",
 	"centralauth-rightslog-entry-grouprename": "hat die Gruppe „$2“ in „$1“ umbenannt",
 	"centralauth-rightslog-header": "Dieses Logbuch enthält Änderungen an globalen Gruppen: Mitgliedschaft und Rechteänderungen",
