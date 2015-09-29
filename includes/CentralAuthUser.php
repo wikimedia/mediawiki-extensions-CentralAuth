@@ -389,7 +389,8 @@ class CentralAuthUser extends AuthPluginUser {
 
 	 	$obj = $this->getCacheObject();
 	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
-		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400 );
+		$opts = array( 'since' => self::getCentralSlaveDB()->trxTimestamp() );
+		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400, $opts );
 	}
 
 	/**
