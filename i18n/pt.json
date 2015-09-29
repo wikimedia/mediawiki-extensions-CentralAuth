@@ -366,7 +366,7 @@
 	"centralauth-rename-alreadyinprogress": "Já existe um pedido [[Special:GlobalRenameProgress/$1|em progresso]] para renomear este(a) utilizador(a).",
 	"centralauth-renameuser-global-inprogress": "Já existe um pedido para renomear a conta $1 em [[Special:GlobalRenameProgress/$1|progresso]].",
 	"centralauth-rename-queued": "O pedido para renomear a conta $1 para $2 está em lista de espera em $3.\n\nVer o processo em [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts2": "O nome de utilizador escolhido é muito semelhante {{PLURAL:$2|seguinte existente|aos seguintes existentes}}: $1.",
+	"centralauth-rename-antispoofconflicts2": "O nome de utilizador escolhido é muito semelhante {{PLURAL:$2|ao nome de um usuário existente|aos nomes de usuários existentes}}: $1.",
 	"centralauth-rename-conflict-hidden": "nome de utilizador oculto",
 	"centralauth-rename-progress-username": "Nome de utilizador(a)",
 	"centralauth-rename-notinprogress": "Não existem pedidos de renomeação em progresso para $1. Pode já ter sido concluído.",
