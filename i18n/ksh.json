@@ -212,7 +212,7 @@
 	"centralauth-rightslog-name": "Logbohch för jemeinsam Rääschte",
 	"centralauth-rightslog-entry-usergroups": "hät för de jemeinsame Aanmeldung „$1“ de jemeinsam Metmaacher-Jroppe fun $2 op $3 jeändert",
 	"centralauth-rightslog-entry-groupperms": "hät för de jemeinsamme Metmaacher_Jropp „$1“ de jemeinsamme Metmaacher_Jroppe_Rääschte fun $2 op $3 jeändert",
-	"centralauth-rightslog-entry-groupperms2": "hät de jemeinsame Metmaacher-Jropp  „$1“ ier Rääschte jeändert, un dobei $2 dobei jedonn, un $3 fott jenumme",
+	"centralauth-rightslog-entry-groupperms2": "hät de jemeinsame Metmaacher-Jropp „$1“ ier Rääschte jeändert, un dobei $2 dobei jedonn, un $3 fott jenumme",
 	"centralauth-rightslog-entry-groupperms3": "hät de Wiki-Jrop för $1 fun $2 op $3 ömjesatz",
 	"centralauth-rightslog-entry-grouprename": "hät di Jrobb „$2“ en „$1“ ömjenannt",
 	"centralauth-rightslog-header": "Dat Logbohch heh zeisch Änderonge aan jemeinsamme Metmaacher-Jroppe: beeds Metjleeder un Rääschte, di kumme un jonn",

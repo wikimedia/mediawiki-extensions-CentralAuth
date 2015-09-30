@@ -192,7 +192,7 @@
 	"centralauth-rightslog-name": "Dnevnik globalnih prava",
 	"centralauth-rightslog-entry-usergroups": "je promenio članstvo globalne grupe za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-groupperms": "je promenio dozvole grupe $1 iz $2 u $3",
-	"centralauth-rightslog-entry-groupperms2": "je promenio dozvole grupe $1. Dodato $2; Uklonjeno $3",
+	"centralauth-rightslog-entry-groupperms2": "je promenio dozvole globalne grupe $1. Dodato $2; Uklonjeno $3",
 	"centralauth-rightslog-entry-groupperms3": "je promenio ograničenja grupe za skupove vikija za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-grouprename": "je preimenovao grupu $2 u $1",
 	"centralauth-rightslog-header": "Ovaj dnevnik sadrži operacije o globalnim grupama: promene u članstvu i dozvolama",
