@@ -190,7 +190,7 @@
 	"centralauth-rightslog-name": "Ιστορικό καθολικών δικαιωμάτων",
 	"centralauth-rightslog-entry-usergroups": "άλλαξε τα παγκόσμια δικαιώματα χρηστών για τον/την $1 από $2 σε $3",
 	"centralauth-rightslog-entry-groupperms": "άλλαξε τις άδειες ομάδων για τον/την $1 από $2 σε $3",
-	"centralauth-rightslog-entry-groupperms2": "αλλαγή αδειών χρήστη για τον $1. Προσθήκη $2; Αφαίρεση $3",
+	"centralauth-rightslog-entry-groupperms2": "αλλαγή αδειών χρήστη για τον $1. προστέθηκαν $2- αφαίρεση $3",
 	"centralauth-rightslog-entry-groupperms3": "άλλαξε την ομάδα της περιορισμένης σειράς βίκι για $1 από $2 σε $3",
 	"centralauth-rightslog-header": "Αυτή η καραγραφή περιέχει λειτουργίες σε παγκόσμιες ομάδες: αλλαγές σε μέλη και άδειες",
 	"centralauth-rightslog-entry-newset": "δημιούργησε $2 σειρά βίκι $1 με τα ακόλουθα βίκι: $3",
