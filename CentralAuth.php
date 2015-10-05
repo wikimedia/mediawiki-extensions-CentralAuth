@@ -353,6 +353,7 @@ $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
 $wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
 $wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
 $wgHooks['AbortAutoAccount'][] = 'CentralAuthHooks::onAbortAutoAccount';
+$wgHooks['FetchUserIdsByEmailAddr'][] = 'CentralAuthHooks::onFetchUserIdsByEmailAddr';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLoadFromSession'][] = 'CentralAuthHooks::onUserLoadFromSession';
 $wgHooks['UserLogout'][] = 'CentralAuthHooks::onUserLogout';

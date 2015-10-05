@@ -601,6 +601,20 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param $email Email address
+	 * @param $usernames Array of user names
+	 * @return bool
+	 */
+	static function onFetchUserIdsByEmailAddr( $email, &$usernames ) {
+		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$usernames = $dbr->selectFieldValues( 'globaluser', 'gu_name', array(
+			'lower(gu_email)' => $email,
+			) );
+
+		return true;
+	}
+
+	/**
 	 * @param $user User
 	 * @param $inject_html string
 	 * @return bool
