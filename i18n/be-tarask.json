@@ -96,6 +96,7 @@
 	"centralauth-admin-info-locked": "Заблякаваны:",
 	"centralauth-admin-info-hidden": "Узровень хаваньня:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глябальная група|Глябальныя групы}}:",
+	"centralauth-admin-info-attached": "Колькасьць далучаных рахункаў:",
 	"centralauth-admin-yes": "так",
 	"centralauth-admin-no": "не",
 	"centralauth-admin-hidden-list": "з агульнадаступных сьпісаў",
