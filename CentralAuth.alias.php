@@ -834,6 +834,7 @@ $specialPageAliases['ur'] = array(
 	'CentralAuth' => array( 'اختیار_مرکزی' ),
 	'MergeAccount' => array( 'ضم_کھاتہ' ),
 	'GlobalUsers' => array( 'عالمی_صارفین' ),
+	'GlobalRenameRequest' => array( 'درخواست_تبدیلی_عالمی_نام' ),
 );
 
 /** Venetian (vèneto) */
