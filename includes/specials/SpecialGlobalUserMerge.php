@@ -207,4 +207,8 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			)->params( $this->newUsername )->parse();
 		$this->getOutput()->addHTML( $msg );
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }
