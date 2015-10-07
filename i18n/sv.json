@@ -367,7 +367,7 @@
 	"centralauth-rename-alreadyinprogress": "Det är redan ett namnbyte [[Special:GlobalRenameProgress/$1|på gång]] för denna användare.",
 	"centralauth-renameuser-global-inprogress": "Det finns redan ett globalt namnbyte [[Special:GlobalRenameProgress/$1|på gång]] för $1.",
 	"centralauth-rename-queued": "Jobb för namnbyte av $1 till $2 har placerats i kö på $3.\n\nSe förloppet på [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-antispoofconflicts2": "Det valda användarnamnet är för likt {{PLURAL:$2|ett befintligt användarnamn|befintliga användarnamn: $1.",
+	"centralauth-rename-antispoofconflicts2": "Det valda användarnamnet är för likt {{PLURAL:$2|ett befintligt användarnamn|befintliga användarnamn}}: $1.",
 	"centralauth-rename-conflict-hidden": "användarnamn dolt",
 	"centralauth-rename-progress-username": "Användarnamn",
 	"centralauth-rename-notinprogress": "Det finns inga pågående namnbyten för $1. De kan redan ha avslutats.",
