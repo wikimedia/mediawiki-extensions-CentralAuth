@@ -195,4 +195,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			->parse();
 		$this->getOutput()->addHTML( $msg );
 	}
+
+	protected function getGroupName() {
+		return 'users';
+	}
 }
