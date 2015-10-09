@@ -130,7 +130,7 @@
 	"centralauth-rightslog-name": "גלאבאלער רעכטן לאגבוך",
 	"centralauth-rightslog-entry-usergroups": "געביטן גלאבאלע גרופע מיטגלידערשאַפֿט פֿאַר $1 פֿון $2 אויף $3",
 	"centralauth-rightslog-entry-groupperms": "געביטן גרופע רעכטן פֿאַר $1 פֿון $2 אויף $3",
-	"centralauth-rightslog-entry-groupperms2": "געענדערט גרופע רעכטן פֿאר $1. צוגעלייגט $2; אראפגענומען $3",
+	"centralauth-rightslog-entry-groupperms2": "געענדערט גלאבאלע גרופע רעכטן פֿאר $1. צוגעלייגט $2; אראפגענומען $3",
 	"centralauth-rightslog-header": "דאס לאגבוך אנטהאלט אפעראציעס אויף גלאבאלע גרופעס: מיטגלידערשאפֿט און רעכטן ענדערונגען",
 	"centralauth-rightslog-entry-newset": "געשאפֿן $2 וויקיגרופע $1 מיט די פֿאלגנדע וויקיס: $3",
 	"centralauth-rightslog-entry-setnewtype": "געענדערט טיפ פֿון \"$1\" פֿון $2 אויף $3",
