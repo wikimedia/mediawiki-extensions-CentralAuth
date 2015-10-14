@@ -15,7 +15,8 @@
 			"Tacsipacsi",
 			"Tgr",
 			"ViDam",
-			"Csega"
+			"Csega",
+			"Nyuszika7H"
 		]
 	},
 	"mergeaccount": "Szerkesztői fiókok egyesítésének állapota",
@@ -177,8 +178,6 @@
 	"centralauth-prefs-status": "Globális felhasználói fiók állapota:",
 	"centralauth-prefs-not-managed": "Nem használsz egységesített felhasználói fiókot",
 	"centralauth-prefs-unattached": "Nincs megerősítve",
-	"centralauth-prefs-complete": "Minden rendben!",
-	"centralauth-prefs-migration": "Költöztetés alatt",
 	"centralauth-prefs-count-attached": "Jelenleg $1 oldalon van felhasználói fiókod.",
 	"centralauth-prefs-count-unattached": "$1 nem megerősített felhasználói fiók van a neveddel $1 oldalon.",
 	"centralauth-prefs-detail-unattached": "Még nem lett megerősítve, hogy az oldal a globális felhasználói fiókodhoz tartozik.",
@@ -311,6 +310,7 @@
 	"centralauth-rename-viewprogress": "Folyamat megtekintése",
 	"centralauth-rename-progress-fieldset": "Helyi fiókok listája",
 	"centralauth-rename-progress-logs-fieldset": "Naplóbejegyzések",
+	"centralauth-rename-movelog": "Automatikusan átnevezett lap, „[[Special:CentralAuth/$1|$1]]” szerkesztő átnevezve „[[Special:CentralAuth/$2|$2]]” névre",
 	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését.",
 	"globalrenamerequest-desc": "Globális fiókátnevezés kérése",
 	"globalrenamerequest": "Átnevezési kérelem",
