@@ -173,6 +173,8 @@
 	"centralauth-renameuser-reserved": "Корисничко име $2 је резервисано за глобални налог.",
 	"centralauth-invalid-wiki": "Нема такве вики базе података: $1",
 	"centralauth-account-exists": "Не могу да отворим налог: тражено корисничко име је заузето.",
+	"centralauth-account-unattached-exists": "Корисничко име је заузето. Изаберите друго.",
+	"centralauth-account-rename-exists": "Корисничко име је заузето. Изаберите друго.",
 	"centralauth-account-exists-reset": "Корисничко име $1 није регистровано на овом викију, али можете ресетовати његову лозинку [[Special:CentralAuth/$1|овде]].",
 	"centralauth-login-progress": "Пријављујем вас на друге вики пројекте {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Одјављени сте са свих вики пројекта {{int:Centralauth-groupname}}:",

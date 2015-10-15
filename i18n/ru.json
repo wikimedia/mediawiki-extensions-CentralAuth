@@ -26,7 +26,8 @@
 			"Kopcap94",
 			"Mariya",
 			"Korol Bumi",
-			"INS Pirat"
+			"INS Pirat",
+			"Краснорядцева Елена"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -211,8 +212,8 @@
 	"centralauth-renameuser-reserved": "Имя участника $2 зарезервировано для глобальной учётной записи.",
 	"centralauth-invalid-wiki": "Нет такой вики БД: $1",
 	"centralauth-account-exists": "Невозможно создать учётную запись. Запрашиваемое имя уже занято участником другой вики.",
-	"centralauth-account-unattached-exists": "Не удаётся создать учётную запись: запрошенное имя пользователя конфликтует с именем пользователя на другой вики.",
-	"centralauth-account-rename-exists": "Не удаётся создать учётную запись: запрошенное имя пользователя конфликтует с именем пользователя в другой вики.",
+	"centralauth-account-unattached-exists": "Не удаётся создать учётную запись: имя пользователя уже используется. Пожалуйста, введите другое имя.",
+	"centralauth-account-rename-exists": "Не удаётся создать учётную запись: имя пользователя уже используется. Пожалуйста, введите другое имя.",
 	"centralauth-account-exists-reset": "Имя участника $1 не зарегистрировано в этом проекте, но вы можете сбросить его пароль на [[Special:CentralAuth/$1|проектах, в которых он присутствует]].",
 	"centralauth-login-progress": "Обрабатывается вход в проекты {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Обрабатывается выход из проектов {{int:Centralauth-groupname}}:",
