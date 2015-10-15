@@ -23,7 +23,6 @@
 	"centralauth-admin-info-locked": "Glaiste:",
 	"centralauth-admin-info-hidden": "Leibheil an fhalaich:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Buidheann|Buidhnean}} coitcheann:",
-	"centralauth-admin-info-nogroups": "chan eil gin",
 	"centralauth-admin-yes": "tha",
 	"centralauth-admin-no": "chan eil",
 	"centralauth-admin-hidden-list": "o liostaichean poblach",

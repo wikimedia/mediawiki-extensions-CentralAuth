@@ -73,8 +73,6 @@
 	"centralauth-months-ago": "Orain dela {{PLURAL:$1|hilabete|$1 hilabete}}",
 	"centralauth-years-ago": "Orain dela {{PLURAL:$1|urtebete|$1 urte}}",
 	"centralauth-prefs-unattached": "Baieztatu gabe",
-	"centralauth-prefs-complete": "Dena behar bezala dago!",
-	"centralauth-prefs-migration": "Migratzen",
 	"centralauth-prefs-manage": "Kudeatu zure kontu orokorra",
 	"centralauth-log-status-locked": "blokeatua",
 	"centralauth-log-status-hidden": "ezkutatua",

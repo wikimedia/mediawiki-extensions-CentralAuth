@@ -62,7 +62,6 @@
 	"centralauth-admin-info-locked": "Lock karaa gais",
 	"centralauth-admin-info-hidden": "Lukawa gais level:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|group|groups}}:",
-	"centralauth-admin-info-nogroups": "Kuchh bhi nai",
 	"centralauth-admin-yes": "haan",
 	"centralauth-admin-no": "nai",
 	"centralauth-admin-list-legend-ro": "Local account ke suchi",

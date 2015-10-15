@@ -145,8 +145,6 @@
 	"centralauth-prefs-status": "உலகலாவிய கணக்கின் நிலைமை:",
 	"centralauth-prefs-not-managed": "ஒன்றிணைந்த கணக்கை உபயோகிக்கவில்லை",
 	"centralauth-prefs-unattached": "உறுதி செய்யப்படாதது",
-	"centralauth-prefs-complete": "எல்லாம் ஒழுங்காக உள்ளது !",
-	"centralauth-prefs-migration": "பரஸ்பர வெளியேற்றத்தில்",
 	"centralauth-prefs-count-attached": "தங்களது கணக்கு $1 திட்டத் {{PLURAL:$1|தளம்|தளங்களில்}} நடைமுறையில் உள்ளது.",
 	"centralauth-prefs-count-unattached": "உறுதிப்படுத்தப்படாத கணக்குகள் உங்கள் பெயரில் $1 ல் {{PLURAL:$1|திட்டம்|திட்டங்களில் }} உள்ளது..",
 	"centralauth-prefs-detail-unattached": "இந்த திட்ட தளமானது உலகளாவிய கணக்கு வகுப்பைச் சேர்ந்த்தது என உறுதிசெய்யப்படவில்லை.",

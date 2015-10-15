@@ -76,8 +76,6 @@
 	"centralauth-months-ago": "{{PLURAL:$1|mwezi $1 ulio|miezi $1 iliyo}}pita",
 	"centralauth-years-ago": "{{PLURAL:$1|mwaka $1 ulio|miaka $1 iliyo}}pita",
 	"centralauth-prefs-unattached": "Haijazibitishwa",
-	"centralauth-prefs-complete": "Yote shwari",
-	"centralauth-prefs-migration": "Katika uhamisho",
 	"centralauth-invalid-wiki": "Hakuna hifdhidata ya wiki kama hiyo: $1",
 	"centralauth-log-status-locked": "Imezuia",
 	"centralauth-log-status-hidden": "imefichwa",

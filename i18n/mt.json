@@ -148,8 +148,6 @@
 	"centralauth-prefs-status": "Stat tal-kont globali:",
 	"centralauth-prefs-not-managed": "Il-kont unifikat mhuwiex fl-użu",
 	"centralauth-prefs-unattached": "Mhux konfermat",
-	"centralauth-prefs-complete": "Kollox f'postu!",
-	"centralauth-prefs-migration": "Fi proċess ta' trasferiment",
 	"centralauth-prefs-count-attached": "Il-kont tiegħek huwa attiv fuq $1 {{PLURAL:$1|sit wieħed|siti}} ta' proġett.",
 	"centralauth-prefs-count-unattached": "Kontijiet mhux konfermati bl-isem tal-utent tiegħek fuq $1 {{PLURAL:$1|proġett|proġetti}}.",
 	"centralauth-prefs-detail-unattached": "Dan is-sit tal-proġett għadu ma ġiex ikkonfermat bħala appartenenti għall-kont globali.",

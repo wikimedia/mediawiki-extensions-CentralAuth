@@ -152,8 +152,6 @@
 	"centralauth-prefs-status": "Stav globálneho účtu:",
 	"centralauth-prefs-not-managed": "Nepoužíva zjednotený účet",
 	"centralauth-prefs-unattached": "Nepotvrdené",
-	"centralauth-prefs-complete": "Všetko v poriadku!",
-	"centralauth-prefs-migration": "Prebieha migrácia",
 	"centralauth-prefs-count-attached": "Váš účet je aktívny na $1 {{PLURAL:$1|projekte|projektoch}}.",
 	"centralauth-prefs-count-unattached": "Nepotvrdené účty s vašim menom zostávajú na $1 {{PLURAL:$1|projekte|projektoch}}.",
 	"centralauth-prefs-detail-unattached": "Nebolo potvrdené, že účet na tomto projekte patrí ku globálnemu účtu.",

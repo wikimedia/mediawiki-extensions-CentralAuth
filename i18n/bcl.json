@@ -166,8 +166,6 @@
 	"centralauth-prefs-status": "Kamugtakan kan pankinaban na panindog:",
 	"centralauth-prefs-not-managed": "Dae minagamit kan pinagkasararong panindog",
 	"centralauth-prefs-unattached": "Bakong kumpirmado",
-	"centralauth-prefs-complete": "Gabos yaon sa tanos!",
-	"centralauth-prefs-migration": "Yaon sa pagbabalyo",
 	"centralauth-prefs-count-attached": "An saimong panindog aktibo sa $1 na proyekto {{PLURAL:$1|sityo|mga sityo}}.",
 	"centralauth-prefs-count-unattached": "Bako pang kumpirmadong mga panindog na yaon an saimong pangaran yaon pa sa $1\n{{PLURAL:$1|proyekto|mga proyekto}}.",
 	"centralauth-prefs-detail-unattached": "Ining sityo kan proyekto bako pang kumpirmado na kabilang sa pankinaban na panindog.",

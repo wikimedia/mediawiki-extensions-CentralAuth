@@ -46,7 +46,6 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|maond|maonden}} elejen",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jaor|jaor}} elejen",
 	"centralauth-prefs-status": "Globale gebrukerstaotus:",
-	"centralauth-prefs-complete": "Alles is veur mekaar!",
 	"centralauth-prefs-count-attached": "Joew gebruker is aktief op {{PLURAL:$1|één projektwebstee|$1 projektwebsteeën}}.",
 	"centralauth-prefs-manage": "Joew globale gebruker beheren",
 	"centralauth-prefs-view": "Informasie over globale gebruker bekieken",

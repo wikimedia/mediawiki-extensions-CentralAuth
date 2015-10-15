@@ -135,8 +135,6 @@
 	"centralauth-prefs-status": "全域戶口狀態：",
 	"centralauth-prefs-not-managed": "唔係用緊統一戶口",
 	"centralauth-prefs-unattached": "未確認",
-	"centralauth-prefs-complete": "全部完成！",
-	"centralauth-prefs-migration": "遷移中",
 	"centralauth-prefs-count-attached": "你個戶口響$1個計劃網站度係活躍嘅。",
 	"centralauth-prefs-count-unattached": "你響$1個計劃度重有未確認嘅戶口。",
 	"centralauth-prefs-detail-unattached": "呢個計劃網站重未確認到個全域戶口。",

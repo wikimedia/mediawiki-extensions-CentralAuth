@@ -10,7 +10,6 @@
 	"centralauth-finish-password": "Maxfiy soʻz:",
 	"centralauth-admin-info-username": "Foydalanuvchi nomi:",
 	"centralauth-prefs-status": "Global hisob holati:",
-	"centralauth-prefs-complete": "Hammasi joyida!",
 	"centralauth-prefs-count-attached": "Hisob yozuvingiz $1 ta {{PLURAL:$1|loyihada}} faol.",
 	"centralauth-prefs-count-unattached": "Hisob yozuvingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
 	"centralauth-prefs-manage": "Global hisob yozuvini boshqarish",

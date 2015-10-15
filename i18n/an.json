@@ -153,8 +153,6 @@
 	"centralauth-prefs-status": "Status d'a cuenta global:",
 	"centralauth-prefs-not-managed": "No ye usando a cuenta unificata",
 	"centralauth-prefs-unattached": "No confirmata",
-	"centralauth-prefs-complete": "Tot bien!",
-	"centralauth-prefs-migration": "En migración",
 	"centralauth-prefs-count-attached": "A suya cuenta ye activa en $1 {{PLURAL:$1|procheuto|procheutos}}.",
 	"centralauth-prefs-count-unattached": "Quedan cuentas no confirmatas con o suyo nombre en $1 {{PLURAL:$1|procheuto|procheutos}}.",
 	"centralauth-prefs-detail-unattached": "Iste procheuto no s'ha confirmau como parte d'a cuenta global.",

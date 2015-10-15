@@ -87,8 +87,6 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|il|il}} əvvəl",
 	"centralauth-prefs-status": "Qlobal hesab statusu:",
 	"centralauth-prefs-unattached": "Təsdiqlənməmiş",
-	"centralauth-prefs-complete": "Hər şey qaydasındadır!",
-	"centralauth-prefs-migration": "Keçid halında",
 	"centralauth-prefs-count-attached": "Sizin hesabınız $1 layihə saytında aktivdir.",
 	"centralauth-prefs-manage": "Qlobal hesabın idarə edilməsi",
 	"centralauth-prefs-view": "Qlobal istifadəçi hesabı məlumatlarına bax",

@@ -151,8 +151,6 @@
 	"centralauth-prefs-status": "Status središnjeg suradničkog računa:",
 	"centralauth-prefs-not-managed": "Ne rabite centralni račun",
 	"centralauth-prefs-unattached": "Nepotvrđeno",
-	"centralauth-prefs-complete": "Sve u redu!",
-	"centralauth-prefs-migration": "Migracija u tijeku",
 	"centralauth-prefs-count-attached": "Vaš suradnički račun je aktivan na $1 {{PLURAL:$1|projektu|projekta|projekata}}.",
 	"centralauth-prefs-count-unattached": "Nepotvrđeni računi s vašim imenom postoje još na $1 {{PLURAL:$1|projektu|projekata}}.",
 	"centralauth-prefs-detail-unattached": "Pripadnost ovog projekta jedinstvenom sustavu prijave nije potvrđena.",

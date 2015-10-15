@@ -115,8 +115,6 @@
 	"centralauth-prefs-status": "Globālā konta statuss:",
 	"centralauth-prefs-not-managed": "Netiek lietots apvienotais konts",
 	"centralauth-prefs-unattached": "Neapstiprināti",
-	"centralauth-prefs-complete": "Viss kārtībā!",
-	"centralauth-prefs-migration": "Migrācija nav pabeigta",
 	"centralauth-prefs-count-attached": "Tavs konts ir aktīvs $1 {{PLURAL:$1|projektu vietnēs|projekta vietnē|projektu vietnēs}}.",
 	"centralauth-prefs-count-unattached": "Neapstiprināti konti ar tavu lietotāja vārdu saglabājas $1 {{PLURAL:$1|projektos|projektā|projektos}}.",
 	"centralauth-prefs-manage": "Pārvaldīt savu globālo kontu",

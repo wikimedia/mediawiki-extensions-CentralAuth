@@ -144,8 +144,6 @@
 	"centralauth-prefs-status": "Benutzerkonte-Status:",
 	"centralauth-prefs-not-managed": "Es wird kei zämmegfiert Benutzerkonto bruucht.",
 	"centralauth-prefs-unattached": "Nit bstätigt",
-	"centralauth-prefs-complete": "Fertig!",
-	"centralauth-prefs-migration": "Am Zämmefiere",
 	"centralauth-prefs-count-attached": "Dyy Benutzerkonto isch in $1 {{PLURAL:$1|Projäkt|Projäkt}} aktiv.",
 	"centralauth-prefs-count-unattached": "S git in $1 {{PLURAL:$1|Projäkt|Projäkt}} nit bstätigti Benutzerkonte mit Dyynem Name.",
 	"centralauth-prefs-detail-unattached": "Fir des Projäkt git s kei Bstätigung fir s zämmegfiert Benutzerkonto.",

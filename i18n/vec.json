@@ -162,8 +162,6 @@
 	"centralauth-prefs-status": "Situazion de l'account globale:",
 	"centralauth-prefs-not-managed": "Account unificà non in uso",
 	"centralauth-prefs-unattached": "Mìa confermà",
-	"centralauth-prefs-complete": "Tuto a posto!",
-	"centralauth-prefs-migration": "In corso de trasferimento",
 	"centralauth-prefs-count-attached": "El to account el xe ativo su $1 {{PLURAL:$1|sito|siti}} de progeto.",
 	"centralauth-prefs-count-unattached": "Ghe xe account non confermà col to nome utente su $1 {{PLURAL:$1|progeto|progeti}}.",
 	"centralauth-prefs-detail-unattached": "Sto sito qua no l'è stà confermà come fasente parte de l'account globale.",

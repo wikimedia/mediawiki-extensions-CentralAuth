@@ -149,8 +149,6 @@
 	"centralauth-prefs-status": "গোলকীয় একাউণ্ট অৱস্থা",
 	"centralauth-prefs-not-managed": "একত্ৰিত একাউণ্ট ব্যৱহাৰ কৰা নাই",
 	"centralauth-prefs-unattached": "অনিশ্চিত",
-	"centralauth-prefs-complete": "সকলো ক্ৰমত আছে!",
-	"centralauth-prefs-migration": "প্ৰব্ৰজন হৈ আছে",
 	"centralauth-prefs-count-attached": "আপোনাৰ একাউণ্টটো $1টা প্ৰকল্প {{PLURAL:$1|ছাইট}}ত সক্ৰিয় হৈ আছে।",
 	"centralauth-prefs-count-unattached": "আপোনাৰ নাম থকা অনিশ্চিত একাউণ্ট $1 {{PLURAL:$1|প্ৰকল্প|প্ৰকল্পসমূহ}}ত আছে।",
 	"centralauth-prefs-detail-unattached": "এই প্ৰকল্প ছাইট গোলকীয় একাউণ্টৰ অন্তৰ্গত বুলি নিশ্চিত কৰা হোৱা নাই।",

@@ -146,8 +146,6 @@
 	"centralauth-prefs-status": "Дөйөм иҫәп яҙмаһы статусы:",
 	"centralauth-prefs-not-managed": "Дөйөм иҫәп яҙмаһы ҡулланылмай",
 	"centralauth-prefs-unattached": "Раҫланмаған",
-	"centralauth-prefs-complete": "Барыһы ла яҡшы!",
-	"centralauth-prefs-migration": "Күсерелә",
 	"centralauth-prefs-count-attached": "Һеҙҙең иҫәп яҙмағыҙ {{PLURAL:$1|1=проектта|проектта}} теркәлгән.",
 	"centralauth-prefs-count-unattached": "Һеҙҙең исем менән раҫланмаған иҫәп яҙмаһы $1 {{PLURAL:$1|1=проектта|проектта}} ҡала.",
 	"centralauth-prefs-detail-unattached": "Был проект һеҙҙең дөйөм иҫәп яҙмаһына ҡараған проект тип раҫланмаған.",

@@ -203,8 +203,6 @@
 	"centralauth-prefs-status": "Globale gebruikerstatus:",
 	"centralauth-prefs-not-managed": "Gebruikt geen samengevoegde gebruiker",
 	"centralauth-prefs-unattached": "Niet bevestigd",
-	"centralauth-prefs-complete": "Alles in orde!",
-	"centralauth-prefs-migration": "Bezig met migreren",
 	"centralauth-prefs-count-attached": "Uw gebruiker is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.",
 	"centralauth-prefs-count-unattached": "Niet-bevestigde gebruikers met uw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.",
 	"centralauth-prefs-detail-unattached": "Deze projectsite is niet bevestigd als behorende bij de globale gebruiker.",

@@ -174,8 +174,6 @@
 	"centralauth-prefs-status": "Global accoont status:",
 	"centralauth-prefs-not-managed": "Na uisin ae uneefied accoont",
 	"centralauth-prefs-unattached": "Onconfirmed",
-	"centralauth-prefs-complete": "Aw in order!",
-	"centralauth-prefs-migration": "Bein muived",
 	"centralauth-prefs-count-attached": "Yer accoont is acteev oan $1 waurk {{PLURAL:$1|steid|steids}}.",
 	"centralauth-prefs-count-unattached": "Onconfirmed accoonts wi yer name remain oan $1 {{PLURAL:$1|waurk|waurks}}.",
 	"centralauth-prefs-detail-unattached": "This waurk steid haesna been confirmed aes belangin til the global accoont.",

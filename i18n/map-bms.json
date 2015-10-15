@@ -116,8 +116,6 @@
 	"centralauth-prefs-status": "Status akun global:",
 	"centralauth-prefs-not-managed": "Ora nganggo akun global",
 	"centralauth-prefs-unattached": "Durung dekonfirmasi",
-	"centralauth-prefs-complete": "Kabeh beres!",
-	"centralauth-prefs-migration": "Proses migrasi",
 	"centralauth-prefs-count-attached": "Akune Rika kuwe aktif nang $1 {{PLURAL:$1|situs|situs}} proyek.",
 	"centralauth-prefs-count-unattached": "Akun sing durung dekonfirmasi nganggo jenenge Rika egin ana nang $1 {{PLURAL:$1|proyek|proyek}}.",
 	"centralauth-prefs-detail-unattached": "Situs proyek kiye durung dikonfirmasi dadi bageyane sekang akun global.",

@@ -37,8 +37,6 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ku|kud}} tagaz",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|voz'|vot}} tagaz",
 	"centralauth-prefs-unattached": "Vahvištamata",
-	"centralauth-prefs-complete": "Kaik om hüvä!",
-	"centralauth-prefs-migration": "Sirdase",
 	"centralauth-log-status-locked": "luklostadud",
 	"centralauth-log-status-hidden": "peittud",
 	"centralauth-log-status-oversighted": "om peittud revizoral",

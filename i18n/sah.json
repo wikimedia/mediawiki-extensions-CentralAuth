@@ -142,8 +142,6 @@
 	"centralauth-prefs-status": "Сүрүн аат туруга:",
 	"centralauth-prefs-not-managed": "Сүрүн (соҕотох) аат туһаныллыбат",
 	"centralauth-prefs-unattached": "Бигэргэтиллибэтэх",
-	"centralauth-prefs-complete": "Барыта сатанна!",
-	"centralauth-prefs-migration": "Көһөрүллэр",
 	"centralauth-prefs-count-attached": "Бу аат $1 {{PLURAL:$1|бырайыакка|бырайыактарга}} туһаныллар.",
 	"centralauth-prefs-count-unattached": "Эн бигэргэтиллибэтэх {{PLURAL:$1|аатыҥ|ааттарыҥ}} $1 бырайыакка {{PLURAL:$1|хаалла|хааллылар}}.",
 	"centralauth-prefs-detail-unattached": "Бу бырайыакка эн сүрүн аатыҥ бигэргэтиллибэтэх.",

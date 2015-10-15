@@ -24,7 +24,6 @@
 	"centralauth-admin-reason": "Αἰτία:",
 	"centralauth-listusers-locked": "κεκλῃσμένη",
 	"centralauth-listusers-attached": "[[User:$1|τοπικῶς ἐστίν]]",
-	"centralauth-prefs-complete": "Ἅπαντα ἐν τάξει!",
 	"centralauth-invalid-wiki": "Οὐδεμία τοιαύτη βάσις δεδομένων βίκι: $1",
 	"centralauth-existinggroup-legend": "Ὑπάρχουσαι ὁμάδες",
 	"centralauth-editgroup-subtitle": "Μεταγράφειν $1",

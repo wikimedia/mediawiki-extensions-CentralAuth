@@ -109,8 +109,6 @@
 	"centralauth-prefs-status": "Sapsi rakiqunap kachkaynin:",
 	"centralauth-prefs-not-managed": "Mana chay huñusqa rakiqunawan llamk'aspa",
 	"centralauth-prefs-unattached": "Mana takyachisqa",
-	"centralauth-prefs-complete": "Tukuy allillanmi!",
-	"centralauth-prefs-migration": "Purichkaspa",
 	"centralauth-prefs-count-attached": "Rakiqunaykiqa $1 ruraykamay {{PLURAL:$1|tiyaypim|tiyaykunapim}} llamk'achkan.",
 	"centralauth-prefs-count-unattached": "Qusqayki sutiyuq mana takyachisqa rakiqunakunaqa $1 ruraykamay {{PLURAL:$1|tiyaypim|tiyaykunapim}} puchuchkan.",
 	"centralauth-prefs-detail-unattached": "Kay ruraykamay tiyaypa sapsi rakiqunaman kapuyninqa manaraqmi tayasqachu.",

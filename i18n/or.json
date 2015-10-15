@@ -165,8 +165,6 @@
 	"centralauth-prefs-status": "ଜଗତୀକରଣ ଖାତାର ସ୍ଥିତି:",
 	"centralauth-prefs-not-managed": "ଏକାକୀକରଣ କରାଯାଇଥିବା ଖାତା",
 	"centralauth-prefs-unattached": "ଥୟ କରାଯାଇନଥିବା",
-	"centralauth-prefs-complete": "ସବୁ କିଛି ଠିକ ଅଛି !",
-	"centralauth-prefs-migration": "ଘୁଞ୍ଚାଇବା ଚାଲୁରହିଛି",
 	"centralauth-prefs-count-attached": "ଆପଣଙ୍କ ଖାତା $1ଟି ପ୍ରକଳ୍ପ {{PLURAL:$1|ସାଇଟ|ସାଇଟ}}ରେ ସଚଳ ଅଛି ।",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|ପ୍ରକଳ୍ପ|ପ୍ରକଳ୍ପ  ସମୂହ}}ରେ ଥୟ କରାଯାଇନଥିବା ଖାତା ସବୁ ଆପଣଙ୍କ ନାମରେ ରହିଅଛି ।",
 	"centralauth-prefs-detail-unattached": "ଏହି ପ୍ରକଳ୍ପ ସାଇଟଟି ବିଶ୍ଵ ଖାତାର ବୋଲି ଏଯାଏଁ ଥୟ କରାଯାଇନାହିଁ ।",

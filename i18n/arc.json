@@ -36,7 +36,6 @@
 	"centralauth-admin-status-hidden": "ܛܘܫܝܐ:",
 	"globalusers": "ܡܟܬܒܘܬܐ ܓܘܢܝܬܐ ܕܚܘܫܒܢ̈ܐ",
 	"centralauth-prefs-status": "ܐܝܟܢܘܬܐ ܕܚܘܫܒܢܐ ܓܘܢܝܐ:",
-	"centralauth-prefs-complete": "ܟܠ ܡܕܡ ܡܛܟܣܐ!",
 	"centralauth-prefs-count-attached": "ܚܘܫܒܢܟ ܙܪܝܙܐ ܐܝܬܘܗܝ ܒ $1 {{PLURAL:$1|ܕܘܟܐ|ܕ̈ܘܟܐ}} ܕܬܪܡܝܬܐ.",
 	"centralauth-prefs-manage": "ܕܒܪ ܚܘܫܒܢܟ ܓܘܢܝܐ",
 	"centralauth-prefs-view": "ܚܘܝ ܝܕ̈ܥܬܐ ܕܚܘܫܒܢܐ ܓܘܢܝܐ",

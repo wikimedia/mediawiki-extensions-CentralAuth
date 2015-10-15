@@ -171,8 +171,6 @@
 	"centralauth-prefs-status": "Status akun global:",
 	"centralauth-prefs-not-managed": "Tidak menggunakan akun global",
 	"centralauth-prefs-unattached": "Belum dikonfirmasi",
-	"centralauth-prefs-complete": "Semua beres!",
-	"centralauth-prefs-migration": "Proses migrasi",
 	"centralauth-prefs-count-attached": "Akun Anda aktif pada $1 {{PLURAL:$1|situs}} proyek.",
 	"centralauth-prefs-count-unattached": "Akun dengan nama Anda yang belum terkonfirmasi masih terdapat dalam $1 {{PLURAL:$1|proyek|proyek}}.",
 	"centralauth-prefs-detail-unattached": "Situs proyek ini belum dikonfirmasi sebagai bagian dari akun global.",

@@ -100,8 +100,6 @@
 	"centralauth-prefs-status": "Vaz'ijati hisobi korbari muştarak:",
 	"centralauth-prefs-not-managed": "Hisobi korbariji muştarak mavridi istifoda nest",
 	"centralauth-prefs-unattached": "Tasdiqnaşuda",
-	"centralauth-prefs-complete": "Hama ciz murattab ast!",
-	"centralauth-prefs-migration": "Dar holi intiqol",
 	"centralauth-prefs-count-attached": "Hisobi korbariji şumo dar $1 {{PLURAL:$1|loiha|loihaho}} fa'ol ast.",
 	"centralauth-prefs-count-unattached": "Hisobhoi korbariji ta'jidnaşuda bo nomi şumo dar $1 {{PLURAL:$1|loiha|loihaho}} boqī memonad.",
 	"centralauth-prefs-detail-unattached": "Somonai in loiha mavridi ta'jid baroi istifoda az hisobi korbariji muştarak qaror nagiriftaast.",

@@ -9,8 +9,6 @@
 	"centralauth-prefs-status": "Studh agas akont ollvysel:",
 	"centralauth-prefs-not-managed": "Nyns esowgh ow tevnydhya akont ollvysel",
 	"centralauth-prefs-unattached": "Heb y afydhya",
-	"centralauth-prefs-complete": "Puptra yw da!",
-	"centralauth-prefs-migration": "Ow tivroa",
 	"centralauth-prefs-count-attached": "Byw yw agas akont war $1 {{PLURAL:$1|wiasva|gwiasva}} ragdres.",
 	"centralauth-prefs-count-unattached": "Yma akontow heb aga afydhya a's teves agas hanow hwath war $1 {{PLURAL:$1|ragdres}}.",
 	"centralauth-prefs-detail-unattached": "Ny afydhyas bos an akont ollvysel perhennek an wiasva ragdres-ma.",

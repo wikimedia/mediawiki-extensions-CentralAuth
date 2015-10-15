@@ -46,7 +46,6 @@
 	"centralauth-admin-unmerge-success": "Barasil mambatalan panggabuangan $1 {{PLURAL:$1|akun}}",
 	"centralauth-admin-delete-title": "Hapuih akun",
 	"globalusers": "Daftar pangguno global",
-	"centralauth-prefs-complete": "Mantap sadonyo!",
 	"centralauth-prefs-count-attached": "Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.",
 	"centralauth-prefs-manage": "Kalola akun global Sanak",
 	"centralauth-prefs-view": "Caliak info pangguno global",

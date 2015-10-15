@@ -156,8 +156,6 @@
 	"centralauth-prefs-status": "ගෝලීය ගිණුම් තත්වය:",
 	"centralauth-prefs-not-managed": "සංයුක්ත කෙරුණු ගිණුම භාවිතා නොකරමින්",
 	"centralauth-prefs-unattached": "තහවුරු නොකෙරිණි",
-	"centralauth-prefs-complete": "සියල්ල නිවැරදියි!",
-	"centralauth-prefs-migration": "සංක්‍රමණය වෙමින්",
 	"centralauth-prefs-count-attached": "ඔබගේ ගිණුම ව්‍යාපෘති {{PLURAL:$1|අඩවි|අඩවි}} $1 ක් තුල සක්‍රීයය.",
 	"centralauth-prefs-count-unattached": " {{PLURAL:$1|එක් ව්‍යාපෘතියක|ව්‍යාපෘති $1 ක }} ඔබගේ නම සහිත හා තහවුරු කොකෙරුණු ගිණුම්  තවමත් පවතියි.",
 	"centralauth-prefs-detail-unattached": "මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.",

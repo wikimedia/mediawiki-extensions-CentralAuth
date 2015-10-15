@@ -178,8 +178,6 @@
 	"centralauth-prefs-status": "حال و بال حساو سرتاسری",
 	"centralauth-prefs-not-managed": "د حساو یه شلک بیه استفاده نبیه",
 	"centralauth-prefs-unattached": "محکم نبیه",
-	"centralauth-prefs-complete": "همه منظم بینه",
-	"centralauth-prefs-migration": "د رئتن",
 	"centralauth-prefs-count-attached": "حساو شما د پروجه $1 فعال هئ {{PLURAL:$1|مالگه|مالگه یا}}.",
 	"centralauth-prefs-count-unattached": "حساویا مئکم نبیه د نومتو د $1 مننه{{PLURAL:$1|پروجه|پروجه یا}}.",
 	"centralauth-prefs-detail-unattached": "ای پروجه سی یه که مال گل حساو جهونی بوئه، مئکم نبیه.",

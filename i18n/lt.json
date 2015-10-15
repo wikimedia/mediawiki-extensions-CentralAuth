@@ -171,8 +171,6 @@
 	"centralauth-prefs-status": "Bendrosios paskyros būsena:",
 	"centralauth-prefs-not-managed": "Nėra naudojama bendroji paskyra",
 	"centralauth-prefs-unattached": "Nepatvirtinti",
-	"centralauth-prefs-complete": "Viskas tvarkinga!",
-	"centralauth-prefs-migration": "Vyksta paskyros unifikavimas",
 	"centralauth-prefs-count-attached": "Jūsų paskyra yra aktyvi $1 projekto {{PLURAL:$1|svetainėje|svetainėse|svetainių}}.",
 	"centralauth-prefs-count-unattached": "Nepatvirtintų paskyrų jūsų vardu liko $1 {{PLURAL:$1|projekte|projektuose|projektų}}.",
 	"centralauth-prefs-detail-unattached": "Nebuvo patvirtinta, kad ši projekto svetainė priklauso bendrajai paskyrai.",

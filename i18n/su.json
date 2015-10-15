@@ -131,8 +131,6 @@
 	"centralauth-prefs-status": "Status rekening global:",
 	"centralauth-prefs-not-managed": "Teu migunakeun rekening nunggal",
 	"centralauth-prefs-unattached": "Can konfirmasi",
-	"centralauth-prefs-complete": "Bérés kabéh!",
-	"centralauth-prefs-migration": "Keur migrasi",
 	"centralauth-prefs-count-attached": "Rekening anjeun aktif di $1 proyék {{PLURAL:$1|loka|loka}}.",
 	"centralauth-prefs-count-unattached": "Sababaraha rekening anjeun di $1 {{PLURAL:$1|proyék|proyék}} can konfirmasi.",
 	"centralauth-prefs-detail-unattached": "Loka ieu proyék can dikonfirmasi kaasup kana rekening global.",

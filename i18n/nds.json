@@ -118,8 +118,6 @@
 	"centralauth-prefs-status": "Status vun’t globale Brukerkonto:",
 	"centralauth-prefs-not-managed": "Warrt keen tohoopföhrt Brukerkonto bruukt.",
 	"centralauth-prefs-unattached": "Noch nich bestätigt",
-	"centralauth-prefs-complete": "Trech!",
-	"centralauth-prefs-migration": "Bi’t Rövertrecken",
 	"centralauth-prefs-count-attached": "Dien Brukerkonto is op {{PLURAL:$1|een Projekt|$1 Projekten}} aktiv.",
 	"centralauth-prefs-count-unattached": "Dat gifft op {{PLURAL:$1|een Projekt noch en Brukerkonto mit dien Naam, dat nich bestätigt is.|$1 Projekten noch Brukerkonten mit dien Naam, de nich bestätigt sünd.}}",
 	"centralauth-prefs-detail-unattached": "För dit Projekt is dat tohoopföhrte Brukerkonto noch nich bestätigt.",

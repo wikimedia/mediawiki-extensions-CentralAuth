@@ -124,8 +124,6 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|साल}} पहीले",
 	"centralauth-prefs-status": "वैश्विक खाता स्थिति:",
 	"centralauth-prefs-unattached": "अप्रमाणित",
-	"centralauth-prefs-complete": "सब कुछ ठीकठाक!",
-	"centralauth-prefs-migration": "एकत्रीकरण जारी",
 	"centralauth-prefs-manage": "आपन वैश्विक खाता मैनेज करा जाय",
 	"centralauth-prefs-view": "वैश्विक खाता जानकारी देखा जाय",
 	"centralauth-log-name": "वैश्विक खाता लॉग",

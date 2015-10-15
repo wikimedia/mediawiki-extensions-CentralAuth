@@ -7,8 +7,6 @@
 	"centralauth-prefs-status": "Глобаль эсап алы:",
 	"centralauth-prefs-not-managed": "Глобаль эсап къулланылмамакъта",
 	"centralauth-prefs-unattached": "Тасдыкъланмагъан",
-	"centralauth-prefs-complete": "Эр шей еринде!",
-	"centralauth-prefs-migration": "Кочьмекте",
 	"centralauth-prefs-count-attached": "Эсабынъыз $1 лейха {{PLURAL:$1|1=сайтында|сайтында}} фаальдир.",
 	"centralauth-prefs-count-unattached": "Адынъызны ташыгъан тасдыкъланмагъан эсаплар $1 {{PLURAL:$1|1=лейхада|лейхада}} къалып тура.",
 	"centralauth-prefs-manage": "Глобаль эсапны идаре эт"

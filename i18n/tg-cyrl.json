@@ -104,8 +104,6 @@
 	"centralauth-prefs-status": "Вазъияти ҳисоби корбари муштарак:",
 	"centralauth-prefs-not-managed": "Ҳисоби корбарии муштарак мавриди истифода нест",
 	"centralauth-prefs-unattached": "Тасдиқнашуда",
-	"centralauth-prefs-complete": "Ҳама чиз мураттаб аст!",
-	"centralauth-prefs-migration": "Дар ҳоли интиқол",
 	"centralauth-prefs-count-attached": "Ҳисоби корбарии шумо дар $1 {{PLURAL:$1|лоиҳа|лоиҳаҳо}} фаъол аст.",
 	"centralauth-prefs-count-unattached": "Ҳисобҳои корбарии таъйиднашуда бо номи шумо дар $1 {{PLURAL:$1|лоиҳа|лоиҳаҳо}} боқӣ мемонад.",
 	"centralauth-prefs-detail-unattached": "Сомонаи ин лоиҳа мавриди таъйид барои истифода аз ҳисоби корбарии муштарак қарор нагирифтааст.",

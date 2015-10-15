@@ -143,8 +143,6 @@
 	"centralauth-prefs-status": "Став ґлобалного конта:",
 	"centralauth-prefs-not-managed": "Єднотне конто не є хосноване",
 	"centralauth-prefs-unattached": "Непідтвердженый",
-	"centralauth-prefs-complete": "Вшытко в порядку!",
-	"centralauth-prefs-migration": "Міґрує ся",
 	"centralauth-prefs-count-attached": "Ваше конто є актівне в $1 {{PLURAL:$1|проєктї|проєктах|проєктах}}.",
 	"centralauth-prefs-count-unattached": "На $1 {{PLURAL:$1|проєктї зіставать непідтверджене конто|проєктах зіставають непідтверджены конта|проєктах зіставають непідтверджены конта}} з вашым іменом.",
 	"centralauth-prefs-detail-unattached": "Дотеперь не было підтверджене, ці конто на тім проєктї належыть ку єднотному конту.",

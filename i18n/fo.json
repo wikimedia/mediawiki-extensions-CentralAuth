@@ -149,7 +149,6 @@
 	"centralauth-prefs-status": "Global status fyri konto:",
 	"centralauth-prefs-not-managed": "Brúkar ikki samanlagda konto",
 	"centralauth-prefs-unattached": "Ikki váttað",
-	"centralauth-prefs-complete": "Alt er í lagi!",
 	"centralauth-prefs-count-attached": "Tín konta er virkin á $1 verkætlanar {{PLURAL:$1|síðu|síðum}}.",
 	"centralauth-renameuser-reserved": "Brúkaranavnið $2 er avlagt til eina globala konto.",
 	"centralauth-invalid-wiki": "Tað er ongin slíkur wiki dátugrunnur: $1",

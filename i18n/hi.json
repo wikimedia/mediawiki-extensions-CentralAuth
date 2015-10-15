@@ -189,8 +189,6 @@
 	"centralauth-prefs-status": "वैश्विक खाता स्थिति:",
 	"centralauth-prefs-not-managed": "एकत्रित खाते का प्रयोग नहीं कर रहे हैं",
 	"centralauth-prefs-unattached": "अप्रमाणित",
-	"centralauth-prefs-complete": "सब कुछ ठीकठाक!",
-	"centralauth-prefs-migration": "एकत्रीकरण जारी",
 	"centralauth-prefs-count-attached": "आपका खाता $1 {{PLURAL:$1|साइट|साइटों}} पर मौजूद है।",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|प्रकल्प|प्रकल्पों}} में आपके सदस्यनाम से अप्रमाणित खाते बचे हुए हैं।",
 	"centralauth-prefs-detail-unattached": "एकत्रित खाते में इस साइट के खाते को प्रमाणित नहीं किया गया है।",

@@ -165,8 +165,6 @@
 	"centralauth-prefs-status": "Weziyetê hesab dê globali:",
 	"centralauth-prefs-not-managed": "Ser hesabê yewbiyayî de kar nikeno",
 	"centralauth-prefs-unattached": "Konfirme nebiyo",
-	"centralauth-prefs-complete": "Pêron de nizam esto!",
-	"centralauth-prefs-migration": "Ho beno",
 	"centralauth-prefs-count-attached": "Hesabê şıma $1 site da {{PLURAL:$1|proce|proceyan}} de aktivo.",
 	"centralauth-prefs-count-unattached": "Hesbanê konfirme nebiyo ke pê nameyê tu $1 {{PLURAL:$1|project|projects}} esto.",
 	"centralauth-prefs-detail-unattached": "Ena proje konfirme nibiyo ke hesabê globalî ra girediyayo.",

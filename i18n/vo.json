@@ -102,8 +102,6 @@
 	"centralauth-prefs-status": "Stad kala valemik:",
 	"centralauth-prefs-not-managed": "Kal balik no pagebon",
 	"centralauth-prefs-unattached": "No pefümedöl",
-	"centralauth-prefs-complete": "Valikos veräton!",
-	"centralauth-prefs-migration": "Patopätükon",
 	"centralauth-prefs-count-attached": "Kal olik lonöfon pö {{PLURAL:$1|proyegatopäd|proyegatopäds}} $1.",
 	"centralauth-prefs-count-unattached": "Kals no pefümedöls labü nem olik dabinon nog pö {{PLURAL:$1|proyeg|proyegs}} $1.",
 	"centralauth-prefs-detail-unattached": "Proyegatopäd at no pefümedon as dutöl lü kal valemik.",

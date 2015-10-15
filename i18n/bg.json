@@ -145,8 +145,6 @@
 	"centralauth-prefs-status": "Състояние на потребителските сметки:",
 	"centralauth-prefs-not-managed": "Не се използва единна сметка",
 	"centralauth-prefs-unattached": "Непотвърден",
-	"centralauth-prefs-complete": "Всичко е наред!",
-	"centralauth-prefs-migration": "Преносът е в ход",
 	"centralauth-prefs-count-attached": "Сметката ви е активна в {{PLURAL:$1|сайта|сайтовете}} на {{PLURAL:$1|един проект|$1 проекта}}.",
 	"centralauth-prefs-count-unattached": "{{PLURAL:$1|В един проект е останала непотвърдена сметка|В $1 проекта са останали непотвърдени сметки}} с вашето име.",
 	"centralauth-prefs-detail-unattached": "За този проект липсва потвърждение, че принадлежи към единната сметка.",

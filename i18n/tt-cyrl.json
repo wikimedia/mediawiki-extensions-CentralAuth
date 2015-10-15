@@ -75,8 +75,6 @@
 	"centralauth-prefs-status": "Глобаль кулланучы хисапнамәсе:",
 	"centralauth-prefs-not-managed": "Гомуми кулланучы хисапнамәсе кулланылмый",
 	"centralauth-prefs-unattached": "Расланмаган",
-	"centralauth-prefs-complete": "Бар да тәртиптә!",
-	"centralauth-prefs-migration": "Күчерелә",
 	"centralauth-prefs-count-attached": "Сезнең кулланучы хисапнамәсе $1 {{PLURAL:$1|проекта}} теркәлгән.",
 	"centralauth-prefs-count-unattached": "Расланмаган кулланучы хисапнамәләре $1 {{PLURAL:$1|проекта}} тора.",
 	"centralauth-prefs-detail-unattached": "Бу проект расланмаган.",

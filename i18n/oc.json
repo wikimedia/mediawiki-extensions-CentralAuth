@@ -150,8 +150,6 @@
 	"centralauth-prefs-status": "Estatut del compte unic :",
 	"centralauth-prefs-not-managed": "Pas de compte unic",
 	"centralauth-prefs-unattached": "Pas confirmat",
-	"centralauth-prefs-complete": "Tot va plan!",
-	"centralauth-prefs-migration": "En migracion",
 	"centralauth-prefs-count-attached": "Vòstre compte es actiu sus $1 {{PLURAL:$1|projècte|projèctes}}.",
 	"centralauth-prefs-count-unattached": "I a $1 {{PLURAL:$1|projècte sulqual|projèctes sulsquals}} existís un compte pas confirmat amb lo meteis nom d’utilizaire que lo vòstre.",
 	"centralauth-prefs-detail-unattached": "Vòstre compte sus aqueste projècte a pas pogut èsser ratachat al compte unic.",

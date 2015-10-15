@@ -152,8 +152,6 @@
 	"centralauth-prefs-status": "વૈશ્વિક ખાતાની સ્થિતિ:",
 	"centralauth-prefs-not-managed": "એકીકૃત ખાતું વપરાયું નથી",
 	"centralauth-prefs-unattached": "ખાત્રી કરાઈ નથી",
-	"centralauth-prefs-complete": "બધું બરાબર છે!",
-	"centralauth-prefs-migration": "સ્થળાંતરમાં",
 	"centralauth-prefs-count-attached": "તમારું ખાતું $1 પ્રોજેક્ટ {{PLURAL:$1|સાઈટ|સાઈટ્સ}} પર સક્રિય છે.",
 	"centralauth-prefs-count-unattached": "તમારા નામ સાથેના ખાતરી ન કરાયેલ ખાતાઓ $1 {{PLURAL:$1|પ્રોજેક્ટ|પ્રોજેક્ટ્સ}} પર રહેશે.",
 	"centralauth-prefs-detail-unattached": "આ પરિયોજનાના પાનાને વૈશ્વીક ખાતાના ભાગ તરીકે માન્યતા નથી મળી.",

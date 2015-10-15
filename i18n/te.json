@@ -167,8 +167,6 @@
 	"centralauth-prefs-status": "సార్వత్రిక ఖాతా స్థితి:",
 	"centralauth-prefs-not-managed": "ఏకీకృత ఖాతాని వాడటం లేదు",
 	"centralauth-prefs-unattached": "నిర్థారణకాలేదు",
-	"centralauth-prefs-complete": "అన్నీ సరిపోయాయి!",
-	"centralauth-prefs-migration": "బదిలీలో ఉన్నవి",
 	"centralauth-prefs-count-attached": "మీ ఖాతా $1 ప్రాజెక్టు {{PLURAL:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.",
 	"centralauth-prefs-detail-unattached": "ఈ ప్రాజెక్టు సైటు సార్వత్రిక ఖాతాకు చెందినదని నిర్ధారణ కాలేదు.",

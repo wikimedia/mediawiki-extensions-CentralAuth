@@ -96,7 +96,6 @@
 	"centralauth-prefs-status": "ئومۇمىيەت ھېسابات ھالىتى",
 	"centralauth-prefs-not-managed": "بىر تۇتاش ھېسابات ئىشلىتىلمىگەن",
 	"centralauth-prefs-unattached": "جەزملەنمىگەن",
-	"centralauth-prefs-migration": "يۆتكىلىۋاتىدۇ",
 	"centralauth-prefs-count-attached": "ھېساباتىڭىز $1 قۇرۇلۇش {{PLURAL:$1|تورتۇرا}}دا ئاكتىپلاندى.",
 	"centralauth-prefs-detail-unattached": "بۇ قۇرۇلۇش تورتۇراسى تېخى ئومۇمىيەت ھېساباتىغا تەۋە قىلىپ جەزملەنمىگەن.",
 	"centralauth-prefs-manage": "ئومۇمىيەت ھېساباتىڭىزنى باشقۇرىدۇ",

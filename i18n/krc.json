@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iltever"
+			"Iltever",
+			"Ernác"
 		]
 	},
 	"centralauth-groupname": "Викимедиа фонда",
@@ -40,7 +41,6 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ай}} алгъа",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|джыл}} алгъа",
 	"centralauth-prefs-status": "Глобал тергеу джазыуну халы:",
-	"centralauth-prefs-complete": "Хар не да табды!",
 	"centralauth-prefs-count-attached": "Сизни тергеу джазыуугъуз $1 {{PLURAL:$1|проектде}} тириди.",
 	"centralauth-prefs-manage": "Глобал тергеу джазыуну джюрютюу",
 	"centralauth-prefs-view": "Глобал тергеу джазыуну юсюнден билгилеге",

@@ -162,8 +162,6 @@
 	"centralauth-prefs-status": "Status for samanslått konto:",
 	"centralauth-prefs-not-managed": "Bruker ikkje samanslått konto",
 	"centralauth-prefs-unattached": "Ikkje stadfesta",
-	"centralauth-prefs-complete": "Alt er i orden!",
-	"centralauth-prefs-migration": "Held på med samanslåing",
 	"centralauth-prefs-count-attached": "Kontoen din er aktiv på {{PLURAL:$1|éitt prosjekt|$1 prosjekt}}.",
 	"centralauth-prefs-count-unattached": "Ikkje-stadfesta kontoar med namnet ditt står att på {{PLURAL:$1|éitt prosjekt|$1 prosjekt}}.",
 	"centralauth-prefs-detail-unattached": "Det er ikkje stadfesta at denne kontoen er slått saman med hovudkontoen.",

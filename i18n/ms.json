@@ -179,8 +179,6 @@
 	"centralauth-prefs-status": "Status akaun sejagat:",
 	"centralauth-prefs-not-managed": "Tidak menggunakan akaun gabungan",
 	"centralauth-prefs-unattached": "Belum disahkan",
-	"centralauth-prefs-complete": "Semua sudah beres!",
-	"centralauth-prefs-migration": "Dalam proses pemindahan",
 	"centralauth-prefs-count-attached": "Akaun anda aktif di $1 buah projek.",
 	"centralauth-prefs-count-unattached": "Akaun dengan nama anda di $1 buah projek belum disahkan.",
 	"centralauth-prefs-detail-unattached": "Projek ini tidak disahkan sebagai milikan akaun sejagat tersebut.",

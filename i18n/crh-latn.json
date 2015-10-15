@@ -7,8 +7,6 @@
 	"centralauth-prefs-status": "Global esap alı:",
 	"centralauth-prefs-not-managed": "Global esap qullanılmamaqta",
 	"centralauth-prefs-unattached": "Tasdıqlanmağan",
-	"centralauth-prefs-complete": "Er şey yerinde!",
-	"centralauth-prefs-migration": "Köçmekte",
 	"centralauth-prefs-count-attached": "Esabıñız $1 leyha {{PLURAL:$1|saytında|saytında}} faaldir.",
 	"centralauth-prefs-count-unattached": "Adıñıznı taşığan tasdıqlanmağan esaplar $1 {{PLURAL:$1|leyhada|leyhada}} qalıp tura.",
 	"centralauth-prefs-manage": "Global esapnı idare et"

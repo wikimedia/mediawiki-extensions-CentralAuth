@@ -107,8 +107,6 @@
 	"centralauth-prefs-status": "Benutserkonten-Stoatus:",
 	"centralauth-prefs-not-managed": "Der wäd neen touhoopefierd Benutserkonto bruukt.",
 	"centralauth-prefs-unattached": "Nit bestäätiged",
-	"centralauth-prefs-complete": "Kloor!",
-	"centralauth-prefs-migration": "Touhoopefierenge in Oarbaid",
 	"centralauth-prefs-count-attached": "Dien Benutserkonto is in $1 {{PLURAL:$1|Projekt|Projekte}} aktiv.",
 	"centralauth-prefs-count-unattached": "Dät rakt in $1 {{PLURAL:$1|Projekt|Projekte}} uunbestäätigede Benutserkonten mäd din Noome.",
 	"centralauth-prefs-detail-unattached": "Foar dit Projekt lait neen Bestäätigenge foar dät touhoopefierde Benutserkonto foar.",

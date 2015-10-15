@@ -128,8 +128,6 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|दिन}} पहिने",
 	"centralauth-prefs-status": "वैश्विक खाता स्थिति:",
 	"centralauth-prefs-unattached": "अप्रमाणित",
-	"centralauth-prefs-complete": "सब कुछ ठीकठाक!",
-	"centralauth-prefs-migration": "एकत्रीकरण जारी",
 	"centralauth-prefs-count-attached": "अहाँके खाता $1 {{PLURAL:$1|साइट|साइट सभ}} पर चालु अछि।",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|प्रकल्प|प्रकल्प सभ}} में अहाँके प्रयोक्तानाम सँ अप्रमाणित खाता बचल अछि।",
 	"centralauth-prefs-detail-unattached": "एकत्रित खाता में इ साइट के खाता के प्रमाणित नै केल गेल अछि।",

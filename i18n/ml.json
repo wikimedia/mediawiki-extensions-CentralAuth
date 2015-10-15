@@ -181,8 +181,6 @@
 	"centralauth-prefs-status": "ആഗോള അംഗത്വ സ്ഥിതി:",
 	"centralauth-prefs-not-managed": "സം‌യോജിത അംഗത്വം ഉപയോഗിക്കുന്നില്ല",
 	"centralauth-prefs-unattached": "സ്ഥിരീകരിച്ചിട്ടില്ല",
-	"centralauth-prefs-complete": "എല്ലാം ക്രമത്തിലാണ്‌!",
-	"centralauth-prefs-migration": "കുടിയേറ്റികൊണ്ടിരിക്കുന്നു",
 	"centralauth-prefs-count-attached": "താങ്കളുടെ അംഗത്വം {{PLURAL:$1|ഒരു വിക്കിസം‌രംഭത്തിൽ|$1 വിക്കിസം‌രംഭങ്ങളിൽ}} സജീവമാണ്‌.",
 	"centralauth-prefs-count-unattached": "താങ്കളുടെ പേരുള്ള ഉപയോക്തൃനാമം $1 {{PLURAL:$1സം‌രംഭത്തിൽ|സം‌രംഭങ്ങളിൽ}} സ്ഥിരീകരിക്കാതെ നിലവിലുണ്ട്.",
 	"centralauth-prefs-detail-unattached": "ഈ സം‌രംഭം ആഗോള അംഗത്വത്തിന്റെ ഭാഗമാണെന്നു ഇതു വരെ സ്ഥിരീകരിച്ചിട്ടില്ല.",

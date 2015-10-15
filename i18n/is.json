@@ -166,8 +166,6 @@
 	"centralauth-prefs-status": "Staða altæks aðgangs:",
 	"centralauth-prefs-not-managed": "Notar ekki samræmdan aðgang",
 	"centralauth-prefs-unattached": "Óstaðfestur",
-	"centralauth-prefs-complete": "Allt á hreinu!",
-	"centralauth-prefs-migration": "Verið er að samræma aðganginn",
 	"centralauth-prefs-count-attached": "Aðgangurinn þinn er virkur á $1 {{PLURAL:$1|verkefni|verkefnum}}",
 	"centralauth-prefs-count-unattached": "Óstaðfestir aðgangar með þínu notendanafni eru enn á $1 {{PLURAL:$1|verkefni|verkefnum}}",
 	"centralauth-prefs-detail-unattached": "Þetta verkefni hefur ekki staðfest altæka notendur.",

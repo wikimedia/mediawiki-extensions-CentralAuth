@@ -178,8 +178,6 @@
 	"centralauth-prefs-status": "Stat dël cont global:",
 	"centralauth-prefs-not-managed": "A dòvra nen ël cont mës-cià",
 	"centralauth-prefs-unattached": "Pa confermà",
-	"centralauth-prefs-complete": "Gnun-a gran-a!",
-	"centralauth-prefs-migration": "Antramentr ch'as fa la migrassion",
 	"centralauth-prefs-count-attached": "Sò cont a travaja ansima a $1 {{PLURAL:$1|sit|sit}} ëd proget.",
 	"centralauth-prefs-count-unattached": "A resto dij cont nen confermà con sò stranòm ansima a $1 {{PLURAL:$1|proget|proget}}.",
 	"centralauth-prefs-detail-unattached": "Ës sit-sì a l'é pa restà confermà coma bon për sò cont global.",

@@ -150,8 +150,6 @@
 	"centralauth-prefs-status": "Kalagayan ng global account:",
 	"centralauth-prefs-not-managed": "Hindi gumagamit ng unified account",
 	"centralauth-prefs-unattached": "Hindi pa napapatotohanan",
-	"centralauth-prefs-complete": "Nasa ayos ang lahat!",
-	"centralauth-prefs-migration": "Umiiral ang paglilipat ng pook",
 	"centralauth-prefs-count-attached": "Aktibo ang kuwenta mo sa $1 {{PLURAL:$1|sayt|sayt}} ng proyekto",
 	"centralauth-prefs-count-unattached": "May nananatiling kuwentang 'di-nakatiyak na may pangalan mo sa $1 {{PLURAL:$1|proyekto|proyekto}}.",
 	"centralauth-prefs-detail-unattached": "Hindi pa natitiyak ang pamproyektong site na ito bilang kabilang sa kuwentang pandaigdig.",

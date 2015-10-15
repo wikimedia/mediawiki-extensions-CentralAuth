@@ -138,8 +138,6 @@
 	"centralauth-prefs-status": "विश्वव्यापी खाताको स्थिति:",
 	"centralauth-prefs-not-managed": "एकीकृत खाता प्रयोग नगरिएको",
 	"centralauth-prefs-unattached": "अनिश्चित",
-	"centralauth-prefs-complete": "सबै क्रमानुसार!",
-	"centralauth-prefs-migration": "स्थानान्तरमा",
 	"centralauth-prefs-count-attached": "तपाईंको खाता $1 परियोजना {{PLURAL:$1|साइट|साइटहरु}}मा सक्रिय छ।",
 	"centralauth-prefs-manage": "तपाईंको विश्वव्यापी खाता मिलाउनुहोस्",
 	"centralauth-prefs-view": "वैश्विक प्रयोगकर्ता खाता हेर्ने",

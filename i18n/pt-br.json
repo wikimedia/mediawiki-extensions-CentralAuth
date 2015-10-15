@@ -199,8 +199,6 @@
 	"centralauth-prefs-status": "Estado da conta unificada:",
 	"centralauth-prefs-not-managed": "Não está usando a conta global",
 	"centralauth-prefs-unattached": "Não confirmado",
-	"centralauth-prefs-complete": "Tudo em ordem!",
-	"centralauth-prefs-migration": "Migrando",
 	"centralauth-prefs-count-attached": "Sua conta está ativa em $1 {{PLURAL:$1|site|sites}} do projeto.",
 	"centralauth-prefs-count-unattached": "Ainda existem contas não confirmadas com seu nome de usuário em $1 {{PLURAL:$1|projeto|projetos}}.",
 	"centralauth-prefs-detail-unattached": "Não foi confirmado que esta wiki esteja acoplada à conta global.",

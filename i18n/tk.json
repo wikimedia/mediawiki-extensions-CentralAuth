@@ -114,8 +114,6 @@
 	"centralauth-prefs-status": "Global hasap statusy:",
 	"centralauth-prefs-not-managed": "Birleşdirilen hasap ulanmaýar",
 	"centralauth-prefs-unattached": "Tassyklanylmadyk",
-	"centralauth-prefs-complete": "Bar zat gülala güllük!",
-	"centralauth-prefs-migration": "Geçiş ýagdaýynda",
 	"centralauth-prefs-count-attached": "Hasabyňyz $1 taslama {{PLURAL:$1|saýtynda|saýtynda}} işjeň.",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|taslamada|taslamada}} siziň adyňyzda tassyklanmadyk hasaplar bar.",
 	"centralauth-prefs-detail-unattached": "Bu taslama saýty global hasaba degişli diýip tassyklanmady.",

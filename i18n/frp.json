@@ -143,8 +143,6 @@
 	"centralauth-prefs-status": "Statut du compto globâl :",
 	"centralauth-prefs-not-managed": "Utilise pas lo compto unifiâ",
 	"centralauth-prefs-unattached": "Pas confirmâ",
-	"centralauth-prefs-complete": "Tot vat bien !",
-	"centralauth-prefs-migration": "En migracion",
 	"centralauth-prefs-count-attached": "Voutron compto est actif dessus $1 seto{{PLURAL:$1||s}} de projèt.",
 	"centralauth-prefs-count-unattached": "Subsiste $1 projèt{{PLURAL:$1||s}} qu’{{PLURAL:$1|a|on}}t un compto pas confirmâ a voutron nom.",
 	"centralauth-prefs-detail-unattached": "Ceti seto de projèt at pas étâ confirmâ coment étent u compto globâl.",

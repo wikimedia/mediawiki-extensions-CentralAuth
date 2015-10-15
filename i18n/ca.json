@@ -191,8 +191,6 @@
 	"centralauth-prefs-status": "Estat del compte global:",
 	"centralauth-prefs-not-managed": "No s'usa la unificació de comptes",
 	"centralauth-prefs-unattached": "Per confirmar",
-	"centralauth-prefs-complete": "Tot en ordre!",
-	"centralauth-prefs-migration": "En migració",
 	"centralauth-prefs-count-attached": "El vostre compte és actiu en {{PLURAL:$1|un projecte|$1 projectes}}.",
 	"centralauth-prefs-count-unattached": "Es mantenen comptes amb el vostre nom sense confirmar a $1 {{PLURAL:$1|projecte|projectes}}.",
 	"centralauth-prefs-detail-unattached": "No s'ha confirmat que aquest projecte pugui accedir als comptes unificats.",

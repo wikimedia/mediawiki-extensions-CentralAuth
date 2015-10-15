@@ -9,7 +9,6 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|maalin|maalmood}} ka hor",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|bil|bilood}} ka hor",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|sanad|sanadood}} ka hor",
-	"centralauth-prefs-complete": "Isku Hagaaji dhaam!",
 	"centralauth-prefs-count-attached": "Akoonkaada wuxuu ka dhaq-dhaqaaqaa $1 mashruuc {{PLURAL:$1|bog|bogag}}.",
 	"centralauth-prefs-manage": "Maamul akoonkaada guud",
 	"centralauth-prefs-view": "Itus macluumaadka gude galaha",

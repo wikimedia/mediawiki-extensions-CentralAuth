@@ -30,8 +30,6 @@
 	"centralauth-prefs-status": "Gjendja e Global llogarisë:",
 	"centralauth-prefs-not-managed": "Jo duke përdorur llogarinë e unifikuar",
 	"centralauth-prefs-unattached": "I pavërtetuar",
-	"centralauth-prefs-complete": "Të gjitha në mënyrë!",
-	"centralauth-prefs-migration": "Në migrimit",
 	"centralauth-prefs-count-attached": "Llogaria juaj është aktive në projektin e $1 {{PLURAL:$1|faqe|faqe}}.",
 	"centralauth-prefs-count-unattached": "llogarive të pakonfirmuara me emrin tuaj të mbetet në $1 {{PLURAL:$1|Projekti|projekteve}}.",
 	"centralauth-prefs-detail-unattached": "Kjo faqe projekt nuk është konfirmuar si i përkasin llogari globale.",
