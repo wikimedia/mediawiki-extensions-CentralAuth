@@ -289,6 +289,7 @@
 	"action-centralauth-rename": "pervardyti visuotines paskyras",
 	"centralauth-rename-antispoofconflicts2": "Pasirinktas naudotojo vardas pernelyg panašus į jau egzistuojantį(-ius): $1.",
 	"centralauth-rename-conflict-hidden": "naudotojo vardas paslėptas",
+	"globalrenamerequest": "Prašymas visuotinai pervadinti naudotoją",
 	"centralauth-uwbr-name": "Naudotojo vardas",
 	"centralauth-uwbr-registration": "Registracijos data",
 	"centralauth-uwbr-registration-nodate": "Nežinomas",
