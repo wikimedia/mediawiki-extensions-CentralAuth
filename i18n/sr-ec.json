@@ -9,7 +9,8 @@
 			"Sasa Stefanovic",
 			"Јованвб",
 			"Жељко Тодоровић",
-			"Михајло Анђелковић"
+			"Михајло Анђелковић",
+			"Srdjan m"
 		]
 	},
 	"mergeaccount": "Стање обједињавања пријаве",
@@ -297,6 +298,7 @@
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} — Потврда налога",
 	"right-centralauth-rename": "преименовање глобалних налога",
 	"action-centralauth-rename": "преименовање глобалних налога",
+	"globalrenameprogress": "Напредак глобалног преименовања",
 	"centralauth-rename-abortlogin": "Ваш налог се управо преимењује или спаја. [[Special:GlobalRenameProgress/$1|Погледајте статус]].",
 	"centralauth-rename-form-oldname": "Тренутно корисничко име",
 	"centralauth-rename-form-newname": "Ново корисничко име",
@@ -352,6 +354,7 @@
 	"centralauth-log-gblrename-oldname": "Претходно корисничко име:",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
 	"centralauth-contribs-locked-log": "Овај налог је глобално закључан.\nПоследње закључавање је наведено испод:",
+	"userswhowillberenamed": "Корисници који ће бити преименовани",
 	"centralauth-uwbr-name": "Корисничко име",
 	"centralauth-uwbr-registration": "Датум регистрације",
 	"centralauth-uwbr-editcount": "Број измена"

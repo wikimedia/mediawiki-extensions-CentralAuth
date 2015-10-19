@@ -6,7 +6,8 @@
 			"Michaello",
 			"Milicevic01",
 			"Rancher",
-			"Жељко Тодоровић"
+			"Жељко Тодоровић",
+			"Srdjan m"
 		]
 	},
 	"mergeaccount": "Stanje objedinjavanja prijave",
@@ -290,6 +291,7 @@
 	"centralauth-warning-notattached": "Lokalni nalog nije prikačen za globalni nalog.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} — Potvrda naloga",
 	"action-centralauth-rename": "preimenovanje globalnih naloga",
+	"globalrenameprogress": "Napredak globalnog preimenovanja",
 	"centralauth-rename-abortlogin": "Vaš nalog se upravo preimenjuje ili spaja. [[Special:GlobalRenameProgress/$1|Pogledajte status]].",
 	"centralauth-rename-form-oldname": "Trenutno korisničko ime",
 	"centralauth-rename-form-newname": "Novo korisničko ime",
@@ -342,6 +344,7 @@
 	"sulrenamewarning-usenew": "Ubuduće za prijavljivanje koristite {{GENDER:$1|vaše}} novo korisničko ime '''$1'''.",
 	"centralauth-log-gblrename-oldname": "Prethodno korisničko ime:",
 	"centralauth-contribs-locked": "Ovaj nalog je globalno zaključan.\nZa više informacija pogledajte [[Special:CentralAuth/$1]].",
+	"userswhowillberenamed": "Korisnici koji će biti preimenovani",
 	"centralauth-uwbr-name": "Korisničko ime",
 	"centralauth-uwbr-registration": "Datum registracije",
 	"centralauth-uwbr-editcount": "Broj izmena"
