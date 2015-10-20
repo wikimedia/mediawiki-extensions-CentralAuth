@@ -291,7 +291,7 @@
 	"centralauth-warning-notattached": "Lokalni nalog nije prikačen za globalni nalog.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} — Potvrda naloga",
 	"action-centralauth-rename": "preimenovanje globalnih naloga",
-	"globalrenameprogress": "Napredak globalnog preimenovanja",
+	"globalrenameprogress": "Stanje globalnog preimenovanja",
 	"centralauth-rename-abortlogin": "Vaš nalog se upravo preimenjuje ili spaja. [[Special:GlobalRenameProgress/$1|Pogledajte status]].",
 	"centralauth-rename-form-oldname": "Trenutno korisničko ime",
 	"centralauth-rename-form-newname": "Novo korisničko ime",

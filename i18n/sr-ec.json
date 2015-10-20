@@ -298,7 +298,7 @@
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} — Потврда налога",
 	"right-centralauth-rename": "преименовање глобалних налога",
 	"action-centralauth-rename": "преименовање глобалних налога",
-	"globalrenameprogress": "Напредак глобалног преименовања",
+	"globalrenameprogress": "Стање глобалног преименовања",
 	"centralauth-rename-abortlogin": "Ваш налог се управо преимењује или спаја. [[Special:GlobalRenameProgress/$1|Погледајте статус]].",
 	"centralauth-rename-form-oldname": "Тренутно корисничко име",
 	"centralauth-rename-form-newname": "Ново корисничко име",
