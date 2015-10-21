@@ -57,6 +57,9 @@ class CentralAuthPlugin extends AuthPlugin {
 				wfDebugLog( 'CentralAuth',
 					"CentralAuthMigration: Checking for migration of '{$username}' to '{$renamedUsername}'"
 				);
+				RequestContext::getMain()->getStats()->increment(
+					'centralauth.migration.check'
+				);
 
 				$renamed = new CentralAuthUser( $renamedUsername );
 				$passwordMatch = self::checkPassword( $renamed, $password );
@@ -189,6 +192,9 @@ class CentralAuthPlugin extends AuthPlugin {
 		if ( $wgCentralAuthCheckSULMigration && $this->sulMigrationName !== null ) {
 			wfDebugLog( 'CentralAuth',
 				"CentralAuthMigration: Coercing user to '{$this->sulMigrationName}'"
+			);
+			RequestContext::getMain()->getStats()->increment(
+				'centralauth.migration.coerce'
 			);
 
 			// Create a new user object using the post-migration name
