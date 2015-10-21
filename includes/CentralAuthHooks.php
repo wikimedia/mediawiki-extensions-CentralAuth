@@ -1132,7 +1132,7 @@ class CentralAuthHooks {
 			// Don't freak people out on every page view
 			wfDebug( __METHOD__ . ": denied by \$wgCentralAuthCreateOnView\n" );
 			return false;
-		} elseif ( wfReadOnly() ) {
+		} elseif ( CentralAuthUtils::isReadOnly() ) {
 			wfDebug( __METHOD__ . ": denied by wfReadOnly()\n" );
 			return false;
 		}

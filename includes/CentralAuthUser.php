@@ -2497,7 +2497,7 @@ class CentralAuthUser extends AuthPluginUser {
 		}
 		$this->mStateDirty = false;
 
-		if ( wfReadOnly() ) {
+		if ( CentralAuthUtils::isReadOnly() ) {
 			return;
 		}
 

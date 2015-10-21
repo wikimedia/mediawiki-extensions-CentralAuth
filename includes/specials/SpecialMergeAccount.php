@@ -38,9 +38,9 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( wfReadOnly() ) {
+		if ( CentralAuthUtils::isReadOnly() ) {
 			$this->getOutput()->setPagetitle( $this->msg( 'readonly' ) );
-			$this->getOutput()->addWikiMsg( 'readonlytext', wfReadOnlyReason() );
+			$this->getOutput()->addWikiMsg( 'readonlytext', CentralAuthUtils::getReadOnlyReason() );
 			return;
 		}
 

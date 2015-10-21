@@ -282,6 +282,7 @@ $wgAutoloadClasses['SpecialGlobalRenameQueue'] = "$caBase/includes/specials/Spec
 $wgAutoloadClasses['RenameQueueTablePager'] = "$caBase/includes/specials/SpecialGlobalRenameQueue.php";
 $wgAutoloadClasses['SpecialSulRenameWarning'] = "$caBase/includes/specials/SpecialSulRenameWarning.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
+$wgAutoloadClasses['CentralAuthUtils'] = "$caBase/includes/CentralAuthUtils.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/includes/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/includes/SuppressUserJob.php";
