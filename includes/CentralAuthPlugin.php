@@ -237,10 +237,9 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return bool
 	 */
 	public function autoCreate() {
-		global $wgGroupPermissions;
 		// Yes unless account creation is restricted on this wiki
-		return !empty( $wgGroupPermissions['*']['createaccount'] )
-			|| !empty( $wgGroupPermissions['*']['centralauth-autoaccount'] );
+		return User::isEveryoneAllowed( 'createaccount' )
+			|| User::isEveryoneAllowed( 'centralauth-autoaccount' );
 	}
 
 	/**
