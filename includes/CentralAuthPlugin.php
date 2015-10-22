@@ -239,6 +239,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	public function autoCreate() {
 		// Yes unless account creation is restricted on this wiki
 		return User::isEveryoneAllowed( 'createaccount' )
+			|| User::isEveryoneAllowed( 'autocreateaccount' )
 			|| User::isEveryoneAllowed( 'centralauth-autoaccount' );
 	}
 

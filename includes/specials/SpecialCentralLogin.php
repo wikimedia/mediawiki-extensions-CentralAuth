@@ -1,12 +1,15 @@
 <?php
 
 class SpecialCentralLogin extends UnlistedSpecialPage {
+
+	/** @var MediaWiki\\Session\\Session|null */
+	protected $session = null;
+
 	function __construct() {
 		parent::__construct( 'CentralLogin' );
 	}
 
 	function execute( $subpage ) {
-
 		// Enforce $wgSecureLogin
 		global $wgSecureLogin;
 		$request = $this->getRequest();
@@ -24,6 +27,19 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$this->setHeaders();
 		$this->getOutput()->disallowUserJs(); // just in case...
+
+		// Check session, if possible
+		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
+			$session = $request->getSession();
+			if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
+				$this->showError(
+					'centralauth-error-wrongprovider',
+					$session->getProvider()->describe( $this->getLanguage() )
+				);
+				return;
+			}
+			$this->session = $session;
+		}
 
 		$token = $this->getRequest()->getVal( 'token' );
 
@@ -98,12 +114,23 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Start an unusable placeholder session stub and send a cookie.
 		// The cookie will not be usable until the session is unstubbed.
 		// Note: the "remember me" token must be dealt with later (security).
-		$newSessionId = CentralAuthSessionCompat::setCentralSession( array(
-			'pending_name' => $centralUser->getName(),
-			'pending_guid' => $centralUser->getId()
-		), true, $secureCookie );
-		CentralAuthSessionCompat::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
-		CentralAuthSessionCompat::setCookie( 'Token', '', -86400, $secureCookie );
+		if ( $this->session ) {
+			$delay = $this->session->delaySave();
+			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+			$newSessionId = CentralAuthUtils::setCentralSession( array(
+				'pending_name' => $centralUser->getName(),
+				'pending_guid' => $centralUser->getId()
+			), true, $this->session );
+			$this->session->persist();
+			ScopedCallback::consume( $delay );
+		} else {
+			$newSessionId = CentralAuthSessionCompat::setCentralSession( array(
+				'pending_name' => $centralUser->getName(),
+				'pending_guid' => $centralUser->getId()
+			), true, $secureCookie );
+			CentralAuthSessionCompat::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
+			CentralAuthSessionCompat::setCookie( 'Token', '', -86400, $secureCookie );
+		}
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
@@ -178,17 +205,28 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$cache->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
-		// This lets User::loadFromSession to initialize the User object from the local
-		// session now that the global session is complete.
-		// Without $wgSecureLogin, we should be on the correct protocol now, and we use the
-		// default cookie security. With $wgSecureLogin, we use the stickHTTPS checkbox.
-		$secureCookie = $attempt['stickHTTPS'];
-
-		CentralAuthSessionCompat::setGlobalCookies( $centralUser, $attempt['remember'], $info['sessionId'], $secureCookie, array(
-			'finalProto' => $attempt['finalProto'],
-			'secureCookies' => $attempt['stickHTTPS'],
-			'remember' => $attempt['remember'],
-		) );
+		if ( $this->session ) {
+			$delay = $this->session->delaySave();
+			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+			$this->session->setRememberUser( (bool)$attempt['remember'] );
+			if ( $attempt['stickHTTPS'] !== null ) {
+				$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
+			}
+			$newSessionId = CentralAuthUtils::setCentralSession( array(
+				'finalProto' => $attempt['finalProto'],
+				'secureCookies' => $attempt['stickHTTPS'],
+				'remember' => $attempt['remember'],
+			), $info['sessionId'], $this->session );
+			$this->session->persist();
+			ScopedCallback::consume( $delay );
+		} else {
+			$secureCookie = $attempt['stickHTTPS'];
+			CentralAuthSessionCompat::setGlobalCookies( $centralUser, $attempt['remember'], $info['sessionId'], $secureCookie, array(
+				'finalProto' => $attempt['finalProto'],
+				'secureCookies' => $attempt['stickHTTPS'],
+				'remember' => $attempt['remember'],
+			) );
+		}
 
 		// Remove the "current login attempt" information
 		$request->setSessionData( $skey, null );
