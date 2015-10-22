@@ -8,6 +8,9 @@
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private $loginWiki;
 
+	/** @var MediaWiki\\Session\\Session|null */
+	protected $session = null;
+
 	function __construct() {
 		parent::__construct( 'CentralAutoLogin' );
 	}
@@ -52,6 +55,29 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return $result;
 	}
 
+	/**
+	 * Check the session (if applicable) and fill in $this->session
+	 * @param string $body
+	 * @param string|bool $type
+	 * @return bool
+	 */
+	protected function checkSession( $body = '', $type = false ) {
+		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
+			$session = $this->getRequest()->getSession();
+			if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
+				$this->doFinalOutput(
+					false,
+					'Cannot operate when using ' . $session->getProvider()->describe( Language::factory( 'en' ) ),
+					$body,
+					$type
+				);
+				return false;
+			}
+			$this->session = $session;
+		}
+		return true;
+	}
+
 	function execute( $par ) {
 		global $wgCentralAuthLoginWiki;
 
@@ -91,6 +117,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		case 'toolslist':
 			// Do not cache this, we want updated Echo numbers and such.
 			$this->getOutput()->enableClientCache( false );
+
+			if ( !$this->checkSession( '', 'json' ) ) {
+				return;
+			}
+
 			$user = $this->getUser();
 			if ( !$user->isAnon() ) {
 				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
@@ -121,6 +152,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$wgCentralAuthLoginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
 			}
+			if ( !$this->checkSession() ) {
+				return;
+			}
 
 			CentralAuthUtils::setP3P();
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
@@ -137,8 +171,18 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					} );
 				}
 
-				$secureCookie = $centralSession['secureCookies'];
-				CentralAuthSessionCompat::setGlobalCookies( $centralUser, $remember, false, $secureCookie, $centralSession );
+				if ( $this->session ) {
+					$delay = $this->session->delaySave();
+					$this->session->setRememberUser( $remember );
+					if ( $centralSession['secureCookies'] !== null ) {
+						$this->session->setForceHTTPS( $centralSession['secureCookies'] );
+					}
+					$this->session->persist();
+					ScopedCallback::consume( $delay );
+				} else {
+					$secureCookie = $centralSession['secureCookies'];
+					CentralAuthSessionCompat::setGlobalCookies( $centralUser, $remember, false, $secureCookie, $centralSession );
+				}
 				$this->doFinalOutput( true, 'success' );
 			} else {
 				$this->doFinalOutput( false, 'Not logged in' );
@@ -149,13 +193,21 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Do not cache this, we need to reset the cookies every time.
 			$this->getOutput()->enableClientCache( false );
 
+			if ( !$this->checkSession() ) {
+				return;
+			}
+
 			if ( $this->getUser()->isLoggedIn() ) {
 				$this->doFinalOutput( false, 'Cannot delete cookies while still logged in' );
 				return;
 			}
 
 			CentralAuthUtils::setP3P();
-			CentralAuthSessionCompat::deleteGlobalCookies();
+			if ( $this->session ) {
+				$this->session->setUser( new User );
+			} else {
+				CentralAuthSessionCompat::deleteGlobalCookies();
+			}
 			$this->doFinalOutput( true, 'success' );
 			return;
 
@@ -165,6 +217,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->setSquidMaxage( 1200 );
 
 			if ( !$this->checkIsLocalWiki() ) {
+				return;
+			}
+			if ( !$this->checkSession() ) {
 				return;
 			}
 
@@ -181,6 +236,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->setSquidMaxage( 1200 );
 
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				return;
+			}
+			if ( !$this->checkSession() ) {
 				return;
 			}
 
@@ -209,6 +267,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		case 'createSession': // Create the local session and shared memcache token
 
 			if ( !$this->checkIsLocalWiki() ) {
+				return;
+			}
+			if ( !$this->checkSession() ) {
 				return;
 			}
 
@@ -247,7 +308,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->enableClientCache( false );
 
 			// Ensure that a session exists
-			if ( session_id() == '' ) {
+			if ( $this->session ) {
+				$this->session->persist();
+			} elseif ( session_id() == '' ) {
 				wfSetupSession();
 			}
 
@@ -275,6 +338,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->enableClientCache( false );
 
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				return;
+			}
+			if ( !$this->checkSession() ) {
 				return;
 			}
 
@@ -331,6 +397,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
+			if ( !$this->checkSession() ) {
+				return;
+			}
 
 			CentralAuthUtils::setP3P();
 			// Check saved memc token
@@ -378,17 +447,37 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Set a new session cookie, Just In Case™
 			wfResetSessionID();
 
-			// Set central cookies too, with a refreshed sessionid. Also, check if we
-			// need to override the default cookie security policy
-			$secureCookie = $memcData['secureCookies'];
+			/** @var ScopedCallback|null $delay */
+			$delay = null;
 
-			CentralAuthSessionCompat::setGlobalCookies( $centralUser,
-				$memcData['remember'], $memcData['sessionId'], $secureCookie, array(
+			if ( $this->session ) {
+				$delay = $this->session->delaySave();
+				CentralAuthUtils::setCentralSession( array(
 					'finalProto' => $memcData['finalProto'],
 					'secureCookies' => $memcData['secureCookies'],
 					'remember' => $memcData['remember'],
-				)
-			);
+				), $memcData['sessionId'], $this->session );
+				if ( $centralUser->isAttached() ) {
+					// Set the user on the session, if the user is already attached.
+					$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+				}
+				$this->session->setRememberUser( $memcData['remember'] );
+				if ( $memcData['secureCookies'] !== null ) {
+					$this->session->setForceHTTPS( $memcData['secureCookies'] );
+				}
+				$this->session->persist();
+			} else {
+				// Set central cookies too, with a refreshed sessionid. Also, check if we
+				// need to override the default cookie security policy
+				$secureCookie = $memcData['secureCookies'];
+				CentralAuthSessionCompat::setGlobalCookies( $centralUser,
+					$memcData['remember'], $memcData['sessionId'], $secureCookie, array(
+						'finalProto' => $memcData['finalProto'],
+						'secureCookies' => $memcData['secureCookies'],
+						'remember' => $memcData['remember'],
+					)
+				);
+			}
 
 			// Now, figure out how to report this back to the user.
 
@@ -398,6 +487,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// If it's not a script callback, just go for it.
 			if ( $request->getVal( 'type' ) !== 'script' ) {
 				$this->doFinalOutput( true, 'success' );
+				ScopedCallback::consume( $delay );
 				return;
 			}
 
@@ -413,8 +503,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 			if ( !$centralUser->isAttached() ) {
 				$this->doFinalOutput( false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
+				ScopedCallback::consume( $delay );
 				return;
 			}
+			if ( $this->session ) {
+				// Set the user on the session now that we know it exists.
+				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+			}
+			ScopedCallback::consume( $delay );
 
 			$script = self::getInlineScript( 'anon-remove.js' );
 
@@ -573,7 +669,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return array
 	 */
 	private function getCentralSession( $centralUser, $user ) {
-		$centralSession = CentralAuthUtils::getCentralSession();
+		$centralSession = CentralAuthUtils::getCentralSession( $this->session );
 		$request = $this->getRequest();
 
 		// If there's no "finalProto", check if one was passed, and otherwise
@@ -596,7 +692,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a session id by creating a session if necessary.
 		if ( !isset( $centralSession['sessionId'] ) ) {
-			$centralSession['sessionId'] = CentralAuthSessionCompat::setCentralSession( $centralSession );
+			if ( $this->session ) {
+				$centralSession['sessionId'] = CentralAuthUtils::setCentralSession(
+					$centralSession, false, $this->session );
+			} else {
+				$centralSession['sessionId'] = CentralAuthSessionCompat::setCentralSession( $centralSession );
+			}
 		}
 
 		return $centralSession;
