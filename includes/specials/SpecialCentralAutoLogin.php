@@ -56,7 +56,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		global $wgCentralAuthLoginWiki;
 
 		$request = $this->getRequest();
-		$cache = CentralAuthUser::getSessionCache();
+		$cache = CentralAuthUtils::getSessionCache();
 
 		$this->loginWiki = $wgCentralAuthLoginWiki;
 		if ( !$this->loginWiki ) {
@@ -122,7 +122,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
+			CentralAuthUtils::setP3P();
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			if ( $centralUser && $centralUser->getId() ) {
 				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
@@ -138,7 +138,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				$secureCookie = $centralSession['secureCookies'];
-				$centralUser->setGlobalCookies( $remember, false, $secureCookie, $centralSession );
+				CentralAuthSessionCompat::setGlobalCookies( $centralUser, $remember, false, $secureCookie, $centralSession );
 				$this->doFinalOutput( true, 'success' );
 			} else {
 				$this->doFinalOutput( false, 'Not logged in' );
@@ -154,8 +154,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
-			CentralAuthUser::deleteGlobalCookies();
+			CentralAuthUtils::setP3P();
+			CentralAuthSessionCompat::deleteGlobalCookies();
 			$this->doFinalOutput( true, 'success' );
 			return;
 
@@ -168,7 +168,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
+			CentralAuthUtils::setP3P();
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', array(
 				'wikiid' => wfWikiID(),
 				'proto' => $request->detectProtocol(),
@@ -184,7 +184,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
+			CentralAuthUtils::setP3P();
 			if ( $this->getUser()->isLoggedIn() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
@@ -198,7 +198,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$memcData = array( 'gu_id' => $centralUser->getId() );
 			$token = MWCryptRand::generateHex( 32 );
-			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token );
+			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token );
 			$cache->set( $key, $memcData, 60 );
 
 			$this->do302Redirect( $wikiid, 'createSession', array(
@@ -212,13 +212,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
+			CentralAuthUtils::setP3P();
 
 			$token = $request->getVal( 'token', '' );
 			$gid = $request->getVal( 'gu_id', '' );
 			if ( $token !== '' ) {
 				// Load memc data
-				$key = CentralAuthUser::memcKey( 'centralautologin-token', $token );
+				$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token );
 				$casToken = null;
 				$memcData = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
 				$cache->delete( $key );
@@ -258,7 +258,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'wikiid' => $wikiid,
 			);
 			$token = MWCryptRand::generateHex( 32 );
-			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
+			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token, $wikiid );
 			$cache->set( $key, $memcData, 60 );
 
 			// Save memc token for the 'setCookies' step
@@ -283,7 +283,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
+			CentralAuthUtils::setP3P();
 			// Validate params
 			$token = $request->getVal( 'token', '' );
 			if ( $token === '' ) {
@@ -292,7 +292,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Load memc data
-			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
+			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token, $wikiid );
 			$casToken = null;
 			$memcData = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
 			$cache->delete( $key );
@@ -332,7 +332,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			CentralAuthUser::setP3P();
+			CentralAuthUtils::setP3P();
 			// Check saved memc token
 			$token = $this->getRequest()->getSessionData( 'centralautologin-token' );
 			if ( $token === null ) {
@@ -342,7 +342,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Load memc data
 			$wikiid = wfWikiID();
-			$key = CentralAuthUser::memcKey( 'centralautologin-token', $token, $wikiid );
+			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token, $wikiid );
 			$casToken = null;
 			$memcData = $cache->get( $key, $casToken, BagOStuff::READ_LATEST );
 			$cache->delete( $key );
@@ -382,7 +382,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// need to override the default cookie security policy
 			$secureCookie = $memcData['secureCookies'];
 
-			$centralUser->setGlobalCookies(
+			CentralAuthSessionCompat::setGlobalCookies( $centralUser,
 				$memcData['remember'], $memcData['sessionId'], $secureCookie, array(
 					'finalProto' => $memcData['finalProto'],
 					'secureCookies' => $memcData['secureCookies'],
@@ -407,7 +407,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !User::idFromName( $centralUser->getName() ) ) {
 				$user = new User;
 				$user->setName( $centralUser->getName() );
-				if ( CentralAuthHooks::attemptAddUser( $user ) ) {
+				if ( CentralAuthUtils:autoCreateUser( $user ) ) {
 					$centralUser->invalidateCache();
 				}
 			}
@@ -573,7 +573,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return array
 	 */
 	private function getCentralSession( $centralUser, $user ) {
-		$centralSession = $centralUser->getSession();
+		$centralSession = CentralAuthUtils::getCentralSession();
 		$request = $this->getRequest();
 
 		// If there's no "finalProto", check if one was passed, and otherwise
@@ -596,7 +596,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a session id by creating a session if necessary.
 		if ( !isset( $centralSession['sessionId'] ) ) {
-			$centralSession['sessionId'] = $centralUser->setSession( $centralSession );
+			$centralSession['sessionId'] = CentralAuthSessionCompat::setCentralSession( $centralSession );
 		}
 
 		return $centralSession;
