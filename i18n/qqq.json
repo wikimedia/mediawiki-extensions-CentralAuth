@@ -361,6 +361,7 @@
 	"centrallogin": "{{doc-special|CentralLogin|unlisted=1}}",
 	"centralloginsuccesful": "Used as page title.\n{{Identical|Login successful}}",
 	"centralauth-completelogin-back": "Used as action link text.",
+	"centralauth-error-wrongprovider": "Used as an error message. Parameters:\n* $1 - Session type in use that makes it not possible to use the special page, from a message like {{msg-mw|sessionprovider-mediawiki-session-cookiesessionprovider}}.",
 	"centralauth-error-nologinattempt": "Used as error message.",
 	"centralauth-error-badtoken": "Used as error message.",
 	"centralauth-error-token-wrongattempt": "Used as error message.",
@@ -559,5 +560,7 @@
 	"centralauth-uwbr-registration-nodate": "Message displayed in place of a registration date when one has not been recorded\n{{Identical|Unknown}}",
 	"centralauth-uwbr-editcount": "Heading for column in table",
 	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed.",
-	"centralauth-delete-empty-account": "Used as the reason by the deleteEmptyAccounts.php maintenance script when deleting an account with no attached local accounts."
+	"centralauth-delete-empty-account": "Used as the reason by the deleteEmptyAccounts.php maintenance script when deleting an account with no attached local accounts.",
+	"sessionprovider-centralauthsessionprovider": "Description of the sessions provided by the CentralAuthSessionProvider class, which use HTTP cookies. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
+	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}."
 }

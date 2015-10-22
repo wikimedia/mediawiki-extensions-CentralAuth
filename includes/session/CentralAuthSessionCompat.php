@@ -1,5 +1,10 @@
 <?php
 
+// Sanity check: This file should not be referenced when we have SessionManager
+if ( class_exists( '\\MediaWiki\\Session\\SessionManager' ) ) {
+	throw new RuntimeException( __FILE__ . ' loaded when SessionManager exists!' );
+}
+
 class CentralAuthSessionCompat {
 
 	/**
