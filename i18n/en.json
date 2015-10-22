@@ -346,6 +346,7 @@
 	"centrallogin": "Central user log in",
 	"centralloginsuccesful": "Login successful",
 	"centralauth-completelogin-back": "Return to the previous page.",
+	"centralauth-error-wrongprovider": "This special page is unavailable when using $1",
 	"centralauth-error-nologinattempt": "No active login attempt is in progress for your session.",
 	"centralauth-error-badtoken": "The provided authentication token is either expired or invalid.",
 	"centralauth-error-token-wrongattempt": "The authentication token does not belong to your current login attempt.\nSomeone might be trying to log you in under a malicious account.",
@@ -544,5 +545,7 @@
 	"centralauth-uwbr-registration-nodate": "Unknown",
 	"centralauth-uwbr-editcount": "Edit count",
 	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed.",
-	"centralauth-delete-empty-account": "Empty account"
+	"centralauth-delete-empty-account": "Empty account",
+	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions"
 }

@@ -78,23 +78,35 @@ class CentralAuthUtils {
 	 * @return bool Success
 	 */
 	public static function autoCreateUser( User $user ) {
-		return CentralAuthSessionCompat::attemptAddUser( $user );
+		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
+			return MediaWiki\Session\SessionManager::autoCreateUser( $user );
+		} else {
+			return CentralAuthSessionCompat::attemptAddUser( $user );
+		}
 	}
 
 	/**
 	 * Get the central session data
+	 * @param MediaWiki\\Session\\Session|null $session
 	 * @return array
 	 */
-	public static function getCentralSession() {
+	public static function getCentralSession( $session = null ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 
-		if ( !$wgCentralAuthCookies ) {
-			return array();
-		}
+		if ( class_exists( 'MediaWiki\\Session\\Session' ) ) {
+			if ( !$session ) {
+				$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			}
+			$id = $session->get( 'CentralAuth::centralSessionId' );
+		} else {
+			if ( !$wgCentralAuthCookies ) {
+				return array();
+			}
 
-		$id = isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] )
-			? $_COOKIE[$wgCentralAuthCookiePrefix . 'Session']
-			: null;
+			$id = isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] )
+				? $_COOKIE[$wgCentralAuthCookiePrefix . 'Session']
+				: null;
+		}
 
 		if ( $id ) {
 			$key = CentralAuthUtils::memcKey( 'session', $id );
@@ -112,18 +124,26 @@ class CentralAuthUtils {
 	 * Set data in the central session
 	 * @param array $data
 	 * @param bool|string $refreshId Reset the session ID. If a string, this is the new ID.
+	 * @param MediaWiki\\Session\\Session|null $session
 	 * @return string|null Session ID
 	 */
-	public static function setCentralSession( array $data, $reset = false ) {
+	public static function setCentralSession( array $data, $reset = false, $session = null ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 
-		if ( !$wgCentralAuthCookies ) {
-			return null;
-		}
+		if ( class_exists( 'MediaWiki\\Session\\Session' ) ) {
+			if ( $session === null ) {
+				$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			}
+			$id = $session->get( 'CentralAuth::centralSessionId' );
+		} else {
+			if ( !$wgCentralAuthCookies ) {
+				return null;
+			}
 
-		$id = isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] )
-			? $_COOKIE[$wgCentralAuthCookiePrefix . 'Session']
-			: null;
+			$id = isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] )
+				? $_COOKIE[$wgCentralAuthCookiePrefix . 'Session']
+				: null;
+		}
 
 		if ( $reset || $id === null ) {
 			$id = is_string( $reset ) ? $reset : MWCryptRand::generateHex( 32 );
@@ -135,22 +155,34 @@ class CentralAuthUtils {
 		$real = microtime( true ) - $stime;
 		RequestContext::getMain()->getStats()->timing( 'centralauth.session.write', $real );
 
+		if ( $session ) {
+			$session->set( 'CentralAuth::centralSessionId', $id );
+		}
+
 		return $id;
 	}
 
 	/**
 	 * Delete the central session data
+	 * @param MediaWiki\\Session\\Session|null $session
 	 */
-	public static function deleteCentralSession() {
+	public static function deleteCentralSession( $session = null ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 
-		if ( !$wgCentralAuthCookies ) {
-			return;
-		}
+		if ( class_exists( 'MediaWiki\\Session\\Session' ) ) {
+			if ( !$session ) {
+				$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			}
+			$id = $session->get( 'CentralAuth::centralSessionId' );
+		} else {
+			if ( !$wgCentralAuthCookies ) {
+				return;
+			}
 
-		$id = isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] )
-			? $_COOKIE[$wgCentralAuthCookiePrefix . 'Session']
-			: null;
+			$id = isset( $_COOKIE[$wgCentralAuthCookiePrefix . 'Session'] )
+				? $_COOKIE[$wgCentralAuthCookiePrefix . 'Session']
+				: null;
+		}
 
 		if ( $id !== null ) {
 			$key = CentralAuthUtils::memcKey( 'session', $id );
