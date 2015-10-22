@@ -62,7 +62,7 @@ abstract class LocalRenameJob extends Job {
 			return User::newFromName( 'Global rename script' );
 		} elseif ( $user->getId() == 0 ) {
 			// No local user, lets "auto-create" one
-			if ( CentralAuthHooks::attemptAddUser( $user ) ) {
+			if ( CentralAuthUtils::autoCreateUser( $user ) ) {
 				return User::newFromName( $user->getName() ); // So the internal cache is reloaded
 			} else {
 				// Auto-creation didn't work, fallback on the system account.
