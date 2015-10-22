@@ -305,6 +305,8 @@ $wgAutoloadClasses['ApiGlobalUserRights'] = "$caBase/includes/api/ApiGlobalUserR
 $wgAutoloadClasses['ApiCentralAuthToken'] = "$caBase/includes/api/ApiCentralAuthToken.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/includes/CentralAuthReadOnlyError.php";
 $wgAutoloadClasses['CentralAuthSessionCompat'] = "$caBase/includes/session/CentralAuthSessionCompat.php";
+$wgAutoloadClasses['CentralAuthSessionProvider'] = "$caBase/includes/session/CentralAuthSessionProvider.php";
+$wgAutoloadClasses['CentralAuthTokenSessionProvider'] = "$caBase/includes/session/CentralAuthTokenSessionProvider.php";
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
 $wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
 $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormatter.php";
@@ -412,19 +414,43 @@ $wgHooks['LoadGlobalUserPage'][] = 'CentralAuthHooks::onLoadGlobalUserPage';
 // For UserMerge
 $wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
 
-// Sessions
-$wgHooks['SetupAfterCache'][] = 'CentralAuthSessionCompat::onSetupAfterCache';
-$wgHooks['AuthPluginSetup'][] = 'CentralAuthSessionCompat::onAuthPluginSetup';
-$wgHooks['UserLoadFromSession'][] = 'CentralAuthSessionCompat::onUserLoadFromSession';
-$wgHooks['UserSetCookies'][] = 'CentralAuthSessionCompat::onUserSetCookies';
-$wgHooks['UserLoadDefaults'][] = 'CentralAuthSessionCompat::onUserLoadDefaults';
-$wgHooks['GetCacheVaryCookies'][] = 'CentralAuthSessionCompat::onGetCacheVaryCookies';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthSessionCompat::onApiTokensGetTokenTypes';
-$wgHooks['APIGetAllowedParams'][] = 'CentralAuthSessionCompat::onAPIGetAllowedParams';
-$wgHooks['APIGetParamDescription'][] = 'CentralAuthSessionCompat::onAPIGetParamDescription';
-$wgHooks['ApiCheckCanExecute'][] = 'CentralAuthSessionCompat::onApiCheckCanExecute';
-$wgHooks['UserLoginComplete'][] = 'CentralAuthSessionCompat::onUserLoginComplete';
-$wgHooks['UserLogout'][] = 'CentralAuthSessionCompat::onUserLogout';
+// SessionManager
+if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
+	// CentralAuthSessionProvider is supposed to replace core
+	// CookieSessionProvider, so do that.
+	if ( isset( $wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider'] ) ) {
+		$wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider']['class']
+			= 'CentralAuthSessionProvider';
+	} else {
+		$wgSessionProviders['CentralAuthSessionProvider'] = array(
+			'class' => 'CentralAuthSessionProvider',
+			'args' => array( array(
+				'priority' => 50,
+			) ),
+		);
+	}
+	$wgSessionProviders['CentralAuthTokenSessionProvider'] = array(
+		'class' => 'CentralAuthTokenSessionProvider',
+		'args' => array(),
+	);
+
+	$wgHooks['SessionCheckInfo'][] = 'CentralAuthHooks::onSessionCheckInfo';
+} else {
+	$wgHooks['SetupAfterCache'][] = 'CentralAuthSessionCompat::onSetupAfterCache';
+	$wgHooks['AuthPluginSetup'][] = 'CentralAuthSessionCompat::onAuthPluginSetup';
+	$wgHooks['UserLoadFromSession'][] = 'CentralAuthSessionCompat::onUserLoadFromSession';
+	$wgHooks['UserSetCookies'][] = 'CentralAuthSessionCompat::onUserSetCookies';
+	$wgHooks['UserLoadDefaults'][] = 'CentralAuthSessionCompat::onUserLoadDefaults';
+	$wgHooks['GetCacheVaryCookies'][] = 'CentralAuthSessionCompat::onGetCacheVaryCookies';
+	$wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthSessionCompat::onApiTokensGetTokenTypes';
+	$wgHooks['APIGetAllowedParams'][] = 'CentralAuthSessionCompat::onAPIGetAllowedParams';
+	$wgHooks['APIGetParamDescription'][] = 'CentralAuthSessionCompat::onAPIGetParamDescription';
+	$wgHooks['ApiCheckCanExecute'][] = 'CentralAuthSessionCompat::onApiCheckCanExecute';
+	$wgHooks['UserLoginComplete'][] = 'CentralAuthSessionCompat::onUserLoginComplete';
+	$wgHooks['UserLogout'][] = 'CentralAuthSessionCompat::onUserLogout';
+
+	$wgAvailableRights[] = 'centralauth-autoaccount';
+}
 
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
@@ -432,7 +458,6 @@ $wgAvailableRights[] = 'centralauth-lock';
 $wgAvailableRights[] = 'centralauth-oversight';
 $wgAvailableRights[] = 'globalgrouppermissions';
 $wgAvailableRights[] = 'globalgroupmembership';
-$wgAvailableRights[] = 'centralauth-autoaccount';
 $wgAvailableRights[] = 'centralauth-rename';
 $wgAvailableRights[] = 'centralauth-usermerge';
 

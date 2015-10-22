@@ -140,10 +140,11 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	private function getWorkingPasswords() {
 		wfSuppressWarnings();
+		$data = RequestContext::getMain()->getRequest()->getSessionData( 'wsCentralAuthMigration' );
 		$passwords = unserialize(
 			gzinflate(
 				$this->xorString(
-					$_SESSION['wsCentralAuthMigration'][$this->mSessionToken],
+					$data[$this->mSessionToken],
 					$this->mSessionKey ) ) );
 				wfRestoreWarnings();
 		if ( is_array( $passwords ) ) {
@@ -163,16 +164,22 @@ class SpecialMergeAccount extends SpecialPage {
 
 		// Lightly obfuscate the passwords while we're storing them,
 		// just to make us feel better about them floating around.
-		$_SESSION['wsCentralAuthMigration'][$this->mSessionToken] =
+		$request = RequestContext::getMain()->getRequest();
+		$data = $request->getSessionData( 'wsCentralAuthMigration' );
+		$data[$this->mSessionToken] =
 			$this->xorString(
 				gzdeflate(
 					serialize(
 						$passwords ) ),
 				$this->mSessionKey );
+		$request->setSessionData( 'wsCentralAuthMigration', $data );
 	}
 
 	private function clearWorkingPasswords() {
-		unset( $_SESSION['wsCentralAuthMigration'][$this->mSessionToken] );
+		$request = RequestContext::getMain()->getRequest();
+		$data = $request->getSessionData( 'wsCentralAuthMigration' );
+		unset( $data[$this->mSessionToken] );
+		$request->setSessionData( 'wsCentralAuthMigration', $data );
 	}
 
 	/**
