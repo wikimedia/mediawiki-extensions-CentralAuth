@@ -237,7 +237,7 @@
 	"centralauth-rightslog-name": "Журнал глобальных прав",
 	"centralauth-rightslog-entry-usergroups": "изменил глобальное членство в группе для $1 с $2 на $3",
 	"centralauth-rightslog-entry-groupperms": "изменил права группы для $1 с $2 на $3",
-	"centralauth-rightslog-entry-groupperms2": "изменил права группы для $1. Добавлено $2; удалено $3",
+	"centralauth-rightslog-entry-groupperms2": "изменил права группы для $1: добавлено $2; удалено $3",
 	"centralauth-rightslog-entry-groupperms3": "изменил групповые ограничения набора вики для $1 с $2 на $3",
 	"centralauth-rightslog-entry-grouprename": "переименовал группу «$2» в «$1»",
 	"centralauth-rightslog-header": "Этот журнал содержит записи об действиях с глобальными группами: изменение членства и прав",

@@ -411,7 +411,7 @@
 	"globalrenamerequest-email-why-label": "Per què?",
 	"globalrenamerequest-email-why-explain": "<p>Necessitem una adreça de correu electrònic durant aquest procés per assegurar que no perdeu l'accés a aquest compte.</p><p>Podreu eliminar l'adreça de correu electrònic quan el procés de canvi de nom estigui completat.</p>",
 	"globalrenamerequest-email2-label": "Confirmeu l'adreça de correu electrònic:",
-	"globalrenamerequest-email2-help": "Introduïu la mateixa adreça de correu electrònic anterior per a confirmar-la.",
+	"globalrenamerequest-email2-help": "Introduïu la mateixa adreça electrònica anterior per confirmar-la.",
 	"globalrenamerequest-email-mismatch": "Les adreces de correu electrònic són diferents.<br />Reviseu-les i proveu-ho de nou.",
 	"globalrenamerequest-email-invalid": "L'adreça de correu electrònic proporcionada no és vàlida.",
 	"globalrenamerequest-reason-label": "Motiu de la sol·licitud",
