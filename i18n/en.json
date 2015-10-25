@@ -459,7 +459,7 @@
 	"globalrenamequeue-request-title": "Rename \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> is requesting a rename to <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* user: [[Special:CentralAuth/$1]]\n* home wiki: $2\n* new name: [[Special:CentralAuth/$3]]\n",
-	"globalrenamequeue-request-userinfo-global": "* user: [[Special:CentralAuth/$1]]\n* home wiki: $2\n* new name: [[Special:CentralAuth/$3]]\n",
+	"globalrenamequeue-request-userinfo-global": "* user: [[Special:CentralAuth/$1]]\n* home wiki: $2\n* new name: [[Special:CentralAuth/$3]]\n* global edit count: $4",
 	"globalrenamequeue-request-reason": "<strong>Reason for requesting rename</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "User notified of global name conflict in preparation for SUL finalization.",
 	"globalrenamequeue-request-comments-label": "Notes/reasoning",

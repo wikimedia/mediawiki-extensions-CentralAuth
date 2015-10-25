@@ -474,7 +474,7 @@
 	"globalrenamequeue-request-title": "Page title when processing request.\n\n* $1 is the user's current name\n{{Identical|Rename}}",
 	"globalrenamequeue-request-header": "Page content when processing request.\n\n* $1 is an URL-link to the user's User page \n* $2 is the user's current name\n* $3 is the user's requested name.",
 	"globalrenamequeue-request-userinfo-local": "Message expected to be configured per-wiki via MediaWiki:Globalrenamequeue-request-userinfo-local.\n\n* $1 is the requesting user's name.\n* $2 is the domain name of the requesting user's home wiki.\n* $3 is the requested username.",
-	"globalrenamequeue-request-userinfo-global": "Message expected to be configured per-wiki via MediaWiki:Globalrenamequeue-request-userinfo-global.\n\n* $1 is the requesting user's name.\n* $2 is the domain name of the requesting user's home wiki.\n* $3 is the requested username.",
+	"globalrenamequeue-request-userinfo-global": "Message expected to be configured per-wiki via MediaWiki:Globalrenamequeue-request-userinfo-global.\n\n* $1 is the requesting user's name.\n* $2 is the domain name of the requesting user's home wiki.\n* $3 is the requested username.\n* $4 is the number of edits by the global account.",
 	"globalrenamequeue-request-reason": "Display for reason provided by user for rename.\n\n* $1 is reason text given by user. It will be parsed as wikitext.",
 	"globalrenamequeue-request-reason-sul": "Default reason for SUL rename requests.",
 	"globalrenamequeue-request-comments-label": "Form field label text.",

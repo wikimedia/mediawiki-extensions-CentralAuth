@@ -327,6 +327,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			( $homeWikiWiki ? $homeWikiWiki->getDisplayName() : $homeWiki ),
 			$req->getNewName()
 		);
+
+		if ( $req->userIsGlobal() ) {
+			$infoMsg->numParams( $globalUser->getGlobalEditCount() );
+		}
+
 		$form->addHeaderText( $infoMsg->parseAsBlock() );
 
 		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
