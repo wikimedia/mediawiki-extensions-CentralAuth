@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_9782a000",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-10-26T11:37:37Z",
+      "side": 1,
+      "message": "Messages should not end with whitespace. This was pre-existing, and apparently missed in i18n review before getting merged. If whitespace (a newline in this case) is required, please add it to the code.",
+      "revId": "68ae1424b0835ca1fb9d185f8a1def949f1ae627",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
