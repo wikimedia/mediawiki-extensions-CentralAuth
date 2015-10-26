@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_d264a313",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 121
+      },
+      "writtenOn": "2015-10-26T19:45:36Z",
+      "side": 1,
+      "message": "PLURAL missing for $4",
+      "revId": "9aba07966c1c8c69567644705d55bdb49d0677b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
