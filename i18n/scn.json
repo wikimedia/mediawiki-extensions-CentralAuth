@@ -28,6 +28,7 @@
 	"centralauth-merge-step3-submit": "Junci li cunti",
 	"centralauth-foreign-link": "Utenti $1 supra a $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|cuntribbutu|cuntribbuti}} a $2",
+	"centralauth-merge-method-primary": "wiki principali",
 	"centralauth-merge-method-login": "criatu â trasuta",
 	"centralauth-finish-password": "Palora chiavi:",
 	"centralauth-finish-login": "Trasi",

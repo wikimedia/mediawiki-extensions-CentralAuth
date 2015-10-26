@@ -438,7 +438,7 @@
 	"globalrenamequeue-request-title": "לשנות את השם של \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> מבקש לשנות את השם אל <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* משתמש: [[Special:CentralAuth/$1]]\n* אתר הוויקי הביתי: $2\n* השם החדש: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* משתמש: [[Special:CentralAuth/$1]]\n* אתר הוויקי הביתי: $2\n* השם החדש: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* משתמש: [[Special:CentralAuth/$1]]\n* אתר הוויקי הביתי: $2\n* השם החדש: [[Special:CentralAuth/$3]]\n* מניין עריכות גלובלי: $4",
 	"globalrenamequeue-request-reason": "<strong>סיבה לבקשת שינוי שם</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "המשתמש קיבל הודעה על התגשות גלובלית בשם המשתמש בהכנה להשלמת מיזוג החשבונות.",
 	"globalrenamequeue-request-comments-label": "הערות/נימוקים",
