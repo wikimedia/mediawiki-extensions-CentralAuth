@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_178f9030",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-10-26T11:33:56Z",
+      "side": 1,
+      "message": "Needs punctuation?",
+      "revId": "b50eae912484b7755fd79b3c3a0df5bbf30a86a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_979b8078",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 92
+      },
+      "writtenOn": "2015-10-26T11:33:56Z",
+      "side": 1,
+      "message": "$1 is not documented.",
+      "revId": "b50eae912484b7755fd79b3c3a0df5bbf30a86a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
