@@ -442,7 +442,7 @@
 	"globalrenamequeue-request-title": "Rinominare \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> sta richiedendo di essere rinominato in <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* utente: [[Special:CentralAuth/$1]]\n* wiki principale: $2\n* nuovo nome: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* utente: [[Special:CentralAuth/$1]]\n* wiki principale: $2\n* nuovo nome: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* utente: [[Special:CentralAuth/$1]]\n* wiki principale: $2\n* nuovo nome: [[Special:CentralAuth/$3]]\n* conteggio globale modifiche: $4",
 	"globalrenamequeue-request-reason": "<strong>Motivazione della richiesta di rinomina</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Utente avvisato del conflitto del nome globale in preparazione della finalizzazione SUL.",
 	"globalrenamequeue-request-comments-label": "Note/motivazioni",

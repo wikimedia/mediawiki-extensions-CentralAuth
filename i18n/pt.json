@@ -449,7 +449,7 @@
 	"globalrenamequeue-request-title": "Renomear \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> está a solicitar uma renomeação de conta para <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* utilizador(a): [[Special:CentralAuth/$1]]\n* wiki de origem: $2\n* novo nome: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* utilizador(a): [[Special:CentralAuth/$1]]\n* wiki de origem: $2\n* novo nome: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* utilizador(a): [[Special:CentralAuth/$1]]\n* wiki de origem: $2\n* novo nome: [[Special:CentralAuth/$3]]\n* contagem global de edições: $4",
 	"globalrenamequeue-request-reason": "<strong>Motivo para o pedido de renomeação</strong>\n:$1",
 	"globalrenamequeue-request-comments-label": "Notas/motivo",
 	"globalrenamequeue-request-movepages": "Mover páginas de utilizador(a)",
