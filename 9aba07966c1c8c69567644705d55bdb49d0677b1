@@ -16,6 +16,24 @@
       "revId": "9aba07966c1c8c69567644705d55bdb49d0677b1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_f43d0fdb",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2015-10-27T11:51:35Z",
+      "side": 1,
+      "message": "I don\u0027t know how plural should be implemented here. Should it be \"{{PLURAL:$4|global edit count|global edit count}}: $4\"? (It doesn\u0027t seem necessary for English).",
+      "parentUuid": "0ebaf39b_d264a313",
+      "revId": "9aba07966c1c8c69567644705d55bdb49d0677b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
