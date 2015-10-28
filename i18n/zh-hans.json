@@ -457,7 +457,7 @@
 	"globalrenamequeue-request-title": "重命名“$1”么？",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong>正在请求重命名为<strong>$3</strong>。",
 	"globalrenamequeue-request-userinfo-local": "* 用户：[[Special:CentralAuth/$1]]\n* 主wiki：$2\n* 新名称：[[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* 用户：[[Special:CentralAuth/$1]]\n* 主wiki：$2\n* 新名称：[[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* 用户：[[Special:CentralAuth/$1]]\n* 主wiki：$2\n* 新名称：[[Special:CentralAuth/$3]]\n* 全域编辑计数：$4",
 	"globalrenamequeue-request-reason": "<strong>重命名请求原因</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "告知用户全域用户名冲突以为SUL工作完成做准备。",
 	"globalrenamequeue-request-comments-label": "备注/推理",

@@ -452,7 +452,7 @@
 	"globalrenamequeue-request-title": "Переименовать «$1»?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> запрашивает переименование в <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* участник: [[Special:CentralAuth/$1]]\n* основная вики: $2\n* новое имя: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* участник: [[Special:CentralAuth/$1]]\n* основная вики: $2\n* новое имя: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* участник: [[Special:CentralAuth/$1]]\n* основная вики: $2\n* новое имя: [[Special:CentralAuth/$3]]\n* глобальное количество правок: $4",
 	"globalrenamequeue-request-reason": "<strong>Причина запроса переименования</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Участник уведомлен о конфликте глобальных имён при подготовке к финализации ЕУЗ.",
 	"globalrenamequeue-request-suppressredirects": "Запретить создание перенаправлений",
