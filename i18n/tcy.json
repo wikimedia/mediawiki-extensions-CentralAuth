@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"VASANTH S.N."
+			"VASANTH S.N.",
+			"Vishwanatha Badikana"
 		]
 	},
 	"centralauth-foreign-link": "ಬಳಕೆದಾರ $1 $2ದ ಉಲಾಯಿ",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|ಕೊಡುಗೆಲು}} ಮಿತ್ತ್ $2",
+	"centralauth-merge-method-login": "ಲಾಗಿನ್‍ನ್ ದಾಕಲಿಸಯಿನಾರ್",
 	"centralauth-finish-login": "ಲಾಗಿನ್ ಆಲೆ",
 	"centralauth-finish-send-confirmation": "ಪೊಸ ಪಾಸ್-ವರ್ಡ್’ನ್ ಇ-ಮೇಲ್ ಮಲ್ಪುಲೆ",
 	"centralauth-admin-username": "ಸದಸ್ಯೆರ್ನ ಪುದರ್:",

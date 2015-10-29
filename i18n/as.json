@@ -4,7 +4,8 @@
 			"Bishnu Saikia",
 			"Chaipau",
 			"Gitartha.bordoloi",
-			"Psneog"
+			"Psneog",
+			"Dibya Dutta"
 		]
 	},
 	"mergeaccount": "প্ৰৱেশ একত্ৰীকৰণ অৱস্থা",
@@ -259,5 +260,6 @@
 	"right-centralauth-lock": "গোলকীয় একাউণ্ট বন্ধ বা গোপন কৰক",
 	"right-centralauth-oversight": "গোলকীয় একাউণ্ট নিবাৰণ কৰক",
 	"right-centralauth-merge": "তেওঁলোকৰ একাউণ্ট একত্ৰিত কৰক",
-	"right-globalgrouppermissions": "গোলকীয় গোটসমূহৰ ব্যৱস্থাপনা কৰক"
+	"right-globalgrouppermissions": "গোলকীয় গোটসমূহৰ ব্যৱস্থাপনা কৰক",
+	"globalrenamequeue-request-userinfo-global": "* সদস্য: [[Special:CentralAuth/$1]]\n* গৃহ ৱিকি: $2\n* নতুন নাম: [[Special:CentralAuth/$3]]\n* গোলকীয় সম্পাদনাৰ সংখ্যা: $4"
 }

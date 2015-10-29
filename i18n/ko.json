@@ -21,7 +21,8 @@
 			"콩가루",
 			"SeoJeongHo",
 			"Ysjbserver",
-			"Hwangjy9"
+			"Hwangjy9",
+			"Yearning"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -445,7 +446,7 @@
 	"globalrenamequeue-request-title": "\"$1\"의 이름을 바꾸겠습니까?",
 	"globalrenamequeue-request-header": "<strong> [$1 $2]</strong> 사용자가 <strong>$3</strong>으로 이름을 바꾸는 것을 요청하고 있습니다.",
 	"globalrenamequeue-request-userinfo-local": "* 사용자: [[Special:CentralAuth/$1]]\n* 홈 위키: $2\n* 새 이름: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* 사용자: [[Special:CentralAuth/$1]]\n* 홈 위키: $2\n* 새 이름: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* 사용자: [[Special:CentralAuth/$1]]\n* 홈 위키: $2\n* 새 이름: [[Special:CentralAuth/$3]]\n* 국제 편집 회수: $4",
 	"globalrenamequeue-request-reason": "<strong>이름 바꾸기를 요청하는 이유</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "SUL 마무리 조치를 위한 통합 계정 이름 충돌에 대해 사용자가 알림을 받으",
 	"globalrenamequeue-request-comments-label": "참고/추론",
