@@ -30,7 +30,8 @@
 			"Kuailong",
 			"Mywood",
 			"Impersonator 1",
-			"Cdz"
+			"Cdz",
+			"范"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -285,7 +286,7 @@
 	"centralauth-editgroup-member": "本地化组成员名:",
 	"centralauth-editgroup-member-edit": "$2 （[[MediaWiki:Group-$1-member|编辑]]）",
 	"centralauth-editgroup-members": "成员表:",
-	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|含有$2许可的用户名单]]",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|含有$2权限的用户名单]]",
 	"centralauth-editgroup-restrictions": "该用户组有效的维基集合：",
 	"centralauth-editgroup-rename-taken": "重命名失败：已有一个组名称为$1。",
 	"centralauth-editgroup-noset": "（无）",

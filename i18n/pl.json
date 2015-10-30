@@ -29,7 +29,8 @@
 			"Py64",
 			"Tar Lócesilion",
 			"Peter Bowman",
-			"Devwebtel"
+			"Devwebtel",
+			"The Polish"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -203,7 +204,7 @@
 	"centralauth-years-ago": "{{PLURAL:$1|rok|$1 lata|$1 lat}} temu",
 	"centralauth-prefs-status": "Konto uniwersalne:",
 	"centralauth-prefs-not-managed": "nie używasz konta uniwersalnego",
-	"centralauth-prefs-unattached": "niepotwierdzone",
+	"centralauth-prefs-unattached": "Nie w pełni połączone",
 	"centralauth-prefs-count-attached": "Twoje konto jest aktywne w $1 {{PLURAL:$1|projekcie|projektach}}.",
 	"centralauth-prefs-count-unattached": "Nieprzyłączone konta o nazwie zbieżnej z Twoją są w $1 {{PLURAL:$1|projekcie|projektach}}.",
 	"centralauth-prefs-detail-unattached": "Konto na tej witrynie nie zostało przyłączone do konta uniwersalnego.",
