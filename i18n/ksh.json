@@ -8,7 +8,7 @@
 	"centralauth-groupname": "de Wikimedia Shtefftung",
 	"centralauth-desc": "Der Metmaacher ier [[Special:MergeAccount|Aanmeldunge zosammeläje]] zwesche de Wikis fun de {{int:Centralauth-groupname}}.",
 	"centralauth-antispoof-desc": "Deiht Täschneke jääje e Fälsche bei CentralAuth derbei.",
-	"centralauth-rename-desc": "Määd et Ömdeufe vun Metmaacher metjemeinsamme Aanmeldonge müjjelesch",
+	"centralauth-rename-desc": "Määd et Ömdeufe vun Metmaacher met jemeinsamme Aanmeldonge müjjelesch.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Aanmeldunge zosamme läje]] för nur eimol enlogge ze mösse zwesche de Wikimedia Steftung ier Wikis",
 	"centralauth-merge-denied": "Deit mer leid, ävver Do häs nit dat Rääsch, op di Sigg heh zohzejriife.",
 	"centralauth-merge-notlogged": "Bes esu joot un don <span class=\"plainlinks\">[$1Enlogge]</span>,\nöm ze pröfe, ov Dinge Metmaacher-Name ald all zosamme jelaat wode sin.",
