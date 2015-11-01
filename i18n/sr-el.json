@@ -277,7 +277,7 @@
 	"right-globalgroupmembership": "izmena članstva u globalnim grupama",
 	"right-centralauth-autoaccount": "automatsko prijavljivanje s globalnim nalogom",
 	"right-centralauth-unmerge": "razdvajanje globalnih naloga",
-	"right-centralauth-lock": "zaključavanje ili otključavanje globalnog naloga",
+	"right-centralauth-lock": "zaključavanje/otključavanje globalnog naloga",
 	"right-centralauth-oversight": "potiskivanje ili skrivanje globalnog naloga",
 	"right-centralauth-merge": "spajanje sopstvenih naloga",
 	"right-globalgrouppermissions": "upravljanje globalnim grupama",
