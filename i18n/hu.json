@@ -312,7 +312,7 @@
 	"centralauth-rename-viewprogress": "Folyamat megtekintése",
 	"centralauth-rename-progress-fieldset": "Helyi fiókok listája",
 	"centralauth-rename-progress-logs-fieldset": "Naplóbejegyzések",
-	"centralauth-rename-movelog": "Automatikusan átnevezett lap, „[[Special:CentralAuth/$1|$1]]” szerkesztő átnevezve „[[Special:CentralAuth/$2|$2]]” névre",
+	"centralauth-rename-movelog": "Lap automatikusan átnevezve „[[Special:CentralAuth/$1|$1]]” „[[Special:CentralAuth/$2|$2]]” névre való átnevezése közben",
 	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését.",
 	"globalrenamerequest-desc": "Globális fiókátnevezés kérése",
 	"globalrenamerequest": "Átnevezési kérelem",
