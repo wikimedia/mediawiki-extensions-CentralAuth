@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_41cbbb74",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T23:48:54Z",
+      "side": 1,
+      "message": "Tiny code style nitpick: this kind of thing is more readable as\n\n    if ( !$id ) {\n        return array();\n    }\n    $key \u003d ...",
+      "revId": "2d579f9859d99d13bc69f05bbc47071e62f08f3f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
