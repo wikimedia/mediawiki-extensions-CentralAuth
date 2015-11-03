@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_d0853b0c",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Done in the parent patch.",
+      "parentUuid": "0ebaf39b_5f408138",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_44bc3401",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-03T09:42:50Z",
       "side": 1,
       "message": "Why not take everything from $config? The current implementation falls back to globals anyway.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_f0895fef",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Because Config is silly. $config might only have core configuration settings, requiring ConfigFactory::getDefaultInstance()-\u003emakeConfig( \u0027CentralAuth\u0027 ) to get the Config object that has CentralAuth\u0027s configuration.\n\nIt\u0027ll work with the current default GlobalVarConfig, but not necessarily in the future.\n\nBlame Lego.",
+      "parentUuid": "0ebaf39b_44bc3401",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_507aabe7",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Composition is troublesome because we really do want to override setLoggedOutCookie() and sessionDataToExport() in the base class. \"Two session providers\" is troublesome because we can\u0027t change the provider responsible for the session based on which user gets passed to Session::setUser(), which we would need to to in order to support non-centralized users.\n\nSo if you insist, we\u0027d need a subclass of CookieSessionProvider that only overrides those two methods that is then composed into this class.\n\n----\n\n$this-\u003eenable on line 76 is that check. Or if you\u0027re talking about the renaming thing, that\u0027s now done by CentralAuthHooks::onSessionCheckInfo().",
+      "parentUuid": "0ebaf39b_641ff80d",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_7f6225d6",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -64,6 +118,41 @@
       "writtenOn": "2015-11-03T09:42:50Z",
       "side": 1,
       "message": "Is this done to reset the expiration time of the central session? Maybe worth adding a comment about it, the code looks quite mysterious at first glance.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_0b688418",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "To reset the ID of the central session, actually. Comments added.",
+      "parentUuid": "0ebaf39b_7f6225d6",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_6b1ee0bf",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "I need to not do this unconditionally, it only applies if we have an attached central user.",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_ab8378ab",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "The logging out on one site logs you out everywhere is done by $centralUser-\u003eresetAuthToken() in CentralAuthHooks::onUserLogout().\n\nGood call on the core Token cookie.",
+      "parentUuid": "0ebaf39b_0a6165a3",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_aaf619f4",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -98,6 +205,24 @@
       "writtenOn": "2015-11-03T09:42:50Z",
       "side": 1,
       "message": "This needs to be done for each setCookie call separately.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_8b65540f",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ebaf39b_aaf619f4",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_6b56e02e",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ebaf39b_caf90de6",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_2aea2905",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -138,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_0b3964ef",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "No, fixed.",
+      "parentUuid": "0ebaf39b_2aea2905",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_2ac1c982",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -149,6 +310,24 @@
       "writtenOn": "2015-11-03T09:42:50Z",
       "side": 1,
       "message": "This felt like a good time to improve the WebRequest::setCookie() interface -\u003e I0357c4a38085c4754bf6ff7e40756179d19b912d",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_6b04a01a",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ebaf39b_2ac1c982",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -190,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_a60ded3a",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Because $options isn\u0027t defined in this code path.",
+      "parentUuid": "0ebaf39b_aa0a99d2",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_cad02d56",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -201,6 +398,24 @@
       "writtenOn": "2015-11-03T09:42:50Z",
       "side": 1,
       "message": "I think this should be $expiry : null.\n\nAlso, doesn\u0027t matter much but using 1 for cookie value looked cleaner.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_c61b4171",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "This matches what core did and does for the cookie.\n\n$expiry isn\u0027t defined here.",
+      "parentUuid": "0ebaf39b_cad02d56",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -224,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_064dd975",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ebaf39b_aacdb9bd",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_0ac5e563",
         "filename": "includes/specials/SpecialCentralAutoLogin.php",
         "patchSetId": 6
@@ -235,6 +468,24 @@
       "writtenOn": "2015-11-03T09:42:50Z",
       "side": 1,
       "message": "$type?",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_f0887f24",
+        "filename": "includes/specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-03T21:53:13Z",
+      "side": 1,
+      "message": "D\u0027oh.",
+      "parentUuid": "0ebaf39b_0ac5e563",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
