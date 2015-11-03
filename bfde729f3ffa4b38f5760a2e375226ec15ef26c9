@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_5f408138",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "Does not match the argument name. (Not introduced in this patch, but since you are touching this method anyway...)",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_44bc3401",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "Why not take everything from $config? The current implementation falls back to globals anyway.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_641ff80d",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "I feel a bit uncomfortable about this. If in the future someone changes CookieSessionProvider::provideSessionInfo to call a function call that\u0027s overriden in this class, this will behave in an unpredictable way; and it\u0027s near impossible to catch such a bug in code review, since the change would be in core but the bug in CentralAuth.\nWould it be inconvenient to just use two separate providers, or have this provider wrap the other one and delegate to it, instead of relying on inheritance?\n\n----\n\nThe check in https://github.com/wikimedia/mediawiki-extensions-CentralAuth/blob/master/includes/CentralAuthHooks.php#L809 gets dropped here. I suppose it won\u0027t be missed, but maybe mention it in the summary?",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_7f6225d6",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "Is this done to reset the expiration time of the central session? Maybe worth adding a comment about it, the code looks quite mysterious at first glance.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_0a6165a3",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "I believe it is done so that logging out on one site logs you out everywhere. That also requires unsetting/not setting the core Token cookie, I believe that is missing here.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_aaf619f4",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "This needs to be done for each setCookie call separately.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_caf90de6",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "Maybe add a comment that this sets it to the normal cookie expiry time (or just set it explicitly, like the old code did)? That\u0027s one super confusing aspect of the setCookie interface.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_2aea2905",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "Was the P3P stuff dropped intentionally? If so, can you mention it in the commit message?",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_2ac1c982",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "This felt like a good time to improve the WebRequest::setCookie() interface -\u003e I0357c4a38085c4754bf6ff7e40756179d19b912d",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_aa0a99d2",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "Is there a reason to use $this-\u003ecentralCookieOptions instead of $options here? That way an attacker might learn the user has logged in to the wiki recently, even if the wiki is HTTPS-only.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_cad02d56",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "I think this should be $expiry : null.\n\nAlso, doesn\u0027t matter much but using 1 for cookie value looked cleaner.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_aacdb9bd",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "You could update the bug number format to Phabricator.",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_0ac5e563",
+        "filename": "includes/specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T09:42:50Z",
+      "side": 1,
+      "message": "$type?",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
