@@ -2882,11 +2882,10 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
-	 * @param string $wiki
-	 * @param integer $id
+	 * @param string $wikiId
+	 * @param integer $userId
 	 */
-	private function clearLocalUserCache( $wiki, $id ) {
-		// @TODO: this has poor separation of concerns :/
-		ObjectCache::getMainWANInstance()->delete( "$wiki:user:id:$id" );
+	private function clearLocalUserCache( $wikiId, $userId ) {
+		User::purge( $wikiId, $userId );
 	}
 }
