@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_86d0e9fb",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T22:31:20Z",
+      "side": 1,
+      "message": "\u003e It\u0027ll work with the current default GlobalVarConfig, but not necessarily in the future.\n\nI would expect the globals to stop working as well in that future.\nAnyway, not really related to this patch, feel free to ignore.",
+      "parentUuid": "0ebaf39b_f0895fef",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_641ff80d",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "Composition is troublesome because we really do want to override setLoggedOutCookie() and sessionDataToExport() in the base class. \"Two session providers\" is troublesome because we can\u0027t change the provider responsible for the session based on which user gets passed to Session::setUser(), which we would need to to in order to support non-centralized users.\n\nSo if you insist, we\u0027d need a subclass of CookieSessionProvider that only overrides those two methods that is then composed into this class.\n\n----\n\n$this-\u003eenable on line 76 is that check. Or if you\u0027re talking about the renaming thing, that\u0027s now done by CentralAuthHooks::onSessionCheckInfo().",
       "parentUuid": "0ebaf39b_641ff80d",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_061ab9d0",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T22:31:20Z",
+      "side": 1,
+      "message": "Fair point, I didn\u0027t think the composition thing through. I guess the current setup is still the least evil.",
+      "parentUuid": "0ebaf39b_507aabe7",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -416,6 +452,24 @@
       "side": 1,
       "message": "This matches what core did and does for the cookie.\n\n$expiry isn\u0027t defined here.",
       "parentUuid": "0ebaf39b_cad02d56",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_6675b5f3",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T22:31:20Z",
+      "side": 1,
+      "message": "Uh, not sure where I got the expiry bit, that wouldn\u0027t make sense anyway. CentralAuth used \u00271\u0027 as value: https://github.com/wikimedia/mediawiki-extensions-CentralAuth/blob/master/includes/CentralAuthUser.php#L2430 but matching what core does is certainly better (and it is unlikely to make a difference anyway).",
+      "parentUuid": "0ebaf39b_c61b4171",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
