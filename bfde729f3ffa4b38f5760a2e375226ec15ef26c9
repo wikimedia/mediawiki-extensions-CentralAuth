@@ -172,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_45418e38",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-11-03T11:10:34Z",
+      "side": 1,
+      "message": "Um, it might not, of course, unless the user\u0027s clock is extremely out of date. Anyway, it\u0027s easier to read if the same variable is used everywhere, if there is no functional difference. I don\u0027t think httpOnly matters when deleting a cookie.",
+      "parentUuid": "0ebaf39b_aa0a99d2",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_cad02d56",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
