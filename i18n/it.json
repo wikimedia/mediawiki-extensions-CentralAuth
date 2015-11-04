@@ -308,7 +308,7 @@
 	"centralauth-editset-submit-delete": "Cancella",
 	"centralauth-editset-badname": "Nome dell'insieme non valido o vuoto.",
 	"centralauth-editset-badtype": "Tipo dell'insieme non valido.",
-	"centralauth-editset-setexists": "Esiste già un insieme con quel nome",
+	"centralauth-editset-setexists": "Un insieme con quel nome esiste già.",
 	"centralauth-editset-nowikis": "(nessuno)",
 	"centralauth-editset-nouse": "(nessuno)",
 	"centralauth-editset-usage": "Usato nei gruppi:",
