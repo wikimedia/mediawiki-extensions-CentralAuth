@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_128430a2",
+        "filename": "CentralAuth.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 255
+      },
+      "writtenOn": "2015-11-04T17:51:54Z",
+      "side": 1,
+      "message": "There is no indication of what sort of values go in this array apart from a vague description.. Could you have an @example value and maybe a @see that points to the related Core config vars?",
+      "revId": "09646c0f31138f374f3bd5daeb0c98476fe4797f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
