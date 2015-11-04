@@ -16,6 +16,24 @@
       "revId": "f7e3856812a90951da00602d1e5f02ea255477ef",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_4701883b",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-04T16:17:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ebaf39b_66a37597",
+      "revId": "f7e3856812a90951da00602d1e5f02ea255477ef",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
