@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_274c94ca",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-04T16:17:38Z",
+      "side": 1,
+      "message": "Maybe, or maybe core would start using something other than globals while the extension still did globals. In any case, CentralAuth hasn\u0027t been converted to using Config and I\u0027m not about to try to do so; whoever does do so can update this when they update the rest of the extension.",
+      "parentUuid": "0ebaf39b_86d0e9fb",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_641ff80d",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 6
@@ -470,6 +488,24 @@
       "side": 1,
       "message": "Uh, not sure where I got the expiry bit, that wouldn\u0027t make sense anyway. CentralAuth used \u00271\u0027 as value: https://github.com/wikimedia/mediawiki-extensions-CentralAuth/blob/master/includes/CentralAuthUser.php#L2430 but matching what core does is certainly better (and it is unlikely to make a difference anyway).",
       "parentUuid": "0ebaf39b_c61b4171",
+      "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_47dae8ed",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-11-04T16:17:38Z",
+      "side": 1,
+      "message": "Yeah, everything that tests it just checks for truthiness.",
+      "parentUuid": "0ebaf39b_6675b5f3",
       "revId": "bfde729f3ffa4b38f5760a2e375226ec15ef26c9",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
