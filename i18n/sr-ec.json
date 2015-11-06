@@ -171,7 +171,7 @@
 	"centralauth-prefs-unattached": "Није до краја обједињен",
 	"centralauth-prefs-count-attached": "Ваш налог је активан на $1 {{PLURAL:$1|викију|викија}}.",
 	"centralauth-prefs-count-unattached": "На $1 {{PLURAL:$1|викију|викија}} су остали непотврђени налози с вашим именом.",
-	"centralauth-prefs-detail-unattached": "За овај пројекат није потврђено да припада глобалном налогу.",
+	"centralauth-prefs-detail-unattached": "Није потврђено да Ваш налог припада глобалном налогу.",
 	"centralauth-prefs-manage": "Управљај глобалним налогом",
 	"centralauth-prefs-view": "Прикажи глобалне податке налога",
 	"centralauth-renameuser-merged": "Корисник $1 је прешао на систем за пријављивање с уједињеним налогом.\nПреименовање ће узроковати да се локални налог одвоји од глобалног.",
