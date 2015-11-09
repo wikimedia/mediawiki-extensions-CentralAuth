@@ -7,7 +7,8 @@
 			"Vinhtantran",
 			"Trần Nguyễn Minh Huy",
 			"Max20091",
-			"KhangND"
+			"KhangND",
+			"Nguyên Lê"
 		]
 	},
 	"mergeaccount": "Tình trạng hợp nhất tài khoản",
@@ -192,8 +193,8 @@
 	"centralauth-renameuser-reserved": "Tên $2 dành cho tài khoản toàn cục.",
 	"centralauth-invalid-wiki": "Không có CSDL wiki như vậy: $1",
 	"centralauth-account-exists": "Không thể tạo tài khoản: Tên người dùng chỉ định đã được sử dụng bởi một người trên wiki khác.",
-	"centralauth-account-unattached-exists": "Không thể mở tài khoản: Tên người dùng được yêu cầu sẽ xung đột với một tên người dùng khác trên một wiki khác.",
-	"centralauth-account-rename-exists": "Không thể mở tài khoản: tên người dùng được yêu cầu sẽ xung đột với một tên người dùng khác trên một wiki khác.",
+	"centralauth-account-unattached-exists": "Không thể mở tài khoản: Tên người dùng đã tồn tại. Xin hãy chọn tên khác.",
+	"centralauth-account-rename-exists": "Không thể mở tài khoản: Tên người dùng đã tồn tại. Xin hãy chọn tên khác.",
 	"centralauth-account-exists-reset": "Wiki này chưa có tài khoản với tên người dùng “$1”, nhưng bạn có thể đặt lại mật khẩu của bạn trên [[Special:CentralAuth/$1|một trong những wiki có tài khoản này]].",
 	"centralauth-login-progress": "Đang đăng nhập bạn vào các wiki của {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Đang đăng xuất bạn ra khỏi các wiki khác của {{int:Centralauth-groupname}}:",
