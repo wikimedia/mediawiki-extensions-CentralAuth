@@ -63,16 +63,15 @@ class PopulateListOfUsersToRename extends Maintenance {
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
 		// multiple times, so lets cache it.
-		$cache = new MapCacheLRU( $this->mBatchSize );
+		$cache = new HashBagOStuff( array( 'maxKeys' => $this->mBatchSize ) );
 		do {
 			$rows = $this->doQuery();
 			$insertRows = array();
 			foreach ( $rows as $row ) {
 				$this->lName = $row->name;
 				$this->lWiki = $row->wiki;
-				if ( $cache->has( $row->name ) ) {
-					$attachableWikis = $cache->get( $row->name );
-				} else {
+				$attachableWikis = $cache->get( $row->name );
+				if ( !$attachableWikis ) {
 					$ca = new CentralAuthUser( $row->name );
 					$attachableWikis = array();
 					$unattached = $ca->queryUnattached();
