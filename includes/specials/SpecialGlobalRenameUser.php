@@ -25,6 +25,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @param string $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
+		$this->outputHeader();
 		parent::execute( $par );
 		$this->getOutput()->addModules( 'ext.centralauth.globalrenameuser' );
 		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
