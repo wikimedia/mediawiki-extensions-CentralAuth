@@ -9,8 +9,8 @@
 		]
 	},
 	"mergeaccount": "Status spajanja korisničkih računa",
-	"centralauth-groupname": "Fondacija Wikimedija",
-	"centralauth-desc": "[[Special:MergeAccount|Spaja račune]] na svim wikijima od {{int:Centralauth-groupname}}",
+	"centralauth-groupname": "Zadužbine Wikimedije",
+	"centralauth-desc": "[[Special:MergeAccount|Spajanje računa]] na svim wikijima {{int:Centralauth-groupname}}",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Spaja više računa]] za jedinstvenu korisničku prijavu",
 	"centralauth-merge-denied": "Izvinjavamo se, nemate dopuštenja da pregledate ovu stranicu.",
 	"centralauth-merge-notlogged": "Molimo Vas <span class=\"plainlinks\">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prijavite se]</span> da bi ste provjerili da li su Vaši računi potpuno spojeni.",
@@ -277,5 +277,6 @@
 	"globalrenamerequest-newname-help": "Upišite novo korisničko ime koje želite koristiti. Npr. \"$1\".",
 	"globalrenamerequest-reason-label": "Razlog",
 	"globalrenamerequest-submit-text": "Podnesi zahtjev",
+	"globalrenamequeue-desc": "Obrađivanje globalnih zahtjeva za preimenovanje",
 	"globalrenamequeue-column-rq-newname": "Željeno korisničko ime"
 }

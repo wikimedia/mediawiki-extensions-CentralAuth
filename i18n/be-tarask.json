@@ -311,5 +311,6 @@
 	"globalrenamerequest-username-label": "Цяперашняе імя ўдзельніка:",
 	"globalrenamerequest-newname-label": "Жаданае імя ўдзельніка:",
 	"globalrenamerequest-newname-help": "Увядзіце новае імя ўдзельніка, якім вы жадаеце карыстацца, напрыклад, «$1».",
+	"globalrenamerequest-reason-label": "Прычына запыту",
 	"userswhowillberenamed": "Удзельнікі, якія будуць перайменаваныя"
 }
