@@ -793,17 +793,21 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private function showLogExtract() {
 		$user = $this->mGlobalUser->getName();
-		$text = '';
+		$title = Title::newFromText( MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global" );
+		if ( !$title ) {
+			// Don't fatal even if a Title couldn't be generated
+			// because we've invalid usernames too :/
+			return;
+		}
 		$logTypes = array( 'globalauth' );
 		if ( $this->mCanOversight ) {
 			$logTypes[] = 'suppress';
 		}
+		$text = '';
 		$numRows = LogEventsList::showLogExtract(
 			$text,
 			$logTypes,
-			Title::newFromText(
-				MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global"
-			)->getPrefixedText(),
+			$title->getPrefixedText(),
 			'',
 			array( 'showIfEmpty' => true ) );
 		if ( $numRows ) {
