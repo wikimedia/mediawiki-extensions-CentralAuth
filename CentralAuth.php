@@ -580,6 +580,10 @@ $wgResourceModules['ext.centralauth.globalrenameuser'] = array(
 	)
 ) + $commonModuleInfo;
 
+$wgResourceModules['ext.centralauth.globalrenameuser.styles'] = array(
+	'styles' => 'ext.centralauth.globalrenameuser.css',
+) + $commonModuleInfo;
+
 $wgResourceModules['ext.centralauth.ForeignApi'] = array(
 	'scripts' => 'ext.centralauth.ForeignApi.js',
 	'dependencies' => array(
