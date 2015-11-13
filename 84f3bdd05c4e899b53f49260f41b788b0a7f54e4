@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_90b775f2",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-11-13T18:06:03Z",
+      "side": 1,
+      "message": "Probably needs PLURAL",
+      "revId": "84f3bdd05c4e899b53f49260f41b788b0a7f54e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_b0bcf9d6",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-11-13T18:06:03Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "84f3bdd05c4e899b53f49260f41b788b0a7f54e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_d0b16de0",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-11-13T18:06:03Z",
+      "side": 1,
+      "message": "Since this is a little expensive we could check if the parameter has already been passed, and add the checkbox if that\u0027s the case?",
+      "revId": "84f3bdd05c4e899b53f49260f41b788b0a7f54e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_70952142",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-11-13T18:06:03Z",
+      "side": 1,
+      "message": "This code path should be in the validate() function. I would recommend implementing it similar to the $overrideAntiSpoof option, with a member variable maintaining the state of it.",
+      "revId": "84f3bdd05c4e899b53f49260f41b788b0a7f54e4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
