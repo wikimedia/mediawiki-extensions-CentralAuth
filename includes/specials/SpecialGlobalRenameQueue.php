@@ -113,11 +113,59 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	/**
+	 * Get an array of fields for use by the HTMLForm shown above the pager.
+	 *
+	 * @return array
+	 */
+	private function getCommonFormFieldsArray() {
+		$lang = $this->getLanguage();
+		return array(
+			'username' => array(
+				'type' => 'text',
+				'name' => 'username',
+				'label-message' => 'globalrenamequeue-form-username',
+				'size' => 30,
+			),
+			'newname' => array(
+				'type' => 'text',
+				'name' => 'newname',
+				'size' => 30,
+				'label-message' => 'globalrenamequeue-form-newname',
+			),
+			'limit' => array(
+				'type' => 'limitselect',
+				'name' => 'limit',
+				'label-message' => 'table_pager_limit_label',
+				'options' => array(
+					$lang->formatNum( 25 ) => 25,
+					$lang->formatNum( 50 ) => 50,
+					$lang->formatNum( 75 ) => 75,
+					$lang->formatNum( 100 ) => 100,
+				),
+			),
+		);
+	}
+
+	/**
+	 * Initialize and output the HTMLForm used for filtering.
+	 *
+	 * @param array $fields
+	 */
+	private function outputFilterForm( array $fields ) {
+		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
+		$form->setMethod( 'get' );
+		$form->setWrapperLegendMsg( 'search' );
+		$form->prepareForm()->displayForm( false );
+	}
+
+	/**
 	 * Handle requests to display the open request queue
 	 */
 	protected function handleOpenQueue() {
 		$this->commonPreamble( 'globalrenamequeue' );
 		$this->commonNav( self::PAGE_OPEN_QUEUE );
+		$this->outputFilterForm( $this->getCommonFormFieldsArray() );
+
 		$pager = new RenameQueueTablePager( $this, self::PAGE_OPEN_QUEUE );
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
@@ -128,6 +176,24 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function handleClosedQueue() {
 		$this->commonPreamble( 'globalrenamequeue' );
 		$this->commonNav( self::PAGE_CLOSED_QUEUE );
+		$fields = array_merge(
+			$this->getCommonFormFieldsArray(),
+			array(
+				'status' => array(
+					'type' => 'select',
+					'name' => 'status',
+					'label-message' => 'globalrenamequeue-form-status',
+					'options-messages' => array(
+						'globalrenamequeue-form-status-all' => 'all',
+						'globalrenamequeue-view-approved' => GlobalRenameRequest::APPROVED,
+						'globalrenamequeue-view-rejected' => GlobalRenameRequest::REJECTED,
+					),
+					'default' => 'all',
+				)
+			)
+		);
+		$this->outputFilterForm( $fields );
+
 		$pager = new RenameQueueTablePager( $this, self::PAGE_CLOSED_QUEUE );
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
@@ -618,7 +684,11 @@ class RenameQueueTablePager extends TablePager {
 		$this->mOwner = $owner;
 		$this->mPage = $page;
 		$this->mDb = CentralAuthUser::getCentralSlaveDB();
-		$this->setLimit( 25 );
+
+		$limit = $this->getRequest()->getInt( 'limit', 25 );
+		// Override default cap of 5000
+		$this->setLimit( min( 100, $limit ) );
+
 		if ( $this->showOpenRequests() ) {
 			$this->mDefaultDirection = self::DIR_ASCENDING;
 		} else {
@@ -647,7 +717,7 @@ class RenameQueueTablePager extends TablePager {
 				'rq_requested_ts',
 				'rq_status',
 				'rq_completed_ts',
-				'rq_deleted',
+				#'rq_deleted', not implemented yet
 				'rq_performer',
 				'rq_comments',
 			),
@@ -657,11 +727,33 @@ class RenameQueueTablePager extends TablePager {
 
 	protected function getQueryInfoConds() {
 		$conds = array();
+
+		$username = $this->getRequest()->getText( 'username' );
+		$username = User::getCanonicalName( $username );
+		if ( $username ) {
+			$conds['rq_name'] = $username;
+		}
+
+		$newname = $this->getRequest()->getText( 'newname' );
+		$newname = User::getCanonicalName( $newname );
+		if ( $newname ) {
+			$conds['rq_newname'] = $newname;
+		}
+
 		if ( $this->showOpenRequests() ) {
 			$conds['rq_status'] = GlobalRenameRequest::PENDING;
 		} else {
-			$conds[] = "rq_status <> '" . GlobalRenameRequest::PENDING . "'";
+			$status = $this->getRequest()->getVal( 'status', 'all' );
+			$closedStatuses = array( GlobalRenameRequest::APPROVED, GlobalRenameRequest::REJECTED );
+			if ( in_array( $status, $closedStatuses ) ) {
+				// User requested closed status - either approved or rejected
+				$conds['rq_status'] = $status;
+			} else {
+				// All closed requests
+				$conds[] = "rq_status <> '" . GlobalRenameRequest::PENDING . "'";
+			}
 		}
+
 		return $conds;
 	}
 
