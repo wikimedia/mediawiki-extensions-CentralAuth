@@ -17,6 +17,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideAntiSpoof = false;
 
+	/**
+	 * @const int Require confirmation if olduser has more than this many global edits
+	 */
+	const EDITCOUNT_THRESHOLD = 50000;
+
 	function __construct() {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 	}
@@ -28,13 +33,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		parent::execute( $par );
 		$this->getOutput()->addModules( 'ext.centralauth.globalrenameuser' );
 		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalrenameuser.styles' );
 	}
 
 	/**
 	 * @return array
 	 */
 	function getFormFields() {
-		return array(
+		$fields = array(
 			'oldname' => array(
 				'id' => 'mw-globalrenameuser-oldname',
 				'name' => 'oldname',
@@ -75,8 +81,31 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				'label-message' => 'centralauth-rename-form-overrideantispoof',
 				'type' => 'check'
 			),
+			'allowhigheditcount' => array(
+				'name' => 'allowhigheditcount',
+				'type' => 'hidden',
+				'default' => '',
+			)
 		);
+
+		// Ask for confirmation if the user has more than 50k edits globally
+		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
+		if ( $oldName !== '' ) {
+			$caUser = new CentralAuthUser( $oldName );
+			if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
+				$fields['allowhigheditcount'] = array(
+					'id' => 'mw-globalrenameuser-allowhigheditcount',
+					'label' => $this->msg( 'centralauth-rename-form-allowhigheditcount' )
+						->numParams( self::EDITCOUNT_THRESHOLD )->escaped(),
+					'type' => 'check'
+				);
+			}
+		}
+
+		return $fields;
 	}
+
+
 
 	/**
 	 * Perform validation on the user submitted data
@@ -167,12 +196,21 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$this->oldUsername = $data['oldname'];
 		$oldUser = User::newFromName( $this->oldUsername );
 		$newUser = User::newFromName( $this->newUsername, 'creatable' );
+		$caOldUser = CentralAuthUser::getInstance( $oldUser );
+
+		// Let the performer know that olduser's editcount is more than the sysadmin-intervention-threshold
+		// and do the rename only if we've received confirmation that they want to do it.
+		if ( !$data['allowhigheditcount'] && $caOldUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
+			return Status::newFatal(
+				$this->msg( 'centralauth-rename-globaleditcount-threshold' )->numParams( self::EDITCOUNT_THRESHOLD )
+			);
+		}
 
 		$session = $this->getContext()->exportSession();
 		$globalRenameUser = new GlobalRenameUser(
 			$this->getUser(),
 			$oldUser,
-			CentralAuthUser::getInstance( $oldUser ),
+			$caOldUser,
 			$newUser,
 			CentralAuthUser::getInstance( $newUser ),
 			new GlobalRenameUserStatus( $newUser->getName() ),
