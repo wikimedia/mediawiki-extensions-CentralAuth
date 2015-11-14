@@ -164,6 +164,7 @@
 	"globalrenamerequest": "د نوم بدلون يوځای کېدنې غوښتنه",
 	"globalrenamerequest-legend": "د نوم بدلون يوځای کېدنې غوښتنه",
 	"globalrenamerequest-username-label": "اوسنی کارن-نوم:",
+	"globalrenamerequest-username-help": "اوس دا ستاسې کارن-نوم دی.",
 	"globalrenamerequest-newname-label": "غوښتلی کارن-نوم:",
 	"globalrenamerequest-reason-label": "د غوښتنې سبب",
 	"globalrenamerequest-submit-text": "د نوم بدلون غوښتنه کول",

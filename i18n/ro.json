@@ -386,5 +386,6 @@
 	"apihelp-globaluserrights-param-reason": "Motivul schimbării.",
 	"apihelp-query+globalallusers-description": "Enumeră toți utilizatorii globali.",
 	"apihelp-query+globalallusers-example-1": "Listează utilizatorii globali",
-	"apihelp-query+globalgroups-example-1": "Listează grupurile globale"
+	"apihelp-query+globalgroups-example-1": "Listează grupurile globale",
+	"userswhowillberenamed": "Utilizatori care vor fi redenumiți"
 }
