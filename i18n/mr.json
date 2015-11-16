@@ -373,5 +373,6 @@
 	"globalrenamerequest-reason-label": "विनंतीचे कारण",
 	"globalrenamerequest-submit-text": "नामबदलाची विनंती करा",
 	"globalrenamequeue-column-rq-newname": "विनंती केलेले सदस्यनाम",
-	"userswhowillberenamed": "सदस्य ज्यांचे पुनर्नामाभिधान होईल"
+	"userswhowillberenamed": "सदस्य ज्यांचे पुनर्नामाभिधान होईल",
+	"centralauth-uwbr-registration": "नोंदणीचा दिनांक"
 }
