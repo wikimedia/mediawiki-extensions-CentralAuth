@@ -471,7 +471,7 @@
 	"sulrenamewarning-usenew": "往後在登入時請使用{{GENDER:$1|您的}}新使用者名稱 '''$1'''。",
 	"globalrenamequeue-request-reason-label": "公開日誌項目評論 (若請求被接受)",
 	"apihelp-centralauthtoken-description": "取得 centralauthtoken 密鑰用來對已連結的 Wiki 做已授權的請求。",
-	"apihelp-centralauthtoken-example-1": "取得 centralauthtoken 密鑰",
+	"apihelp-centralauthtoken-example-1": "取得 centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "刪除一位全域使用者。",
 	"apihelp-deleteglobalaccount-param-user": "要刪除的使用者。",
 	"apihelp-deleteglobalaccount-param-reason": "刪除該使用者的原因。",

@@ -18,7 +18,8 @@
 			"Meelo",
 			"Mavrikant",
 			"McAang",
-			"Incelemeelemani"
+			"Incelemeelemani",
+			"HakanIST"
 		]
 	},
 	"mergeaccount": "Hesap birleştirme durumu",
@@ -368,7 +369,7 @@
 	"globalusermerge": "Küresel kullanıcı birleştirme",
 	"globalusermerge-legend": "Küresel kullanıcı birleştirme",
 	"centralauth-usermerge-form-newuser": "Son kullanıcı adı",
-	"centralauth-usermerge-form-usernames": "Mevcut kullanıcı adı",
+	"centralauth-usermerge-form-usernames": "Mevcut kullanıcı adları",
 	"centralauth-usermerge-form-reason": "Gerekçe",
 	"centralauth-usermerge-ratelimited": "Güvenlik önlemi olarak bir dakika içinde yalnızca bir kullanıcıyı birleştirmenize izin verilir. Lütfen bir dakika sonra tekrar deneyin.",
 	"globalrenamerequest-desc": "Genel hesap yeniden adlandırma isteği",
