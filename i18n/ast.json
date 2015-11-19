@@ -429,7 +429,7 @@
 	"globalrenamequeue-request-title": "¿Cambiar el nome de «$1»?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> ta solicitando un cambiu de nome a <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* usuariu: [[Special:CentralAuth/$1]]\n* wiki llocal: $2\n* nome nuevu: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* usuariu: [[Special:CentralAuth/$1]]\n* wiki llocal: $2\n* nome nuevu: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* usuariu: [[Special:CentralAuth/$1]]\n* wiki llocal: $2\n* nome nuevu: [[Special:CentralAuth/$3]]\n* cuenta d'ediciones global: $4",
 	"globalrenamequeue-request-reason": "<strong>Motivu de la solicitú de cambiu de nome</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Usuariu informáu d'un conflictu de nome global na preparación pa finar la unificación (SUL).",
 	"globalrenamequeue-request-comments-label": "Notes/motivos",

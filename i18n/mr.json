@@ -138,7 +138,7 @@
 	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" साठी वैश्विक खाते नाही",
 	"centralauth-admin-delete-nonexistent": "त्रुटी: \"<nowiki>$1</nowiki>\" हे वैश्विक खाते अस्तित्वात नाही.",
 	"centralauth-token-mismatch": "माफ करा, सत्र विदेच्या क्षयामुळे आपल्या अर्जावर प्रक्रिया होउ शकत नाही.",
-	"centralauth-state-mismatch": "त्रूटी:या सदस्याचा संपादन विसंवाद आढळला. कृपया आपले बदल तपासा व पुन्हा प्रयत्न करा.",
+	"centralauth-state-mismatch": "त्रुटी:या सदस्याचा संपादन विसंवाद आढळला. कृपया आपले बदल तपासा व पुन्हा प्रयत्न करा.",
 	"centralauth-admin-reason": "कारण:",
 	"centralauth-admin-reason-other": "इतर/अतिरिक्त कारण:",
 	"centralauth-admin-reason-other-select": "इतर कारण:",
