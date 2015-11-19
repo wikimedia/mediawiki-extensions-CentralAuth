@@ -116,6 +116,32 @@ class CentralAuthUser extends AuthPluginUser {
 	}
 
 	/**
+	 * Return query data needed to properly use self::newFromRow
+	 * @return array (
+	 *   'tables' => array,
+	 *   'fields' => array,
+	 *   'where' => array,
+	 *   'options' => array,
+	 *   'joinConds' => array,
+	 *  )
+	 */
+	public static function selectQueryInfo() {
+		return array(
+			'tables' => array( 'globaluser', 'localuser' ),
+			'fields' => array(
+				'gu_id', 'gu_name', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
+				'gu_locked', 'gu_hidden', 'gu_registration', 'gu_email',
+				'gu_email_authenticated', 'gu_home_db',
+			),
+			'where' => array(),
+			'options' => array(),
+			'joinConds' => array(
+				'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
+			),
+		);
+	}
+
+	/**
 	 * Get a CentralAuthUser object from a user's id
 	 *
 	 * @param int $id
@@ -204,19 +230,15 @@ class CentralAuthUser extends AuthPluginUser {
 		// since we're caching it.
 		$dbw = self::getCentralDB();
 
+		$queryInfo = self::selectQueryInfo();
+
 		$row = $dbw->selectRow(
-			array( 'globaluser', 'localuser' ),
-			array(
-				'gu_id', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
-				'gu_locked', 'gu_hidden', 'gu_registration', 'gu_email',
-				'gu_email_authenticated', 'gu_home_db',
-			),
-			array( 'gu_name' => $this->mName ),
+			$queryInfo['tables'],
+			$queryInfo['fields'],
+			array( 'gu_name' => $this->mName ) + $queryInfo['where'],
 			__METHOD__,
-			array(),
-			array(
-				'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
-			)
+			$queryInfo['options'],
+			$queryInfo['joinConds']
 		);
 
 		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );

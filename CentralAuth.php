@@ -298,6 +298,7 @@ $wgAutoloadClasses['WikiSet'] = "$caBase/includes/WikiSet.php";
 $wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/includes/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/includes/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/includes/CentralAuthUserArray.php";
+$wgAutoloadClasses['CentralAuthIdLookup'] = "$caBase/includes/CentralAuthIdLookup.php";
 $wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/includes/specials/SpecialGlobalGroupMembership.php";
 $wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/includes/CentralAuthGroupMembershipProxy.php";
 $wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/includes/specials/SpecialGlobalGroupPermissions.php";
@@ -587,6 +588,18 @@ $wgResourceModules['ext.centralauth.ForeignApi'] = array(
 	),
 	'targets' => array( 'desktop', 'mobile' ),
 ) + $commonModuleInfo;
+
+if ( isset( $wgCentralIdLookupProviders ) ) {
+	$wgCentralIdLookupProviders['CentralAuth'] = array(
+		'class' => 'CentralAuthIdLookup',
+	);
+
+	// Assume they want CentralAuth as the default central ID provider, unless
+	// already configured otherwise.
+	if ( $wgCentralIdLookupProvider === 'local' ) {
+		$wgCentralIdLookupProvider = 'CentralAuth';
+	}
+}
 
 // Finish configuration after other extensions and settings are loaded.
 $wgExtensionFunctions[] = 'CentralAuthHooks::onRunExtensionFunctions';
