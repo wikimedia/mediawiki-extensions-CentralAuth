@@ -177,10 +177,10 @@
 	"centralauth-days-ago": "$1 nappal ezelőtt",
 	"centralauth-months-ago": "$1 hónappal ezelőtt",
 	"centralauth-years-ago": "$1 évvel ezelőtt",
-	"centralauth-prefs-status": "Globális felhasználói fiók állapota:",
+	"centralauth-prefs-status": "Globális felhasználói fiók:",
 	"centralauth-prefs-not-managed": "Nem használsz egységesített felhasználói fiókot",
-	"centralauth-prefs-unattached": "Nincs megerősítve",
-	"centralauth-prefs-count-attached": "Jelenleg $1 oldalon van felhasználói fiókod.",
+	"centralauth-prefs-unattached": "Nincs teljesen egyesítve",
+	"centralauth-prefs-count-attached": "Jelenleg $1 wikin aktív a fiókod.",
 	"centralauth-prefs-count-unattached": "$1 nem megerősített felhasználói fiók van a neveddel $1 oldalon.",
 	"centralauth-prefs-detail-unattached": "Még nem lett megerősítve, hogy az oldal a globális felhasználói fiókodhoz tartozik.",
 	"centralauth-prefs-manage": "Globális felhasználói fiók beállítása",
@@ -336,7 +336,7 @@
 	"globalrenamerequest-status-title": "Átnevezési kérelem jóváhagyása függőben",
 	"centralauth-usermerge-form-adduser": "Felhasználó hozzáadása",
 	"centralauth-usermerge-form-deleteuser": "Felhasználó eltávolítása",
-	"globalrenamequeue-request-userinfo-global": "* szerkesztő: [[Special:CentralAuth/$1]]\n* elsődleges wiki: $2\n* új név: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* szerkesztő: [[Special:CentralAuth/$1]]\n* elsődleges wiki: $2\n* új név: [[Special:CentralAuth/$3]]\n* globális szerkesztésszám: $4",
 	"centralauth-log-gblrename-oldname": "Korábbi felhasználónév:",
 	"centralauth-delete-empty-account": "Üres fiók"
 }
