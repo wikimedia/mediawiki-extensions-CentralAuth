@@ -91,7 +91,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'url' => $wiki->getCanonicalServer(),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
-					'editcount' => $account['editCount']
+					'editcount' => intval( $account['editCount'] )
 				);
 				if ( $account['blocked'] ) {
 					$a['blocked'] = array(
