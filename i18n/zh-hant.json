@@ -174,7 +174,7 @@
 	"centralauth-admin-title-ro": "$1 的全域帳號資訊",
 	"globalusers": "全域帳號清單",
 	"centralauth-listusers-locked": "己鎖定",
-	"centralauth-listusers-attached": "[[User:$1|於本地己存在]]",
+	"centralauth-listusers-attached": "[[User:$1|於本地已存在]]",
 	"centralauth-listusers-nolocal": "未連結或於本地不存在",
 	"multilock": "鎖定多個全域帳號",
 	"centralauth-admin-multi-username": "請輸入一個或多個使用者名稱，以換行分隔",
