@@ -8,6 +8,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 	'author' => 'Brion Vibber',
 	'descriptionmsg' => 'centralauth-desc',
+	'license-name' => 'GPL-2.0'
 );
 
 $wgExtensionCredits['specialpage'][] = array(
@@ -16,6 +17,8 @@ $wgExtensionCredits['specialpage'][] = array(
 	'author'         => 'Brion Vibber',
 	'url'            => '//meta.wikimedia.org/wiki/Help:Unified_login',
 	'descriptionmsg' => 'centralauth-mergeaccount-desc',
+	'license-name'   => 'GPL-2.0'
+
 );
 
 /**

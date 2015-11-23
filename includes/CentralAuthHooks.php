@@ -23,6 +23,7 @@ class CentralAuthHooks {
 				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 				'author' => array( 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ),
 				'descriptionmsg' => 'centralauth-rename-desc',
+				'license-name' => 'GPL-2.0',
 			);
 		}
 
@@ -34,6 +35,7 @@ class CentralAuthHooks {
 				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 				'author' => 'Sam Reed',
 				'descriptionmsg' => 'centralauth-antispoof-desc',
+				'license-name' => 'GPL-2.0',
 			);
 			$wgAutoloadClasses['CentralAuthSpoofUser'] =
 				"$caBase/AntiSpoof/CentralAuthSpoofUser.php";
@@ -55,6 +57,7 @@ class CentralAuthHooks {
 				'author' => 'Bryan Davis',
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
 				'descriptionmsg' => 'globalrenamerequest-desc',
+				'license-name' => 'GPL-2.0',
 			);
 			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
 			$wgResourceModules['ext.centralauth.globalrenamerequest'] = array(
@@ -82,6 +85,7 @@ class CentralAuthHooks {
 				'author' => 'Bryan Davis',
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
 				'descriptionmsg' => 'globalrenamequeue-desc',
+				'license-name' => 'GPL-2.0',
 			);
 			$wgSpecialPages['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = array(
