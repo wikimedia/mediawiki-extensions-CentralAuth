@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Giromin Cangiaxo"
+		]
+	},
+	"centralauth-foreign-link": "Utente $1 insce $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contributo|contributi}} insce $2",
+	"centralauth-merge-method-login": "creou mediante accesso",
+	"centralauth-admin-blocklog": "registro di blocchi"
+}
