@@ -6,6 +6,8 @@
 			"Saimawnkham"
 		]
 	},
+	"centralauth-foreign-link": "ၽူႈၸႂ်ႉတိုဝ်း $1 ၵႃႈတီႈ $2",
+	"centralauth-merge-method-login": "ၶူင်ႈသၢင်ႈမိူဝ်ႈ လွၵ်းၶဝ်ႈ",
 	"centralauth-finish-title": "ႁူမ်ႈႁွမ်းၵၼ်ယဝ်ႉယဝ်ႉ",
 	"centralauth-finish-text": "သင်ၸိူဝ်ႉဝႃႈ account ၼႆႉပဵၼ်ၶွင်သူယူၸိုင် တႅမ်ႈသႂ်ႇမၢႆလပ်ႉတႃႇ account တၢင်ႇဢၼ်တီႈၼႆႉသေ ႁဵတ်းႁႂ်ႈၶၵ်ႉတွၼ်ႊၵၢၼ်လွၵ်ႉၶဝ်ႈယဝ်ႉတူဝ်ႈလႆႈယူႇ",
 	"centralauth-finish-password": "ၶေႃႈလပ်ႉ",
