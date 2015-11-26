@@ -447,15 +447,13 @@ class CentralAuthHooks {
 		global $wgCentralAuthPreventUnattached;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 
-		$centralUser = CentralAuthUser::getInstance( $user );
+		$centralUser = new CentralAuthUser( $user->getName(), CentralAuthUser::READ_LATEST );
 		if ( $centralUser->exists() || $centralUser->renameInProgressOn( wfWikiID() ) ) {
 			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
 		}
 
-		if ( $wgCentralAuthPreventUnattached && !$centralUser->exists()
-			&& $centralUser->listUnattached()
-		) {
+		if ( $wgCentralAuthPreventUnattached && $centralUser->listUnattached() ) {
 			// If no global account exists and there are unattached accounts,
 			// don't let a new unattached account get created. We'll pretend
 			// that the name is already taken, because someone will eventually
