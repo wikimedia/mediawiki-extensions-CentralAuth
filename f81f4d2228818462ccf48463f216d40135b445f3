@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_cdb8a076",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2015-11-26T13:32:47Z",
+      "side": 1,
+      "message": "A few lines up getInstance() is used, which also does \"new CentralAuthUser( $name );\", but that one doesn\u0027t use master. Not sure I see why this inner condition is different?",
+      "revId": "f81f4d2228818462ccf48463f216d40135b445f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
