@@ -16,6 +16,24 @@
       "revId": "f81f4d2228818462ccf48463f216d40135b445f3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_fd92f355",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2015-11-26T21:37:50Z",
+      "side": 1,
+      "message": "Actually I can just make neither use READ_LATEST, since this is just for a better error message when the user account was previously migrated.",
+      "parentUuid": "0ebaf39b_cdb8a076",
+      "revId": "f81f4d2228818462ccf48463f216d40135b445f3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
