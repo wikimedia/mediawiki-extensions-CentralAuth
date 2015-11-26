@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_128fb7d2",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-11-26T05:17:36Z",
+      "side": 1,
+      "message": "Given that getInstance() is possibly instance cached, how do you know that setting the flag will work?",
+      "revId": "f6a12596800c883e84b0a56234beb68d50199852",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_728073a0",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-11-26T05:17:36Z",
+      "side": 1,
+      "message": "isset() should not be used to test for null",
+      "revId": "f6a12596800c883e84b0a56234beb68d50199852",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
