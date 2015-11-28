@@ -84,6 +84,21 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Create a CentralAuthUser object corresponding to the supplied User, and
+	 * cache it in the User object. This object will use DB_MASTER.
+	 * @param User $user
+	 *
+	 * @return CentralAuthUser
+	 * @since 1.27
+	 */
+	static function getMasterInstance( User $user ) {
+		if ( !isset( $user->centralAuthMasterObj ) ) {
+			$user->centralAuthMasterObj = new self( $user->getName(), self::READ_LATEST );
+		}
+		return $user->centralAuthMasterObj;
+	}
+
+	/**
 	 * Gets a master (read/write) database connection to the CentralAuth database
 	 *
 	 * @return DatabaseBase
