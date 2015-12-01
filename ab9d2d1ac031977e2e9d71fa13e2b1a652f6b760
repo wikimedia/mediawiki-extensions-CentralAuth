@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ebaf39b_3d8dd585",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-12-01T23:35:38Z",
+      "side": 1,
+      "message": "This should probably happen in a callback. When somebody finally gets around to converting this to an extension.json file it will need to be done in a callback anyway.",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_bd98e5c3",
+        "filename": "includes/CentralAuthIdLookup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-12-01T23:35:38Z",
+      "side": 1,
+      "message": "Should \"!$audience\" really be \"$audience \u003d\u003d\u003d null\"? I think they are logically equivalent but the null check might be easier for others to understand later. I find that logical negation can be difficult to read in a multipart conditional.",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_1defb11c",
+        "filename": "includes/CentralAuthIdLookup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-12-01T23:35:38Z",
+      "side": 1,
+      "message": "Should this return result which corresponds to \"yes there is a user with this id but I can\u0027t tell you their user name\" be documented?",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_3df4f5ed",
+        "filename": "includes/CentralAuthIdLookup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2015-12-01T23:35:38Z",
+      "side": 1,
+      "message": "Same logical negation nit as above.",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
