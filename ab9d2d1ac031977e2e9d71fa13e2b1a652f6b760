@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_05aaf368",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-12-02T15:23:48Z",
+      "side": 1,
+      "message": "I suspect that by the time someone gets around to actually doing that, they\u0027ll be able to get rid of the \u0027if\u0027 entirely since IIRC CentralAuth master doesn\u0027t typically support old versions of MW core. I also note line 498.",
+      "parentUuid": "0ebaf39b_3d8dd585",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_bd98e5c3",
         "filename": "includes/CentralAuthIdLookup.php",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "0ebaf39b_45db0b25",
+        "filename": "includes/CentralAuthIdLookup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-12-02T15:23:48Z",
+      "side": 1,
+      "message": "Meh.",
+      "parentUuid": "0ebaf39b_bd98e5c3",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ebaf39b_1defb11c",
         "filename": "includes/CentralAuthIdLookup.php",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-12-01T23:35:38Z",
       "side": 1,
       "message": "Should this return result which corresponds to \"yes there is a user with this id but I can\u0027t tell you their user name\" be documented?",
+      "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ebaf39b_05e193ca",
+        "filename": "includes/CentralAuthIdLookup.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2015-12-02T15:23:48Z",
+      "side": 1,
+      "message": "It is, in the docblock for this function when it\u0027s declared in CentralIdLookup:\n\n\u003e     * @return array Copy of $idToName with values set to user names (or\n\u003e     *  empty-string if the user exists but $audience lacks the rights needed\n\u003e     *  to see it). IDs not corresponding to a user are unchanged.",
+      "parentUuid": "0ebaf39b_1defb11c",
       "revId": "ab9d2d1ac031977e2e9d71fa13e2b1a652f6b760",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
