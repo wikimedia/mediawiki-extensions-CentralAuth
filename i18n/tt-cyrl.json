@@ -77,7 +77,7 @@
 	"centralauth-prefs-unattached": "Тулысынча берләшмәгән",
 	"centralauth-prefs-count-attached": "Сезнең хисап язмасы $1 {{PLURAL:$1|вики-проекта}} актив.",
 	"centralauth-prefs-count-unattached": "Расланмаган хисап язмалары $1 {{PLURAL:$1|вики-проекта}} тора.",
-	"centralauth-prefs-detail-unattached": "Бу проект расланмаган.",
+	"centralauth-prefs-detail-unattached": "Сезнең хисап язмагыз глобаль рәвештә, шуңа күрә ул расланмаган.",
 	"centralauth-prefs-manage": "Глобаль кулланучы хисапнамәсе белән идарә итү",
 	"centralauth-prefs-view": "Глобаль хисап язмасы турында мәгълүмат",
 	"centralauth-editset": "Вики җыелмасы",

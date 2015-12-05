@@ -16,7 +16,8 @@
 			"Toniher",
 			"Vriullop",
 			"Jmarchn",
-			"Gerardduenas"
+			"Gerardduenas",
+			"Jaumeortola"
 		]
 	},
 	"mergeaccount": "Estat de fusió de comptes d'usuari",
@@ -26,7 +27,7 @@
 	"centralauth-rename-desc": "Permet el canvi de nom de comptes globals",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Fusiona comptes]] per a la unificació d'usuaris",
 	"centralauth-merge-denied": "Ho sentim, no teniu permisos per a accedir a aquesta pàgina.",
-	"centralauth-merge-notlogged": "Si us plau, <span class=\"plainlinks\">[$1 entreu amb un compte registrat]</span> per a comprovar si els vostres comptes s'han pogut fusionar completament.",
+	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Inicieu sessió]</span> per a comprovar si els vostres comptes s'han pogut fusionar completament.",
 	"centralauth-merge-welcome": "'''El vostre compte d'usuari encara no ha migrat al sistema unificat de comptes de {{int:Centralauth-groupname}}.'''\n\nSi decidiu migrar els vostres comptes, podreu fer servir el mateix nom d'usuari i contrasenya en els wikis de tots els projectes de {{int:Centralauth-groupname}} en qualsevol idioma. Això fa que la feina que involucra diferents projectes, com la càrrega d'imatges a [http://commons.wikimedia.org/ Wikimedia Commons] sigui molt més fàcil, i impedeix la confusió o conflicte que pugui resultar del fet que persones diferents hagin escollit el mateix nom d'usuari en diferents projectes.\n\nSi algú altre ja ha pres el vostre nom d'usuari en un altre projecte aquest procés no el perjudicarà, i permetrà que es pugui resoldre aquest cas posteriorment amb la seva coŀlaboració o la d'un administrador.",
 	"centralauth-merge-step1-title": "Comença la unificació de comptes",
 	"centralauth-merge-step1-detail": "Si us plau, entreu la contrasenya del vostre compte. Es comprovaran les vostres contrasenyes i adreces de correu electrònic per a verificar que els vostres comptes coincideixin. No es desarà cap canvi fins que no confirmeu que les dades semblin correctes.",
