@@ -443,11 +443,11 @@ class CentralAuthHooks {
 	 * @param $abortError
 	 * @return bool
 	 */
-	static function onAbortNewAccount( $user, &$abortError ) {
+	static function onAbortNewAccount( User $user, &$abortError ) {
 		global $wgCentralAuthPreventUnattached;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 
-		$centralUser = new CentralAuthUser( $user->getName(), CentralAuthUser::READ_LATEST );
+		$centralUser = CentralAuthUser::getMasterInstance( $user );
 		if ( $centralUser->exists() || $centralUser->renameInProgressOn( wfWikiID() ) ) {
 			$abortError = wfMessage( 'centralauth-account-exists' )->text();
 			return false;
@@ -498,7 +498,7 @@ class CentralAuthHooks {
 	 * @throws Exception
 	 */
 	static function onAbortLogin( User $user, $pass, &$retval, &$msg ) {
-		$centralUser = CentralAuthUser::getInstance( $user );
+		$centralUser = CentralAuthUser::getMasterInstance( $user );
 
 		// Since logins are rare, check the actual DB
 		$rename = $centralUser->renameInProgressOn( wfWikiID() );
@@ -579,8 +579,8 @@ class CentralAuthHooks {
 	/**
 	 * Show a nicer error when the user account does not exist on the local wiki, but
 	 * does exist globally
-	 * @param $users Array
-	 * @param $data Array
+	 * @param $users User[]
+	 * @param $data array
 	 * @param $abortError String
 	 * @return bool
 	 */
@@ -608,7 +608,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthCookies;
+		global $wgCentralAuthCookies;
 		global $wgCentralAuthCheckSULMigration;
 
 		if ( $wgCentralAuthCheckSULMigration &&
@@ -980,7 +980,7 @@ class CentralAuthHooks {
 	 * @param $userName
 	 * @return bool
 	 */
-	static function onUserLogoutComplete( &$user, &$inject_html, $userName ) {
+	static function onUserLogoutComplete( User &$user, &$inject_html, $userName ) {
 		global $wgCentralAuthCookies, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
 		if ( !$wgCentralAuthCookies ) {
@@ -1356,9 +1356,10 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $id user_id integer
+	 * @param integer $id User ID
 	 * @param User $user
 	 * @param SpecialPage $sp
+	 * @return bool
 	 */
 	static function onSpecialContributionsBeforeMainOutput( $id, User $user, SpecialPage $sp ) {
 		if ( $user->isAnon() ) {
@@ -1910,6 +1911,7 @@ class CentralAuthHooks {
 	 * @param array &$namesById array of userIds=>names to associate
 	 * @param bool|User $audience show hidden names based on this user, or false for public
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
 	 */
 	public static function onOAuthGetUserNamesFromCentralIds( $wgMWOAuthCentralWiki, &$namesById, $audience, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -1944,6 +1946,8 @@ class CentralAuthHooks {
 	 * @param string $wgMWOAuthCentralWiki
 	 * @param User &$user the loca user object
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
+	 * @throws Exception
 	 */
 	public static function onOAuthGetLocalUserFromCentralId( $userId, $wgMWOAuthCentralWiki, &$user, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -1992,6 +1996,7 @@ class CentralAuthHooks {
 	 * @param string $wgMWOAuthCentralWiki
 	 * @param int &$id the user_id of the matching name on the central wiki
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
 	 */
 	public static function onOAuthGetCentralIdFromLocalUser( $user, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -2020,6 +2025,7 @@ class CentralAuthHooks {
 	 * @param string $wgMWOAuthCentralWiki
 	 * @param int &$id the user_id of the matching name on the central wiki
 	 * @param string $wgMWOAuthSharedUserSource the authoritative extension
+	 * @return bool
 	 */
 	public static function onOAuthGetCentralIdFromUserName( $username, $wgMWOAuthCentralWiki, &$id, $wgMWOAuthSharedUserSource ) {
 		if ( $wgMWOAuthSharedUserSource !== 'CentralAuth' ) {
@@ -2140,6 +2146,7 @@ class CentralAuthHooks {
 	 * @param string $returnTo The page to return to
 	 * @param array $returnToQuery Url parameters
 	 * @param string $type Type of login redirect
+	 * @return bool
 	 */
 	public static function onPostLoginRedirect(
 		&$returnTo, &$returnToQuery, &$type
@@ -2218,6 +2225,8 @@ class CentralAuthHooks {
 	 * a user.
 	 * @param User $user
 	 * @param array $effectivePolicy
+	 * @return bool
+	 * @throws Exception
 	 */
 	public static function onPasswordPoliciesForUser( User $user, array &$effectivePolicy ) {
 		global $wgCentralAuthGlobalPasswordPolicies;
