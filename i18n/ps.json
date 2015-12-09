@@ -165,6 +165,7 @@
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|پرمختگ کتل]])",
 	"centralauth-rename-progress-list-header": "دم گړۍ لانديني نړېوال نوم بدلونونه د پرمختگ په حال کې دي:",
 	"centralauth-usermerge-form-usernames": "اوسني کارن-نومونه",
+	"centralauth-usermerge-form-reason": "سبب",
 	"globalrenamerequest": "د نوم بدلون يوځای کېدنې غوښتنه",
 	"globalrenamerequest-legend": "د نوم بدلون يوځای کېدنې غوښتنه",
 	"globalrenamerequest-username-label": "اوسنی کارن-نوم:",
