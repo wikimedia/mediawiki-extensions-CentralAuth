@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Mogoeilor",
-			"Hosseinblue"
+			"Hosseinblue",
+			"Lakzon"
 		]
 	},
+	"centralauth-complete": "یکی کردن حساب‌ها کامل شد!",
+	"centralauth-incomplete": "یکی کردن حساب‌ها کامل نشد!",
 	"centralauth-foreign-link": "حساب کاربری $1 در $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} on $2",
 	"centralauth-merge-method-login": "ایجاد شده توسط ورود به سامانه",
