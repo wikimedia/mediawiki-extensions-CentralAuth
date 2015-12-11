@@ -338,7 +338,7 @@ class SpecialWikiSets extends SpecialPage {
 		$set->setName( $name );
 		$set->setType( $type );
 		$set->setWikisRaw( $wikis );
-		$set->commit();
+		$set->saveToDB();
 
 		// Now logging
 		$log = new LogPage( 'gblrights' );

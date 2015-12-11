@@ -57,9 +57,8 @@ class WikiSet {
 
 	/**
 	 * @param $n
-	 * @param $commit bool
 	 */
-	public function setName( $n, $commit = false ) { $this->setDbField( 'ws_name', $n, $commit ); }
+	public function setName( $n ) { $this->setDbField( 'ws_name', $n ); }
 
 	/**
 	 * @return array
@@ -68,9 +67,8 @@ class WikiSet {
 
 	/**
 	 * @param $w
-	 * @param $commit bool
 	 */
-	public function setWikisRaw( $w, $commit = false ) { $this->setDbField( 'ws_wikis', $w, $commit ); }
+	public function setWikisRaw( $w ) { $this->setDbField( 'ws_wikis', $w ); }
 
 	/**
 	 * @return string
@@ -79,28 +77,23 @@ class WikiSet {
 
 	/**
 	 * @param $t
-	 * @param bool $commit bool
 	 * @return bool
 	 */
-	public function setType( $t, $commit = false ) {
+	public function setType( $t ) {
 		if ( !in_array( $t, array( self::OPTIN, self::OPTOUT ) ) ) {
 			return;
 		}
-		$this->setDbField( 'ws_type', $t, $commit );
+		$this->setDbField( 'ws_type', $t );
 	}
 
 	/**
 	 * @param $field
 	 * @param $value
-	 * @param $commit
 	 */
-	protected function setDbField( $field, $value, $commit ) {
+	protected function setDbField( $field, $value ) {
 		$map = array( 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' );
 		$mname = $map[$field];
 		$this->$mname = $value;
-		if ( $commit ) {
-			$this->commit();
-		}
 	}
 
 	/**
@@ -184,9 +177,9 @@ class WikiSet {
 	/**
 	 * @return bool
 	 */
-	public function commit() {
+	public function saveToDB() {
 		$dbw = CentralAuthUser::getCentralDB();
-		$dbw->begin();
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->replace( 'wikiset', array( 'ws_id' ),
 			array(
 				'ws_id' => $this->mId,
@@ -198,7 +191,7 @@ class WikiSet {
 		if ( !$this->mId ) {
 			$this->mId = $dbw->insertId();
 		}
-		$dbw->commit();
+		$dbw->endAtomic( __METHOD__ );
 		$this->purge();
 		return (bool)$dbw->affectedRows();
 	}
