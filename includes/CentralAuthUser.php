@@ -2016,7 +2016,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		$dbw = self::getCentralDB();
-		$dbw->begin();
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert( 'globalnames',
 			array( 'gn_name' => $this->mName ),
 			__METHOD__,
@@ -2027,7 +2027,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				__METHOD__,
 				array( 'IGNORE' ) );
 		}
-		$dbw->commit();
+		$dbw->endAtomic( __METHOD__ );
 
 		return !empty( $rows );
 	}
