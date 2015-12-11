@@ -202,7 +202,6 @@ class WikiSet {
 	public function delete() {
 		$dbw = CentralAuthUser::getCentralDB();
 		$dbw->delete( 'wikiset', array( 'ws_id' => $this->mId ), __METHOD__ );
-		$dbw->commit();
 		$this->purge();
 		return (bool)$dbw->affectedRows();
 	}
