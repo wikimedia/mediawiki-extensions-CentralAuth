@@ -1380,14 +1380,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function adminLock() {
 		$dbw = self::getCentralDB();
-		$dbw->begin();
 		$dbw->update( 'globaluser', array( 'gu_locked' => 1 ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
-			$dbw->commit();
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
-		$dbw->commit();
 
 		$this->invalidateCache();
 
@@ -1401,14 +1398,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function adminUnlock() {
 		$dbw = self::getCentralDB();
-		$dbw->begin();
 		$dbw->update( 'globaluser', array( 'gu_locked' => 0 ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
-			$dbw->commit();
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
-		$dbw->commit();
 
 		$this->invalidateCache();
 
