@@ -1930,7 +1930,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function addLocalName( $wikiID ) {
 		$dbw = self::getCentralDB();
-		$this->lazyImportLocalNames();
 		$dbw->insert( 'localnames',
 			array(
 				'ln_wiki' => $wikiID,
@@ -1945,7 +1944,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function removeLocalName( $wikiID ) {
 		$dbw = self::getCentralDB();
-		$this->lazyImportLocalNames();
 		$dbw->delete( 'localnames',
 			array(
 				'ln_wiki' => $wikiID,
