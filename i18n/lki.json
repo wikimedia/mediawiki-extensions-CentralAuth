@@ -12,5 +12,6 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} on $2",
 	"centralauth-merge-method-login": "ایجاد شده توسط ورود به سامانه",
 	"centralauth-admin-blocklog": "سیاههٔ بسته‌شدن‌ها",
-	"centralauth-editset-submit-delete": "کورا كردن"
+	"centralauth-editset-submit-delete": "کورا كردن",
+	"centralauth-error-token-wronguser": "بهامُهر با نام کاربری نشت شما هم‌خوانی ندارد.\nممکن است کسی تلاش داشته باشد شما را در یک حساب بدکار ثبت ورود کند.\nاگر تلاش دارید به عنوان کاربر دیگری ثبت ورود کنید، لطفاً‌ نخست ثبت خروج نمایید."
 }
