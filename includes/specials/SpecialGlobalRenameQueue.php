@@ -749,8 +749,9 @@ class RenameQueueTablePager extends TablePager {
 				// User requested closed status - either approved or rejected
 				$conds['rq_status'] = $status;
 			} else {
+				$dbr = wfGetDB( DB_SLAVE );
 				// All closed requests
-				$conds[] = "rq_status <> '" . GlobalRenameRequest::PENDING . "'";
+				$conds[] = 'rq_status <> ' . $dbr->addQuotes( GlobalRenameRequest::PENDING );
 			}
 		}
 
