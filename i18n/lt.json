@@ -11,7 +11,8 @@
 			"Siggis",
 			"Vogone",
 			"Vpovilaitis",
-			"Pofka"
+			"Pofka",
+			"Zygimantus"
 		]
 	},
 	"mergeaccount": "Paskyros bendrinimo būsena",
@@ -290,6 +291,10 @@
 	"centralauth-rename-antispoofconflicts2": "Pasirinktas naudotojo vardas pernelyg panašus į jau egzistuojantį(-ius): $1.",
 	"centralauth-rename-conflict-hidden": "naudotojo vardas paslėptas",
 	"globalrenamerequest": "Prašymas visuotinai pervadinti naudotoją",
+	"globalrenamequeue-form-username": "Naudotojo vardas:",
+	"globalrenamequeue-form-newname": "Prašomas vartotojo vardas:",
+	"globalrenamequeue-form-status": "Būsena:",
+	"globalrenamequeue-form-status-all": "visi",
 	"centralauth-uwbr-name": "Naudotojo vardas",
 	"centralauth-uwbr-registration": "Registracijos data",
 	"centralauth-uwbr-registration-nodate": "Nežinomas",

@@ -345,6 +345,8 @@
 	"centralauth-rename-form-reason": "कारण",
 	"centralauth-rename-form-movepages": "सदस्यपाने हलवा",
 	"centralauth-rename-form-suppressredirects": "पुनर्निर्देशने तयार करणे दडपा",
+	"centralauth-rename-form-allowhigheditcount": "Confirm to rename user with more than $1 पेक्षा अधिक {{PLURAL:$1|संपादन|संपादने}} असलेल्या सदस्याचे पुनर्नामाभिधान करावयाचे याची खात्री करा",
+	"centralauth-rename-globaleditcount-threshold": "या सदस्याची $1 पेक्षा अधिक {{PLURAL:$1|संपादन|संपादने}} आहेत.आपण कृपया याची खात्री करा कि, आपणास या सदस्यनावाचे पुनर्नामाभिधान करावयाचे आहे व प्रणाली प्रशासक या पुनर्नामाभिधानाचे नियंत्रणासाठी उपलब्ध आहे.",
 	"centralauth-rename-notinstalled": "सदस्यपुनर्नामाभिधान विस्तारक उभारल्या गेले नाही.",
 	"centralauth-rename-doesnotexist": "दिलेले सदस्यनाव अस्तित्वात नाही.",
 	"centralauth-rename-alreadyexists": "दिलेले सदस्यनाव पूर्वीच अस्तित्वात आहे.",
@@ -372,7 +374,12 @@
 	"globalrenamerequest-newname-help": "आपण वापरु ईच्छित असलेले नविन सदस्यनाव टाका, उदा. - \"$1\".",
 	"globalrenamerequest-reason-label": "विनंतीचे कारण",
 	"globalrenamerequest-submit-text": "नामबदलाची विनंती करा",
+	"globalrenamequeue-nav-openqueue": "खुल्या विनंत्या",
 	"globalrenamequeue-column-rq-newname": "विनंती केलेले सदस्यनाम",
+	"globalrenamequeue-form-username": "सदस्यनाव:",
+	"globalrenamequeue-form-newname": "विनंती केलेले सदस्यनाव:",
+	"globalrenamequeue-form-status": "स्थिती:",
+	"globalrenamequeue-form-status-all": "सर्व",
 	"userswhowillberenamed": "सदस्य ज्यांचे पुनर्नामाभिधान होईल",
 	"centralauth-uwbr-registration": "नोंदणीचा दिनांक"
 }

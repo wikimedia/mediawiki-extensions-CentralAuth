@@ -2,11 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Xelgen",
-			"Դավիթ Սարոյան"
+			"Դավիթ Սարոյան",
+			"Beko"
 		]
 	},
 	"centralauth-foreign-link": "$2-ից $1 մասնակից",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2-ում",
 	"centralauth-merge-method-login": "ստեծղվել է մուտքի ժամանակ",
-	"centralauth-admin-blocklog": "արգելափակման տեղեկամատյան"
+	"centralauth-admin-blocklog": "արգելափակման տեղեկամատյան",
+	"centralauth-rename-globaleditcount-threshold": "Այս մասնակիցն ունի ավելի քան $1 {{PLURAL:$1|խմբագրում|խմբագրումներ}}։ Խնդրում ենք հաստատել որ դուք համաձայն եք անվանափոխել այս մասնակցին և սիսադմինը կարող է վերահսկել այս անվանափոխումը։",
+	"globalrenamequeue-form-username": "Մասնակցի անուն:",
+	"globalrenamequeue-form-newname": "Մասնակցային անվան հայտ:",
+	"globalrenamequeue-form-status-all": "լրիվ"
 }

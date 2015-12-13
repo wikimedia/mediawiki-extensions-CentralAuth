@@ -24,7 +24,8 @@
 			"Miya",
 			"W.CC",
 			"2nd-player",
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -360,6 +361,8 @@
 	"centralauth-rename-form-movepages": "利用者ページを移動する",
 	"centralauth-rename-form-suppressredirects": "リダイレクトを作成しない",
 	"centralauth-rename-form-overrideantispoof": "なりすまし防止機能を無視する",
+	"centralauth-rename-form-allowhigheditcount": "$1回以上の{{PLURAL:$1|編集}}で利用者の名前を変更を確認する",
+	"centralauth-rename-globaleditcount-threshold": "この利用者は$1回以上の{{PLURAL:$1|編集}}を行っています。この利用者の名前の変更を確認し、システム管理者はこの名前を確認して使用可能な名前であることを確認してください。",
 	"centralauth-rename-notinstalled": "Renameuser 拡張機能がインストールされていません。",
 	"centralauth-rename-doesnotexist": "指定されたアカウントは存在しません。",
 	"centralauth-rename-alreadyexists": "対象の利用者名は既に存在しています。",
@@ -446,6 +449,10 @@
 	"globalrenamequeue-request-unknown-title": "依頼が見つかりません",
 	"globalrenamequeue-request-unknown-body": "改名依頼が見つかりませんでした。",
 	"globalrenamequeue-request-status-title": "「$1」から「$2」への改名",
+	"globalrenamequeue-form-username": "利用者名:",
+	"globalrenamequeue-form-newname": "希望利用者名:",
+	"globalrenamequeue-form-status": "状態:",
+	"globalrenamequeue-form-status-all": "すべて",
 	"apihelp-deleteglobalaccount-param-user": "削除対象の利用者。",
 	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
 	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
