@@ -7,7 +7,8 @@
 			"LyzTyphone",
 			"Michawiki",
 			"Yekrats",
-			"Tlustulimu"
+			"Tlustulimu",
+			"Robin van der Vliet"
 		]
 	},
 	"mergeaccount": "Statuso de unuigado de salutnomoj",
@@ -286,5 +287,8 @@
 	"globalrenamerequest-email-label": "Retpoŝtadreso:",
 	"globalrenamerequest-email-help": "Enigu vian retpoŝtan adreson.",
 	"globalrenamerequest-email-why-label": "Kial?",
-	"globalrenamerequest-reason-label": "Kialo de peto"
+	"globalrenamerequest-reason-label": "Kialo de peto",
+	"globalrenamequeue-form-username": "Uzantonomo:",
+	"globalrenamequeue-form-status": "Statuso:",
+	"globalrenamequeue-form-status-all": "ĉiuj"
 }

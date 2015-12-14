@@ -164,7 +164,7 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|రోజు|రోజుల}} క్రితం",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|నెల|నెలల}} క్రితం",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|సంవత్సరం|సంవత్సరాల}} క్రితం",
-	"centralauth-prefs-status": "సార్వత్రిక ఖాతా స్థితి:",
+	"centralauth-prefs-status": "సార్వత్రిక ఖాతా:",
 	"centralauth-prefs-not-managed": "ఏకీకృత ఖాతాని వాడటం లేదు",
 	"centralauth-prefs-unattached": "నిర్థారణకాలేదు",
 	"centralauth-prefs-count-attached": "మీ ఖాతా $1 ప్రాజెక్టు {{PLURAL:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.",
@@ -304,6 +304,10 @@
 	"globalrenamequeue-action-view": "చూడండి",
 	"globalrenamequeue-request-title": "\"$1\" పేరు మార్చాలా?",
 	"globalrenamequeue-request-cancel-text": "రద్దుచేయి",
+	"globalrenamequeue-form-username": "వాడుకరి పేరు:",
+	"globalrenamequeue-form-newname": "కోరిన వాడుకరి పేరు:",
+	"globalrenamequeue-form-status": "స్థితి:",
+	"globalrenamequeue-form-status-all": "అన్నీ",
 	"centralauth-uwbr-name": "వాడుకరి పేరు",
 	"centralauth-uwbr-registration": "నమోదు తేదీ"
 }

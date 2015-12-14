@@ -344,7 +344,7 @@
 	"centralauth-rename-form-suppressredirects": "Nevytvářet přesměrování",
 	"centralauth-rename-form-overrideantispoof": "Potlačit jakékoli konflikty AntiSpoof",
 	"centralauth-rename-form-allowhigheditcount": "Potvrďte přejmenování uživatele s více než {{PLURAL:$1|jednou editací|$1 editacemi}}",
-	"centralauth-rename-globaleditcount-threshold": "Tento uživatel provedl více než {{PLURAL:$1|jednu editaci|$1 editace|$1editací}}. Prosím potvrďte, že jste si jisti tím, že chcete přejmenovat tohoto uživatele a že systémový administrátor je připraven sledovat toto přejmenování.",
+	"centralauth-rename-globaleditcount-threshold": "Tento uživatel provedl více než {{PLURAL:$1|jednu editaci|$1 editace|$1 editací}}. Prosím potvrďte, že jste si jisti tím, že chcete tohoto uživatele přejmenovat a že systémový administrátor je připraven sledovat toto přejmenování.",
 	"centralauth-rename-notinstalled": "Není nainstalováno rozšíření Renameuser.",
 	"centralauth-rename-doesnotexist": "Uvedený účet neexistuje.",
 	"centralauth-rename-alreadyexists": "Požadované uživatelské jméno již existuje.",
