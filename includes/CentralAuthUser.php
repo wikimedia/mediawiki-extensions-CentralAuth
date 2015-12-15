@@ -1349,18 +1349,18 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 		$wasSuppressed = $this->isOversighted();
 
-		$centralDB->begin();
+		$centralDB->startAtomic( __METHOD__ );
 		# Delete and lock the globaluser row
 		$centralDB->delete( 'globaluser', array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$centralDB->affectedRows() ) {
-			$centralDB->commit();
+			$centralDB->endAtomic( __METHOD__ );
 			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
 		}
 		# Delete all global user groups for the user
 		$centralDB->delete( 'global_user_groups', array( 'gug_user' => $this->getId() ), __METHOD__ );
 		# Delete the localuser rows
 		$centralDB->delete( 'localuser', array( 'lu_name' => $this->mName ), __METHOD__ );
-		$centralDB->commit();
+		$centralDB->endAtomic( __METHOD__ );
 
 		if ( $wasSuppressed ) {
 			// "suppress/delete" is taken by core, so use "cadelete"
