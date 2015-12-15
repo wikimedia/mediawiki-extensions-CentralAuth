@@ -14,7 +14,8 @@
 			"आलोक",
 			"Phoenix303",
 			"Hindustanilanguage",
-			"संजीव कुमार"
+			"संजीव कुमार",
+			"Sfic"
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
@@ -437,6 +438,8 @@
 	"globalrenamequeue-view": ";से:\n:[[Special:CentralAuth/$1|$1]]\n;तक:\n:[[Special:CentralAuth/$2|$2]]\n;कारण:\n:$3\n;स्थिति:\n:$4\n;निवेदन किया गया:\n:$5\n;पूरा किया गया:\n:$6\n;द्वारा किया गया:\n:[$7 $8]\n;टिप्पणियाँ:\n:$9",
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "रद्द",
+	"globalrenamequeue-form-status": "स्थिति:",
+	"globalrenamequeue-form-status-all": "सभी",
 	"globalrenamequeue-email-subject-approved": "खाते पुनःनामांकन निवेदन अनुमोदित",
 	"globalrenamequeue-email-subject-rejected": "खाता पुनःनामकरण निवेदन रद्द",
 	"apihelp-deleteglobalaccount-description": "वैश्विक सदस्य को हटाएँ।",

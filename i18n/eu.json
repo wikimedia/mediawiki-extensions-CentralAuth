@@ -138,6 +138,7 @@
 	"globalrenamequeue-action-address": "Helbidea",
 	"globalrenamequeue-request-comments-label": "Oharrak/arrazoia",
 	"globalrenamequeue-request-cancel-text": "Utzi",
+	"globalrenamequeue-form-status": "Egoera:",
 	"apihelp-globaluserrights-param-reason": "Aldaketarako arrazoia.",
 	"centralauth-log-gblrename-oldname": "Aurreko erabiltzaile-izena:"
 }
