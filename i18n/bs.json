@@ -265,7 +265,7 @@
 	"centralauth-rename-unattached-intheway": "Postoje nespojeni računi koji koriste ovo korisničko ime.",
 	"centralauth-rename-badusername": "Traženo korisničko ime nije ispravno.",
 	"centralauth-rename-progress-username": "Korisničko ime",
-	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]” u „[[Special:CentralAuth/$2|$2]]”",
+	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika \"[[Special:CentralAuth/$1|$1]]\" u \"[[Special:CentralAuth/$2|$2]]\"",
 	"log-name-gblrename": "Zapisnik globalnih preimenovanja",
 	"log-description-gblrename": "Ovaj zapisnik prikazuje globalno preimenovane korisnike.",
 	"globalrenamerequest": "Zahtjev ujedinjenog preimenovanja",

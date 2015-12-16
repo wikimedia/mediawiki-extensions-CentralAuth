@@ -3,7 +3,8 @@
 		"authors": [
 			"Rafaelgarcia",
 			"SPQRobin",
-			"UV"
+			"UV",
+			"Laurentianus"
 		]
 	},
 	"centralauth-groupname": "Wikimedia Foundation",
@@ -14,7 +15,7 @@
 	"centralauth-prefs-not-managed": "Ratio unificata non adhibita",
 	"centralauth-prefs-manage": "Administrare tuam rationem globalem",
 	"centralauth-login-progress": "Aperiens conventa in {{grammar:genitive|{{int:Centralauth-groupname}}}} inceptis:",
-	"centralauth-logout-progress": "Concludens conventa in aliis {{grammar:genitive|{{int:Centralauth-groupname}}}} inceptis:",
+	"centralauth-logout-progress": "Pariter a ceteris tuis inceptis dimitteris:",
 	"right-centralauth-rename": "Rationes globales renominare",
 	"action-centralauth-rename": "rationes globales renominare",
 	"globalrenameuser": "Usorem globalem renominare"
