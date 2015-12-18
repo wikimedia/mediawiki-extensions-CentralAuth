@@ -272,8 +272,11 @@ $wgCentralAuthCheckSULMigration = false;
 
 /**
  * Global Password Policies. These are applied like local password policies,
- * the strongest policy applicable to a user is used.
+ * the strongest policy applicable to a user is used. Policies can apply to
+ * either a local group (if the user is a member of that group on any wiki,
+ * the policy will apply to that user) or global group.
  * @var array
+ * @see $wgPasswordPolicy
  */
 $wgCentralAuthGlobalPasswordPolicies = array();
 
