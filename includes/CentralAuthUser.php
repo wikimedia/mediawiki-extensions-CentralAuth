@@ -2644,9 +2644,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			// Maybe the problem was a missed cache update; clear it to be safe
 			$this->invalidateCache();
 			// User was changed in the meantime or loaded with stale data
+			$from = ( $this->mFromMaster ) ? 'master' : 'slave';
 			MWExceptionHandler::logException( new MWException(
-				"CAS update failed on gu_cas_token for user ID '{$this->mGlobalId}';" .
-				"the version of the user to be saved is older than the current version."
+				"CAS update failed on gu_cas_token for user ID '{$this->mGlobalId}' " .
+				"(read from $from); the version of the user to be saved is older than " .
+				"the current version."
 			) );
 			return;
 		}
