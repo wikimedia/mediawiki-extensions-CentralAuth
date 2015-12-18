@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Игорь Бродский"
+			"Игорь Бродский",
+			"Sebranik"
 		]
 	},
 	"centralauth-merge-denied": "Pakičem armahtust, teil ei ole oiktust lugeda necidä lehtpol't.",
@@ -24,6 +25,7 @@
 	"centralauth-admin-list-attached-on": "Sidotud",
 	"centralauth-admin-list-method": "Metod",
 	"centralauth-admin-list-editcount": "Redakcijoiden lugim",
+	"centralauth-admin-list-groups": "Gruppad",
 	"centralauth-admin-list-blocked": "Blokiruidud",
 	"centralauth-admin-reason": "Sü:",
 	"centralauth-admin-status-locked": "Luklostadud:",
