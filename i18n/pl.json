@@ -350,6 +350,8 @@
 	"centralauth-rename-form-reason": "Powód",
 	"centralauth-rename-form-movepages": "Przenieś strony użytkownika",
 	"centralauth-rename-form-suppressredirects": "Pomiń tworzenie przekierowań",
+	"centralauth-rename-form-allowhigheditcount": "Potwierdź zmianę nazwy użytkownika z więcej niż $1 {{PLURAL:$1|edycją|edycjami}}",
+	"centralauth-rename-globaleditcount-threshold": "Ten użytkownik wykonał więcej niż $1 {{PLURAL:$1|edycję|edycje|edycji}}. Proszę potwierdzić, że chcesz zmienić nazwę tego użytkownika i że administrator systemu może monitorować tę zmianę.",
 	"centralauth-rename-doesnotexist": "Podane konto nie istnieje.",
 	"centralauth-rename-alreadyexists": "Podana nazwa użytkownika już istnieje.",
 	"centralauth-rename-badusername": "Podana nazwa użytkownika jest nieprawidłowa.",

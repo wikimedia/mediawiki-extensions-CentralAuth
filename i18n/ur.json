@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"පසිඳු කාවින්ද",
-			"عثمان خان شاہ"
+			"عثمان خان شاہ",
+			"Obaid Raza"
 		]
 	},
 	"mergeaccount": "لاگ ان کے اتحاد کا درجہ",
@@ -19,6 +20,7 @@
 	"centralauth-list-attached-title": "منسلک اکاؤنٹس",
 	"centralauth-list-unattached-title": "منسلک اکاؤنٹس",
 	"centralauth-foreign-link": "$2 پر صارف $1",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ترمیم|ترامیم}} در $2",
 	"centralauth-merge-method-primary": "ہوم وکی",
 	"centralauth-merge-method-empty": "کوئی شراکت",
 	"centralauth-merge-method-mail": "کی طرف سے ای میل کی تصدیق کی",

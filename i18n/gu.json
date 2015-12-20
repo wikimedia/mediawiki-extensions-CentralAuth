@@ -7,7 +7,8 @@
 			"Dsvyas",
 			"KartikMistry",
 			"Rangilo Gujarati",
-			"Sushant savla"
+			"Sushant savla",
+			"Bhatakati aatma"
 		]
 	},
 	"mergeaccount": "લૉગિન એકીકરણ સ્થિતિ",
@@ -163,7 +164,7 @@
 	"centralauth-account-exists": "ખાતું બનાવી શકાતું નથી: વિનંતી કરેલ સભ્યનામ ઐક્ય પ્રવેશ સિસ્ટમમાં પહેલેથી લેવાઈ ગયેલ છે.",
 	"centralauth-account-exists-reset": "સભ્યનામ $1 આ વિકિમાં નોંધણી થયેલ નથી, પણ તમે તેની ગુપ્તસંજ્ઞા [[Special:CentralAuth/$1|એ જે વિકિ પર છે]] ત્યાં બદલી શકો છો.",
 	"centralauth-login-progress": "તમને {{int:Centralauth-groupname}} વિકિઓમાં પ્રવેશ કરાવે છે:",
-	"centralauth-logout-progress": "તમને {{int:Centralauth-groupname}} તમામ વિકિઓમાંથી બહાર કાઢે છે :",
+	"centralauth-logout-progress": "તમે {{int:Centralauth-groupname}} તમામ વિકિઓમાંથી પ્રસ્થાન કરી ચૂક્યા છો :",
 	"centralauth-login-no-others": "તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાં પ્રવેશ મેળવી લીધો છે.",
 	"centralauth-logout-no-others": "તમે આપમેળે {{int:Centralauth-groupname}} ના બીજા પ્રોજેક્ટ્સમાંથી બહાર નીકળી ગયા છો.",
 	"centralauth-hidden-blockreason": "$2 પર $1  દ્વારા નીચેના કારણસર વૈશ્વીક પ્રતિબંધ મુકાયો : $3",

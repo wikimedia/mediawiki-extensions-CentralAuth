@@ -27,7 +27,8 @@
 			"Mariya",
 			"Korol Bumi",
 			"INS Pirat",
-			"Краснорядцева Елена"
+			"Краснорядцева Елена",
+			"Metastasis"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -466,6 +467,7 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Предыдущее переименование|Предыдущие переименования}}",
 	"globalrenamequeue-view-approved": "одобрен",
 	"globalrenamequeue-view-rejected": "отклонён",
+	"globalrenamequeue-form-username": "Имя пользователя:",
 	"globalrenamequeue-form-newname": "Запрашиваемое имя учётной записи:",
 	"globalrenamequeue-form-status": "Статус:",
 	"globalrenamequeue-form-status-all": "все",

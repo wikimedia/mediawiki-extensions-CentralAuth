@@ -267,5 +267,7 @@
 	"right-centralauth-oversight": "ගෝලීය ගිණුම මැඩපවත්වන්න හෝ සඟවන්න",
 	"right-centralauth-merge": "ඔවුන්ගේ ගිණුම සංයුක්ත කරන්න",
 	"right-globalgrouppermissions": "ගෝලීය කණ්ඩායම් පාලනය කරන්න",
+	"globalrenamequeue-form-username": "පරිශීලක නාමය:",
+	"globalrenamequeue-form-status": "තත්ත්වය:",
 	"centralauth-uwbr-name": "පරිශීලක නාමය"
 }
