@@ -1417,14 +1417,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function adminSetHidden( $level ) {
 		$dbw = self::getCentralDB();
-		$dbw->begin();
 		$dbw->update( 'globaluser', array( 'gu_hidden' => $level ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
-			$dbw->commit();
 			return Status::newFatal( 'centralauth-admin-unhide-nonexistent', $this->mName );
 		}
-		$dbw->commit();
 
 		$this->invalidateCache();
 
@@ -1601,7 +1598,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 					Title::makeTitleSafe( NS_USER, $this->getName() ),
 					$jobParams );
 			}
-			JobQueueGroup::singleton()->push( $jobs );
+			// Push the jobs right before COMMIT (which is likely to succeed).
+			// If the job push fails, then the transaction will roll back.
+			$dbw = self::getCentralDB();
+			$dbw->onTransactionPreCommitOrIdle( function () use ( $jobs ) {
+				JobQueueGroup::singleton()->push( $jobs );
+			} );
 		}
 	}
 
