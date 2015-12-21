@@ -2269,4 +2269,18 @@ class CentralAuthHooks {
 		}
 		return true;
 	}
+
+	/**
+	 * Create databases for WMF Jenkins unit tests
+	 * @param DatabaseUpdater $updater
+	 */
+	static public function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+		global $wgWikimediaJenkinsCI;
+
+		if ( !empty( $wgWikimediaJenkinsCI ) ) {
+			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
+		}
+
+		return true;
+	}
 }
