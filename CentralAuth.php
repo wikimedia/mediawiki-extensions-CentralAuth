@@ -35,6 +35,13 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgCentralAuthDatabase = 'centralauth';
 
 /**
+ * Override $wgGlobalBlockingDatabase for Wikimedia Jenkins.
+ */
+if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+	$wgCentralAuthDatabase = $wgDBname;
+}
+
+/**
  * If true, new account registrations will be registered globally if
  * the username hasn't been used elsewhere.
  */
