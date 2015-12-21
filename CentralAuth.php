@@ -35,6 +35,13 @@ $wgExtensionCredits['specialpage'][] = array(
 $wgCentralAuthDatabase = 'centralauth';
 
 /**
+ * Override $wgGlobalBlockingDatabase for Wikimedia Jenkins.
+ */
+if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+	$wgCentralAuthDatabase = $wgDBname;
+}
+
+/**
  * If true, new account registrations will be registered globally if
  * the username hasn't been used elsewhere.
  */
@@ -412,6 +419,7 @@ $wgHooks['SpecialPage_initList'][] = 'CentralAuthHooks::onSpecialPage_initList';
 $wgHooks['ResourceLoaderForeignApiModules'][] = 'CentralAuthHooks::onResourceLoaderForeignApiModules';
 $wgHooks['ResourceLoaderTestModules'][] = 'CentralAuthHooks::onResourceLoaderTestModules';
 $wgHooks['PasswordPoliciesForUser'][] = 'CentralAuthHooks::onPasswordPoliciesForUser';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'CentralAuthHooks::onLoadExtensionSchemaUpdates';
 
 // For interaction with the Special:Renameuser extension
 $wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
