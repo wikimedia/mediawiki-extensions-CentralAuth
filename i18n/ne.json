@@ -7,7 +7,8 @@
 			"RajeshPandey",
 			"बिप्लब आनन्द",
 			"NehalDaveND",
-			"राम प्रसाद जोशी"
+			"राम प्रसाद जोशी",
+			"सरोज कुमार ढकाल"
 		]
 	},
 	"mergeaccount": "प्रवेश एकीकरण स्थिति",
@@ -172,6 +173,7 @@
 	"globalrenamequeue-request-cancel-text": "रद्द गर्ने",
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "अस्वीकार",
+	"globalrenamequeue-form-status-all": "सबै",
 	"centralauth-uwbr-name": "प्रयोगकर्ता नाम",
 	"centralauth-uwbr-registration": "दर्ता समय:",
 	"centralauth-uwbr-registration-nodate": "अज्ञात",
