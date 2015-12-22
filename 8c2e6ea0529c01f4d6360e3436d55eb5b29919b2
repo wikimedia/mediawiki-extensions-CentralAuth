@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_e5f129ff",
+        "filename": "CentralAuth.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2015-12-22T19:41:19Z",
+      "side": 1,
+      "message": "You have to change the comment to match the correct global",
+      "revId": "8c2e6ea0529c01f4d6360e3436d55eb5b29919b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
