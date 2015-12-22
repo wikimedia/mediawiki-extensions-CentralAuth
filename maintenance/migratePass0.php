@@ -52,7 +52,7 @@ function migratePassZero() {
 
 		if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
 			echo "Waiting for slaves to catch up ... ";
-			CentralAuthUser::waitForSlaves();
+			CentralAuthUtils::waitForSlaves();
 			echo "done\n";
 		}
 	}

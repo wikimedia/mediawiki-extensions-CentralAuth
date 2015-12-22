@@ -98,33 +98,19 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		return $user->centralAuthMasterObj;
 	}
 
+
 	/**
-	 * Gets a master (read/write) database connection to the CentralAuth database
-	 *
-	 * @return DatabaseBase
-	 * @throws CentralAuthReadOnlyError
+	 * @deprecated use CentralAuthUtils instead
 	 */
 	public static function getCentralDB() {
-		global $wgCentralAuthDatabase, $wgCentralAuthReadOnly;
-
-		if ( $wgCentralAuthReadOnly ) {
-			throw new CentralAuthReadOnlyError();
-		}
-
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
-			$wgCentralAuthDatabase );
+		return CentralAuthUtils::getCentralDB();
 	}
 
 	/**
-	 * Gets a slave (readonly) database connection to the CentralAuth database
-	 *
-	 * @return DatabaseBase
+	 * @deprecated use CentralAuthUtils instead
 	 */
 	public static function getCentralSlaveDB() {
-		global $wgCentralAuthDatabase;
-
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection(
-			DB_SLAVE, 'centralauth', $wgCentralAuthDatabase );
+		return CentralAuthUtils::getCentralSlaveDB();
 	}
 
 	/**
@@ -142,12 +128,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Wait for the CentralAuth DB slaves to catch up
+	 * @deprecated use CentralAuthUtils instead
 	 */
 	public static function waitForSlaves() {
-		global $wgCentralAuthDatabase;
-
-		wfWaitForSlaves( false, $wgCentralAuthDatabase );
+		CentralAuthUtils::waitForSlaves();
 	}
 
 	/**
@@ -163,7 +147,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
-		return $this->shouldUseMasterDB() ? self::getCentralDB() : self::getCentralSlaveDB();
+		return $this->shouldUseMasterDB() ? CentralAuthUtils::getCentralDB() : CentralAuthUtils::getCentralSlaveDB();
 	}
 
 	/**
@@ -225,7 +209,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return CentralAuthUser|bool false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
-		$name = self::getCentralSlaveDB()->selectField(
+		$name = CentralAuthUtils::getCentralSlaveDB()->selectField(
 			'globaluser',
 			'gu_name',
 			array( 'gu_id' => $id ),
@@ -484,7 +468,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	protected function saveToCache() {
 	 	$obj = $this->getCacheObject();
 	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
-		$opts = array( 'since' => self::getCentralSlaveDB()->trxTimestamp() );
+		$opts = array( 'since' => CentralAuthUtils::getCentralSlaveDB()->trxTimestamp() );
 		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400, $opts );
 	}
 
@@ -677,7 +661,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	function register( $password, $email ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		$dbw->insert(
 			'globaluser',
@@ -721,7 +705,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	static function storeMigrationData( $wiki, $users ) {
 		if ( $users ) {
-			$dbw = self::getCentralDB();
+			$dbw = CentralAuthUtils::getCentralDB();
 			$globalTuples = array();
 			$tuples = array();
 			foreach ( $users as $name ) {
@@ -754,7 +738,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool Whether we were successful or not.
 	 */
 	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->insert( 'globaluser',
 			array(
 				'gu_name' => $this->mName,
@@ -781,7 +765,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	public function storeAndMigrate( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->begin();
 
 		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
@@ -1270,7 +1254,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$status->failCount++;
 		}
 
-		$dbcw = self::getCentralDB();
+		$dbcw = CentralAuthUtils::getCentralDB();
 		$password = $this->getPassword();
 
 		foreach ( $valid as $wikiName ) {
@@ -1322,7 +1306,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function adminDelete( $reason ) {
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
-		$centralDB = self::getCentralDB();
+		$centralDB = CentralAuthUtils::getCentralDB();
 
 		# Synchronise passwords
 		$password = $this->getPassword();
@@ -1379,7 +1363,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminLock() {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', array( 'gu_locked' => 1 ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
@@ -1397,7 +1381,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminUnlock() {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', array( 'gu_locked' => 0 ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
 		if ( !$dbw->affectedRows() ) {
@@ -1416,7 +1400,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminSetHidden( $level ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->begin();
 		$dbw->update( 'globaluser', array( 'gu_hidden' => $level ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
@@ -1681,7 +1665,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * - completed migration state
 	 */
 	public function attach( $wikiID, $method = 'new', $sendToRC = true ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->begin( __METHOD__ );
 		$dbw->insert( 'localuser',
 			array(
@@ -1902,7 +1886,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// Make sure lazy-loading in listUnattached() works, as we
 		// may need to *switch* to using the DB master for this query
 		$db = self::centralLBHasRecentMasterChanges()
-			? self::getCentralDB()
+			? CentralAuthUtils::getCentralDB()
 			: $this->getSafeReadDB();
 
 		$result = $db->select(
@@ -1929,7 +1913,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function addLocalName( $wikiID ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->insert( 'localnames',
 			array(
 				'ln_wiki' => $wikiID,
@@ -1943,7 +1927,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function removeLocalName( $wikiID ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->delete( 'localnames',
 			array(
 				'ln_wiki' => $wikiID,
@@ -1957,7 +1941,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param $newname
 	 */
 	function updateLocalName( $wikiID, $newname ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update(
 			'localnames',
 			array( 'ln_name' => $newname ),
@@ -1970,7 +1954,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	function lazyImportLocalNames() {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 
 		$result = $dbw->select( 'globalnames',
 			array( '1' ),
@@ -2013,7 +1997,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$lb->reuseConnection( $dbr );
 		}
 
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert( 'globalnames',
 			array( 'gn_name' => $this->mName ),
@@ -2358,7 +2342,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$this->mSalt = $salt;
 
 		if ( $this->getId() ) {
-			$dbw = self::getCentralDB();
+			$dbw = CentralAuthUtils::getCentralDB();
 			$dbw->update( 'globaluser',
 				array(
 					'gu_salt'     => $salt,
@@ -2618,7 +2602,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		$newCasToken = $this->mCasToken + 1;
 
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser',
 			array( # SET
 				'gu_password' => $this->mPassword,
@@ -2696,7 +2680,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function removeFromGlobalGroups( $groups ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 
 		# Delete from the DB
 		$dbw->delete( 'global_user_groups',
@@ -2711,7 +2695,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function addToGlobalGroups( $groups ) {
-		$dbw = self::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 
 		if ( !is_array( $groups ) ) {
 			$groups = array( $groups );
@@ -2735,7 +2719,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return array
 	 */
 	static function availableGlobalGroups() {
-		$dbr = self::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', array(), __METHOD__ );
 
@@ -2755,7 +2739,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return array
 	 */
 	static function globalGroupPermissions( $group ) {
-		$dbr = self::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( array( 'global_group_permissions' ),
 			array( 'ggp_permission' ), array( 'ggp_group' => $group ), __METHOD__ );
@@ -2784,7 +2768,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return array
 	 */
 	static function getUsedRights() {
-		$dbr = self::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission',
 			array(), __METHOD__ );
@@ -2818,7 +2802,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		wfDebugLog( 'CentralAuthVerbose', "Quick cache invalidation for global user {$this->mName}" );
 
 		$key = $this->getCacheKey();
-		self::getCentralDB()->onTransactionPreCommitOrIdle( function() use ( $key ) {
+		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function() use ( $key ) {
 			ObjectCache::getMainWANInstance()->delete( $key );
 		} );
 	}

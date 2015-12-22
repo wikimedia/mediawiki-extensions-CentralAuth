@@ -57,7 +57,7 @@ class ResetGlobalUserTokens extends Maintenance {
 		}
 
 		// We list user by user_id from one of the slave database
-		$dbr = CentralAuthUser::getCentralDB( DB_SLAVE );
+		$dbr = CentralAuthUtils::getCentralDB( DB_SLAVE );
 		$maxid = $this->getOption( 'maxid', -1 );
 
 		if ( $maxid == -1 ) {
@@ -86,7 +86,7 @@ class ResetGlobalUserTokens extends Maintenance {
 				$max = $maxid;
 			}
 
-			CentralAuthUser::waitForSlaves();
+			CentralAuthUtils::waitForSlaves();
 
 		} while ( $min < $maxid );
 

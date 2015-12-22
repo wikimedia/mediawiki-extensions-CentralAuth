@@ -1221,7 +1221,7 @@ class CentralAuthHooks {
 			": creating new user ($userName) - from: $from\n" );
 		try {
 			// Make sure the central DB master is availabe
-			CentralAuthUser::getCentralDB();
+			CentralAuthUtils::getCentralDB();
 			// Insert the user into the local DB master
 			$status = $user->addToDatabase();
 			if ( $status === null ) {
@@ -1918,7 +1918,7 @@ class CentralAuthHooks {
 			// We aren't supposed to handle this
 			return true;
 		}
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		foreach ( $namesById as $userid => $name ) {
 			$name = $dbr->selectField(
 				'globaluser',
@@ -1954,7 +1954,7 @@ class CentralAuthHooks {
 			// We aren't supposed to handle this
 			return true;
 		}
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$user_name = $dbr->selectField(
 			'globaluser',
 			'gu_name',

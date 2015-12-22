@@ -13,8 +13,8 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$audience = $this->checkAudience( $audience );
 		$fromMaster = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
 		$db = $fromMaster
-			? CentralAuthUser::getCentralDB()
-			: CentralAuthUser::getCentralSlaveDB();
+			? CentralAuthUtils::getCentralDB()
+			: CentralAuthUtils::getCentralSlaveDB();
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 
@@ -50,8 +50,8 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$audience = $this->checkAudience( $audience );
 		$fromMaster = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
 		$db = $fromMaster
-			? CentralAuthUser::getCentralDB()
-			: CentralAuthUser::getCentralSlaveDB();
+			? CentralAuthUtils::getCentralDB()
+			: CentralAuthUtils::getCentralSlaveDB();
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 

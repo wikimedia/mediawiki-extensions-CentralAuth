@@ -41,7 +41,7 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$APIResult = $this->getResult();
 		$data = array();
 
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$fields = array( 'ggp_group' );
 

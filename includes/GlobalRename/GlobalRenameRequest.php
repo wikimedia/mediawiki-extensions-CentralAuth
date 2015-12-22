@@ -373,9 +373,9 @@ class GlobalRenameRequest {
 	 */
 	protected static function getDB( $type ) {
 		if ( $type === DB_MASTER ) {
-			return CentralAuthUser::getCentralDB();
+			return CentralAuthUtils::getCentralDB();
 		} else {
-			return CentralAuthUser::getCentralSlaveDB();
+			return CentralAuthUtils::getCentralSlaveDB();
 		}
 	}
 

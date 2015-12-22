@@ -57,7 +57,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
-		$this->mDb = CentralAuthUser::getCentralSlaveDB();
+		$this->mDb = CentralAuthUtils::getCentralSlaveDB();
 	}
 
 	/**

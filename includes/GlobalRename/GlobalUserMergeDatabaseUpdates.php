@@ -12,7 +12,7 @@ class GlobalUserMergeDatabaseUpdates {
 	 * @return DatabaseBase
 	 */
 	protected function getDB() {
-		return CentralAuthUser::getCentralDB();
+		return CentralAuthUtils::getCentralDB();
 	}
 
 	/**

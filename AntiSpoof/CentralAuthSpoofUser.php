@@ -5,14 +5,14 @@ class CentralAuthSpoofUser extends SpoofUser {
 	 * @return DatabaseBase
 	 */
 	protected function getDBSlave() {
-		return CentralAuthUser::getCentralSlaveDB();
+		return CentralAuthUtils::getCentralSlaveDB();
 	}
 
 	/**
 	 * @return DatabaseBase
 	 */
 	protected function getDBMaster() {
-		return CentralAuthUser::getCentralDB();
+		return CentralAuthUtils::getCentralDB();
 	}
 
 	/**

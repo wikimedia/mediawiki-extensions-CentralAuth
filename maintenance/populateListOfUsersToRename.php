@@ -32,7 +32,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	 * @return ResultWrapper
 	 */
 	private function doQuery() {
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$rows = $dbr->select(
 			array( 'localnames', 'localuser' ),
 			array( 'ln_name AS name', 'ln_wiki AS wiki' ),
@@ -59,7 +59,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
 		// multiple times, so lets cache it.
@@ -111,7 +111,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 			$this->output( "Inserted $count users who we will rename\n" );
 
 			$this->output( "Waiting for slaves...\n" );
-			CentralAuthUser::waitForSlaves();
+			CentralAuthUtils::waitForSlaves();
 
 		} while ( $count !== 0 );
 	}

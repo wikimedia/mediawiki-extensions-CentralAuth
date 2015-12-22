@@ -683,7 +683,7 @@ class RenameQueueTablePager extends TablePager {
 	) {
 		$this->mOwner = $owner;
 		$this->mPage = $page;
-		$this->mDb = CentralAuthUser::getCentralSlaveDB();
+		$this->mDb = CentralAuthUtils::getCentralSlaveDB();
 
 		$limit = $this->getRequest()->getInt( 'limit', 25 );
 		// Override default cap of 5000

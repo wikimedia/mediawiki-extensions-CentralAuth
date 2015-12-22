@@ -99,7 +99,7 @@ class SpecialMultiLock extends SpecialPage {
 	 */
 	private function searchForUsers() {
 
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$where = array( 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) );
 		if ( !$this->mCanOversight ) {

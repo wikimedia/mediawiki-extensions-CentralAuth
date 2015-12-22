@@ -34,7 +34,7 @@ class MigrateAccount extends Maintenance {
 
 	public function execute() {
 
-		$this->dbBackground = CentralAuthUser::getCentralSlaveDB();
+		$this->dbBackground = CentralAuthUtils::getCentralSlaveDB();
 
 		if ( $this->getOption( 'safe', false ) !== false ) {
 			$this->safe = true;
@@ -82,7 +82,7 @@ class MigrateAccount extends Maintenance {
 				}
 				if ( $this->total % $this->batchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
-					CentralAuthUser::waitForSlaves();
+					CentralAuthUtils::waitForSlaves();
 					$this->output( "done\n" );
 				}
 			}

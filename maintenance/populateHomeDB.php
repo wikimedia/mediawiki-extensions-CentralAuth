@@ -14,7 +14,7 @@ class PopulateHomeDB extends Maintenance {
 	}
 
 	public function execute() {
-		$db = CentralAuthUser::getCentralSlaveDB();
+		$db = CentralAuthUtils::getCentralSlaveDB();
 		$conds = array();
 		$count = 0;
 		do {
@@ -36,7 +36,7 @@ class PopulateHomeDB extends Maintenance {
 				$count++;
 			}
 			$this->output( "$count\n" );
-			CentralAuthUser::waitForSlaves();
+			CentralAuthUtils::waitForSlaves();
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}

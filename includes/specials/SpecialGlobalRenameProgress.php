@@ -52,7 +52,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	}
 
 	function showCurrentRenames() {
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$tables = array( 'renameuser_status' );
 		if ( !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
 			$join_conds = array( 'globaluser' => array(

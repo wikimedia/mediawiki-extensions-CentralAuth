@@ -32,7 +32,7 @@ class ForceRenameNotification extends Maintenance {
 		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
 		$message = str_replace( '{{WIKI}}', wfWikiID(), $message );
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$commonParams = array(
 			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
@@ -81,7 +81,7 @@ class ForceRenameNotification extends Maintenance {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
 			$this->output( "Waiting for slaves..." );
-			CentralAuthUser::waitForSlaves(); // users_to_rename
+			CentralAuthUtils::waitForSlaves(); // users_to_rename
 			wfWaitForSlaves(); // And on the local wiki!
 			$this->output( " done.\n" );
 			$queued = $this->getQueuedCount();

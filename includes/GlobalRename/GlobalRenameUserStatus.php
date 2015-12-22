@@ -34,9 +34,9 @@ class GlobalRenameUserStatus {
 	 */
 	protected function getDB( $type = DB_SLAVE ) {
 		if ( $type === DB_MASTER ) {
-			return CentralAuthUser::getCentralDB();
+			return CentralAuthUtils::getCentralDB();
 		} else {
-			return CentralAuthUser::getCentralSlaveDB();
+			return CentralAuthUtils::getCentralSlaveDB();
 		}
 	}
 

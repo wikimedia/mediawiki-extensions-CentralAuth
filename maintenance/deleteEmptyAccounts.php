@@ -28,7 +28,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$wgUser = User::newFromName( 'Maintenance script' );
 		RequestContext::getMain()->setUser( $wgUser );
 
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		if ( $this->getOption( 'fix', false ) !== false ) {
 			$this->fix = true;
@@ -66,7 +66,7 @@ class DeleteEmptyAccounts extends Maintenance {
 				$this->process( $row->gu_name );
 			}
 			if ( $this->fix ) {
-				CentralAuthUser::waitForSlaves();
+				CentralAuthUtils::waitForSlaves();
 			}
 		}
 

@@ -25,8 +25,8 @@ class CheckLocalUser extends Maintenance {
 
 	public function execute() {
 
-		$centralMaster = CentralAuthUser::getCentralDB();
-		$centralSlave = CentralAuthUser::getCentralSlaveDB();
+		$centralMaster = CentralAuthUtils::getCentralDB();
+		$centralSlave = CentralAuthUtils::getCentralSlaveDB();
 
 		if ( $this->getOption( 'delete', false ) !== false ) {
 			$this->dryrun = false;

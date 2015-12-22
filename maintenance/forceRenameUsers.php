@@ -32,7 +32,7 @@ class ForceRenameUsers extends Maintenance {
 		if ( !class_exists( 'CentralAuthUser' ) ) {
 			$this->error( 'CentralAuth is not installed on this wiki.', 1 );
 		}
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		while ( true ) {
 			$rowsToRename = $this->findUsers( wfWikiID(), $dbw );
 			if ( !$rowsToRename ) {
@@ -42,7 +42,7 @@ class ForceRenameUsers extends Maintenance {
 			foreach ( $rowsToRename as $row ) {
 				$this->rename( $row, $dbw );
 			}
-			CentralAuthUser::waitForSlaves();
+			CentralAuthUtils::waitForSlaves();
 			$count = $this->getCurrentRenameCount( $dbw );
 			while ( $count > 50 ) {
 				$this->output( "There are currently $count renames queued, pausing...\n" );

@@ -20,7 +20,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @return DatabaseBase
 	 */
 	protected function getDB() {
-		return CentralAuthUser::getCentralDB();
+		return CentralAuthUtils::getCentralDB();
 	}
 
 	/**
@@ -38,7 +38,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	}
 
 	protected function waitForSlaves() {
-		CentralAuthUser::waitForSlaves();
+		CentralAuthUtils::waitForSlaves();
 	}
 
 	/**

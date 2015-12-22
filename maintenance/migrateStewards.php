@@ -25,7 +25,7 @@ foreach ( $result as $row ) {
 }
 
 echo "Fetched " . count( $localStewards ) . " from local database... Checking for attached ones\n";
-$dbg = CentralAuthUser::getCentralDB();
+$dbg = CentralAuthUtils::getCentralDB();
 $globalStewards = array();
 $result = $dbg->select(
 	array( 'globaluser', 'localuser' ),

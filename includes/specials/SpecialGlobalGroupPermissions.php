@@ -303,7 +303,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				return;
 			}
 
-			$dbw = CentralAuthUser::getCentralDB();
+			$dbw = CentralAuthUtils::getCentralDB();
 			$updates = array(
 				'global_group_permissions' => 'ggp_group',
 				'global_group_restrictions' => 'ggr_group',
@@ -370,7 +370,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param $rights
 	 */
 	function revokeRightsFromGroup( $group, $rights ) {
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 
 		# Delete from the DB
 		$dbw->delete( 'global_group_permissions', array( 'ggp_group' => $group, 'ggp_permission' => $rights ), __METHOD__ );
@@ -381,7 +381,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param $rights
 	 */
 	function grantRightsToGroup( $group, $rights ) {
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 
 		if ( !is_array( $rights ) ) {
 			$rights = array( $rights );
@@ -487,7 +487,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return bool
 	 */
 	function setRestrictions( $group, $set ) {
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		if ( $set == 0 ) {
 			$dbw->delete(
 				'global_group_restrictions',
@@ -523,7 +523,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// Figure out all the users in this group.
 		// Use the master over here as this could go horribly wrong with newly created or just
 		// renamed groups
-		$dbr = CentralAuthUser::getCentralDB();
+		$dbr = CentralAuthUtils::getCentralDB();
 
 		$res = $dbr->select( array( 'global_user_groups', 'globaluser' ), 'gu_name', array( 'gug_group' => $group, 'gu_id=gug_user' ), __METHOD__ );
 

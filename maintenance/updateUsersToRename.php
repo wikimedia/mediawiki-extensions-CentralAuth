@@ -17,8 +17,8 @@ class UpdateUsersToRename extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = CentralAuthUser::getCentralDB();
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbw = CentralAuthUtils::getCentralDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$total = 0;
 		do {
 			$rows = $dbr->select(
@@ -44,7 +44,7 @@ class UpdateUsersToRename extends Maintenance {
 				);
 				$total += $count;
 			}
-			CentralAuthUser::waitForSlaves();
+			CentralAuthUtils::waitForSlaves();
 		} while ( $rows->numRows() >= $this->mBatchSize );
 		$this->output( "Removed $total users in total.\n" );
 	}

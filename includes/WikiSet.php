@@ -131,7 +131,7 @@ class WikiSet {
 				}
 			}
 		}
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$row = $dbr->selectRow(
 			'wikiset', '*', array( 'ws_name' => $name ), __METHOD__
 		);
@@ -162,7 +162,7 @@ class WikiSet {
 				}
 			}
 		}
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$row = $dbr->selectRow(
 			'wikiset', '*', array( 'ws_id' => $id ), __METHOD__
 		);
@@ -178,7 +178,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function saveToDB() {
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->replace( 'wikiset', array( 'ws_id' ),
 			array(
@@ -200,7 +200,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function delete() {
-		$dbw = CentralAuthUser::getCentralDB();
+		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->delete( 'wikiset', array( 'ws_id' => $this->mId ), __METHOD__ );
 		$this->purge();
 		return (bool)$dbw->affectedRows();
@@ -249,7 +249,7 @@ class WikiSet {
 	 * @return array
 	 */
 	public function getRestrictedGroups() {
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$r = $dbr->select(
 			'global_group_restrictions', '*', array( 'ggr_set' => $this->mId ), __METHOD__
 		);
@@ -267,7 +267,7 @@ class WikiSet {
 	 * @return array
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$where = array();
 		$options = array();
 
@@ -297,7 +297,7 @@ class WikiSet {
 	 * @return int
 	 */
 	public static function getWikiSetForGroup( $group ) {
-		$dbr = CentralAuthUser::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$res = $dbr->selectRow( 'global_group_restrictions', '*', array( 'ggr_group' => $group ), __METHOD__ );
 		return $res ? $res->ggr_set : 0;
 	}

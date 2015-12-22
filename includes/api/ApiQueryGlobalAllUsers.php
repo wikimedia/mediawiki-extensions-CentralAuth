@@ -39,7 +39,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		static $db = null ;
 
 		if ( is_null( $db ) ) {
-			$db = CentralAuthUser::getCentralSlaveDB();
+			$db = CentralAuthUtils::getCentralSlaveDB();
 		}
 		return $db;
 	}
