@@ -2243,8 +2243,10 @@ class CentralAuthHooks {
 				// wiki account can cause this Exception from
 				// CentralAuthUser::localUserData. Allow the password for now, and
 				// we'll catch them next login if their password isn't valid.
-				if ( $user->idForName() === 0
-					&& substr( $e->getMessage(), 0 , 34 ) === 'Could not find local user data for'
+				// And T119736 - if localuser table gets out of sync, don't
+				// deny logins
+				if ( substr( $e->getMessage(), 0 , 34 )
+					=== 'Could not find local user data for'
 				) {
 					wfDebugLog(
 						'CentralAuth',
