@@ -345,6 +345,8 @@
 	"centralauth-rename-form-movepages": "Mover as páxinas de usuario",
 	"centralauth-rename-form-suppressredirects": "Suprimir a creación de redireccións",
 	"centralauth-rename-form-overrideantispoof": "Ignorar calquer conflicto co sistema AntSpoof",
+	"centralauth-rename-form-allowhigheditcount": "Confirmar para renomear a un usuario con máis de $1 {{PLURAL:$1|edición|edicións}}",
+	"centralauth-rename-globaleditcount-threshold": "Este usuario ten máis de $1 {{PLURAL:$1|edición|edicións}}. Por favor, confirme que está seguro de que quere renomear este usuarioe que un administrador de sistemas está dispoñible para vixiar este renomeado.",
 	"centralauth-rename-notinstalled": "A extensión de renomeamento de usuarios (Renameuser) non está instalada.",
 	"centralauth-rename-doesnotexist": "A conta especificada non existe.",
 	"centralauth-rename-alreadyexists": "O nome de usuario solicitado xa existe.",
