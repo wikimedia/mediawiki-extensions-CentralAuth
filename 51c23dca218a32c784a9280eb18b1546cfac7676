@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_fb19ca7e",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-12-23T00:22:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_b7a2e990",
+      "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_17f63df6",
         "filename": "maintenance/fixStuckGlobalRename.php",
         "patchSetId": 1
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_1b15c640",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-12-23T00:22:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_37f9f9e4",
+      "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_d7e3e52f",
         "filename": "maintenance/fixStuckGlobalRename.php",
         "patchSetId": 1
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_bb2352a5",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-12-23T00:22:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_d7e3e52f",
+      "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e7c4fa4_57d7d54f",
         "filename": "maintenance/fixStuckGlobalRename.php",
         "patchSetId": 1
@@ -99,6 +153,24 @@
       "writtenOn": "2015-03-04T20:12:55Z",
       "side": 1,
       "message": "empty line before starting would be nice",
+      "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_7b1dda65",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2015-12-23T00:22:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e7c4fa4_57d7d54f",
       "revId": "51c23dca218a32c784a9280eb18b1546cfac7676",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
