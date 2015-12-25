@@ -325,6 +325,7 @@
 	"centralauth-rename-form-newname": "Neie Benotzernumm",
 	"centralauth-rename-form-reason": "Grond",
 	"centralauth-rename-form-movepages": "Benotzersäite réckelen",
+	"centralauth-rename-form-allowhigheditcount": "Confirméiere fir Benotzer mat méi wéi $1 {{PLURAL:$1|äNNERUNG|Ännerungen}} ëmzebenennen",
 	"centralauth-rename-notinstalled": "D'Erweiderung Renameuser ass net installéiert.",
 	"centralauth-rename-doesnotexist": "De Benotzerkont deen ugi gouf gëtt et net.",
 	"centralauth-rename-alreadyexists": "Den ugefrote Benotzernumm gëtt et schonn.",
