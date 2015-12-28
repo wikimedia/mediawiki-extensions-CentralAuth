@@ -281,6 +281,8 @@
 	"centralauth-usermerge-form-newuser": "سوْن ایشلدن آدی",
 	"centralauth-usermerge-form-usernames": "ایندیکی ایشلدن آدی:",
 	"centralauth-usermerge-form-reason": "ندن",
+	"globalrenamerequest": "باشاباش آد دَییشدیرمه ایستگی",
+	"globalrenamerequest-legend": "باشاباش آد دَییشدیرمه ایستگی",
 	"globalrenamerequest-username-label": "ایندیکی ایشلدن آدی:",
 	"globalrenamerequest-newname-label": "ایستک‌لنمیش ایشلدن آدیː",
 	"globalrenamerequest-email-help": "ایمیل آدرسینیزی یازین",
