@@ -32,6 +32,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	const PAGE_OPEN_QUEUE = 'open';
 	const PAGE_PROCESS_REQUEST = 'request';
 	const PAGE_CLOSED_QUEUE = 'closed';
+	const ALL_PAGES = array(
+		self::PAGE_OPEN_QUEUE,
+		self::PAGE_PROCESS_REQUEST,
+		self::PAGE_CLOSED_QUEUE
+	);
 	const ACTION_CANCEL = 'cancel';
 	const ACTION_VIEW = 'view';
 
@@ -648,6 +653,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	protected function getGroupName() {
 		return 'users';
+	}
+
+	public function prefixSearchSubpages( $search, $limit, $offset ) {
+		$possibilities = array_filter( self::ALL_PAGES, function ( $val ) use ( $search ) {
+			// Filter by prefix.
+			return substr( $val, 0, strlen( $search ) ) === $search;
+		} );
+		return array_slice( $possibilities, $offset, $offset + $limit );
 	}
 }
 
