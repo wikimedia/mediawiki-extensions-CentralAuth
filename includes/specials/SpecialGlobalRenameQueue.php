@@ -649,6 +649,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
+	public function getSubpagesForPrefixSearch() {
+		return array(
+			self::PAGE_OPEN_QUEUE,
+			self::PAGE_PROCESS_REQUEST,
+			self::PAGE_CLOSED_QUEUE
+		);
+	}
 }
 
 
