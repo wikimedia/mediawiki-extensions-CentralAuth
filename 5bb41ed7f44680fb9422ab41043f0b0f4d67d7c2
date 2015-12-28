@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_b7b4b434",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2015-12-28T21:25:48Z",
+      "side": 1,
+      "message": "You can use the shortcut getSubpagesForPrefixSearch for a static list, see SpecialWatchlist.php",
+      "revId": "5bb41ed7f44680fb9422ab41043f0b0f4d67d7c2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
