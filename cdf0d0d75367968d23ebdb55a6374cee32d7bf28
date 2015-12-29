@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_bac9f456",
+        "filename": "CentralAuth.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-12-29T20:06:35Z",
+      "side": 1,
+      "message": "Should we even try to support non SessionManager installs?",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_5a53206e",
+        "filename": "includes/api/ApiCentralAuthToken.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2015-12-29T20:06:35Z",
+      "side": 1,
+      "message": "Why do we return the actual session id here? I\u0027d prefer we didn\u0027t make that accessible to javascript (we currently set the session cookie to httponly).",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
