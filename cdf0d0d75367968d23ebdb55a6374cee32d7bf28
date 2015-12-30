@@ -33,6 +33,23 @@
       "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_6e865aae",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-12-30T00:17:19Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be centralSessionName?",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
