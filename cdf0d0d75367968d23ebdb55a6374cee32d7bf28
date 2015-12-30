@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6eaa8f54_2924dcac",
+        "filename": "CentralAuth.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-12-30T01:46:22Z",
+      "side": 1,
+      "message": "Mostly hypothetical since this does not take arguments but that might change in the future or this pattern might be copied by other extensions: this leaves makes the site admin\u0027s life complicated if they want to override the provider. I wonder if there should be some flag to say \"I know what I am doing, don\u0027t set default providers\".",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eaa8f54_bac9f456",
         "filename": "CentralAuth.php",
         "patchSetId": 12
@@ -47,6 +64,23 @@
       "writtenOn": "2015-12-30T00:17:19Z",
       "side": 1,
       "message": "Shouldn\u0027t this be centralSessionName?",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_4927d8b1",
+        "filename": "includes/session/CentralAuthTokenSessionProvider.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2015-12-30T01:46:22Z",
+      "side": 1,
+      "message": "Parent takes no arguments in the current version.",
       "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
