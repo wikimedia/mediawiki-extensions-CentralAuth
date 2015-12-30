@@ -766,14 +766,14 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	public function storeAndMigrate( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->begin();
+		$dbw->begin( __METHOD__ );
 
 		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
 		if ( $ret === true ) {
 			$this->recordAntiSpoof();
 		}
 
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 		return $ret;
 	}
 
