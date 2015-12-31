@@ -17,6 +17,9 @@
 
 		$.getJSON( login.toString() )
 		.done( function ( data ) {
+			if ( data.jsconfigvars ) {
+				mw.config.set( data.jsconfigvars );
+			}
 			if ( data.toolslist ) {
 				$( '#p-personal ul' ).html( data.toolslist );
 				$( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );

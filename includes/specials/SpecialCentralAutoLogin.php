@@ -95,7 +95,23 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$user->isAnon() ) {
 				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
 					$html = $this->getSkin()->getPersonalToolsList();
-					$json = FormatJSON::encode( array( 'toolslist' => $html ) );
+					$jsConfigVars = $this->getJsConfigVars();
+					unset( $jsConfigVars[ 'wgArticleId' );
+					unset( $jsConfigVars[ 'wgCanonicalNamespace' );
+					unset( $jsConfigVars[ 'wgCanonicalSpecialPageName' );
+					unset( $jsConfigVars[ 'wgIsArticle' );
+					unset( $jsConfigVars[ 'wgIsProbablyEditable' );
+					unset( $jsConfigVars[ 'wgIsRedirect' );
+					unset( $jsConfigVars[ 'wgNamespaceNumber' );
+					unset( $jsConfigVars[ 'wgPageContentLanguage' );
+					unset( $jsConfigVars[ 'wgPageContentModel' );
+					unset( $jsConfigVars[ 'wgPageName' );
+					unset( $jsConfigVars[ 'wgRevisionId' );
+					unset( $jsConfigVars[ 'wgTitle' );
+					$json = FormatJSON::encode( array(
+						'toolslist' => $html,
+						'jsconfigvars' => $jsConfigVars
+					) );
 				} else {
 					$gender = $this->getUser()->getOption( 'gender' );
 					if ( strval( $gender ) === '' ) {
