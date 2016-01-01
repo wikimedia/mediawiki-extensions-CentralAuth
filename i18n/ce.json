@@ -160,7 +160,7 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} хьалха",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|минот}} хьалха",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|сахьт}} хьалха",
-	"centralauth-days-ago": "{{PLURAL:$1|$1 де}} хьалха",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|де}} хьалха",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|бутт}} хьалха",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|шо}} хьалха",
 	"centralauth-prefs-status": "Хьан цӀеран хьал:",
