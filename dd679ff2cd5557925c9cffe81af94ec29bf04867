@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_3c496ed3",
+        "filename": "includes/specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-01-03T07:29:18Z",
+      "side": 1,
+      "message": "This throws deprecation warnings with the default vagrant configuration which end  up as xdebug warnings in the output.",
+      "revId": "dd679ff2cd5557925c9cffe81af94ec29bf04867",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
