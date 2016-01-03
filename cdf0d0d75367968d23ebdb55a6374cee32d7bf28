@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_419fa362",
+        "filename": "CentralAuth.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-01-03T04:18:25Z",
+      "side": 1,
+      "message": "I wouldn\u0027t object to someone removing the BC code as soon as both this and the core patch are merged.",
+      "parentUuid": "6eaa8f54_bac9f456",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eaa8f54_5a53206e",
         "filename": "includes/api/ApiCentralAuthToken.php",
         "patchSetId": 12
@@ -47,6 +65,24 @@
       "writtenOn": "2015-12-29T20:06:35Z",
       "side": 1,
       "message": "Why do we return the actual session id here? I\u0027d prefer we didn\u0027t make that accessible to javascript (we currently set the session cookie to httponly).",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_41c80377",
+        "filename": "includes/api/ApiCentralAuthToken.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-01-03T04:18:25Z",
+      "side": 1,
+      "message": "$data is what\u0027s stored in memc on line 74, it doesn\u0027t get returned to the user. The user only gets the $loginToken created on line 72 (returned on line 77).",
+      "parentUuid": "6eaa8f54_5a53206e",
       "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "6eaa8f54_a1b9b7e7",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-01-03T04:18:25Z",
+      "side": 1,
+      "message": "No. Clarified on line 29.",
+      "parentUuid": "6eaa8f54_6e865aae",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eaa8f54_4927d8b1",
         "filename": "includes/session/CentralAuthTokenSessionProvider.php",
         "patchSetId": 12
@@ -81,6 +135,24 @@
       "writtenOn": "2015-12-30T01:46:22Z",
       "side": 1,
       "message": "Parent takes no arguments in the current version.",
+      "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_01c3eb61",
+        "filename": "includes/session/CentralAuthTokenSessionProvider.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-01-03T04:18:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eaa8f54_4927d8b1",
       "revId": "cdf0d0d75367968d23ebdb55a6374cee32d7bf28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
