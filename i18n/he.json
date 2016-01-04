@@ -520,6 +520,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "קוד MD5 אופציונלי לשילוב הנוכחי הצפוי של <username>:<hidden>:<locked>, כדי לזהות התנגשויות עריכה. יש להגדיר <locked> בתור 1 עבור נעול ו־0 עבור לא נעול.",
 	"apihelp-setglobalaccountstatus-example-1": "לנעול את החשבון הגלובלי של [[User:Example]] עם הסיבה \"Spam\".",
 	"apihelp-setglobalaccountstatus-example-2": "לבטל את הנעילה ולהעלים את החשבון הגלובלי של [[User:Example]] עם הסיבה \"I can\"",
+	"apihelp-main-param-centralauthtoken": "בעת גישה לבקשת AJAX חוצה־מתחמים (CORS) יש להשתמש בזה כדי להתאמת בתור משתמש SUL נוכחי. יש להשתמש ב־<kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> בוויקי הזהכדי לאחזר את האסימון לפי ביצוע בקשת CORS. בכל אסימון אפשר להשתמש רק פעם אחת, והוא פג אחרי 10 שניות. זה אמור להיכלל בכל בקשה לפני טיסה ולכן זה צריך להיות כלול ב־URI של הבקשה (לא בגוף ה־POST).",
 	"centralauth-log-gblrename-oldname": "שם משתמש קודם",
 	"centralauth-contribs-locked": "החשבון הזה נעול גלובלית.\nר' [[Special:CentralAuth/$1|פרטים על החשבון הגלובלי]] למידע נוסף.",
 	"centralauth-contribs-locked-log": "החשבון הזה נעול גלובלית.\nהעיול האחרון ביומן הנעילות ניתן להלן לעיון:",
