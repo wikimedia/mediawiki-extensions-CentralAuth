@@ -53,6 +53,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$navigation = explode( '/', $par );
 		$action = array_shift( $navigation );
 
+		$this->outputHeader();
+
 		switch ( $action ) {
 			case self::PAGE_OPEN_QUEUE:
 				$this->handleOpenQueue();
