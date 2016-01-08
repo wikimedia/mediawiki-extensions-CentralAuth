@@ -46,8 +46,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginStart( $token ) {
-		$key = CentralAuthUser::memcKey( 'central-login-start-token', $token );
-		$cache = CentralAuthUser::getSessionCache();
+		$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
+		$cache = CentralAuthUtils::getSessionCache();
 
 		// Get the token information
 		$casToken = null;
@@ -64,7 +64,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			throw new Exception( "Global user does not have ID '{$info['guid']}'." );
 		}
 
-		$session = CentralAuthUser::getSession();
+		$session = CentralAuthUtils::getCentralSession();
 		// If the user has a full session, make sure that the names match up.
 		// If they do, then send the user back to the "login successful" page.
 		// We want to avoid overwriting any session that may already exist.
@@ -98,16 +98,16 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Start an unusable placeholder session stub and send a cookie.
 		// The cookie will not be usable until the session is unstubbed.
 		// Note: the "remember me" token must be dealt with later (security).
-		$newSessionId = CentralAuthUser::setSession( array(
+		$newSessionId = CentralAuthSessionCompat::setCentralSession( array(
 			'pending_name' => $centralUser->getName(),
 			'pending_guid' => $centralUser->getId()
 		), true, $secureCookie );
-		CentralAuthUser::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
-		CentralAuthUser::setCookie( 'Token', '', -86400, $secureCookie );
+		CentralAuthSessionCompat::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
+		CentralAuthSessionCompat::setCookie( 'Token', '', -86400, $secureCookie );
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
-		$key = CentralAuthUser::memcKey( 'central-login-complete-token', $token );
+		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
 		$data = array(
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
@@ -146,9 +146,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		global $wgCentralAuthCheckSULMigration;
 
 		$request = $this->getRequest();
-		$cache = CentralAuthUser::getSessionCache();
+		$cache = CentralAuthUtils::getSessionCache();
 
-		$key = CentralAuthUser::memcKey( 'central-login-complete-token', $token );
+		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
@@ -192,7 +192,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// default cookie security. With $wgSecureLogin, we use the stickHTTPS checkbox.
 		$secureCookie = $attempt['stickHTTPS'];
 
-		$centralUser->setGlobalCookies( $attempt['remember'], $info['sessionId'], $secureCookie, array(
+		CentralAuthSessionCompat::setGlobalCookies( $centralUser, $attempt['remember'], $info['sessionId'], $secureCookie, array(
 			'finalProto' => $attempt['finalProto'],
 			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
