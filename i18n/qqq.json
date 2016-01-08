@@ -559,7 +559,6 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "{{doc-apihelp-param|setglobalaccountstatus|statecheck}}",
 	"apihelp-setglobalaccountstatus-example-1": "{{doc-apihelp-example|setglobalaccountstatus}}",
 	"apihelp-setglobalaccountstatus-example-2": "{{doc-apihelp-example|setglobalaccountstatus}}",
-	"apihelp-main-param-centralauthtoken": "{{doc-apihelp-param|main|centralauthtoken}}",
 	"centralauth-log-gblrename-oldname": "Label for field on Special:Log which allows filtering the global rename log by the previous username",
 	"centralauth-contribs-locked": "This is displayed on [[Special:Contributions]] for locked accounts when we cannot display the log entry. Parameters:\n* $1 - the username",
 	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}",

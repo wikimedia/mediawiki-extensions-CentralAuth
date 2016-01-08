@@ -1,8 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sanlinnaing"
+			"Sanlinnaing",
+			"Ninjastrikers"
 		]
 	},
+	"centralauth-foreign-link": "$2 ပေါ်ရှိ အသုံးပြုသူ $1",
+	"centralauth-foreign-contributions": "$2 ပေါ်ရှိ $1 ၏ {{PLURAL:$1|ဆောင်ရွက်ချက်|ဆောင်ရွက်ချက်များ}}",
+	"centralauth-merge-method-login": "လော့အင်ဂ်စဉ် ဖန်တီးခဲ့သည်",
+	"centralauth-admin-blocklog": "ပိတ်ပင်တားဆီးမှု မှတ်တမ်း",
 	"centralauth-log-gblrename-oldname": "အရင်သုံးစွဲသော နာမည်"
 }

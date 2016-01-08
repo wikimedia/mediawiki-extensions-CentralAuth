@@ -345,6 +345,7 @@
 	"centrallogin": "中央用户登录",
 	"centralloginsuccesful": "登录成功",
 	"centralauth-completelogin-back": "返回前一页",
+	"centralauth-error-wrongprovider": "此特殊页面在使用$1时不可用。",
 	"centralauth-error-nologinattempt": "你的会话没有主动登入尝试正在进行。",
 	"centralauth-error-badtoken": "提供的身份验证密钥过期或无效。",
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
@@ -549,5 +550,7 @@
 	"centralauth-uwbr-registration-nodate": "未知",
 	"centralauth-uwbr-editcount": "编辑计数",
 	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。",
-	"centralauth-delete-empty-account": "空账户"
+	"centralauth-delete-empty-account": "空账户",
+	"sessionprovider-centralauthsessionprovider": "central cookie-based会话",
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken会话"
 }

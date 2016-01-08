@@ -328,6 +328,7 @@
 	"centrallogin": "Zentrale Benutzeranmeldung",
 	"centralloginsuccesful": "Die Anmeldung war erfolgreich",
 	"centralauth-completelogin-back": "Zurück zur vorherigen Seite.",
+	"centralauth-error-wrongprovider": "Diese Spezialseite ist mit Verwendung von $1 nicht verfügbar.",
 	"centralauth-error-nologinattempt": "Es ist kein aktiver Anmeldeversuch für deine Sitzung in Gang.",
 	"centralauth-error-badtoken": "Der angegebene Authentifizierungstoken ist entweder abgelaufen oder ungültig.",
 	"centralauth-error-token-wrongattempt": "Der Authentifikationstoken gehört nicht zu deinem aktuellen Anmeldeversuch.\nEin anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.",
@@ -527,5 +528,7 @@
 	"centralauth-uwbr-registration-nodate": "Unbekannt",
 	"centralauth-uwbr-editcount": "Bearbeitungszähler",
 	"centralauth-uwbr-intro": "Diese Seite listet auf diesem Wiki registrierte Benutzer auf, die umbenannt werden.",
-	"centralauth-delete-empty-account": "Leeres Benutzerkonto"
+	"centralauth-delete-empty-account": "Leeres Benutzerkonto",
+	"sessionprovider-centralauthsessionprovider": "zentralen cookiebasierten Sitzungen",
+	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen"
 }
