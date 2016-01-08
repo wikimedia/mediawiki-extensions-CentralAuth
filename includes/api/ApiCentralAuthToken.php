@@ -46,8 +46,17 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieUsage( 'Anonymous users cannot obtain a centralauthtoken', 'notloggedin' );
 		}
 
-		if ( CentralAuthHooks::hasApiToken() ) {
-			$this->dieUsage( 'Cannot obtain a centralauthtoken when using centralauthtoken', 'norecursion' );
+		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
+			$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
+				$this->dieUsage( 'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession' );
+			}
+			$id = $session->getId();
+		} else {
+			if ( CentralAuthSessionCompat::hasApiToken() ) {
+				$this->dieUsage( 'Cannot obtain a centralauthtoken when using centralauthtoken', 'norecursion' );
+			}
+			$id = session_id();
 		}
 
 		$centralUser = CentralAuthUser::getInstance( $user );
@@ -58,6 +67,8 @@ class ApiCentralAuthToken extends ApiBase {
 		$data = array(
 			'userName' => $user->getName(),
 			'token' => $centralUser->getAuthToken(),
+			'origin' => wfWikiId(),
+			'originSessionId' => $id,
 		);
 
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );

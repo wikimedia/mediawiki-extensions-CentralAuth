@@ -615,7 +615,7 @@ class CentralAuthHooks {
 			// and we need to make sure an agent requesting such a URL actually initiated
 			// the login request that spawned that token server-side.
 			$secret = MWCryptRand::generateHex( 32 );
-			$_SESSION['CentralAuth:autologin:current-attempt'] = array(
+			$request->setSessionData( 'CentralAuth:autologin:current-attempt', array(
 				'secret'        => $secret,
 				'remember'      => $request->getCheck( 'wpRemember' ),
 				'returnTo'      => $returnTo,
@@ -623,7 +623,7 @@ class CentralAuthHooks {
 				'stickHTTPS'    => $secureCookies, // cookies set secure or not (local CentralAuth cookies)
 				'finalProto'    => $finalProto, // final page http or https
 				'type'          => $request->getText( 'type' )
-			);
+			) );
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
 			$token = MWCryptRand::generateHex( 32 );
@@ -1650,6 +1650,25 @@ class CentralAuthHooks {
 				array_merge( $central->getGlobalGroups(), $localPolicyGroups ),
 				$effectivePolicy
 			);
+		}
+		return true;
+	}
+
+	/**
+	 * Hook function to prevent logged-in sessions when a user is being
+	 * renamed.
+	 * @param string &$reason Failure reason to log
+	 * @param MediaWiki\\Session\\SessionInfo $info
+	 * @param WebRequest $request
+	 * @param array|false $metadata
+	 * @param array|false $data
+	 * @return bool
+	 */
+	public static function onSessionCheckInfo( &$reason, $info ) {
+		$centralUser = new CentralAuthUser( $info->getUserInfo()->getName() );
+		if ( $centralUser->renameInProgress() ) {
+			$reason = 'CentralAuth rename in progress';
+			return false;
 		}
 		return true;
 	}
