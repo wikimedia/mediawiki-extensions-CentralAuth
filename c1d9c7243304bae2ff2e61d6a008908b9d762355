@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_5cfd2568",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-09T11:54:32Z",
+      "side": 1,
+      "message": "This may work in practice but is syntactically incorrect, the first case  in English should be 1.",
+      "revId": "c1d9c7243304bae2ff2e61d6a008908b9d762355",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_bcebf99f",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-09T11:54:32Z",
+      "side": 1,
+      "message": "$3 is not a number",
+      "revId": "c1d9c7243304bae2ff2e61d6a008908b9d762355",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_7c310156",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-09T11:54:32Z",
+      "side": 1,
+      "message": "This line got too long, use newlines and indenting https://www.mediawiki.org/wiki/Manual:Coding_conventions#Indenting_and_alignment",
+      "revId": "c1d9c7243304bae2ff2e61d6a008908b9d762355",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
