@@ -156,6 +156,9 @@ class CentralAuthHooks {
 		// centralauth-rightslog-entry-setnewtype, centralauth-rightslog-entry-setchange,
 		// centralauth-rightslog-entry-deleteset
 		$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
+		if ( $action === 'newset' ) {
+			$msg->numParams( count( $params[2] ) );
+		}
 		if( $skin ) {
 			return $msg->text();
 		} else {
@@ -504,7 +507,11 @@ class CentralAuthHooks {
 			$inject_html = wfMessage( 'centralauth-login-no-others' )->escaped();
 		} else {
 			$inject_html = '<div class="centralauth-login-box"><p>' .
-				wfMessage( 'centralauth-login-progress', $user->getName() )->escaped() . "</p>\n<p>";
+				wfMessage( 'centralauth-login-progress',
+						$user->getName()
+				)
+				->numParams( count( $wgCentralAuthAutoLoginWikis ) )
+				->escaped() . "</p>\n<p>";
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -715,7 +722,11 @@ class CentralAuthHooks {
 			$inject_html = wfMessage( 'centralauth-logout-no-others' )->escaped();
 		} else {
 			$inject_html = '<div class="centralauth-logout-box"><p>' .
-				wfMessage( 'centralauth-logout-progress', $user->getName() )->escaped() . "</p>\n<p>";
+				wfMessage( 'centralauth-logout-progress',
+						$user->getName()
+				)
+				->numParams( count( $wgCentralAuthAutoLoginWikis ) )
+				->escaped() . "</p>\n<p>";
 			foreach ( $wikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
