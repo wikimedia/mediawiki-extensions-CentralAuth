@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_1cfd6d37",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-09T13:38:09Z",
+      "side": 1,
+      "message": "I\u0027d still prefer a traditional argument order",
+      "revId": "c3cc51ad3d186d8402e7f8ebce2e3615e444bd85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_bcf5394f",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-09T13:38:09Z",
+      "side": 1,
+      "message": "Still using $3",
+      "revId": "c3cc51ad3d186d8402e7f8ebce2e3615e444bd85",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
