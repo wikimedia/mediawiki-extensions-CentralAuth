@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_42b0dc88",
+        "filename": "i18n/en.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-10T10:17:12Z",
+      "side": 1,
+      "message": "|wiki|wikis would be clearer here too.",
+      "revId": "70250c4eb34a3ae7fb362b9272c6c5cd75ba8001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_a26e70fc",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2016-01-10T10:17:12Z",
+      "side": 1,
+      "message": "This is not correct, the first parameter you pass to wfMessage is still the username. The number is the second. Same below.",
+      "revId": "70250c4eb34a3ae7fb362b9272c6c5cd75ba8001",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
