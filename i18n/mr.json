@@ -326,6 +326,7 @@
 	"centrallogin": "सदस्याचा केंद्रीभूत सनोंद प्रवेश",
 	"centralloginsuccesful": "आपल्या सनोंद-प्रवेशाची नोंदणी यशस्वीरीत्या पूर्ण झाली",
 	"centralauth-completelogin-back": "मागील पानावर चला",
+	"centralauth-error-wrongprovider": "हे विशेष पान $1 वापरतांना उपलब्ध नाही.",
 	"centralauth-error-nologinattempt": "आपल्या सत्रात, सक्रिय सनोंदप्रवेशाची काहीच खटपट दिसून आली नाही.",
 	"centralauth-error-badtoken": "प्रस्तूत केलेला प्राधिकृत बिल्ला हा एकतर मृतवत् आहे किंवा अवैध आहे.",
 	"centralauth-error-token-wrongattempt": "हा प्राधिकृत बिला आपल्या सध्याच्या सनोंदप्रवेशाच्या प्रयत्नांशी संबंधित नाही. आपणास,कोणीतरी खोट्या/नकली सदस्यखात्याअंतर्गत प्रवेश करवित आहे.",
@@ -381,5 +382,7 @@
 	"globalrenamequeue-form-status": "स्थिती:",
 	"globalrenamequeue-form-status-all": "सर्व",
 	"userswhowillberenamed": "सदस्य ज्यांचे पुनर्नामाभिधान होईल",
-	"centralauth-uwbr-registration": "नोंदणीचा दिनांक"
+	"centralauth-uwbr-registration": "नोंदणीचा दिनांक",
+	"sessionprovider-centralauthsessionprovider": "केंद्रीय कुकि-आधारीत सत्रे",
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken सत्रे"
 }

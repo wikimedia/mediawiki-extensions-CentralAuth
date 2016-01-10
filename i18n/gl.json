@@ -371,7 +371,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Entradas no rexistro",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ver progreso]])",
 	"centralauth-rename-progress-list-header": "Os seguintes renomeados globais están actualmente en progreso:",
-	"centralauth-rename-movelog": "A páxina foi movida automáticamente debido ao cambio de nome de usuario de \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
+	"centralauth-rename-movelog": "A páxina foi movida automaticamente debido ao cambio de nome de usuario de \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Está seguro de querer cambiar o nome de usuario desta conta globalmente?",
 	"centralauth-rename-deny": "Está seguro que quere denegar esta solicitude?",
 	"log-name-gblrename": "Rexitro de cambios de nome globais",

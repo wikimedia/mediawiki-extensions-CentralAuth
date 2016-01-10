@@ -325,6 +325,7 @@
 	"centrallogin": "כניסת משתמש מרכזית",
 	"centralloginsuccesful": "הכניסה הושלמה בהצלחה",
 	"centralauth-completelogin-back": "חזרה לדף הקודם.",
+	"centralauth-error-wrongprovider": "הדף המיוחד הזה אינו זמין בעת שימוש ב{{GRAMMAR:תחילית|$1}}.",
 	"centralauth-error-nologinattempt": "אין ניסיון כניסה בהפעלה הנוכחית.",
 	"centralauth-error-badtoken": "קוד האימות שסופק לא תקין או שפג תוקפו.",
 	"centralauth-error-token-wrongattempt": "קוד האימות אינו מתאים בניסיון הכניסה הנוכחי.\nייתכן שמישהו מנסה להיכנס במקומך.",
@@ -530,5 +531,7 @@
 	"centralauth-uwbr-registration-nodate": "אינו ידוע",
 	"centralauth-uwbr-editcount": "מספר העריכות",
 	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה.",
-	"centralauth-delete-empty-account": "חשבון ריק"
+	"centralauth-delete-empty-account": "חשבון ריק",
+	"sessionprovider-centralauthsessionprovider": "התחברויות מרכזיות מבוססות־עוגיות",
+	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken"
 }

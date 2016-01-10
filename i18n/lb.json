@@ -310,6 +310,7 @@
 	"centrallogin": "Zentrale Login",
 	"centralloginsuccesful": "Umeldung huet geklappt",
 	"centralauth-completelogin-back": "Zréck op déi vireg Säit",
+	"centralauth-error-wrongprovider": "Dës Spezialsäit ass net disponibel wann Dir $1 benotzt.",
 	"centralauth-error-badtoken": "Déi Authentifizéierung déi Dir uginn hutt ass entweder ofgelaf oder net valabel.",
 	"centralauth-warning-notloggedin": "Dir sidd elo net ageloggt.",
 	"centralauth-warning-notattached": "De lokale Benotzerkont ass net mat engem globale Benotzerkont verbonn.",

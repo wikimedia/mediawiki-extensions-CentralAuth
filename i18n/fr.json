@@ -40,7 +40,8 @@
 			"Hercule",
 			"Caliburn",
 			"Wladek92",
-			"Orlodrim"
+			"Orlodrim",
+			"Fylip22"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -355,6 +356,7 @@
 	"centrallogin": "Connexion utilisateur centralisée",
 	"centralloginsuccesful": "Connexion réussie",
 	"centralauth-completelogin-back": "Revenir à la page précédente.",
+	"centralauth-error-wrongprovider": "Cette page spéciale n'est pas disponible lors de l'utilisation de $1.",
 	"centralauth-error-nologinattempt": "Aucune tentative de connexion active n’est en cours pour votre session.",
 	"centralauth-error-badtoken": "Le jeton d’authentification fourni est soit expiré, soit non valide.",
 	"centralauth-error-token-wrongattempt": "Le jeton d’authentification n’appartient pas à votre tentative de connexion actuelle. Quelqu’un pourrait essayer de vous connecter avec un compte malveillant.",

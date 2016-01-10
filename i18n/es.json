@@ -45,7 +45,8 @@
 			"Tusca",
 			"Jmvkrecords",
 			"Ryo567",
-			"Chris TR"
+			"Chris TR",
+			"Matiia"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -361,6 +362,7 @@
 	"centrallogin": "Inicio de sesión centralizado",
 	"centralloginsuccesful": "Se inició la sesión correctamente",
 	"centralauth-completelogin-back": "Volver a la página anterior.",
+	"centralauth-error-wrongprovider": "Esta página especial no está disponible cuando se usa $1.",
 	"centralauth-error-nologinattempt": "No hay ningún intento de inicio de sesión en curso",
 	"centralauth-error-badtoken": "La señal de autenticación proporcionada ha caducado o no es válida.",
 	"centralauth-error-token-wrongattempt": "El \"token\" de autenticación no pertenece a tu intento de inicio de sesión actual.\nAlguien podría estar intentando entrar a tu sesión bajo una cuenta maliciosa.",
@@ -383,6 +385,7 @@
 	"centralauth-rename-form-suppressredirects": "Suprimir la creación de redirecciones",
 	"centralauth-rename-form-overrideantispoof": "Ignorar cualquier conflicto con el sistema AntSpoof",
 	"centralauth-rename-form-allowhigheditcount": "Confirmar para renombrar un usuario con más de $1 {{PLURAL:$1|edición|ediciones}}",
+	"centralauth-rename-globaleditcount-threshold": "Este usuario tiene más de $1 {{PLURAL:$1|edición|ediciones}}. Por favor, confirma que estás seguro de que quieres renombrar este usuario y que un administrador del sistema está disponible para supervisar este cambio de nombre.",
 	"centralauth-rename-notinstalled": "La extensión Renameuser no está instalada.",
 	"centralauth-rename-doesnotexist": "La cuenta proporcionada no existe.",
 	"centralauth-rename-alreadyexists": "El nombre de usuario solicitado ya existe.",
@@ -475,7 +478,7 @@
 	"globalrenamequeue-request-title": "¿Renombrar a \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> ha solicitado renombrarse como <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* nombre de usuario actual: [[Special:CentralAuth/$1]]\n* wiki origen: $2\n* nombre de usuario deseado: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* nombre de usuario actual: [[Special:CentralAuth/$1]]\n* wiki origen: $2\n* nombre de usuario deseado: [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* nombre de usuario actual: [[Special:CentralAuth/$1]]\n* wiki origen: $2\n* nombre de usuario deseado: [[Special:CentralAuth/$3]]\n* número de ediciones globales: $4",
 	"globalrenamequeue-request-reason": "<strong>Motivo de solicitud de renombramiento</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Usuario notificado de conflicto con cuenta global preparándose para finalizar su cuenta unificada (SUL).",
 	"globalrenamequeue-request-comments-label": "Notas/razones",
