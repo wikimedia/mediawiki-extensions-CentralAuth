@@ -331,6 +331,7 @@
 	"centrallogin": "Accesso centrale utente",
 	"centralloginsuccesful": "Accesso effettuato",
 	"centralauth-completelogin-back": "Torna alla pagina precedente.",
+	"centralauth-error-wrongprovider": "Questa pagina speciale non è disponibile quando utilizzi $1.",
 	"centralauth-error-nologinattempt": "Nessun tentativo di accesso attivo è in corso per la sessione.",
 	"centralauth-error-badtoken": "Il token di autenticazione fornito è scaduto o non valido.",
 	"centralauth-error-token-wrongattempt": "Il token di autenticazione non appartiene al tuo tentativo di accesso corrente.\nQualcuno potrebbe star cercando di farti accedere con un account manipolato.",

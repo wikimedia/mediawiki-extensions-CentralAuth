@@ -562,5 +562,7 @@
 	"centralauth-uwbr-registration-nodate": "Inconnu",
 	"centralauth-uwbr-editcount": "Compteur de modifications",
 	"centralauth-uwbr-intro": "Cette page liste les utilisateurs inscrits dans ce wiki qui seront renommés.",
-	"centralauth-delete-empty-account": "Compte vide"
+	"centralauth-delete-empty-account": "Compte vide",
+	"sessionprovider-centralauthsessionprovider": "sessions basées sur les cookies centraux",
+	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken"
 }
