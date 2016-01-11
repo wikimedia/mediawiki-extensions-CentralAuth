@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_eeba0fb5",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2016-01-11T13:21:53Z",
+      "side": 1,
+      "message": "You should wrap this long line like you did with \u0027centralauth-login-progress\u0027 above",
+      "revId": "1bd158c567e3c72c26f8e06f69a27b6e539c23cc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
