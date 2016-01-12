@@ -324,6 +324,7 @@
 	"centrallogin": "Acceso central ao sistema",
 	"centralloginsuccesful": "Accedeu correctamente",
 	"centralauth-completelogin-back": "Volver á páxina anterior.",
+	"centralauth-error-wrongprovider": "Esta páxina especial non está dispoñible cando se usa $1.",
 	"centralauth-error-nologinattempt": "Non hai ningún intento de acceso activo para a súa sesión.",
 	"centralauth-error-badtoken": "O pase de autenticación achegado caducou ou non é válido.",
 	"centralauth-error-token-wrongattempt": "O pase de autenticación non pertence ao seu intento actual de acceso.\nSe cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.",
@@ -528,5 +529,7 @@
 	"centralauth-uwbr-registration-nodate": "Descoñecido",
 	"centralauth-uwbr-editcount": "Contador de edicións",
 	"centralauth-uwbr-intro": "Esta páxina mostra unha lista dos usuarios rexistrados neste wiki que serán renomeados.",
-	"centralauth-delete-empty-account": "Conta baleira"
+	"centralauth-delete-empty-account": "Conta baleira",
+	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
+	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken"
 }

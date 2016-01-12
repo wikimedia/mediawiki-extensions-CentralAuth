@@ -318,6 +318,7 @@
 	"centrallogin": "Централна корисничка најава",
 	"centralloginsuccesful": "Најавата е успешна",
 	"centralauth-completelogin-back": "Врати се на претходната страница.",
+	"centralauth-error-wrongprovider": "Оваа службена страница е недостапна при употреба на $1.",
 	"centralauth-error-nologinattempt": "Нема тековен обид за најава во вашата седница.",
 	"centralauth-error-badtoken": "Укажаната шифра за заверка е истечена или неважечка.",
 	"centralauth-error-token-wrongattempt": "Шифрата за заверка не му припаѓа на вашиот тековен обид за најава.\nНекој можеби сака да ве најави со штетна/злонамерна сметка.",
@@ -522,5 +523,7 @@
 	"centralauth-uwbr-registration-nodate": "непознат",
 	"centralauth-uwbr-editcount": "Број на уредувања",
 	"centralauth-uwbr-intro": "На страницава се наведени корисниците регистрирани на ова вики кои ќе бидат преименувани.",
-	"centralauth-delete-empty-account": "Празна сметка"
+	"centralauth-delete-empty-account": "Празна сметка",
+	"sessionprovider-centralauthsessionprovider": "централни седници со колачиња",
+	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра"
 }
