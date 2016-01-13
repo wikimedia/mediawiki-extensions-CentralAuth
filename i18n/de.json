@@ -13,7 +13,8 @@
 			"Revolus",
 			"Umherirrender",
 			"Vogone",
-			"Inkowik"
+			"Inkowik",
+			"Predatorix"
 		]
 	},
 	"mergeaccount": "Status der Benutzerkontenzusammenführung",
@@ -492,6 +493,7 @@
 	"apihelp-query+globalallusers-param-from": "Der Benutzername, bei dem die Auflistung beginnen soll.",
 	"apihelp-query+globalallusers-param-to": "Der Benutzername, bei dem die Auflistung enden soll.",
 	"apihelp-query+globalallusers-param-prefix": "Sucht nach allen Benutzern, die mit diesem Wert beginnen.",
+	"apihelp-query+globalallusers-param-dir": "Sortierrichtung.",
 	"apihelp-query+globalallusers-param-group": "Benutzer auf die angegebenen globalen Gruppen beschränken.",
 	"apihelp-query+globalallusers-param-excludegroup": "Benutzer in den angegebenen globalen Gruppen ausschließen.",
 	"apihelp-query+globalallusers-param-limit": "Welche Gesamtanzahl an Benutzernamen zurückgegeben werden soll.",

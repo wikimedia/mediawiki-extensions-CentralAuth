@@ -316,6 +316,7 @@
 	"centrallogin": "Aniciu de sesión d'usuariu central",
 	"centralloginsuccesful": "Aniciu de sesión correutu",
 	"centralauth-completelogin-back": "Volver a la páxina anterior.",
+	"centralauth-error-wrongprovider": "Esta páxina especial nun ta disponible cuando s'usa $1.",
 	"centralauth-error-nologinattempt": "Nun hai nengún intentu d'aniciu de sesión activu pa la sesión.",
 	"centralauth-error-badtoken": "El pase d'autenticación dau caducó o nun ye válidu.",
 	"centralauth-error-token-wrongattempt": "El pase d'autenticación nun pertenez al intentu d'aniciu de sesión actual.\nDalguién podría tar intentando qu'anicie sesión baxo una cuenta maliciosa.",
@@ -521,5 +522,7 @@
 	"centralauth-uwbr-registration-nodate": "Desconocida",
 	"centralauth-uwbr-editcount": "Contador d'ediciones",
 	"centralauth-uwbr-intro": "Esta páxina amuesa la llista de los usuarios rexistraos n'esta wiki que van renomase.",
-	"centralauth-delete-empty-account": "Cuenta balera"
+	"centralauth-delete-empty-account": "Cuenta balera",
+	"sessionprovider-centralauthsessionprovider": "sesiones centrales basaes en cookies",
+	"sessionprovider-centralauthtokensessionprovider": "sesiones centralauthtoken"
 }
