@@ -24,6 +24,10 @@ class SpecialCentralAuth extends SpecialPage {
 		parent::__construct( 'CentralAuth' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function execute( $subpage ) {
 		global $wgContLang;
 		$this->setHeaders();
