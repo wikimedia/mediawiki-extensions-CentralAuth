@@ -1,10 +1,14 @@
 <?php
 
 class SpecialMergeAccount extends SpecialPage {
-
 	protected $mUserName, $mAttemptMerge, $mMergeAction, $mPassword, $mWikiIDs, $mSessionToken, $mSessionKey;
+
 	function __construct() {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
+	}
+
+	public function doesWrites() {
+		return true;
 	}
 
 	function execute( $subpage ) {

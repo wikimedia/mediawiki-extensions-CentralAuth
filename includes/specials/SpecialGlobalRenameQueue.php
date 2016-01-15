@@ -44,6 +44,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * @param string $par Subpage string if one was specified
 	 */
