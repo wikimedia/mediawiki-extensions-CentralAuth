@@ -16,6 +16,10 @@ class SpecialMultiLock extends SpecialPage {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	function execute( $subpage ) {
 		$this->setHeaders();
 		$this->checkPermissions();

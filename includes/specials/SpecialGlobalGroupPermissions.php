@@ -23,6 +23,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		parent::__construct( 'GlobalGroupPermissions' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * @param $user
 	 * @return bool
