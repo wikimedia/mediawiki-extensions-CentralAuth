@@ -506,6 +506,7 @@
 	"apihelp-globaluserrights-param-reason": "更改原因。",
 	"apihelp-globaluserrights-example-1": "将用户FooBot加入至全域用户组“bot”，并从“sysop”和“bureaucrat”全域用户组移除",
 	"apihelp-globaluserrights-example-2": "将ID为123的全域用户加入至“bot”全域用户组，并将其从全域用户组“sysop”和“bureaucrat”中移除",
+	"apihelp-main-param-centralauthtoken": "当使用跨域名AJAX请求（CORS）访问API时，使用它以认证为当前的SUL用户。在进行CORS请求前，在此wiki使用<kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd>以检索令牌。每个令牌只可以使用一次，并在10秒后过期。这应包含在任何预先请求中，并因此应包含在请求URI中（而不是在POST正文中）。",
 	"apihelp-query+globalallusers-description": "列举所有全域用户。",
 	"apihelp-query+globalallusers-param-from": "枚举的起始用户名。",
 	"apihelp-query+globalallusers-param-to": "枚举的结束用户名。",

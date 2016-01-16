@@ -164,7 +164,7 @@
 	"centralauth-admin-status-submit": "상태 설정",
 	"centralauth-admin-status-nonexistent": "오류:  \"<nowiki>$1</nowiki>\" 통합 계정이 없습니다.",
 	"centralauth-admin-setstatus-success": "통합 계정의 상태를 바꾸었습니다.",
-	"centralauth-admin-status-reasons": "* 일반적인 잠금 이유\n** 훼손 목적의 계정\n** 광고/스팸 목적의 계정\n* 일반적인 계정 숨김-잠금 이유\n** 부적절한 사용자 이름\n** 부적절한 개인 정보",
+	"centralauth-admin-status-reasons": "* 일반적인 잠금 이유\n** 훼손 목적의 계정\n** 광고/스팸 목적의 계정\n* 일반적인 계정 잠금-숨김 이유\n** 부적절한 사용자 이름\n** 부적절한 개인 정보",
 	"centralauth-admin-logsnippet": "이전의 통합 계정 기록",
 	"centralauth-admin-suppressreason": "통합 계정이 다음과 같은 이유로 $1 사용자에 의해 완전히 숨겨졌습니다: $2",
 	"centralauth-admin-not-authorized": "이 작업을 수행할 권한이 없습니다",

@@ -15,7 +15,8 @@
 			"Phoenix303",
 			"Hindustanilanguage",
 			"संजीव कुमार",
-			"Sfic"
+			"Sfic",
+			"YmKavishwar"
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
@@ -78,7 +79,7 @@
 	"centralauth-finish-title": "एकत्रिकरण पूर्ण करें",
 	"centralauth-finish-text": "अगर निम्नलिखित खाते आपके हैं तो उनके कूटशब्द देकर आप इन्हें एकत्रित कर सकतें हैं:",
 	"centralauth-finish-password": "कूटशब्द:",
-	"centralauth-finish-login": "लॉग इन",
+	"centralauth-finish-login": "प्रवेश",
 	"centralauth-finish-send-confirmation": "कूटशब्द ई-मेल से भेजें",
 	"centralauth-finish-problems": "क्या आपको कोई समस्या आ रही है, या फिर ये खाते आपके नहीं हैं?\n[[meta:Special:MyLanguage/Help:Unified login|सहायता कैसे प्राप्त करें]]...",
 	"centralauth-finish-noconfirms": "दिये हुए कूटशब्द से कोई भी खाता प्रमाणित नहीं किया जा सका।",
