@@ -1296,19 +1296,6 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param User $user
-	 * @param string $global wikiID of global wiki
-	 * @param string $local wikiID of wiki user is currently on
-	 * @return bool
-	 * @see https://www.mediawiki.org/wiki/Extension:GlobalCssJs/LoadGlobalCssJs
-	 */
-	public static function onLoadGlobalCssJs( User $user, $global, $local ) {
-		$caUser = CentralAuthUser::getInstance( $user );
-
-		return $caUser->attachedOn( $global ) && $caUser->attachedOn( $local );
-	}
-
-	/**
 	 * Hook for UserMerge extension after an account is deleted
 	 * @param User &$user account that was just deleted
 	 * @return bool

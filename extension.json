@@ -387,7 +387,6 @@
 		"AbuseFilter-generateUserVars": "CentralAuthHooks::abuseFilterGenerateUserVars",
 		"AbuseFilter-builder": "CentralAuthHooks::abuseFilterBuilder",
 		"SecurePoll_GetUserParams": "CentralAuthHooks::onSecurePoll_GetUserParams",
-		"LoadGlobalCssJs": "CentralAuthHooks::onLoadGlobalCssJs",
 		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
 		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo"
 	},
