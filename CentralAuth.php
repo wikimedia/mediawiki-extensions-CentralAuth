@@ -434,12 +434,6 @@ $wgHooks['OAuthGetCentralIdFromLocalUser'][] = 'CentralAuthHooks::onOAuthGetCent
 $wgHooks['OAuthGetCentralIdFromUserName'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromUserName';
 $wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUserNamesFromCentralIds';
 
-// For GlobalCssJs
-$wgHooks['LoadGlobalCssJs'][] = 'CentralAuthHooks::onLoadGlobalCssJs';
-
-// For GlobalUserPage
-$wgHooks['LoadGlobalUserPage'][] = 'CentralAuthHooks::onLoadGlobalUserPage';
-
 // For UserMerge
 $wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
 
