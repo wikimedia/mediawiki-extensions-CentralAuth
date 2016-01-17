@@ -260,6 +260,7 @@
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
 	"right-centralauth-rename": "Preimenovanje globalnih računa",
 	"action-centralauth-rename": "preimenujete globalne račune",
+	"globalrenameprogress": "Stanje globalnog preimenovanja",
 	"centralauth-rename-form-oldname": "Trenutno korisničko ime",
 	"centralauth-rename-alreadyexists": "Traženo korisničko ime već postoji.",
 	"centralauth-rename-unattached-intheway": "Postoje nespojeni računi koji koriste ovo korisničko ime.",
