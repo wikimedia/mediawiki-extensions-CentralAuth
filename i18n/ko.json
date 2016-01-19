@@ -336,6 +336,7 @@
 	"centrallogin": "통합 사용자 로그인",
 	"centralloginsuccesful": "로그인 성공",
 	"centralauth-completelogin-back": "이전 문서로 돌아갑니다.",
+	"centralauth-error-wrongprovider": "이 특수 문서는 $1 에서 접근할 수 없습니다.",
 	"centralauth-error-nologinattempt": "당신의 세션에 대해 현재 로그인 시도가 이루어지고 있지 않습니다.",
 	"centralauth-error-badtoken": "제공된 인증 토른이 만료되었거나 잘못되었습니다.",
 	"centralauth-error-token-wrongattempt": "인증 토큰이 현재 로그인 시도에 속하지 않습니다.\n누군가가 악의적 계정으로 로그인하려고 했을 수 있습니다.",
@@ -511,5 +512,7 @@
 	"centralauth-uwbr-registration-nodate": "알수 없음",
 	"centralauth-uwbr-editcount": "편집 수",
 	"centralauth-uwbr-intro": "이 문서는 이 위키에 등록된 사용자 중 이름이 바뀔 사용자를 나열하고 있습니다.",
-	"centralauth-delete-empty-account": "빈 게정"
+	"centralauth-delete-empty-account": "빈 게정",
+	"sessionprovider-centralauthsessionprovider": "중앙 쿠키 기반 세션",
+	"sessionprovider-centralauthtokensessionprovider": "중앙인증 토큰 세션"
 }
