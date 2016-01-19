@@ -508,7 +508,6 @@
 	"apihelp-globaluserrights-param-reason": "Reason for the change.",
 	"apihelp-globaluserrights-example-1": "Add user FooBot to global group \"bot\", and remove from global groups \"sysop\" and \"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "Add the global user with ID 123 to global group \"bot\", and remove from global groups \"sysop\" and \"bureaucrat\"",
-	"apihelp-main-param-centralauthtoken": "When accessing the API using a cross-domain AJAX request (CORS), use this to authenticate as the current SUL user. Use [[Special:ApiHelp/centralauthtoken|action=centralauthtoken]] on this wiki to retrieve the token, before making the CORS request. Each token may only be used once, and expires after 60 seconds.\n\nThis should be included in any pre-flight request, and therefore should be included in the request URI (not the POST body).",
 	"apihelp-query+globalallusers-description": "Enumerate all global users.",
 	"apihelp-query+globalallusers-param-from": "The user name to start enumerating from.",
 	"apihelp-query+globalallusers-param-to": "The user name to stop enumerating at.",
