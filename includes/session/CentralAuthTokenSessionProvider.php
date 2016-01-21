@@ -104,7 +104,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		}
 		if ( !$centralUser->isAttached() && User::idFromName( $userName ) ) {
 			$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-			return parent::provideSessionInfo( $request );
+			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
 		}
 
 		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', $centralUser->getId() );
