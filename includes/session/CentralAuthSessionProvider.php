@@ -73,10 +73,20 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$this->enable = (bool)$this->params['enable'];
 	}
 
+	private function returnParentSessionInfo( WebRequest $request ) {
+		$info = parent::provideSessionInfo( $request );
+		return new SessionInfo( $info->getPriority(), array(
+			'copyFrom' => $info,
+			'metadata' => array(
+				'CentralAuthSource' => 'Local',
+			),
+		) );
+	}
+
 	public function provideSessionInfo( WebRequest $request ) {
 		if ( !$this->enable ) {
 			$this->logger->debug( __METHOD__ . ': Not enabled, falling back to core sessions' );
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		}
 
 		$info = array(
@@ -112,7 +122,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			}
 		}
 		if ( $userName === null || $token === null ) {
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		}
 
 		// Sanity check to avoid session ID collisions, as reported on T21158
@@ -120,20 +130,20 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$this->logger->debug(
 				__METHOD__ . ': no User cookie, so unable to check for session mismatch'
 			);
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		} elseif ( $userCookie != $userName ) {
 			$this->logger->debug(
 				__METHOD__ . ': Session ID/User mismatch. Possible session collision. ' .
 					"Expected: $userName; actual: $userCookie"
 			);
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		}
 
 		// Clean up username
 		$userName = User::getCanonicalName( $userName, 'valid' );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		}
 
 		// Try the central user
@@ -150,15 +160,16 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		if ( !$centralUser->exists() ) {
 			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		}
 		if ( !$centralUser->isAttached() && User::idFromName( $userName ) ) {
 			$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-			return parent::provideSessionInfo( $request );
+			return self::returnParentSessionInfo( $request );
 		}
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
 			$this->logger->debug( __METHOD__ . ': token mismatch' );
-			return parent::provideSessionInfo( $request );
+			// At this point, don't log in with a local session anymore
+			return null;
 		}
 
 		$this->logger->debug( __METHOD__ . ": logged in from $from" );
@@ -168,10 +179,27 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			'provider' => $this,
 			'persisted' => isset( $info['id'] ),
 			'remembered' => $tokenCookie !== null,
-			'forceHTTPS' => $request->getCookie( 'forceHTTPS', '', false )
+			'forceHTTPS' => $request->getCookie( 'forceHTTPS', '', false ),
+			'metadata' => array(
+				'CentralAuthSource' => 'CentralAuth',
+			),
 		);
 
 		return new SessionInfo( $this->priority, $info );
+	}
+
+	public function refreshSessionInfo( SessionInfo $info, WebRequest $request, &$metadata ) {
+		// Sanity check on the metadata, to avoid T124409
+		if ( isset( $metadata['CentralAuthSource'] ) ) {
+			$centralUser = new CentralAuthUser( $info->getUserInfo()->getName() );
+			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				return $metadata['CentralAuthSource'] === 'CentralAuth';
+			} else {
+				return $metadata['CentralAuthSource'] === 'Local';
+			}
+		}
+
+		return true;
 	}
 
 	public function sessionIdWasReset( MediaWiki\Session\SessionBackend $session, $oldId ) {
@@ -193,8 +221,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	protected function sessionDataToExport( $user ) {
 		$data = parent::sessionDataToExport( $user );
 
-		// Not sure why, but apparently CentralAuth wants to prevent core
-		// login-from-session.
+		// CentralAuth needs to prevent core login-from-session to
+		// avoid bugs like T124409
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->isAttached() ) {
 			unset( $data['wsToken'] );
@@ -232,14 +260,18 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		$centralUser = CentralAuthUser::getInstance( $session->getUser() );
 		if ( $centralUser->isAttached() ) {
-			// Not sure why, but apparently CentralAuth wants to prevent core
-			// login-from-session.
+			// CentralAuth needs to prevent core login-from-session to
+			// avoid bugs like T124409
 			$data = &$session->getData();
 			if ( array_key_exists( 'wsToken', $data ) ) {
 				unset( $data['wsToken'] );
 				$session->dirty();
 			}
 			unset( $data );
+
+			$metadata = $session->getProviderMetadata();
+			$metadata['CentralAuthSource'] = 'CentralAuth';
+			$session->setProviderMetadata( $metadata );
 
 			$remember = $session->shouldRememberUser();
 
@@ -283,6 +315,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$response->setCookie( $this->params['centralSessionName'], $centralSessionId, null,
 				array( 'prefix' => '' ) + $options );
 		} else {
+			$metadata = $session->getProviderMetadata();
+			$metadata['CentralAuthSource'] = 'Local';
+			$session->setProviderMetadata( $metadata );
+
 			$response->clearCookie( 'User', $this->centralCookieOptions );
 			$response->clearCookie( 'Token', $this->centralCookieOptions );
 			$response->clearCookie( $this->params['centralSessionName'],
