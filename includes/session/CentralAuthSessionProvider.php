@@ -80,7 +80,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 
 		$info = array(
-			'id' => $request->getCookie( $this->params['sessionName'], '' )
+			'id' => $this->getCookie( $request, $this->params['sessionName'], '' )
 		);
 		if ( !SessionManager::validateSessionId( $info['id'] ) ) {
 			unset( $info['id'] );
@@ -90,14 +90,14 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$token = null;
 
 		$prefix = $this->centralCookieOptions['prefix'];
-		$userCookie = $request->getCookie( 'User', $prefix );
-		$tokenCookie = $request->getCookie( 'Token', $prefix );
+		$userCookie = $this->getCookie( $request, 'User', $prefix );
+		$tokenCookie = $this->getCookie( $request, 'Token', $prefix );
 		if ( $userCookie !== null && $tokenCookie !== null ) {
 			$userName = $userCookie;
 			$token = $tokenCookie;
 			$from = 'cookies';
 		} else {
-			$id = $request->getCookie( $this->params['centralSessionName'], '' );
+			$id = $this->getCookie( $request, $this->params['centralSessionName'], '' );
 			if ( $id !== null ) {
 				$data = CentralAuthUtils::getCentralSessionById( $id );
 				if ( isset( $data['pending_name'] ) || isset( $data['pending_guid'] ) ) {
@@ -168,7 +168,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			'provider' => $this,
 			'persisted' => isset( $info['id'] ),
 			'remembered' => $tokenCookie !== null,
-			'forceHTTPS' => $request->getCookie( 'forceHTTPS', '', false )
+			'forceHTTPS' => $this->getCookie( $request, 'forceHTTPS', '', false )
 		);
 
 		return new SessionInfo( $this->priority, $info );
@@ -355,7 +355,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
 		if ( $loggedOut + 86400 > time() &&
-			$loggedOut !== (int)$request->getCookie( 'LoggedOut', $this->centralCookieOptions['prefix'] )
+			$loggedOut !== (int)$this->getCookie( $request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
 		) {
 			CentralAuthUtils::setP3P( $request );
 			$request->response()->setCookie( 'LoggedOut', $loggedOut, $loggedOut + 86400,
@@ -377,7 +377,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	public function suggestLoginUsername( WebRequest $request ) {
-		 $name = $request->getCookie( 'User', $this->centralCookieOptions['prefix'] );
+		 $name = $this->getCookie( $request, 'User', $this->centralCookieOptions['prefix'] );
 		 if ( $name === null ) {
 			 $name = User::getCanonicalName( $name, 'usable' );
 		 }
