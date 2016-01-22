@@ -1670,10 +1670,13 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onSessionCheckInfo( &$reason, $info ) {
-		$centralUser = new CentralAuthUser( $info->getUserInfo()->getName() );
-		if ( $centralUser->renameInProgress() ) {
-			$reason = 'CentralAuth rename in progress';
-			return false;
+		$name = $info->getUserInfo()->getName();
+		if ( $name !== null ) {
+			$centralUser = new CentralAuthUser( $name );
+			if ( $centralUser->renameInProgress() ) {
+				$reason = 'CentralAuth rename in progress';
+				return false;
+			}
 		}
 		return true;
 	}
