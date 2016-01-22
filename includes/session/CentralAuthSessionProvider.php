@@ -308,7 +308,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			);
 			foreach ( $cookies as $name => $value ) {
 				if ( $value === false ) {
-					$response->clearCookie( $name, $options );
+					$this->clearCookie( $request, $response, $name, $options );
 				} else {
 					if ( $extendedExpiry !== null && in_array( $name, $extendedCookies ) ) {
 						$expiry = time() + (int)$extendedExpiry;
@@ -326,21 +326,21 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$metadata['CentralAuthSource'] = 'Local';
 			$session->setProviderMetadata( $metadata );
 
-			$response->clearCookie( 'User', $this->centralCookieOptions );
-			$response->clearCookie( 'Token', $this->centralCookieOptions );
-			$response->clearCookie( $this->params['centralSessionName'],
+			$this->clearCookie( $request, $response, 'User', $this->centralCookieOptions );
+			$this->clearCookie( $request, $response, 'Token', $this->centralCookieOptions );
+			$this->clearCookie( $request, $response, $this->params['centralSessionName'],
 				array( 'prefix' => '' ) + $this->centralCookieOptions );
 		}
 
 		if ( $session->shouldForceHTTPS() || $session->getUser()->requiresHTTPS() ) {
 			// Delete the core cookie and set our own
-			$response->clearCookie( 'forceHTTPS',
+			$this->clearCookie( $request, $response, 'forceHTTPS',
 				array( 'prefix' => '', 'secure' => false ) + $this->cookieOptions );
 			$response->setCookie( 'forceHTTPS', 'true', $session->shouldRememberUser() ? 0 : null,
 				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
 		} else {
 			// T56626: Explcitly clear forceHTTPS cookie when it's not wanted
-			$response->clearCookie( 'forceHTTPS',
+			$this->clearCookie( $request, $response, 'forceHTTPS',
 				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
 		}
 
@@ -363,11 +363,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		CentralAuthUtils::setP3P( $request );
 
 		$expiry = time() - 86400;
-		$response->clearCookie( 'User', $this->centralCookieOptions );
-		$response->clearCookie( 'Token', $this->centralCookieOptions );
-		$response->clearCookie( $this->params['centralSessionName'],
+		$this->clearCookie( $request, $response, 'User', $this->centralCookieOptions );
+		$this->clearCookie( $request, $response, 'Token', $this->centralCookieOptions );
+		$this->clearCookie( $request, $response, $this->params['centralSessionName'],
 			array( 'prefix' => '' ) + $this->centralCookieOptions );
-		$response->clearCookie( 'forceHTTPS',
+		$this->clearCookie( $request, $response, 'forceHTTPS',
 			array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
 	}
 
