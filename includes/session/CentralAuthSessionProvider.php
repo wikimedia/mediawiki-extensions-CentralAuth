@@ -195,11 +195,14 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	public function refreshSessionInfo( SessionInfo $info, WebRequest $request, &$metadata ) {
 		// Sanity check on the metadata, to avoid T124409
 		if ( isset( $metadata['CentralAuthSource'] ) ) {
-			$centralUser = new CentralAuthUser( $info->getUserInfo()->getName() );
-			if ( $centralUser->exists() && $centralUser->isAttached() ) {
-				return $metadata['CentralAuthSource'] === 'CentralAuth';
-			} else {
-				return $metadata['CentralAuthSource'] === 'Local';
+			$name = $info->getUserInfo()->getName();
+			if ( $name !== null ) {
+				$centralUser = new CentralAuthUser( $name );
+				if ( $centralUser->exists() && $centralUser->isAttached() ) {
+					return $metadata['CentralAuthSource'] === 'CentralAuth';
+				} else {
+					return $metadata['CentralAuthSource'] === 'Local';
+				}
 			}
 		}
 
