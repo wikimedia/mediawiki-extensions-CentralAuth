@@ -4,6 +4,7 @@ use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\Session\Session;
+use MediaWiki\Session\SessionBackend;
 
 /**
  * CentralAuth cookie-based sessions.
@@ -331,19 +332,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$response->clearCookie( $this->params['centralSessionName'],
 				array( 'prefix' => '' ) + $this->centralCookieOptions );
 		}
-
-		if ( $session->shouldForceHTTPS() || $session->getUser()->requiresHTTPS() ) {
-			// Delete the core cookie and set our own
-			$response->clearCookie( 'forceHTTPS',
-				array( 'prefix' => '', 'secure' => false ) + $this->cookieOptions );
-			$response->setCookie( 'forceHTTPS', 'true', $session->shouldRememberUser() ? 0 : null,
-				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
-		} else {
-			// T56626: Explcitly clear forceHTTPS cookie when it's not wanted
-			$response->clearCookie( 'forceHTTPS',
-				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
-		}
-
 	}
 
 	public function unpersistSession( WebRequest $request ) {
@@ -367,8 +355,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$response->clearCookie( 'Token', $this->centralCookieOptions );
 		$response->clearCookie( $this->params['centralSessionName'],
 			array( 'prefix' => '' ) + $this->centralCookieOptions );
-		$response->clearCookie( 'forceHTTPS',
-			array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
 	}
 
 	public function preventSessionsForUser( $username ) {
@@ -393,6 +379,28 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 		if ( !$password instanceof InvalidPassword ) {
 			$centralUser->setPassword( null, true );
+		}
+	}
+
+	protected function setForceHTTPSCookie(
+		$set, SessionBackend $backend = null, WebRequest $request
+	) {
+		$response = $request->response();
+		$central = $backend
+			? CentralAuthUser::getInstance( $backend->getUser() )->isAttached()
+			: false;
+
+		// If the account is centralized, have the parent clear its cookie and
+		// set the central cookie. If it's not centralized, clear the central
+		// cookie and have the parent set its cookie as it usually would.
+		if ( $set && $central ) {
+			parent::setForceHTTPSCookie( false, $backend, $request );
+			$response->setCookie( 'forceHTTPS', 'true', $backend->shouldRememberUser() ? 0 : null,
+				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
+		} else {
+			$response->clearCookie( 'forceHTTPS',
+				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
+			parent::setForceHTTPSCookie( $set, $backend, $request );
 		}
 	}
 
