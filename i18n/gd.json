@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"GunChleoc"
+			"GunChleoc",
+			"Akerbeltz"
 		]
 	},
 	"mergeaccount": "Staid aontachadh an logaidh a-steach",
@@ -16,6 +17,9 @@
 	"centralauth-merge-step1-submit": "Dearbhaich fiosrachadh an logaidh a-steach",
 	"centralauth-merge-step2-title": "Dearbhaich barrachd chunntasan",
 	"centralauth-merge-step2-submit": "Dearbhaich fiosrachadh an logaidh a-steach",
+	"centralauth-foreign-link": "Cleachdaiche $1 air $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|deasachadh|dheasachadh|deasachaidhean|deasachadh}} air $2",
+	"centralauth-merge-method-login": "air a chruthachadh slighe logaidh a-steach",
 	"centralauth-admin-info-header": "Fiosrachadh a' chunntais choitchinn",
 	"centralauth-admin-info-username": "Ainm-cleachdaiche:",
 	"centralauth-admin-info-registered": "Àm a' chlàraidh:",
