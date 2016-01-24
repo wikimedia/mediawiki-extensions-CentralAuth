@@ -412,7 +412,7 @@
 	"globalrenamequeue-request-title": "„$1“ ömnänne?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> frohch dernoh, op <strong>$3</strong> ömjedeuf ze wähde.",
 	"globalrenamequeue-request-userinfo-local": "* der Metmaacher: [[Special:CentralAuth/$1]]\n* et Heijmaht_Wikki: $2\n* der Neuje Nahme: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* der Metmaacher: [[Special:CentralAuth/$1]]\n* et Heijmaht_Wikki: $2\n* der Neuje Nahme: [[Special:CentralAuth/$3]]\n* Ännderonge en alle Wikkis: $4",
+	"globalrenamequeue-request-userinfo-global": "* der Metmaacher_Nme jäz: [[Special:CentralAuth/$1]]\n* et Heijmaht_Wikki: $2\n* der Neuje Metmaacher_Nahme: [[Special:CentralAuth/$3]]\n* Ännderonge en alle Wikkis: $4",
 	"globalrenamequeue-request-reason": "<strong>Dä Jrond för et Ömdeufe</strong>\n:$1",
 	"globalrenamequeue-request-movepages": "Metmaachersigge ömnänne",
 	"globalrenamequeue-request-suppressredirects": "Donn kein Ömleidonge aanlähje",
