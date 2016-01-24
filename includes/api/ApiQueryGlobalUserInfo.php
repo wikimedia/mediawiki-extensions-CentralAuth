@@ -91,7 +91,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'url' => $wiki->getCanonicalServer(),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
-					'editcount' => intval( $account['editCount'] )
+					'editcount' => intval( $account['editCount'] ),
+					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
 				);
 				if ( $account['blocked'] ) {
 					$a['blocked'] = array(
@@ -119,7 +120,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			foreach ( $accounts as $account ) {
 				$a = array(
 					'wiki' => $account['wiki'],
-					'editcount' => $account['editCount']
+					'editcount' => $account['editCount'],
+					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
 				);
 				if ( $account['blocked'] ) {
 					$a['blocked'] = array(
