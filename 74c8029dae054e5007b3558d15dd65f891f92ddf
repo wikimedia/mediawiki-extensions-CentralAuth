@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_9f2ecb88",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-01-24T07:16:58Z",
+      "side": 1,
+      "message": ". -\u003e ,",
+      "revId": "74c8029dae054e5007b3558d15dd65f891f92ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_bf2b8777",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-01-24T07:16:58Z",
+      "side": 1,
+      "message": "same",
+      "revId": "74c8029dae054e5007b3558d15dd65f891f92ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
