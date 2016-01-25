@@ -205,6 +205,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUtils::setP3P();
 			if ( $this->session ) {
 				$this->session->setUser( new User );
+				$this->session->persist();
 			} else {
 				CentralAuthSessionCompat::deleteGlobalCookies();
 			}
