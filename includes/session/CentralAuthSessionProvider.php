@@ -285,7 +285,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 			$options = $this->centralCookieOptions;
 			if ( $session->shouldForceHTTPS() || $session->getUser()->requiresHTTPS() ) {
-				$options['secure'] = true;
+				// Don't set the secure flag if the request came in
+				// over "http", for backwards compat.
+				// @todo Break that backwards compat properly.
+				$options['secure'] = $this->config->get( 'CookieSecure' );
 			}
 
 			// We only save the user into the central session if it's not a
