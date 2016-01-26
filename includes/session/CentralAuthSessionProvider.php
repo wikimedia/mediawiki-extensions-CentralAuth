@@ -392,17 +392,25 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$central = $backend
 			? CentralAuthUser::getInstance( $backend->getUser() )->isAttached()
 			: false;
+		$sameCookie = (
+			$this->cookieOptions['path'] === $this->centralCookieOptions['path'] &&
+			$this->cookieOptions['domain'] === $this->centralCookieOptions['domain']
+		);
 
 		// If the account is centralized, have the parent clear its cookie and
 		// set the central cookie. If it's not centralized, clear the central
 		// cookie and have the parent set its cookie as it usually would.
 		if ( $set && $central ) {
-			parent::setForceHTTPSCookie( false, $backend, $request );
+			if ( !$sameCookie ) {
+				parent::setForceHTTPSCookie( false, $backend, $request );
+			}
 			$response->setCookie( 'forceHTTPS', 'true', $backend->shouldRememberUser() ? 0 : null,
 				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
 		} else {
-			$response->clearCookie( 'forceHTTPS',
-				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
+			if ( !$sameCookie ) {
+				$response->clearCookie( 'forceHTTPS',
+					array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
+			}
 			parent::setForceHTTPSCookie( $set, $backend, $request );
 		}
 	}
