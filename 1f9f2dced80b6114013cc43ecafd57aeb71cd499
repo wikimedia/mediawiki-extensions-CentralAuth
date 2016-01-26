@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_b2008bb6",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-01-26T21:57:34Z",
+      "side": 1,
+      "message": "This is wrong in the (rather unlikely) case of $sameCookie \u0026\u0026 $central \u0026\u0026 !$set when the central and standard cookie options have different httpsOnly flags. Not sure if that\u0027s worth caring about.",
+      "revId": "1f9f2dced80b6114013cc43ecafd57aeb71cd499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
