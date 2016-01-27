@@ -177,6 +177,8 @@ class CentralAuthUtils {
 	public static function setCentralSession( array $data, $reset = false, $session = null ) {
 		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix;
 
+		static $keepKeys = array( 'user' => true, 'token' => true, 'expiry' => true );
+
 		if ( class_exists( 'MediaWiki\\Session\\Session' ) ) {
 			if ( $session === null ) {
 				$session = MediaWiki\Session\SessionManager::getGlobalSession();
@@ -197,6 +199,13 @@ class CentralAuthUtils {
 		}
 		$data['sessionId'] = $id;
 		$key = CentralAuthUtils::memcKey( 'session', $id );
+
+		// Copy certain keys from the existing session, if any (T124821)
+		$existing = CentralAuthUtils::getSessionCache()->get( $key );
+		if ( is_array( $existing ) ) {
+			$data += array_intersect_key( $existing, $keepKeys );
+		}
+
 		$stime = microtime( true );
 		CentralAuthUtils::getSessionCache()->set( $key, $data, 86400 );
 		$real = microtime( true ) - $stime;
