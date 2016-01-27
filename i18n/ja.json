@@ -436,7 +436,7 @@
 	"globalrenamequeue-request-title": "「$1」を改名しますか？",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong>が<strong>$3</strong>への改名を求めています。",
 	"globalrenamequeue-request-userinfo-local": "* 利用者: [[Special:CentralAuth/$1]]\n* ホームウィキ: $2\n* 新しい名前: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* 利用者: [[Special:CentralAuth/$1]]\n* ホームウィキ: $2\n* 新しい名前: [[Special:CentralAuth/$3]]\n* global edit count: $4",
+	"globalrenamequeue-request-userinfo-global": "* 現在の利用者: [[Special:CentralAuth/$1]]\n* ホームウィキ: $2\n* 新しい利用者名: [[Special:CentralAuth/$3]]\n* global edit count: $4",
 	"globalrenamequeue-request-reason": "<strong>改名したい理由</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "統一ログインへの完全移行に伴い、利用者名の衝突に関する連絡を受けたため",
 	"globalrenamequeue-request-comments-label": "備考／理由",

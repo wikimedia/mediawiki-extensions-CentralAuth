@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Klenje"
+			"Klenje",
+			"Tocaibon"
 		]
 	},
 	"mergeaccount": "Stât dal procès di unificazion des identitâts dai utents",
@@ -9,12 +10,15 @@
 	"centralauth-list-home-title": "Wiki principâl",
 	"centralauth-list-attached-title": "Identitâts leadis",
 	"centralauth-foreign-link": "Utent $1 su $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribût|contribûts}} su $2",
 	"centralauth-merge-method-new": "gnove identitât",
+	"centralauth-merge-method-login": "Creade al inizi de session",
 	"centralauth-attach-title": "Conferme identitât",
 	"centralauth": "Aministradôr pe identitât globâl",
 	"centralauth-admin-username": "Non utent:",
 	"centralauth-admin-yes": "sì",
 	"centralauth-admin-no": "no",
+	"centralauth-admin-blocklog": "Regjistri blocs",
 	"centralauth-admin-list-method": "Metodi",
 	"globalusers": "Liste utents globâi",
 	"centralauth-prefs-status": "Stât de identitât globâl:",

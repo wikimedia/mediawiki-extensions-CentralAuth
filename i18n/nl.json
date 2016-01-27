@@ -341,6 +341,7 @@
 	"centrallogin": "Centraal aanmelden",
 	"centralloginsuccesful": "Aangemeld",
 	"centralauth-completelogin-back": "Terug naar de vorige pagina.",
+	"centralauth-error-wrongprovider": "Deze speciale pagina is niet beschikbaar bij het gebruik van $1.",
 	"centralauth-error-nologinattempt": "Er is geen actieve aanmeldpoging voor uw sessie.",
 	"centralauth-error-badtoken": "Het opgegeven authenticatietoken is verlopen of ongeldig.",
 	"centralauth-error-token-wrongattempt": "Het authenticatietoken hoort niet bij uw huidige aanmeldpoging.\nMogelijk probeert iemand anders als u aan te melden.",

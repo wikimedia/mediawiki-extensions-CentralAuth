@@ -478,7 +478,7 @@
 	"globalrenamequeue-request-title": "¿Renombrar a \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> ha solicitado renombrarse como <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* nombre de usuario actual: [[Special:CentralAuth/$1]]\n* wiki origen: $2\n* nombre de usuario deseado: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* nombre de usuario actual: [[Special:CentralAuth/$1]]\n* wiki origen: $2\n* nombre de usuario deseado: [[Special:CentralAuth/$3]]\n* número de ediciones globales: $4",
+	"globalrenamequeue-request-userinfo-global": "* nombre de usuario actual: [[Special:CentralAuth/$1]]\n* wiki origen: $2\n* nombre de usuario nuevo: [[Special:CentralAuth/$3]]\n* número de ediciones globales: $4",
 	"globalrenamequeue-request-reason": "<strong>Motivo de solicitud de renombramiento</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Usuario notificado de conflicto con cuenta global preparándose para finalizar su cuenta unificada (SUL).",
 	"globalrenamequeue-request-comments-label": "Notas/razones",
