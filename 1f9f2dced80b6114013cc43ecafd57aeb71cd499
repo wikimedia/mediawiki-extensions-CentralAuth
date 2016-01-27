@@ -16,6 +16,24 @@
       "revId": "1f9f2dced80b6114013cc43ecafd57aeb71cd499",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eaa8f54_ec593f05",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-01-27T17:28:48Z",
+      "side": 1,
+      "message": "For the record, this was discussed internally. The general outcome was \"Yeah, probably, but no one should configure their wiki that way in the first place. Leaving it out has weird client cookie behavior, while including it will reintroduce the flapping. Feel free to amend to add \u0027httpOnly\u0027 to the $sameCookie condition if you want, Brad doesn\u0027t mind but he should have been off an hour ago tonight.\"",
+      "parentUuid": "6eaa8f54_b2008bb6",
+      "revId": "1f9f2dced80b6114013cc43ecafd57aeb71cd499",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
