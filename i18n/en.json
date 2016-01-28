@@ -547,12 +547,6 @@
 	"centralauth-log-gblrename-oldname": "Previous username:",
 	"centralauth-contribs-locked": "This account is globally locked.\nSee [[Special:CentralAuth/$1|global account details]] for more information.",
 	"centralauth-contribs-locked-log": "This account is globally locked.\nThe latest lock log entry is provided below for reference:",
-	"userswhowillberenamed": "Users who will be renamed",
-	"centralauth-uwbr-name": "User name",
-	"centralauth-uwbr-registration": "Registration date",
-	"centralauth-uwbr-registration-nodate": "Unknown",
-	"centralauth-uwbr-editcount": "Edit count",
-	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed.",
 	"centralauth-delete-empty-account": "Empty account",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions"

@@ -360,10 +360,6 @@ $wgAutoloadClasses['GlobalUserMergeDatabaseUpdates'] = "$caBase/includes/GlobalR
 $wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/phpunit/CentralAuthTestCaseUsingDatabase.php";
 $wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/phpunit/CentralAuthTestUser.php";
 
-$wgAutoloadClasses['SpecialUsersWhoWillBeRenamed'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
-$wgAutoloadClasses['UsersWhoWillBeRenamedPager'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
-$wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/includes/UsersToRename/UsersToRenameDatabaseUpdates.php";
-
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/includes/EmailableUser.php";
 
@@ -507,7 +503,6 @@ $wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
 $wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
 $wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
 $wgSpecialPages['GlobalUserMerge'] = 'SpecialGlobalUserMerge';
-$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
 
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';

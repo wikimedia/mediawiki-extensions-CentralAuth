@@ -562,12 +562,6 @@
 	"centralauth-log-gblrename-oldname": "Label for field on Special:Log which allows filtering the global rename log by the previous username",
 	"centralauth-contribs-locked": "This is displayed on [[Special:Contributions]] for locked accounts when we cannot display the log entry. Parameters:\n* $1 - the username",
 	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}",
-	"userswhowillberenamed": "{{doc-special|UsersWhoWillBeRenamed}}",
-	"centralauth-uwbr-name": "Heading for column in table\n{{Identical|Username}}",
-	"centralauth-uwbr-registration": "Heading for column in table",
-	"centralauth-uwbr-registration-nodate": "Message displayed in place of a registration date when one has not been recorded\n{{Identical|Unknown}}",
-	"centralauth-uwbr-editcount": "Heading for column in table",
-	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed.",
 	"centralauth-delete-empty-account": "Used as the reason by the deleteEmptyAccounts.php maintenance script when deleting an account with no attached local accounts.",
 	"sessionprovider-centralauthsessionprovider": "Description of the sessions provided by the CentralAuthSessionProvider class, which use HTTP cookies. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
 	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}."
