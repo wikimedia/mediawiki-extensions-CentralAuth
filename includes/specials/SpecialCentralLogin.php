@@ -85,8 +85,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// If the user has a full session, make sure that the names match up.
 		// If they do, then send the user back to the "login successful" page.
 		// We want to avoid overwriting any session that may already exist.
-		if ( isset( $session['name'] ) ) { // fully initialized session
-			if ( $session['name'] !== $centralUser->getName() ) {
+		if ( isset( $session['user'] ) ) { // fully initialized session
+			if ( $session['user'] !== $centralUser->getName() ) {
 				// @FIXME: what if a user wants to login under another account?
 				$this->showError( 'centralauth-error-token-wronguser' );
 			} else {
