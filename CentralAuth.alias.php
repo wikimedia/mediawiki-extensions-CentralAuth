@@ -25,7 +25,6 @@ $specialPageAliases['en'] = array(
 	'GlobalRenameRequest' => array( 'GlobalRenameRequest' ),
 	'GlobalRenameQueue' => array( 'GlobalRenameQueue' ),
 	'SulRenameWarning' => array( 'SulRenameWarning' ),
-	'UsersWhoWillBeRenamed' => array( 'UsersWhoWillBeRenamed' ),
 );
 
 /** Afrikaans (Afrikaans) */
@@ -48,7 +47,6 @@ $specialPageAliases['ar'] = array(
 	'GlobalRenameRequest' => array( 'طلب_إعادة_تسمية_عام' ),
 	'GlobalRenameQueue' => array( 'طابور|_إعادة_تسمية_عام' ),
 	'SulRenameWarning' => array( 'تحذير_إعادة_تسمية_إس_يو_إل' ),
-	'UsersWhoWillBeRenamed' => array( 'المستخدمون_الذين_ستتم_إعادة_تسميتهم' ),
 );
 
 /** Egyptian Arabic (مصرى) */
@@ -112,7 +110,6 @@ $specialPageAliases['bgn'] = array(
 	'GlobalRenameRequest' => array( 'درخواست_په_سراسرین_کامرزوکی_ادغاما' ),
 	'GlobalRenameQueue' => array( 'سراسرین_نامی_سپ_ئی_تغیر' ),
 	'SulRenameWarning' => array( 'سراسرین_نامی_تغیر_ئی_هشدار' ),
-	'UsersWhoWillBeRenamed' => array( 'کار_مرزوکان_که_تغیر_نام_ئه_به_ینت' ),
 );
 
 /** Banjar (Bahasa Banjar) */
@@ -182,7 +179,6 @@ $specialPageAliases['de'] = array(
 	'GlobalRenameRequest' => array( 'Globale_Umbenennungsanfrage' ),
 	'GlobalRenameQueue' => array( 'Globale_Umbenennungs-Warteschlange' ),
 	'SulRenameWarning' => array( 'SUL-Umbenennungswarnung' ),
-	'UsersWhoWillBeRenamed' => array( 'Umzubenennende_Benutzer' ),
 );
 
 /** Zazaki (Zazaki) */
@@ -232,7 +228,6 @@ $specialPageAliases['es'] = array(
 	'WikiSets' => array( 'AjustesWiki', 'EditarAjustesWiki' ),
 	'GlobalUsers' => array( 'Usuarios_globales' ),
 	'GlobalRenameRequest' => array( 'Solicitud_de_renombrado_global' ),
-	'UsersWhoWillBeRenamed' => array( 'Usuarios_que_cambiarán_de_nombre', 'Usuarias_que_cambiarán_de_nombre' ),
 );
 
 /** Estonian (eesti) */
@@ -263,7 +258,6 @@ $specialPageAliases['fa'] = array(
 	'GlobalRenameRequest' => array( 'درخواست_ادغام_کاربر_سراسری' ),
 	'GlobalRenameQueue' => array( 'صف_تغییر_نام_سراسری' ),
 	'SulRenameWarning' => array( 'هشدار_تغییر_نام_سراسری' ),
-	'UsersWhoWillBeRenamed' => array( 'کاربرانی_که_تغییر_نام_خواهند_یافت' ),
 );
 
 /** Finnish (suomi) */
@@ -335,7 +329,6 @@ $specialPageAliases['he'] = array(
 	'GlobalRenameRequest' => array( 'בקשת_שינוי_שם_גלובלית' ),
 	'GlobalRenameQueue' => array( 'תור_שינויי_שם_גלובלי' ),
 	'SulRenameWarning' => array( 'אזהרה_שינוי_שם_של_SUL' ),
-	'UsersWhoWillBeRenamed' => array( 'משתמשים_ששמם_ישונה' ),
 );
 
 /** Hindi (हिन्दी) */
@@ -504,7 +497,6 @@ $specialPageAliases['lb'] = array(
 	'GlobalRenameRequest' => array( 'Global_Ufro_fir_Benotzer_ëmzebenennen' ),
 	'GlobalRenameQueue' => array( 'Lëscht_vun_de_globalen_Ëmbenennungen_déi_am_Gaang_sinn' ),
 	'SulRenameWarning' => array( 'Warnung_bei_der_SUL_Ëmbenennung' ),
-	'UsersWhoWillBeRenamed' => array( 'Benotzer_déi_wäerten_ëmbenannt_ginn' ),
 );
 
 /** Northern Luri (لۊری شومالی) */
@@ -521,7 +513,6 @@ $specialPageAliases['lrc'] = array(
 	'GlobalRenameRequest' => array( 'حاست_د_نۊ_نوٙم_نیائن_جأھوٙنی' ),
 	'GlobalRenameQueue' => array( 'گئی_بأنی_د_نۊ_نوٙم_نیائن_جأھوٙنی' ),
 	'SulRenameWarning' => array( 'ھشدار_تأک_کاری_د_نۊ_نوٙم_نیائن' ),
-	'UsersWhoWillBeRenamed' => array( 'کاریاری_کئ_د_نۊ_نوٙم_نیائە_بوئە' ),
 );
 
 /** Lithuanian (lietuvių) */
@@ -564,7 +555,6 @@ $specialPageAliases['mk'] = array(
 	'GlobalRenameRequest' => array( 'ГлобалноСпојувањеБарање' ),
 	'GlobalRenameQueue' => array( 'РедицаГлобалноПреименување' ),
 	'SulRenameWarning' => array( 'ПредупредувањеПреименувањеSUL' ),
-	'UsersWhoWillBeRenamed' => array( 'КориснициКоиЌеБидатПреименувани' ),
 );
 
 /** Malayalam (മലയാളം) */
@@ -826,7 +816,6 @@ $specialPageAliases['uk'] = array(
 	'GlobalGroupPermissions' => array( 'Права_глобальних_груп' ),
 	'WikiSets' => array( 'Набори_вікі' ),
 	'GlobalUsers' => array( 'Глобальні_користувачі' ),
-	'UsersWhoWillBeRenamed' => array( 'Користувачі', '_що_будуть_перейменовані' ),
 );
 
 /** Urdu (اردو) */
@@ -882,7 +871,6 @@ $specialPageAliases['zh-hans'] = array(
 	'GlobalRenameRequest' => array( '全域重命名申请' ),
 	'GlobalRenameQueue' => array( '全域重命名队列' ),
 	'SulRenameWarning' => array( 'SUL重命名警告' ),
-	'UsersWhoWillBeRenamed' => array( '将被重命名的用户' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
@@ -899,7 +887,6 @@ $specialPageAliases['zh-hant'] = array(
 	'GlobalUserMerge' => array( '全域使用者合併', '全域用户合併' ),
 	'GlobalRenameRequest' => array( '全域重命名申請' ),
 	'GlobalRenameQueue' => array( '全域重命名佇列' ),
-	'UsersWhoWillBeRenamed' => array( '將被重命名的使用者' ),
 );
 
 /** Chinese (Hong Kong) (中文（香港）‎) */
