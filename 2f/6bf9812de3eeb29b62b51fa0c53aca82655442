@@ -1,0 +1,7 @@
+Verified+2: jenkins-bot
+Code-Review+2: BryanDavis <bdavis@wikimedia.org>
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 28 Jan 2016 22:57:15 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/267144
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
