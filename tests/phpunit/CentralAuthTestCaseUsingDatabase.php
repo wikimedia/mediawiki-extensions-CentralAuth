@@ -17,7 +17,6 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 		'wikiset',
 		'renameuser_status',
 		'renameuser_queue',
-		'users_to_rename',
 	);
 
 	// Keep track of the original db name
