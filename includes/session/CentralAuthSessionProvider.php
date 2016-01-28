@@ -199,7 +199,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$name = $info->getUserInfo()->getName();
 			if ( $name !== null ) {
 				$centralUser = new CentralAuthUser( $name );
-				if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				if ( $centralUser->exists() &&
+					( $centralUser->isAttached() || !User::idFromName( $name, User::READ_LATEST ) )
+				) {
 					return $metadata['CentralAuthSource'] === 'CentralAuth';
 				} else {
 					return $metadata['CentralAuthSource'] === 'Local';
@@ -266,8 +268,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		$s = $session->getSession( $request );
 
-		$centralUser = CentralAuthUser::getInstance( $session->getUser() );
-		if ( $centralUser->isAttached() ) {
+		$user = $session->getUser();
+		$centralUser = CentralAuthUser::getInstance( $user );
+
+		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->getId() ) ) {
 			// CentralAuth needs to prevent core login-from-session to
 			// avoid bugs like T124409
 			$data = &$session->getData();
@@ -284,7 +288,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$remember = $session->shouldRememberUser();
 
 			$options = $this->centralCookieOptions;
-			if ( $session->shouldForceHTTPS() || $session->getUser()->requiresHTTPS() ) {
+			if ( $session->shouldForceHTTPS() || $user->requiresHTTPS() ) {
 				// Don't set the secure flag if the request came in
 				// over "http", for backwards compat.
 				// @todo Break that backwards compat properly.
