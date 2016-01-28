@@ -99,3 +99,6 @@ PLATFORMS
 DEPENDENCIES
   mediawiki_selenium (~> 1.6.3)
   rubocop (~> 0.34.1)
+
+BUNDLED WITH
+   1.10.6
