@@ -434,7 +434,7 @@
 	"globalrenamequeue-request-title": "Да го преименувам „$1“?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> бара да биде преименуван во <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* корисник: [[Special:CentralAuth/$1]]\n* матично вики: $2\n* ново име: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* корисник: [[Special:CentralAuth/$1]]\n* матично вики: $2\n* ново име: [[Special:CentralAuth/$3]]\n* глобален број на уредувања: $4",
+	"globalrenamequeue-request-userinfo-global": "* тековно корисничко име: [[Special:CentralAuth/$1]]\n* матично вики: $2\n* ново корисничко име: [[Special:CentralAuth/$3]]\n* глобален број на уредувања: $4",
 	"globalrenamequeue-request-reason": "<strong>Причина за барањето</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Корисникот е известен во подготовка на конечното спроведување на SUL.",
 	"globalrenamequeue-request-comments-label": "Белешки/образложение",
