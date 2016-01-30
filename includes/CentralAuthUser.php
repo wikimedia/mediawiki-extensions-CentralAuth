@@ -2430,6 +2430,21 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$this->saveSettings();
 	}
 
+	/**
+	 * Resets auth token caring more about performance rather than 100% correctness
+	 */
+	public function quickResetAuthToken() {
+		$dbw = CentralAuthUtils::getCentralDB();
+
+		$dbw->update( 'globaluser',
+			array( 'gu_auth_token' => MWCryptRand::generateHex( 32 ) ),
+			array( 'gu_id' => $this->mGlobalId ),
+			__METHOD__
+		);
+
+		$this->quickInvalidateCache();
+	}
+
 	function saveSettings() {
 		if ( !$this->mStateDirty ) {
 			return;
