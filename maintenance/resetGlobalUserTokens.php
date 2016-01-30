@@ -65,18 +65,19 @@ class ResetGlobalUserTokens extends Maintenance {
 		}
 		$min = $this->getOption( 'minid', 0 );
 		$max = $min + $this->mBatchSize;
+		$selectOptions = CentralAuthUser::selectQueryInfo();
 
 		do {
 			$result = $dbr->select( 'globaluser',
-				array( 'gu_id', 'gu_name' ),
+				$selectOptions['fields'],
 				array( 'gu_id > ' . $dbr->addQuotes( $min ),
 					'gu_id <= ' . $dbr->addQuotes( $max )
 				),
 				__METHOD__
 			);
 
-			foreach ( $result as $user ) {
-				$this->updateUser( $user->gu_name );
+			foreach ( $result as $row ) {
+				$this->updateUser( $row );
 			}
 
 			$min = $max;
@@ -92,11 +93,11 @@ class ResetGlobalUserTokens extends Maintenance {
 
 	}
 
-	private function updateUser( $username ) {
-		$user = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
-		$this->output( 'Resetting user_token for "' . $username . '": ' );
+	private function updateUser( $row ) {
+		$user = CentralAuthUser::newFromRow( $row, array(), true );
+		$this->output( 'Resetting user_token for "' . $user->getName() . '": ' );
 		// Change value
-		$user->resetAuthToken();
+		$user->quickResetAuthToken();
 		$this->output( " OK\n" );
 	}
 }
