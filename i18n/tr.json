@@ -401,5 +401,6 @@
 	"globalrenamequeue-column-rq-wiki": "Yerel viki",
 	"globalrenamequeue-action-address": "Adres",
 	"globalrenamequeue-request-cancel-text": "Vazgeç",
-	"centralauth-abortlogin-renamed": "Hesabınız \"$1\" olarak yeniden adlandırıldı. Lütfen bundan sonra bu kullanıcı adını kullanın."
+	"centralauth-abortlogin-renamed": "Hesabınız \"$1\" olarak yeniden adlandırıldı. Lütfen bundan sonra bu kullanıcı adını kullanın.",
+	"centralauth-contribs-locked": "Bu hesap küresel olarak engellendi. \nDaha fazla bilgi için [[Special:CentralAuth/$1|küresel hesap ayrıntılarına]] bakınız."
 }
