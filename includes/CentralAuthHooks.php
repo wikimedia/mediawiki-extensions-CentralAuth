@@ -44,6 +44,7 @@ class CentralAuthHooks {
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		global $wgDisableAuthManager;
+		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		$caBase = __DIR__ . '/..';
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
@@ -121,6 +122,17 @@ class CentralAuthHooks {
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 			];
+		}
+		if ( $wgCentralAuthEnableUsersWhoWillBeRenamed ) {
+			$wgExtensionCredits['specialpage'][] = [
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'UsersWhoWillBeRenamed',
+				'author' => 'Kunal Mehta',
+				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
+				'descriptionmsg' => 'centralauth-uwbr-intro',
+				'license-name' => 'GPL-2.0',
+			];
+			$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
 		}
 	}
 
