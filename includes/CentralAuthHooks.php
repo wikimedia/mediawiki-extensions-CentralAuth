@@ -12,6 +12,7 @@ class CentralAuthHooks {
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		global $wgCentralAuthCheckSULMigration;
+		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		$caBase = __DIR__ . '/..';
 
 		if ( class_exists( 'RenameuserSQL' ) ) {
@@ -103,6 +104,18 @@ class CentralAuthHooks {
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 			);
+		}
+
+		if ( $wgCentralAuthEnableUsersWhoWillBeRenamed ) {
+			$wgExtensionCredits['specialpage'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'UsersWhoWillBeRenamed',
+				'author' => 'Kunal Mehta',
+				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
+				'descriptionmsg' => 'centralauth-uwbr-intro',
+				'license-name' => 'GPL-2.0',
+			);
+			$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
 		}
 
 		if ( $wgCentralAuthCheckSULMigration ) {

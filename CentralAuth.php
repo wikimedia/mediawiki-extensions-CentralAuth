@@ -278,6 +278,12 @@ $wgCentralAuthEnableGlobalRenameRequest = false;
 $wgCentralAuthCheckSULMigration = false;
 
 /**
+ * Feature flag for Special:UsersWhoWillBeRenamed
+ * @var bool
+ */
+$wgCentralAuthEnableUsersWhoWillBeRenamed = false;
+
+/**
  * Global Password Policies. These are applied like local password policies,
  * the strongest policy applicable to a user is used. Policies can apply to
  * either a local group (if the user is a member of that group on any wiki,
@@ -507,7 +513,6 @@ $wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
 $wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
 $wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
 $wgSpecialPages['GlobalUserMerge'] = 'SpecialGlobalUserMerge';
-$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
 
 $wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
 $wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
