@@ -1,39 +1,8 @@
 <?php
 
-use Wikimedia\Rdbms\IMaintainableDatabase;
-
 class CentralAuthHooks {
-
 	/**
-	 * Called right after configuration variables have been set.
-	 */
-	public static function onRegistration() {
-		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase, $wgDBname,
-			$wgHooks, $wgSpecialPages, $wgSessionProviders,
-			$wgCentralIdLookupProvider, $wgOverrideCentralIdLookupProvider,
-			$wgCentralAuthCheckSULMigration, $wgDisableAuthManager,
-			$wgAuthManagerAutoConfig;
-
-		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
-		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
-			$wgCentralAuthDatabase = $wgDBname;
-		}
-
-		// CentralAuthSessionProvider is supposed to replace core
-		// CookieSessionProvider, so remove the latter if both are configured
-		if ( isset( $wgSessionProviders[MediaWiki\Session\CookieSessionProvider::class] ) &&
-			isset( $wgSessionProviders[CentralAuthSessionProvider::class] )
-		) {
-			unset( $wgSessionProviders[MediaWiki\Session\CookieSessionProvider::class] );
-		}
-
-		// Assume they want CentralAuth as the default central ID provider, unless
-		// already configured otherwise.
-		if ( $wgCentralIdLookupProvider === 'local' && $wgOverrideCentralIdLookupProvider ) {
-			$wgCentralIdLookupProvider = 'CentralAuth';
-		}
-	}
-
+class CentralAuthHooks {
 	/**
 	 * Callback to register with $wgExtensionFunctions to complete configuration
 	 * after other initial configuration has completed. This can be used to
@@ -44,10 +13,42 @@ class CentralAuthHooks {
 		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
-		global $wgDisableAuthManager;
+		global $wgCentralAuthCheckSULMigration;
+		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		$caBase = __DIR__ . '/..';
 
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
+		if ( class_exists( 'RenameuserSQL' ) ) {
+			// Credits should only appear on wikis with Extension:Renameuser
+			// installed
+			$wgExtensionCredits['specialpage'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'Renameuser for CentralAuth',
+				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
+				'author' => array( 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ),
+				'descriptionmsg' => 'centralauth-rename-desc',
+				'license-name' => 'GPL-2.0',
+			);
+		}
+
+		if ( class_exists( 'AntiSpoof' ) ) {
+			// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
+			$wgExtensionCredits['antispam'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+	/**
+	 * Callback to register with $wgExtensionFunctions to complete configuration
+	 * after other initial configuration has completed. This can be used to
+	 * avoid extension ordering issues and do things that are dependent on
+	 * feature flags.
+	 */
+	public static function onRunExtensionFunctions() {
+		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
+		global $wgSpecialPages, $wgResourceModules;
+		global $wgCentralAuthEnableGlobalRenameRequest;
+		global $wgCentralAuthCheckSULMigration;
+		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
+		$caBase = __DIR__ . '/..';
+
+		if ( class_exists( 'RenameuserSQL' ) ) {
 			// Credits should only appear on wikis with Extension:Renameuser
 			// installed
 			$wgExtensionCredits['specialpage'][] = [
@@ -121,7 +122,34 @@ class CentralAuthHooks {
 				'styles'        => 'ext.centralauth.globalrenamequeue.less',
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
+<<<<<<< HEAD
 			];
+=======
+			);
+		}
+
+		if ( $wgCentralAuthEnableUsersWhoWillBeRenamed ) {
+			$wgExtensionCredits['specialpage'][] = array(
+				'path' => "{$caBase}/CentralAuth.php",
+				'name' => 'UsersWhoWillBeRenamed',
+				'author' => 'Kunal Mehta',
+				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
+				'descriptionmsg' => 'centralauth-uwbr-intro',
+				'license-name' => 'GPL-2.0',
+			);
+			$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
+		}
+
+		if ( $wgCentralAuthCheckSULMigration ) {
+			// Install hidden special page for renamed users
+			$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
+			$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
+		}
+
+		if ( $wgCentralAuthCheckSULMigration ) {
+			$wgHooks['LoginUserMigrated'][] =
+				'CentralAuthHooks::onLoginUserMigrated';
+>>>>>>> Add feature flag for Special:UsersWhoWillBeRenamed
 		}
 	}
 
@@ -989,10 +1017,10 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param Title $title
-	 * @param User $user
-	 * @param string $action
-	 * @param string &$result Message key
+	 * @param $title Title
+	 * @param $user User
+	 * @param $action
+	 * @param $result
 	 * @return bool
 	 */
 	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
@@ -1002,7 +1030,7 @@ class CentralAuthHooks {
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 
-		if ( $wgDisableUnmergedEditing
+		if ( 	$wgDisableUnmergedEditing
 			&& ( $action === 'edit' || $action === 'delete' )
 			&& !$centralUser->exists()
 			&& !$title->inNamespaces( NS_USER_TALK, NS_PROJECT_TALK )
