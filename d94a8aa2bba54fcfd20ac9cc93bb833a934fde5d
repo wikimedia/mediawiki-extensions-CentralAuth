@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eaa8f54_54f483b9",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 2436,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-01-31T11:21:21Z",
+      "side": 1,
+      "message": "This function should have some kind of sanity check making sure mGlobalId is not 0 (because we\u0027ve had that issue before).",
+      "revId": "d94a8aa2bba54fcfd20ac9cc93bb833a934fde5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
