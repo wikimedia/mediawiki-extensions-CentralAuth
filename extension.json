@@ -63,7 +63,6 @@
 		"GlobalRenameUser": "SpecialGlobalRenameUser",
 		"GlobalRenameProgress": "SpecialGlobalRenameProgress",
 		"GlobalUserMerge": "SpecialGlobalUserMerge",
-		"UsersWhoWillBeRenamed": "SpecialUsersWhoWillBeRenamed"
 	},
 	"JobClasses": {
 		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
