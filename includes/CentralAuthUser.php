@@ -519,12 +519,26 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Return the global-login token for this account.
 	 */
 	public function getAuthToken() {
+		global $wgAuthenticationTokenVersion;
+
 		$this->loadState();
 
 		if ( !isset( $this->mAuthToken ) || !$this->mAuthToken ) {
 			$this->resetAuthToken();
 		}
-		return $this->mAuthToken;
+
+		if ( $wgAuthenticationTokenVersion === null ) {
+			return $this->mAuthToken;
+		} else {
+			$ret = MWCryptHash::hmac( $wgAuthenticationTokenVersion, $this->mAuthToken, false );
+
+			// The raw hash can be overly long. Shorten it up.
+			if ( strlen( $ret ) < 32 ) {
+				// Should never happen, even md5 is 128 bits
+				throw new \UnexpectedValueException( 'Hmac returned less than 128 bits' );
+			}
+			return substr( $ret, -32 );
+		}
 	}
 
 	/**
