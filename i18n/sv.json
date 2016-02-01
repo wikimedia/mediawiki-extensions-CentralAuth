@@ -449,7 +449,7 @@
 	"globalrenamequeue-request-title": "Byt namn \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> begär ett namnbyte till <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "*användare: [[Special:CentralAuth/$1]]\n*hemmawiki: $2\n*nytt namn: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* användare: [[Special:CentralAuth/$1]]\n* hemmawiki: $2\n* nytt namn: $3 [[Special:CentralAuth/$3]]",
+	"globalrenamequeue-request-userinfo-global": "* aktuell användarnamn: [[Special:CentralAuth/$1]]\n* hemmawiki: $2\n* nytt användarnamn: $3 [[Special:CentralAuth/$3]]\n* globalt antal redigeringar: $4",
 	"globalrenamequeue-request-reason": "<strong>Anledgning till begäran om namnbyte</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Användare meddelad om global namnkonflikt i förberedelse för SUL-slutförande.",
 	"globalrenamequeue-request-comments-label": "Anteckningar/resonemang",
