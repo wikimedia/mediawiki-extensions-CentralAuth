@@ -85,18 +85,16 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// If the user has a full session, make sure that the names match up.
 		// If they do, then send the user back to the "login successful" page.
 		// We want to avoid overwriting any session that may already exist.
-		if ( isset( $session['name'] ) ) { // fully initialized session
-			if ( $session['name'] !== $centralUser->getName() ) {
-				// @FIXME: what if a user wants to login under another account?
-				$this->showError( 'centralauth-error-token-wronguser' );
+		$createStubSession = true;
+		if ( isset( $session['user'] ) ) { // fully initialized session
+			if ( $session['user'] !== $centralUser->getName() ) {
+				// User is trying to switch accounts. Let them do so by
+				// creating a new central session.
 			} else {
-				$wiki = WikiMap::getWiki( $info['wikiId'] );
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$this->getOutput()->redirect( // expands to PROTO_CURRENT
-					$wiki->getFullUrl( 'Special:CentralLogin/status' )
-				);
+				// They're already logged in to the target account, don't stomp
+				// on the existing session! (T125139)
+				$createStubSession = false;
 			}
-			return; // don't override session
 		// If the user has a stub session, error out if the names do not match up
 		} elseif ( isset( $session['pending_name'] ) ) { // stub session
 			if ( $session['pending_name'] !== $centralUser->getName() ) {
@@ -108,29 +106,34 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Delete the temporary token
 		$cache->delete( $key );
 
-		// Determine if we can use the default cookie security, or if we need
-		// to override it to insecure
-		$secureCookie = $info['secureCookies'];
+		if ( $createStubSession ) {
+			// Determine if we can use the default cookie security, or if we need
+			// to override it to insecure
+			$secureCookie = $info['secureCookies'];
 
-		// Start an unusable placeholder session stub and send a cookie.
-		// The cookie will not be usable until the session is unstubbed.
-		// Note: the "remember me" token must be dealt with later (security).
-		if ( $this->session ) {
-			$delay = $this->session->delaySave();
-			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			$newSessionId = CentralAuthUtils::setCentralSession( array(
-				'pending_name' => $centralUser->getName(),
-				'pending_guid' => $centralUser->getId()
-			), true, $this->session );
-			$this->session->persist();
-			ScopedCallback::consume( $delay );
+			// Start an unusable placeholder session stub and send a cookie.
+			// The cookie will not be usable until the session is unstubbed.
+			// Note: the "remember me" token must be dealt with later (security).
+			if ( $this->session ) {
+				$delay = $this->session->delaySave();
+				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+				$newSessionId = CentralAuthUtils::setCentralSession( array(
+					'pending_name' => $centralUser->getName(),
+					'pending_guid' => $centralUser->getId()
+				), true, $this->session );
+				$this->session->persist();
+				ScopedCallback::consume( $delay );
+			} else {
+				$newSessionId = CentralAuthSessionCompat::setCentralSession( array(
+					'pending_name' => $centralUser->getName(),
+					'pending_guid' => $centralUser->getId()
+				), true, $secureCookie );
+				CentralAuthSessionCompat::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
+				CentralAuthSessionCompat::setCookie( 'Token', '', -86400, $secureCookie );
+			}
 		} else {
-			$newSessionId = CentralAuthSessionCompat::setCentralSession( array(
-				'pending_name' => $centralUser->getName(),
-				'pending_guid' => $centralUser->getId()
-			), true, $secureCookie );
-			CentralAuthSessionCompat::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
-			CentralAuthSessionCompat::setCookie( 'Token', '', -86400, $secureCookie );
+			// Since the full central session already exists, reuse it.
+			$newSessionId = $session['sessionId'];
 		}
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
