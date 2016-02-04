@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chabi1"
+			"Chabi1",
+			"Katxis"
 		]
 	},
+	"centralauth-foreign-link": "Yuuza $1 pah $2",
+	"centralauth-merge-method-login": "kriet pah lagiin",
+	"centralauth-admin-blocklog": "blak lag",
 	"centralauth-usermerge-form-deleteuser": "Tekout yuuza"
 }
