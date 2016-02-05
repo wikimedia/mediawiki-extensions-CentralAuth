@@ -10,6 +10,7 @@
 	"centralauth-merge-method-login": "因登录而创建",
 	"centralauth-admin-blocklog": "查封记录",
 	"centralauth-admin-reason": "理由：",
+	"centralauth-prefs-count-attached": "侬个账号已经来$1个{{PLURAL:$1|wiki}}上激活。",
 	"centralauth-prefs-count-unattached": "侬来拉$1个wiki里向还有弗曾确认个同名账号。",
 	"centralauth-prefs-detail-unattached": "侬个账号还弗曾畀确认属于全局账号。",
 	"centralauth-prefs-manage": "管理侬个全局账号",
