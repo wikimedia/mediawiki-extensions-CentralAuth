@@ -2,6 +2,8 @@
 /**
  * Reset the user_token for all users on the wiki. Useful if you believe
  * that your user table was acidentally leaked to an external source.
+ * See $wgAuthenticationTokenVersion as a faster method if cookies have
+ * been leaked but the DB values haven't.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -37,6 +39,11 @@ require_once "$IP/maintenance/Maintenance.php";
  * @ingroup Maintenance
  */
 class ResetGlobalUserTokens extends Maintenance {
+	/** @var DatabaseBase */
+	protected $dbr;
+	/** @var DatabaseBase */
+	protected $dbw;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -66,10 +73,9 @@ class ResetGlobalUserTokens extends Maintenance {
 			wfCountDown( 5 );
 		}
 
-		// We list user by user_id from one of the slave database
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$this->dbr = CentralAuthUtils::getCentralSlaveDB();
+		$this->dbw = CentralAuthUtils::getCentralDB();
 		$maxid = $this->getOption( 'maxid', -1 );
-
 		if ( $maxid == -1 ) {
 			$maxid = $dbr->selectField( 'globaluser', 'MAX(gu_id)', [], __METHOD__ );
 		}
@@ -85,9 +91,14 @@ class ResetGlobalUserTokens extends Maintenance {
 				__METHOD__
 			);
 
+			$ids = $names = [];
 			foreach ( $result as $user ) {
-				$this->updateUser( $user->gu_name );
+				$ids[] = $user->gu_id;
+				$names[] = $user->gu_name;
 			}
+
+			$this->output( 'Resetting token for users ' . min( $ids ) . '..' . max( $ids ) . '... ' );
+			$this->updateUsers( $ids, $names );
 
 			$min = $max;
 			$max = $min + $this->mBatchSize;
@@ -101,12 +112,25 @@ class ResetGlobalUserTokens extends Maintenance {
 		} while ( $min < $maxid );
 	}
 
-	private function updateUser( $username ) {
-		$user = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
-		$this->output( 'Resetting user_token for "' . $username . '": ' );
-		// Change value
-		$user->resetAuthToken();
-		$this->output( " OK\n" );
+	private function updateUsers( array $ids, array $names ) {
+		$salt = MWCryptRand::generateHex( 128 );
+		$this->dbw->query(
+			'UPDATE globaluser SET '
+				. "gu_auth_token = md5(concat(gu_name, '$salt')), "
+				. 'gu_cas_token = gu_cas_token + 1 '
+			. 'WHERE gu_id IN (' . $this->dbw->makeList( $ids ) . ')',
+			__METHOD__
+		);
+		$missed = count( $ids ) - $this->dbw->affectedRows();
+		foreach ( $names as $name ) {
+			$user = new CentralAuthUser( $name );
+			$user->quickInvalidateCache();
+		}
+		if ( $missed ) {
+			$this->output( "failed for $missed users!\n" );
+		} else {
+			$this->output( "OK\n" );
+		}
 	}
 }
 
