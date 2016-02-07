@@ -22,7 +22,8 @@
 			"SeoJeongHo",
 			"Ysjbserver",
 			"Hwangjy9",
-			"Yearning"
+			"Yearning",
+			"고솜"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -399,7 +400,7 @@
 	"centralauth-usermerge-notinstalled": "사용자병합 확장기능이 설치되지 않았습니다.",
 	"centralauth-usermerge-disabled": "통합 계정 사용자 병합 기능이 비활성화되어 있습니다.",
 	"logentry-gblrename-merge": "$1 사용자가 $4 사용자 계정을 $5 계정으로 {{GENDER:$2|병합했습니다}}.",
-	"centralauth-usermerge-queued": "$1 이름을 $2 이름으로 병합하는 작업이 큐되었습니다.\n\n[[Special:GlobalRenameProgress/$3|진행 과정을 봅니다]].",
+	"centralauth-usermerge-queued": "$1 이름을 $2 이름으로 병합하는 작업이 진행 중입니다.\n\n[[Special:GlobalRenameProgress/$3|진행 과정을 봅니다]].",
 	"centralauth-usermerge-invalid": "\"$1\" 이름을 가진 통합 계정이 없습니다.",
 	"centralauth-usermerge-already": "이미 $1에 대한 통합 계정 이름 바꾸기나 병합이 진행 중입니다.",
 	"centralauth-usermerge-noself": "당신 자신의 계정을 병합할 수 없습니다.",
