@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea78b8a_1d5ab9f6",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-02-08T21:41:28Z",
+      "side": 1,
+      "message": "Do we care that \"md5\" and \"concat\" aren\u0027t likely to be present in anything except MySQL?",
+      "revId": "8de955802a8259941fcf0a95b6ea5a2d0df741f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
