@@ -16,6 +16,23 @@
       "revId": "8de955802a8259941fcf0a95b6ea5a2d0df741f4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ea78b8a_9d07891f",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-02-08T22:29:37Z",
+      "side": 1,
+      "message": "This makes me a little nervous, but I can see why you\u0027re doing it it this way. To strengthen against someone finding the $salt here, can we use 64 or 128 bytes of random hex?",
+      "revId": "8de955802a8259941fcf0a95b6ea5a2d0df741f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
