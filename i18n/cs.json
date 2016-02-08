@@ -437,7 +437,7 @@
 	"globalrenamequeue-request-title": "Přejmenovat „$1“?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> žádá o přejmenování na <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* uživatel: [[Special:CentralAuth/$1]]\n* domácí wiki: $2\n* nové jméno: [[Special:CentralAuth/$3]]",
-	"globalrenamequeue-request-userinfo-global": "* uživatel: [[Special:CentralAuth/$1]]\n* domácí wiki: $2\n* nové jméno: [[Special:CentralAuth/$3]]\n* globální počet editací: $4",
+	"globalrenamequeue-request-userinfo-global": "* stávající uživatelské jméno: [[Special:CentralAuth/$1]]\n* domácí wiki: $2\n* nové uživatelské jméno: [[Special:CentralAuth/$3]]\n* globální počet editací: $4",
 	"globalrenamequeue-request-reason": "<stron>Zdůvodnění žádosti o přejmenování</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Uživatel informován o konfliktu globálních jmen před dokončením SUL.",
 	"globalrenamequeue-request-comments-label": "Poznámky/zdůvodnění",
@@ -526,5 +526,7 @@
 	"centralauth-uwbr-registration-nodate": "Neznámé",
 	"centralauth-uwbr-editcount": "Počet editací",
 	"centralauth-uwbr-intro": "Tato stránka uvádí uživatele registrované na této wiki, kteří budou přejmenováni.",
-	"centralauth-delete-empty-account": "Prázdný účet"
+	"centralauth-delete-empty-account": "Prázdný účet",
+	"sessionprovider-centralauthsessionprovider": "centrální relace pomocí cookies",
+	"sessionprovider-centralauthtokensessionprovider": "relace pomocí centralauthtoken"
 }
