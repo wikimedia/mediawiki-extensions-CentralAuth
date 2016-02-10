@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4ea78b8a_6b167c4f",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-02-10T02:38:29Z",
+      "side": 1,
+      "message": "I don\u0027t really, from what I have seen non-MySQL support in MediaWiki is mostly fictional, so I don\u0027t think it\u0027s worth the effort to try to maintain it in obscure features when less obscure ones don\u0027t work. (FWIW recent Postgres has both functions.)\n\nWould it be nicer to put this in a Database* function with \"not implemented\" exceptions for the other languages, so that someone looking for missing Oracle/etc features can more easily find it?",
+      "parentUuid": "4ea78b8a_1d5ab9f6",
+      "revId": "8de955802a8259941fcf0a95b6ea5a2d0df741f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ea78b8a_9d07891f",
         "filename": "maintenance/resetGlobalUserTokens.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-02-08T22:29:37Z",
       "side": 1,
       "message": "This makes me a little nervous, but I can see why you\u0027re doing it it this way. To strengthen against someone finding the $salt here, can we use 64 or 128 bytes of random hex?",
+      "revId": "8de955802a8259941fcf0a95b6ea5a2d0df741f4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ea78b8a_0b34a8a6",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-02-10T02:38:29Z",
+      "side": 1,
+      "message": "Will do, although I think this is reasonably safe anyway. For the current 128-bit salt you need ~ 10^38 tries; with commercially available specialized hardware like https://gist.github.com/epixoip/8171031 you can do something like 10^18 per year. And that only breaks the tokens for a single batch.",
+      "parentUuid": "4ea78b8a_9d07891f",
       "revId": "8de955802a8259941fcf0a95b6ea5a2d0df741f4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
