@@ -43,6 +43,7 @@
 	"centralauth-list-unattached-title": "Rekening teu kawengku",
 	"centralauth-list-unattached": "Rekening \"$1\" teu bisa sacara otomatis dikonfirmasi milik anjeun di loka di handap ieu; sigana mah alatan beda sandina ti rekening utama anjeun:",
 	"centralauth-foreign-link": "Pamaké $1 di $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusi}} di $2",
 	"centralauth-merge-method-primary": "wiki asal",
 	"centralauth-merge-method-empty": "euweuh kontribusi",
 	"centralauth-merge-method-mail": "konfirmasi ngaliwatan surélék",
