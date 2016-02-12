@@ -117,10 +117,15 @@ class CentralAuthUtils {
 	 */
 	public static function autoCreateUser( User $user ) {
 		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
-			return MediaWiki\Session\SessionManager::autoCreateUser( $user );
+			$res = MediaWiki\Session\SessionManager::autoCreateUser( $user );
 		} else {
-			return CentralAuthSessionCompat::attemptAddUser( $user );
+			$res = CentralAuthSessionCompat::attemptAddUser( $user );
 		}
+		\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autocreation attempt', array(
+			'event' => 'autocreate',
+			'successful' => $res,
+		) );
+		return $res;
 	}
 
 	/**
