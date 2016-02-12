@@ -3,12 +3,13 @@
 		"authors": [
 			"Bedynokue.nart",
 			"SamGamgee",
-			"Inyzh"
+			"Inyzh",
+			"Amire80"
 		]
 	},
-	"centralauth-foreign-link": "ХэлэжьакIоу $1, $2-м хэтэу",
+	"centralauth-foreign-link": "ХэлэжьакӀоу $1, $2-м хэтэу",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|хэгъэхъоныгъэ|хэгъэхъоныгъ}} $2-м хэтэу",
 	"centralauth-merge-method-login": "системэ хэхьэным игъо егъэжьагъэ",
 	"centralauth-admin-blocklog": "блокхэм я тхылъ",
-	"centralauth-usermerge-nousers": "Мыхъуми нэбгырит1ум я уплъэк1ужьыгъэ глобал аккаунтхэр къэгъэлъэгъогъэн фае."
+	"centralauth-usermerge-nousers": "Мыхъуми нэбгыритӀум я уплъэкӀужьыгъэ глобал аккаунтхэр къэгъэлъэгъогъэн фае."
 }

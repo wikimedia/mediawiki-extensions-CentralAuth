@@ -58,7 +58,7 @@
 	"centralauth-merge-method-password": "пацьверджаны паролем",
 	"centralauth-merge-method-admin": "рахунак аб'яднаны адміністратарам",
 	"centralauth-merge-method-new": "новы рахунак",
-	"centralauth-merge-method-login": "створаны пад час ўваходу у сыстэму",
+	"centralauth-merge-method-login": "створаны пры ўваходзе ў сыстэму",
 	"centralauth-merge-method-primary-desc": "Гэта вікі, на якой было ініцыяванае аб’яднаньне рахункаў.\nЗаўважце, што яна можа адрозьнівацца ад хатняй вікі гэтага ўдзельніка.",
 	"centralauth-merge-method-empty-desc": "Азначае, што лякальны рахунак быў аб’яднаны, таму што ня меў рэдагаваньняў.",
 	"centralauth-merge-method-mail-desc": "Паказвае, што лякальны рахунак быў аб'яднаны, таму што адрас яго электроннай пошты супаў з адрасам асноўнага электроннай пошты рахунку.",
