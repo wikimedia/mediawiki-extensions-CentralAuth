@@ -81,6 +81,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	function execute( $par ) {
 		global $wgCentralAuthLoginWiki;
 
+		if (
+			in_array( $par, array( 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
+			'createSession', 'validateSession', 'setCookies' ), true )
+		) {
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autologin ' . $par, array(
+				'event' => 'autologin',
+				'type' => $par,
+			) );
+		}
+
 		$request = $this->getRequest();
 		$cache = CentralAuthUtils::getSessionCache();
 
@@ -513,6 +523,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			}
 			ScopedCallback::consume( $delay );
+
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autologin success', array(
+				'event' => 'autologin',
+				'type' => 'success',
+			) );
 
 			$script = self::getInlineScript( 'anon-remove.js' );
 
