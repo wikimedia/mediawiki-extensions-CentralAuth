@@ -23,7 +23,8 @@
 			"Shbib Al-Subaie",
 			"Omda4wady",
 			"Khaled",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Sonic N800"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -380,7 +381,7 @@
 	"centralauth-rename-progress-logs-fieldset": "ادخالات السجل",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|عرض التقدم]])",
 	"centralauth-rename-progress-list-header": "عمليات إعادة التسمية العالمية التالية قيد التنفيذ:",
-	"centralauth-rename-movelog": "تم نقل الصفحة آلياً خلال إعادة تسمية المستخدم «[[Special:CentralAuth/$1|$1]]» إلى «[[Special:CentralAuth/$2|$2]]».",
+	"centralauth-rename-movelog": "نُقِلت الصفحة آليا عند إعادة تسمية المستخدم «[[Special:CentralAuth/$1|$1]]» إلى «[[Special:CentralAuth/$2|$2]]».",
 	"centralauth-rename-confirm": "هل تريد حقاً تغيير اسم الحساب الموحد لهذا المستخدم؟",
 	"log-name-gblrename": "سجل إعادة التسمية الشاملة",
 	"log-description-gblrename": "يتتبع هذا السجل تغيير اسماء الحسابات الموحدة للمستخدمين.",
