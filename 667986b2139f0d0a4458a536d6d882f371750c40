@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ea78b8a_a62b1bda",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 38
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-02-15T19:56:03Z",
+      "side": 1,
+      "message": "What happens if the local admin wants to override these in LocalSettings.php? I\u0027m pretty sure this gets run after and so will stomp all over his changes.",
+      "revId": "667986b2139f0d0a4458a536d6d882f371750c40",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ea78b8a_c6265711",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 38
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-02-15T19:56:03Z",
+      "side": 1,
+      "message": "Even more so, what happens if the local admin wants to change this stuff in LocalSettings.php?",
+      "revId": "667986b2139f0d0a4458a536d6d882f371750c40",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ea78b8a_267f2bdf",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 38
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-02-15T19:56:03Z",
+      "side": 1,
+      "message": "Moving this here will reopen T124224. This is far too late to set up $wgCentralIdLookupProviders and $wgCentralIdLookupProvider.\n\nThis also makes it so the local wiki sysadmin can\u0027t choose to use \u0027local\u0027 despite \u0027CentralAuth\u0027 being installed, if they want to do that for some unknown reason.",
+      "revId": "667986b2139f0d0a4458a536d6d882f371750c40",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
