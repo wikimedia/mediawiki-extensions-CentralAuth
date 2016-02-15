@@ -2480,7 +2480,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Bool
 	 */
 	function validateAuthToken( $token ) {
-		return ( $token == $this->getAuthToken() );
+		return hash_equals( $this->getAuthToken(), $token );
 	}
 
 	/**
