@@ -182,7 +182,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$info += array(
 			'userInfo' => UserInfo::newFromName( $userName, true ),
 			'provider' => $this,
-			'persisted' => isset( $info['id'] ),
+			'persisted' => true, // CA sessions are always persistent
 			'remembered' => $tokenCookie !== null,
 			'forceHTTPS' => $this->getCookie( $request, 'forceHTTPS', '', false ),
 			'metadata' => array(
