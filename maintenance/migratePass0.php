@@ -11,7 +11,7 @@ if ( $IP === false ) {
 require_once( "$IP/maintenance/commandLine.inc" );
 
 /**
- * Copy user data for this wiki into the localuser table
+ * Copy user data for this wiki into the globalnames and localnames table
  */
 function migratePassZero() {
 	global $wgDBname;

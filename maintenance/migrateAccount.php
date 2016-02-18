@@ -225,10 +225,10 @@ class MigrateAccount extends Maintenance {
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->total / $delta,
-			$this->partial,
-			$this->total > 0 ? ( $this->partial / $this->total * 100.0 ) : 0,
 			$this->migrated,
-			$this->total > 0 ? ( $this->migrated / $this->total * 100.0 ) : 0
+			$this->total > 0 ? ( $this->migrated / $this->total * 100.0 ) : 0,
+			$this->partial,
+			$this->total > 0 ? ( $this->partial / $this->total * 100.0 ) : 0
 		) );
 	}
 }
