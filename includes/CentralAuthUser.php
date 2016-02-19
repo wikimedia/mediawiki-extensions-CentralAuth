@@ -11,6 +11,9 @@ likely construction types...
 */
 
 class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
+	/** Cache of loaded CentralAuthUsers */
+	private static $loadedUsers = null;
+
 	/**
 	 * The username of the current user.
 	 * @var string
@@ -68,34 +71,57 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$this->mFromMaster = true;
 		}
 	}
-
 	/**
-	 * Create a CentralAuthUser object corresponding to the supplied User, and
-	 * cache it in the User object.
-	 * @param User $user
-	 *
-	 * @return CentralAuthUser
+	 * Fetch the cache
+	 * @return MapCacheLRU
 	 */
-	static function getInstance( User $user ) {
-		if ( !isset( $user->centralAuthObj ) ) {
-			$user->centralAuthObj = new self( $user->getName() );
+	private static function getUserCache() {
+		if ( self::$loadedUsers === null ) {
+			// Limit of 20 is arbitrary
+			self::$loadedUsers = new MapCacheLRU( 20 );
 		}
-		return $user->centralAuthObj;
+		return self::$loadedUsers;
 	}
 
 	/**
-	 * Create a CentralAuthUser object corresponding to the supplied User, and
-	 * cache it in the User object. This object will use DB_MASTER.
+	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
 	 * @param User $user
-	 *
+	 * @param CentralAuthUser $caUser
+	 */
+	static function setInstance( User $user, CentralAuthUser $caUser ) {
+		self::getUserCache()->set( $user->getName(), $caUser );
+	}
+
+	/**
+	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
+	 * @param User $user
+	 * @return CentralAuthUser
+	 */
+	static function getInstance( User $user ) {
+		$cache = self::getUserCache();
+		$ret = $cache->get( $user->getName() );
+		if ( !$ret ) {
+			$ret = new self( $user->getName() );
+			$cache->set( $user->getName(), $ret );
+		}
+		return $ret;
+	}
+
+	/**
+	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
+	 * This object will use DB_MASTER.
+	 * @param User $user
 	 * @return CentralAuthUser
 	 * @since 1.27
 	 */
 	static function getMasterInstance( User $user ) {
-		if ( !isset( $user->centralAuthMasterObj ) ) {
-			$user->centralAuthMasterObj = new self( $user->getName(), self::READ_LATEST );
+		$cache = self::getUserCache();
+		$ret = $cache->get( $user->getName() );
+		if ( !$ret || !$ret->mFromMaster ) {
+			$ret = new self( $user->getName(), self::READ_LATEST );
+			$cache->set( $user->getName(), $ret );
 		}
-		return $user->centralAuthMasterObj;
+		return $ret;
 	}
 
 

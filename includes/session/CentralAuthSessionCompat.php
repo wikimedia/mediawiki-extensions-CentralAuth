@@ -456,7 +456,7 @@ class CentralAuthSessionCompat {
 		// Auth OK.
 		wfDebug( __METHOD__ . ": logged in from session\n" );
 		self::initSession( $user, $token );
-		$user->centralAuthObj = $centralUser;
+		CentralAuthUser::setInstance( $user, $centralUser );
 		$result = true;
 
 		return true;
