@@ -49,9 +49,10 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 		$user = User::newFromName( 'GlobalUser' );
 		$lockedUser = User::newFromName( 'GlobalLockedUser' );
 
-		// We can fake out CentralAuthUser::getInstance() by adding centralAuthObj
+		// Fake out CentralAuthUser::getInstance()
 		$noUser = User::newFromName( 'NoUser' );
-		$noUser->centralAuthObj = CentralAuthUser::newUnattached( 'NoUser' );
+		TestingAccessWrapper::newFromClass( 'CentralAuthUser' )->getUserCache()
+			->set( $noUser->getName(), CentralAuthUser::newUnattached( 'NoUser' ) );
 
 		return array(
 			array( $user, true, 'Attached user can login' ),
