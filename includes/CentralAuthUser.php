@@ -11,6 +11,9 @@ likely construction types...
 */
 
 class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
+	/** @var integer[] CAS tokens for all loaded users */
+	private static $casTokens = [];
+
 	/**
 	 * The username of the current user.
 	 * @var string
@@ -275,7 +278,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	protected function loadState( $recache = false ) {
 		if ( $recache ) {
 			$this->resetState();
-		} elseif ( isset( $this->mGlobalId ) ) {
+		} elseif ( isset( $this->mGlobalId ) && (
+			!isset( self::$casTokens[$this->mGlobalId] ) ||
+			$this->mCasToken === self::$casTokens[$this->mGlobalId]
+		) ) {
 			// Already loaded
 			return;
 		}
@@ -379,6 +385,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				wfTimestampOrNull( TS_MW, $row->gu_email_authenticated );
 			$this->mHomeWiki = $row->gu_home_db;
 			$this->mCasToken = $row->gu_cas_token;
+			self::$casTokens[$this->mGlobalId] = $this->mCasToken;
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
@@ -434,6 +441,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
 		}
+		self::$casTokens[$this->mGlobalId] = $this->mCasToken;
 
 		$this->loadAttached();
 
@@ -2495,6 +2503,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		$this->mCasToken = $newCasToken;
+		self::$casTokens[$this->mGlobalId] = $newCasToken;
 		$this->invalidateCache();
 	}
 
