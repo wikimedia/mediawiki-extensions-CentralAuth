@@ -1,4 +1,4 @@
-@chrome @en.wikipedia.beta.wmflabs.org @firefox @login @phantomjs @test2.wikipedia.org
+@chrome @en.wikipedia.beta.wmflabs.org @firefox @vagrant
 Feature: CentralAuth log in
 
   Background:

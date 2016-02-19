@@ -1,4 +1,4 @@
-@chrome @clean @en.wikipedia.beta.wmflabs.org @firefox @phantomjs @test2.wikipedia.org
+@chrome @en.wikipedia.beta.wmflabs.org @firefox @vagrant
 Feature: Global Account Manage
 
   Background:
