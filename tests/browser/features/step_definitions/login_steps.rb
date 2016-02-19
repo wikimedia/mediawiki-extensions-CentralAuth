@@ -6,7 +6,7 @@ Given(/^I am using a global account$/) do
 end
 
 Given(/^I am logged in to the primary wiki domain$/) do
-  visit(LoginPage).login_with(user, password)
+  log_in
 end
 
 When(/^I visit the central login wiki domain$/) do
