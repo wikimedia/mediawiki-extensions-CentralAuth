@@ -339,6 +339,7 @@
 	"centrallogin": "Центральний вхід в систему",
 	"centralloginsuccesful": "Успішний вхід до системи",
 	"centralauth-completelogin-back": "Повернутися до попередньої сторінки.",
+	"centralauth-error-wrongprovider": "Ця спеціальна сторінка недоступна при використанні $1.",
 	"centralauth-error-nologinattempt": "Немає активних спроб входу в ході Вашого сеансу.",
 	"centralauth-error-badtoken": "Наданий маркер аутентифікації прострочений або недійсний.",
 	"centralauth-error-token-wrongattempt": "Маркер аутентифікації не належить до Вашої поточної спроби входу.\nХтось, можливо, намагається, щоб Ви увійшли під зловмисним обліковим записом.",
@@ -534,6 +535,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "Необов'язкове MD5 очікуваного потоку <username>:<hidden>:<locked> для виявлення конфліктів редагувань. Встановіть <locked> як 1 для заблокованого, 0 для незаблокованого.",
 	"apihelp-setglobalaccountstatus-example-1": "Заблокувати обліковий статус користувача [[User:Example]] з причиною «Спам»",
 	"apihelp-setglobalaccountstatus-example-2": "Розкрити та подавити обліковий запис для [[User:Example]] з причиною «я можу»",
+	"apihelp-main-param-centralauthtoken": "При доступі до API з використанням міждоменного AJAX-запиту (CORS), використовуйте це для авторизації як поточного SUL-користувача. Використовуйте <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> у цій вікі, аби вивести токен, перш ніж здійснювати запит CORS. Кожен токен можна використати лише раз, через 10 секунд він стає недійсним. Це має бути включено в будь-який попередній запит, і, зважаючи на це,  — в запитуваний URI (не в тіло URI).",
 	"centralauth-log-gblrename-oldname": "Попереднє ім'я користувача:",
 	"centralauth-contribs-locked": "Цей обліковий запис заблокований глобально.\nДив. [[Special:CentralAuth/$1|деталі глобального облікового запису]] для додаткової інформації.",
 	"centralauth-contribs-locked-log": "Цей обліковий запис заблокований глобально. \nДля довідки наводиться останній запис у журналі блокувань:",
@@ -543,5 +545,7 @@
 	"centralauth-uwbr-registration-nodate": "Невідома",
 	"centralauth-uwbr-editcount": "Число редагувань",
 	"centralauth-uwbr-intro": "Ця сторінка перелічує користувачів, які зареєстровані через цю вікі, яких буде перейменовано.",
-	"centralauth-delete-empty-account": "Порожній обліковий запис."
+	"centralauth-delete-empty-account": "Порожній обліковий запис.",
+	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
+	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken"
 }
