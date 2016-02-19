@@ -12,16 +12,19 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 * @covers CentralAuthUser::getInstance
 	 */
 	public function testGetInstance() {
+		$cache = TestingAccessWrapper::newFromClass( 'CentralAuthUser' )->getUserCache();
+
 		$user = User::newFromName( 'FooBarBaz' );
-		unset( $user->centralAuthObj );
+		$cache->clear( $user->getName() );
 		$caUser = CentralAuthUser::getInstance( $user );
 		$this->assertInstanceOf( 'CentralAuthUser', $caUser );
 		$this->assertEquals( $user->getName(), $caUser->getName() );
-		$this->assertSame( $user->centralAuthObj, $caUser );
+		$this->assertSame( $cache->get( $user->getName() ), $caUser );
 
 		// Now test it just reads from the cache, no matter what
+		// @todo: Really?
 		$user2 = User::newFromName( 'BazBarFoo' );
-		$user2->centralAuthObj = 'blahblahblah';
+		$cache->set( $user2->getName(), 'blahblahblah' );
 		$this->assertEquals( 'blahblahblah', CentralAuthUser::getInstance( $user2 ) );
 	}
 
