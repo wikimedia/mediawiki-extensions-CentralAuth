@@ -147,7 +147,7 @@
 	"centralauth-days-ago": "dempuèi $1 {{PLURAL:$1|jorn|jorns}}",
 	"centralauth-months-ago": "dempuèi $1 {{PLURAL:$1|mes|meses}}",
 	"centralauth-years-ago": "dempuèi $1 {{PLURAL:$1|an|ans}}",
-	"centralauth-prefs-status": "Compte global :",
+	"centralauth-prefs-status": "Compte global:",
 	"centralauth-prefs-not-managed": "Pas de compte unic",
 	"centralauth-prefs-unattached": "Pas completament unificat",
 	"centralauth-prefs-count-attached": "Vòstre compte es actiu sus $1 {{PLURAL:$1|projècte|projèctes}}.",
