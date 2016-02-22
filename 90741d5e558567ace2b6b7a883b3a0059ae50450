@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ea41786_c4322a06",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 204
+      },
+      "writtenOn": "2016-02-22T18:17:51Z",
+      "side": 1,
+      "message": "Since you\u0027re almost entirely refactoring these, set the visibility?",
+      "revId": "90741d5e558567ace2b6b7a883b3a0059ae50450",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
