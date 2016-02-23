@@ -1,6 +1,9 @@
 <?php
 
 class CentralAuthUtils {
+	/** @var BagOStuff|null Session cache */
+	private static $sessionCache = null;
+
 	public static function isReadOnly() {
 		return ( self::getReadOnlyReason() !== false );
 	}
@@ -105,9 +108,14 @@ class CentralAuthUtils {
 	public static function getSessionCache() {
 		global $wgSessionsInObjectCache, $wgSessionCacheType;
 
-		return $wgSessionsInObjectCache
-			? ObjectCache::getInstance( $wgSessionCacheType )
-			: ObjectCache::getMainStashInstance();
+		if ( !self::$sessionCache ) {
+			$cache = $wgSessionsInObjectCache
+				? ObjectCache::getInstance( $wgSessionCacheType )
+				: ObjectCache::getMainStashInstance();
+			self::$sessionCache = $cache instanceof CachedBagOStuff
+				? $cache : new CachedBagOStuff( $cache );
+		}
+		return self::$sessionCache;
 	}
 
 	/**
@@ -206,10 +214,13 @@ class CentralAuthUtils {
 			$data += array_intersect_key( $existing, $keepKeys );
 		}
 
-		$stime = microtime( true );
-		CentralAuthUtils::getSessionCache()->set( $key, $data, 86400 );
-		$real = microtime( true ) - $stime;
-		RequestContext::getMain()->getStats()->timing( 'centralauth.session.write', $real );
+		if ( $data !== $existing || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
+			$data['expiry'] = time() + 86400;
+			$stime = microtime( true );
+			CentralAuthUtils::getSessionCache()->set( $key, $data, 86400 );
+			$real = microtime( true ) - $stime;
+			RequestContext::getMain()->getStats()->timing( 'centralauth.session.write', $real );
+		}
 
 		if ( $session ) {
 			$session->set( 'CentralAuth::centralSessionId', $id );
