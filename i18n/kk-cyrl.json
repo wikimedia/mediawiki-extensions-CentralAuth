@@ -294,7 +294,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Журнал енгізілімдері",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|үрдісті қарау]])",
 	"centralauth-rename-confirm": "Сіз шынымен бұл қатысушының есімін ғаламдық өзгертпекшісіз бе?",
-	"log-name-gblrename": "Ғаламдық атау өзгерту журналы",
+	"log-name-gblrename": "Ғаламдық есім өзгерту журналы",
 	"logentry-gblrename-rename": "$1 $4 дегенді $5 дегенге ғаламдық {{GENDER:$2|атын өзгертті}}",
 	"logentry-gblrename-promote": "$1 $4 дегенді $5 дегенге ғаламдық {{GENDER:$2|атын өзгертті}}",
 	"globalusermerge": "Ғаламдық қатысушыны біріктіру",
