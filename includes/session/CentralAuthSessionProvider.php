@@ -303,7 +303,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			} else {
 				$data['user'] = $centralUser->getName();
 				$data['token'] = $centralUser->getAuthToken();
-				$data['expiry'] = time() + 86400;
 			}
 			$centralSessionId = CentralAuthUtils::setCentralSession( $data, false, $s );
 
