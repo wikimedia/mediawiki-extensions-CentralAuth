@@ -114,7 +114,6 @@ class CentralAuthSessionCompat {
 		$session['user'] = $user->getName();
 		self::setCookie( 'User', $user->getName(), -1, $secure );
 		$session['token'] = $user->getAuthToken();
-		$session['expiry'] = time() + 86400;
 		$session['auto-create-blacklist'] = array();
 		$session += $sessionData;
 
