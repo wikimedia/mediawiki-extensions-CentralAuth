@@ -53,7 +53,7 @@ abstract class LocalRenameJob extends Job {
 		if ( !User::isUsableName( $user->getName() ) ) {
 			return $user;
 		}
-		$caUser = new CentralAuthUser( $user->getName(), CentralAuthUser::READ_LATEST );
+		$caUser = CentralAuthUser::getMasterInstance( $user );
 		// Race condition where the renamer isn't attached here, but
 		// someone creates an account in the meantime and then bad
 		// stuff could happen...
@@ -77,7 +77,7 @@ abstract class LocalRenameJob extends Job {
 	protected function done() {
 		$this->renameuserStatus->done( wfWikiID() );
 
-		$caNew = new CentralAuthUser( $this->params['to'] );
+		$caNew = CentralAuthUser::getInstanceByName( $this->params['to'] );
 		$caNew->quickInvalidateCache();
 	}
 

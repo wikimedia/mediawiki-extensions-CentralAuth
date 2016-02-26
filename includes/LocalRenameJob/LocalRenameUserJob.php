@@ -76,7 +76,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 	private function promoteToGlobal() {
 		$newName = $this->params['to'];
-		$caUser = new CentralAuthUser( $newName, CentralAuthUser::READ_LATEST );
+		$caUser = CentralAuthUser::getMasterInstanceByName( $newName );
 		$status = $caUser->promoteToGlobal( wfWikiID() );
 		if ( !$status->isOK() ) {
 			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
@@ -142,7 +142,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 	protected function done() {
 		parent::done();
-		$caOld = new CentralAuthUser( $this->params['from'] );
+		$caOld = CentralAuthUser::getInstanceByName( $this->params['from'] );
 		$caOld->quickInvalidateCache();
 	}
 }

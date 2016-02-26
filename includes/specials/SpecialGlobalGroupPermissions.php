@@ -534,7 +534,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// Invalidate their rights cache.
 		foreach ( $res as $row ) {
 			// Use READ_LATEST for paranoia, though the DB isn't used in this method
-			$cu = new CentralAuthUser( $row->gu_name, CentralAuthUser::READ_LATEST );
+			$cu = CentralAuthUser::getMasterInstanceByName( $row->gu_name );
 			$cu->quickInvalidateCache();
 		}
 	}

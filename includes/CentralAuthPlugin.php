@@ -26,7 +26,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @public
 	 */
 	function userExists( $username ) {
-		$central = new CentralAuthUser( $username );
+		$central = CentralAuthUser::getInstanceByName( $username );
 		return $central->exists();
 	}
 
@@ -46,7 +46,7 @@ class CentralAuthPlugin extends AuthPlugin {
 		global $wgCentralAuthAutoMigrateNonGlobalAccounts;
 		global $wgCentralAuthStrict;
 
-		$central = new CentralAuthUser( $username );
+		$central = CentralAuthUser::getInstanceByName( $username );
 		$passwordMatch = self::checkPassword( $central, $password );
 
 		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
@@ -54,7 +54,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			// collision during a forced migration to central auth accounts.
 			$renamedUsername = User::getCanonicalName( $username . '~' . str_replace( '_', '-', wfWikiID() ) );
 			if ( $renamedUsername !== false ) {
-				$renamed = new CentralAuthUser( $renamedUsername );
+				$renamed = CentralAuthUser::getInstanceByName( $renamedUsername );
 
 				if ( $renamed->getId() ) {
 					wfDebugLog( 'CentralAuth',
@@ -177,7 +177,7 @@ class CentralAuthPlugin extends AuthPlugin {
 		// Authenticate locally if the global account doesn't exist,
 		// or the local account isn't attached
 		// If strict is on, local authentication won't work at all
-		$central = new CentralAuthUser( $username );
+		$central = CentralAuthUser::getInstanceByName( $username );
 		return $central->exists() && $central->isAttached();
 	}
 

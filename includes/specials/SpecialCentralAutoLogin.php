@@ -430,7 +430,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Load and check CentralAuthUser. But don't check if it's
 			// attached, because then if the user is missing en.site they
 			// won't be auto logged in to any of the non-en versions either.
-			$centralUser = new CentralAuthUser( $memcData['userName'] );
+			$centralUser = CentralAuthUser::getInstanceByName( $memcData['userName'] );
 			if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
 				$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
 				wfDebug( __METHOD__ . ": $msg\n" );

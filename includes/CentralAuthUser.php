@@ -61,6 +61,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	const HIDE_CONTRIBLIMIT = 1000;
 
 	/**
+	 * @note Don't call this directly. Use self::getInstanceByName() or
+	 *  self::getMasterInstanceByName() instead.
 	 * @param string $username
 	 * @param integer $flags Supports CentralAuthUser::READ_LATEST to use the master DB
 	 */
@@ -71,6 +73,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$this->mFromMaster = true;
 		}
 	}
+
 	/**
 	 * Fetch the cache
 	 * @return MapCacheLRU
@@ -89,7 +92,16 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param CentralAuthUser $caUser
 	 */
 	public static function setInstance( User $user, CentralAuthUser $caUser ) {
-		self::getUserCache()->set( $user->getName(), $caUser );
+		self::setInstanceByName( $user->getName(), $caUser );
+	}
+
+	/**
+	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
+	 * @param string $username Must be validated and canonicalized by the caller
+	 * @param CentralAuthUser $caUser
+	 */
+	public static function setInstanceByName( $username, CentralAuthUser $caUser ) {
+		self::getUserCache()->set( $username, $caUser );
 	}
 
 	/**
@@ -98,11 +110,20 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return CentralAuthUser
 	 */
 	public static function getInstance( User $user ) {
+		return self::getInstanceByName( $user->getName() );
+	}
+
+	/**
+	 * Create a (cached) CentralAuthUser object corresponding to the supplied user.
+	 * @param string $username Must be validated and canonicalized by the caller
+	 * @return CentralAuthUser
+	 */
+	public static function getInstanceByName( $username ) {
 		$cache = self::getUserCache();
-		$ret = $cache->get( $user->getName() );
+		$ret = $cache->get( $username );
 		if ( !$ret ) {
-			$ret = new self( $user->getName() );
-			$cache->set( $user->getName(), $ret );
+			$ret = new self( $username );
+			$cache->set( $username, $ret );
 		}
 		return $ret;
 	}
@@ -115,15 +136,25 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @since 1.27
 	 */
 	public static function getMasterInstance( User $user ) {
+		return self::getMasterInstanceByName( $user->getName() );
+	}
+
+	/**
+	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
+	 * This object will use DB_MASTER.
+	 * @param string $username Must be validated and canonicalized by the caller
+	 * @return CentralAuthUser
+	 * @since 1.27
+	 */
+	public static function getMasterInstanceByName( $username ) {
 		$cache = self::getUserCache();
-		$ret = $cache->get( $user->getName() );
+		$ret = $cache->get( $username );
 		if ( !$ret || !$ret->mFromMaster ) {
-			$ret = new self( $user->getName(), self::READ_LATEST );
-			$cache->set( $user->getName(), $ret );
+			$ret = new self( $username, self::READ_LATEST );
+			$cache->set( $username, $ret );
 		}
 		return $ret;
 	}
-
 
 	/**
 	 * @deprecated use CentralAuthUtils instead
@@ -243,7 +274,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		);
 
 		if ( $name ) {
-			return new CentralAuthUser( $name );
+			return CentralAuthUser::getInstanceByName( $name );
 		} else {
 			return false;
 		}

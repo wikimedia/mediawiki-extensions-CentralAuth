@@ -81,10 +81,9 @@ class SpecialCentralAuth extends SpecialPage {
 			)->plain()
 		) );
 
-		$globalUser = new CentralAuthUser(
-			$this->mUserName,
-			$this->getRequest()->wasPosted() ? CentralAuthUser::READ_LATEST : 0
-		);
+		$globalUser = $this->getRequest()->wasPosted()
+			? CentralAuthUser::getMasterInstanceByName( $this->mUserName )
+			: CentralAuthUser::getInstanceByName( $this->mUserName );
 		$this->mGlobalUser = $globalUser;
 
 		if ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) && !$this->mCanOversight ) {
