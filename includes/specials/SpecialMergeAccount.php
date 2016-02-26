@@ -97,7 +97,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		$globalUser = new CentralAuthUser( $this->mUserName );
+		$globalUser = CentralAuthUser::getInstanceByName( $this->mUserName );
 		if ( $globalUser->exists() ) {
 			$this->showFormForExistingUsers( $globalUser );
 		} else {
@@ -203,10 +203,7 @@ class SpecialMergeAccount extends SpecialPage {
 	function doDryRunMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = new CentralAuthUser(
-			$this->getUser()->getName(),
-			CentralAuthUser::READ_LATEST
-		);
+		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
 
 		if ( $globalUser->exists() ) {
 			// Already exists - race condition
@@ -266,10 +263,7 @@ class SpecialMergeAccount extends SpecialPage {
 	function doInitialMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = new CentralAuthUser(
-			$this->getUser()->getName(),
-			CentralAuthUser::READ_LATEST
-		);
+		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
 
 		if ( $wgCentralAuthDryRun ) {
 			$this->dryRunError();
@@ -297,10 +291,7 @@ class SpecialMergeAccount extends SpecialPage {
 	function doCleanupMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = new CentralAuthUser(
-			$this->getUser()->getName(),
-			CentralAuthUser::READ_LATEST
-		);
+		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
 			throw new Exception( "User doesn't exist -- race condition?" );
@@ -334,10 +325,7 @@ class SpecialMergeAccount extends SpecialPage {
 	function doAttachMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = new CentralAuthUser(
-			$this->getUser()->getName(),
-			CentralAuthUser::READ_LATEST
-		);
+		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
 			throw new Exception( "User doesn't exist -- race condition?" );
@@ -387,7 +375,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function showCleanupForm() {
-		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
+		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 
 		$merged = $globalUser->listAttached();
 		$remainder = $globalUser->listUnattached();
@@ -395,7 +383,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	function showAttachForm() {
-		$globalUser = new CentralAuthUser( $this->getUser()->getName() );
+		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 		$merged = $globalUser->listAttached();
 		$this->getOutput()->addWikiMsg( 'centralauth-attach-list-attached', $this->mUserName );
 		$this->getOutput()->addHTML( $this->listAttached( $merged ) );

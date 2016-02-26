@@ -152,8 +152,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 
 		// Try the central user
-		// Don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
-		$centralUser = new CentralAuthUser( $userName );
+		$centralUser = CentralAuthUser::getInstanceByName( $userName );
 
 		// Skip if they're being renamed
 		if ( $centralUser->renameInProgress() ) {
@@ -198,7 +197,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		if ( isset( $metadata['CentralAuthSource'] ) ) {
 			$name = $info->getUserInfo()->getName();
 			if ( $name !== null ) {
-				$centralUser = new CentralAuthUser( $name );
+				$centralUser = CentralAuthUser::getInstanceByName( $name );
 				if ( $centralUser->exists() &&
 					( $centralUser->isAttached() || !User::idFromName( $name, User::READ_LATEST ) )
 				) {
@@ -369,7 +368,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		$centralUser = new CentralAuthUser( $username );
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
 		if ( !$centralUser->exists() ) {
 			return;
 		}

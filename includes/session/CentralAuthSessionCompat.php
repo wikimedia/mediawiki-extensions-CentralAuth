@@ -237,7 +237,7 @@ class CentralAuthSessionCompat {
 			}
 
 			// Try the central user
-			$centralUser = new CentralAuthUser( $userName );
+			$centralUser = CentralAuthUser::getInstanceByName( $userName );
 			if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
 				wfDebug( __METHOD__ . ": token mismatch\n" );
 				return null;
@@ -343,8 +343,7 @@ class CentralAuthSessionCompat {
 			if ( $name ) {
 				// Log the user out if they're being renamed. We'll give them an error message
 				// when they try logging in
-				// Also don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
-				$centralUser = new CentralAuthUser( $name );
+				$centralUser = CentralAuthUser::getInstanceByName( $name );
 				if ( $centralUser->renameInProgress() ) {
 					$result = false;
 					return false;
@@ -403,8 +402,7 @@ class CentralAuthSessionCompat {
 			}
 
 			// Try the central user
-			// Don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
-			$centralUser = new CentralAuthUser( $userName );
+			$centralUser = CentralAuthUser::getInstanceByName( $userName );
 
 			// Log the user out if they're being renamed
 			if ( $centralUser->renameInProgress() ) {

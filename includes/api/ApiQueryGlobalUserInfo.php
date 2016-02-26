@@ -39,7 +39,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		if ( is_null( $params['user'] ) ) {
 			$params['user'] = $this->getUser()->getName();
 		}
-		$user = new CentralAuthUser( $params['user'] );
+		$user = CentralAuthUser::getInstanceByName( $params['user'] );
 
 		// Add basic info
 		$result = $this->getResult();

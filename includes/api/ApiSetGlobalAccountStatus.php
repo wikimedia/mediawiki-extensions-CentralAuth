@@ -31,10 +31,7 @@
 class ApiSetGlobalAccountStatus extends ApiBase {
 	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
-		$globalUser = new CentralAuthUser(
-			$this->getParameter( 'user' ),
-			CentralAuthUser::READ_LATEST
-		);
+		$globalUser = CentralAuthUser::getMasterInstanceByName( $this->getParameter( 'user' ) );
 		if ( !$this->getUser()->isAllowed( 'centralauth-lock' ) ) {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		} elseif ( !$globalUser->exists() ) {

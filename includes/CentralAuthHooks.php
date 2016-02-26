@@ -376,7 +376,7 @@ class CentralAuthHooks {
 			// to check one username.
 			$newCAUser = $rename[1] === $user->getName()
 				? $centralUser
-				: new CentralAuthUser( $rename[0] );
+				: CentralAuthUser::getInstanceByName( $rename[0] );
 
 			if ( $newCAUser->isAttached() ) {
 				// If there is an account using that name that exists on this wiki
@@ -424,7 +424,7 @@ class CentralAuthHooks {
 				// If the local and global accounts don't exist,
 				// otherwise wgAuth will handle those.
 				$testName = $user->getName() . '~' . wfWikiID();
-				$test = new CentralAuthUser( $testName );
+				$test = CentralAuthUser::getInstanceByName( $testName );
 				if ( $test->exists() && $test->isAttached() ) {
 					$msg = array( 'centralauth-abortlogin-renamed', $testName );
 					return false;
@@ -758,7 +758,7 @@ class CentralAuthHooks {
 	 * @throws ErrorPageError
 	 */
 	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
-		$oldCentral = new CentralAuthUser( $oldName, CentralAuthUser::READ_LATEST );
+		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
 			$warnings[] = array( 'centralauth-renameuser-merged', $oldName, $newName );
 		}
@@ -766,7 +766,7 @@ class CentralAuthHooks {
 			$warnings[] = array( 'centralauth-renameuser-global-inprogress', $oldName );
 		}
 
-		$newCentral = new CentralAuthUser( $newName, CentralAuthUser::READ_LATEST );
+		$newCentral = CentralAuthUser::getMasterInstanceByName( $newName );
 		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
 			$warnings[] = array( 'centralauth-renameuser-reserved', $oldName, $newName );
 		}
@@ -787,7 +787,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onRenameUserPreRename( $uid, $oldName, $newName ) {
-		$oldCentral = new CentralAuthUser( $oldName, CentralAuthUser::READ_LATEST );
+		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
 		// If we're doing a global rename, the account will not get unattached
 		// because the old account no longer exists
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
@@ -804,8 +804,8 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
-		$oldCentral = new CentralAuthUser( $oldName, CentralAuthUser::READ_LATEST );
-		$newCentral = new CentralAuthUser( $newName, CentralAuthUser::READ_LATEST );
+		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
+		$newCentral = CentralAuthUser::getMasterInstanceByName( $newName );
 
 		if ( $newCentral->exists() && $oldCentral->renameInProgressOn( wfWikiID() ) ) {
 			// This is a global rename, just update the row.
@@ -1218,7 +1218,7 @@ class CentralAuthHooks {
 			return true; // Return if it is an IP as only usernames can be locked.
 		}
 
-		$caUser = new CentralAuthUser( $user );
+		$caUser = CentralAuthUser::getInstanceByName( $user );
 		if ( $caUser->isLocked() && in_array( wfWikiID(), $caUser->listAttached() ) ) {
 			$msg[] = Html::rawElement(
 				'span',
@@ -1316,7 +1316,7 @@ class CentralAuthHooks {
 				__METHOD__
 			);
 			$namesById[$userid] = $name;
-			$centralUser = new CentralAuthUser( $name );
+			$centralUser = CentralAuthUser::getInstanceByName( $name );
 			if ( $centralUser->getHiddenLevel() !== CentralAuthUser::HIDDEN_NONE
 				&& !( $audience instanceof User
 				&& $audience->isAllowed( 'centralauth-oversight' ) )
@@ -1357,7 +1357,7 @@ class CentralAuthHooks {
 			return false;
 		}
 
-		$centralUser = new CentralAuthUser( $user_name );
+		$centralUser = CentralAuthUser::getInstanceByName( $user_name );
 
 		if ( $centralUser->isLocked()
 			|| !$centralUser->isAttached()
@@ -1421,7 +1421,7 @@ class CentralAuthHooks {
 			// We aren't supposed to handle this
 			return true;
 		}
-		$centralUser = new CentralAuthUser( $username );
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
 		if ( $centralUser->getId() == 0 ) {
 			$id = false;
 			return false;
@@ -1672,7 +1672,7 @@ class CentralAuthHooks {
 	public static function onSessionCheckInfo( &$reason, $info ) {
 		$name = $info->getUserInfo()->getName();
 		if ( $name !== null ) {
-			$centralUser = new CentralAuthUser( $name );
+			$centralUser = CentralAuthUser::getInstanceByName( $name );
 			if ( $centralUser->renameInProgress() ) {
 				$reason = 'CentralAuth rename in progress';
 				return false;

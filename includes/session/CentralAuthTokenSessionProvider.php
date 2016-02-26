@@ -89,8 +89,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		}
 
 		// Try the central user
-		// Don't use CentralAuthUser::getInstance, we don't want to cache it on failure.
-		$centralUser = new CentralAuthUser( $userName );
+		$centralUser = CentralAuthUser::getInstanceByName( $userName );
 
 		// Skip if they're being renamed
 		if ( $centralUser->renameInProgress() ) {
@@ -155,7 +154,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 			return;
 		}
 
-		$centralUser = new CentralAuthUser( $username );
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
 		if ( !$centralUser->exists() ) {
 			return;
 		}

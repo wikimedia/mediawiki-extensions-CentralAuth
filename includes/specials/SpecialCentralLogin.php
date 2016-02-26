@@ -74,7 +74,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
-		$centralUser = new CentralAuthUser( $info['name'] );
+		$centralUser = CentralAuthUser::getInstanceByName( $info['name'] );
 		if ( !$centralUser->exists() ) { // sanity
 			throw new Exception( "Global user '{$info['name']}' does not exist." );
 		} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity

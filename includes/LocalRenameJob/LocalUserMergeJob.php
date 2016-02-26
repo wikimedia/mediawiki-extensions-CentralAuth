@@ -45,7 +45,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 	protected function done() {
 		parent::done();
 		foreach ( $this->params['from'] as $from ) {
-			$caOld = new CentralAuthUser( $from );
+			$caOld = CentralAuthUser::getInstanceByName( $from );
 			$caOld->quickInvalidateCache();
 		}
 	}

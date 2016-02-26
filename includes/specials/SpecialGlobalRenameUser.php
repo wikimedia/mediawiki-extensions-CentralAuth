@@ -96,7 +96,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		// Ask for confirmation if the user has more than 50k edits globally
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
 		if ( $oldName !== '' ) {
-			$caUser = new CentralAuthUser( $oldName );
+			$caUser = CentralAuthUser::getInstanceByName( $oldName );
 			if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
 				$fields['allowhigheditcount'] = array(
 					'id' => 'mw-globalrenameuser-allowhigheditcount',
@@ -180,7 +180,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				// Not a conflict since the old usage will go away
 				continue;
 			}
-			$ca = new CentralAuthUser( $name, CentralAuthUser::READ_LATEST );
+			$ca = CentralAuthUser::getMasterInstanceByName( $name );
 			if ( $ca->isHidden() ) {
 				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
 			} else {
@@ -232,7 +232,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 	function onSuccess() {
 		$lang = $this->getLanguage();
-		$caUser = new CentralAuthUser( $this->newUsername );
+		$caUser = CentralAuthUser::getInstanceByName( $this->newUsername );
 		$wikiList = $lang->commaList( $caUser->listAttached() );
 
 		$msg = $this->msg( 'centralauth-rename-queued' )

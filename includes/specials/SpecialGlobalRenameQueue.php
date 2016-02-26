@@ -376,7 +376,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$form->setId( 'mw-globalrenamequeue-request' );
 
 		if ( $req->userIsGlobal() ) {
-			$globalUser = new CentralAuthUser( $req->getName() );
+			$globalUser = CentralAuthUser::getInstanceByName( $req->getName() );
 			$homeWiki = $globalUser->getHomeWiki();
 			$infoMsgKey = 'globalrenamequeue-request-userinfo-global';
 		} else {
