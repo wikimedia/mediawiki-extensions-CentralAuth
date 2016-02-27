@@ -197,13 +197,28 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		if ( isset( $metadata['CentralAuthSource'] ) ) {
 			$name = $info->getUserInfo()->getName();
 			if ( $name !== null ) {
-				$centralUser = CentralAuthUser::getInstanceByName( $name );
-				if ( $centralUser->exists() &&
-					( $centralUser->isAttached() || !User::idFromName( $name, User::READ_LATEST ) )
-				) {
-					return $metadata['CentralAuthSource'] === 'CentralAuth';
+				if ( !$this->enable ) {
+					$source = 'Local';
 				} else {
-					return $metadata['CentralAuthSource'] === 'Local';
+					$centralUser = CentralAuthUser::getInstanceByName( $name );
+					if ( $centralUser->exists() &&
+						( $centralUser->isAttached() || !User::idFromName( $name, User::READ_LATEST ) )
+					) {
+						$source = 'CentralAuth';
+					} else {
+						$source = 'Local';
+					}
+				}
+				if ( $metadata['CentralAuthSource'] !== $source ) {
+					$this->logger->warning(
+						'Session "{session}": CentralAuth saved source {saved} != expected source {expected}',
+						[
+							'session' => $info,
+							'saved' => $metadata['CentralAuthSource'],
+							'expected' => $source,
+						]
+					);
+					return false;
 				}
 			}
 		}
