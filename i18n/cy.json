@@ -48,7 +48,7 @@
 	"centralauth-list-attached-dryrun": "Bydd y cyfrif/on o'r enw \"$1\" yn cael eu hatodi yn awtomatig i'r cyfrif unedig ar bob un o'r safleoedd canlynol:",
 	"centralauth-list-unattached-title": "Cyfrifon heb eu hatodi",
 	"centralauth-list-unattached": "Ni ellid cadarnhau'n awtomatig fod y {{PLURAL:$2|cyfrif|cyfrif|cyfrifon}} a elwir yn \"$1\" yn perthyn i chi ar y {{PLURAL:$2||wefan|gwefannau}} sy'n dilyn; mwy na thebyg bod cyfrinair gwahanol i gyfrinair eich prif gyfrif {{PLURAL:$2||ganddo|ganddynt}}.",
-	"centralauth-foreign-link": "Y defnyddiwr $1 ar $2",
+	"centralauth-foreign-link": "Defnyddiwr $1 ar $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|cyfraniadau|cyfraniad|gyfraniad|chyfraniad|chyfraniad|cyfraniad}} ar $2",
 	"centralauth-merge-method-primary": "y pen wici",
 	"centralauth-merge-method-empty": "dim cyfraniadau",

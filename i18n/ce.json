@@ -139,7 +139,7 @@
 	"centralauth-admin-title": "Глобальни декъашхочун дӀаяздаран менеджер $1",
 	"centralauth-admin-title-ro": "Глобальни декъашхойн дӀаяздарийн хаамаш декъашхочун $1",
 	"globalusers": "Глобальни декъашхойн могIам",
-	"centralauth-listusers-locked": "гӀора йе",
+	"centralauth-listusers-locked": "блоктоьхна",
 	"centralauth-listusers-attached": "[[User:$1|декъашхочун дӀаяздар локально ду]]",
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-nolocal": "цхьаьнатоьхна яц я локальни яц",
