@@ -31,7 +31,8 @@
 			"Mywood",
 			"Impersonator 1",
 			"Cdz",
-			"范"
+			"范",
+			"飞舞回堂前"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -338,7 +339,7 @@
 	"right-centralauth-unmerge": "取消合并全域帐户",
 	"right-centralauth-lock": "锁定或解锁全域帐户",
 	"right-centralauth-oversight": "禁止或隐藏全域帐户",
-	"right-centralauth-merge": "合并他们的账户",
+	"right-centralauth-merge": "合并其账户",
 	"right-globalgrouppermissions": "管理全域组",
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
 	"action-centralauth-lock": "锁定或解锁全域帐户",

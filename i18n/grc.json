@@ -3,10 +3,14 @@
 		"authors": [
 			"Crazymadlover",
 			"LeighvsOptimvsMaximvs",
-			"Omnipaedista"
+			"Omnipaedista",
+			"Gts-tg"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''ἢ'''",
+	"centralauth-foreign-link": "Χρώμενος $1 εν $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ἔρανος|ἔρανοι}} εν $2",
+	"centralauth-merge-method-login": "Ἐδημιουργήθει ἐν τη σύνδεση",
 	"centralauth-finish-title": "Τελεῖν τὴν συγχώνευσιν",
 	"centralauth-finish-password": "Σῆμα:",
 	"centralauth-finish-login": "Συνδεῖσθαι",
@@ -17,6 +21,7 @@
 	"centralauth-admin-info-hidden": "Κεκρυμμένον ἐπίπεδον:",
 	"centralauth-admin-yes": "ναί",
 	"centralauth-admin-no": "οὐ",
+	"centralauth-admin-blocklog": "Αἱ ἀποκλῄσεις",
 	"centralauth-admin-list-attached-on": "Ἐπισυνημμένη ἐπὶ τοῦ",
 	"centralauth-admin-list-method": "Μέθοδος",
 	"centralauth-admin-unmerge": "Ἀποσυγχωνεύειν τὰ ἐπειλεγμένα",

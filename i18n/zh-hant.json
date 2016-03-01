@@ -24,7 +24,8 @@
 			"LNDDYL",
 			"EagerLin",
 			"Shirayuki",
-			"Wehwei"
+			"Wehwei",
+			"飞舞回堂前"
 		]
 	},
 	"mergeaccount": "帳號整合狀態",
@@ -330,7 +331,7 @@
 	"right-centralauth-unmerge": "取消合併全域帳號",
 	"right-centralauth-lock": "鎖定或解除鎖定全域帳號",
 	"right-centralauth-oversight": "封鎖或隱藏全域帳號",
-	"right-centralauth-merge": "合併他們的帳號",
+	"right-centralauth-merge": "合併其帳號",
 	"right-globalgrouppermissions": "管理全域群組",
 	"abusefilter-edit-builder-vars-global-user-groups": "使用者所在的全域群組",
 	"action-centralauth-lock": "鎖定或解除鎖定全域帳號",
