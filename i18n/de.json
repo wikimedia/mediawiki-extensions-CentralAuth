@@ -14,7 +14,8 @@
 			"Umherirrender",
 			"Vogone",
 			"Inkowik",
-			"Predatorix"
+			"Predatorix",
+			"Luke081515"
 		]
 	},
 	"mergeaccount": "Status der Benutzerkontenzusammenführung",
@@ -48,7 +49,7 @@
 	"centralauth-not-owner-text": "Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.\n\nWenn dies dein Benutzername ist, kannst du die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
 	"centralauth-disabled-dryrun": "Die Benutzerkontozusammenführung befindet sich gegenwärtig in einem Demonstrations-/Fehlersuchmodus. Zusammenführungsaktionen sind daher deaktiviert.",
-	"centralauth-error-locked": "Du darfst keine Seiten bearbeiten, da dein Benutzerkonto gesperrt ist.",
+	"centralauth-error-locked": "Du darfst keine Seiten bearbeiten, da dein Benutzerkonto global gesperrt ist.",
 	"centralauth-error-unmerged": "Du kannst keine Bearbeitungen vornehmen, da dein Benutzerkonto nicht zusammengeführt ist.",
 	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]].''",
 	"centralauth-list-home-title": "Heimatwiki",

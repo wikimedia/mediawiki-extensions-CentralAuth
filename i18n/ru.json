@@ -458,6 +458,7 @@
 	"globalrenamequeue-request-userinfo-global": "* текущее имя участника: [[Special:CentralAuth/$1]]\n* основная вики: $2\n* новое имя участника: [[Special:CentralAuth/$3]]\n* глобальное количество правок: $4",
 	"globalrenamequeue-request-reason": "<strong>Причина запроса переименования</strong>\n:$1",
 	"globalrenamequeue-request-reason-sul": "Участник уведомлен о конфликте глобальных имён при подготовке к финализации ЕУЗ.",
+	"globalrenamequeue-request-movepages": "Переименовать страницы участника",
 	"globalrenamequeue-request-suppressredirects": "Запретить создание перенаправлений",
 	"globalrenamequeue-request-approve-text": "Принять переименование",
 	"globalrenamequeue-request-deny-text": "Отказать в переименовании",
@@ -495,11 +496,15 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Причина смены статуса участника.",
 	"apihelp-main-param-centralauthtoken": "При обращении к API посредством кроссдоменного AJAX-запроса (CORS) используйте это для авторизации в качестве текущего SUL-пользователя. Используйте <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> на этой вики для запроса токена, прежде чем делать CORS-запрос. Каждый токен может быть использован только раз и действителен только 10 секунд. Он должен быть включен в каждый предварительный запрос и — ввиду этого — в запрашиваемый URI (не в тело POST).",
 	"centralauth-log-gblrename-oldname": "Предыдущее имя участника:",
+	"centralauth-contribs-locked": "Эта учётная запись глобально заблокирована.\nСм. [[Special:CentralAuth/$1|данные глобальной учётной записи]] для получения более подробной информации:",
+	"centralauth-contribs-locked-log": "Эта учётная запись глобально заблокирована.\nНиже приведена последняя запись из журнала блокировок:",
 	"userswhowillberenamed": "Участники, которые будут переименованы",
 	"centralauth-uwbr-name": "Имя участника",
 	"centralauth-uwbr-registration": "Дата регистрации",
 	"centralauth-uwbr-registration-nodate": "Неизвестна",
 	"centralauth-uwbr-editcount": "Число правок",
 	"centralauth-uwbr-intro": "На этой странице перечислены участники, зарегистрированные в этой вики, которые будут переименованы.",
-	"centralauth-delete-empty-account": "Пустая учетная запись"
+	"centralauth-delete-empty-account": "Пустая учетная запись",
+	"sessionprovider-centralauthsessionprovider": "сессий на основе файлов cookie",
+	"sessionprovider-centralauthtokensessionprovider": "сессий centralauthtoken"
 }
