@@ -196,7 +196,7 @@
 	"centralauth-log-status-hidden": "къайлаяьккхина",
 	"centralauth-log-status-oversighted": "ревизоро дӀахьулдина",
 	"centralauth-log-status-none": "(яц)",
-	"centralauth-rightslog-name": "Глобальни бакъонашан тептар",
+	"centralauth-rightslog-name": "Глобальни бакъонийн тептар",
 	"centralauth-rightslog-entry-usergroups": "хийцина декъашхочун $1 глобальни бакъо $2 → $3",
 	"centralauth-rightslog-entry-groupperms": "хийцина декъашхочун $1 бакъо $2 → $3",
 	"centralauth-rightslog-entry-groupperms2": "хийцина декъашхочун бакъо $1. ТӀетоьхна $2; дӀаяьккхина $3",
