@@ -339,6 +339,7 @@
 	"centrallogin": "تسجيل دخول مركزي",
 	"centralloginsuccesful": "تم تسجيل الدخول بنجاح",
 	"centralauth-completelogin-back": "العودة إلى الصفحة السابقة.",
+	"centralauth-error-wrongprovider": "هذه الصفحة الخاصة غير متاحة عند استخدام $1.",
 	"centralauth-error-nologinattempt": "ليس هناك محاولة جارية لتسجيل الدخول لجلستك الحالية",
 	"centralauth-error-badtoken": "شهادة الإستيثاق التي تم توفيرها منتهية الصلاحية أو غير صالحة.",
 	"centralauth-error-token-wrongattempt": "شهادة الاستيثاق لا تنتمي إلى محاولة الولوج الخاصة بك الحالية. قد يكون هناك من يحاول الولوج باسمك باستخدام حساب مشبوه.",
@@ -369,6 +370,7 @@
 	"centralauth-rename-alreadyinprogress": "هناك عملية إعادة تسمية هذا المستخدم [[Special:GlobalRenameProgress/$1|قيد المعالجة]].",
 	"centralauth-renameuser-global-inprogress": "هناك عملية إعادة تسمية الحساب الموحدللمستخدم $1 [[Special:GlobalRenameProgress/$1|قيد المعالجة]].",
 	"centralauth-rename-queued": "المهام الضرورية لإعادة تسمية $1 إلى $2 مصفوفة في $3.\n\nتابع التقدم في معالجة الطلب في صفحة [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-conflict-hidden": "اسم المستخدم مخفي",
 	"centralauth-rename-progress-username": "اسم المستخدم",
 	"centralauth-rename-notinprogress": "لا يوجد عمليات إعادة تسمية فيد المعالجة لاسم المستخدم $1. من المحتمل أنها قد أنجزت.",
 	"centralauth-rename-table-domain": "ويكي محلي",
@@ -463,6 +465,10 @@
 	"globalrenamequeue-view": ";من:\n:[[Special:CentralAuth/$1|$1]]\n;إلى:\n:[[Special:CentralAuth/$2|$2]]\n;السبب:\n:$3\n;الوضع:\n:$4\n;وقت الطلب:\n:$5\n;وقت الإتمام:\n:$6\n;أنجزه:\n:[$7 $8]\n;ملاحظات:\n:$9",
 	"globalrenamequeue-view-approved": "مقبول",
 	"globalrenamequeue-view-rejected": "مرفوض",
+	"globalrenamequeue-form-username": "اسم المستخدم:",
+	"globalrenamequeue-form-newname": "اسم المستخدم المطلوب:",
+	"globalrenamequeue-form-status": "الحالة:",
+	"globalrenamequeue-form-status-all": "الكل",
 	"globalrenamequeue-email-subject-approved": "تم قبول طلب اعادة تسمية الحساب",
 	"globalrenamequeue-email-subject-rejected": "تم رفض طلب تغيير اسم الحساب",
 	"globalrenamequeue-email-body-approved": "تم إقرار تغيير الاسم «$1» إلى «$2».",
@@ -495,5 +501,7 @@
 	"centralauth-uwbr-name": "اسم المستخدم",
 	"centralauth-uwbr-registration": "تاريخ التسجيل",
 	"centralauth-uwbr-registration-nodate": "غير معروف",
-	"centralauth-uwbr-editcount": "عدد التعديلات"
+	"centralauth-uwbr-editcount": "عدد التعديلات",
+	"centralauth-delete-empty-account": "حساب فارغ",
+	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)"
 }
