@@ -19,6 +19,9 @@ abstract class LocalRenameJob extends Job {
 			$this->params['session']['userId'] = 0;
 			$this->params['session']['sessionId'] = '';
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
+			$this->addTeardownCallback( function() use ( &$callback ) {
+				ScopedCallback::consume( $callback );
+			} );
 		}
 		try {
 			$this->doRun();
