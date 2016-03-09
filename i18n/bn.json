@@ -109,7 +109,7 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|অ্যাকাউন্ট|অ্যাকাউন্টসমূহ}} সফল ভাবে বিচ্ছিন্ন হয়েছে",
 	"centralauth-admin-delete-title": "অ্যাকাউন্ট মুছে ফেলো",
 	"centralauth-admin-delete-button": "এই অ্যাকাউন্টটি মুছে ফেলো",
-	"centralauth-admin-delete-success": "সফল ভাবে \"<nowiki>$1</nowiki>\" গ্লবাল অ্যাকাইন্টটি মুছে ফেলা হয়েছে",
+	"centralauth-admin-delete-success": "\"<nowiki>$1</nowiki>\"-এর জন্য বৈশ্বিক অ্যাকাউন্টটি অপসারিত হয়েছে",
 	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" নামে কোন বৈশ্বিক অ্যাকাউন্ট নাই",
 	"centralauth-admin-delete-nonexistent": "ত্রুটি: \"<nowiki>$1</nowiki>\" নামে কোন বৈশ্বিক অ্যাকাউন্ট নাই।",
 	"centralauth-token-mismatch": "দুঃখিত, সেশন তথ্য হারিয়ে ফেলায় আমরা আপনার পেশ করা ফরম প্রক্রিয়াজাত করতে পারছি না।",
