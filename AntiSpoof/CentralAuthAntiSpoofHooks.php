@@ -2,56 +2,10 @@
 
 class CentralAuthAntiSpoofHooks {
 
-	/**
-	 * Can be used to cancel user account creation
-	 *
-	 * @param $user User
-	 * @param $message string
-	 * @return bool true to continue, false to abort user creation
-	 */
-	public static function asAbortNewAccountHook( $user, &$message ) {
-		global $wgAntiSpoofAccounts, $wgUser, $wgRequest;
-
-		if ( !$wgAntiSpoofAccounts ) {
-			$mode = 'LOGGING ';
-			$active = false;
-		} elseif ( $wgRequest->getCheck( 'wpIgnoreAntiSpoof' ) &&
-				$wgUser->isAllowed( 'override-antispoof' ) ) {
-			$mode = 'OVERRIDE ';
-			$active = false;
-		} else {
-			$mode = '';
-			$active = true;
-		}
-
-		$name = $user->getName();
+	public static function asAntiSpoofAddConflicts( &$spoofs, $name ) {
 		$spoof = new CentralAuthSpoofUser( $name );
-		if ( $spoof->isLegal() ) {
-			$normalized = $spoof->getNormalized();
-			$conflicts = $spoof->getConflicts();
-			if ( empty( $conflicts ) ) {
-				wfDebugLog( 'antispoof', "{$mode}PASS new account '$name' [$normalized]" );
-			} else {
-				wfDebugLog( 'antispoof', "{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts ) );
-				if ( $active ) {
-					$numConflicts = count( $conflicts );
-					$message = wfMessage( 'antispoof-conflict-top', $name )->numParams( $numConflicts )->escaped();
-					$message .= '<ul>';
-					foreach ( $conflicts as $simUser ) {
-						$message .= '<li>' . wfMessage( 'antispoof-conflict-item', $simUser )->escaped() . '</li>';
-					}
-					$message .= '</ul>' . wfMessage( 'antispoof-conflict-bottom' )->escaped();
-					return false;
-				}
-			}
-		} else {
-			$error = $spoof->getError();
-			wfDebugLog( 'antispoof', "{$mode}ILLEGAL new account '$name' $error" );
-			if ( $active ) {
-				$message = wfMessage( 'antispoof-name-illegal', $name, $error )->escaped();
-				return false;
-			}
-		}
+		$spoof->spoofedUsers( $spoofs );
+
 		return true;
 	}
 
