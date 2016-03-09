@@ -42,8 +42,8 @@ class CentralAuthHooks {
 			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
 				"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
-			$wgHooks['AbortNewAccount'][] =
-				'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
+			$wgHooks['AntiSpoofAddConflicts'][] =
+				'CentralAuthAntiSpoofHooks::asAntiSpoofAddConflicts';
 			$wgHooks['AddNewAccount'][] =
 				'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
 			$wgHooks['RenameUserComplete'][] =
