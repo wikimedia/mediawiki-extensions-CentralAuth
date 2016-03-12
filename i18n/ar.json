@@ -337,7 +337,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "المجموعات العامة التي ينتمي إليها الحساب",
 	"action-centralauth-lock": "إقفال أو فتح حسابات عامة",
 	"centrallogin": "تسجيل دخول مركزي",
-	"centralloginsuccesful": "تم تسجيل الدخول بنجاح",
+	"centralloginsuccesful": "تم الدخول",
 	"centralauth-completelogin-back": "العودة إلى الصفحة السابقة.",
 	"centralauth-error-wrongprovider": "هذه الصفحة الخاصة غير متاحة عند استخدام $1.",
 	"centralauth-error-nologinattempt": "ليس هناك محاولة جارية لتسجيل الدخول لجلستك الحالية",
