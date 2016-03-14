@@ -166,7 +166,7 @@
 	"centralauth-admin-action-lock-unlock": "Déi erausgesicht Benotzerkonten entspären",
 	"centralauth-admin-action-hide-nochange": "Verstoppte Niveauen net änneren",
 	"centralauth-admin-action-hide-none": "Déi erausgesicht Benotzerkonten nees weisen",
-	"centralauth-admin-action-hide-lists": "Déi erausgesichte Benotzerkonten op ëffentleche Lëschte verstoppen",
+	"centralauth-admin-action-hide-lists": "Déi erausgesicht Benotzerkonten op ëffentleche Lëschte verstoppen",
 	"centralauth-admin-action-hide-oversight": "Déi erausgesicht Benotzerkonte komplett verstoppen",
 	"centralauth-admin-multi-bot": "Rezent Ännerungen",
 	"centralauth-admin-multi-botcheck": "Elementer an de [[Special:RecentChanges|{{int:recentchanges}}]] als Bot-Edite markéieren",

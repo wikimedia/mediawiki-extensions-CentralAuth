@@ -198,7 +198,7 @@
 	"centralauth-days-ago": "منذ {{PLURAL:$1|يوم واحد|يومين|$1 أيام|$1 يومًا|$1 يوم}}",
 	"centralauth-months-ago": "منذ {{PLURAL:$1|أقل من شهر|شهر|شهرين| $1 أشهر| $1 شهراً| $1 شهر}}",
 	"centralauth-years-ago": "منذ {{PLURAL:$1||سنة واحدة|سنتين|$1 سنين|$1 سنة}}",
-	"centralauth-prefs-status": " الحساب العام:",
+	"centralauth-prefs-status": "الحساب العام:",
 	"centralauth-prefs-not-managed": "لا يستخدم الحساب الموحد",
 	"centralauth-prefs-unattached": "غير مؤكد",
 	"centralauth-prefs-count-attached": "حسابك نشط في {{PLURAL:$1|موقع مشروع واحد|موقعين لمشروعين|$1 مواقع لمشاريع|$1 موقعاً لمشاريع|$1 موقع مشاريع}}.",

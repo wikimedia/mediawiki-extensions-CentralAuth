@@ -253,7 +253,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Altækir hópar sem þessi notandi tilheyrir",
 	"action-centralauth-lock": "læsa eða aflæsa altækum notendum",
 	"centrallogin": "Miðlæg innskráning notanda",
-	"centralloginsuccesful": "Innskráning tókst",
+	"centralloginsuccesful": "Skráð/ur inn",
 	"centralauth-completelogin-back": "Fara aftur á fyrri síðu",
 	"centralauth-error-nologinattempt": "Engin virk innskráningar tilraun er í gangi fyrir lotuna þína",
 	"centralauth-error-badtoken": "Auðkennis tókinn sem var gefinn er annaðhvort úreldur eða ógildur.",
