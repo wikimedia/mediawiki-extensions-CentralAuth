@@ -335,7 +335,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Globala grupper som användaren är med i",
 	"action-centralauth-lock": "lås eller lås upp globala konton",
 	"centrallogin": "Centrala användarinloggning",
-	"centralloginsuccesful": "Inloggningen lyckades",
+	"centralloginsuccesful": "Inloggad",
 	"centralauth-completelogin-back": "Tillbaka till föregående sida.",
 	"centralauth-error-nologinattempt": "Inget aktivt inloggningsförsök pågår för din session.",
 	"centralauth-error-badtoken": "Den angivna autentiseringsnyckeln är antingen utgången eller ogiltig.",
