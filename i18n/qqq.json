@@ -545,7 +545,7 @@
 	"apihelp-query+globaluserinfo-example-2": "{{doc-apihelp-example|query+globaluserinfo}}",
 	"apihelp-query+wikisets-description": "{{doc-apihelp-description|query+wikisets}}",
 	"apihelp-query+wikisets-param-from": "{{doc-apihelp-param|query+wikisets|from}}",
-	"apihelp-query+wikisets-param-prop": "{{doc-apihelp-param|query+wikisets|prop}}",
+	"apihelp-query+wikisets-param-prop": "{{doc-apihelp-param|query+wikisets|prop}}\n----\nThe \"wiki set\" is the set of wikis where a certain permission is available. The \"opt in\" wikisets are made by whitelisting (explicitly listing all members) while the \"opt out\" wikisets are made by blacklisting (all wikis are included unless explicit).",
 	"apihelp-query+wikisets-param-limit": "{{doc-apihelp-param|query+wikisets|limit}}",
 	"apihelp-query+wikisets-param-orderbyname": "{{doc-apihelp-param|query+wikisets|orderbyname}}",
 	"apihelp-query+wikisets-example-1": "{{doc-apihelp-example|query+wikisets}}",

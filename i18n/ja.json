@@ -322,7 +322,7 @@
 	"centralauth-editset-nouse": "(なし)",
 	"centralauth-editset-usage": "以下のグループで使用:",
 	"centralauth-editset-badwikis": "以下の{{PLURAL:$2|ウィキ}}は存在しません: $1",
-	"centralauth-editset-success": "ウィキ集合を変更しました。",
+	"centralauth-editset-success": "ウィキ集合を更新しました。",
 	"centralauth-editset-success-delete": "ウィキ集合を削除しました。",
 	"centralauth-editset-return": "メイン画面に戻る",
 	"centralauth-block-already-locked": "アカウント [[Special:CentralAuth/$1|$1]] は既にグローバルにロックされています。",

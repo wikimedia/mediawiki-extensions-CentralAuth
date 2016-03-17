@@ -327,7 +327,7 @@
 	"centralauth-editset-usage": "Используется для групп:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|1=Следующей вики|Следующих вики}} не существует: $1.",
 	"centralauth-editset-success": "Набор вики обновлён.",
-	"centralauth-editset-success-delete": "Набор вики успешно удалён.",
+	"centralauth-editset-success-delete": "Набор вики удалён.",
 	"centralauth-editset-return": "Вернуться в основной режим",
 	"centralauth-block-already-locked": "Учётная запись [[Special:CentralAuth/$1|$1]] уже заблокирована глобально.",
 	"centralauth-readonly": "база данных CentralAuth заблокирована",
