@@ -76,6 +76,10 @@ class CentralAuthHooks {
 				wfDebug( __METHOD__ . ": invalid username\n" );
 				return null;
 			}
+			if ( !User::isUsableName( $userName ) ) {
+				wfDebug( __METHOD__ . ": username $userName is not usable on this wiki" );
+				return null;
+			}
 
 			// Try the central user
 			$centralUser = new CentralAuthUser( $userName );
@@ -543,6 +547,10 @@ class CentralAuthHooks {
 			$userName = User::getCanonicalName( $userName, 'valid' );
 			if ( !$userName ) {
 				wfDebug( __METHOD__ . ": invalid username\n" );
+				return true;
+			}
+			if ( !User::isUsableName( $userName ) ) {
+				wfDebug( __METHOD__ . ": username $userName is not usable on this wiki" );
 				return true;
 			}
 
