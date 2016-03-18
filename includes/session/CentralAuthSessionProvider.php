@@ -150,6 +150,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$this->logger->debug( __METHOD__ . ': invalid username' );
 			return self::returnParentSessionInfo( $request );
 		}
+		if ( !User::isUsableName( $userName ) ) {
+			$this->logger->warning( __METHOD__ . ': username {username} is not usable on this wiki', [
+				'username' => $userName,
+			] );
+			return self::returnParentSessionInfo( $request );
+		}
 
 		// Try the central user
 		$centralUser = CentralAuthUser::getInstanceByName( $userName );

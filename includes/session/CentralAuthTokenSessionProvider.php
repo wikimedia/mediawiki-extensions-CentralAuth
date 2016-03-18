@@ -87,6 +87,11 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 			$this->logger->debug( __METHOD__ . ': invalid username' );
 			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
 		}
+		if ( !User::isUsableName( $userName ) ) {
+			$this->logger->debug( __METHOD__ . ': unusable username' );
+			return $this->makeException( 'badusername',
+				"The user name \"$userName\" is not usable on this wiki" );
+		}
 
 		// Try the central user
 		$centralUser = CentralAuthUser::getInstanceByName( $userName );
