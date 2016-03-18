@@ -1839,7 +1839,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 			$passwordFactory = new PasswordFactory();
 			$passwordFactory->init( RequestContext::getMain()->getConfig() );
-			if ( $passwordFactory->needsUpdate( $status->getValue() ) ) {
+			if (
+				$passwordFactory->needsUpdate( $status->getValue() )
+				&& !CentralAuthUtils::getCentralDB()->isReadOnly()
+			) {
 				$this->setPassword( $password );
 				$this->saveSettings();
 			}
