@@ -257,6 +257,7 @@
 	"centrallogin": "কেন্দ্রীয় ব্যবহারকারী প্রবেশ",
 	"centralloginsuccesful": "প্রবেশ সফল",
 	"centralauth-completelogin-back": "পূর্ববর্তী পাতায় ফিরুন।",
+	"centralauth-error-nologinattempt": "আপনার সেশনের জন্য কোনো সক্রিয় প্রবেশকরণের প্রচেষ্টা চলছে না।",
 	"centralauth-warning-notloggedin": "আপনি বর্তমানে প্রবেশ করেন নি।",
 	"centralauth-warning-notattached": "স্থানীয় অ্যাকাউন্ট বৈশ্বিকের সাথে সংযুক্ত করা হয়নি।",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} অ্যাকাউন্ট নিশ্চিতকরণ",

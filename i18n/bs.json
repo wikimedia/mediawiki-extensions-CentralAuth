@@ -77,6 +77,7 @@
 	"centralauth-attach-submit": "Premjesti račun",
 	"centralauth-attach-success": "Račun je premješten na unificirani račun.",
 	"centralauth": "Menadžer globalnih korisnika",
+	"centralauth-ro": "Informacije o globalnom računu",
 	"centralauth-admin-intro": "Ovaj interfejs može se koristiti za administraciju globalnih računa.",
 	"centralauth-admin-manage": "Upravljanje korisničkim podacima",
 	"centralauth-admin-view": "Vidi informacije o računu",
