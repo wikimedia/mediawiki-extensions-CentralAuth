@@ -387,7 +387,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Записи в журналі",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|переглянути прогрес]])",
 	"centralauth-rename-progress-list-header": "Наступні глобальні перейменування наразі в процесі виконання:",
-	"centralauth-rename-movelog": "Автоматично переміщена сторінка під час перейменування користувача \"[[Special:CentralAuth/$1|$1]]\" на \"[[Special:CentralAuth/$2|$2]]\"",
+	"centralauth-rename-movelog": "Автоматичне перейменування сторінки при перейменуванні користувача «[[Special:CentralAuth/$1|$1]]» на «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-confirm": "Ви справді хочете глобально перейментувати цього користувача?",
 	"centralauth-rename-deny": "Ви дійсно хочете відмовити в задоволенні цього запиту?",
 	"log-name-gblrename": "Журнал глобального перейменування",

@@ -147,7 +147,7 @@
 	"centralauth-admin-reason": "Motivo:",
 	"centralauth-admin-reason-other": "Altri motivi/dettagli:",
 	"centralauth-admin-reason-other-select": "Altro motivo:",
-	"centralauth-admin-rename-in-progress": "Questo account sta per essere rinominato. Si può [[Speciale:GlobalRenameProgress/$1|visualizzare lo stato di avanzamento]] della rinomina. Il log della rinomina è fornito di seguito.",
+	"centralauth-admin-rename-in-progress": "Questa utenza sta per essere rinominata. Puoi [[Special:GlobalRenameProgress/$1|visualizzare lo stato di avanzamento]] della rinomina. Il registro delle rinomine globali per questo utente è riportato di seguito.",
 	"centralauth-admin-unhide-nonexistent": "Errore: l'utenza globale \"<nowiki>$1</nowiki>\" non esiste.",
 	"centralauth-admin-status": "Impostare lo stato dell'utenza globale",
 	"centralauth-admin-status-intro": "È possibile utilizzare questo modulo per modificare lo stato di questo utente globale",

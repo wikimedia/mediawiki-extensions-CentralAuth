@@ -309,6 +309,7 @@
 	"centralauth-editset-badtype": "Du hast einen ungültigen Typ angegeben.",
 	"centralauth-editset-setexists": "Es ist bereits eine Gruppe mit diesem Namen vorhanden",
 	"centralauth-editset-nowikis": "(keine)",
+	"centralauth-editset-zerowikis": "Keine Wikis angegeben.",
 	"centralauth-editset-nouse": "(keine)",
 	"centralauth-editset-usage": "Benutzt in den Gruppen:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Das folgende Wiki ist|Die folgenden Wikis sind}} nicht vorhanden: $1.",
