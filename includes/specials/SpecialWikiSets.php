@@ -306,7 +306,7 @@ class SpecialWikiSets extends SpecialPage {
 			return;
 		}
 		if ( !$wikis ) {
-			$this->buildSetView( $id, $this->msg( 'centralauth-editset-nowikis' )->escaped(), $name, $type, $wikis, $reason );
+			$this->buildSetView( $id, $this->msg( 'centralauth-editset-zerowikis' )->escaped(), $name, $type, $wikis, $reason );
 			return;
 		}
 		$badwikis = array();
