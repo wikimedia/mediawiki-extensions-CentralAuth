@@ -304,6 +304,7 @@
 	"centralauth-editset-badtype": "סוג הקבוצה שציינת אינו תקין.",
 	"centralauth-editset-setexists": "קיימת כבר קבוצה בשם זה",
 	"centralauth-editset-nowikis": "(אין)",
+	"centralauth-editset-zerowikis": "לא הוגדרו אתרי ויקי.",
 	"centralauth-editset-nouse": "(לא בשימוש)",
 	"centralauth-editset-usage": "בשימוש בקבוצות:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|אתר הוויקי הבא אינו קיים|אתרי הוויקי הבאים אינם קיימים}}: $1.",

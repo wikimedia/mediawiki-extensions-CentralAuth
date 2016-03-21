@@ -129,7 +129,7 @@
 	"centralauth-admin-status-submit": "অবস্থা সেট কর",
 	"centralauth-admin-status-nonexistent": "ত্রুটি: \"<nowiki>$1</nowiki>\" নামে কোন বৈশ্বিক অ্যাকাউন্ট নাই।",
 	"centralauth-admin-setstatus-success": "আপনি সফলভাবে আপনার বৈশ্বিক অ্যাকাউন্টটি পরিবর্তন করেছেন।",
-	"centralauth-admin-logsnippet": "পূর্বের প্লোবাল অ্যাকাউন্ট পরিবর্তন",
+	"centralauth-admin-logsnippet": "পূর্বের বৈশ্বিক অ্যাকাউন্টের পরিবর্তন",
 	"centralauth-admin-title-ro": "$1-এর বৈশ্বিক অ্যাকাউন্টের তথ্য",
 	"globalusers": "বৈশ্বিক অ্যাকাউন্টের তালিকা",
 	"centralauth-listusers-locked": "বন্ধ",

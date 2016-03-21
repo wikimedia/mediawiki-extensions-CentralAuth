@@ -325,6 +325,7 @@
 	"centralauth-editset-badtype": "无效集合类型。",
 	"centralauth-editset-setexists": "已经存在名称为此的集合",
 	"centralauth-editset-nowikis": "（无）",
+	"centralauth-editset-zerowikis": "没有指定wiki。",
 	"centralauth-editset-nouse": "（无）",
 	"centralauth-editset-usage": "用于用户组：",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|维基$1不存在|以下维基不存在：$1}}",

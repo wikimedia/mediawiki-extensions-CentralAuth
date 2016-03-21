@@ -335,6 +335,7 @@
 	"centralauth-editset-badtype": "Type de jeu incorrect.",
 	"centralauth-editset-setexists": "Un jeu de wikis existe déjà sous ce nom",
 	"centralauth-editset-nowikis": "(aucun)",
+	"centralauth-editset-zerowikis": "Aucun wiki spécifié.",
 	"centralauth-editset-nouse": "(néant)",
 	"centralauth-editset-usage": "Utilisé dans les groupes globaux :",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Le wiki suivant est inexistant|Les $2 wikis suivants sont inexistants}} : $1.",

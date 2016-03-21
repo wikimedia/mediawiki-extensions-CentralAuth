@@ -317,6 +317,7 @@
 	"centralauth-editset-badtype": "Неправильний тип набору.",
 	"centralauth-editset-setexists": "Набір з такою назвою вже існує",
 	"centralauth-editset-nowikis": "(немає)",
+	"centralauth-editset-zerowikis": "Не вказано жодної вікі.",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(нема)",
 	"centralauth-editset-usage": "Використовується для груп:",

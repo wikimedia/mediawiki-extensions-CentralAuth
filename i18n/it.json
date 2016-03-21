@@ -312,6 +312,7 @@
 	"centralauth-editset-badtype": "Tipo dell'insieme non valido.",
 	"centralauth-editset-setexists": "Un insieme con quel nome esiste già.",
 	"centralauth-editset-nowikis": "(nessuno)",
+	"centralauth-editset-zerowikis": "Nessun wiki specificato.",
 	"centralauth-editset-nouse": "(nessuno)",
 	"centralauth-editset-usage": "Usato nei gruppi:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2:La wiki seguente non esiste|Le wiki seguenti non esistono}}: $1",

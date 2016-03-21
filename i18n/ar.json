@@ -318,6 +318,7 @@
 	"centralauth-editset-badtype": "أنت حددت نوع مجموعة غير صالح.",
 	"centralauth-editset-setexists": "هناك مجموعة ويكي بهذا الاسم بالفعل",
 	"centralauth-editset-nowikis": "(لا شيء)",
+	"centralauth-editset-zerowikis": "لم تحدد أي ويكي.",
 	"centralauth-editset-nouse": "(لا شيء)",
 	"centralauth-editset-usage": "مستخدم في المجموعات:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|الويكي التالي غير موجود|الويكيان التاليان غير موجودين|الويكيات التالية غير موجودة}}: $1.",
