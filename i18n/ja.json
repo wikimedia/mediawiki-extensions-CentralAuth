@@ -456,5 +456,6 @@
 	"apihelp-deleteglobalaccount-param-user": "削除対象の利用者。",
 	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
 	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
-	"centralauth-log-gblrename-oldname": "以前の利用者名"
+	"centralauth-log-gblrename-oldname": "以前の利用者名",
+	"userswhowillberenamed": "改名される予定の利用者"
 }

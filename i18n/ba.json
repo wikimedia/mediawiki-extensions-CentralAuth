@@ -240,6 +240,7 @@
 	"centralauth-editset-badtype": "Мөмкин булмаған йыйынтыҡ төрө.",
 	"centralauth-editset-setexists": "Бындай исемле йыйынтыҡ төрө бар инде",
 	"centralauth-editset-nowikis": "Викилар күрһәтелмәгән.",
+	"centralauth-editset-zerowikis": "Бер вики ла күрһәтелмәгән.",
 	"centralauth-editset-nouse": "(юҡ)",
 	"centralauth-editset-usage": "Түбәндәге төркөмдәрҙә ҡулланыла:",
 	"centralauth-editset-badwikis": "Түбәндәге {{PLURAL:$2|1=вики|викилар}} юҡ: $1.",
@@ -252,5 +253,6 @@
 	"right-centralauth-lock": "Дөйөм иҫәп яҙмаларын бикләү һәм йәшереү",
 	"right-centralauth-oversight": "Дөйөм иҫәп яҙмаларын йәшереү",
 	"right-centralauth-merge": "Иҫәп яҙмаларын берләштереү",
-	"right-globalgrouppermissions": "Дөйөм төркөмдәр менән идара итеү"
+	"right-globalgrouppermissions": "Дөйөм төркөмдәр менән идара итеү",
+	"centralloginsuccesful": "Инеү уңышлы булды"
 }
