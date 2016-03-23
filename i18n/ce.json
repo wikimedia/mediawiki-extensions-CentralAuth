@@ -278,6 +278,7 @@
 	"centralauth-editset-badtype": "Цамагийна гуламан тайп",
 	"centralauth-editset-setexists": "Ишта цӀе йолу гулам болуш бу",
 	"centralauth-editset-nowikis": "(яц)",
+	"centralauth-editset-zerowikis": "Цхьаа вики билгалйина яц.",
 	"centralauth-editset-nouse": "(яц)",
 	"centralauth-editset-usage": "Лелош ю тобаншан:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|1=ТӀехьайогӀу википеди|ТӀехьайогӀу википедеш}} яц: $1.",
