@@ -581,9 +581,6 @@ class CentralAuthSessionCompat {
 			throw new Exception( "AbortAutoAccount hook tried to change the user name" );
 		}
 
-		// Ignore warnings about master connections/writes...hard to avoid here
-		Profiler::instance()->getTransactionProfiler()->resetExpectations();
-
 		$backoffKey = wfMemcKey( 'CentralAuth', 'autocreate-failed', md5( $userName ) );
 		if ( $wgMemc->get( $backoffKey ) ) {
 			wfDebug( __METHOD__ . ": denied by prior creation attempt failures" );

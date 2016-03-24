@@ -124,6 +124,9 @@ class CentralAuthUtils {
 	 * @return bool Success
 	 */
 	public static function autoCreateUser( User $user ) {
+		// Ignore warnings about master connections/writes...hard to avoid here
+		Profiler::instance()->getTransactionProfiler()->resetExpectations();
+
 		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
 			$res = MediaWiki\Session\SessionManager::autoCreateUser( $user );
 		} else {
