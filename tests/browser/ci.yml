@@ -1,0 +1,5 @@
+MEDIAWIKI_ENVIRONMENT:
+  - beta
+
+BROWSER:
+  - firefox
