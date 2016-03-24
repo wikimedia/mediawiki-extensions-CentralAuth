@@ -23,7 +23,8 @@
 			"He7d3r",
 			"Nemo bis",
 			"TheEduGobi",
-			"Araceletorres"
+			"Araceletorres",
+			"Luk3"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -316,6 +317,7 @@
 	"centralauth-editset-badtype": "Tipo de conjunto inválido.",
 	"centralauth-editset-setexists": "Um conjunto com esse nome já existe",
 	"centralauth-editset-nowikis": "(nenhuma)",
+	"centralauth-editset-zerowikis": "Nenhuma wiki especificada.",
 	"centralauth-editset-nouse": "(nenhum)",
 	"centralauth-editset-usage": "Usado nos grupos:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|A seguinte wiki não existe|As seguintes wikis não existem}}: $1.",
