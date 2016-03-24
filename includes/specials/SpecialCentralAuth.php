@@ -30,7 +30,13 @@ class SpecialCentralAuth extends SpecialPage {
 
 	public function execute( $subpage ) {
 		global $wgContLang;
+
 		$this->setHeaders();
+
+		if ( $this->getRequest()->getCheck( 'CentralAuthLatest' ) ) {
+			// Master usage forced on account creation login steps; ignore warnings
+			Profiler::instance()->getTransactionProfiler()->resetExpectations();
+		}
 
 		$this->mCanUnmerge = $this->getUser()->isAllowed( 'centralauth-unmerge' );
 		$this->mCanLock = $this->getUser()->isAllowed( 'centralauth-lock' );
