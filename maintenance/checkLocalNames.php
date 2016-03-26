@@ -28,7 +28,7 @@ class CheckLocalNames extends Maintenance {
 		$centralMaster = CentralAuthUtils::getCentralDB();
 		$centralSlave = CentralAuthUtils::getCentralSlaveDB();
 
-		if ( $this->getOption( 'delete', false ) === true ) {
+		if ( $this->getOption( 'delete', false ) !== false ) {
 			$this->dryrun = false;
 		}
 
