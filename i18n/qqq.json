@@ -167,7 +167,7 @@
 	"centralauth-admin-delete-success": "Used as success message in Special:CentralAuth. Parameters:\n* $1 - username",
 	"centralauth-admin-nonexistent": "Used as error message in [[Special:CentralAuth]] and [[Special:MultiLock]]. Parameters:\n* $1 - username",
 	"centralauth-admin-delete-nonexistent": "Used as error message. Parameters:\n* $1 - global account's name",
-	"centralauth-token-mismatch": "Used as error message.\n\nSee also:\n* {{msg-mw|Centralauth-state-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}",
+	"centralauth-token-mismatch": "Used as error message.\n\nSee also:\n* {{msg-mw|Centralauth-state-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}\n{{Identical|Loss of session data}}",
 	"centralauth-state-mismatch": "Error message when another admin has updated the user, and an edit conflict was detected.\n\nSee also:\n* {{msg-mw|Centralauth-token-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}",
 	"centralauth-admin-reason": "{{Identical|Reason}}",
 	"centralauth-admin-reason-other": "{{Identical|Other/additional reason}}",

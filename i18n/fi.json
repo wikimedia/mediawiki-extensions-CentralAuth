@@ -17,7 +17,8 @@
 			"Tarmo",
 			"SMAUG",
 			"MrTapsa",
-			"Ejs-80"
+			"Ejs-80",
+			"Mikahama"
 		]
 	},
 	"mergeaccount": "Käyttäjätunnusten yhdistämisen tila",
@@ -157,7 +158,7 @@
 	"centralauth-admin-status-hidden-oversight": "Tunnus on piilotettu kokonaan",
 	"centralauth-admin-status-submit": "Aseta tila",
 	"centralauth-admin-status-nonexistent": "Virhe: Järjestelmänlaajuista käyttäjätunnusta \"<nowiki>$1</nowiki>\" ei ole olemassa.",
-	"centralauth-admin-setstatus-success": "Olet onnistuneesti muuttanut tämän järjestelmänlaajuisen tunnuksen tilaa.",
+	"centralauth-admin-setstatus-success": "Olet muuttanut tämän järjestelmänlaajuisen tunnuksen tilaa.",
 	"centralauth-admin-status-reasons": "* Yleiset lukitsemisen syyt\n** Vain vandalismitarkoituksiin luotu tunnus\n** Vain roskapostitarkoituksiin luotu tunnus\n* Yleiset lukitsemisen ja piilotuksen syyt\n** Loukkaava käyttäjätunnus\n** Sopimattomat henkilötiedot",
 	"centralauth-admin-logsnippet": "Edelliset järjestelmänlaajuisten tunnusten muutokset",
 	"centralauth-admin-suppressreason": "Häivytetty järjestelmänlaajuisesti käyttäjän $1 toimesta seuraavasta syystä johtuen: $2",

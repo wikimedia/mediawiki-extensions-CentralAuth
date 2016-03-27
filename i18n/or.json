@@ -3,7 +3,8 @@
 		"authors": [
 			"Jnanaranjan Sahu",
 			"Odisha1",
-			"Psubhashish"
+			"Psubhashish",
+			"MKar"
 		]
 	},
 	"mergeaccount": "ଲଗ-ଇନ ଏକାକୀକରଣ ସ୍ଥିତି",
@@ -176,7 +177,7 @@
 	"centralauth-account-exists": "ଖାତା ତିଆରି କରାଯାଇପାରିବ ନାହିଁ: ଅନୁରୋଧ କରାଯାଇଥିବା ଇଉଜର ନାମ ଆଗରୁ ଏକାକୀକରଣ ଲଗ ଇନ ସିଷ୍ଟମରେ ନିଆ ସରିଅଛି ।",
 	"centralauth-account-exists-reset": "$1 ଇଉଜର ନାମଟି ଏହି ଉଇକିରେ ପଞ୍ଜିକରଣ କରାଯାଇନାହିଁ, କିନ୍ତୁ ଏହା ଏକାକୀକାରଣ ଲଗ ଇନ ସିଷ୍ଟମରେ ରହିଅଛି ।",
 	"centralauth-login-progress": "ଆପଣଙ୍କୁ {{int:Centralauth-groupname}}ର ଏହି ସବୁ ପ୍ରସଙ୍ଗରେ ଲଗ-ଇନ କରାଉଛୁ :",
-	"centralauth-logout-progress": "{{int:Centralauth-groupname}} ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣଙ୍କୁ ଲଗଆଉଟ କରୁଅଛୁ:",
+	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ର ଅନ୍ୟ ସମସ୍ତ ପ୍ରକଳ୍ପରୁ ଆପଣଙ୍କୁ ଲଗଆଉଟ କରୁଅଛୁ:",
 	"centralauth-login-no-others": "{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣ ଆପେଆପେ ଲଗଆଉଟ ହୋଇଯାଇଛନ୍ତି",
 	"centralauth-logout-no-others": "{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣ ଆପେଆପେ ଲଗଆଉଟ ହୋଇଯାଇଛନ୍ତି",
 	"centralauth-hidden-blockreason": ": $3 ପାଇଁ $1 ଙ୍କ ଦେଇ $2 ଠାରେ ଲୁଚାଯାଇଛି",

@@ -155,7 +155,7 @@
 	"centralauth-admin-delete-success": "已经删除\"<nowiki>$1</nowiki>\"的全域账户",
 	"centralauth-admin-nonexistent": "这里没有\"<nowiki>$1</nowiki>\"的全域账户",
 	"centralauth-admin-delete-nonexistent": "错误：该全域账户\"<nowiki>$1</nowiki>\"不存在。",
-	"centralauth-token-mismatch": "对不起，由于阶段资料遗失，我们不可以处理你的表格递交",
+	"centralauth-token-mismatch": "对不起，由于会话数据丢失，我们不能处理您的表单提交行为。",
 	"centralauth-state-mismatch": "错误：检测到对此用户发生编辑冲突。请确认您的更改并重试。",
 	"centralauth-admin-reason": "原因：",
 	"centralauth-admin-reason-other": "其他/附加原因：",
