@@ -302,6 +302,7 @@
 	"centralauth-editset-badtype": "Tipo de configuración inválido.",
 	"centralauth-editset-setexists": "Xa existe unha configuración con ese nome",
 	"centralauth-editset-nowikis": "(ningún)",
+	"centralauth-editset-zerowikis": "Non se especificaron wikis.",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-nouse": "(ningún)",
 	"centralauth-editset-usage": "Usado nos grupos:",
