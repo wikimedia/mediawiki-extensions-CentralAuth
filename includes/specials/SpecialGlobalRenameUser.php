@@ -97,14 +97,16 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
 		if ( $oldName !== '' ) {
 			$oldUser = User::newFromName( $oldName );
-			$caUser = CentralAuthUser::getInstance( $oldUser );
-			if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
-				$fields['allowhigheditcount'] = array(
-					'id' => 'mw-globalrenameuser-allowhigheditcount',
-					'label' => $this->msg( 'centralauth-rename-form-allowhigheditcount' )
-						->numParams( self::EDITCOUNT_THRESHOLD )->escaped(),
-					'type' => 'check'
-				);
+			if ( $oldUser ) {
+				$caUser = CentralAuthUser::getInstance( $oldUser );
+				if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
+					$fields['allowhigheditcount'] = array(
+						'id' => 'mw-globalrenameuser-allowhigheditcount',
+						'label' => $this->msg( 'centralauth-rename-form-allowhigheditcount' )
+							->numParams( self::EDITCOUNT_THRESHOLD )->escaped(),
+						'type' => 'check'
+					);
+				}
 			}
 		}
 
