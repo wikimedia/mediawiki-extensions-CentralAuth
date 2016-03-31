@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce38dbff_27f8f945",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-03-31T16:25:03Z",
+      "side": 1,
+      "message": "$oldUser may be null so this might cause fatals sometimes?",
+      "revId": "c14306aa53ec6f499febf9b28493eb710d2a82c7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
