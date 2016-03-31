@@ -96,7 +96,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		// Ask for confirmation if the user has more than 50k edits globally
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
 		if ( $oldName !== '' ) {
-			$caUser = CentralAuthUser::getInstanceByName( $oldName );
+			$oldUser = User::newFromName( $oldName );
+			$caUser = CentralAuthUser::getInstance( $oldUser );
 			if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
 				$fields['allowhigheditcount'] = array(
 					'id' => 'mw-globalrenameuser-allowhigheditcount',
