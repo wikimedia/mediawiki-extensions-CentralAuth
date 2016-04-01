@@ -34,6 +34,24 @@
       "revId": "da13bb9ade5ca83ea29d96903385aba658fd99ec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_c7a93ede",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-04-01T23:36:03Z",
+      "side": 1,
+      "message": "Interesting. That can\u0027t be auto creation, though.\n\nThe only way that can be autocreation is if the user is viewing that url on a wiki they haven\u0027t visited before (e.g. on Meta-Wiki) and it happened to trigger autocreation. But either way, this class doesn\u0027t do autocreation afiak, that\u0027d be handled elsewhere.\n\nIf this class is triggering master queries on GET it\u0027ll be for something else. Perhaps worth verifying.",
+      "parentUuid": "ce38dbff_76c3cd0a",
+      "revId": "da13bb9ade5ca83ea29d96903385aba658fd99ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
