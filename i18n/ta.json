@@ -174,7 +174,7 @@
 	"centralauth-rightslog-name": "உலகளாவிய உரிமைகள் குறிப்பேடு",
 	"centralauth-rightslog-entry-usergroups": "$1 என்பவருக்கான உலகக் குழு உறுப்புத்துவம் $2 என்பதிலிருந்து $3 என்பதற்கு மாற்றப்பட்டது",
 	"centralauth-rightslog-entry-groupperms": "$1 என்பவருக்கான குழு இசைவுகள் $2 என்பதிலிருந்து $3 என்பதற்கு மாற்றப்பட்டன",
-	"centralauth-rightslog-entry-groupperms2": " $1 க்காக மாற்றப்பட்ட குழு அனுமதிகள். சேர்க்கப்பட்டது $2; நீக்கப்பட்டது $3",
+	"centralauth-rightslog-entry-groupperms2": " $1 இற்காக மாற்றப்பட்ட குழு அனுமதிகள். சேர்க்கப்பட்டது $2; நீக்கப்பட்டது $3",
 	"centralauth-rightslog-entry-setrename": "பெயர்மாற்றப்பட்ட விக்கி அமைவுகள் \"$2\" லிருந்து \"$1\" க்கு.",
 	"centralauth-rightslog-entry-setnewtype": "மாற்றப்பட்ட \"$1\" ன் வகை  $2விலிருந்து  $3 க்கு",
 	"centralauth-rightslog-entry-setchange": "மாற்றப்பட்ட விக்கிகள்  \"$1\" ல்: சேர்க்கப்பட்டது: $2; நீக்கப்பட்டது: $3",
