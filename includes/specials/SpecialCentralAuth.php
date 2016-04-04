@@ -72,6 +72,12 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
+		$userPage = Title::newFromText( $this->mUserName, NS_USER );
+		if ( $userPage ) {
+			$localUser = User::newFromName( $userPage->getText(), false );
+			$this->getSkin()->setRelevantUser( $localUser );
+		}
+
 		// per bug 47991
 		$this->getOutput()->setHTMLTitle( $this->msg(
 			'pagetitle',
