@@ -16,6 +16,24 @@
       "revId": "d5581326878e2a78db924a913869d0aae56e125f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce38dbff_6882ac98",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2016-04-05T16:50:44Z",
+      "side": 1,
+      "message": "This wouldn\u0027t be consistent with what other Special pages do. E.g. https://commons.wikimedia.org/wiki/Special:Contributions/User:Foo/bar is setting the relevant user despite there is no user Foo/bar",
+      "parentUuid": "ce38dbff_a8903447",
+      "revId": "d5581326878e2a78db924a913869d0aae56e125f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
