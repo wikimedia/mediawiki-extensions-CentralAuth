@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ce38dbff_e3525669",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 974
+      },
+      "writtenOn": "2016-04-09T22:13:03Z",
+      "side": 1,
+      "message": "Done.\n\nAppears to be a matter of interpretation, too; however I agree with your version of the truth :)\n\nCompare the tools links on\n\n- https://commons.wikimedia.org/wiki/Special:Log/Help:Me vs\n- https://commons.wikimedia.org/wiki/Special:Contributions/Help:Me\n\nAnyway, it\u0027s sometimes hard to understand the logic behind several chunks of Code in MediaWiki. Looking into `Title::secureAndSplit()`, I see that one time, the public property `::mDefaultNamespace` is accessed, and a few lines down in the same function, it is obtained by calling `::getDefaultNamespace()`. I guess I am just lacking experience. Is there any good reading you could recommend that would someone allow to understand (except perhaps git blame and doing a lot of history digging) such decisions?",
+      "parentUuid": "ce38dbff_51e950b2",
+      "revId": "d5581326878e2a78db924a913869d0aae56e125f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce38dbff_a8903447",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 1
