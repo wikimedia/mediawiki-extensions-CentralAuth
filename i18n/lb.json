@@ -289,6 +289,7 @@
 	"centralauth-editset-badtype": "Dir hutt en ongëltegen Type uginn.",
 	"centralauth-editset-setexists": "Et gëtt schon eng Astellung mat dem Numm",
 	"centralauth-editset-nowikis": "(keng)",
+	"centralauth-editset-zerowikis": "Keng Wikie spezifizéiert.",
 	"centralauth-editset-nouse": "(keen)",
 	"centralauth-editset-usage": "An de Gruppe benotzt:",
 	"centralauth-editset-badwikis": "Dës {{PLURAL:$2|Wiki|Wikië}} gëtt et net: $1.",

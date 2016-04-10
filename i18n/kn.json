@@ -5,7 +5,8 @@
 			"Nayvik",
 			"Omshivaprakash",
 			"VASANTH S.N.",
-			"Pavanaja"
+			"Pavanaja",
+			"రహ్మానుద్దీన్"
 		]
 	},
 	"mergeaccount": "ಪ್ರವೇಶ ಏಕೀಕರಣ ಸ್ಥಿತಿ",
@@ -37,8 +38,8 @@
 	"centralauth-finish-password": "ಪ್ರವೇಶಪದ:",
 	"centralauth-finish-login": "ಲಾಗ್ ಇನ್",
 	"centralauth-ro": "ಎಲ್ಲ ವಿಕಿಗಳ ಖಾತೆ ವಿವರ",
-	"centralauth-admin-username": "ಬಳಕೆದಾರ ಹೆಸರು:",
-	"centralauth-admin-info-username": "ಬಳಕೆದಾರ ಹೆಸರು:",
+	"centralauth-admin-username": "ಬಳಕೆದಾರರ ಹೆಸರು:",
+	"centralauth-admin-info-username": "ಬಳಕೆದಾರರ ಹೆಸರು:",
 	"centralauth-admin-info-registered": "ನೋಂದಾಯಿತ:",
 	"centralauth-admin-info-editcount": "ಒಟ್ಟು ಸಂಪಾದನೆ:",
 	"centralauth-admin-info-locked": "ಹಿಡಿದಿಡಲಾಗಿದೆ:",
