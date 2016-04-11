@@ -376,7 +376,7 @@
 	"centralauth-rename-movelog": "A páxina foi movida automaticamente debido ao cambio de nome de usuario de \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Está seguro de querer cambiar o nome de usuario desta conta globalmente?",
 	"centralauth-rename-deny": "Está seguro que quere denegar esta solicitude?",
-	"log-name-gblrename": "Rexitro de cambios de nome globais",
+	"log-name-gblrename": "Rexistro de cambios de nome globais",
 	"log-description-gblrename": "Este rexistro garda a información dos cambios de nome de usuario globais.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|mudou a conta}} globalmente de $4 a $5",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|renomeou}} globalmente $4 a $5",
