@@ -3,7 +3,8 @@
 		"authors": [
 			"Asoxor",
 			"Calak",
-			"Muhammed taha"
+			"Muhammed taha",
+			"Sarchia"
 		]
 	},
 	"mergeaccount": "ڕەوشی یەکگرتووکردنی چوونەژوورەوە",
@@ -65,6 +66,7 @@
 	"centralauth-editset-reason": "هۆکار:",
 	"centralauth-editset-submit": "بینێرە",
 	"centralauth-editset-submit-delete": "بیسڕەوە",
+	"centralauth-editset-nowikis": "(ھیچ)",
 	"centralauth-editset-nouse": "(ھیچ)",
 	"right-centralauth-unmerge": "جیاکردنەوەی ھەژماری جیھانی",
 	"right-centralauth-lock": "داخستن یان کردنەوەی ھەژماری جیھانی",
