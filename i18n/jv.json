@@ -222,7 +222,7 @@
 	"centralauth-editgroup-reason": "Alesan:",
 	"centralauth-editgroup-success": "Idin-idin kelompok diganti",
 	"centralauth-editgroup-success-text": "Panjenengan sacara suksès bisa ngganti idin kelompok kanggo kelompok $1. [[Special:GlobalGroupPermissions|Balia menyang pangurusan kelompok]]",
-	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|sunting]])",
+	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|besut]])",
 	"centralauth-editset": "Sèt-sèt wiki",
 	"centralauth-editset-legend-rw": "Sunting utawa nggawé sèt wiki",
 	"centralauth-editset-legend-ro": "Daptar sèt wiki",

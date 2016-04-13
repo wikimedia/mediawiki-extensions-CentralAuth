@@ -521,6 +521,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do actual <username>:<hidden>:<locked>, para detectar conflitos de edición. Fixe <locked> a 1 para bloquear, 0 para desbloquear.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloquear a conta global de [[User:Example]] có motivo \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Desbloquear e eliminar conta global para o [[User:Example]] co motivo \"Eu podo\"",
+	"apihelp-main-param-centralauthtoken": "Cando se accede á API usando unha petición AJAX inter-dominios (CORS), use isto para autenticarse como o usuario SUL actual. Use <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> neste wiki para obter o identificador, antes de facer a petición CORS. Cada identificador só pode usarse unha vez, e caduca despois de 10 segundos. Isto debe incluírse en calquera petición de esbozo, e por iso debe incluírse na URI da petición (non no corpo POST).",
 	"centralauth-log-gblrename-oldname": "Nome de usuario anterior:",
 	"centralauth-contribs-locked": "Esta conta está bloqueada globalmente.\nVexa os [[Special:CentralAuth/$1|detalles globais da conta]] para máis información.",
 	"centralauth-contribs-locked-log": "Esta conta está bloqueada globalmente.\nA última entrada no rexistro de bloqueos amósase aquí para a súa referencia:",
