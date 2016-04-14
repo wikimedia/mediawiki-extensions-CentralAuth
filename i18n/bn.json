@@ -261,6 +261,8 @@
 	"centralauth-warning-notloggedin": "আপনি বর্তমানে প্রবেশ করেন নি।",
 	"centralauth-warning-notattached": "স্থানীয় অ্যাকাউন্ট বৈশ্বিকের সাথে সংযুক্ত করা হয়নি।",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} অ্যাকাউন্ট নিশ্চিতকরণ",
+	"right-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর",
+	"action-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর",
 	"globalrenameprogress": "বৈশ্বিক নামান্তরের অগ্রগতি",
 	"centralauth-rename-abortlogin": "আপনার অ্যাকাউন্টের বর্তমানে নাম পরিবর্তন বা একীভূত করা হচ্ছে। [[Special:GlobalRenameProgress/$1|অবস্থা দেখুন]]।",
 	"centralauth-rename-form-oldname": "বর্তমান ব্যবহারকারী নাম",
