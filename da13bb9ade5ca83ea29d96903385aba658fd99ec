@@ -52,6 +52,24 @@
       "revId": "da13bb9ade5ca83ea29d96903385aba658fd99ec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e58336e_fa67c9b2",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2016-04-14T23:31:15Z",
+      "side": 1,
+      "message": "It\u0027s not autocreation, it\u0027s normal creation and the SUL2 handshake, which has the \"latest\" param in the URL in case chronologyprotector doesn\u0027t work.",
+      "parentUuid": "ce38dbff_c7a93ede",
+      "revId": "da13bb9ade5ca83ea29d96903385aba658fd99ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
