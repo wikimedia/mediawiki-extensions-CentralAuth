@@ -85,6 +85,29 @@
 		"globalauth": "centralauth-log-header",
 		"gblrights": "centralauth-rightslog-header"
 	},
+	"ActionFilteredLogs": {
+		"suppress": {
+			"setstatus": [
+				"setstatus",
+			],
+			"cadelete": [
+				"cadelete"
+			],
+		},
+		"globalauth": {
+			"delete": [
+				"delete",
+			],
+			"setstatus": [
+				"setstatus",
+				"lock",
+				"unlock",
+				"hide",
+				"unhide",
+				"lockandhid"
+			]
+		}
+	},
 	"LogActions": {
 		"globalauth/delete": "centralauth-log-entry-delete",
 		"globalauth/lock": "centralauth-log-entry-lock",
