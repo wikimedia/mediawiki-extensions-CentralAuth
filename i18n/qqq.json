@@ -571,5 +571,10 @@
 	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed.",
 	"centralauth-delete-empty-account": "Used as the reason by the deleteEmptyAccounts.php maintenance script when deleting an account with no attached local accounts.",
 	"sessionprovider-centralauthsessionprovider": "Description of the sessions provided by the CentralAuthSessionProvider class, which use HTTP cookies. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
-	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}."
+	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
+	"log-action-filter-globalauth": "Which type of action to filter for in this log",
+	"log-action-filter-globalauth-delete": "Action to filter for in this log",
+	"log-action-filter-globalauth-setstatus": "Action to filter for in this log",
+	"log-action-filter-suppress-setstatus": "Action to filter for in this log",
+	"log-action-filter-suppress-cadelete": "Action to filter for in this log"
 }
