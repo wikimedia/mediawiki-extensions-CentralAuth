@@ -555,5 +555,15 @@
 	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed.",
 	"centralauth-delete-empty-account": "Empty account",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
-	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions"
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
+	"log-action-filter-globalauth": "Type of change:",
+	"log-action-filter-globalauth-delete": "Global account deletion",
+	"log-action-filter-globalauth-lock": "Global account lock",
+	"log-action-filter-globalauth-unlock": "Global account unlock",
+	"log-action-filter-globalauth-hide": "Global account hide",
+	"log-action-filter-globalauth-unhide": "Global account hide",
+	"log-action-filter-globalauth-lockandhid": "Global account lock and hide",
+	"log-action-filter-globalauth-setstatus": "Global account status change",
+	"log-action-filter-suppress-setstatus": "Global account status change",
+	"log-action-filter-suppress-cadelete": "Global account deletion"
 }
