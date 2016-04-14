@@ -532,6 +532,12 @@ $wgLogActions['globalauth/lockandhid'] = 'centralauth-log-entry-lockandhide';
 $wgLogActions['globalauth/setstatus'] = 'centralauth-log-entry-chgstatus';
 $wgLogActions['suppress/setstatus'] = 'centralauth-log-entry-chgstatus';
 $wgLogActions['suppress/cadelete'] = 'centralauth-log-entry-delete';
+$wgActionFilteredLogs['suppress']['setstatus'] = array( 'setstatus' );
+$wgActionFilteredLogs['suppress']['cadelete'] = array( 'cadelete' );
+$wgActionFilteredLogs['globalauth'] = array(
+	'delete' => array( 'delete' ),
+	'setstatus' => array( 'setstatus', 'lock', 'unlock', 'hide', 'unhide', 'lockandhid' )
+);
 
 $wgLogTypes[]                          = 'gblrights';
 $wgLogTypes[]                          = 'gblrename';
