@@ -70,6 +70,24 @@
       "revId": "da13bb9ade5ca83ea29d96903385aba658fd99ec",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e58336e_a9c22937",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-04-15T20:09:37Z",
+      "side": 1,
+      "message": "The handshake uses Special:CentralAutoLogin/setCookies (and other subpages). Normal creation uses mostly hooks on the core special page \"Userlogin/signup\".\n\nSpecial:CentralAuth is afaik a form-based query page that users may explicitly query.\n\nHow does Special:CentralAuth get involved when creating an account or the SUL2 handshake?",
+      "parentUuid": "0e58336e_fa67c9b2",
+      "revId": "da13bb9ade5ca83ea29d96903385aba658fd99ec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
