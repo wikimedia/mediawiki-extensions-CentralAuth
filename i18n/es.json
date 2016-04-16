@@ -361,7 +361,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales a los que pertenece el usuario",
 	"action-centralauth-lock": "bloquear o desbloquear cuentas globales",
 	"centrallogin": "Inicio de sesión centralizado",
-	"centralloginsuccesful": "Se inició la sesión correctamente",
+	"centralloginsuccesful": "Se ha accedido a la cuenta",
 	"centralauth-completelogin-back": "Volver a la página anterior.",
 	"centralauth-error-wrongprovider": "Esta página especial no está disponible cuando se usa $1.",
 	"centralauth-error-nologinattempt": "No hay ningún intento de inicio de sesión en curso",
