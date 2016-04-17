@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Sapral Mikail",
-			"Умар"
+			"Умар",
+			"Adam-Yourist"
 		]
 	},
-	"centralauth-editgroup-reason": "Бахьан:"
+	"centralauth-editgroup-reason": "Бахьан:",
+	"globalrenamequeue-action-view": "Хьажар"
 }
