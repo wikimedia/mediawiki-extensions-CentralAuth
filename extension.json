@@ -6,7 +6,7 @@
 	"license-name": "GPL-2.0",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.28.0"
+		"MediaWiki": ">= 1.27.0"
 	},
 	"GroupPermissions": {
 		"steward": {
@@ -170,8 +170,11 @@
 		"SpecialSulRenameWarning": "includes/specials/SpecialSulRenameWarning.php",
 		"CentralAuthUser": "includes/CentralAuthUser.php",
 		"CentralAuthUtils": "includes/CentralAuthUtils.php",
+		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+		"CentralAuthSecondaryAuthenticationProvider": "includes/CentralAuthSecondaryAuthenticationProvider.php",
 		"CentralAuthPlugin": "includes/CentralAuthPlugin.php",
 		"CentralAuthHooks": "includes/CentralAuthHooks.php",
+		"CentralAuthPreAuthManagerHooks": "includes/CentralAuthPreAuthManagerHooks.php",
 		"CentralAuthSuppressUserJob": "includes/SuppressUserJob.php",
 		"CentralAuthCreateLocalAccountJob": "includes/CreateLocalAccountJob.php",
 		"WikiSet": "includes/WikiSet.php",
@@ -319,12 +322,8 @@
 	},
 	"callback": "CentralAuthHooks::onRegistration",
 	"Hooks": {
-		"AuthPluginSetup": "CentralAuthHooks::onAuthPluginSetup",
-		"AddNewAccount": "CentralAuthHooks::onAddNewAccount",
+		"LocalUserCreated": "CentralAuthHooks::onLocalUserCreated",
 		"GetPreferences": "CentralAuthHooks::onGetPreferences",
-		"AbortLogin": "CentralAuthHooks::onAbortLogin",
-		"AbortNewAccount": "CentralAuthHooks::onAbortNewAccount",
-		"AbortAutoAccount": "CentralAuthHooks::onAbortAutoAccount",
 		"UserLoginComplete": "CentralAuthHooks::onUserLoginComplete",
 		"UserLogout": "CentralAuthHooks::onUserLogout",
 		"UserLogoutComplete": "CentralAuthHooks::onUserLogoutComplete",
@@ -373,7 +372,6 @@
 	"config": {
 		"@doc": "see CentralAuth.php",
 		"CentralAuthDatabase": "centralauth",
-		"CentralAuthAutoNew": false,
 		"CentralAuthAutoMigrate": false,
 		"CentralAuthAutoMigrateNonGlobalAccounts": false,
 		"CentralAuthStrict": false,
