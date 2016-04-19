@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee5cbf65_164fedc1",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-04-19T04:33:08Z",
+      "side": 1,
+      "message": "{{doc-log-action-filter-type}}",
+      "revId": "4dcd0e799ea31bde8162407f63e210deac53a1d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
