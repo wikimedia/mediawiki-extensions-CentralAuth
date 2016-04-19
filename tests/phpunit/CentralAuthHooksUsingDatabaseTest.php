@@ -5,26 +5,6 @@
  */
 class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
 
-
-	/**
-	 * @dataProvider provideAbortNewAccount
-	 * @covers CentralAuthHooks::onAbortNewAccount
-	 */
-	public function testOnAbortNewAccount( $user, $result) {
-		$error = '';
-		$hookResult = CentralAuthHooks::onAbortNewAccount( $user, $error );
-		$this->assertSame( $result, $hookResult );
-	}
-
-	public function provideAbortNewAccount() {
-		$userExists = User::newFromName( 'GlobalUser' );
-		$userNotExists = User::newFromName( 'UserNotExists' );
-		return array(
-			array( $userNotExists, true ),
-			array( $userExists, false ),
-		);
-	}
-
 	/**
 	 * @covers CentralAuthHooks::onUserGetEmailAuthenticationTimestampp
 	 */
@@ -32,33 +12,6 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 		$user = User::newFromName( 'GlobalLockedUser' );
 		$this->assertFalse( $user->isEmailConfirmed() );
 		$this->assertFalse( $user->canReceiveEmail() );
-	}
-
-	/**
-	 * @dataProvider provideAbortLogin
-	 * @covers CentralAuthHooks::onAbortLogin
-	 */
-	public function testOnAbortLogin( $user, $result, $test) {
-		$retval = 0;
-		$msg = '';
-		$hookResult = CentralAuthHooks::onAbortLogin( $user, '', $retval, $msg );
-		$this->assertEquals( $result, $hookResult, $test );
-	}
-
-	public function provideAbortLogin() {
-		$user = User::newFromName( 'GlobalUser' );
-		$lockedUser = User::newFromName( 'GlobalLockedUser' );
-
-		// Fake out CentralAuthUser::getInstance()
-		$noUser = User::newFromName( 'NoUser' );
-		TestingAccessWrapper::newFromClass( 'CentralAuthUser' )->getUserCache()
-			->set( $noUser->getName(), CentralAuthUser::newUnattached( 'NoUser' ) );
-
-		return array(
-			array( $user, true, 'Attached user can login' ),
-			array( $noUser, true, 'Unattached user can login' ),
-			array( $lockedUser, false, 'Locked User cannot login' ),
-		);
 	}
 
 	/**
