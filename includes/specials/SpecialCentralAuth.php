@@ -101,6 +101,9 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$continue = true;
 		if ( $this->mCanEdit && $this->mPosted ) {
+			if ( wfReadOnly() || CentralAuthUtils::getCentralDB()->isReadOnly() ) {
+				throw new ReadOnlyError();
+			}
 			$continue = $this->doSubmit();
 		}
 
