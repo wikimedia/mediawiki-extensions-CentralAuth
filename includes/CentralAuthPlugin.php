@@ -7,6 +7,9 @@
  *   central password or settings.
  */
 
+/**
+ * @deprecated
+ */
 class CentralAuthPlugin extends AuthPlugin {
 
 	/**
@@ -306,7 +309,7 @@ class CentralAuthPlugin extends AuthPlugin {
 				$ok = $central->register( $password, $email );
 				if ( $ok ) {
 					$central->attach( wfWikiID(), 'new' );
-					$this->autoCreateAccounts( $central );
+					CentralAuthUtils::scheduleCreationJobs( $central );
 				} else {
 					return false;
 				}
@@ -367,27 +370,4 @@ class CentralAuthPlugin extends AuthPlugin {
 		return CentralAuthUser::getInstance( $user );
 	}
 
-	/**
-	 * Sets up jobs to create and attach a local account for the given user on every wiki listed in
-	 * $wgCentralAuthAutoCreateWikis.
-	 * @param CentralAuthUser $centralUser
-	 */
-	private function autoCreateAccounts( CentralAuthUser $centralUser ) {
-		global $wgCentralAuthAutoCreateWikis;
-
-		$name = $centralUser->getName();
-		$thisWiki = wfWikiID();
-		$session = RequestContext::getMain()->exportSession();
-		foreach ( $wgCentralAuthAutoCreateWikis as $wiki ) {
-			if ( $wiki === $thisWiki ) {
-				continue;
-			}
-			$job = Job::factory(
-				'CentralAuthCreateLocalAccountJob',
-				Title::makeTitleSafe( NS_USER, $name ),
-				array( 'name' => $name, 'from' => $thisWiki, 'session' => $session )
-			);
-			JobQueueGroup::singleton( $wiki )->push( $job );
-		}
-	}
 }
