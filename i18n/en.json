@@ -495,6 +495,7 @@
 	"sulrenamewarning-title" : "{{GENDER:$1|Your}} account has been renamed",
 	"sulrenamewarning-renamed" : "{{GENDER:$2|Your}} account '''$1''' has been renamed to '''$2''' during automatic migration to the unified login system of {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew" : "Please use {{GENDER:$1|your}} new username '''$1''' when logging in in the future.",
+	"sulrenamewarning-authmanager-ok-help": "Continue after displaying the rename notification.",
 	"globalrenamequeue-request-reason-label": "Public log entry comment (if accepting)",
 	"apihelp-centralauthtoken-description": "Fetch a centralauthtoken for making an authenticated request to an attached wiki.",
 	"apihelp-centralauthtoken-example-1": "Fetch a centralauthtoken",
