@@ -309,8 +309,11 @@ $wgAutoloadClasses['RenameQueueTablePager'] = "$caBase/includes/specials/Special
 $wgAutoloadClasses['SpecialSulRenameWarning'] = "$caBase/includes/specials/SpecialSulRenameWarning.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthUtils'] = "$caBase/includes/CentralAuthUtils.php";
+$wgAutoloadClasses['CentralAuthPrimaryAuthenticationProvider'] = "$caBase/includes/CentralAuthPrimaryAuthenticationProvider.php";
+$wgAutoloadClasses['CentralAuthSecondaryAuthenticationProvider'] = "$caBase/includes/CentralAuthSecondaryAuthenticationProvider.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/includes/CentralAuthHooks.php";
+$wgAutoloadClasses['CentralAuthPreAuthManagerHooks'] = "$caBase/includes/CentralAuthPreAuthManagerHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/includes/SuppressUserJob.php";
 $wgAutoloadClasses['CentralAuthCreateLocalAccountJob'] = "$caBase/includes/CreateLocalAccountJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/includes/WikiSet.php";
@@ -377,12 +380,8 @@ $wgJobClasses['LocalUserMergeJob'] = 'LocalUserMergeJob';
 $wgJobClasses['LocalPageMoveJob'] = 'LocalPageMoveJob';
 $wgJobClasses['CentralAuthCreateLocalAccountJob'] = 'CentralAuthCreateLocalAccountJob';
 
-$wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
-$wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
+$wgHooks['LocalUserCreated'][] = 'CentralAuthHooks::onLocalUserCreated';
 $wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
-$wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
-$wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
-$wgHooks['AbortAutoAccount'][] = 'CentralAuthHooks::onAbortAutoAccount';
 $wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
 $wgHooks['UserLogout'][] = 'CentralAuthHooks::onUserLogout';
 $wgHooks['UserLogoutComplete'][] = 'CentralAuthHooks::onUserLogoutComplete';
@@ -479,6 +478,40 @@ if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
 	$wgHooks['UserLogout'][] = 'CentralAuthSessionCompat::onUserLogout';
 
 	$wgAvailableRights[] = 'centralauth-autoaccount';
+}
+
+// AuthManager
+if ( class_exists( MediaWiki\Auth\AuthManager::class ) && empty( $wgDisableAuthManager ) ) {
+	// Prepend our primary authentication provider
+	$wgAuthManagerConfig['primaryauth'] = array_merge(
+		[
+			'CentralAuthPrimaryAuthenticationProvider' => [
+				'class' => 'CentralAuthPrimaryAuthenticationProvider',
+				'args' => [ [] ],
+			]
+		],
+		$wgAuthManagerConfig['primaryauth']
+	);
+
+	// Our secondary should generally run early too
+	$wgAuthManagerConfig['secondaryauth'] = array_merge(
+		[
+			'CentralAuthSecondaryAuthenticationProvider' => [
+				'class' => 'CentralAuthSecondaryAuthenticationProvider',
+				'args' => [ [] ],
+			]
+		],
+		$wgAuthManagerConfig['secondaryauth']
+	);
+} else {
+	$wgHooks['AuthPluginSetup'][] = 'CentralAuthPreAuthManagerHooks::onAuthPluginSetup';
+	$wgHooks['AbortLogin'][] = 'CentralAuthPreAuthManagerHooks::onAbortLogin';
+	$wgHooks['AbortNewAccount'][] = 'CentralAuthPreAuthManagerHooks::onAbortNewAccount';
+	$wgHooks['AbortAutoAccount'][] = 'CentralAuthPreAuthManagerHooks::onAbortAutoAccount';
+	$wgHooks['UserLoginComplete'][] = 'CentralAuthPreAuthManagerHooks::onUserLoginComplete';
+	$wgHooks['UserLogout'][] = 'CentralAuthPreAuthManagerHooks::onUserLogout';
+	$wgHooks['SpecialPage_initList'][] = 'CentralAuthPreAuthManagerHooks::onSpecialPage_initList';
+	$wgExtensionFunctions[] = 'CentralAuthPreAuthManagerHooks::onRunExtensionFunctions';
 }
 
 $wgAvailableRights[] = 'centralauth-merge';
