@@ -584,7 +584,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 *
 	 * @return Password
 	 */
-	protected function getPasswordObject() {
+	public function getPasswordObject() {
 		$this->loadState();
 		return $this->getPasswordFromString( $this->mPassword, $this->mSalt );
 	}
