@@ -230,9 +230,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getContext()->setUser( $user );
 
 		// Show the login success page
-		$form = new LoginForm( new FauxRequest() );
-		$inject_html = '';
 
+		$inject_html = '';
 		if ( $attempt['type'] === 'signup' ) {
 			$msg = $this->msg( 'centralauth-welcomecreation-msg' );
 			if ( !$msg->isDisabled() ) {
@@ -266,7 +265,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
 		}
 
-		$form->showReturnToPage(
+		$helper = new LoginHelper( $this->getContext() );
+		$helper->showReturnToPage(
 			$action,
 			$attempt['returnTo'],
 			$attempt['returnToQuery'],
@@ -292,9 +292,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$this->showError( 'centralauth-warning-notattached' );
 			return;
 		}
+
 		// Show the login success page
-		$form = new LoginForm( new FauxRequest() );
-		$form->showReturnToPage( 'success',
+		$helper = new LoginHelper( $this->getContext() );
+		$helper->showReturnToPage( 'success',
 			$this->getRequest()->getVal( 'returnto', '' ),
 			$this->getRequest()->getVal( 'returntoquery', '' )
 		);
