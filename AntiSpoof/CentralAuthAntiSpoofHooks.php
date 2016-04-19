@@ -10,6 +10,19 @@ class CentralAuthAntiSpoofHooks {
 	 * @return bool true to continue, false to abort user creation
 	 */
 	public static function asAbortNewAccountHook( $user, &$message ) {
+		$status = self::testNewAccount( $user );
+		if ( !$status->isGood() ) {
+			$message = Status::wrap( $status )->getMessage()->escaped();
+		}
+		return $status->isGood();
+	}
+
+	/**
+	 * Test if an account is acceptable
+	 * @param $user User
+	 * @return StatusValue
+	 */
+	public static function testNewAccount( $user ) {
 		global $wgAntiSpoofAccounts, $wgUser, $wgRequest;
 
 		if ( !$wgAntiSpoofAccounts ) {
@@ -35,24 +48,25 @@ class CentralAuthAntiSpoofHooks {
 				wfDebugLog( 'antispoof', "{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts ) );
 				if ( $active ) {
 					$numConflicts = count( $conflicts );
+
+					// This message pasting-together sucks.
 					$message = wfMessage( 'antispoof-conflict-top', $name )->numParams( $numConflicts )->escaped();
 					$message .= '<ul>';
 					foreach ( $conflicts as $simUser ) {
 						$message .= '<li>' . wfMessage( 'antispoof-conflict-item', $simUser )->escaped() . '</li>';
 					}
 					$message .= '</ul>' . wfMessage( 'antispoof-conflict-bottom' )->escaped();
-					return false;
+					return StatusValue::newFatal( new RawMessage( '$1', Message::rawParam( $message ) ) );
 				}
 			}
 		} else {
 			$error = $spoof->getError();
 			wfDebugLog( 'antispoof', "{$mode}ILLEGAL new account '$name' $error" );
 			if ( $active ) {
-				$message = wfMessage( 'antispoof-name-illegal', $name, $error )->escaped();
-				return false;
+				return StatusValue::newFatal( 'antispoof-name-illegal', $name, $error );
 			}
 		}
-		return true;
+		return StatusValue::newGood();
 	}
 
 	/**
