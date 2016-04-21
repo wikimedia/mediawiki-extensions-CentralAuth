@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_c5c93957",
+        "filename": "includes/CentralAuthPreAuthManagerHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "Why do you need to add it both here and in SpecialPage_initlist?",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_f26a3c7d",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "Should this prevent the creation of a new local account if there is no central account and no other local account? (In case account creation is done by some other provider, so the central account would not be created.) The wording suggests it should but actually it won\u0027t.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_e9541759",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "Could mention that they are optional.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_89359bf6",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "This is different from the pattern used in core. Will the config object passed on setConfig only contain core settings?\n\nMaybe AuthManager should use the new service locator system? Everything is supposed to migrate to it eventually anyway, and that would allow passing different Config objects to different providers.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_09298b9a",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "These messages went to the CentralAuth channel in the past and this will send them to the authmanager channel, which seems less useful. Also something that would be easier to handle with service locators.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_2cd45dec",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "This could be explained better (not that it was in the old code). Basically $wgCentralAuthCheckSULMigration \u003d\u003d\u003d true means do not globalize?",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_ecd385d5",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "I\u0027m surprised this works, given that we are reading from a slave and the user might have been created two lines earlier.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_2f5baf27",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "This omits the scenario where both a central and an unattached local user exists, and they have the same password (and autoMigrate is true). If allowing that is left intentionally to the local password provider, that might be worth a comment.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_afae9fe2",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "Should this also fail if retype is null? For change actions there should always be a retype field. A well-behaved client would never leave it as null and send an empty string at least, but it seems like an easy mistake to make.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_0fe18b29",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "I wonder how something like T57420 could be achieved with AuthManager. Just special-case it in the local password provider or should there be some generic mechanism to suppress other providers?",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_92282034",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "Is this enough to prevent the race condition mentioned at line 400? Maybe it should acquire a write lock.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_cf95d337",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "What if another provider tries to autocreate an account? These tests should probably run unless the user is CentralAuth\u0027s own autocreation.\n\nNot sure how to pull that off - in the actual account creation process the user object could be flagged, but e.g. cancreate in the users API won\u0027t be able to give an accurate result here since the creation will only be possible if CentralAuth will be the primary that takes ownership of the account creation process and there is no way to predict that. Maybe define some kind of \"OK but only as owner\" status and have AuthManager fail the test if more than one provider returns it?",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_b2ae04e3",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "This will be called even if the account was created or autocreated by a different provider. Probably OK if the extra tests at testUserForCreation have been applied, but could there be a race between an autocreation and a central account creation, resulting in the attaching of two unrelated accounts?",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_b210c405",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-21T20:57:59Z",
+      "side": 1,
+      "message": "I don\u0027t think so; this is legitimate when preventUnattached is false (maybe even if it\u0027s true, per the comment at line 44).\n\nIdeally, this would check $wgCentralAuthAutoNew and create a central account if that\u0027s set, but we don\u0027t have a password, and figuring out a process for separating the creation of the central account and the setting of the central password is not worth the effort, given that probably no wiki uses that setup. Might be nice to warn about it in a comment, though.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
