@@ -204,7 +204,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
-		return $this->shouldUseMasterDB() ? CentralAuthUtils::getCentralDB() : CentralAuthUtils::getCentralSlaveDB();
+		return $this->shouldUseMasterDB()
+			? CentralAuthUtils::getCentralDB()
+			: CentralAuthUtils::getCentralSlaveDB();
 	}
 
 	/**
@@ -458,14 +460,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Load data from memcached
 	 *
-	 * @param $cache Array
-	 * @param $fromMaster Bool
+	 * @param $cache array
 	 * @return bool
 	 */
-	protected function loadFromCache( $cache = null, $fromMaster = false ) {
+	protected function loadFromCache( $cache = null ) {
 		if ( $cache == null ) {
 			$cache = ObjectCache::getMainWANInstance()->get( $this->getCacheKey() );
-			$fromMaster = true;
 		}
 
 		if ( !is_array( $cache ) || $cache['mVersion'] < $this->mVersion ) {
@@ -475,7 +475,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			return false;
 		}
 
-		$this->loadFromCacheObject( $cache, $fromMaster );
+		$this->loadFromCacheObject( $cache );
 
 		return true;
 	}
@@ -483,10 +483,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Load user state from a cached array.
 	 *
-	 * @param $object Array
-	 * @param $fromMaster Bool
+	 * @param $object array
 	 */
-	protected function loadFromCacheObject( $object, $fromMaster = false ) {
+	protected function loadFromCacheObject( $object ) {
 		wfDebugLog( 'CentralAuthVerbose', "Loading CentralAuthUser for user {$this->mName} from cache object" );
 		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
@@ -495,7 +494,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$this->loadAttached();
 
 		$this->mIsAttached = $this->exists() && in_array( wfWikiID(), $this->mAttachedArray );
-		$this->mFromMaster = $fromMaster;
+		$this->mFromMaster = false;
 	}
 
 	/**
