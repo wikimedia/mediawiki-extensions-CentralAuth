@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_b2ed5f25",
+        "filename": "includes/CentralAuthPreAuthManagerHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "Just continuing to do what the existing code does. Chances are the assignments to $wgSpecialPages in \"onRunExtensionFunctions\" everywhere should be removed in favor of the SpecialPage_initlist hook.",
+      "parentUuid": "ae564743_c5c93957",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_cfaf98dd",
         "filename": "includes/CentralAuthPreAuthManagerHooks.php",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_32e14f2a",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "Clarified.",
+      "parentUuid": "ae564743_f26a3c7d",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_e9541759",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -64,6 +100,24 @@
       "writtenOn": "2016-04-21T20:57:59Z",
       "side": 1,
       "message": "Could mention that they are optional.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_52e8430b",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae564743_e9541759",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_92d93b86",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "Yes, the Config object passed to setConfig only contains core settings.\n\nAs I understand it, the service locator stuff wants you to inject each individual configuration setting (much as is already being done here) rather than Config objects.",
+      "parentUuid": "ae564743_89359bf6",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_09298b9a",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -98,6 +170,24 @@
       "writtenOn": "2016-04-21T20:57:59Z",
       "side": 1,
       "message": "These messages went to the CentralAuth channel in the past and this will send them to the authmanager channel, which seems less useful. Also something that would be easier to handle with service locators.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d2d3b35f",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "Why less useful?\n\n\u003e Also something that would be easier to handle with service locators.\n\nThat doesn\u0027t at all match with my conception of how the service locator stuff is supposed to work.",
+      "parentUuid": "ae564743_09298b9a",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_32c82faa",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "After talking it over with Bryan, I think this was added because the old code looked like\n\n $pass \u003d $centralUser-\u003eauthenticate() \u003d\u003d\u003d \u0027ok\u0027;\n if ( !$pass ) {\n     $renamed \u003d CentralAuthUser::getInstanceByName( $renamedUsername \n);\n     $pass \u003d $renamed-\u003eauthenticate() \u003d\u003d\u003d \u0027ok\u0027;\n }\n\n if ( $pass \u0026\u0026 $this-\u003eautoMigrate ) {\n     // try to auto-migrate $centralUser, which wouldn\u0027t be right if $pass is true\n     // thanks to $renamed instead\n }\n\nWith the code here that exits early when the renamed-user check passes and doesn\u0027t mess with $pass otherwise, on the other hand, the checks below are probably not useful but won\u0027t hurt anything. So I\u0027m just going to kill the early exit.",
+      "parentUuid": "ae564743_2cd45dec",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_ecd385d5",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -132,6 +240,24 @@
       "writtenOn": "2016-04-21T20:57:59Z",
       "side": 1,
       "message": "I\u0027m surprised this works, given that we are reading from a slave and the user might have been created two lines earlier.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_725107dd",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "The user won\u0027t have been created two lines earlier, the only thing that might have changed two lines earlier is new entries in CentralAuth\u0027s localuser table. And this CentralAuthUser instance at least will have gotten its state updated if necessary.\n\nI don\u0027t think that\u0027s even true in the pre-AuthManager code. The local user doesn\u0027t get created until the UserLoadFromSession hook runs.",
+      "parentUuid": "ae564743_ecd385d5",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_f254f7cb",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "We can\u0027t know that they have the same password at this point.\n\nThe explanation winds up being longer than the actual code here. :/",
+      "parentUuid": "ae564743_2f5baf27",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_afae9fe2",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -166,6 +310,24 @@
       "writtenOn": "2016-04-21T20:57:59Z",
       "side": 1,
       "message": "Should this also fail if retype is null? For change actions there should always be a retype field. A well-behaved client would never leave it as null and send an empty string at least, but it seems like an easy mistake to make.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_326e6f94",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "In that case we should change the core LocalPasswordPrimaryAuthenticationProvider too, I copied this from there.",
+      "parentUuid": "ae564743_afae9fe2",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_32f5cfc8",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "It\u0027s already special-cased for password changes: set LocalPasswordPrimaryAuthenticationProvider\u0027s \u0027loginOnly\u0027 parameter to true and it will blank the local password whenever it\u0027s reset.\n\nI see that task has some talk about clearing it on login too, which would be a bit trickier.",
+      "parentUuid": "ae564743_0fe18b29",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_92282034",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -200,6 +380,24 @@
       "writtenOn": "2016-04-21T20:57:59Z",
       "side": 1,
       "message": "Is this enough to prevent the race condition mentioned at line 400? Maybe it should acquire a write lock.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_52fcc3b1",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "And release the write lock where, exactly? There\u0027s nothing tying the call to this method to any existing account creation process.",
+      "parentUuid": "ae564743_92282034",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_d227335e",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "cancreate in the users API never calls this with $autocreate set to true, so that part doesn\u0027t matter.\n\nI don\u0027t like the \"only as owner\" suggestion, it seems a bit too scary. I\u0027d rather pass in the cause of the auto-creation and let it test that directly.",
+      "parentUuid": "ae564743_cf95d337",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_b2ae04e3",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_9205bb7f",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "We already have a lock in AuthManager::continueAccountCreation(), let\u0027s just throw the same lock in AuthManager::autoCreateUser().",
+      "parentUuid": "ae564743_b2ae04e3",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_b210c405",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -251,6 +485,24 @@
       "writtenOn": "2016-04-21T20:57:59Z",
       "side": 1,
       "message": "I don\u0027t think so; this is legitimate when preventUnattached is false (maybe even if it\u0027s true, per the comment at line 44).\n\nIdeally, this would check $wgCentralAuthAutoNew and create a central account if that\u0027s set, but we don\u0027t have a password, and figuring out a process for separating the creation of the central account and the setting of the central password is not worth the effort, given that probably no wiki uses that setup. Might be nice to warn about it in a comment, though.",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_d2445371",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-22T16:50:45Z",
+      "side": 1,
+      "message": "Ok. I think I\u0027ll keep logs, but just at debug level in the general \u0027authentication\u0027 log.",
+      "parentUuid": "ae564743_b210c405",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
