@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ae564743_cfaf98dd",
+        "filename": "includes/CentralAuthPreAuthManagerHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-04-22T16:12:59Z",
+      "side": 1,
+      "message": "This is scheduled to die with T127887. I\u0027m not sure if that should be a separate patch (probably).",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_f26a3c7d",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
