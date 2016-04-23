@@ -198,7 +198,7 @@
 	"centralauth-account-rename-exists": "Теркәү яҙмаһын булдырыу мөмкин түгел:был исемде ҡулланыусы бар.Яңы исем индерегеҙ",
 	"centralauth-account-exists-reset": "$1 ҡатнашыусыһы исеме был проектта теркәлмәгән, ләкин уның серһүҙен [[Special:CentralAuth/$1|ул булған проекттарға]] ташлай алаһығыҙ.",
 	"centralauth-login-progress": "{{int:Centralauth-groupname}} проекттарына инеү эшкәртелә:",
-	"centralauth-logout-progress": " {{int:Centralauth-groupname}}:Проекттан сығыу эшкәртелә",
+	"centralauth-logout-progress": " {{int:Centralauth-groupname}}: проекттан сығыу бара.",
 	"centralauth-login-no-others": "Һеҙ  {{int:Centralauth-groupname}} бөтә проекттарында танылғанһығыҙ.",
 	"centralauth-logout-no-others": " Бөтә проекттарҙа ла һеҙҙең сеанстарығыҙ үҙ-үҙенән тамамланған",
 	"centralauth-hidden-blockreason": "$2 $1 ҡатнашыусыһы тарафынан түбәндәге сәбәп менән дөйөм йәшерелгән: $3",
