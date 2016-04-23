@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_4659a55c",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-23T14:40:27Z",
+      "side": 1,
+      "message": "I don\u0027t understand the logic here. As far as I can see there are two ways to get here: either the user did a successful login with the CentralAuth credentials but no local user exists, or some other auth or session provider authenticated the user in some way, did not find a local user, and passed the tests at line 330.\n\nIn the first case, we should always centralize, even if unattached accounts exist; the user is the SUL winner and should not be prevented from using single sign-on on all wikis. In the second case, we should never centralize as we have no way to make sure this is the same user as the owner of the central account.",
+      "revId": "6c4f9fb7c840de17a8e8c0c896364626146d476a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_0b96964f",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-23T14:40:27Z",
+      "side": 1,
+      "message": "This should never happen - if a central user exists and the autocreation is coming from some other source, testUserForCreation should block. Checking $source is good since it\u0027s less complex to reason about than $centralUser-\u003eexists() (it tells whether we are doing a CentralAuth autocreation without having to think about in-process caching, DB lag etc.) but that should be the only test needed in this method.",
+      "revId": "6c4f9fb7c840de17a8e8c0c896364626146d476a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
