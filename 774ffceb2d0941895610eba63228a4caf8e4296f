@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_8b0626d0",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-23T14:39:29Z",
+      "side": 1,
+      "message": "Separate logs for centralauth, oauthauth, oath stc. seems easier to navigate than everything squashed into the authentication chanel.\n\nI imagine ObjectFactory would have to be expanded to accept service names, and CentralAuthPrimaryAuthenticationProvider would become a service with a callback like\n\n    function ( $locator ) {\n        $config \u003d $locator-\u003egetService( \u0027centralauth.config\u0027 );\n        $provider \u003d new CentralAuthPrimaryAuthenticationProvider( [\n            \u0027checkSULMigration\u0027 \u003d\u003e $config-\u003eget( \u0027CentralAuthCheckSULMigration\u0027 ),\n            \u0027autoMigrate\u0027 \u003d\u003e $config-\u003eget( \u0027CentralAuthAutoMigrate\u0027 ),\n            \u0027autoMigrateNonGlobalAccounts\u0027 \u003d\u003e $config-\u003eget( \u0027CentralAuthAutoMigrateNonGlobalAccounts\u0027 ),\n            \u0027preventUnattached\u0027 \u003d\u003e $config-\u003eget( \u0027CentralAuthPreventUnattached\u0027 ),\n            \u0027authoritative\u0027 \u003d\u003e $config-\u003eget( \u0027CentralAuthStrict\u0027 )\n        ] );\n        $provider-\u003esetManager( $locator-\u003egetAuthManager() );\n        $provider-\u003esetLogger( $locator-\u003egetLoggerFactory()-\u003egetInstance( \u0027CentralAuth\u0027 ) );\n        return $provider;\n    }\n\nI might be misunderstanding completely how it is supposed to be used; I haven\u0027t closely followed the patches introducing DI to various subsystems.",
+      "parentUuid": "ae564743_d2d3b35f",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_2cd45dec",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
@@ -398,6 +416,24 @@
       "side": 1,
       "message": "And release the write lock where, exactly? There\u0027s nothing tying the call to this method to any existing account creation process.",
       "parentUuid": "ae564743_92282034",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c10abf23",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-23T14:39:29Z",
+      "side": 1,
+      "message": "A scoped lock could be passed back as a payload to the status object and AuthManager could release it once the user has been created and the provider callback called. Probably overkill though; a scenario where one user registers a central account while another user registers an unattached local account seems hard to prevent otherwise (short of handling it in AuthManager, which has no knowledge of provider specifics, so that will prevent legitimate parallel account creation as well), but that\u0027s only possible in a setup where a central account and unattached local accounts are allowed to coexist, in which case it\u0027s not a big problem.",
+      "parentUuid": "ae564743_52fcc3b1",
       "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
