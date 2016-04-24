@@ -23,6 +23,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private $allowHighEditcount = false;
 
 	/**
+	 * @var bool
+	 */
+	private $overrideTitleBlacklist = false;
+
+	/**
 	 * @const int Require confirmation if olduser has more than this many global edits
 	 */
 	const EDITCOUNT_THRESHOLD = 50000;
@@ -84,6 +89,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				'id' => 'mw-globalrenameuser-overrideantispoof',
 				'name' => 'overrideantispoof',
 				'label-message' => 'centralauth-rename-form-overrideantispoof',
+				'type' => 'check'
+			),
+			'overridetitleblacklist' => array(
+				'id' => 'mw-globalrenameuser-overridetitleblacklist',
+				'name' => 'overridetitleblacklist',
+				'label-message' => 'centralauth-rename-form-overridetitleblacklist',
 				'type' => 'check'
 			),
 			'allowhigheditcount' => array(
@@ -163,6 +174,20 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			);
 		}
 
+		// Ask for confirmation if the new username matches the title blacklist.
+		if ( !$this->overrideTitleBlacklist && class_exists( 'TitleBlacklist' ) ) {
+				$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
+					Title::makeTitleSafe( NS_USER, $newUser->getName() ),
+					'new-account'
+				);
+				if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
+					return Status::newFatal(
+						$this->msg( 'centralauth-rename-titleblacklist-match' )
+							->rawParams( $titleBlacklist->getRegex() )
+					);
+				}
+		}
+
 		$validator = new GlobalRenameUserValidator();
 		$status = $validator->validate( $oldUser, $newUser );
 
@@ -200,6 +225,10 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	function onSubmit( array $data ) {
 		if ( $data['overrideantispoof'] ) {
 			$this->overrideAntiSpoof = true;
+		}
+
+		if ( $data['overridetitleblacklist'] ) {
+			$this->overrideTitleBlacklist = true;
 		}
 
 		if ( $data['allowhigheditcount'] ) {
