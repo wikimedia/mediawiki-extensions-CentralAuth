@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_7ca0b19a",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-25T16:10:57Z",
+      "side": 1,
+      "message": "The first case will always centralize: $centralUser-\u003eexists() should return true or they couldn\u0027t have authenticated, and $source will be $this-\u003egetUniqueId() so the test on line 414 won\u0027t trigger either.\n\nIn the second case, if someone is configuring multiple authentication methods that aren\u0027t something like OAuth where you already need to own the central account, they should know what they\u0027re doing. Trying to prevent them from doing stupid things will also prevent them from doing clever things like centralized OAuth.",
+      "parentUuid": "ae564743_4659a55c",
+      "revId": "6c4f9fb7c840de17a8e8c0c896364626146d476a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_0b96964f",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-23T14:40:27Z",
       "side": 1,
       "message": "This should never happen - if a central user exists and the autocreation is coming from some other source, testUserForCreation should block. Checking $source is good since it\u0027s less complex to reason about than $centralUser-\u003eexists() (it tells whether we are doing a CentralAuth autocreation without having to think about in-process caching, DB lag etc.) but that should be the only test needed in this method.",
+      "revId": "6c4f9fb7c840de17a8e8c0c896364626146d476a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_5c6e8d94",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-25T16:10:57Z",
+      "side": 1,
+      "message": "True, but checking for it anyway doesn\u0027t hurt anything.",
+      "parentUuid": "ae564743_0b96964f",
       "revId": "6c4f9fb7c840de17a8e8c0c896364626146d476a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
