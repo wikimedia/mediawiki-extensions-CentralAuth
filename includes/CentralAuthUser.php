@@ -180,8 +180,17 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	public static function centralLBHasRecentMasterChanges() {
 		global $wgCentralAuthDatabase;
 
-		return RequestContext::getMain()->getRequest()->getCheck( 'CentralAuthLatest' )
-			|| wfGetLB( $wgCentralAuthDatabase )->hasOrMadeRecentMasterChanges();
+		$lb = wfGetLB( $wgCentralAuthDatabase );
+		if ( $lb->hasOrMadeRecentMasterChanges() ) {
+			return true; // changes already made in this request
+		}
+
+		return (
+			// Request followed redirect from a write request response
+			RequestContext::getMain()->getRequest()->getCheck( 'CentralAuthLatest' )
+			// ... and ChronologyProtector timed out waiting on a slave (before or now)
+			&& $lb->getLaggedSlaveMode( $wgCentralAuthDatabase )
+		);
 	}
 
 	/**
