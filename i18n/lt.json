@@ -16,7 +16,7 @@
 		]
 	},
 	"mergeaccount": "Paskyros bendrinimo būsena",
-	"centralauth-groupname": "Wikimedia Foundation",
+	"centralauth-groupname": "Vikimedijos fondas",
 	"centralauth-desc": "[[Special:MergeAccount|Susieja paskyras]] tarp {{int:Centralauth-groupname}} projektų",
 	"centralauth-antispoof-desc": "Į CentralAuth prideda AntiSpoof technologiją",
 	"centralauth-rename-desc": "Leidžia pervadinti visuotines paskyras",
