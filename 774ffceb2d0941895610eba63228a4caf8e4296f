@@ -212,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_3ccab94a",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-04-25T16:14:21Z",
+      "side": 1,
+      "message": "Having each provider as a service would be a bit crazy, IMO. More likely would be the AuthManager service which has its own subwiring for the providers.\n\nIMO having stuff spread over multiple log channels would make it harder to navigate things.",
+      "parentUuid": "ae564743_8b0626d0",
+      "revId": "774ffceb2d0941895610eba63228a4caf8e4296f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_2cd45dec",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 1
