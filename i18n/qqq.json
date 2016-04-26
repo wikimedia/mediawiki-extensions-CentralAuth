@@ -191,6 +191,7 @@
 	"centralauth-admin-suppressreason": "Parameters:\n* $1 - username\n* $2 - reason",
 	"centralauth-admin-not-authorized": "Error message when the user doesn't have permission",
 	"centralauth-admin-too-many-edits": "Error message when the user account being hidden has more global edits than a certain threshold.\n\nParameters:\n* $1 - username\n* $2 - number of edits",
+	"centralauth-admin-cannot-hide-unlocked": "Error message shown when an admin attempts to hide or suppress an account that is not locked.",
 	"centralauth-admin-title": "{{Gender}}\nThe page title of [[Special:CentralAuth]] (when a username is given) in your browser bar (HTML title), but not the page title in the heading.\n\nParameters:\n* $1 - the username\nSee also:\n* {{msg-mw|Contributions-title}}\n* {{msg-mw|Centralauth}}\n *{{msg-mw|Centralauth-admin-title-ro}}",
 	"centralauth-admin-title-ro": "{{Gender}}\nThe page title of [[Special:CentralAuth]] (when a username is given) in your browser bar (HTML title), but not the page title in the heading.\n\nParameters:\n* $1 - the username\nSee also:\n* {{msg-mw|Contributions-title}}\n* {{msg-mw|Centralauth}}\n* {{msg-mw|Centralauth-admin-title}}",
 	"globalusers": "{{doc-special|GlobalUsers}}\nSee example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]",

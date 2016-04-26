@@ -1525,6 +1525,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			}
 		}
 
+		if ( $setHidden !== self::HIDDEN_NONE && $setLocked === false ) {
+			return Status::newFatal( 'centralauth-admin-cannot-hide-unlocked' );
+		}
+
 		$returnStatus = Status::newGood();
 
 		$hiddenLevels = array(

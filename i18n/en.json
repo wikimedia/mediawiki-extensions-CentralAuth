@@ -175,6 +175,7 @@
 	"centralauth-admin-suppressreason": "Globally suppressed by $1 for following reason: $2",
 	"centralauth-admin-not-authorized": "You do not have permissions to perform this action",
 	"centralauth-admin-too-many-edits": "The global account \"<nowiki>$1</nowiki>\" has over $2 {{PLURAL:$2|edit|edits}} and cannot be hidden.",
+	"centralauth-admin-cannot-hide-unlocked": "Global accounts that are not locked cannot be hidden or suppressed.",
 	"centralauth-admin-title": "Global account manager for $1",
 	"centralauth-admin-title-ro": "Global account information for $1",
 	"globalusers": "Global accounts list",
