@@ -24,7 +24,8 @@
 			"Nemo bis",
 			"TheEduGobi",
 			"Araceletorres",
-			"Luk3"
+			"Luk3",
+			"Dianakc"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -197,7 +198,7 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dia|dias}} atrás",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mês|meses}} atrás",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ano|anos}} atrás",
-	"centralauth-prefs-status": "Estado da conta unificada:",
+	"centralauth-prefs-status": "Conta global:",
 	"centralauth-prefs-not-managed": "Não está usando a conta global",
 	"centralauth-prefs-unattached": "Não confirmado",
 	"centralauth-prefs-count-attached": "Sua conta está ativa em $1 {{PLURAL:$1|site|sites}} do projeto.",

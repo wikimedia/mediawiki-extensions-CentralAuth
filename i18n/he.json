@@ -322,7 +322,7 @@
 	"right-centralauth-merge": "מיזוג החשבון של המשתמש עצמו",
 	"right-globalgrouppermissions": "ניהול קבוצות כלליות",
 	"abusefilter-edit-builder-vars-global-user-groups": "קבוצות גלובליות שמשתמש זה חבר בהן",
-	"action-centralauth-lock": "נעילת או שחרור חשבונות כלליים",
+	"action-centralauth-lock": "לנעול או לבטל נעילה של חשבונות גלובליים",
 	"centrallogin": "כניסת משתמש מרכזית",
 	"centralloginsuccesful": "נכנסת לחשבון",
 	"centralauth-completelogin-back": "חזרה לדף הקודם.",

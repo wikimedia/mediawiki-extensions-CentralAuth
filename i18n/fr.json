@@ -170,7 +170,7 @@
 	"centralauth-admin-reason": "Motif :",
 	"centralauth-admin-reason-other": "Motif autre ou supplémentaire :",
 	"centralauth-admin-reason-other-select": "Autre motif :",
-	"centralauth-admin-rename-in-progress": "Ce compte va être renommé. Cliquez  [[Special:GlobalRenameProgress/$1|ici]] pour voir l'état actuel d'avancement. L'historique globale du renommage est fournie ci-après.",
+	"centralauth-admin-rename-in-progress": "Ce compte va être renommé. Cliquez [[Special:GlobalRenameProgress/$1|ici]] pour voir l'état actuel d'avancement. L'historique global du renommage est fourni ci-après.",
 	"centralauth-admin-unhide-nonexistent": "Erreur : le compte global « <nowiki>$1</nowiki> » n’existe pas.",
 	"centralauth-admin-status": "Changer le statut du compte global",
 	"centralauth-admin-status-intro": "Vous pouvez utiliser ce formulaire pour changer le statut de ce compte global",
