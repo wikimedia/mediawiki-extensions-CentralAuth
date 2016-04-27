@@ -16,6 +16,24 @@
       "revId": "ae5165f7e259f9fec9f6183defc53d911e19712d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_ee05147e",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-04-27T19:20:35Z",
+      "side": 1,
+      "message": "Duh. I always mix up the semantics for (bool) and !\u003dnull. Will fix.",
+      "parentUuid": "ae564743_eeb7d4d1",
+      "revId": "ae5165f7e259f9fec9f6183defc53d911e19712d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
