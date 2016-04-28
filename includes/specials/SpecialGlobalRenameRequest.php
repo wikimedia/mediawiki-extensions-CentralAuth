@@ -31,6 +31,10 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		parent::__construct( 'GlobalRenameRequest' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * @param string $par Subpage string if one was specified
 	 */

@@ -22,6 +22,10 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		parent::__construct( 'GlobalUserMerge', 'centralauth-usermerge' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function execute( $par ) {
 		global $wgCentralAuthEnableUserMerge;
 		if ( !class_exists( 'SpecialUserMerge' ) ) {
