@@ -2034,23 +2034,21 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	function lazyImportLocalNames() {
-		$dbw = CentralAuthUtils::getCentralDB();
-
-		$result = $dbw->select( 'globalnames',
-			array( '1' ),
-			array( 'gn_name' => $this->mName ),
-			__METHOD__,
-			array( 'LIMIT' => 1 ) );
-		$known = $result->numRows();
-		$result->free();
-
+		$known = (bool)CentralAuthUtils::getCentralSlaveDB()->selectField(
+			'globalnames', '1', [ 'gn_name' => $this->mName ], __METHOD__
+		);
 		if ( $known ) {
 			// No need...
 			// Hmm.. what about wikis added after localnames was populated? -werdna
 			return false;
 		}
 
-		return $this->importLocalNames();
+		// Confirm against the master for sanity...
+		$known = (bool)CentralAuthUtils::getCentralDB()->selectField(
+			'globalnames', '1', [ 'gn_name' => $this->mName ], __METHOD__
+		);
+
+		return $known ? false : $this->importLocalNames();
 	}
 
 	/**
