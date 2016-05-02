@@ -29,8 +29,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
-		$this->updateStatus( 'inprogress' );
-
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
 			// any normalization at all done by User or Title.
@@ -44,6 +42,13 @@ class LocalRenameUserJob extends LocalRenameJob {
 		} else {
 			$oldUser = User::newFromName( $from );
 		}
+
+		if ( !$oldUser->getId() ) {
+			// Sanity check that the user exists (T134136)
+			throw new Exception( "User '$from' does not exist (cannot rename to '$to')." );
+		}
+
+		$this->updateStatus( 'inprogress' );
 
 		$rename = new RenameuserSQL(
 			$from,
