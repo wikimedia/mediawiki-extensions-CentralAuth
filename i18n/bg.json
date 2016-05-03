@@ -236,5 +236,6 @@
 	"right-centralauth-lock": "Заключване или скриване на глобална сметка",
 	"right-centralauth-merge": "Сливане на тяхната сметка",
 	"right-globalgrouppermissions": "Управление на глобалните групи",
-	"log-name-gblrename": "Дневник на глобалните преименувания"
+	"log-name-gblrename": "Дневник на глобалните преименувания",
+	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка"
 }
