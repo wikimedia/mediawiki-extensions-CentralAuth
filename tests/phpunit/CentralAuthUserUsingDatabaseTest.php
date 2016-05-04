@@ -96,7 +96,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 * @covers CentralAuthUser::register
 	 */
 	public function testRegister() {
-		$caUserNew = new CentralAuthUser( 'RegTest' );
+		$caUserNew = new CentralAuthUser( 'RegTest', CentralAuthUser::READ_LATEST );
 		$ok = $caUserNew->register( "R3gT3stP@ssword", "user@localhost" );
 		$this->assertSame( true, $ok );
 
@@ -157,7 +157,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 * @covers CentralAuthUser::adminSetHidden
 	 */
 	public function testAdminLockAndHide() {
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
 		$this->assertSame( true, $caUser->exists() ); #sanity
 		$this->assertSame( false, $caUser->isHidden() ); #sanity
 		$this->assertSame( false, $caUser->isLocked() ); #sanity
@@ -193,7 +193,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 * @covers CentralAuthUser::attach
 	 */
 	public function testAttach() {
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
 		$caUser->attach( 'anotherwiki', 'admin', false );
 		$this->assertSame( true, $caUser->exists() );
 		$this->assertSame( true, in_array( 'anotherwiki', $caUser->listAttached() ) );
