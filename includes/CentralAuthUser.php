@@ -209,6 +209,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Test if this is a write-mode instance, and log if not.
+	 */
+	private function checkWriteMode() {
+		if ( !$this->mFromMaster ) {
+			wfDebugLog( 'CentralAuth', "Setter called on a slave instance: " . wfGetAllCallers( 10 ) );
+		}
+	}
+
+	/**
 	 * @return DatabaseBase Master or slave based on shouldUseMasterDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
@@ -531,8 +540,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Save cachable data to memcached.
 	 */
 	protected function saveToCache() {
-	 	$obj = $this->getCacheObject();
-	 	wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
+		$obj = $this->getCacheObject();
+		wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
 		$opts = array( 'since' => CentralAuthUtils::getCentralSlaveDB()->trxTimestamp() );
 		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400, $opts );
 	}
@@ -740,6 +749,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	function register( $password, $email ) {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		$dbw->insert(
@@ -1024,6 +1034,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status object
 	 */
 	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
+		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
+
 		$home = false;
 		$attached = array();
 		$unattached = array();
@@ -1113,6 +1125,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param array[] $wikisToAttach
 	 */
 	private function chooseEmail( array $wikisToAttach ) {
+		$this->checkWriteMode();
+
 		if ( $this->mEmail ) {
 			return;
 		}
@@ -1140,6 +1154,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
 	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
+		$this->checkWriteMode();
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
 			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
@@ -1318,6 +1333,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	public function adminUnattach( $list ) {
+		$this->checkWriteMode();
+
 		if ( !count( $list ) ) {
 			return Status::newFatal( 'centralauth-admin-none-selected' );
 		}
@@ -1380,6 +1397,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminDelete( $reason ) {
+		$this->checkWriteMode();
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$centralDB = CentralAuthUtils::getCentralDB();
 
@@ -1438,6 +1456,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminLock() {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', array( 'gu_locked' => 1 ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
@@ -1456,6 +1475,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminUnlock() {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', array( 'gu_locked' => 0 ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
@@ -1475,6 +1495,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	function adminSetHidden( $level ) {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', array( 'gu_hidden' => $level ),
 			array( 'gu_name' => $this->mName ), __METHOD__ );
@@ -1742,6 +1763,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * - completed migration state
 	 */
 	public function attach( $wikiID, $method = 'new', $sendToRC = true ) {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->begin( __METHOD__ );
 		$dbw->insert( 'localuser',
@@ -2374,6 +2396,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function setEmail( $email ) {
+		$this->checkWriteMode();
 		$this->loadState();
 		if ( $this->mEmail !== $email ) {
 			$this->mEmail = $email;
@@ -2386,6 +2409,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function setEmailAuthenticationTimestamp( $ts ) {
+		$this->checkWriteMode();
 		$this->loadState();
 		if ( $this->mAuthenticationTimestamp !== $ts ) {
 			$this->mAuthenticationTimestamp = $ts;
@@ -2414,6 +2438,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Bool true
 	 */
 	function setPassword( $password, $resetAuthToken = true ) {
+		$this->checkWriteMode();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
 		$this->mPassword = $hash;
@@ -2493,6 +2518,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * not randomly log users out (so on logout, as is done currently, is a good time).
 	 */
 	function resetAuthToken() {
+		$this->checkWriteMode();
+
 		// Load state, since its hard to reset the token without it
 		$this->loadState();
 
@@ -2505,6 +2532,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	function saveSettings() {
+		$this->checkWriteMode();
+
 		if ( !$this->mStateDirty ) {
 			return;
 		}
@@ -2599,6 +2628,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function removeFromGlobalGroups( $groups ) {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 
 		# Delete from the DB
@@ -2614,6 +2644,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return void
 	 */
 	function addToGlobalGroups( $groups ) {
+		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 
 		if ( !is_array( $groups ) ) {
