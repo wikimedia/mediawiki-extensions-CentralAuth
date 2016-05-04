@@ -383,7 +383,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		$centralUser = CentralAuthUser::getInstanceByName( $username );
+		$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
 		if ( !$centralUser->exists() ) {
 			return;
 		}
