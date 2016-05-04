@@ -417,7 +417,21 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					$this->msg(
 						'globalrenamequeue-request-antispoof-conflicts',
 						$this->getLanguage()->commaList( $conflicts )
-					)->numParams( count( $conflicts ) )->parse()
+					)->numParams( count( $conflicts ) )->parseAsBlock()
+				);
+			}
+		}
+
+		// Show a message if the new username matches the title blacklist.
+		if ( class_exists( 'TitleBlacklist' ) ) {
+			$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
+				Title::makeTitleSafe( NS_USER, $req->getNewName() ),
+				'new-account'
+			);
+			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
+				$form->addHeaderText(
+					$this->msg( 'globalrenamequeue-request-titleblacklist' )
+						->rawParams( $titleBlacklist->getRegex() )->parseAsBlock()
 				);
 			}
 		}
