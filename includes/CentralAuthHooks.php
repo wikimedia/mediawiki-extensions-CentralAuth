@@ -231,7 +231,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onAddNewAccount( $user, $byEmail ) {
-		$central = CentralAuthUser::getInstance( $user );
+		$central = CentralAuthUser::getMasterInstance( $user );
 		$central->addLocalName( wfWikiID() );
 		return true;
 	}
@@ -678,7 +678,7 @@ class CentralAuthHooks {
 			// Use local sessions only.
 			return true;
 		}
-		$centralUser = CentralAuthUser::getInstance( $user );
+		$centralUser = CentralAuthUser::getMasterInstance( $user );
 
 		if ( $centralUser->exists() ) {
 			DeferredUpdates::addCallableUpdate( function() use ( $centralUser ) {
@@ -854,7 +854,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserInvalidateEmailComplete( $user ) {
-		$ca = CentralAuthUser::getInstance( $user );
+		$ca = CentralAuthUser::getMasterInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( '' );
 			$ca->setEmailAuthenticationTimestamp( null );
@@ -869,7 +869,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSetEmail( $user, &$email ) {
-		$ca = CentralAuthUser::getInstance( $user );
+		$ca = CentralAuthUser::getMasterInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( $email );
 		}
@@ -881,7 +881,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSaveSettings( $user ) {
-		$ca = CentralAuthUser::getInstance( $user );
+		$ca = CentralAuthUser::getMasterInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->saveSettings();
 		}
@@ -894,7 +894,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
-		$ca = CentralAuthUser::getInstance( $user );
+		$ca = CentralAuthUser::getMasterInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmailAuthenticationTimestamp( $timestamp );
 			$ca->saveSettings();
@@ -1487,7 +1487,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onDeleteAccount( User &$user ) {
-		$caUser = CentralAuthUser::getInstance( $user );
+		$caUser = CentralAuthUser::getMasterInstance( $user );
 
 		if ( $caUser->isAttached() ) {
 			// Clean up localuser table.
