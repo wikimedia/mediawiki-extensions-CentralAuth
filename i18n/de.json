@@ -353,6 +353,7 @@
 	"centralauth-rename-form-movepages": "Benutzerseiten verschieben",
 	"centralauth-rename-form-suppressredirects": "Erstellung von Weiterleitungen unterdrücken",
 	"centralauth-rename-form-overrideantispoof": "Alle AntiSpoof-Konflikte überschreiben",
+	"centralauth-rename-form-overridetitleblacklist": "Titel-Blacklist umgehen",
 	"centralauth-rename-form-allowhigheditcount": "Bestätige die Umbenennung des Benutzers mit mehr als {{PLURAL:$1|einer Bearbeitung|$1 Bearbeitungen}}",
 	"centralauth-rename-globaleditcount-threshold": "Dieser Benutzer hat mehr als {{PLURAL:$1|eine Bearbeitung|$1 Bearbeitungen}}. Bitte bestätige, dass du dir sicher bist, dass du diesen Benutzer umbenennen möchtest und dass ein Systemadministrator diese Umbenennung überwachen kann.",
 	"centralauth-rename-notinstalled": "Die Erweiterung „Renameuser“ ist nicht installiert.",
