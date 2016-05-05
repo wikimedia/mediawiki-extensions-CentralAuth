@@ -108,7 +108,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		if ( !$names ) {
 			$this->checkCachePurge( $name );
 			$out->addWikiMsg( 'centralauth-rename-notinprogress', $name );
-			$this->getForm()->displayForm( false );
+			$this->getForm()->prepareForm()->displayForm( false );
 			$this->showLogExtract( $name );
 			return true;
 		}
@@ -117,7 +117,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 		$statuses = $this->renameuserStatus->getStatuses();
 
-		$this->getForm()->displayForm( false );
+		$this->getForm()->prepareForm()->displayForm( false );
 		// $newname will always be defined since we check
 		// for 0 result rows above
 		$caUser = CentralAuthUser::getMasterInstanceByName( $newName );
