@@ -1,0 +1,7 @@
+Code-Review+2: Chad <chadh@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Fri, 06 May 2016 14:32:40 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/287218
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/wmf/1.27.0-wmf.22
