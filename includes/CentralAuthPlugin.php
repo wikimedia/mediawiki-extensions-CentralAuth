@@ -46,7 +46,7 @@ class CentralAuthPlugin extends AuthPlugin {
 		global $wgCentralAuthAutoMigrateNonGlobalAccounts;
 		global $wgCentralAuthStrict;
 
-		$central = CentralAuthUser::getInstanceByName( $username );
+		$central = CentralAuthUser::getMasterInstanceByName( $username );
 		$passwordMatch = self::checkPassword( $central, $password );
 
 		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
@@ -54,7 +54,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			// collision during a forced migration to central auth accounts.
 			$renamedUsername = User::getCanonicalName( $username . '~' . str_replace( '_', '-', wfWikiID() ) );
 			if ( $renamedUsername !== false ) {
-				$renamed = CentralAuthUser::getInstanceByName( $renamedUsername );
+				$renamed = CentralAuthUser::getMasterInstanceByName( $renamedUsername );
 
 				if ( $renamed->getId() ) {
 					wfDebugLog( 'CentralAuth',
