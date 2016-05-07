@@ -356,6 +356,7 @@
 	"centralauth-rename-form-movepages": "Sposta le pagine utente",
 	"centralauth-rename-form-suppressredirects": "Sopprimi la creazione di redirect",
 	"centralauth-rename-form-overrideantispoof": "Ignorare qualsiasi conflitto AntiSpoof",
+	"centralauth-rename-form-overridetitleblacklist": "Ignora TitleBlacklist",
 	"centralauth-rename-notinstalled": "L'estensione Renameuser non è installata.",
 	"centralauth-rename-doesnotexist": "L'utenza indicata non esiste.",
 	"centralauth-rename-alreadyexists": "Il nome utente richiesto esiste già.",
