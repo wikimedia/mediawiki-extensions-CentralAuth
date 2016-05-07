@@ -64,7 +64,7 @@ class SpecialMultiLock extends SpecialPage {
 			$this->searchForUsers();
 			$this->showUserTable();
 		} elseif ( $this->mPosted && $this->mMethod == 'set-status' && is_array( $this->mActionUserNames ) ) {
-			$this->mGlobalUsers = array_unique( array_map( "self::getGlobalUser", $this->mActionUserNames ), SORT_REGULAR );
+			$this->mGlobalUsers = array_unique( $this->getGlobalUsers( $this->mActionUserNames, true ), SORT_REGULAR );
 			$this->setStatus();
 			$this->showUserTable();
 		} else {
@@ -77,25 +77,34 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	/**
-	 * Get the CentralAuthUser from a line of text
+	 * Get the CentralAuthUsers from lines of text
 	 *
-	 * @param $username string
-	 * @return CentralAuthUser|string User object, or a string containing the error
+	 * @param string[] $usernames
+	 * @param bool $fromMaster
+	 * @return (CentralAuthUser|string)[] User object, or a string containing the error
 	 */
-	private function getGlobalUser( $username ) {
-		$username = trim( $username );
-		if ( $username === '' ) {
-			return false;
-		}
-		$username = $this->getLanguage()->ucfirst( $username );
+	private function getGlobalUsers( $usernames, $fromMaster = false ) {
+		$ret = [];
+		foreach ( $usernames as $username ) {
+			$username = trim( $username );
+			if ( $username === '' ) {
+				$ret[] = false;
+				continue;
+			}
+			$username = $this->getLanguage()->ucfirst( $username );
 
-		$globalUser = CentralAuthUser::getInstanceByName( $username );
-		if ( !$globalUser->exists()
-			|| ( !$this->mCanOversight && ( $globalUser->isOversighted() || $globalUser->isHidden() ) )
-		) {
-			return $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
+			$globalUser = $fromMaster
+				? CentralAuthUser::getMasterInstanceByName( $username )
+				: CentralAuthUser::getInstanceByName( $username );
+			if ( !$globalUser->exists()
+				|| ( !$this->mCanOversight && ( $globalUser->isOversighted() || $globalUser->isHidden() ) )
+			) {
+				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
+			} else {
+				$ret[] = $globalUser;
+			}
 		}
-		return $globalUser;
+		return $ret;
 	}
 
 	/**
@@ -269,7 +278,7 @@ class SpecialMultiLock extends SpecialPage {
 	 */
 	private function showUserTable() {
 
-		$this->mGlobalUsers = array_unique( array_map( "self::getGlobalUser", $this->mUserNames ), SORT_REGULAR );
+		$this->mGlobalUsers = array_unique( $this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR );
 
 		$out = $this->getOutput();
 

@@ -162,7 +162,7 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$user = User::newFromName( 'GlobalUser' );
 		$this->assertSame( false, $user->isAnon(), 'Local account for GlobalUser exists' ); #sanity
 		$auth->setPassword( $user, 'ANewPassword' );
-		$central = new CentralAuthUser( 'GlobalUser' );
+		$central = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
 		$this->assertEquals( 'ok', $central->authenticate( 'ANewPassword' ), 'Authenticate with newly set password' );
 	}
 
