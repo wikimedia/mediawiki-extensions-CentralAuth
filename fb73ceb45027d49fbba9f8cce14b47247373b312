@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_27189485",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-08T18:18:00Z",
+      "side": 1,
+      "message": "PHPStorm complains that this is a protected method. Strangely, login does work for me, but not the way it should - secondary providers seem to be skipped.",
+      "revId": "fb73ceb45027d49fbba9f8cce14b47247373b312",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
