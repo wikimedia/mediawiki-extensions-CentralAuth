@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_05abc3d5",
+        "filename": "CentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-09T18:41:59Z",
+      "side": 1,
+      "message": "No it doesn\u0027t. Although it does raise a warning before inserting the provider in a slightly silly place.\n\nBut this goes away anyway if we switch to your $wgAuthManagerAutoConfig idea.",
+      "parentUuid": "ae564743_2af174da",
+      "revId": "fb73ceb45027d49fbba9f8cce14b47247373b312",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_27189485",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-08T18:18:00Z",
       "side": 1,
       "message": "PHPStorm complains that this is a protected method. Strangely, login does work for me, but not the way it should - secondary providers seem to be skipped.",
+      "revId": "fb73ceb45027d49fbba9f8cce14b47247373b312",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_e5416f0f",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-09T18:41:59Z",
+      "side": 1,
+      "message": "No idea why that\u0027s protected, I\u0027m just going to make it public.",
+      "parentUuid": "ae564743_27189485",
       "revId": "fb73ceb45027d49fbba9f8cce14b47247373b312",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
