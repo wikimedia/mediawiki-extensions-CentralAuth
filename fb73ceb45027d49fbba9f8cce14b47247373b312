@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ae564743_2af174da",
+        "filename": "CentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-09T16:21:26Z",
+      "side": 1,
+      "message": "This will error out when TemporaryPasswordPrimaryAuthenticationProvider is not present.",
+      "revId": "fb73ceb45027d49fbba9f8cce14b47247373b312",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_27189485",
         "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
         "patchSetId": 7
