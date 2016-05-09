@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_7b25fc02",
+        "filename": "CentralAuth.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-09T21:05:20Z",
+      "side": 1,
+      "message": "nitpick, but empty args can be omitted for extra readability (not so much here but when print_r-ing through the config)",
+      "revId": "908dd69d83b0fcdb1df537ae3420d8c89390cca5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
