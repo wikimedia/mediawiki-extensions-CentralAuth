@@ -377,6 +377,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			array( 'prefix' => '' ) + $this->centralCookieOptions );
 	}
 
+	public function invalidateSessionsForUser( User $user ) {
+		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		if ( $centralUser->exists() ) {
+			$centralUser->resetAuthToken();
+		}
+	}
+
 	public function preventSessionsForUser( $username ) {
 		$username = User::getCanonicalName( $username, 'valid' );
 		if ( !$username ) {
