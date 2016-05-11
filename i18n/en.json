@@ -336,7 +336,6 @@
 	"centralauth-readonly": "CentralAuth database locked",
 	"centralauth-readonlytext": "The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.",
 	"right-globalgroupmembership": "Edit membership to global groups",
-	"right-centralauth-autoaccount": "Automatically login with global account",
 	"right-centralauth-unmerge": "Unmerge global account",
 	"right-centralauth-lock": "Lock or unlock global account",
 	"right-centralauth-oversight": "Suppress or hide global account",

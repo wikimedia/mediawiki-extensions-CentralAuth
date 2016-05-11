@@ -269,44 +269,6 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'from' => 'The user name to start enumerating from',
-			'to' => 'The user name to stop enumerating at',
-			'prefix' => 'Search for all users that begin with this value',
-			'dir' => 'Direction to sort in',
-			'group' => 'Limit users to given global group name(s)',
-			'excludegroup' => 'Exclude users in given global group name(s)',
-			'prop' => array(
-				'What pieces of information to include.',
-				' lockinfo       - Whether the user account is locked',
-				' groups         - Lists global groups that the user is in. This uses more server resources and may return fewer results than the limit',
-				' existslocally  - Adds the information if the user exists locally',
-				),
-			'limit' => 'How many total user names to return'
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Enumerate all global users';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&list=globalallusers',
-			'api.php?action=query&list=globalallusers&agufrom=ABC&aguprop=lockinfo|groups|existslocally'
-		);
-	}
-
-	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {

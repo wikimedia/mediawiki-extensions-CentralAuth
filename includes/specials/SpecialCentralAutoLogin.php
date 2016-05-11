@@ -62,19 +62,17 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	protected function checkSession( $body = '', $type = false ) {
-		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
-			$session = $this->getRequest()->getSession();
-			if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
-				$this->doFinalOutput(
-					false,
-					'Cannot operate when using ' . $session->getProvider()->describe( Language::factory( 'en' ) ),
-					$body,
-					$type
-				);
-				return false;
-			}
-			$this->session = $session;
+		$session = $this->getRequest()->getSession();
+		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
+			$this->doFinalOutput(
+				false,
+				'Cannot operate when using ' . $session->getProvider()->describe( Language::factory( 'en' ) ),
+				$body,
+				$type
+			);
+			return false;
 		}
+		$this->session = $session;
 		return true;
 	}
 
@@ -181,18 +179,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					} );
 				}
 
-				if ( $this->session ) {
-					$delay = $this->session->delaySave();
-					$this->session->setRememberUser( $remember );
-					if ( $centralSession['secureCookies'] !== null ) {
-						$this->session->setForceHTTPS( $centralSession['secureCookies'] );
-					}
-					$this->session->persist();
-					ScopedCallback::consume( $delay );
-				} else {
-					$secureCookie = $centralSession['secureCookies'];
-					CentralAuthSessionCompat::setGlobalCookies( $centralUser, $remember, false, $secureCookie, $centralSession );
+				$delay = $this->session->delaySave();
+				$this->session->setRememberUser( $remember );
+				if ( $centralSession['secureCookies'] !== null ) {
+					$this->session->setForceHTTPS( $centralSession['secureCookies'] );
 				}
+				$this->session->persist();
+				ScopedCallback::consume( $delay );
 				$this->doFinalOutput( true, 'success' );
 			} else {
 				$this->doFinalOutput( false, 'Not logged in' );
@@ -213,12 +206,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			CentralAuthUtils::setP3P();
-			if ( $this->session ) {
-				$this->session->setUser( new User );
-				$this->session->persist();
-			} else {
-				CentralAuthSessionCompat::deleteGlobalCookies();
-			}
+			$this->session->setUser( new User );
+			$this->session->persist();
 			$this->doFinalOutput( true, 'success' );
 			return;
 
@@ -319,11 +308,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->getOutput()->enableClientCache( false );
 
 			// Ensure that a session exists
-			if ( $this->session ) {
-				$this->session->persist();
-			} elseif ( session_id() == '' ) {
-				wfSetupSession();
-			}
+			$this->session->persist();
 
 			// Create memc token
 			$wikiid = wfWikiID();
@@ -458,38 +443,22 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			/** @var ScopedCallback|null $delay */
 			$delay = null;
 
-			if ( $this->session ) {
-				$delay = $this->session->delaySave();
-				$this->session->resetId();
-				CentralAuthUtils::setCentralSession( array(
-					'finalProto' => $memcData['finalProto'],
-					'secureCookies' => $memcData['secureCookies'],
-					'remember' => $memcData['remember'],
-				), $memcData['sessionId'], $this->session );
-				if ( $centralUser->isAttached() ) {
-					// Set the user on the session, if the user is already attached.
-					$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-				}
-				$this->session->setRememberUser( $memcData['remember'] );
-				if ( $memcData['secureCookies'] !== null ) {
-					$this->session->setForceHTTPS( $memcData['secureCookies'] );
-				}
-				$this->session->persist();
-			} else {
-				// Set a new session cookie, Just In Case™
-				wfResetSessionID();
-
-				// Set central cookies too, with a refreshed sessionid. Also, check if we
-				// need to override the default cookie security policy
-				$secureCookie = $memcData['secureCookies'];
-				CentralAuthSessionCompat::setGlobalCookies( $centralUser,
-					$memcData['remember'], $memcData['sessionId'], $secureCookie, array(
-						'finalProto' => $memcData['finalProto'],
-						'secureCookies' => $memcData['secureCookies'],
-						'remember' => $memcData['remember'],
-					)
-				);
+			$delay = $this->session->delaySave();
+			$this->session->resetId();
+			CentralAuthUtils::setCentralSession( array(
+				'finalProto' => $memcData['finalProto'],
+				'secureCookies' => $memcData['secureCookies'],
+				'remember' => $memcData['remember'],
+			), $memcData['sessionId'], $this->session );
+			if ( $centralUser->isAttached() ) {
+				// Set the user on the session, if the user is already attached.
+				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			}
+			$this->session->setRememberUser( $memcData['remember'] );
+			if ( $memcData['secureCookies'] !== null ) {
+				$this->session->setForceHTTPS( $memcData['secureCookies'] );
+			}
+			$this->session->persist();
 
 			// Now, figure out how to report this back to the user.
 
@@ -518,10 +487,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				ScopedCallback::consume( $delay );
 				return;
 			}
-			if ( $this->session ) {
-				// Set the user on the session now that we know it exists.
-				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			}
+			// Set the user on the session now that we know it exists.
+			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			ScopedCallback::consume( $delay );
 
 			\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autologin success', array(
@@ -709,12 +676,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a session id by creating a session if necessary.
 		if ( !isset( $centralSession['sessionId'] ) ) {
-			if ( $this->session ) {
-				$centralSession['sessionId'] = CentralAuthUtils::setCentralSession(
-					$centralSession, false, $this->session );
-			} else {
-				$centralSession['sessionId'] = CentralAuthSessionCompat::setCentralSession( $centralSession );
-			}
+			$centralSession['sessionId'] = CentralAuthUtils::setCentralSession(
+				$centralSession, false, $this->session );
 		}
 
 		return $centralSession;

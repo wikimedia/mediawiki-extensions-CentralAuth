@@ -352,7 +352,6 @@
 	"centralauth-readonly": "Error message displayed when the CentralAuth database is locked.",
 	"centralauth-readonlytext": "Description of the centralauth-readonlytext error",
 	"right-globalgroupmembership": "{{doc-right|globalgroupmembership}}",
-	"right-centralauth-autoaccount": "{{doc-right|centralauth-autoaccount}}",
 	"right-centralauth-unmerge": "{{doc-right|centralauth-unmerge}}\nThis is the opposite of merging a local (unlinked) account to a global account. It doesn't imply the complete disgregation of the global account, as even a single local account can be unmerged.",
 	"right-centralauth-lock": "{{doc-right|centralauth-lock}}",
 	"right-centralauth-oversight": "{{doc-right|centralauth-oversight}}",
