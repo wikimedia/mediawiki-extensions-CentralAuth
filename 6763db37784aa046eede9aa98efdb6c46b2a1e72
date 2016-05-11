@@ -16,6 +16,41 @@
       "revId": "6763db37784aa046eede9aa98efdb6c46b2a1e72",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_884871d0",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-05-11T21:16:25Z",
+      "side": 1,
+      "message": "Yeah, lets comment it out",
+      "parentUuid": "ae564743_0884615d",
+      "revId": "6763db37784aa046eede9aa98efdb6c46b2a1e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_881fd1b9",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-05-11T21:16:25Z",
+      "side": 1,
+      "message": "This is a core setting, so it should be a top level extension.json property, not under \"config\"...maybe we need to update ExtensionProcessor handling for it?",
+      "revId": "6763db37784aa046eede9aa98efdb6c46b2a1e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
