@@ -922,6 +922,25 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * @param User $user
+	 * @param bool &$isBot
+	 * @return bool
+	 */
+	static function onUserIsBot( User $user, &$isBot ) {
+		if ( !$user->isAnon() ) {
+			$centralUser = CentralAuthUser::getInstance( $user );
+			if ( $centralUser->exists()
+				&& $centralUser->isAttached()
+				&& in_array( 'bot', $centralUser->getGlobalGroups() )
+			) {
+				$isBot = true;
+			}
+		}
+
+		return true;
+	}
+
+	/**
 	 * @param integer $id User ID
 	 * @param User $user
 	 * @param SpecialPage $sp

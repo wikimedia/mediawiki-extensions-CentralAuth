@@ -396,6 +396,7 @@ $wgHooks['UserSetEmail'][] = 'CentralAuthHooks::onUserSetEmail';
 $wgHooks['UserSaveSettings'][] = 'CentralAuthHooks::onUserSaveSettings';
 $wgHooks['UserSetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserSetEmailAuthenticationTimestamp';
 $wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
+$wgHooks['UserIsBot'][] = 'CentralAuthHooks::onUserIsBot';
 $wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
