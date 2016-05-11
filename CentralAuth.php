@@ -1,25 +1,23 @@
 <?php
-/**
- * Extension credits
- */
-$wgExtensionCredits['specialpage'][] = array(
-	'path' => __FILE__,
-	'name' => 'Central Auth',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
-	'author' => 'Brion Vibber',
-	'descriptionmsg' => 'centralauth-desc',
-	'license-name' => 'GPL-2.0'
-);
 
-$wgExtensionCredits['specialpage'][] = array(
-	'path'           => __FILE__,
-	'name'           => 'MergeAccount',
-	'author'         => 'Brion Vibber',
-	'url'            => '//meta.wikimedia.org/wiki/Help:Unified_login',
-	'descriptionmsg' => 'centralauth-mergeaccount-desc',
-	'license-name'   => 'GPL-2.0'
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'CentralAuth' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['CentralAuth'] = __DIR__ . '/i18n';
+	$wgExtensionMessagesFiles['CentralAuthAlias'] = __DIR__ . '/CentralAuth.alias.php';
+	$wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = __DIR__ . '/CentralAuth.notranslate-alias.php';
+	//wfWarn(
+	//	'Deprecated PHP entry point used for CentralAuth extension. ' .
+	//	'Please use wfLoadExtension instead, ' .
+	//	'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	//);
+	return;
+} else {
+	die( 'This version of the CentralAuth extension requires MediaWiki 1.25+' );
+}
 
-);
+// Global declarations and documentation kept for IDEs and PHP documentors.
+// This code is never executed.
 
 /**
  * Database name you keep central auth data in.
@@ -33,13 +31,6 @@ $wgExtensionCredits['specialpage'][] = array(
  * "{$database}-{$prefix}".
  */
 $wgCentralAuthDatabase = 'centralauth';
-
-/**
- * Override $wgCentralAuthDatabase for Wikimedia Jenkins.
- */
-if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
-	$wgCentralAuthDatabase = $wgDBname;
-}
 
 /**
  * If true, new account registrations will be registered globally if
@@ -141,7 +132,7 @@ $wgCentralAuthCookiePath = '/';
  *
  * The key should be set to the cookie domain name.
  */
-$wgCentralAuthAutoLoginWikis = array();
+$wgCentralAuthAutoLoginWikis = [];
 
 /**
  * List of wiki IDs on which an attached local account should be created automatically when the
@@ -151,7 +142,7 @@ $wgCentralAuthAutoLoginWikis = array();
  * used, in which case it is the database name, a hyphen separator, and then
  * the table prefix.
  */
-$wgCentralAuthAutoCreateWikis = array();
+$wgCentralAuthAutoCreateWikis = [];
 
 /**
  * Local filesystem path to the icon returned by Special:CentralAutoLogin
@@ -167,21 +158,7 @@ $wgCentralAuthLoginIcon = false;
  * $user->getOption( $pref ) !== User::getDefaultOption( $pref ), use the hook
  * CentralAuthIsUIReloadRecommended.
  */
-$wgCentralAuthPrefsForUIReload = array(
-	'skin',
-	'language',
-	'thumbsize',
-	'underline',
-	'stubthreshold',
-	'showhiddencats',
-	'justify',
-	'numberheadings',
-	'editondblclick',
-	'editsection',
-	'editsectiononrightclick',
-	'usenewrc',
-	'extendwatchlist',
-);
+$wgCentralAuthPrefsForUIReload = [ /* See extension.json */ ];
 
 /**
  * Specify a P3P header value to be used when setting CentralAuth cookies on
@@ -216,16 +193,16 @@ $wgCentralAuthCreateOnView = false;
 /**
  * Array of settings for sending the CentralAuth events to the RC Feeds
  *
- * @example $wgRCFeeds['example'] = array(
+ * @example $wgRCFeeds['example'] = [
  *		'uri' => "udp://localhost:1336",
- *	);
+ *	];
  */
-$wgCentralAuthRC = array();
+$wgCentralAuthRC = [];
 
 /**
  * List of local pages global users may edit while being globally locked.
  */
-$wgCentralAuthLockedCanEdit = array();
+$wgCentralAuthLockedCanEdit = [];
 
 /**
  * Disable editing for non-global accounts (except on NS_USER_TALK and NS_PROJECT_TALK)
@@ -285,7 +262,7 @@ $wgCentralAuthCheckSULMigration = false;
  * @var array
  * @see $wgPasswordPolicy
  */
-$wgCentralAuthGlobalPasswordPolicies = array();
+$wgCentralAuthGlobalPasswordPolicies = [];
 
 /*
  * Try to use slave DBs for reads instead of the master all the time
@@ -294,340 +271,9 @@ $wgCentralAuthGlobalPasswordPolicies = array();
 $wgCentralAuthUseSlaves = false;
 
 /**
- * Initialization of the autoloaders, and special extension pages.
+ * Set false if you really want to use 'local' rather than 'CentralAuth' for
+ * $wgCentralIdLookupProvider. This isn't the default because using CentralAuth
+ * is almost always what you want if CentralAuth is installed.
+ * @var bool
  */
-$caBase = __DIR__;
-$wgAutoloadClasses['SpecialCentralAuth'] = "$caBase/includes/specials/SpecialCentralAuth.php";
-$wgAutoloadClasses['SpecialCentralLogin'] = "$caBase/includes/specials/SpecialCentralLogin.php";
-$wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/includes/specials/SpecialMergeAccount.php";
-$wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
-$wgAutoloadClasses['GlobalUsersPager'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
-$wgAutoloadClasses['SpecialMultiLock'] = "$caBase/includes/specials/SpecialMultiLock.php";
-$wgAutoloadClasses['SpecialGlobalRenameRequest'] = "$caBase/includes/specials/SpecialGlobalRenameRequest.php";
-$wgAutoloadClasses['SpecialGlobalRenameQueue'] = "$caBase/includes/specials/SpecialGlobalRenameQueue.php";
-$wgAutoloadClasses['RenameQueueTablePager'] = "$caBase/includes/specials/SpecialGlobalRenameQueue.php";
-$wgAutoloadClasses['SpecialSulRenameWarning'] = "$caBase/includes/specials/SpecialSulRenameWarning.php";
-$wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
-$wgAutoloadClasses['CentralAuthUtils'] = "$caBase/includes/CentralAuthUtils.php";
-$wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
-$wgAutoloadClasses['CentralAuthHooks'] = "$caBase/includes/CentralAuthHooks.php";
-$wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/includes/SuppressUserJob.php";
-$wgAutoloadClasses['CentralAuthCreateLocalAccountJob'] = "$caBase/includes/CreateLocalAccountJob.php";
-$wgAutoloadClasses['WikiSet'] = "$caBase/includes/WikiSet.php";
-$wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/includes/specials/SpecialCentralAutoLogin.php";
-$wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/includes/CentralAuthUserArray.php";
-$wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/includes/CentralAuthUserArray.php";
-$wgAutoloadClasses['CentralAuthIdLookup'] = "$caBase/includes/CentralAuthIdLookup.php";
-$wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/includes/specials/SpecialGlobalGroupMembership.php";
-$wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/includes/CentralAuthGroupMembershipProxy.php";
-$wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/includes/specials/SpecialGlobalGroupPermissions.php";
-$wgAutoloadClasses['SpecialWikiSets'] = "$caBase/includes/specials/SpecialWikiSets.php";
-$wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/includes/api/ApiQueryGlobalUserInfo.php";
-$wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/includes/api/ApiDeleteGlobalAccount.php";
-$wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/includes/api/ApiSetGlobalAccountStatus.php";
-$wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/includes/api/ApiQueryGlobalGroups.php";
-$wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/includes/api/ApiQueryWikiSets.php";
-$wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/includes/api/ApiQueryGlobalAllUsers.php";
-$wgAutoloadClasses['ApiGlobalUserRights'] = "$caBase/includes/api/ApiGlobalUserRights.php";
-$wgAutoloadClasses['ApiCentralAuthToken'] = "$caBase/includes/api/ApiCentralAuthToken.php";
-$wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/includes/CentralAuthReadOnlyError.php";
-$wgAutoloadClasses['CentralAuthSessionProvider'] = "$caBase/includes/session/CentralAuthSessionProvider.php";
-$wgAutoloadClasses['CentralAuthTokenSessionProvider'] = "$caBase/includes/session/CentralAuthTokenSessionProvider.php";
-$wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
-$wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
-$wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormatter.php";
-$wgAutoloadClasses['LocalRenameJob'] = "$caBase/includes/LocalRenameJob/LocalRenameJob.php";
-$wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/includes/LocalRenameJob/LocalRenameUserJob.php";
-$wgAutoloadClasses['LocalUserMergeJob'] = "$caBase/includes/LocalRenameJob/LocalUserMergeJob.php";
-$wgAutoloadClasses['LocalPageMoveJob'] = "$caBase/includes/LocalRenameJob/LocalPageMoveJob.php";
-$wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/includes/specials/SpecialGlobalRenameUser.php";
-$wgAutoloadClasses['SpecialGlobalUserMerge'] = "$caBase/includes/specials/SpecialGlobalUserMerge.php";
-$wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/includes/specials/SpecialGlobalRenameProgress.php";
-$wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/includes/GlobalRename/GlobalRenameLogFormatter.php";
-$wgAutoloadClasses['GlobalUserMergeLogFormatter'] = "$caBase/includes/GlobalRename/GlobalUserMergeLogFormatter.php";
-
-$wgAutoloadClasses['GlobalRenameUser'] = "$caBase/includes/GlobalRename/GlobalRenameUser.php";
-$wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/includes/GlobalRename/GlobalRenameUserStatus.php";
-$wgAutoloadClasses['GlobalRenameRequest'] = "$caBase/includes/GlobalRename/GlobalRenameRequest.php";
-$wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/includes/GlobalRename/GlobalRenameUserValidator.php";
-$wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/includes/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
-$wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/includes/GlobalRename/GlobalRenameUserLogger.php";
-$wgAutoloadClasses['GlobalUserMergeLogger'] = "$caBase/includes/GlobalRename/GlobalUserMergeLogger.php";
-$wgAutoloadClasses['GlobalUserMerge'] = "$caBase/includes/GlobalRename/GlobalUserMerge.php";
-$wgAutoloadClasses['GlobalUserMergeDatabaseUpdates'] = "$caBase/includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php";
-
-$wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/phpunit/CentralAuthTestCaseUsingDatabase.php";
-$wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/phpunit/CentralAuthTestUser.php";
-
-$wgAutoloadClasses['SpecialUsersWhoWillBeRenamed'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
-$wgAutoloadClasses['UsersWhoWillBeRenamedPager'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
-$wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/includes/UsersToRename/UsersToRenameDatabaseUpdates.php";
-
-// only used by maintenance/sendConfirmAndMigrateEmail.php
-$wgAutoloadClasses['EmailableUser'] = "$caBase/includes/EmailableUser.php";
-
-$wgMessagesDirs['SpecialCentralAuth'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
-$wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/CentralAuth.notranslate-alias.php";
-
-$wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
-$wgJobClasses['LocalRenameUserJob'] = 'LocalRenameUserJob';
-$wgJobClasses['LocalUserMergeJob'] = 'LocalUserMergeJob';
-$wgJobClasses['LocalPageMoveJob'] = 'LocalPageMoveJob';
-$wgJobClasses['CentralAuthCreateLocalAccountJob'] = 'CentralAuthCreateLocalAccountJob';
-
-$wgHooks['AuthPluginSetup'][] = 'CentralAuthHooks::onAuthPluginSetup';
-$wgHooks['AddNewAccount'][] = 'CentralAuthHooks::onAddNewAccount';
-$wgHooks['GetPreferences'][] = 'CentralAuthHooks::onGetPreferences';
-$wgHooks['AbortLogin'][] = 'CentralAuthHooks::onAbortLogin';
-$wgHooks['AbortNewAccount'][] = 'CentralAuthHooks::onAbortNewAccount';
-$wgHooks['AbortAutoAccount'][] = 'CentralAuthHooks::onAbortAutoAccount';
-$wgHooks['UserLoginComplete'][] = 'CentralAuthHooks::onUserLoginComplete';
-$wgHooks['UserLogout'][] = 'CentralAuthHooks::onUserLogout';
-$wgHooks['UserLogoutComplete'][] = 'CentralAuthHooks::onUserLogoutComplete';
-$wgHooks['ResourceLoaderGetConfigVars'][] = 'CentralAuthHooks::onResourceLoaderGetConfigVars';
-$wgHooks['UserArrayFromResult'][] = 'CentralAuthHooks::onUserArrayFromResult';
-$wgHooks['UserGetEmail'][] = 'CentralAuthHooks::onUserGetEmail';
-$wgHooks['UserGetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserGetEmailAuthenticationTimestamp';
-$wgHooks['UserGetReservedNames'][] = 'CentralAuthHooks::onUserGetReservedNames';
-$wgHooks['UserInvalidateEmailComplete'][] = 'CentralAuthHooks::onUserInvalidateEmailComplete';
-$wgHooks['UserSetEmail'][] = 'CentralAuthHooks::onUserSetEmail';
-$wgHooks['UserSaveSettings'][] = 'CentralAuthHooks::onUserSaveSettings';
-$wgHooks['UserSetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserSetEmailAuthenticationTimestamp';
-$wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
-$wgHooks['UserIsBot'][] = 'CentralAuthHooks::onUserIsBot';
-$wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
-$wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
-$wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
-$wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
-$wgHooks['BeforePageDisplay'][] = 'CentralAuthHooks::onBeforePageDisplay';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiDeleteGlobalAccount::injectTokenFunction';
-$wgHooks['ApiTokensGetTokenTypes'][] = 'ApiSetGlobalAccountStatus::injectTokenFunction';
-$wgHooks['ApiQueryTokensRegisterTypes'][] = 'CentralAuthHooks::onApiQueryTokensRegisterTypes';
-$wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect';
-$wgHooks['LogEventsListGetExtraInputs'][] = 'CentralAuthHooks::onLogEventsListGetExtraInputs';
-$wgHooks['SpecialLogAddLogSearchRelations'][] = 'CentralAuthHooks::onSpecialLogAddLogSearchRelations';
-$wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
-$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
-$wgHooks['SpecialPage_initList'][] = 'CentralAuthHooks::onSpecialPage_initList';
-$wgHooks['ResourceLoaderForeignApiModules'][] = 'CentralAuthHooks::onResourceLoaderForeignApiModules';
-$wgHooks['ResourceLoaderTestModules'][] = 'CentralAuthHooks::onResourceLoaderTestModules';
-$wgHooks['PasswordPoliciesForUser'][] = 'CentralAuthHooks::onPasswordPoliciesForUser';
-$wgHooks['LoadExtensionSchemaUpdates'][] = 'CentralAuthHooks::onLoadExtensionSchemaUpdates';
-
-// For interaction with the Special:Renameuser extension
-$wgHooks['RenameUserWarning'][] = 'CentralAuthHooks::onRenameUserWarning';
-$wgHooks['RenameUserPreRename'][] = 'CentralAuthHooks::onRenameUserPreRename';
-$wgHooks['RenameUserComplete'][] = 'CentralAuthHooks::onRenameUserComplete';
-
-// For interaction with the Special:AbuseFilter extension
-$wgHooks['AbuseFilter-computeVariable'][] = 'CentralAuthHooks::abuseFilterComputeVariable';
-$wgHooks['AbuseFilter-generateUserVars'][] = 'CentralAuthHooks::abuseFilterGenerateUserVars';
-$wgHooks['AbuseFilter-builder'][] = 'CentralAuthHooks::abuseFilterBuilder';
-
-// For SecurePoll
-$wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUserParams';
-
-// For GlobalCssJs
-$wgHooks['LoadGlobalCssJs'][] = 'CentralAuthHooks::onLoadGlobalCssJs';
-
-// For UserMerge
-$wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
-
-// SessionManager
-
-// CentralAuthSessionProvider is supposed to replace core
-// CookieSessionProvider, so do that.
-if ( isset( $wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider'] ) ) {
-	$wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider']['class']
-		= 'CentralAuthSessionProvider';
-} else {
-	$wgSessionProviders['CentralAuthSessionProvider'] = array(
-		'class' => 'CentralAuthSessionProvider',
-		'args' => array( array(
-			'priority' => 50,
-		) ),
-	);
-}
-$wgSessionProviders['CentralAuthTokenSessionProvider'] = array(
-	'class' => 'CentralAuthTokenSessionProvider',
-	'args' => array(),
-);
-
-$wgHooks['SessionCheckInfo'][] = 'CentralAuthHooks::onSessionCheckInfo';
-
-$wgAvailableRights[] = 'centralauth-merge';
-$wgAvailableRights[] = 'centralauth-unmerge';
-$wgAvailableRights[] = 'centralauth-lock';
-$wgAvailableRights[] = 'centralauth-oversight';
-$wgAvailableRights[] = 'globalgrouppermissions';
-$wgAvailableRights[] = 'globalgroupmembership';
-$wgAvailableRights[] = 'centralauth-rename';
-$wgAvailableRights[] = 'centralauth-usermerge';
-
-$wgGroupPermissions['steward']['centralauth-unmerge'] = true;
-$wgGroupPermissions['steward']['centralauth-lock'] = true;
-$wgGroupPermissions['steward']['centralauth-oversight'] = true;
-$wgGroupPermissions['*']['centralauth-merge'] = true;
-
-$wgSpecialPages['CentralAuth'] = 'SpecialCentralAuth';
-$wgSpecialPages['CentralLogin'] = 'SpecialCentralLogin';
-$wgSpecialPages['CentralAutoLogin'] = 'SpecialCentralAutoLogin';
-$wgSpecialPages['MergeAccount'] = 'SpecialMergeAccount';
-$wgSpecialPages['GlobalGroupMembership'] = 'SpecialGlobalGroupMembership';
-$wgSpecialPages['GlobalGroupPermissions'] = 'SpecialGlobalGroupPermissions';
-$wgSpecialPages['WikiSets'] = 'SpecialWikiSets';
-$wgSpecialPages['GlobalUsers'] = 'SpecialGlobalUsers';
-$wgSpecialPages['MultiLock'] = 'SpecialMultiLock';
-$wgSpecialPages['GlobalRenameUser'] = 'SpecialGlobalRenameUser';
-$wgSpecialPages['GlobalRenameProgress'] = 'SpecialGlobalRenameProgress';
-$wgSpecialPages['GlobalUserMerge'] = 'SpecialGlobalUserMerge';
-$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
-
-$wgAPIModules['deleteglobalaccount'] = 'ApiDeleteGlobalAccount';
-$wgAPIModules['setglobalaccountstatus'] = 'ApiSetGlobalAccountStatus';
-$wgAPIModules['centralauthtoken'] = 'ApiCentralAuthToken';
-$wgAPIModules['globaluserrights'] = 'ApiGlobalUserRights';
-
-// API Query-Modules
-$wgAPIMetaModules['globaluserinfo'] = 'ApiQueryGlobalUserInfo';
-$wgAPIListModules['globalgroups'] = 'ApiQueryGlobalGroups';
-$wgAPIListModules['wikisets'] = 'ApiQueryWikiSets';
-$wgAPIListModules['globalallusers'] = 'ApiQueryGlobalAllUsers';
-
-$wgLogTypes[]                      = 'globalauth';
-$wgLogNames['globalauth']          = 'centralauth-log-name';
-$wgLogHeaders['globalauth']        = 'centralauth-log-header';
-$wgLogActions['globalauth/delete'] = 'centralauth-log-entry-delete';
-$wgLogActions['globalauth/lock']   = 'centralauth-log-entry-lock';
-$wgLogActions['globalauth/unlock'] = 'centralauth-log-entry-unlock';
-$wgLogActions['globalauth/hide']   = 'centralauth-log-entry-hide';
-$wgLogActions['globalauth/unhide'] = 'centralauth-log-entry-unhide';
-$wgLogActions['globalauth/lockandhid'] = 'centralauth-log-entry-lockandhide';
-$wgLogActions['globalauth/setstatus'] = 'centralauth-log-entry-chgstatus';
-$wgLogActions['suppress/setstatus'] = 'centralauth-log-entry-chgstatus';
-$wgLogActions['suppress/cadelete'] = 'centralauth-log-entry-delete';
-
-$wgLogTypes[]                          = 'gblrights';
-$wgLogTypes[]                          = 'gblrename';
-$wgLogNames['gblrights']               = 'centralauth-rightslog-name';
-$wgLogHeaders['gblrights']             = 'centralauth-rightslog-header';
-$wgLogActions['gblrights/usergroups']  = 'centralauth-rightslog-entry-usergroups';
-$wgLogActions['gblrights/groupperms']  = 'centralauth-rightslog-entry-groupperms';
-$wgLogActions['gblrights/groupprms2']  = 'centralauth-rightslog-entry-groupperms2';
-$wgLogActions['gblrights/groupprms3']  = 'centralauth-rightslog-entry-groupperms3';
-$wgLogActionsHandlers['gblrights/grouprename'] = 'CentralAuthHooks::onHandleGrouprenameLogEntry';
-$wgLogActionsHandlers['gblrename/rename'] = 'GlobalRenameLogFormatter';
-$wgLogActionsHandlers['gblrename/promote'] = 'GlobalRenameLogFormatter';
-$wgLogActionsHandlers['gblrename/merge'] = 'GlobalUserMergeLogFormatter';
-
-foreach ( array( 'newset', 'setrename', 'setnewtype', 'setchange', 'deleteset' ) as $type ) {
-	$wgLogActionsHandlers["gblrights/{$type}"] = 'CentralAuthHooks::onHandleWikiSetLogEntry';
-}
-
-$commonModuleInfo = array(
-	'localBasePath' => __DIR__ . '/modules',
-	'remoteExtPath' => 'CentralAuth/modules',
-);
-
-$wgResourceModules['ext.centralauth'] = array(
-	'scripts' => 'ext.centralauth.js',
-	'styles' => 'ext.centralauth.css',
-	'dependencies' => array(
-		'mediawiki.util',
-		'jquery.spinner'
-	),
-	'messages' => array(
-		'centralauth-merge-method-primary',
-		'centralauth-merge-method-primary-desc',
-		'centralauth-merge-method-new',
-		'centralauth-merge-method-new-desc',
-		'centralauth-merge-method-empty',
-		'centralauth-merge-method-empty-desc',
-		'centralauth-merge-method-password',
-		'centralauth-merge-method-password-desc',
-		'centralauth-merge-method-mail',
-		'centralauth-merge-method-mail-desc',
-		'centralauth-merge-method-admin',
-		'centralauth-merge-method-admin-desc',
-		'centralauth-merge-method-login',
-		'centralauth-merge-method-login-desc',
-		'centralauth-admin-delete-confirm',
-		'centralauth-completelogin-back',
-	),
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.centralautologin'] = array(
-	'scripts' => 'ext.centralauth.centralautologin.js',
-	'styles' => 'ext.centralauth.centralautologin.css',
-	'position' => 'top',
-	'targets' => array( 'mobile', 'desktop' ),
-	'dependencies' => array(
-		'mediawiki.notify',
-		'mediawiki.jqueryMsg',
-	),
-) + $commonModuleInfo;
-$wgResourceModules['ext.centralauth.centralautologin.clearcookie'] = array(
-	'scripts' => 'ext.centralauth.centralautologin.clearcookie.js',
-	'position' => 'top',
-	'targets' => array( 'mobile', 'desktop' ),
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.noflash'] = array(
-	'position' => 'top',
-	'styles' => 'ext.centralauth.noflash.css',
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.globaluserautocomplete'] = array(
-	'scripts' => 'ext.centralauth.globaluserautocomplete.js',
-	'dependencies' => array(
-		'jquery.suggestions',
-		'mediawiki.api'
-	)
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.globalusers'] = array(
-	'position' => 'top',
-	'styles' => 'ext.centralauth.globalusers.css',
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.globalgrouppermissions'] = array(
-	'position' => 'top',
-	'styles' => 'ext.centralauth.globalgrouppermissions.css',
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.globalrenameuser'] = array(
-	'scripts' => 'ext.centralauth.globalrenameuser.js',
-	'dependencies' => array(
-		'mediawiki.util'
-	),
-	'messages' => array(
-		'centralauth-rename-confirm',
-		'centralauth-usermerge-confirm',
-	)
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.globalrenameuser.styles'] = array(
-	'styles' => 'ext.centralauth.globalrenameuser.css',
-) + $commonModuleInfo;
-
-$wgResourceModules['ext.centralauth.ForeignApi'] = array(
-	'scripts' => 'ext.centralauth.ForeignApi.js',
-	'dependencies' => array(
-		'mediawiki.ForeignApi.core',
-	),
-	'targets' => array( 'desktop', 'mobile' ),
-) + $commonModuleInfo;
-
-$wgCentralIdLookupProviders['CentralAuth'] = array(
-	'class' => 'CentralAuthIdLookup',
-);
-
-// Assume they want CentralAuth as the default central ID provider, unless
-// already configured otherwise.
-if ( $wgCentralIdLookupProvider === 'local' ) {
-	$wgCentralIdLookupProvider = 'CentralAuth';
-}
-
-// Finish configuration after other extensions and settings are loaded.
-$wgExtensionFunctions[] = 'CentralAuthHooks::onRunExtensionFunctions';
+$wgOverrideCentralIdLookupProvider = true;

@@ -1,6 +1,43 @@
 <?php
 
 class CentralAuthHooks {
+
+	/**
+	 * Called right after configuration variables have been set.
+	 */
+	public static function onRegistration() {
+		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase, $wgDBname,
+			$wgHooks, $wgSpecialPages, $wgSessionProviders,
+			$wgCentralIdLookupProvider, $wgOverrideCentralIdLookupProvider,
+			$wgCentralAuthCheckSULMigration;
+
+		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
+		if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+			$wgCentralAuthDatabase = $wgDBname;
+		}
+
+		// CentralAuthSessionProvider is supposed to replace core
+		// CookieSessionProvider, so remove the latter if both are configured
+		if ( isset( $wgSessionProviders[MediaWiki\Session\CookieSessionProvider::class] ) &&
+			isset( $wgSessionProviders[CentralAuthSessionProvider::class] )
+		) {
+			unset( $wgSessionProviders[MediaWiki\Session\CookieSessionProvider::class] );
+		}
+
+		// Assume they want CentralAuth as the default central ID provider, unless
+		// already configured otherwise.
+		if ( $wgCentralIdLookupProvider === 'local' && $wgOverrideCentralIdLookupProvider ) {
+			$wgCentralIdLookupProvider = 'CentralAuth';
+		}
+
+		if ( $wgCentralAuthCheckSULMigration ) {
+			// Install hidden special page for renamed users
+			$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
+			$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
+			$wgHooks['LoginUserMigrated'][] = 'CentralAuthHooks::onLoginUserMigrated';
+		}
+	}
+
 	/**
 	 * Callback to register with $wgExtensionFunctions to complete configuration
 	 * after other initial configuration has completed. This can be used to
@@ -103,17 +140,6 @@ class CentralAuthHooks {
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 			);
-		}
-
-		if ( $wgCentralAuthCheckSULMigration ) {
-			// Install hidden special page for renamed users
-			$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
-			$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
-		}
-
-		if ( $wgCentralAuthCheckSULMigration ) {
-			$wgHooks['LoginUserMigrated'][] =
-				'CentralAuthHooks::onLoginUserMigrated';
 		}
 	}
 
