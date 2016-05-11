@@ -2,7 +2,7 @@
 
 class SpecialCentralLogin extends UnlistedSpecialPage {
 
-	/** @var MediaWiki\\Session\\Session|null */
+	/** @var MediaWiki\\Session\\Session */
 	protected $session = null;
 
 	function __construct() {
@@ -30,17 +30,15 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getOutput()->disallowUserJs(); // just in case...
 
 		// Check session, if possible
-		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
-			$session = $request->getSession();
-			if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
-				$this->showError(
-					'centralauth-error-wrongprovider',
-					$session->getProvider()->describe( $this->getLanguage() )
-				);
-				return;
-			}
-			$this->session = $session;
+		$session = $request->getSession();
+		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
+			$this->showError(
+				'centralauth-error-wrongprovider',
+				$session->getProvider()->describe( $this->getLanguage() )
+			);
+			return;
 		}
+		$this->session = $session;
 
 		$token = $this->getRequest()->getVal( 'token' );
 
@@ -114,23 +112,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// Start an unusable placeholder session stub and send a cookie.
 			// The cookie will not be usable until the session is unstubbed.
 			// Note: the "remember me" token must be dealt with later (security).
-			if ( $this->session ) {
-				$delay = $this->session->delaySave();
-				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-				$newSessionId = CentralAuthUtils::setCentralSession( array(
-					'pending_name' => $centralUser->getName(),
-					'pending_guid' => $centralUser->getId()
-				), true, $this->session );
-				$this->session->persist();
-				ScopedCallback::consume( $delay );
-			} else {
-				$newSessionId = CentralAuthSessionCompat::setCentralSession( array(
-					'pending_name' => $centralUser->getName(),
-					'pending_guid' => $centralUser->getId()
-				), true, $secureCookie );
-				CentralAuthSessionCompat::setCookie( 'User', $centralUser->getName(), -1, $secureCookie );
-				CentralAuthSessionCompat::setCookie( 'Token', '', -86400, $secureCookie );
-			}
+			$delay = $this->session->delaySave();
+			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+			$newSessionId = CentralAuthUtils::setCentralSession( array(
+				'pending_name' => $centralUser->getName(),
+				'pending_guid' => $centralUser->getId()
+			), true, $this->session );
+			$this->session->persist();
+			ScopedCallback::consume( $delay );
 		} else {
 			// Since the full central session already exists, reuse it.
 			$newSessionId = $session['sessionId'];
@@ -217,28 +206,19 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$cache->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
-		if ( $this->session ) {
-			$delay = $this->session->delaySave();
-			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			$this->session->setRememberUser( (bool)$attempt['remember'] );
-			if ( $attempt['stickHTTPS'] !== null ) {
-				$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
-			}
-			$newSessionId = CentralAuthUtils::setCentralSession( array(
-				'finalProto' => $attempt['finalProto'],
-				'secureCookies' => $attempt['stickHTTPS'],
-				'remember' => $attempt['remember'],
-			), $info['sessionId'], $this->session );
-			$this->session->persist();
-			ScopedCallback::consume( $delay );
-		} else {
-			$secureCookie = $attempt['stickHTTPS'];
-			CentralAuthSessionCompat::setGlobalCookies( $centralUser, $attempt['remember'], $info['sessionId'], $secureCookie, array(
-				'finalProto' => $attempt['finalProto'],
-				'secureCookies' => $attempt['stickHTTPS'],
-				'remember' => $attempt['remember'],
-			) );
+		$delay = $this->session->delaySave();
+		$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+		$this->session->setRememberUser( (bool)$attempt['remember'] );
+		if ( $attempt['stickHTTPS'] !== null ) {
+			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
 		}
+		$newSessionId = CentralAuthUtils::setCentralSession( array(
+			'finalProto' => $attempt['finalProto'],
+			'secureCookies' => $attempt['stickHTTPS'],
+			'remember' => $attempt['remember'],
+		), $info['sessionId'], $this->session );
+		$this->session->persist();
+		ScopedCallback::consume( $delay );
 
 		// Remove the "current login attempt" information
 		$request->setSessionData( $skey, null );

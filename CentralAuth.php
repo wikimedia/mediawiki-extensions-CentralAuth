@@ -331,7 +331,6 @@ $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/includes/api/ApiQueryGlo
 $wgAutoloadClasses['ApiGlobalUserRights'] = "$caBase/includes/api/ApiGlobalUserRights.php";
 $wgAutoloadClasses['ApiCentralAuthToken'] = "$caBase/includes/api/ApiCentralAuthToken.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/includes/CentralAuthReadOnlyError.php";
-$wgAutoloadClasses['CentralAuthSessionCompat'] = "$caBase/includes/session/CentralAuthSessionCompat.php";
 $wgAutoloadClasses['CentralAuthSessionProvider'] = "$caBase/includes/session/CentralAuthSessionProvider.php";
 $wgAutoloadClasses['CentralAuthTokenSessionProvider'] = "$caBase/includes/session/CentralAuthTokenSessionProvider.php";
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
@@ -428,58 +427,33 @@ $wgHooks['AbuseFilter-builder'][] = 'CentralAuthHooks::abuseFilterBuilder';
 // For SecurePoll
 $wgHooks['SecurePoll_GetUserParams'][] = 'CentralAuthHooks::onSecurePoll_GetUserParams';
 
-// For OAuth
-$wgHooks['OAuthGetLocalUserFromCentralId'][] = 'CentralAuthHooks::onOAuthGetLocalUserFromCentralId';
-$wgHooks['OAuthGetCentralIdFromLocalUser'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromLocalUser';
-$wgHooks['OAuthGetCentralIdFromUserName'][] = 'CentralAuthHooks::onOAuthGetCentralIdFromUserName';
-$wgHooks['OAuthGetUserNamesFromCentralIds'][] = 'CentralAuthHooks::onOAuthGetUserNamesFromCentralIds';
-
 // For GlobalCssJs
 $wgHooks['LoadGlobalCssJs'][] = 'CentralAuthHooks::onLoadGlobalCssJs';
-
-// For GlobalUserPage
-$wgHooks['LoadGlobalUserPage'][] = 'CentralAuthHooks::onLoadGlobalUserPage';
 
 // For UserMerge
 $wgHooks['DeleteAccount'][] = 'CentralAuthHooks::onDeleteAccount';
 
 // SessionManager
-if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
-	// CentralAuthSessionProvider is supposed to replace core
-	// CookieSessionProvider, so do that.
-	if ( isset( $wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider'] ) ) {
-		$wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider']['class']
-			= 'CentralAuthSessionProvider';
-	} else {
-		$wgSessionProviders['CentralAuthSessionProvider'] = array(
-			'class' => 'CentralAuthSessionProvider',
-			'args' => array( array(
-				'priority' => 50,
-			) ),
-		);
-	}
-	$wgSessionProviders['CentralAuthTokenSessionProvider'] = array(
-		'class' => 'CentralAuthTokenSessionProvider',
-		'args' => array(),
-	);
 
-	$wgHooks['SessionCheckInfo'][] = 'CentralAuthHooks::onSessionCheckInfo';
+// CentralAuthSessionProvider is supposed to replace core
+// CookieSessionProvider, so do that.
+if ( isset( $wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider'] ) ) {
+	$wgSessionProviders['MediaWiki\\Session\\CookieSessionProvider']['class']
+		= 'CentralAuthSessionProvider';
 } else {
-	$wgHooks['SetupAfterCache'][] = 'CentralAuthSessionCompat::onSetupAfterCache';
-	$wgHooks['AuthPluginSetup'][] = 'CentralAuthSessionCompat::onAuthPluginSetup';
-	$wgHooks['UserLoadFromSession'][] = 'CentralAuthSessionCompat::onUserLoadFromSession';
-	$wgHooks['UserSetCookies'][] = 'CentralAuthSessionCompat::onUserSetCookies';
-	$wgHooks['UserLoadDefaults'][] = 'CentralAuthSessionCompat::onUserLoadDefaults';
-	$wgHooks['GetCacheVaryCookies'][] = 'CentralAuthSessionCompat::onGetCacheVaryCookies';
-	$wgHooks['ApiTokensGetTokenTypes'][] = 'CentralAuthSessionCompat::onApiTokensGetTokenTypes';
-	$wgHooks['APIGetAllowedParams'][] = 'CentralAuthSessionCompat::onAPIGetAllowedParams';
-	$wgHooks['APIGetParamDescription'][] = 'CentralAuthSessionCompat::onAPIGetParamDescription';
-	$wgHooks['ApiCheckCanExecute'][] = 'CentralAuthSessionCompat::onApiCheckCanExecute';
-	$wgHooks['UserLoginComplete'][] = 'CentralAuthSessionCompat::onUserLoginComplete';
-	$wgHooks['UserLogout'][] = 'CentralAuthSessionCompat::onUserLogout';
-
-	$wgAvailableRights[] = 'centralauth-autoaccount';
+	$wgSessionProviders['CentralAuthSessionProvider'] = array(
+		'class' => 'CentralAuthSessionProvider',
+		'args' => array( array(
+			'priority' => 50,
+		) ),
+	);
 }
+$wgSessionProviders['CentralAuthTokenSessionProvider'] = array(
+	'class' => 'CentralAuthTokenSessionProvider',
+	'args' => array(),
+);
+
+$wgHooks['SessionCheckInfo'][] = 'CentralAuthHooks::onSessionCheckInfo';
 
 $wgAvailableRights[] = 'centralauth-merge';
 $wgAvailableRights[] = 'centralauth-unmerge';
@@ -644,16 +618,14 @@ $wgResourceModules['ext.centralauth.ForeignApi'] = array(
 	'targets' => array( 'desktop', 'mobile' ),
 ) + $commonModuleInfo;
 
-if ( isset( $wgCentralIdLookupProviders ) ) {
-	$wgCentralIdLookupProviders['CentralAuth'] = array(
-		'class' => 'CentralAuthIdLookup',
-	);
+$wgCentralIdLookupProviders['CentralAuth'] = array(
+	'class' => 'CentralAuthIdLookup',
+);
 
-	// Assume they want CentralAuth as the default central ID provider, unless
-	// already configured otherwise.
-	if ( $wgCentralIdLookupProvider === 'local' ) {
-		$wgCentralIdLookupProvider = 'CentralAuth';
-	}
+// Assume they want CentralAuth as the default central ID provider, unless
+// already configured otherwise.
+if ( $wgCentralIdLookupProvider === 'local' ) {
+	$wgCentralIdLookupProvider = 'CentralAuth';
 }
 
 // Finish configuration after other extensions and settings are loaded.

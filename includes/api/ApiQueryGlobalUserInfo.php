@@ -102,11 +102,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				}
 				$result->addValue( array( 'query', $this->getModuleName(), 'merged' ), null, $a );
 			}
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				$result->addIndexedTagName( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
-			} else {
-				$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
-			}
+			$result->addIndexedTagName( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
 		}
 		if ( $userExists && isset( $prop['editcount'] ) ) {
 			$editcount = 0;
@@ -131,11 +127,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				}
 				$result->addValue( array( 'query', $this->getModuleName(), 'unattached' ), null, $a );
 			}
-			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				$result->addIndexedTagName( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
-			} else {
-				$result->setIndexedTagName_internal( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
-			}
+			$result->addIndexedTagName( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
 		}
 	}
 
@@ -162,40 +154,6 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				),
 				ApiBase::PARAM_ISMULTI => true
 			)
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'user' => 'User to get information about. Defaults to the current user',
-			'prop' => array(
-				'Which properties to get:',
-				'  groups     - Get a list of global groups this user belongs to',
-				'  rights     - Get a list of global rights this user has',
-				'  merged     - Get a list of merged accounts',
-				'  unattached - Get a list of unattached accounts',
-				'  editcount  - Get users global editcount'
-			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Show information about a global user.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&meta=globaluserinfo',
-			'api.php?action=query&meta=globaluserinfo&guiuser=Catrope&guiprop=groups|merged|unattached'
 		);
 	}
 

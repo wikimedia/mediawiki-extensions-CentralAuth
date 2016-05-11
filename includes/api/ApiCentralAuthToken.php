@@ -46,18 +46,11 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieUsage( 'Anonymous users cannot obtain a centralauthtoken', 'notloggedin' );
 		}
 
-		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
-			$session = MediaWiki\Session\SessionManager::getGlobalSession();
-			if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
-				$this->dieUsage( 'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession' );
-			}
-			$id = $session->getId();
-		} else {
-			if ( CentralAuthSessionCompat::hasApiToken() ) {
-				$this->dieUsage( 'Cannot obtain a centralauthtoken when using centralauthtoken', 'norecursion' );
-			}
-			$id = session_id();
+		$session = MediaWiki\Session\SessionManager::getGlobalSession();
+		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
+			$this->dieUsage( 'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession' );
 		}
+		$id = $session->getId();
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
@@ -82,22 +75,6 @@ class ApiCentralAuthToken extends ApiBase {
 
 	public function getAllowedParams() {
 		return array(
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Fetch a centralauthtoken for making an authenticated request to an attached wiki.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=centralauthtoken',
 		);
 	}
 

@@ -69,37 +69,6 @@ class ApiDeleteGlobalAccount extends ApiBase {
 			'reason' => array(
 				ApiBase::PARAM_TYPE => 'string',
 			),
-			'token' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
-			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'user' => 'User to delete.',
-			'reason' => 'Reason for deleting the user.',
-			'token' => 'Your token (obtained from action=tokens&type=deleteglobalaccount).'
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Delete a global user.';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=deleteglobalaccount&user=Name&reason=Because+I+can',
 		);
 	}
 
@@ -122,10 +91,6 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	}
 
 	public function needsToken() {
-		return 'deleteglobalaccount';
-	}
-
-	public function getTokenSalt() {
 		return 'deleteglobalaccount';
 	}
 

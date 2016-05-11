@@ -112,45 +112,10 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			'reason' => array(
 				ApiBase::PARAM_TYPE => 'string'
 			),
-			'token' => array(
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
-			),
 			'statecheck' => array(
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false
 			),
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'user' => 'User to change the status of.',
-			'locked' => 'Change whether this user is locked or not.',
-			'hidden' => 'Change whether this user is not hidden, hidden from lists, or suppressed.',
-			'reason' => "Reason for changing the user's status.",
-			'token' => 'Your token (obtained from action=tokens&type=setglobalaccountstatus).',
-			'statecheck' => 'Optional MD5 of the expected current <username>:<hidden>:<locked>, to detect edit conflicts. Set <locked> to 1 for locked, 0 for unlocked.'
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return "Set a global user's status.";
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=setglobalaccountstatus&user=Spammer&locked=lock&hidden=&reason=Spam',
-			'api.php?action=setglobalaccountstatus&user=Jimbo_Wales&locked=unlock&hidden=suppressed&reason=I%20can',
 		);
 	}
 
@@ -175,10 +140,6 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	}
 
 	public function needsToken() {
-		return 'setglobalaccountstatus';
-	}
-
-	public function getTokenSalt() {
 		return 'setglobalaccountstatus';
 	}
 
