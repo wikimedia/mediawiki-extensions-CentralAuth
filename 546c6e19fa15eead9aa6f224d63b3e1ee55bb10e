@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_99a1e938",
+        "filename": "includes/session/CentralAuthTokenSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-11T13:44:20Z",
+      "side": 1,
+      "message": "Maybe check if CentralAuthSessionProvider is in use, and avoid resetting twice in that case?",
+      "revId": "546c6e19fa15eead9aa6f224d63b3e1ee55bb10e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
