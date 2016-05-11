@@ -22,10 +22,6 @@ class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
 
 		parent::setUp();
 
-		if ( !class_exists( 'CentralIdLookup' ) ) {
-			$this->markTestSkipped( 'CentralIdLookup does not exist' );
-		}
-
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',

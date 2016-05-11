@@ -2493,12 +2493,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
 
-		if ( class_exists( 'MediaWiki\\Session\\SessionManager' ) ) {
-			$provider = MediaWiki\Session\SessionManager::singleton()
-				->getProvider( 'CentralAuthSessionProvider' );
-			if ( $provider ) {
-				return $provider->getCentralCookieDomain();
-			}
+		$provider = MediaWiki\Session\SessionManager::singleton()
+			->getProvider( 'CentralAuthSessionProvider' );
+		if ( $provider ) {
+			return $provider->getCentralCookieDomain();
 		}
 
 		return $wgCentralAuthCookieDomain;

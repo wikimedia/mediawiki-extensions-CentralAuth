@@ -106,40 +106,6 @@ class ApiQueryWikiSets extends ApiQueryBase {
 	}
 
 	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getParamDescription() {
-		return array(
-			'from' => 'The name of the wiki set to start from',
-			'prop' => array(
-				'What pieces of information to include.',
-				' type             - Opt-in based (includes only specified wikis) or Opt-out based (includes all wikis except specified)',
-				' wikisincluded    - The wikis that are included in this wiki set',
-				' wikisnotincluded - The wikis that are not included in this wiki set',
-				),
-			'limit' => 'How many wiki sets to return',
-			'orderbyname' => 'Order results by name'
-		);
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getDescription() {
-		return 'Enumerate all wiki sets';
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	public function getExamples() {
-		return array(
-			'api.php?action=query&list=wikisets',
-			'api.php?action=query&list=wikisets&wsprop=type&wslimit=200'
-		);
-	}
-
-	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
