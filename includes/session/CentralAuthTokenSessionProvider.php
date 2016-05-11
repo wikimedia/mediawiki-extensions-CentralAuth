@@ -124,6 +124,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 			'provider' => $this,
 			'id' => $this->hashToSessionId( join( "\n", $data ) ),
 			'persisted' => true,
+			'forceUse' => true,
 		);
 
 		// Delete the token once it's actually used
