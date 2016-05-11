@@ -16,6 +16,24 @@
       "revId": "546c6e19fa15eead9aa6f224d63b3e1ee55bb10e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_fcc0d356",
+        "filename": "includes/session/CentralAuthTokenSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-11T14:49:37Z",
+      "side": 1,
+      "message": "I thought about that, but I\u0027m not sure the added complexity is worth the savings since this only happens on rare events like account creation, password change, and rename.",
+      "parentUuid": "ae564743_99a1e938",
+      "revId": "546c6e19fa15eead9aa6f224d63b3e1ee55bb10e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
