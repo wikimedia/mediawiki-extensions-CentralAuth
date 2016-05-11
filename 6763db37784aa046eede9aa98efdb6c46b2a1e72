@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_0884615d",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-11T20:53:18Z",
+      "side": 1,
+      "message": "Is it OK to leave to call wfWarn in production? Other extensions I looked at have this part commented out.",
+      "revId": "6763db37784aa046eede9aa98efdb6c46b2a1e72",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
