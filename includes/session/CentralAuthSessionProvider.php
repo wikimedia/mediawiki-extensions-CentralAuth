@@ -320,9 +320,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			}
 			$centralSessionId = CentralAuthUtils::setCentralSession( $data, false, $s );
 
-			$extendedCookies = $this->config->get( 'ExtendedLoginCookies' );
-			$extendedExpiry = $this->config->get( 'ExtendedLoginCookieExpiration' );
-
 			$cookies = array(
 				'User' => (string)$centralUser->getName(),
 				'Token' => $remember ? (string)$centralUser->getAuthToken() : false,
@@ -331,12 +328,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				if ( $value === false ) {
 					$response->clearCookie( $name, $options );
 				} else {
-					if ( $extendedExpiry !== null && in_array( $name, $extendedCookies ) ) {
-						$expiry = time() + (int)$extendedExpiry;
-					} else {
-						$expiry = 0; // Default cookie expiry
-					}
-					$response->setCookie( $name, (string)$value, $expiry, $options );
+					$expirationDuration = static::getLoginCookieExpirationInternal( $name, $this );
+					$expiration = $expirationDuration ? $expirationDuration + time() : null;
+					$response->setCookie( $name, (string)$value, $expiration, $options );
 				}
 			}
 
