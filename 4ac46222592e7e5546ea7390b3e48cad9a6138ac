@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae564743_58e0e2f6",
+        "filename": "includes/LocalRenameJob/LocalUserMergeJob.php",
+        "patchSetId": 13
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-12T15:41:07Z",
+      "side": 1,
+      "message": "How did I miss that?",
+      "parentUuid": "ae564743_681ebd12",
+      "revId": "4ac46222592e7e5546ea7390b3e48cad9a6138ac",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae564743_881191fe",
         "filename": "maintenance/createLocalAccount.php",
         "patchSetId": 13
