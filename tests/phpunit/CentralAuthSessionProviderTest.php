@@ -29,4 +29,31 @@ class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 			[ [ 'UserName' => '0' ], '0' ],
 		];
 	}
+
+	public function testGetRememberUserDuration() {
+		$config = new HashConfig( [
+			'CookieExpiration' => 100,
+			'ExtendedLoginCookieExpiration' => 200,
+			'ExtendedLoginCookies' => [ 'User', 'UserID', 'Token' ],
+			// these are needed by CookieSessionProvider::getConfig
+			'SessionName' => null,
+			'CookiePrefix' => '',
+			'CookiePath' => '',
+			'CookieDomain' => 'example.com',
+			'CookieSecure' => true,
+			'CookieHttpOnly' => true,
+		] );
+		$provider = new CentralAuthSessionProvider( [ 'priority' => 42 ] );
+		$provider->setConfig( $config );
+
+		$this->assertSame( 200, $provider->getRememberUserDuration() );
+
+		$config->set( 'ExtendedLoginCookies', [ 'UserID', 'Token' ] );
+
+		$this->assertSame( 100, $provider->getRememberUserDuration() );
+
+		$config->set( 'ExtendedLoginCookies', [ 'User', 'Token' ] );
+
+		$this->assertSame( 100, $provider->getRememberUserDuration() );
+	}
 }
