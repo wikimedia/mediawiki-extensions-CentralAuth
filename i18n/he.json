@@ -315,7 +315,6 @@
 	"centralauth-readonly": "מסד נתונים של CentralAuth (חשבונות ממוזגים) נעול",
 	"centralauth-readonlytext": "בסיס הנתונים של CentralAuth (חשבונות ממוזגים) נעול לערכים חדשים ולשינויים אחרים, כנראה לצורך תחזוקה שוטפת, ובסיומה הוא יחזור לפעילות.",
 	"right-globalgroupmembership": "עריכת חברות בקבוצות כלליות",
-	"right-centralauth-autoaccount": "כניסה לחשבון הגלובלי באופן אוטומטי",
 	"right-centralauth-unmerge": "ביטול המיזוג של חשבון כללי",
 	"right-centralauth-lock": "נעילת או שחרור חשבון כללי",
 	"right-centralauth-oversight": "העלמה או הסתרה של חשבון גלובלי",

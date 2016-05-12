@@ -336,7 +336,6 @@
 	"centralauth-readonly": "CentralAuth数据库被锁",
 	"centralauth-readonlytext": "中央认证数据库目前被锁定，所以无法接受新条目和其他修改。它可能正在进行常规的数据库维护，然后将恢复正常。",
 	"right-globalgroupmembership": "编辑成员至全域组",
-	"right-centralauth-autoaccount": "自动使用全域账户登陆",
 	"right-centralauth-unmerge": "取消合并全域帐户",
 	"right-centralauth-lock": "锁定或解锁全域帐户",
 	"right-centralauth-oversight": "禁止或隐藏全域帐户",

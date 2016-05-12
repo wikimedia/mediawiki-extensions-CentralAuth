@@ -327,7 +327,6 @@
 	"centralauth-readonly": "CentralAuth-databasen låst",
 	"centralauth-readonlytext": "CentralAuth-databasen är för närvarande låst för nya poster och andra förändringar, troligen för rutinmässig databasunderhåll, efter vilket det kommer att vara tillbaka till normalt tillstånd.",
 	"right-globalgroupmembership": "Redigera medlemskap i globala grupper",
-	"right-centralauth-autoaccount": "Logga in automatiskt med globalt konto",
 	"right-centralauth-unmerge": "Separera globalt konto",
 	"right-centralauth-lock": "Lås eller lås upp globalt konto",
 	"right-centralauth-oversight": "Censurera eller dölj globalt konto",

@@ -320,7 +320,6 @@
 	"centralauth-readonly": "Die CentralAuth-Datenbank ist gesperrt",
 	"centralauth-readonlytext": "Die CentralAuth-Datenbank ist derzeit für neue Einträge und andere Änderungen gesperrt. Dies ist wahrscheinlich aufgrund routinemäßiger Wartungsarbeiten der Fall, nach deren Abschluss die Datenbank wieder regulär verfügbar sein wird.",
 	"right-globalgroupmembership": "Mitgliedschaft in globalen Gruppen bearbeiten",
-	"right-centralauth-autoaccount": "Automatisch mit dem globalen Benutzerkonto anmelden",
 	"right-centralauth-unmerge": "Zusammenführung des globalen Benutzerkontos aufheben",
 	"right-centralauth-lock": "Globales Benutzerkonto sperren oder freigeben",
 	"right-centralauth-oversight": "Globales Benutzerkonto unterdrücken oder verstecken",

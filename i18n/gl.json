@@ -314,7 +314,6 @@
 	"centralauth-readonly": "A base de datos da autenticación central está pechada",
 	"centralauth-readonlytext": "Nestes intres, a base de datos da autenticación central está pechada a novas entradas e outras modificación, probablemente para realizar algún mantemento rutinario. Unha vez remate o mantemento volverá á normalidade.",
 	"right-globalgroupmembership": "Editar os membros dos grupos globais",
-	"right-centralauth-autoaccount": "Acceder automaticamente coa conta global",
 	"right-centralauth-unmerge": "Anular a fusión dunha conta global",
 	"right-centralauth-lock": "Bloquear ou desbloquear unha conta global",
 	"right-centralauth-oversight": "Suprimir ou agochar unha conta global",

@@ -347,7 +347,6 @@
 	"centralauth-readonly": "Base de données CentralAuth verrouillée",
 	"centralauth-readonlytext": "La base de données CentralAuth est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine d’entretien de la base de données, après quoi tout reviendra à la normale.",
 	"right-globalgroupmembership": "Modifier les appartenances aux groupes globaux",
-	"right-centralauth-autoaccount": "Connecter automatiquement avec un compte global",
 	"right-centralauth-unmerge": "Annuler la fusion du compte global",
 	"right-centralauth-lock": "Bloquer ou débloquer le compte global",
 	"right-centralauth-oversight": "Supprimer ou masquer le compte global",
