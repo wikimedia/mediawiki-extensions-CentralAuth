@@ -320,9 +320,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			}
 			$centralSessionId = CentralAuthUtils::setCentralSession( $data, false, $s );
 
-			$extendedCookies = $this->config->get( 'ExtendedLoginCookies' );
-			$extendedExpiry = $this->config->get( 'ExtendedLoginCookieExpiration' );
-
 			$cookies = array(
 				'User' => (string)$centralUser->getName(),
 				'Token' => $remember ? (string)$centralUser->getAuthToken() : false,
@@ -331,12 +328,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				if ( $value === false ) {
 					$response->clearCookie( $name, $options );
 				} else {
-					if ( $extendedExpiry !== null && in_array( $name, $extendedCookies ) ) {
-						$expiry = time() + (int)$extendedExpiry;
-					} else {
-						$expiry = 0; // Default cookie expiry
-					}
-					$response->setCookie( $name, (string)$value, $expiry, $options );
+					$expirationDuration = $this->getLoginCookieExpiration( $name );
+					$expiration = $expirationDuration ? $expirationDuration + time() : null;
+					$response->setCookie( $name, (string)$value, $expiration, $options );
 				}
 			}
 
@@ -428,7 +422,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			if ( !$sameCookie ) {
 				parent::setForceHTTPSCookie( false, $backend, $request );
 			}
-			$response->setCookie( 'forceHTTPS', 'true', $backend->shouldRememberUser() ? 0 : null,
+			if ( $backend->shouldRememberUser() ) {
+				$expirationDuration = $this->getLoginCookieExpiration( 'forceHTTPS' );
+				$expiration = $expirationDuration ? $expirationDuration + time() : null;
+			} else {
+				$expiration = null;
+			}
+			$response->setCookie( 'forceHTTPS', 'true', $expiration,
 				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
 		} else {
 			if ( !$sameCookie ) {
