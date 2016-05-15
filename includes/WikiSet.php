@@ -13,7 +13,7 @@ class WikiSet {
 	// (That means you Reedy & Siebrand)
 	private $mVersion = self::VERSION;      // Caching purposes
 
-	static $mCacheVars = array(
+	public static $mCacheVars = array(
 		'mId',
 		'mName',
 		'mType',
@@ -38,42 +38,58 @@ class WikiSet {
 	 * @param $k string
 	 * @return string
 	 */
-	protected static function memcKey( $k ) { return "wikiset:{$k}"; }
+	protected static function memcKey( $k ) {
+		return "wikiset:{$k}";
+	}
 
 	/**
 	 * @return int
 	 */
-	public function getId() { return $this->mId; }
+	public function getId() {
+		return $this->mId;
+	}
 
 	/**
 	 * @return bool
 	 */
-	public function exists() { return (bool)$this->getID(); }
+	public function exists() {
+		return (bool)$this->getID();
+	}
 
 	/**
 	 * @return string
 	 */
-	public function getName() { return $this->mName; }
+	public function getName() {
+		return $this->mName;
+	}
 
 	/**
 	 * @param $n
 	 */
-	public function setName( $n ) { $this->setDbField( 'ws_name', $n ); }
+	public function setName( $n ) {
+		$this->setDbField( 'ws_name', $n );
+	}
 
 	/**
 	 * @return array
 	 */
-	public function getWikisRaw() { return $this->mWikis; }
+	public function getWikisRaw() {
+		return $this->mWikis;
+	}
 
 	/**
 	 * @param $w
 	 */
-	public function setWikisRaw( $w ) { $this->setDbField( 'ws_wikis', $w ); }
+	public function setWikisRaw( $w ) {
+		$this->setDbField( 'ws_wikis', $w );
+	}
 
 	/**
 	 * @return string
 	 */
-	public function getType() { return $this->mType; }
+	public function getType() {
+		return $this->mType;
+	}
 
 	/**
 	 * @param $t
@@ -298,7 +314,9 @@ class WikiSet {
 	 */
 	public static function getWikiSetForGroup( $group ) {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$res = $dbr->selectRow( 'global_group_restrictions', '*', array( 'ggr_group' => $group ), __METHOD__ );
+		$res = $dbr->selectRow(
+			'global_group_restrictions', '*', array( 'ggr_group' => $group ), __METHOD__
+		);
 		return $res ? $res->ggr_set : 0;
 	}
 

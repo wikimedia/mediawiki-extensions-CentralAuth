@@ -58,7 +58,10 @@ class LocalPageMoveJob extends Job {
 		$mp = new MovePage( $oldPage, $newPage );
 		$valid = $mp->isValidMove();
 		if ( !$valid->isOK() ) {
-			wfDebugLog( 'CentralAuthRename', "Invalid page move: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
+			wfDebugLog(
+				'CentralAuthRename',
+				"Invalid page move: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}"
+			);
 			return;
 		}
 
@@ -69,7 +72,10 @@ class LocalPageMoveJob extends Job {
 
 		$status = $mp->move( $this->user, $msg, !$this->params['suppressredirects'] );
 		if ( !$status->isOK() ) {
-			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}" );
+			wfDebugLog(
+				'CentralAuthRename',
+				"Page move failed: {$oldPage->getPrefixedText()} -> {$newPage->getPrefixedText()}"
+			);
 		}
 	}
 }

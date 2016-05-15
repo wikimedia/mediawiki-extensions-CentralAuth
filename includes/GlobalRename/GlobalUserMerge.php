@@ -90,7 +90,7 @@ class GlobalUserMerge {
 	}
 
 	private function clearCaches() {
-		foreach( $this->oldCAUsers as $oldCAUser ) {
+		foreach ( $this->oldCAUsers as $oldCAUser ) {
 			$oldCAUser->quickInvalidateCache();
 		}
 		$this->newCAUser->quickInvalidateCache();
@@ -98,7 +98,7 @@ class GlobalUserMerge {
 
 	public function merge( $reason ) {
 		$wikis = array();
-		foreach( $this->oldCAUsers as $oldCAUser ) {
+		foreach ( $this->oldCAUsers as $oldCAUser ) {
 			$oldWikis = $oldCAUser->listAttached();
 			foreach ( $oldWikis as $wiki ) {
 				$wikis[$wiki][] = $oldCAUser->getName();

@@ -4,7 +4,7 @@ class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider provideSuggestLoginUsername
 	 */
-	public function testSuggestLoginUsername( $cookies, $expectedUsername) {
+	public function testSuggestLoginUsername( $cookies, $expectedUsername ) {
 		$provider = new CentralAuthSessionProvider( [
 			'priority' => 42,
 			'cookieOptions' => [ 'prefix' => '' ],

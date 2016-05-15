@@ -6,7 +6,7 @@
  */
 abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 
-	public static $centralauthTables = array(
+	public static $centralauthTables = [
 		'global_group_permissions',
 		'global_group_restrictions',
 		'global_user_groups',
@@ -18,7 +18,7 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 		'renameuser_status',
 		'renameuser_queue',
 		'users_to_rename',
-	);
+	];
 
 	// Keep track of the original db name
 	protected static $centralAuthDatabase = null;
@@ -64,7 +64,7 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 		parent::tearDownAfterClass();
 	}
 
-	public function __construct( $name = null, array $data = array(), $dataName = '' ) {
+	public function __construct( $name = null, array $data = [], $dataName = '' ) {
 		$this->tablesUsed = array_merge( $this->tablesUsed, self::$centralauthTables );
 		parent::__construct( $name, $data, $dataName );
 	}
