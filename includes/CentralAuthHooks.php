@@ -159,7 +159,7 @@ class CentralAuthHooks {
 			$link = $params[0];
 		}
 
-		switch( $action ) {
+		switch ( $action ) {
 			case 'newset':
 				$args = array( WikiSet::formatType( $params[1] ), $params[2] );
 				break;
@@ -173,7 +173,7 @@ class CentralAuthHooks {
 				$args = array( $params[1]
 					? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() );
 				break;
-			default: //'deleteset'
+			default: // 'deleteset'
 				$args = array();
 		}
 
@@ -182,7 +182,7 @@ class CentralAuthHooks {
 		// centralauth-rightslog-entry-setnewtype, centralauth-rightslog-entry-setchange,
 		// centralauth-rightslog-entry-deleteset
 		$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
-		if( $skin ) {
+		if ( $skin ) {
 			return $msg->text();
 		} else {
 			return $msg->inContentLanguage()->text();
@@ -475,7 +475,7 @@ class CentralAuthHooks {
 		}
 
 		$firstUser = $users[0];
-		if( !$firstUser->getID() ) {
+		if ( !$firstUser->getID() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
 				$abortError = array( 'centralauth-account-exists-reset', $centralUser->getName() );
@@ -1065,7 +1065,7 @@ class CentralAuthHooks {
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 
-		if ( 	$wgDisableUnmergedEditing
+		if ( $wgDisableUnmergedEditing
 			&& ( $action === 'edit' || $action === 'delete' )
 			&& !$centralUser->exists()
 			&& !$title->inNamespaces( NS_USER_TALK, NS_PROJECT_TALK )
@@ -1520,9 +1520,7 @@ class CentralAuthHooks {
 				// we'll catch them next login if their password isn't valid.
 				// And T119736 - if localuser table gets out of sync, don't
 				// deny logins
-				if ( substr( $e->getMessage(), 0 , 34 )
-					=== 'Could not find local user data for'
-				) {
+				if ( substr( $e->getMessage(), 0, 34 ) === 'Could not find local user data for' ) {
 					wfDebugLog(
 						'CentralAuth',
 						sprintf( 'Bug T104615 hit for %s@%s',
@@ -1571,7 +1569,7 @@ class CentralAuthHooks {
 	 * Create databases for WMF Jenkins unit tests
 	 * @param DatabaseUpdater $updater
 	 */
-	static public function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		global $wgWikimediaJenkinsCI;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {

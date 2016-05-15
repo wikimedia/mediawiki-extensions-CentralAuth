@@ -441,7 +441,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
 		if ( $loggedOut + 86400 > time() &&
-			$loggedOut !== (int)$this->getCookie( $request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
+			$loggedOut !== (int)$this->getCookie(
+				$request, 'LoggedOut', $this->centralCookieOptions['prefix']
+			)
 		) {
 			CentralAuthUtils::setP3P( $request );
 			$request->response()->setCookie( 'LoggedOut', $loggedOut, $loggedOut + 86400,

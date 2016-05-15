@@ -333,9 +333,9 @@ class SpecialMultiLock extends SpecialPage {
 		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
 		$accountAge = time() - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 		$guRegister = $sca->prettyTimespan( $accountAge );
-		$guLocked = $this->msg('centralauth-admin-status-locked-no')->escaped();
+		$guLocked = $this->msg( 'centralauth-admin-status-locked-no' )->escaped();
 		if ( $globalUser->isLocked() ) {
-			$guLocked = $this->msg('centralauth-admin-status-locked-yes')->escaped();
+			$guLocked = $this->msg( 'centralauth-admin-status-locked-yes' )->escaped();
 		}
 		$guEditCount = htmlspecialchars( $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() ) );
 		$guAttachedLocalAccounts = htmlspecialchars( $this->getLanguage()->formatNum( count( $globalUser->listAttached() ) ) );
@@ -344,7 +344,7 @@ class SpecialMultiLock extends SpecialPage {
 				'wpActionTarget['.$guName.']',
 				$guName,
 				'checkbox',
-				array('checked' => 'checked')
+				array( 'checked' => 'checked' )
 			)
 		);
 		$rowHtml .= Html::rawElement( 'td', array(), $guLink );

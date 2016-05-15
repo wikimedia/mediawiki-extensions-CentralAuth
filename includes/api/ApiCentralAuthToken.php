@@ -48,13 +48,17 @@ class ApiCentralAuthToken extends ApiBase {
 
 		$session = MediaWiki\Session\SessionManager::getGlobalSession();
 		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
-			$this->dieUsage( 'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession' );
+			$this->dieUsage(
+				'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession'
+			);
 		}
 		$id = $session->getId();
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
-			$this->dieUsage( 'Cannot obtain a centralauthtoken without an attached global account', 'notattached' );
+			$this->dieUsage(
+				'Cannot obtain a centralauthtoken without an attached global account', 'notattached'
+			);
 		}
 
 		$data = array(

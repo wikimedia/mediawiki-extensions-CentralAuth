@@ -32,7 +32,10 @@ class CentralAuthAntiSpoofHooks {
 			if ( empty( $conflicts ) ) {
 				wfDebugLog( 'antispoof', "{$mode}PASS new account '$name' [$normalized]" );
 			} else {
-				wfDebugLog( 'antispoof', "{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts ) );
+				wfDebugLog(
+					'antispoof',
+					"{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts )
+				);
 				if ( $active ) {
 					$numConflicts = count( $conflicts );
 					$message = wfMessage( 'antispoof-conflict-top', $name )->numParams( $numConflicts )->escaped();

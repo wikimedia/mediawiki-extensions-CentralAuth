@@ -95,7 +95,7 @@ class CentralAuthTestUser {
 		$passwordFactory = new PasswordFactory();
 		$passwordFactory->init( RequestContext::getMain()->getConfig() );
 
-		$attrs += array(
+		$attrs += [
 			'gu_id' => '1000',
 			'gu_password' => $passwordFactory->newFromPlaintext( $password )->toString(),
 			'gu_salt' => '',
@@ -108,7 +108,7 @@ class CentralAuthTestUser {
 			'gu_home_db' => wfWikiID(),
 			'gu_enabled' => '',
 			'gu_enabled_method' => null,
-		);
+		];
 
 		$this->guId = $attrs['gu_id'];
 		$this->passHash = $attrs['gu_password'];
@@ -123,14 +123,14 @@ class CentralAuthTestUser {
 		$this->enabled = $attrs['gu_enabled'];
 		$this->enabledMethod = $attrs['gu_enabled_method'];
 
-		$this->wikis = array();
+		$this->wikis = [];
 		foreach ( $wikis as $wiki ) {
-			$this->wikis[] = array(
+			$this->wikis[] = [
 				'lu_wiki' => $wiki[0],
 				'lu_name' => $this->username,
 				'lu_attached_timestamp' => $this->registration,
 				'lu_attached_method' => $wiki[1],
-			);
+			];
 		}
 
 		$this->createLocal = $createLocal;
@@ -151,7 +151,7 @@ class CentralAuthTestUser {
 		}
 
 		// Setup global user
-		$row = array(
+		$row = [
 			'gu_name' => $this->username,
 			'gu_id' => $this->guId,
 			'gu_password' => $this->passHash,
@@ -165,7 +165,7 @@ class CentralAuthTestUser {
 			'gu_home_db' => $this->homeDb,
 			'gu_enabled' => $this->enabled,
 			'gu_enabled_method' => $this->enabledMethod,
-		);
+		];
 		$db->insert(
 			'globaluser',
 			$row,
@@ -175,7 +175,7 @@ class CentralAuthTestUser {
 		// Attach global to local accounts
 		$db->delete(
 			'localuser',
-			array( 'lu_name' => $this->username ),
+			[ 'lu_name' => $this->username ],
 			__METHOD__
 		);
 

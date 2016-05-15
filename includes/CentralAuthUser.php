@@ -18,19 +18,38 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * The username of the current user.
 	 * @var string
 	 */
-	/*private*/ var $mName;
-	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mVersion = 6;
-	/*private*/ var $mDelayInvalidation = 0;
+	private $mName;
+	private $mStateDirty = false;
+	private $mVersion = 6;
+	private $mDelayInvalidation = 0;
 
-	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
-	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
-	var $mBeingRenamed, $mBeingRenamedArray;
+	private $mAttachedArray;
+	private $mEmail;
+	private $mEmailAuthenticated;
+	private $mHomeWiki;
+	private $mHidden;
+	private $mLocked;
+	private $mAttachedList;
+	private $mAuthenticationTimestamp;
+	private $mGroups;
+	private $mRights;
+	private $mPassword;
+	private $mAuthToken;
+	private $mSalt;
+	private $mGlobalId;
+	private $mFromMaster;
+	private $mIsAttached;
+	private $mRegistration;
+	private $mGlobalEditCount;
+
+	private $mBeingRenamed;
+	private $mBeingRenamedArray;
+
 	protected $mAttachedInfo;
 	/** @var integer */
 	protected $mCasToken = 0;
 
-	static $mCacheVars = array(
+	private static $mCacheVars = array(
 		'mGlobalId',
 		'mSalt',
 		'mPassword',
@@ -960,7 +979,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
-		//
+
 		// For additional safety, we'll only let the mail check
 		// propagate from a confirmed account
 		$passingMail = array();
@@ -1008,7 +1027,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				$method = 'password';
 			} else {
 				// Can't automatically resolve this account.
-				//
+
 				// If the password matches, it will be automigrated
 				// at next login. If no match, user will have to input
 				// the conflicting password or deal with the conflict.
@@ -1568,7 +1587,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		if ( $oldHiddenLevel != $setHidden ) {
 			$hideStatus = $this->adminSetHidden( $setHidden );
-			switch( $setHidden ) {
+			switch ( $setHidden ) {
 				case self::HIDDEN_NONE:
 					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
 						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
@@ -2462,7 +2481,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			wfDebugLog( 'CentralAuth',
 				__METHOD__ . " was called for a global user that doesn't exist ('$this->mName')." );
 		}
-
 
 		if ( $resetAuthToken ) {
 			$this->resetAuthToken();
