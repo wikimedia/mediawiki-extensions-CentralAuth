@@ -8,19 +8,21 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/commandLine.inc" );
+require_once ( "$IP/maintenance/commandLine.inc" );
 
 /**
  * Copy user data for this wiki into the globalnames and localnames table
  */
+// @codingStandardsIgnoreStart
 function migratePassZero() {
+// @codingStandardsIgnoreEnd
 	global $wgDBname;
 	$dbr = wfGetDB( DB_SLAVE );
 	$chunkSize = 1000;
 
 	$start = microtime( true );
 	$migrated = 0;
-	$users = array();
+	$users = [];
 
 	// List all user accounts on this wiki in the migration table
 	// on the central authentication server.
@@ -29,17 +31,17 @@ function migratePassZero() {
 	for ( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
 		$max = $min + $chunkSize - 1;
 		$result = $dbr->select( 'user',
-			array( 'user_id', 'user_name' ),
+			[ 'user_id', 'user_name' ],
 			"user_id BETWEEN $min AND $max",
 			__FUNCTION__ );
 
-		foreach( $result as $row ) {
+		foreach ( $result as $row ) {
 			$users[intval( $row->user_id )] = $row->user_name;
 			++$migrated;
 		}
 
 		CentralAuthUser::storeMigrationData( $wgDBname, $users );
-		$users = array(); // clear the array for the next pass
+		$users = []; // clear the array for the next pass
 
 		$delta = microtime( true ) - $start;
 		$rate = ( $delta == 0.0 ) ? 0.0 : $migrated / $delta;
@@ -62,7 +64,9 @@ function migratePassZero() {
  * @param $userId
  * @return int
  */
+// @codingStandardsIgnoreStart
 function getEditCount( $userId ) {
+// @codingStandardsIgnoreEnd
 	return countEdits( $userId, 'revision', 'rev_user' );
 }
 
@@ -72,10 +76,12 @@ function getEditCount( $userId ) {
  * @param $field
  * @return int
  */
+// @codingStandardsIgnoreStart
 function countEdits( $userId, $table, $field ) {
+// @codingStandardsIgnoreEnd
 	$dbr = wfGetDB( DB_SLAVE );
 	$count = $dbr->selectField( $table, 'COUNT(*)',
-		array( $field => $userId ),
+		[ $field => $userId ],
 		__METHOD__ );
 	return intval( $count );
 }

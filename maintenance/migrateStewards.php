@@ -4,37 +4,37 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/commandLine.inc" );
+require_once ( "$IP/maintenance/commandLine.inc" );
 
 echo "Populating global groups table with stewards...\n";
 
 // Fetch local stewards
 $dbl = wfGetDB( DB_SLAVE );	// Get local database
 $result = $dbl->select(
-	array( 'user', 'user_groups' ),
-	array( 'user_name' ),
-	array(
+	[ 'user', 'user_groups' ],
+	[ 'user_name' ],
+	[
 		'ug_group' => 'steward',
 		'user_id = ug_user'
-	),
+	],
 	'migrateStewards.php'
 );
-$localStewards = array();
+$localStewards = [];
 foreach ( $result as $row ) {
 	$localStewards[] = $row->user_name;
 }
 
 echo "Fetched " . count( $localStewards ) . " from local database... Checking for attached ones\n";
 $dbg = CentralAuthUtils::getCentralDB();
-$globalStewards = array();
+$globalStewards = [];
 $result = $dbg->select(
-	array( 'globaluser', 'localuser' ),
-	array( 'gu_name', 'gu_id' ),
-	array(
+	[ 'globaluser', 'localuser' ],
+	[ 'gu_name', 'gu_id' ],
+	[
 		'gu_name = lu_name',
 		'lu_wiki' => wfWikiId(),
 		'gu_name IN (' . $dbg->makeList( $localStewards ) . ')',
-	),
+	],
 	'migrateStewards.php'
 );
 foreach ( $result as $row ) {
@@ -44,9 +44,9 @@ foreach ( $result as $row ) {
 echo "Fetched " . count( $localStewards ) . " SULed stewards... Adding them in group\n";
 foreach ( $globalStewards as $user => $id ) {
 	$dbg->insert( 'global_user_groups',
-		array(
+		[
 			'gug_user' => $id,
-			'gug_group' => 'steward' ),
+			'gug_group' => 'steward' ],
 		'migrateStewards.php' );
 	echo "Added {$user}\n";
 

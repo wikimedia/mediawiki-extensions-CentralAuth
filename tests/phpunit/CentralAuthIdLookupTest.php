@@ -25,49 +25,49 @@ class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',
-			array( 'gu_id' => '1001' ),
-			array(
-				array( wfWikiID(), 'primary' ),
-				array( 'enwiki', 'primary' ),
-				array( 'dewiki', 'login' ),
-				array( 'metawiki', 'password' ),
-			)
+			[ 'gu_id' => '1001' ],
+			[
+				[ wfWikiID(), 'primary' ],
+				[ 'enwiki', 'primary' ],
+				[ 'dewiki', 'login' ],
+				[ 'metawiki', 'password' ],
+			]
 		);
 		$user->save( $this->db );
 
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
 			'GLUP@ssword',
-			array(
+			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
 				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-			)
+			],
+			[
+				[ 'metawiki', 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 
 		$u = new CentralAuthTestUser(
 			'GlobalSuppressedUser',
 			'GSUP@ssword',
-			array(
+			[
 				'gu_id' => '1004',
 				'gu_locked' => 1,
 				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
 				'gu_email' => 'testsuppressed@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-			)
+			],
+			[
+				[ 'metawiki', 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 
-		$this->stashMwGlobals( array( 'wgGroupPermissions' ) );
+		$this->stashMwGlobals( [ 'wgGroupPermissions' ] );
 		$wgGroupPermissions['centralauth-id-lookup-test']['centralauth-oversight'] = true;
 	}
 
@@ -96,7 +96,7 @@ class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
 		$this->assertTrue( $user1->isAllowed( 'centralauth-oversight' ), 'sanity check' );
 		$this->assertFalse( $user2->isAllowed( 'centralauth-oversight' ), 'sanity check' );
 
-		$this->assertSame( array(), $lookup->lookupCentralIds( array() ) );
+		$this->assertSame( array(), $lookup->lookupCentralIds( [] ) );
 
 		$expect = array_flip( $this->centralUsers );
 		$expect[123] = 'X';
@@ -121,7 +121,7 @@ class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
 		$this->assertTrue( $user1->isAllowed( 'centralauth-oversight' ), 'sanity check' );
 		$this->assertFalse( $user2->isAllowed( 'centralauth-oversight' ), 'sanity check' );
 
-		$this->assertSame( array(), $lookup->lookupUserNames( array() ) );
+		$this->assertSame( [], $lookup->lookupUserNames( [] ) );
 
 		$expect = $this->centralUsers;
 		$expect['UTDoesNotExist'] = 'X';
@@ -139,11 +139,11 @@ class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
 	}
 
 	public static function provideLocalUsers() {
-		return array(
-			array( 'GlobalUser', 1001, true ),
-			array( 'UTSysop', 1, false ),
-			array( 'DoesNotExist', 123, false ),
-		);
+		return [
+			[ 'GlobalUser', 1001, true ],
+			[ 'UTSysop', 1, false ],
+			[ 'DoesNotExist', 123, false ],
+		];
 	}
 
 	/**
@@ -181,13 +181,13 @@ class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
 	}
 
 	public static function provideIsAttached() {
-		return array(
-			array( 'GlobalUser', 'enwiki', true ),
-			array( 'GlobalUser', 'foowiki', false ),
-			array( 'GlobalUser', null, true ),
-			array( 'UTSysop', null, false ),
-			array( 'DoesNotExist', null, false ),
-		);
+		return [
+			[ 'GlobalUser', 'enwiki', true ],
+			[ 'GlobalUser', 'foowiki', false ],
+			[ 'GlobalUser', null, true ],
+			[ 'UTSysop', null, false ],
+			[ 'DoesNotExist', null, false ],
+		];
 	}
 
 	/**
