@@ -412,7 +412,7 @@ class GlobalRenameRequest {
 	 * @param string $name
 	 * @return Status Canonicalized name
 	 */
-	public static function isNameAvailable ( $name ) {
+	public static function isNameAvailable( $name ) {
 		$safe = User::getCanonicalName( $name, 'creatable' );
 		$status = Status::newGood( $safe );
 
@@ -444,4 +444,4 @@ class GlobalRenameRequest {
 		return $status;
 	}
 
-} //end GlobalRenameRequest
+} // end GlobalRenameRequest

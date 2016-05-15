@@ -36,7 +36,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		} elseif ( !$globalUser->exists() ) {
 			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
-		} elseif ( $globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
+		} elseif (
+			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
+		) {
 			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
 		} elseif ( !$this->getRequest()->getCheck( 'locked' ) && $this->getParameter( 'hidden' ) === null ) {
 			$this->dieUsage( "At least one of the parameters locked, hidden is required", "missingparam" );

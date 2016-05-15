@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 class PopulateHomeDB extends Maintenance {
 	public function __construct() {
@@ -15,21 +15,21 @@ class PopulateHomeDB extends Maintenance {
 
 	public function execute() {
 		$db = CentralAuthUtils::getCentralSlaveDB();
-		$conds = array();
+		$conds = [];
 		$count = 0;
 		do {
 			$result = $db->select(
 				'globaluser',
-				array( 'gu_name' ),
-				array_merge( $conds, array( 'gu_home_db IS NULL OR gu_home_db = ""' ) ),
+				[ 'gu_name' ],
+				array_merge( $conds, [ 'gu_home_db IS NULL OR gu_home_db = ""' ] ),
 				__METHOD__,
-				array(
+				[
 					'LIMIT' => $this->mBatchSize,
 					'ORDER BY' => 'gu_name',
-				)
+				]
 			);
 
-			foreach( $result as $row ) {
+			foreach ( $result as $row ) {
 				$central = new CentralAuthUser( $row->gu_name, CentralAuthUser::READ_LATEST );
 				$central->mStateDirty = true;
 				$central->saveSettings();
@@ -40,11 +40,11 @@ class PopulateHomeDB extends Maintenance {
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}
-			$conds = array( 'gu_name > ' . $db->addQuotes( $row->gu_name ) );
+			$conds = [ 'gu_name > ' . $db->addQuotes( $row->gu_name ) ];
 		} while ( true );
 		$this->output( "done.\n" );
 	}
 }
 
 $maintClass = 'PopulateHomeDB';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once ( RUN_MAINTENANCE_IF_MAIN );

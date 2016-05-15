@@ -58,7 +58,17 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			array( array(), null ),
 			array( array( 'foowiki' => array( 'attachedMethod' => 'new' ) ), 'foowiki' ),
 			array( array( 'foowiki' => array( 'attachedMethod' => 'primary' ) ), 'foowiki' ),
-			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ), 'bazwiki' => array( 'attachedMethod' => 'new' ) ), 'bazwiki' ),
+			array(
+				array(
+					'foowiki' => array(
+						'attachedMethod' => 'password'
+					),
+					'bazwiki' => array(
+						'attachedMethod' => 'new'
+					)
+				),
+				'bazwiki'
+			),
 			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ) ), 'foowiki' ),
 			array(
 				array(
@@ -159,29 +169,31 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		$method = $class->getMethod( 'getPasswordFromString' );
 		$method->setAccessible( true );
 		$ca = new CentralAuthUser( 'DoesNotExist' );
-		$password = $method->invokeArgs( $ca, array( $pass, $salt ) );
+		$password = $method->invokeArgs( $ca, [ $pass, $salt ] );
 		$this->assertInstanceOf( 'Password', $password );
 		$this->assertInstanceOf( $type, $password );
 	}
 
 	public static function provideGetPasswordFromString() {
-		return array(
-			array(
+		return [
+			// @codingStandardsIgnoreStart
+			[
 				':pbkdf2:sha256:10000:128:Oin6/F737E41pY7dza46Dw==:f6LNAySaUdEnjI2omuj+CX1aPDnt5bzgZcdLsEcLWqF7vG0CcMyviqWaq8smXCj2HBY0sV/w2kxpsTXXOgUrJJTEjuXmEsxHTtpMO4fCfZ5nb3a1kCYA44owCzKu96i8I6VrmGYu3waxmVAzlXld3bNIxrhGUjra/Y0TmWOe1q0=',
 				'',
 				'Pbkdf2Password'
-			),
-			array(
+			],
+			[
 				':B:6540e6ad:b02a3700be1eec9488a46b042a831646',
 				'',
 				'MWSaltedPassword'
-			),
-			array(
+			],
+			[
 				'b02a3700be1eec9488a46b042a831646',
 				'6540e6ad',
 				'MWSaltedPassword',
-			),
-		);
+			],
+			// @codingStandardsIgnoreEnd
+		];
 	}
 
 	/**

@@ -27,12 +27,12 @@ class JSONCARCFeedFormatter implements CARCFeedFormatter {
 	 * @return string
 	 */
 	public function getLine( $userpage, $wikiID ) {
-		$packet = array(
+		$packet = [
 			'title' => $userpage->getPrefixedText(),
 			'wikiid' => $wikiID,
 			'user' => $userpage->getText(),
 			'url' => $userpage->getCanonicalURL()
-		);
+		];
 		return FormatJson::encode( $packet );
 	}
 }

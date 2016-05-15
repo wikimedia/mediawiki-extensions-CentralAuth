@@ -46,7 +46,10 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		$data = array();
 		$userExists = $user->exists();
 
-		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE || $this->getUser()->isAllowed( 'centralauth-oversight' ) ) ) {
+		if ( $userExists &&
+			( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE ||
+				$this->getUser()->isAllowed( 'centralauth-oversight' ) ) 
+		) {
 			// The global user exists and it's not hidden or the current user is allowed to see it
 			$data['home'] = $user->getHomeWiki();
 			$data['id'] = $user->getId();

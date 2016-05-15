@@ -7,7 +7,7 @@
  * @ingroup Exception
  */
 class CentralAuthReadOnlyError extends ErrorPageError {
-	public function __construct(){
+	public function __construct() {
 		parent::__construct(
 			'centralauth-readonly',
 			'centralauth-readonlytext'

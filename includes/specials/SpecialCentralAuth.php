@@ -128,7 +128,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		$this->showUsernameForm();
-		if ( $continue && $globalUser->exists()  ) {
+		if ( $continue && $globalUser->exists() ) {
 			$this->showInfo();
 			if ( $this->mCanLock ) {
 				$this->showStatusForm();
@@ -547,7 +547,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$additionalHtml = '';
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
 			$flags = array();
-			foreach( array( 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ) as $option ) {
+			foreach ( array( 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ) as $option ) {
 				if ( $row['block-' . $option] ) {
 					$flags[] = $option;
 				}
@@ -634,7 +634,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	public function formatHiddenLevel( $level ) {
 		// @FIXME: This shouldn't be used in SpecialMultiLock
-		switch( $level ) {
+		switch ( $level ) {
 			case CentralAuthUser::HIDDEN_NONE:
 				return $this->msg( 'centralauth-admin-no' )->escaped();
 			case CentralAuthUser::HIDDEN_LISTS:

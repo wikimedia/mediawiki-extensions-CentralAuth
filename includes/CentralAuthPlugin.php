@@ -52,7 +52,9 @@ class CentralAuthPlugin extends AuthPlugin {
 		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
 			// Check to see if this is a user who was affected by a global username
 			// collision during a forced migration to central auth accounts.
-			$renamedUsername = User::getCanonicalName( $username . '~' . str_replace( '_', '-', wfWikiID() ) );
+			$renamedUsername = User::getCanonicalName(
+				$username . '~' . str_replace( '_', '-', wfWikiID() )
+			);
 			if ( $renamedUsername !== false ) {
 				$renamed = CentralAuthUser::getMasterInstanceByName( $renamedUsername );
 
@@ -93,10 +95,15 @@ class CentralAuthPlugin extends AuthPlugin {
 			// See if all the unattached accounts match passwords
 			// and can be globalized. (bug 70392)
 			if ( $wgCentralAuthAutoMigrateNonGlobalAccounts ) {
-				$ok = $central->storeAndMigrate( array( $password ), /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true );
+				$ok = $central->storeAndMigrate(
+					array( $password ), /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true
+				);
 				if ( $ok ) {
-					wfDebugLog( 'CentralAuth',
-						"wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a global account for '$username'" );
+					wfDebugLog(
+						'CentralAuth',
+						"wgCentralAuthAutoMigrateNonGlobalAccounts successful
+							in creating a global account for '$username'"
+					);
 					return true;
 				}
 			}
@@ -107,9 +114,9 @@ class CentralAuthPlugin extends AuthPlugin {
 			// If the user passed in the global password, we can identify
 			// any remaining local accounts with a matching password
 			// and migrate them in transparently.
-			//
+
 			// That may or may not include the current wiki.
-			//
+
 			wfDebugLog( 'CentralAuth',
 				"plugin: attempting wgCentralAuthAutoMigrate for '$username'" );
 			$central->attemptPasswordMigration( $password );
@@ -133,12 +140,12 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	protected function checkAttached( CentralAuthUser $central, $username ) {
 		// Several possible states here:
-		//
+
 		// global exists, local exists, attached: require global auth
 		// global exists, local exists, unattached: require LOCAL auth to login
 		// global exists, local doesn't exist: require global auth -> will autocreate local
 		// global doesn't exist, local doesn't exist: no authentication
-		//
+
 		if ( !$central->isAttached() ) {
 			$local = User::newFromName( $username );
 			if ( $local && $local->getId() ) {
