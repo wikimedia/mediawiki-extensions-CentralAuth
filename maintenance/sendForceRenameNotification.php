@@ -34,12 +34,12 @@ class ForceRenameNotification extends Maintenance {
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";
 		$dbw = CentralAuthUtils::getCentralDB();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
-		$commonParams = array(
+		$commonParams = [
 			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
-		);
+		];
 		while ( true ) {
-			$jobs = array();
-			$markNotified = array();
+			$jobs = [];
+			$markNotified = [];
 			$rows = $updates->findUsers( wfWikiID(), 0, $this->mBatchSize );
 			if ( $rows->numRows() === 0 ) {
 				break;
@@ -65,10 +65,10 @@ class ForceRenameNotification extends Maintenance {
 				}
 				$jobs[] = new MassMessageServerSideJob(
 					Title::newFromText( $title ),
-					array(
+					[
 						'title' => $title,
 						'message' => str_replace( '{{subst:PAGENAME}}', $row->utr_name, $message )
-					) + $commonParams
+					] + $commonParams
 				);
 				$this->output( "Will notify {$row->utr_name}\n" );
 				$markNotified[] = $row;

@@ -18,30 +18,30 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 	public function execute() {
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
-			array( 'logging', 'log_search' ),
-			array( 'log_id', 'log_params' ),
-			array(
+			[ 'logging', 'log_search' ],
+			[ 'log_id', 'log_params' ],
+			[
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
 				'ls_field IS NULL'
-			),
+			],
 			__METHOD__,
-			array(),
-			array( 'log_search' => array( 'LEFT JOIN', 'log_id=ls_log_id' ) )
+			[],
+			[ 'log_search' => [ 'LEFT JOIN', 'log_id=ls_log_id' ] ]
 		);
 
-		$insert = array();
+		$insert = [];
 
 		foreach ( $rows as $row ) {
 			$params = unserialize( $row->log_params );
-			$insert[] = array(
+			$insert[] = [
 				'ls_field' => 'oldname',
 				'ls_value' => $params['4::olduser'],
 				'ls_log_id' => $row->log_id,
-			);
+			];
 			if ( count( $insert ) >= $this->mBatchSize ) {
 				$this->insert( $insert );
-				$insert = array();
+				$insert = [];
 			}
 		}
 		if ( $insert ) {
