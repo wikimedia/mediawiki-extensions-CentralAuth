@@ -33,6 +33,16 @@ if ( function_exists( 'wfLoadExtension' ) ) {
 $wgCentralAuthDatabase = 'centralauth';
 
 /**
+<<<<<<< d75fb615d9a48554ab8ce1dcdb8d1b5e155ca7c4
+=======
+ * Override $wgCentralAuthDatabase for Wikimedia Jenkins.
+ */
+if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+	$wgCentralAuthDatabase = $wgDBname;
+}
+
+/**
+>>>>>>> Add phpcs to composer
  * If true, new account registrations will be registered globally if
  * the username hasn't been used elsewhere.
  */

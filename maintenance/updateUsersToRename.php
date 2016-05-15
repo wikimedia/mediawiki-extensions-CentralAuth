@@ -22,14 +22,14 @@ class UpdateUsersToRename extends Maintenance {
 		$total = 0;
 		do {
 			$rows = $dbr->select(
-				array( 'users_to_rename', 'localuser' ),
-				array( 'utr_id', 'utr_name', 'utr_wiki' ),
-				array(),
+				[ 'users_to_rename', 'localuser' ],
+				[ 'utr_id', 'utr_name', 'utr_wiki' ],
+				[],
 				__METHOD__,
-				array( 'LIMIT' => $this->mBatchSize ),
-				array( 'localuser' => array( 'INNER JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ) )
+				[ 'LIMIT' => $this->mBatchSize ],
+				[ 'localuser' => [ 'INNER JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ] ]
 			);
-			$ids = array();
+			$ids = [];
 			foreach ( $rows as $row ) {
 				$ids[] = $row->utr_id;
 				$this->output( "{$row->utr_name}@{$row->utr_wiki} is now attached!\n" );
@@ -39,7 +39,7 @@ class UpdateUsersToRename extends Maintenance {
 				$this->output( "Deleting $count users...\n" );
 				$dbw->delete(
 					'users_to_rename',
-					array( 'utr_id' => $ids ),
+					[ 'utr_id' => $ids ],
 					__METHOD__
 				);
 				$total += $count;

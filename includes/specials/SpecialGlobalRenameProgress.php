@@ -25,7 +25,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	function alterForm( HTMLForm $form ) {
 		$form->setMethod( 'GET' );
 		$form->setAction( $this->getPageTitle()->getLocalURL() );
-		$form->setSubmitText( $this->msg( 'centralauth-rename-viewprogress')->text() );
+		$form->setSubmitText( $this->msg( 'centralauth-rename-viewprogress' )->text() );
 	}
 
 	function showLogExtract( $name ) {
@@ -135,7 +135,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$table .= Html::element( 'th', array(), $this->msg( 'centralauth-rename-table-domain' )->text() );
 		$table .= Html::element( 'th', array(), $this->msg( 'centralauth-rename-table-status' )->text() );
 		$table .= Html::closeElement( 'tr' );
-		foreach( $statuses as $wiki => $status ) {
+		foreach ( $statuses as $wiki => $status ) {
 			$table .= Html::openElement( 'tr' );
 			$table .= Html::element( 'td', array(), WikiMap::getWiki( $wiki )->getDisplayName() );
 			// Messages used: centralauth-rename-table-status-inprogress

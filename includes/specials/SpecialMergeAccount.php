@@ -74,25 +74,25 @@ class SpecialMergeAccount extends SpecialPage {
 			if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
 				throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
 			}
-			switch( $this->mMergeAction ) {
-			case "dryrun":
-				$this->doDryRunMerge();
-				break;
-			case "initial":
-				$this->doInitialMerge();
-				break;
-			case "cleanup":
-				$this->doCleanupMerge();
-				break;
-			case "attach":
-				$this->doAttachMerge();
-				break;
-			case "remove":
-				$this->doUnattach(); // FIXME: Method is undefined
-				break;
-			default:
-				$this->invalidAction(); // FIXME: Method is undefined
-				break;
+			switch ( $this->mMergeAction ) {
+				case "dryrun":
+					$this->doDryRunMerge();
+					break;
+				case "initial":
+					$this->doInitialMerge();
+					break;
+				case "cleanup":
+					$this->doCleanupMerge();
+					break;
+				case "attach":
+					$this->doAttachMerge();
+					break;
+				case "remove":
+					$this->doUnattach(); // FIXME: Method is undefined
+					break;
+				default:
+					$this->invalidAction(); // FIXME: Method is undefined
+					break;
 			}
 			return;
 		}

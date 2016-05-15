@@ -13,7 +13,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		$req = $this->getRequest();
 
 		if ( $par ) {
-			if( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
+			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
 				$pg->setGroup( $par );
 			} else {
 				$pg->setUsername( $par );

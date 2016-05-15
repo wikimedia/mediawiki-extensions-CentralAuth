@@ -81,10 +81,14 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( !$status->isOK() ) {
 			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
 				// Eh, what?
-				throw new Exception( "Tried to promote '$newName' to a global account except it doesn't exist locally" );
+				throw new Exception(
+					"Tried to promote '$newName' to a global account except it doesn't exist locally"
+				);
 			} elseif ( $status->hasMessage( 'promote-already-exists' ) ) {
 				// Even more wtf.
-				throw new Exception( "Tried to prommote '$newName' to a global account except it already exists" );
+				throw new Exception(
+					"Tried to prommote '$newName' to a global account except it already exists"
+				);
 			}
 		}
 

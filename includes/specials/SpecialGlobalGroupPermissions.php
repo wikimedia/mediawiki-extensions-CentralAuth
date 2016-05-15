@@ -89,7 +89,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 					User::getGroupName( $group ),
 					$group,
 					Xml::element( 'span',
-						array( "class" => "centralauth-globalgroupperms-groupname"),
+						array( "class" => "centralauth-globalgroupperms-groupname" ),
 						$group
 					)
 				)->parse();
@@ -148,7 +148,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-name'] = $group;
 		}
 
-		if( $this->getUser()->isAllowed( 'editinterface' ) ) {
+		if ( $this->getUser()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
 			$fields['centralauth-editgroup-display'] = $this->msg( 'centralauth-editgroup-display-edit', $group, User::getGroupName( $group ) )->parse();
 			$fields['centralauth-editgroup-member'] = $this->msg( 'centralauth-editgroup-member-edit', $group, User::getGroupMember( $group ) )->parse();
@@ -217,7 +217,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$editable = $this->userCanEdit( $this->getUser() );
 
 		$assignedRights = $this->getAssignedRights( $group );
-
 
 		$checkboxes = array();
 		$attribs = array();

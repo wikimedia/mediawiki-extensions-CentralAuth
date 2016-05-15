@@ -11,7 +11,7 @@ class GlobalUserMergeLogFormatter extends LogFormatter {
 
 		$this->parsedParameters[3] = Message::rawParam( $lang->commaList(
 			array_map(
-				array( $this, 'getCentralAuthLink'),
+				array( $this, 'getCentralAuthLink' ),
 				explode( '|', $params[3] )
 			)
 		) );
