@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 class CreateLocalAccount extends Maintenance {
 	public function __construct() {
@@ -43,7 +43,7 @@ class CreateLocalAccount extends Maintenance {
 			$wgAuth->updateUser( $user );
 
 			# Notify hooks (e.g. Newuserlog)
-			Hooks::run( 'AuthPluginAutoCreate', array( $user ) );
+			Hooks::run( 'AuthPluginAutoCreate', [ $user ] );
 
 			# Update user count
 			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
@@ -54,4 +54,4 @@ class CreateLocalAccount extends Maintenance {
 }
 
 $maintClass = 'CreateLocalAccount';
-require_once( DO_MAINTENANCE );
+require_once ( DO_MAINTENANCE );

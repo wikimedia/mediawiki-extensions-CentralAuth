@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 /**
  * Populates the users_to_rename table.
@@ -34,25 +34,25 @@ class PopulateListOfUsersToRename extends Maintenance {
 	private function doQuery() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$rows = $dbr->select(
-			array( 'localnames', 'localuser' ),
-			array( 'ln_name AS name', 'ln_wiki AS wiki' ),
-			array(
+			[ 'localnames', 'localuser' ],
+			[ 'ln_name AS name', 'ln_wiki AS wiki' ],
+			[
 				$dbr->makeList(
-					array(
+					[
 						'ln_name > ' . $dbr->addQuotes( $this->lName ),
 						'ln_name = ' . $dbr->addQuotes( $this->lName ) . ' AND ln_wiki > ' .
 							$dbr->addQuotes( $this->lWiki )
-					),
+					],
 					LIST_OR
 				),
 				'lu_attached_method IS NULL'
-			),
+			],
 			__METHOD__,
-			array(
+			[
 				'LIMIT' => $this->mBatchSize,
-				'ORDER BY' => array( 'ln_name', 'ln_wiki' ),
-			),
-			array( 'localuser' => array( 'LEFT JOIN', 'ln_name=lu_name AND ln_wiki=lu_wiki' ) )
+				'ORDER BY' => [ 'ln_name', 'ln_wiki' ],
+			],
+			[ 'localuser' => [ 'LEFT JOIN', 'ln_name=lu_name AND ln_wiki=lu_wiki' ] ]
 		);
 
 		return $rows;
@@ -63,17 +63,17 @@ class PopulateListOfUsersToRename extends Maintenance {
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
 		// multiple times, so lets cache it.
-		$cache = new HashBagOStuff( array( 'maxKeys' => $this->mBatchSize ) );
+		$cache = new HashBagOStuff( [ 'maxKeys' => $this->mBatchSize ] );
 		do {
 			$rows = $this->doQuery();
-			$insertRows = array();
+			$insertRows = [];
 			foreach ( $rows as $row ) {
 				$this->lName = $row->name;
 				$this->lWiki = $row->wiki;
 				$attachableWikis = $cache->get( $row->name );
 				if ( !$attachableWikis ) {
 					$ca = new CentralAuthUser( $row->name, CentralAuthUser::READ_LATEST );
-					$attachableWikis = array();
+					$attachableWikis = [];
 					$unattached = $ca->queryUnattached();
 					if ( $ca->exists() ) {
 						$home = $ca->getHomeWiki();
@@ -90,7 +90,11 @@ class PopulateListOfUsersToRename extends Maintenance {
 						$attachableWikis[] = $home;
 						if ( $unattached[$home]['email'] && isset( $unattached[$home]['emailAuthenticated'] ) ) {
 							foreach ( $unattached as $wiki => $info ) {
-								if ( $wiki !== $home && $unattached[$home]['email'] === $info['email'] && isset( $info['emailAuthenticated'] ) ) {
+								if (
+									$wiki !== $home &&
+									$unattached[$home]['email'] === $info['email'] &&
+									isset( $info['emailAuthenticated'] )
+								) {
 									$attachableWikis[] = $wiki;
 								}
 							}
@@ -99,7 +103,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 					$cache->set( $row->name, $attachableWikis );
 				}
 
-				if ( !in_array( $row->wiki, $attachableWikis )  ) {
+				if ( !in_array( $row->wiki, $attachableWikis ) ) {
 					// Unattached account which is not attachable,
 					// so they're getting renamed :(
 					$this->output( "{$row->name}@{$row->wiki} is going to be renamed.\n" );

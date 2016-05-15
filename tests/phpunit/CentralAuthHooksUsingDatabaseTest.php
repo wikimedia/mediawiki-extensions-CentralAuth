@@ -5,7 +5,6 @@
  */
 class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
 
-
 	/**
 	 * @dataProvider provideAbortNewAccount
 	 * @covers CentralAuthHooks::onAbortNewAccount
@@ -19,10 +18,10 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 	public function provideAbortNewAccount() {
 		$userExists = User::newFromName( 'GlobalUser' );
 		$userNotExists = User::newFromName( 'UserNotExists' );
-		return array(
-			array( $userNotExists, true ),
-			array( $userExists, false ),
-		);
+		return [
+			[ $userNotExists, true ],
+			[ $userExists, false ],
+		];
 	}
 
 	/**
@@ -54,11 +53,11 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 		TestingAccessWrapper::newFromClass( 'CentralAuthUser' )->getUserCache()
 			->set( $noUser->getName(), CentralAuthUser::newUnattached( 'NoUser' ) );
 
-		return array(
-			array( $user, true, 'Attached user can login' ),
-			array( $noUser, true, 'Unattached user can login' ),
-			array( $lockedUser, false, 'Locked User cannot login' ),
-		);
+		return [
+			[ $user, true, 'Attached user can login' ],
+			[ $noUser, true, 'Unattached user can login' ],
+			[ $lockedUser, false, 'Locked User cannot login' ],
+		];
 	}
 
 	/**
@@ -71,32 +70,31 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 		$u = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',
-			array( 'gu_id' => '1001' ),
-			array(
-				array( wfWikiID(), 'primary' ),
-				array( 'enwiki', 'primary' ),
-				array( 'dewiki', 'login' ),
-				array( 'metawiki', 'password' ),
-			)
+			[ 'gu_id' => '1001' ],
+			[
+				[ wfWikiID(), 'primary' ],
+				[ 'enwiki', 'primary' ],
+				[ 'dewiki', 'login' ],
+				[ 'metawiki', 'password' ],
+			]
 		);
 		$u->save( $this->db );
 
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
 			'GLUP@ssword',
-			array(
+			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
 				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
 			),
-			array(
-				array( 'metawiki', 'primary' ),
-			)
+			[
+				[ 'metawiki', 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 	}
-
 
 }

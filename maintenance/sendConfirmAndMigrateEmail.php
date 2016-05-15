@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 /**
  * Class SendConfirmAndMigrateEmail
@@ -45,7 +45,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
+		$this->mDescription =
+			"Resends the 'confirm your email address email' with a link to Special:MergeAccount";
 		$this->start = microtime( true );
 		$this->sent = 0;
 		$this->total = 0;
@@ -54,7 +55,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
 		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
-		$this->addOption( 'sleep', 'How long to wait in between emails (default 1 second)', false, true );
+		$this->addOption(
+			'sleep', 'How long to wait in between emails (default 1 second)', false, true
+		);
 		$this->addOption( 'dryrun', 'Don\'t actually send any emails', false, false );
 		$this->addOption( 'resume', 'Which username to resume after', false, true );
 	}
@@ -62,7 +65,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	public function execute() {
 		$this->sendToConfirmed = $this->getOption( 'confirmed', false );
 		$this->sleep = (int)$this->getOption( 'sleep', 1 );
-		$this->dryrun = $this->hasOption( 'dryrun');
+		$this->dryrun = $this->hasOption( 'dryrun' );
 		$this->resume = $this->getOption( 'resume', true );
 
 		// check to see if we are processing a single username
@@ -82,7 +85,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list\n" );
 				exit( 1 );
 			}
-			while( $username = fgets( $file ) ) {
+			// @codingStandardsIgnoreStart
+			while ( $username = fgets( $file ) ) {
+			// @codingStandardsIgnoreEnd
 				$username = trim( $username ); // trim the \n
 				if ( $this->resume !== true ) {
 					if ( $username === $this->resume ) {
@@ -136,7 +141,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			$this->output( "ERROR: No global account for '$username'\n" );
 			return;
 		}
-		if( !$central->isAttached() ) {
+		if ( !$central->isAttached() ) {
 			$this->output( "ERROR: '$username@$wikiID' is not attached to the global user\n" );
 			return;
 		}
@@ -176,4 +181,4 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 }
 
 $maintClass = "SendConfirmAndMigrateEmail";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once ( RUN_MAINTENANCE_IF_MAIN );

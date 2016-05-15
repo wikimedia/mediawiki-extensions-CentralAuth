@@ -15,13 +15,13 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$u = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',
-			array( 'gu_id' => '1001' ),
-			array(
-				array( self::safeWfWikiID(), 'primary' ),
-				array( 'enwiki', 'primary' ),
-				array( 'dewiki', 'login' ),
-				array( 'metawiki', 'password' ),
-			)
+			[ 'gu_id' => '1001' ],
+			[
+				[ self::safeWfWikiID(), 'primary' ],
+				[ 'enwiki', 'primary' ],
+				[ 'dewiki', 'login' ],
+				[ 'metawiki', 'password' ],
+			]
 		);
 		$u->save( $this->db );
 
@@ -29,17 +29,17 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
 			'GLUP@ssword',
-			array(
+			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
 				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-				array( self::safeWfWikiID(), 'password' ),
-			)
+			],
+			[
+				[ 'metawiki', 'primary' ],
+				[ self::safeWfWikiID(), 'password' ],
+			]
 		);
 		$u->save( $this->db );
 
@@ -47,14 +47,14 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$u = new CentralAuthTestUser(
 			'GlobalUnattachedUser',
 			'GUUP@ssword',
-			array(
+			[
 				'gu_id' => '1004',
 				'gu_email' => 'testunattached@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-			),
+			],
+			[
+				[ 'metawiki', 'primary' ],
+			],
 			false
 		);
 		$u->save( $this->db );
@@ -63,14 +63,14 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$u = new CentralAuthTestUser(
 			'GlobalConflictUser',
 			'GCUP@ssword',
-			array(
+			[
 				'gu_id' => '1005',
 				'gu_email' => 'testconflict@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-			)
+			],
+			[
+				[ 'metawiki', 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 		$user = User::newFromName( 'GlobalConflictUser' );
@@ -90,10 +90,10 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$u = new CentralAuthTestUser(
 			'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 			'GURP@ssword',
-			array( 'gu_id' => '1006' ),
-			array(
-				array( self::safeWfWikiID(), 'primary' ),
-			)
+			[ 'gu_id' => '1006' ],
+			[
+				[ self::safeWfWikiID(), 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 	}
@@ -109,10 +109,10 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	}
 
 	public function provideUserExists() {
-		return array(
-			array( 'GlobalUser', true, 'Test for existing user' ),
-			array( 'ThisUserDoesNotExist', false, 'Test for non-existing user' ),
-		);
+		return [
+			[ 'GlobalUser', true, 'Test for existing user' ],
+			[ 'ThisUserDoesNotExist', false, 'Test for non-existing user' ],
+		];
 	}
 
 	/**
@@ -121,20 +121,30 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	 */
 	public function testAuthenticate( $username, $password, $expected, $test ) {
 		$auth = new CentralAuthPlugin();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgCentralAuthAutoMigrate' => false,
-		) );
+		] );
 		$this->assertSame( $expected, $auth->authenticate( $username, $password ), $test );
 	}
 
 	public function provideAuthenticate() {
-		return array(
-			array( 'GlobalUser', 'GUP@ssword', true, 'Valid login for attached global' ),
-			array( 'GlobalUser', 'wrongPassword', false, 'Invalid password for attached global' ),
-			array( 'GlobalLockedUser', 'GLUP@ssword', false, 'Valid password for locked global' ),
-			array( 'GlobalUnattachedUser', 'GUUP@ssword', true, 'Valid password for global but unattached account' ),
-			array( 'GlobalConflictUser', 'GCUP@ssword', false, 'Valid password for global but unattached account, with conflicting local' ),
-		);
+		return [
+			[ 'GlobalUser', 'GUP@ssword', true, 'Valid login for attached global' ],
+			[ 'GlobalUser', 'wrongPassword', false, 'Invalid password for attached global' ],
+			[ 'GlobalLockedUser', 'GLUP@ssword', false, 'Valid password for locked global' ],
+			[
+				'GlobalUnattachedUser',
+				'GUUP@ssword',
+				true,
+				'Valid password for global but unattached account'
+			],
+			[
+				'GlobalConflictUser',
+				'GCUP@ssword',
+				false,
+				'Valid password for global but unattached account, with conflicting local'
+			],
+		];
 	}
 
 	/**
@@ -147,11 +157,11 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	}
 
 	public function provideStrictUserAuth() {
-		return array(
-			array( 'GlobalUser', true, 'Attached global' ),
-			array( 'ThisUserDoesNotExist', false, 'Non-existing user' ),
-			array( 'GlobalUnattachedUser', false, 'Unattached global account' ),
-		);
+		return [
+			[ 'GlobalUser', true, 'Attached global' ],
+			[ 'ThisUserDoesNotExist', false, 'Non-existing user' ],
+			[ 'GlobalUnattachedUser', false, 'Unattached global account' ],
+		];
 	}
 
 	/**
@@ -185,9 +195,9 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$test
 	) {
 		$auth = new CentralAuthPlugin();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgCentralAuthCheckSULMigration' => $checkMigration,
-		) );
+		] );
 
 		$this->assertSame( $expectAuth, $auth->authenticate( $username, $password ),
 			"{$test}; authenticate"
@@ -198,23 +208,23 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	}
 
 	public function provideAuthenticateWithPreRenameUsername() {
-		return array(
-			array(
+		return [
+			[
 				'GlobalUser', 'GURP@ssword', false,
 				false, null,
 				'wgCentralAuthCheckSULMigration disabled',
-			),
-			array(
+			],
+			[
 				'GlobalUser', 'GURP@ssword', true,
 				true, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				'wgCentralAuthCheckSULMigration enabled; correct password',
-			),
-			array(
+			],
+			[
 				'GlobalUser', 'not_my_password', true,
 				false, null,
 				'wgCentralAuthCheckSULMigration enabled; incorrect password',
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -227,9 +237,9 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$test
 	) {
 		$auth = new CentralAuthPlugin();
-		$this->setMwGlobals( array(
+		$this->setMwGlobals( [
 			'wgCentralAuthCheckSULMigration' => $checkMigration,
-		) );
+		] );
 		$auth->sulMigrationName = $migrationName;
 
 		$user = User::newFromName( $username );
@@ -244,28 +254,28 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 	}
 
 	public function provideUpdateUserRenameAnnotation() {
-		return array(
-			array(
+		return [
+			[
 				'GlobalUser', false, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				false, false,
 				'wgCentralAuthCheckSULMigration disabled; sulMigrationName set',
-			),
-			array(
+			],
+			[
 				'GlobalUser', false, null,
 				false, false,
 				'wgCentralAuthCheckSULMigration disabled; sulMigrationName unset',
-			),
-			array(
+			],
+			[
 				'GlobalUser', true, 'GlobalUser~' . str_replace( '_', '-', self::safeWfWikiID() ),
 				true, true,
 				'wgCentralAuthCheckSULMigration enabled; sulMigrationName set',
-			),
-			array(
+			],
+			[
 				'GlobalUser', true, null,
 				false, false,
 				'wgCentralAuthCheckSULMigration enabled; sulMigrationName unset',
-			),
-		);
+			],
+		];
 	}
 
 	/**
