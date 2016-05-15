@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 /**
  * Class SendConfirmAndMigrateEmail
@@ -45,7 +45,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
+		$this->mDescription =
+			"Resends the 'confirm your email address email' with a link to Special:MergeAccount";
 		$this->start = microtime( true );
 		$this->sent = 0;
 		$this->total = 0;
@@ -54,7 +55,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
 		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
-		$this->addOption( 'sleep', 'How long to wait in between emails (default 1 second)', false, true );
+		$this->addOption(
+			'sleep', 'How long to wait in between emails (default 1 second)', false, true
+		);
 		$this->addOption( 'dryrun', 'Don\'t actually send any emails', false, false );
 		$this->addOption( 'resume', 'Which username to resume after', false, true );
 	}

@@ -27,10 +27,10 @@ class MigratePass1 extends Maintenance {
 		$dbBackground = CentralAuthUtils::getCentralSlaveDB();
 		$result = $dbBackground->select(
 			'globalnames',
-			array( 'gn_name' ),
-			array(),
+			[ 'gn_name' ],
+			[],
 			__METHOD__ );
-		foreach( $result as $row ) {
+		foreach ( $result as $row ) {
 			$this->fromPrefix = $row->gn_name;
 			$central = new CentralAuthUser( $row->gn_name, CentralAuthUser::READ_LATEST );
 			if ( $central->storeAndMigrate() ) {

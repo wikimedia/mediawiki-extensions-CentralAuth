@@ -4,21 +4,32 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 class DeleteEmptyAccounts extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Delete all global accounts with no attached local accounts, then attempt to migrate a local account";
+		$this->mDescription =
+			"Delete all global accounts with no attached local accounts,
+				then attempt to migrate a local account";
 		$this->setBatchSize( 500 );
 		$this->fix = false;
 		$this->safe = false;
 		$this->migrate = false;
 		$this->suppressRC = false;
 
-		$this->addOption( 'fix', 'Actually update the database. Otherwise, only prints what would be done.', false, false );
-		$this->addOption( 'migrate', 'Migrate a local account; the winner is picked using CentralAuthUser::attemptAutoMigration defaults', false, false );
-		$this->addOption( 'safe-migrate', 'Migrate a local account, only if all accounts can be attached', false, false );
+		$this->addOption(
+			'fix', 'Actually update the database. Otherwise, only prints what would be done.', false, false
+		);
+		$this->addOption(
+			'migrate',
+			'Migrate a local account; the winner is picked using CentralAuthUser::attemptAutoMigration defaults',
+			false,
+			false
+		);
+		$this->addOption(
+			'safe-migrate', 'Migrate a local account, only if all accounts can be attached', false, false
+		);
 		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
 	}
 
@@ -48,18 +59,18 @@ class DeleteEmptyAccounts extends Maintenance {
 		for ( $cur = 0; $cur <= $end; $cur += $this->mBatchSize ) {
 			$this->output( "PROGRESS: $cur / $end\n" );
 			$result = $dbr->select(
-				array( 'globaluser', 'localuser' ),
-				array( 'gu_name' ),
-				array(
+				[ 'globaluser', 'localuser' ],
+				[ 'gu_name' ],
+				[
 					'lu_name' => null,
 					"gu_id >= $cur",
 					'gu_id < ' . ( $cur + $this->mBatchSize ),
-				),
+				],
 				__METHOD__,
-				array(
+				[
 					'ORDER BY' => 'gu_id',
-				),
-				array( 'localuser' => array( 'LEFT JOIN', 'gu_name=lu_name' ) )
+				],
+				[ 'localuser' => [ 'LEFT JOIN', 'gu_name=lu_name' ] ]
 			);
 
 			foreach( $result as $row ) {
