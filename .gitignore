@@ -1,6 +1,6 @@
-.svn
 *~
 *.kate-swp
 .*.swp
 /nbproject/private/
 node_modules/
+vendor/
