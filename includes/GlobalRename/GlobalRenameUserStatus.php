@@ -124,7 +124,8 @@ class GlobalRenameUserStatus {
 	 */
 	public function setStatus( $wiki, $status ) {
 		$dbw = $this->getDB( DB_MASTER );
-		$nameWhere = $this->getNameWhereClause( $dbw ); // Can be inlined easily once we require more than 5.3
+		// Can be inlined easily once we require more than 5.3
+		$nameWhere = $this->getNameWhereClause( $dbw );
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
@@ -171,7 +172,8 @@ class GlobalRenameUserStatus {
 	 */
 	public function done( $wiki ) {
 		$dbw = $this->getDB( DB_MASTER );
-		$nameWhere = $this->getNameWhereClause( $dbw ); // Can be inlined easily once we require more than 5.3
+		// Can be inlined easily once we require more than 5.3
+		$nameWhere = $this->getNameWhereClause( $dbw );
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(

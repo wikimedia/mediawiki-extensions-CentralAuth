@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once ( "$IP/maintenance/Maintenance.php" );
 
 /**
  * Starts the process of migrating users who have
@@ -54,9 +54,9 @@ class ForceRenameUsers extends Maintenance {
 
 	protected function getCurrentRenameCount( DatabaseBase $dbw ) {
 		$row = $dbw->selectRow(
-			array( 'renameuser_status'),
-			array( 'COUNT(*) as count' ),
-			array(),
+			[ 'renameuser_status' ],
+			[ 'COUNT(*) as count' ],
+			[],
 			__METHOD__
 		);
 		return (int)$row->count;
@@ -93,15 +93,17 @@ class ForceRenameUsers extends Maintenance {
 		$this->log( "Renaming $name to {$newCAUser->getName()}." );
 
 		$statuses = new GlobalRenameUserStatus( $name );
-		$success = $statuses->setStatuses( array( array(
+		$success = $statuses->setStatuses( [ [
 			'ru_wiki' => $wiki,
 			'ru_oldname' => $name,
 			'ru_newname' => $newCAUser->getName(),
 			'ru_status' => 'queued'
-		) ) );
+		] ] );
 
 		if ( !$success ) {
-			$this->log( "WARNING: Race condition, renameuser_status already set for {$newCAUser->getName()}. Skipping." );
+			$this->log(
+				"WARNING: Race condition, renameuser_status already set for {$newCAUser->getName()}. Skipping."
+			);
 			return;
 		}
 
@@ -109,7 +111,7 @@ class ForceRenameUsers extends Maintenance {
 
 		$job = new LocalRenameUserJob(
 			Title::newFromText( 'Global rename job' ),
-			array(
+			[
 				'from' => $name,
 				'to' => $newCAUser->getName(),
 				'renamer' => 'Maintenance script',
@@ -117,7 +119,7 @@ class ForceRenameUsers extends Maintenance {
 				'suppressredirects' => true,
 				'promotetoglobal' => true,
 				'reason' => $this->getOption( 'reason' ),
-			)
+			]
 		);
 
 		JobQueueGroup::singleton( $row->utr_wiki )->push( $job );
@@ -132,7 +134,7 @@ class ForceRenameUsers extends Maintenance {
 	 * @return stdClass[]
 	 */
 	protected function findUsers( $wiki, DatabaseBase $dbw ) {
-		$rowsToRename = array();
+		$rowsToRename = [];
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize );
 
@@ -141,14 +143,20 @@ class ForceRenameUsers extends Maintenance {
 			$caUser = new CentralAuthUser( $row->utr_name, CentralAuthUser::READ_LATEST );
 
 			if ( !$user->getId() ) {
-				$this->log( "'{$row->utr_name}' has been renamed since the last was list generated." );
+				$this->log(
+					"'{$row->utr_name}' has been renamed since the last was list generated."
+				);
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( $caUser->attachedOn( $row->utr_wiki ) ) {
-				$this->log( "'{$row->utr_name}' has become attached to a global account since the list as last generated." );
+				$this->log(
+					"'{$row->utr_name}' has become attached to a global account since the list as last generated."
+				);
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( !User::isUsableName( $row->utr_name ) ) {
 				// Reserved for a system account, ignore
-				$this->log( "'{$row->utr_name}' is a reserved username, skipping." );
+				$this->log(
+					"'{$row->utr_name}' is a reserved username, skipping."
+				);
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} else {
 				$rowsToRename[] = $row;

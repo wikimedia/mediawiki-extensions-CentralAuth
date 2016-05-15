@@ -69,7 +69,6 @@ class EmailableUser extends User {
 			$mergeAccountUrl = $this->getTokenUrl( 'MergeAccount', $token );
 		}
 
-
 		$invalidateURL = $this->invalidationTokenUrl( $token );
 		$this->saveSettings();
 

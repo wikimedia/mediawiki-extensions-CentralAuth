@@ -37,7 +37,7 @@ $wgCentralAuthDatabase = 'centralauth';
 /**
  * Override $wgCentralAuthDatabase for Wikimedia Jenkins.
  */
-if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
 	$wgCentralAuthDatabase = $wgDBname;
 }
 
@@ -303,72 +303,103 @@ $wgAutoloadClasses['SpecialMergeAccount'] = "$caBase/includes/specials/SpecialMe
 $wgAutoloadClasses['SpecialGlobalUsers'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['GlobalUsersPager'] = "$caBase/includes/specials/SpecialGlobalUsers.php";
 $wgAutoloadClasses['SpecialMultiLock'] = "$caBase/includes/specials/SpecialMultiLock.php";
-$wgAutoloadClasses['SpecialGlobalRenameRequest'] = "$caBase/includes/specials/SpecialGlobalRenameRequest.php";
-$wgAutoloadClasses['SpecialGlobalRenameQueue'] = "$caBase/includes/specials/SpecialGlobalRenameQueue.php";
-$wgAutoloadClasses['RenameQueueTablePager'] = "$caBase/includes/specials/SpecialGlobalRenameQueue.php";
-$wgAutoloadClasses['SpecialSulRenameWarning'] = "$caBase/includes/specials/SpecialSulRenameWarning.php";
+$wgAutoloadClasses['SpecialGlobalRenameRequest'] =
+	"$caBase/includes/specials/SpecialGlobalRenameRequest.php";
+$wgAutoloadClasses['SpecialGlobalRenameQueue'] =
+	"$caBase/includes/specials/SpecialGlobalRenameQueue.php";
+$wgAutoloadClasses['RenameQueueTablePager'] =
+	"$caBase/includes/specials/SpecialGlobalRenameQueue.php";
+$wgAutoloadClasses['SpecialSulRenameWarning'] =
+	"$caBase/includes/specials/SpecialSulRenameWarning.php";
 $wgAutoloadClasses['CentralAuthUser'] = "$caBase/includes/CentralAuthUser.php";
 $wgAutoloadClasses['CentralAuthUtils'] = "$caBase/includes/CentralAuthUtils.php";
 $wgAutoloadClasses['CentralAuthPlugin'] = "$caBase/includes/CentralAuthPlugin.php";
 $wgAutoloadClasses['CentralAuthHooks'] = "$caBase/includes/CentralAuthHooks.php";
 $wgAutoloadClasses['CentralAuthSuppressUserJob'] = "$caBase/includes/SuppressUserJob.php";
-$wgAutoloadClasses['CentralAuthCreateLocalAccountJob'] = "$caBase/includes/CreateLocalAccountJob.php";
+$wgAutoloadClasses['CentralAuthCreateLocalAccountJob'] =
+	"$caBase/includes/CreateLocalAccountJob.php";
 $wgAutoloadClasses['WikiSet'] = "$caBase/includes/WikiSet.php";
-$wgAutoloadClasses['SpecialCentralAutoLogin'] = "$caBase/includes/specials/SpecialCentralAutoLogin.php";
+$wgAutoloadClasses['SpecialCentralAutoLogin'] =
+	"$caBase/includes/specials/SpecialCentralAutoLogin.php";
 $wgAutoloadClasses['CentralAuthUserArray'] = "$caBase/includes/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthUserArrayFromResult'] = "$caBase/includes/CentralAuthUserArray.php";
 $wgAutoloadClasses['CentralAuthIdLookup'] = "$caBase/includes/CentralAuthIdLookup.php";
-$wgAutoloadClasses['SpecialGlobalGroupMembership'] = "$caBase/includes/specials/SpecialGlobalGroupMembership.php";
-$wgAutoloadClasses['CentralAuthGroupMembershipProxy'] = "$caBase/includes/CentralAuthGroupMembershipProxy.php";
-$wgAutoloadClasses['SpecialGlobalGroupPermissions'] = "$caBase/includes/specials/SpecialGlobalGroupPermissions.php";
+$wgAutoloadClasses['SpecialGlobalGroupMembership'] =
+	"$caBase/includes/specials/SpecialGlobalGroupMembership.php";
+$wgAutoloadClasses['CentralAuthGroupMembershipProxy'] =
+	"$caBase/includes/CentralAuthGroupMembershipProxy.php";
+$wgAutoloadClasses['SpecialGlobalGroupPermissions'] =
+	"$caBase/includes/specials/SpecialGlobalGroupPermissions.php";
 $wgAutoloadClasses['SpecialWikiSets'] = "$caBase/includes/specials/SpecialWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalUserInfo'] = "$caBase/includes/api/ApiQueryGlobalUserInfo.php";
 $wgAutoloadClasses['ApiDeleteGlobalAccount'] = "$caBase/includes/api/ApiDeleteGlobalAccount.php";
-$wgAutoloadClasses['ApiSetGlobalAccountStatus'] = "$caBase/includes/api/ApiSetGlobalAccountStatus.php";
+$wgAutoloadClasses['ApiSetGlobalAccountStatus'] =
+	"$caBase/includes/api/ApiSetGlobalAccountStatus.php";
 $wgAutoloadClasses['ApiQueryGlobalGroups'] = "$caBase/includes/api/ApiQueryGlobalGroups.php";
 $wgAutoloadClasses['ApiQueryWikiSets'] = "$caBase/includes/api/ApiQueryWikiSets.php";
 $wgAutoloadClasses['ApiQueryGlobalAllUsers'] = "$caBase/includes/api/ApiQueryGlobalAllUsers.php";
 $wgAutoloadClasses['ApiGlobalUserRights'] = "$caBase/includes/api/ApiGlobalUserRights.php";
 $wgAutoloadClasses['ApiCentralAuthToken'] = "$caBase/includes/api/ApiCentralAuthToken.php";
 $wgAutoloadClasses['CentralAuthReadOnlyError'] = "$caBase/includes/CentralAuthReadOnlyError.php";
-$wgAutoloadClasses['CentralAuthSessionProvider'] = "$caBase/includes/session/CentralAuthSessionProvider.php";
-$wgAutoloadClasses['CentralAuthTokenSessionProvider'] = "$caBase/includes/session/CentralAuthTokenSessionProvider.php";
+$wgAutoloadClasses['CentralAuthSessionProvider'] =
+	"$caBase/includes/session/CentralAuthSessionProvider.php";
+$wgAutoloadClasses['CentralAuthTokenSessionProvider'] =
+	"$caBase/includes/session/CentralAuthTokenSessionProvider.php";
 $wgAutoloadClasses['CARCFeedFormatter'] = "$caBase/rcfeed/CARCFeedFormatter.php";
-$wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] = "$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
+$wgAutoloadClasses['IRCColourfulCARCFeedFormatter'] =
+	"$caBase/rcfeed/IRCColourfulCARCFeedFormatter.php";
 $wgAutoloadClasses['JSONCARCFeedFormatter'] = "$caBase/rcfeed/JSONCARCFeedFormatter.php";
 $wgAutoloadClasses['LocalRenameJob'] = "$caBase/includes/LocalRenameJob/LocalRenameJob.php";
-$wgAutoloadClasses['LocalRenameUserJob'] = "$caBase/includes/LocalRenameJob/LocalRenameUserJob.php";
+$wgAutoloadClasses['LocalRenameUserJob'] =
+	"$caBase/includes/LocalRenameJob/LocalRenameUserJob.php";
 $wgAutoloadClasses['LocalUserMergeJob'] = "$caBase/includes/LocalRenameJob/LocalUserMergeJob.php";
 $wgAutoloadClasses['LocalPageMoveJob'] = "$caBase/includes/LocalRenameJob/LocalPageMoveJob.php";
-$wgAutoloadClasses['SpecialGlobalRenameUser'] = "$caBase/includes/specials/SpecialGlobalRenameUser.php";
-$wgAutoloadClasses['SpecialGlobalUserMerge'] = "$caBase/includes/specials/SpecialGlobalUserMerge.php";
-$wgAutoloadClasses['SpecialGlobalRenameProgress'] = "$caBase/includes/specials/SpecialGlobalRenameProgress.php";
-$wgAutoloadClasses['GlobalRenameLogFormatter'] = "$caBase/includes/GlobalRename/GlobalRenameLogFormatter.php";
-$wgAutoloadClasses['GlobalUserMergeLogFormatter'] = "$caBase/includes/GlobalRename/GlobalUserMergeLogFormatter.php";
+$wgAutoloadClasses['SpecialGlobalRenameUser'] =
+	"$caBase/includes/specials/SpecialGlobalRenameUser.php";
+$wgAutoloadClasses['SpecialGlobalUserMerge'] =
+	"$caBase/includes/specials/SpecialGlobalUserMerge.php";
+$wgAutoloadClasses['SpecialGlobalRenameProgress'] =
+	"$caBase/includes/specials/SpecialGlobalRenameProgress.php";
+$wgAutoloadClasses['GlobalRenameLogFormatter'] =
+	"$caBase/includes/GlobalRename/GlobalRenameLogFormatter.php";
+$wgAutoloadClasses['GlobalUserMergeLogFormatter'] =
+	"$caBase/includes/GlobalRename/GlobalUserMergeLogFormatter.php";
 
 $wgAutoloadClasses['GlobalRenameUser'] = "$caBase/includes/GlobalRename/GlobalRenameUser.php";
-$wgAutoloadClasses['GlobalRenameUserStatus'] = "$caBase/includes/GlobalRename/GlobalRenameUserStatus.php";
-$wgAutoloadClasses['GlobalRenameRequest'] = "$caBase/includes/GlobalRename/GlobalRenameRequest.php";
-$wgAutoloadClasses['GlobalRenameUserValidator'] = "$caBase/includes/GlobalRename/GlobalRenameUserValidator.php";
-$wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] = "$caBase/includes/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
-$wgAutoloadClasses['GlobalRenameUserLogger'] = "$caBase/includes/GlobalRename/GlobalRenameUserLogger.php";
-$wgAutoloadClasses['GlobalUserMergeLogger'] = "$caBase/includes/GlobalRename/GlobalUserMergeLogger.php";
+$wgAutoloadClasses['GlobalRenameUserStatus'] =
+	"$caBase/includes/GlobalRename/GlobalRenameUserStatus.php";
+$wgAutoloadClasses['GlobalRenameRequest'] =
+	"$caBase/includes/GlobalRename/GlobalRenameRequest.php";
+$wgAutoloadClasses['GlobalRenameUserValidator'] =
+	"$caBase/includes/GlobalRename/GlobalRenameUserValidator.php";
+$wgAutoloadClasses['GlobalRenameUserDatabaseUpdates'] =
+	"$caBase/includes/GlobalRename/GlobalRenameUserDatabaseUpdates.php";
+$wgAutoloadClasses['GlobalRenameUserLogger'] =
+	"$caBase/includes/GlobalRename/GlobalRenameUserLogger.php";
+$wgAutoloadClasses['GlobalUserMergeLogger'] =
+	"$caBase/includes/GlobalRename/GlobalUserMergeLogger.php";
 $wgAutoloadClasses['GlobalUserMerge'] = "$caBase/includes/GlobalRename/GlobalUserMerge.php";
-$wgAutoloadClasses['GlobalUserMergeDatabaseUpdates'] = "$caBase/includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php";
+$wgAutoloadClasses['GlobalUserMergeDatabaseUpdates'] =
+	"$caBase/includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php";
 
-$wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] = "$caBase/tests/phpunit/CentralAuthTestCaseUsingDatabase.php";
+$wgAutoloadClasses['CentralAuthTestCaseUsingDatabase'] =
+	"$caBase/tests/phpunit/CentralAuthTestCaseUsingDatabase.php";
 $wgAutoloadClasses['CentralAuthTestUser'] = "$caBase/tests/phpunit/CentralAuthTestUser.php";
 
-$wgAutoloadClasses['SpecialUsersWhoWillBeRenamed'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
-$wgAutoloadClasses['UsersWhoWillBeRenamedPager'] = "$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
-$wgAutoloadClasses['UsersToRenameDatabaseUpdates'] = "$caBase/includes/UsersToRename/UsersToRenameDatabaseUpdates.php";
+$wgAutoloadClasses['SpecialUsersWhoWillBeRenamed'] =
+	"$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
+$wgAutoloadClasses['UsersWhoWillBeRenamedPager'] =
+	"$caBase/includes/specials/SpecialUsersWhoWillBeRenamed.php";
+$wgAutoloadClasses['UsersToRenameDatabaseUpdates'] =
+	"$caBase/includes/UsersToRename/UsersToRenameDatabaseUpdates.php";
 
 // only used by maintenance/sendConfirmAndMigrateEmail.php
 $wgAutoloadClasses['EmailableUser'] = "$caBase/includes/EmailableUser.php";
 
 $wgMessagesDirs['SpecialCentralAuth'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SpecialCentralAuthAliases'] = "$caBase/CentralAuth.alias.php";
-$wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] = "$caBase/CentralAuth.notranslate-alias.php";
+$wgExtensionMessagesFiles['SpecialCentralAuthAliasesNoTranslate'] =
+	"$caBase/CentralAuth.notranslate-alias.php";
 
 $wgJobClasses['crosswikiSuppressUser'] = 'CentralAuthSuppressUserJob';
 $wgJobClasses['LocalRenameUserJob'] = 'LocalRenameUserJob';
@@ -388,15 +419,18 @@ $wgHooks['UserLogoutComplete'][] = 'CentralAuthHooks::onUserLogoutComplete';
 $wgHooks['ResourceLoaderGetConfigVars'][] = 'CentralAuthHooks::onResourceLoaderGetConfigVars';
 $wgHooks['UserArrayFromResult'][] = 'CentralAuthHooks::onUserArrayFromResult';
 $wgHooks['UserGetEmail'][] = 'CentralAuthHooks::onUserGetEmail';
-$wgHooks['UserGetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserGetEmailAuthenticationTimestamp';
+$wgHooks['UserGetEmailAuthenticationTimestamp'][] =
+	'CentralAuthHooks::onUserGetEmailAuthenticationTimestamp';
 $wgHooks['UserGetReservedNames'][] = 'CentralAuthHooks::onUserGetReservedNames';
 $wgHooks['UserInvalidateEmailComplete'][] = 'CentralAuthHooks::onUserInvalidateEmailComplete';
 $wgHooks['UserSetEmail'][] = 'CentralAuthHooks::onUserSetEmail';
 $wgHooks['UserSaveSettings'][] = 'CentralAuthHooks::onUserSaveSettings';
-$wgHooks['UserSetEmailAuthenticationTimestamp'][] = 'CentralAuthHooks::onUserSetEmailAuthenticationTimestamp';
+$wgHooks['UserSetEmailAuthenticationTimestamp'][] =
+	'CentralAuthHooks::onUserSetEmailAuthenticationTimestamp';
 $wgHooks['UserGetRights'][] = 'CentralAuthHooks::onUserGetRights';
 $wgHooks['UserIsBot'][] = 'CentralAuthHooks::onUserIsBot';
-$wgHooks['getUserPermissionsErrorsExpensive'][] = 'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
+$wgHooks['getUserPermissionsErrorsExpensive'][] =
+	'CentralAuthHooks::onGetUserPermissionsErrorsExpensive';
 $wgHooks['MakeGlobalVariablesScript'][] = 'CentralAuthHooks::onMakeGlobalVariablesScript';
 $wgHooks['SpecialPasswordResetOnSubmit'][] = 'CentralAuthHooks::onSpecialPasswordResetOnSubmit';
 $wgHooks['OtherBlockLogLink'][] = 'CentralAuthHooks::getBlockLogLink';
@@ -408,9 +442,11 @@ $wgHooks['TestCanonicalRedirect'][] = 'CentralAuthHooks::onTestCanonicalRedirect
 $wgHooks['LogEventsListGetExtraInputs'][] = 'CentralAuthHooks::onLogEventsListGetExtraInputs';
 $wgHooks['SpecialLogAddLogSearchRelations'][] = 'CentralAuthHooks::onSpecialLogAddLogSearchRelations';
 $wgHooks['UnitTestsList'][] = 'CentralAuthHooks::onUnitTestsList';
-$wgHooks['SpecialContributionsBeforeMainOutput'][] = 'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
+$wgHooks['SpecialContributionsBeforeMainOutput'][] =
+	'CentralAuthHooks::onSpecialContributionsBeforeMainOutput';
 $wgHooks['SpecialPage_initList'][] = 'CentralAuthHooks::onSpecialPage_initList';
-$wgHooks['ResourceLoaderForeignApiModules'][] = 'CentralAuthHooks::onResourceLoaderForeignApiModules';
+$wgHooks['ResourceLoaderForeignApiModules'][] =
+	'CentralAuthHooks::onResourceLoaderForeignApiModules';
 $wgHooks['ResourceLoaderTestModules'][] = 'CentralAuthHooks::onResourceLoaderTestModules';
 $wgHooks['PasswordPoliciesForUser'][] = 'CentralAuthHooks::onPasswordPoliciesForUser';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'CentralAuthHooks::onLoadExtensionSchemaUpdates';

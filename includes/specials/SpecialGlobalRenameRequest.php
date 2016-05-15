@@ -227,7 +227,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return bool|string True on success, or String error to display, or
 	 *   false to fail validation without displaying an error.
 	 */
-	public function validateNewname ( $value, $alldata, HTMLForm $form ) {
+	public function validateNewname( $value, $alldata, HTMLForm $form ) {
 		if ( $value === null ) {
 			// Not submitted yet
 			return true;
@@ -243,7 +243,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return bool|string True on success, or String error to display, or
 	 *   false to fail validation without displaying an error.
 	 */
-	public function validateEmail ( $value, $alldata, HTMLForm $form ) {
+	public function validateEmail( $value, $alldata, HTMLForm $form ) {
 		if ( $alldata['email'] !== $alldata['email2'] ) {
 			return $this->msg( 'globalrenamerequest-email-mismatch' )->text();
 		} elseif ( !Sanitizer::validateEmail( $alldata['email'] ) ) {
