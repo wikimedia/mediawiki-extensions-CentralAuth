@@ -17,7 +17,7 @@
 	"centralauth-groupname": "Викимедиа Фондының",
 	"centralauth-desc": "{{int:Centralauth-groupname}} вики проекттарында [[Special:MergeAccount|иҫәп яҙмаларын]] берләштереү",
 	"centralauth-antispoof-desc": " AntiSpoof в CentralAuth\nТехнологияһын өҫтәй",
-	"centralauth-rename-desc": "\nГлобаль теркәү яҙмаһынның атамаһын үҙгәртергә ярҙам итә.",
+	"centralauth-rename-desc": "Глобаль теркәү яҙмаһының атамаһын үҙгәртергә ярҙам итә",
 	"centralauth-mergeaccount-desc": "Single User Login ҡатнашыусыһының бер нисә иҫәп яҙмаһын [[Special:MergeAccount|дөйөм иҫәп яҙмаһына берләштерә]]",
 	"centralauth-merge-denied": "Ғәфү итегеҙ, һеҙҙең был биктә керер өсөн хоҡуҡтарығыҙ етерлек түгел.",
 	"centralauth-merge-notlogged": "Иҫәп яҙмаларығыҙҙың тулыһынса берләшкән булыуын тикшерер өсөн, зинһар,  <span class=\"plainlinks\">[$1 системала танылығыҙ]</span>.",
