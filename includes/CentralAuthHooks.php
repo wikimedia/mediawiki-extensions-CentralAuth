@@ -674,17 +674,18 @@ class CentralAuthHooks {
 	 */
 	static function onUserLogout( &$user ) {
 		global $wgCentralAuthCookies;
+
 		if ( !$wgCentralAuthCookies ) {
 			// Use local sessions only.
 			return true;
 		}
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
 
-		if ( $centralUser->exists() ) {
-			DeferredUpdates::addCallableUpdate( function() use ( $centralUser ) {
+		DeferredUpdates::addCallableUpdate( function() use ( $user ) {
+			$centralUser = CentralAuthUser::getMasterInstance( $user );
+			if ( $centralUser->exists() ) {
 				$centralUser->resetAuthToken();
-			} );
-		}
+			}
+		} );
 
 		// Clean up any possible forced rename markers
 		$user->getRequest()->setSessionData( 'CentralAuthForcedRename', null );
