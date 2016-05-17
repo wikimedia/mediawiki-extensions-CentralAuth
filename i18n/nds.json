@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joachim Mos",
-			"Slomox"
+			"Slomox",
+			"Servien"
 		]
 	},
 	"mergeaccount": "Status vun dat Tohoopföhren vun de Brukerkonten",
@@ -50,7 +51,7 @@
 	"centralauth-merge-method-password": "dör Passwoord bestätigt",
 	"centralauth-merge-method-admin": "dör Administrater tohoopföhrt",
 	"centralauth-merge-method-new": "nee Brukerkonto",
-	"centralauth-merge-method-login": "bestätigt dör Anmellen",
+	"centralauth-merge-method-login": "opstellt dör Anmellen",
 	"centralauth-finish-title": "Tohoopföhren trech",
 	"centralauth-finish-text": "Wenn disse Brukerkonten di tohöört, denn kannst du hier dat Tohoopföhren vun de Brukerkonten dör Ingeven vun dat Passwoort för de annern Brukerkonten toenn bringen:",
 	"centralauth-finish-password": "Passwoort:",
