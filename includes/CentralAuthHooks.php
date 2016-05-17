@@ -706,8 +706,9 @@ class CentralAuthHooks {
 			return true;
 		}
 
-		DeferredUpdates::addCallableUpdate( function() use ( $user ) {
-			$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$username = $user->getName();
+		DeferredUpdates::addCallableUpdate( function() use ( $username ) {
+			$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
 			if ( $centralUser->exists() ) {
 				$centralUser->resetAuthToken();
 			}
