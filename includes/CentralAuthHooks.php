@@ -1383,17 +1383,22 @@ class CentralAuthHooks {
 		$central = CentralAuthUser::getInstance( $user );
 
 		if ( $central->exists() ) {
-			$localPolicyGroups = array_intersect(
-				array_keys( $wgCentralAuthGlobalPasswordPolicies ),
-				$central->getLocalGroups()
-			);
-
 			$effectivePolicy = UserPasswordPolicy::getPoliciesForGroups(
 				$wgCentralAuthGlobalPasswordPolicies,
-				array_merge( $central->getGlobalGroups(), $localPolicyGroups ),
+				$central->getGlobalGroups(),
 				$effectivePolicy
 			);
+
+			foreach ( $wgCentralAuthGlobalPasswordPolicies as $group => $policy ) {
+				$effectivePolicy = CentralAuthUtils::enforcePasswordPolicyIfInLocalWikiGroup(
+					$central,
+					[ $group => '*' ],
+					$policy,
+					$effectivePolicy
+				);
+			}
 		}
+
 		return true;
 	}
 
