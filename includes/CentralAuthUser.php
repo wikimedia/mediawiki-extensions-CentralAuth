@@ -2215,6 +2215,38 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Returns true if a user is a member of a particular group, on a particular set
+	 * of wikis.
+	 * @param array $wikiGroups list of groups (keys) and either an array of wiki
+	 *	names, or the string '*' for any wiki. E.g., if a user is a sysop on enwiki,
+	 *	and $wikiGroups=['sysop'=>'*'] or $wikiGroups=['sysop'=>['enwiki','dewiki']]
+	 *	then this function will return true.
+	 * @return array of group names where the user is a member on at least one wiki
+	 */
+	public function inLocalWikiGroups( array $wikiGroups ) {
+		$allGroups = $this->getLocalGroups();
+		$attachInfo = $this->queryAttached();
+		foreach ( $wikiGroups as $group => $wikis ) {
+			if ( $wikis === '*' ) {
+				if ( in_array( $group, $allGroups ) ) {
+					return true;
+				}
+			} elseif ( is_array( $wikis ) ) {
+				foreach ( $wikis as $wiki ) {
+					if ( isset( $attachInfo[$wiki]['groups'] )
+						&& in_arry( $group, $attachInfo[$wiki]['groups'] )
+					) {
+						return true;
+					}
+				}
+			} else {
+				throw new InvalidArgumentException( 'Array of wiki names expected' );
+			}
+		}
+		return false;
+	}
+
+	/**
 	 * Get information about each local user attached to this account
 	 *
 	 * @return array Map of database name to property table with members:
