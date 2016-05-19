@@ -227,4 +227,46 @@ class CentralAuthUtils {
 			RequestContext::getMain()->getStats()->timing( "centralauth.session.delete", $real );
 		}
 	}
+
+	/**
+	 * Enforces a policy ($policy) for the user ($central) if the user is a member of
+	 * the local groups on specific wikis passed in ($wikiGroups). If the user is
+	 * affected by the cause of T104615, and a local account doesn't exist even though
+	 * they are attached according to the localuser table, then the $defaultPolicy is
+	 * used. This prevents the user being unable to login when affected (T119736).
+	 * @param CentralAuthUser $central
+	 * @param array $wikiGroups see CentralAuthUser::inLocalWikiGroups() for format
+	 * @param array $policy the new policy to apply if the user is in the local groups
+	 * @param $defaultPolicy the policy to enforce if the user is not in the groups
+	 * @return array the policy to enforce
+	 * @throws Exception
+	 */
+	public static function enforcePasswordPolicyIfInLocalWikiGroup( CentralAuthUser $central,
+		$wikiGroups, $policy, $defaultPolicy )
+	{
+		try {
+			if ( $central->inLocalWikiGroups( $wikiGroups ) ) {
+				return UserPasswordPolicy::maxOfPolicies( $policy, $defaultPolicy );
+			}
+			return $defaultPolicy;
+		} catch ( Exception $e ) {
+			// T104615 - race condition in attaching user and creating local
+			// wiki account can cause this Exception from
+			// CentralAuthUser::localUserData. For T119736, if localuser table
+			// gets out of sync, don't deny logins
+			if ( substr( $e->getMessage(), 0 , 34 )
+				=== 'Could not find local user data for'
+			) {
+				wfDebugLog(
+					'CentralAuth',
+					sprintf( 'Bug T104615 hit for %s@%s',
+						$central->getName(),
+						wfWikiId()
+					)
+				);
+				return $defaultPolicy;
+			}
+			throw $e;
+		}
+	}
 }
