@@ -536,5 +536,9 @@
 	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה.",
 	"centralauth-delete-empty-account": "חשבון ריק",
 	"sessionprovider-centralauthsessionprovider": "התחברויות מרכזיות מבוססות־עוגיות",
-	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken",
+	"log-action-filter-globalauth": "סוג השינויים:",
+	"log-action-filter-globalauth-delete": "מחיקות של חשבונות גלובליים",
+	"log-action-filter-globalauth-setstatus": "שינויי מצב של חשבונות גלובליים",
+	"log-action-filter-suppress-cadelete": "מחיקות של חשבונות גלובליים"
 }

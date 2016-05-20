@@ -191,5 +191,9 @@
 	"centralauth-uwbr-registration": "د نومليکنې نېټه",
 	"centralauth-uwbr-registration-nodate": "ناجوت",
 	"centralauth-uwbr-editcount": "د سمونونو شمېر",
-	"centralauth-delete-empty-account": "تش گڼون"
+	"centralauth-delete-empty-account": "تش گڼون",
+	"log-action-filter-globalauth": "د بدلون ډول:",
+	"log-action-filter-globalauth-delete": "نړېوال گڼون ړنگېدنه",
+	"log-action-filter-globalauth-setstatus": "نړېوال گڼون دريځ بدلون",
+	"log-action-filter-suppress-cadelete": "نړېوال گڼون ړنگېدنه"
 }

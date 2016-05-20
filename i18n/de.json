@@ -536,5 +536,10 @@
 	"centralauth-uwbr-intro": "Diese Seite listet auf diesem Wiki registrierte Benutzer auf, die umbenannt werden.",
 	"centralauth-delete-empty-account": "Leeres Benutzerkonto",
 	"sessionprovider-centralauthsessionprovider": "zentralen cookiebasierten Sitzungen",
-	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen"
+	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen",
+	"log-action-filter-globalauth": "Typ der Änderung:",
+	"log-action-filter-globalauth-delete": "Löschung des globalen Benutzerkontos",
+	"log-action-filter-globalauth-setstatus": "Statusänderung des globalen Benutzerkontos",
+	"log-action-filter-suppress-setstatus": "Statusänderung des globalen Benutzerkontos",
+	"log-action-filter-suppress-cadelete": "Löschung des globalen Benutzerkontos"
 }

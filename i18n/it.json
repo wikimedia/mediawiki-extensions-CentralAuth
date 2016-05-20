@@ -515,5 +515,9 @@
 	"centralauth-uwbr-intro": "Questa pagina elenca gli utenti registrati con questa wiki che saranno rinominati.",
 	"centralauth-delete-empty-account": "Utenza vuota",
 	"sessionprovider-centralauthsessionprovider": "sessioni basate su cookie centrali",
-	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken",
+	"log-action-filter-globalauth": "Tipo di modifica:",
+	"log-action-filter-globalauth-delete": "Cancellazione utenza globale",
+	"log-action-filter-globalauth-setstatus": "Modifica stato utenza globale",
+	"log-action-filter-suppress-cadelete": "Cancellazione utenza globale"
 }

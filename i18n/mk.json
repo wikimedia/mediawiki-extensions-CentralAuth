@@ -308,7 +308,6 @@
 	"centralauth-readonly": "Базата на CentralAuth е заклучена",
 	"centralauth-readonlytext": "Базата на CentralAuth е моментално заклучена за нови ставки и други измени. Ова веројатно се должи на редовно одржување, по што базата ќе продолжи да работи нормално.",
 	"right-globalgroupmembership": "Менување на членството во глобалните групи",
-	"right-centralauth-autoaccount": "Автоматска најава со глобална сметка",
 	"right-centralauth-unmerge": "Раздвој глобална сметка",
 	"right-centralauth-lock": "Заклучување или отклучување на глобална сметка",
 	"right-centralauth-oversight": "Пријување или скривање на глобална сметка",
@@ -341,8 +340,10 @@
 	"centralauth-rename-form-movepages": "Премести ги корисничките страници",
 	"centralauth-rename-form-suppressredirects": "Потисни создавање на пренасочувања",
 	"centralauth-rename-form-overrideantispoof": "Занемари спротиставености во AntiSpoof",
+	"centralauth-rename-form-overridetitleblacklist": "Заобиколи го црниот список",
 	"centralauth-rename-form-allowhigheditcount": "Потврдете дека преименувате корисник со повеќе од {{PLURAL:$1|едно уредување|$1 уредувања}}",
 	"centralauth-rename-globaleditcount-threshold": "Корисников има повеќе од {{PLURAL:$1|едно уредување|$1 уредувања}}. Потврдете дека сте сигурни дека сакате да го преименувате и дека има администратор кој ќе врши надзор врз преименувањето.",
+	"centralauth-rename-titleblacklist-match": "Новото корисничко име се совпаѓа со следниов запис на црниот список: $1",
 	"centralauth-rename-notinstalled": "Додатокот Renameuser не е воспоставен.",
 	"centralauth-rename-doesnotexist": "Укажаната сметка не постои.",
 	"centralauth-rename-alreadyexists": "Побараното корсиничко име е зафатено.",
@@ -449,6 +450,7 @@
 	"globalrenamequeue-request-unknown-body": "Не го пронајдов барањето за преименување.",
 	"globalrenamequeue-request-status-title": "Преименување на „$1“ во „$2“",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>Избраното корисничко име е слично на {{PLURAL:$2|постоечко|постоечките}}:</strong> $1",
+	"globalrenamequeue-request-titleblacklist": "<strong>Избраното корисничко име се совпаѓа со следниов запис на црниот список:</strong> $1",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Претходно преименување|Претходни преименувања}}",
 	"globalrenamequeue-view": ";Од:\n:[[Special:CentralAuth/$1|$1]]\n;Во:\n:[[Special:CentralAuth/$2|$2]]\n;Причина:\n:$3\n;Статус:\n:$4\n;Побарано:\n:$5\n;Извршено:\n:$6\n;Извршил:\n:[$7 $8]\n;Белешки:\n:$9",
 	"globalrenamequeue-view-approved": "одобрено",
@@ -527,5 +529,10 @@
 	"centralauth-uwbr-intro": "На страницава се наведени корисниците регистрирани на ова вики кои ќе бидат преименувани.",
 	"centralauth-delete-empty-account": "Празна сметка",
 	"sessionprovider-centralauthsessionprovider": "централни седници со колачиња",
-	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра"
+	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра",
+	"log-action-filter-globalauth": "Вид на измена:",
+	"log-action-filter-globalauth-delete": "Бришење на глобална сметка",
+	"log-action-filter-globalauth-setstatus": "Смена на статусот на глобална сметка",
+	"log-action-filter-suppress-setstatus": "Смена на статусот на глобална сметка",
+	"log-action-filter-suppress-cadelete": "Бришење на глобална сметка"
 }

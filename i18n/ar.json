@@ -329,7 +329,6 @@
 	"centralauth-readonly": "قاعدة بيانات الدخول الموحد مقفلة",
 	"centralauth-readonlytext": "قاعدة بيانات الدخول الموحد مقفلة حالياً ولا تستقبل مدخلات جديدة أو تعديلات أخرى، وذلك ربما بسبب الصيانة الروتينية، وبعد انتهائها ستعود إلى العمل كالعادة.",
 	"right-globalgroupmembership": "تعديل العضوية للمجموعات العامة",
-	"right-centralauth-autoaccount": "الدخول تلقائيا بواسطة الحساب العام",
 	"right-centralauth-unmerge": "إلغاء دمج الحسابات العامة.",
 	"right-centralauth-lock": "إقفال أو فتح الحساب العام",
 	"right-centralauth-oversight": "أخف الحساب العام",
@@ -504,5 +503,6 @@
 	"centralauth-uwbr-registration-nodate": "غير معروف",
 	"centralauth-uwbr-editcount": "عدد التعديلات",
 	"centralauth-delete-empty-account": "حساب فارغ",
-	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)"
+	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)",
+	"log-action-filter-globalauth": "نوع التغيير:"
 }

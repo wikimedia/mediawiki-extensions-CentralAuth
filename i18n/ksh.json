@@ -487,5 +487,6 @@
 	"centralauth-uwbr-registration-nodate": "Onbikannt",
 	"centralauth-uwbr-editcount": "Aanzahl Änderonge",
 	"centralauth-uwbr-intro": "Heh di Sigg zeisch de Metmaacher en hehe dämm Wikki, di ömjedeuf wähde.",
-	"centralauth-delete-empty-account": "Läddejje Zohjang"
+	"centralauth-delete-empty-account": "Läddejje Zohjang",
+	"log-action-filter-globalauth": "De Zoot vun dä Änderong"
 }

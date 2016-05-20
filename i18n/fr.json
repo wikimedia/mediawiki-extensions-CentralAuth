@@ -568,5 +568,10 @@
 	"centralauth-uwbr-intro": "Cette page liste les utilisateurs inscrits dans ce wiki qui seront renommés.",
 	"centralauth-delete-empty-account": "Compte vide",
 	"sessionprovider-centralauthsessionprovider": "sessions basées sur les cookies centraux",
-	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
+	"log-action-filter-globalauth": "Type de modification :",
+	"log-action-filter-globalauth-delete": "Suppression de compte global",
+	"log-action-filter-globalauth-setstatus": "Modification d’état de compte global",
+	"log-action-filter-suppress-setstatus": "Modification d’état de compte global",
+	"log-action-filter-suppress-cadelete": "Suppression de compte global"
 }

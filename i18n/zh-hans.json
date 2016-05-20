@@ -557,5 +557,10 @@
 	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。",
 	"centralauth-delete-empty-account": "空账户",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based会话",
-	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken会话"
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken会话",
+	"log-action-filter-globalauth": "更改类型：",
+	"log-action-filter-globalauth-delete": "全域账户删除",
+	"log-action-filter-globalauth-setstatus": "全域账户状态更改",
+	"log-action-filter-suppress-setstatus": "全域账户状态更改",
+	"log-action-filter-suppress-cadelete": "全域账户删除"
 }
