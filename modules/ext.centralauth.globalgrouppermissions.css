@@ -1,3 +1,6 @@
+/**
+ * Used on group specific pages
+ */
 .mw-centralauth-editgroup-readonly .mw-centralauth-editgroup-unchecked {
 	color: grey;
 }
@@ -6,4 +9,15 @@
 	-webkit-columns: 23em 3;
 	-moz-columns: 23em 3;
 	columns: 23em 3;
+}
+
+/**
+ * Used on the groups list table
+ */
+table.mw-centralauth-groups-table tr {
+	vertical-align: top;
+}
+
+table.mw-centralauth-groups-table hr {
+	background-color: #d4d4d4;
 }
