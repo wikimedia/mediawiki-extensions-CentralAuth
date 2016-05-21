@@ -280,8 +280,6 @@
 	"centralauth-newgroup-intro": "You can use this form to assign permissions to a new group.\nNote that a group does not exist unless it has permissions assigned to it.",
 	"centralauth-globalgroupperms-newgroupname": "New group name:",
 	"centralauth-globalgroupperms-creategroup-submit": "Assign permissions",
-	"centralauth-editgroup-subtitle": "Editing $1",
-	"centralauth-editgroup-subtitle-readonly": "View $1",
 	"centralauth-editgroup-fieldset": "Permissions for $1",
 	"centralauth-editgroup-name": "Name of group:",
 	"centralauth-editgroup-display": "Localised name of group:",
