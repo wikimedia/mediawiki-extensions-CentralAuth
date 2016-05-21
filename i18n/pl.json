@@ -326,7 +326,6 @@
 	"centralauth-readonly": "Baza danych CentralAuth jest zablokowana",
 	"centralauth-readonlytext": "Baza danych CentralAuth jest zablokowana do dodawania nowych wpisów i edycji, prawdopodobnie na czas rutynowej konserwacji bazy danych, po której powróci do normalności.",
 	"right-globalgroupmembership": "Zmiana przynależności do grup globalnych",
-	"right-centralauth-autoaccount": "Automatyczne logowanie na konto uniwersalne",
 	"right-centralauth-unmerge": "Rozdzielenie konta uniwersalnego",
 	"right-centralauth-lock": "Blokowanie lub odblokowanie konta uniwersalnego",
 	"right-centralauth-oversight": "Utajnianie konta uniwersalnego",
@@ -422,5 +421,6 @@
 	"centralauth-uwbr-name": "Nazwa użytkownika",
 	"centralauth-uwbr-registration": "Data rejestracji",
 	"centralauth-uwbr-editcount": "Liczba edycji",
-	"centralauth-delete-empty-account": "Puste konto"
+	"centralauth-delete-empty-account": "Puste konto",
+	"log-action-filter-globalauth": "Rodzaj zmian:"
 }

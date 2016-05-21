@@ -300,7 +300,6 @@
 	"centralauth-readonly": "D'CentralAuth Datebank ass gespaart",
 	"centralauth-readonlytext": "D'CentralAuth Datebank ass elo gespaart fir nei Androungen a fir aner Ännerungen, wahrscheinlech wéinst geplangten Aarbechten un der Datebank, duerno wäert nees alles normal funktionéieren.",
 	"right-globalgroupmembership": "Zougehéieregkeet zu lokale Gruppen änneren",
-	"right-centralauth-autoaccount": "Automatesch mam globale Benotzerkont aloggen.",
 	"right-centralauth-unmerge": "Globale Benotzerkont nees trennen",
 	"right-centralauth-lock": "Globale Benotzerkont spären oder d'Spär ophiewen",
 	"right-centralauth-oversight": "Globale Benotzerkont suppriméieren oder verstoppen",
@@ -442,5 +441,7 @@
 	"centralauth-uwbr-registration": "Datum vun der Umeldung",
 	"centralauth-uwbr-registration-nodate": "Onbekannt",
 	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen",
-	"centralauth-delete-empty-account": "Eidele Benotzerkont"
+	"centralauth-delete-empty-account": "Eidele Benotzerkont",
+	"log-action-filter-globalauth": "Typ vun der Ännerung:",
+	"log-action-filter-globalauth-delete": "Läsche vum globale Benotzerkont"
 }

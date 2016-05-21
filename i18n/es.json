@@ -46,7 +46,8 @@
 			"Jmvkrecords",
 			"Ryo567",
 			"Chris TR",
-			"Matiia"
+			"Matiia",
+			"Indiralena"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -352,7 +353,6 @@
 	"centralauth-readonly": "La base de datos de autenticación está bloqueada",
 	"centralauth-readonlytext": "La base de datos no permite nuevas entradas u otras modificaciones de forma temporal, probablemente por mantenimiento rutinario, tras lo cual volverá a la normalidad.",
 	"right-globalgroupmembership": "Editar pertenencia a grupos globales",
-	"right-centralauth-autoaccount": "Acceder automáticamente con la cuenta global",
 	"right-centralauth-unmerge": "Desunificar cuenta global",
 	"right-centralauth-lock": "Bloquear o desbloquear cuenta global",
 	"right-centralauth-oversight": "Suprimir o ocultar una cuenta global",
@@ -566,5 +566,10 @@
 	"centralauth-uwbr-registration-nodate": "Desconocida",
 	"centralauth-uwbr-editcount": "Número de ediciones",
 	"centralauth-uwbr-intro": "Esta página lista los usuarios registrados en este wiki que cambiarán de nombre.",
-	"centralauth-delete-empty-account": "Cuenta vacía"
+	"centralauth-delete-empty-account": "Cuenta vacía",
+	"log-action-filter-globalauth": "Tipo de cambio:",
+	"log-action-filter-globalauth-delete": "Eliminación de cuenta global",
+	"log-action-filter-globalauth-setstatus": "Cambio de estado de la cuenta global",
+	"log-action-filter-suppress-setstatus": "Cambio de estado de la cuenta global",
+	"log-action-filter-suppress-cadelete": "Eliminación de cuenta global"
 }

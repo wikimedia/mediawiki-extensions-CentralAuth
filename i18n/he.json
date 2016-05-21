@@ -540,5 +540,6 @@
 	"log-action-filter-globalauth": "סוג השינויים:",
 	"log-action-filter-globalauth-delete": "מחיקות של חשבונות גלובליים",
 	"log-action-filter-globalauth-setstatus": "שינויי מצב של חשבונות גלובליים",
+	"log-action-filter-suppress-setstatus": "שינוי מצב חשבון גלובלי",
 	"log-action-filter-suppress-cadelete": "מחיקות של חשבונות גלובליים"
 }
