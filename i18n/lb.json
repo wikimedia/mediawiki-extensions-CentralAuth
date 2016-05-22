@@ -443,5 +443,7 @@
 	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen",
 	"centralauth-delete-empty-account": "Eidele Benotzerkont",
 	"log-action-filter-globalauth": "Typ vun der Ännerung:",
-	"log-action-filter-globalauth-delete": "Läsche vum globale Benotzerkont"
+	"log-action-filter-globalauth-delete": "Läsche vum globale Benotzerkont",
+	"log-action-filter-globalauth-setstatus": "Ännerung vum Status vum globale Benotzerkont",
+	"log-action-filter-suppress-cadelete": "Läsche vum globale Benotzerkont"
 }

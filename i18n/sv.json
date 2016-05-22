@@ -545,5 +545,6 @@
 	"centralauth-uwbr-intro": "Denna sida listar användare registrerade på denna wiki som kommer att döpas om.",
 	"centralauth-delete-empty-account": "Tomt konto",
 	"sessionprovider-centralauthsessionprovider": "centrala cookie-baserad sessioner",
-	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-sessioner"
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-sessioner",
+	"log-action-filter-globalauth": "Typ av ändring:"
 }
