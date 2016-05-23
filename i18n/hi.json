@@ -314,7 +314,6 @@
 	"centralauth-readonly": "वैश्विक खाता डाटाबेस लॉक किया गया है",
 	"centralauth-readonlytext": "वैश्विक खाता डाटाबेस अभी नई प्रविष्टियों और बदलावों से लॉक किया हुआ है। संभवतः यह सामान्य रखरखाव के लिए किया गया हो, जिसके बाद ये पुनः अपनी सामान्य स्थिति पर आ जाएगा।",
 	"right-globalgroupmembership": "वैश्विक सदस्य-समूहों में सदस्यता सम्पादन",
-	"right-centralauth-autoaccount": "वैश्विक खाते द्वारा स्वचालित रूप से लॉगिन करें",
 	"right-centralauth-unmerge": "वैश्विक खाता अलग करें",
 	"right-centralauth-lock": "वैश्विक खाता लॉक करें या लॉक हटाएँ",
 	"right-centralauth-oversight": "वैश्विक खाते को छुपाएँ",
@@ -487,5 +486,6 @@
 	"centralauth-uwbr-registration": "पंजीकरण तिथि",
 	"centralauth-uwbr-registration-nodate": "अज्ञात",
 	"centralauth-uwbr-editcount": "सम्पादन संख्या",
-	"centralauth-delete-empty-account": "खाली खाता"
+	"centralauth-delete-empty-account": "खाली खाता",
+	"log-action-filter-globalauth": "बदलाव के प्रकार:"
 }

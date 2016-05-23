@@ -488,5 +488,9 @@
 	"centralauth-uwbr-editcount": "Aanzahl Änderonge",
 	"centralauth-uwbr-intro": "Heh di Sigg zeisch de Metmaacher en hehe dämm Wikki, di ömjedeuf wähde.",
 	"centralauth-delete-empty-account": "Läddejje Zohjang",
-	"log-action-filter-globalauth": "De Zoot vun dä Änderong"
+	"log-action-filter-globalauth": "De Zoot vun dä Änderong",
+	"log-action-filter-globalauth-delete": "De jemeinsame Aanmeldung fottjeschmeße",
+	"log-action-filter-globalauth-setstatus": "Zohshtand fun de jemeinsame Aanmeldung veränndert",
+	"log-action-filter-suppress-setstatus": "Zohshtand fun de jemeinsame Aanmeldung veränndert",
+	"log-action-filter-suppress-cadelete": "De jemeinsame Aanmeldung fottjeschmeße"
 }

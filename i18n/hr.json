@@ -258,5 +258,7 @@
 	"right-centralauth-oversight": "Sakrivanje globalnog računa",
 	"right-centralauth-merge": "Spajanje svojih računa",
 	"right-globalgrouppermissions": "Uređivanje globalnih skupina",
-	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja suradnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“"
+	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja suradnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",
+	"centralauth-contribs-locked": "Ovaj je suradnički račun globalno zaključan.\nVidi [[Special:CentralAuth/$1|više informacija]].",
+	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:"
 }
