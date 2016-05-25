@@ -1,6 +1,7 @@
 *~
 *.kate-swp
 .*.swp
+composer.lock
 /nbproject/private/
-node_modules/
-vendor/
+/node_modules
+/vendor
