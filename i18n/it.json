@@ -19,7 +19,8 @@
 			"Ricordisamoa",
 			"Toadino2",
 			"Alexmar983",
-			"Nastoshka"
+			"Nastoshka",
+			"Matteocng"
 		]
 	},
 	"mergeaccount": "Processo di unificazione delle utenze - status",
@@ -519,5 +520,6 @@
 	"log-action-filter-globalauth": "Tipo di modifica:",
 	"log-action-filter-globalauth-delete": "Cancellazione utenza globale",
 	"log-action-filter-globalauth-setstatus": "Modifica stato utenza globale",
+	"log-action-filter-suppress-setstatus": "Cambio di stato dell'account globale",
 	"log-action-filter-suppress-cadelete": "Cancellazione utenza globale"
 }

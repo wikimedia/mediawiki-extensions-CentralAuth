@@ -535,5 +535,10 @@
 	"centralauth-uwbr-intro": "Esta páxina mostra unha lista dos usuarios rexistrados neste wiki que serán renomeados.",
 	"centralauth-delete-empty-account": "Conta baleira",
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
-	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
+	"log-action-filter-globalauth": "Tipo de cambio:",
+	"log-action-filter-globalauth-delete": "Eliminación de conta global",
+	"log-action-filter-globalauth-setstatus": "Modificación de estado de conta global",
+	"log-action-filter-suppress-setstatus": "Modificación de estado de conta global",
+	"log-action-filter-suppress-cadelete": "Eliminación de conta global"
 }
