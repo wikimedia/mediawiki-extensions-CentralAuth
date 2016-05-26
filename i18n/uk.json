@@ -23,7 +23,8 @@
 			"NataChe",
 			"Olion",
 			"Piramidion",
-			"Dars"
+			"Dars",
+			"Максим Підліснюк"
 		]
 	},
 	"mergeaccount": "Стан об'єднання облікових записів",
@@ -329,7 +330,6 @@
 	"centralauth-readonly": "база даних CentralAuth заблокована",
 	"centralauth-readonlytext": "База даних централізованої автеніфікації наразі заблокована для нових записів та інших змін, імовірно, програмою догляду за базою, після якого вона повернеться до звичайного режиму.",
 	"right-globalgroupmembership": "зміна членства у глобальних групах",
-	"right-centralauth-autoaccount": "Автоматичний вхід із глобального облікового запису",
 	"right-centralauth-unmerge": "роз'єднання глобальних облікових записів",
 	"right-centralauth-lock": "блокування або приховування глобального облікового запису",
 	"right-centralauth-oversight": "придушення або приховування глобальних облікових записів",
@@ -362,8 +362,10 @@
 	"centralauth-rename-form-movepages": "Перемістити сторінки користувача",
 	"centralauth-rename-form-suppressredirects": "Заборонити створення перенаправлень",
 	"centralauth-rename-form-overrideantispoof": "Відкидати будь-які конфлікти AntiSpoof",
+	"centralauth-rename-form-overridetitleblacklist": "Обійти чорний список назв",
 	"centralauth-rename-form-allowhigheditcount": "Підтвердьте перейменування користувача, який здійснив більш ніж $1 {{PLURAL:$1|редагування|редагування|редагувань}}.",
 	"centralauth-rename-globaleditcount-threshold": "Цей користувач здійснив більш ніж $1 {{PLURAL:$1|редагування|редагування|редагувань}}. Будь ласка, підтвердьте, що Ви хочете перейменувати цього користувача, і що системний адміністратор може простежити за цим процесом.",
+	"centralauth-rename-titleblacklist-match": "Нове ім'я користувача відповідає такому запису з чорного списку назв: $1",
 	"centralauth-rename-notinstalled": "Розширення Renameuser не інстальоване.",
 	"centralauth-rename-doesnotexist": "Даний обліковий запис не існує.",
 	"centralauth-rename-alreadyexists": "Запитуване ім'я користувача вже існує.",
@@ -470,6 +472,7 @@
 	"globalrenamequeue-request-unknown-body": "Такий запит на перейменування не знайдено.",
 	"globalrenamequeue-request-status-title": "Перейменування із «$1» на «$2»",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>Обране ім'я користувача схоже на {{PLURAL:$2|уже наявне ім'я користувача|уже наявні імена користувачів}}:</strong> $1",
+	"globalrenamequeue-request-titleblacklist": "<strong>Вибране ім'я користувача відповідає такому запису з чорного списку назв:</strong> $1",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Попереднє перейменування|Попередні перейменування}}",
 	"globalrenamequeue-view": ";Із:\n:[[Special:CentralAuth/$1|$1]]\n;На:\n:[[Special:CentralAuth/$2|$2]]\n;Причина:\n:$3\n;Стан:\n:$4\n;Дата запиту:\n:$5\n;Завершено:\n:$6\n;{{GENDER:$8|Виконав|Виконала}}:\n:[$7 $8]\n;Примітки:\n:$9",
 	"globalrenamequeue-view-approved": "затверджено",
@@ -548,5 +551,10 @@
 	"centralauth-uwbr-intro": "Ця сторінка перелічує користувачів, які зареєстровані через цю вікі, яких буде перейменовано.",
 	"centralauth-delete-empty-account": "Порожній обліковий запис.",
 	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
-	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken",
+	"log-action-filter-globalauth": "Тип зміни:",
+	"log-action-filter-globalauth-delete": "Видалення глобального облікового запису",
+	"log-action-filter-globalauth-setstatus": "Зміна статусу глобального облікового запису",
+	"log-action-filter-suppress-setstatus": "Зміна статусу глобального облікового запису",
+	"log-action-filter-suppress-cadelete": "Видалення глобального облікового запису"
 }

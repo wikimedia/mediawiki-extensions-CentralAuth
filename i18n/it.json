@@ -111,8 +111,8 @@
 	"centralauth-admin-info-locked": "Bloccata:",
 	"centralauth-admin-info-hidden": "Nascosta:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Gruppo globale|Gruppi globali}}:",
-	"centralauth-admin-info-attached": "Numero di account collegati:",
-	"centralauth-admin-info-unattached": "Numero di account non collegati:",
+	"centralauth-admin-info-attached": "Numero di utenze collegate:",
+	"centralauth-admin-info-unattached": "Numero di utenze non collegate:",
 	"centralauth-admin-yes": "sì",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-hidden-list": "dalla lista pubblica",
@@ -520,6 +520,6 @@
 	"log-action-filter-globalauth": "Tipo di modifica:",
 	"log-action-filter-globalauth-delete": "Cancellazione utenza globale",
 	"log-action-filter-globalauth-setstatus": "Modifica stato utenza globale",
-	"log-action-filter-suppress-setstatus": "Cambio di stato dell'account globale",
+	"log-action-filter-suppress-setstatus": "Modifica stato utenza globale",
 	"log-action-filter-suppress-cadelete": "Cancellazione utenza globale"
 }

@@ -42,7 +42,8 @@
 			"Wladek92",
 			"Orlodrim",
 			"Fylip22",
-			"Nicolapps"
+			"Nicolapps",
+			"Steinsplitter"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -458,10 +459,10 @@
 	"centralauth-usermerge-form-adduser": "Ajouter un utilisateur",
 	"centralauth-usermerge-form-deleteuser": "Retirer un utilisateur",
 	"globalrenamerequest-status-text": "Votre demande de changement de nom d’utilisateur est actuellement en traitement et attend une approbation par un administrateur. Vous serez informé par courriel quand le traitement sera effectué.\n\n;Nom d’utilisateur actuel :\n:$1\n;Nom d’utilisateur demandé :\n:$2",
-	"globalrenamequeue": "File de demande de renommage globale",
+	"globalrenamequeue": "File de demandes de renommage global",
 	"globalrenamequeue-desc": "Traitez les demandes de changement de nom global",
 	"globalrenamequeue-nav-openqueue": "Requêtes ouvertes",
-	"globalrenamequeue-nav-closedqueue": "Requêtes fermés",
+	"globalrenamequeue-nav-closedqueue": "Requêtes fermées",
 	"globalrenamequeue-column-rq-name": "Nom d’utilisateur",
 	"globalrenamequeue-column-rq-newname": "Nom d’utilisateur demandé",
 	"globalrenamequeue-column-rq-wiki": "Wiki local",
