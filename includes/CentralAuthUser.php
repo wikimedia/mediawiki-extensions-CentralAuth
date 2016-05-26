@@ -1969,9 +1969,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * an alert or management system to show which accounts have still
 	 * to be dealt with.
 	 *
-	 * @return array of database name strings
+	 * @return string[] of database name strings
 	 */
 	public function listUnattached() {
+		if ( IP::isIPAddress( $this->mName ) ) {
+			return []; // don't bother with master queries
+		}
+
 		$unattached = $this->doListUnattached();
 		if ( empty( $unattached ) ) {
 			if ( $this->lazyImportLocalNames() ) {
@@ -2065,12 +2069,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			return false;
 		}
 
-		// Confirm against the master for sanity...
-		$known = (bool)CentralAuthUtils::getCentralDB()->selectField(
-			'globalnames', '1', [ 'gn_name' => $this->mName ], __METHOD__
-		);
-
-		return $known ? false : $this->importLocalNames();
+		return $this->importLocalNames();
 	}
 
 	/**
@@ -2080,38 +2079,41 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Bool whether any results were found
 	 */
 	function importLocalNames() {
-		$rows = array();
+		$rows = [];
 		foreach ( self::getWikiList() as $wikiID ) {
-			$lb = wfGetLB( $wikiID );
-			$dbr = $lb->getConnection( DB_SLAVE, array(), $wikiID );
+			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_SLAVE, array(), $wikiID );
 			$id = $dbr->selectField(
 				"`$wikiID`.`user`",
 				'user_id',
 				array( 'user_name' => $this->mName ),
-				__METHOD__ );
+				__METHOD__
+			);
 			if ( $id ) {
-				$rows[] = array(
-					'ln_wiki' => $wikiID,
-					'ln_name' => $this->mName );
+				$rows[] = [ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ];
 			}
-			$lb->reuseConnection( $dbr );
 		}
 
-		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->startAtomic( __METHOD__ );
-		$dbw->insert( 'globalnames',
-			array( 'gn_name' => $this->mName ),
-			__METHOD__,
-			array( 'IGNORE' ) );
-		if ( $rows ) {
-			$dbw->insert( 'localnames',
-				$rows,
+		if ( $rows || $this->exists() ) {
+			$dbw = CentralAuthUtils::getCentralDB();
+			$dbw->startAtomic( __METHOD__ );
+			$dbw->insert(
+				'globalnames',
+				array( 'gn_name' => $this->mName ),
 				__METHOD__,
-				array( 'IGNORE' ) );
+				array( 'IGNORE' )
+			);
+			if ( $rows ) {
+				$dbw->insert(
+					'localnames',
+					$rows,
+					__METHOD__,
+					array( 'IGNORE' )
+				);
+			}
+			$dbw->endAtomic( __METHOD__ );
 		}
-		$dbw->endAtomic( __METHOD__ );
 
-		return !empty( $rows );
+		return (bool)$rows;
 	}
 
 	/**
