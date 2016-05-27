@@ -16,6 +16,24 @@
       "revId": "4e073996a69894da17ed2181ad473ceaf0f4fe07",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_c3c3f98b",
+        "filename": "includes/CentralAuthPlugin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-05-27T18:02:21Z",
+      "side": 1,
+      "message": "Chances are pretty low that the calling code cared enough to make a master User instance, unless they ran into a bug like T135656 already.",
+      "parentUuid": "ae564743_6c43ff67",
+      "revId": "4e073996a69894da17ed2181ad473ceaf0f4fe07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
