@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_6c43ff67",
+        "filename": "includes/CentralAuthPlugin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-27T15:37:48Z",
+      "side": 1,
+      "message": "I think the nice approach would be to return a master instance if the user object is a master instance. But this is legacy code and will only be used for a few weeks so no point in caring.",
+      "revId": "4e073996a69894da17ed2181ad473ceaf0f4fe07",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
