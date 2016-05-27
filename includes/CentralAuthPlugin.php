@@ -364,7 +364,9 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @return CentralAuthUser
 	 */
 	public function getUserInstance( User &$user ) {
-		return CentralAuthUser::getInstance( $user );
+		// Needs to be a master instance because we don't know if the caller is
+		// going to call write methods like AuthPluginUser::resetAuthToken().
+		return CentralAuthUser::getMasterInstance( $user );
 	}
 
 	/**
