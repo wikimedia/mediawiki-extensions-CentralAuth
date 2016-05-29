@@ -47,7 +47,8 @@
 			"Ryo567",
 			"Chris TR",
 			"Matiia",
-			"Indiralena"
+			"Indiralena",
+			"Rubentl134"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -493,6 +494,7 @@
 	"globalrenamequeue-request-unknown-body": "No se encontró la solicitud de renombramiento.",
 	"globalrenamequeue-request-status-title": "Renombrar de \"$1\" a \"$2\"",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>El nombre de usuario elegido es similar a {{PLURAL:$2|uno existente|algunos existentes}}:</strong> $1",
+	"globalrenamequeue-request-titleblacklist": "<strong>El nombre de usuario elegido coincide con lo siguiente TitleBlacklist entrada:</strong> $1",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Cambio de nombre previo|Cambios de nombre previos}}",
 	"globalrenamequeue-view": ";De:\n:[[Special:CentralAuth/$1|$1]]\n;A:\n:[[Special:CentralAuth/$2|$2]]\n;Motivo:\n:$3\n;Estado:\n:$4\n;Solicitado:\n:$5\n;Completado:\n:$6\n;Hecho por:\n:[$7 $8]\n;Notas:\n:$9",
 	"globalrenamequeue-view-approved": "aprobado",

@@ -6,7 +6,8 @@
 			"Satdeep gill",
 			"TariButtar",
 			"Babanwalia",
-			"ਪ੍ਰਚਾਰਕ"
+			"ਪ੍ਰਚਾਰਕ",
+			"Jimidar"
 		]
 	},
 	"mergeaccount": "ਲਾਗਇਨ ਯੂਨੀਫਕੇਸ਼ਨ ਹਾਲਤ",
@@ -69,5 +70,8 @@
 	"globalrenamequeue-form-username": "ਵਰਤੋਂਕਾਰ ਨਾਮ:",
 	"globalrenamequeue-form-status": "ਸਥਿਤੀ:",
 	"globalrenamequeue-form-status-all": "ਸਾਰੇ",
-	"centralauth-abortlogin-renamed": "ਤੁਹਾਡੇ ਖਾਤੇ ਦਾ ਨਾਂ ਬਦਲ ਕੇ \"$1\" ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਉਹੀ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਵਰਤੋ ਜੀ।"
+	"centralauth-abortlogin-renamed": "ਤੁਹਾਡੇ ਖਾਤੇ ਦਾ ਨਾਂ ਬਦਲ ਕੇ \"$1\" ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਉਹੀ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਵਰਤੋ ਜੀ।",
+	"log-action-filter-globalauth": "ਬਦਲਾਅ ਦੀ ਕਿਸਮ",
+	"log-action-filter-globalauth-delete": "ਵਿਆਪਕ ਖਾਤਾ ਮਿਟਾਉਣਾ",
+	"log-action-filter-suppress-cadelete": "ਵਿਆਪਕ ਖਾਤਾ ਮਿਟਾਉਣਾ"
 }

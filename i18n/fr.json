@@ -490,7 +490,7 @@
 	"globalrenamequeue-request-unknown-body": "La demande de changement de nom n’a pas été trouvée.",
 	"globalrenamequeue-request-status-title": "Renommer de « $1 » à « $2 »",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>Le nom d'utilisateur choisi est similaire à {{PLURAL:$2|un nom d'utilisateur existant|noms d'utilisateur existant}}:</strong> $1",
-	"globalrenamequeue-request-titleblacklist": "<strong>Le nom d’utilisateur choisi correspond au titre de l’entrée de liste noire suivante :</strong> $1",
+	"globalrenamequeue-request-titleblacklist": "<strong>Le nom d’utilisateur choisi correspond au titre de l’Entrée de Liste Noire suivante :</strong> $1",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|renommage|renommages}} précédents",
 	"globalrenamequeue-view": ";De:\n:[[Special:CentralAuth/$1|$1]]\n;À:\n:[[Special:CentralAuth/$2|$2]]\n;Raison :\n:$3\n;Statut :\n:$4\n;Demandé :\n:$5\n;Terminé :\n:$6\n;Par :\n:[$7 $8]\n;Notes :\n:$9",
 	"globalrenamequeue-view-approved": "approuvé",

@@ -312,7 +312,6 @@
 	"centralauth-readonly": "Cơ sở dữ liệu CentralAuth đã bị khóa",
 	"centralauth-readonlytext": "Cơ sở dữ liệu CentralAuth đang bị khóa không được tạo trang mới hoặc thực hiện những thay đổi khác, có lẽ để bảo trì thường lệ, sau đó nó sẽ trở lại bình thường.",
 	"right-globalgroupmembership": "Sửa thành viên của nhóm toàn cục",
-	"right-centralauth-autoaccount": "Tự động đăng nhập dùng tài khoản toàn hệ thống",
 	"right-centralauth-unmerge": "Bỏ hợp nhất tài khoản chung",
 	"right-centralauth-lock": "Khóa hoặc mở khóa tài khoản chung",
 	"right-centralauth-oversight": "Cưỡng chế hoặc ẩn tài khoản chung",
@@ -345,8 +344,10 @@
 	"centralauth-rename-form-movepages": "Di chuyển các trang cá nhân",
 	"centralauth-rename-form-suppressredirects": "Tắt các trang đổi hướng",
 	"centralauth-rename-form-overrideantispoof": "Ghi đè những xung đột AntiSpoof",
+	"centralauth-rename-form-overridetitleblacklist": "Ghi đè danh sách đen tên trang",
 	"centralauth-rename-form-allowhigheditcount": "Xác nhận đổi tên người dùng có hơn $1 sửa đổi",
 	"centralauth-rename-globaleditcount-threshold": "Người dùng này có hơn $1 sửa đổi. Xin vui lòng xác nhận chắc chắn muốn đổi tên người dùng này và rằng một quản lý viên hệ thống có sẵn sàng quan sát việc đổi tên này.",
+	"centralauth-rename-titleblacklist-match": "Tên người dùng mới trùng với mục sau trong danh sách đen tên trang: $1",
 	"centralauth-rename-notinstalled": "Phần mở rộng Renameuser chưa được cài đặt.",
 	"centralauth-rename-doesnotexist": "Tài khoản được cung cấp không tồn tại.",
 	"centralauth-rename-alreadyexists": "Tên người dùng được yêu cầu đã tồn tại.",
@@ -453,6 +454,7 @@
 	"globalrenamequeue-request-unknown-body": "Không tìm thấy lời yêu cầu.",
 	"globalrenamequeue-request-status-title": "Đổi tên “$1” thành “$2”",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>Tên người dùng được chọn quá giống {{PLURAL:$2|một tên người dùng|các tên người dùng}} đã tồn tại:</strong> $1",
+	"globalrenamequeue-request-titleblacklist": "<strong>Tên người dùng đã chọn trùng với mục sau trong danh sách đen tên trang:</strong> $1",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Lần đổi tên|Các lần đổi tên}} trước đây",
 	"globalrenamequeue-view": ";Từ:\n:[[Special:CentralAuth/$1|$1]]\n;Thành:\n:[[Special:CentralAuth/$2|$2]]\n;Lý do:\n:$3\n;Trạng thái:\n:$4\n;Lúc yêu cầu:\n:$5\n;Lúc thực hiện:\n:$6\n;Người thực hiện:\n:[$7 $8]\n;Ghi chú:\n:$9",
 	"globalrenamequeue-view-approved": "chấp nhận",
@@ -505,5 +507,10 @@
 	"centralauth-uwbr-intro": "Đây là danh sách các thành viên có tài khoản trên wiki này mà sẽ được đổi tên.",
 	"centralauth-delete-empty-account": "Tài khoản trống",
 	"sessionprovider-centralauthsessionprovider": "phiên trung ương dựa trên cookie",
-	"sessionprovider-centralauthtokensessionprovider": "phiên dấu CentralAuth"
+	"sessionprovider-centralauthtokensessionprovider": "phiên dấu CentralAuth",
+	"log-action-filter-globalauth": "Kiểu thay đổi:",
+	"log-action-filter-globalauth-delete": "Xóa tài khoản toàn cục",
+	"log-action-filter-globalauth-setstatus": "Thay đổi trạng thái tài khoản toàn cục",
+	"log-action-filter-suppress-setstatus": "Thay đổi trạng thái tài khoản toàn cục",
+	"log-action-filter-suppress-cadelete": "Xóa tài khoản toàn cục"
 }
