@@ -97,24 +97,6 @@ class CentralAuthHooks {
 				'license-name' => 'GPL-2.0',
 			);
 			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
-			$wgResourceModules['ext.centralauth.globalrenamerequest'] = array(
-				'scripts'       => array(
-					'ext.centralauth.globalrenamerequest.js',
-				),
-				'dependencies' => array( 'oojs-ui' ),
-				'messages' => array(
-					'globalrenamerequest-email-why-label',
-					'globalrenamerequest-email-why-explain',
-				),
-				'localBasePath' => "{$caBase}/modules",
-				'remoteExtPath' => 'CentralAuth/modules',
-			);
-			$wgResourceModules['ext.centralauth.globalrenamerequest.styles'] = array(
-				'position'		=> 'top',
-				'styles'        => 'ext.centralauth.globalrenamerequest.css',
-				'localBasePath' => "{$caBase}/modules",
-				'remoteExtPath' => 'CentralAuth/modules',
-			);
 
 			$wgExtensionCredits['specialpage'][] = array(
 				'path' => "{$caBase}/CentralAuth.php",

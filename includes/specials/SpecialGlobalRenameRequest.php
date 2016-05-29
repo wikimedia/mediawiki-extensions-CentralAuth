@@ -85,14 +85,6 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 					);
 					return;
 				}
-
-				$out->addModuleStyles( array(
-					'mediawiki.ui',
-					'mediawiki.ui.button',
-					'mediawiki.ui.input',
-					'ext.centralauth.globalrenamerequest.styles',
-				) );
-				$out->addModules( 'ext.centralauth.globalrenamerequest' );
 				parent::execute( $par );
 				break;
 		}
@@ -119,7 +111,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return string
 	 */
 	protected function getDisplayFormat() {
-		return 'vform';
+		return 'ooui';
 	}
 
 	/**
@@ -142,7 +134,6 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'cssclass'      => 'mw-globalrenamerequest-field',
 				'csshelpclass'  => 'mw-globalrenamerequest-help',
 				'default'       => $this->getUser()->getName(),
-				'help-message'  => 'globalrenamerequest-username-help',
 				'label-message' => 'globalrenamerequest-username-label',
 				'type'          => 'info',
 			),
@@ -150,15 +141,15 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'cssclass'     => 'mw-globalrenamerequest-field',
 				'csshelpclass' => 'mw-globalrenamerequest-help',
 				'default'      => $this->getRequest()->getVal( 'newname', $this->par ),
-				'help-message' => array(
-					'globalrenamerequest-newname-help',
-					$this->suggestedUsername(),
-				),
 				'id'            => 'mw-renamerequest-newname',
 				'label-message' => 'globalrenamerequest-newname-label',
 				'name'          => 'newname',
 				'required'      => true,
 				'type'          => 'text',
+				'notice-message' => array(
+					'globalrenamerequest-newname-help',
+					$this->suggestedUsername(),
+				),
 				'validation-callback' => array( $this, 'validateNewname' ),
 			),
 		);
@@ -169,25 +160,25 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'cssclass'      => 'mw-globalrenamerequest-field',
 				'csshelpclass'  => 'mw-globalrenamerequest-help',
 				'default'       => $this->getRequest()->getVal( 'email', $this->par ),
-				'help-message'  => 'globalrenamerequest-email-help',
 				'id'            => 'mw-renamerequest-email',
 				'label-message' => 'globalrenamerequest-email-label',
 				'name'          => 'email',
 				'placeholder'   => 'username@example.com',
 				'required'      => true,
 				'type'          => 'email',
+				'notice-message' => 'globalrenamerequest-email-why-explain',
 			);
 			$fields['email2'] = array(
 				'cssclass'      => 'mw-globalrenamerequest-field',
 				'csshelpclass'  => 'mw-globalrenamerequest-help',
 				'default'       => $this->getRequest()->getVal( 'email2', $this->par ),
-				'help-message'  => 'globalrenamerequest-email2-help',
 				'id'            => 'mw-renamerequest-email2',
 				'label-message' => 'globalrenamerequest-email2-label',
 				'name'          => 'email2',
 				'placeholder'   => 'username@example.com',
 				'required'      => true,
 				'type'          => 'email',
+				'notice-message' => 'globalrenamerequest-email2-help',
 				'validation-callback' => array( $this, 'validateEmail' ),
 			);
 		}
