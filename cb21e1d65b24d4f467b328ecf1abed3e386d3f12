@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae564743_5215e8e8",
+        "filename": "includes/CentralAuthPlugin.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-29T18:46:42Z",
+      "side": 1,
+      "message": "This user right is effectively removed by the patch, which is fine but worth mentioning in the summary.",
+      "revId": "cb21e1d65b24d4f467b328ecf1abed3e386d3f12",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae564743_121b7022",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-05-29T18:46:42Z",
+      "side": 1,
+      "message": "This should probably abstain if $wgCentralAuthAutoNew is false (or that config variable should be dropped).",
+      "revId": "cb21e1d65b24d4f467b328ecf1abed3e386d3f12",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
