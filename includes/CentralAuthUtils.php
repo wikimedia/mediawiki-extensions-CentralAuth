@@ -227,4 +227,28 @@ class CentralAuthUtils {
 			RequestContext::getMain()->getStats()->timing( "centralauth.session.delete", $real );
 		}
 	}
+
+	/**
+	 * Sets up jobs to create and attach a local account for the given user on every wiki listed in
+	 * $wgCentralAuthAutoCreateWikis.
+	 * @param CentralAuthUser $centralUser
+	 */
+	public static function scheduleCreationJobs( CentralAuthUser $centralUser ) {
+		global $wgCentralAuthAutoCreateWikis;
+
+		$name = $centralUser->getName();
+		$thisWiki = wfWikiID();
+		$session = RequestContext::getMain()->exportSession();
+		foreach ( $wgCentralAuthAutoCreateWikis as $wiki ) {
+			if ( $wiki === $thisWiki ) {
+				continue;
+			}
+			$job = Job::factory(
+				'CentralAuthCreateLocalAccountJob',
+				Title::makeTitleSafe( NS_USER, $name ),
+				array( 'name' => $name, 'from' => $thisWiki, 'session' => $session )
+			);
+			JobQueueGroup::singleton( $wiki )->push( $job );
+		}
+	}
 }
