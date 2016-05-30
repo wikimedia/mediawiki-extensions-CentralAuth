@@ -480,6 +480,7 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Dein}} Benutzerkonto wurde umbenannt",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Dein}} Benutzerkonto '''$1''' wurde während der automatischen Migration zum vereinheitlichten Anmeldesystem {{int:Centralauth-groupname}} umbenannt in '''$2'''.",
 	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''.",
+	"sulrenamewarning-authmanager-ok-help": "Nach der Anzeige der Umbenennungsbenachrichtigung fortfahren.",
 	"globalrenamequeue-request-reason-label": "Öffentlicher Kommentar eines Logbucheintrags (falls akzeptiert)",
 	"apihelp-centralauthtoken-example-1": "Ruft einen centralauthtoken ab",
 	"apihelp-deleteglobalaccount-description": "Löscht einen globalen Benutzer.",

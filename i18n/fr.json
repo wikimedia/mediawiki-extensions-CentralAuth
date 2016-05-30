@@ -507,6 +507,7 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Votre}} compte a été renommé",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Votre}} compte '''$1''' a été renommé en '''$2''' lors de la migration automatique vers le système d’identification unifié de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Veuillez utiliser {{GENDER:$1|votre}} nouveau nom d’utilisateur '''$1''' lorsque vous vous connectez à l’avenir.",
+	"sulrenamewarning-authmanager-ok-help": "Continuer après l'affichage de la notification de renommage.",
 	"globalrenamequeue-request-reason-label": "Commentaire de l’entrée du journal public (si accepté)",
 	"apihelp-centralauthtoken-description": "Demander un centralauthtoken pour faire une demande d’authentification à un wiki attaché.",
 	"apihelp-centralauthtoken-example-1": "Demander un centralauthtoken",
