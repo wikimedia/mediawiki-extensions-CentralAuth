@@ -473,6 +473,7 @@
 	"sulrenamewarning-title": "{{GENDER:$1|A súa conta}} foi cambiada de nome",
 	"sulrenamewarning-renamed": "A {{GENDER:$2|súa}} conta '''$1''' foi renomeada a '''$2''' durante a migración automática ó sistema de conta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Por favor, use o seu nome de {{GENDER:$1|usuario|usuaria|usuario/a}} \"$1\" para iniciar a sesión a partires de agora.",
+	"sulrenamewarning-authmanager-ok-help": "Continuar despois de amosar a notificación do cambio de nome.",
 	"globalrenamequeue-request-reason-label": "Commentario da entrada do rexistro público (se accepta)",
 	"apihelp-centralauthtoken-description": "Solicitar un centralauthtoken para facer unha petición autenticada a unha wiki anexa.",
 	"apihelp-centralauthtoken-example-1": "Solicitar un centralauthtoken",

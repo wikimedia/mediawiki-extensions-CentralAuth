@@ -467,6 +467,7 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Вашата}} сметка е отстранета",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Вашата}} сметка '''$1''' е преименувана во '''$2''' во текот на автоматскиот преод кон обединетиот најавен систем на {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Во иднина, за најава користете го {{GENDER:$1|вашето}} ново корисничко име '''$1'''.",
+	"sulrenamewarning-authmanager-ok-help": "Продолжи по известувањето за преименувањето.",
 	"globalrenamequeue-request-reason-label": "Јавен коментар во дневнички запис (ако е за прифаќање)",
 	"apihelp-centralauthtoken-description": "Дај шифра за централна најава за заверено барање до приврзано вики.",
 	"apihelp-centralauthtoken-example-1": "Дај шифра за централна најава",

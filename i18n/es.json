@@ -511,6 +511,7 @@
 	"sulrenamewarning-title": "Se renombró {{GENDER:$1|tu}} cuenta",
 	"sulrenamewarning-renamed": "Tu cuenta de usuario '''$1''' ha sido renombrada a '''$2''' durante el proceso automático de migración al sistema unificado de inicio de sesión de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
+	"sulrenamewarning-authmanager-ok-help": "Continuar después de mostrar la notificación del cambio de nombre.",
 	"globalrenamequeue-request-reason-label": "Entrada de registro pública (en caso de aceptar)",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "Borrar un usuario global.",
