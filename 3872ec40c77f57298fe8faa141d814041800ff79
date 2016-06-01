@@ -16,6 +16,24 @@
       "revId": "3872ec40c77f57298fe8faa141d814041800ff79",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_d87765fc",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-01T20:17:24Z",
+      "side": 1,
+      "message": "Not necessarily CentralAuth-aware, but CentralIdLookup-aware.\n\nI don\u0027t see how passing in the provider name would really help. Consider: A user sets up OAuth or BotPasswords for their bot\u0027s account on metawiki. Then they point their bot at Swahili Wiktionary, where the bot does not yet have a local account. The account should be auto-created. It will be with this patch, but I have difficulty thinking of a sensible way to do it if it\u0027s passing in \"OAuthSessionProvider\" or \"MediaWiki\\Session\\BotPasswordsSessionProvider\". \n\nWe\u0027d need to either have a configuration setting for which SessionProviders are \"safe\", or have each SessionProvider have a method to say \"I\u0027m safe!\" and then somehow get that into this method to check it. That\u0027d be a lot of complexity to add for what seems like a very remote possibility that someone makes a SessionProvider that returns non-local users without using CentralIdLookup to keep things sane.",
+      "parentUuid": "0efd9372_98e79d0d",
+      "revId": "3872ec40c77f57298fe8faa141d814041800ff79",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
