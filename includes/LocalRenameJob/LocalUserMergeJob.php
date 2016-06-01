@@ -60,22 +60,16 @@ class LocalUserMergeJob extends LocalRenameJob {
 	 * @throws Exception
 	 */
 	private function maybeCreateNewUser( $newName ) {
-		global $wgDisableAuthManager;
 		$user = User::newFromName( $newName );
 		if ( $user->getId() ) {
 			// User already exists, nothing to do.
 			return $user;
 		}
 
-		if ( class_exists( MediaWiki\Auth\AuthManager::class ) && !$wgDisableAuthManager ) {
-			$status = MediaWiki\Auth\AuthManager::autoCreateUser( $user, CentralAuthPrimaryAuthenticationProvider::class, false );
-			if ( !$status->isGood() ) {
-				$this->updateStatus( 'failed' );
-				throw new Exception( "AuthManager::autoCreateUser failed for $newName: " . $status->getWikiText( null, null, 'en' ) );
-			}
-		} elseif ( !MediaWiki\Session\SessionManager::autoCreateUser( $user ) ) {
+		$status = CentralAuthUtils::autoCreateUser( $user );
+		if ( !$status->isGood() ) {
 			$this->updateStatus( 'failed' );
-			throw new Exception( "SessionManager::autoCreateUser failed for $newName" );
+			throw new Exception( "autoCreateUser failed for $newName: " . $status->getWikiText( null, null, 'en' ) );
 		}
 
 		return $user;

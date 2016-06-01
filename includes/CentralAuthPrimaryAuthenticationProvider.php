@@ -352,7 +352,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		if ( $autocreate !== $this->getUniqueId() ) {
 			// Prevent creation if the user exists centrally
-			if ( $centralUser->exists() ) {
+			if ( $centralUser->exists() && $autocreate !== AuthManager::AUTOCREATE_SOURCE_SESSION ) {
 				$status->fatal( 'centralauth-account-exists' );
 				return $status;
 			}
