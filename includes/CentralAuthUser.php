@@ -2790,6 +2790,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Bool
 	 */
 	public function attachedOn( $wiki ) {
+		$this->loadAttached();
 		return $this->exists() && in_array( $wiki, $this->mAttachedArray );
 	}
 
