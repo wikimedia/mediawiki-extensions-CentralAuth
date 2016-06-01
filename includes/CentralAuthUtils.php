@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\Auth\AuthManager;
+use MediaWiki\Session\SessionManager;
+
 class CentralAuthUtils {
 	/** @var BagOStuff|null Session cache */
 	private static $sessionCache = null;
@@ -121,18 +124,33 @@ class CentralAuthUtils {
 	/**
 	 * Auto-create a user
 	 * @param User $user
-	 * @return bool Success
+	 * @return StatusValue
 	 */
 	public static function autoCreateUser( User $user ) {
+		global $wgDisableAuthManager;
+
 		// Ignore warnings about master connections/writes...hard to avoid here
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 
-		$res = MediaWiki\Session\SessionManager::autoCreateUser( $user );
-		\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autocreation attempt', array(
+		if ( !$wgDisableAuthManager ) {
+			$authManager = AuthManager::singleton();
+			$source = CentralAuthPrimaryAuthenticationProvider::class;
+			if ( !$authManager->getAuthenticationProvider( $source ) ) {
+				$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
+			}
+			$sv = $authManager->autoCreateUser( $user, $source, false );
+		} else {
+			$sv = StatusValue::newGood();
+			if ( !SessionManager::autoCreateUser( $user ) ) {
+				$sv->fatal( new RawMessage( 'auto-creation via SessionManager failed' ) );
+			}
+		}
+
+		\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',
-			'successful' => $res,
-		) );
-		return $res;
+			'status' => $sv,
+		] );
+		return $sv;
 	}
 
 	/**
@@ -142,7 +160,7 @@ class CentralAuthUtils {
 	 */
 	public static function getCentralSession( $session = null ) {
 		if ( !$session ) {
-			$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			$session = SessionManager::getGlobalSession();
 		}
 		$id = $session->get( 'CentralAuth::centralSessionId' );
 
@@ -178,7 +196,7 @@ class CentralAuthUtils {
 		static $keepKeys = array( 'user' => true, 'token' => true, 'expiry' => true );
 
 		if ( $session === null ) {
-			$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			$session = SessionManager::getGlobalSession();
 		}
 		$id = $session->get( 'CentralAuth::centralSessionId' );
 
@@ -215,7 +233,7 @@ class CentralAuthUtils {
 	 */
 	public static function deleteCentralSession( $session = null ) {
 		if ( !$session ) {
-			$session = MediaWiki\Session\SessionManager::getGlobalSession();
+			$session = SessionManager::getGlobalSession();
 		}
 		$id = $session->get( 'CentralAuth::centralSessionId' );
 

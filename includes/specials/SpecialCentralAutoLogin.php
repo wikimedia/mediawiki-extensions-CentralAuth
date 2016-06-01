@@ -478,7 +478,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !User::idFromName( $centralUser->getName() ) ) {
 				$user = new User;
 				$user->setName( $centralUser->getName() );
-				if ( CentralAuthUtils::autoCreateUser( $user ) ) {
+				if ( CentralAuthUtils::autoCreateUser( $user )->isGood() ) {
 					$centralUser->invalidateCache();
 				}
 			}
