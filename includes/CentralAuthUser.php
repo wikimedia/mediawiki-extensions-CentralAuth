@@ -2753,10 +2753,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Check if the user is attached on a given wiki id.
 	 *
-	 * @param $wiki String
-	 * @return Bool
+	 * @param string $wiki
+	 * @return bool
 	 */
 	public function attachedOn( $wiki ) {
+		$this->loadAttached();
 		return $this->exists() && in_array( $wiki, $this->mAttachedArray );
 	}
 
