@@ -166,7 +166,7 @@
 	"centralauth-admin-too-many-edits": "Das globale Benutzerkonto „<nowiki>$1</nowiki>“ hat mehr als {{PLURAL:$2|eine Bearbeitung|$2 Bearbeitungen}} und kann nicht versteckt werden.",
 	"centralauth-admin-title": "Globales Benutzerkonto für $1 verwalten",
 	"centralauth-admin-title-ro": "Globale Benutzerkonteninformationen für $1",
-	"globalusers": "Benutzerkontenverzeichnis (global)",
+	"globalusers": "Benutzerverzeichnis (global)",
 	"centralauth-listusers-locked": "gesperrt",
 	"centralauth-listusers-attached": "[[User:$1|lokal vorhanden]]",
 	"centralauth-listusers-nolocal": "nicht verbunden oder lokal nicht vorhanden",
