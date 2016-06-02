@@ -14,8 +14,6 @@ class CreateLocalAccount extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgDisableAuthManager;
-
 		if ( !class_exists( 'CentralAuthUser' ) ) {
 			$this->error( "CentralAuth isn't enabled on this wiki\n", 1 );
 		}
@@ -36,13 +34,9 @@ class CreateLocalAccount extends Maintenance {
 				$this->error( "No such global user: '$username'\n", 1 );
 			}
 
-			if ( class_exists( MediaWiki\Auth\AuthManager::class ) && !$wgDisableAuthManager ) {
-				$status = MediaWiki\Auth\AuthManager::autoCreateUser( $user, CentralAuthPrimaryAuthenticationProvider::class, false );
-				if ( !$status->isGood() ) {
-					$this->error( "AuthManager::autoCreateUser failed for $username: " . $status->getWikiText( null, null, 'en' ) );
-				}
-			} elseif ( !MediaWiki\Session\SessionManager::autoCreateUser( $user ) ) {
-				$this->error( "SessionManager::autoCreateUser failed for $username" );
+			$status = CentralAuthUtils::autoCreateUser( $user );
+			if ( !$status->isGood() ) {
+				$this->error( "autoCreateUser failed for $username: " . $status->getWikiText( null, null, 'en' ) );
 			}
 
 			# Update user count
