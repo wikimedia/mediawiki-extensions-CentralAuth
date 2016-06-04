@@ -30,7 +30,8 @@
 			"Tar Lócesilion",
 			"Peter Bowman",
 			"Devwebtel",
-			"The Polish"
+			"The Polish",
+			"PiotrekD"
 		]
 	},
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
@@ -88,7 +89,7 @@
 	"centralauth-merge-method-password-desc": "Wskazuje, że konto lokalne zostało przyłączone ponieważ użytkownik podał dla niego prawidłowe hasło.",
 	"centralauth-merge-method-admin-desc": "Wskazuje, że konto lokalne zostało ręcznie przyłączone przez stewardów.\nTa funkcja jest obecnie wyłączona ze względów bezpieczeństwa.",
 	"centralauth-merge-method-new-desc": "Wskazuje, że konto uniwersalne zostało utworzone automatycznie w procesie tworzenia konta lokalnego.",
-	"centralauth-merge-method-login-desc": "Wskazuje, że konto lokalne zostało utworzone automatycznie w czasie logowania się przez niego.",
+	"centralauth-merge-method-login-desc": "Wskazuje, że konto lokalne zostało utworzone automatycznie w czasie logowania się przez nie.",
 	"centralauth-finish-title": "Zakończ tworzenie konta uniwersalnego",
 	"centralauth-finish-text": "Jeżeli te konta należą do Ciebie, możesz je przyłączyć do konta uniwersalnego wpisując tutaj hasło dla tych kont:",
 	"centralauth-finish-password": "Hasło",
