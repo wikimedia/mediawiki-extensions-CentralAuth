@@ -984,6 +984,15 @@ class CentralAuthHooks {
 				// For non-JS clients. Use WikiMap to avoid localization of the
 				// 'Special' namespace, see bug 54195.
 				$wiki = WikiMap::getWiki( wfWikiID() );
+
+				$loginWiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+				if ( $wiki->getCanonicalServer() !== $loginWiki->getCanonicalServer() ) {
+					$out->addHeadItem( 'centralauth-dns-prefetch', Html::element( 'link', [
+						'rel' => 'dns-prefetch',
+						'href' => preg_replace( '/^https?:/', '', $loginWiki->getCanonicalServer() ),
+					] ) );
+				}
+
 				$params = array(
 					'type' => '1x1',
 				);
