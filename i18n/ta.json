@@ -184,7 +184,6 @@
 	"globalgroupmembership": "உலகளாவிய குழுக்களில் உறுப்பினர் நிலை",
 	"globalgrouppermissions": "உலகளவிய குழு மேலாண்மை",
 	"centralauth-globalgroupperms-nogroups": "உலகளாவிய குழு ஏதும் வரையறுக்கப்படவில்லை.",
-	"centralauth-existinggroup-legend": "இருக்கும் குழுக்கள்",
 	"centralauth-newgroup-legend": "புதியதாக ஒரு குழுவை உருவாக்கு",
 	"centralauth-globalgroupperms-newgroupname": "புதிய குழுவின் பெயர்:",
 	"centralauth-globalgroupperms-creategroup-submit": "அனுமதிகளை அமைக்கவும்",
