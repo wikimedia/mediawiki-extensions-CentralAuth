@@ -71,38 +71,21 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	function buildMainView() {
 		global $wgScript;
-
+		$out = $this->getOutput();
 		$groups = CentralAuthUser::availableGlobalGroups();
 
-		// Existing groups
-		$html = Xml::fieldset( $this->msg( 'centralauth-existinggroup-legend' )->text() );
-
-		$this->getOutput()->addHTML( $html );
-
 		if ( count( $groups ) ) {
-			$this->getOutput()->addWikiMsg( 'centralauth-globalgroupperms-grouplist' );
-			$this->getOutput()->addHTML( Xml::openElement( 'ul' ) );
-
-			foreach ( $groups as $group ) {
-				$text = $this->msg(
-					'centralauth-globalgroupperms-grouplistitem',
-					User::getGroupName( $group ),
-					$group,
-					Xml::element( 'span',
-						array( "class" => "centralauth-globalgroupperms-groupname"),
-						$group
-					)
-				)->parse();
-				$this->getOutput()->addHTML( Html::rawElement( 'li', null, ' ' . $text . ' ' ) );
-			}
+			$out->addHTML(
+				$this->msg( 'centralauth-globalgroupperms-groups-intro' )->parseAsBlock()
+					. $this->getGlobalGroupsTable( $groups )
+			);
 		} else {
-			$this->getOutput()->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
+			$out->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
 		}
-
-		$this->getOutput()->addHTML( Xml::closeElement( 'ul' ) . Xml::closeElement( 'fieldset' ) );
 
 		if ( $this->userCanEdit( $this->getUser() ) ) {
 			// "Create a group" prompt
+			// @todo Move this out of main view to a separate page
 			$html = Xml::fieldset( $this->msg( 'centralauth-newgroup-legend' )->text() );
 			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
 			$html .= Xml::openElement( 'form', array( 'method' => 'post', 'action' => $wgScript, 'name' => 'centralauth-globalgroups-newgroup' ) );
@@ -114,8 +97,113 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$html .= Xml::closeElement( 'form' );
 			$html .= Xml::closeElement( 'fieldset' );
 
-			$this->getOutput()->addHTML( $html );
+			$out->addHTML( $html );
 		}
+	}
+
+	/**
+	 * @param array $groups
+	 * @return string HTML for the group permissions table
+	 */
+	protected function getGlobalGroupsTable( $groups ) {
+		$table = Html::openElement( 'table', array( 'class' => 'mw-centralauth-groups-table wikitable' ) );
+
+		// Header stuff
+		$table .= Html::openElement( 'tr' );
+		$table .= Html::element( 'th', array(),
+			$this->msg( 'centralauth-globalgroupperms-group' )->text()
+		);
+		$table .= Html::element( 'th', array(),
+			$this->msg( 'centralauth-globalgroupperms-rights' )->text()
+		);
+		$table .= Html::closeElement( 'tr' );
+
+		foreach( $groups as $groupName ) {
+			$groupInfo = $this->getGroupInfo( $groupName );
+			$wikiset = $groupInfo['wikiset'];
+
+			$table .= Html::openElement( 'tr' );
+
+			// Column with group name, links and local disabled status
+			$table .= Html::openElement( 'td' );
+			$table .= $this->getOutput()->parseInline( User::makeGroupLinkWiki( $groupName ) ) . '<br />';
+
+			$links = array(
+				Linker::linkKnown(
+					$this->getPageTitle( $groupName ),
+					$this->msg( 'centralauth-globalgroupperms-management' )->escaped()
+				),
+				Linker::linkKnown(
+					SpecialPage::getTitleFor( 'GlobalUsers', $groupName ),
+					$this->msg( 'centralauth-globalgroupperms-group-listmembers' )->escaped()
+				),
+			);
+			$table .= $this->msg( 'parentheses' )->rawParams( $this->getLanguage()->pipeList( $links ) )->escaped();
+
+			if ( $wikiset !== null && !$wikiset['enabledHere'] ) {
+				$table .= '<br /><small>';
+				$table .= $this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped() . '</small>';
+			}
+			$table .= Html::closeElement( 'td' );
+
+			// Column for wikiset info and group rights list
+			$table .= Html::openElement( 'td' );
+			if ( $wikiset === null ) {
+				$table .= $this->msg( 'centralauth-globalgroupperms-wikiset-none' )->escaped();
+			} else {
+				$table .= $this->msg( 'centralauth-globalgroupperms-group-wikiset' )
+					->rawParams(
+						Linker::linkKnown(
+							SpecialPage::getTitleFor( 'WikiSets', $wikiset['id'] ),
+							htmlspecialchars( $wikiset['name'] )
+						)
+					)->escaped();
+			}
+
+			$table .= '<hr />';
+
+			$rightsList = '';
+			foreach ( $groupInfo['rights'] as $right ) {
+				$rightsList .= Html::rawElement( 'li', array(), $this->formatRight( $right ) );
+			}
+			$table .= '<ul>' . $rightsList . '</ul>';
+			$table .= Html::closeElement( 'td' );
+
+			$table .= Html::closeElement( 'tr' );
+		}
+
+		$table .= Html::closeElement( 'table' );
+
+		return $table;
+	}
+
+	/**
+	 * @param string $group The group's name
+	 * @return array
+	 * 	 - rights: string The list of rights assigned to the group
+	 *   - wikiset: array|null Either array with id, name, enabledHere or
+	 *      null if the group is not associated to any wikiset
+	 * @throws Exception
+	 */
+	protected function getGroupInfo( $group ) {
+		$info = array( 'rights' => $this->getAssignedRights( $group ) );
+
+		$wikiset = WikiSet::getWikiSetForGroup( $group );
+		if ( $wikiset !== 0 ) {
+			$wikiset = WikiSet::newFromID( $wikiset );
+			if ( !$wikiset ) {
+				throw new Exception( "__METHOD__: $group with unknown wikiset." );
+			}
+			$info['wikiset'] = array(
+				'id' => $wikiset->getId(),
+				'name' => $wikiset->getName(),
+				'enabledHere' => $wikiset->inSet(),
+			);
+		} else {
+			$info['wikiset'] = null;
+		}
+
+		return $info;
 	}
 
 	/**
@@ -237,8 +325,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			// Build a checkbox
 			$checked = in_array( $right, $assignedRights );
 
-			$desc = $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
-						Xml::element( 'code', null, $this->msg( 'parentheses', $right )->text() );
+			$desc = $this->formatRight( $right );
 
 			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, array( 'id' => "wpRightAssigned-$right" ) ) );
@@ -262,6 +349,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			. Html::closeElement( 'div' );
 
 		return $html;
+	}
+
+	/**
+	 * Given a user right name, return HTML with the description
+	 * of the right and it's name for displaying to the user
+	 * @param string $right
+	 * @return string escaped html
+	 */
+	protected function formatRight( $right ) {
+		return htmlspecialchars( User::getRightDescription( $right ) ). ' ' .
+			Html::element( 'code', array(), $this->msg( 'parentheses', $right )->text() );
 	}
 
 	/**
