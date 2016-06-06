@@ -145,6 +145,10 @@ class CentralAuthPrimaryAuthenticationProvider
 					RequestContext::getMain()->getStats()->increment( 'centralauth.migration.check' );
 
 					if ( $renamed->authenticate( $req->password ) === 'ok' ) {
+						// At this point the user will be passed, so set the
+						// reset flag now.
+						$this->setPasswordResetFlag( $renamedUsername, $status );
+
 						// Don't do any of the checks below if we checked for a
 						// renamed user. But do notify, unless this is coming
 						// through the API action=login where it's better to
@@ -179,6 +183,7 @@ class CentralAuthPrimaryAuthenticationProvider
 					$this->logger->debug( 'wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a global account for "{username}"', [
 						'username' => $username
 					] );
+					$this->setPasswordResetFlag( $username, $status );
 					return AuthenticationResponse::newPass( $username );
 				}
 			}
@@ -212,6 +217,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		if ( $pass ) {
+			$this->setPasswordResetFlag( $username, $status );
 			return AuthenticationResponse::newPass( $username );
 		} else {
 			// We know the central user is attached at this point, so never
