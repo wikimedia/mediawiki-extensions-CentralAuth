@@ -24,7 +24,8 @@
 			"Hwangjy9",
 			"Yearning",
 			"고솜",
-			"Ykhwong"
+			"Ykhwong",
+			"Jonghaya"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -261,10 +262,9 @@
 	"centralauth-centralautologin-logged-in-nouser": "당신은 통합 계정으로 묶여 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.",
 	"globalgroupmembership": "사용자의 공통 권한 그룹 조정",
 	"globalgrouppermissions": "공통 권한 그룹 관리",
-	"centralauth-globalgroupperms-grouplist": "다음 공통 권한 그룹이 설정되어 있습니다.\n권한이 있다면, 특정한 그룹에 부여된 권한을 보거나 바꿀 수 있습니다.\n모든 권한을 제거하면 해당 그룹은 삭제될 것입니다.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|보기/편집]])",
 	"centralauth-globalgroupperms-nogroups": "공통 권한 그룹이 정의되지 않았습니다.",
-	"centralauth-existinggroup-legend": "존재하는 그룹",
+	"centralauth-globalgroupperms-group": "그룹�",
+	"centralauth-globalgroupperms-rights": "권한",
 	"centralauth-newgroup-legend": "새 그룹 만들기",
 	"centralauth-newgroup-intro": "새 그룹에 권한을 부여하는 데 이 양식을 이용할 수 있습니다.\n어떤 권한이라도 부여되어 있지 않은 그룹은 존재하지 않을 것임을 알립니다.",
 	"centralauth-globalgroupperms-newgroupname": "새 그룹 이름:",

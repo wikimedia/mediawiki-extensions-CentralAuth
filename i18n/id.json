@@ -12,7 +12,8 @@
 			"Rex",
 			"C5st4wr6ch",
 			"Ahdan",
-			"Lukman Tomayahu"
+			"Lukman Tomayahu",
+			"Rachmat.Wahidi"
 		]
 	},
 	"mergeaccount": "Status penggabungan log masuk",
@@ -215,10 +216,15 @@
 	"centralauth-rightslog-set-optout": "tidak bergabung",
 	"globalgroupmembership": "Manajemen hak pengguna global (Keanggotaan dalam kelompok global)",
 	"globalgrouppermissions": "Manajemen hak kelompok global",
-	"centralauth-globalgroupperms-grouplist": "Kelompok global berikut telah dikonfigurasi.\nAnda dapat melihat dan menyunting hak yang diberikan ke setiap kelompok, jika Anda memiliki hak untuk itu.\nSuatu kelompok dapat dihapuskan dengan cara menghapuskan semua haknya.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|lihat/sunting]])",
 	"centralauth-globalgroupperms-nogroups": "Tidak ada kelompok global didefinisikan.",
-	"centralauth-existinggroup-legend": "Kelompok yang ada",
+	"centralauth-globalgroupperms-group": "Grup",
+	"centralauth-globalgroupperms-rights": "Hak",
+	"centralauth-globalgroupperms-management": "manajemen",
+	"centralauth-globalgroupperms-group-listmembers": "daftar anggota",
+	"centralauth-globalgroupperms-group-wikiset": "Atur wiki di mana kelompok ini aktif: $1",
+	"centralauth-globalgroupperms-wikiset-none": "Grup ini aktif di semua wiki.",
+	"centralauth-globalgroupperms-group-disabled": "(tidak diaktifkan di wiki ini)",
+	"centralauth-globalgroupperms-groups-intro": "Ini adalah semua daftar grup pengguna dalam kumpulan wiki ini dengan hak akses pengguna dan rangkaian wiki. Pengguna dengan hak akses itu dapat menghapus sebuah grup dengan menghapus semua hak dari grup itu.",
 	"centralauth-newgroup-legend": "Membuat kelompok baru",
 	"centralauth-newgroup-intro": "Anda dapat mengunakan formulir ini untuk menentukan hak-hak atas kelompok yang baru. Perlu diingat bahwa sebuah kelompok dianggap tidak ada kecuali memiliki hak-hak tertentu.",
 	"centralauth-globalgroupperms-newgroupname": "Nama kelompok baru:",
@@ -277,7 +283,6 @@
 	"centralauth-readonly": "Basis data CentralAuth dikunci",
 	"centralauth-readonlytext": "Basis data CentralAuth saat ini terkunci untuk entri baru dan perubahan lainnya, mungkin untuk pemeliharaan basis data secara rutin, yang setelahnya akan kembali normal.",
 	"right-globalgroupmembership": "Sunting keanggotaan kelompok global",
-	"right-centralauth-autoaccount": "Login secara otomatis dengan akun global",
 	"right-centralauth-unmerge": "Jangan gabung akun global",
 	"right-centralauth-lock": "Kunci atau sembunyikan akun global",
 	"right-centralauth-oversight": "Hapus akun global",
@@ -306,6 +311,13 @@
 	"globalrenamerequest-save-error": "Gagal untuk menyimpan permintaan, silakan coba lagi.",
 	"globalrenamerequest-status-title": "Permintaan ubah nama menunggu persetujuan.",
 	"globalrenamerequest-status-text": "Permintaan perubahan nama sedang dalam proses dan menunggu persetujuan dari steward. Anda akan diberitahu melalui email ketika permintaan telah terproses",
+	"globalrenamequeue-request-titleblacklist": "<strong>Nama pengguna yang dipilih sesuai dengan entri TitleBlacklist:</strong> $1",
 	"centralauth-abortlogin-renamed": "Akun anda telah berubah menjadi $1. Mohon gunakan nama pengguna itu",
-	"userswhowillberenamed": "Pengguna yang akan diganti namanya"
+	"sulrenamewarning-authmanager-ok-help": "Lanjutkan setelah menampilkan pemberitahuan penggantian nama.",
+	"userswhowillberenamed": "Pengguna yang akan diganti namanya",
+	"log-action-filter-globalauth": "Jenis perubahan:",
+	"log-action-filter-globalauth-delete": "Penghapusan akun global",
+	"log-action-filter-globalauth-setstatus": "Perubahan status akun global",
+	"log-action-filter-suppress-setstatus": "Perubahan status akun global",
+	"log-action-filter-suppress-cadelete": "Penghapusan akun global"
 }
