@@ -568,5 +568,9 @@
 	"log-action-filter-globalauth-delete": "Global account deletion",
 	"log-action-filter-globalauth-setstatus": "Global account status change",
 	"log-action-filter-suppress-setstatus": "Global account status change",
-	"log-action-filter-suppress-cadelete": "Global account deletion"
+	"log-action-filter-suppress-cadelete": "Global account deletion",
+	"log-action-filter-gblrights: "Type of change:",
+	"log-action-filter-gblrights-usergroups": "Global user rights change",
+	"log-action-filter-gblrights-groupprms": "Global user group change",
+	"log-action-filter-gblrights-setmodify: "Wiki set change"
 }
