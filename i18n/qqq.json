@@ -584,5 +584,9 @@
 	"log-action-filter-globalauth-delete": "{{doc-log-action-filter-action|globalauth|delete}}",
 	"log-action-filter-globalauth-setstatus": "{{doc-log-action-filter-action|globalauth|setstatus}}",
 	"log-action-filter-suppress-setstatus": "{{doc-log-action-filter-action|suppress|setstatus}}",
-	"log-action-filter-suppress-cadelete": "{{doc-log-action-filter-action|suppress|cadelete}}"
+	"log-action-filter-suppress-cadelete": "{{doc-log-action-filter-action|suppress|cadelete}}",
+	"log-action-filter-gblrights: "{{doc-log-action-filter-action|gblrights}}",
+	"log-action-filter-gblrights-usergroups": "{{doc-log-action-filter-action|gblrights|usergroups}}",
+	"log-action-filter-gblrights-groupprms": "{{doc-log-action-filter-action|gblrights|groupprms}}",
+	"log-action-filter-gblrights-setmodify: "{{doc-log-action-filter-action|gblrights|setmodify}}"
 }
