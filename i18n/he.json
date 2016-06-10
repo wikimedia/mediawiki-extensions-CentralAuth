@@ -319,7 +319,7 @@
 	"centralauth-block-already-locked": "החשבון [[Special:CentralAuth/$1|$1]] כבר נעול גלובלית.",
 	"centralauth-readonly": "מסד נתונים של CentralAuth (חשבונות ממוזגים) נעול",
 	"centralauth-readonlytext": "בסיס הנתונים של CentralAuth (חשבונות ממוזגים) נעול לערכים חדשים ולשינויים אחרים, כנראה לצורך תחזוקה שוטפת, ובסיומה הוא יחזור לפעילות.",
-	"right-globalgroupmembership": "עריכת החברים בקבוצות גלובליות",
+	"right-globalgroupmembership": "עריכת המשתמשים בקבוצות גלובליות",
 	"right-centralauth-unmerge": "ביטול מיזוגים של חשבונות גלובליים",
 	"right-centralauth-lock": "נעילה ושחרור נעילה של חשבונות גלובליים",
 	"right-centralauth-oversight": "העלמה והסתרה של חשבונות גלובליים",
