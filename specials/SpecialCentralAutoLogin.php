@@ -124,7 +124,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			CentralAuthUser::setP3P();
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-			if ( $centralUser && $centralUser->getId() ) {
+			if ( $centralUser && $centralUser->getId() && $centralUser->isAttached() ) {
 				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
 
 				// Refresh 'remember me' preference
@@ -192,6 +192,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// We're pretty sure this user is logged in, so pass back
 			// headers to prevent caching, just in case
 			$this->getOutput()->enableClientCache( false );
+
+			// Sanity check: If the loginwiki account isn't attached, things are broken (T137551)
+			if ( !$centralUser->isAttached() ) {
+				$this->doFinalOutput( false,
+					'Account on central wiki is not attached (this shouldn\'t happen)',
+					self::getInlineScript( 'anon-set.js' )
+				);
+				return;
+			}
 
 			$memcData = array( 'gu_id' => $centralUser->getId() );
 			$token = MWCryptRand::generateHex( 32 );
@@ -298,6 +307,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$memcData['wikiid'] !== $wikiid ||
 				!$centralUser ||
 				!$centralUser->getId() ||
+				!$centralUser->isAttached() ||
 				$memcData['gu_id'] != $centralUser->getId()
 			) {
 				$this->doFinalOutput( false, 'Invalid parameters' );
