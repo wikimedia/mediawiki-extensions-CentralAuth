@@ -57,11 +57,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
+		$user = User::newFromName( $info['name'] );
 		$centralUser = new CentralAuthUser( $info['name'] );
 		if ( !$centralUser->exists() ) { // sanity
 			throw new Exception( "Global user '{$info['name']}' does not exist." );
 		} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
 			throw new Exception( "Global user does not have ID '{$info['guid']}'." );
+		} elseif ( !$centralUser->isAttached() && !$user->isAnon() ) { // sanity
+			throw new Exception( "User '{$info['name']}' exists locally but is not attached." );
 		}
 
 		$session = CentralAuthUser::getSession();
@@ -171,6 +174,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( !$centralUser->getId() ) { // sanity
+			throw new Exception( "The central user account does not exist." );
+		}
+		if ( !$centralUser->isAttached() ) { // sanity
 			throw new Exception( "The user account is not attached." );
 		}
 
