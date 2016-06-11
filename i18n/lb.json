@@ -237,6 +237,7 @@
 	"centralauth-globalgroupperms-nogroups": "Et si keng global Gruppen definéiert.",
 	"centralauth-globalgroupperms-group": "Grupp",
 	"centralauth-globalgroupperms-rights": "Rechter",
+	"centralauth-globalgroupperms-management": "Gestioun",
 	"centralauth-globalgroupperms-group-listmembers": "Lëscht vun de Memberen",
 	"centralauth-globalgroupperms-group-disabled": "(op dëser Wiki net ageschalt)",
 	"centralauth-newgroup-legend": "Eng nei Grupp opmaachen",
