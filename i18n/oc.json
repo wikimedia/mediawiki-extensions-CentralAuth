@@ -203,8 +203,6 @@
 	"centralauth-newgroup-intro": "Podètz utilizar aqueste formulari per balhar de permissions a un grop novèl. Notatz qu'un grop existís unicament s'a de permissions que li son acordadas.",
 	"centralauth-globalgroupperms-newgroupname": "Nom del grop novèl :",
 	"centralauth-globalgroupperms-creategroup-submit": "Atribuir las permissions",
-	"centralauth-editgroup-subtitle": "Modificacion de $1",
-	"centralauth-editgroup-subtitle-readonly": "Veire $1",
 	"centralauth-editgroup-fieldset": "Permissions per $1",
 	"centralauth-editgroup-name": "Nom del grop :",
 	"centralauth-editgroup-display": "Nom localizat del grop :",

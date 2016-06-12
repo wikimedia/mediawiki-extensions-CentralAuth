@@ -8,7 +8,8 @@
 			"Turin",
 			"Vladimir Penov",
 			"StanProg",
-			"Лорд Бъмбъри"
+			"Лорд Бъмбъри",
+			"Termininja"
 		]
 	},
 	"mergeaccount": "Състояние на обединението на сметки",
@@ -179,15 +180,15 @@
 	"centralauth-rightslog-entry-setchange": "промени уикитата в „$1“: добави: $2; премахна: $3",
 	"globalgroupmembership": "Членство в глобалните групи",
 	"globalgrouppermissions": "Управление на глобалните групи",
-	"centralauth-globalgroupperms-grouplist": "Конфигурирани са следните глобални групи. Ако имате права, можете да прегледате и редактирате правата на всяка група. Групите се изтриват при премахване на всички права от тях.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|Преглед и редактиране на правата]])",
 	"centralauth-globalgroupperms-nogroups": "Не са дефинирани глобални групи.",
-	"centralauth-existinggroup-legend": "Налични групи",
+	"centralauth-globalgroupperms-group": "Група",
+	"centralauth-globalgroupperms-rights": "Права",
+	"centralauth-globalgroupperms-group-listmembers": "списък на потребителите",
+	"centralauth-globalgroupperms-group-wikiset": "Набор от уикита, където тази група е активна: $1",
 	"centralauth-newgroup-legend": "Създаване на нова група",
 	"centralauth-newgroup-intro": "Може да използвате настоящия формуляр, за да дадете права на нова група. Обърнете внимание, че една група започва да съществува едва когато са и&#768; дадени някакви права.",
 	"centralauth-globalgroupperms-newgroupname": "Име на новата група:",
 	"centralauth-globalgroupperms-creategroup-submit": "Даване на права",
-	"centralauth-editgroup-subtitle": "Редактиране на $1",
 	"centralauth-editgroup-fieldset": "Права за $1",
 	"centralauth-editgroup-name": "Име на групата:",
 	"centralauth-editgroup-display": "Локализирано име на групата:",
@@ -239,5 +240,7 @@
 	"centralauth-rename-table-status-done": "Готово",
 	"log-name-gblrename": "Дневник на глобалните преименувания",
 	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка",
-	"globalrenamequeue-column-rq-performer": "Завършено от"
+	"globalrenamequeue-column-rq-performer": "Завършено от",
+	"log-action-filter-globalauth": "Вид на промените:",
+	"log-action-filter-gblrights": "Вид на промените:"
 }

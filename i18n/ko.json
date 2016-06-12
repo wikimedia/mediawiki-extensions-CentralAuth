@@ -275,8 +275,6 @@
 	"centralauth-newgroup-intro": "새 그룹에 권한을 부여하는 데 이 양식을 이용할 수 있습니다.\n어떤 권한이라도 부여되어 있지 않은 그룹은 존재하지 않을 것임을 알립니다.",
 	"centralauth-globalgroupperms-newgroupname": "새 그룹 이름:",
 	"centralauth-globalgroupperms-creategroup-submit": "권한 부여",
-	"centralauth-editgroup-subtitle": "$1 편집",
-	"centralauth-editgroup-subtitle-readonly": "$1 보기",
 	"centralauth-editgroup-fieldset": "$1의 권한",
 	"centralauth-editgroup-name": "그룹 이름:",
 	"centralauth-editgroup-display": "번역된 그룹의 이름:",

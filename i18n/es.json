@@ -299,8 +299,6 @@
 	"centralauth-newgroup-intro": "Puedes usar este formulario para asignar permisos a un nuevo grupo.\nNota que un grupo no existe a menos que tenga permisos asignados a él.",
 	"centralauth-globalgroupperms-newgroupname": "Nombre de grupo nuevo:",
 	"centralauth-globalgroupperms-creategroup-submit": "Asignar permisos",
-	"centralauth-editgroup-subtitle": "Editando $1",
-	"centralauth-editgroup-subtitle-readonly": "Ver $1",
 	"centralauth-editgroup-fieldset": "Permisos para $1",
 	"centralauth-editgroup-name": "Nombre de grupo:",
 	"centralauth-editgroup-display": "Nombre localizado del grupo:",

@@ -229,8 +229,6 @@
 	"centralauth-newgroup-intro": "Anda dapat mengunakan formulir ini untuk menentukan hak-hak atas kelompok yang baru. Perlu diingat bahwa sebuah kelompok dianggap tidak ada kecuali memiliki hak-hak tertentu.",
 	"centralauth-globalgroupperms-newgroupname": "Nama kelompok baru:",
 	"centralauth-globalgroupperms-creategroup-submit": "Memberikan hak",
-	"centralauth-editgroup-subtitle": "Menyunting $1",
-	"centralauth-editgroup-subtitle-readonly": "Lihat $1",
 	"centralauth-editgroup-fieldset": "Hak untuk $1",
 	"centralauth-editgroup-name": "Nama kelompok:",
 	"centralauth-editgroup-display": "Nama lokal kelompok:",

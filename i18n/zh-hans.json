@@ -282,8 +282,6 @@
 	"centralauth-newgroup-intro": "您可以用这个表格去指定一个新组的权限。要留意的就是该组不会存在，除非它有指定许可。",
 	"centralauth-globalgroupperms-newgroupname": "新用户组名：",
 	"centralauth-globalgroupperms-creategroup-submit": "指定许可",
-	"centralauth-editgroup-subtitle": "编辑“$1”",
-	"centralauth-editgroup-subtitle-readonly": "查看$1",
 	"centralauth-editgroup-fieldset": "$1的许可",
 	"centralauth-editgroup-name": "组名：",
 	"centralauth-editgroup-display": "本地化组名:",
@@ -568,5 +566,9 @@
 	"log-action-filter-globalauth-delete": "全域账户删除",
 	"log-action-filter-globalauth-setstatus": "全域账户状态更改",
 	"log-action-filter-suppress-setstatus": "全域账户状态更改",
-	"log-action-filter-suppress-cadelete": "全域账户删除"
+	"log-action-filter-suppress-cadelete": "全域账户删除",
+	"log-action-filter-gblrights": "更改类型：",
+	"log-action-filter-gblrights-usergroups": "全域用户权限更改",
+	"log-action-filter-gblrights-groupprms": "全域用户组更改",
+	"log-action-filter-gblrights-setmodify": "Wiki集合更改"
 }

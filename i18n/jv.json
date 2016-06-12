@@ -202,8 +202,6 @@
 	"centralauth-newgroup-intro": "Sampéyan bisa nganggo blangko iki kanggo ngidini golongan anyar. \nGatèkaké menawa sawènèh golongan kaanggep ora ana kajaba diwènèhi idin.",
 	"centralauth-globalgroupperms-newgroupname": "Jeneng kelompok anyar:",
 	"centralauth-globalgroupperms-creategroup-submit": "Wènèhna idin-idin",
-	"centralauth-editgroup-subtitle": "Mbesut $1",
-	"centralauth-editgroup-subtitle-readonly": "Mirsani $1",
 	"centralauth-editgroup-fieldset": "Idin-idin kanggo $1",
 	"centralauth-editgroup-name": "Jeneng kelompok:",
 	"centralauth-editgroup-display": "Jeneng kelompok sing dilokalisasi:",

@@ -255,8 +255,6 @@
 	"centralauth-newgroup-intro": "Һеҙ яңы төркөмгә хоҡуҡтар биреү өсөн ошо форманы ҡуллаа алаһығыҙ.\nТөркөмгә бер ниндәй ҙә хоҡуҡ бирмәйенсә, ул була алмаясаҡ икәнен иғтибарға алығыҙ.",
 	"centralauth-globalgroupperms-newgroupname": "Яңы төркөм исеме:",
 	"centralauth-globalgroupperms-creategroup-submit": "Хоҡуҡтар бирергә",
-	"centralauth-editgroup-subtitle": "$1 төркөмөн мөхәррирләү",
-	"centralauth-editgroup-subtitle-readonly": "«$1» төркөмөн ҡарарғамы?",
 	"centralauth-editgroup-fieldset": "$1 төркөмөнөң хоҡуҡтары",
 	"centralauth-editgroup-name": "Төркөмдөң исеме:",
 	"centralauth-editgroup-display": "Төркөмдөң локалләштерелгән исеме:",

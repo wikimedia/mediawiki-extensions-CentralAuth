@@ -240,8 +240,6 @@
 	"centralauth-newgroup-intro": "Pê ena form, ti eşkeno desturanê yew grupî bide.\nYew grup ne esto heta ti heqanê hemî bido.",
 	"centralauth-globalgroupperms-newgroupname": "Nameyê gruba newiye:",
 	"centralauth-globalgroupperms-creategroup-submit": "desdur bide",
-	"centralauth-editgroup-subtitle": "$1 vuriyeno",
-	"centralauth-editgroup-subtitle-readonly": "$1 bıvêne",
 	"centralauth-editgroup-fieldset": "Qe $1 desdurî",
 	"centralauth-editgroup-name": "Nameyê grupî:",
 	"centralauth-editgroup-display": "Nameyê grup ê lokalî:",

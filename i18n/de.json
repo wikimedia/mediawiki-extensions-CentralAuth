@@ -16,7 +16,8 @@
 			"Inkowik",
 			"Predatorix",
 			"Luke081515",
-			"MGChecker"
+			"MGChecker",
+			"ThePiscin"
 		]
 	},
 	"mergeaccount": "Status der Benutzerkontenzusammenführung",
@@ -259,7 +260,7 @@
 	"centralauth-globalgroupperms-rights": "Rechte",
 	"centralauth-globalgroupperms-management": "Verwaltung",
 	"centralauth-globalgroupperms-group-listmembers": "Liste der Mitglieder",
-	"centralauth-globalgroupperms-group-wikiset": "Satz mit Wikis, auf denen diese Gruppe aktiv ist: $1",
+	"centralauth-globalgroupperms-group-wikiset": "Satz von Wikis, auf denen diese Gruppe aktiv ist: $1",
 	"centralauth-globalgroupperms-wikiset-none": "Diese Gruppe ist auf allen Wikis aktiv.",
 	"centralauth-globalgroupperms-group-disabled": "(nicht auf diesem Wiki aktiviert)",
 	"centralauth-globalgroupperms-groups-intro": "Dies ist eine Liste aller globalen Benutzergruppen, die auf dieser Wikifarm konfiguriert sind mit ihren zugehörigen Benutzerzugriffsrechten und Wikisätzen. Benutzer mit den Berechtigungen können eine Gruppe durch Entfernung aller Rechte löschen.",
@@ -267,8 +268,6 @@
 	"centralauth-newgroup-intro": "Du kannst mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachte, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.",
 	"centralauth-globalgroupperms-newgroupname": "Neuer Gruppenname:",
 	"centralauth-globalgroupperms-creategroup-submit": "Rechte zuweisen",
-	"centralauth-editgroup-subtitle": "$1 bearbeiten",
-	"centralauth-editgroup-subtitle-readonly": "$1 ansehen",
 	"centralauth-editgroup-fieldset": "Rechte für $1",
 	"centralauth-editgroup-name": "Name der Gruppe:",
 	"centralauth-editgroup-display": "Lokalisierter Name der Gruppe:",
@@ -548,5 +547,9 @@
 	"log-action-filter-globalauth-delete": "Löschung des globalen Benutzerkontos",
 	"log-action-filter-globalauth-setstatus": "Statusänderung des globalen Benutzerkontos",
 	"log-action-filter-suppress-setstatus": "Statusänderung des globalen Benutzerkontos",
-	"log-action-filter-suppress-cadelete": "Löschung des globalen Benutzerkontos"
+	"log-action-filter-suppress-cadelete": "Löschung des globalen Benutzerkontos",
+	"log-action-filter-gblrights": "Typ der Änderung:",
+	"log-action-filter-gblrights-usergroups": "Änderung an globalen Benutzerrechten",
+	"log-action-filter-gblrights-groupprms": "Änderung an globalen Benutzergruppen",
+	"log-action-filter-gblrights-setmodify": "Wikisatzänderung"
 }

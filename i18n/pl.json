@@ -272,8 +272,6 @@
 	"centralauth-newgroup-intro": "Ten formularz służy przydzielaniu uprawnień nowej grupy. Grupa nie istnieje do momentu przydzielenia jej uprawnień.",
 	"centralauth-globalgroupperms-newgroupname": "Nazwa nowej grupy",
 	"centralauth-globalgroupperms-creategroup-submit": "Przydzielanie uprawnień",
-	"centralauth-editgroup-subtitle": "Edycja $1",
-	"centralauth-editgroup-subtitle-readonly": "Widok $1",
 	"centralauth-editgroup-fieldset": "Uprawnienia $1",
 	"centralauth-editgroup-name": "Nazwa grupy",
 	"centralauth-editgroup-display": "Przetłumaczona nazwa grupy",

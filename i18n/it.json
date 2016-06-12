@@ -269,8 +269,6 @@
 	"centralauth-newgroup-intro": "Puoi usare questo modulo per assegnare i permessi ad un nuovo gruppo.\nNota che un gruppo non esiste a meno che non gli siano stati assegnati i permessi.",
 	"centralauth-globalgroupperms-newgroupname": "Nome del nuovo gruppo:",
 	"centralauth-globalgroupperms-creategroup-submit": "Assegna i permessi",
-	"centralauth-editgroup-subtitle": "Modifica di $1",
-	"centralauth-editgroup-subtitle-readonly": "Vedi $1",
 	"centralauth-editgroup-fieldset": "Permessi per $1",
 	"centralauth-editgroup-name": "Nome del gruppo:",
 	"centralauth-editgroup-display": "Nome localizzato del gruppo:",

@@ -239,13 +239,12 @@
 	"centralauth-globalgroupperms-rights": "Rechter",
 	"centralauth-globalgroupperms-management": "Gestioun",
 	"centralauth-globalgroupperms-group-listmembers": "Lëscht vun de Memberen",
+	"centralauth-globalgroupperms-wikiset-none": "Dës Grupp ass op alle Wikien aktiv.",
 	"centralauth-globalgroupperms-group-disabled": "(op dëser Wiki net ageschalt)",
 	"centralauth-newgroup-legend": "Eng nei Grupp opmaachen",
 	"centralauth-newgroup-intro": "Dir kënnt dëse Formulaire benotze fir Rechter un en neie Gruppe ze verginn.\nBedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt kritt huet.",
 	"centralauth-globalgroupperms-newgroupname": "Neie Gruppennumm:",
 	"centralauth-globalgroupperms-creategroup-submit": "Rechter ginn",
-	"centralauth-editgroup-subtitle": "Ännerung vu(n) $1",
-	"centralauth-editgroup-subtitle-readonly": "$1 weisen",
 	"centralauth-editgroup-fieldset": "Rechter fir $1",
 	"centralauth-editgroup-name": "Numm vun der Grupp:",
 	"centralauth-editgroup-display": "Lokaliséierten Numm vun der Grupp:",
@@ -447,5 +446,8 @@
 	"log-action-filter-globalauth": "Typ vun der Ännerung:",
 	"log-action-filter-globalauth-delete": "Läsche vum globale Benotzerkont",
 	"log-action-filter-globalauth-setstatus": "Ännerung vum Status vum globale Benotzerkont",
-	"log-action-filter-suppress-cadelete": "Läsche vum globale Benotzerkont"
+	"log-action-filter-suppress-cadelete": "Läsche vum globale Benotzerkont",
+	"log-action-filter-gblrights": "Typ vun der Ännerung:",
+	"log-action-filter-gblrights-usergroups": "Ännerung vun de globale Benotzerrechter",
+	"log-action-filter-gblrights-groupprms": "Ännerung vun de globale Benotzergruppen"
 }

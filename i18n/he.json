@@ -261,8 +261,6 @@
 	"centralauth-newgroup-intro": "באפשרותך להשתמש בטופס זה כדי להוסיף הרשאות לקבוצה חדשה.\nיש לשים לב שקבוצה אינה קיימת אלא אם כן משויכות אליה הרשאות.",
 	"centralauth-globalgroupperms-newgroupname": "שם הקבוצה החדשה:",
 	"centralauth-globalgroupperms-creategroup-submit": "הוספת הרשאות",
-	"centralauth-editgroup-subtitle": "עריכת $1",
-	"centralauth-editgroup-subtitle-readonly": "הצגת $1",
 	"centralauth-editgroup-fieldset": "ההרשאות של $1",
 	"centralauth-editgroup-name": "שם הקבוצה:",
 	"centralauth-editgroup-display": "שם הקבוצה המתורגם:",
@@ -547,5 +545,9 @@
 	"log-action-filter-globalauth-delete": "מחיקות של חשבונות גלובליים",
 	"log-action-filter-globalauth-setstatus": "שינויי מצב של חשבונות גלובליים",
 	"log-action-filter-suppress-setstatus": "שינוי מצב חשבון גלובלי",
-	"log-action-filter-suppress-cadelete": "מחיקות של חשבונות גלובליים"
+	"log-action-filter-suppress-cadelete": "מחיקות של חשבונות גלובליים",
+	"log-action-filter-gblrights": "סוג השינויים:",
+	"log-action-filter-gblrights-usergroups": "שינויים בהרשאות גלובליות של משתמשים",
+	"log-action-filter-gblrights-groupprms": "שינויים בקבוצות גלובליות",
+	"log-action-filter-gblrights-setmodify": "שינויים באתרי הוויקי שבקבוצות"
 }
