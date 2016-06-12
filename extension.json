@@ -106,6 +106,24 @@
 				"unhide",
 				"lockandhid"
 			]
+		},
+		"gblrights": {
+			"usergroups": [
+				"usergroups"
+			],
+			"groupprms": [
+				"groupperms",
+				"groupprms2",
+				"groupprms3",
+				"grouprename"
+			],
+			"setmodify": [
+				"newset",
+				"deleteset",
+				"setchange",
+				"setrename",
+				"setnewtype"
+			]
 		}
 	},
 	"LogActions": {
