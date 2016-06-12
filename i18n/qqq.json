@@ -296,8 +296,6 @@
 	"centralauth-newgroup-intro": "Used as intro text.\n\nPreceded by the fieldset label {{msg-mw|Centralauth-newgroup-legend}}.\n\nFollowed by the following messages:\n* {{msg-mw|Centralauth-globalgroupperms-newgroupname}}\n* {{msg-mw|Centralauth-globalgroupperms-creategroup-submit}}",
 	"centralauth-globalgroupperms-newgroupname": "I think this needs to be translated as \"Name of the new group\", not as \"New name of the group\". – [[User:McDutchie|McDutchie]] 16:40, 20 July 2008 (UTC)",
 	"centralauth-globalgroupperms-creategroup-submit": "Used as label for the Submit button.\n\nPreceded by {{msg-mw|Centralauth-globalgroupperms-newgroupname}} and inputbox.",
-	"centralauth-editgroup-subtitle": "Subtitle for Special:GlobalGroupPernissions for users who may edit these permission.\n\nParameters:\n* $1 - Name of the group\n{{Identical|Editing}}",
-	"centralauth-editgroup-subtitle-readonly": "Subtitle for Special:GlobalGroupPermissions for users without edit right.\nParameters:\n* $1 - Name of the group",
 	"centralauth-editgroup-fieldset": "Used as fieldset label. Parameters:\n* $1 - group name",
 	"centralauth-editgroup-name": "Used as label for \"Global group name\" input box.",
 	"centralauth-editgroup-display": "This is a label for a localised group name.",
