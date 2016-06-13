@@ -523,5 +523,9 @@
 	"log-action-filter-globalauth-delete": "Cancellazione utenza globale",
 	"log-action-filter-globalauth-setstatus": "Modifica stato utenza globale",
 	"log-action-filter-suppress-setstatus": "Modifica stato utenza globale",
-	"log-action-filter-suppress-cadelete": "Cancellazione utenza globale"
+	"log-action-filter-suppress-cadelete": "Cancellazione utenza globale",
+	"log-action-filter-gblrights": "Tipo di modifica:",
+	"log-action-filter-gblrights-usergroups": "Modifiche diritti utente globali",
+	"log-action-filter-gblrights-groupprms": "Modifiche gruppo utente globale",
+	"log-action-filter-gblrights-setmodify": "Modifiche insieme di wiki"
 }

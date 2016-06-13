@@ -424,5 +424,6 @@
 	"centralauth-uwbr-registration": "Data rejestracji",
 	"centralauth-uwbr-editcount": "Liczba edycji",
 	"centralauth-delete-empty-account": "Puste konto",
-	"log-action-filter-globalauth": "Rodzaj zmian:"
+	"log-action-filter-globalauth": "Rodzaj zmian:",
+	"log-action-filter-gblrights": "Rodzaj zmiany:"
 }

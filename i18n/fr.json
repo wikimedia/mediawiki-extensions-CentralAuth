@@ -580,6 +580,8 @@
 	"log-action-filter-globalauth-setstatus": "Modification d’état de compte global",
 	"log-action-filter-suppress-setstatus": "Modification d’état de compte global",
 	"log-action-filter-suppress-cadelete": "Suppression de compte global",
+	"log-action-filter-gblrights": "Type de modification :",
 	"log-action-filter-gblrights-usergroups": "Changement des droits d'utilisateurs globaux",
-	"log-action-filter-gblrights-groupprms": "Changement de groupe d'utilisateur global"
+	"log-action-filter-gblrights-groupprms": "Changement de groupe d'utilisateur global",
+	"log-action-filter-gblrights-setmodify": "Modification de l’ensemble de wikis"
 }

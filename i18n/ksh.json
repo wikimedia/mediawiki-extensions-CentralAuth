@@ -418,6 +418,7 @@
 	"globalrenamequeue-request-unknown-title": "Dä Opdracht wood nit jefonge.",
 	"globalrenamequeue-request-unknown-body": "Dä Opdracht för et Ömnänne wood nit jefonge.",
 	"globalrenamequeue-request-status-title": "„$1“ op „$2“ ömdeufe",
+	"globalrenamequeue-request-titleblacklist": "<strong>Dä ußjesöhk Metmaachernahme paß op dä Enndraach following TitleBlacklist entry:</strong> $1",
 	"globalrenamequeue-request-previous-renames": "De vörrejje {{PLURAL:$1|Ömbenännong|Ömbenännonge|Ömbenännong}}",
 	"globalrenamequeue-view": ";Vum:\n:[[Special:CentralAuth/$1|$1]]\n;op:\n:[[Special:CentralAuth/$2|$2]]\n;Jrond:\n:$3\n;Zohschtand:\n:$4\n;Opdracht:\n:$5\n;Fähdesch:\n:$6\n;Jedonn vum:\n:[$7 $8]\n;Aanmärkonge:\n:$9",
 	"globalrenamequeue-view-approved": "johdjeheiße",
@@ -489,5 +490,9 @@
 	"log-action-filter-globalauth-delete": "De jemeinsame Aanmeldung fottjeschmeße",
 	"log-action-filter-globalauth-setstatus": "Zohshtand fun de jemeinsame Aanmeldung veränndert",
 	"log-action-filter-suppress-setstatus": "Zohshtand fun de jemeinsame Aanmeldung veränndert",
-	"log-action-filter-suppress-cadelete": "De jemeinsame Aanmeldung fottjeschmeße"
+	"log-action-filter-suppress-cadelete": "De jemeinsame Aanmeldung fottjeschmeße",
+	"log-action-filter-gblrights": "De Zoot Anderong:",
+	"log-action-filter-gblrights-usergroups": "Ännderonge aan Rääschde vun Metmaacher för alle Wikkis",
+	"log-action-filter-gblrights-groupprms": "Jemeinsamme Jropp jeänndert",
+	"log-action-filter-gblrights-setmodify": "Ännderon aan je Jropp vun Wikkis"
 }
