@@ -471,7 +471,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser, &$inject_html ) {
-		global $wgCentralAuthLoginWiki, $wgSecureLogin;
+		global $wgCentralAuthLoginWiki, $wgSecureLogin, $wgDisableAuthManager;
 
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
@@ -507,12 +507,23 @@ class CentralAuthHooks {
 				$finalProto = 'http';
 
 				if ( $request->getBool( 'wpForceHttps', false ) ||
+					$request->getSession()->shouldForceHTTPS() ||
 					( $user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() ) )
 				) {
 					$finalProto = 'https';
 				}
 
 				$secureCookies = ( ( $finalProto === 'https' ) && $user->getBoolOption( 'prefershttps' ) );
+			}
+
+			if ( $wgDisableAuthManager ) {
+				// Old login form, look for the checkbox
+				$remember = $request->getCheck( 'wpRemember' );
+				$type = $request->getText( 'type' );
+			} else {
+				// AuthManager login, the session already has the needed value set.
+				$remember = $request->getSession()->shouldRememberUser();
+				$type = $title->isSpecial( 'CreateAccount' ) ? 'signup' : '';
 			}
 
 			// When POSTs triggered from Special:CentralLogin/start are sent back to
@@ -523,12 +534,12 @@ class CentralAuthHooks {
 			$secret = MWCryptRand::generateHex( 32 );
 			$request->setSessionData( 'CentralAuth:autologin:current-attempt', array(
 				'secret'        => $secret,
-				'remember'      => $request->getCheck( 'wpRemember' ),
+				'remember'      => $remember,
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
 				'stickHTTPS'    => $secureCookies, // cookies set secure or not (local CentralAuth cookies)
 				'finalProto'    => $finalProto, // final page http or https
-				'type'          => $request->getText( 'type' )
+				'type'          => $type,
 			) );
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
