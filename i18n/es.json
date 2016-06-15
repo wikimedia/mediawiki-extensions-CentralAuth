@@ -576,5 +576,6 @@
 	"log-action-filter-globalauth-delete": "Eliminación de cuenta global",
 	"log-action-filter-globalauth-setstatus": "Cambio de estado de la cuenta global",
 	"log-action-filter-suppress-setstatus": "Cambio de estado de la cuenta global",
-	"log-action-filter-suppress-cadelete": "Eliminación de cuenta global"
+	"log-action-filter-suppress-cadelete": "Eliminación de cuenta global",
+	"log-action-filter-gblrights": "Tipo de cambio:"
 }
