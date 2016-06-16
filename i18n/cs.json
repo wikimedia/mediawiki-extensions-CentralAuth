@@ -8,7 +8,8 @@
 			"Michaelbrabec",
 			"Mormegil",
 			"Matěj Suchánek",
-			"Polda18"
+			"Polda18",
+			"Dvorapa"
 		]
 	},
 	"mergeaccount": "Stav sjednocení přihlašovacích účtů",
@@ -247,7 +248,7 @@
 	"globalgrouppermissions": "Správa globálních skupin",
 	"centralauth-globalgroupperms-nogroups": "Nejsou definovány žádné globální skupiny.",
 	"centralauth-globalgroupperms-group": "Skupina",
-	"centralauth-globalgroupperms-rights": "Oprávnění",
+	"centralauth-globalgroupperms-rights": "Práva",
 	"centralauth-globalgroupperms-management": "správa",
 	"centralauth-globalgroupperms-group-listmembers": "seznam členů",
 	"centralauth-newgroup-legend": "Vytvořit novou skupinu",
