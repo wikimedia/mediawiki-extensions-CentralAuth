@@ -1,5 +1,7 @@
 <?php
 
+use Psr\Log\LoggerInterface;
+
 class CentralAuthAntiSpoofHooks {
 
 	/**
@@ -25,9 +27,14 @@ class CentralAuthAntiSpoofHooks {
 	 * @param User $creator
 	 * @param bool $enable
 	 * @param bool $override
+	 * @param LoggerInterface|null $logger
 	 * @return StatusValue
 	 */
-	public static function testNewAccount( $user, $creator, $enable, $override ) {
+	public static function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
+		if ( $logger === null ) {
+			$logger = \MediaWiki\Logger\LoggerFactory::getInstance( 'antispoof' );
+		}
+
 		if ( !$enable ) {
 			$mode = 'LOGGING ';
 			$active = false;
@@ -45,9 +52,9 @@ class CentralAuthAntiSpoofHooks {
 			$normalized = $spoof->getNormalized();
 			$conflicts = $spoof->getConflicts();
 			if ( empty( $conflicts ) ) {
-				wfDebugLog( 'antispoof', "{$mode}PASS new account '$name' [$normalized]" );
+				$logger->info( "{$mode}PASS new account '$name' [$normalized]" );
 			} else {
-				wfDebugLog( 'antispoof', "{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts ) );
+				$logger->info( "{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts ) );
 				if ( $active ) {
 					$numConflicts = count( $conflicts );
 
@@ -63,7 +70,7 @@ class CentralAuthAntiSpoofHooks {
 			}
 		} else {
 			$error = $spoof->getError();
-			wfDebugLog( 'antispoof', "{$mode}ILLEGAL new account '$name' $error" );
+			$logger->info( "{$mode}ILLEGAL new account '$name' $error" );
 			if ( $active ) {
 				return StatusValue::newFatal( 'antispoof-name-illegal', $name, $error );
 			}

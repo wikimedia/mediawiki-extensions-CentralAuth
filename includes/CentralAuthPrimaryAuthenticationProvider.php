@@ -340,10 +340,10 @@ class CentralAuthPrimaryAuthenticationProvider
 		return self::TYPE_CREATE;
 	}
 
-	public function testUserForCreation( $user, $autocreate ) {
+	public function testUserForCreation( $user, $autocreate, array $options = [] ) {
 		global $wgCentralAuthEnableGlobalRenameRequest;
 
-		$status = parent::testUserForCreation( $user, $autocreate );
+		$status = parent::testUserForCreation( $user, $autocreate, $options );
 		if ( !$status->isOk() ) {
 			return $status;
 		}
@@ -377,6 +377,16 @@ class CentralAuthPrimaryAuthenticationProvider
 				$status->fatal( 'centralauth-account-rename-exists' );
 				return $status;
 			}
+		}
+
+		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
+		if ( $this->antiSpoofAccounts && class_exists( 'AntiSpoofAuthenticationRequest' ) &&
+			empty( $options['creating'] ) &&
+			!RequestContext::getMain()->getUser()->isAllowed( 'override-antispoof' )
+		) {
+			$status->merge( CentralAuthAntiSpoofHooks::testNewAccount(
+				$user, new User, true, false, new \Psr\Log\NullLogger
+			) );
 		}
 
 		return $status;
