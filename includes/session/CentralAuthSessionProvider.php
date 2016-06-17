@@ -373,7 +373,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	public function invalidateSessionsForUser( User $user ) {
 		$centralUser = CentralAuthUser::getMasterInstance( $user );
-		if ( $centralUser->exists() ) {
+		if ( $centralUser->isAttached() || $user->isAnon() ) {
 			$centralUser->resetAuthToken();
 		}
 	}
