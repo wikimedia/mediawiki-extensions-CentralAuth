@@ -839,6 +839,44 @@ class CentralAuthHooks {
 
 	/**
 	 * @param User $user
+	 * @param bool &$isLocked
+	 * @return bool
+	 */
+	static function onUserIsLocked( User $user, &$isLocked ) {
+		if ( !$user->isAnon() ) {
+			$centralUser = CentralAuthUser::getInstance( $user );
+			if ( $centralUser->exists()
+				&& $centralUser->isAttached()
+				&& $centralUser->isLocked()
+			) {
+				$isLocked = true;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param User $user
+	 * @param bool &$$isHidden
+	 * @return bool
+	 */
+	static function onUserIsHidden( User $user, &$isHidden ) {
+		if ( !$user->isAnon() ) {
+			$centralUser = CentralAuthUser::getInstance( $user );
+			if ( $centralUser->exists()
+				&& $centralUser->isAttached()
+				&& $centralUser->isHidden()
+			) {
+				$isHidden = true;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param User $user
 	 * @param bool &$isBot
 	 * @return bool
 	 */

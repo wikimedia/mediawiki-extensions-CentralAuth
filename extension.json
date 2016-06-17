@@ -356,6 +356,8 @@
 		"UserSetEmailAuthenticationTimestamp": "CentralAuthHooks::onUserSetEmailAuthenticationTimestamp",
 		"UserGetRights": "CentralAuthHooks::onUserGetRights",
 		"UserIsBot": "CentralAuthHooks::onUserIsBot",
+		"UserIsLocked": "CentralAuthHooks::onUserIsLocked",
+		"UserIsHidden": "CentralAuthHooks::onUserIsHidden",
 		"getUserPermissionsErrorsExpensive": "CentralAuthHooks::onGetUserPermissionsErrorsExpensive",
 		"MakeGlobalVariablesScript": "CentralAuthHooks::onMakeGlobalVariablesScript",
 		"SpecialPasswordResetOnSubmit": "CentralAuthHooks::onSpecialPasswordResetOnSubmit",
