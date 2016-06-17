@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_5fb94677",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-17T19:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_bf53126e",
+      "revId": "1166c3a5869d3486259941173d498fc34763d695",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_3fc72217",
         "filename": "includes/session/CentralAuthSessionProvider.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-17T19:22:02Z",
       "side": 1,
       "message": "Adding an explicit $centralUser-\u003eexists() to the second condition might make the code easier to read (although it has no effect on functionality as saving a non-existent central user is a noop).",
+      "revId": "1166c3a5869d3486259941173d498fc34763d695",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_7fb6ca86",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-17T19:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0efd9372_3fc72217",
       "revId": "1166c3a5869d3486259941173d498fc34763d695",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
