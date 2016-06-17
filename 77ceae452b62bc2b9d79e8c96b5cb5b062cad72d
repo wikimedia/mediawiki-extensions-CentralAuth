@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_1f95fe89",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-06-17T16:33:09Z",
+      "side": 1,
+      "message": "If someone passes an anon user with a name, they probably want to know whether that central account is locked, and if they don\u0027t, they can easily check isAnon themselves. OTOH if this always returns false for isAnon and someone wants to learn whether the central account is locked, they have no way to do it.",
+      "parentUuid": "0efd9372_ffb8fa26",
+      "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_9f81ee51",
         "filename": "includes/CentralAuthHooks.php",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "How do I stop others from being run? Does returning false work?",
       "parentUuid": "0efd9372_9f81ee51",
+      "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_5fee6620",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-06-17T16:33:09Z",
+      "side": 1,
+      "message": "Yes, just return false.",
+      "parentUuid": "0efd9372_df9a56bc",
       "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
