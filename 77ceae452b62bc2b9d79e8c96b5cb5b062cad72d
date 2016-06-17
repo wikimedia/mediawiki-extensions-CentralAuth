@@ -16,6 +16,24 @@
       "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_ffb8fa26",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-06-17T16:19:55Z",
+      "side": 1,
+      "message": "AFAICS, when users are blocked from editing (see self::onGetUserPermissionsErrorsExpensive), it prevents editing only if the local user is attached to the central account. Checking isAnon() would be a behavioral change and would make it inconsistent, no?",
+      "parentUuid": "0efd9372_2d925b00",
+      "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
