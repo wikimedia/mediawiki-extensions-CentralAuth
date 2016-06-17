@@ -254,6 +254,7 @@
 	"centralauth-globalgroupperms-group-wikiset": "Conxunto de wikis onde este grupo está activo: $1",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está activo en todas as wikis.",
 	"centralauth-globalgroupperms-group-disabled": "(non activo neste wiki)",
+	"centralauth-globalgroupperms-groups-intro": "Esta é unha lista de todos os grupos de usuarios globais nesta granxa de wikis, xunto cos seus dereitos de usuario asociados ós conxuntos de wikis. Os usuarios co dereito poden eliminar un grupo borrando tódolos seus dereitos.",
 	"centralauth-newgroup-legend": "Crear un novo grupo",
 	"centralauth-newgroup-intro": "Pode usar este formulario para asignar permisos a un grupo novo. Teña en conta que un grupo non existe ata que se lle asinan permisos.",
 	"centralauth-globalgroupperms-newgroupname": "Nome do novo grupo:",
@@ -546,5 +547,6 @@
 	"log-action-filter-suppress-cadelete": "Eliminación de conta global",
 	"log-action-filter-gblrights": "Tipo de cambioː",
 	"log-action-filter-gblrights-usergroups": "Cambio dos dereitos de usuario globais",
-	"log-action-filter-gblrights-groupprms": "Cambio de grupo de usuario global"
+	"log-action-filter-gblrights-groupprms": "Cambio de grupo de usuario global",
+	"log-action-filter-gblrights-setmodify": "Modificación do conxunto de wikis"
 }

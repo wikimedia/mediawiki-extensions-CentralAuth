@@ -44,7 +44,8 @@
 			"Fylip22",
 			"Nicolapps",
 			"Steinsplitter",
-			"Yasten"
+			"Yasten",
+			"Mattho69"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -457,7 +458,7 @@
 	"globalrenamerequest-email-mismatch": "Les adresses de courriel sont différentes.<br />Veuillez vérifier et réessayer.",
 	"globalrenamerequest-email-invalid": "Adresse de courriel non valide fournie.",
 	"globalrenamerequest-reason-label": "Motif de la demande",
-	"globalrenamerequest-submit-text": "Demander un changement de nom",
+	"globalrenamerequest-submit-text": "Demander un renommage",
 	"globalrenamerequest-save-error": "Échec à l’enregistrement de la demande. Veuillez réessayer.",
 	"globalrenamerequest-status-title": "Demande de renommage en attente d’approbation",
 	"centralauth-usermerge-form-adduser": "Ajouter un utilisateur",
