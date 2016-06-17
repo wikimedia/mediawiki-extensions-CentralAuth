@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "0efd9372_bfef92ad",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-17T18:42:20Z",
+      "side": 1,
+      "message": "For the record, not checking central lock status for a user that doesn\u0027t exist locally would have been the behavior change. User::isLocked() just calls $wgAuth-\u003egetUserInstance()-\u003eisLocked(), and that is just CentralAuthUser::getInstance() with no check for attachment or local-user existence.\n\nFor that matter, we\u0027re still changing behavior here in that a central lock will no longer affect a local unattached user, but that\u0027s probably a good bugfix.",
+      "parentUuid": "0efd9372_ffb8fa26",
+      "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efd9372_9f81ee51",
         "filename": "includes/CentralAuthHooks.php",
         "patchSetId": 2
