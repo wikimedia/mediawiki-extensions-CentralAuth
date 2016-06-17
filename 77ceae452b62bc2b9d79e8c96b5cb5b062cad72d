@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_2d925b00",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-06-17T15:20:07Z",
+      "side": 1,
+      "message": "Is this correct? Or should we still return locked/hidden status if the user doesn\u0027t exist locally but does centrally?\n\nIn other words,\n\n if ( $centralUser-\u003eexists()\n     \u0026\u0026 ( $centralUser-\u003eisAttached() || $user-\u003eisAnon() )\n     \u0026\u0026 $centralUser-\u003eisLocked()\n ) {",
+      "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
