@@ -51,6 +51,24 @@
       "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_df9a56bc",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-06-17T16:27:16Z",
+      "side": 1,
+      "message": "How do I stop others from being run? Does returning false work?",
+      "parentUuid": "0efd9372_9f81ee51",
+      "revId": "77ceae452b62bc2b9d79e8c96b5cb5b062cad72d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
