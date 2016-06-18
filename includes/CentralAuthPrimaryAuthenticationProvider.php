@@ -305,7 +305,9 @@ class CentralAuthPrimaryAuthenticationProvider
 			$username = User::getCanonicalName( $req->username, 'usable' );
 			if ( $username !== false ) {
 				$centralUser = CentralAuthUser::getInstanceByName( $username );
-				if ( $centralUser && $centralUser->isAttached() ) {
+				if ( $centralUser->exists() &&
+					( $centralUser->isAttached() || !User::idFromName( $username, User::READ_LATEST ) )
+				) {
 					$sv = StatusValue::newGood();
 					if ( $req->password !== null ) {
 						if ( $req->password !== $req->retype ) {
@@ -330,7 +332,9 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		if ( get_class( $req ) === PasswordAuthenticationRequest::class ) {
 			$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
-			if ( $centralUser && $centralUser->isAttached() ) {
+			if ( $centralUser->exists() &&
+				( $centralUser->isAttached() || !User::idFromName( $username, User::READ_LATEST ) )
+			) {
 				$centralUser->setPassword( $req->password );
 			}
 		}
