@@ -260,16 +260,14 @@
 	"centralauth-centralautologin-logged-in-nouser": "Du är centralt inloggad. Ladda om sidan för att tillämpa dina användarinställningar.",
 	"globalgroupmembership": "Medlemskap i globala grupper",
 	"globalgrouppermissions": "Hantering av globala grupper",
-	"centralauth-globalgroupperms-grouplist": "Följande globala grupper har konfigurerats.\nDu kan visa och redigera rättigheterna kopplade till var grupp, om du har behörighet.\nEn grupp kan raderas genom att alla rättigheter tas bort från den.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|visa/redigera]])",
 	"centralauth-globalgroupperms-nogroups": "Inga globala grupper är definierade.",
-	"centralauth-existinggroup-legend": "Existerande grupper",
+	"centralauth-globalgroupperms-group": "Grupp",
+	"centralauth-globalgroupperms-rights": "Rättigheter",
+	"centralauth-globalgroupperms-group-listmembers": "lista över medlemmar",
 	"centralauth-newgroup-legend": "Skapa en ny grupp",
 	"centralauth-newgroup-intro": "Du kan använda det här formuläret för att tilldela behörigheter till en ny grupp.\nNotera att gruppen inte finns om den inte har tilldelats behörigheter.",
 	"centralauth-globalgroupperms-newgroupname": "Namn på ny grupp:",
 	"centralauth-globalgroupperms-creategroup-submit": "Tilldela behörigheter",
-	"centralauth-editgroup-subtitle": "Redigerar $1",
-	"centralauth-editgroup-subtitle-readonly": "Visa $1",
 	"centralauth-editgroup-fieldset": "Behörigheter för $1",
 	"centralauth-editgroup-name": "Namn på grupp:",
 	"centralauth-editgroup-display": "Översatt gruppnamn:",
@@ -546,5 +544,6 @@
 	"centralauth-delete-empty-account": "Tomt konto",
 	"sessionprovider-centralauthsessionprovider": "centrala cookie-baserad sessioner",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-sessioner",
-	"log-action-filter-globalauth": "Typ av ändring:"
+	"log-action-filter-globalauth": "Typ av ändring:",
+	"log-action-filter-gblrights": "Typ av ändring:"
 }
