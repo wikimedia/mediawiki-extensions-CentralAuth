@@ -20,7 +20,8 @@
 			"Toadino2",
 			"Alexmar983",
 			"Nastoshka",
-			"Matteocng"
+			"Matteocng",
+			"Einreiher"
 		]
 	},
 	"mergeaccount": "Processo di unificazione delle utenze - status",
@@ -263,7 +264,7 @@
 	"centralauth-globalgroupperms-management": "gestione",
 	"centralauth-globalgroupperms-group-listmembers": "elenco dei membri",
 	"centralauth-globalgroupperms-group-wikiset": "Insieme di wiki dove questo gruppo è attivo: $1",
-	"centralauth-globalgroupperms-wikiset-none": "Questo gruppo è attivo su tutti gli wiki.",
+	"centralauth-globalgroupperms-wikiset-none": "Questo gruppo è attivo su tutti i wiki.",
 	"centralauth-globalgroupperms-group-disabled": "(non attivato su questo wiki)",
 	"centralauth-newgroup-legend": "Crea un nuovo gruppo",
 	"centralauth-newgroup-intro": "Puoi usare questo modulo per assegnare i permessi ad un nuovo gruppo.\nNota che un gruppo non esiste a meno che non gli siano stati assegnati i permessi.",
