@@ -411,7 +411,7 @@
 	"action-centralauth-usermerge": "여러 통합 계정 사용자를 병합",
 	"right-centralauth-usermerge": "여러 통합 계정 사용자를 병합",
 	"centralauth-usermerge-confirm": "이 사용자들의 통합 계정을 병합하시겠습니까?",
-	"centralauth-usermerge-toomany": "한번에 $1명의 {{PLURAL:$1|사용자}}까지만 병합할 수 있습니다.",
+	"centralauth-usermerge-toomany": "한 번에 $1명의 {{PLURAL:$1|사용자}}까지만 병합할 수 있습니다.",
 	"centralauth-usermerge-ratelimited": "보안상의 이유로, 1분에 하나의 통합 계정을 병합할 수 있습니다. 1분 후에 다시 시도해 주세요.",
 	"centralauth-usermerge-nousers": "적어도 유효한 통합 사용자 계정 두 개가 제공되어야 합니다.",
 	"globalrenamerequest-desc": "통합 계정의 이름 바꾸기를 요청합니다",
