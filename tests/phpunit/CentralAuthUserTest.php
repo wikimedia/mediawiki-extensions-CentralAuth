@@ -46,9 +46,14 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( 'CentralAuthUser' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'queryAttached', 'loadState' ) )
+			->setMethods( array( 'queryAttachedBasic', 'queryAttached', 'loadState' ) )
 			->getMock();
 
+		$ca->expects( $this->any() )->method( 'queryAttachedBasic' )->will( $this->returnValue(
+			array_map( function ( $data ) {
+				return array_intersect_key( $data, array( 'attachedMethod' => true ) );
+			}, $attached )
+		) );
 		$ca->expects( $this->any() )->method( 'queryAttached' )->will( $this->returnValue( $attached ) );
 		$this->assertEquals( $expected, $ca->getHomeWiki() );
 	}

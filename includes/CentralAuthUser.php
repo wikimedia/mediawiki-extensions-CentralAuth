@@ -695,7 +695,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			return $this->mHomeWiki;
 		}
 
-		$attached = $this->queryAttached();
+		$attached = $this->queryAttachedBasic();
 
 		if ( !count( $attached ) ) {
 			return null;
@@ -708,9 +708,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			}
 		}
 
-		// Still null... try harder.
 		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
-			reset( $attached );
+			// Still null... try harder.
+			$attached = $this->queryAttached();
 			$this->mHomeWiki = key( $attached ); // Make sure we always have some value
 			$maxEdits = -1;
 			foreach ( $attached as $wiki => $acc ) {
@@ -2221,9 +2221,39 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 *    wiki                  The wiki ID (database name)
 	 *    attachedTimestamp     The MW timestamp when the account was attached
 	 *    attachedMethod        Attach method: password, mail or primary
+	 *    ...                   All information returned by localUserData()
 	 */
 	public function queryAttached() {
 		// Cache $wikis to avoid expensive query whenever possible
+		// mAttachedInfo is shared with queryAttachedBasic(); check whether it contains partial data
+		if (
+			$this->mAttachedInfo !== null
+			&& ( !$this->mAttachedInfo || array_key_exists( 'id', reset( $this->mAttachedInfo ) ) )
+		) {
+			return $this->mAttachedInfo;
+		}
+
+		$wikis = $this->queryAttachedBasic();
+
+		foreach ( $wikis as $wikiId => $_ ) {
+			$localUser = $this->localUserData( $wikiId );
+			$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
+		}
+
+		$this->mAttachedInfo = $wikis;
+
+		return $wikis;
+	}
+
+	/**
+	 * Helper method for queryAttached().
+	 *
+	 * Does the cheap part of the lookup by checking the cross-wiki localuser table,
+	 * and returns attach time and method.
+	 *
+	 * @return array
+	 */
+	protected function queryAttachedBasic() {
 		if ( $this->mAttachedInfo !== null ) {
 			return $this->mAttachedInfo;
 		}
@@ -2246,16 +2276,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$wikis[$row->lu_wiki] = array(
 				'wiki' => $row->lu_wiki,
 				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
-					 $row->lu_attached_timestamp ),
+					$row->lu_attached_timestamp ),
 				'attachedMethod' => $row->lu_attached_method,
 			);
-
-			$localUser = $this->localUserData( $row->lu_wiki );
-
-			// Just for fun, add local user data.
-			// Displayed in the steward interface.
-			$wikis[$row->lu_wiki] = array_merge( $wikis[$row->lu_wiki],
-				$localUser );
 		}
 
 		$this->mAttachedInfo = $wikis;
@@ -2284,6 +2307,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Fetch a row of user data needed for migration.
+	 *
+	 * Returns most data in the user and ipblocks tables, user groups, and editcount.
 	 *
 	 * @param $wikiID String
 	 * @throws Exception if local user not found
