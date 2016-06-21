@@ -264,6 +264,7 @@
 	"centralauth-globalgroupperms-rights": "Privilégios",
 	"centralauth-globalgroupperms-management": "gestão",
 	"centralauth-globalgroupperms-group-listmembers": "lista de membros",
+	"centralauth-globalgroupperms-group-wikiset": "Conjunto de wikis onde este grupo está ativo: $1",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está presente em todas as wikis.",
 	"centralauth-globalgroupperms-group-disabled": "(não ativado nesta wiki)",
 	"centralauth-newgroup-legend": "Criar um novo grupo",
@@ -491,5 +492,6 @@
 	"centralauth-uwbr-name": "Nome de utilizador(a)",
 	"centralauth-uwbr-registration": "Data de registo",
 	"centralauth-uwbr-registration-nodate": "Desconhecida",
-	"centralauth-uwbr-intro": "Esta página lista os utilizadores registados nesta wiki que serão renomeados."
+	"centralauth-uwbr-intro": "Esta página lista os utilizadores registados nesta wiki que serão renomeados.",
+	"log-action-filter-gblrights": "Tipo de alteração:"
 }
