@@ -478,6 +478,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return $this->centralCookieOptions['domain'];
 	}
 
+	protected function getExtendedLoginCookies() {
+		$cookies = parent::getExtendedLoginCookies();
+		$cookies[] = 'User';
+		return $cookies;
+	}
+
 	public function getRememberUserDuration() {
 		// CentralAuth needs User and Token cookies to remember the user. The fallback to
 		// sessions needs UserID as well, so if that one has shorter expiration, the remember
