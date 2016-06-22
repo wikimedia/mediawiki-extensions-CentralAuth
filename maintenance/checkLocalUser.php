@@ -15,11 +15,14 @@ class CheckLocalUser extends Maintenance {
 		$this->total = 0;
 		$this->dryrun = true;
 		$this->wiki = null;
+		$this->user = null;
 		$this->verbose = false;
 		$this->batchSize = 1000;
 
 		$this->addOption( 'delete', 'Performs delete operations on the offending entries', false, false );
 		$this->addOption( 'wiki', 'If specified, only runs against local names from this wiki', false, true, 'u' );
+		$this->addOption( 'allwikis', 'If specified, checks all wikis', false, false );
+		$this->addOption( 'user', 'If specified, only checks the given user', false, true );
 		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
 	}
 
@@ -33,8 +36,13 @@ class CheckLocalUser extends Maintenance {
 		}
 
 		$wiki = $this->getOption( 'wiki', false );
-		if ( $wiki !== false ) {
+		if ( $wiki !== false && !$this->getOption( 'allwikis' ) ) {
 			$this->wiki = $wiki;
+		}
+
+		$user = $this->getOption( 'user', false );
+		if ( $user !== false ) {
+			$this->user = $user;
 		}
 
 		if ( $this->getOption( 'verbose', false ) !== false ) {
@@ -48,10 +56,14 @@ class CheckLocalUser extends Maintenance {
 		if ( !is_null( $this->wiki ) ) {
 			$wikis[] = $this->wiki;
 		} else {
+			$conds = array();
+			if ( !is_null( $this->user ) ) {
+				$conds['lu_name'] = $this->user;
+			}
 			$result = $centralSlave->select(
 				'localuser',
 				array( 'lu_wiki' ),
-				"",
+				$conds,
 				__METHOD__,
 				array(
 					 "DISTINCT",
@@ -72,15 +84,19 @@ class CheckLocalUser extends Maintenance {
 			$this->output( "Checking localuser for $wiki ...\n" );
 
 			// batch query localnames from the wiki
-			do{
-				$this->output( "\t ... querying from '$lastUsername'\n" );
+			do {
+				$conds = array( "lu_wiki" => $wiki );
+				if ( is_null( $this->user ) ) {
+					$conds[] = "lu_name > " . $centralSlave->addQuotes( $lastUsername );
+					$this->output( "\t ... querying from '$lastUsername'\n" );
+				} else {
+					$conds["lu_name"] = $this->user;
+					$this->output( "\t ... querying '$this->user'\n" );
+				}
 				$result = $centralSlave->select(
 					'localuser',
 					array( 'lu_name' ),
-					array(
-						 "lu_wiki" => $wiki,
-						 "lu_name > " . $centralSlave->addQuotes( $lastUsername )
-					),
+					$conds,
 					__METHOD__,
 					array(
 						 "LIMIT" => $this->batchSize,
@@ -120,7 +136,7 @@ class CheckLocalUser extends Maintenance {
 					$lastUsername = $u->lu_name;
 				}
 
-			} while ( $result->numRows() > 0 );
+			} while ( is_null( $this->user ) && $result->numRows() > 0 );
 		}
 
 		$this->report();
