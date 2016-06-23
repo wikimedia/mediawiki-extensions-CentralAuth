@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0efd9372_d4da2220",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-06-23T13:48:56Z",
+      "side": 1,
+      "message": "Could just do\n\n    if ( $backend-\u003eshouldRememberUser() ) {\n        $expirationDuration \u003d $this-\u003egetLoginCookieExpiration( \u0027forceHTTPS\u0027,\n true );",
+      "revId": "f183d9339677da76e3fd38687e1bf1a6afd5962d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
