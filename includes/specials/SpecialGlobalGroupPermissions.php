@@ -56,14 +56,18 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->getOutput()->setArticleRelated( false );
 		$this->getOutput()->enableClientCache( false );
 
+		$request = $this->getRequest();
+
 		if ( $subpage == '' ) {
-			$subpage = $this->getRequest()->getVal( 'wpGroup' );
+			$subpage = $request->getVal( 'wpGroup' );
 		}
 
-		if ( $subpage != '' && $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
+		if ( $subpage != '' && $this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			$this->doSubmit( $subpage );
 		} elseif ( $subpage != '' ) {
 			$this->buildGroupView( $subpage );
+		} elseif ( $request->getVal( 'view' ) === 'detailed' ) {
+			$this->buildDetailedView();
 		} else {
 			$this->buildMainView();
 		}
@@ -73,12 +77,34 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		global $wgScript;
 		$out = $this->getOutput();
 		$groups = CentralAuthUser::availableGlobalGroups();
-
 		if ( count( $groups ) ) {
-			$out->addHTML(
-				$this->msg( 'centralauth-globalgroupperms-groups-intro' )->parseAsBlock()
-					. $this->getGlobalGroupsTable( $groups )
-			);
+			$detailedPageUrl = $this->getPageTitle()->getFullURL( array( 'view' => 'detailed' ) );
+			$html = $this->msg( 'centralauth-globalgroupperms-page-intro', $detailedPageUrl )->parseAsBlock();
+
+			$html .= Xml::fieldset( $this->msg( 'centralauth-globalgroupperms-list-legend' )->escaped() );
+			$html .= Html::openElement( 'ul' );
+
+			foreach( $groups as $group ) {
+				$html .= Html::openElement( 'li' );
+				$html .= $out->parseInline( User::makeGroupLinkWiki( $group ) );
+				$html .= ' ' . $this->getGroupLinks( $group );
+				$wikiset = $this->getGroupWikisetInfo( $group );
+				if ( $wikiset !== null && !$wikiset['enabledHere'] ) {
+					// Indicate that the group is disabled on the current wiki
+					$html .=
+						Linker::linkKnown(
+							SpecialPage::getTitleFor( 'WikiSets', $wikiset['id'] ),
+							'*',
+							array( 'title' => $this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped() )
+						);
+				}
+				$html .= Html::closeElement( 'li' );
+			}
+
+			$html .= Html::closeElement( 'ul' );
+			$html .= Xml::closeElement( 'fieldset' );
+
+			$out->addHTML( $html );
 		} else {
 			$out->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
 		}
@@ -98,6 +124,20 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$html .= Xml::closeElement( 'fieldset' );
 
 			$out->addHTML( $html );
+		}
+	}
+
+	protected function buildDetailedView() {
+		$out = $this->getOutput();
+		$groups = CentralAuthUser::availableGlobalGroups();
+
+		if ( count( $groups ) ) {
+			$out->addHTML(
+				$this->msg( 'centralauth-globalgroupperms-groups-intro' )->parseAsBlock()
+					. $this->getGlobalGroupsTable( $groups )
+			);
+		} else {
+			$out->addWikiMsg( 'centralauth-globalgroupperms-nogroups' );
 		}
 	}
 
@@ -127,18 +167,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			// Column with group name, links and local disabled status
 			$table .= Html::openElement( 'td' );
 			$table .= $this->getOutput()->parseInline( User::makeGroupLinkWiki( $groupName ) ) . '<br />';
-
-			$links = array(
-				Linker::linkKnown(
-					$this->getPageTitle( $groupName ),
-					$this->msg( 'centralauth-globalgroupperms-management' )->escaped()
-				),
-				Linker::linkKnown(
-					SpecialPage::getTitleFor( 'GlobalUsers', $groupName ),
-					$this->msg( 'centralauth-globalgroupperms-group-listmembers' )->escaped()
-				),
-			);
-			$table .= $this->msg( 'parentheses' )->rawParams( $this->getLanguage()->pipeList( $links ) )->escaped();
+			$table .= $this->getGroupLinks( $groupName );
 
 			if ( $wikiset !== null && !$wikiset['enabledHere'] ) {
 				$table .= '<br /><small>';
@@ -178,32 +207,60 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
+	 * @param string $groupName
+	 * @return string
+	 */
+	protected function getGroupLinks( $groupName ) {
+		$links = array(
+			Linker::linkKnown(
+				$this->getPageTitle( $groupName ),
+				$this->msg( 'centralauth-globalgroupperms-management' )->escaped()
+			),
+			Linker::linkKnown(
+				SpecialPage::getTitleFor( 'GlobalUsers', $groupName ),
+				$this->msg( 'centralauth-globalgroupperms-group-listmembers' )->escaped()
+			),
+		);
+		return $this->msg( 'parentheses' )
+			->rawParams( $this->getLanguage()->pipeList( $links ) )
+			->escaped();
+	}
+
+	/**
 	 * @param string $group The group's name
 	 * @return array
 	 * 	 - rights: string The list of rights assigned to the group
-	 *   - wikiset: array|null Either array with id, name, enabledHere or
-	 *      null if the group is not associated to any wikiset
-	 * @throws Exception
+	 *   - wikiset: see getGroupWikisetInfo()
 	 */
 	protected function getGroupInfo( $group ) {
-		$info = array( 'rights' => $this->getAssignedRights( $group ) );
+		return array(
+			'rights' => $this->getAssignedRights( $group ),
+			'wikiset' => $this->getGroupWikisetInfo( $group ),
+		);
+	}
 
+	/**
+	 * @param string $group Group name
+	 * @return array|null
+	 *   - if associated with wikiset, array with id, name, enabledHere
+	 *   - null if the group is not associated to any wikiset
+	 * @throws Exception
+	 */
+	protected function getGroupWikisetInfo( $group ) {
 		$wikiset = WikiSet::getWikiSetForGroup( $group );
 		if ( $wikiset !== 0 ) {
 			$wikiset = WikiSet::newFromID( $wikiset );
 			if ( !$wikiset ) {
 				throw new Exception( "__METHOD__: $group with unknown wikiset." );
 			}
-			$info['wikiset'] = array(
+			return array(
 				'id' => $wikiset->getId(),
 				'name' => $wikiset->getName(),
 				'enabledHere' => $wikiset->inSet(),
 			);
-		} else {
-			$info['wikiset'] = null;
 		}
 
-		return $info;
+		return null;
 	}
 
 	/**

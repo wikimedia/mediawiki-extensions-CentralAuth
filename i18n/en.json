@@ -275,6 +275,8 @@
 	"centralauth-globalgroupperms-group-wikiset": "Set of wikis where this group is active: $1",
 	"centralauth-globalgroupperms-wikiset-none": "This group is active on all wikis.",
 	"centralauth-globalgroupperms-group-disabled": "(not enabled on this wiki)",
+	"centralauth-globalgroupperms-page-intro": "This page lists all the global user groups defined on this wiki farm. Users with the permissions may delete a group by removing all rights from it. A [$1 list] of all groups with their associated user rights is also available.",
+	"centralauth-globalgroupperms-list-legend": "Existing global groups",
 	"centralauth-globalgroupperms-groups-intro": "This is a list of all global user groups configured on this wiki farm, with their associated user access rights and wikisets. Users with the permissions may delete a group by removing all rights from it.",
 	"centralauth-newgroup-legend": "Create a new group",
 	"centralauth-newgroup-intro": "You can use this form to assign permissions to a new group.\nNote that a group does not exist unless it has permissions assigned to it.",
