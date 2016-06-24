@@ -34,7 +34,6 @@ class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 		$config = new HashConfig( [
 			'CookieExpiration' => 100,
 			'ExtendedLoginCookieExpiration' => 200,
-			'ExtendedLoginCookies' => [ 'User', 'UserID', 'Token' ],
 			// these are needed by CookieSessionProvider::getConfig
 			'SessionName' => null,
 			'CookiePrefix' => '',
@@ -47,13 +46,5 @@ class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 		$provider->setConfig( $config );
 
 		$this->assertSame( 200, $provider->getRememberUserDuration() );
-
-		$config->set( 'ExtendedLoginCookies', [ 'UserID', 'Token' ] );
-
-		$this->assertSame( 100, $provider->getRememberUserDuration() );
-
-		$config->set( 'ExtendedLoginCookies', [ 'User', 'Token' ] );
-
-		$this->assertSame( 100, $provider->getRememberUserDuration() );
 	}
 }

@@ -328,7 +328,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				if ( $value === false ) {
 					$response->clearCookie( $name, $options );
 				} else {
-					$expirationDuration = $this->getLoginCookieExpiration( $name );
+					$expirationDuration = $this->getLoginCookieExpiration( $name, $remember );
 					$expiration = $expirationDuration ? $expirationDuration + time() : null;
 					$response->setCookie( $name, (string)$value, $expiration, $options );
 				}
@@ -422,8 +422,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			if ( !$sameCookie ) {
 				parent::setForceHTTPSCookie( false, $backend, $request );
 			}
-			if ( $backend->shouldRememberUser() ) {
-				$expirationDuration = $this->getLoginCookieExpiration( 'forceHTTPS' );
+
+			$shouldRemember = $backend->shouldRememberUser();
+			if ( $shouldRemember ) {
+				$expirationDuration = $this->getLoginCookieExpiration(
+					'forceHTTPS',
+					/* $shouldRememberUser */ true
+				);
 				$expiration = $expirationDuration ? $expirationDuration + time() : null;
 			} else {
 				$expiration = null;
@@ -478,6 +483,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return $this->centralCookieOptions['domain'];
 	}
 
+	protected function getExtendedLoginCookies() {
+		$cookies = parent::getExtendedLoginCookies();
+		$cookies[] = 'User';
+		return $cookies;
+	}
+
 	public function getRememberUserDuration() {
 		// CentralAuth needs User and Token cookies to remember the user. The fallback to
 		// sessions needs UserID as well, so if that one has shorter expiration, the remember
@@ -485,9 +496,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		// duration in that case.
 
 		return min(
-			$this->getLoginCookieExpiration( 'User' ),
-			$this->getLoginCookieExpiration( 'Token' ),
-			$this->getLoginCookieExpiration( 'UserID' )
+			$this->getLoginCookieExpiration( 'User', /* $shouldRememberUser */ true ),
+			$this->getLoginCookieExpiration( 'Token', /* $shouldRememberUser */ true ),
+			$this->getLoginCookieExpiration( 'UserID', /* $shouldRememberUser */ true )
 		) ?: null;
 	}
 }
