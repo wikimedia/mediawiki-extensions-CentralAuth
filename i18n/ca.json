@@ -17,7 +17,8 @@
 			"Vriullop",
 			"Jmarchn",
 			"Gerardduenas",
-			"Jaumeortola"
+			"Jaumeortola",
+			"Medol"
 		]
 	},
 	"mergeaccount": "Estat de fusió de comptes d'usuari",
@@ -253,16 +254,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "Teniu la sessió iniciada globalment. Carregeu de nou la pàgina per aplicar la configuració d'usuari.",
 	"globalgroupmembership": "Pertinença a grups globals",
 	"globalgrouppermissions": "Gestió de grups globals",
-	"centralauth-globalgroupperms-grouplist": "Els següents grups globals han estat configurats.\nPodeu veure i editar-ne les autoritzacions de cadascun, si teniu permís.\nEs pot esborrar un grup retirant-li tots els drets.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|Vegeu/editeu]])",
 	"centralauth-globalgroupperms-nogroups": "No hi ha grups globals definits",
-	"centralauth-existinggroup-legend": "Grups existents",
 	"centralauth-newgroup-legend": "Crear un grup nou",
 	"centralauth-newgroup-intro": "Podeu utilitzar aquesta pantalla per a donar autoritzacions a un nou grup. Un grup no existeix si no té autoritzacions assignades.",
 	"centralauth-globalgroupperms-newgroupname": "Nom del nou grup:",
 	"centralauth-globalgroupperms-creategroup-submit": "Assigneu autoritzacions",
-	"centralauth-editgroup-subtitle": "Editant $1",
-	"centralauth-editgroup-subtitle-readonly": "Veure $1",
 	"centralauth-editgroup-fieldset": "Autoritzacions per $1",
 	"centralauth-editgroup-name": "Nom del grup:",
 	"centralauth-editgroup-display": "Trobat nom de grup:",
@@ -317,7 +313,6 @@
 	"centralauth-readonly": "La base de dades d'autentificació està bloquejada",
 	"centralauth-readonlytext": "La base de dades no permet noves entrades o modificacions de forma temporal, possiblement per manteniment rutinari, després del qual tornarà a la normalitat.",
 	"right-globalgroupmembership": "Editar els membres dels grups globals",
-	"right-centralauth-autoaccount": "Connectar-se automàticament amb compte global",
 	"right-centralauth-unmerge": "Anuŀlar la unificació del compte global",
 	"right-centralauth-lock": "Bloqueig o desbloqueig de compte global",
 	"right-centralauth-oversight": "Supressió o ocultació de compte global",
@@ -460,5 +455,7 @@
 	"sulrenamewarning-renamed": "El {{GENDER:$2|vostre}} compte '''$1''' ha canviat al nom '''$2''' durant la migració automàtica al sistema de sessions unificades de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Utilitzeu el {{GENDER:$1|vostre}} nou nom d'usuari '''$1''' per iniciar sessió a partir d'ara.",
 	"globalrenamequeue-request-reason-label": "Comentari de l'entrada pública del registre (si l'accepteu)",
-	"centralauth-log-gblrename-oldname": "Anterior nom d'usuari"
+	"centralauth-log-gblrename-oldname": "Anterior nom d'usuari",
+	"log-action-filter-gblrights": "Tipus de canvi:",
+	"log-action-filter-gblrights-usergroups": "Canvi de drets d'usuari global"
 }
