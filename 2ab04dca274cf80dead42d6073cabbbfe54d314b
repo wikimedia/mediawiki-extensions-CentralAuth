@@ -16,6 +16,24 @@
       "revId": "2ab04dca274cf80dead42d6073cabbbfe54d314b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0efd9372_b4303354",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 892
+      },
+      "writtenOn": "2016-06-25T12:00:01Z",
+      "side": 1,
+      "message": "I don\u0027t think we\u0027ve started using LinkRenderer directly in this extension (and other extensions for that matter)  yet? Legoktm, maybe you can advise?",
+      "parentUuid": "0efd9372_b4b313e7",
+      "revId": "2ab04dca274cf80dead42d6073cabbbfe54d314b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
