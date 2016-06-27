@@ -172,8 +172,8 @@
 	"centralauth-login-no-others": "دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده آوتوماتیک اولا‌راق داخیل ائتدینیز.",
 	"centralauth-logout-no-others": "دیگر {{int:Centralauth-groupname}} پرویئکت‌لرین‌دن آوتوماتیک اولا‌راق چیخیش ائتدینیز.",
 	"centralauth-hidden-blockreason": "$1 طرفین‌دن سراسری اولا‌راق $2 ایلده بو سببله گیزلندی: $3",
-	"centralauth-log-name": "سراسری حساب گونده‌لیگی",
-	"centralauth-log-header": "بو گونده‌لیک ایستفاده چی حساب آلتین‌داکی عملیات‌لاری داخیل‌دیر: سیلمه‌لر، کیلیدلمه و کیلیدی آچما‌لاری.",
+	"centralauth-log-name": "باشاباش حساب ژورنالی",
+	"centralauth-log-header": "بو ژورنال باشاباش ایشلدن حسابلارینا باغلی عمللری سیرالاییر：سیلمه، باغلاما و آچما.",
 	"centralauth-log-entry-delete": "\"$1\" ایستفاده چی حسابی سیلیندی",
 	"centralauth-log-entry-lock": "\"$1\" ایستفاده چی حسابی باغلاندی",
 	"centralauth-log-entry-unlock": "\"$1\" ایستفاده چی حسابینین آچدی",
@@ -185,7 +185,7 @@
 	"centralauth-log-status-hidden": "گیزلی",
 	"centralauth-log-status-oversighted": "گیزلنمیش",
 	"centralauth-log-status-none": "(هئچ)",
-	"centralauth-rightslog-name": "سراسری حقوق‌لار گونده‌لیگی",
+	"centralauth-rightslog-name": "باشاباش حاقلار ژورنالی",
 	"centralauth-rightslog-entry-usergroups": "$1 آدلی ایستیفاده‌چی‌نین ایستیفاده‌چی گروه‌لارین‌داکی عضو‌لوگو دییشدیریلدی: $2 ► $3",
 	"centralauth-rightslog-entry-groupperms": "$1 آدلی ایستیفاده‌چی‌نین ایستیفاده‌چی قروپ‌لارین‌داکی عضو‌لوگو دییشدیریلدی: $2 ► $3",
 	"centralauth-rightslog-entry-groupperms2": "$1 اوچون قروپ ایجازه‌لری دییشدیریلدی. $2 علاوه اولوندو؛ $3 چیخاریلدی",
@@ -276,6 +276,7 @@
 	"centralauth-rename-table-status-queued": "سیرادا",
 	"centralauth-rename-table-status-done": "اولدو",
 	"centralauth-rename-table-status-failed": "اوغورسوز",
+	"log-name-gblrename": "باشاباش آد دَییشدیرمه ژورنالی",
 	"centralauth-usermerge-form-newuser": "سوْن ایشلدن آدی",
 	"centralauth-usermerge-form-usernames": "ایندیکی ایشلدن آدی:",
 	"centralauth-usermerge-form-reason": "ندن",
@@ -302,5 +303,7 @@
 	"centralauth-uwbr-registration": "آد یازدیرما تاریخی",
 	"centralauth-uwbr-registration-nodate": "بیلینمه‌ین",
 	"centralauth-uwbr-editcount": "دییشدیرمه سایی",
-	"centralauth-delete-empty-account": "بوْش حساب"
+	"centralauth-delete-empty-account": "بوْش حساب",
+	"log-action-filter-globalauth": "دَییشیکلیک نوعو：",
+	"log-action-filter-gblrights": "دَییشیکلیک نوعو："
 }
