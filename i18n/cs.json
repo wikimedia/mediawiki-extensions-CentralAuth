@@ -150,7 +150,7 @@
 	"centralauth-admin-status-hidden-oversight": "Účet je zcela skrytý",
 	"centralauth-admin-status-submit": "Změnit stav",
 	"centralauth-admin-status-nonexistent": "Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.",
-	"centralauth-admin-setstatus-success": "{{gender:|Změnil|Změnila|Změnili}} jste stav tohoto globálního účtu.",
+	"centralauth-admin-setstatus-success": "{{gender:|Změnil|Změnila|Změnil(a)}} jste stav tohoto globálního účtu.",
 	"centralauth-admin-status-reasons": "* Běžné důvody zamčení\n** pouze vandalský účet\n** pouze spamující účet\n* Běžné důvody zamčení a skrytí\n** nepřijatelné uživatelské jméno\n** nevhodné osobní údaje",
 	"centralauth-admin-logsnippet": "Předchozí změny globálního účtu",
 	"centralauth-admin-suppressreason": "Globálně utajil $1 se zdůvodněním: $2",

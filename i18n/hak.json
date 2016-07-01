@@ -4,5 +4,8 @@
 			"Hakka"
 		]
 	},
-	"centralauth-admin-username": "Yung-fu-miàng:"
+	"centralauth-foreign-link": "Yî $2 ke sṳ́-yung chá $1",
+	"centralauth-foreign-contributions": "Yî $2 kung-hien $1 pài",
+	"centralauth-admin-username": "Yung-fu-miàng:",
+	"centralauth-admin-blocklog": "Chhà-fûng ngit-chì"
 }

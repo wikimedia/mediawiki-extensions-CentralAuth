@@ -6,7 +6,8 @@
 			"Ebrahimi-amir",
 			"Mousa",
 			"Koroğlu",
-			"Alp Er Tunqa"
+			"Alp Er Tunqa",
+			"Ilğım"
 		]
 	},
 	"mergeaccount": "حساب بیرلشدیرمه حالی",
@@ -271,7 +272,7 @@
 	"centralauth-rename-form-movepages": "ایشلدن صفحه‌لرینی داشی",
 	"centralauth-rename-progress-username": "ایشلدن آدی",
 	"centralauth-rename-table-domain": "یئرلی ویکی",
-	"centralauth-rename-table-status": "دوروم",
+	"centralauth-rename-table-status": "وضعیت",
 	"centralauth-rename-table-status-inprogress": "گؤرولور",
 	"centralauth-rename-table-status-queued": "سیرادا",
 	"centralauth-rename-table-status-done": "اولدو",
@@ -295,7 +296,7 @@
 	"globalrenamequeue-column-rq-newname": "ایستک‌لنمیش ایشلدن آدی",
 	"globalrenamequeue-column-rq-wiki": "یئرلی ویکی",
 	"globalrenamequeue-column-rq-requested-ts": "آچیق وئری",
-	"globalrenamequeue-column-rq-status": "دوروم",
+	"globalrenamequeue-column-rq-status": "وضعیت",
 	"globalrenamequeue-action-view": "گؤرست",
 	"globalrenamequeue-request-cancel-text": "وازگئچ",
 	"userswhowillberenamed": "آدلاری دَییشدیریله‌جک ایشلدنلر",
@@ -305,5 +306,5 @@
 	"centralauth-uwbr-editcount": "دییشدیرمه سایی",
 	"centralauth-delete-empty-account": "بوْش حساب",
 	"log-action-filter-globalauth": "دَییشیکلیک نوعو：",
-	"log-action-filter-gblrights": "دَییشیکلیک نوعو："
+	"log-action-filter-gblrights": "دَییشیک‌لیک نوعو："
 }
