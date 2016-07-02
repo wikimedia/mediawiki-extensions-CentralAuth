@@ -3,7 +3,8 @@
 		"authors": [
 			"පසිඳු කාවින්ද",
 			"عثمان خان شاہ",
-			"Obaid Raza"
+			"Obaid Raza",
+			"امین اکبر"
 		]
 	},
 	"mergeaccount": "لاگ ان کے اتحاد کا درجہ",
@@ -89,11 +90,9 @@
 	"globalgroupmembership": "عالمی گروپوں میں رکنیت",
 	"globalgrouppermissions": "عالمی گروپ کا انتظام",
 	"centralauth-globalgroupperms-nogroups": "کوئی عالمی گروپس کی وضاحت کر رہے ہیں.",
-	"centralauth-existinggroup-legend": "موجودہ گروپ",
 	"centralauth-newgroup-legend": "ایک نیا گروپ تخلیق کریں",
 	"centralauth-globalgroupperms-newgroupname": "نئے گروپ کے نام:",
 	"centralauth-globalgroupperms-creategroup-submit": "اجازتیں تفویض",
-	"centralauth-editgroup-subtitle": "آپ \"$1\" میں ترمیم کر رہے ہیں۔",
 	"centralauth-editgroup-name": "گروپ کے نام:",
 	"centralauth-editgroup-members": "اراکین کی فہرست:",
 	"centralauth-editgroup-noset": "کوئی بھی (نہیں)",
@@ -115,5 +114,6 @@
 	"centralauth-editset-usage": "گروپوں میں استعمال کیا ہے:",
 	"centralauth-editset-success": "کامیابی سے وکی سیٹ تبدیل کر دیا.",
 	"centralauth-editset-success-delete": "کامیابی سے حذف وکی سیٹ کر ۔",
-	"centralauth-editset-return": "اہم نقطہ نظر کے لئے پر واپس"
+	"centralauth-editset-return": "اہم نقطہ نظر کے لئے پر واپس",
+	"log-action-filter-gblrights-usergroups": "عالمی صارف حقوق تبدیل"
 }
