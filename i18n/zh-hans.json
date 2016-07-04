@@ -89,7 +89,7 @@
 	"centralauth-merge-method-empty-desc": "表示该本地帐户已合并，因为它没有进行过编辑。",
 	"centralauth-merge-method-mail-desc": "表示该本地帐户已合并，因为它的电子邮件地址和主帐户的电子邮件地址相匹配。",
 	"centralauth-merge-method-password-desc": "表示该本地帐户已合并，因为用户为它指定了一个有效密码。",
-	"centralauth-merge-method-admin-desc": "表示该本地帐户由监管员手动合并。\n因为安全原因，这项功能已被禁用。",
+	"centralauth-merge-method-admin-desc": "表示该本地帐户由监管员手动合并。因为安全原因，这项功能已被禁用。",
 	"centralauth-merge-method-new-desc": "表示合并全域帐户时自动创建本地帐户。",
 	"centralauth-merge-method-login-desc": "表示本地账户是在用户登录时自动创建的。",
 	"centralauth-finish-title": "合并完成",
