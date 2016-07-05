@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_086ea42a",
+        "filename": "includes/GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-07-05T23:11:00Z",
+      "side": 1,
+      "message": "Could getNextWiki() be used here?",
+      "revId": "8d4a086e5d7e50372e33170f7ccb11f8a8af0887",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
