@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * Base class for jobs that change a user's
  * name. Intended to be run on local wikis
@@ -13,6 +15,18 @@ abstract class LocalRenameJob extends Job {
 
 	public function run() {
 		$this->setRenameUserStatus( new GlobalRenameUserStatus( $this->params['to'] ) );
+
+		// bail if it's already done or in progress
+		$status = $this->renameuserStatus->getStatus( 'master' );
+		if ( $status !== 'queued' && $status !== 'failed' ) {
+			LoggerFactory::getInstance( 'rename' )->info( 'skipping duplicate rename from {user}', [
+				'user' => $this->params['from'],
+				'to' => $this->params['to'],
+				'status' => $status,
+			] );
+			return true;
+		}
+
 		if ( isset( $this->params['session'] ) ) {
 			// Don't carry over users or sessions because it's going to be wrong
 			// across wikis
@@ -25,6 +39,7 @@ abstract class LocalRenameJob extends Job {
 		}
 		try {
 			$this->doRun();
+			$this->scheduleNextWiki();
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account
 			// until a sysadmin intervenes
@@ -86,5 +101,19 @@ abstract class LocalRenameJob extends Job {
 
 	protected function updateStatus( $status ) {
 		$this->renameuserStatus->setStatus( wfWikiID(), $status );
+	}
+
+	protected function scheduleNextWiki() {
+		$job = new static( $this->getTitle(), $this->getParams() );
+		$nextWiki = null;
+		foreach ( $this->renameuserStatus->getStatuses( 'master' ) as $wiki => $status ) {
+			if ( $status === 'queued' && $wiki !== wfWikiID() ) {
+				$nextWiki = $wiki;
+				break;
+			}
+		}
+		if ( $nextWiki ) {
+			JobQueueGroup::singleton( $nextWiki )->push( $job );
+		}
 	}
 }

@@ -96,15 +96,17 @@ class GlobalRenameUserStatus {
 	 * Get a user's rename status for all wikis.
 	 * Returns an array ( wiki => status )
 	 *
+	 * @param string|null $useMaster Set to 'master' to query the master db
+	 *
 	 * @return array
 	 */
-	public function getStatuses() {
-		$dbr = $this->getDB();
+	public function getStatuses( $useMaster = null ) {
+		$db = $this->getDB( $useMaster === 'master' ? DB_MASTER : DB_SLAVE );
 
-		$res = $dbr->select(
+		$res = $db->select(
 			'renameuser_status',
 			array( 'ru_wiki', 'ru_status' ),
-			array( $this->getNameWhereClause( $dbr ) ),
+			array( $this->getNameWhereClause( $db ) ),
 			__METHOD__
 		);
 
@@ -114,6 +116,37 @@ class GlobalRenameUserStatus {
 		}
 
 		return $statuses;
+	}
+
+	/**
+	 * Get the next wiki on which the rename should be performed.
+	 *
+	 * @param string|null $useMaster Set to 'master' to query the master db
+	 *
+	 * @return string|null
+	 */
+	public function getNextWiki( $useMaster = null ) {
+		$nextWiki = null;
+		foreach ( $this->getStatuses( $useMaster ) as $wiki => $status ) {
+			if ( $status === 'queued' ) {
+				$nextWiki = $wiki;
+				break;
+			}
+		}
+		return $nextWiki;
+	}
+
+	/**
+	 * Get a user's rename status for the current wiki.
+	 *
+	 * @param string|null $useMaster Set to 'master' to query the master db
+	 *
+	 * @return string|null Null means no rename pending for this user on the current wiki (possibly
+	 *   because it has finished already).
+	 */
+	public function getStatus( $useMaster = null ) {
+		$statuses = $this->getStatuses( $useMaster );
+		return isset( $statuses[wfWikiID()] ) ? $statuses[wfWikiID()] : null;
 	}
 
 	/**

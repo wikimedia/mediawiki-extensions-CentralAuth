@@ -173,9 +173,11 @@ class GlobalRenameUser {
 	 */
 	private function injectLocalRenameUserJobs( array $wikis, array $options ) {
 		$job = $this->getJob( $options );
-		// Submit the jobs.
-		foreach( $wikis as $wiki ) {
-			call_user_func( $this->jobQueueGroupGenerator, $wiki )->push( $job );
+		foreach ( $this->renameuserStatus->getStatuses( 'master' ) as $wiki => $status ) {
+			if ( $status === 'queued' ) {
+				call_user_func( $this->jobQueueGroupGenerator, $wiki )->push( $job );
+				break;
+			}
 		}
 	}
 
