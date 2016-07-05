@@ -20,6 +20,7 @@ class CheckLocalUser extends Maintenance {
 		$this->batchSize = 1000;
 
 		$this->addOption( 'delete', 'Performs delete operations on the offending entries', false, false );
+		$this->addOption( 'delete-nowiki', 'Delete entries associated with invalid wikis', false, false );
 		$this->addOption( 'wiki', 'If specified, only runs against local names from this wiki', false, true, 'u' );
 		$this->addOption( 'allwikis', 'If specified, checks all wikis', false, false );
 		$this->addOption( 'user', 'If specified, only checks the given user', false, true );
@@ -56,6 +57,26 @@ class CheckLocalUser extends Maintenance {
 		// iterate from there
 		foreach( $this->getWikis() as $wiki ) {
 			$this->output( "Checking localuser for $wiki ...\n" );
+
+			if ( !WikiMap::getWiki( $wiki ) ) {
+				// localuser record is left over from some wiki that has been disabled
+				if ( !$this->dryrun ) {
+					if ( $this->getOption( 'delete-nowiki' ) ) {
+						$this->output( "$wiki does not exist, deleting entries...\n" );
+						$conds = [ 'lu_wiki' => $wiki ];
+						if ( $this->user ) {
+							$conds['lu_name'] = $this->user;
+						}
+						$centralMaster->delete( 'localuser', $conds, __METHOD__ );
+						$this->deleted ++;
+					} else {
+						$this->output( "$wiki does not exist, use --delete-nowiki to delete entries...\n" );
+					}
+				} else {
+					$this->output( "$wiki does not exist\n" );
+				}
+				continue;
+			}
 
 			$localdb = wfGetDB( DB_SLAVE , array(), $wiki );
 
