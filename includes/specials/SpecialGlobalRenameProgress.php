@@ -136,8 +136,13 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$table .= Html::element( 'th', array(), $this->msg( 'centralauth-rename-table-status' )->text() );
 		$table .= Html::closeElement( 'tr' );
 		foreach( $statuses as $wiki => $status ) {
+			$wikiReference = WikiMap::getWiki( $wiki );
+			if ( !$wikiReference ) {
+				continue;
+			}
+
 			$table .= Html::openElement( 'tr' );
-			$table .= Html::element( 'td', array(), WikiMap::getWiki( $wiki )->getDisplayName() );
+			$table .= Html::element( 'td', array(), $wikiReference->getDisplayName() );
 			// Messages used: centralauth-rename-table-status-inprogress
 			// centralauth-rename-table-status-queued, centralauth-rename-table-status-done
 			$table .= Html::rawElement( 'td', array(), $this->msg( "centralauth-rename-table-status-$status" )->parse() );
