@@ -16,6 +16,24 @@
       "revId": "8d4a086e5d7e50372e33170f7ccb11f8a8af0887",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_08d4e4bd",
+        "filename": "includes/GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-07-05T23:22:14Z",
+      "side": 1,
+      "message": "Uh, I actually wanted to delete that. (It was my original attempt at DRY but did not work out as the rescheduler at the end of the job must skip the current wiki while the initial scheduler must not.)",
+      "parentUuid": "ee011f3e_086ea42a",
+      "revId": "8d4a086e5d7e50372e33170f7ccb11f8a8af0887",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
