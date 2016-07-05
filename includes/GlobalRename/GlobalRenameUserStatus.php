@@ -9,7 +9,7 @@
  * @author Marius Hoch < hoo@online.de >
  */
 
-class GlobalRenameUserStatus {
+class GlobalRenameUserStatus implements IDBAccessObject {
 
 	/**
 	 * Either old or new name of the user
@@ -96,16 +96,20 @@ class GlobalRenameUserStatus {
 	 * Get a user's rename status for all wikis.
 	 * Returns an array ( wiki => status )
 	 *
+	 * @param integer $flags IDBAccessObject flags
+	 *
 	 * @return array
 	 */
-	public function getStatuses() {
-		$dbr = $this->getDB();
+	public function getStatuses( $flags = 0 ) {
+		list( $index, $options ) = DBAccessObjectUtils::getDBOptions( $flags );
+		$db = $this->getDB( $index );
 
-		$res = $dbr->select(
+		$res = $db->select(
 			'renameuser_status',
 			array( 'ru_wiki', 'ru_status' ),
-			array( $this->getNameWhereClause( $dbr ) ),
-			__METHOD__
+			array( $this->getNameWhereClause( $db ) ),
+			__METHOD__,
+			$options
 		);
 
 		$statuses = array();
@@ -114,6 +118,19 @@ class GlobalRenameUserStatus {
 		}
 
 		return $statuses;
+	}
+
+	/**
+	 * Get a user's rename status for the current wiki.
+	 *
+	 * @param integer $flags IDBAccessObject flags
+	 *
+	 * @return string|null Null means no rename pending for this user on the current wiki (possibly
+	 *   because it has finished already).
+	 */
+	public function getStatus( $flags = 0 ) {
+		$statuses = $this->getStatuses( $flags );
+		return isset( $statuses[wfWikiID()] ) ? $statuses[wfWikiID()] : null;
 	}
 
 	/**
