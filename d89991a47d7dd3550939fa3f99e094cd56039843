@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_b759b503",
+        "filename": "maintenance/checkLocalUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-06T17:06:37Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to be used.",
+      "revId": "d89991a47d7dd3550939fa3f99e094cd56039843",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
