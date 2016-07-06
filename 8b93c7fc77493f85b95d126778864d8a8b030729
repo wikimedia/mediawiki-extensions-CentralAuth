@@ -16,6 +16,24 @@
       "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_1729a19a",
+        "filename": "includes/GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-07-06T18:03:13Z",
+      "side": 1,
+      "message": "Yeah, either pass DB_MASTER directly (with DB_SLAVE as parameter default) - or implement IDBAccessObject into this class and use READ_LATEST.\n\n $db \u003d wfGetDB( ( $flags \u0026 self::READ_LATEST ) ? DB_MASTER : DB_SLAVE ).\n\nEstablished pattern in WikiPage, Revision and others.",
+      "parentUuid": "ee011f3e_179a41bd",
+      "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
