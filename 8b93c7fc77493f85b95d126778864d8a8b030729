@@ -34,6 +34,24 @@
       "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_92491f6d",
+        "filename": "includes/GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-06T18:24:56Z",
+      "side": 1,
+      "message": "In the latter case, may as well go all the way:\n\n list( $index, $options ) \u003d DBAccessObjectUtils::getDBOptions( $flags );\n $db \u003d $this-\u003egetDB( $index );\n\n $res \u003d $db-\u003eselect(\n     \u0027renameuser_status\u0027,\n     array( \u0027ru_wiki\u0027, \u0027ru_status\u0027 ),\n     array( $this-\u003egetNameWhereClause( $db ) ),\n     __METHOD__,\n     $options\n );",
+      "parentUuid": "ee011f3e_1729a19a",
+      "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
