@@ -34,6 +34,24 @@
       "revId": "8d4a086e5d7e50372e33170f7ccb11f8a8af0887",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_5733290a",
+        "filename": "includes/GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-07-06T18:04:01Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "ee011f3e_08d4e4bd",
+      "revId": "8d4a086e5d7e50372e33170f7ccb11f8a8af0887",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
