@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_179a41bd",
+        "filename": "includes/GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-06T16:51:05Z",
+      "side": 1,
+      "message": "Why not just have the caller pass DB_MASTER or DB_SLAVE directly?",
+      "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
