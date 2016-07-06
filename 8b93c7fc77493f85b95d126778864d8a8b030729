@@ -52,6 +52,24 @@
       "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_374f85c2",
+        "filename": "includes/GlobalRename/GlobalRenameUserStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-07-06T19:44:55Z",
+      "side": 1,
+      "message": "I wanted to follow the parameter convention of getNames. Probably better not to, though.",
+      "parentUuid": "ee011f3e_179a41bd",
+      "revId": "8b93c7fc77493f85b95d126778864d8a8b030729",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
