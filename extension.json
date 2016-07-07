@@ -70,7 +70,8 @@
 		"LocalRenameUserJob": "LocalRenameUserJob",
 		"LocalUserMergeJob": "LocalUserMergeJob",
 		"LocalPageMoveJob": "LocalPageMoveJob",
-		"CentralAuthCreateLocalAccountJob": "CentralAuthCreateLocalAccountJob"
+		"CentralAuthCreateLocalAccountJob": "CentralAuthCreateLocalAccountJob",
+		"CentralAuthUnattachUserJob": "CentralAuthUnattachUserJob"
 	},
 	"LogTypes": [
 		"globalauth",
@@ -194,7 +195,9 @@
 		"CentralAuthHooks": "includes/CentralAuthHooks.php",
 		"CentralAuthPreAuthManagerHooks": "includes/CentralAuthPreAuthManagerHooks.php",
 		"CentralAuthSuppressUserJob": "includes/SuppressUserJob.php",
+		"CentralAuthUnattachUserJob": "includes/CentralAuthUnattachUserJob.php",
 		"CentralAuthCreateLocalAccountJob": "includes/CreateLocalAccountJob.php",
+		"LocalUserNotFoundException": "includes/LocalUserNotFoundException.php",
 		"WikiSet": "includes/WikiSet.php",
 		"SpecialCentralAutoLogin": "includes/specials/SpecialCentralAutoLogin.php",
 		"CentralAuthUserArray": "includes/CentralAuthUserArray.php",
