@@ -10,6 +10,8 @@ likely construction types...
 
 */
 
+use MediaWiki\Logger\LoggerFactory;
+
 class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/** Cache of loaded CentralAuthUsers */
 	private static $loadedUsers = null;
@@ -1391,6 +1393,23 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Queue a job to unattach this user from a named wiki.
+	 *
+	 * @param string $wikiId
+	 */
+	protected function queueAdminUnattachJob( $wikiId ) {
+		$job = Job::factory(
+			'CentralAuthUnattachUserJob',
+			Title::makeTitleSafe( NS_USER, $this->getName() ),
+			array(
+				'username' => $this->getName(),
+				'wiki' => $wikiId,
+			)
+		);
+		JobQueueGroup::singleton( $wikiId )->push( $job );
+	}
+
+	/**
 	 * Delete a global account and log what happened
 	 *
 	 * @param $reason string Reason for the deletion
@@ -2239,8 +2258,17 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$wikis = $this->queryAttachedBasic();
 
 		foreach ( $wikis as $wikiId => $_ ) {
-			$localUser = $this->localUserData( $wikiId );
-			$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
+			try {
+				$localUser = $this->localUserData( $wikiId );
+				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
+			} catch (LocalUserNotFoundException $e) {
+				// T119736: localuser table told us that the user was attached
+				// from $wikiId but there is no data in the master or slaves
+				// that corroborates that.
+				unset( $wikis[$wikiId] );
+				// Queue a job to delete the bogus attachment record.
+				$this->queueAdminUnattachJob( $wikiId );
+			}
 		}
 
 		$this->mAttachedInfo = $wikis;
@@ -2301,8 +2329,16 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		$items = array();
 		foreach ( $wikiIDs as $wikiID ) {
-			$data = $this->localUserData( $wikiID );
-			$items[$wikiID] = $data;
+			try {
+				$data = $this->localUserData( $wikiID );
+				$items[$wikiID] = $data;
+			} catch ( LocalUserNotFoundException $e ) {
+				// T119736: localnames table told us that the name was
+				// unattached on $wikiId but there is no data in the master
+				// or slaves that corroborates that.
+				// Queue a job to delete the bogus record.
+				$this->queueAdminUnattachJob( $wikiID );
+			}
 		}
 
 		return $items;
@@ -2314,7 +2350,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Returns most data in the user and ipblocks tables, user groups, and editcount.
 	 *
 	 * @param $wikiID String
-	 * @throws Exception if local user not found
+	 * @throws LocalUserNotFoundException if local user not found
 	 * @return array
 	 */
 	protected function localUserData( $wikiID ) {
@@ -2338,7 +2374,17 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 		if ( !$row ) {
 			$lb->reuseConnection( $db );
-			throw new Exception( "Could not find local user data for {$this->mName}@{$wikiID}" );
+			$ex = new LocalUserNotFoundException(
+				"Could not find local user data for {$this->mName}@{$wikiID}" );
+			LoggerFactory::getInstance( 'CentralAuth' )->warning(
+				'Could not find local user data for {username}@{wikiId}',
+				array(
+					'username' => $this->mName,
+					'wikiId' => $wikiID,
+					'exception' => $ex,
+				)
+			);
+			throw $ex;
 		}
 
 		/** @var $row object */
