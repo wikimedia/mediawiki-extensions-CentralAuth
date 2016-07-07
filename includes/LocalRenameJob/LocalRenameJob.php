@@ -39,7 +39,7 @@ abstract class LocalRenameJob extends Job {
 		}
 		try {
 			$this->doRun();
-			$this->scheduleNextWiki();
+			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account
 			// until a sysadmin intervenes
@@ -101,6 +101,7 @@ abstract class LocalRenameJob extends Job {
 
 	protected function updateStatus( $status ) {
 		$this->renameuserStatus->setStatus( wfWikiID(), $status );
+		$this->renameuserStatus->commitStatus();
 	}
 
 	protected function scheduleNextWiki() {
