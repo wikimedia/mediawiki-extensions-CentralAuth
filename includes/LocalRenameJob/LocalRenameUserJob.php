@@ -19,6 +19,9 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( !isset( $params['reason'] ) ) {
 			$params['reason'] = '';
 		}
+		if ( !isset( $params['reattach'] ) ) {
+			$params['reattach'] = false;
+		}
 		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
 	}
 
@@ -61,6 +64,17 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// If it does happen, the user will be locked out of their account
 			// until a sysadmin intervenes...
 			throw new Exception( 'RenameuserSQL::rename returned false.' );
+		}
+		if ( $this->params['reattach'] ) {
+			$caUser = CentralAuthUser::getInstanceByName( $this->params['to'] );
+			$wikiId = wfWikiID();
+			$details = $this->params['reattach'][$wikiId];
+			$caUser->attach(
+				$wikiId,
+				$details['attachedMethod'],
+				false,
+				$details['attachedTimestamp']
+			);
 		}
 
 		if ( $this->params['movepages'] ) {
