@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee011f3e_0ff17892",
+        "filename": "includes/GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-08T17:07:46Z",
+      "side": 1,
+      "message": "queryAttachedBasic() would probably be better here, it avoids having to connect to each attached wiki to fetch the user\u0027s edit count and so on when you\u0027re not using that data anyway.",
+      "revId": "0ce26c6781e84a139f54acdd5ef36ee3a29c5ff1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
