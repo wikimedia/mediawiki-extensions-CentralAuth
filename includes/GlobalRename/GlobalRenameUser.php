@@ -102,13 +102,16 @@ class GlobalRenameUser {
 	 * @return Status
 	 */
 	public function rename( array $options ) {
-		$wikis = $this->oldCAUser->listAttached();
+		$wikisAttached = $this->oldCAUser->queryAttached();
 
-		$status = $this->setRenameStatuses( $wikis );
+		$status = $this->setRenameStatuses( array_keys( $wikisAttached ) );
 		if ( !$status->isOK() ) {
 			return $status;
 		}
 
+		// Rename the user centrally and unattach the old user from all
+		// attached wikis. Each will be reattached as its LocalRenameUserJob
+		// runs.
 		$this->databaseUpdates->update(
 			$this->oldUser->getName(),
 			$this->newUser->getName()
@@ -128,7 +131,7 @@ class GlobalRenameUser {
 		$this->oldCAUser->quickInvalidateCache();
 		$this->newCAUser->quickInvalidateCache();
 
-		$this->injectLocalRenameUserJobs( $wikis, $options );
+		$this->injectLocalRenameUserJobs( $wikisAttached, $options );
 
 		$this->logger->log(
 			$this->oldUser->getName(),
@@ -166,13 +169,15 @@ class GlobalRenameUser {
 	}
 
 	/**
+	 * @param array $wikisAttached Attached wiki info
 	 * @param array $options
-	 * @param array $wikis
 	 *
 	 * @return Status
 	 */
-	private function injectLocalRenameUserJobs( array $wikis, array $options ) {
-		$job = $this->getJob( $options );
+	private function injectLocalRenameUserJobs(
+		array $wikisAttached, array $options
+	) {
+		$job = $this->getJob( $options, $wikisAttached );
 		$statuses = $this->renameuserStatus->getStatuses( GlobalRenameUserStatus::READ_LATEST );
 		foreach ( $statuses as $wiki => $status ) {
 			if ( $status === 'queued' ) {
@@ -184,14 +189,16 @@ class GlobalRenameUser {
 
 	/**
 	 * @param array $options
+	 * @param array $wikisAttached Attached wiki info
 	 *
 	 * @return Job
 	 */
-	private function getJob( array $options ) {
+	private function getJob( array $options, array $wikisAttached ) {
 		$params = array(
 			'from' => $this->oldUser->getName(),
 			'to' => $this->newUser->getName(),
 			'renamer' => $this->performingUser->getName(),
+			'reattach' => $wikisAttached,
 			'movepages' => $options['movepages'],
 			'suppressredirects' => $options['suppressredirects'],
 			'promotetoglobal' => false,

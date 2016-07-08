@@ -30,9 +30,8 @@ class GlobalRenameUserDatabaseUpdates {
 			__METHOD__
 		);
 
-		$dbw->update(
+		$dbw->delete(
 			'localuser',
-			array( 'lu_name' => $newname ),
 			array( 'lu_name' => $oldname ),
 			__METHOD__
 		);
