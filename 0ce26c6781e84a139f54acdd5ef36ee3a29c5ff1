@@ -16,6 +16,24 @@
       "revId": "0ce26c6781e84a139f54acdd5ef36ee3a29c5ff1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_0f27b80e",
+        "filename": "includes/GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-08T17:18:00Z",
+      "side": 1,
+      "message": "CentralAuthUser::queryAttachedBasic is protected. Is it worth making it public for this edge use case?\n\nI\u0027m assuming that global renames are relatively low volume. This is doing basically the same work as Special:CentralAuth does to describe a user.",
+      "parentUuid": "ee011f3e_0ff17892",
+      "revId": "0ce26c6781e84a139f54acdd5ef36ee3a29c5ff1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
