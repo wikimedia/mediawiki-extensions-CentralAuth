@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ee011f3e_8a8556a2",
+        "filename": "includes/CentralAuthUnattachUserJob.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-08T21:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee011f3e_af166caa",
+      "revId": "fe3fa928b33bacf99be5b56c7fd575f3e3441ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee011f3e_cf8c9002",
         "filename": "includes/CentralAuthUnattachUserJob.php",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2016-07-08T17:25:09Z",
       "side": 1,
       "message": "If the user really doesn\u0027t exist on the local wiki, you also need -\u003eremoveLocalName(). Which should probably be done even if !$user-\u003eexists().",
+      "revId": "fe3fa928b33bacf99be5b56c7fd575f3e3441ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_6a82b298",
+        "filename": "includes/CentralAuthUnattachUserJob.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-08T21:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee011f3e_cf8c9002",
       "revId": "fe3fa928b33bacf99be5b56c7fd575f3e3441ddf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ee011f3e_aa213aae",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 1407,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-08T21:19:46Z",
+      "side": 1,
+      "message": "I\u0027m not understanding this comment. How can we push a wiki name as a job? $wikiId already in the params for the actual job.",
+      "parentUuid": "ee011f3e_ef1074af",
+      "revId": "fe3fa928b33bacf99be5b56c7fd575f3e3441ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee011f3e_2f2a7cd7",
         "filename": "includes/CentralAuthUser.php",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2016-07-08T17:25:09Z",
       "side": 1,
       "message": "In this case, it\u0027s the localnames table that told us that a user exists on $wikiId. localuser doesn\u0027t have a row for the user at all here.",
+      "revId": "fe3fa928b33bacf99be5b56c7fd575f3e3441ddf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee011f3e_a5068dcf",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 2336,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-08T21:19:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee011f3e_2f2a7cd7",
       "revId": "fe3fa928b33bacf99be5b56c7fd575f3e3441ddf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
