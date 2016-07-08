@@ -533,5 +533,8 @@
 	"centralauth-uwbr-intro": "Tato stránka uvádí uživatele registrované na této wiki, kteří budou přejmenováni.",
 	"centralauth-delete-empty-account": "Prázdný účet",
 	"sessionprovider-centralauthsessionprovider": "centrální relace pomocí cookies",
-	"sessionprovider-centralauthtokensessionprovider": "relace pomocí centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "relace pomocí centralauthtoken",
+	"log-action-filter-gblrights": "Typ změny:",
+	"log-action-filter-gblrights-usergroups": "Změna globálních práv uživatele",
+	"log-action-filter-gblrights-groupprms": "Změna globální skupiny uživatelů"
 }
