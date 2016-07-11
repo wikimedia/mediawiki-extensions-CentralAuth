@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce061b56_aac20337",
+        "filename": "includes/CentralAuthUnattachUserJob.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-07-11T18:13:01Z",
+      "side": 1,
+      "message": "This is checking whether the user exists on the wiki this job is running on, rather than the wiki named in $wiki, and your job submission isn\u0027t ensuring these are the same.\n\nFor example, if the local user is missing on frwiki but the error was triggered when the user tried to do something on enwiki, this will check whether the local enwiki user exists even though $wiki \u003d\u003d\u003d \u0027frwiki\u0027.\n\nThe simplest fix is to just have the job run on $wiki, by using JobQueueGroup::singleton( $wiki )-\u003epush( $job ) when submitting it.",
+      "revId": "20b29113bdb3a88666d3b8768a5837cc9a0bd88b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
