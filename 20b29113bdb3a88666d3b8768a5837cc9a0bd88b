@@ -16,6 +16,24 @@
       "revId": "20b29113bdb3a88666d3b8768a5837cc9a0bd88b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce061b56_8539f040",
+        "filename": "includes/CentralAuthUnattachUserJob.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-11T20:00:48Z",
+      "side": 1,
+      "message": "Done. Thanks for the explanation Anomie. This might be the first code I\u0027ve written that uses the jobqueue and I didn\u0027t understand the trick to run the job on the correct wiki. It makes sense now that you pointed it out however.",
+      "parentUuid": "ce061b56_aac20337",
+      "revId": "20b29113bdb3a88666d3b8768a5837cc9a0bd88b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
