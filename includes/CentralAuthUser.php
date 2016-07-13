@@ -1764,8 +1764,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	public function attach( $wikiID, $method = 'new', $sendToRC = true ) {
 		$this->checkWriteMode();
+
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->begin( __METHOD__ );
 		$dbw->insert( 'localuser',
 			array(
 				'lu_wiki'               => $wikiID,
@@ -1776,7 +1776,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			array( 'IGNORE' )
 		);
 		$success = $dbw->affectedRows() === 1;
-		$dbw->commit( __METHOD__ );
 
 		if ( $wikiID === wfWikiID() ) {
 			$this->resetState();
@@ -1789,15 +1788,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				"Race condition? Already attached $this->mName@$wikiID, just tried by '$method'" );
 			return;
 		}
+
 		wfDebugLog( 'CentralAuth',
 			"Attaching local user $this->mName@$wikiID by '$method'" );
-
-		if ( $dbw->writesOrCallbacksPending() ) {
-			wfDebugLog(
-				'CentralAuth-Bug39996', __METHOD__ . ": Database::writesOrCallbacksPending() returns "
-					. "true after successful attach"
-			);
-		}
 
 		if ( $sendToRC ) {
 			global $wgCentralAuthRC;
