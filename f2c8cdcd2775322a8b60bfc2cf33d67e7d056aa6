@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eed2fc9_93266410",
+        "filename": "includes/CentralAuthUnattachUserJob.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2016-07-14T03:59:45Z",
+      "side": 1,
+      "message": "I\u0027d set the removeDuplicates member",
+      "revId": "f2c8cdcd2775322a8b60bfc2cf33d67e7d056aa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eed2fc9_337df0e5",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 2264,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2016-07-14T03:59:45Z",
+      "side": 1,
+      "message": "w/s",
+      "revId": "f2c8cdcd2775322a8b60bfc2cf33d67e7d056aa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
