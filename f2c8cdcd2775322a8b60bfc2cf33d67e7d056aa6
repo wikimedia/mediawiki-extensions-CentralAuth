@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6eed2fc9_9c3951ce",
+        "filename": "includes/CentralAuthUnattachUserJob.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-14T14:48:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eed2fc9_93266410",
+      "revId": "f2c8cdcd2775322a8b60bfc2cf33d67e7d056aa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eed2fc9_738778dd",
         "filename": "includes/CentralAuthUser.php",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "6eed2fc9_3c493d6b",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 1409,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-14T14:48:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6eed2fc9_738778dd",
+      "revId": "f2c8cdcd2775322a8b60bfc2cf33d67e7d056aa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eed2fc9_337df0e5",
         "filename": "includes/CentralAuthUser.php",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2016-07-14T03:59:45Z",
       "side": 1,
       "message": "w/s",
+      "revId": "f2c8cdcd2775322a8b60bfc2cf33d67e7d056aa6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6eed2fc9_bc3c0dbe",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 2264,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-07-14T14:48:12Z",
+      "side": 1,
+      "message": "Good catch. I wonder why the style checker didn\u0027t notice?",
+      "parentUuid": "6eed2fc9_337df0e5",
       "revId": "f2c8cdcd2775322a8b60bfc2cf33d67e7d056aa6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
