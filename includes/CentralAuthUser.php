@@ -752,6 +752,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
+		if ( !$this->mAuthToken ) {
+			$this->mAuthToken = MWCryptRand::generateHex( 32 );
+		}
 		$dbw->insert(
 			'globaluser',
 			array(
@@ -762,6 +765,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 				'gu_salt'     => $salt,
 				'gu_password' => $hash,
+
+				'gu_auth_token' => $this->mAuthToken,
 
 				'gu_locked' => 0,
 				'gu_hidden' => '',
@@ -833,6 +838,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'gu_name' => $this->mName,
 				'gu_salt' => $salt,
 				'gu_password' => $hash,
+				'gu_auth_token' => MWCryptRand::generateHex( 32 ), // So it doesn't have to be done later
 				'gu_email' => $email,
 				'gu_email_authenticated' => $dbw->timestampOrNull( $emailAuth ),
 				'gu_registration' => $dbw->timestamp(), // hmmmm
