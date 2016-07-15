@@ -1764,11 +1764,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param $wikiID String
 	 * @param $method String
 	 * @param $sendToRC bool
+	 * @param string|int $ts MediaWiki timestamp or 0 for current time
 	 *
 	 * Prerequisites:
 	 * - completed migration state
 	 */
-	public function attach( $wikiID, $method = 'new', $sendToRC = true ) {
+	public function attach( $wikiID, $method = 'new', $sendToRC = true, $ts = 0 ) {
 		$this->checkWriteMode();
 
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -1776,7 +1777,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			array(
 				'lu_wiki'               => $wikiID,
 				'lu_name'               => $this->mName,
-				'lu_attached_timestamp' => $dbw->timestamp(),
+				'lu_attached_timestamp' => $dbw->timestamp( $ts ),
 				'lu_attached_method'    => $method ),
 			__METHOD__,
 			array( 'IGNORE' )
