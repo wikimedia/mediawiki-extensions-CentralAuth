@@ -3,7 +3,8 @@
 		"authors": [
 			"Itsmine",
 			"Jason924tw",
-			"StephDC"
+			"StephDC",
+			"Suchichi02"
 		]
 	},
 	"centralauth-desc": "[[Special:MergeAccount|混一]]籍口",
@@ -14,6 +15,7 @@
 	"centralauth-admin-username": "簿名：",
 	"centralauth-admin-info-username": "簿名：",
 	"centralauth-admin-info-editcount": "總數計：",
+	"centralauth-admin-blocklog": "誌禁",
 	"centralauth-years-ago": "$1年前",
 	"centralauth-rename-progress-username": "簿名",
 	"globalrenamerequest-email-why-label": "為何？"
