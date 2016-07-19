@@ -201,4 +201,14 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 			}
 		);
 	}
+
+	/**
+	 * Commit status changes to the database
+	 */
+	public function commitStatus() {
+		$dbw = $this->getDB( DB_MASTER );
+		if ( $dbw->trxLevel() ) {
+			$dbw->commit( __METHOD__ );
+		}
+	}
 }
