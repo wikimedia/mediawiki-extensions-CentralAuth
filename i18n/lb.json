@@ -294,7 +294,7 @@
 	"centralauth-editset-nouse": "(keen)",
 	"centralauth-editset-usage": "An de Gruppe benotzt:",
 	"centralauth-editset-badwikis": "Dës {{PLURAL:$2|Wiki|Wikië}} gëtt et net: $1.",
-	"centralauth-editset-success": "Grupp vun de Wikie gouf geännert",
+	"centralauth-editset-success": "Grupp vun de Wikië gouf aktualiséiert.",
 	"centralauth-editset-success-delete": "Grupp vun de Wikie gouf geläscht.",
 	"centralauth-editset-return": "Zréck op déi normal Vue",
 	"centralauth-block-already-locked": "De Benotzerkont [[Special:CentralAuth/$1|$1]] ass scho global gespaart.",
