@@ -102,7 +102,14 @@ class GlobalRenameUser {
 	 * @return Status
 	 */
 	public function rename( array $options ) {
-		$wikisAttached = $this->oldCAUser->queryAttached();
+		static $keepDetails = [ 'attachedMethod' => true, 'attachedTimestamp' => true ];
+
+		$wikisAttached = array_map(
+			function ( $details ) use ( $keepDetails ) {
+				return array_intersect_key( $details, $keepDetails );
+			},
+			$this->oldCAUser->queryAttached()
+		);
 
 		$status = $this->setRenameStatuses( array_keys( $wikisAttached ) );
 		if ( !$status->isOK() ) {
