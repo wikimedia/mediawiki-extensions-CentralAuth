@@ -377,9 +377,10 @@ class CentralAuthHooks {
 	/**
 	 * @param $user User
 	 * @param $inject_html string
+	 * @param $direct bool Was this directly after a login? (see T140853)
 	 * @return bool
 	 */
-	static function onUserLoginComplete( &$user, &$inject_html ) {
+	static function onUserLoginComplete( &$user, &$inject_html, $direct = null ) {
 		global $wgCentralAuthCookies;
 
 		if ( !$wgCentralAuthCookies ) {
@@ -387,9 +388,13 @@ class CentralAuthHooks {
 			return true;
 		}
 
+		if ( $direct === null ) { // B/C
+			$direct = RequestContext::getMain()->getRequest()->wasPosted();
+		}
+
 		// Redirect to the central wiki and back to complete login, if necessary
 		$centralUser = CentralAuthUser::getInstance( $user );
-		self::doCentralLoginRedirect( $user, $centralUser, $inject_html );
+		self::doCentralLoginRedirect( $user, $centralUser, $inject_html, $direct );
 
 		return true;
 	}
@@ -468,9 +473,12 @@ class CentralAuthHooks {
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
 	 * @param string $inject_html
+	 * @param $direct bool Was this directly after a login? (see T140853)
 	 * @return bool
 	 */
-	protected static function doCentralLoginRedirect( User $user, CentralAuthUser $centralUser, &$inject_html ) {
+	protected static function doCentralLoginRedirect(
+		User $user, CentralAuthUser $centralUser, &$inject_html, $direct
+	) {
 		global $wgCentralAuthLoginWiki, $wgSecureLogin, $wgDisableAuthManager;
 
 		$context = RequestContext::getMain();
@@ -484,9 +492,7 @@ class CentralAuthHooks {
 
 		// Check that this is actually for a special login page view
 		$title = $context->getTitle();
-		if ( $request->wasPosted() &&
-			( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) )
-		) {
+		if ( $direct && ( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) ) ) {
 			// User will be redirected to Special:CentralLogin/start (central wiki),
 			// then redirected back to Special:CentralLogin/complete (this wiki).
 			// Sanity check that "returnto" is not one of the central login pages. If it
