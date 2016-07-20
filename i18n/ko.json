@@ -350,7 +350,7 @@
 	"centralauth-warning-notloggedin": "현재 로그인하고 있지 않습니다.",
 	"centralauth-warning-notattached": "로컬 계정이 통합 계정에 묶여있지 않습니다.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} 계정 인증",
-	"centralauth-finishglobaliseemail_body": "이메일 주소는 {{SITENAME}}(을)를 주 계정으로\n모든 위키미디어 프로젝트에 \"$2\" 계정으로 연결되도록\n설정합니다.\n\n우리가 자동으로 병합할 수 없는 당신의 계정 중 하나에 병합하며,\n비밀번호를 분실했다면 당신의 계정으로 복구할 수 있는, 이 계정을\n당신이 소유하고 있음을 인증하려면 브라우저에서 이 링크를 여세요:\n\n$3\n\n계정을 당신이 소유하고 있지 *않으면*, 이메일 주소 인증을 취소하기 위해\n이 링크를 따르세요:\n\n$5\n\n이 인증 코드는 $6 $7에 만료됩니다.",
+	"centralauth-finishglobaliseemail_body": "이메일 주소는 {{SITENAME}}을(를) 주 계정으로\n모든 위키미디어 프로젝트에 \"$2\" 계정으로 연결되도록\n설정합니다.\n\n우리가 자동으로 병합할 수 없는 당신의 계정 중 하나에 병합하며,\n비밀번호를 분실했다면 당신의 계정으로 복구할 수 있는, 이 계정을\n당신이 소유하고 있음을 인증하려면 브라우저에서 이 링크를 여세요:\n\n$3\n\n계정을 당신이 소유하고 있지 *않으면*, 이메일 주소 인증을 취소하기 위해\n이 링크를 따르세요:\n\n$5\n\n이 인증 코드는 $6 $7에 만료됩니다.",
 	"right-centralauth-rename": "전역 계정 이름 바꾸기",
 	"action-centralauth-rename": "전역 계정 이름 바꾸기",
 	"globalrenameprogress": "전역 이름 바꾸기 진행",
