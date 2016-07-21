@@ -78,6 +78,7 @@
 	"centralauth-admin-logsnippet": "سابق عالمی اکاؤنٹ تبدیلیاں",
 	"globalusers": "عالمی صارف فہرست",
 	"centralauth-listusers-locked": "بند",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|دن|دن}} قبل",
 	"centralauth-prefs-status": "عالمی اکاؤنٹ کی حالت:",
 	"centralauth-prefs-not-managed": "نہیں متحد اکاؤنٹ کا استعمال کرتے ہوئے",
 	"centralauth-prefs-manage": "اپنے عالمی اکاؤنٹ کا انتظام کریں",

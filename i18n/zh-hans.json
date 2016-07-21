@@ -319,7 +319,7 @@
 	"centralauth-editset-subtitle": "< [[Special:WikiSets|集合列表]]",
 	"centralauth-editset-name": "名称：",
 	"centralauth-editset-type": "类型：",
-	"centralauth-editset-wikis": "维基：",
+	"centralauth-editset-wikis": "Wiki：",
 	"centralauth-editset-restwikis": "未包含在上面的维基：",
 	"centralauth-editset-reason": "原因：",
 	"centralauth-editset-submit": "提交",
