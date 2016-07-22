@@ -439,7 +439,9 @@ class CentralAuthPrimaryAuthenticationProvider
 					return AuthenticationResponse::newFail( wfMessage( 'userexists' ) );
 				}
 				$centralUser->attach( wfWikiID(), 'new' );
-				CentralAuthUtils::scheduleCreationJobs( $centralUser );
+				CentralAuthUtils::getCentralDB()->onTransactionIdle( function () use ( $centralUser ) {
+					CentralAuthUtils::scheduleCreationJobs( $centralUser );
+				} );
 				return AuthenticationResponse::newPass( $user->getName() );
 			}
 		}
