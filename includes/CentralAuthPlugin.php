@@ -306,7 +306,9 @@ class CentralAuthPlugin extends AuthPlugin {
 			$ok = $central->register( $password, $email );
 			if ( $ok ) {
 				$central->attach( wfWikiID(), 'new' );
-				CentralAuthUtils::scheduleCreationJobs( $central );
+				CentralAuthUtils::getCentralDB()->onTransactionIdle( function () use ( $central ) {
+					CentralAuthUtils::scheduleCreationJobs( $central );
+				} );
 			} else {
 				return false;
 			}
