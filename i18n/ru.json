@@ -121,7 +121,7 @@
 	"centralauth-admin-info-locked": "Заморожен:",
 	"centralauth-admin-info-hidden": "Уровень сокрытия:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:",
-	"centralauth-admin-info-attached": "Число присоединённых уч. записей:",
+	"centralauth-admin-info-attached": "Число присоединённых учётных записей:",
 	"centralauth-admin-info-unattached": "Количество непривязанных учётных записей:",
 	"centralauth-admin-yes": "да",
 	"centralauth-admin-no": "нет",
