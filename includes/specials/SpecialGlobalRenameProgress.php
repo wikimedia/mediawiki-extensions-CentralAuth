@@ -157,4 +157,12 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$out->addHTML( $fieldset );
 		return true;
 	}
+
+	public function requiresWrite() {
+		return false;
+	}
+
+	public function requiresUnblock() {
+		return false;
+	}
 }
