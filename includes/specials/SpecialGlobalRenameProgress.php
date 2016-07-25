@@ -101,7 +101,9 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			$this->showCurrentRenames();
 			return false;
 		}
+
 		$out = $this->getOutput();
+		$out->addBacklinkSubtitle( $this->getPageTitle() );
 
 		$this->renameuserStatus = new GlobalRenameUserStatus( $name );
 		$names = $this->renameuserStatus->getNames();
