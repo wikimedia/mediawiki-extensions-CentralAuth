@@ -134,13 +134,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$user->isAnon() ) {
 				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
 					$html = $this->getSkin()->getPersonalToolsList();
-					$json = FormatJSON::encode( array( 'toolslist' => $html ) );
+					$json = FormatJson::encode( array( 'toolslist' => $html ) );
 				} else {
 					$gender = $this->getUser()->getOption( 'gender' );
 					if ( strval( $gender ) === '' ) {
 						$gender = 'unknown';
 					}
-					$json = FormatJSON::encode( array(
+					$json = FormatJson::encode( array(
 						'notify' => array(
 							'username' => $user->getName(),
 							'gender' => $gender
