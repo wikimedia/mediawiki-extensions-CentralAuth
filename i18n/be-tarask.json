@@ -281,7 +281,7 @@
 	"centralauth-editset-usage": "Выкарыстоўваецца ў групах:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|1=Наступная вікі не існуе|Наступныя вікі не існуюць}}: $1.",
 	"centralauth-editset-success": "Набор вікі быў абноўлены.",
-	"centralauth-editset-success-delete": "Набор вікі пасьпяхова выдалены.",
+	"centralauth-editset-success-delete": "Набор вікі быў выдалены.",
 	"centralauth-editset-return": "Вярнуцца да галоўнай формы",
 	"centralauth-block-already-locked": "Рахунак [[Special:CentralAuth/$1|$1]] ужо заблякаваны паўсюль.",
 	"centralauth-readonly": "База зьвестак CentralAuth заблякаваная",
