@@ -166,7 +166,8 @@ class CentralAuthPrimaryAuthenticationProvider
 									'caRenameOk', wfMessage( 'ok' ), wfMessage( 'sulrenamewarning-authmanager-ok-help' )
 								)
 							],
-							wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername )
+							wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
+							'warning'
 						);
 					}
 				}
@@ -246,7 +247,8 @@ class CentralAuthPrimaryAuthenticationProvider
 						'caRenameOk', wfMessage( 'ok' ), wfMessage( 'sulrenamewarning-authmanager-ok-help' )
 					)
 				],
-				wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername )
+				wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
+				'warning'
 			);
 		}
 	}
