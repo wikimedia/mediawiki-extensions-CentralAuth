@@ -392,7 +392,7 @@
 	"centralauth-rename-progress-logs-fieldset": "기록 항목",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|진행 상황]])",
 	"centralauth-rename-progress-list-header": "다음 전역 계정명 변경이 진행 중입니다:",
-	"centralauth-rename-movelog": "님이 \"[[Special:CentralAuth/$1|$1]]\" 이름을 \"[[Special:CentralAuth/$2|$2]]\" 이름으로 바꾸는 동안 자동으로 문서를 이동함",
+	"centralauth-rename-movelog": "님이 이름을 \"[[Special:CentralAuth/$1|$1]]\"에서 \"[[Special:CentralAuth/$2|$2]]\"(으)로 바꾸는 동안 자동으로 문서를 이동함",
 	"centralauth-rename-confirm": "정말 이 사용자의 계정 이름을 모든 위키에서 바꾸겠습니까?",
 	"centralauth-rename-deny": "이 요청을 정말 거부하시겠습니까?",
 	"log-name-gblrename": "통합 계정 이름 바꾸기 기록",
