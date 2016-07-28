@@ -495,10 +495,17 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		// duration will depend on whether the account is attached; let's return the shorter
 		// duration in that case.
 
-		return min(
+		$rememberDuration = min(
 			$this->getLoginCookieExpiration( 'User', /* $shouldRememberUser */ true ),
 			$this->getLoginCookieExpiration( 'Token', /* $shouldRememberUser */ true ),
 			$this->getLoginCookieExpiration( 'UserID', /* $shouldRememberUser */ true )
 		) ?: null;
+
+		if ( $rememberDuration === $this->getLoginCookieExpiration( 'Token', false ) ) {
+			// remembering or not would not actually matter
+			return null;
+		}
+
+		return $rememberDuration;
 	}
 }

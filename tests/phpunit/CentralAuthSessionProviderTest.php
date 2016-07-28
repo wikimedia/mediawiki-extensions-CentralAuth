@@ -46,5 +46,8 @@ class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 		$provider->setConfig( $config );
 
 		$this->assertSame( 200, $provider->getRememberUserDuration() );
+
+		$config->set( 'ExtendedLoginCookieExpiration', 100 );
+		$this->assertSame( null, $provider->getRememberUserDuration() );
 	}
 }
