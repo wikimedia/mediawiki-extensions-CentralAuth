@@ -272,6 +272,7 @@
 	"globalrenamerequest-reason-label": "Motiu de la demanda",
 	"globalrenamerequest-submit-text": "Demandar un cambiament de nom",
 	"globalrenamequeue-request-reason": "<strong>Rason per demandar lo cambiament de nom</strong>\n:$1",
+	"centralauth-log-gblrename-oldname": "Nom d’utilizaire precedent :",
 	"userswhowillberenamed": "Utilizaires que seràn renomenats",
 	"centralauth-uwbr-registration-nodate": "Desconegut"
 }

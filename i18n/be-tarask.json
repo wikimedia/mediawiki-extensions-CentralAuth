@@ -124,7 +124,7 @@
 	"centralauth-admin-delete-description": "Выдаленьне глябальнага рахунку прывядзе да аддзяленьня ўсіх лякальных рахункаў і вызваленьня глябальнага імя для іншых удзельнікаў.\nУсе лякальныя рахункі застануцца.",
 	"centralauth-admin-delete-button": "Выдаліць гэты рахунак",
 	"centralauth-admin-delete-confirm": "Вы ўпэўненыя, што жадаеце выдаліць гэты рахунак?",
-	"centralauth-admin-delete-success": "Пасьпяхова выдалены глябальны рахунак «<nowiki>$1</nowiki>»",
+	"centralauth-admin-delete-success": "Глябальны рахунак «<nowiki>$1</nowiki>» быў выдалены",
 	"centralauth-admin-nonexistent": "Не існуе глябальнага рахунку «<nowiki>$1</nowiki>»",
 	"centralauth-admin-delete-nonexistent": "Памылка: глябальны рахунак «<nowiki>$1</nowiki>» не існуе.",
 	"centralauth-token-mismatch": "Прабачце, немагчыма працягваць апрацоўку Вашай формы ў выніку страты зьвестак сэсіі.",

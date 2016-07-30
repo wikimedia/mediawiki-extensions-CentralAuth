@@ -9,8 +9,8 @@
 	"centralauth-foreign-link": "Nauduotuos $1 wiki svetainie $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pakeitėms|pakeitėmā|pakeitėmu}} wiki svetainie $2",
 	"centralauth-merge-method-login": "padėrbt prėsėjongiant",
-	"centralauth-admin-blocklog": "ožginėmu sārošos",
-	"globalusers": "Gluobaliū nauduotuoju sārošos",
+	"centralauth-admin-blocklog": "ožgīnėmu sārašos",
+	"globalusers": "Vėsoutėnis nauduotuoju sārašos",
 	"centralauth-prefs-status": "Bendruosės regėsracėjės būvis:",
 	"centralauth-prefs-count-attached": "Tamstas paskīra vēk $1 pruojėkta {{PLURAL:$1|svetainie|svetainė|svatainėsė|svėtainiu}}."
 }

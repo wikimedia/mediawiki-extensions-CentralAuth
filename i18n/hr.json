@@ -261,7 +261,8 @@
 	"globalrenamerequest-username-help": "Suradničko ime koje trenutačno rabite.",
 	"globalrenamerequest-newname-help": "Upišite željeno novo suradničko ime (npr. \"$1\").",
 	"globalrenamerequest-reason-label": "Razlog za podnošenje zahtjeva",
-	"globalrenamerequest-submit-text": "Zatraži promjenu suradničkog imena",
+	"globalrenamerequest-submit-text": "Zatraži promjenu imena",
+	"globalrenamequeue-form-newname": "Zahtijevano suradničko ime:",
 	"centralauth-contribs-locked": "Ovaj je suradnički račun globalno zaključan.\nVidi [[Special:CentralAuth/$1|više informacija]].",
 	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:"
 }
