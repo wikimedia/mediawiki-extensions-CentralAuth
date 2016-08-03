@@ -23,9 +23,9 @@ class GlobalRenameUserLogger {
 	/**
 	 * @param string $oldName
 	 * @param string $newName
-	 * @param string $reason
+	 * @param array $options
 	 */
-	public function log( $oldName, $newName, $reason ) {
+	public function log( $oldName, $newName, $options ) {
 		$logEntry = new ManualLogEntry( 'gblrename', 'rename' );
 		$logEntry->setPerformer( $this->performingUser );
 
@@ -33,10 +33,12 @@ class GlobalRenameUserLogger {
 			Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $newName )
 		);
 
-		$logEntry->setComment( $reason );
+		$logEntry->setComment( $options['reason'] );
 		$logEntry->setParameters( array(
 			'4::olduser' => $oldName,
 			'5::newuser' => $newName,
+			'movepages' => $options['movepages'],
+			'suppressredirects' => $options['suppressredirects'],
 		) );
 
 		$logEntry->setRelations( array(

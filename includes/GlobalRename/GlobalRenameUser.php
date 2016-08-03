@@ -143,7 +143,7 @@ class GlobalRenameUser {
 		$this->logger->log(
 			$this->oldUser->getName(),
 			$this->newUser->getName(),
-			$options['reason']
+			$options
 		);
 
 		return Status::newGood();
