@@ -374,7 +374,6 @@
 		"TestCanonicalRedirect": "CentralAuthHooks::onTestCanonicalRedirect",
 		"LogEventsListGetExtraInputs": "CentralAuthHooks::onLogEventsListGetExtraInputs",
 		"SpecialLogAddLogSearchRelations": "CentralAuthHooks::onSpecialLogAddLogSearchRelations",
-		"UnitTestsList": "CentralAuthHooks::onUnitTestsList",
 		"SpecialContributionsBeforeMainOutput": "CentralAuthHooks::onSpecialContributionsBeforeMainOutput",
 		"SpecialPage_initList": "CentralAuthHooks::onSpecialPage_initList",
 		"ResourceLoaderForeignApiModules": "CentralAuthHooks::onResourceLoaderForeignApiModules",
