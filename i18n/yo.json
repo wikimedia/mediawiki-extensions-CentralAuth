@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Demmy"
+			"Demmy",
+			"Wikicology"
 		]
 	},
 	"mergeaccount": "Ipò ìṣọdọ̀kan àkọọ́lẹ̀ ìwọlé",
@@ -17,6 +18,7 @@
 	"centralauth-error-locked": "Ẹ kò le ṣàtúnṣe nítorí pé àpamọ́ yín ti jẹ́ títìpa.",
 	"centralauth-list-home-title": "Wiki ilé",
 	"centralauth-foreign-link": "Oníṣe $1 lórí $2",
+	"centralauth-foreign-contributions": "Àwọn àfikún lórí",
 	"centralauth-merge-method-primary": "wiki ilé",
 	"centralauth-merge-method-empty": "kò ṣe àfikún kankan",
 	"centralauth-merge-method-mail": "fìfidájú pẹ̀lú e-mail",
@@ -65,8 +67,6 @@
 	"centralauth-log-status-none": "(kòsí)",
 	"centralauth-newgroup-legend": "Ìdá ẹgbẹ́ àdìpọ̀ tuntun kan",
 	"centralauth-globalgroupperms-newgroupname": "Orúkọ ẹgbẹ́ àdìpọ̀ tuntun:",
-	"centralauth-editgroup-subtitle": "Àtúnṣe sí $1",
-	"centralauth-editgroup-subtitle-readonly": "Ìgbéwò $1",
 	"centralauth-editgroup-fieldset": "Àwọn ìyọ̀nda fún $1",
 	"centralauth-editgroup-name": "Orúkọ ẹgbẹ́ àdìpọ̀:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|àtúnṣe]])",

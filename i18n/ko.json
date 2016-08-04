@@ -380,7 +380,7 @@
 	"centralauth-rename-antispoofconflicts2": "선택된 계정 이름이 {{PLURAL:$2|이미 존재하는 계정 이름}}과 지나치게 유사합니다: $1",
 	"centralauth-rename-conflict-hidden": "사용자 이름 숨겨짐",
 	"centralauth-rename-progress-username": "사용자 이름",
-	"centralauth-rename-notinprogress": "진행에 $1님의 이름 바꾸기가 없습니다. 이미 완료되어 있을 수 있습니다.",
+	"centralauth-rename-notinprogress": "$1님에 대한 진행 중인 이름 바꾸기가 없습니다. 이미 완료되어 있을 수 있습니다.",
 	"centralauth-rename-table-domain": "로컬 위키",
 	"centralauth-rename-table-status": "상태",
 	"centralauth-rename-table-status-inprogress": "진행 중",
