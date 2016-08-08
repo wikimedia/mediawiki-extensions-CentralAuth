@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Herr Kriss",
-			"Krol111"
+			"Krol111",
+			"Uostofchuodnego"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''abo'''",
-	"centralauth-foreign-link": "Używacz $1 na $2",
+	"centralauth-foreign-link": "Używŏcz $1 na $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|edycyjo|edycyje|edycyji}} na $2",
 	"centralauth-merge-method-login": "utworzůne przi zalogůwańu",
 	"centralauth-admin-yes": "ja",
