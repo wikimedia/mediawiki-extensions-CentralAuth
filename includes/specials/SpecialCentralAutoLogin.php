@@ -83,7 +83,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			in_array( $par, array( 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
 			'createSession', 'validateSession', 'setCookies' ), true )
 		) {
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autologin ' . $par, array(
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin ' . $par, array(
 				'event' => 'autologin',
 				'type' => $par,
 			) );
@@ -491,7 +491,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			ScopedCallback::consume( $delay );
 
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autologin success', array(
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin success', array(
 				'event' => 'autologin',
 				'type' => 'success',
 			) );

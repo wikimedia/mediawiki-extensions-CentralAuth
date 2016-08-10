@@ -146,7 +146,7 @@ class CentralAuthUtils {
 			}
 		}
 
-		\MediaWiki\Logger\LoggerFactory::getInstance( 'authmanager' )->info( 'Autocreation attempt', [
+		\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',
 			'status' => $sv,
 		] );
