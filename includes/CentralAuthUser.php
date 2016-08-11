@@ -1412,7 +1412,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'wiki' => $wikiId,
 			)
 		);
-		JobQueueGroup::singleton( $wikiId )->push( $job );
+		JobQueueGroup::singleton( $wikiId )->lazyPush( $job );
 	}
 
 	/**
