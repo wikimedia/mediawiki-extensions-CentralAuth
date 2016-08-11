@@ -238,8 +238,10 @@
 	"right-centralauth-merge": "Сливане на тяхната сметка",
 	"right-globalgrouppermissions": "Управление на глобалните групи",
 	"centralauth-rename-table-status-done": "Готово",
+	"centralauth-rename-progress-logs-fieldset": "Записи в дневника",
 	"log-name-gblrename": "Дневник на глобалните преименувания",
 	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка",
+	"globalrenamequeue-nav-openqueue": "Отворени заявки",
 	"globalrenamequeue-column-rq-performer": "Завършено от",
 	"log-action-filter-globalauth": "Вид на промените:",
 	"log-action-filter-gblrights": "Вид на промените:"
