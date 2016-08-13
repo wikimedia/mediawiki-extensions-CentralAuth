@@ -18,7 +18,7 @@
 	"centralauth-error-locked": "Ẹ kò le ṣàtúnṣe nítorí pé àpamọ́ yín ti jẹ́ títìpa.",
 	"centralauth-list-home-title": "Wiki ilé",
 	"centralauth-foreign-link": "Oníṣe $1 lórí $2",
-	"centralauth-foreign-contributions": "Àwọn àfikún lórí",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|Àfikún|Àfikún}} $1 lórí $2",
 	"centralauth-merge-method-primary": "wiki ilé",
 	"centralauth-merge-method-empty": "kò ṣe àfikún kankan",
 	"centralauth-merge-method-mail": "fìfidájú pẹ̀lú e-mail",
