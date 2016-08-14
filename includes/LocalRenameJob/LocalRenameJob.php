@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Base class for jobs that change a user's
@@ -41,9 +42,11 @@ abstract class LocalRenameJob extends Job {
 			$this->doRun();
 			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
 		} catch ( Exception $e ) {
-			// This will lock the user out of their account
-			// until a sysadmin intervenes
+			// This will lock the user out of their account until a sysadmin intervenes
+			$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+			$factory->rollbackMasterChanges( __METHOD__ );
 			$this->updateStatus( 'failed' );
+			$factory->commitMasterChanges( __METHOD__ );
 			throw $e;
 		}
 
@@ -101,7 +104,6 @@ abstract class LocalRenameJob extends Job {
 
 	protected function updateStatus( $status ) {
 		$this->renameuserStatus->setStatus( wfWikiID(), $status );
-		$this->renameuserStatus->commitStatus();
 	}
 
 	protected function scheduleNextWiki() {
