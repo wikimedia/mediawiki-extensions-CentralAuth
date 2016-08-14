@@ -1,5 +1,7 @@
 <?php
 
+use \MediaWiki\MediaWikiServices;
+
 /**
  * Job class to merge a user locally
  * This is intended to be run on each wiki individually
@@ -22,6 +24,9 @@ class LocalUserMergeJob extends LocalRenameJob {
 		$to = $this->params['to'];
 
 		$this->updateStatus( 'inprogress' );
+		// Make the status update visible to all other transactions immediately
+		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$factory->commitMasterChanges( __METHOD__ );
 
 		$toUser = $this->maybeCreateNewUser( $to );
 
@@ -66,10 +71,14 @@ class LocalUserMergeJob extends LocalRenameJob {
 			return $user;
 		}
 
-		$status = CentralAuthUtils::autoCreateUser( $user );
+		$status = Status::wrap( CentralAuthUtils::autoCreateUser( $user ) );
 		if ( !$status->isGood() ) {
+			$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+			$factory->rollbackMasterChanges( __METHOD__ );
 			$this->updateStatus( 'failed' );
-			throw new Exception( "autoCreateUser failed for $newName: " . $status->getWikiText( null, null, 'en' ) );
+			$factory->commitMasterChanges( __METHOD__ );
+			throw new Exception( "autoCreateUser failed for $newName: " .
+				$status->getWikiText( null, null, 'en' ) );
 		}
 
 		return $user;

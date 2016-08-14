@@ -1,5 +1,7 @@
 <?php
 
+use \MediaWiki\MediaWikiServices;
+
 /**
  * Job class to rename a user locally
  * This is intended to be run on each wiki individually
@@ -33,6 +35,9 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$to = $this->params['to'];
 
 		$this->updateStatus( 'inprogress' );
+		// Make the status update visible to all other transactions immediately
+		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$factory->commitMasterChanges( __METHOD__ );
 
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
