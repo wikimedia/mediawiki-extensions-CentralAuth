@@ -25,7 +25,7 @@ class GlobalUserMergeDatabaseUpdates {
 	public function merge( $oldname, $newname ) {
 		$dbw = $this->getDB();
 
-		$dbw->begin( __METHOD__ );
+		$dbw->startAtomic( __METHOD__ );
 		// Delete the old user's globaluser row
 		$dbw->delete(
 			'globaluser',
@@ -53,7 +53,7 @@ class GlobalUserMergeDatabaseUpdates {
 			array( 'lu_name' => $oldname )
 		);
 
-		$dbw->commit( __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
 	}
 
 	/**
@@ -82,6 +82,7 @@ class GlobalUserMergeDatabaseUpdates {
 	 */
 	public function mergeGlobalUserGroups( $fromId, $toId ) {
 		$dbw = $this->getDB();
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->update(
 			'global_user_groups',
 			array( 'gug_user' => $toId ),
@@ -95,5 +96,6 @@ class GlobalUserMergeDatabaseUpdates {
 			array( 'gug_user' => $fromId ),
 			__METHOD__
 		);
+		$dbw->endAtomic( __METHOD__ );
 	}
 }
