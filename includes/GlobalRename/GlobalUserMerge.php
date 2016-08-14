@@ -98,7 +98,7 @@ class GlobalUserMerge {
 
 	public function merge( $reason ) {
 		$wikis = array();
-		foreach( $this->oldCAUsers as $oldCAUser ) {
+		foreach ( $this->oldCAUsers as $oldCAUser ) {
 			$oldWikis = $oldCAUser->listAttached();
 			foreach ( $oldWikis as $wiki ) {
 				$wikis[$wiki][] = $oldCAUser->getName();
@@ -136,7 +136,10 @@ class GlobalUserMerge {
 		}
 
 		$this->clearCaches();
-
+		// If job insertion fails, an exception will cause rollback of all DBs.
+		// The job will block on reading renameuser_status until this commits due to it using
+		// a locking read and the pending update from setRenameStatuses() above. If we end up
+		// rolling back, then the job will abort because the status will not be 'queued'.
 		$this->injectJobs( $wikis );
 
 		$this->addLogEntry( $reason );
