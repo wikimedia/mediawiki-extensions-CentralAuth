@@ -139,7 +139,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @param string $wiki
 	 * @param string $status
 	 */
-	public function setStatus( $wiki, $status ) {
+	public function updateStatus( $wiki, $status ) {
 		$dbw = $this->getDB( DB_MASTER );
 		$nameWhere = $this->getNameWhereClause( $dbw ); // Can be inlined easily once we require more than 5.3
 		$fname = __METHOD__;
@@ -164,21 +164,40 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	public function setStatuses( array $rows ) {
 		$dbw = $this->getDB( DB_MASTER );
 
-		$dbw->begin( __METHOD__ );
-		$dbw->insert(
-			'renameuser_status',
-			$rows,
-			__METHOD__,
-			array( 'IGNORE' )
-		);
-		if ( $dbw->affectedRows() !== count( $rows ) ) {
-			// Race condition, the rename was already started
-			$dbw->rollback( __METHOD__ );
-			return false;
+		$dbw->startAtomic( __METHOD__ );
+		if ( $dbw->getType() === 'mysql' ) {
+			// If there is duplicate key error, the RDBMs will rollback the INSERT statement.
+			// http://dev.mysql.com/doc/refman/5.7/en/innodb-error-handling.html
+			try {
+				$dbw->insert( 'renameuser_status', $rows, __METHOD__ );
+				$ok = true;
+			} catch ( DBQueryError $e ) {
+				$ok = false;
+			}
+		} else {
+			// At least Postgres does not like continuing after errors. Only options are
+			// ROLLBACK or COMMIT as is. We could use SAVEPOINT here, but it's not worth it.
+			$keyConds = [];
+			foreach ( $rows as $row ) {
+				$key = [ 'ru_wiki' => $row->ru_wiki, 'ru_oldname' => $row->ru_oldname ];
+				$keyConds[] = $dbw->makeList( $key, LIST_AND );
+			}
+			// (a) Do a locking check for conflicting rows on the unique key
+			$ok = !$dbw->selectField(
+				'renameuser_status',
+				'1',
+				$dbw->makeList( $keyConds, LIST_OR ),
+				__METHOD__,
+				[ 'FOR UPDATE' ]
+			);
+			// (b) Insert the new rows if no conflicts were found
+			if ( $ok ) {
+				$dbw->insert( 'renameuser_status', $rows, __METHOD__ );
+			}
 		}
-		$dbw->commit( __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
 
-		return true;
+		return $ok;
 	}
 
 	/**

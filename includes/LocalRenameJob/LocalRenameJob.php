@@ -17,8 +17,10 @@ abstract class LocalRenameJob extends Job {
 	public function run() {
 		$this->setRenameUserStatus( new GlobalRenameUserStatus( $this->params['to'] ) );
 
-		// bail if it's already done or in progress
-		$status = $this->renameuserStatus->getStatus( GlobalRenameUserStatus::READ_LATEST );
+		// Bail if it's already done or in progress. Use a locking read to block until the
+		// transaction adding this job is done, so we can see its changes. This is similar to
+		// the trick the the RenameUser extension does.
+		$status = $this->renameuserStatus->getStatus( GlobalRenameUserStatus::READ_LOCKING );
 		if ( $status !== 'queued' && $status !== 'failed' ) {
 			LoggerFactory::getInstance( 'rename' )->info( 'skipping duplicate rename from {user}', [
 				'user' => $this->params['from'],
@@ -27,6 +29,10 @@ abstract class LocalRenameJob extends Job {
 			] );
 			return true;
 		}
+		// Clear any REPEATABLE-READ snapshot in case the READ_LOCKING blocked above. We want
+		// regular non-locking SELECTs to see all the changes from that transaction we waited on.
+		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$factory->commitMasterChanges( __METHOD__ );
 
 		if ( isset( $this->params['session'] ) ) {
 			// Don't carry over users or sessions because it's going to be wrong
@@ -43,7 +49,6 @@ abstract class LocalRenameJob extends Job {
 			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account until a sysadmin intervenes
-			$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 			$factory->rollbackMasterChanges( __METHOD__ );
 			$this->updateStatus( 'failed' );
 			$factory->commitMasterChanges( __METHOD__ );
@@ -103,7 +108,7 @@ abstract class LocalRenameJob extends Job {
 	}
 
 	protected function updateStatus( $status ) {
-		$this->renameuserStatus->setStatus( wfWikiID(), $status );
+		$this->renameuserStatus->updateStatus( wfWikiID(), $status );
 	}
 
 	protected function scheduleNextWiki() {

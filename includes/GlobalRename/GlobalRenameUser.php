@@ -138,6 +138,10 @@ class GlobalRenameUser {
 		$this->oldCAUser->quickInvalidateCache();
 		$this->newCAUser->quickInvalidateCache();
 
+		// If job insertion fails, an exception will cause rollback of all DBs.
+		// The job will block on reading renameuser_status until this commits due to it using
+		// a locking read and the pending update from setRenameStatuses() above. If we end up
+		// rolling back, then the job will abort because the status will not be 'queued'.
 		$this->injectLocalRenameUserJobs( $wikisAttached, $options );
 
 		$this->logger->log(
