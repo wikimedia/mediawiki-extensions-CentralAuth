@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+-- noinspection SqlDialectInspectionForFile
 -- -- Some example steps for creating a new database for testing this:
 -- CREATE DATABASE centralauth;
 -- USE centralauth;
@@ -117,6 +119,8 @@ CREATE TABLE /*_*/localuser (
     'new',
     'login'
   ),
+  lu_local_id int(10) unsigned default null,
+  lu_global_id int(10) unsigned default null,
 
   primary key (lu_wiki, lu_name)
 ) /*$wgDBTableOptions*/;
