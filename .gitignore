@@ -5,3 +5,4 @@ composer.lock
 /nbproject/private/
 /node_modules
 /vendor
+.idea/*
