@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+-- noinspection SqlDialectInspectionForFile
 -- -- Some example steps for creating a new database for testing this:
 -- CREATE DATABASE centralauth;
 -- USE centralauth;
@@ -117,11 +119,15 @@ CREATE TABLE /*_*/localuser (
     'new',
     'login'
   ),
+  lu_local_id int(10) unsigned not null,
+  lu_global_id int(10) unsigned not null,
 
   primary key (lu_wiki, lu_name)
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/lu_name_wiki ON /*_*/localuser (lu_name, lu_wiki);
+CREATE INDEX /*i*/lu_lid_wiki ON /*_*/localuser (lu_local_id, lu_wiki);
+CREATE UNIQUE INDEX /*i*/lu_gid_wiki ON /*_*/localuser (lu_global_id, lu_wiki);
 
 -- Global user groups.
 CREATE TABLE /*_*/global_user_groups (
