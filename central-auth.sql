@@ -117,6 +117,8 @@ CREATE TABLE /*_*/localuser (
     'new',
     'login'
   ),
+  lu_local_id int(10) unsigned default null,
+  lu_global_id int(10) unsigned default null,
 
   primary key (lu_wiki, lu_name)
 ) /*$wgDBTableOptions*/;
