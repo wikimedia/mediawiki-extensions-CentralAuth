@@ -1,0 +1,4 @@
+ALTER TABLE localuser
+  ADD COLUMN lu_local_id INT(10) UNSIGNED NOT NULL,
+  ADD COLUMN lu_global_id INT(10) UNSIGNED NOT NULL
+;
