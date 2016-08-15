@@ -260,5 +260,6 @@
 	"right-centralauth-merge": "Gabung rékening-rékeningé",
 	"right-globalgrouppermissions": "Ngurus kelompok-kelompok global",
 	"centralloginsuccesful": "Bisa suksès mlebu log",
-	"centralauth-completelogin-back": "Bali menyang kaca sadhurunge"
+	"centralauth-completelogin-back": "Bali menyang kaca sadhurunge",
+	"centralauth-rename-movelog": "Otomatis ngalih kaca nalika ngganti jeneng naraguna \"[[Special:CentralAuth/$1|$1]]\" dadi \"[[Special:CentralAuth/$2|$2]]\""
 }
