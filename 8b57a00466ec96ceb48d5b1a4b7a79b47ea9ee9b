@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6e89af39_a148788d",
+        "filename": "maintenance/attachAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-08-18T05:05:46Z",
+      "side": 1,
+      "message": "listUnattached() is done.\n\nThe importLocalNames thing seems like a real edge case. I know MediaWiki is all edge cases, but that one seems really far out.",
+      "parentUuid": "6e89af39_e16d2098",
+      "revId": "8b57a00466ec96ceb48d5b1a4b7a79b47ea9ee9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e89af39_a10b18d8",
         "filename": "maintenance/attachAccount.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-18T00:57:53Z",
       "side": 1,
       "message": "Should probably log something for completely failed migrations too.",
+      "revId": "8b57a00466ec96ceb48d5b1a4b7a79b47ea9ee9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e89af39_41827498",
+        "filename": "maintenance/attachAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-08-18T05:05:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e89af39_a10b18d8",
       "revId": "8b57a00466ec96ceb48d5b1a4b7a79b47ea9ee9b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
