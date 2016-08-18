@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_e16d2098",
+        "filename": "maintenance/attachAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-08-18T00:57:53Z",
+      "side": 1,
+      "message": "Could use listUnattached(), as  you don\u0027t need any details about the attached accounts. It\u0027s faster and does not throw exceptions (although queryUnattached would catch them anyway).\n\n----\n\nOne thing I have run into is a local user missing from each of localuser, localnames and globalnames, in which case listUnattached (or queryUnattached) will not find it. You\u0027d need something like\n\n    if ( !$unattached ) {\n        $central-\u003eimportLocalNames();\n        $unattached \u003d $central-\u003elistUnattached();\n    }\n\nfor that (probably behind a flag since it\u0027s super slow).\n\nThen again if some local user is missing from all CA tables, we have any practical way of listing it, so maybe not much point in trying to handle it here...",
+      "revId": "8b57a00466ec96ceb48d5b1a4b7a79b47ea9ee9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e89af39_a10b18d8",
+        "filename": "maintenance/attachAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-08-18T00:57:53Z",
+      "side": 1,
+      "message": "Should probably log something for completely failed migrations too.",
+      "revId": "8b57a00466ec96ceb48d5b1a4b7a79b47ea9ee9b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
