@@ -16,6 +16,24 @@
       "revId": "3ac535f8b7c03be99955f3d9bb6cd15e0af3573e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e89af39_0ad7a1f3",
+        "filename": "maintenance/attachAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-08-18T15:43:33Z",
+      "side": 1,
+      "message": "Yeah, using \u0027login\u0027 was the least worse choice I made when running the script previously.",
+      "parentUuid": "6e89af39_ea96d596",
+      "revId": "3ac535f8b7c03be99955f3d9bb6cd15e0af3573e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
