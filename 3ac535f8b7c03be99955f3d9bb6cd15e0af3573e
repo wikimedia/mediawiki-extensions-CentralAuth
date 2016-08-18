@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_ea96d596",
+        "filename": "maintenance/attachAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-08-18T15:04:42Z",
+      "side": 1,
+      "message": "\u0027login\u0027 isn\u0027t really accurate, but there doesn\u0027t seem to be a better one currently available. The closest is \u0027admin\u0027, but the description on that says \"by Stewards\" which isn\u0027t accurate either.",
+      "revId": "3ac535f8b7c03be99955f3d9bb6cd15e0af3573e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
