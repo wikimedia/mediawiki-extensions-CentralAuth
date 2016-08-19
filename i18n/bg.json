@@ -243,6 +243,10 @@
 	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка",
 	"globalrenamequeue-nav-openqueue": "Отворени заявки",
 	"globalrenamequeue-column-rq-performer": "Завършено от",
+	"userswhowillberenamed": "Потребители, които ще бъдат преименувани",
+	"centralauth-uwbr-name": "Потребителско име",
+	"centralauth-uwbr-registration": "Дата на регистрация",
+	"centralauth-uwbr-editcount": "Брой редакции",
 	"log-action-filter-globalauth": "Вид на промените:",
 	"log-action-filter-gblrights": "Вид на промените:"
 }
