@@ -1,0 +1,8 @@
+Code-Review+1: Alex Monk <alex@wikimedia.org>
+Code-Review+2: Aude <aude.wiki@gmail.com>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Sun, 21 Aug 2016 01:35:45 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/305775
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
