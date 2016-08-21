@@ -148,7 +148,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|menit|menit}} kapungkur",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|jam|jam}} kapungkur",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dina|dina}} kapungkur",
-	"centralauth-months-ago": "$1 {{PLURAL:$1|sasi|sasi}} kapungkur",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|wulan}} kapungkur",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|taun|taun}} kapungkur",
 	"centralauth-prefs-status": "Status rékening (akun) global:",
 	"centralauth-prefs-not-managed": "Ora nganggo rékening gabungan",
