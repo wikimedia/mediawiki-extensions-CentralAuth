@@ -488,7 +488,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$cache = ObjectCache::getMainWANInstance()->get( $this->getCacheKey() );
 		}
 
-		if ( !is_array( $cache ) || $cache['mVersion'] < $this->mVersion ) {
+		if ( !isset( $cache['mVersion'] ) || $cache['mVersion'] < $this->mVersion ) {
 			// Out of date cache.
 			wfDebugLog( 'CentralAuthVerbose', "Global User: cache miss for {$this->mName}, " .
 				"version {$cache['mVersion']}, expected {$this->mVersion}" );
