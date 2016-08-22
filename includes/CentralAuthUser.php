@@ -360,31 +360,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		// Check the cache (unless the master was requested via READ_LATEST)
-		if ( !$recache && $this->mFromMaster !== true && $this->loadFromCache() ) {
-			return;
+		if ( !$recache && $this->mFromMaster !== true ) {
+			$this->loadFromCache();
+		} else {
+			$this->loadFromDatabase();
 		}
-
-		wfDebugLog( 'CentralAuthVerbose', "Loading state for global user {$this->mName} from DB" );
-
-		$fromMaster = $this->shouldUseMasterDB();
-		$db = $this->getSafeReadDB(); // matches $fromMaster above
-
-		$queryInfo = self::selectQueryInfo();
-
-		$row = $db->selectRow(
-			$queryInfo['tables'],
-			$queryInfo['fields'],
-			array( 'gu_name' => $this->mName ) + $queryInfo['where'],
-			__METHOD__,
-			$queryInfo['options'],
-			$queryInfo['joinConds']
-		);
-
-		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
-		$renameUser = $renameUserStatus->getNames( null, $fromMaster ? 'master' : 'slave' );
-
-		$this->loadFromRow( $row, $renameUser, $fromMaster );
-		$this->saveToCache();
 	}
 
 	/**
@@ -436,6 +416,29 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$this->mGroups = array_keys( $groups );
 	}
 
+	protected function loadFromDatabase() {
+		wfDebugLog( 'CentralAuthVerbose', "Loading state for global user {$this->mName} from DB" );
+
+		$fromMaster = $this->shouldUseMasterDB();
+		$db = $this->getSafeReadDB(); // matches $fromMaster above
+
+		$queryInfo = self::selectQueryInfo();
+
+		$row = $db->selectRow(
+			$queryInfo['tables'],
+			$queryInfo['fields'],
+			array( 'gu_name' => $this->mName ) + $queryInfo['where'],
+			__METHOD__,
+			$queryInfo['options'],
+			$queryInfo['joinConds']
+		);
+
+		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
+		$renameUser = $renameUserStatus->getNames( null, $fromMaster ? 'master' : 'slave' );
+
+		$this->loadFromRow( $row, $renameUser, $fromMaster );
+	}
+
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 *
@@ -480,22 +483,27 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Load data from memcached
 	 *
-	 * @param $cache array
 	 * @return bool
 	 */
-	protected function loadFromCache( $cache = null ) {
-		if ( $cache == null ) {
-			$cache = ObjectCache::getMainWANInstance()->get( $this->getCacheKey() );
-		}
+	protected function loadFromCache() {
+		$cache = ObjectCache::getMainWANInstance();
+		$data = $cache->getWithSetCallback(
+			$this->getCacheKey(),
+			$cache::TTL_DAY,
+			function () {
+				$this->loadFromDatabase();
 
-		if ( !is_array( $cache ) || $cache['mVersion'] < $this->mVersion ) {
-			// Out of date cache.
-			wfDebugLog( 'CentralAuthVerbose', "Global User: cache miss for {$this->mName}, " .
-				"version {$cache['mVersion']}, expected {$this->mVersion}" );
-			return false;
-		}
+				$data = [];
+				foreach ( self::$mCacheVars as $var ) {
+					$data[$var] = $this->$var;
+				}
 
-		$this->loadFromCacheObject( $cache );
+				return $data;
+			},
+			[ 'pcTTL' => $cache::TTL_PROC_LONG, 'version' => $this->mVersion ]
+		);
+
+		$this->loadFromCacheObject( $data );
 
 		return true;
 	}
@@ -505,8 +513,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 *
 	 * @param $object array
 	 */
-	protected function loadFromCacheObject( $object ) {
-		wfDebugLog( 'CentralAuthVerbose', "Loading CentralAuthUser for user {$this->mName} from cache object" );
+	protected function loadFromCacheObject( array $object ) {
+		wfDebugLog( 'CentralAuthVerbose',
+			"Loading CentralAuthUser for user {$this->mName} from cache object" );
 		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
 		}
@@ -536,16 +545,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		return $obj;
-	}
-
-	/**
-	 * Save cachable data to memcached.
-	 */
-	protected function saveToCache() {
-		$obj = $this->getCacheObject();
-		wfDebugLog( 'CentralAuthVerbose', "Saving user {$this->mName} to cache." );
-		$opts = array( 'since' => CentralAuthUtils::getCentralSlaveDB()->trxTimestamp() );
-		ObjectCache::getMainWANInstance()->set( $this->getCacheKey(), $obj, 86400, $opts );
 	}
 
 	/**
@@ -2822,11 +2821,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * For when speed is of the essence (e.g. when batch-purging users after rights changes)
 	 */
 	public function quickInvalidateCache() {
-		wfDebugLog( 'CentralAuthVerbose', "Quick cache invalidation for global user {$this->mName}" );
+		wfDebugLog( 'CentralAuthVerbose',
+			"Quick cache invalidation for global user {$this->mName}" );
 
-		$key = $this->getCacheKey();
-		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function() use ( $key ) {
-			ObjectCache::getMainWANInstance()->delete( $key );
+		$cache = ObjectCache::getMainWANInstance();
+		CentralAuthUtils::getCentralDB()->onTransactionIdle( function() use ( $cache ) {
+			$cache->delete( $this->getCacheKey() );
 		} );
 	}
 
