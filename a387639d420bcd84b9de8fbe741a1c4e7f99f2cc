@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e89af39_53ff93a7",
+        "filename": ".gitignore",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-08-22T19:04:02Z",
+      "side": 1,
+      "message": "This doesn\u0027t hurt anything at all, but you might want to setup your local git with a global ignore file to take care of such things: git config --global core.excludesfile ~/.gitignore_global",
+      "revId": "a387639d420bcd84b9de8fbe741a1c4e7f99f2cc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
