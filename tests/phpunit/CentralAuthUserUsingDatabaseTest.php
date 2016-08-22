@@ -175,7 +175,12 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 			)
 		);
 
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		// Check that the instance was reloaded from the DB
+		$this->assertSame( true, $caUser->exists() );
+		$this->assertSame( true, $caUser->isLocked() );
+		$this->assertSame( true, $caUser->isHidden() );
+		// Ignore cache, read from DB for new instance
+		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
 		$this->assertSame( true, $caUser->exists() );
 		$this->assertSame( true, $caUser->isLocked() );
 		$this->assertSame( true, $caUser->isHidden() );
@@ -183,7 +188,12 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 		$caUser->adminUnlock();
 		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_NONE );
 
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		// Check that the instance was reloaded from the DB
+		$this->assertSame( true, $caUser->exists() );
+		$this->assertSame( false, $caUser->isHidden() );
+		$this->assertSame( false, $caUser->isLocked() );
+		// Ignore cache, read from DB for new instance
+		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
 		$this->assertSame( true, $caUser->exists() );
 		$this->assertSame( false, $caUser->isHidden() );
 		$this->assertSame( false, $caUser->isLocked() );
