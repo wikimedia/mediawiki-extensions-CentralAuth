@@ -22,7 +22,7 @@ class GlobalRenameUserDatabaseUpdates {
 	public function update( $oldname, $newname ) {
 		$dbw = $this->getDB();
 
-		$dbw->begin( __METHOD__ );
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->update(
 			'globaluser',
 			array( 'gu_name' => $newname ),
@@ -36,6 +36,6 @@ class GlobalRenameUserDatabaseUpdates {
 			__METHOD__
 		);
 
-		$dbw->commit( __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
 	}
 }
