@@ -45,7 +45,8 @@
 			"Nicolapps",
 			"Steinsplitter",
 			"Yasten",
-			"Mattho69"
+			"Mattho69",
+			"Tuxxic"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -545,7 +546,7 @@
 	"apihelp-query+globalgroups-example-2": "Afficher les groupes globaux avec les droits qu’ils accordent",
 	"apihelp-query+globaluserinfo-description": "Afficher les informations sur un utilisateur global.",
 	"apihelp-query+globaluserinfo-param-user": "Utilisateur sur lequel obtenir de l’information. Par défaut, l’utilisateur actuel.",
-	"apihelp-query+globaluserinfo-param-prop": "Quelles propriétés obtenir :\n;groups:Obtenir une liste des groupes globaux auxquels appartient cet utilisateur.\n;rights:Obtenir une liste des droits globaux qu’a cet utilisateur.\n;merged:Obtenir une liste des comptes fusionnés.\n;unattached:Obtenir une liste des comptes non attachés.\n;editcount:Obtenir le compteur de modifications global des utilisateurs.",
+	"apihelp-query+globaluserinfo-param-prop": "Quelles propriétés obtenir :\n;groups:Récupère une liste des groupes globaux auxquels appartient cet utilisateur.\n;rights:Récupère une liste des droits globaux qu’a cet utilisateur.\n;merged:Récupère une liste des comptes fusionnés.\n;unattached:Récupère une liste des comptes non attachés.\n;editcount:Récupère le compteur global des modifications faites par l'utilisateur.",
 	"apihelp-query+globaluserinfo-example-1": "Obtenir des informations sur l’utilisateur global actuel",
 	"apihelp-query+globaluserinfo-example-2": "Obtenir des informations sur l’utilisateur global [[User:Example|Exemple]]",
 	"apihelp-query+wikisets-description": "Énumérer tous les ensembles de wiki.",

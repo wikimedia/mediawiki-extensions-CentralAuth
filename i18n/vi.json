@@ -253,6 +253,7 @@
 	"centralauth-globalgroupperms-group-wikiset": "Các wiki trong phạm vi của nhóm này: $1",
 	"centralauth-globalgroupperms-wikiset-none": "Nhóm này hoạt động trên mọi wiki.",
 	"centralauth-globalgroupperms-group-disabled": "(không có hiệu lực trong wiki này)",
+	"centralauth-globalgroupperms-groups-intro": "Đây là danh sách tất cả các nhóm người dùng toàn cục được thiết lập tại mạng wiki này, cùng với các quyền truy cập và bộ wiki. Những người đủ quyền có thể xóa nhóm bằng cách xóa tất cả các quyền lợi khỏi nó.",
 	"centralauth-newgroup-legend": "Tạo nhóm mới",
 	"centralauth-newgroup-intro": "Bạn có thể dùng mẫu này để gán quyền cho một nhóm mới. Chú ý rằng một nhóm không tồn tại trừ khi bạn gán quyền cho nó.",
 	"centralauth-globalgroupperms-newgroupname": "Tên nhóm mới:",
@@ -473,6 +474,7 @@
 	"sulrenamewarning-title": "Tài khoản của {{GENDER:$1}}bạn đã được đổi tên",
 	"sulrenamewarning-renamed": "Tài khoản '''$1''' của bạn đã được đổi tên thành '''$2''' trong quá trình chuyển đổi qua hệ thống tài khoản hợp nhất của {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Xin vui lòng đăng nhập từ nay với tên người dùng mới '''$1'''.",
+	"sulrenamewarning-authmanager-ok-help": "Tiếp tục sau khi hiển thị thông báo đổi tên.",
 	"globalrenamequeue-request-reason-label": "Tóm lược cho nhật trình công khai (nếu chấp nhận)",
 	"apihelp-centralauthtoken-example-1": "Lấy một centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "Xóa thành viên toàn cục.",
@@ -514,5 +516,9 @@
 	"log-action-filter-globalauth-delete": "Xóa tài khoản toàn cục",
 	"log-action-filter-globalauth-setstatus": "Thay đổi trạng thái tài khoản toàn cục",
 	"log-action-filter-suppress-setstatus": "Thay đổi trạng thái tài khoản toàn cục",
-	"log-action-filter-suppress-cadelete": "Xóa tài khoản toàn cục"
+	"log-action-filter-suppress-cadelete": "Xóa tài khoản toàn cục",
+	"log-action-filter-gblrights": "Kiểu thay đổi:",
+	"log-action-filter-gblrights-usergroups": "Thay đổi quyền người dùng toàn cục",
+	"log-action-filter-gblrights-groupprms": "Thay đổi nhóm người dùng toàn cục",
+	"log-action-filter-gblrights-setmodify": "Thay đổi bộ wiki"
 }
