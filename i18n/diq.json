@@ -198,7 +198,7 @@
 	"centralauth-account-rename-exists": "Hesab nêşeno abiyo.  Eno name ya yo karber est o.  Yona name xorê weçinê.",
 	"centralauth-account-exists-reset": "No namey karberi  $1  wiki  sero çınyo lakin sistemd ronıştışo [[Special:CentralAuth/$1|zewbi]]d esto.",
 	"centralauth-login-progress": "Hesabê şıma proceyanê <Centralauth-groupname> de beno a:",
-	"centralauth-logout-progress": "Hesabê şıma proceyanê <Centralauth-groupname> de qapan beno:",
+	"centralauth-logout-progress": "Hesabê şıma proceyanê <Centralauth-groupname> de raceniye no:",
 	"centralauth-login-no-others": "Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik kewto:",
 	"centralauth-logout-no-others": "Projeyané {{int:Centralauth-groupname}} bıniré otomatikmen vıcyéno.",
 	"centralauth-hidden-blockreason": "wikiyanê hemi de pê $1, $2 de pê ena sebebanê: $3",
