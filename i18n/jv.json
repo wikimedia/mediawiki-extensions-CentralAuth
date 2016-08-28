@@ -122,7 +122,7 @@
 	"centralauth-token-mismatch": "Nuwun sèwu, kita ora bisa prosès pangiriman formulir panjenengan amerga ana ilangé data sèsi.",
 	"centralauth-admin-reason": "Alesan:",
 	"centralauth-admin-reason-other": "Alesan liya/tambahan:",
-	"centralauth-admin-unhide-nonexistent": "Kasalahan: akun global \"<nowiki>$1</nowiki>\" ora ditemokaké.",
+	"centralauth-admin-unhide-nonexistent": "Cacad: akun global \"<nowiki>$1</nowiki>\" ora ana.",
 	"centralauth-admin-status": "Setèl status akun global",
 	"centralauth-admin-status-intro": "Sampéyan bisa nganggo pormulir iki kanggo ngganti status akun global iki.",
 	"centralauth-admin-status-locked": "Kagembok:",
