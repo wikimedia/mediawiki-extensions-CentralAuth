@@ -7,18 +7,23 @@ if ( $IP === false ) {
 require_once( "$IP/maintenance/Maintenance.php" );
 
 class CheckLocalUser extends Maintenance {
+	protected $table = 'localuser';
+	protected $tablePrefix = 'lu';
+	protected $start;
+	protected $deleted = 0;
+	protected $total = 0;
+	protected $dryrun = true;
+	protected $wiki = null;
+	protected $user = null;
+	protected $verbose = false;
+
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Checks the contents of the localuser table and deletes invalid entries";
 		$this->start = microtime( true );
-		$this->deleted = 0;
-		$this->total = 0;
-		$this->dryrun = true;
-		$this->wiki = null;
-		$this->user = null;
-		$this->verbose = false;
-		$this->batchSize = 1000;
+		$this->mBatchSize = 1000;
 
+		$this->addDescription( 'Checks the contents of the localuser or localnames table and deletes invalid entries' );
+		$this->addOption( 'table', 'Which table to fix (localuser/localnames), default: localuser', false, true );
 		$this->addOption( 'delete', 'Performs delete operations on the offending entries', false, false );
 		$this->addOption( 'delete-nowiki', 'Delete entries associated with invalid wikis', false, false );
 		$this->addOption( 'wiki', 'If specified, only runs against local names from this wiki', false, true, 'u' );
@@ -28,7 +33,16 @@ class CheckLocalUser extends Maintenance {
 	}
 
 	protected function initialize() {
-		if ( $this->getOption( 'delete', false ) !== false ) {
+		$table = $this->getOption( 'table' );
+		if ( !in_array( $table, [ null, 'localuser', 'localnames' ], true ) ) {
+			$this->error( "table must be one of 'localuser', 'localnames'", 1 );
+		}
+		if ( $table === 'localnames' ) {
+			$this->table = 'localnames';
+			$this->tablePrefix = 'ln';
+		}
+
+		if ( $this->getOption( 'delete', false ) !== false || $this->getOption( 'delete-nowiki', false ) !== false ) {
 			$this->dryrun = false;
 		}
 
@@ -52,22 +66,22 @@ class CheckLocalUser extends Maintenance {
 
 		$centralMaster = CentralAuthUtils::getCentralDB();
 
-		// since the keys on localnames are not conducive to batch operations and
+		// since the keys on localuser/localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
 		// iterate from there
 		foreach( $this->getWikis() as $wiki ) {
-			$this->output( "Checking localuser for $wiki ...\n" );
+			$this->output( "Checking $this->table for $wiki ...\n" );
 
 			if ( !WikiMap::getWiki( $wiki ) ) {
-				// localuser record is left over from some wiki that has been disabled
+				// record is left over from some wiki that has been disabled
 				if ( !$this->dryrun ) {
 					if ( $this->getOption( 'delete-nowiki' ) ) {
 						$this->output( "$wiki does not exist, deleting entries...\n" );
-						$conds = [ 'lu_wiki' => $wiki ];
+						$conds = [ $this->tablePrefix . '_wiki' => $wiki ];
 						if ( $this->user ) {
-							$conds['lu_name'] = $this->user;
+							$conds[$this->tablePrefix . '_name'] = $this->user;
 						}
-						$centralMaster->delete( 'localuser', $conds, __METHOD__ );
+						$centralMaster->delete( $this->table, $conds, __METHOD__ );
 						$this->deleted ++;
 					} else {
 						$this->output( "$wiki does not exist, use --delete-nowiki to delete entries...\n" );
@@ -78,35 +92,38 @@ class CheckLocalUser extends Maintenance {
 				continue;
 			}
 
-			$localdb = wfGetDB( DB_SLAVE , array(), $wiki );
+			$localdb = wfGetDB( DB_SLAVE , [], $wiki );
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {
 				$localUser = $localdb->select(
 					'user',
-					array( 'user_name' ),
-					array( 'user_name' => $username ),
+					[ 'user_name' ],
+					[ 'user_name' => $username ],
 					__METHOD__
 				);
 
 				// check to see if the user did not exist in the local user table
 				if( $localUser->numRows() == 0 ) {
 					if( $this->verbose ) {
-						$this->output( "Local user not found for localuser entry $username@$wiki\n" );
+						$this->output( "Local user not found for $this->table entry $username@$wiki\n" );
 					}
 					$this->total++;
 					if( !$this->dryrun ){
 						// go ahead and delete the extraneous entry
 						$deleted = $centralMaster->delete(
-							'localuser',
-							array(
-								 "lu_wiki" => $wiki,
-								 "lu_name" => $username
-							),
+							$this->table,
+							[
+								$this->tablePrefix . '_wiki' => $wiki,
+								$this->tablePrefix . '_name' => $username,
+							],
 							__METHOD__
 						);
-						// TODO: is there anyway to check the success of the delete?
-						$this->deleted++;
+						if ( $deleted->numRows() ) {
+							$this->deleted++;
+						} else {
+							$this->error( "Failed to delete $username@$wiki from $this->table!\n" );
+						}
 					}
 				}
 			}
@@ -117,7 +134,7 @@ class CheckLocalUser extends Maintenance {
 	}
 
 	function report() {
-		$this->output( sprintf( "%s found %d invalid localuser, %d (%.1f%%) deleted\n",
+		$this->output( sprintf( "%s found %d invalid $this->table, %d (%.1f%%) deleted\n",
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->deleted,
@@ -127,28 +144,28 @@ class CheckLocalUser extends Maintenance {
 
 	protected function getWikis() {
 		$centralSlave = CentralAuthUtils::getCentralSlaveDB();
-		$wikis = array();
+		$wikis = [];
 
 		if ( !is_null( $this->wiki ) ) {
 			$wikis[] = $this->wiki;
 		} else {
-			$conds = array();
+			$conds = [];
 			if ( !is_null( $this->user ) ) {
-				$conds['lu_name'] = $this->user;
+				$conds[$this->tablePrefix . '_name'] = $this->user;
 			}
 			$result = $centralSlave->select(
-				'localuser',
-				array( 'lu_wiki' ),
+				$this->table,
+				[ $this->tablePrefix . '_wiki' ],
 				$conds,
 				__METHOD__,
-				array(
-					"DISTINCT",
-					"ORDER BY" => "lu_wiki ASC"
-				)
+				[
+					'DISTINCT',
+					'ORDER BY' => $this->tablePrefix . '_wiki ASC',
+				]
 			);
 
 			foreach( $result as $row ) {
-				$wikis[] = $row->lu_wiki;
+				$wikis[] = $row->{$this->tablePrefix . '_wiki'};
 			}
 		}
 
@@ -164,27 +181,31 @@ class CheckLocalUser extends Maintenance {
 
 		$centralSlave = CentralAuthUtils::getCentralSlaveDB();
 		$lastUsername = '';
-		do {
+		while ( true ) {
 			$this->output( "\t ... querying from '$lastUsername'\n" );
 			$result = $centralSlave->select(
-				'localuser',
-				array( 'lu_name' ),
-				array(
-					'lu_wiki' => $wiki,
-					'lu_name > ' . $centralSlave->addQuotes( $lastUsername ),
-				),
+				$this->table,
+				[ $this->tablePrefix . '_name' ],
+				[
+					$this->tablePrefix . '_wiki' => $wiki,
+					$this->tablePrefix . '_name > ' . $centralSlave->addQuotes( $lastUsername ),
+				],
 				__METHOD__,
-				array(
-					"LIMIT" => $this->batchSize,
-					"ORDER BY" => "lu_name ASC"
-				)
+				[
+					'LIMIT' => $this->mBatchSize,
+					'ORDER BY' => $this->tablePrefix . '_name ASC',
+				]
 			);
-			foreach( $result as $u ) {
-				yield $u->lu_name;
+
+			if ( $result->numRows() === 0 ) {
+				break;
 			}
 
-			$lastUsername = $u->lu_name;
-		} while ( $result->numRows() > 0 );
+			foreach( $result as $u ) {
+				yield $u->{$this->tablePrefix . '_name'};
+			}
+			$lastUsername = $u->{$this->tablePrefix . '_name'};
+		}
 	}
 }
 
