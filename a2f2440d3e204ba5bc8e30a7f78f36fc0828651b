@@ -16,6 +16,24 @@
       "revId": "a2f2440d3e204ba5bc8e30a7f78f36fc0828651b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_392aefd7",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2016-08-29T17:44:03Z",
+      "side": 1,
+      "message": "I think it\u0027s fine for code simplicity. It shouldn\u0027t have much performance effect.",
+      "parentUuid": "4e96ab59_99a683a6",
+      "revId": "a2f2440d3e204ba5bc8e30a7f78f36fc0828651b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
