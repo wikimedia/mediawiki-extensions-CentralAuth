@@ -19,6 +19,9 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalUser extends Maintenance {
 
+	protected string $table = 'localuser';
+	protected string $tablePrefix = 'lu';
+
 	protected float $start;
 
 	protected int $deleted = 0;
@@ -36,13 +39,14 @@ class CheckLocalUser extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->addDescription( 'Checks the contents of the localuser table and deletes invalid entries' );
+		$this->addDescription( 'Checks the contents of the localuser or localnames table and deletes invalid entries' );
 
+		$this->addOption( 'table', 'Which table to fix (localuser/localnames), default: localuser', false, true );
 		$this->addOption( 'delete',
-			'Performs delete operations on the offending entries', false, false
+			'Performs delete operations on the offending entries',
 		);
 		$this->addOption( 'delete-nowiki',
-			'Delete entries associated with invalid wikis', false, false
+			'Delete entries associated with invalid wikis'
 		);
 		$this->addOption( 'wiki',
 			'If specified, only runs against local names from this wiki', false, true, 'u'
@@ -57,7 +61,18 @@ class CheckLocalUser extends Maintenance {
 	 * @throws CentralAuthReadOnlyError
 	 */
 	public function execute() {
-		$this->dryrun = !$this->hasOption( 'delete' );
+		$table = $this->getOption( 'table' );
+		if ( !in_array( $table, [ null, 'localuser', 'localnames' ], true ) ) {
+			$this->fatalError( "table must be one of 'localuser', 'localnames'" );
+		}
+		if ( $table === 'localnames' ) {
+			$this->table = 'localnames';
+			$this->tablePrefix = 'ln';
+		}
+
+		if ( $this->hasOption( 'delete' ) || $this->hasOption( 'delete-nowiki' ) ) {
+			$this->dryrun = false;
+		}
 
 		$wiki = $this->getOption( 'wiki', false );
 		if ( $wiki !== false && !$this->hasOption( 'allwikis' ) ) {
@@ -75,23 +90,23 @@ class CheckLocalUser extends Maintenance {
 
 		$this->start = microtime( true );
 
-		// since the keys on localnames are not conducive to batch operations and
-		// because of the database shards, grab a list of the wikis and we will
+		// since the keys on localuser/localnames are not conducive to batch operations and
+		// because of the database shards, grab a list of the wikis, and we will
 		// iterate from there
 		foreach ( $this->getWikis() as $wiki ) {
-			$this->output( "Checking localuser for $wiki ...\n" );
+			$this->output( "Checking $this->table for $wiki ...\n" );
 
 			if ( !WikiMap::getWiki( $wiki ) ) {
-				// localuser record is left over from some wiki that has been disabled
+				// record is left over from some wiki that has been disabled
 				if ( !$this->dryrun ) {
 					if ( $this->getOption( 'delete-nowiki' ) ) {
 						$this->output( "$wiki does not exist, deleting entries...\n" );
-						$conds = [ 'lu_wiki' => $wiki ];
+						$conds = [ $this->tablePrefix . '_wiki' => $wiki ];
 						if ( $this->user ) {
-							$conds['lu_name'] = $this->user;
+							$conds[$this->tablePrefix . '_name'] = $this->user;
 						}
 						$centralPrimaryDb->newDeleteQueryBuilder()
-							->deleteFrom( 'localuser' )
+							->deleteFrom( $this->table )
 							->where( $conds )
 							->caller( __METHOD__ )
 							->execute();
@@ -122,17 +137,17 @@ class CheckLocalUser extends Maintenance {
 				if ( $localUser->numRows() === 0 ) {
 					if ( $this->verbose ) {
 						$this->output(
-							"Local user not found for localuser entry $username@$wiki\n"
+							"Local user not found for $this->table entry $username@$wiki\n"
 						);
 					}
 					$this->total++;
 					if ( !$this->dryrun ) {
 						// go ahead and delete the extraneous entry
 						$centralPrimaryDb->newDeleteQueryBuilder()
-							->deleteFrom( 'localuser' )
+							->deleteFrom( $this->table )
 							->where( [
-								"lu_wiki" => $wiki,
-								"lu_name" => $username
+								$this->tablePrefix . '_wiki' => $wiki,
+								$this->tablePrefix . '_name' => $username
 							] )
 							->caller( __METHOD__ )
 							->execute();
@@ -148,7 +163,7 @@ class CheckLocalUser extends Maintenance {
 	}
 
 	private function report(): void {
-		$this->output( sprintf( "%s found %d invalid localuser, %d (%.1f%%) deleted\n",
+		$this->output( sprintf( "%s found %d invalid $this->table (%.1f%%) deleted\n",
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->deleted,
@@ -168,15 +183,15 @@ class CheckLocalUser extends Maintenance {
 
 		$conds = [];
 		if ( $this->user !== null ) {
-			$conds['lu_name'] = $this->user;
+			$conds[$this->tablePrefix . '_name'] = $this->user;
 		}
 
 		return $centralReplica->newSelectQueryBuilder()
-			->select( 'lu_wiki' )
+			->select( $this->tablePrefix . '_wiki' )
 			->distinct()
-			->from( 'localuser' )
+			->from( $this->table )
 			->where( $conds )
-			->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
+			->orderBy( $this->tablePrefix . '_wiki', SelectQueryBuilder::SORT_ASC )
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 	}
@@ -190,26 +205,29 @@ class CheckLocalUser extends Maintenance {
 
 		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		$lastUsername = '';
-		do {
+		while ( true ) {
 			$this->output( "\t ... querying from '$lastUsername'\n" );
 			$result = $centralReplica->newSelectQueryBuilder()
-				->select( 'lu_name' )
-				->from( 'localuser' )
+				->select( $this->tablePrefix . '_name' )
+				->from( $this->table )
 				->where( [
-					'lu_wiki' => $wiki,
-					$centralReplica->expr( 'lu_name', '>', $lastUsername ),
+					$this->tablePrefix . '_wiki' => $wiki,
+					$centralReplica->expr( $this->tablePrefix . '_name', '>', $lastUsername ),
 				] )
-				->orderBy( 'lu_name', SelectQueryBuilder::SORT_ASC )
+				->orderBy( $this->tablePrefix . '_name', SelectQueryBuilder::SORT_ASC )
 				->limit( $this->mBatchSize )
 				->caller( __METHOD__ )
 				->fetchResultSet();
 
-			foreach ( $result as $u ) {
-				yield $u->lu_name;
+			if ( $result->numRows() === 0 ) {
+				break;
 			}
 
-			$lastUsername = $u->lu_name ?? null;
-		} while ( $result->numRows() > 0 );
+			foreach ( $result as $u ) {
+				yield $u->{$this->tablePrefix . '_name'};
+			}
+			$lastUsername = $u->{$this->tablePrefix . '_name'} ?? null;
+		}
 	}
 }
 
