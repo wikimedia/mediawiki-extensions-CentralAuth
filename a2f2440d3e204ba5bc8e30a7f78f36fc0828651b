@@ -34,6 +34,24 @@
       "revId": "a2f2440d3e204ba5bc8e30a7f78f36fc0828651b",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e96ab59_aa5bdf24",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2016-08-29T21:48:57Z",
+      "side": 1,
+      "message": "We did the same in User.php.",
+      "parentUuid": "4e96ab59_392aefd7",
+      "revId": "a2f2440d3e204ba5bc8e30a7f78f36fc0828651b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
