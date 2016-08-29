@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e96ab59_99a683a6",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-08-29T17:36:33Z",
+      "side": 1,
+      "message": "This code path no longer saves the just-loaded user into cache. Is that intentional?",
+      "revId": "a2f2440d3e204ba5bc8e30a7f78f36fc0828651b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
