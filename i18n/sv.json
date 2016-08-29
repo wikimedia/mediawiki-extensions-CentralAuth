@@ -263,7 +263,11 @@
 	"centralauth-globalgroupperms-nogroups": "Inga globala grupper är definierade.",
 	"centralauth-globalgroupperms-group": "Grupp",
 	"centralauth-globalgroupperms-rights": "Rättigheter",
+	"centralauth-globalgroupperms-management": "ledning",
 	"centralauth-globalgroupperms-group-listmembers": "lista över medlemmar",
+	"centralauth-globalgroupperms-group-wikiset": "Uppsättning av wikis där denna grupp är aktiv: $1",
+	"centralauth-globalgroupperms-wikiset-none": "Denna grupp är aktiv på alla wikis.",
+	"centralauth-globalgroupperms-group-disabled": "(inte aktiverad på denna wiki)",
 	"centralauth-newgroup-legend": "Skapa en ny grupp",
 	"centralauth-newgroup-intro": "Du kan använda det här formuläret för att tilldela behörigheter till en ny grupp.\nNotera att gruppen inte finns om den inte har tilldelats behörigheter.",
 	"centralauth-globalgroupperms-newgroupname": "Namn på ny grupp:",
@@ -545,5 +549,10 @@
 	"sessionprovider-centralauthsessionprovider": "centrala cookie-baserad sessioner",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-sessioner",
 	"log-action-filter-globalauth": "Typ av ändring:",
-	"log-action-filter-gblrights": "Typ av ändring:"
+	"log-action-filter-globalauth-setstatus": "Statusändring för globalt konto",
+	"log-action-filter-suppress-setstatus": "Statusändring för globalt konto",
+	"log-action-filter-suppress-cadelete": "Radering av globalt konto",
+	"log-action-filter-gblrights": "Typ av ändring:",
+	"log-action-filter-gblrights-usergroups": "Användarrättighetsändring för globalt konto",
+	"log-action-filter-gblrights-groupprms": "Gruppändring för globalt konto"
 }
