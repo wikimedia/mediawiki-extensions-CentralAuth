@@ -489,9 +489,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		if ( !isset( $cache['mVersion'] ) || $cache['mVersion'] < $this->mVersion ) {
-			// Out of date cache.
-			wfDebugLog( 'CentralAuthVerbose', "Global User: cache miss for {$this->mName}, " .
-				"version {$cache['mVersion']}, expected {$this->mVersion}" );
 			return false;
 		}
 
