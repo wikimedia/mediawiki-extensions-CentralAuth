@@ -113,7 +113,7 @@
 	"centralauth-admin-delete-description": "La supression del compte global destrusirà totas las referéncias globalas, destacarà l'ensemble dels comptes locals, e daissarà lo nom global disponible per tot autre utilizaire. Los senhals pels comptes creats localament, abans la fusion, anullaràn totas lors valors abans la fusion.",
 	"centralauth-admin-delete-button": "Suprimir aqueste compte",
 	"centralauth-admin-delete-confirm": "Sètz segur que volètz escafar aqueste compte ?",
-	"centralauth-admin-delete-success": "Lo compte global per « <nowiki>$1</nowiki> » es estat suprimit amb succès",
+	"centralauth-admin-delete-success": "Lo compte global per « <nowiki>$1</nowiki> » es estat suprimit",
 	"centralauth-admin-nonexistent": "Existís pas cap de compte global per « <nowiki>$1</nowiki> »",
 	"centralauth-admin-delete-nonexistent": "Error : lo compte global « <nowiki>$1</nowiki> » existís pas.",
 	"centralauth-token-mismatch": "O planhèm, podèm sometre vòstre formulari a causa de la pèrda de donadas de vòstra session.",
