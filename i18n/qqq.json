@@ -310,6 +310,7 @@
 	"centralauth-editgroup-noset": "Used as an option in the wiki set selector.\n{{Identical|None}}",
 	"centralauth-editgroup-submit": "Used as label for the Submit button in Special:GlobalGroupPermissions.",
 	"centralauth-editgroup-perms": "Used as label for the checkbox group.",
+	"centralauth-editgroup-perms-item": "{{optional}}\nParameters:\n* $1 - the text from the \"right-...\" messages, i.e. {{msg-mw|Right-edit}}\n* $2 - the codename of this right",
 	"centralauth-editgroup-reason": "{{Identical|Reason}}",
 	"centralauth-editgroup-success": "Subtitle of Special:GlobalGroupPermissions after a group has successfully been altered",
 	"centralauth-editgroup-success-text": "Text on Special:GlobalGroupPermissions after a group has successfully been altered. $1 is the name of the global group.",

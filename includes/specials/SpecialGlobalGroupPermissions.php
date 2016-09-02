@@ -357,8 +357,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string escaped html
 	 */
 	protected function formatRight( $right ) {
-		return htmlspecialchars( User::getRightDescription( $right ) ). ' ' .
-			Html::element( 'code', array(), $this->msg( 'parentheses', $right )->text() );
+		return $this->msg(
+			'centralauth-editgroup-perms-item',
+			User::getRightDescription( $right ),
+			$right
+		)->parse();
 	}
 
 	/**

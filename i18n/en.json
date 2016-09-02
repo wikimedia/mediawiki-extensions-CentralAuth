@@ -294,6 +294,7 @@
 	"centralauth-editgroup-noset": "(none)",
 	"centralauth-editgroup-submit": "Save global group changes",
 	"centralauth-editgroup-perms": "Assigned permissions:",
+	"centralauth-editgroup-perms-item": "$1 <code>($2)</code>",
 	"centralauth-editgroup-reason": "Reason:",
 	"centralauth-editgroup-success": "Global group changed",
 	"centralauth-editgroup-success-text": "The global group $1 was updated.\n[[Special:GlobalGroupPermissions|Return to group management]]",
