@@ -20,6 +20,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		parent::__construct();
 
 		$wgHooks['APIGetAllowedParams'][] = $this;
+		$wgHooks['BeforePageDisplay'][] = $this;
 	}
 
 	/**
@@ -218,6 +219,23 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		$key = CentralAuthUtils::memcKey( 'api-token', $token );
 		CentralAuthUtils::getSessionCache()->delete( $key );
 
+		return true;
+	}
+
+	/**
+	 * Prevent user scripts and styles when centralauthtoken is in use
+	 * @param OutputPage $out
+	 * @return bool
+	 */
+	public function onBeforePageDisplay( $out ) {
+		if ( $out->getRequest()->getSession()->getProvider() instanceof CentralAuthTokenSessionProvider ) {
+			$out->reduceAllowedModules(
+				ResourceLoaderModule::TYPE_SCRIPTS, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
+			);
+			$out->reduceAllowedModules(
+				ResourceLoaderModule::TYPE_STYLES, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
+			);
+		}
 		return true;
 	}
 
