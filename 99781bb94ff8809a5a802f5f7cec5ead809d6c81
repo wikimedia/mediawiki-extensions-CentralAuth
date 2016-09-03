@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_9ff2ec01",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-09-03T21:05:47Z",
+      "side": 1,
+      "message": "\"Invalid name\"",
+      "revId": "99781bb94ff8809a5a802f5f7cec5ead809d6c81",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
