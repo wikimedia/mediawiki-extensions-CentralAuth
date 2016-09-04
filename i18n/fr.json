@@ -443,7 +443,7 @@
 	"globalrenamerequest": "Demande de renommage global de compte utilisateur",
 	"globalrenamerequest-legend": "Demande de renommage de l’unification",
 	"globalrenamerequest-forced": "La Fondation Wikimédia [[:mw:SUL_finalisation|unifie les noms d’utilisateur entre tous les projets Wikimedia]]. Ce nom d’utilisateur a été identifié comme utilisé sur d’autres wikis de Wikimedia et doit être modifié pour terminer l’unification. Par conséquent, vous devez sélectionner un nouveau nom d’utilisateur.",
-	"globalrenamerequest-pretext": "Demander un nouveau nom d’utilisateur pour être connu par l’ensemble des projets.\n\nToutes vos contributions précédentes seront rattachées à ce nouveau nom d’utilisateur.\n\nUne fois votre nouveau nom d’utilisateur demandé, une notification sera envoyée aux responsables de Wikimedia pour effectuer le renommage. Vous serez informé par courriel quand cela aura été fait.",
+	"globalrenamerequest-pretext": "Demander un nouveau nom d’utilisateur pour être connu par l’ensemble des projets.\n\nToutes vos contributions précédentes seront rattachées à ce nouveau nom d’utilisateur.\n\nUne fois votre nouveau nom d’utilisateur demandé, une notification sera envoyée aux stewards de Wikimedia pour effectuer le renommage. Vous serez informé par courriel quand cela aura été fait.",
 	"globalrenamerequest-username-label": "Nom d’utilisateur actuel :",
 	"globalrenamerequest-username-help": "Ceci est votre nom d’utilisateur actuel.",
 	"globalrenamerequest-newname-label": "Nom d’utilisateur demandé :",
