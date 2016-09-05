@@ -357,8 +357,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string escaped html
 	 */
 	protected function formatRight( $right ) {
-		return htmlspecialchars( User::getRightDescription( $right ) ). ' ' .
+		return $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
 			Html::element( 'code', array(), $this->msg( 'parentheses', $right )->text() );
+
 	}
 
 	/**
