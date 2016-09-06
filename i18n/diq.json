@@ -174,7 +174,7 @@
 	"centralauth-admin-action-hide-none": "Weçinayê hesaba asayê nışan bıke",
 	"centralauth-admin-action-hide-lists": "Weçinayê hesaba degme listeyan dê bınımnê",
 	"centralauth-admin-action-hide-oversight": "Weçinayê hesaba hemın bınımnê",
-	"centralauth-admin-multi-bot": "Peyën vıriyayışi",
+	"centralauth-admin-multi-bot": "Vurriyayışê peyêni",
 	"centralauth-admin-multi-botcheck": "Dekewtanê pela da [[Special:RecentChanges|{{int:recentchanges}}]] bot vurnayış nışan bıke",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sanise|saniseyan}} vernî ra",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|dakika|dakikayan}} vernî de",

@@ -358,7 +358,7 @@
 	"right-globalgroupmembership": "Editar pertenencia a grupos globales",
 	"right-centralauth-unmerge": "Desunificar cuenta global",
 	"right-centralauth-lock": "Bloquear o desbloquear cuenta global",
-	"right-centralauth-oversight": "Suprimir o ocultar una cuenta global",
+	"right-centralauth-oversight": "Suprimir u ocultar una cuenta global",
 	"right-centralauth-merge": "Fusionar su cuenta",
 	"right-globalgrouppermissions": "Manejar grupos de usuario globales",
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales a los que pertenece el usuario",
