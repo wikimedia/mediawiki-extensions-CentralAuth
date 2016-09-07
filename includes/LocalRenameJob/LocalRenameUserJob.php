@@ -7,13 +7,9 @@ use \MediaWiki\MediaWikiServices;
  * This is intended to be run on each wiki individually
  */
 class LocalRenameUserJob extends LocalRenameJob {
+	public function __construct( $title, $params ) {
+		$this->command = 'LocalRenameUserJob';
 
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 * @param int $id
-	 */
-	public function __construct( $title, $params, $id = 0 ) {
 		// For back-compat
 		if ( !isset( $params['promotetoglobal'] ) ) {
 			$params['promotetoglobal'] = false;
@@ -24,7 +20,8 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( !isset( $params['reattach'] ) ) {
 			$params['reattach'] = false;
 		}
-		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
+
+		parent::__construct( $title, $params );
 	}
 
 	public function doRun( $fnameTrxOwner ) {

@@ -14,6 +14,14 @@ abstract class LocalRenameJob extends Job {
 	 */
 	private $renameuserStatus;
 
+	/**
+	 * @param Title $title
+	 * @param array $params
+	 */
+	public function __construct( Title $title, $params ) {
+		parent::__construct( $this->command, $title, $params );
+	}
+
 	public function run() {
 		$this->setRenameUserStatus( new GlobalRenameUserStatus( $this->params['to'] ) );
 
