@@ -36,8 +36,9 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 		// Make the status update visible to all other transactions immediately
+		$fnameTrxOwner = __CLASS__ . '::run'; // ownership delegated from run()
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$factory->commitMasterChanges( __METHOD__ );
+		$factory->commitMasterChanges( $fnameTrxOwner );
 
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
