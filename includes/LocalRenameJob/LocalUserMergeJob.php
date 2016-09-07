@@ -25,10 +25,19 @@ class LocalUserMergeJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 		// Make the status update visible to all other transactions immediately
+		$fnameTrxOwner = __CLASS__ . '::run'; // ownership delegated from run()
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$factory->commitMasterChanges( __METHOD__ );
+		$factory->commitMasterChanges( $fnameTrxOwner );
 
 		$toUser = $this->maybeCreateNewUser( $to );
+		if ( $toUser instanceof Status ) {
+			$factory->rollbackMasterChanges( $fnameTrxOwner );
+			$this->updateStatus( 'failed' );
+			// Make the status update visible to all other transactions immediately
+			$factory->commitMasterChanges( $fnameTrxOwner );
+			throw new RuntimeException( "autoCreateUser failed for '{$to}': " .
+				$toUser->getWikiText( null, null, 'en' ) );
+		}
 
 		$renamingUser = $this->getRenameUser();
 		foreach ( $from as $olduser ) {
@@ -61,8 +70,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 	 * then merge into it.
 	 *
 	 * @param string $newName
-	 * @return User
-	 * @throws Exception
+	 * @return User|Status Returns status on failure
 	 */
 	private function maybeCreateNewUser( $newName ) {
 		$user = User::newFromName( $newName );
@@ -73,12 +81,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 
 		$status = Status::wrap( CentralAuthUtils::autoCreateUser( $user ) );
 		if ( !$status->isGood() ) {
-			$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-			$factory->rollbackMasterChanges( __METHOD__ );
-			$this->updateStatus( 'failed' );
-			$factory->commitMasterChanges( __METHOD__ );
-			throw new Exception( "autoCreateUser failed for $newName: " .
-				$status->getWikiText( null, null, 'en' ) );
+			return $status;
 		}
 
 		return $user;
