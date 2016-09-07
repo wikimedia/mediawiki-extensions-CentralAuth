@@ -7,13 +7,10 @@ use \MediaWiki\MediaWikiServices;
  * This is intended to be run on each wiki individually
  */
 class LocalUserMergeJob extends LocalRenameJob {
-	/**
-	 * @param Title $title
-	 * @param array $params
-	 * @param int $id
-	 */
-	public function __construct( $title, $params, $id = 0 ) {
-		parent::__construct( 'LocalUserMergeJob', $title, $params, $id );
+	public function __construct( Title $title, array $params ) {
+		$this->command = 'LocalUserMergeJob';
+
+		parent::__construct( $title, $params );
 	}
 
 	public function doRun( $fnameTrxOwner ) {
