@@ -27,7 +27,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		parent::__construct( 'LocalRenameUserJob', $title, $params, $id );
 	}
 
-	public function doRun() {
+	public function doRun( $fnameTrxOwner ) {
 		if ( !class_exists( 'RenameuserSQL' ) ) {
 			throw new Exception( 'Extension:Renameuser is not installed' );
 		}
@@ -36,7 +36,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 		// Make the status update visible to all other transactions immediately
-		$fnameTrxOwner = __CLASS__ . '::run'; // ownership delegated from run()
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$factory->commitMasterChanges( $fnameTrxOwner );
 

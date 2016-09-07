@@ -16,7 +16,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 		parent::__construct( 'LocalUserMergeJob', $title, $params, $id );
 	}
 
-	public function doRun() {
+	public function doRun( $fnameTrxOwner ) {
 		if ( !class_exists( 'MergeUser' ) ) {
 			throw new Exception( 'Extension:UserMerge is not installed' );
 		}
@@ -25,7 +25,6 @@ class LocalUserMergeJob extends LocalRenameJob {
 
 		$this->updateStatus( 'inprogress' );
 		// Make the status update visible to all other transactions immediately
-		$fnameTrxOwner = __CLASS__ . '::run'; // ownership delegated from run()
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$factory->commitMasterChanges( $fnameTrxOwner );
 
@@ -48,7 +47,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 				new UserMergeLogger(),
 				MergeUser::USE_MULTI_COMMIT
 			);
-			$um->merge( $renamingUser );
+			$um->merge( $renamingUser, $fnameTrxOwner );
 			$um->delete( $renamingUser, 'wfMessage' );
 		}
 

@@ -47,7 +47,7 @@ abstract class LocalRenameJob extends Job {
 			} );
 		}
 		try {
-			$this->doRun();
+			$this->doRun( __METHOD__ );
 			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account until a sysadmin intervenes
@@ -62,8 +62,9 @@ abstract class LocalRenameJob extends Job {
 
 	/**
 	 * Actually do the work for the job class
+	 * @param string $fnameTrxOwner Caller name
 	 */
-	abstract protected function doRun();
+	abstract protected function doRun( $fnameTrxOwner );
 
 	protected function setRenameUserStatus( GlobalRenameUserStatus $status ) {
 		$this->renameuserStatus = $status;
