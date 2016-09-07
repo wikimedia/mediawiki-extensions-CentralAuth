@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_e248a78e",
+        "filename": "includes/LocalRenameJob/LocalUserMergeJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2016-09-07T00:59:10Z",
+      "side": 1,
+      "message": "Does it still?",
+      "revId": "00264885737972a6e212ad52fd816c8e9693d808",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
