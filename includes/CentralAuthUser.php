@@ -243,13 +243,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		if ( $this->mFromMaster === null ) {
 			$this->mFromMaster = self::centralLBHasRecentMasterChanges();
-			// Use the master DB on HTTP POST and CLI mode since:
-			// (a) State changes may need to occur for centralauth tables
-			// (b) Such requests route to the master datacenter, so using the master is fast
-			// @TODO: dependency inject this as a flag...there are *many* callers though...
-			if ( !RequestContext::getMain()->getRequest()->isSafeRequest() ) {
-				$this->mFromMaster = true;
-			}
 		}
 
 		return $this->mFromMaster;
