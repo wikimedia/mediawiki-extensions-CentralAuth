@@ -438,15 +438,20 @@ class CentralAuthPrimaryAuthenticationProvider
 					// Wha?
 					return AuthenticationResponse::newFail( wfMessage( 'userexists' ) );
 				}
-				$centralUser->attach( wfWikiID(), 'new' );
-				CentralAuthUtils::getCentralDB()->onTransactionIdle( function () use ( $centralUser ) {
-					CentralAuthUtils::scheduleCreationJobs( $centralUser );
-				} );
 				return AuthenticationResponse::newPass( $user->getName() );
 			}
 		}
-
 		return AuthenticationResponse::newAbstain();
+	}
+
+	public function finishAccountCreation( $user, $creator, $response ) {
+		// Do the attach in finishAccountCreation instead of begin because now the user has been added
+		// to database and local ID exists (which is needed in attach)
+		$centralUser->attach( wfWikiID(), 'new' );
+		CentralAuthUtils::getCentralDB()->onTransactionIdle( function () use ( $centralUser ) {
+			CentralAuthUtils::scheduleCreationJobs( $centralUser );
+		} );
+		return null;
 	}
 
 	public function autoCreatedAccount( $user, $source ) {
