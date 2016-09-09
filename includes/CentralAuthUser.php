@@ -558,6 +558,28 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
+	* Return the local user account ID of the user with the same name on given wiki,
+	* irrespective of whether it is attached or not
+	* @param string $wikiId ID for the local database to connect to
+	* @return int|null Local user ID for given $wikiID. Null if $wikiID is invalid or local user doesn't exist
+	*/
+	public function getLocalId( $wikiId ) {
+		// Make sure the wiki ID is valid. (This prevents DBConnectionError in unit tests)
+		$validWikis = self::getWikiList();
+		if ( !in_array( $wikiId, $validWikis ) ) {
+			return null;
+		}
+		// Retrieve the local user ID from the specified database.
+		$db = $this->getLocalDB( $wikiId );
+		$id = $db->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
+		// If user doesn't exist, return null instead of false
+		if ( $id === false ) {
+			return null;
+		}
+		return $id;
+	}
+
+	/**
 	 * Generate a valid memcached key for caching the object's data.
 	 * @return String
 	 */
@@ -1797,7 +1819,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'lu_wiki'               => $wikiID,
 				'lu_name'               => $this->mName,
 				'lu_attached_timestamp' => $dbw->timestamp( $ts ),
-				'lu_attached_method'    => $method ),
+				'lu_attached_method'    => $method,
+				'lu_local_id'           => $this->getLocalId( $wikiID ),
+				'lu_global_id'          => $this->getId() ),
 			__METHOD__,
 			array( 'IGNORE' )
 		);
