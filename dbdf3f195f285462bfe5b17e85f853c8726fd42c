@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_8c81c351",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "You need an explicit \\n at the end of the line unless you want the next one to be on the same line",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_ecaec7e1",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "Don\u0027t do this. Use CentralAuthUtils::getCentralDB() and the slave db.",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_ccc82bad",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "Tbh, I\u0027ve never used BatchRowIterator, and we don\u0027t use it in CA, and normally I think it would be fine but since you said you were having issues I\u0027d rather you not use it and just use normal batching like the other maintenance scripts.",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_ac84bf5f",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "Don\u0027t do this. Use wfGetDB( DB_SLAVE, [], $lWiki );. If the databases are on different servers (which they are), then this doesn\u0027t work.",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_0c95d389",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "spaces around [ ] please",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_ec95e78b",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "You\u0027re using double quoted strings...you can just interpolate the variable normally",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_cc9aebbc",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-09T03:00:46Z",
+      "side": 1,
+      "message": "notifications?",
+      "revId": "dbdf3f195f285462bfe5b17e85f853c8726fd42c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
