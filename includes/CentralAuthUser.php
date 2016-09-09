@@ -558,6 +558,19 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
+	* Return the local account ID
+	* @param String $wikiId ID for the local database to connect to; false for current wiki
+	*/
+	public function getLocalId( $wikiId ) {
+		if( !$this->getLocalDB( $wikiId ) ) {
+			return null;
+		}
+		$db = $this->getLocalDB( $wikiId );
+		$id = $db->selectField( 'user', 'user_id', array( 'user_name' => $this->mName ), __METHOD__ );
+		return $id;
+	}
+
+	/**
 	 * Generate a valid memcached key for caching the object's data.
 	 * @return String
 	 */
@@ -1797,7 +1810,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'lu_wiki'               => $wikiID,
 				'lu_name'               => $this->mName,
 				'lu_attached_timestamp' => $dbw->timestamp( $ts ),
-				'lu_attached_method'    => $method ),
+				'lu_attached_method'    => $method,
+				'lu_local_id'           => $this->getLocalId( $wikiID ),
+				'lu_global_id'          => $this->mGlobalId ),
 			__METHOD__,
 			array( 'IGNORE' )
 		);
