@@ -19,10 +19,11 @@ class GlobalUserMergeDatabaseUpdates {
 	 * Merge a global user's rows into
 	 * another global user's ones.
 	 *
-	 * @param string $oldname
-	 * @param string $newname
+	 * @param string $oldname Old global username
+	 * @param string $newname New global username
+	 * @param int $newId New global user ID
 	 */
-	public function merge( $oldname, $newname ) {
+	public function merge( $oldname, $newname, $newId = null ) {
 		$dbw = $this->getDB();
 
 		$dbw->begin( __METHOD__ );
@@ -40,11 +41,32 @@ class GlobalUserMergeDatabaseUpdates {
 		// that wiki yet.
 		$dbw->update(
 			'localuser',
-			array( 'lu_name' => $newname ),
+			array(
+				'lu_name' => $newname,
+				'lu_global_id' => $newId
+			),
 			array( 'lu_name' => $oldname ),
 			__METHOD__,
 			array( 'IGNORE' )
 		);
+
+		// Get the list of wikis with local accounts attached to the global account
+		$attachedWikis = $dbw->selectFieldValues(
+			'localuser',
+			'lu_wiki',
+			array( 'lu_name' => $newname )
+		);
+		// For each attached account, update the lu_local_id field
+		$user = CentralAuthUser::newFromId( $newId );
+		foreach ( $attachedWikis as $wiki ) {
+			$localId = $user->getLocalId( $wiki );
+			// Note that $localId will be null in case there is no local account with new name on that wiki yet
+			$dbw->update(
+				'localuser',
+				array( 'lu_local_id' => $localId ),
+				array( 'lu_name' => $newname )
+			);
+		}
 
 		// Delete the ones that are duplicates,
 		// we'll use the existing rows
