@@ -25,7 +25,8 @@
 			"Khaled",
 			"محمد أحمد عبد الفتاح",
 			"Sonic N800",
-			"Maroen1990"
+			"Maroen1990",
+			"علاء"
 		]
 	},
 	"mergeaccount": "حالة توحيد الدخول",
@@ -382,7 +383,7 @@
 	"centralauth-rename-movelog": "نُقِلت الصفحة آليا عند إعادة تسمية المستخدم «[[Special:CentralAuth/$1|$1]]» إلى «[[Special:CentralAuth/$2|$2]]».",
 	"centralauth-rename-confirm": "هل تريد حقاً تغيير اسم الحساب الموحد لهذا المستخدم؟",
 	"log-name-gblrename": "سجل إعادة التسمية الشاملة",
-	"log-description-gblrename": "يتتبع هذا السجل تغيير اسماء الحسابات الموحدة للمستخدمين.",
+	"log-description-gblrename": "يتتبع هذا السجل تغيير أسماء الحسابات الموحدة للمستخدمين.",
 	"logentry-gblrename-rename": "{{GENDER:$2|غير|غيرت}} $1 اسم الحساب الموحد $4 إلى $5.",
 	"globalusermerge": "دمج الحساب الموحد",
 	"globalusermerge-legend": "دمج الحساب الموحد",
