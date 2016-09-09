@@ -194,9 +194,9 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 */
 	public function testAttach() {
 		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
-		$caUser->attach( 'anotherwiki', 'admin', false );
+		$caUser->attach( 'frwiki', 'admin', false );
 		$this->assertSame( true, $caUser->exists() );
-		$this->assertSame( true, in_array( 'anotherwiki', $caUser->listAttached() ) );
+		$this->assertSame( true, in_array( 'frwiki', $caUser->listAttached() ) );
 	}
 
 	/**
