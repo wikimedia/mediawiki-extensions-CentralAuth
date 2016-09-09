@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e93376b_386485ae",
+        "filename": "central-auth.sql",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-09-09T17:45:02Z",
+      "side": 1,
+      "message": "We don\u0027t normally use noinspection tags in our SQL. Is this for PHPStorm? I couldn\u0027t find any documentation for these tags. What do they do?",
+      "revId": "003c2a5fb95bee4e2f7d6792fc41b29dc525bf71",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
