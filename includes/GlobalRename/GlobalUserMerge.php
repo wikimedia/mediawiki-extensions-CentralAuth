@@ -126,7 +126,7 @@ class GlobalUserMerge {
 				'attached' => $oldCAUser->listAttached(),
 			) );
 
-			$this->databaseUpdates->merge( $oldName, $newName );
+			$this->databaseUpdates->merge( $oldName, $newName, $newId );
 			$this->databaseUpdates->mergeGlobalUserGroups( $oldId, $newId );
 			$this->databaseUpdates->mergeRenameUserQueue( $oldId, $newId );
 			$oldCAUser->removeAntiSpoof();
