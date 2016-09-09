@@ -48,9 +48,10 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 			}
 			$db->tablePrefix( $originalPrefix );
 		} else {
-			if ( !$db->tableExists( 'globaluser' ) ) {
-				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
+			foreach ( self::$centralauthTables as $table ) {
+				$db->dropTable( $table );
 			}
+			$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
 		}
 	}
 
