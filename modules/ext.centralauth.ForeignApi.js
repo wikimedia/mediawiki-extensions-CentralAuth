@@ -24,6 +24,7 @@
 	 * @constructor
 	 * @param {string|mw.Uri} url URL pointing to another wiki's `api.php` endpoint.
 	 * @param {Object} [options] See mw.Api.
+	 * @param {Object} [options.anonymous=false] See mw.ForeignApi.
 	 *
 	 * @author Bartosz Dziewoński
 	 * @author Jon Robson
@@ -43,7 +44,7 @@
 		this.csrfToken = null;
 		this.csrfTokenBad = false;
 
-		if ( mw.config.get( 'wgUserName' ) === null ) {
+		if ( mw.config.get( 'wgUserName' ) === null || ( options && options.anonymous ) ) {
 			// Anonymous users cannot obtain a centralauthtoken
 			this.noTokenNeeded = true;
 		} else {
