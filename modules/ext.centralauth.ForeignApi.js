@@ -103,21 +103,38 @@
 	 * @inheritdoc
 	 */
 	CentralAuthForeignApi.prototype.getToken = function ( type, assert ) {
-		var foreignApi = this;
+		var foreignApi = this,
+			getToken = CentralAuthForeignApi.parent.prototype.getToken,
+			abortedPromise = $.Deferred().reject( 'http',
+				{ textStatus: 'abort', exception: 'abort' } ).promise(),
+			abortable,
+			aborted;
 		if ( this.foreignLoginPromise && $.inArray( type, csrfTokenOldTypes ) !== -1 ) {
 			return this.foreignLoginPromise.then(
 				function () {
+					if ( aborted ) {
+						return abortedPromise;
+					}
 					if ( foreignApi.csrfToken && !foreignApi.csrfTokenBad ) {
 						return foreignApi.csrfToken;
 					}
-					return CentralAuthForeignApi.parent.prototype.getToken.call( foreignApi, type, assert );
+					return ( abortable = getToken.call( foreignApi, type, assert ) );
 				},
 				function () {
-					return CentralAuthForeignApi.parent.prototype.getToken.call( foreignApi, type, assert );
+					if ( aborted ) {
+						return abortedPromise;
+					}
+					return ( abortable = getToken.call( foreignApi, type, assert ) );
 				}
-			);
+			).promise( { abort: function () {
+				if ( abortable ) {
+					abortable.abort();
+				} else {
+					aborted = true;
+				}
+			} } );
 		}
-		return CentralAuthForeignApi.parent.prototype.getToken.call( this, type, assert );
+		return getToken.call( this, type, assert );
 	};
 
 	/**
@@ -133,7 +150,12 @@
 	 * @inheritdoc
 	 */
 	CentralAuthForeignApi.prototype.ajax = function ( parameters, ajaxOptions ) {
-		var tokenPromise, foreignApi = this;
+		var tokenPromise,
+			foreignApi = this,
+			abortedPromise = $.Deferred().reject( 'http',
+				{ textStatus: 'abort', exception: 'abort' } ).promise(),
+			abortable,
+			aborted;
 		// If we know we can't get a 'centralauthtoken', or if one was provided, don't request it
 		if ( this.noTokenNeeded || hasOwnProperty.call( parameters, 'centralauthtoken' ) ) {
 			tokenPromise = $.Deferred().reject();
@@ -142,15 +164,18 @@
 				// If succeeded, no 'centralauthtoken' needed
 				function () { return $.Deferred().reject(); },
 				// If failed, get the token
-				function () { return foreignApi.getCentralAuthToken(); }
+				function () { return ( abortable = foreignApi.getCentralAuthToken() ); }
 			);
 		} else {
-			tokenPromise = this.getCentralAuthToken();
+			tokenPromise = abortable = this.getCentralAuthToken();
 		}
 
 		return tokenPromise.then(
 			function ( centralAuthToken ) {
 				var url, newParameters, newAjaxOptions;
+				if ( aborted ) {
+					return abortedPromise;
+				}
 
 				// Add 'centralauthtoken' query parameter
 				newParameters = $.extend( { centralauthtoken: centralAuthToken }, parameters );
@@ -164,14 +189,23 @@
 					newAjaxOptions = ajaxOptions;
 				}
 
-				return CentralAuthForeignApi.parent.prototype.ajax.call( foreignApi, newParameters, newAjaxOptions );
+				return ( abortable = CentralAuthForeignApi.parent.prototype.ajax.call( foreignApi, newParameters, newAjaxOptions ) );
 			},
 			function () {
+				if ( aborted ) {
+					return abortedPromise;
+				}
 				// We couldn't get the token, but continue anyway. This is expected in some cases, like
 				// anonymous users.
-				return CentralAuthForeignApi.parent.prototype.ajax.call( foreignApi, parameters, ajaxOptions );
+				return ( abortable = CentralAuthForeignApi.parent.prototype.ajax.call( foreignApi, parameters, ajaxOptions ) );
 			}
-		);
+		).promise( { abort: function () {
+			if ( abortable ) {
+				abortable.abort();
+			} else {
+				aborted = true;
+			}
+		} } );
 	};
 
 	// Expose
