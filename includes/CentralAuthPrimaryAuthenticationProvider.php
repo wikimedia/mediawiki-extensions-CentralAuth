@@ -490,4 +490,16 @@ class CentralAuthPrimaryAuthenticationProvider
 			}
 		}
 	}
+
+	public function finishAccountCreation( $user, $creator, AuthenticationResponse $response ) {
+		$result = parent::finishAccountCreation( $user, $creator, $response );
+
+		$centralUser = CentralAuthUser::getInstance( $user );
+		// Populate the table of local users with this name post-send (if not done already)
+		DeferredUpdates::addCallableUpdate( function () use ( $centralUser ) {
+			$centralUser->lazyImportLocalNames();
+		} );
+
+		return $result;
+	}
 }
