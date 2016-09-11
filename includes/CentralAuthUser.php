@@ -726,7 +726,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param $email String
 	 * @return bool
 	 */
-	function register( $password, $email ) {
+	public function register( $password, $email ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		list( $salt, $hash ) = $this->saltedPassword( $password );
@@ -1807,6 +1807,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
 			}
 		}
+
 	}
 
 	/**
@@ -2054,7 +2055,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * @return bool
 	 */
-	function lazyImportLocalNames() {
+	public function lazyImportLocalNames() {
 		$known = (bool)CentralAuthUtils::getCentralSlaveDB()->selectField(
 			'globalnames', '1', [ 'gn_name' => $this->mName ], __METHOD__
 		);
@@ -2073,7 +2074,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 *
 	 * @return Bool whether any results were found
 	 */
-	function importLocalNames() {
+	protected function importLocalNames() {
 		$rows = [];
 		foreach ( self::getWikiList() as $wikiID ) {
 			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_SLAVE, array(), $wikiID );
