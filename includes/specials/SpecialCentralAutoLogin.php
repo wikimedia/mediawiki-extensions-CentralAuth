@@ -483,7 +483,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 			}
 			if ( !$centralUser->isAttached() ) {
-				$this->doFinalOutput( false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
+				$this->doFinalOutput(
+					false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
 				ScopedCallback::consume( $delay );
 				return;
 			}
@@ -491,10 +492,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			ScopedCallback::consume( $delay );
 
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin success', array(
-				'event' => 'autologin',
-				'type' => 'success',
-			) );
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info(
+				'Autologin success',
+				array(
+					'event' => 'autologin',
+					'type' => 'success',
+				)
+			);
 
 			$script = self::getInlineScript( 'anon-remove.js' );
 
