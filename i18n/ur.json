@@ -4,7 +4,8 @@
 			"පසිඳු කාවින්ද",
 			"عثمان خان شاہ",
 			"Obaid Raza",
-			"امین اکبر"
+			"امین اکبر",
+			"Muhammad Shuaib"
 		]
 	},
 	"mergeaccount": "لاگ ان کے اتحاد کا درجہ",
@@ -79,10 +80,10 @@
 	"globalusers": "عالمی صارف فہرست",
 	"centralauth-listusers-locked": "بند",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|دن|دن}} قبل",
-	"centralauth-prefs-status": "عالمی اکاؤنٹ کی حالت:",
+	"centralauth-prefs-status": "عالمی کھاتہ:",
 	"centralauth-prefs-not-managed": "نہیں متحد اکاؤنٹ کا استعمال کرتے ہوئے",
 	"centralauth-prefs-manage": "اپنے عالمی اکاؤنٹ کا انتظام کریں",
-	"centralauth-prefs-view": "قول عالمی صارف کی معلومات",
+	"centralauth-prefs-view": "عالمی کھاتے کی معلومات دیکھیں",
 	"centralauth-account-exists": "اکاؤنٹ کی تخلیق نہیں کر سکتے ہیں: درخواست صارف کا نام پہلے ہی متحد لاگ ان کے نظام میں لے لیا ہے.",
 	"centralauth-log-name": "عالمی اکاؤنٹ لاگ ان کریں",
 	"centralauth-log-status-locked": "بند",
