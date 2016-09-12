@@ -9,7 +9,8 @@
 			"Yekrats",
 			"Tlustulimu",
 			"Robin van der Vliet",
-			"Trizek (WMF)"
+			"Trizek (WMF)",
+			"Gamliel Fishkin"
 		]
 	},
 	"mergeaccount": "Statuso de unuigado de salutnomoj",
@@ -84,8 +85,10 @@
 	"centralauth-attach-submit": "Migri konton",
 	"centralauth-attach-success": "La konto estis migrigita al la unuigita konto.",
 	"centralauth": "Administranto de ĝeneralaj kontoj",
+	"centralauth-ro": "Informoj pri tutvikia uzantokonto",
 	"centralauth-admin-intro": "Ĉi tiu interfaco estas uzebla por administrado de ĝeneralaj kontoj.",
 	"centralauth-admin-manage": "Prizorgi kontajn datenojn",
+	"centralauth-admin-view": "Vidi informojn pri uzantokonto",
 	"centralauth-admin-username": "Uzantnomo:",
 	"centralauth-admin-lookup-ro": "Vidi uzant-informojn",
 	"centralauth-admin-lookup-rw": "Administri konton de uzanto",
@@ -97,6 +100,7 @@
 	"centralauth-admin-info-editcount": "Nombro de redaktoj:",
 	"centralauth-admin-info-locked": "Ŝlosita:",
 	"centralauth-admin-info-hidden": "Kaŝita nivelo:",
+	"centralauth-admin-info-attached": "Nombro de alkroĉitaj uzantokontoj",
 	"centralauth-admin-yes": "jes",
 	"centralauth-admin-no": "ne",
 	"centralauth-admin-hidden-list": "de publikaj listoj",
@@ -111,7 +115,7 @@
 	"centralauth-admin-list-localwiki": "Loka vikio",
 	"centralauth-admin-list-attached-on": "Ligita al",
 	"centralauth-admin-list-method": "Metodo",
-	"centralauth-admin-list-editcount": "Redakto-nombrado",
+	"centralauth-admin-list-editcount": "Redaktoj",
 	"centralauth-admin-list-groups": "Grupoj",
 	"centralauth-admin-list-blocked": "Forbarita",
 	"centralauth-admin-unmerge": "Malkunigi selektitaĵojn",
