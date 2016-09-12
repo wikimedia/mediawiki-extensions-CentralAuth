@@ -51,6 +51,24 @@
       "revId": "3e6ab4ebd91c04d76066ad1744c64180a609ebcf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e93376b_7b8a7d1d",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1806,
+      "author": {
+        "id": 1267
+      },
+      "writtenOn": "2016-09-12T14:15:53Z",
+      "side": 1,
+      "message": "I\u0027ll do this in a separate patch so it\u0027s less confusing what exactly changed.",
+      "parentUuid": "2e93376b_b1b96be8",
+      "revId": "3e6ab4ebd91c04d76066ad1744c64180a609ebcf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
