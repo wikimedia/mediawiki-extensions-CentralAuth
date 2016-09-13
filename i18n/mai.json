@@ -39,7 +39,7 @@
 	"centralauth-merge-method-password": "कूटशब्द द्वारा निश्चित कएल गेल",
 	"centralauth-merge-method-admin": "प्रबंधक (माइनजन) द्वारा एकत्रित खाता",
 	"centralauth-merge-method-new": "नव खाता",
-	"centralauth-merge-method-login": "सम्प्रवेशके बाद बनौलक",
+	"centralauth-merge-method-login": "सम्प्रवेशक बाद बनौलक",
 	"centralauth-merge-method-empty-desc": "यी देखावैत अछि कि स्थानीय खाता विलय कएल गेल रहए कियाकि ओकर मे कोनो सम्पादन नै रहे।",
 	"centralauth-finish-title": "एकत्रिकरण पूर्ण करु",
 	"centralauth-finish-password": "कूटशब्द:",
