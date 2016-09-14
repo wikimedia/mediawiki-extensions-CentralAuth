@@ -32,8 +32,9 @@ abstract class LocalRenameJob extends Job {
 		// Clear any REPEATABLE-READ snapshot in case the READ_LOCKING blocked above. We want
 		// regular non-locking SELECTs to see all the changes from that transaction we waited on.
 		// Making a new transaction also reduces deadlocks from the locking read.
+		$fnameTrxOwner = get_class( $this ) . '::' . __FUNCTION__; // T145596
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$factory->commitMasterChanges( __METHOD__ );
+		$factory->commitMasterChanges( $fnameTrxOwner );
 
 		if ( $status !== 'queued' && $status !== 'failed' ) {
 			LoggerFactory::getInstance( 'rename' )->info( 'skipping duplicate rename from {user}', [
@@ -55,13 +56,13 @@ abstract class LocalRenameJob extends Job {
 			} );
 		}
 		try {
-			$this->doRun( __METHOD__ );
+			$this->doRun( $fnameTrxOwner );
 			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account until a sysadmin intervenes
-			$factory->rollbackMasterChanges( __METHOD__ );
+			$factory->rollbackMasterChanges( $fnameTrxOwner );
 			$this->updateStatus( 'failed' );
-			$factory->commitMasterChanges( __METHOD__ );
+			$factory->commitMasterChanges( $fnameTrxOwner );
 			throw $e;
 		}
 
