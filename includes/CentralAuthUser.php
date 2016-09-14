@@ -1836,8 +1836,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// FIXME: this will give users "password incorrect" error.
 		// Giving correct message requires AuthPlugin and SpecialUserlogin
 		// rewriting.
-		if ( !User::idFromName( $this->getName() ) && $this->isOversighted() )
+		if ( !User::idFromName( $this->getName() ) && $this->isOversighted() ) {
 			return "locked";
+		}
 
 		return true;
 	}
@@ -1864,9 +1865,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				$passwordFactory->needsUpdate( $status->getValue() )
 				&& !CentralAuthUtils::getCentralDB()->isReadOnly()
 			) {
+				Profiler::instance()->getTransactionProfiler()->setSilenced( true );
 				$this->setPassword( $password );
 				$this->saveSettings();
+				Profiler::instance()->getTransactionProfiler()->setSilenced( false );
 			}
+
 			return "ok";
 		} else {
 			wfDebugLog( 'CentralAuth',
