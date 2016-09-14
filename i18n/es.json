@@ -48,7 +48,8 @@
 			"Chris TR",
 			"Matiia",
 			"Indiralena",
-			"Rubentl134"
+			"Rubentl134",
+			"Dgstranz"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -562,6 +563,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "Suma MD5 opcional del contenido <username>:<hidden>:<locked> esperado, para evitar conflictos de edición. Define 1 en <locked> para bloquear o 0 para desbloquear.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloquear la cuenta global de [[User:Example]] por el motivo: \"Spam\".",
 	"apihelp-setglobalaccountstatus-example-2": "Desbloquear y eliminar la cuenta global de [[User:Example]] por el motivo: \"Yo puedo\".",
+	"apihelp-main-param-centralauthtoken": "Cuando accedas a la API mediante una petición AJAX entre dominios (CORS), utiliza esto para autenticarte como el usuario SUL actual. Utiliza <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> en este wiki para obtener el token antes de realizar la petición CORS. Cada token solo se puede utilizar una vez, y expira al cabo de 10 segundos. Esto debería incluirse en cualquier petición pre-vuelo, y por tanto debería incluirse en la URI de la petición (y no en el cuerpo del POST).",
 	"centralauth-log-gblrename-oldname": "Nombre de usuario anterior:",
 	"centralauth-contribs-locked": "Esta cuenta está bloqueada globalmente.\nVéase [[Special:CentralAuth/$1|detalles de cuenta global]] para más información.",
 	"centralauth-contribs-locked-log": "Esta cuenta está bloqueada globalmente.\nComo referencia, a continuación se muestra la última entrada del registro de bloqueos:",
