@@ -117,5 +117,10 @@
 	"centralauth-editset-success": "کامیابی سے وکی سیٹ تبدیل کر دیا.",
 	"centralauth-editset-success-delete": "کامیابی سے حذف وکی سیٹ کر ۔",
 	"centralauth-editset-return": "اہم نقطہ نظر کے لئے پر واپس",
+	"right-centralauth-unmerge": "عالمی کھاتے کی علاحدگی",
+	"right-centralauth-lock": "عالمی کھاتے کو مقفل کرنا اور کھولنا",
+	"right-centralauth-oversight": "عالمی کھاتے کی پوشیدگی",
+	"right-centralauth-merge": "اپنے صارف کھاتوں کا انضمام",
+	"right-centralauth-rename": "عالمی کھاتوں کے ناموں کی تبدیلی",
 	"log-action-filter-gblrights-usergroups": "عالمی صارف حقوق تبدیل"
 }

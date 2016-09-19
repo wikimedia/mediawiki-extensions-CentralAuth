@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kazu89"
+			"Kazu89",
+			"Terfili"
 		]
 	},
+	"centralauth-admin-blocklog": "protocol da bloccadas",
 	"centralauth-log-name": "Protocol da contos d'utilisaders globals",
 	"centralauth-rightslog-name": "Protocol dals dretgs globals"
 }
