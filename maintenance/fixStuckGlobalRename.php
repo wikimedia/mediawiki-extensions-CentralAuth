@@ -32,7 +32,7 @@ class FixStuckGlobalRename extends Maintenance {
 			$this->error( "{$ca->getName()} does not have a rename in progress on this wiki.", 1 );
 		}
 
-		$dbr = wfGetDB( DB_SLAVE, [], $this->getOption( 'logwiki' ) );
+		$dbr = wfGetDB( DB_REPLICA, [], $this->getOption( 'logwiki' ) );
 		$queryData = DatabaseLogEntry::getSelectQueryData();
 		$row = $dbr->selectRow(
 			$queryData['tables'],

@@ -2080,7 +2080,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	function importLocalNames() {
 		$rows = [];
 		foreach ( self::getWikiList() as $wikiID ) {
-			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_SLAVE, array(), $wikiID );
+			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_REPLICA, array(), $wikiID );
 			$id = $dbr->selectField(
 				"`$wikiID`.`user`",
 				'user_id',
@@ -2334,7 +2334,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	protected function localUserData( $wikiID ) {
 		$lb = wfGetLB( $wikiID );
-		$db = $lb->getConnection( DB_SLAVE, array(), $wikiID );
+		$db = $lb->getConnection( DB_REPLICA, array(), $wikiID );
 		$fields = array(
 				'user_id',
 				'user_email',

@@ -321,7 +321,7 @@ class GlobalRenameRequest {
 	 * @return stdClass|bool Row as object or false if not found
 	 */
 	protected static function fetchRowFromDB( array $where ) {
-		return self::getDB( DB_SLAVE )->selectRow(
+		return self::getDB( DB_REPLICA )->selectRow(
 			'renameuser_queue',
 			array(
 				'id'        => 'rq_id',
@@ -368,7 +368,7 @@ class GlobalRenameRequest {
 	/**
 	 * Get a DatabaseBase object for the CentralAuth db
 	 *
-	 * @param int $type DB_SLAVE or DB_MASTER
+	 * @param int $type DB_REPLICA or DB_MASTER
 	 * @return DatabaseBase
 	 */
 	protected static function getDB( $type ) {
@@ -386,7 +386,7 @@ class GlobalRenameRequest {
 	 * @return bool
 	 */
 	public static function nameHasPendingRequest( $newname ) {
-		$dbw = self::getDB( DB_SLAVE );
+		$dbw = self::getDB( DB_REPLICA );
 		$res = $dbw->selectField(
 			'renameuser_queue',
 			'rq_id',

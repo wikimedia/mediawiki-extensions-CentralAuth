@@ -629,7 +629,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
 		$lb = wfGetLB( $wiki );
-		$remoteDB = $lb->getConnection( DB_SLAVE, array(), $wiki );
+		$remoteDB = $lb->getConnection( DB_REPLICA, array(), $wiki );
 		$row = $remoteDB->selectRow(
 			'user',
 			array( 'user_email', 'user_name', 'user_real_name' ),
@@ -777,7 +777,7 @@ class RenameQueueTablePager extends TablePager {
 				// User requested closed status - either approved or rejected
 				$conds['rq_status'] = $status;
 			} else {
-				$dbr = wfGetDB( DB_SLAVE );
+				$dbr = wfGetDB( DB_REPLICA );
 				// All closed requests
 				$conds[] = 'rq_status <> ' . $dbr->addQuotes( GlobalRenameRequest::PENDING );
 			}

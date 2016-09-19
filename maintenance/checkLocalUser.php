@@ -78,7 +78,7 @@ class CheckLocalUser extends Maintenance {
 				continue;
 			}
 
-			$localdb = wfGetDB( DB_SLAVE , array(), $wiki );
+			$localdb = wfGetDB( DB_REPLICA , array(), $wiki );
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {

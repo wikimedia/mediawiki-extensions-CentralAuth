@@ -116,7 +116,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$fromTitle = $oldUser->getUserPage();
 		$toTitle = Title::makeTitleSafe( NS_USER, $to );
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$rows = $dbr->select(
 			'page',

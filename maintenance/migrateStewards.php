@@ -9,7 +9,7 @@ require_once( "$IP/maintenance/commandLine.inc" );
 echo "Populating global groups table with stewards...\n";
 
 // Fetch local stewards
-$dbl = wfGetDB( DB_SLAVE );	// Get local database
+$dbl = wfGetDB( DB_REPLICA );	// Get local database
 $result = $dbl->select(
 	array( 'user', 'user_groups' ),
 	array( 'user_name' ),

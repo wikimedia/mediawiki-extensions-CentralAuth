@@ -66,7 +66,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 			return;
 		}
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			array( 'user', 'ipblocks' ),
 			User::selectFields(),

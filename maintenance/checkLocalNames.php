@@ -66,7 +66,7 @@ class CheckLocalNames extends Maintenance {
 
 		// iterate through the wikis
 		foreach( $wikis as $wiki ) {
-			$localdb = wfGetDB( DB_SLAVE , array(), $wiki );
+			$localdb = wfGetDB( DB_REPLICA , array(), $wiki );
 			$lastUsername = "";
 
 			$this->output( "Checking localnames for $wiki ...\n" );

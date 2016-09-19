@@ -62,7 +62,7 @@ class CentralAuthUtils {
 		global $wgCentralAuthDatabase;
 
 		return wfGetLB( $wgCentralAuthDatabase )->getConnection(
-			DB_SLAVE, 'centralauth', $wgCentralAuthDatabase );
+			DB_REPLICA, 'centralauth', $wgCentralAuthDatabase );
 	}
 
 	/**

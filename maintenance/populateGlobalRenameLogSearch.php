@@ -16,7 +16,7 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 	}
 
 	public function execute() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$rows = $dbr->select(
 			array( 'logging', 'log_search' ),
 			array( 'log_id', 'log_params' ),

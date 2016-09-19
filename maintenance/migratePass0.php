@@ -15,7 +15,7 @@ require_once( "$IP/maintenance/commandLine.inc" );
  */
 function migratePassZero() {
 	global $wgDBname;
-	$dbr = wfGetDB( DB_SLAVE );
+	$dbr = wfGetDB( DB_REPLICA );
 	$chunkSize = 1000;
 
 	$start = microtime( true );
@@ -73,7 +73,7 @@ function getEditCount( $userId ) {
  * @return int
  */
 function countEdits( $userId, $table, $field ) {
-	$dbr = wfGetDB( DB_SLAVE );
+	$dbr = wfGetDB( DB_REPLICA );
 	$count = $dbr->selectField( $table, 'COUNT(*)',
 		array( $field => $userId ),
 		__METHOD__ );

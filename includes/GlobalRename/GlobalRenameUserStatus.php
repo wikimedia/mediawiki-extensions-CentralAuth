@@ -28,11 +28,11 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	/**
 	 * Get a DatabaseBase object for the CentralAuth db
 	 *
-	 * @param int $type DB_SLAVE or DB_MASTER
+	 * @param int $type DB_REPLICA or DB_MASTER
 	 *
 	 * @return DatabaseBase
 	 */
-	protected function getDB( $type = DB_SLAVE ) {
+	protected function getDB( $type = DB_REPLICA ) {
 		if ( $type === DB_MASTER ) {
 			return CentralAuthUtils::getCentralDB();
 		} else {
@@ -67,7 +67,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return array (oldname, newname)
 	 */
 	public function getNames( $wiki = null, $useMaster = null ) {
-		$db = $this->getDB( $useMaster === 'master' ? DB_MASTER : DB_SLAVE );
+		$db = $this->getDB( $useMaster === 'master' ? DB_MASTER : DB_REPLICA );
 
 		$where = array( $this->getNameWhereClause( $db ) );
 
