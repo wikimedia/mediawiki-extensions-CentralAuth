@@ -40,16 +40,31 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 		$wgCentralAuthDatabase = false; // use the current wiki db
 
 		$db = wfGetDB( DB_MASTER );
+		fprintf( STDERR, "Setting up class " . static::class . " with prefix '" . $db->tablePrefix() . "'\n" );
+		$tables = [];
+		$res = $db->query( "SHOW TABLES", __METHOD__ );
+		while ( $row = $res->fetchRow() ) {
+			$row = array_values( $row );
+			$tables[] = $row[0];
+		}
+		fprintf( STDERR, "  Tables: " . join(' ', $tables) . "\n" );
 		if ( $db->tablePrefix() !== MediaWikiTestCase::DB_PREFIX ) {
+			fprintf( STDERR, "Table prefix is " . $db->tablePrefix() . " !== " . MediaWikiTestCase::DB_PREFIX . "\n" );
 			$originalPrefix = $db->tablePrefix();
 			$db->tablePrefix( MediaWikiTestCase::DB_PREFIX );
 			if ( !$db->tableExists( 'globaluser' ) ) {
+				fprintf( STDERR, "Creating tables!\n" );
 				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
+			} else {
+				fprintf( STDERR, "Tables already exist!\n" );
 			}
 			$db->tablePrefix( $originalPrefix );
 		} else {
 			if ( !$db->tableExists( 'globaluser' ) ) {
+				fprintf( STDERR, "Creating tables!\n" );
 				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
+			} else {
+				fprintf( STDERR, "Tables already exist!\n" );
 			}
 		}
 	}
@@ -57,9 +72,17 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 	public static function tearDownAfterClass() {
 		global $wgCentralAuthDatabase;
 		$db = wfGetDB( DB_MASTER );
+		fprintf( STDERR, "Tearing down class " . static::class . " with prefix '" . $db->tablePrefix() . "'\n" );
 		foreach ( self::$centralauthTables as $table ) {
 			$db->dropTable( $table );
 		}
+		$tables = [];
+		$res = $db->query( "SHOW TABLES", __METHOD__ );
+		while ( $row = $res->fetchRow() ) {
+			$row = array_values( $row );
+			$tables[] = $row[0];
+		}
+		fprintf( STDERR, "  Tables: " . join(' ', $tables) . "\n" );
 		if ( !is_null( self::$centralAuthDatabase ) ) {
 			$wgCentralAuthDatabase = self::$centralAuthDatabase;
 		}
