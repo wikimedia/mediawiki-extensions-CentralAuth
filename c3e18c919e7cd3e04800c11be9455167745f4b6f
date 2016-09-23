@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_c8fba075",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-09-23T21:58:18Z",
+      "side": 1,
+      "message": "*nit* \"string\" should be lowercase",
+      "revId": "c3e18c919e7cd3e04800c11be9455167745f4b6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e82f318_a804ac81",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-09-23T21:58:18Z",
+      "side": 1,
+      "message": "@return int|null Local user ID on wiki. Null if $wikiId is invalid (which should only happen in unit tests).",
+      "revId": "c3e18c919e7cd3e04800c11be9455167745f4b6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e82f318_a833cc5d",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-09-23T21:58:18Z",
+      "side": 1,
+      "message": "You could add a check to see if MW_PHPUNIT_TEST is defined here and if not raise an exception. That might make this soft failure mode a bit safer in production environments.",
+      "revId": "c3e18c919e7cd3e04800c11be9455167745f4b6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
