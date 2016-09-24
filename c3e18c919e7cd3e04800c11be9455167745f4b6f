@@ -50,6 +50,24 @@
       "revId": "c3e18c919e7cd3e04800c11be9455167745f4b6f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e82f318_a3a92d8f",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-09-24T00:39:33Z",
+      "side": 1,
+      "message": "If for some reason the $wikiId wasn\u0027t valid in production, it\u0027s probably still better for us to return null than to throw a DBConnectionError. Null is allowed by the localuser schema and this would basically match the previous behavior (where you can create attachments to bogus wikis). The only down-side is that you would need to check for null in any code that was using the local ID. Thoughts?",
+      "parentUuid": "0e82f318_a833cc5d",
+      "revId": "c3e18c919e7cd3e04800c11be9455167745f4b6f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
