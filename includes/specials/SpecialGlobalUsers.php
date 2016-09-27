@@ -254,7 +254,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		foreach ( $this->globalIDGroups[$id] as $group ) {
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
-				$rights[] = Html::element( 'span',
+				$rights[] = Html::rawElement( 'span',
 					array( 'class' => 'groupnotappliedhere' ),
 					User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) )
 				);

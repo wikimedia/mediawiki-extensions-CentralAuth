@@ -60,7 +60,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$subpage = $this->getRequest()->getVal( 'wpGroup' );
 		}
 
-		if ( $subpage != '' && $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
+		if (
+			$subpage != ''
+			&& $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) )
+			&& $this->getRequest()->wasPosted()
+		) {
 			$this->doSubmit( $subpage );
 		} elseif ( $subpage != '' ) {
 			$this->buildGroupView( $subpage );
@@ -232,7 +236,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $editable ) {
 			$fields['centralauth-editgroup-name'] = Xml::input( 'wpGlobalGroupName', 50, $group );
 		} else {
-			$fields['centralauth-editgroup-name'] = $group;
+			$fields['centralauth-editgroup-name'] = htmlspecialchars( $group );
 		}
 
 		if( $this->getUser()->isAllowed( 'editinterface' ) ) {
@@ -240,8 +244,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-display'] = $this->msg( 'centralauth-editgroup-display-edit', $group, User::getGroupName( $group ) )->parse();
 			$fields['centralauth-editgroup-member'] = $this->msg( 'centralauth-editgroup-member-edit', $group, User::getGroupMember( $group ) )->parse();
 		} else {
-			$fields['centralauth-editgroup-display'] = User::getGroupName( $group );
-			$fields['centralauth-editgroup-member'] = User::getGroupMember( $group );
+			$fields['centralauth-editgroup-display'] = htmlspecialchars( User::getGroupName( $group ) );
+			$fields['centralauth-editgroup-member'] = htmlspecialchars( User::getGroupMember( $group ) );
 		}
 		$fields['centralauth-editgroup-members'] = $this->msg( 'centralauth-editgroup-members-link', $group, User::getGroupMember( $group ) )->parse();
 		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector( $group );
@@ -279,7 +283,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 					htmlspecialchars( $set->getName() )
 				);
 			} else {
-				return $this->msg( 'centralauth-editgroup-nowikiset' );
+				return $this->msg( 'centralauth-editgroup-nowikiset' )->parse();
 			}
 		}
 
@@ -374,7 +378,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param $group string
 	 */
 	function doSubmit( $group ) {
-		// Paranoia -- the edit token shouldn't match anyway
+		// It is important to check userCanEdit, as otherwise an
+		// unauthorized user could manually construct a POST request.
 		if ( !$this->userCanEdit( $this->getUser() ) ) {
 			return;
 		}
