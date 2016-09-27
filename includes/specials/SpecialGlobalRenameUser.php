@@ -187,7 +187,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
 					return Status::newFatal(
 						$this->msg( 'centralauth-rename-titleblacklist-match' )
-							->rawParams( $titleBlacklist->getRegex() )
+							->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )
 					);
 				}
 		}
