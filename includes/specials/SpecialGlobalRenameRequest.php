@@ -233,7 +233,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 			return true;
 		}
 		$check = GlobalRenameRequest::isNameAvailable( $value );
-		return $check->isGood() ? true : (string) $check->getMessage();
+		return $check->isGood() ? true : $check->getMessage()->parse();
 	}
 
 	/**
@@ -245,9 +245,9 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 */
 	public function validateEmail ( $value, $alldata, HTMLForm $form ) {
 		if ( $alldata['email'] !== $alldata['email2'] ) {
-			return $this->msg( 'globalrenamerequest-email-mismatch' )->text();
+			return $this->msg( 'globalrenamerequest-email-mismatch' )->parse();
 		} elseif ( !Sanitizer::validateEmail( $alldata['email'] ) ) {
-			return $this->msg( 'globalrenamerequest-email-invalid' )->text();
+			return $this->msg( 'globalrenamerequest-email-invalid' )->parse();
 		}
 		return true;
 	}

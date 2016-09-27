@@ -141,28 +141,28 @@ class SpecialMultiLock extends SpecialPage {
 		$form = '';
 		$radioLocked =
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-lock-nochange' )->parse(),
+				$this->msg( 'centralauth-admin-action-lock-nochange' )->text(),
 				'wpActionLock',
 				'nochange',
 				'mw-centralauth-status-locked-no',
 				true ) .
 			'<br />' .
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-lock-unlock' )->parse(),
+				$this->msg( 'centralauth-admin-action-lock-unlock' )->text(),
 				'wpActionLock',
 				'unlock',
 				'centralauth-admin-action-lock-unlock',
 				false ) .
 			'<br />' .
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-lock-lock' )->parse(),
+				$this->msg( 'centralauth-admin-action-lock-lock' )->text(),
 				'wpActionLock',
 				'lock',
 				'centralauth-admin-action-lock-lock',
 				false );
 		$radioHidden =
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-nochange' )->parse(),
+				$this->msg( 'centralauth-admin-action-hide-nochange' )->text(),
 				'wpActionHide',
 				'nochange',
 				'mw-centralauth-status-hidden-nochange',
@@ -170,21 +170,21 @@ class SpecialMultiLock extends SpecialPage {
 			'<br />';
 		if ( $this->mCanOversight ) {
 			$radioHidden .= Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-none' )->parse(),
+				$this->msg( 'centralauth-admin-action-hide-none' )->text(),
 				'wpActionHide',
 				CentralAuthUser::HIDDEN_NONE,
 				'mw-centralauth-status-hidden-no',
 				false ) .
 			'<br />' .
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-lists' )->parse(),
+				$this->msg( 'centralauth-admin-action-hide-lists' )->text(),
 				'wpActionHide',
 				CentralAuthUser::HIDDEN_LISTS,
 				'mw-centralauth-status-hidden-list',
 				false ) .
 			'<br />' .
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-oversight' )->parse(),
+				$this->msg( 'centralauth-admin-action-hide-oversight' )->text(),
 				'wpActionHide',
 				CentralAuthUser::HIDDEN_OVERSIGHT,
 				'mw-centralauth-status-hidden-oversight',
@@ -198,7 +198,7 @@ class SpecialMultiLock extends SpecialPage {
 			$this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text()
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
-		$botField = Xml::check( 'markasbot' ) . $this->msg( 'centralauth-admin-multi-botcheck' );
+		$botField = Xml::check( 'markasbot' ) . $this->msg( 'centralauth-admin-multi-botcheck' )->parse();
 
 		$form .= Xml::buildForm(
 			array(
@@ -333,12 +333,12 @@ class SpecialMultiLock extends SpecialPage {
 		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
 		$accountAge = time() - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 		$guRegister = $sca->prettyTimespan( $accountAge );
-		$guLocked = $this->msg('centralauth-admin-status-locked-no')->escaped();
+		$guLocked = $this->msg('centralauth-admin-status-locked-no')->text();
 		if ( $globalUser->isLocked() ) {
-			$guLocked = $this->msg('centralauth-admin-status-locked-yes')->escaped();
+			$guLocked = $this->msg('centralauth-admin-status-locked-yes')->text();
 		}
-		$guEditCount = htmlspecialchars( $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() ) );
-		$guAttachedLocalAccounts = htmlspecialchars( $this->getLanguage()->formatNum( count( $globalUser->listAttached() ) ) );
+		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
+		$guAttachedLocalAccounts = $this->getLanguage()->formatNum( count( $globalUser->listAttached() ) );
 		$rowHtml .= Html::rawElement( 'td', array(),
 			Html::input(
 				'wpActionTarget['.$guName.']',

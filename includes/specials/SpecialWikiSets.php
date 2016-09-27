@@ -28,13 +28,16 @@ class SpecialWikiSets extends SpecialPage {
 
 	function execute( $subpage ) {
 		$this->mCanEdit = $this->getUser()->isAllowed( 'globalgrouppermissions' );
+		$req = $this->getRequest();
+		$tokenOk = $req->wasPosted()
+			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) );
 
 		$this->setHeaders();
 
 		if ( strpos( $subpage, 'delete/' ) === 0 && $this->mCanEdit ) {
 			$subpage = substr( $subpage, 7 );	// Remove delete/ part
 			if ( is_numeric( $subpage ) ) {
-				if ( $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
+				if ( $tokenOk ) {
 					$this->doDelete( $subpage );
 				} else {
 					$this->buildDeleteView( $subpage );
@@ -56,7 +59,7 @@ class SpecialWikiSets extends SpecialPage {
 				}
 			}
 
-			if ( ( $subpage || $newPage ) && $this->mCanEdit && $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
+			if ( ( $subpage || $newPage ) && $this->mCanEdit && $tokenOk ) {
 				$this->doSubmit( $subpage );
 			} elseif ( ( $subpage || $newPage ) && is_numeric( $subpage ) ) {
 				$this->buildSetView( $subpage );
@@ -67,12 +70,12 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param string $msg
+	 * @param string $msg Output directly as HTML. Caller must escape.
 	 */
 	function buildMainView( $msg = '' ) {
 		// Give grep a chance to find the usages: centralauth-editset-legend-rw, centralauth-editset-legend-ro
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
-		$legend = $this->msg( "centralauth-editset-legend-{$msgPostfix}" )->text();
+		$legend = $this->msg( "centralauth-editset-legend-{$msgPostfix}" )->escaped();
 		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend>" );
 		if ( $msg )
 			$this->getOutput()->addHTML( $msg );
@@ -100,12 +103,12 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $subpage
-	 * @param $error bool
-	 * @param $name
-	 * @param $type
-	 * @param $wikis
-	 * @param $reason
+	 * @param $subpage integer ID of WikiSet
+	 * @param $error bool|string False or raw html to output as error
+	 * @param $name String|null (Optional) Name of WikiSet
+	 * @param $type String|null WikiSet::OPTIN or WikiSet::OPTOUT
+	 * @param $wikis Array|null
+	 * @param $reason String
 	 */
 	function buildSetView( $subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null ) {
 		global $wgLocalDatabases;
@@ -168,7 +171,12 @@ class SpecialWikiSets extends SpecialPage {
 			if ( $error ) {
 				$this->getOutput()->addHTML( "<strong class='error'>{$error}</strong>" );
 			}
-			$this->getOutput()->addHTML( "<form action='{$url}' method='post'>" );
+			$this->getOutput()->addHTML(
+				Html::openElement(
+					'form',
+					[ 'action' => $url, 'method' => 'POST' ]
+				)
+			);
 
 			$form = array();
 			$form['centralauth-editset-name'] = Xml::input( 'wpName', false, $name );
@@ -190,7 +198,7 @@ class SpecialWikiSets extends SpecialPage {
 			$form = array();
 			$form['centralauth-editset-name'] = htmlspecialchars( $name );
 			$form['centralauth-editset-usage'] = $usage;
-			$form['centralauth-editset-type'] = $this->msg( "centralauth-editset-{$type}" )->text();
+			$form['centralauth-editset-type'] = $this->msg( "centralauth-editset-{$type}" )->escaped();
 			$form['centralauth-editset-wikis'] = self::buildTableByList( $sortedWikis, 3, array( 'width' => '100%' ) );
 			$form['centralauth-editset-restwikis'] = self::buildTableByList( $restWikis, 3, array( 'width' => '100%' ) );
 
@@ -275,7 +283,7 @@ class SpecialWikiSets extends SpecialPage {
 		$url = htmlspecialchars( SpecialPage::getTitleFor( 'WikiSets', "delete/{$subpage}" )->getLocalUrl() );
 		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 
-		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend><form action='{$url}' method='post'>" );
+		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend><form action=\"{$url}\" method='post'>" );
 		$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit-delete' ) );
 		$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
 	}
