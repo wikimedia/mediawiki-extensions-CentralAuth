@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_80adf182",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-09-27T17:07:14Z",
+      "side": 1,
+      "message": "-\u003eselectField() returns false if the user isn\u0027t found, which you\u0027d want to turn to null here.",
+      "revId": "55ec8d0f1100626dd70d53791cf5031a046ac4df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
