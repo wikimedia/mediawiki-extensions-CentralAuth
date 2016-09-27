@@ -431,7 +431,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
 				$form->addHeaderText(
 					$this->msg( 'globalrenamequeue-request-titleblacklist' )
-						->rawParams( $titleBlacklist->getRegex() )->parseAsBlock()
+						->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )->parseAsBlock()
 				);
 			}
 		}

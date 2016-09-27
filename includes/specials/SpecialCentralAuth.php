@@ -323,7 +323,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$reg = $globalUser->getRegistration();
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = array(
-			'username' => $globalUser->getName(),
+			'username' => htmlspecialchars( $globalUser->getName() ),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
 			'attached' => htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) ),

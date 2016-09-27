@@ -133,7 +133,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 				}
 				break;
 			case 'user_editcount':
-				$formatted = $this->getLanguage()->formatNum( $user->getEditCount() );
+				$formatted = htmlspecialchars( $this->getLanguage()->formatNum( $user->getEditCount() ) );
 				break;
 		}
 		return $formatted;
@@ -162,8 +162,8 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		if ( $this->mFieldNames === null ) {
 			$this->mFieldNames = array(
 				'utr_name' => $this->msg( 'centralauth-uwbr-name' )->text(),
-				'user_registration' => $this->msg( 'centralauth-uwbr-registration' ),
-				'user_editcount' => $this->msg( 'centralauth-uwbr-editcount' ),
+				'user_registration' => $this->msg( 'centralauth-uwbr-registration' )->text(),
+				'user_editcount' => $this->msg( 'centralauth-uwbr-editcount' )->text(),
 			);
 		}
 		return $this->mFieldNames;

@@ -130,13 +130,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	private function initSession() {
 		$this->mSessionToken = MWCryptRand::generateHex( 32 );
-
-		// Generate a random binary string
-		$key = '';
-		for ( $i = 0; $i < 128; $i++ ) {
-			$key .= chr( mt_rand( 0, 255 ) );
-		}
-		$this->mSessionKey = $key;
+		$this->mSessionKey = MWCryptRand::generate( 128, true );
 	}
 
 	/**
@@ -368,7 +362,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->getOutput()->addHTML(
 			$this->passwordForm(
 				'dryrun',
-				$this->msg( 'centralauth-merge-step1-title' )->escaped(),
+				$this->msg( 'centralauth-merge-step1-title' )->text(),
 				$this->msg( 'centralauth-merge-step1-detail' )->escaped(),
 				$this->msg( 'centralauth-merge-step1-submit' )->text() )
 			);
@@ -427,7 +421,7 @@ class SpecialMergeAccount extends SpecialPage {
 			// Try the password form!
 			$this->getOutput()->addHTML( $this->passwordForm(
 				'cleanup',
-				$this->msg( 'centralauth-finish-title' )->escaped(),
+				$this->msg( 'centralauth-finish-title' )->text(),
 				$this->msg( 'centralauth-finish-text' )->parseAsBlock(),
 				$this->msg( 'centralauth-finish-login' )->text() ) );
 		}
@@ -499,7 +493,7 @@ class SpecialMergeAccount extends SpecialPage {
 			// centralauth-merge-method-mail, centralauth-merge-method-password,
 			// centralauth-merge-method-admin, centralauth-merge-method-new,
 			// centralauth-merge-method-login,
-			$return .= $this->msg( 'word-separator' )->text();
+			$return .= $this->msg( 'word-separator' )->escaped();
 			$return .= $this->msg( 'parentheses', $this->msg( 'centralauth-merge-method-'.$method )->text() )->escaped();
 		}
 		return $return;
@@ -526,10 +520,10 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $action
-	 * @param $title
-	 * @param $text
-	 * @return string
+	 * @param $action string Value for wpMergeAction hidden form field
+	 * @param $title string Header for form (Not html escaped)
+	 * @param $text string Raw html contents of form
+	 * @return string HTML of form
 	 */
 	private function actionForm( $action, $title, $text ) {
 		return
@@ -552,11 +546,11 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $action
-	 * @param $title
-	 * @param $text
-	 * @param $submit
-	 * @return string
+	 * @param $action string wpMergeAction form value
+	 * @param $title string Header of form (Not html escaped)
+	 * @param $text string Raw html contents of form
+	 * @param $submit string Text of submit button (Not html escaped)
+	 * @return string HTML of form.
 	 */
 	private function passwordForm( $action, $title, $text, $submit ) {
 		$table = Html::rawElement( 'table', array(),
@@ -589,7 +583,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function step1PasswordForm() {
 		return $this->passwordForm(
 			'dryrun',
-			$this->msg( 'centralauth-merge-step1-title' )->escaped(),
+			$this->msg( 'centralauth-merge-step1-title' )->text(),
 			$this->msg( 'centralauth-merge-step1-detail' )->escaped(),
 			$this->msg( 'centralauth-merge-step1-submit' )->text() );
 	}
@@ -601,7 +595,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function step2PasswordForm( $unattached ) {
 		return $this->passwordForm(
 			'dryrun',
-			$this->msg( 'centralauth-merge-step2-title' )->escaped(),
+			$this->msg( 'centralauth-merge-step2-title' )->text(),
 			$this->msg( 'centralauth-merge-step2-detail', $this->getUser()->getName() )->parseAsBlock() .
 				$this->listUnattached( $unattached ),
 			$this->msg( 'centralauth-merge-step2-submit' )->text() );
@@ -648,7 +642,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function attachActionForm() {
 		return $this->passwordForm(
 			'attach',
-			$this->msg( 'centralauth-attach-title' )->escaped(),
+			$this->msg( 'centralauth-attach-title' )->text(),
 			$this->msg( 'centralauth-attach-text' )->escaped(),
 			$this->msg( 'centralauth-attach-submit' )->text() );
 	}
