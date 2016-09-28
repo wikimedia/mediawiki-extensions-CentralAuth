@@ -30,7 +30,8 @@
 			"Краснорядцева Елена",
 			"Metastasis",
 			"Ядерный Трамвай",
-			"Mailman"
+			"Mailman",
+			"Gamliel Fishkin"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -158,6 +159,7 @@
 	"centralauth-admin-reason": "Причина:",
 	"centralauth-admin-reason-other": "Другая/дополнительная причина:",
 	"centralauth-admin-reason-other-select": "Другая причина:",
+	"centralauth-admin-rename-in-progress": "Эта учётная запись сейчас переименовывается. Вы можете [[Special:GlobalRenameProgress/$1|видеть прогресс]] переименования. Журнал глобального переименования {{GENDER:$1|этого участника|этой участницы}} представлен ниже.",
 	"centralauth-admin-unhide-nonexistent": "Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.",
 	"centralauth-admin-status": "Установить глобальный статус учётной записи",
 	"centralauth-admin-status-intro": "Вы можете использовать эту форму для изменения статуса этой глобальной учётной записи",
