@@ -100,7 +100,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			array(
 				'href' => $this->getPageTitle( self::PAGE_OPEN_QUEUE )->getFullURL(),
 				'class' => 'mw-ui-button' . (
-					( $page === self::PAGE_OPEN_QUEUE ) ? ' mw-ui-primary' : ''
+					( $page === self::PAGE_OPEN_QUEUE ) ? ' mw-ui-progressive' : ''
 				),
 			),
 			$this->msg( 'globalrenamequeue-nav-openqueue' )->text()
@@ -109,7 +109,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			array(
 				'href' => $this->getPageTitle( self::PAGE_CLOSED_QUEUE )->getFullURL(),
 				'class' => 'mw-ui-button' .
-					( ($page === self::PAGE_CLOSED_QUEUE) ? ' mw-ui-primary' : '' ),
+					( ($page === self::PAGE_CLOSED_QUEUE) ? ' mw-ui-progressive' : '' ),
 			),
 			$this->msg( 'globalrenamequeue-nav-closedqueue' )->text()
 		);
@@ -355,7 +355,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->msg( 'globalrenamequeue-request-approve-text' )->text(),
 			'mw-renamequeue-approve',
 			array(
-				'class' => 'mw-ui-constructive mw-ui-flush-right',
+				'class' => 'mw-ui-progressive mw-ui-flush-right',
 			)
 		);
 		$form->addButton( 'deny',
