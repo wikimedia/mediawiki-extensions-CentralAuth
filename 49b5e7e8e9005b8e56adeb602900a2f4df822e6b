@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_b45f9412",
+        "filename": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-09-28T15:16:51Z",
+      "side": 1,
+      "message": "There\u0027s no need to call CentralAuthUser::newFromId() for each iteration of the loop.",
+      "range": {
+        "startLine": 61,
+        "startChar": 14,
+        "endLine": 61,
+        "endChar": 50
+      },
+      "revId": "49b5e7e8e9005b8e56adeb602900a2f4df822e6b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
