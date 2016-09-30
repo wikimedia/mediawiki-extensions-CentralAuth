@@ -307,6 +307,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	protected function showError( /* varargs */ ) {
 		$args = func_get_args();
+		RequestContext::getMain()->getStats()->increment(
+			'centralauth.login_errors.' . $args[0] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' ); // JS only
 	}
