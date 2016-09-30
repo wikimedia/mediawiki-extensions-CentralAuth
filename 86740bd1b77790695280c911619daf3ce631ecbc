@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_7a397aca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-09-30T15:00:50Z",
+      "side": 1,
+      "message": "This commit summary does not (any more) represent what\u0027s actually going on in this change.",
+      "revId": "86740bd1b77790695280c911619daf3ce631ecbc",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
