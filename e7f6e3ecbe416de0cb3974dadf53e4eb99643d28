@@ -16,6 +16,24 @@
       "revId": "e7f6e3ecbe416de0cb3974dadf53e4eb99643d28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e82f318_5fff4831",
+        "filename": "includes/specials/SpecialCentralLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 531
+      },
+      "writtenOn": "2016-09-30T13:59:32Z",
+      "side": 1,
+      "message": "Sorry about that. I should\u0027ve noted that my patchset was/is untested. I also forgot that RequestContext is global, I guess? I\u0027m a bit surprised jenkins-bot didn\u0027t complain about the missing use statement. PS3 hopefully addresses everything!",
+      "parentUuid": "0e82f318_c48b6bc2",
+      "revId": "e7f6e3ecbe416de0cb3974dadf53e4eb99643d28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
