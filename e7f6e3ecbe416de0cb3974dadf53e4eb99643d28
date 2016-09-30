@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_c48b6bc2",
+        "filename": "includes/specials/SpecialCentralLogin.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-30T09:53:54Z",
+      "side": 1,
+      "message": "You need a `use MediaWiki\\MediaWikiServices;` at the top of the file",
+      "revId": "e7f6e3ecbe416de0cb3974dadf53e4eb99643d28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
