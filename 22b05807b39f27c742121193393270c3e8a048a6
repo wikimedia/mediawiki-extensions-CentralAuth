@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_c98b86c2",
+        "filename": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-09-30T00:44:46Z",
+      "side": 1,
+      "message": "Nitpick: Needs one less tab per https://www.mediawiki.org/wiki/Manual:Coding_conventions#General_style",
+      "revId": "22b05807b39f27c742121193393270c3e8a048a6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
