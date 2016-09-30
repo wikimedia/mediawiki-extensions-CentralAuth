@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e82f318_2407e71d",
+        "filename": "includes/specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-30T02:29:14Z",
+      "side": 1,
+      "message": "Use MediaWikiServices, RequestContext::getStats() is deprecated.",
+      "revId": "bca9ecf67c99f1d4e6d0f6e897aaf6de9006af47",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e82f318_440a1b25",
+        "filename": "includes/specials/SpecialCentralLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2016-09-30T02:29:14Z",
+      "side": 1,
+      "message": "Maybe a better name would be centralauth.centrallogin_errors?\n\nThere are other code paths where CA could have login errors, these are specific to CentralLogin",
+      "revId": "bca9ecf67c99f1d4e6d0f6e897aaf6de9006af47",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
