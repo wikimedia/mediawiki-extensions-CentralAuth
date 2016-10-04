@@ -1,0 +1,7 @@
+Code-Review+2: MarkTraceur <mholmquist@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 04 Oct 2016 18:26:53 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/309766
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
