@@ -36,13 +36,16 @@ abstract class LocalRenameJob extends Job {
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$factory->commitMasterChanges( $fnameTrxOwner );
 
-		if ( $status !== 'queued' && $status !== 'failed' ) {
-			LoggerFactory::getInstance( 'rename' )->info( 'skipping duplicate rename from {user}', [
-				'user' => $this->params['from'],
-				'to' => $this->params['to'],
-				'status' => $status,
-			] );
-			return true;
+		if ( empty( $this->params['ignorestatus'] ) ) {
+			if ( $status !== 'queued' && $status !== 'failed' ) {
+				LoggerFactory::getInstance( 'CentralAuthRename' )
+					->info( 'skipping duplicate rename from {user}', [
+						'user' => $this->params['from'],
+						'to' => $this->params['to'],
+						'status' => $status,
+					] );
+				return true;
+			}
 		}
 
 		if ( isset( $this->params['session'] ) ) {

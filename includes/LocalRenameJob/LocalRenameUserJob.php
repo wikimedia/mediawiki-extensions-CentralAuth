@@ -7,6 +7,24 @@ use \MediaWiki\MediaWikiServices;
  * This is intended to be run on each wiki individually
  */
 class LocalRenameUserJob extends LocalRenameJob {
+	/**
+	 * @param Title $title
+	 * @param array $params An associative array of options:
+	 *   from - old username
+	 *   to - new username
+	 *   force - try to do the rename even if the old username is invalid
+	 *   renamer - whom the renaming should be attributed in logs
+	 *   reason - reason to use in the rename log
+	 *   movepages - move user / user talk pages and their subpages
+	 *   suppressredirects - when moving pages, suppress redirects
+	 *   reattach - after rename, attach the local account. When used, should be set to
+	 *     [ wiki ID => [ 'attachedMethod' => method, 'attachedTimestamp' => timestamp ].
+	 *     See CentralAuthUser::queryAttached. (default: false)
+	 *   promotetoglobal - globalize the new user account (default: false)
+	 *   session - session data from RequestContext::exportSession, for checkuser data
+	 *   ignorestatus - ignore update status, run the job even if it seems like another job
+	 *     is already working on it
+	 */
 	public function __construct( $title, $params ) {
 		$this->command = 'LocalRenameUserJob';
 
