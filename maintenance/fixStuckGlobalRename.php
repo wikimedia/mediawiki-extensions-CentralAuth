@@ -16,6 +16,8 @@ class FixStuckGlobalRename extends Maintenance {
 		$this->addArg( 'oldname', 'Old name' );
 		$this->addArg( 'newname', 'New name' );
 		$this->addOption( 'logwiki', 'Wiki where the log entry exists', true, true );
+		$this->addOption( 'ignorestatus', 'Ignore rename status. Don\'t do this when the rename '
+			. 'jobs might still be running.' );
 		$this->addDescription( 'Unstuck global rename on a single wiki' );
 	}
 
@@ -75,6 +77,7 @@ class FixStuckGlobalRename extends Maintenance {
 			'movepages' => $movepages,
 			'suppressredirects' => $suppressredirects,
 			'reason' => $comment,
+			'ignorestatus' => $this->getOption( 'ignorestatus', false ),
 			// no way to recover localuser attachment details, faking it
 			'reattach' => [ wfWikiID() => [
 				'attachedMethod' => 'admin',
