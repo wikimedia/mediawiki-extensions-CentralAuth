@@ -126,7 +126,19 @@ abstract class LocalRenameJob extends Job {
 		$this->renameuserStatus->updateStatus( wfWikiID(), $status );
 	}
 
-	protected function scheduleNextWiki() {
+	/**
+	 * @param bool $status See Job::addTeardownCallback
+	 */
+	protected function scheduleNextWiki( $status = null ) {
+		if ( $status === false ) {
+			// This will lock the user out of their account until a sysadmin intervenes.
+			$this->updateStatus( 'failed' );
+			// Bail out just in case the error would affect all renames and continuing would
+			// just put all wikis of the user in failure state. Running the rename for this
+			// wiki again (e.g. with fixStuckGlobalRename.php) will resume the job chain.
+			return;
+		}
+
 		$job = new static( $this->getTitle(), $this->getParams() );
 		$nextWiki = null;
 		$statuses = $this->renameuserStatus->getStatuses( GlobalRenameUserStatus::READ_LATEST );
