@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e750308_66b14edc",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-06T22:14:08Z",
+      "side": 1,
+      "message": "Probably better to explicitly check for false, just in case there is a user with id 0 due to some cosmic accident.",
+      "revId": "7d64d41a1fe8567b5734ae920a706af55d118f9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e750308_a63fc61f",
+        "filename": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
+        "patchSetId": 18
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-06T22:14:08Z",
+      "side": 1,
+      "message": "Needs wiki ID.",
+      "revId": "7d64d41a1fe8567b5734ae920a706af55d118f9e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
