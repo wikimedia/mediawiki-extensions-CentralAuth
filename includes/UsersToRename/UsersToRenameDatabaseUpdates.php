@@ -16,11 +16,11 @@ class UsersToRenameDatabaseUpdates {
 	const RENAMED = 8;
 
 	/**
-	 * @var DatabaseBase
+	 * @var Database
 	 */
 	private $db;
 
-	public function __construct( DatabaseBase $db ) {
+	public function __construct( Database $db ) {
 		$this->db = $db;
 	}
 

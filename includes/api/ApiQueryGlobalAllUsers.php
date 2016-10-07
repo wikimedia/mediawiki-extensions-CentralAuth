@@ -33,7 +33,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 * Get the Query database connection (read-only)
 	 *
 	 * @see ApiQueryBase::getDB
-	 * @return DatabaseBase
+	 * @return Database
 	 */
 	protected function getDB() {
 		static $db = null ;

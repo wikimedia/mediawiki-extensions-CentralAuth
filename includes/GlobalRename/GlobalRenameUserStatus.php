@@ -26,11 +26,11 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	}
 
 	/**
-	 * Get a DatabaseBase object for the CentralAuth db
+	 * Get a Database object for the CentralAuth db
 	 *
 	 * @param int $type DB_REPLICA or DB_MASTER
 	 *
-	 * @return DatabaseBase
+	 * @return Database
 	 */
 	protected function getDB( $type = DB_REPLICA ) {
 		if ( $type === DB_MASTER ) {
@@ -43,11 +43,11 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	/**
 	 * Get the where clause to query rows by either old or new name
 	 *
-	 * @param DatabaseBase $db
+	 * @param Database $db
 	 *
 	 * @return string
 	 */
-	private function getNameWhereClause( DatabaseBase $db ) {
+	private function getNameWhereClause( Database $db ) {
 		return $db->makeList(
 			array( 'ru_oldname' => $this->name, 'ru_newname' => $this->name ),
 			LIST_OR

@@ -366,10 +366,10 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * Get a DatabaseBase object for the CentralAuth db
+	 * Get a Database object for the CentralAuth db
 	 *
 	 * @param int $type DB_REPLICA or DB_MASTER
-	 * @return DatabaseBase
+	 * @return Database
 	 */
 	protected static function getDB( $type ) {
 		if ( $type === DB_MASTER ) {

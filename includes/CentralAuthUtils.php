@@ -39,7 +39,7 @@ class CentralAuthUtils {
 	/**
 	 * Gets a master (read/write) database connection to the CentralAuth database
 	 *
-	 * @return DatabaseBase
+	 * @return Database
 	 * @throws CentralAuthReadOnlyError
 	 */
 	public static function getCentralDB() {
@@ -56,7 +56,7 @@ class CentralAuthUtils {
 	/**
 	 * Gets a slave (readonly) database connection to the CentralAuth database
 	 *
-	 * @return DatabaseBase
+	 * @return Database
 	 */
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;

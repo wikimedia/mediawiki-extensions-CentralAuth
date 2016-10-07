@@ -52,7 +52,7 @@ class ForceRenameUsers extends Maintenance {
 		}
 	}
 
-	protected function getCurrentRenameCount( DatabaseBase $dbw ) {
+	protected function getCurrentRenameCount( Database $dbw ) {
 		$row = $dbw->selectRow(
 			array( 'renameuser_status'),
 			array( 'COUNT(*) as count' ),
@@ -62,7 +62,7 @@ class ForceRenameUsers extends Maintenance {
 		return (int)$row->count;
 	}
 
-	protected function rename( $row, DatabaseBase $dbw ) {
+	protected function rename( $row, Database $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
 		$newNamePrefix = User::getCanonicalName(
@@ -128,10 +128,10 @@ class ForceRenameUsers extends Maintenance {
 
 	/**
 	 * @param string $wiki
-	 * @param DatabaseBase $dbw
+	 * @param Database $dbw
 	 * @return stdClass[]
 	 */
-	protected function findUsers( $wiki, DatabaseBase $dbw ) {
+	protected function findUsers( $wiki, Database $dbw ) {
 		$rowsToRename = array();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize );

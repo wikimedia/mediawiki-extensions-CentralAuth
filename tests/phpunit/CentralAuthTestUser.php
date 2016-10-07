@@ -138,9 +138,9 @@ class CentralAuthTestUser {
 
 	/**
 	 * Save the user into a centralauth database
-	 * @param DatabaseBase $db
+	 * @param Database $db
 	 */
-	public function save( DatabaseBase $db ) {
+	public function save( Database $db ) {
 		// Setup local wiki user
 		if ( $this->createLocal ) {
 			$user = User::newFromName( $this->username );
