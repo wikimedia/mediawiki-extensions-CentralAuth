@@ -242,7 +242,7 @@
 	"globalgroupmembership": "Liikmesus globaalsetes rühmades",
 	"globalgrouppermissions": "Globaalse rühma haldamine",
 	"centralauth-globalgroupperms-nogroups": "Globaalseid rühmi pole määratletud.",
-	"centralauth-newgroup-legend": "Loo uus rühm",
+	"centralauth-newgroup-legend": "Uue rühma loomine",
 	"centralauth-newgroup-intro": "Selle vormiga saad uuele rühmale õigused anda.\nPane tähele, et rühma pole olemas, kui sellele pole õiguseid antud.",
 	"centralauth-globalgroupperms-newgroupname": "Uue rühma nimi:",
 	"centralauth-globalgroupperms-creategroup-submit": "Määra õigused",
