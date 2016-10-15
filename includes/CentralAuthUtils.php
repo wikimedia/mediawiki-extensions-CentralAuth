@@ -266,7 +266,7 @@ class CentralAuthUtils {
 				Title::makeTitleSafe( NS_USER, $name ),
 				array( 'name' => $name, 'from' => $thisWiki, 'session' => $session )
 			);
-			JobQueueGroup::singleton( $wiki )->push( $job );
+			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
 		}
 	}
 }

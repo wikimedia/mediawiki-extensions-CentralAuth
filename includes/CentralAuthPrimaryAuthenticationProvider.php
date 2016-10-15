@@ -448,6 +448,10 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	public function finishAccountCreation( $user, $creator, AuthenticationResponse $response ) {
 		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		// Populate the table of local users with this name post-send (if not done already)
+		DeferredUpdates::addCallableUpdate( function () use ( $centralUser ) {
+			$centralUser->lazyImportLocalNames();
+		} );
 		// Do the attach in finishAccountCreation instead of begin because now the user has been added
 		// to database and local ID exists (which is needed in attach)
 		$centralUser->attach( wfWikiID(), 'new' );
