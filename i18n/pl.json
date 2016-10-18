@@ -484,6 +484,7 @@
 	"globalrenamequeue-email-body-rejected": "Wniosek o zmianę nazwy \"{{GENDER:$1|$1}}\" na \"{{GENDER:$1|$2}}\" został odrzucony.\n\nUwagi: $3",
 	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy.",
 	"sulrenamewarning-title": "Została zmieniona nazwa {{GENDER:$1|Twojego}} konta",
+	"apihelp-deleteglobalaccount-param-user": "Użytkownik do usunięcia.",
 	"apihelp-deleteglobalaccount-param-reason": "Powód usunięcie użytkownika.",
 	"apihelp-globaluserrights-param-reason": "Powód zmiany.",
 	"apihelp-query+globalallusers-param-dir": "Kierunek sortowania.",
