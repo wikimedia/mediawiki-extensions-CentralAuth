@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "cea0dbb8_1d646444",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "These were probably meant to be property declarations?\nAlso, characters are cheap :) Spelling out \"localWiki\" etc. makes the code easier to read.",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cea0dbb8_8a782cc1",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 4
@@ -19,6 +36,74 @@
     },
     {
       "key": {
+        "uuid": "cea0dbb8_1d4ea49b",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "You probably should filter out users who are in the process of being globally renamed, to avoid race conditions. They will be populated by the unattach/reattach anyway.",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_9d58748e",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "If you use makeList for OR, you could use it for AND as well.",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_7d55b051",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "Should be $row-\u003ename.\n(Or you could drop lName altogether and use caUser-\u003egetName() or $row-\u003ename to have less state.)",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_ddccbc3a",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "Again, you could just drop this. Does not seem to have any advantage over using $row-\u003ewiki directly.",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cea0dbb8_5d478c50",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 4
@@ -30,6 +115,40 @@
       "writtenOn": "2016-10-19T15:20:21Z",
       "side": 1,
       "message": "This seems rather inefficient, it\u0027s going to open connections to various local wikis in random orders. Either it\u0027ll wind up with lots of open connections, or there will be lots of reconnecting going on.\n\nIt might be better to follow the model of other maintenance scripts, such as checkLocalUser.php. The general outline would be like this:\n\n foreach ( $this-\u003egetAllWikis() as $dbname ) {\n     // open a local DB connection for the local wiki\n     $lb \u003d wfGetLB( $dbname );\n     $ldbr \u003d $lb-\u003egetConnection( DB_SLAVE, [], $dbname );\n\n     select batches of localuser rows on the wiki, joined with globaluser to get gu_id {\n         select corresponding local DB rows for those users (from $ldbr)\n         update the ones needing updating\n     }\n\n     // tell the LB we\u0027re done with the local connection\n     $lb-\u003ereuseConnection( $ldbr );\n }",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_dde39c9b",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "Variable names are wrong.",
+      "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_3df5e84c",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-19T17:54:26Z",
+      "side": 1,
+      "message": "You probably want to print some continuation information here - this\u0027ll be a long-running script and you don\u0027t want to start it from the beginning if it gets interrupted for some reason. Also, wait for slaves.",
       "revId": "5b914813de4b81593816ce37ac773c6ed59adfe3",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
