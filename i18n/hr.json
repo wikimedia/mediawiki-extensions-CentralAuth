@@ -255,6 +255,7 @@
 	"right-centralauth-merge": "Spajanje svojih računa",
 	"right-globalgrouppermissions": "Uređivanje globalnih skupina",
 	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja suradnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",
+	"log-description-gblrename": "Evidencija globalnih preimenovanja suradnika.",
 	"globalrenamerequest": "Zahtjev za globalnim preimenovanjem suradnika",
 	"globalrenamerequest-pretext": "Zahtjev za novim suradničkim imenom za sve projekte.\n\nSvi Vaši prethodni doprinosi biti će povezani s novim suradničkim imenom.\n\nNakon što ste zatražili novo suradničko ime, biti će poslana obavijest stewardima Wikimedije koji će izvršiti preimenovanje. Po završetku procesa, biti ćete obaviješteni e-poštom.",
 	"globalrenamerequest-username-label": "Trenutačno suradničko ime:",
@@ -264,5 +265,12 @@
 	"globalrenamerequest-submit-text": "Zatraži promjenu imena",
 	"globalrenamequeue-form-newname": "Zahtijevano suradničko ime:",
 	"centralauth-contribs-locked": "Ovaj je suradnički račun globalno zaključan.\nVidi [[Special:CentralAuth/$1|više informacija]].",
-	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:"
+	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:",
+	"log-action-filter-globalauth": "Vrsta promjene:",
+	"log-action-filter-globalauth-delete": "globalno brisanje računa",
+	"log-action-filter-globalauth-setstatus": "globalna promjena statusa računa",
+	"log-action-filter-gblrights": "Vrsta promjene:",
+	"log-action-filter-gblrights-usergroups": "globalna promjena suradničkih prava",
+	"log-action-filter-gblrights-groupprms": "globalna promjena suradničke grupe",
+	"log-action-filter-gblrights-setmodify": "promjena Wiki skupa"
 }
