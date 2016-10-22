@@ -27,5 +27,6 @@
 	"centralauth-merge-method-login": "creou mediante accesso",
 	"centralauth-finish-password": "Password:",
 	"centralauth-admin-blocklog": "registro di blocchi",
+	"centralauth-prefs-view": "Mostra e informaçioin globale insce l'utente",
 	"centralauth-rename-movelog": "Paggina mesciâ aotomaticamente durante a rinommina de l'utente \"$1\" a \"$2\""
 }
