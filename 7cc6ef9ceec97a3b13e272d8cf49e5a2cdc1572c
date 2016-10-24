@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "aea567c8_a841bf10",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1267
+      },
+      "writtenOn": "2016-10-24T15:51:13Z",
+      "side": 1,
+      "message": "Got it. Thank you for the detailed explanation!",
+      "parentUuid": "aea567c8_25071a21",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cea0dbb8_3ef26c04",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 6
