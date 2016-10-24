@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "aea567c8_a599ea73",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1267
+      },
+      "writtenOn": "2016-10-24T15:07:21Z",
+      "side": 1,
+      "message": "Hi Gergo, I\u0027m not clear about this part. I need to specify the JOIN condition, don\u0027t I?",
+      "parentUuid": "cea0dbb8_9e94d88e",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cea0dbb8_3ef26c04",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 6
