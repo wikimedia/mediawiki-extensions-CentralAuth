@@ -76,6 +76,24 @@
     },
     {
       "key": {
+        "uuid": "cea0dbb8_fe09a430",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-10-24T05:38:11Z",
+      "side": 1,
+      "message": "Since we\u0027re only going to run this once and it doesn\u0027t really matter how long it takes, I would favor keeping the code simpler and easier to follow rather than trying for maximum optimization, but that\u0027s just my opinion :)",
+      "parentUuid": "cea0dbb8_479faeb9",
+      "revId": "f2fe5a6d1b18404b630cb0c32aac2446ed2ac2fa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cea0dbb8_c79a9ebd",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 5
