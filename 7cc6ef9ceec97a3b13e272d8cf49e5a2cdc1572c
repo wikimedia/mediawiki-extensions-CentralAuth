@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "aea567c8_25071a21",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-10-24T15:40:37Z",
+      "side": 1,
+      "message": "For a simple inner join, there are two ways to do it.\n\n -\u003eselect(\n     [ \u0027table1\u0027, \u0027table2\u0027 ],\n     [ \u0027fields\u0027 ],\n     [ \u0027t1_id\u003dt2_id\u0027 ],\n     __METHOD__,\n     [],\n     []\n );\n\nresults in a query like\n\n SELECT fields FROM table1, table2 WHERE (t1_id\u003dt2_id);\n\nwhile\n\n -\u003eselect(\n     [ \u0027table1\u0027, \u0027table2\u0027 ],\n     [ \u0027fields\u0027 ],\n     [],\n     __METHOD__,\n     [],\n     [ \u0027table2\u0027 \u003d\u003e [ \u0027INNER JOIN\u0027, [ \u0027t1_id\u003dt2_id\u0027 ] ] ]\n );\n\nresults in\n\n SELECT fields FROM table1 INNER JOIN table2 ON (t1_id\u003dt2_id);\n\nThese two queries are equivalent. MediaWiki\u0027s Database class makes the first one easier to create, so that\u0027s what you\u0027ll see most often in existing code.\n\n\nIf you\u0027re mixing in other join types in the query (e.g. LEFT JOIN), though, sometimes you\u0027ll want to use the second method (INNER JOIN instead of comma-join) because the comma-join can cause weird errors due to precedence issues:\n\n -- This will complain that t1_field isn\u0027t recognized because the LEFT JOIN is\n -- processed first\n SELECT fields FROM table1, table2 LEFT JOIN table3 ON(t3_id\u003dt1_field) WHERE t1_id\u003dt2_id;\n\n -- But this will work\n SELECT fields FROM table1 INNER JOIN table2 ON (t1_id\u003dt2_id) LEFT JOIN table3 ON(t3_id\u003dt1_id);",
+      "parentUuid": "aea567c8_a599ea73",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cea0dbb8_3ef26c04",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 6
