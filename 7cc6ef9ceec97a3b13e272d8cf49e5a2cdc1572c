@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cea0dbb8_be61dcd2",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-24T07:32:33Z",
+      "side": 1,
+      "message": "Use associative array syntax:\n\n    \u0027lu_wiki\u0027 \u003d\u003e $wiki,\n\nit will be quoted by Database::select (which calls makeList on the conditions array) and easier to read that way.\n\n(Also less error-prone - theoretically using $ldbr here is wrong, although it would take a certain level of masochism to use a different DB engine for the local and central database.)",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_3ea4ac03",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-24T07:32:33Z",
+      "side": 1,
+      "message": "Same as above, use\n\n    \u0027lu_local\u0027 \u003d\u003e null,",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_9e94d88e",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-24T07:32:33Z",
+      "side": 1,
+      "message": "Personally I would just put\n\n    \u0027gu_name \u003d lu_name\u0027\n\nin the conditions array, again easier to read. YMMV.",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cea0dbb8_3ef26c04",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-10-24T07:32:33Z",
+      "side": 1,
+      "message": "Probably should wait for slaves to catch up.",
+      "revId": "7cc6ef9ceec97a3b13e272d8cf49e5a2cdc1572c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
