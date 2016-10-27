@@ -506,6 +506,7 @@
 	"apihelp-query+globalallusers-param-dir": "Kierunek sortowania.",
 	"apihelp-query+globalallusers-param-group": "Tylko użytkownicy w danych globalnych grupach.",
 	"apihelp-query+globalallusers-param-excludegroup": "Wyklucz użytkowników będących w podanej grupie globalnej.",
+	"apihelp-query+globalallusers-param-limit": "Łączna liczba nazw użytkowników do zwrócenia.",
 	"apihelp-query+globaluserinfo-description": "Pokaż informacje na temat globalnego użytkownika.",
 	"centralauth-log-gblrename-oldname": "Poprzednia nazwa uczestnika:",
 	"centralauth-contribs-locked-log": "To konto jest globalnie zablokowane.\nPoniżej podany jest informacyjnie ostatni wpis rejestru:",

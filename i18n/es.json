@@ -49,7 +49,8 @@
 			"Matiia",
 			"Indiralena",
 			"Rubentl134",
-			"Dgstranz"
+			"Dgstranz",
+			"Sophivorus"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -444,9 +445,9 @@
 	"globalrenamerequest": "Solicitud de renombrado de cuenta de usuario global",
 	"globalrenamerequest-legend": "Solicitud de cambio de nombre de unificación",
 	"globalrenamerequest-forced": "La Fundación Wikimedia está [[:mw:SUL_finalisation|unificando los nombres de usuario a través de todos los proyectos de Wikimedia]]. Este nombre de usuario se está usando en otras wikis de Wikimedia y debe cambiarse para finalizar esta unificación. Como resultado, se debe seleccionar un nuevo nombre de usuario.",
-	"globalrenamerequest-pretext": "Solicita un nombre de usuario nuevo a conocerse a través de todos los proyectos.\n\nTodas tus contribuciones anteriores se conectarán con este nuevo nombre de usuario.\n\nUna vez que hayas solicitado un nombre de usuario nuevo, se enviará una notificación a los stewards de Wikimedia para realizar el cambio de nombre. Se te notificará por correo electrónico cuando se haya completado este proceso.",
+	"globalrenamerequest-pretext": "Solicita un nombre de usuario nuevo por el que quieras que se te conozca a través de todos los proyectos.\n\nTodas tus contribuciones anteriores se conectarán con este nuevo nombre de usuario.\n\nUna vez que hayas solicitado un nombre de usuario nuevo, se enviará una notificación a los stewards de Wikimedia para realizar el cambio de nombre. Se te notificará por correo electrónico cuando se haya completado este proceso.",
 	"globalrenamerequest-username-label": "Nombre de usuario actual:",
-	"globalrenamerequest-username-help": "Este es tu nombre de usuario ahora.",
+	"globalrenamerequest-username-help": "Este es el nombre de usuario que tienes ahora.",
 	"globalrenamerequest-newname-label": "Nombre de usuario solicitado:",
 	"globalrenamerequest-newname-help": "Escribe el nombre de usuario nuevo que quieras usar, p. ej., «$1».",
 	"globalrenamerequest-newname-err-invalid": "No se especificó ningún nombre de usuario válido.",
