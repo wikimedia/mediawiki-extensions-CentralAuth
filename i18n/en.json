@@ -560,6 +560,7 @@
 	"centralauth-uwbr-editcount": "Edit count",
 	"centralauth-uwbr-intro": "This page lists users registered with this wiki who will be renamed.",
 	"centralauth-delete-empty-account": "Empty account",
+	"centralauth-error-unattached": "Could not log you in; an account by your name exists on the central login wiki, but it is not centrally attached. If you have registered just now, you can ignore this error; just try again.",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
 	"log-action-filter-globalauth": "Type of change:",
