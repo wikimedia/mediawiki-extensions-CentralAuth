@@ -74,14 +74,29 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
+		$getException = function ( CentralAuthUser $centralUser, User $user, array $info ) {
+			if ( !$centralUser->exists() ) { // sanity
+				return new Exception( "Global user '{$info['name']}' does not exist." );
+			} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
+				return new Exception( "Global user does not have ID '{$info['guid']}'." );
+			} elseif ( !$centralUser->isAttached() && !$user->isAnon() ) { // sanity
+				return new Exception( "User '{$info['name']}' exists locally but is not attached." );
+			}
+			return null;
+		};
+
 		$user = User::newFromName( $info['name'] );
 		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( !$centralUser->exists() ) { // sanity
-			throw new Exception( "Global user '{$info['name']}' does not exist." );
-		} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
-			throw new Exception( "Global user does not have ID '{$info['guid']}'." );
-		} elseif ( !$centralUser->isAttached() && !$user->isAnon() ) { // sanity
-			throw new Exception( "User '{$info['name']}' exists locally but is not attached." );
+		if ( $getException( $centralUser, $user, $info ) ) {
+			// Retry from master. Central login is done right after user creation so lag problems
+			// are common.
+			$user = User::newFromName( $info['name'] );
+			$user->load( User::READ_LATEST );
+			$centralUser = CentralAuthUser::getMasterInstance( $user );
+			$e = $getException( $centralUser, $user, $info );
+			if ( $e ) {
+				throw $e;
+			}
 		}
 
 		$session = CentralAuthUtils::getCentralSession();
@@ -198,16 +213,29 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
+		$getException = function ( CentralAuthUser $centralUser, User $user ) {
+			if ( !$user || !$user->getId() ) { // sanity
+				return new Exception( "The user account logged into does not exist." );
+			}
+			if ( !$centralUser->getId() ) { // sanity
+				return new Exception( "The central user account does not exist." );
+			}
+			if ( !$centralUser->isAttached() ) { // sanity
+				return new Exception( "The user account is not attached." );
+			}
+			return null;
+		};
+
 		$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
-		if ( !$user || !$user->getId() ) { // sanity
-			throw new Exception( "The user account logged into does not exist." );
-		}
 		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( !$centralUser->getId() ) { // sanity
-			throw new Exception( "The central user account does not exist." );
-		}
-		if ( !$centralUser->isAttached() ) { // sanity
-			throw new Exception( "The user account is not attached." );
+		if ( $getException( $centralUser, $user ) ) {
+			$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
+			$user->load( User::READ_LATEST );
+			$centralUser = CentralAuthUser::getMasterInstance( $user );
+			$e = $getException( $centralUser, $user );
+			if ( $e ) {
+				throw $e;
+			}
 		}
 
 		// Delete the temporary token
