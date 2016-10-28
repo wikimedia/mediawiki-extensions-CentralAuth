@@ -42,7 +42,7 @@
 	"centralauth-complete": "Prisijungimo bendrinimas baigtas!",
 	"centralauth-incomplete": "Prisijungimo bendrinimas nebaigtas!",
 	"centralauth-complete-text": "Dabar jūs galite prisijungti prie bet kurio {{int:Centralauth-groupname}} projekto, nekurdami naujos paskyros.",
-	"centralauth-incomplete-text": "Kai jūsų prisijungimas bus suvienytas, jūs galėsite prisijungti prie bet kurio {{int:Centralauth-groupname}} projekto nekurdami naujos paskyros.",
+	"centralauth-incomplete-text": "Kai jūsų paskyra bus baigta bendrinti, jūs galėsite prisijungti prie bet kurio {{int:Centralauth-groupname}} projekto, nekurdami naujos paskyros.",
 	"centralauth-not-owner-text": "Naudotojo vardas „$1“ buvo automatiškai priskirtas $2 paskyros savininkui.\n\nJei tai jūs, jūs galite baigti prisijungimo bendrinimą tiesiog čia įvesdami pagrindinį tos paskyros slaptažodį:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Tik demonstracinis režimas</div><br clear='all'/>",
 	"centralauth-disabled-dryrun": "Paskyrų suvienijimas šiuo metu yra demonstraciniame / derinimo režime, todėl tikrosios sujungimo operacijos yra išjungtos.\nAtsiprašome!",
