@@ -80,7 +80,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
 				return new Exception( "Global user does not have ID '{$info['guid']}'." );
 			} elseif ( !$centralUser->isAttached() && !$user->isAnon() ) { // sanity
-				return new Exception( "User '{$info['name']}' exists locally but is not attached." );
+				if ( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $centralUser->getRegistration() ) < 10 ) {
+					// Probably just a race condition. Fail but do not log.
+					return 'centralauth-error-unattached';
+				} else {
+					return new Exception( "User '{$info['name']}' exists locally but is not attached." );
+				}
 			}
 			return null;
 		};
@@ -95,7 +100,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$centralUser = CentralAuthUser::getMasterInstance( $user );
 			$e = $getException( $centralUser, $user, $info );
 			if ( $e ) {
-				throw $e;
+				if ( is_string( $e ) ) {
+					$this->showError( $e );
+					return;
+				} else {
+					throw $e;
+				}
 			}
 		}
 
