@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kaganer"
+			"Kaganer",
+			"Irus"
 		]
 	},
+	"globalusers": "Глобальный списоке пыртэмын",
+	"globalrenamerequest-status-text": "Запросъёс гожъямлэсь воштӥськемзэ возьматон учётной стюард обрабатываться но возьма. Процесс йылпумъяськиз ке, тӥледлы уведомление электронной почта пыр басьтэм, луоз.\n\n;Учётной бызьыса книгаезлэн нимыз:\n;$1\n;Учётной нимъёсты гожъян куриз:\n;$2",
 	"globalrenamequeue-action-view": "Учкон",
-	"globalrenamequeue-form-status-all": "ваньзэ"
+	"globalrenamequeue-form-status-all": "ваньзэ",
+	"centralauth-contribs-locked": "Таяз уровеньёсын учётной заблокировать глобальный гожъян.\nОзьы ик [[Special:CentralAuth/$1|реквизитъёс глобальный]] ватсаса ивортодэт басьтон понна."
 }

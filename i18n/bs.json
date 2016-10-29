@@ -279,5 +279,13 @@
 	"globalrenamerequest-reason-label": "Razlog",
 	"globalrenamerequest-submit-text": "Podnesi zahtjev",
 	"globalrenamequeue-desc": "Obrađivanje globalnih zahtjeva za preimenovanje",
-	"globalrenamequeue-column-rq-newname": "Željeno korisničko ime"
+	"globalrenamequeue-column-rq-newname": "Željeno korisničko ime",
+	"centralauth-log-gblrename-oldname": "Prethodno korisničko ime:",
+	"log-action-filter-globalauth": "Vrsta izmjene:",
+	"log-action-filter-globalauth-delete": "Brisanje globalnog računa",
+	"log-action-filter-globalauth-setstatus": "Izmjena statusa globalnog računa",
+	"log-action-filter-gblrights": "Vrsta izmjene:",
+	"log-action-filter-gblrights-usergroups": "Globalna izmjena korisničkih prava",
+	"log-action-filter-gblrights-groupprms": "Globalna izmjena korisničke grupe",
+	"log-action-filter-gblrights-setmodify": "Izmjena wikiskupa"
 }
