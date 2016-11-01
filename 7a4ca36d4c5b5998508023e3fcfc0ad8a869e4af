@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_c64e1a3c",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2016-11-01T13:07:31Z",
+      "side": 1,
+      "message": "String is not a class, so should be lower cased. Also below.",
+      "range": {
+        "startLine": 108,
+        "startChar": 17,
+        "endLine": 108,
+        "endChar": 23
+      },
+      "revId": "7a4ca36d4c5b5998508023e3fcfc0ad8a869e4af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4eb4ebfb_865ff2e7",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2016-11-01T13:07:31Z",
+      "side": 1,
+      "message": "Array is not a class, so should be lower cased.",
+      "range": {
+        "startLine": 110,
+        "startChar": 18,
+        "endLine": 110,
+        "endChar": 23
+      },
+      "revId": "7a4ca36d4c5b5998508023e3fcfc0ad8a869e4af",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
