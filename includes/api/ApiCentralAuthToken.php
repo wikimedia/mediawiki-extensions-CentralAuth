@@ -39,22 +39,42 @@ class ApiCentralAuthToken extends ApiBase {
 
 		// If we're in JSON callback mode, no tokens can be obtained
 		if ( $this->lacksSameOriginSecurity() ) {
-			$this->dieUsage( 'Cannot obtain a centralauthtoken when using a callback', 'hascallback' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( 'apiwarn-tokens-origin', 'hascallback' );
+			} else {
+				$this->dieUsage( 'Cannot obtain a centralauthtoken when using a callback', 'hascallback' );
+			}
 		}
 
 		if ( $user->isAnon() ) {
-			$this->dieUsage( 'Anonymous users cannot obtain a centralauthtoken', 'notloggedin' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( 'apierror-centralauth-notloggedin', 'notloggedin' );
+			} else {
+				$this->dieUsage( 'Anonymous users cannot obtain a centralauthtoken', 'notloggedin' );
+			}
 		}
 
 		$session = MediaWiki\Session\SessionManager::getGlobalSession();
 		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
-			$this->dieUsage( 'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( 'apierror-centralauth-badsession', 'badsession' );
+			} else {
+				$this->dieUsage(
+					'Can only obtain a centralauthtoken when using CentralAuth sessions', 'badsession'
+				);
+			}
 		}
 		$id = $session->getId();
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
-			$this->dieUsage( 'Cannot obtain a centralauthtoken without an attached global account', 'notattached' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( 'apierror-centralauth-notattached', 'notattached' );
+			} else {
+				$this->dieUsage(
+					'Cannot obtain a centralauthtoken without an attached global account', 'notattached'
+				);
+			}
 		}
 
 		$data = array(

@@ -27,7 +27,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 	 * Throw an exception, later
 	 *
 	 * @param string $code Error code
-	 * @param string $error Error message
+	 * @param string|array $error Error message key, or key+parameters
 	 * @returns SessionInfo
 	 */
 	private function makeException( $code, $error ) {
@@ -35,7 +35,13 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 		// First, schedule the throwing of the exception for later when the API
 		// is ready to catch it
-		$exception = new \UsageException( $error, $code );
+		if ( class_exists( \ApiUsageException::class ) ) {
+			$exception = \ApiUsageException::newWithMessage( null, $error, $code );
+		} else {
+			$msg = Message::newFromSpecifier( $error )
+				->inLanguage( 'en' )->useDatabase( false )->text();
+			$exception = new \UsageException( $msg, $code );
+		}
 		$wgHooks['ApiBeforeMain'][] = function () use ( $exception ) {
 			throw $exception;
 		};
@@ -75,7 +81,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 			!isset( $data['originSessionId'] )
 		) {
 			$this->logger->debug( __METHOD__ . ': centralauthtoken is invalid' );
-			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
+			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
 		$userName = $data['userName'];
@@ -85,12 +91,12 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		$userName = User::getCanonicalName( $userName, 'valid' );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
-			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
+			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 		if ( !User::isUsableName( $userName ) ) {
 			$this->logger->debug( __METHOD__ . ': unusable username' );
 			return $this->makeException( 'badusername',
-				"The user name \"$userName\" is not usable on this wiki" );
+				[ 'apierror-centralauth-badusername', wfEscapeWikiText( $userName ) ] );
 		}
 
 		// Try the central user
@@ -99,27 +105,27 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		// Skip if they're being renamed
 		if ( $centralUser->renameInProgress() ) {
 			$this->logger->debug( __METHOD__ . ': rename in progress' );
-			return $this->makeException( 'renameinprogress', 'The user is being renamed, cannot use' );
+			return $this->makeException( 'renameinprogress', 'apierror-centralauth-renameinprogress' );
 		}
 
 		if ( !$centralUser->exists() ) {
 			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
-			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
+			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 		if ( !$centralUser->isAttached() && User::idFromName( $userName ) ) {
 			$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
+			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
 		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', $centralUser->getId() );
 		if ( $cache->get( $key ) ) {
 			$this->logger->debug( __METHOD__ . ': user is blacklisted' );
-			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
+			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
 			$this->logger->debug( __METHOD__ . ': token mismatch' );
-			return $this->makeException( 'badtoken', 'The centralauthtoken is not valid' );
+			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
 		$this->logger->debug( __METHOD__ . ': logged in from session' );

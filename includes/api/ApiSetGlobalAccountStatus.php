@@ -31,32 +31,47 @@
 class ApiSetGlobalAccountStatus extends ApiBase {
 	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
-		$globalUser = CentralAuthUser::getMasterInstanceByName( $this->getParameter( 'user' ) );
-		if ( !$this->getUser()->isAllowed( 'centralauth-lock' ) ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
-		} elseif ( !$globalUser->exists() ) {
-			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
-		} elseif ( $globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
-			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
-		} elseif ( !$this->getRequest()->getCheck( 'locked' ) && $this->getParameter( 'hidden' ) === null ) {
-			$this->dieUsage( "At least one of the parameters locked, hidden is required", "missingparam" );
+		$params = $this->extractRequestParams();
+		$this->requireAtLeastOneParameter( $params, 'locked', 'hidden' );
+
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
+			$this->checkUserRightsAny( 'centralauth-lock' );
+		} else {
+			if ( !$this->getUser()->isAllowed( 'centralauth-lock' ) ) {
+				$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			}
 		}
 
-		$setLocked = $this->getParameter( 'locked' );
+		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
+		if ( !$globalUser->exists() ||
+			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
+		) {
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError(
+					[ 'nosuchusershort', wfEscapeWikiText( $globalUser->getName() ) ], 'nosuchuser'
+				);
+			} else {
+				$this->dieUsageMsg( [ 'nosuchuser', $globalUser->getName() ] );
+			}
+		}
 
-		if ( !$setLocked ) {
+		if ( !$params['locked'] ) {
 			// Don't lock or unlock
 			$setLocked = null;
 		} else {
 			$setLocked = $setLocked === 'lock';
 		}
 
-		$setHidden = $this->getParameter( 'hidden' );
-		$reason = $this->getParameter( 'reason' );
-		$stateCheck = $this->getParameter( 'statecheck' );
+		$setHidden = $params['hidden'];
+		$reason = $params['reason'];
+		$stateCheck = $params['statecheck'];
 
 		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
-			$this->dieUsage( 'Edit conflict detected, Aborting.', 'editconflict' );
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
+			} else {
+				$this->dieUsage( 'Edit conflict detected, Aborting.', 'editconflict' );
+			}
 		}
 
 		$status = $globalUser->adminLockHide(
