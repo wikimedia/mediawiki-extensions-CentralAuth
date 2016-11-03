@@ -31,17 +31,25 @@
 class ApiDeleteGlobalAccount extends ApiBase {
 	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
-		if ( !$this->getUser()->isAllowed( 'centralauth-unmerge' ) ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
+			$this->checkUserRightsAny( 'centralauth-unmerge' );
+		} else {
+			if ( !$this->getUser()->isAllowed( 'centralauth-unmerge' ) ) {
+				$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			}
 		}
 
 		$params = $this->extractRequestParams();
 
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
-		if ( !$globalUser->exists() ) {
-			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
-		} elseif ( $globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
-			$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
+		if ( !$globalUser->exists() ||
+			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
+		) {
+			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
+				$this->dieWithError( array( 'nosuchusershort', $globalUser->getName() ) );
+			} else {
+				$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
+			}
 		}
 
 		$status = $globalUser->adminDelete( $params['reason'] );
