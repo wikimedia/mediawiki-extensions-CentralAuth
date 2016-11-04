@@ -171,7 +171,7 @@
 	"centralauth-admin-too-many-edits": "A conta global \"<nowiki>$1</nowiki>\" fez mais de $2 {{PLURAL:$2|edição|edições}} e não pode ser ocultada.",
 	"centralauth-admin-title": "Administrador de contas globais para $1",
 	"centralauth-admin-title-ro": "Informações da conta global para $1",
-	"globalusers": "Lista de utilizadores globais",
+	"globalusers": "Utilizadores globais",
 	"centralauth-listusers-locked": "bloqueada",
 	"centralauth-listusers-attached": "[[User:$1|existe localmente]]",
 	"centralauth-listusers-nolocal": "desacoplada ou não existe localmente",
