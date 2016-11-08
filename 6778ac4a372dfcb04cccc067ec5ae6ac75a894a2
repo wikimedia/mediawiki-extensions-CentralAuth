@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eb4ebfb_951364b9",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2016-11-08T23:29:04Z",
+      "side": 1,
+      "message": "Minor annoyance, opening [ or ( only need to add 1 level of indening, not 3 :)",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 6
+      },
+      "revId": "6778ac4a372dfcb04cccc067ec5ae6ac75a894a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
