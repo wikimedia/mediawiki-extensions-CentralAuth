@@ -202,7 +202,7 @@
 	"centralauth-prefs-count-unattached": "Ainda {{PLURAL:$1|existe uma conta não confirmada|existem contas não confirmadas}} com o seu nome de utilizador em $1 {{PLURAL:$1|wiki|wikis}}.",
 	"centralauth-prefs-detail-unattached": "Não foi confirmado que a sua conta pertença à conta global.",
 	"centralauth-prefs-manage": "Administrar a sua conta global",
-	"centralauth-prefs-view": "Ver informação global de conta",
+	"centralauth-prefs-view": "Ver informação da conta global",
 	"centralauth-renameuser-merged": "O utilizador $1 foi migrado para o sistema de autenticação unificada.\nAlterar o nome de utilizador vai desacoplar esta conta local da conta global.",
 	"centralauth-renameuser-reserved": "O nome de utilizador $2 está reservado para uma conta global.",
 	"centralauth-invalid-wiki": "Não existe uma base de dados para a wiki: $1",
