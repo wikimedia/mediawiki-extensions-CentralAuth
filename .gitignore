@@ -1,7 +1,24 @@
-*~
-*.kate-swp
-.*.swp
 composer.lock
 /nbproject/private/
 /node_modules
 /vendor
+
+# Editors
+*.kate-swp
+*~
+\#*#
+.#*
+.*.swp
+.project
+.buildpath
+.classpath
+.settings
+cscope.files
+cscope.out
+*.orig
+## NetBeans
+nbproject*
+project.index
+## Sublime
+sublime-*
+sftp-config.json
