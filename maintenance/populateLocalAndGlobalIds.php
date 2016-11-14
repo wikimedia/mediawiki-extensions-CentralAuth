@@ -23,16 +23,16 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
 			do {
 				$rows = $dbr->select(
-							[ 'localuser', 'globaluser' ],
-							[ 'lu_name', 'gu_id' ],
-							[
-								'gu_id >= ' . $globalId, // Start from where we left off in last batch
-								'lu_wiki' => $wiki,
-								'lu_local_id' => null, // Only pick records not already populated
-								'gu_name = lu_name'
-							],
-							__METHOD__,
-							[ 'LIMIT' => $this->mBatchSize, 'ORDER BY' => 'gu_id ASC' ]
+					[ 'localuser', 'globaluser' ],
+					[ 'lu_name', 'gu_id' ],
+					[
+						'gu_id >= ' . $globalId, // Start from where we left off in last batch
+						'lu_wiki' => $wiki,
+						'lu_local_id' => null, // Only pick records not already populated
+						'gu_name = lu_name'
+					],
+					__METHOD__,
+					[ 'LIMIT' => $this->mBatchSize, 'ORDER BY' => 'gu_id ASC' ]
 				);
 				foreach ( $rows as $row ) {
 					$globalId = $row->gu_id; // Save this so we know where to fetch our next batch from
