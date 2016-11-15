@@ -5,6 +5,7 @@
 		]
 	},
 	"centralauth-foreign-link": "Duloi $1 në $2ic",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ajuër|ajuëër}} në $2",
 	"centralauth-merge-method-login": "cïcak në ŋäänthïnic",
 	"centralauth-admin-blocklog": "gël athörtɔ̈ɔ̈u"
 }
