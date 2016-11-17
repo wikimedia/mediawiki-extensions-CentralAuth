@@ -1488,6 +1488,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		$this->invalidateCache();
+		$user = User::newFromName( $this->mName );
+		\MediaWiki\Session\SessionManager::singleton()->invalidateSessionsForUser( $user );
 
 		return Status::newGood();
 	}
