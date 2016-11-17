@@ -167,6 +167,10 @@ $specialPageAliases['ce'] = array(
 	'GlobalUsers' => array( 'Глобальни_декъашхой' ),
 );
 
+$specialPageAliases['cs'] = array(
+	'CentralAuth' => array ( 'Centrální_ověření' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'CentralAuth' => array( 'Verwaltung_Benutzerkonten-Zusammenführung' ),
