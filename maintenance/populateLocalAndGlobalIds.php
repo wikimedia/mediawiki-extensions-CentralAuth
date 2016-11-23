@@ -10,7 +10,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( "Populate the localuser.lu_local_id and localuser.lu_global_id fields" );
-		$this->setBatchSize( 100 );
+		$this->setBatchSize( 1000 );
 	}
 
 	public function execute() {
