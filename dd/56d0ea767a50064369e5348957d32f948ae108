@@ -1,0 +1,7 @@
+Code-Review+2: Aaron Schulz <aschulz@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: Reedy <reedy@wikimedia.org>
+Submitted-at: Wed, 23 Nov 2016 23:52:38 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/323197
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
