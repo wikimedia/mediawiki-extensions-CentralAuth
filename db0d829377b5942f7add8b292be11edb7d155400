@@ -16,6 +16,24 @@
       "revId": "db0d829377b5942f7add8b292be11edb7d155400",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aebe47e0_f73200bc",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2016-11-23T22:54:40Z",
+      "side": 1,
+      "message": "PHP scoping (or lack thereof is stupid); in most sane languages it\u0027s only exist inside the {} anyway",
+      "parentUuid": "aebe47e0_37c2b889",
+      "revId": "db0d829377b5942f7add8b292be11edb7d155400",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
