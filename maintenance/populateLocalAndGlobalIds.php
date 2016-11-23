@@ -38,13 +38,22 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 					__METHOD__,
 					[ 'LIMIT' => $this->mBatchSize, 'ORDER BY' => 'gu_id ASC' ]
 				);
+				$userList = [];
 				foreach ( $rows as $row ) {
-					$globalId = $row->gu_id; // Save this so we know where to fetch our next batch from
-					$localId = $ldbr->selectField( 'user', 'user_id', [ 'user_name' => $row->lu_name ] );
+					$userList[$row->gu_id] = $row->lu_name;
+				}
+
+				$userMappings = [];
+				$localIds = $ldbr->select( 'user', [ 'user_id', 'user_name' ], [ 'user_name' => array_values( $userList ) ] );
+				foreach ( $localIds as $lid ) {
+					$userMappings[$lid->user_name] = $lid->user_id;
+				}
+				foreach ( $userList as $id => $name ) {
+					$globalId = $id; // Save this so we know where to fetch our next batch from
 					$result = $dbw->update(
 						'localuser',
-						[ 'lu_local_id' => $localId, 'lu_global_id' => $row->gu_id ],
-						[ 'lu_name' => $row->lu_name, 'lu_wiki' => $wiki ]
+						[ 'lu_local_id' => $userMappings[$name], 'lu_global_id' => $id ],
+						[ 'lu_name' => $name, 'lu_wiki' => $wiki ]
 					);
 					if ( !$result ) {
 						$this->output( "Update failed for global user $globalId for wiki $wiki \n" );
