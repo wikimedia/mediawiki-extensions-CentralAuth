@@ -76,7 +76,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 					}
 				}
 				$this->output( "Updated $numRows records. Last user: $lastGlobalId; Wiki: $wiki \n" );
-				wfWaitForSlaves();
+				CentralAuthUtils::waitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
 		}
