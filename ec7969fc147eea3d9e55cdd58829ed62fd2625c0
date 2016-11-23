@@ -34,6 +34,24 @@
       "revId": "ec7969fc147eea3d9e55cdd58829ed62fd2625c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aebe47e0_57976c93",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-11-23T22:39:14Z",
+      "side": 1,
+      "message": "Doh. I saw the use of the counter in the log message but not in the do-while.",
+      "parentUuid": "ceb9bbfa_8805c37e",
+      "revId": "ec7969fc147eea3d9e55cdd58829ed62fd2625c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
