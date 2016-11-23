@@ -16,6 +16,24 @@
       "revId": "ec7969fc147eea3d9e55cdd58829ed62fd2625c0",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ceb9bbfa_8805c37e",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2016-11-23T20:15:29Z",
+      "side": 1,
+      "message": "Something Bryan added; is it worth modifying this to keep track of the number updated, and use that for the actual displaying below? Or don\u0027t we care enough?",
+      "parentUuid": "ceb9bbfa_48e8cbaf",
+      "revId": "ec7969fc147eea3d9e55cdd58829ed62fd2625c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
