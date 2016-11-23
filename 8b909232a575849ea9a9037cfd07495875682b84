@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceb9bbfa_dde13b99",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001
+      },
+      "writtenOn": "2016-11-23T18:25:40Z",
+      "side": 1,
+      "message": "I debated bumping this up to 5000, but didn\u0027t mostly because I was too lazy to figure out if a 5k item IN() clause was fine or not for the local uid lookup query.",
+      "revId": "8b909232a575849ea9a9037cfd07495875682b84",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
