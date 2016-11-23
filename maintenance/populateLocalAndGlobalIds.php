@@ -22,7 +22,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			if ( $wiki == 'enwiki' ) {
 				continue;
 			}
-			$globalId = -1;
+			$lastGlobalId = -1;
 			$lb = wfGetLB( $wiki );
 			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
 			do {
@@ -30,28 +30,48 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 					[ 'localuser', 'globaluser' ],
 					[ 'lu_name', 'gu_id' ],
 					[
-						'gu_id >= ' . $globalId, // Start from where we left off in last batch
+						// Start from where we left off in last batch
+						'gu_id >= ' . $lastGlobalId,
 						'lu_wiki' => $wiki,
-						'lu_local_id' => null, // Only pick records not already populated
+						// Only pick records not already populated
+						'lu_local_id' => null,
 						'gu_name = lu_name'
 					],
 					__METHOD__,
 					[ 'LIMIT' => $this->mBatchSize, 'ORDER BY' => 'gu_id ASC' ]
 				);
+				$globalUidToLocalName = [];
 				foreach ( $rows as $row ) {
-					$globalId = $row->gu_id; // Save this so we know where to fetch our next batch from
-					$localId = $ldbr->selectField( 'user', 'user_id', [ 'user_name' => $row->lu_name ] );
-					$result = $dbw->update(
-						'localuser',
-						[ 'lu_local_id' => $localId, 'lu_global_id' => $row->gu_id ],
-						[ 'lu_name' => $row->lu_name, 'lu_wiki' => $wiki ]
-					);
-					if ( !$result ) {
-						$this->output( "Update failed for global user $globalId for wiki $wiki \n" );
-					}
+					$globalUidToLocalName[$row->gu_id] = $row->lu_name;
 				}
 				$numRows = $rows->numRows();
-				$this->output( "Updated $numRows records. Last user: $globalId; Wiki: $wiki \n" );
+
+				$localNameToUid = [];
+				$localIds = $ldbr->select(
+					'user',
+					[ 'user_id', 'user_name' ],
+					[ 'user_name' => array_values( $globalUidToLocalName ) ]
+				);
+				foreach ( $localIds as $lid ) {
+					$localNameToUid[$lid->user_name] = $lid->user_id;
+				}
+				foreach ( $globalUidToLocalName as $gid => $uname ) {
+					// Save progress so we know where to start our next batch
+					$lastGlobalId = $gid;
+					$result = $dbw->update(
+						'localuser',
+						[
+							'lu_local_id' => $localNameToUid[$uname],
+							'lu_global_id' => $gid
+						],
+						[ 'lu_name' => $uname, 'lu_wiki' => $wiki ]
+					);
+					if ( !$result ) {
+						$this->output( "Update failed for global user $lastGlobalId for wiki $wiki \n" );
+						$numRows -= 1;
+					}
+				}
+				$this->output( "Updated $numRows records. Last user: $lastGlobalId; Wiki: $wiki \n" );
 				wfWaitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
