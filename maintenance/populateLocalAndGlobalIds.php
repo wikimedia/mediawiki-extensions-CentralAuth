@@ -18,6 +18,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$dbw = CentralAuthUtils::getCentralDB();
 		foreach( $wgLocalDatabases as $wiki ) {
+			if ( $wiki == 'enwiki' ) {
+				continue;
+			}
 			$globalId = -1;
 			$lb = wfGetLB( $wiki );
 			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
