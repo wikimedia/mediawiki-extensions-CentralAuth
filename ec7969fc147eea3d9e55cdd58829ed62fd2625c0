@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ceb9bbfa_48e8cbaf",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-11-23T20:12:11Z",
+      "side": 1,
+      "message": "Probably don\u0027t want this $numRows-- here. Let\u0027s say there are 501 users left to update. The select above gets 500 of them (since that\u0027s the batch size). If one of them fails to update, $numRows will be changed from 500 to 499, then when it gets to the while statement below, it will think that everything is done and won\u0027t do another select to get the last remaining user.",
+      "revId": "ec7969fc147eea3d9e55cdd58829ed62fd2625c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
