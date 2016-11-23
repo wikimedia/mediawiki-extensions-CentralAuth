@@ -169,7 +169,7 @@
 	"centralauth-account-exists": "حساب یارادیلا: ایستنن ایستیفاده‌چی آدی بیرلشمیش داخیل سیستئمینده داها اول‌دن آلینمیش.",
 	"centralauth-account-exists-reset": "$1 آدلی ایستیفاده‌چی بو ویکی‌ده قئیدیاتدان کئچمه‌ییب‌دیر، آنجاق بیرگه سیستمده حسابی وار.",
 	"centralauth-login-progress": "{{int:Centralauth-groupname}} لاییهه‌لرینده سئسسیانیز آچیلیر:",
-	"centralauth-logout-progress": "دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده سئسسیانیز باغلانیلیر:",
+	"centralauth-logout-progress": "آیری {{int:Centralauth-groupname}} پروژه لریندن ده حسابینیز چیخیلیر：",
 	"centralauth-login-no-others": "دیگر {{int:Centralauth-groupname}} لاییهه‌لرینده آوتوماتیک اولا‌راق داخیل ائتدینیز.",
 	"centralauth-logout-no-others": "دیگر {{int:Centralauth-groupname}} پرویئکت‌لرین‌دن آوتوماتیک اولا‌راق چیخیش ائتدینیز.",
 	"centralauth-hidden-blockreason": "$1 طرفین‌دن سراسری اولا‌راق $2 ایلده بو سببله گیزلندی: $3",

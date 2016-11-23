@@ -390,8 +390,10 @@
 	"centralauth-rename-form-movepages": "Trasladar las páginas del usuario",
 	"centralauth-rename-form-suppressredirects": "Suprimir la creación de redirecciones",
 	"centralauth-rename-form-overrideantispoof": "Ignorar cualquier conflicto con el sistema AntSpoof",
+	"centralauth-rename-form-overridetitleblacklist": "Evitar disparar la lista de nombres de usuario y títulos prohibidos (TitleBlacklist)",
 	"centralauth-rename-form-allowhigheditcount": "Confirmar para renombrar un usuario con más de $1 {{PLURAL:$1|edición|ediciones}}",
 	"centralauth-rename-globaleditcount-threshold": "Este usuario tiene más de $1 {{PLURAL:$1|edición|ediciones}}. Por favor, confirma que estás seguro de que quieres renombrar este usuario y que un administrador del sistema está disponible para supervisar este cambio de nombre.",
+	"centralauth-rename-titleblacklist-match": "El nuevo nombre de usuario coincide con la siguiente entrada en la lista de nombres de usuario y títulos prohibidos: $1",
 	"centralauth-rename-notinstalled": "La extensión Renameuser no está instalada.",
 	"centralauth-rename-doesnotexist": "La cuenta proporcionada no existe.",
 	"centralauth-rename-alreadyexists": "El nombre de usuario solicitado ya existe.",
@@ -517,6 +519,7 @@
 	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
 	"sulrenamewarning-authmanager-ok-help": "Continuar después de mostrar la notificación del cambio de nombre.",
 	"globalrenamequeue-request-reason-label": "Entrada de registro pública (en caso de aceptar)",
+	"apihelp-centralauthtoken-description": "Obtener un \"centralauthtoken\" para hacer una solicitud autenticada a una wiki adjunta.",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "Borrar un usuario global.",
 	"apihelp-deleteglobalaccount-param-user": "Cuenta de usuario que se borrará.",
@@ -580,5 +583,8 @@
 	"log-action-filter-globalauth-setstatus": "Cambio de estado de la cuenta global",
 	"log-action-filter-suppress-setstatus": "Cambio de estado de la cuenta global",
 	"log-action-filter-suppress-cadelete": "Eliminación de cuenta global",
-	"log-action-filter-gblrights": "Tipo de cambio:"
+	"log-action-filter-gblrights": "Tipo de cambio:",
+	"log-action-filter-gblrights-usergroups": "Cambio de permisos globales de usuario",
+	"log-action-filter-gblrights-groupprms": "Cambios en los grupos globales de usuarios",
+	"log-action-filter-gblrights-setmodify": "Cambios en grupos de wikis"
 }

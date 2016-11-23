@@ -2,9 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
-			"Irus"
+			"Irus",
+			"Wadorgurt"
 		]
 	},
+	"centralauth-foreign-link": "$2 викиысь $1 викиавтор",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тупатон}} $2 проектын",
+	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
+	"centralauth-admin-blocklog": "блокировкаосын журнал",
 	"globalusers": "Глобальный списоке пыртэмын",
 	"centralauth-logout-progress": "Проект обрабатываться потон {{int:Centralauth-groupname}}:",
 	"globalrenamerequest-status-text": "Запросъёс гожъямлэсь воштӥськемзэ возьматон учётной стюард обрабатываться но возьма. Процесс йылпумъяськиз ке, тӥледлы уведомление электронной почта пыр басьтэм, луоз.\n\n;Учётной бызьыса книгаезлэн нимыз:\n;$1\n;Учётной нимъёсты гожъян куриз:\n;$2",
