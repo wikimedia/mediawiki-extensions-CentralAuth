@@ -1,0 +1,7 @@
+Code-Review+2: Reedy <reedy@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 24 Nov 2016 00:17:33 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/323343
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/wmf/1.29.0-wmf.3
