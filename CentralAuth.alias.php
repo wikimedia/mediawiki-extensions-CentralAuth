@@ -825,11 +825,11 @@ $specialPageAliases['tt-cyrl'] = array(
 
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
-	'MergeAccount' => array( 'Об\'єднання_облікових_записів' ),
-	'GlobalGroupMembership' => array( 'Глобальні_права' ),
-	'GlobalGroupPermissions' => array( 'Права_глобальних_груп' ),
-	'WikiSets' => array( 'Набори_вікі' ),
-	'GlobalUsers' => array( 'Глобальні_користувачі' ),
+	'MergeAccount' => array( 'Об\'єднання_облікових_записів', 'Объединение_учётных_записей' ),
+	'GlobalGroupMembership' => array( 'Глобальні_права', 'Глобальные_права_участника', 'Глобальное_членство' ),
+	'GlobalGroupPermissions' => array( 'Права_глобальних_груп', 'Права_глобальных_групп' ),
+	'WikiSets' => array( 'Набори_вікі', 'Наборы_вики' ),
+	'GlobalUsers' => array( 'Глобальні_користувачі', 'Глобальные_участники' ),
 	'UsersWhoWillBeRenamed' => array( 'Користувачі', '_що_будуть_перейменовані' ),
 );
 
