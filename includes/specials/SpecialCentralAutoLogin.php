@@ -85,7 +85,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		) {
 			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin ' . $par, array(
 				'event' => 'autologin',
-				'type' => $par,
+				'eventType' => $par,
 			) );
 		}
 
@@ -506,7 +506,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'Autologin success',
 				array(
 					'event' => 'autologin',
-					'type' => 'success',
+					'eventType' => 'success',
 				)
 			);
 
