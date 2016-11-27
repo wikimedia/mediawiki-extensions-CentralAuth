@@ -8,7 +8,8 @@
 			"Marmase",
 			"Mirzali",
 			"Xoser",
-			"Kumkumuk"
+			"Kumkumuk",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"mergeaccount": "Weziyetê yewkerdışê cıkewtışi",
@@ -316,7 +317,7 @@
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} de malumata hesabi",
 	"right-centralauth-rename": "Global hesaban name kerdış",
 	"action-centralauth-rename": "global hesaban name kerdış",
-	"globalrenameprogress": "Ravêrdena fına name kerdışo Global",
+	"globalrenameprogress": "Ravêrdena fına name kerdena Global",
 	"globalrenameprogress-legend": "Asayışê ravêrdena name kerdışê globali",
 	"globalrenameuser": "Global karber name kerdış",
 	"globalrenameuser-legend": "Global karber name kerdış",
@@ -339,6 +340,8 @@
 	"centralauth-rename-progress-logs-fieldset": "Rocekê qeydan",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Rametışi bıvin]])",
 	"centralauth-usermerge-form-reason": "Sebeb",
+	"globalrenamerequest": "Waştena fena name kerdena hesabé globali",
+	"globalrenamerequest-legend": "Waştena fına name kerdeni pêser kı",
 	"globalrenamerequest-username-label": "Nameyê karberio nıkayên:",
 	"globalrenamerequest-username-help": "Henda namey karberê to enoyo",
 	"globalrenamerequest-newname-label": "Waziyayê namey karberi:",

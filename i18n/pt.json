@@ -267,7 +267,7 @@
 	"centralauth-globalgroupperms-group-wikiset": "Conjunto de wikis onde este grupo está ativo: $1",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está presente em todas as wikis.",
 	"centralauth-globalgroupperms-group-disabled": "(não ativado nesta wiki)",
-	"centralauth-globalgroupperms-groups-intro": "Esta é uma lista de todos os grupos de utilizadores globais neste sítio de alojamento de wikis, com os respectivos privilégios de acesso e conjuntos de wikis. Os utilizadores com as devidas permissões podem eliminar um grupo removendo-lhe todos os privilégios.",
+	"centralauth-globalgroupperms-groups-intro": "Esta é uma lista de todos os grupos de utilizadores globais neste sítio de alojamento de wikis, com os respetivos privilégios de acesso e conjuntos de wikis. Os utilizadores com as devidas permissões podem eliminar um grupo removendo-lhe todos os privilégios.",
 	"centralauth-newgroup-legend": "Criar um novo grupo",
 	"centralauth-newgroup-intro": "Pode usar este formulário para atribuir permissões a um novo grupo.\nNote que um grupo não existe se não tiver permissões atribuídas.",
 	"centralauth-globalgroupperms-newgroupname": "Novo nome do grupo:",
