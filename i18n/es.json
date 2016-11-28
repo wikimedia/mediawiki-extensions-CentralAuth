@@ -519,7 +519,7 @@
 	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
 	"sulrenamewarning-authmanager-ok-help": "Continuar después de mostrar la notificación del cambio de nombre.",
 	"globalrenamequeue-request-reason-label": "Entrada de registro pública (en caso de aceptar)",
-	"apihelp-centralauthtoken-description": "Obtener un \"centralauthtoken\" para hacer una solicitud autenticada a una wiki adjunta.",
+	"apihelp-centralauthtoken-description": "Recuperar una ficha de autenticación central para realizar una solicitud autenticada a un wiki adjunto.",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "Borrar un usuario global.",
 	"apihelp-deleteglobalaccount-param-user": "Cuenta de usuario que se borrará.",
