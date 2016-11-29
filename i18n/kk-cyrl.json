@@ -391,7 +391,7 @@
 	"centralauth-log-gblrename-oldname": "Алдыңғы қатысушы есімі:",
 	"centralauth-contribs-locked": "Бұл аккаунт ғаламдық бұғатталған.\nБасқадай ақпаратты көру үшін мынаны қараңыз [[Special:CentralAuth/$1|global account details]].",
 	"centralauth-contribs-locked-log": "Бұл аккаунт ғаламдық  бұғатталған.\nТөменде бұғаттау журналындағы соңғы жазбасы көрсетілген:",
-	"userswhowillberenamed": "Есімдері өзгертілетін қатыушылар",
+	"userswhowillberenamed": "Есімдері өзгертілетін қатысушылар",
 	"centralauth-uwbr-name": "Қатысушы есімі",
 	"centralauth-uwbr-registration": "Тіркелген уақытыңыз",
 	"centralauth-uwbr-registration-nodate": "Белгісіз",
