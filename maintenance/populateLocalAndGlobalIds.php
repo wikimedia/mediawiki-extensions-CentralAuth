@@ -18,8 +18,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$dbw = CentralAuthUtils::getCentralDB();
 		foreach( $wgLocalDatabases as $wiki ) {
-			// Temporarily skipping English Wikipedia
-			if ( $wiki == 'enwiki' ) {
+			// Temporarily skipping large wikis, 5 mil seems like a safe number (skips en, meta, mediawiki & login wikis)
+			$size = $dbr->estimateRowCount( 'localuser', '*', 'lu_wiki = $wiki' );
+			if ( $size > 5000000 ) {
 				continue;
 			}
 			$lastGlobalId = -1;
