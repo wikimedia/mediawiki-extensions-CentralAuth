@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aebe47e0_7c135606",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-11-29T18:13:33Z",
+      "side": 1,
+      "message": "$wiki needs to be quoted. Would be even better to use the array syntax.",
+      "revId": "5aff44f51e0a1fbc44af3867cbe4ba61e903af5d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
