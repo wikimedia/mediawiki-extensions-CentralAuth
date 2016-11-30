@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ed34346_3924eb06",
+        "filename": "includes/specials/SpecialMergeAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-11-30T19:31:20Z",
+      "side": 1,
+      "message": "This comment doesn\u0027t really help. Does \"not html escaped\" mean that it should not be escaped (when passed in) or that it will not be escaped?",
+      "revId": "9521b023462e5ff346d3d8832ab6e5b600408c10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
