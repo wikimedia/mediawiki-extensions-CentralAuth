@@ -14,16 +14,22 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgLocalDatabases;
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$dbw = CentralAuthUtils::getCentralDB();
-		foreach( $wgLocalDatabases as $wiki ) {
-			// Temporarily skipping large wikis, 5 mil seems like a safe number (skips en, meta, mediawiki & login wikis)
-			$size = $dbr->estimateRowCount( 'localuser', '*', [ 'lu_wiki' => $wiki ] );
-			if ( $size > 5000000 ) {
-				continue;
-			}
+		if ( class_exists( 'CentralAuthUtils' ) ) {
+			$dbr = CentralAuthUtils::getCentralSlaveDB();
+			$dbw = CentralAuthUtils::getCentralDB();
 			$lastGlobalId = -1;
+
+			// Skip people in global rename queue
+			$wiki = wfWikiID();
+			$globalRenames = [];
+			$rows = $dbr->select(
+				'renameuser_status',
+				'ru_oldname'
+			);
+			foreach ( $rows as $row ) {
+				$globalRenames[] = $row->ru_oldname;
+			}
+
 			$lb = wfGetLB( $wiki );
 			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
 			do {
@@ -45,10 +51,18 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 				$globalUidToLocalName = [];
 				foreach ( $rows as $row ) {
+					if ( in_array( $row->lu_name, $globalRenames ) ) {
+						continue;
+					}
 					$globalUidToLocalName[$row->gu_id] = $row->lu_name;
 				}
 				if ( !$globalUidToLocalName ) {
-					$this->output( "All users migrated; Wiki: $wiki \n" );
+					$notUpdated = count( $globalRenames );
+					if ( $notUpdated > 0 ) {
+						$this->output( "Users not in rename queue migrated; $notUpdated not migrated; Wiki: $wiki \n" );
+					} else {
+						$this->output( "All users migrated; Wiki: $wiki \n" );
+					}
 					continue;
 				}
 
@@ -76,12 +90,15 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 						$this->output( "Update failed for global user $lastGlobalId for wiki $wiki \n" );
 					}
 				}
-				$this->output( "Updated $numRows records. Last user: $lastGlobalId; Wiki: $wiki \n" );
+				$updated = count( $globalUidToLocalName ); // Count number of records actually updated
+				$this->output( "Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n" );
 				CentralAuthUtils::waitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
+			$this->output( "Completed $wiki \n" );
+		} else {
+			$this->error( "This script requires that the CentralAuth extension is enabled. Please enable it and try again.", 1 );
 		}
-		$this->output( "Done.\n" );
 	}
 
 }
