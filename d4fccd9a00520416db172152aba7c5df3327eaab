@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8ed34346_8cd4d0bf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-01T21:39:09Z",
+      "side": 1,
+      "message": "Add a newline here (see https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines )",
+      "revId": "d4fccd9a00520416db172152aba7c5df3327eaab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ed34346_8c44d01d",
         "filename": "maintenance/populateLocalAndGlobalIds.php",
         "patchSetId": 1
