@@ -14,16 +14,18 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgLocalDatabases;
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$dbw = CentralAuthUtils::getCentralDB();
-		foreach( $wgLocalDatabases as $wiki ) {
-			// Temporarily skipping large wikis, 5 mil seems like a safe number (skips en, meta, mediawiki & login wikis)
-			$size = $dbr->estimateRowCount( 'localuser', '*', [ 'lu_wiki' => $wiki ] );
-			if ( $size > 5000000 ) {
-				continue;
-			}
-			$lastGlobalId = -1;
+		if ( $this->requireExtension( 'CentralAuth' ) ) {
+			$dbr = CentralAuthUtils::getCentralSlaveDB();
+			$dbw = CentralAuthUtils::getCentralDB();
+			$lastGlobalId = - 1;
+			// Skip people in global rename queue
+			$wiki = wfWikiID();
+			$globalRenamesQueued = $dbr->select(
+				'renameuser_queue',
+				'rq_name',
+				[ 'rq_status' => 'pending' ]
+			);
+			$globalRenames = array_column( $globalRenamesQueued, 'rq_name' );
 			$lb = wfGetLB( $wiki );
 			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
 			do {
@@ -45,6 +47,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 				$globalUidToLocalName = [];
 				foreach ( $rows as $row ) {
+					if ( in_array( $row->lu_name, $globalRenames ) ) {
+						continue;
+					}
 					$globalUidToLocalName[$row->gu_id] = $row->lu_name;
 				}
 				if ( !$globalUidToLocalName ) {
@@ -76,12 +81,13 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 						$this->output( "Update failed for global user $lastGlobalId for wiki $wiki \n" );
 					}
 				}
-				$this->output( "Updated $numRows records. Last user: $lastGlobalId; Wiki: $wiki \n" );
+				$updated = count( $globalUidToLocalName ); // Count number of records actually updated
+				$this->output( "Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n" );
 				CentralAuthUtils::waitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
+			$this->output( "Completed $wiki \n" );
 		}
-		$this->output( "Done.\n" );
 	}
 
 }
