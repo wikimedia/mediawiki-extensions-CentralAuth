@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "8ed34346_3344ff49",
+        "filename": "includes/specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-01T15:13:19Z",
+      "side": 1,
+      "message": "Since Ibb17bb61, a validation callback may as well just return the Message object and let HTMLForm handle parsing it appropriately.",
+      "revId": "9521b023462e5ff346d3d8832ab6e5b600408c10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_1370e3a2",
+        "filename": "includes/specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-01T15:13:19Z",
+      "side": 1,
+      "message": "(same for these two)",
+      "revId": "9521b023462e5ff346d3d8832ab6e5b600408c10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ed34346_3924eb06",
         "filename": "includes/specials/SpecialMergeAccount.php",
         "patchSetId": 2
@@ -13,6 +47,24 @@
       "writtenOn": "2016-11-30T19:31:20Z",
       "side": 1,
       "message": "This comment doesn\u0027t really help. Does \"not html escaped\" mean that it should not be escaped (when passed in) or that it will not be escaped?",
+      "revId": "9521b023462e5ff346d3d8832ab6e5b600408c10",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_73b0373f",
+        "filename": "includes/specials/SpecialMergeAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-01T15:13:19Z",
+      "side": 1,
+      "message": "Looking at the code, I guess it means that it should not be escaped when passed in. IMO the comment should probably say something like \"(plain text, will be HTML-encoded)\".",
+      "parentUuid": "8ed34346_3924eb06",
       "revId": "9521b023462e5ff346d3d8832ab6e5b600408c10",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
