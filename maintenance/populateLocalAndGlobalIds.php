@@ -14,18 +14,19 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgLocalDatabases;
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$dbw = CentralAuthUtils::getCentralDB();
-		foreach( $wgLocalDatabases as $wiki ) {
-			// Temporarily skipping large wikis, 5 mil seems like a safe number (skips en, meta, mediawiki & login wikis)
-			$size = $dbr->estimateRowCount( 'localuser', '*', [ 'lu_wiki' => $wiki ] );
-			if ( $size > 5000000 ) {
-				continue;
-			}
-			$lastGlobalId = -1;
-			$lb = wfGetLB( $wiki );
-			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
+		if ( $wmgUseCentralAuth ) {
+			$dbr = CentralAuthUtils::getCentralSlaveDB();
+			$dbw = CentralAuthUtils::getCentralDB();
+			$lastGlobalId = - 1;
+			// Skip people in global rename queue
+			$globalRenamesQueued = $dbr->select(
+				'renameuser_queue',
+				'rq_name',
+				[ 'rq_status' => 'pending' ]
+			);
+			$globalRenames = array_column( $globalRenamesQueued, 'rq_name' );
+			$lb = wfGetLB( $wgDBname );
+			$ldbr = $lb->getConnection( DB_SLAVE, [], $wgDBname );
 			do {
 				$rows = $dbr->select(
 					[ 'localuser', 'globaluser' ],
@@ -33,7 +34,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 					[
 						// Start from where we left off in last batch
 						'gu_id >= ' . $lastGlobalId,
-						'lu_wiki' => $wiki,
+						'lu_wiki' => $wgDBname,
 						// Only pick records not already populated
 						'lu_local_id' => null,
 						'gu_name = lu_name'
@@ -45,10 +46,13 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 				$globalUidToLocalName = [];
 				foreach ( $rows as $row ) {
+					if ( in_array( $row->lu_name, $globalRenames ) ) {
+						continue;
+					}
 					$globalUidToLocalName[$row->gu_id] = $row->lu_name;
 				}
 				if ( !$globalUidToLocalName ) {
-					$this->output( "All users migrated; Wiki: $wiki \n" );
+					$this->output( "All users migrated; Wiki: $wgDBname \n" );
 					continue;
 				}
 
@@ -70,18 +74,19 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 							'lu_local_id' => $localNameToUid[$uname],
 							'lu_global_id' => $gid
 						],
-						[ 'lu_name' => $uname, 'lu_wiki' => $wiki ]
+						[ 'lu_name' => $uname, 'lu_wiki' => $wgDBname ]
 					);
 					if ( !$result ) {
-						$this->output( "Update failed for global user $lastGlobalId for wiki $wiki \n" );
+						$this->output( "Update failed for global user $lastGlobalId for wiki $wgDBname \n" );
 					}
 				}
-				$this->output( "Updated $numRows records. Last user: $lastGlobalId; Wiki: $wiki \n" );
+				$updated = count( $globalUidToLocalName ); // Count number of records actually updated
+				$this->output( "Updated $updated records. Last user: $lastGlobalId; Wiki: $wgDBname \n" );
 				CentralAuthUtils::waitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
+			$this->output( "Completed $wgDBname \n" );
 		}
-		$this->output( "Done.\n" );
 	}
 
 }
