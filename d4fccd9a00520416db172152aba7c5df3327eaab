@@ -67,6 +67,29 @@
       "revId": "d4fccd9a00520416db172152aba7c5df3327eaab",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_6bd9502c",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2016-12-03T12:05:16Z",
+      "side": 1,
+      "message": "Of course, this isn\u0027t actually true now either...",
+      "range": {
+        "startLine": 55,
+        "startChar": 20,
+        "endLine": 55,
+        "endChar": 40
+      },
+      "revId": "d4fccd9a00520416db172152aba7c5df3327eaab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
