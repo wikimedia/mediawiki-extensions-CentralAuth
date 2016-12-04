@@ -12,5 +12,6 @@
 	"centralauth-admin-blocklog": "ožgīnėmu sārašos",
 	"globalusers": "Vėsoutėnis nauduotuoju sārašos",
 	"centralauth-prefs-status": "Bendruosės regėsracėjės būvis:",
-	"centralauth-prefs-count-attached": "Tamstas paskīra vēk $1 pruojėkta {{PLURAL:$1|svetainie|svetainė|svatainėsė|svėtainiu}}."
+	"centralauth-prefs-count-attached": "Tamstas paskīra vēk $1 pruojėkta {{PLURAL:$1|svetainie|svetainė|svatainėsė|svėtainiu}}.",
+	"centralauth-logout-progress": "Tamsta daba atjongts nug vėsū {{int:Centralauth-groupname}} wiki tėnklopiu:"
 }
