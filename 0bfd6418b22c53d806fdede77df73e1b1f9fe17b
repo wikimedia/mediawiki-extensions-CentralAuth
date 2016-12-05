@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ed34346_003bcec5",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2016-12-05T17:21:24Z",
+      "side": 1,
+      "message": "I assume this is supposed to be -1. There\u0027s no space between integers and their signs.",
+      "revId": "0bfd6418b22c53d806fdede77df73e1b1f9fe17b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
