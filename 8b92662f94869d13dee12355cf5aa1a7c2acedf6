@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ed34346_a3b8a475",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-05T19:55:38Z",
+      "side": 1,
+      "message": "They might well be migrated if the local rename already happened so the script picked them up by the new name. Safer to count actually skipped result rows.\n\nAlso it\u0027s probably good to log the names of those users.",
+      "revId": "8b92662f94869d13dee12355cf5aa1a7c2acedf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_237c94b3",
+        "filename": "maintenance/populateLocalAndGlobalIds.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-05T19:55:38Z",
+      "side": 1,
+      "message": "Not that it matters much, but would be more accurate to not count failed attempts.",
+      "revId": "8b92662f94869d13dee12355cf5aa1a7c2acedf6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
