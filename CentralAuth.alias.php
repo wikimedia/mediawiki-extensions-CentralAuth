@@ -89,6 +89,24 @@ $specialPageAliases['ba'] = array(
 	'GlobalUsers' => array( 'GlobalUsers' ),
 );
 
+/** Bengali (বাংলা) */
+$specialPageAliases['bn'] = array(
+	'CentralAuth' => array( 'কেন্দ্রীয়_প্রমাণী' ),
+	'MergeAccount' => array( 'অ্যাকাউন্ট_একত্রীকরণ' ),
+	'GlobalGroupMembership' => array( 'বৈশ্বিক_ব্যবহারকারী_অধিকার', 'বৈশ্বিক_দলের_সদস্যপদ' ),
+	'GlobalGroupPermissions' => array( 'বৈশ্বিক_দলের_অনুমতি' ),
+	'WikiSets' => array( 'উইকিসেট', 'উইকিসেট_সম্পাদনা' ),
+	'GlobalUsers' => array( 'বৈশ্বিক_ব্যবহারকারী' ),
+	'MultiLock' => array( 'বহুবাধা' ),
+	'GlobalRenameUser' => array( 'বৈশ্বিক_ব্যবহারকারী_নামান্তর', 'বৈশ্বিক_ব্যবহারকারী_পুনঃনামকরণ' ),
+	'GlobalRenameProgress' => array( 'বৈশ্বিক_নামান্তরের_অগ্রগতি' ),
+	'GlobalUserMerge' => array( 'বৈশ্বিক_ব্যবহারকারী_একত্রীকরণ' ),
+	'GlobalRenameRequest' => array( 'বৈশ্বিক_নামান্তরের_অনুরোধ' ),
+	'GlobalRenameQueue' => array( 'বৈশ্বিক_নামান্তরের_সারি' ),
+	'SulRenameWarning' => array( 'SUL_নামান্তরের_সতর্কবার্তা' ),
+	'UsersWhoWillBeRenamed' => array( 'ব্যবহারকারী_যারা_নামান্তরিত_হবেন' ),
+);
+
 /** Bulgarian (български) */
 $specialPageAliases['bg'] = array(
 	'CentralAuth' => array( 'Управление_на_единните_сметки' ),
