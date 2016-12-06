@@ -34,7 +34,7 @@
 	"centralauth-antispoof-desc": "在 CentralAuth 使用 AntiSpoof 技術",
 	"centralauth-rename-desc": "允許重新命名全域帳號",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|合併多個帳號]]以便使用單一使用者登入",
-	"centralauth-merge-denied": "抱歉，您沒有權存取這個頁面。",
+	"centralauth-merge-denied": "抱歉，您沒有權限存取這個頁面。",
 	"centralauth-merge-notlogged": "請 <span class=\"plainlinks\">[$1 登入]</span> 以檢查您的帳號已完整合併。",
 	"centralauth-merge-welcome": "'''您的使用者帳號尚未遷移至 {{int:Centralauth-groupname}} 的整合登入系統。'''\n\n您如果決定遷移您的帳號，您將可以使用相同的使用者名稱與密碼登入至 {{int:Centralauth-groupname}} 中所有的 Wiki 使用所有可用的語言。\n\n若已有其他人在其他網站使用了您的使用者名稱，這個動作不會影響到對方，但會給您機會讓您跟對方或跟管理員一同解決這個問題。",
 	"centralauth-merge-step1-title": "開始登入整合",

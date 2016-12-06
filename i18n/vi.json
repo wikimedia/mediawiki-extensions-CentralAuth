@@ -438,7 +438,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Ngày giải quyết",
 	"globalrenamequeue-column-rq-status": "Trạng thái",
 	"globalrenamequeue-column-rq-performer": "Người thực hiện",
-	"globalrenamequeue-action-address": "Địa chỉ",
+	"globalrenamequeue-action-address": "Giải quyết",
 	"globalrenamequeue-action-view": "Xem",
 	"globalrenamequeue-request-title": "Có muốn đổi tên “$1”?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> yêu cầu đổi tên mình thành <strong>$3</strong>.",
