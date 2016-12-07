@@ -79,9 +79,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			);
 		}
 
-		if ( !is_null( $params['group'] ) && !is_null( $params['excludegroup'] ) ) {
-			$this->dieUsage( 'group and excludegroup cannot be used together', 'group-excludegroup' );
-		}
+		$this->requireMaxOneParameter( $params, 'group', 'excludegroup' );
 
 		if ( !empty( $params['group'] ) ) {
 			$this->addTables( 'global_user_groups' );
