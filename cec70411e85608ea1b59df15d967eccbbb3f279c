@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ed34346_4b60bbfc",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-07T06:56:41Z",
+      "side": 1,
+      "message": "wfEscapeWikitext?",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_eb3547f4",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-07T06:56:41Z",
+      "side": 1,
+      "message": "The old version also errored out on locked\u003d\u0027\u0027 and no change to hidden.",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_cb3a8be4",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-07T06:56:41Z",
+      "side": 1,
+      "message": "should be escaped",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_cb216bae",
+        "filename": "includes/session/CentralAuthTokenSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2016-12-07T06:56:41Z",
+      "side": 1,
+      "message": "Should be escaped.",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
