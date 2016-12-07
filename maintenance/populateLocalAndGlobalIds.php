@@ -14,18 +14,26 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgLocalDatabases;
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$dbw = CentralAuthUtils::getCentralDB();
-		foreach( $wgLocalDatabases as $wiki ) {
-			// Temporarily skipping large wikis, 5 mil seems like a safe number (skips en, meta, mediawiki & login wikis)
-			$size = $dbr->estimateRowCount( 'localuser', '*', [ 'lu_wiki' => $wiki ] );
-			if ( $size > 5000000 ) {
-				continue;
-			}
+		if ( class_exists( 'CentralAuthUtils' ) ) {
+			$dbr = CentralAuthUtils::getCentralSlaveDB();
+			$dbw = CentralAuthUtils::getCentralDB();
 			$lastGlobalId = -1;
+
+			// Skip people in global rename queue
+			$wiki = wfWikiID();
+			$globalRenames = [];
+			$rows = $dbr->select(
+				'renameuser_status',
+				'ru_oldname'
+			);
+			foreach ( $rows as $row ) {
+				$globalRenames[] = $row->ru_oldname;
+			}
+
 			$lb = wfGetLB( $wiki );
 			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
+
+			$this->output( "Populating fields for wiki $wiki... \n" );
 			do {
 				$rows = $dbr->select(
 					[ 'localuser', 'globaluser' ],
@@ -45,10 +53,13 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 				$globalUidToLocalName = [];
 				foreach ( $rows as $row ) {
+					if ( in_array( $row->lu_name, $globalRenames ) ) {
+						$this->output( "User " . $row->lu_name . " not migrated (pending rename)\n" );
+						continue;
+					}
 					$globalUidToLocalName[$row->gu_id] = $row->lu_name;
 				}
 				if ( !$globalUidToLocalName ) {
-					$this->output( "All users migrated; Wiki: $wiki \n" );
 					continue;
 				}
 
@@ -61,6 +72,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 				foreach ( $localIds as $lid ) {
 					$localNameToUid[$lid->user_name] = $lid->user_id;
 				}
+				$updated = 0;
 				foreach ( $globalUidToLocalName as $gid => $uname ) {
 					// Save progress so we know where to start our next batch
 					$lastGlobalId = $gid;
@@ -74,14 +86,19 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 					);
 					if ( !$result ) {
 						$this->output( "Update failed for global user $lastGlobalId for wiki $wiki \n" );
+					} else {
+						// Count number of records actually updated
+						$updated++;
 					}
 				}
-				$this->output( "Updated $numRows records. Last user: $lastGlobalId; Wiki: $wiki \n" );
+				$this->output( "Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n" );
 				CentralAuthUtils::waitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
+			$this->output( "Completed $wiki \n" );
+		} else {
+			$this->error( "This script requires that the CentralAuth extension is enabled. Please enable it and try again.", 1 );
 		}
-		$this->output( "Done.\n" );
 	}
 
 }
