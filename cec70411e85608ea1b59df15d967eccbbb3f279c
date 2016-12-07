@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8ed34346_17c3048e",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-07T16:15:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ed34346_4b60bbfc",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ed34346_eb3547f4",
         "filename": "includes/api/ApiSetGlobalAccountStatus.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-12-07T06:56:41Z",
       "side": 1,
       "message": "The old version also errored out on locked\u003d\u0027\u0027 and no change to hidden.",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_57485c32",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-07T16:15:34Z",
+      "side": 1,
+      "message": "That does not appear to be the case. The call to -\u003egetCheck() on line 41 in the old code returns true for empty-string, not false.",
+      "parentUuid": "8ed34346_eb3547f4",
       "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8ed34346_1769c488",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-07T16:15:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ed34346_cb3a8be4",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ed34346_cb216bae",
         "filename": "includes/session/CentralAuthTokenSessionProvider.php",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2016-12-07T06:56:41Z",
       "side": 1,
       "message": "Should be escaped.",
+      "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ed34346_f76528ab",
+        "filename": "includes/session/CentralAuthTokenSessionProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-07T16:15:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ed34346_cb216bae",
       "revId": "cec70411e85608ea1b59df15d967eccbbb3f279c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
