@@ -80,7 +80,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	}
 
 	/**
-	 * @param $name
+	 * @param string|null $name
 	 * @return string|bool
 	 */
 	public function validateUsername( $name ) {

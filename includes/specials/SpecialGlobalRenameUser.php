@@ -32,7 +32,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	const EDITCOUNT_THRESHOLD = 50000;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 	}
 

@@ -15,12 +15,12 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 class SpecialWikiSets extends SpecialPage {
 	var $mCanEdit;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'WikiSets' );
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	function getDescription() {
 		return $this->msg( 'centralauth-editset' )->text();
@@ -100,12 +100,12 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $subpage
-	 * @param $error bool
-	 * @param $name
-	 * @param $type
-	 * @param $wikis
-	 * @param $reason
+	 * @param string $subpage
+	 * @param bool $error
+	 * @param string|null $name
+	 * @param string|null $type
+	 * @param string[]|null $wikis
+	 * @param string|null $reason
 	 */
 	function buildSetView( $subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null ) {
 		global $wgLocalDatabases;
@@ -201,8 +201,8 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $name
-	 * @param $value
+	 * @param string $name
+	 * @param string $value
 	 * @return string
 	 */
 	function buildTypeSelector( $name, $value ) {
@@ -258,8 +258,7 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $subpage
-	 * @return mixed
+	 * @param string $subpage
 	 */
 	function buildDeleteView( $subpage ) {
 		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editset-subtitle' )->parse() );
@@ -281,8 +280,7 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $id
-	 * @return mixed
+	 * @param string $id
 	 */
 	function doSubmit( $id ) {
 		global $wgContLang;
@@ -366,8 +364,7 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param $set
-	 * @return mixed
+	 * @param string $set
 	 */
 	function doDelete( $set ) {
 		$set = WikiSet::newFromID( $set );

@@ -131,7 +131,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * entry
 	 *
 	 * @param CentralAuthUser $central
-	 * @param $username
+	 * @param string $username
 	 * @return bool
 	 */
 	protected function checkAttached( CentralAuthUser $central, $username ) {

@@ -5,21 +5,26 @@
  */
 class CentralAuthGroupMembershipProxy {
 	/**
+	 * @var string
+	 */
+	private $name;
+
+	/**
 	 * @var CentralAuthUser
 	 */
 	private $mGlobalUser;
 
 	/**
-	 * @param $user CentralAuthUser
+	 * @param CentralAuthUser $user
 	 */
-	private function __construct( $user ) {
+	private function __construct( CentralAuthUser $user ) {
 		$this->name = $user->getName();
 		$this->mGlobalUser = $user;
 	}
 
 	/**
-	 * @param $wikiID
-	 * @param $id
+	 * @param string $wikiID Unused
+	 * @param int $id
 	 * @return bool
 	 */
 	public static function whoIs( $wikiID, $id ) {
@@ -32,7 +37,7 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	/**
-	 * @param $name
+	 * @param string $name
 	 * @return CentralAuthGroupMembershipProxy|null
 	 */
 	public static function newFromName( $name ) {
@@ -42,7 +47,7 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	/**
-	 * @param $id
+	 * @param int $id
 	 * @return CentralAuthGroupMembershipProxy|null
 	 */
 	public static function newFromId( $id ) {
@@ -51,7 +56,7 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	/**
-	 * @return Int
+	 * @return int
 	 */
 	public function getId() {
 		return $this->mGlobalUser->getId();
@@ -65,7 +70,7 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	public function getName() {
 		return $this->name;
@@ -88,7 +93,7 @@ class CentralAuthGroupMembershipProxy {
 
 	/**
 	 * replaces addUserGroup
-	 * @param $group
+	 * @param string[]|string $group
 	 *
 	 * @return bool
 	 */
@@ -99,7 +104,7 @@ class CentralAuthGroupMembershipProxy {
 
 	/**
 	 * replaces removeUserGroup
-	 * @param $group
+	 * @param string $group
 	 *
 	 * @return bool
 	 */

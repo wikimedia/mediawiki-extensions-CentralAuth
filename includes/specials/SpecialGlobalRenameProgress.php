@@ -6,7 +6,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	 */
 	private $renameuserStatus;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'GlobalRenameProgress' );
 	}
 

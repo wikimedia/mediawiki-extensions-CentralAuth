@@ -19,7 +19,7 @@
  */
 
 class SpecialGlobalGroupPermissions extends SpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'GlobalGroupPermissions' );
 	}
 
@@ -28,7 +28,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $user
+	 * @param User $user
 	 * @return bool
 	 */
 	function userCanEdit( $user ) {
@@ -207,7 +207,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
+	 * @param string $group
 	 */
 	function buildGroupView( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
@@ -264,7 +264,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
+	 * @param string $group
 	 * @return string
 	 */
 	function buildWikiSetSelector( $group ) {
@@ -297,7 +297,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
+	 * @param string $group
 	 * @return string
 	 */
 	function buildCheckboxes( $group ) {
@@ -363,7 +363,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
+	 * @param string $group
 	 * @return array
 	 */
 	function getAssignedRights( $group ) {
@@ -468,8 +468,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
-	 * @param $rights
+	 * @param string $group
+	 * @param string[] $rights
 	 */
 	function revokeRightsFromGroup( $group, $rights ) {
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -479,8 +479,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
-	 * @param $rights
+	 * @param string $group
+	 * @param string[]|string $rights
 	 */
 	function grantRightsToGroup( $group, $rights ) {
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -499,8 +499,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
-	 * @param $output OutputPage
+	 * @param string $group
+	 * @param OutputPage $output
 	 */
 	protected function showLogFragment( $group, $output ) {
 		$title = SpecialPage::getTitleFor( 'GlobalUsers', $group );
@@ -512,10 +512,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/**
 	 * Log permission changes
 	 *
-	 * @param $group string
-	 * @param $addRights array
-	 * @param $removeRights array
-	 * @param $reason string
+	 * @param string $group
+	 * @param string[] $addRights
+	 * @param string[] $removeRights
+	 * @param string $reason
 	 */
 	function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
 		$log = new LogPage( 'gblrights' );
@@ -576,7 +576,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $ids
+	 * @param string[] $ids
 	 * @return string
 	 */
 	function makeRightsList( $ids ) {
@@ -584,8 +584,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group
-	 * @param $set
+	 * @param string $group
+	 * @param int $set
 	 * @return bool
 	 */
 	function setRestrictions( $group, $set ) {
@@ -607,8 +607,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $id string|int
-	 * @return String
+	 * @param string|int $id
+	 * @return string
 	 */
 	function getWikiSetName( $id ) {
 		if ( $id ) {

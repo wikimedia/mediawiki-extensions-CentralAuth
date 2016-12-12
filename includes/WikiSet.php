@@ -56,7 +56,7 @@ class WikiSet {
 	public function getName() { return $this->mName; }
 
 	/**
-	 * @param $n
+	 * @param string $n
 	 */
 	public function setName( $n ) { $this->setDbField( 'ws_name', $n ); }
 
@@ -66,7 +66,7 @@ class WikiSet {
 	public function getWikisRaw() { return $this->mWikis; }
 
 	/**
-	 * @param $w
+	 * @param string $w
 	 */
 	public function setWikisRaw( $w ) { $this->setDbField( 'ws_wikis', $w ); }
 
@@ -76,7 +76,7 @@ class WikiSet {
 	public function getType() { return $this->mType; }
 
 	/**
-	 * @param $t
+	 * @param string $t
 	 * @return bool
 	 */
 	public function setType( $t ) {
@@ -87,8 +87,8 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $field
-	 * @param $value
+	 * @param string $field
+	 * @param mixed $value
 	 */
 	protected function setDbField( $field, $value ) {
 		$map = array( 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' );
@@ -97,7 +97,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $row
+	 * @param stdClass|bool $row
 	 * @return null|WikiSet
 	 */
 	public static function newFromRow( $row ) {
@@ -113,8 +113,8 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $name
-	 * @param $useCache bool
+	 * @param string $name
+	 * @param bool $useCache
 	 * @return null|WikiSet
 	 */
 	public static function newFromName( $name, $useCache = true ) {
@@ -144,8 +144,8 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $id string|int
-	 * @param $useCache bool
+	 * @param string|int $id
+	 * @param bool $useCache
 	 * @return null|WikiSet
 	 */
 	public static function newFromID( $id, $useCache = true ) {
@@ -293,7 +293,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $group
+	 * @param string $group
 	 * @return int
 	 */
 	public static function getWikiSetForGroup( $group ) {
@@ -304,7 +304,7 @@ class WikiSet {
 
 	/**
 	 * @static
-	 * @param $type
+	 * @param string $type
 	 * @return string
 	 */
 	public static function formatType( $type ) {

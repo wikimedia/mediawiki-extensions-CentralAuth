@@ -1,7 +1,7 @@
 <?php
 
 class SpecialGlobalUsers extends SpecialPage {
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'GlobalUsers' );
 	}
 
@@ -54,7 +54,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	protected $globalIDGroups = array();
 	private $localWikisets = array();
 
-	function __construct( IContextSource $context = null, $par = null ) {
+	public function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
 		$this->mDb = CentralAuthUtils::getCentralSlaveDB();

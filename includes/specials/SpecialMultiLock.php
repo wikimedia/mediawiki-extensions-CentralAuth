@@ -12,7 +12,7 @@ class SpecialMultiLock extends SpecialPage {
 	private $mGlobalUsers, $mUserNames, $mPrefixSearch, $mPosted, $mMethod;
 	private $mActionLock, $mActionHide, $mReason, $mActionUserNames;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
 	}
 

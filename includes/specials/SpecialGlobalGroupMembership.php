@@ -11,14 +11,14 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 */
 	private $mGlobalUser;
 
-	function __construct() {
+	public function __construct() {
 		SpecialPage::__construct( 'GlobalGroupMembership' );
 
 		$this->mGlobalUser = CentralAuthUser::getInstance( $this->getUser() );
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	function getSuccessURL() {
 		return $this->getPageTitle( $this->mTarget )->getFullURL();

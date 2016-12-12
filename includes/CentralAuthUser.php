@@ -68,7 +68,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param string $username
 	 * @param integer $flags Supports CentralAuthUser::READ_LATEST to use the master DB
 	 */
-	function __construct( $username, $flags = 0 ) {
+	public function __construct( $username, $flags = 0 ) {
 		$this->mName = $username;
 		$this->resetState();
 		if ( ( $flags & self::READ_LATEST ) == self::READ_LATEST ) {
@@ -203,7 +203,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param $wikiID
+	 * @param string $wikiID
 	 * @return Database
 	 */
 	public static function getLocalDB( $wikiID ) {
@@ -557,7 +557,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Generate a valid memcached key for caching the object's data.
-	 * @return String
+	 * @return string
 	 */
 	protected function getCacheKey() {
 		return "centralauth-user-" . md5( $this->mName );
@@ -565,7 +565,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Return the global account's name, whether it exists or not.
-	 * @return String
+	 * @return string
 	 */
 	public function getName() {
 		return $this->mName;
@@ -1302,7 +1302,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * @static
 	 * @throws Exception
-	 * @param  $list
+	 * @param string[] $list
 	 * @return array
 	 */
 	protected static function validateList( $list ) {
@@ -1319,7 +1319,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * @static
-	 * @return array
+	 * @return string[]
 	 */
 	public static function getWikiList() {
 		global $wgLocalDatabases;
@@ -2039,8 +2039,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param  $wikiID
-	 * @return void
+	 * @param string $wikiID
 	 */
 	function addLocalName( $wikiID ) {
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -2053,8 +2052,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param  $wikiID
-	 * @return void
+	 * @param string $wikiID
 	 */
 	function removeLocalName( $wikiID ) {
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -2067,8 +2065,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Updates the localname table after a rename
-	 * @param $wikiID
-	 * @param $newname
+	 * @param string $wikiID
+	 * @param string $newname
 	 */
 	function updateLocalName( $wikiID, $newname ) {
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -2100,7 +2098,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Troll through the full set of local databases and list those
 	 * which exist into the 'localnames' table.
 	 *
-	 * @return Bool whether any results were found
+	 * @return bool whether any results were found
 	 */
 	protected function importLocalNames() {
 		$rows = [];
@@ -2180,7 +2178,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Fetch a list of databases where this account has been successfully
 	 * attached.
 	 *
-	 * @return array database name strings
+	 * @return string[] Database name strings
 	 */
 	public function listAttached() {
 		$this->loadAttached();
@@ -2483,7 +2481,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param  $ts
+	 * @param string $ts
 	 * @return void
 	 */
 	function setEmailAuthenticationTimestamp( $ts ) {
@@ -2566,7 +2564,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * This allows other extensions to easily set global cookies without directly relying on
 	 * $wgCentralAuthCookieDomain (in case CentralAuth's implementation changes at some point).
 	 *
-	 * @return String
+	 * @return string
 	 */
 	static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
@@ -2702,7 +2700,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param  $groups
+	 * @param string $groups
 	 * @return void
 	 */
 	function removeFromGlobalGroups( $groups ) {
@@ -2718,7 +2716,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param  $groups
+	 * @param string[]|string $groups
 	 * @return void
 	 */
 	function addToGlobalGroups( $groups ) {
@@ -2763,7 +2761,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * @static
-	 * @param  $group
+	 * @param string $group
 	 * @return array
 	 */
 	static function globalGroupPermissions( $group ) {
@@ -2783,7 +2781,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param  $perm
+	 * @param string $perm
 	 * @return bool
 	 */
 	function hasGlobalPermission( $perm ) {
@@ -2874,8 +2872,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Get a hash representing the user/locked/hidden state of this user,
 	 * used to check for edit conflicts
 	 *
-	 * @param $recache - force a reload of the user from the database
-	 * @return String
+	 * @param bool $recache Force a reload of the user from the database
+	 * @return string
 	 */
 	public function getStateHash( $recache = false ) {
 		$this->loadState( $recache );
@@ -2885,10 +2883,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Log an action for the current user
 	 *
-	 * @param $action
-	 * @param $reason string
-	 * @param $params array
-	 * @param $suppressLog bool
+	 * @param string $action
+	 * @param string $reason
+	 * @param array $params
+	 * @param bool $suppressLog
 	 */
 	function logAction( $action, $reason = '', $params = array(), $suppressLog = false ) {
 		// Not centralauth because of some weird length limitiations
