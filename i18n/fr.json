@@ -46,7 +46,8 @@
 			"Steinsplitter",
 			"Yasten",
 			"Mattho69",
-			"Tuxxic"
+			"Tuxxic",
+			"Derugon"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -360,6 +361,7 @@
 	"right-centralauth-merge": "Fusionner ses comptes",
 	"right-globalgrouppermissions": "Gérer les groupes globaux",
 	"abusefilter-edit-builder-vars-global-user-groups": "Groupes globaux auxquels appartient l'utilisateur",
+	"action-centralauth-unmerge": "annuler la fusion des comptes globaux",
 	"action-centralauth-lock": "verrouiller ou déverrouiller les comptes globaux",
 	"centrallogin": "Connexion utilisateur centralisée",
 	"centralloginsuccesful": "Connecté",
@@ -477,7 +479,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Date de fin",
 	"globalrenamequeue-column-rq-status": "État",
 	"globalrenamequeue-column-rq-performer": "Réalisé par",
-	"globalrenamequeue-action-address": "Adresse",
+	"globalrenamequeue-action-address": "Traiter",
 	"globalrenamequeue-action-view": "Afficher",
 	"globalrenamequeue-request-title": "Renommer « $1 » ?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> demande un changement de nom à <strong> $3 </strong>.",
@@ -565,6 +567,8 @@
 	"apihelp-setglobalaccountstatus-example-1": "Verrouiller le compte global pour [[User:Example]] avec le motif « Pourriel »",
 	"apihelp-setglobalaccountstatus-example-2": "Déverrouiller et supprimer le compte global pour [[User:Example]] avec le motif « Je peux »",
 	"apihelp-main-param-centralauthtoken": "Lors de l’accès à l’API en utilisant une requête AJAX inter-domaines (CORS), utiliser ceci pour s’authentifier comme l’utilisateur SUL actuel. Utiliser <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> sur ce wiki pour récupérer le jeton, avant de faire la requête CORS. Chaque jeton ne peut être utilisé qu’une fois, et expire après 10 secondes. Cela devrait être inclus dans toute requête de survol, et donc dans l’URI de la requête (et non le corps du POST).",
+	"apierror-centralauth-badtoken": "Le symbole central d'identification est invalide.",
+	"apierror-centralauth-badusername": "Le nom d'utilisateur \"$1\" n'est pas utilisable sur ce wiki",
 	"centralauth-log-gblrename-oldname": "Nom d’utilisateur précédent :",
 	"centralauth-contribs-locked": "Ce compte est verrouillé globalement.\nVoyez [[Special:CentralAuth/$1|les détails du compte global]] pour plus d’information.",
 	"centralauth-contribs-locked-log": "Ce compte est verrouillé globalement.\nLa dernière entrée du journal des blocages est fournie ci-dessous à titre d’information :",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"1AnuraagPandey"
+			"1AnuraagPandey",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
@@ -139,11 +140,8 @@
 	"centralautologin": "वैश्विक लॉगिन",
 	"centralauth-centralautologin-lostsession": "सेशन डाटा हेराई गय",
 	"centralauth-centralautologin-badstate": "अमान्य स्थिति \"$1\"",
-	"centralauth-existinggroup-legend": "मौजूदा सदस्य-समूह",
 	"centralauth-globalgroupperms-newgroupname": "नँवा सदस्य-समूह कय नाँव:",
 	"centralauth-globalgroupperms-creategroup-submit": "अधिकार दिहा जाय",
-	"centralauth-editgroup-subtitle": "$1 सम्पादन",
-	"centralauth-editgroup-subtitle-readonly": "$1 देखावा जाय",
 	"centralauth-editgroup-fieldset": "$1 कय अधिकार",
 	"centralauth-editgroup-name": "सदस्य-समूह कय नाँव:",
 	"centralauth-editgroup-display": "सदस्य-समूह कय स्थानीय नाँव:",

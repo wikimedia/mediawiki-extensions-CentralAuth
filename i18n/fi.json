@@ -442,7 +442,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Pyyntö suljettu",
 	"globalrenamequeue-column-rq-status": "Tila",
 	"globalrenamequeue-column-rq-performer": "Suorittanut",
-	"globalrenamequeue-action-address": "Osoite",
+	"globalrenamequeue-action-address": "Ryhdy toimeen",
 	"globalrenamequeue-action-view": "Näytä",
 	"globalrenamequeue-request-title": "Vaihdetaanko nimi tunnukselle \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> pyytää, että hänen tunnuksensa siirrettäisiin nimelle <strong>$3</strong>.",

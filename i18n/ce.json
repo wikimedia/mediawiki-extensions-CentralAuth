@@ -3,7 +3,8 @@
 		"authors": [
 			"Sasan700",
 			"Умар",
-			"Исмаил Садуев"
+			"Исмаил Садуев",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "Декъашхочун дӀаяздарш цхьаьнатохаран хьал",
@@ -224,16 +225,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "Ахьа глобальни авторизаци йина, за гар хьама агӀо карлаяккха.",
 	"globalgroupmembership": "Глобальни тобанаш чохь дакъалацар",
 	"globalgrouppermissions": "Глобальни тобанашна урхалладар",
-	"centralauth-globalgroupperms-grouplist": "Нийса йина лахара глобальни бакъонаш.\nХьа йиш ю хьажа я хийца бакъонаш хьан бакъо елахь.\nТоба дӀаяккха мега цара ерриг бакъонаш дӀаяхна.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|хийцамашка/хьажар]])",
 	"centralauth-globalgroupperms-nogroups": "Глобальни тобанаш билгалйина яц.",
-	"centralauth-existinggroup-legend": "Йолуш йолу бакъонаш",
 	"centralauth-newgroup-legend": "Кхолла керла тоба",
 	"centralauth-newgroup-intro": "Ахьа лело мега хӀара форма керлачу тобана бакъонаш xӀoттo. Дагахь латтаде цӀа бакъо йоцуш тоба хийла йиш яц.",
 	"centralauth-globalgroupperms-newgroupname": "Керла тобан цӀе:",
 	"centralauth-globalgroupperms-creategroup-submit": "Бакъо ялар",
-	"centralauth-editgroup-subtitle": "Тоба хийцар $1",
-	"centralauth-editgroup-subtitle-readonly": "Хьажа тобане «$1»?",
 	"centralauth-editgroup-fieldset": "Бакъо цу $1",
 	"centralauth-editgroup-name": "Тобан цӀе:",
 	"centralauth-editgroup-display": "Тобан локализовани цӀе:",
@@ -291,7 +287,6 @@
 	"centralauth-readonly": "хаамийн базан CentralAuth блоктоьхна",
 	"centralauth-readonlytext": "CentralAuth база хӀинца йолу хана хицамаш ца байта блоктохна ю, база карлайокхуш хила там бу болх чекх баьлча юху болх бира бу.",
 	"right-globalgroupmembership": "глобальни тобанаш чохь дакъалацар хийцар",
-	"right-centralauth-autoaccount": "глобальни декъашхочун дӀаяздар тӀера aвтоматически чубовлар",
 	"right-centralauth-unmerge": "глобальни дӀаяздарш вовшах дахар",
 	"right-centralauth-lock": "глобальни декъашхочун дӀаяздаран блоктохар я дӀаяккхар",
 	"right-centralauth-oversight": "глобальни дӀаяздар дохор я хьулдар",

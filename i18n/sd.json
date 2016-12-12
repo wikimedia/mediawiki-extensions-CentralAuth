@@ -17,5 +17,6 @@
 	"globalrenamequeue-form-username": "يُوزرنانءُ:",
 	"globalrenamequeue-form-newname": "گهريل يُوزرنانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
-	"globalrenamequeue-form-status-all": "سڀ"
+	"globalrenamequeue-form-status-all": "سڀ",
+	"apierror-centralauth-badusername": "يوزر ناءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي"
 }

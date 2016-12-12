@@ -25,7 +25,8 @@
 			"TheEduGobi",
 			"Araceletorres",
 			"Luk3",
-			"Dianakc"
+			"Dianakc",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -441,7 +442,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Data de conclusão",
 	"globalrenamequeue-column-rq-status": "Status",
 	"globalrenamequeue-column-rq-performer": "Realizado por",
-	"globalrenamequeue-action-address": "Endereço",
+	"globalrenamequeue-action-address": "Tratar",
 	"globalrenamequeue-action-view": "Ver",
 	"globalrenamequeue-request-title": "Renomear \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> está solicitando uma renomeação para <strong>$3</strong>.",

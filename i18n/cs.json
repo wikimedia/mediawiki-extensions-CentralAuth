@@ -522,6 +522,7 @@
 	"apihelp-setglobalaccountstatus-example-1": "Zamknout globální účet [[User:Example]] s odůvodněním „Spam“",
 	"apihelp-setglobalaccountstatus-example-2": "Odemknout a utajit globální účet [[User:Example]] se zdůvodněním „I can“",
 	"apihelp-main-param-centralauthtoken": "Tento token používejte při přístupu k API pomocí mezidoménového AJAX požadavku (CORS) pro autentizaci jako aktuální uživatel SUL. Před provedením CORS requestu získejte na této wiki token pomocí <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd>. Každý token lze použít pouze jednou a expiruje po 10 sekundách. Měl by se použít v případném předběžném požadavku, takže by se měl objevit v URI požadavku (nikoli tělu POST).",
+	"apierror-centralauth-badusername": "Uživatelské jméno „$1“ není na této wiki použitelné.",
 	"centralauth-log-gblrename-oldname": "Předchozí uživatelské jméno:",
 	"centralauth-contribs-locked": "Tento účet je globálně uzamčen.\nVíce informací najdete v [[Special:CentralAuth/$1|podrobnostech globálního účtu]].",
 	"centralauth-contribs-locked-log": "Tento účet je globálně uzamčen.\nZde je pro přehled zobrazen nejnovější záznam z knihy uzamčení účtů:",

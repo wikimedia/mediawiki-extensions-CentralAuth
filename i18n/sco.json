@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "Login uneefeecation status",
@@ -235,16 +236,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "Ye'r centrallie loggit in. Relaid the page tae applie yer uiser settins.",
 	"globalgroupmembership": "Memmership in global groops",
 	"globalgrouppermissions": "Global groop managemant",
-	"centralauth-globalgroupperms-grouplist": "The follaein global groops hae been confeegured.\nYe can see or eedit the permeessions assigned til ae groop, gif ye'v permeession tae.\nAe groop can be delytit bi remuivin aw richts fae it.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|see/eedit]])",
 	"centralauth-globalgroupperms-nogroups": "Nae global groops ar defined.",
-	"centralauth-existinggroup-legend": "Exeestin groops",
 	"centralauth-newgroup-legend": "Cræft ae new groop",
 	"centralauth-newgroup-intro": "Ye can uise this form tae assign permeessions til ae new groop.\nMynd that ae groop disna exeest onless it has permeessions assigned til it.",
 	"centralauth-globalgroupperms-newgroupname": "New groop name:",
 	"centralauth-globalgroupperms-creategroup-submit": "Assign permeessions",
-	"centralauth-editgroup-subtitle": "Eeditin $1",
-	"centralauth-editgroup-subtitle-readonly": "See $1",
 	"centralauth-editgroup-fieldset": "Permeessions fer $1",
 	"centralauth-editgroup-name": "Name o groop:",
 	"centralauth-editgroup-display": "Localised name o groop:",
@@ -301,7 +297,6 @@
 	"centralauth-readonly": "CentralAuth database lockt",
 	"centralauth-readonlytext": "The CentralAuth database is nou lockt til new entries n ither modeefeecations, proablie fer routine database maintenance, efter this it will be back til normal.",
 	"right-globalgroupmembership": "Eedit memmership til global groops",
-	"right-centralauth-autoaccount": "Autæmateeclie login wi global accoont",
 	"right-centralauth-unmerge": "Onmerge global accoont",
 	"right-centralauth-lock": "Lock or lowse global accoont",
 	"right-centralauth-oversight": "Suppress or skauk global accoont",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joetaras",
-			"Reder"
+			"Reder",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "State de trasùte aunifecate",
@@ -241,16 +242,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "Tu è trasute cendralmende. Recareche 'a pàgene pe applecà le 'mbostaziune tune.",
 	"globalgroupmembership": "Membre jndr'à le gruppe globbale",
 	"globalgrouppermissions": "Gruppe de gestione globbale",
-	"centralauth-globalgroupperms-grouplist": "Le gruppe seguende onne state configurate.\nTu puè 'ndrucà o cangià le permesse assignate a 'u gruppe, ce tu tìne le permesse.\n'Nu gruppe pò essere scangellatem luanne tutte le permesse ca téne.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|vide/cange]])",
 	"centralauth-globalgroupperms-nogroups": "Nisciune gruppe globbale jè state definite.",
-	"centralauth-existinggroup-legend": "Gruppe esistende",
 	"centralauth-newgroup-legend": "Ccreje 'nu gruppe nuève",
 	"centralauth-newgroup-intro": "Puè ausà stu module pe assegnà le permesse a 'nu gruppe nuéve.\nVide ca 'nu gruppe non g'esiste senze ca l'onne state assignate le permesse.",
 	"centralauth-globalgroupperms-newgroupname": "Nome nuève d'u gruppe:",
 	"centralauth-globalgroupperms-creategroup-submit": "Assegne le permesse",
-	"centralauth-editgroup-subtitle": "Stoche a cange $1",
-	"centralauth-editgroup-subtitle-readonly": "Vide $1",
 	"centralauth-editgroup-fieldset": "Permesse pe $1",
 	"centralauth-editgroup-name": "Nome d'u gruppe:",
 	"centralauth-editgroup-display": "Nome d'u gruppe localizzate:",
@@ -308,7 +304,6 @@
 	"centralauth-readonly": "Database d'u CentralAuth bloccate",
 	"centralauth-readonlytext": "'U database CentralAuth ste bloccate pe le vôsce nuéve e cangiaminde, probbabbilmende pe 'na manutenzione, e pò torne tutte apposte.",
 	"right-globalgroupmembership": "Cange l'appartenenze a le gruppe globbale",
-	"right-centralauth-autoaccount": "E' trasute automaticamende cu 'u cunde globbale",
 	"right-centralauth-unmerge": "Scucchie le cunde globbale",
 	"right-centralauth-lock": "Blocche o sblocche 'u cunde globbale",
 	"right-centralauth-oversight": "Sopprime o scunne 'u cunde globbale",

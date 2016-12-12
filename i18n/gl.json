@@ -440,7 +440,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Data de peche",
 	"globalrenamequeue-column-rq-status": "Estado",
 	"globalrenamequeue-column-rq-performer": "Feito por",
-	"globalrenamequeue-action-address": "Enderezo",
+	"globalrenamequeue-action-address": "Tratar",
 	"globalrenamequeue-action-view": "Ver",
 	"globalrenamequeue-request-title": "Cambiar o nome de \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> está solictando un cambio de nome para <strong>$3</strong>.",

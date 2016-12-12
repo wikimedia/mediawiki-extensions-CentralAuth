@@ -509,6 +509,7 @@
 	"apihelp-query+globaluserinfo-example-2": "Ottieni informazioni sull'utente globale [[User:Example|Example]]",
 	"apihelp-query+wikisets-param-orderbyname": "Ordina i risultati per nome.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo per cambiare lo stato dell'utente.",
+	"apierror-centralauth-badusername": "Il nome utente \"$1\" non è utilizzabile su questo wiki",
 	"centralauth-log-gblrename-oldname": "Nome utente precedente:",
 	"centralauth-contribs-locked": "Questo utente è bloccato globalmente.\nVedi i [[Special:CentralAuth/$1|dettagli dell'utenza globale]] per ulteriori informazioni.",
 	"centralauth-contribs-locked-log": "Questo utente è bloccato globalmente.\nL'ultimo elemento del registro dei blocchi è riportato di seguito per informazione:",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Bonevarluri",
 			"Mogoeilor",
-			"Macofe"
+			"Macofe",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "یه شلک کردن شلک اومائن وامین",
@@ -239,16 +240,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "شما ایسنی وامین اومایته، بلگه د نو سوار بکیت سی جواو دئن وه میزوکاری کاریاری خوتو.",
 	"globalgroupmembership": "اندوم بیئن د گرویا جهونی",
 	"globalgrouppermissions": "دیونداری گرو جهونی",
-	"centralauth-globalgroupperms-grouplist": "گرویا سرتاسری هاری میزونکاری بینه.\nد حال و باری که اختیاریا حاستن نه داشتوئیت، می تونیت اختیاریا دئه بیه وه هر دسه نه سیل بکیت و ونونه ویرایشت بکیت.\nبوئه یه گل گرو نه و گرتن همه اختیاراش پاکسا کرد.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|دیئن و ویرایشت اختیاریا]])",
 	"centralauth-globalgroupperms-nogroups": "هیچ گرو جهونی مشقص نبیه.",
-	"centralauth-existinggroup-legend": "گرویایی که هئن",
 	"centralauth-newgroup-legend": "گروه تازه راس بكيد",
 	"centralauth-newgroup-intro": "شما می تونیت وا وه کار گرتن ای نوم بلگه اختیاریایی نه بئیت وه یه گل گرو. د ویر داشتوئیت که یه گل گرو تا گاتی که اختیاریا دش دئه نبا نمی تونه بوئه.",
 	"centralauth-globalgroupperms-newgroupname": "نوم گرو تازه:",
 	"centralauth-globalgroupperms-creategroup-submit": "دئن اختیار",
-	"centralauth-editgroup-subtitle": "د حالت ويرايشت$1",
-	"centralauth-editgroup-subtitle-readonly": "دیئن$1",
 	"centralauth-editgroup-fieldset": "اجازه دئن سی $1",
 	"centralauth-editgroup-name": "نوم گروه:",
 	"centralauth-editgroup-display": "نوم ولات نشین بیه گرو:",
@@ -305,7 +301,6 @@
 	"centralauth-readonly": "پاگا دونسمنی مینجاسامونی قلف بیه",
 	"centralauth-readonlytext": "رسینه جا داده حساو هومبهر د ایسه د ری وه ری چیا تازه و \nآلشتکاریا هنی قلف بیه؛ ای حال و بار سی واداشت گاتمن رسینه جا انجوم بوئه و نها ای کار بوئه وه حال و بار اول.",
 	"right-globalgroupmembership": "اندوم بیئن د گرویا جهونی نه ویرایشت بکید",
-	"right-centralauth-autoaccount": "خودکار وامئن اومائن بی حساو جهونی داشتن",
 	"right-centralauth-unmerge": "جگا کردن حساو جهونی",
 	"right-centralauth-lock": "قلف کردن یا نکردن حساو جهونی",
 	"right-centralauth-oversight": "جلوش بئریت یا حساو جهونی قام بکید",

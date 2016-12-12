@@ -20,7 +20,8 @@
 			"McAang",
 			"Incelemeelemani",
 			"HakanIST",
-			"Sadrettin"
+			"Sadrettin",
+			"1917 Ekim Devrimi"
 		]
 	},
 	"mergeaccount": "Hesap birleştirme durumu",
@@ -413,7 +414,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Kapanış tarihi",
 	"globalrenamequeue-column-rq-status": "Durum",
 	"globalrenamequeue-column-rq-performer": "Tarafından yapıldı",
-	"globalrenamequeue-action-address": "Adres",
+	"globalrenamequeue-action-address": "Düzenle",
 	"globalrenamequeue-action-view": "Görüntüle",
 	"globalrenamequeue-request-title": "\"$1\", yeniden adlandırılsın mı?",
 	"globalrenamequeue-request-cancel-text": "Vazgeç",

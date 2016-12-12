@@ -3,7 +3,8 @@
 		"authors": [
 			"Chelin",
 			"C.R.",
-			"Candalua"
+			"Candalua",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "Stato d' 'o cunto aunificato",
@@ -240,16 +241,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "Site trasuto/a centralmente. Recarrecate 'a paggena pe n'apprecà 'e mpustaziune utente vuoste.",
 	"globalgroupmembership": "Membre int' 'e gruppe globbale",
 	"globalgrouppermissions": "Gruppo 'e gistione globbale",
-	"centralauth-globalgroupperms-grouplist": "'E gruppe ccà abbascio so' state configurate.\nÈ pussibbele vedè o cagnà 'e permesse assegnate a nu gruppo, si tenite 'o permesso p' 'o putè fà.\nNu gruppo se può cagnà luvanno tutt' 'e permesse suoje.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|vide/cànga]])",
 	"centralauth-globalgroupperms-nogroups": "Nun ce stanno gruppe globbale definite.",
-	"centralauth-existinggroup-legend": "Gruppe esistente",
 	"centralauth-newgroup-legend": "Crèa nu gruppo nuovo",
 	"centralauth-newgroup-intro": "Putite ausà stu modulo pe n'accucchià permesse a nu gruppo nuovo.\nVedite ca nu gruppo nun esiste a meno ca nun ce mettessero permesse suoccie a isso.",
 	"centralauth-globalgroupperms-newgroupname": "Nomme d' 'o gruppo nuovo:",
 	"centralauth-globalgroupperms-creategroup-submit": "Assegna 'e permesse",
-	"centralauth-editgroup-subtitle": "Cagnanno $1",
-	"centralauth-editgroup-subtitle-readonly": "Vide $1",
 	"centralauth-editgroup-fieldset": "Permesse pe' $1",
 	"centralauth-editgroup-name": "Nomme d' 'o gruppo:",
 	"centralauth-editgroup-display": "Nomme d' 'o gruppo localizzato:",
@@ -306,7 +302,6 @@
 	"centralauth-readonly": "Database d' 'o CentralAuth bloccato",
 	"centralauth-readonlytext": "'O database 'e CentralAuth è p' 'o mumento bloccato 'a scrittura, pussibbele ca fosse pe n'operazione 'e manutenzione normale, aropp'a chista tutto turnarrà a 'o stato normale.",
 	"right-globalgroupmembership": "Cagna ll'appartenenze ê membre dint' 'e gruppe globbale",
-	"right-centralauth-autoaccount": "Accesso automateco c' 'o cunto globbale",
 	"right-centralauth-unmerge": "Scucchia 'e cunte globbale",
 	"right-centralauth-lock": "Blocca o sblocca 'o cunto globbale",
 	"right-centralauth-oversight": "Lèva o annascunne 'o cunto globbale",

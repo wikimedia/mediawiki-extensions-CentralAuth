@@ -5,7 +5,8 @@
 			"Тест",
 			"Хомелка",
 			"Дзяніс Тутэйшы",
-			"Чаховіч Уладзіслаў"
+			"Чаховіч Уладзіслаў",
+			"Mechanizatar"
 		]
 	},
 	"mergeaccount": "Стан уніфікацыі рахункаў",
@@ -13,6 +14,7 @@
 	"centralauth-desc": "[[Special:MergeAccount|Аб'яднанне рахункаў]] на вікі-пляцоўках {{int:Centralauth-groupname}}",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Аб'ядноўвае некалькі рахункаў]] у Адзінае Прадстаўленне",
 	"centralauth-merge-denied": "На жаль, вам не дазволены доступ да гэтай старонкі.",
+	"centralauth-merge-dryrun-or": "'''або'''",
 	"centralauth-merge-step3-submit": "Аб'яднаць рахункі",
 	"centralauth-complete": "Аб'яднанне рахункаў завершана!",
 	"centralauth-incomplete": "Аб'яднанне рахункаў не завершана!",
@@ -31,9 +33,9 @@
 	"centralauth-days-ago": "$1 {{PLURAL:$1|дзень|дні|дзён}} назад",
 	"centralauth-months-ago": "$1 месяц{{PLURAL:$1||ы|аў}} назад",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гады|гадоў}} назад",
-	"centralauth-prefs-status": "Стан глабальнага рахунка:",
+	"centralauth-prefs-status": "Глабальны ўліковы запіс:",
 	"centralauth-prefs-not-managed": "Уніфікаваны рахунак не ўжываецца",
-	"centralauth-prefs-unattached": "Не пацверджана",
+	"centralauth-prefs-unattached": "Не цалкам аб'яднана",
 	"centralauth-editgroup-reason": "Прычына:",
 	"centralauth-editset-type": "Тып:",
 	"centralauth-editset-reason": "Прычына:"

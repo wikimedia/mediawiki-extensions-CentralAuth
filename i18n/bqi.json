@@ -6,5 +6,6 @@
 	},
 	"centralauth-foreign-link": "کاریار $1 سي $2",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|هومیاری|هومیاریا}} د $2{{PLURAL:$1|}}",
+	"centralauth-merge-method-login": "مإن هال و بال ڤامإن أڤوڌن راسد ڤابيإ",
 	"centralauth-admin-blocklog": "پهرستنومه قولف ڤابيدأ"
 }

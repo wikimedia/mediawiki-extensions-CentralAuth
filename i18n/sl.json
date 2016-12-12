@@ -5,7 +5,8 @@
 			"Eleassar",
 			"Emperyan",
 			"Yerpo",
-			"Janezdrilc"
+			"Janezdrilc",
+			"NegativeTwelveDollars"
 		]
 	},
 	"mergeaccount": "Stanje poenotene prijave",
@@ -284,6 +285,7 @@
 	"right-centralauth-merge": "Združevanje njihovih računov",
 	"right-globalgrouppermissions": "Upravljanje globalnih skupin",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik",
+	"action-centralauth-unmerge": "Razdruži globalne račune",
 	"centrallogin": "Centralna prijava uporabnika",
 	"centralloginsuccesful": "Sedaj ste prijavljeni",
 	"centralauth-completelogin-back": "Vrnitev na prejšnjo stran.",

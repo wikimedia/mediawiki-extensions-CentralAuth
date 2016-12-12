@@ -4,7 +4,8 @@
 			"Fluence",
 			"Ricardo gs",
 			"Teòtlalili",
-			"Taresi"
+			"Taresi",
+			"Akapochtli"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''nòso'''",
@@ -16,6 +17,6 @@
 	"centralauth-admin-no": "ahmo",
 	"centralauth-admin-reason": "Tlèka:",
 	"centralauth-editgroup-noset": "(ahtlein)",
-	"centralauth-editset-name": "Tōcāitl:",
+	"centralauth-editset-name": "Tocaitl:",
 	"centralauth-editset-reason": "Tlèka:"
 }

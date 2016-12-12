@@ -440,7 +440,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "تاريخ الإغلاق",
 	"globalrenamequeue-column-rq-status": "الحالة",
 	"globalrenamequeue-column-rq-performer": "تم بواسطة",
-	"globalrenamequeue-action-address": "العنوان",
+	"globalrenamequeue-action-address": "تعامل مع",
 	"globalrenamequeue-action-view": "معاينة",
 	"globalrenamequeue-request-title": "إعادة تسمية $1؟",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> طلب إعادة التسمية إلى <strong>$3</strong>.",

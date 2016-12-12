@@ -16,7 +16,8 @@
 			"Hindustanilanguage",
 			"संजीव कुमार",
 			"Sfic",
-			"YmKavishwar"
+			"YmKavishwar",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
@@ -249,16 +250,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "आप वैश्विक रूप से लॉगिन कर चुके हैं। अपनी सदस्य वरीयताएँ लागू करने के लिए पृष्ठ रीलोड करें।",
 	"globalgroupmembership": "वैश्विक सदस्य-समूह सदस्यता",
 	"globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन",
-	"centralauth-globalgroupperms-grouplist": "निम्नोक्त वैश्विक सदस्य-समूहों का जमाव किया गया है।\nयदि आपको अधिकार हो तो आप किसी सदस्य-समूह के अधिकारों को देख सकते हैं और बदल सकते हैं।\nकिसी समूह से सारे अधिकार हटाकर समूह को मिटाया जा सकता है।",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|देखें/बदलें]])",
 	"centralauth-globalgroupperms-nogroups": "कोई वैश्विक सदस्य-समूह परिभाषित नहीं हैं।",
-	"centralauth-existinggroup-legend": "मौजूदा सदस्य-समूह",
 	"centralauth-newgroup-legend": "नया सदस्य-समूह बनाएँ",
 	"centralauth-newgroup-intro": "आप एक नये सदस्य-समूह को अधिकार देने के लिये इस फ़ॉर्म का प्रयोग कर सकते हैं।\nध्यान दें कि जब तक समूह को कोई अधिकार ना दिए जाएँ, उसका कोई अस्तित्व नहीं होता।",
 	"centralauth-globalgroupperms-newgroupname": "नये सदस्य-समूह का नाम:",
 	"centralauth-globalgroupperms-creategroup-submit": "अधिकार दें",
-	"centralauth-editgroup-subtitle": "$1 सम्पादन",
-	"centralauth-editgroup-subtitle-readonly": "$1 दिखायें",
 	"centralauth-editgroup-fieldset": "$1 के अधिकार",
 	"centralauth-editgroup-name": "सदस्य-समूह का नाम:",
 	"centralauth-editgroup-display": "सदस्य-समूह का स्थानीय नाम:",

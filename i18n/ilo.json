@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Lam-ang"
+			"Lam-ang",
+			"McDutchie"
 		]
 	},
 	"mergeaccount": "Kasasaad ti panagkaykaysa ti panagserrek",
@@ -239,16 +240,11 @@
 	"centralauth-centralautologin-logged-in-nouser": "Setralka a nakastrek. Ikargam manen ti panid tapno maipakat dagiti pannakaisaadmo nga agar-aramat.",
 	"globalgroupmembership": "Pannakaikameng kadagiti global a grupo",
 	"globalgrouppermissions": "Global a panagtaripato ti grupo",
-	"centralauth-globalgroupperms-grouplist": "Naaramiden dagiti sumaganad a global a grupo .\nMakitam wenno maurnosmo dagiti pammalubos a nainagan ti maysa a grupo, no adda pammalubosmo.\nTi maysa a grupo ket mabalin amaikkat babaen ti panagikkat kadagiti amin a karbenganna.",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|kitaen/urnosen]])",
 	"centralauth-globalgroupperms-nogroups": "Awan dagiti naipalawag a global a grupo.",
-	"centralauth-existinggroup-legend": "Dagiti adda a grupo",
 	"centralauth-newgroup-legend": "Agpartuat iti baro a grupo",
 	"centralauth-newgroup-intro": "Mausarmo daytoy a porma tapno manginaganka kadagiti pammalubos iti baro a grupo.\nPammmo a ti grupo ket awan mailaksid no adda karbengan a nakainagananna.",
 	"centralauth-globalgroupperms-newgroupname": "Baro a nagan ti grupo:",
 	"centralauth-globalgroupperms-creategroup-submit": "Manginagan kadagiti pammalubos",
-	"centralauth-editgroup-subtitle": "Ur-urnosen ti $1",
-	"centralauth-editgroup-subtitle-readonly": "Kitaen ti $1",
 	"centralauth-editgroup-fieldset": "Dagiti pammalubos para kenni $1",
 	"centralauth-editgroup-name": "Nagan ti grupo:",
 	"centralauth-editgroup-display": "Lokal a nagan ti grupo:",
@@ -305,7 +301,6 @@
 	"centralauth-readonly": "Ti database ti CentralAuth ket naserraan",
 	"centralauth-readonlytext": "Ti database ti CentralAuth ket agdama a naserraan kadagiti baro nga ikabil ken dagiti sabali panagbalbaliw, mabalin a para iti kadawyan a panagsimpa, kalpasanna ket agsublinto a kadawyan.",
 	"right-globalgroupmembership": "Baliwan ti pannakaikameng kadagiti global a grupo",
-	"right-centralauth-autoaccount": "Automatiko a sumrek iti global a pakabilangan",
 	"right-centralauth-unmerge": "Ikkaten ti panagtipon ti global a pakabilangan",
 	"right-centralauth-lock": "Serraan wenno lukatan ti global a pakabilangan",
 	"right-centralauth-oversight": "Pasardengen wenno ilemmeng ti global a pakabilangan",

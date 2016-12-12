@@ -452,7 +452,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Data de conclusão",
 	"globalrenamequeue-column-rq-status": "Estado",
 	"globalrenamequeue-column-rq-performer": "Realizado por",
-	"globalrenamequeue-action-address": "Endereço",
+	"globalrenamequeue-action-address": "Tratar",
 	"globalrenamequeue-action-view": "Ver",
 	"globalrenamequeue-request-title": "Alterar o nome \"$1\"?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> está a solicitar a alteração do nome de utilizador para <strong>$3</strong>.",
