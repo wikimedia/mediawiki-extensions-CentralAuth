@@ -131,7 +131,7 @@
 	"centralauth-admin-delete-button": "Ena hesab biwedarne",
 	"centralauth-admin-delete-confirm": "Şıma raşti wazenê nê hesabi bıesterên?",
 	"centralauth-admin-delete-success": "Qandê \"<nowiki>$1</nowiki>\" hesabo global be serkewtış ra esteriya",
-	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" sero hesabo gıloverki çıniyo",
+	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" sero hesabo global çıni yo",
 	"centralauth-admin-delete-nonexistent": "Ğelet: hesabê globalî \"<nowiki>$1</nowiki>\" çini yo.",
 	"centralauth-token-mismatch": "Ef bike, ma nieşkê îştîrakê tu proses bike çunkî seansê datayî vin biyo.",
 	"centralauth-state-mismatch": "Xırabey: seba ena karber xotay vurnayışi rast amê,  kerem keme vurnayışa xo fına araşt kerê yana çım ra ravyarnê",
