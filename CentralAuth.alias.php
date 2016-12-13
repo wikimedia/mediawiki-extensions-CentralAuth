@@ -91,7 +91,7 @@ $specialPageAliases['ba'] = array(
 
 /** Bengali (বাংলা) */
 $specialPageAliases['bn'] = array(
-	'CentralAuth' => array( 'কেন্দ্রীয়_প্রমাণী' ),
+	'CentralAuth' => array( 'কেন্দ্রীয়_প্রমাণী' ),
 	'MergeAccount' => array( 'অ্যাকাউন্ট_একত্রীকরণ' ),
 	'GlobalGroupMembership' => array( 'বৈশ্বিক_ব্যবহারকারী_অধিকার', 'বৈশ্বিক_দলের_সদস্যপদ' ),
 	'GlobalGroupPermissions' => array( 'বৈশ্বিক_দলের_অনুমতি' ),
