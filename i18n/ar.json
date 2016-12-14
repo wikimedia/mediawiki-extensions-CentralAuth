@@ -500,5 +500,9 @@
 	"centralauth-uwbr-editcount": "عدد التعديلات",
 	"centralauth-delete-empty-account": "حساب فارغ",
 	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)",
-	"log-action-filter-globalauth": "نوع التغيير:"
+	"log-action-filter-globalauth": "نوع التغيير:",
+	"log-action-filter-gblrights": "نوع التغيير:",
+	"log-action-filter-gblrights-usergroups": "تغيير صلاحيات المستخدم العالمي",
+	"log-action-filter-gblrights-groupprms": "تغيير مجموعات المستخدم العالمي",
+	"log-action-filter-gblrights-setmodify": "تغيير مجموعات الويكي"
 }

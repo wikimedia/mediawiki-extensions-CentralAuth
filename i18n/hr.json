@@ -155,7 +155,7 @@
 	"centralauth-prefs-count-unattached": "Nepotvrđeni računi s vašim imenom postoje još na $1 {{PLURAL:$1|projektu|projekata}}.",
 	"centralauth-prefs-detail-unattached": "Pripadnost ovog projekta jedinstvenom sustavu prijave nije potvrđena.",
 	"centralauth-prefs-manage": "Uredite Vaš središnji suradnički račun",
-	"centralauth-prefs-view": "Pogledajte globalne podatke o suradničkom računu",
+	"centralauth-prefs-view": "pogledajte globalne podatke o suradničkom računu",
 	"centralauth-renameuser-merged": "Suradnik $1 je prešao u sustav središnje prijave.\nPreimenovanje će uzrokovati odvajanje lokalnog računa od globalnog.",
 	"centralauth-renameuser-reserved": "Suradnički račun $2 je rezerviran za globalni račun.",
 	"centralauth-invalid-wiki": "Nema wiki baze podataka: $1",
