@@ -24,7 +24,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * you might need to munge it (for instance, for lowercase initial
 	 * letters).
 	 *
-	 * @param $username String: username.
+	 * @param string $username
 	 * @return bool
 	 * @public
 	 */
@@ -39,8 +39,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * you might need to munge it (for instance, for lowercase initial
 	 * letters).
 	 *
-	 * @param $username String: username.
-	 * @param $password String: user password.
+	 * @param string $username
+	 * @param string $password
 	 * @return bool
 	 * @public
 	 */
@@ -131,7 +131,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * entry
 	 *
 	 * @param CentralAuthUser $central
-	 * @param $username
+	 * @param string $username
 	 * @return bool
 	 */
 	protected function checkAttached( CentralAuthUser $central, $username ) {
@@ -173,7 +173,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * Check if a user should authenticate locally if the global authentication fails.
 	 * If either this or strict() returns true, local authentication is not used.
 	 *
-	 * @param $username String: username.
+	 * @param string $username
 	 * @return bool
 	 */
 	public function strictUserAuth( $username ) {
@@ -192,7 +192,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * The User object is passed by reference so it can be modified; don't
 	 * forget the & on your function declaration.
 	 *
-	 * @param $user User
+	 * @param User $user
 	 * @return bool
 	 */
 	public function updateUser( &$user ) {
@@ -249,8 +249,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * Set the given password in the authentication database.
 	 * Return true if successful.
 	 *
-	 * @param $user User object.
-	 * @param $password String: password.
+	 * @param User $user
+	 * @param string $password
 	 * @return bool
 	 */
 	public function setPassword( $user, $password ) {
@@ -268,7 +268,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * Update user information in the external authentication database.
 	 * Return true if successful.
 	 *
-	 * @param $user User object.
+	 * @param User $user
 	 * @return bool
 	 */
 	public function updateExternalDB( $user ) {
@@ -341,8 +341,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * The User object is passed by reference so it can be modified; don't
 	 * forget the & on your function declaration.
 	 *
-	 * @param $user User object.
-	 * @param $autocreate bool
+	 * @param User $user
+	 * @param bool $autocreate
 	 */
 	public function initUser( &$user, $autocreate = false ) {
 		if ( $autocreate ) {
