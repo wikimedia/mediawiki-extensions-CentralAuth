@@ -8,15 +8,15 @@
 			"Akapochtli"
 		]
 	},
-	"centralauth-merge-dryrun-or": "'''nòso'''",
-	"centralauth-list-home-title": "Wikichànë",
+	"centralauth-merge-dryrun-or": "'''nozo'''",
+	"centralauth-list-home-title": "Wikichaneh",
 	"centralauth-foreign-link": "Tequihuihqui $1 inīpan $2",
-	"centralauth-merge-method-primary": "wikinelwatl",
+	"centralauth-merge-method-primary": "wikinelhuatl",
 	"centralauth-admin-username": "Tlatequitiltilīltōcāitl:",
 	"centralauth-admin-yes": "quēmah",
 	"centralauth-admin-no": "ahmo",
-	"centralauth-admin-reason": "Tlèka:",
+	"centralauth-admin-reason": "Ipampa:",
 	"centralauth-editgroup-noset": "(ahtlein)",
 	"centralauth-editset-name": "Tocaitl:",
-	"centralauth-editset-reason": "Tlèka:"
+	"centralauth-editset-reason": "Ipampa:"
 }
