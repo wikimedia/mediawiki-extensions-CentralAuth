@@ -540,8 +540,8 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $row
-	 * @return String
+	 * @param array $row
+	 * @return string
 	 */
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
@@ -596,7 +596,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $row
+	 * @param array $row
 	 * @return string
 	 * @throws Exception
 	 */
@@ -618,7 +618,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $row
+	 * @param array $row
 	 * @return string
 	 */
 	private function formatGroups( $row ) {
@@ -630,7 +630,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	/**
 	 * @param string $level
-	 * @return String
+	 * @return string
 	 */
 	public function formatHiddenLevel( $level ) {
 		// @FIXME: This shouldn't be used in SpecialMultiLock

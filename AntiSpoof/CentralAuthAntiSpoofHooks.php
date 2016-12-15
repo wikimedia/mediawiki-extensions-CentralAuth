@@ -95,9 +95,9 @@ class CentralAuthAntiSpoofHooks {
 	 * On rename, remove the old entry and add the new
 	 * (After a sucessful user rename)
 	 *
-	 * @param $uid
-	 * @param $oldName string
-	 * @param $newName string
+	 * @param int $uid Unused
+	 * @param string $oldName
+	 * @param string $newName
 	 * @return bool
 	 */
 	public static function asAddRenameUserHook( $uid, $oldName, $newName ) {

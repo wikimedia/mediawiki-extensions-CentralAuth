@@ -59,7 +59,7 @@ function migratePassZero() {
 }
 
 /**
- * @param $userId
+ * @param int $userId
  * @return int
  */
 function getEditCount( $userId ) {
@@ -67,9 +67,9 @@ function getEditCount( $userId ) {
 }
 
 /**
- * @param $userId
- * @param $table
- * @param $field
+ * @param int $userId
+ * @param string $table
+ * @param string $field
  * @return int
  */
 function countEdits( $userId, $table, $field ) {

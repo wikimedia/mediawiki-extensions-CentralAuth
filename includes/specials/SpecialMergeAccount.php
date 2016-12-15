@@ -3,7 +3,7 @@
 class SpecialMergeAccount extends SpecialPage {
 	protected $mUserName, $mAttemptMerge, $mMergeAction, $mPassword, $mWikiIDs, $mSessionToken, $mSessionKey;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
 	}
 
@@ -158,7 +158,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $password
+	 * @param string $password
 	 */
 	private function addWorkingPassword( $password ) {
 		$passwords = $this->getWorkingPasswords();
@@ -187,9 +187,9 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $text
-	 * @param $key
-	 * @return array
+	 * @param string $text
+	 * @param string $key
+	 * @return string
 	 */
 	function xorString( $text, $key ) {
 		if ( $key != '' ) {
@@ -391,8 +391,8 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $merged
-	 * @param $remainder
+	 * @param string[] $merged
+	 * @param string[] $remainder
 	 */
 	function showStatus( $merged, $remainder ) {
 		$remainderCount = count( $remainder );
@@ -434,8 +434,8 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikiList
-	 * @param $methods array
+	 * @param string[] $wikiList
+	 * @param string[] $methods
 	 * @return string
 	 */
 	function listAttached( $wikiList, $methods = array() ) {
@@ -443,7 +443,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikiList
+	 * @param string[] $wikiList
 	 * @return string
 	 */
 	function listUnattached( $wikiList ) {
@@ -451,8 +451,8 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $list
-	 * @param array $methods
+	 * @param string[] $list
+	 * @param string[] $methods
 	 * @return string
 	 */
 	function listWikis( $list, $methods = array() ) {
@@ -461,9 +461,9 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $items
-	 * @param $methods
-	 * @param $callback
+	 * @param string[] $items
+	 * @param string[] $methods
+	 * @param callable $callback
 	 * @return string
 	 */
 	function formatList( $items, $methods, $callback ) {
@@ -487,8 +487,8 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikiID
-	 * @param $method
+	 * @param string $wikiID
+	 * @param string $method
 	 * @return string
 	 */
 	function listWikiItem( $wikiID, $method ) {
@@ -526,10 +526,10 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $action
-	 * @param $title
-	 * @param $text
-	 * @return string
+	 * @param string $action
+	 * @param string $title
+	 * @param string $text HTML
+	 * @return string HTML
 	 */
 	private function actionForm( $action, $title, $text ) {
 		return
@@ -552,10 +552,10 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $action
-	 * @param $title
-	 * @param $text
-	 * @param $submit
+	 * @param string $action
+	 * @param string $title
+	 * @param string $text HTML
+	 * @param string $submit
 	 * @return string
 	 */
 	private function passwordForm( $action, $title, $text, $submit ) {
@@ -595,7 +595,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $unattached
+	 * @param string[] $unattached
 	 * @return string
 	 */
 	private function step2PasswordForm( $unattached ) {
@@ -608,9 +608,9 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param $home
-	 * @param $attached
-	 * @param $methods
+	 * @param string $home
+	 * @param string[] $attached
+	 * @param string[] $methods
 	 * @return string
 	 */
 	private function step3ActionForm( $home, $attached, $methods ) {

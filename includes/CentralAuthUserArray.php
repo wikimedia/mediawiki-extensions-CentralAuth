@@ -3,7 +3,7 @@
 class CentralAuthUserArray {
 
 	/**
-	 * @param $res ResultWrapper
+	 * @param ResultWrapper $res
 	 * @return CentralAuthUserArrayFromResult
 	 */
 	static function newFromResult( $res ) {
@@ -15,9 +15,9 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	var $globalData;
 
 	/**
-	 * @param $res ResultWrapper
+	 * @param ResultWrapper $res
 	 */
-	function __construct( $res ) {
+	public function __construct( $res ) {
 		parent::__construct( $res );
 
 		if ( $res->numRows() == 0 ) {
@@ -60,7 +60,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	}
 
 	/**
-	 * @param $row
+	 * @param stdClass|bool $row
 	 */
 	function setCurrent( $row ) {
 		parent::setCurrent( $row );

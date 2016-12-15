@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
 
@@ -28,7 +27,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 	 *
 	 * @param string $code Error code
 	 * @param string|array $error Error message key, or key+parameters
-	 * @returns SessionInfo
+	 * @return SessionInfo
 	 */
 	private function makeException( $code, $error ) {
 		global $wgHooks;

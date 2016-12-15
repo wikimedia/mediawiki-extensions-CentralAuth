@@ -171,13 +171,13 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $type
-	 * @param $action
-	 * @param $title
-	 * @param $skin Skin|null If null, we want to use the wiki content language, since that will go to the IRC feed.
-	 * @param $params
-	 * @param $filterWikilinks bool
-	 * @return String
+	 * @param string $type Unused
+	 * @param string $action
+	 * @param Title $title
+	 * @param Skin|null $skin If null, we want to use the wiki content language, since that will go to the IRC feed.
+	 * @param array $params
+	 * @param bool $filterWikilinks
+	 * @return string
 	 */
 	public static function onHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 		if ( $skin ) {
@@ -219,14 +219,14 @@ class CentralAuthHooks {
 	/**
 	 * Format global group rename log entries
 	 *
-	 * @param $type
-	 * @param $action
-	 * @param $title
-	 * @param $skin Skin|null If null, we want to use the wiki content language, since that will go to the IRC feed.
-	 * @param $params
-	 * @param $filterWikilinks bool
+	 * @param string $type Unused
+	 * @param string $action Unused
+	 * @param Title $title Unused
+	 * @param Skin|null $skin If null, we want to use the wiki content language, since that will go to the IRC feed.
+	 * @param array $params
+	 * @param bool $filterWikilinks Unused
 	 *
-	 * @return String
+	 * @return string
 	 */
 	public static function onHandleGrouprenameLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
 		// $params[0] is the new one, $params[1] the old one
@@ -406,7 +406,7 @@ class CentralAuthHooks {
 	/**
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
-	 * @return String
+	 * @return string
 	 */
 	public static function getDomainAutoLoginHtml( User $user, CentralAuthUser $centralUser ) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
@@ -619,9 +619,9 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
-	 * @param $inject_html
-	 * @param $userName
+	 * @param User $user
+	 * @param string &$inject_html
+	 * @param string $userName Unused
 	 * @return bool
 	 */
 	static function onUserLogoutComplete( User &$user, &$inject_html, $userName ) {
@@ -666,8 +666,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $userArray
-	 * @param $res
+	 * @param array &$userArray
+	 * @param ResultWrapper $res
 	 * @return bool
 	 */
 	static function onUserArrayFromResult( &$userArray, $res ) {
@@ -677,9 +677,9 @@ class CentralAuthHooks {
 
 	/**
 	 * Warn bureaucrat about possible conflicts with unified accounts
-	 * @param $oldName
-	 * @param $newName
-	 * @param $warnings
+	 * @param string $oldName
+	 * @param string $newName
+	 * @param array[] &$warnings
 	 * @return bool
 	 * @throws ErrorPageError
 	 */
@@ -745,8 +745,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
-	 * @param $email
+	 * @param User $user
+	 * @param string &$email
 	 * @return bool
 	 */
 	static function onUserGetEmail( $user, &$email ) {
@@ -758,8 +758,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
-	 * @param $timestamp
+	 * @param User $user
+	 * @param string|null &$timestamp
 	 * @return bool
 	 */
 	static function onUserGetEmailAuthenticationTimestamp( $user, &$timestamp ) {
@@ -776,7 +776,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
+	 * @param User $user
 	 * @return bool
 	 */
 	static function onUserInvalidateEmailComplete( $user ) {
@@ -790,8 +790,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
-	 * @param $email
+	 * @param User $user
+	 * @param string &$email
 	 * @return bool
 	 */
 	static function onUserSetEmail( $user, &$email ) {
@@ -803,7 +803,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
+	 * @param User $user
 	 * @return bool
 	 */
 	static function onUserSaveSettings( $user ) {
@@ -815,8 +815,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user
-	 * @param $timestamp
+	 * @param User $user
+	 * @param string &$timestamp
 	 * @return bool
 	 */
 	static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
@@ -829,8 +829,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $rights
+	 * @param User $user
+	 * @param string[] &$rights
 	 * @return bool
 	 */
 	static function onUserGetRights( $user, &$rights ) {
@@ -948,7 +948,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param &$vars
+	 * @param array &$vars
 	 * @return bool
 	 */
 	static function onMakeGlobalVariablesScript( &$vars ) {
@@ -963,7 +963,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param &$vars
+	 * @param array &$vars
 	 * @return bool
 	 */
 	static function onResourceLoaderGetConfigVars( &$vars ) {
@@ -986,10 +986,10 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $title Title
-	 * @param $user User
-	 * @param $action
-	 * @param $result
+	 * @param Title $title
+	 * @param User $user
+	 * @param string $action
+	 * @param string &$result Message key
 	 * @return bool
 	 */
 	static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
@@ -1169,9 +1169,9 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $auth
-	 * @param $user User
-	 * @param $params
+	 * @param mixed $auth Unused
+	 * @param User $user
+	 * @param array &$params
 	 * @return bool
 	 */
 	static function onSecurePoll_GetUserParams( $auth, $user, &$params ) {
@@ -1334,9 +1334,9 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $type
+	 * @param string $type
 	 * @param WebRequest $request
-	 * @param array $qc
+	 * @param string[] &$qc
 	 * @return bool
 	 */
 	public static function onSpecialLogAddLogSearchRelations( $type, WebRequest $request, array &$qc ) {
@@ -1351,6 +1351,11 @@ class CentralAuthHooks {
 		return true;
 	}
 
+	/**
+	 * @param string $type
+	 * @param LogEventsList $list
+	 * @param string &$input HTML
+	 */
 	public static function onLogEventsListGetExtraInputs( $type, LogEventsList $list, &$input ) {
 		if ( $type === 'gblrename' ) {
 			$value = $list->getRequest()->getVal( 'oldname' );

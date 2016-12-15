@@ -7,7 +7,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var MediaWiki\\Session\\Session */
 	protected $session = null;
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'CentralLogin' );
 	}
 
