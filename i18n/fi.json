@@ -525,6 +525,7 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Syy käyttäjätunnuksen tilan muuttamiselle.",
 	"apihelp-setglobalaccountstatus-example-1": "Lukitse käyttäjän [[User:Example]] järjestelmänlaajuinen tunnus syyllä \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Poista lukitus käyttäjän [[User:Example]] järjestelmänlaajuiselta tunnukselta ja häivytä kyseinen tunnus syyllä \"I can\"",
+	"apierror-centralauth-badusername": "Käyttäjätunnus ”$1” ei kelpaa tässä wikissä",
 	"centralauth-log-gblrename-oldname": "Aiempi käyttäjänimi:",
 	"centralauth-contribs-locked": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti.\nKatso [[Special:CentralAuth/$1|järjestelmänlaajuisen tunnuksen tiedot]] lisätietoja varten.",
 	"centralauth-contribs-locked-log": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti. Alla on viimeisin lukituslokin merkintä:",
