@@ -185,8 +185,14 @@ $specialPageAliases['ce'] = array(
 	'GlobalUsers' => array( 'Глобальни_декъашхой' ),
 );
 
+/** Czech (čeština) */
 $specialPageAliases['cs'] = array(
-	'CentralAuth' => array ( 'Centrální_ověření' ),
+	'CentralAuth' => array( 'Centrální_ověření' ),
+	'MergeAccount' => array( 'Sloučení_účtů' ),
+	'GlobalGroupMembership' => array( 'Globální_práva_uživatele' ),
+	'GlobalGroupPermissions' => array( 'Práva_globálních_skupin' ),
+	'WikiSets' => array( 'Sady_wiki' ),
+	'GlobalUsers' => array( 'Globální_uživatelé' ),
 );
 
 /** German (Deutsch) */
