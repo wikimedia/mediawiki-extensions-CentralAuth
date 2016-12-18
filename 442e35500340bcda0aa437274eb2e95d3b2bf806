@@ -22,6 +22,30 @@
       "revId": "442e35500340bcda0aa437274eb2e95d3b2bf806",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_c9d731f1",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2016-12-18T15:44:50Z",
+      "side": 1,
+      "message": "Yes, you\u0027re right. Sady wiki is much better. Replaced.",
+      "parentUuid": "0e0e73b5_e99c3561",
+      "range": {
+        "startLine": 194,
+        "startChar": 23,
+        "endLine": 194,
+        "endChar": 35
+      },
+      "revId": "442e35500340bcda0aa437274eb2e95d3b2bf806",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
