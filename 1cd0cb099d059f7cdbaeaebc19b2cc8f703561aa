@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_5de2cd2f",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-12-21T09:09:15Z",
+      "side": 1,
+      "message": "All 3 new lines are missing a * in the front.",
+      "revId": "1cd0cb099d059f7cdbaeaebc19b2cc8f703561aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_9df725f2",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-12-21T09:09:15Z",
+      "side": 1,
+      "message": "Multiple issues with this line of code:\n* What is counted here? This is not obvious from the code alone, and no comment explains it.\n* Currently this will add the new parameter as $4, I believe, because $1 is the link, and $2 and $3 are from the two elements $args array. But this code is fragile, because it is disjoint from the code that constructs the $args array above. This can easily break any time somebody else continues working on this code. Please move this up to where $args is created.\n* The $params are constructed in SpecialWikiSets::doSubmit via array( $name, $type, implode( \u0027, \u0027, $wikis ) ). $params[2] is a string. It can\u0027t be counted. This will always return 1, I believe. I suggest to not add the additional parameter here, but add it in SpecialWikiSets::doSubmit. However, I\u0027m not sure what implications this haves. The number will probably appear in log entries and possibly confuse people there.",
+      "revId": "1cd0cb099d059f7cdbaeaebc19b2cc8f703561aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_7d859159",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-12-21T09:09:15Z",
+      "side": 1,
+      "message": "This will become parameter $2 in \"centralauth-login-progress\", while $1 is the user name.",
+      "revId": "1cd0cb099d059f7cdbaeaebc19b2cc8f703561aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_9d80454d",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2016-12-21T09:09:15Z",
+      "side": 1,
+      "message": "This will become parameter $2 in \"centralauth-logout-progress\", while $1 is the user name.",
+      "revId": "1cd0cb099d059f7cdbaeaebc19b2cc8f703561aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
