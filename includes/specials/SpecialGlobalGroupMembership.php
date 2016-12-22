@@ -25,6 +25,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
+	 * @return bool
+	 */
+	protected function showExpiryUI() {
+		return false;
+	}
+
+	/**
 	 * Output a form to allow searching for a user
 	 */
 	function switchForm() {
