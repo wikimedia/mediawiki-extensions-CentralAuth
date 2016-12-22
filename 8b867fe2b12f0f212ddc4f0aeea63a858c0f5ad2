@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e0e73b5_efee5cb0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2016-12-22T15:49:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t that patch depend on this one, instead of the other way around?",
+      "revId": "8b867fe2b12f0f212ddc4f0aeea63a858c0f5ad2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
