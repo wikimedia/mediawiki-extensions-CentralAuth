@@ -3,12 +3,14 @@
 		"authors": [
 			"Kaganer",
 			"Irus",
-			"Wadorgurt"
+			"Wadorgurt",
+			"Mouse21"
 		]
 	},
 	"centralauth-foreign-link": "$2 викиысь $1 викиавтор",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тупатон}} $2 проектын",
 	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
+	"centralauth-admin-blocked2-indef": "Заблокировать ноку.",
 	"centralauth-admin-blocklog": "блокировкаосын журнал",
 	"globalusers": "Глобальный списоке пыртэмын",
 	"centralauth-logout-progress": "Проект обрабатываться потон {{int:Centralauth-groupname}}:",

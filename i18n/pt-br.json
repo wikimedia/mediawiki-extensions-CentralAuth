@@ -383,7 +383,7 @@
 	"centralauth-rename-movelog": "A página foi movida automaticamente enquanto o usuário \"[[Special:CentralAuth/$1|$1]]\" era renomeado para \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-confirm": "Tem certeza que deseja renomear este usuário globalmente?",
 	"centralauth-rename-deny": "Tem certeza que deseja apagar este pedido?",
-	"log-name-gblrename": "Registro de renomeação global",
+	"log-name-gblrename": "Registro de renomeações globais",
 	"log-description-gblrename": "Este registro informa sobre a renomeação global de usuários.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renomeou}} globalmente $4 para $5",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|renomeou}} globalmente $4 para $5",
