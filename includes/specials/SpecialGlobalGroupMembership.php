@@ -76,9 +76,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 	/**
 	 * @param string $username
+	 * @param bool $writing
 	 * @return Status
 	 */
-	function fetchUser( $username ) {
+	function fetchUser( $username, $writing = true ) {
 		if ( $username[0] == '#' ) {
 			$id = intval( substr( $username, 1 ) );
 			$user = CentralAuthGroupMembershipProxy::newFromId( $id );
