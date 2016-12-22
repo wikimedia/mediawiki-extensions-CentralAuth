@@ -207,7 +207,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return Database
 	 */
 	public static function getLocalDB( $wikiID ) {
-		return wfGetLB( $wikiID )->getConnection( DB_MASTER, array(), $wikiID );
+		return wfGetLB( $wikiID )->getConnection( DB_MASTER, [], $wikiID );
 	}
 
 	/**
@@ -266,8 +266,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'gu_locked', 'gu_hidden', 'gu_registration', 'gu_email',
 				'gu_email_authenticated', 'gu_home_db', 'gu_cas_token'
 			),
-			'where' => array(),
-			'options' => array(),
+			'where' => [],
+			'options' => [],
 			'joinConds' => array(
 				'localuser' => array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
 			),
@@ -317,7 +317,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	public static function newUnattached( $name, $fromMaster = false ) {
 		$caUser = new self( $name );
-		$caUser->loadFromRow( false, array(), $fromMaster );
+		$caUser->loadFromRow( false, [], $fromMaster );
 		return $caUser;
 	}
 
@@ -388,15 +388,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			__METHOD__
 		);
 
-		$sets = array();
+		$sets = [];
 		foreach ( $resSets as $row ) {
 			/* @var $row object */
 			$sets[$row->ggr_group] = WikiSet::newFromRow( $row );
 		}
 
 		// Grab the user's rights/groups.
-		$rights = array();
-		$groups = array();
+		$rights = [];
+		$groups = [];
 
 		foreach ( $res as $row ) {
 			/** @var $set User|bool */
@@ -468,7 +468,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$this->mBeingRenamedArray = $renameUser;
 			$this->mBeingRenamed = implode( '|', $this->mBeingRenamedArray );
 		} else {
-			$this->mBeingRenamedArray = array();
+			$this->mBeingRenamedArray = [];
 			$this->mBeingRenamed = '';
 		}
 	}
@@ -800,8 +800,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	static function storeMigrationData( $wiki, $users ) {
 		if ( $users ) {
 			$dbw = CentralAuthUtils::getCentralDB();
-			$globalTuples = array();
-			$tuples = array();
+			$globalTuples = [];
+			$tuples = [];
 			foreach ( $users as $name ) {
 				$globalTuples[] = array( 'gn_name' => $name );
 				$tuples[] = array(
@@ -859,7 +859,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param bool $checkHome Re-check the user's ownership of the home wiki
 	 * @return bool
 	 */
-	public function storeAndMigrate( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
+	public function storeAndMigrate( $passwords = [], $sendToRC = true, $safe = false, $checkHome = false ) {
 		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
 		if ( $ret === true ) {
 			$this->recordAntiSpoof();
@@ -907,7 +907,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		// Sysops get priority
-		$found = array();
+		$found = [];
 		$priorityGroups = array( 'checkuser', 'oversight', 'bureaucrat', 'sysop' );
 		foreach ( $priorityGroups as $group ) {
 			foreach ( $migrationSet as $wiki => $local ) {
@@ -956,12 +956,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Go through a list of migration data looking for those which
 	 * can be automatically migrated based on the available criteria.
 	 *
-	 * @param $migrationSet Array
-	 * @param $passwords Array Optional, pre-authenticated passwords.
+	 * @param $migrationSet array
+	 * @param $passwords array Optional, pre-authenticated passwords.
 	 *     Should match an account which is known to be attached.
-	 * @return Array of <wiki> => <authentication method>
+	 * @return array of <wiki> => <authentication method>
 	 */
-	function prepareMigration( $migrationSet, $passwords = array() ) {
+	function prepareMigration( $migrationSet, $passwords = [] ) {
 		// If the primary account has an email address set,
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
@@ -969,12 +969,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		//
 		// For additional safety, we'll only let the mail check
 		// propagate from a confirmed account
-		$passingMail = array();
+		$passingMail = [];
 		if ( $this->mEmail != '' && $this->mEmailAuthenticated ) {
 			$passingMail[$this->mEmail] = true;
 		}
 
-		$passwordConfirmed = array();
+		$passwordConfirmed = [];
 		// If we've got an authenticated password to work with, we can
 		// also assume their email addresses are useful for this purpose...
 		if ( $passwords ) {
@@ -993,10 +993,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			}
 		}
 
-		$attach = array();
+		$attach = [];
 		foreach ( $migrationSet as $wiki => $local ) {
 			$localName = "$this->mName@$wiki";
-			if ( $wiki == $this->mHomeWiki ) {
+			if ( $wiki === $this->mHomeWiki ) {
 				// Primary account holder... duh
 				$method = 'primary';
 			} elseif ( $local['emailAuthenticated'] && isset( $passingMail[$local['email']] ) ) {
@@ -1006,9 +1006,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				// Authenticated email addresses only to prevent merges with malicious users
 				$method = 'mail';
 			} elseif (
-				isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ||
-				!isset( $passwordConfirmed[$wiki] ) &&
-					$this->matchHashes( $passwords, $this->getPasswordFromString( $local['password'],  $local['id'] ) )
+				( isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] )
+				||
+				(
+					!isset( $passwordConfirmed[$wiki] ) &&
+					$this->matchHashes( $passwords,
+						$this->getPasswordFromString( $local['password'],  $local['id'] ) )
+				)
 			) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
@@ -1034,17 +1038,17 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 *
 	 * @param $passwords array
 	 * @param $home String set to false if no permission to do checks
-	 * @param $attached Array on success, list of wikis which will be auto-attached
-	 * @param $unattached Array on success, list of wikis which won't be auto-attached
-	 * @param $methods Array on success, associative array of each wiki's attachment method	 *
+	 * @param $attached array on success, list of wikis which will be auto-attached
+	 * @param $unattached array on success, list of wikis which won't be auto-attached
+	 * @param $methods array on success, associative array of each wiki's attachment method	 *
 	 * @return Status object
 	 */
 	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
 
 		$home = false;
-		$attached = array();
-		$unattached = array();
+		$attached = [];
+		$unattached = [];
 
 		// First, make sure we were given the current wiki's password.
 		$self = $this->localUserData( wfWikiID() );
@@ -1153,13 +1157,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 *
-	 * @param $passwords Array
+	 * @param $passwords array
 	 * @param $sendToRC bool
 	 * @param $safe bool Only migrate if all accounts can be merged
 	 * @param $checkHome bool Re-check the user's ownership of the home wiki
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration( $passwords = array(), $sendToRC = true, $safe = false, $checkHome = false ) {
+	protected function attemptAutoMigration( $passwords = [], $sendToRC = true, $safe = false, $checkHome = false ) {
 		$this->checkWriteMode();
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
@@ -1167,7 +1171,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			return false;
 		}
 
-		if ( isset( $this->mHomeWiki ) ) {
+		if ( $this->mHomeWiki !== null ) {
 			if ( !array_key_exists( $this->mHomeWiki, $migrationSet ) ) {
 				wfDebugLog( 'CentralAuth',
 					"Invalid home wiki specification '$this->mName'@'$this->mHomeWiki'" );
@@ -1265,8 +1269,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			return true;
 		}
 
-		$migrated = array();
-		$remaining = array();
+		$migrated = [];
+		$remaining = [];
 
 		// Don't invalidate the cache 50 times
 		$this->startTransaction();
@@ -1371,7 +1375,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 			# Touch the local user row, update the password
 			$lb = wfGetLB( $wikiName );
-			$dblw = $lb->getConnection( DB_MASTER, array(), $wikiName );
+			$dblw = $lb->getConnection( DB_MASTER, [], $wikiName );
 			$dblw->update( 'user',
 				array(
 					'user_touched' => wfTimestampNow(),
@@ -1434,7 +1438,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$wiki = $localUserRow->lu_wiki;
 			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$lb = wfGetLB( $wiki );
-			$localDB = $lb->getConnection( DB_MASTER, array(), $wiki );
+			$localDB = $lb->getConnection( DB_MASTER, [], $wiki );
 			$localDB->update( 'user',
 				array( 'user_password' => $password ),
 				array( 'user_name' => $name ),
@@ -1464,9 +1468,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		if ( $wasSuppressed ) {
 			// "suppress/delete" is taken by core, so use "cadelete"
-			$this->logAction( 'cadelete', $reason, array(), /* $suppressLog = */ true );
+			$this->logAction( 'cadelete', $reason, [], /* $suppressLog = */ true );
 		} else {
-			$this->logAction( 'delete', $reason, array(), /* $suppressLog = */ false );
+			$this->logAction( 'delete', $reason, [], /* $suppressLog = */ false );
 		}
 		$this->invalidateCache();
 
@@ -1549,8 +1553,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$isLocked = $this->isLocked();
 		$oldHiddenLevel = $this->getHiddenLevel();
 		$lockStatus = $hideStatus = null;
-		$added = array();
-		$removed = array();
+		$added = [];
+		$removed = [];
 
 		if ( is_null( $setLocked ) ) {
 			$setLocked = $isLocked;
@@ -1692,7 +1696,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'by' => $by,
 				'reason' => $reason,
 			);
-			$jobs = array();
+			$jobs = [];
 			$chunks = array_chunk( $this->mAttachedArray, $wgCentralAuthWikisPerSuppressJob );
 			foreach ( $chunks as $wikis ) {
 				$jobParams['wikis'] = $wikis;
@@ -1717,13 +1721,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param $wiki String
 	 * @param $by String
 	 * @param $reason String
-	 * @return Array|null Error array on failure
+	 * @return array|null Error array on failure
 	 */
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
 		global $wgConf;
 
 		$lb = wfGetLB( $wiki );
-		$dbw = $lb->getConnection( DB_MASTER, array(), $wiki );
+		$dbw = $lb->getConnection( DB_MASTER, [], $wiki );
 		$data = $this->localUserData( $wiki );
 
 		if ( $suppress ) {
@@ -2024,14 +2028,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			array( 'ln_wiki' ),
 			array( 'ln_name' => $this->mName, 'lu_name IS NULL' ),
 			__METHOD__,
-			array(),
+			[],
 			array( 'localuser' => array( 'LEFT OUTER JOIN',
 				array( 'ln_wiki=lu_wiki', 'ln_name=lu_name' ) ) )
 		);
 
-		$dbs = array();
+		$dbs = [];
 		foreach ( $result as $row ) {
-			/** @var $row object */
 			$dbs[] = $row->ln_wiki;
 		}
 
@@ -2103,7 +2106,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	protected function importLocalNames() {
 		$rows = [];
 		foreach ( self::getWikiList() as $wikiID ) {
-			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_REPLICA, array(), $wikiID );
+			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
 			$id = $dbr->selectField(
 				"`$wikiID`.`user`",
 				'user_id',
@@ -2164,7 +2167,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			array( 'lu_name' => $this->mName ),
 			__METHOD__ );
 
-		$wikis = array();
+		$wikis = [];
 		foreach ( $result as $row ) {
 			/** @var $row object */
 			$wikis[] = $row->lu_wiki;
@@ -2214,7 +2217,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$this->loadState();
 		if ( $this->mBeingRenamedArray === null ) {
 			$this->mBeingRenamedArray = $this->mBeingRenamed === ''
-				? array() : explode( '|', $this->mBeingRenamed );
+				? [] : explode( '|', $this->mBeingRenamed );
 		}
 
 		return $this->mBeingRenamedArray;
@@ -2226,7 +2229,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return array of group names where the user is a member on at least one wiki
 	 */
 	public function getLocalGroups() {
-		$localgroups = array();
+		$localgroups = [];
 		array_map(
 			function ( $local ) use ( &$localgroups ) {
 				$localgroups = array_unique( array_merge(
@@ -2303,7 +2306,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'lu_name' => $this->mName ),
 			__METHOD__ );
 
-		$wikis = array();
+		$wikis = [];
 		foreach ( $result as $row ) {
 			/** @var $row object */
 			$wikis[$row->lu_wiki] = array(
@@ -2329,7 +2332,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	public function queryUnattached() {
 		$wikiIDs = $this->listUnattached();
 
-		$items = array();
+		$items = [];
 		foreach ( $wikiIDs as $wikiID ) {
 			try {
 				$data = $this->localUserData( $wikiID );
@@ -2357,7 +2360,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	protected function localUserData( $wikiID ) {
 		$lb = wfGetLB( $wikiID );
-		$db = $lb->getConnection( DB_REPLICA, array(), $wikiID );
+		$db = $lb->getConnection( DB_REPLICA, [], $wikiID );
 		$fields = array(
 				'user_id',
 				'user_email',
@@ -2371,7 +2374,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		if ( !$row ) {
 			# Row missing from slave, try the master instead
 			$lb->reuseConnection( $db );
-			$db = $lb->getConnection( DB_MASTER, array(), $wikiID );
+			$db = $lb->getConnection( DB_MASTER, [], $wikiID );
 			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		}
 		if ( !$row ) {
@@ -2401,7 +2404,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				wfTimestampOrNull( TS_MW, $row->user_registration ),
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
-			'groups' => array(),
+			'groups' => [],
 			'blocked' => false );
 
 		// Edit count field may not be initialized...
@@ -2568,9 +2571,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
-
-		$provider = MediaWiki\Session\SessionManager::singleton()
-			->getProvider( 'CentralAuthSessionProvider' );
+		/** @var MediaWiki\Session\SessionManager $sessionManager */
+		$sessionManager = MediaWiki\Session\SessionManager::singleton();
+		/** @var CentralAuthSessionProvider $provider */
+		$provider = $sessionManager->getProvider( 'CentralAuthSessionProvider' );
 		if ( $provider ) {
 			return $provider->getCentralCookieDomain();
 		}
@@ -2678,8 +2682,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	function getGlobalRights() {
 		$this->loadGroups();
 
-		$rights = array();
-		$sets = array();
+		$rights = [];
+		$sets = [];
 		foreach ( $this->mRights as $right ) {
 			if ( $right['set'] ) {
 				$setId = $right['set'];
@@ -2727,7 +2731,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$groups = array( $groups );
 		}
 
-		$insert_rows = array();
+		$insert_rows = [];
 		foreach ( $groups as $group ) {
 			$insert_rows[] = array( 'gug_user' => $this->getId(), 'gug_group' => $group );
 		}
@@ -2747,9 +2751,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	static function availableGlobalGroups() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
-		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', array(), __METHOD__ );
+		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', [], __METHOD__ );
 
-		$groups = array();
+		$groups = [];
 
 		foreach ( $res as $row ) {
 			/** @var $row object */
@@ -2770,7 +2774,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$res = $dbr->select( array( 'global_group_permissions' ),
 			array( 'ggp_permission' ), array( 'ggp_group' => $group ), __METHOD__ );
 
-		$rights = array();
+		$rights = [];
 
 		foreach ( $res as $row ) {
 			/** @var $row object */
@@ -2797,9 +2801,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission',
-			array(), __METHOD__ );
+			[], __METHOD__ );
 
-		$rights = array();
+		$rights = [];
 
 		foreach ( $res as $row ) {
 			/** @var $row object */
@@ -2888,7 +2892,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param array $params
 	 * @param bool $suppressLog
 	 */
-	function logAction( $action, $reason = '', $params = array(), $suppressLog = false ) {
+	function logAction( $action, $reason = '', $params = [], $suppressLog = false ) {
 		// Not centralauth because of some weird length limitiations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
 		$log = new LogPage( $logType );
