@@ -25,6 +25,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function canProcessExpiries() {
+		return false;
+	}
+
+	/**
 	 * Output a form to allow searching for a user
 	 */
 	function switchForm() {
