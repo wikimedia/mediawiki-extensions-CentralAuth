@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Karthi.dr",
-			"Thakurji"
+			"Thakurji",
+			"Abdul Kadir"
 		]
 	},
 	"mergeaccount": "Login unification ke status",
@@ -66,6 +67,7 @@
 	"centralauth-admin-no": "nai",
 	"centralauth-admin-list-legend-ro": "Local account ke suchi",
 	"centralauth-admin-blocked-reason": "Kaaran: $1",
+	"centralauth-admin-blocklog": "roke ke suchi",
 	"centralauth-admin-list-editcount": "Badlao count",
 	"centralauth-admin-reason": "Kaaran:",
 	"centralauth-admin-reason-other": "Duusra/aur kaaran:",
