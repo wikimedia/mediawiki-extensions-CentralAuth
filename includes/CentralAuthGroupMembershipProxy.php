@@ -42,6 +42,9 @@ class CentralAuthGroupMembershipProxy {
 	 */
 	public static function newFromName( $name ) {
 		$name = User::getCanonicalName( $name );
+		if ( $name === false ) {
+			return null;
+		}
 		$globalUser = CentralAuthUser::getInstanceByName( $name );
 		return $globalUser->exists() ? new CentralAuthGroupMembershipProxy( $globalUser ) : null;
 	}
