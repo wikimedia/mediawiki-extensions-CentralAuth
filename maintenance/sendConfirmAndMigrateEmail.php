@@ -45,6 +45,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
 		$this->start = microtime( true );
 		$this->sent = 0;

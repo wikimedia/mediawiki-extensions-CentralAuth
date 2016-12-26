@@ -23,6 +23,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->setBatchSize( 1000 );
 	}
 

@@ -9,6 +9,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class MigrateAccount extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = "Migrates the specified usernames to a global account if email matches and there are no conflicts";
 		$this->start = microtime( true );
 		$this->partial = 0;

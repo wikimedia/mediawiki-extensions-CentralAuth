@@ -9,6 +9,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class CreateLocalAccount extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = 'Creates a local account on this wiki for a global user';
 		$this->addArg( 'username', 'User name', true );
 	}

@@ -9,6 +9,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class GetCentralAuthDBInfo extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = 'Display info for slave server hosting the CentralAuth database';
 	}
 

@@ -31,6 +31,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class AttachAccount extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription =
 			"Attaches the specified usernames to a global account";
 		$this->start = microtime( true );

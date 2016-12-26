@@ -13,6 +13,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class MigratePass1 extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = "Migrates local users to global users where possible";
 		$this->start = microtime( true );
 		$this->migrated = 0;

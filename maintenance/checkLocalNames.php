@@ -9,6 +9,7 @@ require_once( "$IP/maintenance/Maintenance.php" );
 class CheckLocalNames extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = "Checks the contents of the localnames table and deletes invalid entries";
 		$this->start = microtime( true );
 		$this->deleted = 0;

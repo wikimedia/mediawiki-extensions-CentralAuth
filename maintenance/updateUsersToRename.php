@@ -13,6 +13,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class UpdateUsersToRename extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->setBatchSize( 100 );
 	}
 

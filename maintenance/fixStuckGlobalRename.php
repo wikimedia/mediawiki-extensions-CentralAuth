@@ -13,6 +13,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class FixStuckGlobalRename extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->addArg( 'oldname', 'Old name' );
 		$this->addArg( 'newname', 'New name' );
 		$this->addOption( 'logwiki', 'Wiki where the log entry exists', true, true );

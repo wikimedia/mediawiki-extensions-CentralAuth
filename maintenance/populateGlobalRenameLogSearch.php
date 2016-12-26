@@ -12,6 +12,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class PopulateGlobalRenameLogSearch extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->setBatchSize( 50 );
 	}
 

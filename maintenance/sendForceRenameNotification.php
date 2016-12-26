@@ -19,6 +19,7 @@ require_once "$IP/maintenance/Maintenance.php";
 class ForceRenameNotification extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->addOption( 'message', 'Location of directory with messages', true, true );
 		$this->addOption( 'subject', 'Location of directory with subjects', true, true );
 		$this->addOption( 'sleep', 'How long to sleep for', false, true );

@@ -9,6 +9,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( "Populate the localuser.lu_local_id and localuser.lu_global_id fields" );
 		$this->setBatchSize( 1000 );
 	}
