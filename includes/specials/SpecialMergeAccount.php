@@ -43,7 +43,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( CentralAuthUtils::isReadOnly() ) {
-			$this->getOutput()->setPagetitle( $this->msg( 'readonly' ) );
+			$this->getOutput()->setPageTitle( $this->msg( 'readonly' ) );
 			$this->getOutput()->addWikiMsg( 'readonlytext', CentralAuthUtils::getReadOnlyReason() );
 			return;
 		}
