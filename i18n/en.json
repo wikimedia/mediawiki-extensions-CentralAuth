@@ -365,6 +365,7 @@
 	"globalrenameprogress-legend" : "View global rename progress",
 	"globalrenameuser" : "Rename global user",
 	"globalrenameuser-legend" : "Rename global user",
+	"globalrenameuser-pretext" : "{{Globalrenameuser-text}}",
 	"centralauth-rename-abortlogin" : "Your account is currently being renamed or merged. [[Special:GlobalRenameProgress/$1|View the status]].",
 	"centralauth-rename-form-oldname" : "Current username",
 	"centralauth-rename-form-newname" : "New username",
