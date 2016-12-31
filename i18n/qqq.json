@@ -381,6 +381,7 @@
 	"globalrenameprogress-legend": "Label for fieldset around the form on Special:GlobalRenameProgress",
 	"globalrenameuser": "{{doc-special|GlobalRenameUser}}",
 	"globalrenameuser-legend": "Label for fieldset around the form on Special:GlobalRenameUser",
+	"globalrenamerequest-pretext" : "{{notranslate}}",
 	"centralauth-rename-abortlogin": "Error message shown to the user when they try logging in while their account is being renamed or merged.\n\nParameters:\n* $1 - the user's username",
 	"centralauth-rename-form-oldname": "Label for form field of name of account to rename",
 	"centralauth-rename-form-newname": "Label for form field of new account name",

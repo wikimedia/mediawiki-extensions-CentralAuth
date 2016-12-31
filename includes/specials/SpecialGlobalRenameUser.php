@@ -50,6 +50,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalrenameuser.styles' );
 	}
 
+	protected function preText() {
+		$msg = $this->msg( 'globalrenamerequest-pretext' )->parse();
+		return $msg;
+	}
+
 	/**
 	 * @return array
 	 */
