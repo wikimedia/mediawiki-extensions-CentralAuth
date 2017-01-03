@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0e0e73b5_eeef50ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2017-01-03T17:05:10Z",
+      "side": 1,
+      "message": "Thanks, done.",
+      "parentUuid": "0e0e73b5_17a522ab",
+      "revId": "da2f6fe2660e42b8aa52c67c5b8b13e598fefbff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0e0e73b5_f79f2e60",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-02T07:54:40Z",
       "side": 1,
       "message": "You can set \"Co-Authored-By: DatGuy\" as a footer item :)",
+      "revId": "da2f6fe2660e42b8aa52c67c5b8b13e598fefbff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_ae303854",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2017-01-03T17:05:10Z",
+      "side": 1,
+      "message": "Thanks, done :)",
+      "parentUuid": "0e0e73b5_f79f2e60",
       "revId": "da2f6fe2660e42b8aa52c67c5b8b13e598fefbff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2017-01-02T07:54:40Z",
       "side": 1,
       "message": "Create the message object, check if it is enabled (!$msg-\u003eisDisabled()), and then output if that\u0027s the case.",
+      "revId": "da2f6fe2660e42b8aa52c67c5b8b13e598fefbff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e0e73b5_4ee77cdf",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2017-01-03T17:05:10Z",
+      "side": 1,
+      "message": "Oh how do i do \"Create the message object, check if it is enabled (!$msg-\u003eisDisabled()), and then output if that\u0027s the case.\" please?",
+      "parentUuid": "0e0e73b5_b790964f",
       "revId": "da2f6fe2660e42b8aa52c67c5b8b13e598fefbff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
