@@ -513,6 +513,7 @@
 	"apihelp-globaluserrights-param-add": "Add the user to these global groups.",
 	"apihelp-globaluserrights-param-remove": "Remove the user from these global groups.",
 	"apihelp-globaluserrights-param-reason": "Reason for the change.",
+	"apihelp-globaluserrights-param-tags": "This parameter is currently unused.",
 	"apihelp-globaluserrights-example-1": "Add user FooBot to global group \"bot\", and remove from global groups \"sysop\" and \"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "Add the global user with ID 123 to global group \"bot\", and remove from global groups \"sysop\" and \"bureaucrat\"",
 	"apihelp-query+globalallusers-description": "Enumerate all global users.",

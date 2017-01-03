@@ -529,6 +529,7 @@
 	"apihelp-globaluserrights-param-add": "{{doc-apihelp-param|globaluserrights|add}}",
 	"apihelp-globaluserrights-param-remove": "{{doc-apihelp-param|globaluserrights|remove}}",
 	"apihelp-globaluserrights-param-reason": "{{doc-apihelp-param|globaluserrights|reason}}",
+	"apihelp-globaluserrights-param-tags": "{{doc-apihelp-param|globaluserrights|tags}}",
 	"apihelp-globaluserrights-example-1": "{{doc-apihelp-example|globaluserrights}}",
 	"apihelp-globaluserrights-example-2": "{{doc-apihelp-example|globaluserrights}}",
 	"apihelp-query+globalallusers-description": "{{doc-apihelp-description|query+globalallusers}}",
