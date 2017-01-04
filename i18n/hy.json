@@ -3,7 +3,8 @@
 		"authors": [
 			"Xelgen",
 			"Դավիթ Սարոյան",
-			"Beko"
+			"Beko",
+			"Kareyac"
 		]
 	},
 	"centralauth-foreign-link": "$2-ից $1 մասնակից",
@@ -13,5 +14,6 @@
 	"centralauth-rename-globaleditcount-threshold": "Այս մասնակիցն ունի ավելի քան $1 {{PLURAL:$1|խմբագրում|խմբագրումներ}}։ Խնդրում ենք հաստատել որ դուք համաձայն եք անվանափոխել այս մասնակցին և սիսադմինը կարող է վերահսկել այս անվանափոխումը։",
 	"globalrenamequeue-form-username": "Մասնակցի անուն:",
 	"globalrenamequeue-form-newname": "Մասնակցային անվան հայտ:",
-	"globalrenamequeue-form-status-all": "լրիվ"
+	"globalrenamequeue-form-status-all": "լրիվ",
+	"apihelp-globaluserrights-param-tags": "Այս տարբերակը ներկայումս չի օգտագործվում:"
 }
