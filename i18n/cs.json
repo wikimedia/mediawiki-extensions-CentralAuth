@@ -9,7 +9,8 @@
 			"Mormegil",
 			"Matěj Suchánek",
 			"Polda18",
-			"Dvorapa"
+			"Dvorapa",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Stav sjednocení přihlašovacích účtů",
@@ -404,15 +405,12 @@
 	"globalrenamerequest-forced": "Nadace Wikimedia [[:mw:SUL_finalisation|sjednocuje uživatelská jména napříč všemi projekty]]. Bylo zjištěno, že toto uživatelské jméno se používá na jiných wiki nadace Wikimedia a pro dokončení tohoto sjednocování je potřeba ho změnit. To znamená, že si do budoucna musíte zvolit nové uživatelské jméno.",
 	"globalrenamerequest-pretext": "Požádejte o nové uživatelské jméno, kterým budete {{GENDER:|označován|označována|označováni}} na všech projektech.\n\nVšechny vaše předchozí příspěvky budou připojeny k tomuto uživatelskému jménu.\n\nJakmile požádáte o nové uživatelské jméno, odešle se notifikace stevardům Wikimedia, kteří přejmenování provedou. Jakmile bude tento proces dokončen, budete {{GENDER:|informován|informována|informováni}} e-mailem.",
 	"globalrenamerequest-username-label": "Stávající uživatelské jméno:",
-	"globalrenamerequest-username-help": "Toto je vaše současné uživatelské jméno.",
 	"globalrenamerequest-newname-label": "Požadované uživatelské jméno:",
 	"globalrenamerequest-newname-help": "Zadejte nové uživatelské jméno, které chcete používat, např. „$1“.",
 	"globalrenamerequest-newname-err-invalid": "{{GENDER:|Nezadal|Nezadala|Nezadali}} jste platné uživatelské jméno.",
 	"globalrenamerequest-newname-err-taken": "Zadané uživatelské jméno se již používá. Zvolte prosím jiné jméno.",
 	"globalrenamerequest-email-label": "E-mailová adresa:",
-	"globalrenamerequest-email-help": "Zadejte svou e-mailovou adresu.",
-	"globalrenamerequest-email-why-label": "Proč?",
-	"globalrenamerequest-email-why-explain": "<p>E-mailovou adresu v rámci tohoto procesu potřebujeme k tomu, abychom zajistili, že nepřijdete o přístup ke svému účtu.</p><p>Jakmile bude přejmenovávací proces dokončen, můžete e-mailovou adresu odstranit.</p>",
+	"globalrenamerequest-email-why-explain": "E-mailovou adresu v rámci tohoto procesu potřebujeme k tomu, abychom zajistili, že nepřijdete o přístup ke svému účtu.<br />Jakmile bude přejmenovávací proces dokončen, můžete e-mailovou adresu odstranit.",
 	"globalrenamerequest-email2-label": "Potvrzení e-mailové adresy:",
 	"globalrenamerequest-email2-help": "Zadejte stejnou e-mailovou adresu pro potvrzení.",
 	"globalrenamerequest-email-mismatch": "E-mailové adresy se liší.<br />Zkontrolujte je prosím a zkuste to znovu.",

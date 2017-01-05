@@ -11,7 +11,8 @@
 			"Kumkumuk",
 			"1917 Ekim Devrimi",
 			"Gırd",
-			"Dılmıc"
+			"Dılmıc",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Weziyetê yewkerdışê cıkewtışi",
@@ -350,7 +351,7 @@
 	"globalrenamerequest-newname-err-invalid": "Yew nameyo maqbul şıma nênusna.",
 	"globalrenamerequest-newname-err-taken": "Jewna karber enê nami karneno.\nMara reca xorê jewna name bınusnê.",
 	"globalrenamerequest-email-label": "Adresa e-posta:",
-	"globalrenamerequest-email-why-explain": "<p>Seba ena karer resayışê namey karberi rê e-posta adresa şıma icab kena</p><p>Fınanname kerdışi dıma eger kenşıma wazenê e-postay xo wedarnê.</p>",
+	"globalrenamerequest-email-why-explain": "Seba ena karer resayışê namey karberi rê e-posta adresa şıma icab kena<br />Fınanname kerdışi dıma eger kenşıma wazenê e-postay xo wedarnê.",
 	"globalrenamerequest-email2-label": "Adresê E-posta tesdiq ke:",
 	"globalrenamerequest-email2-help": "Qandê e-postay xo tesdiq kerdışi rê fına e-postay xo defiye de",
 	"globalrenamerequest-email-mismatch": "E-postay zey pê niyê<br /> wa wurduna e-postay zey pê bê",

@@ -18,7 +18,8 @@
 			"Jmarchn",
 			"Gerardduenas",
 			"Jaumeortola",
-			"Medol"
+			"Medol",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Estat de fusió de comptes d'usuari",
@@ -397,15 +398,12 @@
 	"globalrenamerequest-forced": "La Fundació Wikimedia està [[:mw:SUL_finalisation|unificant els noms d'usuari de tots els projectes de Wikimedia]]. Aquest nom d'usuari està identificat com utilitzat en altres wikis de Wikimedia i cal canviar-lo per poder finalitzar aquesta unificació. En conseqüència, heu de seleccionar un nou nom d'usuari.",
 	"globalrenamerequest-pretext": "Sol·liciteu un nou nom d'usuari amb el que voleu ser coneguts en el conjunt de projectes.\n\nTotes les contribucions anteriors seran associades a aquest nou nom d'usuari.\n\nQuan sol·liciteu un nou nom d'usuari, s'enviarà una notificació als stewards de Wikimedia per atendre la sol·licitud. Sereu informats per correu electrònic quan el procés estigui completat.",
 	"globalrenamerequest-username-label": "Nom d'usuari actual:",
-	"globalrenamerequest-username-help": "Aquest és el nom d'usuari que teniu ara mateix.",
 	"globalrenamerequest-newname-label": "Nom d'usuari demanat:",
 	"globalrenamerequest-newname-help": "Introduïu el nou nom d'usuari que voleu utilitzar, p. ex. «$1».",
 	"globalrenamerequest-newname-err-invalid": "No heu especificat un nom d'usuari vàlid.",
 	"globalrenamerequest-newname-err-taken": "El nom d'usuari introduït ja està utilitzat. Escolliu un altre nom diferent.",
 	"globalrenamerequest-email-label": "Adreça de correu electrònic:",
-	"globalrenamerequest-email-help": "Introduïu la vostra adreça de correu electrònic.",
-	"globalrenamerequest-email-why-label": "Per què?",
-	"globalrenamerequest-email-why-explain": "<p>Necessitem una adreça de correu electrònic durant aquest procés per assegurar que no perdeu l'accés a aquest compte.</p><p>Podreu eliminar l'adreça de correu electrònic quan el procés de canvi de nom estigui completat.</p>",
+	"globalrenamerequest-email-why-explain": "Necessitem una adreça de correu electrònic durant aquest procés per assegurar que no perdeu l'accés a aquest compte.<br />Podreu eliminar l'adreça de correu electrònic quan el procés de canvi de nom estigui completat.",
 	"globalrenamerequest-email2-label": "Confirmeu l'adreça de correu electrònic:",
 	"globalrenamerequest-email2-help": "Introduïu la mateixa adreça electrònica anterior per confirmar-la.",
 	"globalrenamerequest-email-mismatch": "Les adreces de correu electrònic són diferents.<br />Reviseu-les i proveu-ho de nou.",

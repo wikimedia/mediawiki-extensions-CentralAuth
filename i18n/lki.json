@@ -4,7 +4,8 @@
 			"Mogoeilor",
 			"Hosseinblue",
 			"Lakzon",
-			"McDutchie"
+			"McDutchie",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "وضعیت یکی‌کردن حساب‌های کاربری",
@@ -365,15 +366,12 @@
 	"globalrenamerequest-desc": "درخواست تغییر نام سراسری",
 	"globalrenamerequest-legend": "درخواست گؤەڕانن/تغییر نام یکپارچه",
 	"globalrenamerequest-username-label": "نام کاربةری ایسة:",
-	"globalrenamerequest-username-help": "در حال حاضر این نام کاربری شما است.",
 	"globalrenamerequest-newname-label": "نام کاربری درخواستی:",
 	"globalrenamerequest-newname-help": "نام کاربری جدیدی که می‌خواهید استفاده کنید را وارد کنید، برای مثال «$1».",
 	"globalrenamerequest-newname-err-invalid": ".هؤمة نام کاربةری معتبری دیاری نکردئة",
 	"globalrenamerequest-newname-err-taken": ".نام کاربةری‌ گإ واردت کردئة قبلاً استفاده بیة\n.خواهشا نامێ تر استفادة کةن",
 	"globalrenamerequest-email-label": ":نیشانی ایمیل",
-	"globalrenamerequest-email-help": "نیشانی ایمیل ووژت بنۆیس",
-	"globalrenamerequest-email-why-label": "ئةراچة؟",
-	"globalrenamerequest-email-why-explain": "<p>ما در طی این فرایند به یک آدرس ایمیل نیاز داریم تا اطمینان حاصل شود که شما دسترسی به این حساب را از دست نمی‌دهید.</p><p>پس از اتمام روند تغییر نام  می‌توانید آدرس ایمیل را حذف کنید.</p>",
+	"globalrenamerequest-email-why-explain": "ما در طی این فرایند به یک آدرس ایمیل نیاز داریم تا اطمینان حاصل شود که شما دسترسی به این حساب را از دست نمی‌دهید.<br />پس از اتمام روند تغییر نام  می‌توانید آدرس ایمیل را حذف کنید.",
 	"globalrenamerequest-email2-label": "نیشانی ایمیل ووژتان تأئید کةن:",
 	"globalrenamerequest-email2-help": "همان آدرس ایمیل مشابه که بالا وارد کرده‌اید برای تأیید وارد کنید.",
 	"globalrenamerequest-email-mismatch": "آدرس‌های ایمیل تفاوت دارند.<br />لطفاً هر دو را مجدداً بررسی کنید و مجدداً تلاش کنید.",

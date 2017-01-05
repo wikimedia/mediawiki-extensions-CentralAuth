@@ -9,7 +9,8 @@
 			"Toliño",
 			"Vivaelcelta",
 			"Xosé",
-			"Banjo"
+			"Banjo",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Estado da unificación do rexistro",
@@ -408,15 +409,12 @@
 	"globalrenamerequest-forced": "A Fundación Wikimedia está [[:mw:SUL_finalisation|unificando os nomes de usuario a través de todos os proxectos de Wikimedia]]. Este nome de usuario está sendo usando noutras wikis de Wikimedia e debe cambiarse para finalizar esta unificación. Como resultado, debe seleccionarse un novo nome de usuario.",
 	"globalrenamerequest-pretext": "Solicite un novo nome de usuario para todos os proxectos.\n\nTodas as súas contribucións previas serán asociadas a este novo nome de usuario.\n\nUnha vez solicite o seu novo nome de usuario, enviarase unha notificación aos stewards da Wikimedia para que fagan o cambio de nome. Recibirá unha notificación por correo electrónico unha vez remate este proceso.",
 	"globalrenamerequest-username-label": "Nome de usuario actual:",
-	"globalrenamerequest-username-help": "Este é o seu nome de usuario agora.",
 	"globalrenamerequest-newname-label": "Nome de usuario solicitado:",
 	"globalrenamerequest-newname-help": "Insira o novo nome de usuario que desexa usar, por exemplo, \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Non especificou un nome de usuario válido.",
 	"globalrenamerequest-newname-err-taken": "O nome de usuario que inseriu xa está en uso.\nEscolla un nome diferente.",
 	"globalrenamerequest-email-label": "Enderezo de correo electrónico:",
-	"globalrenamerequest-email-help": "Insira o seu enderezo de correo electrónico.",
-	"globalrenamerequest-email-why-label": "Porqué?",
-	"globalrenamerequest-email-why-explain": "<p>Precísase un enderezo de correo electrónico durante este proceso para asegurar que no perda o acceso a esta conta.</p><p>Pode eliminar este enderezo de correo electrónico cando o proceso de cambio de nome se complete.</p>",
+	"globalrenamerequest-email-why-explain": "Precísase un enderezo de correo electrónico durante este proceso para asegurar que no perda o acceso a esta conta.<br />Pode eliminar este enderezo de correo electrónico cando o proceso de cambio de nome se complete.",
 	"globalrenamerequest-email2-label": "Confirmar o enderezo de correo electrónico:",
 	"globalrenamerequest-email2-help": "Introduza o mesmo enderezo de correo electrónico de arriba para a confirmación.",
 	"globalrenamerequest-email-mismatch": "Os enderezos de correo electrónico non son iguais.<br />Por favor, compróbeos e volva a tentalo novamente.",

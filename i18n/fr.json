@@ -452,7 +452,7 @@
 	"globalrenamerequest-newname-err-invalid": "Vous n’avez pas spécifié un nom d’utilisateur valide.",
 	"globalrenamerequest-newname-err-taken": "Le nom d’utilisateur saisi est déjà utilisé. Veuillez en choisir un autre.",
 	"globalrenamerequest-email-label": "Adresse de courriel :",
-	"globalrenamerequest-email-why-explain": "<p>Nous avons besoin d’une adresse de courriel lors du processus pour nous assurer que vous ne perdrez pas l’accès à ce compte.<br />Vous pourrez supprimer cette adresse de courriel une fois le processus de renommage terminé.</p>",
+	"globalrenamerequest-email-why-explain": "Nous avons besoin d’une adresse de courriel lors du processus pour nous assurer que vous ne perdrez pas l’accès à ce compte.<br />Vous pourrez supprimer cette adresse de courriel une fois le processus de renommage terminé.",
 	"globalrenamerequest-email2-label": "Confirmer l’adresse de courriel :",
 	"globalrenamerequest-email2-help": "Entrez la même adresse de courriel ci-dessus pour confirmation.",
 	"globalrenamerequest-email-mismatch": "Les adresses de courriel sont différentes.<br />Veuillez vérifier et réessayer.",

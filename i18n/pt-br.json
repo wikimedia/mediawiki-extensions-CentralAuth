@@ -26,7 +26,8 @@
 			"Araceletorres",
 			"Luk3",
 			"Dianakc",
-			"McDutchie"
+			"McDutchie",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -410,15 +411,12 @@
 	"globalrenamerequest-forced": "A Wikimedia Foundation está [[:mw:SUL_finalisation|unificando nomes de usuários em todos os seus projetos]]. O seu nome de usuário foi identificado como estando em uso em outras wikis da Wikimedia e deve ser alterado para finalizar essa unificação. Como resultado, você deve selecionar um novo nome de usuário.",
 	"globalrenamerequest-pretext": "Solicite um novo nome de usuário para todos os projetos.\n\nTodas as suas contribuições anteriores serão conectadas a este novo nome de usuário. \n\nDepois de ter solicitado um novo nome de usuário, uma notificação será enviada para os administradores da Wikimedia para realizar a mudança de nome. Você será notificado por e-mail quando este processo estiver concluído.",
 	"globalrenamerequest-username-label": "Nome de usuário(a) atual:",
-	"globalrenamerequest-username-help": "Este é o seu nome de usuário agora.",
 	"globalrenamerequest-newname-label": "Nome de usuário(a) solicitado",
 	"globalrenamerequest-newname-help": "Insira o novo nome de usuário(a) que você deseja usar, por exemplo, \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Você não especificou um nome de usuário(a) válido.",
 	"globalrenamerequest-newname-err-taken": "O nome de usuário inserido já está em uso.\nPor favor, escolha um diferente.",
 	"globalrenamerequest-email-label": "Endereço de e-mail",
-	"globalrenamerequest-email-help": "Digite o seu endereço de e-mail.",
-	"globalrenamerequest-email-why-label": "Por quê?",
-	"globalrenamerequest-email-why-explain": "<p>Precisamos do um endereço de e-mail durante este processo para garantir que você não perca o acesso à sua conta.</p><p>Você pode remover o seu endereço de e-mail após a conclusão do processo de renomeação.</p>",
+	"globalrenamerequest-email-why-explain": "Precisamos do um endereço de e-mail durante este processo para garantir que você não perca o acesso à sua conta.<br />Você pode remover o seu endereço de e-mail após a conclusão do processo de renomeação.",
 	"globalrenamerequest-email2-label": "Confirme o endereço de e-mail",
 	"globalrenamerequest-email2-help": "Digite o mesmo endereço de e-mail digitado acima para confirmação.",
 	"globalrenamerequest-email-mismatch": "Os endereços de e-mail são diferentes.<br />Por favor, verifique ambos e tente novamente.",

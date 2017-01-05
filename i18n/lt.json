@@ -12,7 +12,8 @@
 			"Vogone",
 			"Vpovilaitis",
 			"Pofka",
-			"Zygimantus"
+			"Zygimantus",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Paskyros bendrinimo būsena",
@@ -396,15 +397,12 @@
 	"globalrenamerequest": "Prašymas visuotinai pervadinti naudotoją",
 	"globalrenamerequest-pretext": "Prašyti naujo vartotojo vardo visuose projektuose.\n\nVisi jūsų ankstesnį pakeitimai bus sujungti su jūsų naujuoju vartotoju vardu.\n\nKai paprašysite naujo vartotojo vardo Vikimedijos pagalbininkas bus išsiųstas pranešimas, kad šie atliktų pervadinimą. Jums bus pranešta el. paštu kai tai bus atlikta.",
 	"globalrenamerequest-username-label": "Dabartinis vartotojo vardas:",
-	"globalrenamerequest-username-help": "Tai dabar yra jūsų vartotojo vardas.",
 	"globalrenamerequest-newname-label": "Prašomas vartotojo vardas:",
 	"globalrenamerequest-newname-help": "Įveskite norimą vartotojo vardą, pvz. „$1“.",
 	"globalrenamerequest-newname-err-invalid": "Nenurodėte galimo vartotojo vardo.",
 	"globalrenamerequest-newname-err-taken": "Įvestas vartotojo vardas jau naudojamas. Prašome įvesti kitą vardą.",
 	"globalrenamerequest-email-label": "El. pašto adresas:",
-	"globalrenamerequest-email-help": "Įveskite savo el. pašto adresą.",
-	"globalrenamerequest-email-why-label": "Kodėl?",
-	"globalrenamerequest-email-why-explain": "<p>Mums reikia el. pašto adreso šiam procesui, kad užtikrintumėme jūsų prieigą prie šios paskyros.</p><p> Galite pašalinti savo el. pašto adresą po pervadinimo proceso.</p>",
+	"globalrenamerequest-email-why-explain": "Mums reikia el. pašto adreso šiam procesui, kad užtikrintumėme jūsų prieigą prie šios paskyros.<br /> Galite pašalinti savo el. pašto adresą po pervadinimo proceso.",
 	"globalrenamerequest-email2-label": "Patvirtinkite el. pašto adresą:",
 	"globalrenamerequest-email2-help": "Patvirtinimo sumetimais, įveskite tą patį el. pašto adresą, kurį įvedėte aukščiau.",
 	"globalrenamerequest-email-mismatch": "El. pašto adresai skiriasi.<br />Prašome patikrinti abu ir bandyti dar kartą.",

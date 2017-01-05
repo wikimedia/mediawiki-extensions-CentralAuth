@@ -7,7 +7,8 @@
 			"Ker",
 			"Morel",
 			"Pikne",
-			"WikedKentaur"
+			"WikedKentaur",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Kontode ühendamise seis",
@@ -386,15 +387,12 @@
 	"globalrenamerequest-forced": "Wikimedia Foundation [[:mw:SUL_finalisation|ühtlustab kasutajanimed kõigis Wikimedia projektides]]. Tuvastati, et seda kasutajanime kasutatakse teistes Wikimedia vikides ja see tuleb muuta, et ühtlustamine lõpule viia. Seega pead valima uue kasutajanime.",
 	"globalrenamerequest-pretext": "Taotle uut kasutajanime, mille järgi tuntakse sind kõigis projektides.\n\nKogu sinu senine kaastöö seostatakse uue kasutajanimega.\n\nKui oled taotluse esitanud, teavitatakse sellest Wikimedia stjuuardeid, kes saavad nime muuta. Kui ümbernimetamine on täide viidud, teavitatakse sind sellest e-kirjatsi.",
 	"globalrenamerequest-username-label": "Praegune kasutajanimi:",
-	"globalrenamerequest-username-help": "Praegu on sul selline kasutajanimi.",
 	"globalrenamerequest-newname-label": "Soovitud kasutajanimi:",
 	"globalrenamerequest-newname-help": "Sisesta uus kasutajanimi, mida kasutada soovid, nt \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Sa pole määranud sobivat kasutajanime.",
 	"globalrenamerequest-newname-err-taken": "Sisestatud kasutajanimi on juba kasutuses. Palun vali erinev nimi.",
 	"globalrenamerequest-email-label": "E-posti aadress:",
-	"globalrenamerequest-email-help": "Sisesta oma e-posti aadress.",
-	"globalrenamerequest-email-why-label": "Miks?",
-	"globalrenamerequest-email-why-explain": "<p>E-posti aadressi on vaja veendumaks, et sa ei kaota ümbernimetamise jooksul juurdepääsu sellele kontole.</p><p>Saad e-posti aadressi eemaldada, kui ümbernimetamine on lõpule viidud.</p>",
+	"globalrenamerequest-email-why-explain": "E-posti aadressi on vaja veendumaks, et sa ei kaota ümbernimetamise jooksul juurdepääsu sellele kontole.<br />Saad e-posti aadressi eemaldada, kui ümbernimetamine on lõpule viidud.",
 	"globalrenamerequest-email2-label": "E-posti aadressi kinnitus:",
 	"globalrenamerequest-email2-help": "Sisesta kinnituseks sama e-posti aadress, mille sisestasid ülal.",
 	"globalrenamerequest-email-mismatch": "E-posti aadressid erinevad.<br />Palun kontrolli need üle ja proovi uuesti.",

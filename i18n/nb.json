@@ -12,7 +12,8 @@
 			"Stigmj",
 			"Kingu",
 			"Cocu",
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Status for sammenslåing av kontoer",
@@ -416,7 +417,7 @@
 	"globalrenamerequest-newname-err-invalid": "Du har ikke oppgitt et gyldig brukernavn.",
 	"globalrenamerequest-newname-err-taken": "Brukernavnet er allerede i bruk. Velg et annet navn.",
 	"globalrenamerequest-email-label": "Epostadresse:",
-	"globalrenamerequest-email-why-explain": "<p>Vi trenger en epostadresse i denne prosessen for å sikre at du ikke mister tilgang til kontoen din.</p><p>Du kan fjerne epostadressa etter at navneendringen er fullført.</p>",
+	"globalrenamerequest-email-why-explain": "Vi trenger en epostadresse i denne prosessen for å sikre at du ikke mister tilgang til kontoen din.<br />Du kan fjerne epostadressa etter at navneendringen er fullført.",
 	"globalrenamerequest-email2-label": "Bekreft epostadresse:",
 	"globalrenamerequest-email2-help": "Skriv inn samme epostadresse som du skrev inn ovenfor for å bekrefte den.",
 	"globalrenamerequest-email-mismatch": "Epostadressene er forskjellige.<br />Sjekk at den er skrevet riktig begge steder og prøv igjen.",

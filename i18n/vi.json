@@ -8,7 +8,8 @@
 			"Trần Nguyễn Minh Huy",
 			"Max20091",
 			"KhangND",
-			"Nguyên Lê"
+			"Nguyên Lê",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Tình trạng hợp nhất tài khoản",
@@ -406,15 +407,12 @@
 	"globalrenamerequest-forced": "Quỹ Wikimedia đang [[:mw:SUL_finalisation|thống nhất các tên người dùng trên tất cả các dự án]]. Tên người dùng này được xác định là cũng được sử dụng trên những wiki kia trực thuộc Wikimedia. Để hoàn thành quy trình thống nhất này, bạn phải đổi tên người dùng. Xin hãy chọn một tên người dùng mới để sử dụng.",
 	"globalrenamerequest-pretext": "Yêu cầu một tên người dùng mới để sử dụng trên tất cả các dự án.\n\nTất cả các đóng góp của bạn về trước sẽ được kết nối với tên mới.\n\nSau khi yêu cầu một tên người dùng khác, các tiếp viên Wikimedia sẽ nhận một thông báo để thực hiện việc đổi tên. Bạn sẽ nhận thông báo qua thư điện tử khi quy trình được hoàn thành.",
 	"globalrenamerequest-username-label": "Tên người dùng hiện tại:",
-	"globalrenamerequest-username-help": "Đây là tên người dùng hiện tại của bạn.",
 	"globalrenamerequest-newname-label": "Tên người dùng được yêu cầu:",
 	"globalrenamerequest-newname-help": "Nhập tên người dùng mới mà bạn muốn sử dụng, ví dụ “$1”.",
 	"globalrenamerequest-newname-err-invalid": "Bạn đã chỉ định một tên người dùng không hợp lệ.",
 	"globalrenamerequest-newname-err-taken": "Tên người dùng được nhập đã có người lấy. Hãy chọn một tên khác.",
 	"globalrenamerequest-email-label": "Địa chỉ thư điện tử:",
-	"globalrenamerequest-email-help": "Nhập địa chỉ thư điện tử của bạn.",
-	"globalrenamerequest-email-why-label": "Tại sao?",
-	"globalrenamerequest-email-why-explain": "<p>Chúng tôi cần một địa chỉ thư điện tử trong quy trình này để chắc chắn rằng bạn không mất quyền truy cập tài khoản này.</p><p>Bạn có thể xóa địa chỉ thư điện tử sau khi tài khoản được đổi tên xong xuôi.</p>",
+	"globalrenamerequest-email-why-explain": "Chúng tôi cần một địa chỉ thư điện tử trong quy trình này để chắc chắn rằng bạn không mất quyền truy cập tài khoản này.<br />Bạn có thể xóa địa chỉ thư điện tử sau khi tài khoản được đổi tên xong xuôi.",
 	"globalrenamerequest-email2-label": "Xác nhận địa chỉ thư điện tử:",
 	"globalrenamerequest-email2-help": "Nhập cùng địa chỉ thư điện tử như bên trên để xác nhận nó.",
 	"globalrenamerequest-email-mismatch": "Các địa chỉ thư điện tử khác nhau.<br />Xin vui lòng kiểm tra cả hai và thử lại.",

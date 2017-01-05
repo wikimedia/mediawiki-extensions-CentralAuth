@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Lam-ang",
-			"McDutchie"
+			"McDutchie",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Kasasaad ti panagkaykaysa ti panagserrek",
@@ -387,15 +388,12 @@
 	"globalrenamerequest-forced": "Ti Pundasion ti Wikimedia ket [[:mw:SUL_finalisation|mangikaykaysa kadagiti nagan ti agar-aramat kadagiti amin a gandat ti Wikimedia]]. Daytoy a nagan ti agar-aramat ket nailasin a kas maus-usar kadagiti a wiki ti Wikimedia ken nasken a mabaliwan tapno matungpal daytoy a panagkaykaysa. Kas resulta, nasken nga agpilika iti baro a nagan ti agar-aramat.",
 	"globalrenamerequest-pretext": "Agkiddaw ti baro a nagan ti agar-aramat a maammuan babaen kadagiti amin a gandat.\n\nAmin dagiti dati a kontribusion ket maikapetto iti daytoy a baro a nagan ti agar-aramat.\n\nKalpasan a nakakiddawka ti baro a nagan ti agar-aramat, maipatulodto ti maysa a pakaammo kadagiti mayordormo ti Wikimedia a mangtungpal ti pananginagan manen. Mapakaammuankanto babaen ti esurat intono makompleto daytoy a proseso.",
 	"globalrenamerequest-username-label": "Agdama a nagan ti agar-aramat:",
-	"globalrenamerequest-username-help": "Daytoy itan ti naganmo nga agar-aramat.",
 	"globalrenamerequest-newname-label": "Kiniddaw a nagan ti agar-aramat:",
 	"globalrenamerequest-newname-help": "Ikabil ti baro a nagan ti agar-aramat a kayatmo nga usaren, a kas ti, \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Saanmo pay a nainaganan ti umiso a nagan ti agar-aramat.",
 	"globalrenamerequest-newname-err-taken": "Ti inkabil a nagan ti agar-aramat ket maus-usaren. Pangngaasi nga agpili iti sabali a nagan.",
 	"globalrenamerequest-email-label": "Esurat a pagtaengan:",
-	"globalrenamerequest-email-help": "Ikabil ti esurat a pagtaengam.",
-	"globalrenamerequest-email-why-label": "Apay?",
-	"globalrenamerequest-email-why-explain": "<p>Masapulmi ti maysa nga esurat ti pagtaengan iti las-ud daytoy a proseso tapno masigurado a saanmo a mapukaw ti panagserrek iti daytoy a pakabilangan.</p><p>Mabalinmo nga ikkaten ti esurat a pagtaengan kalpasan no nalpasen ti proseso ti panaginagan manen.</p>",
+	"globalrenamerequest-email-why-explain": "Masapulmi ti maysa nga esurat ti pagtaengan iti las-ud daytoy a proseso tapno masigurado a saanmo a mapukaw ti panagserrek iti daytoy a pakabilangan.<br />Mabalinmo nga ikkaten ti esurat a pagtaengan kalpasan no nalpasen ti proseso ti panaginagan manen.",
 	"globalrenamerequest-email2-label": "Pasingkedan ti esurat a pagtaengam:",
 	"globalrenamerequest-email2-help": "Ikabil ti isu met laeng nga esurat ti pagtaengan nga inkabilmo dita ngato para iti pammasingked.",
 	"globalrenamerequest-email-mismatch": "Aggigiddiat dagiti esurat ti pagtaengan.<br />Pangngaasi a kitaen isuda a dua ken padasen manen.",

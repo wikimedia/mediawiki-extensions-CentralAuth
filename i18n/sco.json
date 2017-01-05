@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"John Reid",
-			"McDutchie"
+			"McDutchie",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Login uneefeecation status",
@@ -376,15 +377,12 @@
 	"globalrenamerequest-forced": "The Wikimedia Foundation is [[:mw:SUL_finalisation|uneefyin uisernames across aw Wikimedia waurks]]. This uisername wis identified aes bein in uised oan ither Wikimedia wikis n maun be chynged sae aes tae finalise this uneefication. Cause o this, ye maun pick ae new uisername.",
 	"globalrenamerequest-pretext": "Speir fer ae new uisername tae be knawn bi across aw waurks.\n\nAw o yer aforegaun contreebutions will be connectit wi this new uisername.\n\nYince ye'v speired fer ae new uisername, ae message will be sent tae Wikimedia stewards tae perform the rename. Ye'l be taud bi email whan this is duin.",
 	"globalrenamerequest-username-label": "The nou uisername:",
-	"globalrenamerequest-username-help": "This is yer uisername nou.",
 	"globalrenamerequest-newname-label": "Speired fer username:",
 	"globalrenamerequest-newname-help": "Enter the new uisername that ye wish tae uise, e.g., \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Ye'v no speceefie'd ae valid uisername.",
 	"globalrenamerequest-newname-err-taken": "This uisername is awreidie in uiss. Please chuise ae different name.",
 	"globalrenamerequest-email-label": "Email address:",
-	"globalrenamerequest-email-help": "Enter yer email address.",
-	"globalrenamerequest-email-why-label": "Why?",
-	"globalrenamerequest-email-why-explain": "<p>We need aen email address durin this process tae be sair that ye dinna lose access tae this accoont.</p><p>Ye can remuiv the email address efter the rename process is duin.</p>",
+	"globalrenamerequest-email-why-explain": "We need aen email address durin this process tae be sair that ye dinna lose access tae this accoont.<br />Ye can remuiv the email address efter the rename process is duin.",
 	"globalrenamerequest-email2-label": "Conferm yer e-mail address:",
 	"globalrenamerequest-email2-help": "Enter the same email address that ye entered abuin fer tae confirm.",
 	"globalrenamerequest-email-mismatch": "Email addresses ar diferent.<br />Please check baith n gie it anither shot.",

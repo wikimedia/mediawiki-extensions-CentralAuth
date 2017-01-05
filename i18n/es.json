@@ -455,7 +455,7 @@
 	"globalrenamerequest-newname-err-invalid": "No se especificó ningún nombre de usuario válido.",
 	"globalrenamerequest-newname-err-taken": "El nombre de usuario proporcionado ya está en uso. Elige otro.",
 	"globalrenamerequest-email-label": "Dirección de correo electrónico:",
-	"globalrenamerequest-email-why-explain": "<p>Necesitamos una dirección de correo electrónico durante este proceso para asegurarnos de que no pierdas acceso a esta cuenta.</p><p>Puedes eliminar la dirección de correo electrónico una vez que el proceso se haya completado.</p>",
+	"globalrenamerequest-email-why-explain": "Necesitamos una dirección de correo electrónico durante este proceso para asegurarnos de que no pierdas acceso a esta cuenta.<br />Puedes eliminar la dirección de correo electrónico una vez que el proceso se haya completado.",
 	"globalrenamerequest-email2-label": "Confirme la dirección de correo electrónico:",
 	"globalrenamerequest-email2-help": "Escribe la misma dirección de nuevo para confirmarla.",
 	"globalrenamerequest-email-mismatch": "Las direcciones de correo electrónico no coinciden.<br />Revísalas e inténtalo de nuevo.",

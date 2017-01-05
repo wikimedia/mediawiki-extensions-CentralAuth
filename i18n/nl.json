@@ -29,7 +29,8 @@
 			"Esketti",
 			"Rangekill",
 			"Mainframe98",
-			"Dinosaur918"
+			"Dinosaur918",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -272,6 +273,7 @@
 	"centralauth-globalgroupperms-management": "beheren",
 	"centralauth-globalgroupperms-group-listmembers": "lijst van leden",
 	"centralauth-globalgroupperms-wikiset-none": "Deze groep is actief op alle wiki's.",
+	"centralauth-globalgroupperms-group-disabled": "(niet ingeschakeld op deze wiki)",
 	"centralauth-newgroup-legend": "Nieuwe groep maken",
 	"centralauth-newgroup-intro": "Via dit formulier kunt u rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn",
 	"centralauth-globalgroupperms-newgroupname": "Groepsnaam:",
@@ -322,6 +324,7 @@
 	"centralauth-editset-badtype": "U hebt een ongeldig groepstype opgegeven.",
 	"centralauth-editset-setexists": "Er bestaat al een wikigroep met deze naam",
 	"centralauth-editset-nowikis": "(geen)",
+	"centralauth-editset-zerowikis": "Geen wiki's opgegeven.",
 	"centralauth-editset-nouse": "(geen)",
 	"centralauth-editset-usage": "Gebruikt in groepen:",
 	"centralauth-editset-badwikis": "De volgende {{PLURAL:$2|wiki bestaat|wiki's bestaan}} niet: $1.",
@@ -423,7 +426,7 @@
 	"globalrenamerequest-newname-err-invalid": "U heeft geen geldige gebruikersnaam opgegeven.",
 	"globalrenamerequest-newname-err-taken": "De gekozen gebruikersnaam is al in gebruik.\nKies een andere naam.",
 	"globalrenamerequest-email-label": "E-mailadres:",
-	"globalrenamerequest-email-why-explain": "<p>We hebben tijdens dit proces een e-mail adres nodig om ervoor te zorgen dat u de toegang tot dit account niet verliest.</p><p>U kunt het e-mailadres weer verwijderen zodra na het hernoemingsproces is afgerond.</p>",
+	"globalrenamerequest-email-why-explain": "We hebben tijdens dit proces een e-mail adres nodig om ervoor te zorgen dat u de toegang tot dit account niet verliest.<br />U kunt het e-mailadres weer verwijderen zodra na het hernoemingsproces is afgerond.",
 	"globalrenamerequest-email2-label": "E-mailadres bevestigen:",
 	"globalrenamerequest-email2-help": "Voer het e-mnailadres ter bevestiging nogmaals in.",
 	"globalrenamerequest-email-mismatch": "De e-mailadressen zijn niet gelijk.<br />Controleer de adressen en probeer het nogmaals.",
@@ -465,6 +468,7 @@
 	"globalrenamequeue-request-unknown-title": "Verzoek niet gevonden",
 	"globalrenamequeue-request-unknown-body": "Hernoemingsverzoek is niet gevonden.",
 	"globalrenamequeue-request-status-title": "Hernoeming van \"$1\" naar \"$2\"",
+	"globalrenamequeue-request-previous-renames": "Eerdere {{PLURAL:$1|hernoeming|hernoemingen}}",
 	"globalrenamequeue-view": ";Van:\n:[[Special:CentralAuth/$1|$1]]\n;Naar:\n:[[Special:CentralAuth/$2|$2]]\n;Reden:\n:$3\n;Status:\n:$4\n;Verzocht op:\n:$5\n;Afgerond op:\n:$6\n;Verwerkt door:\n:[$7 $8]\n;Opmerkingen:\n:$9",
 	"globalrenamequeue-view-approved": "goedgekeurd",
 	"globalrenamequeue-view-rejected": "afgewezen",
@@ -539,5 +543,7 @@
 	"centralauth-uwbr-registration-nodate": "Onbekend",
 	"centralauth-uwbr-editcount": "Aantal bewerkingen",
 	"centralauth-uwbr-intro": "Op deze pagina wordt een lijst weergegeven van gebruikers die op deze wiki geregistreerd zijn en die hernoemd gaan worden.",
-	"centralauth-delete-empty-account": "Lege account"
+	"centralauth-delete-empty-account": "Lege account",
+	"log-action-filter-globalauth": "Soort wijziging:",
+	"log-action-filter-gblrights": "Soort wijziging:"
 }

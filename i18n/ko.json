@@ -26,7 +26,8 @@
 			"고솜",
 			"Ykhwong",
 			"Jonghaya",
-			"McDutchie"
+			"McDutchie",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -429,7 +430,7 @@
 	"globalrenamerequest-newname-err-invalid": "올바른 사용자 이름을 입력하지 않았습니다.",
 	"globalrenamerequest-newname-err-taken": "입력한 사용자 계정 이름이 이미 사용되고 있습니다. 다른 이름을 선택하세요.",
 	"globalrenamerequest-email-label": "이메일 주소:",
-	"globalrenamerequest-email-why-explain": "<p>이메일 계정은 사용자 계정 이름 바꾸기가 진행되는 동안 당신의 계정을 잃지 않도록 하기 위해 필요합니다.</p><p>계정 이름 바꾸기 절차가 완료된 후에 이메일 주소를 지울 수 있습니다.</p>",
+	"globalrenamerequest-email-why-explain": "이메일 계정은 사용자 계정 이름 바꾸기가 진행되는 동안 당신의 계정을 잃지 않도록 하기 위해 필요합니다.<br />계정 이름 바꾸기 절차가 완료된 후에 이메일 주소를 지울 수 있습니다.",
 	"globalrenamerequest-email2-label": "이메일 주소 확인:",
 	"globalrenamerequest-email2-help": "위에 입력한 이메일 주소와 같은 이메일을 입력하세요.",
 	"globalrenamerequest-email-mismatch": "이메일 주소가 다릅니다. <br /> 다시 확인해 주세요.",

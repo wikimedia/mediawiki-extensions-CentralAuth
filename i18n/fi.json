@@ -19,7 +19,8 @@
 			"MrTapsa",
 			"Ejs-80",
 			"Mikahama",
-			"01miki10"
+			"01miki10",
+			"Macofe"
 		]
 	},
 	"mergeaccount": "Käyttäjätunnusten yhdistämisen tila",
@@ -410,15 +411,12 @@
 	"globalrenamerequest-forced": "Wikimedia Foundation [[:mw:SUL_finalisation|yhdistää käyttäjänimiä kaikissa Wikimedia-hankkeissa]]. Tämän käyttäjänimen havaittiin olevan käytössä muissa Wikimedia-wikeissä, ja se täytyy muuttaa, jotta yhdistämisoperaatio saataisiin vietyä loppuun. Näin ollen sinun on valittava itsellesi uusi käyttäjänimi.",
 	"globalrenamerequest-pretext": "Pyydä itsellesi uutta käyttäjänimeä, jolla voit toimia kaikissa Wikimedia-hankkeissa.\n\nKaikki tähän mennessä tekemäsi muokkaukset liitetään uuteen käyttäjänimeen.\n\nKun olet lähettänyt pyynnön, Wikimedian ylivalvojat saavat sen tiedoksi ja suorittavat nimenvaihdon. Sinulle lähetetään sähköpostitse viesti, kun kaikki on valmista.",
 	"globalrenamerequest-username-label": "Nykyinen käyttäjänimi:",
-	"globalrenamerequest-username-help": "Tämä on käyttäjänimesi tällä hetkellä.",
 	"globalrenamerequest-newname-label": "Pyytämäsi käyttäjänimi:",
 	"globalrenamerequest-newname-help": "Kirjoita tähän se käyttäjänimi, jota haluat käyttää. Esimerkiksi \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Et ole antanut kelvollista käyttäjänimeä.",
 	"globalrenamerequest-newname-err-taken": "Olet syöttänyt sellaisen käyttäjänimen, joka on jo käytössä. Valitse joku toinen nimi sen sijaan.",
 	"globalrenamerequest-email-label": "Sähköpostiosoite:",
-	"globalrenamerequest-email-help": "Anna sähköpostiosoitteesi.",
-	"globalrenamerequest-email-why-label": "Miksi?",
-	"globalrenamerequest-email-why-explain": "<p>Tarvitsemme tämän prosessin aikana sähköpostiosoitteesi sen takaamiseksi, että tämä käyttäjätunnus pysyy varmasti käytössäsi.</p><p>Voit poistaa sähköpostiosoitteesi sen jälkeen, kun nimeämisprosessi on saatu valmiiksi.</p>",
+	"globalrenamerequest-email-why-explain": "Tarvitsemme tämän prosessin aikana sähköpostiosoitteesi sen takaamiseksi, että tämä käyttäjätunnus pysyy varmasti käytössäsi.<br />Voit poistaa sähköpostiosoitteesi sen jälkeen, kun nimeämisprosessi on saatu valmiiksi.",
 	"globalrenamerequest-email2-label": "Vahvista sähköpostiosoitteesi:",
 	"globalrenamerequest-email2-help": "Kirjoita sama sähköpostiosoite tähän kuin ylempänä.",
 	"globalrenamerequest-email-mismatch": "Antamasi sähköpostiosoitteet eivät ole samoja.<br />Tarkista niiden kirjoitusasu.",
