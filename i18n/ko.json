@@ -513,6 +513,7 @@
 	"apihelp-query+wikisets-example-2": "종류별로 위키 집합을 봅니다",
 	"apihelp-setglobalaccountstatus-description": "통합 사용자의 통계를 설정합니다.",
 	"apihelp-setglobalaccountstatus-param-user": "사용자의 상태를 바꿉니다.",
+	"apihelp-main-param-centralauthtoken": "크로스 도메인 AJAX 요청 (CORS)을 사용하여 API에 접근할 때, 이것을 사용하여 현재의 SUL 사용자로 인증하십시오. 토큰을 검색하려면 CORS 요청을 하기 전에 이 위키에서 <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd>을 사용하십시오. 각 토큰은 한 번만 사용될 것이며 10초 후에 만료됩니다. 모든 pre-flight 요청에 포함되어야 하며, 이에 따라 (POST 본문이 아닌) 요청 URI의 일부에 포함되어야 합니다.",
 	"apierror-centralauth-notloggedin": "익명 사용자는 centralauthtoken을 취득할 수 없습니다.",
 	"apierror-centralauth-badsession": "CentralAuth 세션을 사용 중일 때에만 centralauthtoken을 취득할 수 있습니다.",
 	"apierror-centralauth-editconflict": "편집 충돌이 발견되어 중단합니다.",

@@ -491,6 +491,7 @@
 	"apihelp-globaluserrights-param-add": "Legg til brukeren i disse globale gruppene.",
 	"apihelp-globaluserrights-param-remove": "Fjern brukeren fra disse globale gruppene.",
 	"apihelp-globaluserrights-param-reason": "Årsak for endringen.",
+	"apihelp-globaluserrights-param-tags": "Denne parameteren er for tiden ubrukt.",
 	"apihelp-globaluserrights-example-1": "Legg til brukeren FooBot i den globale gruppa «bot», og fjern fra de globale gruppene «sysop» og «bureaucrat»",
 	"apihelp-globaluserrights-example-2": "Legg til den globale brukeren med ID 123 til den globale gruppa «bot», og fjern fra de globale gruppene «sysop» og «bureaucrat»",
 	"apihelp-query+globalallusers-description": "Nummerer alle globale brukere.",
