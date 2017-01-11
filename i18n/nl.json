@@ -515,7 +515,7 @@
 	"apihelp-query+globalgroups-example-1": "Globale groepen weergeven",
 	"apihelp-query+globalgroups-example-2": "Globale groepen weergeven met de rechten die ze impliceren",
 	"apihelp-query+globaluserinfo-description": "Gegevens weergeven over een globale gebruiker.",
-	"apihelp-query+globaluserinfo-param-user": "Gebruiker om informatie over te krijgen. De standaard waarde is de huidige gebruiker.",
+	"apihelp-query+globaluserinfo-param-user": "Gebruiker om informatie over te krijgen. De standaardwaarde is de huidige gebruiker.",
 	"apihelp-query+globaluserinfo-param-prop": "Welke eigenschappen op te vragen:\n;groups:Een lijst met globale groepen waar deze gebruiker lid van is.\n;rights:Een lijst met globale rechten die deze gebruiker heeft.\n;merged:Een lijst met samengevoegde accounts.\n;unattached:Een lijst met niet-samengevoegde accounts.\n;editcount:Het globale aantal bewerkingen van de gebruiker.",
 	"apihelp-query+globaluserinfo-example-1": "Gegevens opvragen over de huidige globale gebruiker",
 	"apihelp-query+globaluserinfo-example-2": "Informatie ophalen over de globale gebruiker [[User:Example|Example]]",

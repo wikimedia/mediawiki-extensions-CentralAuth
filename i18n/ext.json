@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Better"
+			"Better",
+			"Fitoschido"
 		]
 	},
-	"centralauth-admin-username": "Nombri d´usuáriu:"
+	"centralauth-admin-username": "Nombri d’usuáriu:"
 }

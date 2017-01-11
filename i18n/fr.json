@@ -536,7 +536,7 @@
 	"apihelp-query+globalallusers-param-dir": "Direction dans laquelle trier.",
 	"apihelp-query+globalallusers-param-group": "Limiter les utilisateurs aux groupes globaux donnés.",
 	"apihelp-query+globalallusers-param-excludegroup": "Exclure les utilisateurs des groupes globaux donnés.",
-	"apihelp-query+globalallusers-param-prop": "WQuelles informations inclure :\n;lockinfo:Si le compte utilisateur est verrouillé.\n;groups:Liste les groupes globaux auxquels appartient l’utilisateur. Cela demande plus de ressources du serveur et peut renvoyer moins de résultats que la limite.\n;existslocally:Ajoute l’information si l’utilisateur existe localement.",
+	"apihelp-query+globalallusers-param-prop": "Quelles informations inclure :\n;lockinfo:Si le compte utilisateur est verrouillé.\n;groups:Liste les groupes globaux auxquels appartient l’utilisateur. Cela demande plus de ressources du serveur et peut renvoyer moins de résultats que la limite.\n;existslocally:Ajoute l’information si l’utilisateur existe localement.",
 	"apihelp-query+globalallusers-param-limit": "Combien de noms d’utilisateur renvoyer au total.",
 	"apihelp-query+globalallusers-example-1": "Lister les utilisateurs globaux",
 	"apihelp-query+globalallusers-example-2": "Afficher des informations sur les utilisateurs globaux commençant par « ABC »",
