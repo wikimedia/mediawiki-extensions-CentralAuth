@@ -25,7 +25,8 @@
 			"W.CC",
 			"2nd-player",
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"Mirinano"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -332,6 +333,7 @@
 	"right-centralauth-merge": "自身のアカウントを統合",
 	"right-globalgrouppermissions": "グローバルグループを管理",
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
+	"action-centralauth-unmerge": "グローバルアカウントを統合解除",
 	"action-centralauth-lock": "グローバルアカウントのロックまたはロック解除",
 	"centrallogin": "中央管理 利用者ログイン",
 	"centralloginsuccesful": "ログインしました",
@@ -405,13 +407,11 @@
 	"globalrenamerequest-legend": "アカウント統一改名依頼",
 	"globalrenamerequest-pretext": "全プロジェクトにわたって使用する新しい利用者名を依頼してください。\n\nあなたのこれまでの編集履歴はすべてこの新しい利用者名に結び付けられます。\n\n新しい利用者名への改名を依頼すると、ウィキメディアのスチュワードに改名を実施するよう通知が送られます。対処が完了したら、電子メールであなたに通知が届きます。",
 	"globalrenamerequest-username-label": "現在の利用者名:",
-	"globalrenamerequest-username-help": "これがあなたの新しい利用者名です。",
 	"globalrenamerequest-newname-label": "希望利用者名:",
 	"globalrenamerequest-newname-help": "新しい利用者名として希望するものを入力してください。例:「$1」",
 	"globalrenamerequest-newname-err-invalid": "有効なメールアドレスを指定していません。",
 	"globalrenamerequest-newname-err-taken": "入力した利用者名は既に使用されています。別の利用者名を指定してください。",
 	"globalrenamerequest-email-label": "メールアドレス:",
-	"globalrenamerequest-email-help": "メールアドレスを入力してください。",
 	"globalrenamerequest-email2-label": "メールアドレスの確認:",
 	"globalrenamerequest-email-mismatch": "電子メールアドレスが一致しません。<br />両方を再確認のうえ、もう一度お試しください。",
 	"globalrenamerequest-email-invalid": "入力された電子メールアドレスが無効です。",

@@ -265,6 +265,8 @@
 	"globalgroupmembership": "العضوية في المجموعات العامة",
 	"globalgrouppermissions": "التحكم بالمجموعة العامة",
 	"centralauth-globalgroupperms-nogroups": "لا مجموعات عامة معرفة.",
+	"centralauth-globalgroupperms-group-wikiset": "مجموعة الويكيات حيث هذه المجموعة نشطة: $1",
+	"centralauth-globalgroupperms-group-disabled": "(غير مفعلة على هذه الويكي)",
 	"centralauth-newgroup-legend": "إنشاء مجموعة جديدة",
 	"centralauth-newgroup-intro": "يمكنك استخدام هذه الاستمارة لإعطاء السماحات لمجموعة جديدة.\nلاحظ أن أي مجموعة لا تكون موجودة إلا إذا تم تخصيص سماحات لها.",
 	"centralauth-globalgroupperms-newgroupname": "اسم المجموعة الجديدة:",
