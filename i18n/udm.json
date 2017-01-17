@@ -12,7 +12,7 @@
 	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
 	"centralauth-admin-blocked2-indef": "Заблокировать ноку.",
 	"centralauth-admin-blocklog": "блокировкаосын журнал",
-	"globalusers": "Глобальный списоке пыртэмын",
+	"globalusers": "Огъя викиавторъёслэн списоксы",
 	"centralauth-logout-progress": "Проект обрабатываться потон {{int:Centralauth-groupname}}:",
 	"globalrenamerequest-status-text": "Запросъёс гожъямлэсь воштӥськемзэ возьматон учётной стюард обрабатываться но возьма. Процесс йылпумъяськиз ке, тӥледлы уведомление электронной почта пыр басьтэм, луоз.\n\n;Учётной бызьыса книгаезлэн нимыз:\n;$1\n;Учётной нимъёсты гожъян куриз:\n;$2",
 	"globalrenamequeue-action-view": "Учкон",

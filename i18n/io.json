@@ -3,11 +3,12 @@
 		"authors": [
 			"Malafaya",
 			"Wyvernoid",
-			"सरोज कुमार ढकाल"
+			"सरोज कुमार ढकाल",
+			"Robin van der Vliet"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''o'''",
-	"centralauth-foreign-link": "Uzanto $1 en $2",
+	"centralauth-foreign-link": "Uzero $1 en $2",
 	"centralauth-merge-method-empty": "Nula kontributadi",
 	"centralauth-merge-method-new": "nova konto",
 	"centralauth-finish-password": "Pasovorto:",
@@ -24,7 +25,6 @@
 	"globalusers": "Uzanto-listo globala",
 	"centralauth-log-status-none": "(nula)",
 	"centralauth-newgroup-legend": "Krear nova grupo",
-	"centralauth-editgroup-subtitle": "Vu chanjas $1",
 	"centralauth-editgroup-noset": "(nula)",
 	"centralauth-editgroup-reason": "Motivo:",
 	"centralauth-editset-name": "Nomo:",
