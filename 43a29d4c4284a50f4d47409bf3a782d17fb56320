@@ -1,0 +1,602 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4efb0bce_7b53436f",
+        "filename": "AntiSpoof/batchCAAntiSpoof.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "require_once is not a function, no () needed",
+      "range": {
+        "startLine": 8,
+        "startChar": 13,
+        "endLine": 8,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_dbd0f7ce",
+        "filename": "AntiSpoof/batchCAAntiSpoof.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "require_once is not a function, no () needed",
+      "range": {
+        "startLine": 54,
+        "startChar": 13,
+        "endLine": 54,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_db9eb709",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "Setting private should be done in a separate patch set, because it can fail. The sniff should be set to ignore first.",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 8
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_bb865bbc",
+        "filename": "includes/CentralAuthUserArray.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "Should be a separate patch set",
+      "range": {
+        "startLine": 15,
+        "startChar": 1,
+        "endLine": 15,
+        "endChar": 8
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_9b771fcf",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "Should be a separate patch set",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 16,
+        "endChar": 8
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_7b0b432e",
+        "filename": "maintenance/checkLocalNames.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_46fc2e08",
+        "filename": "maintenance/checkLocalNames.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 148,
+        "startChar": 13,
+        "endLine": 148,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_6615ea3f",
+        "filename": "maintenance/checkLocalUser.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_c637fede",
+        "filename": "maintenance/checkLocalUser.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 148,
+        "startChar": 13,
+        "endLine": 148,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_4671cea6",
+        "filename": "maintenance/createLocalAccount.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_26749295",
+        "filename": "maintenance/createLocalAccount.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 57,
+        "startChar": 13,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_066bd6b6",
+        "filename": "maintenance/deleteEmptyAccounts.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_e66d5ac8",
+        "filename": "maintenance/deleteEmptyAccounts.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 143,
+        "startChar": 13,
+        "endLine": 143,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_c665bede",
+        "filename": "maintenance/forceRenameUsers.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_865fc612",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_665a8a24",
+        "filename": "maintenance/migrateAccount.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 272,
+        "startChar": 13,
+        "endLine": 272,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_46a0aef1",
+        "filename": "maintenance/migratePass0.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 11,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_06aab6d1",
+        "filename": "maintenance/migratePass1.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 11,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_e6ac3aed",
+        "filename": "maintenance/migratePass1.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 64,
+        "startChar": 13,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_c6b49e35",
+        "filename": "maintenance/migrateStewards.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_a6af62dd",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_86bea611",
+        "filename": "maintenance/populateHomeDB.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 50,
+        "startChar": 13,
+        "endLine": 50,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_66b96a29",
+        "filename": "maintenance/populateListOfUsersToRename.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_0681964f",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 32,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_e6831a56",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efb0bce_c69b7ec0",
+        "filename": "maintenance/sendConfirmAndMigrateEmail.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2017-01-21T21:56:27Z",
+      "side": 1,
+      "message": "not a function, no () needed",
+      "range": {
+        "startLine": 184,
+        "startChar": 13,
+        "endLine": 184,
+        "endChar": 14
+      },
+      "revId": "43a29d4c4284a50f4d47409bf3a782d17fb56320",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
