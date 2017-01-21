@@ -470,6 +470,7 @@
 	"apihelp-globaluserrights-param-add": "Pridėti vartotoją į šias visuotines grupes.",
 	"apihelp-globaluserrights-param-remove": "Pašalinti vartotoją iš šių visuotinių grupių.",
 	"apihelp-globaluserrights-param-reason": "Pakeitimo priežastis.",
+	"apihelp-globaluserrights-param-tags": "Šis parametras šiuo metu nenaudojamas.",
 	"apihelp-query+globalallusers-param-prefix": "Ieškoti visų vartotojų, kurie prasideda šia reikšme.",
 	"apihelp-query+globalallusers-param-dir": "Rūšiavimo kryptis.",
 	"apihelp-query+globalallusers-param-group": "Apriboti vartotojus pagal pateiktas visuotines grupes.",
