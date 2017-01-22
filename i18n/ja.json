@@ -26,7 +26,8 @@
 			"2nd-player",
 			"Sujiniku",
 			"Otokoume",
-			"Mirinano"
+			"Mirinano",
+			"Darklanlan"
 		]
 	},
 	"mergeaccount": "統一ログイン状態",
@@ -453,5 +454,6 @@
 	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
 	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
 	"centralauth-log-gblrename-oldname": "以前の利用者名",
+	"centralauth-contribs-locked": "このアカウントはグローバルロックされています。詳細は[[Special:CentralAuth/$1|グローバルアカウント情報]]を参照。",
 	"userswhowillberenamed": "改名される予定の利用者"
 }

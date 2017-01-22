@@ -1,12 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
-			"Malafaya"
+			"Malafaya",
+			"Cgboeree"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''o'''",
+	"centralauth-foreign-link": "Usor $1 a $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribui|contribuis}} a $2",
+	"centralauth-merge-method-login": "creada a entra la identifia",
 	"centralauth-admin-yes": "si",
 	"centralauth-admin-no": "no",
+	"centralauth-admin-blocklog": "arcivo de blocis",
 	"centralauth-admin-list-method": "Metodo",
 	"centralauth-editgroup-name": "Nom de la grupo:",
 	"centralauth-editset-name": "Nom:"
