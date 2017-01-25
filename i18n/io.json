@@ -5,13 +5,16 @@
 			"Wyvernoid",
 			"सरोज कुमार ढकाल",
 			"Robin van der Vliet",
-			"Lakaoso"
+			"Lakaoso",
+			"Joao Xavier"
 		]
 	},
 	"centralauth-merge-dryrun-or": "'''o'''",
 	"centralauth-foreign-link": "Uzero $1 en $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontributado|kontributadi}} en $2",
 	"centralauth-merge-method-empty": "Nula kontributadi",
 	"centralauth-merge-method-new": "nova konto",
+	"centralauth-merge-method-login": "kreita dum l'eniro",
 	"centralauth-finish-password": "Pasovorto:",
 	"centralauth-finish-login": "Enirar",
 	"centralauth-finish-send-confirmation": "Sendar pasovorto e-poste",
@@ -20,6 +23,7 @@
 	"centralauth-admin-username": "Uzantonomo:",
 	"centralauth-admin-yes": "yes",
 	"centralauth-admin-no": "no",
+	"centralauth-admin-blocklog": "blokusar registraro",
 	"centralauth-admin-delete-title": "Efacar konto",
 	"centralauth-admin-delete-button": "Efacar ca konto",
 	"centralauth-admin-reason": "Motivo:",
