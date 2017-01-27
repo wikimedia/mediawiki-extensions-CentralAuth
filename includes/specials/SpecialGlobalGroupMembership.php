@@ -129,8 +129,13 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @param array $oldGroups
 	 * @param array $newGroups
 	 * @param string $reason
+	 * @param array $tags Not currently used
+	 * @param array $oldUGMs Not currently used
+	 * @param array $newUGMs Not currently used
 	 */
-	function addLogEntry( $user, $oldGroups, $newGroups, $reason ) {
+	function addLogEntry( $user, $oldGroups, $newGroups, $reason,
+		$tags = [], $oldUGMs = [], $newUGMs = [] ) {
+
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry( 'usergroups',
