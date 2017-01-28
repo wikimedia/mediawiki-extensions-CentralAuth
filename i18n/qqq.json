@@ -524,6 +524,7 @@
 	"apihelp-globaluserrights-param-user": "{{doc-apihelp-param|globaluserrights|user}}",
 	"apihelp-globaluserrights-param-userid": "{{doc-apihelp-param|globaluserrights|userid}}",
 	"apihelp-globaluserrights-param-add": "{{doc-apihelp-param|globaluserrights|add}}",
+	"apihelp-globaluserrights-param-expiry": "{{doc-apihelp-param|globaluserrights|expiry}}",
 	"apihelp-globaluserrights-param-remove": "{{doc-apihelp-param|globaluserrights|remove}}",
 	"apihelp-globaluserrights-param-reason": "{{doc-apihelp-param|globaluserrights|reason}}",
 	"apihelp-globaluserrights-param-tags": "{{doc-apihelp-param|globaluserrights|tags}}",
