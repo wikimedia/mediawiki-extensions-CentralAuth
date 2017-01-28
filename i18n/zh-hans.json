@@ -508,6 +508,7 @@
 	"apihelp-globaluserrights-param-user": "全域用户名。",
 	"apihelp-globaluserrights-param-userid": "全域用户ID。",
 	"apihelp-globaluserrights-param-add": "将用户添加至这些全域用户组。",
+	"apihelp-globaluserrights-param-expiry": "此参数目前不被使用。",
 	"apihelp-globaluserrights-param-remove": "将用户从这些全域用户组中移除。",
 	"apihelp-globaluserrights-param-reason": "更改原因。",
 	"apihelp-globaluserrights-param-tags": "此参数目前不会使用。",

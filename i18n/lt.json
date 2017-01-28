@@ -468,6 +468,7 @@
 	"apihelp-globaluserrights-param-user": "Visuotinis vartotojo vardas.",
 	"apihelp-globaluserrights-param-userid": "Visuotinis vartotojo ID.",
 	"apihelp-globaluserrights-param-add": "Pridėti vartotoją į šias visuotines grupes.",
+	"apihelp-globaluserrights-param-expiry": "Šis parametras šiuo metu nenaudojamas.",
 	"apihelp-globaluserrights-param-remove": "Pašalinti vartotoją iš šių visuotinių grupių.",
 	"apihelp-globaluserrights-param-reason": "Pakeitimo priežastis.",
 	"apihelp-globaluserrights-param-tags": "Šis parametras šiuo metu nenaudojamas.",

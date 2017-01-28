@@ -478,6 +478,7 @@
 	"apihelp-globaluserrights-param-user": "Nome d'usuariu global.",
 	"apihelp-globaluserrights-param-userid": "ID d'usuariu global.",
 	"apihelp-globaluserrights-param-add": "Amestar l'usuariu a estos grupos globales.",
+	"apihelp-globaluserrights-param-expiry": "Esti parámetru nun s'usa anguaño.",
 	"apihelp-globaluserrights-param-remove": "Desaniciar al usuariu d'estos grupos globales.",
 	"apihelp-globaluserrights-param-reason": "Motivu pal cambiu.",
 	"apihelp-globaluserrights-param-tags": "Esti parámetru nun tien usu anguaño.",

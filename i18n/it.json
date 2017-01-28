@@ -22,7 +22,8 @@
 			"Nastoshka",
 			"Matteocng",
 			"Einreiher",
-			"Giromin Cangiaxo"
+			"Giromin Cangiaxo",
+			"Margherita.mignanelli"
 		]
 	},
 	"mergeaccount": "Processo di unificazione delle utenze - status",
@@ -489,6 +490,7 @@
 	"apihelp-globaluserrights-param-user": "Nome utente globale.",
 	"apihelp-globaluserrights-param-userid": "ID utente globale.",
 	"apihelp-globaluserrights-param-add": "Aggiungi l'utente a questi gruppi globali.",
+	"apihelp-globaluserrights-param-expiry": "Questo parametro è attualmente inutilizzato.",
 	"apihelp-globaluserrights-param-remove": "Rimuovi l'utente da questi gruppi globali.",
 	"apihelp-globaluserrights-param-reason": "Motivo del cambiamento.",
 	"apihelp-globaluserrights-param-tags": "Questo parametro attualmente non è utilizzato.",
