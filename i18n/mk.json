@@ -480,6 +480,7 @@
 	"apihelp-globaluserrights-param-user": "Глобално корисничко име.",
 	"apihelp-globaluserrights-param-userid": "Глобална кориснична назнака.",
 	"apihelp-globaluserrights-param-add": "Стави го корисников во следниве глобални групи.",
+	"apihelp-globaluserrights-param-expiry": "Параметаров тековно не се користи.",
 	"apihelp-globaluserrights-param-remove": "Отстрани го корисникот од следниве глобални групи.",
 	"apihelp-globaluserrights-param-reason": "Причина за промената.",
 	"apihelp-globaluserrights-param-tags": "Параметарот засега е неупотребен.",

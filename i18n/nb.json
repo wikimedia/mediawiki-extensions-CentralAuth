@@ -489,6 +489,7 @@
 	"apihelp-globaluserrights-param-user": "Globalt brukernavn.",
 	"apihelp-globaluserrights-param-userid": "Global bruker-ID.",
 	"apihelp-globaluserrights-param-add": "Legg til brukeren i disse globale gruppene.",
+	"apihelp-globaluserrights-param-expiry": "Denne parameteren er for tiden ubrukt.",
 	"apihelp-globaluserrights-param-remove": "Fjern brukeren fra disse globale gruppene.",
 	"apihelp-globaluserrights-param-reason": "Årsak for endringen.",
 	"apihelp-globaluserrights-param-tags": "Denne parameteren er for tiden ubrukt.",

@@ -503,6 +503,7 @@
 	"apihelp-globaluserrights-param-user": "통합 사용자 계정 이름.",
 	"apihelp-globaluserrights-param-userid": "통합 사용자 ID",
 	"apihelp-globaluserrights-param-add": "다음 사용자를 다음 전역 사용자 그룹에 추가함",
+	"apihelp-globaluserrights-param-expiry": "이 매개변수는 현재 사용되지 않습니다.",
 	"apihelp-globaluserrights-param-remove": "다음 사용자를 다음 전역 사용자 그룹에서 제거함.",
 	"apihelp-globaluserrights-param-reason": "변경 이유.",
 	"apihelp-globaluserrights-param-tags": "이 변수는 현재 사용되지 않습니다.",
