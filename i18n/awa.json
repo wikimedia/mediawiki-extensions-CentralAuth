@@ -25,7 +25,7 @@
 	"centralauth-incomplete": "खाता एकत्रिकरण पूरा नाई भय!",
 	"centralauth-notice-dryrun": "<div class='successbox'>खाली डेमो मोड</div><br clear='all'/>",
 	"centralauth-error-unmerged": "आप सम्पादन नाई कई सका जात हैं काहे से आप कय खाता एकत्रित नाई है।",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''एकत्रित खाता कय लिये''' ढेर जानकारी]]...''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''एकत्रित खाता कय लिये''' ढेर जानकारी]]...''",
 	"centralauth-list-home-title": "होम विकी",
 	"centralauth-list-attached-title": "जोड़ान खाता",
 	"centralauth-list-unattached-title": "नजोड़ान खाता",

@@ -9,7 +9,7 @@
 	"centralauth-desc": "[[Special:MergeAccount|Manggabuangan akun]] linteh wiki {{int:Centralauth-groupname}}",
 	"centralauth-complete": "Panggabuangan log masuak global barasil!",
 	"centralauth-complete-text": "Kini Sanak dapek masuak log ka kasado laman wiki {{int:Centralauth-groupname}} manopun juo tanpa paralu mambuek akun baru.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
 	"centralauth-list-attached": "Akun \"$1\" pado daftar wiki barikuik alah digabuangkan sabagai akun global sacaro otomatis:",
 	"centralauth": "Pangalolaan pangguno global",
 	"centralauth-admin-intro": "Antarmuko ko dapek digunoan untuak pangaturan akun global.",

@@ -29,7 +29,7 @@
 	"centralauth-not-owner-text": "«$1» - кулланучы исеме автоматик рәвештә $2 проектында теркәлде.\n\nӘгәрдә бу Сез икән, Сезгә үзегезнең серсүзне кертергә кирә булачак, анын ярдәмендә Сез кулланучы язмаларын берләштереп бетерә алачаксыз:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Күнекмә режимы</div><br clear='all'/>",
 	"centralauth-error-locked": "Сез үзгәртүләр кертә алмыйсыз, чөнки сезнең кулланучы язмагыз чикләнгән.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''Гомуми кулланучы язмасы''' турында күбрәк белү]]…''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Гомуми кулланучы язмасы''' турында күбрәк белү]]…''",
 	"centralauth-list-home-title": "Төп вики-проект",
 	"centralauth-list-attached-title": "Берләштерелгән язмалар",
 	"centralauth-list-attached": "Гомуми кулланучы язмаларына автоматик рәвештә {{PLURAL:$2|«$1» атлы кулланучы язмалары}} аста бирелгән сәхифәләргә автоматик рәсештә кушылды:",

@@ -69,7 +69,7 @@
 	"centralauth-finish-password": "رمز",
 	"centralauth-finish-login": "وارد بيئن",
 	"centralauth-finish-send-confirmation": "رمز ايميل",
-	"centralauth-finish-problems": "آیا شما افتائه ایته وه دردسر، یا شما مالک ای حساویا نیئیت؟[[meta:Special:زون مه/هومیاری:وامین اومائن یکاگری بیه|چه جوری هومیاری بفه میت]]…",
+	"centralauth-finish-problems": "آیا شما افتائه ایته وه دردسر، یا شما مالک ای حساویا نیئیت؟[[m:Special:زون مه/هومیاری:وامین اومائن یکاگری بیه|چه جوری هومیاری بفه میت]]…",
 	"centralauth-finish-noconfirms": "هیچ حساوی وا کارورد ای پاسورد مئکم نبیه.",
 	"centralauth-finish-incomplete": "چن گله حساو سی وه کار گرتن ای رازینه گواردن یکی بینه.\nحساویا هنی تا ایسه پش راست نبینه.",
 	"centralauth-merge-attempt": "''' پاسورد دئه بیه نه سی حساویا یکاگر نبیه وارسی بیکد…'''",

@@ -40,7 +40,7 @@
 	"centralauth-disabled-dryrun": "Декъашхойн дӀаяздарш вовшахтохар таллийн (тадечу) хьолехь болх беш ду, вовшахтуху опцеш дӀадайина ду. Бехк ма била.",
 	"centralauth-error-locked": "Хьа таро яц хийцамаш бан хьан декъашхочун дӀаяздар блоктоьхна хилар бахьнехь.",
 	"centralauth-error-unmerged": "Хьа таро яц хийцамаш бан, ахьа юкъара декъашхочун дӀаяздар кхоллар кхочушдина ца хилар бахьнехь.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''Юкъара декъашхочун дӀаяздарх''']]…'' лаьцна кхин хаар",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Юкъара декъашхочун дӀаяздарх''']]…'' лаьцна кхин хаар",
 	"centralauth-list-home-title": "«ЦӀера» вики-проект",
 	"centralauth-list-home-dryrun": "Хьан декъашхочун дӀаяздарна паролан маьӀна а, электронан адресаш а лелор ду хӀокху вики-проектехь.",
 	"centralauth-list-attached-title": "Юкъа тоьхна декъашхочун дӀаяздарш",

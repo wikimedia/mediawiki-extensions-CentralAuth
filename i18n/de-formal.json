@@ -25,7 +25,7 @@
 	"centralauth-list-home-dryrun": "Das Passwort und die E-Mail-Adresse, die Sie in diesem Wiki eingetragen haben, wird für die Zusammenführung der Benutzerkonten verwendet.",
 	"centralauth-list-unattached": "Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht automatisch als zu Ihnen gehörend bestätigt werden;\nvermutlich hat es ein anderes Passwort als Ihr primäres Benutzerkonto:",
 	"centralauth-finish-text": "Wenn diese Benutzerkonten Ihnen gehören, können Sie hier den Prozess der Benutzerkonten-Zusammenführung durch die Eingabe des Passwortes für die anderen Benutzerkonten vollenden:",
-	"centralauth-finish-problems": "Haben Sie Probleme oder gehören Ihnen diese anderen Benutzerkonten nicht? [[meta:Special:MyLanguage/Help:Unified login|Hier finden Sie Hilfe]] …",
+	"centralauth-finish-problems": "Haben Sie Probleme oder gehören Ihnen diese anderen Benutzerkonten nicht? [[m:Special:MyLanguage/Help:Unified login|Hier finden Sie Hilfe]] …",
 	"centralauth-merge-attempt": "'''Prüfen Sie das eingegebene Passwort mit den restlichen Benutzerkonten …'''",
 	"centralauth-attach-text": "Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.\nWenn das globale Benutzerkonto auch von Ihnen ist, können Sie die Zusammenführung veranlassen, indem Sie hier das Passwort des globalen Benutzerkontos eingeben:",
 	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da Ihre Sitzungsdaten verloren gegangen sind.",
