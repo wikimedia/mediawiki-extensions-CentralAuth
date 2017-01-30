@@ -524,6 +524,7 @@
 	"apihelp-globaluserrights-param-user": "Nom d’utilisateur global.",
 	"apihelp-globaluserrights-param-userid": "ID d’utilisateur global.",
 	"apihelp-globaluserrights-param-add": "Ajouter l’utilisateur à ces groupes globaux.",
+	"apihelp-globaluserrights-param-expiry": "Ce paramètre est actuellement inutilisé.",
 	"apihelp-globaluserrights-param-remove": "Supprimer l’utilisateur de ces groupes globaux.",
 	"apihelp-globaluserrights-param-reason": "Motif de la modification.",
 	"apihelp-globaluserrights-param-tags": "Ce paramètre n’est pas utilisé actuellement.",

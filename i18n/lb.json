@@ -428,6 +428,7 @@
 	"apihelp-deleteglobalaccount-example-1": "De globale Benotzerkont fir [[User:Example]] läschen",
 	"apihelp-globaluserrights-param-user": "Globale Benotzernumm.",
 	"apihelp-globaluserrights-param-userid": "Global Benotzernummer (ID).",
+	"apihelp-globaluserrights-param-expiry": "Dëse Parameter gëtt elo net benotzt.",
 	"apihelp-globaluserrights-param-reason": "Grond fir d'Ännerung.",
 	"apihelp-globaluserrights-param-tags": "Dëse Parameter gëtt elo net benotzt.",
 	"apihelp-query+globalallusers-description": "All global Benotzer opzielen.",

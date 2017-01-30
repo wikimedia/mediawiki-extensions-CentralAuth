@@ -487,6 +487,7 @@
 	"apihelp-globaluserrights-param-user": "שם משתמש גלובלי.",
 	"apihelp-globaluserrights-param-userid": "מזהה משתמש גלובלי.",
 	"apihelp-globaluserrights-param-add": "הספת משתמש לקבוצות הגלובליות האלו.",
+	"apihelp-globaluserrights-param-expiry": "הפרמטר הזה לא בשימוש כעת.",
 	"apihelp-globaluserrights-param-remove": "הסרת משתמש מהקבוצות הגלובליות האלו.",
 	"apihelp-globaluserrights-param-reason": "סיבה לשינוי",
 	"apihelp-globaluserrights-param-tags": "הפרמטר הזה לא נמצא בשימוש כעת.",
