@@ -30,7 +30,7 @@
 	"centralauth-finish-password": "پارول:",
 	"centralauth-finish-login": "تىزىمغا كىرىڭ",
 	"centralauth-finish-send-confirmation": "تورخەت ئىم",
-	"centralauth-finish-problems": "مەسىلىگە يولۇقتىڭىزمۇ ياكى بۇ باشقا ھېساباتلار ئۆزىڭىزنىڭ ئەمەسمۇ؟\n…[[meta:Special:MyLanguage/Help:Unified login|ياردەمنى قانداق ئىزدەيدۇ]]",
+	"centralauth-finish-problems": "مەسىلىگە يولۇقتىڭىزمۇ ياكى بۇ باشقا ھېساباتلار ئۆزىڭىزنىڭ ئەمەسمۇ؟\n…[[m:Special:MyLanguage/Help:Unified login|ياردەمنى قانداق ئىزدەيدۇ]]",
 	"centralauth-finish-noconfirms": "بۇ پارول بىلەن جەزملىگىلى بولىدىغان ھېسابات يوق.",
 	"centralauth-finish-incomplete": "بىر قانچە ھېسابات بۇ ئىم بىلەن بىرلەشتۈرۈلگەن.\nباشقا ھېساباتلار تېخى جەزملەنمىدى.",
 	"centralauth-merge-attempt": "'''بىرلەشتۈرۈلمىگەن ھېساباتنىڭ ئىملىرىنى تەكشۈرۈۋاتىدۇ…'''",

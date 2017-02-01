@@ -35,7 +35,7 @@
 	"centralauth-notice-dryrun": "<div class='successbox'>Mung mode démo thok</div><br clear='all'/>",
 	"centralauth-disabled-dryrun": "Panggabungan akun kiye esih nang mode demo/debugging thok, dadi operasi panggabungan sing sajati ora dilakokna. Nuwun sèwu!",
 	"centralauth-error-locked": "Rika ora teyeng nyunting jalaran akune Rika dikunci.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Monggo diwaca kanggo informasi sabanjuré ngenani '''log mlebu gabungan''']]...''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Monggo diwaca kanggo informasi sabanjuré ngenani '''log mlebu gabungan''']]...''",
 	"centralauth-list-home-title": "Wiki asal",
 	"centralauth-list-home-dryrun": "Tembung sandi lan alamat imel nang wiki kiye bakal digunakna nggo akun gabungane Rika.",
 	"centralauth-list-attached-title": "Akun sing digabung",

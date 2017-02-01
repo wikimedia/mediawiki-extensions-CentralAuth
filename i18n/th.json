@@ -39,7 +39,7 @@
 	"centralauth-notice-dryrun": "<div class='successbox'>เฉพาะภาวะสาธิต</div><br clear='all'/>",
 	"centralauth-error-locked": "คุณไม่สามารถแก้ไขได้เพราะบัญชีของคุณถูกล็อก",
 	"centralauth-error-unmerged": "คุณไม่สามารถแก้ไขเพราะบัญชีของคุณไม่ได้ถูกรวม",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
 	"centralauth-list-home-title": "วิกิเหย้า",
 	"centralauth-list-home-dryrun": "รหัสผ่านและที่อยู่อเีมลซึ่งตั้งไว้ที่วิกินี้จะถูกใช้เป็นของบัญชีรวมของคุณ",
 	"centralauth-list-attached-title": "บัญชีที่เชื่อมกัน",

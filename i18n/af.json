@@ -37,7 +37,7 @@
 	"centralauth-notice-dryrun": "<div class='successbox'>Slegs demonstrasiemodus</div><br clear='all'/>",
 	"centralauth-disabled-dryrun": "Rekening eenwording is tans in 'n ​​demo / Ontfouting af, sodat werklike samesmelting bedrywighede is gestremdes.\nJammer!",
 	"centralauth-error-locked": "U kan nie wysigings maak nie want u rekening is geblokkeer.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Lees meer oor '''versmelte rekeninge''']]…''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lees meer oor '''versmelte rekeninge''']]…''",
 	"centralauth-list-home-title": "Tuiswiki",
 	"centralauth-list-home-dryrun": "Die wagwoord en e-pos adres wat op hierdie wiki gebruik sal word vir jou verenigde rekening.",
 	"centralauth-list-attached-title": "Aangehegde rekeninge",

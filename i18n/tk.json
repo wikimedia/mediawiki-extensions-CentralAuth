@@ -22,7 +22,7 @@
 	"centralauth-incomplete": "Sessiýa açyş doly birleşdirilmedi!",
 	"centralauth-notice-dryrun": "<div class='successbox'>Diňe demo režimi</div><br clear='all'/",
 	"centralauth-error-locked": "Redaktirläp bilmeýärsiňiz, sebäbi hasabyňyz gulply.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|'''Birleşen sessiýa açyş''' hakda has köp okaň]]…''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Birleşen sessiýa açyş''' hakda has köp okaň]]…''",
 	"centralauth-list-home-title": "Öý wiki",
 	"centralauth-list-home-dryrun": "Bu wikide goýlan parol we e-poçta adresi birleşen hasabyňyz üçin ulanyljakdyr.",
 	"centralauth-list-attached-title": "Goşulan hasaplar",

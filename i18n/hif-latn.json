@@ -28,7 +28,7 @@
 	"centralauth-disabled-dryrun": "Account unification abhi demo / debugging mode me hae, tab asli merging operations disabled hae.\nMaaf karna!",
 	"centralauth-error-locked": "Aap edit nai kare saktaa hae kaahe ki aap ke account locked hae.",
 	"centralauth-error-unmerged": "Aap edit nai kare saktaa hae kaahe ki aap ke account unified nai hae.",
-	"centralauth-readmore-text": ":''[[meta:Special:MyLanguage/Help:Unified login|Aur parrho about '''unified login''']]…''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Aur parrho about '''unified login''']]…''",
 	"centralauth-list-home-title": "Home wiki",
 	"centralauth-list-home-dryrun": "Jon password aur email address ii wiki me set karaa gais hae, ke aap ke unified account me use karaa jaai.",
 	"centralauth-list-attached-title": "Attached accounts",

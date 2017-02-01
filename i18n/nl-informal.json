@@ -23,7 +23,7 @@
 	"centralauth-list-home-dryrun": "Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor je samengevoegde gebruiker.",
 	"centralauth-list-unattached": "De gebruiker \"$1\" kon niet automatisch aan jou toegewezen worden voor de volgende sites; waarschijnlijk omdat het wachtwoord afwijkt van je primaire gebruiker:",
 	"centralauth-finish-text": "Als deze gebruikers bij jou horen, dan kan je het proces van samenvoegen afronden door de wachtwoorden voor de andere gebruikers hier in te voeren:",
-	"centralauth-finish-problems": "Kom je er niet uit of zijn deze gebruikers niet van jou?\n[[meta:Special:MyLanguage/Help:Unified login|Hoe hulp vinden]]…",
+	"centralauth-finish-problems": "Kom je er niet uit of zijn deze gebruikers niet van jou?\n[[m:Special:MyLanguage/Help:Unified login|Hoe hulp vinden]]…",
 	"centralauth-attach-text": "Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker.\nAls de overkoepelende gebruiker ook van jou is, dan kan je deze gebruiker samenvoegen als je het wachtwoord voor de overkoepelende gebruiker ingeeft:",
 	"centralauth-admin-delete-confirm": "Weet je zeker dat je deze gebruiker wilt verwijderen?",
 	"centralauth-token-mismatch": "Vanwege verlies van de sessiegegevens kon je verzoek niet verwerkt worden.",
