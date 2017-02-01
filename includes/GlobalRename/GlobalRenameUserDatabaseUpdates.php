@@ -9,7 +9,7 @@
 
 class GlobalRenameUserDatabaseUpdates {
 	/**
-	 * @return Database
+	 * @return IDatabase
 	 */
 	protected function getDB() {
 		return CentralAuthUtils::getCentralDB();

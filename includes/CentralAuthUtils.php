@@ -39,7 +39,7 @@ class CentralAuthUtils {
 	/**
 	 * Gets a master (read/write) database connection to the CentralAuth database
 	 *
-	 * @return Database
+	 * @return IDatabase
 	 * @throws CentralAuthReadOnlyError
 	 */
 	public static function getCentralDB() {
@@ -49,19 +49,19 @@ class CentralAuthUtils {
 			throw new CentralAuthReadOnlyError();
 		}
 
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection( DB_MASTER, array(),
+		return wfGetLB( $wgCentralAuthDatabase )->getConnectionRef( DB_MASTER, array(),
 			$wgCentralAuthDatabase );
 	}
 
 	/**
 	 * Gets a slave (readonly) database connection to the CentralAuth database
 	 *
-	 * @return Database
+	 * @return IDatabase
 	 */
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;
 
-		return wfGetLB( $wgCentralAuthDatabase )->getConnection(
+		return wfGetLB( $wgCentralAuthDatabase )->getConnectionRef(
 			DB_REPLICA, 'centralauth', $wgCentralAuthDatabase );
 	}
 

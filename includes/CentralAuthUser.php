@@ -204,10 +204,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * @param string $wikiID
-	 * @return Database
+	 * @return IDatabase
 	 */
 	public static function getLocalDB( $wikiID ) {
-		return wfGetLB( $wikiID )->getConnection( DB_MASTER, array(), $wikiID );
+		return wfGetLB( $wikiID )->getConnectionRef( DB_MASTER, array(), $wikiID );
 	}
 
 	/**
@@ -220,7 +220,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return Database Master or slave based on shouldUseMasterDB()
+	 * @return IDatabase Master or slave based on shouldUseMasterDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
@@ -1723,7 +1723,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		global $wgConf;
 
 		$lb = wfGetLB( $wiki );
-		$dbw = $lb->getConnection( DB_MASTER, array(), $wiki );
+		$dbw = $lb->getConnectionRef( DB_MASTER, array(), $wiki );
 		$data = $this->localUserData( $wiki );
 
 		if ( $suppress ) {

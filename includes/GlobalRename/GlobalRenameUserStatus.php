@@ -30,7 +30,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 *
 	 * @param int $type DB_REPLICA or DB_MASTER
 	 *
-	 * @return Database
+	 * @return IDatabase
 	 */
 	protected function getDB( $type = DB_REPLICA ) {
 		if ( $type === DB_MASTER ) {
@@ -43,11 +43,11 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	/**
 	 * Get the where clause to query rows by either old or new name
 	 *
-	 * @param Database $db
+	 * @param IDatabase $db
 	 *
 	 * @return string
 	 */
-	private function getNameWhereClause( Database $db ) {
+	private function getNameWhereClause( IDatabase $db ) {
 		return $db->makeList(
 			array( 'ru_oldname' => $this->name, 'ru_newname' => $this->name ),
 			LIST_OR
