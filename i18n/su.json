@@ -149,7 +149,6 @@
 	"globalgroupmembership": "Kaanggotaan dina grup global",
 	"centralauth-newgroup-legend": "Jieun grup anyar",
 	"centralauth-globalgroupperms-newgroupname": "Ngaran grup anyar:",
-	"centralauth-editgroup-subtitle": "Ngédit $1",
 	"centralauth-editgroup-name": "Ngaran grup:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|édit]])",
 	"centralauth-editgroup-members": "Daptar anggota:",

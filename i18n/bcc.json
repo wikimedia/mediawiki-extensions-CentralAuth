@@ -217,13 +217,10 @@
 	"centralauth-centralautologin-desc": "این صفحهٔ ویژه به صورت درونی در مدیاویکی استفاده می‌شود.\nهنگامی که یک دامنهٔ پیوندشده را در حالی که در وب‌گاه ثبت ورود نکرده‌اید بازدید می‌کنید، سامانهٔ ثبت ورود مرکزی از این صفحه برای تعیین اینکه آیا شما به دامنهٔ مرکزی وارد شده‌اید یا نه استفاده می‌کند.\nشما این صفحه را بدون ارائهٔ هر گونه دادهٔ اصالت‌سنجی درخواست کرده‌اید، بنابراین هیچ کاری انجام نمی‌دهد.",
 	"globalgroupmembership": "عضویت ته گروهان سراسری",
 	"globalgrouppermissions": "مدیریت گروه سراسری",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|به گند و اصلاح کن اجازتانء]])",
-	"centralauth-existinggroup-legend": "هستین گروه",
 	"centralauth-newgroup-legend": "یک نوکین گروهی شرکن",
 	"centralauth-newgroup-intro": "شما نونیت چه ای فرم په اجازت دهگ په یک نوکین گروهی استفاده کنیت.\nتوجه کنیت که یک گروهی موجود نهنت مگر شی که په آیی اجازتانی دهگ بیت.",
 	"centralauth-globalgroupperms-newgroupname": "نوکین نام گروه:",
 	"centralauth-globalgroupperms-creategroup-submit": "اجازات به دی",
-	"centralauth-editgroup-subtitle": "اصلاح  $1",
 	"centralauth-editgroup-fieldset": "اجازت په $1",
 	"centralauth-editgroup-name": "نام گروه:",
 	"centralauth-editgroup-display": "ملکی نام گروه:",
@@ -263,7 +260,6 @@
 	"centralauth-rename-progress-username": "کار زوروکی نام",
 	"centralauth-rename-table-status-done": "کار بوت",
 	"centralauth-usermerge-form-reason": "دلیل",
-	"globalrenamerequest-email-why-label": "پچی؟",
 	"globalrenamequeue-request-cancel-text": "کنسیل",
 	"globalrenamequeue-view": ";From:\n:[[Special:CentralAuth/$1|$1]]\n;To:\n:[[Special:CentralAuth/$2|$2]]\n;Reason:\n:$3\n;Status:\n:$4\n;Requested:\n:$5\n;Completed:\n:$6\n;Done by:\n:[$7 $8]\n;Notes:\n:$9"
 }

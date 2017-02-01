@@ -7,7 +7,8 @@
 			"PPerviz",
 			"Vago",
 			"Vugar 1981",
-			"Wertuose"
+			"Wertuose",
+			"Archaeodontosaurus"
 		]
 	},
 	"mergeaccount": "Hesab birləşdirmə halı",
@@ -25,6 +26,7 @@
 	"centralauth-list-home-title": "Ev vikisi",
 	"centralauth-list-attached-title": "Əlavə edilmiş hesablar",
 	"centralauth-foreign-link": "$2'dəki $1 istifadəçisi",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|redaktə|redaktə|redaktələri}} $2",
 	"centralauth-merge-method-primary": "ev vikisi",
 	"centralauth-merge-method-empty": "fəaliyyət yoxdur",
 	"centralauth-merge-method-mail": "e-maillə təsdiqləndi",
@@ -111,12 +113,10 @@
 	"centralauth-rightslog-set-optout": "çıxış əsaslıdır",
 	"centralautologin": "Mərkəzi giriş",
 	"globalgroupmembership": "Qlobal qruplarda üzvlük",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|bax/redaktə]])",
 	"centralauth-globalgroupperms-nogroups": "Qlobal qrup tapılmadı.",
 	"centralauth-newgroup-legend": "Yeni qrup yarat",
 	"centralauth-globalgroupperms-newgroupname": "Yeni qrup adı:",
 	"centralauth-globalgroupperms-creategroup-submit": "Hüquq ver",
-	"centralauth-editgroup-subtitle": "Redaktə $1",
 	"centralauth-editgroup-fieldset": "$1 üçün hüquqlar",
 	"centralauth-editgroup-name": "Qrupun adı:",
 	"centralauth-editgroup-display": "Qrupun lokallaşdırılmış adı:",

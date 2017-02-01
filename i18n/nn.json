@@ -272,7 +272,6 @@
 	"centralauth-rename-form-reason": "Årsak",
 	"centralauth-rename-form-movepages": "Flytt brukarsider",
 	"centralauth-rename-movelog": "Flytte sida automatisk under omnemning av brukaren «[[Special:CentralAuth/$1|$1]]» til «[[Special:CentralAuth/$2|$2]]»",
-	"globalrenamerequest-email-why-label": "Kvifor?",
 	"centralauth-contribs-locked": "Denne kontoen er låst globalt.\nSjå [[Special:CentralAuth/$1|globale kontodetaljar]] for meir informasjon.",
 	"centralauth-uwbr-registration-nodate": "Ukjend",
 	"centralauth-uwbr-editcount": "Endringstal"

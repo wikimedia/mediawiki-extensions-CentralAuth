@@ -54,8 +54,6 @@
 	"centralauth-log-header": "Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.",
 	"centralauth-rightslog-header": "Iko log pancatatan parubahan kalompok global, tamasuak parubahan kaanggotaan kalompok jo hak-hak satiok kalompok.",
 	"globalgrouppermissions": "Manajemen kalompok global",
-	"centralauth-globalgroupperms-grouplist": "Kalompok global barikuik alah diatua.\nSanak dapek mancaliak jo manyuntiang hak nan diagiah ka satiok kalompok, jikok Sanak ado hak untuak itu.\nSuatu kalompok dapek dihapuihan dengan caro manghapuih kasado haknyo.",
-	"centralauth-existinggroup-legend": "Kalompok nan ado",
 	"centralauth-editgroup-noset": "(indak ado)",
 	"centralauth-editset-nouse": "(indak ado)",
 	"right-centralauth-merge": "Manggabuangkan akun surang"

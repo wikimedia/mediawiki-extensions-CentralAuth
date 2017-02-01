@@ -37,7 +37,6 @@
 	"centralauth-logout-progress": "Sie wurden auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch abgemeldet:",
 	"centralauth-login-no-others": "Sie wurden automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.",
 	"centralauth-logout-no-others": "Sie wurden automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.",
-	"centralauth-globalgroupperms-grouplist": "Die folgenden globalen Gruppen wurden konfiguriert.\nSie können die jeder Gruppe zugewiesenen Rechte sehen oder ändern, sofern Sie dazu berechtigt sind.\nEine Gruppe kann gelöscht werden, indem alle Rechte entfernt werden.",
 	"centralauth-newgroup-intro": "Sie können mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachten Sie, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.",
 	"centralauth-editgroup-success-text": "Sie haben die Gruppenberechtigungen für die Benutzergruppe $1 erfolgreich geändert.\n[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].",
 	"centralauth-editset-intro-rw": "Die nachfolgenden Wikigruppen sind bereits angelegt.\nSie können eine Gruppe anschauen, bearbeiten oder eine eine Gruppe erstellen.",

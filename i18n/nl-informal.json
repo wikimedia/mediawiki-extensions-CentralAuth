@@ -35,7 +35,6 @@
 	"centralauth-logout-progress": "Je wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:",
 	"centralauth-login-no-others": "Je bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.",
 	"centralauth-logout-no-others": "Je bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.",
-	"centralauth-globalgroupperms-grouplist": "De onderstaande globale groepen zijn ingesteld.\nJe kunt de rechten van alle groepen bekijken en bewerken als je daar de rechten voor hebt.\nEen groep kan verwijderd worden door alle rechten van de groep te verwijderen.",
 	"centralauth-newgroup-intro": "Via dit formulier kan je rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn",
 	"centralauth-editgroup-success-text": "Je hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]",
 	"centralauth-editset-intro-rw": "De volgende wikigroepen bestaan al.\nJe kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken."

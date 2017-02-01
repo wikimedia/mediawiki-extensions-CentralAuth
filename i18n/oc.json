@@ -267,7 +267,6 @@
 	"globalrenameprogress-legend": "Afichar la progression del cambiament de nom global",
 	"globalrenamerequest": "Demanda de renomenatge global de compte utilizaire",
 	"globalrenamerequest-legend": "Demanda de cambiament de nom de l’unificacion",
-	"globalrenamerequest-username-help": "Aquò es vòstre nom d’utilizaire actual.",
 	"globalrenamerequest-newname-help": "Entratz lo novèl nom d’utilizaire que volètz utilizar, per ex., « $1 ».",
 	"globalrenamerequest-reason-label": "Motiu de la demanda",
 	"globalrenamerequest-submit-text": "Demandar un cambiament de nom",
