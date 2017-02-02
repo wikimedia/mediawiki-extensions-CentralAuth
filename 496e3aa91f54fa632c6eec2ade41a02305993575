@@ -16,6 +16,24 @@
       "revId": "496e3aa91f54fa632c6eec2ade41a02305993575",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_4281c9fc",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 2422,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2017-02-02T21:10:09Z",
+      "side": 1,
+      "message": "Do we expect to release 1.29 with the config setting? If not I wouldn\u0027t worry about the case of new CA with old core, that\u0027s not a supported setup. \n\nIf it\u0027s going in 1.29, I\u0027d say we should keep the setting in Setup.php once it\u0027s no longer needed and force it to true.",
+      "parentUuid": "2ef897d1_b31b32d4",
+      "revId": "496e3aa91f54fa632c6eec2ade41a02305993575",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
