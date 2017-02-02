@@ -15,6 +15,9 @@ $result = $dbl->select(
 	array( 'user_name' ),
 	array(
 		'ug_group' => 'steward',
+		( !isset( $wgDisableUserGroupExpiry ) || $wgDisableUserGroupExpiry ) ?
+			'1' :
+			'ug_expiry IS NULL OR ug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
 		'user_id = ug_user'
 	),
 	'migrateStewards.php'

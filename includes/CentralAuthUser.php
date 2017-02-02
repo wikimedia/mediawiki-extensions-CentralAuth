@@ -2414,9 +2414,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		// And we have to fetch groups separately, sigh...
+		global $wgDisableUserGroupExpiry;
 		$result = $db->select( 'user_groups',
 			array( 'ug_group' ),
-			array( 'ug_user' => $data['id'] ),
+			array(
+				'ug_user' => $data['id'],
+				( !isset( $wgDisableUserGroupExpiry ) || $wgDisableUserGroupExpiry ) ?
+					'1' :
+					'ug_expiry IS NULL OR ug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
+			),
 			__METHOD__ );
 		foreach ( $result as $row ) {
 			$data['groups'][] = $row->ug_group;
