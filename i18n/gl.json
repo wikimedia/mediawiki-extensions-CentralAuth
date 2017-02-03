@@ -517,7 +517,7 @@
 	"apihelp-query+wikisets-param-orderbyname": "Ordear resultados por nome.",
 	"apihelp-query+wikisets-example-1": "Lista de coleccións wiki",
 	"apihelp-query+wikisets-example-2": "Mostrar coleccións wiki cos seus tipos",
-	"apihelp-setglobalaccountstatus-description": "Definir un estado de usuario global.",
+	"apihelp-setglobalaccountstatus-description": "Definir o estado dun usuario global.",
 	"apihelp-setglobalaccountstatus-param-user": "Usuario ó cal cambiar o estado.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cambiar aínda que o usuario estea bloqueado.",
 	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar aínda que o usuario non estea oculto, estea oculto das listas ou eliminado.",

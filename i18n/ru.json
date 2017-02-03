@@ -499,6 +499,7 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Ваша}} учётная запись была переименована",
 	"sulrenamewarning-renamed": "{{GENDER:$1|Ваша}} учётная запись была переименована в '''$2''' в процессе автоматической миграции в систему единой учётной записи {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-usenew": "Пожалуйста, используйте {{GENDER:$1|ваше}} новое имя участника '''$1''' при входе в систему в будущем.",
+	"globalrenamequeue-request-reason-label": "Общедоступный комментарий",
 	"apihelp-deleteglobalaccount-description": "Удалить глобального участника.",
 	"apihelp-deleteglobalaccount-param-user": "Участник для удаления.",
 	"apihelp-deleteglobalaccount-param-reason": "Причина удаления участника.",
