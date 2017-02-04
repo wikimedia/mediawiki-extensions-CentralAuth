@@ -829,7 +829,7 @@ class RenameQueueTablePager extends TablePager {
 			case 'rq_name':
 			case 'rq_newname':
 				$title = SpecialPage::getTitleFor( 'CentralAuth' , $value );
-				$formatted = Linker::link( $title, htmlspecialchars( $value ) );
+				$formatted = $this->getLinkRenderer()->makeLink( $title, $value );
 				break;
 			case 'rq_performer':
 				$steward = CentralAuthUser::newFromId( $value );
