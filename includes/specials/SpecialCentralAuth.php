@@ -622,10 +622,19 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function formatGroups( $row ) {
-		if ( !count( $row['groups'] ) ) {
+		if ( !count( $row['groupMemberships'] ) ) {
 			return '';
 		}
-		return htmlspecialchars( $this->getLanguage()->commaList( $row['groups'] ) );
+
+		$list = [];
+		foreach ( $row['groupMemberships'] as $group => $ugm ) {
+			if ( $ugm->getExpiry() ) {
+				$list[] = $this->msg( 'centralauth-group-temporary-marker', $group )->text();
+			} else {
+				$list[] = $group;
+			}
+		}
+		return htmlspecialchars( $this->getLanguage()->commaList( $list ) );
 	}
 
 	/**
