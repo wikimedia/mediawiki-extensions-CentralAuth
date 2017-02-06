@@ -137,7 +137,7 @@
 	"centralauth-admin-delete-success": "Διαγράφηκε επιτυχώς ο παγκόσμιος λογαριασμός για τον \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-nonexistent": "Δεν υπάρχει καθολικός λογαριασμός ονόματι \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-delete-nonexistent": "Σφάλμα: ο παγκόσμιος λογαριασμός \"<nowiki>$1</nowiki>\" δεν υπάρχει.",
-	"centralauth-token-mismatch": "Συγγνώμη, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.",
+	"centralauth-token-mismatch": "Λυπούμαστε, δεν μπορούσαμε να επεξεργαστούμε την υποβολή της φόρμας σας λόγω απώλειας δεδομένων συνόδου.",
 	"centralauth-admin-reason": "Αιτία:",
 	"centralauth-admin-reason-other": "Άλλος/πρόσθετος λόγος:",
 	"centralauth-admin-unhide-nonexistent": "Σφάλμα: ο καθολικός λογαριασμός «<nowiki>$1</nowiki>» δεν υπάρχει.",

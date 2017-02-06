@@ -270,6 +270,7 @@
 	"globalrenamerequest-newname-help": "Entratz lo novèl nom d’utilizaire que volètz utilizar, per ex., « $1 ».",
 	"globalrenamerequest-reason-label": "Motiu de la demanda",
 	"globalrenamerequest-submit-text": "Demandar un cambiament de nom",
+	"centralauth-usermerge-form-adduser": "Apondre un utilizaire",
 	"globalrenamequeue-request-reason": "<strong>Rason per demandar lo cambiament de nom</strong>\n:$1",
 	"centralauth-log-gblrename-oldname": "Nom d’utilizaire precedent :",
 	"userswhowillberenamed": "Utilizaires que seràn renomenats",
