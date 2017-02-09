@@ -51,6 +51,24 @@
       "revId": "b9b0ff979341a24c61b8d1051eb17993e682aa58",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_43e882dd",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2017-02-09T22:29:51Z",
+      "side": 1,
+      "message": "Per Gergo, there is no way this worked in it\u0027s current form.\n\n$this-\u003emsg() would return a Message object, but the parse call returns a string\n\nhttps://github.com/wikimedia/mediawiki/blob/master/includes/specialpage/SpecialPage.php#L743-L746\n\nhttps://github.com/wikimedia/mediawiki/blob/master/includes/Message.php#L918-L920",
+      "parentUuid": "2ef897d1_bff89e47",
+      "revId": "b9b0ff979341a24c61b8d1051eb17993e682aa58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
