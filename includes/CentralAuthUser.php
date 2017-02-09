@@ -2031,6 +2031,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		$dbs = array();
 		foreach ( $result as $row ) {
+			if ( !WikiMap::getWiki( $row->ln_wiki ) ) {
+				LoggerFactory::getInstance( 'CentralAuth' )->warning(
+					__METHOD__ . ': invalid wiki in localnames: ' . $row->ln_wiki );
+				continue;
+			}
+
 			/** @var $row object */
 			$dbs[] = $row->ln_wiki;
 		}
@@ -2305,6 +2311,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		$wikis = array();
 		foreach ( $result as $row ) {
+			if ( !WikiMap::getWiki( $row->lu_wiki ) ) {
+				LoggerFactory::getInstance( 'CentralAuth' )->warning(
+					__METHOD__ . ': invalid wiki in localuser: ' . $row->lu_wiki );
+				continue;
+			}
+
 			/** @var $row object */
 			$wikis[$row->lu_wiki] = array(
 				'wiki' => $row->lu_wiki,

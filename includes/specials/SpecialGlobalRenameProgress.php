@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Logger\LoggerFactory;
+
 class SpecialGlobalRenameProgress extends FormSpecialPage {
 	/**
 	 * @var GlobalRenameUserStatus
@@ -140,6 +142,8 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		foreach( $statuses as $wiki => $status ) {
 			$wikiReference = WikiMap::getWiki( $wiki );
 			if ( !$wikiReference ) {
+				LoggerFactory::getInstance( 'CentralAuth' )->warning( __METHOD__ . ': invalid wiki: '
+					. $wiki );
 				continue;
 			}
 
