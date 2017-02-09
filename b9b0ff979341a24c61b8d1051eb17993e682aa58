@@ -69,6 +69,24 @@
       "revId": "b9b0ff979341a24c61b8d1051eb17993e682aa58",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ef897d1_63d49e17",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2017-02-09T22:31:02Z",
+      "side": 1,
+      "message": "Oh, but it did work for me. I tested it on my wiki.",
+      "parentUuid": "2ef897d1_43e882dd",
+      "revId": "b9b0ff979341a24c61b8d1051eb17993e682aa58",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
