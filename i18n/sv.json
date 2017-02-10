@@ -494,6 +494,7 @@
 	"apihelp-globaluserrights-param-user": "Globalt användarnamn.",
 	"apihelp-globaluserrights-param-userid": "Globalt användar-ID.",
 	"apihelp-globaluserrights-param-add": "Lägga till användaren till dessa globala grupper.",
+	"apihelp-globaluserrights-param-expiry": "Denna parameter används inte för tillfället.",
 	"apihelp-globaluserrights-param-remove": "Ta bort användaren från dessa globala grupper.",
 	"apihelp-globaluserrights-param-reason": "Orsaken till förändringen.",
 	"apihelp-globaluserrights-param-tags": "Denna parameter används för tillfället inte.",
