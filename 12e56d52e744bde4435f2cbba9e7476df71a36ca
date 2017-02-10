@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ef897d1_5bb62286",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-02-10T17:01:43Z",
+      "side": 1,
+      "message": "Should it specify that the invalid wiki is in localnames?",
+      "revId": "12e56d52e744bde4435f2cbba9e7476df71a36ca",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
