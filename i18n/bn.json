@@ -63,7 +63,7 @@
 	"centralauth-finish-password": "পাসওয়ার্ড:",
 	"centralauth-finish-login": "প্রবেশ",
 	"centralauth-finish-send-confirmation": "ই-মেইল পাসওয়ার্ড",
-	"centralauth-finish-problems": "সমস্যা হচ্ছে, অথবা এই অ্যাকাউন্টসমূহ আপনার নয়? [[m:Special:MyLanguage/Help:Unified login|কিভাবে সাহায্য খুজতে হবে]]...",
+	"centralauth-finish-problems": "আপনার কি সমস্যা হচ্ছে, অথবা এই অ্যাকাউন্টসমূহ আপনার নয়? [[m:Special:MyLanguage/Help:Unified login|সাহায্য খুঁজুন]]...",
 	"centralauth-finish-noconfirms": "এই পাসওয়ার্ড দ্বারা কোন অ্যাকাউন্ট নিশ্চিত করা সম্ভব নয়।",
 	"centralauth-finish-incomplete": "এই পাসওয়ার্ড ব্যবহার করে বেশ কয়েকটি অ্যাকাউন্ট একীভূত করা হয়েছে।\nঅন্যান্য অ্যাকাউন্ট এখনও নিশ্চিত করা হয়নি।",
 	"centralauth-merge-attempt": "'''প্রদত্ত পাসওয়ার্ড বাকি বিচ্ছিন্ন অ্যাকাউন্টের বিপক্ষে পরীক্ষা করা হচ্ছে...'''",

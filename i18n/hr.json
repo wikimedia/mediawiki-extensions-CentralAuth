@@ -7,7 +7,8 @@
 			"MaGa",
 			"Roberta F.",
 			"SpeedyGonsales",
-			"Kolega2357"
+			"Kolega2357",
+			"Bugoslav"
 		]
 	},
 	"mergeaccount": "Status središnje prijave",
@@ -255,6 +256,7 @@
 	"right-centralauth-merge": "Spajanje svojih računa",
 	"right-globalgrouppermissions": "Uređivanje globalnih skupina",
 	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja suradnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",
+	"log-name-gblrename": "Evidencija globalnog preimenovanja suradnika",
 	"log-description-gblrename": "Evidencija globalnih preimenovanja suradnika.",
 	"globalrenamerequest": "Zahtjev za globalnim preimenovanjem suradnika",
 	"globalrenamerequest-pretext": "Zahtjev za novim suradničkim imenom za sve projekte.\n\nSvi Vaši prethodni doprinosi biti će povezani s novim suradničkim imenom.\n\nNakon što ste zatražili novo suradničko ime, biti će poslana obavijest stewardima Wikimedije koji će izvršiti preimenovanje. Po završetku procesa, biti ćete obaviješteni e-poštom.",

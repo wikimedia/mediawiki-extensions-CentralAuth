@@ -268,6 +268,7 @@
 	"globalrenamerequest": "Demanda de renomenatge global de compte utilizaire",
 	"globalrenamerequest-legend": "Demanda de cambiament de nom de l’unificacion",
 	"globalrenamerequest-newname-help": "Entratz lo novèl nom d’utilizaire que volètz utilizar, per ex., « $1 ».",
+	"globalrenamerequest-email-label": "Adreça de corrièr electronic:",
 	"globalrenamerequest-reason-label": "Motiu de la demanda",
 	"globalrenamerequest-submit-text": "Demandar un cambiament de nom",
 	"centralauth-usermerge-form-adduser": "Apondre un utilizaire",

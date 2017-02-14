@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Khanmarat"
+		]
+	},
+	"centralauth-foreign-link": "$2 эцтә $1 ҡулланыуцы",
+	"centralauth-foreign-contributions": "$2 $1 {{PLURAL:$1|төсәтеү}}",
+	"centralauth-merge-method-login": "системаға кергән цаҡта пултырылған",
+	"centralauth-admin-blocklog": "тыйыу журнал"
+}
