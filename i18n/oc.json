@@ -273,6 +273,7 @@
 	"globalrenamerequest-submit-text": "Demandar un cambiament de nom",
 	"centralauth-usermerge-form-adduser": "Apondre un utilizaire",
 	"globalrenamequeue-request-reason": "<strong>Rason per demandar lo cambiament de nom</strong>\n:$1",
+	"apihelp-globaluserrights-param-expiry": "Aqueste paramètre es actualament inutilizat.",
 	"centralauth-log-gblrename-oldname": "Nom d’utilizaire precedent :",
 	"userswhowillberenamed": "Utilizaires que seràn renomenats",
 	"centralauth-uwbr-registration-nodate": "Desconegut"

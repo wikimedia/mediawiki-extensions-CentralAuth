@@ -180,7 +180,7 @@
 	"centralauth-log-status-hidden": "skriven",
 	"centralauth-log-status-oversighted": "pregledano (''oversighted'')",
 	"centralauth-log-status-none": "(nema statusa)",
-	"centralauth-rightslog-name": "Evidencije globalnih prava",
+	"centralauth-rightslog-name": "Evidencija globalnih suradničkih prava",
 	"centralauth-rightslog-entry-usergroups": "promijenjena globalna suradnička prava za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-groupperms": "promijenjena prava za $1 iz $2 u $3",
 	"centralauth-rightslog-entry-groupperms2": "promijenjena prava za skupinu $1. Dodano $2; Uklonjeno $3",
