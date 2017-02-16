@@ -53,7 +53,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		'mCasToken'
 	);
 
-	const VERSION = 7;
+	const VERSION = 8;
 
 	const HIDDEN_NONE = '';
 	const HIDDEN_LISTS = 'lists';
@@ -911,7 +911,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		$priorityGroups = array( 'checkuser', 'oversight', 'bureaucrat', 'sysop' );
 		foreach ( $priorityGroups as $group ) {
 			foreach ( $migrationSet as $wiki => $local ) {
-				if ( in_array( $group, $local['groups'] ) ) {
+				if ( isset( $local['groupMemberships'][$group] ) ) {
 					$found[] = $wiki;
 				}
 			}
@@ -2230,7 +2230,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		array_map(
 			function ( $local ) use ( &$localgroups ) {
 				$localgroups = array_unique( array_merge(
-					$localgroups, $local['groups']
+					$localgroups, array_keys( $local['groupMemberships'] )
 				) );
 			},
 			$this->queryAttached()
@@ -2389,8 +2389,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			throw $ex;
 		}
 
-		/** @var $row object */
-
 		$data = array(
 			'wiki' => $wikiID,
 			'id' => $row->user_id,
@@ -2401,7 +2399,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				wfTimestampOrNull( TS_MW, $row->user_registration ),
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
-			'groups' => array(),
+			'groupMemberships' => array(), // array of (group name => UserGroupMembership object)
 			'blocked' => false );
 
 		// Edit count field may not be initialized...
@@ -2414,20 +2412,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		}
 
 		// And we have to fetch groups separately, sigh...
-		global $wgDisableUserGroupExpiry;
-		$result = $db->select( 'user_groups',
-			array( 'ug_group' ),
-			array(
-				'ug_user' => $data['id'],
-				$wgDisableUserGroupExpiry ?
-					'1' :
-					'ug_expiry IS NULL OR ug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
-			),
-			__METHOD__ );
-		foreach ( $result as $row ) {
-			$data['groups'][] = $row->ug_group;
-		}
-		$result->free();
+		$data['groupMemberships'] =
+			UserGroupMembership::getMembershipsForUser( $data['id'], $db );
 
 		// And while we're in here, look for user blocks :D
 		$result = $db->select( 'ipblocks',
