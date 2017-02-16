@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce3c5b53_7524c007",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-02-16T14:22:15Z",
+      "side": 1,
+      "message": "It seems odd to have \u003cnowiki\u003e tags in here, versus properly encoding $1 when it\u0027s passed to the message.",
+      "revId": "ae71b739796e7c4559985385639b0b632e9492a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
