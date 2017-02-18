@@ -282,6 +282,7 @@
 	"globalrenamequeue-desc": "Obrađivanje globalnih zahtjeva za preimenovanje",
 	"globalrenamequeue-column-rq-newname": "Željeno korisničko ime",
 	"centralauth-log-gblrename-oldname": "Prethodno korisničko ime:",
+	"userswhowillberenamed": "Korisnici koji će biti preimenovani",
 	"log-action-filter-globalauth": "Vrsta izmjene:",
 	"log-action-filter-globalauth-delete": "Brisanje globalnog računa",
 	"log-action-filter-globalauth-setstatus": "Izmjena statusa globalnog računa",
