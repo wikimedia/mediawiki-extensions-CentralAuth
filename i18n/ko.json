@@ -226,7 +226,7 @@
 	"centralauth-log-name": "통합 계정 기록",
 	"centralauth-log-header": "이 기록은 통합 계정 삭제, 잠금, 숨기기 기록을 포함하고 있습니다.",
 	"centralauth-log-entry-delete": "님이 \"$1\" 통합 계정을 삭제했습니다",
-	"centralauth-log-entry-lock": "님이 \"$1\" 통합 계정을 잠궜습니다",
+	"centralauth-log-entry-lock": "님이 \"$1\" 통합 계정을 잠갔습니다",
 	"centralauth-log-entry-unlock": "님이 \"$1\" 통합 계정을 잠금 해제했습니다",
 	"centralauth-log-entry-hide": "님이 \"$1\" 통합 계정을 숨겼습니다",
 	"centralauth-log-entry-unhide": "님이 \"$1\" 통합 계정을 숨김 해제했습니다",
