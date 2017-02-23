@@ -143,7 +143,7 @@
 	"centralauth-listusers-locked": "zaključano",
 	"centralauth-listusers-attached": "[[User:$1|postoji lokalno]]",
 	"centralauth-listusers-nolocal": "nije spojen ili ne postoji lokalno",
-	"centralauth-seconds-ago": "prije $1 {{PLURAL:$1|sekunde|sekundi}}",
+	"centralauth-seconds-ago": "prije $1 {{PLURAL:$1|sekundu|sekunde|sekundi}}",
 	"centralauth-minutes-ago": "prije $1 {{PLURAL:$1|minute|minuta}}",
 	"centralauth-hours-ago": "prije $1 {{PLURAL:$1|sata|sati}}",
 	"centralauth-days-ago": "prije $1 {{PLURAL:$1|dana|dana}}",
