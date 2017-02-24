@@ -158,7 +158,7 @@
 	"centralauth-admin-logsnippet": "Vurnayişê hesabanê globali verini",
 	"centralauth-admin-suppressreason": "wikiyanê hemi de suppres biya pê $1, pê ena sebebanê: $2",
 	"centralauth-admin-not-authorized": "Ena herketer kerdışi rê icazeta şıma çıni ya.",
-	"centralauth-admin-too-many-edits": "\"<nowiki>$1</nowiki>\"global hesab $2 {{PLURAL:$2|vurnayış|vurnayışan}} ra vêşi aidiyet çıniyo u nênımnê no.",
+	"centralauth-admin-too-many-edits": "No hesabo global \"<nowiki>$1</nowiki>\", $2 {{PLURAL:$2|vırnayışi|vırnayışi}} vêrdê u nêşeno bêro nımıtış.",
 	"centralauth-admin-title": "Semedê $1'i global hesabé idarekari",
 	"centralauth-admin-title-ro": "Melumatê hesabê $1iyo global",
 	"globalusers": "Listeya karberande globalan",

@@ -47,7 +47,8 @@
 			"Yasten",
 			"Mattho69",
 			"Tuxxic",
-			"Derugon"
+			"Derugon",
+			"0x010C"
 		]
 	},
 	"mergeaccount": "État de l’unification du compte",
@@ -463,7 +464,7 @@
 	"globalrenamerequest-status-title": "Demande de renommage en attente d’approbation",
 	"centralauth-usermerge-form-adduser": "Ajouter un utilisateur",
 	"centralauth-usermerge-form-deleteuser": "Retirer un utilisateur",
-	"globalrenamerequest-status-text": "Votre demande de changement de nom d’utilisateur est actuellement en traitement et attend une approbation par un administrateur. Vous serez informé par courriel quand le traitement sera effectué.\n\n;Nom d’utilisateur actuel :\n:$1\n;Nom d’utilisateur demandé :\n:$2",
+	"globalrenamerequest-status-text": "Votre demande de changement de nom d’utilisateur est actuellement en traitement et attend une approbation par un steward. Vous serez informé par courriel quand le traitement sera effectué.\n\n;Nom d’utilisateur actuel :\n:$1\n;Nom d’utilisateur demandé :\n:$2",
 	"globalrenamequeue": "File de demandes de renommage global",
 	"globalrenamequeue-desc": "Traitez les demandes de changement de nom global",
 	"globalrenamequeue-nav-openqueue": "Requêtes ouvertes",
