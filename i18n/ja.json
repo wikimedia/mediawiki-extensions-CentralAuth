@@ -454,7 +454,7 @@
 	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
 	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
 	"centralauth-log-gblrename-oldname": "以前の利用者名",
-	"centralauth-contribs-locked": "このアカウントはグローバルロックされています。詳細は[[Special:CentralAuth/$1|グローバルアカウント情報]]を参照して下さい。",
+	"centralauth-contribs-locked": "このアカウントはグローバルロックされています。\n詳細は[[Special:CentralAuth/$1|グローバルアカウント情報]]を参照してください。",
 	"userswhowillberenamed": "改名される予定の利用者",
 	"centralauth-uwbr-editcount": "編集回数"
 }
