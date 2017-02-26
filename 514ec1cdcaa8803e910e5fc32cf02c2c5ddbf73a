@@ -22,6 +22,30 @@
       "revId": "514ec1cdcaa8803e910e5fc32cf02c2c5ddbf73a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3c5b53_0e816c4f",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2017-02-26T07:50:24Z",
+      "side": 1,
+      "message": "Yes, CentralAuth admin seems better, although the centralauth permissions are now granularized in centralauth-lock, etc. CA-admin as cover-all lgtm though.",
+      "parentUuid": "8ed34346_bc05577e",
+      "range": {
+        "startLine": 194,
+        "startChar": 69,
+        "endLine": 194,
+        "endChar": 77
+      },
+      "revId": "514ec1cdcaa8803e910e5fc32cf02c2c5ddbf73a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
