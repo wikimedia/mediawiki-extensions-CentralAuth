@@ -360,6 +360,7 @@
 	"centralauth-rename-form-movepages": "نقل صفحات المستخدم",
 	"centralauth-rename-form-suppressredirects": "منع إنشاء التحويلات",
 	"centralauth-rename-form-overrideantispoof": "تجاوز أي خلاف يتعلق بتشابه أسماء المستخدمين.",
+	"centralauth-rename-form-allowhigheditcount": "تأكيد إعادة تسمية مستخدم لديه أكثر من $1 {{PLURAL:$1|تعديلات|تعديل}}",
 	"centralauth-rename-notinstalled": "امتداد Renameuser لإعادة تسمية المستخدمين غير منصَّب على هذا الويكي.",
 	"centralauth-rename-doesnotexist": "الحساب المذكور غير موجود.",
 	"centralauth-rename-alreadyexists": "اسم المستخدم المطلوب موجود",
