@@ -34,5 +34,6 @@
 	"centralauth": "Mpitantana ny mpikambana eraky ny wiki",
 	"centralauth-admin-blocklog": "laogim-panakanana",
 	"centralauth-prefs-status": "Ny kaontinao any amin'ny wiki hafa :",
-	"centralauth-prefs-count-attached": "Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}"
+	"centralauth-prefs-count-attached": "Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}",
+	"centralauth-rightslog-name": "Laogin'ny zo eran-tontolo"
 }

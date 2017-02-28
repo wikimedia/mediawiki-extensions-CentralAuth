@@ -182,6 +182,7 @@
 	"centralauth-rightslog-entry-groupperms": "a modificat los dreits del grop $1 de $2 a $3",
 	"centralauth-rightslog-entry-groupperms2": "a modificat lo grop de las permissions per $1. A apondut $2 ; a levat $3",
 	"centralauth-rightslog-entry-groupperms3": "Modificacion de grop restrent als paramètres wikis per $1 de $2 sus $3",
+	"centralauth-rightslog-entry-grouprename": "grop $2 renomenat en $1",
 	"centralauth-rightslog-header": "Aqueste istoric conten las modificacions aportadas als gropes globals, que comprenon los cambiaments de grop e las permissions acordadas alsdiches gropes.",
 	"centralauth-rightslog-entry-newset": "a creat $2 paramètres wiki $1 amb los wikis seguents : $3",
 	"centralauth-rightslog-entry-setrename": "a renomenat lo paramètre wiki « $2 » en « $1 »",
