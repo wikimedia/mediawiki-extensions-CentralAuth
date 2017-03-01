@@ -132,15 +132,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$table .= Html::openElement( 'td' );
 			$table .= $this->getOutput()->parseInline( User::makeGroupLinkWiki( $groupName ) ) . '<br />';
 
-			$linkRenderer = $this->getLinkRenderer();
 			$links = array(
-				$linkRenderer->makeKnownLink(
+				Linker::linkKnown(
 					$this->getPageTitle( $groupName ),
-					$this->msg( 'centralauth-globalgroupperms-management' )->text()
+					$this->msg( 'centralauth-globalgroupperms-management' )->escaped()
 				),
-				$linkRenderer->makeKnownLink(
+				Linker::linkKnown(
 					SpecialPage::getTitleFor( 'GlobalUsers', $groupName ),
-					$this->msg( 'centralauth-globalgroupperms-group-listmembers' )->text()
+					$this->msg( 'centralauth-globalgroupperms-group-listmembers' )->escaped()
 				),
 			);
 			$table .= $this->msg( 'parentheses' )->rawParams( $this->getLanguage()->pipeList( $links ) )->escaped();
@@ -158,9 +157,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			} else {
 				$table .= $this->msg( 'centralauth-globalgroupperms-group-wikiset' )
 					->rawParams(
-						$linkRenderer->makeKnownLink(
+						Linker::linkKnown(
 							SpecialPage::getTitleFor( 'WikiSets', $wikiset['id'] ),
-							$wikiset['name']
+							htmlspecialchars( $wikiset['name'] )
 						)
 					)->escaped();
 			}
@@ -279,9 +278,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( !$this->userCanEdit( $this->getUser() ) ) {
 			$set = WikiSet::newFromID( $default );
 			if ( $set ) {
-				return $this->getLinkRenderer()->makeLink(
+				return Linker::link(
 					SpecialPage::getTitleFor( 'WikiSets', $set->getId() ),
-					$set->getName()
+					htmlspecialchars( $set->getName() )
 				);
 			} else {
 				return $this->msg( 'centralauth-editgroup-nowikiset' )->parse();

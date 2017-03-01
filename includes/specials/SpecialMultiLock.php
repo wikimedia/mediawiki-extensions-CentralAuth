@@ -325,10 +325,10 @@ class SpecialMultiLock extends SpecialPage {
 		$sca->setContext( $this->getContext() );
 
 		$guName = $globalUser->getName();
-		$guLink = $this->getLinkRenderer()->makeLink(
+		$guLink = Linker::link(
 			SpecialPage::getTitleFor( 'CentralAuth', $guName ),
 			// Names are known to exist, so this is not really needed
-			$guName
+			htmlspecialchars( $guName )
 		);
 		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
 		$accountAge = time() - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );

@@ -191,9 +191,9 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	 * @return string raw HTML
 	 */
 	public function getLocalizedCentralAuthLink( $name ) {
-		return $this->getLinkRenderer()->makeKnownLink(
+		return Linker::linkKnown(
 			SpecialPage::getTitleFor( 'CentralAuth', $name ),
-			$name
+			htmlspecialchars( $name )
 		);
 	}
 

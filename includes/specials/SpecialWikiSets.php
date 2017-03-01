@@ -95,7 +95,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		if ( $this->mCanEdit ) {
 			$target = SpecialPage::getTitleFor( 'WikiSets', '0' );
-			$newlink = $this->getLinkRenderer()->makeLink( $target, $this->msg( 'centralauth-editset-new' )->text() );
+			$newlink = Linker::link( $target, $this->msg( 'centralauth-editset-new' )->escaped() );
 			$this->getOutput()->addHTML( "<li>{$newlink}</li>" );
 		}
 
@@ -366,8 +366,7 @@ class SpecialWikiSets extends SpecialPage {
 			}
 		}
 
-		$returnLink = $this->getLinkRenderer()->makeKnownLink(
-			$this->getPageTitle(), $this->msg( 'centralauth-editset-return' )->text() );
+		$returnLink = Linker::linkKnown( $this->getPageTitle(), $this->msg( 'centralauth-editset-return' )->escaped() );
 
 		$this->getOutput()->addHTML( '<strong class="success">' . $this->msg( 'centralauth-editset-success' )->escaped() . '</strong> <p>' . $returnLink . '</p>' );
 	}
