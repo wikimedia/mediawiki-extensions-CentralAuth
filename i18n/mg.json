@@ -33,7 +33,11 @@
 	"centralauth-merge-method-login": "noforonina tam-pidirana",
 	"centralauth": "Mpitantana ny mpikambana eraky ny wiki",
 	"centralauth-admin-blocklog": "laogim-panakanana",
-	"centralauth-prefs-status": "Ny kaontinao any amin'ny wiki hafa :",
+	"centralauth-prefs-status": "Kaonty eran-tontolo:",
 	"centralauth-prefs-count-attached": "Miasa anaty sehatra $1 ny kaontinao {{PLURAL:}}",
+	"centralauth-prefs-view": "Hijery fampahalalana momba ny kaonty maneran-tontolo",
+	"centralauth-log-entry-lock": "nanakana ny kaonty eran-tontolo \"$1\"",
+	"centralauth-log-entry-hide": "nanafina ny kaonty eran-tontolo \"$1\"",
+	"centralauth-log-entry-lockandhide": "nanakana ary nanafina ny kaonty eran-ontolo \"$1\"",
 	"centralauth-rightslog-name": "Laogin'ny zo eran-tontolo"
 }
