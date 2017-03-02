@@ -16,6 +16,24 @@
       "revId": "ae71b739796e7c4559985385639b0b632e9492a4",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce3c5b53_fed37a03",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 644
+      },
+      "writtenOn": "2017-03-02T09:10:24Z",
+      "side": 1,
+      "message": "Since these are the internal group names I don\u0027t think we really need to worry about escaping them, particularly since this is wikitext, so there are no raw HTML issues (only potential \u0027\u0027\u0027bad formatting\u0027\u0027\u0027 issues).",
+      "parentUuid": "ce3c5b53_7524c007",
+      "revId": "ae71b739796e7c4559985385639b0b632e9492a4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
