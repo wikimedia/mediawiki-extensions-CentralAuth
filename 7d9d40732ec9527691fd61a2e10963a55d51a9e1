@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce3c5b53_b4c2f15b",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-03-02T14:39:44Z",
+      "side": 1,
+      "message": "I\u0027d be more comfortable if you pass $group through htmlspecialchars or wfEscapeWikiText here.",
+      "range": {
+        "startLine": 637,
+        "startChar": 72,
+        "endLine": 637,
+        "endChar": 78
+      },
+      "revId": "7d9d40732ec9527691fd61a2e10963a55d51a9e1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
