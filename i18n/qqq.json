@@ -154,6 +154,7 @@
 	"centralauth-admin-list-editcount": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-list-groups": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Group}}",
 	"centralauth-admin-list-blocked": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Blocked}}",
+	"centralauth-admin-group-temporary": "Displayed to indicate that the user belongs to this group for a limited period of time.\n\nParameters:\n* $1 - internal group name",
 	"centralauth-admin-unmerge": "Used as label for Submit button.",
 	"centralauth-admin-merge": "Unused at this time.",
 	"centralauth-admin-bad-input": "Used as error message.\n\nSee also:\n* {{msg-mw|Centralauth-token-mismatch}}\n* {{msg-mw|Centralauth-state-mismatch}}",
