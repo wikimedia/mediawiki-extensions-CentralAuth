@@ -622,10 +622,24 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function formatGroups( $row ) {
-		if ( !count( $row['groups'] ) ) {
+		if ( !count( $row['groupMemberships'] ) ) {
 			return '';
 		}
-		return htmlspecialchars( $this->getLanguage()->commaList( $row['groups'] ) );
+
+		// We place temporary groups before non-expiring groups in the list.
+		// This is to avoid the ambiguity of something like
+		// "sysop, bureaucrat (temporary)" -- users might wonder whether the
+		// "temporary" indication applies to both groups, or just the last one
+		$listTemporary = [];
+		$list = [];
+		foreach ( $row['groupMemberships'] as $group => $ugm ) {
+			if ( $ugm->getExpiry() ) {
+				$listTemporary[] = $this->msg( 'centralauth-admin-group-temporary', $group )->parse();
+			} else {
+				$list[] = htmlspecialchars( $group );
+			}
+		}
+		return $this->getLanguage()->commaList( array_merge( $listTemporary, $list ) );
 	}
 
 	/**

@@ -96,43 +96,52 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			// Groups win
 			array( 'barwiki', array(
 				'foowiki' => array(
-					'groups' => array( 'sysop' ),
+					'groupMemberships' => array(
+						'sysop' => new UserGroupMembership( 123, 'sysop' ),
+					),
 				),
 				'barwiki' => array(
-					'groups' => array( 'checkuser' ),
+					'groupMemberships' => array(
+						'checkuser' => new UserGroupMembership( 321, 'checkuser' ),
+					),
 				),
 			) ),
 			// Groups tie, editcount wins
 			array( 'barwiki', array(
 				'foowiki' => array(
-					'groups' => array( 'sysop', 'checkuser' ),
+					'groupMemberships' => array(
+						'sysop' => new UserGroupMembership( 123, 'sysop' ),
+						'checkuser' => new UserGroupMembership( 123, 'checkuser' ),
+					),
 					'editCount' => '100',
 				),
 				'barwiki' => array(
-					'groups' => array( 'checkuser' ),
+					'groupMemberships' => array(
+						'checkuser' => new UserGroupMembership( 321, 'checkuser' ),
+					),
 					'editCount' => '100000000',
 				),
 			) ),
 			// No groups, Editcount wins
 			array( 'barwiki', array(
 				'foowiki' => array(
-					'groups' => array(),
+					'groupMemberships' => array(),
 					'editCount' => '100'
 				),
 				'barwiki' => array(
-					'groups' => array(),
+					'groupMemberships' => array(),
 					'editCount' => '1000'
 				),
 			) ),
 			// Edit count ties, super old registration (null) wins
 			array( 'foowiki', array(
 				'foowiki' => array(
-					'groups' => array(),
+					'groupMemberships' => array(),
 					'editCount' => '5',
 					'registration' => null
 				),
 				'barwiki' => array(
-					'groups' => array(),
+					'groupMemberships' => array(),
 					'editCount' => '5',
 					'registration' => '20150305220251',
 				),
@@ -140,12 +149,12 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			// Edit count ties, registration wins
 			array( 'foowiki', array(
 				'foowiki' => array(
-					'groups' => array(),
+					'groupMemberships' => array(),
 					'editCount' => '5',
 					'registration' => '20100305220251'
 				),
 				'barwiki' => array(
-					'groups' => array(),
+					'groupMemberships' => array(),
 					'editCount' => '5',
 					'registration' => '20150305220251',
 				),
@@ -214,14 +223,14 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 						'attachedTimestamp' => '20130627183725',
 						'attachedMethod' => 'login',
 						'id' => '1234',
-						'groups' => array(),
+						'groupMemberships' => array(),
 					),
 					'commonswiki' => array(
 						'wiki' => 'commonswiki',
 						'attachedTimestamp' => '20130627183726',
 						'attachedMethod' => 'login',
 						'id' => '4321',
-						'groups' => array(),
+						'groupMemberships' => array(),
 					),
 				),
 				array()
@@ -233,14 +242,18 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 						'attachedTimestamp' => '20130627183727',
 						'attachedMethod' => 'login',
 						'id' => '12345',
-						'groups' => array( 'sysop' ),
+						'groupMemberships' => array(
+							'sysop' => new UserGroupMembership( 12345, 'sysop' ),
+						),
 					),
 					'commonswiki' => array(
 						'wiki' => 'commonswiki',
 						'attachedTimestamp' => '20130627183728',
 						'attachedMethod' => 'login',
 						'id' => '54321',
-						'groups' => array( 'sysop' ),
+						'groupMemberships' => array(
+							'sysop' => new UserGroupMembership( 54321, 'sysop' ),
+						),
 					),
 				),
 				array( 'sysop' )
@@ -252,14 +265,16 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 						'attachedTimestamp' => '20130627183729',
 						'attachedMethod' => 'login',
 						'id' => '123456',
-						'groups' => array( 'bureaucrat' ),
+						'groupMemberships' => array(
+							'bureaucrat' => new UserGroupMembership( 123456, 'bureaucrat' ),
+						),
 					),
 					'commonswiki' => array(
 						'wiki' => 'commonswiki',
 						'attachedTimestamp' => '20130627183720',
 						'attachedMethod' => 'login',
 						'id' => '654321',
-						'groups' => array(),
+						'groupMemberships' => array(),
 					),
 				),
 				array( 'bureaucrat' )
