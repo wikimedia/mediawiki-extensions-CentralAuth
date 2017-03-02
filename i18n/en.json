@@ -138,6 +138,7 @@
 	"centralauth-admin-list-editcount": "Edit count",
 	"centralauth-admin-list-groups": "Groups",
 	"centralauth-admin-list-blocked": "Blocked",
+	"centralauth-admin-group-temporary": "$1 ''(temporary)''",
 	"centralauth-admin-unmerge": "Unmerge selected",
 	"centralauth-admin-merge": "Merge selected",
 	"centralauth-admin-bad-input": "Invalid merge selection",
