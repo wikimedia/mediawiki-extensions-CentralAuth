@@ -325,5 +325,7 @@
 	"globalrenamerequest-save-error": "Neuspešna shranitev prošnje. Prosimo, poskusi ponovno.",
 	"globalrenamerequest-status-title": "Odobritev preimenovanja v postopku",
 	"globalrenamerequest-status-text": "Tvoja prošnja za preimenovanje je trenutno še v teku in čaka na odobritev od stevarda. O zaključku postopka boš obveščen po mejlu.\n\n;Trenutno uporabniško ime:\n:$1\n;Želeno uporabniško ime:\n:$2",
-	"globalrenamequeue-request-reason-sul": "Uporabnik je bil obveščen o konfliktu z globalnim imenom v pripravi na finalizacijo SUL."
+	"globalrenamequeue-column-rq-newname": "Želeno uporabniško ime",
+	"globalrenamequeue-request-reason-sul": "Uporabnik je bil obveščen o konfliktu z globalnim imenom v pripravi na finalizacijo SUL.",
+	"globalrenamequeue-form-newname": "Želeno uporabniško ime:"
 }

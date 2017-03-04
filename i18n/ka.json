@@ -424,6 +424,7 @@
 	"apihelp-query+wikisets-example-1": "ვიკის ნაკრების სია",
 	"apihelp-query+wikisets-example-2": "ვიკის ნაკრებების ჩვენება ტიპებთან ერთად",
 	"centralauth-log-gblrename-oldname": "წინასწარი მომხმარებლის სახელი:",
+	"userswhowillberenamed": "მომხმარებლები, რომლებიც იქნებიან გადარქმეულები",
 	"centralauth-uwbr-name": "მომხმარებლის სახელი",
 	"centralauth-uwbr-registration": "რეგისტრაციის თარიღი",
 	"centralauth-uwbr-registration-nodate": "უცნობი",
