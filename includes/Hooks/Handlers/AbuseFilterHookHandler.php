@@ -60,6 +60,14 @@ class AbuseFilterHookHandler implements
 				$result = [];
 			}
 			return false;
+		} elseif ( $method == 'global-user-editcount' ) {
+			$user = CentralAuthUser::getInstance( $parameters['user'] );
+			if ( $user->exists() && $user->isAttached() ) {
+				$result = $user->getGlobalEditCount();
+			} else {
+				$result = 0;
+			}
+			return false;
 		} else {
 			return true;
 		}
@@ -78,6 +86,7 @@ class AbuseFilterHookHandler implements
 		?RecentChange $rc
 	) {
 		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user ] );
+		$vars->setLazyLoadVar( 'global_user_editcount', 'global-user-editcount', [ 'user' => $user ] );
 		return true;
 	}
 
@@ -89,6 +98,8 @@ class AbuseFilterHookHandler implements
 	public function onAbuseFilter_builder( array &$realValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
 		$realValues['vars']['global_user_groups'] = 'global-user-groups';
+		// Uses: 'abusefilter-edit-builder-vars-global-user-editcount'
+		$realValues['vars']['global_user_editcount'] = 'global-user-editcount';
 		return true;
 	}
 

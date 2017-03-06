@@ -30,6 +30,7 @@
 			"Yuki Shira"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Global edit count of the user",
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groups that the user is in",
 	"action-centralauth-createlocal": "forcibly create a local account",
 	"action-centralauth-lock": "lock or unlock global accounts",
