@@ -346,6 +346,7 @@
 	"right-centralauth-merge": "Merge their account",
 	"right-globalgrouppermissions": "Manage global groups",
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groups that the user is in",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Global edit count of the user",
 	"action-centralauth-unmerge": "unmerge global accounts",
 	"action-centralauth-lock": "lock or unlock global accounts",
 	"centrallogin": "Central user log in",

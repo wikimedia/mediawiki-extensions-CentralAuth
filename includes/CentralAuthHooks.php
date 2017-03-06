@@ -1196,7 +1196,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * Computes the global_user_groups variable
+	 * Computes the global_user_groups and global_user_editcount variables
 	 * @param string $method
 	 * @param AbuseFilterVariableHolder $vars
 	 * @param array $parameters
@@ -1212,30 +1212,41 @@ class CentralAuthHooks {
 				$result = [];
 			}
 			return false;
+		} elseif ( $method == 'global-user-editcount' ) {
+			$user = CentralAuthUser::getInstance( $parameters['user'] );
+			if ( $user->exists() && $user->isAttached() ) {
+				$result = $user->getGlobalEditCount();
+			} else {
+				$result = 0;
+			}
+			return false;
 		} else {
 			return true;
 		}
 	}
 
 	/**
-	 * Load our global_user_groups variable
+	 * Load our global_user_groups and global_user_editcount variables
 	 * @param AbuseFilterVariableHolder $vars
 	 * @param User $user
 	 * @return bool
 	 */
 	static function abuseFilterGenerateUserVars( $vars, $user ) {
 		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user ] );
+		$vars->setLazyLoadVar( 'global_user_editcount', 'global-user-editcount', [ 'user' => $user ] );
 		return true;
 	}
 
 	/**
-	 * Tell AbuseFilter about our global_user_groups variable
+	 * Tell AbuseFilter about our global_user_groups and global_user_editcount variables
 	 * @param array &$builderValues
 	 * @return bool
 	 */
 	static function abuseFilterBuilder( &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
 		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
+		// Uses: 'abusefilter-edit-builder-vars-global-user-editcount'
+		$builderValues['vars']['global_user_editcount'] = 'global-user-editcount';
 		return true;
 	}
 
