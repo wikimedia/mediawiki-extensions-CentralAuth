@@ -128,6 +128,7 @@
 	"centralauth-admin-list-editcount": "Bearbeitungszähler",
 	"centralauth-admin-list-groups": "Gruppen",
 	"centralauth-admin-list-blocked": "Gesperrt",
+	"centralauth-admin-group-temporary": "$1 ''(temporär)''",
 	"centralauth-admin-unmerge": "Ausgewählte Benutzerkonten trennen",
 	"centralauth-admin-merge": "Ausgewählte Benutzerkonten zusammenführen",
 	"centralauth-admin-bad-input": "Ungültige Auswahl",
