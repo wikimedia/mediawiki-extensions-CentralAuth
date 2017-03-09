@@ -133,6 +133,7 @@
 	"centralauth-admin-list-editcount": "Conteggio delle modifiche",
 	"centralauth-admin-list-groups": "Gruppi",
 	"centralauth-admin-list-blocked": "Bloccato",
+	"centralauth-admin-group-temporary": "$1 ''(temporaneo)''",
 	"centralauth-admin-unmerge": "Scollega le utenze selezionate",
 	"centralauth-admin-merge": "Unifica le utenze selezionate",
 	"centralauth-admin-bad-input": "Selezione per l'unificazione NON valida",

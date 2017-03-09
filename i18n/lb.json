@@ -113,6 +113,7 @@
 	"centralauth-admin-list-editcount": "Zuel vun den Ännerungen",
 	"centralauth-admin-list-groups": "Gruppen",
 	"centralauth-admin-list-blocked": "Gespaart",
+	"centralauth-admin-group-temporary": "$1 ''(temporär)''",
 	"centralauth-admin-unmerge": "Gewielte Benotzerkonten trennen",
 	"centralauth-admin-merge": "Déi ausgewielten zesummeféieren",
 	"centralauth-admin-bad-input": "Ongëlteg Auswiel fir zesummenzeleeën",

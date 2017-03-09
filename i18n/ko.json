@@ -139,6 +139,7 @@
 	"centralauth-admin-list-editcount": "편집 수",
 	"centralauth-admin-list-groups": "그룹",
 	"centralauth-admin-list-blocked": "차단됨",
+	"centralauth-admin-group-temporary": "$1 (임시)",
 	"centralauth-admin-unmerge": "선택한 계정 병합 해제",
 	"centralauth-admin-merge": "선택한 계정 합치기",
 	"centralauth-admin-bad-input": "잘못된 계정 합치기 설정",

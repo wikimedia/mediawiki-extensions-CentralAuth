@@ -159,6 +159,7 @@
 	"centralauth-admin-list-editcount": "Compteur de modifications",
 	"centralauth-admin-list-groups": "Groupes",
 	"centralauth-admin-list-blocked": "Bloqué",
+	"centralauth-admin-group-temporary": "$1 ''(temporaire)''",
 	"centralauth-admin-unmerge": "Défusionner la sélection",
 	"centralauth-admin-merge": "Fusionner la sélection",
 	"centralauth-admin-bad-input": "Sélection de fusion invalide",

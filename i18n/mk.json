@@ -114,6 +114,7 @@
 	"centralauth-admin-list-editcount": "Бројач на уредувања",
 	"centralauth-admin-list-groups": "Групи",
 	"centralauth-admin-list-blocked": "Блокирана",
+	"centralauth-admin-group-temporary": "$1 ''(привремено)''",
 	"centralauth-admin-unmerge": "Раздели ги избраните",
 	"centralauth-admin-merge": "Обедини ги избраните",
 	"centralauth-admin-bad-input": "Неважечки избор за обединување",

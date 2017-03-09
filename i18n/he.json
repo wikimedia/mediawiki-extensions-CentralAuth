@@ -121,6 +121,7 @@
 	"centralauth-admin-list-editcount": "מספר עריכות",
 	"centralauth-admin-list-groups": "קבוצות",
 	"centralauth-admin-list-blocked": "מצב חסימה",
+	"centralauth-admin-group-temporary": "$1 ''(זמני)''",
 	"centralauth-admin-unmerge": "ביטול המיזוג של החשבונות שנבחרו",
 	"centralauth-admin-merge": "מיזוג החשבונות שנבחרו",
 	"centralauth-admin-bad-input": "בחירה שגויה של מיזוג",
