@@ -17,7 +17,8 @@
 			"ViDam",
 			"Csega",
 			"Nyuszika7H",
-			"Máté"
+			"Máté",
+			"BanKris"
 		]
 	},
 	"mergeaccount": "Szerkesztői fiókok egyesítésének állapota",
@@ -127,6 +128,7 @@
 	"centralauth-admin-list-editcount": "Szerkesztésszám",
 	"centralauth-admin-list-groups": "Csoportok",
 	"centralauth-admin-list-blocked": "Blokkolva",
+	"centralauth-admin-group-temporary": "$1 ''(ideiglenesen)''",
 	"centralauth-admin-unmerge": "Kiválasztott integrálásának megszüntetése",
 	"centralauth-admin-merge": "Kiválasztott integrálása",
 	"centralauth-admin-bad-input": "Érvénytelen integrálandó kiválasztás",
@@ -331,7 +333,7 @@
 	"globalrenamerequest-status-title": "Átnevezési kérelem jóváhagyása függőben",
 	"centralauth-usermerge-form-adduser": "Felhasználó hozzáadása",
 	"centralauth-usermerge-form-deleteuser": "Felhasználó eltávolítása",
-	"globalrenamequeue-request-userinfo-global": "* szerkesztő: [[Special:CentralAuth/$1]]\n* elsődleges wiki: $2\n* új név: [[Special:CentralAuth/$3]]\n* globális szerkesztésszám: $4",
+	"globalrenamequeue-request-userinfo-global": "* szerkesztő: [[Special:CentralAuth/$1|$1]]\n* elsődleges wiki: $2\n* új név: [[Special:CentralAuth/$3|$3]]\n* globális szerkesztésszám: $4",
 	"centralauth-log-gblrename-oldname": "Korábbi felhasználónév:",
 	"centralauth-delete-empty-account": "Üres fiók"
 }

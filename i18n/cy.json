@@ -110,6 +110,7 @@
 	"centralauth-admin-list-editcount": "Nifer y golygiadau",
 	"centralauth-admin-list-groups": "Grwpiau",
 	"centralauth-admin-list-blocked": "Wedi ei flocio",
+	"centralauth-admin-group-temporary": "$1 ''(dros dro)''",
 	"centralauth-admin-unmerge": "Dewiswyd dad-gyfuno",
 	"centralauth-admin-merge": "Dewiswyd cyfuno",
 	"centralauth-admin-bad-input": "Dewisiad cyfuno annilys",
