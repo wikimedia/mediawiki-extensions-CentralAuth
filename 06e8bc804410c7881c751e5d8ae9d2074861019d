@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e46e3ee_2c85865a",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-03-13T09:23:03Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this count $wikis?",
+      "range": {
+        "startLine": 723,
+        "startChar": 25,
+        "endLine": 723,
+        "endChar": 53
+      },
+      "revId": "06e8bc804410c7881c751e5d8ae9d2074861019d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
