@@ -127,6 +127,7 @@
 	"centralauth-admin-list-editcount": "संपादन संख्या",
 	"centralauth-admin-list-groups": "समूह",
 	"centralauth-admin-list-blocked": "अवरुद्ध",
+	"centralauth-admin-group-temporary": "$1 ''(अस्थाई)''",
 	"centralauth-admin-unmerge": "चुने हुए अलग करें",
 	"centralauth-admin-merge": "चुने हुए एकत्रित करें",
 	"centralauth-admin-bad-input": "अमान्य एकत्रीकरण चुनाव",
