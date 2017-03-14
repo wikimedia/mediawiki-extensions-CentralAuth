@@ -406,6 +406,7 @@
 	"globalrenamequeue-request-title": "\"$1\" ëmbenennen?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> freet eng Ëmbenennung op  <strong>$3</strong> un.",
 	"globalrenamequeue-request-userinfo-local": "* Benotzer: [[Special:CentralAuth/$1|$1]]\n* Heemechtswiki: $2\n* neien Numm: [[Special:CentralAuth/$3|$3]]",
+	"globalrenamequeue-request-userinfo-global": "* aktuelle Benotzernumm: [[Special:CentralAuth/$1|$1]]\n* Heemecht's-Wiki: $2\n* neie Benotzernumm: [[Special:CentralAuth/$3|$3]]\n* Zuel vun de globalen Ännerungen: $4",
 	"globalrenamequeue-request-comments-label": "Notizen/Grënn",
 	"globalrenamequeue-request-movepages": "Benotzersäite réckelen",
 	"globalrenamequeue-request-approve-text": "Ëmbenennung akzeptéieren",

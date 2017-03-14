@@ -105,6 +105,7 @@
 	"centralauth-admin-list-editcount": "మార్పుల సంఖ్య",
 	"centralauth-admin-list-groups": "గుంపులు",
 	"centralauth-admin-list-blocked": "నిరోధించినవి",
+	"centralauth-admin-group-temporary": "$1 ''(తాత్కాలికం)''",
 	"centralauth-admin-unmerge": "ఎంచుకున్నవాటి విలీనాన్ని రద్దుచెయ్యి",
 	"centralauth-admin-merge": "ఎంచుకున్నవాటిని విలీనం చేయి",
 	"centralauth-admin-bad-input": "తప్పుడు విలీనపు ఎంపిక",
