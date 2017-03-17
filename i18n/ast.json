@@ -112,6 +112,7 @@
 	"centralauth-admin-list-editcount": "Contador d'ediciones",
 	"centralauth-admin-list-groups": "Grupos",
 	"centralauth-admin-list-blocked": "Bloquiáu",
+	"centralauth-admin-group-temporary": "$1 «(temporal)»",
 	"centralauth-admin-unmerge": "Dixebrar seleicionaes",
 	"centralauth-admin-merge": "Fusionar seleicionaes",
 	"centralauth-admin-bad-input": "Seleición de fusión non válida",
