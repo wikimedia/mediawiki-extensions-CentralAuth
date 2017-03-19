@@ -50,7 +50,8 @@
 			"Indiralena",
 			"Rubentl134",
 			"Dgstranz",
-			"Sophivorus"
+			"Sophivorus",
+			"AlvaroMolina"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -194,7 +195,7 @@
 	"centralauth-admin-status-submit": "Configurar estado",
 	"centralauth-admin-status-nonexistent": "Error: la cuenta global \"<nowiki>$1</nowiki>\" no existe.",
 	"centralauth-admin-setstatus-success": "Has cambiado el estado de esta cuenta global.",
-	"centralauth-admin-status-reasons": "* Razones comunes de bloqueo\n** cuenta creada para vandalizar\n** cuenta creada para spam\n* Razones comunes para bloqueo y ocultación\n** nombre de usuario abusivo\n** información personal inapropiada",
+	"centralauth-admin-status-reasons": "* Razones comunes de bloqueo\n** Cuenta creada para vandalizar\n** Cuenta creada para spam\n* Razones comunes para bloqueo y ocultación\n** Nombre de usuario abusivo\n** Información personal inapropiada",
 	"centralauth-admin-logsnippet": "Cambios previos en el estado de la cuenta global",
 	"centralauth-admin-suppressreason": "Suprimida globalmente por $1 por la siguiente razón: $2",
 	"centralauth-admin-not-authorized": "No tienes permisos para realizar esta acción",
@@ -252,7 +253,7 @@
 	"centralauth-log-entry-delete": "borró la cuenta global «$1»",
 	"centralauth-log-entry-lock": "bloqueó la cuenta global «$1»",
 	"centralauth-log-entry-unlock": "desbloqueó la cuenta global «$1»",
-	"centralauth-log-entry-hide": "escondió la cuenta global «$1»",
+	"centralauth-log-entry-hide": "ocultó la cuenta global «$1»",
 	"centralauth-log-entry-unhide": "mostró la cuenta global «$1»",
 	"centralauth-log-entry-lockandhide": "bloqueó y ocultó la cuenta global «$1»",
 	"centralauth-log-entry-chgstatus": "modificó el estado de la cuenta global «$1»: estableció $2; eliminó $3",
@@ -426,7 +427,7 @@
 	"log-name-gblrename": "Registro de renombramiento global",
 	"log-description-gblrename": "Este registro muestra una lista de los cambios de nombre de los usuarios.",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5",
-	"logentry-gblrename-promote": "$1 globalmente {{GENDER:$2|renombró}} a $4 como $5",
+	"logentry-gblrename-promote": "$1 {{GENDER:$2|renombró}} globalmente a $4 como $5",
 	"globalusermerge": "Fusionar usuario global",
 	"globalusermerge-legend": "Fusionar usuario global",
 	"centralauth-usermerge-form-newuser": "Nombre de usuario final",

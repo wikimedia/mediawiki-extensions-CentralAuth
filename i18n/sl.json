@@ -311,6 +311,7 @@
 	"globalrenamerequest-forced": "Fundacija Wikimedija [[:mw:SUL_finalisation|poskuša poenotiti uporabniška imena na vseh wikijih]]. Za to uporabniško ime je bilo ugotovljeno, da obstaja tudi na drugih wikijih, zato mora biti preimenovano zavoljo uspešnega postopka. S tem namenom prosimo, da si izbereš novo uporabniško ime.",
 	"globalrenamerequest-pretext": "Zaprosi za novo uporabniško ime, po katerem boš znan na vseh wikijih.\n\nVsi tvoji dosedanji prispevki bodo pridruženi novemu imenu.\n\nOb zaprositvi bo stevardom poslano obvestilo, da izvedejo preimenovanje. Na koncu boš prejel mejl o uspešnem preimenovanju.",
 	"globalrenamerequest-username-label": "Trenutno uporabniško ime:",
+	"globalrenamerequest-newname-label": "Želeno uporabniško ime:",
 	"globalrenamerequest-newname-help": "Vnesi novo uporabniško ime, na primer: \"$1\".",
 	"globalrenamerequest-newname-err-invalid": "Navedeno je bilo neveljavno uporabniško ime.",
 	"globalrenamerequest-newname-err-taken": "Vnešeno ime je že zasedeno. Prosimo, da si izbereš drugo ime.",
