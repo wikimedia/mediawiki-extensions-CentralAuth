@@ -140,6 +140,7 @@
 	"centralauth-admin-list-editcount": "Aantal bewerkingen",
 	"centralauth-admin-list-groups": "Groepen",
 	"centralauth-admin-list-blocked": "Geblokkeerd",
+	"centralauth-admin-group-temporary": "$1 ''(tijdelijk)''",
 	"centralauth-admin-unmerge": "Geselecteerde gebruikers splitsen",
 	"centralauth-admin-merge": "Geselecteerde gebruikers samenvoegen",
 	"centralauth-admin-bad-input": "Onjuiste samenvoegselectie",
