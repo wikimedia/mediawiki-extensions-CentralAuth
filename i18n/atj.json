@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Benoit Rochon"
+			"Benoit Rochon",
+			"Jeannette Coocoo"
 		]
 	},
 	"centralauth-admin-username": "Icinikasowin:",
 	"centralauth-admin-info-username": "Icinikasowin:",
+	"centralauth-admin-blocklog": "wapatcikan taci e nanikactek",
 	"centralauth-editset-submit-delete": "Wepina",
 	"centralauth-rename-progress-username": "Icinikasowin",
 	"globalrenamerequest-email-label": "Pamikicikwepitcikan matcetcicihikan:",
