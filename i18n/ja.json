@@ -456,5 +456,7 @@
 	"centralauth-log-gblrename-oldname": "以前の利用者名",
 	"centralauth-contribs-locked": "このアカウントはグローバルロックされています。\n詳細は[[Special:CentralAuth/$1|グローバルアカウント情報]]を参照してください。",
 	"userswhowillberenamed": "改名される予定の利用者",
+	"centralauth-uwbr-name": "利用者名",
+	"centralauth-uwbr-registration": "登録日時",
 	"centralauth-uwbr-editcount": "編集回数"
 }
