@@ -519,6 +519,7 @@
 	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do atual <username>:<hidden>:<locked>, para detectar conflitos de edição. Definir <locked> para 1 para bloqueado, 0 para desbloqueado.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloquear a conta global para [[User:Example]] com motivo \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Desbloquear e suprimir a conta global para [[User:Example]] com o motivo \"Eu posso\"",
+	"apihelp-main-param-centralauthtoken": "Ao acessar a API usando uma solicitação AJAX por domínio cruzado (CORS), use isto para autenticar-se como usuário(a) atual do SUL. Use <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> nesta wiki para recuperar o token, antes de fazer a solicitação CORS. Cada token deve ser utilizado apenas uma vez, e expira após 10 segundos. Isto deve estar incluso em toda solicitação ''pre-flight'', sendo portanto parte do URI da solicitação (ao invés do corpo do POST).",
 	"centralauth-log-gblrename-oldname": "Nome de usuário anterior:",
 	"centralauth-contribs-locked": "Esta conta está bloqueada globalmente.\nVeja [[Special:CentralAuth/$1|detalhes de conta global]] para mais informações.",
 	"centralauth-contribs-locked-log": "Esta conta está globalmente bloqueada.\nPara referência é apresentado abaixo o último registro de bloqueio:",

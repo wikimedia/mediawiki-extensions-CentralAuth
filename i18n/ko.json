@@ -36,7 +36,7 @@
 	"centralauth-groupname": "위키미디어 재단",
 	"centralauth-desc": "{{int:Centralauth-groupname}}에서 운영하는 위키의 [[Special:MergeAccount|계정을 통합합니다]]",
 	"centralauth-antispoof-desc": "CentralAuth에 안티스푸프 기술을 적용합니다",
-	"centralauth-rename-desc": "통합 계정의 이름을 바꿀 수 있습니다",
+	"centralauth-rename-desc": "통합 계정의 이름을 바꿀 수 있게 합니다",
 	"centralauth-mergeaccount-desc": "통합된 로그인을 위해 [[Special:MergeAccount|여러 계정을 통합합니다]]",
 	"centralauth-merge-denied": "죄송하지만 이 문서에 접근할 권한이 없습니다.",
 	"centralauth-merge-notlogged": "계정이 완전히 합쳐졌는지 확인하기 위해<span class=\"plainlinks\">[$1 로그인]</span>해 주세요.",

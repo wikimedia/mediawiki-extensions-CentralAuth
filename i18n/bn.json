@@ -288,7 +288,7 @@
 	"centralauth-rename-viewprogress": "অগ্রগতি দেখুন",
 	"centralauth-rename-progress-fieldset": "স্থানীয় অ্যাকাউন্টের তালিকা",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|অগ্রগতি দেখুন]])",
-	"centralauth-rename-movelog": "ব্যবহারকারীকে নামান্তরিত করার সময় \"[[Special:CentralAuth/$1|$1]]\" থেকে \"[[Special:CentralAuth/$2|$2]]\"-এ স্বয়ংক্রিয়ভাবে পাতা স্থানান্তরিত",
+	"centralauth-rename-movelog": "ব্যবহারকারীকে \"[[Special:CentralAuth/$1|$1]]\" থেকে \"[[Special:CentralAuth/$2|$2]]\"-এ নামান্তরের সময় স্বয়ংক্রিয়ভাবে পাতা স্থানান্তরিত",
 	"log-name-gblrename": "বৈশ্বিক নামান্তরের লগ",
 	"log-description-gblrename": "এই লগ ব্যবহারকারীদের বৈশ্বিক নামান্তর অনুসরণ করে।",
 	"logentry-gblrename-rename": "$1 বৈশ্বিকভাবে $4 কে $5-এ {{GENDER:$2|নামান্তরিত করেছেন}}",

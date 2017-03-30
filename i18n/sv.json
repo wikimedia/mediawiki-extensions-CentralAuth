@@ -133,6 +133,7 @@
 	"centralauth-admin-list-editcount": "Antal redigeringar",
 	"centralauth-admin-list-groups": "Grupper",
 	"centralauth-admin-list-blocked": "Blockerad",
+	"centralauth-admin-group-temporary": "$1 ''(temporärt)''",
 	"centralauth-admin-unmerge": "Separera valda",
 	"centralauth-admin-merge": "Slå samman valda",
 	"centralauth-admin-bad-input": "Ogiltigt val för sammanslagning",
