@@ -123,6 +123,7 @@
 	"centralauth-admin-list-editcount": "Redigeringsteller",
 	"centralauth-admin-list-groups": "Grupper",
 	"centralauth-admin-list-blocked": "Blokkert",
+	"centralauth-admin-group-temporary": "$1 ''(midlertidig)''",
 	"centralauth-admin-unmerge": "Skill ut valgte",
 	"centralauth-admin-merge": "Slå sammen valgte",
 	"centralauth-admin-bad-input": "Ugyldig valg for sammenslåing",

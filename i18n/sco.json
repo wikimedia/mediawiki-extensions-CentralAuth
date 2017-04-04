@@ -3,7 +3,8 @@
 		"authors": [
 			"John Reid",
 			"McDutchie",
-			"Macofe"
+			"Macofe",
+			"AmaryllisGardener"
 		]
 	},
 	"mergeaccount": "Login uneefeecation status",
@@ -306,7 +307,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groops that the uiser is in",
 	"action-centralauth-lock": "lock or lowse global accoonts",
 	"centrallogin": "Central uiser log in",
-	"centralloginsuccesful": "Login successfu",
+	"centralloginsuccesful": "Logged in",
 	"centralauth-completelogin-back": "Return til the afore gane page.",
 	"centralauth-error-nologinattempt": "Nae acteeve login attempt is in progress fer yer session.",
 	"centralauth-error-badtoken": "The provided authentication token is either expired or onvalid.",
