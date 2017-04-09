@@ -144,6 +144,7 @@
 	"centralauth-admin-list-editcount": "Счётчик правок",
 	"centralauth-admin-list-groups": "Группы",
 	"centralauth-admin-list-blocked": "Заблокирован",
+	"centralauth-admin-group-temporary": "$1 ''(временно)''",
 	"centralauth-admin-unmerge": "Разделить выбранные",
 	"centralauth-admin-merge": "Объединить выбранные",
 	"centralauth-admin-bad-input": "Ошибочный выбор объединения",
