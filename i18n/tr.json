@@ -370,6 +370,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Giriş günlükleri",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ilerlemesi görünümü]])",
 	"centralauth-rename-progress-list-header": "Küresel yeniden adlandırma ilerlemesi devam edenler:",
+	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" adlı kullanıcının adı \"[[Special:CentralAuth/$2|$2]]\" olarak değiştirilirken otomatik olarak taşındı",
 	"centralauth-rename-confirm": "Gerçekten bu kullanıcıyı küresel olarak yeniden adlandırmak istiyor musunuz?",
 	"log-name-gblrename": "Küresel yeniden adlandırma günlüğü",
 	"globalusermerge": "Küresel kullanıcı birleştirme",
