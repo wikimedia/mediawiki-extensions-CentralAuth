@@ -124,7 +124,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$pass = false;
 
 		// First, check normal login
-		$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
 		$pass = $centralUser->authenticate( $req->password ) === 'ok';
 
 		// See if it's a user affected by a rename, if applicable.
@@ -133,7 +133,7 @@ class CentralAuthPrimaryAuthenticationProvider
 				$req->username . '~' . str_replace( '_', '-', wfWikiID() )
 			);
 			if ( $renamedUsername !== false ) {
-				$renamed = CentralAuthUser::getMasterInstanceByName( $renamedUsername );
+				$renamed = CentralAuthUser::getInstanceByName( $renamedUsername );
 				if ( $renamed->getId() ) {
 					$this->logger->debug(
 						'CentralAuthMigration: Checking for migration of "{oldname}" to "{newname}"',
@@ -177,13 +177,23 @@ class CentralAuthPrimaryAuthenticationProvider
 		// If we don't have a central account, see if all local accounts match
 		// the password and can be globalized. (bug T72392)
 		if ( !$centralUser->exists() ) {
-			$this->logger->debug( 'no global account for "{username}"', [ 'username' => $username ] );
-			if ( $this->autoMigrateNonGlobalAccounts ) {
-				$ok = $centralUser->storeAndMigrate( [ $req->password ], /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true );
+			$this->logger->debug(
+				'no global account for "{username}"', [ 'username' => $username ] );
+			// Confirm using DB_MASTER in case of replication lag
+			$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
+			if ( $this->autoMigrateNonGlobalAccounts && !$latestCentralUser->exists() ) {
+				$ok = $latestCentralUser->storeAndMigrate(
+					[ $req->password ],
+					/* $sendToRC = */ true,
+					/* $safe = */ true,
+					/* $checkHome = */ true
+				);
 				if ( $ok ) {
-					$this->logger->debug( 'wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a global account for "{username}"', [
-						'username' => $username
-					] );
+					$this->logger->debug(
+						'wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating ' .
+						'a global account for "{username}"',
+						[ 'username' => $username ]
+					);
 					$this->setPasswordResetFlag( $username, $status );
 					return AuthenticationResponse::newPass( $username );
 				}
@@ -201,7 +211,17 @@ class CentralAuthPrimaryAuthenticationProvider
 			$this->logger->debug( 'attempting wgCentralAuthAutoMigrate for "{username}"', [
 				'username' => $username,
 			] );
-			$centralUser->attemptPasswordMigration( $req->password );
+			if ( $centralUser->isAttached() ) {
+				// Defer any automatic migration for other wikis
+				DeferredUpdates::addCallableUpdate( function () use ( $username, $req ) {
+					$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
+					$latestCentralUser->attemptPasswordMigration( $req->password );
+				} );
+			} else {
+				// The next steps depend on whether a migration happens for this wiki
+				$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
+				$latestCentralUser->attemptPasswordMigration( $req->password );
+			}
 		}
 
 		if ( !$centralUser->isAttached() ) {
@@ -255,13 +275,23 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	public function postAuthentication( $user, AuthenticationResponse $response ) {
 		if ( $response->status === AuthenticationResponse::PASS ) {
-			$centralUser = CentralAuthUser::getMasterInstance( $user );
-			if ( $centralUser->exists() && $centralUser->isAttached() &&
-				$centralUser->getEmail() != $user->getEmail()
+			$centralUser = CentralAuthUser::getInstance( $user );
+			if ( $centralUser->exists() &&
+				$centralUser->isAttached() &&
+				$centralUser->getEmail() != $user->getEmail() &&
+				!wfReadOnly()
 			) {
-				$user->setEmail( $centralUser->getEmail() );
-				$user->mEmailAuthenticated = $centralUser->getEmailAuthenticationTimestamp();
-				$user->saveSettings();
+				DeferredUpdates::addCallableUpdate( function () use ( $user ) {
+					$centralUser = CentralAuthUser::getMasterInstance( $user );
+					if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
+						return; // something major changed?
+					}
+
+					$user->setEmail( $centralUser->getEmail() );
+					// @TODO: avoid direct User object field access
+					$user->mEmailAuthenticated = $centralUser->getEmailAuthenticationTimestamp();
+					$user->saveSettings();
+				} );
 			}
 		}
 	}
@@ -349,12 +379,16 @@ class CentralAuthPrimaryAuthenticationProvider
 	public function testUserForCreation( $user, $autocreate, array $options = [] ) {
 		global $wgCentralAuthEnableGlobalRenameRequest;
 
+		$options += [ 'flags' => User::READ_NORMAL ];
+
 		$status = parent::testUserForCreation( $user, $autocreate, $options );
 		if ( !$status->isOk() ) {
 			return $status;
 		}
 
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$centralUser = ( $options['flags'] & User::READ_NORMAL ) == User::READ_NORMAL
+			? CentralAuthUser::getInstance( $user )
+			: CentralAuthUser::getMasterInstance( $user );
 
 		// Rename in progress?
 		if ( $centralUser->renameInProgressOn( wfWikiID() ) ) {
