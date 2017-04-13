@@ -346,7 +346,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$groups = array_map( function ( $group ) {
 				return $this->getLinkRenderer()->makeLink(
 					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
-					User::getGroupName( $group )
+					UserGroupMembership::getGroupName( $group )
 				);
 			}, $groups );
 			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
