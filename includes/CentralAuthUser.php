@@ -1901,8 +1901,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 						return;
 					}
 
-					$this->setPassword( $password );
-					$this->saveSettings();
+					$latestCentralUser = CentralAuthUser::getMasterInstanceById( $this->getId() );
+					$latestCentralUser->setPassword( $password );
+					$latestCentralUser->saveSettings();
 				} );
 			}
 
