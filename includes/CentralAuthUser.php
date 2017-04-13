@@ -174,25 +174,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Check hasOrMadeRecentMasterChanges() on the CentralAuth load balancer
-	 * and whether 'CentralAuthLatest' is set for HTTP requests (which implies
-	 * that a write from a prior request needs to be seen here)
 	 *
 	 * @return bool
 	 */
 	public static function centralLBHasRecentMasterChanges() {
 		global $wgCentralAuthDatabase;
 
-		$lb = wfGetLB( $wgCentralAuthDatabase );
-		if ( $lb->hasOrMadeRecentMasterChanges() ) {
-			return true; // changes already made in this request
-		}
-
-		return (
-			// Request followed redirect from a write request response
-			RequestContext::getMain()->getRequest()->getCheck( 'CentralAuthLatest' )
-			// ... and ChronologyProtector timed out waiting on a slave (before or now)
-			&& $lb->getLaggedSlaveMode( $wgCentralAuthDatabase )
-		);
+		return wfGetLB( $wgCentralAuthDatabase )->hasOrMadeRecentMasterChanges();
 	}
 
 	/**
