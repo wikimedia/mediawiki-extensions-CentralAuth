@@ -242,13 +242,25 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		if( $this->getUser()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
-			$fields['centralauth-editgroup-display'] = $this->msg( 'centralauth-editgroup-display-edit', $group, User::getGroupName( $group ) )->parse();
-			$fields['centralauth-editgroup-member'] = $this->msg( 'centralauth-editgroup-member-edit', $group, User::getGroupMember( $group ) )->parse();
+			$fields['centralauth-editgroup-display'] = $this->msg(
+				'centralauth-editgroup-display-edit',
+				$group,
+				UserGroupMembership::getGroupName( $group )
+			)->parse();
+			$fields['centralauth-editgroup-member'] = $this->msg(
+				'centralauth-editgroup-member-edit',
+				$group,
+				UserGroupMembership::getGroupMemberName( $group, '#' )
+			)->parse();
 		} else {
-			$fields['centralauth-editgroup-display'] = htmlspecialchars( User::getGroupName( $group ) );
-			$fields['centralauth-editgroup-member'] = htmlspecialchars( User::getGroupMember( $group ) );
+			$fields['centralauth-editgroup-display'] = htmlspecialchars( UserGroupMembership::getGroupName( $group ) );
+			$fields['centralauth-editgroup-member'] = htmlspecialchars( UserGroupMembership::getGroupMemberName( $group, '#' ) );
 		}
-		$fields['centralauth-editgroup-members'] = $this->msg( 'centralauth-editgroup-members-link', $group, User::getGroupMember( $group ) )->parse();
+		$fields['centralauth-editgroup-members'] = $this->msg(
+			'centralauth-editgroup-members-link',
+			$group,
+			UserGroupMembership::getGroupMemberName( $group, '#' )
+		)->parse();
 		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector( $group );
 		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes( $group );
 

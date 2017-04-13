@@ -256,10 +256,16 @@ class GlobalUsersPager extends AlphabeticPager {
 				// Mark if the group is not applied on this wiki
 				$rights[] = Html::rawElement( 'span',
 					array( 'class' => 'groupnotappliedhere' ),
-					User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) )
+					User::makeGroupLinkWiki(
+						$group,
+						UserGroupMembership::getGroupMemberName( $group, '#' )
+					)
 				);
 			} else {
-				$rights[] = User::makeGroupLinkWiki( $group, User::getGroupMember( $group ) );
+				$rights[] = User::makeGroupLinkWiki(
+					$group,
+					UserGroupMembership::getGroupMemberName( $group, '#' )
+				);
 			}
 		}
 
@@ -272,7 +278,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	public function getAllGroups() {
 		$result = array();
 		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
-			$result[$group] = User::getGroupName( $group );
+			$result[$group] = UserGroupMembership::getGroupName( $group );
 		}
 		return $result;
 	}
