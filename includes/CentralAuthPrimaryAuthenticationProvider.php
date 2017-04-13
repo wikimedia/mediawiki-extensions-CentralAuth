@@ -124,7 +124,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$pass = false;
 
 		// First, check normal login
-		$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
 		$pass = $centralUser->authenticate( $req->password ) === 'ok';
 
 		// See if it's a user affected by a rename, if applicable.
@@ -177,13 +177,23 @@ class CentralAuthPrimaryAuthenticationProvider
 		// If we don't have a central account, see if all local accounts match
 		// the password and can be globalized. (bug T72392)
 		if ( !$centralUser->exists() ) {
-			$this->logger->debug( 'no global account for "{username}"', [ 'username' => $username ] );
-			if ( $this->autoMigrateNonGlobalAccounts ) {
-				$ok = $centralUser->storeAndMigrate( [ $req->password ], /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true );
+			$this->logger->debug(
+				'no global account for "{username}"', [ 'username' => $username ] );
+			// Confirm using DB_MASTER in case of replication lag
+			$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
+			if ( $this->autoMigrateNonGlobalAccounts && !$latestCentralUser->exists() ) {
+				$ok = $latestCentralUser->storeAndMigrate(
+					[ $req->password ],
+					/* $sendToRC = */ true,
+					/* $safe = */ true,
+					/* $checkHome = */ true
+				);
 				if ( $ok ) {
-					$this->logger->debug( 'wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a global account for "{username}"', [
-						'username' => $username
-					] );
+					$this->logger->debug(
+						'wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating ' .
+						'a global account for "{username}"',
+						[ 'username' => $username ]
+					);
 					$this->setPasswordResetFlag( $username, $status );
 					return AuthenticationResponse::newPass( $username );
 				}
