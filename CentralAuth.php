@@ -1,5 +1,7 @@
 <?php
 
+// TEST
+
 if ( function_exists( 'wfLoadExtension' ) ) {
 	wfLoadExtension( 'CentralAuth' );
 	// Keep i18n globals so mergeMessageFileList.php doesn't break
