@@ -155,12 +155,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$cache->set( $key, $data, 60 );
 
 		$query = array( 'token' => $token );
-		// On account creation, where a central user is added to the DB,
-		// make sure the local wiki request actually sees the new row.
-		// ChronologyProtector would otherwise delay if there is high lag.
-		if ( CentralAuthUser::centralLBHasRecentMasterChanges() ) {
-			$query['CentralAuthLatest'] = 1;
-		}
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
