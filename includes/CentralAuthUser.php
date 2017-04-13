@@ -1886,14 +1886,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 			$passwordFactory = new PasswordFactory();
 			$passwordFactory->init( RequestContext::getMain()->getConfig() );
-			if (
-				$passwordFactory->needsUpdate( $status->getValue() )
-				&& !CentralAuthUtils::getCentralDB()->isReadOnly()
-			) {
-				Profiler::instance()->getTransactionProfiler()->setSilenced( true );
-				$this->setPassword( $password );
-				$this->saveSettings();
-				Profiler::instance()->getTransactionProfiler()->setSilenced( false );
+			if ( $passwordFactory->needsUpdate( $status->getValue() ) ) {
+				DeferredUpdates::addCallableUpdate( function () use ( $password ) {
+					if ( CentralAuthUtils::getCentralDB()->isReadOnly() ) {
+						return;
+					}
+
+					$this->setPassword( $password );
+					$this->saveSettings();
+				} );
 			}
 
 			return "ok";
