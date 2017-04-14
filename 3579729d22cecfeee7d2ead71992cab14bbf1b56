@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_9cb4ece5",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-14T15:06:57Z",
+      "side": 1,
+      "message": "You\u0027ll need to also make a change like https://gerrit.wikimedia.org/r/#/c/312546/1/includes/auth/LocalPasswordPrimaryAuthenticationProvider.php@136 inside -\u003eauthenticate() I believe.",
+      "revId": "3579729d22cecfeee7d2ead71992cab14bbf1b56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_fc7ad01e",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-14T15:06:57Z",
+      "side": 1,
+      "message": "If you\u0027re avoiding master instances, you might want to look at doing so here too.",
+      "revId": "3579729d22cecfeee7d2ead71992cab14bbf1b56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_3c9a7876",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-14T15:06:57Z",
+      "side": 1,
+      "message": "This call requires a write-mode CentralAuthUser and will complain if called with a read-mode user if any accounts can successfully be migrated. Which reminds me, I should see if we\u0027ve been hitting that warning anywhere or if we can turn it into an error.\n\nIf $centralUser-\u003eisAttached() is already true you could defer the call. You can\u0027t defer if it\u0027s false since the migration might change the result for line 217.",
+      "revId": "3579729d22cecfeee7d2ead71992cab14bbf1b56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_3c8118fe",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-14T15:06:57Z",
+      "side": 1,
+      "message": "If you\u0027re avoiding master instances, you might want to look at doing so here too.",
+      "revId": "3579729d22cecfeee7d2ead71992cab14bbf1b56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_1c78dc24",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-14T15:06:57Z",
+      "side": 1,
+      "message": "If you\u0027re avoiding master instances, you might want to look at doing so here too if $options[\u0027flags\u0027] is User::READ_NORMAL.",
+      "revId": "3579729d22cecfeee7d2ead71992cab14bbf1b56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
