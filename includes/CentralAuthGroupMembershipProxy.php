@@ -45,7 +45,7 @@ class CentralAuthGroupMembershipProxy {
 		if ( $name === false ) {
 			return null;
 		}
-		$globalUser = CentralAuthUser::getInstanceByName( $name );
+		$globalUser = CentralAuthUser::getMasterInstanceByName( $name );
 		return $globalUser->exists() ? new CentralAuthGroupMembershipProxy( $globalUser ) : null;
 	}
 
@@ -54,7 +54,7 @@ class CentralAuthGroupMembershipProxy {
 	 * @return CentralAuthGroupMembershipProxy|null
 	 */
 	public static function newFromId( $id ) {
-		$globalUser = CentralAuthUser::newFromId( $id );
+		$globalUser = CentralAuthUser::newMasterInstanceFromId( $id );
 		return $globalUser ? new CentralAuthGroupMembershipProxy( $globalUser ) : null;
 	}
 
