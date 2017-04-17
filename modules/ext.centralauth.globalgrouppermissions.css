@@ -2,7 +2,7 @@
  * Used on group specific pages
  */
 .mw-centralauth-editgroup-readonly .mw-centralauth-editgroup-unchecked {
-	color: grey;
+	color: #808080;
 }
 
 .mw-centralauth-rights {
