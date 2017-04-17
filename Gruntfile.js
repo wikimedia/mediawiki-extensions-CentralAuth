@@ -4,6 +4,7 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-jsonlint' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-jscs' );
+	grunt.loadNpmTasks( 'grunt-stylelint' );
 
 	grunt.initConfig( {
 		banana: {
@@ -12,6 +13,13 @@ module.exports = function ( grunt ) {
 		jsonlint: {
 			all: [
 				'**/*.json',
+				'.stylelintrc',
+				'!node_modules/**'
+			]
+		},
+		stylelint: {
+			all: [
+				'**/*.css',
 				'!node_modules/**'
 			]
 		},
@@ -29,6 +37,6 @@ module.exports = function ( grunt ) {
 		}
 	} );
 
-	grunt.registerTask( 'test', [ 'jsonlint', 'banana', 'jshint', 'jscs' ] );
+	grunt.registerTask( 'test', [ 'jsonlint', 'banana', 'jshint', 'jscs', 'stylelint' ] );
 	grunt.registerTask( 'default', 'test' );
 };

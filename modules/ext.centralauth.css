@@ -4,7 +4,7 @@
 	cursor: pointer;
 
 	width: 15em;
-	border: 1px solid black;
+	border: 1px solid #000;
 	background-color: #ff9;
 	padding: 0.5em;
 }
