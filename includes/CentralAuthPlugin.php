@@ -63,7 +63,7 @@ class CentralAuthPlugin extends AuthPlugin {
 					wfDebugLog( 'CentralAuth',
 						"CentralAuthMigration: Checking for migration of '{$username}' to '{$renamedUsername}'"
 					);
-					RequestContext::getMain()->getStats()->increment(
+					\MediaWiki\MediaWikiServices::getInstance()->getStatsdDataFactory()->increment(
 						'centralauth.migration.check'
 					);
 
@@ -202,7 +202,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			wfDebugLog( 'CentralAuth',
 				"CentralAuthMigration: Coercing user to '{$this->sulMigrationName}'"
 			);
-			RequestContext::getMain()->getStats()->increment(
+			\MediaWiki\MediaWikiServices::getInstance()->getStatsdDataFactory()->increment(
 				'centralauth.migration.coerce'
 			);
 

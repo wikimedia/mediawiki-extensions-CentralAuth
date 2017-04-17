@@ -142,7 +142,8 @@ class CentralAuthPrimaryAuthenticationProvider
 							'newname' => $renamedUsername,
 						]
 					);
-					RequestContext::getMain()->getStats()->increment( 'centralauth.migration.check' );
+					\MediaWiki\MediaWikiServices::getInstance()
+						->getStatsdDataFactory()->increment( 'centralauth.migration.check' );
 
 					if ( $renamed->authenticate( $req->password ) === 'ok' ) {
 						// At this point the user will be passed, so set the

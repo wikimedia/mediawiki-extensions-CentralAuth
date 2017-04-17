@@ -181,7 +181,8 @@ class CentralAuthUtils {
 		$stime = microtime( true );
 		$data = CentralAuthUtils::getSessionCache()->get( $key ) ?: array();
 		$real = microtime( true ) - $stime;
-		RequestContext::getMain()->getStats()->timing( 'centralauth.session.read', $real );
+		\MediaWiki\MediaWikiServices::getInstance()
+			->getStatsdDataFactory()->timing( 'centralauth.session.read', $real );
 		return $data;
 	}
 
@@ -217,7 +218,8 @@ class CentralAuthUtils {
 			$stime = microtime( true );
 			CentralAuthUtils::getSessionCache()->set( $key, $data, 86400 );
 			$real = microtime( true ) - $stime;
-			RequestContext::getMain()->getStats()->timing( 'centralauth.session.write', $real );
+			\MediaWiki\MediaWikiServices::getInstance()
+				->getStatsdDataFactory()->timing( 'centralauth.session.write', $real );
 		}
 
 		if ( $session ) {
@@ -242,7 +244,8 @@ class CentralAuthUtils {
 			$stime = microtime( true );
 			CentralAuthUtils::getSessionCache()->delete( $key );
 			$real = microtime( true ) - $stime;
-			RequestContext::getMain()->getStats()->timing( "centralauth.session.delete", $real );
+			\MediaWiki\MediaWikiServices::getInstance()
+				->getStatsdDataFactory()->timing( "centralauth.session.delete", $real );
 		}
 	}
 
