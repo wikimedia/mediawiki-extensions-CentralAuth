@@ -409,12 +409,6 @@ class CentralAuthHooks {
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
-				// On account creation, where a central user is added to the DB
-				// make sure the local wiki request actually sees the new row.
-				// ChronologyProtector does not work accross domains.
-				if ( CentralAuthUser::centralLBHasRecentMasterChanges() ) {
-					$params['CentralAuthLatest'] = 1;
-				}
 				$url = wfAppendQuery(
 					$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
 					$params
@@ -550,12 +544,6 @@ class CentralAuthHooks {
 			CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );
 
 			$query = array( 'token' => $token );
-			// On account creation, where a central user is added to the DB,
-			// make sure the login wiki request actually sees the new row.
-			// ChronologyProtector does not work cross-domain (it uses cookies).
-			if ( CentralAuthUser::centralLBHasRecentMasterChanges() ) {
-				$query['CentralAuthLatest'] = 1;
-			}
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
