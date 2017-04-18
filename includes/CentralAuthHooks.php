@@ -778,9 +778,18 @@ class CentralAuthHooks {
 	 */
 	static function onUserSaveSettings( $user ) {
 		$ca = CentralAuthUser::getMasterInstance( $user );
-		if ( $ca->isAttached() ) {
-			$ca->saveSettings();
+		if ( !$ca->isAttached() ) {
+			return true;
 		}
+
+		if ( isset( $user->pendingCentralUserUpdates['emailAuthTimestamp'] ) ) {
+			$ca->setEmailAuthenticationTimestamp(
+				$user->pendingCentralUserUpdates['emailAuthTimestamp'] );
+			unset( $user->pendingCentralUserUpdates['emailAuthTimestamp'] );
+		}
+
+		$ca->saveSettings();
+
 		return true;
 	}
 
@@ -790,11 +799,13 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
-		$ca = CentralAuthUser::getMasterInstance( $user );
+		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
-			$ca->setEmailAuthenticationTimestamp( $timestamp );
-			$ca->saveSettings();
+			// If this local user instance actually gets saved, update the email
+			// authentication timestamp as part of the central user row update
+			$user->pendingCentralUserUpdates['emailAuthTimestamp'] = $timestamp;
 		}
+
 		return true;
 	}
 
