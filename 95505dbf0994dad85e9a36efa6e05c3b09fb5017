@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_71aa576f",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T16:02:25Z",
+      "side": 1,
+      "message": "This is going to complain if it needs to update the password hash, since you\u0027re not calling it on a master instance and the code added in Ie0fbf797 doesn\u0027t upgrade to a master instance either.",
+      "revId": "95505dbf0994dad85e9a36efa6e05c3b09fb5017",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_b1f53f81",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T16:02:25Z",
+      "side": 1,
+      "message": "(same)",
+      "revId": "95505dbf0994dad85e9a36efa6e05c3b09fb5017",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_f1ac2786",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T16:02:25Z",
+      "side": 1,
+      "message": "$centralUser isn\u0027t updated when you make the call on $latestCentralUser, so the check below is still going to fail.",
+      "revId": "95505dbf0994dad85e9a36efa6e05c3b09fb5017",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_51dddb15",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T16:02:25Z",
+      "side": 1,
+      "message": "This is nonsensical since User::READ_NORMAL is 0.",
+      "revId": "95505dbf0994dad85e9a36efa6e05c3b09fb5017",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
