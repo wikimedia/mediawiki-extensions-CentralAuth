@@ -1,6 +1,7 @@
 {
 	"extends": "stylelint-config-wikimedia",
 	"rules": {
-		"value-keyword-case": null
+		"value-keyword-case": null,
+		"selector-no-id": null
 	}
 }
