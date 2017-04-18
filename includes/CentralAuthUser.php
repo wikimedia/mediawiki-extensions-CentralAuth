@@ -276,8 +276,29 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			__METHOD__
 		);
 
-		if ( $name ) {
+		if ( $name !== false ) {
 			return CentralAuthUser::getInstanceByName( $name );
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Get a master CentralAuthUser object from a user's id
+	 *
+	 * @param int $id
+	 * @return CentralAuthUser|bool false if no user exists with that id
+	 */
+	public static function newMasterInstanceFromId( $id ) {
+		$name = CentralAuthUtils::getCentralDB()->selectField(
+			'globaluser',
+			'gu_name',
+			array( 'gu_id' => $id ),
+			__METHOD__
+		);
+
+		if ( $name !== false ) {
+			return CentralAuthUser::getMasterInstanceByName( $name );
 		} else {
 			return false;
 		}
