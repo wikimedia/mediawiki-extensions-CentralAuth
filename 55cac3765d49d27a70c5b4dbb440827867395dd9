@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_51a39bfd",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T15:20:49Z",
+      "side": 1,
+      "message": "You\u0027ll probably want to read your new variable here too if it\u0027s set.",
+      "revId": "55cac3765d49d27a70c5b4dbb440827867395dd9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_d1afabdc",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T15:20:49Z",
+      "side": 1,
+      "message": "While you\u0027re here, perhaps you should do the same thing to this function.",
+      "revId": "55cac3765d49d27a70c5b4dbb440827867395dd9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e506ba4_d196cb96",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-18T15:20:49Z",
+      "side": 1,
+      "message": "This local user instance won\u0027t actually get saved in most cases, because it\u0027s probably not a master instance so the call to CentralAuthUser::getMasterInstance() on line 780 will replace it with a new instance.\n\nOther than copying it over when replacing a non-master instance with a master instance to avoid that bug, there\u0027s no need for the new array on CentralAuthUser instead of just not calling -\u003esaveSettings() here. OTOH, you could do that better inside CentralAuthUser by having mStateDirty track which fields are dirty instead of being just a boolean.\n\nUnfortunately, Ia35b1f8c which added that -\u003esaveSettings() call doesn\u0027t indicate why it did so. Apparently it was some bug since it got backported and everything, but it\u0027s not mentioned in the commit summary or comments. By trying to defer the save until the onUserSaveSettings method, you might be reintroducing whatever bug that was.",
+      "revId": "55cac3765d49d27a70c5b4dbb440827867395dd9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
