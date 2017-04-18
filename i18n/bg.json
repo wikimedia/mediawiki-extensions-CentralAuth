@@ -9,7 +9,8 @@
 			"Vladimir Penov",
 			"StanProg",
 			"Лорд Бъмбъри",
-			"Termininja"
+			"Termininja",
+			"Vodnokon4e"
 		]
 	},
 	"mergeaccount": "Състояние на обединението на сметки",
@@ -131,7 +132,7 @@
 	"centralauth-admin-status-hidden-oversight": "Сметката е напълно скрита",
 	"centralauth-admin-status-submit": "Задаване на състояние",
 	"centralauth-admin-status-nonexistent": "Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.",
-	"centralauth-admin-setstatus-success": "Успешно променихте статуса на тази глобалната сметка.",
+	"centralauth-admin-setstatus-success": "Успешно променихте статуса на тази глобална сметка.",
 	"centralauth-admin-logsnippet": "Предишни промени в глобалната сметка",
 	"globalusers": "Списък на глобалните сметки",
 	"centralauth-listusers-locked": "заключена",
