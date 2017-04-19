@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_3a201ff2",
+        "filename": "includes/specials/SpecialCentralAutoLogin.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-04-19T18:40:31Z",
+      "side": 1,
+      "message": "In most cases we don\u0027t do these checks and let them bubble to the user. I assume the reason this is different is because this is considered optional and should not cause other updates to be cancelled just if this one didn\u0027t succeed, right? Other updates that don\u0027t use the database.",
+      "range": {
+        "startLine": 178,
+        "startChar": 6,
+        "endLine": 178,
+        "endChar": 27
+      },
+      "revId": "32d7cb5ded19a9c3b17152bcfcb2cbb11e905bad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
