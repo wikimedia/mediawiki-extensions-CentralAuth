@@ -1,4 +1,7 @@
 <?php
+
+use Wikimedia\TestingAccessWrapper;
+
 /**
  * Basic tests for CentralAuthPreAuthManagerHooks
  * @group CentralAuthDB
