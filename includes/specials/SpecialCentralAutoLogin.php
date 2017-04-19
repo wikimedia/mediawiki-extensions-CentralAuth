@@ -175,6 +175,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				if ( $remember != $user->getBoolOption( 'rememberpassword' ) ) {
 					$user->setOption( 'rememberpassword', $remember ? 1 : 0 );
 					DeferredUpdates::addCallableUpdate( function() use ( $user ) {
+						if ( wfReadOnly() ) {
+							return; // not possible to save
+						}
+
 						$user->saveSettings();
 					} );
 				}
