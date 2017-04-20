@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e506ba4_218a2f6f",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-04-20T14:56:31Z",
+      "side": 1,
+      "message": "Is it worth re-checking -\u003eisAttached() just in case there\u0027s some crazy race condition?",
+      "revId": "310d5724d515b896a4b7f94b884a9c4837cbfdaf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
