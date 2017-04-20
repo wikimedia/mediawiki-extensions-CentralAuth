@@ -1,0 +1,7 @@
+Code-Review+2: Thiemo Mättig (WMDE) <thiemo.maettig@wikimedia.de>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 20 Apr 2017 19:37:01 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/349094
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
