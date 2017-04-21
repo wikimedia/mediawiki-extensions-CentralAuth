@@ -261,7 +261,7 @@
 	"centralauth-log-status-hidden": "oculto",
 	"centralauth-log-status-oversighted": "suprimido",
 	"centralauth-log-status-none": "(ninguno)",
-	"centralauth-rightslog-name": "Registro de derechos globales",
+	"centralauth-rightslog-name": "Registro de permisos globales",
 	"centralauth-rightslog-entry-usergroups": "modificó los grupos globales a los que pertenece $1 de $2 a $3",
 	"centralauth-rightslog-entry-groupperms": "modificó los permisos del grupo $1 de $2 a $3",
 	"centralauth-rightslog-entry-groupperms2": "modificó los permisos globales de los grupos de $1. Añadió $2; eliminó $3",
