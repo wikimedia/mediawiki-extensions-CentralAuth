@@ -531,5 +531,7 @@
 	"centralauth-uwbr-registration-nodate": "Desconhecida",
 	"centralauth-uwbr-editcount": "Contagem de edições",
 	"centralauth-uwbr-intro": "Esta página lista os usuários registrados nesta wiki que serão renomeados.",
-	"centralauth-delete-empty-account": "Conta vazia"
+	"centralauth-delete-empty-account": "Conta vazia",
+	"log-action-filter-globalauth": "Tipo de alteração:",
+	"log-action-filter-gblrights": "Tipo de alteração:"
 }

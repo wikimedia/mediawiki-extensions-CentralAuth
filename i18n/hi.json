@@ -364,6 +364,7 @@
 	"centralauth-rename-progress-logs-fieldset": "लॉग प्रविष्टियाँ",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|प्रगति देखिए]])",
 	"centralauth-rename-progress-list-header": "निम्न लिखित वैश्विक पुनःनामकरण वर्तमान में चालू हैं:",
+	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" का नाम \"[[Special:CentralAuth/$2|$2]]\" करते समय पृष्ठ स्वतः स्थानांतरित हुआ।",
 	"centralauth-rename-confirm": "क्या आप वैश्विक रूप से इस सदस्य का पुनः नामकरण करना चाहते हैं?",
 	"centralauth-rename-deny": "क्या आप वास्तविक रूप से इस निवेदन को अस्वीकार करना चाहते हैं?",
 	"log-name-gblrename": "वैश्विक पुनः नामकरण लॉग",
