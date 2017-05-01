@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e4df70f_28456b18",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-05-01T23:36:04Z",
+      "side": 1,
+      "message": "Any reason this doesn\u0027t use the return value of run()?",
+      "revId": "9bec9df4ae768dd64c445c3ef5a5283cd21a25f1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
