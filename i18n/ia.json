@@ -307,7 +307,7 @@
 	"centralauth-editset-success": "Le insimul de wikis ha essite actualisate.",
 	"centralauth-editset-success-delete": "Le insimul de wikis ha essite delite.",
 	"centralauth-editset-return": "Retornar al vista principal",
-	"centralauth-block-already-locked": "Le conto [[Special:CentralAuth/$1|$1]] es jam serrate globalmente.",
+	"centralauth-block-already-locked": "Le conto [[Special:CentralAuth/$1|$1]] es jam blocate globalmente.",
 	"centralauth-readonly": "Base de datos CentralAuth blocate",
 	"centralauth-readonlytext": "Al momento, le base de datos CentralAuth es blocate contra nove entratas e altere modificationes. Isto es probabilemente pro mantenentia routinari del base de datos. Postea, illo retornara al stato normal.",
 	"right-globalgroupmembership": "Modificar membrato in gruppos global",
