@@ -16,6 +16,24 @@
       "revId": "9bec9df4ae768dd64c445c3ef5a5283cd21a25f1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e4df70f_0e48b731",
+        "filename": "maintenance/fixStuckGlobalRename.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2017-05-02T08:45:16Z",
+      "side": 1,
+      "message": "LocalRenameUserJob::run() always returns true (or throws) but I suppose not relying on that is better.",
+      "parentUuid": "2e4df70f_28456b18",
+      "revId": "9bec9df4ae768dd64c445c3ef5a5283cd21a25f1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
