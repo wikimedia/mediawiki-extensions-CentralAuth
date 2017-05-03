@@ -94,8 +94,9 @@ class FixStuckGlobalRename extends Maintenance {
 		$title = Title::newFromText( 'Global rename job' );
 		$job = new LocalRenameUserJob( $title, $params );
 		$this->output( "\nStarting to run job...\n" );
-		$job->run();
-		$this->output( "Done!\n" );
+		$status = $job->run();
+		$job->teardown( $status );
+		$this->output( $status ? "Done!\n" : "Failed!\n" );
 	}
 }
 
