@@ -2210,13 +2210,17 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Not cached
 	 * @see CentralAuthUser::renameInProgress
 	 * @param string $wiki
+	 * @param integer $flags Bitfield of CentralAuthUser::READ_* constants
 	 * @return array|bool
 	 */
-	public function renameInProgressOn( $wiki ) {
+	public function renameInProgressOn( $wiki, $flags = 0 ) {
 		$renameState = new GlobalRenameUserStatus( $this->mName );
 
 		// Use master as this is being used for various critical things
-		$names = $renameState->getNames( $wiki, 'master' );
+		$names = $renameState->getNames(
+			$wiki,
+			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'master' : 'slave'
+		);
 
 		if ( $names ) {
 			return $names;
