@@ -483,7 +483,7 @@
 	"globalrenamequeue-column-rq-performer": "Hecho por",
 	"globalrenamequeue-action-address": "Atender",
 	"globalrenamequeue-action-view": "Ver",
-	"globalrenamequeue-request-title": "¿Renombrar a \"$1\"?",
+	"globalrenamequeue-request-title": "¿Cambiar el nombre de «$1»?",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> ha solicitado renombrarse como <strong>$3</strong>.",
 	"globalrenamequeue-request-userinfo-local": "* nombre de usuario actual: [[Special:CentralAuth/$1|$1]]\n* wiki origen: $2\n* nombre de usuario deseado: [[Special:CentralAuth/$3|$3]]",
 	"globalrenamequeue-request-userinfo-global": "* nombre de usuario actual: [[Special:CentralAuth/$1|$1]]\n* wiki origen: $2\n* nombre de usuario nuevo: [[Special:CentralAuth/$3|$3]]\n* número de ediciones globales: $4",
