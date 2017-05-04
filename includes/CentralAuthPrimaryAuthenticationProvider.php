@@ -390,7 +390,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			: CentralAuthUser::getInstance( $user );
 
 		// Rename in progress?
-		if ( $centralUser->renameInProgressOn( wfWikiID() ) ) {
+		if ( $centralUser->renameInProgressOn( wfWikiID(), $options['flags'] ) ) {
 			$status->fatal( 'centralauth-rename-abortlogin' );
 			return $status;
 		}
