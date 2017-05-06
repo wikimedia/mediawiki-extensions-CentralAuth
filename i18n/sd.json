@@ -14,6 +14,7 @@
 	"centralauth-admin-rename-in-progress": "هي کاتي جو نالو تبديل ٿي رهيو آهي. توهان [[Special:GlobalRenameProgress/$1|ڏسو ڪارڪردگي]] نالي جي تبديليءَ جي، گلوبل نالي تبديليءَ جو لاگ يوزر لاءِ هيٺ مهيا ڪيل آهي",
 	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگھي: اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ٻيو نالو چونڊيو.",
 	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ڪو ٻيو نالو چونڊيو.",
+	"globalrenamequeue-request-cancel-text": "رد",
 	"globalrenamequeue-form-username": "يُوزرنانءُ:",
 	"globalrenamequeue-form-newname": "گهريل يُوزرنانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
