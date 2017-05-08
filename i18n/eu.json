@@ -141,5 +141,8 @@
 	"globalrenamequeue-request-cancel-text": "Utzi",
 	"globalrenamequeue-form-status": "Egoera:",
 	"apihelp-globaluserrights-param-reason": "Aldaketarako arrazoia.",
-	"centralauth-log-gblrename-oldname": "Aurreko erabiltzaile-izena:"
+	"centralauth-log-gblrename-oldname": "Aurreko erabiltzaile-izena:",
+	"centralauth-uwbr-registration-nodate": "Ezezaguna",
+	"log-action-filter-globalauth": "Aldaketa-mota:",
+	"log-action-filter-gblrights": "Aldaketa-mota:"
 }

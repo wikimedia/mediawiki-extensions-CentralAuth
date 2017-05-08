@@ -17,7 +17,8 @@
 			"संजीव कुमार",
 			"Sfic",
 			"YmKavishwar",
-			"McDutchie"
+			"McDutchie",
+			"Anoop rao"
 		]
 	},
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
@@ -256,7 +257,7 @@
 	"centralauth-globalgroupperms-rights": "अधिकार",
 	"centralauth-globalgroupperms-group-listmembers": "सदस्यों की सूची",
 	"centralauth-globalgroupperms-wikiset-none": "यह समूह सभी विकि में सक्रिय है।",
-	"centralauth-globalgroupperms-group-disabled": "(इस विकि में सक्रिय नहीं है)",
+	"centralauth-globalgroupperms-group-disabled": "(इस विकि में सक्षम नहीं है)",
 	"centralauth-newgroup-legend": "नया सदस्य-समूह बनाएँ",
 	"centralauth-newgroup-intro": "आप एक नये सदस्य-समूह को अधिकार देने के लिये इस फ़ॉर्म का प्रयोग कर सकते हैं।\nध्यान दें कि जब तक समूह को कोई अधिकार ना दिए जाएँ, उसका कोई अस्तित्व नहीं होता।",
 	"centralauth-globalgroupperms-newgroupname": "नये सदस्य-समूह का नाम:",
