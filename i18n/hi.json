@@ -387,7 +387,7 @@
 	"right-centralauth-usermerge": "वैश्विक रूप से कई सदस्यों का विलय करें",
 	"centralauth-usermerge-confirm": "क्या आप वास्तव में वैश्विक रूप से कई सदस्यों का विलय करना चाहते हैं?",
 	"globalrenamerequest-desc": "एक वैश्विक खाते के पुनःनामकरण निवेदन दें",
-	"globalrenamerequest": "एकत्रित पुनःनामकरण निवेदन",
+	"globalrenamerequest": "वैश्विक सदस्य खाते का नाम बदलने हेतु अनुरोध",
 	"globalrenamerequest-legend": "एकत्रित पुनःनामकरण निवेदन",
 	"globalrenamerequest-username-label": "वर्तमान सदस्यनाम:",
 	"globalrenamerequest-newname-label": "निवेदन किया गया सदस्यनाम:",
