@@ -124,7 +124,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$this->getForm()->prepareForm()->displayForm( false );
 		// $newname will always be defined since we check
 		// for 0 result rows above
-		$caUser = CentralAuthUser::getMasterInstanceByName( $newName );
+		$caUser = CentralAuthUser::getInstanceByName( $newName );
 		$attached = $caUser->listAttached();
 		foreach ( $attached as $wiki ) {
 			// If it's not in the db table, and there is
