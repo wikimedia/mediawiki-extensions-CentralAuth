@@ -39,7 +39,7 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 	}
 
 	public function beginSecondaryAuthentication( $user, array $reqs ) {
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$centralUser = CentralAuthUser::getInstance( $user );
 
 		// Since logins are rare, check the actual DB
 		$rename = $centralUser->renameInProgressOn( wfWikiID() );
