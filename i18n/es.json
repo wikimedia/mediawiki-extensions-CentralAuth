@@ -162,7 +162,7 @@
 	"centralauth-admin-list-editcount": "Conteo de ediciones",
 	"centralauth-admin-list-groups": "Grupos",
 	"centralauth-admin-list-blocked": "Bloqueado",
-	"centralauth-admin-group-temporary": "$1 \"(temporal)\"",
+	"centralauth-admin-group-temporary": "$1 ''(temporal)''",
 	"centralauth-admin-unmerge": "Desunificar las cuentas seleccionadas",
 	"centralauth-admin-merge": "Fusionar las cuentas seleccionadas",
 	"centralauth-admin-bad-input": "Selección de unificación inválida",
