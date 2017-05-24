@@ -20,18 +20,19 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * The username of the current user.
 	 * @var string
 	 */
-	/*private*/ var $mName;
-	/*private*/ var $mStateDirty = false;
-	/*private*/ var $mDelayInvalidation = 0;
+	public $mName;
+	public $mStateDirty = false;
+	public $mDelayInvalidation = 0;
 
-	var $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked, $mAttachedList, $mAuthenticationTimestamp;
-	var $mGroups, $mRights, $mPassword, $mAuthToken, $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
-	var $mBeingRenamed, $mBeingRenamedArray;
+	public $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked;
+	public $mAttachedList, $mAuthenticationTimestamp, $mGroups, $mRights, $mPassword, $mAuthToken;
+	public $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
+	public $mBeingRenamed, $mBeingRenamedArray;
 	protected $mAttachedInfo;
 	/** @var integer */
 	protected $mCasToken = 0;
 
-	static $mCacheVars = array(
+	public static $mCacheVars = array(
 		'mGlobalId',
 		'mSalt',
 		'mPassword',

@@ -12,7 +12,7 @@ class CentralAuthUserArray {
 }
 
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {
-	var $globalData;
+	public $globalData;
 
 	/**
 	 * @param ResultWrapper $res
