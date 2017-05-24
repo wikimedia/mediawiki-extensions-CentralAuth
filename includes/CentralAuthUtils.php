@@ -39,7 +39,7 @@ class CentralAuthUtils {
 	/**
 	 * Gets a master (read/write) database connection to the CentralAuth database
 	 *
-	 * @return IDatabase
+	 * @return \Wikimedia\Rdbms\IDatabase
 	 * @throws CentralAuthReadOnlyError
 	 */
 	public static function getCentralDB() {
@@ -56,7 +56,7 @@ class CentralAuthUtils {
 	/**
 	 * Gets a slave (readonly) database connection to the CentralAuth database
 	 *
-	 * @return IDatabase
+	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;
