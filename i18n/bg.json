@@ -134,7 +134,7 @@
 	"centralauth-admin-status-nonexistent": "Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.",
 	"centralauth-admin-setstatus-success": "Успешно променихте статуса на тази глобална сметка.",
 	"centralauth-admin-logsnippet": "Предишни промени в глобалната сметка",
-	"globalusers": "Глобален списък на сметки",
+	"globalusers": "Списък на глобални сметки",
 	"centralauth-listusers-locked": "заключена",
 	"centralauth-listusers-attached": "[[User:$1|съществува локално]]",
 	"centralauth-listusers-nolocal": "неприкачена или не съществува локално",
