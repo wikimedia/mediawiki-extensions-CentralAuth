@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e1cb3f9_38cd5b61",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-05-29T07:29:30Z",
+      "side": 0,
+      "message": "Pretty sure these should all be private. It even says \"private\" here.",
+      "range": {
+        "startLine": 23,
+        "startChar": 3,
+        "endLine": 23,
+        "endChar": 10
+      },
+      "revId": "68dbd4a7be1c27774c08e96477c24211270ca20c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
