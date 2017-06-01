@@ -173,5 +173,7 @@
 	"centralauth-rename-form-reason": "Iemesls",
 	"centralauth-rename-progress-username": "Lietotājvārds",
 	"centralauth-rename-table-status": "Statuss",
-	"centralauth-rename-progress-logs-fieldset": "Žurnāla ieraksti"
+	"centralauth-rename-progress-logs-fieldset": "Žurnāla ieraksti",
+	"centralauth-uwbr-registration": "Reģistrēšanās datums",
+	"centralauth-uwbr-editcount": "Labojumu skaits"
 }
