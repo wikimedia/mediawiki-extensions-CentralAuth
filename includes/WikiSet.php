@@ -13,7 +13,7 @@ class WikiSet {
 	// (That means you Reedy & Siebrand)
 	private $mVersion = self::VERSION;      // Caching purposes
 
-	static $mCacheVars = array(
+	private static $mCacheVars = array(
 		'mId',
 		'mName',
 		'mType',

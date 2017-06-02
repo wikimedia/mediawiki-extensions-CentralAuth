@@ -13,7 +13,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 }
 
 class SpecialWikiSets extends SpecialPage {
-	var $mCanEdit;
+	private $mCanEdit;
 
 	public function __construct() {
 		parent::__construct( 'WikiSets' );
