@@ -32,7 +32,8 @@
 			"Impersonator 1",
 			"Cdz",
 			"范",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"WhitePhosphorus"
 		]
 	},
 	"mergeaccount": "统一登录状态",
@@ -142,7 +143,7 @@
 	"centralauth-admin-list-editcount": "编辑数",
 	"centralauth-admin-list-groups": "用户组",
 	"centralauth-admin-list-blocked": "封禁情况",
-	"centralauth-admin-group-temporary": "$1“（临时）”",
+	"centralauth-admin-group-temporary": "$1（临时）",
 	"centralauth-admin-unmerge": "拆分选中的账户",
 	"centralauth-admin-merge": "合并选中的账户",
 	"centralauth-admin-bad-input": "合并所选项时发生错误",
