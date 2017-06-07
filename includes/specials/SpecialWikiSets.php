@@ -77,8 +77,9 @@ class SpecialWikiSets extends SpecialPage {
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
 		$legend = $this->msg( "centralauth-editset-legend-{$msgPostfix}" )->escaped();
 		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend>" );
-		if ( $msg )
+		if ( $msg ) {
 			$this->getOutput()->addHTML( $msg );
+		}
 		// Give grep a chance to find the usages: centralauth-editset-intro-rw, centralauth-editset-intro-ro
 		$this->getOutput()->addWikiMsg( "centralauth-editset-intro-{$msgPostfix}" );
 		$this->getOutput()->addHTML( '<ul>' );
