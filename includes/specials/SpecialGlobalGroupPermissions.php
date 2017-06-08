@@ -270,8 +270,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$html .= Xml::buildForm( $fields,  $editable ? 'centralauth-editgroup-submit' : null );
 
-		if ( $editable )
+		if ( $editable ) {
 			$html .= Xml::closeElement( 'form' );
+		}
 
 		$html .= Xml::closeElement( 'fieldset' );
 
@@ -461,14 +462,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 
 		// Assign the rights.
-		if ( count( $addRights ) > 0 )
+		if ( count( $addRights ) > 0 ) {
 			$this->grantRightsToGroup( $group, $addRights );
-		if ( count( $removeRights ) > 0 )
+		}
+		if ( count( $removeRights ) > 0 ) {
 			$this->revokeRightsFromGroup( $group, $removeRights );
+		}
 
 		// Log it
-		if ( !( count( $addRights ) == 0 && count( $removeRights ) == 0 ) )
+		if ( !( count( $addRights ) == 0 && count( $removeRights ) == 0 ) ) {
 			$this->addPermissionLog( $group, $addRights, $removeRights, $reason );
+		}
 
 		// Change set
 		$current = WikiSet::getWikiSetForGroup( $group );
