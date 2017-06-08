@@ -1411,7 +1411,7 @@ class CentralAuthHooks {
 	 * Create databases for WMF Jenkins unit tests
 	 * @param DatabaseUpdater $updater
 	 */
-	static public function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		global $wgWikimediaJenkinsCI;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {
