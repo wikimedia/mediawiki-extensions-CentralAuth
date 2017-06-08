@@ -174,7 +174,7 @@
 	"centralauth-account-exists": "Ora bisa nggawé akun: Jeneng panganggo sing disuwun wis dijupuk déning sawijiné panganggo ing wiki liya.",
 	"centralauth-account-exists-reset": "Jeneng panganggo $1 ora kadaptar nèng wiki iki, nanging ana nèng sistem mlebu log sing nyawiji.",
 	"centralauth-login-progress": "Sampéyan mlebu log nèng wiki {{int:Centralauth-groupname}}:",
-	"centralauth-logout-progress": "Sampéyan metu log saka wiki {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Metu log wiki darbèké {{int:Centralauth-groupname}}:",
 	"centralauth-login-no-others": "Sampéyan wis otomatis mlebu log nèng proyèk liya {{int:Centralauth-groupname}}.",
 	"centralauth-logout-no-others": "Sampéyan wis otomatis metu log nèng proyèk liya {{int:Centralauth-groupname}}.",
 	"centralauth-hidden-blockreason": "didhelikaké global déning $1 dhek $2 mawa alesan iki: $3",
