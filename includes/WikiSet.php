@@ -38,42 +38,58 @@ class WikiSet {
 	 * @param $k string
 	 * @return string
 	 */
-	protected static function memcKey( $k ) { return "wikiset:{$k}"; }
+	protected static function memcKey( $k ) {
+		return "wikiset:{$k}";
+	}
 
 	/**
 	 * @return int
 	 */
-	public function getId() { return $this->mId; }
+	public function getId() {
+		return $this->mId;
+	}
 
 	/**
 	 * @return bool
 	 */
-	public function exists() { return (bool)$this->getID(); }
+	public function exists() {
+		return (bool)$this->getID();
+	}
 
 	/**
 	 * @return string
 	 */
-	public function getName() { return $this->mName; }
+	public function getName() {
+		return $this->mName;
+	}
 
 	/**
 	 * @param string $n
 	 */
-	public function setName( $n ) { $this->setDbField( 'ws_name', $n ); }
+	public function setName( $n ) {
+		$this->setDbField( 'ws_name', $n );
+	}
 
 	/**
 	 * @return array
 	 */
-	public function getWikisRaw() { return $this->mWikis; }
+	public function getWikisRaw() {
+		return $this->mWikis;
+	}
 
 	/**
 	 * @param string $w
 	 */
-	public function setWikisRaw( $w ) { $this->setDbField( 'ws_wikis', $w ); }
+	public function setWikisRaw( $w ) {
+		$this->setDbField( 'ws_wikis', $w );
+	}
 
 	/**
 	 * @return string
 	 */
-	public function getType() { return $this->mType; }
+	public function getType() {
+		return $this->mType;
+	}
 
 	/**
 	 * @param string $t

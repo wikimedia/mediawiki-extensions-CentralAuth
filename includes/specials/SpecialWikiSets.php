@@ -340,7 +340,8 @@ class SpecialWikiSets extends SpecialPage {
 			$oldwikis = $set->getWikisRaw();
 		} else {
 			$set = new WikiSet();
-			$oldname = $oldtype = null; $oldwikis = array();
+			$oldname = $oldtype = null;
+			$oldwikis = array();
 		}
 		$set->setName( $name );
 		$set->setType( $type );

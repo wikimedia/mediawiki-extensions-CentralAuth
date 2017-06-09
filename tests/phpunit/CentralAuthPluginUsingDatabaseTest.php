@@ -98,7 +98,6 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$u->save( $this->db );
 	}
 
-
 	/**
 	 * @dataProvider provideUserExists
 	 * @covers CentralAuthPlugin::userExists

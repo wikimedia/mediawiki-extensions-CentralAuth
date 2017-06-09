@@ -2561,7 +2561,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				__METHOD__ . " was called for a global user that doesn't exist ('$this->mName')." );
 		}
 
-
 		if ( $resetAuthToken ) {
 			$this->resetAuthToken();
 		}
