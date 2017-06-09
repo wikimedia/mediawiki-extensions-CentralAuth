@@ -781,6 +781,7 @@ class CentralAuthHooks {
 		if ( $ca->isAttached() ) {
 			$ca->saveSettings();
 		}
+
 		return true;
 	}
 
@@ -790,11 +791,15 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
-		$ca = CentralAuthUser::getMasterInstance( $user );
+		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
-			$ca->setEmailAuthenticationTimestamp( $timestamp );
-			$ca->saveSettings();
+			$latestCa = CentralAuthUser::newMasterInstanceById( $ca->getId() );
+			if ( $latestCa->isAttached() ) {
+				$latestCa->setEmailAuthenticationTimestamp( $timestamp );
+				$latestCa->saveSettings();
+            }
 		}
+
 		return true;
 	}
 
