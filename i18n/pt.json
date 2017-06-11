@@ -147,7 +147,7 @@
 	"centralauth-admin-nonexistent": "Não existe uma conta global para \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-delete-nonexistent": "Erro: a conta global \"<nowiki>$1</nowiki>\" não existe.",
 	"centralauth-token-mismatch": "Desculpe, não foi possível processar a sua submissão do formulário devido à perda dos dados da sessão.",
-	"centralauth-state-mismatch": "Erro: Foi detectado um conflito de edição para este utilizador. Por favor, verifique a sua alteração e tente novamente.",
+	"centralauth-state-mismatch": "Erro: Foi detetado um conflito de edição para este utilizador. Verifique a sua alteração e tente novamente, por favor.",
 	"centralauth-admin-reason": "Motivo:",
 	"centralauth-admin-reason-other": "Motivo adicional ou outro:",
 	"centralauth-admin-reason-other-select": "Outro motivo:",
