@@ -8,7 +8,6 @@ use Wikimedia\TestingAccessWrapper;
  */
 class CentralAuthPreAuthManagerHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
 
-
 	/**
 	 * @dataProvider provideAbortNewAccount
 	 * @covers CentralAuthPreAuthManagerHooks::onAbortNewAccount
@@ -91,6 +90,5 @@ class CentralAuthPreAuthManagerHooksUsingDatabaseTest extends CentralAuthTestCas
 		);
 		$u->save( $this->db );
 	}
-
 
 }

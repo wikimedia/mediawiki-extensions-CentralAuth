@@ -51,5 +51,4 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase
 		$u->save( $this->db );
 	}
 
-
 }

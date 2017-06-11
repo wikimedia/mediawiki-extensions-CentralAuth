@@ -323,7 +323,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$assignedRights = $this->getAssignedRights( $group );
 
-
 		$checkboxes = array();
 		$attribs = array();
 

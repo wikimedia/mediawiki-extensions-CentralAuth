@@ -310,7 +310,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-
 			if ( $gu_id <= 0 ) {
 				$this->doFinalOutput( false, 'Not centrally logged in', self::getInlineScript( 'anon-set.js' ) );
 				return;

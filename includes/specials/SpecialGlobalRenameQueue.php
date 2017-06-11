@@ -679,7 +679,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 }
 
-
 /**
  * Paginated table of search results.
  * @ingroup Pager

@@ -157,7 +157,6 @@ class CentralAuthPlugin extends AuthPlugin {
 		return true;
 	}
 
-
 	/**
 	 * Check the user's password.
 	 *
@@ -224,7 +223,6 @@ class CentralAuthPlugin extends AuthPlugin {
 		}
 		return true;
 	}
-
 
 	/**
 	 * Return true if the wiki should create a new local account automatically

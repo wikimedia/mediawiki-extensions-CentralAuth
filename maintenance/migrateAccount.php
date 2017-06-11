@@ -111,7 +111,6 @@ class MigrateAccount extends Maintenance {
 			return;
 		}
 
-
 		/**
 		 * Migration with an existing global account
 		 */
