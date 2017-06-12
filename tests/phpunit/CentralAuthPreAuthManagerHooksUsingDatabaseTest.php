@@ -12,7 +12,7 @@ class CentralAuthPreAuthManagerHooksUsingDatabaseTest extends CentralAuthTestCas
 	 * @dataProvider provideAbortNewAccount
 	 * @covers CentralAuthPreAuthManagerHooks::onAbortNewAccount
 	 */
-	public function testOnAbortNewAccount( $user, $result) {
+	public function testOnAbortNewAccount( $user, $result ) {
 		$error = '';
 		$hookResult = CentralAuthPreAuthManagerHooks::onAbortNewAccount( $user, $error );
 		$this->assertSame( $result, $hookResult );
@@ -31,7 +31,7 @@ class CentralAuthPreAuthManagerHooksUsingDatabaseTest extends CentralAuthTestCas
 	 * @dataProvider provideAbortLogin
 	 * @covers CentralAuthPreAuthManagerHooks::onAbortLogin
 	 */
-	public function testOnAbortLogin( $user, $result, $test) {
+	public function testOnAbortLogin( $user, $result, $test ) {
 		$retval = 0;
 		$msg = '';
 		$hookResult = CentralAuthPreAuthManagerHooks::onAbortLogin( $user, '', $retval, $msg );

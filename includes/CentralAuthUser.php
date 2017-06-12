@@ -976,7 +976,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
 		// are the same person, so err on the side of caution.
-		//
 		// For additional safety, we'll only let the mail check
 		// propagate from a confirmed account
 		$passingMail = array();
@@ -1024,7 +1023,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				$method = 'password';
 			} else {
 				// Can't automatically resolve this account.
-				//
 				// If the password matches, it will be automigrated
 				// at next login. If no match, user will have to input
 				// the conflicting password or deal with the conflict.
@@ -1601,7 +1599,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		if ( $oldHiddenLevel != $setHidden ) {
 			$hideStatus = $this->adminSetHidden( $setHidden );
-			switch( $setHidden ) {
+			switch ( $setHidden ) {
 				case self::HIDDEN_NONE:
 					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
 						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
@@ -1885,7 +1883,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @todo Currently only the "ok" result is used (i.e. either use, or return a bool).
 	 */
 	public function authenticate( $password ) {
-		if ( ( $ret = $this->canAuthenticate() ) !== true ) {
+		$ret = $this->canAuthenticate();
+		if ( $ret !== true ) {
 			return $ret;
 		}
 
@@ -1924,7 +1923,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return string status, one of: "ok", "no user", "locked", or "bad token"
 	 */
 	public function authenticateWithToken( $token ) {
-		if ( ( $ret = $this->canAuthenticate() ) !== true ) {
+		$ret = $this->canAuthenticate();
+		if ( $ret !== true ) {
 			return $ret;
 		}
 

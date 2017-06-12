@@ -90,7 +90,7 @@ class GlobalUserMerge {
 	}
 
 	private function clearCaches() {
-		foreach( $this->oldCAUsers as $oldCAUser ) {
+		foreach ( $this->oldCAUsers as $oldCAUser ) {
 			$oldCAUser->quickInvalidateCache();
 		}
 		$this->newCAUser->quickInvalidateCache();
