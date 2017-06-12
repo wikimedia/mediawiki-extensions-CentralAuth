@@ -48,7 +48,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$this->doLoginStart( $token );
 		} elseif ( $subpage === 'complete' ) {
 			$this->doLoginComplete( $token );
-		} elseif( $subpage === 'status' ) {
+		} elseif ( $subpage === 'status' ) {
 			$this->showLoginStatus();
 		} else { // invalid request
 			$this->showLoginStatus();
@@ -163,7 +163,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// login. If the local wiki is using wgSecureLogin, it will be https.
 		$url = strstr( $url, '//' );
 
-		//currentProto = the login form's protocol, so we go back to here. May then redir to finalProto
+		// currentProto = the login form's protocol, so we go back to here. May then redir to finalProto
 		$url = $info['currentProto'] . ':' . $url;
 
 		$url = wfAppendQuery( $url, $query ); // expands to PROTO_CURRENT if $url doesn't have protocol

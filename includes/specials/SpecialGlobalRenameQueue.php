@@ -109,7 +109,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			array(
 				'href' => $this->getPageTitle( self::PAGE_CLOSED_QUEUE )->getFullURL(),
 				'class' => 'mw-ui-button' .
-					( ($page === self::PAGE_CLOSED_QUEUE) ? ' mw-ui-progressive' : '' ),
+					( ( $page === self::PAGE_CLOSED_QUEUE ) ? ' mw-ui-progressive' : '' ),
 			),
 			$this->msg( 'globalrenamequeue-nav-closedqueue' )->text()
 		);
@@ -744,7 +744,7 @@ class RenameQueueTablePager extends TablePager {
 				'rq_requested_ts',
 				'rq_status',
 				'rq_completed_ts',
-				#'rq_deleted', not implemented yet
+				# 'rq_deleted', not implemented yet
 				'rq_performer',
 				'rq_comments',
 			),
@@ -827,7 +827,7 @@ class RenameQueueTablePager extends TablePager {
 				break;
 			case 'rq_name':
 			case 'rq_newname':
-				$title = SpecialPage::getTitleFor( 'CentralAuth' , $value );
+				$title = SpecialPage::getTitleFor( 'CentralAuth', $value );
 				$formatted = $this->mOwner->getLinkRenderer()->makeLink( $title, $value );
 				break;
 			case 'rq_performer':

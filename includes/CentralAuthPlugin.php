@@ -110,9 +110,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			// If the user passed in the global password, we can identify
 			// any remaining local accounts with a matching password
 			// and migrate them in transparently.
-			//
 			// That may or may not include the current wiki.
-			//
 			wfDebugLog( 'CentralAuth',
 				"plugin: attempting wgCentralAuthAutoMigrate for '$username'" );
 			$central->attemptPasswordMigration( $password );
@@ -136,12 +134,10 @@ class CentralAuthPlugin extends AuthPlugin {
 	 */
 	protected function checkAttached( CentralAuthUser $central, $username ) {
 		// Several possible states here:
-		//
 		// global exists, local exists, attached: require global auth
 		// global exists, local exists, unattached: require LOCAL auth to login
 		// global exists, local doesn't exist: require global auth -> will autocreate local
 		// global doesn't exist, local doesn't exist: no authentication
-		//
 		if ( !$central->isAttached() ) {
 			$local = User::newFromName( $username );
 			if ( $local && $local->getId() ) {

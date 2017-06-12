@@ -74,7 +74,7 @@ class SpecialMergeAccount extends SpecialPage {
 			if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
 				throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
 			}
-			switch( $this->mMergeAction ) {
+			switch ( $this->mMergeAction ) {
 			case "dryrun":
 				$this->doDryRunMerge();
 				break;
@@ -187,7 +187,9 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	function xorString( $text, $key ) {
 		if ( $key != '' ) {
+			// @codingStandardsIgnoreStart
 			for ( $i = 0; $i < strlen( $text ); $i++ ) {
+			// @codingStandardsIgnoreEnd
 				$text[$i] = chr( 0xff & ( ord( $text[$i] ) ^ ord( $key[$i % strlen( $key )] ) ) );
 			}
 		}

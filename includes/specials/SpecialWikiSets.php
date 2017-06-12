@@ -161,8 +161,8 @@ class SpecialWikiSets extends SpecialPage {
 		# Make an array of the opposite list of wikis
 		# (all databases *excluding* the defined ones)
 		$restWikis = array();
-		foreach( $wgLocalDatabases as $wiki ) {
-			if( !in_array( $wiki, $sortedWikis ) ) {
+		foreach ( $wgLocalDatabases as $wiki ) {
+			if ( !in_array( $wiki, $sortedWikis ) ) {
 				$restWikis[] = $wiki;
 			}
 		}
@@ -235,7 +235,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @return string Table
 	 */
 	function buildTableByList( $list, $columns = 2, $tableAttribs = array() ) {
-		if( !is_array( $list ) ) {
+		if ( !is_array( $list ) ) {
 			return '';
 		}
 		$count = count( $list );
@@ -247,14 +247,14 @@ class SpecialWikiSets extends SpecialPage {
 		$itemsPerCol = ceil( $count / $columns );
 		$i = 0;
 		$splitLists = array();
-		while( $i < $columns ) {
+		while ( $i < $columns ) {
 			$splitLists[$i] = array_slice( $list, $itemsPerCol*$i, $itemsPerCol );
 			$i++;
 		}
 		$body = '';
-		foreach( $splitLists as $splitList ) {
+		foreach ( $splitLists as $splitList ) {
 			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
-			foreach( $splitList as $listitem ) {
+			foreach ( $splitList as $listitem ) {
 				$body .= Html::element( 'li', array(), $listitem );
 			}
 			$body .= '</ul></td>';
