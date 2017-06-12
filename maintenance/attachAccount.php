@@ -23,7 +23,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * @copyright © 2016 Wikimedia Foundation and contributors.
@@ -69,7 +69,9 @@ class AttachAccount extends Maintenance {
 			$this->output( "ERROR - Could not open file: {$list}" );
 			exit( 1 );
 		}
-		while( strlen( $username = trim( fgets( $file ) ) ) ) {
+		// @codingStandardsIgnoreStart
+		while ( strlen( $username = trim( fgets( $file ) ) ) ) {
+		// @codingStandardsIgnoreEnd
 			$this->attach( $username );
 			if ( $this->total % $this->batchSize == 0 ) {
 				$this->output( "Waiting for slaves to catch up ... " );
@@ -86,7 +88,7 @@ class AttachAccount extends Maintenance {
 	protected function attach( $username ) {
 		$this->total++;
 		if ( !$this->quiet ) {
-			$this->output( "CentralAuth account attach for: {$username}\n");
+			$this->output( "CentralAuth account attach for: {$username}\n" );
 		}
 
 		$central = new CentralAuthUser(
@@ -177,4 +179,4 @@ class AttachAccount extends Maintenance {
 }
 
 $maintClass = "AttachAccount";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

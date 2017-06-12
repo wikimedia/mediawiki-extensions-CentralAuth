@@ -8,7 +8,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/commandLine.inc" );
+require_once "$IP/maintenance/commandLine.inc";
 
 /**
  * Copy user data for this wiki into the globalnames and localnames table
@@ -33,7 +33,7 @@ function migratePassZero() {
 			"user_id BETWEEN $min AND $max",
 			__FUNCTION__ );
 
-		foreach( $result as $row ) {
+		foreach ( $result as $row ) {
 			$users[intval( $row->user_id )] = $row->user_name;
 			++$migrated;
 		}

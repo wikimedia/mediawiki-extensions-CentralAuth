@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Class SendConfirmAndMigrateEmail
@@ -63,7 +63,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	public function execute() {
 		$this->sendToConfirmed = $this->getOption( 'confirmed', false );
 		$this->sleep = (int)$this->getOption( 'sleep', 1 );
-		$this->dryrun = $this->hasOption( 'dryrun');
+		$this->dryrun = $this->hasOption( 'dryrun' );
 		$this->resume = $this->getOption( 'resume', true );
 
 		// check to see if we are processing a single username
@@ -83,7 +83,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list\n" );
 				exit( 1 );
 			}
-			while( $username = fgets( $file ) ) {
+			// @codingStandardsIgnoreStart
+			while ( $username = fgets( $file ) ) {
+			// @codingStandardsIgnoreEnd
 				$username = trim( $username ); // trim the \n
 				if ( $this->resume !== true ) {
 					if ( $username === $this->resume ) {
@@ -137,7 +139,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			$this->output( "ERROR: No global account for '$username'\n" );
 			return;
 		}
-		if( !$central->isAttached() ) {
+		if ( !$central->isAttached() ) {
 			$this->output( "ERROR: '$username@$wikiID' is not attached to the global user\n" );
 			return;
 		}
@@ -177,4 +179,4 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 }
 
 $maintClass = "SendConfirmAndMigrateEmail";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

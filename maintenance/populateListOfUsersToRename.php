@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Populates the users_to_rename table.
@@ -100,7 +100,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 					$cache->set( $row->name, $attachableWikis );
 				}
 
-				if ( !in_array( $row->wiki, $attachableWikis )  ) {
+				if ( !in_array( $row->wiki, $attachableWikis ) ) {
 					// Unattached account which is not attachable,
 					// so they're getting renamed :(
 					$this->output( "{$row->name}@{$row->wiki} is going to be renamed.\n" );

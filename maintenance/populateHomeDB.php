@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class PopulateHomeDB extends Maintenance {
 	public function __construct() {
@@ -30,7 +30,7 @@ class PopulateHomeDB extends Maintenance {
 				)
 			);
 
-			foreach( $result as $row ) {
+			foreach ( $result as $row ) {
 				$central = new CentralAuthUser( $row->gu_name, CentralAuthUser::READ_LATEST );
 				$central->mStateDirty = true;
 				$central->saveSettings();
@@ -48,4 +48,4 @@ class PopulateHomeDB extends Maintenance {
 }
 
 $maintClass = 'PopulateHomeDB';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

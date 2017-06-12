@@ -8,7 +8,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class MigratePass1 extends Maintenance {
 	public function __construct() {
@@ -31,7 +31,7 @@ class MigratePass1 extends Maintenance {
 			array( 'gn_name' ),
 			array(),
 			__METHOD__ );
-		foreach( $result as $row ) {
+		foreach ( $result as $row ) {
 			$this->fromPrefix = $row->gn_name;
 			$central = new CentralAuthUser( $row->gn_name, CentralAuthUser::READ_LATEST );
 			if ( $central->storeAndMigrate() ) {
@@ -59,4 +59,4 @@ class MigratePass1 extends Maintenance {
 }
 
 $maintClass = "MigratePass1";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * Starts the process of migrating users who have
@@ -55,7 +55,7 @@ class ForceRenameUsers extends Maintenance {
 
 	protected function getCurrentRenameCount( IDatabase $dbw ) {
 		$row = $dbw->selectRow(
-			array( 'renameuser_status'),
+			array( 'renameuser_status' ),
 			array( 'COUNT(*) as count' ),
 			array(),
 			__METHOD__

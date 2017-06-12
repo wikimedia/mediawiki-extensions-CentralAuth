@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalNames extends Maintenance {
 	public function __construct() {
@@ -60,14 +60,14 @@ class CheckLocalNames extends Maintenance {
 				)
 			);
 
-			foreach( $result as $row ) {
+			foreach ( $result as $row ) {
 				$wikis[] = $row->ln_wiki;
 			}
 		}
 
 		// iterate through the wikis
-		foreach( $wikis as $wiki ) {
-			$localdb = wfGetDB( DB_REPLICA , array(), $wiki );
+		foreach ( $wikis as $wiki ) {
+			$localdb = wfGetDB( DB_REPLICA, array(), $wiki );
 			$lastUsername = "";
 
 			$this->output( "Checking localnames for $wiki ...\n" );
@@ -90,7 +90,7 @@ class CheckLocalNames extends Maintenance {
 				);
 
 				// iterate through each of the localnames to confirm that a local user
-				foreach( $result as $u ){
+				foreach ( $result as $u ){
 					$localUser = $localdb->select(
 						'user',
 						array( 'user_name' ),
@@ -99,12 +99,12 @@ class CheckLocalNames extends Maintenance {
 					);
 
 					// check to see if the user did not exist in the local user table
-					if( $localUser->numRows() == 0 ) {
-						if( $this->verbose ) {
+					if ( $localUser->numRows() == 0 ) {
+						if ( $this->verbose ) {
 							$this->output( "Local user not found for localname entry $u->ln_name@$wiki\n" );
 						}
 						$this->total++;
-						if( !$this->dryrun ){
+						if ( !$this->dryrun ){
 							// go ahead and delete the extraneous entry
 							$deleted = $centralMaster->delete(
 								'localnames',
@@ -140,4 +140,4 @@ class CheckLocalNames extends Maintenance {
 }
 
 $maintClass = "CheckLocalNames";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

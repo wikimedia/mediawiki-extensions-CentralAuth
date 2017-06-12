@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class MigrateAccount extends Maintenance {
 	public function __construct() {
@@ -68,9 +68,11 @@ class MigrateAccount extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list" );
 				exit( 1 );
 			}
-			while( strlen( $line = trim( fgets( $file ) ) ) ) {
+			// @codingStandardsIgnoreStart
+			while ( strlen( $line = trim( fgets( $file ) ) ) ) {
+			// @codingStandardsIgnoreEnd
 				$values = explode( "\t", $line );
-				switch( count( $values ) ){
+				switch ( count( $values ) ){
 					case 1:
 						$this->migrate( $values[0] );
 						break;
@@ -100,7 +102,7 @@ class MigrateAccount extends Maintenance {
 
 	function migrate( $username, $homewiki=null ) {
 		$this->total++;
-		$this->output( "CentralAuth account migration for: " . $username . "\n");
+		$this->output( "CentralAuth account migration for: " . $username . "\n" );
 
 		$central = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
 		try {
@@ -148,11 +150,10 @@ class MigrateAccount extends Maintenance {
 					}
 				}
 			}
-		}
-		/**
-		 * Migration without an existing global account
-		 */
-		else {
+		} else {
+			/**
+			 * Migration without an existing global account
+			 */
 			if ( count( $unattached ) == 0 ) {
 				$this->output( "ERROR: No local accounts found for: $username\n" );
 				return;
@@ -234,4 +235,4 @@ class MigrateAccount extends Maintenance {
 }
 
 $maintClass = "MigrateAccount";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

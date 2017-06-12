@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalUser extends Maintenance {
 	public function __construct() {
@@ -56,7 +56,7 @@ class CheckLocalUser extends Maintenance {
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
 		// iterate from there
-		foreach( $this->getWikis() as $wiki ) {
+		foreach ( $this->getWikis() as $wiki ) {
 			$this->output( "Checking localuser for $wiki ...\n" );
 
 			if ( !WikiMap::getWiki( $wiki ) ) {
@@ -79,7 +79,7 @@ class CheckLocalUser extends Maintenance {
 				continue;
 			}
 
-			$localdb = wfGetDB( DB_REPLICA , array(), $wiki );
+			$localdb = wfGetDB( DB_REPLICA, array(), $wiki );
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {
@@ -91,12 +91,12 @@ class CheckLocalUser extends Maintenance {
 				);
 
 				// check to see if the user did not exist in the local user table
-				if( $localUser->numRows() == 0 ) {
-					if( $this->verbose ) {
+				if ( $localUser->numRows() == 0 ) {
+					if ( $this->verbose ) {
 						$this->output( "Local user not found for localuser entry $username@$wiki\n" );
 					}
 					$this->total++;
-					if( !$this->dryrun ){
+					if ( !$this->dryrun ){
 						// go ahead and delete the extraneous entry
 						$deleted = $centralMaster->delete(
 							'localuser',
@@ -148,7 +148,7 @@ class CheckLocalUser extends Maintenance {
 				)
 			);
 
-			foreach( $result as $row ) {
+			foreach ( $result as $row ) {
 				$wikis[] = $row->lu_wiki;
 			}
 		}
@@ -180,7 +180,7 @@ class CheckLocalUser extends Maintenance {
 					"ORDER BY" => "lu_name ASC"
 				)
 			);
-			foreach( $result as $u ) {
+			foreach ( $result as $u ) {
 				yield $u->lu_name;
 			}
 
@@ -190,4 +190,4 @@ class CheckLocalUser extends Maintenance {
 }
 
 $maintClass = "CheckLocalUser";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;

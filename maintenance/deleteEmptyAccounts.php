@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once( "$IP/maintenance/Maintenance.php" );
+require_once "$IP/maintenance/Maintenance.php";
 
 class DeleteEmptyAccounts extends Maintenance {
 	public function __construct() {
@@ -63,7 +63,7 @@ class DeleteEmptyAccounts extends Maintenance {
 				array( 'localuser' => array( 'LEFT JOIN', 'gu_name=lu_name' ) )
 			);
 
-			foreach( $result as $row ) {
+			foreach ( $result as $row ) {
 				$this->process( $row->gu_name );
 			}
 			if ( $this->fix ) {
@@ -129,4 +129,4 @@ class DeleteEmptyAccounts extends Maintenance {
 }
 
 $maintClass = "DeleteEmptyAccounts";
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;
