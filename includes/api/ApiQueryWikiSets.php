@@ -61,7 +61,7 @@ class ApiQueryWikiSets extends ApiQueryBase {
 				}
 			}
 
-			if ( isset( $prop['wikisnotincluded']  ) ) {
+			if ( isset( $prop['wikisnotincluded'] ) ) {
 				$entry['wikisnotincluded'] = array_diff( CentralAuthUser::getWikiList(), $wikiSet->getWikis() );
 				if ( count( $entry['wikisnotincluded'] ) ) {
 					$APIResult->setIndexedTagName( $entry['wikisnotincluded'], 'wiki' );

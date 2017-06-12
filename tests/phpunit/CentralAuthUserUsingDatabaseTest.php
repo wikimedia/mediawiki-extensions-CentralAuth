@@ -158,9 +158,9 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 */
 	public function testAdminLockAndHide() {
 		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
-		$this->assertSame( true, $caUser->exists() ); #sanity
-		$this->assertSame( false, $caUser->isHidden() ); #sanity
-		$this->assertSame( false, $caUser->isLocked() ); #sanity
+		$this->assertSame( true, $caUser->exists() ); # sanity
+		$this->assertSame( false, $caUser->isHidden() ); # sanity
+		$this->assertSame( false, $caUser->isLocked() ); # sanity
 
 		$caUser->adminLock();
 		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LISTS );
