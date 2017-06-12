@@ -122,7 +122,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		);
 		$table .= Html::closeElement( 'tr' );
 
-		foreach( $groups as $groupName ) {
+		foreach ( $groups as $groupName ) {
 			$groupInfo = $this->getGroupInfo( $groupName );
 			$wikiset = $groupInfo['wikiset'];
 
@@ -240,7 +240,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-name'] = htmlspecialchars( $group );
 		}
 
-		if( $this->getUser()->isAllowed( 'editinterface' ) ) {
+		if ( $this->getUser()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
 			$fields['centralauth-editgroup-display'] = $this->msg(
 				'centralauth-editgroup-display-edit',

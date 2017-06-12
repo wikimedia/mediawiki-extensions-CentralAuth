@@ -13,7 +13,7 @@ class CentralAuthHooks {
 			$wgAuthManagerAutoConfig;
 
 		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
-		if( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
 			$wgCentralAuthDatabase = $wgDBname;
 		}
 
@@ -168,7 +168,7 @@ class CentralAuthHooks {
 			$link = $params[0];
 		}
 
-		switch( $action ) {
+		switch ( $action ) {
 			case 'newset':
 				$args = array( WikiSet::formatType( $params[1] ), $params[2] );
 				break;
@@ -182,7 +182,7 @@ class CentralAuthHooks {
 				$args = array( $params[1]
 					? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() );
 				break;
-			default: //'deleteset'
+			default: // 'deleteset'
 				$args = array();
 		}
 
@@ -191,7 +191,7 @@ class CentralAuthHooks {
 		// centralauth-rightslog-entry-setnewtype, centralauth-rightslog-entry-setchange,
 		// centralauth-rightslog-entry-deleteset
 		$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
-		if( $skin ) {
+		if ( $skin ) {
 			return $msg->text();
 		} else {
 			return $msg->inContentLanguage()->text();
@@ -349,7 +349,7 @@ class CentralAuthHooks {
 		}
 
 		$firstUser = $users[0];
-		if( !$firstUser->getID() ) {
+		if ( !$firstUser->getID() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
 				$abortError = array( 'centralauth-account-exists-reset', $centralUser->getName() );
@@ -797,7 +797,7 @@ class CentralAuthHooks {
 			if ( $latestCa->isAttached() ) {
 				$latestCa->setEmailAuthenticationTimestamp( $timestamp );
 				$latestCa->saveSettings();
-            }
+			}
 		}
 
 		return true;
@@ -974,7 +974,7 @@ class CentralAuthHooks {
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 
-		if ( 	$wgDisableUnmergedEditing
+		if ( $wgDisableUnmergedEditing
 			&& ( $action === 'edit' || $action === 'delete' )
 			&& !$centralUser->exists()
 			&& !$title->inNamespaces( NS_USER_TALK, NS_PROJECT_TALK )

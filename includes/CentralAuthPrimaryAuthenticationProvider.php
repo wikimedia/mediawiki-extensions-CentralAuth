@@ -203,9 +203,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			// If the user passed in the global password, we can identify
 			// any remaining local accounts with a matching password
 			// and migrate them in transparently.
-			//
 			// That may or may not include the current wiki.
-			//
 			$this->logger->debug( 'attempting wgCentralAuthAutoMigrate for "{username}"', [
 				'username' => $username,
 			] );
