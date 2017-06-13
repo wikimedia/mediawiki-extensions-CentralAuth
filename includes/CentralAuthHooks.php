@@ -793,7 +793,7 @@ class CentralAuthHooks {
 	static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
-			$latestCa = CentralAuthUser::newMasterInstanceById( $ca->getId() );
+			$latestCa = CentralAuthUser::newMasterInstanceFromId( $ca->getId() );
 			if ( $latestCa->isAttached() ) {
 				$latestCa->setEmailAuthenticationTimestamp( $timestamp );
 				$latestCa->saveSettings();
