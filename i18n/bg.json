@@ -44,7 +44,7 @@
 	"centralauth-notice-dryrun": "<div class='successbox'>Само демонстрационен режим</div><br clear='all'/>",
 	"centralauth-disabled-dryrun": "Обединението на сметки в момента е в демонстрационен режим / режим на дебъгване, затова операциите по сливанията са спрени. Съжаляваме!",
 	"centralauth-error-locked": "Не можете да редактирате, тъй като сметката ви е заключена.",
-	"centralauth-error-unmerged": "Редактирането е невъзмможно, тъй като сметката не е единна.",
+	"centralauth-error-unmerged": "Редактирането е невъзможно, тъй като сметката не е обединена.",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Прочетете повече за системата за '''единни потребителски сметки''']]…''",
 	"centralauth-list-home-title": "Домашно уики",
 	"centralauth-list-home-dryrun": "Паролата и електронната поща за настоящото уики ще бъдат използвани за глобалната ви сметка.",

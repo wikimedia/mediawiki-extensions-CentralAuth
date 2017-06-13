@@ -51,7 +51,7 @@
 	"centralauth-list-unattached-title": "ન જોડાયેલાં ખાતાઓ",
 	"centralauth-list-unattached": "નીચેના જાળસ્થળો પર \"$1\" નામનું ખાતું તમારૂં છે તેવી ખરાઈ સ્વચાલિત રીતે કરી શકાઈ નથી;\nતમારા પ્રાથમિક ખાતા કરતાં તેમની ગુપ્તસંજ્ઞા જુદી હોવાની સંભાવના વધુ છે:",
 	"centralauth-foreign-link": "$2 પર વપરાશકર્તા $1",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|સહભાગ|સહભાગ}} , $2 ની ઉપર",
+	"centralauth-foreign-contributions": "$2 માં $1 {{PLURAL:$1|યોગદાન|યોગદાનો}}",
 	"centralauth-merge-method-primary": "ઘર વિકિ",
 	"centralauth-merge-method-empty": "કંઈ યોગદાન નહી",
 	"centralauth-merge-method-mail": "ઈ-મેલ વડે ખાતરી કરો",
