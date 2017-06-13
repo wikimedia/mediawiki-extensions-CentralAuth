@@ -21,7 +21,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @var string
 	 */
 	private $mName;
-	private $mStateDirty = false;
+	public $mStateDirty = false;
 	private $mDelayInvalidation = 0;
 
 	private $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked;
