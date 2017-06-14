@@ -264,21 +264,21 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
 
-		$steward = CentralAuthUser::newFromId( $req->getPerformer() );
-		if ( $steward === false ) {
+		$renamer = CentralAuthUser::newFromId( $req->getPerformer() );
+		if ( $renamer === false ) {
 			throw new Exception(
 				"The perfomer's global user id ({$req->getPerformer()}) does not exist in the database"
 			);
 		}
-		if ( $steward->isAttached() ) {
-			$stewardLink = Title::makeTitleSafe( NS_USER, $steward->getName() )->getFullURL();
+		if ( $renamer->isAttached() ) {
+			$renamerLink = Title::makeTitleSafe( NS_USER, $renamer->getName() )->getFullURL();
 		} else {
-			$stewardLink = WikiMap::getForeignURL(
-				$steward->getHomeWiki(), "User:{$steward->getName()}"
+			$renamerLink = WikiMap::getForeignURL(
+				$renamer->getHomeWiki(), "User:{$renamer->getName()}"
 			);
 		}
 
-		// Done as one big message so that stewards can create a local
+		// Done as one big message so that admins can create a local
 		// translation to customize the output as they see fit.
 		// @TODO: Do that actually in here... this is not how we do interfaces in 2015.
 		$viewMsg = $this->msg( 'globalrenamequeue-view',
@@ -292,8 +292,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->getLanguage()->userTimeAndDate(
 				$req->getCompleted(), $this->getUser()
 			),
-			$stewardLink,
-			$steward->getName(),
+			$renamerLink,
+			$renamer->getName(),
 			$req->getComments()
 		)->parseAsBlock();
 		$this->getOutput()->addHtml( '<div class="plainlinks">' . $viewMsg . '</div>' );
@@ -832,12 +832,12 @@ class RenameQueueTablePager extends TablePager {
 				$formatted = $this->mOwner->getLinkRenderer()->makeLink( $title, $value );
 				break;
 			case 'rq_performer':
-				$steward = CentralAuthUser::newFromId( $value );
+				$renamer = CentralAuthUser::newFromId( $value );
 				$formatted = '<span class="plainlinks">' .
 					WikiMap::foreignUserLink(
-					$steward->getHomeWiki(),
-					$steward->getName(),
-					$steward->getName()
+					$renamer->getHomeWiki(),
+					$renamer->getName(),
+					$renamer->getName()
 				) . '</span>';
 				break;
 			case 'row_actions':
