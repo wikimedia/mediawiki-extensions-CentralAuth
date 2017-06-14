@@ -284,7 +284,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$viewMsg = $this->msg( 'globalrenamequeue-view',
 			$req->getName(),
 			$req->getNewName(),
-			$reason,
+			str_replace("\n", "\n:", $reason),
 			$this->msg( 'globalrenamequeue-view-' . $req->getStatus() )->text(),
 			$this->getLanguage()->userTimeAndDate(
 				$req->getRequested(), $this->getUser()
@@ -294,7 +294,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			),
 			$stewardLink,
 			$steward->getName(),
-			$req->getComments()
+			str_replace("\n", "\n:", $req->getComments())
 		)->parseAsBlock();
 		$this->getOutput()->addHtml( '<div class="plainlinks">' . $viewMsg . '</div>' );
 	}
