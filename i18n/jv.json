@@ -130,7 +130,7 @@
 	"centralauth-admin-delete-nonexistent": "Kaluputan: rékening global \"<nowiki>$1</nowiki>\" ora ana.",
 	"centralauth-token-mismatch": "Nuwun sèwu, kita ora bisa prosès pangiriman formulir panjenengan amerga ana ilangé data sèsi.",
 	"centralauth-admin-reason": "Alesan:",
-	"centralauth-admin-reason-other": "Alesan liya/tambahan:",
+	"centralauth-admin-reason-other": "Alesan tambahan/liyané:",
 	"centralauth-admin-reason-other-select": "Alesan liyané:",
 	"centralauth-admin-unhide-nonexistent": "Masalah: akun global \"<nowiki>$1</nowiki>\" ora ana.",
 	"centralauth-admin-status": "Setèl status akun global",
