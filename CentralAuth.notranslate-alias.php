@@ -8,14 +8,13 @@
  * @file
  * @ingroup Extensions
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
+$specialPageAliases['en'] = [
 	// Localizing Special:CentralAutoLogin causes issues (bug 54195) and is of
 	// miniscule benefit to users, so don't do so.
-	'CentralAutoLogin' => array( 'CentralAutoLogin' ),
-	'CentralLogin' => array( 'CentralLogin' ),
-);
+	'CentralAutoLogin' => [ 'CentralAutoLogin' ],
+	'CentralLogin' => [ 'CentralLogin' ],
+];
