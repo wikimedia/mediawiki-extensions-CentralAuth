@@ -79,14 +79,14 @@ class CheckLocalUser extends Maintenance {
 				continue;
 			}
 
-			$localdb = wfGetDB( DB_REPLICA, array(), $wiki );
+			$localdb = wfGetDB( DB_REPLICA, [], $wiki );
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {
 				$localUser = $localdb->select(
 					'user',
-					array( 'user_name' ),
-					array( 'user_name' => $username ),
+					[ 'user_name' ],
+					[ 'user_name' => $username ],
 					__METHOD__
 				);
 
@@ -100,10 +100,10 @@ class CheckLocalUser extends Maintenance {
 						// go ahead and delete the extraneous entry
 						$deleted = $centralMaster->delete(
 							'localuser',
-							array(
+							[
 								 "lu_wiki" => $wiki,
 								 "lu_name" => $username
-							),
+							],
 							__METHOD__
 						);
 						// TODO: is there anyway to check the success of the delete?
@@ -128,24 +128,24 @@ class CheckLocalUser extends Maintenance {
 
 	protected function getWikis() {
 		$centralSlave = CentralAuthUtils::getCentralSlaveDB();
-		$wikis = array();
+		$wikis = [];
 
 		if ( !is_null( $this->wiki ) ) {
 			$wikis[] = $this->wiki;
 		} else {
-			$conds = array();
+			$conds = [];
 			if ( !is_null( $this->user ) ) {
 				$conds['lu_name'] = $this->user;
 			}
 			$result = $centralSlave->select(
 				'localuser',
-				array( 'lu_wiki' ),
+				[ 'lu_wiki' ],
 				$conds,
 				__METHOD__,
-				array(
+				[
 					"DISTINCT",
 					"ORDER BY" => "lu_wiki ASC"
-				)
+				]
 			);
 
 			foreach ( $result as $row ) {
@@ -169,16 +169,16 @@ class CheckLocalUser extends Maintenance {
 			$this->output( "\t ... querying from '$lastUsername'\n" );
 			$result = $centralSlave->select(
 				'localuser',
-				array( 'lu_name' ),
-				array(
+				[ 'lu_name' ],
+				[
 					'lu_wiki' => $wiki,
 					'lu_name > ' . $centralSlave->addQuotes( $lastUsername ),
-				),
+				],
 				__METHOD__,
-				array(
+				[
 					"LIMIT" => $this->batchSize,
 					"ORDER BY" => "lu_name ASC"
-				)
+				]
 			);
 			foreach ( $result as $u ) {
 				yield $u->lu_name;
