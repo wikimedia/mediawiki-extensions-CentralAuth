@@ -13,15 +13,15 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	}
 
 	function getFormFields() {
-		return array(
-			'username' => array(
+		return [
+			'username' => [
 				'id' => 'mw-renameprogress-username',
 				'label-message' => 'centralauth-rename-progress-username',
 				'type' => 'text',
 				'name' => 'username',
 				'default' => $this->getRequest()->getVal( 'username', $this->par ),
-			)
-		);
+			]
+		];
 	}
 
 	function alterForm( HTMLForm $form ) {
@@ -33,10 +33,10 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	function showLogExtract( $name ) {
 		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $name );
 		$out = $this->getOutput();
-		LogEventsList::showLogExtract( $out, 'gblrename', $caTitle, '', array(
+		LogEventsList::showLogExtract( $out, 'gblrename', $caTitle, '', [
 			'showIfEmpty' => true, // @todo set this to false and don't show the fieldset
 			'wrap' => Xml::fieldset( $this->msg( 'centralauth-rename-progress-logs-fieldset' )->text(), '$1' ),
-		) );
+		] );
 	}
 
 	/**
@@ -55,22 +55,22 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 	function showCurrentRenames() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$tables = array( 'renameuser_status' );
+		$tables = [ 'renameuser_status' ];
 		if ( !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
-			$join_conds = array( 'globaluser' => array(
-				'INNER JOIN', array( 'gu_name=ru_newname', 'gu_hidden=""' )
-			) );
+			$join_conds = [ 'globaluser' => [
+				'INNER JOIN', [ 'gu_name=ru_newname', 'gu_hidden=""' ]
+			] ];
 			$tables[] = 'globaluser';
 		} else {
-			$join_conds = array();
+			$join_conds = [];
 		}
 
 		$res = $dbr->select(
 			$tables,
-			array( 'ru_oldname', 'ru_newname' ),
-			array(),
+			[ 'ru_oldname', 'ru_newname' ],
+			[],
 			__METHOD__,
-			array( 'DISTINCT' ),
+			[ 'DISTINCT' ],
 			$join_conds
 		);
 
@@ -134,10 +134,10 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			}
 		}
 		ksort( $statuses );
-		$table = Html::openElement( 'table', array( 'class' => 'wikitable sortable' ) );
+		$table = Html::openElement( 'table', [ 'class' => 'wikitable sortable' ] );
 		$table .= Html::openElement( 'tr' );
-		$table .= Html::element( 'th', array(), $this->msg( 'centralauth-rename-table-domain' )->text() );
-		$table .= Html::element( 'th', array(), $this->msg( 'centralauth-rename-table-status' )->text() );
+		$table .= Html::element( 'th', [], $this->msg( 'centralauth-rename-table-domain' )->text() );
+		$table .= Html::element( 'th', [], $this->msg( 'centralauth-rename-table-status' )->text() );
 		$table .= Html::closeElement( 'tr' );
 		foreach ( $statuses as $wiki => $status ) {
 			$wikiReference = WikiMap::getWiki( $wiki );
@@ -148,10 +148,10 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			}
 
 			$table .= Html::openElement( 'tr' );
-			$table .= Html::element( 'td', array(), $wikiReference->getDisplayName() );
+			$table .= Html::element( 'td', [], $wikiReference->getDisplayName() );
 			// Messages used: centralauth-rename-table-status-inprogress
 			// centralauth-rename-table-status-queued, centralauth-rename-table-status-done
-			$table .= Html::rawElement( 'td', array(), $this->msg( "centralauth-rename-table-status-$status" )->parse() );
+			$table .= Html::rawElement( 'td', [], $this->msg( "centralauth-rename-table-status-$status" )->parse() );
 			$table .= Html::closeElement( 'tr' );
 		}
 		$table .= Html::closeElement( 'table' );

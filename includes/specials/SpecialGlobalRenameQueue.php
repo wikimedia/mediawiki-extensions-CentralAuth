@@ -82,7 +82,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param string $titleMessage Message name for page title
 	 * @param array $titleParams Params for page title
 	 */
-	protected function commonPreamble( $titleMessage, $titleParams = array() ) {
+	protected function commonPreamble( $titleMessage, $titleParams = [] ) {
 		$out = $this->getOutput();
 		$this->setHeaders();
 		$this->checkPermissions();
@@ -93,28 +93,28 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param string $page Active page
 	 */
 	protected function commonNav( $page ) {
-		$html = Html::openElement( 'div', array(
+		$html = Html::openElement( 'div', [
 			'class' => 'mw-ui-button-group',
-		) );
+		] );
 		$html .= Html::element( 'a',
-			array(
+			[
 				'href' => $this->getPageTitle( self::PAGE_OPEN_QUEUE )->getFullURL(),
 				'class' => 'mw-ui-button' . (
 					( $page === self::PAGE_OPEN_QUEUE ) ? ' mw-ui-progressive' : ''
 				),
-			),
+			],
 			$this->msg( 'globalrenamequeue-nav-openqueue' )->text()
 		);
 		$html .= Html::element( 'a',
-			array(
+			[
 				'href' => $this->getPageTitle( self::PAGE_CLOSED_QUEUE )->getFullURL(),
 				'class' => 'mw-ui-button' .
 					( ( $page === self::PAGE_CLOSED_QUEUE ) ? ' mw-ui-progressive' : '' ),
-			),
+			],
 			$this->msg( 'globalrenamequeue-nav-closedqueue' )->text()
 		);
 		$html .= Html::closeElement( 'div' );
-		$html .= Html::element( 'div', array( 'style' => 'clear:both' ) );
+		$html .= Html::element( 'div', [ 'style' => 'clear:both' ] );
 		$this->getOutput()->addHtml( $html );
 	}
 
@@ -125,31 +125,31 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	private function getCommonFormFieldsArray() {
 		$lang = $this->getLanguage();
-		return array(
-			'username' => array(
+		return [
+			'username' => [
 				'type' => 'text',
 				'name' => 'username',
 				'label-message' => 'globalrenamequeue-form-username',
 				'size' => 30,
-			),
-			'newname' => array(
+			],
+			'newname' => [
 				'type' => 'text',
 				'name' => 'newname',
 				'size' => 30,
 				'label-message' => 'globalrenamequeue-form-newname',
-			),
-			'limit' => array(
+			],
+			'limit' => [
 				'type' => 'limitselect',
 				'name' => 'limit',
 				'label-message' => 'table_pager_limit_label',
-				'options' => array(
+				'options' => [
 					$lang->formatNum( 25 ) => 25,
 					$lang->formatNum( 50 ) => 50,
 					$lang->formatNum( 75 ) => 75,
 					$lang->formatNum( 100 ) => 100,
-				),
-			),
-		);
+				],
+			],
+		];
 	}
 
 	/**
@@ -184,19 +184,19 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->commonNav( self::PAGE_CLOSED_QUEUE );
 		$fields = array_merge(
 			$this->getCommonFormFieldsArray(),
-			array(
-				'status' => array(
+			[
+				'status' => [
 					'type' => 'select',
 					'name' => 'status',
 					'label-message' => 'globalrenamequeue-form-status',
-					'options-messages' => array(
+					'options-messages' => [
 						'globalrenamequeue-form-status-all' => 'all',
 						'globalrenamequeue-view-approved' => GlobalRenameRequest::APPROVED,
 						'globalrenamequeue-view-rejected' => GlobalRenameRequest::REJECTED,
-					),
+					],
 					'default' => 'all',
-				)
-			)
+				]
+			]
 		);
 		$this->outputFilterForm( $fields );
 
@@ -256,7 +256,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function doViewRequest( GlobalRenameRequest $req ) {
 		$this->commonPreamble( 'globalrenamequeue-request-status-title',
-			array( $req->getName(), $req->getNewName() )
+			[ $req->getName(), $req->getNewName() ]
 		);
 		$this->commonNav( self::PAGE_PROCESS_REQUEST );
 
@@ -306,46 +306,46 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function doShowProcessForm( GlobalRenameRequest $req ) {
 		$this->commonPreamble(
-			'globalrenamequeue-request-title', array( $req->getName() )
+			'globalrenamequeue-request-title', [ $req->getName() ]
 		);
 
 		$form = HTMLForm::factory( 'vform',
-			array(
-				'rid' => array(
+			[
+				'rid' => [
 					'default' => $req->getId(),
 					'name'    => 'rid',
 					'type'    => 'hidden',
-					),
-				'comments' => array(
+					],
+				'comments' => [
 					'default'       => $this->getRequest()->getVal( 'comments' ),
 					'id'            => 'mw-renamequeue-comments',
 					'label-message' => 'globalrenamequeue-request-comments-label',
 					'name'          => 'comments',
 					'type'          => 'textarea',
 					'rows'          => 5,
-				),
+				],
 				// The following fields need to have their names stay in
 				// sync with the expectations of GlobalRenameUser::rename()
-				'reason' => array(
+				'reason' => [
 					'id'            => 'mw-renamequeue-reason',
 					'label-message' => 'globalrenamequeue-request-reason-label',
 					'name'          => 'reason',
 					'type'          => 'text',
-				),
-				'movepages' => array(
+				],
+				'movepages' => [
 					'id'            => 'mw-renamequeue-movepages',
 					'name'          => 'movepages',
 					'label-message' => 'globalrenamequeue-request-movepages',
 					'type'          => 'check',
 					'default'       => 1,
-				),
-				'suppressredirects' => array(
+				],
+				'suppressredirects' => [
 					'id'            => 'mw-renamequeue-suppressredirects',
 					'name'          => 'suppressredirects',
 					'label-message' => 'globalrenamequeue-request-suppressredirects',
 					'type'          => 'check',
-				),
-			),
+				],
+			],
 			$this->getContext(),
 			'globalrenamequeue'
 		);
@@ -354,23 +354,23 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$form->addButton( 'approve',
 			$this->msg( 'globalrenamequeue-request-approve-text' )->text(),
 			'mw-renamequeue-approve',
-			array(
+			[
 				'class' => 'mw-ui-progressive mw-ui-flush-right',
-			)
+			]
 		);
 		$form->addButton( 'deny',
 			$this->msg( 'globalrenamequeue-request-deny-text' )->text(),
 			'mw-renamequeue-deny',
-			array(
+			[
 				'class' => 'mw-ui-destructive mw-ui-flush-right',
-			)
+			]
 		);
 		$form->addButton( 'cancel',
 			$this->msg( 'globalrenamequeue-request-cancel-text' )->text(),
 			'mw-renamequeue-cancel',
-			array(
+			[
 				'class' => 'mw-ui-quiet mw-ui-flush-left',
-			)
+			]
 		);
 
 		$form->setId( 'mw-globalrenamequeue-request' );
@@ -439,9 +439,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		// Show a log entry of previous renames under the requesting user's username
 		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $req->getName() );
 		$extract = '';
-		$extractCount = LogEventsList::showLogExtract( $extract, 'gblrename', $caTitle, '', array(
+		$extractCount = LogEventsList::showLogExtract( $extract, 'gblrename', $caTitle, '', [
 			'showIfEmpty' => false,
-		) );
+		] );
 		if ( $extractCount ) {
 			$form->addHeaderText(
 				Xml::fieldset( $this->msg( 'globalrenamequeue-request-previous-renames' )
@@ -457,15 +457,15 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$reason
 		)->parseAsBlock() );
 
-		$form->setSubmitCallback( array( $this, 'onProcessSubmit' ) );
+		$form->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
 
 		$out = $this->getOutput();
-		$out->addModuleStyles( array(
+		$out->addModuleStyles( [
 			'mediawiki.ui',
 			'mediawiki.ui.button',
 			'mediawiki.ui.input',
 			'ext.centralauth.globalrenamequeue.styles',
-		) );
+		] );
 		$out->addModules( 'ext.centralauth.globalrenamequeue' );
 
 		$status = $form->show();
@@ -532,7 +532,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				// * create a global user attached only to the local wiki
 				$job = new LocalRenameUserJob(
 					Title::newFromText( 'Global rename job' ),
-					array(
+					[
 						'from' => $oldUser->getName(),
 						'to' => $newUser->getName(),
 						'renamer' => $this->getUser()->getName(),
@@ -541,7 +541,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'promotetoglobal' => true,
 						'reason' => $data['reason'],
 						'session' => $session,
-					)
+					]
 				);
 				JobQueueGroup::singleton( $request->getWiki() )->push( $job );
 				// Now log it
@@ -573,10 +573,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)->inContentLanguage()->text();
 					$body = $this->msg(
 						'globalrenamequeue-email-body-approved',
-						array(
+						[
 							$oldUser->getName(),
 							$newUser->getName(),
-						)
+						]
 					)->inContentLanguage()->text();
 				} else {
 					$subject = $this->msg(
@@ -584,11 +584,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)->inContentLanguage()->text();
 					$body = $this->msg(
 						'globalrenamequeue-email-body-rejected',
-						array(
+						[
 							$oldUser->getName(),
 							$newUser->getName(),
 							$request->getComments(),
-						)
+						]
 					)->inContentLanguage()->text();
 				}
 
@@ -629,13 +629,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
 		$lb = wfGetLB( $wiki );
-		$remoteDB = $lb->getConnection( DB_REPLICA, array(), $wiki );
+		$remoteDB = $lb->getConnection( DB_REPLICA, [], $wiki );
 		$row = $remoteDB->selectRow(
 			'user',
-			array( 'user_email', 'user_name', 'user_real_name' ),
-			array(
+			[ 'user_email', 'user_name', 'user_real_name' ],
+			[
 				'user_name' => User::getCanonicalName( $username ),
-			),
+			],
 			__METHOD__
 		);
 		if ( $row === false ) {
@@ -671,11 +671,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	public function getSubpagesForPrefixSearch() {
-		return array(
+		return [
 			self::PAGE_OPEN_QUEUE,
 			self::PAGE_PROCESS_REQUEST,
 			self::PAGE_CLOSED_QUEUE
-		);
+		];
 	}
 }
 
@@ -733,9 +733,9 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	public function getQueryInfo() {
-		return array(
+		return [
 			'tables' => 'renameuser_queue',
-			'fields' => array(
+			'fields' => [
 				'rq_id',
 				'rq_name',
 				'rq_wiki',
@@ -747,13 +747,13 @@ class RenameQueueTablePager extends TablePager {
 				# 'rq_deleted', not implemented yet
 				'rq_performer',
 				'rq_comments',
-			),
+			],
 			'conds' => $this->getQueryInfoConds(),
-		);
+		];
 	}
 
 	protected function getQueryInfoConds() {
-		$conds = array();
+		$conds = [];
 
 		$username = $this->getRequest()->getText( 'username' );
 		$username = User::getCanonicalName( $username );
@@ -771,7 +771,7 @@ class RenameQueueTablePager extends TablePager {
 			$conds['rq_status'] = GlobalRenameRequest::PENDING;
 		} else {
 			$status = $this->getRequest()->getVal( 'status', 'all' );
-			$closedStatuses = array( GlobalRenameRequest::APPROVED, GlobalRenameRequest::REJECTED );
+			$closedStatuses = [ GlobalRenameRequest::APPROVED, GlobalRenameRequest::REJECTED ];
 			if ( in_array( $status, $closedStatuses ) ) {
 				// User requested closed status - either approved or rejected
 				$conds['rq_status'] = $status;
@@ -790,7 +790,7 @@ class RenameQueueTablePager extends TablePager {
 	 */
 	protected function getExtraSortFields() {
 		// Break order ties based on the unique id
-		return array( 'rq_id' );
+		return [ 'rq_id' ];
 	}
 
 	/**
@@ -867,10 +867,10 @@ class RenameQueueTablePager extends TablePager {
 			$label = 'globalrenamequeue-action-view';
 		}
 		return Html::element( 'a',
-			array(
+			[
 				'href' => $this->mOwner->getPageTitle( $target )->getFullURL(),
 				'class' => 'mw-ui-progressive',
-			),
+			],
 			$this->msg( $label )->text()
 		);
 	}
@@ -891,24 +891,24 @@ class RenameQueueTablePager extends TablePager {
 	 */
 	public function getFieldNames() {
 		if ( $this->mFieldNames === null ) {
-			$this->mFieldNames = array(
+			$this->mFieldNames = [
 				'rq_name' => $this->msg( 'globalrenamequeue-column-rq-name' )->text(),
 				'rq_newname' => $this->msg( 'globalrenamequeue-column-rq-newname' )->text(),
 				'rq_wiki' => $this->msg( 'globalrenamequeue-column-rq-wiki' )->text(),
 				'rq_requested_ts' => $this->msg( 'globalrenamequeue-column-rq-requested-ts' )->text(),
 				'row_actions' => $this->msg( 'globalrenamequeue-column-row-actions' )->text(),
-			);
+			];
 
 			if ( $this->showClosedRequests() ) {
 				// Remove action column
 				array_pop( $this->mFieldNames );
 
-				$this->mFieldNames += array(
+				$this->mFieldNames += [
 					'rq_completed_ts' => $this->msg( 'globalrenamequeue-column-rq-completed-ts' )->text(),
 					'rq_status' => $this->msg( 'globalrenamequeue-column-rq-status' )->text(),
 					'rq_performer' => $this->msg( 'globalrenamequeue-column-rq-performer' )->text(),
 					'row_actions' => $this->msg( 'globalrenamequeue-column-row-actions' )->text(),
-				);
+				];
 			}
 		}
 		return $this->mFieldNames;

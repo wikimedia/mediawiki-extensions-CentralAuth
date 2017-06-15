@@ -125,7 +125,7 @@ class SpecialWikiSets extends SpecialPage {
 			$type = $set ? $set->getType() : WikiSet::OPTIN;
 		}
 		if ( !$wikis ) {
-			$wikis = $set ? $set->getWikisRaw() : array();
+			$wikis = $set ? $set->getWikisRaw() : [];
 		}
 		sort( $wikis );
 		$wikis = implode( "\n", $wikis );
@@ -155,12 +155,12 @@ class SpecialWikiSets extends SpecialPage {
 			sort( $sortedWikis );
 		} else {
 			$usage = '';
-			$sortedWikis = array();
+			$sortedWikis = [];
 		}
 
 		# Make an array of the opposite list of wikis
 		# (all databases *excluding* the defined ones)
-		$restWikis = array();
+		$restWikis = [];
 		foreach ( $wgLocalDatabases as $wiki ) {
 			if ( !in_array( $wiki, $sortedWikis ) ) {
 				$restWikis[] = $wiki;
@@ -179,7 +179,7 @@ class SpecialWikiSets extends SpecialPage {
 				)
 			);
 
-			$form = array();
+			$form = [];
 			$form['centralauth-editset-name'] = Xml::input( 'wpName', false, $name );
 			if ( $usage ) {
 				$form['centralauth-editset-usage'] = $usage;
@@ -187,7 +187,7 @@ class SpecialWikiSets extends SpecialPage {
 			$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
 			$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
 			$form['centralauth-editset-restwikis'] = Xml::textarea( 'wpRestWikis',
-				implode( "\n", $restWikis ), 40, 5, array( 'readonly' => true ) );
+				implode( "\n", $restWikis ), 40, 5, [ 'readonly' => true ] );
 			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason );
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
@@ -196,12 +196,12 @@ class SpecialWikiSets extends SpecialPage {
 			$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
 		} else {
 			// Give grep a chance to find the usages: centralauth-editset-optin, centralauth-editset-optout
-			$form = array();
+			$form = [];
 			$form['centralauth-editset-name'] = htmlspecialchars( $name );
 			$form['centralauth-editset-usage'] = $usage;
 			$form['centralauth-editset-type'] = $this->msg( "centralauth-editset-{$type}" )->escaped();
-			$form['centralauth-editset-wikis'] = self::buildTableByList( $sortedWikis, 3, array( 'width' => '100%' ) );
-			$form['centralauth-editset-restwikis'] = self::buildTableByList( $restWikis, 3, array( 'width' => '100%' ) );
+			$form['centralauth-editset-wikis'] = self::buildTableByList( $sortedWikis, 3, [ 'width' => '100%' ] );
+			$form['centralauth-editset-restwikis'] = self::buildTableByList( $restWikis, 3, [ 'width' => '100%' ] );
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
 		}
@@ -217,7 +217,7 @@ class SpecialWikiSets extends SpecialPage {
 	function buildTypeSelector( $name, $value ) {
 		// Give grep a chance to find the usages: centralauth-editset-optin, centralauth-editset-optout
 		$select = new XmlSelect( $name, 'set-type', $value );
-		foreach ( array( WikiSet::OPTIN, WikiSet::OPTOUT ) as $type ) {
+		foreach ( [ WikiSet::OPTIN, WikiSet::OPTOUT ] as $type ) {
 			$select->addOption( $this->msg( "centralauth-editset-{$type}" )->text(), $type );
 		}
 		return $select->getHTML();
@@ -234,7 +234,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param $tableAttribs array: <table> attributes
 	 * @return string Table
 	 */
-	function buildTableByList( $list, $columns = 2, $tableAttribs = array() ) {
+	function buildTableByList( $list, $columns = 2, $tableAttribs = [] ) {
 		if ( !is_array( $list ) ) {
 			return '';
 		}
@@ -246,7 +246,7 @@ class SpecialWikiSets extends SpecialPage {
 		$columns = $count < $columns ? $count : $columns;
 		$itemsPerCol = ceil( $count / $columns );
 		$i = 0;
-		$splitLists = array();
+		$splitLists = [];
 		while ( $i < $columns ) {
 			$splitLists[$i] = array_slice( $list, $itemsPerCol*$i, $itemsPerCol );
 			$i++;
@@ -255,13 +255,13 @@ class SpecialWikiSets extends SpecialPage {
 		foreach ( $splitLists as $splitList ) {
 			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
 			foreach ( $splitList as $listitem ) {
-				$body .= Html::element( 'li', array(), $listitem );
+				$body .= Html::element( 'li', [], $listitem );
 			}
 			$body .= '</ul></td>';
 		}
 		return Html::rawElement( 'table', $tableAttribs,
 			'<tbody>' .
-				Html::rawElement( 'tr', array( 'style' => 'vertical-align:top;' ), $body ) .
+				Html::rawElement( 'tr', [ 'style' => 'vertical-align:top;' ], $body ) .
 			'</tbody>'
 		);
 	}
@@ -279,7 +279,7 @@ class SpecialWikiSets extends SpecialPage {
 		}
 
 		$legend = $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->escaped();
-		$form = array( 'centralauth-editset-reason' => Xml::input( 'wpReason' ) );
+		$form = [ 'centralauth-editset-reason' => Xml::input( 'wpReason' ) ];
 		$url = htmlspecialchars( SpecialPage::getTitleFor( 'WikiSets', "delete/{$subpage}" )->getLocalUrl() );
 		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 
@@ -308,7 +308,7 @@ class SpecialWikiSets extends SpecialPage {
 			$this->buildSetView( $id, $this->msg( 'centralauth-editset-setexists' )->escaped(), $name, $type, $wikis, $reason );
 			return;
 		}
-		if ( !in_array( $type, array( WikiSet::OPTIN, WikiSet::OPTOUT ) ) ) {
+		if ( !in_array( $type, [ WikiSet::OPTIN, WikiSet::OPTOUT ] ) ) {
 			$this->buildSetView( $id, $this->msg( 'centralauth-editset-badtype' )->escaped(), $name, $type, $wikis, $reason );
 			return;
 		}
@@ -316,7 +316,7 @@ class SpecialWikiSets extends SpecialPage {
 			$this->buildSetView( $id, $this->msg( 'centralauth-editset-zerowikis' )->escaped(), $name, $type, $wikis, $reason );
 			return;
 		}
-		$badwikis = array();
+		$badwikis = [];
 		$allwikis = CentralAuthUser::getWikiList();
 		foreach ( $wikis as $wiki ) {
 			if ( !in_array( $wiki, $allwikis ) ) {
@@ -341,7 +341,7 @@ class SpecialWikiSets extends SpecialPage {
 		} else {
 			$set = new WikiSet();
 			$oldname = $oldtype = null;
-			$oldwikis = array();
+			$oldwikis = [];
 		}
 		$set->setName( $name );
 		$set->setType( $type );
@@ -353,18 +353,18 @@ class SpecialWikiSets extends SpecialPage {
 		$title = SpecialPage::getTitleFor( 'WikiSets', $set->getID() );
 		if ( !$oldname ) {
 			// New set
-			$log->addEntry( 'newset', $title, $reason, array( $name, $type, implode( ', ', $wikis ) ) );
+			$log->addEntry( 'newset', $title, $reason, [ $name, $type, implode( ', ', $wikis ) ] );
 		} else {
 			if ( $oldname != $name ) {
-				$log->addEntry( 'setrename', $title, $reason, array( $name, $oldname ) );
+				$log->addEntry( 'setrename', $title, $reason, [ $name, $oldname ] );
 			}
 			if ( $oldtype != $type ) {
-				$log->addEntry( 'setnewtype', $title, $reason, array( $name, $oldtype, $type ) );
+				$log->addEntry( 'setnewtype', $title, $reason, [ $name, $oldtype, $type ] );
 			}
 			$added = implode( ', ', array_diff( $wikis, $oldwikis ) );
 			$removed = implode( ', ', array_diff( $oldwikis, $wikis ) );
 			if ( $added || $removed ) {
-				$log->addEntry( 'setchange', $title, $reason, array( $name, $added, $removed ) );
+				$log->addEntry( 'setchange', $title, $reason, [ $name, $added, $removed ] );
 			}
 		}
 
@@ -390,7 +390,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		$title = SpecialPage::getTitleFor( 'WikiSets', $set->getID() );
 		$log = new LogPage( 'gblrights' );
-		$log->addEntry( 'deleteset', $title, $reason, array( $name ) );
+		$log->addEntry( 'deleteset', $title, $reason, [ $name ] );
 
 		$this->buildMainView( '<strong class="success">' . $this->msg( 'centralauth-editset-success-delete' )->escaped() . '</strong>' );
 	}

@@ -223,7 +223,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param $wikitext string
 	 */
 	private function showStatusError( $wikitext ) {
-		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $wikitext );
+		$wrap = Xml::tags( 'div', [ 'class' => 'error' ], $wikitext );
 		$this->getOutput()->addHTML( $this->getOutput()->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
 	}
 
@@ -243,18 +243,18 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->mCanEdit ? 'centralauth-admin-lookup-rw' : 'centralauth-admin-lookup-ro'
 		)->text();
 
-		$html = Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript ) );
+		$html = Xml::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
 		$html .= Xml::fieldset(
 			$this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )->text(),
 			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
 				Xml::openElement( 'p' ) .
 				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
 					'target', 'target', 25, $this->mUserName,
-					array( 'class' => 'mw-autocomplete-global-user' ) ) .
+					[ 'class' => 'mw-autocomplete-global-user' ] ) .
 				Xml::closeElement( 'p' ) .
 				Xml::openElement( 'p' ) .
 				Xml::submitButton( $lookup,
-					array( 'id' => 'centralauth-submit-find' )
+					[ 'id' => 'centralauth-submit-find' ]
 				) .
 				Xml::closeElement( 'p' )
 		);
@@ -268,13 +268,13 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	public function prettyTimespan( $span ) {
 		// @FIXME: This is nastily being used in SpecialMultiLock... fix that
-		$units = array(
+		$units = [
 			'seconds' => 60,
 			'minutes' => 60,
 			'hours' => 24,
 			'days' => 30.417,
 			'months' => 12,
-			'years' => 1 );
+			'years' => 1 ];
 		foreach ( $units as $unit => $chunk ) {
 			// Used messaged (to make sure that grep finds them):
 			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
@@ -309,7 +309,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$out = Xml::fieldset(
 			$this->msg( 'centralauth-admin-info-header' )->escaped(),
 			$content,
-			array( "id" => "mw-centralauth-info" )
+			[ "id" => "mw-centralauth-info" ]
 		);
 		$this->getOutput()->addHTML( $out );
 	}
@@ -322,12 +322,12 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$reg = $globalUser->getRegistration();
 		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
-		$attribs = array(
+		$attribs = [
 			'username' => htmlspecialchars( $globalUser->getName() ),
 			'registered' => htmlspecialchars( $this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars( $this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
 			'attached' => htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) ),
-		);
+		];
 
 		if ( count( $this->mUnattachedLocalAccounts ) ) {
 			$attribs['unattached'] = htmlspecialchars( $this->getLanguage()->formatNum( count( $this->mUnattachedLocalAccounts ) ) );
@@ -377,23 +377,23 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function listHeader() {
-		$columns = array(
+		$columns = [
 			"localwiki",   // centralauth-admin-list-localwiki
 			"attached-on", // centralauth-admin-list-attached-on
 			"method",      // centralauth-admin-list-method
 			"blocked",     // centralauth-admin-list-blocked
 			"editcount",   // centralauth-admin-list-editcount
 			"groups",      // centralauth-admin-list-groups
-		);
+		];
 		$header = Xml::openElement( 'form',
-			array(
+			[
 				 'method' => 'post',
 				 'action' =>
 				 $this->getPageTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
-				 'id' => 'mw-centralauth-merged' ) );
+				 'id' => 'mw-centralauth-merged' ] );
 		$header .= Html::hidden( 'wpMethod', 'unmerge' ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-			Xml::openElement( 'table', array( 'class' => 'wikitable sortable mw-centralauth-wikislist' ) ) .
+			Xml::openElement( 'table', [ 'class' => 'wikitable sortable mw-centralauth-wikislist' ] ) .
 			"\n" . Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
 		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
 			$header .= Xml::openElement( 'th' ) . Xml::closeElement( 'th' );
@@ -430,7 +430,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function listAccounts( array $list ) {
 		ksort( $list );
-		return implode( "\n", array_map( array( $this, 'listWikiItem' ), $list ) );
+		return implode( "\n", array_map( [ $this, 'listWikiItem' ], $list ) );
 	}
 
 	/**
@@ -465,7 +465,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$attachedTimestamp = isset( $row['attachedTimestamp'] ) ? $row['attachedTimestamp'] : '';
 
 		$html .= $this->getAttachedTimestampField( $attachedTimestamp ) .
-			Xml::openElement( 'td', array( 'style' => "text-align: center;" ) );
+			Xml::openElement( 'td', [ 'style' => "text-align: center;" ] );
 
 		if ( empty( $row['attachedMethod'] ) ) {
 			$html .= $this->msg( 'centralauth-admin-unattached' )->parse();
@@ -477,7 +477,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::openElement( 'td' ) .
 			$this->formatBlockStatus( $row ) .
 			Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td', array( 'style' => "text-align: right;" ) ) .
+			Xml::openElement( 'td', [ 'style' => "text-align: right;" ] ) .
 			$this->formatEditcount( $row ) .
 			Xml::closeElement( 'td' ) .
 			Xml::openElement( 'td' ) .
@@ -495,10 +495,10 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function getAttachedTimestampField( $attachedTimestamp ) {
 		if ( !$attachedTimestamp ) {
-			$html = Xml::openElement( 'td', array( 'data-sort-value' =>  '0' ) ) .
+			$html = Xml::openElement( 'td', [ 'data-sort-value' =>  '0' ] ) .
 				$this->msg( 'centralauth-admin-unattached' )->parse();
 		} else {
-			$html = Xml::openElement( 'td', array( 'data-sort-value' =>  htmlspecialchars( $attachedTimestamp ) ) ) .
+			$html = Xml::openElement( 'td', [ 'data-sort-value' =>  htmlspecialchars( $attachedTimestamp ) ] ) .
 				// visible date and time in users preference
 				htmlspecialchars( $this->getLanguage()->timeanddate( $attachedTimestamp, true ) );
 		}
@@ -521,18 +521,18 @@ class SpecialCentralAuth extends SpecialPage {
 		$brief = wfMessage( "centralauth-merge-method-{$method}" )->text();
 		$html =
 			Html::element(
-				'img', array(
+				'img', [
 					'src' => "{$wgExtensionAssetsPath}/CentralAuth/icons/merged-{$method}.png",
 					'alt' => $brief,
 					'title' => $brief,
-				)
+				]
 			)
 			. Html::element(
-				'span', array(
+				'span', [
 					'class' => 'merge-method-help',
 					'title' => $brief,
 					'data-centralauth-mergemethod' => $method
-				),
+				],
 				$this->msg( 'centralauth-merge-method-questionmark' )->text()
 			);
 
@@ -546,8 +546,8 @@ class SpecialCentralAuth extends SpecialPage {
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
-			$flags = array();
-			foreach ( array( 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ) as $option ) {
+			$flags = [];
+			foreach ( [ 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ] as $option ) {
 				if ( $row['block-' . $option] ) {
 					$flags[] = $option;
 				}
@@ -684,10 +684,10 @@ class SpecialCentralAuth extends SpecialPage {
 			$url .= '?' . $params;
 		}
 		return Xml::element( 'a',
-			array(
+			[
 				'href' => $url,
 				'title' => $hint,
-			),
+			],
 			$text );
 	}
 
@@ -716,7 +716,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function adminCheck( $wikiID ) {
-		return Xml::check( 'wpWikis[]', false, array( 'value' => $wikiID ) );
+		return Xml::check( 'wpWikis[]', false, [ 'value' => $wikiID ] );
 	}
 
 	/**
@@ -727,16 +727,16 @@ class SpecialCentralAuth extends SpecialPage {
 			# to be able to find messages: centralauth-admin-delete-title,
 			# centralauth-admin-delete-description, centralauth-admin-delete-button
 			Xml::fieldset( $this->msg( "centralauth-admin-{$action}-title" )->text() ) .
-			Xml::openElement( 'form', array(
+			Xml::openElement( 'form', [
 				'method' => 'POST',
 				'action' => $this->getPageTitle()->getFullUrl( 'target=' . urlencode( $this->mUserName ) ),
-				'id' => "mw-centralauth-$action" ) ) .
+				'id' => "mw-centralauth-$action" ] ) .
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
 			Xml::buildForm(
-				array( 'centralauth-admin-reason' => Xml::input( 'reason',
-					false, false, array( 'id' => "{$action}-reason" ) ) ),
+				[ 'centralauth-admin-reason' => Xml::input( 'reason',
+					false, false, [ 'id' => "{$action}-reason" ] ) ],
 				"centralauth-admin-{$action}-button"
 			) . Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' ) );
 	}
@@ -800,23 +800,23 @@ class SpecialCentralAuth extends SpecialPage {
 		$reasonField = Xml::input( 'wpReason', 45, false );
 
 		$form .= Xml::buildForm(
-			array(
+			[
 				'centralauth-admin-status-locked' => $radioLocked,
 				'centralauth-admin-status-hidden' => $radioHidden,
 				'centralauth-admin-reason' => $reasonList,
-				'centralauth-admin-reason-other' => $reasonField ),
+				'centralauth-admin-reason-other' => $reasonField ],
 				'centralauth-admin-status-submit'
 		);
 
 		$form .= Xml::closeElement( 'fieldset' );
 		$form = Xml::tags(
 			'form',
-			array(
+			[
 				'method' => 'POST',
 				'action' => $this->getPageTitle()->getFullURL(
-					array( 'target' => $this->mUserName )
+					[ 'target' => $this->mUserName ]
 				),
-			),
+			],
 			$form
 		);
 		$this->getOutput()->addHTML( $form );
@@ -830,7 +830,7 @@ class SpecialCentralAuth extends SpecialPage {
 			// because we've invalid usernames too :/
 			return;
 		}
-		$logTypes = array( 'globalauth' );
+		$logTypes = [ 'globalauth' ];
 		if ( $this->mCanOversight ) {
 			$logTypes[] = 'suppress';
 		}
@@ -840,7 +840,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$logTypes,
 			$title->getPrefixedText(),
 			'',
-			array( 'showIfEmpty' => true ) );
+			[ 'showIfEmpty' => true ] );
 		if ( $numRows ) {
 			$this->getOutput()->addHTML( Xml::fieldset(
 				$this->msg( 'centralauth-admin-logsnippet' )->text(),
@@ -873,12 +873,12 @@ class SpecialCentralAuth extends SpecialPage {
 		//  centralauth-merge-method-empty-desc, centralauth-merge-method-password-desc,
 		//  centralauth-merge-method-mail-desc, centralauth-merge-method-admin-desc,
 		//  centralauth-merge-method-login-desc
-		$mergeMethodDescriptions = array();
-		foreach ( array( 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ) as $method ) {
-			$mergeMethodDescriptions[$method] = array(
+		$mergeMethodDescriptions = [];
+		foreach ( [ 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ] as $method ) {
+			$mergeMethodDescriptions[$method] = [
 				'short' => $this->getLanguage()->ucfirst( $this->msg( "centralauth-merge-method-{$method}" )->escaped() ),
 				'desc' => $this->msg( "centralauth-merge-method-{$method}-desc" )->escaped()
-			);
+			];
 		}
 		return $mergeMethodDescriptions;
 	}

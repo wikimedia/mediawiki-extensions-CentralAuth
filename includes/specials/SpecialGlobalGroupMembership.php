@@ -40,12 +40,12 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$this->getOutput()->addHTML(
-			Xml::openElement( 'form', array( 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ) ) .
+			Xml::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript, 'name' => 'uluser', 'id' => 'mw-userrights-form1' ] ) .
 			Html::hidden( 'title',  $this->getPageTitle() ) .
 			Xml::openElement( 'fieldset' ) .
-			Xml::element( 'legend', array(), $this->msg( 'userrights-lookup-user' )->text() ) .
+			Xml::element( 'legend', [], $this->msg( 'userrights-lookup-user' )->text() ) .
 			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username', 30, $this->mTarget,
-				array( 'class' => 'mw-autocomplete-global-user' ) ) . ' <br />' .
+				[ 'class' => 'mw-autocomplete-global-user' ] ) . ' <br />' .
 			Xml::submitButton( $this->msg( 'editusergroup' )->text() ) .
 			Xml::closeElement( 'fieldset' ) .
 			Xml::closeElement( 'form' ) . "\n"
@@ -65,20 +65,20 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			$allGroups = CentralAuthUser::availableGlobalGroups();
 
 			# specify addself and removeself as empty arrays -- bug 16098
-			return array(
+			return [
 				'add' => $allGroups,
 				'remove' =>  $allGroups,
-				'add-self' => array(),
-				'remove-self' => array()
-			);
+				'add-self' => [],
+				'remove-self' => []
+			];
 		}
 
-		return array(
-			'add' => array(),
-			'remove' =>  array(),
-			'add-self' => array(),
-			'remove-self' => array()
-		);
+		return [
+			'add' => [],
+			'remove' =>  [],
+			'add-self' => [],
+			'remove-self' => []
+		];
 	}
 
 	/**
@@ -141,10 +141,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$log->addEntry( 'usergroups',
 			$user->getUserPage(),
 			$reason,
-			array(
+			[
 				$this->makeGroupNameList( $oldGroups ),
 				$this->makeGroupNameList( $newGroups )
-			)
+			]
 		);
 	}
 }
