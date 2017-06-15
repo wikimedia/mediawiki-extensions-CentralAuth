@@ -40,13 +40,13 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		$from = isset( $params['from'] ) ? $params['from'] : null;
 
 		$APIResult = $this->getResult();
-		$data = array();
+		$data = [];
 
 		/**
 		 * @var $wikiSet WikiSet
 		 */
 		foreach ( WikiSet::getAllWikiSets( $from, $params['limit'], $params['orderbyname'] ) as $wikiSet ) {
-			$entry = array();
+			$entry = [];
 			$entry['id'] = $wikiSet->getId();
 			$entry['name'] = $wikiSet->getName();
 
@@ -81,39 +81,39 @@ class ApiQueryWikiSets extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
+		return [
 			'from' => null,
-			'prop' => array(
+			'prop' => [
 				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => array(
+				ApiBase::PARAM_TYPE => [
 					'type',
 					'wikisincluded',
 					'wikisnotincluded'
-				)
-			),
-			'limit' => array(
+				]
+			],
+			'limit' => [
 				ApiBase::PARAM_DFLT => 10,
 				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			),
-			'orderbyname' => array(
+			],
+			'orderbyname' => [
 				ApiBase::PARAM_DFLT => false,
 				ApiBase::PARAM_TYPE => 'boolean'
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=wikisets'
 				=> 'apihelp-query+wikisets-example-1',
 			'action=query&list=wikisets&wsprop=type&wslimit=200'
 				=> 'apihelp-query+wikisets-example-2',
-		);
+		];
 	}
 }

@@ -63,7 +63,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 		$db = $this->getDB();
 		$this->addTables( 'globaluser' );
-		$this->addFields( array( 'gu_id', 'gu_name' ) );
+		$this->addFields( [ 'gu_id', 'gu_name' ] );
 		$limit = intval( $params['limit'] ) + 1;
 
 		$this->addWhereRange(
@@ -87,28 +87,28 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			// that belong to one user, because a user might be in multiple groups
 			$limit += count( $params['group'] ) + 1;
 
-			$this->addJoinConds( array(
+			$this->addJoinConds( [
 				'global_user_groups' =>
-				array( 'INNER JOIN', 'gug_user = gu_id' )
-			) );
+				[ 'INNER JOIN', 'gug_user = gu_id' ]
+			] );
 
-			$this->addWhere( array( 'gug_group' => $params['group'] ) );
+			$this->addWhere( [ 'gug_group' => $params['group'] ] );
 		}
 
 		if ( !empty( $params['excludegroup'] ) ) {
 			$this->addTables( 'global_user_groups', 'gug2' );
 
-			$in = $db->makeList( array( 'gug2.gug_group' => $params['excludegroup'] ), LIST_OR );
+			$in = $db->makeList( [ 'gug2.gug_group' => $params['excludegroup'] ], LIST_OR );
 
-			$this->addJoinConds( array(
+			$this->addJoinConds( [
 				'gug2' =>
-				array( 'LEFT OUTER JOIN', array( 'gug2.gug_user = gu_id', $in ) )
-			) );
+				[ 'LEFT OUTER JOIN', [ 'gug2.gug_user = gu_id', $in ] ]
+			] );
 
 			$this->addWhere( 'gug2.gug_user IS NULL' );
 		}
 
-		$this->addWhere( array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ) );
+		$this->addWhere( [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ] );
 
 		if ( isset( $prop['lockinfo'] ) ) {
 			$this->addFields( 'gu_locked' );
@@ -117,22 +117,22 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		if ( isset( $prop['existslocally'] ) ) {
 			$this->addTables( 'localuser' );
 			$this->addFields( 'lu_wiki' );
-			$this->addJoinConds( array(
+			$this->addJoinConds( [
 				'localuser' =>
-				array( 'LEFT OUTER JOIN', array( 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ) )
-			) );
+				[ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ] ]
+			] );
 		}
 
 		$this->addOption( 'LIMIT', $limit );
 
 		$result = $this->select( __METHOD__ );
 
-		$groupsOfUser = array();
+		$groupsOfUser = [];
 		if ( isset( $prop['groups'] ) && $result->numRows() ) {
 			$groupsOfUser = $this->getGlobalGroups( $result, $dir );
 		}
 
-		$data = array();
+		$data = [];
 		$previousName = '';
 		$i = 1;
 		foreach ( $result as $row ) {
@@ -146,7 +146,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			}
 			$i++;
 
-			$entry = array();
+			$entry = [];
 			$entry['id'] = $row->gu_id;
 			$entry['name'] = $row->gu_name;
 
@@ -156,7 +156,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				if ( !empty( $groupsOfUser[$row->gu_id] ) ) {
 					$entry['groups'] = $groupsOfUser[$row->gu_id];
 				} else {
-					$entry['groups'] = array();
+					$entry['groups'] = [];
 				}
 				$this->getResult()->setIndexedTagName( $entry['groups'], 'group' );
 			}
@@ -190,10 +190,10 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 		// Get all global groups now. We do this by using a WHERE
 		// range build from the given results
-		$groupsOfUser = array();
+		$groupsOfUser = [];
 
-		$this->addTables( array( 'globaluser', 'global_user_groups' ) );
-		$this->addFields( array( 'gug_user', 'gug_group' ) );
+		$this->addTables( [ 'globaluser', 'global_user_groups' ] );
+		$this->addFields( [ 'gug_user', 'gug_group' ] );
 
 		$result->seek( 0 );
 		$firstUser = $result->fetchObject()->gu_name;
@@ -209,16 +209,16 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		);
 
 		// Use an INNER JOIN to only get users with global groups
-		$this->addJoinConds( array(
+		$this->addJoinConds( [
 			'global_user_groups' =>
-			array( 'INNER JOIN', 'gug_user = gu_id' )
-		) );
+			[ 'INNER JOIN', 'gug_user = gu_id' ]
+		] );
 
 		$groupResult = $this->select( __METHOD__ );
 
 		foreach ( $groupResult as $groupRow ) {
 			if ( !isset( $groupsOfUser[$groupRow->gug_user] ) ) {
-				$groupsOfUser[$groupRow->gug_user] = array();
+				$groupsOfUser[$groupRow->gug_user] = [];
 			}
 
 			$groupsOfUser[$groupRow->gug_user][] = $groupRow->gug_group;
@@ -229,52 +229,52 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 	public function getAllowedParams() {
 		$globalGroups = CentralAuthUser::availableGlobalGroups();
-		return array(
+		return [
 			'from' => null,
 			'to' => null,
 			'prefix' => null,
-			'dir' => array(
+			'dir' => [
 				ApiBase::PARAM_DFLT => 'ascending',
-				ApiBase::PARAM_TYPE => array(
+				ApiBase::PARAM_TYPE => [
 					'ascending',
 					'descending'
-				),
-			),
-			'group' => array(
+				],
+			],
+			'group' => [
 				ApiBase::PARAM_TYPE => $globalGroups,
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'excludegroup' => array(
+			],
+			'excludegroup' => [
 				ApiBase::PARAM_TYPE => $globalGroups,
 				ApiBase::PARAM_ISMULTI => true,
-			),
-			'prop' => array(
+			],
+			'prop' => [
 				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => array(
+				ApiBase::PARAM_TYPE => [
 					'lockinfo',
 					'groups',
 					'existslocally'
-				)
-			),
-			'limit' => array(
+				]
+			],
+			'limit' => [
 				ApiBase::PARAM_DFLT => 10,
 				ApiBase::PARAM_TYPE => 'limit',
 				ApiBase::PARAM_MIN => 1,
 				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=globalallusers'
 				=> 'apihelp-query+globalallusers-example-1',
 			'action=query&list=globalallusers&agufrom=ABC&aguprop=lockinfo|groups|existslocally'
 				=> 'apihelp-query+globalallusers-example-2',
-		);
+		];
 	}
 }

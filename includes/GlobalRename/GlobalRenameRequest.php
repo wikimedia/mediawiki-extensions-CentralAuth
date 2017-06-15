@@ -249,21 +249,21 @@ class GlobalRenameRequest {
 			$this->status = self::PENDING;
 			$dbw->insert(
 				'renameuser_queue',
-				array(
+				[
 					'rq_name'         => $this->name,
 					'rq_wiki'         => $this->wiki,
 					'rq_newname'      => $this->newName,
 					'rq_reason'       => $this->reason,
 					'rq_requested_ts' => $this->requested,
 					'rq_status'       => $this->status,
-				),
+				],
 				__METHOD__
 			);
 			$this->id = $dbw->insertId();
 		} else {
 			$dbw->update(
 				'renameuser_queue',
-				array(
+				[
 					'rq_name'         => $this->name,
 					'rq_wiki'         => $this->wiki,
 					'rq_newname'      => $this->newName,
@@ -274,8 +274,8 @@ class GlobalRenameRequest {
 					'rq_deleted'      => $this->deleted,
 					'rq_performer'    => $this->performer,
 					'rq_comments'     => $this->comments,
-				),
-				array( 'rq_id' => $this->id ),
+				],
+				[ 'rq_id' => $this->id ],
 				__METHOD__
 			);
 		}
@@ -292,11 +292,11 @@ class GlobalRenameRequest {
 	 */
 	public static function newForUser( $username, $wiki ) {
 		return self::newFromRow(
-			self::fetchRowFromDB( array(
+			self::fetchRowFromDB( [
 				'rq_name'   => $username,
 				'rq_wiki'   => $wiki,
 				'rq_status' => self::PENDING,
-			) )
+			] )
 		);
 	}
 
@@ -308,9 +308,9 @@ class GlobalRenameRequest {
 	 */
 	public static function newFromId( $id ) {
 		return self::newFromRow(
-			self::fetchRowFromDB( array(
+			self::fetchRowFromDB( [
 				'rq_id' => $id,
-			) )
+			] )
 		);
 	}
 
@@ -323,7 +323,7 @@ class GlobalRenameRequest {
 	protected static function fetchRowFromDB( array $where ) {
 		return self::getDB( DB_REPLICA )->selectRow(
 			'renameuser_queue',
-			array(
+			[
 				'id'        => 'rq_id',
 				'name'      => 'rq_name',
 				'wiki'      => 'rq_wiki',
@@ -335,7 +335,7 @@ class GlobalRenameRequest {
 				'deleted'   => 'rq_deleted',
 				'performer' => 'rq_performer',
 				'comments'  => 'rq_comments',
-			),
+			],
 			$where,
 			__METHOD__
 		);
@@ -390,10 +390,10 @@ class GlobalRenameRequest {
 		$res = $dbw->selectField(
 			'renameuser_queue',
 			'rq_id',
-			array(
+			[
 				'rq_newname' => $newname,
 				'rq_status'  => self::PENDING,
-			),
+			],
 			__METHOD__
 		);
 

@@ -159,15 +159,15 @@ class GlobalRenameUser {
 	 * @return Status
 	 */
 	private function setRenameStatuses( array $wikis ) {
-		$rows = array();
+		$rows = [];
 		foreach ( $wikis as $wiki ) {
 			// @TODO: This shouldn't know about these column names
-			$rows[] = array(
+			$rows[] = [
 				'ru_wiki' => $wiki,
 				'ru_oldname' => $this->oldUser->getName(),
 				'ru_newname' => $this->newUser->getName(),
 				'ru_status' => 'queued'
-			);
+			];
 		}
 
 		$success = $this->renameuserStatus->setStatuses( $rows );
@@ -205,7 +205,7 @@ class GlobalRenameUser {
 	 * @return Job
 	 */
 	private function getJob( array $options, array $wikisAttached ) {
-		$params = array(
+		$params = [
 			'from' => $this->oldUser->getName(),
 			'to' => $this->newUser->getName(),
 			'renamer' => $this->performingUser->getName(),
@@ -216,7 +216,7 @@ class GlobalRenameUser {
 			'reason' => $options['reason'],
 			'session' => $this->session,
 			'force' => isset( $options['force'] ) && $options['force'],
-		);
+		];
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
 		return new LocalRenameUserJob( $title, $params );

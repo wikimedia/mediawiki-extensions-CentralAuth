@@ -40,10 +40,10 @@ class GlobalUserMergeLogger {
 		);
 
 		$logEntry->setComment( $reason );
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::olduser' => $imploded,
 			'5::newuser' => $newName,
-		) );
+		] );
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
 	}
