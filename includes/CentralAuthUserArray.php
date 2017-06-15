@@ -27,7 +27,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		/**
 		 * Load global user data
 		 */
-		$names = array();
+		$names = [];
 		foreach ( $res as $row ) {
 			$names[] = $row->user_name;
 		}
@@ -35,23 +35,23 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$caRes = $dbr->select(
-			array( 'localuser', 'globaluser', 'renameuser_status' ),
+			[ 'localuser', 'globaluser', 'renameuser_status' ],
 			'*',
-			array(
+			[
 				'gu_name' => $names,
 				'lu_name=gu_name',
 				'lu_wiki' => wfWikiID()
-			),
+			],
 			__METHOD__,
-			array(),
-			array(
-				'renameuser_status' => array( 'LEFT OUTER JOIN', array( $dbr->makeList(
-					array( 'ru_oldname=gu_name', 'ru_newname=gu_name' ),
+			[],
+			[
+				'renameuser_status' => [ 'LEFT OUTER JOIN', [ $dbr->makeList(
+					[ 'ru_oldname=gu_name', 'ru_newname=gu_name' ],
 					LIST_OR
-				) ) )
-			)
+				) ] ]
+			]
 		);
-		$this->globalData = array();
+		$this->globalData = [];
 		foreach ( $caRes as $row ) {
 			$this->globalData[$row->gu_name] = $row;
 		}
@@ -70,9 +70,9 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 				$caRow = $this->globalData[$row->user_name];
 
 				// Like taken from GlobalRenameUserStatus::getNames
-				$renameUser = array();
+				$renameUser = [];
 				if ( $caRow->ru_oldname ) {
-					$renameUser = array( $caRow->ru_oldname, $caRow->ru_newname );
+					$renameUser = [ $caRow->ru_oldname, $caRow->ru_newname ];
 				}
 
 				CentralAuthUser::setInstance(

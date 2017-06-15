@@ -49,7 +49,7 @@ class CentralAuthUtils {
 			throw new CentralAuthReadOnlyError();
 		}
 
-		return wfGetLB( $wgCentralAuthDatabase )->getConnectionRef( DB_MASTER, array(),
+		return wfGetLB( $wgCentralAuthDatabase )->getConnectionRef( DB_MASTER, [],
 			$wgCentralAuthDatabase );
 	}
 
@@ -74,7 +74,7 @@ class CentralAuthUtils {
 		}
 		$response = $request->response();
 
-		$sent = is_callable( array( $response, 'headersSent' ) )
+		$sent = is_callable( [ $response, 'headersSent' ] )
 			? $response->headersSent()
 			: headers_sent();
 
@@ -167,7 +167,7 @@ class CentralAuthUtils {
 		if ( $id !== null ) {
 			return self::getCentralSessionById( $id );
 		} else {
-			return array();
+			return [];
 		}
 	}
 
@@ -179,7 +179,7 @@ class CentralAuthUtils {
 	public static function getCentralSessionById( $id ) {
 		$key = CentralAuthUtils::memcKey( 'session', $id );
 		$stime = microtime( true );
-		$data = CentralAuthUtils::getSessionCache()->get( $key ) ?: array();
+		$data = CentralAuthUtils::getSessionCache()->get( $key ) ?: [];
 		$real = microtime( true ) - $stime;
 		RequestContext::getMain()->getStats()->timing( 'centralauth.session.read', $real );
 		return $data;
@@ -193,7 +193,7 @@ class CentralAuthUtils {
 	 * @return string|null Session ID
 	 */
 	public static function setCentralSession( array $data, $reset = false, $session = null ) {
-		static $keepKeys = array( 'user' => true, 'token' => true, 'expiry' => true );
+		static $keepKeys = [ 'user' => true, 'token' => true, 'expiry' => true ];
 
 		if ( $session === null ) {
 			$session = SessionManager::getGlobalSession();
@@ -264,7 +264,7 @@ class CentralAuthUtils {
 			$job = Job::factory(
 				'CentralAuthCreateLocalAccountJob',
 				Title::makeTitleSafe( NS_USER, $name ),
-				array( 'name' => $name, 'from' => $thisWiki, 'session' => $session )
+				[ 'name' => $name, 'from' => $thisWiki, 'session' => $session ]
 			);
 			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
 		}

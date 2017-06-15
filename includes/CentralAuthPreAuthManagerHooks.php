@@ -164,7 +164,7 @@ class CentralAuthPreAuthManagerHooks {
 				$testName = $user->getName() . '~' . wfWikiID();
 				$test = CentralAuthUser::getInstanceByName( $testName );
 				if ( $test->exists() && $test->isAttached() ) {
-					$msg = array( 'centralauth-abortlogin-renamed', $testName );
+					$msg = [ 'centralauth-abortlogin-renamed', $testName ];
 					return false;
 				}
 			}
@@ -222,12 +222,12 @@ class CentralAuthPreAuthManagerHooks {
 			wfDebugLog( 'SUL', 'Redirecting user to Special:SulRenameWarning' );
 			// Store current redirect target in session so we can provide a link
 			// later.
-			$wgUser->getRequest()->setSessionData( 'SulRenameWarning', array(
+			$wgUser->getRequest()->setSessionData( 'SulRenameWarning', [
 				'returnTo' => $returnTo,
 				'returnToQuery' => $returnToQuery,
-			) );
+			] );
 			$returnTo = SpecialPageFactory::getLocalNameFor( 'Special:SulRenameWarning' );
-			$returnToQuery = array();
+			$returnToQuery = [];
 			return false;
 		}
 		return true;
