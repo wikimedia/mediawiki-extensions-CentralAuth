@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee859f59_93106e5d",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-06-16T09:58:00Z",
+      "side": 1,
+      "message": "There are spaces missing inside these brackets.\n\nThe much bigger problem with this simple replacement is that it will create an unexpected output in many cases. For example, if the string contains an empty line (two \"\\n\" in a row) what will happen? A lonely \":\" on an otherwise empty line? An extra wide margin?\n\nWikitext syntax ignores single newlines and renders everything as a single paragraph, just as HTML does. This change will break this behavior and create separate paragraphs that did not existed before. I can not tell if newlines in the strings you are touching here are intended to represent paragraphs.\n\nI assume the colons are meant to indent all but the first line in this string. But this is not what the \":\" means. In the wikitext syntax \";\" and \":\" are a pair to create definition lists. But the strings here are not definitions. If indention is really what should be done here, this should bee done with a proper negative CSS text-indent and a margin.",
+      "range": {
+        "startLine": 287,
+        "startChar": 14,
+        "endLine": 287,
+        "endChar": 15
+      },
+      "revId": "ad883d2fbcf80baece3873885d692e23ee0c3445",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
