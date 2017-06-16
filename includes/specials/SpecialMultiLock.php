@@ -47,7 +47,7 @@ class SpecialMultiLock extends SpecialPage {
 		if ( $this->mUserNames !== '' ) {
 			$this->mUserNames = explode( "\n", $this->mUserNames );
 		} else {
-			$this->mUserNames = array();
+			$this->mUserNames = [];
 		}
 
 		if ( $this->mPrefixSearch !== '' ) {
@@ -114,17 +114,17 @@ class SpecialMultiLock extends SpecialPage {
 
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
-		$where = array( 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) );
+		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
 		if ( !$this->mCanOversight ) {
 			$where['gu_hidden'] = CentralAuthUser::HIDDEN_NONE;
 		}
 
 		$result = $dbr->select(
-			array( 'globaluser' ),
-			array( 'gu_name' ),
+			[ 'globaluser' ],
+			[ 'gu_name' ],
 			$where,
 			__METHOD__,
-			array( 'LIMIT' => 100 )
+			[ 'LIMIT' => 100 ]
 		);
 
 		foreach ( $result as $row ) {
@@ -201,13 +201,13 @@ class SpecialMultiLock extends SpecialPage {
 		$botField = Xml::check( 'markasbot' ) . $this->msg( 'centralauth-admin-multi-botcheck' )->parse();
 
 		$form .= Xml::buildForm(
-			array(
+			[
 				'centralauth-admin-status-locked' => $radioLocked,
 				'centralauth-admin-status-hidden' => $radioHidden,
 				'centralauth-admin-reason' => $reasonList,
 				'centralauth-admin-reason-other' => $reasonField,
 				'centralauth-admin-multi-bot' => $botField
-			),
+			],
 			'centralauth-admin-status-submit'
 		);
 
@@ -231,10 +231,10 @@ class SpecialMultiLock extends SpecialPage {
 
 		$header = Xml::openElement(
 			'form',
-			array(
+			[
 				'method' => 'POST',
 				'action' => $this->getPageTitle()->getFullUrl()
-			)
+			]
 		);
 
 		$header .= Xml::fieldset( $this->msg( 'centralauth-admin-status' )->text() );
@@ -244,7 +244,7 @@ class SpecialMultiLock extends SpecialPage {
 
 		$header .= Xml::openElement(
 			'table',
-			array( 'class' => 'wikitable sortable mw-centralauth-wikislist' )
+			[ 'class' => 'wikitable sortable mw-centralauth-wikislist' ]
 		);
 
 		$header .= '<thead><tr>' .
@@ -299,7 +299,7 @@ class SpecialMultiLock extends SpecialPage {
 			} else {
 				$rowtext .= Html::element(
 					'td',
-					array( 'colspan' => 7 ),
+					[ 'colspan' => 7 ],
 					$globalUser
 				);
 			}
@@ -339,20 +339,20 @@ class SpecialMultiLock extends SpecialPage {
 		}
 		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
 		$guAttachedLocalAccounts = $this->getLanguage()->formatNum( count( $globalUser->listAttached() ) );
-		$rowHtml .= Html::rawElement( 'td', array(),
+		$rowHtml .= Html::rawElement( 'td', [],
 			Html::input(
 				'wpActionTarget['.$guName.']',
 				$guName,
 				'checkbox',
-				array( 'checked' => 'checked' )
+				[ 'checked' => 'checked' ]
 			)
 		);
-		$rowHtml .= Html::rawElement( 'td', array(), $guLink );
-		$rowHtml .= Html::element( 'td', array( 'data-sort-value' => $accountAge ), $guRegister );
-		$rowHtml .= Html::element( 'td', array(), $guLocked );
-		$rowHtml .= Html::element( 'td', array(), $guHidden );
-		$rowHtml .= Html::element( 'td', array(), $guEditCount );
-		$rowHtml .= Html::element( 'td', array(), $guAttachedLocalAccounts );
+		$rowHtml .= Html::rawElement( 'td', [], $guLink );
+		$rowHtml .= Html::element( 'td', [ 'data-sort-value' => $accountAge ], $guRegister );
+		$rowHtml .= Html::element( 'td', [], $guLocked );
+		$rowHtml .= Html::element( 'td', [], $guHidden );
+		$rowHtml .= Html::element( 'td', [], $guEditCount );
+		$rowHtml .= Html::element( 'td', [], $guAttachedLocalAccounts );
 
 		return $rowHtml;
 	}
@@ -422,7 +422,7 @@ class SpecialMultiLock extends SpecialPage {
 	 * @param $wikitext string
 	 */
 	function showStatusError( $wikitext ) {
-		$wrap = Xml::tags( 'div', array( 'class' => 'error' ), $wikitext );
+		$wrap = Xml::tags( 'div', [ 'class' => 'error' ], $wikitext );
 		$this->getOutput()->addHTML( $this->getOutput()->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
 	}
 
@@ -443,22 +443,22 @@ class SpecialMultiLock extends SpecialPage {
 		}
 
 		$form = Xml::tags( 'form',
-			array(
+			[
 				'method' => 'post',
 				'action' => $this->getPageTitle()->getLocalUrl()
-			),
-			Xml::tags( 'fieldset', array(),
-				Xml::element( 'legend', array(), $this->msg( 'centralauth-admin-manage' )->text() ) .
+			],
+			Xml::tags( 'fieldset', [],
+				Xml::element( 'legend', [], $this->msg( 'centralauth-admin-manage' )->text() ) .
 				Html::hidden( 'wpMethod', 'search' ) .
-				Xml::element( 'p', array(),
+				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-username' )->text()
 				) .
 				Xml::textarea( 'wpTarget', ( $this->mPrefixSearch ? '' : $this->mUserNames ), 25, 20 ) .
-				Xml::element( 'p', array(),
+				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
 				) .
 				Html::input( 'wpSearchTarget', $this->mPrefixSearch ) .
-				Xml::tags( 'p', array(),
+				Xml::tags( 'p', [],
 					Xml::submitButton( $this->msg( 'centralauth-admin-lookup-ro' )->text() )
 				)
 			)
@@ -473,15 +473,15 @@ class SpecialMultiLock extends SpecialPage {
 		$text = '';
 		$numRows = LogEventsList::showLogExtract(
 			$text,
-			array( 'globalauth', 'suppress' ),
+			[ 'globalauth', 'suppress' ],
 			'',
 			'',
-			array(
-				'conds' => array(
+			[
+				'conds' => [
 					'log_action' => 'setstatus' // bug 57253
-				),
+				],
 				'showIfEmpty' => true
-			) );
+			] );
 		if ( $numRows ) {
 			$this->getOutput()->addHTML(
 				Xml::fieldset( $this->msg( 'centralauth-admin-logsnippet' )->text(), $text )

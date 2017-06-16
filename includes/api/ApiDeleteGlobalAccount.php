@@ -35,7 +35,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 			$this->checkUserRightsAny( 'centralauth-unmerge' );
 		} else {
 			if ( !$this->getUser()->isAllowed( 'centralauth-unmerge' ) ) {
-				$this->dieUsageMsg( array( 'badaccess-groups' ) );
+				$this->dieUsageMsg( [ 'badaccess-groups' ] );
 			}
 		}
 
@@ -46,18 +46,18 @@ class ApiDeleteGlobalAccount extends ApiBase {
 			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
 		) {
 			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( array( 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ) );
+				$this->dieWithError( [ 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ] );
 			} else {
-				$this->dieUsageMsg( array( 'nosuchuser', $globalUser->getName() ) );
+				$this->dieUsageMsg( [ 'nosuchuser', $globalUser->getName() ] );
 			}
 		}
 
 		$status = $globalUser->adminDelete( $params['reason'] );
 		if ( $status->isGood() ) {
-			$this->getResult()->addValue( null, $this->getModuleName(), array(
+			$this->getResult()->addValue( null, $this->getModuleName(), [
 				'user' => $globalUser->getName(),
 				'reason' => $params['reason']
-			) );
+			] );
 		} else {
 			$error = $this->getErrorFormatter()->arrayFromStatus( $status );
 			$this->getResult()->addValue( 'error', null, $error );
@@ -65,25 +65,25 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'user' => array(
+		return [
+			'user' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'reason' => array(
+			],
+			'reason' => [
 				ApiBase::PARAM_TYPE => 'string',
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=deleteglobalaccount&user=Example&reason=Because+I+can'
 				=> 'apihelp-deleteglobalaccount-example-1',
-		);
+		];
 	}
 
 	public function mustBePosted() {
@@ -108,7 +108,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	}
 
 	public static function injectTokenFunction( &$list ) {
-		$list['deleteglobalaccount'] = array( __CLASS__, 'getToken' );
+		$list['deleteglobalaccount'] = [ __CLASS__, 'getToken' ];
 		return true; // Hooks must return bool
 	}
 }

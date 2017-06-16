@@ -13,13 +13,13 @@ class WikiSet {
 	// (That means you Reedy & Siebrand)
 	private $mVersion = self::VERSION;      // Caching purposes
 
-	private static $mCacheVars = array(
+	private static $mCacheVars = [
 		'mId',
 		'mName',
 		'mType',
 		'mWikis',
 		'mVersion',
-	);
+	];
 
 	/**
 	 * @param $name string
@@ -27,7 +27,7 @@ class WikiSet {
 	 * @param $wikis array
 	 * @param $id int
 	 */
-	public function __construct( $name = '', $type = self::OPTIN, $wikis = array(), $id = 0 ) {
+	public function __construct( $name = '', $type = self::OPTIN, $wikis = [], $id = 0 ) {
 		$this->mId = $id;
 		$this->mName = $name;
 		$this->mType = $type;
@@ -96,7 +96,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function setType( $t ) {
-		if ( !in_array( $t, array( self::OPTIN, self::OPTOUT ) ) ) {
+		if ( !in_array( $t, [ self::OPTIN, self::OPTOUT ] ) ) {
 			return;
 		}
 		$this->setDbField( 'ws_type', $t );
@@ -107,7 +107,7 @@ class WikiSet {
 	 * @param mixed $value
 	 */
 	protected function setDbField( $field, $value ) {
-		$map = array( 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' );
+		$map = [ 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' ];
 		$mname = $map[$field];
 		$this->$mname = $value;
 	}
@@ -149,7 +149,7 @@ class WikiSet {
 		}
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$row = $dbr->selectRow(
-			'wikiset', '*', array( 'ws_name' => $name ), __METHOD__
+			'wikiset', '*', [ 'ws_name' => $name ], __METHOD__
 		);
 		if ( !$row ) {
 			return null;
@@ -180,7 +180,7 @@ class WikiSet {
 		}
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$row = $dbr->selectRow(
-			'wikiset', '*', array( 'ws_id' => $id ), __METHOD__
+			'wikiset', '*', [ 'ws_id' => $id ], __METHOD__
 		);
 		if ( !$row ) {
 			return null;
@@ -196,13 +196,13 @@ class WikiSet {
 	public function saveToDB() {
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->startAtomic( __METHOD__ );
-		$dbw->replace( 'wikiset', array( 'ws_id' ),
-			array(
+		$dbw->replace( 'wikiset', [ 'ws_id' ],
+			[
 				'ws_id' => $this->mId,
 				'ws_name' => $this->mName,
 				'ws_type' => $this->mType,
 				'ws_wikis' => implode( ',', $this->mWikis ),
-			), __METHOD__
+			], __METHOD__
 		);
 		if ( !$this->mId ) {
 			$this->mId = $dbw->insertId();
@@ -217,7 +217,7 @@ class WikiSet {
 	 */
 	public function delete() {
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->delete( 'wikiset', array( 'ws_id' => $this->mId ), __METHOD__ );
+		$dbw->delete( 'wikiset', [ 'ws_id' => $this->mId ], __METHOD__ );
 		$this->purge();
 		return (bool)$dbw->affectedRows();
 	}
@@ -230,7 +230,7 @@ class WikiSet {
 
 	public function saveToCache() {
 		$cache = ObjectCache::getMainWANInstance();
-		$data = array();
+		$data = [];
 		foreach ( self::$mCacheVars as $var ) {
 			if ( isset( $this->$var ) ) {
 				$data[$var] = $this->$var;
@@ -267,9 +267,9 @@ class WikiSet {
 	public function getRestrictedGroups() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 		$r = $dbr->select(
-			'global_group_restrictions', '*', array( 'ggr_set' => $this->mId ), __METHOD__
+			'global_group_restrictions', '*', [ 'ggr_set' => $this->mId ], __METHOD__
 		);
-		$result = array();
+		$result = [];
 		foreach ( $r as $row ) {
 			$result[] = $row->ggr_group;
 		}
@@ -284,8 +284,8 @@ class WikiSet {
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$where = array();
-		$options = array();
+		$where = [];
+		$options = [];
 
 		if ( $from != null ) {
 			$where[] = 'ws_name >= ' . $dbr->addQuotes( $from );
@@ -301,7 +301,7 @@ class WikiSet {
 		}
 
 		$res = $dbr->select( 'wikiset', '*', $where, __METHOD__, $options );
-		$result = array();
+		$result = [];
 		foreach ( $res as $row ) {
 			$result[] = self::newFromRow( $row );
 		}
@@ -314,7 +314,7 @@ class WikiSet {
 	 */
 	public static function getWikiSetForGroup( $group ) {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$res = $dbr->selectRow( 'global_group_restrictions', '*', array( 'ggr_group' => $group ), __METHOD__ );
+		$res = $dbr->selectRow( 'global_group_restrictions', '*', [ 'ggr_group' => $group ], __METHOD__ );
 		return $res ? $res->ggr_set : 0;
 	}
 

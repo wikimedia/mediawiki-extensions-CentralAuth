@@ -60,7 +60,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$row = wfGetDB( DB_MASTER )->selectRow(
 				'user',
 				User::selectFields(),
-				array( 'user_name' => $from ),
+				[ 'user_name' => $from ],
 				__METHOD__
 			);
 			$oldUser = User::newFromRow( $row );
@@ -73,11 +73,11 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$to,
 			$oldUser->getId(),
 			$this->getRenameUser(),
-			array(
+			[
 				'checkIfUserExists' => false,
 				'debugPrefix' => 'GlobalRename',
 				'reason' => $this->params['reason'],
-			)
+			]
 		);
 		if ( !$rename->rename() ) {
 			// This should never happen!
@@ -138,25 +138,25 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$rows = $dbr->select(
 			'page',
-			array( 'page_namespace', 'page_title' ),
-			array(
+			[ 'page_namespace', 'page_title' ],
+			[
 				'page_namespace IN (' . NS_USER . ',' . NS_USER_TALK . ')',
 				'(page_title ' . $dbr->buildLike( $fromTitle->getDBkey() . '/', $dbr->anyString() ) .
 				' OR page_title = ' . $dbr->addQuotes( $fromTitle->getDBkey() ) . ')'
-			),
+			],
 			__METHOD__
 		);
 
-		$jobParams = array(
+		$jobParams = [
 			'to' => $to,
 			'from' => $from,
 			'renamer' => $this->getRenameUser()->getName(),
 			'suppressredirects' => $this->params['suppressredirects'],
-		);
+		];
 		if ( isset( $this->params['session'] ) ) {
 			$jobParams['session'] = $this->params['session'];
 		}
-		$jobs = array();
+		$jobs = [];
 
 		foreach ( $rows as $row ) {
 			$oldPage = Title::newFromRow( $row );
@@ -164,10 +164,10 @@ class LocalRenameUserJob extends LocalRenameJob {
 				preg_replace( '!^[^/]+!', $toTitle->getDBkey(), $row->page_title ) );
 			$jobs[] = new LocalPageMoveJob(
 				Title::newFromText( 'LocalRenameUserJob' ),
-				$jobParams + array(
-					'old' => array( $oldPage->getNamespace(), $oldPage->getDBkey() ),
-					'new' => array( $newPage->getNamespace(), $newPage->getDBkey() ),
-				)
+				$jobParams + [
+					'old' => [ $oldPage->getNamespace(), $oldPage->getDBkey() ],
+					'new' => [ $newPage->getNamespace(), $newPage->getDBkey() ],
+				]
 			);
 		}
 

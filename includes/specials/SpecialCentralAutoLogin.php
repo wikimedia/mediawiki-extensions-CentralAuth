@@ -80,13 +80,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		global $wgCentralAuthLoginWiki;
 
 		if (
-			in_array( $par, array( 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
-			'createSession', 'validateSession', 'setCookies' ), true )
+			in_array( $par, [ 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
+			'createSession', 'validateSession', 'setCookies' ], true )
 		) {
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin ' . $par, array(
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin ' . $par, [
 				'event' => 'autologin',
 				'eventType' => $par,
-			) );
+			] );
 		}
 
 		$request = $this->getRequest();
@@ -134,18 +134,18 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$user->isAnon() ) {
 				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
 					$html = $this->getSkin()->getPersonalToolsList();
-					$json = FormatJson::encode( array( 'toolslist' => $html ) );
+					$json = FormatJson::encode( [ 'toolslist' => $html ] );
 				} else {
 					$gender = $this->getUser()->getOption( 'gender' );
 					if ( strval( $gender ) === '' ) {
 						$gender = 'unknown';
 					}
-					$json = FormatJson::encode( array(
-						'notify' => array(
+					$json = FormatJson::encode( [
+						'notify' => [
 							'username' => $user->getName(),
 							'gender' => $gender
-						)
-					) );
+						]
+					] );
 				}
 				$this->doFinalOutput( true, 'OK', $json, 'json' );
 			} else {
@@ -228,10 +228,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			CentralAuthUtils::setP3P();
-			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', array(
+			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
 				'wikiid' => wfWikiID(),
 				'proto' => $request->detectProtocol(),
-			) + $params );
+			] + $params );
 			return;
 
 		case 'checkLoggedIn': // Check if we're logged in centrally
@@ -267,14 +267,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$memcData = array( 'gu_id' => $centralUser->getId() );
+			$memcData = [ 'gu_id' => $centralUser->getId() ];
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token );
 			$cache->set( $key, $memcData, 60 );
 
-			$this->do302Redirect( $wikiid, 'createSession', array(
+			$this->do302Redirect( $wikiid, 'createSession', [
 				'token' => $token,
-			) + $params );
+			] + $params );
 			return;
 
 		case 'createSession': // Create the local session and shared memcache token
@@ -324,10 +324,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Create memc token
 			$wikiid = wfWikiID();
-			$memcData = array(
+			$memcData = [
 				'gu_id' => $gu_id,
 				'wikiid' => $wikiid,
-			);
+			];
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token, $wikiid );
 			$cache->set( $key, $memcData, 60 );
@@ -335,10 +335,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Save memc token for the 'setCookies' step
 			$request->setSessionData( 'centralautologin-token', $token );
 
-			$this->do302Redirect( $this->loginWiki, 'validateSession', array(
+			$this->do302Redirect( $this->loginWiki, 'validateSession', [
 				'token' => $token,
 				'wikiid' => $wikiid,
-			) + $params );
+			] + $params );
 			return;
 
 		case 'validateSession': // Validate the shared memcached token
@@ -386,14 +386,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Write info for session creation into memc
 			$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
-			$memcData += array(
+			$memcData += [
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
 				'finalProto' => $centralSession['finalProto'],
 				'secureCookies' => $centralSession['secureCookies'],
 				'remember' => $centralSession['remember'],
 				'sessionId' => $centralSession['sessionId'],
-			);
+			];
 			$cache->set( $key, $memcData, 60 );
 
 			$this->do302Redirect( $wikiid, 'setCookies', $params );
@@ -458,11 +458,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$delay = $this->session->delaySave();
 			$this->session->resetId();
-			CentralAuthUtils::setCentralSession( array(
+			CentralAuthUtils::setCentralSession( [
 				'finalProto' => $memcData['finalProto'],
 				'secureCookies' => $memcData['secureCookies'],
 				'remember' => $memcData['remember'],
-			), $memcData['sessionId'], $this->session );
+			], $memcData['sessionId'], $this->session );
 			if ( $centralUser->isAttached() ) {
 				// Set the user on the session, if the user is already attached.
 				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
@@ -507,10 +507,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info(
 				'Autologin success',
-				array(
+				[
 					'event' => 'autologin',
 					'eventType' => 'success',
-				)
+				]
 			);
 
 			$script = self::getInlineScript( 'anon-remove.js' );
@@ -521,7 +521,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				if ( $wgRedirectOnLogin !== null ) {
 					$returnTo = $wgRedirectOnLogin;
-					$returnToQuery = array();
+					$returnToQuery = [];
 				} else {
 					$returnTo = $request->getVal( 'returnto', '' );
 					$returnToQuery = wfCgiToArray( $request->getVal( 'returntoquery', '' ) );
@@ -530,7 +530,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$returnToTitle = Title::newFromText( $returnTo );
 				if ( !$returnToTitle ) {
 					$returnToTitle = Title::newMainPage();
-					$returnToQuery = array();
+					$returnToQuery = [];
 				}
 
 				$redirectUrl = $returnToTitle->getFullURL( $returnToQuery );
@@ -545,10 +545,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			global $wgCentralAuthUseEventLogging;
 			if ( $wgCentralAuthUseEventLogging ) {
 				EventLogging::logEvent( 'CentralAuth', 5690875,
-					array( 'version' => 1,
+					[ 'version' => 1,
 						'userId' => $centralUser->getId(),
 						'action' => 'sul2-autologin-fallbacklogin'
-					)
+					]
 				);
 			}
 
@@ -556,9 +556,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
 			$code = $this->getUser()->getOption( 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
-			Hooks::run( 'UserGetLanguageObject', array( $this->getUser(), &$code, $this->getContext() ) );
-			$script .= "\n" . Xml::encodeJsCall( 'mediaWiki.messages.set', array(
-				array(
+			Hooks::run( 'UserGetLanguageObject', [ $this->getUser(), &$code, $this->getContext() ] );
+			$script .= "\n" . Xml::encodeJsCall( 'mediaWiki.messages.set', [
+				[
 					'centralauth-centralautologin-logged-in' =>
 						wfMessage( 'centralauth-centralautologin-logged-in' )
 							->inLanguage( $code )->plain(),
@@ -570,15 +570,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'centralautologin' =>
 						wfMessage( 'centralautologin' )
 							->inLanguage( $code )->plain(),
-				)
-			) );
+				]
+			] );
 
 			$script .= "\n" . self::getInlineScript( 'autologin.js' );
 
 			// And for good measure, add the edge login HTML images to the page.
-			$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", array(
+			$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", [
 				CentralAuthHooks::getEdgeLoginHTML()
-			) );
+			] );
 
 			$this->doFinalOutput( true, 'success', $script );
 			return;

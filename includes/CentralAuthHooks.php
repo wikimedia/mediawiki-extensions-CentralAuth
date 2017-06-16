@@ -79,26 +79,26 @@ class CentralAuthHooks {
 		if ( class_exists( 'RenameuserSQL' ) ) {
 			// Credits should only appear on wikis with Extension:Renameuser
 			// installed
-			$wgExtensionCredits['specialpage'][] = array(
+			$wgExtensionCredits['specialpage'][] = [
 				'path' => "{$caBase}/CentralAuth.php",
 				'name' => 'Renameuser for CentralAuth',
 				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
-				'author' => array( 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ),
+				'author' => [ 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ],
 				'descriptionmsg' => 'centralauth-rename-desc',
 				'license-name' => 'GPL-2.0',
-			);
+			];
 		}
 
 		if ( class_exists( 'AntiSpoof' ) ) {
 			// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
-			$wgExtensionCredits['antispam'][] = array(
+			$wgExtensionCredits['antispam'][] = [
 				'path' => "{$caBase}/CentralAuth.php",
 				'name' => 'AntiSpoof for CentralAuth',
 				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 				'author' => 'Sam Reed',
 				'descriptionmsg' => 'centralauth-antispoof-desc',
 				'license-name' => 'GPL-2.0',
-			);
+			];
 			$wgAutoloadClasses['CentralAuthSpoofUser'] =
 				"$caBase/AntiSpoof/CentralAuthSpoofUser.php";
 			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
@@ -115,40 +115,40 @@ class CentralAuthHooks {
 		}
 
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
-			$wgExtensionCredits['specialpage'][] = array(
+			$wgExtensionCredits['specialpage'][] = [
 				'path' => "{$caBase}/CentralAuth.php",
 				'name' => 'GlobalRenameRequest',
 				'author' => 'Bryan Davis',
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
 				'descriptionmsg' => 'globalrenamerequest-desc',
 				'license-name' => 'GPL-2.0',
-			);
+			];
 			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
 
-			$wgExtensionCredits['specialpage'][] = array(
+			$wgExtensionCredits['specialpage'][] = [
 				'path' => "{$caBase}/CentralAuth.php",
 				'name' => 'GlobalRenameQueue',
 				'author' => 'Bryan Davis',
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
 				'descriptionmsg' => 'globalrenamequeue-desc',
 				'license-name' => 'GPL-2.0',
-			);
+			];
 			$wgSpecialPages['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
-			$wgResourceModules['ext.centralauth.globalrenamequeue'] = array(
+			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [
 				'scripts'        => 'ext.centralauth.globalrenamequeue.js',
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
-				'messages' => array(
+				'messages' => [
 					'centralauth-rename-confirm',
 					'centralauth-rename-deny'
-				)
-			);
-			$wgResourceModules['ext.centralauth.globalrenamequeue.styles'] = array(
+				]
+			];
+			$wgResourceModules['ext.centralauth.globalrenamequeue.styles'] = [
 				'position'		=> 'top',
 				'styles'        => 'ext.centralauth.globalrenamequeue.less',
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
-			);
+			];
 		}
 	}
 
@@ -170,20 +170,20 @@ class CentralAuthHooks {
 
 		switch ( $action ) {
 			case 'newset':
-				$args = array( WikiSet::formatType( $params[1] ), $params[2] );
+				$args = [ WikiSet::formatType( $params[1] ), $params[2] ];
 				break;
 			case 'setrename':
-				$args = array( $params[1] );
+				$args = [ $params[1] ];
 				break;
 			case 'setnewtype':
-				$args = array( WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) );
+				$args = [ WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) ];
 				break;
 			case 'setchange':
-				$args = array( $params[1]
-					? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() );
+				$args = [ $params[1]
+					? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() ];
 				break;
 			default: // 'deleteset'
-				$args = array();
+				$args = [];
 		}
 
 		// Give grep a chance to find the usages:
@@ -310,7 +310,7 @@ class CentralAuthHooks {
 			$message = wfMessage( 'centralauth-prefs-not-managed' )->parse();
 		}
 
-		$manageLinks = array();
+		$manageLinks = [];
 		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
 			$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
 				wfMessage( 'centralauth-prefs-manage' )->parse() );
@@ -319,13 +319,13 @@ class CentralAuthHooks {
 			wfMessage( 'centralauth-prefs-view' )->parse() );
 		$manageLinkList = $wgLang->pipeList( $manageLinks );
 
-		$preferences['globalaccountstatus'] = array(
+		$preferences['globalaccountstatus'] = [
 			'section' => 'personal/info',
 			'label-message' => 'centralauth-prefs-status',
 			'type' => 'info',
 			'raw' => true,
 			'default' => $manageLinkList
-		);
+		];
 		if ( isset( $message ) ) {
 			$manageLinkList = wfMessage( 'parentheses', $manageLinkList )->text(); // looks weird otherwise
 			$preferences['globalaccountstatus']['default'] = "$message<br />$manageLinkList";
@@ -352,7 +352,7 @@ class CentralAuthHooks {
 		if ( !$firstUser->getID() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
-				$abortError = array( 'centralauth-account-exists-reset', $centralUser->getName() );
+				$abortError = [ 'centralauth-account-exists-reset', $centralUser->getName() ];
 				return false;
 			}
 		}
@@ -402,10 +402,10 @@ class CentralAuthHooks {
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$params = array(
+				$params = [
 					'type' => 'icon',
 					'from' => wfWikiID(),
-				);
+				];
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
@@ -414,14 +414,14 @@ class CentralAuthHooks {
 					$params
 				);
 				$inject_html .= Xml::element( 'img',
-					array(
+					[
 						'src' => $url,
 						'alt' => $alt,
 						'title' => $alt,
 						'width' => 20,
 						'height' => 20,
 						'style' => 'border: 1px solid #ccc;',
-					)
+					]
 				);
 			}
 			$inject_html .= "</p></div>\n";
@@ -429,20 +429,20 @@ class CentralAuthHooks {
 		if ( $wgCentralAuthLoginWiki ) {
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
 				'wikiid' => wfWikiID(),
 				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
-			) );
+			] );
 			$inject_html .= Xml::element( 'img',
-				array(
+				[
 					'src' => $url,
 					'alt' => '',
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
 					'style' => 'border: none; position: absolute;',
-				)
+				]
 			);
 		}
 
@@ -518,7 +518,7 @@ class CentralAuthHooks {
 			// and we need to make sure an agent requesting such a URL actually initiated
 			// the login request that spawned that token server-side.
 			$secret = MWCryptRand::generateHex( 32 );
-			$request->setSessionData( 'CentralAuth:autologin:current-attempt', array(
+			$request->setSessionData( 'CentralAuth:autologin:current-attempt', [
 				'secret'        => $secret,
 				'remember'      => $remember,
 				'returnTo'      => $returnTo,
@@ -526,12 +526,12 @@ class CentralAuthHooks {
 				'stickHTTPS'    => $secureCookies, // cookies set secure or not (local CentralAuth cookies)
 				'finalProto'    => $finalProto, // final page http or https
 				'type'          => $type,
-			) );
+			] );
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
-			$data = array(
+			$data = [
 				'secret'        => $secret,
 				'name'          => $centralUser->getName(),
 				'guid'          => $centralUser->getId(),
@@ -539,11 +539,11 @@ class CentralAuthHooks {
 				'secureCookies' => $secureCookies, // (bool) cookies secure or not
 				'finalProto'    => $finalProto, // http or https for very final page
 				'currentProto'  => $request->detectProtocol() // current proto (in case login is https, but final page is http)
-			);
-			Hooks::run( 'CentralAuthLoginRedirectData', array( $centralUser, &$data ) );
+			];
+			Hooks::run( 'CentralAuthLoginRedirectData', [ $centralUser, &$data ] );
 			CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );
 
-			$query = array( 'token' => $token );
+			$query = [ 'token' => $token ];
 
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -615,18 +615,18 @@ class CentralAuthHooks {
 			foreach ( $wikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/deleteCookies' ), array(
+				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/deleteCookies' ), [
 					'type' => 'icon',
-				) );
+				] );
 				$inject_html .= Xml::element( 'img',
-					array(
+					[
 						'src' => $url,
 						'alt' => $alt,
 						'title' => $alt,
 						'width' => 20,
 						'height' => 20,
 						'style' => 'border: 1px solid #ccc;',
-					)
+					]
 				);
 			}
 			$inject_html .= "</p></div>\n";
@@ -656,21 +656,21 @@ class CentralAuthHooks {
 	static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
 		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			$warnings[] = array( 'centralauth-renameuser-merged', $oldName, $newName );
+			$warnings[] = [ 'centralauth-renameuser-merged', $oldName, $newName ];
 		}
 		if ( $oldCentral->renameInProgress() ) {
-			$warnings[] = array( 'centralauth-renameuser-global-inprogress', $oldName );
+			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $oldName ];
 		}
 
 		$newCentral = CentralAuthUser::getMasterInstanceByName( $newName );
 		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
-			$warnings[] = array( 'centralauth-renameuser-reserved', $oldName, $newName );
+			$warnings[] = [ 'centralauth-renameuser-reserved', $oldName, $newName ];
 		}
 
 		if ( $newCentral->renameInProgress() ) {
-			$warnings[] = array( 'centralauth-renameuser-global-inprogress', $newName );
+			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $newName ];
 			// Can potentially be renaming two accounts into the same name, so throw an error
-			throw new ErrorPageError( 'error', 'centralauth-renameuser-global-inprogress', array( $newName ) );
+			throw new ErrorPageError( 'error', 'centralauth-renameuser-global-inprogress', [ $newName ] );
 		}
 
 		return true;
@@ -687,7 +687,7 @@ class CentralAuthHooks {
 		// If we're doing a global rename, the account will not get unattached
 		// because the old account no longer exists
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			$oldCentral->adminUnattach( array( wfWikiID() ) );
+			$oldCentral->adminUnattach( [ wfWikiID() ] );
 		}
 		return true;
 	}
@@ -899,23 +899,23 @@ class CentralAuthHooks {
 		$out = $sp->getOutput();
 		$count = LogEventsList::showLogExtract(
 			$out,
-			array( 'globalauth' ),
+			[ 'globalauth' ],
 			MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global",
 			'',
-			array(
+			[
 				'lim' => 1,
 				'showIfEmpty' => false,
-				'msgKey' => array(
+				'msgKey' => [
 					'centralauth-contribs-locked-log',
 					$user->getName()
-				),
+				],
 				'offset' => '',
-			)
+			]
 		);
 
 		if ( $count === 0 ) { // we couldn't load the log entry
 			$out->wrapWikiMsg( '<div class="mw-warning-with-logexcerpt">$1</div>',
-				array( 'centralauth-contribs-locked', $user )
+				[ 'centralauth-contribs-locked', $user ]
 			);
 		}
 
@@ -948,10 +948,10 @@ class CentralAuthHooks {
 				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
 			);
 			if ( $url !== false ) {
-				$params = array(
+				$params = [
 					'type' => 'script',
 					'wikiid' => wfWikiID(),
-				);
+				];
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
@@ -1025,9 +1025,9 @@ class CentralAuthHooks {
 					] ) );
 				}
 
-				$params = array(
+				$params = [
 					'type' => '1x1',
-				);
+				];
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
@@ -1036,14 +1036,14 @@ class CentralAuthHooks {
 					$params
 				);
 				$out->addHTML( '<noscript>' . Xml::element( 'img',
-					array(
+					[
 						'src' => $url,
 						'alt' => '',
 						'title' => '',
 						'width' => 1,
 						'height' => 1,
 						'style' => 'border: none; position: absolute;',
-					)
+					]
 				) . '</noscript>' );
 			}
 		} else {
@@ -1059,10 +1059,10 @@ class CentralAuthHooks {
 				if ( $wgCentralAuthUseEventLogging ) {
 					// Need to correlate user_id across wikis
 					EventLogging::logEvent( 'CentralAuth', 5690875,
-						array( 'version' => 1,
+						[ 'version' => 1,
 							'userId' => $centralUser->getId(),
 							'action' => 'sul2-autologin-login'
-						)
+						]
 					);
 				}
 			}
@@ -1080,19 +1080,19 @@ class CentralAuthHooks {
 		// Put images inside a div so that other code that manipulates page content can
 		// explicitly ignore them.
 		$html = Xml::openElement( 'div',
-			array(
+			[
 				'id' => 'central-auth-images',
 				'style' => 'position: absolute;',
-			)
+			]
 		);
 
 		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$wiki = WikiMap::getWiki( $wiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$params = array(
+			$params = [
 				'type' => '1x1',
 				'from' => wfWikiID(),
-			);
+			];
 			$url = wfAppendQuery(
 				$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
 				$params
@@ -1108,33 +1108,33 @@ class CentralAuthHooks {
 				);
 			}
 			$html .= Xml::element( 'img',
-				array(
+				[
 					'src' => $url,
 					'alt' => '',
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
 					'style' => 'border: none;',
-				)
+				]
 			);
 		}
 		if ( $wgCentralAuthLoginWiki ) {
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), array(
+			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
 				'wikiid' => wfWikiID(),
 				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
-			) );
+			] );
 			$html .= Xml::element( 'img',
-				array(
+				[
 					'src' => $url,
 					'alt' => '',
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
 					'style' => 'border: none;',
-				)
+				]
 			);
 		}
 
@@ -1188,7 +1188,7 @@ class CentralAuthHooks {
 		if ( $caUser->isLocked() && in_array( wfWikiID(), $caUser->listAttached() ) ) {
 			$msg[] = Html::rawElement(
 				'span',
-				array( 'class' => 'mw-centralauth-lock-loglink plainlinks' ),
+				[ 'class' => 'mw-centralauth-lock-loglink plainlinks' ],
 				wfMessage( 'centralauth-block-already-locked', $user )->parse()
 			);
 		}
@@ -1209,7 +1209,7 @@ class CentralAuthHooks {
 			if ( $user->exists() && $user->isAttached() ) {
 				$result = $user->getGlobalGroups();
 			} else {
-				$result = array();
+				$result = [];
 			}
 			return false;
 		} else {
@@ -1224,7 +1224,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function abuseFilterGenerateUserVars( $vars, $user ) {
-		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', array( 'user' => $user ) );
+		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user ] );
 		return true;
 	}
 
@@ -1255,7 +1255,7 @@ class CentralAuthHooks {
 		}
 
 		$recommendReload = false;
-		Hooks::run( 'CentralAuthIsUIReloadRecommended', array( $user, &$recommendReload ) );
+		Hooks::run( 'CentralAuthIsUIReloadRecommended', [ $user, &$recommendReload ] );
 		return $recommendReload;
 	}
 
@@ -1282,7 +1282,7 @@ class CentralAuthHooks {
 
 		if ( $caUser->isAttached() ) {
 			// Clean up localuser table.
-			$caUser->adminUnattach( array( wfWikiID() ) );
+			$caUser->adminUnattach( [ wfWikiID() ] );
 		}
 
 		// Clean up localnames table.
@@ -1301,10 +1301,10 @@ class CentralAuthHooks {
 	}
 
 	public static function onApiQueryTokensRegisterTypes( &$salts ) {
-		$salts += array(
+		$salts += [
 			'setglobalaccountstatus' => 'setglobalaccountstatus',
 			'deleteglobalaccount' => 'deleteglobalaccount',
-		);
+		];
 		return true;
 	}
 
@@ -1319,7 +1319,7 @@ class CentralAuthHooks {
 			$oldname = trim( $request->getText( 'oldname' ) );
 			$canonicalOldname = User::getCanonicalName( $oldname );
 			if ( $oldname !== '' ) {
-				$qc = array( 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname );
+				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
 			}
 		}
 
@@ -1354,12 +1354,12 @@ class CentralAuthHooks {
 	}
 
 	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader &$resourceLoader ) {
-		$testModules['qunit']['ext.centralauth.ForeignApi.test'] = array(
-			'scripts' => array( 'tests/qunit/ext.centralauth.ForeignApi.test.js' ),
-			'dependencies' => array( 'ext.centralauth.ForeignApi' ),
+		$testModules['qunit']['ext.centralauth.ForeignApi.test'] = [
+			'scripts' => [ 'tests/qunit/ext.centralauth.ForeignApi.test.js' ],
+			'dependencies' => [ 'ext.centralauth.ForeignApi' ],
 			'localBasePath' => __DIR__ . '/..',
 			'remoteExtPath' => 'CentralAuth',
-		);
+		];
 		return true;
 	}
 

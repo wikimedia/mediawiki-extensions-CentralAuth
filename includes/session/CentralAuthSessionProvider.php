@@ -19,7 +19,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	protected $enable = false;
 
-	protected $centralCookieOptions = array();
+	protected $centralCookieOptions = [];
 
 	/**
 	 * @param array $params In addition to the parameters for
@@ -37,10 +37,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 *     - secure: Cookie secure flag, defaults to $wgCookieSecure
 	 *     - httpOnly: Cookie httpOnly flag, defaults to $wgCookieHttpOnly
 	 */
-	public function __construct( $params = array() ) {
-		$params += array(
-			'centralCookieOptions' => array(),
-		);
+	public function __construct( $params = [] ) {
+		$params += [
+			'centralCookieOptions' => [],
+		];
 
 		if ( !is_array( $params['centralCookieOptions'] ) ) {
 			throw new \InvalidArgumentException( __METHOD__ . ': centralCookieOptions must be an array' );
@@ -58,18 +58,18 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		parent::setConfig( $config );
 
-		$this->centralCookieOptions += array(
+		$this->centralCookieOptions += [
 			'prefix' => $wgCentralAuthCookiePrefix,
 			'path' => $wgCentralAuthCookiePath,
 			'domain' => $wgCentralAuthCookieDomain,
 			'secure' => $config->get( 'CookieSecure' ),
 			'httpOnly' => $config->get( 'CookieHttpOnly' ),
-		);
+		];
 
-		$this->params += array(
+		$this->params += [
 			'enable' => $wgCentralAuthCookies,
 			'centralSessionName' => $this->centralCookieOptions['prefix'] . 'Session',
-		);
+		];
 
 		$this->enable = (bool)$this->params['enable'];
 	}
@@ -77,12 +77,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	private function returnParentSessionInfo( WebRequest $request ) {
 		$info = parent::provideSessionInfo( $request );
 		if ( $info ) {
-			return new SessionInfo( $info->getPriority(), array(
+			return new SessionInfo( $info->getPriority(), [
 				'copyFrom' => $info,
-				'metadata' => array(
+				'metadata' => [
 					'CentralAuthSource' => 'Local',
-				),
-			) );
+				],
+			] );
 		} else {
 			return null;
 		}
@@ -94,9 +94,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return self::returnParentSessionInfo( $request );
 		}
 
-		$info = array(
+		$info = [
 			'id' => $this->getCookie( $request, $this->params['sessionName'], '' )
-		);
+		];
 		if ( !SessionManager::validateSessionId( $info['id'] ) ) {
 			unset( $info['id'] );
 		}
@@ -184,16 +184,16 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		$this->logger->debug( __METHOD__ . ": logged in from $from" );
 
-		$info += array(
+		$info += [
 			'userInfo' => UserInfo::newFromName( $userName, true ),
 			'provider' => $this,
 			'persisted' => true, // CA sessions are always persistent
 			'remembered' => $tokenCookie !== null,
 			'forceHTTPS' => $this->getCookie( $request, 'forceHTTPS', '', false ),
-			'metadata' => array(
+			'metadata' => [
 				'CentralAuthSource' => 'CentralAuth',
-			),
-		);
+			],
+		];
 
 		return new SessionInfo( $this->priority, $info );
 	}
@@ -326,10 +326,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			}
 			$centralSessionId = CentralAuthUtils::setCentralSession( $data, false, $s );
 
-			$cookies = array(
+			$cookies = [
 				'User' => (string)$centralUser->getName(),
 				'Token' => $remember ? (string)$centralUser->getAuthToken() : false,
-			);
+			];
 			foreach ( $cookies as $name => $value ) {
 				if ( $value === false ) {
 					$response->clearCookie( $name, $options );
@@ -341,7 +341,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			}
 
 			$response->setCookie( $this->params['centralSessionName'], $centralSessionId, null,
-				array( 'prefix' => '' ) + $options );
+				[ 'prefix' => '' ] + $options );
 		} else {
 			$metadata = $session->getProviderMetadata();
 			$metadata['CentralAuthSource'] = 'Local';
@@ -350,7 +350,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$response->clearCookie( 'User', $this->centralCookieOptions );
 			$response->clearCookie( 'Token', $this->centralCookieOptions );
 			$response->clearCookie( $this->params['centralSessionName'],
-				array( 'prefix' => '' ) + $this->centralCookieOptions );
+				[ 'prefix' => '' ] + $this->centralCookieOptions );
 		}
 	}
 
@@ -374,7 +374,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$response->clearCookie( 'User', $this->centralCookieOptions );
 		$response->clearCookie( 'Token', $this->centralCookieOptions );
 		$response->clearCookie( $this->params['centralSessionName'],
-			array( 'prefix' => '' ) + $this->centralCookieOptions );
+			[ 'prefix' => '' ] + $this->centralCookieOptions );
 	}
 
 	public function invalidateSessionsForUser( User $user ) {
@@ -440,11 +440,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				$expiration = null;
 			}
 			$response->setCookie( 'forceHTTPS', 'true', $expiration,
-				array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
+				[ 'prefix' => '', 'secure' => false ] + $this->centralCookieOptions );
 		} else {
 			if ( !$sameCookie ) {
 				$response->clearCookie( 'forceHTTPS',
-					array( 'prefix' => '', 'secure' => false ) + $this->centralCookieOptions );
+					[ 'prefix' => '', 'secure' => false ] + $this->centralCookieOptions );
 			}
 			parent::setForceHTTPSCookie( $set, $backend, $request );
 		}

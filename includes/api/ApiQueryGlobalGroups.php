@@ -39,11 +39,11 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$prop = array_flip( (array) $params['prop'] );
 
 		$APIResult = $this->getResult();
-		$data = array();
+		$data = [];
 
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
-		$fields = array( 'ggp_group' );
+		$fields = [ 'ggp_group' ];
 
 		if ( isset( $prop['rights'] ) ) {
 			$fields[] = 'ggp_permission';
@@ -52,16 +52,16 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$result = $dbr->select(
 			'global_group_permissions',
 			$fields,
-			array(),
+			[],
 			__METHOD__,
-			array( 'DISTINCT' )
+			[ 'DISTINCT' ]
 		);
 
-		$globalGroups = array();
+		$globalGroups = [];
 
 		foreach ( $result as $row ) {
 			if ( !isset( $globalGroups[$row->ggp_group] ) ) {
-				$globalGroups[$row->ggp_group] = array( 'rights' => array() );
+				$globalGroups[$row->ggp_group] = [ 'rights' => [] ];
 			}
 
 			if ( isset( $prop['rights'] ) ) {
@@ -70,7 +70,7 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		}
 
 		foreach ( $globalGroups as $name => $value ) {
-			$entry = array( 'name' => $name );
+			$entry = [ 'name' => $name ];
 
 			if ( isset( $prop['rights'] ) && count( $value['rights'] ) ) {
 				$entry['rights'] = $value['rights'];
@@ -90,25 +90,25 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'prop' => array(
+		return [
+			'prop' => [
 				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => array(
+				ApiBase::PARAM_TYPE => [
 					'rights',
-				)
-			)
-		);
+				]
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&list=globalgroups'
 				=> 'apihelp-query+globalgroups-example-1',
 			'action=query&list=globalgroups&ggpprop=rights'
 				=> 'apihelp-query+globalgroups-example-2',
-		);
+		];
 	}
 }

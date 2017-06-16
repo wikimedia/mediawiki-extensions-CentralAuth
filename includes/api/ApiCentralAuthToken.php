@@ -77,34 +77,34 @@ class ApiCentralAuthToken extends ApiBase {
 			}
 		}
 
-		$data = array(
+		$data = [
 			'userName' => $user->getName(),
 			'token' => $centralUser->getAuthToken(),
 			'origin' => wfWikiId(),
 			'originSessionId' => $id,
-		);
+		];
 
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
 		$key = CentralAuthUtils::memcKey( 'api-token', $loginToken );
 		CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );
 
-		$this->getResult()->addValue( null, $this->getModuleName(), array(
+		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'centralauthtoken' => $loginToken
-		) );
+		] );
 	}
 
 	public function getAllowedParams() {
-		return array(
-		);
+		return [
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=centralauthtoken'
 				=> 'apihelp-centralauthtoken-example-1',
-		);
+		];
 	}
 }

@@ -49,7 +49,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 */
 	private function getNameWhereClause( IDatabase $db ) {
 		return $db->makeList(
-			array( 'ru_oldname' => $this->name, 'ru_newname' => $this->name ),
+			[ 'ru_oldname' => $this->name, 'ru_newname' => $this->name ],
 			LIST_OR
 		);
 	}
@@ -69,7 +69,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	public function getNames( $wiki = null, $useMaster = null ) {
 		$db = $this->getDB( $useMaster === 'master' ? DB_MASTER : DB_REPLICA );
 
-		$where = array( $this->getNameWhereClause( $db ) );
+		$where = [ $this->getNameWhereClause( $db ) ];
 
 		if ( $wiki ) {
 			$where['ru_wiki'] = $wiki;
@@ -77,19 +77,19 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 
 		$names = $db->selectRow(
 			'renameuser_status',
-			array( 'ru_oldname', 'ru_newname' ),
+			[ 'ru_oldname', 'ru_newname' ],
 			$where,
 			__METHOD__
 		);
 
 		if ( !$names ) {
-			return array();
+			return [];
 		}
 
-		return array(
+		return [
 			$names->ru_oldname,
 			$names->ru_newname
-		);
+		];
 	}
 
 	/**
@@ -106,13 +106,13 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 
 		$res = $db->select(
 			'renameuser_status',
-			array( 'ru_wiki', 'ru_status' ),
-			array( $this->getNameWhereClause( $db ) ),
+			[ 'ru_wiki', 'ru_status' ],
+			[ $this->getNameWhereClause( $db ) ],
 			__METHOD__,
 			$options
 		);
 
-		$statuses = array();
+		$statuses = [];
 		foreach ( $res as $row ) {
 			$statuses[$row->ru_wiki] = $row->ru_status;
 		}
@@ -148,8 +148,8 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 			function() use( $dbw, $status, $wiki, $nameWhere, $fname ) {
 				$dbw->update(
 					'renameuser_status',
-					array( 'ru_status' => $status ),
-					array( $nameWhere, 'ru_wiki' => $wiki ),
+					[ 'ru_status' => $status ],
+					[ $nameWhere, 'ru_wiki' => $wiki ],
 					$fname
 				);
 			}
@@ -214,7 +214,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 			function() use( $dbw, $wiki, $nameWhere, $fname ) {
 				$dbw->delete(
 					'renameuser_status',
-					array( $nameWhere, 'ru_wiki' => $wiki ),
+					[ $nameWhere, 'ru_wiki' => $wiki ],
 					$fname
 				);
 			}

@@ -14,7 +14,7 @@ use MediaWiki\Session\UserInfo;
  */
 class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider {
 
-	public function __construct( array $params = array() ) {
+	public function __construct( array $params = [] ) {
 		global $wgHooks;
 
 		parent::__construct();
@@ -48,12 +48,12 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 		// Then return an appropriate SessionInfo
 		$id = $this->hashToSessionId( 'bogus' );
-		return new SessionInfo( SessionInfo::MAX_PRIORITY, array(
+		return new SessionInfo( SessionInfo::MAX_PRIORITY, [
 			'provider' => $this,
 			'id' => $id,
 			'userInfo' => UserInfo::newAnonymous(),
 			'persisted' => false,
-		) );
+		] );
 	}
 
 	public function provideSessionInfo( WebRequest $request ) {
@@ -130,13 +130,13 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 		$this->logger->debug( __METHOD__ . ': logged in from session' );
 
-		$info = array(
+		$info = [
 			'userInfo' => UserInfo::newFromName( $userName, true ),
 			'provider' => $this,
 			'id' => $this->hashToSessionId( join( "\n", $data ) ),
 			'persisted' => true,
 			'forceUse' => true,
-		);
+		];
 
 		// Delete the token once it's actually used
 		$wgHooks['ApiCheckCanExecute'][] = $this;
@@ -200,9 +200,9 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		}
 
 		if ( $module instanceof ApiMain && $flags ) {
-			$params['centralauthtoken'] = array(
+			$params['centralauthtoken'] = [
 				ApiBase::PARAM_TYPE => 'string',
-			);
+			];
 		}
 		return true;
 	}

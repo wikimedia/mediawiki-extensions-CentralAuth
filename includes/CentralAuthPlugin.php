@@ -96,7 +96,7 @@ class CentralAuthPlugin extends AuthPlugin {
 			// See if all the unattached accounts match passwords
 			// and can be globalized. (bug 70392)
 			if ( $wgCentralAuthAutoMigrateNonGlobalAccounts ) {
-				$ok = $central->storeAndMigrate( array( $password ), /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true );
+				$ok = $central->storeAndMigrate( [ $password ], /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true );
 				if ( $ok ) {
 					wfDebugLog( 'CentralAuth',
 						"wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a global account for '$username'" );

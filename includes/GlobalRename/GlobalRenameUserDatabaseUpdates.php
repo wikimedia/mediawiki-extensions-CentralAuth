@@ -25,14 +25,14 @@ class GlobalRenameUserDatabaseUpdates {
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->update(
 			'globaluser',
-			array( 'gu_name' => $newname ),
-			array( 'gu_name' => $oldname ),
+			[ 'gu_name' => $newname ],
+			[ 'gu_name' => $oldname ],
 			__METHOD__
 		);
 
 		$dbw->delete(
 			'localuser',
-			array( 'lu_name' => $oldname ),
+			[ 'lu_name' => $oldname ],
 			__METHOD__
 		);
 
