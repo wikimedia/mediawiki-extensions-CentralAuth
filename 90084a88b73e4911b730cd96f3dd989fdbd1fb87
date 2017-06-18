@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee859f59_b2fec333",
+        "filename": "db_patches/patch-requestrename.sql",
+        "patchSetId": 39
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2017-06-18T09:50:07Z",
+      "side": 1,
+      "message": "Where did this come from?",
+      "revId": "90084a88b73e4911b730cd96f3dd989fdbd1fb87",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
