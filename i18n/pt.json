@@ -51,7 +51,7 @@
 	"centralauth-merge-home-password": "A wiki de origem desta conta (listada abaixo) tem uma palavra-passe diferente da que forneceu.\nPor favor, introduza a palavra-passe da wiki de origem.",
 	"centralauth-complete": "Unificação da autenticação completa!",
 	"centralauth-incomplete": "Unificação da autenticação incompleta!",
-	"centralauth-complete-text": "Agora pode entrar em qualquer wiki {{int:Centralauth-groupname}} sem ter de criar uma conta nova.",
+	"centralauth-complete-text": "Agora pode entrar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma conta nova.",
 	"centralauth-incomplete-text": "Quando a sua autenticação estiver unificada, poderá entrar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma conta nova",
 	"centralauth-not-owner-text": "O nome de utilizador \"$1\" foi atribuído automaticamente ao proprietário da conta na $2.\n\nSe é o proprietário, pode concluir o processo de autenticação unificada introduzindo a palavra-passe dessa conta aqui:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Modo de demonstração</div><br clear='all'/>",
