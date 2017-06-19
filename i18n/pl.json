@@ -486,6 +486,7 @@
 	"centralauth-abortlogin-renamed": "Twoje konto zostało przemianowane na \"$1\". Prosimy używać teraz tej nazwy.",
 	"sulrenamewarning-title": "Została zmieniona nazwa {{GENDER:$1|Twojego}} konta",
 	"apihelp-deleteglobalaccount-description": "Usuń globalnego użytkownika.",
+	"apihelp-deleteglobalaccount-summary": "Usuń globalnego użytkownika.",
 	"apihelp-deleteglobalaccount-param-user": "Użytkownik do usunięcia.",
 	"apihelp-deleteglobalaccount-param-reason": "Powód usunięcie użytkownika.",
 	"apihelp-deleteglobalaccount-example-1": "Usuń globalne konto [[User:Example]]",
