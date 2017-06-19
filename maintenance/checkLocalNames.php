@@ -45,19 +45,19 @@ class CheckLocalNames extends Maintenance {
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
 		// iterate from there
-		$wikis = array();
+		$wikis = [];
 		if ( !is_null( $this->wiki ) ) {
 			$wikis[] = $this->wiki;
 		} else {
 			$result = $centralSlave->select(
 				'localnames',
-				array( 'ln_wiki' ),
+				[ 'ln_wiki' ],
 				"",
 				__METHOD__,
-				array(
+				[
 					 "DISTINCT",
 					 "ORDER BY" => "ln_wiki ASC"
-				)
+				]
 			);
 
 			foreach ( $result as $row ) {
@@ -67,7 +67,7 @@ class CheckLocalNames extends Maintenance {
 
 		// iterate through the wikis
 		foreach ( $wikis as $wiki ) {
-			$localdb = wfGetDB( DB_REPLICA, array(), $wiki );
+			$localdb = wfGetDB( DB_REPLICA, [], $wiki );
 			$lastUsername = "";
 
 			$this->output( "Checking localnames for $wiki ...\n" );
@@ -77,24 +77,24 @@ class CheckLocalNames extends Maintenance {
 				$this->output( "\t ... querying from '$lastUsername'\n" );
 				$result = $centralSlave->select(
 					'localnames',
-					array( 'ln_name' ),
-					array(
+					[ 'ln_name' ],
+					[
 						 "ln_wiki" => $wiki,
 						 "ln_name > " . $centralSlave->addQuotes( $lastUsername )
-					),
+					],
 					__METHOD__,
-					array(
+					[
 						 "LIMIT" => $this->batchSize,
 						 "ORDER BY" => "ln_name ASC"
-					)
+					]
 				);
 
 				// iterate through each of the localnames to confirm that a local user
 				foreach ( $result as $u ){
 					$localUser = $localdb->select(
 						'user',
-						array( 'user_name' ),
-						array( "user_name" => $u->ln_name ),
+						[ 'user_name' ],
+						[ "user_name" => $u->ln_name ],
 						__METHOD__
 					);
 
@@ -108,10 +108,10 @@ class CheckLocalNames extends Maintenance {
 							// go ahead and delete the extraneous entry
 							$deleted = $centralMaster->delete(
 								'localnames',
-								array(
+								[
 									 "ln_wiki" => $wiki,
 									 "ln_name" => $u->ln_name
-								),
+								],
 								__METHOD__
 							);
 							// TODO: is there anyway to check the success of the delete?

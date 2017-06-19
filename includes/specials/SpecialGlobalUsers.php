@@ -37,7 +37,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		$this->getOutput()->addHTML(
 			$pg->getPageHeader() .
 			$pg->getNavigationBar() .
-			Html::rawElement( 'ul', array(), $pg->getBody() ) .
+			Html::rawElement( 'ul', [], $pg->getBody() ) .
 			$pg->getNavigationBar()
 		);
 
@@ -51,8 +51,8 @@ class SpecialGlobalUsers extends SpecialPage {
 class GlobalUsersPager extends AlphabeticPager {
 	protected $requestedGroup = false;
 	protected $requestedUser = false;
-	protected $globalIDGroups = array();
-	private $localWikisets = array();
+	protected $globalIDGroups = [];
+	private $localWikisets = [];
 
 	public function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context );
@@ -104,7 +104,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return array
 	 */
 	function getQueryInfo() {
-		$conds = array( 'gu_hidden' => CentralAuthUser::HIDDEN_NONE );
+		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
 
 		if ( $this->requestedGroup ) {
 			$conds['gug_group'] = $this->requestedGroup;
@@ -114,20 +114,20 @@ class GlobalUsersPager extends AlphabeticPager {
 			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->requestedUser );
 		}
 
-		return array(
-			'tables' => array( 'globaluser', 'localuser', 'global_user_groups' ),
-			'fields' => array( 'gu_name',
+		return [
+			'tables' => [ 'globaluser', 'localuser', 'global_user_groups' ],
+			'fields' => [ 'gu_name',
 				'gu_id' => 'MAX(gu_id)',
 				'gu_locked' => 'MAX(gu_locked)',
 				'lu_attached_method' => 'MAX(lu_attached_method)',
-				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ), // | cannot be used in a group name
+				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ], // | cannot be used in a group name
 			'conds' => $conds,
-			'options' => array( 'GROUP BY' => 'gu_name' ),
-			'join_conds' => array(
-				'localuser' => array( 'LEFT JOIN', array( 'gu_name = lu_name', 'lu_wiki' => wfWikiID() ) ),
-				'global_user_groups' => array( 'LEFT JOIN', 'gu_id = gug_user' )
-			),
-		);
+			'options' => [ 'GROUP BY' => 'gu_name' ],
+			'join_conds' => [
+				'localuser' => [ 'LEFT JOIN', [ 'gu_name = lu_name', 'lu_wiki' => wfWikiID() ] ],
+				'global_user_groups' => [ 'LEFT JOIN', 'gu_id = gug_user' ]
+			],
+		];
 	}
 
 	/**
@@ -137,7 +137,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 */
 	function formatRow( $row ) {
 		$user = htmlspecialchars( $row->gu_name );
-		$info = array();
+		$info = [];
 		if ( $row->gu_locked ) {
 			$info[] = $this->msg( 'centralauth-listusers-locked' )->text();
 		}
@@ -152,7 +152,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		}
 
 		$info = $this->getLanguage()->commaList( $info );
-		return Html::rawElement( 'li', array(), $this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
+		return Html::rawElement( 'li', [], $this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
 	}
 
 	function doBatchLookups() {
@@ -166,15 +166,15 @@ class GlobalUsersPager extends AlphabeticPager {
 		$batch->execute();
 
 		// Make an array of global groups for all users in the current result set
-		$globalGroups = array();
+		$globalGroups = [];
 		foreach ( $this->globalIDGroups as $gugGroup ) {
 			$globalGroups = array_merge( $globalGroups, $gugGroup );
 		}
 		if ( count( $globalGroups ) > 0 ) {
 			$wsQuery = $this->mDb->select(
-					array( 'global_group_restrictions', 'wikiset' ),
-					array( 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ),
-					array( 'ggr_set=ws_id', 'ggr_group' => array_unique( $globalGroups ) ),
+					[ 'global_group_restrictions', 'wikiset' ],
+					[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
+					[ 'ggr_set=ws_id', 'ggr_group' => array_unique( $globalGroups ) ],
 					__METHOD__
 			);
 			// Make an array of locally enabled wikisets
@@ -199,7 +199,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		# Form tag
 		$out = Xml::openElement(
 			'form',
-			array( 'method' => 'get', 'action' => $wgScript, 'id' => 'mw-listusers-form' )
+			[ 'method' => 'get', 'action' => $wgScript, 'id' => 'mw-listusers-form' ]
 		) .
 			Xml::fieldset( $this->msg( 'listusers' )->text() ) .
 			Html::hidden( 'title', $self );
@@ -210,16 +210,16 @@ class GlobalUsersPager extends AlphabeticPager {
 				'username',
 				$this->requestedUser,
 				'text',
-				array(
+				[
 					'id' => 'offset',
 					'size' => 20,
 					'autofocus' => $this->requestedUser === ''
-				)
+				]
 			) . ' ';
 
 		# Group drop-down list
 		$out .= Xml::label( $this->msg( 'group' )->text(), 'group' ) . ' ' .
-			Xml::openElement( 'select', array( 'name' => 'group', 'id' => 'group' ) ) .
+			Xml::openElement( 'select', [ 'name' => 'group', 'id' => 'group' ] ) .
 			Xml::option( $this->msg( 'group-all' )->text(), '' );
 		foreach ( $this->getAllGroups() as $group => $groupText ) {
 			$out .= Xml::option( $groupText, $group, $group == $this->requestedGroup );
@@ -250,12 +250,12 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return string
 	 */
 	protected function getUserGroups( $id ) {
-		$rights = array();
+		$rights = [];
 		foreach ( $this->globalIDGroups[$id] as $group ) {
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
 				$rights[] = Html::rawElement( 'span',
-					array( 'class' => 'groupnotappliedhere' ),
+					[ 'class' => 'groupnotappliedhere' ],
 					User::makeGroupLinkWiki(
 						$group,
 						UserGroupMembership::getGroupMemberName( $group, '#' )
@@ -276,7 +276,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return array
 	 */
 	public function getAllGroups() {
-		$result = array();
+		$result = [];
 		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
 			$result[$group] = UserGroupMembership::getGroupName( $group );
 		}

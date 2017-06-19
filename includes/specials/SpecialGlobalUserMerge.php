@@ -11,7 +11,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	/**
 	 * @var CentralAuthUser[]
 	 */
-	private $oldCAUsers = array();
+	private $oldCAUsers = [];
 
 	/**
 	 * @var string
@@ -46,16 +46,16 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-		return array(
-			'finaluser' => array(
+		return [
+			'finaluser' => [
 				'id' => 'mw-globalusermerge-usernames',
 				'name' => 'newuser',
 				'label-message' => 'centralauth-usermerge-form-newuser',
 				'type' => 'text',
 				'required' => true,
-				'validation-callback' => array( $this, 'validateUsername' ),
-			),
-			'usernames' => array(
+				'validation-callback' => [ $this, 'validateUsername' ],
+			],
+			'usernames' => [
 				'id' => 'mw-globalusermerge-usernames',
 				'name' => 'usernames',
 				'label-message' => 'centralauth-usermerge-form-usernames',
@@ -63,20 +63,20 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 				'format' => 'table',
 				'create-button-message' => 'centralauth-usermerge-form-adduser',
 				'delete-button-message' => 'centralauth-usermerge-form-deleteuser',
-				'fields' => array(
-					'name' => array(
+				'fields' => [
+					'name' => [
 						'type' => 'text',
-						'validation-callback' => array( $this, 'validateUsername' ),
-					),
-				),
-			),
-			'reason' => array(
+						'validation-callback' => [ $this, 'validateUsername' ],
+					],
+				],
+			],
+			'reason' => [
 				'id' => 'mw-globalusermerge-reason',
 				'name' => 'reason',
 				'label-message' => 'centralauth-usermerge-form-reason',
 				'type' => 'text',
-			),
-		);
+			],
+		];
 	}
 
 	/**

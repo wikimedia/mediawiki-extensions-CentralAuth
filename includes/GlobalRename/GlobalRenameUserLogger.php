@@ -34,16 +34,16 @@ class GlobalRenameUserLogger {
 		);
 
 		$logEntry->setComment( $options['reason'] );
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::olduser' => $oldName,
 			'5::newuser' => $newName,
 			'movepages' => $options['movepages'],
 			'suppressredirects' => $options['suppressredirects'],
-		) );
+		] );
 
-		$logEntry->setRelations( array(
+		$logEntry->setRelations( [
 			'oldname' => $oldName,
-		) );
+		] );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
@@ -66,15 +66,15 @@ class GlobalRenameUserLogger {
 		);
 
 		$logEntry->setComment( $reason );
-		$logEntry->setParameters( array(
+		$logEntry->setParameters( [
 			'4::olduser' => $oldName,
 			'5::newuser' => $newName,
 			'6::oldwiki' => $wiki,
-		) );
+		] );
 
-		$logEntry->setRelations( array(
+		$logEntry->setRelations( [
 			'oldname' => $oldName,
-		) );
+		] );
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );

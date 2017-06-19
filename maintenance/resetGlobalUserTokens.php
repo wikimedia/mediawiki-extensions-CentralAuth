@@ -62,17 +62,17 @@ class ResetGlobalUserTokens extends Maintenance {
 		$maxid = $this->getOption( 'maxid', -1 );
 
 		if ( $maxid == -1 ) {
-			$maxid = $dbr->selectField( 'globaluser', 'MAX(gu_id)', array(), __METHOD__ );
+			$maxid = $dbr->selectField( 'globaluser', 'MAX(gu_id)', [], __METHOD__ );
 		}
 		$min = $this->getOption( 'minid', 0 );
 		$max = $min + $this->mBatchSize;
 
 		do {
 			$result = $dbr->select( 'globaluser',
-				array( 'gu_id', 'gu_name' ),
-				array( 'gu_id > ' . $dbr->addQuotes( $min ),
+				[ 'gu_id', 'gu_name' ],
+				[ 'gu_id > ' . $dbr->addQuotes( $min ),
 					'gu_id <= ' . $dbr->addQuotes( $max )
-				),
+				],
 				__METHOD__
 			);
 

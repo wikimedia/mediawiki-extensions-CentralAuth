@@ -31,7 +31,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	/**
 	 * @var User[]
 	 */
-	protected $users = array();
+	protected $users = [];
 
 	/**
 	 * @param SpecialPage $owner Containing page
@@ -44,20 +44,20 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	}
 
 	public function getQueryInfo() {
-		return array(
-			'tables' => array( 'users_to_rename', 'localuser' ),
-			'fields' => array(
+		return [
+			'tables' => [ 'users_to_rename', 'localuser' ],
+			'fields' => [
 				'utr_id',
 				'utr_name',
 				'utr_status',
-			),
-			'conds' => array( 'utr_wiki' => wfWikiID(), 'lu_attached_method IS NULL' ),
-			'join_conds' => array( 'localuser' => array( 'LEFT JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ) ),
-		);
+			],
+			'conds' => [ 'utr_wiki' => wfWikiID(), 'lu_attached_method IS NULL' ],
+			'join_conds' => [ 'localuser' => [ 'LEFT JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ] ],
+		];
 	}
 
 	protected function preprocessResults( $results ) {
-		$names = array();
+		$names = [];
 		foreach ( $results as $result ) {
 			$names[] = $result->utr_name;
 		}
@@ -68,12 +68,12 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 
 		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
-			array( 'user', 'ipblocks' ),
+			[ 'user', 'ipblocks' ],
 			User::selectFields(),
-			array( 'user_name' => array_unique( $names ), 'ipb_deleted IS NULL OR ipb_deleted = 0' ),
+			[ 'user_name' => array_unique( $names ), 'ipb_deleted IS NULL OR ipb_deleted = 0' ],
 			__METHOD__,
-			array(), // $options
-			array( 'ipblocks' => array( 'LEFT JOIN', 'user_id = ipb_user' ) )
+			[], // $options
+			[ 'ipblocks' => [ 'LEFT JOIN', 'user_id = ipb_user' ] ]
 		);
 		$userArray = UserArray::newFromResult( $res );
 
@@ -92,7 +92,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	 */
 	protected function getExtraSortFields() {
 		// Break order ties based on the unique id
-		return array( 'utr_id' );
+		return [ 'utr_id' ];
 	}
 
 	/**
@@ -160,11 +160,11 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	 */
 	public function getFieldNames() {
 		if ( $this->mFieldNames === null ) {
-			$this->mFieldNames = array(
+			$this->mFieldNames = [
 				'utr_name' => $this->msg( 'centralauth-uwbr-name' )->text(),
 				'user_registration' => $this->msg( 'centralauth-uwbr-registration' )->text(),
 				'user_editcount' => $this->msg( 'centralauth-uwbr-editcount' )->text(),
-			);
+			];
 		}
 		return $this->mFieldNames;
 	}

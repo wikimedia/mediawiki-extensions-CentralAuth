@@ -27,8 +27,8 @@ class UsersToRenameDatabaseUpdates {
 	protected function updateStatus( $name, $wiki, $status ) {
 		$this->db->update(
 			'users_to_rename',
-			array( 'utr_status' => $status ),
-			array( 'utr_wiki' => $wiki, 'utr_name' => $name ),
+			[ 'utr_status' => $status ],
+			[ 'utr_wiki' => $wiki, 'utr_name' => $name ],
 			__METHOD__
 		);
 	}
@@ -48,7 +48,7 @@ class UsersToRenameDatabaseUpdates {
 	public function remove( $name, $wiki ) {
 		$this->db->delete(
 			'users_to_rename',
-			array( 'utr_wiki' => $wiki, 'utr_name' => $name ),
+			[ 'utr_wiki' => $wiki, 'utr_name' => $name ],
 			__METHOD__
 		);
 	}
@@ -58,10 +58,10 @@ class UsersToRenameDatabaseUpdates {
 	 * @param string $wiki
 	 */
 	public function insert( $name, $wiki ) {
-		$this->batchInsert( array( array(
+		$this->batchInsert( [ [
 			'name' => $name,
 			'wiki' => $wiki
-		) ) );
+		] ] );
 	}
 
 	/**
@@ -70,29 +70,29 @@ class UsersToRenameDatabaseUpdates {
 	 * @param array $info Array with array members that have 'name' and 'wiki' keys
 	 */
 	public function batchInsert( array $info ) {
-		$rows = array();
+		$rows = [];
 		foreach ( $info as $row ) {
-			$rows[] = array(
+			$rows[] = [
 				'utr_name' => $row['name'],
 				'utr_wiki' => $row['wiki'],
-			);
+			];
 		}
 
 		$this->db->insert(
 			'users_to_rename',
 			$rows,
 			__METHOD__,
-			array( 'IGNORE' )
+			[ 'IGNORE' ]
 		);
 	}
 
 	public function findUsers( $wiki, $status, $limit ) {
 		$rows = $this->db->select(
 			'users_to_rename',
-			array( 'utr_name', 'utr_wiki' ),
-			array( 'utr_status' => $status, 'utr_wiki' => $wiki ),
+			[ 'utr_name', 'utr_wiki' ],
+			[ 'utr_status' => $status, 'utr_wiki' => $wiki ],
 			__METHOD__,
-			array( 'LIMIT' => $limit )
+			[ 'LIMIT' => $limit ]
 		);
 
 		return $rows; // @todo this shouldn't return prefixed field names

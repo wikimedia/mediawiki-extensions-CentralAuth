@@ -49,18 +49,18 @@ class DeleteEmptyAccounts extends Maintenance {
 		for ( $cur = 0; $cur <= $end; $cur += $this->mBatchSize ) {
 			$this->output( "PROGRESS: $cur / $end\n" );
 			$result = $dbr->select(
-				array( 'globaluser', 'localuser' ),
-				array( 'gu_name' ),
-				array(
+				[ 'globaluser', 'localuser' ],
+				[ 'gu_name' ],
+				[
 					'lu_name' => null,
 					"gu_id >= $cur",
 					'gu_id < ' . ( $cur + $this->mBatchSize ),
-				),
+				],
 				__METHOD__,
-				array(
+				[
 					'ORDER BY' => 'gu_id',
-				),
-				array( 'localuser' => array( 'LEFT JOIN', 'gu_name=lu_name' ) )
+				],
+				[ 'localuser' => [ 'LEFT JOIN', 'gu_name=lu_name' ] ]
 			);
 
 			foreach ( $result as $row ) {
@@ -115,7 +115,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		if ( count( $unattached ) !== 0 && $this->migrate ) {
 			if ( $this->fix ) {
 				$central = CentralAuthUser::newUnattached( $username, true );
-				if ( $central->storeAndMigrate( array(), !$this->suppressRC, $this->safe ) ) {
+				if ( $central->storeAndMigrate( [], !$this->suppressRC, $this->safe ) ) {
 					$unattachedAfter = count( $central->queryUnattached() );
 					$this->output( "MIGRATE: [$username] Success; $unattachedAfter left unattached\n" );
 				} else {

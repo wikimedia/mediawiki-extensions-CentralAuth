@@ -51,12 +51,12 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	public function testLoadAttached() {
 		$caUser = new CentralAuthUser( 'GlobalUser' );
 		$this->assertArrayEquals(
-			array(
+			[
 				wfWikiID(),
 				'enwiki',
 				'dewiki',
 				'metawiki',
-			),
+			],
 			$caUser->listAttached()
 		);
 	}
@@ -133,21 +133,21 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 	 * @covers CentralAuthUser::storeMigrationData
 	 */
 	public function testStoreMigrationData() {
-		$caUsers = array(
+		$caUsers = [
 			'2001' => 'StoreMigrationDataUser 1',
 			'2002' => 'StoreMigrationDataUser 2',
 			'2003' => 'StoreMigrationDataUser 3',
-		);
+		];
 		CentralAuthUser::storeMigrationData( 'smdwiki', $caUsers );
 		$this->assertSelect(
 			'localnames',
 			'ln_name',
-			array( 'ln_wiki' => 'smdwiki' ),
-			array(
-				array( 'StoreMigrationDataUser 1' ),
-				array( 'StoreMigrationDataUser 2' ),
-				array( 'StoreMigrationDataUser 3' ),
-			)
+			[ 'ln_wiki' => 'smdwiki' ],
+			[
+				[ 'StoreMigrationDataUser 1' ],
+				[ 'StoreMigrationDataUser 2' ],
+				[ 'StoreMigrationDataUser 3' ],
+			]
 		);
 	}
 
@@ -168,11 +168,11 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 		// Check the DB
 		$this->assertSelect(
 			'globaluser',
-			array( 'gu_name', 'gu_locked', 'gu_hidden' ),
-			array( 'gu_name' => 'GlobalUser' ),
-			array(
-				array( 'GlobalUser', '1', CentralAuthUser::HIDDEN_LISTS )
-			)
+			[ 'gu_name', 'gu_locked', 'gu_hidden' ],
+			[ 'gu_name' => 'GlobalUser' ],
+			[
+				[ 'GlobalUser', '1', CentralAuthUser::HIDDEN_LISTS ]
+			]
 		);
 
 		// Check that the instance was reloaded from the DB
@@ -219,45 +219,45 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase 
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',
-			array( 'gu_id' => '1001' ),
-			array(
-				array( wfWikiID(), 'primary' ),
-				array( 'enwiki', 'primary' ),
-				array( 'dewiki', 'login' ),
-				array( 'metawiki', 'password' ),
-			)
+			[ 'gu_id' => '1001' ],
+			[
+				[ wfWikiID(), 'primary' ],
+				[ 'enwiki', 'primary' ],
+				[ 'dewiki', 'login' ],
+				[ 'metawiki', 'password' ],
+			]
 		);
 		$user->save( $this->db );
 
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
 			'GLUP@ssword',
-			array(
+			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
 				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-			)
+			],
+			[
+				[ 'metawiki', 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 
 		$u = new CentralAuthTestUser(
 			'GlobalSuppressedUser',
 			'GSUP@ssword',
-			array(
+			[
 				'gu_id' => '1004',
 				'gu_locked' => 1,
 				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
 				'gu_email' => 'testsuppressed@localhost',
 				'gu_home_db' => 'metawiki',
-			),
-			array(
-				array( 'metawiki', 'primary' ),
-			)
+			],
+			[
+				[ 'metawiki', 'primary' ],
+			]
 		);
 		$u->save( $this->db );
 	}

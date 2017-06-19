@@ -54,59 +54,59 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return array
 	 */
 	function getFormFields() {
-		$fields = array(
-			'oldname' => array(
+		$fields = [
+			'oldname' => [
 				'id' => 'mw-globalrenameuser-oldname',
 				'name' => 'oldname',
 				'label-message' => 'centralauth-rename-form-oldname',
 				'type' => 'text',
 				'required' => true,
 				'cssclass' => 'mw-autocomplete-global-user'
-			),
-			'newname' => array(
+			],
+			'newname' => [
 				'id' => 'mw-globalrenameuser-newname',
 				'name' => 'newname',
 				'label-message' => 'centralauth-rename-form-newname',
 				'type' => 'text',
 				'required' => true
-			),
-			'reason' => array(
+			],
+			'reason' => [
 				'id' => 'mw-globalrenameuser-reason',
 				'name' => 'reason',
 				'label-message' => 'centralauth-rename-form-reason',
 				'type' => 'text',
-			),
-			'movepages' => array(
+			],
+			'movepages' => [
 				'id' => 'mw-globalrenameuser-movepages',
 				'name' => 'movepages',
 				'label-message' => 'centralauth-rename-form-movepages',
 				'type' => 'check',
 				'default' => 1,
-			),
-			'suppressredirects' => array(
+			],
+			'suppressredirects' => [
 				'id' => 'mw-globalrenameuser-suppressredirects',
 				'name' => 'suppressredirects',
 				'label-message' => 'centralauth-rename-form-suppressredirects',
 				'type' => 'check',
-			),
-			'overrideantispoof' => array(
+			],
+			'overrideantispoof' => [
 				'id' => 'mw-globalrenameuser-overrideantispoof',
 				'name' => 'overrideantispoof',
 				'label-message' => 'centralauth-rename-form-overrideantispoof',
 				'type' => 'check'
-			),
-			'overridetitleblacklist' => array(
+			],
+			'overridetitleblacklist' => [
 				'id' => 'mw-globalrenameuser-overridetitleblacklist',
 				'name' => 'overridetitleblacklist',
 				'label-message' => 'centralauth-rename-form-overridetitleblacklist',
 				'type' => 'check'
-			),
-			'allowhigheditcount' => array(
+			],
+			'allowhigheditcount' => [
 				'name' => 'allowhigheditcount',
 				'type' => 'hidden',
 				'default' => '',
-			)
-		);
+			]
+		];
 
 		// Ask for confirmation if the user has more than 50k edits globally
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
@@ -115,12 +115,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			if ( $oldUser ) {
 				$caUser = CentralAuthUser::getInstance( $oldUser );
 				if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
-					$fields['allowhigheditcount'] = array(
+					$fields['allowhigheditcount'] = [
 						'id' => 'mw-globalrenameuser-allowhigheditcount',
 						'label' => $this->msg( 'centralauth-rename-form-allowhigheditcount' )
 							->numParams( self::EDITCOUNT_THRESHOLD )->escaped(),
 						'type' => 'check'
-					);
+					];
 				}
 			}
 		}
@@ -206,7 +206,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return array Usernames that are safe to display - non-hidden usernames are linked to Special:CA
 	 */
 	public function processAntiSpoofConflicts( $oldname, array $conflicts ) {
-		$display = array();
+		$display = [];
 		foreach ( $conflicts as $name ) {
 			if ( $name === $oldname ) {
 				// Not a conflict since the old usage will go away

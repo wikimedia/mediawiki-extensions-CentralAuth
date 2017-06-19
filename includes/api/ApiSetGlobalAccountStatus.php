@@ -83,63 +83,63 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 		// Logging etc
 		if ( $status->isGood() ) {
-			$this->getResult()->addValue( null, $this->getModuleName(), array(
+			$this->getResult()->addValue( null, $this->getModuleName(), [
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),
 				'hidden' => $globalUser->getHiddenLevel(),
 				'reason' => $reason
-			) );
+			] );
 		} else {
 			$error = $this->getErrorFormatter()->arrayFromStatus( $status );
 			$this->getResult()->addValue( 'error', null, $error );
-			$this->getResult()->addValue( null, $this->getModuleName(), array(
+			$this->getResult()->addValue( null, $this->getModuleName(), [
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),
 				'hidden' => $globalUser->getHiddenLevel(),
-			) );
+			] );
 		}
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'user' => array(
+		return [
+			'user' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true
-			),
-			'locked' => array(
-				ApiBase::PARAM_TYPE => array(
+			],
+			'locked' => [
+				ApiBase::PARAM_TYPE => [
 					'lock',
 					'unlock',
 					'' // Unset - basically means 'do not modify lock status'
-				)
-			),
-			'hidden' => array(
-				ApiBase::PARAM_TYPE => array(
+				]
+			],
+			'hidden' => [
+				ApiBase::PARAM_TYPE => [
 					CentralAuthUser::HIDDEN_NONE,
 					CentralAuthUser::HIDDEN_LISTS,
 					CentralAuthUser::HIDDEN_OVERSIGHT
-				)
-			),
-			'reason' => array(
+				]
+			],
+			'reason' => [
 				ApiBase::PARAM_TYPE => 'string'
-			),
-			'statecheck' => array(
+			],
+			'statecheck' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => false
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=setglobalaccountstatus&user=Example&locked=lock&hidden=&reason=Spam'
 				=> 'apihelp-setglobalaccountstatus-example-1',
 			'action=setglobalaccountstatus&user=Example&locked=unlock&hidden=suppressed&reason=I%20can'
 				=> 'apihelp-setglobalaccountstatus-example-2',
-		);
+		];
 	}
 
 	public function mustBePosted() {
@@ -164,7 +164,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	}
 
 	public static function injectTokenFunction( &$list ) {
-		$list['setglobalaccountstatus'] = array( __CLASS__, 'getToken' );
+		$list['setglobalaccountstatus'] = [ __CLASS__, 'getToken' ];
 		return true; // Hooks must return bool
 	}
 }

@@ -43,7 +43,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
 		// Add basic info
 		$result = $this->getResult();
-		$data = array();
+		$data = [];
 		$userExists = $user->exists();
 
 		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE || $this->getUser()->isAllowed( 'centralauth-oversight' ) ) ) {
@@ -69,12 +69,12 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		if ( $userExists && isset( $prop['groups'] ) ) {
 			$groups = $user->getGlobalGroups();
 			$result->setIndexedTagName( $groups, 'g' );
-			$result->addValue( array( 'query', $this->getModuleName() ), 'groups', $groups );
+			$result->addValue( [ 'query', $this->getModuleName() ], 'groups', $groups );
 		}
 		if ( $userExists && isset( $prop['rights'] ) ) {
 			$rights = $user->getGlobalRights();
 			$result->setIndexedTagName( $rights, 'r' );
-			$result->addValue( array( 'query', $this->getModuleName() ), 'rights', $rights );
+			$result->addValue( [ 'query', $this->getModuleName() ], 'rights', $rights );
 		}
 
 		$attachedAccounts = null;
@@ -86,48 +86,48 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			foreach ( $attachedAccounts as $account ) {
 				$dbname = $account['wiki'];
 				$wiki = WikiMap::getWiki( $dbname );
-				$a = array(
+				$a = [
 					'wiki' => $dbname,
 					'url' => $wiki->getCanonicalServer(),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
 					'editcount' => intval( $account['editCount'] ),
 					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
-				);
+				];
 				if ( $account['blocked'] ) {
-					$a['blocked'] = array(
+					$a['blocked'] = [
 						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
 						'reason' => $account['block-reason']
-					);
+					];
 				}
-				$result->addValue( array( 'query', $this->getModuleName(), 'merged' ), null, $a );
+				$result->addValue( [ 'query', $this->getModuleName(), 'merged' ], null, $a );
 			}
-			$result->addIndexedTagName( array( 'query', $this->getModuleName(), 'merged' ), 'account' );
+			$result->addIndexedTagName( [ 'query', $this->getModuleName(), 'merged' ], 'account' );
 		}
 		if ( $userExists && isset( $prop['editcount'] ) ) {
 			$editcount = 0;
 			foreach ( $attachedAccounts as $account ) {
 				$editcount += $account['editCount'];
 			}
-			$result->addValue( 'query', $this->getModuleName(), array( 'editcount' => $editcount ) );
+			$result->addValue( 'query', $this->getModuleName(), [ 'editcount' => $editcount ] );
 		}
 		if ( isset ( $prop['unattached'] ) ) {
 			$accounts = $user->queryUnattached();
 			foreach ( $accounts as $account ) {
-				$a = array(
+				$a = [
 					'wiki' => $account['wiki'],
 					'editcount' => $account['editCount'],
 					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
-				);
+				];
 				if ( $account['blocked'] ) {
-					$a['blocked'] = array(
+					$a['blocked'] = [
 						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
 						'reason' => $account['block-reason']
-					);
+					];
 				}
-				$result->addValue( array( 'query', $this->getModuleName(), 'unattached' ), null, $a );
+				$result->addValue( [ 'query', $this->getModuleName(), 'unattached' ], null, $a );
 			}
-			$result->addIndexedTagName( array( 'query', $this->getModuleName(), 'unattached' ), 'account' );
+			$result->addIndexedTagName( [ 'query', $this->getModuleName(), 'unattached' ], 'account' );
 		}
 	}
 
@@ -142,30 +142,30 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		return array(
+		return [
 			'user' => null,
-			'prop' => array(
-				ApiBase::PARAM_TYPE => array(
+			'prop' => [
+				ApiBase::PARAM_TYPE => [
 					'groups',
 					'rights',
 					'merged',
 					'unattached',
 					'editcount'
-				),
+				],
 				ApiBase::PARAM_ISMULTI => true
-			)
-		);
+			]
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=query&meta=globaluserinfo'
 				=> 'apihelp-query+globaluserinfo-example-1',
 			'action=query&meta=globaluserinfo&guiuser=Example&guiprop=groups|merged|unattached'
 				=> 'apihelp-query+globaluserinfo-example-2',
-		);
+		];
 	}
 }

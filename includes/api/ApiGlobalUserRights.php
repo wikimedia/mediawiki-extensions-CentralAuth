@@ -38,11 +38,11 @@ class ApiGlobalUserRights extends ApiUserrights {
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=userrights&user=FooBot&add=bot&remove=sysop|bureaucrat&token=123ABC'
 				=> 'apihelp-globaluserrights-example-1',
 			'action=userrights&userid=123&add=bot&remove=sysop|bureaucrat&token=123ABC'
 				=> 'apihelp-globaluserrights-example-2',
-		);
+		];
 	}
 }

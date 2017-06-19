@@ -7,7 +7,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
 	) {
 		if ( !$idToName ) {
-			return array();
+			return [];
 		}
 
 		$audience = $this->checkAudience( $audience );
@@ -21,13 +21,13 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$res = $db->select(
 			$queryInfo['tables'],
 			$queryInfo['fields'],
-			array( 'gu_id' => array_map( 'intval', array_keys( $idToName ) ) ) + $queryInfo['where'],
+			[ 'gu_id' => array_map( 'intval', array_keys( $idToName ) ) ] + $queryInfo['where'],
 			__METHOD__,
 			$queryInfo['options'],
 			$queryInfo['joinConds']
 		);
 		foreach ( $res as $row ) {
-			$centralUser = CentralAuthUser::newFromRow( $row, array(), $fromMaster );
+			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromMaster );
 			if ( $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE
 				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
 			) {
@@ -44,7 +44,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		array $nameToId, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
 	) {
 		if ( !$nameToId ) {
-			return array();
+			return [];
 		}
 
 		$audience = $this->checkAudience( $audience );
@@ -58,13 +58,13 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$res = $db->select(
 			$queryInfo['tables'],
 			$queryInfo['fields'],
-			array( 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ) + $queryInfo['where'],
+			[ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] + $queryInfo['where'],
 			__METHOD__,
 			$queryInfo['options'],
 			$queryInfo['joinConds']
 		);
 		foreach ( $res as $row ) {
-			$centralUser = CentralAuthUser::newFromRow( $row, array(), $fromMaster );
+			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromMaster );
 			if ( $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE
 				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
 			) {

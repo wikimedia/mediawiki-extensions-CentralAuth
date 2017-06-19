@@ -16,18 +16,18 @@ class PopulateHomeDB extends Maintenance {
 
 	public function execute() {
 		$db = CentralAuthUtils::getCentralSlaveDB();
-		$conds = array();
+		$conds = [];
 		$count = 0;
 		do {
 			$result = $db->select(
 				'globaluser',
-				array( 'gu_name' ),
-				array_merge( $conds, array( 'gu_home_db IS NULL OR gu_home_db = ""' ) ),
+				[ 'gu_name' ],
+				array_merge( $conds, [ 'gu_home_db IS NULL OR gu_home_db = ""' ] ),
 				__METHOD__,
-				array(
+				[
 					'LIMIT' => $this->mBatchSize,
 					'ORDER BY' => 'gu_name',
-				)
+				]
 			);
 
 			foreach ( $result as $row ) {
@@ -41,7 +41,7 @@ class PopulateHomeDB extends Maintenance {
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}
-			$conds = array( 'gu_name > ' . $db->addQuotes( $row->gu_name ) );
+			$conds = [ 'gu_name > ' . $db->addQuotes( $row->gu_name ) ];
 		} while ( true );
 		$this->output( "done.\n" );
 	}

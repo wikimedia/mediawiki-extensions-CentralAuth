@@ -97,7 +97,7 @@ class GlobalUserMerge {
 	}
 
 	public function merge( $reason ) {
-		$wikis = array();
+		$wikis = [];
 		foreach ( $this->oldCAUsers as $oldCAUser ) {
 			$oldWikis = $oldCAUser->listAttached();
 			foreach ( $oldWikis as $wiki ) {
@@ -118,13 +118,13 @@ class GlobalUserMerge {
 			$newId = $this->newCAUser->getId();
 
 			$logger = LoggerFactory::getInstance( 'CentralAuthUserMerge' );
-			$logger->info( "Merged '{oldname}' into '{newname}'", array(
+			$logger->info( "Merged '{oldname}' into '{newname}'", [
 				'oldname' => $oldName,
 				'oldid' => $oldId,
 				'newname' => $newName,
 				'newid' => $newId,
 				'attached' => $oldCAUser->listAttached(),
-			) );
+			] );
 
 			$this->databaseUpdates->merge( $oldName, $newName, $newId );
 			$this->databaseUpdates->mergeGlobalUserGroups( $oldId, $newId );
@@ -132,7 +132,7 @@ class GlobalUserMerge {
 			$oldCAUser->removeAntiSpoof();
 
 			Hooks::run( 'CentralAuthGlobalUserMerged',
-				array( $oldName, $newName, $oldId, $newId ) );
+				[ $oldName, $newName, $oldId, $newId ] );
 		}
 
 		$this->clearCaches();
@@ -153,16 +153,16 @@ class GlobalUserMerge {
 	 * @return Status
 	 */
 	private function setRenameStatuses( array $wikis ) {
-		$rows = array();
+		$rows = [];
 		foreach ( $wikis as $wiki => $users ) {
 			foreach ( $users as $user ) {
 				// @TODO: This shouldn't know about these column names
-				$rows[] = array(
+				$rows[] = [
 					'ru_wiki' => $wiki,
 					'ru_oldname' => $user,
 					'ru_newname' => $this->newCAUser->getName(),
 					'ru_status' => 'queued'
-				);
+				];
 			}
 		}
 
@@ -195,12 +195,12 @@ class GlobalUserMerge {
 	private function getJob( array $users ) {
 		return new LocalUserMergeJob(
 			Title::newFromText( 'Global merge job' ),
-			array(
+			[
 				'to' => $this->newCAUser->getName(),
 				'renamer' => $this->performingUser->getName(),
 				'from' => $users,
 				'session' => $this->session,
-			)
+			]
 		);
 	}
 }

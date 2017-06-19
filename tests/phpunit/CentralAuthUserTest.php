@@ -48,12 +48,12 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( 'CentralAuthUser' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'queryAttachedBasic', 'queryAttached', 'loadState' ) )
+			->setMethods( [ 'queryAttachedBasic', 'queryAttached', 'loadState' ] )
 			->getMock();
 
 		$ca->expects( $this->any() )->method( 'queryAttachedBasic' )->will( $this->returnValue(
 			array_map( function ( $data ) {
-				return array_intersect_key( $data, array( 'attachedMethod' => true ) );
+				return array_intersect_key( $data, [ 'attachedMethod' => true ] );
 			}, $attached )
 		) );
 		$ca->expects( $this->any() )->method( 'queryAttached' )->will( $this->returnValue( $attached ) );
@@ -61,27 +61,27 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	}
 
 	public function provideGetHomeWiki() {
-		return array(
-			array( array(), null ),
-			array( array( 'foowiki' => array( 'attachedMethod' => 'new' ) ), 'foowiki' ),
-			array( array( 'foowiki' => array( 'attachedMethod' => 'primary' ) ), 'foowiki' ),
-			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ), 'bazwiki' => array( 'attachedMethod' => 'new' ) ), 'bazwiki' ),
-			array( array( 'foowiki' => array( 'attachedMethod' => 'password' ) ), 'foowiki' ),
-			array(
-				array(
-					'foowiki' => array( 'attachedMethod' => 'primary', 'editCount' => 4 ),
-					'barwiki' => array( 'attachedMethod' => 'password', 'editCount' => 6 )
-				),
+		return [
+			[ [], null ],
+			[ [ 'foowiki' => [ 'attachedMethod' => 'new' ] ], 'foowiki' ],
+			[ [ 'foowiki' => [ 'attachedMethod' => 'primary' ] ], 'foowiki' ],
+			[ [ 'foowiki' => [ 'attachedMethod' => 'password' ], 'bazwiki' => [ 'attachedMethod' => 'new' ] ], 'bazwiki' ],
+			[ [ 'foowiki' => [ 'attachedMethod' => 'password' ] ], 'foowiki' ],
+			[
+				[
+					'foowiki' => [ 'attachedMethod' => 'primary', 'editCount' => 4 ],
+					'barwiki' => [ 'attachedMethod' => 'password', 'editCount' => 6 ]
+				],
 				'foowiki' // Primary account "wins" over edit count
-			),
-			array(
-				array(
-					'foowiki' => array( 'attachedMethod' => 'password', 'editCount' => 4 ),
-					'barwiki' => array( 'attachedMethod' => 'password', 'editCount' => 6 )
-				),
+			],
+			[
+				[
+					'foowiki' => [ 'attachedMethod' => 'password', 'editCount' => 4 ],
+					'barwiki' => [ 'attachedMethod' => 'password', 'editCount' => 6 ]
+				],
 				'barwiki'
-			)
-		);
+			]
+		];
 	}
 
 	/**
@@ -94,75 +94,75 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	}
 
 	public static function provideChooseHomeWiki() {
-		return array(
+		return [
 			// Groups win
-			array( 'barwiki', array(
-				'foowiki' => array(
-					'groupMemberships' => array(
+			[ 'barwiki', [
+				'foowiki' => [
+					'groupMemberships' => [
 						'sysop' => new UserGroupMembership( 123, 'sysop' ),
-					),
-				),
-				'barwiki' => array(
-					'groupMemberships' => array(
+					],
+				],
+				'barwiki' => [
+					'groupMemberships' => [
 						'checkuser' => new UserGroupMembership( 321, 'checkuser' ),
-					),
-				),
-			) ),
+					],
+				],
+			] ],
 			// Groups tie, editcount wins
-			array( 'barwiki', array(
-				'foowiki' => array(
-					'groupMemberships' => array(
+			[ 'barwiki', [
+				'foowiki' => [
+					'groupMemberships' => [
 						'sysop' => new UserGroupMembership( 123, 'sysop' ),
 						'checkuser' => new UserGroupMembership( 123, 'checkuser' ),
-					),
+					],
 					'editCount' => '100',
-				),
-				'barwiki' => array(
-					'groupMemberships' => array(
+				],
+				'barwiki' => [
+					'groupMemberships' => [
 						'checkuser' => new UserGroupMembership( 321, 'checkuser' ),
-					),
+					],
 					'editCount' => '100000000',
-				),
-			) ),
+				],
+			] ],
 			// No groups, Editcount wins
-			array( 'barwiki', array(
-				'foowiki' => array(
-					'groupMemberships' => array(),
+			[ 'barwiki', [
+				'foowiki' => [
+					'groupMemberships' => [],
 					'editCount' => '100'
-				),
-				'barwiki' => array(
-					'groupMemberships' => array(),
+				],
+				'barwiki' => [
+					'groupMemberships' => [],
 					'editCount' => '1000'
-				),
-			) ),
+				],
+			] ],
 			// Edit count ties, super old registration (null) wins
-			array( 'foowiki', array(
-				'foowiki' => array(
-					'groupMemberships' => array(),
+			[ 'foowiki', [
+				'foowiki' => [
+					'groupMemberships' => [],
 					'editCount' => '5',
 					'registration' => null
-				),
-				'barwiki' => array(
-					'groupMemberships' => array(),
+				],
+				'barwiki' => [
+					'groupMemberships' => [],
 					'editCount' => '5',
 					'registration' => '20150305220251',
-				),
-			) ),
+				],
+			] ],
 			// Edit count ties, registration wins
-			array( 'foowiki', array(
-				'foowiki' => array(
-					'groupMemberships' => array(),
+			[ 'foowiki', [
+				'foowiki' => [
+					'groupMemberships' => [],
 					'editCount' => '5',
 					'registration' => '20100305220251'
-				),
-				'barwiki' => array(
-					'groupMemberships' => array(),
+				],
+				'barwiki' => [
+					'groupMemberships' => [],
 					'editCount' => '5',
 					'registration' => '20150305220251',
-				),
-			) )
+				],
+			] ]
 
-		);
+		];
 	}
 
 	/**
@@ -175,29 +175,29 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		$method = $class->getMethod( 'getPasswordFromString' );
 		$method->setAccessible( true );
 		$ca = new CentralAuthUser( 'DoesNotExist' );
-		$password = $method->invokeArgs( $ca, array( $pass, $salt ) );
+		$password = $method->invokeArgs( $ca, [ $pass, $salt ] );
 		$this->assertInstanceOf( 'Password', $password );
 		$this->assertInstanceOf( $type, $password );
 	}
 
 	public static function provideGetPasswordFromString() {
-		return array(
-			array(
+		return [
+			[
 				':pbkdf2:sha256:10000:128:Oin6/F737E41pY7dza46Dw==:f6LNAySaUdEnjI2omuj+CX1aPDnt5bzgZcdLsEcLWqF7vG0CcMyviqWaq8smXCj2HBY0sV/w2kxpsTXXOgUrJJTEjuXmEsxHTtpMO4fCfZ5nb3a1kCYA44owCzKu96i8I6VrmGYu3waxmVAzlXld3bNIxrhGUjra/Y0TmWOe1q0=',
 				'',
 				'Pbkdf2Password'
-			),
-			array(
+			],
+			[
 				':B:6540e6ad:b02a3700be1eec9488a46b042a831646',
 				'',
 				'MWSaltedPassword'
-			),
-			array(
+			],
+			[
 				'b02a3700be1eec9488a46b042a831646',
 				'6540e6ad',
 				'MWSaltedPassword',
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -209,7 +209,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( 'CentralAuthUser' )
 			->disableOriginalConstructor()
-			->setMethods( array( 'queryAttached' ) )
+			->setMethods( [ 'queryAttached' ] )
 			->getMock();
 		$ca->expects( $this->any() )->method( 'queryAttached' )->will( $this->returnValue( $attached ) );
 
@@ -217,71 +217,71 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	}
 
 	public function provideOnPasswordPoliciesForUser() {
-		return array(
-			array(
-				array(
-					'enwiki' => array(
+		return [
+			[
+				[
+					'enwiki' => [
 						'wiki' => 'enwiki',
 						'attachedTimestamp' => '20130627183725',
 						'attachedMethod' => 'login',
 						'id' => '1234',
-						'groupMemberships' => array(),
-					),
-					'commonswiki' => array(
+						'groupMemberships' => [],
+					],
+					'commonswiki' => [
 						'wiki' => 'commonswiki',
 						'attachedTimestamp' => '20130627183726',
 						'attachedMethod' => 'login',
 						'id' => '4321',
-						'groupMemberships' => array(),
-					),
-				),
-				array()
-			),
-			array(
-				array(
-					'enwiki' => array(
+						'groupMemberships' => [],
+					],
+				],
+				[]
+			],
+			[
+				[
+					'enwiki' => [
 						'wiki' => 'enwiki',
 						'attachedTimestamp' => '20130627183727',
 						'attachedMethod' => 'login',
 						'id' => '12345',
-						'groupMemberships' => array(
+						'groupMemberships' => [
 							'sysop' => new UserGroupMembership( 12345, 'sysop' ),
-						),
-					),
-					'commonswiki' => array(
+						],
+					],
+					'commonswiki' => [
 						'wiki' => 'commonswiki',
 						'attachedTimestamp' => '20130627183728',
 						'attachedMethod' => 'login',
 						'id' => '54321',
-						'groupMemberships' => array(
+						'groupMemberships' => [
 							'sysop' => new UserGroupMembership( 54321, 'sysop' ),
-						),
-					),
-				),
-				array( 'sysop' )
-			),
-			array(
-				array(
-					'enwiki' => array(
+						],
+					],
+				],
+				[ 'sysop' ]
+			],
+			[
+				[
+					'enwiki' => [
 						'wiki' => 'enwiki',
 						'attachedTimestamp' => '20130627183729',
 						'attachedMethod' => 'login',
 						'id' => '123456',
-						'groupMemberships' => array(
+						'groupMemberships' => [
 							'bureaucrat' => new UserGroupMembership( 123456, 'bureaucrat' ),
-						),
-					),
-					'commonswiki' => array(
+						],
+					],
+					'commonswiki' => [
 						'wiki' => 'commonswiki',
 						'attachedTimestamp' => '20130627183720',
 						'attachedMethod' => 'login',
 						'id' => '654321',
-						'groupMemberships' => array(),
-					),
-				),
-				array( 'bureaucrat' )
-			),
-		);
+						'groupMemberships' => [],
+					],
+				],
+				[ 'bureaucrat' ]
+			],
+		];
 	}
 
 }

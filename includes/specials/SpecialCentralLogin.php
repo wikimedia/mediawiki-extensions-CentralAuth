@@ -134,10 +134,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// Note: the "remember me" token must be dealt with later (security).
 			$delay = $this->session->delaySave();
 			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			$newSessionId = CentralAuthUtils::setCentralSession( array(
+			$newSessionId = CentralAuthUtils::setCentralSession( [
 				'pending_name' => $centralUser->getName(),
 				'pending_guid' => $centralUser->getId()
-			), true, $this->session );
+			], true, $this->session );
 			$this->session->persist();
 			ScopedCallback::consume( $delay );
 		} else {
@@ -148,13 +148,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
 		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
-		$data = array(
+		$data = [
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
-		);
+		];
 		$cache->set( $key, $data, 60 );
 
-		$query = array( 'token' => $token );
+		$query = [ 'token' => $token ];
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -167,7 +167,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$url = $info['currentProto'] . ':' . $url;
 
 		$url = wfAppendQuery( $url, $query ); // expands to PROTO_CURRENT if $url doesn't have protocol
-		Hooks::run( 'CentralAuthSilentLoginRedirect', array( $centralUser, &$url, $info ) );
+		Hooks::run( 'CentralAuthSilentLoginRedirect', [ $centralUser, &$url, $info ] );
 		$this->getOutput()->redirect( $url );
 	}
 
@@ -242,11 +242,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $attempt['stickHTTPS'] !== null ) {
 			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
 		}
-		$newSessionId = CentralAuthUtils::setCentralSession( array(
+		$newSessionId = CentralAuthUtils::setCentralSession( [
 			'finalProto' => $attempt['finalProto'],
 			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
-		), $info['sessionId'], $this->session );
+		], $info['sessionId'], $this->session );
 		$this->session->persist();
 		ScopedCallback::consume( $delay );
 
@@ -270,13 +270,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Allow other extensions to modify the returnTo and returnToQuery
-		Hooks::run( 'CentralAuthPostLoginRedirect', array(
+		Hooks::run( 'CentralAuthPostLoginRedirect', [
 			&$attempt['returnTo'],
 			&$attempt['returnToQuery'],
 			$attempt['stickHTTPS'],
 			$attempt['type'],
 			&$inject_html
-		) );
+		] );
 
 		if ( $inject_html === '' ) {
 			$action = 'successredirect';

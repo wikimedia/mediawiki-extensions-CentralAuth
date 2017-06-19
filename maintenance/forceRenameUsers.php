@@ -55,9 +55,9 @@ class ForceRenameUsers extends Maintenance {
 
 	protected function getCurrentRenameCount( IDatabase $dbw ) {
 		$row = $dbw->selectRow(
-			array( 'renameuser_status' ),
-			array( 'COUNT(*) as count' ),
-			array(),
+			[ 'renameuser_status' ],
+			[ 'COUNT(*) as count' ],
+			[],
 			__METHOD__
 		);
 		return (int)$row->count;
@@ -94,12 +94,12 @@ class ForceRenameUsers extends Maintenance {
 		$this->log( "Renaming $name to {$newCAUser->getName()}." );
 
 		$statuses = new GlobalRenameUserStatus( $name );
-		$success = $statuses->setStatuses( array( array(
+		$success = $statuses->setStatuses( [ [
 			'ru_wiki' => $wiki,
 			'ru_oldname' => $name,
 			'ru_newname' => $newCAUser->getName(),
 			'ru_status' => 'queued'
-		) ) );
+		] ] );
 
 		if ( !$success ) {
 			$this->log( "WARNING: Race condition, renameuser_status already set for {$newCAUser->getName()}. Skipping." );
@@ -110,7 +110,7 @@ class ForceRenameUsers extends Maintenance {
 
 		$job = new LocalRenameUserJob(
 			Title::newFromText( 'Global rename job' ),
-			array(
+			[
 				'from' => $name,
 				'to' => $newCAUser->getName(),
 				'renamer' => 'Maintenance script',
@@ -118,7 +118,7 @@ class ForceRenameUsers extends Maintenance {
 				'suppressredirects' => true,
 				'promotetoglobal' => true,
 				'reason' => $this->getOption( 'reason' ),
-			)
+			]
 		);
 
 		JobQueueGroup::singleton( $row->utr_wiki )->push( $job );
@@ -133,7 +133,7 @@ class ForceRenameUsers extends Maintenance {
 	 * @return stdClass[]
 	 */
 	protected function findUsers( $wiki, IDatabase $dbw ) {
-		$rowsToRename = array();
+		$rowsToRename = [];
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize );
 
