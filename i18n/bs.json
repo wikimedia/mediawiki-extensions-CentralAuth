@@ -282,6 +282,7 @@
 	"globalrenamequeue-desc": "Obrađivanje globalnih zahtjeva za preimenovanje",
 	"globalrenamequeue-column-rq-newname": "Željeno korisničko ime",
 	"centralauth-log-gblrename-oldname": "Prethodno korisničko ime:",
+	"centralauth-contribs-locked": "Ovaj račun je globalno zaključan.\nZa više informacija pogledajte [[Special:CentralAuth/$1|detalje o globalnom računu]].",
 	"centralauth-contribs-locked-log": "Ovaj račun je globalno zaključan.\nIspod je prikazana posljednja stavka u zapisniku zaključavanja:",
 	"userswhowillberenamed": "Korisnici koji će biti preimenovani",
 	"log-action-filter-globalauth": "Vrsta izmjene:",
