@@ -43,12 +43,14 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 		if ( $db->tablePrefix() !== MediaWikiTestCase::DB_PREFIX ) {
 			$originalPrefix = $db->tablePrefix();
 			$db->tablePrefix( MediaWikiTestCase::DB_PREFIX );
-			if ( !$db->tableExists( 'globaluser' ) ) {
+			if ( !$db->tableExists( 'globaluser' ) ||
+				!$db->tableExists( 'globalnames' ) ) {
 				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
 			}
 			$db->tablePrefix( $originalPrefix );
 		} else {
-			if ( !$db->tableExists( 'globaluser' ) ) {
+			if ( !$db->tableExists( 'globaluser' ) ||
+				!$db->tableExists( 'globalnames' ) ) {
 				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
 			}
 		}
