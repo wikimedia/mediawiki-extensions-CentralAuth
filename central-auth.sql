@@ -13,7 +13,7 @@
 -- we know we have to sweep all the local databases and populate
 -- the localnames table.
 --
-CREATE TABLE /*_*/globalnames (
+CREATE TABLE IF NOT EXISTS /*_*/globalnames (
   gn_name varchar(255) binary not null,
   primary key (gn_name)
 ) /*$wgDBTableOptions*/;
@@ -29,7 +29,7 @@ CREATE TABLE /*_*/globalnames (
 -- separate databases to look for unmigrated accounts every time we log in;
 -- only existing databases not yet migrated have to be loaded.
 --
-CREATE TABLE /*_*/localnames (
+CREATE TABLE IF NOT EXISTS /*_*/localnames (
   ln_wiki varchar(255) binary not null,
   ln_name varchar(255) binary not null,
 
@@ -41,7 +41,7 @@ CREATE INDEX /*i*/ln_name_wiki ON /*_*/localnames (ln_name, ln_wiki);
 --
 -- Global account data.
 --
-CREATE TABLE /*_*/globaluser (
+CREATE TABLE IF NOT EXISTS /*_*/globaluser (
   -- Internal unique ID for the authentication server
   gu_id int primary key auto_increment,
 
@@ -102,7 +102,7 @@ CREATE INDEX /*i*/gu_hidden ON /*_*/globaluser ( gu_name(255), gu_hidden(255) );
 --
 -- All local DBs will be swept on an opt-in check event.
 --
-CREATE TABLE /*_*/localuser (
+CREATE TABLE IF NOT EXISTS /*_*/localuser (
   lu_wiki varchar(255) binary not null,
   lu_name varchar(255) binary not null,
 
@@ -126,7 +126,7 @@ CREATE TABLE /*_*/localuser (
 CREATE INDEX /*i*/lu_name_wiki ON /*_*/localuser (lu_name, lu_wiki);
 
 -- Global user groups.
-CREATE TABLE /*_*/global_user_groups (
+CREATE TABLE IF NOT EXISTS /*_*/global_user_groups (
   gug_user int(11) not null,
   gug_group varchar(255) not null,
 
@@ -137,7 +137,7 @@ CREATE INDEX /*i*/gug_user ON /*_*/global_user_groups (gug_user);
 CREATE INDEX /*i*/gug_group ON /*_*/global_user_groups (gug_group);
 
 -- Global group permissions.
-CREATE TABLE /*_*/global_group_permissions (
+CREATE TABLE IF NOT EXISTS /*_*/global_group_permissions (
   ggp_group varchar(255) not null,
   ggp_permission varchar(255) not null,
 
@@ -149,7 +149,7 @@ CREATE INDEX /*i*/ggp_permission ON /*_*/global_group_permissions (ggp_permissio
 
 -- Sets of wikis (for things like restricting global groups)
 -- May be defined in two ways: only specified wikis or all wikis except opt-outed
-CREATE TABLE /*_*/wikiset (
+CREATE TABLE IF NOT EXISTS /*_*/wikiset (
   -- ID of wikiset
   ws_id int primary key auto_increment,
   -- Display name of wikiset
@@ -166,7 +166,7 @@ CREATE TABLE /*_*/wikiset (
 CREATE UNIQUE INDEX /*i*/ws_name ON /*_*/wikiset (ws_name);
 
 -- Allow certain global groups to have their permissions only on certain wikis
-CREATE TABLE /*_*/global_group_restrictions (
+CREATE TABLE IF NOT EXISTS /*_*/global_group_restrictions (
   -- Group to restrict
   ggr_group varchar(255) not null,
   -- Wikiset to use
@@ -178,7 +178,7 @@ CREATE TABLE /*_*/global_group_restrictions (
 CREATE INDEX /*i*/ggr_set ON /*_*/global_group_restrictions (ggr_set);
 
 -- Table for global rename status
-CREATE TABLE /*_*/renameuser_status (
+CREATE TABLE IF NOT EXISTS /*_*/renameuser_status (
   -- Old name being renamed from
   ru_oldname varchar(255) binary not null,
   -- New name being renamed to
@@ -194,7 +194,7 @@ CREATE UNIQUE INDEX /*i*/ru_oldname ON /*_*/renameuser_status (ru_oldname, ru_wi
 -- Request queue for global account renames.
 -- Used to power special pages for requesting a global rename from a user's
 -- home wiki and a work queue of pending renames for stewards.
-CREATE TABLE /*_*/renameuser_queue (
+CREATE TABLE IF NOT EXISTS /*_*/renameuser_queue (
   -- Internal unique ID for the authentication server
   rq_id int primary key auto_increment,
 
@@ -239,7 +239,7 @@ CREATE INDEX /*i*/rq_requested_ts ON /*_*/renameuser_queue (rq_requested_ts);
 -- Table to store a list of users
 -- who will be renamed in the
 -- glorious finalization.
-CREATE TABLE /*_*/users_to_rename (
+CREATE TABLE IF NOT EXISTS /*_*/users_to_rename (
   -- id
   utr_id int primary key auto_increment,
 
