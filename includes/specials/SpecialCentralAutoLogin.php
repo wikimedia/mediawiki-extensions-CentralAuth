@@ -526,7 +526,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					$returnToQuery = array();
 				}
 
-				$redirectUrl = $returnToTitle->getFullURL( $returnToQuery );
+				$redirectUrl = $returnToTitle->getFullUrlForRedirect( $returnToQuery );
 
 				$script .= "\n" . 'location.href = ' . Xml::encodeJsVar( $redirectUrl ) . ';';
 
