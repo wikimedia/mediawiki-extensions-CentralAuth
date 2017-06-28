@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\IMaintainableDatabase;
+
 class CentralAuthHooks {
 
 	/**
@@ -472,7 +474,7 @@ class CentralAuthHooks {
 
 		// Check that this is actually for a special login page view
 		$title = $context->getTitle();
-		if ( $direct && ( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) ) ) {
+		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) ) ) {
 			// User will be redirected to Special:CentralLogin/start (central wiki),
 			// then redirected back to Special:CentralLogin/complete (this wiki).
 			// Sanity check that "returnto" is not one of the central login pages. If it
@@ -1424,5 +1426,60 @@ class CentralAuthHooks {
 		}
 
 		return true;
+	}
+
+	/**
+	 * UnitTestsAfterDatabaseSetup hook handler
+	 *
+	 * Setup the centralauth tables in the current DB, so we don't have
+	 * to worry about rights on another database. The first time it's called
+	 * we have to set the DB prefix ourselves, and reset it back to the original
+	 * so that CloneDatabase will work. On subsequent runs, the prefix is already
+	 * set up for us.
+	 *
+	 * @param IMaintainableDatabase $db
+	 */
+
+	public static function onUnitTestsAfterDatabaseSetup( IMaintainableDatabase $db ) {
+		global $wgCentralAuthDatabase;
+		$wgCentralAuthDatabase = false;
+
+		if ( $db->tablePrefix() !== MediaWikiTestCase::DB_PREFIX ) {
+			$originalPrefix = $db->tablePrefix();
+			$db->tablePrefix( MediaWikiTestCase::DB_PREFIX );
+			if ( !$db->tableExists( 'globaluser' ) ) {
+				$db->sourceFile( __DIR__ . '/../central-auth.sql' );
+			}
+			$db->tablePrefix( $originalPrefix );
+		} else {
+			if ( !$db->tableExists( 'globaluser' ) ) {
+				$db->sourceFile( __DIR__ . '/../central-auth.sql' );
+			}
+		}
+	}
+
+	public static $centralauthTables = [
+		'global_group_permissions',
+		'global_group_restrictions',
+		'global_user_groups',
+		'globalnames',
+		'globaluser',
+		'localnames',
+		'localuser',
+		'wikiset',
+		'renameuser_status',
+		'renameuser_queue',
+		'users_to_rename',
+	];
+
+	/**
+	 * UnitTestsBeforeDatabaseTeardown hook handler
+	 * Cleans up tables created by onUnitTestsAfterDatabaseSetup() above
+	 */
+	public static function onUnitTestsBeforeDatabaseTeardown() {
+		$db = wfGetDB( DB_MASTER );
+		foreach ( self::$centralauthTables as $table ) {
+			$db->dropTable( $table );
+		}
 	}
 }
