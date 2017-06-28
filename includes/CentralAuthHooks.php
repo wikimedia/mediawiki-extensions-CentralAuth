@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\Database;
+
 class CentralAuthHooks {
 
 	/**
@@ -472,7 +474,7 @@ class CentralAuthHooks {
 
 		// Check that this is actually for a special login page view
 		$title = $context->getTitle();
-		if ( $direct && ( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) ) ) {
+		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) ) ) {
 			// User will be redirected to Special:CentralLogin/start (central wiki),
 			// then redirected back to Special:CentralLogin/complete (this wiki).
 			// Sanity check that "returnto" is not one of the central login pages. If it
@@ -1424,5 +1426,44 @@ class CentralAuthHooks {
 		}
 
 		return true;
+	}
+
+	public static function onUnitTestsAfterDatabaseSetup( Database $db ) {
+		global $wgCentralAuthDatabase;
+		$wgCentralAuthDatabase = false;
+		//$db = wfGetDB( DB_MASTER );
+		if ( $db->tablePrefix() !== MediaWikiTestCase::DB_PREFIX ) {
+			$originalPrefix = $db->tablePrefix();
+			$db->tablePrefix( MediaWikiTestCase::DB_PREFIX );
+			if ( !$db->tableExists( 'globaluser' ) ) {
+				$db->sourceFile( __DIR__ . '/../central-auth.sql' );
+			}
+			$db->tablePrefix( $originalPrefix );
+		} else {
+			if ( !$db->tableExists( 'globaluser' ) ) {
+				$db->sourceFile( __DIR__ . '/../central-auth.sql' );
+			}
+		}
+	}
+
+	public static $centralauthTables = [
+		'global_group_permissions',
+		'global_group_restrictions',
+		'global_user_groups',
+		'globalnames',
+		'globaluser',
+		'localnames',
+		'localuser',
+		'wikiset',
+		'renameuser_status',
+		'renameuser_queue',
+		'users_to_rename',
+	];
+
+	public static function onUnitTestsBeforeDatabaseTeardown() {
+		$db = wfGetDB( DB_MASTER );
+		foreach ( self::$centralauthTables as $table ) {
+			$db->dropTable( $table );
+		}
 	}
 }

@@ -6,20 +6,6 @@
  */
 abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 
-	public static $centralauthTables = [
-		'global_group_permissions',
-		'global_group_restrictions',
-		'global_user_groups',
-		'globalnames',
-		'globaluser',
-		'localnames',
-		'localuser',
-		'wikiset',
-		'renameuser_status',
-		'renameuser_queue',
-		'users_to_rename',
-	];
-
 	// Keep track of the original db name
 	protected static $centralAuthDatabase = null;
 
@@ -31,6 +17,7 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 	 * setup for us.
 	 */
 	public static function setUpBeforeClass() {
+
 		global $wgCentralAuthDatabase;
 		parent::setUpBeforeClass();
 
@@ -39,27 +26,12 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 		}
 		$wgCentralAuthDatabase = false; // use the current wiki db
 
-		$db = wfGetDB( DB_MASTER );
-		if ( $db->tablePrefix() !== MediaWikiTestCase::DB_PREFIX ) {
-			$originalPrefix = $db->tablePrefix();
-			$db->tablePrefix( MediaWikiTestCase::DB_PREFIX );
-			if ( !$db->tableExists( 'globaluser' ) ) {
-				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
-			}
-			$db->tablePrefix( $originalPrefix );
-		} else {
-			if ( !$db->tableExists( 'globaluser' ) ) {
-				$db->sourceFile( __DIR__ . '/../../central-auth.sql' );
-			}
-		}
+
 	}
 
 	public static function tearDownAfterClass() {
 		global $wgCentralAuthDatabase;
-		$db = wfGetDB( DB_MASTER );
-		foreach ( self::$centralauthTables as $table ) {
-			$db->dropTable( $table );
-		}
+
 		if ( !is_null( self::$centralAuthDatabase ) ) {
 			$wgCentralAuthDatabase = self::$centralAuthDatabase;
 		}
@@ -67,7 +39,7 @@ abstract class CentralAuthTestCaseUsingDatabase extends MediaWikiTestCase {
 	}
 
 	public function __construct( $name = null, array $data = [], $dataName = '' ) {
-		$this->tablesUsed = array_merge( $this->tablesUsed, self::$centralauthTables );
+		$this->tablesUsed = array_merge( $this->tablesUsed, CentralAuthHooks::$centralauthTables );
 		parent::__construct( $name, $data, $dataName );
 	}
 }
