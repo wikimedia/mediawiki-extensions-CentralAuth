@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_c647064f",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1431,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-06-28T22:39:17Z",
+      "side": 1,
+      "message": "IDatabase or IMaintainableDatabase, not Database.",
+      "range": {
+        "startLine": 1431,
+        "startChar": 55,
+        "endLine": 1431,
+        "endChar": 63
+      },
+      "revId": "68dd8796cb89ba09fc0eefb53b25f594f759d54e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
