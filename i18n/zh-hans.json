@@ -353,7 +353,7 @@
 	"centralloginsuccesful": "已登录",
 	"centralauth-completelogin-back": "返回前一页",
 	"centralauth-error-wrongprovider": "此特殊页面在使用$1时不可用。",
-	"centralauth-error-nologinattempt": "你的会话没有主动登入尝试正在进行。",
+	"centralauth-error-nologinattempt": "您的会话没有主动登入尝试正在进行。",
 	"centralauth-error-badtoken": "提供的身份验证密钥过期或无效。",
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
