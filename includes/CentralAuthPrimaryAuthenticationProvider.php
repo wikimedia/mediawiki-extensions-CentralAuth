@@ -25,6 +25,7 @@ use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
+use MediaWiki\MediaWikiServices;
 
 /**
  * A primary authentication provider that uses the CentralAuth password.
@@ -140,7 +141,8 @@ class CentralAuthPrimaryAuthenticationProvider
 							'newname' => $renamedUsername,
 						]
 					);
-					RequestContext::getMain()->getStats()->increment( 'centralauth.migration.check' );
+					MediaWikiServices::getInstance()
+						->getStatsdDataFactory()->increment( 'centralauth.migration.check' );
 
 					if ( $renamed->authenticate( $req->password ) === 'ok' ) {
 						// At this point the user will be passed, so set the
