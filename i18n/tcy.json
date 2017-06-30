@@ -3,12 +3,13 @@
 		"authors": [
 			"VASANTH S.N.",
 			"Vishwanatha Badikana",
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"Kiranpoojary"
 		]
 	},
-	"centralauth-foreign-link": "ಬಳಕೆದಾರ $1 $2ದ ಉಲಾಯಿ",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|ಕಾಣಿಕೆಲು}} ನೆಟ್ಟ್  $2",
-	"centralauth-merge-method-login": "ಲಾಗಿನ್‍ ಸ್ರಿಸ್ಟಿಸಯಿನಾರ್",
+	"centralauth-foreign-link": "$2 ಡುಪ್ಪುನ $1 ಸದಸ್ಯೆರ್",
+	"centralauth-foreign-contributions": "$2 ಡುಪ್ಪುನ $1 {{PLURAL:$1|ಕಾನಿಕೆ|ಕಾನಿಕೆಲು}}",
+	"centralauth-merge-method-login": "ಲಾಗಿನ್‍ ಆನಗ ಉಂಡಾತ್‌ಂಡ್",
 	"centralauth-finish-login": "ಲಾಗಿನ್ ಆಲೆ",
 	"centralauth-finish-send-confirmation": "ಪೊಸ ಪಾಸ್-ವರ್ಡ್’ನ್ ಇ-ಮೇಲ್ ಮಲ್ಪುಲೆ",
 	"centralauth-admin-username": "ಸದಸ್ಯೆರ್ನ ಪುದರ್:",
