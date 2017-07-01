@@ -22,6 +22,30 @@
       "revId": "ad883d2fbcf80baece3873885d692e23ee0c3445",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_a022c9a0",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 3963
+      },
+      "writtenOn": "2017-07-01T16:31:03Z",
+      "side": 1,
+      "message": "OK, I understand, particularly the problem with empty new lines.\nDo you have an idea to solve this issue ?",
+      "parentUuid": "ee859f59_93106e5d",
+      "range": {
+        "startLine": 287,
+        "startChar": 14,
+        "endLine": 287,
+        "endChar": 15
+      },
+      "revId": "ad883d2fbcf80baece3873885d692e23ee0c3445",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
