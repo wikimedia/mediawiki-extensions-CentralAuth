@@ -168,6 +168,7 @@
 	"centralauth-login-no-others": "Automatski ste prijavljeni na druge projekte {{int: Centralauth-groupname}}.",
 	"centralauth-logout-no-others": "Automatski ste odjavljeni sa svih projekata koje drži {{int: Centralauth-groupname}}.",
 	"centralauth-hidden-blockreason": "globalno skriven od strane $1 u $2 sa sljedećim razlogom: $3",
+	"centralauth-login-error-locked": "Ne možete se prijaviti jer je Vaš suradnički račun globalno zaključan.",
 	"centralauth-log-name": "Evidencija globalnoga računa",
 	"centralauth-log-header": "Ova evidencija sadrži podatke o globalnim računima: brisanje, zaključavanja i otključavanje.",
 	"centralauth-log-entry-delete": "izbrisan globalni račun \"$1\"",
