@@ -4,7 +4,8 @@
 			"Asoxor",
 			"Calak",
 			"Muhammed taha",
-			"Sarchia"
+			"Sarchia",
+			"Lost Whispers"
 		]
 	},
 	"mergeaccount": "ڕەوشی یەکگرتووکردنی چوونەژوورەوە",
@@ -73,5 +74,17 @@
 	"right-centralauth-lock": "داخستن یان کردنەوەی ھەژماری جیھانی",
 	"right-centralauth-oversight": "شاردنەوەی ھەژماری جیھانی",
 	"right-centralauth-merge": "کردنەیەکی ھەژمارەکەیان",
-	"centralauth-rename-movelog": "لە کاتی گۆڕینی ناوی بەکارھێنەر «[[Special:CentralAuth/$1|$1]]» بۆ «[[Special:CentralAuth/$2|$2]]»، پەڕە بە شێوەی خۆگەڕ گوازرایەوە"
+	"centralauth-rename-form-oldname": "ناوی بەکارھێنەری ئێستا",
+	"centralauth-rename-alreadyexists": "ھەژمارێک لەژێر ھەمان ناو ھەیە. تکایە ناوێکی تر ھەڵبژێرە.",
+	"centralauth-rename-badusername": "ئەو ناوی بەکارھێنەرەی داواکراوە دروست نییە.",
+	"centralauth-rename-movelog": "لە کاتی گۆڕینی ناوی بەکارھێنەر «[[Special:CentralAuth/$1|$1]]» بۆ «[[Special:CentralAuth/$2|$2]]»، پەڕە بە شێوەی خۆگەڕ گوازرایەوە",
+	"globalrenamerequest": "داواکاری بۆ گۆڕینی ناوی گشتیی بەکارھێنەر",
+	"globalrenamerequest-pretext": "داواکاری ناوێکی نوێ بکە بۆ ھەژمارەکەت. ئەم کردارە ناوی ھەژمارەکەت لەسەر ھەموو پرۆژەکانی ویکیمیدیا دەگۆڕێت بۆ ئەو ناوە نوێیەی خەریکە ھەڵیدەبژێریت. ھیچ کامێک لە دەستکارییەکانت ناسڕدرێنەوە و ئەمە تەنھا ناوی بەکارھێنەرەکەت دەگۆڕێت. کاتێک داواکاری ناوێکی نوێت کرد، ھۆشدارێک دەنێردرێت بۆ ستیواردەکانی ویکیمیدیا بۆ ئەوەی بە گۆڕینی ناوەکە ھەستن. ئەگەر داواکارییەکە جێبەجێ کرا یانیش بە پێچەوانەوە، بە پۆستێکی ئەلیکترۆنی ئاگادار دەکرێیتەوە.",
+	"globalrenamerequest-username-label": "ناوی بەکارھێنەری ئێستا:",
+	"globalrenamerequest-newname-label": "ناوی بەکارھێنەری داواکراو:",
+	"globalrenamerequest-newname-help": "ئەو ناوە نوێیە ھەڵبژێرە کە دەتەوێت لەمەودوا بەکاری بھێنیت، نموونە: «$1».",
+	"globalrenamerequest-reason-label": "ھۆکاری گۆڕینی ناوی بەکارھێنەر",
+	"globalrenamerequest-submit-text": "داواکارییەکە پاشەکەوت بکە",
+	"globalrenamequeue-column-rq-newname": "ناوی بەکارھێنەری داواکراو",
+	"globalrenamequeue-form-newname": "ناوی بەکارھێنەری داواکراو:"
 }
