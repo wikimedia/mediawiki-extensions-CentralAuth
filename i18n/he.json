@@ -479,7 +479,7 @@
 	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד.",
 	"sulrenamewarning-authmanager-ok-help": "להמשיך אחרי הצגת הודעת שינוי השם.",
 	"globalrenamequeue-request-reason-label": "הערה על שורת יומן ציבורית (אם זה מתקבל)",
-	"apihelp-centralauthtoken-description": "אחזר centralauthtoken לביצוע בקשה מאומתת לוויקי משויך.",
+	"apihelp-centralauthtoken-description": "אחזור centralauthtoken לביצוע בקשה מאומתת לוויקי משויך.",
 	"apihelp-centralauthtoken-example-1": "אחזור centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "מחיקת משתמש גלובלי.",
 	"apihelp-deleteglobalaccount-summary": "מחק משתמש כלל- ויקיפדי",
