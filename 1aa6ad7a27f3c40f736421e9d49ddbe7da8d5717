@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8e742343_ba967195",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2017-07-03T22:50:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e742343_869b301b",
+      "revId": "1aa6ad7a27f3c40f736421e9d49ddbe7da8d5717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e742343_4686a8bf",
         "filename": "extension.json",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-06-30T20:05:06Z",
       "side": 1,
       "message": "Maybe cleaner to put these somewhere in /tests?",
+      "revId": "1aa6ad7a27f3c40f736421e9d49ddbe7da8d5717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_7a5a4924",
+        "filename": "extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2017-07-03T22:50:33Z",
+      "side": 1,
+      "message": "Dunno - tests aren\u0027t even registered in autoloader. From previous precendent, UnitTestsList handlers were in includes, not tests.",
+      "parentUuid": "8e742343_4686a8bf",
       "revId": "1aa6ad7a27f3c40f736421e9d49ddbe7da8d5717",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "8e742343_fafab9d9",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1447,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2017-07-03T22:50:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e742343_c6b85877",
+      "range": {
+        "startLine": 1447,
+        "startChar": 30,
+        "endLine": 1447,
+        "endChar": 58
+      },
+      "revId": "1aa6ad7a27f3c40f736421e9d49ddbe7da8d5717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e742343_06a7404d",
         "filename": "includes/CentralAuthHooks.php",
         "patchSetId": 2
@@ -70,6 +130,24 @@
       "writtenOn": "2017-06-30T20:05:06Z",
       "side": 1,
       "message": "Could be just\n\n\t$originalPrefix \u003d $db-\u003etablePrefix();\n\t$db-\u003etablePrefix( $prefix );\n\tif ( !$db-\u003etableExists( \u0027globaluser\u0027 ) ) {\n\t\t$db-\u003esourceFile( __DIR__ . \u0027/../central-auth.sql\u0027 );\n\t}\n\t$db-\u003etablePrefix( $originalPrefix );",
+      "revId": "1aa6ad7a27f3c40f736421e9d49ddbe7da8d5717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_9ae2952d",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1458,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2017-07-03T22:50:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e742343_06a7404d",
       "revId": "1aa6ad7a27f3c40f736421e9d49ddbe7da8d5717",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
