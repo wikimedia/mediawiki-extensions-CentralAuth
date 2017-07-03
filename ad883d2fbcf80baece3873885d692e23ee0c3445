@@ -46,6 +46,30 @@
       "revId": "ad883d2fbcf80baece3873885d692e23ee0c3445",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_76d26bd7",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-07-03T07:01:14Z",
+      "side": 1,
+      "message": "I\u0027m afraid I don\u0027t understand what you are missing. Just as I said: If all you want is some indention, use CSS please.",
+      "parentUuid": "8e742343_a022c9a0",
+      "range": {
+        "startLine": 287,
+        "startChar": 14,
+        "endLine": 287,
+        "endChar": 15
+      },
+      "revId": "ad883d2fbcf80baece3873885d692e23ee0c3445",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
