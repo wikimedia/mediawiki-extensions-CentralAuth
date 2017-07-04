@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e742343_3a3921f0",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 2547,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2017-07-04T04:09:50Z",
+      "side": 1,
+      "message": "Good find!",
+      "revId": "80eeb133cc707426c9fcca0cc1e6183d50f29211",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
