@@ -388,7 +388,9 @@
 		"AbuseFilter-builder": "CentralAuthHooks::abuseFilterBuilder",
 		"SecurePoll_GetUserParams": "CentralAuthHooks::onSecurePoll_GetUserParams",
 		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
-		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo"
+		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo",
+		"UnitTestsAfterDatabaseSetup": "CentralAuthHooks::onUnitTestsAfterDatabaseSetup",
+		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown"
 	},
 	"config": {
 		"@doc": "see CentralAuth.php",
