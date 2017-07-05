@@ -1,11 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kirsan"
+			"Kirsan",
+			"Kaszeba"
 		]
 	},
+	"centralauth-foreign-link": "Brëkòwnik $1 na $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|edicëjô|edicëje|edicëjów}} na $2",
+	"centralauth-merge-method-login": "ùsôdzoné przë wlogòwaniu",
 	"centralauth-admin-username": "Pòzwa brëkòwnika:",
 	"centralauth-admin-info-username": "Pòzwa brëkòwnika:",
+	"centralauth-admin-blocklog": "historëjô blokòwaniô",
 	"centralauth-rename-progress-username": "Pòzwa brëkòwnika",
 	"globalrenamequeue-column-rq-name": "Pòzwa brëkòwnika",
 	"globalrenamequeue-form-username": "Pòzwa brëkòwnika:"
