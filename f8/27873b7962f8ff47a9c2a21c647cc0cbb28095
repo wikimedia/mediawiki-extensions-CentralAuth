@@ -1,0 +1,8 @@
+Code-Review+1: Gergő Tisza <gtisza@wikimedia.org>
+Code-Review+2: Kaldari <rkaldari@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Wed, 05 Jul 2017 23:55:07 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/362098
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
