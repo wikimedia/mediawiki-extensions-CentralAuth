@@ -348,6 +348,7 @@
 	"right-centralauth-rename": "Canviar el nom de comptes globals",
 	"action-centralauth-rename": "canviar el nom de comptes globals",
 	"globalrenameprogress": "Progrés de canvi de nom global",
+	"globalrenameprogress-legend": "Vegeu el progrés del canvi de nom global",
 	"globalrenameuser": "Canvi de nom d'usuari global",
 	"globalrenameuser-legend": "Canvi de nom d'usuari global",
 	"centralauth-rename-abortlogin": "El vostre compte està en procés de canvi de nom o de fusió. [[Special:GlobalRenameProgress/$1|Vegeu l'estat]].",

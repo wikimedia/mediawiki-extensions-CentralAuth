@@ -156,7 +156,7 @@
 	"centralauth-admin-multi-bot": "Owah-owahan pungkasan",
 	"centralauth-seconds-ago": "$1 dhetik kapungkur",
 	"centralauth-minutes-ago": "$1 menit kapungkur",
-	"centralauth-hours-ago": "$1 jam kapungkur",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|jam}} kapungkur",
 	"centralauth-days-ago": "$1 dina kapungkur",
 	"centralauth-months-ago": "$1 wulan kapungkur",
 	"centralauth-years-ago": "$1 taun kapungkur",

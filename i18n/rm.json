@@ -5,6 +5,8 @@
 			"Terfili"
 		]
 	},
+	"centralauth-foreign-link": "Utilisader $1 sin $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribuziun|contribuziuns}} sin $2",
 	"centralauth-admin-blocklog": "protocol da bloccadas",
 	"centralauth-log-name": "Protocol da contos d'utilisaders globals",
 	"centralauth-rightslog-name": "Protocol dals dretgs globals"
