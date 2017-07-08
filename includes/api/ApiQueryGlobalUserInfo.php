@@ -78,7 +78,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 
 		$attachedAccounts = null;
-		if ( $userExists && ( isset( $prop['merged'] ) || isset( $prop['editcount'] ) ) ){
+		if ( $userExists && ( isset( $prop['merged'] ) || isset( $prop['editcount'] ) ) ) {
 			$attachedAccounts = $user->queryAttached();
 		}
 

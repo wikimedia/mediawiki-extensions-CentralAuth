@@ -162,7 +162,6 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		} else {
 			$this->output( "ERROR: Sending confirm and migrate email failed for '$username@$wikiID'\n" );
 		}
-
 	}
 
 	function report() {

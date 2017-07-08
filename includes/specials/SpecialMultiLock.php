@@ -111,7 +111,6 @@ class SpecialMultiLock extends SpecialPage {
 	 * Search the CentralAuth db for all usernames prefixed with mPrefixSearch
 	 */
 	private function searchForUsers() {
-
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
@@ -137,7 +136,6 @@ class SpecialMultiLock extends SpecialPage {
 	 * The <form> and <fieldset> were started in showTableHeader()
 	 */
 	private function showStatusForm() {
-
 		$form = '';
 		$radioLocked =
 			Xml::radioLabel(
@@ -226,7 +224,6 @@ class SpecialMultiLock extends SpecialPage {
 	 * Start admin <form>, and start the table listing usernames to take action on
 	 */
 	private function showTableHeader() {
-
 		$out = $this->getOutput();
 
 		$header = Xml::openElement(
@@ -277,7 +274,6 @@ class SpecialMultiLock extends SpecialPage {
 	 * Build the table of users to lock and/or hide
 	 */
 	private function showUserTable() {
-
 		$this->mGlobalUsers = array_unique( $this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR );
 
 		$out = $this->getOutput();
@@ -361,7 +357,6 @@ class SpecialMultiLock extends SpecialPage {
 	 * Lock and/or hide global users and log the activity (if any)
 	 */
 	private function setStatus() {
-
 		if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
 			$this->showError( 'centralauth-token-mismatch' );
 			return;
@@ -392,7 +387,6 @@ class SpecialMultiLock extends SpecialPage {
 		}
 
 		foreach ( $this->mGlobalUsers as $globalUser ) {
-
 			if ( !$globalUser instanceof CentralAuthUser ) {
 				// Somehow the user submitted a bad user name
 				$this->showStatusError( $globalUser );
@@ -437,7 +431,6 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	function showUsernameForm() {
-
 		if ( is_array( $this->mUserNames ) ) {
 			$this->mUserNames = implode( "\n", $this->mUserNames );
 		}

@@ -205,7 +205,6 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 * @dataProvider provideOnPasswordPoliciesForUser
 	 */
 	public function testGetLocalGroups( $attached, $expected ) {
-
 		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( 'CentralAuthUser' )
 			->disableOriginalConstructor()

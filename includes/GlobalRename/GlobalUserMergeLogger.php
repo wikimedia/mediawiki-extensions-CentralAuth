@@ -34,7 +34,7 @@ class GlobalUserMergeLogger {
 		);
 
 		$imploded = implode( '|',
-			array_map( function( CentralAuthUser $user ) {
+			array_map( function ( CentralAuthUser $user ) {
 				return $user->getName();
 			}, $oldNames )
 		);

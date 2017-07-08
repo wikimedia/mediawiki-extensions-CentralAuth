@@ -25,7 +25,6 @@ class CheckLocalNames extends Maintenance {
 	}
 
 	public function execute() {
-
 		$centralMaster = CentralAuthUtils::getCentralDB();
 		$centralSlave = CentralAuthUtils::getCentralSlaveDB();
 
@@ -55,8 +54,8 @@ class CheckLocalNames extends Maintenance {
 				"",
 				__METHOD__,
 				[
-					 "DISTINCT",
-					 "ORDER BY" => "ln_wiki ASC"
+					"DISTINCT",
+					"ORDER BY" => "ln_wiki ASC"
 				]
 			);
 
@@ -79,18 +78,18 @@ class CheckLocalNames extends Maintenance {
 					'localnames',
 					[ 'ln_name' ],
 					[
-						 "ln_wiki" => $wiki,
-						 "ln_name > " . $centralSlave->addQuotes( $lastUsername )
+						"ln_wiki" => $wiki,
+						"ln_name > " . $centralSlave->addQuotes( $lastUsername )
 					],
 					__METHOD__,
 					[
-						 "LIMIT" => $this->batchSize,
-						 "ORDER BY" => "ln_name ASC"
+						"LIMIT" => $this->batchSize,
+						"ORDER BY" => "ln_name ASC"
 					]
 				);
 
 				// iterate through each of the localnames to confirm that a local user
-				foreach ( $result as $u ){
+				foreach ( $result as $u ) {
 					$localUser = $localdb->select(
 						'user',
 						[ 'user_name' ],
@@ -104,13 +103,13 @@ class CheckLocalNames extends Maintenance {
 							$this->output( "Local user not found for localname entry $u->ln_name@$wiki\n" );
 						}
 						$this->total++;
-						if ( !$this->dryrun ){
+						if ( !$this->dryrun ) {
 							// go ahead and delete the extraneous entry
 							$deleted = $centralMaster->delete(
 								'localnames',
 								[
-									 "ln_wiki" => $wiki,
-									 "ln_name" => $u->ln_name
+									"ln_wiki" => $wiki,
+									"ln_name" => $u->ln_name
 								],
 								__METHOD__
 							);

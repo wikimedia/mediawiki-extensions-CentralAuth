@@ -90,7 +90,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		}
 
 		foreach ( $unattached as $wiki => $local ) {
-			if ( $local['email'] === '' && $local['password'] === '' ){
+			if ( $local['email'] === '' && $local['password'] === '' ) {
 				$this->output( "SKIP: [$username] Account on $wiki has no password or email\n" );
 				return;
 			}

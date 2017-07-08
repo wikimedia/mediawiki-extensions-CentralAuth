@@ -244,7 +244,7 @@ class SpecialMergeAccount extends SpecialPage {
 			$this->getOutput()->addHTML( '</div>' );
 
 			// Show wiki list if required
-			if ( $status->hasMessage( 'centralauth-merge-home-password' ) )	{
+			if ( $status->hasMessage( 'centralauth-merge-home-password' ) ) {
 				$out = Html::rawElement( 'h2', null, $this->msg( 'centralauth-list-home-title' )->escaped() );
 				$out .= $this->msg( 'centralauth-list-home-dryrun' )->parseAsBlock();
 				$out .= $this->listAttached( [ $home ], [ $home => 'primary' ] );

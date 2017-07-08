@@ -2,7 +2,7 @@
 // pass 1:
 // * generate 'globaluser' entries for each username
 // * go through all usernames in 'globalnames' and for those
-//   that can be automatically migrated, go ahead and do it.
+// that can be automatically migrated, go ahead and do it.
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {

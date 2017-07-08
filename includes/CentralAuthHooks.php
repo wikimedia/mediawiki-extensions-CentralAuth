@@ -345,7 +345,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$abortError ) {
-		if ( count( $users ) == 0 || !$users[0] instanceof User ){
+		if ( count( $users ) == 0 || !$users[0] instanceof User ) {
 			// We can't handle this
 			return true;
 		}
@@ -580,7 +580,7 @@ class CentralAuthHooks {
 		}
 
 		$username = $user->getName();
-		DeferredUpdates::addCallableUpdate( function() use ( $username ) {
+		DeferredUpdates::addCallableUpdate( function () use ( $username ) {
 			$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
 			if ( $centralUser->exists() ) {
 				$centralUser->resetAuthToken();

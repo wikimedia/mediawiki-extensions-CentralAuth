@@ -567,7 +567,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 			if ( $request->save() ) {
 				// Send email to the user about the change in status.
-				if ( $approved )  {
+				if ( $approved ) {
 					$subject = $this->msg(
 						'globalrenamequeue-email-subject-approved'
 					)->inContentLanguage()->text();

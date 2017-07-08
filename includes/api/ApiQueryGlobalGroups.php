@@ -36,7 +36,7 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
 
-		$prop = array_flip( (array) $params['prop'] );
+		$prop = array_flip( (array)$params['prop'] );
 
 		$APIResult = $this->getResult();
 		$data = [];

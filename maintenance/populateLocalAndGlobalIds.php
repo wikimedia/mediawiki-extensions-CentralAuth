@@ -106,4 +106,3 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 $maintClass = 'PopulateLocalAndGlobalIds';
 require_once RUN_MAINTENANCE_IF_MAIN;
-

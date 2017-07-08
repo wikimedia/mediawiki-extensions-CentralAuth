@@ -376,7 +376,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	protected function formatRight( $right ) {
 		return $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
 			Html::element( 'code', [], $this->msg( 'parentheses', $right )->text() );
-
 	}
 
 	/**
@@ -417,7 +416,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$newname = $newname->getUserCaseDBKey();
 
 		if ( $group != $newname ) {
-
 			if ( in_array( $newname, CentralAuthUser::availableGlobalGroups() ) ) {
 				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-rename-taken', $newname );
 				return;

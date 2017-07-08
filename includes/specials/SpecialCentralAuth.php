@@ -385,12 +385,12 @@ class SpecialCentralAuth extends SpecialPage {
 			"editcount",   // centralauth-admin-list-editcount
 			"groups",      // centralauth-admin-list-groups
 		];
-		$header = Xml::openElement( 'form',
-			[
-				 'method' => 'post',
-				 'action' =>
-				 $this->getPageTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
-				 'id' => 'mw-centralauth-merged' ] );
+		$header = Xml::openElement( 'form', [
+			'method' => 'post',
+			'action' =>
+			$this->getPageTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
+			'id' => 'mw-centralauth-merged'
+		] );
 		$header .= Html::hidden( 'wpMethod', 'unmerge' ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Xml::openElement( 'table', [ 'class' => 'wikitable sortable mw-centralauth-wikislist' ] ) .
@@ -865,14 +865,14 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function getMergeMethodDescriptions() {
 		// Give grep a chance to find the usages:
-		//  centralauth-merge-method-primary, centralauth-merge-method-new, centralauth-merge-method-empty,
-		//  centralauth-merge-method-password, centralauth-merge-method-mail, centralauth-merge-method-admin,
-		//  centralauth-merge-method-login
+		// centralauth-merge-method-primary, centralauth-merge-method-new, centralauth-merge-method-empty,
+		// centralauth-merge-method-password, centralauth-merge-method-mail, centralauth-merge-method-admin,
+		// centralauth-merge-method-login
 		// Give grep a chance to find the usages:
-		//  centralauth-merge-method-primary-desc, centralauth-merge-method-new-desc,
-		//  centralauth-merge-method-empty-desc, centralauth-merge-method-password-desc,
-		//  centralauth-merge-method-mail-desc, centralauth-merge-method-admin-desc,
-		//  centralauth-merge-method-login-desc
+		// centralauth-merge-method-primary-desc, centralauth-merge-method-new-desc,
+		// centralauth-merge-method-empty-desc, centralauth-merge-method-password-desc,
+		// centralauth-merge-method-mail-desc, centralauth-merge-method-admin-desc,
+		// centralauth-merge-method-login-desc
 		$mergeMethodDescriptions = [];
 		foreach ( [ 'primary', 'new', 'empty', 'password', 'mail', 'admin', 'login' ] as $method ) {
 			$mergeMethodDescriptions[$method] = [

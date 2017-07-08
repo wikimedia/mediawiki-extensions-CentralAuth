@@ -173,7 +173,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			$this->getUser(),
 			$this->oldCAUsers,
 			CentralAuthUser::getInstance( $newUser ),
-			 new GlobalRenameUserStatus( $newUser->getName() ),
+			new GlobalRenameUserStatus( $newUser->getName() ),
 			'JobQueueGroup::singleton',
 			new GlobalUserMergeDatabaseUpdates(),
 			new GlobalUserMergeLogger( $this->getUser() ),

@@ -96,13 +96,13 @@ class CheckLocalUser extends Maintenance {
 						$this->output( "Local user not found for localuser entry $username@$wiki\n" );
 					}
 					$this->total++;
-					if ( !$this->dryrun ){
+					if ( !$this->dryrun ) {
 						// go ahead and delete the extraneous entry
 						$deleted = $centralMaster->delete(
 							'localuser',
 							[
-								 "lu_wiki" => $wiki,
-								 "lu_name" => $username
+								"lu_wiki" => $wiki,
+								"lu_name" => $username
 							],
 							__METHOD__
 						);

@@ -90,7 +90,6 @@ class ResetGlobalUserTokens extends Maintenance {
 			CentralAuthUtils::waitForSlaves();
 
 		} while ( $min < $maxid );
-
 	}
 
 	private function updateUser( $username ) {

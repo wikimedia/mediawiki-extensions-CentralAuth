@@ -34,7 +34,6 @@ class MigrateAccount extends Maintenance {
 	}
 
 	public function execute() {
-
 		$this->dbBackground = CentralAuthUtils::getCentralSlaveDB();
 
 		if ( $this->getOption( 'safe', false ) !== false ) {
@@ -72,7 +71,7 @@ class MigrateAccount extends Maintenance {
 			while ( strlen( $line = trim( fgets( $file ) ) ) ) {
 			// @codingStandardsIgnoreEnd
 				$values = explode( "\t", $line );
-				switch ( count( $values ) ){
+				switch ( count( $values ) ) {
 					case 1:
 						$this->migrate( $values[0] );
 						break;
@@ -122,12 +121,12 @@ class MigrateAccount extends Maintenance {
 			if (
 				$this->getOption( 'attachmissing', false )
 				&& !is_null( $central->getEmailAuthenticationTimestamp() )
-			){
+			) {
 				foreach ( $unattached as $wiki => $local ) {
 					if (
 						$central->getEmail() === $local['email']
 						&& !is_null( $local['emailAuthenticated'] )
-					){
+					) {
 						$this->output( "ATTACHING: $username@$wiki\n" );
 						$central->attach( $wiki, 'mail', /** $sendToRC = */ !$this->suppressRC );
 					}
@@ -143,7 +142,7 @@ class MigrateAccount extends Maintenance {
 				foreach ( $unattached as $wiki => $local ) {
 					if ( $local['email'] === '' && $local['password'] === ''
 						&& $local['editCount'] === '0'
-					){
+					) {
 						$this->output( "ATTACHING: $username@$wiki\n" );
 						// Ironically, the attachment is made due to lack of a password.
 						$central->attach( $wiki, 'password', /** $sendToRC = */ !$this->suppressRC );

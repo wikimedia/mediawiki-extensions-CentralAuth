@@ -40,7 +40,6 @@ class SpecialGlobalUsers extends SpecialPage {
 			Html::rawElement( 'ul', [], $pg->getBody() ) .
 			$pg->getNavigationBar()
 		);
-
 	}
 
 	protected function getGroupName() {

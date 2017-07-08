@@ -57,7 +57,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
 
-		$prop = array_flip( (array) $params['prop'] );
+		$prop = array_flip( (array)$params['prop'] );
 
 		$dir = ( $params['dir'] == 'descending' ? 'older' : 'newer' );
 

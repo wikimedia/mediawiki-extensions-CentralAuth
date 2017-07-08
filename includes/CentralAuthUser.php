@@ -1839,7 +1839,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
 			}
 		}
-
 	}
 
 	/**
@@ -2858,7 +2857,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		wfDebugLog( 'CentralAuthVerbose',
 			"Quick cache invalidation for global user {$this->mName}" );
 
-		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function() {
+		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function () {
 			ObjectCache::getMainWANInstance()->delete( $this->getCacheKey() );
 		} );
 	}
@@ -2907,7 +2906,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	public function getStateHash( $recache = false ) {
 		$this->loadState( $recache );
-		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' . (int) $this->mLocked );
+		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' . (int)$this->mLocked );
 	}
 
 	/**

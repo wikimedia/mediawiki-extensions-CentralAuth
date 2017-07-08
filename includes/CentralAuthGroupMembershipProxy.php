@@ -100,7 +100,7 @@ class CentralAuthGroupMembershipProxy {
 	 */
 	function getGroupMemberships() {
 		$groups = $this->getGroups();
-		return array_combine( $groups, array_map( function( $group ) {
+		return array_combine( $groups, array_map( function ( $group ) {
 			return new UserGroupMembership( $this->getId(), $group );
 		}, $groups ) );
 	}
