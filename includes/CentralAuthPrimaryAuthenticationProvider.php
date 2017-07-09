@@ -102,7 +102,9 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function beginPrimaryAuthentication( array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass( $reqs, PasswordAuthenticationRequest::class );
+		$req = AuthenticationRequest::getRequestByClass(
+			$reqs, PasswordAuthenticationRequest::class
+		);
 		if ( !$req ) {
 			return AuthenticationResponse::newAbstain();
 		}
@@ -159,11 +161,14 @@ class CentralAuthPrimaryAuthenticationProvider
 							return AuthenticationResponse::newPass( $renamedUsername );
 						}
 						$this->manager->setAuthenticationSessionData( 'CA-renamed-from', $username );
-						$this->manager->setAuthenticationSessionData( 'CA-renamed-to', $renamedUsername );
+						$this->manager->setAuthenticationSessionData(
+							'CA-renamed-to', $renamedUsername
+						);
 						return AuthenticationResponse::newUI(
 							[
 								new ButtonAuthenticationRequest(
-									'caRenameOk', wfMessage( 'ok' ), wfMessage( 'sulrenamewarning-authmanager-ok-help' )
+									'caRenameOk', wfMessage( 'ok' ),
+									wfMessage( 'sulrenamewarning-authmanager-ok-help' )
 								)
 							],
 							wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
@@ -252,7 +257,9 @@ class CentralAuthPrimaryAuthenticationProvider
 		if ( $username === null || $renamedUsername === null ) {
 			// What?
 			$this->logger->debug( 'Missing "CA-renamed-from" or "CA-renamed-to" in session data' );
-			return AuthenticationResponse::newFail( wfMessage( 'authmanager-authn-not-in-progress' ) );
+			return AuthenticationResponse::newFail(
+				wfMessage( 'authmanager-authn-not-in-progress' )
+			);
 		}
 
 		$req = ButtonAuthenticationRequest::getRequestByName( $reqs, 'caRenameOk' );
@@ -263,7 +270,8 @@ class CentralAuthPrimaryAuthenticationProvider
 			return AuthenticationResponse::newUI(
 				[
 					new ButtonAuthenticationRequest(
-						'caRenameOk', wfMessage( 'ok' ), wfMessage( 'sulrenamewarning-authmanager-ok-help' )
+						'caRenameOk', wfMessage( 'ok' ),
+						wfMessage( 'sulrenamewarning-authmanager-ok-help' )
 					)
 				],
 				wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
@@ -337,7 +345,8 @@ class CentralAuthPrimaryAuthenticationProvider
 			if ( $username !== false ) {
 				$centralUser = CentralAuthUser::getInstanceByName( $username );
 				if ( $centralUser->exists() &&
-					( $centralUser->isAttached() || !User::idFromName( $username, User::READ_LATEST ) )
+					( $centralUser->isAttached() ||
+					!User::idFromName( $username, User::READ_LATEST ) )
 				) {
 					$sv = StatusValue::newGood();
 					if ( $req->password !== null ) {
@@ -356,7 +365,9 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function providerChangeAuthenticationData( AuthenticationRequest $req ) {
-		$username = $req->username !== null ? User::getCanonicalName( $req->username, 'usable' ) : false;
+		$username = $req->username !== null
+			? User::getCanonicalName( $req->username, 'usable' )
+			: false;
 		if ( $username === false ) {
 			return;
 		}
@@ -397,7 +408,9 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		if ( $autocreate !== $this->getUniqueId() ) {
 			// Prevent creation if the user exists centrally
-			if ( $centralUser->exists() && $autocreate !== AuthManager::AUTOCREATE_SOURCE_SESSION ) {
+			if ( $centralUser->exists() &&
+				$autocreate !== AuthManager::AUTOCREATE_SOURCE_SESSION
+			) {
 				$status->fatal( 'centralauth-account-exists' );
 				return $status;
 			}
@@ -432,7 +445,9 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function testForAccountCreation( $user, $creator, array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass( $reqs, PasswordAuthenticationRequest::class );
+		$req = AuthenticationRequest::getRequestByClass(
+			$reqs, PasswordAuthenticationRequest::class
+		);
 
 		$ret = StatusValue::newGood();
 		if ( $req && $req->username !== null && $req->password !== null ) {
@@ -447,9 +462,12 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		// Check CentralAuthAntiSpoof, if applicable
 		if ( class_exists( 'AntiSpoofAuthenticationRequest' ) ) {
-			$antiSpoofReq = AuthenticationRequest::getRequestByClass( $reqs, AntiSpoofAuthenticationRequest::class );
+			$antiSpoofReq = AuthenticationRequest::getRequestByClass(
+				$reqs, AntiSpoofAuthenticationRequest::class
+			);
 			$ret->merge( CentralAuthAntiSpoofHooks::testNewAccount(
-				$user, $creator, $this->antiSpoofAccounts, $antiSpoofReq && $antiSpoofReq->ignoreAntiSpoof
+				$user, $creator, $this->antiSpoofAccounts,
+				$antiSpoofReq && $antiSpoofReq->ignoreAntiSpoof
 			) );
 		}
 
@@ -457,12 +475,16 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass( $reqs, PasswordAuthenticationRequest::class );
+		$req = AuthenticationRequest::getRequestByClass(
+			$reqs, PasswordAuthenticationRequest::class
+		);
 		if ( $req ) {
 			if ( $req->username !== null && $req->password !== null ) {
 				$centralUser = CentralAuthUser::getMasterInstance( $user );
 				if ( $centralUser->exists() ) {
-					return AuthenticationResponse::newFail( wfMessage( 'centralauth-account-exists' ) );
+					return AuthenticationResponse::newFail(
+						wfMessage( 'centralauth-account-exists' )
+					);
 				}
 				if ( $centralUser->listUnattached() ) {
 					// $this->testUserForCreation() will already have rejected it if necessary
@@ -485,8 +507,8 @@ class CentralAuthPrimaryAuthenticationProvider
 		DeferredUpdates::addCallableUpdate( function () use ( $centralUser ) {
 			$centralUser->lazyImportLocalNames();
 		} );
-		// Do the attach in finishAccountCreation instead of begin because now the user has been added
-		// to database and local ID exists (which is needed in attach)
+		// Do the attach in finishAccountCreation instead of begin because now the user has been
+		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( wfWikiID(), 'new' );
 		CentralAuthUtils::getCentralDB()->onTransactionIdle( function () use ( $centralUser ) {
 			CentralAuthUtils::scheduleCreationJobs( $centralUser );

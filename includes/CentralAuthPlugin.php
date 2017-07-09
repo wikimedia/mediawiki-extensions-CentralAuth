@@ -57,13 +57,16 @@ class CentralAuthPlugin extends AuthPlugin {
 		if ( !$passwordMatch && $wgCentralAuthCheckSULMigration ) {
 			// Check to see if this is a user who was affected by a global username
 			// collision during a forced migration to central auth accounts.
-			$renamedUsername = User::getCanonicalName( $username . '~' . str_replace( '_', '-', wfWikiID() ) );
+			$renamedUsername = User::getCanonicalName(
+				$username . '~' . str_replace( '_', '-', wfWikiID() )
+			);
 			if ( $renamedUsername !== false ) {
 				$renamed = CentralAuthUser::getMasterInstanceByName( $renamedUsername );
 
 				if ( $renamed->getId() ) {
 					wfDebugLog( 'CentralAuth',
-						"CentralAuthMigration: Checking for migration of '{$username}' to '{$renamedUsername}'"
+						"CentralAuthMigration: Checking for migration of '{$username}' to " .
+							"'{$renamedUsername}'"
 					);
 					MediaWikiServices::getInstance()->getStatsdDataFactory()->increment(
 						'centralauth.migration.check'
@@ -98,10 +101,17 @@ class CentralAuthPlugin extends AuthPlugin {
 			// See if all the unattached accounts match passwords
 			// and can be globalized. (bug 70392)
 			if ( $wgCentralAuthAutoMigrateNonGlobalAccounts ) {
-				$ok = $central->storeAndMigrate( [ $password ], /* $sendToRC = */ true, /* $safe = */ true, /* $checkHome = */ true );
+				$ok = $central->storeAndMigrate(
+					[ $password ],
+					/* $sendToRC = */ true,
+					/* $safe = */ true,
+					/* $checkHome = */ true
+				);
 				if ( $ok ) {
 					wfDebugLog( 'CentralAuth',
-						"wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a global account for '$username'" );
+						"wgCentralAuthAutoMigrateNonGlobalAccounts successful in creating a " .
+						"global account for '$username'"
+					);
 					return true;
 				}
 			}
@@ -350,8 +360,9 @@ class CentralAuthPlugin extends AuthPlugin {
 				// Log the autocreation just happened
 				$user->addNewUserLogEntryAutoCreate();
 			} else {
-				wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ . ": CentralAuthUser::exists returned false for "
-					. "\"{$user->getName()}\" even though \$autocreate = true." );
+				wfDebugLog( 'CentralAuth-Bug39996', __METHOD__ .
+					": CentralAuthUser::exists returned false for " .
+					"\"{$user->getName()}\" even though \$autocreate = true." );
 			}
 		}
 	}

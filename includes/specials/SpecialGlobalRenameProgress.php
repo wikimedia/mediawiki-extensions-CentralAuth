@@ -35,7 +35,8 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$out = $this->getOutput();
 		LogEventsList::showLogExtract( $out, 'gblrename', $caTitle, '', [
 			'showIfEmpty' => true, // @todo set this to false and don't show the fieldset
-			'wrap' => Xml::fieldset( $this->msg( 'centralauth-rename-progress-logs-fieldset' )->text(), '$1' ),
+			'wrap' => Xml::fieldset(
+				$this->msg( 'centralauth-rename-progress-logs-fieldset' )->text(), '$1' ),
 		] );
 	}
 
@@ -136,14 +137,16 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		ksort( $statuses );
 		$table = Html::openElement( 'table', [ 'class' => 'wikitable sortable' ] );
 		$table .= Html::openElement( 'tr' );
-		$table .= Html::element( 'th', [], $this->msg( 'centralauth-rename-table-domain' )->text() );
-		$table .= Html::element( 'th', [], $this->msg( 'centralauth-rename-table-status' )->text() );
+		$table .= Html::element( 'th', [],
+			$this->msg( 'centralauth-rename-table-domain' )->text() );
+		$table .= Html::element( 'th', [],
+			$this->msg( 'centralauth-rename-table-status' )->text() );
 		$table .= Html::closeElement( 'tr' );
 		foreach ( $statuses as $wiki => $status ) {
 			$wikiReference = WikiMap::getWiki( $wiki );
 			if ( !$wikiReference ) {
-				LoggerFactory::getInstance( 'CentralAuth' )->warning( __METHOD__ . ': invalid wiki: '
-					. $wiki );
+				LoggerFactory::getInstance( 'CentralAuth' )->warning( __METHOD__ .
+					': invalid wiki: ' . $wiki );
 				continue;
 			}
 
@@ -151,11 +154,13 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			$table .= Html::element( 'td', [], $wikiReference->getDisplayName() );
 			// Messages used: centralauth-rename-table-status-inprogress
 			// centralauth-rename-table-status-queued, centralauth-rename-table-status-done
-			$table .= Html::rawElement( 'td', [], $this->msg( "centralauth-rename-table-status-$status" )->parse() );
+			$table .= Html::rawElement( 'td', [],
+				$this->msg( "centralauth-rename-table-status-$status" )->parse() );
 			$table .= Html::closeElement( 'tr' );
 		}
 		$table .= Html::closeElement( 'table' );
-		$fieldset = Xml::fieldset( $this->msg( 'centralauth-rename-progress-fieldset' )->text(), $table );
+		$fieldset = Xml::fieldset(
+			$this->msg( 'centralauth-rename-progress-fieldset' )->text(), $table );
 
 		$this->showLogExtract( $newName );
 		$out->addHTML( $fieldset );

@@ -43,7 +43,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		];
 
 		if ( !is_array( $params['centralCookieOptions'] ) ) {
-			throw new \InvalidArgumentException( __METHOD__ . ': centralCookieOptions must be an array' );
+			throw new \InvalidArgumentException(
+				__METHOD__ . ': centralCookieOptions must be an array'
+			);
 		}
 
 		$this->centralCookieOptions = $params['centralCookieOptions'];
@@ -151,9 +153,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return self::returnParentSessionInfo( $request );
 		}
 		if ( !User::isUsableName( $userName ) ) {
-			$this->logger->warning( __METHOD__ . ': username {username} is not usable on this wiki', [
-				'username' => $userName,
-			] );
+			$this->logger->warning(
+				__METHOD__ . ': username {username} is not usable on this wiki', [
+					'username' => $userName,
+				]
+			);
 			return self::returnParentSessionInfo( $request );
 		}
 
@@ -208,7 +212,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				} else {
 					$centralUser = CentralAuthUser::getInstanceByName( $name );
 					if ( $centralUser->exists() &&
-						( $centralUser->isAttached() || !User::idFromName( $name, User::READ_LATEST ) )
+						( $centralUser->isAttached() ||
+							!User::idFromName( $name, User::READ_LATEST ) )
 					) {
 						$source = 'CentralAuth';
 					} else {
@@ -217,7 +222,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				}
 				if ( $metadata['CentralAuthSource'] !== $source ) {
 					$this->logger->warning(
-						'Session "{session}": CentralAuth saved source {saved} != expected source {expected}',
+						'Session "{session}": CentralAuth saved source {saved} ' .
+							'!= expected source {expected}',
 						[
 							'session' => $info,
 							'saved' => $metadata['CentralAuthSource'],
@@ -271,7 +277,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return parent::cookieDataToExport( $user, $remember );
 	}
 
-	public function persistSession( MediaWiki\Session\SessionBackend $session, WebRequest $request ) {
+	public function persistSession(
+		MediaWiki\Session\SessionBackend $session, WebRequest $request
+	) {
 		parent::persistSession( $session, $request );
 
 		if ( !$this->enable ) {
@@ -452,7 +460,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
 		if ( $loggedOut + 86400 > time() &&
-			$loggedOut !== (int)$this->getCookie( $request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
+			$loggedOut !== (int)$this->getCookie(
+				$request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
 		) {
 			CentralAuthUtils::setP3P( $request );
 			$request->response()->setCookie( 'LoggedOut', $loggedOut, $loggedOut + 86400,
@@ -478,7 +487,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		if ( $name !== null ) {
 			$name = User::getCanonicalName( $name, 'usable' );
 		}
-		return ( $name === false || $name === null ) ? parent::suggestLoginUsername( $request ) : $name;
+		return ( $name === false || $name === null )
+			? parent::suggestLoginUsername( $request )
+			: $name;
 	}
 
 	/**

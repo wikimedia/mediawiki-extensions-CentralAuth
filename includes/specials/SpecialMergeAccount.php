@@ -1,7 +1,13 @@
 <?php
 
 class SpecialMergeAccount extends SpecialPage {
-	protected $mUserName, $mAttemptMerge, $mMergeAction, $mPassword, $mWikiIDs, $mSessionToken, $mSessionKey;
+	protected $mUserName;
+	protected $mAttemptMerge;
+	protected $mMergeAction;
+	protected $mPassword;
+	protected $mWikiIDs;
+	protected $mSessionToken;
+	protected $mSessionKey;
 
 	public function __construct() {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
@@ -35,7 +41,9 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( !$this->getUser()->isLoggedIn() ) {
 			$loginpage = SpecialPage::getTitleFor( 'Userlogin' );
-			$loginurl = $loginpage->getFullUrl( [ 'returnto' => $this->getPageTitle()->getPrefixedText() ] );
+			$loginurl = $loginpage->getFullUrl(
+				[ 'returnto' => $this->getPageTitle()->getPrefixedText() ]
+			);
 			$this->getOutput()->addWikiMsg( 'centralauth-merge-notlogged', $loginurl );
 			$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
 
@@ -47,16 +55,17 @@ class SpecialMergeAccount extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'readonlytext', CentralAuthUtils::getReadOnlyReason() );
 			return;
 		}
+		$request = $this->getRequest();
 
 		$this->mUserName = $this->getUser()->getName();
 
-		$this->mAttemptMerge = $this->getRequest()->wasPosted();
+		$this->mAttemptMerge = $request->wasPosted();
 
-		$this->mMergeAction = $this->getRequest()->getVal( 'wpMergeAction' );
-		$this->mPassword = $this->getRequest()->getVal( 'wpPassword' );
-		$this->mWikiIDs = $this->getRequest()->getArray( 'wpWikis' );
-		$this->mSessionToken = $this->getRequest()->getVal( 'wpMergeSessionToken' );
-		$this->mSessionKey = pack( "H*", $this->getRequest()->getVal( 'wpMergeSessionKey' ) );
+		$this->mMergeAction = $request->getVal( 'wpMergeAction' );
+		$this->mPassword = $request->getVal( 'wpPassword' );
+		$this->mWikiIDs = $request->getArray( 'wpWikis' );
+		$this->mSessionToken = $request->getVal( 'wpMergeSessionToken' );
+		$this->mSessionKey = pack( "H*", $request->getVal( 'wpMergeSessionKey' ) );
 
 		// Possible demo states
 
@@ -71,7 +80,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		if ( $this->mAttemptMerge ) {
 			// First check the edit token
-			if ( !$this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) ) ) {
+			if ( !$this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 				throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
 			}
 			switch ( $this->mMergeAction ) {
@@ -219,7 +228,9 @@ class SpecialMergeAccount extends SpecialPage {
 		$attached = [];
 		$unattached = [];
 		$methods = [];
-		$status = $globalUser->migrationDryRun( $passwords, $home, $attached, $unattached, $methods );
+		$status = $globalUser->migrationDryRun(
+			$passwords, $home, $attached, $unattached, $methods
+		);
 
 		if ( $status->isGood() ) {
 			// This is the global account or matched it
@@ -245,7 +256,8 @@ class SpecialMergeAccount extends SpecialPage {
 
 			// Show wiki list if required
 			if ( $status->hasMessage( 'centralauth-merge-home-password' ) ) {
-				$out = Html::rawElement( 'h2', null, $this->msg( 'centralauth-list-home-title' )->escaped() );
+				$out = Html::rawElement( 'h2', null,
+					$this->msg( 'centralauth-list-home-title' )->escaped() );
 				$out .= $this->msg( 'centralauth-list-home-dryrun' )->parseAsBlock();
 				$out .= $this->listAttached( [ $home ], [ $home => 'primary' ] );
 				$this->getOutput()->addHTML( $out );
@@ -496,7 +508,9 @@ class SpecialMergeAccount extends SpecialPage {
 			// centralauth-merge-method-admin, centralauth-merge-method-new,
 			// centralauth-merge-method-login,
 			$return .= $this->msg( 'word-separator' )->escaped();
-			$return .= $this->msg( 'parentheses', $this->msg( 'centralauth-merge-method-'.$method )->text() )->escaped();
+			$return .= $this->msg( 'parentheses',
+				$this->msg( 'centralauth-merge-method-' . $method )->text()
+			)->escaped();
 		}
 		return $return;
 	}
@@ -598,7 +612,8 @@ class SpecialMergeAccount extends SpecialPage {
 		return $this->passwordForm(
 			'dryrun',
 			$this->msg( 'centralauth-merge-step2-title' )->text(),
-			$this->msg( 'centralauth-merge-step2-detail', $this->getUser()->getName() )->parseAsBlock() .
+			$this->msg( 'centralauth-merge-step2-detail',
+				$this->getUser()->getName() )->parseAsBlock() .
 				$this->listUnattached( $unattached ),
 			$this->msg( 'centralauth-merge-step2-submit' )->text() );
 	}

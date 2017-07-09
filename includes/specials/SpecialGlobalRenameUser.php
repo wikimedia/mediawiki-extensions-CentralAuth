@@ -169,12 +169,16 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			}
 		}
 
-		// Let the performer know that olduser's editcount is more than the sysadmin-intervention-threshold
-		// and do the rename only if we've received confirmation that they want to do it.
+		// Let the performer know that olduser's editcount is more than the
+		// sysadmin-intervention-threshold and do the rename only if we've received
+		// confirmation that they want to do it.
 		$caOldUser = CentralAuthUser::getInstance( $oldUser );
-		if ( !$this->allowHighEditcount && $caOldUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
+		if ( !$this->allowHighEditcount &&
+			$caOldUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD
+		) {
 			return Status::newFatal(
-				$this->msg( 'centralauth-rename-globaleditcount-threshold' )->numParams( self::EDITCOUNT_THRESHOLD )
+				$this->msg( 'centralauth-rename-globaleditcount-threshold' )
+					->numParams( self::EDITCOUNT_THRESHOLD )
 			);
 		}
 
@@ -203,7 +207,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 *
 	 * @param string $oldname User's old (current) name
 	 * @param array $conflicts Conflicting usernames
-	 * @return array Usernames that are safe to display - non-hidden usernames are linked to Special:CA
+	 * @return array Usernames that are safe to display -
+	 *  non-hidden usernames are linked to Special:CentralAuth
 	 */
 	public function processAntiSpoofConflicts( $oldname, array $conflicts ) {
 		$display = [];

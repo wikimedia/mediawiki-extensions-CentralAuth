@@ -54,7 +54,8 @@ class CentralAuthHooks {
 			$wgHooks['AbortAutoAccount'][] = 'CentralAuthPreAuthManagerHooks::onAbortAutoAccount';
 			$wgHooks['UserLoginComplete'][] = 'CentralAuthPreAuthManagerHooks::onUserLoginComplete';
 			$wgHooks['UserLogout'][] = 'CentralAuthPreAuthManagerHooks::onUserLogout';
-			$wgHooks['SpecialPage_initList'][] = 'CentralAuthPreAuthManagerHooks::onSpecialPage_initList';
+			$wgHooks['SpecialPage_initList'][] =
+				'CentralAuthPreAuthManagerHooks::onSpecialPage_initList';
 
 			if ( $wgCentralAuthCheckSULMigration ) {
 				// Install hidden special page for renamed users
@@ -106,7 +107,9 @@ class CentralAuthHooks {
 			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
 				"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
-			if ( !class_exists( MediaWiki\Auth\AuthManager::class ) || !empty( $wgDisableAuthManager ) ) {
+			if ( !class_exists( MediaWiki\Auth\AuthManager::class ) ||
+				!empty( $wgDisableAuthManager )
+			) {
 				$wgHooks['AbortNewAccount'][] =
 					'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
 			}
@@ -158,12 +161,15 @@ class CentralAuthHooks {
 	 * @param string $type Unused
 	 * @param string $action
 	 * @param Title $title
-	 * @param Skin|null $skin If null, we want to use the wiki content language, since that will go to the IRC feed.
+	 * @param Skin|null $skin If null, we want to use the wiki content language,
+	 *   since that will go to the IRC feed.
 	 * @param array $params
 	 * @param bool $filterWikilinks
 	 * @return string
 	 */
-	public static function onHandleWikiSetLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+	public static function onHandleWikiSetLogEntry(
+		$type, $action, $title, $skin, $params, $filterWikilinks = false
+	) {
 		if ( $skin ) {
 			$link = Linker::link( $title, htmlspecialchars( $params[0] ) );
 		} else {
@@ -181,8 +187,14 @@ class CentralAuthHooks {
 				$args = [ WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) ];
 				break;
 			case 'setchange':
-				$args = [ $params[1]
-					? $params[1] : wfMessage( 'rightsnone' )->text(), $params[2] ? $params[2] : wfMessage( 'rightsnone' )->text() ];
+				$args = [
+					$params[1]
+						? $params[1]
+						: wfMessage( 'rightsnone' )->text(),
+					$params[2]
+						? $params[2]
+						: wfMessage( 'rightsnone' )->text()
+				];
 				break;
 			default: // 'deleteset'
 				$args = [];
@@ -206,23 +218,33 @@ class CentralAuthHooks {
 	 * @param string $type Unused
 	 * @param string $action Unused
 	 * @param Title $title Unused
-	 * @param Skin|null $skin If null, we want to use the wiki content language, since that will go to the IRC feed.
+	 * @param Skin|null $skin If null, we want to use the wiki content language, since that will
+	 *   go to the IRC feed.
 	 * @param array $params
 	 * @param bool $filterWikilinks Unused
 	 *
 	 * @return string
 	 */
-	public static function onHandleGrouprenameLogEntry( $type, $action, $title, $skin, $params, $filterWikilinks = false ) {
+	public static function onHandleGrouprenameLogEntry(
+		$type, $action, $title, $skin, $params, $filterWikilinks = false
+	) {
 		// $params[0] is the new one, $params[1] the old one
 		if ( $skin ) {
-			$params[0] = Linker::link( Title::newFromText( $params[0] ), htmlspecialchars( $params[0] ) );
-			$params[1] = Linker::link( Title::newFromText( $params[1] ), htmlspecialchars( $params[1] ) );
+			$params[0] = Linker::link(
+				Title::newFromText( $params[0] ),
+				htmlspecialchars( $params[0] )
+			);
+			$params[1] = Linker::link(
+				Title::newFromText( $params[1] ),
+				htmlspecialchars( $params[1] )
+			);
 		} else {
 			$params[0] = htmlspecialchars( $params[0] );
 			$params[1] = htmlspecialchars( $params[1] );
 		}
 
-		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )->rawParams( $params[0], $params[1] );
+		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )
+			->rawParams( $params[0], $params[1] );
 		if ( $skin ) {
 			return $msg->text();
 		} else {
@@ -300,9 +322,11 @@ class CentralAuthHooks {
 				$attached = count( $global->listAttached() );
 				$message = wfMessage( 'centralauth-prefs-unattached' )->parse() .
 					'<br />' .
-					wfMessage( 'centralauth-prefs-count-attached' )->numParams( $attached )->parse() .
+					wfMessage( 'centralauth-prefs-count-attached' )
+						->numParams( $attached )->parse() .
 					'<br />' .
-					wfMessage( 'centralauth-prefs-count-unattached' )->numParams( $unattached )->parse();
+					wfMessage( 'centralauth-prefs-count-unattached' )
+						->numParams( $unattached )->parse();
 			} elseif ( !$global->isAttached() ) {
 				// Global account exists but the local account is not attached
 				$message = wfMessage( 'centralauth-prefs-detail-unattached' )->parse();
@@ -317,8 +341,10 @@ class CentralAuthHooks {
 			$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
 				wfMessage( 'centralauth-prefs-manage' )->parse() );
 		}
-		$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
-			wfMessage( 'centralauth-prefs-view' )->parse() );
+		$manageLinks[] = Linker::linkKnown(
+			SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
+			wfMessage( 'centralauth-prefs-view' )->parse()
+		);
 		$manageLinkList = $wgLang->pipeList( $manageLinks );
 
 		$preferences['globalaccountstatus'] = [
@@ -329,7 +355,8 @@ class CentralAuthHooks {
 			'default' => $manageLinkList
 		];
 		if ( isset( $message ) ) {
-			$manageLinkList = wfMessage( 'parentheses', $manageLinkList )->text(); // looks weird otherwise
+			// looks weird otherwise
+			$manageLinkList = wfMessage( 'parentheses', $manageLinkList )->text();
 			$preferences['globalaccountstatus']['default'] = "$message<br />$manageLinkList";
 		}
 
@@ -400,7 +427,8 @@ class CentralAuthHooks {
 			$inject_html = wfMessage( 'centralauth-login-no-others' )->escaped();
 		} else {
 			$inject_html = '<div class="centralauth-login-box"><p>' .
-				wfMessage( 'centralauth-login-progress', $user->getName() )->escaped() . "</p>\n<p>";
+				wfMessage( 'centralauth-login-progress',
+					$user->getName() )->escaped() . "</p>\n<p>";
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -474,7 +502,9 @@ class CentralAuthHooks {
 
 		// Check that this is actually for a special login page view
 		$title = $context->getTitle();
-		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) || $title->isSpecial( 'CreateAccount' ) ) ) {
+		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) ||
+			$title->isSpecial( 'CreateAccount' ) )
+		) {
 			// User will be redirected to Special:CentralLogin/start (central wiki),
 			// then redirected back to Special:CentralLogin/complete (this wiki).
 			// Sanity check that "returnto" is not one of the central login pages. If it
@@ -496,12 +526,14 @@ class CentralAuthHooks {
 
 				if ( $request->getBool( 'wpForceHttps', false ) ||
 					$request->getSession()->shouldForceHTTPS() ||
-					( $user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() ) )
+					( $user->getBoolOption( 'prefershttps' ) &&
+					wfCanIPUseHTTPS( $request->getIP() ) )
 				) {
 					$finalProto = 'https';
 				}
 
-				$secureCookies = ( ( $finalProto === 'https' ) && $user->getBoolOption( 'prefershttps' ) );
+				$secureCookies = ( ( $finalProto === 'https' ) &&
+					$user->getBoolOption( 'prefershttps' ) );
 			}
 
 			if ( $wgDisableAuthManager ) {
@@ -525,7 +557,8 @@ class CentralAuthHooks {
 				'remember'      => $remember,
 				'returnTo'      => $returnTo,
 				'returnToQuery' => $returnToQuery,
-				'stickHTTPS'    => $secureCookies, // cookies set secure or not (local CentralAuth cookies)
+				// cookies set secure or not (local CentralAuth cookies)
+				'stickHTTPS'    => $secureCookies,
 				'finalProto'    => $finalProto, // final page http or https
 				'type'          => $type,
 			] );
@@ -540,7 +573,8 @@ class CentralAuthHooks {
 				'wikiId'        => wfWikiId(),
 				'secureCookies' => $secureCookies, // (bool) cookies secure or not
 				'finalProto'    => $finalProto, // http or https for very final page
-				'currentProto'  => $request->detectProtocol() // current proto (in case login is https, but final page is http)
+				// current proto (in case login is https, but final page is http)
+				'currentProto'  => $request->detectProtocol()
 			];
 			Hooks::run( 'CentralAuthLoginRedirectData', [ $centralUser, &$data ] );
 			CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );
@@ -613,13 +647,16 @@ class CentralAuthHooks {
 			$inject_html = wfMessage( 'centralauth-logout-no-others' )->escaped();
 		} else {
 			$inject_html = '<div class="centralauth-logout-box"><p>' .
-				wfMessage( 'centralauth-logout-progress', $user->getName() )->escaped() . "</p>\n<p>";
+				wfMessage( 'centralauth-logout-progress', $user->getName() )->escaped() .
+					"</p>\n<p>";
 			foreach ( $wikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-				$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/deleteCookies' ), [
-					'type' => 'icon',
-				] );
+				$url = wfAppendQuery(
+					$wiki->getFullUrl( 'Special:CentralAutoLogin/deleteCookies' ), [
+						'type' => 'icon',
+					]
+				);
 				$inject_html .= Xml::element( 'img',
 					[
 						'src' => $url,
@@ -672,7 +709,9 @@ class CentralAuthHooks {
 		if ( $newCentral->renameInProgress() ) {
 			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $newName ];
 			// Can potentially be renaming two accounts into the same name, so throw an error
-			throw new ErrorPageError( 'error', 'centralauth-renameuser-global-inprogress', [ $newName ] );
+			throw new ErrorPageError(
+				'error', 'centralauth-renameuser-global-inprogress', [ $newName ]
+			);
 		}
 
 		return true;
@@ -990,8 +1029,9 @@ class CentralAuthHooks {
 		}
 		if (
 			$centralUser->isOversighted() ||	// Oversighted users should *never* be able to edit
-			( $centralUser->isLocked() && !in_array( $title->getPrefixedText(), $wgCentralAuthLockedCanEdit ) )
-				) {
+			( $centralUser->isLocked() &&
+				!in_array( $title->getPrefixedText(), $wgCentralAuthLockedCanEdit ) )
+		) {
 			$result = 'centralauth-error-locked';
 			return false;
 		}
@@ -1171,7 +1211,9 @@ class CentralAuthHooks {
 			$params['domain'] = $parts[2];
 		}
 		$params['properties']['ca-local-url'] = $params['url'];
-		$params['url'] = $wiki->getUrl( MWNamespace::getCanonicalName( NS_USER ) . ':' . $user->getTitleKey() );
+		$params['url'] = $wiki->getUrl(
+			MWNamespace::getCanonicalName( NS_USER ) . ':' . $user->getTitleKey()
+		);
 		return true;
 	}
 
@@ -1316,7 +1358,9 @@ class CentralAuthHooks {
 	 * @param string[] &$qc
 	 * @return bool
 	 */
-	public static function onSpecialLogAddLogSearchRelations( $type, WebRequest $request, array &$qc ) {
+	public static function onSpecialLogAddLogSearchRelations(
+		$type, WebRequest $request, array &$qc
+	) {
 		if ( $type === 'gblrename' ) {
 			$oldname = trim( $request->getText( 'oldname' ) );
 			$canonicalOldname = User::getCanonicalName( $oldname );
@@ -1350,12 +1394,16 @@ class CentralAuthHooks {
 		}
 	}
 
-	public static function onResourceLoaderForeignApiModules( array &$dependencies, ResourceLoaderContext $context = null ) {
+	public static function onResourceLoaderForeignApiModules(
+		array &$dependencies, ResourceLoaderContext $context = null
+	) {
 		$dependencies[] = 'ext.centralauth.ForeignApi';
 		return true;
 	}
 
-	public static function onResourceLoaderTestModules( array &$testModules, ResourceLoader &$resourceLoader ) {
+	public static function onResourceLoaderTestModules(
+		array &$testModules, ResourceLoader &$resourceLoader
+	) {
 		$testModules['qunit']['ext.centralauth.ForeignApi.test'] = [
 			'scripts' => [ 'tests/qunit/ext.centralauth.ForeignApi.test.js' ],
 			'dependencies' => [ 'ext.centralauth.ForeignApi' ],

@@ -267,7 +267,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$renamer = CentralAuthUser::newFromId( $req->getPerformer() );
 		if ( $renamer === false ) {
 			throw new Exception(
-				"The perfomer's global user id ({$req->getPerformer()}) does not exist in the database"
+				"The perfomer's global user id ({$req->getPerformer()}) " .
+					"does not exist in the database"
 			);
 		}
 		if ( $renamer->isAttached() ) {
@@ -389,7 +390,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getName(),
 			$req->getNewName()
 		);
-		$form->addHeaderText( '<span class="plainlinks">' . $headerMsg->parseAsBlock() . '</span>' );
+		$form->addHeaderText( '<span class="plainlinks">' . $headerMsg->parseAsBlock() .
+			'</span>' );
 
 		$homeWikiWiki = WikiMap::getWiki( $homeWiki );
 		$infoMsg = $this->msg( $infoMsgKey,
@@ -411,7 +413,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			// @todo move this code somewhere else
 			$specialGblRename = new SpecialGlobalRenameUser();
 			$specialGblRename->setContext( $this->getContext() );
-			$conflicts = $specialGblRename->processAntiSpoofConflicts( $req->getName(), $spoofUser->getConflicts() );
+			$conflicts = $specialGblRename->processAntiSpoofConflicts( $req->getName(),
+				$spoofUser->getConflicts() );
 			if ( $conflicts ) {
 				$form->addHeaderText(
 					$this->msg(
@@ -895,7 +898,8 @@ class RenameQueueTablePager extends TablePager {
 				'rq_name' => $this->msg( 'globalrenamequeue-column-rq-name' )->text(),
 				'rq_newname' => $this->msg( 'globalrenamequeue-column-rq-newname' )->text(),
 				'rq_wiki' => $this->msg( 'globalrenamequeue-column-rq-wiki' )->text(),
-				'rq_requested_ts' => $this->msg( 'globalrenamequeue-column-rq-requested-ts' )->text(),
+				'rq_requested_ts' =>
+					$this->msg( 'globalrenamequeue-column-rq-requested-ts' )->text(),
 				'row_actions' => $this->msg( 'globalrenamequeue-column-row-actions' )->text(),
 			];
 
@@ -904,7 +908,8 @@ class RenameQueueTablePager extends TablePager {
 				array_pop( $this->mFieldNames );
 
 				$this->mFieldNames += [
-					'rq_completed_ts' => $this->msg( 'globalrenamequeue-column-rq-completed-ts' )->text(),
+					'rq_completed_ts' =>
+						$this->msg( 'globalrenamequeue-column-rq-completed-ts' )->text(),
 					'rq_status' => $this->msg( 'globalrenamequeue-column-rq-status' )->text(),
 					'rq_performer' => $this->msg( 'globalrenamequeue-column-rq-performer' )->text(),
 					'row_actions' => $this->msg( 'globalrenamequeue-column-row-actions' )->text(),

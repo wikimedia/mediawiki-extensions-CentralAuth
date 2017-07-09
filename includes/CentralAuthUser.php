@@ -204,7 +204,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	private function checkWriteMode() {
 		if ( !$this->mFromMaster ) {
-			wfDebugLog( 'CentralAuth', "Setter called on a slave instance: " . wfGetAllCallers( 10 ) );
+			wfDebugLog( 'CentralAuth',
+				"Setter called on a slave instance: " . wfGetAllCallers( 10 ) );
 		}
 	}
 
@@ -547,7 +548,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	* Return the local user account ID of the user with the same name on given wiki,
 	* irrespective of whether it is attached or not
 	* @param string $wikiId ID for the local database to connect to
-	* @return int|null Local user ID for given $wikiID. Null if $wikiID is invalid or local user doesn't exist
+	* @return int|null Local user ID for given $wikiID. Null if $wikiID is invalid or local user
+	*  doesn't exist
 	*/
 	public function getLocalId( $wikiId ) {
 		// Make sure the wiki ID is valid. (This prevents DBConnectionError in unit tests)
@@ -869,7 +871,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param bool $checkHome Re-check the user's ownership of the home wiki
 	 * @return bool
 	 */
-	public function storeAndMigrate( $passwords = [], $sendToRC = true, $safe = false, $checkHome = false ) {
+	public function storeAndMigrate(
+		$passwords = [], $sendToRC = true, $safe = false, $checkHome = false
+	) {
 		$ret = $this->attemptAutoMigration( $passwords, $sendToRC, $safe, $checkHome );
 		if ( $ret === true ) {
 			$this->recordAntiSpoof();
@@ -949,9 +953,13 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			} elseif ( $count === $maxEdits ) {
 				// Tie, check earlier registration
 				// Note that registration might be "null", which means they're a super old account.
-				if ( $migrationSet[$wiki]['registration'] < $migrationSet[$homeWiki]['registration'] ) {
+				if ( $migrationSet[$wiki]['registration'] <
+					$migrationSet[$homeWiki]['registration']
+				) {
 					$homeWiki = $wiki;
-				} elseif ( $migrationSet[$wiki]['registration'] === $migrationSet[$homeWiki]['registration'] ) {
+				} elseif ( $migrationSet[$wiki]['registration'] ===
+					$migrationSet[$homeWiki]['registration']
+				) {
 					// Another tie? Screw it, pick one randomly.
 					$wikis = [ $wiki, $homeWiki ];
 					$homeWiki = $wikis[mt_rand( 0, 1 )];
@@ -988,7 +996,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// also assume their email addresses are useful for this purpose...
 		if ( $passwords ) {
 			foreach ( $migrationSet as $wiki => $local ) {
-				if ( $local['email'] && $local['emailAuthenticated'] && !isset( $passingMail[$local['email']] ) ) {
+				if ( $local['email'] && $local['emailAuthenticated'] &&
+					!isset( $passingMail[$local['email']] )
+				) {
 					// Test passwords only once here as comparing hashes is very expensive
 					$passwordConfirmed[$wiki] = $this->matchHashes(
 						$passwords,
@@ -1017,7 +1027,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			} elseif (
 				isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ||
 				!isset( $passwordConfirmed[$wiki] ) &&
-					$this->matchHashes( $passwords, $this->getPasswordFromString( $local['password'],  $local['id'] ) )
+					$this->matchHashes(
+						$passwords,
+						$this->getPasswordFromString( $local['password'], $local['id'] )
+					)
 			) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
@@ -1167,7 +1180,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @param $checkHome bool Re-check the user's ownership of the home wiki
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration( $passwords = [], $sendToRC = true, $safe = false, $checkHome = false ) {
+	protected function attemptAutoMigration(
+		$passwords = [], $sendToRC = true, $safe = false, $checkHome = false
+	) {
 		$this->checkWriteMode();
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
@@ -1282,7 +1297,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// Look for accounts we can match by password
 		foreach ( $rows as $row ) {
 			$wiki = $row['wiki'];
-			if ( $this->matchHash( $password, $this->getPasswordFromString( $row['password'], $row['id'] ) )->isGood() ) {
+			if ( $this->matchHash( $password,
+				$this->getPasswordFromString( $row['password'], $row['id'] ) )->isGood()
+			) {
 				wfDebugLog( 'CentralAuth',
 					"Attaching '$this->mName' on $wiki by password" );
 				$this->attach( $wiki, 'password' );
@@ -1387,7 +1404,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				], [ 'user_name' => $this->mName ], __METHOD__
 			);
 
-			$id = $dblw->selectField( 'user', 'user_id', [ 'user_name' => $this->mName ], __METHOD__ );
+			$id = $dblw->selectField(
+				'user',
+				'user_id',
+				[ 'user_name' => $this->mName ],
+				__METHOD__
+			);
 			$this->clearLocalUserCache( $wikiName, $id );
 
 			$lb->reuseConnection( $dblw );
@@ -1573,7 +1595,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			if ( !$context->getUser()->isAllowed( 'centralauth-oversight' ) ) {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
-				return Status::newFatal( $context->msg( 'centralauth-admin-too-many-edits', $this->mName )->numParams( self::HIDE_CONTRIBLIMIT ) );
+				return Status::newFatal(
+					$context->msg( 'centralauth-admin-too-many-edits', $this->mName )
+						->numParams( self::HIDE_CONTRIBLIMIT )
+				);
 			}
 		}
 
@@ -1591,10 +1616,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		if ( !$isLocked && $setLocked ) {
 			$lockStatus = $this->adminLock();
-			$added[] = $context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
+			$added[] =
+				$context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
 		} elseif ( $isLocked && !$setLocked ) {
 			$lockStatus = $this->adminUnlock();
-			$removed[] = $context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
+			$removed[] =
+				$context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
 		}
 
 		if ( $oldHiddenLevel != $setHidden ) {
@@ -1602,21 +1629,27 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			switch ( $setHidden ) {
 				case self::HIDDEN_NONE:
 					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
-						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
+						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )
+							->inContentLanguage()->text();
 					} else {
-						$removed[] = $context->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
+						$removed[] = $context->msg( 'centralauth-log-status-hidden' )
+							->inContentLanguage()->text();
 					}
 					break;
 				case self::HIDDEN_LISTS:
-					$added[] = $context->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
+					$added[] = $context->msg( 'centralauth-log-status-hidden' )
+						->inContentLanguage()->text();
 					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
-						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
+						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )
+							->inContentLanguage()->text();
 					}
 					break;
 				case self::HIDDEN_OVERSIGHT:
-					$added[] = $context->msg( 'centralauth-log-status-oversighted' )->inContentLanguage()->text();
+					$added[] = $context->msg( 'centralauth-log-status-oversighted' )
+						->inContentLanguage()->text();
 					if ( $oldHiddenLevel == self::HIDDEN_LISTS ) {
-						$removed[] = $context->msg( 'centralauth-log-status-hidden' )->inContentLanguage()->text();
+						$removed[] = $context->msg( 'centralauth-log-status-hidden' )
+							->inContentLanguage()->text();
 					}
 					break;
 			}
@@ -1635,9 +1668,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		// Setup Status object to return all of the information for logging
 		if ( $good && ( count( $added ) || count( $removed ) ) ) {
 			$added = count( $added ) ?
-				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
+				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )
+					->inContentLanguage()->text();
 			$removed = count( $removed ) ?
-				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )->inContentLanguage()->text();
+				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )
+					->inContentLanguage()->text();
 
 			$returnStatus->successCount = count( $added ) + count( $removed );
 			$returnStatus->success['added'] = $added;
@@ -2179,7 +2214,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			return;
 		}
 
-		wfDebugLog( 'CentralAuthVerbose', "Loading attached wiki list for global user {$this->mName} from DB" );
+		wfDebugLog( 'CentralAuthVerbose',
+			"Loading attached wiki list for global user {$this->mName} from DB"
+		);
 
 		$db = $this->getSafeReadDB();
 
@@ -2354,7 +2391,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Find any remaining migration records for this username which haven't gotten attached to some global account.
+	 * Find any remaining migration records for this username which haven't gotten attached to
+	 * some global account.
 	 * Formatted as associative array with some data.
 	 *
 	 * @throws Exception
@@ -2466,7 +2504,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				$data['block-anononly'] = (bool)$row->ipb_anon_only;
 				$data['block-nocreate'] = (bool)$row->ipb_create_account;
 				$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
-				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk ); // Poorly named database column
+				// Poorly named database column
+				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
 				$data['block-noemail'] = (bool)$row->ipb_block_email;
 				$data['blocked'] = true;
 			}
@@ -2664,7 +2703,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'gu_locked' => $this->mLocked,
 				'gu_hidden' => $this->getHiddenLevel(),
 				'gu_email' => $this->mEmail,
-				'gu_email_authenticated' => $dbw->timestampOrNull( $this->mAuthenticationTimestamp ),
+				'gu_email_authenticated' =>
+					$dbw->timestampOrNull( $this->mAuthenticationTimestamp ),
 				'gu_home_db' => $this->getHomeWiki(),
 				'gu_cas_token' => $newCasToken
 			],
@@ -2846,7 +2886,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			// Reload the state
 			$this->loadStateNoCache();
 		} else {
-			wfDebugLog( 'CentralAuthVerbose', "Deferring cache invalidation because we're in a transaction" );
+			wfDebugLog( 'CentralAuthVerbose',
+				"Deferring cache invalidation because we're in a transaction" );
 		}
 	}
 
@@ -2869,7 +2910,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Intended to be used for things like migration.
 	 */
 	public function endTransaction() {
-		wfDebugLog( 'CentralAuthVerbose', "Finishing CentralAuthUser cache-invalidating transaction" );
+		wfDebugLog( 'CentralAuthVerbose',
+			"Finishing CentralAuthUser cache-invalidating transaction" );
 		$this->mDelayInvalidation = false;
 		$this->invalidateCache();
 	}
@@ -2881,7 +2923,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Intended to be used for things like migration.
 	 */
 	public function startTransaction() {
-		wfDebugLog( 'CentralAuthVerbose', "Beginning CentralAuthUser cache-invalidating transaction" );
+		wfDebugLog( 'CentralAuthVerbose',
+			"Beginning CentralAuthUser cache-invalidating transaction" );
 		// Delay cache invalidation
 		$this->mDelayInvalidation = 1;
 	}
@@ -2906,7 +2949,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	public function getStateHash( $recache = false ) {
 		$this->loadState( $recache );
-		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' . (int)$this->mLocked );
+		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' .
+			(int)$this->mLocked );
 	}
 
 	/**

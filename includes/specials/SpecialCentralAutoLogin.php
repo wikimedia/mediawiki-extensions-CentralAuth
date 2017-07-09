@@ -66,7 +66,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
 			$this->doFinalOutput(
 				false,
-				'Cannot operate when using ' . $session->getProvider()->describe( Language::factory( 'en' ) ),
+				'Cannot operate when using ' .
+					$session->getProvider()->describe( Language::factory( 'en' ) ),
 				$body,
 				$type
 			);
@@ -83,10 +84,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			in_array( $par, [ 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
 			'createSession', 'validateSession', 'setCookies' ], true )
 		) {
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autologin ' . $par, [
-				'event' => 'autologin',
-				'eventType' => $par,
-			] );
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info(
+				'Autologin ' . $par, [
+					'event' => 'autologin',
+					'eventType' => $par,
+				]
+			);
 		}
 
 		$request = $this->getRequest();
@@ -101,7 +104,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
 				$this->loginWiki = $fromwiki;
 			}
-		} elseif ( $request->getVal( 'from' ) === wfWikiId() && $wgCentralAuthLoginWiki !== wfWikiId() ) {
+		} elseif ( $request->getVal( 'from' ) === wfWikiId() &&
+			$wgCentralAuthLoginWiki !== wfWikiId()
+		) {
 			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
 			$this->do302Redirect( $wgCentralAuthLoginWiki, $par, $request->getValues() );
 			return;
@@ -250,7 +255,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $this->getUser()->isLoggedIn() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
-				$this->doFinalOutput( false, 'Not centrally logged in', self::getInlineScript( 'anon-set.js' ) );
+				$this->doFinalOutput( false, 'Not centrally logged in',
+					self::getInlineScript( 'anon-set.js' ) );
 				return;
 			}
 
@@ -311,7 +317,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			if ( $gu_id <= 0 ) {
-				$this->doFinalOutput( false, 'Not centrally logged in', self::getInlineScript( 'anon-set.js' ) );
+				$this->doFinalOutput( false, 'Not centrally logged in',
+					self::getInlineScript( 'anon-set.js' ) );
 				return;
 			}
 
@@ -556,7 +563,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
 			$code = $this->getUser()->getOption( 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
-			Hooks::run( 'UserGetLanguageObject', [ $this->getUser(), &$code, $this->getContext() ] );
+			Hooks::run( 'UserGetLanguageObject',
+				[ $this->getUser(), &$code, $this->getContext() ]
+			);
 			$script .= "\n" . Xml::encodeJsCall( 'mediaWiki.messages.set', [
 				[
 					'centralauth-centralautologin-logged-in' =>

@@ -29,12 +29,18 @@ class CentralAuthSuppressUserJob extends Job {
 		$reason = $this->params['reason'];
 		$user = CentralAuthUser::getMasterInstanceByName( $username );
 		if ( !$user->exists() ) {
-			wfDebugLog( 'suppressjob', "Requested to suppress non-existent user {$username} by {$by}." );
+			wfDebugLog(
+				'suppressjob', "Requested to suppress non-existent user {$username} by {$by}."
+			);
 		}
 
 		foreach ( $wikis as $wiki ) {
 			$user->doLocalSuppression( $suppress, $wiki, $by, $reason );
-			wfDebugLog( 'suppressjob', ( $suppress ? 'S' : 'Uns' ) . "uppressed {$username} at {$wiki} by {$by} via job queue." );
+			wfDebugLog(
+				'suppressjob',
+				( $suppress ? 'S' : 'Uns' ) .
+					"uppressed {$username} at {$wiki} by {$by} via job queue."
+			);
 		}
 		return true;
 	}

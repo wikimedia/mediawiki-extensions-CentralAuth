@@ -119,7 +119,8 @@ class GlobalUsersPager extends AlphabeticPager {
 				'gu_id' => 'MAX(gu_id)',
 				'gu_locked' => 'MAX(gu_locked)',
 				'lu_attached_method' => 'MAX(lu_attached_method)',
-				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ], // | cannot be used in a group name
+				// | cannot be used in a group name
+				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ],
 			'conds' => $conds,
 			'options' => [ 'GROUP BY' => 'gu_name' ],
 			'join_conds' => [
@@ -151,13 +152,15 @@ class GlobalUsersPager extends AlphabeticPager {
 		}
 
 		$info = $this->getLanguage()->commaList( $info );
-		return Html::rawElement( 'li', [], $this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
+		return Html::rawElement( 'li', [],
+			$this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
 	}
 
 	function doBatchLookups() {
 		$batch = new LinkBatch();
 		foreach ( $this->mResult as $row ) {
-			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) ); // userpage existence link cache
+			// userpage existence link cache
+			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
 			if ( $row->gug_group ) { // no point in adding users that belong to any group
 				$this->globalIDGroups[$row->gu_id] = explode( '|', $row->gug_group );
 			}

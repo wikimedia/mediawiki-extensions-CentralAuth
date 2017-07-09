@@ -105,7 +105,9 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		// Skip if they're being renamed
 		if ( $centralUser->renameInProgress() ) {
 			$this->logger->debug( __METHOD__ . ': rename in progress' );
-			return $this->makeException( 'renameinprogress', 'apierror-centralauth-renameinprogress' );
+			return $this->makeException(
+				'renameinprogress', 'apierror-centralauth-renameinprogress'
+			);
 		}
 
 		if ( !$centralUser->exists() ) {
@@ -152,7 +154,9 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		return false;
 	}
 
-	public function persistSession( MediaWiki\Session\SessionBackend $session, WebRequest $request ) {
+	public function persistSession(
+		MediaWiki\Session\SessionBackend $session, WebRequest $request
+	) {
 		// Nothing to do
 	}
 
@@ -228,7 +232,9 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 	 * @return bool
 	 */
 	public function onBeforePageDisplay( $out ) {
-		if ( $out->getRequest()->getSession()->getProvider() instanceof CentralAuthTokenSessionProvider ) {
+		if ( $out->getRequest()->getSession()->getProvider()
+			instanceof CentralAuthTokenSessionProvider
+		) {
 			$out->reduceAllowedModules(
 				ResourceLoaderModule::TYPE_SCRIPTS, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
 			);

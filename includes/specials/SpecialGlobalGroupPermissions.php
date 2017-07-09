@@ -92,8 +92,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			// @todo Move this out of main view to a separate page
 			$html = Xml::fieldset( $this->msg( 'centralauth-newgroup-legend' )->text() );
 			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
-			$html .= Xml::openElement( 'form', [ 'method' => 'post', 'action' => $wgScript, 'name' => 'centralauth-globalgroups-newgroup' ] );
-			$html .= Html::hidden( 'title',  SpecialPage::getTitleFor( 'GlobalGroupPermissions' )->getPrefixedText() );
+			$html .= Xml::openElement( 'form', [
+				'method' => 'post',
+				'action' => $wgScript,
+				'name' => 'centralauth-globalgroups-newgroup'
+			] );
+			$html .= Html::hidden( 'title',
+				SpecialPage::getTitleFor( 'GlobalGroupPermissions' )->getPrefixedText() );
 
 			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Xml::input( 'wpGroup' ) ];
 
@@ -110,7 +115,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string HTML for the group permissions table
 	 */
 	protected function getGlobalGroupsTable( $groups ) {
-		$table = Html::openElement( 'table', [ 'class' => 'mw-centralauth-groups-table wikitable' ] );
+		$table = Html::openElement( 'table',
+			[ 'class' => 'mw-centralauth-groups-table wikitable' ] );
 
 		// Header stuff
 		$table .= Html::openElement( 'tr' );
@@ -130,7 +136,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			// Column with group name, links and local disabled status
 			$table .= Html::openElement( 'td' );
-			$table .= $this->getOutput()->parseInline( User::makeGroupLinkWiki( $groupName ) ) . '<br />';
+			$table .= $this->getOutput()->parseInline( User::makeGroupLinkWiki( $groupName ) ) .
+				'<br />';
 
 			$linkRenderer = $this->getLinkRenderer();
 			$links = [
@@ -143,11 +150,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 					$this->msg( 'centralauth-globalgroupperms-group-listmembers' )->text()
 				),
 			];
-			$table .= $this->msg( 'parentheses' )->rawParams( $this->getLanguage()->pipeList( $links ) )->escaped();
+			$table .= $this->msg( 'parentheses' )
+				->rawParams( $this->getLanguage()->pipeList( $links ) )->escaped();
 
 			if ( $wikiset !== null && !$wikiset['enabledHere'] ) {
 				$table .= '<br /><small>';
-				$table .= $this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped() . '</small>';
+				$table .= $this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped() .
+					'</small>';
 			}
 			$table .= Html::closeElement( 'td' );
 
@@ -219,13 +228,20 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$this->getOutput()->addBacklinkSubtitle( $this->getPageTitle() );
 
-		$fieldsetClass = $editable ? 'mw-centralauth-editgroup' : 'mw-centralauth-editgroup-readonly';
-		$html = Xml::fieldset( $this->msg( 'centralauth-editgroup-fieldset', $group )->text(), false, [ 'class' => $fieldsetClass ] );
+		$fieldsetClass = $editable
+			? 'mw-centralauth-editgroup'
+			: 'mw-centralauth-editgroup-readonly';
+		$html = Xml::fieldset(
+			$this->msg( 'centralauth-editgroup-fieldset', $group )->text(),
+			false,
+			[ 'class' => $fieldsetClass ]
+		);
 
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', [
 				'method' => 'post',
-				'action' => SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(),
+				'action' =>
+					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(),
 				'name' => 'centralauth-globalgroups-newgroup'
 			] );
 			$html .= Html::hidden( 'wpGroup', $group );
@@ -253,8 +269,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				UserGroupMembership::getGroupMemberName( $group, '#' )
 			)->parse();
 		} else {
-			$fields['centralauth-editgroup-display'] = htmlspecialchars( UserGroupMembership::getGroupName( $group ) );
-			$fields['centralauth-editgroup-member'] = htmlspecialchars( UserGroupMembership::getGroupMemberName( $group, '#' ) );
+			$fields['centralauth-editgroup-display'] =
+				htmlspecialchars( UserGroupMembership::getGroupName( $group ) );
+			$fields['centralauth-editgroup-member'] =
+				htmlspecialchars( UserGroupMembership::getGroupMemberName( $group, '#' ) );
 		}
 		$fields['centralauth-editgroup-members'] = $this->msg(
 			'centralauth-editgroup-members-link',
@@ -348,8 +366,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$label = Xml::tags( 'label', [ 'for' => "wpRightAssigned-$right" ],
 					$desc );
 
-			$liClass = $checked ? 'mw-centralauth-editgroup-checked' : 'mw-centralauth-editgroup-unchecked';
-			$checkboxes[] = Html::rawElement( 'li', [ 'class' => $liClass ], "$checkbox&#160;$label" );
+			$liClass = $checked
+				? 'mw-centralauth-editgroup-checked'
+				: 'mw-centralauth-editgroup-unchecked';
+			$checkboxes[] = Html::rawElement(
+				'li', [ 'class' => $liClass ], "$checkbox&#160;$label" );
 		}
 
 		$count = count( $checkboxes );
@@ -453,7 +474,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			if ( !$alreadyAssigned && $this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
 				$addRights[] = $right;
-			} elseif ( $alreadyAssigned && !$this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
+			} elseif ( $alreadyAssigned &&
+				!$this->getRequest()->getCheck( "wpRightAssigned-$right" )
+			) {
 				$removeRights[] = $right;
 			} # Otherwise, do nothing.
 		}
@@ -494,7 +517,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$dbw = CentralAuthUtils::getCentralDB();
 
 		# Delete from the DB
-		$dbw->delete( 'global_group_permissions', [ 'ggp_group' => $group, 'ggp_permission' => $rights ], __METHOD__ );
+		$dbw->delete(
+			'global_group_permissions',
+			[ 'ggp_group' => $group, 'ggp_permission' => $rights ],
+			__METHOD__
+		);
 	}
 
 	/**
@@ -514,7 +541,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 
 		# Replace into the DB
-		$dbw->replace( 'global_group_permissions', [ 'ggp_group', 'ggp_permission' ], $insertRows, __METHOD__ );
+		$dbw->replace(
+			'global_group_permissions',
+			[ 'ggp_group', 'ggp_permission' ],
+			$insertRows,
+			__METHOD__
+		);
 	}
 
 	/**
@@ -599,7 +631,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string
 	 */
 	function makeRightsList( $ids ) {
-		return (bool)count( $ids ) ? implode( ', ', $ids ) : $this->msg( 'rightsnone' )->inContentLanguage()->text();
+		return (bool)count( $ids )
+			? implode( ', ', $ids )
+			: $this->msg( 'rightsnone' )->inContentLanguage()->text();
 	}
 
 	/**
@@ -646,7 +680,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// renamed groups
 		$dbr = CentralAuthUtils::getCentralDB();
 
-		$res = $dbr->select( [ 'global_user_groups', 'globaluser' ], 'gu_name', [ 'gug_group' => $group, 'gu_id=gug_user' ], __METHOD__ );
+		$res = $dbr->select(
+			[ 'global_user_groups', 'globaluser' ],
+			'gu_name',
+			[ 'gug_group' => $group, 'gu_id=gug_user' ],
+			__METHOD__
+		);
 
 		// Invalidate their rights cache.
 		foreach ( $res as $row ) {

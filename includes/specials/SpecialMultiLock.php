@@ -41,7 +41,8 @@ class SpecialMultiLock extends SpecialPage {
 		if ( $this->mReason == 'other' ) {
 			$this->mReason = $reasonDetail;
 		} elseif ( $reasonDetail ) {
-			$this->mReason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() . $reasonDetail;
+			$this->mReason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() .
+				$reasonDetail;
 		}
 
 		if ( $this->mUserNames !== '' ) {
@@ -63,8 +64,12 @@ class SpecialMultiLock extends SpecialPage {
 		} elseif ( $this->mPosted && $this->mMethod == 'search' && $this->mPrefixSearch !== '' ) {
 			$this->searchForUsers();
 			$this->showUserTable();
-		} elseif ( $this->mPosted && $this->mMethod == 'set-status' && is_array( $this->mActionUserNames ) ) {
-			$this->mGlobalUsers = array_unique( $this->getGlobalUsers( $this->mActionUserNames, true ), SORT_REGULAR );
+		} elseif ( $this->mPosted && $this->mMethod == 'set-status' &&
+			is_array( $this->mActionUserNames )
+		) {
+			$this->mGlobalUsers = array_unique(
+				$this->getGlobalUsers( $this->mActionUserNames, true ), SORT_REGULAR
+			);
 			$this->setStatus();
 			$this->showUserTable();
 		} else {
@@ -97,7 +102,8 @@ class SpecialMultiLock extends SpecialPage {
 				? CentralAuthUser::getMasterInstanceByName( $username )
 				: CentralAuthUser::getInstanceByName( $username );
 			if ( !$globalUser->exists()
-				|| ( !$this->mCanOversight && ( $globalUser->isOversighted() || $globalUser->isHidden() ) )
+				|| ( !$this->mCanOversight &&
+					( $globalUser->isOversighted() || $globalUser->isHidden() ) )
 			) {
 				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
 			} else {
@@ -196,7 +202,8 @@ class SpecialMultiLock extends SpecialPage {
 			$this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text()
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
-		$botField = Xml::check( 'markasbot' ) . $this->msg( 'centralauth-admin-multi-botcheck' )->parse();
+		$botField = Xml::check( 'markasbot' ) .
+			$this->msg( 'centralauth-admin-multi-botcheck' )->parse();
 
 		$form .= Xml::buildForm(
 			[
@@ -274,7 +281,9 @@ class SpecialMultiLock extends SpecialPage {
 	 * Build the table of users to lock and/or hide
 	 */
 	private function showUserTable() {
-		$this->mGlobalUsers = array_unique( $this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR );
+		$this->mGlobalUsers = array_unique(
+			$this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR
+		);
 
 		$out = $this->getOutput();
 
@@ -334,7 +343,8 @@ class SpecialMultiLock extends SpecialPage {
 			$guLocked = $this->msg( 'centralauth-admin-status-locked-yes' )->text();
 		}
 		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
-		$guAttachedLocalAccounts = $this->getLanguage()->formatNum( count( $globalUser->listAttached() ) );
+		$guAttachedLocalAccounts = $this->getLanguage()
+			->formatNum( count( $globalUser->listAttached() ) );
 		$rowHtml .= Html::rawElement( 'td', [],
 			Html::input(
 				'wpActionTarget['.$guName.']',
@@ -417,7 +427,9 @@ class SpecialMultiLock extends SpecialPage {
 	 */
 	function showStatusError( $wikitext ) {
 		$wrap = Xml::tags( 'div', [ 'class' => 'error' ], $wikitext );
-		$this->getOutput()->addHTML( $this->getOutput()->parse( $wrap, /*linestart*/true, /*uilang*/true ) );
+		$this->getOutput()->addHTML(
+			$this->getOutput()->parse( $wrap, /*linestart*/true, /*uilang*/true )
+		);
 	}
 
 	function showError( /* varargs */ ) {
@@ -446,7 +458,8 @@ class SpecialMultiLock extends SpecialPage {
 				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-username' )->text()
 				) .
-				Xml::textarea( 'wpTarget', ( $this->mPrefixSearch ? '' : $this->mUserNames ), 25, 20 ) .
+				Xml::textarea( 'wpTarget',
+					( $this->mPrefixSearch ? '' : $this->mUserNames ), 25, 20 ) .
 				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
 				) .
