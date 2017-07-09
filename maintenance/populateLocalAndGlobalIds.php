@@ -10,7 +10,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->addDescription( "Populate the localuser.lu_local_id and localuser.lu_global_id fields" );
+		$this->addDescription(
+			"Populate the localuser.lu_local_id and localuser.lu_global_id fields"
+		);
 		$this->setBatchSize( 1000 );
 	}
 
@@ -55,7 +57,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 				$globalUidToLocalName = [];
 				foreach ( $rows as $row ) {
 					if ( in_array( $row->lu_name, $globalRenames ) ) {
-						$this->output( "User " . $row->lu_name . " not migrated (pending rename)\n" );
+						$this->output(
+							"User " . $row->lu_name . " not migrated (pending rename)\n"
+						);
 						continue;
 					}
 					$globalUidToLocalName[$row->gu_id] = $row->lu_name;
@@ -86,19 +90,24 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 						[ 'lu_name' => $uname, 'lu_wiki' => $wiki ]
 					);
 					if ( !$result ) {
-						$this->output( "Update failed for global user $lastGlobalId for wiki $wiki \n" );
+						$this->output(
+							"Update failed for global user $lastGlobalId for wiki $wiki \n"
+						);
 					} else {
 						// Count number of records actually updated
 						$updated++;
 					}
 				}
-				$this->output( "Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n" );
+				$this->output(
+					"Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n"
+				);
 				CentralAuthUtils::waitForSlaves();
 			} while ( $numRows >= $this->mBatchSize );
 			$lb->reuseConnection( $ldbr );
 			$this->output( "Completed $wiki \n" );
 		} else {
-			$this->error( "This script requires that the CentralAuth extension is enabled. Please enable it and try again.", 1 );
+			$this->error( "This script requires that the CentralAuth extension is enabled. " .
+				"Please enable it and try again.", 1 );
 		}
 	}
 

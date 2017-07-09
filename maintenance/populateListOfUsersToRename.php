@@ -81,7 +81,8 @@ class PopulateListOfUsersToRename extends Maintenance {
 						$attachableWikis[] = $home;
 						foreach ( $unattached as $wiki => $info ) {
 							if ( $ca->getEmailAuthenticationTimestamp() &&
-								$info['email'] === $ca->getEmail() && !is_null( $info['emailAuthenticated'] )
+								$info['email'] === $ca->getEmail() &&
+								!is_null( $info['emailAuthenticated'] )
 							) {
 								$attachableWikis[] = $wiki;
 							}
@@ -89,9 +90,14 @@ class PopulateListOfUsersToRename extends Maintenance {
 					} else {
 						$home = $ca->chooseHomeWiki( $unattached );
 						$attachableWikis[] = $home;
-						if ( $unattached[$home]['email'] && isset( $unattached[$home]['emailAuthenticated'] ) ) {
+						if ( $unattached[$home]['email'] &&
+							isset( $unattached[$home]['emailAuthenticated'] )
+						) {
 							foreach ( $unattached as $wiki => $info ) {
-								if ( $wiki !== $home && $unattached[$home]['email'] === $info['email'] && isset( $info['emailAuthenticated'] ) ) {
+								if ( $wiki !== $home &&
+									$unattached[$home]['email'] === $info['email'] &&
+									isset( $info['emailAuthenticated'] )
+								) {
 									$attachableWikis[] = $wiki;
 								}
 							}

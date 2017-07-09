@@ -46,7 +46,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Resends the 'confirm your email address email' with a link to Special:MergeAccount";
+		$this->mDescription = "Resends the 'confirm your email address email' with a link to " .
+			"Special:MergeAccount";
 		$this->start = microtime( true );
 		$this->sent = 0;
 		$this->total = 0;
@@ -55,7 +56,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
 		$this->addOption( 'confirmed', 'Send email to confirmed accounts', false, false );
-		$this->addOption( 'sleep', 'How long to wait in between emails (default 1 second)', false, true );
+		$this->addOption( 'sleep',
+			'How long to wait in between emails (default 1 second)', false, true );
 		$this->addOption( 'dryrun', 'Don\'t actually send any emails', false, false );
 		$this->addOption( 'resume', 'Which username to resume after', false, true );
 	}
@@ -129,7 +131,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$user->load();
 
 		if ( !$this->sendToConfirmed && $user->isEmailConfirmed() ) {
-			$this->output( "ERROR: The user '$username@$wikiID' already has a confirmed email address\n" );
+			$this->output(
+				"ERROR: The user '$username@$wikiID' already has a confirmed email address\n"
+			);
 			return;
 		}
 
@@ -160,13 +164,16 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			$this->sent++;
 			sleep( $this->sleep );
 		} else {
-			$this->output( "ERROR: Sending confirm and migrate email failed for '$username@$wikiID'\n" );
+			$this->output(
+				"ERROR: Sending confirm and migrate email failed for '$username@$wikiID'\n"
+			);
 		}
 	}
 
 	function report() {
 		$delta = microtime( true ) - $this->start;
-		$this->output( sprintf( "%s: %s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",
+		$this->output( sprintf(
+			"%s: %s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",
 			wfWikiID(),
 			wfTimestamp( TS_DB ),
 			$this->total,

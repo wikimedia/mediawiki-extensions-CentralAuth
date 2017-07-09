@@ -128,11 +128,36 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 
 	public function provideAuthenticate() {
 		return [
-			[ 'GlobalUser', 'GUP@ssword', true, 'Valid login for attached global' ],
-			[ 'GlobalUser', 'wrongPassword', false, 'Invalid password for attached global' ],
-			[ 'GlobalLockedUser', 'GLUP@ssword', false, 'Valid password for locked global' ],
-			[ 'GlobalUnattachedUser', 'GUUP@ssword', true, 'Valid password for global but unattached account' ],
-			[ 'GlobalConflictUser', 'GCUP@ssword', false, 'Valid password for global but unattached account, with conflicting local' ],
+			[
+				'GlobalUser',
+				'GUP@ssword',
+				true,
+				'Valid login for attached global'
+			],
+			[
+				'GlobalUser',
+				'wrongPassword',
+				false,
+				'Invalid password for attached global'
+			],
+			[
+				'GlobalLockedUser',
+				'GLUP@ssword',
+				false,
+				'Valid password for locked global'
+			],
+			[
+				'GlobalUnattachedUser',
+				'GUUP@ssword',
+				true,
+				'Valid password for global but unattached account'
+			],
+			[
+				'GlobalConflictUser',
+				'GCUP@ssword',
+				false,
+				'Valid password for global but unattached account, with conflicting local'
+			],
 		];
 	}
 
@@ -162,7 +187,9 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		$this->assertSame( false, $user->isAnon(), 'Local account for GlobalUser exists' ); # sanity
 		$auth->setPassword( $user, 'ANewPassword' );
 		$central = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
-		$this->assertEquals( 'ok', $central->authenticate( 'ANewPassword' ), 'Authenticate with newly set password' );
+		$this->assertEquals( 'ok', $central->authenticate( 'ANewPassword' ),
+			'Authenticate with newly set password'
+		);
 	}
 
 	/**

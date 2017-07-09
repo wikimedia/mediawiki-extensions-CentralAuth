@@ -60,7 +60,8 @@ class GlobalUserMergeDatabaseUpdates {
 		$user = CentralAuthUser::newFromId( $newId );
 		foreach ( $attachedWikis as $wiki ) {
 			$localId = $user->getLocalId( $wiki );
-			// Note that $localId will be null in case there is no local account with new name on that wiki yet
+			// Note that $localId will be null in case there is no local account with new name
+			// on that wiki yet
 			$dbw->update(
 				'localuser',
 				[ 'lu_local_id' => $localId ],

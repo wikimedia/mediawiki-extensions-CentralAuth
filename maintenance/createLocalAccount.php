@@ -37,7 +37,8 @@ class CreateLocalAccount extends Maintenance {
 
 			$status = CentralAuthUtils::autoCreateUser( $user );
 			if ( !$status->isGood() ) {
-				$this->error( "autoCreateUser failed for $username: " . $status->getWikiText( null, null, 'en' ) );
+				$this->error( "autoCreateUser failed for $username: " .
+					$status->getWikiText( null, null, 'en' ) );
 			}
 
 			# Update user count

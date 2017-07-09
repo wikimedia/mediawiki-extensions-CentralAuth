@@ -47,7 +47,8 @@ class MigratePass1 extends Maintenance {
 
 	function migratePassOneReport() {
 		$delta = microtime( true ) - $this->start;
-		$this->output( sprintf( "%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated (@ %s)\n",
+		$this->output( sprintf(
+			"%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated (@ %s)\n",
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->total / $delta,

@@ -46,7 +46,9 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		$data = [];
 		$userExists = $user->exists();
 
-		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE || $this->getUser()->isAllowed( 'centralauth-oversight' ) ) ) {
+		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE ||
+			$this->getUser()->isAllowed( 'centralauth-oversight' ) )
+		) {
 			// The global user exists and it's not hidden or the current user is allowed to see it
 			$data['home'] = $user->getHomeWiki();
 			$data['id'] = $user->getId();
@@ -96,7 +98,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				];
 				if ( $account['blocked'] ) {
 					$a['blocked'] = [
-						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
+						'expiry' => $this->getLanguage()->formatExpiry(
+							$account['block-expiry'], TS_ISO_8601 ),
 						'reason' => $account['block-reason']
 					];
 				}
@@ -121,13 +124,16 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				];
 				if ( $account['blocked'] ) {
 					$a['blocked'] = [
-						'expiry' => $this->getLanguage()->formatExpiry( $account['block-expiry'], TS_ISO_8601 ),
+						'expiry' => $this->getLanguage()->formatExpiry(
+							$account['block-expiry'], TS_ISO_8601 ),
 						'reason' => $account['block-reason']
 					];
 				}
 				$result->addValue( [ 'query', $this->getModuleName(), 'unattached' ], null, $a );
 			}
-			$result->addIndexedTagName( [ 'query', $this->getModuleName(), 'unattached' ], 'account' );
+			$result->addIndexedTagName(
+				[ 'query', $this->getModuleName(), 'unattached' ], 'account'
+			);
 		}
 	}
 

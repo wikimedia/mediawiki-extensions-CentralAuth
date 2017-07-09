@@ -10,7 +10,8 @@ class CheckLocalUser extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Checks the contents of the localuser table and deletes invalid entries";
+		$this->mDescription = "Checks the contents of the localuser table and " .
+			"deletes invalid entries";
 		$this->start = microtime( true );
 		$this->deleted = 0;
 		$this->total = 0;
@@ -20,9 +21,15 @@ class CheckLocalUser extends Maintenance {
 		$this->verbose = false;
 		$this->batchSize = 1000;
 
-		$this->addOption( 'delete', 'Performs delete operations on the offending entries', false, false );
-		$this->addOption( 'delete-nowiki', 'Delete entries associated with invalid wikis', false, false );
-		$this->addOption( 'wiki', 'If specified, only runs against local names from this wiki', false, true, 'u' );
+		$this->addOption( 'delete',
+			'Performs delete operations on the offending entries', false, false
+		);
+		$this->addOption( 'delete-nowiki',
+			'Delete entries associated with invalid wikis', false, false
+		);
+		$this->addOption( 'wiki',
+			'If specified, only runs against local names from this wiki', false, true, 'u'
+		);
 		$this->addOption( 'allwikis', 'If specified, checks all wikis', false, false );
 		$this->addOption( 'user', 'If specified, only checks the given user', false, true );
 		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
@@ -71,7 +78,9 @@ class CheckLocalUser extends Maintenance {
 						$centralMaster->delete( 'localuser', $conds, __METHOD__ );
 						$this->deleted ++;
 					} else {
-						$this->output( "$wiki does not exist, use --delete-nowiki to delete entries...\n" );
+						$this->output(
+							"$wiki does not exist, use --delete-nowiki to delete entries...\n"
+						);
 					}
 				} else {
 					$this->output( "$wiki does not exist\n" );
@@ -93,7 +102,9 @@ class CheckLocalUser extends Maintenance {
 				// check to see if the user did not exist in the local user table
 				if ( $localUser->numRows() == 0 ) {
 					if ( $this->verbose ) {
-						$this->output( "Local user not found for localuser entry $username@$wiki\n" );
+						$this->output(
+							"Local user not found for localuser entry $username@$wiki\n"
+						);
 					}
 					$this->total++;
 					if ( !$this->dryrun ) {

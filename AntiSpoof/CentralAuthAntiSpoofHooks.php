@@ -14,7 +14,9 @@ class CentralAuthAntiSpoofHooks {
 	public static function asAbortNewAccountHook( $user, &$message ) {
 		global $wgAntiSpoofAccounts, $wgUser, $wgRequest;
 
-		$status = self::testNewAccount( $user, $wgUser, $wgAntiSpoofAccounts, $wgRequest->getCheck( 'wpIgnoreAntiSpoof' ) );
+		$status = self::testNewAccount(
+			$user, $wgUser, $wgAntiSpoofAccounts, $wgRequest->getCheck( 'wpIgnoreAntiSpoof' )
+		);
 		if ( !$status->isGood() ) {
 			$message = Status::wrap( $status )->getMessage()->escaped();
 		}
@@ -54,18 +56,23 @@ class CentralAuthAntiSpoofHooks {
 			if ( empty( $conflicts ) ) {
 				$logger->info( "{$mode}PASS new account '$name' [$normalized]" );
 			} else {
-				$logger->info( "{$mode}CONFLICT new account '$name' [$normalized] spoofs " . implode( ',', $conflicts ) );
+				$logger->info( "{$mode}CONFLICT new account '$name' [$normalized] spoofs " .
+					implode( ',', $conflicts ) );
 				if ( $active ) {
 					$numConflicts = count( $conflicts );
 
 					// This message pasting-together sucks.
-					$message = wfMessage( 'antispoof-conflict-top', $name )->numParams( $numConflicts )->escaped();
+					$message = wfMessage( 'antispoof-conflict-top', $name )
+						->numParams( $numConflicts )->escaped();
 					$message .= '<ul>';
 					foreach ( $conflicts as $simUser ) {
-						$message .= '<li>' . wfMessage( 'antispoof-conflict-item', $simUser )->escaped() . '</li>';
+						$message .= '<li>' .
+							wfMessage( 'antispoof-conflict-item', $simUser )->escaped() . '</li>';
 					}
 					$message .= '</ul>' . wfMessage( 'antispoof-conflict-bottom' )->escaped();
-					return StatusValue::newFatal( new RawMessage( '$1', Message::rawParam( $message ) ) );
+					return StatusValue::newFatal(
+						new RawMessage( '$1', Message::rawParam( $message ) )
+					);
 				}
 			}
 		} else {

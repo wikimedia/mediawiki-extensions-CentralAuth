@@ -10,7 +10,8 @@ class CheckLocalNames extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Checks the contents of the localnames table and deletes invalid entries";
+		$this->mDescription = "Checks the contents of the localnames table and deletes " .
+			"invalid entries";
 		$this->start = microtime( true );
 		$this->deleted = 0;
 		$this->total = 0;
@@ -19,8 +20,12 @@ class CheckLocalNames extends Maintenance {
 		$this->verbose = false;
 		$this->batchSize = 1000;
 
-		$this->addOption( 'delete', 'Performs delete operations on the offending entries', false, false );
-		$this->addOption( 'wiki', 'If specified, only runs against local names from this wiki', false, true, 'u' );
+		$this->addOption( 'delete',
+			'Performs delete operations on the offending entries', false, false
+		);
+		$this->addOption( 'wiki',
+			'If specified, only runs against local names from this wiki', false, true, 'u'
+		);
 		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
 	}
 
@@ -100,7 +105,9 @@ class CheckLocalNames extends Maintenance {
 					// check to see if the user did not exist in the local user table
 					if ( $localUser->numRows() == 0 ) {
 						if ( $this->verbose ) {
-							$this->output( "Local user not found for localname entry $u->ln_name@$wiki\n" );
+							$this->output(
+								"Local user not found for localname entry $u->ln_name@$wiki\n"
+							);
 						}
 						$this->total++;
 						if ( !$this->dryrun ) {

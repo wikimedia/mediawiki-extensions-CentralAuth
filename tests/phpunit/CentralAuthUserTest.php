@@ -56,17 +56,43 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 				return array_intersect_key( $data, [ 'attachedMethod' => true ] );
 			}, $attached )
 		) );
-		$ca->expects( $this->any() )->method( 'queryAttached' )->will( $this->returnValue( $attached ) );
+		$ca->expects( $this->any() )
+			->method( 'queryAttached' )
+			->will( $this->returnValue( $attached ) );
 		$this->assertEquals( $expected, $ca->getHomeWiki() );
 	}
 
 	public function provideGetHomeWiki() {
 		return [
-			[ [], null ],
-			[ [ 'foowiki' => [ 'attachedMethod' => 'new' ] ], 'foowiki' ],
-			[ [ 'foowiki' => [ 'attachedMethod' => 'primary' ] ], 'foowiki' ],
-			[ [ 'foowiki' => [ 'attachedMethod' => 'password' ], 'bazwiki' => [ 'attachedMethod' => 'new' ] ], 'bazwiki' ],
-			[ [ 'foowiki' => [ 'attachedMethod' => 'password' ] ], 'foowiki' ],
+			[
+				[],
+				null
+			],
+			[
+				[
+					'foowiki' => [ 'attachedMethod' => 'new' ]
+				],
+				'foowiki'
+			],
+			[
+				[
+					'foowiki' => [ 'attachedMethod' => 'primary' ]
+				],
+				'foowiki'
+			],
+			[
+				[
+					'foowiki' => [ 'attachedMethod' => 'password' ],
+					'bazwiki' => [ 'attachedMethod' => 'new' ]
+				],
+				'bazwiki'
+			],
+			[
+				[
+					'foowiki' => [ 'attachedMethod' => 'password' ]
+				],
+				'foowiki'
+			],
 			[
 				[
 					'foowiki' => [ 'attachedMethod' => 'primary', 'editCount' => 4 ],
@@ -183,7 +209,9 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	public static function provideGetPasswordFromString() {
 		return [
 			[
-				':pbkdf2:sha256:10000:128:Oin6/F737E41pY7dza46Dw==:f6LNAySaUdEnjI2omuj+CX1aPDnt5bzgZcdLsEcLWqF7vG0CcMyviqWaq8smXCj2HBY0sV/w2kxpsTXXOgUrJJTEjuXmEsxHTtpMO4fCfZ5nb3a1kCYA44owCzKu96i8I6VrmGYu3waxmVAzlXld3bNIxrhGUjra/Y0TmWOe1q0=',
+				':pbkdf2:sha256:10000:128:Oin6/F737E41pY7dza46Dw==:f6LNAySaUdEnjI2omuj+CX1aPDnt5b' .
+					'zgZcdLsEcLWqF7vG0CcMyviqWaq8smXCj2HBY0sV/w2kxpsTXXOgUrJJTEjuXmEsxHTtpMO4fCfZ' .
+					'5nb3a1kCYA44owCzKu96i8I6VrmGYu3waxmVAzlXld3bNIxrhGUjra/Y0TmWOe1q0=',
 				'',
 				'Pbkdf2Password'
 			],
@@ -210,7 +238,9 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->setMethods( [ 'queryAttached' ] )
 			->getMock();
-		$ca->expects( $this->any() )->method( 'queryAttached' )->will( $this->returnValue( $attached ) );
+		$ca->expects( $this->any() )
+			->method( 'queryAttached' )
+			->will( $this->returnValue( $attached ) );
 
 		$this->assertEquals( $expected, $ca->getLocalGroups() );
 	}

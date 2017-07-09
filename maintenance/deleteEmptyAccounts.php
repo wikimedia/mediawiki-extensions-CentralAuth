@@ -10,16 +10,20 @@ class DeleteEmptyAccounts extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Delete all global accounts with no attached local accounts, then attempt to migrate a local account";
+		$this->mDescription = "Delete all global accounts with no attached local accounts, " .
+			"then attempt to migrate a local account";
 		$this->setBatchSize( 500 );
 		$this->fix = false;
 		$this->safe = false;
 		$this->migrate = false;
 		$this->suppressRC = false;
 
-		$this->addOption( 'fix', 'Actually update the database. Otherwise, only prints what would be done.', false, false );
-		$this->addOption( 'migrate', 'Migrate a local account; the winner is picked using CentralAuthUser::attemptAutoMigration defaults', false, false );
-		$this->addOption( 'safe-migrate', 'Migrate a local account, only if all accounts can be attached', false, false );
+		$this->addOption( 'fix', 'Actually update the database. Otherwise, ' .
+			'only prints what would be done.', false, false );
+		$this->addOption( 'migrate', 'Migrate a local account; the winner is picked using ' .
+			'CentralAuthUser::attemptAutoMigration defaults', false, false );
+		$this->addOption( 'safe-migrate', 'Migrate a local account, only if all accounts ' .
+			'can be attached', false, false );
 		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
 	}
 
@@ -77,7 +81,9 @@ class DeleteEmptyAccounts extends Maintenance {
 	function process( $username ) {
 		$central = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
 		if ( !$central->exists() ) {
-			$this->output( "ERROR: [$username] Central account does not exist. So how'd we find it?\n" );
+			$this->output(
+				"ERROR: [$username] Central account does not exist. So how'd we find it?\n"
+			);
 			return;
 		}
 
@@ -117,7 +123,9 @@ class DeleteEmptyAccounts extends Maintenance {
 				$central = CentralAuthUser::newUnattached( $username, true );
 				if ( $central->storeAndMigrate( [], !$this->suppressRC, $this->safe ) ) {
 					$unattachedAfter = count( $central->queryUnattached() );
-					$this->output( "MIGRATE: [$username] Success; $unattachedAfter left unattached\n" );
+					$this->output(
+						"MIGRATE: [$username] Success; $unattachedAfter left unattached\n"
+					);
 				} else {
 					$this->output( "MIGRATE: [$username] Fail\n" );
 				}

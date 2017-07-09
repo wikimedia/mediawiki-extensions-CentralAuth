@@ -102,7 +102,8 @@ class ForceRenameUsers extends Maintenance {
 		] ] );
 
 		if ( !$success ) {
-			$this->log( "WARNING: Race condition, renameuser_status already set for {$newCAUser->getName()}. Skipping." );
+			$this->log( "WARNING: Race condition, renameuser_status already set for " .
+				"{$newCAUser->getName()}. Skipping." );
 			return;
 		}
 
@@ -135,17 +136,22 @@ class ForceRenameUsers extends Maintenance {
 	protected function findUsers( $wiki, IDatabase $dbw ) {
 		$rowsToRename = [];
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
-		$rows = $updates->findUsers( $wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize );
+		$rows = $updates->findUsers(
+			$wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize
+		);
 
 		foreach ( $rows as $row ) {
 			$user = User::newFromName( $row->utr_name );
 			$caUser = new CentralAuthUser( $row->utr_name, CentralAuthUser::READ_LATEST );
 
 			if ( !$user->getId() ) {
-				$this->log( "'{$row->utr_name}' has been renamed since the last was list generated." );
+				$this->log(
+					"'{$row->utr_name}' has been renamed since the last was list generated."
+				);
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( $caUser->attachedOn( $row->utr_wiki ) ) {
-				$this->log( "'{$row->utr_name}' has become attached to a global account since the list as last generated." );
+				$this->log( "'{$row->utr_name}' has become attached to a global account since " .
+					"the list as last generated." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
 			} elseif ( !User::isUsableName( $row->utr_name ) ) {
 				// Reserved for a system account, ignore
