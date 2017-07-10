@@ -1903,12 +1903,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 					$centralUser = CentralAuthUser::newMasterInstanceFromId( $this->getId() );
 					if ( $centralUser ) {
-						// Don't bother resetting the auth token for a hash
-						// upgrade. It's not really a password *change*, and
-						// since this is being done post-send it'll cause the
-						// user to be logged out when they just tried to log in
-						// since it can't update the just-sent session cookies.
-						$centralUser->setPassword( $password, false );
+						$centralUser->setPassword( $password );
 						$centralUser->saveSettings();
 					}
 				} );
@@ -2542,10 +2537,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	function setPassword( $password, $resetAuthToken = true ) {
 		$this->checkWriteMode();
-
-		// Make sure state is loaded before updating ->mPassword
-		$this->loadState();
-
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 
 		$this->mPassword = $hash;
