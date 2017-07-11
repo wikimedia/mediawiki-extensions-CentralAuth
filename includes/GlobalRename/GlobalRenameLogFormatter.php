@@ -23,7 +23,7 @@ class GlobalRenameLogFormatter extends LogFormatter {
 
 	/**
 	 * @param string $name
-	 * @return array
+	 * @return array|string
 	 */
 	protected function getCentralAuthLink( $name ) {
 		$title = Title::makeTitle( NS_SPECIAL, 'CentralAuth/' . $name );
@@ -31,9 +31,14 @@ class GlobalRenameLogFormatter extends LogFormatter {
 			return "[[{$title->getPrefixedText()}]]";
 		}
 
-		return Message::rawParam( Linker::link( $title, htmlspecialchars( $name ) ) );
+		return Message::rawParam( $this->getLinkRenderer()->makeLink( $title, $name ) );
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $wiki
+	 * @return array|string
+	 */
 	protected function getLocalWikiLink( $name, $wiki ) {
 		$text = "User:$name@$wiki";
 		if ( $this->plaintext ) {

@@ -23,15 +23,15 @@ class GlobalUserMergeLogFormatter extends LogFormatter {
 
 	/**
 	 * @param string $name
-	 * @return array
+	 * @return array|Title
 	 */
 	protected function getCentralAuthLink( $name ) {
 		if ( $this->plaintext ) {
 			return Title::newFromText( 'CentralAuth/' . $name, NS_SPECIAL );
 		} else {
-			return Linker::linkKnown(
+			return $this->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'CentralAuth', $name ),
-				htmlspecialchars( $name )
+				$name
 			);
 		}
 	}
