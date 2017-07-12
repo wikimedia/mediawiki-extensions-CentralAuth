@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Si Gam Acèh"
+		]
+	},
+	"centralauth-foreign-link": "Ureueng ngui $1 di $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|beuneuri}} di $2",
+	"centralauth-merge-method-login": "geupeugöt yôh tamöng log",
+	"centralauth-admin-blocklog": "Log peutheun"
+}
