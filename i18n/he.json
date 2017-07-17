@@ -522,6 +522,7 @@
 	"apihelp-query+globaluserinfo-example-1": "קבלת מידע על המשתמש הגלובלי הנוכחי",
 	"apihelp-query+globaluserinfo-example-2": "קבלת מידע על המשתמש הגלובלי [[User:Example|Example]]",
 	"apihelp-query+wikisets-description": "מספור כל ערכות הוויקי.",
+	"apihelp-query+wikisets-summary": "למנות את כל ערכות הוויקי.",
 	"apihelp-query+wikisets-param-from": "של ערכת הוויקי הראשונה.",
 	"apihelp-query+wikisets-param-prop": "אילו פריטי מידע לכלול.\n;type:מבוססי כניסה (רק אתרי הוויקי שצוינו) או מבוססי יציאה (כל אתרי הוויקי מלבד אלה שצוינו).\n;wikisincluded:אתרי הוויקי שכלולים בערכת הוויקי הזאת.\n;wikisnotincluded:אתרי הוויקי שאינם כלולים בערכת הוויקי הזאת.",
 	"apihelp-query+wikisets-param-limit": "כמה ערכות ויקי להחזיר.",
