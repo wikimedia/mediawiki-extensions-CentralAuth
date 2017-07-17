@@ -16,6 +16,24 @@
       "revId": "f827873b7962f8ff47a9c2a21c647cc0cbb28095",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e742343_d302f575",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1475,
+      "author": {
+        "id": 43
+      },
+      "writtenOn": "2017-07-17T17:30:10Z",
+      "side": 1,
+      "message": "As you can see in multiple extensions\u0027 repos, it works. The error you\u0027re receiving is really funny because this hook gets called immediately after the core uses the database itself.",
+      "parentUuid": "8e742343_0106e622",
+      "revId": "f827873b7962f8ff47a9c2a21c647cc0cbb28095",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
