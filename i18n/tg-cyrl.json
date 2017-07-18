@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ibrahim"
+			"Ibrahim",
+			"ToJack"
 		]
 	},
 	"mergeaccount": "Вазъияти якка кардани ҳисобҳо",
@@ -148,5 +149,6 @@
 	"centralauth-editset-return": "Бозгашт ба намои аслӣ",
 	"right-globalgroupmembership": "Вироиши узвият ба гурӯҳҳои муштарак",
 	"right-centralauth-merge": "Идғоми ҳисоби онҳо",
-	"right-globalgrouppermissions": "Идоракунии гурӯҳҳои муштарак"
+	"right-globalgrouppermissions": "Идоракунии гурӯҳҳои муштарак",
+	"log-action-filter-gblrights-groupprms": "тағйири ҳуқуқҳои глобалии корбар (дар тамоми викиҳо)"
 }
