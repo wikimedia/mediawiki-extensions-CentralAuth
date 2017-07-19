@@ -270,6 +270,7 @@
 	"centralauth-globalgroupperms-nogroups": "Não estão definidos grupos globais.",
 	"centralauth-globalgroupperms-group": "Grupo",
 	"centralauth-globalgroupperms-rights": "Direitos",
+	"centralauth-globalgroupperms-management": "gerenciamento",
 	"centralauth-newgroup-legend": "Criar um novo grupo",
 	"centralauth-newgroup-intro": "Pode usar este formulário para atribuir permissões a um novo grupo.\nNote que um grupo não existe se não tiver permissões atribuídas.",
 	"centralauth-globalgroupperms-newgroupname": "Novo nome do grupo:",

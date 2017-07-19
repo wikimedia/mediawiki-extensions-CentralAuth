@@ -68,6 +68,7 @@
 	"centralauth-admin-username": "Номи корбарӣ:",
 	"centralauth-admin-permission": "Танҳо википедҳо метавонанд ҳисоби корбарии дигар корбаронро якка кунанд.",
 	"centralauth-admin-no-unified": "Ҳеҷ ҳисоби яккашуда ба ин номи корбарӣ.",
+	"centralauth-admin-info-username": "Номи корбарӣ:",
 	"centralauth-admin-info-registered": "Сабтшуда:",
 	"centralauth-admin-info-locked": "Қуфлшуда:",
 	"centralauth-admin-info-hidden": "Сатҳи пинҳоншуда:",
@@ -150,5 +151,9 @@
 	"right-globalgroupmembership": "Вироиши узвият ба гурӯҳҳои муштарак",
 	"right-centralauth-merge": "Идғоми ҳисоби онҳо",
 	"right-globalgrouppermissions": "Идоракунии гурӯҳҳои муштарак",
+	"centralauth-rename-progress-username": "Номи корбарӣ",
+	"globalrenamequeue-column-rq-name": "Номи корбарӣ",
+	"globalrenamequeue-form-username": "Номи корбарӣ:",
+	"centralauth-uwbr-name": "Номи корбарӣ",
 	"log-action-filter-gblrights-groupprms": "тағйири ҳуқуқҳои глобалии корбар (дар тамоми викиҳо)"
 }
