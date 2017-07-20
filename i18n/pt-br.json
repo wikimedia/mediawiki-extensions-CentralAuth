@@ -82,7 +82,7 @@
 	"centralauth-merge-method-new": "nova conta",
 	"centralauth-merge-method-login": "criada ao iniciar sessão",
 	"centralauth-merge-method-primary-desc": "Este é o wiki a partir do qual a conta foi unificada inicialmente.\nNote que pode ser diferente do wiki local do usuário.",
-	"centralauth-merge-method-empty-desc": "Indica que a conta local foi unificada porque não não possuia nenhuma edição.",
+	"centralauth-merge-method-empty-desc": "Indica que a conta local foi unificada porque não possuia nenhuma edição.",
 	"centralauth-merge-method-mail-desc": "Indica que a conta local foi unificada porque o seu endereço de e-mail correspondia ao da conta principal.",
 	"centralauth-merge-method-password-desc": "Indica que a conta local foi unificada porque o usuário especificou uma senha válida para isso.",
 	"centralauth-merge-method-admin-desc": "Indica que a conta local foi unificada manualmente por stewards.\nEsta funcionalidade está desativada por segurança.",
@@ -271,6 +271,7 @@
 	"centralauth-globalgroupperms-group": "Grupo",
 	"centralauth-globalgroupperms-rights": "Direitos",
 	"centralauth-globalgroupperms-management": "gerenciamento",
+	"centralauth-globalgroupperms-group-listmembers": "lista dos membros",
 	"centralauth-newgroup-legend": "Criar um novo grupo",
 	"centralauth-newgroup-intro": "Pode usar este formulário para atribuir permissões a um novo grupo.\nNote que um grupo não existe se não tiver permissões atribuídas.",
 	"centralauth-globalgroupperms-newgroupname": "Novo nome do grupo:",
@@ -363,6 +364,7 @@
 	"centralauth-rename-form-movepages": "Mover páginas de usuário",
 	"centralauth-rename-form-suppressredirects": "Suprimir criação de redirecionamentos",
 	"centralauth-rename-form-overrideantispoof": "Ignorar quaisquer conflitos com AntiSpoof",
+	"centralauth-rename-form-overridetitleblacklist": "Substituí TitleBlacklist",
 	"centralauth-rename-notinstalled": "A extensão Renameuser não está instalada.",
 	"centralauth-rename-doesnotexist": "A conta fornecida não existe.",
 	"centralauth-rename-alreadyexists": "O nome de usuário solicitado já existe.",
@@ -554,5 +556,6 @@
 	"log-action-filter-globalauth-setstatus": "Mudar o estado da conta global",
 	"log-action-filter-suppress-setstatus": "Mudar o estado da conta global",
 	"log-action-filter-suppress-cadelete": "Exclusão da conta global",
-	"log-action-filter-gblrights": "Tipo de alteração:"
+	"log-action-filter-gblrights": "Tipo de alteração:",
+	"log-action-filter-gblrights-setmodify": "Mudanças no conjunto wiki"
 }
