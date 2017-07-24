@@ -34,6 +34,24 @@
       "revId": "f827873b7962f8ff47a9c2a21c647cc0cbb28095",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e71af52_dd97e091",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1475,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2017-07-24T12:13:35Z",
+      "side": 1,
+      "message": "See the end of https://integration.wikimedia.org/ci/job/mwext-testextension-hhvm-jessie/11843/console ( https://gerrit.wikimedia.org/r/#/c/366980/ PS2 mwext-testextension-hhvm-jessie ) for an example. It only occurs when there is some other test error (so not tragic, but confusing). Locally on my vagrant box I always get the error (even if tests would pass otherwise) on hhvm, but never on zend.",
+      "parentUuid": "8e742343_d302f575",
+      "revId": "f827873b7962f8ff47a9c2a21c647cc0cbb28095",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
