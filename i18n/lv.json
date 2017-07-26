@@ -148,6 +148,8 @@
 	"centralauth-rightslog-entry-grouprename": "pārdēvēta grupa $2 uz $1",
 	"globalgrouppermissions": "Globālo grupu pārvaldnieks",
 	"centralauth-globalgroupperms-nogroups": "Nav definēta neviena globālā grupa.",
+	"centralauth-globalgroupperms-group": "Grupa",
+	"centralauth-globalgroupperms-rights": "Tiesības",
 	"centralauth-newgroup-legend": "Izveidot jaunu grupu",
 	"centralauth-globalgroupperms-newgroupname": "Jaunās grupas vārds:",
 	"centralauth-editgroup-name": "Grupas nosaukums:",

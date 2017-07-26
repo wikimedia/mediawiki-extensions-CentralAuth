@@ -7,7 +7,8 @@
 			"Izzudin",
 			"Kurniasan",
 			"Pizza1016",
-			"Macofe"
+			"Macofe",
+			"Jeluang Terluang"
 		]
 	},
 	"mergeaccount": "Status penggabungan akaun",
@@ -28,7 +29,7 @@
 	"centralauth-merge-dryrun-complete": "Semua akaun yang sedia ada boleh digabungkan secara automatik!\n\nBelum ada perubahan yang dilakukan pada akaun-akaun anda.",
 	"centralauth-merge-dryrun-incomplete": "Anda boleh menyambung, akan tetapi terdapat beberapa akaun yang tidak boleh disahkan secara automatik dan tidak akan dipindahkan serta merta.\nAnda boleh menggabungkan akaun-akaun ini selepas ini.\n\nBelum ada perubahan dilakukan pada akaun-akaun anda.",
 	"centralauth-merge-dryrun-or": "'''atau'''",
-	"centralauth-merge-dryrun-home": "Sistem pemindahan ini tidak dapat mengesahkan bahawa anda adalah pemilik akaun wiki rumah bagi nama pengguna anda.\n\nKami menjumpai sebuah wiki lain yang merupakan rumah bagi nama pengguna anda; ikuti pautan di bawah dan log masuk di sana untuk menamatkan pemindahan akaun ini.",
+	"centralauth-merge-dryrun-home": "Sistem pemindahan ini tidak dapat mengesahkan bahawa anda ialah pemilik akaun wiki rumah bagi nama pengguna anda.\n\nKami menjumpai sebuah wiki lain yang merupakan rumah bagi nama pengguna anda; ikuti pautan di bawah dan log masuk di sana untuk menamatkan pemindahan akaun ini.",
 	"centralauth-merge-step3-title": "Cipta akaun gabungan",
 	"centralauth-merge-step3-detail": "Anda sudah boleh mencipta akaun gabungan anda dengan mencantumkan wiki-wiki berikut:",
 	"centralauth-merge-step3-submit": "Gabungkan semua akaun",
@@ -78,7 +79,7 @@
 	"centralauth-merge-attempt": "'''Menyemak padanan kata laluan yang diberikan dengan akaun-akaun yang belum digabungkan…'''",
 	"centralauth-attach-list-attached": "Akaun gabungan \"$1\" terdiri daripada akaun-akaun berikut:",
 	"centralauth-attach-title": "Sahkan akaun",
-	"centralauth-attach-text": "Akaun ini belum dipindahkan ke akaun gabungan.\nJika akaun sejagat tersebut adalah milik anda juga, anda boleh menggabungkan akaun ini dengan menaip kata laluan akaun sejagat tersebut:",
+	"centralauth-attach-text": "Akaun ini belum dipindahkan ke akaun gabungan.\nJika akaun sejagat tersebut ialah milik anda juga, anda boleh menggabungkan akaun ini dengan menaip kata laluan akaun sejagat tersebut:",
 	"centralauth-attach-submit": "Pindah akaun",
 	"centralauth-attach-success": "Akaun tersebut telah dipindahkan ke akaun gabungan.",
 	"centralauth": "Pengurus akaun sejagat",
