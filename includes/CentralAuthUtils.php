@@ -178,9 +178,9 @@ class CentralAuthUtils {
 	 * @return array
 	 */
 	public static function getCentralSessionById( $id ) {
-		$key = CentralAuthUtils::memcKey( 'session', $id );
+		$key = self::memcKey( 'session', $id );
 		$stime = microtime( true );
-		$data = CentralAuthUtils::getSessionCache()->get( $key ) ?: [];
+		$data = self::getSessionCache()->get( $key ) ?: [];
 		$real = microtime( true ) - $stime;
 		MediaWikiServices::getInstance()
 			->getStatsdDataFactory()->timing( 'centralauth.session.read', $real );
@@ -206,10 +206,10 @@ class CentralAuthUtils {
 			$id = is_string( $reset ) ? $reset : MWCryptRand::generateHex( 32 );
 		}
 		$data['sessionId'] = $id;
-		$key = CentralAuthUtils::memcKey( 'session', $id );
+		$key = self::memcKey( 'session', $id );
 
 		// Copy certain keys from the existing session, if any (T124821)
-		$existing = CentralAuthUtils::getSessionCache()->get( $key );
+		$existing = self::getSessionCache()->get( $key );
 		if ( is_array( $existing ) ) {
 			$data += array_intersect_key( $existing, $keepKeys );
 		}
@@ -217,7 +217,7 @@ class CentralAuthUtils {
 		if ( $data !== $existing || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
 			$data['expiry'] = time() + 86400;
 			$stime = microtime( true );
-			CentralAuthUtils::getSessionCache()->set( $key, $data, 86400 );
+			self::getSessionCache()->set( $key, $data, 86400 );
 			$real = microtime( true ) - $stime;
 			MediaWikiServices::getInstance()
 				->getStatsdDataFactory()->timing( 'centralauth.session.write', $real );
@@ -241,9 +241,9 @@ class CentralAuthUtils {
 		$id = $session->get( 'CentralAuth::centralSessionId' );
 
 		if ( $id !== null ) {
-			$key = CentralAuthUtils::memcKey( 'session', $id );
+			$key = self::memcKey( 'session', $id );
 			$stime = microtime( true );
-			CentralAuthUtils::getSessionCache()->delete( $key );
+			self::getSessionCache()->delete( $key );
 			$real = microtime( true ) - $stime;
 			MediaWikiServices::getInstance()
 				->getStatsdDataFactory()->timing( "centralauth.session.delete", $real );

@@ -279,7 +279,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		);
 
 		if ( $name !== false ) {
-			return CentralAuthUser::getInstanceByName( $name );
+			return self::getInstanceByName( $name );
 		} else {
 			return false;
 		}
@@ -300,7 +300,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		);
 
 		if ( $name !== false ) {
-			return CentralAuthUser::getMasterInstanceByName( $name );
+			return self::getMasterInstanceByName( $name );
 		} else {
 			return false;
 		}
