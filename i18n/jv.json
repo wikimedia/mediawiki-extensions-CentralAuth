@@ -49,7 +49,7 @@
 	"centralauth-list-unattached-title": "Akun sing ora tumèmplèk",
 	"centralauth-list-unattached": "Rékening (akun) \"$1\" ora bisa didhedhes menawa sacara otomatis minangka darbèn panjenengan ing situs-situs iki;\nkamungkinan gedhé mbok-menawa rékening-rékening iki nduwé tembung sandhi sing séje saka rékening utama panjenengan:",
 	"centralauth-foreign-link": "Panganggo $1 ing $2",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|sumbangan|sumbangan}} ing $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pisumbang|pisumbang}} ing $2",
 	"centralauth-merge-method-primary": "Wiki asal",
 	"centralauth-merge-method-empty": "ora ana sumbangsihé",
 	"centralauth-merge-method-mail": "pandhedhesan (konfirmasi) mawa e-mail",
