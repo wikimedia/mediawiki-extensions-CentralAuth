@@ -530,6 +530,7 @@
 	"apihelp-query+wikisets-example-1": "רשימת ערכות ויקי",
 	"apihelp-query+wikisets-example-2": "הצגת ערכות ויקי עם סוגים",
 	"apihelp-setglobalaccountstatus-description": "הגדרת מצב משתמש גלובלי.",
+	"apihelp-setglobalaccountstatus-summary": "הגדרת מצב של המשתמש הזה.",
 	"apihelp-setglobalaccountstatus-param-user": "מצב של איזה משתמש לשנות.",
 	"apihelp-setglobalaccountstatus-param-locked": "לשנות האם המשתמש נעול או לא.",
 	"apihelp-setglobalaccountstatus-param-hidden": "לשנות האם המשתמש הזה לא מוסתר, מוסתר מרשימות, או מועלם.",
