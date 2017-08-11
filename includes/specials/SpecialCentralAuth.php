@@ -511,7 +511,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function getAttachedTimestampField( $attachedTimestamp ) {
 		if ( !$attachedTimestamp ) {
-			$html = Xml::openElement( 'td', [ 'data-sort-value' =>  '0' ] ) .
+			$html = Xml::openElement( 'td', [ 'data-sort-value' => '0' ] ) .
 				$this->msg( 'centralauth-admin-unattached' )->parse();
 		} else {
 			$html = Xml::openElement( 'td',

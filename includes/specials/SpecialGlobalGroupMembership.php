@@ -72,7 +72,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			# specify addself and removeself as empty arrays -- bug 16098
 			return [
 				'add' => $allGroups,
-				'remove' =>  $allGroups,
+				'remove' => $allGroups,
 				'add-self' => [],
 				'remove-self' => []
 			];
@@ -80,7 +80,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 		return [
 			'add' => [],
-			'remove' =>  [],
+			'remove' => [],
 			'add-self' => [],
 			'remove-self' => []
 		];

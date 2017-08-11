@@ -67,7 +67,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @note Don't call this directly. Use self::getInstanceByName() or
 	 *  self::getMasterInstanceByName() instead.
 	 * @param string $username
-	 * @param integer $flags Supports CentralAuthUser::READ_LATEST to use the master DB
+	 * @param int $flags Supports CentralAuthUser::READ_LATEST to use the master DB
 	 */
 	public function __construct( $username, $flags = 0 ) {
 		$this->mName = $username;
@@ -353,7 +353,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Lazy-load up the most commonly required state information
-	 * @param boolean $recache Force a load from the database then save back to the cache
+	 * @param bool $recache Force a load from the database then save back to the cache
 	 */
 	protected function loadState( $recache = false ) {
 		if ( $recache ) {
@@ -737,7 +737,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return integer total number of edits for all wikis
+	 * @return int total number of edits for all wikis
 	 */
 	public function getGlobalEditCount() {
 		if ( $this->mGlobalEditCount === null ) {
@@ -2252,7 +2252,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Not cached
 	 * @see CentralAuthUser::renameInProgress
 	 * @param string $wiki
-	 * @param integer $flags Bitfield of CentralAuthUser::READ_* constants
+	 * @param int $flags Bitfield of CentralAuthUser::READ_* constants
 	 * @return array|bool
 	 */
 	public function renameInProgressOn( $wiki, $flags = 0 ) {

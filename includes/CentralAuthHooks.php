@@ -920,7 +920,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param integer $id User ID
+	 * @param int $id User ID
 	 * @param User $user
 	 * @param SpecialPage $sp
 	 * @return bool
@@ -1221,7 +1221,7 @@ class CentralAuthHooks {
 	 * Creates a link to the global lock log
 	 * @param array $msg Message with a link to the global block log
 	 * @param string $user The username to be checked
-	 * @return boolean true
+	 * @return bool true
 	 */
 	static function getBlockLogLink( &$msg, $user ) {
 		if ( IP::isIPAddress( $user ) ) {
@@ -1309,7 +1309,7 @@ class CentralAuthHooks {
 	 * @param WebRequest $request
 	 * @param Title $title
 	 * @param OutputPage $output
-	 * @return boolean
+	 * @return bool
 	 */
 	public static function onTestCanonicalRedirect( $request, $title, $output ) {
 		return $title->getNamespace() !== NS_SPECIAL ||

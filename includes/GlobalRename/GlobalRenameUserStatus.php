@@ -96,7 +96,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * Get a user's rename status for all wikis.
 	 * Returns an array ( wiki => status )
 	 *
-	 * @param integer $flags IDBAccessObject flags
+	 * @param int $flags IDBAccessObject flags
 	 *
 	 * @return array
 	 */
@@ -123,7 +123,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	/**
 	 * Get a user's rename status for the current wiki.
 	 *
-	 * @param integer $flags IDBAccessObject flags
+	 * @param int $flags IDBAccessObject flags
 	 *
 	 * @return string|null Null means no rename pending for this user on the current wiki (possibly
 	 *   because it has finished already).

@@ -270,7 +270,7 @@ class SpecialWikiSets extends SpecialPage {
 		$i = 0;
 		$splitLists = [];
 		while ( $i < $columns ) {
-			$splitLists[$i] = array_slice( $list, $itemsPerCol*$i, $itemsPerCol );
+			$splitLists[$i] = array_slice( $list, $itemsPerCol * $i, $itemsPerCol );
 			$i++;
 		}
 		$body = '';

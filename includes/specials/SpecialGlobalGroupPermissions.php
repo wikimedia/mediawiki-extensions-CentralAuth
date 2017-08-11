@@ -375,7 +375,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$count = count( $checkboxes );
 
-		$html =  Html::openElement( 'div', [ 'class' => 'mw-centralauth-rights' ] )
+		$html = Html::openElement( 'div', [ 'class' => 'mw-centralauth-rights' ] )
 			. '<ul>';
 
 		foreach ( $checkboxes as $cb ) {

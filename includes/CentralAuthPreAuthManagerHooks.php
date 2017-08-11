@@ -88,7 +88,7 @@ class CentralAuthPreAuthManagerHooks {
 	/**
 	 * @param User $user
 	 * @param string $pass
-	 * @param integer &$retval
+	 * @param int &$retval
 	 * @param string &$msg
 	 * @return bool
 	 * @throws Exception

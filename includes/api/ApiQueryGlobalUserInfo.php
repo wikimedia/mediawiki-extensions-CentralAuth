@@ -114,7 +114,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			}
 			$result->addValue( 'query', $this->getModuleName(), [ 'editcount' => $editcount ] );
 		}
-		if ( isset ( $prop['unattached'] ) ) {
+		if ( isset( $prop['unattached'] ) ) {
 			$accounts = $user->queryUnattached();
 			foreach ( $accounts as $account ) {
 				$a = [
