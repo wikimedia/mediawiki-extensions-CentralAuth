@@ -335,5 +335,6 @@
 	"centralauth-rename-table-status-inprogress": "I gang",
 	"centralauth-rename-table-status-queued": "I kø",
 	"centralauth-rename-table-status-done": "Udført",
-	"centralauth-rename-viewprogress": "Vis fremskridt"
+	"centralauth-rename-viewprogress": "Vis fremskridt",
+	"centralauth-contribs-locked": "Denne konto er globalt låst. \nSe [[Special:CentralAuth/$1|globale kontodetaljer]] for mere information."
 }
