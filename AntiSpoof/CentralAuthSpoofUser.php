@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\IDatabase;
+
 class CentralAuthSpoofUser extends SpoofUser {
 	/**
 	 * @return IDatabase
