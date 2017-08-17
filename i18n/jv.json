@@ -52,7 +52,7 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pisumbang|pisumbang}} ing $2",
 	"centralauth-merge-method-primary": "Wiki asal",
 	"centralauth-merge-method-empty": "ora ana sumbangsihé",
-	"centralauth-merge-method-mail": "pandhedhesan (konfirmasi) mawa e-mail",
+	"centralauth-merge-method-mail": "dikonfirmasi lumantar layang-èl",
 	"centralauth-merge-method-password": "didhedhes (dikonfirmasi) déning tembung sandhi",
 	"centralauth-merge-method-admin": "akun sing digabung déning pangurus",
 	"centralauth-merge-method-new": "akun anyar",
