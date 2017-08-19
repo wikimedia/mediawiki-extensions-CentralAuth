@@ -89,6 +89,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				'label-message' => 'centralauth-rename-form-suppressredirects',
 				'type' => 'check',
 			],
+			'moveasbot' => [
+				'id' => 'mw-globalrenameuser-moveasbot',
+				'name' => 'moveasbot',
+				'label-message' => 'centralauth-rename-form-moveasbot',
+				'type' => 'check',
+			],
 			'overrideantispoof' => [
 				'id' => 'mw-globalrenameuser-overrideantispoof',
 				'name' => 'overrideantispoof',

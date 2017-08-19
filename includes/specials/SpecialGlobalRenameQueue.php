@@ -346,6 +346,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'label-message' => 'globalrenamequeue-request-suppressredirects',
 					'type'          => 'check',
 				],
+				'moveasbot' => [
+					'id'            => 'mw-renamequeue-moveasbot',
+					'name'          => 'moveasbot',
+					'label-message' => 'globalrenamequeue-request-moveasbot',
+					'type'          => 'check',
+				],
 			],
 			$this->getContext(),
 			'globalrenamequeue'
@@ -540,6 +546,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'to' => $newUser->getName(),
 						'renamer' => $this->getUser()->getName(),
 						'movepages' => true,
+						'moveasbot' => $data['moveasbot'],
 						'suppressredirects' => true,
 						'promotetoglobal' => true,
 						'reason' => $data['reason'],

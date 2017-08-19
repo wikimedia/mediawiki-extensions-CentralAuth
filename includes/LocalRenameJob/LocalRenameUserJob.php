@@ -154,6 +154,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			'from' => $from,
 			'renamer' => $this->getRenameUser()->getName(),
 			'suppressredirects' => $this->params['suppressredirects'],
+			'moveasbot' => $this->params['moveasbot'],
 		];
 		if ( isset( $this->params['session'] ) ) {
 			$jobParams['session'] = $this->params['session'];
