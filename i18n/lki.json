@@ -5,7 +5,8 @@
 			"Hosseinblue",
 			"Lakzon",
 			"McDutchie",
-			"Macofe"
+			"Macofe",
+			"Alirezaaa"
 		]
 	},
 	"mergeaccount": "وضعیت یکی‌کردن حساب‌های کاربری",
@@ -30,7 +31,7 @@
 	"centralauth-merge-step3-title": "ایجاد حساب مشترک",
 	"centralauth-merge-step3-detail": "شما آماده‌اید که حساب مشترک خود را در ویکی‌های زیر ایجاد کنید:",
 	"centralauth-merge-step3-submit": "یکی کردن حساب‌ها",
-	"centralauth-merge-no-accounts": "حساب کاربری با نام شما در جدول پی‌گیری حساب‌های کاربری مرکزی پیدا نشد!\nاحتمالاً پایگاه داده‌ها خراب شده‌است.",
+	"centralauth-merge-no-accounts": "حساب کاربری با نام شما در جدول پی‌گیری حساب‌های کاربری مرکزی پیدا نشد!\nاحتمالاً پایگاه‌های داده خراب شده‌است.",
 	"centralauth-merge-home-password": "ویکی خانه برای این حساب کاربری (همچنان که در پایین فهرست شده‌است) گذرواژه‌ای متفاوت با آنچه وارد کرده‌اید دارد. لطفاً گذرواژهٔ ویکی خانه را وارد کنید.",
 	"centralauth-complete": "یکی کردن حساب‌ها کامل شد!",
 	"centralauth-incomplete": "یکی کردن حساب‌ها کامل نشد!",
