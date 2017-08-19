@@ -212,6 +212,7 @@ class GlobalRenameUser {
 			'reattach' => $wikisAttached,
 			'movepages' => $options['movepages'],
 			'suppressredirects' => $options['suppressredirects'],
+			'moveasbot' => $options['moveasbot'],
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
 			'session' => $this->session,
