@@ -39,6 +39,9 @@ class LocalPageMoveJob extends Job {
 			} );
 		}
 		$this->user = User::newFromName( $this->params['renamer'] );
+		if ( !$this->user->isAllowed( 'bot' ) ) {
+			$this->user->mRights[] = 'bot';
+		}
 		if ( isset( $this->params['pages'] ) ) {
 			// Old calling style for b/c
 			foreach ( $this->params['pages'] as $current => $target ) {
