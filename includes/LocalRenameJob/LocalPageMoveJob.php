@@ -41,13 +41,26 @@ class LocalPageMoveJob extends Job {
 	}
 
 	public function run() {
+		$this->user = User::newFromName( $this->params['renamer'] );
+		$permissionManager = MediaWikiServices::getInstance()
+			->getPermissionManager();
+
+		// Mark user page moves as bot on rename user process T97659
+		if ( !$permissionManager->userHasRight( $this->user, 'bot' ) ) {
+			$guard = $permissionManager->addTemporaryUserRights( $this->user,  'bot' );
+
+			// Remove it at the end of the job process
+			$this->addTeardownCallback( function () use ( &$guard ) {
+				ScopedCallback::consume( $guard );
+			} );
+		}
+
 		if ( isset( $this->params['session'] ) ) {
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
 			$this->addTeardownCallback( function () use ( &$callback ) {
 				ScopedCallback::consume( $callback );
 			} );
 		}
-		$this->user = User::newFromName( $this->params['renamer'] );
 		if ( isset( $this->params['pages'] ) ) {
 			// Old calling style for b/c
 			foreach ( $this->params['pages'] as $current => $target ) {
