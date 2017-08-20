@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -40,13 +41,21 @@ class LocalPageMoveJob extends Job {
 	}
 
 	public function run() {
+		$this->user = User::newFromName( $this->params['renamer'] );
+		$guard = null;
+		if ( !MediaWikiServices::getInstance()->getPermissionManager()
+			->userHasRight( $this->user, 'bot' )
+		) {
+			$guard = MediaWikiServices::getInstance()->getPermissionManager()
+				->addTemporaryUserRights( $this->user,  'bot' );
+		}
 		if ( isset( $this->params['session'] ) ) {
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
-			$this->addTeardownCallback( function () use ( &$callback ) {
+			$this->addTeardownCallback( function () use ( &$callback, &$guard ) {
 				ScopedCallback::consume( $callback );
+				ScopedCallback::consume( $guard );
 			} );
 		}
-		$this->user = User::newFromName( $this->params['renamer'] );
 		if ( isset( $this->params['pages'] ) ) {
 			// Old calling style for b/c
 			foreach ( $this->params['pages'] as $current => $target ) {
