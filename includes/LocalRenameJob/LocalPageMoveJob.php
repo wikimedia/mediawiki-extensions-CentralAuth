@@ -41,6 +41,10 @@ class LocalPageMoveJob extends Job {
 			} );
 		}
 		$this->user = User::newFromName( $this->params['renamer'] );
+		if ( !$this->user->isAllowed( 'bot' ) ) {
+			$this->user->mRights[] = 'bot';
+			$safeRemoveBotRight = true;
+		}
 		if ( isset( $this->params['pages'] ) ) {
 			// Old calling style for b/c
 			foreach ( $this->params['pages'] as $current => $target ) {
@@ -53,6 +57,9 @@ class LocalPageMoveJob extends Job {
 			$oldTitle = Title::makeTitle( $this->params['old'][0], $this->params['old'][1] );
 			$newTitle = Title::makeTitle( $this->params['new'][0], $this->params['new'][1] );
 			$this->movePage( $oldTitle, $newTitle );
+		}
+		if ( isset( $safeRemoveBotRight ) ) {
+			unset( $this->user->mRights[array_search( 'bot', $this->user->mRights )] );
 		}
 	}
 
