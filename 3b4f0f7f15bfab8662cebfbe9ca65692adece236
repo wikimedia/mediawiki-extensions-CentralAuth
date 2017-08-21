@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_c36b0615",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2017-08-21T17:27:53Z",
+      "side": 1,
+      "message": "Does this also allows those who already can set its edits as \"bot\"?",
+      "range": {
+        "startLine": 42,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 43
+      },
+      "revId": "3b4f0f7f15bfab8662cebfbe9ca65692adece236",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
