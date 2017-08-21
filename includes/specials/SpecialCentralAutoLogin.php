@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ScopedCallback;
+
 /**
  * Unlisted Special page to set requisite cookies for being logged into this wiki.
  *

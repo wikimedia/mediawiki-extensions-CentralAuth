@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ScopedCallback;
+
 /**
  * Creates a local account and connects it to the global account.
  * Used to ensure that all users have an attached local account on certain wikis which have some

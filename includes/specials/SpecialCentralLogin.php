@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\ScopedCallback;
 
 class SpecialCentralLogin extends UnlistedSpecialPage {
 
