@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "4e7eab26_e3508263",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2017-08-21T17:28:45Z",
+      "side": 1,
+      "message": "Suggest: Mark page moves as bot on rename user jobs",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 22
+      },
+      "revId": "3b4f0f7f15bfab8662cebfbe9ca65692adece236",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e7eab26_c36b0615",
         "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
         "patchSetId": 1
