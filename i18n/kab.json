@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Belkacem77"
+		]
+	},
+	"centralauth-foreign-link": "Aseqdac $1 ɣef $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|n uttekki|n ittekkiyen}} ɣef $2",
+	"centralauth-merge-method-login": "yettwarna deg usesteb",
+	"centralauth-admin-blocklog": "Aɣmis n usewḥel",
+	"centralauth-log-status-none": "(ulac)",
+	"centralauth-editgroup-noset": "(ulac)",
+	"centralauth-editset-nowikis": "(ulac)",
+	"centralauth-editset-nouse": "(ulac)"
+}
