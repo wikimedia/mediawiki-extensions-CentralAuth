@@ -386,7 +386,7 @@
 	"centralauth-rename-cannotself": "您不能重命名您自己。",
 	"centralauth-rename-alreadyinprogress": "对此用户的重命名已在[[Special:GlobalRenameProgress/$1|进行中]]。",
 	"centralauth-renameuser-global-inprogress": "对$1的全域重命名[[Special:GlobalRenameProgress/$1|已在进行中]]。",
-	"centralauth-rename-queued": "重命名$1至$2的工作已加入$3的队列。在[[Special:GlobalRenameProgress/$2]]查看进展。",
+	"centralauth-rename-queued": "重命名$1至$2的工作已加入$3的队列。\n\n在[[Special:GlobalRenameProgress/$2]]查看进展。",
 	"centralauth-rename-antispoofconflicts2": "选定的用户名太像{{PLURAL:$2|现有用户名}}：$1。",
 	"centralauth-rename-conflict-hidden": "用户名已隐藏",
 	"centralauth-rename-progress-username": "用户名",
