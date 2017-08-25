@@ -162,6 +162,7 @@
 	"centralauth-rename-form-reason": "Alesan",
 	"centralauth-usermerge-form-reason": "Alesan",
 	"globalrenamerequest-reason-label": "Alasan paamundutan",
+	"centralauth-usermerge-form-deleteuser": "Pupus pamaké",
 	"globalrenamequeue-request-reason": "<strong>Alesan pundutan parobahan ngaran</strong>\n:$1",
 	"globalrenamequeue-request-comments-label": "Catetan/alesaneun",
 	"globalrenamequeue-request-cancel-text": "Bolay",
