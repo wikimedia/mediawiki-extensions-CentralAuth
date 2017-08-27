@@ -129,6 +129,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 	/**
 	 * Queue up jobs to move pages
+	 * @param User $oldUser
 	 */
 	public function movePages( User $oldUser ) {
 		$from = $this->params['from'];

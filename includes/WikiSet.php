@@ -22,10 +22,10 @@ class WikiSet {
 	];
 
 	/**
-	 * @param $name string
-	 * @param $type string
-	 * @param $wikis array
-	 * @param $id int
+	 * @param string $name
+	 * @param string $type
+	 * @param array $wikis
+	 * @param int $id
 	 */
 	public function __construct( $name = '', $type = self::OPTIN, $wikis = [], $id = 0 ) {
 		$this->mId = $id;
@@ -35,7 +35,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $k string
+	 * @param string $k
 	 * @return string
 	 */
 	protected static function memcKey( $k ) {
@@ -251,7 +251,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $wiki string
+	 * @param string $wiki
 	 * @return bool
 	 */
 	public function inSet( $wiki = '' ) {
@@ -277,9 +277,9 @@ class WikiSet {
 	}
 
 	/**
-	 * @param $from string The wiki set name to start from (result is ordered by name)
-	 * @param $limit integer Limit for the selection (0 or null = no limit)
-	 * @param $orderByName boolean Order the result by name?
+	 * @param string $from The wiki set name to start from (result is ordered by name)
+	 * @param int $limit Limit for the selection (0 or null = no limit)
+	 * @param bool $orderByName Order the result by name?
 	 * @return array
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {

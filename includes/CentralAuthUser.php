@@ -29,7 +29,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	private $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
 	private $mBeingRenamed, $mBeingRenamedArray;
 	protected $mAttachedInfo;
-	/** @var integer */
+	/** @var int */
 	protected $mCasToken = 0;
 
 	private static $mCacheVars = [
@@ -309,9 +309,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
-	 * @param $row ResultWrapper|object
-	 * @param $renameUser array Empty if no rename is going on, else (oldname, newname)
-	 * @param $fromMaster bool
+	 * @param ResultWrapper|object $row
+	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
+	 * @param bool $fromMaster
 	 * @return CentralAuthUser
 	 */
 	public static function newFromRow( $row, $renameUser, $fromMaster = false ) {
@@ -322,8 +322,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Create a CentralAuthUser object for a user who is known to be unattached.
-	 * @param $name string The user name
-	 * @param $fromMaster bool
+	 * @param string $name The user name
+	 * @param bool $fromMaster
 	 * @return CentralAuthUser
 	 */
 	public static function newUnattached( $name, $fromMaster = false ) {
@@ -446,9 +446,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 *
-	 * @param $row ResultWrapper|object|bool
-	 * @param $renameUser array Empty if no rename is going on, else (oldname, newname)
-	 * @param $fromMaster bool
+	 * @param ResultWrapper|object|bool $row
+	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
+	 * @param bool $fromMaster
 	 */
 	protected function loadFromRow( $row, $renameUser, $fromMaster = false ) {
 		if ( $row ) {
@@ -520,7 +520,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Load user state from a cached array.
 	 *
-	 * @param $object array
+	 * @param array $object
 	 */
 	protected function loadFromCacheObject( array $object ) {
 		wfDebugLog( 'CentralAuthVerbose',
@@ -537,7 +537,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Return the global account ID number for this account, if it exists.
-	 * @return Int
+	 * @return int
 	 */
 	public function getId() {
 		$this->loadState();
@@ -756,8 +756,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Remaining fields are expected to be filled out shortly...
 	 * eeeyuck
 	 *
-	 * @param $password String
-	 * @param $email String
+	 * @param string $password
+	 * @param string $email
 	 * @return bool
 	 */
 	public function register( $password, $email ) {
@@ -837,10 +837,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Store global user data in the auth server's main table.
 	 *
-	 * @param $salt String
-	 * @param $hash String
-	 * @param $email String
-	 * @param $emailAuth String timestamp
+	 * @param string $salt
+	 * @param string $hash
+	 * @param string $email
+	 * @param string $emailAuth timestamp
 	 * @return bool Whether we were successful or not.
 	 */
 	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
@@ -974,10 +974,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Go through a list of migration data looking for those which
 	 * can be automatically migrated based on the available criteria.
 	 *
-	 * @param $migrationSet Array
-	 * @param $passwords Array Optional, pre-authenticated passwords.
+	 * @param array $migrationSet
+	 * @param array $passwords Optional, pre-authenticated passwords.
 	 *     Should match an account which is known to be attached.
-	 * @return Array of <wiki> => <authentication method>
+	 * @return array Array of <wiki> => <authentication method>
 	 */
 	function prepareMigration( $migrationSet, $passwords = [] ) {
 		// If the primary account has an email address set,
@@ -1053,11 +1053,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Do a dry run -- pick a winning master account and try to auto-merge
 	 * as many as possible, but don't perform any actions yet.
 	 *
-	 * @param $passwords array
-	 * @param $home String set to false if no permission to do checks
-	 * @param $attached Array on success, list of wikis which will be auto-attached
-	 * @param $unattached Array on success, list of wikis which won't be auto-attached
-	 * @param $methods Array on success, associative array of each wiki's attachment method	 *
+	 * @param array $passwords
+	 * @param string &$home set to false if no permission to do checks
+	 * @param array &$attached on success, list of wikis which will be auto-attached
+	 * @param array &$unattached on success, list of wikis which won't be auto-attached
+	 * @param array &$methods on success, associative array of each wiki's attachment method	 *
 	 * @return Status object
 	 */
 	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
@@ -1174,10 +1174,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Pick a winning master account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 *
-	 * @param $passwords Array
-	 * @param $sendToRC bool
-	 * @param $safe bool Only migrate if all accounts can be merged
-	 * @param $checkHome bool Re-check the user's ownership of the home wiki
+	 * @param array $passwords
+	 * @param bool $sendToRC
+	 * @param bool $safe Only migrate if all accounts can be merged
+	 * @param bool $checkHome Re-check the user's ownership of the home wiki
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
 	protected function attemptAutoMigration(
@@ -1272,10 +1272,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * Attempt to migrate any remaining unattached accounts by virtue of
 	 * the password check.
 	 *
-	 * @param $password string plaintext password to try matching
-	 * @param $migrated array array of wiki IDs for records which were
+	 * @param string $password plaintext password to try matching
+	 * @param array &$migrated array of wiki IDs for records which were
 	 *                  successfully migrated by this operation
-	 * @param $remaining array of wiki IDs for records which are still
+	 * @param array &$remaining of wiki IDs for records which are still
 	 *                   unattached after the operation
 	 * @return bool true if all accounts are migrated at the end
 	 */
@@ -1446,7 +1446,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Delete a global account and log what happened
 	 *
-	 * @param $reason string Reason for the deletion
+	 * @param string $reason Reason for the deletion
 	 * @return Status
 	 */
 	function adminDelete( $reason ) {
@@ -1544,7 +1544,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Change account hiding level.
 	 *
-	 * @param $level String CentralAuthUser::HIDDEN_ class constant
+	 * @param string $level CentralAuthUser::HIDDEN_ class constant
 	 * @return Status
 	 */
 	function adminSetHidden( $level ) {
@@ -1564,15 +1564,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Set locking and hiding settings for a Global User and log the changes made.
 	 *
-	 * @param $setLocked Bool|null
+	 * @param bool|null $setLocked
 	 *  true = lock
 	 *  false = unlock
 	 *  null = don't change
-	 * @param $setHidden String|null
+	 * @param string|null $setHidden
 	 *  hidden level, one of the HIDDEN_ constants
 	 *  null = don't change
-	 * @param $reason String reason for hiding
-	 * @param $context IContextSource
+	 * @param string $reason reason for hiding
+	 * @param IContextSource $context
 	 * @return Status
 	 */
 	public function adminLockHide( $setLocked, $setHidden, $reason, IContextSource $context ) {
@@ -1699,7 +1699,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Suppresses all user accounts in all wikis.
-	 * @param $reason String
+	 * @param string $reason
 	 */
 	function suppress( $reason ) {
 		global $wgUser;
@@ -1709,7 +1709,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Unsuppresses all user accounts in all wikis.
 	 *
-	 * @param $reason String
+	 * @param string $reason
 	 */
 	function unsuppress( $reason ) {
 		global $wgUser;
@@ -1717,9 +1717,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param $suppress Bool
-	 * @param $by String
-	 * @param $reason String
+	 * @param bool $suppress
+	 * @param string $by
+	 * @param string $reason
 	 */
 	protected function doCrosswikiSuppression( $suppress, $by, $reason ) {
 		global $wgCentralAuthWikisPerSuppressJob;
@@ -1756,11 +1756,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Suppresses a local account of a user.
 	 *
-	 * @param $suppress Bool
-	 * @param $wiki String
-	 * @param $by String
-	 * @param $reason String
-	 * @return Array|null Error array on failure
+	 * @param bool $suppress
+	 * @param string $wiki
+	 * @param string $by
+	 * @param string $reason
+	 * @return array|null Error array on failure
 	 */
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
 		global $wgConf;
@@ -1821,9 +1821,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Add a local account record for the given wiki to the central database.
-	 * @param $wikiID String
-	 * @param $method String
-	 * @param $sendToRC bool
+	 * @param string $wikiID
+	 * @param string $method
+	 * @param bool $sendToRC
 	 * @param string|int $ts MediaWiki timestamp or 0 for current time
 	 *
 	 * Prerequisites:
@@ -1879,7 +1879,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * If the user provides the correct password, would we let them log in?
 	 * This encompasses checks on missing and locked accounts, at present.
-	 * @return mixed: true if login available, or string status, one of: "no user", "locked"
+	 * @return mixed true if login available, or string status, one of: "no user", "locked"
 	 */
 	public function canAuthenticate() {
 		if ( !$this->getId() ) {
@@ -2423,7 +2423,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 *
 	 * Returns most data in the user and ipblocks tables, user groups, and editcount.
 	 *
-	 * @param $wikiID String
+	 * @param string $wikiID
 	 * @throws LocalUserNotFoundException if local user not found
 	 * @return array
 	 */
@@ -2517,7 +2517,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return
+	 * @return string
 	 */
 	function getEmail() {
 		$this->loadState();
@@ -2525,7 +2525,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return
+	 * @return string
 	 */
 	function getEmailAuthenticationTimestamp() {
 		$this->loadState();
@@ -2574,9 +2574,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Set the account's password
-	 * @param $password String plaintext
-	 * @param $resetAuthToken bool if we should reset the login token
-	 * @return Bool true
+	 * @param string $password plaintext
+	 * @param bool $resetAuthToken if we should reset the login token
+	 * @return bool true
 	 */
 	function setPassword( $password, $resetAuthToken = true ) {
 		$this->checkWriteMode();
@@ -2649,8 +2649,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Check a global auth token against the one we know of in the database.
 	 *
-	 * @param $token String
-	 * @return Bool
+	 * @param string $token
+	 * @return bool
 	 */
 	function validateAuthToken( $token ) {
 		return hash_equals( $this->getAuthToken(), $token );
@@ -2733,7 +2733,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return
+	 * @return array
 	 */
 	function getGlobalGroups() {
 		$this->loadGroups();
@@ -2977,7 +2977,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * @param string $wikiId
-	 * @param integer $userId
+	 * @param int $userId
 	 */
 	private function clearLocalUserCache( $wikiId, $userId ) {
 		User::purge( $wikiId, $userId );

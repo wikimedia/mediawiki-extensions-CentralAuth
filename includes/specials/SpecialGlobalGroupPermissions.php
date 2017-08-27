@@ -408,7 +408,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group string
+	 * @param string $group
 	 */
 	function doSubmit( $group ) {
 		// It is important to check userCanEdit, as otherwise an
@@ -585,9 +585,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/**
 	 * Log the renaming of a global group
 	 *
-	 * @param $oldName string
-	 * @param $newName string
-	 * @param $reason string
+	 * @param string $oldName
+	 * @param string $newName
+	 * @param string $reason
 	 */
 	function addRenameLog( $oldName, $newName, $reason ) {
 		$log = new LogPage( 'gblrights' );
@@ -607,10 +607,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/**
 	 * Log wikiset changes
 	 *
-	 * @param $group string
-	 * @param $old string
-	 * @param $new string
-	 * @param $reason string
+	 * @param string $group
+	 * @param string $old
+	 * @param string $new
+	 * @param string $reason
 	 */
 	function addWikiSetLog( $group, $old, $new, $reason ) {
 		$log = new LogPage( 'gblrights' );
@@ -672,7 +672,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param $group string
+	 * @param string $group
 	 */
 	function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.

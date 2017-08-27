@@ -251,9 +251,9 @@ class SpecialWikiSets extends SpecialPage {
 	 *
 	 * Could in the future be replaced by CSS column-count.
 	 *
-	 * @param $list array
-	 * @param $columns int: number of columns
-	 * @param $tableAttribs array: <table> attributes
+	 * @param array $list
+	 * @param int $columns number of columns
+	 * @param array $tableAttribs <table> attributes
 	 * @return string Table
 	 */
 	function buildTableByList( $list, $columns = 2, $tableAttribs = [] ) {

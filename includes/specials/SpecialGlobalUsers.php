@@ -60,7 +60,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
-	 * @param $group string
+	 * @param string $group
 	 */
 	public function setGroup( $group = '' ) {
 		if ( !$group ) {
@@ -71,7 +71,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
-	 * @param $username string
+	 * @param string $username
 	 */
 	public function setUsername( $username = '' ) {
 		if ( !$username ) {

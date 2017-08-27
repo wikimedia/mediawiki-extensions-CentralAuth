@@ -7,8 +7,8 @@ class CentralAuthAntiSpoofHooks {
 	/**
 	 * Can be used to cancel user account creation
 	 *
-	 * @param $user User
-	 * @param $message string
+	 * @param User $user
+	 * @param string &$message
 	 * @return bool true to continue, false to abort user creation
 	 */
 	public static function asAbortNewAccountHook( $user, &$message ) {
@@ -89,7 +89,7 @@ class CentralAuthAntiSpoofHooks {
 	 * On new account creation, record the username's thing-bob.
 	 * (Called after a user account is created)
 	 *
-	 * @param $user User
+	 * @param User $user
 	 * @return bool
 	 */
 	public static function asAddNewAccountHook( $user ) {

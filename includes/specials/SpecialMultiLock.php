@@ -423,7 +423,7 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikitext string
+	 * @param string $wikitext
 	 */
 	function showStatusError( $wikitext ) {
 		$wrap = Xml::tags( 'div', [ 'class' => 'error' ], $wikitext );

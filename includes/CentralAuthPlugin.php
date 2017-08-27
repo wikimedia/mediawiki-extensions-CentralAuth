@@ -199,7 +199,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * The User object is passed by reference so it can be modified; don't
 	 * forget the & on your function declaration.
 	 *
-	 * @param User $user
+	 * @param User &$user
 	 * @return bool
 	 */
 	public function updateUser( &$user ) {
@@ -347,7 +347,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * The User object is passed by reference so it can be modified; don't
 	 * forget the & on your function declaration.
 	 *
-	 * @param User $user
+	 * @param User &$user
 	 * @param bool $autocreate
 	 */
 	public function initUser( &$user, $autocreate = false ) {
@@ -368,7 +368,7 @@ class CentralAuthPlugin extends AuthPlugin {
 	}
 
 	/**
-	 * @param User $user
+	 * @param User &$user
 	 * @return CentralAuthUser
 	 */
 	public function getUserInstance( User &$user ) {

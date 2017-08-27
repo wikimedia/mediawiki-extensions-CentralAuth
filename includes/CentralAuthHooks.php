@@ -256,7 +256,7 @@ class CentralAuthHooks {
 	 * This hook is used in cases where SpecialPageFactory::getPageList() is called before
 	 * $wgExtensionFunctions are run, which happens when E:ShortUrl is installed.
 	 *
-	 * @param array $list
+	 * @param array &$list
 	 * @return bool
 	 */
 	public static function onSpecialPage_initList( &$list ) {
@@ -272,8 +272,8 @@ class CentralAuthHooks {
 	/**
 	 * Make sure migration information in localuser table is populated
 	 * on local account creation
-	 * @param $user User
-	 * @param $autocreated bool
+	 * @param User $user
+	 * @param bool $autocreated
 	 * @return bool
 	 */
 	static function onLocalUserCreated( $user, $autocreated ) {
@@ -301,8 +301,8 @@ class CentralAuthHooks {
 	/**
 	 * Add a little pretty to the preferences user info section
 	 *
-	 * @param $user User
-	 * @param $preferences array
+	 * @param User $user
+	 * @param array &$preferences
 	 * @return bool
 	 */
 	static function onGetPreferences( $user, &$preferences ) {
@@ -366,9 +366,9 @@ class CentralAuthHooks {
 	/**
 	 * Show a nicer error when the user account does not exist on the local wiki, but
 	 * does exist globally
-	 * @param $users User[]
-	 * @param $data array
-	 * @param $abortError String
+	 * @param User[] &$users
+	 * @param array $data
+	 * @param string &$abortError
 	 * @return bool
 	 */
 	static function onSpecialPasswordResetOnSubmit( &$users, $data, &$abortError ) {
@@ -390,9 +390,9 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $inject_html string
-	 * @param $direct bool Was this directly after a login? (see T140853)
+	 * @param User &$user
+	 * @param string &$inject_html
+	 * @param bool $direct Was this directly after a login? (see T140853)
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html, $direct = null ) {
@@ -482,8 +482,8 @@ class CentralAuthHooks {
 	/**
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
-	 * @param string $inject_html
-	 * @param $direct bool Was this directly after a login? (see T140853)
+	 * @param string &$inject_html
+	 * @param bool $direct Was this directly after a login? (see T140853)
 	 * @return bool
 	 */
 	protected static function doCentralLoginRedirect(
@@ -602,7 +602,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $user User
+	 * @param User &$user
 	 * @return bool
 	 */
 	static function onUserLogout( &$user ) {
@@ -625,7 +625,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param User $user
+	 * @param User &$user
 	 * @param string &$inject_html
 	 * @param string $userName Unused
 	 * @return bool
@@ -718,9 +718,9 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param $uid int
-	 * @param $oldName string
-	 * @param $newName string
+	 * @param int $uid
+	 * @param string $oldName
+	 * @param string $newName
 	 * @return bool
 	 */
 	static function onRenameUserPreRename( $uid, $oldName, $newName ) {
@@ -735,9 +735,9 @@ class CentralAuthHooks {
 
 	/**
 	 * When renaming an account, ensure that the presence records are updated.
-	 * @param $userId int
-	 * @param $oldName string
-	 * @param $newName string
+	 * @param int $userId
+	 * @param string $oldName
+	 * @param string $newName
 	 * @return bool
 	 */
 	static function onRenameUserComplete( $userId, $oldName, $newName ) {
@@ -883,7 +883,7 @@ class CentralAuthHooks {
 
 	/**
 	 * @param User $user
-	 * @param bool &$$isHidden
+	 * @param bool &$isHidden
 	 * @return bool
 	 */
 	static function onUserIsHidden( User $user, &$isHidden ) {
@@ -1039,8 +1039,8 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param &$out OutputPage
-	 * @param &$skin Skin
+	 * @param OutputPage &$out
+	 * @param Skin &$skin
 	 * @return bool
 	 * @todo Add 1x1 images somewhere besides page content
 	 */
@@ -1219,7 +1219,7 @@ class CentralAuthHooks {
 
 	/**
 	 * Creates a link to the global lock log
-	 * @param array $msg Message with a link to the global block log
+	 * @param array &$msg Message with a link to the global block log
 	 * @param string $user The username to be checked
 	 * @return bool true
 	 */
@@ -1417,7 +1417,7 @@ class CentralAuthHooks {
 	 * Apply global password policies when calculating the effective policy for
 	 * a user.
 	 * @param User $user
-	 * @param array $effectivePolicy
+	 * @param array &$effectivePolicy
 	 * @return bool
 	 * @throws Exception
 	 */
@@ -1488,7 +1488,6 @@ class CentralAuthHooks {
 	 * @param IMaintainableDatabase $db
 	 * @param string $prefix
 	 */
-
 	public static function onUnitTestsAfterDatabaseSetup( IMaintainableDatabase $db, $prefix ) {
 		global $wgCentralAuthDatabase;
 		$wgCentralAuthDatabase = false;

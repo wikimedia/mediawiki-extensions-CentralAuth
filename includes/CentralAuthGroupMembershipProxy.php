@@ -140,8 +140,8 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	/**
-	 * @param $wiki string
-	 * @return Bool
+	 * @param string $wiki
+	 * @return bool
 	 */
 	function attachedOn( $wiki ) {
 		return $this->mGlobalUser->attachedOn( $wiki );

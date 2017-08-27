@@ -10,7 +10,7 @@ require_once "$IP/extensions/AntiSpoof/maintenance/BatchAntiSpoofClass.php";
 class BatchCAAntiSpoof extends BatchAntiSpoof {
 
 	/**
-	 * @param $items array
+	 * @param array $items
 	 */
 	protected function batchRecord( $items ) {
 		CentralAuthSpoofUser::batchRecord( $this->getDB(), $items );
@@ -42,7 +42,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	}
 
 	/**
-	 * @param $name string
+	 * @param string $name
 	 * @return CentralAuthSpoofUser
 	 */
 	protected function makeSpoofUser( $name ) {

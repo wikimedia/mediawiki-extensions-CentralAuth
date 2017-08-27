@@ -140,6 +140,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	}
 
 	/**
+	 * @param string $value
 	 * @return string Formatted table cell contents
 	 */
 	protected function formatDateTime( $value ) {

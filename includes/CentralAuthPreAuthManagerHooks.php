@@ -12,7 +12,7 @@ class CentralAuthPreAuthManagerHooks {
 	 * This hook is used in cases where SpecialPageFactory::getPageList() is called before
 	 * $wgExtensionFunctions are run, which happens when E:ShortUrl is installed.
 	 *
-	 * @param array $list
+	 * @param array &$list
 	 * @return bool
 	 */
 	public static function onSpecialPage_initList( &$list ) {
@@ -26,7 +26,7 @@ class CentralAuthPreAuthManagerHooks {
 	}
 
 	/**
-	 * @param $auth
+	 * @param CentralAuthPlugin &$auth
 	 * @return bool
 	 */
 	static function onAuthPluginSetup( &$auth ) {
@@ -35,8 +35,8 @@ class CentralAuthPreAuthManagerHooks {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $abortError
+	 * @param User $user
+	 * @param string &$abortError
 	 * @return bool
 	 */
 	static function onAbortNewAccount( User $user, &$abortError ) {
@@ -72,7 +72,7 @@ class CentralAuthPreAuthManagerHooks {
 	/**
 	 * Prevent accounts from being autocreated if a rename is in progress
 	 * @param User $user
-	 * @param $msg
+	 * @param string &$msg
 	 * @return bool
 	 */
 	static function onAbortAutoAccount( User $user, &$msg ) {
@@ -173,8 +173,8 @@ class CentralAuthPreAuthManagerHooks {
 	}
 
 	/**
-	 * @param $user User
-	 * @param $inject_html string
+	 * @param User &$user
+	 * @param string &$inject_html
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html ) {
@@ -194,7 +194,7 @@ class CentralAuthPreAuthManagerHooks {
 	}
 
 	/**
-	 * @param $user User
+	 * @param User &$user
 	 * @return bool
 	 */
 	static function onUserLogout( &$user ) {
@@ -206,9 +206,9 @@ class CentralAuthPreAuthManagerHooks {
 
 	/**
 	 * Handler for PostLoginRedirect
-	 * @param string $returnTo The page to return to
-	 * @param array $returnToQuery Url parameters
-	 * @param string $type Type of login redirect
+	 * @param string &$returnTo The page to return to
+	 * @param array &$returnToQuery Url parameters
+	 * @param string &$type Type of login redirect
 	 * @return bool
 	 */
 	public static function onPostLoginRedirect(

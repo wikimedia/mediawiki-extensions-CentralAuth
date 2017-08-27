@@ -850,6 +850,7 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	/**
+	 * @param string $value
 	 * @return string Formatted table cell contents
 	 */
 	protected function formatDateTime( $value ) {
@@ -859,6 +860,7 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	/**
+	 * @param stdClass $row
 	 * @return string Formatted table cell contents
 	 */
 	protected function formatActionValue( $row ) {

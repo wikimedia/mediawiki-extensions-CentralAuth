@@ -98,7 +98,7 @@ class GlobalRenameUser {
 	 * Rename a global user (this assumes that the data has been verified before
 	 * and that $newUser is being a creatable user)!
 	 *
-	 * @param $options array
+	 * @param array $options
 	 * @return Status
 	 */
 	public function rename( array $options ) {

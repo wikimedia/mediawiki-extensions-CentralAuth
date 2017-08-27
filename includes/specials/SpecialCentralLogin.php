@@ -60,7 +60,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param $token string
+	 * @param string $token
 	 * @throws Exception
 	 */
 	protected function doLoginStart( $token ) {
@@ -173,7 +173,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param $token string
+	 * @param string $token
 	 * @throws Exception
 	 */
 	protected function doLoginComplete( $token ) {
