@@ -8,5 +8,7 @@
 	"centralauth-foreign-link": "i $2 a misaungayay $1",
 	"centralauth-foreign-contributions": "i $2 izaw ku $1 {{PLURAL:$1|paanin}}",
 	"centralauth-merge-method-login": "patizengtu itawya i patalabuan",
+	"centralauth-admin-yes": "hang",
+	"centralauth-admin-no": "caay",
 	"centralauth-admin-blocklog": "milangat tu nasulitan nakawawan"
 }
