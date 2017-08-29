@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Status handler for CentralAuth users being renamed.
  * This can work based on the new or old user name (can be constructed
@@ -8,6 +7,8 @@
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
+
+use Wikimedia\Rdbms\IDatabase;
 
 class GlobalRenameUserStatus implements IDBAccessObject {
 
@@ -222,5 +223,40 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 			},
 			$fname
 		);
+	}
+
+	/**
+	 * Get a list of all currently in progress renames
+	 *
+	 * @param User $forUser User viewing the list, for permissions checks
+	 * @return string[] old username => new username
+	 */
+	public static function getInProgressRenames( User $forUser ) {
+		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$tables = [ 'renameuser_status' ];
+		if ( !$forUser->isAllowed( 'centralauth-oversight' ) ) {
+			$join_conds = [ 'globaluser' => [
+				'INNER JOIN', [ 'gu_name=ru_newname', 'gu_hidden=""' ]
+			] ];
+			$tables[] = 'globaluser';
+		} else {
+			$join_conds = [];
+		}
+
+		$res = $dbr->select(
+			$tables,
+			[ 'ru_oldname', 'ru_newname' ],
+			[],
+			__METHOD__,
+			[ 'DISTINCT' ],
+			$join_conds
+		);
+
+		$ret = [];
+		foreach ( $res as $row ) {
+			$ret[$row->ru_oldname] = $row->ru_newname;
+		}
+
+		return $ret;
 	}
 }

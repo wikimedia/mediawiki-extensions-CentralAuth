@@ -55,38 +55,18 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	}
 
 	function showCurrentRenames() {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$tables = [ 'renameuser_status' ];
-		if ( !$this->getUser()->isAllowed( 'centralauth-oversight' ) ) {
-			$join_conds = [ 'globaluser' => [
-				'INNER JOIN', [ 'gu_name=ru_newname', 'gu_hidden=""' ]
-			] ];
-			$tables[] = 'globaluser';
-		} else {
-			$join_conds = [];
-		}
+		$renames = GlobalRenameUserStatus::getInProgressRenames( $this->getUser() );
 
-		$res = $dbr->select(
-			$tables,
-			[ 'ru_oldname', 'ru_newname' ],
-			[],
-			__METHOD__,
-			[ 'DISTINCT' ],
-			$join_conds
-		);
+		if ( !$renames ) {
+			return;
+		}
 
 		$html = "<ul>\n";
-		$hasResults = false;
-		foreach ( $res as $row ) {
-			$hasResults = true;
+		foreach ( $renames as $oldname => $newname ) {
 			$html .= '<li>' .
 				$this->msg( 'centralauth-rename-progress-item' )
-					->params( $row->ru_oldname, $row->ru_newname )->parse() .
+					->params( $oldname, $newname )->parse() .
 				"</li>\n";
-		}
-
-		if ( !$hasResults ) {
-			return;
 		}
 
 		$html .= "</ul>\n";
