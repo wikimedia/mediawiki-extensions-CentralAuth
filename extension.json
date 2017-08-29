@@ -160,7 +160,8 @@
 		"globaluserrights": "ApiGlobalUserRights"
 	},
 	"APIMetaModules": {
-		"globaluserinfo": "ApiQueryGlobalUserInfo"
+		"globaluserinfo": "ApiQueryGlobalUserInfo",
+		"globalrenamestatus": "ApiQueryGlobalRenameStatus"
 	},
 	"APIListModules": {
 		"globalgroups": "ApiQueryGlobalGroups",
@@ -207,6 +208,7 @@
 		"SpecialGlobalGroupPermissions": "includes/specials/SpecialGlobalGroupPermissions.php",
 		"SpecialWikiSets": "includes/specials/SpecialWikiSets.php",
 		"ApiQueryGlobalUserInfo": "includes/api/ApiQueryGlobalUserInfo.php",
+		"ApiQueryGlobalRenameStatus": "includes/api/ApiQueryGlobalRenameStatus.php",
 		"ApiDeleteGlobalAccount": "includes/api/ApiDeleteGlobalAccount.php",
 		"ApiSetGlobalAccountStatus": "includes/api/ApiSetGlobalAccountStatus.php",
 		"ApiQueryGlobalGroups": "includes/api/ApiQueryGlobalGroups.php",
