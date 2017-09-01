@@ -2488,19 +2488,25 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			UserGroupMembership::getMembershipsForUser( $data['id'], $db );
 
 		// And while we're in here, look for user blocks :D
-		$result = $db->select( 'ipblocks',
+		$commentStore = CommentStore::newKey( 'ipb_reason' );
+		$commentQuery = $commentStore->getJoin();
+		$result = $db->select(
+			[ 'ipblocks' ] + $commentQuery['tables'],
 			[
-				'ipb_expiry', 'ipb_reason', 'ipb_block_email',
+				'ipb_expiry', 'ipb_block_email',
 				'ipb_anon_only', 'ipb_create_account',
 				'ipb_enable_autoblock', 'ipb_allow_usertalk',
-			],
+			] + $commentQuery['fields'],
 			[ 'ipb_user' => $data['id'] ],
-			__METHOD__ );
+			__METHOD__,
+			[],
+			$commentQuery['joins']
+		);
 		global $wgLang;
 		foreach ( $result as $row ) {
 			if ( $wgLang->formatExpiry( $row->ipb_expiry, TS_MW ) > wfTimestampNow() ) {
 				$data['block-expiry'] = $row->ipb_expiry;
-				$data['block-reason'] = $row->ipb_reason;
+				$data['block-reason'] = $commentStore->getComment( $row )->text;
 				$data['block-anononly'] = (bool)$row->ipb_anon_only;
 				$data['block-nocreate'] = (bool)$row->ipb_create_account;
 				$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
