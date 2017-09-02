@@ -34,7 +34,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			}
 
 			$lb = wfGetLB( $wiki );
-			$ldbr = $lb->getConnection( DB_SLAVE, [], $wiki );
+			$ldbr = $lb->getConnection( DB_REPLICA, [], $wiki );
 
 			$this->output( "Populating fields for wiki $wiki... \n" );
 			do {
