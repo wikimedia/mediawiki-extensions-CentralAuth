@@ -119,7 +119,7 @@
 	"centralauth-admin-status-locked-yes": "सम्पादन गर्नलाई यो खाता प्रतिबन्धित छ",
 	"centralauth-admin-status-hidden": "लुकेको",
 	"centralauth-admin-status-hidden-no": "खाता लुकाइएको छैन",
-	"centralauth-admin-status-hidden-list": "सार्वजनिक सूचीहरुबाट यो खाता गुप्त छ",
+	"centralauth-admin-status-hidden-list": "सार्वजनिक सूचीहरूबाट यो खाता गुप्त छ",
 	"centralauth-admin-status-hidden-oversight": "खाता पूर्ण रुपले गुप्त छ",
 	"centralauth-admin-status-submit": "स्थिति तय गर्ने",
 	"centralauth-admin-status-nonexistent": "त्रुटि: यो विश्वव्यापी खाता \"<nowiki>$1</nowiki>\" छैन।",

@@ -10,5 +10,9 @@
 	"centralauth-merge-method-login": "patizengtu itawya i patalabuan",
 	"centralauth-admin-yes": "hang",
 	"centralauth-admin-no": "caay",
-	"centralauth-admin-blocklog": "milangat tu nasulitan nakawawan"
+	"centralauth-admin-blocklog": "milangat tu nasulitan nakawawan",
+	"centralauth-log-status-none": "(nayi’)",
+	"centralauth-editgroup-noset": "(nayi’)",
+	"centralauth-editset-nowikis": "(nayi’)",
+	"centralauth-editset-nouse": "(nayi’)"
 }
