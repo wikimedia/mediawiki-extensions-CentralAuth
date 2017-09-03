@@ -33,7 +33,7 @@
 	"centralauth-complete-text": "अब तपाईं {{int:Centralauth-groupname}}को कुनै पनि विकि साइटमा नयाँ खाता नबनाई प्रवेश गर्न सक्नुहुन्छ।",
 	"centralauth-incomplete-text": "तपाईंको प्रवेश एकपल्ट एकीकृत भएपछि {{int:Centralauth-groupname}}को कुनै पनि साइटमा खाता नबनाई प्रवेश गर्न सक्नु हुन्छ",
 	"centralauth-notice-dryrun": "<div class='successbox'>डेमो मोड मात्र</div><br clear='all'/>",
-	"centralauth-error-locked": "तपाईंले सम्पादन गर्न सक्नुहुन्न किन भनें तपाईंको खातालाई प्रतिबन्धित गरिएकोछ।",
+	"centralauth-error-locked": "तपाईंले सम्पादन गर्न सक्नुहुन्न किन भने तपाईंको खातालाई प्रतिबन्धित गरिएकोछ।",
 	"centralauth-error-unmerged": "तपाईंले सम्पादन गर्न सक्नुहुन्न किन भने तपाईंको खातालाई एकीकरण गरिएको छैन।",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''एकल प्रवेश'''को लागि पढ्नुहोस्]]…''",
 	"centralauth-list-home-title": "गृह विकि",
