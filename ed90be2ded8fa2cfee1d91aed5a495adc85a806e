@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_13ed8089",
+        "filename": "includes/api/ApiQueryGlobalRenameStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2017-09-04T01:17:58Z",
+      "side": 1,
+      "message": "Does it make sense that for users not being renamed... That we display nothing?",
+      "range": {
+        "startLine": 54,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 10
+      },
+      "revId": "ed90be2ded8fa2cfee1d91aed5a495adc85a806e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
