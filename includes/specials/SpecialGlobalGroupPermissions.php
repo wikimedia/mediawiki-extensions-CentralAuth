@@ -395,7 +395,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string escaped html
 	 */
 	protected function formatRight( $right ) {
-		return $this->getOutput()->parseInline( User::getRightDescription( $right ) ) . ' ' .
+		$options = ParserOptions::newCanonical();
+		$options->setWrapOutputClass( false );
+		$getrights = $this->getOutput();
+		return $getrights->parseInline( User::getRightDescription( $right ), $right, $options ) . ' ' .
 			Html::element( 'code', [], $this->msg( 'parentheses', $right )->text() );
 	}
 
