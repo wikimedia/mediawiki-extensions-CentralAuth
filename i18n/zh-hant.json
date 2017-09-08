@@ -27,7 +27,8 @@
 			"Wehwei",
 			"飞舞回堂前",
 			"McDutchie",
-			"Wwycheuk"
+			"Wwycheuk",
+			"A2093064"
 		]
 	},
 	"mergeaccount": "帳號整合狀態",
@@ -137,6 +138,7 @@
 	"centralauth-admin-list-editcount": "編輯次數",
 	"centralauth-admin-list-groups": "群組",
 	"centralauth-admin-list-blocked": "已封鎖",
+	"centralauth-admin-group-temporary": "$1（臨時）",
 	"centralauth-admin-unmerge": "取消合併選擇的",
 	"centralauth-admin-merge": "合併選擇的",
 	"centralauth-admin-bad-input": "無效的合併選擇",
