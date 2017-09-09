@@ -6,6 +6,7 @@
 	},
 	"mergeaccount": "Stado de la outenticaçon ouneficada",
 	"centralauth": "Admenistraçon de la cuonta global",
+	"centralauth-admin-blocklog": "registro de bloqueios",
 	"centralauth-prefs-status": "Cuonta global:",
 	"centralauth-prefs-not-managed": "Nun stá a outelizar la cuonta global",
 	"centralauth-prefs-unattached": "Nun stá totalmente unificada",
