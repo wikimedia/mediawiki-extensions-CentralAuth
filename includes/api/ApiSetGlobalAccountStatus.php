@@ -59,7 +59,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			// Don't lock or unlock
 			$setLocked = null;
 		} else {
-			$setLocked = $setLocked === 'lock';
+			$setLocked = $params['locked'] === 'lock';
 		}
 
 		$setHidden = $params['hidden'];
