@@ -11,8 +11,12 @@
 	"centralauth-admin-yes": "hang",
 	"centralauth-admin-no": "caay",
 	"centralauth-admin-blocklog": "milangat tu nasulitan nakawawan",
+	"centralauth-admin-multi-bot": "capi a demaiday a sumad",
 	"centralauth-log-status-none": "(nayi’)",
+	"centralauth-globalgroupperms-rights": "kinli",
 	"centralauth-editgroup-noset": "(nayi’)",
 	"centralauth-editset-nowikis": "(nayi’)",
-	"centralauth-editset-nouse": "(nayi’)"
+	"centralauth-editset-nouse": "(nayi’)",
+	"globalrenamerequest-email-label": "imyiyo(email) puenengan:",
+	"globalrenamequeue-action-view": "ciwsace"
 }
