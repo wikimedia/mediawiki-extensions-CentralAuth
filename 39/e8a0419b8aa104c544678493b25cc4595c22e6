@@ -1,0 +1,9 @@
+Code-Review+1: Legoktm <legoktm@member.fsf.org>
+Code-Review+1: Alex Monk <krenair@gmail.com>
+Code-Review+2: Hashar <hashar@free.fr>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 12 Sep 2017 13:11:52 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/377326
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/wmf/1.30.0-wmf.17
