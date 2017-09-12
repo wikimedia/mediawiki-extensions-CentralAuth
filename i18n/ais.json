@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Benel",
-			"Bunukwiki"
+			"Bunukwiki",
+			"Tokoabibi"
 		]
 	},
 	"centralauth-foreign-link": "i $2 a misaungayay $1",
@@ -12,11 +13,16 @@
 	"centralauth-admin-no": "caay",
 	"centralauth-admin-blocklog": "milangat tu nasulitan nakawawan",
 	"centralauth-admin-multi-bot": "capi a demaiday a sumad",
+	"centralauth-seconds-ago": "ayaw $1 {{PLURAL:$1|a beti}}",
+	"centralauth-minutes-ago": "ayaw $1 {{PLURAL:$1|widi}}",
+	"centralauth-hours-ago": "ayaw $1 {{PLURAL:$1|a tuki}}",
 	"centralauth-log-status-none": "(nayi’)",
 	"centralauth-globalgroupperms-rights": "kinli",
 	"centralauth-editgroup-noset": "(nayi’)",
+	"centralauth-editset-type": "nikalahizaan:",
 	"centralauth-editset-nowikis": "(nayi’)",
 	"centralauth-editset-nouse": "(nayi’)",
+	"centralauth-rename-table-status-done": "malahecitu",
 	"globalrenamerequest-email-label": "imyiyo(email) puenengan:",
 	"globalrenamequeue-action-view": "ciwsace"
 }
