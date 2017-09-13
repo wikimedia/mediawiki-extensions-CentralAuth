@@ -62,14 +62,14 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$data['name'] = $user->getName();
 
 			if ( $user->isLocked() ) {
-				$data['locked'] = '';
+				$data['locked'] = true;
 			}
 			if ( $user->isHidden() ) {
-				$data['hidden'] = '';
+				$data['hidden'] = true;
 			}
 		} else {
 			// The user doesn't exist or we pretend it doesn't if it's hidden
-			$data['missing'] = '';
+			$data['missing'] = true;
 		}
 		$result->addValue( 'query', $this->getModuleName(), $data );
 
