@@ -39,7 +39,13 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		if ( is_null( $params['user'] ) ) {
 			$params['user'] = $this->getUser()->getName();
 		}
-		$user = CentralAuthUser::getInstanceByName( $params['user'] );
+
+		$username = User::getCanonicalName( $params['user'] );
+		if ( $username === false ) {
+			$this->dieWithError( [ 'apierror-invaliduser', wfEscapeWikiText( $params['user'] ) ] );
+		}
+
+		$user = CentralAuthUser::getInstanceByName( $username );
 
 		// Add basic info
 		$result = $this->getResult();
@@ -149,7 +155,9 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
 	public function getAllowedParams() {
 		return [
-			'user' => null,
+			'user' => [
+				ApiBase::PARAM_TYPE => 'user',
+			],
 			'prop' => [
 				ApiBase::PARAM_TYPE => [
 					'groups',
