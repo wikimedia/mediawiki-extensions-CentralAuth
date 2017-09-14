@@ -7,6 +7,7 @@
 	"mergeaccount": "Stado de la outenticaçon ouneficada",
 	"centralauth": "Admenistraçon de la cuonta global",
 	"centralauth-admin-blocklog": "registro de bloqueios",
+	"globalusers": "Outelizadores globales",
 	"centralauth-prefs-status": "Cuonta global:",
 	"centralauth-prefs-not-managed": "Nun stá a outelizar la cuonta global",
 	"centralauth-prefs-unattached": "Nun stá totalmente unificada",
@@ -14,7 +15,10 @@
 	"centralauth-rightslog-entry-setchange": "altarou las wikis an \"$1\": adicionou: $2; remobiu: $3",
 	"globalgroupmembership": "Nembros de grupos globales",
 	"globalgrouppermissions": "Admenistraçon de grupos globales",
+	"centralauth-editset": "Cunjuntos de wikis",
+	"globalrenameprogress": "Progresso de l'altaraçon global de nomes",
 	"centralauth-rename-movelog": "Páigina arrastrada outomaticamente al altarar l nome d'outelizador \"[[Special:CentralAuth/$1|$1]]\" pa \"[[Special:CentralAuth/$2|$2]]\"",
 	"globalrenamerequest": "Pedido de altaraçon de nome de outelizador",
+	"userswhowillberenamed": "Outelizadores cujo nome será altarado",
 	"log-action-filter-gblrights-usergroups": "Altaraçon de ls prebilégios de outelizador global"
 }
