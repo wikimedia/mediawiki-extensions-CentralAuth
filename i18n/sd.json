@@ -3,7 +3,8 @@
 		"authors": [
 			"Sindhu",
 			"Aursani",
-			"Mehtab ahmed"
+			"Mehtab ahmed",
+			"Indus Asia"
 		]
 	},
 	"centralauth-foreign-link": "$2 تي واھپ $1",
@@ -17,8 +18,8 @@
 	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگھي: اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ٻيو نالو چونڊيو.",
 	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ڪو ٻيو نالو چونڊيو.",
 	"globalrenamequeue-request-cancel-text": "رد",
-	"globalrenamequeue-form-username": "واھپ-نانءُ:",
-	"globalrenamequeue-form-newname": "گهريل واھپ-نانءُ:",
+	"globalrenamequeue-form-username": "واھپ (يوزر)-نانءُ:",
+	"globalrenamequeue-form-newname": "گهريل واھپ (يوزر)-نانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
 	"globalrenamequeue-form-status-all": "سڀ",
 	"apierror-centralauth-badusername": "يوزر ناءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي"
