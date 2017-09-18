@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e7eab26_b93bd135",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 9
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2017-09-18T05:51:45Z",
+      "side": 1,
+      "message": "Huh? These parameters don\u0027t make any sense. The signature is\n\n\t * @param string $text\n\t * @param bool $linestart Is this the start of a line?\n\t * @param bool $interface Use interface language ($wgLang instead of\n\t *   $wgContLang) while parsing language sensitive magic\n\t *   words like GRAMMAR and PLURAL",
+      "range": {
+        "startLine": 401,
+        "startChar": 54,
+        "endLine": 401,
+        "endChar": 70
+      },
+      "revId": "570fdb014ebc632545daa8d5af7ff61aa229250d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
