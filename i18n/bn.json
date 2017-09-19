@@ -258,6 +258,7 @@
 	"centralauth-editset-success": "উইকিসেট হালনাগাদ হয়েছে।",
 	"centralauth-editset-success-delete": "উইকিসেট অপসারিত হয়েছে।",
 	"centralauth-editset-return": "মূল ভিউতে ফিরুন",
+	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] নামক অ্যাকাউন্টটি ইতিমধ্যে বৈশ্বিকভাবে অবরুদ্ধ।",
 	"right-globalgroupmembership": "সদস্যপদ বৈশ্বিক গ্রুপে সম্পাদনা করো",
 	"right-centralauth-merge": "তাদের অ্যাকাউন্ট একীভূত করো",
 	"right-globalgrouppermissions": "বৈশ্বিক গ্রুপ ব্যবস্থাপনা",

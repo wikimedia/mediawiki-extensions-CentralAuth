@@ -7,20 +7,20 @@
 			"Indus Asia"
 		]
 	},
-	"centralauth-foreign-link": "$2 تي واھپ $1",
+	"centralauth-foreign-link": "$2 تي واپرائيندڙ $1",
 	"centralauth-foreign-contributions": "$2 تي $1 {{PLURAL:$1|ڀاڱيداري|ڀاڱيداريون}}",
 	"centralauth-merge-method-login": "داخل ٿيڻ تي سرجبو",
 	"centralauth-attach-title": "کاتي جي پڪ ڪريو",
 	"centralauth-admin-blocklog": "بندش لاگ",
-	"centralauth-admin-delete-description": "گلوبل اڪائونٽ کي ڊليٽ ڪرڻ سان سڀئي لوڪل اڪائونٽ ڊيٽاچ ڪري ڇڏيندو. ۽ ٻئي يوزر لاءِ گلوبل نالو آزاد ڇڏيو ته سڀ لوڪل کاتا موجود ۽ جاري رکي",
-	"centralauth-admin-rename-in-progress": "هي کاتي جو نالو تبديل ٿي رهيو آهي. توهان [[Special:GlobalRenameProgress/$1|ڏسو ڪارڪردگي]] نالي جي تبديليءَ جي، گلوبل نالي تبديليءَ جو لاگ يوزر لاءِ هيٺ مهيا ڪيل آهي",
+	"centralauth-admin-delete-description": "گلوبل کاتي کي ڊاھڻ سان سڀئي لوڪل کاتا ڊيٽاچ ڪري ڇڏيندو، ۽ ٻئي واپرائيندڙ لاءِ گلوبل نالو آزاد ڇڏيندئو.\nسڀ لوڪل کاتا موجود رھڻ جاري رکندا.",
+	"centralauth-admin-rename-in-progress": "ھن کاتي جو نالو تبديل ٿي رهيو آهي. توهان نالي جي تبديليءَ جي[[Special:GlobalRenameProgress/$1|ڪارڪردگي ڏسو]]، گلوبل نالي تبديليءَ جو لاگ واھپيندڙ لاءِ هيٺ مهيا ڪيل آهي.",
 	"centralauth-prefs-status": "عالمي کاتو:",
 	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگھي: اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ٻيو نالو چونڊيو.",
 	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ڪو ٻيو نالو چونڊيو.",
 	"globalrenamequeue-request-cancel-text": "رد",
-	"globalrenamequeue-form-username": "واھپ (يوزر)-نانءُ:",
-	"globalrenamequeue-form-newname": "گهريل واھپ (يوزر)-نانءُ:",
+	"globalrenamequeue-form-username": "واپرائيندڙ-نانءُ:",
+	"globalrenamequeue-form-newname": "گهريل واپرائيندڙ-نانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
 	"globalrenamequeue-form-status-all": "سڀ",
-	"apierror-centralauth-badusername": "يوزر ناءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي"
+	"apierror-centralauth-badusername": "واپرائيندڙ-نانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي"
 }
