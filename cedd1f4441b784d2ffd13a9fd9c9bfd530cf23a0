@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e7b3738_3933a20c",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-09-20T13:30:45Z",
+      "side": 1,
+      "message": "We\u0027d usually write this on one line\n\n global $wgParser, $wgContLang;",
+      "revId": "cedd1f4441b784d2ffd13a9fd9c9bfd530cf23a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e7b3738_3d270db3",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-09-20T13:30:45Z",
+      "side": 1,
+      "message": "Why not just do what Special:ListGroupRights in core does? It passes the result of User::getRightDescription() as a parameter to a Message, then -\u003eparse() on that message handles it.\n\nhttps://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/specials/SpecialListgrouprights.php;72bd7a4decb46653dc7acbf22ac01bceee275a4e$204-212",
+      "revId": "cedd1f4441b784d2ffd13a9fd9c9bfd530cf23a0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
