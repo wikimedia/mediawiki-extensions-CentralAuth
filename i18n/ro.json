@@ -10,7 +10,8 @@
 			"Strainu",
 			"XXN",
 			"ImGelu",
-			"Rsocol"
+			"Rsocol",
+			"Andreyyshore"
 		]
 	},
 	"mergeaccount": "Statusul despre unificarea autentificării",
@@ -86,7 +87,7 @@
 	"centralauth-attach-success": "Contul a fost migrat în contul unificat.",
 	"centralauth": "Administrare cont global",
 	"centralauth-ro": "Informații cont global",
-	"centralauth-admin-intro": "Această interfaţă poate fi folosită pentru administrarea de conturi globale.",
+	"centralauth-admin-intro": "Această interfață poate fi folosită pentru administrarea de conturi globale.",
 	"centralauth-admin-manage": "Gestionare date cont",
 	"centralauth-admin-view": "Vizualizare informații cont",
 	"centralauth-admin-username": "Nume de utilizator:",
