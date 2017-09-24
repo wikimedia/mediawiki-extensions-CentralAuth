@@ -3,7 +3,6 @@
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
-use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionBackend;
 
 /**
