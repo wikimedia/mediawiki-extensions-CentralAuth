@@ -5,6 +5,9 @@
 		]
 	},
 	"mergeaccount": "Stado de la outenticaçon ouneficada",
+	"centralauth-foreign-link": "{{GENDER:$1|Outelizador|Outelizadora|Outelizador(a)}} $1 an $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|cuntrebuiçon|cuntrebuiçones}} an $2",
+	"centralauth-merge-method-login": "criada al antrar",
 	"centralauth": "Admenistraçon de la cuonta global",
 	"centralauth-admin-blocklog": "registro de bloqueios",
 	"globalusers": "Outelizadores globales",

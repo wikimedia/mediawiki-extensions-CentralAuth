@@ -302,7 +302,7 @@
 	"centralauth-editset-new": "Crea un nuovo insieme",
 	"centralauth-editset-notfound": "Insieme di wiki \"$1\" non trovato.",
 	"centralauth-editset-optin": "Basato sull'opt-in (include solo le wiki specificate)",
-	"centralauth-editset-optout": "Basato sull'opt-out (include tutte le wiki tranne quelle specificate)",
+	"centralauth-editset-optout": "Basato sull'esclusione (include tutti i wiki tranne quelli specificati)",
 	"centralauth-editset-legend-edit": "Modifica l'insieme di wiki \"$1\"",
 	"centralauth-editset-legend-view": "Insieme di wiki \"$1\"",
 	"centralauth-editset-legend-new": "Crea un nuovo insieme di wiki",
