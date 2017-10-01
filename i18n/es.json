@@ -444,7 +444,7 @@
 	"centralauth-usermerge-noself": "No puedes fusionar cuentas contigo mismo.",
 	"action-centralauth-usermerge": "fusionar globalmente a múltiples usuarios",
 	"right-centralauth-usermerge": "Fusionar varios usuarios globalmente",
-	"centralauth-usermerge-confirm": "¿Estás seguro de que quieres fusionar globalmente a estos usuarios?",
+	"centralauth-usermerge-confirm": "¿Confirmas que quieres fusionar globalmente a estos usuarios?",
 	"centralauth-usermerge-toomany": "Sólo $1 {{PLURAL:$1|usuario puede|usuarios pueden}} fusionarse de una vez.",
 	"centralauth-usermerge-ratelimited": "Como medida de seguridad sólo se te permite fusionar globalmente a un usuario por minuto. Por favor, inténtalo transcurrido un minuto.",
 	"centralauth-usermerge-nousers": "Deben proporcionarse al menos dos cuentas de usuario globales válidas.",
