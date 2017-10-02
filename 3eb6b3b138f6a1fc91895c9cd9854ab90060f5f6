@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_330181ba",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2017-10-02T01:32:35Z",
+      "side": 1,
+      "message": "This need to be placed before \"foreach\" (line 115) otherwise affectedRows() returns 0 because when it tries to gets results the database connection is already closed.",
+      "range": {
+        "startLine": 119,
+        "startChar": 2,
+        "endLine": 119,
+        "endChar": 55
+      },
+      "revId": "3eb6b3b138f6a1fc91895c9cd9854ab90060f5f6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
