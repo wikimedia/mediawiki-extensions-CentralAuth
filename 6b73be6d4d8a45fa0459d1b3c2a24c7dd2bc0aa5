@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_7b5a67fb",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2017-10-03T13:42:31Z",
+      "side": 1,
+      "message": "$this-\u003edbr",
+      "range": {
+        "startLine": 80,
+        "startChar": 12,
+        "endLine": 80,
+        "endChar": 16
+      },
+      "revId": "6b73be6d4d8a45fa0459d1b3c2a24c7dd2bc0aa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_bb51bfdf",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2017-10-03T13:42:31Z",
+      "side": 1,
+      "message": "$this-\u003edbr",
+      "range": {
+        "startLine": 86,
+        "startChar": 13,
+        "endLine": 86,
+        "endChar": 17
+      },
+      "revId": "6b73be6d4d8a45fa0459d1b3c2a24c7dd2bc0aa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_1bf32be5",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2017-10-03T13:42:31Z",
+      "side": 1,
+      "message": "$this-\u003edbr",
+      "range": {
+        "startLine": 88,
+        "startChar": 19,
+        "endLine": 88,
+        "endChar": 23
+      },
+      "revId": "6b73be6d4d8a45fa0459d1b3c2a24c7dd2bc0aa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e6af365_bbff7fa6",
+        "filename": "maintenance/resetGlobalUserTokens.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2017-10-03T13:42:31Z",
+      "side": 1,
+      "message": "$this-\u003edbr",
+      "range": {
+        "startLine": 89,
+        "startChar": 19,
+        "endLine": 89,
+        "endChar": 23
+      },
+      "revId": "6b73be6d4d8a45fa0459d1b3c2a24c7dd2bc0aa5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
