@@ -10,7 +10,8 @@
 			"StanProg",
 			"Лорд Бъмбъри",
 			"Termininja",
-			"Vodnokon4e"
+			"Vodnokon4e",
+			"ShockD"
 		]
 	},
 	"mergeaccount": "Състояние на обединението на сметки",
@@ -241,6 +242,7 @@
 	"centralauth-rename-progress-username": "Потребителско име",
 	"centralauth-rename-table-status-done": "Готово",
 	"centralauth-rename-progress-logs-fieldset": "Записи в дневника",
+	"centralauth-rename-movelog": "Автоматично преместена страница при преименуването на потребител \"[[Special:CentralAuth/$1|$1]]\" като \"[[Special:CentralAuth/$2|$2]]\"",
 	"log-name-gblrename": "Дневник на глобалните преименувания",
 	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка",
 	"globalrenamequeue-nav-openqueue": "Отворени заявки",
