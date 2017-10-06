@@ -125,6 +125,7 @@
 	"centralauth-listusers-locked": "gesluit",
 	"centralauth-listusers-attached": "[[User:$1|bestaan lokaal]]",
 	"centralauth-listusers-nolocal": "onverbonde of nie plaaslik bestaan",
+	"centralauth-admin-multi-bot": "Onlangse wysigings",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonde|sekondes}} gelede",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuut|minute}} gelede",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur|ure}} gelede",
