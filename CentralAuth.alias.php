@@ -858,10 +858,20 @@ $specialPageAliases['uk'] = [
 
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = [
-	'CentralAuth' => [ 'اختیار_مرکزی' ],
+'CentralAuth' => [ 'اختیار_مرکزی' ],
 	'MergeAccount' => [ 'ضم_کھاتہ' ],
+	'GlobalGroupMembership' => [ 'عالمی_اختیارات_صارف', 'عالمی_گروہی_رکنیت' ],
+	'GlobalGroupPermissions' => [ 'عالمی_گروہی_اجازتیں' ],
+	'WikiSets' => [ 'ویکی_مجموعات', 'ترمیم_ویکی_مجموعات' ],
 	'GlobalUsers' => [ 'عالمی_صارفین' ],
-	'GlobalRenameRequest' => [ 'درخواست_تبدیلی_عالمی_نام' ],
+	'MultiLock' => [ 'متعدد_قفل' ],
+	'GlobalRenameUser' => [ 'عالمی_تبدیلی_صارف_نام' ],
+	'GlobalRenameProgress' => [ 'پیشرفتعالمیتبدیلی_نام' ],
+	'GlobalUserMerge' => [ 'ضمعالمیصارف' ],
+	'GlobalRenameRequest' => [ 'درخواستتبدیلیعالمی_نام' ],
+	'GlobalRenameQueue' => [ 'قطارعالمیتبدیلی_نام' ],
+	'SulRenameWarning' => [ 'انتباہعالمیتبدیلی_نام' ],
+	'UsersWhoWillBeRenamed' => [ 'صارفینجنکےنامتبدیل_ہونگے' ],
 ];
 
 /** Venetian (vèneto) */
