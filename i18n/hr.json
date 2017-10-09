@@ -280,7 +280,7 @@
 	"logentry-gblrename-promote": "$1 globalno je {{GENDER:$2|preimenovao|preimenovala}} $4 u $5",
 	"logentry-gblrename-merge": "$1 globalno je {{GENDER:$2|sjedinio|sjedinila}} $4 u $5",
 	"globalrenamerequest": "Zahtjev za globalnim preimenovanjem suradnika",
-	"globalrenamerequest-pretext": "Zahtjev za novim suradničkim imenom za sve projekte.\n\nSvi Vaši prethodni doprinosi biti će povezani s novim suradničkim imenom.\n\nNakon što ste zatražili novo suradničko ime, biti će poslana obavijest stewardima Wikimedije koji će izvršiti preimenovanje. Po završetku procesa, biti ćete obaviješteni e-poštom.",
+	"globalrenamerequest-pretext": "Zatražite novo suradničko ime pod kojim ćete biti poznati diljem projekata.\n\nSvi Vaši prethodni doprinosi bit će povezani s tim novim suradničkim imenom.\n\nNakon što ste zatražili novo suradničko ime, bit će poslana obavijest stjuardima Wikimedije koji će izvršiti preimenovanje. Po završetku toga postupka, bit ćete obaviješteni e-porukom.",
 	"globalrenamerequest-username-label": "Trenutačno suradničko ime:",
 	"globalrenamerequest-newname-label": "Traženo suradničko ime:",
 	"globalrenamerequest-newname-help": "Upišite željeno novo suradničko ime (npr. \"$1\").",
