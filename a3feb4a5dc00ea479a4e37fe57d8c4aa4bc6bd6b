@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_9edda2e3",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 194
+      },
+      "writtenOn": "2017-10-09T18:06:19Z",
+      "side": 1,
+      "message": "Missing a tab here",
+      "range": {
+        "startLine": 861,
+        "startChar": 0,
+        "endLine": 861,
+        "endChar": 1
+      },
+      "revId": "a3feb4a5dc00ea479a4e37fe57d8c4aa4bc6bd6b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
