@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_9e8b62c4",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 194
+      },
+      "writtenOn": "2017-10-09T18:22:08Z",
+      "side": 1,
+      "message": "You are using spaces. Use a tab instead. You can copy it from the next line.",
+      "range": {
+        "startLine": 861,
+        "startChar": 0,
+        "endLine": 861,
+        "endChar": 8
+      },
+      "revId": "cb55b8f57c962493eb83c9a8d5df20bb3747eb2a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
