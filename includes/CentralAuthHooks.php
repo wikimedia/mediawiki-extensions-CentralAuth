@@ -32,38 +32,6 @@ class CentralAuthHooks {
 		if ( $wgCentralIdLookupProvider === 'local' && $wgOverrideCentralIdLookupProvider ) {
 			$wgCentralIdLookupProvider = 'CentralAuth';
 		}
-
-		// AuthManager
-		if ( class_exists( MediaWiki\Auth\AuthManager::class ) && empty( $wgDisableAuthManager ) ) {
-			$wgAuthManagerAutoConfig['primaryauth'] += [
-				CentralAuthPrimaryAuthenticationProvider::class => [
-					'class' => CentralAuthPrimaryAuthenticationProvider::class,
-					'sort' => 10, // After TemporaryPassword, before LocalPassword.
-				]
-			];
-			$wgAuthManagerAutoConfig['secondaryauth'] += [
-				CentralAuthSecondaryAuthenticationProvider::class => [
-					'class' => CentralAuthSecondaryAuthenticationProvider::class,
-					'sort' => 0, // non-UI secondaries should run early
-				]
-			];
-		} else {
-			$wgHooks['AuthPluginSetup'][] = 'CentralAuthPreAuthManagerHooks::onAuthPluginSetup';
-			$wgHooks['AbortLogin'][] = 'CentralAuthPreAuthManagerHooks::onAbortLogin';
-			$wgHooks['AbortNewAccount'][] = 'CentralAuthPreAuthManagerHooks::onAbortNewAccount';
-			$wgHooks['AbortAutoAccount'][] = 'CentralAuthPreAuthManagerHooks::onAbortAutoAccount';
-			$wgHooks['UserLoginComplete'][] = 'CentralAuthPreAuthManagerHooks::onUserLoginComplete';
-			$wgHooks['UserLogout'][] = 'CentralAuthPreAuthManagerHooks::onUserLogout';
-			$wgHooks['SpecialPage_initList'][] =
-				'CentralAuthPreAuthManagerHooks::onSpecialPage_initList';
-
-			if ( $wgCentralAuthCheckSULMigration ) {
-				// Install hidden special page for renamed users
-				$wgSpecialPages['SulRenameWarning'] = 'SpecialSulRenameWarning';
-				$wgHooks['PostLoginRedirect'][] = 'CentralAuthHooks::onPostLoginRedirect';
-				$wgHooks['LoginUserMigrated'][] = 'CentralAuthHooks::onLoginUserMigrated';
-			}
-		}
 	}
 
 	/**
