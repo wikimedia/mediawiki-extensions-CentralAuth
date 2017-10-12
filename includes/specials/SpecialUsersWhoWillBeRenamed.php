@@ -67,13 +67,20 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		}
 
 		$dbr = wfGetDB( DB_REPLICA );
+		$userQuery = User::getQueryInfo();
+		$blockQuery = Block::getQueryInfo();
+		$ipbUser = isset( $blockQuery['ipb_user'] ) ? $blockQuery['ipb_user'] : 'ipb_user';
 		$res = $dbr->select(
-			[ 'user', 'ipblocks' ],
-			User::selectFields(),
+			array_merge( $userQuery['tables'], $blockQuery['tables'] ),
+			$userQuery['fields'],
 			[ 'user_name' => array_unique( $names ), 'ipb_deleted IS NULL OR ipb_deleted = 0' ],
 			__METHOD__,
 			[], // $options
-			[ 'ipblocks' => [ 'LEFT JOIN', 'user_id = ipb_user' ] ]
+			[ 'ipblocks' => [ 'LEFT JOIN', "user_id = $ipbUser" ] ] + $userQuery['joins']
+				+ array_map( function ( $join ) {
+					// Force LEFT JOINs on subtables to match the LEFT JOIN of ipblocks itself
+					$join[0] = 'LEFT JOIN';
+				}, $blockQuery['joins'] )
 		);
 		$userArray = UserArray::newFromResult( $res );
 
