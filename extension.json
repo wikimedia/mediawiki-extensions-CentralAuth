@@ -193,7 +193,6 @@
 		"CentralAuthSecondaryAuthenticationProvider": "includes/CentralAuthSecondaryAuthenticationProvider.php",
 		"CentralAuthPlugin": "includes/CentralAuthPlugin.php",
 		"CentralAuthHooks": "includes/CentralAuthHooks.php",
-		"CentralAuthPreAuthManagerHooks": "includes/CentralAuthPreAuthManagerHooks.php",
 		"CentralAuthSuppressUserJob": "includes/SuppressUserJob.php",
 		"CentralAuthUnattachUserJob": "includes/CentralAuthUnattachUserJob.php",
 		"CentralAuthCreateLocalAccountJob": "includes/CreateLocalAccountJob.php",
@@ -437,6 +436,20 @@
 		"CentralAuthGlobalPasswordPolicies": [],
 		"CentralAuthUseSlaves": false,
 		"OverrideCentralIdLookupProvider": true
+	},
+	"AuthManagerAutoConfig": {
+		"primaryauth": {
+			"CentralAuthPrimaryAuthenticationProvider": {
+				"class": "CentralAuthPrimaryAuthenticationProvider",
+				"sort": 10
+			}
+		},
+		"secondaryauth": {
+			"CentralAuthSecondaryAuthenticationProvider": {
+				"class": "CentralAuthSecondaryAuthenticationProvider",
+				"sort": 0
+			}
+		}
 	},
 	"manifest_version": 1
 }
