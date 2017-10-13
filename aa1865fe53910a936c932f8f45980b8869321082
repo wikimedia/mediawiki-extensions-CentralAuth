@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0e6af365_bfaac16b",
+        "filename": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-13T18:17:29Z",
+      "side": 1,
+      "message": "This really should use parenthesized syntax. I\u0027m going to make a patch for core so that\u0027s possible.",
+      "revId": "aa1865fe53910a936c932f8f45980b8869321082",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
