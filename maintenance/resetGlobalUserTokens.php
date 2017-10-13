@@ -63,7 +63,7 @@ class ResetGlobalUserTokens extends Maintenance {
 				"Abort with control-c in the next five seconds " .
 					"(skip this countdown with --nowarn) ... "
 			);
-			wfCountDown( 5 );
+			$this->countDown( 5 );
 		}
 
 		// We list user by user_id from one of the slave database
