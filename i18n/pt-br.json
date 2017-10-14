@@ -41,7 +41,7 @@
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Autentique-se]</span> para verificar se as suas contas foram unificadas corretamente.",
 	"centralauth-merge-welcome": "'''A sua conta de usuário ainda não foi migrada para o sistema de autenticação unificado da {{int:Centralauth-groupname}}.'''\n\nCaso decida migrar as suas contas, será possível utilizar o mesmo nome de usuário e senha para se autenticar em todos os wikis da {{int:Centralauth-groupname}}, em todas as línguas disponíveis.\n\nCaso alguém já tenha um nome de usuário idêntico ao seu em algum outro wiki, tal pessoa não será incomodada. No entanto, será possível que você dialogue posteriormente com ela ou com um administrador.",
 	"centralauth-merge-step1-title": "Começar a unificação de contas",
-	"centralauth-merge-step1-detail": "Insira a senha de sua conta.\nSua senha e endereço de e-mail registrado serão comparados com os de contas de outros wikis, para confirmar se coincidem.\nNão serão feitas alterações até que se confime estar tudo correto.",
+	"centralauth-merge-step1-detail": "Insira a senha de sua conta.\nSua senha e endereço de e-mail registrado serão comparados com os de contas de outras wikis, para confirmar se coincidem.\nNão serão feitas alterações até que se confirme estar tudo correto.",
 	"centralauth-merge-step1-submit": "Confirmar informações de login",
 	"centralauth-merge-step2-title": "Confirmar mais contas",
 	"centralauth-merge-step2-detail": "Algumas das contas não coincidem com os dados da residência wiki fornecida. Caso tais contas pertençam a você, será possível confirmar de que são suas fornecendo a senha das mesmas.",
