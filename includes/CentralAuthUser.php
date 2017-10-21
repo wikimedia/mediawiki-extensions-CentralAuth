@@ -545,12 +545,12 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	* Return the local user account ID of the user with the same name on given wiki,
-	* irrespective of whether it is attached or not
-	* @param string $wikiId ID for the local database to connect to
-	* @return int|null Local user ID for given $wikiID. Null if $wikiID is invalid or local user
-	*  doesn't exist
-	*/
+	 * Return the local user account ID of the user with the same name on given wiki,
+	 * irrespective of whether it is attached or not
+	 * @param string $wikiId ID for the local database to connect to
+	 * @return int|null Local user ID for given $wikiID. Null if $wikiID is invalid or local user
+	 *  doesn't exist
+	 */
 	public function getLocalId( $wikiId ) {
 		// Make sure the wiki ID is valid. (This prevents DBConnectionError in unit tests)
 		$validWikis = self::getWikiList();

@@ -101,8 +101,8 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	/**
-	* @param HTMLForm $form
-	*/
+	 * @param HTMLForm $form
+	 */
 	protected function alterForm( HTMLForm $form ) {
 		$form->setSubmitTextMsg( 'globalrenamerequest-submit-text' );
 	}
