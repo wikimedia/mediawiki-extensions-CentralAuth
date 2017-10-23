@@ -36,16 +36,19 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$prop = array_flip( (array)$params['prop'] );
-		if ( is_null( $params['user'] ) ) {
+		if ( is_null( $params['user'] ) && is_null( $params['id'] ) ) {
 			$params['user'] = $this->getUser()->getName();
 		}
 
-		$username = User::getCanonicalName( $params['user'] );
-		if ( $username === false ) {
-			$this->dieWithError( [ 'apierror-invaliduser', wfEscapeWikiText( $params['user'] ) ] );
+		if ( is_null( $params['user'] ) ) {
+			$user = CentralAuthUser::newFromId( $params['id'] );
+		} else {
+			$username = User::getCanonicalName( $params['user'] );
+			if ( $username === false ) {
+				$this->dieWithError( [ 'apierror-invaliduser', wfEscapeWikiText( $params['user'] ) ] );
+			}
+			$user = CentralAuthUser::getInstanceByName( $username );
 		}
-
-		$user = CentralAuthUser::getInstanceByName( $username );
 
 		// Add basic info
 		$result = $this->getResult();
@@ -144,7 +147,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	}
 
 	public function getCacheMode( $params ) {
-		if ( !is_null( $params['user'] ) ) {
+		if ( !is_null( $params['user'] ) || !is_null( $params['id'] ) ) {
 			// URL determines user, public caching is fine
 			return 'public';
 		} else {
@@ -157,6 +160,9 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		return [
 			'user' => [
 				ApiBase::PARAM_TYPE => 'user',
+			],
+			'id' => [
+				self::PARAM_TYPE => 'integer',
 			],
 			'prop' => [
 				ApiBase::PARAM_TYPE => [
