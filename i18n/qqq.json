@@ -554,6 +554,7 @@
 	"apihelp-query+globaluserinfo-description": "{{doc-apihelp-description|query+globaluserinfo}}",
 	"apihelp-query+globaluserinfo-summary": "{{doc-apihelp-summary|query+globaluserinfo}}",
 	"apihelp-query+globaluserinfo-param-user": "{{doc-apihelp-param|query+globaluserinfo|user}}",
+	"apihelp-query+globaluserinfo-param-id": "{{doc-apihelp-param|query+globaluserinfo|id}}",
 	"apihelp-query+globaluserinfo-param-prop": "{{doc-apihelp-param|query+globaluserinfo|prop}}",
 	"apihelp-query+globaluserinfo-example-1": "{{doc-apihelp-example|query+globaluserinfo}}",
 	"apihelp-query+globaluserinfo-example-2": "{{doc-apihelp-example|query+globaluserinfo}}",
