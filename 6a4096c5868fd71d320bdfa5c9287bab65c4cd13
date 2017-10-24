@@ -121,6 +121,24 @@
       "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_533e6a27",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 920
+      },
+      "writtenOn": "2017-10-24T17:22:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce637b91_b8a9c57a",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
