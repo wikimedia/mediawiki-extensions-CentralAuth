@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce637b91_f8297d9b",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T15:50:32Z",
+      "side": 1,
+      "message": "Your additions to this message need the same changes you made to the following message.",
+      "revId": "9c394438a9cfe71f55f536b1e0dc0964930fb68b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_5844496e",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T15:50:32Z",
+      "side": 1,
+      "message": "Don\u0027t put quotes around the \u003cvar\u003e tags.",
+      "range": {
+        "startLine": 541,
+        "startChar": 87,
+        "endLine": 541,
+        "endChar": 89
+      },
+      "revId": "9c394438a9cfe71f55f536b1e0dc0964930fb68b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_982161af",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T15:50:32Z",
+      "side": 1,
+      "message": "This generates an error message along the lines of \"Invalid username \"123\".\" which is completely wrong.\n\nYou could probably use the existing core \u0027apierror-invaliduserid\u0027 message instead.",
+      "revId": "9c394438a9cfe71f55f536b1e0dc0964930fb68b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
