@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce637b91_93538243",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T17:49:22Z",
+      "side": 1,
+      "message": "$user, not $username",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 17
+      },
+      "revId": "bb9250f1baa7cc3d62f455652ea0aa846197bcec",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
