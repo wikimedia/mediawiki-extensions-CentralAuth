@@ -50,6 +50,23 @@
       "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_b8a9c57a",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2017-10-24T14:48:19Z",
+      "side": 1,
+      "message": "Maybe use ApiBase:: for consistency?",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
