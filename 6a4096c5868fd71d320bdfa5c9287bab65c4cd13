@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce637b91_58b449e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T14:41:49Z",
+      "side": 1,
+      "message": "This doesn\u0027t make a whole lot of sense. How about something like \"There\u0027s no other way to retrieve user information by global ID.\"?",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_982de143",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T14:41:49Z",
+      "side": 1,
+      "message": "\"ID\" should be capitalized (where it refers to an ID rather than the parameter name).\n\nReference to parameter names should look like \"\u003cvar\u003e$1user\u003c/var\u003e\" and \"\u003cvar\u003e$1id\u003c/var\u003e\".\n\n\"null\" doesn\u0027t make sense here. \"omitted\" is the way a client supplies a null value.",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_18e9f1e1",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-10-24T14:41:49Z",
+      "side": 1,
+      "message": "CentralAuthUser::newFromId() returns false if no user exists for the ID, which is going to cause a PHP error on line 56.",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
