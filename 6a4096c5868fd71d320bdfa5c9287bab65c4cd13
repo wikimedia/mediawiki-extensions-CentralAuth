@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ce637b91_b8eea5af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 920
+      },
+      "writtenOn": "2017-10-24T15:27:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce637b91_58b449e4",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce637b91_982de143",
         "filename": "i18n/en.json",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ce637b91_f843bdb4",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 920
+      },
+      "writtenOn": "2017-10-24T15:27:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce637b91_982de143",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ce637b91_18e9f1e1",
         "filename": "includes/api/ApiQueryGlobalUserInfo.php",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2017-10-24T14:41:49Z",
       "side": 1,
       "message": "CentralAuthUser::newFromId() returns false if no user exists for the ID, which is going to cause a PHP error on line 56.",
+      "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce637b91_182811dd",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 920
+      },
+      "writtenOn": "2017-10-24T15:27:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce637b91_18e9f1e1",
       "revId": "6a4096c5868fd71d320bdfa5c9287bab65c4cd13",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
