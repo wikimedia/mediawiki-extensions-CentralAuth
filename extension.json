@@ -388,6 +388,7 @@
 		"SecurePoll_GetUserParams": "CentralAuthHooks::onSecurePoll_GetUserParams",
 		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
 		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo",
+		"ImportHandleUnknownUser": "CentralAuthHooks::onImportHandleUnknownUser",
 		"UnitTestsAfterDatabaseSetup": "CentralAuthHooks::onUnitTestsAfterDatabaseSetup",
 		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown"
 	},
@@ -435,6 +436,7 @@
 		"CentralAuthCheckSULMigration": false,
 		"CentralAuthGlobalPasswordPolicies": [],
 		"CentralAuthUseSlaves": false,
+		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true
 	},
 	"AuthManagerAutoConfig": {
