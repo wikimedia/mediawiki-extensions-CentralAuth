@@ -1764,7 +1764,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return array|null Error array on failure
 	 */
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
-		global $wgConf;
+		global $wgConf, $wgCentralAuthGlobalBlockInterwikiPrefix;
 
 		$lb = wfGetLB( $wiki );
 		$dbw = $lb->getConnectionRef( DB_MASTER, [], $wiki );
@@ -1787,7 +1787,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				'enableAutoblock' => true,
 				'hideName' => true,
 				'blockEmail' => true,
-				'byText' => $by
+				'byText' => $wgCentralAuthGlobalBlockInterwikiPrefix . '>' . $by
 			] );
 
 			# On normal block, BlockIp hook would be run here, but doing

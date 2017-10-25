@@ -267,6 +267,25 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * Auto-create a user on import
+	 * @param string $name
+	 * @return bool
+	 */
+	public static function onImportHandleUnknownUser( $name ) {
+		$user = User::newFromName( $name );
+		if ( $user ) {
+			$centralUser = CentralAuthUser::getMasterInstance( $user );
+
+			if ( $centralUser->exists() && CentralAuthUtils::autoCreateUser( $user )->isGood() ) {
+				$centralUser->invalidateCache();
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
 	 * Add a little pretty to the preferences user info section
 	 *
 	 * @param User $user
