@@ -508,6 +508,7 @@
 	"apihelp-query+globalallusers-param-group": "Tylko użytkownicy w danych globalnych grupach.",
 	"apihelp-query+globalallusers-param-excludegroup": "Wyklucz użytkowników będących w podanej grupie globalnej.",
 	"apihelp-query+globalallusers-param-limit": "Łączna liczba nazw użytkowników do zwrócenia.",
+	"apihelp-query+globalgroups-example-1": "Lista grup lokalnych",
 	"apihelp-query+globaluserinfo-description": "Pokaż informacje na temat globalnego użytkownika.",
 	"apihelp-setglobalaccountstatus-param-reason": "Powód zmiany statusu użytkownika.",
 	"apierror-centralauth-editconflict": "Wykryto konflikt edycji, przerywano.",
