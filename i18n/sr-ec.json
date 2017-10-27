@@ -113,6 +113,7 @@
 	"centralauth-admin-list-editcount": "Број измена",
 	"centralauth-admin-list-groups": "Групе",
 	"centralauth-admin-list-blocked": "Блокиран",
+	"centralauth-admin-group-temporary": "$1 ''(привремено)''",
 	"centralauth-admin-unmerge": "Раздвоји изабрано",
 	"centralauth-admin-merge": "Споји изабрано",
 	"centralauth-admin-bad-input": "Неисправан избор за спајање",
