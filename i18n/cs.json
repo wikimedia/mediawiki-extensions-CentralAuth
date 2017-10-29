@@ -500,7 +500,7 @@
 	"apihelp-query+globalgroups-example-1": "Seznam globálních skupin",
 	"apihelp-query+globalgroups-example-2": "Vypsat globální skupiny s udělovanými právy",
 	"apihelp-query+globaluserinfo-description": "Ukázat informace o globálním uživateli.",
-	"apihelp-query+globaluserinfo-param-user": "Účet, ke kterému se mají získat informace. Implicitní hodnotou je přihlášený uživatel.",
+	"apihelp-query+globaluserinfo-param-user": "Účet, ke kterému se mají získat informace. Pokud není ani jedno z <var>$1user</var> a <var>$1id</var> uvedeno, je implicitně nastaven přihlášený uživatel.",
 	"apihelp-query+globaluserinfo-param-prop": "Jaké vlastnosti uvádět:\n;groups:Vypsat seznam globálních skupin, do kterých uživatel patří.\n;rights:Vypsat seznam globálních práv, které uživatel má.\n;merged:Vypsat seznam připojených účtů.\n;unattached:Vypsat seznam nepřipojených účtů.\n;editcount:Vypsat globální počet editací uživatele.",
 	"apihelp-query+globaluserinfo-example-1": "Vypsat informace o aktuálním globálním uživateli",
 	"apihelp-query+globaluserinfo-example-2": "Vypsat informace o globálním uživateli [[User:Example|Example]]",
