@@ -57,11 +57,14 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
 			// any normalization at all done by User or Title.
+			$userQuery = User::getQueryInfo();
 			$row = wfGetDB( DB_MASTER )->selectRow(
-				'user',
-				User::selectFields(),
+				$userQuery['tables'],
+				$userQuery['fields'],
 				[ 'user_name' => $from ],
-				__METHOD__
+				__METHOD__,
+				[],
+				$userQuery['joins']
 			);
 			$oldUser = User::newFromRow( $row );
 		} else {
