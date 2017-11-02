@@ -7,11 +7,6 @@
  * @ingroup Extensions
  */
 
-if ( !defined( 'MEDIAWIKI' ) ) {
-	echo "CentralAuth extension\n";
-	exit( 1 );
-}
-
 class SpecialWikiSets extends SpecialPage {
 	private $mCanEdit;
 
