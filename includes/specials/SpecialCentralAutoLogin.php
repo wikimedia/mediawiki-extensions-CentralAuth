@@ -225,7 +225,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		case 'start': // Main entry point
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.
-			$this->getOutput()->setSquidMaxage( 1200 );
+			$this->getOutput()->setCdnMaxage( 1200 );
 
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
@@ -244,7 +244,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		case 'checkLoggedIn': // Check if we're logged in centrally
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.
-			$this->getOutput()->setSquidMaxage( 1200 );
+			$this->getOutput()->setCdnMaxage( 1200 );
 
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
