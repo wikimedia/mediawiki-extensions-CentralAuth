@@ -7,8 +7,6 @@
  */
 class CentralAuthSuppressUserJob extends Job {
 	/**
-	 * Constructor
-	 *
 	 * @param Title $title Associated title
 	 * @param array $params Job parameters
 	 */

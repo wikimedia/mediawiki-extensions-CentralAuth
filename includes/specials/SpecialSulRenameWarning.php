@@ -27,9 +27,7 @@
  * @copyright © 2014 Bryan Davis and Wikimedia Foundation.
  */
 class SpecialSulRenameWarning extends UnlistedSpecialPage {
-	/**
-	 * Constructor.
-	 */
+
 	public function __construct() {
 		parent::__construct( 'SulRenameWarning' );
 	}

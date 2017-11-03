@@ -7,8 +7,6 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 /**
- * Class SendConfirmAndMigrateEmail
- *
  * This maintenance script is used to resend confirmation emails to users with
  * unattached accounts in the hopes that we will then be able to automatically
  * attach some unattached accounts.  In addition, by using an EmailableUser object
