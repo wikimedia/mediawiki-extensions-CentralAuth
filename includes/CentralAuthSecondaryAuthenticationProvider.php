@@ -45,7 +45,7 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 		$rename = $centralUser->renameInProgressOn( wfWikiID() );
 		if ( $rename ) {
 			// This wiki specifically has a rename in progress, so always abort
-			return AuthenticationResponse::newFail( wfMessage( 'centralauth-rename-abortlogin' ) );
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-rename-abortlogin', $user->getName() ) );
 		}
 
 		// Now check if the user is the target of a rename anywhere
@@ -62,7 +62,7 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 			if ( $newCAUser->isAttached() ) {
 				// If there is an account using that name that exists on this wiki
 				// reject the login.
-				return AuthenticationResponse::newFail( wfMessage( 'centralauth-rename-abortlogin' ) );
+				return AuthenticationResponse::newFail( wfMessage( 'centralauth-rename-abortlogin', $user->getName() ) );
 			}
 		}
 
