@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e5a8fde_6590594f",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2017-11-06T16:28:18Z",
+      "side": 1,
+      "message": "Should the usernames be passed through wfEscapeWikiText()? That seems to have been the behavior of the AbortLogin hook that originally used this message, since the parameter was added in Ifb55a2e18.",
+      "revId": "8671712fcbb8080babc29739aa02abd72d3a6a9f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
