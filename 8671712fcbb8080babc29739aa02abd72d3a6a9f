@@ -16,6 +16,24 @@
       "revId": "8671712fcbb8080babc29739aa02abd72d3a6a9f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_018154c8",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-11-07T09:55:16Z",
+      "side": 1,
+      "message": "I don\u0027t think this makes sense in this context here. The code we are talking about here works with a Status object. That\u0027s all. It does not know if the output is going to be wikitext, HTML, or maybe plain text.\n\nTherefor I believe escaping can not be done here, but must be done later when the status is going to be used in an output.",
+      "parentUuid": "6e5a8fde_6590594f",
+      "revId": "8671712fcbb8080babc29739aa02abd72d3a6a9f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
