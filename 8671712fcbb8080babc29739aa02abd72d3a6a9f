@@ -52,6 +52,24 @@
       "revId": "8671712fcbb8080babc29739aa02abd72d3a6a9f",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_4f11b35e",
+        "filename": "includes/CentralAuthPrimaryAuthenticationProvider.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2017-11-07T16:11:14Z",
+      "side": 1,
+      "message": "That sounds super-broken. \\StatusValue::getErrors does not say anything about the need to possibly escape unwanted HTML, or possibly having HTML in there intentionally.\n\nHow should consumers know if a parameter is plain, wikitext, or HTML?\n\n\\StatusValue::__toString happily prints out all errors including all \"params\" as plain text. Why should stuff appear wikitext escaped there? I mean, this would make sense if \\StatusValue::__toString would apply some kind of unescaping from an expected format, but this is not what it does.",
+      "parentUuid": "6e5a8fde_afd067cd",
+      "revId": "8671712fcbb8080babc29739aa02abd72d3a6a9f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
