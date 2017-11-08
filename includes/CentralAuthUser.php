@@ -492,7 +492,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	protected function loadFromCache() {
 		$cache = ObjectCache::getMainWANInstance();
 		$data = $cache->getWithSetCallback(
-			$this->getCacheKey(),
+			$this->getCacheKey( $cache ),
 			$cache::TTL_DAY,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
 				$dbr = CentralAuthUtils::getCentralSlaveDB();
@@ -569,10 +569,11 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Generate a valid memcached key for caching the object's data.
+	 * @param WANObjectCache $cache
 	 * @return string
 	 */
-	protected function getCacheKey() {
-		return "centralauth-user-" . md5( $this->mName );
+	protected function getCacheKey( WANObjectCache $cache ) {
+		return $cache->makeGlobalKey( 'centralauth-user', md5( $this->mName ) );
 	}
 
 	/**
