@@ -52,7 +52,8 @@
 			"Dgstranz",
 			"Sophivorus",
 			"AlvaroMolina",
-			"Jnistal12"
+			"Jnistal12",
+			"KATRINE1992"
 		]
 	},
 	"mergeaccount": "Estado de la unificación de cuentas",
@@ -560,6 +561,7 @@
 	"apihelp-query+globaluserinfo-description": "Mostrar información acerca de una cuenta global.",
 	"apihelp-query+globaluserinfo-summary": "Mostrar información acerca de una cuenta global.",
 	"apihelp-query+globaluserinfo-param-user": "Cuenta de usuario de la que se va a obtener información. Si se omiten tanto <var>$1user</var> como <var>$1id</var>, se tomará la cuenta actual de manera predeterminada.",
+	"apihelp-query+globaluserinfo-param-id": "Usuario ID global para coger informacion sobre el. Si <var>$1user</var> y <var>$1id </var> ambos son omissos, tomara cuenta del usuario presente",
 	"apihelp-query+globaluserinfo-param-prop": "Qué propiedades obtener:\n;groups: Obtener una lista de grupos globales que pertenezcan a este usuario.\n;rights: Obtener una lista de derechos globales que tenga este usuario.\n;merged: Obtener una lista de cuentas fusionadas.\n;unattached: Obtener una lista de cuentas sin vincular.\n;editcount: Obtener el recuento de ediciones de un usuario global.",
 	"apihelp-query+globaluserinfo-example-1": "Obtener información acerca del usuario global actual",
 	"apihelp-query+globaluserinfo-example-2": "Obtener información acerca del usuario global [[User:Example|Example]]",
