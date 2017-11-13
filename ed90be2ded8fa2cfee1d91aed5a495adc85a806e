@@ -22,6 +22,47 @@
       "revId": "ed90be2ded8fa2cfee1d91aed5a495adc85a806e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_1caaf2d1",
+        "filename": "includes/api/ApiQueryGlobalRenameStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2017-11-13T08:21:56Z",
+      "side": 1,
+      "message": "Yeah, a warning would be nice. Also, maybe differentiate between does not exist / is not being renamed?",
+      "parentUuid": "4e7eab26_13ed8089",
+      "range": {
+        "startLine": 54,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 10
+      },
+      "revId": "ed90be2ded8fa2cfee1d91aed5a495adc85a806e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5a8fde_7ca3e6fd",
+        "filename": "includes/api/ApiQueryGlobalRenameStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2017-11-13T08:21:56Z",
+      "side": 1,
+      "message": "Could as well have ISMULTI \u003d\u003e true.",
+      "revId": "ed90be2ded8fa2cfee1d91aed5a495adc85a806e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
