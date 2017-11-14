@@ -15,7 +15,8 @@
 			"Protnet",
 			"ZaDiak",
 			"Απεργός",
-			"Περίεργος"
+			"Περίεργος",
+			"KATRINE1992"
 		]
 	},
 	"mergeaccount": "Κατάσταση ενοποίησης σύνδεσης",
@@ -300,5 +301,9 @@
 	"centralauth-rename-form-reason": "Αιτία",
 	"centralauth-rename-form-movepages": "Μετακίνηση σελίδων χρήστη",
 	"centralauth-rename-table-status-failed": "Απέτυχε",
-	"logentry-gblrename-rename": "{{GENDER:$2|O|H}} $1 μετονόμασε καθολικά το $4 σε $5"
+	"logentry-gblrename-rename": "{{GENDER:$2|O|H}} $1 μετονόμασε καθολικά το $4 σε $5",
+	"apihelp-query+globalrenamestatus-description": "Προβάλετε πληροφορίες για αλλαγές ονομάτων που είναι σε εξέλιξη.",
+	"apihelp-query+globalrenamestatus-summary": "Προβάλετε πληροφορίες για γενικές αλλαγές ονόματος που είναι σε εξέλιξη.",
+	"apihelp-query+globalrenamestatus-param-user": "Χρήστης του οποίου το όνομα άλλαξε. Μπορεί να είναι με το προηγούμενο όνομα ή το νέο όνομα.",
+	"apihelp-query+globalrenamestatus-example-1": "Λάβετε πληροφορίες για τον παρόντα γενικό χρήστη"
 }

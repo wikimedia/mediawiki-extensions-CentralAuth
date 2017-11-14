@@ -166,7 +166,7 @@
 	"centralauth-prefs-count-attached": "Akun panjenengan aktif ing $1 {{PLURAL:$1|situs|situs}} proyèk.",
 	"centralauth-prefs-count-unattached": "Akun sing durung dikonfirmasi mawa jenengé panjenengan isih ing {{PLURAL:$1|wiki}} $1.",
 	"centralauth-prefs-detail-unattached": "Akuné panjenengan durung dikonfirmasi minangka akun global.",
-	"centralauth-prefs-manage": "Kemunah akuné global panjenengan",
+	"centralauth-prefs-manage": "Kemunah akun global panjenengan",
 	"centralauth-prefs-view": "Delok info panganggo global",
 	"centralauth-renameuser-merged": "Panganggo $1 wis mlebu sistem akun global. Ganti jeneng bakal nyebabaké akun lokal kasebut kapisah saka akun globalé.",
 	"centralauth-renameuser-reserved": "Panganggo $2 wis dicadhangaké kanggo akun global.",
