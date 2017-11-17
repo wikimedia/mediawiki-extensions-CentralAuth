@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e5417b0_959f0255",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2017-11-17T19:27:57Z",
+      "side": 1,
+      "message": "and stewards",
+      "range": {
+        "startLine": 433,
+        "startChar": 246,
+        "endLine": 433,
+        "endChar": 262
+      },
+      "revId": "a4905a6c34cba2d0a7f50a5d999bb82328246c27",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
