@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2e5417b0_75a606a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2017-11-17T19:29:25Z",
+      "side": 1,
+      "message": "too long, can we have it shortened a bit?",
+      "range": {
+        "startLine": 7,
+        "startChar": 72,
+        "endLine": 7,
+        "endChar": 81
+      },
+      "revId": "a4905a6c34cba2d0a7f50a5d999bb82328246c27",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e5417b0_959f0255",
         "filename": "i18n/en.json",
         "patchSetId": 1
