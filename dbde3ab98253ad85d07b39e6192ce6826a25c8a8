@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e5417b0_3b05dd7c",
+        "filename": "includes/api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2017-11-18T00:50:41Z",
+      "side": 1,
+      "message": "Would http://php.net/manual/en/function.mb-strtoupper.php be a better choice? (would also need to do a substring and then concat).",
+      "range": {
+        "startLine": 54,
+        "startChar": 10,
+        "endLine": 54,
+        "endChar": 17
+      },
+      "revId": "dbde3ab98253ad85d07b39e6192ce6826a25c8a8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
