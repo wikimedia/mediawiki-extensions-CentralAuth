@@ -51,6 +51,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 * @return string
 	 */
 	private function getCanonicalUserName( $name ) {
+		$name = ucfirst( $name );
 		return str_replace( '_', ' ', $name );
 	}
 
