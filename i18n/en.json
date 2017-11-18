@@ -171,7 +171,7 @@
 	"centralauth-admin-status-submit": "Set status",
 	"centralauth-admin-status-nonexistent": "Error: the global account \"<nowiki>$1</nowiki>\" does not exist.",
 	"centralauth-admin-setstatus-success": "You have changed the status of this global account.",
-	"centralauth-admin-status-reasons": "* Common lock reasons\n** vandalism-only account\n** spam-only account\n* Common lock-and-hide reasons\n** abusive user name\n** inappropriate personal information",
+	"centralauth-admin-status-reasons": "* Common lock reasons\n** Vandalism-only account\n** Spam-only account\n* Common lock-and-hide reasons\n** Abusive user name\n** Inappropriate personal information",
 	"centralauth-admin-logsnippet": "Previous global account changes",
 	"centralauth-admin-suppressreason": "Globally suppressed by $1 for following reason: $2",
 	"centralauth-admin-not-authorized": "You do not have permissions to perform this action",
