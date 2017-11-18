@@ -51,7 +51,12 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 * @return string
 	 */
 	private function getCanonicalUserName( $name ) {
-		return str_replace( '_', ' ', $name );
+		$canonicalName = User::getCanonicalName( $name );
+		if ( $canonicalName !== false ) {
+			return $canonicalName;
+		} else {
+			$this->dieWithError( 'User::getCanonicalName returned false on ' . $name );
+		}
 	}
 
 	public function execute() {
