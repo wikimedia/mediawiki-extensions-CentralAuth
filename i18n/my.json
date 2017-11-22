@@ -10,6 +10,7 @@
 	"centralauth-foreign-contributions": "$2 ပေါ်ရှိ $1 {{PLURAL:$1|ဆောင်ရွက်ချက်|ဆောင်ရွက်ချက်များ}}",
 	"centralauth-merge-method-login": "အကောင့်ဝင်စဉ် ဖန်တီးခဲ့သည်",
 	"centralauth-admin-blocklog": "ပိတ်ပင်တားဆီးမှု မှတ်တမ်း",
+	"centralauth-rename-movelog": "အသုံးပြုသူ \"[[Special:CentralAuth/$1|$1]]\" ကို \"[[Special:CentralAuth/$2|$2]]\" သို့ အမည်ပြောင်းလဲစဉ် စာမျက်နှာအား အလိုအလျောက် ရွှေ့ပြောင်းခြင်း",
 	"centralauth-log-gblrename-oldname": "အရင်သုံးစွဲသော နာမည်",
 	"userswhowillberenamed": "အမည်ပြောင်းလဲခံရမည့် အသုံးပြုသူများ"
 }
