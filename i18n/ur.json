@@ -6,7 +6,8 @@
 			"Obaid Raza",
 			"امین اکبر",
 			"Muhammad Shuaib",
-			"Zainab Meher"
+			"Zainab Meher",
+			"BukhariSaeed"
 		]
 	},
 	"mergeaccount": "یکساں لاگ ان کی صورت حال",
@@ -65,7 +66,7 @@
 	"centralauth-admin-unattached": "منسلک نہیں",
 	"centralauth-admin-blocked-reason": "وجہ:  $1",
 	"centralauth-admin-blocklog": "نوشتہ پابندی",
-	"centralauth-admin-list-localwiki": "مقامی وکی",
+	"centralauth-admin-list-localwiki": "مقامی ویکی",
 	"centralauth-admin-list-attached-on": "منسلک پر",
 	"centralauth-admin-list-method": "طریقہ کار",
 	"centralauth-admin-list-editcount": "شمار میں ترمیم کریں",
