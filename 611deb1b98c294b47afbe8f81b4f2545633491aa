@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "0edf5380_c116c34c",
+        "filename": "includes/WikiSet.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-11-28T00:19:45Z",
+      "side": 1,
+      "message": "This new private utility is nice. Makes the code easier to understand and keeps it close to getDataForCache.",
+      "range": {
+        "startLine": 216,
+        "startChar": 18,
+        "endLine": 216,
+        "endChar": 53
+      },
+      "revId": "611deb1b98c294b47afbe8f81b4f2545633491aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0edf5380_461be982",
         "filename": "includes/WikiSet.php",
         "patchSetId": 1
