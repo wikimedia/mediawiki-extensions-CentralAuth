@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0edf5380_461be982",
+        "filename": "includes/WikiSet.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2017-11-28T00:16:12Z",
+      "side": 1,
+      "message": "It says \"Key\" twice, is that intentional? Seems like this is intended as \"Get cache key for given ID\", is that right?",
+      "range": {
+        "startLine": 265,
+        "startChar": 25,
+        "endLine": 265,
+        "endChar": 43
+      },
+      "revId": "611deb1b98c294b47afbe8f81b4f2545633491aa",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
