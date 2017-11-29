@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Albinus"
+			"Albinus",
+			"Manik Soren"
 		]
 	},
-	"centralauth-foreign-link": "Beoharić $2 re $1",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|Kạmi|Kạmiko}} re $2",
+	"centralauth-foreign-link": "ᱵᱮᱵᱦᱟᱨᱤᱡ $2 ᱨᱮ $1",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ᱮᱱᱮᱢ|ᱮᱱᱮᱢᱠᱚ}} ᱨᱮ $2",
 	"centralauth-merge-method-login": "Bolon seć lekate tearakan",
 	"centralauth-admin-blocklog": "Tala eset"
 }
