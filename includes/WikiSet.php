@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\Database;
+
 class WikiSet {
 	const OPTIN = 'optin';
 	const OPTOUT = 'optout';
@@ -9,16 +12,12 @@ class WikiSet {
 	private $mName;	// Display name of the group
 	private $mType;	// Opt-in based or opt-out based
 	private $mWikis;	// List of wikis
-	// This property is used, don't remove it
-	// (That means you Reedy & Siebrand)
-	private $mVersion = self::VERSION;      // Caching purposes
 
 	private static $mCacheVars = [
 		'mId',
 		'mName',
 		'mType',
 		'mWikis',
-		'mVersion',
 	];
 
 	/**
@@ -32,14 +31,6 @@ class WikiSet {
 		$this->mName = $name;
 		$this->mType = $type;
 		$this->mWikis = $wikis;
-	}
-
-	/**
-	 * @param string $k
-	 * @return string
-	 */
-	protected static function memcKey( $k ) {
-		return "wikiset:{$k}";
 	}
 
 	/**
@@ -93,7 +84,6 @@ class WikiSet {
 
 	/**
 	 * @param string $t
-	 * @return bool
 	 */
 	public function setType( $t ) {
 		if ( !in_array( $t, [ self::OPTIN, self::OPTOUT ] ) ) {
@@ -130,64 +120,103 @@ class WikiSet {
 
 	/**
 	 * @param string $name
-	 * @param bool $useCache
 	 * @return null|WikiSet
 	 */
-	public static function newFromName( $name, $useCache = true ) {
-		if ( $useCache ) {
-			$cache = ObjectCache::getMainWANInstance();
-			$data = $cache->get( self::memcKey( "name:" . md5( $name ) ) );
-			if ( $data ) {
-				if ( $data['mVersion'] == self::VERSION ) {
-					$ws = new WikiSet( null, null );
-					foreach ( $data as $key => $val ) {
-						$ws->$key = $val;
-					}
-					return $ws;
+	public static function newFromName( $name ) {
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+
+		$data = $cache->getWithSetCallback(
+			self::getPerNameCacheKey( $cache, $name ),
+			$cache::TTL_INDEFINITE,
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $name ) {
+				$dbr = CentralAuthUtils::getCentralSlaveDB();
+				$setOpts += Database::getCacheSetOptions( $dbr );
+
+				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_name' => $name ], __METHOD__ );
+
+				$wikiSet = self::newFromRow( $row );
+				if ( $wikiSet ) {
+					$value = $wikiSet->getDataForCache();
+				} else {
+					$ttl = WANObjectCache::TTL_MINUTE; // cache negatives
+					$value = null;
 				}
-			}
-		}
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$row = $dbr->selectRow(
-			'wikiset', '*', [ 'ws_name' => $name ], __METHOD__
+
+				return $value;
+			},
+			[ 'version' => self::VERSION ]
 		);
-		if ( !$row ) {
+
+		if ( !$data ) {
 			return null;
 		}
-		$ws = self::newFromRow( $row );
-		$ws->saveToCache();
-		return $ws;
+
+		$wikiSet = new WikiSet( null, null );
+		$wikiSet->loadFromCachedData( $data );
+
+		return $wikiSet;
 	}
 
 	/**
 	 * @param string|int $id
-	 * @param bool $useCache
 	 * @return null|WikiSet
 	 */
-	public static function newFromID( $id, $useCache = true ) {
-		if ( $useCache ) {
-			$cache = ObjectCache::getMainWANInstance();
-			$data = $cache->get( self::memcKey( $id ) );
-			if ( $data ) {
-				if ( $data['mVersion'] == self::VERSION ) {
-					$ws = new WikiSet( null, null );
-					foreach ( $data as $name => $val ) {
-						$ws->$name = $val;
-					}
-					return $ws;
+	public static function newFromID( $id ) {
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+
+		$data = $cache->getWithSetCallback(
+			self::getPerIdCacheKey( $cache, $id ),
+			$cache::TTL_INDEFINITE,
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $id ) {
+				$dbr = CentralAuthUtils::getCentralSlaveDB();
+				$setOpts += Database::getCacheSetOptions( $dbr );
+
+				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_id' => $id ], __METHOD__ );
+
+				$wikiSet = self::newFromRow( $row );
+				if ( $wikiSet ) {
+					$value = $wikiSet->getDataForCache();
+				} else {
+					$ttl = WANObjectCache::TTL_MINUTE; // cache negatives
+					$value = null;
 				}
-			}
-		}
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
-		$row = $dbr->selectRow(
-			'wikiset', '*', [ 'ws_id' => $id ], __METHOD__
+
+				return $value;
+			},
+			[ 'version' => self::VERSION ]
 		);
-		if ( !$row ) {
+
+		if ( !$data ) {
 			return null;
 		}
-		$ws = self::newFromRow( $row );
-		$ws->saveToCache();
-		return $ws;
+
+		$wikiSet = new WikiSet( null, null );
+		$wikiSet->loadFromCachedData( $data );
+
+		return $wikiSet;
+	}
+
+	/**
+	 * @return array
+	 */
+	private function getDataForCache() {
+		$data = [];
+		foreach ( self::$mCacheVars as $var ) {
+			if ( isset( $this->$var ) ) {
+				$data[$var] = $this->$var;
+			}
+		}
+
+		return $data;
+	}
+
+	/**
+	 * @param array $data
+	 */
+	private function loadFromCachedData( array $data ) {
+		foreach ( $data as $key => $val ) {
+			$this->$key = $val;
+		}
 	}
 
 	/**
@@ -223,20 +252,27 @@ class WikiSet {
 	}
 
 	public function purge() {
-		$cache = ObjectCache::getMainWANInstance();
-		$cache->delete( self::memcKey( $this->mId ) );
-		$cache->delete( self::memcKey( "name:" . md5( $this->mName ) ) );
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cache->delete( self::getPerIdCacheKey( $cache, $this->mId ) );
+		$cache->delete( self::getPerNameCacheKey( $cache, $this->mName ) );
 	}
 
-	public function saveToCache() {
-		$cache = ObjectCache::getMainWANInstance();
-		$data = [];
-		foreach ( self::$mCacheVars as $var ) {
-			if ( isset( $this->$var ) ) {
-				$data[$var] = $this->$var;
-			}
-		}
-		$cache->set( self::memcKey( $this->mId ), $data );
+	/**
+	 * @param WANObjectCache $cache
+	 * @param $id
+	 * @return string
+	 */
+	private static function getPerIdCacheKey( WANObjectCache $cache, $id ) {
+		return $cache->makeGlobalKey( __CLASS__, 'id', $id );
+	}
+
+	/**
+	 * @param WANObjectCache $cache
+	 * @param $name
+	 * @return string
+	 */
+	private static function getPerNameCacheKey( WANObjectCache $cache, $name ) {
+		return $cache->makeGlobalKey( __CLASS__, 'name', md5( $name ) );
 	}
 
 	/**
