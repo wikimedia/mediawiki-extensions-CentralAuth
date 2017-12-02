@@ -108,6 +108,11 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'editcount' => intval( $account['editCount'] ),
 					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
 				];
+				if ( $account['groupMemberships'] ) {
+					$a['groups'] = array_keys( $account['groupMemberships'] );
+					$result->setIndexedTagName( $a['groups'], 'group' );
+				}
+
 				if ( $account['blocked'] ) {
 					$a['blocked'] = [
 						'expiry' => $this->getLanguage()->formatExpiry(
@@ -134,6 +139,12 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'editcount' => $account['editCount'],
 					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
 				];
+
+				if ( $account['groupMemberships'] ) {
+					$a['groups'] = array_keys( $account['groupMemberships'] );
+					$result->setIndexedTagName( $a['groups'], 'group' );
+				}
+
 				if ( $account['blocked'] ) {
 					$a['blocked'] = [
 						'expiry' => $this->getLanguage()->formatExpiry(
