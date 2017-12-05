@@ -30,7 +30,8 @@
 			"Rangekill",
 			"Mainframe98",
 			"Dinosaur918",
-			"Macofe"
+			"Macofe",
+			"Mar(c)"
 		]
 	},
 	"mergeaccount": "Status samenvoegen gebruikers",
@@ -553,7 +554,7 @@
 	"apierror-centralauth-badusername": "De gebruikersnaam \"$1\" is onbruikbaar op deze wiki",
 	"apierror-centralauth-renameinprogress": "De gebruiker wordt hernoemd, kan niet worden gebruikt.",
 	"centralauth-log-gblrename-oldname": "Vorige gebruikersnaam:",
-	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie [[Special:CentralAuth/$1|globale gebruikersgegevens]] voor meer informatie.",
+	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie de [[Special:CentralAuth/$1|globale accountgegevens]] voor meer informatie.",
 	"centralauth-contribs-locked-log": "Deze gebruiker is op het moment globaal geblokkeerd.\nDe laatste regel uit het locklogboek wordt hieronder ter referentie weergegeven:",
 	"userswhowillberenamed": "Gebruikers die hernoemd gaan worden",
 	"centralauth-uwbr-name": "Gebruikersnaam",
