@@ -105,7 +105,7 @@
 	"centralauth-admin-list-legend-ro": "Popis lokalnih računa",
 	"centralauth-admin-list-legend-rw": "Razdvoji lokalne račune",
 	"centralauth-admin-unattached": "nije spojeno",
-	"centralauth-admin-blocked2": "Blokirano, ističe $2 u $3.",
+	"centralauth-admin-blocked2": "Blokirano, istječe $2 u $3.",
 	"centralauth-admin-blocked2-indef": "Blokirano na neograničeno.",
 	"centralauth-admin-blocked-reason": "Razlog: $1",
 	"centralauth-admin-blocklog": "evidencija blokiranja",

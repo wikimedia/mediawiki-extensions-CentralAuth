@@ -23,7 +23,6 @@
 	"centralauth-months-ago": "vor $1 {{PLURAL:$1|Munet|Munete}}",
 	"centralauth-years-ago": "vor $1 {{PLURAL:$1|Yaahr|Yaahre}}",
 	"centralauth-log-status-none": "(ken)",
-	"centralauth-editgroup-subtitle": "$1 ennere",
 	"centralauth-editgroup-name": "Naame vun de Druppe:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|ennere]])",
 	"centralauth-editgroup-noset": "(ken)",

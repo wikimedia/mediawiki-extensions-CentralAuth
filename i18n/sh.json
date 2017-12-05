@@ -92,7 +92,6 @@
 	"centralauth-editset-submit": "Unesi",
 	"centralauth-editset-submit-delete": "Obriši",
 	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
-	"right-centralauth-autoaccount": "Samoprijavljivanje sa globalnim nalogom",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
 	"centralloginsuccesful": "Prijavljivanje uspješno",
 	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",

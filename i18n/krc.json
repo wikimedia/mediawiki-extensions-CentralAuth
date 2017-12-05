@@ -49,7 +49,6 @@
 	"centralauth-log-status-hidden": "джашырылгъан",
 	"centralauth-log-status-none": "(бир да)",
 	"globalgrouppermissions": "Глобал группаланы джюрютюу",
-	"centralauth-globalgroupperms-grouplistitem": "$1 ([[Special:GlobalGroupPermissions/$2|къарау/тюрлендириу]])",
 	"centralauth-editgroup-noset": "(бир да)",
 	"centralauth-editgroup-reason": "Чурум:",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|тюрлендир]])",

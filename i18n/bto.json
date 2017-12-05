@@ -29,8 +29,6 @@
 	"centralauth-log-status-none": "(uda)",
 	"centralauth-newgroup-legend": "Gumibo sa bagong grupo",
 	"centralauth-globalgroupperms-newgroupname": "Bagong ngaran ka grupo:",
-	"centralauth-editgroup-subtitle": "Binabalyowan a $1",
-	"centralauth-editgroup-subtitle-readonly": "Baydon a $1",
 	"centralauth-editgroup-fieldset": "Mga permiso para sa $1",
 	"centralauth-editgroup-name": "Ngaran ka grupo:",
 	"centralauth-editgroup-display": "Lokal na ngaran ka grupo:",

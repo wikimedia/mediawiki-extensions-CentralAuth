@@ -63,8 +63,6 @@
 	"centralauth-log-status-hidden": "ammucciatu",
 	"centralauth-log-status-none": "(nuddu)",
 	"globalgrouppermissions": "Gistioni dê gruppi glubbali",
-	"centralauth-globalgroupperms-grouplist": "Foru cunfigurati li gruppi glubbali ca sutta.\nE' pussibbili taliari o mudificari li pirmissa assignati a nu gruppu, siddu si havi lu pirmissu pi fàrilu.\nNu gruppu pò èssiri cancillatu livànnucci tutti li pirmissa.",
-	"centralauth-existinggroup-legend": "Gruppa esistenti",
 	"centralauth-editgroup-noset": "(nuddu)",
 	"centralauth-editgroup-reason": "Mutivu:",
 	"centralauth-editset": "Nzemi di wiki",

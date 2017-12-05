@@ -22,7 +22,6 @@
 	"centralauth-days-ago": "ⵙⴳ $1 {{PLURAL:$1|ⴰⵙⵙ|ⵓⵙⵙⴰⵏ}}",
 	"centralauth-months-ago": "ⵙⴳ $1 {{PLURAL:$1|ⴰⵢⵢⵓⵔ|ⴰⵢⵢⵓⵔⵏ}}",
 	"centralauth-years-ago": "ⵙⴳ $1 {{PLURAL:$1|ⴰⵙⴳⴳⵯⴰⵙ|ⵉⵙⴳⴳⵯⴰⵙⵏ}}",
-	"centralauth-editgroup-subtitle-readonly": "ⵥⵕ $1",
 	"centralauth-editgroup-name": "ⴰⵙⵙⴰⵖ ⵏ ⵜⵔⴰⴱⴱⵓⵜ:",
 	"centralauth-editgroup-noset": "(ⵡⴰⵔ)",
 	"centralauth-editset": "ⵜⵉⵔⵓⴱⴱⴰ ⵏ ⵡⵉⴽⵉ",

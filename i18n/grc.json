@@ -30,8 +30,6 @@
 	"centralauth-listusers-locked": "κεκλῃσμένη",
 	"centralauth-listusers-attached": "[[User:$1|τοπικῶς ἐστίν]]",
 	"centralauth-invalid-wiki": "Οὐδεμία τοιαύτη βάσις δεδομένων βίκι: $1",
-	"centralauth-existinggroup-legend": "Ὑπάρχουσαι ὁμάδες",
-	"centralauth-editgroup-subtitle": "Μεταγράφειν $1",
 	"centralauth-editgroup-name": "Ὄνομα ὁμάδος:",
 	"centralauth-editgroup-noset": "(οὐδέν)",
 	"centralauth-editset-name": "Ὄνομα:",
