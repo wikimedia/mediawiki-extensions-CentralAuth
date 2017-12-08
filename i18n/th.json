@@ -105,7 +105,7 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว",
 	"centralauth-prefs-status": "สถานะบัญชีผู้ใช้กลาง:",
 	"centralauth-prefs-not-managed": "ไม่ได้ใช้บัญชีกลาง",
-	"centralauth-prefs-unattached": "ไม่ได้ถูกยืนยัน",
+	"centralauth-prefs-unattached": "ไม่ได้รวมอย่างสมบูรณ์",
 	"centralauth-prefs-count-attached": "ชื่อผู้ใช้ของคุณใช้งานได้ใน $1 โครงการ",
 	"centralauth-prefs-count-unattached": "ชื่อผู้ใช้ของคุณยังไม่ได้รับการยืนยันในอีก $1 โครงการ",
 	"centralauth-prefs-manage": "บริหารบัญชีกลางของคุณ",
