@@ -147,7 +147,7 @@ class GlobalUsersPager extends AlphabeticPager {
 			array_unshift( $info, $this->msg( 'centralauth-listusers-nolocal' )->text() );
 		}
 		if ( $row->gug_group ) {
-			$groups = $this->getUserGroups( $row->gu_id );
+			$groups = $this->getUserGroups( $row->gu_id, $row->gu_name );
 			$info[] = $groups;
 		}
 
@@ -249,13 +249,14 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * Note: Works only for users with $this->globalIDGroups set
 	 *
 	 * @param string $id
+	 * @param string $username
 	 * @return string
 	 */
-	protected function getUserGroups( $id ) {
+	protected function getUserGroups( $id, $username ) {
 		$rights = [];
 		foreach ( $this->globalIDGroups[$id] as $group ) {
 			$wikitextLink = UserGroupMembership::getLink(
-				$group, $this->getContext(), 'wiki', '#' );
+				$group, $this->getContext(), 'wiki', $username );
 
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
