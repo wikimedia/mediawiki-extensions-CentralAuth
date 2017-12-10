@@ -12,7 +12,7 @@
 		]
 	},
 	"mergeaccount": "प्रवेश एकीकरण स्थिति",
-	"centralauth-groupname": "विकिमीडिया फाउण्डेशन",
+	"centralauth-groupname": "विकिमिडिया फाउन्डेसन",
 	"centralauth-desc": "{{int:Centralauth-groupname}}का विकिहरुको [[Special:MergeAccount|खाता मिलन ]]",
 	"centralauth-antispoof-desc": "केन्द्रीयअधिकारमा एन्टीस्पुफ प्रविधि जोड्ने",
 	"centralauth-rename-desc": "वैश्विक खाताहरू नामाकरण गर्न दिने",
