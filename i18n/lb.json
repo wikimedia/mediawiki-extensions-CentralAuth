@@ -3,7 +3,8 @@
 		"authors": [
 			"Les Meloures",
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Clockery"
 		]
 	},
 	"mergeaccount": "Status vun der Benotzerkonten-Zesummeféierung",
@@ -369,7 +370,7 @@
 	"action-centralauth-usermerge": "global méi Benotzer z",
 	"right-centralauth-usermerge": "Méi Benotzer global zesummeleeën",
 	"centralauth-usermerge-confirm": "Wëllt Dir dës Benotzer wierklech global zesummeleeën?",
-	"centralauth-usermerge-toomany": "Nëmme(n) $1 Benotzer {{Plural:$1|kann|kënnen}} an enger Kéier zesummegeluecht ginn.",
+	"centralauth-usermerge-toomany": "Nëmme(n) $1 Benotzer {{PLURAL:$1|kann|kënnen}} an enger Kéier zesummegeluecht ginn.",
 	"centralauth-usermerge-nousers": "Et musse mindestens zwee valabel Global-Benotzerkonten ugi ginn.",
 	"globalrenamerequest-desc": "D'Ëmbenenne vun engem globale Benotzerkont froen",
 	"globalrenamerequest": "Ufro fir eng global Ëmbenennung vun engem Benotzerkont",
