@@ -12,6 +12,7 @@
 	"centralauth-admin-info-username": "Pòzwa brëkòwnika:",
 	"centralauth-admin-blocklog": "historëjô blokòwaniô",
 	"centralauth-rename-progress-username": "Pòzwa brëkòwnika",
+	"centralauth-rename-movelog": "Aùtomaticzné przeniesenié starnë na skùtk zmianë pòzwë brëkòwnika „[[Special:CentralAuth/$1|$1]]” na „[[Special:CentralAuth/$2|$2]]”",
 	"globalrenamequeue-column-rq-name": "Pòzwa brëkòwnika",
 	"globalrenamequeue-form-username": "Pòzwa brëkòwnika:"
 }
