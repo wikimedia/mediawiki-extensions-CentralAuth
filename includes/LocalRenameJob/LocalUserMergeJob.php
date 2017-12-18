@@ -14,9 +14,10 @@ class LocalUserMergeJob extends LocalRenameJob {
 	}
 
 	public function doRun( $fnameTrxOwner ) {
-		if ( !class_exists( 'MergeUser' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'UserMerge' ) ) {
 			throw new Exception( 'Extension:UserMerge is not installed' );
 		}
+
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 

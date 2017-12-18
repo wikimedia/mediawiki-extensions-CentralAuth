@@ -408,7 +408,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		$form->addHeaderText( $infoMsg->parseAsBlock() );
 
-		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
 			// @todo move this code somewhere else
 			$specialGblRename = new SpecialGlobalRenameUser();
@@ -426,7 +426,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 
 		// Show a message if the new username matches the title blacklist.
-		if ( class_exists( 'TitleBlacklist' ) ) {
+		if ( class_exists( TitleBlacklist::class ) ) {
 			$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
 				Title::makeTitleSafe( NS_USER, $req->getNewName() ),
 				'new-account'

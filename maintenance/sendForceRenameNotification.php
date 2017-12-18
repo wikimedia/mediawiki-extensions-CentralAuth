@@ -19,7 +19,10 @@ require_once "$IP/maintenance/Maintenance.php";
 class ForceRenameNotification extends Maintenance {
 	public function __construct() {
 		parent::__construct();
+
 		$this->requireExtension( 'CentralAuth' );
+		$this->requireExtension( 'MassMessage' );
+
 		$this->addOption( 'message', 'Location of directory with messages', true, true );
 		$this->addOption( 'subject', 'Location of directory with subjects', true, true );
 		$this->addOption( 'sleep', 'How long to sleep for', false, true );
@@ -27,9 +30,6 @@ class ForceRenameNotification extends Maintenance {
 	}
 
 	public function execute() {
-		if ( !class_exists( 'MassMessageServerSideJob' ) ) {
-			$this->error( 'This script requires the MassMessage extension', 1 );
-		}
 		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
 		$message = str_replace( '{{WIKI}}', wfWikiID(), $message );
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";

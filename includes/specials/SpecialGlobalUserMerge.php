@@ -28,7 +28,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	public function execute( $par ) {
 		global $wgCentralAuthEnableUserMerge;
-		if ( !class_exists( 'SpecialUserMerge' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'UserMerge' ) ) {
 			$this->setHeaders();
 			throw new ErrorPageError( 'error', 'centralauth-usermerge-notinstalled' );
 		}

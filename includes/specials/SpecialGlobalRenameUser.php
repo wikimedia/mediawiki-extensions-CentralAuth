@@ -136,7 +136,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return Status
 	 */
 	function validate( array $data ) {
-		if ( !class_exists( 'RenameuserSQL' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
 			return Status::newFatal( 'centralauth-rename-notinstalled' );
 		}
 
@@ -154,7 +154,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-rename-badusername' );
 		}
 
-		if ( !$this->overrideAntiSpoof && class_exists( 'CentralAuthSpoofUser' ) ) {
+		if ( !$this->overrideAntiSpoof && class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $newUser->getName() );
 			$conflicts = $this->processAntiSpoofConflicts(
 				$oldUser->getName(),
@@ -183,7 +183,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		// Ask for confirmation if the new username matches the title blacklist.
-		if ( !$this->overrideTitleBlacklist && class_exists( 'TitleBlacklist' ) ) {
+		if ( !$this->overrideTitleBlacklist && class_exists( TitleBlacklist::class ) ) {
 				$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
 					Title::makeTitleSafe( NS_USER, $newUser->getName() ),
 					'new-account'

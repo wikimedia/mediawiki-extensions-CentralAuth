@@ -43,9 +43,10 @@ class LocalRenameUserJob extends LocalRenameJob {
 	}
 
 	public function doRun( $fnameTrxOwner ) {
-		if ( !class_exists( 'RenameuserSQL' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
 			throw new Exception( 'Extension:Renameuser is not installed' );
 		}
+
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
