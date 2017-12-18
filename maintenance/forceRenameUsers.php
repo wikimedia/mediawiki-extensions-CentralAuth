@@ -30,7 +30,7 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	public function execute() {
-		if ( !class_exists( 'CentralAuthUser' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
 			$this->error( 'CentralAuth is not installed on this wiki.', 1 );
 		}
 		$dbw = CentralAuthUtils::getCentralDB();

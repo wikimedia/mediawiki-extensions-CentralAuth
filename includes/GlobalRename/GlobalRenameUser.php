@@ -125,7 +125,7 @@ class GlobalRenameUser {
 		);
 
 		// Update CA's AntiSpoof if enabled
-		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoof = new CentralAuthSpoofUser( $this->newUser->getName() );
 			$spoof->update( $this->oldUser->getName() );
 		}

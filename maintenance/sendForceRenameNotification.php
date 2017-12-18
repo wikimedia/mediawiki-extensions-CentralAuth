@@ -27,9 +27,10 @@ class ForceRenameNotification extends Maintenance {
 	}
 
 	public function execute() {
-		if ( !class_exists( 'MassMessageServerSideJob' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'MassMessage' ) ) {
 			$this->error( 'This script requires the MassMessage extension', 1 );
 		}
+
 		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
 		$message = str_replace( '{{WIKI}}', wfWikiID(), $message );
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";

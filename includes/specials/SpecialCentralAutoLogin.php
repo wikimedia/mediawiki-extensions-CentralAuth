@@ -604,7 +604,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private function do302Redirect( $target, $state, $params ) {
 		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
 		if ( wfWikiID() == $this->loginWiki
-			&& class_exists( 'MobileContext' )
+			&& class_exists( MobileContext::class )
 			&& isset( $params['mobile'] )
 			&& $params['mobile']
 		) {

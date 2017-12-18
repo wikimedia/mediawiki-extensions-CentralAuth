@@ -15,7 +15,7 @@ class CreateLocalAccount extends Maintenance {
 	}
 
 	public function execute() {
-		if ( !class_exists( 'CentralAuthUser' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'CentralAuth' ) ) {
 			$this->error( "CentralAuth isn't enabled on this wiki\n", 1 );
 		}
 

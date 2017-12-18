@@ -90,7 +90,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$ret = parent::getAuthenticationRequests( $action, $options );
 
 		if ( $this->antiSpoofAccounts && $action === AuthManager::ACTION_CREATE &&
-			class_exists( 'AntiSpoofAuthenticationRequest' )
+			class_exists( AntiSpoofAuthenticationRequest::class )
 		) {
 			$user = User::newFromName( $options['username'] ) ?: new User();
 			if ( $user->isAllowed( 'override-antispoof' ) ) {
@@ -432,7 +432,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
-		if ( $this->antiSpoofAccounts && class_exists( 'AntiSpoofAuthenticationRequest' ) &&
+		if ( $this->antiSpoofAccounts && class_exists( AntiSpoofAuthenticationRequest::class ) &&
 			empty( $options['creating'] ) &&
 			!RequestContext::getMain()->getUser()->isAllowed( 'override-antispoof' )
 		) {
@@ -461,7 +461,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		// Check CentralAuthAntiSpoof, if applicable
-		if ( class_exists( 'AntiSpoofAuthenticationRequest' ) ) {
+		if ( class_exists( AntiSpoofAuthenticationRequest::class ) ) {
 			$antiSpoofReq = AuthenticationRequest::getRequestByClass(
 				$reqs, AntiSpoofAuthenticationRequest::class
 			);
