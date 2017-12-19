@@ -71,6 +71,7 @@ class FixStuckGlobalRename extends Maintenance {
 			$renamer = 'Global rename script';
 			$comment = '';
 		}
+
 		$params = [
 			'from' => $oldName,
 			'to' => $newName,

@@ -1,4 +1,8 @@
 <?php
+
+use Wikimedia\Rdbms\DBQueryError;
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Status handler for CentralAuth users being renamed.
  * This can work based on the new or old user name (can be constructed
@@ -7,10 +11,6 @@
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
-
-use Wikimedia\Rdbms\DBQueryError;
-use Wikimedia\Rdbms\IDatabase;
-
 class GlobalRenameUserStatus implements IDBAccessObject {
 
 	/**
