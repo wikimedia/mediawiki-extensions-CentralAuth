@@ -6,7 +6,6 @@
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
-
 class GlobalRenameUser {
 	/**
 	 * @var User

@@ -86,6 +86,7 @@ class MigrateAccount extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list" );
 				exit( 1 );
 			}
+
 			// @codingStandardsIgnoreStart
 			while ( strlen( $line = trim( fgets( $file ) ) ) ) {
 			// @codingStandardsIgnoreEnd

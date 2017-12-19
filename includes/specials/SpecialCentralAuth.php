@@ -789,6 +789,7 @@ class SpecialCentralAuth extends SpecialPage {
 				'1',
 				'mw-centralauth-status-locked-yes',
 				$this->mGlobalUser->isLocked() );
+
 		$radioHidden =
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-status-hidden-no' )->parse(),

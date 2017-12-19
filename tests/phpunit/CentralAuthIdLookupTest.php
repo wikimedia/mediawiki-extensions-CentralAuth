@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Setup database tests for centralauth
  * @group CentralAuthDB

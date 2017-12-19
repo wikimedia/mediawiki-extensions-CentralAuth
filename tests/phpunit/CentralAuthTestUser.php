@@ -19,46 +19,57 @@ class CentralAuthTestUser {
 	 * @var string gu_id
 	 */
 	private $guId;
+
 	/**
 	 * @var string gu_password
 	 */
 	private $passHash;
+
 	/**
 	 * @var string gu_salt
 	 */
 	private $salt;
+
 	/**
 	 * @var string gu_auth_token
 	 */
 	private $authToken;
+
 	/**
 	 * @var int gu_locked
 	 */
 	private $locked;
+
 	/**
 	 * @var string gu_hidden
 	 */
 	private $hidden;
+
 	/**
 	 * @var string gu_registration
 	 */
 	private $registration;
+
 	/**
 	 * @var string gu_email
 	 */
 	private $email;
+
 	/**
 	 * @var string gu_email_authenticated
 	 */
 	private $emailAuthenticated;
+
 	/**
 	 * @var string gu_home_db
 	 */
 	private $homeDb;
+
 	/**
 	 * @var string gu_enabled
 	 */
 	private $enabled;
+
 	/**
 	 * @var string gu_enabled_method
 	 */

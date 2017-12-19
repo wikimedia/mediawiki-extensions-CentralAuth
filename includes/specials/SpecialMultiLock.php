@@ -164,6 +164,7 @@ class SpecialMultiLock extends SpecialPage {
 				'lock',
 				'centralauth-admin-action-lock-lock',
 				false );
+
 		$radioHidden =
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-nochange' )->text(),
@@ -345,6 +346,7 @@ class SpecialMultiLock extends SpecialPage {
 		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
 		$guAttachedLocalAccounts = $this->getLanguage()
 			->formatNum( count( $globalUser->listAttached() ) );
+
 		$rowHtml .= Html::rawElement( 'td', [],
 			Html::input(
 				'wpActionTarget['.$guName.']',
