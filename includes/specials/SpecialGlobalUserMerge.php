@@ -216,4 +216,5 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
 }

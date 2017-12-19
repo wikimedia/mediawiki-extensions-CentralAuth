@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Special page to allow locking and hiding multiple users
  * at one time. Lots of code derived from Special:CentralAuth.
@@ -6,8 +7,8 @@
  * @file
  * @ingroup Extensions
  */
-
 class SpecialMultiLock extends SpecialPage {
+
 	private $mCanOversight;
 	private $mGlobalUsers, $mUserNames, $mPrefixSearch, $mPosted, $mMethod;
 	private $mActionLock, $mActionHide, $mReason, $mActionUserNames;
@@ -164,6 +165,7 @@ class SpecialMultiLock extends SpecialPage {
 				'lock',
 				'centralauth-admin-action-lock-lock',
 				false );
+
 		$radioHidden =
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-nochange' )->text(),
@@ -345,6 +347,7 @@ class SpecialMultiLock extends SpecialPage {
 		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
 		$guAttachedLocalAccounts = $this->getLanguage()
 			->formatNum( count( $globalUser->listAttached() ) );
+
 		$rowHtml .= Html::rawElement( 'td', [],
 			Html::input(
 				'wpActionTarget['.$guName.']',
@@ -498,4 +501,5 @@ class SpecialMultiLock extends SpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
 }

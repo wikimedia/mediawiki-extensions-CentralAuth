@@ -3,6 +3,7 @@
 use Wikimedia\Rdbms\ResultWrapper;
 
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {
+
 	private $globalData;
 
 	/**
@@ -76,4 +77,5 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			}
 		}
 	}
+
 }

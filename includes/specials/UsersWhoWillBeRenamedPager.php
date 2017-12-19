@@ -160,4 +160,5 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		}
 		return $this->mFieldNames;
 	}
+
 }

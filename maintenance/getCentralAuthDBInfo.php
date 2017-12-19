@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class GetCentralAuthDBInfo extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -18,6 +19,7 @@ class GetCentralAuthDBInfo extends Maintenance {
 		$host = $db->getServer();
 		$this->output( "$host\n" );
 	}
+
 }
 
 $maintClass = 'GetCentralAuthDBInfo';

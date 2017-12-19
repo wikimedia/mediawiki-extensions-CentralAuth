@@ -56,4 +56,5 @@ class CentralAuthUnattachUserJob extends Job {
 		}
 		return true;
 	}
+
 }

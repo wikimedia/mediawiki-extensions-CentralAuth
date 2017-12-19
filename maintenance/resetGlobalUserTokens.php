@@ -37,6 +37,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * @ingroup Maintenance
  */
 class ResetGlobalUserTokens extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -108,6 +109,7 @@ class ResetGlobalUserTokens extends Maintenance {
 		$user->resetAuthToken();
 		$this->output( " OK\n" );
 	}
+
 }
 
 $maintClass = "ResetGlobalUserTokens";

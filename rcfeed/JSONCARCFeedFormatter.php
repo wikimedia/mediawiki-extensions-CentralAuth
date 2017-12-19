@@ -18,8 +18,8 @@
  *
  * @file
  */
-
 class JSONCARCFeedFormatter implements CARCFeedFormatter {
+
 	/**
 	 * Generates a user unification/creation entry that can be easily interpreted by a machine.
 	 * @param Title $userpage
@@ -35,4 +35,5 @@ class JSONCARCFeedFormatter implements CARCFeedFormatter {
 		];
 		return FormatJson::encode( $packet );
 	}
+
 }

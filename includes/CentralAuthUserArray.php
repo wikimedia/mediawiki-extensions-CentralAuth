@@ -11,4 +11,5 @@ class CentralAuthUserArray {
 	static function newFromResult( ResultWrapper $res ) {
 		return new CentralAuthUserArrayFromResult( $res );
 	}
+
 }

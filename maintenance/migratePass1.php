@@ -11,6 +11,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class MigratePass1 extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -57,6 +58,7 @@ class MigratePass1 extends Maintenance {
 			$this->fromPrefix
 		) );
 	}
+
 }
 
 $maintClass = "MigratePass1";

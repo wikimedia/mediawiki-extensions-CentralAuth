@@ -29,6 +29,7 @@
  * @ingroup Extensions
  */
 class ApiCentralAuthToken extends ApiBase {
+
 	public function __construct( ApiMain $main, $moduleName ) {
 		parent::__construct( $main, $moduleName );
 	}
@@ -107,4 +108,5 @@ class ApiCentralAuthToken extends ApiBase {
 				=> 'apihelp-centralauthtoken-example-1',
 		];
 	}
+
 }

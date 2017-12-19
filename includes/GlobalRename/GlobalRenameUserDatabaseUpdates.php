@@ -8,8 +8,8 @@ use Wikimedia\Rdbms\IDatabase;
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
-
 class GlobalRenameUserDatabaseUpdates {
+
 	/**
 	 * @return IDatabase
 	 */
@@ -40,4 +40,5 @@ class GlobalRenameUserDatabaseUpdates {
 
 		$dbw->endAtomic( __METHOD__ );
 	}
+
 }

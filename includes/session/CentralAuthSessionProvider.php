@@ -517,4 +517,5 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$this->getLoginCookieExpiration( 'UserID', /* $shouldRememberUser */ true )
 		) ?: null;
 	}
+
 }

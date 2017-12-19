@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Look up central IDs using CentralAuth
  */
 class CentralAuthIdLookup extends CentralIdLookup {
+
 	public function lookupCentralIds(
 		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
 	) {

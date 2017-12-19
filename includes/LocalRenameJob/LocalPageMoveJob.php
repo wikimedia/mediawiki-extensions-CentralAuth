@@ -16,6 +16,7 @@ use Wikimedia\ScopedCallback;
  * 'suppressredirects' - Whether redirects should be suppressed
  */
 class LocalPageMoveJob extends Job {
+
 	/**
 	 * @var User
 	 */
@@ -74,4 +75,5 @@ class LocalPageMoveJob extends Job {
 			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage} -> {$newPage}" );
 		}
 	}
+
 }

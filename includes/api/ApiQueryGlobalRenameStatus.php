@@ -22,6 +22,7 @@
  * API module equivalent of Special:GlobalRenameStatus
  */
 class ApiQueryGlobalRenameStatus extends ApiQueryBase {
+
 	public function __construct( ApiQuery $queryModule, $moduleName ) {
 		parent::__construct( $queryModule, $moduleName, 'grs' );
 	}
@@ -84,4 +85,5 @@ class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 				=> 'apihelp-query+globalrenamestatus-example-1',
 		];
 	}
+
 }

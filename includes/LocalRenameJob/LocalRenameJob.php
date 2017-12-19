@@ -10,6 +10,7 @@ use Wikimedia\ScopedCallback;
  * indvidually.
  */
 abstract class LocalRenameJob extends Job {
+
 	/**
 	 * @var GlobalRenameUserStatus
 	 */
@@ -95,6 +96,7 @@ abstract class LocalRenameJob extends Job {
 		if ( !User::isUsableName( $user->getName() ) ) {
 			return $user;
 		}
+
 		$caUser = CentralAuthUser::getMasterInstance( $user );
 		// Race condition where the renamer isn't attached here, but
 		// someone creates an account in the meantime and then bad
@@ -153,4 +155,5 @@ abstract class LocalRenameJob extends Job {
 			JobQueueGroup::singleton( $nextWiki )->push( $job );
 		}
 	}
+
 }

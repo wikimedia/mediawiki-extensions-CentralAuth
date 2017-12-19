@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class PopulateHomeDB extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -45,6 +46,7 @@ class PopulateHomeDB extends Maintenance {
 		} while ( true );
 		$this->output( "done.\n" );
 	}
+
 }
 
 $maintClass = 'PopulateHomeDB';

@@ -16,6 +16,7 @@ use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ResultWrapper;
 
 class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
+
 	/** Cache of loaded CentralAuthUsers */
 	private static $loadedUsers = null;
 
@@ -2994,4 +2995,5 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	private function clearLocalUserCache( $wikiId, $userId ) {
 		User::purge( $wikiId, $userId );
 	}
+
 }

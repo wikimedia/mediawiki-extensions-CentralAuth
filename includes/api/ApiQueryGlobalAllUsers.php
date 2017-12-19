@@ -29,6 +29,7 @@ use Wikimedia\Rdbms\ResultWrapper;
  * @author Marius Hoch < hoo@online.de >
  */
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'agu' );
 	}
@@ -281,4 +282,5 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				=> 'apihelp-query+globalallusers-example-2',
 		];
 	}
+
 }

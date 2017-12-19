@@ -1,6 +1,7 @@
 <?php
 
 class SpecialGlobalUsers extends SpecialPage {
+
 	public function __construct() {
 		parent::__construct( 'GlobalUsers' );
 	}
@@ -45,4 +46,5 @@ class SpecialGlobalUsers extends SpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
 }

@@ -4,6 +4,7 @@ use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 
 class WikiSet {
+
 	const OPTIN = 'optin';
 	const OPTOUT = 'optout';
 	const VERSION = 1;
@@ -364,4 +365,5 @@ class WikiSet {
 		// centralauth-rightslog-set-optin, centralauth-rightslog-set-optout
 		return wfMessage( "centralauth-rightslog-set-{$type}" )->escaped();
 	}
+
 }

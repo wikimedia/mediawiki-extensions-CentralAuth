@@ -1,6 +1,7 @@
 <?php
 
 class SpecialMergeAccount extends SpecialPage {
+
 	protected $mUserName;
 	protected $mAttemptMerge;
 	protected $mMergeAction;
@@ -670,4 +671,5 @@ class SpecialMergeAccount extends SpecialPage {
 	protected function getGroupName() {
 		return 'login';
 	}
+
 }

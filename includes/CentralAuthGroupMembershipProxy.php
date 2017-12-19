@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Cut-down copy of User interface for local-interwiki-database
  * user rights manipulation.
  */
 class CentralAuthGroupMembershipProxy {
+
 	/**
 	 * @var string
 	 */
@@ -146,4 +148,5 @@ class CentralAuthGroupMembershipProxy {
 	function attachedOn( $wiki ) {
 		return $this->mGlobalUser->attachedOn( $wiki );
 	}
+
 }

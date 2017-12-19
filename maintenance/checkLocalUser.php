@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalUser extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -198,6 +199,7 @@ class CheckLocalUser extends Maintenance {
 			$lastUsername = $u->lu_name;
 		} while ( $result->numRows() > 0 );
 	}
+
 }
 
 $maintClass = "CheckLocalUser";

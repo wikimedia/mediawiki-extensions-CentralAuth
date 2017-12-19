@@ -163,6 +163,7 @@ class ForceRenameUsers extends Maintenance {
 
 		return $rowsToRename;
 	}
+
 }
 
 $maintClass = 'ForceRenameUsers';

@@ -258,4 +258,5 @@ class RenameQueueTablePager extends TablePager {
 		}
 		return $this->mFieldNames;
 	}
+
 }

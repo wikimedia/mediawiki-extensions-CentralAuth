@@ -29,6 +29,7 @@
  * @ingroup Extensions
  */
 class ApiQueryGlobalUserInfo extends ApiQueryBase {
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'gui' );
 	}
@@ -202,4 +203,5 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				=> 'apihelp-query+globaluserinfo-example-2',
 		];
 	}
+
 }

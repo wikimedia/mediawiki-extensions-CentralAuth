@@ -1,6 +1,7 @@
 <?php
 
 class GlobalUsersPager extends AlphabeticPager {
+
 	protected $requestedGroup = false;
 	protected $requestedUser = false;
 	protected $globalIDGroups = [];
@@ -235,4 +236,5 @@ class GlobalUsersPager extends AlphabeticPager {
 		}
 		return $result;
 	}
+
 }

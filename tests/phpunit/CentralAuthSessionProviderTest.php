@@ -1,6 +1,7 @@
 <?php
 
 class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
+
 	/**
 	 * @dataProvider provideSuggestLoginUsername
 	 */
@@ -47,4 +48,5 @@ class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertSame( 200, $provider->getRememberUserDuration() );
 	}
+
 }

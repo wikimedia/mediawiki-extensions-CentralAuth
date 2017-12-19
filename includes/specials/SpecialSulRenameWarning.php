@@ -76,4 +76,5 @@ class SpecialSulRenameWarning extends UnlistedSpecialPage {
 			$request->setSessionData( 'SulRenameWarning', null );
 		}
 	}
+
 }

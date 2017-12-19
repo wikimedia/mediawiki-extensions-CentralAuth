@@ -680,4 +680,5 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			self::PAGE_CLOSED_QUEUE
 		];
 	}
+
 }

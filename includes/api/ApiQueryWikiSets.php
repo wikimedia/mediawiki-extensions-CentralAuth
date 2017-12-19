@@ -29,6 +29,7 @@
  * @ingroup Extensions
  */
 class ApiQueryWikiSets extends ApiQueryBase {
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'ws' );
 	}
@@ -119,4 +120,5 @@ class ApiQueryWikiSets extends ApiQueryBase {
 				=> 'apihelp-query+wikisets-example-2',
 		];
 	}
+
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Special page to allow to edit "wikisets" which are used to restrict
  * specific global group permissions to certain wikis.
@@ -6,8 +7,8 @@
  * @file
  * @ingroup Extensions
  */
-
 class SpecialWikiSets extends SpecialPage {
+
 	private $mCanEdit;
 
 	public function __construct() {
@@ -255,10 +256,12 @@ class SpecialWikiSets extends SpecialPage {
 		if ( !is_array( $list ) ) {
 			return '';
 		}
+
 		$count = count( $list );
 		if ( $count === 0 ) {
 			return $this->msg( 'centralauth-editset-nowikis' )->parse();
 		}
+
 		# If there are less items than columns, limit the number of columns
 		$columns = $count < $columns ? $count : $columns;
 		$itemsPerCol = ceil( $count / $columns );
@@ -268,6 +271,7 @@ class SpecialWikiSets extends SpecialPage {
 			$splitLists[$i] = array_slice( $list, $itemsPerCol * $i, $itemsPerCol );
 			$i++;
 		}
+
 		$body = '';
 		foreach ( $splitLists as $splitList ) {
 			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
@@ -346,6 +350,7 @@ class SpecialWikiSets extends SpecialPage {
 				$name, $type, $wikis, $reason );
 			return;
 		}
+
 		$badwikis = [];
 		$allwikis = CentralAuthUser::getWikiList();
 		foreach ( $wikis as $wiki ) {
@@ -446,4 +451,5 @@ class SpecialWikiSets extends SpecialPage {
 	protected function getGroupName() {
 		return 'wiki';
 	}
+
 }

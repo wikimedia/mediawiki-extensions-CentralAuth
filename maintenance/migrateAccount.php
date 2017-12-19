@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class MigrateAccount extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -86,6 +87,7 @@ class MigrateAccount extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list" );
 				exit( 1 );
 			}
+
 			// @codingStandardsIgnoreStart
 			while ( strlen( $line = trim( fgets( $file ) ) ) ) {
 			// @codingStandardsIgnoreEnd
@@ -259,6 +261,7 @@ class MigrateAccount extends Maintenance {
 			$this->total > 0 ? ( $this->partial / $this->total * 100.0 ) : 0
 		) );
 	}
+
 }
 
 $maintClass = "MigrateAccount";

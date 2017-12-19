@@ -6,6 +6,7 @@
  *  - gblrename/promote
  */
 class GlobalRenameLogFormatter extends LogFormatter {
+
 	protected function getMessageParameters() {
 		parent::getMessageParameters();
 		$params = $this->extractParameters();
@@ -47,4 +48,5 @@ class GlobalRenameLogFormatter extends LogFormatter {
 
 		return Message::rawParam( WikiMap::foreignUserLink( $wiki, $name, $text ) );
 	}
+
 }
