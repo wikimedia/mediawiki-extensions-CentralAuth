@@ -1,12 +1,14 @@
 <?php
 
+use Wikimedia\Rdbms\ResultWrapper;
+
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	private $globalData;
 
 	/**
 	 * @param ResultWrapper $res
 	 */
-	public function __construct( $res ) {
+	public function __construct( ResultWrapper $res ) {
 		parent::__construct( $res );
 
 		if ( $res->numRows() == 0 ) {

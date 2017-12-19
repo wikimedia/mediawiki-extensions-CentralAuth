@@ -22,7 +22,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	/**
 	 * @param array $params In addition to the parameters for
-	 * \\MediaWiki\\Session\\CookieSessionProvider, the following are
+	 * CookieSessionProvider, the following are
 	 * recognized:
 	 *  - enable: Whether to set CentralAuth-specific features. Defaults to
 	 *    $wgCentralAuthCookies.
