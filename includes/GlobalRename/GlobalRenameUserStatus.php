@@ -8,6 +8,7 @@
  * @author Marius Hoch < hoo@online.de >
  */
 
+use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 
 class GlobalRenameUserStatus implements IDBAccessObject {

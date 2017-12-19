@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\MediaWikiServices;
 
@@ -156,7 +157,7 @@ class CentralAuthUtils {
 
 	/**
 	 * Get the central session data
-	 * @param MediaWiki\\Session\\Session|null $session
+	 * @param Session|null $session
 	 * @return array
 	 */
 	public static function getCentralSession( $session = null ) {
@@ -191,7 +192,7 @@ class CentralAuthUtils {
 	 * Set data in the central session
 	 * @param array $data
 	 * @param bool|string $reset Reset the session ID. If a string, this is the new ID.
-	 * @param MediaWiki\\Session\\Session|null $session
+	 * @param Session|null $session
 	 * @return string|null Session ID
 	 */
 	public static function setCentralSession( array $data, $reset = false, $session = null ) {
@@ -232,7 +233,7 @@ class CentralAuthUtils {
 
 	/**
 	 * Delete the central session data
-	 * @param MediaWiki\\Session\\Session|null $session
+	 * @param Session|null $session
 	 */
 	public static function deleteCentralSession( $session = null ) {
 		if ( !$session ) {
