@@ -1,11 +1,12 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Session\Session;
 use Wikimedia\ScopedCallback;
 
 class SpecialCentralLogin extends UnlistedSpecialPage {
 
-	/** @var MediaWiki\\Session\\Session */
+	/** @var Session */
 	protected $session = null;
 
 	public function __construct() {

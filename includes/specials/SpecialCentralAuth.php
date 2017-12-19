@@ -653,6 +653,7 @@ class SpecialCentralAuth extends SpecialPage {
 		// "temporary" indication applies to both groups, or just the last one
 		$listTemporary = [];
 		$list = [];
+		/** @var UserGroupMembership $ugm */
 		foreach ( $row['groupMemberships'] as $group => $ugm ) {
 			if ( $ugm->getExpiry() ) {
 				$listTemporary[] = $this->msg( 'centralauth-admin-group-temporary',

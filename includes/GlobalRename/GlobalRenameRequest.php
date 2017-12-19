@@ -19,6 +19,8 @@
  * @file
  */
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Data access object for global rename requests.
  *

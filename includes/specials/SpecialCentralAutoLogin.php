@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Session\Session;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -10,7 +11,7 @@ use Wikimedia\ScopedCallback;
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private $loginWiki;
 
-	/** @var MediaWiki\\Session\\Session|null */
+	/** @var Session|null */
 	protected $session = null;
 
 	public function __construct() {

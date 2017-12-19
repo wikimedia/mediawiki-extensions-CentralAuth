@@ -6,7 +6,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	/**
 	 * @param ResultWrapper $res
 	 */
-	public function __construct( $res ) {
+	public function __construct( ResultWrapper $res ) {
 		parent::__construct( $res );
 
 		if ( $res->numRows() == 0 ) {
