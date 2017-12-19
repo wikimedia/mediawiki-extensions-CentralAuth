@@ -888,7 +888,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * if that feature is enabled
 	 */
 	protected function recordAntiSpoof() {
-		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoof = new CentralAuthSpoofUser( $this->mName );
 			$spoof->record();
 		}
@@ -899,7 +899,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * if that feature is enabled
 	 */
 	public function removeAntiSpoof() {
-		if ( class_exists( 'CentralAuthSpoofUser' ) ) {
+		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoof = new CentralAuthSpoofUser( $this->mName );
 			$spoof->remove();
 		}

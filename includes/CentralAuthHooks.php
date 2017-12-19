@@ -47,7 +47,7 @@ class CentralAuthHooks {
 		global $wgDisableAuthManager;
 		$caBase = __DIR__ . '/..';
 
-		if ( class_exists( 'RenameuserSQL' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
 			// Credits should only appear on wikis with Extension:Renameuser
 			// installed
 			$wgExtensionCredits['specialpage'][] = [
@@ -60,7 +60,7 @@ class CentralAuthHooks {
 			];
 		}
 
-		if ( class_exists( 'AntiSpoof' ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'AntiSpoof' ) ) {
 			// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
 			$wgExtensionCredits['antispam'][] = [
 				'path' => "{$caBase}/CentralAuth.php",
@@ -584,7 +584,7 @@ class CentralAuthHooks {
 	}
 
 	private static function isMobileDomain() {
-		return class_exists( 'MobileContext' )
+		return class_exists( MobileContext::class )
 			&& MobileContext::singleton()->usingMobileDomain();
 	}
 
