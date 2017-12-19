@@ -1,6 +1,7 @@
 <?php
 
 class SpecialUsersWhoWillBeRenamed extends SpecialPage {
+
 	public function __construct() {
 		parent::__construct( 'UsersWhoWillBeRenamed' );
 	}
@@ -11,6 +12,7 @@ class SpecialUsersWhoWillBeRenamed extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'centralauth-uwbr-intro' );
 		$this->getOutput()->addParserOutput( $pager->getFullOutput() );
 	}
+
 }
 
 /**
@@ -173,4 +175,5 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		}
 		return $this->mFieldNames;
 	}
+
 }

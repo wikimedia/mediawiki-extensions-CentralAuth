@@ -76,4 +76,5 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 	public function beginSecondaryAccountCreation( $user, $creator, array $reqs ) {
 		return AuthenticationResponse::newAbstain();
 	}
+
 }

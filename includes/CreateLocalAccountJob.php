@@ -9,6 +9,7 @@ use Wikimedia\ScopedCallback;
  * @see $wgCentralAuthAutoCreateWikis
  */
 class CentralAuthCreateLocalAccountJob extends Job {
+
 	/**
 	 * @param Title $title Not used
 	 * @param array $params name => user name, from => wiki where the job is created,
@@ -62,4 +63,5 @@ class CentralAuthCreateLocalAccountJob extends Job {
 
 		return true;
 	}
+
 }

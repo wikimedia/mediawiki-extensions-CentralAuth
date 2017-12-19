@@ -291,4 +291,5 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	protected function getGroupName() {
 		return 'login';
 	}
+
 }

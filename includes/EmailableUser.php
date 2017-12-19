@@ -83,4 +83,5 @@ class EmailableUser extends User {
 				$wgLang->date( $expiration, false ),
 				$wgLang->time( $expiration, false ) )->text() );
 	}
+
 }

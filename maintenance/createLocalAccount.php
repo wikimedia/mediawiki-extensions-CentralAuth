@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CreateLocalAccount extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -47,6 +48,7 @@ class CreateLocalAccount extends Maintenance {
 			$this->output( "User '$username' created\n" );
 		}
 	}
+
 }
 
 $maintClass = 'CreateLocalAccount';

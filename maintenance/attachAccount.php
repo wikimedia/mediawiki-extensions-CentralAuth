@@ -29,6 +29,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * @copyright © 2016 Wikimedia Foundation and contributors.
  */
 class AttachAccount extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -176,6 +177,7 @@ class AttachAccount extends Maintenance {
 			$this->missing,  $this->reportPcnt( $this->missing )
 		) );
 	}
+
 }
 
 $maintClass = "AttachAccount";

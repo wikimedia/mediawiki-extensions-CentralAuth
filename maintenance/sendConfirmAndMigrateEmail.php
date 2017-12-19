@@ -180,6 +180,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			$this->total > 0 ? ( $this->sent / $this->total * 100.0 ) : 0
 		) );
 	}
+
 }
 
 $maintClass = "SendConfirmAndMigrateEmail";

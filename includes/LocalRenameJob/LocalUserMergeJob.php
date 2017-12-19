@@ -7,6 +7,7 @@ use \MediaWiki\MediaWikiServices;
  * This is intended to be run on each wiki individually
  */
 class LocalUserMergeJob extends LocalRenameJob {
+
 	public function __construct( Title $title, array $params ) {
 		$this->command = 'LocalUserMergeJob';
 

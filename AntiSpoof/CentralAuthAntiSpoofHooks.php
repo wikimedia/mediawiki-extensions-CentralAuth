@@ -112,4 +112,5 @@ class CentralAuthAntiSpoofHooks {
 		$spoof->update( $oldName );
 		return true;
 	}
+
 }

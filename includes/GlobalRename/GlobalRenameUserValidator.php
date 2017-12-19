@@ -6,8 +6,8 @@
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
-
 class GlobalRenameUserValidator {
+
 	/**
 	 * Check that we can perform the rename
 	 *
@@ -45,4 +45,5 @@ class GlobalRenameUserValidator {
 
 		return $status;
 	}
+
 }

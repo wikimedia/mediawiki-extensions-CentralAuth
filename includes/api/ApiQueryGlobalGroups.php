@@ -29,6 +29,7 @@
  * @ingroup Extensions
  */
 class ApiQueryGlobalGroups extends ApiQueryBase {
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'ggp' );
 	}
@@ -111,4 +112,5 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 				=> 'apihelp-query+globalgroups-example-2',
 		];
 	}
+
 }

@@ -26,6 +26,7 @@
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiUserrights {
+
 	protected function getUserRightsPage() {
 		return new SpecialGlobalGroupMembership;
 	}
@@ -45,4 +46,5 @@ class ApiGlobalUserRights extends ApiUserrights {
 				=> 'apihelp-globaluserrights-example-2',
 		];
 	}
+
 }

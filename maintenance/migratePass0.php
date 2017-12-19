@@ -67,6 +67,7 @@ class MigratePassZero extends Maintenance {
 			}
 		}
 	}
+
 }
 
 $maintClass = 'MigratePassZero';

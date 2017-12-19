@@ -6,8 +6,8 @@
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
-
 class GlobalRenameUserLogger {
+
 	/**
 	 * @var User
 	 */
@@ -79,4 +79,5 @@ class GlobalRenameUserLogger {
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
 	}
+
 }

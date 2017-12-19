@@ -11,6 +11,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * table
  */
 class UpdateUsersToRename extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -49,6 +50,7 @@ class UpdateUsersToRename extends Maintenance {
 		} while ( $rows->numRows() >= $this->mBatchSize );
 		$this->output( "Removed $total users in total.\n" );
 	}
+
 }
 
 $maintClass = 'UpdateUsersToRename';

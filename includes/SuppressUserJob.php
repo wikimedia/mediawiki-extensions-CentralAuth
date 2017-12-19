@@ -6,6 +6,7 @@
  * $wgCentralAuthWikisPerSuppressJob.
  */
 class CentralAuthSuppressUserJob extends Job {
+
 	/**
 	 * @param Title $title Associated title
 	 * @param array $params Job parameters
@@ -42,4 +43,5 @@ class CentralAuthSuppressUserJob extends Job {
 		}
 		return true;
 	}
+
 }

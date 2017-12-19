@@ -343,4 +343,5 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' ); // JS only
 	}
+
 }

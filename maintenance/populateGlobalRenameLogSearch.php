@@ -10,6 +10,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * Script to back-populate log_search for global rename entries
  */
 class PopulateGlobalRenameLogSearch extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -57,6 +58,7 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 		$dbw->insert( 'log_search', $rows, __METHOD__, 'IGNORE' );
 		wfWaitForSlaves();
 	}
+
 }
 
 $maintClass = 'PopulateGlobalRenameLogSearch';

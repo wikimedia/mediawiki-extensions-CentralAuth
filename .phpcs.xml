@@ -21,6 +21,11 @@
 			<property name="ignoreList" type="array" value="migratePassZero,getEditCount,countEdits" />
 		</properties>
 	</rule>
+	<rule ref="Squiz.WhiteSpace.FunctionSpacing">
+		<properties>
+			<property name="spacing" value="1" />
+		</properties>
+	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
 	<arg name="encoding" value="UTF-8"/>

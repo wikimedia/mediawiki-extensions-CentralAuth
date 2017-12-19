@@ -9,8 +9,8 @@ use MediaWiki\Logger\LoggerFactory;
  * @author Marius Hoch < hoo@online.de >
  * @author Kunal Mehta < legoktm@gmail.com >
  */
-
 class GlobalUserMerge {
+
 	/**
 	 * @var User
 	 */
@@ -203,4 +203,5 @@ class GlobalUserMerge {
 			]
 		);
 	}
+
 }

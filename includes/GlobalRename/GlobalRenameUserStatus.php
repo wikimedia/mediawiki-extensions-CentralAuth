@@ -259,4 +259,5 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 
 		return $ret;
 	}
+
 }

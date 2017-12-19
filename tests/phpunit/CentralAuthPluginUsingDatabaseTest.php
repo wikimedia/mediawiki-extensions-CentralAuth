@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Basic tests for CentralAuthPlugin
  * @group CentralAuthDB
@@ -321,4 +322,5 @@ class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabas
 		}
 		return $wikiId;
 	}
+
 }

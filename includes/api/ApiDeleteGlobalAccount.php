@@ -29,6 +29,7 @@
  * @ingroup Extensions
  */
 class ApiDeleteGlobalAccount extends ApiBase {
+
 	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
 		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
@@ -111,4 +112,5 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		$list['deleteglobalaccount'] = [ __CLASS__, 'getToken' ];
 		return true; // Hooks must return bool
 	}
+
 }

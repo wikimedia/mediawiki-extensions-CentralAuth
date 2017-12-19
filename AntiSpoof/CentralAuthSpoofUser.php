@@ -3,6 +3,7 @@
 use Wikimedia\Rdbms\IDatabase;
 
 class CentralAuthSpoofUser extends SpoofUser {
+
 	/**
 	 * @return IDatabase
 	 */
@@ -30,4 +31,5 @@ class CentralAuthSpoofUser extends SpoofUser {
 	protected function getUserColumn() {
 		return 'gu_name';
 	}
+
 }

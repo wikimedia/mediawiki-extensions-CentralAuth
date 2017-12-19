@@ -5,6 +5,7 @@ use MediaWiki\Session\SessionManager;
 use MediaWiki\MediaWikiServices;
 
 class CentralAuthUtils {
+
 	/** @var BagOStuff|null Session cache */
 	private static $sessionCache = null;
 
@@ -273,4 +274,5 @@ class CentralAuthUtils {
 			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
 		}
 	}
+
 }

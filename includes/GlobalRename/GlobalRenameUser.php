@@ -6,8 +6,8 @@
  * @license GNU GPL v2+
  * @author Marius Hoch < hoo@online.de >
  */
-
 class GlobalRenameUser {
+
 	/**
 	 * @var User
 	 */
@@ -221,4 +221,5 @@ class GlobalRenameUser {
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
 		return new LocalRenameUserJob( $title, $params );
 	}
+
 }

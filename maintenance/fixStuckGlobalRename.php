@@ -11,6 +11,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * but failed for whatever reason
  */
 class FixStuckGlobalRename extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -71,6 +72,7 @@ class FixStuckGlobalRename extends Maintenance {
 			$renamer = 'Global rename script';
 			$comment = '';
 		}
+
 		$params = [
 			'from' => $oldName,
 			'to' => $newName,
@@ -98,6 +100,7 @@ class FixStuckGlobalRename extends Maintenance {
 		$job->teardown( $status );
 		$this->output( $status ? "Done!\n" : "Failed!\n" );
 	}
+
 }
 
 $maintClass = 'FixStuckGlobalRename';

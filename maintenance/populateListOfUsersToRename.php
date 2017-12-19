@@ -122,6 +122,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 
 		} while ( $count !== 0 );
 	}
+
 }
 
 $maintClass = 'PopulateListOfUsersToRename';

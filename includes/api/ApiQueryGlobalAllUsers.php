@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Api module for CentralAuth extension to list all global users.
  * Partly based on ApiQueryAllUsers.
@@ -25,6 +26,7 @@
  * @author Marius Hoch < hoo@online.de >
  */
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
+
 	public function __construct( $query, $moduleName ) {
 		parent::__construct( $query, $moduleName, 'agu' );
 	}
@@ -277,4 +279,5 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				=> 'apihelp-query+globalallusers-example-2',
 		];
 	}
+
 }

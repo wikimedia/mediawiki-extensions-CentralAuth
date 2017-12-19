@@ -443,6 +443,7 @@ class CentralAuthHooks {
 			}
 			$inject_html .= "</p></div>\n";
 		}
+
 		if ( $wgCentralAuthLoginWiki ) {
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -1147,6 +1148,7 @@ class CentralAuthHooks {
 				]
 			);
 		}
+
 		if ( $wgCentralAuthLoginWiki ) {
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -1182,14 +1184,17 @@ class CentralAuthHooks {
 		if ( $user->isAnon() ) {
 			return true;
 		}
+
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( !( $centralUser->exists() && $centralUser->isAttached() ) ) {
 			return true;
 		}
+
 		$wikiID = $centralUser->getHomeWiki();
 		if ( strval( $wikiID ) === '' ) {
 			return true;
 		}
+
 		$wiki = WikiMap::getWiki( $wikiID );
 		$wikiUrl = $wiki->getUrl( '' );
 		$parts = explode( '/', $wikiUrl );
@@ -1511,4 +1516,5 @@ class CentralAuthHooks {
 			$db->dropTable( $table );
 		}
 	}
+
 }

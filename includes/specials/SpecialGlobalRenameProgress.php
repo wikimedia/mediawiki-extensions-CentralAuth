@@ -3,6 +3,7 @@
 use MediaWiki\Logger\LoggerFactory;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
+
 	/**
 	 * @var GlobalRenameUserStatus
 	 */
@@ -154,4 +155,5 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	public function requiresUnblock() {
 		return false;
 	}
+
 }

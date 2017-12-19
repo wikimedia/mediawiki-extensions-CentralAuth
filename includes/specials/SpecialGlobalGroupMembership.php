@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Equivalent of Special:Userrights for global groups.
  *
  * @ingroup Extensions
  */
-
 class SpecialGlobalGroupMembership extends UserrightsPage {
+
 	/**
 	 * @var CentralAuthUser
 	 */
@@ -152,4 +153,5 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			]
 		);
 	}
+
 }

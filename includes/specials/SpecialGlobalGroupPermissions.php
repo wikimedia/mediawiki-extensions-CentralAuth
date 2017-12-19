@@ -17,8 +17,8 @@
  * @file
  * @ingroup Extensions
  */
-
 class SpecialGlobalGroupPermissions extends SpecialPage {
+
 	public function __construct() {
 		parent::__construct( 'GlobalGroupPermissions' );
 	}
@@ -707,4 +707,5 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
 }

@@ -285,4 +285,5 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	protected function getGroupName() {
 		return 'users';
 	}
+
 }

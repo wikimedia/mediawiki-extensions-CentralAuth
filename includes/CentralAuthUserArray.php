@@ -9,9 +9,11 @@ class CentralAuthUserArray {
 	static function newFromResult( $res ) {
 		return new CentralAuthUserArrayFromResult( $res );
 	}
+
 }
 
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {
+
 	private $globalData;
 
 	/**
@@ -85,4 +87,5 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			}
 		}
 	}
+
 }

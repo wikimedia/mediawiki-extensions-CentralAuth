@@ -680,6 +680,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			self::PAGE_CLOSED_QUEUE
 		];
 	}
+
 }
 
 /**
@@ -920,4 +921,5 @@ class RenameQueueTablePager extends TablePager {
 		}
 		return $this->mFieldNames;
 	}
+
 }

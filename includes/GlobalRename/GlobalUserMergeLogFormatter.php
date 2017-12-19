@@ -4,6 +4,7 @@
  * Format the gblrename/merge log entries
  */
 class GlobalUserMergeLogFormatter extends LogFormatter {
+
 	protected function getMessageParameters() {
 		parent::getMessageParameters();
 		$params = $this->extractParameters();
@@ -35,4 +36,5 @@ class GlobalUserMergeLogFormatter extends LogFormatter {
 			);
 		}
 	}
+
 }

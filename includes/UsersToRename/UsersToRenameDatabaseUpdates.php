@@ -97,4 +97,5 @@ class UsersToRenameDatabaseUpdates {
 
 		return $rows; // @todo this shouldn't return prefixed field names
 	}
+
 }

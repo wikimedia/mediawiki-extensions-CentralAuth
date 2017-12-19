@@ -17,6 +17,7 @@ require_once "$IP/maintenance/Maintenance.php";
  *     A file for "en" must exist as it is the base fallback.
  */
 class ForceRenameNotification extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
@@ -118,6 +119,7 @@ class ForceRenameNotification extends Maintenance {
 
 		$this->error( "Could not find a valid localized file for $langCode.", 1 );
 	}
+
 }
 
 $maintClass = 'ForceRenameNotification';

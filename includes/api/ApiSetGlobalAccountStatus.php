@@ -29,6 +29,7 @@
  * @ingroup Extensions
  */
 class ApiSetGlobalAccountStatus extends ApiBase {
+
 	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
 		$params = $this->extractRequestParams();
@@ -167,4 +168,5 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$list['setglobalaccountstatus'] = [ __CLASS__, 'getToken' ];
 		return true; // Hooks must return bool
 	}
+
 }

@@ -48,6 +48,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	protected function makeSpoofUser( $name ) {
 		return new CentralAuthSpoofUser( $name );
 	}
+
 }
 
 $maintClass = "BatchCAAntiSpoof";
