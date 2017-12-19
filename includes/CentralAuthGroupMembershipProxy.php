@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Cut-down copy of User interface for local-interwiki-database
  * user rights manipulation.

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Look up central IDs using CentralAuth
  */

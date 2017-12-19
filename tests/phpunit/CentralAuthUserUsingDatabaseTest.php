@@ -1,9 +1,9 @@
 <?php
+
 /**
  * Setup database tests for centralauth
  * @group CentralAuthDB
  */
-
 class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
 
 	/**

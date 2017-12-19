@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Basic tests for CentralAuthPlugin
  * @group CentralAuthDB

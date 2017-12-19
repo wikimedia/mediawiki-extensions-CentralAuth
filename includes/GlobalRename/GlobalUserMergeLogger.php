@@ -6,7 +6,6 @@
  * @license GNU GPL v2+
  * @author Kunal Mehta
  */
-
 class GlobalUserMergeLogger {
 	/**
 	 * @var User
