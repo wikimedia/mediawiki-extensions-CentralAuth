@@ -1,6 +1,8 @@
 <?php
 // Go through all usernames and calculate and record spoof thingies
 
+use Wikimedia\Rdbms\IDatabase;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';

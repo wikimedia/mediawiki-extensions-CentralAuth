@@ -1,6 +1,8 @@
 <?php
 
+use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
+use Wikimedia\Rdbms\ResultWrapper;
 
 class CentralAuthHooks {
 
@@ -1431,10 +1433,7 @@ class CentralAuthHooks {
 	 * Hook function to prevent logged-in sessions when a user is being
 	 * renamed.
 	 * @param string &$reason Failure reason to log
-	 * @param MediaWiki\\Session\\SessionInfo $info
-	 * @param WebRequest $request
-	 * @param array|false $metadata
-	 * @param array|false $data
+	 * @param SessionInfo $info
 	 * @return bool
 	 */
 	public static function onSessionCheckInfo( &$reason, $info ) {

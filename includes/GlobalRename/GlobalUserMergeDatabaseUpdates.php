@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * Update the rows in the CentralAuth tables during a user merge
  *

@@ -102,6 +102,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function beginPrimaryAuthentication( array $reqs ) {
+		/** @var PasswordAuthenticationRequest $req */
 		$req = AuthenticationRequest::getRequestByClass(
 			$reqs, PasswordAuthenticationRequest::class
 		);

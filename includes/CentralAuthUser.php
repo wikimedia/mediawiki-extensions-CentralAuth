@@ -11,6 +11,9 @@ likely construction types...
 */
 
 use MediaWiki\Logger\LoggerFactory;
+use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\ResultWrapper;
 
 class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/** Cache of loaded CentralAuthUsers */
@@ -2644,6 +2647,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
 
+		/** @var CentralAuthSessionProvider $provider */
 		$provider = MediaWiki\Session\SessionManager::singleton()
 			->getProvider( 'CentralAuthSessionProvider' );
 		if ( $provider ) {

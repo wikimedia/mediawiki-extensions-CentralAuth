@@ -689,17 +689,17 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 class RenameQueueTablePager extends TablePager {
 
 	/**
-	 * @var SpecialPage $mOwner
+	 * @var SpecialPage
 	 */
 	protected $mOwner;
 
 	/**
-	 * @var string $mPage
+	 * @var string
 	 */
 	protected $mPage;
 
 	/**
-	 * @var mFieldNames array
+	 * @var string[]|null
 	 */
 	protected $mFieldNames;
 
@@ -892,7 +892,7 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getFieldNames() {
 		if ( $this->mFieldNames === null ) {
