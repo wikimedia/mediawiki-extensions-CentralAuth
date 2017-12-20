@@ -242,6 +242,7 @@
 	"right-centralauth-lock": "Заключване или отключване на глобална сметка",
 	"right-centralauth-merge": "Сливане на тяхната сметка",
 	"right-globalgrouppermissions": "Управление на глобалните групи",
+	"globalrenameprogress": "Напредък на глобалното преименуване",
 	"centralauth-rename-progress-username": "Потребителско име",
 	"centralauth-rename-table-status-done": "Готово",
 	"centralauth-rename-progress-logs-fieldset": "Записи в дневника",
