@@ -8,10 +8,12 @@
 		<exclude name="MediaWiki.Commenting.FunctionComment.MissingReturn" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.WrongStyle" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
-		<exclude name="MediaWiki.Files.ClassMatchesFilename.WrongCase" />
-		<exclude name="MediaWiki.Files.OneClassPerFile.MultipleFound" />
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName"/>
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment"/>
+	</rule>
+	<rule ref="MediaWiki.Files.ClassMatchesFilename.WrongCase">
+		<exclude-pattern>*/maintenance/*</exclude-pattern>
+		<exclude-pattern>*/AntiSpoof/*</exclude-pattern>
 	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
