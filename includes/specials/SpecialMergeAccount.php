@@ -542,8 +542,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string HTML of form
 	 */
 	private function actionForm( $action, $title, $text ) {
-		return
-			Xml::openElement( 'div', [ 'id' => "userloginForm" ] ) .
+		return Xml::openElement( 'div', [ 'id' => "userloginForm" ] ) .
 			Xml::openElement( 'form',
 				[
 					'method' => 'post',
