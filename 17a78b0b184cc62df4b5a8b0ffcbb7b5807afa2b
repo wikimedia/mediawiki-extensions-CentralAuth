@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeed6739_393a5fc1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2017-12-30T08:53:41Z",
+      "side": 1,
+      "message": "This extra new line should be removed please!",
+      "revId": "17a78b0b184cc62df4b5a8b0ffcbb7b5807afa2b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
