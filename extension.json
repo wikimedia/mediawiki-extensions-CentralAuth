@@ -3,7 +3,7 @@
 	"author": "Brion Vibber",
 	"url": "https://www.mediawiki.org/wiki/Extension:CentralAuth",
 	"descriptionmsg": "centralauth-desc",
-	"license-name": "GPL-2.0",
+	"license-name": "GPL-2.0-only",
 	"type": "specialpage",
 	"requires": {
 		"MediaWiki": ">= 1.30.0"
