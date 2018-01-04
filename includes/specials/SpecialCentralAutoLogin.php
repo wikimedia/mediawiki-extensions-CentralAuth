@@ -37,8 +37,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$contents = file_get_contents( $filePath );
 
 		// Try minified from cache
-		$key = wfGlobalCacheKey( 'centralauth', 'minify-js', md5( $contents ) );
 		$cache = wfGetCache( wfIsHHVM() ? CACHE_ACCEL : CACHE_ANYTHING );
+		$key = $cache->makeGlobalKey( 'centralauth', 'minify-js', md5( $contents ) );
 		$cacheEntry = $cache->get( $key );
 		if ( is_string( $cacheEntry ) ) {
 			return $cacheEntry;
