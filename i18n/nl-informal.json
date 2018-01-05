@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand"
+			"Siebrand",
+			"Mar(c)"
 		]
 	},
 	"centralauth-merge-denied": "Je hebt geen toegang tot deze pagina.",
@@ -15,8 +16,8 @@
 	"centralauth-merge-step3-detail": "Je kunt nu je samengevoegde gebruiker maken, met daarin opgenomen de volgende wiki's:",
 	"centralauth-merge-no-accounts": "Er zijn geen gebruikers met jouw naam gevonden in de volgtabel voor globale gebruikers!\nDe database moet beschadigd zijn.",
 	"centralauth-merge-home-password": "De hieronder opgegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan jij hebt opgegeven.\nVoer het wachtwoord voor de thuiswiki in.",
-	"centralauth-complete-text": "Je kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.",
-	"centralauth-incomplete-text": "Als je gebruikers zijn samengevoegd kan je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe gebruiker aan te maken.",
+	"centralauth-complete-text": "Je kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuw account aan te maken.",
+	"centralauth-incomplete-text": "Als je accounts zijn samengevoegd, kun je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuw account aan te maken.",
 	"centralauth-not-owner-text": "De gebruikersnaam \"$1\" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.\n\nAls jij dat bent, kan je het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:",
 	"centralauth-error-locked": "Je kunt niet bewerken omdat je gebruiker geblokkeerd is.",
 	"centralauth-error-unmerged": "Je kunt niet bewerken omdat je gebruiker niet is samengevoegd.",
@@ -31,8 +32,8 @@
 	"centralauth-prefs-count-attached": "Je gebruiker is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.",
 	"centralauth-prefs-count-unattached": "Niet-bevestigde gebruikers met jouw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.",
 	"centralauth-prefs-manage": "Je globale gebruiker beheren",
-	"centralauth-login-progress": "Je wordt aangemeld bij andere wikis van {{int:Centralauth-groupname}}:",
-	"centralauth-logout-progress": "Je wordt afgemeld bij andere wikis van {{int:Centralauth-groupname}}:",
+	"centralauth-login-progress": "Je wordt aangemeld bij andere wiki's van {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Je wordt afgemeld bij andere wiki's van {{int:Centralauth-groupname}}:",
 	"centralauth-login-no-others": "Je bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.",
 	"centralauth-logout-no-others": "Je bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.",
 	"centralauth-newgroup-intro": "Via dit formulier kan je rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn",
