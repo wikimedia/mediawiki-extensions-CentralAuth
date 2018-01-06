@@ -207,7 +207,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	protected function suggestedUsername() {
 		do {
 			$rand = $this->getUser()->getName() . rand( 123, 999 );
-		} while ( !GlobalRenameRequest::isNameAvailable( $rand )->isOk() );
+		} while ( !GlobalRenameRequest::isNameAvailable( $rand )->isOK() );
 		return $rand;
 	}
 

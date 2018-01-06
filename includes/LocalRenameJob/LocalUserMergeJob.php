@@ -1,6 +1,6 @@
 <?php
 
-use \MediaWiki\MediaWikiServices;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Job class to merge a user locally

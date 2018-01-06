@@ -472,7 +472,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$out->addModules( 'ext.centralauth.globalrenamequeue' );
 
 		$status = $form->show();
-		if ( $status instanceof Status && $status->isOk() ) {
+		if ( $status instanceof Status && $status->isOK() ) {
 			$this->getOutput()->redirect(
 				$this->getPageTitle(
 					self::PAGE_PROCESS_REQUEST . "/{$req->getId()}/{$status->value}"

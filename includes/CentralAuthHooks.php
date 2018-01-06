@@ -1275,7 +1275,7 @@ class CentralAuthHooks {
 	/**
 	 * Check whether the user's preferences are such that a UI reload is
 	 * recommended.
-	 * @param User $user User
+	 * @param User $user
 	 * @return bool
 	 */
 	public static function isUIReloadRecommended( User $user ) {

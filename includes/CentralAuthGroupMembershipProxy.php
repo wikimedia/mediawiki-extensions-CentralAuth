@@ -96,7 +96,7 @@ class CentralAuthGroupMembershipProxy {
 
 	/**
 	 * Replaces User::getGroupMemberships()
-	 * @return array Associative array of (group name => UserGroupMembership object)
+	 * @return UserGroupMembership[] Associative array of (group name => UserGroupMembership object)
 	 */
 	function getGroupMemberships() {
 		$groups = $this->getGroups();

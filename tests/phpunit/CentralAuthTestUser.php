@@ -77,7 +77,7 @@ class CentralAuthTestUser {
 	private $createLocal;
 
 	/**
-	 * @param string $username the username
+	 * @param string $username
 	 * @param string $password password for the account
 	 * @param array $attrs associative array of global user attributs
 	 * @param array $wikis array of arrays of wiki, attachement method
