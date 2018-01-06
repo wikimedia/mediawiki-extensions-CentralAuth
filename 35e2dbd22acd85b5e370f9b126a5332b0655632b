@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeed6739_bc3e2f24",
+        "filename": "includes/CentralAuthUserArrayFromResult.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2018-01-06T13:53:27Z",
+      "side": 1,
+      "message": "use Wikimedia\\Rdbms\\ResultWrapper;",
+      "revId": "35e2dbd22acd85b5e370f9b126a5332b0655632b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
