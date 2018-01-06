@@ -194,7 +194,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 	 * Inject the "centralauthtoken" parameter into the API
 	 * @param ApiBase &$module API module
 	 * @param array &$params Array of parameter specifications
-	 * @param int $flags Flags
+	 * @param int $flags
 	 * @return bool
 	 */
 	public function onAPIGetAllowedParams( &$module, &$params, $flags ) {
@@ -213,8 +213,8 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 	/**
 	 * Consume the centralauthtoken
-	 * @param ApiBase $module API module
-	 * @param User $user User
+	 * @param ApiBase $module
+	 * @param User $user
 	 * @param array &$message Error message key and params
 	 * @return bool
 	 */

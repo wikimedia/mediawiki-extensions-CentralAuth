@@ -119,7 +119,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		$status = $this->checkPasswordValidity( $username, $req->password );
-		if ( !$status->isOk() ) {
+		if ( !$status->isOK() ) {
 			// Fatal, can't log in
 			return AuthenticationResponse::newFail( $status->getMessage() );
 		}
@@ -392,7 +392,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$options += [ 'flags' => User::READ_NORMAL ];
 
 		$status = parent::testUserForCreation( $user, $autocreate, $options );
-		if ( !$status->isOk() ) {
+		if ( !$status->isOK() ) {
 			return $status;
 		}
 
