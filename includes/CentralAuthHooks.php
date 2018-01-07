@@ -1324,9 +1324,9 @@ class CentralAuthHooks {
 		return true;
 	}
 
-	/*
+	/**
 	 * Handler for UserGetReservedNames
-	 * @param array $reservedUsernames
+	 * @param array &$reservedUsernames
 	 * @return bool
 	 */
 	public static function onUserGetReservedNames( &$reservedUsernames ) {
@@ -1451,6 +1451,7 @@ class CentralAuthHooks {
 	/**
 	 * Create databases for WMF Jenkins unit tests
 	 * @param DatabaseUpdater $updater
+	 * @return true
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		global $wgWikimediaJenkinsCI;

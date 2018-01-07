@@ -283,6 +283,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 
 	/**
 	 * Even blocked users should be able to ask for a rename.
+	 * @return bool
 	 */
 	public function requiresUnblock() {
 		return false;

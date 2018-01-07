@@ -34,9 +34,7 @@ class ApiGlobalUserRights extends ApiUserrights {
 		return CentralAuthUser::availableGlobalGroups();
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=userrights&user=FooBot&add=bot&remove=sysop|bureaucrat&token=123ABC'

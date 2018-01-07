@@ -108,9 +108,7 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		];
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=query&list=wikisets'
