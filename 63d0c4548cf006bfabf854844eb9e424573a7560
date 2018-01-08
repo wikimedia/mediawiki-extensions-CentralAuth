@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aeed6739_bbe3ccd3",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-01-08T16:58:11Z",
+      "side": 1,
+      "message": "string[]",
+      "range": {
+        "startLine": 1329,
+        "startChar": 11,
+        "endLine": 1329,
+        "endChar": 16
+      },
+      "revId": "63d0c4548cf006bfabf854844eb9e424573a7560",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aeed6739_7bd9442c",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-01-08T16:58:11Z",
+      "side": 1,
+      "message": "I would remove this instead. It\u0027s not needed any more since years.",
+      "range": {
+        "startLine": 1463,
+        "startChar": 2,
+        "endLine": 1463,
+        "endChar": 13
+      },
+      "revId": "63d0c4548cf006bfabf854844eb9e424573a7560",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
