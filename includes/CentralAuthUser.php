@@ -607,6 +607,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 	/**
 	 * Return the global-login token for this account.
+	 * @return string
 	 */
 	public function getAuthToken() {
 		global $wgAuthenticationTokenVersion;
@@ -677,6 +678,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Returns the hidden level of
 	 * the account.
+	 * @return string
 	 */
 	public function getHiddenLevel() {
 		$this->loadState();
@@ -2628,6 +2630,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * Get the password hash.
 	 * Automatically converts to a new-style hash
+	 * @return string
 	 */
 	function getPassword() {
 		$this->loadState();

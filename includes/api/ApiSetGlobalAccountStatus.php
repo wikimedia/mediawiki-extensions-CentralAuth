@@ -29,8 +29,8 @@
  * @ingroup Extensions
  */
 class ApiSetGlobalAccountStatus extends ApiBase {
-	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
+		// Heavily based on code from SpecialCentralAuth::doSubmit
 		$params = $this->extractRequestParams();
 		$this->requireAtLeastOneParameter( $params, 'locked', 'hidden' );
 
@@ -130,9 +130,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		];
 	}
 
-	/**
-	 * @see ApiBase::getExamplesMessages()
-	 */
+	/** @inheritDoc */
 	protected function getExamplesMessages() {
 		return [
 			'action=setglobalaccountstatus&user=Example&locked=lock&hidden=&reason=Spam'
