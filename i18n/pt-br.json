@@ -28,7 +28,8 @@
 			"Dianakc",
 			"McDutchie",
 			"Macofe",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"mergeaccount": "Status da unificação de contas",
@@ -536,7 +537,7 @@
 	"apihelp-query+globalgroups-example-2": "Mostrar grupos globais com os direitos que eles concedem",
 	"apihelp-query+globaluserinfo-description": "Mostrar informações sobre um usuário global.",
 	"apihelp-query+globaluserinfo-summary": "Mostrar informações sobre um usuário global.",
-	"apihelp-query+globaluserinfo-param-user": "Usuário para o qual obter informações. Padrão para o usuário atual.",
+	"apihelp-query+globaluserinfo-param-user": "O usuário acerca do qual obter informação. Se <var>$1user</var> e <var>$1id</var> forem ambos omitidos será usado o utilizador atual.",
 	"apihelp-query+globaluserinfo-param-prop": "Que propriedades obter:\n;groups:Obter uma lista de grupos globais aos quais este usuário pertence.\n;rights:Obter uma lista de direitos globais que este usuário possui.\n;merged:Obter uma lista de contas fundidas.\n;unattached:Obter uma lista de contas não associadas.\n;editcount:Obter o editcount global do usuário.",
 	"apihelp-query+globaluserinfo-example-1": "Obter informações sobre o usuário global atual",
 	"apihelp-query+globaluserinfo-example-2": "Obter informações sobre o usuário global [[User:Example|Example]]",
