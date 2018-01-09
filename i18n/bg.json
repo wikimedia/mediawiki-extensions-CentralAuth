@@ -258,5 +258,9 @@
 	"centralauth-uwbr-registration": "Дата на регистрация",
 	"centralauth-uwbr-editcount": "Брой редакции",
 	"log-action-filter-globalauth": "Вид на промените:",
+	"log-action-filter-globalauth-delete": "Глобално изтриване на сметка",
+	"log-action-filter-globalauth-setstatus": "Глобална промяна на статута на сметка",
+	"log-action-filter-suppress-setstatus": "Глобална промяна на статута на сметка",
+	"log-action-filter-suppress-cadelete": "Глобално изтриване на сметка",
 	"log-action-filter-gblrights": "Вид на промените:"
 }
