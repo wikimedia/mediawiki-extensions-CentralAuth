@@ -34,7 +34,8 @@
 			"Gamliel Fishkin",
 			"Rubin16",
 			"Kareyac",
-			"Macofe"
+			"Macofe",
+			"Vcohen"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -380,7 +381,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "Игнорировать «черный список» названий (TitleBlacklist)",
 	"centralauth-rename-form-allowhigheditcount": "Подтвердите переименование участника с более чем $1 {{PLURAL:$1|правкой|правками}}",
 	"centralauth-rename-globaleditcount-threshold": "У этого участника более $1 {{PLURAL:$1|правки|правок}}. Пожалуйста, подтвердите, что вы действительно хотите переименовать этого участника, а системный администратор может проконтролировать этот процесс.",
-	"centralauth-rename-titleblacklist-match": "Выбранное имя учётной соответствует названию из «черного списка»: $1",
+	"centralauth-rename-titleblacklist-match": "Выбранное имя учётной соответствует названию из «чёрного списка»: $1",
 	"centralauth-rename-notinstalled": "Расширение Renameuser не устанавлено.",
 	"centralauth-rename-doesnotexist": "Предоставленная учетная запись не существует.",
 	"centralauth-rename-alreadyexists": "Запрашиваемое имя участника уже существует.",
@@ -483,7 +484,7 @@
 	"globalrenamequeue-request-unknown-body": "Запрос на переименование не был найден.",
 	"globalrenamequeue-request-status-title": "Переименовать с «$1» на «$2»",
 	"globalrenamequeue-request-antispoof-conflicts": "<stong>Выбранное имя участника похоже на уже {{PLURAL:$2|существующее имя|существующие имена}}:</strong> $1",
-	"globalrenamequeue-request-titleblacklist": "<stong>Выбранное имя учётной соответствует названию из «черного списка»: $1</strong>",
+	"globalrenamequeue-request-titleblacklist": "<stong>Выбранное имя учётной записи соответствует названию из «чёрного списка»: $1</strong>",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Предыдущее переименование|Предыдущие переименования}}",
 	"globalrenamequeue-view": ";Старое имя:\n:[[Special:CentralAuth/$1|$1]]\n;Новое имя:\n:[[Special:CentralAuth/$2|$2]]\n;Причина:\n:$3\n;Статус:\n:$4\n;Запрошено:\n:$5\n;Завершено:\n:$6\n;Выполнено:\n:[$7 $8]\n;Примечания:\n:$9",
 	"globalrenamequeue-view-approved": "одобрен",
