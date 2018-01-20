@@ -14,14 +14,16 @@
 	"centralauth-admin-blocklog": "بندش لاگ",
 	"centralauth-admin-delete-description": "گلوبل کاتي کي ڊاھڻ سان سڀئي لوڪل کاتا ڊيٽاچ ڪري ڇڏيندو، ۽ ٻئي واپرائيندڙ لاءِ گلوبل نالو آزاد ڇڏيندئو.\nسڀ لوڪل کاتا موجود رھڻ جاري رکندا.",
 	"centralauth-admin-rename-in-progress": "ھن کاتي جو نالو تبديل ٿي رهيو آهي. توهان نالي جي تبديليءَ جي[[Special:GlobalRenameProgress/$1|ڪارڪردگي ڏسو]]، گلوبل نالي تبديليءَ جو لاگ واھپيندڙ لاءِ هيٺ مهيا ڪيل آهي.",
+	"centralauth-admin-logsnippet": "پويون عالمي کاتي-جون تبديليون",
 	"centralauth-admin-multi-bot": "تازيون تبديليون",
 	"centralauth-prefs-status": "عالمي کاتو:",
-	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگھي: اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ٻيو نالو چونڊيو.",
-	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو يوزرنانءُ اڳ ۾ ئي استعمال هيٺ آهي. مهرباني ڪري ڪو ٻيو نالو چونڊيو.",
+	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگھي: اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ٻيو نالو چونڊيو.",
+	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ڪو ٻيو نالو چونڊيو.",
 	"globalrenamequeue-request-cancel-text": "رد",
 	"globalrenamequeue-form-username": "واپرائيندڙ-نانءُ:",
 	"globalrenamequeue-form-newname": "گهريل واپرائيندڙ-نانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
 	"globalrenamequeue-form-status-all": "سڀ",
-	"apierror-centralauth-badusername": "واپرائيندڙ-نانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي"
+	"apierror-centralauth-badusername": "واپرائيندڙ-نانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي",
+	"centralauth-log-gblrename-oldname": "پويون واپرائيندڙ-نانءُ:"
 }
