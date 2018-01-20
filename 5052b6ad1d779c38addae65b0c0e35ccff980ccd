@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ef26315_535f0377",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-01-20T11:34:56Z",
+      "side": 1,
+      "message": "Given that this message is being changed for the CentralAuth extension I think we should use a more neutrally worded statement here. We should not assume that on other wiki farms using CentralAuth global renamers and stewards do exist with those names. I\u0027d suggest: \"a notification will be sent to those able to perform this operation. You will be notified (...)\". We can always add a more customized one by adding an override in WikimediaMessages for us.",
+      "range": {
+        "startLine": 433,
+        "startChar": 246,
+        "endLine": 433,
+        "endChar": 275
+      },
+      "revId": "5052b6ad1d779c38addae65b0c0e35ccff980ccd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
