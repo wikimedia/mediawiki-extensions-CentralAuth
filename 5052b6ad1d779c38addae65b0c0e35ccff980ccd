@@ -22,6 +22,30 @@
       "revId": "5052b6ad1d779c38addae65b0c0e35ccff980ccd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ef26315_96485934",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 3963
+      },
+      "writtenOn": "2018-01-20T13:12:08Z",
+      "side": 1,
+      "message": "Sorry for the delay.\n\nEdited according to your proposition thanks.\n\nNote that \"a notification will be sent\" is not exactly true, ideally we should change this.",
+      "parentUuid": "8ef26315_535f0377",
+      "range": {
+        "startLine": 433,
+        "startChar": 246,
+        "endLine": 433,
+        "endChar": 275
+      },
+      "revId": "5052b6ad1d779c38addae65b0c0e35ccff980ccd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
