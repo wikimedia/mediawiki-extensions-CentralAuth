@@ -146,14 +146,14 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return array|mixed
 	 */
 	private function getWorkingPasswords() {
-		wfSuppressWarnings();
+		MediaWiki\suppressWarnings();
 		$data = RequestContext::getMain()->getRequest()->getSessionData( 'wsCentralAuthMigration' );
 		$passwords = unserialize(
 			gzinflate(
 				$this->xorString(
 					$data[$this->mSessionToken],
 					$this->mSessionKey ) ) );
-				wfRestoreWarnings();
+			MediaWiki\restoreWarnings();
 		if ( is_array( $passwords ) ) {
 			return $passwords;
 		}
