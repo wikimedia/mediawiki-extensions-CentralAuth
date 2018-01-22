@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ef26315_d8420763",
+        "filename": "includes/specials/SpecialMergeAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-01-22T17:26:01Z",
+      "side": 1,
+      "message": "This should just be restoreWarnings()",
+      "range": {
+        "startLine": 156,
+        "startChar": 13,
+        "endLine": 156,
+        "endChar": 29
+      },
+      "revId": "47c15f258ad208971019f15fb2a9b946f44bb4bb",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
