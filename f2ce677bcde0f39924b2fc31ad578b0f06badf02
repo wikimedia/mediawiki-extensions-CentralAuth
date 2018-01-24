@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ef26315_1a129964",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2018-01-24T18:12:46Z",
+      "side": 1,
+      "message": "This will prevent the exception from being logged in the excepted place (and here you are only logging the message, not the trace), will prevent the job from failing (and getting retried) and will prevent the DB transaction from being rolled back. So it\u0027s not a good idea to suppress the exception.\n\nIt\u0027s perfectly valid to have try...finally without a catch block. Also personally I don\u0027t think there is much point in exception handling here (when an exception happens nothing will care about user rights) although no harm in it either.",
+      "revId": "f2ce677bcde0f39924b2fc31ad578b0f06badf02",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
