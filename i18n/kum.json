@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arsenekoumyk"
+		]
+	},
+	"centralauth-foreign-link": "Къоллавчу $1 $2 викини ичинде",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|къошум|къошумлар}} $2 викини ичинде",
+	"centralauth-admin-blocklog": "къамав журналы"
+}
