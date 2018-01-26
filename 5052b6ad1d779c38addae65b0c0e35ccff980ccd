@@ -46,6 +46,30 @@
       "revId": "5052b6ad1d779c38addae65b0c0e35ccff980ccd",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4efcebec_25551453",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-01-26T21:09:46Z",
+      "side": 1,
+      "message": "Yes I agree. Maybe \"a list of requests made via this form will be made avalaible to the users able to perform this operation in your wiki farm\" ?",
+      "parentUuid": "8ef26315_96485934",
+      "range": {
+        "startLine": 433,
+        "startChar": 246,
+        "endLine": 433,
+        "endChar": 275
+      },
+      "revId": "5052b6ad1d779c38addae65b0c0e35ccff980ccd",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
