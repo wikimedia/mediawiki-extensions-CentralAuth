@@ -4,7 +4,8 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel",
 			"Amire80",
 			"GerardM",
-			"عثمان خان شاہ"
+			"عثمان خان شاہ",
+			"Baloch Khan"
 		]
 	},
 	"mergeaccount": "د يومخيزې ننوتنې دريځ",
@@ -50,6 +51,7 @@
 	"centralauth-admin-info-locked": "تړل شوي:",
 	"centralauth-admin-info-hidden": "پټ پوړ:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|نړېواله ډله|نړېوالې ډلې}}:",
+	"centralauth-admin-info-attached": "د اړوند گڼونو شمیر:",
 	"centralauth-admin-yes": "هو",
 	"centralauth-admin-no": "نه",
 	"centralauth-admin-hidden-list": "د ټولگړي لړليک نه",
@@ -58,6 +60,8 @@
 	"centralauth-admin-list-legend-rw": "سيمه ايز گڼونونه نااخږل",
 	"centralauth-admin-blocklog": "د بنديز يادښت",
 	"centralauth-admin-list-localwiki": "سيمه ايز ويکي",
+	"centralauth-admin-list-attached-on": "يوځاي کيدنه",
+	"centralauth-admin-list-method": "ډول",
 	"centralauth-admin-list-editcount": "د سمونونو شمېر",
 	"centralauth-admin-list-groups": "ډلې",
 	"centralauth-admin-list-blocked": "بنديز لگېدلی",
