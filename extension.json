@@ -277,7 +277,6 @@
 		"ext.centralauth.centralautologin": {
 			"scripts": "ext.centralauth.centralautologin.js",
 			"styles": "ext.centralauth.centralautologin.css",
-			"position": "top",
 			"targets": [
 				"mobile",
 				"desktop"
@@ -289,14 +288,12 @@
 		},
 		"ext.centralauth.centralautologin.clearcookie": {
 			"scripts": "ext.centralauth.centralautologin.clearcookie.js",
-			"position": "top",
 			"targets": [
 				"mobile",
 				"desktop"
 			]
 		},
 		"ext.centralauth.noflash": {
-			"position": "top",
 			"styles": "ext.centralauth.noflash.css"
 		},
 		"ext.centralauth.globaluserautocomplete": {
@@ -307,11 +304,9 @@
 			]
 		},
 		"ext.centralauth.globalusers": {
-			"position": "top",
 			"styles": "ext.centralauth.globalusers.css"
 		},
 		"ext.centralauth.globalgrouppermissions": {
-			"position": "top",
 			"styles": "ext.centralauth.globalgrouppermissions.css"
 		},
 		"ext.centralauth.globalrenameuser": {
