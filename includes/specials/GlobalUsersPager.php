@@ -49,7 +49,8 @@ class GlobalUsersPager extends AlphabeticPager {
 		if ( !isset( $query['group'] ) && $this->requestedGroup ) {
 			$query['group'] = $this->requestedGroup;
 		}
-		return $this->mDefaultQuery = $query;
+		$this->mDefaultQuery = $query;
+		return $this->mDefaultQuery;
 	}
 
 	/**
