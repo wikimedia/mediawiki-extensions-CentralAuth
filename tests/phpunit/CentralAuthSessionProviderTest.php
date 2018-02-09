@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * @covers CentralAuthSessionProvider
+ */
 class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @dataProvider provideSuggestLoginUsername
