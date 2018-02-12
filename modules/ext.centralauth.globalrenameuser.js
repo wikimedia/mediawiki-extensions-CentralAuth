@@ -1,5 +1,5 @@
 ( function ( mw, $ ) {
-	$( document ).ready( function () {
+	$( function () {
 		/*global confirm */
 
 		// Confirm renames

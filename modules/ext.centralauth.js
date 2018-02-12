@@ -40,7 +40,7 @@
 			.fadeIn();
 	}
 
-	$( document ).ready( function () {
+	$( function () {
 		/*global confirm */
 
 		// Back link for CentralLogin/start
