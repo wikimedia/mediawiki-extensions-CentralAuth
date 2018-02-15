@@ -1,4 +1,4 @@
-( function ( mw, $, undefined ) {
+( function ( mw, $ ) {
 	var $methodHint;
 
 	function showMethodHint( methodName, e ) {
@@ -41,7 +41,7 @@
 	}
 
 	$( function () {
-		/*global confirm */
+		/* global confirm */
 
 		// Back link for CentralLogin/start
 		$( '#centralauth-backlink-section' ).append(

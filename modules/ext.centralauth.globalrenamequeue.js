@@ -1,7 +1,7 @@
 ( function ( mw, $ ) {
 	'use strict';
 	$( function () {
-		/*global confirm */
+		/* global confirm */
 
 		// Confirm renames
 		$( '#mw-renamequeue-approve' ).click( function () {

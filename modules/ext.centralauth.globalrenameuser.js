@@ -1,6 +1,6 @@
 ( function ( mw, $ ) {
 	$( function () {
-		/*global confirm */
+		/* global confirm */
 
 		// Confirm renames
 		mw.util.$content.find( 'form' ).first().on( 'submit', function () {
