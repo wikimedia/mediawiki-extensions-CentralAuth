@@ -135,7 +135,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		$info = [
 			'userInfo' => UserInfo::newFromName( $userName, true ),
 			'provider' => $this,
-			'id' => $this->hashToSessionId( join( "\n", $data ) ),
+			'id' => $this->hashToSessionId( implode( "\n", $data ) ),
 			'persisted' => true,
 			'forceUse' => true,
 		];

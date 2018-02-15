@@ -3,7 +3,7 @@
 /**
  * @covers CentralAuthSessionProvider
  */
-class CentralAuthSessionProviderTest extends PHPUnit_Framework_TestCase {
+class CentralAuthSessionProviderTest extends PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider provideSuggestLoginUsername
 	 */
