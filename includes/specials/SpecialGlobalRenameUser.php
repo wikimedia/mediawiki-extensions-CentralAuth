@@ -30,7 +30,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/**
 	 * @const int Require confirmation if olduser has more than this many global edits
 	 */
-	const EDITCOUNT_THRESHOLD = 50000;
+	const EDITCOUNT_THRESHOLD = 100000;
 
 	public function __construct() {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
@@ -108,7 +108,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			]
 		];
 
-		// Ask for confirmation if the user has more than 50k edits globally
+		// Ask for confirmation if the user has more than 100k edits globally
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
 		if ( $oldName !== '' ) {
 			$oldUser = User::newFromName( $oldName );
