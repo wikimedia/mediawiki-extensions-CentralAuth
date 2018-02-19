@@ -28,7 +28,8 @@
 			"飞舞回堂前",
 			"McDutchie",
 			"Wwycheuk",
-			"A2093064"
+			"A2093064",
+			"Hello903hello"
 		]
 	},
 	"mergeaccount": "帳號整合狀態",
@@ -445,7 +446,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "關閉日期",
 	"globalrenamequeue-column-rq-status": "狀態",
 	"globalrenamequeue-column-rq-performer": "完成由",
-	"globalrenamequeue-action-address": "位址",
+	"globalrenamequeue-action-address": "解決",
 	"globalrenamequeue-action-view": "檢視",
 	"globalrenamequeue-request-title": "重新命名 \"$1\" 嗎？",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> 正在請求重新命名至 <strong>$3</strong>。",
