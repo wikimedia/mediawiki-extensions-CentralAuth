@@ -35,7 +35,8 @@
 			"Rubin16",
 			"Kareyac",
 			"Macofe",
-			"Vcohen"
+			"Vcohen",
+			"Mouse21"
 		]
 	},
 	"mergeaccount": "Состояние объединения учётных записей",
@@ -503,6 +504,7 @@
 	"sulrenamewarning-usenew": "Пожалуйста, используйте {{GENDER:$1|ваше}} новое имя участника '''$1''' при входе в систему в будущем.",
 	"globalrenamequeue-request-reason-label": "Общедоступный комментарий",
 	"apihelp-deleteglobalaccount-description": "Удалить глобального участника.",
+	"apihelp-deleteglobalaccount-summary": "Удалить глобального участника.",
 	"apihelp-deleteglobalaccount-param-user": "Участник для удаления.",
 	"apihelp-deleteglobalaccount-param-reason": "Причина удаления участника.",
 	"apihelp-deleteglobalaccount-example-1": "Удалить глобальную учётную запись для [[User:Example]]",
