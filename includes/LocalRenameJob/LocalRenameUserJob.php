@@ -165,10 +165,13 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 		$jobs = [];
 
+		// T188171: escape any occurance of '$' in the replacement string
+		// passed to preg_replace.
+		$toReplace = preg_replace( '/\$/', '\\\\$', $toTitle->getDBkey() );
 		foreach ( $rows as $row ) {
 			$oldPage = Title::newFromRow( $row );
 			$newPage = Title::makeTitleSafe( $row->page_namespace,
-				preg_replace( '!^[^/]+!', $toTitle->getDBkey(), $row->page_title ) );
+				preg_replace( '!^[^/]+!', $toReplace, $row->page_title ) );
 			$jobs[] = new LocalPageMoveJob(
 				Title::newFromText( 'LocalRenameUserJob' ),
 				$jobParams + [
