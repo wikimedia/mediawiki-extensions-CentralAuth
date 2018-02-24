@@ -165,10 +165,11 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 		$jobs = [];
 
+		$toReplace = static::escapeReplacement( $toTitle->getDBkey() );
 		foreach ( $rows as $row ) {
 			$oldPage = Title::newFromRow( $row );
 			$newPage = Title::makeTitleSafe( $row->page_namespace,
-				preg_replace( '!^[^/]+!', $toTitle->getDBkey(), $row->page_title ) );
+				preg_replace( '!^[^/]+!', $toReplace, $row->page_title ) );
 			$jobs[] = new LocalPageMoveJob(
 				Title::newFromText( 'LocalRenameUserJob' ),
 				$jobParams + [
@@ -185,5 +186,24 @@ class LocalRenameUserJob extends LocalRenameJob {
 		parent::done();
 		$caOld = CentralAuthUser::getInstanceByName( $this->params['from'] );
 		$caOld->quickInvalidateCache();
+	}
+
+	/**
+	 * Escape a string to be used as a replacement by preg_replace so that
+	 * anything in it that looks like a backreference is treated as a literal
+	 * substitution.
+	 *
+	 * @param string $str String to escape
+	 * @return string
+	 */
+	protected static function escapeReplacement( $str ) {
+		// T188171: escape any occurrence of '$n' or '\n' in the replacement
+		// string passed to preg_replace so that it will not be treated as
+		// a backreference.
+		return preg_replace(
+			'/[$\\\\]{?\d+}?/', // find $n, ${n}, and \n
+			'\\\\${0}',       // prepend with a literal '\\'
+			$str
+		);
 	}
 }
