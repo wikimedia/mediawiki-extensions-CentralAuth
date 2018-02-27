@@ -1,0 +1,7 @@
+Code-Review+2: Thcipriani <tcipriani@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 27 Feb 2018 23:55:27 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/414972
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/wmf/1.31.0-wmf.22
