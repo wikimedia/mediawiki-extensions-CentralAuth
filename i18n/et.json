@@ -424,5 +424,16 @@
 	"centralauth-uwbr-registration": "Registreerunud",
 	"centralauth-uwbr-registration-nodate": "Teadmata",
 	"centralauth-uwbr-editcount": "Redigeerimisi",
-	"centralauth-uwbr-intro": "Sellel leheküljel on loetletud siin vikis registreeritud kasutajad, kelle nimi muudetakse."
+	"centralauth-uwbr-intro": "Sellel leheküljel on loetletud siin vikis registreeritud kasutajad, kelle nimi muudetakse.",
+	"sessionprovider-centralauthsessionprovider": "kesksed küpsisepõhised seansid",
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-tüüpi seansid",
+	"log-action-filter-globalauth": "Muudatuse tüüp:",
+	"log-action-filter-globalauth-delete": "Globaalse konto kustutamine",
+	"log-action-filter-globalauth-setstatus": "Globaalse konto oleku muutmine",
+	"log-action-filter-suppress-setstatus": "Globaalse konto oleku muutmine",
+	"log-action-filter-suppress-cadelete": "Globaalse konto kustutamine",
+	"log-action-filter-gblrights": "Muudatuse tüüp:",
+	"log-action-filter-gblrights-usergroups": "Globaalne kasutajaõiguste muutmine",
+	"log-action-filter-gblrights-groupprms": "Globaalne kasutajarühma muutmine",
+	"log-action-filter-gblrights-setmodify": "Vikikomplekti muutmine"
 }
