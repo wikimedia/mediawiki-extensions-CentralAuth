@@ -116,7 +116,7 @@ class ForceRenameNotification extends Maintenance {
 			}
 		}
 
-		$this->error( "Could not find a valid localized file for $langCode.", 1 );
+		$this->fatalError( "Could not find a valid localized file for $langCode." );
 	}
 }
 

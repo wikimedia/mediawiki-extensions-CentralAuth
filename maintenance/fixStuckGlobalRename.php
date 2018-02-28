@@ -26,13 +26,13 @@ class FixStuckGlobalRename extends Maintenance {
 		$oldName = User::getCanonicalName( $this->getArg( 0 ) );
 		$newName = User::getCanonicalName( $this->getArg( 1 ) );
 		if ( $oldName === false || $newName === false ) {
-			$this->error( 'Invalid name', 1 );
+			$this->fatalError( 'Invalid name' );
 		}
 
 		$logTitle = Title::newFromText( 'Special:CentralAuth' )->getSubpage( $newName );
 		$ca = new CentralAuthUser( $newName );
 		if ( !$ca->renameInProgressOn( wfWikiID() ) ) {
-			$this->error( "{$ca->getName()} does not have a rename in progress on this wiki.", 1 );
+			$this->fatalError( "{$ca->getName()} does not have a rename in progress on this wiki." );
 		}
 
 		$dbr = wfGetDB( DB_REPLICA, [], $this->getOption( 'logwiki' ) );

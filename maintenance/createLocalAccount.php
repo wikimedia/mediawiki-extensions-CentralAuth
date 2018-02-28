@@ -19,16 +19,16 @@ class CreateLocalAccount extends Maintenance {
 
 		$user = User::newFromName( $username );
 		if ( $user === false ) {
-			$this->error( "'$username' is an invalid username\n", 1 );
+			$this->fatalError( "'$username' is an invalid username\n" );
 		}
 		// Normalize username
 		$username = $user->getName();
 		if ( $user->getId() ) {
-			$this->error( "User '$username' already exists\n", 1 );
+			$this->fatalError( "User '$username' already exists\n" );
 		} else {
 			$central = CentralAuthUser::getInstance( $user );
 			if ( !$central->exists() ) {
-				$this->error( "No such global user: '$username'\n", 1 );
+				$this->fatalError( "No such global user: '$username'\n" );
 			}
 
 			$status = CentralAuthUtils::autoCreateUser( $user );
