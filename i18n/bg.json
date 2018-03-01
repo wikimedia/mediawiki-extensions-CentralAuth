@@ -195,7 +195,7 @@
 	"centralauth-globalgroupperms-group-listmembers": "списък на потребителите",
 	"centralauth-globalgroupperms-group-wikiset": "Набор от уикита, където тази група е активна: $1",
 	"centralauth-newgroup-legend": "Създаване на нова група",
-	"centralauth-newgroup-intro": "Може да използвате настоящия формуляр, за да дадете права на нова група. Обърнете внимание, че една група започва да съществува едва когато са и&#768; дадени някакви права.",
+	"centralauth-newgroup-intro": "Може да използвате настоящия формуляр, за да дадете права на нова група.\nОбърнете внимание, че една група започва да съществува едва когато са и&#768; дадени някакви права.",
 	"centralauth-globalgroupperms-newgroupname": "Име на новата група:",
 	"centralauth-globalgroupperms-creategroup-submit": "Даване на права",
 	"centralauth-editgroup-fieldset": "Права за $1",
