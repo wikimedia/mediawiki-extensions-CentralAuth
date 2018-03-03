@@ -175,7 +175,7 @@
 	"centralauth-prefs-count-unattached": "На $1 {{PLURAL:$1|викију|викија}} су остали непотврђени налози с вашим именом.",
 	"centralauth-prefs-detail-unattached": "Није потврђено да Ваш налог припада глобалном налогу.",
 	"centralauth-prefs-manage": "Управљај глобалним налогом",
-	"centralauth-prefs-view": "Прикажи глобалне податке налога",
+	"centralauth-prefs-view": "погледај глобалне податке налога",
 	"centralauth-renameuser-merged": "Корисник $1 је прешао на систем за пријављивање с уједињеним налогом.\nПреименовање ће узроковати да се локални налог одвоји од глобалног.",
 	"centralauth-renameuser-reserved": "Корисничко име $2 је резервисано за глобални налог.",
 	"centralauth-invalid-wiki": "Нема такве вики базе података: $1",
