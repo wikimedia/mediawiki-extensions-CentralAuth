@@ -487,7 +487,7 @@
 	"centralauth-abortlogin-renamed": "O nome da sua conta foi alterado para \"$1\". Passe a usar esse nome de utilizador, por favor.",
 	"sulrenamewarning-title": "O nome da {{GENDER:$1|sua}} conta foi alterado",
 	"sulrenamewarning-renamed": "O nome da {{GENDER:$2|sua}} conta '''$1''' foi alterado para '''$2''' durante a migração automática para o sistema de autenticação unificado da {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-usenew": "Por favor, utilize o seu nome de {{GENDER:$1|utilizador|utilizadora}} \"$1\" no futuro quando iniciar uma sessão.",
+	"sulrenamewarning-usenew": "Use o seu {{GENDER:$1|nome de utilizador}} \"$1\" de futuro quando iniciar uma sessão, por favor.",
 	"sulrenamewarning-authmanager-ok-help": "Continuar após mostrar a notificação da alteração de nome.",
 	"globalrenamequeue-request-reason-label": "Comentário público da entrada de registo (se aceitou)",
 	"apihelp-centralauthtoken-description": "Obter uma chave centralauthtoken para fazer um pedido autenticado a uma wiki anexada.",
