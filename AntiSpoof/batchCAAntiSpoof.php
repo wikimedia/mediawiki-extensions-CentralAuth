@@ -15,13 +15,16 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @param array $items
 	 */
 	protected function batchRecord( $items ) {
-		CentralAuthSpoofUser::batchRecord( $this->getDB(), $items );
+		CentralAuthSpoofUser::batchRecord( $this->getDB( DB_MASTER ), $items );
 	}
 
 	/**
+	 * @param int $db
+	 * @param array $groups
+	 * @param string|bool $wiki
 	 * @return IDatabase
 	 */
-	protected function getDB() {
+	protected function getDB( $db, $groups = [], $wiki = false ) {
 		return CentralAuthUtils::getCentralDB();
 	}
 
@@ -30,6 +33,10 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 */
 	protected function getTableName() {
 		return 'globaluser';
+	}
+
+	protected function getPrimaryKey() {
+		return 'gu_id';
 	}
 
 	/**
