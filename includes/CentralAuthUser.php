@@ -1807,15 +1807,22 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 			# Locally log to suppress ?
 		} else {
-			$dbw->delete(
-				'ipblocks',
+			$blockQuery = Block::getQueryInfo();
+			$ids = $dbw->selectFieldValues(
+				$blockQuery['tables'],
+				'ipb_id',
 				[
 					'ipb_user' => $data['id'],
-					'ipb_by' => 0,	// Check whether this block was imposed globally
+					$blockQuery['fields']['ipb_by'] . ' = 0', // Our blocks will have ipb_by = 0
 					'ipb_deleted' => true,
 				],
-				__METHOD__
+				__METHOD__,
+				[],
+				$blockQuery['joins']
 			);
+			if ( $ids ) {
+				$dbw->delete( 'ipblocks', [ 'ipb_id' => $ids ], __METHOD__ );
+			}
 
 			// Unsuppress only if unblocked
 			if ( $dbw->affectedRows() ) {
@@ -2482,11 +2489,19 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		// Edit count field may not be initialized...
 		if ( is_null( $row->user_editcount ) ) {
-			$data['editCount'] = $db->selectField(
-				'revision',
-				'COUNT(*)',
-				[ 'rev_user' => $data['id'] ],
-				__METHOD__ );
+			$actorWhere = ActorMigration::newMigration()
+				->getWhere( $db, 'rev_user', User::newFromId( $data['id'] ) );
+			$data['editCount'] = 0;
+			foreach ( $actorWhere['orconds'] as $cond ) {
+				$data['editCount'] += $db->selectField(
+					[ 'revision' ] + $actorWhere['tables'],
+					'COUNT(*)',
+					$cond,
+					__METHOD__,
+					[],
+					$actorWhere['joins']
+				);
+			}
 		}
 
 		// And we have to fetch groups separately, sigh...
