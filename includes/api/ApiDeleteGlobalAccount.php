@@ -31,13 +31,7 @@
 class ApiDeleteGlobalAccount extends ApiBase {
 	public function execute() {
 		// Heavily based on code from SpecialCentralAuth::doSubmit
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'centralauth-unmerge' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'centralauth-unmerge' ) ) {
-				$this->dieUsageMsg( [ 'badaccess-groups' ] );
-			}
-		}
+		$this->checkUserRightsAny( 'centralauth-unmerge' );
 
 		$params = $this->extractRequestParams();
 
