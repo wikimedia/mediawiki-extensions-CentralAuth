@@ -29,15 +29,9 @@
  * @ingroup Extensions
  */
 class ApiDeleteGlobalAccount extends ApiBase {
+	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
-		// Heavily based on code from SpecialCentralAuth::doSubmit
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'centralauth-unmerge' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'centralauth-unmerge' ) ) {
-				$this->dieUsageMsg( [ 'badaccess-groups' ] );
-			}
-		}
+		$this->checkUserRightsAny( 'centralauth-unmerge' );
 
 		$params = $this->extractRequestParams();
 
@@ -76,7 +70,9 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		];
 	}
 
-	/** @inheritDoc */
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
 	protected function getExamplesMessages() {
 		return [
 			'action=deleteglobalaccount&user=Example&reason=Because+I+can'

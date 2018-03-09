@@ -29,18 +29,12 @@
  * @ingroup Extensions
  */
 class ApiSetGlobalAccountStatus extends ApiBase {
+	/* Heavily based on code from SpecialCentralAuth::doSubmit */
 	public function execute() {
-		// Heavily based on code from SpecialCentralAuth::doSubmit
 		$params = $this->extractRequestParams();
 		$this->requireAtLeastOneParameter( $params, 'locked', 'hidden' );
 
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'centralauth-lock' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'centralauth-lock' ) ) {
-				$this->dieUsageMsg( [ 'badaccess-groups' ] );
-			}
-		}
+		$this->checkUserRightsAny( 'centralauth-lock' );
 
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
@@ -130,7 +124,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		];
 	}
 
-	/** @inheritDoc */
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
 	protected function getExamplesMessages() {
 		return [
 			'action=setglobalaccountstatus&user=Example&locked=lock&hidden=&reason=Spam'
