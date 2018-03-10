@@ -1,8 +1,8 @@
 <?php
+
 /**
  * Setup test global users
  */
-
 class CentralAuthTestUser {
 
 	/**
