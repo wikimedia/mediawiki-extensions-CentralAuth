@@ -30,7 +30,8 @@
 			"Macofe",
 			"Jerrykim306",
 			"Ellif",
-			"Bluemersen"
+			"Bluemersen",
+			"Garam"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -417,7 +418,7 @@
 	"centralauth-usermerge-queued": "$1 이름을 $2 이름으로 병합하는 작업이 진행 중입니다.\n\n[[Special:GlobalRenameProgress/$3|진행 과정을 봅니다]].",
 	"centralauth-usermerge-invalid": "\"$1\" 이름을 가진 통합 계정이 없습니다.",
 	"centralauth-usermerge-already": "이미 $1에 대한 통합 계정 이름 바꾸기나 병합이 진행 중입니다.",
-	"centralauth-usermerge-noself": "당신 자신의 계정을 병합할 수 없습니다.",
+	"centralauth-usermerge-noself": "자신의 계정을 병합할 수 없습니다.",
 	"action-centralauth-usermerge": "여러 통합 계정 사용자를 병합",
 	"right-centralauth-usermerge": "여러 통합 계정 사용자를 병합",
 	"centralauth-usermerge-confirm": "이 사용자들의 통합 계정을 병합하시겠습니까?",
