@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0987714c_339782f1",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 194
+      },
+      "writtenOn": "2018-03-12T01:02:31Z",
+      "side": 1,
+      "message": "Because of this: https://integration.wikimedia.org/ci/job/mwext-testextension-hhvm-jessie/37243/console",
+      "parentUuid": "6e233e1a_5c81759a",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 4
+      },
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4757cf1_e9d5ba01",
         "filename": "includes/api/ApiSetGlobalAccountStatus.php",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-03-12T00:50:43Z",
       "side": 1,
       "message": "Same",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 4
+      },
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "30c92951_41f09346",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 194
+      },
+      "writtenOn": "2018-03-12T01:02:31Z",
+      "side": 1,
+      "message": "Same :)",
+      "parentUuid": "a4757cf1_e9d5ba01",
       "range": {
         "startLine": 129,
         "startChar": 0,
