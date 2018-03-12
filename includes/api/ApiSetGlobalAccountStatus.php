@@ -34,13 +34,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$params = $this->extractRequestParams();
 		$this->requireAtLeastOneParameter( $params, 'locked', 'hidden' );
 
-		if ( is_callable( [ $this, 'checkUserRightsAny' ] ) ) {
-			$this->checkUserRightsAny( 'centralauth-lock' );
-		} else {
-			if ( !$this->getUser()->isAllowed( 'centralauth-lock' ) ) {
-				$this->dieUsageMsg( [ 'badaccess-groups' ] );
-			}
-		}
+		$this->checkUserRightsAny( 'centralauth-lock' );
 
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
