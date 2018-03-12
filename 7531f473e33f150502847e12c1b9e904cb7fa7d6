@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ebee7ebb_8e092cc9",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-03-12T02:16:15Z",
+      "side": 1,
+      "message": "Why do this? Not that the doc comments inherited from ApiBase are all that useful in this case, but this doesn\u0027t document anything at all about the function.\n\nJust leave it as an inline comment inside the function.",
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e233e1a_5c81759a",
         "filename": "includes/api/ApiDeleteGlobalAccount.php",
         "patchSetId": 2
@@ -49,6 +66,47 @@
     },
     {
       "key": {
+        "uuid": "a7368538_ef71a235",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-03-12T02:16:15Z",
+      "side": 1,
+      "message": "That only happened because you changed it in PS1. So saying \"because of this\" doesn\u0027t actually tell us why you\u0027re changing it instead of leaving \"/** @inheritDoc */\".",
+      "parentUuid": "0987714c_339782f1",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 4
+      },
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af4d58bc_c989090f",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-03-12T02:16:15Z",
+      "side": 1,
+      "message": "Same.",
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4757cf1_e9d5ba01",
         "filename": "includes/api/ApiSetGlobalAccountStatus.php",
         "patchSetId": 2
@@ -84,6 +142,30 @@
       "side": 1,
       "message": "Same :)",
       "parentUuid": "a4757cf1_e9d5ba01",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 4
+      },
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d91b73ec_7974b3c1",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-03-12T02:16:15Z",
+      "side": 1,
+      "message": "Same.",
+      "parentUuid": "30c92951_41f09346",
       "range": {
         "startLine": 129,
         "startChar": 0,
