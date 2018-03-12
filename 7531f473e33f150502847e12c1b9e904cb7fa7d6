@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e233e1a_5c81759a",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-03-12T00:50:43Z",
+      "side": 1,
+      "message": "Why did you change this?",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 4
+      },
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4757cf1_e9d5ba01",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-03-12T00:50:43Z",
+      "side": 1,
+      "message": "Same",
+      "range": {
+        "startLine": 129,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 4
+      },
+      "revId": "7531f473e33f150502847e12c1b9e904cb7fa7d6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
