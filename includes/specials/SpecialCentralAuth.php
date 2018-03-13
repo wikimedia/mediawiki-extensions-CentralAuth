@@ -667,7 +667,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	/**
 	 * @param string $level
-	 * @return string
+	 * @return string Already html escaped
 	 */
 	public function formatHiddenLevel( $level ) {
 		// @FIXME: This shouldn't be used in SpecialMultiLock
