@@ -5,7 +5,8 @@
 			"Gmelfi",
 			"C.R.",
 			"Pippinu",
-			"Sarvaturi"
+			"Sarvaturi",
+			"S4b1nuz E.656"
 		]
 	},
 	"mergeaccount": "Prucessu d'unificazzioni di l'utenzi - status",
@@ -52,7 +53,7 @@
 	"centralauth-admin-status-hidden": "Ammucciatu:",
 	"globalusers": "Elencu di l'utenti glubbali",
 	"centralauth-listusers-locked": "firmatu",
-	"centralauth-prefs-status": "Situazzioni di l'utenza glubbali",
+	"centralauth-prefs-status": "Utenza glubbali:",
 	"centralauth-prefs-count-attached": "La tò utenza è attiva supra $1 {{PLURAL:$1|situ|sita}} di pruggettu.",
 	"centralauth-prefs-count-unattached": "Ci sunu utenzi nun cunfirmati cô tò nomu supra $1 {{PLURAL:$1|pruggettu|pruggetta}}.",
 	"centralauth-prefs-manage": "Gistioni dâ tò utenza glubbali",
