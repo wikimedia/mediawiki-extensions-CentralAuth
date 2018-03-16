@@ -4,7 +4,7 @@
  * @group CentralAuthDB
  * @covers CentralAuthIdLookup
  */
-class CentralAuthIdLookupTest extends CentralAuthTestCaseUsingDatabase {
+class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 
 	private $centralUsers = [
 		'GlobalUser' => 1001,

@@ -3,7 +3,7 @@
  * Basic tests for CentralAuthHooks
  * @group CentralAuthDB
  */
-class CentralAuthHooksUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
+class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 
 	/**
 	 * @covers CentralAuthHooks::onUserGetEmailAuthenticationTimestamp

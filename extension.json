@@ -240,7 +240,7 @@
 		"GlobalUserMergeLogger": "includes/GlobalRename/GlobalUserMergeLogger.php",
 		"GlobalUserMerge": "includes/GlobalRename/GlobalUserMerge.php",
 		"GlobalUserMergeDatabaseUpdates": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
-		"CentralAuthTestCaseUsingDatabase": "tests/phpunit/CentralAuthTestCaseUsingDatabase.php",
+		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
 		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php",
 		"SpecialUsersWhoWillBeRenamed": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
 		"UsersWhoWillBeRenamedPager": "includes/specials/UsersWhoWillBeRenamedPager.php",
