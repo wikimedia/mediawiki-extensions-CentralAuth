@@ -39,11 +39,8 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		if ( !$globalUser->exists() ||
 			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
 		) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( [ 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ] );
-			} else {
-				$this->dieUsageMsg( [ 'nosuchuser', $globalUser->getName() ] );
-			}
+			$this->dieWithError( [ 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ] );
+
 		}
 
 		$status = $globalUser->adminDelete( $params['reason'] );
