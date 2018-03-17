@@ -9,10 +9,6 @@
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
 	</rule>
-	<rule ref="MediaWiki.Files.ClassMatchesFilename.WrongCase">
-		<exclude-pattern>*/maintenance/*</exclude-pattern>
-		<exclude-pattern>*/AntiSpoof/*</exclude-pattern>
-	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
 	</rule>
