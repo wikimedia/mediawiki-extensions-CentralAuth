@@ -4,7 +4,7 @@
  * Setup database tests for centralauth
  * @group CentralAuthDB
  */
-class CentralAuthUserUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
+class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 
 	/**
 	 * @covers CentralAuthUser::exists

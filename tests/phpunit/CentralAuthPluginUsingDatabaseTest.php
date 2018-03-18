@@ -3,7 +3,7 @@
  * Basic tests for CentralAuthPlugin
  * @group CentralAuthDB
  */
-class CentralAuthPluginUsingDatabaseTest extends CentralAuthTestCaseUsingDatabase {
+class CentralAuthPluginUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 
 	/**
 	 * Setup a fresh set of global users for each test.
