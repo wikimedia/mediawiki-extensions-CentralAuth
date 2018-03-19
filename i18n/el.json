@@ -289,7 +289,7 @@
 	"right-centralauth-merge": "Συγχωνεύστε τον λογαριασμό τους",
 	"right-globalgrouppermissions": "Διαχείριση καθολικών λογαριασμών",
 	"centrallogin": "Κεντρική σύνδεση χρήστη",
-	"centralloginsuccesful": "Επιτυχής σύνδεση",
+	"centralloginsuccesful": "Συνδεδεμένος",
 	"centralauth-completelogin-back": "Επιστροφή στην προηγούμενη σελίδα.",
 	"centralauth-warning-notloggedin": "Αυτή τη στιγμή δεν είστε συνδεδεμένοι.",
 	"centralauth-finishglobaliseemail_subject": "Επιβεβαίωση του λογαριασμού {{SITENAME}}",

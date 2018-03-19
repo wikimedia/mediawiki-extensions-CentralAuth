@@ -279,7 +279,7 @@
 	"centralauth-editgroup-perms": "הרשאות:",
 	"centralauth-editgroup-reason": "הסיבה:",
 	"centralauth-editgroup-success": "הקבוצה הגלובלית שונתה",
-	"centralauth-editgroup-success-text": "הקבוצה הגלובלית $1 עודכנה.\n[[Special:GlobalGroupPermissions|בחזרה לניהול הקבוצות]].",
+	"centralauth-editgroup-success-text": "הקבוצה הגלובלית $1 עודכנה.\n[[Special:GlobalGroupPermissions|חזרה לניהול הקבוצות]]",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|עריכה]])",
 	"centralauth-editgroup-nowikiset": "אין, זה חל על כל אתרי הוויקי.",
 	"centralauth-editgroup-nonexistent": "הקבוצה הגלובלית \"$1\" אינה קיימת עכשיו.",
