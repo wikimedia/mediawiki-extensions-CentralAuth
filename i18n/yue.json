@@ -5,7 +5,8 @@
 			"Liangent",
 			"Shinjiman",
 			"Waihorace",
-			"CRCHF"
+			"CRCHF",
+			"Hello903hello"
 		]
 	},
 	"mergeaccount": "登入統一狀態",
@@ -50,7 +51,7 @@
 	"centralauth-list-unattached-title": "未附加嘅戶口",
 	"centralauth-list-unattached": "根據{{PLURAL:$2|site|sites}}嘅原因，\"$1\"戶口唔可以自動噉合併；好有可能佢哋嘅密碼同你嘅主戶口唔同：",
 	"centralauth-foreign-link": "響 $2 嘅用戶 $1",
-	"centralauth-foreign-contributions": "$2喺$1嘅{{PLURAL:$1|contribution|貢獻}}",
+	"centralauth-foreign-contributions": "喺$2貢獻$1次",
 	"centralauth-merge-method-primary": "自家 wiki",
 	"centralauth-merge-method-empty": "無貢獻",
 	"centralauth-merge-method-mail": "已用電郵確認",
