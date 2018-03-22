@@ -798,6 +798,24 @@ $specialPageAliases['sk'] = [
 	'GlobalUsers' => [ 'GlobálniPoužívatelia' ],
 ];
 
+/** Serbian Cyrilic (српски (ћирилица)) */
+$specialPageAliases['sr-ec'] = [
+	'CentralAuth' => [ 'Централна_пријава' ],
+	'MergeAccount' => [ 'Споји_налог' ],
+	'GlobalGroupMembership' => [ 'Глобална_корисничка_права' ],
+	'GlobalGroupPermissions' => [ 'Глобална_права_група' ],
+	'GlobalUsers' => [ 'Глобални_корисници' ],
+];
+
+/** Serbian Cyrilic (srpski (latinica)) */
+$specialPageAliases['sr-el'] = [
+	'CentralAuth' => [ 'Centralna_prijava' ],
+	'MergeAccount' => [ 'Spoji_nalog' ],
+	'GlobalGroupMembership' => [ 'Globalna_korisnička_prava' ],
+	'GlobalGroupPermissions' => [ 'Globalna_prava_grupa' ],
+	'GlobalUsers' => [ 'Globalni_korisnici' ],
+];
+
 /** Sundanese (Basa Sunda) */
 $specialPageAliases['su'] = [
 	'MergeAccount' => [ 'GabungRekening' ],
