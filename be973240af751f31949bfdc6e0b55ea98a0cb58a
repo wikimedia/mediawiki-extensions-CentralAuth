@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71829b15_101bb95a",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-03-26T21:06:08Z",
+      "side": 0,
+      "message": "You can now delete this message, presumably?",
+      "range": {
+        "startLine": 45,
+        "startChar": 27,
+        "endLine": 45,
+        "endChar": 37
+      },
+      "revId": "be973240af751f31949bfdc6e0b55ea98a0cb58a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
