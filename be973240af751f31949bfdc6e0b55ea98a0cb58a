@@ -22,6 +22,30 @@
       "revId": "be973240af751f31949bfdc6e0b55ea98a0cb58a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "916708e4_6e6b75b7",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-03-26T23:37:54Z",
+      "side": 0,
+      "message": "Sir, this is Central Msg. See https://gerrit.wikimedia.org/g/mediawiki/core/+/master/languages/i18n/en.json\u0027s \"nosuchuser\" key. Thanks :)",
+      "parentUuid": "71829b15_101bb95a",
+      "range": {
+        "startLine": 45,
+        "startChar": 27,
+        "endLine": 45,
+        "endChar": 37
+      },
+      "revId": "be973240af751f31949bfdc6e0b55ea98a0cb58a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
