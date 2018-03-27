@@ -40,13 +40,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		if ( !$globalUser->exists() ||
 			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
 		) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError(
-					[ 'nosuchusershort', wfEscapeWikiText( $globalUser->getName() ) ], 'nosuchuser'
-				);
-			} else {
-				$this->dieUsageMsg( [ 'nosuchuser', $globalUser->getName() ] );
-			}
+			$this->dieWithError(
+				[ 'nosuchusershort', wfEscapeWikiText( $globalUser->getName() ) ], 'nosuchuser'
+			);
 		}
 
 		if ( !$params['locked'] ) {
@@ -61,11 +57,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$stateCheck = $params['statecheck'];
 
 		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
-			if ( is_callable( [ $this, 'dieWithError' ] ) ) {
-				$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
-			} else {
-				$this->dieUsage( 'Edit conflict detected, Aborting.', 'editconflict' );
-			}
+			$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
 		}
 
 		$status = $globalUser->adminLockHide(
