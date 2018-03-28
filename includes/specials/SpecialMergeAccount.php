@@ -195,11 +195,11 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 */
 	function xorString( $text, $key ) {
-		if ( $key != '' ) {
-			// @codingStandardsIgnoreStart
-			for ( $i = 0; $i < strlen( $text ); $i++ ) {
-			// @codingStandardsIgnoreEnd
-				$text[$i] = chr( 0xff & ( ord( $text[$i] ) ^ ord( $key[$i % strlen( $key )] ) ) );
+		if ( $key !== '' ) {
+			$textLen = strlen( $text );
+			$keyLen = strlen( $key );
+			for ( $i = 0; $i < $textLen; $i++ ) {
+				$text[$i] = chr( 0xff & ( ord( $text[$i] ) ^ ord( $key[$i % $keyLen] ) ) );
 			}
 		}
 		return $text;
