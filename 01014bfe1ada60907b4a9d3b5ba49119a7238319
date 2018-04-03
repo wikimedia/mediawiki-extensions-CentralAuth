@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a1d04103_9adf7e10",
+        "filename": "maintenance/deleteLocalPasswords.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-04-03T17:41:06Z",
+      "side": 1,
+      "message": "This winds up running the core deleteLocalPasswords.php instead of running this script.",
+      "revId": "01014bfe1ada60907b4a9d3b5ba49119a7238319",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
