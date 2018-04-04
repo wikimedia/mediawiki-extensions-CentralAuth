@@ -140,7 +140,7 @@
 	"centralauth-editset-submit": "ตกลง",
 	"centralauth-editset-submit-delete": "ลบ",
 	"centralauth-editset-nouse": "(ไม่มี)",
-	"centralloginsuccesful": "เข้าสู่ระบบสำเร็จ",
+	"centralloginsuccesful": "ลงชื่อเข้าแล้ว",
 	"centralauth-warning-notloggedin": "คุณยังไม่ได้ล็อกอิน",
 	"centralauth-finishglobaliseemail_subject": "การยืนยันบัญชี {{SITENAME}}"
 }
