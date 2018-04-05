@@ -247,29 +247,32 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	private function showUsernameForm() {
-		global $wgScript;
 		$lookup = $this->msg(
 			$this->mCanEdit ? 'centralauth-admin-lookup-rw' : 'centralauth-admin-lookup-ro'
 		)->text();
 
-		$html = Xml::openElement( 'form', [ 'method' => 'get', 'action' => $wgScript ] );
-		$html .= Xml::fieldset(
-			$this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )
-				->text(),
-			Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() ) .
-				Xml::openElement( 'p' ) .
-				Xml::inputLabel( $this->msg( 'centralauth-admin-username' )->text(),
-					'target', 'target', 25, $this->mUserName,
-					[ 'class' => 'mw-autocomplete-global-user' ] ) .
-				Xml::closeElement( 'p' ) .
-				Xml::openElement( 'p' ) .
-				Xml::submitButton( $lookup,
-					[ 'id' => 'centralauth-submit-find' ]
-				) .
-				Xml::closeElement( 'p' )
-		);
-		$html .= Xml::closeElement( 'form' );
-		$this->getOutput()->addHTML( $html );
+		$formDescriptor = [
+			'user' => [
+				'class' => HTMLGlobalUserTextField::class,
+				'name' => 'target',
+				'label-message' => 'centralauth-admin-username',
+				'size' => 25,
+				'id' => 'target',
+				'default' => $this->mUserName
+			]
+		];
+
+		$legend = $this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )
+		->text();
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->setMethod( 'get' )
+			->setSubmitText( $lookup )
+			->setSubmitID( 'centralauth-submit-find' )
+			->setWrapperLegend( $legend )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
