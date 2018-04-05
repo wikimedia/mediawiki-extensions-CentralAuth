@@ -336,7 +336,7 @@
 	"centralauth-rename-viewprogress": "Хьажа кхочуш даре",
 	"centralauth-rename-progress-fieldset": "Локальни дӀаяздрийн могӀаме хьажа",
 	"centralauth-rename-progress-logs-fieldset": "Тептаран дӀаяздарш",
-	"centralauth-rename-movelog": "Декъашхочун «[[Special:CentralAuth/$1|$1]]» → «[[Special:CentralAuth/$2|$2]]» цӀе хийцарца ша-шеха агӀона цӀе хийцар",
+	"centralauth-rename-movelog": "Декъашхочун «[[Special:CentralAuth/$1|$1]]» → «[[Special:CentralAuth/$2|$2]]» цӀе хийцарца агӀона цӀе авто-хийцар",
 	"centralauth-rename-confirm": "Хьуна бакъалла лаьий хӀокху декъашхочун цӀе глобально хийца?",
 	"log-name-gblrename": "Глобальни цӀерш хийцаран тептар",
 	"log-description-gblrename": "ХӀокху тептар чохь гойту декъашхойн глобальни цӀерш хийцар.",
