@@ -39,22 +39,30 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 
 		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
-		$this->getOutput()->addHTML(
-			Xml::openElement( 'form', [
-				'method' => 'get',
-				'action' => $wgScript,
-				'name' => 'uluser',
-				'id' => 'mw-userrights-form1'
-			] ) .
-			Html::hidden( 'title',  $this->getPageTitle() ) .
-			Xml::openElement( 'fieldset' ) .
-			Xml::element( 'legend', [], $this->msg( 'userrights-lookup-user' )->text() ) .
-			Xml::inputLabel( $this->msg( 'userrights-user-editname' )->text(), 'user', 'username',
-				30, $this->mTarget, [ 'class' => 'mw-autocomplete-global-user' ] ) . ' <br />' .
-			Xml::submitButton( $this->msg( 'editusergroup' )->text() ) .
-			Xml::closeElement( 'fieldset' ) .
-			Xml::closeElement( 'form' ) . "\n"
-		);
+		$formDescriptor = [
+			'user' => [
+				'type' => 'text',
+				'name' => 'user',
+				'id' => 'username',
+				'label-message' => 'userrights-user-editname',
+				'size' => 30,
+				'value' => $this->mTarget,
+				'cssclass' => 'mw-autocomplete-global-user'
+			]
+		];
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+
+		$htmlForm
+			->addHiddenField( 'title', $this->getPageTitle() )
+			->setMethod( 'get' )
+			->setAction( $wgScript )
+			->setId( 'mw-userrights-form1' )
+			->setName( 'uluser' )
+			->setSubmitTextMsg( 'editusergroup' )
+			->setWrapperLegendMsg( 'userrights-lookup-user' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
