@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "462a7888_78bb0205",
+        "filename": "includes/specials/SpecialGlobalGroupMembership.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-04-06T20:03:32Z",
+      "side": 1,
+      "message": "indentation 1 tab too much",
+      "revId": "5d133c6081e94883b0a3cdcaa2e4940ef9b360b9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
