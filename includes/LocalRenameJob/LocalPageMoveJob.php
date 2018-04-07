@@ -54,6 +54,7 @@ class LocalPageMoveJob extends Job {
 			$newTitle = Title::makeTitle( $this->params['new'][0], $this->params['new'][1] );
 			$this->movePage( $oldTitle, $newTitle );
 		}
+		return true;
 	}
 
 	protected function movePage( Title $oldPage, Title $newPage ) {
