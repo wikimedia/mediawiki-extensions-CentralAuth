@@ -6,6 +6,7 @@
 		]
 	},
 	"centralauth-groupname": "Vikimedia Fondi",
+	"centralauth-foreign-link": "Foydalanuvchi $1 soat $2da",
 	"centralauth-merge-method-login-desc": "Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.",
 	"centralauth-finish-password": "Maxfiy soʻz:",
 	"centralauth-admin-info-username": "Foydalanuvchi nomi:",
