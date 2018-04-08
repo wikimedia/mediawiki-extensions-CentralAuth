@@ -234,7 +234,7 @@
 	"centralauth-rightslog-set-optin": "baseada na inclusión",
 	"centralauth-rightslog-set-optout": "baseada na exclusión",
 	"centralautologin": "Rexistro central",
-	"centralauth-centralautologin-desc": "MediaWiki utilizar internamente esta páxina especial.\nCando vostede visita un dominio ligado sen estar conectado, o sistema de rexistro central usa esta páxina para determinar se está conectado no dominio central.\nVostede solicitou esta páxina sen achegar ningún dato de autenticación, de modo que non fai nada.",
+	"centralauth-centralautologin-desc": "MediaWiki utiliza internamente esta páxina especial.\nCando vostede visita un dominio ligado sen estar conectado, o sistema de rexistro central usa esta páxina para determinar se está conectado no dominio central.\nVostede solicitou esta páxina sen achegar ningún dato de autenticación, de modo que non fai nada.",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Xa está identificado localmente",
 	"centralauth-centralautologin-badparams": "Os parámetros de autenticación especificados non eran válidos",
 	"centralauth-centralautologin-lostsession": "Perdéronse os datos da sesión",

@@ -31,7 +31,8 @@
 			"Jerrykim306",
 			"Ellif",
 			"Bluemersen",
-			"Garam"
+			"Garam",
+			"Nuevo Paso"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -140,7 +141,7 @@
 	"centralauth-admin-list-method": "방식",
 	"centralauth-admin-list-editcount": "편집 수",
 	"centralauth-admin-list-groups": "그룹",
-	"centralauth-admin-list-blocked": "차단됨",
+	"centralauth-admin-list-blocked": "차단 여부",
 	"centralauth-admin-group-temporary": "$1 (임시)",
 	"centralauth-admin-unmerge": "선택한 계정 병합 해제",
 	"centralauth-admin-merge": "선택한 계정 합치기",
