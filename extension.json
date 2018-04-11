@@ -18,6 +18,15 @@
 			"centralauth-merge": true
 		}
 	},
+	"GrantPermissions": {
+		"setglobalaccountstatus": {
+			"centralauth-lock": true,
+			"centralauth-oversight": true
+		}
+	},
+	"GrantPermissionGroups": {
+		"setglobalaccountstatus": "administration"
+	},
 	"AvailableRights": [
 		"centralauth-merge",
 		"centralauth-unmerge",
