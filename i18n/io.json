@@ -26,13 +26,16 @@
 	"centralauth-admin-username": "Uzantonomo:",
 	"centralauth-admin-lookup-ro": "Vidar informi pri l'uzero",
 	"centralauth-admin-permission": "Nur super-administreri povas kunfuzar la konti de altra personi, por li.",
+	"centralauth-admin-info-header": "Informo pri omna konti",
 	"centralauth-admin-info-username": "Nomo dil uzero:",
 	"centralauth-admin-info-editcount": "Quanto di redakturi:",
 	"centralauth-admin-info-attached": "Quanto di konti ligita:",
 	"centralauth-admin-yes": "yes",
 	"centralauth-admin-no": "no",
 	"centralauth-admin-list-legend-ro": "Listo pri lokala konti",
+	"centralauth-admin-blocked2": "Blokusita til $2 ye $3.",
 	"centralauth-admin-blocklog": "blokusar registraro",
+	"centralauth-admin-list-localwiki": "Lokala Wiki",
 	"centralauth-admin-list-groups": "Grupi",
 	"centralauth-admin-delete-title": "Efacar konto",
 	"centralauth-admin-delete-button": "Efacar ca konto",
@@ -52,5 +55,6 @@
 	"centralauth-editset-reason": "Motivo:",
 	"centralauth-editset-submit": "Sendez",
 	"centralauth-editset-submit-delete": "Efacar",
-	"centralauth-editset-nouse": "(nula)"
+	"centralauth-editset-nouse": "(nula)",
+	"centralauth-rename-table-domain": "Lokala Wiki"
 }
