@@ -18,6 +18,12 @@
 			"centralauth-merge": true
 		}
 	},
+	"GrantPermissions": {
+		"global": {
+			"centralauth-lock": true,
+			"centralauth-oversight": true
+		}
+	},
 	"AvailableRights": [
 		"centralauth-merge",
 		"centralauth-unmerge",
