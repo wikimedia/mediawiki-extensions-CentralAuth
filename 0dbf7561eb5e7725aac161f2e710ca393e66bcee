@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8634ce8d_bf82b341",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-04-17T07:48:13Z",
+      "side": 1,
+      "message": "For \"grant-checkuser\" the respective message is in WikimediaMessages… I wonder where we prefer to have this?\n\nAlso missing qqx.",
+      "revId": "0dbf7561eb5e7725aac161f2e710ca393e66bcee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
