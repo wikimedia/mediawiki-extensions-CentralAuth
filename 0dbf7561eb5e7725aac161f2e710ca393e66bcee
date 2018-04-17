@@ -16,6 +16,24 @@
       "revId": "0dbf7561eb5e7725aac161f2e710ca393e66bcee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab6dfbfa_4cf0eca1",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-04-17T07:53:29Z",
+      "side": 1,
+      "message": "rxy just told me that\u0027s due to the checkuser grant not being defined in the respective extension, but via mediawiki-config.\n\nIn that case only the qqq is missing here :)",
+      "parentUuid": "8634ce8d_bf82b341",
+      "revId": "0dbf7561eb5e7725aac161f2e710ca393e66bcee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
