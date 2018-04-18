@@ -607,5 +607,6 @@
 	"log-action-filter-gblrights": "{{doc-log-action-filter-action|gblrights}}",
 	"log-action-filter-gblrights-usergroups": "{{doc-log-action-filter-action|gblrights|usergroups}}",
 	"log-action-filter-gblrights-groupprms": "{{doc-log-action-filter-action|gblrights|groupprms}}",
-	"log-action-filter-gblrights-setmodify": "{{doc-log-action-filter-action|gblrights|setmodify}}"
+	"log-action-filter-gblrights-setmodify": "{{doc-log-action-filter-action|gblrights|setmodify}}",
+	"grant-setglobalaccountstatus": "Name for grant \"setglobalaccountstatus\".\n{{Related|Grant}}"
 }
