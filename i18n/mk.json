@@ -563,5 +563,6 @@
 	"log-action-filter-gblrights": "Вид на измена:",
 	"log-action-filter-gblrights-usergroups": "Измена во глобалните кориснички права",
 	"log-action-filter-gblrights-groupprms": "Измена на глобалната корисничка група",
-	"log-action-filter-gblrights-setmodify": "Измена на викизбирот"
+	"log-action-filter-gblrights-setmodify": "Измена на викизбирот",
+	"grant-setglobalaccountstatus": "Раководење со глобални кориснички сметки"
 }

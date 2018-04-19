@@ -592,5 +592,6 @@
 	"log-action-filter-gblrights": "更改类型：",
 	"log-action-filter-gblrights-usergroups": "全域用户权限更改",
 	"log-action-filter-gblrights-groupprms": "全域用户组更改",
-	"log-action-filter-gblrights-setmodify": "Wiki集合更改"
+	"log-action-filter-gblrights-setmodify": "Wiki集合更改",
+	"grant-setglobalaccountstatus": "管理全域账户状态"
 }

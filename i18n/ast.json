@@ -561,5 +561,6 @@
 	"log-action-filter-gblrights": "Tipu de cambéu:",
 	"log-action-filter-gblrights-usergroups": "Cambiu de permisos d'usuariu global",
 	"log-action-filter-gblrights-groupprms": "Cambiu de grupu d'usuariu global",
-	"log-action-filter-gblrights-setmodify": "Cambiu del conxuntu de wikis"
+	"log-action-filter-gblrights-setmodify": "Cambiu del conxuntu de wikis",
+	"grant-setglobalaccountstatus": "Xestionar l'estáu de cuenta global"
 }

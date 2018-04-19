@@ -582,5 +582,6 @@
 	"log-action-filter-gblrights": "Tipo de alteração:",
 	"log-action-filter-gblrights-usergroups": "Alteração de privilégios de utilizador global",
 	"log-action-filter-gblrights-groupprms": "Alteração de grupo de utilizador global",
-	"log-action-filter-gblrights-setmodify": "Alteração de conjunto de wikis"
+	"log-action-filter-gblrights-setmodify": "Alteração de conjunto de wikis",
+	"grant-setglobalaccountstatus": "Gerir estado da conta global"
 }

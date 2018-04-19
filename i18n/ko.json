@@ -32,7 +32,8 @@
 			"Ellif",
 			"Bluemersen",
 			"Garam",
-			"Nuevo Paso"
+			"Nuevo Paso",
+			"Doyoon1995"
 		]
 	},
 	"mergeaccount": "통합 계정으로 로그인",
@@ -554,5 +555,6 @@
 	"centralauth-uwbr-intro": "이 문서는 이 위키에 등록된 사용자 중 이름이 바뀔 사용자를 나열하고 있습니다.",
 	"centralauth-delete-empty-account": "빈 계정",
 	"sessionprovider-centralauthsessionprovider": "중앙 쿠키 기반 세션",
-	"sessionprovider-centralauthtokensessionprovider": "중앙인증 토큰 세션"
+	"sessionprovider-centralauthtokensessionprovider": "중앙인증 토큰 세션",
+	"grant-setglobalaccountstatus": "통합 계정 상태 관리"
 }
