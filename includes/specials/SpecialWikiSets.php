@@ -270,7 +270,7 @@ class SpecialWikiSets extends SpecialPage {
 		}
 		$body = '';
 		foreach ( $splitLists as $splitList ) {
-			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
+			$body .= '<td style="width="' . round( 100 / $columns ) . '%"><ul>';
 			foreach ( $splitList as $listitem ) {
 				$body .= Html::element( 'li', [], $listitem );
 			}
