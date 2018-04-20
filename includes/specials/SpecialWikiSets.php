@@ -213,10 +213,10 @@ class SpecialWikiSets extends SpecialPage {
 			$form['centralauth-editset-type'] = $this->msg( "centralauth-editset-{$type}" )
 				->escaped();
 			$form['centralauth-editset-wikis'] = self::buildTableByList(
-				$sortedWikis, 3, [ 'width' => '100%' ]
+				$sortedWikis, 3, [ 'style' => 'width:100%' ]
 			);
 			$form['centralauth-editset-restwikis'] = self::buildTableByList(
-				$restWikis, 3, [ 'width' => '100%' ]
+				$restWikis, 3, [ 'style' => 'width:100%' ]
 			);
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
@@ -270,7 +270,7 @@ class SpecialWikiSets extends SpecialPage {
 		}
 		$body = '';
 		foreach ( $splitLists as $splitList ) {
-			$body .= '<td width="' . round( 100 / $columns ) . '%"><ul>';
+			$body .= '<td style=width:"' . round( 100 / $columns ) . '%"><ul>';
 			foreach ( $splitList as $listitem ) {
 				$body .= Html::element( 'li', [], $listitem );
 			}
