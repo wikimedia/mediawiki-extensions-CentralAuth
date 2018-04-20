@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d386a74_4d49c1a1",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-04-20T22:36:21Z",
+      "side": 1,
+      "message": "Use ; for termination.",
+      "range": {
+        "startLine": 216,
+        "startChar": 34,
+        "endLine": 216,
+        "endChar": 46
+      },
+      "revId": "60f02f852c4d2ea55bd518730cdf0c37cd4a132a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fbc570e6_b010f128",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-04-20T22:36:21Z",
+      "side": 1,
+      "message": "Use ; for termination.",
+      "range": {
+        "startLine": 219,
+        "startChar": 32,
+        "endLine": 219,
+        "endChar": 44
+      },
+      "revId": "60f02f852c4d2ea55bd518730cdf0c37cd4a132a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ed17d95_3cc5e1d1",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-04-20T22:36:21Z",
+      "side": 1,
+      "message": "Use ; for termination.",
+      "range": {
+        "startLine": 273,
+        "startChar": 60,
+        "endLine": 273,
+        "endChar": 63
+      },
+      "revId": "60f02f852c4d2ea55bd518730cdf0c37cd4a132a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e5f07200_5b16e05e",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-04-20T22:36:21Z",
+      "side": 1,
+      "message": "\u003ctd style\u003dwidth:\" is wrong. I have tested it many tag checker. The correct format is \u003ctd style\u003d\"width: Please adjust \" so that tag can\u0027t break.",
+      "range": {
+        "startLine": 273,
+        "startChar": 12,
+        "endLine": 273,
+        "endChar": 30
+      },
+      "revId": "60f02f852c4d2ea55bd518730cdf0c37cd4a132a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
