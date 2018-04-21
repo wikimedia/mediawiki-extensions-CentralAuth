@@ -46,7 +46,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 				'id' => 'username',
 				'label-message' => 'userrights-user-editname',
 				'size' => 30,
-				'value' => $this->mTarget,
+				'default' => $this->mTarget,
 				'cssclass' => 'mw-autocomplete-global-user'
 			]
 		];
