@@ -343,5 +343,6 @@
 	"centralauth-uwbr-registration": "নিবন্ধনের তারিখ",
 	"centralauth-uwbr-registration-nodate": "অজানা",
 	"centralauth-uwbr-editcount": "সম্পাদনা গণনা",
-	"centralauth-delete-empty-account": "খালি অ্যাকাউন্ট"
+	"centralauth-delete-empty-account": "খালি অ্যাকাউন্ট",
+	"grant-setglobalaccountstatus": "বৈশ্বিক অ্যাকাউন্টের অবস্থা নির্ধারণ করুন"
 }

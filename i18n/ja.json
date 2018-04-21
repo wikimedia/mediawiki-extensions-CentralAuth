@@ -440,6 +440,7 @@
 	"globalrenamerequest-submit-text": "改名を依頼",
 	"centralauth-usermerge-form-adduser": "利用者を追加",
 	"centralauth-usermerge-form-deleteuser": "利用者を除去",
+	"globalrenamequeue": "グローバル利用者名変更依頼の対応待ち",
 	"globalrenamequeue-desc": "グローバルな名前変更要求を処理する",
 	"globalrenamequeue-column-rq-name": "利用者名",
 	"globalrenamequeue-column-rq-newname": "希望利用者名",
@@ -482,5 +483,6 @@
 	"userswhowillberenamed": "改名される予定の利用者",
 	"centralauth-uwbr-name": "利用者名",
 	"centralauth-uwbr-registration": "登録日時",
-	"centralauth-uwbr-editcount": "編集回数"
+	"centralauth-uwbr-editcount": "編集回数",
+	"grant-setglobalaccountstatus": "グローバルアカウントの状態を管理"
 }
