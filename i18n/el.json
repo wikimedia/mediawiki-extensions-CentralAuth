@@ -17,7 +17,8 @@
 			"Απεργός",
 			"Περίεργος",
 			"KATRINE1992",
-			"Nikosgranturismogt"
+			"Nikosgranturismogt",
+			"Kostas20142"
 		]
 	},
 	"mergeaccount": "Κατάσταση ενοποίησης σύνδεσης",
@@ -341,5 +342,6 @@
 	"apihelp-query+globalrenamestatus-example-1": "Λάβετε πληροφορίες για τον παρόντα γενικό χρήστη",
 	"apihelp-query+globaluserinfo-param-user": "Χρήστης λήψης πληροφοριών. Αν <var>$1user</var> και <var>$1id</var> παραλειφθούν και τα δύο, αναφέρεται στον παρόντα χρήστη.",
 	"apihelp-query+globaluserinfo-param-id": "Γενικός χρήστης για λήψη πληροφοριών. Αν If <var>$1user</var> και <var>$1id</var> παραλειφθούν και τα δύο, αναφέρεται στον τρέχοντα χρήστη.",
-	"userswhowillberenamed": "Χρήστες που θα μετονομαστούν"
+	"userswhowillberenamed": "Χρήστες που θα μετονομαστούν",
+	"grant-setglobalaccountstatus": "Διαχείριση της κατάστασης του καθολικού λογαριασμού"
 }
