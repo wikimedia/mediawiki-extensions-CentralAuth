@@ -467,5 +467,6 @@
 	"log-action-filter-suppress-cadelete": "Läsche vum globale Benotzerkont",
 	"log-action-filter-gblrights": "Typ vun der Ännerung:",
 	"log-action-filter-gblrights-usergroups": "Ännerung vun de globale Benotzerrechter",
-	"log-action-filter-gblrights-groupprms": "Ännerung vun de globale Benotzergruppen"
+	"log-action-filter-gblrights-groupprms": "Ännerung vun de globale Benotzergruppen",
+	"grant-setglobalaccountstatus": "Status vum globale Benotzerkont geréieren"
 }

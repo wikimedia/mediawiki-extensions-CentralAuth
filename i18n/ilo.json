@@ -295,8 +295,8 @@
 	"centralauth-editset-nouse": "(awan)",
 	"centralauth-editset-usage": "Inusar kadagiti grupo:",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Ti sumaganad a wiki|Dagiti sumaganad a wiki}} ket awan: $1.",
-	"centralauth-editset-success": "Balligi ti panagsukat ti disso ti wiki.",
-	"centralauth-editset-success-delete": "Balligi ti panagikkat ti disso ti wiki.",
+	"centralauth-editset-success": "Napabaro ti agasmang ti wiki.",
+	"centralauth-editset-success-delete": "Naikkat ti agasmang ti wiki.",
 	"centralauth-editset-return": "Agsubli iti nangruna a panagkita",
 	"centralauth-block-already-locked": "Ti pakabilangan ni [[Special:CentralAuth/$1|$1]] ket global a naseraan.",
 	"centralauth-readonly": "Ti database ti CentralAuth ket naserraan",
@@ -310,7 +310,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Dagiti global a grupo nga ayan ti agar-aramat",
 	"action-centralauth-lock": "serraan wenno lukatan dagiti global a pakabilangan",
 	"centrallogin": "Setral a paserrekan ti agar-aramat",
-	"centralloginsuccesful": "Balligi ti panagserrek",
+	"centralloginsuccesful": "Nakastrek",
 	"centralauth-completelogin-back": "Agsubli iti dati a panid.",
 	"centralauth-error-nologinattempt": "Awan ti agdama nga aktibo a panagpadas iti panaserrek para iti sesionmo.",
 	"centralauth-error-badtoken": "Ti naited a pammasingked a tandaan ket mabalin a nagpason wenno imbalido.",
@@ -417,7 +417,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "Irikep ti petsa",
 	"globalrenamequeue-column-rq-status": "Kasasaad",
 	"globalrenamequeue-column-rq-performer": "Inaramid babaen ni",
-	"globalrenamequeue-action-address": "Pagtaengan",
+	"globalrenamequeue-action-address": "Adres",
 	"globalrenamequeue-action-view": "Kitaen",
 	"globalrenamequeue-request-title": "Naganan manen ni \"$1\"?",
 	"globalrenamequeue-request-header": "Ni <strong>[$1 $2]</strong> ket agkidkiddaw iti pananginagan manen iti <strong>$3</strong>.",
@@ -507,5 +507,6 @@
 	"centralauth-uwbr-registration-nodate": "Di ammo",
 	"centralauth-uwbr-editcount": "Bilang ti inurnos",
 	"centralauth-uwbr-intro": "Daytoy a panid ket ilistana dagiti agar-aramat a nairehistro iti daytoy a wiki a managananto manen.",
-	"centralauth-delete-empty-account": "Awan linaon a pakabilangan"
+	"centralauth-delete-empty-account": "Awan linaon a pakabilangan",
+	"grant-setglobalaccountstatus": "Taripatuen ti kasasaad ti global a pakabilangan"
 }
