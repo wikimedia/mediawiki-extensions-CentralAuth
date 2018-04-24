@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f3f1430_d86872e7",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1816,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-04-24T23:13:19Z",
+      "side": 1,
+      "message": "Why isn\u0027t this using the \u003d\u003e syntax and removed the comment?",
+      "range": {
+        "startLine": 1816,
+        "startChar": 5,
+        "endLine": 1816,
+        "endChar": 46
+      },
+      "revId": "41e182e0cb810989742da2c95c67d8149e836e20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
