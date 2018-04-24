@@ -61,5 +61,7 @@
 	"centralauth-rename-progress-username": "Імя ўдзельніка",
 	"centralauth-rename-table-domain": "Лакальны вікі-праект",
 	"centralauth-rename-progress-fieldset": "Спіс лакальных уліковых запісаў",
+	"centralauth-rename-confirm": "Вы сапраўды хочаце глабальна перайменаваць гэтага ўдзельніка?",
+	"centralauth-usermerge-confirm": "Вы сапраўды хочаце глабальна аб’яднаць гэтых ўдзельнікаў?",
 	"globalrenamequeue-column-rq-wiki": "Лакальны вікі-праект"
 }

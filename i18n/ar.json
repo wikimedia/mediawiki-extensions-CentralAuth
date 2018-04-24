@@ -588,5 +588,6 @@
 	"log-action-filter-gblrights": "نوع التغيير:",
 	"log-action-filter-gblrights-usergroups": "تغيير صلاحيات المستخدم العالمي",
 	"log-action-filter-gblrights-groupprms": "تغيير مجموعات المستخدم العالمي",
-	"log-action-filter-gblrights-setmodify": "تغيير مجموعات الويكي"
+	"log-action-filter-gblrights-setmodify": "تغيير مجموعات الويكي",
+	"grant-setglobalaccountstatus": "إدارة حالة الحساب العالمي"
 }
