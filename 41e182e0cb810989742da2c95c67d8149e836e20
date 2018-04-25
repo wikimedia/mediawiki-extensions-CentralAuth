@@ -22,6 +22,30 @@
       "revId": "41e182e0cb810989742da2c95c67d8149e836e20",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "11f03192_3080e132",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 1816,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-04-25T16:39:25Z",
+      "side": 1,
+      "message": "With the \"\u003d\u003e\" syntax the left side is supposed to be a field name, while the value being used here might be a COALESCE function.\n\nNo reason for the removed comment.",
+      "parentUuid": "4f3f1430_d86872e7",
+      "range": {
+        "startLine": 1816,
+        "startChar": 5,
+        "endLine": 1816,
+        "endChar": 46
+      },
+      "revId": "41e182e0cb810989742da2c95c67d8149e836e20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
