@@ -558,5 +558,6 @@
 	"log-action-filter-suppress-cadelete": "Radering av globalt konto",
 	"log-action-filter-gblrights": "Typ av ändring:",
 	"log-action-filter-gblrights-usergroups": "Användarrättighetsändring för globalt konto",
-	"log-action-filter-gblrights-groupprms": "Gruppändring för globalt konto"
+	"log-action-filter-gblrights-groupprms": "Gruppändring för globalt konto",
+	"grant-setglobalaccountstatus": "Hantera status för globalt konto"
 }
