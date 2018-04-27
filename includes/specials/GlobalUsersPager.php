@@ -148,55 +148,50 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return string
 	 */
 	function getPageHeader() {
-		global $wgScript;
-
-		list( $self ) = explode( '/', $this->getTitle()->getPrefixedDBkey() );
-
-		# Form tag
-		$out = Xml::openElement(
-			'form',
-			[ 'method' => 'get', 'action' => $wgScript, 'id' => 'mw-listusers-form' ]
-		) .
-			Xml::fieldset( $this->msg( 'listusers' )->text() ) .
-			Html::hidden( 'title', $self );
-
-		# Username field
-		$out .= Xml::label( $this->msg( 'listusersfrom' )->text(), 'offset' ) . ' ' .
-			Html::input(
-				'username',
-				$this->requestedUser,
-				'text',
-				[
-					'id' => 'offset',
-					'size' => 20,
-					'autofocus' => $this->requestedUser === ''
-				]
-			) . ' ';
-
-		# Group drop-down list
-		$out .= Xml::label( $this->msg( 'group' )->text(), 'group' ) . ' ' .
-			Xml::openElement( 'select', [ 'name' => 'group', 'id' => 'group' ] ) .
-			Xml::option( $this->msg( 'group-all' )->text(), '' );
+		$options = [];
+		$options[$this->msg( 'group-all' )->text()] = '';
 		foreach ( $this->getAllGroups() as $group => $groupText ) {
-			$out .= Xml::option( $groupText, $group, $group == $this->requestedGroup );
+			$options[$groupText] = $group;
 		}
-		$out .= Xml::closeElement( 'select' ) . '<br />';
-		# Descending sort checkbox
-		$out .= Xml::checkLabel(
-			$this->msg( 'listusers-desc' )->text(),
-			'desc',
-			'desc',
-			$this->mDefaultDirection
-		);
-		$out .= "<p />";
 
-		# Submit button and form bottom
-		$out .= Html::hidden( 'limit', $this->mLimit );
-		$out .= Xml::submitButton( $this->msg( 'allpagessubmit' )->text() );
-		$out .= Xml::closeElement( 'fieldset' ) .
-			Xml::closeElement( 'form' );
+		$formDescriptor = [
+			'usernameText' => [
+				'type' => 'text',
+				'name' => 'username',
+				'id' => 'offset',
+				'label' => $this->msg( 'listusersfrom' )->text(),
+				'size' => 20,
+				'default' => $this->requestedUser,
+				'autofocus' => true,
+			],
+			'groupSelect' => [
+				'type' => 'select',
+				'name' => 'group',
+				'id' => 'group',
+				'label-message' => 'group',
+				'options' => $options,
+				'default' => $group == $this->requestedGroup,
+			],
+			'descCheck' => [
+				'type' => 'check',
+				'name' => 'desc',
+				'id' => 'desc',
+				'label-message' => 'listusers-desc',
+				'default' => $this->mDefaultDirection,
+			]
+		];
 
-		return $out;
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->addHiddenField( 'limit', $this->mLimit )
+			->setMethod( 'get' )
+			->setId( 'mw-listusers-form' )
+			->setSubmitTextMsg( 'allpagessubmit' )
+			->setWrapperLegendMsg( 'listusers' )
+			->prepareForm()
+			->displayForm( false );
+
+		return true;
 	}
 
 	/**
