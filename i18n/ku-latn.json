@@ -62,5 +62,6 @@
 	"globalrenamequeue-request-title": "Bila navê \"$1\" bê guherandin?",
 	"globalrenamequeue-request-cancel-text": "Betal bike",
 	"centralauth-uwbr-name": "Navê bikarhêner",
-	"centralauth-uwbr-registration-nodate": "Nenas"
+	"centralauth-uwbr-registration-nodate": "Nenas",
+	"grant-setglobalaccountstatus": "Rewşa hesabê xwe yê global bi rê ve bibe"
 }
