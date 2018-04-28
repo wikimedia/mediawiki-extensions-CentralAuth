@@ -12,7 +12,8 @@
 			"Михајло Анђелковић",
 			"Srdjan m",
 			"Сербијана",
-			"Acamicamacaraca"
+			"Acamicamacaraca",
+			"BadDog"
 		]
 	},
 	"mergeaccount": "Стање обједињавања пријаве",
@@ -224,7 +225,7 @@
 	"globalgroupmembership": "Чланство у глобалним групама",
 	"globalgrouppermissions": "Управљање глобалним групама",
 	"centralauth-globalgroupperms-nogroups": "Ниједна глобална група није дефинисана.",
-	"centralauth-newgroup-legend": "Стварање нове групе",
+	"centralauth-newgroup-legend": "Прављење нове групе",
 	"centralauth-newgroup-intro": "Ова форма се користи за додељивање права новој групи. Имај на уму да група не постоји док јој није додељено ниједно право.",
 	"centralauth-globalgroupperms-newgroupname": "Име нове групе:",
 	"centralauth-globalgroupperms-creategroup-submit": "Давање права",
@@ -258,7 +259,7 @@
 	"centralauth-editset-optout": "Засновано на одустајању (укључује све викије изузев одређених)",
 	"centralauth-editset-legend-edit": "Измена скупа викија „$1“",
 	"centralauth-editset-legend-view": "Вики-скуп „$1“",
-	"centralauth-editset-legend-new": "Стварање новог скупа викија",
+	"centralauth-editset-legend-new": "Прављење новог скупа викија",
 	"centralauth-editset-legend-delete": "Брисање вики скупа „$1“",
 	"centralauth-editset-subtitle": "< [[Special:WikiSets|Списак скупова]]",
 	"centralauth-editset-name": "Име:",
