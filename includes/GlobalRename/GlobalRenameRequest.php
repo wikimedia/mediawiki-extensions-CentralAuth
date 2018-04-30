@@ -164,7 +164,7 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * @param string $requested MW timestamp, null for now
+	 * @param string|null $requested MW timestamp, null for now
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setRequested( $requested = null ) {
@@ -185,7 +185,7 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * @param string $completed MW timestamp, null for now
+	 * @param string|null $completed MW timestamp, null for now
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setCompleted( $completed = null ) {

@@ -113,7 +113,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string|null $name (Optional) Name of WikiSet
 	 * @param string|null $type WikiSet::OPTIN or WikiSet::OPTOUT
 	 * @param array|null $wikis
-	 * @param string $reason
+	 * @param string|null $reason
 	 */
 	function buildSetView(
 		$subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null

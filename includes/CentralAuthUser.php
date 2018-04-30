@@ -1279,9 +1279,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * the password check.
 	 *
 	 * @param string $password plaintext password to try matching
-	 * @param string[] &$migrated Array of wiki IDs for records which were
+	 * @param string[]|null &$migrated Array of wiki IDs for records which were
 	 *                  successfully migrated by this operation
-	 * @param string[] &$remaining Array of wiki IDs for records which are still
+	 * @param string[]|null &$remaining Array of wiki IDs for records which are still
 	 *                   unattached after the operation
 	 * @return bool true if all accounts are migrated at the end
 	 */

@@ -129,7 +129,7 @@ abstract class LocalRenameJob extends Job {
 	}
 
 	/**
-	 * @param bool $status See Job::addTeardownCallback
+	 * @param bool|null $status See Job::addTeardownCallback
 	 */
 	protected function scheduleNextWiki( $status = null ) {
 		if ( $status === false ) {

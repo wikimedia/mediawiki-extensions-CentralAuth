@@ -44,7 +44,7 @@ class RenameQueueTablePager extends TablePager {
 	/**
 	 * @param SpecialPage $owner Containing page
 	 * @param string $page Subpage
-	 * @param IContextSource $context
+	 * @param IContextSource|null $context
 	 */
 	public function __construct(
 		SpecialPage $owner, $page, IContextSource $context = null
