@@ -155,13 +155,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/**
 	 * Initialize and output the HTMLForm used for filtering.
 	 *
-	 * @param array $fields
+	 * @param array $formDescriptor
 	 */
-	private function outputFilterForm( array $fields ) {
-		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
-		$form->setMethod( 'get' );
-		$form->setWrapperLegendMsg( 'search' );
-		$form->prepareForm()->displayForm( false );
+	private function outputFilterForm( array $formDescriptor ) {
+		$htmlForm = HTMLForm::factory( 'table', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->setMethod( 'get' )
+			->setWrapperLegendMsg( 'search' )
+			->prepareForm()->displayForm( false );
 	}
 
 	/**
@@ -182,7 +183,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function handleClosedQueue() {
 		$this->commonPreamble( 'globalrenamequeue' );
 		$this->commonNav( self::PAGE_CLOSED_QUEUE );
-		$fields = array_merge(
+		$formDescriptor = array_merge(
 			$this->getCommonFormFieldsArray(),
 			[
 				'status' => [
@@ -198,7 +199,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				]
 			]
 		);
-		$this->outputFilterForm( $fields );
+		$this->outputFilterForm( $formDescriptor );
 
 		$pager = new RenameQueueTablePager( $this, self::PAGE_CLOSED_QUEUE );
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
@@ -310,7 +311,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-title', [ $req->getName() ]
 		);
 
-		$form = HTMLForm::factory( 'vform',
+		$htmlForm = HTMLForm::factory( 'ooui',
 			[
 				'rid' => [
 					'default' => $req->getId(),
@@ -351,30 +352,37 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue'
 		);
 
-		$form->suppressDefaultSubmit();
-		$form->addButton( 'approve',
-			$this->msg( 'globalrenamequeue-request-approve-text' )->text(),
-			'mw-renamequeue-approve',
-			[
-				'class' => 'mw-ui-progressive mw-ui-flush-right',
-			]
-		);
-		$form->addButton( 'deny',
-			$this->msg( 'globalrenamequeue-request-deny-text' )->text(),
-			'mw-renamequeue-deny',
-			[
-				'class' => 'mw-ui-destructive mw-ui-flush-right',
-			]
-		);
-		$form->addButton( 'cancel',
-			$this->msg( 'globalrenamequeue-request-cancel-text' )->text(),
-			'mw-renamequeue-cancel',
-			[
-				'class' => 'mw-ui-quiet mw-ui-flush-left',
-			]
-		);
-
-		$form->setId( 'mw-globalrenamequeue-request' );
+		$htmlForm
+			->suppressDefaultSubmit()
+			->addButton( [
+				'name' => 'approve',
+				'value' => $this->msg( 'globalrenamequeue-request-approve-text' )->text(),
+				'id' => 'mw-renamequeue-approve',
+				'attribs' => [
+					'class' => 'mw-ui-flush-right',
+				],
+				'flags' => [ 'primary', 'progressive' ],
+				'framed' => true
+			])
+			->addButton( [
+				'name' => 'deny',
+				'value' => $this->msg( 'globalrenamequeue-request-deny-text' )->text(),
+				'id' => 'mw-renamequeue-deny',
+				'attribs' => [
+					'class' => 'mw-ui-flush-right',
+				],
+				'flags' => [ 'destructive' ],
+				'framed' => true
+			])
+			->addButton( [
+				'name' => 'cancel',
+				'value' => $this->msg( 'globalrenamequeue-request-cancel-text' )->text(),
+				'id' => 'mw-renamequeue-cancel',
+				'attribs' => [
+					'class' => 'mw-ui-flush-left',
+				]
+			])
+			->setId( 'mw-globalrenamequeue-request' );
 
 		if ( $req->userIsGlobal() ) {
 			$globalUser = CentralAuthUser::getInstanceByName( $req->getName() );
@@ -390,7 +398,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getName(),
 			$req->getNewName()
 		);
-		$form->addHeaderText( '<span class="plainlinks">' . $headerMsg->parseAsBlock() .
+		$htmlForm->addHeaderText( '<span class="plainlinks">' . $headerMsg->parseAsBlock() .
 			'</span>' );
 
 		$homeWikiWiki = WikiMap::getWiki( $homeWiki );
@@ -406,7 +414,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$infoMsg->numParams( $globalUser->getGlobalEditCount() );
 		}
 
-		$form->addHeaderText( $infoMsg->parseAsBlock() );
+		$htmlForm->addHeaderText( $infoMsg->parseAsBlock() );
 
 		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
@@ -416,7 +424,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$conflicts = $specialGblRename->processAntiSpoofConflicts( $req->getName(),
 				$spoofUser->getConflicts() );
 			if ( $conflicts ) {
-				$form->addHeaderText(
+				$htmlForm->addHeaderText(
 					$this->msg(
 						'globalrenamequeue-request-antispoof-conflicts',
 						$this->getLanguage()->commaList( $conflicts )
@@ -432,7 +440,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				'new-account'
 			);
 			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
-				$form->addHeaderText(
+				$htmlForm->addHeaderText(
 					$this->msg( 'globalrenamequeue-request-titleblacklist' )
 						->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )->parseAsBlock()
 				);
@@ -446,7 +454,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'showIfEmpty' => false,
 		] );
 		if ( $extractCount ) {
-			$form->addHeaderText(
+			$htmlForm->addHeaderText(
 				Xml::fieldset( $this->msg( 'globalrenamequeue-request-previous-renames' )
 					->numParams( $extractCount )
 					->text(), $extract )
@@ -456,11 +464,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
-		$form->addHeaderText( $this->msg( 'globalrenamequeue-request-reason',
+		$htmlForm->addHeaderText( $this->msg( 'globalrenamequeue-request-reason',
 			$reason
 		)->parseAsBlock() );
 
-		$form->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
+		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
 
 		$out = $this->getOutput();
 		$out->addModuleStyles( [
@@ -471,7 +479,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		] );
 		$out->addModules( 'ext.centralauth.globalrenamequeue' );
 
-		$status = $form->show();
+		$status = $htmlForm->show();
 		if ( $status instanceof Status && $status->isOK() ) {
 			$this->getOutput()->redirect(
 				$this->getPageTitle(
