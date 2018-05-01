@@ -158,7 +158,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param array $fields
 	 */
 	private function outputFilterForm( array $fields ) {
-		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
+		$form = HTMLForm::factory( 'ooui', $fields, $this->getContext() );
 		$form->setMethod( 'get' );
 		$form->setWrapperLegendMsg( 'search' );
 		$form->prepareForm()->displayForm( false );
