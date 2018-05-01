@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6b1a9de0_c6b3961b",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-05-01T05:14:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24910a33_138cb508",
+      "revId": "3fc6667983f594cc2e5baa2c2c8784e3f7297e20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "875ac8fa_023cd41d",
         "filename": "includes/specials/SpecialGlobalRenameProgress.php",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2018-05-01T05:04:19Z",
       "side": 1,
       "message": "\u0027GET\u0027 and \u0027POST\u0027 are written lowercase in vast majority of cases. Let\u0027s align it to the cases elsewhere.",
+      "revId": "3fc6667983f594cc2e5baa2c2c8784e3f7297e20",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8b3edde2_b391e622",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-05-01T05:14:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "875ac8fa_023cd41d",
       "revId": "3fc6667983f594cc2e5baa2c2c8784e3f7297e20",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
