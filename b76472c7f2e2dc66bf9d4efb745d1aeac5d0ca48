@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91a1bff2_bf7633f1",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2018-05-01T07:49:30Z",
+      "side": 1,
+      "message": "Does this work with non-local users? The form should work for users who do not have an account on the central wiki.",
+      "revId": "b76472c7f2e2dc66bf9d4efb745d1aeac5d0ca48",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
