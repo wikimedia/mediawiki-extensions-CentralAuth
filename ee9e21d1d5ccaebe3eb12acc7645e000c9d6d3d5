@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1d7b916_15e196cf",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-05-01T06:55:55Z",
+      "side": 1,
+      "message": "Also here: $htmlForm, $formDescriptor",
+      "revId": "ee9e21d1d5ccaebe3eb12acc7645e000c9d6d3d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b809cfec_0b31b518",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-05-01T06:55:55Z",
+      "side": 1,
+      "message": "The CSS *flaggedElement* classes should be invoked by \u0027flags\u0027, not by adding them manually in order not to make our code interdependent in this way.",
+      "revId": "ee9e21d1d5ccaebe3eb12acc7645e000c9d6d3d5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
