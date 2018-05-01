@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2670d38_95b9c7bd",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-05-01T19:10:29Z",
+      "side": 1,
+      "message": "new line before -\u003edisplayForm()",
+      "revId": "82d2a6e9e6ad5ff6dcd0ab86862707c78495f34d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
