@@ -24,10 +24,12 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		];
 	}
 
-	function alterForm( HTMLForm $form ) {
-		$form->setMethod( 'GET' );
-		$form->setAction( $this->getPageTitle()->getLocalURL() );
-		$form->setSubmitText( $this->msg( 'centralauth-rename-viewprogress' )->text() );
+	function alterForm( HTMLForm $htmlForm ) {
+		$htmlForm
+			->setMethod( 'get' )
+			->setAction( $this->getPageTitle()->getLocalURL() )
+			->setSubmitText( $this->msg( 'centralauth-rename-viewprogress' )->text() )
+			->setWrapperLegendMsg( 'globalrenameprogress-legend' );
 	}
 
 	function showLogExtract( $name ) {
@@ -153,5 +155,9 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 	public function requiresUnblock() {
 		return false;
+	}
+
+	protected function getDisplayFormat() {
+		return 'ooui';
 	}
 }
