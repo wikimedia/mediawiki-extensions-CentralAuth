@@ -310,7 +310,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-title', [ $req->getName() ]
 		);
 
-		$form = HTMLForm::factory( 'vform',
+		$form = HTMLForm::factory( 'ooui',
 			[
 				'rid' => [
 					'default' => $req->getId(),
@@ -356,21 +356,22 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->msg( 'globalrenamequeue-request-approve-text' )->text(),
 			'mw-renamequeue-approve',
 			[
-				'class' => 'mw-ui-progressive mw-ui-flush-right',
+				'class' => 'oo-ui-flaggedElement-primary oo-ui-flaggedElement-progressive
+				mw-ui-flush-right',
 			]
 		);
 		$form->addButton( 'deny',
 			$this->msg( 'globalrenamequeue-request-deny-text' )->text(),
 			'mw-renamequeue-deny',
 			[
-				'class' => 'mw-ui-destructive mw-ui-flush-right',
+				'class' => 'oo-ui-flaggedElement-destructive mw-ui-flush-right',
 			]
 		);
 		$form->addButton( 'cancel',
 			$this->msg( 'globalrenamequeue-request-cancel-text' )->text(),
 			'mw-renamequeue-cancel',
 			[
-				'class' => 'mw-ui-quiet mw-ui-flush-left',
+				'class' => 'oo-ui-flaggedElement-progressive mw-ui-flush-left',
 			]
 		);
 
