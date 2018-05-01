@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "936fed21_32ff7f0a",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-05-01T05:05:25Z",
+      "side": 1,
+      "message": "Same here, $htmlForm and aligning way of writing it to elsewhere\n$htmlForm\n  -\u003e …",
+      "revId": "9d1bda176777051a3ef04b2c9979e2eac9400b35",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
