@@ -313,8 +313,8 @@ class WikiSet {
 	}
 
 	/**
-	 * @param string $from The wiki set name to start from (result is ordered by name)
-	 * @param int $limit Limit for the selection (0 or null = no limit)
+	 * @param string|null $from The wiki set name to start from (result is ordered by name)
+	 * @param int|null $limit Limit for the selection (0 or null = no limit)
 	 * @param bool $orderByName Order the result by name?
 	 * @return array
 	 */

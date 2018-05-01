@@ -378,7 +378,7 @@ class CentralAuthHooks {
 	/**
 	 * @param User &$user
 	 * @param string &$inject_html
-	 * @param bool $direct Was this directly after a login? (see T140853)
+	 * @param bool|null $direct Was this directly after a login? (see T140853)
 	 * @return bool
 	 */
 	static function onUserLoginComplete( &$user, &$inject_html, $direct = null ) {

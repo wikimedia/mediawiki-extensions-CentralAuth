@@ -22,7 +22,7 @@ class GlobalUserMergeDatabaseUpdates {
 	 *
 	 * @param string $oldname Old global username
 	 * @param string $newname New global username
-	 * @param int $newId New global user ID
+	 * @param int|null $newId New global user ID
 	 */
 	public function merge( $oldname, $newname, $newId = null ) {
 		$dbw = $this->getDB();
