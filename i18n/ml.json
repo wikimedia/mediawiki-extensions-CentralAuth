@@ -16,7 +16,7 @@
 	"centralauth-groupname": "വിക്കിമീഡിയ ഫൗണ്ടേഷൻ",
 	"centralauth-desc": "{{int:Centralauth-groupname}} വിക്കികളിലെ [[Special:MergeAccount|അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക]]",
 	"centralauth-antispoof-desc": "സെൻട്രൽഓത് സംവിധാനത്തിൽ ആന്റിസ്പൂഫ് സാങ്കേതികവിദ്യ ചേർക്കുന്നു",
-	"centralauth-rename-desc": "ആഗോളാഗത്വങ്ങളുടെ പുനർനാമകരണം അനുവദിക്കുന്നു",
+	"centralauth-rename-desc": "ആഗോളാംഗത്വങ്ങളുടെ പുനർനാമകരണം അനുവദിക്കുന്നു",
 	"centralauth-mergeaccount-desc": "ഒറ്റ ഉപയോക്തൃ ലോഗിനു വേണ്ടി [[Special:MergeAccount|ബഹു അംഗത്വങ്ങളുടെ സം‌യോജനം]] ഉപയോഗിക്കുക",
 	"centralauth-merge-denied": "ഈ താൾ പരിശോധിക്കുവാൻ താങ്കൾക്ക് അനുമതിയില്ല.",
 	"centralauth-merge-notlogged": "താങ്കളുടെ അംഗത്വങ്ങൾ പൂർണ്ണമായും സം‌യോജിപ്പിച്ചോ എന്നു പരിശോധിക്കാൻ ദയവായി <span class=\"plainlinks\">[$1 പ്രവേശിക്കുക]</span>.",
