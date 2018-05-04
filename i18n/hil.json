@@ -4,8 +4,8 @@
 			"Jose77"
 		]
 	},
-	"centralauth-finish-password": "Kontra-senyas:",
-	"centralauth-finish-login": "Mag sulod",
+	"centralauth-admin-reason": "Rason:",
 	"centralauth-admin-username": "Ngalan sang Manog-gamit:",
-	"centralauth-admin-reason": "Rason:"
+	"centralauth-finish-login": "Mag sulod",
+	"centralauth-finish-password": "Kontra-senyas:"
 }

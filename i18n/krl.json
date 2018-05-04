@@ -6,8 +6,8 @@
 			"Mashoi7"
 		]
 	},
-	"centralauth-foreign-link": "Käyttäjä $1 projektissa $2",
+	"centralauth-admin-blocklog": "šalpaušloki",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|korjauš|korjaušta}} wikissä $2",
-	"centralauth-merge-method-login": "luotu kirjuttautumishetkellä",
-	"centralauth-admin-blocklog": "šalpaušloki"
+	"centralauth-foreign-link": "Käyttäjä $1 projektissa $2",
+	"centralauth-merge-method-login": "luotu kirjuttautumishetkellä"
 }

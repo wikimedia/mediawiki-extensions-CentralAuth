@@ -4,14 +4,14 @@
 			"Hugo.arg"
 		]
 	},
-	"mergeaccount": "Prisėregėstravėma unifikacėjės statosos",
-	"centralauth-merge-step3-title": "Sokortė bendra paskīra",
-	"centralauth-foreign-link": "Nauduotuos $1 wiki svetainie $2",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pakeitėms|pakeitėmā|pakeitėmu}} wiki svetainie $2",
-	"centralauth-merge-method-login": "padėrbt prėsėjongiant",
 	"centralauth-admin-blocklog": "ožgīnėmu sārašos",
-	"globalusers": "Vėsoutėnis nauduotuoju sārašos",
-	"centralauth-prefs-status": "Bendruosės regėsracėjės būvis:",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pakeitėms|pakeitėmā|pakeitėmu}} wiki svetainie $2",
+	"centralauth-foreign-link": "Nauduotuos $1 wiki svetainie $2",
+	"centralauth-logout-progress": "Tamsta daba atjongts nug vėsū {{int:Centralauth-groupname}} wiki tėnklopiu:",
+	"centralauth-merge-method-login": "padėrbt prėsėjongiant",
+	"centralauth-merge-step3-title": "Sokortė bendra paskīra",
 	"centralauth-prefs-count-attached": "Tamstas paskīra vēk $1 pruojėkta {{PLURAL:$1|svetainie|svetainė|svatainėsė|svėtainiu}}.",
-	"centralauth-logout-progress": "Tamsta daba atjongts nug vėsū {{int:Centralauth-groupname}} wiki tėnklopiu:"
+	"centralauth-prefs-status": "Bendruosės regėsracėjės būvis:",
+	"globalusers": "Vėsoutėnis nauduotuoju sārašos",
+	"mergeaccount": "Prisėregėstravėma unifikacėjės statosos"
 }

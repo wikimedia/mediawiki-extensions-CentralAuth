@@ -5,17 +5,17 @@
 			"Sociologist"
 		]
 	},
-	"centralauth-groupname": "Vikimedia Fondi",
-	"centralauth-foreign-link": "Foydalanuvchi $1 soat $2da",
-	"centralauth-merge-method-login-desc": "Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.",
-	"centralauth-finish-password": "Maxfiy soʻz:",
 	"centralauth-admin-info-username": "Foydalanuvchi nomi:",
-	"centralauth-prefs-status": "Global hisob holati:",
+	"centralauth-finish-password": "Maxfiy soʻz:",
+	"centralauth-foreign-link": "Foydalanuvchi $1 soat $2da",
+	"centralauth-groupname": "Vikimedia Fondi",
+	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:",
+	"centralauth-merge-method-login-desc": "Mahalliy hisob raqami foydalanuvchi kirishni amalga oshirganda avtomatik ravishda yaratilganini anglatadi.",
 	"centralauth-prefs-count-attached": "Hisob yozuvingiz $1 ta {{PLURAL:$1|loyihada}} faol.",
 	"centralauth-prefs-count-unattached": "Hisob yozuvingiz hozirda {{PLURAL:$1|'''bitta''' loyihada|$1 ta loyihada}} tasdiqlanmagan.",
 	"centralauth-prefs-manage": "Global hisob yozuvini boshqarish",
+	"centralauth-prefs-status": "Global hisob holati:",
 	"centralauth-prefs-view": "Foydalanuvchi haqida global maʼlumotlarni koʻrish",
-	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ning boshqa viki-loyihalaridan ham chiqish amalga oshirilyapti:",
 	"centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi",
 	"globalrenamerequest-newname-err-taken": "Bunday foydalanuvchi nomi avvalroq yaratilgan. Iltimos, boshqa nom tanlang."
 }

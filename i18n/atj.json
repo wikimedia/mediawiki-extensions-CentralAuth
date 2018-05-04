@@ -6,17 +6,17 @@
 			"Nehirowisiw"
 		]
 	},
-	"centralauth-foreign-link": "\nOtimikesinasotc $1 okitc $2",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|tato e ki witcihietc|tatowa e ki witcihietc}} on $2",
-	"centralauth-merge-method-login": "E pitakesinasonaniwok ki ocitakaniwon",
-	"centralauth-admin-username": "Icinikasowin:",
-	"centralauth-admin-info-username": "Icinikasowin:",
 	"centralauth-admin-blocklog": "wapatcikan taci e nanikactek",
+	"centralauth-admin-info-username": "Icinikasowin:",
 	"centralauth-admin-multi-bot": "Ka ki meckotcitakaniwoki",
+	"centralauth-admin-username": "Icinikasowin:",
 	"centralauth-editset-submit-delete": "Wepina",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|tato e ki witcihietc|tatowa e ki witcihietc}} on $2",
+	"centralauth-foreign-link": "\nOtimikesinasotc $1 okitc $2",
+	"centralauth-merge-method-login": "E pitakesinasonaniwok ki ocitakaniwon",
 	"centralauth-rename-progress-username": "Icinikasowin",
-	"globalrenamerequest-email-label": "Pamikicikwepitcikan matcetcicihikan:",
-	"globalrenamequeue-column-rq-name": "Icinikasowin",
 	"globalrenamequeue-action-view": "Tapwatcike",
-	"globalrenamequeue-form-username": "Icinikasowin:"
+	"globalrenamequeue-column-rq-name": "Icinikasowin",
+	"globalrenamequeue-form-username": "Icinikasowin:",
+	"globalrenamerequest-email-label": "Pamikicikwepitcikan matcetcicihikan:"
 }

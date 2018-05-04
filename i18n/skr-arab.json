@@ -4,8 +4,8 @@
 			"Saraiki"
 		]
 	},
-	"centralauth-foreign-link": "ورتݨ والا$1 $2 تے",
+	"centralauth-admin-blocklog": "پابندی دی لاڳ",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ترمیم|ترامیم}} تے $2",
-	"centralauth-merge-method-login": "لاگ ان تے بݨایا",
-	"centralauth-admin-blocklog": "پابندی دی لاڳ"
+	"centralauth-foreign-link": "ورتݨ والا$1 $2 تے",
+	"centralauth-merge-method-login": "لاگ ان تے بݨایا"
 }

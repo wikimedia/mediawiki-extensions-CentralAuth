@@ -4,8 +4,8 @@
 			"Marwan Mohamad"
 		]
 	},
-	"centralauth-foreign-link": "Pengguna $1 to $2",
+	"centralauth-admin-blocklog": "tuladu log",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusi}} to $2",
-	"centralauth-merge-method-login": "pilohuto to'u tilumuwoto log",
-	"centralauth-admin-blocklog": "tuladu log"
+	"centralauth-foreign-link": "Pengguna $1 to $2",
+	"centralauth-merge-method-login": "pilohuto to'u tilumuwoto log"
 }

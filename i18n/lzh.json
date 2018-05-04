@@ -7,15 +7,15 @@
 			"Suchichi02"
 		]
 	},
-	"centralauth-desc": "[[Special:MergeAccount|混一]]籍口",
-	"centralauth-complete": "成矣﹗",
-	"centralauth-incomplete": "未成矣﹗",
-	"centralauth-complete-text": "而今而後，足下行乎維基，一號即可貫之，不必復籍焉。",
-	"centralauth-incomplete-text": "一號合矣，爾可貫之；同名號用典字書他也。",
-	"centralauth-admin-username": "簿名：",
-	"centralauth-admin-info-username": "簿名：",
-	"centralauth-admin-info-editcount": "總數計：",
 	"centralauth-admin-blocklog": "誌禁",
-	"centralauth-years-ago": "$1年前",
-	"centralauth-rename-progress-username": "簿名"
+	"centralauth-admin-info-editcount": "總數計：",
+	"centralauth-admin-info-username": "簿名：",
+	"centralauth-admin-username": "簿名：",
+	"centralauth-complete": "成矣﹗",
+	"centralauth-complete-text": "而今而後，足下行乎維基，一號即可貫之，不必復籍焉。",
+	"centralauth-desc": "[[Special:MergeAccount|混一]]籍口",
+	"centralauth-incomplete": "未成矣﹗",
+	"centralauth-incomplete-text": "一號合矣，爾可貫之；同名號用典字書他也。",
+	"centralauth-rename-progress-username": "簿名",
+	"centralauth-years-ago": "$1年前"
 }

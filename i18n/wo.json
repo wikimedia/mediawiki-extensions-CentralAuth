@@ -4,8 +4,8 @@
 			"Ibou"
 		]
 	},
-	"centralauth-foreign-link": "Jëfandikukat $1 ci $2",
+	"centralauth-admin-blocklog": "Jaar-jaaru téye yi",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|cëru}} ci $2",
-	"centralauth-merge-method-login": "Sos nañu ko ci diirub dugg gi",
-	"centralauth-admin-blocklog": "Jaar-jaaru téye yi"
+	"centralauth-foreign-link": "Jëfandikukat $1 ci $2",
+	"centralauth-merge-method-login": "Sos nañu ko ci diirub dugg gi"
 }

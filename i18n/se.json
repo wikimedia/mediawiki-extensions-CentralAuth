@@ -4,6 +4,6 @@
 			"Jeblad"
 		]
 	},
-	"centralauth-prefs-status": "Váldodovddaldaga dilli:",
-	"centralauth-prefs-count-attached": "Du dovddaldat lea registrerejuvvon $1 {{PLURAL:$1|prošektii|prošeavttaide}}."
+	"centralauth-prefs-count-attached": "Du dovddaldat lea registrerejuvvon $1 {{PLURAL:$1|prošektii|prošeavttaide}}.",
+	"centralauth-prefs-status": "Váldodovddaldaga dilli:"
 }

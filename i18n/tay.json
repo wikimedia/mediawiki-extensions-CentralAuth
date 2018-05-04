@@ -5,9 +5,9 @@
 			"Akamycoco"
 		]
 	},
-	"centralauth-foreign-link": "Maki’ squw $2 cyux mtzyuwaw sa$1",
-	"centralauth-foreign-contributions": "{{PLURAL:$1|min$1 }}miru’ squw $2",
-	"centralauth-merge-method-login": "wal ps’rxun sa ryax na mzyup",
 	"centralauth-admin-blocklog": "ql’an bniru’ qutux qutux ryax",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|min$1 }}miru’ squw $2",
+	"centralauth-foreign-link": "Maki’ squw $2 cyux mtzyuwaw sa$1",
+	"centralauth-merge-method-login": "wal ps’rxun sa ryax na mzyup",
 	"globalrenamerequest-email-label": "zyusyo na e-meyo’:"
 }

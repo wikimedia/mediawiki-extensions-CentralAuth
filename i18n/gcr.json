@@ -4,8 +4,8 @@
 			"LeGuyanaisPure"
 		]
 	},
-	"centralauth-foreign-link": "Itilizat{{GENDER:$1|ò|ris}} « $1 » asou $2",
+	"centralauth-admin-blocklog": "journal dé blokaj",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribisyon}} asou $2",
-	"centralauth-merge-method-login": "kréyé lò di idantifikasyon-an",
-	"centralauth-admin-blocklog": "journal dé blokaj"
+	"centralauth-foreign-link": "Itilizat{{GENDER:$1|ò|ris}} « $1 » asou $2",
+	"centralauth-merge-method-login": "kréyé lò di idantifikasyon-an"
 }

@@ -7,16 +7,16 @@
 			"Mouse21"
 		]
 	},
-	"centralauth-groupname": "Викимедиа Фондлэн",
-	"centralauth-foreign-link": "$2 викиысь $1 викиавтор",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тупатон}} $2 проектын",
-	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
 	"centralauth-admin-blocked2-indef": "Пырак азелы заблокировать каремын.",
 	"centralauth-admin-blocklog": "блокировкаосын журнал",
-	"globalusers": "Огъя викиавторъёслэн списоксы",
+	"centralauth-contribs-locked": "Та учётной запись глобально ӵогамын.\nУчке [[Special:CentralAuth/$1|огъя учётной записьлэсь даннойёссэ]] пыр-поч информация понна.",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тупатон}} $2 проектын",
+	"centralauth-foreign-link": "$2 викиысь $1 викиавтор",
+	"centralauth-groupname": "Викимедиа Фондлэн",
 	"centralauth-logout-progress": "Ортче потон {{int:Centralauth-groupname}} мукет проектъёсысьтыз:",
-	"globalrenamerequest-status-text": "Тӥляд викиавтор ним воштон ласянь куронды ужын луэ но стюардэн юнматонэз вите. Ужан йылпумъяськоз бере, тӥ ивортӥськоды электрон почта пыр.\n\n;Али нимды:\n:$1\n;Курем нимды:\n:$2",
+	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
 	"globalrenamequeue-action-view": "Учкон",
 	"globalrenamequeue-form-status-all": "ваньзэ",
-	"centralauth-contribs-locked": "Та учётной запись глобально ӵогамын.\nУчке [[Special:CentralAuth/$1|огъя учётной записьлэсь даннойёссэ]] пыр-поч информация понна."
+	"globalrenamerequest-status-text": "Тӥляд викиавтор ним воштон ласянь куронды ужын луэ но стюардэн юнматонэз вите. Ужан йылпумъяськоз бере, тӥ ивортӥськоды электрон почта пыр.\n\n;Али нимды:\n:$1\n;Курем нимды:\n:$2",
+	"globalusers": "Огъя викиавторъёслэн списоксы"
 }

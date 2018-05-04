@@ -4,8 +4,8 @@
 			"Anok kutai jang"
 		]
 	},
-	"centralauth-foreign-link": "Pangguna $1 di $2",
+	"centralauth-admin-blocklog": "Catatan pamblokiran",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusi|kontribusi}} di $2",
-	"centralauth-merge-method-login": "Dibiking waktu maso ka log",
-	"centralauth-admin-blocklog": "Catatan pamblokiran"
+	"centralauth-foreign-link": "Pangguna $1 di $2",
+	"centralauth-merge-method-login": "Dibiking waktu maso ka log"
 }

@@ -7,23 +7,23 @@
 			"Ernác"
 		]
 	},
-	"centralauth-merge-method-new": "çĕнĕ аккаунт",
-	"centralauth-merge-method-login": "Кĕне чухне тăвăннă",
 	"centralauth-admin-info-username": "Усă куракан ячĕ:",
-	"centralauth-seconds-ago": "$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла",
-	"centralauth-minutes-ago": "$1 {{PLURAL:$1|1=минут|минут}} каялла",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|1=сехет|сехет}} каялла",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|1=кун|кун}} каялла",
-	"centralauth-months-ago": "$1 {{PLURAL:$1|уйӑх}} каялла",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла",
 	"centralauth-editgroup-noset": "(çук)",
 	"centralauth-editgroup-reason": "Сӑлтав:",
 	"centralauth-editgroup-success": "Ушкӑн ирӗкӗсем улӑштарнӑ.",
 	"centralauth-editset-name": "Ят:",
+	"centralauth-editset-nouse": "(çук)",
+	"centralauth-editset-nowikis": "(çук)",
 	"centralauth-editset-reason": "Сӑлтав:",
 	"centralauth-editset-submit-delete": "Тӗпле",
-	"centralauth-editset-nowikis": "(çук)",
-	"centralauth-editset-nouse": "(çук)",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|1=сехет|сехет}} каялла",
 	"centralauth-log-gblrename-oldname": "Унччен усăкуракан ят:",
-	"centralauth-uwbr-name": "Усă куракан ят"
+	"centralauth-merge-method-login": "Кĕне чухне тăвăннă",
+	"centralauth-merge-method-new": "çĕнĕ аккаунт",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|1=минут|минут}} каялла",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|уйӑх}} каялла",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла",
+	"centralauth-uwbr-name": "Усă куракан ят",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла"
 }

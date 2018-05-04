@@ -4,14 +4,14 @@
 			"The Discoverer"
 		]
 	},
-	"centralauth-foreign-link": "$1-acher vapurpi $2",
-	"centralauth-foreign-contributions": "$2-acher $1  {{PLURAL:$1|yogdan}}",
-	"centralauth-merge-method-login": "sotrorombhak rochlele",
 	"centralauth-admin-blocklog": "adkholleancho suchi",
-	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second}} adim",
-	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minit|mintam}} adim",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|hor|horam}} adim",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dis}} adim",
+	"centralauth-foreign-contributions": "$2-acher $1  {{PLURAL:$1|yogdan}}",
+	"centralauth-foreign-link": "$1-acher vapurpi $2",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|hor|horam}} adim",
+	"centralauth-merge-method-login": "sotrorombhak rochlele",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minit|mintam}} adim",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mhoino|mhoine}} adim",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second}} adim",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|voros|vorsam}} adim"
 }

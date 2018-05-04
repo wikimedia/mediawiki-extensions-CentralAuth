@@ -4,17 +4,17 @@
 			"Geoleplubo"
 		]
 	},
-	"mergeaccount": "Étot éd l’unificacion éd l'idintifiant (logache)",
 	"centralauth": "Anménistrachon global des uzeus",
-	"globalusers": "Lisse des globals uzeus",
+	"centralauth-editset": "Insan.ne éd wikis",
+	"centralauth-editset-intro-ro": "El lisse des groupes éd wikis est:",
+	"centralauth-editset-legend-ro": "Chés groupes éd wikis",
+	"centralauth-editset-legend-view": "Insan.ne éd wikis « $1 »",
+	"centralauth-editset-optin": "Basé par consintemint ésplicite (cha n'comprind uniquemint éq chés wikis mértchés)",
+	"centralauth-editset-restwikis": "chés Wikis pon inclus:",
+	"centralauth-editset-usage": "Implouéyé dins chés groupes globals:",
 	"centralauth-login-progress": "Vos ètes logué{{GENDER:||e|(e)}} à chés wikis éd {{int:Centralauth-groupname}} :",
 	"centralauth-rightslog-set-optin": "basé par consintemint ésplicite",
 	"globalgrouppermissions": "Anménistrachon des globals groupes",
-	"centralauth-editset": "Insan.ne éd wikis",
-	"centralauth-editset-legend-ro": "Chés groupes éd wikis",
-	"centralauth-editset-intro-ro": "El lisse des groupes éd wikis est:",
-	"centralauth-editset-optin": "Basé par consintemint ésplicite (cha n'comprind uniquemint éq chés wikis mértchés)",
-	"centralauth-editset-legend-view": "Insan.ne éd wikis « $1 »",
-	"centralauth-editset-restwikis": "chés Wikis pon inclus:",
-	"centralauth-editset-usage": "Implouéyé dins chés groupes globals:"
+	"globalusers": "Lisse des globals uzeus",
+	"mergeaccount": "Étot éd l’unificacion éd l'idintifiant (logache)"
 }
