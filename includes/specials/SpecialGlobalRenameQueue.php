@@ -20,6 +20,8 @@
  * @ingroup SpecialPage
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Process account rename requests made via [[Special:GlobalRenameRequest]].
  *
@@ -631,7 +633,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @return MailAddress|null
 	 */
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
-		$lb = wfGetLB( $wiki );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $lbFactory->getMainLB( $wiki );
 		$remoteDB = $lb->getConnection( DB_REPLICA, [], $wiki );
 		$row = $remoteDB->selectRow(
 			'user',

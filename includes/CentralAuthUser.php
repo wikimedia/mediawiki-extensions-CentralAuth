@@ -11,6 +11,7 @@ likely construction types...
 */
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ResultWrapper;
@@ -184,7 +185,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	public static function centralLBHasRecentMasterChanges() {
 		global $wgCentralAuthDatabase;
 
-		return wfGetLB( $wgCentralAuthDatabase )->hasOrMadeRecentMasterChanges();
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		return $lbFactory->getMainLB( $wgCentralAuthDatabase )->hasOrMadeRecentMasterChanges();
 	}
 
 	/**
@@ -199,7 +201,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return IDatabase
 	 */
 	public static function getLocalDB( $wikiID ) {
-		return wfGetLB( $wikiID )->getConnectionRef( DB_MASTER, [], $wikiID );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		return $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_MASTER, [], $wikiID );
 	}
 
 	/**
@@ -1383,6 +1386,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$status->failCount++;
 		}
 
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$dbcw = CentralAuthUtils::getCentralDB();
 		$password = $this->getPassword();
 
@@ -1401,7 +1405,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			}
 
 			# Touch the local user row, update the password
-			$lb = wfGetLB( $wikiName );
+			$lb = $lbFactory->getMainLB( $wikiName );
 			$dblw = $lb->getConnection( DB_MASTER, [], $wikiName );
 			$dblw->update( 'user',
 				[
@@ -1458,6 +1462,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	function adminDelete( $reason ) {
 		$this->checkWriteMode();
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$centralDB = CentralAuthUtils::getCentralDB();
 
 		# Synchronise passwords
@@ -1469,7 +1474,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			/** @var $localUserRow object */
 			$wiki = $localUserRow->lu_wiki;
 			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
-			$lb = wfGetLB( $wiki );
+			$lb = $lbFactory->getMainLB( $wiki );
 			$localDB = $lb->getConnection( DB_MASTER, [], $wiki );
 			$localDB->update( 'user',
 				[ 'user_password' => $password ],
@@ -1771,7 +1776,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
 		global $wgConf, $wgCentralAuthGlobalBlockInterwikiPrefix;
 
-		$lb = wfGetLB( $wiki );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $lbFactory->getMainLB( $wiki );
 		$dbw = $lb->getConnectionRef( DB_MASTER, [], $wiki );
 		$data = $this->localUserData( $wiki );
 
@@ -2167,8 +2173,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 */
 	protected function importLocalNames() {
 		$rows = [];
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		foreach ( self::getWikiList() as $wikiID ) {
-			$dbr = wfGetLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
+			$dbr = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
 			$id = $dbr->selectField(
 				"`$wikiID`.`user`",
 				'user_id',
@@ -2434,7 +2441,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	 * @return array
 	 */
 	protected function localUserData( $wikiID ) {
-		$lb = wfGetLB( $wikiID );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $lbFactory->getMainLB( $wikiID );
 		$db = $lb->getConnection( DB_REPLICA, [], $wikiID );
 		$fields = [
 				'user_id',

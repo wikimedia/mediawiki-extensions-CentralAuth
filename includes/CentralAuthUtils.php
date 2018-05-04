@@ -20,7 +20,8 @@ class CentralAuthUtils {
 			return wfReadOnlyReason();
 		}
 
-		$lb = wfGetLB( $wgCentralAuthDatabase );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $lbFactory->getMainLB( $wgCentralAuthDatabase );
 		$reason = $lb->getReadOnlyReason( $wgCentralAuthDatabase );
 		if ( $reason !== false ) {
 			return $reason;
@@ -51,7 +52,8 @@ class CentralAuthUtils {
 			throw new CentralAuthReadOnlyError();
 		}
 
-		return wfGetLB( $wgCentralAuthDatabase )->getConnectionRef( DB_MASTER, [],
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		return $lbFactory->getMainLB( $wgCentralAuthDatabase )->getConnectionRef( DB_MASTER, [],
 			$wgCentralAuthDatabase );
 	}
 
@@ -63,7 +65,8 @@ class CentralAuthUtils {
 	public static function getCentralSlaveDB() {
 		global $wgCentralAuthDatabase;
 
-		return wfGetLB( $wgCentralAuthDatabase )->getConnectionRef(
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		return $lbFactory->getMainLB( $wgCentralAuthDatabase )->getConnectionRef(
 			DB_REPLICA, 'centralauth', $wgCentralAuthDatabase );
 	}
 

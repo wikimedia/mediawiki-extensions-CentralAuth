@@ -5,6 +5,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\MediaWikiServices;
+
 class PopulateLocalAndGlobalIds extends Maintenance {
 
 	public function __construct() {
@@ -32,7 +34,8 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			$globalRenames[] = $row->ru_oldname;
 		}
 
-		$lb = wfGetLB( $wiki );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lb = $lbFactory->getMainLB( $wiki );
 		$ldbr = $lb->getConnection( DB_REPLICA, [], $wiki );
 
 		$this->output( "Populating fields for wiki $wiki... \n" );
