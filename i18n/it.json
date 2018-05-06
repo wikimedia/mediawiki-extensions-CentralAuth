@@ -23,7 +23,8 @@
 			"Matteocng",
 			"Einreiher",
 			"Giromin Cangiaxo",
-			"Margherita.mignanelli"
+			"Margherita.mignanelli",
+			"Daimona Eaytoy"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
@@ -396,7 +397,7 @@
 	"centralauth-rightslog-entry-setchange": "cambiate le wiki in \"$1\": aggiunte: $2; rimosse: $3",
 	"centralauth-rightslog-entry-setnewtype": "cambiato il tipo di \"$1\" da \"$2\" a \"$3\"",
 	"centralauth-rightslog-entry-setrename": "rinominato l'insieme di wiki \"$2\" a \"$1\"",
-	"centralauth-rightslog-entry-usergroups": "modificata l'appartenenza ai gruppi globali di $1 da $2 a $3",
+	"centralauth-rightslog-entry-usergroups": "ha modificato l'appartenenza ai gruppi globali di $1 da $2 a $3",
 	"centralauth-rightslog-header": "Di seguito sono elencate le modifiche effettuate sui diritti globali, compresi i cambiamenti di appartenenza ai gruppi e i permessi assegnati ai gruppi.",
 	"centralauth-rightslog-name": "Diritti globali",
 	"centralauth-rightslog-set-optin": "opt-in",

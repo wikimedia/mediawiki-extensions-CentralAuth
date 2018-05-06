@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"centralauth-admin-info-username": "用戶名稱：",
+	"centralauth-admin-username": "用戶名稱：",
+	"centralauth-rename-progress-username": "用戶名稱",
+	"globalrenamequeue-column-rq-name": "用戶名稱",
+	"globalrenamequeue-request-movepages": "移動用戶頁面"
+}
