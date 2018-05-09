@@ -20,6 +20,15 @@ class SpecialMultiLock extends SpecialPage {
 		return true;
 	}
 
+	public function checkPermissions() {
+		parent::checkPermissions();
+
+		// T194232
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			throw new ErrorPageError( 'permissionserrors', 'centralauth-globalactiondenied' );
+		}
+	}
+
 	function execute( $subpage ) {
 		$this->setHeaders();
 		$this->checkPermissions();

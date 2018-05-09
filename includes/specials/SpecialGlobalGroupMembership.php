@@ -71,8 +71,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		if (
 			$this->mGlobalUser->exists() &&
 			$this->mGlobalUser->isAttached() &&
-			# Permission MUST be gained from global rights.
-			$this->mGlobalUser->hasGlobalPermission( 'globalgroupmembership' )
+			$this->getUser()->isAllowed( 'globalgroupmembership' ) &&
+			CentralAuthUtils::isPermittedGlobalActionWiki()
 		) {
 			$allGroups = CentralAuthUser::availableGlobalGroups();
 

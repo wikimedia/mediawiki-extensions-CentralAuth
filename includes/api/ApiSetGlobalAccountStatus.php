@@ -36,6 +36,11 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 		$this->checkUserRightsAny( 'centralauth-lock' );
 
+		// T194232
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			$this->dieWithError( 'centralauth-globalactiondenied' );
+		}
+
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
 			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
@@ -140,7 +145,10 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 	public static function getToken() {
 		global $wgUser;
-		if ( !$wgUser->isAllowed( 'centralauth-lock' ) ) {
+		if (
+			!$wgUser->isAllowed( 'centralauth-lock' ) ||
+			!CentralAuthUtils::isPermittedGlobalActionWiki()
+		 ) {
 			return false;
 		}
 
