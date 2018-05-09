@@ -40,6 +40,15 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		return true;
 	}
 
+	public function checkPermissions() {
+		parent::checkPermissions();
+
+		// T194232
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			throw new ErrorPageError( 'permissionserrors', 'centralauth-globalactiondenied' );
+		}
+	}
+
 	/**
 	 * @param string $par Subpage string if one was specified
 	 */

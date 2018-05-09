@@ -33,6 +33,11 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		// Heavily based on code from SpecialCentralAuth::doSubmit
 		$this->checkUserRightsAny( 'centralauth-unmerge' );
 
+		// T194232
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			$this->dieWithError( 'centralauth-globalactiondenied' );
+		}
+
 		$params = $this->extractRequestParams();
 
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );

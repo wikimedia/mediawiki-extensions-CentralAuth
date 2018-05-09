@@ -32,10 +32,19 @@ class SpecialCentralAuth extends SpecialPage {
 		global $wgContLang;
 		$this->setHeaders();
 
-		$this->mCanUnmerge = $this->getUser()->isAllowed( 'centralauth-unmerge' );
-		$this->mCanLock = $this->getUser()->isAllowed( 'centralauth-lock' );
-		$this->mCanOversight = $this->getUser()->isAllowed( 'centralauth-oversight' );
-		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
+
+		# Check the wiki is global action permitted wikis - T31435
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			$this->mCanUnmerge = false;
+			$this->mCanLock = false;
+			$this->mCanOversight = false;
+			$this->mCanEdit = false;
+		} else {
+			$this->mCanUnmerge = $this->getUser()->isAllowed( 'centralauth-unmerge' );
+			$this->mCanLock = $this->getUser()->isAllowed( 'centralauth-lock' );
+			$this->mCanOversight = $this->getUser()->isAllowed( 'centralauth-oversight' );
+			$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
+		}
 
 		$this->getOutput()->setPageTitle(
 			$this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' )
