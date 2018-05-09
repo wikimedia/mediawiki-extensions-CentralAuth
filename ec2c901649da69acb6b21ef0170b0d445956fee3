@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b7fec1ac_75ac2348",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-05-09T09:29:13Z",
+      "side": 1,
+      "message": "Needs rewording. Probably in the lines of \"The action {{GENDER:$1|you}} have tried to perform is not permitted because this wiki is not in the list of wikis where global actions can be performed.\" - Gender support would be a plus but I\u0027d not worry about that for now. Also, this message needs a qqq.json entry as well.",
+      "range": {
+        "startLine": 305,
+        "startChar": 36,
+        "endLine": 305,
+        "endChar": 129
+      },
+      "revId": "ec2c901649da69acb6b21ef0170b0d445956fee3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
