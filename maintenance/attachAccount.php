@@ -47,7 +47,7 @@ class AttachAccount extends Maintenance {
 		$this->quiet = false;
 
 		$this->addOption( 'userlist',
-			'List of usernames to attach, one per line', true, true );
+			'File with the list of usernames to attach, one per line', true, true );
 		$this->addOption( 'dry-run', 'Do not update database' );
 		$this->addOption( 'quiet',
 			'Only report database changes and final statistics' );
