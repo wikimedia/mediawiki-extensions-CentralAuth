@@ -45,7 +45,7 @@
 	"apihelp-globaluserrights-param-user": "שם משתמש גלובלי.",
 	"apihelp-globaluserrights-param-userid": "מזהה משתמש גלובלי.",
 	"apihelp-globaluserrights-summary": "הוספה/הסרה של משתמש אל/מתוך קבוצות גלובליות.",
-	"apihelp-main-param-centralauthtoken": "בעת גישה לבקשת AJAX חוצה־מתחמים (CORS) יש להשתמש בזה כדי להתאמת בתור משתמש SUL נוכחי. יש להשתמש ב־<kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> בוויקי הזהכדי לאחזר את האסימון לפי ביצוע בקשת CORS. בכל אסימון אפשר להשתמש רק פעם אחת, והוא פג אחרי 10 שניות. זה אמור להיכלל בכל בקשה לפני טיסה ולכן זה צריך להיות כלול ב־URI של הבקשה (לא בגוף ה־POST).",
+	"apihelp-main-param-centralauthtoken": "בעת גישה לבקשת AJAX חוצה־מתחמים (CORS), יש להשתמש בזה כדי להתאמת בתור משתמש SUL נוכחי. יש להשתמש ב־<kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> באתר הוויקי הזה כדי לאחזר את האסימון לפי ביצוע בקשת CORS. בכל אסימון אפשר להשתמש רק פעם אחת, והוא פג אחרי 10 שניות. זה אמור להיכלל בכל בקשה לפני טיסה ולכן זה צריך להיות כלול ב־URI של הבקשה (לא בגוף ה־POST).",
 	"apihelp-query+globalallusers-description": "מספור כל המשתמשים הגלובליים.",
 	"apihelp-query+globalallusers-example-1": "רשימת משתמשים גלובליים",
 	"apihelp-query+globalallusers-example-2": "מציג מידע למשתמשים גלובליים החל מ־\"ABC\"",
