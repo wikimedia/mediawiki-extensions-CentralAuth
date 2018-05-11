@@ -17,7 +17,7 @@
 	"centralauth-account-exists": "Немагчыма стварыць рахунак: гэтае імя карыстальніка ўжо занятае ўдзельнікам у іншай вікі.",
 	"centralauth-account-exists-reset": "Удзельнік «$1» не зарэгістраваны ў гэтай вікі, але вы можаце скінуць яго пароль у [[Special:CentralAuth/$1|тых вікі, дзе ён прысутнічае]].",
 	"centralauth-admin-action-hide-lists": "Схаваць абраныя рахункі з глябальнага сьпісу ўдзельнікаў",
-	"centralauth-admin-action-hide-nochange": "Не зьмяняць схаваныя роўні",
+	"centralauth-admin-action-hide-nochange": "Не зьмяняць узроўні бачнасьці",
 	"centralauth-admin-action-hide-none": "Скасаваць хаваньне выбраных рахункаў",
 	"centralauth-admin-action-hide-oversight": "Цалкам схаваць выбраныя рахункі",
 	"centralauth-admin-action-lock-lock": "Заблякаваць выбраныя рахункі",

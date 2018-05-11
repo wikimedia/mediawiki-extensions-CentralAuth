@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Simartampua"
+		]
+	},
+	"apihelp-setglobalaccountstatus-param-hidden": "Uba sanga pamekeon inda ianjopi, ianjopi tingon daftar pamake global, sanga ipisat",
+	"centralauth-admin-action-hide-lists": "Anjopi akun tarpili tingon daftar pamake global",
+	"centralauth-admin-action-hide-nochange": "Ulang uba tingkat visibilitas",
+	"centralauth-admin-hidden-list": "Tingon daptar pamake global",
+	"centralauth-admin-hidden-oversight": "Tarpisat",
+	"centralauth-admin-status-hidden-list": "Akun ianjopi tingon daftar pamake global",
+	"centralauth-log-status-oversighted": "Tarpisat"
+}
