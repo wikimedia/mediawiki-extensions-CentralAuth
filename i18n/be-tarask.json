@@ -34,7 +34,7 @@
 	"centralauth-admin-delete-nonexistent": "Памылка: глябальны рахунак «<nowiki>$1</nowiki>» не існуе.",
 	"centralauth-admin-delete-success": "Глябальны рахунак «<nowiki>$1</nowiki>» быў выдалены",
 	"centralauth-admin-delete-title": "Выдаленьне рахунку",
-	"centralauth-admin-hidden-list": "з агульнадаступных сьпісаў",
+	"centralauth-admin-hidden-list": "з глябальнага сьпісу ўдзельнікаў",
 	"centralauth-admin-hidden-oversight": "рэвізаваны",
 	"centralauth-admin-info-attached": "Колькасьць далучаных рахункаў:",
 	"centralauth-admin-info-editcount": "Агульная колькасьць рэдагаваньняў:",
