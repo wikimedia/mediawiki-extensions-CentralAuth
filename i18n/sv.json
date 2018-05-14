@@ -111,7 +111,7 @@
 	"centralauth-admin-delete-success": "Det globala kontot för \"<nowiki>$1</nowiki>\" raderades",
 	"centralauth-admin-delete-title": "Radera konto",
 	"centralauth-admin-group-temporary": "$1 ''(temporärt)''",
-	"centralauth-admin-hidden-list": "från offentliga listor",
+	"centralauth-admin-hidden-list": "från listan över globala användare",
 	"centralauth-admin-hidden-oversight": "censurerad",
 	"centralauth-admin-info-attached": "Antal anslutna konton:",
 	"centralauth-admin-info-editcount": "Totalt antal redigeringar:",

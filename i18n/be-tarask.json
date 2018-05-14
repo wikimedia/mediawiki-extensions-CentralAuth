@@ -35,7 +35,7 @@
 	"centralauth-admin-delete-success": "Глябальны рахунак «<nowiki>$1</nowiki>» быў выдалены",
 	"centralauth-admin-delete-title": "Выдаленьне рахунку",
 	"centralauth-admin-hidden-list": "з глябальнага сьпісу ўдзельнікаў",
-	"centralauth-admin-hidden-oversight": "рэвізаваны",
+	"centralauth-admin-hidden-oversight": "схаваны",
 	"centralauth-admin-info-attached": "Колькасьць далучаных рахункаў:",
 	"centralauth-admin-info-editcount": "Агульная колькасьць рэдагаваньняў:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глябальная група|Глябальныя групы}}:",
