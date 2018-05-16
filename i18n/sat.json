@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Albinus",
-			"Manik Soren"
+			"Manik Soren",
+			"Fagunkoyel Hansdah"
 		]
 	},
 	"centralauth-admin-blocklog": "ᱠᱩᱞᱩᱯ ᱮᱥᱮᱫ",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ᱮᱱᱮᱢ|ᱮᱱᱮᱢᱠᱚ}} ᱨᱮ $2",
+	"centralauth-foreign-contributions": "$2 ᱨᱮ $1 {{PLURAL:$1|ᱮᱱᱮᱢ|ᱮᱱᱮᱢᱠᱚ}}",
 	"centralauth-foreign-link": "ᱵᱮᱵᱦᱟᱨᱤᱡ $2 ᱨᱮ $1",
 	"centralauth-merge-method-login": "ᱵᱚᱞᱚᱱ ᱥᱮᱡ ᱞᱮᱠᱟᱛᱮ ᱛᱮᱭᱟᱨᱠᱟᱱ"
 }

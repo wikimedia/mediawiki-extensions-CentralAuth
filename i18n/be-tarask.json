@@ -75,7 +75,7 @@
 	"centralauth-admin-setstatus-success": "Вы зьмянілі статус гэтага глябальнага рахунку.",
 	"centralauth-admin-status": "Устанавіць статус глябальнага рахунку",
 	"centralauth-admin-status-hidden": "Схаваны:",
-	"centralauth-admin-status-hidden-list": "Рахунак схаваны ў агульнадаступных сьпісаў",
+	"centralauth-admin-status-hidden-list": "Рахунак схаваны з глябальнага сьпісу ўдзельнікаў",
 	"centralauth-admin-status-hidden-no": "Рахунак не схаваны",
 	"centralauth-admin-status-hidden-oversight": "Рахунак схаваны цалкам",
 	"centralauth-admin-status-intro": "Вы можаце выкарыстоўваць форму для зьмены статусу гэтага глябальнага рахунку",

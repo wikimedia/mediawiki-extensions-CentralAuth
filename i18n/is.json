@@ -174,7 +174,7 @@
 	"centralauth-log-entry-lockandhide": "læsti og fól altækan aðgang \"$1\"",
 	"centralauth-log-entry-unhide": "sýndi altækan aðgang \"$1\"",
 	"centralauth-log-entry-unlock": "opnaði altækan aðgang \"$1\"",
-	"centralauth-log-header": "Þessi aðgerðarskrá inniheldur aðgerðir frá altækum notendum: eyðingar, verndanir og afverndanir.",
+	"centralauth-log-header": "Þessi atvikaskrá inniheldur aðgerðir frá altækum notendaaðgöngum: eyðingar, verndanir og afverndanir.",
 	"centralauth-log-name": "Altæk aðgangaskrá",
 	"centralauth-log-status-hidden": "falinn",
 	"centralauth-log-status-locked": "læstur",
