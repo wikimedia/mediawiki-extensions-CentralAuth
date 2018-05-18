@@ -107,7 +107,7 @@
 	"centralauth-admin-setstatus-success": "Dir hutt de Status vun dësem globale Benotzerkont geännert.",
 	"centralauth-admin-status": "Status vum globale Benotzerkont änneren",
 	"centralauth-admin-status-hidden": "Verstoppt:",
-	"centralauth-admin-status-hidden-list": "De Kont ass op den ëffentleche Lëschte verstoppt",
+	"centralauth-admin-status-hidden-list": "De Kont ass op der Lëscht vun de globale Benotzer  verstoppt",
 	"centralauth-admin-status-hidden-no": "De Kont ass net verstoppt",
 	"centralauth-admin-status-hidden-oversight": "De Kont ass komplett verstoppt",
 	"centralauth-admin-status-intro": "Dir kënnt dëse Formulaire benotze fir de Status vun engem globale Benotzerkont z'änneren",
