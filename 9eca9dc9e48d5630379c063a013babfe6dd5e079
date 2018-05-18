@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "25e3b808_c2899e70",
+        "filename": "includes/api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2018-05-18T15:28:15Z",
+      "side": 1,
+      "message": "This is not really helpful information for a user. Why not say something like \"\\\"$user\\\" is not a valid user name\"?\n\nAlso please disable the more expensive parts of the validation by passing that optional \"false\", as suggested in previous comments.",
+      "range": {
+        "startLine": 58,
+        "startChar": 48,
+        "endLine": 58,
+        "endChar": 62
+      },
+      "revId": "9eca9dc9e48d5630379c063a013babfe6dd5e079",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
