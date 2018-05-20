@@ -105,7 +105,7 @@ class SpecialMultiLock extends SpecialPage {
 				|| ( !$this->mCanOversight &&
 					( $globalUser->isOversighted() || $globalUser->isHidden() ) )
 			) {
-				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
+				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->text();
 			} else {
 				$ret[] = $globalUser;
 			}
@@ -336,6 +336,7 @@ class SpecialMultiLock extends SpecialPage {
 			// Names are known to exist, so this is not really needed
 			$guName
 		);
+		// formatHiddenLevel html escapes its output
 		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
 		$accountAge = time() - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 		$guRegister = $sca->prettyTimespan( $accountAge );
@@ -358,7 +359,7 @@ class SpecialMultiLock extends SpecialPage {
 		$rowHtml .= Html::rawElement( 'td', [], $guLink );
 		$rowHtml .= Html::element( 'td', [ 'data-sort-value' => $accountAge ], $guRegister );
 		$rowHtml .= Html::element( 'td', [], $guLocked );
-		$rowHtml .= Html::element( 'td', [], $guHidden );
+		$rowHtml .= Html::rawElement( 'td', [], $guHidden );
 		$rowHtml .= Html::element( 'td', [], $guEditCount );
 		$rowHtml .= Html::element( 'td', [], $guAttachedLocalAccounts );
 

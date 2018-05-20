@@ -49,7 +49,8 @@ foreach ( $globalStewards as $user => $id ) {
 			'gug_user' => $id,
 			'gug_group' => 'steward' ],
 		'migrateStewards.php' );
-	echo "Added {$user}\n";
+	// Using id as a hack for phan-taint-check.
+	echo "Added user id " . ( (int)$id ) . "\n";
 
 	$u = new CentralAuthUser( $user );
 	$u->quickInvalidateCache(); // Don't bother regenerating the steward's cache.
