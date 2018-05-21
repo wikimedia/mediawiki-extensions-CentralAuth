@@ -12,7 +12,7 @@
 			"Elias Ahmmad"
 		]
 	},
-	"action-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর",
+	"action-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর করার",
 	"apihelp-globaluserrights-param-tags": "এই প্যারামিটারটি বর্তমানে অব্যবহৃত।",
 	"apihelp-query+globalallusers-example-1": "বৈশ্বিক ব্যবহারকারীদের তালিকা",
 	"apihelp-query+globalgroups-example-1": "বৈশ্বিক দলের তালিকা",
@@ -200,9 +200,9 @@
 	"centralauth-log-status-none": "(কিছু নাই)",
 	"centralauth-login-error-locked": "আপনি প্রবেশ করতে পারবেন না কারণ আপনার অ্যাকাউন্টটি গ্লোবালি বন্ধ করা আছে।",
 	"centralauth-login-no-others": "আপনি সফলভাবে {{int:Centralauth-groupname}}-এর একটি প্রকল্পে প্রবেশ করেছেন।",
-	"centralauth-login-progress": "যে সকল উইকিতে আপনাকে প্রবেশ করানো হয়েছে {{int:Centralauth-groupname}}:",
+	"centralauth-login-progress": "{{int:Centralauth-groupname}}-এর যে সকল {{PLURAL:$2|উইকিতে}} আপনাকে প্রবেশ করানো হয়েছে:",
 	"centralauth-logout-no-others": "আপনি সয়ংক্রিয়ভাবে {{int:Centralauth-groupname}}-এর অন্যান্য প্রকল্পগুলো থেকে বাহির  হয়েছেন।",
-	"centralauth-logout-progress": "{{int:Centralauth-groupname}}-এর যে সকল উইকি থেকে আপনাকে প্রস্থান করানো হয়েছে:",
+	"centralauth-logout-progress": "{{int:Centralauth-groupname}}-এর যে সকল {{PLURAL:$2|উইকি}} থেকে আপনাকে প্রস্থান করানো হয়েছে:",
 	"centralauth-merge-attempt": "'''প্রদত্ত পাসওয়ার্ড বাকি বিচ্ছিন্ন অ্যাকাউন্টের বিপক্ষে পরীক্ষা করা হচ্ছে...'''",
 	"centralauth-merge-denied": "দুঃখিত, এ পাতায় আপনার প্রবেশাধিকার নাই।",
 	"centralauth-merge-dryrun-complete": "সমস্ত অ্যাকাউন্টগুলো সয়ংক্রিয় ভাবে একীভূত করা যাবে!\n\nএখনও আপনার অ্যাকাউন্টে কোন পরিবর্তন করা হয় নাই।",
