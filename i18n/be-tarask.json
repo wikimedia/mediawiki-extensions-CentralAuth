@@ -213,7 +213,7 @@
 	"centralauth-login-no-others": "Вы аўтаматычна ўвайшлі ў іншыя праекты {{GRAMMAR:родны|{{int:Centralauth-groupname}}}}.",
 	"centralauth-login-progress": "Адбываецца ўваход у сыстэму ў {{PLURAL:$2|1=вікі-праекце|вікі-праектах}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Вы аўтаматычна выйшлі зь іншых праектаў {{GRAMMAR:родны|{{int:Centralauth-groupname}}}}.",
-	"centralauth-logout-progress": "Адбываецца выхад з сыстэмы і ў іншых праектах {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Адбываецца выхад з сыстэмы ў {{PLURAL:$2|1=вікіпраекце|вікіпраектах}} {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Праверка пазначанага пароля на адпаведнасьць яшчэ не аб'яднаным рахункам…'''",
 	"centralauth-merge-denied": "Прабачце, але Вы ня маеце правоў для доступу да гэтай старонкі.",
 	"centralauth-merge-dryrun-complete": "Усе існуючыя рахункі могуць быць аўтаматычна аб'яднаныя!\n\nПакуль Вашы рахункі не былі зьменены.",
