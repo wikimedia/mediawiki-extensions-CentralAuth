@@ -313,7 +313,7 @@
 	"centralauth-globalgroupperms-wikiset-none": "هذه المجموعة نشطة في جميع الويكيات.",
 	"centralauth-groupname": "مؤسسة ويكيميديا",
 	"centralauth-hidden-blockreason": "البيانات الشاملة تم إخفائها بواسطة $1 في $2 نتيجة للسبب التالي:$3",
-	"centralauth-hours-ago": "منذ {{PLURAL:$1|ساعة|ساعتين|$1 ساعات|$1 ساعة}}",
+	"centralauth-hours-ago": "قبل {{PLURAL:$1|ساعة|ساعتين|$1 ساعات|$1 ساعة}}",
 	"centralauth-incomplete": "توحيد الدخول لم يكتمل!",
 	"centralauth-incomplete-text": "متى تم توحيد دخولك، سيمكنك الدخول لأي موقع ويكي ل{{int:Centralauth-groupname}} بدون إنشاء حساب جديد.",
 	"centralauth-invalid-wiki": "لا توجد قاعدة بيانات ويكي كهذه: $1",
