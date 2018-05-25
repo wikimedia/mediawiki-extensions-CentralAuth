@@ -463,10 +463,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			/** @var ScopedCallback|null $delay */
-			$delay = null;
-
+			/** @var Wikimedia\ScopedCallback|null $delay */
 			$delay = $this->session->delaySave();
+
 			$this->session->resetId();
 			CentralAuthUtils::setCentralSession( [
 				'finalProto' => $memcData['finalProto'],
