@@ -3,7 +3,8 @@
 		"authors": [
 			"Malafaya",
 			"Cgboeree",
-			"Katxis"
+			"Katxis",
+			"Mafcadio"
 		]
 	},
 	"centralauth-admin-blocklog": "istoria de blocis",
@@ -15,5 +16,8 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribui|contribuis}} en $2",
 	"centralauth-foreign-link": "Usor $1 en $2",
 	"centralauth-merge-dryrun-or": "'''o'''",
-	"centralauth-merge-method-login": "creada par identifia"
+	"centralauth-merge-method-login": "creada par identifia",
+	"globalgroupmembership": "La parteni en grupos global",
+	"globalrenamerequest": "Solisita de renomi de conta global de usor",
+	"mergeaccount": "State de uni de autentici"
 }
