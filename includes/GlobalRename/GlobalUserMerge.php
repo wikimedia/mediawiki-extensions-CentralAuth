@@ -5,7 +5,7 @@ use MediaWiki\Logger\LoggerFactory;
 /**
  * Merge a global user
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  * @author Kunal Mehta < legoktm@gmail.com >
  */

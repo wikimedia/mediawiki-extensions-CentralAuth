@@ -8,7 +8,7 @@ use Wikimedia\Rdbms\IDatabase;
  * This can work based on the new or old user name (can be constructed
  * from whatever is available)
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserStatus implements IDBAccessObject {

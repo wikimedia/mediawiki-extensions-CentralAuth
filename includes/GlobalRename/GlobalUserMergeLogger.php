@@ -3,7 +3,7 @@
 /**
  * Log a global merge into the local log
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Kunal Mehta
  */
 class GlobalUserMergeLogger {

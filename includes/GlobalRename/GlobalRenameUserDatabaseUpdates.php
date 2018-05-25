@@ -5,7 +5,7 @@ use Wikimedia\Rdbms\IDatabase;
 /**
  * Update the rows in the CentralAuth tables during a rename
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserDatabaseUpdates {
