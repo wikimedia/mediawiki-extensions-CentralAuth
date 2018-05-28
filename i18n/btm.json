@@ -7,8 +7,12 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Uba sanga pamekeon inda ianjopi, ianjopi tingon daftar pamake global, sanga ipisat",
 	"centralauth-admin-action-hide-lists": "Anjopi akun tarpili tingon daftar pamake global",
 	"centralauth-admin-action-hide-nochange": "Ulang uba tingkat visibilitas",
+	"centralauth-admin-blocklog": "Log blokir",
 	"centralauth-admin-hidden-list": "Tingon daptar pamake global",
 	"centralauth-admin-hidden-oversight": "Tarpisat",
 	"centralauth-admin-status-hidden-list": "Akun ianjopi tingon daftar pamake global",
-	"centralauth-log-status-oversighted": "Tarpisat"
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|kontribusi}} i $2",
+	"centralauth-foreign-link": "Pamake $1 i $2",
+	"centralauth-log-status-oversighted": "Tarpisat",
+	"centralauth-merge-method-login": "Baen log masuk"
 }
