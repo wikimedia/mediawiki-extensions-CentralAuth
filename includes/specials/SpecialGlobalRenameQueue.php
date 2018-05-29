@@ -157,13 +157,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/**
 	 * Initialize and output the HTMLForm used for filtering.
 	 *
-	 * @param array $fields
+	 * @param array $formDescriptor
 	 */
-	private function outputFilterForm( array $fields ) {
-		$form = HTMLForm::factory( 'table', $fields, $this->getContext() );
-		$form->setMethod( 'get' );
-		$form->setWrapperLegendMsg( 'search' );
-		$form->prepareForm()->displayForm( false );
+	private function outputFilterForm( array $formDescriptor ) {
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->setMethod( 'get' )
+			->setWrapperLegendMsg( 'search' )
+			->prepareForm()->displayForm( false );
 	}
 
 	/**
