@@ -8,8 +8,10 @@
 	},
 	"centralauth-admin-blocklog": "блок оттаярай тептар",
 	"centralauth-editgroup-reason": "Бахьан:",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|1=нийсдар|нийсдараш}} $2 чу",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|1=тоадаьр|тоадаьр}} $2 чу",
 	"centralauth-foreign-link": "Доакъашхо $1 $2 чу",
 	"centralauth-merge-method-login": "кхыйола вики-проекте система чувоалаш кхелла учета яздар",
+	"centralauth-prefs-status": "Юкъара дагара йоазув:",
+	"centralauth-prefs-view": "Юкъарча дагара йоазонах лаьца",
 	"globalrenamequeue-action-view": "Хьажар"
 }
