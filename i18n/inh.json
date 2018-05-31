@@ -13,5 +13,8 @@
 	"centralauth-merge-method-login": "кхыйола вики-проекте система чувоалаш кхелла учета яздар",
 	"centralauth-prefs-status": "Юкъара дагара йоазув:",
 	"centralauth-prefs-view": "Юкъарча дагара йоазонах лаьца",
-	"globalrenamequeue-action-view": "Хьажар"
+	"globalrenamequeue-action-view": "Хьажар",
+	"globalusermerge": "Дагара йоазонаш цхьантохар",
+	"globalusermerge-legend": "Дагара йоазонаш цхьантохар",
+	"right-centralauth-merge": "дагара йоазонаш цхьантохар"
 }
