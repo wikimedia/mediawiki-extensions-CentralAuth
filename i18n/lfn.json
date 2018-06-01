@@ -7,6 +7,7 @@
 			"Mafcadio"
 		]
 	},
+	"centralauth": "Manejor de contas global",
 	"centralauth-admin-blocklog": "istoria de blocis",
 	"centralauth-admin-list-method": "Metodo",
 	"centralauth-admin-no": "no",
@@ -18,6 +19,10 @@
 	"centralauth-merge-dryrun-or": "'''o'''",
 	"centralauth-merge-method-login": "creada par identifia",
 	"globalgroupmembership": "La parteni en grupos global",
+	"globalgrouppermissions": "Maneja de grupos global",
+	"globalrenameprogress": "Progresa de renomi global",
 	"globalrenamerequest": "Solisita de renomi de conta global de usor",
-	"mergeaccount": "State de uni de autentici"
+	"globalusers": "Lista de contas global",
+	"mergeaccount": "State de uni de autentici",
+	"userswhowillberenamed": "Usores ci va es renomida"
 }
