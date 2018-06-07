@@ -971,7 +971,6 @@ class CentralAuthHooks {
 
 	/**
 	 * @param array &$vars
-	 * @return bool
 	 */
 	static function onResourceLoaderGetConfigVars( &$vars ) {
 		global $wgCentralAuthLoginWiki;
@@ -1333,7 +1332,6 @@ class CentralAuthHooks {
 	/**
 	 * Handler for UserGetReservedNames
 	 * @param array &$reservedUsernames
-	 * @return bool
 	 */
 	public static function onUserGetReservedNames( &$reservedUsernames ) {
 		$reservedUsernames[] = 'Global rename script';

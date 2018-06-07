@@ -23,7 +23,7 @@ class WikiSet {
 	/**
 	 * @param string $name
 	 * @param string $type
-	 * @param array $wikis
+	 * @param string[] $wikis
 	 * @param int $id
 	 */
 	public function __construct( $name = '', $type = self::OPTIN, $wikis = [], $id = 0 ) {
@@ -62,14 +62,14 @@ class WikiSet {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getWikisRaw() {
 		return $this->mWikis;
 	}
 
 	/**
-	 * @param string $w
+	 * @param string[] $w
 	 */
 	public function setWikisRaw( $w ) {
 		$this->setDbField( 'ws_wikis', $w );

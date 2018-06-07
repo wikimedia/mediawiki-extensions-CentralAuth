@@ -683,7 +683,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param string $wikiID
+	 * @param string|WikiReference $wikiID
 	 * @param string $title
 	 * @param string $text
 	 * @param string $hint

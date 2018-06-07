@@ -181,8 +181,6 @@ class GlobalRenameUser {
 	/**
 	 * @param array $wikisAttached Attached wiki info
 	 * @param array $options
-	 *
-	 * @return Status
 	 */
 	private function injectLocalRenameUserJobs(
 		array $wikisAttached, array $options
