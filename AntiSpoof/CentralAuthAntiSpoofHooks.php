@@ -53,6 +53,10 @@ class CentralAuthAntiSpoofHooks {
 		if ( $spoof->isLegal() ) {
 			$normalized = $spoof->getNormalized();
 			$conflicts = $spoof->getConflicts();
+			$oldUserName = self::getOldRenamedUserName( $name );
+			if ( $oldUserName !== null ) {
+				$conflicts[] = $oldUserName;
+			}
 			if ( empty( $conflicts ) ) {
 				$logger->info( "{$mode}PASS new account '$name' [$normalized]" );
 			} else {
@@ -83,6 +87,39 @@ class CentralAuthAntiSpoofHooks {
 			}
 		}
 		return StatusValue::newGood();
+	}
+
+	/**
+	 * Given a username, find the old name
+	 *
+	 * @param string $name Name to lookup
+	 * @return null|string Old username, or null
+	 */
+	private static function getOldRenamedUserName( $name ) {
+		global $wgCentralAuthOldNameAntiSpoofWiki;
+		// If nobody has set this variable, it will be false,
+		// which will mean the current wiki, which sounds like as
+		// good a default as we can get.
+		$dbLogWiki = wfGetDB( DB_REPLICA, [], $wgCentralAuthOldNameAntiSpoofWiki );
+		$newNameOfUser = $dbLogWiki->selectField(
+			[ 'logging', 'log_search' ],
+			'log_title',
+			[
+				'ls_field' => 'oldname',
+				'ls_value' => $name,
+				'log_type' => 'gblrename',
+				'log_namespace' => NS_SPECIAL
+			],
+			__METHOD__,
+			[],
+			[ 'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ] ]
+		);
+		$slashPos = strpos( $newNameOfUser ?: '', '/' );
+		if ( $newNameOfUser && $slashPos ) {
+			// We have to remove the Special:CentralAuth prefix.
+			return substr( $newNameOfUser, $slashPos + 1 );
+		}
+		return null;
 	}
 
 	/**
