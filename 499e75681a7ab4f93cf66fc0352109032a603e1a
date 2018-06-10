@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4068e955_df66a222",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-06-10T18:18:07Z",
+      "side": 1,
+      "message": "Should check this is non-falsey before using it.",
+      "range": {
+        "startLine": 87,
+        "startChar": 40,
+        "endLine": 87,
+        "endChar": 74
+      },
+      "revId": "499e75681a7ab4f93cf66fc0352109032a603e1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e48d3d55_bb6f6b7d",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-06-10T18:18:07Z",
+      "side": 1,
+      "message": "What if $newNameOfUser is false?",
+      "range": {
+        "startLine": 101,
+        "startChar": 22,
+        "endLine": 101,
+        "endChar": 36
+      },
+      "revId": "499e75681a7ab4f93cf66fc0352109032a603e1a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
