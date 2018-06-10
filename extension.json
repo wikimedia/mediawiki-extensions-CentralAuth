@@ -435,6 +435,7 @@
 		"CentralAuthUseSlaves": false,
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
+		"CentralAuthOldNameAntiSpoofWiki": false,
 		"CentralAuthSessionCacheType": null
 	},
 	"AuthManagerAutoConfig": {
