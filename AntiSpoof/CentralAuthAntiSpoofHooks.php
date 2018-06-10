@@ -33,6 +33,7 @@ class CentralAuthAntiSpoofHooks {
 	 * @return StatusValue
 	 */
 	public static function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
+		global $wgCentralAuthOldNameAntiSpoofWiki;
 		if ( $logger === null ) {
 			$logger = \MediaWiki\Logger\LoggerFactory::getInstance( 'antispoof' );
 		}
@@ -81,6 +82,31 @@ class CentralAuthAntiSpoofHooks {
 			if ( $active ) {
 				return StatusValue::newFatal( 'antispoof-name-illegal', $name, $error );
 			}
+		}
+
+		$dbLogWiki = wfGetDB( DB_REPLICA, [], $wgCentralAuthOldNameAntiSpoofWiki );
+		$newNameOfUser = $dbLogWiki->selectField(
+			[ 'logging', 'log_search' ],
+			'log_title',
+			[
+				'ls_field' => 'old_name',
+				'ls_value' => $name,
+				'log_type' => 'gblrename',
+				'log_namespace' => NS_SPECIAL
+			],
+			__METHOD__,
+			[ 'LIMIT' => 1 ],
+			[ 'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ] ]
+		);
+		$slashPos = strpos( $newNameOfUser, '/' );
+		if ( $newNameOfUser && $slashPos ) {
+			// We have to remove the Special:CentralAuth prefix.
+			$error = substr( $newNameOfUser, $slashPos + 1 );
+			$logger->info( "{$mode}ILLEGAL [due to rename] new account '$name' $error" );
+			if ( $active ) {
+				return StatusValue::newFatal( 'antispoof-name-illegal', $name, $error );
+			}
+
 		}
 		return StatusValue::newGood();
 	}
