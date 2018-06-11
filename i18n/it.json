@@ -208,7 +208,7 @@
 	"centralauth-editset": "Insiemi di wiki",
 	"centralauth-editset-badname": "Nome dell'insieme non valido o vuoto.",
 	"centralauth-editset-badtype": "Tipo dell'insieme non valido.",
-	"centralauth-editset-badwikis": "{{PLURAL:$2|La wiki seguente non esiste|Le wiki seguenti non esistono}}: $1",
+	"centralauth-editset-badwikis": "{{PLURAL:$2|Il wiki seguente non esiste|I wiki seguenti non esistono}}: $1",
 	"centralauth-editset-intro-ro": "Di seguito è riportato l'elenco degli insiemi di wiki attualmente esistenti.",
 	"centralauth-editset-intro-rw": "I seguenti set di wiki sono già stati creati.\nPuoi visualizzare e modificare uno qualsiasi di essi, o creare un nuovo set.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|cancella]])",

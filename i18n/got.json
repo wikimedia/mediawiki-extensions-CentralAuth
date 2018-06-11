@@ -10,5 +10,6 @@
 		]
 	},
 	"centralauth-admin-reason": "𐍆𐌰𐌹𐍂𐌹𐌽𐌰:",
-	"centralauth-log-gblrename-oldname": "𐌰𐍆𐍄𐌿𐌼𐌹𐍃𐍄 𐌰𐍄𐌲𐌰𐌲𐌲𐌰𐌽𐌰𐌼𐍉"
+	"centralauth-log-gblrename-oldname": "𐌰𐍆𐍄𐌿𐌼𐌹𐍃𐍄 𐌰𐍄𐌲𐌰𐌲𐌲𐌰𐌽𐌰𐌼𐍉",
+	"centralauth-merge-method-login": "𐌲𐌰𐍃𐌺𐌰𐍀𐌰𐌽 𐌼𐌹𐌸 𐌰𐍄𐌲𐌰𐌲𐌲𐌰"
 }
