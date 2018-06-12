@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c0052af_d4f9b657",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-06-12T19:44:01Z",
+      "side": 1,
+      "message": "No index on the logging table for this pair... But log_type is included on various other indexes\n\nPotentially not necessary, but worth taking care",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 33
+      },
+      "revId": "9a6a6998809002c33eeee1c9c18bb7edc96d09b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be199be0_9e4cedce",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-06-12T19:44:01Z",
+      "side": 1,
+      "message": "Shouldn\u0027t be necessary (set in DB code)",
+      "range": {
+        "startLine": 114,
+        "startChar": 3,
+        "endLine": 114,
+        "endChar": 20
+      },
+      "revId": "9a6a6998809002c33eeee1c9c18bb7edc96d09b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
