@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "615717eb_1184e61c",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-06-12T19:46:11Z",
+      "side": 1,
+      "message": "What is this actually adding/doing?\n\nmysql:wikiadmin@db1094 [metawiki]\u003e select * from logging where log_type \u003d \u0027gblrename\u0027 AND log_namespace \u003c\u003e -1;\nEmpty set (0.55 sec)",
+      "parentUuid": "2c0052af_d4f9b657",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 33
+      },
+      "revId": "9a6a6998809002c33eeee1c9c18bb7edc96d09b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be199be0_9e4cedce",
         "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
         "patchSetId": 3
