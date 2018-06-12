@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "e57434f5_2ada1f8d",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2018-06-12T19:56:00Z",
+      "side": 1,
+      "message": "Its just for future proofing.\n\nThe expected index is the one on the log_search table, not the logging table.",
+      "parentUuid": "615717eb_1184e61c",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 33
+      },
+      "revId": "9a6a6998809002c33eeee1c9c18bb7edc96d09b0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "be199be0_9e4cedce",
         "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
         "patchSetId": 3
