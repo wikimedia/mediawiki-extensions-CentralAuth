@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86901c60_f26f5e0d",
+        "filename": "AntiSpoof/CentralAuthAntiSpoofHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2018-06-12T20:42:51Z",
+      "side": 1,
+      "message": "The other option is unserialize( log_params ) and then getting it from there...\n\nThis seems less effort",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 3
+      },
+      "revId": "e6fe620f9203e25c4fbd872504eca679e9718460",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
