@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02b0d46b_cea4adf3",
+        "filename": "extension.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "hm, I\u0027m not sure [] is a good value for indicating \"all wikis\"… maybe use true for that instead (meaning all wikis permitted)?",
+      "range": {
+        "startLine": 447,
+        "startChar": 43,
+        "endLine": 447,
+        "endChar": 45
+      },
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f9e40b7_ceff3a07",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1602,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "message needs user as $1",
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cbc78d21_7025121f",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "message needs user as $1",
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b014e34_2e1a8562",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "message needs user as $1",
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a62a9cb2_75a9acdc",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "message needs user as $1",
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f967abbb_22f3b0e8",
+        "filename": "includes/specials/SpecialGlobalRenameUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "message needs user as $1",
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10a792a6_23847005",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-06-14T17:26:01Z",
+      "side": 1,
+      "message": "message needs user as $1",
+      "revId": "849485b504e49e6fab939ec848ce16f533d95574",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
