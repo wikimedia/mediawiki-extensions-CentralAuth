@@ -16,6 +16,7 @@
 	"centralauth-editset-name": "Nom:",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribui|contribuis}} en $2",
 	"centralauth-foreign-link": "Usor $1 en $2",
+	"centralauth-globalgroupperms-rights": "Diretos",
 	"centralauth-merge-dryrun-or": "'''o'''",
 	"centralauth-merge-method-login": "creada par identifia",
 	"globalgroupmembership": "La parteni en grupos global",

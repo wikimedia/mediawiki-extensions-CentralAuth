@@ -67,6 +67,7 @@
 	"centralauth-admin-lookup-rw": "Διαχείριση λογαριασμού χρήστη",
 	"centralauth-admin-manage": "Διαχείριση δεδομένων λογαριασμού",
 	"centralauth-admin-merge": "Συγχώνευση των επιλεγμένων",
+	"centralauth-admin-multi-bot": "Πρόσφατες αλλαγές",
 	"centralauth-admin-no": "όχι",
 	"centralauth-admin-no-unified": "Δεν υπάρχει ενοποιημένος λογαριασμός για αυτό το όνομα χρήστη.",
 	"centralauth-admin-none-selected": "Δεν διαλέξατε λογαριασμούς προς τροποποίηση.",
