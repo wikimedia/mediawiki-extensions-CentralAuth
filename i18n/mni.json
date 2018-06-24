@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Awangba Mangang"
+		]
+	},
+	"centralauth-admin-blocklog": "ꯆꯪꯁꯤꯟꯕꯥ ꯊꯤꯡꯕꯥ",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} on $2",
+	"centralauth-foreign-link": "User $1 on $2",
+	"centralauth-merge-method-login": "created on login"
+}
