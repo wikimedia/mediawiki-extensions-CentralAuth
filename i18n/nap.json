@@ -115,7 +115,7 @@
 	"centralauth-admin-multi-bot": "Urdeme cagnamiente",
 	"centralauth-admin-multi-botcheck": "Contrassegna 'e vvoce dint'a [[Special:RecentChanges|{{int:recentchanges}}]] comme cagnamiente 'e bot.",
 	"centralauth-admin-multi-intro": "Agghiuorna cchiù utente glubbale dint'a nu mumento",
-	"centralauth-admin-multi-notfound": "'A ricerca nun ave acucchiate utente.",
+	"centralauth-admin-multi-notfound": "'A ricerca nun ave acucchiate nisciun'utente.",
 	"centralauth-admin-multi-searchprefix": "O, cirche nomme utente cu nu prefisso",
 	"centralauth-admin-multi-username": "Miette uno o cchiù utente, separate 'e na linea nova",
 	"centralauth-admin-no": "no",

@@ -330,7 +330,7 @@
 	"globalgroupmembership": "Чланство у глобалним групама",
 	"globalgrouppermissions": "Управљање глобалним групама",
 	"globalrenameprogress": "Стање глобалног преименовања",
-	"globalrenameprogress-legend": "Види ток глобалног преименовања",
+	"globalrenameprogress-legend": "Ток глобалног преименовања",
 	"globalrenamequeue-column-rq-name": "Корисничко име",
 	"globalrenamequeue-column-rq-newname": "Жељено корисничко име",
 	"globalrenamequeue-column-rq-wiki": "Локални вики",
