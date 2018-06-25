@@ -318,7 +318,7 @@
 	"centralauth-incomplete": "Login unification not complete!",
 	"centralauth-incomplete-text": "Once your login is unified, you will be able to log in to any wiki site of {{int:Centralauth-groupname}} without creating a new account",
 	"centralauth-invalid-wiki": "No such wiki database: $1",
-	"centralauth-list-attached": "The {{PLURAL:$2|account named \"$1\" on the following site|accounts named \"$1\" on each of the following sites}} have been automatically attached to the unified account:",
+	"centralauth-list-attached": "The {{PLURAL:$2|account named \"$1\" on the following site has|accounts named \"$1\" on each of the following sites have}} been automatically attached to the unified account:",
 	"centralauth-list-attached-dryrun": "The {{PLURAL:$2|account named \"$1\" on the following site|accounts named \"$1\" on each of the following sites}} will be automatically attached to the unified account:",
 	"centralauth-list-attached-title": "Attached accounts",
 	"centralauth-list-home-dryrun": "The password and email address set at this wiki will be used for your unified account.",
