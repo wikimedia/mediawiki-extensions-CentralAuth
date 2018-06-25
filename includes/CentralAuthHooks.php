@@ -1368,22 +1368,22 @@ class CentralAuthHooks {
 	/**
 	 * @param string $type
 	 * @param LogEventsList $list
-	 * @param string &$input HTML
+	 * @param string &$formDescriptor Form descriptor
 	 */
-	public static function onLogEventsListGetExtraInputs( $type, LogEventsList $list, &$input ) {
+	public static function onLogEventsListGetExtraInputs( $type, LogEventsList $list, &$formDescriptor ) {
 		if ( $type === 'gblrename' ) {
 			$value = $list->getRequest()->getVal( 'oldname' );
 			if ( $value !== null ) {
 				$name = User::getCanonicalName( $value );
 				$value = $name !== false ? $name : '';
 			}
-			$input = Xml::inputLabel(
-				$list->msg( 'centralauth-log-gblrename-oldname' )->text(),
-				'oldname',
-				'mw-log-gblrename-oldname',
-				20,
-				$value
-			);
+			$formDescriptor = [
+				'type' => 'text',
+				'label-message' => 'centralauth-log-gblrename-oldname',
+				'name' => 'oldname',
+				'id' => 'mw-log-gblrename-oldname',
+				'default' => $value,
+			];
 		}
 	}
 
