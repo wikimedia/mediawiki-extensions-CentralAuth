@@ -71,8 +71,7 @@
 		"MultiLock": "SpecialMultiLock",
 		"GlobalRenameUser": "SpecialGlobalRenameUser",
 		"GlobalRenameProgress": "SpecialGlobalRenameProgress",
-		"GlobalUserMerge": "SpecialGlobalUserMerge",
-		"UsersWhoWillBeRenamed": "SpecialUsersWhoWillBeRenamed"
+		"GlobalUserMerge": "SpecialGlobalUserMerge"
 	},
 	"JobClasses": {
 		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
