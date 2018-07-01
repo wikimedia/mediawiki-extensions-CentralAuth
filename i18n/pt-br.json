@@ -552,7 +552,7 @@
 	"globalrenamerequest-pretext": "Solicite um novo nome de usuário para todos os projetos.\n\nTodas as suas contribuições anteriores serão conectadas a este novo nome de usuário. \n\nDepois de ter solicitado um novo nome de usuário, uma notificação será enviada para os administradores da Wikimedia para realizar a mudança de nome. Você será notificado por e-mail quando este processo estiver concluído.",
 	"globalrenamerequest-reason-label": "Motivo da solicitação",
 	"globalrenamerequest-save-error": "Falha ao salvar pedido. Por favor, tente novamente.",
-	"globalrenamerequest-status-text": "O seu pedido de alteração do nome de usuário está atualmente em progresso e aguardando aprovação por um administrador. Você será notificado por e-mail quando o pedido for processado.\n\n;Nome de usuário atual:\n:$1\n;Nome de usuário solicitado:\n:$2",
+	"globalrenamerequest-status-text": "O seu pedido de mudança de nome de usuário está atualmente em progresso e a aguardar aprovação pelos responsáveis por realizar esta operação. Receberá uma notificação por e-mail quando o pedido estiver processado.\n\n;Nome de usuário atual:\n:$1\n;Nome de usuário solicitado:\n:$2",
 	"globalrenamerequest-status-title": "Pedido de renomeação em aprovação pendente",
 	"globalrenamerequest-submit-text": "Solicitar mudança de nome",
 	"globalrenamerequest-username-label": "Nome de usuário atual:",
