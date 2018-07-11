@@ -2,13 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Amara-Amaziɣ",
-			"ⵕⴰⵊⵉ"
+			"ⵕⴰⵊⵉ",
+			"Aslmad mohamed belarhzali"
 		]
 	},
+	"centralauth-admin-blocklog": "ⴰⵖⵎⵉⵙ ⵏ ⵉⴳⴷⴷⵓⵍⵏ",
 	"centralauth-editgroup-noset": "(ⵓⵍⴰ ⵢⴰⵏ)",
 	"centralauth-editset-nouse": "(ⵓⵍⴰ ⵢⴰⵏ)",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ⵓⵏⴰⵎⵓ|ⵉⵏⴰⵎⵓⵜⵏ}} ⴳ $2",
 	"centralauth-foreign-link": "ⴰⵙⵎⵔⴰⵙ $1 ⴼ$ⴳ $2",
 	"centralauth-globalgroupperms-group-listmembers": "ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵉⴳⵎⴰⵎⵏ",
-	"centralauth-log-status-none": "(ⵓⵍⴰ ⵢⴰⵏ)"
+	"centralauth-log-status-none": "(ⵓⵍⴰ ⵢⴰⵏ)",
+	"centralauth-merge-method-login": "ⵉⵜⵜⵓⵙⴽⴰⵔ ⴳ ⵜⵉⵣⵉ ⵏ ⵓⴽⵛⵛⵓⵎ"
 }
