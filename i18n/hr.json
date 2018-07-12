@@ -8,7 +8,8 @@
 			"Roberta F.",
 			"SpeedyGonsales",
 			"Kolega2357",
-			"Bugoslav"
+			"Bugoslav",
+			"BadDog"
 		]
 	},
 	"centralauth": "Globalno upravljanje računom",
@@ -245,7 +246,7 @@
 	"centralauth-prefs-not-managed": "Ne rabite centralni račun",
 	"centralauth-prefs-status": "Status središnjeg suradničkog računa:",
 	"centralauth-prefs-unattached": "Nije u potpunosti sjedinjen",
-	"centralauth-prefs-view": "pogledajte globalne podatke o suradničkom računu",
+	"centralauth-prefs-view": "pogledaj globalne podatke o suradničkom računu",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Saznaj više o '''središnjoj prijavi''']]...''",
 	"centralauth-rename-movelog": "Automatsko premještanje stranice zbog preimenovanja suradnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-progress-logs-fieldset": "Stavke u evidencijama",

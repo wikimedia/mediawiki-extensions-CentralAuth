@@ -316,7 +316,7 @@
 	"globalrenamerequest-pretext": "Zaprosi za novo uporabniško ime, po katerem boš znan na vseh wikijih.\n\nVsi tvoji dosedanji prispevki bodo pridruženi novemu imenu.\n\nOb zaprositvi bo stevardom poslano obvestilo, da izvedejo preimenovanje. Na koncu boš prejel mejl o uspešnem preimenovanju.",
 	"globalrenamerequest-reason-label": "Razlog za preimenovanje",
 	"globalrenamerequest-save-error": "Neuspešna shranitev prošnje. Prosimo, poskusi ponovno.",
-	"globalrenamerequest-status-text": "Tvoja prošnja za preimenovanje je trenutno še v teku in čaka na odobritev od stevarda. O zaključku postopka boš obveščen po mejlu.\n\n;Trenutno uporabniško ime:\n:$1\n;Želeno uporabniško ime:\n:$2",
+	"globalrenamerequest-status-text": "Tvoja prošnja za preimenovanje je trenutno še v teku in čaka na odobritev s strani enega od uporabnikov, ki lahko naredi ta poseg. O zaključku postopka te bomo obvestili po e-pošti.\n\n;Trenutno uporabniško ime:\n:$1\n;Želeno uporabniško ime:\n:$2",
 	"globalrenamerequest-status-title": "Odobritev preimenovanja v postopku",
 	"globalrenamerequest-submit-text": "Zaprosi za preimenovanje",
 	"globalrenamerequest-username-label": "Trenutno uporabniško ime:",
