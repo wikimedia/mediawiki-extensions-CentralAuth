@@ -12,6 +12,9 @@
 			"BadDog"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine kojima suradnik pripada:",
+	"action-centralauth-lock": "zaključavanje ili otključavanje globalnih računa",
+	"action-centralauth-rename": "preimenovanje globalnih računa",
 	"centralauth": "Globalno upravljanje računom",
 	"centralauth-account-exists": "Račun ne može biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.",
 	"centralauth-account-exists-reset": "Suradničko ime $1 nije registrirano na ovoj wiki, ali postoji u sustavusredišnje prijave.",
@@ -85,6 +88,7 @@
 	"centralauth-attach-success": "Vaš suradnički račun je sada postao središnjim računom.",
 	"centralauth-attach-text": "Ovaj račun nije još spojen s jedinstvenim računom. Ukoliko je jedinstveni račun vaš, možete ga spojiti ako znate zaporku jedinstvenog računa:",
 	"centralauth-attach-title": "Potvrdi suradnički račun",
+	"centralauth-block-already-locked": "Račun [[Special:CentralAuth/$1|$1]] je već globalno zaključan.",
 	"centralauth-centralautologin-logged-in": "Jedinstveno ste prijavljeni kao $1. Da biste aktivirali suradničke postavke, ponovo učitajte stranicu.",
 	"centralauth-centralautologin-logged-in-nouser": "Jedinstveno ste prijavljeni. Da biste aktivirali suradničke postavke, ponovo učitajte stranicu.",
 	"centralauth-centralautologin-lostsession": "Podatci o sjednici su izgubljeni",
