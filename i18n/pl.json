@@ -31,12 +31,14 @@
 			"Peter Bowman",
 			"Devwebtel",
 			"The Polish",
-			"PiotrekD"
+			"PiotrekD",
+			"Railfail536"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupy globalne, do których należy użytkownik",
 	"action-centralauth-lock": "zablokuj lub odblokuj konta globalne",
 	"action-centralauth-rename": "zmiany nazwy kont uniwersalnych",
+	"action-centralauth-unmerge": "rozdzielania kont globalnych",
 	"action-centralauth-usermerge": "globalnego łączenia wielu użytkowników",
 	"apierror-centralauth-editconflict": "Wykryto konflikt edycji, przerywano.",
 	"apihelp-deleteglobalaccount-description": "Usuń globalnego użytkownika.",
