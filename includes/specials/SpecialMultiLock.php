@@ -86,7 +86,7 @@ class SpecialMultiLock extends SpecialPage {
 	 *
 	 * @param string[] $usernames
 	 * @param bool $fromMaster
-	 * @return (CentralAuthUser|string)[] User object, or a string containing the error
+	 * @return (CentralAuthUser|string|bool)[] User object, a HTML error string, or false.
 	 */
 	private function getGlobalUsers( $usernames, $fromMaster = false ) {
 		$ret = [];
@@ -105,7 +105,7 @@ class SpecialMultiLock extends SpecialPage {
 				|| ( !$this->mCanOversight &&
 					( $globalUser->isOversighted() || $globalUser->isHidden() ) )
 			) {
-				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->text();
+				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
 			} else {
 				$ret[] = $globalUser;
 			}
@@ -303,7 +303,7 @@ class SpecialMultiLock extends SpecialPage {
 			} elseif ( $globalUser instanceof CentralAuthUser ) {
 				$rowtext .= $this->getUserTableRow( $globalUser );
 			} else {
-				$rowtext .= Html::element(
+				$rowtext .= Html::rawElement(
 					'td',
 					[ 'colspan' => 7 ],
 					$globalUser
