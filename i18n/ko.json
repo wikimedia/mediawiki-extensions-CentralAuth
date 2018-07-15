@@ -531,7 +531,7 @@
 	"globalrenamerequest-pretext": "모든 위키에서 사용될 새로운 사용자 계정 이름을 요청합니다.\n\n과거의 모든 기여는 새로운 계정 이름으로 연결됩니다.\n\n새로운 계정 이름을 요청하면 계정 이름 바꾸기를 실행하게끔 하는 알림이 위키미디어 사무장에게 전달됩니다. 작업이 완료되면 이메일로 알림을 보내드립니다.",
 	"globalrenamerequest-reason-label": "요청 이유",
 	"globalrenamerequest-save-error": "요청을 저장하지 못했습니다. 다시 시도해 주세요.",
-	"globalrenamerequest-status-text": "당신의 사용자명 변경 요청은 진행 중이며 사무장의 승인을 기다리고 있습니다. 요청이 진행된 후에 이메일로 알림을 받을 것입니다.\n\n;현재 사용자 이름:\n$1\n;요청된 사용자 이름:\n$2",
+	"globalrenamerequest-status-text": "당신의 사용자 이름 변경 요청이 현재 진행 중이며 이 작업의 수행자의 승인을 기다리고 있습니다. 요청이 진행되면 이메일로 알림을 받게 됩니다.\n\n;현재 사용자 이름:\n$1\n;요청된 사용자 이름:\n$2",
 	"globalrenamerequest-status-title": "이름 변경 요청 승인 대기 중",
 	"globalrenamerequest-submit-text": "이름 바꾸기 요청",
 	"globalrenamerequest-username-label": "기존 사용자 이름:",
