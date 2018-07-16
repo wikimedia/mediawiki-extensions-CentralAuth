@@ -19,6 +19,8 @@
 	"centralauth-admin-info-header": "Informo pri omna konti",
 	"centralauth-admin-info-registered": "Enrejistrita:",
 	"centralauth-admin-info-username": "Nomo dil uzero:",
+	"centralauth-admin-list-blocked": "Blokusita",
+	"centralauth-admin-list-editcount": "Redakturi",
 	"centralauth-admin-list-groups": "Grupi",
 	"centralauth-admin-list-legend-ro": "Listo pri lokala konti",
 	"centralauth-admin-list-localwiki": "Lokala Wiki",
