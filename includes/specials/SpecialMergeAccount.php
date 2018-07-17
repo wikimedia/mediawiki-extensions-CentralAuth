@@ -139,21 +139,21 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	private function initSession() {
 		$this->mSessionToken = MWCryptRand::generateHex( 32 );
-		$this->mSessionKey = MWCryptRand::generate( 128, true );
+		$this->mSessionKey = random_bytes( 128 );
 	}
 
 	/**
 	 * @return array|mixed
 	 */
 	private function getWorkingPasswords() {
-		wfSuppressWarnings();
+		Wikimedia\suppressWarnings();
 		$data = RequestContext::getMain()->getRequest()->getSessionData( 'wsCentralAuthMigration' );
 		$passwords = unserialize(
 			gzinflate(
 				$this->xorString(
 					$data[$this->mSessionToken],
 					$this->mSessionKey ) ) );
-				wfRestoreWarnings();
+		Wikimedia\restoreWarnings();
 		if ( is_array( $passwords ) ) {
 			return $passwords;
 		}
