@@ -4,7 +4,8 @@
 			"Sindhu",
 			"Aursani",
 			"Mehtab ahmed",
-			"Indus Asia"
+			"Indus Asia",
+			"Tweety"
 		]
 	},
 	"apierror-centralauth-badusername": "واپرائيندڙ-نانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي",
@@ -21,6 +22,7 @@
 	"centralauth-log-gblrename-oldname": "پويون واپرائيندڙ-نانءُ:",
 	"centralauth-merge-method-login": "داخل ٿيڻ تي سرجبو",
 	"centralauth-prefs-status": "عالمي کاتو:",
+	"centralauth-prefs-view": "عالمي کاتي جي معلومات ڏسو",
 	"globalrenamequeue-form-newname": "گهريل واپرائيندڙ-نانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
 	"globalrenamequeue-form-status-all": "سڀ",

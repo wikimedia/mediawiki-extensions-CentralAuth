@@ -9,6 +9,7 @@
 			"Sudo77(new)"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-groups": "Globálne skupiny, do ktorých používateľ patrí",
 	"action-centralauth-rename": "premenovávať globálne účty",
 	"centralauth": "Globálny správca používateľov",
 	"centralauth-account-exists": "Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.",
