@@ -2742,11 +2742,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$this->invalidateCache();
 			// User was changed in the meantime or loaded with stale data
 			$from = ( $this->mFromMaster ) ? 'master' : 'slave';
-			MWExceptionHandler::logException( new MWException(
-				"CAS update failed on gu_cas_token for user ID '{$this->mGlobalId}' " .
-				"(read from $from); the version of the user to be saved is older than " .
-				"the current version."
-			) );
+			LoggerFactory::getInstance( 'CentralAuth' )->warning(
+				"CAS update failed on gu_cas_token for user ID '{globalId}' " .
+				"(read from {from}); the version of the user to be saved is older than " .
+				"the current version.",
+				[
+					'globalId' => $this->mGlobalId,
+					'from' => $from,
+					'exception' => new Exception( 'CentralAuth gu_cas_token conflict'),
+				] );
 			return;
 		}
 
