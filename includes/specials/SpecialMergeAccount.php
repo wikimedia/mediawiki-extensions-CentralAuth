@@ -139,7 +139,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	private function initSession() {
 		$this->mSessionToken = MWCryptRand::generateHex( 32 );
-		$this->mSessionKey = MWCryptRand::generate( 128, true );
+		$this->mSessionKey = random_bytes( 128 );
 	}
 
 	/**
