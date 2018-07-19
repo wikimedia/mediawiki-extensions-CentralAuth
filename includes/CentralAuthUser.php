@@ -2007,8 +2007,10 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 		} elseif ( !( $password instanceof Pbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
+			Wikimedia\suppressWarnings();
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			if ( $password->equals( $latin1 ) ) {
+			Wikimedia\restoreWarnings();
+			if ( $latin1 !== false && $password->equals( $latin1 ) ) {
 				$matched = true;
 			}
 		}
