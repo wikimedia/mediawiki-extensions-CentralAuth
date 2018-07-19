@@ -52,6 +52,7 @@
 	"centralauth-groupname": "ڕێکخراوەی ویکیمیدیا",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|کاتژمێر}} لەمەو پێش",
 	"centralauth-list-home-title": "ویکی سەرەکی",
+	"centralauth-log-name": "لۆگی سەرانسەریی ھەژمار",
 	"centralauth-log-status-none": "(ھیچ)",
 	"centralauth-logout-progress": "چوونە دەرەوەت لە ویکییەکانی {{int:Centralauth-groupname}}:",
 	"centralauth-merge-dryrun-or": "'''یان'''",
