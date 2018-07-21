@@ -534,7 +534,7 @@
 	"globalrenamerequest-pretext": "Vraag een nieuwe gebruikersnaam aan om die op alle projecten te kunnen gebruiken.\n\nAl uw eerdere bijdragen worden gekoppeld aan uw nieuwe gebruikersnaam.\n\nZodra u een nieuwe gebruikersnaam hebt aangevraagd, wordt een bericht aan de Wikimedia stewards en globale hernoemers verstuurd zodat die de hernoeming uit kunnen voeren. U wordt per e-mail geïnformeerd wanneer dit proces is voltooid.",
 	"globalrenamerequest-reason-label": "Reden voor het verzoek",
 	"globalrenamerequest-save-error": "Fout bij het opslaan van de aanvraag. Probeer het opnieuw.",
-	"globalrenamerequest-status-text": "Uw hernoemingsverzoek is momenteel in bewerking en wacht op goedkeuring door een steward. U krijgt per e-mail bericht zodra het verzoek verwerkt is.\n\n;Huidige gebruikersnaam:\n:$1\n;Gevraagde gebruikersnaam:\n:$2",
+	"globalrenamerequest-status-text": "Uw hernoemingsverzoek is momenteel in bewerking en wacht op goedkeuring door iemand die dit kan uitvoeren. U krijgt per e-mail bericht zodra het verzoek verwerkt is.\n\n;Huidige gebruikersnaam:\n:$1\n;Gevraagde gebruikersnaam:\n:$2",
 	"globalrenamerequest-status-title": "Hernoemingsverzoek in afwachting van goedkeuring",
 	"globalrenamerequest-submit-text": "Verzoek naamswijziging",
 	"globalrenamerequest-username-label": "Huidige gebruikersnaam:",
