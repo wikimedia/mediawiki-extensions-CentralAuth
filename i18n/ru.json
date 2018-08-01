@@ -528,6 +528,7 @@
 	"globalusermerge": "Объединение глобальных учётных записей",
 	"globalusermerge-legend": "Объединение глобальных учётных записей",
 	"globalusers": "Глобальный список участников",
+	"grant-setglobalaccountstatus": "Управление состоянием глобальной учётной записи",
 	"log-action-filter-gblrights": "Тип изменения:",
 	"log-action-filter-gblrights-groupprms": "изменение глобальной группы участников",
 	"log-action-filter-gblrights-setmodify": "изменение набора вики",
