@@ -22,7 +22,9 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	function execute( $subpage ) {
-		$this->mCanEdit = $this->getUser()->isAllowed( 'globalgrouppermissions' );
+		// T194232
+		$this->mCanEdit = CentralAuthUtils::isPermittedGlobalActionWiki() &&
+			$this->getUser()->isAllowed( 'globalgrouppermissions' );
 		$req = $this->getRequest();
 		$tokenOk = $req->wasPosted()
 			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) );

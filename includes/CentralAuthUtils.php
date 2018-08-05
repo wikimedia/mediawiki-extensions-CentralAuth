@@ -277,4 +277,21 @@ class CentralAuthUtils {
 			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
 		}
 	}
+
+	/**
+	 * Check that wiki is permitted to perform global action
+	 * @return bool
+	 */
+	public static function isPermittedGlobalActionWiki() {
+		global $wgCentralAuthGlobalActionRestrict;
+
+		if (
+			$wgCentralAuthGlobalActionRestrict === false ||
+			in_array( wfWikiID(), $wgCentralAuthGlobalActionRestrict )
+		) {
+			return true;
+		}
+
+		return false;
+	}
 }
