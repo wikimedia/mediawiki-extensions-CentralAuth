@@ -39,6 +39,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return false;
 		}
 
+		# Check the wiki is global action permitted wikis - T194232
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			return false;
+		}
+
 		return $user->isAllowed( 'globalgrouppermissions' );
 	}
 

@@ -443,7 +443,8 @@
 		"CentralAuthUseSlaves": false,
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
-		"CentralAuthOldNameAntiSpoofWiki": false
+		"CentralAuthOldNameAntiSpoofWiki": false,
+		"CentralAuthGlobalActionRestrict": false
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
