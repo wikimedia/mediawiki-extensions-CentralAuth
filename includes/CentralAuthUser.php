@@ -1597,6 +1597,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$setLocked = $isLocked;
 		} elseif ( !$context->getUser()->isAllowed( 'centralauth-lock' ) ) {
 			return Status::newFatal( 'centralauth-admin-not-authorized' );
+		} elseif ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			// T194232
+			return Status::newFatal( 'centralauth-globalactiondenied', $context->getUser()->getName() );
 		}
 
 		if ( is_null( $setHidden ) ) {
