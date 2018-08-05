@@ -39,8 +39,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return false;
 		}
 
-		# # Permission MUST be gained from global rights.
-		return $globalUser->hasGlobalPermission( 'globalgrouppermissions' );
+		return $user->isAllowed( 'globalgrouppermissions' );
 	}
 
 	function execute( $subpage ) {
