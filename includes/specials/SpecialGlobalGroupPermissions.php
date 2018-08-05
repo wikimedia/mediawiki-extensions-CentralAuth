@@ -39,8 +39,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return false;
 		}
 
-		# # Permission MUST be gained from global rights.
-		return $globalUser->hasGlobalPermission( 'globalgrouppermissions' );
+		# Check the wiki is global action permitted wikis - T194232
+		if ( !CentralAuthUtils::isPermittedGlobalActionWiki() ) {
+			return false;
+		}
+
+		# T31435
+		return $this->getUser()->isAllowed( 'globalgrouppermissions' );
 	}
 
 	function execute( $subpage ) {
