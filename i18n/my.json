@@ -3,10 +3,12 @@
 		"authors": [
 			"Sanlinnaing",
 			"Ninjastrikers",
-			"9.sinistra"
+			"9.sinistra",
+			"Dr Lotus Black"
 		]
 	},
 	"centralauth-admin-blocklog": "ပိတ်ပင်တားဆီးမှု မှတ်တမ်း",
+	"centralauth-admin-delete-confirm": "ဤအကောင့်ကို အမှန်တကယ် ဖျက်ပစ်လိုပါသလား",
 	"centralauth-foreign-contributions": "$2 ပေါ်ရှိ $1 {{PLURAL:$1|ဆောင်ရွက်ချက်|ဆောင်ရွက်ချက်များ}}",
 	"centralauth-foreign-link": "$2 ပေါ်ရှိ အသုံးပြုသူ $1",
 	"centralauth-log-gblrename-oldname": "အရင်သုံးစွဲသော နာမည်",
