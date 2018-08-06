@@ -272,6 +272,9 @@ class SpecialMultiLock extends SpecialPage {
 				'<th>' .
 				$out->getContext()->msg( 'centralauth-admin-info-attached' )->escaped() .
 				'</th>' .
+				'<th>' .
+				$out->getContext()->msg( 'centralauth-multilock-homewiki' )->escaped() .
+				'</th>' .
 			'</tr></thead>' .
 			'<tbody>';
 
@@ -305,7 +308,7 @@ class SpecialMultiLock extends SpecialPage {
 			} else {
 				$rowtext .= Html::rawElement(
 					'td',
-					[ 'colspan' => 7 ],
+					[ 'colspan' => 8 ],
 					$globalUser
 				);
 			}
@@ -347,6 +350,7 @@ class SpecialMultiLock extends SpecialPage {
 		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
 		$guAttachedLocalAccounts = $this->getLanguage()
 			->formatNum( count( $globalUser->listAttached() ) );
+		$guHomeWiki = $globalUser->getHomeWiki() ?? '';
 
 		$rowHtml .= Html::rawElement( 'td', [],
 			Html::input(
@@ -362,6 +366,7 @@ class SpecialMultiLock extends SpecialPage {
 		$rowHtml .= Html::rawElement( 'td', [], $guHidden );
 		$rowHtml .= Html::element( 'td', [], $guEditCount );
 		$rowHtml .= Html::element( 'td', [], $guAttachedLocalAccounts );
+		$rowHtml .= Html::element( 'td', [], $guHomeWiki );
 
 		return $rowHtml;
 	}
