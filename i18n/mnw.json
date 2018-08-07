@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Htawmonzel"
+		]
+	},
+	"centralauth-admin-blocklog": "စၟတ်သမ္တီ အရာမကၟာတ်ဗလံက်လဝ်ဂမၠိုင်",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|အရာမကၠောန်ဗဒှ်|အရာမကၠောန်ဗဒှ်ဂမၠိုင်}} on $2",
+	"centralauth-foreign-link": "ညးမသုင်စောဲ $1 ပ္ဍဲ $2",
+	"centralauth-merge-method-login": "ခၞံဗဒှ်လဝ် ပ္ဍဲ လံက်အေန်"
+}

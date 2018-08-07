@@ -11,7 +11,8 @@
 			"Xosé",
 			"Banjo",
 			"Macofe",
-			"AlvaroMolina"
+			"AlvaroMolina",
+			"Maria zaos"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais aos que pertence o usuario",
@@ -85,7 +86,7 @@
 	"apihelp-setglobalaccountstatus-description": "Definir o estado dun usuario global.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloquear a conta global de [[User:Example]] có motivo \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Desbloquear e eliminar conta global para o [[User:Example]] co motivo \"Eu podo\"",
-	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar que o usuario non estea oculto, estea oculto das listas globais de usuario, ou estea suprimido.",
+	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar que o usuario non estea oculto, estea oculto das listas globais de usuario, ou sexa suprimido.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cambiar aínda que o usuario estea bloqueado.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo para cambiar o estado do usuario.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do actual <username>:<hidden>:<locked>, para detectar conflitos de edición. Fixe <locked> a 1 para bloquear, 0 para desbloquear.",
