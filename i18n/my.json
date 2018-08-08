@@ -14,5 +14,7 @@
 	"centralauth-log-gblrename-oldname": "အရင်သုံးစွဲသော နာမည်",
 	"centralauth-merge-method-login": "အကောင့်ဝင်စဉ် ဖန်တီးခဲ့သည်",
 	"centralauth-rename-movelog": "အသုံးပြုသူ \"[[Special:CentralAuth/$1|$1]]\" ကို \"[[Special:CentralAuth/$2|$2]]\" သို့ အမည်ပြောင်းလဲစဉ် စာမျက်နှာအား အလိုအလျောက် ရွှေ့ပြောင်းခြင်း",
+	"centralauth-rightslog-name": "ဂလိုဘယ် ရပိုင်ခွင့်များ မှတ်တမ်း",
+	"log-name-gblrename": "ဂလိုဘယ် အမည်ပြန်မှည့်ခြင်း မှတ်တမ်း",
 	"userswhowillberenamed": "အမည်ပြောင်းလဲခံရမည့် အသုံးပြုသူများ"
 }

@@ -18,9 +18,9 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобалне групе којима корисник припада",
-	"action-centralauth-lock": "закључавање или откључавање глобалних налога",
-	"action-centralauth-rename": "преименовање глобалних налога",
-	"action-centralauth-unmerge": "раздвајање глобалних налога",
+	"action-centralauth-lock": "закључавате или откључавате глобалне налоге",
+	"action-centralauth-rename": "преименујете глобалне налоге",
+	"action-centralauth-unmerge": "раздвајате глобале налоге",
 	"apihelp-globaluserrights-param-user": "Глобално корисничко име.",
 	"apihelp-globaluserrights-param-userid": "Глобални кориснички ID.",
 	"apihelp-query+wikisets-example-1": "Списак вики скупова",
