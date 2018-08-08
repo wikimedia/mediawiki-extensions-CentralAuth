@@ -203,6 +203,7 @@ class CentralAuthHooks {
 	 * @param bool $filterWikilinks Unused
 	 *
 	 * @return string
+	 * @suppress SecurityCheck-DoubleEscaped Vaues of $params are safe
 	 */
 	public static function onHandleGrouprenameLogEntry(
 		$type, $action, $title, $skin, $params, $filterWikilinks = false
