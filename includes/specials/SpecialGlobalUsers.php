@@ -5,6 +5,10 @@ class SpecialGlobalUsers extends SpecialPage {
 		parent::__construct( 'GlobalUsers' );
 	}
 
+	/**
+	 * @param string|null $par
+	 * @suppress SecurityCheck-XSS About getNavigationBar, see T201811 for more information
+	 */
 	function execute( $par ) {
 		global $wgContLang;
 		$this->setHeaders();
