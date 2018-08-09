@@ -21,6 +21,7 @@
 	"action-centralauth-lock": "закључавате или откључавате глобалне налоге",
 	"action-centralauth-rename": "преименујете глобалне налоге",
 	"action-centralauth-unmerge": "раздвајате глобале налоге",
+	"action-centralauth-usermerge": "глобално спајате више корисника",
 	"apihelp-globaluserrights-param-user": "Глобално корисничко име.",
 	"apihelp-globaluserrights-param-userid": "Глобални кориснички ID.",
 	"apihelp-query+wikisets-example-1": "Списак вики скупова",
