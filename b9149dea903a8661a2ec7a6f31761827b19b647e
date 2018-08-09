@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fa228ef_58dcbb76",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-08-09T12:42:49Z",
+      "side": 1,
+      "message": "In very (very) rare cases this can be null... that should be handled explicitely. Probably using an empty string is good enough in these cases.",
+      "range": {
+        "startLine": 369,
+        "startChar": 39,
+        "endLine": 369,
+        "endChar": 50
+      },
+      "revId": "b9149dea903a8661a2ec7a6f31761827b19b647e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
