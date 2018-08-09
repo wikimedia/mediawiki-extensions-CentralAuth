@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "a26ffb45_3e7f3fea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2018-08-09T14:34:36Z",
+      "side": 1,
+      "message": "Turn into: \u0027Special:GlobalRenameProgress: Use OOUI fieldset for log entries\u0027",
+      "revId": "f48386fe86a3e1675db15993ae4233b46394c122",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ca657d47_ac537741",
         "filename": "includes/specials/SpecialGlobalRenameProgress.php",
         "patchSetId": 2
