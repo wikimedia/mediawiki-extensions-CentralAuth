@@ -91,6 +91,7 @@
 	"apihelp-query+wikisets-description": "모든 위키 집합을 열거합니다.",
 	"apihelp-query+wikisets-example-1": "위키 집합 목록",
 	"apihelp-query+wikisets-example-2": "종류별로 위키 집합을 봅니다",
+	"apihelp-query+wikisets-param-orderbyname": "이름 순으로 결과를 정렬합니다.",
 	"apihelp-query+wikisets-summary": "모든 위키 집합을 열거합니다.",
 	"apihelp-setglobalaccountstatus-description": "통합 사용자의 상태를 설정합니다.",
 	"apihelp-setglobalaccountstatus-param-hidden": "이 사용자를 표시할지, 통합 계정 사용자 목록에서 숨길지, 표시하지 않을지를 변경합니다.",
