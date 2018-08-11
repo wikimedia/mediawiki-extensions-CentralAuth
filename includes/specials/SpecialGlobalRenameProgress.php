@@ -35,11 +35,23 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	function showLogExtract( $name ) {
 		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $name );
 		$out = $this->getOutput();
-		LogEventsList::showLogExtract( $out, 'gblrename', $caTitle, '', [
-			'showIfEmpty' => true, // @todo set this to false and don't show the fieldset
-			'wrap' => Xml::fieldset(
-				$this->msg( 'centralauth-rename-progress-logs-fieldset' )->text(), '$1' ),
+		$logs = '';
+		LogEventsList::showLogExtract( $logs, 'gblrename', $caTitle, '', [
+			'showIfEmpty' => true,
 		] );
+
+		$formDescriptor[ 'logs' ] = [
+			'type' => 'info',
+			'raw' => true,
+			'default' => $logs,
+		];
+
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
+		$htmlForm
+			->suppressDefaultSubmit()
+			->setWrapperLegendMsg( 'centralauth-rename-progress-logs-fieldset' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
