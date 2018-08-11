@@ -259,7 +259,7 @@ class WikiSet {
 
 	/**
 	 * @param WANObjectCache $cache
-	 * @param $id
+	 * @param string|int $id
 	 * @return string
 	 */
 	private static function getPerIdCacheKey( WANObjectCache $cache, $id ) {
@@ -268,7 +268,7 @@ class WikiSet {
 
 	/**
 	 * @param WANObjectCache $cache
-	 * @param $name
+	 * @param string $name
 	 * @return string
 	 */
 	private static function getPerNameCacheKey( WANObjectCache $cache, $name ) {
