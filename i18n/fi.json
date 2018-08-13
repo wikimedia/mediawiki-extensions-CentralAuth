@@ -215,7 +215,7 @@
 	"centralauth-complete": "Käyttäjätunnusten yhdistäminen on tehty.",
 	"centralauth-complete-text": "Voit nyt kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.",
 	"centralauth-completelogin-back": "Palaa edelliselle sivulle.",
-	"centralauth-contribs-locked": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti.\nKatso [[Special:CentralAuth/$1|järjestelmänlaajuisen tunnuksen tiedot]] lisätietoja varten.",
+	"centralauth-contribs-locked": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti.\nLisätietoja löytyy [[Special:CentralAuth/$1|järjestelmänlaajuisen tunnuksen tiedoista]].",
 	"centralauth-contribs-locked-log": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti. Alla on viimeisin lukituslokin merkintä:",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|päivä|päivää}} sitten",
 	"centralauth-delete-empty-account": "Tyhjä tunnus",

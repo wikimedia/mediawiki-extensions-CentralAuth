@@ -93,6 +93,7 @@
 	"centralauth-admin-delete-nonexistent": "Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.",
 	"centralauth-admin-delete-success": "Globální účet „<nowiki>$1</nowiki>“ byl smazán.",
 	"centralauth-admin-delete-title": "Smazat účet",
+	"centralauth-admin-group-temporary": "''(dočasně)''",
 	"centralauth-admin-hidden-list": "z veřejných seznamů uživatelů",
 	"centralauth-admin-hidden-oversight": "skryt",
 	"centralauth-admin-info-attached": "Počet připojených účtů:",
