@@ -89,6 +89,7 @@
 	"centralauth-complete": "Kontosamanslåinga er fullførd!",
 	"centralauth-complete-text": "Du kan nå logge inn på kva for helst wiki som høyrer til {{int:Centralauth-groupname}} utan å opprette ny konto.",
 	"centralauth-contribs-locked": "Denne kontoen er låst globalt.\nSjå [[Special:CentralAuth/$1|globale kontodetaljar]] for meir informasjon.",
+	"centralauth-contribs-locked-log": "Denne kontoen er låst globalt.\nDen siste oppføringa i låsingsloggen er synt nedanfor:",
 	"centralauth-days-ago": "{{PLURAL:$1|Éin dag|$1 dagar}} sidan",
 	"centralauth-desc": "[[Special:MergeAccount|Slå saman kontoar]] på wikiane til {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Kontosamanslåing er for no berre i demonstrasjonsmodus; faktisk samanslåing er enno ikkje mogleg.",

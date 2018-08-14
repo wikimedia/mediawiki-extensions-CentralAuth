@@ -189,7 +189,7 @@
 	"centralauth-editset-usage": "Коришћен у групама:",
 	"centralauth-editset-wikis": "Викији:",
 	"centralauth-editset-zerowikis": "Није наведен ниједан вики.",
-	"centralauth-error-badtoken": "Наведени жетон за аутентификацију је истекао или је погрешан.",
+	"centralauth-error-badtoken": "Наведени токен за потврду идентитета је истекао или није важећи.",
 	"centralauth-error-locked": "Не можете да уређујете јер је ваш налог закључан.",
 	"centralauth-error-nologinattempt": "Нема пријава у току за вашу сесију.",
 	"centralauth-finish-incomplete": "С овом лозинком је спојено неколико налога.\nДруги налози још нису потврђени.",
