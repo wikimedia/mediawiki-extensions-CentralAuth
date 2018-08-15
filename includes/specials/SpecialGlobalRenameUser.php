@@ -117,8 +117,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
 					$fields['allowhigheditcount'] = [
 						'id' => 'mw-globalrenameuser-allowhigheditcount',
-						'label' => $this->msg( 'centralauth-rename-form-allowhigheditcount' )
-							->numParams( self::EDITCOUNT_THRESHOLD )->escaped(),
+						'label-message' => [ 'centralauth-rename-form-allowhigheditcount',
+							Message::numParam( self::EDITCOUNT_THRESHOLD ) ],
 						'type' => 'check'
 					];
 				}
