@@ -800,20 +800,38 @@ $specialPageAliases['sk'] = [
 
 /** Serbian Cyrilic (српски (ћирилица)) */
 $specialPageAliases['sr-ec'] = [
-	'CentralAuth' => [ 'Централна_пријава' ],
+	'CentralAuth' => [ 'Централна_пријава', 'Глобални_налог' ],
 	'MergeAccount' => [ 'Споји_налог' ],
-	'GlobalGroupMembership' => [ 'Глобална_корисничка_права' ],
+	'GlobalGroupMembership' => [ 'Глобална_корисничка_права', 'Чланство_у_глобалним_групама' ],
 	'GlobalGroupPermissions' => [ 'Глобална_права_група' ],
+	'WikiSets' => [ 'Скупови_викија', 'Измени_скупове_викија' ],
 	'GlobalUsers' => [ 'Глобални_корисници' ],
+	'MultiLock' => [ 'Вишеструко_закључавање' ],
+	'GlobalRenameUser' => [ 'Глобално_преименовање_корисника' ],
+	'GlobalRenameProgress' => [ 'Напредак_глобалног_преименовања' ],
+	'GlobalUserMerge' => [ 'Глобално_спајање_корисника' ],
+	'GlobalRenameRequest' => [ 'Глобални_захтев_за_преименовање' ],
+	'GlobalRenameQueue' => [ 'Глобални_ред_за_преименовање' ],
+	'SulRenameWarning' => [ 'Упозорење_о_преименовању' ],
+	'UsersWhoWillBeRenamed' => [ 'Корисници_који_ће_бити_преименовани' ],
 ];
 
 /** Serbian Cyrilic (srpski (latinica)) */
 $specialPageAliases['sr-el'] = [
-	'CentralAuth' => [ 'Centralna_prijava' ],
+	'CentralAuth' => [ 'Centralna_prijava', 'Globalni_nalog' ],
 	'MergeAccount' => [ 'Spoji_nalog' ],
-	'GlobalGroupMembership' => [ 'Globalna_korisnička_prava' ],
+	'GlobalGroupMembership' => [ 'Globalna_korisnička_prava', 'Članstvo_u_globalnim_grupama' ],
 	'GlobalGroupPermissions' => [ 'Globalna_prava_grupa' ],
+	'WikiSets' => [ 'Skupovi_vikija', 'Izmeni_skupove_vikija' ],
 	'GlobalUsers' => [ 'Globalni_korisnici' ],
+	'MultiLock' => [ 'Višestruko_zaključavanje' ],
+	'GlobalRenameUser' => [ 'Globalno_preimenovanje_korisnika' ],
+	'GlobalRenameProgress' => [ 'Napredak_globalnog_preimenovanja' ],
+	'GlobalUserMerge' => [ 'Globalno_spajanje_korisnika' ],
+	'GlobalRenameRequest' => [ 'Globalni_zahtev_za_preimenovanje' ],
+	'GlobalRenameQueue' => [ 'Globalni_red_za_preimenovanje' ],
+	'SulRenameWarning' => [ 'Upozorenje_o_preimenovanju' ],
+	'UsersWhoWillBeRenamed' => [ 'Korisnici_koji_će_biti_preimenovani' ],
 ];
 
 /** Sundanese (Basa Sunda) */
