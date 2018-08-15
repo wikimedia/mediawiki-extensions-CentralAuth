@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "49fafc22_8392c27c",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-08-15T21:03:30Z",
+      "side": 1,
+      "message": "Do we still use them nowadays? Are they needed in order not to break stuff? This content can no longer be translated via translatewiki\u0027s Special:Magic. I\u0027ll remove my -1 though. Thanks for explaining.",
+      "parentUuid": "96df71b2_d36cca7b",
+      "range": {
+        "startLine": 801,
+        "startChar": 48,
+        "endLine": 801,
+        "endChar": 49
+      },
+      "revId": "e3d0607427eddac157cd63b8d05fdc565b6d9d56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04352053_4e8fc920",
         "filename": "CentralAuth.alias.php",
         "patchSetId": 2
