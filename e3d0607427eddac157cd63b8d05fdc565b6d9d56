@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "96df71b2_d36cca7b",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 4983
+      },
+      "writtenOn": "2018-08-15T20:44:29Z",
+      "side": 1,
+      "message": "No, that is full-width parenthesis. Back when these aliases were on translatewiki.net, localization bot used to add those, so I keep same style for consistency.\n\nLook at the end of this file, you\u0027ll find another language that has variants, Chinese, which also uses same full-width parenthesis.",
+      "parentUuid": "036466e6_0179509e",
+      "range": {
+        "startLine": 801,
+        "startChar": 48,
+        "endLine": 801,
+        "endChar": 49
+      },
+      "revId": "e3d0607427eddac157cd63b8d05fdc565b6d9d56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "04352053_4e8fc920",
         "filename": "CentralAuth.alias.php",
         "patchSetId": 2
