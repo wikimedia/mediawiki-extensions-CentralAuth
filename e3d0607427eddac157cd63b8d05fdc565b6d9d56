@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "036466e6_0179509e",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-08-15T20:39:57Z",
+      "side": 1,
+      "message": "Something inserted by your editor?",
+      "range": {
+        "startLine": 801,
+        "startChar": 48,
+        "endLine": 801,
+        "endChar": 49
+      },
+      "revId": "e3d0607427eddac157cd63b8d05fdc565b6d9d56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04352053_4e8fc920",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2018-08-15T20:39:57Z",
+      "side": 1,
+      "message": "Ditto ut supra.",
+      "range": {
+        "startLine": 819,
+        "startChar": 45,
+        "endLine": 819,
+        "endChar": 46
+      },
+      "revId": "e3d0607427eddac157cd63b8d05fdc565b6d9d56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
