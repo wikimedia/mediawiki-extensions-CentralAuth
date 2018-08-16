@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "fee9d39c_85664a75",
+        "filename": "CentralAuth.alias.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2018-08-16T12:48:34Z",
+      "side": 1,
+      "message": "Nope. Are you using polygerrit or the old one?\n\nIn that case, I am sure it is the bidi character that comes from Names.php.\n\nI don\u0027t think they are needed in these files.",
+      "parentUuid": "a538c2cd_98bcfff4",
+      "range": {
+        "startLine": 801,
+        "startChar": 48,
+        "endLine": 801,
+        "endChar": 49
+      },
+      "revId": "e3d0607427eddac157cd63b8d05fdc565b6d9d56",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "04352053_4e8fc920",
         "filename": "CentralAuth.alias.php",
         "patchSetId": 2
