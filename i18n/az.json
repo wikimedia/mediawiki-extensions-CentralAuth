@@ -92,7 +92,7 @@
 	"centralauth-list-attached-title": "Əlavə edilmiş hesablar",
 	"centralauth-list-home-title": "Ev vikisi",
 	"centralauth-listusers-locked": "bloklanmış",
-	"centralauth-log-entry-chgstatus": "qlibal hesab \"$1 üçün vəziyyət dəyişdi: $2 nizamlandı; $3 nizamlanma götürüldü",
+	"centralauth-log-entry-chgstatus": "qlobal hesab \"$1 üçün vəziyyət dəyişdi: $2 nizamlandı; $3 nizamlanma götürüldü",
 	"centralauth-log-entry-delete": "\"$1\" qlobal hesabı silindi",
 	"centralauth-log-entry-hide": "\"$1\" qlobal hesabı gizləndi",
 	"centralauth-log-entry-lock": "\"$1\" qlobal hesabı bloklandı",
