@@ -146,7 +146,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'name'          => 'newname',
 				'required'      => true,
 				'type'          => 'text',
-				'notice-message' => [
+				'help-message'  => [
 					'globalrenamerequest-newname-help',
 					$this->suggestedUsername(),
 				],
@@ -166,7 +166,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'placeholder'   => 'username@example.com',
 				'required'      => true,
 				'type'          => 'email',
-				'notice-message' => 'globalrenamerequest-email-why-explain',
+				'help-message'  => 'globalrenamerequest-email-why-explain',
 			];
 			$fields['email2'] = [
 				'cssclass'      => 'mw-globalrenamerequest-field',
@@ -178,7 +178,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'placeholder'   => 'username@example.com',
 				'required'      => true,
 				'type'          => 'email',
-				'notice-message' => 'globalrenamerequest-email2-help',
+				'help-message'  => 'globalrenamerequest-email2-help',
 				'validation-callback' => [ $this, 'validateEmail' ],
 			];
 		}
