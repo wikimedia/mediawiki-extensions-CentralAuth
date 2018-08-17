@@ -1,0 +1,7 @@
+Code-Review+2: MarcoAurelio <maurelio@tools.wmflabs.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Fri, 17 Aug 2018 10:00:04 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/452969
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
