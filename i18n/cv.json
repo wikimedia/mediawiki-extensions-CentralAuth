@@ -4,7 +4,8 @@
 			"Salam",
 			"Chuvash2014",
 			"Iltever",
-			"Ernác"
+			"Ernác",
+			"Chuvash"
 		]
 	},
 	"centralauth-admin-info-username": "Усă куракан ячĕ:",
@@ -13,6 +14,7 @@
 	"centralauth-editgroup-reason": "Сӑлтав:",
 	"centralauth-editgroup-success": "Ушкӑн ирӗкӗсем улӑштарнӑ.",
 	"centralauth-editset-name": "Ят:",
+	"centralauth-editset-notfound": "\"$1\" вики тупăнмарĕ.",
 	"centralauth-editset-nouse": "(çук)",
 	"centralauth-editset-nowikis": "(çук)",
 	"centralauth-editset-reason": "Сӑлтав:",
@@ -25,5 +27,6 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|уйӑх}} каялла",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|1=ҫеккунт|ҫеккунт}} каялла",
 	"centralauth-uwbr-name": "Усă куракан ят",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла"
+	"centralauth-years-ago": "$1 {{PLURAL:$1|1=ҫуо|ҫул}} каялла",
+	"globalrenamequeue-request-unknown-title": "Ыйтни тупăнмарĕ"
 }
