@@ -35,13 +35,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 		// First, schedule the throwing of the exception for later when the API
 		// is ready to catch it
-		if ( class_exists( \ApiUsageException::class ) ) {
-			$exception = \ApiUsageException::newWithMessage( null, $error, $code );
-		} else {
-			$msg = Message::newFromSpecifier( $error )
-				->inLanguage( 'en' )->useDatabase( false )->text();
-			$exception = new \UsageException( $msg, $code );
-		}
+		$exception = \ApiUsageException::newWithMessage( null, $error, $code );
 		$wgHooks['ApiBeforeMain'][] = function () use ( $exception ) {
 			throw $exception;
 		};
