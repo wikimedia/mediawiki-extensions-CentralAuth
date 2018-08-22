@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6063342c_e9b2714b",
+        "filename": "CentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-08-22T13:39:06Z",
+      "side": 1,
+      "message": "Should this be updated?",
+      "range": {
+        "startLine": 17,
+        "startChar": 68,
+        "endLine": 17,
+        "endChar": 72
+      },
+      "revId": "06cccb13e48106e83eae93da837ca58640fc8717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8d50e5a_9a4c09df",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-08-22T13:39:06Z",
+      "side": 1,
+      "message": "This test should never be true since MW 1.28.",
+      "revId": "06cccb13e48106e83eae93da837ca58640fc8717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2a8bf80_f65261e4",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2018-08-22T13:39:06Z",
+      "side": 1,
+      "message": "WebResponse::headersSent() was added in MW 1.27.",
+      "revId": "06cccb13e48106e83eae93da837ca58640fc8717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
