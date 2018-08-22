@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "59701ac8_9a544f02",
+        "filename": "CentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-08-22T19:40:22Z",
+      "side": 1,
+      "message": "The file should be dropped entirely; the \"real\" line for this is https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/CentralAuth/+/master/extension.json#9 which already has drifted from this (1.31+ as of writing).",
+      "parentUuid": "6063342c_e9b2714b",
+      "range": {
+        "startLine": 17,
+        "startChar": 68,
+        "endLine": 17,
+        "endChar": 72
+      },
+      "revId": "06cccb13e48106e83eae93da837ca58640fc8717",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8d50e5a_9a4c09df",
         "filename": "includes/CentralAuthHooks.php",
         "patchSetId": 2
