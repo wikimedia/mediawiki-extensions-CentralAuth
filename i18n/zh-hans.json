@@ -33,7 +33,8 @@
 			"Cdz",
 			"范",
 			"飞舞回堂前",
-			"WhitePhosphorus"
+			"WhitePhosphorus",
+			"A2093064"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -288,7 +289,7 @@
 	"centralauth-editset-zerowikis": "没有指定wiki。",
 	"centralauth-error-badtoken": "提供的身份验证密钥过期或无效。",
 	"centralauth-error-locked": "由于您的账户已被锁定，您目前无法编辑。",
-	"centralauth-error-nologinattempt": "您的会话没有主动登入尝试正在进行。",
+	"centralauth-error-nologinattempt": "您的会话没有正在进行的登录尝试。",
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
 	"centralauth-error-unmerged": "您不能编辑，因为您的账户未统一。",
