@@ -25,7 +25,7 @@
 	"centralauth-admin-group-temporary": "$1 ''(ယာယီ)''",
 	"centralauth-admin-hidden-list": "ဂလိုဘယ်အသုံးပြုသူများ စာရင်းမှ",
 	"centralauth-admin-info-attached": "တွဲချိတ်ထားသော အကောင့်များအရေအတွက်:",
-	"centralauth-admin-info-editcount": "တည်ဖြတ်မှု စုစုပေါင်း:",
+	"centralauth-admin-info-editcount": "တည်းဖြတ်မှု စုစုပေါင်း:",
 	"centralauth-admin-info-groups": "ဂလိုဘယ် {{PLURAL:$1|အုပ်စု|အုပ်စုများ}}:",
 	"centralauth-admin-info-header": "ဂလိုဘယ်အကောင့် သတင်းအချက်အလက်",
 	"centralauth-admin-info-hidden": "ဝှက်ထားသောအဆင့်:",

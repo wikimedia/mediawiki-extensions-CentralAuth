@@ -24,7 +24,8 @@
 			"1917 Ekim Devrimi",
 			"Macofe",
 			"Vito Genovese",
-			"Hedda"
+			"Hedda",
+			"TmY e12"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Kullanıcının olduğu küresel gruplar",
@@ -428,7 +429,7 @@
 	"mergeaccount": "Hesap birleştirme durumu",
 	"multilock": "Birden çok küresel hesabı kilitle",
 	"right-centralauth-lock": "Küresel hesabı kilitle ya da kilidi aç",
-	"right-centralauth-merge": "Hesaplarını birleştir",
+	"right-centralauth-merge": "Kendi hesaplarını birleştir",
 	"right-centralauth-oversight": "Küresel hesabı bastır ya da gizle",
 	"right-centralauth-rename": "Küresel hesapları yeniden adlandırma",
 	"right-centralauth-unmerge": "Küresel hesabı çöz",
