@@ -44,6 +44,7 @@
 	"centralauth-admin-lookup-rw": "အသုံးပြုသူအကောင့်ကို စီမံရန်",
 	"centralauth-admin-manage": "အကောင့်ဒေတာကို စီမံရန်",
 	"centralauth-admin-multi-bot": "လတ်တလော အပြောင်းအလဲများ",
+	"centralauth-admin-no": "မလုပ်ပါ",
 	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" အတွက် ဂလိုဘယ်အကောင့် မရှိပါ",
 	"centralauth-admin-not-authorized": "ဤလုပ်ဆောင်ချက်ကိုဆောင်ရွက်ရန် သင့်တွင် ခွင့်ပြုချက်များ မရှိပါ",
 	"centralauth-admin-reason": "အ​ကြောင်း​ပြ​ချက်:",
