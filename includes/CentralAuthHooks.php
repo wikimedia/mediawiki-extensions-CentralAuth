@@ -1271,9 +1271,11 @@ class CentralAuthHooks {
 	 * Load our global_user_groups variable
 	 * @param AbuseFilterVariableHolder $vars
 	 * @param User $user
+	 * @param null|stdClass $RCRow If the variables should be generated for an RC row, this is the row.
+	 *   Null if it's for the current action being filtered.
 	 * @return bool
 	 */
-	static function abuseFilterGenerateUserVars( $vars, $user ) {
+	static function abuseFilterGenerateUserVars( $vars, $user, $RCRow ) {
 		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user ] );
 		return true;
 	}
