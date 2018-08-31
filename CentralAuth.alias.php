@@ -462,6 +462,11 @@ $specialPageAliases['ja'] = [
 	'WikiSets' => [ 'ウィキ集合', 'ウィキ集合の編集' ],
 	'GlobalUsers' => [ 'グローバル利用者' ],
 	'MultiLock' => [ '複数利用者ロック' ],
+	'GlobalRenameUser' => [ 'グローバル利用者名変更', 'グローバル改名', 'グローバル利用者名の変更' ],
+	'GlobalRenameProgress' => [ 'グローバル利用者名変更状況', 'グローバル利用者名変更の進捗' ],
+	'GlobalUserMerge' => [ 'グローバル利用者統合' ],
+	'GlobalRenameRequest' => [ 'グローバル利用者名変更依頼', 'グローバル利用者アカウントの改名依頼' ],
+	'GlobalRenameQueue' => [ 'グローバル利用者名変更依頼待ち', 'グローバル利用者名変更依頼の対応待ち' ],
 ];
 
 /** Georgian (ქართული) */
