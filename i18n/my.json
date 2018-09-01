@@ -103,7 +103,7 @@
 	"centralauth-log-entry-lockandhide": "ဂလိုဘယ်အကောင့် \"$1\" ကို သော့ခတ်ပြီးဝှက်ခဲ့သည်",
 	"centralauth-log-entry-unhide": "ဂလိုဘယ်အကောင့် \"$1\" ကို မဝှက်တော့ပါ",
 	"centralauth-log-entry-unlock": "ဂလိုဘယ်အကောင့် \"$1\" ကို သော့မခတ်တော့ပါ",
-	"centralauth-log-gblrename-oldname": "အရင်သုံးစွဲသော နာမည်",
+	"centralauth-log-gblrename-oldname": "ယခင် အသုံးပြုသူအမည်:",
 	"centralauth-log-name": "ဂလိုဘယ် အကောင့်မှတ်တမ်း",
 	"centralauth-log-status-hidden": "ဝှက်ထားသည်",
 	"centralauth-log-status-locked": "သော့ခတ်ထားသည်",
