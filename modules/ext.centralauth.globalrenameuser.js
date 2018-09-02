@@ -1,7 +1,5 @@
 ( function ( mw, $ ) {
 	$( function () {
-		/* global confirm */
-
 		// Confirm renames
 		mw.util.$content.find( 'form' ).first().on( 'submit', function () {
 			var msgKey;
@@ -10,6 +8,8 @@
 			} else {
 				msgKey = 'centralauth-rename-confirm';
 			}
+			// TODO: Convert this to OOUI.
+			// eslint-disable-next-line no-alert
 			return confirm( mw.msg( msgKey ) );
 		} );
 

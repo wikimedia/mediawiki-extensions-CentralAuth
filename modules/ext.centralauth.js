@@ -41,8 +41,6 @@
 	}
 
 	$( function () {
-		/* global confirm */
-
 		// Back link for CentralLogin/start
 		$( '#centralauth-backlink-section' ).append(
 			$( '<a>' )
@@ -61,6 +59,8 @@
 
 		// Confirm account deletions
 		$( '#mw-centralauth-delete input[type="submit"]' ).on( 'click', function () {
+			// TODO: Convert this to OOUI.
+			// eslint-disable-next-line no-alert
 			return confirm( mw.msg( 'centralauth-admin-delete-confirm' ) );
 		} );
 	} );
