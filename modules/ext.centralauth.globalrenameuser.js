@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 ( function ( mw, $ ) {
 	$( function () {
 		/* global confirm */
