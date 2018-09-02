@@ -119,7 +119,7 @@ class MigrateAccount extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	function migrate( $username, $homewiki=null ) {
+	function migrate( $username, $homewiki = null ) {
 		$this->total++;
 		$this->output( "CentralAuth account migration for: " . $username . "\n" );
 

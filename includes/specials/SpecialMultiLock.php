@@ -350,7 +350,7 @@ class SpecialMultiLock extends SpecialPage {
 
 		$rowHtml .= Html::rawElement( 'td', [],
 			Html::input(
-				'wpActionTarget['.$guName.']',
+				'wpActionTarget[' . $guName . ']',
 				$guName,
 				'checkbox',
 				[ 'checked' => 'checked' ]
