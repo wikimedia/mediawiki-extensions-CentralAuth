@@ -11,7 +11,8 @@
 			"Лорд Бъмбъри",
 			"Termininja",
 			"Vodnokon4e",
-			"ShockD"
+			"ShockD",
+			"Vlad5250"
 		]
 	},
 	"centralauth": "Управление на единните сметки",
@@ -277,6 +278,7 @@
 	"mergeaccount": "Състояние на обединението на сметки",
 	"right-centralauth-lock": "Заключване или отключване на глобална сметка",
 	"right-centralauth-merge": "Сливане на тяхната сметка",
+	"right-centralauth-oversight": "Скриване на глобална сметка",
 	"right-centralauth-unmerge": "Разделяне на глобалната сметка",
 	"right-globalgroupmembership": "Промяна на членството в глобални групи",
 	"right-globalgrouppermissions": "Управление на глобалните групи",
