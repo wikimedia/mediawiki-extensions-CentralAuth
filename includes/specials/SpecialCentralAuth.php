@@ -850,22 +850,28 @@ class SpecialCentralAuth extends SpecialPage {
 	private function showLogExtract() {
 		$user = $this->mGlobalUser->getName();
 		$title = Title::newFromText( MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global" );
+		$caTitle = SpecialPage::getTitleValueFor( 'CentralAuth', $user );
 		if ( !$title ) {
 			// Don't fatal even if a Title couldn't be generated
 			// because we've invalid usernames too :/
 			return;
 		}
-		$logTypes = [ 'globalauth' ];
+		$logTypes = [ 'globalauth', 'gblrename' ];
 		if ( $this->mCanOversight ) {
 			$logTypes[] = 'suppress';
 		}
 		$text = '';
+		$dbr = wfGetDB( DB_REPLICA );
 		$numRows = LogEventsList::showLogExtract(
 			$text,
 			$logTypes,
-			$title->getPrefixedText(),
 			'',
-			[ 'showIfEmpty' => true ] );
+			'',
+			[ 'showIfEmpty' => true,
+				'conds' => [ 'log_title ='. $dbr->addQuotes( $title->getText() )
+				.'OR log_title ='. $dbr->addQuotes( $caTitle->getText() ) ]
+			]
+		);
 		if ( $numRows ) {
 			$this->getOutput()->addHTML( Xml::fieldset(
 				$this->msg( 'centralauth-admin-logsnippet' )->text(),
