@@ -151,6 +151,7 @@
 	"centralauth-uwbr-registration-nodate": "မသိရ",
 	"centralauth-warning-notloggedin": "သင်သည်လက်ရှိ အကောင့်ထဲမဝင်ထားပါ။",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|နှစ်|နှစ်}} အကြာက",
+	"centralloginsuccesful": "အကောင့်ထဲဝင်ပြီးပြီ",
 	"globalgrouppermissions": "ဂလိုဘယ်အုပ်စု စီမံခန့်ခွဲမှု",
 	"globalrenameprogress": "ဂလိုဘယ် အမည်ပြန်မှည့်ခြင်း တိုးတက်မှု",
 	"globalrenameprogress-legend": "ဂလိုဘယ် အမည်ပြန်မှည့်ခြင်း တိုးတက်မှုကို ကြည့်ရန်",
