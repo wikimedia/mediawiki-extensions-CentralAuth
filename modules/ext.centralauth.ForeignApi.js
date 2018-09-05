@@ -10,9 +10,9 @@
 	 * Extend mw.ForeignApi with CentralAuth authentication handling.
 	 *
 	 * Every request to the foreign wiki will be preceded by a 'action=centralauthtoken' request to
-	 * the local wiki. The foreign request will be extended with the acquired token to ensure that the
-	 * requests to foreign wiki will always be authenticated as the currently logged-in user on local
-	 * wiki.
+	 * the local wiki. The foreign request will be extended with the acquired token to ensure that
+	 * the requests to foreign wiki will always be authenticated as the currently logged-in user on
+	 * local wiki.
 	 *
 	 * If we detect that the current user is anonymous, that the foreign wiki doesn't have
 	 * CentralAuth, or that the requests to foreign wiki will be correctly authenticated without
@@ -48,8 +48,8 @@
 			// Anonymous users cannot obtain a centralauthtoken
 			this.noTokenNeeded = true;
 		} else {
-			// We're logged in locally, check to see if we're logged in on the foreign wiki too, and thus
-			// can skip 'centralauthtoken' requests
+			// We're logged in locally, check to see if we're logged in on the foreign wiki too, and
+			// thus can skip 'centralauthtoken' requests
 			this.foreignLoginPromise = this.checkForeignLogin();
 		}
 	}
@@ -196,8 +196,8 @@
 				if ( aborted ) {
 					return abortedPromise;
 				}
-				// We couldn't get the token, but continue anyway. This is expected in some cases, like
-				// anonymous users.
+				// We couldn't get the token, but continue anyway. This is expected in some cases,
+				// like anonymous users.
 				return ( abortable = parent.call( foreignApi, parameters, ajaxOptions ) );
 			}
 		).promise( { abort: function () {
