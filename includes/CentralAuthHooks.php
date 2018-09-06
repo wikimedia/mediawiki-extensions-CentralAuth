@@ -334,16 +334,37 @@ class CentralAuthHooks {
 			$message = wfMessage( 'centralauth-prefs-not-managed' )->parse();
 		}
 
-		$manageLinks = [];
-		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
-			$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
-				wfMessage( 'centralauth-prefs-manage' )->parse() );
+		// TODO: Drop this when isOouiEnabled always returns true.
+		if ( SpecialPreferences::isOouiEnabled( RequestContext::getMain() ) ) {
+			$manageButtons = [];
+
+			if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
+				$manageButtons[] = new \OOUI\ButtonWidget( [
+					'href' => SpecialPage::getTitleFor( 'MergeAccount' ),
+					'label' => wfMessage( 'centralauth-prefs-manage' )->parse(),
+				] );
+			}
+
+			$manageButtons[] = new \OOUI\ButtonWidget( [
+				'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
+				'label' => wfMessage( 'centralauth-prefs-view' )->parse(),
+			] );
+
+			$manageLinkList = (string)( new \OOUI\HorizontalLayout( [ 'items' => $manageButtons ] ) );
+		} else {
+			$manageLinks = [];
+			if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
+				$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
+					wfMessage( 'centralauth-prefs-manage' )->parse() );
+			}
+
+			$manageLinks[] = Linker::linkKnown(
+				SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
+				wfMessage( 'centralauth-prefs-view' )->parse()
+			);
+
+			$manageLinkList = $wgLang->pipeList( $manageLinks );
 		}
-		$manageLinks[] = Linker::linkKnown(
-			SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
-			wfMessage( 'centralauth-prefs-view' )->parse()
-		);
-		$manageLinkList = $wgLang->pipeList( $manageLinks );
 
 		$preferences['globalaccountstatus'] = [
 			'section' => 'personal/info',
@@ -352,6 +373,7 @@ class CentralAuthHooks {
 			'raw' => true,
 			'default' => $manageLinkList
 		];
+
 		if ( isset( $message ) ) {
 			// looks weird otherwise
 			$manageLinkList = wfMessage( 'parentheses', $manageLinkList )->text();
