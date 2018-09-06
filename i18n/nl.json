@@ -173,7 +173,7 @@
 	"centralauth-admin-status-hidden-list": "Gebruiker is verborgen in publieke lijsten",
 	"centralauth-admin-status-hidden-no": "Account is niet verborgen",
 	"centralauth-admin-status-hidden-oversight": "Account is volledig verborgen",
-	"centralauth-admin-status-intro": "U kunt dit formulier gebruiken om de status van deze globale gebruiker te wijzigen",
+	"centralauth-admin-status-intro": "U kunt dit formulier gebruiken om de status van deze globale gebruiker te wijzigen.",
 	"centralauth-admin-status-locked": "Vergrendeld:",
 	"centralauth-admin-status-locked-no": "Account is niet vergrendeld",
 	"centralauth-admin-status-locked-yes": "Gebruiker mag niet bewerken",

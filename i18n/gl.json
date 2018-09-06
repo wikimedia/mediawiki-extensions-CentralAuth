@@ -12,7 +12,8 @@
 			"Banjo",
 			"Macofe",
 			"AlvaroMolina",
-			"Maria zaos"
+			"Maria zaos",
+			"Navhy"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais aos que pertence o usuario",
@@ -49,7 +50,7 @@
 	"apihelp-main-param-centralauthtoken": "Cando se accede á API usando unha petición AJAX inter-dominios (CORS), use isto para autenticarse como o usuario SUL actual. Use <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> neste wiki para obter o identificador, antes de facer a petición CORS. Cada identificador só pode usarse unha vez, e caduca despois de 10 segundos. Isto debe incluírse en calquera petición de esbozo, e por iso debe incluírse na URI da petición (non no corpo POST).",
 	"apihelp-query+globalallusers-description": "Numerar tódolos usuarios globais.",
 	"apihelp-query+globalallusers-example-1": "Listar usuarios globais",
-	"apihelp-query+globalallusers-example-2": "Mostrar a información dos usuarios globais comezando por \"ABC\"",
+	"apihelp-query+globalallusers-example-2": "Amosar a información dos usuarios globais comezando dende \"ABC\"",
 	"apihelp-query+globalallusers-param-dir": "Dirección na que ordenar.",
 	"apihelp-query+globalallusers-param-excludegroup": "Excluír usuarios nos grupos globais dados.",
 	"apihelp-query+globalallusers-param-from": "Nome de usuario para comezar a enumeración.",
@@ -61,7 +62,7 @@
 	"apihelp-query+globalallusers-summary": "Enumerar tódolos usuarios globais.",
 	"apihelp-query+globalgroups-description": "Numerar tódolos grupos globais.",
 	"apihelp-query+globalgroups-example-1": "Listar grupos globais",
-	"apihelp-query+globalgroups-example-2": "Mostrar ós grupos de usuarios globais cos dereitos que conceden",
+	"apihelp-query+globalgroups-example-2": "Amosar ós grupos de usuarios globais cos dereitos que conceden",
 	"apihelp-query+globalgroups-param-prop": "Pezas de información a incluír.",
 	"apihelp-query+globalgroups-summary": "Enumerar tódolos grupos globais.",
 	"apihelp-query+globalrenamestatus-description": "Amosar información sobre os renomeamentos globais que están en progreso.",
@@ -77,7 +78,7 @@
 	"apihelp-query+globaluserinfo-summary": "Amosar a información dun usuario global.",
 	"apihelp-query+wikisets-description": "Enumerar todos as coleccións wiki.",
 	"apihelp-query+wikisets-example-1": "Lista de coleccións wiki",
-	"apihelp-query+wikisets-example-2": "Mostrar coleccións wiki cos seus tipos",
+	"apihelp-query+wikisets-example-2": "Amosar coleccións wiki cos seus tipos",
 	"apihelp-query+wikisets-param-from": "Nome da colección wiki dende a que comezar.",
 	"apihelp-query+wikisets-param-limit": "Cantas coleccións wikis devolver.",
 	"apihelp-query+wikisets-param-orderbyname": "Ordear resultados por nome.",
