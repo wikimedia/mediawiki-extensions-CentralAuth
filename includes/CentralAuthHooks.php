@@ -334,23 +334,26 @@ class CentralAuthHooks {
 			$message = wfMessage( 'centralauth-prefs-not-managed' )->parse();
 		}
 
-		$manageLinks = [];
+		$manageButtons = [];
+
 		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
-			$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
-				wfMessage( 'centralauth-prefs-manage' )->parse() );
+			$manageButtons[] = new \OOUI\ButtonWidget( [
+				'href' => SpecialPage::getTitleFor( 'MergeAccount' ),
+				'label' => wfMessage( 'centralauth-prefs-manage' )->parse(),
+			] );
 		}
-		$manageLinks[] = Linker::linkKnown(
-			SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
-			wfMessage( 'centralauth-prefs-view' )->parse()
-		);
-		$manageLinkList = $wgLang->pipeList( $manageLinks );
+
+		$manageButtons[] = new \OOUI\ButtonWidget( [
+			'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
+			'label' => wfMessage( 'centralauth-prefs-view' )->parse(),
+		] );
 
 		$preferences['globalaccountstatus'] = [
 			'section' => 'personal/info',
 			'label-message' => 'centralauth-prefs-status',
 			'type' => 'info',
 			'raw' => true,
-			'default' => $manageLinkList
+			'default' => (string)( new \OOUI\HorizontalLayout( [ 'items' => $manageButtons ] ) )
 		];
 		if ( isset( $message ) ) {
 			// looks weird otherwise
