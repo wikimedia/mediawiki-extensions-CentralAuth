@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "347dd3a0_9f9d7bab",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2018-09-06T23:22:00Z",
+      "side": 1,
+      "message": "This also needs to be changed, currently looks like this: https://phabricator.wikimedia.org/F25681828",
+      "range": {
+        "startLine": 378,
+        "startChar": 0,
+        "endLine": 379,
+        "endChar": 73
+      },
+      "revId": "8c06ed0b0486c31f4cc52a68510ef948d33975ad",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
