@@ -396,7 +396,7 @@
 	"centralauth-prefs-not-managed": "Not using unified account",
 	"centralauth-prefs-status": "Global account:",
 	"centralauth-prefs-unattached": "Not fully unified",
-	"centralauth-prefs-view": "View global account info",
+	"centralauth-prefs-view": "View your global account info",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Read more about '''unified login''']]…''",
 	"centralauth-readonly": "CentralAuth database locked",
 	"centralauth-readonlytext": "The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.",
