@@ -458,7 +458,7 @@
 	"centralauth-usermerge-ratelimited": "Como medida de seguridade, só se permite fusionar globalmente a un usuario unha vez por minuto. Por favor, inténtao de novo tras un minuto.",
 	"centralauth-usermerge-toomany": "Só $1 {{PLURAL:$1|usuario|usuarios}} poden ser fusionados ao mesmo tempo.",
 	"centralauth-uwbr-editcount": "Contador de edicións",
-	"centralauth-uwbr-intro": "Esta páxina mostra unha lista dos usuarios rexistrados neste wiki que serán renomeados.",
+	"centralauth-uwbr-intro": "Esta páxina amosa unha lista dos usuarios rexistrados neste wiki que serán renomeados.",
 	"centralauth-uwbr-name": "Nome de usuario",
 	"centralauth-uwbr-registration": "Data de rexistro",
 	"centralauth-uwbr-registration-nodate": "Descoñecido",
