@@ -4,7 +4,7 @@ $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
-require_once "$IP/maintenance/includes/deleteLocalPasswords.php";
+require_once "$IP/maintenance/includes/DeleteLocalPasswords.php";
 
 class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 	/** @var string|null Wiki to run on, or null for all. */
