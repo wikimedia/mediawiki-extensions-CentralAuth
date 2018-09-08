@@ -377,7 +377,7 @@
 	"centralauth-prefs-not-managed": "Es wird kein zusammengeführtes Benutzerkonto benutzt.",
 	"centralauth-prefs-status": "Globales Benutzerkonto:",
 	"centralauth-prefs-unattached": "Nicht vollständig vereinigt",
-	"centralauth-prefs-view": "Globales Benutzerkonto einsehen",
+	"centralauth-prefs-view": "Informationen zu deinem globalen Benutzerkonto ansehen",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]].''",
 	"centralauth-readonly": "Die CentralAuth-Datenbank ist gesperrt",
 	"centralauth-readonlytext": "Die CentralAuth-Datenbank ist derzeit für neue Einträge und andere Änderungen gesperrt. Dies ist wahrscheinlich aufgrund routinemäßiger Wartungsarbeiten der Fall, nach deren Abschluss die Datenbank wieder regulär verfügbar sein wird.",
