@@ -222,7 +222,7 @@
 	"centralauth-prefs-not-managed": "Не се използва единна сметка",
 	"centralauth-prefs-status": "Глобална сметка:",
 	"centralauth-prefs-unattached": "Непълно обединена",
-	"centralauth-prefs-view": "Преглед на глобалната информация за профила",
+	"centralauth-prefs-view": "Преглед на информация за глобалната сметка",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Прочетете повече за системата за '''единни потребителски сметки''']]…''",
 	"centralauth-rename-desc": "Позволява преименуване на глобални сметки",
 	"centralauth-rename-movelog": "Автоматично преместена страница при преименуването на потребител \"[[Special:CentralAuth/$1|$1]]\" като \"[[Special:CentralAuth/$2|$2]]\"",

@@ -282,7 +282,7 @@
 	"centralauth-finish-send-confirmation": "Enviádeme un contrasinal novo por correo",
 	"centralauth-finish-text": "Se estas contas lle pertencen, pode finalizar o proceso de unificación do rexistro simplemente introducindo, aquí, os contrasinais das outras contas:",
 	"centralauth-finish-title": "Finalizar a unificación",
-	"centralauth-finishglobaliseemail_body": "O seu enderezo de correo electrónico asociouse\ná conta \"$2\" en todos os proxectos da Wikimedia, sendo a súa conta principal\na de {{SITENAME}}.\n\nPara confirmar que a conta realmente lle pertence, fusionar todas as\ncontas que non podemos fusionar automaticamente e permitir a recuperación da súa\nconta se perde o contrasinal, abra esta ligazón no navegador:\n\n$3\n\nSe a conta *non* lle pertence, siga estoutra ligazón para cancelar a confirmación do enderezo\nde correo electrónico:\n\n$5\n\nEste código de confirmación caduca o $6 ás $7.",
+	"centralauth-finishglobaliseemail_body": "O seu enderezo de correo electrónico asociouse\ná conta \"$2\" en tódolos proxectos da Wikimedia, sendo a súa conta principal\na de {{SITENAME}}.\n\nPara confirmar que a conta realmente lle pertence, fusionar tódalas \ncontas que non podemos fusionar automaticamente e permitir a recuperación da súa\nconta se perde o contrasinal, abra esta ligazón no navegador:\n\n$3\n\nSe a conta *non* lle pertence, siga estoutra ligazón para cancelar a confirmación do enderezo\nde correo electrónico:\n\n$5\n\nEste código de confirmación caduca o $6 ás $7.",
 	"centralauth-finishglobaliseemail_subject": "Confirmación da conta en {{SITENAME}}",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribución|contribucións}} en $2",
 	"centralauth-foreign-link": "Usuario $1 en $2",

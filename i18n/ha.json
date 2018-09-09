@@ -1,7 +1,13 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": [
+			"Ammarpad"
+		]
+	},
 	"centralauth-admin-reason": "Dalili:",
 	"centralauth-editgroup-reason": "Dalili:",
 	"centralauth-editset-reason": "Dalili:",
-	"centralauth-editset-submit-delete": "Soke"
+	"centralauth-editset-submit-delete": "Soke",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|gyara|gyare-gyare}} $1 on $2",
+	"centralauth-foreign-link": "Edita $1 a $2"
 }

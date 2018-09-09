@@ -384,7 +384,7 @@
 	"centralauth-prefs-not-managed": "통합 계정 사용하지 않음",
 	"centralauth-prefs-status": "통합 계정:",
 	"centralauth-prefs-unattached": "통합되지 않음",
-	"centralauth-prefs-view": "통합 계정 정보 보기",
+	"centralauth-prefs-view": "내 통합 계정 정보 보기",
 	"centralauth-readmore-text": ":[[m:Special:MyLanguage/Help:Unified login|'''통합 로그인'''에 대해 더 보기]]…",
 	"centralauth-readonly": "CentralAuth 데이터베이스 잠김",
 	"centralauth-readonlytext": "정기 데이터베이스 정비 작업 등의 이유로 지금 CentralAuth 데이터베이스가 잠겨서 항목을 만들거나 바꾸지 못합니다. 작업이 끝나면 정상화될 것입니다.",
