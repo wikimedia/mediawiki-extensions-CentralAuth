@@ -86,7 +86,7 @@ class SpecialMultiLock extends SpecialPage {
 	 *
 	 * @param string[] $usernames
 	 * @param bool $fromMaster
-	 * @return (CentralAuthUser|string|bool)[] User object, a HTML error string, or false.
+	 * @return (CentralAuthUser|Message|bool)[] User object, a Message with error, or false.
 	 */
 	private function getGlobalUsers( $usernames, $fromMaster = false ) {
 		$ret = [];
@@ -105,7 +105,7 @@ class SpecialMultiLock extends SpecialPage {
 				|| ( !$this->mCanOversight &&
 					( $globalUser->isOversighted() || $globalUser->isHidden() ) )
 			) {
-				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
+				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username );
 			} else {
 				$ret[] = $globalUser;
 			}
@@ -302,12 +302,17 @@ class SpecialMultiLock extends SpecialPage {
 				continue;
 			} elseif ( $globalUser instanceof CentralAuthUser ) {
 				$rowtext .= $this->getUserTableRow( $globalUser );
-			} else {
+			} elseif ( $globalUser instanceof Message ) {
 				$rowtext .= Html::rawElement(
 					'td',
 					[ 'colspan' => 7 ],
-					$globalUser
+					$globalUser->parse()
 				);
+			} else {
+				$type = is_object( $globalUser )
+					? get_class( $globalUser ) : gettype( $globalUser );
+				throw new UnexpectedValueException( "Unexpected value of $type in "
+					. __METHOD__ );
 			}
 
 			$rowtext .= Xml::closeElement( 'tr' );
