@@ -209,21 +209,21 @@ class CentralAuthHooks {
 	) {
 		// $params[0] is the new one, $params[1] the old one
 		if ( $skin ) {
-			$params[0] = Linker::link(
+			$new = Linker::link(
 				Title::newFromText( $params[0] ),
 				htmlspecialchars( $params[0] )
 			);
-			$params[1] = Linker::link(
+			$old = Linker::link(
 				Title::newFromText( $params[1] ),
 				htmlspecialchars( $params[1] )
 			);
 		} else {
-			$params[0] = htmlspecialchars( $params[0] );
-			$params[1] = htmlspecialchars( $params[1] );
+			$new = htmlspecialchars( $params[0] );
+			$old = htmlspecialchars( $params[1] );
 		}
 
 		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )
-			->rawParams( $params[0], $params[1] );
+			->rawParams( $new, $old );
 		if ( $skin ) {
 			return $msg->text();
 		} else {
@@ -341,13 +341,13 @@ class CentralAuthHooks {
 			if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
 				$manageButtons[] = new \OOUI\ButtonWidget( [
 					'href' => SpecialPage::getTitleFor( 'MergeAccount' ),
-					'label' => wfMessage( 'centralauth-prefs-manage' )->parse(),
+					'label' => wfMessage( 'centralauth-prefs-manage' )->text(),
 				] );
 			}
 
 			$manageButtons[] = new \OOUI\ButtonWidget( [
 				'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
-				'label' => wfMessage( 'centralauth-prefs-view' )->parse(),
+				'label' => wfMessage( 'centralauth-prefs-view' )->text(),
 			] );
 
 			$manageLinkList = (string)( new \OOUI\HorizontalLayout( [ 'items' => $manageButtons ] ) );
