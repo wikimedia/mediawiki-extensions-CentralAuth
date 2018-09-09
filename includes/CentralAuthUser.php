@@ -1334,7 +1334,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @static
 	 * @throws Exception
 	 * @param string[] $list
 	 * @return array
@@ -1352,7 +1351,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @static
 	 * @return string[]
 	 */
 	public static function getWikiList() {
@@ -2853,7 +2851,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @static
 	 * @return array
 	 */
 	static function availableGlobalGroups() {
@@ -2872,7 +2869,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @static
 	 * @param string $group
 	 * @return array
 	 */

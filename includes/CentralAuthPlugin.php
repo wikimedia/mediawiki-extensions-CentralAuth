@@ -28,9 +28,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 *
 	 * @param string $username
 	 * @return bool
-	 * @public
 	 */
-	function userExists( $username ) {
+	public function userExists( $username ) {
 		$central = CentralAuthUser::getInstanceByName( $username );
 		return $central->exists();
 	}
@@ -44,9 +43,8 @@ class CentralAuthPlugin extends AuthPlugin {
 	 * @param string $username
 	 * @param string $password
 	 * @return bool
-	 * @public
 	 */
-	function authenticate( $username, $password ) {
+	public function authenticate( $username, $password ) {
 		global $wgCentralAuthAutoMigrate, $wgCentralAuthCheckSULMigration;
 		global $wgCentralAuthAutoMigrateNonGlobalAccounts;
 		global $wgCentralAuthStrict;

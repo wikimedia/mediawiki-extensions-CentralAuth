@@ -355,7 +355,6 @@ class WikiSet {
 	}
 
 	/**
-	 * @static
 	 * @param string $type
 	 * @return string
 	 */

@@ -118,7 +118,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @static
 	 * @return array
 	 */
 	protected static function getAllGroups() {
