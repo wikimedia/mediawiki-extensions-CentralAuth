@@ -352,7 +352,7 @@
 	"centralauth-prefs-not-managed": "Jednotný účet není používán",
 	"centralauth-prefs-status": "Globální účet:",
 	"centralauth-prefs-unattached": "Nesjednocený",
-	"centralauth-prefs-view": "Zobrazit informace o globálním účtu",
+	"centralauth-prefs-view": "Zobrazit informace o vašem globálním účtu",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Přečtěte si více o '''sjednocení přihlašování''']]...''",
 	"centralauth-readonly": "Databáze CentralAuth je uzamčena",
 	"centralauth-readonlytext": "Databáze CentralAuth je momentálně uzamčena proti novým záznamům a jiným změnám, pravděpodobně kvůli rutinní údržbě, po které se vše vrátí do normálu.",

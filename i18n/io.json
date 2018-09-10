@@ -54,6 +54,7 @@
 	"centralauth-merge-method-empty": "Nula kontributadi",
 	"centralauth-merge-method-login": "kreita dum l'eniro",
 	"centralauth-merge-method-new": "nova konto",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|monato|monati}} ante nun",
 	"centralauth-newgroup-legend": "Krear nova grupo",
 	"centralauth-prefs-status": "Stando di la generala konto:",
 	"centralauth-prefs-view": "Videz la generala informo",

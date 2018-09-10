@@ -414,7 +414,7 @@
 	"centralauth-prefs-not-managed": "N’utilise pas le compte unifié",
 	"centralauth-prefs-status": "Compte global :",
 	"centralauth-prefs-unattached": "Non complètement unifié",
-	"centralauth-prefs-view": "Voir les informations globales sur le compte",
+	"centralauth-prefs-view": "Voir les informations globales de votre compte",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|En savoir plus sur l’<strong>identification unifiée</strong>]]…''",
 	"centralauth-readonly": "Base de données CentralAuth verrouillée",
 	"centralauth-readonlytext": "La base de données CentralAuth est actuellement verrouillée pour de nouvelles entrées et d’autres modifications, probablement par une routine d’entretien de la base de données, après quoi tout reviendra à la normale.",
