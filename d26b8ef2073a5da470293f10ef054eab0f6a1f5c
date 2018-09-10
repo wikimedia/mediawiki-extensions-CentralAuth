@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "046ab6d6_6890acfb",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 50
+      },
+      "writtenOn": "2018-09-10T11:11:35Z",
+      "side": 1,
+      "message": "Can we safely use $globalUser as string here?",
+      "revId": "d26b8ef2073a5da470293f10ef054eab0f6a1f5c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
