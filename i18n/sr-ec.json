@@ -381,7 +381,7 @@
 	"globalrenamequeue-request-cancel-text": "Откажи",
 	"globalrenamequeue-request-deny-text": "Одбиј преименовање",
 	"globalrenamequeue-request-movepages": "Премести корисничке странице",
-	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Претходне промене|Претходна промена}} имена",
+	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Претходно преименовање|Претходна преименовања}}",
 	"globalrenamequeue-request-reason": "<strong>Разлог за преименовање</strong>\n:$1",
 	"globalrenamequeue-request-title": "Преименуј „$1”?",
 	"globalrenamequeue-request-unknown-title": "Захтев није пронађен",

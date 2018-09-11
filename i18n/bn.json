@@ -243,7 +243,7 @@
 	"centralauth-prefs-not-managed": "একীভূত অ্যাকাউন্ট ব্যবহৃত হচ্ছে না",
 	"centralauth-prefs-status": "বৈশ্বিক অ্যাকাউন্ট:",
 	"centralauth-prefs-unattached": "সম্পূর্ণরূপে সমন্বিত নয়",
-	"centralauth-prefs-view": "বৈশ্বিক অ্যাকাউন্টের তথ্য দেখুন",
+	"centralauth-prefs-view": "আপনার বৈশ্বিক অ্যাকাউন্টের তথ্য দেখুন",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''একীভূত প্রবেশ''' সম্পর্কে আরও পড়ুন]]...''",
 	"centralauth-rename-abortlogin": "আপনার অ্যাকাউন্টের বর্তমানে নাম পরিবর্তন বা একীভূত করা হচ্ছে। [[Special:GlobalRenameProgress/$1|অবস্থা দেখুন]]।",
 	"centralauth-rename-cannotself": "আপনি নিকে নিজেকে নামান্তর করতে পারবেন না।",

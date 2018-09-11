@@ -348,7 +348,7 @@
 	"centralauth-prefs-not-managed": "nie używasz konta uniwersalnego",
 	"centralauth-prefs-status": "Konto uniwersalne:",
 	"centralauth-prefs-unattached": "Nie w pełni połączone",
-	"centralauth-prefs-view": "Pokaż informacje o koncie uniwersalnym",
+	"centralauth-prefs-view": "Pokaż informacje o Twoim koncie uniwersalnym",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
 	"centralauth-readonly": "Baza danych CentralAuth jest zablokowana",
 	"centralauth-readonlytext": "Baza danych CentralAuth jest zablokowana do dodawania nowych wpisów i edycji, prawdopodobnie na czas rutynowej konserwacji bazy danych, po której powróci do normalności.",

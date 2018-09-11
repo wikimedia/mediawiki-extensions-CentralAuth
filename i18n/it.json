@@ -349,7 +349,7 @@
 	"centralauth-prefs-not-managed": "Nessuna utenza globale",
 	"centralauth-prefs-status": "Utenza globale:",
 	"centralauth-prefs-unattached": "Non completamente unificata",
-	"centralauth-prefs-view": "Mostra le informazioni globali sull'utente",
+	"centralauth-prefs-view": "Mostra le informazioni globali sulla tua utenza",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Per saperne di più sul '''login unificato''']]…''",
 	"centralauth-readonly": "Il database di CentralAuth è bloccato",
 	"centralauth-readonlytext": "Il database di CentralAuth è al momento bloccato in scrittura, probabilmente per un operazione di manutenzione di routine, presto tutto tornerà alla normalità.",
