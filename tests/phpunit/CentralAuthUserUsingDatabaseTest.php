@@ -3,6 +3,7 @@
 /**
  * Setup database tests for centralauth
  * @group CentralAuthDB
+ * @group Database
  */
 class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 
