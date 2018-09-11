@@ -3,6 +3,7 @@
 /**
  * Basic tests for CentralAuthPlugin
  * @group CentralAuthDB
+ * @group Database
  */
 class CentralAuthPluginUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 

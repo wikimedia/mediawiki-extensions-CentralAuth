@@ -3,6 +3,7 @@
 /**
  * Basic tests for CentralAuthHooks
  * @group CentralAuthDB
+ * @group Database
  */
 class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 
