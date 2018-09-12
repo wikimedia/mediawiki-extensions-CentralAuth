@@ -29,7 +29,7 @@
 	"centralauth-admin-delete-nonexistent": "Грешка: Не съществува глобална сметка „<nowiki>$1</nowiki>”.",
 	"centralauth-admin-delete-success": "Глобалната сметка за „<nowiki>$1</nowiki>“ беше изтрита успешно",
 	"centralauth-admin-delete-title": "Изтриване на сметка",
-	"centralauth-admin-hidden-list": "от публични списъци",
+	"centralauth-admin-hidden-list": "от списъка на глобалните потребители",
 	"centralauth-admin-info-attached": "Брой свързани сметки:",
 	"centralauth-admin-info-editcount": "Общ брой редакции:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Глобална група|Глобални групи}}:",

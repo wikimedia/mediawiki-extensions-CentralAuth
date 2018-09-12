@@ -394,7 +394,7 @@
 	"centralauth-prefs-not-managed": "لا يستخدم الحساب الموحد",
 	"centralauth-prefs-status": "الحساب العام:",
 	"centralauth-prefs-unattached": "غير موحد تمامًا",
-	"centralauth-prefs-view": "عرض معلومات المستخدم العام",
+	"centralauth-prefs-view": "عرض معلومات المستخدم العالمية الخاصة بك",
 	"centralauth-readmore-text": ":'''[[m:Special:MyLanguage/Help:Unified login|اقرأ المزيد عن الدخول الموحد]]...'''",
 	"centralauth-readonly": "قاعدة بيانات الدخول الموحد مقفلة",
 	"centralauth-readonlytext": "قاعدة بيانات الدخول الموحد مقفلة حالياً ولا تستقبل مدخلات جديدة أو تعديلات أخرى، وذلك ربما بسبب الصيانة الروتينية، وبعد انتهائها ستعود إلى العمل كالعادة.",
