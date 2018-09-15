@@ -376,7 +376,7 @@
 	"centralauth-prefs-not-managed": "לא משתמש בחשבון ממוזג",
 	"centralauth-prefs-status": "חשבון גלובלי:",
 	"centralauth-prefs-unattached": "לא מאוחד לגמרי",
-	"centralauth-prefs-view": "צפייה בפרטי החשבון הגלובלי",
+	"centralauth-prefs-view": "צפייה בפרטי החשבון הגלובלי שלך",
 	"centralauth-readmore-text": ":[[m:Special:MyLanguage/Help:Unified login|מידע נוסף על '''מיזוג החשבונות''']]...",
 	"centralauth-readonly": "מסד נתונים של CentralAuth (חשבונות ממוזגים) נעול",
 	"centralauth-readonlytext": "בסיס הנתונים של CentralAuth (חשבונות ממוזגים) נעול לערכים חדשים ולשינויים אחרים, כנראה לצורך תחזוקה שוטפת, ובסיומה הוא יחזור לפעילות.",

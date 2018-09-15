@@ -28,7 +28,8 @@
 			"Otokoume",
 			"Mirinano",
 			"Darklanlan",
-			"Yusuke1109"
+			"Yusuke1109",
+			"Omotecho"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
@@ -330,7 +331,7 @@
 	"centralauth-prefs-not-managed": "統一アカウントを使用していません",
 	"centralauth-prefs-status": "グローバルアカウント:",
 	"centralauth-prefs-unattached": "完全統一されてません",
-	"centralauth-prefs-view": "グローバルアカウント情報を閲覧",
+	"centralauth-prefs-view": "自分のグローバルアカウント情報を閲覧",
 	"centralauth-readmore-text": ":''<span class=\"plainlinks\">[https://meta.wikimedia.org/wiki/Special:MyLanguage/Help:Unified_login '''統一ログイン'''についての詳しい説明]…</span>''",
 	"centralauth-readonly": "CentralAuth データベースがロックされています",
 	"centralauth-readonlytext": "CentralAuth データベースが現在ロックされているため、新しい項目作成やその他の変更ができません。おそらく定期的なデータベース保守作業のためこの状態になっており、終わりしだい正常に戻ります。",
