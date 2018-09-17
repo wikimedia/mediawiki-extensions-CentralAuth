@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gazeb",
-			"KHMELNYTSKYIA"
+			"KHMELNYTSKYIA",
+			"Vlad5250"
 		]
 	},
 	"centralauth": "Ґлобалный менежер конт",
@@ -245,6 +246,7 @@
 	"right-centralauth-lock": "Блокованя і одблокованя ґлобалных конт",
 	"right-centralauth-merge": "Злучованя їх конт",
 	"right-centralauth-oversight": "Затаёваня або скрываня ґлобалных конт",
+	"right-centralauth-rename": "Переменованя ґлобалных конт",
 	"right-centralauth-unmerge": "Розлучіти ґлобалны конта",
 	"right-globalgroupmembership": "Зміна членства у ґлобалных ґрупах",
 	"right-globalgrouppermissions": "Адміністрація ґлобалных ґруп"

@@ -352,7 +352,7 @@
 	"centralauth-prefs-not-managed": "Ne uporabljate enotnega računa",
 	"centralauth-prefs-status": "Globalni račun:",
 	"centralauth-prefs-unattached": "Ni popolnoma poenoten",
-	"centralauth-prefs-view": "Oglej si informacije globalnega računa",
+	"centralauth-prefs-view": "Oglej si informacije svojega globalnega računa",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Preberite si več o '''enotni prijavi''']] ...''",
 	"centralauth-readonly": "Zbirka podatkov CentralAuth je zaklenjena",
 	"centralauth-readonlytext": "Zbirka podatkov CentralAuth je trenutno zaklenjena za nove vnose in druge spremembe, verjetno zaradi rutinskega vzdrževanja zbirke podatkov, po katerem se bo vrnila v normalno stanje.",

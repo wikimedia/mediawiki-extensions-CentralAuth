@@ -14,7 +14,8 @@
 			"Pofka",
 			"Zygimantus",
 			"Macofe",
-			"Nersip"
+			"Nersip",
+			"Manvydasz"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Visuotinės grupės, kurioms priklauso vartotojas",
@@ -67,8 +68,8 @@
 	"centralauth-account-exists-reset": "Vartotojo vardas $1 nėra užregistruotas šioje viki, bet galite atstatyti slaptažodį [[Special:CentralAuth/$1|viki, kurioje jis egzistuoja]].",
 	"centralauth-account-rename-exists": "Negalima sukurti paskyros: Vartotojo vardas jau naudojimas. Prašome pasirinkti kitą vardą.",
 	"centralauth-account-unattached-exists": "Negalima sukurti paskyros: Vartotojo vardas jau naudojimas. Prašome pasirinkti kitą vardą.",
-	"centralauth-admin-action-hide-lists": "Slėpti pasirinktas sąskaitosas nuo viešų sąrašų",
-	"centralauth-admin-action-hide-nochange": "Nekeiskite paslėptų lygių",
+	"centralauth-admin-action-hide-lists": "Slėpti pasirinktas paskyras visuotiniame naudotojų sąraše",
+	"centralauth-admin-action-hide-nochange": "Nekeiskite matomumo lygių",
 	"centralauth-admin-action-hide-none": "Neslėpti pasirinktų sąskaitų",
 	"centralauth-admin-action-hide-oversight": "Visiškai paslėpti pasirinktas sąskaitas",
 	"centralauth-admin-action-lock-lock": "Užrakinti pasirinktas sąskaitas",
@@ -86,7 +87,7 @@
 	"centralauth-admin-delete-nonexistent": "Klaida: bendroji „<nowiki>$1</nowiki>“ paskyra neegzistuoja.",
 	"centralauth-admin-delete-success": "Visuotinė „<nowiki>$1</nowiki>“ paskyra buvo ištrinta.",
 	"centralauth-admin-delete-title": "Pašalinti paskyrą",
-	"centralauth-admin-hidden-list": "iš viešųjų sąrašų",
+	"centralauth-admin-hidden-list": "iš visuotinių naudotojų sąrašo",
 	"centralauth-admin-hidden-oversight": "peržiūra",
 	"centralauth-admin-info-attached": "Prisegtų paskyrų skaičius:",
 	"centralauth-admin-info-editcount": "Bendras keitimų skaičius:",
