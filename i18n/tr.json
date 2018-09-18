@@ -223,6 +223,7 @@
 	"centralauth-globalgroupperms-group-disabled": "(bu viki üzerinde etkin değil)",
 	"centralauth-globalgroupperms-group-listmembers": "üyelerin listesi",
 	"centralauth-globalgroupperms-group-wikiset": "Bu grubun etkin olduğu viki setleri: $1",
+	"centralauth-globalgroupperms-groups-intro": "Bu tüm küresel kullanıcı gruplarının bir listesidir.",
 	"centralauth-globalgroupperms-management": "yönetim",
 	"centralauth-globalgroupperms-newgroupname": "Yeni grup adı:",
 	"centralauth-globalgroupperms-nogroups": "Hiç küresel grup tanımlanmadı.",

@@ -374,7 +374,7 @@
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Узнать больше о '''единой учётной записи''']]…''",
 	"centralauth-readonly": "база данных CentralAuth заблокирована",
 	"centralauth-readonlytext": "База данных CentralAuth в настоящее время заблокирована для внесения новых записей и других изменения, вероятно, в целях обычного обслуживания базы данных, после которого она вернётся на место.",
-	"centralauth-rename-abortlogin": "Ваша учётная запись в настоящее время переименована или объединена. [[Special:GlobalRenameProgress/$1|Посмотреть состояние]].",
+	"centralauth-rename-abortlogin": "Ваша учётная запись сейчас переименовывается или объединяется. [[Special:GlobalRenameProgress/$1|Проверить состояние]].",
 	"centralauth-rename-alreadyexists": "Запрашиваемое имя участника уже существует.",
 	"centralauth-rename-alreadyinprogress": "Глобальное переименование для этого участника находится в [[Special:GlobalRenameProgress/$1|процессе]].",
 	"centralauth-rename-antispoofconflicts2": "Выбранное имя учётной записи слишком схоже с уже {{PLURAL:$2|существующим именем|существующими именами}}: $1.",
