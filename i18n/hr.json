@@ -192,6 +192,7 @@
 	"centralauth-log-entry-lockandhide": "zaključan i sakriven globalni račun \"$1\"",
 	"centralauth-log-entry-unhide": "otkriven globalni račun \"$1\"",
 	"centralauth-log-entry-unlock": "otključan globalni račun \"$1\"",
+	"centralauth-log-gblrename-oldname": "Prethodno suradničko ime:",
 	"centralauth-log-header": "Ova evidencija sadrži podatke o globalnim računima: brisanje, zaključavanja i otključavanje.",
 	"centralauth-log-name": "Evidencija globalnoga računa",
 	"centralauth-log-status-hidden": "skriveno",
