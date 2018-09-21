@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Srtxg",
-			"Lucyin"
+			"Lucyin",
+			"Reptilien.19831209BE1"
 		]
 	},
 	"centralauth-account-exists": "Vos n' sårîz ahiver ç' conte la: li no d' uzeu est ddja eployî pa èn uzeu so èn ôte wiki.",
 	"centralauth-admin-blocked-reason": "Råjhon:$1",
+	"centralauth-admin-blocklog": "djournå des blocaedjes",
 	"centralauth-admin-info-attached": "Nombe di contes aloyîs:",
 	"centralauth-admin-info-editcount": "Nombe totå di candjmints:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|groupe|groupes}} tot avå:",
