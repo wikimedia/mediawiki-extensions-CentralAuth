@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00571654_b5db9ad4",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 853,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2018-09-21T15:23:07Z",
+      "side": 1,
+      "message": "You should use SpecialPage::getTitleValueFor() instead here - https://doc.wikimedia.org/mediawiki-core/master/php/classSpecialPage.html#a9ed253a295f3c7c925f7a8af6f225baa",
+      "range": {
+        "startLine": 853,
+        "startChar": 13,
+        "endLine": 853,
+        "endChar": 33
+      },
+      "revId": "44b6d1419fa9fe73005ca7a05ba516d6feaa9aa8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
