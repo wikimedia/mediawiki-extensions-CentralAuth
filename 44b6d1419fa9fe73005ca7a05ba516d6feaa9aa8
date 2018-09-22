@@ -22,6 +22,29 @@
       "revId": "44b6d1419fa9fe73005ca7a05ba516d6feaa9aa8",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d57d4f1b_029f6102",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 458
+      },
+      "writtenOn": "2018-09-22T00:16:24Z",
+      "side": 1,
+      "message": "Don\u0027t do this. Use the normal SQL abstraction layer.",
+      "range": {
+        "startLine": 870,
+        "startChar": 4,
+        "endLine": 870,
+        "endChar": 10
+      },
+      "revId": "44b6d1419fa9fe73005ca7a05ba516d6feaa9aa8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
