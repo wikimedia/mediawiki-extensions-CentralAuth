@@ -367,7 +367,7 @@
 	"centralauth-prefs-not-managed": "Nun se ta usando la cuenta fusionada",
 	"centralauth-prefs-status": "Cuenta global:",
 	"centralauth-prefs-unattached": "Nun ta completamente unificada",
-	"centralauth-prefs-view": "Ver información de cuenta global",
+	"centralauth-prefs-view": "Ver la información de la to cuenta global",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Llei más tocante a '''cuenta fusionada''']]...''",
 	"centralauth-readonly": "La base de datos de CentralAuth ta bloquiada",
 	"centralauth-readonlytext": "Anguaño la base de datos de CentralAuth ta bloquiada pa entraes nueves y otros cambios, probablemente pol mantenimientu rutinariu de la base de datos; dempués del mesmu, volverá a la normalidá.",

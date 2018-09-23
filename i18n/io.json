@@ -60,6 +60,7 @@
 	"centralauth-prefs-view": "Videz la generala informo",
 	"centralauth-rename-table-domain": "Lokala Wiki",
 	"centralauth-ro": "Informo globala pri l'uzero-konto",
+	"centralauth-usermerge-form-reason": "Motivo",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yaro|yari}} ante nun",
 	"globalrenamequeue-form-status-all": "omna",
 	"globalusers": "Listo di generala konti"
