@@ -334,70 +334,38 @@ class CentralAuthHooks {
 			$message = wfMessage( 'centralauth-prefs-not-managed' )->parse();
 		}
 
-		// TODO: Drop this when isOouiEnabled always returns true.
-		if ( SpecialPreferences::isOouiEnabled( RequestContext::getMain() ) ) {
-			$manageButtons = [];
+		$manageButtons = [];
 
-			if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
-				$manageButtons[] = new \OOUI\ButtonWidget( [
-					'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),
-					'label' => wfMessage( 'centralauth-prefs-manage' )->text(),
-				] );
-			}
-
+		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
 			$manageButtons[] = new \OOUI\ButtonWidget( [
-				'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() )->getLinkURL(),
-				'label' => wfMessage( 'centralauth-prefs-view' )->text(),
+				'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),
+				'label' => wfMessage( 'centralauth-prefs-manage' )->text(),
 			] );
+		}
 
-			$manageLinkList = (string)( new \OOUI\HorizontalLayout( [ 'items' => $manageButtons ] ) );
+		$manageButtons[] = new \OOUI\ButtonWidget( [
+			'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() )->getLinkURL(),
+			'label' => wfMessage( 'centralauth-prefs-view' )->text(),
+		] );
 
-			$preferences['globalaccountstatus'] = [
-				'section' => 'personal/info',
-				'label-message' => 'centralauth-prefs-status',
-				'type' => 'info',
-				'raw' => true,
-				'default' => $manageLinkList
-			];
+		$manageLinkList = (string)( new \OOUI\HorizontalLayout( [ 'items' => $manageButtons ] ) );
 
-			// Display a notice about the user account status with an alert icon
-			if ( isset( $message ) ) {
-				$messageIconWidget = (string)new \OOUI\IconWidget( [
-					'icon' => 'alert',
-					'flags' => [ 'destructive' ]
-				] );
-				$preferences['globalaccountstatus']['default'] = $messageIconWidget
-					. "$message<br>$manageLinkList";
-			}
+		$preferences['globalaccountstatus'] = [
+			'section' => 'personal/info',
+			'label-message' => 'centralauth-prefs-status',
+			'type' => 'info',
+			'raw' => true,
+			'default' => $manageLinkList
+		];
 
-		} else {
-			$manageLinks = [];
-			if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
-				$manageLinks[] = Linker::linkKnown( SpecialPage::getTitleFor( 'MergeAccount' ),
-					wfMessage( 'centralauth-prefs-manage' )->parse() );
-			}
-
-			$manageLinks[] = Linker::linkKnown(
-				SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
-				wfMessage( 'centralauth-prefs-view' )->parse()
-			);
-
-			$manageLinkList = $wgLang->pipeList( $manageLinks );
-
-			$preferences['globalaccountstatus'] = [
-				'section' => 'personal/info',
-				'label-message' => 'centralauth-prefs-status',
-				'type' => 'info',
-				'raw' => true,
-				'default' => $manageLinkList
-			];
-
-			if ( isset( $message ) ) {
-				// looks weird otherwise
-				$manageLinkList = wfMessage( 'parentheses', $manageLinkList )->text();
-				$preferences['globalaccountstatus']['default'] = "$message<br />$manageLinkList";
-			}
-
+		// Display a notice about the user account status with an alert icon
+		if ( isset( $message ) ) {
+			$messageIconWidget = (string)new \OOUI\IconWidget( [
+				'icon' => 'alert',
+				'flags' => [ 'destructive' ]
+			] );
+			$preferences['globalaccountstatus']['default'] = $messageIconWidget
+				. "$message<br>$manageLinkList";
 		}
 
 		return true;
