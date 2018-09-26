@@ -340,13 +340,13 @@ class CentralAuthHooks {
 
 			if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
 				$manageButtons[] = new \OOUI\ButtonWidget( [
-					'href' => SpecialPage::getTitleFor( 'MergeAccount' ),
+					'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),
 					'label' => wfMessage( 'centralauth-prefs-manage' )->text(),
 				] );
 			}
 
 			$manageButtons[] = new \OOUI\ButtonWidget( [
-				'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() ),
+				'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() )->getLinkURL(),
 				'label' => wfMessage( 'centralauth-prefs-view' )->text(),
 			] );
 
