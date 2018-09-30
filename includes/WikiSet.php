@@ -124,15 +124,16 @@ class WikiSet {
 	 */
 	public static function newFromName( $name ) {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$fname = __METHOD__;
 
 		$data = $cache->getWithSetCallback(
 			self::getPerNameCacheKey( $cache, $name ),
 			$cache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $name ) {
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $name, $fname ) {
 				$dbr = CentralAuthUtils::getCentralSlaveDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_name' => $name ], __METHOD__ );
+				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_name' => $name ], $fname );
 
 				$wikiSet = self::newFromRow( $row );
 				if ( $wikiSet ) {
@@ -163,15 +164,16 @@ class WikiSet {
 	 */
 	public static function newFromID( $id ) {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$fname = __METHOD__;
 
 		$data = $cache->getWithSetCallback(
 			self::getPerIdCacheKey( $cache, $id ),
 			$cache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $id ) {
+			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
 				$dbr = CentralAuthUtils::getCentralSlaveDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_id' => $id ], __METHOD__ );
+				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_id' => $id ], $fname );
 
 				$wikiSet = self::newFromRow( $row );
 				if ( $wikiSet ) {
