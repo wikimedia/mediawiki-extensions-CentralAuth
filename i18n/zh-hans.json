@@ -34,7 +34,8 @@
 			"范",
 			"飞舞回堂前",
 			"WhitePhosphorus",
-			"A2093064"
+			"A2093064",
+			"Phenolla"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -399,7 +400,7 @@
 	"centralauth-prefs-not-managed": "尚未启用整合账户",
 	"centralauth-prefs-status": "全域账户：",
 	"centralauth-prefs-unattached": "尚未完全统一",
-	"centralauth-prefs-view": "查看全域账户信息",
+	"centralauth-prefs-view": "查看您的全域账户信息",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|关于'''账户整合'''的更多内容]]......''",
 	"centralauth-readonly": "CentralAuth数据库被锁",
 	"centralauth-readonlytext": "中央认证数据库目前被锁定，所以无法接受新条目和其他修改。它可能正在进行常规的数据库维护，然后将恢复正常。",

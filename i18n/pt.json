@@ -388,7 +388,7 @@
 	"centralauth-prefs-not-managed": "Não está a usar a conta global",
 	"centralauth-prefs-status": "Conta global:",
 	"centralauth-prefs-unattached": "Não está totalmente unificada",
-	"centralauth-prefs-view": "Ver informação da conta global",
+	"centralauth-prefs-view": "Ver informação da sua conta global",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Leia mais sobre a '''autenticação unificada''']]...''",
 	"centralauth-readonly": "Banco de dados CentralAuth bloqueado",
 	"centralauth-readonlytext": "A base de dados do CentralAuth está bloqueada a novas entradas e outras modificações, provavelmente para manutenção de rotina, após a qual voltará ao normal.",

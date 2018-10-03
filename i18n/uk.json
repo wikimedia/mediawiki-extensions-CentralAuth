@@ -25,7 +25,8 @@
 			"Piramidion",
 			"Dars",
 			"Максим Підліснюк",
-			"Macofe"
+			"Macofe",
+			"Vlad5250"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальні групи, у яких знаходиться користувач",
@@ -37,7 +38,7 @@
 	"apierror-centralauth-badtoken": "Centralauthtoken є недійсним.",
 	"apierror-centralauth-badusername": "Ім'я користувача «$1» не може використовуватись у цій вікі",
 	"apierror-centralauth-editconflict": "Виявлено конфлікт редагувань, скасовано.",
-	"apierror-centralauth-notattached": "Не вдається отримати centralauthtoken без прив'язаного глобального облікового запису.",
+	"apierror-centralauth-notattached": "Неможливо отримати centralauthtoken без прив'язаного глобального облікового запису.",
 	"apierror-centralauth-notloggedin": "Анонімні користувачі не можуть отримати centralauthtoken.",
 	"apierror-centralauth-renameinprogress": "Цього користувача буде перейменовано, не можна використати.",
 	"apihelp-centralauthtoken-description": "Отримати centralauthtoken для автентифікованого запиту до прикріпленої вікі.",

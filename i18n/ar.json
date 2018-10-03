@@ -232,7 +232,7 @@
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|عدل]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|عدل]])",
 	"centralauth-editgroup-fieldset": "سماحات $1",
-	"centralauth-editgroup-invalid-name": "تم توفير إسم مجموعة موحدة غير صحيح",
+	"centralauth-editgroup-invalid-name": "تم توفير اسم مجموعة عالمية غير صحيح",
 	"centralauth-editgroup-member": "الاسم المترجم لأعضاء المجموعة:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|عدل]])",
 	"centralauth-editgroup-members": "قائمة الأعضاء:",

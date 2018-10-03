@@ -56,7 +56,7 @@
 	"apihelp-query+globalallusers-param-from": "Nome de usuario para comezar a enumeración.",
 	"apihelp-query+globalallusers-param-group": "Limitar os usuarios ós grupos globais indicados.",
 	"apihelp-query+globalallusers-param-limit": "Número total de nomes de usuario a devolver.",
-	"apihelp-query+globalallusers-param-prefix": "Buscar tódolos nomes de usuario que comezan con este valor.",
+	"apihelp-query+globalallusers-param-prefix": "Procurar tódolos nomes de usuario que comezan con este valor.",
 	"apihelp-query+globalallusers-param-prop": "Que información incluir:\n;lockinfo:Se a conta de usuario está bloqueada.\n;groups:Lista os grupos globais nos que está o usuario. Usa máis recursos no servidor e pode devolver menos resultados que o límite.\n;existslocally:Engade información se o usuario existe localmente.",
 	"apihelp-query+globalallusers-param-to": "Nome de usuario para rematar a enumeración.",
 	"apihelp-query+globalallusers-summary": "Enumerar tódolos usuarios globais.",
