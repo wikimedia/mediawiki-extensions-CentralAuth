@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "caf2b9b7_ecb010e9",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2018-10-04T01:07:46Z",
+      "side": 1,
+      "message": "This is better but still not quite right.\n\nInstead do something like:\n\n\u0027conds\u0027 \u003d\u003e $dbr-\u003emakeList( [ [ \u0027log_title\u0027 \u003d\u003e $title-\u003egetDBkey(), \u0027log_namespace\u0027 \u003d\u003e $title-\u003egetNamespace() ], [ \u0027log_title\u0027 \u003d\u003e $caTitle-\u003egetDBkey(), \u0027log_namespace\u0027 \u003d\u003e $caTitle-\u003egetNamespace() ] ], IDatabase::LIST_OR );\n\n\n(I have not tested this, I may have made typos. We also have to make sure the resulting query hits the indexes properly)",
+      "range": {
+        "startLine": 871,
+        "startChar": 11,
+        "endLine": 873,
+        "endChar": 4
+      },
+      "revId": "7bbaad599453d358f7a7d4062d4e51ce1bbfa7d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
