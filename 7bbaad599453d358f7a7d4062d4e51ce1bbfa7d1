@@ -22,6 +22,30 @@
       "revId": "7bbaad599453d358f7a7d4062d4e51ce1bbfa7d1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4cb717b1_bea379e7",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 6270
+      },
+      "writtenOn": "2018-10-04T20:18:34Z",
+      "side": 1,
+      "message": "Done. I tested this on a local server and it works fine.",
+      "parentUuid": "caf2b9b7_ecb010e9",
+      "range": {
+        "startLine": 871,
+        "startChar": 11,
+        "endLine": 873,
+        "endChar": 4
+      },
+      "revId": "7bbaad599453d358f7a7d4062d4e51ce1bbfa7d1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
