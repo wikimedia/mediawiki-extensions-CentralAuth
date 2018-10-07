@@ -69,8 +69,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 		);
 		$u->save( $this->db );
 
-		$this->stashMwGlobals( [ 'wgGroupPermissions' ] );
-		$wgGroupPermissions['centralauth-id-lookup-test']['centralauth-oversight'] = true;
+		$this->setGroupPermissions( 'centralauth-id-lookup-test', 'centralauth-oversight', true );
 	}
 
 	public function addDBData() {
