@@ -379,7 +379,7 @@
 	"centralauth-prefs-not-managed": "Non está a usar a conta unificada",
 	"centralauth-prefs-status": "Conta global:",
 	"centralauth-prefs-unattached": "Non está totalmente unificada",
-	"centralauth-prefs-view": "Ollar a información global da conta",
+	"centralauth-prefs-view": "Ver a información da súa conta global",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lea máis acerca do '''rexistro unificado''']]...''",
 	"centralauth-readonly": "A base de datos da autenticación central está pechada",
 	"centralauth-readonlytext": "Nestes intres, a base de datos da autenticación central está pechada a novas entradas e outras modificación, probablemente para realizar algún mantemento rutinario. Unha vez remate o mantemento volverá á normalidade.",
