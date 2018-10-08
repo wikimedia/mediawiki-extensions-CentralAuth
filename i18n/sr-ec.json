@@ -245,7 +245,7 @@
 	"centralauth-login-no-others": "Пријављени сте на друге пројекте које покреће {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Пријављујем вас на {{PLURAL:$2|вики|викије}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Аутоматски сте одјављени са свих пројеката {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Одјављујем вас с {{PLURAL:$2|другог викија|других викија}} {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Одјављивање са {{PLURAL:$2|другог викија|других викија}} {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Проверавам наведену лозинку у осталим неспојеним налозима…'''",
 	"centralauth-merge-denied": "Немате права приступа овој страници.",
 	"centralauth-merge-dryrun-complete": "Сви постојећи налози се могу аутоматски објединити.\n\nВаши налози још нису измењени.",

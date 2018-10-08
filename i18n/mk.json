@@ -4,7 +4,8 @@
 			"Amire80",
 			"Bjankuloski06",
 			"Brest",
-			"M4r51n"
+			"M4r51n",
+			"Vlad5250"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи во кои членува корисникот",
@@ -557,7 +558,7 @@
 	"right-centralauth-unmerge": "Раздвојување глобалната сметка",
 	"right-centralauth-usermerge": "Глобално спојување на повеќе корисници",
 	"right-globalgroupmembership": "Менување на членството во глобалните групи",
-	"right-globalgrouppermissions": "Раководеење со глобални групи",
+	"right-globalgrouppermissions": "Раководење со глобални групи",
 	"sessionprovider-centralauthsessionprovider": "централни седници со колачиња",
 	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра",
 	"sulrenamewarning-authmanager-ok-help": "Продолжи по известувањето за преименувањето.",
