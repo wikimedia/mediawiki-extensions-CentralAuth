@@ -15,6 +15,9 @@
 			"Vlad5250"
 		]
 	},
+	"action-centralauth-lock": "заключване или отключване на глобални сметки",
+	"action-centralauth-rename": "преименуване на глобални сметки",
+	"action-centralauth-unmerge": "разделяне на глобални сметки",
 	"centralauth": "Управление на единните сметки",
 	"centralauth-account-exists": "Сметката на може да бъде създадена: Желаното потребителско име е заето от потребител от друго уики.",
 	"centralauth-account-exists-reset": "Потребителското име $1 не е регистрирано в това уики, но съществува в Единната система за влизане .",
@@ -149,6 +152,7 @@
 	"centralauth-globalgroupperms-group": "Група",
 	"centralauth-globalgroupperms-group-listmembers": "списък на потребителите",
 	"centralauth-globalgroupperms-group-wikiset": "Набор от уикита, където тази група е активна: $1",
+	"centralauth-globalgroupperms-management": "управление",
 	"centralauth-globalgroupperms-newgroupname": "Име на новата група:",
 	"centralauth-globalgroupperms-nogroups": "Не са дефинирани глобални групи.",
 	"centralauth-globalgroupperms-rights": "Права",

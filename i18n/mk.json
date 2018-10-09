@@ -11,7 +11,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи во кои членува корисникот",
 	"action-centralauth-lock": "заклучување или отклучување на глобални сметки",
 	"action-centralauth-rename": "преименување на глобални сметки",
-	"action-centralauth-unmerge": "Раздвојување глобални сметки",
+	"action-centralauth-unmerge": "раздвојување на глобални сметки",
 	"action-centralauth-usermerge": "глобално спојување на повеќе корисници",
 	"apierror-centralauth-badsession": "Можат да добијат шифра само користејќи седници на Central Auth.",
 	"apierror-centralauth-badtoken": "Шифрата за Central Auth е неважечка.",
