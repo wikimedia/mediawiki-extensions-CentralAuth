@@ -62,6 +62,7 @@
 	"centralauth-ro": "Informo globala pri l'uzero-konto",
 	"centralauth-usermerge-form-reason": "Motivo",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yaro|yari}} ante nun",
+	"globalgroupmembership": "Membreso en globala grupi",
 	"globalrenamequeue-form-status-all": "omna",
 	"globalusers": "Listo di generala konti"
 }

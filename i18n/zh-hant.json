@@ -396,7 +396,7 @@
 	"centralauth-prefs-not-managed": "未使用整合帳號",
 	"centralauth-prefs-status": "全域帳號：",
 	"centralauth-prefs-unattached": "尚未完全整合",
-	"centralauth-prefs-view": "檢視全域帳號資訊",
+	"centralauth-prefs-view": "檢視您的全域帳號資訊",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|瞭解更多有關 '''整合登入''' 的資訊]]…''",
 	"centralauth-readonly": "CentralAuth 資料庫己鎖定",
 	"centralauth-readonlytext": "CentralAuth 資料庫是目前被鎖定，無法新增與修改項目。目前可能正在進行例行性的資料庫維護，維護完成後將會恢復正常。",
