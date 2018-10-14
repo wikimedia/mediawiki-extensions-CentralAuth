@@ -10,7 +10,8 @@
 			"Matěj Suchánek",
 			"Polda18",
 			"Dvorapa",
-			"Macofe"
+			"Macofe",
+			"Martin Urbanec"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globální skupiny, do kterých uživatel patří",
@@ -341,6 +342,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Sloučení účtů]] pro jednotné přihlašování",
 	"centralauth-minutes-ago": "před $1 {{PLURAL:$1|minutou|minutami|minutami}}",
 	"centralauth-months-ago": "před $1 {{PLURAL:$1|měsícem|měsíci|měsíci}}",
+	"centralauth-multilock-homewiki": "Domovská wiki",
 	"centralauth-newgroup-intro": "Tento formulář můžete použít pro přidělení oprávnění nové skupině. Pamatujte, že skupina neexistuje, dokud nemá přidělená oprávnění.",
 	"centralauth-newgroup-legend": "Vytvořit novou skupinu",
 	"centralauth-not-owner-text": "Uživatelské jméno „$1“ bylo automaticky přiřazeno majiteli účtu na projektu $2.\n\nPokud to jste vy, můžete dokončit proces sjednocení přihlašování zadáním hesla pro uvedený účet:",

@@ -366,6 +366,7 @@
 	"centralauth-mergeaccount-desc": "Ergänzt eine [[Special:MergeAccount|Spezialseite]] zum Zusammenführen mehrerer Benutzerkonten für das ''Single User Login''",
 	"centralauth-minutes-ago": "Vor $1 {{PLURAL:$1|Minute|Minuten}}",
 	"centralauth-months-ago": "Vor $1 {{PLURAL:$1|Monat|Monaten}}",
+	"centralauth-multilock-homewiki": "Heimatwiki",
 	"centralauth-newgroup-intro": "Du kannst mit diesem Formular einer neuen Gruppe Rechte zuordnen. Beachte, dass die Gruppe solange nicht vorhanden ist, bis ihr Rechte zugewiesen wurden.",
 	"centralauth-newgroup-legend": "Neue Gruppe erstellen",
 	"centralauth-not-owner-text": "Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.\n\nWenn dies dein Benutzername ist, kannst du die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:",

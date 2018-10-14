@@ -365,6 +365,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|מיזוג מספר חשבונות]] עבור חשבון המשתמש המאוחד",
 	"centralauth-minutes-ago": "לפני {{PLURAL:$1|דקה|$1 דקות}}",
 	"centralauth-months-ago": "לפני {{PLURAL:$1|חודש|חודשיים|$1 חודשים}}",
+	"centralauth-multilock-homewiki": "האתר הראשי",
 	"centralauth-newgroup-intro": "באפשרותך להשתמש בטופס זה כדי להוסיף הרשאות לקבוצה חדשה.\nיש לשים לב שקבוצה אינה קיימת אלא אם כן משויכות אליה הרשאות.",
 	"centralauth-newgroup-legend": "יצירת קבוצה חדשה",
 	"centralauth-not-owner-text": "שם המשתמש \"$1\" הוקצה אוטומטית לבעלי החשבון באתר $2.\n\nאם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הכללי כאן:",

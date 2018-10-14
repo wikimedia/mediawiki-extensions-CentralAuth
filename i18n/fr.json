@@ -403,6 +403,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Fusionne plusieurs comptes]] pour l’identification unique",
 	"centralauth-minutes-ago": "depuis $1 minute{{PLURAL:$1||s}}",
 	"centralauth-months-ago": "depuis $1 mois{{PLURAL:$1||}}",
+	"centralauth-multilock-homewiki": "Wiki principal",
 	"centralauth-newgroup-intro": "Vous pouvez utiliser ce formulaire pour assigner des permissions à un nouveau groupe global.\nNotez qu’un groupe global ne peut exister que si des permissions lui sont assignées.",
 	"centralauth-newgroup-legend": "Créer un nouveau groupe global",
 	"centralauth-not-owner-text": "Le nom d’utilisateur unifié « $1 » a été automatiquement assigné au propriétaire du compte homonyme sur le wiki principal $2.\n\nSi vous êtes l{{GENDER:|e|a|e}} propriétaire de ce compte, vous pouvez compléter le processus d’unification du nom d’utilisateur en entrant ici le mot de passe correspondant au compte sur ce wiki principal :",

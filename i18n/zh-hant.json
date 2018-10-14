@@ -385,6 +385,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|合併多個帳號]]以便使用單一使用者登入",
 	"centralauth-minutes-ago": "$1 分鐘前",
 	"centralauth-months-ago": "$1 月前",
+	"centralauth-multilock-homewiki": "所在 wiki",
 	"centralauth-newgroup-intro": "您可以使用這個表格去指派新群組的權限，\n需要注意的是群組需要指定權限以後才會存在。",
 	"centralauth-newgroup-legend": "建立一個新群組",
 	"centralauth-not-owner-text": "使用者名稱 \"$1\" 已被自動分配至帳號 $2 的擁有者。\n\n若這是您的帳號，您可輸入該帳號的主要密碼完成登入整合程序：",
