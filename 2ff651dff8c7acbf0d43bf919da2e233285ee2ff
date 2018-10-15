@@ -16,6 +16,24 @@
       "revId": "2ff651dff8c7acbf0d43bf919da2e233285ee2ff",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a776886_0f441ec5",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6270
+      },
+      "writtenOn": "2018-10-15T08:31:59Z",
+      "side": 1,
+      "message": "Done :)",
+      "parentUuid": "acdc4810_18abbb49",
+      "revId": "2ff651dff8c7acbf0d43bf919da2e233285ee2ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
