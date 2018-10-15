@@ -383,6 +383,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|يدمج حسابات متعددة]] لدخول المستخدم الموحد",
 	"centralauth-minutes-ago": "قبل {{PLURAL:$1|دقيقة واحدة|دقيقتين|$1 دقائق|$1 دقيقة}}",
 	"centralauth-months-ago": "قبل {{PLURAL:$1|أقل من شهر|شهر|شهرين| $1 أشهر| $1 شهراً| $1 شهر}}",
+	"centralauth-multilock-homewiki": "الويكي الرئيسي",
 	"centralauth-newgroup-intro": "يمكنك استخدام هذه الاستمارة لإعطاء السماحات لمجموعة جديدة.\nلاحظ أن أي مجموعة لا تكون موجودة إلا إذا تم تخصيص سماحات لها.",
 	"centralauth-newgroup-legend": "إنشاء مجموعة جديدة",
 	"centralauth-not-owner-text": "اسم المستخدم «$1» تم إعطاؤه تلقائيا لمالك الحساب على $2.\n\nلو كان هذا أنت، يمكنك إنهاء عملية توحيد الدخول ببساطة بكتابة كلمة السر الرئيسية لذلك الحساب هنا:",

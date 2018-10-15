@@ -386,6 +386,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Funde diversas contas]] na Autenticação Unificada",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuto|minutos}} atrás",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mês|meses}} atrás",
+	"centralauth-multilock-homewiki": "Wiki local",
 	"centralauth-newgroup-intro": "Pode usar este formulário para atribuir permissões a um novo grupo.\nNote que um grupo não existe se não tiver permissões atribuídas.",
 	"centralauth-newgroup-legend": "Criar um novo grupo",
 	"centralauth-not-owner-text": "O nome de usuário \"$1\" foi automaticamente relacionado ao proprietário da conta em $2.\n\nSe este for você, você poderá concluir o procedimento de unificação de login simplesmente digitando a senha principal dessa conta aqui:",

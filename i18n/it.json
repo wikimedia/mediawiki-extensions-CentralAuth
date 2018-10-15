@@ -338,6 +338,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Unifica le tue utenze]] in un'utenza globale",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuto|minuti}} fa",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mese|mesi}} fa",
+	"centralauth-multilock-homewiki": "Wiki principale",
 	"centralauth-newgroup-intro": "Puoi usare questo modulo per assegnare i permessi ad un nuovo gruppo.\nNota che un gruppo non esiste a meno che non gli siano stati assegnati i permessi.",
 	"centralauth-newgroup-legend": "Crea un nuovo gruppo",
 	"centralauth-not-owner-text": "Il nome utente \"$1\" è stato assegnato automaticamente al titolare dell'account con lo stesso nome sul progetto $2.\n\nSe si è il titolare dell'utenza, per terminare il processo di unificazione è sufficiente inserire la password principale di quell'account qui di seguito:",

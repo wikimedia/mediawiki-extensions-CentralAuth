@@ -317,6 +317,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Merges multiple accounts]] pè trasùte singole de utinde",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minute|minute}} fà",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mese|mise}} fà",
+	"centralauth-multilock-homewiki": "Càse uicchi",
 	"centralauth-newgroup-intro": "Puè ausà stu module pe assegnà le permesse a 'nu gruppe nuéve.\nVide ca 'nu gruppe non g'esiste senze ca l'onne state assignate le permesse.",
 	"centralauth-newgroup-legend": "Ccreje 'nu gruppe nuève",
 	"centralauth-not-owner-text": "'U nome utende \"$1\" ha state assegnate automaticamende a 'u titolare d'u cunde sus a $2.\n\nCe quiste si tu, tu puè spiccià 'u processe de trasute pe aunificazione semblicemenne scrivenne 'a passuord prengepàle pu cunde aqquà:",
