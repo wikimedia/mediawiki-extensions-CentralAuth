@@ -481,6 +481,8 @@
 	"globalusermerge": "Scuagghie jndr'à l'utende globbale",
 	"globalusermerge-legend": "Scuagghie jndr'à l'utende globbale",
 	"globalusers": "Elenghe de l'utinde globbale",
+	"log-action-filter-gblrights": "Tipe de cangiamende:",
+	"log-action-filter-gblrights-groupprms": "Cangiaminde d'u gruppe utende globbale",
 	"log-action-filter-globalauth": "Tipe de cangiamende:",
 	"log-action-filter-globalauth-delete": "Scangellazzione d'u cunde globbale",
 	"log-description-gblrename": "St'archivije tracce tutte le renomenaminde globbale de le utinde.",
