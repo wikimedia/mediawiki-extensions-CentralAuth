@@ -258,6 +258,7 @@
 	"globalrenamequeue-form-newname": "Желано потребителско име:",
 	"globalrenamequeue-form-username": "Потребителско име:",
 	"globalrenamequeue-nav-openqueue": "Отворени заявки",
+	"globalrenamequeue-request-cancel-text": "Отказ",
 	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка",
 	"globalrenamerequest-email-label": "Имейл адрес:",
 	"globalrenamerequest-newname-err-invalid": "Не сте избрали валидно потребителско име.",

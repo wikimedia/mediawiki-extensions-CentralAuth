@@ -48,7 +48,8 @@
 			"Mattho69",
 			"Tuxxic",
 			"Derugon",
-			"0x010C"
+			"0x010C",
+			"Niridya"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Groupes globaux auxquels appartient l'utilisateur",
@@ -164,7 +165,7 @@
 	"centralauth-admin-info-locked": "Bloqué :",
 	"centralauth-admin-info-registered": "Enregistré :",
 	"centralauth-admin-info-unattached": "Nombre de comptes non reliés :",
-	"centralauth-admin-info-username": "Nom d’utilisateur:",
+	"centralauth-admin-info-username": "Nom d’utilisateur&nbsp;:",
 	"centralauth-admin-intro": "Cette interface peut être utilisée pour administrer les comptes globaux.",
 	"centralauth-admin-list-attached-on": "Rattaché à",
 	"centralauth-admin-list-blocked": "Bloqué",
