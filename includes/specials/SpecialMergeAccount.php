@@ -251,7 +251,7 @@ class SpecialMergeAccount extends SpecialPage {
 		} else {
 			// Show error message from status
 			$this->getOutput()->addHTML( '<div class="errorbox" style="float:none;">' );
-			$this->getOutput()->addWikiText( $status->getWikiText() );
+			$this->getOutput()->addWikiTextAsInterface( $status->getWikiText() );
 			$this->getOutput()->addHTML( '</div>' );
 
 			// Show wiki list if required
