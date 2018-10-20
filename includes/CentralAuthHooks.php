@@ -820,6 +820,7 @@ class CentralAuthHooks {
 		$ca = CentralAuthUser::getMasterInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( $email );
+			$ca->saveSettings();
 		}
 		return true;
 	}
