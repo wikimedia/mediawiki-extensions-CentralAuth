@@ -61,7 +61,7 @@
 	"centralauth-attach-submit": "ย้ายบัญชี",
 	"centralauth-attach-title": "ยืนยันบัญชี",
 	"centralauth-complete": "การรวมบัญชีสำหรับล็อกอินเสร็จสมบูรณ์!",
-	"centralauth-complete-text": "คุณสามารถล็อกอินเข้าเว็บวิกิใดก็ได้ของ {{int:Centralauth-groupname}} ได้แล้วโดยไม่ต้องสร้างบัญชีใหม่",
+	"centralauth-complete-text": "คุณสามารถเข้าสู่ระบบไซต์วิกิใดก็ได้ของ {{int:Centralauth-groupname}} ได้แล้วโดยไม่ต้องสร้างบัญชีใหม่",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|วัน|วัน}} ที่แล้ว",
 	"centralauth-desc": "[[Special:MergeAccount|รวมชื่อผู้ใช้]]ระหว่างวิกิโครงการทั้งหลายของ{{int:Centralauth-groupname}}",
 	"centralauth-editgroup-name": "ชื่อของกลุ่ม:",
@@ -86,7 +86,7 @@
 	"centralauth-groupname": "มูลนิธิวิกิมีเดีย",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ชั่วโมง|ชั่วโมง}} ที่แล้ว",
 	"centralauth-incomplete": "การรวมบัญชีสำหรับล็อกอินไม่สำเร็จ",
-	"centralauth-incomplete-text": "เมื่อการล็อกอินถูกรวมแล้ว คุณจะสามารถล็อกอินเข้าสู่เว็บใดก็ได้ของ {{int:Centralauth-groupname}} โดยไม่ต้องสร้างบัญชีใหม่",
+	"centralauth-incomplete-text": "เมื่อการเข้าสู่ระบบถูกรวมแล้ว คุณจะสามารถเข้าสู่ระบบไซต์วิกิใดก็ได้ของ {{int:Centralauth-groupname}} โดยไม่ต้องสร้างบัญชีใหม่",
 	"centralauth-invalid-wiki": "ไม่มีฐานข้อมูลวิกินี้: $1",
 	"centralauth-list-attached": "บัญชีชื่อ \"$1\" ในเว็บต่อไปนี้ถูกเชื่อมกับบัญชีรวมอัตโนมัติ:",
 	"centralauth-list-attached-dryrun": "บัญชีชื่อ \"$1\" ในเว็บต่อไปนี้จะถูกเชื่อมกับบัญชีรวมอัตโนมัติ:",
@@ -140,7 +140,7 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|วินาที|วินาที}} ที่แล้ว",
 	"centralauth-warning-notloggedin": "คุณยังไม่ได้ล็อกอิน",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว",
-	"centralautologin": "การล็อกอินกลาง",
+	"centralautologin": "การเข้าสู่ระบบกลาง",
 	"centralloginsuccesful": "ลงชื่อเข้าแล้ว",
 	"mergeaccount": "สถานะการรวมชื่อล็อกอิน"
 }
