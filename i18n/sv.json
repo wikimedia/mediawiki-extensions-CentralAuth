@@ -359,6 +359,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Sammanfogar flera konton]] för gemensam inloggning",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minut|minuter}} sedan",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|månad|månader}} sedan",
+	"centralauth-multilock-homewiki": "Hemwiki",
 	"centralauth-newgroup-intro": "Du kan använda det här formuläret för att tilldela behörigheter till en ny grupp.\nNotera att gruppen inte finns om den inte har tilldelats behörigheter.",
 	"centralauth-newgroup-legend": "Skapa en ny grupp",
 	"centralauth-not-owner-text": "Användarnamnet \"$1\" tilldelades automatiskt ägaren av kontot på $2.\n\nOm du är ägaren av det kontot, kan du slutföra sammanslagningen genom att ange lösenordet för det kontot här:",
