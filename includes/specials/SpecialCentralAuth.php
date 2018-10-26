@@ -231,9 +231,8 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param $wikitext string
 	 */
 	private function showStatusError( $wikitext ) {
-		$wrap = Xml::tags( 'div', [ 'class' => 'error' ], $wikitext );
-		$this->getOutput()->addHTML(
-			$this->getOutput()->parse( $wrap, /*linestart*/true, /*uilang*/true )
+		$this->getOutput()->wrapWikiTextAsInterface(
+			'error', $wikitext
 		);
 	}
 
