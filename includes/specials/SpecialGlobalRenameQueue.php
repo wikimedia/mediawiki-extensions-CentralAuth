@@ -511,13 +511,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function doResolveRequest( $approved, $data ) {
 		$request = GlobalRenameRequest::newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
-		if ( $request->userIsGlobal() || $request->getWiki() === wfWikiId() ) {
-			$notifyEmail = MailAddress::newFromUser( $oldUser );
-		} else {
-			$notifyEmail = $this->getRemoteUserMailAddress(
-				$request->getWiki(), $request->getName()
-			);
-		}
+
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
 		$status = new Status;
 		$session = $this->getContext()->exportSession();
@@ -603,6 +597,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 							$request->getComments(),
 						]
 					)->inContentLanguage()->text();
+				}
+
+				if ( $request->userIsGlobal() || $request->getWiki() === wfWikiID() ) {
+					$notifyEmail = MailAddress::newFromUser( $oldUser );
+				} else {
+					$notifyEmail = $this->getRemoteUserMailAddress(
+						$request->getWiki(), $request->getName()
+					);
 				}
 
 				if ( $notifyEmail !== null && $notifyEmail->address ) {
