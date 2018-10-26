@@ -109,7 +109,7 @@ class CheckLocalUser extends Maintenance {
 					$this->total++;
 					if ( !$this->dryrun ) {
 						// go ahead and delete the extraneous entry
-						$deleted = $centralMaster->delete(
+						$centralMaster->delete(
 							'localuser',
 							[
 								"lu_wiki" => $wiki,
