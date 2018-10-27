@@ -425,6 +425,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$specialGblRename->setContext( $this->getContext() );
 			$conflicts = $specialGblRename->processAntiSpoofConflicts( $req->getName(),
 				$spoofUser->getConflicts() );
+
+			$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $req->getNewName() );
+			if ( $renamedUser !== null ) {
+				$conflicts[] = $renamedUser;
+			}
+
 			if ( $conflicts ) {
 				$htmlForm->addHeaderText(
 					$this->msg(

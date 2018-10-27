@@ -91,11 +91,12 @@ class CentralAuthAntiSpoofHooks {
 
 	/**
 	 * Given a username, find the old name
+	 * TODO: Move it to a better place.
 	 *
 	 * @param string $name Name to lookup
 	 * @return null|string Old username, or null
 	 */
-	private static function getOldRenamedUserName( $name ) {
+	public static function getOldRenamedUserName( $name ) {
 		global $wgCentralAuthOldNameAntiSpoofWiki;
 		// If nobody has set this variable, it will be false,
 		// which will mean the current wiki, which sounds like as
