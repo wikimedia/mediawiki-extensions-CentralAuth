@@ -86,6 +86,40 @@ class CentralAuthAntiSpoofHooks {
 	}
 
 	/**
+	 * Given a username, find the old name
+	 * TODO: Move it to a better place.
+	 *
+	 * @param string $name Name to lookup
+	 * @return null|string Old username, or null
+	 */
+	public static function getOldRenamedUserName( $name ) {
+		global $wgCentralAuthOldNameAntiSpoofWiki;
+		// If nobody has set this variable, it will be false,
+		// which will mean the current wiki, which sounds like as
+		// good a default as we can get.
+		$dbLogWiki = wfGetDB( DB_REPLICA, [], $wgCentralAuthOldNameAntiSpoofWiki );
+		$newNameOfUser = $dbLogWiki->selectField(
+			[ 'logging', 'log_search' ],
+			'log_title',
+			[
+				'ls_field' => 'oldname',
+				'ls_value' => $name,
+				'log_type' => 'gblrename',
+				'log_namespace' => NS_SPECIAL
+			],
+			__METHOD__,
+			[],
+			[ 'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ] ]
+		);
+		$slashPos = strpos( $newNameOfUser ?: '', '/' );
+		if ( $newNameOfUser && $slashPos ) {
+			// We have to remove the Special:CentralAuth prefix.
+			return substr( $newNameOfUser, $slashPos + 1 );
+		}
+		return null;
+	}
+
+	/**
 	 * On new account creation, record the username's thing-bob.
 	 * (Called after a user account is created)
 	 *
