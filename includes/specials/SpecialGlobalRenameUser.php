@@ -160,6 +160,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				$oldUser->getName(),
 				$spoofUser->getConflicts()
 			);
+
+			$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $newUser->getName() );
+			if ( $renamedUser !== null ) {
+				$conflicts[] = $renamedUser;
+			}
+
 			if ( $conflicts ) {
 				return Status::newFatal(
 					$this->msg( 'centralauth-rename-antispoofconflicts2' )
