@@ -112,7 +112,7 @@ class CheckLocalNames extends Maintenance {
 						$this->total++;
 						if ( !$this->dryrun ) {
 							// go ahead and delete the extraneous entry
-							$deleted = $centralMaster->delete(
+							$centralMaster->delete(
 								'localnames',
 								[
 									"ln_wiki" => $wiki,
