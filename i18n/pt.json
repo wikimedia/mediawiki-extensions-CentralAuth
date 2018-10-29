@@ -580,7 +580,7 @@
 	"right-globalgrouppermissions": "Administrar grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sessões centrais com <i>cookies</i>",
 	"sessionprovider-centralauthtokensessionprovider": "sessões centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Continuar após mostrar a notificação da alteração de nome.",
+	"sulrenamewarning-authmanager-ok-help": "Continuar depois de mostrar a notificação da alteração de nome.",
 	"sulrenamewarning-renamed": "O nome da {{GENDER:$2|sua}} conta '''$1''' foi alterado para '''$2''' durante a migração automática para o sistema de autenticação unificado da {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "O nome da {{GENDER:$1|sua}} conta foi alterado",
 	"sulrenamewarning-usenew": "Use o seu {{GENDER:$1|nome de utilizador}} \"$1\" de futuro quando iniciar uma sessão, por favor.",
