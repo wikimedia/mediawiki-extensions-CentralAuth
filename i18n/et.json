@@ -406,6 +406,7 @@
 	"globalusermerge": "Globaalse kasutaja ühendamine",
 	"globalusermerge-legend": "Globaalse kasutaja ühendamine",
 	"globalusers": "Globaalsete kontode loend",
+	"grant-setglobalaccountstatus": "Globaalse konto staatuse haldamine",
 	"log-action-filter-gblrights": "Muudatuse tüüp:",
 	"log-action-filter-gblrights-groupprms": "Globaalne kasutajarühma muutmine",
 	"log-action-filter-gblrights-setmodify": "Vikikomplekti muutmine",
