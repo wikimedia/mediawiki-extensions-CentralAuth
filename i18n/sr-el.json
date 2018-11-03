@@ -8,7 +8,8 @@
 			"Rancher",
 			"Жељко Тодоровић",
 			"Srdjan m",
-			"Сербијана"
+			"Сербијана",
+			"Zoranzoki21"
 		]
 	},
 	"action-centralauth-lock": "zaključavanje ili otključavanje globalnih naloga",
@@ -326,6 +327,7 @@
 	"globalrenamequeue-column-rq-name": "Korisničko ime",
 	"globalrenamequeue-column-rq-newname": "Željeno korisničko ime",
 	"globalrenamequeue-column-rq-wiki": "Lokalni viki",
+	"globalrenamequeue-desc": "Procesuira zahteve za globalno preimenovanje",
 	"globalrenamequeue-form-newname": "Željeno korisničko ime:",
 	"globalrenamequeue-form-status": "Status:",
 	"globalrenamequeue-form-status-all": "sve",
