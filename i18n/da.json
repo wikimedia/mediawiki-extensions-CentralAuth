@@ -284,6 +284,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Sammenlæg flere kontoer]] til fælles indlogning",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minut|minutter}} siden",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|måned|måneder}} siden",
+	"centralauth-multilock-homewiki": "Hjemwiki",
 	"centralauth-newgroup-intro": "Du kan bruge denne formular til at tildele tilladelser til en ny gruppe.\nBemærk at en gruppe ikke findes med mindre den har nogen rettigheder.",
 	"centralauth-newgroup-legend": "Opret en ny gruppe",
 	"centralauth-not-owner-text": "Brugernavnet \"$1\" blev automatisk tildelt ejeren af kontoen på $2.\n\nHvis det er dig, kan du fuldføre prosessen for fælles login ved at skrive adgangskoden for den konto her:",

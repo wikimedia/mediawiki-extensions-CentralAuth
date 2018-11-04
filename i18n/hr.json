@@ -305,6 +305,8 @@
 	"log-action-filter-globalauth": "Vrsta promjene:",
 	"log-action-filter-globalauth-delete": "globalno brisanje računa",
 	"log-action-filter-globalauth-setstatus": "globalna promjena statusa računa",
+	"log-action-filter-suppress-cadelete": "Brisanje globalnoga računa",
+	"log-action-filter-suppress-setstatus": "Promjena stanja globalnoga računa",
 	"log-description-gblrename": "Evidencija globalnih preimenovanja suradnika.",
 	"log-name-gblrename": "Evidencija globalnog preimenovanja suradnika",
 	"logentry-gblrename-merge": "$1 globalno je {{GENDER:$2|sjedinio|sjedinila}} $4 u $5",
