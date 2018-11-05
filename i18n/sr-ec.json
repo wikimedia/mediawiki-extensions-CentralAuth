@@ -212,7 +212,7 @@
 	"centralauth-globalgroupperms-newgroupname": "Име нове групе:",
 	"centralauth-globalgroupperms-nogroups": "Ниједна глобална група није дефинисана.",
 	"centralauth-globalgroupperms-rights": "Права",
-	"centralauth-groupname": "Задужбине Викимедије",
+	"centralauth-groupname": "Задужбина Викимедија",
 	"centralauth-hidden-blockreason": "глобално сакривен од $1 у $2 због следећег разлога: $3",
 	"centralauth-hours-ago": "пре $1 {{PLURAL:$1|сат|сата|сати}}",
 	"centralauth-incomplete": "Обједињавање налога није завршено!",

@@ -336,7 +336,7 @@
 	"centralauth-rename-abortlogin": "'U cunde tune ste avène renomenate o scuagghiate. [[Special:GlobalRenameProgress/$1|'Ndruche 'u state]].",
 	"centralauth-rename-alreadyexists": "'U nome utende cercate esiste ggià.",
 	"centralauth-rename-alreadyinprogress": "Ste ggià 'nu renominamende globbale pe stu utende in [[Special:GlobalRenameProgress/$1|esecuzione]].",
-	"centralauth-rename-antispoofconflicts2": "'U nome utende scacchiate jè troppe simile a {{PLURAL:$2|'nu nome utende ca esiste|de le nome utinde ca esistene}}: $1.",
+	"centralauth-rename-antispoofconflicts2": "'U nome utende scacchiate jè troppe simile a {{PLURAL:$2|'nu nome utende ca esiste|de le nome utinde ca esistene}} o ponne essere state ausate da otre invece cu le renomenane: $1.",
 	"centralauth-rename-badusername": "'U nome de l'utende cercate non g'è valide.",
 	"centralauth-rename-cannotself": "Non ge te puè renomenà da sule.",
 	"centralauth-rename-confirm": "Avveramende tu vuè ccu renomine globbalmende stu utende?",
