@@ -373,6 +373,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Meerdere gebruikers samenvoegen]] voor Single User Login",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuut|minuten}} geleden",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|maand|maanden}} geleden",
+	"centralauth-multilock-homewiki": "Thuiswiki",
 	"centralauth-newgroup-intro": "Via dit formulier kunt u rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn",
 	"centralauth-newgroup-legend": "Nieuwe groep maken",
 	"centralauth-not-owner-text": "De gebruikersnaam \"$1\" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.\n\nAls u dat bent, kunt u het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:",
