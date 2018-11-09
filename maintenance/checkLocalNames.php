@@ -134,7 +134,7 @@ class CheckLocalNames extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	function report() {
+	private function report() {
 		$this->output( sprintf( "%s found %d invalid localnames, %d (%.1f%%) deleted\n",
 			wfTimestamp( TS_DB ),
 			$this->total,

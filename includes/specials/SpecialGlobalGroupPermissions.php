@@ -31,7 +31,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param User $user
 	 * @return bool
 	 */
-	function userCanEdit( $user ) {
+	public function userCanEdit( $user ) {
 		$globalUser = CentralAuthUser::getInstance( $user );
 
 		# # Should be a global user
@@ -42,7 +42,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return $user->isAllowed( 'globalgrouppermissions' );
 	}
 
-	function execute( $subpage ) {
+	public function execute( $subpage ) {
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -72,7 +72,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 	}
 
-	function buildMainView() {
+	private function buildMainView() {
 		global $wgScript;
 		$out = $this->getOutput();
 		$groups = CentralAuthUser::availableGlobalGroups();
@@ -222,7 +222,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/**
 	 * @param string $group
 	 */
-	function buildGroupView( $group ) {
+	private function buildGroupView( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
 		$assignedRights = $this->getAssignedRights( $group );
 		$this->getOutput()->addBacklinkSubtitle( $this->getPageTitle() );
@@ -311,7 +311,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $group
 	 * @return string
 	 */
-	function buildWikiSetSelector( $group ) {
+	private function buildWikiSetSelector( $group ) {
 		$sets = WikiSet::getAllWikiSets();
 		$default = WikiSet::getWikiSetForGroup( $group );
 
@@ -344,7 +344,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $group
 	 * @return string
 	 */
-	function buildCheckboxes( $group ) {
+	private function buildCheckboxes( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
 
 		$assignedRights = $this->getAssignedRights( $group );
@@ -416,14 +416,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $group
 	 * @return array
 	 */
-	function getAssignedRights( $group ) {
+	private function getAssignedRights( $group ) {
 		return CentralAuthUser::globalGroupPermissions( $group );
 	}
 
 	/**
 	 * @param string $group
 	 */
-	function doSubmit( $group ) {
+	private function doSubmit( $group ) {
 		// It is important to check userCanEdit, as otherwise an
 		// unauthorized user could manually construct a POST request.
 		if ( !$this->userCanEdit( $this->getUser() ) ) {
@@ -526,7 +526,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $group
 	 * @param string[] $rights
 	 */
-	function revokeRightsFromGroup( $group, $rights ) {
+	private function revokeRightsFromGroup( $group, $rights ) {
 		$dbw = CentralAuthUtils::getCentralDB();
 
 		# Delete from the DB
@@ -541,7 +541,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $group
 	 * @param string[]|string $rights
 	 */
-	function grantRightsToGroup( $group, $rights ) {
+	private function grantRightsToGroup( $group, $rights ) {
 		$dbw = CentralAuthUtils::getCentralDB();
 
 		if ( !is_array( $rights ) ) {
@@ -581,7 +581,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string[] $removeRights
 	 * @param string $reason
 	 */
-	function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
+	private function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry(
@@ -602,7 +602,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $newName
 	 * @param string $reason
 	 */
-	function addRenameLog( $oldName, $newName, $reason ) {
+	private function addRenameLog( $oldName, $newName, $reason ) {
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry(
@@ -625,7 +625,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $new
 	 * @param string $reason
 	 */
-	function addWikiSetLog( $group, $old, $new, $reason ) {
+	private function addWikiSetLog( $group, $old, $new, $reason ) {
 		$log = new LogPage( 'gblrights' );
 
 		$log->addEntry(
@@ -643,7 +643,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string[] $ids
 	 * @return string
 	 */
-	function makeRightsList( $ids ) {
+	private function makeRightsList( $ids ) {
 		return (bool)count( $ids )
 			? implode( ', ', $ids )
 			: $this->msg( 'rightsnone' )->inContentLanguage()->text();
@@ -654,7 +654,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param int $set
 	 * @return bool
 	 */
-	function setRestrictions( $group, $set ) {
+	private function setRestrictions( $group, $set ) {
 		$dbw = CentralAuthUtils::getCentralDB();
 		if ( $set == 0 ) {
 			$dbw->delete(
@@ -676,7 +676,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string|int $id
 	 * @return string
 	 */
-	function getWikiSetName( $id ) {
+	private function getWikiSetName( $id ) {
 		if ( $id ) {
 			return WikiSet::newFromID( $id )->getName();
 		} else {
@@ -687,7 +687,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/**
 	 * @param string $group
 	 */
-	function invalidateRightsCache( $group ) {
+	private function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.
 		// Use the master over here as this could go horribly wrong with newly created or just
 		// renamed groups

@@ -17,7 +17,7 @@ class SpecialMergeAccount extends SpecialPage {
 		return true;
 	}
 
-	function execute( $subpage ) {
+	public function execute( $subpage ) {
 		$this->setHeaders();
 
 		if ( !is_null( $subpage ) && preg_match( "/^[0-9a-zA-Z]{32}$/", $subpage ) ) {
@@ -194,7 +194,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param string $key
 	 * @return string
 	 */
-	function xorString( $text, $key ) {
+	private function xorString( $text, $key ) {
 		if ( $key !== '' ) {
 			$textLen = strlen( $text );
 			$keyLen = strlen( $key );
@@ -205,7 +205,7 @@ class SpecialMergeAccount extends SpecialPage {
 		return $text;
 	}
 
-	function doDryRunMerge() {
+	private function doDryRunMerge() {
 		global $wgCentralAuthDryRun;
 
 		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
@@ -268,7 +268,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 	}
 
-	function doInitialMerge() {
+	private function doInitialMerge() {
 		global $wgCentralAuthDryRun;
 
 		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
@@ -296,7 +296,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->showCleanupForm();
 	}
 
-	function doCleanupMerge() {
+	private function doCleanupMerge() {
 		global $wgCentralAuthDryRun;
 
 		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
@@ -330,7 +330,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->showCleanupForm();
 	}
 
-	function doAttachMerge() {
+	private function doAttachMerge() {
 		global $wgCentralAuthDryRun;
 
 		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
@@ -382,7 +382,7 @@ class SpecialMergeAccount extends SpecialPage {
 			);
 	}
 
-	function showCleanupForm() {
+	private function showCleanupForm() {
 		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 
 		$merged = $globalUser->listAttached();
@@ -390,7 +390,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->showStatus( $merged, $remainder );
 	}
 
-	function showAttachForm() {
+	private function showAttachForm() {
 		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 		$merged = $globalUser->listAttached();
 		$this->getOutput()->addWikiMsg( 'centralauth-attach-list-attached', $this->mUserName );
@@ -402,7 +402,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param string[] $merged
 	 * @param string[] $remainder
 	 */
-	function showStatus( $merged, $remainder ) {
+	private function showStatus( $merged, $remainder ) {
 		$remainderCount = count( $remainder );
 		if ( $remainderCount > 0 ) {
 			$this->getOutput()->setPageTitle( $this->msg( 'centralauth-incomplete' ) );
@@ -446,7 +446,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param string[] $methods
 	 * @return string
 	 */
-	function listAttached( $wikiList, $methods = [] ) {
+	private function listAttached( $wikiList, $methods = [] ) {
 		return $this->listWikis( $wikiList, $methods );
 	}
 
@@ -454,7 +454,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param string[] $wikiList
 	 * @return string
 	 */
-	function listUnattached( $wikiList ) {
+	private function listUnattached( $wikiList ) {
 		return $this->listWikis( $wikiList );
 	}
 
@@ -463,7 +463,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param string[] $methods
 	 * @return string
 	 */
-	function listWikis( $list, $methods = [] ) {
+	private function listWikis( $list, $methods = [] ) {
 		asort( $list );
 		return $this->formatList( $list, $methods, [ $this, 'listWikiItem' ] );
 	}
@@ -474,7 +474,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param callable $callback
 	 * @return string
 	 */
-	function formatList( $items, $methods, $callback ) {
+	private function formatList( $items, $methods, $callback ) {
 		if ( !$items ) {
 			return '';
 		}
@@ -499,7 +499,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @param string $method
 	 * @return string
 	 */
-	function listWikiItem( $wikiID, $method ) {
+	private function listWikiItem( $wikiID, $method ) {
 		$return = $this->foreignUserLink( $wikiID );
 		if ( $method ) {
 			// Give grep a chance to find the usages:
@@ -520,7 +520,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string
 	 * @throws Exception
 	 */
-	function foreignUserLink( $wikiID ) {
+	private function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
 			throw new Exception( "Invalid wiki: $wikiID" );

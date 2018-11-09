@@ -80,7 +80,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return true;
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		global $wgCentralAuthLoginWiki;
 
 		if (

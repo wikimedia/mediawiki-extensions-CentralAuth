@@ -5,7 +5,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		parent::__construct( 'GlobalUsers' );
 	}
 
-	function execute( $par ) {
+	public function execute( $par ) {
 		global $wgContLang;
 		$this->setHeaders();
 
