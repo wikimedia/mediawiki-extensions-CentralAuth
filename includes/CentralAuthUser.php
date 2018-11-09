@@ -857,7 +857,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wiki Source wiki ID
 	 * @param array $users Associative array of ids => names
 	 */
-	static function storeMigrationData( $wiki, $users ) {
+	public static function storeMigrationData( $wiki, $users ) {
 		if ( $users ) {
 			$dbw = CentralAuthUtils::getCentralDB();
 			$globalTuples = [];
@@ -963,7 +963,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @throws Exception
 	 * @return string
 	 */
-	function chooseHomeWiki( $migrationSet ) {
+	public function chooseHomeWiki( $migrationSet ) {
 		if ( empty( $migrationSet ) ) {
 			throw new Exception( 'Logic error -- empty migration set in chooseHomeWiki' );
 		}
@@ -1027,7 +1027,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *     Should match an account which is known to be attached.
 	 * @return array Array of <wiki> => <authentication method>
 	 */
-	function prepareMigration( $migrationSet, $passwords = [] ) {
+	public function prepareMigration( $migrationSet, $passwords = [] ) {
 		// If the primary account has an email address set,
 		// we can use it to match other accounts. If it doesn't,
 		// we can't be sure that the other accounts with no mail
@@ -1108,7 +1108,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array &$methods on success, associative array of each wiki's attachment method	 *
 	 * @return Status object
 	 */
-	function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
+	public function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
 
 		$home = false;
@@ -1496,7 +1496,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $reason Reason for the deletion
 	 * @return Status
 	 */
-	function adminDelete( $reason ) {
+	public function adminDelete( $reason ) {
 		$this->checkWriteMode();
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
@@ -1556,7 +1556,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return Status
 	 */
-	function adminLock() {
+	public function adminLock() {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', [ 'gu_locked' => 1 ],
@@ -1575,7 +1575,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return Status
 	 */
-	function adminUnlock() {
+	public function adminUnlock() {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', [ 'gu_locked' => 0 ],
@@ -1595,7 +1595,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $level CentralAuthUser::HIDDEN_ class constant
 	 * @return Status
 	 */
-	function adminSetHidden( $level ) {
+	public function adminSetHidden( $level ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update( 'globaluser', [ 'gu_hidden' => $level ],
@@ -1749,7 +1749,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Suppresses all user accounts in all wikis.
 	 * @param string $reason
 	 */
-	function suppress( $reason ) {
+	public function suppress( $reason ) {
 		global $wgUser;
 		$this->doCrosswikiSuppression( true, $wgUser->getName(), $reason );
 	}
@@ -1759,7 +1759,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param string $reason
 	 */
-	function unsuppress( $reason ) {
+	public function unsuppress( $reason ) {
 		global $wgUser;
 		$this->doCrosswikiSuppression( false, $wgUser->getName(), $reason );
 	}
@@ -2158,7 +2158,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @param string $wikiID
 	 */
-	function addLocalName( $wikiID ) {
+	public function addLocalName( $wikiID ) {
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->insert( 'localnames',
 			[
@@ -2171,7 +2171,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @param string $wikiID
 	 */
-	function removeLocalName( $wikiID ) {
+	public function removeLocalName( $wikiID ) {
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->delete( 'localnames',
 			[
@@ -2185,7 +2185,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiID
 	 * @param string $newname
 	 */
-	function updateLocalName( $wikiID, $newname ) {
+	public function updateLocalName( $wikiID, $newname ) {
 		$dbw = CentralAuthUtils::getCentralDB();
 		$dbw->update(
 			'localnames',
@@ -2593,7 +2593,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return string
 	 */
-	function getEmail() {
+	public function getEmail() {
 		$this->loadState();
 		return $this->mEmail;
 	}
@@ -2601,7 +2601,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return string
 	 */
-	function getEmailAuthenticationTimestamp() {
+	public function getEmailAuthenticationTimestamp() {
 		$this->loadState();
 		return $this->mAuthenticationTimestamp;
 	}
@@ -2610,7 +2610,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $email
 	 * @return void
 	 */
-	function setEmail( $email ) {
+	public function setEmail( $email ) {
 		$this->checkWriteMode();
 		$this->loadState();
 		if ( $this->mEmail !== $email ) {
@@ -2623,7 +2623,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $ts
 	 * @return void
 	 */
-	function setEmailAuthenticationTimestamp( $ts ) {
+	public function setEmailAuthenticationTimestamp( $ts ) {
 		$this->checkWriteMode();
 		$this->loadState();
 		if ( $this->mAuthenticationTimestamp !== $ts ) {
@@ -2652,7 +2652,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param bool $resetAuthToken if we should reset the login token
 	 * @return bool true
 	 */
-	function setPassword( $password, $resetAuthToken = true ) {
+	public function setPassword( $password, $resetAuthToken = true ) {
 		$this->checkWriteMode();
 
 		// Make sure state is loaded before updating ->mPassword
@@ -2694,7 +2694,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Automatically converts to a new-style hash
 	 * @return string
 	 */
-	function getPassword() {
+	public function getPassword() {
 		$this->loadState();
 		if ( substr( $this->mPassword, 0, 1 ) != ':' ) {
 			$this->mPassword = ':B:' . $this->mSalt . ':' . $this->mPassword;
@@ -2709,7 +2709,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return string
 	 */
-	static function getCookieDomain() {
+	public static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
 
 		/** @var CentralAuthSessionProvider $provider */
@@ -2728,7 +2728,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $token
 	 * @return bool
 	 */
-	function validateAuthToken( $token ) {
+	public function validateAuthToken( $token ) {
 		return hash_equals( $this->getAuthToken(), $token );
 	}
 
@@ -2737,7 +2737,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Should be called as often as possible, to the extent that it will
 	 * not randomly log users out (so on logout, as is done currently, is a good time).
 	 */
-	function resetAuthToken() {
+	public function resetAuthToken() {
 		$this->checkWriteMode();
 
 		// Load state, since its hard to reset the token without it
@@ -2751,7 +2751,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->saveSettings();
 	}
 
-	function saveSettings() {
+	public function saveSettings() {
 		$this->checkWriteMode();
 
 		if ( !$this->mStateDirty ) {
@@ -2815,7 +2815,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return array
 	 */
-	function getGlobalGroups() {
+	public function getGlobalGroups() {
 		$this->loadGroups();
 
 		return $this->mGroups;
@@ -2824,7 +2824,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return array
 	 */
-	function getGlobalRights() {
+	public function getGlobalRights() {
 		$this->loadGroups();
 
 		$rights = [];
@@ -2852,7 +2852,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $groups
 	 * @return void
 	 */
-	function removeFromGlobalGroups( $groups ) {
+	public function removeFromGlobalGroups( $groups ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 
@@ -2868,7 +2868,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string[]|string $groups
 	 * @return void
 	 */
-	function addToGlobalGroups( $groups ) {
+	public function addToGlobalGroups( $groups ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 
@@ -2892,7 +2892,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return array
 	 */
-	static function availableGlobalGroups() {
+	public static function availableGlobalGroups() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', [], __METHOD__ );
@@ -2911,7 +2911,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $group
 	 * @return array
 	 */
-	static function globalGroupPermissions( $group ) {
+	public static function globalGroupPermissions( $group ) {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( [ 'global_group_permissions' ],
@@ -2931,7 +2931,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $perm
 	 * @return bool
 	 */
-	function hasGlobalPermission( $perm ) {
+	public function hasGlobalPermission( $perm ) {
 		$perms = $this->getGlobalRights();
 
 		return in_array( $perm, $perms );
@@ -2940,7 +2940,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return array
 	 */
-	static function getUsedRights() {
+	public static function getUsedRights() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission',
@@ -3040,7 +3040,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array $params
 	 * @param bool $suppressLog
 	 */
-	function logAction( $action, $reason = '', $params = [], $suppressLog = false ) {
+	public function logAction( $action, $reason = '', $params = [], $suppressLog = false ) {
 		// Not centralauth because of some weird length limitiations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
 		$log = new LogPage( $logType );

@@ -8,7 +8,7 @@ class CentralAuthUserArray {
 	 * @param IResultWrapper $res
 	 * @return CentralAuthUserArrayFromResult
 	 */
-	static function newFromResult( IResultWrapper $res ) {
+	public static function newFromResult( IResultWrapper $res ) {
 		return new CentralAuthUserArrayFromResult( $res );
 	}
 }
