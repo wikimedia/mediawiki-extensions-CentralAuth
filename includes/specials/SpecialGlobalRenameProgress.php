@@ -12,7 +12,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		parent::__construct( 'GlobalRenameProgress' );
 	}
 
-	function getFormFields() {
+	public function getFormFields() {
 		return [
 			'username' => [
 				'id' => 'mw-renameprogress-username',
@@ -24,7 +24,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		];
 	}
 
-	function alterForm( HTMLForm $htmlForm ) {
+	public function alterForm( HTMLForm $htmlForm ) {
 		$htmlForm
 			->setMethod( 'get' )
 			->setAction( $this->getPageTitle()->getLocalURL() )
@@ -32,7 +32,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			->setWrapperLegendMsg( 'globalrenameprogress-legend' );
 	}
 
-	function showLogExtract( $name ) {
+	private function showLogExtract( $name ) {
 		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $name );
 		$out = $this->getOutput();
 		$logs = '';
@@ -61,14 +61,14 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	 *
 	 * @param string $name
 	 */
-	function checkCachePurge( $name ) {
+	public function checkCachePurge( $name ) {
 		$ca = CentralAuthUser::getInstanceByName( $name );
 		if ( $ca->renameInProgress() ) {
 			$ca->quickInvalidateCache();
 		}
 	}
 
-	function showCurrentRenames() {
+	private function showCurrentRenames() {
 		$renames = GlobalRenameUserStatus::getInProgressRenames( $this->getUser() );
 
 		if ( !$renames ) {
@@ -88,7 +88,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$this->getOutput()->addHTML( $html );
 	}
 
-	function onSubmit( array $data ) {
+	public function onSubmit( array $data ) {
 		if ( !isset( $data['username'] ) ) {
 			$this->showCurrentRenames();
 			return false;

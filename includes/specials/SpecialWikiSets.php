@@ -17,11 +17,11 @@ class SpecialWikiSets extends SpecialPage {
 	/**
 	 * @return string
 	 */
-	function getDescription() {
+	public function getDescription() {
 		return $this->msg( 'centralauth-editset' )->text();
 	}
 
-	function execute( $subpage ) {
+	public function execute( $subpage ) {
 		$this->mCanEdit = $this->getUser()->isAllowed( 'globalgrouppermissions' );
 		$req = $this->getRequest();
 		$tokenOk = $req->wasPosted()
@@ -69,7 +69,7 @@ class SpecialWikiSets extends SpecialPage {
 	/**
 	 * @param string $msg Output directly as HTML. Caller must escape.
 	 */
-	function buildMainView( $msg = '' ) {
+	private function buildMainView( $msg = '' ) {
 		// Give grep a chance to find the usages: centralauth-editset-legend-rw,
 		// centralauth-editset-legend-ro
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
@@ -115,7 +115,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param array|null $wikis
 	 * @param string|null $reason
 	 */
-	function buildSetView(
+	private function buildSetView(
 		$subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null
 	) {
 		global $wgLocalDatabases;
@@ -230,7 +230,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $value
 	 * @return string
 	 */
-	function buildTypeSelector( $name, $value ) {
+	private function buildTypeSelector( $name, $value ) {
 		// Give grep a chance to find the usages: centralauth-editset-optin,
 		// centralauth-editset-optout
 		$select = new XmlSelect( $name, 'set-type', $value );
@@ -251,7 +251,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param array $tableAttribs <table> attributes
 	 * @return string Table
 	 */
-	function buildTableByList( $list, $columns = 2, $tableAttribs = [] ) {
+	private function buildTableByList( $list, $columns = 2, $tableAttribs = [] ) {
 		if ( !is_array( $list ) ) {
 			return '';
 		}
@@ -289,7 +289,7 @@ class SpecialWikiSets extends SpecialPage {
 	/**
 	 * @param string $subpage
 	 */
-	function buildDeleteView( $subpage ) {
+	private function buildDeleteView( $subpage ) {
 		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editset-subtitle' )->parse() );
 
 		$set = WikiSet::newFromID( $subpage );
@@ -318,7 +318,7 @@ class SpecialWikiSets extends SpecialPage {
 	/**
 	 * @param string $id
 	 */
-	function doSubmit( $id ) {
+	private function doSubmit( $id ) {
 		global $wgContLang;
 
 		$name = $wgContLang->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
@@ -414,7 +414,7 @@ class SpecialWikiSets extends SpecialPage {
 	/**
 	 * @param string $set
 	 */
-	function doDelete( $set ) {
+	private function doDelete( $set ) {
 		$set = WikiSet::newFromID( $set );
 		if ( !$set ) {
 			$this->buildMainView( '<strong class="error">' .

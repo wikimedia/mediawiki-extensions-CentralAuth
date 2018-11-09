@@ -114,7 +114,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	function resendConfirmationEmail( $username ) {
+	private function resendConfirmationEmail( $username ) {
 		$wikiID = wfWikiID();
 
 		$this->total++;
@@ -168,7 +168,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		}
 	}
 
-	function report() {
+	private function report() {
 		$delta = microtime( true ) - $this->start;
 		$this->output( sprintf(
 			"%s: %s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",
