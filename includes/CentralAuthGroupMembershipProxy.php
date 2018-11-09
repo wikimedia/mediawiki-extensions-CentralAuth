@@ -91,7 +91,7 @@ class CentralAuthGroupMembershipProxy {
 	 * Replaces getUserGroups()
 	 * @return mixed
 	 */
-	function getGroups() {
+	public function getGroups() {
 		return $this->mGlobalUser->getGlobalGroups();
 	}
 
@@ -99,7 +99,7 @@ class CentralAuthGroupMembershipProxy {
 	 * Replaces User::getGroupMemberships()
 	 * @return UserGroupMembership[] Associative array of (group name => UserGroupMembership object)
 	 */
-	function getGroupMemberships() {
+	public function getGroupMemberships() {
 		$groups = $this->getGroups();
 		return array_combine( $groups, array_map( function ( $group ) {
 			return new UserGroupMembership( $this->getId(), $group );
@@ -113,7 +113,7 @@ class CentralAuthGroupMembershipProxy {
 	 *
 	 * @return bool
 	 */
-	function addGroup( $group, $expiry = null ) {
+	public function addGroup( $group, $expiry = null ) {
 		if ( $expiry !== null ) {
 			throw new InvalidArgumentException( __METHOD__ . ' cannot process expiries' );
 		}
@@ -128,7 +128,7 @@ class CentralAuthGroupMembershipProxy {
 	 *
 	 * @return bool
 	 */
-	function removeGroup( $group ) {
+	public function removeGroup( $group ) {
 		$this->mGlobalUser->removeFromGlobalGroups( $group );
 		return true;
 	}
@@ -136,7 +136,7 @@ class CentralAuthGroupMembershipProxy {
 	/**
 	 * replaces touchUser
 	 */
-	function invalidateCache() {
+	public function invalidateCache() {
 		$this->mGlobalUser->invalidateCache();
 	}
 
@@ -144,7 +144,7 @@ class CentralAuthGroupMembershipProxy {
 	 * @param string $wiki
 	 * @return bool
 	 */
-	function attachedOn( $wiki ) {
+	public function attachedOn( $wiki ) {
 		return $this->mGlobalUser->attachedOn( $wiki );
 	}
 }

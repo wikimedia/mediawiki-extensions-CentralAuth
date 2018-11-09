@@ -78,7 +78,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	function process( $username ) {
+	private function process( $username ) {
 		$central = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
 		if ( !$central->exists() ) {
 			$this->output(
