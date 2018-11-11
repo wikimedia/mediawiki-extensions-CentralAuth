@@ -363,7 +363,7 @@
 	"centralauth-merge-method-primary": "wiki de origem",
 	"centralauth-merge-method-primary-desc": "Esta é a wiki a partir da qual a conta foi inicialmente fundida.\nNote que pode ser diferente da wiki de origem do utilizador.",
 	"centralauth-merge-no-accounts": "Não foram encontradas contas que correspondam ao seu nome, na tabela central de contas!\nA base de dados deve estar corrompida.",
-	"centralauth-merge-notlogged": "Por favor, <span class=\"plainlinks\">[$1 autentique-se]</span> para verificar se as suas contas foram correctamente fundidas.",
+	"centralauth-merge-notlogged": "Por favor, <span class=\"plainlinks\">[$1 autentique-se]</span> para verificar se as suas contas foram corretamente fundidas.",
 	"centralauth-merge-step1-detail": "Por favor, introduza aqui a palavra-passe da sua conta.\nA palavra-passe e o endereço de correio eletrónico serão comparados aos das contas nas outras wikis, para confirmar se coincidem.\nNão serão feitas alterações até que confirme que está tudo correto.",
 	"centralauth-merge-step1-submit": "Confirmar informações de autenticação",
 	"centralauth-merge-step1-title": "Iniciar a unificação da autenticação",

@@ -22,7 +22,8 @@
 			"Mehran",
 			"Alifakoor",
 			"McDutchie",
-			"Macofe"
+			"Macofe",
+			"Physicsch"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه گلوبال که کاربر در آن عضو است",
@@ -385,7 +386,7 @@
 	"centralauth-rename-abortlogin": "حساب کاربری شما در حال تغییر نام یا ادغام شدن است. [[Special:GlobalRenameProgress/$1|مشاهده وضعیت]].",
 	"centralauth-rename-alreadyexists": "حساب کاربری مقصد وجود دارد.",
 	"centralauth-rename-alreadyinprogress": "هم‌اکنون یک تغییرنام برای این کاربر [[Special:GlobalRenameProgress/$1|در حال انجام است]].",
-	"centralauth-rename-antispoofconflicts2": "نام کاربری انتخاب شده بیش از حد شبیه به {{PLURAL:$2|یک حساب کاربری موجود|چند حساب کاربری موجود}} است: $1.",
+	"centralauth-rename-antispoofconflicts2": "نام کاربری انتخاب شده بیش از حد شبیه به {{PLURAL:$2|یک حساب کاربری موجود|چند حساب کاربری موجود}} و یا مشابه نام کاربری شخصی دیگر است که نام کاربری‌اش را تغییر داده است: $1.",
 	"centralauth-rename-badusername": "نام مقصد معتبر نیست.",
 	"centralauth-rename-cannotself": "شما نمی‌توانید خودتان را تغییرنام دهید.",
 	"centralauth-rename-confirm": "واقعاً می‌خواهید این نام کاربری را سراسری تغییر دهید؟",
@@ -493,7 +494,7 @@
 	"globalrenamequeue-form-username": "نام کاربری:",
 	"globalrenamequeue-nav-closedqueue": "درخواست‌های بسته‌شده",
 	"globalrenamequeue-nav-openqueue": "درخواست‌های باز",
-	"globalrenamequeue-request-antispoof-conflicts": "<strong>نام کاربری انتخاب‌شده شبیه به {{PLURAL:$2|یک حساب موجود|چند حساب موجود}} است:</strong> $1",
+	"globalrenamequeue-request-antispoof-conflicts": "<strong>نام کاربری انتخاب‌شده شبیه به {{PLURAL:$2|یک نام کاربری موجود|نام‌های کاربری موجود}} و مشابه نام کاربری شخصی دیگر که نام خود را تغییر داد است:</strong> $1",
 	"globalrenamequeue-request-approve-text": "پذیرفتن تغییرنام",
 	"globalrenamequeue-request-cancel-text": "لغو",
 	"globalrenamequeue-request-comments-label": "یادداشت/دلایل",
