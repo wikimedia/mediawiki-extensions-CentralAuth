@@ -145,7 +145,7 @@
 	"centralauth-admin-info-header": "全域帳號資訊",
 	"centralauth-admin-info-hidden": "隱藏層級：",
 	"centralauth-admin-info-locked": "已鎖定：",
-	"centralauth-admin-info-registered": "已註冊：",
+	"centralauth-admin-info-registered": "註冊時間：",
 	"centralauth-admin-info-unattached": "未連結的帳號數量：",
 	"centralauth-admin-info-username": "使用者名稱：",
 	"centralauth-admin-intro": "此介面可用來管理全域帳號。",

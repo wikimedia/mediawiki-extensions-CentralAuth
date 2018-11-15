@@ -17,7 +17,8 @@
 			"Predatorix",
 			"Luke081515",
 			"MGChecker",
-			"ThePiscin"
+			"ThePiscin",
+			"FF11"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale Gruppen, in der der Benutzer ist",
@@ -32,7 +33,9 @@
 	"apierror-centralauth-notattached": "Es kann kein centralauthtoken ohne ein zugewiesenes globales Benutzerkonto abgerufen werden.",
 	"apierror-centralauth-notloggedin": "Anonyme Benutzer können keinen centralauthtoken abrufen.",
 	"apierror-centralauth-renameinprogress": "Der Benutzer wird derzeit umbenannt, Verwendung nicht möglich.",
+	"apihelp-centralauthtoken-description": "Rufe einen CentralAuth - Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
 	"apihelp-centralauthtoken-example-1": "Ruft einen centralauthtoken ab",
+	"apihelp-centralauthtoken-summary": "Rufe einen CentralAuth - Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
 	"apihelp-deleteglobalaccount-description": "Löscht einen globalen Benutzer.",
 	"apihelp-deleteglobalaccount-example-1": "Löscht das globale Benutzerkonto für [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Grund für das Löschen des Benutzers.",
