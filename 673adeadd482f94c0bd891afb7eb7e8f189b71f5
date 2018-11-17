@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "839ba49b_9f8aa696",
+        "filename": "modules/ext.widgets.GlobalUserInputWidget.js",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4864
+      },
+      "writtenOn": "2018-11-17T18:35:38Z",
+      "side": 1,
+      "message": "This file is totally based on https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/core/+/master/resources/src/mediawiki.widgets/mw.widgets.UserInputWidget.js , Just Api query has changed. May be this will help you for reviewing.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 3
+      },
+      "revId": "673adeadd482f94c0bd891afb7eb7e8f189b71f5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
