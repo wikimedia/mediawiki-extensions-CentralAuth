@@ -68,6 +68,7 @@
 	"centralauth-usermerge-confirm": "Вы сапраўды хочаце глабальна аб’яднаць гэтых ўдзельнікаў?",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гады|гадоў}} таму",
 	"globalrenamequeue-column-rq-wiki": "Лакальны вікі-праект",
+	"globalrenamequeue-request-reason-label": "Агульнадаступны каментарый",
 	"log-action-filter-gblrights-usergroups": "Змяненне глабальных правоў удзельніка",
 	"log-description-gblrename": "Гэты журнал адсочвае глабальныя перайменаванні ўдзельнікаў.",
 	"log-name-gblrename": "Журнал глабальных перайменаванняў",

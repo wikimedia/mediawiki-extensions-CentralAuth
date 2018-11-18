@@ -23,7 +23,8 @@
 			"Alifakoor",
 			"McDutchie",
 			"Macofe",
-			"Physicsch"
+			"Physicsch",
+			"درفش کاویانی"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه گلوبال که کاربر در آن عضو است",
@@ -368,6 +369,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|ادغام چند حساب کاربری]] برای یکی کردن حساب‌های کاربری",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|دقیقه|دقیقه}} قبل",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ماه|ماه}} قبل",
+	"centralauth-multilock-homewiki": "ویکی خانگی",
 	"centralauth-newgroup-intro": "شما می‌توانید با استفاده از این فرم اختیاراتی را به یک گروه بدهید. توجه داشته باشید که یک گروه نمی‌تواند وجود داشته باشد مگر آن که اختیارات به وی داده شده باشد.",
 	"centralauth-newgroup-legend": "ایجاد یک گروه جدید",
 	"centralauth-not-owner-text": "حساب کاربری «$1» به طور خودکار به صاحب حساب کاربری در $2 اختصاص داده شد.\n\nاگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با واردکردن گذرواژه سراسری در اینجا به پایان برسانید:",
