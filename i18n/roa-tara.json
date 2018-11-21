@@ -227,6 +227,7 @@
 	"centralauth-editset-type": "Tipe:",
 	"centralauth-editset-usage": "Ausate jndr'à le gruppe:",
 	"centralauth-editset-wikis": "Uicchi:",
+	"centralauth-editset-zerowikis": "Nisciune uicchi specificate.",
 	"centralauth-error-badtoken": "'U gettone de l'autorizzazzione date jè scadute o invalide.",
 	"centralauth-error-locked": "Tu non ge puè cangià purcé 'u cunde tune jè bloccate.",
 	"centralauth-error-nologinattempt": "Nisciune tendative de trasè jè attive jndr'à sessiona toje.",
@@ -441,6 +442,7 @@
 	"globalrenamequeue-email-body-rejected": "'A richieste de renomenamende de \"{{GENDER:$1|$1}}\" jndr'à \"{{GENDER:$1|$2}}\" ha state scettate.\n\nNote: $3",
 	"globalrenamequeue-email-subject-approved": "Richieste de cange d'u cunde approvate",
 	"globalrenamequeue-email-subject-rejected": "Richieste de cange d'u cunde scettate",
+	"globalrenamequeue-form-newname": "Nome de l'utende cercate:",
 	"globalrenamequeue-form-status": "State:",
 	"globalrenamequeue-form-status-all": "tutte",
 	"globalrenamequeue-form-username": "Nome de l'utende:",
@@ -507,6 +509,8 @@
 	"right-centralauth-usermerge": "Scuagghie globbalmende cchiù utinde.",
 	"right-globalgroupmembership": "Cange l'appartenenze a le gruppe globbale",
 	"right-globalgrouppermissions": "Gestisce le gruppe globbale",
+	"sessionprovider-centralauthsessionprovider": "sessiune basate sus a cookie centrali",
+	"sessionprovider-centralauthtokensessionprovider": "sessiune centralauthtoken",
 	"sulrenamewarning-title": "'U cunde {{GENDER:$1|tune}} ha state renomenate",
 	"userswhowillberenamed": "Utinde ca onna essere renomenate"
 }
