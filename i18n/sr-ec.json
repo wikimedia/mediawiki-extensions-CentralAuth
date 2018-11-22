@@ -83,7 +83,7 @@
 	"centralauth-admin-lookup-ro": "Прикажи корисничке информације",
 	"centralauth-admin-lookup-rw": "Управљање корисничким налогом",
 	"centralauth-admin-manage": "Управљање корисничким подацима",
-	"centralauth-admin-merge": "Споји изабрано",
+	"centralauth-admin-merge": "Обједини изабрано",
 	"centralauth-admin-multi-bot": "Скорашње измене",
 	"centralauth-admin-multi-botcheck": "Означује измене у [[Special:RecentChanges|скорашњим изменама]] као измене бота.",
 	"centralauth-admin-multi-intro": "Ажурирај више глобалних налога одједном",
