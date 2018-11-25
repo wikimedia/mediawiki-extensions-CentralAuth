@@ -33,7 +33,7 @@
 	"apihelp-deleteglobalaccount-example-1": "מחיקת חשבון גלובלי עבור [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "סיבה למחיקת משתמש.",
 	"apihelp-deleteglobalaccount-param-user": "משתמש למחוק.",
-	"apihelp-deleteglobalaccount-summary": "מחק משתמש כלל- ויקיפדי",
+	"apihelp-deleteglobalaccount-summary": "מחיקת משתמש גלובלי.",
 	"apihelp-globaluserrights-description": "הוספה/הסרה של משתמש אל/מתוך קבוצות גלובליות.",
 	"apihelp-globaluserrights-example-1": "הוספת המשתמש FooBot לקבוצה הגלובלית \"bot\", והסרתו מהקבוצות הגלובליות \"sysop\" ו־\"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "הוספת המשתמש הגלובלי עם מזהה 123 לקבוצה הגלובלית \"bot\", והסרתו מהקבוצות הגלובליות \"sysop\" ו־\"bureaucrat\"",

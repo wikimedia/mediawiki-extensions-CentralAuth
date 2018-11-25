@@ -35,7 +35,8 @@
 			"飞舞回堂前",
 			"WhitePhosphorus",
 			"A2093064",
-			"Phenolla"
+			"Phenolla",
+			"A Chinese Wikipedian"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -389,6 +390,7 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|将多个账户合并]]为单一用户账户",
 	"centralauth-minutes-ago": "$1分前",
 	"centralauth-months-ago": "$1月前",
+	"centralauth-multilock-homewiki": "起始维基",
 	"centralauth-newgroup-intro": "您可以用这个表格来指定新群组的权限。请注意如果不赋予任何权限，群组就不能存在。",
 	"centralauth-newgroup-legend": "创建新用户组",
 	"centralauth-not-owner-text": "用户名“$1”已自动分配给$2的账户。\n\n如果这是您的账户，请输入该账户的密码以完成账户整合：",
