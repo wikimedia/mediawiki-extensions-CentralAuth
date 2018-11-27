@@ -1618,16 +1618,55 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * Create databases for WMF Jenkins unit tests
+	 * PurgeExpiredUserrights hook handler
+	 * Cleans up global_user_groups table when UserGroupMembership::purgeExpired
+	 * purges expired user rights.
+	 * @throws CentralAuthReadOnlyError
+	 */
+	public static function onPurgeExpiredUserrights() {
+		CentralAuthUtils::purgeExpired();
+	}
+
+	/**
+	 * Create databases for WMF Jenkins unit tests and update CentralAuthDatabase
 	 * @param DatabaseUpdater $updater
 	 * @return true
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		global $wgWikimediaJenkinsCI;
+		global $wgCentralAuthDatabase;
 
-		if ( !empty( $wgWikimediaJenkinsCI ) ) {
-			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
+		// Avoid running this code again when calling CentralAuthUpdater::newForCentralAuthDB
+		static $hasRunOnce = false;
+		if ( $hasRunOnce ) {
+			return true;
+		} else {
+			$hasRunOnce = true;
 		}
+
+		$services = MediaWikiServices::getInstance();
+		$loadBalancer = $services->getDBLoadBalancer();
+		$centralDB = $loadBalancer->getConnection( DB_MASTER, [], $wgCentralAuthDatabase );
+		$centralDBUpdater = CentralAuthUpdater::newForCentralAuthDB(
+			$updater->getDB(),
+			$centralDB
+		);
+
+		// Prepare Updates
+		$dir = dirname( __DIR__ );
+		$centralDBUpdater->addExtensionTable( 'globaluser', "$dir/central-auth.sql" );
+
+		$centralDBUpdater->addExtensionUpdate( [
+			'addField',
+			'global_user_groups',
+			'gug_expiry',
+			"$dir/db_patches/patch-gug_expiry.sql",
+			true
+		] );
+
+		// Do updates
+		$updater->addExtensionUpdate(
+			[ [ CentralAuthUpdater::class, 'realDoUpdates' ], $centralDBUpdater ]
+		);
 
 		return true;
 	}
