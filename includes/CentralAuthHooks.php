@@ -335,12 +335,14 @@ class CentralAuthHooks {
 		$manageButtons = [];
 
 		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
+			// Add "Manage your global account" button
 			$manageButtons[] = new \OOUI\ButtonWidget( [
 				'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),
 				'label' => wfMessage( 'centralauth-prefs-manage' )->text(),
 			] );
 		}
 
+		// Add "View your global account info" button
 		$manageButtons[] = new \OOUI\ButtonWidget( [
 			'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() )->getLinkURL(),
 			'label' => wfMessage( 'centralauth-prefs-view' )->text(),
