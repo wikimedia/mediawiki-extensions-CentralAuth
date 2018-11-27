@@ -4,6 +4,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	protected $requestedGroup = false;
 	protected $requestedUser = false;
 	protected $globalIDGroups = [];
+	protected $globalExpGroups = [];
 	private $localWikisets = [];
 
 	public function __construct( IContextSource $context = null, $par = null ) {
@@ -58,6 +59,8 @@ class GlobalUsersPager extends AlphabeticPager {
 	 */
 	function getQueryInfo() {
 		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
+		$conds[] = 'gug_expiry IS NULL OR gug_expiry >= '
+			. $this->mDb->addQuotes( $this->mDb->timestamp() );
 
 		if ( $this->requestedGroup ) {
 			$conds['gug_group'] = $this->requestedGroup;
@@ -74,7 +77,8 @@ class GlobalUsersPager extends AlphabeticPager {
 				'gu_locked' => 'MAX(gu_locked)',
 				'lu_attached_method' => 'MAX(lu_attached_method)',
 				// | cannot be used in a group name
-				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ],
+				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')',
+				'gug_expiry' => 'GROUP_CONCAT( IFNULL (gug_expiry, \'null\') SEPARATOR \'|\')' ],
 			'conds' => $conds,
 			'options' => [ 'GROUP BY' => 'gu_name' ],
 			'join_conds' => [
@@ -117,6 +121,8 @@ class GlobalUsersPager extends AlphabeticPager {
 			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
 			if ( $row->gug_group ) { // no point in adding users that belong to any group
 				$this->globalIDGroups[$row->gu_id] = explode( '|', $row->gug_group );
+				$this->globalExpGroups[$row->gu_id] = array_combine(
+					explode( '|', $row->gug_group ), explode( '|', $row->gug_expiry ) );
 			}
 		}
 		$batch->execute();
@@ -135,7 +141,7 @@ class GlobalUsersPager extends AlphabeticPager {
 			);
 			// Make an array of locally enabled wikisets
 			foreach ( $wsQuery as $wsRow ) {
-				if ( WikiSet::newFromRow( $wsRow )->inSet() ) {
+				if ( !WikiSet::newFromRow( $wsRow )->inSet() ) {
 					$this->localWikisets[] = $wsRow->ggr_group;
 				}
 			}
@@ -200,25 +206,48 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @param string $id
 	 * @param string $username
 	 * @return string
+	 * @throws MWException
 	 */
 	protected function getUserGroups( $id, $username ) {
-		$rights = [];
-		foreach ( $this->globalIDGroups[$id] as $group ) {
-			$wikitextLink = UserGroupMembership::getLink(
-				$group, $this->getContext(), 'wiki', $username );
+		// As done in core, store expiring global groups separately, so we can place them before
+		// non-expiring global groups in the list. This is to avoid the ambiguity of something like
+		// "administrator, bureaucrat (until X date)"
+		$permGroups = $tempGroups = [];
+		$uiLanguage = $this->GetContext()->getLanguage();
+		$uiUser = $this->GetContext()->getUser();
 
-			if ( !in_array( $group, $this->localWikisets ) ) {
-				// Mark if the group is not applied on this wiki
-				$rights[] = Html::rawElement( 'span',
-					[ 'class' => 'groupnotappliedhere' ],
-					$wikitextLink
-				);
+		foreach ( $this->globalIDGroups[$id] as $group ) {
+			$ugm = new UserGroupMembership( $id, $group,
+				$this->globalExpGroups[$id][$group] );
+			$wikitextLink = UserGroupMembership::getLink(
+				$ugm->getGroup(), $this->getContext(), 'wiki', $username );
+			if ( $ugm->getExpiry() !== 'null' ) {
+				$expiryDT = $uiLanguage->userTimeAndDate( $ugm->getExpiry(), $uiUser );
+				$expiryMsg = ' ' . $this->getContext()->msg(
+						'group-membership-link-with-expiry' )->params( null, $expiryDT )->text();
+				if ( in_array( $ugm->getGroup(), $this->localWikisets ) ) {
+					// Mark if the group is not applied on this wiki
+					$tempGroups[] = Html::rawElement( 'span',
+							[ 'class' => 'groupnotappliedhere' ],
+							$wikitextLink
+						) . $expiryMsg;
+				} else {
+					$tempGroups[] = $wikitextLink . $expiryMsg;
+				}
 			} else {
-				$rights[] = $wikitextLink;
+				if ( in_array( $ugm->getGroup(), $this->localWikisets ) ) {
+					// Mark if the group is not applied on this wiki
+					$permGroups[] = Html::rawElement( 'span',
+							[ 'class' => 'groupnotappliedhere' ],
+							$wikitextLink
+						);
+				} else {
+					$permGroups[] = $wikitextLink;
+				}
 			}
 		}
 
-		return $this->getLanguage()->listToText( $rights );
+		return $this->getLanguage()->listToText( array_merge( $tempGroups, $permGroups ) );
 	}
 
 	/**
