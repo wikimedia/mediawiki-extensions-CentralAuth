@@ -27,6 +27,7 @@
 	"apihelp-globaluserrights-description": "{{doc-apihelp-description|globaluserrights}}",
 	"apihelp-globaluserrights-example-1": "{{doc-apihelp-example|globaluserrights}}",
 	"apihelp-globaluserrights-example-2": "{{doc-apihelp-example|globaluserrights}}",
+	"apihelp-globaluserrights-example-expiry": "{{doc-apihelp-example|globaluserrights}}",
 	"apihelp-globaluserrights-param-add": "{{doc-apihelp-param|globaluserrights|add}}",
 	"apihelp-globaluserrights-param-expiry": "{{doc-apihelp-param|globaluserrights|expiry}}",
 	"apihelp-globaluserrights-param-reason": "{{doc-apihelp-param|globaluserrights|reason}}",

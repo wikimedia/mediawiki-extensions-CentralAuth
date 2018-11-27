@@ -89,6 +89,21 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$result->setIndexedTagName( $groups, 'g' );
 			$result->addValue( [ 'query', $this->getModuleName() ], 'groups', $groups );
 		}
+		if ( $userExists && isset( $prop['groupmemberships'] ) ) {
+			$groupsExp = $user->getGroupMemberships();
+			$data['groupmemberships'] = array_map( function ( $ugm ){
+				return [
+					'group' => $ugm->getGroup(),
+					'expiry' => ApiResult::formatExpiry( $ugm->getExpiry() ),
+				];
+			}, $groupsExp );
+			$result->setIndexedTagName( $data['groupmemberships'], 'groupmembership' );
+			$result->addValue(
+				[ 'query', $this->getModuleName() ],
+				'groupmemberships',
+				$data['groupmemberships']
+			);
+		}
 		if ( $userExists && isset( $prop['rights'] ) ) {
 			$rights = $user->getGlobalRights();
 			$result->setIndexedTagName( $rights, 'r' );
@@ -185,6 +200,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			'prop' => [
 				ApiBase::PARAM_TYPE => [
 					'groups',
+					'groupmemberships',
 					'rights',
 					'merged',
 					'unattached',
