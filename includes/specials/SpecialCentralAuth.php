@@ -385,15 +385,33 @@ class SpecialCentralAuth extends SpecialPage {
 			$attribs['hidden'] = $this->formatHiddenLevel( $globalUser->getHiddenLevel() );
 		}
 
-		$groups = $globalUser->getGlobalGroups();
-		if ( $groups ) {
-			$groups = array_map( function ( $group ) {
-				return $this->getLinkRenderer()->makeLink(
+		$globalGroups = $globalUser->getGroupMemberships();
+		if ( $globalGroups ) {
+			// As done in core, store expiring global groups separately, so we can place them before
+			// non-expiring global groups in the list. This is to avoid the ambiguity of something like
+			// "administrator, bureaucrat (until X date)"
+			$permGroups = $tempGroups = [];
+			$uiLanguage = $this->getContext()->getLanguage();
+			$uiUser = $this->getContext()->getUser();
+			foreach ( $globalGroups as $group => $groupMemberships ) {
+				$linkGroup = $this->getLinkRenderer()->makeLink(
 					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
 					UserGroupMembership::getGroupName( $group )
 				);
-			}, $groups );
-			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
+				if ( $groupMemberships->getExpiry() ) {
+					$tempGroups[] = $this->getContext()
+						->msg( 'group-membership-link-with-expiry' )
+						->params(
+							$linkGroup,
+							$uiLanguage->userTimeAndDate( $groupMemberships->getExpiry(), $uiUser )
+						)
+						->text();
+				} else {
+					$permGroups[] = $linkGroup;
+				}
+			}
+
+			$attribs['groups'] = $this->getLanguage()->commaList( array_merge( $tempGroups, $permGroups ) );
 		}
 
 		return $attribs;
