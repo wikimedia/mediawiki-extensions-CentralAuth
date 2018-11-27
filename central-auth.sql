@@ -129,12 +129,14 @@ CREATE INDEX /*i*/lu_name_wiki ON /*_*/localuser (lu_name, lu_wiki);
 CREATE TABLE /*_*/global_user_groups (
   gug_user int(11) not null,
   gug_group varchar(255) not null,
+  gug_expiry varbinary(14) NULL default NULL,
 
   PRIMARY KEY (gug_user,gug_group)
 ) /*$wgDBTableOptions*/;
 
 CREATE INDEX /*i*/gug_user ON /*_*/global_user_groups (gug_user);
 CREATE INDEX /*i*/gug_group ON /*_*/global_user_groups (gug_group);
+CREATE INDEX /*i*/gug_expiry ON /*_*/global_user_groups (gug_expiry);
 
 -- Global group permissions.
 CREATE TABLE /*_*/global_group_permissions (

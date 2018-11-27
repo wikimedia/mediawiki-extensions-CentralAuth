@@ -8,6 +8,7 @@ class SpecialGlobalUsers extends SpecialPage {
 	}
 
 	public function execute( $par ) {
+		global $wgContLang;
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
@@ -16,16 +17,17 @@ class SpecialGlobalUsers extends SpecialPage {
 
 		$pg = new GlobalUsersPager( $context, $par );
 		$req = $this->getRequest();
+		$rqGroup = $req->getVal( 'group' );
+		$rqUsername = $wgContLang->ucfirst( $req->getVal( 'username' ) );
 
 		if ( $par ) {
-			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
+			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) && is_null( $rqGroup ) ) {
 				$pg->setGroup( $par );
-			} else {
+			} elseif ( is_null( $rqUsername ) ) {
 				$pg->setUsername( $par );
 			}
 		}
 
-		$rqGroup = $req->getVal( 'group' );
 		if ( $rqGroup ) {
 			// XXX This is a horrible hack. We should not use Title for normalization. We need to
 			// prefix the group name so that the first letter doesn't get uppercased.
