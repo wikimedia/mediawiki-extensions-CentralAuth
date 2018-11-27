@@ -159,7 +159,8 @@
 		"gblrights/setrename": "CentralAuthHooks::onHandleWikiSetLogEntry",
 		"gblrights/setnewtype": "CentralAuthHooks::onHandleWikiSetLogEntry",
 		"gblrights/setchange": "CentralAuthHooks::onHandleWikiSetLogEntry",
-		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry"
+		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry",
+		"gblrights/usergroups": "RightsLogFormatter"
 	},
 	"APIModules": {
 		"deleteglobalaccount": "ApiDeleteGlobalAccount",
@@ -254,7 +255,8 @@
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
 		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php",
-		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php"
+		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php",
+		"CentralAuthUpdater": "maintenance/CentralAuthUpdater.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
@@ -387,6 +389,7 @@
 		"UserSaveSettings": "CentralAuthHooks::onUserSaveSettings",
 		"UserSetEmailAuthenticationTimestamp": "CentralAuthHooks::onUserSetEmailAuthenticationTimestamp",
 		"UserGetRights": "CentralAuthHooks::onUserGetRights",
+		"PurgeExpiredUserrights": "CentralAuthHooks::onPurgeExpiredUserrights",
 		"UserIsBot": "CentralAuthHooks::onUserIsBot",
 		"UserIsLocked": "CentralAuthHooks::onUserIsLocked",
 		"GetUserBlock": "CentralAuthHooks::onGetUserBlock",

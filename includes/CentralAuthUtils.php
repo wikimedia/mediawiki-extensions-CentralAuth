@@ -332,4 +332,76 @@ class CentralAuthUtils {
 			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
 		}
 	}
+
+	/**
+	 * Purge expired memberships from the global_user_groups table
+	 *
+	 * @return int|bool false if purging wasn't attempted because of
+	 *  readonly, the number of rows purged (might be 0) otherwise
+	 * @throws CentralAuthReadOnlyError
+	 */
+	public static function purgeExpired() {
+		$services = MediaWikiServices::getInstance();
+		if ( self::isReadOnly() ) {
+			return false;
+		}
+
+		$purgedRows = 0;
+		$lbFactory = $services->getDBLoadBalancerFactory();
+		$ticket = $lbFactory->getEmptyTransactionTicket( __METHOD__ );
+		$dbw = self::getCentralDB();
+		$opts = [];
+
+		$lockKey = "CentralAuthPurgeExpiredUserrights";
+		$scopedLock = $dbw->getScopedLockAndFlush( $lockKey, __METHOD__, 0 );
+		if ( !$scopedLock ) {
+			// already running
+			return false;
+		}
+
+		do {
+			$dbw->startAtomic( __METHOD__ );
+
+			$res =
+				$dbw->select(
+					'global_user_groups',
+					[ 'gug_group', 'gug_user', 'gug_expiry' ],
+					[ 'gug_expiry < ' . $dbw->addQuotes( $dbw->timestamp() ) ],
+					__METHOD__,
+					[ 'FOR UPDATE', 'LIMIT' => 100 ]
+				);
+
+			if ( $res->numRows() > 0 ) {
+				// array for deleting the rows that are to be moved around
+				$deleteCond = [];
+
+				foreach ( $res as $row ) {
+					$deleteCond[] = $dbw->makeList(
+						[ 'gug_user' => $row->gug_user, 'gug_group' => $row->gug_group ],
+						$dbw::LIST_AND
+					);
+				}
+				// Delete the rows we're about to move
+				$dbw->delete(
+					'global_user_groups',
+					$dbw->makeList( $deleteCond, $dbw::LIST_OR ),
+					__METHOD__
+				);
+				// Count how many rows were purged
+				$purgedRows += $res->numRows();
+			}
+
+			$dbw->endAtomic( __METHOD__ );
+			$opts += [
+				'domain' => $dbw->getDBname(),
+				'cluster' => false,
+				'timeout' => null,
+				'ifWritesSince' => null
+			];
+			$lbFactory->commitAndWaitForReplication( __METHOD__, $ticket, $opts );
+
+		} while ( $res->numRows() > 0 );
+
+		return $purgedRows;
+	}
 }

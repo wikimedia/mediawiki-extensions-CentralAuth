@@ -7,9 +7,16 @@ class GlobalUsersPager extends AlphabeticPager {
 	protected $requestedUser = false;
 	/** @var array[] */
 	protected $globalIDGroups = [];
+	/** @var array[] */
+	protected $groupsMemberships = [];
 	/** @var string[] */
 	private $localWikisets = [];
 
+	/**
+	 * GlobalUsersPager constructor.
+	 * @param IContextSource|null $context
+	 * @param null $par
+	 */
 	public function __construct( IContextSource $context = null, $par = null ) {
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
@@ -61,7 +68,10 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return array
 	 */
 	public function getQueryInfo() {
-		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
+		$conds = [
+			'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+			'gug_expiry IS NULL OR gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
+		];
 
 		if ( $this->requestedGroup ) {
 			$conds['gug_group'] = $this->requestedGroup;
@@ -71,14 +81,19 @@ class GlobalUsersPager extends AlphabeticPager {
 			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->requestedUser );
 		}
 
+		$fields = [
+			'gu_name',
+			'gu_id' => 'MAX(gu_id)',
+			'gu_locked' => 'MAX(gu_locked)',
+			'lu_attached_method' => 'MAX(lu_attached_method)',
+			// | cannot be used in a group name
+			'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')',
+			'gug_expiry' => 'GROUP_CONCAT( IFNULL (gug_expiry, \'null\') SEPARATOR \'|\')'
+		];
+
 		return [
 			'tables' => [ 'globaluser', 'localuser', 'global_user_groups' ],
-			'fields' => [ 'gu_name',
-				'gu_id' => 'MAX(gu_id)',
-				'gu_locked' => 'MAX(gu_locked)',
-				'lu_attached_method' => 'MAX(lu_attached_method)',
-				// | cannot be used in a group name
-				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ],
+			'fields' => $fields,
 			'conds' => $conds,
 			'options' => [ 'GROUP BY' => 'gu_name' ],
 			'join_conds' => [
@@ -116,10 +131,24 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	public function doBatchLookups() {
 		$batch = new LinkBatch();
+		$groups = [];
 		foreach ( $this->mResult as $row ) {
 			// userpage existence link cache
 			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
-			if ( $row->gug_group ) { // no point in adding users that belong to any group
+			// no point in adding users that belong to any group
+			if ( $row->gug_group ) {
+				$groups[$row->gu_id] = array_combine(
+					explode( '|', $row->gug_group ),
+					explode( '|', $row->gug_expiry )
+				);
+
+				foreach ( $groups[$row->gu_id] as $group => $expiry ) {
+					$this->groupsMemberships[$row->gu_id][$group] = new UserGroupMembership(
+						$row->gu_id,
+						$group,
+						$expiry
+					);
+				}
 				$this->globalIDGroups[$row->gu_id] = explode( '|', $row->gug_group );
 			}
 		}
@@ -137,9 +166,9 @@ class GlobalUsersPager extends AlphabeticPager {
 					[ 'ggr_set=ws_id', 'ggr_group' => array_unique( $globalGroups ) ],
 					__METHOD__
 			);
-			// Make an array of locally enabled wikisets
+			// Make an array with all groups that are locally disabled with a wikiset
 			foreach ( $wsQuery as $wsRow ) {
-				if ( WikiSet::newFromRow( $wsRow )->inSet() ) {
+				if ( !WikiSet::newFromRow( $wsRow )->inSet() ) {
 					$this->localWikisets[] = $wsRow->ggr_group;
 				}
 			}
@@ -199,30 +228,52 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
-	 * Note: Works only for users with $this->globalIDGroups set
+	 * Note: Works only for users with $this->groupsMemberships set
 	 *
 	 * @param string $id
 	 * @param string $username
 	 * @return string
+	 * @throws MWException
 	 */
 	protected function getUserGroups( $id, $username ) {
-		$rights = [];
-		foreach ( $this->globalIDGroups[$id] as $group ) {
-			$wikitextLink = UserGroupMembership::getLink(
-				$group, $this->getContext(), 'wiki', $username );
+		// As done in core, store expiring global groups separately, so we can place them before
+		// non-expiring global groups in the list. This is to avoid the ambiguity of something like
+		// "administrator, bureaucrat (until X date)"
+		$permGroups = $tempGroups = [];
+		$uiLanguage = $this->getContext()->getLanguage();
+		$uiUser = $this->getContext()->getUser();
 
-			if ( !in_array( $group, $this->localWikisets ) ) {
-				// Mark if the group is not applied on this wiki
-				$rights[] = Html::rawElement( 'span',
-					[ 'class' => 'groupnotappliedhere' ],
-					$wikitextLink
-				);
+		foreach ( $this->groupsMemberships[$id] as $group => $ugm ) {
+			$wikitextLink = UserGroupMembership::getLink(
+				$ugm->getGroup(), $this->getContext(), 'wiki', $username );
+			if ( $ugm->getExpiry() !== 'null' ) {
+				$expiryDT = $uiLanguage->userTimeAndDate( $ugm->getExpiry(), $uiUser );
+				$expiryMsg = $this->getContext()->msg(
+						'group-membership-link-with-expiry' )->params( $wikitextLink, $expiryDT
+				)->text();
+				if ( in_array( $ugm->getGroup(), $this->localWikisets ) ) {
+					// Mark if the group is not applied on this wiki
+					$tempGroups[] = Html::rawElement( 'span',
+						[ 'class' => 'groupnotappliedhere' ],
+						$expiryMsg
+					);
+				} else {
+					$tempGroups[] = $expiryMsg;
+				}
 			} else {
-				$rights[] = $wikitextLink;
+				if ( in_array( $ugm->getGroup(), $this->localWikisets ) ) {
+					// Mark if the group is not applied on this wiki
+					$permGroups[] = Html::rawElement( 'span',
+						[ 'class' => 'groupnotappliedhere' ],
+						$wikitextLink
+					);
+				} else {
+					$permGroups[] = $wikitextLink;
+				}
 			}
 		}
 
-		return $this->getLanguage()->listToText( $rights );
+		return $this->getLanguage()->listToText( array_merge( $tempGroups, $permGroups ) );
 	}
 
 	/**
