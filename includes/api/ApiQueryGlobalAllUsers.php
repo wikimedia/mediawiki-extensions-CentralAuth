@@ -135,6 +135,9 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		if ( isset( $prop['groups'] ) && $result->numRows() ) {
 			$groupsOfUser = $this->getGlobalGroups( $result, $dir );
 		}
+		if ( isset( $prop['groupmemberships'] ) && $result->numRows() ) {
+			$ggp = $this->getGlobalGroups( $result, $dir );
+		}
 
 		$data = [];
 		$previousName = '';
@@ -155,14 +158,34 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			$entry['name'] = $row->gu_name;
 
 			$user = null;
+			$vals = [];
 
 			if ( isset( $prop['groups'] ) ) {
 				if ( !empty( $groupsOfUser[$row->gu_id] ) ) {
-					$entry['groups'] = $groupsOfUser[$row->gu_id];
+					$vals['ggmemberships'] = [];
+					foreach ( $groupsOfUser[$row->gu_id] as $groupRow ) {
+						$vals['ggmemberships'] [] = $groupRow->getGroup();
+					}
+					$entry['groups'] = $vals['ggmemberships'];
 				} else {
 					$entry['groups'] = [];
 				}
 				$this->getResult()->setIndexedTagName( $entry['groups'], 'group' );
+			}
+			if ( isset( $prop['groupmemberships'] ) ) {
+				if ( !empty( $ggp[$row->gu_id] ) ) {
+					$vals['gMembership'] = [];
+					foreach ( $ggp[$row->gu_id] as $groupRow ) {
+						$vals['gMembership'] [] = [
+							'group' => $groupRow->getGroup(),
+							'expiry' => ApiResult::formatExpiry( $groupRow->getExpiry() ),
+						];
+					}
+					$entry['groupmemberships'] = $vals['gMembership'];
+				} else {
+					$entry['groupmemberships'] = [];
+				}
+				$this->getResult()->setIndexedTagName( $entry['groupmemberships'], 'globalgroups' );
 			}
 
 			if ( isset( $prop['existslocally'] ) && $row->lu_wiki != null ) {
@@ -197,7 +220,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		$groupsOfUser = [];
 
 		$this->addTables( [ 'globaluser', 'global_user_groups' ] );
-		$this->addFields( [ 'gug_user', 'gug_group' ] );
+		$this->addFields( [ 'gug_user', 'gug_group', 'gug_expiry' ] );
 
 		$result->seek( 0 );
 		$firstUser = $result->fetchObject()->gu_name;
@@ -225,7 +248,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				$groupsOfUser[$groupRow->gug_user] = [];
 			}
 
-			$groupsOfUser[$groupRow->gug_user][] = $groupRow->gug_group;
+			$groupsOfUser[$groupRow->gug_user][] = new UserGroupMembership(
+				0, $groupRow->gug_group, $groupRow->gug_expiry );
 		}
 
 		return $groupsOfUser;
@@ -257,6 +281,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				ApiBase::PARAM_TYPE => [
 					'lockinfo',
 					'groups',
+					'groupmemberships',
 					'existslocally'
 				]
 			],
@@ -275,7 +300,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		return [
 			'action=query&list=globalallusers'
 				=> 'apihelp-query+globalallusers-example-1',
-			'action=query&list=globalallusers&agufrom=ABC&aguprop=lockinfo|groups|existslocally'
+			'action=query&list=globalallusers&agufrom=ABC&' .
+				'aguprop=lockinfo|groups|globalgroupmemberships|existslocally'
 				=> 'apihelp-query+globalallusers-example-2',
 		];
 	}
