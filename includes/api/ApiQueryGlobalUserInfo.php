@@ -56,6 +56,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		// Add basic info
 		$result = $this->getResult();
 		$data = [];
+		$vals = [];
 		$userExists = $user->exists();
 
 		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE ||
@@ -84,6 +85,20 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$groups = $user->getGlobalGroups();
 			$result->setIndexedTagName( $groups, 'g' );
 			$result->addValue( [ 'query', $this->getModuleName() ], 'groups', $groups );
+		}
+		if ( $userExists && isset( $prop['groupmemberships'] ) ) {
+			$groupsExp = $user->getGroupMemberships();
+			$vals['globalgroupmemberships'] = [];
+			foreach ( $groupsExp as $group => $groupMembership ) {
+				$vals['globalgroupmemberships'][] = [
+					'group' => $group,
+					'expiry' => ApiResult::formatExpiry( $groupMembership->getExpiry() ),
+				];
+			}
+			$result->setIndexedTagName( $vals['globalgroupmemberships'], 'ggm' );
+			$result->addValue(
+				[ 'query', $this->getModuleName() ], 'groupmemberships', $vals['globalgroupmemberships']
+			);
 		}
 		if ( $userExists && isset( $prop['rights'] ) ) {
 			$rights = $user->getGlobalRights();
@@ -181,6 +196,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			'prop' => [
 				ApiBase::PARAM_TYPE => [
 					'groups',
+					'groupmemberships',
 					'rights',
 					'merged',
 					'unattached',
