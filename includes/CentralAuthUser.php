@@ -31,7 +31,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	private $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked;
 	private $mAttachedList, $mAuthenticationTimestamp, $mGroups, $mRights, $mPassword, $mAuthToken;
 	private $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
-	private $mBeingRenamed, $mBeingRenamedArray;
+	private $mBeingRenamed, $mBeingRenamedArray, $mGroupsExp;
 	protected $mAttachedInfo;
 	/** @var int */
 	protected $mCasToken = 0;
@@ -393,8 +393,9 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		$res = $db->select(
 			[ 'global_group_permissions', 'global_user_groups' ],
-			[ 'ggp_permission', 'ggp_group' ],
-			[ 'ggp_group=gug_group', 'gug_user' => $this->getId() ],
+			[ 'ggp_permission', 'ggp_group', 'gug_expiry' ],
+			[ 'ggp_group=gug_group', 'gug_user' => $this->getId(), 'gug_expiry IS NULL OR gug_expiry >= '
+				. $db->addQuotes( $db->timestamp() ) ],
 			__METHOD__
 		);
 
@@ -420,6 +421,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			$set = isset( $sets[$row->ggp_group] ) ? $sets[$row->ggp_group] : '';
 			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getID() : false ];
 			$groups[$row->ggp_group] = 1;
+			$this->mGroupsExp[$row->ggp_group] = $row->gug_expiry;
 		}
 
 		$this->mRights = $rights;
@@ -2785,6 +2787,15 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	/**
 	 * @return array
 	 */
+	public function getGlobalexpGroups() {
+		$this->loadGroups();
+
+		return $this->mGroupsExp;
+	}
+
+	/**
+	 * @return array
+	 */
 	function getGlobalRights() {
 		$this->loadGroups();
 
@@ -2826,28 +2837,51 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param string[]|string $groups
+	 * * Add a valid Global group in the global_user_groups table.
+	 *
+	 * @throws MWException
+	 * @param string $group Valid GlobalGroup to add
+	 * @param string|null $expiry Timestamp of expiry in TS_MW format, or null if no expiry
 	 * @return void
 	 */
-	function addToGlobalGroups( $groups ) {
+	public function addToGlobalGroup( $group, $expiry = null ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
+		$allGroups = self::availableGlobalGroups();
+		$expiry = wfTimestampOrNull( TS_MW, $expiry );
 
-		if ( !is_array( $groups ) ) {
-			$groups = [ $groups ];
+		// Check that $group is a valid GlobalGroup
+		if ( !in_array( $group, $allGroups ) ) {
+			throw new UnexpectedValueException(
+				"The global group \"$group\" does not exist" );
 		}
 
 		$insert_rows = [];
-		foreach ( $groups as $group ) {
-			$insert_rows[] = [ 'gug_user' => $this->getId(), 'gug_group' => $group ];
+		$ugm = new UserGroupMembership( $this->getId(), $group, $expiry );
+
+		// Check $expiry
+		if ( is_null( $expiry ) || ( $expiry && !$ugm->isExpired() ) ) {
+			$insert_rows[] = [
+				'gug_user' => $this->getId(),
+				'gug_group' => $group,
+				'gug_expiry' => $expiry
+			];
+		} elseif ( $ugm->isExpired() ) {
+			throw new UnexpectedValueException(
+				"The expiry time for group \"$group\" is in the past." );
+		} else {
+			throw new UnexpectedValueException(
+				"The expiry time for group \"$group\" is invalid." );
 		}
 
-		# Replace into the DB
-		$dbw->replace( 'global_user_groups',
-			[ 'gug_user', 'gug_group' ],
-			$insert_rows, __METHOD__ );
+			# Replace into the DB
+			$dbw->replace( 'global_user_groups',
+				[ 'gug_user', 'gug_group', 'gug_expiry' ],
+				$insert_rows, __METHOD__ );
 
-		$this->invalidateCache();
+			CentralAuthUtils::purgeExpired();
+
+			$this->invalidateCache();
 	}
 
 	/**

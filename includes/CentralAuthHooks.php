@@ -3,6 +3,7 @@
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\ResultWrapper;
+use MediaWiki\MediaWikiServices;
 
 class CentralAuthHooks {
 
@@ -1479,15 +1480,43 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * UserGroupsChanged hook handler
+	 * Cleans up global_user_groups table when local groups are changed
+	 */
+	public static function onUserGroupsChanged() {
+		CentralAuthUtils::purgeExpired();
+	}
+
+	/**
 	 * Create databases for WMF Jenkins unit tests
 	 * @param DatabaseUpdater $updater
 	 * @return true
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		global $wgWikimediaJenkinsCI;
+		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {
 			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
+		} else {
+			$dir = dirname( __DIR__ );
+
+			// Avoid running this code again when calling CentralAuthUpdater::newForCentralAuthUpdaterDB
+			static $hasRunOnce = false;
+			if ( $hasRunOnce ) {
+				return true;
+			} else {
+				$hasRunOnce = true;
+			}
+
+			$services = MediaWikiServices::getInstance();
+			$loadBalancer = $services->getDBLoadBalancer();
+			$centralDb = $loadBalancer->getConnection( DB_MASTER, [], $wgCentralAuthDatabase );
+			$centralDbUpdater = CentralAuthUpdater::newForCentralAuthUpdaterDB(
+				$updater->getDB(), $centralDb );
+			$centralDbUpdater->addExtensionUpdate( [ 'addField', 'global_user_groups', 'gug_expiry',
+				"$dir/db_patches/patch-gug_expiry.sql", true ] );
+			$updater->addExtensionUpdate(
+				[ [ CentralAuthUpdater::class, 'realDoUpdates' ], $centralDbUpdater ] );
 		}
 
 		return true;
