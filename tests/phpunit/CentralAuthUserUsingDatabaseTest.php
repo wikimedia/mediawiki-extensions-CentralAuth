@@ -211,6 +211,75 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
+	 * @covers CentralAuthUser::getGlobalexpGroups
+	 * @covers CentralAuthUtils::purgeExpired
+	 * @covers CentralAuthUser::addToGlobalGroups
+	 */
+	public function testgetGlobalexpGroups() {
+		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
+		$this->assertSame( true, $caUser->exists() );
+
+		$SGGP = new SpecialGlobalGroupPermissions();
+		$SGGP->grantRightsToGroup( 'permfoogroup', 'dummyright' );
+		$SGGP->grantRightsToGroup( 'foogroup', 'dummyright' );
+		$SGGP->grantRightsToGroup( 'fooexpired', 'dummyright' );
+		$caUser->addToGlobalGroups( 'permfoogroup', null );
+		$caUser->addToGlobalGroups( 'foogroup', '29991128122813' );
+
+		// Force an exipred right via AddToGlobalGroups
+		$caUser->addToGlobalGroups( 'fooexpired', '20011128122813' );
+
+		// Check that expired row doesn't exist in the DB
+		$this->assertSelect(
+			'global_user_groups',
+			[ 'gug_user', 'gug_group', 'gug_expiry' ],
+			[ 'gug_user' => $caUser->getid(),
+				'gug_expiry' . '<' . $this->db->addQuotes( $this->db->timestamp( time() ) )
+			],
+			[]
+		);
+		// Simulate an expired group and check if it exist
+		$this->db->replace( 'global_user_groups',
+			[ 'gug_user', 'gug_group', 'gug_expiry' ],
+			[ 'gug_user' => $caUser->getid(),
+				'gug_group' => 'fooexpired',
+				'gug_expiry' => '20011128122813'
+			],
+			__METHOD__
+		);
+		$this->assertSelect(
+			'global_user_groups',
+			[ 'gug_user', 'gug_group', 'gug_expiry' ],
+			[ 'gug_user' => $caUser->getid(),
+				'gug_expiry' . '<' . $this->db->addQuotes( $this->db->timestamp( time() ) )
+			],
+			[
+				[ $caUser->getid(), 'fooexpired', '20011128122813' ]
+			]
+		);
+		// Load global groups
+		$cagroup = $caUser->getGlobalexpGroups();
+		// Permanent global group
+		$this->assertnull( $cagroup[ 'permfoogroup' ] );
+		// Expired group is not loaded by getGlobalexpGroups
+		$this->assertSame( true, empty( $cagroup[ 'fooexpired' ] ) );
+		// Non expired global group
+		$this->assertEquals( '29991128122813', $cagroup[ 'foogroup' ] );
+
+		// Than delete expired row
+		CentralAuthUtils::purgeExpired();
+		// Exipired row deleted?
+		$this->assertSelect(
+			'global_user_groups',
+			[ 'gug_user', 'gug_group', 'gug_expiry' ],
+			[ 'gug_user' => $caUser->getid(),
+				'gug_expiry' . '<' . $this->db->addQuotes( $this->db->timestamp( time() ) )
+			],
+			[]
+		);
+	}
+
+	/**
 	 * Setup a fresh set of global users for each test.
 	 * Note: MediaWikiTestCase::resetDB() will delete all tables between
 	 * test runs, so no explicite tearDown() is needed.
