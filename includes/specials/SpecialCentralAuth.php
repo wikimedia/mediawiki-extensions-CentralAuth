@@ -358,10 +358,20 @@ class SpecialCentralAuth extends SpecialPage {
 		$groups = $globalUser->getGlobalGroups();
 		if ( $groups ) {
 			$groups = array_map( function ( $group ) {
+				$uiLanguage = $this->GetContext()->getLanguage();
+				$uiUser = $this->GetContext()->getUser();
+				$expiryGroups = $this->mGlobalUser->getGlobalexpGroups();
+				$expiry = '';
+				if ( $expiryGroups[ $group ] ) {
+					$expirycurrentgr = $expiryGroups[$group];
+					$expiryDT = $uiLanguage->userTimeAndDate( $expirycurrentgr, $uiUser );
+					$expiry = ' ' . $this->getContext()->msg(
+						'group-membership-link-with-expiry' )->params( null, $expiryDT )->text();
+				}
 				return $this->getLinkRenderer()->makeLink(
 					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
 					UserGroupMembership::getGroupName( $group )
-				);
+				) . $expiry;
 			}, $groups );
 			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
 		}
