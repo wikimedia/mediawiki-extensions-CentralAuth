@@ -36,11 +36,16 @@ class ApiGlobalUserRights extends ApiUserrights {
 
 	/** @inheritDoc */
 	protected function getExamplesMessages() {
-		return [
-			'action=userrights&user=FooBot&add=bot&remove=sysop|bureaucrat&token=123ABC'
+		$a = [
+			'action=globaluserrights&user=FooBot&add=bot&remove=sysop|bureaucrat&token=123ABC'
 				=> 'apihelp-globaluserrights-example-1',
-			'action=userrights&userid=123&add=bot&remove=sysop|bureaucrat&token=123ABC'
+			'action=globaluserrights&userid=123&add=bot&remove=sysop|bureaucrat&token=123ABC'
 				=> 'apihelp-globaluserrights-example-2',
 		];
+		if ( $this->getUserRightsPage()->canProcessExpiries() ) {
+			$a['action=globaluserrights&user=SometimeSysop&add=sysop&expiry=1%20month&token=123ABC']
+				= 'apihelp-globaluserrights-example-expiry';
+		}
+		return $a;
 	}
 }
