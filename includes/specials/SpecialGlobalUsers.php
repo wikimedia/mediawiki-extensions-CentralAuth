@@ -11,16 +11,17 @@ class SpecialGlobalUsers extends SpecialPage {
 
 		$pg = new GlobalUsersPager( $this->getContext(), $par );
 		$req = $this->getRequest();
+		$rqGroup = $req->getVal( 'group' );
+		$rqUsername = $wgContLang->ucfirst( $req->getVal( 'username' ) );
 
 		if ( $par ) {
-			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
+			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) && is_null( $rqGroup ) ) {
 				$pg->setGroup( $par );
-			} else {
+			} elseif ( is_null( $rqUsername ) ) {
 				$pg->setUsername( $par );
 			}
 		}
 
-		$rqGroup = $req->getVal( 'group' );
 		if ( $rqGroup ) {
 				$groupTitle = Title::newFromText( $rqGroup );
 				if ( $groupTitle ) {
@@ -28,7 +29,6 @@ class SpecialGlobalUsers extends SpecialPage {
 				}
 		}
 
-		$rqUsername = $wgContLang->ucfirst( $req->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}

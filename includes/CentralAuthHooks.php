@@ -3,6 +3,7 @@
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\ResultWrapper;
+use MediaWiki\MediaWikiServices;
 
 class CentralAuthHooks {
 
@@ -11,7 +12,7 @@ class CentralAuthHooks {
 	 */
 	public static function onRegistration() {
 		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase, $wgDBname, $wgSessionProviders,
-			$wgCentralIdLookupProvider, $wgOverrideCentralIdLookupProvider;
+			$wgCentralIdLookupProvider, $wgOverrideCentralIdLookupProvider, $wgUseCAUserGroupExpiry;
 
 		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
 		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
@@ -30,6 +31,13 @@ class CentralAuthHooks {
 		// already configured otherwise.
 		if ( $wgCentralIdLookupProvider === 'local' && $wgOverrideCentralIdLookupProvider ) {
 			$wgCentralIdLookupProvider = 'CentralAuth';
+		}
+
+		// Global var wgUseCAUserGroupExpiry must be boolean
+		if ( !is_bool( $wgUseCAUserGroupExpiry ) ) {
+			throw new MWException( "Global var \$wgUseCAUserGroupExpiry must be boolean. " .
+				"Find non boolean value \"$wgUseCAUserGroupExpiry\" instead"
+			);
 		}
 	}
 
@@ -1479,15 +1487,44 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * Create databases for WMF Jenkins unit tests
+	 * UserGroupsChanged hook handler
+	 * Cleans up global_user_groups table when local groups are changed
+	 */
+	public static function onUserGroupsChanged() {
+		CentralAuthUtils::purgeExpired();
+	}
+
+	/**
+	 * Create databases for WMF Jenkins unit tests and update CentralAuthDatabase
 	 * @param DatabaseUpdater $updater
 	 * @return true
+	 * @throws MWException
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		global $wgWikimediaJenkinsCI;
+		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {
 			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
+		} else {
+			$dir = dirname( __DIR__ );
+
+			// Avoid running this code again when calling CentralAuthUpdater::newForCentralAuthDB
+			static $hasRunOnce = false;
+			if ( $hasRunOnce ) {
+				return true;
+			} else {
+				$hasRunOnce = true;
+			}
+
+			$services = MediaWikiServices::getInstance();
+			$loadBalancer = $services->getDBLoadBalancer();
+			$centralDB = $loadBalancer->getConnection( DB_MASTER, [], $wgCentralAuthDatabase );
+			$centralDBUpdater = CentralAuthUpdater::newForCentralAuthDB(
+				$updater->getDB(), $centralDB );
+			$centralDBUpdater->addExtensionUpdate( [ 'addField', 'global_user_groups', 'gug_expiry',
+				"$dir/db_patches/patch-gug_expiry.sql", true ] );
+			$updater->addExtensionUpdate(
+				[ [ CentralAuthUpdater::class, 'realDoUpdates' ], $centralDBUpdater ] );
 		}
 
 		return true;

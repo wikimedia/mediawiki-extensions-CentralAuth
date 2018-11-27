@@ -28,7 +28,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return bool
 	 */
 	public function canProcessExpiries() {
-		return false;
+		global $wgUseCAUserGroupExpiry;
+		return $wgUseCAUserGroupExpiry;
 	}
 
 	/**
@@ -139,26 +140,47 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @param User $user
+	 * @param User|CentralAuthGroupMembershipProxy $user
 	 * @param array $oldGroups
 	 * @param array $newGroups
 	 * @param string $reason
 	 * @param array $tags Not currently used
-	 * @param array $oldUGMs Not currently used
-	 * @param array $newUGMs Not currently used
+	 * @param array $oldUGMs Associative array of (group name => UserGroupMembership)
+	 * @param array $newUGMs Associative array of (group name => UserGroupMembership)
+	 * @throws MWException
 	 */
 	protected function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
 		array $tags, array $oldUGMs, array $newUGMs
 	) {
-		$log = new LogPage( 'gblrights' );
+		// make sure $oldUGMs and $newUGMs are in the same order, and serialise
+		// each UGM object to a simplified array
+		$oldUGMs = array_map( function ( $group ) use ( $oldUGMs ) {
+			return isset( $oldUGMs[$group] ) ?
+				parent::serialiseUgmForLog( $oldUGMs[$group] ) :
+			null;
+		}, $oldGroups );
+		$newUGMs = array_map( function ( $group ) use ( $newUGMs ) {
+			return isset( $newUGMs[$group] ) ?
+				parent::serialiseUgmForLog( $newUGMs[$group] ) :
+			null;
+		}, $newGroups );
 
-		$log->addEntry( 'usergroups',
-			$user->getUserPage(),
-			$reason,
-			[
-				$this->makeGroupNameList( $oldGroups ),
-				$this->makeGroupNameList( $newGroups )
-			]
-		);
+		$logEntry = new ManualLogEntry( 'gblrights', 'usergroups' );
+		$logEntry->setPerformer( $this->getUser() );
+		$logEntry->setTarget( $user->getUserPage() );
+		$logEntry->setComment( $reason );
+		$logEntry->setParameters( [
+			'4::oldgroups' => $oldGroups,
+			'5::newgroups' => $newGroups,
+			'oldmetadata' => $oldUGMs,
+			'newmetadata' => $newUGMs,
+		] );
+		$logid = $logEntry->insert();
+
+		if ( count( $tags ) ) {
+			$logEntry->setTags( $tags );
+		}
+
+		$logEntry->publish( $logid );
 	}
 }
