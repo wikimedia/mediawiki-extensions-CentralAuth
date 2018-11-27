@@ -452,7 +452,7 @@
 	"centralauth-rightslog-entry-setchange": "changed wikis in \"$1\": added: $2; removed: $3",
 	"centralauth-rightslog-entry-setnewtype": "changed type of \"$1\" from $2 to $3",
 	"centralauth-rightslog-entry-setrename": "renamed wiki set \"$2\" to \"$1\"",
-	"centralauth-rightslog-entry-usergroups": "changed global group membership for $1 from $2 to $3",
+	"logentry-gblrights-usergroups": "$1 changed global group membership for $3 from $4 to $5",
 	"centralauth-rightslog-header": "This log contains operations on global groups: membership and permissions changes",
 	"centralauth-rightslog-name": "Global rights log",
 	"centralauth-rightslog-set-optin": "opt-in based",

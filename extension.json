@@ -159,7 +159,8 @@
 		"gblrights/setrename": "CentralAuthHooks::onHandleWikiSetLogEntry",
 		"gblrights/setnewtype": "CentralAuthHooks::onHandleWikiSetLogEntry",
 		"gblrights/setchange": "CentralAuthHooks::onHandleWikiSetLogEntry",
-		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry"
+		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry",
+		"gblrights/usergroups": "RightsLogFormatter"
 	},
 	"APIModules": {
 		"deleteglobalaccount": "ApiDeleteGlobalAccount",
@@ -253,7 +254,8 @@
 		"SpecialUsersWhoWillBeRenamed": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
 		"UsersWhoWillBeRenamedPager": "includes/specials/UsersWhoWillBeRenamedPager.php",
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
-		"EmailableUser": "includes/EmailableUser.php"
+		"EmailableUser": "includes/EmailableUser.php",
+		"CentralAuthUpdater": "maintenance/CentralAuthUpdater.php"
 	},
 	"ResourceModules": {
 		"ext.centralauth": {
@@ -362,6 +364,7 @@
 		"UserSaveSettings": "CentralAuthHooks::onUserSaveSettings",
 		"UserSetEmailAuthenticationTimestamp": "CentralAuthHooks::onUserSetEmailAuthenticationTimestamp",
 		"UserGetRights": "CentralAuthHooks::onUserGetRights",
+		"UserGroupsChanged": "CentralAuthHooks::onUserGroupsChanged",
 		"UserIsBot": "CentralAuthHooks::onUserIsBot",
 		"UserIsLocked": "CentralAuthHooks::onUserIsLocked",
 		"UserIsHidden": "CentralAuthHooks::onUserIsHidden",
@@ -443,7 +446,8 @@
 		"CentralAuthUseSlaves": false,
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
-		"CentralAuthOldNameAntiSpoofWiki": false
+		"CentralAuthOldNameAntiSpoofWiki": false,
+		"UseCAUserGroupExpiry": false
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
