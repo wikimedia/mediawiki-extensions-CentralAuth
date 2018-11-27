@@ -211,6 +211,27 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
+	 * @covers CentralAuthUser::getGlobalexpGroups
+	 */
+	public function testgetGlobalexpGroups() {
+		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
+		$this->assertSame( true, $caUser->exists() );
+
+		$SGGP = new SpecialGlobalGroupPermissions();
+		$SGGP->grantRightsToGroup( 'permfoogroup', 'read' );
+		$SGGP->grantRightsToGroup( 'foogroup', 'read' );
+		$SGGP->grantRightsToGroup( 'fooexpired', 'read' );
+		$caUser->addToGlobalGroups( 'permfoogroup', null );
+		$caUser->addToGlobalGroups( 'fooexpired', '20011128122813' );
+		$caUser->addToGlobalGroups( 'foogroup', '29991128122813' );
+
+		$cagroup = $caUser->getGlobalexpGroups();
+		$this->assertnull( $cagroup[ 'permfoogroup' ] );
+		$this->assertSame( true, empty( $cagroup[ 'fooexpired' ] ) );
+		$this->assertEquals( '29991128122813', $cagroup[ 'foogroup' ] );
+	}
+
+	/**
 	 * Setup a fresh set of global users for each test.
 	 * Note: MediaWikiTestCase::resetDB() will delete all tables between
 	 * test runs, so no explicite tearDown() is needed.
