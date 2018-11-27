@@ -7,25 +7,31 @@ class SpecialGlobalUsers extends SpecialPage {
 		parent::__construct( 'GlobalUsers' );
 	}
 
+	/**
+	 * @param string|null $par
+	 */
 	public function execute( $par ) {
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
 		$context = new DerivativeContext( $this->getContext() );
-		$context->setTitle( $this->getPageTitle() ); // Remove subpage
+		// Remove subpage
+		$context->setTitle( $this->getPageTitle() );
 
 		$pg = new GlobalUsersPager( $context, $par );
 		$req = $this->getRequest();
+		$rqGroup = $req->getVal( 'group' );
+		$rqUsername = $contLang->ucfirst( $req->getVal( 'username' ) );
 
 		if ( $par ) {
-			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
+			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) && $rqGroup === null ) {
 				$pg->setGroup( $par );
-			} else {
+			} elseif ( $rqUsername === null ) {
 				$pg->setUsername( $par );
 			}
 		}
 
-		$rqGroup = $req->getVal( 'group' );
 		if ( $rqGroup ) {
 			// XXX This is a horrible hack. We should not use Title for normalization. We need to
 			// prefix the group name so that the first letter doesn't get uppercased.
@@ -33,12 +39,6 @@ class SpecialGlobalUsers extends SpecialPage {
 			if ( $groupTitle ) {
 				$pg->setGroup( ltrim( substr( $groupTitle->getDBkey(), 2 ), '_' ) );
 			}
-		}
-
-		$rqUsername = MediaWikiServices::getInstance()->getContentLanguage()
-			->ucfirst( $req->getVal( 'username' ) );
-		if ( $rqUsername ) {
-			$pg->setUsername( $rqUsername );
 		}
 
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
@@ -50,6 +50,9 @@ class SpecialGlobalUsers extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @return string
+	 */
 	protected function getGroupName() {
 		return 'users';
 	}
