@@ -326,6 +326,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	/**
 	 * @return array
+	 * @throws MWException
 	 */
 	private function getInfoFields() {
 		$globalUser = $this->mGlobalUser;
@@ -355,15 +356,32 @@ class SpecialCentralAuth extends SpecialPage {
 			$attribs['hidden'] = $this->formatHiddenLevel( $globalUser->getHiddenLevel() );
 		}
 
-		$groups = $globalUser->getGlobalGroups();
-		if ( $groups ) {
-			$groups = array_map( function ( $group ) {
-				return $this->getLinkRenderer()->makeLink(
-					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
-					UserGroupMembership::getGroupName( $group )
-				);
-			}, $groups );
-			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
+		$globalGroups = $globalUser->getGroupMembership();
+		if ( $globalGroups ) {
+			// As done in core, store expiring global groups separately, so we can place them before
+			// non-expiring global groups in the list. This is to avoid the ambiguity of something like
+			// "administrator, bureaucrat (until X date)"
+			$permGroups = $tempGroups = [];
+			$uiLanguage = $this->GetContext()->getLanguage();
+			$uiUser = $this->GetContext()->getUser();
+			foreach ( $globalGroups as $group => $groupMembership ) {
+				if ( $groupMembership->getExpiry() ) {
+					$expiryDT = $uiLanguage->userTimeAndDate( $groupMembership->getExpiry(), $uiUser );
+					$expiryMsg = ' ' . $this->getContext()->msg(
+							'group-membership-link-with-expiry' )->params( null, $expiryDT )->text();
+					$tempGroups[] = $this->getLinkRenderer()->makeLink(
+							SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
+							UserGroupMembership::getGroupName( $group )
+						) . $expiryMsg;
+				} else {
+					$permGroups[] = $this->getLinkRenderer()->makeLink(
+							SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
+							UserGroupMembership::getGroupName( $group )
+						);
+				}
+			}
+
+			$attribs['groups'] = $uiLanguage->commaList( array_merge( $tempGroups, $permGroups ) );
 		}
 
 		return $attribs;

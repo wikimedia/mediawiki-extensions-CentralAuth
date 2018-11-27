@@ -99,26 +99,24 @@ class CentralAuthGroupMembershipProxy {
 	 * Replaces User::getGroupMemberships()
 	 * @return UserGroupMembership[] Associative array of (group name => UserGroupMembership object)
 	 */
-	function getGroupMemberships() {
+	public function getGroupMemberships() {
 		$groups = $this->getGroups();
 		return array_combine( $groups, array_map( function ( $group ) {
-			return new UserGroupMembership( $this->getId(), $group );
+			$groupMembership = $this->mGlobalUser->getGroupMembership();
+			return $groupMembership[$group];
 		}, $groups ) );
 	}
 
 	/**
-	 * replaces addUserGroup
+	 * replaces User::addGroup()
 	 * @param string[]|string $group
 	 * @param string|null $expiry
 	 *
 	 * @return bool
+	 * @throws MWException
 	 */
-	function addGroup( $group, $expiry = null ) {
-		if ( $expiry !== null ) {
-			throw new InvalidArgumentException( __METHOD__ . ' cannot process expiries' );
-		}
-
-		$this->mGlobalUser->addToGlobalGroups( $group );
+	public function addGroup( $group, $expiry = null ) {
+		$this->mGlobalUser->addToGlobalGroup( $group, $expiry );
 		return true;
 	}
 
