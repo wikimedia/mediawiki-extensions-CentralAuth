@@ -292,7 +292,7 @@
 	"centralauth-rename-abortlogin": "Sinu kontot nimetatakse parasjagu ümber või ühendatakse. [[Special:GlobalRenameProgress/$1|Vaata seisu]].",
 	"centralauth-rename-alreadyexists": "Soovitud kasutajanimi on juba olemas.",
 	"centralauth-rename-alreadyinprogress": "Selle kasutaja ümbernimetamine juba [[Special:GlobalRenameProgress/$1|käib]].",
-	"centralauth-rename-antispoofconflicts2": "Valitud kasutajanimi on liiga sarnane {{PLURAL:$2|järgmise olemasoleva kasutajanimega|järgmiste olemasolevate kasutajanimedega}}: $1.",
+	"centralauth-rename-antispoofconflicts2": "Valitud kasutajanimi on liiga sarnane {{PLURAL:$2|järgmise olemasoleva kasutajanimega|järgmiste olemasolevate kasutajanimedega}} või enne nime muutmist oli see kellegi teise kasutajanimi: $1.",
 	"centralauth-rename-badusername": "Soovitud kasutajanimi pole sobiv.",
 	"centralauth-rename-cannotself": "Enda nime ei saa muuta.",
 	"centralauth-rename-confirm": "Kas tahad tõesti globaalselt selle konto nime muuta?",
