@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bbabc96c_29cbc4be",
+        "filename": "maintenance/CentralAuthUpdater.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2018-11-30T20:49:23Z",
+      "side": 1,
+      "message": "We do something similar in https://gerrit.wikimedia.org/r/plugins/gitiles/mediawiki/extensions/Cognate/+/master/src/CognateUpdater.php",
+      "parentUuid": "15259582_c02a5ecc",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 48
+      },
+      "revId": "329fdaf4275c29fcd368ec494a55f60bf8f086a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c8dc994_fd7db64a",
         "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
         "patchSetId": 8
