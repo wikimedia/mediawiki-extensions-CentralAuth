@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a04c259_969aafab",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2018-11-30T13:46:05Z",
+      "side": 1,
+      "message": "Can be inlined below.",
+      "range": {
+        "startLine": 1510,
+        "startChar": 15,
+        "endLine": 1510,
+        "endChar": 47
+      },
+      "revId": "be7b0fc00e91c6146634e943815f5be4e511685e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e415491_f24108ee",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1513,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2018-11-30T13:46:05Z",
+      "side": 1,
+      "message": "Maybe just $centralDb?",
+      "range": {
+        "startLine": 1513,
+        "startChar": 3,
+        "endLine": 1513,
+        "endChar": 30
+      },
+      "revId": "be7b0fc00e91c6146634e943815f5be4e511685e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "40f57c5b_04822b85",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1514,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2018-11-30T13:46:05Z",
+      "side": 1,
+      "message": "DB_MASTER is enough",
+      "range": {
+        "startLine": 1514,
+        "startChar": 4,
+        "endLine": 1514,
+        "endChar": 27
+      },
+      "revId": "be7b0fc00e91c6146634e943815f5be4e511685e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2f50418_855ddc2c",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1515,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2018-11-30T13:46:05Z",
+      "side": 1,
+      "message": "And maybe here $centralDbUpdater",
+      "range": {
+        "startLine": 1515,
+        "startChar": 3,
+        "endLine": 1515,
+        "endChar": 22
+      },
+      "revId": "be7b0fc00e91c6146634e943815f5be4e511685e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
