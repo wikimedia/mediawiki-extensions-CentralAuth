@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "979a51ea_0740c308",
+        "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2018-11-30T20:39:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c8dc994_fd7db64a",
+      "range": {
+        "startLine": 218,
+        "startChar": 21,
+        "endLine": 218,
+        "endChar": 22
+      },
+      "revId": "329fdaf4275c29fcd368ec494a55f60bf8f086a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "244f3c8e_7860ac66",
         "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
         "patchSetId": 8
@@ -59,6 +83,30 @@
       "writtenOn": "2018-11-30T13:46:05Z",
       "side": 1,
       "message": "Capital N",
+      "range": {
+        "startLine": 274,
+        "startChar": 15,
+        "endLine": 274,
+        "endChar": 16
+      },
+      "revId": "329fdaf4275c29fcd368ec494a55f60bf8f086a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9756a14c_3aa340b6",
+        "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2018-11-30T20:39:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "244f3c8e_7860ac66",
       "range": {
         "startLine": 274,
         "startChar": 15,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "cc36b4e9_7e9f7415",
+        "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2018-11-30T20:39:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c49ddb4_eae348d0",
+      "range": {
+        "startLine": 286,
+        "startChar": 31,
+        "endLine": 286,
+        "endChar": 32
+      },
+      "revId": "329fdaf4275c29fcd368ec494a55f60bf8f086a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c7cd7ec4_f19e9b1a",
         "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
         "patchSetId": 8
@@ -105,6 +177,30 @@
       "writtenOn": "2018-11-30T13:46:05Z",
       "side": 1,
       "message": "Should be superfluous",
+      "range": {
+        "startLine": 287,
+        "startChar": 69,
+        "endLine": 287,
+        "endChar": 75
+      },
+      "revId": "329fdaf4275c29fcd368ec494a55f60bf8f086a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23b24fbb_668c448f",
+        "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 8
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2018-11-30T20:39:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7cd7ec4_f19e9b1a",
       "range": {
         "startLine": 287,
         "startChar": 69,
