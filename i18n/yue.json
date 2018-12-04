@@ -121,7 +121,7 @@
 	"centralauth-log-header": "呢個日誌包含咗全域戶口嘅動作: 刪除、鎖同解鎖。",
 	"centralauth-log-name": "全域戶口日誌",
 	"centralauth-login-progress": "幫你登入緊去{{int:Centralauth-groupname}}嘅{{PLURAL:$2|wiki}}：",
-	"centralauth-logout-progress": "幫你由{{int:Centralauth-groupname}}嘅{{PLURAL:$2|wiki}}登c出緊：",
+	"centralauth-logout-progress": "幫你由{{int:Centralauth-groupname}}嘅{{PLURAL:$2|wiki}}登出緊：",
 	"centralauth-merge-attempt": "'''檢查緊所輸入嘅密碼，同剩底未合併戶口相對...'''",
 	"centralauth-merge-denied": "對唔住，你無權限去存取呢一版。",
 	"centralauth-merge-dryrun-complete": "全部嘅現行戶口都可以自動噉統一！\n\n你嘅戶口重未有任何嘅改變。",

@@ -396,7 +396,7 @@
 	"centralauth-renameuser-reserved": "Nazwa użytkownika $2 jest zajęta dla konta uniwersalnego.",
 	"centralauth-rightslog-entry-deleteset": "usunął zbiór wiki „$1”",
 	"centralauth-rightslog-entry-groupperms": "zmienił wszędzie uprawnienia $1 ($2 → $3)",
-	"centralauth-rightslog-entry-groupperms2": "zmienił globalnie przynależność $1 do grup: dodano do $2; usunięto z $3",
+	"centralauth-rightslog-entry-groupperms2": "zmienił uprawnienia grupy globalnej $1: przyznano uprawnienia $2; odebrano uprawnienia $3",
 	"centralauth-rightslog-entry-groupperms3": "zmieniona grupa ograniczonych wiki o nazwie $1 z $2 na $3",
 	"centralauth-rightslog-entry-grouprename": "zmieniono nazwę grupy $2 na $1",
 	"centralauth-rightslog-entry-newset": "stworzył zbiór wiki $2 o nazwie $1 zawierający $3",
