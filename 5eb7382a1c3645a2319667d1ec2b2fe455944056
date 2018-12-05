@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3de3be1d_e127330c",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 2856,
+      "author": {
+        "id": 644
+      },
+      "writtenOn": "2018-12-05T01:48:44Z",
+      "side": 1,
+      "message": "A better error message could be \"The global group \\\"$group\\\" does not exist\"",
+      "revId": "5eb7382a1c3645a2319667d1ec2b2fe455944056",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3536e7f8_7e5299d9",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 2873,
+      "author": {
+        "id": 644
+      },
+      "writtenOn": "2018-12-05T01:48:44Z",
+      "side": 1,
+      "message": "This error message doesn\u0027t make sense.",
+      "revId": "5eb7382a1c3645a2319667d1ec2b2fe455944056",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf81bf26_3bf9e760",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 644
+      },
+      "writtenOn": "2018-12-05T01:48:44Z",
+      "side": 1,
+      "message": "When I added similar logic to Special:Preferences I made it so that temporary groups are added to the beginning of the list. See the comment at https://phabricator.wikimedia.org/source/mediawiki/browse/master/includes/preferences/DefaultPreferencesFactory.php$276 for an explanation.",
+      "revId": "5eb7382a1c3645a2319667d1ec2b2fe455944056",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
