@@ -14,7 +14,9 @@
 	"centralauth-editset-usage": "Implouéyé dins chés groupes globals:",
 	"centralauth-login-progress": "Vos ètes logué{{GENDER:||e|(e)}} à chés wikis éd {{int:Centralauth-groupname}} :",
 	"centralauth-rightslog-set-optin": "basé par consintemint ésplicite",
+	"globalgroupmembership": "Aparténanche à chés globals groupes",
 	"globalgrouppermissions": "Anménistrachon des globals groupes",
 	"globalusers": "Lisse des globals uzeus",
-	"mergeaccount": "Étot éd l’unificacion éd l'idintifiant (logache)"
+	"mergeaccount": "Étot éd l’unificacion éd l'idintifiant (logache)",
+	"right-globalgroupmembership": "Modifier chés aparténanche à chés globals groupes"
 }

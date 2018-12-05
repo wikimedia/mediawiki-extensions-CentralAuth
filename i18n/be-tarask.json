@@ -266,6 +266,7 @@
 	"centralauth-readonly": "База зьвестак CentralAuth заблякаваная",
 	"centralauth-readonlytext": "База зьвестак CentralAuth у цяперашні момант заблякаваная ад новых запісаў і іншых зьменаў, верагодна для звычайнага абслугоўваньня базы зьвестак, пасьля якога праца будзе адноўленая.",
 	"centralauth-rename-movelog": "Аўтаматычны перанос старонкі пры перайменаваньні ўдзельніка з «[[Special:CentralAuth/$1|$1]]» у «[[Special:CentralAuth/$2|$2]]»",
+	"centralauth-rename-table-status-done": "Зроблена",
 	"centralauth-renameuser-merged": "Удзельнік $1 перайшоў на глябальную сыстэму ўваходу. Яго перайменаваньне выкліча страту сувязі лякальнага рахунку з глябальным.",
 	"centralauth-renameuser-reserved": "Імя ўдзельніка $2 зарэзэрваванае для глябальнага рахунку.",
 	"centralauth-rightslog-entry-deleteset": "выдалены набор вікі «$1»",
