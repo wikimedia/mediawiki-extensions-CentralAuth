@@ -170,7 +170,7 @@ class GlobalUsersPager extends AlphabeticPager {
 				'id' => 'group',
 				'label-message' => 'group',
 				'options' => $options,
-				'default' => $group == $this->requestedGroup,
+				'default' => $this->requestedGroup,
 			],
 			'descCheck' => [
 				'type' => 'check',
