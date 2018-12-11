@@ -224,8 +224,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 */
 	function buildGroupView( $group ) {
 		$editable = $this->userCanEdit( $this->getUser() );
-
+		$assignedRights = $this->getAssignedRights( $group );
 		$this->getOutput()->addBacklinkSubtitle( $this->getPageTitle() );
+
+		// if the group doesn't exist and the user can not manage the global groups,
+		// an error message should be shown instead of the permission list box.
+		if ( !$assignedRights && !$editable ) {
+			$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
+				[ 'centralauth-editgroup-nonexistent', $group ] );
+			$this->showLogFragment( $group, $this->getOutput() );
+			return;
+		}
 
 		$fieldsetClass = $editable
 			? 'mw-centralauth-editgroup'
@@ -345,10 +354,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		if ( !$editable ) {
 			$attribs['disabled'] = 'disabled';
-			if ( !$assignedRights ) {
-				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
-					[ 'centralauth-editgroup-nonexistent', $group ] );
-			}
 		}
 
 		$rights = User::getAllRights();
