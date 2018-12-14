@@ -1,9 +1,19 @@
 {
 	"@metadata": {
 		"authors": [
-			"Baffo"
+			"Baffo",
+			"MarcoAurelio"
 		]
 	},
+	"centralauth-abortlogin-renamed": "Se cambió el nombre de su cuenta a «$1». Por favor, utilice ese nombre de usuario.",
+	"centralauth-account-exists-reset": "El nombre de usuario $1 no está registrado en este wiki, pero puede restablecer su contraseña en [[Special:CentralAuth/$1|una wiki donde lo esté]].",
+	"centralauth-account-rename-exists": "No se puede crear la cuenta: el nombre de usuario ya se está usando. Por favor, elija otro.",
+	"centralauth-account-unattached-exists": "No se puede crear la cuenta: el nombre de usuario ya se está usando. Por favor, elija otro.",
+	"centralauth-admin-delete-confirm": "¿Confirma que quiere eliminar esta cuenta?",
+	"centralauth-admin-multi-username": "Escriba uno o más nombres de usuario, uno por cada línea",
+	"centralauth-admin-rename-in-progress": "Esta cuenta está siendo renombrada. Puede [[Special:GlobalRenameProgress/$1|ver el progreso]] del cambio de nombre. El registro global del nombre para este usuario se proporciona a continuación.",
+	"centralauth-admin-setstatus-success": "Ha cambiado el estado de esta cuenta global.",
+	"centralauth-admin-status-intro": "Puede usar este formulario para cambiar el estado de esta cuenta global.",
 	"globalrenamerequest-save-error": "No se puede guardar la solicitud. Inténtalo otra vez.",
 	"globalrenamerequest-status-text": "Su petición de cambio de nombre de usuario está actualmente en progreso y en espera de aprobación por un administrador. Usted será notificado por correo electrónico cuando se procesa la solicitud.\n\n;Nombre del usuario actual:\n:$1\n;Nombre de usuario solicitado:\n:$2"
 }
