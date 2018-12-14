@@ -41,13 +41,12 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$formDescriptor = [
 			'user' => [
-				'type' => 'text',
+				'class' => HTMLGlobalUserTextField::class,
 				'name' => 'user',
 				'id' => 'username',
 				'label-message' => 'userrights-user-editname',
 				'size' => 30,
 				'default' => $this->mTarget,
-				'cssclass' => 'mw-autocomplete-global-user'
 			]
 		];
 
