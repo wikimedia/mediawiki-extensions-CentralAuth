@@ -275,7 +275,7 @@
 	"centralauth-rename-form-oldname": "Trenutno korisničko ime",
 	"centralauth-rename-form-reason": "Razlog",
 	"centralauth-rename-movelog": "Automatsko premeštanje stranice zbog preimenovanja korisnika „[[Special:CentralAuth/$1|$1]]“ u „[[Special:CentralAuth/$2|$2]]“",
-	"centralauth-rename-notinprogress": "Nema preimenovanja u toku za $1. Možda je već završeno.",
+	"centralauth-rename-notinprogress": "Nema preimenovanja u toku za korisnika $1. Možda su se već završila.",
 	"centralauth-rename-progress-fieldset": "Spisak lokalnih naloga",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|vidi tok]])",
 	"centralauth-rename-progress-list-header": "Sledeća globalna preimenovanja su u toku:",

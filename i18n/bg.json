@@ -75,6 +75,7 @@
 	"centralauth-admin-status-locked-yes": "Сметката е заключена за редактиране",
 	"centralauth-admin-status-nonexistent": "Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.",
 	"centralauth-admin-status-submit": "Задаване на състояние",
+	"centralauth-admin-title-ro": "Информация за сметката на $1",
 	"centralauth-admin-unattached": "неприкачени",
 	"centralauth-admin-unhide-nonexistent": "Грешка: не съществува глобална сметка „<nowiki>$1</nowiki>“.",
 	"centralauth-admin-unmerge": "Разделяне на избраните",

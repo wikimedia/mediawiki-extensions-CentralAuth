@@ -116,7 +116,7 @@
 	"centralauth-admin-info-attached": "Број на приврзани сметки:",
 	"centralauth-admin-info-editcount": "Вкупно уредувања:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Глобална група|Глобални групи}}:",
-	"centralauth-admin-info-header": "Голобални информации за сметка",
+	"centralauth-admin-info-header": "Информации за глобалната сметка",
 	"centralauth-admin-info-hidden": "Ниво на скриеност:",
 	"centralauth-admin-info-locked": "Заклучен:",
 	"centralauth-admin-info-registered": "Регистриран:",
