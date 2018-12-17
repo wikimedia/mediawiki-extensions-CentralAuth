@@ -391,5 +391,6 @@
 	"right-centralauth-rename": "Omdøb globale kontoer",
 	"right-centralauth-unmerge": "Ophæv fletning af global konto",
 	"right-globalgroupmembership": "Redigere medlemskab i globale grupper",
-	"right-globalgrouppermissions": "Administrere globale grupper"
+	"right-globalgrouppermissions": "Administrere globale grupper",
+	"userswhowillberenamed": "Brugere der vil blive omdøbt"
 }

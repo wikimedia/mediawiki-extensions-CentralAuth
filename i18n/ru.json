@@ -39,7 +39,8 @@
 			"Mouse21",
 			"Wikisaurus",
 			"Stjn",
-			"Vlad5250"
+			"Vlad5250",
+			"Nk88"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника",
@@ -102,6 +103,7 @@
 	"apihelp-query+globaluserinfo-summary": "Показать информацию о глобальном участнике.",
 	"apihelp-query+wikisets-param-orderbyname": "Сортировать результаты по названию.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина смены статуса участника.",
+	"apihelp-setglobalaccountstatus-summary": "Установить глобальный статус пользователя.",
 	"centralauth": "Менеджер глобальной учётной записи",
 	"centralauth-abortlogin-renamed": "Ваш аккаунт был переименован в \"$1\". Пожалуйста, используйте это имя пользователя.",
 	"centralauth-account-exists": "Невозможно создать учётную запись. Запрашиваемое имя уже занято участником другой вики.",
@@ -516,6 +518,7 @@
 	"globalrenamequeue-request-reason": "<strong>Причина запроса переименования</strong>\n:$1",
 	"globalrenamequeue-request-reason-label": "Общедоступный комментарий",
 	"globalrenamequeue-request-reason-sul": "Участник уведомлен о конфликте глобальных имён при подготовке к финализации ЕУЗ.",
+	"globalrenamequeue-request-savefailed": "Ошибка сохранения изменения в статусе запроса.",
 	"globalrenamequeue-request-status-title": "Переименовать с «$1» на «$2»",
 	"globalrenamequeue-request-suppressredirects": "Запретить создание перенаправлений",
 	"globalrenamequeue-request-title": "Переименовать «$1»?",
@@ -580,6 +583,7 @@
 	"right-globalgrouppermissions": "Управление глобальными группами",
 	"sessionprovider-centralauthsessionprovider": "сессий на основе файлов cookie",
 	"sessionprovider-centralauthtokensessionprovider": "сессий centralauthtoken",
+	"sulrenamewarning-authmanager-ok-help": "Продолжить после отображения уведомления о переименовании.",
 	"sulrenamewarning-renamed": "{{GENDER:$1|Ваша}} учётная запись была переименована в '''$2''' в процессе автоматической миграции в систему единой учётной записи {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ваша}} учётная запись была переименована",
 	"sulrenamewarning-usenew": "Пожалуйста, используйте {{GENDER:$1|ваше}} новое имя участника '''$1''' при входе в систему в будущем.",
