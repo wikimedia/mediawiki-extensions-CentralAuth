@@ -200,6 +200,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		if ( $module instanceof ApiMain && $flags ) {
 			$params['centralauthtoken'] = [
 				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_SENSITIVE => true,
 			];
 		}
 		return true;
