@@ -63,6 +63,7 @@
 	"apihelp-query+wikisets-param-from": "'U nome d'a uicchi da addò accumenzà.",
 	"apihelp-query+wikisets-param-limit": "Quanda 'nzieme de uicchi adda turnà.",
 	"apihelp-query+wikisets-param-orderbyname": "Ordene le resultate pe nome.",
+	"apihelp-query+wikisets-summary": "Enumere tutte le 'nzieme de le uicchi.",
 	"apihelp-setglobalaccountstatus-description": "'Mboste 'nu state de l'utende globbale.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cange ce st'utende jè bloccate o none.",
 	"apihelp-setglobalaccountstatus-param-reason": "Mutive pu cange d'u state de l'utende.",

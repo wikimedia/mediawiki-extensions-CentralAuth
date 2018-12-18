@@ -410,6 +410,7 @@
 	"globalusermerge": "ആഗോള ഉപയോക്താവിനെ ലയിപ്പിക്കുക",
 	"globalusermerge-legend": "ആഗോള ഉപയോക്താവിനെ ലയിപ്പിക്കുക",
 	"globalusers": "ആഗോള അംഗങ്ങളുടെ പട്ടിക",
+	"grant-setglobalaccountstatus": "ആഗോള അംഗത്വ സ്ഥിതി കൈകാര്യം ചെയ്യുക",
 	"log-description-gblrename": "ഉപയോക്താക്കളുടെ ആഗോള പുനർനാമകരണത്തിന്റെ വിവരങ്ങൾ ഈ രേഖയിലുണ്ടാകും.",
 	"log-name-gblrename": "ആഗോള പുനർനാമകരണ രേഖ",
 	"logentry-gblrename-merge": "$1, $4 എന്ന ഉപയോക്താവിനെ $5 എന്നതിലേക്ക് ആഗോളമായി {{GENDER:$2|ലയിപ്പിച്ചു}}",
