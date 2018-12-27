@@ -14,6 +14,7 @@
 	"apihelp-globaluserrights-param-remove": "ဤဂလိုဘယ်အုပ်စုများမှ အသုံးပြုသူကို ဖယ်ရှားရန်။",
 	"apihelp-globaluserrights-param-user": "ဂလိုဘယ်အသုံးပြုသူအမည်။",
 	"apihelp-globaluserrights-param-userid": "ဂလိုဘယ်အသုံးပြုသူ အိုင်ဒီ။",
+	"apihelp-query+globalallusers-example-1": "ဂလိုဘယ်အသုံးပြုသူများကို စာရင်းပြုရန်",
 	"apihelp-query+globaluserinfo-summary": "ဂလိုဘယ်အသုံးပြုသူတစ်ဦးအကြောင်း သတင်းအချက်အလက် ပြရန်",
 	"apihelp-query+wikisets-param-orderbyname": "နာမည်အလိုက် ရလဒ်များကို စီရန်။",
 	"centralauth": "ဂလိုဘယ်အကောင့် စီမံသူ",
