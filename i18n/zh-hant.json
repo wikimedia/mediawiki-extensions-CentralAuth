@@ -221,7 +221,7 @@
 	"centralauth-centralautologin-logged-in-nouser": "您已於中央登入。 請重新載入頁面以套用您的使用者設定。",
 	"centralauth-centralautologin-lostsession": "連線階段資料遺失",
 	"centralauth-centralautologin-notposted": "中央登入表單資料必須被傳遞",
-	"centralauth-centralautologin-p3p-explanation": "某些瀏覽器在某些情況下需要使用 [https://www.w3.org/TR/P3P/#compact_policies P3P 壓縮政策]來收發 Cookies，包含涉及的 SUL 登入檢查。 在此情況下，考慮到涉及的所有頁面都位於相同的 Wiki 群組而 P3P 本身大多已過時並不再使用，此跳轉並不必要；幸運的是，連結至此頁的無效政策於瀏覽器的預設設定來說已是「夠好」。\n\n請查看此網站的可供人類閱讀的隱私權政策來確定系統收集的資訊將會如何使用。",
+	"centralauth-centralautologin-p3p-explanation": "某些瀏覽器在某些情況下需要使用[https://www.w3.org/TR/P3P/#compact_policies P3P 壓縮政策]來收發 Cookies，包含涉及的 SUL 登入檢查。 在此情況下，考慮到涉及的所有頁面都位於相同的 Wiki 群組而 P3P 本身大多已過時並不再使用，此跳轉並不必要；幸運的是，連結至此頁的無效政策於瀏覽器的預設設定來說已是「夠好」。\n\n請查看此網站的可供人類閱讀的隱私權政策來確定系統收集的資訊將會如何使用。",
 	"centralauth-complete": "登入整合完成！",
 	"centralauth-complete-text": "您現在不須建立新帳號便可登入至任何 {{int:Centralauth-groupname}} 中的 Wiki 網站。",
 	"centralauth-completelogin-back": "返回上一頁。",
