@@ -31,6 +31,7 @@
 	"apihelp-globaluserrights-param-reason": "Begrundelse for ændringen.",
 	"apihelp-globaluserrights-param-user": "Globalt brugernavn.",
 	"apihelp-query+globaluserinfo-description": "Vis oplysninger om en global bruger.",
+	"apihelp-query+wikisets-param-orderbyname": "Sorter resultaterne efter navn.",
 	"centralauth": "Administration af global konto",
 	"centralauth-account-exists": "Kan ikke oprette konto: Det ønskede brugernavn er allerede taget af en bruger  i det globale loginsystem.",
 	"centralauth-account-exists-reset": "Brugernavnet $1 er ikke registreret lokalt på denne wiki, men du kan nulstille adgangskoden på [[Special:CentralAuth/$1|en wiki hvor det er]].",
