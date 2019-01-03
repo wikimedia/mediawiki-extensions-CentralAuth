@@ -235,7 +235,7 @@
 	"centralauth-editgroup-success-text": "گروه سراسری $1 با موفقیت به‌روز شد.\n[[Special:GlobalGroupPermissions|بازگشت به مدیریت گروه‌ها]]",
 	"centralauth-editset": "مجموعه‌های ویکی",
 	"centralauth-editset-badname": "نام نامجاز یا خالی مجموعه",
-	"centralauth-editset-badtype": "نوع نامجاز مجموعه.",
+	"centralauth-editset-badtype": "نوع نامعتبر مجموعه.",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|ویکی|ویکی‌های}} زیر وجود {{PLURAL:$2|ندارد|ندارند}}: $1.",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-intro-ro": "در پایین فهرست مجموعه‌های ویکی موجود قرار دارد.",
