@@ -130,12 +130,15 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		}
 		ksort( $statuses );
 		$table = Html::openElement( 'table', [ 'class' => 'wikitable sortable' ] );
+		$table .= Html::openElement( 'thead' );
 		$table .= Html::openElement( 'tr' );
 		$table .= Html::element( 'th', [],
 			$this->msg( 'centralauth-rename-table-domain' )->text() );
 		$table .= Html::element( 'th', [],
 			$this->msg( 'centralauth-rename-table-status' )->text() );
 		$table .= Html::closeElement( 'tr' );
+		$table .= Html::closeElement( 'thead' );
+		$table .= Html::openElement( 'tbody' );
 		foreach ( $statuses as $wiki => $status ) {
 			$wikiReference = WikiMap::getWiki( $wiki );
 			if ( !$wikiReference ) {
@@ -152,6 +155,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 				$this->msg( "centralauth-rename-table-status-$status" )->parse() );
 			$table .= Html::closeElement( 'tr' );
 		}
+		$table .= Html::closeElement( 'tbody' );
 		$table .= Html::closeElement( 'table' );
 		$fieldset = Xml::fieldset(
 			$this->msg( 'centralauth-rename-progress-fieldset' )->text(), $table );
