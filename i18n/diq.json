@@ -149,7 +149,7 @@
 	"centralauth-editgroup-success": "İzıné gruber vırneyay",
 	"centralauth-editgroup-success-text": "Global gruba $1 biya rocaniye.\n[[Special:GlobalGroupPermissions|peyser şo eyarandê grube]]",
 	"centralauth-editset": "Kumeyê wiki",
-	"centralauth-editset-badname": "Nameyo veng or nêravêrde",
+	"centralauth-editset-badname": "Nameyê komiya venge ya zi nêvêrdiye.",
 	"centralauth-editset-badtype": "Tîpê seti yê ğeletî.",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Ena wîkî|wîkîyan}} çini yo: $1.",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
