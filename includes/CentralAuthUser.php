@@ -1676,6 +1676,8 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		// Setup Status object to return all of the information for logging
 		if ( $good && ( count( $added ) || count( $removed ) ) ) {
+			$returnStatus->successCount = count( $added ) + count( $removed );
+
 			$added = count( $added ) ?
 				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )
 					->inContentLanguage()->text();
@@ -1683,7 +1685,6 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )
 					->inContentLanguage()->text();
 
-			$returnStatus->successCount = count( $added ) + count( $removed );
 			$returnStatus->success['added'] = $added;
 			$returnStatus->success['removed'] = $removed;
 
