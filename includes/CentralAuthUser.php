@@ -1667,16 +1667,16 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 
 		// Setup Status object to return all of the information for logging
 		if ( $good && ( count( $added ) || count( $removed ) ) ) {
-			$added = count( $added ) ?
+			$addedMsg = count( $added ) ?
 				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )
 					->inContentLanguage()->text();
-			$removed = count( $removed ) ?
+			$removedMsg = count( $removed ) ?
 				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )
 					->inContentLanguage()->text();
 
 			$returnStatus->successCount = count( $added ) + count( $removed );
-			$returnStatus->success['added'] = $added;
-			$returnStatus->success['removed'] = $removed;
+			$returnStatus->success['added'] = $addedMsg;
+			$returnStatus->success['removed'] = $removedMsg;
 
 			$this->logAction(
 				'setstatus',
