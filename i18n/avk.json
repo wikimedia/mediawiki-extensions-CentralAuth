@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Sab",
-			"Wikimistusik"
+			"Wikimistusik",
+			"Axel xadolik"
 		]
 	},
+	"centralauth-admin-blocklog": "munesteks va elekara",
 	"centralauth-admin-info-hidden": "Palsen :",
 	"centralauth-admin-info-locked": "Elekan :",
 	"centralauth-admin-info-registered": "Vertokayan :",
@@ -23,6 +25,7 @@
 	"centralauth-editgroup-fieldset": "Nendaks mu $1 :",
 	"centralauth-editgroup-members": "Bewikeem :",
 	"centralauth-editgroup-name": "Lospayolt :",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|webeks}} dene $2",
 	"centralauth-foreign-link": "$1 favesik moe $2",
 	"centralauth-globalgroupperms-newgroupname": "Yolt ke warzafa lospa :",
 	"centralauth-hours-ago": "Weti $1 {{PLURAL:$1|bartiv|bartiv}}",
@@ -30,6 +33,7 @@
 	"centralauth-list-unattached-title": "Mebenef pateem",
 	"centralauth-listusers-attached": "[[User:$1|lizukon krulder]]",
 	"centralauth-listusers-locked": "elekan",
+	"centralauth-merge-method-login": "reduyun nope dogluyara",
 	"centralauth-merge-step1-submit": "Va dogluyaragivara gruyel !",
 	"centralauth-merge-step2-submit": "Va dogluyaragivara gruyel !",
 	"centralauth-merge-step2-title": "Va lo pata se gruyel !",
