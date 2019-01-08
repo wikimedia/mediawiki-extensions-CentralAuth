@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Iwan Novirion"
+			"Iwan Novirion",
+			"Ardzun"
 		]
 	},
 	"centralauth": "Pangalolaan pangguno global",
@@ -43,11 +44,14 @@
 	"centralauth-desc": "[[Special:MergeAccount|Manggabuangan akun]] linteh wiki {{int:Centralauth-groupname}}",
 	"centralauth-editgroup-noset": "(indak ado)",
 	"centralauth-editset-nouse": "(indak ado)",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|jariah|jariah}} di $2",
+	"centralauth-foreign-link": "Pangguno $1 di $2",
 	"centralauth-groupname": "Yayasan Wikimedia",
 	"centralauth-list-attached": "Akun \"$1\" pado daftar wiki barikuik alah digabuangkan sabagai akun global sacaro otomatis:",
 	"centralauth-log-header": "Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.",
 	"centralauth-login-progress": "Sanak masuak log juo pado {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Sanak kalua log juo pado {{int:Centralauth-groupname}}:",
+	"centralauth-merge-method-login": "dibuek katiko masuak log",
 	"centralauth-prefs-count-attached": "Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.",
 	"centralauth-prefs-manage": "Kalola akun global Sanak",
 	"centralauth-prefs-view": "Caliak info pangguno global",

@@ -31,7 +31,7 @@
 	"apihelp-globaluserrights-description": "Додај/отстрани корисник во/од глобални групи.",
 	"apihelp-globaluserrights-example-1": "Додај го корисникот FooBot во глобалната група „бот“ и отстрани го од глобалните групи „администратор“ и „бирократ“",
 	"apihelp-globaluserrights-example-2": "Додај го глобалниот корисник со назнака 123 во глобалната група „бот“ и отстрани го од глобалните групи „администратор“ и „бирократ“",
-	"apihelp-globaluserrights-param-add": "Стави го корисников во следниве глобални групи.",
+	"apihelp-globaluserrights-param-add": "Стави го корисникот во следниве глобални групи.",
 	"apihelp-globaluserrights-param-expiry": "Параметаров тековно не се користи.",
 	"apihelp-globaluserrights-param-reason": "Причина за промената.",
 	"apihelp-globaluserrights-param-remove": "Отстрани го корисникот од следниве глобални групи.",
