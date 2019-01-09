@@ -127,6 +127,15 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		// First, check normal login
 		$centralUser = CentralAuthUser::getInstanceByName( $username );
+
+		// The secondary provider also checks this. It needs to check this
+		// for non-unified logins, but we also need to check this to show
+		// the right error message for unified logins as in that case the
+		// secondary auth wouldn't run as we would have already failed.
+		if ( $centralUser->canAuthenticate() === 'locked' ) {
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-login-error-locked' ) );
+		}
+
 		$pass = $centralUser->authenticate( $req->password ) === 'ok';
 
 		// See if it's a user affected by a rename, if applicable.
