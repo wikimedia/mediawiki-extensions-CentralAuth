@@ -304,7 +304,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "TitleBlacklist (tiltott kifejezések) figyelmen kívül hagyása",
 	"centralauth-rename-form-reason": "Indoklás",
 	"centralauth-rename-form-suppressredirects": "Átirányítások létrehozásának elrejtése",
-	"centralauth-rename-movelog": "Lap automatikusan átnevezve „[[Special:CentralAuth/$1|$1]]” „[[Special:CentralAuth/$2|$2]]” névre való átnevezése közben",
+	"centralauth-rename-movelog": "Lap automatikusan átnevezve „[[Special:CentralAuth/$1|$1]]” névről „[[Special:CentralAuth/$2|$2]]” névre való átnevezés közben",
 	"centralauth-rename-progress-fieldset": "Helyi fiókok listája",
 	"centralauth-rename-progress-logs-fieldset": "Naplóbejegyzések",
 	"centralauth-rename-progress-username": "Felhasználó",
