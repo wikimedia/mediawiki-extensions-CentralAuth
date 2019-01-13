@@ -10,7 +10,8 @@
 			"Passawuth",
 			"Woraponboonkerd",
 			"Nullzero",
-			"Aefgh39622"
+			"Aefgh39622",
+			"Geonuch"
 		]
 	},
 	"centralauth-admin-bad-input": "การเลือกรวมไม่สมเหตุสมผล",
@@ -136,6 +137,7 @@
 	"centralauth-prefs-view": "ดูสนเทศบัญชีกลาง",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
 	"centralauth-rename-desc": "อนุญาตการเปลี่ยนชื่อบัญชีกลาง",
+	"centralauth-rightslog-entry-grouprename": "เปลี่ยนชื่อกลุ่ม $2 ไปยัง $1",
 	"centralauth-ro": "ข้อมูลบัญชีกลาง",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|วินาที|วินาที}} ที่แล้ว",
 	"centralauth-warning-notloggedin": "คุณยังไม่ได้ล็อกอิน",

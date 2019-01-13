@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cem Rize"
+		]
+	},
+	"centralauth-admin-blocklog": "Bloğiş kʼayitʼi",
+	"centralauth-foreign-contributions": "$2 vikisinde $1 {{PLURAL:$1|katkı|katkı}}",
+	"centralauth-foreign-link": "$2'deki $1 kullanıcısı",
+	"centralauth-merge-method-login": "oturum açarken oluşturuldu"
+}
