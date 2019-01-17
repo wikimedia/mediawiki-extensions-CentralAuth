@@ -77,7 +77,7 @@
 	"apihelp-query+wikisets-param-prop": "Кои информации да се содржат.\n;type: дали е вклучено по избор (само на укажани викија) или исклучено по избор (сите викија освен укажаните).\n;wikisincluded: Викијата што припаѓаат на овој збир.\n;wikisnotincluded: Викијата што не припаѓаат на овој збир.",
 	"apihelp-query+wikisets-summary": "Наброј ги сите збирови викија.",
 	"apihelp-setglobalaccountstatus-description": "Задај глобален кориснички статус",
-	"apihelp-setglobalaccountstatus-example-1": "Заклучи ја слобалната сметка за [[User:Example]] со причината „Спам“",
+	"apihelp-setglobalaccountstatus-example-1": "Заклучи ја глобалната сметка за [[User:Example]] со причината „Спам“",
 	"apihelp-setglobalaccountstatus-example-2": "Отклучи и притај ја глобалната сметка за [[User:Example]] со причината „Можам“",
 	"apihelp-setglobalaccountstatus-param-hidden": "Дали корисников да биде скриен, скриен од списокот на глобални корисници или да биде притаен.",
 	"apihelp-setglobalaccountstatus-param-locked": "Дали корисников да биде заклучен или не.",

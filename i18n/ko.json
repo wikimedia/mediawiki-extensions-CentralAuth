@@ -409,7 +409,7 @@
 	"centralauth-rename-form-reason": "이유",
 	"centralauth-rename-form-suppressredirects": "넘겨주기 만들기를 막기",
 	"centralauth-rename-globaleditcount-threshold": "이 사용자는 {{PLURAL:$1|편집}} $1회 이상 기여하였습니다. 정말로 이 사용자의 이름을 바꾸려고 하고, 시스템 관리자가 이 이름 바꾸기를 감독하고 있는지 확인하세요.",
-	"centralauth-rename-movelog": "님이 이름을 \"[[Special:CentralAuth/$1|$1]]\"에서 \"[[Special:CentralAuth/$2|$2]]\"(으)로 바꾸는 동안 자동으로 문서를 이동함",
+	"centralauth-rename-movelog": "계정 이름을 \"[[Special:CentralAuth/$1|$1]]\"에서 \"[[Special:CentralAuth/$2|$2]]\"(으)로 바꾸는 동안 자동으로 문서를 이동함",
 	"centralauth-rename-notinprogress": "$1님에 대한 진행 중인 이름 바꾸기가 없습니다. 이미 완료되어 있을 수 있습니다.",
 	"centralauth-rename-notinstalled": "Renameuser 확장 기능이 설치되어 있지 않습니다.",
 	"centralauth-rename-progress-fieldset": "로컬 계정의 목록",
