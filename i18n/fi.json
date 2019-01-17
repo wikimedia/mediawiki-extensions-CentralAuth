@@ -22,7 +22,8 @@
 			"01miki10",
 			"Macofe",
 			"Surjection",
-			"Valtlait"
+			"Valtlait",
+			"Pyscowicz"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
@@ -387,7 +388,7 @@
 	"centralauth-prefs-not-managed": "Yhdistämätön tunnus",
 	"centralauth-prefs-status": "Järjestelmänlaajuinen tunnus:",
 	"centralauth-prefs-unattached": "Ei kokonaan yhtenäistetty",
-	"centralauth-prefs-view": "Näytä järjestelmänlaajuiset käyttäjätiedot",
+	"centralauth-prefs-view": "Näytä järjestelmänlaajuiset käyttäjätietosi",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lisätietoja '''yhdistetystä tunnuksesta''']]...''",
 	"centralauth-readonly": "CentralAuth-tietokanta lukittu",
 	"centralauth-readonlytext": "CentralAuth-tietokanta on lukittu eikä merkintöjä voi luoda tai muokata. Kyseessä on todennäköisesti tietokannan rutiiniylläpito, jonka jälkeen tietokanta toimii normaalisti.",
