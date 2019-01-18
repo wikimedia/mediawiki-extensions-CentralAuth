@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Songhay"
+		]
+	},
+	"centralauth-admin-blocklog": "margari taariki",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|kanbuzaama}} $1 $2 ga",
+	"centralauth-foreign-link": "Goykaw $1 $2ga",
+	"centralauth-merge-method-login": "kaŋ tee huruyan waate"
+}
