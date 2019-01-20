@@ -164,6 +164,8 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 		$this->showLogExtract( $newName );
 		$out->addHTML( $fieldset );
+		$out->addModuleStyles( 'jquery.tablesorter.styles' );
+		$out->addModules( 'jquery.tablesorter' );
 		return true;
 	}
 
