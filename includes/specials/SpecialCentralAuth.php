@@ -390,6 +390,8 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 		$this->getOutput()->addHTML( $this->listFooter() );
 		$this->getOutput()->addHTML( Xml::closeElement( 'fieldset' ) );
+		$this->getOutput()->addModuleStyles( 'jquery.tablesorter.styles' );
+		$this->getOutput()->addModules( 'jquery.tablesorter' );
 	}
 
 	/**
