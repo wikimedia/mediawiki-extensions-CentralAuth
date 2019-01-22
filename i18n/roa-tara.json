@@ -68,6 +68,7 @@
 	"apihelp-query+wikisets-param-orderbyname": "Ordene le resultate pe nome.",
 	"apihelp-query+wikisets-summary": "Enumere tutte le 'nzieme de le uicchi.",
 	"apihelp-setglobalaccountstatus-description": "'Mboste 'nu state de l'utende globbale.",
+	"apihelp-setglobalaccountstatus-example-1": "Blocche 'u cunde globbale pe [[User:Example]] cu 'u mutive \"Rummate\"",
 	"apihelp-setglobalaccountstatus-param-locked": "Cange ce st'utende jè bloccate o none.",
 	"apihelp-setglobalaccountstatus-param-reason": "Mutive pu cange d'u state de l'utende.",
 	"apihelp-setglobalaccountstatus-param-user": "Utende da cangià 'u state.",
@@ -484,6 +485,7 @@
 	"globalrenamequeue-request-status-title": "Renomine da \"$1\" a \"$2",
 	"globalrenamequeue-request-suppressredirects": "Scitte 'a ccrejazione de redirezionaminde",
 	"globalrenamequeue-request-title": "Renomene \"$1\"?",
+	"globalrenamequeue-request-titleblacklist": "<strong>'U nome de l'utende scacchiate se accocchie cu le vôsce d'a lista gnore de le titole:</strong> $1",
 	"globalrenamequeue-request-unknown-body": "'A richieste de renomene non ge s'acchiate.",
 	"globalrenamequeue-request-unknown-title": "Richieste non acchiate",
 	"globalrenamequeue-request-userinfo-global": "* utende: [[Special:CentralAuth/$1|$1]]\n* uicchi de partenze: $2\n* nome nuève: [[Special:CentralAuth/$3|$3]]\n* condegge globbale de le cangiaminde: $4",
@@ -514,6 +516,7 @@
 	"globalusermerge": "Scuagghie jndr'à l'utende globbale",
 	"globalusermerge-legend": "Scuagghie jndr'à l'utende globbale",
 	"globalusers": "Elenghe de l'utinde globbale",
+	"grant-setglobalaccountstatus": "Gestisce 'u state d'u cunde globbale",
 	"log-action-filter-gblrights": "Tipe de cangiamende:",
 	"log-action-filter-gblrights-groupprms": "Cangiaminde d'u gruppe utende globbale",
 	"log-action-filter-gblrights-setmodify": "Cangiaminde de 'nzieme de uicchi",
@@ -540,6 +543,8 @@
 	"right-globalgrouppermissions": "Gestisce le gruppe globbale",
 	"sessionprovider-centralauthsessionprovider": "sessiune basate sus a cookie centrali",
 	"sessionprovider-centralauthtokensessionprovider": "sessiune centralauthtoken",
+	"sulrenamewarning-authmanager-ok-help": "Condinue apprisse 'u 'ndrucamende d'a notifeche de renomenazione.",
 	"sulrenamewarning-title": "'U cunde {{GENDER:$1|tune}} ha state renomenate",
+	"sulrenamewarning-usenew": "Pe piacere ause 'u nome utende nuève {{GENDER:$1|tune}} '''$1''' quanne le prosseme vote pruève a trasè.",
 	"userswhowillberenamed": "Utinde ca onna essere renomenate"
 }
