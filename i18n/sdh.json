@@ -1,10 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kurdbuddha"
+			"Kurdbuddha",
+			"Paraw2"
 		]
 	},
+	"centralauth-admin-blocklog": "پێرست بەساێن",
 	"centralauth-admin-no": "نە",
 	"centralauth-admin-yes": "بەڵێ",
-	"centralauth-merge-dryrun-or": "'''یا'''"
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|بەشداری}} لە $2",
+	"centralauth-foreign-link": "ئەوکاربەر $1 لە $2",
+	"centralauth-merge-dryrun-or": "'''یا'''",
+	"centralauth-merge-method-login": "لە کات وەناوچین درس کریاس"
 }
