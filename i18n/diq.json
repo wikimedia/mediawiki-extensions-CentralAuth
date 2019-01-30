@@ -43,7 +43,7 @@
 	"centralauth-admin-blocked2": "Bloqaj, roca $2 de u seate $3 de bıqedi yo.",
 	"centralauth-admin-blocked2-indef": "Hetana heta bloqe bıyo.",
 	"centralauth-admin-blocklog": "qeydê kılitkerdışi",
-	"centralauth-admin-delete-button": "Ena hesab biwedarne",
+	"centralauth-admin-delete-button": "Enê hesabi bestere",
 	"centralauth-admin-delete-confirm": "Şıma raşti wazenê nê hesabi bıesterên?",
 	"centralauth-admin-delete-description": "Besternayışa global hesabi tercihanê globali wedarne no. Hesabanaê lokala zi pêra besteno.\n\nEstena hesaban de lokalan do dewam bıkero.",
 	"centralauth-admin-delete-nonexistent": "Ğelet: hesabê globalî \"<nowiki>$1</nowiki>\" çini yo.",
