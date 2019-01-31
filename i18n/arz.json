@@ -60,7 +60,7 @@
 	"centralauth-editgroup-perms": "الاذونات اللى معاها:",
 	"centralauth-editgroup-reason": "سبب:",
 	"centralauth-editgroup-restrictions": "مجموعة الويكيهات اللى المجموعة دى نشيطة فيها:",
-	"centralauth-editgroup-submit": "احفظ التغييرات اللى على اذونات المجموعة",
+	"centralauth-editgroup-submit": "سييف تغييرات المجموعه الجلوبال",
 	"centralauth-editgroup-success": "اذونات المجموعة اتغيرت",
 	"centralauth-editgroup-success-text": "انت غيرت بنجاح اذونات المجموعة للمجموعة $1.\n[[Special:GlobalGroupPermissions|ارجع لادارة المجموعة]]",
 	"centralauth-editset": "تعديل مجموعات ويكي",
