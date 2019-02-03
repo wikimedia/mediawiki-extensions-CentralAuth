@@ -16,7 +16,7 @@
 	},
 	"centralauth-admin-bad-input": "การเลือกรวมไม่สมเหตุสมผล",
 	"centralauth-admin-blocked-reason": "สาเหตุ: $1",
-	"centralauth-admin-blocklog": "ปูมการบล็อก",
+	"centralauth-admin-blocklog": "รายการบันทึกการบล็อก",
 	"centralauth-admin-delete-button": "ลบบัญชีผู้ใช้นี้",
 	"centralauth-admin-delete-confirm": "คุณต้องการลบบัญชีนี้จริง ๆ หรือไม่",
 	"centralauth-admin-delete-nonexistent": "ผิดพลาด: ไม่มีบัญชีผู้ใช้กลาง \"<nowiki>$1</nowiki>\"",

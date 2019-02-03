@@ -12,7 +12,8 @@
 			"1917 Ekim Devrimi",
 			"Gırd",
 			"Dılmıc",
-			"Macofe"
+			"Macofe",
+			"Orbot707"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global grube ke Karber biyo tewr",
@@ -198,7 +199,7 @@
 	"centralauth-globalgroupperms-creategroup-submit": "desdur bide",
 	"centralauth-globalgroupperms-group": "Grub",
 	"centralauth-globalgroupperms-group-disabled": "(ena wiki de aktiv niya)",
-	"centralauth-globalgroupperms-group-listmembers": "listey ezayan",
+	"centralauth-globalgroupperms-group-listmembers": "lista ezayan",
 	"centralauth-globalgroupperms-group-wikiset": "\nÇa de ena grup aktiv o, setanê wîkî bimucne:$1",
 	"centralauth-globalgroupperms-management": "idare",
 	"centralauth-globalgroupperms-newgroupname": "Nameyê gruba newiye:",
@@ -343,7 +344,7 @@
 	"centralloginsuccesful": "Grêdeya",
 	"globalgroupmembership": "Grubanê globalan de ezabiyayış",
 	"globalgrouppermissions": "İdareyê gruba globale",
-	"globalrenameprogress": "Ravêrdena fına name kerdena Global",
+	"globalrenameprogress": "Ravêrdena reynanamekerdışê globali",
 	"globalrenameprogress-legend": "Asayışê ravêrdena name kerdışê globali",
 	"globalrenamequeue": "Rêza waştena global fına name kerdışi",
 	"globalrenamequeue-action-address": "Timaryayış",
