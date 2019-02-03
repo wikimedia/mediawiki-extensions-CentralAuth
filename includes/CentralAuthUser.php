@@ -2000,7 +2000,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 	protected function matchHash( $plaintext, Password $password ) {
 		$matched = false;
 
-		if ( $password->equals( $plaintext ) ) {
+		if ( $password->verify( $plaintext ) ) {
 			$matched = true;
 		} elseif ( !( $password instanceof Pbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
@@ -2008,7 +2008,7 @@ class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
 			Wikimedia\suppressWarnings();
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
 			Wikimedia\restoreWarnings();
-			if ( $latin1 !== false && $password->equals( $latin1 ) ) {
+			if ( $latin1 !== false && $password->verify( $latin1 ) ) {
 				$matched = true;
 			}
 		}
