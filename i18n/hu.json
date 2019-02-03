@@ -362,6 +362,7 @@
 	"globalgrouppermissions": "Globális csoportok kezelése",
 	"globalrenameprogress": "Globális átnevezés folyamata",
 	"globalrenameprogress-legend": "Globális átnevezés állapotának megtekintése",
+	"globalrenamequeue-action-address": "Ugrás",
 	"globalrenamequeue-action-view": "Megtekintés",
 	"globalrenamequeue-column-row-actions": "Művelet",
 	"globalrenamequeue-column-rq-completed-ts": "Lezárás dátuma",
