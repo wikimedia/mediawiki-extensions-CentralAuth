@@ -37,17 +37,15 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	function switchForm() {
 		global $wgScript;
 
-		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$formDescriptor = [
 			'user' => [
-				'type' => 'text',
+				'class' => HTMLGlobalUserTextField::class,
 				'name' => 'user',
 				'id' => 'username',
 				'label-message' => 'userrights-user-editname',
 				'size' => 30,
 				'default' => $this->mTarget,
-				'cssclass' => 'mw-autocomplete-global-user'
 			]
 		];
 
