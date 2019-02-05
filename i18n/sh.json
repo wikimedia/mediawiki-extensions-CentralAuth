@@ -3,7 +3,8 @@
 		"authors": [
 			"Kolega2357",
 			"OC Ripper",
-			"Conquistador"
+			"Conquistador",
+			"Vlad5250"
 		]
 	},
 	"centralauth": "Globalno upravljanje korisnicima",
@@ -93,6 +94,7 @@
 	"centralauth-rightslog-name": "Evidencija globalnih prava",
 	"centralloginsuccesful": "Prijavljivanje uspješno",
 	"globalrenamequeue-request-cancel-text": "Otkaži",
+	"grant-setglobalaccountstatus": "Upravljanje globalnim korisničkim računima",
 	"mergeaccount": "Stanje objedinjavanja prijave",
 	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama"
