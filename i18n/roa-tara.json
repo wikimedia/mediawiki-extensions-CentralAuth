@@ -511,6 +511,7 @@
 	"globalrenamerequest-email-why-explain": "Tenime abbesogne de 'n'indirizze email duranne stu processe, pe assecurarte de nò perdere l'accese a sta utenze.<br />Puè luà l'indirizze email apprisse ca 'u processe de renomenamende ave spicciate.",
 	"globalrenamerequest-email2-help": "Mitte 'u stesse indirizze email ca è mise sus, pe conferme.",
 	"globalrenamerequest-email2-label": "Conferme 'u 'ndirizze email:",
+	"globalrenamerequest-forced": "'A Wikimedia Foundation ste [[:mw:SUL_finalisation|aunifichesce le nome utinde sua a tutte le pruggette Uicchidate]]. Stu nome utende ha state idendificate cumme ggià ausate sus a otre uicchi de Uicchimedie e adda essere cangiate pe putè combletà sta aunificazione. De conzeguenze, jè necessarie ca a scacchià 'nu nome utende nuève.",
 	"globalrenamerequest-legend": "Richieste de renominamende e unificazzione",
 	"globalrenamerequest-newname-err-invalid": "Non g'è specificate 'nu nome utende valide.",
 	"globalrenamerequest-newname-err-taken": "Nome de l'utende mise jè ggià ausate. Pe piacere scacchie 'n'otre nome.",
