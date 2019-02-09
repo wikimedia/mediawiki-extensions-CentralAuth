@@ -5,25 +5,6 @@ use Psr\Log\LoggerInterface;
 class CentralAuthAntiSpoofHooks {
 
 	/**
-	 * Can be used to cancel user account creation
-	 *
-	 * @param User $user
-	 * @param string &$message
-	 * @return bool true to continue, false to abort user creation
-	 */
-	public static function asAbortNewAccountHook( $user, &$message ) {
-		global $wgAntiSpoofAccounts, $wgUser, $wgRequest;
-
-		$status = self::testNewAccount(
-			$user, $wgUser, $wgAntiSpoofAccounts, $wgRequest->getCheck( 'wpIgnoreAntiSpoof' )
-		);
-		if ( !$status->isGood() ) {
-			$message = Status::wrap( $status )->getMessage()->escaped();
-		}
-		return $status->isGood();
-	}
-
-	/**
 	 * Test if an account is acceptable
 	 * @param User $user
 	 * @param User $creator

@@ -132,24 +132,15 @@ class CentralAuthUtils {
 	 * @return StatusValue
 	 */
 	public static function autoCreateUser( User $user ) {
-		global $wgDisableAuthManager;
-
 		// Ignore warnings about master connections/writes...hard to avoid here
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 
-		if ( !$wgDisableAuthManager ) {
-			$authManager = AuthManager::singleton();
-			$source = CentralAuthPrimaryAuthenticationProvider::class;
-			if ( !$authManager->getAuthenticationProvider( $source ) ) {
-				$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
-			}
-			$sv = $authManager->autoCreateUser( $user, $source, false );
-		} else {
-			$sv = StatusValue::newGood();
-			if ( !SessionManager::autoCreateUser( $user ) ) {
-				$sv->fatal( new RawMessage( 'auto-creation via SessionManager failed' ) );
-			}
+		$authManager = AuthManager::singleton();
+		$source = CentralAuthPrimaryAuthenticationProvider::class;
+		if ( !$authManager->getAuthenticationProvider( $source ) ) {
+			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
 		}
+		$sv = $authManager->autoCreateUser( $user, $source, false );
 
 		\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',

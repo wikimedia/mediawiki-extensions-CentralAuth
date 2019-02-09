@@ -43,7 +43,6 @@ class CentralAuthHooks {
 		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
-		global $wgDisableAuthManager;
 		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		$caBase = __DIR__ . '/..';
 
@@ -75,12 +74,6 @@ class CentralAuthHooks {
 			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
 				"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
-			if ( !class_exists( MediaWiki\Auth\AuthManager::class ) ||
-				!empty( $wgDisableAuthManager )
-			) {
-				$wgHooks['AbortNewAccount'][] =
-					'CentralAuthAntiSpoofHooks::asAbortNewAccountHook';
-			}
 			$wgHooks['LocalUserCreated'][] =
 				'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
 			$wgHooks['RenameUserComplete'][] =
@@ -500,7 +493,7 @@ class CentralAuthHooks {
 	protected static function doCentralLoginRedirect(
 		User $user, CentralAuthUser $centralUser, &$inject_html, $direct
 	) {
-		global $wgCentralAuthLoginWiki, $wgSecureLogin, $wgDisableAuthManager;
+		global $wgCentralAuthLoginWiki, $wgSecureLogin;
 
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
@@ -547,15 +540,8 @@ class CentralAuthHooks {
 					$user->getBoolOption( 'prefershttps' ) );
 			}
 
-			if ( $wgDisableAuthManager ) {
-				// Old login form, look for the checkbox
-				$remember = $request->getCheck( 'wpRemember' );
-				$type = $request->getText( 'type' );
-			} else {
-				// AuthManager login, the session already has the needed value set.
-				$remember = $request->getSession()->shouldRememberUser();
-				$type = $title->isSpecial( 'CreateAccount' ) ? 'signup' : '';
-			}
+			$remember = $request->getSession()->shouldRememberUser();
+			$type = $title->isSpecial( 'CreateAccount' ) ? 'signup' : '';
 
 			// When POSTs triggered from Special:CentralLogin/start are sent back to
 			// this wiki, the token will be checked to see if it was signed with this.
