@@ -132,7 +132,7 @@
 	"centralauth-prefs-count-unattached": "ชื่อผู้ใช้ของคุณยังไม่ได้รับการยืนยันในอีก $1 โครงการ",
 	"centralauth-prefs-manage": "บริหารบัญชีกลางของคุณ",
 	"centralauth-prefs-not-managed": "ไม่ได้ใช้บัญชีกลาง",
-	"centralauth-prefs-status": "สถานะบัญชีผู้ใช้กลาง:",
+	"centralauth-prefs-status": "บัญชีผู้ใช้กลาง:",
 	"centralauth-prefs-unattached": "ไม่ได้รวมอย่างสมบูรณ์",
 	"centralauth-prefs-view": "ดูสนเทศบัญชีกลาง",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
