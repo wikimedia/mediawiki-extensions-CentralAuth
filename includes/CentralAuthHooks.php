@@ -1406,18 +1406,6 @@ class CentralAuthHooks {
 		return true;
 	}
 
-	public static function onResourceLoaderTestModules(
-		array &$testModules, ResourceLoader &$resourceLoader
-	) {
-		$testModules['qunit']['ext.centralauth.ForeignApi.test'] = [
-			'scripts' => [ 'tests/qunit/ext.centralauth.ForeignApi.test.js' ],
-			'dependencies' => [ 'ext.centralauth.ForeignApi' ],
-			'localBasePath' => __DIR__ . '/..',
-			'remoteExtPath' => 'CentralAuth',
-		];
-		return true;
-	}
-
 	/**
 	 * Apply global password policies when calculating the effective policy for
 	 * a user.

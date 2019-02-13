@@ -358,6 +358,12 @@
 		"localBasePath": "modules",
 		"remoteExtPath": "CentralAuth/modules"
 	},
+	"QUnitTestModule": {
+		"localBasePath": "",
+		"remoteExtPath": "CentralAuth",
+		"scripts": "tests/qunit/ext.centralauth.ForeignApi.test.js",
+		"dependencies": "ext.centralauth.ForeignApi"
+	},
 	"callback": "CentralAuthHooks::onRegistration",
 	"Hooks": {
 		"LocalUserCreated": "CentralAuthHooks::onLocalUserCreated",
@@ -394,7 +400,6 @@
 		"SpecialContributionsBeforeMainOutput": "CentralAuthHooks::onSpecialContributionsBeforeMainOutput",
 		"SpecialPage_initList": "CentralAuthHooks::onSpecialPage_initList",
 		"ResourceLoaderForeignApiModules": "CentralAuthHooks::onResourceLoaderForeignApiModules",
-		"ResourceLoaderTestModules": "CentralAuthHooks::onResourceLoaderTestModules",
 		"PasswordPoliciesForUser": "CentralAuthHooks::onPasswordPoliciesForUser",
 		"LoadExtensionSchemaUpdates": "CentralAuthHooks::onLoadExtensionSchemaUpdates",
 		"RenameUserWarning": "CentralAuthHooks::onRenameUserWarning",
