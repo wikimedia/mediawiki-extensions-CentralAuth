@@ -200,7 +200,6 @@
 		"CentralAuthUtils": "includes/CentralAuthUtils.php",
 		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",
 		"CentralAuthSecondaryAuthenticationProvider": "includes/CentralAuthSecondaryAuthenticationProvider.php",
-		"CentralAuthPlugin": "includes/CentralAuthPlugin.php",
 		"CentralAuthHooks": "includes/CentralAuthHooks.php",
 		"CentralAuthSuppressUserJob": "includes/SuppressUserJob.php",
 		"CentralAuthUnattachUserJob": "includes/CentralAuthUnattachUserJob.php",
