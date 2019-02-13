@@ -296,7 +296,7 @@
 	"centralauth-prefs-not-managed": "Не користи се обједињени налог",
 	"centralauth-prefs-status": "Глобални налог:",
 	"centralauth-prefs-unattached": "Није до краја обједињен",
-	"centralauth-prefs-view": "Информације о глобалном налогу",
+	"centralauth-prefs-view": "Прикажи информације о глобалном налогу",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Прочитајте више о '''обједињеним налозима''']]…''",
 	"centralauth-readonly": "База CentralAuth је закључана",
 	"centralauth-rename-abortlogin": "Ваш налог се управо преимењује или спаја. [[Special:GlobalRenameProgress/$1|Погледајте статус]].",
