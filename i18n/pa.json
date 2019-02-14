@@ -7,7 +7,8 @@
 			"TariButtar",
 			"Babanwalia",
 			"ਪ੍ਰਚਾਰਕ",
-			"Jimidar"
+			"Jimidar",
+			"ਗੁਰਪ੍ਰੀਤ ਹੁੰਦਲ"
 		]
 	},
 	"centralauth-abortlogin-renamed": "ਤੁਹਾਡੇ ਖਾਤੇ ਦਾ ਨਾਂ ਬਦਲ ਕੇ \"$1\" ਕਰ ਦਿੱਤਾ ਗਿਆ ਸੀ। ਉਹੀ ਵਰਤੋਂਕਾਰ-ਨਾਂ ਵਰਤੋ ਜੀ।",
@@ -33,8 +34,8 @@
 	"centralauth-complete": "ਲਾਗਇਨ ਯੂਨੀਫਿਕੇਸ਼ਨ ਪੂਰਾ ਹੋਇਆ!",
 	"centralauth-error-locked": "ਤੁਸੀਂ ਸੋਧ ਨਹੀਂ ਸਕਦੇ, ਕਿਉਂਕਿ ਤੁਹਾਡਾ ਅਕਾਊਂਟ ਲਾਕ ਕੀਤਾ ਹੋਇਆ ਹੈ।",
 	"centralauth-finish-login": "ਲਾਗ ਇਨ",
-	"centralauth-finish-password": "ਪਾਸਵਰਡ:",
-	"centralauth-finish-send-confirmation": "ਪਾਸਵਰਡ ਈ-ਮੇਲ ਕਰੋ",
+	"centralauth-finish-password": "ਲੰਘ-ਸ਼ਬਦ:",
+	"centralauth-finish-send-confirmation": "ਲੰਘ-ਸ਼ਬਦ ਈ-ਮੇਲ ਕਰੋ",
 	"centralauth-foreign-contributions": "$2 ਉੱਤੇ $1 {{PLURAL:$1|ਯੋਗਦਾਨ}}",
 	"centralauth-foreign-link": "$2 ਉੱਤੇ ਵਰਤੋਂਕਾਰ $1",
 	"centralauth-groupname": "ਵਿਕਿਪੀਡਿਆ ਫਾਊਂਡੇਸ਼ਨ",
