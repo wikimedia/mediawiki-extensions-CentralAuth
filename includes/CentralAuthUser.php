@@ -16,7 +16,7 @@ use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ResultWrapper;
 
-class CentralAuthUser extends AuthPluginUser implements IDBAccessObject {
+class CentralAuthUser implements IDBAccessObject {
 	/** Cache of loaded CentralAuthUsers */
 	private static $loadedUsers = null;
 
