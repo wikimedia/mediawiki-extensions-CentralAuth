@@ -1,14 +1,14 @@
 <?php
 
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthUserArray {
 
 	/**
-	 * @param ResultWrapper $res
+	 * @param IResultWrapper $res
 	 * @return CentralAuthUserArrayFromResult
 	 */
-	static function newFromResult( ResultWrapper $res ) {
+	static function newFromResult( IResultWrapper $res ) {
 		return new CentralAuthUserArrayFromResult( $res );
 	}
 }

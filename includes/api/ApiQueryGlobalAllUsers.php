@@ -1,7 +1,7 @@
 <?php
 
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * Api module for CentralAuth extension to list all global users.
@@ -184,12 +184,12 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	/**
 	 * Get the global groups for the given global user result set.
 	 *
-	 * @param ResultWrapper $result Result of a globaluser table select
+	 * @param IResultWrapper $result Result of a globaluser table select
 	 * @param string $dir Sorting directory
 	 *
 	 * @return array
 	 */
-	protected function getGlobalGroups( ResultWrapper $result, $dir ) {
+	protected function getGlobalGroups( IResultWrapper $result, $dir ) {
 		$this->resetQueryParams();
 
 		// Get all global groups now. We do this by using a WHERE
