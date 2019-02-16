@@ -2,7 +2,7 @@
 
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthHooks {
 
@@ -675,7 +675,7 @@ class CentralAuthHooks {
 
 	/**
 	 * @param array &$userArray
-	 * @param ResultWrapper $res
+	 * @param IResultWrapper $res
 	 * @return bool
 	 */
 	static function onUserArrayFromResult( &$userArray, $res ) {

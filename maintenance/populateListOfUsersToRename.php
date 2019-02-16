@@ -1,6 +1,6 @@
 <?php
 
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -32,7 +32,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	/**
 	 * Fetches unattached accounts and attempts to continue.
 	 *
-	 * @return ResultWrapper
+	 * @return IResultWrapper
 	 */
 	private function doQuery() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
