@@ -9,6 +9,7 @@ use Wikimedia\ScopedCallback;
  * @ingroup Extensions
  */
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
+	/** @var string */
 	private $loginWiki;
 
 	/** @var Session|null */

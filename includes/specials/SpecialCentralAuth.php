@@ -1,7 +1,16 @@
 <?php
 
 class SpecialCentralAuth extends SpecialPage {
-	private $mUserName, $mCanUnmerge, $mCanLock, $mCanOversight, $mCanEdit;
+	/** @var string */
+	private $mUserName;
+	/** @var bool */
+	private $mCanUnmerge;
+	/** @var bool */
+	private $mCanLock;
+	/** @var bool */
+	private $mCanOversight;
+	/** @var bool */
+	private $mCanEdit;
 
 	/**
 	 * @var CentralAuthUser
@@ -18,7 +27,14 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private $mUnattachedLocalAccounts;
 
-	private $mMethod, $mPosted, $mWikis;
+	/** @var string */
+	private $mMethod;
+
+	/** @var bool */
+	private $mPosted;
+
+	/** @var string[] */
+	private $mWikis;
 
 	public function __construct() {
 		parent::__construct( 'CentralAuth' );

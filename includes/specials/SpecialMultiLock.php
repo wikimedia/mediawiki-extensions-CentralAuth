@@ -8,9 +8,26 @@
  */
 
 class SpecialMultiLock extends SpecialPage {
+	/** @var bool */
 	private $mCanOversight;
-	private $mGlobalUsers, $mUserNames, $mPrefixSearch, $mPosted, $mMethod;
-	private $mActionLock, $mActionHide, $mReason, $mActionUserNames;
+	/** @var string[] */
+	private $mGlobalUsers;
+	/** @var string[]|string|null */
+	private $mUserNames;
+	/** @var string */
+	private $mPrefixSearch;
+	/** @var bool */
+	private $mPosted;
+	/** @var string */
+	private $mMethod;
+	/** @var string */
+	private $mActionLock;
+	/** @var string */
+	private $mActionHide;
+	/** @var string */
+	private $mReason;
+	/** @var string[] */
+	private $mActionUserNames;
 
 	public function __construct() {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
