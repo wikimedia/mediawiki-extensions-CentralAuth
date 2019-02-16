@@ -16,8 +16,10 @@ use MediaWiki\Session\SessionBackend;
  */
 class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider {
 
+	/** @var bool */
 	protected $enable = false;
 
+	/** @var array */
 	protected $centralCookieOptions = [];
 
 	/**

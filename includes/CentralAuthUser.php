@@ -14,10 +14,9 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\ResultWrapper;
 
 class CentralAuthUser implements IDBAccessObject {
-	/** Cache of loaded CentralAuthUsers */
+	/** @var MapCacheLRU Cache of loaded CentralAuthUsers */
 	private static $loadedUsers = null;
 
 	/**
@@ -25,17 +24,57 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @var string
 	 */
 	private $mName;
+	/** @var bool */
 	public $mStateDirty = false;
+	/** @var int */
 	private $mDelayInvalidation = 0;
 
-	private $mAttachedArray, $mEmail, $mEmailAuthenticated, $mHomeWiki, $mHidden, $mLocked;
-	private $mAttachedList, $mAuthenticationTimestamp, $mGroups, $mRights, $mPassword, $mAuthToken;
-	private $mSalt, $mGlobalId, $mFromMaster, $mIsAttached, $mRegistration, $mGlobalEditCount;
-	private $mBeingRenamed, $mBeingRenamedArray;
+	/** @var string[]|null */
+	private $mAttachedArray;
+	/** @var string */
+	private $mEmail;
+	/** @var bool */
+	private $mEmailAuthenticated;
+	/** @var string|null */
+	private $mHomeWiki;
+	/** @var bool */
+	private $mHidden;
+	/** @var bool */
+	private $mLocked;
+	/** @var string[]|null */
+	private $mAttachedList;
+	/** @var string */
+	private $mAuthenticationTimestamp;
+	/** @var string[]|null */
+	private $mGroups;
+	/** @var string[] */
+	private $mRights;
+	/** @var string */
+	private $mPassword;
+	/** @var string */
+	private $mAuthToken;
+	/** @var string */
+	private $mSalt;
+	/** @var int|null */
+	private $mGlobalId;
+	/** @var bool */
+	private $mFromMaster;
+	/** @var bool */
+	private $mIsAttached;
+	/** @var string */
+	private $mRegistration;
+	/** @var int */
+	private $mGlobalEditCount;
+	/** @var string */
+	private $mBeingRenamed;
+	/** @var string[] */
+	private $mBeingRenamedArray;
+	/** @var array|null */
 	protected $mAttachedInfo;
 	/** @var int */
 	protected $mCasToken = 0;
 
+	/** @var string[] */
 	private static $mCacheVars = [
 		'mGlobalId',
 		'mSalt',
@@ -315,7 +354,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
-	 * @param ResultWrapper|object $row
+	 * @param stdClass $row
 	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromMaster
 	 * @return CentralAuthUser
@@ -452,7 +491,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Load user state from a joined globaluser/localuser row
 	 *
-	 * @param ResultWrapper|object|bool $row
+	 * @param stdClass|bool $row
 	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromMaster
 	 */

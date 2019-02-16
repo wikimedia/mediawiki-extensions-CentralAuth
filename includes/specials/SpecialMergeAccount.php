@@ -1,12 +1,19 @@
 <?php
 
 class SpecialMergeAccount extends SpecialPage {
+	/** @var string */
 	protected $mUserName;
+	/** @var bool */
 	protected $mAttemptMerge;
+	/** @var string */
 	protected $mMergeAction;
+	/** @var string */
 	protected $mPassword;
+	/** @var string[] */
 	protected $mWikiIDs;
+	/** @var string */
 	protected $mSessionToken;
+	/** @var string */
 	protected $mSessionKey;
 
 	public function __construct() {

@@ -1,9 +1,13 @@
 <?php
 
 class GlobalUsersPager extends AlphabeticPager {
+	/** @var string|false */
 	protected $requestedGroup = false;
+	/** @var string|false */
 	protected $requestedUser = false;
+	/** @var array[] */
 	protected $globalIDGroups = [];
+	/** @var string[] */
 	private $localWikisets = [];
 
 	public function __construct( IContextSource $context = null, $par = null ) {

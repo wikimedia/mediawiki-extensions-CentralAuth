@@ -8,6 +8,7 @@
  */
 
 class SpecialWikiSets extends SpecialPage {
+	/** @var bool */
 	private $mCanEdit;
 
 	public function __construct() {

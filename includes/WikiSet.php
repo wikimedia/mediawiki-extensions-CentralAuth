@@ -8,11 +8,16 @@ class WikiSet {
 	const OPTOUT = 'optout';
 	const VERSION = 1;
 
-	private $mId;	// ID of the group
-	private $mName;	// Display name of the group
-	private $mType;	// Opt-in based or opt-out based
-	private $mWikis;	// List of wikis
+	/** @var int ID of the group */
+	private $mId;
+	/** @var string Display name of the group */
+	private $mName;
+	/** @var string Opt-in based or opt-out based */
+	private $mType;
+	/** @var string[] List of wikis */
+	private $mWikis;
 
+	/** @var string[] */
 	private static $mCacheVars = [
 		'mId',
 		'mName',
@@ -278,7 +283,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getWikis() {
 		if ( $this->mType == self::OPTIN ) {
