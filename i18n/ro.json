@@ -133,7 +133,7 @@
 	"centralauth-complete": "Unificarea conturilor este completă!",
 	"centralauth-complete-text": "Acum puteți să vă autentificați în orice proiect wiki al {{int:Centralauth-groupname}} fără să vă creați un nou cont.",
 	"centralauth-completelogin-back": "Înapoi la pagina precedentă.",
-	"centralauth-contribs-locked": "Acest cont este blocat la nivel global. Mai multe informații le puteți găsi în [[Special:CentralAuth/$1|detaliile contului global]].",
+	"centralauth-contribs-locked": "Acest cont este blocat la nivel global. Consultați [[Special:CentralAuth/$1|detaliile despre contul global]] pentru mai multe informații.",
 	"centralauth-days-ago": "acum $1 {{PLURAL:$1|zi|zile}}",
 	"centralauth-desc": "[[Special:MergeAccount|Unifică conturi]] între mai multe wikiuri ale Fundației Wikimedia",
 	"centralauth-disabled-dryrun": "Unificarea conturilor este în stare demonstrativă sau de depanare, așa că operațiunea nu este posibilă în acest moment. Ne cerem scuze!",
