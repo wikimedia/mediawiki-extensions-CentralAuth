@@ -133,7 +133,10 @@ class CentralAuthPrimaryAuthenticationProvider
 		// the right error message for unified logins as in that case the
 		// secondary auth wouldn't run as we would have already failed.
 		if ( $centralUser->canAuthenticate() === 'locked' ) {
-			return AuthenticationResponse::newFail( wfMessage( 'centralauth-login-error-locked' ) );
+			return AuthenticationResponse::newFail(
+				wfMessage( 'centralauth-login-error-locked' )
+					->params( wfEscapeWikiText( $centralUser->getName() ) )
+			);
 		}
 
 		$pass = $centralUser->authenticate( $req->password ) === 'ok';
