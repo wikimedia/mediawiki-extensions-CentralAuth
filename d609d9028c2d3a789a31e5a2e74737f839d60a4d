@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "61db08fc_4bdbc3a8",
+        "filename": "i18n/en.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 787
+      },
+      "writtenOn": "2019-02-18T12:48:37Z",
+      "side": 1,
+      "message": "I think it is usually the {{GENDER:$1|You}} which gets gendered, not sure in this case though.",
+      "range": {
+        "startLine": 347,
+        "startChar": 36,
+        "endLine": 347,
+        "endChar": 60
+      },
+      "revId": "d609d9028c2d3a789a31e5a2e74737f839d60a4d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
