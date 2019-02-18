@@ -344,7 +344,7 @@
 	"centralauth-log-status-locked": "locked",
 	"centralauth-log-status-none": "(none)",
 	"centralauth-log-status-oversighted": "suppressed",
-	"centralauth-login-error-locked": "You cannot log in because your account is globally locked.",
+	"centralauth-login-error-locked": "You {{GENDER:$1|cannot}} log in because your account is globally locked.",
 	"centralauth-login-no-others": "You have been automatically logged into other projects of {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Logging you in to {{PLURAL:$2|wiki|wikis}} of {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.",
