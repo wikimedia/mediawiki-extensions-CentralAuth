@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "811da03c_7da5be37",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-02-19T22:13:43Z",
+      "side": 1,
+      "message": "It\u0027s not smart enough to guess \"bool\" from the fact that it\u0027s initialized to false? I thought it was.",
+      "revId": "9b5b2bb4a245b8288989275af4a5cd2444874994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ca947c8_2be9f11f",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-02-19T22:13:43Z",
+      "side": 1,
+      "message": "Why stdClass rather than object?",
+      "range": {
+        "startLine": 357,
+        "startChar": 11,
+        "endLine": 357,
+        "endChar": 19
+      },
+      "revId": "9b5b2bb4a245b8288989275af4a5cd2444874994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
