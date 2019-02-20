@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a4524c51_dc3693bb",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-02-20T19:06:37Z",
+      "side": 1,
+      "message": "Sometimes false is used as init value for lazy loaded properties, sometimes null is used, so having this bool makes is clear, there is no lazy load and it is never an object type.\n\nOn the other hand, I have added @var to all class properties, that also includes simply ones.",
+      "parentUuid": "811da03c_7da5be37",
+      "revId": "9b5b2bb4a245b8288989275af4a5cd2444874994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ca947c8_2be9f11f",
         "filename": "includes/CentralAuthUser.php",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2019-02-19T22:13:43Z",
       "side": 1,
       "message": "Why stdClass rather than object?",
+      "range": {
+        "startLine": 357,
+        "startChar": 11,
+        "endLine": 357,
+        "endChar": 19
+      },
+      "revId": "9b5b2bb4a245b8288989275af4a5cd2444874994",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3229b73_e0f3d6cc",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-02-20T19:06:37Z",
+      "side": 1,
+      "message": "This gets the result from the database and IResultWrapper::current() is documented as stdClass",
+      "parentUuid": "3ca947c8_2be9f11f",
       "range": {
         "startLine": 357,
         "startChar": 11,
