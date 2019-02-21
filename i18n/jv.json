@@ -205,7 +205,7 @@
 	"centralauth-merge-method-admin": "akun kang digabung déning pangurus",
 	"centralauth-merge-method-admin-desc": "Menunjukkan bahwa akun lokal digabungkan secara manual oleh penatalayan.\nFitur tersebut saat ini dinonaktifkan karena alasan keamanan.",
 	"centralauth-merge-method-empty": "ora ana sumbangsihé",
-	"centralauth-merge-method-empty-desc": "Nuduhaké yèn akun lokal digabungaké amarga ora nduwé suntingan.",
+	"centralauth-merge-method-empty-desc": "Nuduhaké yèn akun lokal kagabungaké amarga ora ana besutané.",
 	"centralauth-merge-method-login": "digawé nalika mlebu log",
 	"centralauth-merge-method-login-desc": "Nuduhaké yèn akun lokal dogawé otomatis nalika panganggo mlebu log.",
 	"centralauth-merge-method-mail": "dikonfirmasi lumantar layang-èl",
