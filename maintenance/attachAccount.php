@@ -75,7 +75,6 @@ class AttachAccount extends Maintenance {
 		$this->ok = 0;
 		$this->total = 0;
 		$this->dbBackground = null;
-		$this->batchSize = 1000;
 		$this->dryRun = false;
 		$this->quiet = false;
 
@@ -84,6 +83,7 @@ class AttachAccount extends Maintenance {
 		$this->addOption( 'dry-run', 'Do not update database' );
 		$this->addOption( 'quiet',
 			'Only report database changes and final statistics' );
+		$this->setBatchSize( 1000 );
 	}
 
 	public function execute() {
@@ -106,7 +106,7 @@ class AttachAccount extends Maintenance {
 		while ( strlen( $username = trim( fgets( $file ) ) ) ) {
 		// @codingStandardsIgnoreEnd
 			$this->attach( $username );
-			if ( $this->total % $this->batchSize == 0 ) {
+			if ( $this->total % $this->mBatchSize == 0 ) {
 				$this->output( "Waiting for slaves to catch up ... " );
 				CentralAuthUtils::waitForSlaves();
 				$this->output( "done\n" );

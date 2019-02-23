@@ -41,7 +41,6 @@ class CheckLocalUser extends Maintenance {
 		$this->wiki = null;
 		$this->user = null;
 		$this->verbose = false;
-		$this->batchSize = 1000;
 
 		$this->addOption( 'delete',
 			'Performs delete operations on the offending entries', false, false
@@ -55,6 +54,7 @@ class CheckLocalUser extends Maintenance {
 		$this->addOption( 'allwikis', 'If specified, checks all wikis', false, false );
 		$this->addOption( 'user', 'If specified, only checks the given user', false, true );
 		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
+		$this->setBatchSize( 1000 );
 	}
 
 	protected function initialize() {
@@ -209,7 +209,7 @@ class CheckLocalUser extends Maintenance {
 				],
 				__METHOD__,
 				[
-					"LIMIT" => $this->batchSize,
+					"LIMIT" => $this->mBatchSize,
 					"ORDER BY" => "lu_name ASC"
 				]
 			);
