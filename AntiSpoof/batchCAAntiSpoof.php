@@ -1,7 +1,7 @@
 <?php
 // Go through all usernames and calculate and record spoof thingies
 
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IMaintainableDatabase;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -20,9 +20,9 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 
 	/**
 	 * @param int $db
-	 * @param array $groups
+	 * @param string|string[] $groups
 	 * @param string|bool $wiki
-	 * @return IDatabase
+	 * @return IMaintainableDatabase
 	 */
 	protected function getDB( $db, $groups = [], $wiki = false ) {
 		return CentralAuthUtils::getCentralDB();
