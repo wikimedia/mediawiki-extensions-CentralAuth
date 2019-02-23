@@ -25,10 +25,43 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use Wikimedia\Rdbms\IDatabase;
+
 /**
  * @copyright © 2016 Wikimedia Foundation and contributors.
  */
 class AttachAccount extends Maintenance {
+
+	/** @var int */
+	protected $start;
+
+	/** @var int */
+	protected $missing;
+
+	/** @var int */
+	protected $partial;
+
+	/** @var int */
+	protected $failed;
+
+	/** @var int */
+	protected $attached;
+
+	/** @var int */
+	protected $ok;
+
+	/** @var int */
+	protected $total;
+
+	/** @var IDatabase|null */
+	protected $dbBackground;
+
+	/** @var bool */
+	protected $dryRun;
+
+	/** @var bool */
+	protected $quiet;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

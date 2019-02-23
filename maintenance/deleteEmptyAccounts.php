@@ -7,6 +7,19 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class DeleteEmptyAccounts extends Maintenance {
+
+	/** @var bool */
+	protected $fix;
+
+	/** @var bool */
+	protected $safe;
+
+	/** @var bool */
+	protected $migrate;
+
+	/** @var bool */
+	protected $suppressRC;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

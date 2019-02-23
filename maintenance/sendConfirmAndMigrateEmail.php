@@ -41,6 +41,15 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 */
 	private $resume;
 
+	/** @var int */
+	protected $start;
+
+	/** @var int */
+	protected $sent;
+
+	/** @var int */
+	protected $total;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
