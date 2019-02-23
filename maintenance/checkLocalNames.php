@@ -7,6 +7,25 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalNames extends Maintenance {
+
+	/** @var int */
+	protected $start;
+
+	/** @var int */
+	protected $deleted;
+
+	/** @var int */
+	protected $total;
+
+	/** @var bool */
+	protected $dryrun;
+
+	/** @var string */
+	protected $wiki;
+
+	/** @var bool */
+	protected $verbose;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

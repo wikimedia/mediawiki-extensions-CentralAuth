@@ -11,6 +11,19 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class MigratePass1 extends Maintenance {
+
+	/** @var int */
+	protected $start;
+
+	/** @var int */
+	protected $migrated;
+
+	/** @var int */
+	protected $total;
+
+	/** @var string */
+	protected $fromPrefix;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
