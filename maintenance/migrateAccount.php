@@ -6,7 +6,37 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use Wikimedia\Rdbms\IDatabase;
+
 class MigrateAccount extends Maintenance {
+
+	/** @var int */
+	protected $start;
+
+	/** @var int */
+	protected $partial;
+
+	/** @var int */
+	protected $migrated;
+
+	/** @var int */
+	protected $total;
+
+	/** @var bool */
+	protected $safe;
+
+	/** @var IDatabase|null */
+	protected $dbBackground;
+
+	/** @var bool */
+	protected $autoMigrate;
+
+	/** @var bool */
+	protected $resetToken;
+
+	/** @var bool */
+	protected $suppressRC;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
