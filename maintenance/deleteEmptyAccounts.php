@@ -12,7 +12,6 @@ class DeleteEmptyAccounts extends Maintenance {
 		$this->requireExtension( 'CentralAuth' );
 		$this->mDescription = "Delete all global accounts with no attached local accounts, " .
 			"then attempt to migrate a local account";
-		$this->setBatchSize( 500 );
 		$this->fix = false;
 		$this->safe = false;
 		$this->migrate = false;
@@ -25,6 +24,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$this->addOption( 'safe-migrate', 'Migrate a local account, only if all accounts ' .
 			'can be attached', false, false );
 		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
+		$this->setBatchSize( 500 );
 	}
 
 	public function execute() {

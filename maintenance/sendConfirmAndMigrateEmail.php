@@ -49,7 +49,6 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->start = microtime( true );
 		$this->sent = 0;
 		$this->total = 0;
-		$this->batchSize = 1000;
 
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
@@ -58,6 +57,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			'How long to wait in between emails (default 1 second)', false, true );
 		$this->addOption( 'dryrun', 'Don\'t actually send any emails', false, false );
 		$this->addOption( 'resume', 'Which username to resume after', false, true );
+		$this->setBatchSize( 1000 );
 	}
 
 	public function execute() {
@@ -95,7 +95,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				}
 				$this->resendConfirmationEmail( $username );
 
-				if ( $this->total % $this->batchSize == 0 ) {
+				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
 					if ( !$this->dryrun ) {
 						wfWaitForSlaves( false );

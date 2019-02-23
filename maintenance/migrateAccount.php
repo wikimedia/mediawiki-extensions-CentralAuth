@@ -18,7 +18,6 @@ class MigrateAccount extends Maintenance {
 		$this->total = 0;
 		$this->safe = false;
 		$this->dbBackground = null;
-		$this->batchSize = 1000;
 		$this->autoMigrate = false;
 		$this->resetToken = false;
 		$this->suppressRC = false;
@@ -50,6 +49,7 @@ class MigrateAccount extends Maintenance {
 			'Allows for the reset of auth tokens in certain circumstances', false, false
 		);
 		$this->addOption( 'suppressrc', 'Do not send entries to RC feed', false, false );
+		$this->setBatchSize( 1000 );
 	}
 
 	public function execute() {
@@ -102,7 +102,7 @@ class MigrateAccount extends Maintenance {
 						$this->output( "ERROR: Invalid account specification: '$line'\n" );
 						continue;
 				}
-				if ( $this->total % $this->batchSize == 0 ) {
+				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
 					CentralAuthUtils::waitForSlaves();
 					$this->output( "done\n" );

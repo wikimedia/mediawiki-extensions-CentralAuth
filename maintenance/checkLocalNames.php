@@ -18,7 +18,6 @@ class CheckLocalNames extends Maintenance {
 		$this->dryrun = true;
 		$this->wiki = null;
 		$this->verbose = false;
-		$this->batchSize = 1000;
 
 		$this->addOption( 'delete',
 			'Performs delete operations on the offending entries', false, false
@@ -27,6 +26,7 @@ class CheckLocalNames extends Maintenance {
 			'If specified, only runs against local names from this wiki', false, true, 'u'
 		);
 		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
+		$this->setBatchSize( 1000 );
 	}
 
 	public function execute() {
@@ -88,7 +88,7 @@ class CheckLocalNames extends Maintenance {
 					],
 					__METHOD__,
 					[
-						"LIMIT" => $this->batchSize,
+						"LIMIT" => $this->mBatchSize,
 						"ORDER BY" => "ln_name ASC"
 					]
 				);
