@@ -103,12 +103,6 @@ class SpecialMergeAccount extends SpecialPage {
 			case "attach":
 				$this->doAttachMerge();
 				break;
-			case "remove":
-				$this->doUnattach(); // FIXME: Method is undefined
-				break;
-			default:
-				$this->invalidAction(); // FIXME: Method is undefined
-				break;
 			}
 			return;
 		}
