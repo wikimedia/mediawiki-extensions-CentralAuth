@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5af3b206_500c9fa0",
+        "filename": "AntiSpoof/batchCAAntiSpoof.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-02-24T20:13:19Z",
+      "side": 1,
+      "message": "This is the only direct call. Here only an IDatabase is needed.",
+      "range": {
+        "startLine": 18,
+        "startChar": 44,
+        "endLine": 18,
+        "endChar": 49
+      },
+      "revId": "4072d163ee9d46409e603d1e4aa215c39b6b49c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "885a9223_dbf4882e",
+        "filename": "AntiSpoof/batchCAAntiSpoof.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-02-24T20:13:19Z",
+      "side": 1,
+      "message": "This still returns an IDatabase. Changing the type here jiust by changing the documentation would not be correct, I\u0027m afraid.",
+      "range": {
+        "startLine": 28,
+        "startChar": 27,
+        "endLine": 28,
+        "endChar": 39
+      },
+      "revId": "4072d163ee9d46409e603d1e4aa215c39b6b49c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de3b20d9_f902e505",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-02-24T20:13:19Z",
+      "side": 1,
+      "message": "Here, this is documented to return an IDatabase, not an IMaintainableDatabase.",
+      "range": {
+        "startLine": 45,
+        "startChar": 29,
+        "endLine": 45,
+        "endChar": 38
+      },
+      "revId": "4072d163ee9d46409e603d1e4aa215c39b6b49c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b1be665_65bf5904",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-02-24T20:13:19Z",
+      "side": 1,
+      "message": "And this returns an DBConnRef. This is also not guaranteed to be an IMaintainableDatabase.",
+      "range": {
+        "startLine": 56,
+        "startChar": 58,
+        "endLine": 56,
+        "endChar": 74
+      },
+      "revId": "4072d163ee9d46409e603d1e4aa215c39b6b49c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
