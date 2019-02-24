@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ade6c15_5baf2cee",
+        "filename": "includes/specials/SpecialMergeAccount.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-02-24T20:04:09Z",
+      "side": 1,
+      "message": "I checked all code calling this, and the only \"officially supported\" values this could ever contain are \"dryrun\", \"initial\", \"cleanup\", and \"attach\". These are exactly the ones listed below.\n\nHowever, since this is a value from a user request, it\u0027s possible to pass an unsupported value. The old code crashed in this case. The new code as proposed in patch set 1 silently ignores this error. Can we avoid this and introduce something like `default: throw new InvalidArgumentException( \u0027…\u0027 )`?",
+      "range": {
+        "startLine": 71,
+        "startChar": 2,
+        "endLine": 71,
+        "endChar": 59
+      },
+      "revId": "fc380228bc2e2ea89c8745866a3974f58fc87aab",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
