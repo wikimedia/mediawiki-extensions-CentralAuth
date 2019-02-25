@@ -334,7 +334,7 @@
 	"centralauth-log-entry-lockandhide": "أغلق وأخفى الحساب العام «$1»",
 	"centralauth-log-entry-unhide": "أظهر الحساب العام «$1»",
 	"centralauth-log-entry-unlock": "رفع غلق الحساب العام «$1»",
-	"centralauth-log-gblrename-oldname": "أسم المستخدم السابق :",
+	"centralauth-log-gblrename-oldname": "اسم المستخدم السابق:",
 	"centralauth-log-header": "هذا السجل يحتوي على العمليات تحت الحسابات العامة: عمليات الحذف، الغلق ورفع الغلق.",
 	"centralauth-log-name": "سجل الحساب العام",
 	"centralauth-log-status-hidden": "مخفي",

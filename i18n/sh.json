@@ -96,6 +96,7 @@
 	"globalrenamequeue-request-cancel-text": "Otkaži",
 	"grant-setglobalaccountstatus": "Upravljanje globalnim korisničkim računima",
 	"mergeaccount": "Stanje objedinjavanja prijave",
+	"right-centralauth-usermerge": "Globalno spajanje više korisnika",
 	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama"
 }

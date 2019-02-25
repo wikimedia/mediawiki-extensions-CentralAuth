@@ -136,7 +136,7 @@
 	"centralauth-attach-success": "Tài khoản này được chuyển qua tài khoản hợp nhất.",
 	"centralauth-attach-text": "Tài khoản này chưa được nhập vào tài khoản thống nhất. Nếu tài khoản toàn cục cũng là của bạn, bạn có thể nhập tài khoản này nếu bạn gõ vào mật khẩu của tài khoản chung:",
 	"centralauth-attach-title": "Xác nhận tài khoản",
-	"centralauth-block-already-locked": "Tài khoản [[Special:CentralAuth/$1|$1]] đã được khóa trên toàn cục rồi.",
+	"centralauth-block-already-locked": "Tài khoản [[Special:CentralAuth/$1|$1]] đã bị cấm toàn cục.",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Bạn đã đăng nhập tại wiki đại phương",
 	"centralauth-centralautologin-badparams": "Đã chỉ định tham số xác thực không hợp lệ",
 	"centralauth-centralautologin-badstate": "Trạng thái “$1” không hợp lệ",

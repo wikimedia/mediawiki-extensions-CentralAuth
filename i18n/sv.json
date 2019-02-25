@@ -24,7 +24,8 @@
 			"Fader",
 			"McDutchie",
 			"Aaoo",
-			"Magol"
+			"Magol",
+			"Sturban"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globala grupper som användaren är med i",
@@ -371,14 +372,14 @@
 	"centralauth-prefs-not-managed": "Använder inte gemensamt konto",
 	"centralauth-prefs-status": "Globalt konto:",
 	"centralauth-prefs-unattached": "Inte fullständigt ihopslagen",
-	"centralauth-prefs-view": "Visa global kontoinformation",
+	"centralauth-prefs-view": "Visa din globala kontoinformation",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Läs mer om '''gemensam inloggning''']]...''",
 	"centralauth-readonly": "CentralAuth-databasen låst",
 	"centralauth-readonlytext": "CentralAuth-databasen är för närvarande låst för nya poster och andra förändringar, troligen för rutinmässig databasunderhåll, efter vilket det kommer att vara tillbaka till normalt tillstånd.",
 	"centralauth-rename-abortlogin": "Ditt konto byter just nu namn eller slås ihop. [[Special:GlobalRenameProgress/$1|Se status]].",
 	"centralauth-rename-alreadyexists": "Det begärda användarnamnet finns redan.",
 	"centralauth-rename-alreadyinprogress": "Det är redan ett namnbyte [[Special:GlobalRenameProgress/$1|på gång]] för denna användare.",
-	"centralauth-rename-antispoofconflicts2": "Det valda användarnamnet är för likt {{PLURAL:$2|ett befintligt användarnamn|befintliga användarnamn}}: $1.",
+	"centralauth-rename-antispoofconflicts2": "Det valda användarnamnet är för likt {{PLURAL:$2|ett befintligt användarnamn|befintliga användarnamn}} eller det har varit någon annans användarnamn innan namnändring: $1.",
 	"centralauth-rename-badusername": "Det begärda användarnamnet är ogiltigt.",
 	"centralauth-rename-cannotself": "Du kan inte byta namn på dig själv.",
 	"centralauth-rename-confirm": "Vill du verkligen döpa om denna användare globalt?",
