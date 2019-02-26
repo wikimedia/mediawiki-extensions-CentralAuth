@@ -2223,7 +2223,7 @@ class CentralAuthUser implements IDBAccessObject {
 		foreach ( self::getWikiList() as $wikiID ) {
 			$dbr = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
 			$id = $dbr->selectField(
-				"`$wikiID`.`user`",
+				'user',
 				'user_id',
 				[ 'user_name' => $this->mName ],
 				__METHOD__
