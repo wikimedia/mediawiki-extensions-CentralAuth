@@ -23,6 +23,8 @@ class FixStuckGlobalRename extends Maintenance {
 	}
 
 	public function execute() {
+		global $wgLocalDatabases;
+
 		$oldName = User::getCanonicalName( $this->getArg( 0 ) );
 		$newName = User::getCanonicalName( $this->getArg( 1 ) );
 		if ( $oldName === false || $newName === false ) {
@@ -80,11 +82,14 @@ class FixStuckGlobalRename extends Maintenance {
 			'suppressredirects' => $suppressredirects,
 			'reason' => $comment,
 			'ignorestatus' => $this->getOption( 'ignorestatus', false ),
-			// no way to recover localuser attachment details, faking it
-			'reattach' => [ wfWikiID() => [
+			// No way to recover localuser attachment details, faking it.
+			// $wgLocalDatabases will contain wikis where the user does not have an account.
+			// That's fine, LocalRenameUserJob will only use the one that matches wfWikiID().
+			// FIXME the real attachment info should be saved & restored instead, see T215107
+			'reattach' => array_fill_keys( $wgLocalDatabases, [
 				'attachedMethod' => 'admin',
 				'attachedTimestamp' => wfTimestamp( TS_MW ),
-			] ],
+			] ),
 		];
 		foreach ( $params as $key => $value ) {
 			if ( $key === 'reattach' ) {
