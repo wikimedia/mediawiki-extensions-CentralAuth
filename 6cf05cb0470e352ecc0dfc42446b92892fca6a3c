@@ -22,6 +22,30 @@
       "revId": "6cf05cb0470e352ecc0dfc42446b92892fca6a3c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d6fdb43_f13a7264",
+        "filename": "maintenance/checkLocalUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-02-26T17:52:21Z",
+      "side": 1,
+      "message": "Why wouldn\u0027t we be able to? We\u0027re using it all over the place in MediaWiki core, and https://www.mediawiki.org/wiki/Extension:CentralAuth specifies the \"release branches\" compatibility policy (and anyway specifies MW 1.33 in extension.json).",
+      "parentUuid": "41a22df1_153ad572",
+      "range": {
+        "startLine": 198,
+        "startChar": 31,
+        "endLine": 198,
+        "endChar": 33
+      },
+      "revId": "6cf05cb0470e352ecc0dfc42446b92892fca6a3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
