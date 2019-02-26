@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41a22df1_153ad572",
+        "filename": "maintenance/checkLocalUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-02-26T17:43:38Z",
+      "side": 1,
+      "message": "This operator requires PHP 7.0. I\u0027m not sure we can use it already.",
+      "range": {
+        "startLine": 198,
+        "startChar": 31,
+        "endLine": 198,
+        "endChar": 33
+      },
+      "revId": "6cf05cb0470e352ecc0dfc42446b92892fca6a3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
