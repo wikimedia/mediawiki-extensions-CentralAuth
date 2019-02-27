@@ -70,6 +70,30 @@
       "revId": "6cf05cb0470e352ecc0dfc42446b92892fca6a3c",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "794a9eed_56540a07",
+        "filename": "maintenance/checkLocalUser.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-02-27T18:12:41Z",
+      "side": 1,
+      "message": "HHVM 3.18 allows new PHP7 features even when hhvm.php7.all is false. The only things that are controlled by the setting are behavior changes where correctly-working PHP5 code would break with PHP7.\n\nThere\u0027s a list at https://docs.hhvm.com/hhvm/configuration/INI-settings#php-7-settings, and a summary at T173786#3651007.",
+      "parentUuid": "d1accade_68a40650",
+      "range": {
+        "startLine": 198,
+        "startChar": 31,
+        "endLine": 198,
+        "endChar": 33
+      },
+      "revId": "6cf05cb0470e352ecc0dfc42446b92892fca6a3c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
