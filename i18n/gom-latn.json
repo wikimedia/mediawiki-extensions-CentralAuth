@@ -13,5 +13,6 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minit|mintam}} adim",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mhoino|mhoine}} adim",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second}} adim",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|voros|vorsam}} adim"
+	"centralauth-years-ago": "$1 {{PLURAL:$1|voros|vorsam}} adim",
+	"globalrenamequeue-request-movepages": "Vaporpeachim panam haloi"
 }
