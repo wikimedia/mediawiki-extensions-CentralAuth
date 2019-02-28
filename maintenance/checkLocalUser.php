@@ -195,7 +195,7 @@ class CheckLocalUser extends Maintenance {
 				yield $u->lu_name;
 			}
 
-			$lastUsername = $u->lu_name;
+			$lastUsername = $u->lu_name ?? null;
 		} while ( $result->numRows() > 0 );
 	}
 }
