@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "e5be53c8_877d88c0",
+        "filename": "AntiSpoof/batchCAAntiSpoof.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-03-01T17:13:50Z",
+      "side": 1,
+      "message": "Yes, that is correct. But creating a getCentralMaintainableDatabase with the correct interface seems overkill.\n\nThe parent class is calling this twice, so the override is needed. But the parent class would not needed a maintainable connection - I leave the type and only change the array type",
+      "parentUuid": "885a9223_dbf4882e",
+      "range": {
+        "startLine": 28,
+        "startChar": 27,
+        "endLine": 28,
+        "endChar": 39
+      },
+      "revId": "4072d163ee9d46409e603d1e4aa215c39b6b49c3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "de3b20d9_f902e505",
         "filename": "includes/CentralAuthUtils.php",
         "patchSetId": 1
