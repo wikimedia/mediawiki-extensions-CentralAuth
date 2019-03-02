@@ -22,7 +22,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @param int $db
 	 * @param array $groups
 	 * @param string|bool $wiki
-	 * @return IDatabase
+	 * @return IMaintainableDatabase
 	 */
 	protected function getDB( $db, $groups = [], $wiki = false ) {
 		return CentralAuthUtils::getCentralDB();
