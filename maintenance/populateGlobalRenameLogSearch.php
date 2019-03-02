@@ -54,7 +54,7 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 		$count = count( $rows );
 		$this->output( "Inserting $count rows into log_search\n" );
 		$dbw = wfGetDB( DB_MASTER );
-		$dbw->insert( 'log_search', $rows, __METHOD__, 'IGNORE' );
+		$dbw->insert( 'log_search', $rows, __METHOD__, [ 'IGNORE' ] );
 		wfWaitForSlaves();
 	}
 }

@@ -37,7 +37,7 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		$params = $this->extractRequestParams();
 
 		$prop = array_flip( (array)$params['prop'] );
-		$from = isset( $params['from'] ) ? $params['from'] : null;
+		$from = $params['from'] ?? null;
 
 		$APIResult = $this->getResult();
 		$data = [];

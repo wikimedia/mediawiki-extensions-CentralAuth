@@ -104,9 +104,11 @@ class SpecialMergeAccount extends SpecialPage {
 				$this->doAttachMerge();
 				break;
 			case "remove":
+				// @phan-suppress-next-line PhanUndeclaredMethod
 				$this->doUnattach(); // FIXME: Method is undefined
 				break;
 			default:
+				// @phan-suppress-next-line PhanUndeclaredMethod
 				$this->invalidAction(); // FIXME: Method is undefined
 				break;
 			}
@@ -488,7 +490,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$itemMethods = [];
 		foreach ( $items as $item ) {
-			$itemMethods[] = isset( $methods[$item] ) ? $methods[$item] : '';
+			$itemMethods[] = $methods[$item] ?? '';
 		}
 
 		$html = Xml::openElement( 'ul' ) . "\n";
