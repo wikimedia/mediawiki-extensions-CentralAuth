@@ -104,9 +104,11 @@ class SpecialMergeAccount extends SpecialPage {
 				$this->doAttachMerge();
 				break;
 			case "remove":
+				// @phan-suppress-next-line PhanUndeclaredMethod
 				$this->doUnattach(); // FIXME: Method is undefined
 				break;
 			default:
+				// @phan-suppress-next-line PhanUndeclaredMethod
 				$this->invalidAction(); // FIXME: Method is undefined
 				break;
 			}

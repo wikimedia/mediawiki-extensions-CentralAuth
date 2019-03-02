@@ -101,11 +101,20 @@ class CentralAuthPrimaryAuthenticationProvider
 		return $ret;
 	}
 
-	public function beginPrimaryAuthentication( array $reqs ) {
-		/** @var PasswordAuthenticationRequest $req */
-		$req = AuthenticationRequest::getRequestByClass(
+	/**
+	 * @param array $reqs
+	 * @return PasswordAuthenticationRequest
+	 */
+	private static function getPasswordAuthenticationRequest(
+		array $reqs
+	): PasswordAuthenticationRequest {
+		return AuthenticationRequest::getRequestByClass(
 			$reqs, PasswordAuthenticationRequest::class
 		);
+	}
+
+	public function beginPrimaryAuthentication( array $reqs ) {
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( !$req ) {
 			return AuthenticationResponse::newAbstain();
 		}
