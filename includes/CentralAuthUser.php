@@ -36,7 +36,10 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mEmail;
 	/** @var bool */
 	private $mEmailAuthenticated;
-	/** @var string|null */
+	/**
+	 * @var string|null
+	 * @internal
+	 */
 	public $mHomeWiki;
 	/** @var bool */
 	private $mHidden;
@@ -48,7 +51,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mAuthenticationTimestamp;
 	/** @var string[]|null */
 	private $mGroups;
-	/** @var array[] */
+	/** @var string[][] */
 	private $mRights;
 	/** @var string */
 	private $mPassword;
@@ -1637,6 +1640,7 @@ class CentralAuthUser implements IDBAccessObject {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
 				return Status::newFatal(
+					// @phan-suppress-next-line PhanParamTooMany T191666
 					$context->msg( 'centralauth-admin-too-many-edits', $this->mName )
 						->numParams( self::HIDE_CONTRIBLIMIT )
 				);
@@ -2069,8 +2073,8 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param $encrypted string Fully salted and hashed database crypto text from db.
-	 * @param $salt string The hash "salt", eg a local id for migrated passwords.
+	 * @param string $encrypted Fully salted and hashed database crypto text from db.
+	 * @param string $salt The hash "salt", eg a local id for migrated passwords.
 	 *
 	 * @return Password
 	 */
@@ -2692,6 +2696,15 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
+	 * @return CentralAuthSessionProvider
+	 * @suppress PhanUndeclaredMethod Per comment in SessionManager::singleton()
+	 */
+	private static function getSessionProvider(): CentralAuthSessionProvider {
+		return MediaWiki\Session\SessionManager::singleton()
+			->getProvider( CentralAuthSessionProvider::class );
+	}
+
+	/**
 	 * Get the domain parameter for setting a global cookie.
 	 * This allows other extensions to easily set global cookies without directly relying on
 	 * $wgCentralAuthCookieDomain (in case CentralAuth's implementation changes at some point).
@@ -2701,9 +2714,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public static function getCookieDomain() {
 		global $wgCentralAuthCookieDomain;
 
-		/** @var CentralAuthSessionProvider $provider */
-		$provider = MediaWiki\Session\SessionManager::singleton()
-			->getProvider( 'CentralAuthSessionProvider' );
+		$provider = self::getSessionProvider();
 		if ( $provider ) {
 			return $provider->getCentralCookieDomain();
 		}
