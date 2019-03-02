@@ -69,14 +69,19 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			'httpOnly' => $config->get( 'CookieHttpOnly' ),
 		];
 
-		$this->params += [
+		$params = [
 			'enable' => $wgCentralAuthCookies,
 			'centralSessionName' => $this->centralCookieOptions['prefix'] . 'Session',
 		];
+		$this->params += $params;
 
-		$this->enable = (bool)$this->params['enable'];
+		$this->enable = (bool)$params['enable'];
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @return SessionInfo|null
+	 */
 	private function returnParentSessionInfo( WebRequest $request ) {
 		$info = parent::provideSessionInfo( $request );
 		if ( $info ) {
@@ -91,6 +96,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @return SessionInfo|null
+	 * @suppress PhanTypeInvalidDimOffset $this->params causes lots of warnings
+	 */
 	public function provideSessionInfo( WebRequest $request ) {
 		if ( !$this->enable ) {
 			$this->logger->debug( __METHOD__ . ': Not enabled, falling back to core sessions' );
@@ -98,7 +108,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 
 		$info = [
-			'id' => $this->getCookie( $request, $this->params['sessionName'], '' )
+			'id' => $this->getCookie( $request, $this->params['sessionName'] ?? null, '' )
 		];
 		if ( !SessionManager::validateSessionId( $info['id'] ) ) {
 			unset( $info['id'] );
@@ -115,7 +125,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$token = $tokenCookie;
 			$from = 'cookies';
 		} else {
-			$id = $this->getCookie( $request, $this->params['centralSessionName'], '' );
+			$id = $this->getCookie( $request, $this->params['centralSessionName'] ?? null, '' );
 			if ( $id !== null ) {
 				$data = CentralAuthUtils::getCentralSessionById( $id );
 				if ( isset( $data['pending_name'] ) || isset( $data['pending_guid'] ) ) {
@@ -349,7 +359,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				}
 			}
 
-			$response->setCookie( $this->params['centralSessionName'], $centralSessionId, null,
+			$response->setCookie( $this->params['centralSessionName'] ?? null, $centralSessionId, null,
 				[ 'prefix' => '' ] + $options );
 		} else {
 			$metadata = $session->getProviderMetadata();
@@ -358,7 +368,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 			$response->clearCookie( 'User', $this->centralCookieOptions );
 			$response->clearCookie( 'Token', $this->centralCookieOptions );
-			$response->clearCookie( $this->params['centralSessionName'],
+			$response->clearCookie( $this->params['centralSessionName'] ?? null,
 				[ 'prefix' => '' ] + $this->centralCookieOptions );
 		}
 	}
@@ -382,7 +392,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$expiry = time() - 86400;
 		$response->clearCookie( 'User', $this->centralCookieOptions );
 		$response->clearCookie( 'Token', $this->centralCookieOptions );
-		$response->clearCookie( $this->params['centralSessionName'],
+		$response->clearCookie( $this->params['centralSessionName'] ?? null,
 			[ 'prefix' => '' ] + $this->centralCookieOptions );
 	}
 
@@ -418,6 +428,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/**
+	 * @inheritDoc
+	 * @suppress PhanInvalidDimOffset 4 errors in 2 lines
+	 */
 	protected function setForceHTTPSCookie(
 		$set, SessionBackend $backend = null, WebRequest $request
 	) {
@@ -477,7 +491,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$prefix = $this->centralCookieOptions['prefix'];
 			$cookies[] = $prefix . 'Token';
 			$cookies[] = $prefix . 'LoggedOut';
-			$cookies[] = $this->params['centralSessionName'];
+			$cookies[] = $this->params['centralSessionName'] ?? null;
 		}
 
 		return $cookies;
