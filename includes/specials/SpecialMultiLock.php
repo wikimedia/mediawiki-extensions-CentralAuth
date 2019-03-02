@@ -136,6 +136,7 @@ class SpecialMultiLock extends SpecialPage {
 	private function searchForUsers() {
 		$dbr = CentralAuthUtils::getCentralSlaveDB();
 
+		// @phan-suppress-next-line PhanParamTooMany T191668
 		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
 		if ( !$this->mCanOversight ) {
 			$where['gu_hidden'] = CentralAuthUser::HIDDEN_NONE;
