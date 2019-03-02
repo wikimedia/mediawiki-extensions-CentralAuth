@@ -45,5 +45,5 @@ class CreateLocalAccount extends Maintenance {
 	}
 }
 
-$maintClass = 'CreateLocalAccount';
+$maintClass = CreateLocalAccount::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

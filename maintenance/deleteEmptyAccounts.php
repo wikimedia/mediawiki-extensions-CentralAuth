@@ -149,5 +149,5 @@ class DeleteEmptyAccounts extends Maintenance {
 	}
 }
 
-$maintClass = "DeleteEmptyAccounts";
+$maintClass = DeleteEmptyAccounts::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

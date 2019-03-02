@@ -164,5 +164,5 @@ class CheckLocalNames extends Maintenance {
 
 }
 
-$maintClass = "CheckLocalNames";
+$maintClass = CheckLocalNames::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

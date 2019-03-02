@@ -122,5 +122,5 @@ class ForceRenameNotification extends Maintenance {
 	}
 }
 
-$maintClass = 'ForceRenameNotification';
+$maintClass = ForceRenameNotification::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -47,5 +47,5 @@ class PopulateHomeDB extends Maintenance {
 	}
 }
 
-$maintClass = 'PopulateHomeDB';
+$maintClass = PopulateHomeDB::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

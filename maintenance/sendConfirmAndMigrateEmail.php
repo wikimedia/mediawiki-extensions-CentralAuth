@@ -191,5 +191,5 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	}
 }
 
-$maintClass = "SendConfirmAndMigrateEmail";
+$maintClass = SendConfirmAndMigrateEmail::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -126,5 +126,5 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 }
 
-$maintClass = 'PopulateListOfUsersToRename';
+$maintClass = PopulateListOfUsersToRename::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -165,5 +165,5 @@ class ForceRenameUsers extends Maintenance {
 	}
 }
 
-$maintClass = 'ForceRenameUsers';
+$maintClass = ForceRenameUsers::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

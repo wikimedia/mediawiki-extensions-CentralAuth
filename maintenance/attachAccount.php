@@ -211,5 +211,5 @@ class AttachAccount extends Maintenance {
 	}
 }
 
-$maintClass = "AttachAccount";
+$maintClass = AttachAccount::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

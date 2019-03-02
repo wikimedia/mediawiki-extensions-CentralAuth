@@ -14,12 +14,12 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 * @covers CentralAuthUser::getInstance
 	 */
 	public function testGetInstance() {
-		$cache = TestingAccessWrapper::newFromClass( 'CentralAuthUser' )->getUserCache();
+		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
 
 		$user = User::newFromName( 'FooBarBaz' );
 		$cache->clear( $user->getName() );
 		$caUser = CentralAuthUser::getInstance( $user );
-		$this->assertInstanceOf( 'CentralAuthUser', $caUser );
+		$this->assertInstanceOf( CentralAuthUser::class, $caUser );
 		$this->assertEquals( $user->getName(), $caUser->getName() );
 		$this->assertSame( $cache->get( $user->getName() ), $caUser );
 
@@ -35,7 +35,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 */
 	public function testNewUnattached() {
 		$ca = CentralAuthUser::newUnattached( 'FooBar' );
-		$this->assertInstanceOf( 'CentralAuthUser', $ca );
+		$this->assertInstanceOf( CentralAuthUser::class, $ca );
 		$this->assertEquals( 'FooBar', $ca->getName() );
 		$this->assertFalse( $ca->isAttached() );
 	}
@@ -46,7 +46,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 */
 	public function testGetHomeWiki( $attached, $expected ) {
 		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
-		$ca = $this->getMockBuilder( 'CentralAuthUser' )
+		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
 			->setMethods( [ 'queryAttachedBasic', 'queryAttached', 'loadState' ] )
 			->getMock();
@@ -197,12 +197,12 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 */
 	public function testGetPasswordFromString( $pass, $salt, $type ) {
 		$this->setMwGlobals( 'wgPasswordSalt', true );
-		$class = new ReflectionClass( 'CentralAuthUser' );
+		$class = new ReflectionClass( CentralAuthUser::class );
 		$method = $class->getMethod( 'getPasswordFromString' );
 		$method->setAccessible( true );
 		$ca = new CentralAuthUser( 'DoesNotExist' );
 		$password = $method->invokeArgs( $ca, [ $pass, $salt ] );
-		$this->assertInstanceOf( 'Password', $password );
+		$this->assertInstanceOf( Password::class, $password );
 		$this->assertInstanceOf( $type, $password );
 	}
 
@@ -234,7 +234,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 */
 	public function testGetLocalGroups( $attached, $expected ) {
 		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
-		$ca = $this->getMockBuilder( 'CentralAuthUser' )
+		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
 			->setMethods( [ 'queryAttached' ] )
 			->getMock();

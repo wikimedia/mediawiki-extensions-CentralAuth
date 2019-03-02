@@ -122,5 +122,5 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 	}
 }
 
-$maintClass = "CentralAuthDeleteLocalPasswords";
+$maintClass = CentralAuthDeleteLocalPasswords::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

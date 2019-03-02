@@ -69,5 +69,5 @@ class MigratePassZero extends Maintenance {
 	}
 }
 
-$maintClass = 'MigratePassZero';
+$maintClass = MigratePassZero::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

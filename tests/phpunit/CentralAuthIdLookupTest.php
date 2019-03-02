@@ -84,7 +84,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	}
 
 	public function testRegistration() {
-		$this->assertInstanceOf( 'CentralAuthIdLookup', CentralIdLookup::factory( 'CentralAuth' ) );
+		$this->assertInstanceOf( CentralAuthIdLookup::class, CentralIdLookup::factory( 'CentralAuth' ) );
 	}
 
 	public function testLookupCentralIds() {

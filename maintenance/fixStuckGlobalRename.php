@@ -106,5 +106,5 @@ class FixStuckGlobalRename extends Maintenance {
 	}
 }
 
-$maintClass = 'FixStuckGlobalRename';
+$maintClass = FixStuckGlobalRename::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

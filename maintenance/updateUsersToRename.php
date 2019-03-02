@@ -51,5 +51,5 @@ class UpdateUsersToRename extends Maintenance {
 	}
 }
 
-$maintClass = 'UpdateUsersToRename';
+$maintClass = UpdateUsersToRename::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

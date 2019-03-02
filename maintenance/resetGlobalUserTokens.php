@@ -110,5 +110,5 @@ class ResetGlobalUserTokens extends Maintenance {
 	}
 }
 
-$maintClass = "ResetGlobalUserTokens";
+$maintClass = ResetGlobalUserTokens::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

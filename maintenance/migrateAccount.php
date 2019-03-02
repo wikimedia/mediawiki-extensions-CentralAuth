@@ -292,5 +292,5 @@ class MigrateAccount extends Maintenance {
 	}
 }
 
-$maintClass = "MigrateAccount";
+$maintClass = MigrateAccount::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

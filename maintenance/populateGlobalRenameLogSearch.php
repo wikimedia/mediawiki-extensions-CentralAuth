@@ -59,5 +59,5 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 	}
 }
 
-$maintClass = 'PopulateGlobalRenameLogSearch';
+$maintClass = PopulateGlobalRenameLogSearch::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

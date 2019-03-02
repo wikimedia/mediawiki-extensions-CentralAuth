@@ -222,5 +222,5 @@ class CheckLocalUser extends Maintenance {
 	}
 }
 
-$maintClass = "CheckLocalUser";
+$maintClass = CheckLocalUser::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

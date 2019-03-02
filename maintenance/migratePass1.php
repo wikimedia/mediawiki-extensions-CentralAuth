@@ -72,5 +72,5 @@ class MigratePass1 extends Maintenance {
 	}
 }
 
-$maintClass = "MigratePass1";
+$maintClass = MigratePass1::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

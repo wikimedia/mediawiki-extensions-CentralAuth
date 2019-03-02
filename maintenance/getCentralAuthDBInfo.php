@@ -20,5 +20,5 @@ class GetCentralAuthDBInfo extends Maintenance {
 	}
 }
 
-$maintClass = 'GetCentralAuthDBInfo';
+$maintClass = GetCentralAuthDBInfo::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
