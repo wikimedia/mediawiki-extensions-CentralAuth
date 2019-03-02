@@ -142,6 +142,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$user = $this->getUser();
 			if ( !$user->isAnon() ) {
 				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
+					// @phan-suppress-next-line PhanUndeclaredMethod
 					$html = $this->getSkin()->getPersonalToolsList();
 					$json = FormatJson::encode( [ 'toolslist' => $html ] );
 				} else {

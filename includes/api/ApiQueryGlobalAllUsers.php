@@ -79,6 +79,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 		if ( !is_null( $params['prefix'] ) ) {
 			$this->addWhere(
+				// @phan-suppress-next-line PhanParamTooMany T191668
 				'gu_name' . $db->buildLike( $this->getCanonicalUserName( $params['prefix'] ), $db->anyString() )
 			);
 		}
