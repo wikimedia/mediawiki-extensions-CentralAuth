@@ -130,7 +130,7 @@ class MigrateAccount extends Maintenance {
 						break;
 					default:
 						$this->output( "ERROR: Invalid account specification: '$line'\n" );
-						continue;
+						break;
 				}
 				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
