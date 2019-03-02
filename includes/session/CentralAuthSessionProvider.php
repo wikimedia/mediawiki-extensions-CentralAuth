@@ -69,14 +69,19 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			'httpOnly' => $config->get( 'CookieHttpOnly' ),
 		];
 
-		$this->params += [
+		$params = [
 			'enable' => $wgCentralAuthCookies,
 			'centralSessionName' => $this->centralCookieOptions['prefix'] . 'Session',
 		];
+		$this->params += $params;
 
-		$this->enable = (bool)$this->params['enable'];
+		$this->enable = (bool)$params['enable'];
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @return SessionInfo|null
+	 */
 	private function returnParentSessionInfo( WebRequest $request ) {
 		$info = parent::provideSessionInfo( $request );
 		if ( $info ) {
@@ -91,6 +96,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @return SessionInfo|null
+	 */
 	public function provideSessionInfo( WebRequest $request ) {
 		if ( !$this->enable ) {
 			$this->logger->debug( __METHOD__ . ': Not enabled, falling back to core sessions' );
@@ -239,7 +248,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return true;
 	}
 
-	public function sessionIdWasReset( MediaWiki\Session\SessionBackend $session, $oldId ) {
+	public function sessionIdWasReset( SessionBackend $session, $oldId ) {
 		if ( !$this->enable ) {
 			return;
 		}
@@ -278,9 +287,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return parent::cookieDataToExport( $user, $remember );
 	}
 
-	public function persistSession(
-		MediaWiki\Session\SessionBackend $session, WebRequest $request
-	) {
+	/**
+	 * @param SessionBackend $session
+	 * @param WebRequest $request
+	 */
+	public function persistSession( SessionBackend $session, WebRequest $request ) {
 		parent::persistSession( $session, $request );
 
 		if ( !$this->enable ) {
@@ -363,6 +374,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/**
+	 * @param WebRequest $request
+	 */
 	public function unpersistSession( WebRequest $request ) {
 		parent::unpersistSession( $request );
 
@@ -418,6 +432,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/**
+	 * @inheritDoc
+	 * @suppress PhanParamReqAfterOpt
+	 */
 	protected function setForceHTTPSCookie(
 		$set, SessionBackend $backend = null, WebRequest $request
 	) {
@@ -470,6 +488,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getVaryCookies() {
 		$cookies = parent::getVaryCookies();
 

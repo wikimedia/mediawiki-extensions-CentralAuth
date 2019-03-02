@@ -28,7 +28,7 @@ use MediaWiki\MediaWikiServices;
  * @author Bryan Davis <bd808@wikimedia.org>
  * @copyright © 2014 Bryan Davis and Wikimedia Foundation.
  * @ingroup SpecialPage
- */
+  */
 class SpecialGlobalRenameQueue extends SpecialPage {
 
 	const PAGE_OPEN_QUEUE = 'open';
