@@ -101,11 +101,18 @@ class CentralAuthPrimaryAuthenticationProvider
 		return $ret;
 	}
 
-	public function beginPrimaryAuthentication( array $reqs ) {
-		/** @var PasswordAuthenticationRequest $req */
-		$req = AuthenticationRequest::getRequestByClass(
+	/**
+	 * @param array $reqs
+	 * @return PasswordAuthenticationRequest|null
+	 */
+	private static function getPasswordAuthenticationRequest( array $reqs ) {
+		return AuthenticationRequest::getRequestByClass(
 			$reqs, PasswordAuthenticationRequest::class
 		);
+	}
+
+	public function beginPrimaryAuthentication( array $reqs ) {
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( !$req ) {
 			return AuthenticationResponse::newAbstain();
 		}
@@ -457,10 +464,18 @@ class CentralAuthPrimaryAuthenticationProvider
 		return $status;
 	}
 
-	public function testForAccountCreation( $user, $creator, array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass(
-			$reqs, PasswordAuthenticationRequest::class
+	/**
+	 * @param array $reqs
+	 * @return AntiSpoofAuthenticationRequest|null
+	 */
+	private static function getAntiSpoofAuthenticationRequest( array $reqs ) {
+		return AuthenticationRequest::getRequestByClass(
+			$reqs, AntiSpoofAuthenticationRequest::class
 		);
+	}
+
+	public function testForAccountCreation( $user, $creator, array $reqs ) {
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 
 		$ret = StatusValue::newGood();
 		if ( $req && $req->username !== null && $req->password !== null ) {
@@ -475,9 +490,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		// Check CentralAuthAntiSpoof, if applicable
 		if ( class_exists( AntiSpoofAuthenticationRequest::class ) ) {
-			$antiSpoofReq = AuthenticationRequest::getRequestByClass(
-				$reqs, AntiSpoofAuthenticationRequest::class
-			);
+			$antiSpoofReq = self::getAntiSpoofAuthenticationRequest( $reqs );
 			$ret->merge( CentralAuthAntiSpoofHooks::testNewAccount(
 				$user, $creator, $this->antiSpoofAccounts,
 				$antiSpoofReq && $antiSpoofReq->ignoreAntiSpoof
@@ -488,9 +501,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass(
-			$reqs, PasswordAuthenticationRequest::class
-		);
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( $req ) {
 			if ( $req->username !== null && $req->password !== null ) {
 				$centralUser = CentralAuthUser::getMasterInstance( $user );

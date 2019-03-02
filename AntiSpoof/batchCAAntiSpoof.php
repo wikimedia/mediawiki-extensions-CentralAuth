@@ -23,6 +23,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @param string|string[] $groups
 	 * @param string|bool $wiki
 	 * @return IDatabase
+	 * @suppress PhanParamSignatureMismatch
 	 */
 	protected function getDB( $db, $groups = [], $wiki = false ) {
 		return CentralAuthUtils::getCentralDB();
