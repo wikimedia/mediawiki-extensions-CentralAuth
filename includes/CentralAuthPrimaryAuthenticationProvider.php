@@ -101,11 +101,20 @@ class CentralAuthPrimaryAuthenticationProvider
 		return $ret;
 	}
 
-	public function beginPrimaryAuthentication( array $reqs ) {
-		/** @var PasswordAuthenticationRequest $req */
-		$req = AuthenticationRequest::getRequestByClass(
+	/**
+	 * @param array $reqs
+	 * @return PasswordAuthenticationRequest
+	 */
+	private static function getPasswordAuthenticationRequest(
+		array $reqs
+	): PasswordAuthenticationRequest {
+		return AuthenticationRequest::getRequestByClass(
 			$reqs, PasswordAuthenticationRequest::class
 		);
+	}
+
+	public function beginPrimaryAuthentication( array $reqs ) {
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( !$req ) {
 			return AuthenticationResponse::newAbstain();
 		}
@@ -455,9 +464,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function testForAccountCreation( $user, $creator, array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass(
-			$reqs, PasswordAuthenticationRequest::class
-		);
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 
 		$ret = StatusValue::newGood();
 		if ( $req && $req->username !== null && $req->password !== null ) {
@@ -485,9 +492,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
-		$req = AuthenticationRequest::getRequestByClass(
-			$reqs, PasswordAuthenticationRequest::class
-		);
+		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( $req ) {
 			if ( $req->username !== null && $req->password !== null ) {
 				$centralUser = CentralAuthUser::getMasterInstance( $user );

@@ -28,6 +28,7 @@ use MediaWiki\MediaWikiServices;
  * @author Bryan Davis <bd808@wikimedia.org>
  * @copyright © 2014 Bryan Davis and Wikimedia Foundation.
  * @ingroup SpecialPage
+ * @suppress PhanUndeclaredClassConstant, PhanUndeclaredClassMethod AntiSpoof-related
  */
 class SpecialGlobalRenameQueue extends SpecialPage {
 
