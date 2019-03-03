@@ -1,0 +1,7 @@
+Code-Review+2: Reedy <reedy@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Sun, 03 Mar 2019 18:12:24 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/492505
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
