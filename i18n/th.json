@@ -144,5 +144,6 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว",
 	"centralautologin": "การเข้าสู่ระบบกลาง",
 	"centralloginsuccesful": "ลงชื่อเข้าแล้ว",
-	"mergeaccount": "สถานะการรวมชื่อล็อกอิน"
+	"mergeaccount": "สถานะการรวมชื่อล็อกอิน",
+	"right-centralauth-merge": "รวมบัญชีของพวกเขา"
 }

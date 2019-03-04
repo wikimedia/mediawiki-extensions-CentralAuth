@@ -10,6 +10,7 @@
 		]
 	},
 	"centralauth-account-exists-reset": "L'uzeronomo $1 ne enrejistresis en ica Wiki, ma vu povas modifikar lua pasovorto en [[Special:CentralAuth/$1|ula Wiki ube ol havas registro]].",
+	"centralauth-admin-blocked-reason": "Motivo: $1",
 	"centralauth-admin-blocked2": "Blokusita til $2 ye $3.",
 	"centralauth-admin-blocklog": "blokusar registraro",
 	"centralauth-admin-delete-button": "Efacar ca konto",
@@ -58,6 +59,7 @@
 	"centralauth-newgroup-legend": "Krear nova grupo",
 	"centralauth-prefs-status": "Stando di la generala konto:",
 	"centralauth-prefs-view": "Videz la generala informo",
+	"centralauth-rename-form-reason": "Motivo",
 	"centralauth-rename-table-domain": "Lokala Wiki",
 	"centralauth-ro": "Informo globala pri l'uzero-konto",
 	"centralauth-usermerge-form-reason": "Motivo",

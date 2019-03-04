@@ -15,6 +15,7 @@
 			"Vlad5250"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи, към които принадлежи потребителят",
 	"action-centralauth-lock": "заключване или отключване на глобални сметки",
 	"action-centralauth-rename": "преименуване на глобални сметки",
 	"action-centralauth-unmerge": "разделяне на глобални сметки",
