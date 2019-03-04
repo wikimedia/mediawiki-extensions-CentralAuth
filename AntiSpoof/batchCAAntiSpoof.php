@@ -20,7 +20,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 
 	/**
 	 * @param int $db
-	 * @param array $groups
+	 * @param string|string[] $groups
 	 * @param string|bool $wiki
 	 * @return IDatabase
 	 */
