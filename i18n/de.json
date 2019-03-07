@@ -327,7 +327,7 @@
 	"centralauth-log-status-locked": "gesperrt",
 	"centralauth-log-status-none": "(keine)",
 	"centralauth-log-status-oversighted": "unterdrückt",
-	"centralauth-login-error-locked": "Du kannst dich nicht anmelden, da dein Benutzerkonto global gesperrt ist.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Du}} kannst dich nicht anmelden, da {{GENDER:$1|dein}} Benutzerkonto global gesperrt ist.",
 	"centralauth-login-no-others": "Du wurdest automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.",
 	"centralauth-login-progress": "Du wurdest auch bei {{PLURAL:$2|dem folgenden Wiki|den folgenden Wikis}} {{int:Centralauth-groupname}} automatisch angemeldet:",
 	"centralauth-logout-no-others": "Du wurdest automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.",

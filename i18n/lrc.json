@@ -4,7 +4,8 @@
 			"Bonevarluri",
 			"Mogoeilor",
 			"Macofe",
-			"McDutchie"
+			"McDutchie",
+			"Lorestani"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گرویا جهونی که کاریا ها دشو",
@@ -75,7 +76,7 @@
 	"centralauth-admin-blocked-reason": "دلیل:$1",
 	"centralauth-admin-blocked2": "نهاگری بیه،$3 د $4 تموم بیه.",
 	"centralauth-admin-blocked2-indef": "کلا قلف بیه.",
-	"centralauth-admin-blocklog": "پهرستنومه قلف بیه",
+	"centralauth-admin-blocklog": "پهرستنومٱ قلف بیٱ",
 	"centralauth-admin-delete-button": "ای حساو پاك كو",
 	"centralauth-admin-delete-confirm": "آیا شما واقعن میهایت ای حساو پاکسا بکید",
 	"centralauth-admin-delete-description": "پاکسا کردن حساو کاریاری هوم بهر باعث موئه که میزونکاریا هومبهر پاکسا بان و د سریک بیین حساویا ولات نشینی نهاگری با و نوم کاریاری هومبهر نه سی وه کار گرتن چیا هنی آزاد مینه.\nاوسه همه حساویا ولات نشین باقی می مونه.\nرازینه گواردن حساویا کاریاری که دما سریک بیین ره وندیاری بیه و انازه دما د سریک سازی ؤر میئرده.",
@@ -294,7 +295,7 @@
 	"centralauth-merge-method-admin-desc": "یه نشو میئه که حساو ولات نشینی وه شکل دسی وه دس ویکی یاریا سریک بیه.\nای چی د ایسنی سی دلیلیا امنیتی ناکنشتگر بیه.",
 	"centralauth-merge-method-empty": "بی هومياری",
 	"centralauth-merge-method-empty-desc": "هشاره وه حساو ولات نشینی که سریک سازی بیه و هیچ ویرایشتی ریش انجوم نبیه.",
-	"centralauth-merge-method-login": "د حال و بار وامین اومائن راس بیه",
+	"centralauth-merge-method-login": "د هال ۉ بار ڤامؽن اوماین دۏرس بیٱ",
 	"centralauth-merge-method-login-desc": "هشاره وه حساو ولات نشینی که د گاتی که کاریار وامین اومائه وه شکل خودانجومی راس بیه.",
 	"centralauth-merge-method-mail": "وا ايميل محكم بی",
 	"centralauth-merge-method-mail-desc": "هشاره وه حساو ولات نشینی که سریک سازی بیه سی یه که تیرنشون انجومانامه وه وا تیرنشون انجوماناهمه حساو اصلی یکیه.",

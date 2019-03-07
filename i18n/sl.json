@@ -300,7 +300,7 @@
 	"centralauth-log-status-locked": "zaklenjen",
 	"centralauth-log-status-none": "(noben)",
 	"centralauth-log-status-oversighted": "zatrt",
-	"centralauth-login-error-locked": "Prijava je onemogočena, saj je tvoj račun globalno zaklenjen.",
+	"centralauth-login-error-locked": "Prijava je onemogočena, saj je {{GENDER:$1|vaš}} račun globalno zaklenjen.",
 	"centralauth-login-no-others": "Samodejno ste bili vpisani v ostale projekte {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Prijavljanje v {{PLURAL:$2|wiki|wikija|wikije}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Samodejno ste bili izpisani iz ostalih projektov {{int:Centralauth-groupname}}.",

@@ -249,7 +249,7 @@
 	"centralauth-log-status-locked": "låst",
 	"centralauth-log-status-none": "(ingen)",
 	"centralauth-log-status-oversighted": "censureret",
-	"centralauth-login-error-locked": "Du kan ikke logge på, fordi din konto er låst globalt.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Du}} kan ikke logge på, fordi {{GENDER:$1|din}} konto er låst globalt.",
 	"centralauth-login-no-others": "Du er automatisk blevet logget på andre af {{int:Centralauth-groupname}}s projekter.",
 	"centralauth-login-progress": "Logger dig på {{int:Centralauth-groupname}}s projekter:",
 	"centralauth-logout-no-others": "Du er automatisk blevet logget af {{int:Centralauth-groupname}}s andre projekter.",

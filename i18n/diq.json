@@ -248,7 +248,7 @@
 	"centralauth-log-status-locked": "kılit biyo",
 	"centralauth-log-status-none": "(çiniyo)",
 	"centralauth-log-status-oversighted": "pawiyaye",
-	"centralauth-login-error-locked": "Hesabê şıma global de bloqe biyo şıma nêşenê bıvurnê",
+	"centralauth-login-error-locked": "{{GENDER:$1|Şıma}} nêşenê cı kewê, çıke hesabê {{GENDER:$1|şıma}} her ca de kılit biyo.",
 	"centralauth-login-no-others": "Projeyanê {{int:Centralauth-groupname}} binî rê ti otomatik kewto:",
 	"centralauth-login-progress": "Hesabê şıma {{PLURAL:$2|wiki|wikiyan}} de <Centralauth-groupname> de beno a:",
 	"centralauth-logout-no-others": "Projeyané {{int:Centralauth-groupname}} bıniré otomatikmen vıcyéno.",

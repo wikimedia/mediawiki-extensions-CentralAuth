@@ -362,7 +362,7 @@
 	"centralauth-log-status-locked": "bloqué",
 	"centralauth-log-status-none": "(aucun)",
 	"centralauth-log-status-oversighted": "supprimé",
-	"centralauth-login-error-locked": "Vous ne pouvez pas vous connecter parce que votre compte est bloqué globalement.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Vous}} ne pouvez pas vous connecter parce que votre compte est bloqué globalement.",
 	"centralauth-login-no-others": "Vous avez été automatiquement connecté{{GENDER:||e|(e)}} aux autres projets de {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Vous êtes en cours de connexion au{{PLURAL:$2| wiki|x wikis}} de {{int:Centralauth-groupname}} :",
 	"centralauth-logout-no-others": "Vous avez été automatiquement déconnecté{{GENDER:||e}} des autres projets de {{int:Centralauth-groupname}}.",
