@@ -456,13 +456,11 @@ class SpecialMultiLock extends SpecialPage {
 		);
 	}
 
-	function showError( /* varargs */ ) {
-		$args = func_get_args();
+	function showError( ...$args ) {
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 	}
 
-	function showSuccess( /* varargs */ ) {
-		$args = func_get_args();
+	function showSuccess( ...$args ) {
 		$this->getOutput()->wrapWikiMsg( '<div class="success">$1</div>', $args );
 	}
 

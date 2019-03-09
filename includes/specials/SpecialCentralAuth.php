@@ -252,13 +252,11 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 
-	private function showError( /* varargs */ ) {
-		$args = func_get_args();
+	private function showError( ...$args ) {
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 	}
 
-	private function showSuccess( /* varargs */ ) {
-		$args = func_get_args();
+	private function showSuccess( ...$args ) {
 		$this->getOutput()->wrapWikiMsg( '<div class="success">$1</div>', $args );
 	}
 
