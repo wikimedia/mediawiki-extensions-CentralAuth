@@ -12,7 +12,8 @@
 			"Termininja",
 			"Vodnokon4e",
 			"ShockD",
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи, към които принадлежи потребителят",
@@ -110,7 +111,7 @@
 	"centralauth-admin-list-groups": "Групи",
 	"centralauth-admin-list-legend-ro": "Списък на локалните сметки",
 	"centralauth-admin-list-legend-rw": "Разделяне на локалните сметки",
-	"centralauth-admin-list-localwiki": "Местно уики",
+	"centralauth-admin-list-localwiki": "Локално уики",
 	"centralauth-admin-list-method": "Метод",
 	"centralauth-admin-logsnippet": "Предишни промени в глобалната сметка",
 	"centralauth-admin-lookup-ro": "Преглед на потребителски данни",
@@ -264,7 +265,7 @@
 	"centralauth-list-unattached-title": "Неприкрепени сметки",
 	"centralauth-listusers-attached": "[[User:$1|съществува локално]]",
 	"centralauth-listusers-locked": "заключена",
-	"centralauth-listusers-nolocal": "неприкачена или не съществува местно",
+	"centralauth-listusers-nolocal": "неприкачено или не съществува локално",
 	"centralauth-log-entry-delete": "изтрита глобална сметка „$1“",
 	"centralauth-log-entry-hide": "скри глобалната сметка „$1“",
 	"centralauth-log-entry-lock": "заключена глобална сметка „$1“",
@@ -342,7 +343,7 @@
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|напредък]])",
 	"centralauth-rename-progress-logs-fieldset": "Записи в дневника",
 	"centralauth-rename-progress-username": "Потребителско име",
-	"centralauth-rename-table-domain": "Местно уики",
+	"centralauth-rename-table-domain": "Локално уики",
 	"centralauth-rename-table-status": "Статус",
 	"centralauth-rename-table-status-done": "Готово",
 	"centralauth-rename-table-status-failed": "Неуспешно",

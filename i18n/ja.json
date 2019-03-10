@@ -35,7 +35,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
 	"action-centralauth-lock": "グローバルアカウントのロックまたはロック解除",
 	"action-centralauth-rename": "グローバルアカウントの名前の変更",
-	"action-centralauth-unmerge": "グローバルアカウントを統合解除",
+	"action-centralauth-unmerge": "グローバルアカウントの統合解除",
 	"action-centralauth-usermerge": "グローバルに複数の利用者を統合",
 	"apierror-centralauth-badusername": "利用者名「$1」はこのウィキでは使用できません",
 	"apierror-centralauth-editconflict": "編集競合が検出され、中止されました。",
