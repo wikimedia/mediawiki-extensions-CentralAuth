@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbf3ad59_783a8890",
+        "filename": "includes/specials/SpecialMergeAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-11T15:52:38Z",
+      "side": 1,
+      "message": "Maybe some documentation could be useful?\n```\n/**\n * @param string|null $subpage\n * @throws InvalidArgumentException\n * @return void\n */\n```",
+      "revId": "c3115487450dfbb1166a9d734f5d770ab354d75b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
