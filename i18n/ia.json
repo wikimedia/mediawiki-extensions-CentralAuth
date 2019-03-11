@@ -312,7 +312,7 @@
 	"centralauth-log-status-locked": "serrate",
 	"centralauth-log-status-none": "(necun)",
 	"centralauth-log-status-oversighted": "supprimite",
-	"centralauth-login-error-locked": "Tu non pote aperir session perque tu conto ha essite blocate globalmente.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Tu}} non pote aperir session perque {{GENDER:$1|tu}} conto ha essite blocate globalmente.",
 	"centralauth-login-no-others": "Tu ha essite automaticamente authenticate in le altere projectos del {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Apertura de tu session in le {{PLURAL:$2|wiki|wikis}}  del {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Tu session ha essite automaticamente claudite in le altere projectos del {{int:Centralauth-groupname}}.",
