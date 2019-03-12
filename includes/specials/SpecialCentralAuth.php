@@ -496,7 +496,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->foreignUserLink( $row['wiki'] ) .
 			Xml::closeElement( 'td' );
 
-		$attachedTimestamp = isset( $row['attachedTimestamp'] ) ? $row['attachedTimestamp'] : '';
+		$attachedTimestamp = $row['attachedTimestamp'] ?? '';
 
 		$html .= $this->getAttachedTimestampField( $attachedTimestamp ) .
 			Xml::openElement( 'td', [ 'style' => "text-align: center;" ] );
