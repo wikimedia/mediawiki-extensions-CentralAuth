@@ -486,7 +486,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$itemMethods = [];
 		foreach ( $items as $item ) {
-			$itemMethods[] = isset( $methods[$item] ) ? $methods[$item] : '';
+			$itemMethods[] = $methods[$item] ?? '';
 		}
 
 		$html = Xml::openElement( 'ul' ) . "\n";

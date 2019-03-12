@@ -249,7 +249,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 */
 	public function onSubmit( array $data ) {
 		$wiki = $this->isGlobalUser() ? null : wfWikiID();
-		$reason = isset( $data['reason'] ) ? $data['reason'] : null;
+		$reason = $data['reason'] ?? null;
 		$safeName = User::getCanonicalName( $data['newname'], 'creatable' );
 
 		$request = new GlobalRenameRequest;
