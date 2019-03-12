@@ -324,7 +324,7 @@
 	"centralauth-log-status-locked": "נעילה",
 	"centralauth-log-status-none": "(כלום)",
 	"centralauth-log-status-oversighted": "העלמה",
-	"centralauth-login-error-locked": "אין באפשרותך להיכנס כי חשבונך נחסם גלובלית.",
+	"centralauth-login-error-locked": "אינך {{GENDER:$1|יכול|יכולה}} להיכנס כי חשבונך נעול גלובלית.",
 	"centralauth-login-no-others": "נכנסת באופן אוטומטי לחשבון במיזמים אחרים של {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "מתבצעת כניסה לחשבונך {{PLURAL:$2|באתר|באתרי}} ויקי של {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "הוּצאת באופן אוטומטי מהחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.",
