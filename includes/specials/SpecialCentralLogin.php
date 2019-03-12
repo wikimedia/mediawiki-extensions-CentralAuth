@@ -337,8 +337,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			CentralAuthHooks::getDomainAutoLoginHtml( $this->getUser(), $centralUser ) );
 	}
 
-	protected function showError( /* varargs */ ) {
-		$args = func_get_args();
+	protected function showError( ...$args ) {
 		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
 		$stats->increment( 'centralauth.centrallogin_errors.' . $args[0] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );

@@ -102,11 +102,11 @@ class CentralAuthUtils {
 	}
 
 	/**
+	 * @param string ...$args
 	 * @return string
 	 */
-	public static function memcKey( /*...*/ ) {
+	public static function memcKey( ...$args ) {
 		global $wgCentralAuthDatabase;
-		$args = func_get_args();
 		return $wgCentralAuthDatabase . ':' . implode( ':', $args );
 	}
 
