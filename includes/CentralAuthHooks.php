@@ -160,12 +160,8 @@ class CentralAuthHooks {
 				break;
 			case 'setchange':
 				$args = [
-					$params[1]
-						? $params[1]
-						: wfMessage( 'rightsnone' )->text(),
-					$params[2]
-						? $params[2]
-						: wfMessage( 'rightsnone' )->text()
+					$params[1] ?: wfMessage( 'rightsnone' )->text(),
+					$params[2] ?: wfMessage( 'rightsnone' )->text()
 				];
 				break;
 			default: // 'deleteset'

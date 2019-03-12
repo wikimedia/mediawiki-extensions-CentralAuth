@@ -56,7 +56,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		$dbr = wfGetDB( DB_REPLICA );
 		$userQuery = User::getQueryInfo();
 		$blockQuery = Block::getQueryInfo();
-		$ipbUser = isset( $blockQuery['ipb_user'] ) ? $blockQuery['ipb_user'] : 'ipb_user';
+		$ipbUser = i$blockQuery['ipb_user'] ?? 'ipb_user';
 		$res = $dbr->select(
 			$userQuery['tables'] + [ 'nestblock' => $blockQuery['tables'] ],
 			$userQuery['fields'],

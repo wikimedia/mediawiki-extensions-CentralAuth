@@ -132,7 +132,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 */
 	public function getStatus( $flags = 0 ) {
 		$statuses = $this->getStatuses( $flags );
-		return isset( $statuses[wfWikiID()] ) ? $statuses[wfWikiID()] : null;
+		return $statuses[wfWikiID()] ?? null;
 	}
 
 	/**
