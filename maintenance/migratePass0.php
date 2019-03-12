@@ -15,7 +15,7 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class MigratePassZero extends Maintenance {
 
-	function execute() {
+	public function execute() {
 		global $wgDBname;
 		$this->output( "CentralAuth migration pass 0:" );
 		$this->output( "$wgDBname preparing migration data..." );
@@ -23,7 +23,7 @@ class MigratePassZero extends Maintenance {
 		$this->output( "done." );
 	}
 
-	function doPassZero() {
+	private function doPassZero() {
 		global $wgDBname;
 		$dbr = $this->getDB( DB_REPLICA );
 		$chunkSize = 1000;
