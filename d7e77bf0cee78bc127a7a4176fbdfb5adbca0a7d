@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53379642_6ea253d9",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 2886,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-03-13T13:31:04Z",
+      "side": 1,
+      "message": "This appears to make sense. The table does not contain one index with two fields, but two indexes with one field each. According to the documentation of replace() this must be provided as an \"array of lists\".\n\nHm. Wait. Doesn\u0027t this mean it must be written like this?\n\n [ [ \u0027gug_user\u0027 ], [ \u0027gug_group\u0027 ] ]",
+      "range": {
+        "startLine": 2886,
+        "startChar": 3,
+        "endLine": 2886,
+        "endChar": 34
+      },
+      "revId": "d7e77bf0cee78bc127a7a4176fbdfb5adbca0a7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
