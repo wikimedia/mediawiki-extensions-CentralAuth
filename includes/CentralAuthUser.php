@@ -2883,7 +2883,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		# Replace into the DB
 		$dbw->replace( 'global_user_groups',
-			[ 'gug_user', 'gug_group' ],
+			[ [ 'gug_user', 'gug_group' ] ],
 			$insert_rows, __METHOD__ );
 
 		$this->invalidateCache();
