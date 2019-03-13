@@ -22,6 +22,30 @@
       "revId": "d7e77bf0cee78bc127a7a4176fbdfb5adbca0a7d",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9895e3d0_dfff76a0",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 2886,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2019-03-13T14:45:12Z",
+      "side": 1,
+      "message": "That means the same as the current code, e.g. \"each of those field are separately unique fields\". The unique index is a composite one, so it has to be an array of arrays.\n\nI made https://gerrit.wikimedia.org/r/#/c/mediawiki/core/+/496096/ after fixing a bunch of incorrect uses. The current IDatabase documentation is ambiguous (e.g. \"fields [each] defining a unique index\" or \"fields [together] defining a unique index\"?). What it actually does is the first one.",
+      "parentUuid": "53379642_6ea253d9",
+      "range": {
+        "startLine": 2886,
+        "startChar": 3,
+        "endLine": 2886,
+        "endChar": 34
+      },
+      "revId": "d7e77bf0cee78bc127a7a4176fbdfb5adbca0a7d",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
