@@ -8,7 +8,6 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gropes globals als quals aparten l'utilizaire",
 	"action-centralauth-lock": "verrolhar o desverrolhar los comptes globals",
-	"apihelp-globaluserrights-param-expiry": "Aqueste paramètre es actualament inutilizat.",
 	"centralauth": "Gestionari de compte global",
 	"centralauth-account-exists": "Impossible de crear lo compte : lo nom d’utilizaire demandat ja es pres per un utilizaire d'un autre wiki.",
 	"centralauth-admin-already-unmerged": "Sautar $1, ja desfusionat",

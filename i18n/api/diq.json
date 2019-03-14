@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kumkumuk",
+			"Mirzali"
+		]
+	},
+	"apihelp-deleteglobalaccount-description": "Yew karberê globali bestere.",
+	"apihelp-deleteglobalaccount-example-1": "Qandé [[User:Example]] global hesab besternayış",
+	"apihelp-deleteglobalaccount-param-reason": "Sebeba Karber besternayışi.",
+	"apihelp-deleteglobalaccount-param-user": "Karbero ke besteriyo.",
+	"apihelp-deleteglobalaccount-summary": "Yew karberê globali bestere.",
+	"apihelp-globaluserrights-description": "Yew karberi grubanê globalan ke/ra wedare.",
+	"apihelp-globaluserrights-param-add": "Nê karberi dek global gruber.",
+	"apihelp-globaluserrights-param-expiry": "No parametre nıka nêgureniyeno.",
+	"apihelp-globaluserrights-param-reason": "Sebebê vurnayışi.",
+	"apihelp-globaluserrights-param-remove": "Karberi na gruba globale ra wedare.",
+	"apihelp-globaluserrights-param-tags": "No parametre nıka nêgureniyeno.",
+	"apihelp-globaluserrights-param-user": "Namey karberi yo global.",
+	"apihelp-globaluserrights-param-userid": "Kamiya karberê globali",
+	"apihelp-globaluserrights-summary": "Yew karberi gruba globale ke/ra wedare.",
+	"apihelp-query+globalallusers-example-1": "Lista karberanê globalan",
+	"apihelp-query+globalgroups-example-1": "Lista grubanê globalan"
+}

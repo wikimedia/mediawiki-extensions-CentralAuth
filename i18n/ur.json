@@ -10,8 +10,6 @@
 			"BukhariSaeed"
 		]
 	},
-	"apihelp-query+globalrenamestatus-example-1": "موجودعالمی صارف کے متعلق معلومات حاصل کریں۔",
-	"apihelp-query+globalrenamestatus-param-user": "جس صارف کا نام تبدیل ھو رہاھے ۔انکے پرانے یا نۓ نام کا ھوسکتاھے۔",
 	"centralauth": "منتظم عالمی کھاتہ",
 	"centralauth-account-exists": "اکاؤنٹ کی تخلیق نہیں کر سکتے ہیں: درخواست شدہ صارف نام پہلے ہی دوسری ویکی کے کسی صارف کے زیر استعمال ہے۔",
 	"centralauth-admin-bad-input": "ضم کا انتخاب نادرست",

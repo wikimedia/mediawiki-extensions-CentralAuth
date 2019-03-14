@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"apihelp-deleteglobalaccount-param-user": "Декъашхо дӀадаккхарна",
+	"apihelp-globaluserrights-param-user": "Декъашхочун глобалан цӀе.",
+	"apihelp-globaluserrights-param-userid": "Декъашхочун глобалан ID."
+}

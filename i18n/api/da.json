@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"apihelp-deleteglobalaccount-description": "Slet en global bruger.",
+	"apihelp-deleteglobalaccount-param-reason": "Begrundelse for sletning af brugeren.",
+	"apihelp-deleteglobalaccount-param-user": "Bruger der skal slettes.",
+	"apihelp-deleteglobalaccount-summary": "Slet en global bruger.",
+	"apihelp-globaluserrights-param-reason": "Begrundelse for ændringen.",
+	"apihelp-globaluserrights-param-user": "Globalt brugernavn.",
+	"apihelp-query+globaluserinfo-description": "Vis oplysninger om en global bruger.",
+	"apihelp-query+wikisets-param-orderbyname": "Sorter resultaterne efter navn."
+}

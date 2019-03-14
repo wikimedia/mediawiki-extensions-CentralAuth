@@ -11,8 +11,6 @@
 			"Arianit"
 		]
 	},
-	"apihelp-globaluserrights-param-reason": "Arsyeja për ndërrimin.",
-	"apihelp-setglobalaccountstatus-param-reason": "Arsyeja për ndërrimin e statusit të përdoruesit.",
 	"centralauth": "Menaxheri i llogarisë globale",
 	"centralauth-account-exists": "Nuk mund të krijohet llogaria: emri i përdoruesit i kërkuar është marrë nga një përdorues në një tjetër wiki.",
 	"centralauth-account-exists-reset": "Emri i përdoruesit $1 nuk është i regjistruar në këtë wiki, por ajo nuk ekziston në hyrje sistem të unifikuar.",

@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hedda",
+			"Incelemeelemani",
+			"TmY e12"
+		]
+	},
+	"apihelp-deleteglobalaccount-summary": "Bir küresel kullanıcıyı sil.",
+	"apihelp-globaluserrights-param-reason": "Değişimin sebebi.",
+	"apihelp-globaluserrights-param-user": "Küresel kullanıcı adı.",
+	"apihelp-globaluserrights-param-userid": "Küresel kullanıcı kimliği.",
+	"apihelp-query+globalallusers-example-1": "Küresel kullanıcı listesi",
+	"apihelp-query+globalgroups-example-1": "Küresel grup listesi",
+	"apihelp-setglobalaccountstatus-param-hidden": "Bu kullanıcının genel kullanıcı listesinden gizlenip gizlenmeme durumunu değiştirin."
+}

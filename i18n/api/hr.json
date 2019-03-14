@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bugoslav"
+		]
+	},
+	"apierror-centralauth-badusername": "Suradničko ime »$1« nije moguće upotrijebiti na ovom wikiju"
+}

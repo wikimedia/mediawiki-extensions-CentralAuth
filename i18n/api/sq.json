@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ammartivari"
+		]
+	},
+	"apihelp-globaluserrights-param-reason": "Arsyeja për ndërrimin.",
+	"apihelp-setglobalaccountstatus-param-reason": "Arsyeja për ndërrimin e statusit të përdoruesit."
+}

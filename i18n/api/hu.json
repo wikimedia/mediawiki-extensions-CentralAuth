@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bencemac"
+		]
+	},
+	"apihelp-query+globalallusers-example-1": "Globális felhasználók listázása",
+	"apihelp-query+globalgroups-example-1": "Globális csoportok listázása",
+	"apihelp-query+wikisets-param-orderbyname": "Találatok csoportosítása név alapján."
+}

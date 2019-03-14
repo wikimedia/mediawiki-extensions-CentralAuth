@@ -15,7 +15,6 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine kojima suradnik pripada:",
 	"action-centralauth-lock": "zaključavanje ili otključavanje globalnih računa",
 	"action-centralauth-rename": "preimenovanje globalnih računa",
-	"apierror-centralauth-badusername": "Suradničko ime »$1« nije moguće upotrijebiti na ovom wikiju",
 	"centralauth": "Globalno upravljanje računom",
 	"centralauth-account-exists": "Račun ne može biti stvoren: traženo ime je već zauzeto u jedinstvenom sustavu prijave.",
 	"centralauth-account-exists-reset": "Suradničko ime $1 nije registrirano na ovoj wiki, ali postoji u sustavusredišnje prijave.",

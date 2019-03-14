@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"2nd-player",
+			"Yusuke1109"
+		]
+	},
+	"apierror-centralauth-badusername": "利用者名「$1」はこのウィキでは使用できません",
+	"apierror-centralauth-editconflict": "編集競合が検出され、中止されました。",
+	"apierror-centralauth-renameinprogress": "利用者が名前を変更されているため、使用できません。",
+	"apihelp-deleteglobalaccount-description": "グローバル利用者を削除します。",
+	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
+	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
+	"apihelp-deleteglobalaccount-param-user": "削除対象の利用者。",
+	"apihelp-deleteglobalaccount-summary": "グローバル利用者を削除します。",
+	"apihelp-globaluserrights-param-add": "これらのグローバルグループに利用者を追加します。",
+	"apihelp-globaluserrights-param-reason": "変更の理由。",
+	"apihelp-globaluserrights-param-remove": "これらのグローバルグループから利用者を削除します。",
+	"apihelp-globaluserrights-param-tags": "このパラメータは現在使用されていません。"
+}

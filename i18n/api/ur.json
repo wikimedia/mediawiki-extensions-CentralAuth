@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zainab Meher"
+		]
+	},
+	"apihelp-query+globalrenamestatus-example-1": "موجودعالمی صارف کے متعلق معلومات حاصل کریں۔",
+	"apihelp-query+globalrenamestatus-param-user": "جس صارف کا نام تبدیل ھو رہاھے ۔انکے پرانے یا نۓ نام کا ھوسکتاھے۔"
+}

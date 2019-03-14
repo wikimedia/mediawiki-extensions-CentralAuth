@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"BadDog",
+			"Prevodim",
+			"Zoranzoki21"
+		]
+	},
+	"apihelp-centralauthtoken-example-1": "Добављање токена за централну потврду идентитета",
+	"apihelp-deleteglobalaccount-description": "Брисање глобалног корисника.",
+	"apihelp-deleteglobalaccount-example-1": "Брисање глобалног налога [[User:Example|Корисник:Example]]",
+	"apihelp-deleteglobalaccount-param-reason": "Разлог за брисање корисника.",
+	"apihelp-deleteglobalaccount-param-user": "Корисник за брисање.",
+	"apihelp-deleteglobalaccount-summary": "Брисање глобалног корисника.",
+	"apihelp-globaluserrights-description": "Додај/уклони корисника у/из глобалне групе.",
+	"apihelp-globaluserrights-param-reason": "Разлог за измену.",
+	"apihelp-globaluserrights-param-remove": "Уклони корисника из наведених корисничких група.",
+	"apihelp-globaluserrights-param-tags": "Овај параметар тренутно није у употреби.",
+	"apihelp-globaluserrights-param-user": "Глобално корисничко име.",
+	"apihelp-globaluserrights-param-userid": "Глобални кориснички ID.",
+	"apihelp-globaluserrights-summary": "Додај/уклони корисника у/из глобалне групе.",
+	"apihelp-query+globalallusers-example-1": "Списак глобалних корисника",
+	"apihelp-query+wikisets-example-1": "Списак вики скупова",
+	"apihelp-setglobalaccountstatus-param-user": "Корисник чији статус треба променити.",
+	"apihelp-setglobalaccountstatus-summary": "Постави статус глобалног корисника."
+}

@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hosseinblue"
+		]
+	},
+	"apihelp-deleteglobalaccount-description": "حذف یک کاربر سراسری",
+	"apihelp-deleteglobalaccount-param-reason": "علت حذف نمودن کاربر",
+	"apihelp-deleteglobalaccount-param-user": "کاربر جهت حذف",
+	"apihelp-globaluserrights-param-reason": "دلیل گؤەڕانن/تغییر",
+	"apihelp-globaluserrights-param-user": "نام کاربری سراسری",
+	"apihelp-globaluserrights-param-userid": "شناسه کاربری سراسری.",
+	"apihelp-query+globalallusers-description": "شمارش همه کاربران سراسری",
+	"apihelp-query+globalallusers-example-1": "فهرست کاربران سراسری",
+	"apihelp-query+globalallusers-param-from": "حساب کاربری آغازین جهت شمارش.",
+	"apihelp-query+globalallusers-param-prefix": "Search for all users that begin with this value.",
+	"apihelp-query+globalallusers-param-to": "حساب کاربری جهت توقف شمارش.",
+	"apihelp-query+globalgroups-example-1": "فهرست گروه‌های سراسری"
+}

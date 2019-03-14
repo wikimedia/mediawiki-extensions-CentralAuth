@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elias Ahmmad",
+			"আফতাবুজ্জামান"
+		]
+	},
+	"apihelp-globaluserrights-param-tags": "এই প্যারামিটারটি বর্তমানে অব্যবহৃত।",
+	"apihelp-query+globalallusers-example-1": "বৈশ্বিক ব্যবহারকারীদের তালিকা",
+	"apihelp-query+globalgroups-example-1": "বৈশ্বিক দলের তালিকা"
+}

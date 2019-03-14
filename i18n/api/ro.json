@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stelistcristi"
+		]
+	},
+	"apihelp-deleteglobalaccount-example-1": "Șterge contul global pentru [[User:Example]]",
+	"apihelp-deleteglobalaccount-param-reason": "Motivul pentru ștergerea utilizatorului.",
+	"apihelp-globaluserrights-param-reason": "Motivul schimbării.",
+	"apihelp-globaluserrights-param-user": "Numele de utilizator global.",
+	"apihelp-query+globalallusers-description": "Enumeră toți utilizatorii globali.",
+	"apihelp-query+globalallusers-example-1": "Listează utilizatorii globali",
+	"apihelp-query+globalgroups-example-1": "Listează grupurile globale"
+}

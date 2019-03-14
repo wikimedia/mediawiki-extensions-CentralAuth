@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"KATRINE1992"
+		]
+	},
+	"apihelp-query+globalrenamestatus-description": "Προβάλετε πληροφορίες για αλλαγές ονομάτων που είναι σε εξέλιξη.",
+	"apihelp-query+globalrenamestatus-example-1": "Λάβετε πληροφορίες για τον παρόντα γενικό χρήστη",
+	"apihelp-query+globalrenamestatus-param-user": "Χρήστης του οποίου το όνομα άλλαξε. Μπορεί να είναι με το προηγούμενο όνομα ή το νέο όνομα.",
+	"apihelp-query+globalrenamestatus-summary": "Προβάλετε πληροφορίες για γενικές αλλαγές ονόματος που είναι σε εξέλιξη.",
+	"apihelp-query+globaluserinfo-param-id": "Γενικός χρήστης για λήψη πληροφοριών. Αν If <var>$1user</var> και <var>$1id</var> παραλειφθούν και τα δύο, αναφέρεται στον τρέχοντα χρήστη.",
+	"apihelp-query+globaluserinfo-param-user": "Χρήστης λήψης πληροφοριών. Αν <var>$1user</var> και <var>$1id</var> παραλειφθούν και τα δύο, αναφέρεται στον παρόντα χρήστη."
+}

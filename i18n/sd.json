@@ -8,7 +8,6 @@
 			"Tweety"
 		]
 	},
-	"apierror-centralauth-badusername": "واپرائيندڙ-نانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي",
 	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ڪو ٻيو نالو چونڊيو.",
 	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگھي: اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ٻيو نالو چونڊيو.",
 	"centralauth-admin-blocklog": "بندش لاگ",

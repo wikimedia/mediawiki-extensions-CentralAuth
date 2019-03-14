@@ -9,7 +9,6 @@
 			"Hello903hello"
 		]
 	},
-	"apihelp-deleteglobalaccount-example-1": "刪[[User:Example]]嘅全域戶口",
 	"centralauth": "統一戶口管理",
 	"centralauth-account-exists": "開唔到戶口：請求嘅用戶名已經俾另一個wiki度嘅用戶拎咗。",
 	"centralauth-admin-already-unmerged": "跳緊$1，已經取消合併",

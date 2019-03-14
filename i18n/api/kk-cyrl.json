@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arystanbek"
+		]
+	},
+	"apihelp-deleteglobalaccount-description": "Ғаламдық қатысушыны жою.",
+	"apihelp-deleteglobalaccount-param-reason": "Қатысушыны жою себебі.",
+	"apihelp-deleteglobalaccount-param-user": "Өшіруге қатысушы",
+	"apihelp-globaluserrights-description": "Қатысушыны қосу/кетіру ғаламдық топтан/ғаламдық топқа.",
+	"apihelp-globaluserrights-example-1": "FooBot қатысушыны «бот» ғаламдық топқа қосу, және «sysop», «bureaucrat» дегендерді ғаламдық топтан кетіру.",
+	"apihelp-globaluserrights-example-2": "Ғаламдық қатысушыны 123 сәйкестендіргішімен қ «бот» ғаламдық тобына қосу, және «sysop», «bureaucrat» дегендерді ғаламдық топтан кетіру.",
+	"apihelp-globaluserrights-param-add": "Қатысушыны мына ғаламдық топқа қосу.",
+	"apihelp-globaluserrights-param-reason": "Өзгеріс жасау себебі.",
+	"apihelp-globaluserrights-param-remove": "Қатысушыны мына ғаламдық топқа кетіру.",
+	"apihelp-globaluserrights-param-user": "Ғаламдық қатысушы есімі.",
+	"apihelp-globaluserrights-param-userid": "Ғаламдық қатысушы сәйкестендіргіші.",
+	"apihelp-query+globalallusers-description": "Барлық ғаламдық қатысушыны атаңыз.",
+	"apihelp-query+globalallusers-example-1": "Ғаламдық қатысушылардың тізімі",
+	"apihelp-query+globalallusers-example-2": "«ABC» дегеннен басталатын біраз ақпаратты ғаламдық қатысушыларға көрсету",
+	"apihelp-query+globalallusers-param-excludegroup": "Берілген ғаламдық топтан қатысушыларды шығару.",
+	"apihelp-query+globalallusers-param-group": "Ғаламдық топқа қатысушы шегі",
+	"apihelp-query+globalgroups-description": "Барлық ғаламдық топтарды атау",
+	"apihelp-query+globalgroups-example-1": "Ғаламдық топтардың тізімі",
+	"apihelp-query+globalgroups-param-prop": "Қандай ақпараттың бөлігін қамту.",
+	"apihelp-query+globaluserinfo-description": "Ғаламдық қатысушы туралы ақпаратты көру.",
+	"apihelp-query+globaluserinfo-example-1": "Қазіргі ғаламдық қатысушы туралы ақпаратты алу.",
+	"apihelp-query+globaluserinfo-example-2": "Ғаламдық қатысушы туралы ақпаратты алу [[User:Example|Example]]",
+	"apihelp-query+wikisets-description": "Барлық уики жиынтықтарды атау.",
+	"apihelp-query+wikisets-example-1": "Уики жиынтықтардың тізімі",
+	"apihelp-query+wikisets-example-2": "Уики жиынтықтарды түрімен көрсету",
+	"apihelp-query+wikisets-param-limit": "Қайту үшін қанша уики жиынтық.",
+	"apihelp-query+wikisets-param-orderbyname": "Нәтижелерді есімімен реттеу.",
+	"apihelp-setglobalaccountstatus-description": "Ғаламдық қатысушы статусын орнату.",
+	"apihelp-setglobalaccountstatus-param-reason": "Қатысушы статусын өзгерту себебі.",
+	"apihelp-setglobalaccountstatus-param-user": "Статусын өзгертуі қажет қатысушы."
+}

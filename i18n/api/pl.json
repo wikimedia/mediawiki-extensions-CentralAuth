@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps",
+			"Woytecr"
+		]
+	},
+	"apierror-centralauth-editconflict": "Wykryto konflikt edycji, przerywano.",
+	"apihelp-deleteglobalaccount-description": "Usuń globalnego użytkownika.",
+	"apihelp-deleteglobalaccount-example-1": "Usuń globalne konto [[User:Example]]",
+	"apihelp-deleteglobalaccount-param-reason": "Powód usunięcie użytkownika.",
+	"apihelp-deleteglobalaccount-param-user": "Użytkownik do usunięcia.",
+	"apihelp-deleteglobalaccount-summary": "Usuń globalnego użytkownika.",
+	"apihelp-globaluserrights-description": "Dodaj/usuń użytkownika do/z globalnych grup.",
+	"apihelp-globaluserrights-example-1": "Dodaj użytkownika FooBot do grupy globalnej „bot” i usuń z globalnych grup „sysop” i „bureaucrat”",
+	"apihelp-globaluserrights-example-2": "Dodaj użytkownika globalnego z ID 123 do grupy globalnej „bot” i usuń z globalnych grup „sysop” i „bureaucrat”",
+	"apihelp-globaluserrights-param-add": "Dodaj użytkownika do podanych grup globalnych.",
+	"apihelp-globaluserrights-param-expiry": "Ten parametr jest obecnie nieużywany.",
+	"apihelp-globaluserrights-param-reason": "Powód zmiany.",
+	"apihelp-globaluserrights-param-remove": "Usuń tego użytkownika z podanych grup globalnych.",
+	"apihelp-globaluserrights-param-tags": "Ten parametr nie jest obecnie używany.",
+	"apihelp-globaluserrights-param-user": "Globalna nazwa użytkownika.",
+	"apihelp-globaluserrights-param-userid": "Globalny identyfikator użytkownika.",
+	"apihelp-globaluserrights-summary": "Dodaj/usuń użytkownika do/z grup globalnych.",
+	"apihelp-query+globalallusers-description": "Wymień wszystkich globalnych użytkowników.",
+	"apihelp-query+globalallusers-param-dir": "Kierunek sortowania.",
+	"apihelp-query+globalallusers-param-excludegroup": "Wyklucz użytkowników będących w podanej grupie globalnej.",
+	"apihelp-query+globalallusers-param-from": "Nazwa użytkownika, od którego zacząć wymieniać.",
+	"apihelp-query+globalallusers-param-group": "Tylko użytkownicy w danych globalnych grupach.",
+	"apihelp-query+globalallusers-param-limit": "Łączna liczba nazw użytkowników do zwrócenia.",
+	"apihelp-query+globalallusers-param-prefix": "Szukaj wszystkich użytkowników, których nazwa zaczyna się od tej wartości.",
+	"apihelp-query+globalallusers-param-to": "Nazwa użytkownika, na którym skończyć wymieniać.",
+	"apihelp-query+globalgroups-example-1": "Lista grup lokalnych",
+	"apihelp-query+globalgroups-param-prop": "Jakie informacje należy uwzględnić.",
+	"apihelp-query+globaluserinfo-description": "Pokaż informacje na temat globalnego użytkownika.",
+	"apihelp-setglobalaccountstatus-param-reason": "Powód zmiany statusu użytkownika."
+}

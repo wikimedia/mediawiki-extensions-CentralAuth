@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tulsi Bhagat",
+			"बिप्लब आनन्द"
+		]
+	},
+	"apihelp-deleteglobalaccount-description": "विश्वव्यापी प्रयोक्ताक हटाबी।",
+	"apihelp-deleteglobalaccount-param-reason": "प्रयोक्ता कs हटाबे के लेल कारण।",
+	"apihelp-deleteglobalaccount-param-user": "प्रयोक्ताके नष्ट करबाकs लेल।",
+	"apihelp-globaluserrights-param-reason": "बदले कs कारण",
+	"apihelp-globaluserrights-param-user": "ग्लोबल प्रयोक्ता नाम।",
+	"apihelp-globaluserrights-param-userid": "ग्लोबल प्रयोक्ता आईडी।",
+	"apihelp-query+globalallusers-description": "सभ वैश्विक प्रयोक्ता के गणना करु।",
+	"apihelp-query+globalallusers-example-1": "विश्वव्यापी प्रयोक्ताके सूची",
+	"apihelp-query+globalgroups-description": "सभ वैश्विक समूह के गणना करु।",
+	"apihelp-query+globalgroups-example-1": "विश्वव्यापी समूह सूची",
+	"apihelp-query+globaluserinfo-description": "एक वैश्विक प्रयोक्ताके बारे में जानकारी दिखाऊँ।",
+	"apihelp-query+globaluserinfo-example-1": "हाल वैश्विक प्रयोक्ता के बारे में जानकारी प्राप्त करु",
+	"apihelp-query+globaluserinfo-example-2": "वैश्विक प्रयोक्ता के बारे में जानकारी प्राप्त करु [[User:Example|Example]]",
+	"apihelp-query+wikisets-description": "सभ विकी सेट के गणना करु।",
+	"apihelp-query+wikisets-example-1": "विकी समूहकें सूचीबद्ध करी",
+	"apihelp-query+wikisets-example-2": "देखाऊँ विकि प्रकार के साथ सेट",
+	"apihelp-setglobalaccountstatus-description": "विश्वव्यापी प्रयोगकर्ता स्थिति तय करी",
+	"apihelp-setglobalaccountstatus-param-reason": "प्रयोक्ता स्थिति परिवर्तनक कारण।",
+	"apihelp-setglobalaccountstatus-param-user": "प्रयोक्ता जकर स्थिति परिवर्तन करब।"
+}

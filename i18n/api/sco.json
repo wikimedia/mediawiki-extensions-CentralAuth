@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"John Reid"
+		]
+	},
+	"apihelp-centralauthtoken-description": "Get ae centralauthtoken fer makin aen authenteecatit speirin tae aen attached wiki.",
+	"apihelp-centralauthtoken-example-1": "Get ae centralauthtoken",
+	"apihelp-deleteglobalaccount-description": "Delyte ae global uiser.",
+	"apihelp-deleteglobalaccount-example-1": "Delyte the global accoont fer [[User:Example]]",
+	"apihelp-deleteglobalaccount-param-reason": "The raison fer delytin the uiser.",
+	"apihelp-deleteglobalaccount-param-user": "Uiser tae delyte.",
+	"apihelp-globaluserrights-description": "Eik/remuiv ae uiser tae/fae global groops.",
+	"apihelp-globaluserrights-example-1": "Eik the uiser FooBot tae global groop \"bot\", n remui fae global groops \"sysop\" n \"bureaucrat\"",
+	"apihelp-globaluserrights-example-2": "Eik the global uiser wi ID 123 tae the global groop \"bot\", n remuiv fae the global groops \"sysop\" n \"bureaucrat\"",
+	"apihelp-globaluserrights-param-add": "Eik the uiser tae thir global groops.",
+	"apihelp-globaluserrights-param-reason": "The raison fer the chynge.",
+	"apihelp-globaluserrights-param-remove": "Remuiv the uiser fae thir global groops.",
+	"apihelp-globaluserrights-param-user": "Global uiser name.",
+	"apihelp-globaluserrights-param-userid": "Global uiser ID.",
+	"apihelp-query+globalallusers-description": "Enumerate aw global uisers."
+}

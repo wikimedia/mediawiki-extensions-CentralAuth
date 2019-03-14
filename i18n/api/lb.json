@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"apierror-centralauth-badusername": "De Benotzernumm \"$1\" kann op dëser Wiki net benotzt ginn",
+	"apierror-centralauth-editconflict": "Ännerungskonflikt entdeckt",
+	"apihelp-deleteglobalaccount-description": "E globale Benotzer läschen.",
+	"apihelp-deleteglobalaccount-example-1": "De globale Benotzerkont fir [[User:Example]] läschen",
+	"apihelp-deleteglobalaccount-param-reason": "Grond fir d'Läsche vum Benotzer.",
+	"apihelp-deleteglobalaccount-param-user": "Benotzer fir ze läschen.",
+	"apihelp-deleteglobalaccount-summary": "E globale Benotzer läschen.",
+	"apihelp-globaluserrights-param-expiry": "Dëse Parameter gëtt elo net benotzt.",
+	"apihelp-globaluserrights-param-reason": "Grond fir d'Ännerung.",
+	"apihelp-globaluserrights-param-tags": "Dëse Parameter gëtt elo net benotzt.",
+	"apihelp-globaluserrights-param-user": "Globale Benotzernumm.",
+	"apihelp-globaluserrights-param-userid": "Global Benotzernummer (ID).",
+	"apihelp-query+globalallusers-description": "All global Benotzer opzielen.",
+	"apihelp-query+globalallusers-example-1": "Global Benotzer opzielen",
+	"apihelp-query+globalallusers-param-from": "De Benotzernumm bei deem d'Opzielung ufänke soll.",
+	"apihelp-query+globalallusers-summary": "All global Benotzer opzielen.",
+	"apihelp-query+globalgroups-description": "All global Gruppen opzielen.",
+	"apihelp-query+globalgroups-example-1": "Global Gruppen opzielen",
+	"apihelp-query+globalgroups-summary": "All global Gruppen opzielen.",
+	"apihelp-query+globalrenamestatus-example-1": "Informatiounen iwwer den aktuelle Benotzer kréien",
+	"apihelp-query+globalrenamestatus-summary": "Informatiounen iwwer global Ëmbenennunge weisen déi am Gaang sinn.",
+	"apihelp-query+globaluserinfo-description": "Informatiounen iwwer e globale Benotzer weisen.",
+	"apihelp-query+globaluserinfo-summary": "Informatiounen iwwer e globale Benotzer weisen.",
+	"apihelp-query+wikisets-param-orderbyname": "Resultater nom Numm zortéieren",
+	"apihelp-setglobalaccountstatus-param-reason": "Grond fir dem  Benotzer säi Status z'änneren."
+}

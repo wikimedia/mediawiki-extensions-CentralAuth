@@ -14,9 +14,6 @@
 		]
 	},
 	"action-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর করার",
-	"apihelp-globaluserrights-param-tags": "এই প্যারামিটারটি বর্তমানে অব্যবহৃত।",
-	"apihelp-query+globalallusers-example-1": "বৈশ্বিক ব্যবহারকারীদের তালিকা",
-	"apihelp-query+globalgroups-example-1": "বৈশ্বিক দলের তালিকা",
 	"centralauth": "বৈশ্বিক অ্যাকাউন্টের ব্যবস্থাপক",
 	"centralauth-account-exists": "অ্যাকাউন্ট তৈরি করা যাবে না: অনুরোধকৃত ব্যবহারকারী নাম ইতিমধ্যে অন্য উইকিতে একজন ব্যবহারকারী নিয়েছেন।",
 	"centralauth-account-exists-reset": "$1 ব্যবহারকারী নামটি এই উইকিতে নিবন্ধন করা নেই, কিন্তু আপনি [[Special:CentralAuth/$1|যেকোন উইকিতে এর]] পাসওয়ার্ডটি পুনরায় সেট করতে পারবেন।",
