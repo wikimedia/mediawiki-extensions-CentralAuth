@@ -556,7 +556,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		# Replace into the DB
 		$dbw->replace(
 			'global_group_permissions',
-			[ 'ggp_group', 'ggp_permission' ],
+			[ [ 'ggp_group', 'ggp_permission' ] ],
 			$insertRows,
 			__METHOD__
 		);
