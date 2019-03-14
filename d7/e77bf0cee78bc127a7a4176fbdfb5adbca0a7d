@@ -1,0 +1,7 @@
+Code-Review+2: Thiemo Kreuz (WMDE) <thiemo.kreuz@wikimedia.de>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 14 Mar 2019 12:49:33 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/496087
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
