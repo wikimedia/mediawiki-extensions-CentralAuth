@@ -53,7 +53,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/**
 	 * @return array
 	 */
-	function getFormFields() {
+	public function getFormFields() {
 		$fields = [
 			'oldname' => [
 				'id' => 'mw-globalrenameuser-oldname',
@@ -135,7 +135,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 *
 	 * @return Status
 	 */
-	function validate( array $data ) {
+	public function validate( array $data ) {
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
 			return Status::newFatal( 'centralauth-rename-notinstalled' );
 		}
@@ -237,7 +237,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @param array $data
 	 * @return Status
 	 */
-	function onSubmit( array $data ) {
+	public function onSubmit( array $data ) {
 		if ( $data['overrideantispoof'] ) {
 			$this->overrideAntiSpoof = true;
 		}
@@ -277,7 +277,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		return $globalRenameUser->rename( $data );
 	}
 
-	function onSuccess() {
+	public function onSuccess() {
 		$lang = $this->getLanguage();
 		$caUser = CentralAuthUser::getInstanceByName( $this->newUsername );
 		$wikiList = $lang->commaList( $caUser->listAttached() );
