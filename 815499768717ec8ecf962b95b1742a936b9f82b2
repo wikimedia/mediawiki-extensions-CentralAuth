@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a8d1836_e8b5bfab",
+        "filename": "maintenance/populateGlobalRenameLogSearch.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-03-15T17:29:31Z",
+      "side": 1,
+      "message": "Note this code was not broken. Database::insert() actually accepts a single option that is not an array:\n\nif ( !is_array( $options ) ) {\n    $options \u003d [ $options ];\n}\n\nBut it\u0027s better top go with the official documentation of IDatabase::insert().",
+      "range": {
+        "startLine": 57,
+        "startChar": 8,
+        "endLine": 57,
+        "endChar": 14
+      },
+      "revId": "815499768717ec8ecf962b95b1742a936b9f82b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
