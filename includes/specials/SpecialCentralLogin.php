@@ -13,7 +13,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		parent::__construct( 'CentralLogin' );
 	}
 
-	function execute( $subpage ) {
+	public function execute( $subpage ) {
 		// Enforce $wgSecureLogin
 		global $wgSecureLogin;
 
