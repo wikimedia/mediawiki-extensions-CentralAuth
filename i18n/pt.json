@@ -23,7 +23,8 @@
 			"He7d3r",
 			"Macofe",
 			"Jkb8",
-			"Athena in Wonderland"
+			"Athena in Wonderland",
+			"CaiusSPQR"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o utilizador está",
@@ -264,7 +265,7 @@
 	"centralauth-log-status-locked": "bloqueado",
 	"centralauth-log-status-none": "(nenhum)",
 	"centralauth-log-status-oversighted": "suprimido",
-	"centralauth-login-error-locked": "Não pode iniciar a sessão porque a sua conta está bloqueada globalmente.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Você}} não pode iniciar a sessão porque a {{GENDER:$1|sua}} conta está bloqueada globalmente.",
 	"centralauth-login-no-others": "Foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "A iniciar sessão {{PLURAL:$2|na wiki|nas wikis}} da {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Deixou automaticamente de estar autenticado de outros projetos {{int:Centralauth-groupname}}.",
