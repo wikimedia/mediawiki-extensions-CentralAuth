@@ -37,7 +37,7 @@ class SpecialMultiLock extends SpecialPage {
 		return true;
 	}
 
-	function execute( $subpage ) {
+	public function execute( $subpage ) {
 		$this->setHeaders();
 		$this->checkPermissions();
 
@@ -450,23 +450,23 @@ class SpecialMultiLock extends SpecialPage {
 	/**
 	 * @param string $wikitext
 	 */
-	function showStatusError( $wikitext ) {
+	private function showStatusError( $wikitext ) {
 		$this->getOutput()->wrapWikiTextAsInterface(
 			'error', $wikitext
 		);
 	}
 
-	function showError( /* varargs */ ) {
+	private function showError( /* varargs */ ) {
 		$args = func_get_args();
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 	}
 
-	function showSuccess( /* varargs */ ) {
+	private function showSuccess( /* varargs */ ) {
 		$args = func_get_args();
 		$this->getOutput()->wrapWikiMsg( '<div class="success">$1</div>', $args );
 	}
 
-	function showUsernameForm() {
+	private function showUsernameForm() {
 		if ( is_array( $this->mUserNames ) ) {
 			$this->mUserNames = implode( "\n", $this->mUserNames );
 		}
@@ -499,7 +499,7 @@ class SpecialMultiLock extends SpecialPage {
 	/**
 	 * Show the last 50 log entries
 	 */
-	function showLogExtract() {
+	private function showLogExtract() {
 		$text = '';
 		$numRows = LogEventsList::showLogExtract(
 			$text,
