@@ -53,7 +53,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	/**
 	 * @param stdClass|bool $row
 	 */
-	function setCurrent( $row ) {
+	public function setCurrent( $row ) {
 		parent::setCurrent( $row );
 
 		if ( $row !== false ) {
