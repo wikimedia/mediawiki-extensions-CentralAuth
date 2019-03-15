@@ -41,14 +41,14 @@ class GlobalUsersPager extends AlphabeticPager {
 	/**
 	 * @return string
 	 */
-	function getIndexField() {
+	public function getIndexField() {
 		return 'gu_name';
 	}
 
 	/**
 	 * @return array
 	 */
-	function getDefaultQuery() {
+	public function getDefaultQuery() {
 		$query = parent::getDefaultQuery();
 		if ( !isset( $query['group'] ) && $this->requestedGroup ) {
 			$query['group'] = $this->requestedGroup;
@@ -60,7 +60,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	/**
 	 * @return array
 	 */
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
 
 		if ( $this->requestedGroup ) {
@@ -93,7 +93,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @param object $row The row to be formatted for output
 	 * @return string HTML li element with username and info about this user
 	 */
-	function formatRow( $row ) {
+	public function formatRow( $row ) {
 		$user = htmlspecialchars( $row->gu_name );
 		$info = [];
 		if ( $row->gu_locked ) {
@@ -114,7 +114,7 @@ class GlobalUsersPager extends AlphabeticPager {
 			$this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
 	}
 
-	function doBatchLookups() {
+	public function doBatchLookups() {
 		$batch = new LinkBatch();
 		foreach ( $this->mResult as $row ) {
 			// userpage existence link cache
@@ -151,7 +151,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	/**
 	 * @return string
 	 */
-	function getPageHeader() {
+	public function getPageHeader() {
 		$options = [];
 		$options[$this->msg( 'group-all' )->text()] = '';
 		foreach ( $this->getAllGroups() as $group => $groupText ) {

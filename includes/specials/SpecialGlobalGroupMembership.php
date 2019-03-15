@@ -20,7 +20,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	/**
 	 * @return string
 	 */
-	function getSuccessURL() {
+	public function getSuccessURL() {
 		return $this->getPageTitle( $this->mTarget )->getFullURL();
 	}
 
@@ -34,7 +34,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	/**
 	 * Output a form to allow searching for a user
 	 */
-	function switchForm() {
+	public function switchForm() {
 		global $wgScript;
 
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
@@ -65,7 +65,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	/**
 	 * @return array
 	 */
-	function changeableGroups() {
+	public function changeableGroups() {
 		if (
 			$this->mGlobalUser->exists() &&
 			$this->mGlobalUser->isAttached() &&
@@ -95,7 +95,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @param bool $writing
 	 * @return Status
 	 */
-	function fetchUser( $username, $writing = true ) {
+	public function fetchUser( $username, $writing = true ) {
 		if ( $username === '' ) {
 			return Status::newFatal( 'nouserspecified' );
 		}
