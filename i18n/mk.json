@@ -246,7 +246,7 @@
 	"centralauth-log-status-locked": "заклучена",
 	"centralauth-log-status-none": "(нема)",
 	"centralauth-log-status-oversighted": "притаен",
-	"centralauth-login-error-locked": "Не можете да се најавите бидејќи сметката ви е глобално заклучена.",
+	"centralauth-login-error-locked": "Не {{GENDER:$1|можете}} да се најавите бидејќи сметката {{GENDER:$1|ви}} е глобално заклучена.",
 	"centralauth-login-no-others": "Автоматски сте најавени на други проекти на {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Ве најавувам на {{PLURAL:$2|викито|викијата}} на {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.",

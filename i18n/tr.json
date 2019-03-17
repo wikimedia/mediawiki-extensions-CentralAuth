@@ -412,7 +412,7 @@
 	"globalrenamerequest-newname-err-taken": "Kullanıcı adı başkası tarafından alınmış. Lütfen farklı bir isim deneyin.",
 	"globalrenamerequest-newname-help": "Kullanmak istediğiniz yeni kullanıcı adını girin. Örn., \"$1\".",
 	"globalrenamerequest-newname-label": "Talep edilen kullanıcı adı:",
-	"globalrenamerequest-pretext": "Tüm projelerde kullanılmak üzere yeni bir kullanıcı adı seçin.\n\nÖnceki katkılarınızın tamamı bu yeni kullanıcı adına bağlanacaktır.\n\nYeni bir kullanıcı adı istediğiniz takdirde, proje yetkililerine yeniden adlandırmanın uygulanması için bir bildirim gönderilecek. Bu işlem tamamlandığında size bildirilecektir.",
+	"globalrenamerequest-pretext": "Tüm projelerde kullanılmak üzere yeni bir kullanıcı adı isteyin.\n\nÖnceki katkılarınızın tamamı bu yeni kullanıcı adına bağlanacaktır.\n\nBu form aracılığıyla yapılan isteklerin bir listesi, bu işlemi gerçekleştirebilen kullanıcılara sunulacaktır. Bu işlem tamamlandığında e-posta ile bilgilendirileceksiniz.\n\nİsteğiniz anonimlik/mahremiyet ile ilgiliyse lütfen önceki adınızı belirten kalıcı bir günlük kaydı oluşturulacağını unutmayın. Dolayısıyla, [[Special:CreateAccount|ayrı ve bağımsız yeni bir hesap oluşturmayı]] ve mevcut hesabınızın rastgele ve terk edilmiş bir şey olarak yeniden adlandırılmasını isteyebilirsiniz.",
 	"globalrenamerequest-reason-label": "İstek nedeni",
 	"globalrenamerequest-save-error": "İstek kaydedilemedi. Lütfen yeniden deneyin.",
 	"globalrenamerequest-status-text": "Kullanıcı adını değiştirme isteğiniz işleme alınmıştır ve bir yetkili onayı beklenmektedir. İsteğinize yanıt geldiğinde e-posta yoluyla bilgilendirileceksiniz.\n\n;Şimdiki kullanıcı adı:\n:$1\n;İstenilen kullanıcı adı:\n:$2",
