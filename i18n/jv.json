@@ -177,7 +177,7 @@
 	"centralauth-list-unattached-title": "Akun kang ora tumèmplèk",
 	"centralauth-listusers-attached": "[[User:$1|ana sacara lokal]]",
 	"centralauth-listusers-locked": "dikunci",
-	"centralauth-listusers-nolocal": "ora kalebu utawa ora kapernah sacara enggon-enggonan",
+	"centralauth-listusers-nolocal": "ora kalebu utawa ora kapernah ing enggonan",
 	"centralauth-log-entry-chgstatus": "ngganti wisésadharma dadi akun global \"$1\": masang $2; nyopot $3",
 	"centralauth-log-entry-delete": "akun global \"$1\" dibusak",
 	"centralauth-log-entry-hide": "dhelikaké akun global \"$1\"",
