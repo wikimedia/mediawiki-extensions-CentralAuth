@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"StanProg"
 		]
 	},
 	"apierror-centralauth-badsession": "Могат да получат шифър само при използване на сесии на Central Auth.",
@@ -51,7 +52,7 @@
 	"apihelp-query+wikisets-summary": "Наброяване на всички набори от уикита.",
 	"apihelp-setglobalaccountstatus-description": "Задаване на глобален потребителски статус",
 	"apihelp-setglobalaccountstatus-example-1": "Заключване на глобалната сметка за [[User:Example]] с причината „Спам“",
-	"apihelp-setglobalaccountstatus-param-hidden": "Дали потребителят да бъде скрит, скрит от списъка на глобални потребители или да бъде притаен.",
+	"apihelp-setglobalaccountstatus-param-hidden": "Дали потребителят да бъде скрит, скрит от списъка на глобални потребители или да бъде потиснат.",
 	"apihelp-setglobalaccountstatus-param-locked": "Дали потребителят да бъде заключен или не.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промяната на статуса на потребителя.",
 	"apihelp-setglobalaccountstatus-summary": "Задаване на глобален потребителски статус"
