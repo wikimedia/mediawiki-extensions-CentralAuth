@@ -110,7 +110,7 @@
 				{ textStatus: 'abort', exception: 'abort' } ).promise(),
 			abortable,
 			aborted;
-		if ( this.foreignLoginPromise && $.inArray( type, csrfTokenOldTypes ) !== -1 ) {
+		if ( this.foreignLoginPromise && csrfTokenOldTypes.indexOf( type ) !== -1 ) {
 			return this.foreignLoginPromise.then(
 				function () {
 					if ( aborted ) {
@@ -153,10 +153,13 @@
 		var tokenPromise,
 			foreignApi = this,
 			parent = CentralAuthForeignApi.parent.prototype.ajax,
-			abortedPromise = $.Deferred().reject( 'http',
-				{ textStatus: 'abort', exception: 'abort' } ).promise(),
+			abortedPromise = $.Deferred().reject(
+				'http',
+				{ textStatus: 'abort', exception: 'abort' }
+			).promise(),
 			abortable,
 			aborted;
+
 		// If we know we can't get a 'centralauthtoken', or if one was provided, don't request it
 		if ( this.noTokenNeeded || hasOwnProperty.call( parameters, 'centralauthtoken' ) ) {
 			tokenPromise = $.Deferred().reject();

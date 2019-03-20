@@ -16,7 +16,7 @@
 		login.query.returntoquery = current.getQueryString();
 
 		$.getJSON( login.toString() )
-			.done( function ( data ) {
+			.then( function ( data ) {
 				if ( data.toolslist ) {
 					$( '#p-personal ul' ).html( data.toolslist );
 					$( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );
@@ -35,8 +35,7 @@
 						}
 					);
 				}
-			} )
-			.fail( function () {
+			}, function () {
 				// This happens if the user is logged in securely,
 				// while also auto-loggedin from an http page.
 				mw.notify(
