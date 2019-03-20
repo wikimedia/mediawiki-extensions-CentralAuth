@@ -457,7 +457,7 @@
 	"globalrenamerequest-newname-err-taken": "入力した利用者名は既に使用されています。別の利用者名を指定してください。",
 	"globalrenamerequest-newname-help": "新しい利用者名として希望するものを入力してください。例:「$1」",
 	"globalrenamerequest-newname-label": "希望利用者名:",
-	"globalrenamerequest-pretext": "全プロジェクトにわたって使用する新しい利用者名を依頼してください。\n\nあなたのこれまでの編集履歴はすべてこの新しい利用者名に結び付けられます。\n\nA list of requests made via this form will be made available to the users able to perform this operation. 対処が完了したら、メールであなたに通知が届きます。\n\nIf your request is related to a desire for anonymity/privacy, please note that a permanent log record will be created noting your previous name. As such, you might consider simply [[Special:CreateAccount|creating a separate and independent new account]], and having your current account renamed to something random and abandoning it.",
+	"globalrenamerequest-pretext": "全プロジェクトにわたって使用する新しい利用者名を依頼してください。\n\nこのフォームを使ってリクエストした場合、この操作を行う権限のある利用者に一括して表示されます。対処が完了したら、メールであなたに通知が届きます。\n\nもしリクエスト内容を匿名にしたい／プライバシーに関連する場合には、この処理は永久保存用のログ記録が作成され以前の利用者名が記載される点にご注意ください。そこで単に[[Special:CreateAccount|新規の独立したアカウントを作成して]]、これまで使ってきたアカウントを無関係の名前に改名し放棄する方法をご検討ください。",
 	"globalrenamerequest-reason-label": "改名を希望する理由",
 	"globalrenamerequest-submit-text": "改名を依頼",
 	"globalrenamerequest-username-label": "現在の利用者名:",
