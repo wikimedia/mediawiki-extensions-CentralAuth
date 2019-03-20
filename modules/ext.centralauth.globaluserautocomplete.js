@@ -17,9 +17,9 @@
 				list: 'globalallusers',
 				// Prefix of list=globalallusers is case sensitive. Normalise first
 				// character to uppercase so that "fo" may yield "Foo".
-				aguprefix: userInput.charAt( 0 ).toUpperCase() + userInput.slice( 1 )
-			} ).done( function ( data ) {
-				var users = $.map( data.query.globalallusers, function ( userObj ) {
+				aguprefix: userInput[ 0 ].toUpperCase() + userInput.slice( 1 )
+			} ).then( function ( data ) {
+				var users = data.query.globalallusers.map( function ( userObj ) {
 					return userObj.name;
 				} );
 				// Set the results as the autocomplete options

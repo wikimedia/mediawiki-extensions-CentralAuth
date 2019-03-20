@@ -1,9 +1,3 @@
-/*!
- * MediaWiki Widgets - GlobalUserInputWidget class.
- *
- * @copyright 2011-2015 MediaWiki Widgets Team and others; see AUTHORS.txt
- * @license The MIT License (MIT); see LICENSE.txt
- */
 ( function () {
 
 	/**
@@ -17,12 +11,12 @@
 	 * @param {Object} [config] Configuration options
 	 * @cfg {number} [limit=10] Number of results to show
 	 */
-	mw.widgets.GlobalUserInputWidget = function MwWidgetsGlobalUserInputWidget( config ) {
+	function GlobalUserInputWidget( config ) {
 		// Config initialization
 		config = config || {};
 
 		// Parent constructor
-		mw.widgets.GlobalUserInputWidget.parent.call( this, $.extend( {}, config, { autocomplete: false } ) );
+		GlobalUserInputWidget.parent.call( this, $.extend( {}, config, { autocomplete: false } ) );
 
 		// Mixin constructors
 		OO.ui.mixin.LookupElement.call( this, config );
@@ -33,19 +27,19 @@
 		// Initialization
 		this.$element.addClass( 'mw-widget-userInputWidget' );
 		this.lookupMenu.$element.addClass( 'mw-widget-userInputWidget-menu' );
-	};
+	}
 
 	/* Setup */
 
-	OO.inheritClass( mw.widgets.GlobalUserInputWidget, OO.ui.TextInputWidget );
-	OO.mixinClass( mw.widgets.GlobalUserInputWidget, OO.ui.mixin.LookupElement );
+	OO.inheritClass( GlobalUserInputWidget, OO.ui.TextInputWidget );
+	OO.mixinClass( GlobalUserInputWidget, OO.ui.mixin.LookupElement );
 
 	/* Methods */
 
 	/**
 	 * @inheritdoc
 	 */
-	mw.widgets.GlobalUserInputWidget.prototype.onLookupMenuItemChoose = function ( item ) {
+	GlobalUserInputWidget.prototype.onLookupMenuItemChoose = function ( item ) {
 		this.closeLookupMenu();
 		this.setLookupsDisabled( true );
 		this.setValue( item.getData() );
@@ -55,14 +49,14 @@
 	/**
 	 * @inheritdoc
 	 */
-	mw.widgets.GlobalUserInputWidget.prototype.focus = function () {
+	GlobalUserInputWidget.prototype.focus = function () {
 		var retval;
 
 		// Prevent programmatic focus from opening the menu
 		this.setLookupsDisabled( true );
 
 		// Parent method
-		retval = mw.widgets.GlobalUserInputWidget.parent.prototype.focus.apply( this, arguments );
+		retval = GlobalUserInputWidget.parent.prototype.focus.apply( this, arguments );
 
 		this.setLookupsDisabled( false );
 
@@ -72,7 +66,7 @@
 	/**
 	 * @inheritdoc
 	 */
-	mw.widgets.GlobalUserInputWidget.prototype.getLookupRequest = function () {
+	GlobalUserInputWidget.prototype.getLookupRequest = function () {
 		var inputValue = this.value;
 
 		return new mw.Api().get( {
@@ -92,7 +86,7 @@
 	 * @param {Mixed} response Response from server
 	 * @return {Object}
 	 */
-	mw.widgets.GlobalUserInputWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
+	GlobalUserInputWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
 		return response.query.globalallusers || {};
 	};
 
@@ -102,7 +96,7 @@
 	 * @param {Object} data Query result
 	 * @return {OO.ui.MenuOptionWidget[]} Menu items
 	 */
-	mw.widgets.GlobalUserInputWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
+	GlobalUserInputWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
 		var len, i, user,
 			items = [];
 
@@ -117,4 +111,5 @@
 		return items;
 	};
 
+	mw.widgets.GlobalUserInputWidget = GlobalUserInputWidget;
 }() );
