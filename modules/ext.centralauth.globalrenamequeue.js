@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 	$( function () {
 		// Confirm renames
@@ -13,4 +13,4 @@
 			return confirm( mw.msg( 'centralauth-rename-deny' ) );
 		} );
 	} );
-}( mediaWiki, jQuery ) );
+}() );

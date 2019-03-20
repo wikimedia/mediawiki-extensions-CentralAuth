@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	var $methodHint;
 
 	function showMethodHint( methodName, e ) {
@@ -64,4 +64,4 @@
 			return confirm( mw.msg( 'centralauth-admin-delete-confirm' ) );
 		} );
 	} );
-}( mediaWiki, jQuery ) );
+}() );

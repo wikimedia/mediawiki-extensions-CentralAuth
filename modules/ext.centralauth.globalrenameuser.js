@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	$( function () {
 		// Confirm renames
 		mw.util.$content.find( 'form' ).first().on( 'submit', function () {
@@ -14,4 +14,4 @@
 		} );
 
 	} );
-}( mediaWiki, jQuery ) );
+}() );

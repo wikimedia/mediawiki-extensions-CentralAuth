@@ -117,4 +117,4 @@
 		return items;
 	};
 
-}( mediaWiki ) );
+}() );
