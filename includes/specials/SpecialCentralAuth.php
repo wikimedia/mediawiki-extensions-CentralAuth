@@ -303,7 +303,8 @@ class SpecialCentralAuth extends SpecialPage {
 			'hours' => 24,
 			'days' => 30.417,
 			'months' => 12,
-			'years' => 1 ];
+			'years' => 1
+		];
 		foreach ( $units as $unit => $chunk ) {
 			// Used messaged (to make sure that grep finds them):
 			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
@@ -313,7 +314,11 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 			$span = intval( $span / $chunk );
 		}
-		return $this->msg( "centralauth-$unit-ago" )->numParams( $span )->text();
+
+		end( $units );
+		$lastUnit = key( $units );
+
+		return $this->msg( "centralauth-$lastUnit-ago" )->numParams( $span )->text();
 	}
 
 	private function showInfo() {
