@@ -7,7 +7,7 @@ use MediaWiki\MediaWikiServices;
 
 class CentralAuthUtils {
 	/** @var BagOStuff|null Session cache */
-	private static $sessionCache = null;
+	private static $sessionStore = null;
 
 	public static function isReadOnly() {
 		return ( self::getReadOnlyReason() !== false );
@@ -113,15 +113,15 @@ class CentralAuthUtils {
 	/**
 	 * @return BagOStuff
 	 */
-	public static function getSessionCache() {
+	public static function getSessionStore() {
 		global $wgSessionCacheType;
 
-		if ( !self::$sessionCache ) {
+		if ( !self::$sessionStore ) {
 			$cache = ObjectCache::getInstance( $wgSessionCacheType );
-			self::$sessionCache = $cache instanceof CachedBagOStuff
+			self::$sessionStore = $cache instanceof CachedBagOStuff
 				? $cache : new CachedBagOStuff( $cache );
 		}
-		return self::$sessionCache;
+		return self::$sessionStore;
 	}
 
 	/**
@@ -171,12 +171,16 @@ class CentralAuthUtils {
 	 * @return array
 	 */
 	public static function getCentralSessionById( $id ) {
+		$sessionStore = self::getSessionStore();
 		$key = self::memcKey( 'session', $id );
+
 		$stime = microtime( true );
-		$data = self::getSessionCache()->get( $key ) ?: [];
+		$data = $sessionStore->get( $key ) ?: [];
 		$real = microtime( true ) - $stime;
+
 		MediaWikiServices::getInstance()
 			->getStatsdDataFactory()->timing( 'centralauth.session.read', $real );
+
 		return $data;
 	}
 
@@ -199,18 +203,26 @@ class CentralAuthUtils {
 			$id = is_string( $reset ) ? $reset : MWCryptRand::generateHex( 32 );
 		}
 		$data['sessionId'] = $id;
+
+		$sessionStore = self::getSessionStore();
 		$key = self::memcKey( 'session', $id );
 
 		// Copy certain keys from the existing session, if any (T124821)
-		$existing = self::getSessionCache()->get( $key );
+		$existing = $sessionStore->get( $key );
 		if ( is_array( $existing ) ) {
 			$data += array_intersect_key( $existing, $keepKeys );
 		}
 
-		if ( $data !== $existing || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
-			$data['expiry'] = time() + 86400;
+		$isDirty = ( $data !== $existing );
+		if ( $isDirty || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
+			$data['expiry'] = time() + $sessionStore::TTL_DAY;
 			$stime = microtime( true );
-			self::getSessionCache()->set( $key, $data, 86400 );
+			$sessionStore->set(
+				$key,
+				$data,
+				$sessionStore::TTL_DAY,
+				$isDirty ? BagOStuff::WRITE_SYNC : 0
+			);
 			$real = microtime( true ) - $stime;
 			MediaWikiServices::getInstance()
 				->getStatsdDataFactory()->timing( 'centralauth.session.write', $real );
@@ -234,10 +246,13 @@ class CentralAuthUtils {
 		$id = $session->get( 'CentralAuth::centralSessionId' );
 
 		if ( $id !== null ) {
+			$sessionStore = self::getSessionStore();
 			$key = self::memcKey( 'session', $id );
+
 			$stime = microtime( true );
-			self::getSessionCache()->delete( $key );
+			$sessionStore->delete( $key, $sessionStore::WRITE_SYNC );
 			$real = microtime( true ) - $stime;
+
 			MediaWikiServices::getInstance()
 				->getStatsdDataFactory()->timing( "centralauth.session.delete", $real );
 		}
