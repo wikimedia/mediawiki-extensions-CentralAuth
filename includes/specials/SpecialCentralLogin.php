@@ -66,10 +66,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 */
 	protected function doLoginStart( $token ) {
 		$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
-		$cache = CentralAuthUtils::getSessionCache();
+		$sessionStore = CentralAuthUtils::getSessionStore();
 
 		// Get the token information
-		$info = $cache->get( $key, BagOStuff::READ_LATEST );
+		$info = $sessionStore->get( $key, BagOStuff::READ_LATEST );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -123,7 +123,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$cache->delete( $key );
+		$sessionStore->delete( $key );
 
 		if ( $createStubSession ) {
 			// Determine if we can use the default cookie security, or if we need
@@ -153,7 +153,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
 		];
-		$cache->set( $key, $data, 60 );
+		$sessionStore->set( $key, $data, $sessionStore::TTL_MINUTE );
 
 		$query = [ 'token' => $token ];
 
@@ -181,13 +181,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		global $wgCentralAuthCheckSULMigration;
 
 		$request = $this->getRequest();
-		$cache = CentralAuthUtils::getSessionCache();
+		$sessionStore = CentralAuthUtils::getSessionStore();
 
 		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
-		$info = $cache->get( $key, BagOStuff::READ_LATEST );
+		$info = $sessionStore->get( $key, BagOStuff::READ_LATEST );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -233,7 +233,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$cache->delete( $key );
+		$sessionStore->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		$delay = $this->session->delaySave();
@@ -242,7 +242,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $attempt['stickHTTPS'] !== null ) {
 			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
 		}
-		$newSessionId = CentralAuthUtils::setCentralSession( [
+		CentralAuthUtils::setCentralSession( [
 			'finalProto' => $attempt['finalProto'],
 			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
