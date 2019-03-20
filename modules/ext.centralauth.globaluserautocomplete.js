@@ -19,7 +19,7 @@
 				// character to uppercase so that "fo" may yield "Foo".
 				aguprefix: userInput.charAt( 0 ).toUpperCase() + userInput.slice( 1 )
 			} ).done( function ( data ) {
-				var users = $.map( data.query.globalallusers, function ( userObj ) {
+				var users = data.query.globalallusers.map( function ( userObj ) {
 					return userObj.name;
 				} );
 				// Set the results as the autocomplete options
@@ -38,6 +38,7 @@
 	};
 
 	$( function () {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.mw-autocomplete-global-user' ).suggestions( config );
 	} );
 }() );

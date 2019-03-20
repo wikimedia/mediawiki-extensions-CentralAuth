@@ -19,10 +19,10 @@
 	 */
 	mw.widgets.GlobalUserInputWidget = function MwWidgetsGlobalUserInputWidget( config ) {
 		// Config initialization
-		config = config || {};
+		config = $.extend( {}, config, { autocomplete: false } );
 
 		// Parent constructor
-		mw.widgets.GlobalUserInputWidget.parent.call( this, $.extend( {}, config, { autocomplete: false } ) );
+		mw.widgets.GlobalUserInputWidget.parent.call( this, config );
 
 		// Mixin constructors
 		OO.ui.mixin.LookupElement.call( this, config );
@@ -89,11 +89,11 @@
 	 * Get lookup cache item from server response data.
 	 *
 	 * @method
-	 * @param {Mixed} response Response from server
+	 * @param {Mixed} res Response from server
 	 * @return {Object}
 	 */
-	mw.widgets.GlobalUserInputWidget.prototype.getLookupCacheDataFromResponse = function ( response ) {
-		return response.query.globalallusers || {};
+	mw.widgets.GlobalUserInputWidget.prototype.getLookupCacheDataFromResponse = function ( res ) {
+		return res.query.globalallusers || {};
 	};
 
 	/**

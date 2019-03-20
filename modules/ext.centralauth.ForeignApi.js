@@ -110,7 +110,7 @@
 				{ textStatus: 'abort', exception: 'abort' } ).promise(),
 			abortable,
 			aborted;
-		if ( this.foreignLoginPromise && $.inArray( type, csrfTokenOldTypes ) !== -1 ) {
+		if ( this.foreignLoginPromise && ( csrfTokenOldTypes.indexOf( type ) !== -1 ) ) {
 			return this.foreignLoginPromise.then(
 				function () {
 					if ( aborted ) {
