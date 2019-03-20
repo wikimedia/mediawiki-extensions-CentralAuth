@@ -18,7 +18,9 @@
 		$.getJSON( login.toString() )
 			.then( function ( data ) {
 				if ( data.toolslist ) {
+					// eslint-disable-next-line no-jquery/no-global-selector
 					$( '#p-personal ul' ).html( data.toolslist );
+					// eslint-disable-next-line no-jquery/no-global-selector
 					$( '#p-personal' ).addClass( 'centralAuthPPersonalAnimation' );
 					mw.hook( 'centralauth-p-personal-reset' ).fire();
 				} else if ( data.notify ) {

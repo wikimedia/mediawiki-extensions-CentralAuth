@@ -8,7 +8,8 @@
 			$methodHint = $( '<div>' )
 				.addClass( 'merge-method-help-div' )
 				.hide()
-				.click( function () {
+				.on( 'click', function () {
+					// eslint-disable-next-line no-jquery/no-fade
 					$( this ).fadeOut();
 				} );
 			mw.util.$content.append( $methodHint );
@@ -25,12 +26,13 @@
 		// centralauth-merge-method-login-desc
 		hintHtml = mw.html.element(
 			'p', {
-				'class': 'merge-method-help-name'
+				class: 'merge-method-help-name'
 			},
 			mw.msg( 'centralauth-merge-method-' + methodName )
 		) +
 		mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
 
+		// eslint-disable-next-line no-jquery/no-fade
 		$methodHint
 			.html( hintHtml )
 			.css( {
@@ -42,22 +44,25 @@
 
 	$( function () {
 		// Back link for CentralLogin/start
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '#centralauth-backlink-section' ).append(
 			$( '<a>' )
 				.attr( 'href', '#' )
 				.text( mw.msg( 'centralauth-completelogin-back' ) )
-				.click( function ( e ) {
+				.on( 'click', function ( e ) {
 					e.preventDefault();
 					parent.history.back();
 				} )
 		);
 
 		// OnClick event listener for the "(?)" tooltips on Special:CentralAuth
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.mw-centralauth-wikislist' ).on( 'click', '.merge-method-help', function ( event ) {
 			showMethodHint( $( this ).data( 'centralauth-mergemethod' ), event );
 		} );
 
 		// Confirm account deletions
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '#mw-centralauth-delete input[type="submit"]' ).on( 'click', function () {
 			// TODO: Convert this to OOUI.
 			// eslint-disable-next-line no-alert
