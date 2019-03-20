@@ -2,7 +2,7 @@
  * Add autocomplete suggestions for names of global accounts.
  * Lovingly stolen from core mediawiki.userSuggest
  */
-( function ( mw, $ ) {
+( function () {
 	var api, config;
 
 	config = {
@@ -40,4 +40,4 @@
 	$( function () {
 		$( '.mw-autocomplete-global-user' ).suggestions( config );
 	} );
-}( mediaWiki, jQuery ) );
+}() );

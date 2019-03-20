@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	QUnit.module( 'ext.centralauth.ForeignApi', QUnit.newMwEnvironment( {
 		setup: function () {
 			this.server = this.sandbox.useFakeServer();
@@ -21,7 +21,7 @@
 		var spy = this.sandbox.spy( api, 'getCentralAuthToken' );
 
 		return api.get( {} ).then( function () {
-			assert.ok( !spy.called, 'Anonymous users do not ask for centralauthtoken' );
+			assert.notOk( spy.called, 'Anonymous users do not ask for centralauthtoken' );
 		} );
 	} );
 
@@ -65,8 +65,8 @@
 		);
 
 		return api.get( {} ).then( function () {
-			assert.ok( !spy.called, 'Called' );
+			assert.notOk( spy.called, 'Called' );
 		} );
 	} );
 
-}( mediaWiki, jQuery ) );
+}() );

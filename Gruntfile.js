@@ -25,10 +25,7 @@ module.exports = function ( grunt ) {
 			]
 		},
 		eslint: {
-			all: [
-				'*.js',
-				'modules/**/*.js'
-			]
+			all: '.'
 		}
 	} );
 

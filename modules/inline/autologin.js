@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 	mw.loader.using( 'mediawiki.Uri', function () {
 		var current, login;
 
@@ -49,4 +49,4 @@
 				);
 			} );
 	} );
-}( mediaWiki, jQuery ) );
+}() );

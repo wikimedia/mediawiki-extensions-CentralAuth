@@ -1,4 +1,4 @@
-( function ( mw ) {
+( function () {
 	var url, params, len, param, i;
 	// Are we already logged in?
 	if ( mw.config.get( 'wgUserName' ) !== null ) {
@@ -45,4 +45,4 @@
 		}
 		mw.loader.load( url );
 	}
-}( mediaWiki ) );
+}() );
