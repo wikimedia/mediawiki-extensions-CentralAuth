@@ -1,4 +1,4 @@
-( function ( mw, $ ) {
+( function () {
 
 	var
 		hasOwnProperty = Object.prototype.hasOwnProperty,
@@ -211,4 +211,4 @@
 	// Expose
 	mw.ForeignApi = CentralAuthForeignApi;
 
-}( mediaWiki, jQuery ) );
+}() );
