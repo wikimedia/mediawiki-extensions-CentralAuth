@@ -141,8 +141,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$user = $this->getUser();
 			if ( !$user->isAnon() ) {
-				if ( !CentralAuthHooks::isUIReloadRecommended( $user ) ) {
-					$html = $this->getSkin()->getPersonalToolsList();
+				$skin = $this->getSkin();
+				if (
+					!CentralAuthHooks::isUIReloadRecommended( $user ) &&
+					$skin instanceof SkinTemplate
+				) {
+					$html = $skin->getPersonalToolsList();
 					$json = FormatJson::encode( [ 'toolslist' => $html ] );
 				} else {
 					$gender = $this->getUser()->getOption( 'gender' );
@@ -239,7 +243,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUtils::setP3P();
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
 				'wikiid' => wfWikiID(),
-				'proto' => $request->detectProtocol(),
+				'proto' => WebRequest::detectProtocol(),
 			] + $params );
 			return;
 
