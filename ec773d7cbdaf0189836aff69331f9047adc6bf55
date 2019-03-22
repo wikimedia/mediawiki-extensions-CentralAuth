@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c667ba69_c7616782",
+        "filename": "modules/ext.widgets.GlobalUserInputWidget.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-22T02:16:36Z",
+      "side": 0,
+      "message": "I believe this was intentionally separate. Unlike most use of extend(), this isn\u0027t for a default or override, it\u0027s for an additional option.\n\nThe \u0027autocomplete\u0027 option is just for the parent class. It\u0027s not something we allow \u0027config\u0027 to set, nor is it aimed at the mixin class.\n\nBut, given it will already pass through many parent classes and other mixins further up, I suppose that means we are already not supporting potential clashes or mis-uses of config options. This is one of the reasons why inheritance is a terrible model for UI libraries, but oh well.",
+      "range": {
+        "startLine": 19,
+        "startChar": 64,
+        "endLine": 19,
+        "endChar": 91
+      },
+      "revId": "ec773d7cbdaf0189836aff69331f9047adc6bf55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
