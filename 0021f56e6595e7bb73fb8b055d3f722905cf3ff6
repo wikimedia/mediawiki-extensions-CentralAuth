@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4fd837b9_0f8bb170",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Case mismatch, should be \u0027setSubtitle\u0027. Though it\u0027s not a big deal but it\u0027s a good practice to use function names as they\u0027re.",
+      "range": {
+        "startLine": 521,
+        "startChar": 22,
+        "endLine": 521,
+        "endChar": 33
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "772c0b97_721c8d04",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Should not be private as it\u0027s used in `SpecialCentralAuth.php` in `showRenameInProgressError()` specifically on L#181.",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a504359d_3b56b237",
+        "filename": "includes/specials/SpecialMultiLock.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Another method name mismatch, should be \u0027getLocalURL()`.",
+      "range": {
+        "startLine": 475,
+        "startChar": 39,
+        "endLine": 475,
+        "endChar": 50
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d56d7648_a2b88077",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Another method name case mismatch, should be `newFromID`.",
+      "range": {
+        "startLine": 48,
+        "startChar": 16,
+        "endLine": 48,
+        "endChar": 25
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4214af10_f5f6422d",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Non-canonical order, should be `@var WikiSet $set`",
+      "range": {
+        "startLine": 91,
+        "startChar": 5,
+        "endLine": 91,
+        "endChar": 22
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "635b0b95_aafb5bca",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Should be `$this-\u003e`",
+      "range": {
+        "startLine": 216,
+        "startChar": 40,
+        "endLine": 216,
+        "endChar": 46
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f69167d0_17a663e4",
+        "filename": "includes/specials/SpecialWikiSets.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 2842
+      },
+      "writtenOn": "2019-03-22T09:48:25Z",
+      "side": 1,
+      "message": "Should be `$this-\u003e`",
+      "range": {
+        "startLine": 219,
+        "startChar": 44,
+        "endLine": 219,
+        "endChar": 50
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
