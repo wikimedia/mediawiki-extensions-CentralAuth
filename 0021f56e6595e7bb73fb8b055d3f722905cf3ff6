@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "4b513603_f12bbbf1",
+        "filename": "includes/specials/SpecialGlobalRenameProgress.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2019-03-22T15:11:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "772c0b97_721c8d04",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "0021f56e6595e7bb73fb8b055d3f722905cf3ff6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a504359d_3b56b237",
         "filename": "includes/specials/SpecialMultiLock.php",
         "patchSetId": 4
