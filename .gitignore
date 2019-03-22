@@ -2,6 +2,7 @@ composer.lock
 /nbproject/private/
 /node_modules
 /vendor
+.eslintcache
 
 # Editors
 *.kate-swp

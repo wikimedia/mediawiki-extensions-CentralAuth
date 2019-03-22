@@ -38,6 +38,7 @@
 	};
 
 	$( function () {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.mw-autocomplete-global-user' ).suggestions( config );
 	} );
 }() );

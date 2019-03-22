@@ -13,10 +13,10 @@
 	 */
 	function GlobalUserInputWidget( config ) {
 		// Config initialization
-		config = config || {};
+		config = $.extend( {}, config, { autocomplete: false } );
 
 		// Parent constructor
-		GlobalUserInputWidget.parent.call( this, $.extend( {}, config, { autocomplete: false } ) );
+		GlobalUserInputWidget.parent.call( this, config );
 
 		// Mixin constructors
 		OO.ui.mixin.LookupElement.call( this, config );
