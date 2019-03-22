@@ -87,7 +87,7 @@ class AttachAccount extends Maintenance {
 	}
 
 	public function execute() {
-		$this->dbBackground = CentralAuthUtils::getCentralSlaveDB();
+		$this->dbBackground = CentralAuthUtils::getCentralReplicaDB();
 
 		$this->dryRun = $this->hasOption( 'dry-run' );
 		$this->quiet = $this->hasOption( 'quiet' );

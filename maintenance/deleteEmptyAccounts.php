@@ -46,7 +46,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$wgUser = User::newFromName( 'Maintenance script' );
 		RequestContext::getMain()->setUser( $wgUser );
 
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
 		if ( $this->getOption( 'fix', false ) !== false ) {
 			$this->fix = true;

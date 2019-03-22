@@ -38,7 +38,7 @@ class MigratePass1 extends Maintenance {
 		$this->output( "CentralAuth migration pass 1:\n" );
 		$this->output( "Finding accounts which can be migrated without interaction...\n" );
 
-		$dbBackground = CentralAuthUtils::getCentralSlaveDB();
+		$dbBackground = CentralAuthUtils::getCentralReplicaDB();
 		$result = $dbBackground->select(
 			'globalnames',
 			[ 'gn_name' ],

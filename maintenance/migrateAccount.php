@@ -83,7 +83,7 @@ class MigrateAccount extends Maintenance {
 	}
 
 	public function execute() {
-		$this->dbBackground = CentralAuthUtils::getCentralSlaveDB();
+		$this->dbBackground = CentralAuthUtils::getCentralReplicaDB();
 
 		if ( $this->getOption( 'safe', false ) !== false ) {
 			$this->safe = true;

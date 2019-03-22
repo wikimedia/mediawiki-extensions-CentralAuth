@@ -213,7 +213,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @deprecated use CentralAuthUtils instead
 	 */
 	public static function getCentralSlaveDB() {
-		return CentralAuthUtils::getCentralSlaveDB();
+		return CentralAuthUtils::getCentralReplicaDB();
 	}
 
 	/**
@@ -261,7 +261,7 @@ class CentralAuthUser implements IDBAccessObject {
 	protected function getSafeReadDB() {
 		return $this->shouldUseMasterDB()
 			? CentralAuthUtils::getCentralDB()
-			: CentralAuthUtils::getCentralSlaveDB();
+			: CentralAuthUtils::getCentralReplicaDB();
 	}
 
 	/**
@@ -316,7 +316,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthUser|bool false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
-		$name = CentralAuthUtils::getCentralSlaveDB()->selectField(
+		$name = CentralAuthUtils::getCentralReplicaDB()->selectField(
 			'globaluser',
 			'gu_name',
 			[ 'gu_id' => $id ],
@@ -540,7 +540,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->getCacheKey( $cache ),
 			$cache::TTL_DAY,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = CentralAuthUtils::getCentralSlaveDB();
+				$dbr = CentralAuthUtils::getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$this->loadFromDatabase();
@@ -2199,7 +2199,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	public function lazyImportLocalNames() {
-		$known = (bool)CentralAuthUtils::getCentralSlaveDB()->selectField(
+		$known = (bool)CentralAuthUtils::getCentralReplicaDB()->selectField(
 			'globalnames', '1', [ 'gn_name' => $this->mName ], __METHOD__
 		);
 		if ( $known ) {
@@ -2893,7 +2893,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array
 	 */
 	static function availableGlobalGroups() {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', [], __METHOD__ );
 
@@ -2912,7 +2912,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array
 	 */
 	static function globalGroupPermissions( $group ) {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
 		$res = $dbr->select( [ 'global_group_permissions' ],
 			[ 'ggp_permission' ], [ 'ggp_group' => $group ], __METHOD__ );
@@ -2941,7 +2941,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array
 	 */
 	static function getUsedRights() {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
 		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission',
 			[], __METHOD__ );

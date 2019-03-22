@@ -19,7 +19,7 @@ class UpdateUsersToRename extends Maintenance {
 
 	public function execute() {
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$total = 0;
 		do {
 			$rows = $dbr->select(

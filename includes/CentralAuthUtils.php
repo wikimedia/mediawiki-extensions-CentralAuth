@@ -62,12 +62,20 @@ class CentralAuthUtils {
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
-	public static function getCentralSlaveDB() {
+	public static function getCentralReplicaDB() {
 		global $wgCentralAuthDatabase;
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		return $lbFactory->getMainLB( $wgCentralAuthDatabase )->getConnectionRef(
-			DB_REPLICA, 'centralauth', $wgCentralAuthDatabase );
+		return $lbFactory->getMainLB( $wgCentralAuthDatabase )
+			->getConnectionRef( DB_REPLICA, 'centralauth', $wgCentralAuthDatabase );
+	}
+
+	/**
+	 * @return \Wikimedia\Rdbms\IDatabase
+	 * @deprecated Since 1.33; use getCentralReplicaDB()
+	 */
+	public function getCentralSlaveDB() {
+		return self::getCentralReplicaDB();
 	}
 
 	/**

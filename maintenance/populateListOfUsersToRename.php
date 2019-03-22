@@ -35,7 +35,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	 * @return IResultWrapper
 	 */
 	private function doQuery() {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$rows = $dbr->select(
 			[ 'localnames', 'localuser' ],
 			[ 'ln_name AS name', 'ln_wiki AS wiki' ],

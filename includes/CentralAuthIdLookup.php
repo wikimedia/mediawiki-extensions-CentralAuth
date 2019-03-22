@@ -15,7 +15,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$fromMaster = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
 		$db = $fromMaster
 			? CentralAuthUtils::getCentralDB()
-			: CentralAuthUtils::getCentralSlaveDB();
+			: CentralAuthUtils::getCentralReplicaDB();
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 
@@ -52,7 +52,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$fromMaster = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
 		$db = $fromMaster
 			? CentralAuthUtils::getCentralDB()
-			: CentralAuthUtils::getCentralSlaveDB();
+			: CentralAuthUtils::getCentralReplicaDB();
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 

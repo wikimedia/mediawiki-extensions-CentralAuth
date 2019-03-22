@@ -19,7 +19,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$dbw = CentralAuthUtils::getCentralDB();
 		$lastGlobalId = -1;
 

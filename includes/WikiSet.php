@@ -135,7 +135,7 @@ class WikiSet {
 			self::getPerNameCacheKey( $cache, $name ),
 			$cache::TTL_INDEFINITE,
 			function ( $oldValue, &$ttl, &$setOpts ) use ( $name, $fname ) {
-				$dbr = CentralAuthUtils::getCentralSlaveDB();
+				$dbr = CentralAuthUtils::getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_name' => $name ], $fname );
@@ -175,7 +175,7 @@ class WikiSet {
 			self::getPerIdCacheKey( $cache, $id ),
 			$cache::TTL_INDEFINITE,
 			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
-				$dbr = CentralAuthUtils::getCentralSlaveDB();
+				$dbr = CentralAuthUtils::getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_id' => $id ], $fname );
@@ -308,7 +308,7 @@ class WikiSet {
 	 * @return array
 	 */
 	public function getRestrictedGroups() {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$r = $dbr->select(
 			'global_group_restrictions', '*', [ 'ggr_set' => $this->mId ], __METHOD__
 		);
@@ -326,7 +326,7 @@ class WikiSet {
 	 * @return array
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$where = [];
 		$options = [];
 
@@ -356,7 +356,7 @@ class WikiSet {
 	 * @return int
 	 */
 	public static function getWikiSetForGroup( $group ) {
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$res = $dbr->selectRow( 'global_group_restrictions', '*', [ 'ggr_group' => $group ], __METHOD__ );
 		return $res ? $res->ggr_set : 0;
 	}

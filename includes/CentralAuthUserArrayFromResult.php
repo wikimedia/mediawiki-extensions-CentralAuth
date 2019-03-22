@@ -24,7 +24,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		}
 		$res->rewind();
 
-		$dbr = CentralAuthUtils::getCentralSlaveDB();
+		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$caRes = $dbr->select(
 			[ 'localuser', 'globaluser', 'renameuser_status' ],
 			'*',
