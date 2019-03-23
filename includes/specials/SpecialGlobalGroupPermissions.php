@@ -611,8 +611,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			SpecialPage::getTitleFor( 'GlobalUsers', $newName ),
 			$reason,
 			[
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName ),
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName )
+				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName )->getPrefixedText(),
+				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName )->getPrefixedText()
 			]
 		);
 	}
