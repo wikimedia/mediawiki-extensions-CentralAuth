@@ -137,13 +137,18 @@
 	"centralauth-prefs-view": "ดูสนเทศบัญชีกลาง",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|อ่านเพิ่มเติมเกี่ยวกับ '''การรวมบัญชีสำหรับล็อกอิน''']]...''",
 	"centralauth-rename-desc": "อนุญาตการเปลี่ยนชื่อบัญชีกลาง",
+	"centralauth-rename-movelog": "ย้ายหน้าอัตโนมัติขณะเปลี่ยนชื่อผู้ใช้ \"[[Special:CentralAuth/$1|$1]]\" เป็น \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rightslog-entry-grouprename": "เปลี่ยนชื่อกลุ่ม $2 ไปยัง $1",
+	"centralauth-rightslog-name": "ปูมสิทธิทั่วโลก",
 	"centralauth-ro": "ข้อมูลบัญชีกลาง",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|วินาที|วินาที}} ที่แล้ว",
 	"centralauth-warning-notloggedin": "คุณยังไม่ได้ล็อกอิน",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว",
 	"centralautologin": "การเข้าสู่ระบบกลาง",
 	"centralloginsuccesful": "ลงชื่อเข้าแล้ว",
+	"globalrenameprogress": "กระบวนการเปลี่ยนชื่อทั่วโลก",
+	"globalrenameprogress-legend": "ดูกระบวนการเปลี่ยนชื่อทั่วโลก",
+	"log-name-gblrename": "ปูมการเปลี่ยนชื่อทั่วโลก",
 	"mergeaccount": "สถานะการรวมชื่อล็อกอิน",
 	"right-centralauth-merge": "รวมบัญชีของพวกเขา"
 }

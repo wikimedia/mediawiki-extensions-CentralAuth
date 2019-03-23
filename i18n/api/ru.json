@@ -8,7 +8,8 @@
 			"Okras",
 			"Stjn",
 			"Vlad5250",
-			"Ядерный Трамвай"
+			"Ядерный Трамвай",
+			"Diralik"
 		]
 	},
 	"apierror-centralauth-badsession": "Токен можно получить только при использовании сессий CentralAuth.",
@@ -37,7 +38,7 @@
 	"apihelp-globaluserrights-param-user": "Глобальное имя участника.",
 	"apihelp-globaluserrights-param-userid": "Глобальный ID участника.",
 	"apihelp-globaluserrights-summary": "Добавлять участников в глобальную группу (или удалять из неё).",
-	"apihelp-main-param-centralauthtoken": "При обращении к API посредством кроссдоменного AJAX-запроса (CORS) используйте это для авторизации в качестве текущего SUL-пользователя. Используйте <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> на этой вики для запроса токена, прежде чем делать CORS-запрос. Каждый токен может быть использован только раз и действителен только 10 секунд. Он должен быть включен в каждый предварительный запрос и — ввиду этого — в запрашиваемый URI (не в тело POST).",
+	"apihelp-main-param-centralauthtoken": "При обращении к API посредством кроссдоменного AJAX-запроса (CORS) используйте это для авторизации в качестве текущего SUL-пользователя. Используйте <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> на этой вики для запроса токена, прежде чем делать CORS-запрос. Каждый токен может быть использован только раз и действителен только 10 секунд. Он должен быть включён в каждый предварительный запрос и — ввиду этого — в запрашиваемый URI (не в тело POST).",
 	"apihelp-query+globalallusers-description": "Перечислить всех глобальных участников.",
 	"apihelp-query+globalallusers-example-1": "Вывести список глобальных участников.",
 	"apihelp-query+globalallusers-example-2": "Показать информацию о глобальных участниках, начиная с «ABC»",

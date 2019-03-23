@@ -29,7 +29,8 @@
 			"McDutchie",
 			"Macofe",
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"Tks4Fish"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o usuário está",
@@ -241,7 +242,7 @@
 	"centralauth-globalgroupperms-nogroups": "Não estão definidos grupos globais.",
 	"centralauth-globalgroupperms-rights": "Direitos",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está ativo em todos as wikis.",
-	"centralauth-groupname": "a Fundação Wikimeida",
+	"centralauth-groupname": "a Fundação Wikimedia",
 	"centralauth-hidden-blockreason": "globalmente suprimida por $1 no $2 com o seguinte motivo: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|hora|horas}} atrás",
 	"centralauth-incomplete": "Unificação de logins incompleta!",
@@ -272,7 +273,7 @@
 	"centralauth-log-status-locked": "bloqueado",
 	"centralauth-log-status-none": "(nenhum)",
 	"centralauth-log-status-oversighted": "suprimido",
-	"centralauth-login-error-locked": "Você não pode efetuar login porque sua conta está bloqueada globalmente.",
+	"centralauth-login-error-locked": "Não {{GENDER:$1|pode}} entrar porque a {{GENDER:$1|sua}} conta está bloqueada globalmente.",
 	"centralauth-login-no-others": "Você foi automaticamente autenticado nas wikis {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Autenticando-lhe a sessão {{PLURAL:$2|na wiki|nas wikis}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Você foi automaticamente deslogado de outros projetos de {{int:Centralauth-groupname}}.",

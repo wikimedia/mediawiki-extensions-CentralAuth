@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"MotdAlpha"
+		]
+	},
+	"globalrenamerequest-pretext": "申请一个能在所有 projects 上登录的新用户名。\n\n您过去那伙贡献全都能连接到这个新用户名上头。\n\nA list of requests made via this form will be made available to the users able to perform this operation. 等申请完咾，会有电子邮件通知您。\n\n要是您希望您那申请能匿名进行，或者得到隐私保护，请注意：系统会永远记录您以前那个用户名。所以来，您也可以[[Special:CreateAccount|建个独立的新帐号]]，再把您这会儿用那帐号随便改个别的名字，以后再也不用它。"
+}
