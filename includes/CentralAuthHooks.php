@@ -196,19 +196,28 @@ class CentralAuthHooks {
 	public static function onHandleGrouprenameLogEntry(
 		$type, $action, $title, $skin, $params, $filterWikilinks = false
 	) {
-		// $params[0] is the new one, $params[1] the old one
+		if ( isset( $params[1] ) ) {
+			// current log format
+			$newName = $params[0];
+			$oldName = $params[1];
+		} else {
+			// old log format
+			$newName = $title->getSubpageText();
+			$oldName = $params[0];
+		}
+
 		if ( $skin ) {
 			$new = Linker::link(
-				Title::newFromText( $params[0] ),
-				htmlspecialchars( $params[0] )
+				Title::newFromText( $newName ),
+				htmlspecialchars( $newName )
 			);
 			$old = Linker::link(
-				Title::newFromText( $params[1] ),
-				htmlspecialchars( $params[1] )
+				Title::newFromText( $oldName ),
+				htmlspecialchars( $oldName )
 			);
 		} else {
-			$new = htmlspecialchars( $params[0] );
-			$old = htmlspecialchars( $params[1] );
+			$new = htmlspecialchars( $newName );
+			$old = htmlspecialchars( $oldName );
 		}
 
 		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )
