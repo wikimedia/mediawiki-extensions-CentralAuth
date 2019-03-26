@@ -16,7 +16,7 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Deletes local password for users with a central account.";
+		$this->addDescription( 'Deletes local password for users with a central account.' );
 
 		$this->addOption( 'wiki', 'If specified, only runs against local names from this wiki',
 			false, true );

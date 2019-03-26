@@ -40,8 +40,8 @@ class ResetGlobalUserTokens extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Reset the user_token of all users on the wiki. " .
-			"Note that this may log some of them out.";
+		$this->addDescription( 'Reset the user_token of all users on the wiki. ' .
+			'Note that this may log some of them out.' );
 		$this->addOption( 'nowarn', "Hides the 5 seconds warning", false, false );
 		$this->addOption( 'minid', "Start processing after this gu_id, default is 0", false, true );
 		$this->addOption( 'maxid', "Stop processing after this gu_id, " .

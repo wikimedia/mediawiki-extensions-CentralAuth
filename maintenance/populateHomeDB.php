@@ -10,7 +10,7 @@ class PopulateHomeDB extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = 'Populate the globaluser.gu_home_db field';
+		$this->addDescription( 'Populate the globaluser.gu_home_db field' );
 		$this->setBatchSize( 500 );
 	}
 

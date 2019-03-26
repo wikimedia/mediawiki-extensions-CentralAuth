@@ -22,7 +22,7 @@ class ForceRenameUsers extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = 'Forcibly renames and migrates unattached accounts to global ones';
+		$this->addDescription( 'Forcibly renames and migrates unattached accounts to global ones' );
 		$this->addOption( 'reason', 'Reason to use for log summaries', true, true );
 		$this->setBatchSize( 10 );
 	}
