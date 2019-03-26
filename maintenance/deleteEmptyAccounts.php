@@ -23,8 +23,8 @@ class DeleteEmptyAccounts extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Delete all global accounts with no attached local accounts, " .
-			"then attempt to migrate a local account";
+		$this->addDescription( 'Delete all global accounts with no attached local accounts, ' .
+			'then attempt to migrate a local account' );
 		$this->fix = false;
 		$this->safe = false;
 		$this->migrate = false;

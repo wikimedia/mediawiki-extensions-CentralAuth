@@ -32,8 +32,7 @@ class CheckLocalUser extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription = "Checks the contents of the localuser table and " .
-			"deletes invalid entries";
+		$this->addDescription( 'Checks the contents of the localuser table and deletes invalid entries' );
 		$this->start = microtime( true );
 		$this->deleted = 0;
 		$this->total = 0;

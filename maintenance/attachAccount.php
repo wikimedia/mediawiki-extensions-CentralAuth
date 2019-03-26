@@ -65,8 +65,7 @@ class AttachAccount extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->mDescription =
-			"Attaches the specified usernames to a global account";
+		$this->addDescription( 'Attaches the specified usernames to a global account' );
 		$this->start = microtime( true );
 		$this->missing = 0;
 		$this->partial = 0;
