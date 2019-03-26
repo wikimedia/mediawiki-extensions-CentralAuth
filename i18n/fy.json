@@ -42,6 +42,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|moanne|moannen}} lyn",
 	"centralauth-rename-form-newname": "Nije meidochnamme",
 	"centralauth-rename-form-reason": "Reden",
+	"centralauth-rename-movelog": "Side automatysk omneamd by it omneamen fan meidogger \"[[Special:CentralAuth/$1|$1]]\" ta \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-progress-username": "Meidochnamme",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Klear",

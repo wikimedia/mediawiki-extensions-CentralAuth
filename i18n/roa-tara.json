@@ -323,6 +323,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "Sovrascrive TitleBlacklist",
 	"centralauth-rename-form-reason": "Mutive",
 	"centralauth-rename-form-suppressredirects": "Scitte 'a ccrejazione de redirezionaminde",
+	"centralauth-rename-globaleditcount-threshold": "Stu utende tène cchiù de $1 {{PLURAL:$1|cangiamende|cangiaminde}}. Pe piacere conferme ca sì secure ca vuè ccu renomene stu utende e ca 'n'amministratore de sisteme jè disponibbele a monitorà stu renomenamende.",
 	"centralauth-rename-movelog": "Pàgena spustate automaticamende quanne ha state renominate l'utende \"[[Special:CentralAuth/$1|$1]]\" jndr'à \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Non ge stonne renomenaminde in corse pe $1. Pò essere ca onne già spicciate.",
 	"centralauth-rename-notinstalled": "L'estenzione Renameuser non g'a state installate.",
