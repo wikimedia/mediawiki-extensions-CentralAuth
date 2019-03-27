@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a33e0996_220bf6ca",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-27T20:32:32Z",
+      "side": 1,
+      "message": "$sessionStore::?",
+      "range": {
+        "startLine": 232,
+        "startChar": 15,
+        "endLine": 232,
+        "endChar": 25
+      },
+      "revId": "7557454dcfb78575de0f541a32aaca93efb383b2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
