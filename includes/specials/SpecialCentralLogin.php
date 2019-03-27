@@ -19,7 +19,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 		if ( $wgSecureLogin
-			&& $request->detectProtocol() == 'http'
+			&& WebRequest::detectProtocol() == 'http'
 			&& wfCanIPUseHTTPS( $request->getIP() )
 		) {
 			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
