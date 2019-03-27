@@ -518,7 +518,7 @@ class CentralAuthHooks {
 			}
 
 			// Determine the final protocol of page, after login
-			$finalProto = $request->detectProtocol();
+			$finalProto = WebRequest::detectProtocol();
 			$secureCookies = ( $finalProto === 'https' );
 
 			if ( $wgSecureLogin ) {
@@ -567,7 +567,7 @@ class CentralAuthHooks {
 				'secureCookies' => $secureCookies, // (bool) cookies secure or not
 				'finalProto'    => $finalProto, // http or https for very final page
 				// current proto (in case login is https, but final page is http)
-				'currentProto'  => $request->detectProtocol()
+				'currentProto'  => WebRequest::detectProtocol()
 			];
 			Hooks::run( 'CentralAuthLoginRedirectData', [ $centralUser, &$data ] );
 			CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );

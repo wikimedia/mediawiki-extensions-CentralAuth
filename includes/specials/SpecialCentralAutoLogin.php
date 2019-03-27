@@ -239,7 +239,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			CentralAuthUtils::setP3P();
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
 				'wikiid' => wfWikiID(),
-				'proto' => $request->detectProtocol(),
+				'proto' => WebRequest::detectProtocol(),
 			] + $params );
 			return;
 
@@ -689,7 +689,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		// If there's no "finalProto", check if one was passed, and otherwise
 		// assume the current.
 		if ( !isset( $centralSession['finalProto'] ) ) {
-			$centralSession['finalProto'] = $request->getVal( 'proto', $request->detectProtocol() );
+			$centralSession['finalProto'] = $request->getVal( 'proto', WebRequest::detectProtocol() );
 		}
 
 		// If there's no "remember", pull from the user preference.
