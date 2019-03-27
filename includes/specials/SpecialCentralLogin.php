@@ -69,7 +69,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$sessionStore = CentralAuthUtils::getSessionStore();
 
 		// Get the token information
-		$info = $sessionStore->get( $key, BagOStuff::READ_LATEST );
+		$info = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -187,7 +187,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
-		$info = $sessionStore->get( $key, BagOStuff::READ_LATEST );
+		$info = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;

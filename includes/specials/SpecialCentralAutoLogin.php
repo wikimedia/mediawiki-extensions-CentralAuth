@@ -307,7 +307,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $token !== '' ) {
 				// Load memc data
 				$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token );
-				$memcData = $sessionStore->get( $key, BagOStuff::READ_LATEST );
+				$memcData = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
 				$sessionStore->delete( $key );
 
 				if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
@@ -381,7 +381,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Load memc data
 			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token, $wikiid );
-			$memcData = $sessionStore->get( $key, BagOStuff::READ_LATEST );
+			$memcData = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
 			$sessionStore->delete( $key );
 
 			// Check memc data
@@ -434,7 +434,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Load memc data
 			$wikiid = wfWikiID();
 			$key = CentralAuthUtils::memcKey( 'centralautologin-token', $token, $wikiid );
-			$memcData = $sessionStore->get( $key, BagOStuff::READ_LATEST );
+			$memcData = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
 			$sessionStore->delete( $key );
 
 			// Check memc data
