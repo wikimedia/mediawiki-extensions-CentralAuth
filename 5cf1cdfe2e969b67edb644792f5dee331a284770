@@ -22,6 +22,30 @@
       "revId": "5cf1cdfe2e969b67edb644792f5dee331a284770",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4998b384_204bb23c",
+        "filename": "includes/specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 16
+      },
+      "writtenOn": "2019-03-27T23:55:30Z",
+      "side": 1,
+      "message": "Core just uses getLocalClusterInstance for user rate limiting stuff.\n\nMost scary stuff would be on the POST path anyway, which would mean the data didn\u0027t have to replicate anyway.\n\nLightweight stuff like thumbnail scaling limits on GET is fine being per-DC since it is a whole other set of hardware to handle the load.",
+      "parentUuid": "a7d4e3d5_6332734d",
+      "range": {
+        "startLine": 123,
+        "startChar": 11,
+        "endLine": 123,
+        "endChar": 41
+      },
+      "revId": "5cf1cdfe2e969b67edb644792f5dee331a284770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
