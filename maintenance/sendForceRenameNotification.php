@@ -58,7 +58,7 @@ class ForceRenameNotification extends Maintenance {
 			}
 			$lb->execute();
 			foreach ( $rows as $row ) {
-				$title = 'User talk:' . $row->utr_name;
+				$title = MWNamespace::getCanonicalName( NS_USER_TALK ) . ':' . $row->utr_name;
 				$titleObj = Title::newFromText( $title );
 				if ( $titleObj->isRedirect() ) {
 					// @fixme find a way to notify users with a redirected user-talk
