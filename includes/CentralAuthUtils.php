@@ -4,6 +4,8 @@ use MediaWiki\Auth\AuthManager;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\WaitConditionLoop;
+use MediaWiki\Logger\LoggerFactory;
 
 class CentralAuthUtils {
 	/** @var BagOStuff|null Session cache */
@@ -108,6 +110,45 @@ class CentralAuthUtils {
 	public static function memcKey( ...$args ) {
 		global $wgCentralAuthDatabase;
 		return $wgCentralAuthDatabase . ':' . implode( ':', $args );
+	}
+
+	/**
+	 * Wait for and return the value of a key which is expected to exist from a store
+	 *
+	 * @param BagOStuff $store
+	 * @param string $key A key that will only have one value while it exists
+	 * @param int $timeout
+	 * @return mixed Key value; false if not found or on error
+	 */
+	public static function getKeyValueUponExistence( BagOStuff $store, $key, $timeout = 3 ) {
+		$value = false;
+
+		$result = ( new WaitConditionLoop(
+			function () use ( $store, $key, &$value ) {
+				$store->clearLastError();
+				$value = $store->get( $key );
+				$error = $store->getLastError();
+				if ( $value !== false ) {
+					return WaitConditionLoop::CONDITION_REACHED;
+				} elseif ( $error === $store::ERR_NONE ) {
+					return WaitConditionLoop::CONDITION_CONTINUE;
+				} else {
+					return WaitConditionLoop::CONDITION_ABORTED;
+				}
+			},
+			$timeout
+		) )->invoke();
+
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
+		if ( $result === WaitConditionLoop::CONDITION_REACHED ) {
+			$logger->info( "Expected key {key} found.", [ 'key' => $key ] );
+		} elseif ( $result === WaitConditionLoop::CONDITION_TIMED_OUT ) {
+			$logger->error( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
+		} else {
+			$logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
+		}
+
+		return $value;
 	}
 
 	/**

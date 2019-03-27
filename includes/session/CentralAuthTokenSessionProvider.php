@@ -67,7 +67,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 		$sessionStore = CentralAuthUtils::getSessionStore();
 		$key = CentralAuthUtils::memcKey( 'api-token', $token );
-		$data = $sessionStore->get( $key );
+		$data = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
 			!isset( $data['token'] ) ||
