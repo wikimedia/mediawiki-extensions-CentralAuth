@@ -46,6 +46,30 @@
       "revId": "5cf1cdfe2e969b67edb644792f5dee331a284770",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed77d030_1e43ba7f",
+        "filename": "includes/specials/SpecialGlobalUserMerge.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-03-28T00:05:40Z",
+      "side": 1,
+      "message": "Yeah, dc-local would be even better.\n\nIf this needs strong persistence, I suppose stash would be better than the current option (as \"anything\" can be DB by default for non-wmf).",
+      "parentUuid": "4998b384_204bb23c",
+      "range": {
+        "startLine": 123,
+        "startChar": 11,
+        "endLine": 123,
+        "endChar": 41
+      },
+      "revId": "5cf1cdfe2e969b67edb644792f5dee331a284770",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
