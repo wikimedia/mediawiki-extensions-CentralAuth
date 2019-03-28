@@ -65,9 +65,9 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 
 		$this->logger->debug( __METHOD__ . ': Found a centralauthtoken!' );
 
+		$sessionStore = CentralAuthUtils::getSessionStore();
 		$key = CentralAuthUtils::memcKey( 'api-token', $token );
-		$cache = CentralAuthUtils::getSessionCache();
-		$data = $cache->get( $key );
+		$data = $sessionStore->get( $key );
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
 			!isset( $data['token'] ) ||
@@ -114,7 +114,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		}
 
 		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', $centralUser->getId() );
-		if ( $cache->get( $key ) ) {
+		if ( $sessionStore->get( $key ) ) {
 			$this->logger->debug( __METHOD__ . ': user is blacklisted' );
 			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
@@ -179,9 +179,9 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		// Assume blacklisting for a day will be enough because we assume by
 		// then CentralAuth itself will have been instructed to more
 		// permanently block the user.
-		$cache = CentralAuthUtils::getSessionCache();
+		$sessionStore = CentralAuthUtils::getSessionStore();
 		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', $centralUser->getId() );
-		$cache->set( $key, true, 86400 );
+		$sessionStore->set( $key, true, $sessionStore::TTL_DAY, $sessionStore::WRITE_SYNC );
 	}
 
 	/**
@@ -215,8 +215,15 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 	 */
 	public function onApiCheckCanExecute( $module, $user, &$message ) {
 		$token = $module->getMain()->getVal( 'centralauthtoken' ); # Mark used
+		$sessionStore = CentralAuthUtils::getSessionStore();
 		$key = CentralAuthUtils::memcKey( 'api-token', $token );
-		CentralAuthUtils::getSessionCache()->delete( $key );
+
+		if ( !$sessionStore->changeTTL( $key, time() - 3600, $sessionStore::WRITE_SYNC ) ) {
+			// Raced out trying to mark the token as expired
+			$message = [ 'badtoken', 'apierror-centralauth-badtoken' ];
+
+			return false;
+		}
 
 		return true;
 	}

@@ -562,10 +562,11 @@ class CentralAuthHooks {
 				// cookies set secure or not (local CentralAuth cookies)
 				'stickHTTPS'    => $secureCookies,
 				'finalProto'    => $finalProto, // final page http or https
-				'type'          => $type,
+				'type'          => $type
 			] );
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
+			$sessionStore = CentralAuthUtils::getSessionStore();
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
 			$data = [
@@ -579,7 +580,7 @@ class CentralAuthHooks {
 				'currentProto'  => WebRequest::detectProtocol()
 			];
 			Hooks::run( 'CentralAuthLoginRedirectData', [ $centralUser, &$data ] );
-			CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );
+			$sessionStore->set( $key, $data, $sessionStore::TTL_MINUTE );
 
 			$query = [ 'token' => $token ];
 

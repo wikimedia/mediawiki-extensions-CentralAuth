@@ -35,7 +35,6 @@ class ApiCentralAuthToken extends ApiBase {
 
 	public function execute() {
 		$user = $this->getUser();
-		$params = $this->extractRequestParams();
 
 		// If we're in JSON callback mode, no tokens can be obtained
 		if ( $this->lacksSameOriginSecurity() ) {
@@ -65,8 +64,10 @@ class ApiCentralAuthToken extends ApiBase {
 		];
 
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
+
+		$sessionStore = CentralAuthUtils::getSessionStore();
 		$key = CentralAuthUtils::memcKey( 'api-token', $loginToken );
-		CentralAuthUtils::getSessionCache()->set( $key, $data, 60 );
+		$sessionStore->set( $key, $data, $sessionStore::TTL_MINUTE );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'centralauthtoken' => $loginToken
