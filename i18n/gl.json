@@ -255,7 +255,7 @@
 	"centralauth-log-status-locked": "bloqueado",
 	"centralauth-log-status-none": "(ningún)",
 	"centralauth-log-status-oversighted": "suprimida",
-	"centralauth-login-error-locked": "Non pode acceder porque a súa conta está bloqueada globalmente.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Non pode}} acceder porque {{GENDER:$1|a súa}} conta está bloqueada globalmente.",
 	"centralauth-login-no-others": "Accedeu automaticamente ao sistema doutros proxectos {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Accedendo ao sistema {{PLURAL:$2|na wiki|nos wikis}} de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Saíu automaticamente do sistema doutros proxectos {{int:Centralauth-groupname}}.",

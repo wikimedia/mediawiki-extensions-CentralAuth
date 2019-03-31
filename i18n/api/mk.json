@@ -11,7 +11,7 @@
 	"apierror-centralauth-editconflict": "Утврдив спротиставеност во уредувањето. Откажувам.",
 	"apierror-centralauth-notattached": "Не може да се добие шифра за Central Auth без приложена глобална сметка.",
 	"apierror-centralauth-notloggedin": "Анонимните корисници да не можат да добијат шифра за Central Auth",
-	"apierror-centralauth-renameinprogress": "Не може да се користи бидејќи во тек е преименување на корисников.",
+	"apierror-centralauth-renameinprogress": "Корисникот е во тек на преименување, не може да се користи.",
 	"apihelp-centralauthtoken-description": "Дај шифра за централна најава за заверено барање до приврзано вики.",
 	"apihelp-centralauthtoken-example-1": "Дај шифра за централна најава",
 	"apihelp-centralauthtoken-summary": "Дај шифра за централна најава за заверено барање до приврзано вики.",

@@ -233,7 +233,7 @@
 	"centralauth-log-status-locked": "lukustatud",
 	"centralauth-log-status-none": "(puudub)",
 	"centralauth-log-status-oversighted": "varjatud",
-	"centralauth-login-error-locked": "Sa ei saa sisse logida, sest su konto on globaalselt lukustatud.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Sa}} ei saa sisse logida, sest su konto on globaalselt lukustatud.",
 	"centralauth-login-no-others": "Sind on automaatselt logitud teistesse projektidesse, mida haldab {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Sind logitakse {{int:Centralauth-groupname}} {{PLURAL:$2|vikisse|vikidesse}} sisse:",
 	"centralauth-logout-no-others": "Sind on automaatselt välja logitud teistest projektidest, mida haldab {{int:Centralauth-groupname}}.",
