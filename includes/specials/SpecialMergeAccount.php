@@ -152,7 +152,7 @@ class SpecialMergeAccount extends SpecialPage {
 	 */
 	private function getWorkingPasswords() {
 		Wikimedia\suppressWarnings();
-		$data = RequestContext::getMain()->getRequest()->getSessionData( 'wsCentralAuthMigration' );
+		$data = $this->getRequest()->getSessionData( 'wsCentralAuthMigration' );
 		$passwords = unserialize(
 			gzinflate(
 				$this->xorString(
@@ -176,7 +176,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		// Lightly obfuscate the passwords while we're storing them,
 		// just to make us feel better about them floating around.
-		$request = RequestContext::getMain()->getRequest();
+		$request = $this->getRequest();
 		$data = $request->getSessionData( 'wsCentralAuthMigration' );
 		$data[$this->mSessionToken] =
 			$this->xorString(
@@ -188,7 +188,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function clearWorkingPasswords() {
-		$request = RequestContext::getMain()->getRequest();
+		$request = $this->getRequest();
 		$data = $request->getSessionData( 'wsCentralAuthMigration' );
 		unset( $data[$this->mSessionToken] );
 		$request->setSessionData( 'wsCentralAuthMigration', $data );
