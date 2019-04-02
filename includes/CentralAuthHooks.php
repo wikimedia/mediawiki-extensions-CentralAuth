@@ -1096,6 +1096,8 @@ class CentralAuthHooks {
 		} else {
 			$centralUser = CentralAuthUser::getInstance( $out->getUser() );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+				// Provide the user's cluster-wide ID for bucketting
+				$out->addJsConfigVars( 'wgCentralAuthUserId', $centralUser->getId() );
 				$out->addModules( 'ext.centralauth.centralautologin.clearcookie' );
 			}
 
