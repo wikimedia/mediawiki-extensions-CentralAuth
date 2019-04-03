@@ -192,6 +192,12 @@ $specialPageAliases['cs'] = [
 	'GlobalGroupPermissions' => [ 'Práva_globálních_skupin' ],
 	'WikiSets' => [ 'Sady_wiki' ],
 	'GlobalUsers' => [ 'Globální_uživatelé' ],
+	'MultiLock' => [ 'Hromadné_zamknutí' ],
+	'GlobalRenameUser' => [ 'Globální_přejmenování_uživatele' ],
+	'GlobalRenameProgress' => [ 'Průběh_globálního_přejmenování' ],
+	'GlobalUserMerge' => [ 'Sloučení_globálního_uživatele' ],
+	'GlobalRenameRequest' => [ 'Žádost_o_globální_přejmenování' ],
+	'GlobalRenameQueue' => [ 'Fronta_globálních_přejmenování' ],
 ];
 
 /** German (Deutsch) */
