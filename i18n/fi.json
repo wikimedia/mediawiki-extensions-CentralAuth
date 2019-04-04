@@ -220,7 +220,7 @@
 	"centralauth-finish-text": "Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla toisten käyttäjätunnusten salasanat:",
 	"centralauth-finish-title": "Suorita yhdistäminen",
 	"centralauth-finishglobaliseemail_body": "Sähköpostiosoitteesi on liitetty käyttäjänimeen ”$2” kaikissa Wikimedia-projekteissa,\nja päätunnuksesi on sivustolla {{SITENAME}}.\n\nVahvistaaksesi että tämä tunnus todella kuuluu sinulle, yhdistääksesi kaikki tunnuksesi,\njotka ovat sinun, mutta ei voida yhdistää automaattisesti, ja mahdollistaaksesi sinun palauttaa\ntunnuksesi, jos hukkaat salasanasi, avaa tämä linkki selaimessasi:\n\n$3\n\nJos tunnus *ei* kuulu sinulle, seuraa tätä linkkiä peruttaaksesi\nsähköpostiosoitteen vahvistamisen:\n\n$5\n\nTämä vahvistuskoodi vanhenee $6 kello $7.",
-	"centralauth-finishglobaliseemail_subject": "Sivuston {{SITENAME}} tunnuksen vahvistus",
+	"centralauth-finishglobaliseemail_subject": "{{GRAMMAR:genitive|{{SITENAME}}}} tunnuksen vahvistus",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|muokkaus|muokkausta}} wikissä $2",
 	"centralauth-foreign-link": "Tunnus $1 projektissa $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Määritä käyttöoikeudet",
