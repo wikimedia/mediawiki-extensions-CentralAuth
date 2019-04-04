@@ -74,7 +74,7 @@
 	"centralauth-admin-info-username": "Username:",
 	"centralauth-admin-intro": "This interface can be used for administration of global accounts.",
 	"centralauth-admin-list-attached-on": "Attached on",
-	"centralauth-admin-list-blocked": "Blocked",
+	"centralauth-admin-list-blocked": "Sitewide blocked",
 	"centralauth-admin-list-editcount": "Edit count",
 	"centralauth-admin-list-groups": "Groups",
 	"centralauth-admin-list-legend-ro": "List of local accounts",

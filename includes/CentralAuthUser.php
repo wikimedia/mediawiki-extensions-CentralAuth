@@ -2564,6 +2564,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'ipb_expiry', 'ipb_block_email',
 				'ipb_anon_only', 'ipb_create_account',
 				'ipb_enable_autoblock', 'ipb_allow_usertalk',
+				'ipb_sitewide',
 			] + $commentQuery['fields'],
 			[ 'ipb_user' => $data['id'] ],
 			__METHOD__,
@@ -2581,6 +2582,7 @@ class CentralAuthUser implements IDBAccessObject {
 				// Poorly named database column
 				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
 				$data['block-noemail'] = (bool)$row->ipb_block_email;
+				$data['block-sitewide'] = (bool)$row->ipb_sitewide;
 				$data['blocked'] = true;
 			}
 		}

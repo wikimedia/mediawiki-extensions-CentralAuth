@@ -586,7 +586,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
-		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
+		if ( isset( $row['blocked'] ) && $row['blocked'] && $row['block-sitewide'] ) {
 			$flags = [];
 			foreach (
 				[ 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ] as $option
