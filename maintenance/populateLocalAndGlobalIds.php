@@ -36,7 +36,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wiki );
-		$ldbr = $lb->getConnection( DB_REPLICA, [], $wiki );
+		$ldbr = $lb->getConnectionRef( DB_REPLICA, [], $wiki );
 
 		$this->output( "Populating fields for wiki $wiki... \n" );
 		do {
@@ -105,7 +105,6 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			);
 			CentralAuthUtils::waitForSlaves();
 		} while ( $numRows >= $this->mBatchSize );
-		$lb->reuseConnection( $ldbr );
 		$this->output( "Completed $wiki \n" );
 	}
 
