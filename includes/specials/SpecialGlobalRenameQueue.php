@@ -651,7 +651,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wiki );
-		$remoteDB = $lb->getConnection( DB_REPLICA, [], $wiki );
+		$remoteDB = $lb->getConnectionRef( DB_REPLICA, [], $wiki );
 		$row = $remoteDB->selectRow(
 			'user',
 			[ 'user_email', 'user_name', 'user_real_name' ],
@@ -667,7 +667,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				$row->user_email, $row->user_name, $row->user_real_name
 			);
 		}
-		$lb->reuseConnection( $remoteDB );
 		return $address;
 	}
 

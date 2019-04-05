@@ -1443,7 +1443,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			# Touch the local user row, update the password
 			$lb = $lbFactory->getMainLB( $wikiName );
-			$dblw = $lb->getConnection( DB_MASTER, [], $wikiName );
+			$dblw = $lb->getConnectionRef( DB_MASTER, [], $wikiName );
 			$dblw->update( 'user',
 				[
 					'user_touched' => wfTimestampNow(),
@@ -1458,8 +1458,6 @@ class CentralAuthUser implements IDBAccessObject {
 				__METHOD__
 			);
 			$this->clearLocalUserCache( $wikiName, $id );
-
-			$lb->reuseConnection( $dblw );
 
 			$status->successCount++;
 		}
@@ -1512,7 +1510,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$wiki = $localUserRow->lu_wiki;
 			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$lb = $lbFactory->getMainLB( $wiki );
-			$localDB = $lb->getConnection( DB_MASTER, [], $wiki );
+			$localDB = $lb->getConnectionRef( DB_MASTER, [], $wiki );
 			$localDB->update( 'user',
 				[ 'user_password' => $password ],
 				[ 'user_name' => $name ],
@@ -1522,8 +1520,6 @@ class CentralAuthUser implements IDBAccessObject {
 			$id = $localDB->selectField( 'user', 'user_id',
 				[ 'user_name' => $this->mName ], __METHOD__ );
 			$this->clearLocalUserCache( $wiki, $id );
-
-			$lb->reuseConnection( $localDB );
 		}
 		$wasSuppressed = $this->isOversighted();
 
@@ -2489,7 +2485,7 @@ class CentralAuthUser implements IDBAccessObject {
 	protected function localUserData( $wikiID ) {
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wikiID );
-		$db = $lb->getConnection( DB_REPLICA, [], $wikiID );
+		$db = $lb->getConnectionRef( DB_REPLICA, [], $wikiID );
 		$fields = [
 				'user_id',
 				'user_email',
@@ -2502,12 +2498,10 @@ class CentralAuthUser implements IDBAccessObject {
 		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		if ( !$row ) {
 			# Row missing from slave, try the master instead
-			$lb->reuseConnection( $db );
-			$db = $lb->getConnection( DB_MASTER, [], $wikiID );
+			$db = $lb->getConnectionRef( DB_MASTER, [], $wikiID );
 			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		}
 		if ( !$row ) {
-			$lb->reuseConnection( $db );
 			$ex = new LocalUserNotFoundException(
 				"Could not find local user data for {$this->mName}@{$wikiID}" );
 			LoggerFactory::getInstance( 'CentralAuth' )->warning(
@@ -2584,8 +2578,6 @@ class CentralAuthUser implements IDBAccessObject {
 				$data['blocked'] = true;
 			}
 		}
-		$result->free();
-		$lb->reuseConnection( $db );
 
 		return $data;
 	}
