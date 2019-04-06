@@ -13,7 +13,7 @@ require_once "$IP/maintenance/Maintenance.php";
 /**
  * Copy user data for this wiki into the globalnames and localnames table
  */
-class MigratePassZero extends Maintenance {
+class MigratePass0 extends Maintenance {
 
 	public function execute() {
 		global $wgDBname;
@@ -69,5 +69,5 @@ class MigratePassZero extends Maintenance {
 	}
 }
 
-$maintClass = MigratePassZero::class;
+$maintClass = MigratePass0::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -18,7 +18,7 @@ require_once "$IP/maintenance/Maintenance.php";
  *   - A directory with localized subject files, named in the format of "$langCode.txt".
  *     A file for "en" must exist as it is the base fallback.
  */
-class ForceRenameNotification extends Maintenance {
+class SendForceRenameNotification extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 
@@ -122,5 +122,5 @@ class ForceRenameNotification extends Maintenance {
 	}
 }
 
-$maintClass = ForceRenameNotification::class;
+$maintClass = SendForceRenameNotification::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
