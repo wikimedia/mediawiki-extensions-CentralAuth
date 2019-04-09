@@ -20,6 +20,7 @@
 	"centralauth-admin-delete-nonexistent": "錯誤: 個全域戶口\"<nowiki>$1</nowiki>\"唔存在。",
 	"centralauth-admin-delete-success": "已經刪除咗「<nowiki>$1</nowiki>」嘅全域戶口",
 	"centralauth-admin-delete-title": "刪除戶口",
+	"centralauth-admin-info-attached": "連咗嘅戶口數：",
 	"centralauth-admin-info-editcount": "總共編輯數：",
 	"centralauth-admin-info-header": "全域用戶信息",
 	"centralauth-admin-info-hidden": "隱藏：",
