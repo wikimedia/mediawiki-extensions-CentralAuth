@@ -6,7 +6,8 @@
 			"Lakzon",
 			"McDutchie",
 			"Macofe",
-			"Alirezaaa"
+			"Alirezaaa",
+			"FarsiNevis"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه گلوبال که کاربر در آن عضو است",
@@ -98,7 +99,7 @@
 	"centralauth-admin-unmerge": "جدا کردن موارد انتخاب‌شده",
 	"centralauth-admin-unmerge-success": "$1 موفق بی  جیا کإ {{PLURAL:$1|حساوو|حساووەل}}",
 	"centralauth-admin-username": ":نۆم کاربەری",
-	"centralauth-admin-view": "مشاده اطلاعات حساب",
+	"centralauth-admin-view": "مشاهدهٔ اطلاعات حساب",
 	"centralauth-admin-yes": "أرێ-بةلئ",
 	"centralauth-antispoof-desc": "فناوری جلوگیری از عبارت‌های سردرگم‌کننده را به افزونهٔ حساب مشترک می‌افزاید",
 	"centralauth-attach-list-attached": "حساب کاربری مشترک «$1» شامل این حساب‌های کاربری می‌شود:",

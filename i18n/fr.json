@@ -49,14 +49,19 @@
 			"Tuxxic",
 			"Derugon",
 			"0x010C",
-			"Niridya"
+			"Niridya",
+			"Pols12"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Groupes globaux auxquels appartient l'utilisateur",
 	"action-centralauth-lock": "verrouiller ou déverrouiller les comptes globaux",
+	"action-centralauth-merge": "fusionner vos comptes",
+	"action-centralauth-oversight": "supprimer ou masquer un compte global",
 	"action-centralauth-rename": "renommer des comptes globaux",
 	"action-centralauth-unmerge": "annuler la fusion des comptes globaux",
 	"action-centralauth-usermerge": "fusionner globalement plusieurs utilisateurs",
+	"action-globalgroupmembership": "modifier l’appartenance à des groupes globaux",
+	"action-globalgrouppermissions": "gérer des groupes globaux",
 	"centralauth": "Gestionnaire de compte global",
 	"centralauth-abortlogin-renamed": "Votre compte a été renommé en « $1 ». Veuillez utiliser dorénavant ce nom d’utilisateur.",
 	"centralauth-account-exists": "Impossible de créer le compte : Le nom d’utilisateur demandé est déjà pris par un utilisateur d’un autre wiki.",

@@ -24,7 +24,8 @@
 			"McDutchie",
 			"Macofe",
 			"Physicsch",
-			"درفش کاویانی"
+			"درفش کاویانی",
+			"FarsiNevis"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه گلوبال که کاربر در آن عضو است",
@@ -121,7 +122,7 @@
 	"centralauth-admin-unmerge": "جدا کردن موارد انتخاب‌شده",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|حساب کاربری|حساب کاربری}} جدا شدند",
 	"centralauth-admin-username": "نام کاربری:",
-	"centralauth-admin-view": "مشاده اطلاعات حساب",
+	"centralauth-admin-view": "مشاهدهٔ اطلاعات حساب",
 	"centralauth-admin-yes": "بله",
 	"centralauth-antispoof-desc": "فناوری جلوگیری از عبارت‌های سردرگم‌کننده را به افزونهٔ حساب مشترک می‌افزاید",
 	"centralauth-attach-list-attached": "حساب کاربری مشترک «$1» شامل این حساب‌های کاربری می‌شود:",
