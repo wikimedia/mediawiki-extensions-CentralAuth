@@ -120,7 +120,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	 * @return bool true if we should let the user proceed
 	 */
 	private function checkRateLimit() {
-		$cache = ObjectCache::newAnything( [] );
+		$cache = ObjectCache::newAnything();
 		$key = 'centralauth:usermerge:' . md5( $this->getUser()->getName() );
 		$found = $cache->get( $key );
 		if ( $found === false ) {
