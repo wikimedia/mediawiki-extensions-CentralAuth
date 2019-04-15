@@ -8,7 +8,8 @@
 			"Vago",
 			"Vugar 1981",
 			"Wertuose",
-			"Archaeodontosaurus"
+			"Archaeodontosaurus",
+			"Neriman2003"
 		]
 	},
 	"centralauth-admin-blocklog": "bloklama qeydləri",
@@ -45,6 +46,7 @@
 	"centralauth-admin-status-locked": "Kilidlənmiş:",
 	"centralauth-admin-status-locked-no": "Hesab bloklanmadı",
 	"centralauth-admin-status-submit": "Set status",
+	"centralauth-admin-title-ro": "$1 üçün qlobal hesab məlumatları",
 	"centralauth-admin-unattached": "təklif olunmur",
 	"centralauth-admin-unmerge": "Seçilənləri ayırmaq",
 	"centralauth-admin-username": "İstifadəçi adı:",
@@ -134,6 +136,7 @@
 	"centralauth-rightslog-name": "Qlobal hüquqlar gündəliyi",
 	"centralauth-rightslog-set-optin": "daxil olma əsaslıdır",
 	"centralauth-rightslog-set-optout": "çıxış əsaslıdır",
+	"centralauth-ro": "Qlobal hesab məlumatları",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniyə|saniyə}} əvvəl",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|il|il}} əvvəl",
 	"centralautologin": "Mərkəzi giriş",
