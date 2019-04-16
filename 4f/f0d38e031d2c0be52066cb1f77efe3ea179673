@@ -1,0 +1,9 @@
+Code-Review+2: L10n-bot <l10n-bot@translatewiki.net>
+Code-Review+2: Raimond Spekking <raimond.spekking@gmail.com>
+Verified+2: Raimond Spekking <raimond.spekking@gmail.com>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Tue, 16 Apr 2019 14:53:31 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/504117
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
