@@ -27,6 +27,7 @@
 	"action-centralauth-lock": "blocar o desblocar comptes globals",
 	"action-centralauth-rename": "canviar el nom de comptes globals",
 	"action-centralauth-usermerge": "fusionar globalment múltiples usuaris",
+	"action-globalgrouppermissions": "gestionar grups globals",
 	"centralauth": "Administració de compte global",
 	"centralauth-abortlogin-renamed": "El vostre compte s'ha canviat al nom «$1». Utilitzeu aquest nom d'usuari d'ara endavant.",
 	"centralauth-account-exists": "No es pot crear el compte: El nom d'usuari demanat ja l'utilitza un usuari en un altre wiki.",

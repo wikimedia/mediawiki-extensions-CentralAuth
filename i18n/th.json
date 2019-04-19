@@ -84,6 +84,7 @@
 	"centralauth-foreign-contributions": "$1 การแก้ไขที่ $2",
 	"centralauth-foreign-link": "ผู้ใช้ $1 บน $2",
 	"centralauth-globalgroupperms-newgroupname": "ชื่อกลุ่มใหม่:",
+	"centralauth-globalgroupperms-wikiset-none": "กลุ่มนี้มีการเคลื่อนไหวบนวิกิทั้งหมด",
 	"centralauth-groupname": "มูลนิธิวิกิมีเดีย",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ชั่วโมง|ชั่วโมง}} ที่แล้ว",
 	"centralauth-incomplete": "การรวมบัญชีสำหรับล็อกอินไม่สำเร็จ",
