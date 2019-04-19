@@ -113,7 +113,13 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 		switch ( $name ) {
 			case 'utr_name':
 				$formatted = Linker::userLink( $user->getId(), $user->getName() ) .
-					Linker::userToolLinksRedContribs( $user->getId(), $user->getName(), $user->getEditCount() );
+					Linker::userToolLinksRedContribs(
+						$user->getId(),
+						$user->getName(),
+						$user->getEditCount(),
+						// don't render parentheses in HTML markup (CSS will provide)
+						false
+					);
 				break;
 			case 'user_registration':
 				$regDate = $user->getRegistration();
