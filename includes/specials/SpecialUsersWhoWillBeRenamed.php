@@ -10,5 +10,6 @@ class SpecialUsersWhoWillBeRenamed extends SpecialPage {
 		$pager = new UsersWhoWillBeRenamedPager( $this, $this->getContext() );
 		$this->getOutput()->addWikiMsg( 'centralauth-uwbr-intro' );
 		$this->getOutput()->addParserOutput( $pager->getFullOutput() );
+		$this->getOutput()->addModuleStyles( 'mediawiki.interface.helpers.styles' );
 	}
 }
