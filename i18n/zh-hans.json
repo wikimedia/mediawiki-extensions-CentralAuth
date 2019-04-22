@@ -36,11 +36,14 @@
 			"WhitePhosphorus",
 			"A2093064",
 			"Phenolla",
-			"A Chinese Wikipedian"
+			"A Chinese Wikipedian",
+			"94rain"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
 	"action-centralauth-lock": "锁定或解锁全域帐户",
+	"action-centralauth-merge": "合并其账户",
+	"action-centralauth-oversight": "禁止或隐藏全域帐户",
 	"action-centralauth-rename": "重命名全域账户",
 	"action-centralauth-unmerge": "取消合并全域帐户",
 	"action-centralauth-usermerge": "全域合并多个用户",

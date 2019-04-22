@@ -229,7 +229,7 @@
 	"centralauth-merge-method-primary-desc": "Ovo je wiki na kojem je račun prvobitno spojen.\nZapamtite da se može razlikovati od stvarnog početnog wikiprojekta tog suradnika.",
 	"centralauth-merge-no-accounts": "Nema pronađenih računa koji se podudaraju s vašim imenom u sustavu središnje prijave!\nBaza podataka je možda neispravna.",
 	"centralauth-merge-notlogged": "Molimo <span class=\"plainlinks\">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} prijavite se]</span> kako bi provjerili jesu li Vaši suradnički računi uspješno spojeni.",
-	"centralauth-merge-step1-detail": "Ovdje unesite zaporku za svoj suradnički račun.\nVaša zaporka i prijavljena e-mail adresa biti će uspoređeni s podatcima na drugim wikijima da se ustanovi odgovaraju li jedni drugima.\nPromjene neće biti izvršene dok ne potvrdite da je sve u redu.",
+	"centralauth-merge-step1-detail": "Molimo Vas, unesite zaporku za svoj suradnički račun.\nVaša zaporka i prijavljena adresa e-pošte bit će uspoređeni s podatcima na drugim wikijima da se ustanovi odgovaraju li jedni drugima.\nPromjene ne će biti izvršene dok ne potvrdite da je sve u redu.",
 	"centralauth-merge-step1-submit": "Potvrdi podatke o prijavi",
 	"centralauth-merge-step1-title": "Počni spajanje suradničkih računa",
 	"centralauth-merge-step2-detail": "Neki računi ne odgovaraju onom koji ste naveli kao polazišni wiki. Ako su vaši, potvrdite to navođenjem lozinke za te račune.",
