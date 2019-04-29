@@ -58,6 +58,8 @@
 	"centralauth-finish-password": "Katasunduk:",
 	"centralauth-finish-send-confirmation": "Surili katasunduk",
 	"centralauth-finish-title": "Tuntung manggabung",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|sumbangan|sumbangan}} di $2",
+	"centralauth-foreign-link": "Pamakai $1 di $2",
 	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-incomplete": "Kada samua akun kawa digabungakan!",
 	"centralauth-merge-denied": "Ampun, Pian kada baisi ijin hagan maungkai tungkaran ngini.",
