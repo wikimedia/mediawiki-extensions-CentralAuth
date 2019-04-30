@@ -270,12 +270,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	protected function shouldUseMasterDB() {
-		global $wgCentralAuthUseSlaves;
-
-		if ( !$wgCentralAuthUseSlaves ) {
-			return true;
-		}
-
 		if ( $this->mFromMaster === null ) {
 			$this->mFromMaster = self::centralLBHasRecentMasterChanges();
 		}
