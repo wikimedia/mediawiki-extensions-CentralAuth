@@ -265,12 +265,6 @@ $wgCentralAuthEnableUsersWhoWillBeRenamed = false;
  */
 $wgCentralAuthGlobalPasswordPolicies = [];
 
-/*
- * Try to use slave DBs for reads instead of the master all the time
- * @var bool
- */
-$wgCentralAuthUseSlaves = false;
-
 /**
  * Set false if you really want to use 'local' rather than 'CentralAuth' for
  * $wgCentralIdLookupProvider. This isn't the default because using CentralAuth
