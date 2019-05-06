@@ -4,7 +4,8 @@
 			"Kwisha",
 			"Lloffiwr",
 			"Stephenwanjau",
-			"Kipala"
+			"Kipala",
+			"Yasen igra"
 		]
 	},
 	"centralauth-admin-blocklog": "Kumbukumbu ya uzuio",
@@ -83,7 +84,7 @@
 	"centralauth-finish-password": "Neno la siri:",
 	"centralauth-finish-send-confirmation": "Tuma nywila kwa barua pepe",
 	"centralauth-finish-title": "Maliza kuunganisha",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|michango}} kwa $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|mchango|michango}} kwa $2",
 	"centralauth-foreign-link": "Mtumiaji $1 kwa $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Pea ruhusa",
 	"centralauth-globalgroupperms-newgroupname": "Jina la Kikundi kipya:",

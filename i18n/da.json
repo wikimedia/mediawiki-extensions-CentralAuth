@@ -23,6 +23,7 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper, som brugeren er i",
 	"action-centralauth-lock": "låse eller låse op globale konti",
+	"action-centralauth-merge": "sammenflet deres konto",
 	"action-centralauth-rename": "omdøb globale kontoer",
 	"centralauth": "Administration af global konto",
 	"centralauth-account-exists": "Kan ikke oprette konto: Det ønskede brugernavn er allerede taget af en bruger  i det globale loginsystem.",
