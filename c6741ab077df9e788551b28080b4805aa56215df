@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b46b8392_e6fd20a7",
+        "filename": "CentralAuth.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-05-06T23:07:10Z",
+      "side": 1,
+      "message": "O_O",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 31
+      },
+      "revId": "c6741ab077df9e788551b28080b4805aa56215df",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
