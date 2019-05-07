@@ -458,7 +458,6 @@
 		"CentralAuthEnableGlobalRenameRequest": false,
 		"CentralAuthCheckSULMigration": false,
 		"CentralAuthGlobalPasswordPolicies": [],
-		"CentralAuthUseSlaves": false,
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
 		"CentralAuthOldNameAntiSpoofWiki": false
