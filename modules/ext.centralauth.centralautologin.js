@@ -13,18 +13,16 @@
 			}
 		} catch ( e ) {}
 
-		// Can't use $.cookie(), because we want to check this at the top of
-		// the page and that isn't loaded until the bottom.
+		// Optimisation: Avoid $.cookie() to reduce depencency cost for all pages.
 		if ( /(^|; )CentralAuthAnon=1/.test( document.cookie ) ) {
 			return;
 		}
 	}
 
-	// Ok, perform the acutal logged-in check via a <script> tag. The
-	// referenced URL will 302 a few times and then return appropriate
-	// JavaScript to complete the process.
-
-	url = mw.config.get( 'wgCentralAuthCheckLoggedInURL' );
+	// Perform the actual logged-in check via a <script> tag.
+	// The referenced URL will redirect a few times (HTTP 302) and then respond
+	// with JavaScript code that completes the login.
+	url = require( './data.json' ).checkLoggedInURL;
 	if ( url ) {
 		url += '&proto=' + encodeURIComponent( location.protocol.replace( ':', '' ) );
 		if ( mw.config.get( 'wgCentralAuthMobileDomain' ) === true ) {
