@@ -22,10 +22,7 @@ module.exports = function ( grunt ) {
 				extensions: [ '.js', '.json' ],
 				cache: true
 			},
-			all: [
-				'**/*.js{,on}',
-				'!{vendor,node_modules}/**'
-			]
+			all: '.'
 		}
 	} );
 
