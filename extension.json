@@ -285,7 +285,10 @@
 			]
 		},
 		"ext.centralauth.centralautologin": {
-			"scripts": "ext.centralauth.centralautologin.js",
+			"packageFiles": [
+				"ext.centralauth.centralautologin.js",
+				{ "name": "data.json", "callback": "CentralAuthHooks::getCentralautologinJsData" }
+			],
 			"styles": "ext.centralauth.centralautologin.css",
 			"targets": [
 				"mobile",
