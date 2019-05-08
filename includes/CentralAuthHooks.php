@@ -985,10 +985,12 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param array &$vars
+	 * Data to be serialised as JSON for the 'ext.centralauth.centralautologin' module.
+	 * @return array
 	 */
-	public static function onResourceLoaderGetConfigVars( &$vars ) {
+	public static function getCentralautologinJsData() {
 		global $wgCentralAuthLoginWiki;
+		$data = [];
 		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== wfWikiID() ) {
 			$url = WikiMap::getForeignURL(
 				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
@@ -1001,9 +1003,10 @@ class CentralAuthHooks {
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
-				$vars['wgCentralAuthCheckLoggedInURL'] = wfAppendQuery( $url, $params );
+				$data['checkLoggedInURL'] = wfAppendQuery( $url, $params );
 			}
 		}
+		return $data;
 	}
 
 	/**
