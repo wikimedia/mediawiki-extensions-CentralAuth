@@ -40,10 +40,12 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			'showIfEmpty' => true,
 		] );
 
-		$formDescriptor[ 'logs' ] = [
-			'type' => 'info',
-			'raw' => true,
-			'default' => $logs,
+		$formDescriptor = [
+			'logs' => [
+				'type' => 'info',
+				'raw' => true,
+				'default' => $logs,
+			],
 		];
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
