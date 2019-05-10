@@ -36,7 +36,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/** @var bool */
 	private $mEmailAuthenticated;
 	/** @var string|null */
-	private $mHomeWiki;
+	public $mHomeWiki;
 	/** @var bool */
 	private $mHidden;
 	/** @var bool */
