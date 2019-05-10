@@ -47,7 +47,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mAuthenticationTimestamp;
 	/** @var string[]|null */
 	private $mGroups;
-	/** @var string[] */
+	/** @var array[] */
 	private $mRights;
 	/** @var string */
 	private $mPassword;
