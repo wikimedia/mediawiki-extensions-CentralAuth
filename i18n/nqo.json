@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Lanciné.kounfantoh.fofana",
-			"Lancine.kounfantoh.fofana"
+			"Lancine.kounfantoh.fofana",
+			"Amire80"
 		]
 	},
 	"centralauth-admin-blocklog": "ߜߊ߲߬ߞߎ߲߬ߠߌ߲ ߓߊ߬ߟߊ߲߬",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} ߦߴߊ߬ ߟߊ߫ $2",
-	"centralauth-foreign-link": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ$1 ߦߴߊ߬ ߟߊ߫$2",
+	"centralauth-foreign-link": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ $1 ߦߴߊ߬ ߟߊ߫ $2",
 	"centralauth-merge-method-login": "ߊ߬ ߓߘߊ߫ ߟߊߞߊ߬߸ ߌ ߜߊ߲߬ߞߎ߲߬"
 }
