@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3edfab9_90286303",
+        "filename": "modules/ext.centralauth.centralautologin.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-05-14T20:46:18Z",
+      "side": 1,
+      "message": "I don\u0027t like the change to this comment. This implies that general optimization is the only reason to avoid it, while in fact we\u0027re avoiding it because this specific code needs to run earlier than $.cookie() is available.",
+      "revId": "f3cef008cc54f3cc1207503c35efca4ea6e62c77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
