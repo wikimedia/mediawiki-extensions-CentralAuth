@@ -41,7 +41,8 @@
 			"Stjn",
 			"Vlad5250",
 			"Nk88",
-			"Diralik"
+			"Diralik",
+			"Movses"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника",
@@ -284,7 +285,7 @@
 	"centralauth-log-status-locked": "заблокирована",
 	"centralauth-log-status-none": "(нет)",
 	"centralauth-log-status-oversighted": "полностью скрыто",
-	"centralauth-login-error-locked": "Вы не можете войти, потому что ваша учётная запись отключена.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Вы}} не можете войти, потому что {{GENDER:$1|ваша}} учётная запись глобально заблокирована.",
 	"centralauth-login-no-others": "Вы автоматически авторизовались во всех проектах {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Обрабатывается вход в {{PLURAL:$2|проект|проекты}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Вы автоматически завершили сеанс во всех проектах {{int:Centralauth-groupname}}.",
