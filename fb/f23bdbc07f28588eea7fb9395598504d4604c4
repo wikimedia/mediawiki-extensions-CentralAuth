@@ -1,0 +1,8 @@
+Code-Review+2: Legoktm <legoktm@member.fsf.org>
+Code-Review+1: Jforrester <jforrester@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 20 May 2019 05:25:25 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/489318
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
