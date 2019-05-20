@@ -16,6 +16,24 @@
       "revId": "f3cef008cc54f3cc1207503c35efca4ea6e62c77",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b919da4_7265e174",
+        "filename": "modules/ext.centralauth.centralautologin.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-05-20T19:36:43Z",
+      "side": 1,
+      "message": "Not sure I understand what you mean. The only reason it wouldn\u0027t be available is because the module in question doesn\u0027t declare \u0027jquery.cookie\u0027 as its dependency.\n\nThe code is loaded as a regular module.",
+      "parentUuid": "f3edfab9_90286303",
+      "revId": "f3cef008cc54f3cc1207503c35efca4ea6e62c77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
