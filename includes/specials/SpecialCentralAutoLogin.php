@@ -572,7 +572,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			Hooks::run( 'UserGetLanguageObject',
 				[ $this->getUser(), &$code, $this->getContext() ]
 			);
-			$script .= "\n" . Xml::encodeJsCall( 'mediaWiki.messages.set', [
+			$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
 				[
 					'centralauth-centralautologin-logged-in' =>
 						wfMessage( 'centralauth-centralautologin-logged-in' )
