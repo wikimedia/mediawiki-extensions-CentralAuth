@@ -261,7 +261,7 @@
 	"centralauth-list-unattached-title": "Contas não unificadas",
 	"centralauth-listusers-attached": "[[User:$1|existe localmente]]",
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
-	"centralauth-listusers-locked": "bloqueada",
+	"centralauth-listusers-locked": "travada",
 	"centralauth-listusers-nolocal": "não unificada ou não existe localmente",
 	"centralauth-log-entry-chgstatus": "alterou o estado da conta global \"$1\": Definiu $2; Removeu $3",
 	"centralauth-log-entry-delete": "removeu conta global \"$1\"",

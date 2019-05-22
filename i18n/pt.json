@@ -24,7 +24,8 @@
 			"Macofe",
 			"Jkb8",
 			"Athena in Wonderland",
-			"CaiusSPQR"
+			"CaiusSPQR",
+			"Tks4Fish"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o utilizador está",
@@ -253,7 +254,7 @@
 	"centralauth-list-unattached": "Não foi possível confirmar automaticamente que {{PLURAL:$2|a conta \"$1\" lhe pertence|as contas \"$1\" lhe pertencem}} {{PLURAL:$2|no seguinte sítio|nos seguintes sítios}}\n(provavelmente, porque {{PLURAL:$2|tem|têm}} uma palavra-passe diferente da conta primária):",
 	"centralauth-list-unattached-title": "Contas não anexadas",
 	"centralauth-listusers-attached": "[[User:$1|existe localmente]]",
-	"centralauth-listusers-locked": "bloqueada",
+	"centralauth-listusers-locked": "travada",
 	"centralauth-listusers-nolocal": "não anexada ou não existe localmente",
 	"centralauth-log-entry-chgstatus": "alterou o estado da conta global \"$1\": Definiu $2; Removeu $3",
 	"centralauth-log-entry-delete": "eliminou a conta global \"$1\"",
@@ -266,7 +267,7 @@
 	"centralauth-log-header": "Este registo contém operações sobre contas globais: remoções, bloqueios e desbloqueios.",
 	"centralauth-log-name": "Registo de contas globais",
 	"centralauth-log-status-hidden": "ocultado",
-	"centralauth-log-status-locked": "bloqueado",
+	"centralauth-log-status-locked": "travado",
 	"centralauth-log-status-none": "(nenhum)",
 	"centralauth-log-status-oversighted": "suprimido",
 	"centralauth-login-error-locked": "Não {{GENDER:$1|pode}} iniciar a sessão porque a {{GENDER:$1|sua}} conta está bloqueada globalmente.",
