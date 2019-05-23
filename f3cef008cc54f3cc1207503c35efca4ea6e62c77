@@ -34,6 +34,24 @@
       "revId": "f3cef008cc54f3cc1207503c35efca4ea6e62c77",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3d6664c_444ced70",
+        "filename": "modules/ext.centralauth.centralautologin.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-05-23T16:23:21Z",
+      "side": 1,
+      "message": "Ah, I wasn\u0027t really aware that `\"position\": \"top\"` wasn\u0027t a thing anymore (T109837). This used to be top-loaded (to try to reduce the time between page load and auto-login), while $.cookie wasn\u0027t.\n\nIf it hadn\u0027t been for that, this probably would have just used $.cookie() back when it was written.",
+      "parentUuid": "6b919da4_7265e174",
+      "revId": "f3cef008cc54f3cc1207503c35efca4ea6e62c77",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
