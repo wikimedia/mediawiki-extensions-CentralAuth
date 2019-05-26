@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Joseagush"
+			"Joseagush",
+			"NoiX180"
 		]
 	},
-	"centralauth-foreign-link": "Pangangge $1 ring $2"
+	"centralauth-foreign-link": "Pangangge $1 ring $2",
+	"centralauth-merge-method-login": "kakaryanin ritatkala ngranjing log"
 }

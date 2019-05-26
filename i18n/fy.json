@@ -40,6 +40,8 @@
 	"centralauth-merge-method-new": "nij account",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minút|minuten}} lyn",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|moanne|moannen}} lyn",
+	"centralauth-prefs-status": "Globaal akkount:",
+	"centralauth-prefs-view": "Ynfo fan jo globaal akkount besjen",
 	"centralauth-rename-form-newname": "Nije meidochnamme",
 	"centralauth-rename-form-reason": "Reden",
 	"centralauth-rename-movelog": "Side automatysk omneamd by it omneamen fan meidogger \"[[Special:CentralAuth/$1|$1]]\" ta \"[[Special:CentralAuth/$2|$2]]\"",
