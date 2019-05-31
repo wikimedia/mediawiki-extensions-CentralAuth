@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Block\DatabaseBlock;
+
 /**
  * Paginated table of search results.
  * @ingroup Pager
@@ -55,7 +57,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 
 		$dbr = wfGetDB( DB_REPLICA );
 		$userQuery = User::getQueryInfo();
-		$blockQuery = Block::getQueryInfo();
+		$blockQuery = DatabaseBlock::getQueryInfo();
 		$ipbUser = $blockQuery['ipb_user'] ?? 'ipb_user';
 		$res = $dbr->select(
 			$userQuery['tables'] + [ 'nestblock' => $blockQuery['tables'] ],

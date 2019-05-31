@@ -10,6 +10,7 @@ likely construction types...
 
 */
 
+use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
@@ -1817,7 +1818,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
-			$block = new Block( [
+			$block = new DatabaseBlock( [
 				'address' => $this->mName,
 				'user' => $data['id'],
 				'reason' => $blockReason,
@@ -1842,7 +1843,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			# Locally log to suppress ?
 		} else {
-			$blockQuery = Block::getQueryInfo();
+			$blockQuery = DatabaseBlock::getQueryInfo();
 			$ids = $dbw->selectFieldValues(
 				$blockQuery['tables'],
 				'ipb_id',
