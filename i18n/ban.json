@@ -5,6 +5,7 @@
 			"NoiX180"
 		]
 	},
-	"centralauth-foreign-link": "Pangangge $1 ring $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pituut}} ring $2",
+	"centralauth-foreign-link": "Sang anganggé $1 ring $2",
 	"centralauth-merge-method-login": "kakaryanin ritatkala ngranjing log"
 }
