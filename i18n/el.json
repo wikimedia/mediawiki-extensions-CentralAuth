@@ -19,7 +19,8 @@
 			"KATRINE1992",
 			"Nikosgranturismogt",
 			"Kostas20142",
-			"Sarri.greek"
+			"Sarri.greek",
+			"Αντιγόνη"
 		]
 	},
 	"centralauth": "Διαχειριστής καθολικού λογαριασμού",
@@ -300,7 +301,7 @@
 	"centralauth-rightslog-entry-setnewtype": "άλλαξε τον τύπο του \"$1\" από $2 σε $3",
 	"centralauth-rightslog-entry-setrename": "αλλαγή του ονόματος του βικι-συνόλου \"$2\" σε \"$1\"",
 	"centralauth-rightslog-entry-usergroups": "άλλαξε τα παγκόσμια δικαιώματα χρηστών για τον/την $1 από $2 σε $3",
-	"centralauth-rightslog-header": "Αυτή η καταγραφή περιέχει λειτουργίες σε παγκόσμιες ομάδες: αλλαγές σε μέλη και άδειες",
+	"centralauth-rightslog-header": "Αυτή η καταγραφή περιέχει λειτουργίες σε καθολικές ομάδες: αλλαγές σε μέλη και άδειες",
 	"centralauth-rightslog-name": "Ιστορικό καθολικών δικαιωμάτων",
 	"centralauth-rightslog-set-optin": "βασισμένο σε σαφείς προσκολλήσεις",
 	"centralauth-rightslog-set-optout": "βασισμένο σε σαφείς αποχωρἠσεις",
