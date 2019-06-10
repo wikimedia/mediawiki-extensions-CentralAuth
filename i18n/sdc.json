@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jun Misugi"
+		]
+	},
+	"centralauth-admin-blocklog": "Brocchi",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|cuntributu|cuntributi}} sobbra $2",
+	"centralauth-foreign-link": "Utenti $1 sobbra $2",
+	"centralauth-merge-method-login": "criaddu pa intradda"
+}

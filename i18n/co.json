@@ -1,4 +1,9 @@
 {
-	"@metadata": [],
-	"centralauth-editset-name": "Nome:"
+	"@metadata": {
+		"authors": [
+			"Jun Misugi"
+		]
+	},
+	"centralauth-editset-name": "Nome:",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|cuntribuzione|cuntribuzioni}} nantu à $2"
 }
