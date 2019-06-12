@@ -39,6 +39,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @param string $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
+		$this->addHelpLink('Help:Extension:CentralAuth/Global rename');
 		$this->requireLogin();
 
 		switch ( $par ) {
