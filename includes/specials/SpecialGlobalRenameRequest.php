@@ -72,6 +72,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 
 			default:
 				// Request form
+				$this->addHelpLink('Help:Extension:CentralAuth/Global rename');
 				$out = $this->getOutput();
 				$user = $this->getUser();
 				$wiki = $this->isGlobalUser() ? null : wfWikiID();
