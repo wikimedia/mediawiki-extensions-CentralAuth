@@ -21,6 +21,7 @@
 	"action-centralauth-rename": "преименуване на глобални сметки",
 	"action-centralauth-unmerge": "разделяне на глобални сметки",
 	"action-centralauth-usermerge": "глобално сливане на повече потребители",
+	"action-globalgrouppermissions": "управление на глобални групи",
 	"centralauth": "Управление на единните сметки",
 	"centralauth-account-exists": "Сметката на може да бъде създадена: Желаното потребителско име е заето от потребител от друго уики.",
 	"centralauth-account-exists-reset": "Потребителското име $1 не е регистрирано в това уики, но можете да му зададете нова парола от [[Special:CentralAuth/$1|уикито в което е регистрирано]].",
