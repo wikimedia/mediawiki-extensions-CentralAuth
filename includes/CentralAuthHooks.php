@@ -262,7 +262,7 @@ class CentralAuthHooks {
 		if ( !$centralUser->exists() && !$centralUser->listUnattached() ) {
 			if ( $centralUser->register( null, $user->getEmail() ) ) {
 				$centralUser->attach( wfWikiID(), 'new' );
-				CentralAuthUtils::getCentralDB()->onTransactionIdle(
+				CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
 					function () use ( $centralUser ) {
 						CentralAuthUtils::scheduleCreationJobs( $centralUser );
 					}

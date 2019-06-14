@@ -523,9 +523,11 @@ class CentralAuthPrimaryAuthenticationProvider
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( wfWikiID(), 'new' );
-		CentralAuthUtils::getCentralDB()->onTransactionIdle( function () use ( $centralUser ) {
-			CentralAuthUtils::scheduleCreationJobs( $centralUser );
-		} );
+		CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
+			function () use ( $centralUser ) {
+				CentralAuthUtils::scheduleCreationJobs( $centralUser );
+			}
+		);
 		return null;
 	}
 
