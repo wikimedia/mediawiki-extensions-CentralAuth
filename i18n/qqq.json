@@ -156,6 +156,8 @@
 	"centralauth-attach-text": "Used in the form which is titled {{msg-mw|Centralauth-attach-title}}.\n\nSee also:\n* {{msg-mw|Centralauth-attach-submit}}",
 	"centralauth-attach-title": "Used as title for the form.\n\nSee also:\n* {{msg-mw|Centralauth-attach-text}}\n* {{msg-mw|Centralauth-attach-submit}}",
 	"centralauth-block-already-locked": "{{gender}}\nShown at [[Special:Block]] when the user is already globally locked. Parameters:\n* $1 - the requested username",
+	"centralauth-block-local-page": "Link text to link user to the local block list when there are pages with local namespaces. Parameters: \n* $1 - Number of pages with local namespace.",
+	"centralauth-block-local-namespace": "Link text to link user to the local block list when there local namespaces. Parameters: \n* $1 - Number of local namespaces.",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Error message shown when [[Special:CentralAutoLogin]] is called on the local wiki while the user is already logged in.",
 	"centralauth-centralautologin-badparams": "Error message when the required authentication parameters are missing or invalid",
 	"centralauth-centralautologin-badstate": "Error message shown when an invalid state is given for [[Special:CentralAutoLogin]].\n* $1 - Name of the state",
