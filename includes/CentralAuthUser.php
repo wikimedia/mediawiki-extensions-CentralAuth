@@ -1116,7 +1116,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$unattached = [];
 
 		// First, make sure we were given the current wiki's password.
-		$self = $this->localUserData( wfWikiID() );
+		$userManager = MediaWikiServices::getInstance()->get( 'CentralAuthUserManager' );
+		$self = $userManager->getLocalUserData( wfWikiID(), $this->mName );
 		$selfPassword = $this->getPasswordFromString( $self['password'], $self['id'] );
 		if ( !$this->matchHashes( $passwords, $selfPassword ) ) {
 			wfDebugLog( 'CentralAuth', "dry run: failed self-password check" );
@@ -1815,7 +1816,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wiki );
 		$dbw = $lb->getConnectionRef( DB_MASTER, [], $wiki );
-		$data = $this->localUserData( $wiki );
+		$userManager = MediaWikiServices::getInstance()->get( 'CentralAuthUserManager' );
+		$data = $userManager->getLocalUserData( $wiki );
 
 		if ( $suppress ) {
 			list( , $lang ) = $wgConf->siteFromDB( $wiki );
@@ -2368,7 +2370,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *    wiki                  The wiki ID (database name)
 	 *    attachedTimestamp     The MW timestamp when the account was attached
 	 *    attachedMethod        Attach method: password, mail or primary
-	 *    ...                   All information returned by localUserData()
+	 *    ...                   All information returned by UserManager::getLocalUserData()
 	 */
 	public function queryAttached() {
 		// Cache $wikis to avoid expensive query whenever possible
@@ -2380,11 +2382,12 @@ class CentralAuthUser implements IDBAccessObject {
 			return $this->mAttachedInfo;
 		}
 
+		$userManager = MediaWikiServices::getInstance()->get( 'CentralAuthUserManager' );
 		$wikis = $this->queryAttachedBasic();
 
 		foreach ( $wikis as $wikiId => $_ ) {
 			try {
-				$localUser = $this->localUserData( $wikiId );
+				$localUser = $userManager->getLocalUserData( $wikiId, $this->mName );
 				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localuser table told us that the user was attached
@@ -2457,12 +2460,13 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array
 	 */
 	public function queryUnattached() {
+		$userManager = MediaWikiServices::getInstance()->get( 'CentralAuthUserManager' );
 		$wikiIDs = $this->listUnattached();
 
 		$items = [];
 		foreach ( $wikiIDs as $wikiID ) {
 			try {
-				$data = $this->localUserData( $wikiID );
+				$data = $userManager->getLocalUserData( $wikiID, $this->mName );
 				$items[$wikiID] = $data;
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localnames table told us that the name was
@@ -2474,115 +2478,6 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		return $items;
-	}
-
-	/**
-	 * Fetch a row of user data needed for migration.
-	 *
-	 * Returns most data in the user and ipblocks tables, user groups, and editcount.
-	 *
-	 * @param string $wikiID
-	 * @throws LocalUserNotFoundException if local user not found
-	 * @return array
-	 */
-	protected function localUserData( $wikiID ) {
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lb = $lbFactory->getMainLB( $wikiID );
-		$db = $lb->getConnectionRef( DB_REPLICA, [], $wikiID );
-		$fields = [
-				'user_id',
-				'user_email',
-				'user_email_authenticated',
-				'user_password',
-				'user_editcount',
-				'user_registration',
-			];
-		$conds = [ 'user_name' => $this->mName ];
-		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
-		if ( !$row ) {
-			# Row missing from slave, try the master instead
-			$db = $lb->getConnectionRef( DB_MASTER, [], $wikiID );
-			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
-		}
-		if ( !$row ) {
-			$ex = new LocalUserNotFoundException(
-				"Could not find local user data for {$this->mName}@{$wikiID}" );
-			LoggerFactory::getInstance( 'CentralAuth' )->warning(
-				'Could not find local user data for {username}@{wikiId}',
-				[
-					'username' => $this->mName,
-					'wikiId' => $wikiID,
-					'exception' => $ex,
-				]
-			);
-			throw $ex;
-		}
-
-		$data = [
-			'wiki' => $wikiID,
-			'id' => $row->user_id,
-			'email' => $row->user_email,
-			'emailAuthenticated' =>
-				wfTimestampOrNull( TS_MW, $row->user_email_authenticated ),
-			'registration' =>
-				wfTimestampOrNull( TS_MW, $row->user_registration ),
-			'password' => $row->user_password,
-			'editCount' => $row->user_editcount,
-			'groupMemberships' => [], // array of (group name => UserGroupMembership object)
-			'blocked' => false ];
-
-		// Edit count field may not be initialized...
-		if ( is_null( $row->user_editcount ) ) {
-			$actorWhere = ActorMigration::newMigration()
-				->getWhere( $db, 'rev_user', User::newFromId( $data['id'] ) );
-			$data['editCount'] = 0;
-			foreach ( $actorWhere['orconds'] as $cond ) {
-				$data['editCount'] += $db->selectField(
-					[ 'revision' ] + $actorWhere['tables'],
-					'COUNT(*)',
-					$cond,
-					__METHOD__,
-					[],
-					$actorWhere['joins']
-				);
-			}
-		}
-
-		// And we have to fetch groups separately, sigh...
-		$data['groupMemberships'] =
-			UserGroupMembership::getMembershipsForUser( $data['id'], $db );
-
-		// And while we're in here, look for user blocks :D
-		$commentStore = CommentStore::getStore();
-		$commentQuery = $commentStore->getJoin( 'ipb_reason' );
-		$result = $db->select(
-			[ 'ipblocks' ] + $commentQuery['tables'],
-			[
-				'ipb_expiry', 'ipb_block_email',
-				'ipb_anon_only', 'ipb_create_account',
-				'ipb_enable_autoblock', 'ipb_allow_usertalk',
-			] + $commentQuery['fields'],
-			[ 'ipb_user' => $data['id'] ],
-			__METHOD__,
-			[],
-			$commentQuery['joins']
-		);
-		global $wgLang;
-		foreach ( $result as $row ) {
-			if ( $wgLang->formatExpiry( $row->ipb_expiry, TS_MW ) > wfTimestampNow() ) {
-				$data['block-expiry'] = $row->ipb_expiry;
-				$data['block-reason'] = $commentStore->getComment( 'ipb_reason', $row )->text;
-				$data['block-anononly'] = (bool)$row->ipb_anon_only;
-				$data['block-nocreate'] = (bool)$row->ipb_create_account;
-				$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
-				// Poorly named database column
-				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
-				$data['block-noemail'] = (bool)$row->ipb_block_email;
-				$data['blocked'] = true;
-			}
-		}
-
-		return $data;
 	}
 
 	/**
