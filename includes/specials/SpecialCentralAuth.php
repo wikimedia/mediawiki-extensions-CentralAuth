@@ -1,5 +1,10 @@
 <?php
 
+use MediaWiki\Block\Restriction\Restriction;
+use MediaWiki\Block\Restriction\PageRestriction;
+use MediaWiki\Block\Restriction\NamespaceRestriction;
+use MediaWiki\MediaWikiServices;
+
 class SpecialCentralAuth extends SpecialPage {
 	/** @var string */
 	private $mUserName;
@@ -587,16 +592,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
-			$flags = [];
-			foreach (
-				[ 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ] as $option
-			) {
-				if ( $row['block-' . $option] ) {
-					$flags[] = $option;
-				}
-			}
-			$flags = implode( ',', $flags );
-			$optionMessage = BlockLogFormatter::formatBlockFlags( $flags, $this->getLanguage() );
+			$optionMessage = $this->formatBlockParams( $row );
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->parse();
 			} else {
@@ -606,10 +602,6 @@ class SpecialCentralAuth extends SpecialPage {
 
 				$text = $this->msg( 'centralauth-admin-blocked2', $expiry, $expiryd, $expiryt )
 					->parse();
-			}
-
-			if ( $flags ) {
-				$additionalHtml .= ' ' . $optionMessage;
 			}
 
 			if ( $row['block-reason'] ) {
@@ -624,8 +616,11 @@ class SpecialCentralAuth extends SpecialPage {
 				$msg = $this->msg( 'centralauth-admin-blocked-reason' );
 				$msg->rawParams( '<span class="plainlinks">' . $reason . '</span>' );
 
-				$additionalHtml .= ' ' . $msg->parse();
+				$additionalHtml .= HTML::rawElement( 'br' ) . $msg->parse();
 			}
+
+			$additionalHtml .= ' ' . $optionMessage;
+
 		} else {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
 		}
@@ -637,6 +632,192 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->msg( 'centralauth-admin-blocklog' )->text(),
 			'page=User:' . urlencode( $this->mUserName )
 		) . $additionalHtml;
+	}
+
+	/**
+	 * Format a block's parameters.
+	 *
+	 * @see BlockListPager::formatValue()
+	 *
+	 * @param array $row
+	 * @return string
+	 */
+	private function formatBlockParams( $row ) {
+		global $wgConf;
+		$properties = [];
+
+		if ( $wgConf->get( 'wgEnablePartialBlocks', $row['wiki'] ) && $row['block-sitewide'] ) {
+			$properties[] = $this->msg( 'blocklist-editing-sitewide' )->escaped();
+		}
+
+		if ( !$row['block-sitewide'] && $row['block-restrictions'] ) {
+			$list = $this->getRestrictionListHTML( $row );
+			if ( $list ) {
+				$properties[] = $this->msg( 'blocklist-editing' )->escaped() . $list;
+			}
+		}
+
+		$options = [
+			'anononly' => 'anononlyblock',
+			'nocreate' => 'createaccountblock',
+			'noautoblock' => 'noautoblockblock',
+			'noemail' => 'emailblock',
+			'nousertalk' => 'blocklist-nousertalk',
+		];
+		foreach ( $options as $option => $msg ) {
+			if ( $row['block-' . $option] ) {
+				$properties[] = $this->msg( $msg )->escaped();
+			}
+		}
+
+		if ( !$properties ) {
+			return '';
+		}
+
+		return Html::rawElement(
+			'ul',
+			[],
+			implode( '', array_map( function ( $prop ) {
+				return Html::rawElement(
+					'li',
+					[],
+					$prop
+				);
+			}, $properties ) )
+		);
+	}
+
+	/**
+	 * Get Restriction List HTML
+	 *
+	 * @see BlockListPager::getRestrictionListHTML()
+	 *
+	 * @param array $row
+	 *
+	 * @return string
+	 */
+	private function getRestrictionListHTML( array $row ) {
+		$titleFormatter = MediaWikiServices::getInstance()->getTitleFormatter();
+		$namespaceInfo = MediaWikiServices::getInstance()->getNamespaceInfo();
+		$localPages = 0;
+		$localNamespaces = 0;
+
+		$items = [
+			PageRestriction::TYPE => [],
+			NamespaceRestriction::TYPE => [],
+		];
+
+		foreach ( $row['block-restrictions'] as $restriction ) {
+			switch ( $restriction->getType() ) {
+				case PageRestriction::TYPE:
+					if ( $restriction->getTitle()->getNamespace() >= 90 || !$namespaceInfo->exists( $restriction->getTitle()->getNamespace() ) ) {
+						$localPages++;
+						continue;
+					}
+					if ( $restriction->getTitle() ) {
+						$items[$restriction->getType()][] = Html::rawElement(
+							'li',
+							[],
+							self::foreignLink(
+								$row['wiki'],
+								$titleFormatter->getPrefixedDBkey( $restriction->getTitle() ),
+								$titleFormatter->getPrefixedText( $restriction->getTitle() )
+							)
+						);
+					}
+					break;
+				case NamespaceRestriction::TYPE:
+					if ( $restriction->getValue() >= 90 || !$namespaceInfo->exists( $restriction->getValue() ) ) {
+						$localNamespaces++;
+						continue;
+					}
+					$text = $restriction->getValue() === NS_MAIN
+						? $this->msg( 'blanknamespace' )->escaped()
+						: $this->getLanguage()->getFormattedNsText(
+							$restriction->getValue()
+						);
+					$items[$restriction->getType()][] = Html::rawElement(
+						'li',
+						[],
+						self::foreignLink(
+							$row['wiki'],
+							$titleFormatter->getPrefixedDBkey( SpecialPage::getTitleValueFor( 'Allpages' ) ),
+							$text,
+							'',
+							'namespace=' . $restriction->getValue()
+						)
+					);
+					break;
+			}
+		}
+
+		if ( $localPages ) {
+			$core = count( $items[PageRestriction::TYPE] );
+			$items[PageRestriction::TYPE][] = Html::rawElement(
+				'li',
+				[],
+				self::foreignLink(
+					$row['wiki'],
+					$titleFormatter->getPrefixedDBkey( SpecialPage::getTitleValueFor( 'BlockList' ) ),
+					$this->msg(
+						'centralauth-block-local-page',
+						[
+							$core ? $this->msg( 'centralauth-block-local-conjunction' )->text() : '',
+							$localPages
+						]
+					)->escaped(),
+					'',
+					'wpTarget=' . $row['name']
+				)
+			);
+		}
+
+		if ( $localNamespaces ) {
+			$core = count( $items[NamespaceRestriction::TYPE] );
+			$items[NamespaceRestriction::TYPE][] = Html::rawElement(
+				'li',
+				[],
+				self::foreignLink(
+					$row['wiki'],
+					$titleFormatter->getPrefixedDBkey( SpecialPage::getTitleValueFor( 'BlockList' ) ),
+					$this->msg(
+						'centralauth-block-local-namespace',
+						[
+							$core ? $this->msg( 'centralauth-block-local-conjunction' )->text() : '',
+							$localNamespaces
+						]
+					)->escaped(),
+					'',
+					'wpTarget=' . $row['name']
+				)
+			);
+		}
+
+		$sets = [];
+		foreach ( $items as $key => $value ) {
+			if ( !$value ) {
+				continue;
+			}
+			$sets[] = Html::rawElement(
+				'li',
+				[],
+				$this->msg( 'blocklist-editing-' . $key )->escaped() . Html::rawElement(
+					'ul',
+					[],
+					implode( '', $value )
+				)
+			);
+		}
+
+		if ( !$sets ) {
+			return '';
+		}
+
+		return Html::rawElement(
+			'ul',
+			[],
+			implode( '', $sets )
+		);
 	}
 
 	/**
