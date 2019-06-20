@@ -2480,12 +2480,14 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array
 	 */
 	protected function localUserData( $wikiID ) {
+		$blockRestrictions = MediaWikiServices::getInstance()->getBlockRestrictionStore();
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wikiID );
 		$db = $lb->getConnectionRef( DB_REPLICA, [], $wikiID );
 		$fields = [
 				'user_id',
 				'user_email',
+				'user_name',
 				'user_email_authenticated',
 				'user_password',
 				'user_editcount',
@@ -2515,6 +2517,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$data = [
 			'wiki' => $wikiID,
 			'id' => $row->user_id,
+			'name' => $row->user_name,
 			'email' => $row->user_email,
 			'emailAuthenticated' =>
 				wfTimestampOrNull( TS_MW, $row->user_email_authenticated ),
@@ -2552,9 +2555,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$result = $db->select(
 			[ 'ipblocks' ] + $commentQuery['tables'],
 			[
+				'ipb_id',
 				'ipb_expiry', 'ipb_block_email',
 				'ipb_anon_only', 'ipb_create_account',
 				'ipb_enable_autoblock', 'ipb_allow_usertalk',
+				'ipb_sitewide',
 			] + $commentQuery['fields'],
 			[ 'ipb_user' => $data['id'] ],
 			__METHOD__,
@@ -2572,6 +2577,9 @@ class CentralAuthUser implements IDBAccessObject {
 				// Poorly named database column
 				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
 				$data['block-noemail'] = (bool)$row->ipb_block_email;
+				$data['block-sitewide'] = (bool)$row->ipb_sitewide;
+				$data['block-restrictions'] = (bool)$row->ipb_sitewide ? [] :
+					$blockRestrictions->loadByBlockId( $row->ipb_id, $db );
 				$data['blocked'] = true;
 			}
 		}
