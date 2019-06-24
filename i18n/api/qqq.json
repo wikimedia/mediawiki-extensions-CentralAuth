@@ -5,7 +5,8 @@
 			"Gergő Tisza",
 			"Kunal Mehta",
 			"TTO",
-			"Purodha"
+			"Purodha",
+			"McDutchie"
 		]
 	},
 	"apierror-centralauth-badsession": "{{doc-apierror}}",
@@ -54,7 +55,7 @@
 	"apihelp-query+globalgroups-summary": "{{doc-apihelp-summary|query+globalgroups}}",
 	"apihelp-query+globalrenamestatus-description": "{{doc-apihelp-description|query+globalrenamestatus}}",
 	"apihelp-query+globalrenamestatus-example-1": "{{doc-apihelp-example|query+globalrenamestatus}}",
-	"apihelp-query+globalrenamestatus-param-user": "{{doc-apihelp-param|query+globalrenamestatus|user}}",
+	"apihelp-query+globalrenamestatus-param-user": "{{doc-singularthey}}\n{{doc-apihelp-param|query+globalrenamestatus|user}}",
 	"apihelp-query+globalrenamestatus-summary": "{{doc-apihelp-summary|query+globalrenamestatus}}",
 	"apihelp-query+globaluserinfo-description": "{{doc-apihelp-description|query+globaluserinfo}}",
 	"apihelp-query+globaluserinfo-example-1": "{{doc-apihelp-example|query+globaluserinfo}}",

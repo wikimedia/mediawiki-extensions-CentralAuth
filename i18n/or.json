@@ -116,7 +116,7 @@
 	"centralauth-editset-intro-ro": "ତଳେ ଆଗରୁ ଥିବା ଉଇକି ଗୋଠମାନଙ୍କର ତାଲିକା ଦିଆଗଲା ।",
 	"centralauth-editset-intro-rw": "ତଳଲିଖିତ ଉଇକି ଗୋଠମାନ ଆଗରୁ ତିଆରି ସରିଛି  ।\nଆପଣ ଶେଠୀ ଭିତରୁ କିଛିକୁ ଦେଖିପାରିବେ, ବଦଳାଇ ପାରିବେ ବା ନୂଆ ଗୋଠଟିଏ ତିଆରି କରିପାରିବେ ।",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|ଲିଭାଇବେ]])",
-	"centralauth-editset-legend-delete": "ଉଇକି ଗୋଠ \"$1\" କୁ ଲିଭାଉଛି",
+	"centralauth-editset-legend-delete": "ଉଇକି ବର୍ଗ \"$1\"‌କୁ ଲିଭାଉଛି",
 	"centralauth-editset-legend-edit": "ଉଇକି ଗୋଠ \"$1\" ବ୍ୟବହାର କରୁଅଛି",
 	"centralauth-editset-legend-new": "ନୂଆ ଉଇକି ଗୋଠ ତିଆରୁଛି",
 	"centralauth-editset-legend-ro": "ଉଇକି ଗୋଠର ତାଲିକା",
