@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d01eb08_0abd4ea2",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-06-24T16:27:23Z",
+      "side": 1,
+      "message": "Factoring out the conjunction makes a grammatical assumption that might not hold over different languages - would be better to have four messages.\n\nMight be better to have just the two messages and avoid the conjunction altogether... If the user is blocked from several global pages/namespaces, there\u0027s no conjunction before the final one.",
+      "range": {
+        "startLine": 141,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 47
+      },
+      "revId": "78cfff079b3af2781e2e8dbbeee783a6134e8471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c76a98d_5367cf91",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-06-24T16:27:23Z",
+      "side": 1,
+      "message": "Does this guarantee a local namespace? It might be helpful to link to the documentation explaining this check here, and maybe save the threshold to a variable to make it clear?",
+      "range": {
+        "startLine": 712,
+        "startChar": 50,
+        "endLine": 712,
+        "endChar": 56
+      },
+      "revId": "78cfff079b3af2781e2e8dbbeee783a6134e8471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
