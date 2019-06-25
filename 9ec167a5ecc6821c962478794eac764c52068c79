@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bdd74803_a47efcae",
+        "filename": "i18n/en.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-06-25T14:15:17Z",
+      "side": 1,
+      "message": "I think I didn\u0027t explain clearly last time - sorry.\n\nThe assumption that there is an equivalent to the ellipsis and an equivalent to the conjunction that belong in this order before the final list item might not hold true for every language. To avoid this we could have four messages:\n\n \"centralauth-block-local-page\"\n \"centralauth-block-local-page-final\"\n \"centralauth-block-local-namespace\"\n \"centralauth-block-local-namespace-final\"\n\nThe two messages ending \"-final\" would be identical to their counterparts, but beginning with \"... and\" in English.\n\nA better solution in my opinion would be not to use \"... and\", and only use these two messages:\n\n \"centralauth-block-local-page\"\n \"centralauth-block-local-namespace\"\n\nThis way the messages are less complicated, and the list is visually more consistent. Have commented with screenshots on T200938",
+      "range": {
+        "startLine": 141,
+        "startChar": 2,
+        "endLine": 141,
+        "endChar": 34
+      },
+      "revId": "9ec167a5ecc6821c962478794eac764c52068c79",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
