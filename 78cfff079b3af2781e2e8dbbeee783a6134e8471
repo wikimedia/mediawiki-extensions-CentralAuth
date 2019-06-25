@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "65670706_3dbeea88",
+        "filename": "i18n/en.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-06-25T19:41:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d01eb08_0abd4ea2",
+      "range": {
+        "startLine": 141,
+        "startChar": 1,
+        "endLine": 141,
+        "endChar": 47
+      },
+      "revId": "78cfff079b3af2781e2e8dbbeee783a6134e8471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c76a98d_5367cf91",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-06-24T16:27:23Z",
       "side": 1,
       "message": "Does this guarantee a local namespace? It might be helpful to link to the documentation explaining this check here, and maybe save the threshold to a variable to make it clear?",
+      "range": {
+        "startLine": 712,
+        "startChar": 50,
+        "endLine": 712,
+        "endChar": 56
+      },
+      "revId": "78cfff079b3af2781e2e8dbbeee783a6134e8471",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f198f5b9_433971c3",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-06-25T19:41:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c76a98d_5367cf91",
       "range": {
         "startLine": 712,
         "startChar": 50,
