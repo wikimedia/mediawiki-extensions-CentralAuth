@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e17b9f4_1c4d7cd5",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-06-26T17:53:50Z",
+      "side": 1,
+      "message": "This is a definite improvement. Should mention it in the commit message.",
+      "range": {
+        "startLine": 658,
+        "startChar": 18,
+        "endLine": 658,
+        "endChar": 35
+      },
+      "revId": "f05d6b9b5860800d8aef8f3fc0c9c96c52d8bc55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5977c30_9ccd019c",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-06-26T17:53:50Z",
+      "side": 1,
+      "message": "It seems this is difficult to get right, and \u003e\u003d 90 is probably as good a heuristic as we\u0027re going to get (thanks for the explanation Dbarratt).\n\nCould we add a TODO here and link to T226651?",
+      "range": {
+        "startLine": 724,
+        "startChar": 10,
+        "endLine": 724,
+        "endChar": 56
+      },
+      "revId": "f05d6b9b5860800d8aef8f3fc0c9c96c52d8bc55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5083e03_7a64e57a",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-06-26T17:53:50Z",
+      "side": 1,
+      "message": "Perhaps reword as a TODO and link to T226651, as above",
+      "range": {
+        "startLine": 738,
+        "startChar": 5,
+        "endLine": 738,
+        "endChar": 88
+      },
+      "revId": "f05d6b9b5860800d8aef8f3fc0c9c96c52d8bc55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
