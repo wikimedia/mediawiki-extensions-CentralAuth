@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "c2be3bd6_ce73de0c",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-06-27T21:18:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5977c30_9ccd019c",
+      "range": {
+        "startLine": 724,
+        "startChar": 10,
+        "endLine": 724,
+        "endChar": 56
+      },
+      "revId": "f05d6b9b5860800d8aef8f3fc0c9c96c52d8bc55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f5083e03_7a64e57a",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 5
@@ -59,6 +83,30 @@
       "writtenOn": "2019-06-26T17:53:50Z",
       "side": 1,
       "message": "Perhaps reword as a TODO and link to T226651, as above",
+      "range": {
+        "startLine": 738,
+        "startChar": 5,
+        "endLine": 738,
+        "endChar": 88
+      },
+      "revId": "f05d6b9b5860800d8aef8f3fc0c9c96c52d8bc55",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51158549_aa812056",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-06-27T21:18:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5083e03_7a64e57a",
       "range": {
         "startLine": 738,
         "startChar": 5,
