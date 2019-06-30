@@ -450,7 +450,7 @@
 	"globalrenamerequest": "בקשת שינוי שם חשבון משתמש גלובלי",
 	"globalrenamerequest-desc": "בקשת שינוי שם חשבון גלובלי",
 	"globalrenamerequest-email-invalid": "הוזנה כתובת דוא\"ל בלתי־תקינה.",
-	"globalrenamerequest-email-label": "כתובת דוא\"ל:",
+	"globalrenamerequest-email-label": "כתובת דוא״ל:",
 	"globalrenamerequest-email-mismatch": "כתובת הדוא\"ל שונות.<br />נא לבדוק אותן ולנסות שוב.",
 	"globalrenamerequest-email-why-explain": "אנו זקוקים לכתובת דוא\"ל בתהליך הזה כדי לוודא שהגישה לחשבון הזה לא תאבד.<br />באפשרותך להסיר את כתובת הדוא\"ל הזאת לאחר השלמת תהליך שינוי השם.",
 	"globalrenamerequest-email2-help": "נא להזין את אותה כתובת הדוא\"ל שהזנת לעיל לשם אישור.",
