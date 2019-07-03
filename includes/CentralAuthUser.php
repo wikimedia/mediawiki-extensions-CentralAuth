@@ -441,7 +441,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$sets = [];
 		foreach ( $resSets as $row ) {
-			/* @var $row object */
+			/* @var object $row */
 			$sets[$row->ggr_group] = WikiSet::newFromRow( $row );
 		}
 
@@ -450,7 +450,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$groups = [];
 
 		foreach ( $res as $row ) {
-			/** @var $set User|bool */
+			/** @var User|bool $set */
 			$set = $sets[$row->ggp_group] ?? '';
 			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getID() : false ];
 			$groups[$row->ggp_group] = 1;
@@ -530,7 +530,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	protected function loadFromCache() {
-		$cache = ObjectCache::getMainWANInstance();
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$data = $cache->getWithSetCallback(
 			$this->getCacheKey( $cache ),
 			$cache::TTL_DAY,
@@ -2966,7 +2966,7 @@ class CentralAuthUser implements IDBAccessObject {
 			"Quick cache invalidation for global user {$this->mName}" );
 
 		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function () {
-			$cache = ObjectCache::getMainWANInstance();
+			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 			$cache->delete( $this->getCacheKey( $cache ) );
 		} );
 	}
