@@ -38,7 +38,7 @@ class CreateLocalAccount extends Maintenance {
 			}
 
 			# Update user count
-			$ssUpdate = new SiteStatsUpdate( 0, 0, 0, 0, 1 );
+			$ssUpdate = SiteStatsUpdate::factory( [ 'users' => 1 ] );
 			$ssUpdate->doUpdate();
 			$this->output( "User '$username' created\n" );
 		}
