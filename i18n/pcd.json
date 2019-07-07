@@ -5,6 +5,7 @@
 		]
 	},
 	"centralauth": "Anménistrachon global des uzeus",
+	"centralauth-admin-blocklog": "jornal éd chés blotchages",
 	"centralauth-editset": "Insan.ne éd wikis",
 	"centralauth-editset-intro-ro": "El lisse des groupes éd wikis est:",
 	"centralauth-editset-legend-ro": "Chés groupes éd wikis",
@@ -12,7 +13,10 @@
 	"centralauth-editset-optin": "Basé par consintemint ésplicite (cha n'comprind uniquemint éq chés wikis mértchés)",
 	"centralauth-editset-restwikis": "chés Wikis pon inclus:",
 	"centralauth-editset-usage": "Implouéyé dins chés groupes globals:",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contérbuchon|contérbuchons}} édseur $2",
+	"centralauth-foreign-link": "Uzeu $1 édseur $2",
 	"centralauth-login-progress": "Vos ètes logué{{GENDER:||e|(e)}} à chés wikis éd {{int:Centralauth-groupname}} :",
+	"centralauth-merge-method-login": "créè lors éd l’idintificacion",
 	"centralauth-rightslog-set-optin": "basé par consintemint ésplicite",
 	"globalgroupmembership": "Aparténanche à chés globals groupes",
 	"globalgrouppermissions": "Anménistrachon des globals groupes",

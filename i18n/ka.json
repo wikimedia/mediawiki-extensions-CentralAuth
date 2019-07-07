@@ -231,7 +231,6 @@
 	"centralauth-login-no-others": "თქვენ ავტომატურად შეხვედით {{int:Centralauth-groupname}}-ის ყველა პროექტში.",
 	"centralauth-login-progress": "Logging you in to wikis of {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "You have been automatically logged out of other projects of {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Logging you out from other wikis of {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''მიმდინარეობს მითითებული პაროლის ჯერ კიდევ განცალკევებულ ანგარიშებთან შესაბამისობაზე შემოწმება…'''",
 	"centralauth-merge-denied": "უკაცრავად, თქვენ არ გაქვთ ამ გვერდის ნახვის უფლება.",
 	"centralauth-merge-dryrun-complete": "ყველა არსებული ანგარიში შეიძლება ავტომატურად გაერთიანდეს!\n\nჯერ თქვენს ანგარიშებში არანაირი ცვლილება არ განხორციელებულა.",

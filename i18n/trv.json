@@ -5,7 +5,8 @@
 		]
 	},
 	"centralauth-admin-blocklog": "hmuk jiyax rnisuh patas",
-	"centralauth-foreign-contributions": "mniq $2 suyang qnpahan $1 mnpiya",
-	"centralauth-foreign-link": "mniq $2 ka seejiq mduuy $1",
-	"centralauth-merge-method-login": "Wada phiyug nii pstmay siida"
+	"centralauth-foreign-contributions": "Mniq $2 suyang qnpahan $1 {{PLURAL:$1|mnpiya}}",
+	"centralauth-foreign-link": "Mniq $2 ka seejiq mduuy $1",
+	"centralauth-merge-method-login": "wada phiyug nii pstmay siida",
+	"globalrenamequeue-action-view": "Qmita"
 }

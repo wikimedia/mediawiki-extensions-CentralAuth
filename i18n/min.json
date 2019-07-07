@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Iwan Novirion",
-			"Ardzun"
+			"Ardzun",
+			"Muhraz"
 		]
 	},
 	"centralauth": "Pangalolaan pangguno global",
@@ -44,7 +45,7 @@
 	"centralauth-desc": "[[Special:MergeAccount|Manggabuangan akun]] linteh wiki {{int:Centralauth-groupname}}",
 	"centralauth-editgroup-noset": "(indak ado)",
 	"centralauth-editset-nouse": "(indak ado)",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|jariah|jariah}} di $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|jariah}} pado $2",
 	"centralauth-foreign-link": "Pangguno $1 di $2",
 	"centralauth-groupname": "Yayasan Wikimedia",
 	"centralauth-list-attached": "Akun \"$1\" pado daftar wiki barikuik alah digabuangkan sabagai akun global sacaro otomatis:",
