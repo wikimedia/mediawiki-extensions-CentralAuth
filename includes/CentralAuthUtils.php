@@ -163,10 +163,12 @@ class CentralAuthUtils {
 	 * @return BagOStuff
 	 */
 	public static function getSessionStore() {
+		global $wgCentralAuthSessionCacheType;
 		global $wgSessionCacheType;
 
 		if ( !self::$sessionStore ) {
-			$cache = ObjectCache::getInstance( $wgSessionCacheType );
+			$sessionCacheType = $wgCentralAuthSessionCacheType ?? $wgSessionCacheType;
+			$cache = ObjectCache::getInstance( $sessionCacheType );
 			self::$sessionStore = $cache instanceof CachedBagOStuff
 				? $cache : new CachedBagOStuff( $cache );
 		}

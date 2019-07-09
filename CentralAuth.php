@@ -272,3 +272,9 @@ $wgCentralAuthGlobalPasswordPolicies = [];
  * @var bool
  */
 $wgOverrideCentralIdLookupProvider = true;
+
+/**
+ * If set, this will be used instead of $wgSessionCacheType for session storage
+ * @var string|int|null
+ */
+$wgCentralAuthSessionCacheType = null;
