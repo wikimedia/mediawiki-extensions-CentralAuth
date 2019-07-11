@@ -40,7 +40,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 */
 	public function execute( $par ) {
 		$this->requireLogin();
-		$this->addHelpLink( 'Help:Extension:CentralAuth/Global rename' );
+		$this->addHelpLink( 'Help:Extension:CentralAuth/Global_rename' );
 
 		switch ( $par ) {
 			case 'status':
