@@ -39,7 +39,7 @@
 	"centralauth-admin-already-unmerged": "Praleidžiamas $1, jau išskirta",
 	"centralauth-admin-bad-input": "Neleistinas sujungimo pasirinkimas",
 	"centralauth-admin-blocked-reason": "Priežastis: $1",
-	"centralauth-admin-blocked2": "Užblokuoja, baigiasi $2 $3.",
+	"centralauth-admin-blocked2": "Užblokuota, galioja iki $2 $3.",
 	"centralauth-admin-blocked2-indef": "Užblokuotas neribotam laikui.",
 	"centralauth-admin-blocklog": "Blokavimų sąrašas",
 	"centralauth-admin-delete-button": "Ištrinti šią paskyrą",
