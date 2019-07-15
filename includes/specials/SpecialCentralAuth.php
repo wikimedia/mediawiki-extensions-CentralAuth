@@ -341,7 +341,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 		$content .= Xml::closeElement( "ul" );
 		$out = Xml::fieldset(
-			$this->msg( 'centralauth-admin-info-header' )->escaped(),
+			$this->msg( 'centralauth-admin-info-header' )->text(),
 			$content,
 			[ "id" => "mw-centralauth-info" ]
 		);
@@ -398,8 +398,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$remainder = $this->mUnattachedLocalAccounts;
 
 		$legend = $this->mCanUnmerge && $this->mGlobalUser->exists() ?
-			$this->msg( 'centralauth-admin-list-legend-rw' )->escaped() :
-			$this->msg( 'centralauth-admin-list-legend-ro' )->escaped();
+			$this->msg( 'centralauth-admin-list-legend-rw' )->text() :
+			$this->msg( 'centralauth-admin-list-legend-ro' )->text();
 
 		$this->getOutput()->addHTML( Xml::fieldset( $legend ) );
 		$this->getOutput()->addHTML( $this->listHeader() );
@@ -598,14 +598,14 @@ class SpecialCentralAuth extends SpecialPage {
 			$flags = implode( ',', $flags );
 			$optionMessage = BlockLogFormatter::formatBlockFlags( $flags, $this->getLanguage() );
 			if ( $row['block-expiry'] == 'infinity' ) {
-				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->parse();
+				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->text();
 			} else {
 				$expiry = $this->getLanguage()->timeanddate( $row['block-expiry'], true );
 				$expiryd = $this->getLanguage()->date( $row['block-expiry'], true );
 				$expiryt = $this->getLanguage()->time( $row['block-expiry'], true );
 
 				$text = $this->msg( 'centralauth-admin-blocked2', $expiry, $expiryd, $expiryt )
-					->parse();
+					->text();
 			}
 
 			if ( $flags ) {
@@ -627,7 +627,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$additionalHtml .= ' ' . $msg->parse();
 			}
 		} else {
-			$text = $this->msg( 'centralauth-admin-notblocked' )->parse();
+			$text = $this->msg( 'centralauth-admin-notblocked' )->text();
 		}
 
 		return self::foreignLink(
@@ -708,7 +708,7 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @param string|WikiReference $wikiID
 	 * @param string $title
-	 * @param string $text
+	 * @param string $text not HTML escaped
 	 * @param string $hint
 	 * @param string $params
 	 * @return string
@@ -800,14 +800,14 @@ class SpecialCentralAuth extends SpecialPage {
 		// Radio buttons
 		$radioLocked =
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-locked-no' )->parse(),
+				$this->msg( 'centralauth-admin-status-locked-no' )->text(),
 				'wpStatusLocked',
 				'0',
 				'mw-centralauth-status-locked-no',
 				!$this->mGlobalUser->isLocked() ) .
 			'<br />' .
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-locked-yes' )->parse(),
+				$this->msg( 'centralauth-admin-status-locked-yes' )->text(),
 				'wpStatusLocked',
 				'1',
 				'mw-centralauth-status-locked-yes',
@@ -815,7 +815,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$radioHidden =
 			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-hidden-no' )->parse(),
+				$this->msg( 'centralauth-admin-status-hidden-no' )->text(),
 				'wpStatusHidden',
 				CentralAuthUser::HIDDEN_NONE,
 				'mw-centralauth-status-hidden-no',
@@ -823,7 +823,7 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( $this->mCanOversight ) {
 			$radioHidden .= '<br />' .
 				Xml::radioLabel(
-					$this->msg( 'centralauth-admin-status-hidden-list' )->parse(),
+					$this->msg( 'centralauth-admin-status-hidden-list' )->text(),
 					'wpStatusHidden',
 					CentralAuthUser::HIDDEN_LISTS,
 					'mw-centralauth-status-hidden-list',
@@ -831,7 +831,7 @@ class SpecialCentralAuth extends SpecialPage {
 				) .
 				'<br />' .
 				Xml::radioLabel(
-					$this->msg( 'centralauth-admin-status-hidden-oversight' )->parse(),
+					$this->msg( 'centralauth-admin-status-hidden-oversight' )->text(),
 					'wpStatusHidden',
 					CentralAuthUser::HIDDEN_OVERSIGHT,
 					'mw-centralauth-status-hidden-oversight',

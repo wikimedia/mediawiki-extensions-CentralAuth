@@ -591,6 +591,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$script .= "\n" . self::getInlineScript( 'autologin.js' );
 
 			// And for good measure, add the edge login HTML images to the page.
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", [
 				CentralAuthHooks::getEdgeLoginHTML()
 			] );
