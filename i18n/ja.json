@@ -438,7 +438,7 @@
 	"globalrenamequeue-email-subject-rejected": "利用者名変更依頼が却下されました",
 	"globalrenamequeue-form-newname": "希望利用者名:",
 	"globalrenamequeue-form-status": "状態:",
-	"globalrenamequeue-form-status-all": "全て",
+	"globalrenamequeue-form-status-all": "すべて",
 	"globalrenamequeue-form-username": "利用者名:",
 	"globalrenamequeue-request-approve-text": "改名に承諾する",
 	"globalrenamequeue-request-cancel-text": "キャンセル",
