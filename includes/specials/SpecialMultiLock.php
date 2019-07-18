@@ -1,8 +1,4 @@
 <?php
-
-use MediaWiki\MediaWikiServices;
-use Wikimedia\ScopedCallback;
-
 /**
  * Special page to allow locking and hiding multiple users
  * at one time. Lots of code derived from Special:CentralAuth.
@@ -418,11 +414,10 @@ class SpecialMultiLock extends SpecialPage {
 			$setHidden = $this->mActionHide;
 		}
 
-		$guard = null;
 		if ( $this->getRequest()->getCheck( 'markasbot' ) ) {
 			if ( !$this->getUser()->isAllowed( 'bot' ) ) {
-				$guard = MediaWikiServices::getInstance()->getPermissionManager()
-					->addTemporaryUserRights( $this->getUser(), 'bot' );
+				$this->getUser()->mRights[] = 'bot';
+				$toRemoveBotRight = true;
 			}
 			$this->getRequest()->setVal( 'bot', true );
 		}
@@ -448,8 +443,9 @@ class SpecialMultiLock extends SpecialPage {
 			}
 		}
 
-		// revoke temporary bot right
-		ScopedCallback::consume( $guard );
+		if ( isset( $toRemoveBotRight ) ) {
+			unset( $this->getUser()->mRights[array_search( 'bot', $this->getUser()->mRights )] );
+		}
 	}
 
 	/**
