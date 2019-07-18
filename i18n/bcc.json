@@ -3,7 +3,8 @@
 		"authors": [
 			"Mostafadaneshvar",
 			"RigiMahnoor",
-			"Baloch Afghanistan"
+			"Baloch Afghanistan",
+			"Sultanselim baloch"
 		]
 	},
 	"centralauth": "سرجمین اکانتء مدیریت",
@@ -209,10 +210,10 @@
 	"centralauth-merge-no-accounts": "هچ حسابی هم دپ گون شمی نام ته جدول رندگیری حساب مرکزی درگیزگ نه بوت!\nدیتابیس بلکین هرابینت.",
 	"centralauth-merge-notlogged": "انیگء <span class=\"plainlinks\">[$1 سایتء لاگین بئیت]</span> تانکه چه وتی اکانتانء هوار بیتن دلجم بئیت.",
 	"centralauth-merge-step1-detail": "لطفا ادان وتی کلمه رمز وارد کنیت.\nشمی کلمه رمز و ثبت بوتگین ایمیل ته دگه ویکی آن چارگ بیت تا آیانء تایید کنت که یک انت.\nهچ تغییری انجام نه بیت تا وهدی که شما تایید کنیت که چیزان هوبنت.",
-	"centralauth-merge-step1-submit": "اطلاعات ورودی تایید کن",
+	"centralauth-merge-step1-submit": "نبشتگݔں زانشتاں مَنّ",
 	"centralauth-merge-step1-title": "شروع کنت یک داب کتن ورودء",
 	"centralauth-merge-step2-detail": "لهتئ چه اکانتانء نبیت که پر وتکارین درورء گون اصلی ویکی اکانت همدپ به بینت. اگان ائ اکانتان شمئیگء انت بیت که ائ مسألهء گون ائ اکانتانی پسوردء مان کتن تأیید بکن ات.",
-	"centralauth-merge-step2-submit": "تایید اطلاعات ورودی",
+	"centralauth-merge-step2-submit": "لکیتگݔں زانشتانء مننَگ",
 	"centralauth-merge-step2-title": "تایید گیشترین حساب",
 	"centralauth-merge-step3-detail": "شما حاضر ایت تا وتی یک دابی حسابء شرکنیت، گون جهلیگین لچتگین ویکی آن:",
 	"centralauth-merge-step3-submit": "یک داب کتن حسابان",

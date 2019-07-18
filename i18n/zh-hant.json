@@ -59,7 +59,7 @@
 	"centralauth-admin-already-unmerged": "略過 $1，已取消合併",
 	"centralauth-admin-bad-input": "無效的合併選擇",
 	"centralauth-admin-blocked-reason": "原因：$1",
-	"centralauth-admin-blocked2": "已封鎖，期間至 $3 $2。",
+	"centralauth-admin-blocked2": "已封鎖，期限為$2 $3。",
 	"centralauth-admin-blocked2-indef": "無限期封鎖。",
 	"centralauth-admin-blocklog": "封鎖日誌",
 	"centralauth-admin-delete-button": "刪除此帳號",
