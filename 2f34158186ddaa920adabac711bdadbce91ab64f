@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dba1c433_0a78da11",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-07-19T17:26:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "260306db_2f1d0ab8",
+      "range": {
+        "startLine": 724,
+        "startChar": 14,
+        "endLine": 724,
+        "endChar": 21
+      },
+      "revId": "2f34158186ddaa920adabac711bdadbce91ab64f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4f14c9eb_c287dd90",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 16
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "cb171296_bd7bee31",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-07-19T17:26:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4f14c9eb_c287dd90",
+      "range": {
+        "startLine": 725,
+        "startChar": 47,
+        "endLine": 725,
+        "endChar": 54
+      },
+      "revId": "2f34158186ddaa920adabac711bdadbce91ab64f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbf029b9_c058dfcd",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 16
@@ -59,6 +107,30 @@
       "writtenOn": "2019-07-19T13:17:25Z",
       "side": 1,
       "message": "Typo",
+      "range": {
+        "startLine": 740,
+        "startChar": 14,
+        "endLine": 740,
+        "endChar": 21
+      },
+      "revId": "2f34158186ddaa920adabac711bdadbce91ab64f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07ace9ef_51a753bf",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-07-19T17:26:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbf029b9_c058dfcd",
       "range": {
         "startLine": 740,
         "startChar": 14,
