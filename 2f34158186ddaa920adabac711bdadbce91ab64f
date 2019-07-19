@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "260306db_2f1d0ab8",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-07-19T13:17:25Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 724,
+        "startChar": 14,
+        "endLine": 724,
+        "endChar": 21
+      },
+      "revId": "2f34158186ddaa920adabac711bdadbce91ab64f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4f14c9eb_c287dd90",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-07-19T13:17:25Z",
+      "side": 1,
+      "message": "We should fully explain the hack `$restriction-\u003egetTitle()-\u003egetNamespace() \u003e\u003d 90` here. It seems odd to other devs, as clear from the conversation on T226657 for example.\n\nCould reference that task if it helps.",
+      "range": {
+        "startLine": 725,
+        "startChar": 47,
+        "endLine": 725,
+        "endChar": 54
+      },
+      "revId": "2f34158186ddaa920adabac711bdadbce91ab64f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cbf029b9_c058dfcd",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-07-19T13:17:25Z",
+      "side": 1,
+      "message": "Typo",
+      "range": {
+        "startLine": 740,
+        "startChar": 14,
+        "endLine": 740,
+        "endChar": 21
+      },
+      "revId": "2f34158186ddaa920adabac711bdadbce91ab64f",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
