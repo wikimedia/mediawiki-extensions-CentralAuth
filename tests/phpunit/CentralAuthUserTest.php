@@ -196,7 +196,6 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 * @dataProvider provideGetPasswordFromString
 	 */
 	public function testGetPasswordFromString( $pass, $salt, $type ) {
-		$this->setMwGlobals( 'wgPasswordSalt', true );
 		$class = new ReflectionClass( CentralAuthUser::class );
 		$method = $class->getMethod( 'getPasswordFromString' );
 		$method->setAccessible( true );
