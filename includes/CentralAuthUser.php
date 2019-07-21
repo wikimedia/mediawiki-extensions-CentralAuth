@@ -2081,17 +2081,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return Password
 	 */
 	private function getPasswordFromString( $encrypted, $salt ) {
-		global $wgPasswordSalt;
-
 		$passwordFactory = new PasswordFactory();
 		$passwordFactory->init( RequestContext::getMain()->getConfig() );
 
 		if ( preg_match( '/^[0-9a-f]{32}$/', $encrypted ) ) {
-			if ( $wgPasswordSalt ) {
-				$encrypted = ":B:{$salt}:{$encrypted}";
-			} else {
-				$encrypted = ":A:{$encrypted}";
-			}
+			$encrypted = ":B:{$salt}:{$encrypted}";
 		}
 
 		return $passwordFactory->newFromCiphertext( $encrypted );
