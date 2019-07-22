@@ -28,6 +28,7 @@
 	"centralauth-foreign-contributions": "$2 تي $1 {{PLURAL:$1|ڀاڱيداري|ڀاڱيداريون}}",
 	"centralauth-foreign-link": "$2 تي واپرائيندڙ $1",
 	"centralauth-log-gblrename-oldname": "پويون واپرائيندڙ-نانءُ:",
+	"centralauth-merge-method-empty": "ڀاڱيداريون ناھن",
 	"centralauth-merge-method-login": "داخل ٿيڻ تي سرجبو",
 	"centralauth-prefs-status": "عالمي کاتو:",
 	"centralauth-prefs-view": "پنھنجي عالمي کاتي جي معلومات ڏسو",

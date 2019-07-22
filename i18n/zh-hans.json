@@ -39,7 +39,8 @@
 			"A Chinese Wikipedian",
 			"94rain",
 			"佛壁灯",
-			"WQL"
+			"WQL",
+			"A2B4C"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -344,7 +345,7 @@
 	"centralauth-rename-abortlogin": "您的账户已启动重命名或合并。[[Special:GlobalRenameProgress/$1|查看状态]]。",
 	"centralauth-rename-alreadyexists": "请求的用户名已存在。",
 	"centralauth-rename-alreadyinprogress": "对此用户的重命名已在[[Special:GlobalRenameProgress/$1|进行中]]。",
-	"centralauth-rename-antispoofconflicts2": "选择的用户名与已有用户名过于相似，或曾经是已重命名用户（$1）的旧用户名。",
+	"centralauth-rename-antispoofconflicts2": "<strong>您选择的用户名与{{PLURAL:$2|一个已有用户名|多个已有用户名}}过于相似，或曾经为已重命名用户（$1）的旧用户名。</strong>",
 	"centralauth-rename-badusername": "请求的用户名无效。",
 	"centralauth-rename-cannotself": "您不能重命名您自己。",
 	"centralauth-rename-confirm": "您真希望全域重命名此用户？",
