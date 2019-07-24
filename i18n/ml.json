@@ -307,7 +307,7 @@
 	"centralauth-rename-form-overrideantispoof": "ആന്റിസ്പൂഫ് സമരസപ്പെടായ്കകൾ അതിലംഘിക്കുക",
 	"centralauth-rename-form-reason": "കാരണം",
 	"centralauth-rename-form-suppressredirects": "തിരിച്ചുവിടലുകളുടെ നിർമ്മിതി ഒതുക്കുക",
-	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" എന്ന ഉപയോക്താവിനെ \"[[Special:CentralAuth/$2|$2]]\" എന്നു പേരുമാറ്റിയപ്പോൾ കൂടെ താൾ സ്വയം മാറ്റിയിട്ടുണ്ട്.",
+	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" എന്ന ഉപയോക്താവിനെ \"[[Special:CentralAuth/$2|$2]]\" എന്നു പേരുമാറ്റിയപ്പോൾ താൾ കൂടെ സ്വയം മാറിയിട്ടുണ്ട്.",
 	"centralauth-rename-notinprogress": "$1 എന്ന ഉപയോക്താവിന്റെ പുനർനാമകരണമൊന്നും നടക്കുന്നില്ല. മിക്കവാറും അത് പൂർത്തിയായിട്ടുണ്ടാവാം.",
 	"centralauth-rename-notinstalled": "റീനേംയൂസർ അനുബന്ധം ഇൻസ്റ്റോൾ ചെയ്തിട്ടില്ല.",
 	"centralauth-rename-progress-fieldset": "പ്രാദേശിക അംഗത്വങ്ങളുടെ പട്ടിക",
