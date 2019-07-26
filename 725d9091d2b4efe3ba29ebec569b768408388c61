@@ -1,0 +1,238 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f35ce36_9092cf2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "This last bit does not seem at all related to this patch. This new service is only called from CentralAuthUser, you may as well just leave localUserData() there.\n\nIMO it would be simpler to leave that part out of this patch. At some point, if you want, a real \"UserManager\" service would abstract much more out of CentralAuthUser than just the one method.",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e1b3a81_74886a37",
+        "filename": "i18n/en.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "IMO \"$1 {{PLURAL:$1|page|pages}} in local namespaces\" would be grammatically correct here, even for just one page, and less confusing for anyone else to look at.",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b3c6b9c_8b852591",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 1820,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "You forgot to pass the username to your new service here.",
+      "range": {
+        "startLine": 1820,
+        "startChar": 47,
+        "endLine": 1820,
+        "endChar": 48
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e8b0276_51eacca7",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "Why not $this-\u003egetConfig()?",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4db41d5_e57f3e4d",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "I don\u0027t like the magic number here. Why not do T226657 and have this patch depend on that one so you can do it right here? That seems like a straightforward change that you shouldn\u0027t have much trouble getting merged.\n\nSame below.",
+      "range": {
+        "startLine": 728,
+        "startChar": 54,
+        "endLine": 728,
+        "endChar": 56
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c3f90cb_38c69389",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "Formatting nitpick: It\u0027s very strange to have this paren here instead of at the end of the previous line.\n\n(the second paren and the brace are fine)",
+      "range": {
+        "startLine": 730,
+        "startChar": 5,
+        "endLine": 730,
+        "endChar": 6
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb77a41e_87f5c796",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "I\u0027d just break here. It has the same effect, but seems more correct code flow.\n\nSame below.",
+      "range": {
+        "startLine": 732,
+        "startChar": 6,
+        "endLine": 732,
+        "endChar": 16
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7556ce8_0adfe7e4",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "This will use the local name for the Title\u0027s namespace, rather than the canonical name that would work on any wiki. If you visit this special page on a non-English wiki, that would mean most of the links will be broken. Even on an English-language wiki, any links to the Project namespace will probably still be broken since that\u0027s normally customized.",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9922a726_bcbcba0a",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "On enwiki with uselang\u003dpt, this would say \"Utilizador\" for NS_USER and \"Wikipedia\" for NS_PROJECT. On the actual ptwiki, though, the namespaces are \"Usuário(a)\" and \"Wikipédia\". Is that what you intended to happen here?",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6198fce_3f1e3460",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "(same as line 823)",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "469ac7e2_ab5241c8",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "(same as line 823)",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4973cff5_142dd08c",
+        "filename": "src/UserManager.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-07-26T18:41:41Z",
+      "side": 1,
+      "message": "Formatting nitpick: One too many tabs on lines 82–89.",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
