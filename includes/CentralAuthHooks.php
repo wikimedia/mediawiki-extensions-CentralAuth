@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\SystemBlock;
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -888,17 +890,29 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * Add a system block with a suppression if a user is suppressed.
+	 *
 	 * @param User $user
-	 * @param bool &$isHidden
+	 * @param string|null $ip
+	 * @param AbstractBlock|null &$block
 	 * @return bool
 	 */
-	public static function onUserIsHidden( User $user, &$isHidden ) {
+	public static function onGetUserBlock( User $user, $ip, &$block ) {
+		if ( $block && $block->getHideName() ) {
+			return false;
+		}
+
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists()
 			&& ( $centralUser->isAttached() || $user->isAnon() )
 			&& $centralUser->isHidden()
 		) {
-			$isHidden = true;
+			$block = new SystemBlock( [
+				'address' => $user,
+				'hidename' => true,
+				'byText' => 'MediaWiki default',
+				'systemBlock' => 'hideuser',
+			] );
 			return false;
 		}
 
