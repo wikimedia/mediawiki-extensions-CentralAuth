@@ -385,7 +385,7 @@
 		"UserGetRights": "CentralAuthHooks::onUserGetRights",
 		"UserIsBot": "CentralAuthHooks::onUserIsBot",
 		"UserIsLocked": "CentralAuthHooks::onUserIsLocked",
-		"UserIsHidden": "CentralAuthHooks::onUserIsHidden",
+		"GetUserBlockComplete": "CentralAuthHooks::onGetUserBlockComplete",
 		"getUserPermissionsErrorsExpensive": "CentralAuthHooks::onGetUserPermissionsErrorsExpensive",
 		"MakeGlobalVariablesScript": "CentralAuthHooks::onMakeGlobalVariablesScript",
 		"SpecialPasswordResetOnSubmit": "CentralAuthHooks::onSpecialPasswordResetOnSubmit",
