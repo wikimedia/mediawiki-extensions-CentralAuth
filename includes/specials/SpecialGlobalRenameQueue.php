@@ -584,13 +584,24 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					$subject = $this->msg(
 						'globalrenamequeue-email-subject-approved'
 					)->inContentLanguage()->text();
-					$body = $this->msg(
-						'globalrenamequeue-email-body-approved',
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-						]
-					)->inContentLanguage()->text();
+					if ( $request->getComments() === "" ) {
+						$body = $this->msg(
+							'globalrenamequeue-email-body-approved',
+							[
+								$oldUser->getName(),
+								$newUser->getName(),
+							]
+						)->inContentLanguage()->text();
+					} else {
+						$body = $this->msg(
+							'globalrenamequeue-email-body-approved-with-note',
+							[
+								$oldUser->getName(),
+								$newUser->getName(),
+								$request->getComments(),
+							]
+						)->inContentLanguage()->text();
+					}
 				} else {
 					$subject = $this->msg(
 						'globalrenamequeue-email-subject-rejected'
