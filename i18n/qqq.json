@@ -454,7 +454,7 @@
 	"globalrenamequeue-column-rq-status": "Table header.\n{{Identical|Status}}",
 	"globalrenamequeue-column-rq-wiki": "Table header.\n{{Identical|Local wiki}}",
 	"globalrenamequeue-desc": "{{desc|name=Process global account rename requests|url=https://www.mediawiki.org/wiki/Extension:CentralAuth}}",
-	"globalrenamequeue-email-body-approved": "Email body for approved request.\n\n* $1 is the old username\n* $2 is the new username.",
+	"globalrenamequeue-email-body-approved": "Email body for approved request.\n\n* $1 is the old username\n* $2 is the new username.\n* $3 is the message left by the user who processed the request.",
 	"globalrenamequeue-email-body-rejected": "Email body for rejected request.\n\n* $1 is the old username.\n* $2 is the new username.\n* $3 is the message left by the user who processed the request.",
 	"globalrenamequeue-email-subject-approved": "Email subject line for approved request.",
 	"globalrenamequeue-email-subject-rejected": "Email subject line for rejected request.",

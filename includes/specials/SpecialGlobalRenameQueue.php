@@ -589,6 +589,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						[
 							$oldUser->getName(),
 							$newUser->getName(),
+							$request->getComments(),
 						]
 					)->inContentLanguage()->text();
 				} else {
