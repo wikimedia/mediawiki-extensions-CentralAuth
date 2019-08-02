@@ -58,7 +58,9 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 		if ( $this->currentWiki === null ) {
 			throw new LogicException( 'Tried to get wiki DB before wiki was selected' );
 		}
-		return $this->getDB( DB_MASTER, [], $this->currentWiki );
+		return MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
+			->getMainLB( $this->currentWiki )
+			->getMaintenanceConnectionRef( DB_MASTER, [], $this->currentWiki );
 	}
 
 	protected function getWikis() {
