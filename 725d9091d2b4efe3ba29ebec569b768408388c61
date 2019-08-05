@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "358bbd06_ce933175",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f35ce36_9092cf2b",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e1b3a81_74886a37",
         "filename": "i18n/en.json",
         "patchSetId": 17
@@ -33,6 +51,24 @@
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edc6b894_dcabbcb6",
+        "filename": "i18n/en.json",
+        "patchSetId": 17
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e1b3a81_74886a37",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -82,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "d839d6b4_2515d5af",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e8b0276_51eacca7",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4db41d5_e57f3e4d",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -102,6 +162,30 @@
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14fd49fb_9d0f339c",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4db41d5_e57f3e4d",
+      "range": {
+        "startLine": 728,
+        "startChar": 54,
+        "endLine": 728,
+        "endChar": 56
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -128,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "e1d9500e_78b1f5b7",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c3f90cb_38c69389",
+      "range": {
+        "startLine": 730,
+        "startChar": 5,
+        "endLine": 730,
+        "endChar": 6
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bb77a41e_87f5c796",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -151,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "90ab37da_01a704af",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb77a41e_87f5c796",
+      "range": {
+        "startLine": 732,
+        "startChar": 6,
+        "endLine": 732,
+        "endChar": 16
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c7556ce8_0adfe7e4",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -168,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "821663ab_ce3213cc",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "What is the proper method to use instead?",
+      "parentUuid": "c7556ce8_0adfe7e4",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9922a726_bcbcba0a",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -179,6 +329,24 @@
       "writtenOn": "2019-07-26T18:41:41Z",
       "side": 1,
       "message": "On enwiki with uselang\u003dpt, this would say \"Utilizador\" for NS_USER and \"Wikipedia\" for NS_PROJECT. On the actual ptwiki, though, the namespaces are \"Usuário(a)\" and \"Wikipédia\". Is that what you intended to happen here?",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52aee7c9_1f5094ea",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-05T23:04:15Z",
+      "side": 1,
+      "message": "I think so? It should show the namespace in the user\u0027s native language.",
+      "parentUuid": "9922a726_bcbcba0a",
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
