@@ -39,7 +39,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			throw new ErrorPageError( 'error', 'centralauth-usermerge-disabled' );
 		}
 
-		$this->getOutput()->addModules( 'ext.centralauth.globalrenameuser' );
+		$this->getOutput()->addModules( 'ext.centralauth.globalrename' );
 		parent::execute( $par );
 	}
 

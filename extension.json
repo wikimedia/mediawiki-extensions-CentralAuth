@@ -321,8 +321,14 @@
 				"mediawiki.api"
 			]
 		},
-		"ext.centralauth.globalrenameuser": {
-			"scripts": "ext.centralauth.globalrenameuser.js",
+		"ext.centralauth.globalgrouppermissions": {
+			"styles": "ext.centralauth.globalgrouppermissions.css"
+		},
+		"ext.centralauth.globalrename": {
+			"scripts": [
+				"ext.centralauth.globalrenameuser.js",
+				"ext.centralauth.globalrenamerequest.js"
+			],
 			"dependencies": [
 				"mediawiki.util"
 			],
