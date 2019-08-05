@@ -255,7 +255,8 @@
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
-		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php"
+		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php",
+		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php"
 	},
 	"ResourceModules": {
 		"ext.centralauth": {
@@ -459,7 +460,8 @@
 		"CentralAuthGlobalPasswordPolicies": [],
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
-		"CentralAuthOldNameAntiSpoofWiki": false
+		"CentralAuthOldNameAntiSpoofWiki": false,
+		"GlobalRenameBlacklistRegex": false
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
