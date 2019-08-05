@@ -332,6 +332,12 @@
 				"centralauth-usermerge-confirm"
 			]
 		},
+		"ext.centralauth.globalrenamerequest": {
+			"scripts": "ext.centralauth.globalrenamerequest.js",
+			"dependencies": [
+				"mediawiki.util"
+			]
+		},
 		"ext.centralauth.globalrenameuser.styles": {
 			"styles": "ext.centralauth.globalrenameuser.css"
 		},
