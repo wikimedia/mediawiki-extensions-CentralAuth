@@ -22,6 +22,30 @@
       "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "209d9c93_e24077ce",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-05T18:22:15Z",
+      "side": 1,
+      "message": "I don\u0027t see any module that could be used for this purpose (\u003dwith only code that\u0027s safe to run on Special:GlobalRenameRequest). Do you really think it\u0027s worth the confusion of other devs (\"Why is this here?\") and the conditions?",
+      "parentUuid": "7ec30852_a5ceb081",
+      "range": {
+        "startLine": 335,
+        "startChar": 2,
+        "endLine": 335,
+        "endChar": 40
+      },
+      "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
