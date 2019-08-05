@@ -327,8 +327,10 @@
 				"mediawiki.api"
 			]
 		},
-		"ext.centralauth.globalrenameuser": {
-			"scripts": "ext.centralauth.globalrenameuser.js",
+		"ext.centralauth.globalrename": {
+			"scripts": [
+				"ext.centralauth.globalrenameuser.js"
+			],
 			"dependencies": [
 				"mediawiki.util"
 			],

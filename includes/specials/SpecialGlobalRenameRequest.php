@@ -83,6 +83,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 			default:
 				// Request form
 				$out = $this->getOutput();
+				$out->addModules( 'ext.centralauth.globalrename' );
 				$user = $this->getUser();
 				$wiki = $this->isGlobalUser() ? null : wfWikiID();
 
@@ -154,13 +155,23 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'id'            => 'mw-renamerequest-newname',
 				'label-message' => 'globalrenamerequest-newname-label',
 				'name'          => 'newname',
-				'required'      => true,
+				# newname isn't required only if vanish is checked, see T195888#5393782 for context
+				'required'      => false,
 				'type'          => 'text',
 				'help-message'  => [
 					'globalrenamerequest-newname-help',
 					$this->suggestedUsername(),
 				],
 				'validation-callback' => [ $this, 'validateNewname' ],
+				'hide-if' => [ '===', 'vanish', '1' ],
+			],
+			'vanish' => [
+				'cssclass'      => 'mw-globalrenamerequest-field',
+				'csshelpclass'  => 'mw-globalrenamerequest-help',
+				'default'       => false,
+				'id'            => 'mw-renamerequest-vanish',
+				'label-message' => 'globalrenamerequest-vanish-label',
+				'type'          => 'check',
 			],
 		];
 
@@ -229,8 +240,10 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 *   false to fail validation without displaying an error.
 	 */
 	public function validateNewname( $value, $alldata, HTMLForm $form ) {
-		if ( $value === null ) {
-			// Not submitted yet
+		if (
+			$value === null || // Not submitted yet
+			$alldata['vanish'] === true // User asked for vanishing, useless check
+		) {
 			return true;
 		}
 		$check = GlobalRenameRequest::isNameAvailable( $value );
@@ -260,7 +273,11 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	public function onSubmit( array $data ) {
 		$wiki = $this->isGlobalUser() ? null : wfWikiID();
 		$reason = $data['reason'] ?? null;
-		$safeName = User::getCanonicalName( $data['newname'], 'creatable' );
+		if ( $data['vanish'] ) {
+			$safeName = uniqid( "Renamed user " );
+		} else {
+			$safeName = User::getCanonicalName( $data['newname'], 'creatable' );
+		}
 
 		$request = new GlobalRenameRequest;
 		$request->setName( $this->getUser()->getName() );
