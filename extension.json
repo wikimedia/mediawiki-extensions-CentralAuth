@@ -322,8 +322,11 @@
 		"ext.centralauth.globalgrouppermissions": {
 			"styles": "ext.centralauth.globalgrouppermissions.css"
 		},
-		"ext.centralauth.globalrenameuser": {
-			"scripts": "ext.centralauth.globalrenameuser.js",
+		"ext.centralauth.globalrename": {
+			"scripts": [
+				"ext.centralauth.globalrenameuser.js",
+				"ext.centralauth.globalrenamerequest.js"
+			],
 			"dependencies": [
 				"mediawiki.util"
 			],
@@ -332,7 +335,7 @@
 				"centralauth-usermerge-confirm"
 			]
 		},
-		"ext.centralauth.globalrenameuser.styles": {
+		"ext.centralauth.globalrename.styles": {
 			"styles": "ext.centralauth.globalrenameuser.css"
 		},
 		"ext.centralauth.ForeignApi": {

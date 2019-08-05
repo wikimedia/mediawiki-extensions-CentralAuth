@@ -45,9 +45,9 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	public function execute( $par ) {
 		parent::execute( $par );
-		$this->getOutput()->addModules( 'ext.centralauth.globalrenameuser' );
+		$this->getOutput()->addModules( 'ext.centralauth.globalrename' );
 		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
-		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalrenameuser.styles' );
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalrename.styles' );
 	}
 
 	/**
