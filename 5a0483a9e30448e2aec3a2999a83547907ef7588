@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ec30852_a5ceb081",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-08-05T18:12:40Z",
+      "side": 1,
+      "message": "Please extend an existing module bundle instead of creating a new one. The code is small enough that it is not worth adding dozens of bytes to all page views just to reduce the cost of sending a few bytes on this Special Page.\n\nOne can use mw.config.get CanonicalSpecialPageName to execute the code conditionally where needed.",
+      "range": {
+        "startLine": 335,
+        "startChar": 2,
+        "endLine": 335,
+        "endChar": 40
+      },
+      "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
