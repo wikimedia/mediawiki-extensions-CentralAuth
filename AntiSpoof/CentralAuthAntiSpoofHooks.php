@@ -61,10 +61,14 @@ class CentralAuthAntiSpoofHooks {
 				}
 			}
 		} else {
-			$error = $spoof->getError();
-			$logger->info( "{$mode}ILLEGAL new account '$name' $error" );
+			$error = $spoof->getErrorStatus();
+			$logger->info( "{mode}ILLEGAL new account '{name}' {error}", [
+				'mode' => $mode,
+				'name' => $name,
+				'error' => $error->getMessage( false, false, 'en' )->text(),
+			] );
 			if ( $active ) {
-				return StatusValue::newFatal( 'antispoof-name-illegal', $name, $error );
+				return StatusValue::newFatal( 'antispoof-name-illegal', $name, $error->getMessage() );
 			}
 		}
 		return StatusValue::newGood();
