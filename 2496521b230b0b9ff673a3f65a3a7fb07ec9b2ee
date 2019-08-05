@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6e792a2_2893d979",
+        "filename": "i18n/en.json",
+        "patchSetId": 20
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2019-08-05T18:18:03Z",
+      "side": 1,
+      "message": "This i18n string should be prefixed with \"centralauth-\" to avoid conflicts with other code (yes yes, the repo is notorious for not following coding standards, but let\u0027s not make things worse).",
+      "range": {
+        "startLine": 530,
+        "startChar": 2,
+        "endLine": 530,
+        "endChar": 23
+      },
+      "revId": "2496521b230b0b9ff673a3f65a3a7fb07ec9b2ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
