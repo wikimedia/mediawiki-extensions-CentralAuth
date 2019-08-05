@@ -22,6 +22,30 @@
       "revId": "2496521b230b0b9ff673a3f65a3a7fb07ec9b2ee",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cf649ba_0269aae6",
+        "filename": "i18n/en.json",
+        "patchSetId": 20
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-05T19:03:19Z",
+      "side": 1,
+      "message": "Sure, changed.",
+      "parentUuid": "e6e792a2_2893d979",
+      "range": {
+        "startLine": 530,
+        "startChar": 2,
+        "endLine": 530,
+        "endChar": 23
+      },
+      "revId": "2496521b230b0b9ff673a3f65a3a7fb07ec9b2ee",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
