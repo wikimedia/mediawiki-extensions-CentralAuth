@@ -544,5 +544,6 @@
 	"sulrenamewarning-renamed": "Notice to user that their account has been renamed.\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"sulrenamewarning-title": "[[Special:SulRenameWarning]] title\n\n* $1 is the user's new name for GENDER",
 	"sulrenamewarning-usenew": "Instructions to user to login with new name in the future\n\n* $1 is the user's new name",
-	"userswhowillberenamed": "{{doc-special|UsersWhoWillBeRenamed}}"
+	"userswhowillberenamed": "{{doc-special|UsersWhoWillBeRenamed}}",
+	"centralauth-badaccess-blacklisted": "Message shown to users who can't request to be renamed because they are listed on a blacklist."
 }
