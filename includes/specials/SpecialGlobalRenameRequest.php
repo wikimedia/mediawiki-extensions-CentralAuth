@@ -35,6 +35,15 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		return true;
 	}
 
+	public function userCanExecute( User $user ) {
+		$blacklist = new GlobalRenameBlacklist();
+		return $blacklist->checkUser( $user );
+	}
+
+	public function displayRestrictionError() {
+		throw new PermissionsError( null, [ 'centralauth-badaccess-blacklisted' ] );
+	}
+
 	/**
 	 * @param string $par Subpage string if one was specified
 	 */
