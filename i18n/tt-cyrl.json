@@ -4,7 +4,8 @@
 			"Ilnur efende",
 			"Ильнар",
 			"Умар",
-			"Marat-avgust"
+			"Marat-avgust",
+			"Ерней"
 		]
 	},
 	"centralauth": "Глобаль хисап язмасы менеджеры",
@@ -113,7 +114,7 @@
 	"globalrenamequeue-action-view": "Карау",
 	"globalrenamequeue-column-rq-name": "Кулланучы исеме",
 	"globalrenamequeue-form-status": "Халәте:",
-	"globalrenamequeue-form-status-all": "барлык",
+	"globalrenamequeue-form-status-all": "барысы",
 	"globalrenamequeue-form-username": "Кулланучы исеме:",
 	"mergeaccount": "Гомуми кулланучы язмаларының торышы"
 }

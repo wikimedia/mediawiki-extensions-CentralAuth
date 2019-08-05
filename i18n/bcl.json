@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Filipinayzd",
-			"Geopoet"
+			"Geopoet",
+			"Brazal.dang"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Pankinaban na mga grupo na an paragamit kabali",
@@ -27,7 +28,7 @@
 	"centralauth-admin-delete-nonexistent": "Kasalaan:an pankinaban na panindog na \"<nowiki>$1</nowiki>\" dae tabi eksistido.",
 	"centralauth-admin-delete-success": "Matrayumpong pinagpura an pankinaban na panindog para ki \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-delete-title": "Puraon an panindog",
-	"centralauth-admin-hidden-list": "gikan publikong mga listahan",
+	"centralauth-admin-hidden-list": "gikan sa publikong listahan kan mga paragamit",
 	"centralauth-admin-hidden-oversight": "sobradong pagmansay",
 	"centralauth-admin-info-editcount": "Kabilogang bilang nin pagliwat:",
 	"centralauth-admin-info-header": "Pankinaban na impormasyon nin panindog",
@@ -145,7 +146,7 @@
 	"centralauth-editset-new": "Magmukna nin baguhong pag-iriba",
 	"centralauth-editset-notfound": "An pag-iribang wiki na \"$1\" dae nanagboan.",
 	"centralauth-editset-nouse": "(mayo)",
-	"centralauth-editset-nowikis": "Mayong mga wikis an pinagsambit.",
+	"centralauth-editset-nowikis": "(mayo)",
 	"centralauth-editset-optin": "Nakabase sa panlaog-na-pagpipilian (minabale sana sa mga nasambit na mga wikis)",
 	"centralauth-editset-optout": "Nakabase sa paluwas-na-pagpipilian (minabale sa gabos na mga wiki laen sa pinagsambit)",
 	"centralauth-editset-reason": "Rason:",
@@ -259,7 +260,7 @@
 	"centralauth-prefs-detail-unattached": "Ining sityo kan proyekto bako pang kumpirmado na kabilang sa pankinaban na panindog.",
 	"centralauth-prefs-manage": "Mahinoon an saimong pankinaban na panindog",
 	"centralauth-prefs-not-managed": "Dae minagamit kan pinagkasararong panindog",
-	"centralauth-prefs-status": "Kamugtakan kan pankinaban na panindog:",
+	"centralauth-prefs-status": "Pankinaban na panindog:",
 	"centralauth-prefs-unattached": "Bakong kumpirmado",
 	"centralauth-prefs-view": "Tanawon an pankinaban na impormasyon nin panindog",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Magbasa nin kadagdagan mapanununogd sa '''pinagkasararong paglalaog''']]…''",

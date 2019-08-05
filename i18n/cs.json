@@ -425,7 +425,7 @@
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> žádá o přejmenování na <strong>$3</strong>.",
 	"globalrenamequeue-request-movepages": "Přesunout uživatelské stránky",
 	"globalrenamequeue-request-previous-renames": "Předchozí {{PLURAL:$1|přejmenování}}",
-	"globalrenamequeue-request-reason": "<stron>Zdůvodnění žádosti o přejmenování</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Zdůvodnění žádosti o přejmenování</strong>\n:$1",
 	"globalrenamequeue-request-reason-label": "Komentář do veřejného protokolu (při schválení)",
 	"globalrenamequeue-request-reason-sul": "Uživatel informován o konfliktu globálních jmen před dokončením SUL.",
 	"globalrenamequeue-request-savefailed": "Nepodařilo se uložit změnu stavu žádosti.",
