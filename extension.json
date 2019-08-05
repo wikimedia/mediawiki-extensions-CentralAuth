@@ -253,7 +253,8 @@
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
-		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php"
+		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php",
+		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
@@ -524,6 +525,9 @@
 			"value": true
 		},
 		"CentralAuthOldNameAntiSpoofWiki": {
+			"value": false
+		},
+		"GlobalRenameBlacklistRegex": {
 			"value": false
 		}
 	},
