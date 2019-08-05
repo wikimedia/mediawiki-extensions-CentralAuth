@@ -526,5 +526,6 @@
 	"sulrenamewarning-renamed" : "{{GENDER:$2|Your}} account '''$1''' has been renamed to '''$2''' during automatic migration to the unified login system of {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title" : "{{GENDER:$1|Your}} account has been renamed",
 	"sulrenamewarning-usenew" : "Please use {{GENDER:$1|your}} new username '''$1''' when logging in in the future.",
-	"userswhowillberenamed": "Users who will be renamed"
+	"userswhowillberenamed": "Users who will be renamed",
+	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a blacklist."
 }
