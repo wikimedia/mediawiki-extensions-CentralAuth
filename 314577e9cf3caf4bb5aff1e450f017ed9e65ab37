@@ -1,0 +1,349 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad820b43_617a2f6b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "|null per default value",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "466833a1_9e2f660b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "@var \\Psr\\Log\\LoggerInterface|null",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "384fa4df_8f10d5a2",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "This would be better at the very first line of the method, per coding conventions - which, I know, no-one follows :D",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 35
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc2ca88a_7f550f94",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "Ideally, constructors shouldn\u0027t perform complicated tasks. This is a sort of edge case, given that fetchBlacklist is populating a class member. But maybe call this in checkUser()? You could also initialize $blacklist as null, then set it to the empty array at the beginning of fetchBlacklist, and then in checkUser throw an exception if $this-\u003eblacklist is null (but allow the empty array).",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 43,
+        "endChar": 26
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1aaf5c8_c6a256ba",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "At the moment this is redundant",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2042f4f_6ce4a1ab",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "debug, I\u0027d say",
+      "range": {
+        "startLine": 59,
+        "startChar": 18,
+        "endLine": 59,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f03c76de_ffcefd39",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "WikiPage::factory is slightly preferred",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 27
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5cfc9540_efc2bf7b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "This can also return null. I don\u0027t know if that\u0027s what phan is complaining about, but there should be a check for null anyway.",
+      "range": {
+        "startLine": 64,
+        "startChar": 11,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e13a4d6_2a7bea8e",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "I\u0027d say debug, as above",
+      "range": {
+        "startLine": 66,
+        "startChar": 18,
+        "endLine": 66,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e77af607_017835ec",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "Should use \u003d\u003d\u003d",
+      "range": {
+        "startLine": 81,
+        "startChar": 20,
+        "endLine": 81,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "107d3b55_a39f0945",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "\u003d\u003d\u003d as above",
+      "range": {
+        "startLine": 84,
+        "startChar": 23,
+        "endLine": 84,
+        "endChar": 25
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dbeaee61_486bcc8f",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "I believe $this-\u003eblacklist[] \u003d $trimmedRow is easier to read, and a bit more performant given that it doesn\u0027t involve function calls and pass-by-ref",
+      "range": {
+        "startLine": 88,
+        "startChar": 3,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fcc1880_59404a9a",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "I\u0027d suggest to pass true as third param to be sure.",
+      "range": {
+        "startLine": 110,
+        "startChar": 55,
+        "endLine": 110,
+        "endChar": 56
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d89cb01_9bef866a",
+        "filename": "tests/phpunit/GlobalRenameBlacklistTest.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "MediaWikiIntegrationTestCase now",
+      "range": {
+        "startLine": 27,
+        "startChar": 40,
+        "endLine": 27,
+        "endChar": 57
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2480a9ff_09d71b11",
+        "filename": "tests/phpunit/GlobalRenameBlacklistTest.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-06T11:11:53Z",
+      "side": 1,
+      "message": "editPage is preferred, according to the docs. I think you also have to add page-related tables to $this-\u003etablesUsed, (see e.g. [1]), although I think it\u0027s not mandatory.\n\n[1] - https://gerrit.wikimedia.org/g/mediawiki/core/+/a6b45d2a20c9be095431ac60ba0a4f5951b5f387/tests/phpunit/includes/RevisionDbTestBase.php#27",
+      "range": {
+        "startLine": 32,
+        "startChar": 9,
+        "endLine": 32,
+        "endChar": 19
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
