@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "268360ae_663b3944",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad820b43_617a2f6b",
+      "range": {
+        "startLine": 29,
+        "startChar": 10,
+        "endLine": 29,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "466833a1_9e2f660b",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "e03481bb_efed702d",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "466833a1_9e2f660b",
+      "range": {
+        "startLine": 33,
+        "startChar": 1,
+        "endLine": 33,
+        "endChar": 24
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "384fa4df_8f10d5a2",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -59,6 +107,30 @@
       "writtenOn": "2019-08-06T11:11:53Z",
       "side": 1,
       "message": "This would be better at the very first line of the method, per coding conventions - which, I know, no-one follows :D",
+      "range": {
+        "startLine": 38,
+        "startChar": 3,
+        "endLine": 38,
+        "endChar": 35
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d3cee81_068db6c0",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "384fa4df_8f10d5a2",
       "range": {
         "startLine": 38,
         "startChar": 3,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "3fa770c8_59d00cd5",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "I think fetchBlacklist should refresh class. If you call fetchBlacklist twice (currently impossible, but may change as class is modified in time), it will be an useful row.",
+      "parentUuid": "a1aaf5c8_c6a256ba",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e2042f4f_6ce4a1ab",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -128,6 +224,30 @@
       "writtenOn": "2019-08-06T11:11:53Z",
       "side": 1,
       "message": "debug, I\u0027d say",
+      "range": {
+        "startLine": 59,
+        "startChar": 18,
+        "endLine": 59,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "442fb300_bc922261",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done. Do we have a help \"When to choose which logging level\"?",
+      "parentUuid": "e2042f4f_6ce4a1ab",
       "range": {
         "startLine": 59,
         "startChar": 18,
@@ -163,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "fbad42e4_03137a0b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Very well then",
+      "parentUuid": "f03c76de_ffcefd39",
+      "range": {
+        "startLine": 60,
+        "startChar": 15,
+        "endLine": 60,
+        "endChar": 27
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5cfc9540_efc2bf7b",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -174,6 +318,30 @@
       "writtenOn": "2019-08-06T11:11:53Z",
       "side": 1,
       "message": "This can also return null. I don\u0027t know if that\u0027s what phan is complaining about, but there should be a check for null anyway.",
+      "range": {
+        "startLine": 64,
+        "startChar": 11,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "788eae43_2fa97ec6",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Hmm, makes sense. Let\u0027s try that.",
+      "parentUuid": "5cfc9540_efc2bf7b",
       "range": {
         "startLine": 64,
         "startChar": 11,
@@ -209,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "2049e48d_9714a6f6",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e13a4d6_2a7bea8e",
+      "range": {
+        "startLine": 66,
+        "startChar": 18,
+        "endLine": 66,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e77af607_017835ec",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -220,6 +412,30 @@
       "writtenOn": "2019-08-06T11:11:53Z",
       "side": 1,
       "message": "Should use \u003d\u003d\u003d",
+      "range": {
+        "startLine": 81,
+        "startChar": 20,
+        "endLine": 81,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eeb81e36_b4476e97",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e77af607_017835ec",
       "range": {
         "startLine": 81,
         "startChar": 20,
@@ -278,6 +494,30 @@
     },
     {
       "key": {
+        "uuid": "d7bdc4bf_204fdaf2",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Why I didn\u0027t remember about $this-\u003eblacklist[] \u003d $trimmedRow... Done",
+      "parentUuid": "dbeaee61_486bcc8f",
+      "range": {
+        "startLine": 88,
+        "startChar": 3,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0fcc1880_59404a9a",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -289,6 +529,30 @@
       "writtenOn": "2019-08-06T11:11:53Z",
       "side": 1,
       "message": "I\u0027d suggest to pass true as third param to be sure.",
+      "range": {
+        "startLine": 110,
+        "startChar": 55,
+        "endLine": 110,
+        "endChar": 56
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "caaa0158_50beb454",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-06T17:50:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0fcc1880_59404a9a",
       "range": {
         "startLine": 110,
         "startChar": 55,
