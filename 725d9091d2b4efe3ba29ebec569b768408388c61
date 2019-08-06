@@ -95,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "c9cd61e7_ad6c7f3c",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 1820,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-06T00:10:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b3c6b9c_8b852591",
+      "range": {
+        "startLine": 1820,
+        "startChar": 47,
+        "endLine": 1820,
+        "endChar": 48
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1e8b0276_51eacca7",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -139,6 +163,30 @@
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd1ebf3c_2de1f3b7",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-06T00:10:11Z",
+      "side": 1,
+      "message": "SiteConfiguration is not the same as Config. Is there another way to get the SiteConfiguration object?",
+      "parentUuid": "d839d6b4_2515d5af",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     },
     {
       "key": {
@@ -401,6 +449,24 @@
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "457e70d6_233efbab",
+        "filename": "src/UserManager.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-08-06T00:10:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4973cff5_142dd08c",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
