@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "31065978_39278fdf",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-08-07T20:42:39Z",
+      "side": 1,
+      "message": "I was confused, you\u0027re right to use $wgConf here to try to access the setting on the target wiki.\n\nThere are still some problems here though:\n\n1. You need to call $wgConf-\u003eloadFullData() to actually load the data before this -\u003eget() call will work.\n2. If you start using suffixes (e.g. \"wikipedia\") or dblists to set $wgEnablePartialBlocks instead of listing each wiki individually, it\u0027ll fail there too because this call isn\u0027t supplying the suffix or tags. Note determining those would basically require duplicating https://github.com/wikimedia/operations-mediawiki-config/blob/master/wmf-config/CommonSettings.php#L205-L259 for WMF sites. See also some discussion at T224020#5317911.\n\n#1 is easy to fix. For #2, I suppose you could probably punt by just documenting that $wgEnablePartialBlocks in SiteConfiguration must not use suffixes or tags.",
+      "parentUuid": "bd1ebf3c_2de1f3b7",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d4db41d5_e57f3e4d",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -366,6 +390,24 @@
     },
     {
       "key": {
+        "uuid": "9742ca3c_12c98180",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-08-07T20:42:39Z",
+      "side": 1,
+      "message": "I\u0027m not sure there is one. You may need to get the canonical namespace name from NamespaceInfo and concatenate it with the unprefixed DBkey/title yourself.",
+      "parentUuid": "821663ab_ce3213cc",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9922a726_bcbcba0a",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -395,6 +437,24 @@
       "side": 1,
       "message": "I think so? It should show the namespace in the user\u0027s native language.",
       "parentUuid": "9922a726_bcbcba0a",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06823e09_73584dd1",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-08-07T20:42:39Z",
+      "side": 1,
+      "message": "As above, though, that depends on the local wiki knowing the translation used on the target wiki. In addition to the examples provided above, this would claim \"Wikipedia\" for NS_PROJECT when displayed on enwiki even though enwiktionary uses \"Wiktionary\", Meta uses \"Meta\", and so on.",
+      "parentUuid": "52aee7c9_1f5094ea",
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
