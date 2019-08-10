@@ -213,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "d947b73a_b90012c9",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T12:32:26Z",
+      "side": 1,
+      "message": "The blacklist is retrieved from $this-\u003efile, which is only set in the constructor. Can the content of $this-\u003efile vary while this class exists? Given that this is not a singleton class, I\u0027d expect to \"refresh\" it via creating a new instance.",
+      "parentUuid": "3fa770c8_59d00cd5",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e2042f4f_6ce4a1ab",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
@@ -248,6 +272,30 @@
       "side": 1,
       "message": "Done. Do we have a help \"When to choose which logging level\"?",
       "parentUuid": "e2042f4f_6ce4a1ab",
+      "range": {
+        "startLine": 59,
+        "startChar": 18,
+        "endLine": 59,
+        "endChar": 22
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "039a02fe_a5459bf3",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T12:32:26Z",
+      "side": 1,
+      "message": "The only one I know of is [0]. For this specific case, I think the information in the message is not saying anything useful outside of debugging.\n\n[0] - https://www.mediawiki.org/wiki/Manual:Structured_logging#Use_informative_severity_levels",
+      "parentUuid": "442fb300_bc922261",
       "range": {
         "startLine": 59,
         "startChar": 18,
@@ -506,6 +554,30 @@
       "side": 1,
       "message": "Why I didn\u0027t remember about $this-\u003eblacklist[] \u003d $trimmedRow... Done",
       "parentUuid": "dbeaee61_486bcc8f",
+      "range": {
+        "startLine": 88,
+        "startChar": 3,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dcf41e36_284d8a64",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T12:32:26Z",
+      "side": 1,
+      "message": "This was the JS way :-)",
+      "parentUuid": "d7bdc4bf_204fdaf2",
       "range": {
         "startLine": 88,
         "startChar": 3,
