@@ -426,6 +426,30 @@
     },
     {
       "key": {
+        "uuid": "98a9eec9_61dbd9d5",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:12:42Z",
+      "side": 1,
+      "message": "\u003cerror line\u003d\"77\" severity\u003d\"error\" message\u003d\"Call to undeclared method \\Content::getText\" source\u003d\"PhanUndeclaredMethod\"/\u003e :/\n\nI guess it\u0027s because WikiPage::getContent() contains @return Content|null, and that interface doesn\u0027t contain getText(). Going to re-add the phan suppress line for a while, to get jenkins vote +2.",
+      "parentUuid": "788eae43_2fa97ec6",
+      "range": {
+        "startLine": 64,
+        "startChar": 11,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e13a4d6_2a7bea8e",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21
