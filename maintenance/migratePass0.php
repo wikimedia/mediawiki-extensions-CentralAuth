@@ -15,6 +15,11 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class MigratePass0 extends Maintenance {
 
+	public function __construct() {
+		parent::__construct();
+		$this->requireExtension( 'CentralAuth' );
+	}
+
 	public function execute() {
 		global $wgDBname;
 		$this->output( "CentralAuth migration pass 0:" );
