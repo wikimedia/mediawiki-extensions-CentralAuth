@@ -237,6 +237,30 @@
     },
     {
       "key": {
+        "uuid": "785a1d48_91c2ab18",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Okay. Added an if to ensure things are not messed up.",
+      "parentUuid": "d947b73a_b90012c9",
+      "range": {
+        "startLine": 56,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "314577e9cf3caf4bb5aff1e450f017ed9e65ab37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2042f4f_6ce4a1ab",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 21

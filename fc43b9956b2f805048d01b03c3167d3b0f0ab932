@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "222c3b68_9c2140d6",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81ddc488_3a410a24",
+      "range": {
+        "startLine": 31,
+        "startChar": 10,
+        "endLine": 31,
+        "endChar": 15
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "975a014c_38b4cf2b",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 24
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "31c1d891_7c539f9f",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "975a014c_38b4cf2b",
+      "range": {
+        "startLine": 36,
+        "startChar": 1,
+        "endLine": 36,
+        "endChar": 46
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfcaf47c_49c39521",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 24
@@ -59,6 +107,30 @@
       "writtenOn": "2019-08-10T12:41:30Z",
       "side": 1,
       "message": "\u003d\u003d\u003d",
+      "range": {
+        "startLine": 39,
+        "startChar": 13,
+        "endLine": 39,
+        "endChar": 15
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6caca621_f091d7f0",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bfcaf47c_49c39521",
       "range": {
         "startLine": 39,
         "startChar": 13,
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "ee90d1ed_be2e804b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d404abc5_9be38e7b",
+      "range": {
+        "startLine": 95,
+        "startChar": 12,
+        "endLine": 95,
+        "endChar": 17
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b2dbbf7_44bf896a",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 24
@@ -128,6 +224,30 @@
       "writtenOn": "2019-08-10T12:41:30Z",
       "side": 1,
       "message": "Note that this is not an array a priori. Depending on how you plan to use this function, you should either document this as returning array|null, or ensure that $this-\u003eblacklist is not null, in which case you can also typehint the return value.",
+      "range": {
+        "startLine": 98,
+        "startChar": 9,
+        "endLine": 98,
+        "endChar": 26
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2da4a95_730b126f",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "7b2dbbf7_44bf896a",
       "range": {
         "startLine": 98,
         "startChar": 9,
@@ -163,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "308498d3_e7b7721b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "24d55c02_eef4a560",
+      "range": {
+        "startLine": 105,
+        "startChar": 12,
+        "endLine": 105,
+        "endChar": 16
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a33e0c8e_4da80617",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 24
@@ -186,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "0f8b1a87_7ccffdc9",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a33e0c8e_4da80617",
+      "range": {
+        "startLine": 110,
+        "startChar": 24,
+        "endLine": 110,
+        "endChar": 26
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c3dc1374_b42d402e",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 24
@@ -197,6 +365,30 @@
       "writtenOn": "2019-08-10T12:41:30Z",
       "side": 1,
       "message": "I believe you should add the u modifier for better unicode support.",
+      "range": {
+        "startLine": 120,
+        "startChar": 34,
+        "endLine": 120,
+        "endChar": 35
+      },
+      "revId": "fc43b9956b2f805048d01b03c3167d3b0f0ab932",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b861114_cf834048",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 24
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T13:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3dc1374_b42d402e",
       "range": {
         "startLine": 120,
         "startChar": 34,
