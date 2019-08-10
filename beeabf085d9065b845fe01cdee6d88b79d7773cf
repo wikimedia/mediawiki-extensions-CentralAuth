@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "144e20e5_2e6cb924",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T14:14:51Z",
+      "side": 1,
+      "message": "It\u0027s actually returning void, so this can be removed",
+      "range": {
+        "startLine": 60,
+        "startChar": 4,
+        "endLine": 60,
+        "endChar": 16
+      },
+      "revId": "beeabf085d9065b845fe01cdee6d88b79d7773cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e2e41e3_53a5fd92",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T14:14:51Z",
+      "side": 1,
+      "message": ": array",
+      "range": {
+        "startLine": 111,
+        "startChar": 31,
+        "endLine": 111,
+        "endChar": 32
+      },
+      "revId": "beeabf085d9065b845fe01cdee6d88b79d7773cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
