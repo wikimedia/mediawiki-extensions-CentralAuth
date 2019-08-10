@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "aa7682b0_b16f1490",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9892d3e9_136e81a4",
+      "range": {
+        "startLine": 39,
+        "startChar": 21,
+        "endLine": 39,
+        "endChar": 22
+      },
+      "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0712c9d4_72781da5",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 27
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "e699b659_bc761597",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0712c9d4_72781da5",
+      "range": {
+        "startLine": 62,
+        "startChar": 33,
+        "endLine": 62,
+        "endChar": 36
+      },
+      "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "474aa412_6f22cf2e",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc27942b_4cacc654",
+      "range": {
+        "startLine": 62,
+        "startChar": 7,
+        "endLine": 62,
+        "endChar": 12
+      },
+      "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "783d6899_4f6a34ac",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 27
@@ -82,6 +154,30 @@
       "writtenOn": "2019-08-10T13:43:15Z",
       "side": 1,
       "message": "I feel BadMethodCallException is a little bit more self-explanatory.",
+      "range": {
+        "startLine": 63,
+        "startChar": 13,
+        "endLine": 63,
+        "endChar": 24
+      },
+      "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fccfd40_2e7c056a",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:07:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "783d6899_4f6a34ac",
       "range": {
         "startLine": 63,
         "startChar": 13,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "ecd8b5cb_c45e2883",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:07:54Z",
+      "side": 1,
+      "message": "That would loose information about who called fetchBlacklist in the first place.",
+      "parentUuid": "633c5b1b_8deccbdf",
+      "range": {
+        "startLine": 110,
+        "startChar": 3,
+        "endLine": 110,
+        "endChar": 97
+      },
+      "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5f84645f_258d96e8",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 27
@@ -160,6 +280,30 @@
       "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2cb52f85_14f8fa98",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 27
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:07:54Z",
+      "side": 1,
+      "message": "Replied there",
+      "parentUuid": "5f84645f_258d96e8",
+      "range": {
+        "startLine": 126,
+        "startChar": 3,
+        "endLine": 126,
+        "endChar": 94
+      },
+      "revId": "8c623fd2a1553a9318cae4625022fc4fbcb9358a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
