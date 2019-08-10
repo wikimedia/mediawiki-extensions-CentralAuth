@@ -117,6 +117,30 @@
       "revId": "beeabf085d9065b845fe01cdee6d88b79d7773cf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "880cf665_cbfb62d0",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-10T14:25:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "096a2db1_e4df4d4b",
+      "range": {
+        "startLine": 111,
+        "startChar": 31,
+        "endLine": 111,
+        "endChar": 32
+      },
+      "revId": "beeabf085d9065b845fe01cdee6d88b79d7773cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
