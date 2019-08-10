@@ -93,6 +93,30 @@
       "revId": "beeabf085d9065b845fe01cdee6d88b79d7773cf",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "096a2db1_e4df4d4b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 29
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T14:23:16Z",
+      "side": 1,
+      "message": "You can typehint the return value as array, https://www.php.net/manual/en/functions.returning-values.php#functions.returning-values.type-declaration",
+      "parentUuid": "6d8b6d95_c20062bf",
+      "range": {
+        "startLine": 111,
+        "startChar": 31,
+        "endLine": 111,
+        "endChar": 32
+      },
+      "revId": "beeabf085d9065b845fe01cdee6d88b79d7773cf",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }

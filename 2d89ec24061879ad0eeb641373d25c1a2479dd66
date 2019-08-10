@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce715af5_ae32fb56",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 33
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T14:23:16Z",
+      "side": 1,
+      "message": "Can be removed after line 73 is fixed.",
+      "range": {
+        "startLine": 59,
+        "startChar": 12,
+        "endLine": 59,
+        "endChar": 34
+      },
+      "revId": "2d89ec24061879ad0eeb641373d25c1a2479dd66",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b03d5cfe_7af1e432",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 33
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T14:23:16Z",
+      "side": 1,
+      "message": "Now that I read this again, MWException should be fine.",
+      "range": {
+        "startLine": 73,
+        "startChar": 14,
+        "endLine": 73,
+        "endChar": 36
+      },
+      "revId": "2d89ec24061879ad0eeb641373d25c1a2479dd66",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3526f639_2eeb15ec",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 33
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-08-10T14:23:16Z",
+      "side": 1,
+      "message": "Same as L. 73",
+      "range": {
+        "startLine": 78,
+        "startChar": 14,
+        "endLine": 78,
+        "endChar": 36
+      },
+      "revId": "2d89ec24061879ad0eeb641373d25c1a2479dd66",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
