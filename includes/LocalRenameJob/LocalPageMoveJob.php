@@ -17,6 +17,12 @@ use Wikimedia\ScopedCallback;
  */
 class LocalPageMoveJob extends Job {
 	/**
+	 * Static flag for when we're moving a page; this is currently only read by the
+	 * AbuseFilterShouldFilterAction hook handler to avoid filtering our page moves.
+	 * @var bool
+	 */
+	public static $moveInProgress = false;
+	/**
 	 * @var User
 	 */
 	private $user;
@@ -70,6 +76,7 @@ class LocalPageMoveJob extends Job {
 			->inContentLanguage()
 			->text();
 
+		self::$moveInProgress = true;
 		$status = $mp->move( $this->user, $msg, !$this->params['suppressredirects'] );
 		if ( !$status->isOK() ) {
 			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage} -> {$newPage}" );

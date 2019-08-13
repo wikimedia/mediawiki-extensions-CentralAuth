@@ -1296,6 +1296,31 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * Avoid filtering page moves during global rename
+	 *
+	 * @param AbuseFilterVariableHolder $vars
+	 * @param Title $title
+	 * @param User $user
+	 * @param array &$skipReasons
+	 * @return bool
+	 */
+	public function onAbuseFilterShouldFilterAction(
+		AbuseFilterVariableHolder $vars,
+		Title $title,
+		User $user,
+		array &$skipReasons
+	) {
+		$action = $vars->getVar( 'action' )->toString();
+		if ( $action === 'move' && LocalPageMoveJob::$moveInProgress === true ) {
+			$skipReasons[] = "CentralAuth: $user is moving $title for global rename";
+			// Don't allow reusing this flag
+			LocalPageMoveJob::$moveInProgress = false;
+			return false;
+		}
+		return true;
+	}
+
+	/**
 	 * Check whether the user's preferences are such that a UI reload is
 	 * recommended.
 	 * @param User $user
