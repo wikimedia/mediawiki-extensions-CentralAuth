@@ -346,6 +346,7 @@
 	"centralauth-rename-form-movepages": "Przenieś strony użytkownika",
 	"centralauth-rename-form-newname": "Nowa nazwa użytkownika",
 	"centralauth-rename-form-oldname": "Obecna nazwa użytkownika",
+	"centralauth-rename-form-overrideantispoof": "Nadpisz konflikty rozszerzenia AntiSpoof",
 	"centralauth-rename-form-overridetitleblacklist": "Obejdź czarną listę tytułów",
 	"centralauth-rename-form-reason": "Powód",
 	"centralauth-rename-form-suppressredirects": "Pomiń tworzenie przekierowań",
