@@ -410,6 +410,7 @@
 		"AbuseFilter-computeVariable": "CentralAuthHooks::abuseFilterComputeVariable",
 		"AbuseFilter-generateUserVars": "CentralAuthHooks::abuseFilterGenerateUserVars",
 		"AbuseFilter-builder": "CentralAuthHooks::abuseFilterBuilder",
+		"AbuseFilterShouldFilterAction": "CentralAuthHooks::onAbuseFilterShouldFilterAction",
 		"SecurePoll_GetUserParams": "CentralAuthHooks::onSecurePoll_GetUserParams",
 		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
 		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo",
