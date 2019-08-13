@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -1292,6 +1293,33 @@ class CentralAuthHooks {
 	public static function abuseFilterBuilder( &$builderValues ) {
 		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
 		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
+		return true;
+	}
+
+	/**
+	 * Avoid filtering page moves during global rename
+	 *
+	 * @param AbuseFilterVariableHolder $vars
+	 * @param Title $title
+	 * @param User $user
+	 * @param array &$skipReasons
+	 * @return bool
+	 */
+	public function onAbuseFilterShouldFilterAction(
+		AbuseFilterVariableHolder $vars,
+		Title $title,
+		User $user,
+		array &$skipReasons
+	) {
+		$action = $vars->getVar( 'action' )->toString();
+		if ( $action === 'move' ) {
+			$isRenameMove = MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $user, LocalPageMoveJob::RENAME_USER_RIGHT );
+			if ( $isRenameMove ) {
+				$skipReasons[] = "CentralAuth: $user is moving $title for global rename";
+				return false;
+			}
+		}
 		return true;
 	}
 
