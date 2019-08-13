@@ -22,6 +22,11 @@ class LocalPageMoveJob extends Job {
 	private $user;
 
 	/**
+	 * Special user right added to the renamer while pages are being moved
+	 */
+	const RENAME_USER_RIGHT = 'centralauth-rename-move';
+
+	/**
 	 * @param Title $title
 	 * @param array $params
 	 */
@@ -70,9 +75,13 @@ class LocalPageMoveJob extends Job {
 			->inContentLanguage()
 			->text();
 
+		// Add a temporary user right so that e.g. AbuseFilter can be bypassed
+		$guard = MediaWikiServices::getInstance()->getPermissionManager()
+			->addTemporaryUserRights( $this->user, self::RENAME_USER_RIGHT );
 		$status = $mp->move( $this->user, $msg, !$this->params['suppressredirects'] );
 		if ( !$status->isOK() ) {
 			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage} -> {$newPage}" );
 		}
+		ScopedCallback::consume( $guard );
 	}
 }
