@@ -43,6 +43,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	public function execute( $subpage ) {
+		$this->addHelpLink( 'Extension:CentralAuth' );
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;

@@ -14,6 +14,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	public function __construct() {
 		SpecialPage::__construct( 'GlobalGroupMembership' );
 
+		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->mGlobalUser = CentralAuthUser::getInstance( $this->getUser() );
 	}
 

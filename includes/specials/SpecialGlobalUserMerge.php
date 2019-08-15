@@ -20,6 +20,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'GlobalUserMerge', 'centralauth-usermerge' );
+		$this->addHelpLink( 'Extension:CentralAuth' );
 	}
 
 	public function doesWrites() {
