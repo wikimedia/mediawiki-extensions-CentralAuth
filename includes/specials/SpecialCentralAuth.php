@@ -47,6 +47,7 @@ class SpecialCentralAuth extends SpecialPage {
 	public function execute( $subpage ) {
 		global $wgContLang;
 		$this->setHeaders();
+		$this->addHelpLink( 'Extension:CentralAuth' );
 
 		$this->mCanUnmerge = $this->getUser()->isAllowed( 'centralauth-unmerge' );
 		$this->mCanLock = $this->getUser()->isAllowed( 'centralauth-lock' );

@@ -10,6 +10,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 	public function __construct() {
 		parent::__construct( 'GlobalRenameProgress' );
+		$this->addHelpLink( 'Extension:CentralAuth' );
 	}
 
 	public function getFormFields() {

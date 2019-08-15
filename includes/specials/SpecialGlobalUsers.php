@@ -8,6 +8,7 @@ class SpecialGlobalUsers extends SpecialPage {
 	public function execute( $par ) {
 		global $wgContLang;
 		$this->setHeaders();
+		$this->addHelpLink( 'Extension:CentralAuth' );
 
 		$pg = new GlobalUsersPager( $this->getContext(), $par );
 		$req = $this->getRequest();
