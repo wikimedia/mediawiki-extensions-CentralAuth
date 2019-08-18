@@ -285,7 +285,7 @@
 	"centralauth-log-status-locked": "已锁定",
 	"centralauth-log-status-none": "（无）",
 	"centralauth-log-status-oversighted": "已屏蔽",
-	"centralauth-login-error-locked": "您目前无法登录，因为您的账户已被全域锁定。",
+	"centralauth-login-error-locked": "{{GENDER:$1|您}}目前无法登录，因为{{GENDER:$1|您的}}账户已被全域锁定。",
 	"centralauth-login-no-others": "您已经自动登录到{{int:Centralauth-groupname}}的其他项目。",
 	"centralauth-login-progress": "正在为您登录到{{int:Centralauth-groupname}}的{{PLURAL:$2|wiki}}：",
 	"centralauth-logout-no-others": "您已经自动登出{{int:Centralauth-groupname}}的其他项目。",
