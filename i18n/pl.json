@@ -513,6 +513,8 @@
 	"right-centralauth-usermerge": "Globalne łączenie wielu użytkowników",
 	"right-globalgroupmembership": "Zmiana przynależności do grup globalnych",
 	"right-globalgrouppermissions": "Zarządzanie grupami globalnymi",
+	"sessionprovider-centralauthsessionprovider": "centralnych sesji opartych na ciasteczkach",
+	"sessionprovider-centralauthtokensessionprovider": "sesji opartych o parametr „centralauthtoken”",
 	"sulrenamewarning-renamed": "Nazwa {{GENDER:$2|twojego}} konta '''$1''' została zmieniona na '''$1''' podczas automatycznej migracji do zunifikowanego systemu logowania {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "Została zmieniona nazwa {{GENDER:$1|Twojego}} konta",
 	"sulrenamewarning-usenew": "Użyj {{GENDER:$1|twojej}} nowej nazwy użytkownika '''$1''' podczas następnego logowania.",
