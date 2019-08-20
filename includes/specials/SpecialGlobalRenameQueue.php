@@ -270,7 +270,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$renamer = CentralAuthUser::newFromId( $req->getPerformer() );
 		if ( $renamer === false ) {
 			throw new Exception(
-				"The perfomer's global user id ({$req->getPerformer()}) " .
+				"The performer's global user id ({$req->getPerformer()}) " .
 					"does not exist in the database"
 			);
 		}
