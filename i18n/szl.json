@@ -6,11 +6,11 @@
 			"Uostofchuodnego"
 		]
 	},
-	"centralauth-admin-blocklog": "rejer zawarć",
+	"centralauth-admin-blocklog": "regest blokad",
 	"centralauth-admin-no": "ńy",
 	"centralauth-admin-yes": "ja",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|edycyjo|edycyje|edycyji}} na $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|edycyjŏ|edycyje|edycyji}} na $2",
 	"centralauth-foreign-link": "Używŏcz $1 na $2",
 	"centralauth-merge-dryrun-or": "'''abo'''",
-	"centralauth-merge-method-login": "utworzůne przi zalogůwańu"
+	"centralauth-merge-method-login": "stworzōne przi zalogowaniu"
 }
