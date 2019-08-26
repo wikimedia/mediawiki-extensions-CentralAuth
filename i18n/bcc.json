@@ -111,7 +111,7 @@
 	"centralauth-editgroup-fieldset": "اجازت په $1",
 	"centralauth-editgroup-member": "ملکی نام اعضای گروه:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|اصلاح]])",
-	"centralauth-editgroup-members": "لیست عضو:",
+	"centralauth-editgroup-members": "ھۏرݔنء لیست:",
 	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|لیست کابران گون $2 حقوق]]",
 	"centralauth-editgroup-name": "نام گروه:",
 	"centralauth-editgroup-noset": "(هچ‌یک)",
