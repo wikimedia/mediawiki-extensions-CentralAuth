@@ -70,6 +70,30 @@
       "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0016ce21_7314202a",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-08-27T22:45:44Z",
+      "side": 1,
+      "message": "Well, users do come first, but we shouldn\u0027t ignore devs, esp volunteers ;). Anyway, makes sense - just followed what I saw as \"a standard\" (maybe a brave thing to do if one\u0027s speaking about CentralAuth? :D). Will redo soon :).",
+      "parentUuid": "a76cda6e_c2b4ccdf",
+      "range": {
+        "startLine": 335,
+        "startChar": 2,
+        "endLine": 335,
+        "endChar": 40
+      },
+      "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
