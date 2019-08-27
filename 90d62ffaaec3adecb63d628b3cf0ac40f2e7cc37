@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4831deff_7e09cc7e",
+        "filename": "modules/ext.centralauth.globalgrouppermissions.css",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 920
+      },
+      "writtenOn": "2019-08-27T22:59:33Z",
+      "side": 1,
+      "message": "Can\u0027t this be merged?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 3
+      },
+      "revId": "90d62ffaaec3adecb63d628b3cf0ac40f2e7cc37",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
