@@ -46,6 +46,30 @@
       "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a76cda6e_c2b4ccdf",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-08-27T22:42:39Z",
+      "side": 1,
+      "message": "Yes, users come first. :)\n\nhttps://www.mediawiki.org/wiki/ResourceLoader/Architecture#Principles\n\n\nI think we can greatly reduce confusion by giving the module a better name, and adding a file comment. For example:\n\n* Rename \"ext.centralauth.globalrenameuser\" to \"ext.centralauth.globalrename\"\n* Add this there.\n* Give each JS file a file comment explaining which special page it is for, with conditional on wgCanonicalSpecialPageName it is on.\n\nThe module is just a bundle for delivering a collection of bits. The alternative is to have 1 bundle for all MW core/ext code in one. Most big websites do that actually, like GitHub, and Facebook. They have maybe 5-10 or so big bundles for regular page views (not inc. interactive features).\n\nModules are not meant to have a feature mapping of any kind. I regret making it look that way for 10 years. It\u0027s my fault :)",
+      "parentUuid": "209d9c93_e24077ce",
+      "range": {
+        "startLine": 335,
+        "startChar": 2,
+        "endLine": 335,
+        "endChar": 40
+      },
+      "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
