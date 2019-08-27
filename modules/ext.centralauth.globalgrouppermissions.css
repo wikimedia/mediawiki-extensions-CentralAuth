@@ -1,6 +1,7 @@
 /**
- * Used on group specific pages
+ * Styles for Special:GlobalGroupPermissions
  */
+
 .mw-centralauth-editgroup-readonly .mw-centralauth-editgroup-unchecked {
 	color: #808080;
 }
@@ -12,7 +13,7 @@
 }
 
 /**
- * Used on the groups list table
+ * Used by the group permissions table
  */
 table.mw-centralauth-groups-table tr {
 	vertical-align: top;
