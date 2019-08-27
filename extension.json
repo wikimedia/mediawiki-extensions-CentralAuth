@@ -306,8 +306,13 @@
 				"desktop"
 			]
 		},
-		"ext.centralauth.noflash": {
-			"styles": "ext.centralauth.noflash.css"
+		"ext.centralauth.misc.styles": {
+			"styles": [
+				"ext.centralauth.noflash.css",
+				"ext.centralauth.globalusers.css",
+				"ext.centralauth.globalgrouppermissions.css",
+				"ext.centralauth.globalrenameuser.css"
+			]
 		},
 		"ext.centralauth.globaluserautocomplete": {
 			"scripts": "ext.centralauth.globaluserautocomplete.js",
@@ -315,12 +320,6 @@
 				"jquery.suggestions",
 				"mediawiki.api"
 			]
-		},
-		"ext.centralauth.globalusers": {
-			"styles": "ext.centralauth.globalusers.css"
-		},
-		"ext.centralauth.globalgrouppermissions": {
-			"styles": "ext.centralauth.globalgrouppermissions.css"
 		},
 		"ext.centralauth.globalrenameuser": {
 			"scripts": "ext.centralauth.globalrenameuser.js",
@@ -331,9 +330,6 @@
 				"centralauth-rename-confirm",
 				"centralauth-usermerge-confirm"
 			]
-		},
-		"ext.centralauth.globalrenameuser.styles": {
-			"styles": "ext.centralauth.globalrenameuser.css"
 		},
 		"ext.centralauth.ForeignApi": {
 			"scripts": "ext.centralauth.ForeignApi.js",
