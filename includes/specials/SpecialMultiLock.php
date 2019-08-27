@@ -301,6 +301,8 @@ class SpecialMultiLock extends SpecialPage {
 			'<tbody>';
 
 		$out->addHTML( $header );
+		$out->addModuleStyles( 'jquery.tablesorter.styles' );
+		$out->addModules( 'jquery.tablesorter' );
 	}
 
 	/**
