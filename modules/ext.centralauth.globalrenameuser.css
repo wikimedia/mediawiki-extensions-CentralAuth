@@ -1,3 +1,6 @@
+/**
+ * Styles for Special:GlobalRenameUser
+ */
 label[ for='mw-globalrenameuser-allowhigheditcount' ] {
 	font-weight: bold;
 }
