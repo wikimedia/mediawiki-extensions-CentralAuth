@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59b23ad4_7cd6c5a3",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2019-08-27T18:52:09Z",
+      "side": 1,
+      "message": "You need to split this one too. :-)",
+      "range": {
+        "startLine": 457,
+        "startChar": 2,
+        "endLine": 457,
+        "endChar": 39
+      },
+      "revId": "c9761da240a100208f620369bcd80532bbc7e5d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94068bf9_08d42d03",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2019-08-27T18:52:09Z",
+      "side": 1,
+      "message": "Dump this in a variable and use it in an inline ternary? msg() won\u0027t blow up if you pass note to the noteless i18n string.",
+      "range": {
+        "startLine": 587,
+        "startChar": 10,
+        "endLine": 587,
+        "endChar": 33
+      },
+      "revId": "c9761da240a100208f620369bcd80532bbc7e5d4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
