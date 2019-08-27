@@ -34,7 +34,7 @@ class SpecialGlobalUsers extends SpecialPage {
 			$pg->setUsername( $rqUsername );
 		}
 
-		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalusers' );
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.special-misc.styles' );
 		$pg->getPageHeader();
 		$this->getOutput()->addHTML(
 			$pg->getNavigationBar() .

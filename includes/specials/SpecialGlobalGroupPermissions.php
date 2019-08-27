@@ -51,7 +51,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$this->getOutput()->setPageTitle( $this->msg( 'globalgrouppermissions' ) );
 
-		$this->getOutput()->addModuleStyles( 'ext.centralauth.globalgrouppermissions' );
+		$this->getOutput()->addModuleStyles( 'ext.centralauth.special-misc.styles' );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
 		$this->getOutput()->enableClientCache( false );

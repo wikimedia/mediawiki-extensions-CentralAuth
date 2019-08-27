@@ -316,11 +316,12 @@
 				"mediawiki.api"
 			]
 		},
-		"ext.centralauth.globalusers": {
-			"styles": "ext.centralauth.globalusers.css"
-		},
-		"ext.centralauth.globalgrouppermissions": {
-			"styles": "ext.centralauth.globalgrouppermissions.css"
+		"ext.centralauth.misc-special.styles": {
+			"styles": [
+				"ext.centralauth.globalusers.css",
+				"ext.centralauth.globalgrouppermissions.css",
+				"ext.centralauth.globalrenameuser.css"
+			]
 		},
 		"ext.centralauth.globalrenameuser": {
 			"scripts": "ext.centralauth.globalrenameuser.js",
@@ -331,9 +332,6 @@
 				"centralauth-rename-confirm",
 				"centralauth-usermerge-confirm"
 			]
-		},
-		"ext.centralauth.globalrenameuser.styles": {
-			"styles": "ext.centralauth.globalrenameuser.css"
 		},
 		"ext.centralauth.ForeignApi": {
 			"scripts": "ext.centralauth.ForeignApi.js",
