@@ -94,6 +94,30 @@
       "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3da7f21d_184c0372",
+        "filename": "extension.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2019-08-27T23:00:15Z",
+      "side": 1,
+      "message": "Yep, no problem at all. I understand how you got here, and a few months ago I may\u0027ve done the same myself.\n\nAs re-reading https://humanwhocodes.com/blog/2015/05/14/the-bunny-theory-of-code/ recently, which you might appreciate in this context.",
+      "parentUuid": "0016ce21_7314202a",
+      "range": {
+        "startLine": 335,
+        "startChar": 2,
+        "endLine": 335,
+        "endChar": 40
+      },
+      "revId": "5a0483a9e30448e2aec3a2999a83547907ef7588",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
