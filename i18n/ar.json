@@ -432,6 +432,7 @@
 	"globalrenamequeue-column-rq-status": "الحالة",
 	"globalrenamequeue-column-rq-wiki": "الويكي المحلي",
 	"globalrenamequeue-desc": "عالج طلبات تغيير اسم الحساب الموحد",
+	"globalrenamequeue-email-body-approved-with-note": "تمت الموافقة على طلب إعادة تسمية \"{{GENDER:$1|$1}}\" لـ\"{{GENDER:$1|$2}}\".\n\nملاحظة: $3",
 	"globalrenamequeue-email-body-approved": "تم إقرار تغيير الاسم \"{{GENDER:$1|$1}}\" ل\"{{GENDER:$1|$2}}\".",
 	"globalrenamequeue-email-body-rejected": "تم إقرار تغيير الاسم \"{{GENDER:$1|$1}}\" ل\"{{GENDER:$1|$2}}\".\n\nملاحظة: $3",
 	"globalrenamequeue-email-subject-approved": "تم قبول طلب اعادة تسمية الحساب",
