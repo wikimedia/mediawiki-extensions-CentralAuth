@@ -63,13 +63,19 @@
 	 * @return {jQuery.Promise}
 	 */
 	CentralAuthForeignApi.prototype.getCentralAuthToken = function () {
-		return this.localApi.get( { action: 'centralauthtoken' } ).then( function ( resp ) {
+		var abortable = this.localApi.get( { action: 'centralauthtoken' } );
+
+		return abortable.then( function ( resp ) {
 			if ( resp.error ) {
 				return $.Deferred().reject( resp.error );
 			} else {
 				return resp.centralauthtoken.centralauthtoken;
 			}
-		} );
+		} ).promise( { abort: function () {
+			if ( abortable && abortable.abort ) {
+				abortable.abort();
+			}
+		} } );
 	};
 
 	/**
@@ -129,7 +135,7 @@
 				}
 			).promise( { abort: function () {
 				aborted = true;
-				if ( abortable ) {
+				if ( abortable && abortable.abort ) {
 					abortable.abort();
 				}
 			} } );
@@ -205,7 +211,7 @@
 			}
 		).promise( { abort: function () {
 			aborted = true;
-			if ( abortable ) {
+			if ( abortable && abortable.abort ) {
 				abortable.abort();
 			}
 		} } );
