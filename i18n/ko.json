@@ -432,6 +432,7 @@
 	"globalrenamequeue-column-rq-status": "상태",
 	"globalrenamequeue-column-rq-wiki": "로컬 위키",
 	"globalrenamequeue-desc": "통합 계정 이름 바꾸기 요청을 진행합니다",
+	"globalrenamequeue-email-body-approved-with-note": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 승인되었습니다.\n\n참고: $3",
 	"globalrenamequeue-email-body-approved": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 승인되었습니다.",
 	"globalrenamequeue-email-body-rejected": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 거부되었습니다.\n\n참고: $3",
 	"globalrenamequeue-email-subject-approved": "계정 이름 바꾸기 요청 승인",

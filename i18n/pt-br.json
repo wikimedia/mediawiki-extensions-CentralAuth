@@ -436,6 +436,7 @@
 	"globalrenamequeue-column-rq-status": "Estado",
 	"globalrenamequeue-column-rq-wiki": "Wiki local",
 	"globalrenamequeue-desc": "Processar pedidos de renomeação global",
+	"globalrenamequeue-email-body-approved-with-note": "O pedido para renomear \"{{GENDER:$1|$1}}\" para \"{{GENDER:$1|$2}}\" foi aprovado.\n\nNota: $3",
 	"globalrenamequeue-email-body-approved": "O pedido para renomear \"{{GENDER:$1|$1}}\" para \"{{GENDER:$1|$2}}\" foi aprovado.",
 	"globalrenamequeue-email-body-rejected": "O pedido para renomear \"{{GENDER:$1|$1}}\" para \"{{GENDER:$1|$2}}\" foi rejeitado.\n\nNota: $3",
 	"globalrenamequeue-email-subject-approved": "Pedido de renomeação de conta aprovado",

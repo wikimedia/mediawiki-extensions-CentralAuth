@@ -408,6 +408,7 @@
 	"globalrenamequeue-column-rq-status": "Статус",
 	"globalrenamequeue-column-rq-wiki": "Месно вики",
 	"globalrenamequeue-desc": "Обработка на барањата за глобално преименување",
+	"globalrenamequeue-email-body-approved-with-note": "Барањето за преименување на „{{GENDER:$1|$1}}“ во „{{GENDER:$1|$2}}“ е одбиено.\n\nБелешка: $3",
 	"globalrenamequeue-email-body-approved": "Барањето за преименување на „{{GENDER:$1|$1}}“ во „{{GENDER:$1|$2}}“ е одобрено.",
 	"globalrenamequeue-email-body-rejected": "Барањето за преименување на „{{GENDER:$1|$1}}“ во „{{GENDER:$1|$2}}“ е одбиено.\n\nБелешка: $3",
 	"globalrenamequeue-email-subject-approved": "Барањето за преименување на сметката е одобрено",

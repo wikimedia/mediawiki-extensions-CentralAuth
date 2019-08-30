@@ -27,7 +27,8 @@
 			"Максим Підліснюк",
 			"Macofe",
 			"Vlad5250",
-			"Gzhegozh"
+			"Gzhegozh",
+			"Movses"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальні групи, у яких знаходиться користувач",
@@ -432,6 +433,7 @@
 	"globalrenamequeue-column-rq-status": "Стан",
 	"globalrenamequeue-column-rq-wiki": "Локальна вікі",
 	"globalrenamequeue-desc": "Обробка запитів на глобальне перейменування",
+	"globalrenamequeue-email-body-approved-with-note": "Запит на перейменування «{{GENDER:$1|$1}}» на «{{GENDER:$1|$2}}» підтверджено.\n\nПримітка: $3",
 	"globalrenamequeue-email-body-approved": "Запит на перейменування «{{GENDER:$1|$1}}» на «{{GENDER:$1|$2}}» підтверджено.",
 	"globalrenamequeue-email-body-rejected": "Запит на перейменування «{{GENDER:$1|$1}}» на «{{GENDER:$1|$2}}» відхилено.\n\nПримітка: $3",
 	"globalrenamequeue-email-subject-approved": "Перейменування облікового запису затверджено",

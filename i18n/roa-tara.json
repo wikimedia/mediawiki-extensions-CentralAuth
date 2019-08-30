@@ -409,6 +409,7 @@
 	"globalrenamequeue-column-rq-status": "State",
 	"globalrenamequeue-column-rq-wiki": "Uicchi locale",
 	"globalrenamequeue-desc": "Richieste de processe de renominamende globbale",
+	"globalrenamequeue-email-body-approved-with-note": "'A richieste de renomenamende de \"{{GENDER:$1|$1}}\" jndr'à \"{{GENDER:$1|$2}}\" ha state approvate.\n\nNote: $3",
 	"globalrenamequeue-email-body-approved": "'A richieste de renomenamende de \"{{GENDER:$1|$1}}\" jndr'à \"{{GENDER:$1|$2}}\" ha state approvate.",
 	"globalrenamequeue-email-body-rejected": "'A richieste de renomenamende de \"{{GENDER:$1|$1}}\" jndr'à \"{{GENDER:$1|$2}}\" ha state scettate.\n\nNote: $3",
 	"globalrenamequeue-email-subject-approved": "Richieste de cange d'u cunde approvate",
