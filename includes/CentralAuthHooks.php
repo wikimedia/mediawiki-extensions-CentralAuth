@@ -909,7 +909,7 @@ class CentralAuthHooks {
 		) {
 			$block = new SystemBlock( [
 				'address' => $user,
-				'hidename' => true,
+				'hideName' => true,
 				'byText' => 'MediaWiki default',
 				'systemBlock' => 'hideuser',
 			] );
