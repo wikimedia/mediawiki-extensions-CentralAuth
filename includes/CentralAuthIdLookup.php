@@ -78,7 +78,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 	public function isAttached( User $user, $wikiId = null ) {
 		if ( $wikiId === null ) {
-			$wikiId = wfWikiId();
+			$wikiId = wfWikiID();
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 		return $centralUser->getId() != 0 && $centralUser->attachedOn( $wikiId );

@@ -59,7 +59,7 @@ class ApiCentralAuthToken extends ApiBase {
 		$data = [
 			'userName' => $user->getName(),
 			'token' => $centralUser->getAuthToken(),
-			'origin' => wfWikiId(),
+			'origin' => wfWikiID(),
 			'originSessionId' => $id,
 		];
 
