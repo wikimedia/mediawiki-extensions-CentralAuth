@@ -1,12 +1,13 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class SpecialGlobalUsers extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'GlobalUsers' );
 	}
 
 	public function execute( $par ) {
-		global $wgContLang;
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
@@ -29,7 +30,8 @@ class SpecialGlobalUsers extends SpecialPage {
 				}
 		}
 
-		$rqUsername = $wgContLang->ucfirst( $req->getVal( 'username' ) );
+		$rqUsername = MediaWikiServices::getInstance()->getContentLanguage()
+			->ucfirst( $req->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}
