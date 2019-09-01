@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Special page to allow to edit "wikisets" which are used to restrict
  * specific global group permissions to certain wikis.
@@ -320,9 +323,8 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $id
 	 */
 	private function doSubmit( $id ) {
-		global $wgContLang;
-
-		$name = $wgContLang->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
+		$name = MediaWikiServices::getInstance()->getContentLanguage()
+			->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
 		$type = $this->getRequest()->getVal( 'wpType' );
 		$wikis = array_unique( preg_split(
 			'/(\s+|\s*\W\s*)/', $this->getRequest()->getVal( 'wpWikis' ), -1, PREG_SPLIT_NO_EMPTY )

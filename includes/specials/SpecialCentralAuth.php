@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class SpecialCentralAuth extends SpecialPage {
 	/** @var string */
 	private $mUserName;
@@ -45,7 +47,6 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	public function execute( $subpage ) {
-		global $wgContLang;
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
@@ -69,7 +70,8 @@ class SpecialCentralAuth extends SpecialPage {
 				str_replace( '_', ' ',
 					$this->getRequest()->getText( 'target', $subpage ) ) );
 
-		$this->mUserName = $wgContLang->ucfirst( $this->mUserName );
+		$this->mUserName = MediaWikiServices::getInstance()->getContentLanguage()
+			->ucfirst( $this->mUserName );
 
 		$this->mPosted = $this->getRequest()->wasPosted();
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod' );
