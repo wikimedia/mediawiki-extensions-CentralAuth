@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
@@ -890,7 +891,13 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * Add a system block with a suppression if a user is suppressed.
+	 * Make sure a user is hidden if their global account is hidden.
+	 * If a user's global account is hidden (suppressed):
+	 * - if locally blocked and hidden, do nothing
+	 * - if not blocked, add a system block with a suppression
+	 * - if blocked but not hidden, make a new composite block
+	 *   containing the existing blocks plus a system block with a
+	 *   suppression
 	 *
 	 * @param User $user
 	 * @param string|null $ip
@@ -907,12 +914,30 @@ class CentralAuthHooks {
 			&& ( $centralUser->isAttached() || $user->isAnon() )
 			&& $centralUser->isHidden()
 		) {
-			$block = new SystemBlock( [
+			$hideUserBlock = new SystemBlock( [
 				'address' => $user,
 				'hideName' => true,
 				'byText' => 'MediaWiki default',
 				'systemBlock' => 'hideuser',
 			] );
+
+			if ( $block === null ) {
+				$block = $hideUserBlock;
+				return false;
+			}
+
+			$blocks = $block instanceof Compositeblock ?
+				$block->getOriginalBlocks() :
+				[ $block ];
+
+			$blocks[] = $hideUserBlock;
+			$block = new CompositeBlock( [
+				'address' => $ip,
+				'byText' => 'MediaWiki default',
+				'reason' => wfMessage( 'blockedtext-composite-reason' )->plain(),
+				'originalBlocks' => $blocks,
+			] );
+
 			return false;
 		}
 
