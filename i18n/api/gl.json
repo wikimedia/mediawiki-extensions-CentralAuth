@@ -3,7 +3,8 @@
 		"authors": [
 			"Banjo",
 			"Elisardojm",
-			"Navhy"
+			"Navhy",
+			"Iváns"
 		]
 	},
 	"apierror-centralauth-badsession": "Só pode obter un centralauthtoken (identificador central de autorización) cando estea usando sesións CentralAuth.",

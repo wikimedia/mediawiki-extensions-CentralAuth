@@ -14,5 +14,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mhoino|mhoine}} adim",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second}} adim",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|voros|vorsam}} adim",
-	"globalrenamequeue-request-movepages": "Vaporpeachim panam haloi"
+	"globalrenamequeue-request-movepages": "Vaporpeachim panam haloi",
+	"log-action-filter-gblrights": "Bodolacho prokar:",
+	"log-action-filter-globalauth": "Bodolacho prokar:"
 }
