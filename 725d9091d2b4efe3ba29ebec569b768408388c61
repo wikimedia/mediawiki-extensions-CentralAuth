@@ -214,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "d4c514bb_6995126b",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-09-04T18:46:34Z",
+      "side": 1,
+      "message": "Dbarratt - has this been documented somewhere? If not, where\u0027s the best place?",
+      "parentUuid": "31065978_39278fdf",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d4db41d5_e57f3e4d",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -509,6 +533,24 @@
       "side": 1,
       "message": "I don\u0027t have a good suggestion.",
       "parentUuid": "c7eb5449_a2f49629",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1b3d8e7_55dbbdbd",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-09-04T18:46:34Z",
+      "side": 1,
+      "message": "If we\u0027re stuck with this, we should at least document the problem, maybe in the method docs.",
+      "parentUuid": "bc79107a_294197be",
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true

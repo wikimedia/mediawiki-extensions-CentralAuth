@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "003413cf_2d4c0231",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-09-04T18:46:34Z",
+      "side": 1,
+      "message": "Insert line break",
+      "range": {
+        "startLine": 728,
+        "startChar": 9,
+        "endLine": 728,
+        "endChar": 10
+      },
+      "revId": "616309d1bf8c2abc879372b745ba8b7bb0f635b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "939645ee_0d9d16a4",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-09-04T18:46:34Z",
+      "side": 1,
+      "message": "If the namespace is in one list but not both, it is considered local - is that correct, or should this be \u0026\u0026?",
+      "range": {
+        "startLine": 732,
+        "startChar": 8,
+        "endLine": 732,
+        "endChar": 10
+      },
+      "revId": "616309d1bf8c2abc879372b745ba8b7bb0f635b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b923430f_38178eab",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 25
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-09-04T18:46:34Z",
+      "side": 1,
+      "message": "As above",
+      "range": {
+        "startLine": 747,
+        "startChar": 6,
+        "endLine": 747,
+        "endChar": 8
+      },
+      "revId": "616309d1bf8c2abc879372b745ba8b7bb0f635b3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
