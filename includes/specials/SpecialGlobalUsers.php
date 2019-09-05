@@ -11,7 +11,10 @@ class SpecialGlobalUsers extends SpecialPage {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
-		$pg = new GlobalUsersPager( $this->getContext(), $par );
+		$context = new DerivativeContext( $this->getContext() );
+		$context->setTitle( $this->getPageTitle() ); // Remove subpage
+
+		$pg = new GlobalUsersPager( $context, $par );
 		$req = $this->getRequest();
 
 		if ( $par ) {
@@ -24,10 +27,10 @@ class SpecialGlobalUsers extends SpecialPage {
 
 		$rqGroup = $req->getVal( 'group' );
 		if ( $rqGroup ) {
-				$groupTitle = Title::newFromText( $rqGroup );
-				if ( $groupTitle ) {
-					$pg->setGroup( $groupTitle->getUserCaseDBKey() );
-				}
+			$groupTitle = Title::newFromText( $rqGroup );
+			if ( $groupTitle ) {
+				$pg->setGroup( $groupTitle->getUserCaseDBKey() );
+			}
 		}
 
 		$rqUsername = MediaWikiServices::getInstance()->getContentLanguage()
