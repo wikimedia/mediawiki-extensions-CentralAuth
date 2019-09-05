@@ -233,6 +233,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
 			$result[$group] = UserGroupMembership::getGroupName( $group );
 		}
+		asort( $result );
 		return $result;
 	}
 }
