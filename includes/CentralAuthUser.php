@@ -2693,7 +2693,6 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * @return CentralAuthSessionProvider
-	 * @suppress PhanUndeclaredMethod Per comment in SessionManager::singleton()
 	 */
 	private static function getSessionProvider(): CentralAuthSessionProvider {
 		return MediaWiki\Session\SessionManager::singleton()
