@@ -912,7 +912,7 @@ class CentralAuthHooks {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists()
 			&& ( $centralUser->isAttached() || $user->isAnon() )
-			&& $centralUser->isHidden()
+			&& $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_OVERSIGHT
 		) {
 			$hideUserBlock = new SystemBlock( [
 				'address' => $user,
