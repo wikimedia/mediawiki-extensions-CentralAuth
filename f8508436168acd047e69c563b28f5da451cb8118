@@ -22,6 +22,30 @@
       "revId": "f8508436168acd047e69c563b28f5da451cb8118",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84a9ea09_c6e28dca",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 1308,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-09-09T08:34:43Z",
+      "side": 1,
+      "message": "Well, it depends on what you exactly mean with \"dependency\"... PHP doesn\u0027t care about typehints until the method is called (https://3v4l.org/FSmMp). But if it\u0027s called, then AF should be installed. So I don\u0027t think adding a typehint would make any difference.",
+      "parentUuid": "149f5507_b62a3e89",
+      "range": {
+        "startLine": 1308,
+        "startChar": 2,
+        "endLine": 1308,
+        "endChar": 27
+      },
+      "revId": "f8508436168acd047e69c563b28f5da451cb8118",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
