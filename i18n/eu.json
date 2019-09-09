@@ -60,7 +60,7 @@
 	"centralauth-editgroup-restrictions": "Taldea aktiboa den wiki-multzoa:",
 	"centralauth-editgroup-submit": "Gorde aldaketak talde globalean",
 	"centralauth-editgroup-success": "Talde globala aldatuta",
-	"centralauth-editgroup-success-text": "$1 talderako baimenak aldatu dira arazorik gabe.\n[[Special:GlobalGroupPermissions|Talde kudeaketara itzuli]]",
+	"centralauth-editgroup-success-text": "$1 talde globala eguneratuko da.\n[[Special:GlobalGroupPermissions|Talde kudeaketara itzuli]]",
 	"centralauth-editset": "Wiki-multzoak",
 	"centralauth-editset-badwikis": "Ondorengo {{PLURAL:$2|wikia|wikiak}} ez dira existitzen: $1.",
 	"centralauth-editset-intro-ro": "Ikus behean, dauden wiki multzoen zerrenda.",

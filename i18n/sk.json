@@ -6,7 +6,8 @@
 			"Kusavica",
 			"Michawiki",
 			"Teslaton",
-			"Sudo77(new)"
+			"Sudo77(new)",
+			"Luky001"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globálne skupiny, do ktorých používateľ patrí",
@@ -147,6 +148,7 @@
 	"centralauth-editset-type": "Typ:",
 	"centralauth-editset-usage": "Použité v skupinách:",
 	"centralauth-editset-wikis": "Wiki:",
+	"centralauth-error-badtoken": "Zadaný autentifikačný token už vypršal alebo je neplatný.",
 	"centralauth-error-locked": "Nemôžete vykonávať úpravy, pretože váš účet je zamknutý.",
 	"centralauth-error-unmerged": "Nemôžete vykonávať úpravy, pretože váš účet nie je zjednotený.",
 	"centralauth-finish-incomplete": "Týmto heslom bolo potvrdených niekoľko účtov. Ostatné účty zatiaľ nie sú potvrdené.",

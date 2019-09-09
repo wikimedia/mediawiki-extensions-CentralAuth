@@ -6,11 +6,18 @@
 			"Uostofchuodnego"
 		]
 	},
+	"centralauth": "Mynedżer globalnego kōnta",
 	"centralauth-admin-blocklog": "regest blokad",
 	"centralauth-admin-no": "ńy",
+	"centralauth-admin-title": "Mynedżer globalnego kōnta dlo {{GENDER:$1|używŏcza|używŏczki}} $1",
 	"centralauth-admin-yes": "ja",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|edycyjŏ|edycyje|edycyji}} na $2",
 	"centralauth-foreign-link": "Używŏcz $1 na $2",
 	"centralauth-merge-dryrun-or": "'''abo'''",
-	"centralauth-merge-method-login": "stworzōne przi zalogowaniu"
+	"centralauth-merge-method-login": "stworzōne przi zalogowaniu",
+	"globalgroupmembership": "Czōnkostwo we globalnych grupach",
+	"globalgrouppermissions": "Mynedżer globalnych grup",
+	"globalrenamerequest": "Prośba ô przemianowanie globalnego kōnta",
+	"globalusers": "Lista globalnych kōnt",
+	"mergeaccount": "Status unifikacyje kōnta"
 }

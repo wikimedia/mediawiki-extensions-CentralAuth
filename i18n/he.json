@@ -414,6 +414,7 @@
 	"globalrenamequeue-column-rq-status": "מצב",
 	"globalrenamequeue-column-rq-wiki": "ויקי מקומי",
 	"globalrenamequeue-desc": "עיבוד בקשות שינוי שם גלובליות",
+	"globalrenamequeue-email-body-approved-with-note": "הבקשה לשנות את השם \"{{GENDER:$1|$1}}\" לשם \"{{GENDER:$1|$2}}\" אושרה.\n\nהערה: $3",
 	"globalrenamequeue-email-body-approved": "הבקשה לשנות את השם \"{{GENDER:$1|$1}}\" לשם \"{{GENDER:$1|$2}}\" אושרה.",
 	"globalrenamequeue-email-body-rejected": "הבקשה לשנות את השם \"{{GENDER:$1|$1}}\" אל \"{{GENDER:$1|$2}}\" נדחתה.\n\nהערה: $3",
 	"globalrenamequeue-email-subject-approved": "בקשת שינוי השם אושרה",
