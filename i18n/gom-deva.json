@@ -7,7 +7,7 @@
 		]
 	},
 	"centralauth-admin-blocklog": "आडखळ्यांचो सूची",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|योगदान|योगदान}} $2 चेर",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|योगदान}} $2 चेर",
 	"centralauth-foreign-link": "$1 आनी $2 वयले वापरपी",
 	"centralauth-merge-method-login": "सत्रारंभाक रोचलेलें"
 }
