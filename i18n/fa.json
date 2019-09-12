@@ -49,7 +49,7 @@
 	"centralauth-admin-already-unmerged": "گذر از $1، قبلاً از جدا شده‌است",
 	"centralauth-admin-bad-input": "انتخاب نامجاز برای ادغام",
 	"centralauth-admin-blocked-reason": "دلیل: $1",
-	"centralauth-admin-blocked2": "مسدودشده، $2 در $3 انقضا میابد",
+	"centralauth-admin-blocked2": "بسته‌شده، در $2 ساعت $3 انقضا می‌یابد.",
 	"centralauth-admin-blocked2-indef": "نامحدود بسته شده‌است.",
 	"centralauth-admin-blocklog": "سیاههٔ بسته‌شدن‌ها",
 	"centralauth-admin-delete-button": "حذف این حساب کاربری",
