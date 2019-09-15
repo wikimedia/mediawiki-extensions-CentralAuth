@@ -1343,7 +1343,7 @@ class CentralAuthHooks {
 	 * @param array &$skipReasons
 	 * @return bool
 	 */
-	public function onAbuseFilterShouldFilterAction(
+	public static function onAbuseFilterShouldFilterAction(
 		AbuseFilterVariableHolder $vars,
 		Title $title,
 		User $user,
