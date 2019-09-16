@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"MacTire02",
-			"Shimmin Beg"
+			"Shimmin Beg",
+			"Xð"
 		]
 	},
 	"centralauth-admin-delete-button": "Scryss y coontys shoh",
@@ -18,6 +19,7 @@
 	"centralauth-editset-reason": "Fa:",
 	"centralauth-finish-login": "Log stiagh",
 	"centralauth-finish-password": "Fockle yn arrey:",
+	"centralauth-foreign-link": "Ymmydeyr $1 ayns $2",
 	"centralauth-list-home-title": "Wiki thie",
 	"centralauth-merge-dryrun-or": "'''ny'''",
 	"centralauth-merge-method-new": "coontys noa",
