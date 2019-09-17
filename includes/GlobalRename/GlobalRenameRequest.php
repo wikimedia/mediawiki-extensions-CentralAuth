@@ -109,7 +109,7 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * @return int CentralAuth user id of stweard wo processed request
+	 * @return int CentralAuth user id of the user who processed the request
 	 */
 	public function getPerformer() {
 		return $this->performer;
@@ -405,9 +405,9 @@ class GlobalRenameRequest {
 	/**
 	 * Check to see if a given username is available for use via CentralAuth.
 	 *
-	 * Note that this is not a definiative check. It does not include checking
+	 * Note that this is not a definitive check. It does not include checking
 	 * for AntiSpoof, TitleBlacklist or other AbortNewAccount hook blocks.
-	 * Unfortunately the only cannonical way to validate that an account is
+	 * Unfortunately the only canonical way to validate that an account is
 	 * available is to make the account and check that it wasn't blocked by
 	 * something.
 	 *
@@ -429,7 +429,7 @@ class GlobalRenameRequest {
 		}
 
 		// New user creation checks against local wiki only using an API
-		// request, but we need to check against te central user table instead
+		// request, but we need to check against the central user table instead
 		$centralUser = CentralAuthUser::getMasterInstanceByName( $safe );
 		if ( $centralUser->exists() || $centralUser->listUnattached() ) {
 			$status->fatal( 'globalrenamerequest-newname-err-taken' );
