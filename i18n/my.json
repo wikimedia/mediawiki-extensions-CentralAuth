@@ -54,6 +54,7 @@
 	"centralauth-admin-username": "မှတ်​ပုံ​တင်​အ​မည်:",
 	"centralauth-admin-view": "အကောင့် အချက်အလက် ကြည့်ရန်",
 	"centralauth-attach-title": "အကောင့် အတည်ပြုရန်",
+	"centralauth-complete-text": "ယခုအခါ သင်သည် {{int:Centralauth-groupname}}၏ မည်သည့်ဝီကီဆိုဒ်ကိုမဆို အကောင့်အသစ်ဖန်တီးစရာမလိုဘဲ လော့ဂ်အင်ဝင်ရောက်နိုင်ပါသည်။",
 	"centralauth-completelogin-back": "ယခင်စာမျက်နှာသို့ ပြန်သွားရန်။",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|ရက်|ရက်}} အကြာက",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|တည်းဖြတ်မှု]])",

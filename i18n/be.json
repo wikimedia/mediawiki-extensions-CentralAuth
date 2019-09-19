@@ -73,6 +73,7 @@
 	"centralauth-usermerge-confirm": "Вы сапраўды хочаце глабальна аб’яднаць гэтых ўдзельнікаў?",
 	"centralauth-usermerge-form-reason": "Прычына",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гады|гадоў}} таму",
+	"centralautologin": "Цэнтральны ўваход",
 	"globalrenamequeue-column-rq-wiki": "Лакальны вікі-праект",
 	"globalrenamequeue-request-reason-label": "Агульнадаступны каментарый",
 	"log-action-filter-gblrights-usergroups": "Змяненне глабальных правоў удзельніка",
