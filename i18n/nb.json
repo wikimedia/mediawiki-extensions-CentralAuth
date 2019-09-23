@@ -241,7 +241,7 @@
 	"centralauth-listusers-locked": "låst",
 	"centralauth-listusers-nolocal": "ikke slått sammen eller finnes ikke lokalt",
 	"centralauth-log-entry-chgstatus": "endret status for global konto «$1»: La til $2; Fjernet $3",
-	"centralauth-log-entry-delete": "slettet den globale kontoen «<nowii>$1</nowiki>»",
+	"centralauth-log-entry-delete": "slettet den globale kontoen «$1»",
 	"centralauth-log-entry-hide": "skjulte den globale kontoen «$1»",
 	"centralauth-log-entry-lock": "låste den globale kontoen «$1»",
 	"centralauth-log-entry-lockandhide": "låste og skjulte den globale kontoen «$1»",
