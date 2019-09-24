@@ -8,6 +8,7 @@
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName"/>
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
+		<exclude name="MediaWiki.Commenting.FunctionComment.DefaultNullTypeParam" />
 	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
@@ -17,6 +18,24 @@
 			<property name="ignoreList" type="array" value="migratePassZero,getEditCount,countEdits" />
 		</properties>
 	</rule>
+
+	<!-- A few unused globals in includes/CentralAuthHooks.php -->
+	<rule ref="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgHooks">
+		<exclude-pattern>includes/CentralAuthHooks.php</exclude-pattern>
+	</rule>
+	<rule ref="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgSpecialPages">
+		<exclude-pattern>includes/CentralAuthHooks.php</exclude-pattern>
+	</rule>
+	<rule ref="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgCentralAuthCheckSULMigration">
+		<exclude-pattern>includes/CentralAuthHooks.php</exclude-pattern>
+	</rule>
+	<rule ref="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgDisableAuthManager">
+		<exclude-pattern>includes/CentralAuthHooks.php</exclude-pattern>
+	</rule>
+	<rule ref="MediaWiki.VariableAnalysis.UnusedGlobalVariables.UnusedGlobal$wgAuthManagerAutoConfig">
+		<exclude-pattern>includes/CentralAuthHooks.php</exclude-pattern>
+	</rule>
+
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
 	<arg name="encoding" value="UTF-8"/>
