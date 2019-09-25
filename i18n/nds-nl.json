@@ -31,7 +31,7 @@
 	"centralauth-finish-login": "Anmelden",
 	"centralauth-finish-password": "Wachtwoord:",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bydrage|bydragen}} up $2",
-	"centralauth-foreign-link": "Bruker $1 up $2",
+	"centralauth-foreign-link": "Gebruker $1 up $2",
 	"centralauth-groupname": "de Wikimedia Foundation",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur}} elejen",
 	"centralauth-log-header": "Dit logboek bevat haandelingen veur globale gebrukers: vortdoon, aofsluten en vriegeven.",
