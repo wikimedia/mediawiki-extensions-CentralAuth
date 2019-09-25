@@ -129,9 +129,9 @@ abstract class LocalRenameJob extends Job {
 	}
 
 	/**
-	 * @param bool|null $status See Job::addTeardownCallback
+	 * @param bool $status See Job::addTeardownCallback
 	 */
-	protected function scheduleNextWiki( $status = null ) {
+	protected function scheduleNextWiki( $status ) {
 		if ( $status === false ) {
 			// This will lock the user out of their account until a sysadmin intervenes.
 			$this->updateStatus( 'failed' );

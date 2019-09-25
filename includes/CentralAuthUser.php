@@ -1321,13 +1321,13 @@ class CentralAuthUser implements IDBAccessObject {
 	 * the password check.
 	 *
 	 * @param string $password plaintext password to try matching
-	 * @param string[]|null &$migrated Array of wiki IDs for records which were
+	 * @param string[] &$migrated Array of wiki IDs for records which were
 	 *                  successfully migrated by this operation
-	 * @param string[]|null &$remaining Array of wiki IDs for records which are still
+	 * @param string[] &$remaining Array of wiki IDs for records which are still
 	 *                   unattached after the operation
 	 * @return bool true if all accounts are migrated at the end
 	 */
-	public function attemptPasswordMigration( $password, &$migrated = null, &$remaining = null ) {
+	public function attemptPasswordMigration( $password, &$migrated = [], &$remaining = [] ) {
 		$rows = $this->queryUnattached();
 
 		if ( count( $rows ) == 0 ) {
