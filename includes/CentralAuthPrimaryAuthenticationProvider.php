@@ -191,7 +191,8 @@ class CentralAuthPrimaryAuthenticationProvider
 									wfMessage( 'sulrenamewarning-authmanager-ok-help' )
 								)
 							],
-							wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
+							wfMessage( 'sulrenamewarning-renamed' )
+								->plaintextParams( $username, $renamedUsername ),
 							'warning'
 						);
 					}
@@ -294,7 +295,8 @@ class CentralAuthPrimaryAuthenticationProvider
 						wfMessage( 'sulrenamewarning-authmanager-ok-help' )
 					)
 				],
-				wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
+				wfMessage( 'sulrenamewarning-renamed' )
+					->plaintextParams( $username, $renamedUsername ),
 				'warning'
 			);
 		}

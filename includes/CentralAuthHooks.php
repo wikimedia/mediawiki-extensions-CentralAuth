@@ -437,8 +437,12 @@ class CentralAuthHooks {
 		} else {
 			$inject_html = '<div class="centralauth-login-box"><p>' .
 				wfMessage( 'centralauth-login-progress' )
+<<<<<<< HEAD
 					->params( $user->getName() )
 					->numParams( count( $wgCentralAuthAutoLoginWikis ) )
+=======
+					->plaintextParams( $user->getName() )
+>>>>>>> 6e75c78f... Use Message::plaintextParams() to pass plain text parameters
 					->escaped() . "</p>\n<p>";
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
@@ -654,9 +658,15 @@ class CentralAuthHooks {
 		} else {
 			$inject_html = '<div class="centralauth-logout-box"><p>' .
 				wfMessage( 'centralauth-logout-progress' )
+<<<<<<< HEAD
 					->params( $user->getName() )
 					->numParams( count( $wikis ) )
 					->escaped() . "</p>\n<p>";
+=======
+					->plaintextParams( $user->getName() )
+					->escaped() .
+					"</p>\n<p>";
+>>>>>>> 6e75c78f... Use Message::plaintextParams() to pass plain text parameters
 			foreach ( $wikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
@@ -1284,7 +1294,7 @@ class CentralAuthHooks {
 			$msg[] = Html::rawElement(
 				'span',
 				[ 'class' => 'mw-centralauth-lock-loglink plainlinks' ],
-				wfMessage( 'centralauth-block-already-locked', $user )->parse()
+				wfMessage( 'centralauth-block-already-locked' )->plaintextParams( $user )->parse()
 			);
 		}
 		return true;
