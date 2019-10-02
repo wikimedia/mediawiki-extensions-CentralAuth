@@ -46,7 +46,7 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 		if ( $rename ) {
 			// This wiki specifically has a rename in progress, so always abort
 			return AuthenticationResponse::newFail(
-				wfMessage( 'centralauth-rename-abortlogin', $user->getName() )
+				wfMessage( 'centralauth-rename-abortlogin' )->plaintextParams( $user->getName() )
 			);
 		}
 
@@ -65,7 +65,8 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 				// If there is an account using that name that exists on this wiki
 				// reject the login.
 				return AuthenticationResponse::newFail(
-					wfMessage( 'centralauth-rename-abortlogin', $user->getName() )
+					wfMessage( 'centralauth-rename-abortlogin' )
+						->plaintextParams( $user->getName() )
 				);
 			}
 		}

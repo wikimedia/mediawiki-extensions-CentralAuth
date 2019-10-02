@@ -437,7 +437,7 @@ class CentralAuthHooks {
 		} else {
 			$inject_html = '<div class="centralauth-login-box"><p>' .
 				wfMessage( 'centralauth-login-progress' )
-					->params( $user->getName() )
+					->plaintextParams( $user->getName() )
 					->numParams( count( $wgCentralAuthAutoLoginWikis ) )
 					->escaped() . "</p>\n<p>";
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
@@ -654,7 +654,7 @@ class CentralAuthHooks {
 		} else {
 			$inject_html = '<div class="centralauth-logout-box"><p>' .
 				wfMessage( 'centralauth-logout-progress' )
-					->params( $user->getName() )
+					->plaintextParams( $user->getName() )
 					->numParams( count( $wikis ) )
 					->escaped() . "</p>\n<p>";
 			foreach ( $wikis as $alt => $wikiID ) {
@@ -1284,7 +1284,7 @@ class CentralAuthHooks {
 			$msg[] = Html::rawElement(
 				'span',
 				[ 'class' => 'mw-centralauth-lock-loglink plainlinks' ],
-				wfMessage( 'centralauth-block-already-locked', $user )->parse()
+				wfMessage( 'centralauth-block-already-locked' )->plaintextParams( $user )->parse()
 			);
 		}
 		return true;

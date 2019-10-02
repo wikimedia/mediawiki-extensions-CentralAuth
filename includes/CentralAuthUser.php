@@ -1821,8 +1821,10 @@ class CentralAuthUser implements IDBAccessObject {
 			list( , $lang ) = $wgConf->siteFromDB( $wiki );
 			$langNames = Language::fetchLanguageNames();
 			$lang = isset( $langNames[$lang] ) ? $lang : 'en';
-			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
-				->inLanguage( $lang )->text();
+			$blockReason = wfMessage( 'centralauth-admin-suppressreason' )
+				->plaintextParams( $by, $reason )
+				->inLanguage( $lang )
+				->text();
 
 			$block = new DatabaseBlock( [
 				'address' => $this->mName,

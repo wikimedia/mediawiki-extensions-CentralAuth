@@ -47,12 +47,14 @@ class CentralAuthAntiSpoofHooks {
 					$numConflicts = count( $conflicts );
 
 					// This message pasting-together sucks.
-					$message = wfMessage( 'antispoof-conflict-top', $name )
+					$message = wfMessage( 'antispoof-conflict-top' )
+						->plaintextParams( $name )
 						->numParams( $numConflicts )->escaped();
 					$message .= '<ul>';
 					foreach ( $conflicts as $simUser ) {
-						$message .= '<li>' .
-							wfMessage( 'antispoof-conflict-item', $simUser )->escaped() . '</li>';
+						$message .= '<li>' . wfMessage( 'antispoof-conflict-item' )
+							->plaintextParams( $simUser )
+							->escaped() . '</li>';
 					}
 					$message .= '</ul>' . wfMessage( 'antispoof-conflict-bottom' )->escaped();
 					return StatusValue::newFatal(
