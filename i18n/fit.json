@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mestos"
+			"Mestos",
+			"Pyscowicz"
 		]
 	},
 	"centralauth-groupname": "Wikimedia Foundation",
-	"centralauth-merge-denied": "Valitan, sulla ei ole oikeus käyttää tätä sivua",
+	"centralauth-merge-denied": "Sulla ei ole luppaa käyttää tätä sivua.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Lokkaa sisäle]</span>, jos haluat tarkistaa, jos sinun käyttäjätunnukset  on täyesti yhistetty.",
 	"centralauth-merge-step1-title": "Alota lokkauksen yhistämistä"
 }
