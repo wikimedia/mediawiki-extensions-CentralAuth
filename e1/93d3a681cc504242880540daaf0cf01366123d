@@ -1,0 +1,7 @@
+Code-Review+2: Anomie <bjorsch@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 03 Oct 2019 16:44:14 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/388682
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
