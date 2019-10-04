@@ -1642,7 +1642,6 @@ class CentralAuthUser implements IDBAccessObject {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
 				return Status::newFatal(
-					// @phan-suppress-next-line PhanParamTooMany T191666
 					$context->msg( 'centralauth-admin-too-many-edits', $this->mName )
 						->numParams( self::HIDE_CONTRIBLIMIT )
 				);
