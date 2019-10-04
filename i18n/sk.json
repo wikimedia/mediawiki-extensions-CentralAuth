@@ -7,11 +7,15 @@
 			"Michawiki",
 			"Teslaton",
 			"Sudo77(new)",
-			"Luky001"
+			"Luky001",
+			"Vlad5250"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globálne skupiny, do ktorých používateľ patrí",
+	"action-centralauth-merge": "zlúčiť ich účty",
 	"action-centralauth-rename": "premenovávať globálne účty",
+	"action-globalgroupmembership": "upraviť členstvo v globálnych skupinách",
+	"action-globalgrouppermissions": "spravovať globálne skupiny",
 	"centralauth": "Globálny správca používateľov",
 	"centralauth-account-exists": "Nie je možné vytvoriť účet: požadované používateľské meno si už vyhradil systém pre zjednotené prihlasovanie.",
 	"centralauth-account-exists-reset": "Používateľské meno $1 nie je zaregistrované na tejto wiki, ale existuje v zjednotenom prihlasovacom systéme.",
@@ -55,6 +59,7 @@
 	"centralauth-admin-lookup-rw": "Spravovať účet používateľa",
 	"centralauth-admin-manage": "Správa údajov o používateľoch",
 	"centralauth-admin-merge": "Zlúčenie zvolených",
+	"centralauth-admin-multi-bot": "Posledné úpravy",
 	"centralauth-admin-no": "nie",
 	"centralauth-admin-no-unified": "Pre toto používateľské meno neexistujú žiadne zjednotené účty.",
 	"centralauth-admin-none-selected": "Neboli vybrané účty, ktoré sa majú zmeniť.",
@@ -134,7 +139,7 @@
 	"centralauth-editset-new": "Vytvoriť novú množinu",
 	"centralauth-editset-notfound": "Množina wiki „$1” nebola nájdená.",
 	"centralauth-editset-nouse": "(žiadne)",
-	"centralauth-editset-nowikis": "Neboli určené wiki.",
+	"centralauth-editset-nowikis": "(žiadne)",
 	"centralauth-editset-optin": "opt-in (iba určené wiki)",
 	"centralauth-editset-optout": "opt-out (všetky wiki okrem určených)",
 	"centralauth-editset-reason": "Dôvod:",
