@@ -1,5 +1,6 @@
 <?php
 
+use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -45,7 +46,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 * @dataProvider provideGetHomeWiki
 	 */
 	public function testGetHomeWiki( $attached, $expected ) {
-		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
+		/** @var MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
 			->setMethods( [ 'queryAttachedBasic', 'queryAttached', 'loadState' ] )
@@ -232,7 +233,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 * @dataProvider provideOnPasswordPoliciesForUser
 	 */
 	public function testGetLocalGroups( $attached, $expected ) {
-		/** @var PHPUnit_Framework_MockObject_MockObject|CentralAuthUser $ca */
+		/** @var MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
 			->setMethods( [ 'queryAttached' ] )
