@@ -497,7 +497,7 @@
 	"globalrenamerequest-email-why-explain": "Nous avons besoin d’une adresse de courriel lors du processus pour nous assurer que vous ne perdrez pas l’accès à ce compte.<br />Vous pourrez supprimer cette adresse de courriel une fois le processus de renommage terminé.",
 	"globalrenamerequest-email2-help": "Saisissez la même adresse de courriel que ci-dessus pour confirmer.",
 	"globalrenamerequest-email2-label": "Confirmer l’adresse de courriel :",
-	"globalrenamerequest-forced": "La Fondation Wikimedia [[:mw:SUL_finalisation|unifie les noms d’utilisateur entre tous les projets Wikimedia]]. Ce nom d’utilisateur a été identifié comme utilisé sur d’autres wikis de Wikimedia et doit être modifié pour terminer l’unification. Par conséquent, vous devez sélectionner un nouveau nom d’utilisateur.",
+	"globalrenamerequest-forced": "La Fondation Wikimédia [[:mw:SUL_finalisation|unifie les noms d’utilisateur entre tous les projets Wikimedia]]. Ce nom d’utilisateur a été identifié comme utilisé sur d’autres wikis de Wikimédia et doit être modifié pour terminer l’unification. Par conséquent, vous devez sélectionner un nouveau nom d’utilisateur.",
 	"globalrenamerequest-legend": "Demande de renommage de l’unification",
 	"globalrenamerequest-newname-err-invalid": "Vous n’avez pas spécifié un nom d’utilisateur valide.",
 	"globalrenamerequest-newname-err-taken": "Le nom d’utilisateur saisi est déjà utilisé. Veuillez en choisir un autre.",

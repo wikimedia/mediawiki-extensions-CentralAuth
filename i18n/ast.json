@@ -405,6 +405,7 @@
 	"globalrenamequeue-column-rq-status": "Estáu",
 	"globalrenamequeue-column-rq-wiki": "Wiki llocal",
 	"globalrenamequeue-desc": "Procesar solicitúes de cambios de nome d'usuariu global",
+	"globalrenamequeue-email-body-approved-with-note": "Aprobóse la solicitú de cambiar el nome de \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\".\n\nNota: $3",
 	"globalrenamequeue-email-body-approved": "La solicitú de cambiar el nome de \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\" aprobóse.",
 	"globalrenamequeue-email-body-rejected": "La solicitú de cambiar el nome de \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\" refugóse.\n\nNota: $3",
 	"globalrenamequeue-email-subject-approved": "Solicitú de cambiu de nome de cuenta aprobada",
