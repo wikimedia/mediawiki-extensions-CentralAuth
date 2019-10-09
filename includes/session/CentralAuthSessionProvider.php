@@ -436,9 +436,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 * @inheritDoc
 	 * @suppress PhanParamReqAfterOpt
 	 */
-	protected function setForceHTTPSCookie(
-		$set, SessionBackend $backend = null, WebRequest $request
-	) {
+	protected function setForceHTTPSCookie( $set, ?SessionBackend $backend, WebRequest $request ) {
 		$response = $request->response();
 		$central = $backend
 			? CentralAuthUser::getInstance( $backend->getUser() )->isAttached()
