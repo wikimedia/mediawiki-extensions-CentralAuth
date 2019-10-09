@@ -29,7 +29,7 @@ class LocalRenameUserJobTest extends PHPUnit\Framework\TestCase {
 	 */
 	protected $escapeReplacement;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$clazz = new ReflectionClass( LocalRenameUserJob::class );
 		$this->escapeReplacement = $clazz->getMethod( 'escapeReplacement' );

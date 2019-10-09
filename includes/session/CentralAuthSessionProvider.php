@@ -437,6 +437,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 * @suppress PhanParamReqAfterOpt
 	 */
 	protected function setForceHTTPSCookie(
+		// @phpcs:ignore MediaWiki.PHP71Features.NullableType.NotAllowed
 		$set, SessionBackend $backend = null, WebRequest $request
 	) {
 		$response = $request->response();
