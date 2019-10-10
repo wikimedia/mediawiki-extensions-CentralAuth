@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85475f1a_25650d0b",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-10-10T10:16:25Z",
+      "side": 1,
+      "message": "We can leave this suppressed for now. This is the only case of a method defined in core and overridden in an extension having a nullable parameter. We can fix it separately later.",
+      "range": {
+        "startLine": 438,
+        "startChar": 1,
+        "endLine": 438,
+        "endChar": 96
+      },
+      "revId": "6c5aa8e1fd6597d7c99cfdc160abd026ddebe7b6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
