@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "273e0ad9_16fac4ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-10-10T15:53:28Z",
+      "side": 1,
+      "message": "Force-merging is probably a bad idea, as it would probably break future merges too.\n\nIt might be ok if two patches both Depends-On each other and there\u0027s no ordering of the two that otherwise resolves the problem (and CI doesn\u0027t already realize the loop and merge them both itself).\n\nIn this case it looks like PHP itself is fine with either ordering of this and I3b253f6e, since with a following non-optional parameter \"Class $x \u003d null\" and \"?Class $x\" do the same thing. It\u0027s only Phan that whines about it. So you could probably get around it with a @phan-suppress-next-line of some sort to tell Phan you know what you\u0027re doing.",
+      "revId": "3390dbb4181fe6fc79153fcc4d8ae5afeb742693",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
