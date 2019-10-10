@@ -22,6 +22,30 @@
       "revId": "6c5aa8e1fd6597d7c99cfdc160abd026ddebe7b6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0202a613_47cb0383",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2019-10-10T16:51:58Z",
+      "side": 1,
+      "message": "I\u0027m surprised that it\u0027s the only one! Yeah, let\u0027s not wait for core but land this now. Thank you both.",
+      "parentUuid": "85475f1a_25650d0b",
+      "range": {
+        "startLine": 438,
+        "startChar": 1,
+        "endLine": 438,
+        "endChar": 96
+      },
+      "revId": "6c5aa8e1fd6597d7c99cfdc160abd026ddebe7b6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
