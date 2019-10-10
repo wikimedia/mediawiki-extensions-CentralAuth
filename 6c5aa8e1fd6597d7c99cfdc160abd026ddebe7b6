@@ -46,6 +46,30 @@
       "revId": "6c5aa8e1fd6597d7c99cfdc160abd026ddebe7b6",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da5fb31b_91e82f1c",
+        "filename": "includes/session/CentralAuthSessionProvider.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-10-10T16:55:03Z",
+      "side": 1,
+      "message": "Yeah, well, it\u0027s not so common to have a method with an optional/nullable parameter before a required one. This is now ready.",
+      "parentUuid": "0202a613_47cb0383",
+      "range": {
+        "startLine": 438,
+        "startChar": 1,
+        "endLine": 438,
+        "endChar": 96
+      },
+      "revId": "6c5aa8e1fd6597d7c99cfdc160abd026ddebe7b6",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
