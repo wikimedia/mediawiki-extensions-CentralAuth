@@ -16,6 +16,24 @@
       "revId": "3390dbb4181fe6fc79153fcc4d8ae5afeb742693",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79102967_09bed9bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2019-10-10T15:57:02Z",
+      "side": 1,
+      "message": "Yeah, I was waiting for CI to finish testing I3b253f6e06aa496b2dd6ef891caebddc22b4f035. If it passes, I\u0027d propose to merge core patch first, then this one immediately after.\n\nIf only phan will complain about that, it will only block merges to CentralAuth in between the merges. Which is to say, it won\u0027t do any harm if the patches are +2ed together.\n\nNote that merging this one first (and adding the phan suppressions) will equally block merges to CA after the core patch is merged, because phan will complain about unused suppressions.",
+      "parentUuid": "273e0ad9_16fac4ea",
+      "revId": "3390dbb4181fe6fc79153fcc4d8ae5afeb742693",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
