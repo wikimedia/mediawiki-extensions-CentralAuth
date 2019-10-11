@@ -238,6 +238,30 @@
     },
     {
       "key": {
+        "uuid": "43d16960_e7620fc5",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-10-11T21:11:38Z",
+      "side": 1,
+      "message": "I\u0027ve created a patch to document the issue here: https://gerrit.wikimedia.org/r/c/mediawiki/core/+/542602\n\nHowever, I just realized that the config option is deprecated, so perhaps we shouldn\u0027t be checking here at all?",
+      "parentUuid": "d4c514bb_6995126b",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d4db41d5_e57f3e4d",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
@@ -551,6 +575,24 @@
       "side": 1,
       "message": "If we\u0027re stuck with this, we should at least document the problem, maybe in the method docs.",
       "parentUuid": "bc79107a_294197be",
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c032c69_a5cca99e",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 4911
+      },
+      "writtenOn": "2019-10-11T21:11:38Z",
+      "side": 1,
+      "message": "Would these customizations be in the SiteConfiguration object perhaps? If they are, perhaps we could make a way to get them out of that?",
+      "parentUuid": "e1b3d8e7_55dbbdbd",
       "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
