@@ -262,6 +262,30 @@
     },
     {
       "key": {
+        "uuid": "beb21c48_04d083b4",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 17
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 2849
+      },
+      "writtenOn": "2019-10-14T16:44:42Z",
+      "side": 1,
+      "message": "I think we should check it until the config is actually removed, to avoid looking odd on sites where partial blocks isn\u0027t enabled. I guess we can\u0027t know how long that will be since it depends on the partial blocks roll-out...",
+      "parentUuid": "43d16960_e7620fc5",
+      "range": {
+        "startLine": 662,
+        "startChar": 7,
+        "endLine": 662,
+        "endChar": 14
+      },
+      "revId": "725d9091d2b4efe3ba29ebec569b768408388c61",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d4db41d5_e57f3e4d",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 17
