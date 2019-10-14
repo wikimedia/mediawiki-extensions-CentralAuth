@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ef86cf70_68259f69",
+        "filename": "i18n/en.json",
+        "patchSetId": 34
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-10-14T18:55:44Z",
+      "side": 1,
+      "message": "Should use the more formal \"cannot\" to maintain consistency in the file",
+      "range": {
+        "startLine": 530,
+        "startChar": 43,
+        "endLine": 530,
+        "endChar": 48
+      },
+      "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22c35c12_d3e55616",
+        "filename": "i18n/qqq.json",
+        "patchSetId": 34
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-10-14T18:55:44Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 548,
+        "startChar": 66,
+        "endLine": 548,
+        "endChar": 71
+      },
+      "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
