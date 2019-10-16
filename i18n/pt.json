@@ -429,6 +429,7 @@
 	"globalrenamequeue-column-rq-status": "Estado",
 	"globalrenamequeue-column-rq-wiki": "Wiki local",
 	"globalrenamequeue-desc": "Processa pedidos de alteração global do nome de utilizadores",
+	"globalrenamequeue-email-body-approved-with-note": "O pedido de alteração do nome da conta \"{{GENDER:$1|$1}}\" para \"{{GENDER:$1|$2}}\" foi aprovado.\n\nNota: $3",
 	"globalrenamequeue-email-body-approved": "O pedido de alteração do nome da conta \"{{GENDER:$1|$1}}\" para \"{{GENDER:$1|$2}}\" foi aprovado.",
 	"globalrenamequeue-email-body-rejected": "O pedido de alteração do nome da conta \"{{GENDER:$1|$1}}\" para \"{{GENDER:$1|$2}}\" foi rejeitado.\n\nNota: $3",
 	"globalrenamequeue-email-subject-approved": "Pedido de alteração do nome da conta aprovado",

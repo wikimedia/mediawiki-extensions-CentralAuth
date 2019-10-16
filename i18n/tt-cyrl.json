@@ -74,7 +74,7 @@
 	"centralauth-log-status-hidden": "яшерелгән",
 	"centralauth-log-status-locked": "тыелган",
 	"centralauth-log-status-none": "(юк)",
-	"centralauth-log-status-oversighted": "тикшерүче тарафыннан яшерелгән",
+	"centralauth-log-status-oversighted": "бөтенләй яшеренгән",
 	"centralauth-merge-denied": "Гафу итегез, ләкин бу биткә керү өчен сезнең хокукларыгыз юк.",
 	"centralauth-merge-dryrun-complete": "Барлык кулланучы язмаларын автоматик рәвештә берләштерергә мөмкин!\n\nӘлегә сезнең кулланучы язмаларыгыз үзгәрмәде.",
 	"centralauth-merge-dryrun-or": "'''яки'''",
