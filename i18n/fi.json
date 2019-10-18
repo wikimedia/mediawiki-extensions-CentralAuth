@@ -204,7 +204,7 @@
 	"centralauth-editset-usage": "Käytössä ryhmissä:",
 	"centralauth-editset-wikis": "Wikit:",
 	"centralauth-editset-zerowikis": "Ei määritettyjä wikejä.",
-	"centralauth-error-badtoken": "Tunnistautumista varten tarjottu kirjautumistunniste on joko vanhentunut tai virheellinen.",
+	"centralauth-error-badtoken": "Tunnistumispoletti on joko vanhentunut tai virheellinen.",
 	"centralauth-error-locked": "Et voi muokata, koska tunnuksesi on lukittu.",
 	"centralauth-error-nologinattempt": "Yhtään istuntoasi koskevaa aktiivista kirjautumisyritystä ei ole käynnissä.",
 	"centralauth-error-token-wrongattempt": "Tunnistautumiseen tarkoitettu kirjautumistunniste ei kuulu nykyiseen kirjautumisyritykseesi.\nOn mahdollista, että joku yrittää saada sinut kirjautumaan sisään pahansuovan tunnuksen alaisuuteen.",
