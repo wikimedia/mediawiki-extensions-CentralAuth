@@ -60,7 +60,8 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jaor|jaor}} elejen",
 	"globalrenameprogress": "Staotus van globale herneuming",
 	"globalrenameprogress-legend": "Staotus van globale herneuming laoten zien",
+	"globalrenamerequest": "Versöök üm gebrukerskonto globaal te hernömen",
 	"globalrenamerequest-legend": "Uniforme naamswieziging anvragen",
 	"globalusers": "Gebrukerslieste (globaal)",
-	"mergeaccount": "Staotus veur t samenvoegen van gebrukerskonto's"
+	"mergeaccount": "Status vöär et samenvogen van gebrukerskontos"
 }

@@ -1,11 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jose77"
+			"Jose77",
+			"Pare Mo"
 		]
 	},
+	"centralauth-admin-blocklog": "rehistro sg pagblokear",
 	"centralauth-admin-reason": "Rason:",
 	"centralauth-admin-username": "Ngalan sang Manog-gamit:",
 	"centralauth-finish-login": "Mag sulod",
-	"centralauth-finish-password": "Kontra-senyas:"
+	"centralauth-finish-password": "Kontra-senyas:",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|Kontribusyon|Mga kontribusyon}} ni $1 sa $2",
+	"centralauth-foreign-link": "Manuggamit $1 sa $2"
 }

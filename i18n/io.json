@@ -60,6 +60,7 @@
 	"centralauth-merge-method-new": "nova konto",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|monato|monati}} ante nun",
 	"centralauth-newgroup-legend": "Krear nova grupo",
+	"centralauth-notice-dryrun": "<div class='successbox'>Nur demonstro-modo</div><br clear='all'/>",
 	"centralauth-prefs-status": "Stando di la generala konto:",
 	"centralauth-prefs-view": "Videz la generala informo",
 	"centralauth-rename-form-reason": "Motivo",
@@ -69,5 +70,6 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yaro|yari}} ante nun",
 	"globalgroupmembership": "Membreso en globala grupi",
 	"globalrenamequeue-form-status-all": "omna",
-	"globalusers": "Listo di generala konti"
+	"globalusers": "Listo di generala konti",
+	"mergeaccount": "Stando dil 'login' por omna konti"
 }
