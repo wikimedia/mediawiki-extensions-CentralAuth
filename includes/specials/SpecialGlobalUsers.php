@@ -29,7 +29,7 @@ class SpecialGlobalUsers extends SpecialPage {
 		if ( $rqGroup ) {
 			$groupTitle = Title::newFromText( $rqGroup );
 			if ( $groupTitle ) {
-				$pg->setGroup( $groupTitle->getUserCaseDBKey() );
+				$pg->setGroup( $groupTitle->getDBkey() );
 			}
 		}
 
