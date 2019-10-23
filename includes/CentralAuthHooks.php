@@ -934,7 +934,7 @@ class CentralAuthHooks {
 			$block = new CompositeBlock( [
 				'address' => $ip,
 				'byText' => 'MediaWiki default',
-				'reason' => wfMessage( 'blockedtext-composite-reason' )->plain(),
+				'reason' => new Message( 'blockedtext-composite-reason' ),
 				'originalBlocks' => $blocks,
 			] );
 
