@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66df5cb9_7c17af03",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-10-24T18:30:43Z",
+      "side": 1,
+      "message": "The drawback there is that input of \"__groupname__\" (or the same with whitespace in place of underscores) will become \"_groupname\" rather than \"groupname\" as it was before. You could work around that with ltrim( ..., \u0027_\u0027 ) after removing the prefix.",
+      "revId": "93846bb524149ff2a8b2f100d0259e8ee5e6d50c",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
