@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48074c21_764a66d6",
+        "filename": "includes/specials/SpecialGlobalGroupPermissions.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-10-24T14:55:59Z",
+      "side": 1,
+      "message": "The code here seems to have been abusing Title for normalizing strings. Applying capitalization to $group and $newname will break, as the existing groups (on Wikimedia sites anyway) all have lowercase first letter.",
+      "revId": "776b6dacf48eeeb067f223baebdd1a67784f36ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "381da4fe_ecef862b",
+        "filename": "includes/specials/SpecialGlobalUsers.php",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-10-24T14:55:59Z",
+      "side": 1,
+      "message": "Same.",
+      "revId": "776b6dacf48eeeb067f223baebdd1a67784f36ff",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
