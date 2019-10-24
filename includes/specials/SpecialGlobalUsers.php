@@ -27,9 +27,11 @@ class SpecialGlobalUsers extends SpecialPage {
 
 		$rqGroup = $req->getVal( 'group' );
 		if ( $rqGroup ) {
-			$groupTitle = Title::newFromText( $rqGroup );
+			// XXX This is a horrible hack. We should not use Title for normalization. We need to
+			// prefix the group name so that the first letter doesn't get uppercased.
+			$groupTitle = Title::newFromText( "A/$rqGroup" );
 			if ( $groupTitle ) {
-				$pg->setGroup( $groupTitle->getUserCaseDBKey() );
+				$pg->setGroup( substr( $groupTitle->getDBkey(), 2 ) );
 			}
 		}
 
