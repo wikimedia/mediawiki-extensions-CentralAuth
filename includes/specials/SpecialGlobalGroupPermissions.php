@@ -433,22 +433,24 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$reason = $this->getRequest()->getVal( 'wpReason', '' );
 
 		// Current name of the group
-		$group = Title::newFromText( $group );
+		// XXX This is a horrible hack. We should not use Title for normalization. We need to prefix
+		// the group name so that the first letter doesn't get uppercased.
+		$group = Title::newFromText( "A/$group" );
 		if ( !$group ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
 			return;
 		}
-		$group = $group->getUserCaseDBKey();
+		$group = ltrim( substr( $group->getDBkey(), 2 ), '_' );
 
 		// (Potentially) New name of the group
 		$newname = $this->getRequest()->getVal( 'wpGlobalGroupName', $group );
 
-		$newname = Title::newFromText( $newname );
+		$newname = Title::newFromText( "A/$newname" );
 		if ( !$newname ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
 			return;
 		}
-		$newname = $newname->getUserCaseDBKey();
+		$newname = ltrim( substr( $newname->getDBkey(), 2 ), '_' );
 
 		if ( $group != $newname ) {
 			if ( in_array( $newname, CentralAuthUser::availableGlobalGroups() ) ) {
