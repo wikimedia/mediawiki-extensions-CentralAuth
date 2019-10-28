@@ -22,6 +22,30 @@
       "revId": "2aa7c04a71d028b22f6b03e17729e5687bf96fe5",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5fdf31c_1c7855b7",
+        "filename": "modules/ext.centralauth.globalrenameuser.js",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2019-10-28T22:13:39Z",
+      "side": 1,
+      "message": "Good catch. Fixed.",
+      "parentUuid": "08cd8259_6865ebbb",
+      "range": {
+        "startLine": 6,
+        "startChar": 3,
+        "endLine": 6,
+        "endChar": 79
+      },
+      "revId": "2aa7c04a71d028b22f6b03e17729e5687bf96fe5",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
