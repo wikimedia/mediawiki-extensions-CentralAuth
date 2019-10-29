@@ -412,7 +412,9 @@
 		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo",
 		"ImportHandleUnknownUser": "CentralAuthHooks::onImportHandleUnknownUser",
 		"UnitTestsAfterDatabaseSetup": "CentralAuthHooks::onUnitTestsAfterDatabaseSetup",
-		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown"
+		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown",
+		"BeforeCreateEchoEvent": "CentralAuthHooks::onBeforeCreateEchoEvent",
+		"EchoGetDefaultNotifiedUsers": "CentralAuthHooks::onEchoGetDefaultNotifiedUsers"
 	},
 	"config": {
 		"@doc": "see CentralAuth.php",
