@@ -6,6 +6,7 @@ use MediaWiki\Block\SystemBlock;
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
+use EchoEvent;
 
 class CentralAuthHooks {
 
@@ -1587,5 +1588,36 @@ class CentralAuthHooks {
 		foreach ( self::$centralauthTables as $table ) {
 			$db->dropTable( $table );
 		}
+	}
+
+	/**
+	 * Register CentralAuth Echo notification types
+	 *
+	 * @param array &$notifications array of Echo notifications
+	 * @param array &$notificationCategories array of Echo notification categories
+	 * @param array &$icons array of icon details
+	 */
+	public static function onBeforeCreateEchoEvent(
+		&$notifications, &$notificationCategories, &$icons
+	) {
+		$notifications['user-renamed'] = [
+			'category' => 'system-emailonly',
+			'group' => 'positive',
+			'section' => 'alert',
+			'presentation-model' => 'EchoUserRenamedPresentationModel',
+			'user-locators' => [
+				'CentralAuthHooks::locateRenamedUser'
+			]
+		];
+	}
+
+	/**
+	 * User locator for Echo notification
+	 *
+	 * Locates newuser from extra param.
+	 */
+	public static function locateRenamedUser( EchoEvent $event ) {
+		$newUserId = $event->getExtraParam( 'newuser' );
+		return [ User::newFromId( $newUserId ) ];
 	}
 }
