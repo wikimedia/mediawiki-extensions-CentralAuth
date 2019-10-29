@@ -45,6 +45,52 @@
       "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "52a9901f_aa904f28",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 34
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-10-29T02:37:58Z",
+      "side": 1,
+      "message": "You only use `$wikipage` once - why not simply `$content \u003d WikiPage::factor( $this-\u003efile )-\u003egetContent();` ?",
+      "range": {
+        "startLine": 69,
+        "startChar": 3,
+        "endLine": 70,
+        "endChar": 38
+      },
+      "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd859a2f_a850337e",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 34
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-10-29T02:37:58Z",
+      "side": 1,
+      "message": "This can be combined",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 4
+      },
+      "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
