@@ -514,6 +514,82 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		return $status;
 	}
 
+	private function notifyUser( $approved, $oldUser, $newUser, $request ) {
+		if ( \ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
+			$type = $approved ? 'approved' : 'rejected';
+			wfDebugLog(
+				'CentralAuthRename',
+				'Notifying {user} about {type} rename request via Echo',
+				[
+					'user' => $newUser->getName(),
+					'type' => $type,
+				]
+			);
+			EchoEvent::create( [
+				'type' => 'user-renamed',
+				'title' => $newUser->getUserPage(),
+				'extra' => [
+					'approved' => $approved,
+					'olduser' => $oldUser,
+					'newuser' => $newUser,
+					'comment' => $request->getComments()
+				]
+			] );
+		} else {
+			$this->notifyUserEmail( $approved, $oldUser, $newUser, $request );
+		}
+	}
+
+	private function notifyUserEmail( $approved, $oldUser, $newUser, $request ) {
+		if ( $approved ) {
+			$subject = $this->msg(
+				'globalrenamequeue-email-subject-approved'
+			)->inContentLanguage()->text();
+			if ( $request->getComments() === '' ) {
+				$msgKey = 'globalrenamequeue-email-body-approved';
+			} else {
+				$msgKey = 'globalrenamequeue-email-body-approved-with-note';
+			}
+			$body = $this->msg(
+				$msgKey,
+				[
+					$oldUser->getName(),
+					$newUser->getName(),
+					$request->getComments(),
+				]
+			)->inContentLanguage()->text();
+		} else {
+			$subject = $this->msg(
+				'globalrenamequeue-email-subject-rejected'
+			)->inContentLanguage()->text();
+			$body = $this->msg(
+				'globalrenamequeue-email-body-rejected',
+				[
+					$oldUser->getName(),
+					$newUser->getName(),
+					$request->getComments(),
+				]
+			)->inContentLanguage()->text();
+		}
+
+		if ( $request->userIsGlobal() || $request->getWiki() === wfWikiID() ) {
+			$notifyEmail = MailAddress::newFromUser( $oldUser );
+		} else {
+			$notifyEmail = $this->getRemoteUserMailAddress(
+				$request->getWiki(), $request->getName()
+			);
+		}
+
+		if ( $notifyEmail !== null && $notifyEmail->address ) {
+			$type = $approved ? 'approval' : 'rejection';
+			wfDebugLog(
+				'CentralAuthRename',
+				"Sending non-Echo $type email to User:{$oldUser->getName()}/{$notifyEmail->address}"
+			);
+			$this->sendNotificationEmail( $notifyEmail, $subject, $body );
+		}
+	}
+
 	protected function doResolveRequest( $approved, $data ) {
 		$request = GlobalRenameRequest::newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
@@ -580,53 +656,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 			if ( $request->save() ) {
 				// Send email to the user about the change in status.
-				if ( $approved ) {
-					$subject = $this->msg(
-						'globalrenamequeue-email-subject-approved'
-					)->inContentLanguage()->text();
-					if ( $request->getComments() === '' ) {
-						$msgKey = 'globalrenamequeue-email-body-approved';
-					} else {
-						$msgKey = 'globalrenamequeue-email-body-approved-with-note';
-					}
-					$body = $this->msg(
-						$msgKey,
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-							$request->getComments(),
-						]
-					)->inContentLanguage()->text();
-				} else {
-					$subject = $this->msg(
-						'globalrenamequeue-email-subject-rejected'
-					)->inContentLanguage()->text();
-					$body = $this->msg(
-						'globalrenamequeue-email-body-rejected',
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-							$request->getComments(),
-						]
-					)->inContentLanguage()->text();
-				}
-
-				if ( $request->userIsGlobal() || $request->getWiki() === wfWikiID() ) {
-					$notifyEmail = MailAddress::newFromUser( $oldUser );
-				} else {
-					$notifyEmail = $this->getRemoteUserMailAddress(
-						$request->getWiki(), $request->getName()
-					);
-				}
-
-				if ( $notifyEmail !== null && $notifyEmail->address ) {
-					$type = $approved ? 'approval' : 'rejection';
-					wfDebugLog(
-						'CentralAuthRename',
-						"Sending $type email to User:{$oldUser->getName()}/{$notifyEmail->address}"
-					);
-					$this->sendNotificationEmail( $notifyEmail, $subject, $body );
-				}
+				$this->notifyUser( $approved, $oldUser, $newUser, $request );
 			} else {
 				$status->fatal( 'globalrenamequeue-request-savefailed' );
 			}

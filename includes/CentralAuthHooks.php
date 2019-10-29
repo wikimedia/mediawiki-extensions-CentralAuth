@@ -1588,4 +1588,15 @@ class CentralAuthHooks {
 			$db->dropTable( $table );
 		}
 	}
+
+	public static function onBeforeCreateEchoEvent(
+		&$notifications, &$notificationCategories, &$icons
+	) {
+		$notifications['user-renamed'] = [
+			'category' => 'system-emailonly',
+			'group' => 'positive',
+			'section' => 'alert',
+			'presentation-model' => 'EchoUserRenamedPresentationModel',
+		];
+	}
 }
