@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c45d618b_227ff476",
+        "filename": "i18n/en.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-10-29T02:33:42Z",
+      "side": 1,
+      "message": "Maybe include a link to describe vanishing?",
+      "revId": "c42818c8644f593aa9c36e59f0b0780c7275a32a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14574363_5385d433",
+        "filename": "includes/specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-10-29T02:33:42Z",
+      "side": 1,
+      "message": "Why not `if ( $value \u003d\u003d\u003d null || $alldata[\u0027vanish\u0027] \u003d\u003d\u003d true )` rather than having 2 checks?",
+      "range": {
+        "startLine": 235,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 3
+      },
+      "revId": "c42818c8644f593aa9c36e59f0b0780c7275a32a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1a8af38_ebdeaee2",
+        "filename": "modules/ext.centralauth.globalrenamerequest.js",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-10-29T02:33:42Z",
+      "side": 1,
+      "message": "This wasn\u0027t disabled",
+      "range": {
+        "startLine": 15,
+        "startChar": 18,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "c42818c8644f593aa9c36e59f0b0780c7275a32a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
