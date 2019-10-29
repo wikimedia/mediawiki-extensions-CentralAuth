@@ -1001,7 +1001,7 @@ class CentralAuthHooks {
 		);
 
 		if ( $count === 0 ) { // we couldn't load the log entry
-			$out->wrapWikiMsg( '<div class="mw-warning-with-logexcerpt">$1</div>',
+			$out->wrapWikiMsg( '<div class="warningbox mw-warning-with-logexcerpt">$1</div>',
 				[ 'centralauth-contribs-locked', $user ]
 			);
 		}
