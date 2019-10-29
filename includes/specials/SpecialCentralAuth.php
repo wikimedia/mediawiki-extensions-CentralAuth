@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Block\Restriction\PageRestriction;
+use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\MediaWikiServices;
 
 class SpecialCentralAuth extends SpecialPage {
@@ -592,16 +594,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
 		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
-			$flags = [];
-			foreach (
-				[ 'anononly', 'nocreate', 'noautoblock', 'noemail', 'nousertalk' ] as $option
-			) {
-				if ( $row['block-' . $option] ) {
-					$flags[] = $option;
-				}
-			}
-			$flags = implode( ',', $flags );
-			$optionMessage = BlockLogFormatter::formatBlockFlags( $flags, $this->getLanguage() );
+			$optionMessage = $this->formatBlockParams( $row );
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->text();
 			} else {
@@ -611,10 +604,6 @@ class SpecialCentralAuth extends SpecialPage {
 
 				$text = $this->msg( 'centralauth-admin-blocked2', $expiry, $expiryd, $expiryt )
 					->text();
-			}
-
-			if ( $flags ) {
-				$additionalHtml .= ' ' . $optionMessage;
 			}
 
 			if ( $row['block-reason'] ) {
@@ -629,8 +618,11 @@ class SpecialCentralAuth extends SpecialPage {
 				$msg = $this->msg( 'centralauth-admin-blocked-reason' );
 				$msg->rawParams( '<span class="plainlinks">' . $reason . '</span>' );
 
-				$additionalHtml .= ' ' . $msg->parse();
+				$additionalHtml .= HTML::rawElement( 'br' ) . $msg->parse();
 			}
+
+			$additionalHtml .= ' ' . $optionMessage;
+
 		} else {
 			$text = $this->msg( 'centralauth-admin-notblocked' )->text();
 		}
@@ -642,6 +634,109 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->msg( 'centralauth-admin-blocklog' )->text(),
 			'page=User:' . urlencode( $this->mUserName )
 		) . $additionalHtml;
+	}
+
+	/**
+	 * Format a block's parameters.
+	 *
+	 * @see BlockListPager::formatValue()
+	 *
+	 * @param array $row
+	 * @return string
+	 */
+	private function formatBlockParams( $row ) {
+		global $wgConf;
+
+		// Ensure all the data is loaded before trying to use.
+		$wgConf->loadFullData();
+
+		$properties = [];
+
+		if ( $wgConf->get( 'wgEnablePartialBlocks', $row['wiki'] ) && $row['block-sitewide'] ) {
+			$properties[] = $this->msg( 'blocklist-editing-sitewide' )->escaped();
+		}
+
+		if ( !$row['block-sitewide'] && $row['block-restrictions'] ) {
+			$list = $this->getRestrictionListHTML( $row );
+			if ( $list ) {
+				$properties[] = $this->msg( 'blocklist-editing' )->escaped() . $list;
+			}
+		}
+
+		$options = [
+			'anononly' => 'anononlyblock',
+			'nocreate' => 'createaccountblock',
+			'noautoblock' => 'noautoblockblock',
+			'noemail' => 'emailblock',
+			'nousertalk' => 'blocklist-nousertalk',
+		];
+		foreach ( $options as $option => $msg ) {
+			if ( $row['block-' . $option] ) {
+				$properties[] = $this->msg( $msg )->escaped();
+			}
+		}
+
+		if ( !$properties ) {
+			return '';
+		}
+
+		return Html::rawElement(
+			'ul',
+			[],
+			implode( '', array_map( function ( $prop ) {
+				return Html::rawElement(
+					'li',
+					[],
+					$prop
+				);
+			}, $properties ) )
+		);
+	}
+
+	/**
+	 * Get Restriction List HTML
+	 *
+	 * @see BlockListPager::getRestrictionListHTML()
+	 *
+	 * @param array $row
+	 *
+	 * @return string
+	 */
+	private function getRestrictionListHTML( array $row ) {
+		$count = array_reduce( $row['block-restrictions'], function ( $carry, $restriction ) {
+			$carry[$restriction->getType()] = $carry[$restriction->getType()] + 1;
+			return $carry;
+		}, [
+			PageRestriction::TYPE => 0,
+			NamespaceRestriction::TYPE => 0,
+		] );
+
+		$restrictions = [];
+		foreach ( $count as $type => $value ) {
+			if ( $value === 0 ) {
+				continue;
+			}
+
+			$restrictions[] = Html::rawElement(
+				'li',
+				[],
+				self::foreignLink(
+					$row['wiki'],
+					'Special:BlockList/' . urlencode( $row['name'] ),
+					$this->msg( 'centralauth-block-editing-' . $type, $value )->text()
+				)
+			);
+		}
+
+		if ( count( $restrictions ) === 0 ) {
+			return '';
+		}
+
+		return Html::rawElement(
+			'ul',
+			[],
+			implode( '', $restrictions )
+		);
 	}
 
 	/**
