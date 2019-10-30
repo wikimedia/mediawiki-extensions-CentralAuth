@@ -93,7 +93,9 @@ class CentralAuthPrimaryAuthenticationProvider
 			class_exists( AntiSpoofAuthenticationRequest::class )
 		) {
 			$user = User::newFromName( $options['username'] ) ?: new User();
-			if ( $user->isAllowed( 'override-antispoof' ) ) {
+			if ( MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $user, 'override-antispoof' )
+			) {
 				$ret[] = new AntiSpoofAuthenticationRequest();
 			}
 		}
@@ -453,8 +455,8 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
 		if ( $this->antiSpoofAccounts && class_exists( AntiSpoofAuthenticationRequest::class ) &&
-			empty( $options['creating'] ) &&
-			!RequestContext::getMain()->getUser()->isAllowed( 'override-antispoof' )
+			empty( $options['creating'] ) && !MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( RequestContext::getMain()->getUser(), 'override-antispoof' )
 		) {
 			$status->merge( CentralAuthAntiSpoofHooks::testNewAccount(
 				$user, new User, true, false, new \Psr\Log\NullLogger

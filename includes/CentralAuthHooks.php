@@ -3,6 +3,7 @@
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionInfo;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -335,7 +336,9 @@ class CentralAuthHooks {
 
 		$manageButtons = [];
 
-		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
+		if ( $unattached && MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $user, 'centralauth-merge' )
+		) {
 			// Add "Manage your global account" button
 			$manageButtons[] = new \OOUI\ButtonWidget( [
 				'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),
