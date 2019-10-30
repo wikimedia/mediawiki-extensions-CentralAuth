@@ -115,6 +115,8 @@
 	"centralauth-attach-text": "Оваа сметка сè уште ме е присоединета кон обединетата сметка.\nАко и глобалната сметка е ваша, тогаш можете да ја споите со оваа сметка со внесување на лозинката на глобалната сметка:",
 	"centralauth-attach-title": "Потврди ја сметката",
 	"centralauth-block-already-locked": "Сметката [[Special:CentralAuth/$1|$1]] веќе е глобално заклучена.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|страница|страници}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|имен. простор|имен. простори}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Веќе сте месно најавени",
 	"centralauth-centralautologin-badparams": "Укажаните параметри за заверка се неважечки",
 	"centralauth-centralautologin-badstate": "Неважечка состојба „$1“",

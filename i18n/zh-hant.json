@@ -142,6 +142,8 @@
 	"centralauth-attach-text": "此帳號尚未遷移到整合帳號中，\n若全域帳號是屬於您的，您可以在此輸入全域帳號的密碼以合併此帳號：",
 	"centralauth-attach-title": "確認帳號",
 	"centralauth-block-already-locked": "帳號 [[Special:CentralAuth/$1|$1]] 已被全域鎖定。",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|個頁面|個頁面}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|個命名空間|個命名空間}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "你已在本地登入",
 	"centralauth-centralautologin-badparams": "指定的身份認證參數無效",
 	"centralauth-centralautologin-badstate": "無效的狀態 \"$1\"",

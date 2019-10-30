@@ -45,7 +45,8 @@
 			"Yekrats",
 			"דולב",
 			"Bencemac",
-			"BadDog"
+			"BadDog",
+			"Verdy p"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.\n\nSee also:\n* {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.",
@@ -445,7 +446,7 @@
 	"globalrenameprogress": "{{doc-special|GlobalRenameProgress}}",
 	"globalrenameprogress-legend": "Label for fieldset around the form on Special:GlobalRenameProgress",
 	"globalrenamequeue": "{{doc-special|GlobalRenameQueue}}",
-	"globalrenamequeue-action-address": "Link text. '''NOTE: \"Address\" is a verb, used here in the meaning of \"[Click here to] address this global rename request\".'''",
+	"globalrenamequeue-action-address": "Link text.\n'''NOTE : “Address” is a verb, used here in the meaning of “[Click here to] address this global rename request”.'''",
 	"globalrenamequeue-action-view": "Link text.\n{{Identical|View}}",
 	"globalrenamequeue-column-row-actions": "Table header.\n{{Identical|Action}}",
 	"globalrenamequeue-column-rq-completed-ts": "Table header. The date of closing the request.",

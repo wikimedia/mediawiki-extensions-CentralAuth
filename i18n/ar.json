@@ -138,6 +138,8 @@
 	"centralauth-attach-text": "هذا الحساب لم يتم دمجه بعد مع الحساب الموحد.\nإذ كان الحساب العام لك أيضا، يمكنك دمج هذا الحساب إذا كتبت كلمة سر الحساب العام:",
 	"centralauth-attach-title": "تأكيد الحساب",
 	"centralauth-block-already-locked": "الحساب [[Special:CentralAuth/$1|$1]] مقفل بالفعل على المستوى العام.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|صفحة|صفحات}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|نطاق|نطاقات}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "أنت مسجل بالفعل بحساب محلي",
 	"centralauth-centralautologin-badparams": "متثابتات الاستيثاق المحددة غير صالحة",
 	"centralauth-centralautologin-badstate": "حالة غير صالحة «$1»",
