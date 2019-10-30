@@ -1622,6 +1622,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	public function adminLockHide( $setLocked, $setHidden, $reason, IContextSource $context ) {
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
 		$isLocked = $this->isLocked();
 		$oldHiddenLevel = $this->getHiddenLevel();
 		$lockStatus = $hideStatus = null;
@@ -1630,7 +1631,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( is_null( $setLocked ) ) {
 			$setLocked = $isLocked;
-		} elseif ( !$context->getUser()->isAllowed( 'centralauth-lock' ) ) {
+		} elseif ( !$pm->userHasRight( $context->getUser(), 'centralauth-lock' ) ) {
 			return Status::newFatal( 'centralauth-admin-not-authorized' );
 		}
 
@@ -1638,7 +1639,8 @@ class CentralAuthUser implements IDBAccessObject {
 			$setHidden = $oldHiddenLevel;
 		} elseif ( $setHidden != self::HIDDEN_NONE
 			|| $oldHiddenLevel != self::HIDDEN_NONE ) {
-			if ( !$context->getUser()->isAllowed( 'centralauth-oversight' ) ) {
+			if ( !$pm->userHasRight( $context->getUser(), 'centralauth-oversight' )
+			) {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
 				return Status::newFatal(

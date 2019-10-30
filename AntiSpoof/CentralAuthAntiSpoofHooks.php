@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Psr\Log\LoggerInterface;
 
 class CentralAuthAntiSpoofHooks {
@@ -21,7 +22,9 @@ class CentralAuthAntiSpoofHooks {
 		if ( !$enable ) {
 			$mode = 'LOGGING ';
 			$active = false;
-		} elseif ( $override && $creator->isAllowed( 'override-antispoof' ) ) {
+		} elseif ( $override && MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $creator, 'override-antispoof' )
+		) {
 			$mode = 'OVERRIDE ';
 			$active = false;
 		} else {

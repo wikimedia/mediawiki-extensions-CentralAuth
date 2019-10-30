@@ -45,7 +45,9 @@ class SpecialMultiLock extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 
-		$this->mCanOversight = $this->getUser()->isAllowed( 'centralauth-oversight' );
+		$this->mCanOversight = MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userHasRight( $this->getUser(), 'centralauth-oversight' );
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod', '' );
@@ -421,7 +423,9 @@ class SpecialMultiLock extends SpecialPage {
 
 		$guard = null;
 		if ( $this->getRequest()->getCheck( 'markasbot' ) ) {
-			if ( !$this->getUser()->isAllowed( 'bot' ) ) {
+			if ( !MediaWikiServices::getInstance()->getPermissionManager()
+				->userHasRight( $this->getUser(), 'bot' )
+			) {
 				$guard = MediaWikiServices::getInstance()->getPermissionManager()
 					->addTemporaryUserRights( $this->getUser(), 'bot' );
 			}

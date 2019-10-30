@@ -9,6 +9,7 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
+use MediaWiki\MediaWikiServices;
 
 /**
  * Special page to allow managing global groups
@@ -39,7 +40,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return false;
 		}
 
-		return $user->isAllowed( 'globalgrouppermissions' );
+		return MediaWikiServices::getInstance()->getPermissionManager()
+			->userHasRight( $user, 'globalgrouppermissions' );
 	}
 
 	public function execute( $subpage ) {
@@ -265,7 +267,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-name'] = htmlspecialchars( $group );
 		}
 
-		if ( $this->getUser()->isAllowed( 'editinterface' ) ) {
+		if ( MediaWikiServices::getInstance()->getPermissionManager()
+			->userHasRight( $this->getUser(), 'editinterface' )
+		) {
 			# Show edit link only to user with the editinterface right
 			$fields['centralauth-editgroup-display'] = $this->msg(
 				'centralauth-editgroup-display-edit',
@@ -357,7 +361,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$attribs['disabled'] = 'disabled';
 		}
 
-		$rights = User::getAllRights();
+		$rights = MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions();
 		sort( $rights );
 
 		foreach ( $rights as $right ) {
@@ -483,7 +487,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$addRights = [];
 		$removeRights = [];
 		$oldRights = $this->getAssignedRights( $group );
-		$allRights = User::getAllRights();
+		$allRights = MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions();
 
 		foreach ( $allRights as $right ) {
 			$alreadyAssigned = in_array( $right, $oldRights );
