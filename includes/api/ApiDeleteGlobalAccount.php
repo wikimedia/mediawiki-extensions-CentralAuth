@@ -22,6 +22,8 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * API module to delete a global account.
  *
@@ -37,7 +39,8 @@ class ApiDeleteGlobalAccount extends ApiBase {
 
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
-			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
+			$globalUser->isOversighted() && !$this->getPermissionManager()
+				->userHasRight( $this->getUser(), 'centralauth-oversight' )
 		) {
 			$this->dieWithError( [ 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ] );
 
@@ -89,7 +92,9 @@ class ApiDeleteGlobalAccount extends ApiBase {
 
 	public static function getToken() {
 		global $wgUser;
-		if ( !$wgUser->isAllowed( 'centralauth-unmerge' ) ) {
+		if ( !MediaWikiServices::getInstance()->getPermissionManager()
+			->userHasRight( $wgUser, 'centralauth-unmerge' )
+		) {
 			return false;
 		}
 

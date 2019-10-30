@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -235,7 +236,9 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	public static function getInProgressRenames( User $forUser ) {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$tables = [ 'renameuser_status' ];
-		if ( !$forUser->isAllowed( 'centralauth-oversight' ) ) {
+		if ( !MediaWikiServices::getInstance()->getPermissionManager()
+			->userHasRight( $forUser, 'centralauth-oversight' )
+		) {
 			$join_conds = [ 'globaluser' => [
 				'INNER JOIN', [ 'gu_name=ru_newname', 'gu_hidden=""' ]
 			] ];

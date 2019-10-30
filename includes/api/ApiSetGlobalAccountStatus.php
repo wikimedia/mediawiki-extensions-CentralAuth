@@ -22,6 +22,8 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * API module to lock/hide a global account.
  *
@@ -38,7 +40,8 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
-			$globalUser->isOversighted() && !$this->getUser()->isAllowed( 'centralauth-oversight' )
+			$globalUser->isOversighted() && !$this->getPermissionManager()
+				->userHasRight( $this->getUser(), 'centralauth-oversight' )
 		) {
 			$this->dieWithError(
 				[ 'nosuchusershort', wfEscapeWikiText( $globalUser->getName() ) ], 'nosuchuser'
@@ -140,7 +143,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 	public static function getToken() {
 		global $wgUser;
-		if ( !$wgUser->isAllowed( 'centralauth-lock' ) ) {
+		if ( !MediaWikiServices::getInstance()->getPermissionManager()
+			->userHasRight( $wgUser, 'centralauth-lock' )
+		) {
 			return false;
 		}
 

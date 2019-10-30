@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Setup database tests for centralauth
  * @group CentralAuthDB
@@ -93,8 +95,9 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 		$user1 = User::newFromName( 'UTCentralAuthIdLookup1' );
 		$user2 = User::newFromName( 'UTCentralAuthIdLookup2' );
 
-		$this->assertTrue( $user1->isAllowed( 'centralauth-oversight' ), 'sanity check' );
-		$this->assertFalse( $user2->isAllowed( 'centralauth-oversight' ), 'sanity check' );
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
+		$this->assertTrue( $pm->userHasRight( $user1, 'centralauth-oversight' ), 'sanity check' );
+		$this->assertFalse( $pm->userHasRight( $user2, 'centralauth-oversight' ), 'sanity check' );
 
 		$this->assertSame( [], $lookup->lookupCentralIds( [] ) );
 
@@ -118,8 +121,9 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 		$user1 = User::newFromName( 'UTCentralAuthIdLookup1' );
 		$user2 = User::newFromName( 'UTCentralAuthIdLookup2' );
 
-		$this->assertTrue( $user1->isAllowed( 'centralauth-oversight' ), 'sanity check' );
-		$this->assertFalse( $user2->isAllowed( 'centralauth-oversight' ), 'sanity check' );
+		$pm = MediaWikiServices::getInstance()->getPermissionManager();
+		$this->assertTrue( $pm->userHasRight( $user1, 'centralauth-oversight' ), 'sanity check' );
+		$this->assertFalse( $pm->userHasRight( $user2, 'centralauth-oversight' ), 'sanity check' );
 
 		$this->assertSame( [], $lookup->lookupUserNames( [] ) );
 

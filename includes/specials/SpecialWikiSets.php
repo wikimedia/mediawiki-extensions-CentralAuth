@@ -26,7 +26,9 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	public function execute( $subpage ) {
-		$this->mCanEdit = $this->getUser()->isAllowed( 'globalgrouppermissions' );
+		$this->mCanEdit = MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userHasRight( $this->getUser(), 'globalgrouppermissions' );
 		$req = $this->getRequest();
 		$tokenOk = $req->wasPosted()
 			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) );
