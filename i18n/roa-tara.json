@@ -113,6 +113,8 @@
 	"centralauth-attach-text": "Stu cunde non g'ha state angore migrate sus a 'nu cunde aunificate.\nCe 'u cunde globbale jè 'u tue, tu puè scuagghià stu cunde ce tu mitte 'a password d'u cunde globbale:",
 	"centralauth-attach-title": "Conferme 'u cunde de l'utende",
 	"centralauth-block-already-locked": "L'utende [[Special:CentralAuth/$1|$1]] jè ggià bloccate globbalmende.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pàgene|pàggene}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|namespace}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Tu è ggià trasute in locale",
 	"centralauth-centralautologin-badparams": "Le parametre de autendicazione specificate non ge sò valide",
 	"centralauth-centralautologin-badstate": "State invalide \"$1\"",

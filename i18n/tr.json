@@ -26,7 +26,8 @@
 			"Vito Genovese",
 			"Hedda",
 			"TmY e12",
-			"ToprakM"
+			"ToprakM",
+			"BaRaN6161 TURK"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Kullanıcının olduğu küresel gruplar",
@@ -129,6 +130,8 @@
 	"centralauth-attach-text": "Bu hesap daha birleşik hesaba taşınmadı.\nEğer küresel hesap da sizinse, küresel hesap parolasını girerek bu hesabı birleştirebilirsiniz:",
 	"centralauth-attach-title": "Hesabı doğrula",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] hesabı zaten küresel olarak kilitli.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|sayfa|sayfa}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|ad alanı|d alanıa}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Zaten yerel olarak oturum açtınız",
 	"centralauth-centralautologin-badparams": "Belirtilen kimlik doğrulama parametreleri geçersiz",
 	"centralauth-centralautologin-badstate": "Geçersiz durum \"$1\"",

@@ -132,6 +132,7 @@
 	"centralauth-attach-text": "Detta konto har ännu inte anslutits till det gemensamma kontot. Om det gemensamma kontot är ditt, kan du ansluta det här kontot genom att ange det gemensamma kontots lösenord:",
 	"centralauth-attach-title": "Bekräfta konto",
 	"centralauth-block-already-locked": "Kontot [[Special:CentralAuth/$1|$1]] är redan globalt låst.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|sida|sidor}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Du är redan inloggad lokalt",
 	"centralauth-centralautologin-badparams": "Angivna autentiseringsparametrar var ogiltiga",
 	"centralauth-centralautologin-badstate": "Ogiltigt tillstånd \"$1\"",
