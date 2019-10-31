@@ -920,7 +920,6 @@ class CentralAuthHooks {
 			$hideUserBlock = new SystemBlock( [
 				'address' => $user,
 				'hideName' => true,
-				'byText' => 'MediaWiki default',
 				'systemBlock' => 'hideuser',
 			] );
 
@@ -936,7 +935,6 @@ class CentralAuthHooks {
 			$blocks[] = $hideUserBlock;
 			$block = new CompositeBlock( [
 				'address' => $ip,
-				'byText' => 'MediaWiki default',
 				'reason' => new Message( 'blockedtext-composite-reason' ),
 				'originalBlocks' => $blocks,
 			] );
