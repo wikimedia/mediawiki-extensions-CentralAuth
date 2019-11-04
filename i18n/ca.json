@@ -126,6 +126,7 @@
 	"centralauth-attach-text": "Aquest compte no ha migrat al sistema unificat.\nSi el compte global és vostre, podeu associar-hi aquest compte escrivint la contrasenya:",
 	"centralauth-attach-title": "Confirma el compte",
 	"centralauth-block-already-locked": "El compte [[Special:CentralAuth/$1|$1]] ja està blocat globalment.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pàgina|pàgines}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Ja esteu connectat localment",
 	"centralauth-centralautologin-badparams": "Els paràmetres d'autenticació especificats no són vàlids",
 	"centralauth-centralautologin-badstate": "L'estat «$1» no és vàlid",

@@ -96,7 +96,7 @@
 	"centralauth-mergeaccount-desc": "Кулланучы Single User Login'ның берничә төрле хисап  [[Special:MergeAccount|язмаларны берләштерү]]",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|минут}} элек",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ай}} элек",
-	"centralauth-not-owner-text": "«$1» - кулланучы исеме автоматик рәвештә $2 проектында теркәлде.\n\nӘгәрдә бу Сез икән, Сезгә үзегезнең серсүзне кертергә кирә булачак, анын ярдәмендә Сез кулланучы язмаларын берләштереп бетерә алачаксыз:",
+	"centralauth-not-owner-text": "«$1» кулланучы исеме автоматик рәвештә $2 проектында теркәлде.\n\nӘгәр дә бу сез икән, сезгә үзегезнең серсүзне кертергә кирәк булачак, аның ярдәмендә сез кулланучы язмаларын берләштереп бетерә алачаксыз:",
 	"centralauth-notice-dryrun": "<div class='successbox'>Күнекмә режимы</div><br clear='all'/>",
 	"centralauth-prefs-count-attached": "Сезнең хисап язмасы $1 {{PLURAL:$1|вики-проекта}} актив.",
 	"centralauth-prefs-count-unattached": "Расланмаган хисап язмалары $1 {{PLURAL:$1|вики-проекта}} тора.",

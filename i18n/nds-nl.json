@@ -5,7 +5,7 @@
 			"Slomox"
 		]
 	},
-	"centralauth": "Globaal gebrukersbeheer",
+	"centralauth": "Beheyr van globale gebrukerskontos",
 	"centralauth-account-exists": "Disse gebruker kan niet an-emaakt wörden: de gebrukersnaam is al in gebruuk in t systeem veur samenevoegd anmelden.",
 	"centralauth-admin-already-unmerged": "$1 overesleugen. Heurt al niet meer bie mekaar",
 	"centralauth-admin-bad-input": "Ongeldige samenvoegingsseleksie",
@@ -28,6 +28,7 @@
 	"centralauth-editgroup-members": "Lejenlieste:",
 	"centralauth-editgroup-noset": "(gien)",
 	"centralauth-editgroup-reason": "Reden:",
+	"centralauth-editset": "Wikigruppen",
 	"centralauth-finish-login": "Anmelden",
 	"centralauth-finish-password": "Wachtwoord:",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bydrage|bydragen}} up $2",
@@ -58,10 +59,12 @@
 	"centralauth-rightslog-name": "Globaal rechtenlogboek",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonde|sekonden}} elejen",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jaor|jaor}} elejen",
+	"globalgroupmembership": "Lidmåtskap van globale gruppen",
+	"globalgrouppermissions": "Beheyr van globale gebrukersgruppen",
 	"globalrenameprogress": "Staotus van globale herneuming",
 	"globalrenameprogress-legend": "Staotus van globale herneuming laoten zien",
 	"globalrenamerequest": "Versöök üm gebrukerskonto globaal te hernömen",
 	"globalrenamerequest-legend": "Uniforme naamswieziging anvragen",
-	"globalusers": "Gebrukerslieste (globaal)",
+	"globalusers": "Globale gebrukerslyste",
 	"mergeaccount": "Status vöär et samenvogen van gebrukerskontos"
 }

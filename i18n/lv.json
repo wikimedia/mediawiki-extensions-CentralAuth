@@ -67,6 +67,8 @@
 	"centralauth-antispoof-desc": "Pievieno AntiSpoof tehnoloģiju CentralAuth",
 	"centralauth-attach-submit": "Migrēt kontu",
 	"centralauth-attach-title": "Apstiprināt kontu",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|lapas|lapa|lapas}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|vārdtelpas|vārdtelpa|vārdtelpas}}",
 	"centralauth-complete": "Kontu apvienošana pabeigta!",
 	"centralauth-complete-text": "Tu tagad vari ielogoties (ieiet iekšā) jebkurā {{int:Centralauth-groupname}} projektā neveidojot jaunu kontu.",
 	"centralauth-days-ago": "Pirms $1 {{PLURAL:$1|dienām|dienas|dienām}}",

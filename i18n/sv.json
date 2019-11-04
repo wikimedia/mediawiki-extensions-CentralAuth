@@ -133,6 +133,7 @@
 	"centralauth-attach-title": "Bekräfta konto",
 	"centralauth-block-already-locked": "Kontot [[Special:CentralAuth/$1|$1]] är redan globalt låst.",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|sida|sidor}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|namnrymd|namnrymder}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Du är redan inloggad lokalt",
 	"centralauth-centralautologin-badparams": "Angivna autentiseringsparametrar var ogiltiga",
 	"centralauth-centralautologin-badstate": "Ogiltigt tillstånd \"$1\"",

@@ -121,6 +121,8 @@
 	"centralauth-attach-text": "חשבון זה עדיין לא מוזג לחשבון הכללי.\nאם החשבון הגלובלי שייך לך, באפשרותך למזג חשבון זה על־ידי הקלדת הסיסמה של החשבון:",
 	"centralauth-attach-title": "אימות החשבון",
 	"centralauth-block-already-locked": "החשבון [[Special:CentralAuth/$1|$1]] כבר נעול גלובלית.",
+	"centralauth-block-editing-page": "{{PLURAL:$1|דף אחד|$1 דפים}}",
+	"centralauth-block-editing-ns": "{{PLURAL:$1|מרחב שם אחד|$1 מרחבי השם}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "כבר נכנסת מקומית",
 	"centralauth-centralautologin-badparams": "הפרמטרים של האימות שסופקו היו בלתי־תקינים",
 	"centralauth-centralautologin-badstate": "מצב בלתי־תקין: \"$1\"",

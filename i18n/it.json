@@ -130,6 +130,7 @@
 	"centralauth-attach-text": "Questa utenza non è ancora stata collegata all'utenza globale. Se sei il titolare dell'utenza globale, puoi collegare questa utenza inserendo la password dell'utenza globale:",
 	"centralauth-attach-title": "Conferma l'account",
 	"centralauth-block-already-locked": "L'utente [[Special:CentralAuth/$1|$1]] è già bloccato globalmente.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|pagine}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|namespace}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Hai già effettuato l'accesso localmente.",
 	"centralauth-centralautologin-badparams": "I parametri di autenticazione specificati non sono validi",
