@@ -75,7 +75,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mBeingRenamed;
 	/** @var string[] */
 	private $mBeingRenamedArray;
-	/** @var array|null */
+	/** @var array[]|null */
 	protected $mAttachedInfo;
 	/** @var int */
 	protected $mCasToken = 0;
@@ -2359,7 +2359,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Get information about each local user attached to this account
 	 *
-	 * @return array Map of database name to property table with members:
+	 * @return array[] Map of database name to property table with members:
 	 *    wiki                  The wiki ID (database name)
 	 *    attachedTimestamp     The MW timestamp when the account was attached
 	 *    attachedMethod        Attach method: password, mail or primary
@@ -2402,7 +2402,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Does the cheap part of the lookup by checking the cross-wiki localuser table,
 	 * and returns attach time and method.
 	 *
-	 * @return array
+	 * @return array[]
 	 */
 	protected function queryAttachedBasic() {
 		if ( $this->mAttachedInfo !== null ) {
