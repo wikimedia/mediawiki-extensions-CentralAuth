@@ -1,19 +1,7 @@
 ( function () {
-	var $methodHint;
+	var methodHint;
 
 	function showMethodHint( methodName, e ) {
-		var hintHtml;
-
-		if ( !$methodHint ) {
-			$methodHint = $( '<div>' )
-				.addClass( 'merge-method-help-div' )
-				.hide()
-				.on( 'click', function () {
-					// eslint-disable-next-line no-jquery/no-fade
-					$( this ).fadeOut();
-				} );
-			mw.util.$content.append( $methodHint );
-		}
 
 		// Give grep a chance to find the usages:
 		// centralauth-merge-method-primary, centralauth-merge-method-empty,
@@ -24,7 +12,7 @@
 		// centralauth-merge-method-mail-desc, centralauth-merge-method-password-desc,
 		// centralauth-merge-method-admin-desc, centralauth-merge-method-new-desc,
 		// centralauth-merge-method-login-desc
-		hintHtml = mw.html.element(
+		var hintHtml = mw.html.element(
 			'p', {
 				class: 'merge-method-help-name'
 			},
@@ -32,14 +20,24 @@
 		) +
 		mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
 
-		// eslint-disable-next-line no-jquery/no-fade
-		$methodHint
-			.html( hintHtml )
-			.css( {
-				left: e.pageX + 'px',
-				top: e.pageY + 'px'
-			} )
-			.fadeIn();
+		if ( !methodHint ) {
+			methodHint = new OO.ui.PopupWidget( {
+				$content: $( '<div>' ).html( hintHtml ),
+				padded: true,
+				anchor: false,
+				align: 'force-right',
+				autoClose: true,
+				$autoCloseIgnore: e.target
+			} );
+			$( e.target ).after( methodHint.$element );
+		}
+
+		if ( !methodHint.isVisible() ) {
+			methodHint.toggle( true );
+		} else {
+			methodHint.toggle( false );
+		}
+
 	}
 
 	$( function () {
