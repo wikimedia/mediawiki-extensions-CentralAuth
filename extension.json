@@ -263,7 +263,8 @@
 			"styles": "ext.centralauth.css",
 			"dependencies": [
 				"mediawiki.util",
-				"jquery.spinner"
+				"jquery.spinner",
+				"oojs-ui-core"
 			],
 			"messages": [
 				"centralauth-merge-method-primary",
