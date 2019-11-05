@@ -119,6 +119,8 @@
 	"centralauth-attach-text": "Belki ena karber sistemê cikewtişê yewî ra transfer biyo.\nEka eno hesabê tu yo ti eşkeno paralo xo binus u ena hesab yew bike.",
 	"centralauth-attach-title": "Hesabi araşt kı",
 	"centralauth-block-already-locked": "Karber [[Special:CentralAuth/$1|$1]] ğora globald kılitın no.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pele|peli}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|cayê nameyi|cayê nameyan}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Hesabê şıma naca de xora akerdeyo",
 	"centralauth-centralautologin-badstate": "Weziyeto bêhukım \"$1\"",
 	"centralauth-centralautologin-lostsession": "Melumatê hesabi biyo vindi",

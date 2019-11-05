@@ -110,6 +110,7 @@
 	"centralauth-attach-text": "Dëse Benotzerkont gouf nach net mat dem globale Benotzerkont zesummegefouert.\nWann de globale Benotzerkont Ären och ass, da kënnt Dir dëse Benotzerkont zesummeféieren wann Dir d'Passwuert vum globale Benotzerkont ugitt:",
 	"centralauth-attach-title": "Benotzerkont confirméieren",
 	"centralauth-block-already-locked": "De Benotzerkont [[Special:CentralAuth/$1|$1]] ass scho global gespaart.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|Säit|Säiten}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Dir sidd scho lokal ageloggt.",
 	"centralauth-centralautologin-badstate-central": "Status \"$1\" ass net valabel op der zentraler Wiki",
 	"centralauth-centralautologin-badstate-local": "Status \"$1\" ass net valabel op der lokaler Wiki",

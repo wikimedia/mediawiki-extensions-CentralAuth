@@ -141,6 +141,7 @@
 	"centralauth-attach-title": "Confirmar conta",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] já está bloqueada globalmente.",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|página|páginas}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espaço nominal|espaços nominais}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Você já está registrado localmente",
 	"centralauth-centralautologin-badparams": "Os parâmetros de autenticação especificados eram inválidos",
 	"centralauth-centralautologin-badstate": "Estado inválido \"$1\"",

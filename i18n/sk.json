@@ -332,6 +332,7 @@
 	"globalrenamequeue-column-rq-newname": "Požadované používateľské meno",
 	"globalrenamequeue-column-rq-status": "Stav",
 	"globalrenamequeue-column-rq-wiki": "Lokálna wiki",
+	"globalrenamequeue-desc": "Spracovanie žiadostí o globálne premenovanie",
 	"globalrenamequeue-form-newname": "Požadované používateľské meno:",
 	"globalrenamequeue-form-status": "Stav:",
 	"globalrenamequeue-form-status-all": "všetko",

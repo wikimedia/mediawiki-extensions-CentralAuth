@@ -140,6 +140,7 @@
 	"centralauth-attach-title": "계정 확인",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] 계정는 이미 통합 계정이 잠겨 있습니다.",
 	"centralauth-block-editing-page": "{{PLURAL:$1|문서}} $1개",
+	"centralauth-block-editing-ns": "{{PLURAL:$1|이름공간}} $1개",
 	"centralauth-centralautologin-alreadyloggedinlocally": "이미 로컬에 로그인하고 있습니다",
 	"centralauth-centralautologin-badparams": "지정한 인증 변수가 잘못되었습니다",
 	"centralauth-centralautologin-badstate": "\"$1\" 상태가 잘못되었습니다",
