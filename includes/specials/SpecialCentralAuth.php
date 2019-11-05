@@ -512,7 +512,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$attachedTimestamp = $row['attachedTimestamp'] ?? '';
 
 		$html .= $this->getAttachedTimestampField( $attachedTimestamp ) .
-			Xml::openElement( 'td', [ 'style' => "text-align: center;" ] );
+			Xml::openElement( 'td' );
 
 		if ( empty( $row['attachedMethod'] ) ) {
 			$html .= $this->msg( 'centralauth-admin-unattached' )->parse();
