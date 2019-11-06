@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49a4aad4_e73f7b3a",
+        "filename": "extension.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2019-11-06T10:04:05Z",
+      "side": 1,
+      "message": "You\u0027d only need oojs-ui-core here for PopupWidget…",
+      "revId": "72be40aa65a48267a56259c5b4ccc09381293431",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
