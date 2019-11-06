@@ -35,128 +35,141 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
 	public function execute() {
 		$params = $this->extractRequestParams();
-		$prop = array_flip( (array)$params['prop'] );
-		if ( is_null( $params['user'] ) && is_null( $params['id'] ) ) {
-			$params['user'] = $this->getUser()->getName();
+		$users = (array)$params['user'];
+		$ids = (array)$params['id'];
+
+		if ( count( $users ) === 0 && count( $ids ) === 0 ) {
+			$users = [ $this->getUser()->getName() ];
+		} elseif ( count( $users ) === 0 ) {
+			$users = [];
+			foreach ( $ids as $id ) {
+				$user = CentralAuthUser::newFromId( $id );
+				if ( $user === false ) {
+					$this->dieWithError( [ 'apierror-invaliduserid', wfEscapeWikiText( $id ) ] );
+				}
+				$users[] = $user->getName();
+			}
 		}
 
-		if ( is_null( $params['user'] ) ) {
-			$user = CentralAuthUser::newFromId( $params['id'] );
-			if ( $user === false ) {
-				$this->dieWithError( [ 'apierror-invaliduserid', wfEscapeWikiText( $params['id'] ) ] );
-			}
-		} else {
-			$username = User::getCanonicalName( $params['user'] );
+		$result = $this->getResult();
+		$prop = array_flip( (array)$params['prop'] );
+		foreach ( $users as $user ) {
+			$username = User::getCanonicalName( $user );
 			if ( $username === false ) {
-				$this->dieWithError( [ 'apierror-invaliduser', wfEscapeWikiText( $params['user'] ) ] );
+				$this->dieWithError( [ 'apierror-invaliduser', wfEscapeWikiText( $user ) ] );
 			}
 			$user = CentralAuthUser::getInstanceByName( $username );
-		}
 
-		// Add basic info
-		$result = $this->getResult();
-		$data = [];
-		$userExists = $user->exists();
+			// Add basic info
+			$data = [];
+			$userExists = $user->exists();
 
-		if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE ||
-			$this->getPermissionManager()->userHasRight( $this->getUser(), 'centralauth-oversight' ) )
-		) {
-			// The global user exists and it's not hidden or the current user is allowed to see it
-			$data['home'] = $user->getHomeWiki();
-			$data['id'] = $user->getId();
-			$data['registration'] = wfTimestamp( TS_ISO_8601, $user->getRegistration() );
-			$data['name'] = $user->getName();
+			if ( $userExists && ( $user->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE ||
+				$this->getPermissionManager()->userHasRight( $this->getUser(), 'centralauth-oversight' ) )
+			) {
+				// The global user exists and it's not hidden or the current user is allowed to see it
+				$data['home'] = $user->getHomeWiki();
+				$data['id'] = $user->getId();
+				$data['registration'] = wfTimestamp( TS_ISO_8601, $user->getRegistration() );
+				$data['name'] = $user->getName();
 
-			if ( $user->isLocked() ) {
-				$data['locked'] = true;
-			}
-			if ( $user->isHidden() ) {
-				$data['hidden'] = true;
-			}
-		} else {
-			// The user doesn't exist or we pretend it doesn't if it's hidden
-			$data['missing'] = true;
-		}
-		$result->addValue( 'query', $this->getModuleName(), $data );
-
-		// Add requested info
-		if ( $userExists && isset( $prop['groups'] ) ) {
-			$groups = $user->getGlobalGroups();
-			$result->setIndexedTagName( $groups, 'g' );
-			$result->addValue( [ 'query', $this->getModuleName() ], 'groups', $groups );
-		}
-		if ( $userExists && isset( $prop['rights'] ) ) {
-			$rights = $user->getGlobalRights();
-			$result->setIndexedTagName( $rights, 'r' );
-			$result->addValue( [ 'query', $this->getModuleName() ], 'rights', $rights );
-		}
-
-		$attachedAccounts = null;
-		if ( $userExists && ( isset( $prop['merged'] ) || isset( $prop['editcount'] ) ) ) {
-			$attachedAccounts = $user->queryAttached();
-		}
-
-		if ( $userExists && isset( $prop['merged'] ) ) {
-			foreach ( $attachedAccounts as $account ) {
-				$dbname = $account['wiki'];
-				$wiki = WikiMap::getWiki( $dbname );
-				$a = [
-					'wiki' => $dbname,
-					'url' => $wiki->getCanonicalServer(),
-					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
-					'method' => $account['attachedMethod'],
-					'editcount' => intval( $account['editCount'] ),
-					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
-				];
-				if ( $account['groupMemberships'] ) {
-					$a['groups'] = array_keys( $account['groupMemberships'] );
-					$result->setIndexedTagName( $a['groups'], 'group' );
+				if ( $user->isLocked() ) {
+					$data['locked'] = true;
 				}
+				if ( $user->isHidden() ) {
+					$data['hidden'] = true;
+				}
+			} else {
+				// The user doesn't exist or we pretend it doesn't if it's hidden
+				$data['missing'] = true;
+			}
+			$result->addValue( [ 'query', $this->getModuleName() ], $user->getName(), $data );
 
-				if ( $account['blocked'] ) {
-					$a['blocked'] = [
-						'expiry' => $this->getLanguage()->formatExpiry(
-							$account['block-expiry'], TS_ISO_8601 ),
-						'reason' => $account['block-reason']
+			// Add requested info
+			if ( $userExists && isset( $prop['groups'] ) ) {
+				$groups = $user->getGlobalGroups();
+				$result->setIndexedTagName( $groups, 'g' );
+				$result->addValue( [ 'query', $this->getModuleName(), $user->getName() ], 'groups', $groups );
+			}
+			if ( $userExists && isset( $prop['rights'] ) ) {
+				$rights = $user->getGlobalRights();
+				$result->setIndexedTagName( $rights, 'r' );
+				$result->addValue( [ 'query', $this->getModuleName(), $user->getName() ], 'rights', $rights );
+			}
+
+			$attachedAccounts = null;
+			if ( $userExists && ( isset( $prop['merged'] ) || isset( $prop['editcount'] ) ) ) {
+				$attachedAccounts = $user->queryAttached();
+			}
+
+			if ( $userExists && isset( $prop['merged'] ) ) {
+				foreach ( $attachedAccounts as $account ) {
+					$dbname = $account['wiki'];
+					$wiki = WikiMap::getWiki( $dbname );
+					$a = [
+						'wiki' => $dbname,
+						'url' => $wiki->getCanonicalServer(),
+						'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
+						'method' => $account['attachedMethod'],
+						'editcount' => intval( $account['editCount'] ),
+						'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
 					];
-				}
-				$result->addValue( [ 'query', $this->getModuleName(), 'merged' ], null, $a );
-			}
-			$result->addIndexedTagName( [ 'query', $this->getModuleName(), 'merged' ], 'account' );
-		}
-		if ( $userExists && isset( $prop['editcount'] ) ) {
-			$editcount = 0;
-			foreach ( $attachedAccounts as $account ) {
-				$editcount += $account['editCount'];
-			}
-			$result->addValue( 'query', $this->getModuleName(), [ 'editcount' => $editcount ] );
-		}
-		if ( isset( $prop['unattached'] ) ) {
-			$accounts = $user->queryUnattached();
-			foreach ( $accounts as $account ) {
-				$a = [
-					'wiki' => $account['wiki'],
-					'editcount' => $account['editCount'],
-					'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
-				];
+					if ( $account['groupMemberships'] ) {
+						$a['groups'] = array_keys( $account['groupMemberships'] );
+						$result->setIndexedTagName( $a['groups'], 'group' );
+					}
 
-				if ( $account['groupMemberships'] ) {
-					$a['groups'] = array_keys( $account['groupMemberships'] );
-					$result->setIndexedTagName( $a['groups'], 'group' );
+					if ( $account['blocked'] ) {
+						$a['blocked'] = [
+							'expiry' => $this->getLanguage()->formatExpiry(
+								$account['block-expiry'], TS_ISO_8601 ),
+							'reason' => $account['block-reason']
+						];
+					}
+					$result->addValue( [ 'query', $this->getModuleName(), $user->getName(), 'merged' ], null, $a );
 				}
-
-				if ( $account['blocked'] ) {
-					$a['blocked'] = [
-						'expiry' => $this->getLanguage()->formatExpiry(
-							$account['block-expiry'], TS_ISO_8601 ),
-						'reason' => $account['block-reason']
+				$result->addIndexedTagName(
+					[
+						'query', $this->getModuleName(),
+						$user->getName(), 'merged'
+					],
+					'account'
+				);
+			}
+			if ( $userExists && isset( $prop['editcount'] ) ) {
+				$editcount = 0;
+				foreach ( $attachedAccounts as $account ) {
+					$editcount += $account['editCount'];
+				}
+				$result->addValue( 'query', $this->getModuleName(), [ 'editcount' => $editcount ] );
+			}
+			if ( isset( $prop['unattached'] ) ) {
+				$accounts = $user->queryUnattached();
+				foreach ( $accounts as $account ) {
+					$a = [
+						'wiki' => $account['wiki'],
+						'editcount' => $account['editCount'],
+						'registration' => wfTimestamp( TS_ISO_8601, $account['registration'] ),
 					];
+
+					if ( $account['groupMemberships'] ) {
+						$a['groups'] = array_keys( $account['groupMemberships'] );
+						$result->setIndexedTagName( $a['groups'], 'group' );
+					}
+
+					if ( $account['blocked'] ) {
+						$a['blocked'] = [
+							'expiry' => $this->getLanguage()->formatExpiry(
+								$account['block-expiry'], TS_ISO_8601 ),
+							'reason' => $account['block-reason']
+						];
+					}
+					$result->addValue( [ 'query', $this->getModuleName(), 'unattached' ], null, $a );
 				}
-				$result->addValue( [ 'query', $this->getModuleName(), 'unattached' ], null, $a );
+				$result->addIndexedTagName(
+					[ 'query', $this->getModuleName(), 'unattached' ], 'account'
+				);
 			}
-			$result->addIndexedTagName(
-				[ 'query', $this->getModuleName(), 'unattached' ], 'account'
-			);
 		}
 	}
 
@@ -174,9 +187,11 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		return [
 			'user' => [
 				ApiBase::PARAM_TYPE => 'user',
+				ApiBase::PARAM_ISMULTI => true,
 			],
 			'id' => [
 				ApiBase::PARAM_TYPE => 'integer',
+				ApiBase::PARAM_ISMULTI => true,
 			],
 			'prop' => [
 				ApiBase::PARAM_TYPE => [
