@@ -47,7 +47,7 @@ class ApiQueryGlobalUserinfoTest extends CentralAuthUsingDatabaseApiTestCase {
 				'guiuser' => $centralUser->getName()
 			] )
 		);
-		$data = $res[0]['query']['globaluserinfo'];
+		$data = $res[0]['query']['globaluserinfo'][$centralUser->getName()];
 		$this->assertSame( $centralUser->getHomeWiki(), $data['home'] );
 		$this->assertSame( $centralUser->getId(), $data['id'] );
 		$this->assertSame(
