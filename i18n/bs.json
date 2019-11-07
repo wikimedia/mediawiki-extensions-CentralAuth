@@ -5,7 +5,8 @@
 			"KWiki",
 			"Kolega2357",
 			"Palapa",
-			"Srdjan m"
+			"Srdjan m",
+			"Obsuser"
 		]
 	},
 	"action-centralauth-lock": "zaključavate ili otključavate globalne račune",
@@ -154,7 +155,7 @@
 	"centralauth-globalgroupperms-newgroupname": "Ime nove grupe:",
 	"centralauth-globalgroupperms-nogroups": "Nijedna globalna grupa nije definisana.",
 	"centralauth-groupname": "Zadužbine Wikimedije",
-	"centralauth-hidden-blockreason": "globalno sakriven od strane $1 u $2 sa slijedećim razlogom: $3",
+	"centralauth-hidden-blockreason": "globalno sakriven od strane $1 u $2 sa sljedećim razlogom: $3",
 	"centralauth-hours-ago": "prije $1 {{PLURAL:$1|sata|sata|sati}}",
 	"centralauth-incomplete": "Unificiranje prijave nije završeno!",
 	"centralauth-incomplete-text": "Kada Vam je prijava unificirana, moći ćete da se prijavite na bilo koji projekat {{int:Centralauth-groupname}} bez potrebe da otvarate novi račun",
@@ -216,7 +217,7 @@
 	"centralauth-merge-step2-detail": "Neki od računa nisu se mogli automatski spojiti sa Vašom matičnom wiki. Ako ovi računi pripadaju Vama, možete potvrditi da su Vaši tako što će te navesti šifru za njih.",
 	"centralauth-merge-step2-submit": "Potvrdi informacije prijave",
 	"centralauth-merge-step2-title": "Potvrdi više računa",
-	"centralauth-merge-step3-detail": "Spremni ste da napraviti Vaš unificirani račun, sa slijedećim pojedinačnim računima na wikijima:",
+	"centralauth-merge-step3-detail": "Spremni ste da napraviti Vaš unificirani račun, sa sljedećim pojedinačnim računima na wikijima:",
 	"centralauth-merge-step3-submit": "Unificiraj račune",
 	"centralauth-merge-step3-title": "Pravljenje unificiranog računa",
 	"centralauth-merge-welcome": "'''Vaš korisnički račun još uvijek nije premješten na unificirani sistem prijave na {{int:Centralauth-groupname}}.'''\n\nAko izaberete da premjestite Vaše račune, moći ćete da koristite isto korisničko ime i šifru za prijavu na svim wikijima na {{int:Centralauth-groupname}} na svim podržanim jezicima.\n\nAko neko drugi već ima isto korisničko ime na drugom projektu, ovo neće ništa poremetiti, ali Vam može pružiti šansu da bilo s tim korisnikom ili nekim od administratora razriješite uzurpaciju.",
