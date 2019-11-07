@@ -319,7 +319,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'default' => $req->getId(),
 					'name'    => 'rid',
 					'type'    => 'hidden',
-					],
+				],
 				'comments' => [
 					'default'       => $this->getRequest()->getVal( 'comments' ),
 					'id'            => 'mw-renamequeue-comments',
@@ -328,6 +328,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'type'          => 'textarea',
 					'rows'          => 5,
 				],
+			],
+			$this->getContext(),
+			'globalrenamequeue'
+		);
+
+		// Show tools to approve only when user is not reviewing own request.
+		if ( $req->getName() !== $this->getUser()->getName() ) {
+			$htmlForm->addFields([
 				// The following fields need to have their names stay in
 				// sync with the expectations of GlobalRenameUser::rename()
 				'reason' => [
@@ -349,23 +357,23 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'label-message' => 'globalrenamequeue-request-suppressredirects',
 					'type'          => 'check',
 				],
-			],
-			$this->getContext(),
-			'globalrenamequeue'
-		);
+			]);
+
+			$htmlForm
+				->addButton( [
+					'name' => 'approve',
+					'value' => $this->msg( 'globalrenamequeue-request-approve-text' )->text(),
+					'id' => 'mw-renamequeue-approve',
+					'attribs' => [
+						'class' => 'mw-ui-flush-right',
+					],
+					'flags' => [ 'primary', 'progressive' ],
+					'framed' => true
+				] );
+		}
 
 		$htmlForm
 			->suppressDefaultSubmit()
-			->addButton( [
-				'name' => 'approve',
-				'value' => $this->msg( 'globalrenamequeue-request-approve-text' )->text(),
-				'id' => 'mw-renamequeue-approve',
-				'attribs' => [
-					'class' => 'mw-ui-flush-right',
-				],
-				'flags' => [ 'primary', 'progressive' ],
-				'framed' => true
-			] )
 			->addButton( [
 				'name' => 'deny',
 				'value' => $this->msg( 'globalrenamequeue-request-deny-text' )->text(),
@@ -476,6 +484,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$reason
 		)->parseAsBlock() );
 
+		// Show warning when reviewing own request
+		if ( $req->getName() === $this->getUser()->getName() ) {
+			$message = new OOUI\MessageWidget([ 'label' => $this->msg('globalrenamerequest-self-warning')->text(), 'type' => 'warning', 'inline' => true ]);
+			$htmlForm->addHeaderText( $message->toString() );
+		}
+
 		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
 
 		$out = $this->getOutput();
@@ -522,6 +536,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$status = new Status;
 		$session = $this->getContext()->exportSession();
 		if ( $approved ) {
+			// Disallow renaming yourself
+			if ( $request->getName() === $this->getUser()->getName() ) {
+				return Status::newFatal( 'globalrenamerequest-self-error' );
+			}
+
 			if ( $request->userIsGlobal() ) {
 				// Trigger a global rename job
 
