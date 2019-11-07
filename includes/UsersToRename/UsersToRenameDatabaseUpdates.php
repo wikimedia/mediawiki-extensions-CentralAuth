@@ -69,7 +69,7 @@ class UsersToRenameDatabaseUpdates {
 	/**
 	 * Batch insert rows
 	 *
-	 * @param array $info Array with array members that have 'name' and 'wiki' keys
+	 * @param array[] $info Array with array members that have 'name' and 'wiki' keys
 	 */
 	public function batchInsert( array $info ) {
 		$rows = [];

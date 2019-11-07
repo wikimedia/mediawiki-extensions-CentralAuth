@@ -22,7 +22,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private $mGlobalUser;
 
 	/**
-	 * @var array
+	 * @var array[]
 	 */
 	private $mAttachedLocalAccounts;
 
@@ -485,13 +485,6 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function listWikiItem( array $row ) {
-		if ( $row === null ) {
-			// https://bugzilla.wikimedia.org/show_bug.cgi?id=28767
-			// It seems sometimes local accounts aren't correctly created
-			// Revisiting the wiki solves the issue
-			return '';
-		}
-
 		$html = Xml::openElement( 'tr' );
 
 		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {

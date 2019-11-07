@@ -1022,7 +1022,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Go through a list of migration data looking for those which
 	 * can be automatically migrated based on the available criteria.
 	 *
-	 * @param array $migrationSet
+	 * @param array[] $migrationSet
 	 * @param array $passwords Optional, pre-authenticated passwords.
 	 *     Should match an account which is known to be attached.
 	 * @return array Array of <wiki> => <authentication method>
@@ -1397,6 +1397,7 @@ class CentralAuthUser implements IDBAccessObject {
 		static $wikiList;
 		if ( is_null( $wikiList ) ) {
 			Hooks::run( 'CentralAuthWikiList', [ &$wikiList ] );
+			// @phan-suppress-next-line PhanRedundantCondition May set by hook
 			if ( is_null( $wikiList ) ) {
 				$wikiList = $wgLocalDatabases;
 			}
@@ -2449,7 +2450,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Formatted as associative array with some data.
 	 *
 	 * @throws Exception
-	 * @return array
+	 * @return array[]
 	 */
 	public function queryUnattached() {
 		$wikiIDs = $this->listUnattached();
@@ -2716,14 +2717,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string
 	 */
 	public static function getCookieDomain() {
-		global $wgCentralAuthCookieDomain;
-
 		$provider = self::getSessionProvider();
-		if ( $provider ) {
-			return $provider->getCentralCookieDomain();
-		}
-
-		return $wgCentralAuthCookieDomain;
+		return $provider->getCentralCookieDomain();
 	}
 
 	/**

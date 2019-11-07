@@ -208,7 +208,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		$getException = function ( CentralAuthUser $centralUser, User $user ) {
-			if ( !$user || !$user->getId() ) { // sanity
+			if ( !$user->getId() ) { // sanity
 				return new Exception( "The user account logged into does not exist." );
 			}
 			if ( !$centralUser->getId() ) { // sanity
