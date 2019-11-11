@@ -6,9 +6,12 @@
 		]
 	},
 	"centralauth-admin-blocklog": "blokeerinkiloki",
+	"centralauth-admin-delete-button": "Ota poies tämä konttu",
 	"centralauth-admin-delete-title": "Ota poies käyttäjäkonttu",
 	"centralauth-admin-list-editcount": "Mookkausmäärä",
 	"centralauth-admin-list-method": "Metuuti",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|nimityhjyys|nimityhjyyttä}}",
+	"centralauth-centralautologin-alreadyloggedinlocally": "Olet lokannu sisäle jo paikallisesti",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|mookkaus|mookkausta}} wikissä $2",
 	"centralauth-foreign-link": "Konttu $1 prujektissa $2",
 	"centralauth-groupname": "Wikimedia Foundation",
@@ -16,5 +19,6 @@
 	"centralauth-merge-method-login": "luotu lokkaushetkelä",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Lokkaa sisäle]</span>, jos haluat tarkistaa, jos sinun käyttäjätunnukset on täyesti yhistetty.",
 	"centralauth-merge-step1-title": "Alota lokkauksen yhistämistä",
-	"centralauth-multilock-homewiki": "Kotowiki"
+	"centralauth-multilock-homewiki": "Kotowiki",
+	"mergeaccount": "Käyttäjäkonttujen yhistämisen tila"
 }

@@ -25,9 +25,13 @@
 	"centralauth-admin-username": "واپرائيندڙ-نانءُ:",
 	"centralauth-admin-view": "کاتي جي معلومات ڏسو",
 	"centralauth-attach-title": "کاتي جي پڪ ڪريو",
+	"centralauth-editgroup-noset": "(ڪوبہ نہ)",
+	"centralauth-editset-nouse": "(ڪوبہ نہ)",
+	"centralauth-editset-nowikis": "(ڪوبہ نہ)",
 	"centralauth-foreign-contributions": "$2 تي $1 {{PLURAL:$1|ڀاڱيداري|ڀاڱيداريون}}",
 	"centralauth-foreign-link": "$2 تي واپرائيندڙ $1",
 	"centralauth-log-gblrename-oldname": "پويون واپرائيندڙ-نانءُ:",
+	"centralauth-log-status-none": "(ڪوبہ نہ)",
 	"centralauth-merge-method-empty": "ڀاڱيداريون ناھن",
 	"centralauth-merge-method-login": "داخل ٿيڻ تي سرجبو",
 	"centralauth-prefs-status": "عالمي کاتو:",
@@ -39,5 +43,5 @@
 	"globalrenamequeue-form-status-all": "سڀ",
 	"globalrenamequeue-form-username": "واپرائيندڙ-نانءُ:",
 	"globalrenamequeue-request-cancel-text": "رد",
-	"right-centralauth-merge": "پنهنجي کاتي کي گڏائڻ"
+	"right-centralauth-merge": "انھن جي کاتي کي ضم ڪريو"
 }

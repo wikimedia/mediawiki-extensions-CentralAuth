@@ -15,7 +15,8 @@
 			"Zygimantus",
 			"Macofe",
 			"Nersip",
-			"Manvydasz"
+			"Manvydasz",
+			"Tomasdd"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Visuotinės grupės, kurioms priklauso vartotojas",
@@ -119,6 +120,7 @@
 	"centralauth-attach-text": "Ši paskyra dar nebuvo pakeista į bendrąją paskyrą.\nJei pagrindinė paskyra taip pat yra jūsų, jūs galite susieti šią paskyrą, jei įvesite pagrindinės paskyros slaptažodį:",
 	"centralauth-attach-title": "Patvirtinkite paskyrą",
 	"centralauth-block-already-locked": "Paskyra [[Special:CentralAuth/$1|$1]] jau yra visuotinai užrakinta.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|puslapis|puslapiai}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Jūs jau esate lokaliai prisijungęs",
 	"centralauth-centralautologin-badparams": "Nurodyti autentifikavimo parametrai buvo negaliojantys",
 	"centralauth-centralautologin-badstate": "Negalima būsena „$1“",
