@@ -37,6 +37,7 @@
 	"centralauth-admin-yes": "yes",
 	"centralauth-attach-submit": "Migrar konto",
 	"centralauth-attach-title": "Konfirmar konto",
+	"centralauth-block-already-locked": "L'uzero [[Special:CentralAuth/$1|$1]] ja esas blokusata en omna Wiki.",
 	"centralauth-editgroup-noset": "(nula)",
 	"centralauth-editgroup-reason": "Motivo:",
 	"centralauth-editset-name": "Nomo:",
