@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae6d609c_340bd8f6",
+        "filename": "modules/ext.centralauth.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2604
+      },
+      "writtenOn": "2019-11-14T16:52:42Z",
+      "side": 1,
+      "message": "You\u0027re nesting a p into a p here, which results in invalid HTML.",
+      "revId": "464f3826286891b0ac0665cd720ff4cb8aa77cb4",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
