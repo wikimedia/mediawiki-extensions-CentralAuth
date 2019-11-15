@@ -26,7 +26,8 @@
 			"Athena in Wonderland",
 			"CaiusSPQR",
 			"Tks4Fish",
-			"Waldyrious"
+			"Waldyrious",
+			"Mansil alfalb"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o utilizador está",
@@ -136,6 +137,8 @@
 	"centralauth-attach-text": "Esta conta ainda não foi acoplada à conta global.\nSe a conta global também for sua, pode associar-lhe esta conta introduzindo a palavra-passe da conta global:",
 	"centralauth-attach-title": "Confirmar conta",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] já está bloqueada globalmente.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|página|páginas}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|do espaço nominal|dos espaços nominais}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Já está autenticado localmente",
 	"centralauth-centralautologin-badparams": "Os parâmetros de autenticação especificados eram inválidos",
 	"centralauth-centralautologin-badstate": "Estado inválido \"$1\"",
