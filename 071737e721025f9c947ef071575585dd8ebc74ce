@@ -22,6 +22,29 @@
       "revId": "071737e721025f9c947ef071575585dd8ebc74ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e96bb874_c3b95189",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-11-18T12:44:54Z",
+      "side": 1,
+      "message": "It seems the two parameters are meant to be out-only parameters. And yes, it seems the default values are only relevant when a caller does not want to use them. According to https://codesearch.wmflabs.org/search/?q\u003d\u003eattemptPasswordMigration only 1 of 3 callers uses the parameters.",
+      "range": {
+        "startLine": 1339,
+        "startChar": 2,
+        "endLine": 1340,
+        "endChar": 18
+      },
+      "revId": "071737e721025f9c947ef071575585dd8ebc74ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
