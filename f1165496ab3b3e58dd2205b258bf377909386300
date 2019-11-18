@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "605afcda_ceb793c8",
+        "filename": ".phpcs.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-11-18T08:22:06Z",
+      "side": 0,
+      "message": "This looks like a rebase accident?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 8
+      },
+      "revId": "f1165496ab3b3e58dd2205b258bf377909386300",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
