@@ -45,6 +45,30 @@
       "revId": "071737e721025f9c947ef071575585dd8ebc74ce",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2e2b58c_ad639a12",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-11-18T13:00:27Z",
+      "side": 1,
+      "message": "Makes sense.  I should have done this homework, too!  This seems like legal PHP, and I verified by running some minimal tests locally.\n\nEven the implicit array creation works, i.e. not assigning to $migrated and $remaining, then calling:\n\n  attemptPasswordMigration( \u0027pw\u0027, $migrated, $remaining );",
+      "parentUuid": "e96bb874_c3b95189",
+      "range": {
+        "startLine": 1339,
+        "startChar": 2,
+        "endLine": 1340,
+        "endChar": 18
+      },
+      "revId": "071737e721025f9c947ef071575585dd8ebc74ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
