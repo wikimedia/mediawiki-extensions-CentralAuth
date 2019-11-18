@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91644905_b73fe9d9",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1330,
+      "author": {
+        "id": 143
+      },
+      "writtenOn": "2019-11-18T11:35:34Z",
+      "side": 1,
+      "message": "Looks like an improvement, but it\u0027s strange to have a default value for a reference parameter.  I guess this is used when the calling code ignores the return-by-reference values?",
+      "range": {
+        "startLine": 1330,
+        "startChar": 67,
+        "endLine": 1330,
+        "endChar": 69
+      },
+      "revId": "071737e721025f9c947ef071575585dd8ebc74ce",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
