@@ -144,6 +144,8 @@
 	"centralauth-attach-text": "To konto nie zostało jeszcze przyłączone do konta uniwersalnego.\nJeżeli konto uniwersalne należy również do Ciebie i chcesz przyłączyć do niego to konto, podaj hasło uniwersalnego konta:",
 	"centralauth-attach-title": "Potwierdź konto",
 	"centralauth-block-already-locked": "Konto [[Special:CentralAuth/$1|$1]] zostało już globalnie zablokowane.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|strona|strony|stron}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|przestrzeń|przestrzenie|przestrzeni}} nazw",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Jesteś już zalogowany lokalnie",
 	"centralauth-centralautologin-badparams": "Podane parametry uwierzytelnienia są nieprawidłowe",
 	"centralauth-centralautologin-badstate": "Nieprawidłowy stan „$1”",

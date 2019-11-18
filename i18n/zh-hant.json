@@ -32,7 +32,8 @@
 			"Hello903hello",
 			"Kly",
 			"Mutolisp",
-			"Xiplus"
+			"Xiplus",
+			"WhitePhosphorus"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "使用者所在的全域群組",
@@ -387,7 +388,7 @@
 	"centralauth-rightslog-entry-setnewtype": "己更改 \"$1\" 的類型由 $2 至 $3",
 	"centralauth-rightslog-entry-setrename": "重新命名 Wiki 集合 \"$2\" 為 \"$1\"",
 	"centralauth-rightslog-entry-usergroups": "$1 的全域群組已由 $2 變更至 $3",
-	"centralauth-rightslog-header": "這個日誌記錄了全域群組的操作包含：群組成員及權限變更",
+	"centralauth-rightslog-header": "這個日誌記錄了全域群組的操作：群組成員及權限變更",
 	"centralauth-rightslog-name": "全域權限日誌",
 	"centralauth-rightslog-set-optin": "包含式",
 	"centralauth-rightslog-set-optout": "排除式",

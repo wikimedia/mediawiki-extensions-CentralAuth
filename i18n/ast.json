@@ -112,6 +112,8 @@
 	"centralauth-attach-text": "Esta cuenta inda nun se migró a la cuenta fusionada.\nSi la cuenta global tamién ye de to, pues fusionar esta cuenta escribiendo la contraseña de cuenta global:",
 	"centralauth-attach-title": "Confirmar cuenta",
 	"centralauth-block-already-locked": "La cuenta [[Special:CentralAuth/$1|$1]] yá ta bloquiada de mou global.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|páxina|páxines}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espaciu|espacios}} de nomes",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Yá anició sesión de mou llocal",
 	"centralauth-centralautologin-badparams": "Los parámetros d'autenticación especificaos yeren inválidos",
 	"centralauth-centralautologin-badstate": "Estáu inválidu \"$1\"",
