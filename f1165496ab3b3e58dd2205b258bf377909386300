@@ -46,6 +46,30 @@
       "revId": "f1165496ab3b3e58dd2205b258bf377909386300",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a58bff97_356c512a",
+        "filename": ".phpcs.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2019-11-18T10:24:50Z",
+      "side": 0,
+      "message": "Done. This was not doing anything any more. All these global functions have been removed with I1b8c545.",
+      "parentUuid": "3de78568_0509b47f",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 8
+      },
+      "revId": "f1165496ab3b3e58dd2205b258bf377909386300",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
