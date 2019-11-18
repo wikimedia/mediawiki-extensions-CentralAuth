@@ -10,11 +10,7 @@
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
 	</rule>
-	<rule ref="MediaWiki.NamingConventions.PrefixedGlobalFunctions">
-		<properties>
-			<property name="ignoreList" type="array" value="migratePassZero,getEditCount,countEdits" />
-		</properties>
-	</rule>
+
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>
 	<arg name="encoding" value="UTF-8"/>
