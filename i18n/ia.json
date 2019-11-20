@@ -114,7 +114,7 @@
 	"centralauth-attach-text": "Iste conto non ha ancora essite migrate al conto unificate.\nSi le conto global es etiam tue, tu pote fusionar iste conto si tu entra le contrasigno del conto global:",
 	"centralauth-attach-title": "Confirmar conto",
 	"centralauth-block-already-locked": "Le conto [[Special:CentralAuth/$1|$1]] es jam blocate globalmente.",
-	"centralauth-centralautologin-alreadyloggedinlocally": "Tu es jam authenticate localmente",
+	"centralauth-centralautologin-alreadyloggedinlocally": "Tu ha jam aperite session localmente.",
 	"centralauth-centralautologin-badparams": "Le parametros de authentication specificate es invalide",
 	"centralauth-centralautologin-badstate": "Stato \"$1\" non valide",
 	"centralauth-centralautologin-badstate-central": "Le stato \"$1\" non es valide in le wiki central",
