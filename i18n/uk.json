@@ -138,6 +138,8 @@
 	"centralauth-attach-text": "Цей обліковий запис ще не перенесений до системи єдиного облікового запису. Якщо глобальний обліковий запис також належить Вам, Ви можете приєднати цей акаунт, зазначивши пароль глобального облікового запису:",
 	"centralauth-attach-title": "Підтвердження облікового запису",
 	"centralauth-block-already-locked": "Обліковий запис [[Special:CentralAuth/$1|$1]] вже закрито глобально.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|сторінка|сторінки|сторінок}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|простір назв|простори назв|просторів назв}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Ви вже ввійшли до системи локально",
 	"centralauth-centralautologin-badparams": "Зазначені параметри аутентифікації були недійсні",
 	"centralauth-centralautologin-badstate": "Неприпустимий стан «$1»",
