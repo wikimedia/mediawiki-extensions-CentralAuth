@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Khing"
+			"Khing",
+			"SawJaemin"
 		]
 	},
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|တၢ်ဟ့ၣ်မၤစၢၤ}} လၢ $2",
+	"centralauth-foreign-link": "ပှၤသူတၢ်ဖိ $1 လၢ $2",
 	"centralauth-merge-method-login": "တ့ထီၣ်လၢနနုာ်လီၤ"
 }
