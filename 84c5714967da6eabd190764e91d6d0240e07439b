@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84a2ebb0_5a8669d4",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-12-06T15:28:17Z",
+      "side": 1,
+      "message": "We can avoid repeating \"You may not\" in this single sentence; \"You may not approve this request as you are not allowed to rename your own account.\"?",
+      "revId": "84c5714967da6eabd190764e91d6d0240e07439b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebde5be4_87341d26",
+        "filename": "i18n/en.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-12-06T15:28:17Z",
+      "side": 1,
+      "message": "Same as Line 492. \"You may only deny this request as you are not allowed to rename your own account.\"?",
+      "revId": "84c5714967da6eabd190764e91d6d0240e07439b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af8cd175_4a1284bb",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-12-06T15:28:17Z",
+      "side": 1,
+      "message": "You need a whitespace here",
+      "revId": "84c5714967da6eabd190764e91d6d0240e07439b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff16007b_fb0f2e37",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-12-06T15:28:17Z",
+      "side": 1,
+      "message": "Here too.",
+      "range": {
+        "startLine": 360,
+        "startChar": 4,
+        "endLine": 360,
+        "endChar": 5
+      },
+      "revId": "84c5714967da6eabd190764e91d6d0240e07439b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5fd0e0b_bc1585b4",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-12-06T15:28:17Z",
+      "side": 1,
+      "message": "Here too. For each opening and closing parenthesis you need a whitespace (Both before and after). See https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP#Spaces\n\nIn addition, the line is too long. You need to break it.",
+      "revId": "84c5714967da6eabd190764e91d6d0240e07439b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f68021d_509b8c49",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2019-12-06T15:28:17Z",
+      "side": 1,
+      "message": "This should be \u0027oneself.\u0027  Or you can just write // Disallow self-renaming",
+      "range": {
+        "startLine": 539,
+        "startChar": 24,
+        "endLine": 539,
+        "endChar": 32
+      },
+      "revId": "84c5714967da6eabd190764e91d6d0240e07439b",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
