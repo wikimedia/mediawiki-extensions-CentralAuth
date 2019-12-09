@@ -484,7 +484,7 @@
 	"globalrenamerequest-legend": "整合重新命名請求",
 	"globalrenamerequest-newname-err-invalid": "您未指定一個有效的使用者名稱。",
 	"globalrenamerequest-newname-err-taken": "輸入的使用者名稱已被使用，請選擇其他名稱。",
-	"globalrenamerequest-newname-help": "輸入您希望使用的新使用者名稱，如 \"$1\"。",
+	"globalrenamerequest-newname-help": "輸入您希望使用的新使用者名稱，如「$1」。",
 	"globalrenamerequest-newname-label": "請求的使用者名稱：",
 	"globalrenamerequest-pretext": "請求一個能在所有專案使用的新使用者名稱。\n\n所有您先前所做的貢獻將會改連結至新使用者名稱。\n\n透過此清單建立的請求清單，將提供給能執行此操作的使用者。當處理完畢後，您將會收到電子郵件的通知。\n\n若您的請求與匿名/隱私需求相關，請注意將會建立保存日誌的紀錄來註明您先前的名稱。因此，您可以考慮簡單地來[[Special:CreateAccount|建立一個單獨且獨立的新帳號]]，並將您目前的帳號重新命名至隨機名稱後捨棄。",
 	"globalrenamerequest-reason-label": "請求原因",
