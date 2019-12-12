@@ -33,7 +33,7 @@ class LocalUserMergeJob extends LocalRenameJob {
 			// Make the status update visible to all other transactions immediately
 			$factory->commitMasterChanges( $fnameTrxOwner );
 			throw new RuntimeException( "autoCreateUser failed for '{$to}': " .
-				$toUser->getWikiText( null, null, 'en' ) );
+				$toUser->getWikiText( false, false, 'en' ) );
 		}
 
 		$renamingUser = $this->getRenameUser();
