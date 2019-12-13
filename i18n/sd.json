@@ -5,7 +5,8 @@
 			"Aursani",
 			"Mehtab ahmed",
 			"Indus Asia",
-			"Tweety"
+			"Tweety",
+			"KaleemBhatti"
 		]
 	},
 	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگھجي. اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ڪو ٻيو نالو چونڊيو.",
@@ -43,5 +44,6 @@
 	"globalrenamequeue-form-status-all": "سڀ",
 	"globalrenamequeue-form-username": "واپرائيندڙ-نانءُ:",
 	"globalrenamequeue-request-cancel-text": "رد",
+	"globalrenamerequest": "عالمي اڪائونٽ جو نالو تبديل ڪرڻ جي درخواست",
 	"right-centralauth-merge": "انھن جي کاتي کي ضم ڪريو"
 }
