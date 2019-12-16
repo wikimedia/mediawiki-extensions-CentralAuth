@@ -1,0 +1,180 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ca542f4_920e04df",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "It would probably be faster to query all possibly-500 users at once and use CentralAuthUser::newFromRow() instead of making 500 DB queries for one row each.\n\nAlso in that case you\u0027d want to cache the objects instead of redoing basically the query on line 61.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3bd27d5_29d47eac",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "Since you\u0027re changing the code here anyway, consider using Message::plaintextParam() instead of wfEscapeWikiText()",
+      "range": {
+        "startLine": 48,
+        "startChar": 54,
+        "endLine": 48,
+        "endChar": 70
+      },
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57ab086d_222403f5",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "When accepting multiple values, it\u0027s probably better to indicate invalid values with a warning or something inline in the result rather than just dying.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "19603e9f_296b2a61",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "(same as line 48)",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "948e93bc_afb05fa5",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "It would probably be faster to query all possibly-500 user rows at once and use CentralAuthUser::newFromRow() instead of making 500 DB queries for one row each.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "238fc8e3_90c455e4",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "This could be expensive if it wasn\u0027t in the loaded row.\n\nIf globaluser.gu_home_db is null or empty, this will wind up querying rows from the `localuser` table, and if that fails to turn up a home wiki it can wind up connecting to the database for each attached wiki.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f007c62_f2784784",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "This will do two database queries.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9040ffd6_4bb52a74",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "This does the same two queries as line 90, if line 90 didn\u0027t already do them.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb68d205_0ad798e5",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "This will connect to every attached wiki\u0027s database to fetch the info about that wiki. Unless line 71 already did it.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3999460_d9ce7d8a",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2019-12-16T19:52:39Z",
+      "side": 1,
+      "message": "This will connect to every wiki where the account is known to exist as unattached to fetch the info about that wiki.\n\nIf the account isn\u0027t known to exist globally at all, it\u0027ll connect to //every// wiki to check again.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
