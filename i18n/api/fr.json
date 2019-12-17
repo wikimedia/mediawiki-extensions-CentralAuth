@@ -15,7 +15,7 @@
 	"apierror-centralauth-editconflict": "Détection d'un conflit d'édition, abandon.",
 	"apierror-centralauth-notattached": "Impossible d’obtenir un centralauthtoken sans un compte global attaché.",
 	"apierror-centralauth-notloggedin": "Les utilisateurs anonymes ne peuvent pas obtenir de jeton central d'autorisation.",
-	"apierror-centralauth-renameinprogress": "L'utilisateur est en cours de renommage, utilisation impossible.",
+	"apierror-centralauth-renameinprogress": "L’utilisateur est en cours de renommage, utilisation impossible.",
 	"apihelp-centralauthtoken-description": "Demander un centralauthtoken pour faire une demande d’authentification à un wiki attaché.",
 	"apihelp-centralauthtoken-example-1": "Demander un centralauthtoken",
 	"apihelp-centralauthtoken-summary": "Récupérer un centralauthtoken pour faire une requête d’authentification vers un wiki attaché.",
