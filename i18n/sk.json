@@ -101,6 +101,8 @@
 	"centralauth-attach-success": "Účet bol migrovaný na zjednotený účet.",
 	"centralauth-attach-text": "Tento účet zatiaľ nebol migrovaný na zjednotený účet. Ak je globálny účet váš, môžete tento účet zlúčiť napísaním hesla ku globálnemu účtu:",
 	"centralauth-attach-title": "Potvrdiť účet",
+	"centralauth-centralautologin-logged-in": "Ste centrálne prihlásení ako $1. Obnovte stránku, aby sa použili vaše používateľské nastavenia.",
+	"centralauth-centralautologin-logged-in-nouser": "Ste centrálne prihlásení. Obnovte stránku, aby sa použili vaše používateľské nastavenia.",
 	"centralauth-centralautologin-lostsession": "Údaje o relácii boli stratené",
 	"centralauth-complete": "Zjednotenie prihlasovacích účtov dokončené!",
 	"centralauth-complete-text": "Teraz sa môžete prihlásiť na ľubovoľnú wiki {{int:Centralauth-groupname}} bez toho, aby ste si museli vytvárať nový účet.",
