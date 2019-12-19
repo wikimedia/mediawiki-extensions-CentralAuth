@@ -43,6 +43,7 @@
 	"centralauth-complete-text": "Nun vu povas facar 'login' de irga sito de {{int:Centralauth-groupname}} sen krear nova konto.",
 	"centralauth-editgroup-noset": "(nula)",
 	"centralauth-editgroup-reason": "Motivo:",
+	"centralauth-editset": "Ajusti Wiki",
 	"centralauth-editset-name": "Nomo:",
 	"centralauth-editset-nouse": "(nula)",
 	"centralauth-editset-reason": "Motivo:",
