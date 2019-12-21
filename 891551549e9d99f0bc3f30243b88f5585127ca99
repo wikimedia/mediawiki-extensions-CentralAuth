@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "297c459c_1c8774d9",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-21T06:51:08Z",
+      "side": 1,
+      "message": "Ref (see below)",
+      "range": {
+        "startLine": 337,
+        "startChar": 2,
+        "endLine": 337,
+        "endChar": 58
+      },
+      "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0104083a_995592d7",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-21T06:51:08Z",
+      "side": 1,
+      "message": "These can be chained like other $htmlForm-\u003efunction calls in the file, and should be for consistency",
+      "range": {
+        "startLine": 360,
+        "startChar": 6,
+        "endLine": 362,
+        "endChar": 12
+      },
+      "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3652d077_cea483eb",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-21T06:51:08Z",
+      "side": 1,
+      "message": "Since the button to approve is only added when this is false, would this message ever be shown?",
+      "range": {
+        "startLine": 544,
+        "startChar": 3,
+        "endLine": 544,
+        "endChar": 63
+      },
+      "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
