@@ -804,7 +804,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Remaining fields are expected to be filled out shortly...
 	 * eeeyuck
 	 *
-	 * @param string $password
+	 * @param string|null $password
 	 * @param string $email
 	 * @return bool
 	 */
@@ -2633,7 +2633,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Salt and hash a new plaintext password.
-	 * @param string $password plaintext
+	 * @param string|null $password plaintext
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {

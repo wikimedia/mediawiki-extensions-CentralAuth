@@ -52,7 +52,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$this->doLoginComplete( $token );
 		} elseif ( $subpage === 'status' ) {
 			$this->showLoginStatus();
-		} else { // invalid request
+		} else { // invalid request - @phan-suppress-next-line PhanPluginDuplicateIfStatements
 			$this->showLoginStatus();
 		}
 

@@ -41,7 +41,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 */
 	private $resume;
 
-	/** @var int */
+	/** @var float */
 	protected $start;
 
 	/** @var int */
@@ -107,7 +107,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
 					if ( !$this->dryrun ) {
-						wfWaitForSlaves( false );
+						wfWaitForSlaves();
 					}
 					$this->output( "done\n" );
 				}
