@@ -361,7 +361,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$globalUser = $this->mGlobalUser;
 
 		$reg = $globalUser->getRegistration();
-		$age = $this->prettyTimespan( wfTimestamp( TS_UNIX ) - wfTimestamp( TS_UNIX, $reg ) );
+		$age = $this->prettyTimespan( (int)wfTimestamp( TS_UNIX ) - (int)wfTimestamp( TS_UNIX, $reg ) );
 		$attribs = [
 			'username' => htmlspecialchars( $globalUser->getName() ),
 			'registered' => htmlspecialchars(

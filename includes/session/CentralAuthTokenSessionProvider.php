@@ -113,7 +113,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
-		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', $centralUser->getId() );
+		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
 		if ( $sessionStore->get( $key ) ) {
 			$this->logger->debug( __METHOD__ . ': user is blacklisted' );
 			return $this->makeException( 'badtoken', 'apierror-centralauth-badtoken' );
@@ -180,7 +180,7 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 		// then CentralAuth itself will have been instructed to more
 		// permanently block the user.
 		$sessionStore = CentralAuthUtils::getSessionStore();
-		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', $centralUser->getId() );
+		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
 		$sessionStore->set( $key, true, $sessionStore::TTL_DAY, $sessionStore::WRITE_SYNC );
 	}
 

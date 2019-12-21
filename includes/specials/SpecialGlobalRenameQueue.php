@@ -274,11 +274,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					"does not exist in the database"
 			);
 		}
-		if ( $renamer->isAttached() ) {
+		$homewiki = $renamer->getHomeWiki();
+		if ( $renamer->isAttached() || $homewiki === null ) {
 			$renamerLink = Title::makeTitleSafe( NS_USER, $renamer->getName() )->getFullURL();
 		} else {
 			$renamerLink = WikiMap::getForeignURL(
-				$renamer->getHomeWiki(), "User:{$renamer->getName()}"
+				$homewiki, "User:{$renamer->getName()}"
 			);
 		}
 
@@ -395,15 +396,21 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$infoMsgKey = 'globalrenamequeue-request-userinfo-local';
 		}
 
+		if ( $homewiki === null ) {
+			$homeLink = Title::makeTitleSafe( NS_USER, $renamer->getName() )->getFullURL();
+		} else {
+			$homeLink = WikiMap::getForeignURL( $homeWiki, "User:{$req->getName()}" )
+		}
+
 		$headerMsg = $this->msg( 'globalrenamequeue-request-header',
-			WikiMap::getForeignURL( $homeWiki, "User:{$req->getName()}" ),
+			$homeLink,
 			$req->getName(),
 			$req->getNewName()
 		);
 		$htmlForm->addHeaderText( '<span class="plainlinks">' . $headerMsg->parseAsBlock() .
 			'</span>' );
 
-		$homeWikiWiki = WikiMap::getWiki( $homeWiki );
+		$homeWikiWiki = $homeWiki ? WikiMap::getWiki( $homeWiki ) : null;
 		$infoMsg = $this->msg( $infoMsgKey,
 			$req->getName(),
 			// homeWikiWiki shouldn't ever be null except in

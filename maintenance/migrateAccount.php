@@ -10,7 +10,7 @@ use Wikimedia\Rdbms\IDatabase;
 
 class MigrateAccount extends Maintenance {
 
-	/** @var int */
+	/** @var float */
 	protected $start;
 
 	/** @var int */

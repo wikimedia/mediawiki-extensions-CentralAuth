@@ -40,9 +40,12 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			$params['user'] = $this->getUser()->getName();
 		}
 
+		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 		if ( is_null( $params['user'] ) ) {
+			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$user = CentralAuthUser::newFromId( $params['id'] );
 			if ( $user === false ) {
+			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 				$this->dieWithError( [ 'apierror-invaliduserid', wfEscapeWikiText( $params['id'] ) ] );
 			}
 		} else {
