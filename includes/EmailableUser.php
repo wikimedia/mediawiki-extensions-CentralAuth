@@ -49,7 +49,6 @@ class EmailableUser extends User {
 		global $wgLang;
 		$tokenLife = 14 * 24 * 60 * 60; // 14 days
 
-		$expiration = null; // gets passed-by-ref and defined in next line.
 		$token = $this->confirmationToken( $expiration );
 
 		// we want this token to last a little bit longer since we are cold-emailing

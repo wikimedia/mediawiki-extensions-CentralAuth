@@ -157,7 +157,7 @@ class WikiSet {
 			return null;
 		}
 
-		$wikiSet = new WikiSet( null, null );
+		$wikiSet = new WikiSet();
 		$wikiSet->loadFromCachedData( $data );
 
 		return $wikiSet;
@@ -197,7 +197,7 @@ class WikiSet {
 			return null;
 		}
 
-		$wikiSet = new WikiSet( null, null );
+		$wikiSet = new WikiSet();
 		$wikiSet->loadFromCachedData( $data );
 
 		return $wikiSet;
