@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f25647e3_f60da207",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-21T06:51:24Z",
+      "side": 1,
+      "message": "Bug should go above Change-Id",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 12
+      },
+      "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "297c459c_1c8774d9",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 4
