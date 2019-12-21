@@ -115,6 +115,29 @@
       "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52034a49_cd508aec",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 34
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2019-12-21T06:54:52Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be used anywhere",
+      "range": {
+        "startLine": 114,
+        "startChar": 17,
+        "endLine": 114,
+        "endChar": 29
+      },
+      "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
