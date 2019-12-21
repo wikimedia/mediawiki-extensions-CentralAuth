@@ -12,7 +12,7 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class MigratePass1 extends Maintenance {
 
-	/** @var int */
+	/** @var float */
 	protected $start;
 
 	/** @var int */

@@ -146,11 +146,11 @@ class GlobalRenameRequest {
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setNewName( $newName ) {
-		$newName = User::getCanonicalName( $newName, 'creatable' );
-		if ( $newName === false ) {
+		$canonicalName = User::getCanonicalName( $newName, 'creatable' );
+		if ( $canonicalName === false ) {
 			throw new Exception( "Invalid username '{$newName}'" );
 		}
-		$this->newName = $newName;
+		$this->newName = $canonicalName;
 		return $this;
 	}
 

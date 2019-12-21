@@ -27,7 +27,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mName;
 	/** @var bool */
 	public $mStateDirty = false;
-	/** @var int */
+	/** @var int|false */
 	private $mDelayInvalidation = 0;
 
 	/** @var string[]|null */
@@ -41,7 +41,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @internal
 	 */
 	public $mHomeWiki;
-	/** @var bool */
+	/** @var string|null */
 	private $mHidden;
 	/** @var bool */
 	private $mLocked;
@@ -804,7 +804,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Remaining fields are expected to be filled out shortly...
 	 * eeeyuck
 	 *
-	 * @param string $password
+	 * @param string|null $password
 	 * @param string $email
 	 * @return bool
 	 */
@@ -961,7 +961,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param array $migrationSet
 	 * @throws Exception
-	 * @return string
+	 * @return string|null
 	 */
 	public function chooseHomeWiki( $migrationSet ) {
 		if ( empty( $migrationSet ) ) {
@@ -1102,7 +1102,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * as many as possible, but don't perform any actions yet.
 	 *
 	 * @param array $passwords
-	 * @param string &$home set to false if no permission to do checks
+	 * @param string|false &$home set to false if no permission to do checks
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
 	 * @param array &$methods on success, associative array of each wiki's attachment method	 *
@@ -2633,7 +2633,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Salt and hash a new plaintext password.
-	 * @param string $password plaintext
+	 * @param string|null $password plaintext
 	 * @return array of strings, salt and hash
 	 */
 	protected function saltedPassword( $password ) {
@@ -2647,7 +2647,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Set the account's password
-	 * @param string $password plaintext
+	 * @param string|null $password plaintext
 	 * @param bool $resetAuthToken if we should reset the login token
 	 * @return bool true
 	 */
@@ -3028,7 +3028,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function getStateHash( $recache = false ) {
 		$this->loadState( $recache );
 		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' .
-			(int)$this->mLocked );
+			( $this->mLocked ? '1' : '0' ) );
 	}
 
 	/**

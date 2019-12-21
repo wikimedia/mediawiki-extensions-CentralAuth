@@ -366,7 +366,7 @@ class SpecialMultiLock extends SpecialPage {
 		);
 		// formatHiddenLevel html escapes its output
 		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
-		$accountAge = time() - wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
+		$accountAge = time() - (int)wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 		$guRegister = $sca->prettyTimespan( $accountAge );
 		$guLocked = $this->msg( 'centralauth-admin-status-locked-no' )->text();
 		if ( $globalUser->isLocked() ) {

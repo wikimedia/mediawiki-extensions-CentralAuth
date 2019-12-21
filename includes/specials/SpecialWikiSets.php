@@ -53,7 +53,7 @@ class SpecialWikiSets extends SpecialPage {
 					? WikiSet::newFromId( $subpage )
 					: WikiSet::newFromName( $subpage );
 				if ( $set ) {
-					$subpage = $set->getID();
+					$subpage = (string)$set->getID();
 				} else {
 					$this->getOutput()->setPageTitle( $this->msg( 'error' ) );
 					$error = $this->msg( 'centralauth-editset-notfound', $subpage )->escaped();
@@ -389,7 +389,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		// Now logging
 		$log = new LogPage( 'gblrights' );
-		$title = SpecialPage::getTitleFor( 'WikiSets', $set->getID() );
+		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
 		if ( !$oldname ) {
 			// New set
 			$log->addEntry( 'newset', $title, $reason, [ $name, $type, implode( ', ', $wikis ) ] );
@@ -432,7 +432,7 @@ class SpecialWikiSets extends SpecialPage {
 		$name = $set->getName();
 		$set->delete();
 
-		$title = SpecialPage::getTitleFor( 'WikiSets', $set->getID() );
+		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
 		$log = new LogPage( 'gblrights' );
 		$log->addEntry( 'deleteset', $title, $reason, [ $name ] );
 

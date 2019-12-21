@@ -149,7 +149,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
-	 * @return string
+	 * @return bool
 	 */
 	public function getPageHeader() {
 		$options = [];
