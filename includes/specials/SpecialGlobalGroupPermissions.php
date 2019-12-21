@@ -324,7 +324,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$set = WikiSet::newFromID( $default );
 			if ( $set ) {
 				return $this->getLinkRenderer()->makeLink(
-					SpecialPage::getTitleFor( 'WikiSets', $set->getId() ),
+					SpecialPage::getTitleFor( 'WikiSets', (string)$set->getId() ),
 					$set->getName()
 				);
 			} else {
@@ -516,7 +516,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		// Change set
 		$current = WikiSet::getWikiSetForGroup( $group );
-		$new = $this->getRequest()->getVal( 'set' );
+		$new = $this->getRequest()->getInt( 'set' );
 		if ( $current != $new ) {
 			$this->setRestrictions( $group, $new );
 			$this->addWikiSetLog( $group, $current, $new, $reason );
@@ -628,8 +628,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * Log wikiset changes
 	 *
 	 * @param string $group
-	 * @param string $old
-	 * @param string $new
+	 * @param string|int $old
+	 * @param string|int $new
 	 * @param string $reason
 	 */
 	private function addWikiSetLog( $group, $old, $new, $reason ) {

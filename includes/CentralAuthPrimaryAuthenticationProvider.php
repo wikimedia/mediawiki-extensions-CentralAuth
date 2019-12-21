@@ -455,6 +455,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
 		if ( $this->antiSpoofAccounts && class_exists( AntiSpoofAuthenticationRequest::class ) &&
+			// @phan-suppress-next-line PhanRedundantCondition
 			empty( $options['creating'] ) && !MediaWikiServices::getInstance()->getPermissionManager()
 				->userHasRight( RequestContext::getMain()->getUser(), 'override-antispoof' )
 		) {

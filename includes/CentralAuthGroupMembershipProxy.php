@@ -26,7 +26,7 @@ class CentralAuthGroupMembershipProxy {
 	/**
 	 * @param string $wikiID Unused
 	 * @param int $id
-	 * @return bool
+	 * @return string|false
 	 */
 	public static function whoIs( $wikiID, $id ) {
 		$user = self::newFromId( $id );

@@ -8,7 +8,7 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalUser extends Maintenance {
 
-	/** @var int */
+	/** @var float */
 	protected $start;
 
 	/** @var int */
@@ -20,7 +20,7 @@ class CheckLocalUser extends Maintenance {
 	/** @var bool */
 	protected $dryrun;
 
-	/** @var string */
+	/** @var string|null */
 	protected $wiki;
 
 	/** @var string|null|false */
