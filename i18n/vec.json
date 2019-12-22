@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Candalua",
-			"GatoSelvadego"
+			"GatoSelvadego",
+			"Conky77"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupi globałi a cui apartien l'utente",
@@ -10,7 +11,7 @@
 	"centralauth": "Gestor de l'utente globale",
 	"centralauth-account-exists": "No se pol crear l'account: el nome utente richiesto se l'à zà tolto qualchedun altro nel sistema de login unificà.",
 	"centralauth-account-exists-reset": "El nome utente $1 nó 'l xe notà so sta wiki, ma 'l xe prexente inte'l sistema de login unifegà.",
-	"centralauth-admin-action-hide-lists": "Scondi i account selessionà dai elenchi publici",
+	"centralauth-admin-action-hide-lists": "Scondi i account selessionà da i elenchi globali de i utenti",
 	"centralauth-admin-action-hide-nochange": "No sta canbiar i livèi sconti",
 	"centralauth-admin-action-hide-none": "Mostra i account selessionà",
 	"centralauth-admin-action-hide-oversight": "Scondi dal tuto i account selessionà",
@@ -47,7 +48,7 @@
 	"centralauth-admin-lookup-rw": "Gestion account utente",
 	"centralauth-admin-manage": "Gestion dati utente",
 	"centralauth-admin-merge": "Colèga i account selezionà",
-	"centralauth-admin-multi-bot": "Ultimi canbiamenti",
+	"centralauth-admin-multi-bot": "Ùltimi canbiamenti",
 	"centralauth-admin-multi-intro": "Ajorna più utenti globali in na volta sola",
 	"centralauth-admin-multi-notfound": "Nissun nome utente catà.",
 	"centralauth-admin-multi-searchprefix": "O se no, serca le utense con un prefisso",
