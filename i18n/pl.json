@@ -79,7 +79,7 @@
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupa globalna|Grupy globalne}}:",
 	"centralauth-admin-info-header": "Informacje o koncie uniwersalnym",
 	"centralauth-admin-info-hidden": "Ukryte",
-	"centralauth-admin-info-locked": "Zablokowane",
+	"centralauth-admin-info-locked": "Zablokowane:",
 	"centralauth-admin-info-registered": "Zarejestrowane:",
 	"centralauth-admin-info-unattached": "Liczba nieprzyłączonych kont:",
 	"centralauth-admin-info-username": "Nazwa użytkownika:",
