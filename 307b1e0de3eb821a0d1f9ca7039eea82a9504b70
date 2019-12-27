@@ -138,6 +138,29 @@
       "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be8537b9_45533d6f",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 34
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2664
+      },
+      "writtenOn": "2019-12-27T10:11:08Z",
+      "side": 1,
+      "message": "You may want to use StringUtils::isValidPCRERegex from core. Note that if $row contained a slash, it could be a security issue (T237667).",
+      "range": {
+        "startLine": 141,
+        "startChar": 16,
+        "endLine": 141,
+        "endChar": 58
+      },
+      "revId": "307b1e0de3eb821a0d1f9ca7039eea82a9504b70",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
