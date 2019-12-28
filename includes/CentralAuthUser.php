@@ -2619,7 +2619,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param string $ts
+	 * @param string|null $ts
 	 * @return void
 	 */
 	public function setEmailAuthenticationTimestamp( $ts ) {
