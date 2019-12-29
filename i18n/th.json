@@ -14,6 +14,7 @@
 			"Geonuch"
 		]
 	},
+	"centralauth": "การจัดการบัญชีทั่วโลก",
 	"centralauth-admin-bad-input": "การเลือกรวมไม่สมเหตุสมผล",
 	"centralauth-admin-blocked-reason": "สาเหตุ: $1",
 	"centralauth-admin-blocklog": "ปูมการบล็อก",
@@ -68,6 +69,10 @@
 	"centralauth-editgroup-name": "ชื่อของกลุ่ม:",
 	"centralauth-editgroup-noset": "(ไม่มี)",
 	"centralauth-editgroup-reason": "เหตุผล:",
+	"centralauth-editset": "วิกิเซ็ต",
+	"centralauth-editset-intro-ro": "ด้านล่างคือรายการของวิกิเซ็ตที่มีอยู่",
+	"centralauth-editset-intro-rw": "วิกิเซ็ตต่อไปนี้ถูกสร้างขึ้นแล้ว\nคุณสามารถดูและดัดแปรใด ๆ ให้กับเซ็ตเหล่านี้หรือสร้างเซ็ตใหม่",
+	"centralauth-editset-legend-ro": "รายการวิกิเซ็ต",
 	"centralauth-editset-nouse": "(ไม่มี)",
 	"centralauth-editset-reason": "เหตุผล:",
 	"centralauth-editset-submit": "ตกลง",

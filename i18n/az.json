@@ -9,7 +9,8 @@
 			"Vugar 1981",
 			"Wertuose",
 			"Archaeodontosaurus",
-			"Neriman2003"
+			"Neriman2003",
+			"Toghrul Rahimli"
 		]
 	},
 	"centralauth-admin-blocklog": "bloklama qeydləri",
@@ -55,6 +56,7 @@
 	"centralauth-attach-success": "Bu hesab vahid hesaba birləşdirilib.",
 	"centralauth-attach-title": "Hesabı təsdiqlə",
 	"centralauth-complete": "Hesabların birləşdirilməsi tamamlandı!",
+	"centralauth-contribs-locked": "Bu istifadəçi qlobal bloklanmışdır.\nDaha ətraflı məlumat üçün [[Special:CentralAuth/$1|qlobal istifadəçi hesabına]] baxın.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|gün|gün}} əvvəl",
 	"centralauth-editgroup-display": "Qrupun lokallaşdırılmış adı:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|redaktə]])",
