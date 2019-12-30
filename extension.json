@@ -248,14 +248,16 @@
 		"GlobalUserMergeLogger": "includes/GlobalRename/GlobalUserMergeLogger.php",
 		"GlobalUserMerge": "includes/GlobalRename/GlobalUserMerge.php",
 		"GlobalUserMergeDatabaseUpdates": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
-		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
-		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php",
 		"SpecialUsersWhoWillBeRenamed": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
 		"UsersWhoWillBeRenamedPager": "includes/specials/UsersWhoWillBeRenamedPager.php",
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
 		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php"
+	},
+	"TestAutoloadClasses": {
+		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
+		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php"
 	},
 	"ResourceModules": {
 		"ext.centralauth": {
