@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "11ab7bc0_ba8520ed",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6949
+      },
+      "writtenOn": "2019-12-31T13:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0104083a_995592d7",
+      "range": {
+        "startLine": 360,
+        "startChar": 6,
+        "endLine": 362,
+        "endChar": 12
+      },
+      "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3652d077_cea483eb",
         "filename": "includes/specials/SpecialGlobalRenameQueue.php",
         "patchSetId": 4
@@ -91,6 +115,30 @@
       "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9d49f36_cd69d6cf",
+        "filename": "includes/specials/SpecialGlobalRenameQueue.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 6949
+      },
+      "writtenOn": "2019-12-31T13:36:25Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it will ever be shown, however I\u0027d like to keep the logic that actually prevents renaming yourself and the \"globalrenamerequest-self-warning\" message might sound weird in this situation.",
+      "parentUuid": "3652d077_cea483eb",
+      "range": {
+        "startLine": 544,
+        "startChar": 3,
+        "endLine": 544,
+        "endChar": 63
+      },
+      "revId": "891551549e9d99f0bc3f30243b88f5585127ca99",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
