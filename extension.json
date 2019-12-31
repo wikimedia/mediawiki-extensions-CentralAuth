@@ -287,7 +287,10 @@
 		"ext.centralauth.centralautologin": {
 			"packageFiles": [
 				"ext.centralauth.centralautologin.js",
-				{ "name": "data.json", "callback": "CentralAuthHooks::getCentralautologinJsData" }
+				{
+					"name": "data.json",
+					"callback": "CentralAuthHooks::getCentralautologinJsData"
+				}
 			],
 			"styles": "ext.centralauth.centralautologin.css",
 			"targets": [
@@ -361,7 +364,9 @@
 		"localBasePath": "",
 		"remoteExtPath": "CentralAuth",
 		"scripts": "tests/qunit/ext.centralauth.ForeignApi.test.js",
-		"dependencies": [ "ext.centralauth.ForeignApi" ]
+		"dependencies": [
+			"ext.centralauth.ForeignApi"
+		]
 	},
 	"callback": "CentralAuthHooks::onRegistration",
 	"Hooks": {
@@ -415,51 +420,110 @@
 		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown"
 	},
 	"config": {
-		"@doc": "see CentralAuth.php",
-		"CentralAuthDatabase": "centralauth",
-		"CentralAuthAutoMigrate": false,
-		"CentralAuthAutoMigrateNonGlobalAccounts": false,
-		"CentralAuthStrict": false,
-		"CentralAuthDryRun": false,
-		"CentralAuthCookies": false,
-		"CentralAuthLoginWiki": false,
-		"CentralAuthCookieDomain": "",
-		"CentralAuthCookiePrefix": "centralauth_",
-		"CentralAuthCookiePath": "/",
-		"CentralAuthAutoLoginWikis": [],
-		"CentralAuthAutoCreateWikis": [],
-		"CentralAuthLoginIcon": false,
-		"CentralAuthPrefsForUIReload": [
-			"skin",
-			"language",
-			"thumbsize",
-			"underline",
-			"stubthreshold",
-			"showhiddencats",
-			"justify",
-			"numberheadings",
-			"editondblclick",
-			"editsection",
-			"editsectiononrightclick",
-			"usenewrc",
-			"extendwatchlist"
-		],
-		"CentralAuthCookiesP3P": true,
-		"CentralAuthCreateOnView": false,
-		"CentralAuthRC": [],
-		"CentralAuthLockedCanEdit": [],
-		"DisableUnmergedEditing": false,
-		"CentralAuthWikisPerSuppressJob": 10,
-		"CentralAuthReadOnly": false,
-		"CentralAuthUseEventLogging": false,
-		"CentralAuthPreventUnattached": false,
-		"CentralAuthEnableUserMerge": false,
-		"CentralAuthEnableGlobalRenameRequest": false,
-		"CentralAuthCheckSULMigration": false,
-		"CentralAuthGlobalPasswordPolicies": [],
-		"CentralAuthGlobalBlockInterwikiPrefix": "global",
-		"OverrideCentralIdLookupProvider": true,
-		"CentralAuthOldNameAntiSpoofWiki": false
+		"CentralAuthDatabase": {
+			"value": "centralauth"
+		},
+		"CentralAuthAutoMigrate": {
+			"value": false
+		},
+		"CentralAuthAutoMigrateNonGlobalAccounts": {
+			"value": false
+		},
+		"CentralAuthStrict": {
+			"value": false
+		},
+		"CentralAuthDryRun": {
+			"value": false
+		},
+		"CentralAuthCookies": {
+			"value": false
+		},
+		"CentralAuthLoginWiki": {
+			"value": false
+		},
+		"CentralAuthCookieDomain": {
+			"value": ""
+		},
+		"CentralAuthCookiePrefix": {
+			"value": "centralauth_"
+		},
+		"CentralAuthCookiePath": {
+			"value": "/"
+		},
+		"CentralAuthAutoLoginWikis": {
+			"value": []
+		},
+		"CentralAuthAutoCreateWikis": {
+			"value": []
+		},
+		"CentralAuthLoginIcon": {
+			"value": false
+		},
+		"CentralAuthPrefsForUIReload": {
+			"value": [
+				"skin",
+				"language",
+				"thumbsize",
+				"underline",
+				"stubthreshold",
+				"showhiddencats",
+				"justify",
+				"numberheadings",
+				"editondblclick",
+				"editsection",
+				"editsectiononrightclick",
+				"usenewrc",
+				"extendwatchlist"
+			]
+		},
+		"CentralAuthCookiesP3P": {
+			"value": true
+		},
+		"CentralAuthCreateOnView": {
+			"value": false
+		},
+		"CentralAuthRC": {
+			"value": []
+		},
+		"CentralAuthLockedCanEdit": {
+			"value": []
+		},
+		"DisableUnmergedEditing": {
+			"value": false
+		},
+		"CentralAuthWikisPerSuppressJob": {
+			"value": 10
+		},
+		"CentralAuthReadOnly": {
+			"value": false
+		},
+		"CentralAuthUseEventLogging": {
+			"value": false
+		},
+		"CentralAuthPreventUnattached": {
+			"value": false
+		},
+		"CentralAuthEnableUserMerge": {
+			"value": false
+		},
+		"CentralAuthEnableGlobalRenameRequest": {
+			"value": false
+		},
+		"CentralAuthCheckSULMigration": {
+			"value": false
+		},
+		"CentralAuthGlobalPasswordPolicies": {
+			"value": []
+		},
+		"CentralAuthGlobalBlockInterwikiPrefix": {
+			"value": "global"
+		},
+		"OverrideCentralIdLookupProvider": {
+			"value": true
+		},
+		"CentralAuthOldNameAntiSpoofWiki": {
+			"value": false
+		}
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
@@ -475,5 +539,5 @@
 			}
 		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
