@@ -32,7 +32,7 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class AttachAccount extends Maintenance {
 
-	/** @var int */
+	/** @var float */
 	protected $start;
 
 	/** @var int */

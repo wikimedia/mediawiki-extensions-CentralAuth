@@ -480,7 +480,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				$request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
 		) {
 			CentralAuthUtils::setP3P( $request );
-			$request->response()->setCookie( 'LoggedOut', $loggedOut, $loggedOut + 86400,
+			$request->response()->setCookie( 'LoggedOut', (string)$loggedOut, $loggedOut + 86400,
 				$this->centralCookieOptions );
 		}
 	}

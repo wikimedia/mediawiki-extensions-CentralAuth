@@ -38,7 +38,7 @@ class CentralAuthUtils {
 	public static function waitForSlaves() {
 		global $wgCentralAuthDatabase;
 
-		wfWaitForSlaves( false, $wgCentralAuthDatabase );
+		wfWaitForSlaves( null, $wgCentralAuthDatabase );
 	}
 
 	/**
