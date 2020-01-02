@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "99ecf11a_a42d3a9d",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-01-02T22:03:15Z",
+      "side": 1,
+      "message": "Since you asked, you might do something like\n\n if ( count( $users ) !\u003d\u003d 0 ) {\n     $errormsg \u003d \u0027apierror-invaliduser\u0027;\n     $field \u003d \u0027gu_name\u0027;\n\n     $userObjs \u003d [];\n     $conds \u003d [ \u0027gu_name\u0027 \u003d\u003e [] ];\n     foreach ( $users as $name ) {\n          $cname \u003d User::getCanonicalName( $name );\n          if ( $cname \u003d\u003d\u003d false ) {\n              // Record for reporting the error later\n              $userObjs[$name] \u003d null;\n          } else {\n              // Record for lookup\n              $userObjs[$cname] \u003d null;\n              $conds[\u0027gu_name\u0027][] \u003d $cname;\n          }\n     }\n } else {\n     $errormsg \u003d \u0027apierror-invaliduserid\u0027;\n     $field \u003d \u0027gu_id\u0027;\n     $userObjs \u003d array_fill_keys( $ids, null );\n     $conds \u003d [ \u0027gu_id\u0027 \u003d\u003e $this-\u003efilterIDs( [ [ \u0027globaluser\u0027, \u0027gu_id\u0027 ] ], array_keys( $userObjs ) ];\n }\n\n $queryInfo \u003d CentralAuthUser::selectQueryInfo();\n $res \u003d CentralAuthUtils::getCentralReplicaDB()-\u003eselect(\n     $queryInfo[\u0027tables\u0027],\n     $queryInfo[\u0027fields\u0027],\n     $conds,\n     __METHOD__,\n     $queryInfo[\u0027options\u0027],\n     $queryInfo[\u0027joinConds\u0027]\n );\n foreach ( $res as $row ) {\n    $userObjs[$row-\u003e$field] \u003d CentralAuthUser::newFromRow(\n        $row,\n        [] // assume we don\u0027t care about renames.\n    );\n }\n\n /* lines 54–55 */\n\n foreach ( $userObjs as $key \u003d\u003e $user ) {\n     if ( $user \u003d\u003d\u003d null ) {\n         if ( count( $userObjs ) \u003d\u003d\u003d 1 ) {\n             // back compat, throw an error\n             $this-\u003edieWithError( [ $errormsg, Message::plaintextParam( $key ) ] );\n         }\n         // otherwise report inline and continue.\n         $result-\u003eaddValue( [ \u0027query\u0027, $this-\u003egetModuleName() ], $key, [ \u0027invalid\u0027 \u003d\u003e true ] );\n         continue;\n     }\n\n     if ( count( $userObjs ) \u003d\u003d\u003d 1 ) {\n         // Back compat output format for outputting just one user\n         $path \u003d [ \u0027query\u0027, $this-\u003egetModuleName() ];\n     } else {\n         // New output format for multiple users\n         $path \u003d [ \u0027query\u0027, $this-\u003egetModuleName(), $key ];\n     }\n\n     /* lines 63–85 */\n     $result-\u003eaddValue( array_slice( $path, 0, -1 ), array_slice( $path, -1 )[0], $data );\n\n     /* lines 88–172. Generally use $path for the first arg to $result-\u003eaddValue() */\n }\n\nNote that\u0027s off the top of my head and hasn\u0027t been tested.\n\nAlthough you might want to rework the logic to handle continuation in case any of the addValue() calls returns false. I\u0027ll leave that as an exercise for you, but note the most straightforward way to manage that would be to move line 86 to the end of the loop (after line 172), with everything else that was doing an addValue() call instead doing a setValue() into $data.",
+      "parentUuid": "8ca542f4_920e04df",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e3bd27d5_29d47eac",
         "filename": "includes/api/ApiQueryGlobalUserInfo.php",
         "patchSetId": 3
@@ -161,6 +179,23 @@
     },
     {
       "key": {
+        "uuid": "b105d860_be564482",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-01-02T22:03:15Z",
+      "side": 1,
+      "message": "You forgot to update this addValue() call.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f3999460_d9ce7d8a",
         "filename": "includes/api/ApiQueryGlobalUserInfo.php",
         "patchSetId": 3
@@ -172,6 +207,23 @@
       "writtenOn": "2019-12-16T19:52:39Z",
       "side": 1,
       "message": "This will connect to every wiki where the account is known to exist as unattached to fetch the info about that wiki.\n\nIf the account isn\u0027t known to exist globally at all, it\u0027ll connect to //every// wiki to check again.",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f97b29d0_129b0ffe",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-01-02T22:03:15Z",
+      "side": 1,
+      "message": "You forgot to update this addValue() call too. And the addIndexedTagName() call just below.",
       "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
