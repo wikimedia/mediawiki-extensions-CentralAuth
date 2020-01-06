@@ -8,7 +8,8 @@
 			"Teslaton",
 			"Sudo77(new)",
 			"Luky001",
-			"Vlad5250"
+			"Vlad5250",
+			"TomášPolonec"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globálne skupiny, do ktorých používateľ patrí",
@@ -210,9 +211,9 @@
 	"centralauth-log-status-oversighted": "skryté",
 	"centralauth-login-error-locked": "{{GENDER:$1|Nemôžete}} sa prihlásiť, pretože {{GENDER:$1|váš}} účet bol globálne zamknutý.",
 	"centralauth-login-no-others": "Boli ste automaticky prihlásený do ostatných projektov {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Týmto sa zároveň prihlasujete aj na ďalšie projekty {{int:Centralauth-groupname}}:",
+	"centralauth-login-progress": "Prihlasujeme vás do {{PLURAL:$2|wiki}} {{GRAMMAR:2sg|{{int:Centralauth-groupname}}}}:",
 	"centralauth-logout-no-others": "Boli ste automaticky odhlásený z ostatných projektov {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Odhlasujete sa aj z ďalších projektov {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Odhlasujeme vás s ostatných {{PLURAL:$2|wiki}} {{GRAMMAR:2sg|{{int:Centralauth-groupname}}}}:",
 	"centralauth-merge-attempt": "'''Poskytnuté heslá sa kontrolujú voči zostávajúcim zatiaľ nezjednoteným účtom...'''",
 	"centralauth-merge-denied": "Prepáčte, nemáte oprávnenie pristupovať na túto stránku.",
 	"centralauth-merge-dryrun-complete": "Všetky existujúce účty boli automaticky zjednotené!\n\nVo vašich účtoch sa zatiaľ nevykonali žiadne zmeny.",

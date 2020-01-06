@@ -163,7 +163,7 @@
 	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|$2 yetkisine sahip kullanıcılar listesi]]",
 	"centralauth-editgroup-name": "Grubun adı:",
 	"centralauth-editgroup-nonexistent": "Küresel \"$1\" grubu şu anda mevcut değil.",
-	"centralauth-editgroup-noset": "(hiç)",
+	"centralauth-editgroup-noset": "(hiçbiri)",
 	"centralauth-editgroup-nowikiset": "Hiçbiri, tüm vikilerde uygulanır.",
 	"centralauth-editgroup-perms": "Atanan izinler:",
 	"centralauth-editgroup-reason": "Sebep:",
