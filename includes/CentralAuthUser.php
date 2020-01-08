@@ -2419,9 +2419,11 @@ class CentralAuthUser implements IDBAccessObject {
 			[
 				'lu_wiki',
 				'lu_attached_timestamp',
-				'lu_attached_method' ],
+				'lu_attached_method',
+			],
 			[
-				'lu_name' => $this->mName ],
+				'lu_name' => $this->mName,
+			],
 			__METHOD__ );
 
 		$wikis = [];
@@ -2489,14 +2491,14 @@ class CentralAuthUser implements IDBAccessObject {
 		$lb = $lbFactory->getMainLB( $wikiID );
 		$db = $lb->getConnectionRef( DB_REPLICA, [], $wikiID );
 		$fields = [
-				'user_id',
-				'user_email',
-				'user_name',
-				'user_email_authenticated',
-				'user_password',
-				'user_editcount',
-				'user_registration',
-			];
+			'user_id',
+			'user_email',
+			'user_name',
+			'user_email_authenticated',
+			'user_password',
+			'user_editcount',
+			'user_registration',
+		];
 		$conds = [ 'user_name' => $this->mName ];
 		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		if ( !$row ) {
@@ -2506,7 +2508,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 		if ( !$row ) {
 			$ex = new LocalUserNotFoundException(
-				"Could not find local user data for {$this->mName}@{$wikiID}" );
+				"Could not find local user data for {$this->mName}@{$wikiID}"
+			);
 			LoggerFactory::getInstance( 'CentralAuth' )->warning(
 				'Could not find local user data for {username}@{wikiId}',
 				[
@@ -2530,7 +2533,8 @@ class CentralAuthUser implements IDBAccessObject {
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
 			'groupMemberships' => [], // array of (group name => UserGroupMembership object)
-			'blocked' => false ];
+			'blocked' => false,
+		];
 
 		// Edit count field may not be initialized...
 		if ( is_null( $row->user_editcount ) ) {
