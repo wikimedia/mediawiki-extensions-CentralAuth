@@ -153,9 +153,10 @@ class CentralAuthTestUser {
 	 * @param IDatabase $db
 	 */
 	public function save( IDatabase $db ) {
+		$user = User::newFromName( $this->username );
+
 		// Setup local wiki user
 		if ( $this->createLocal ) {
-			$user = User::newFromName( $this->username );
 			if ( $user->idForName() == 0 ) {
 				$user->addToDatabase();
 				TestUser::setPasswordForUser( $user, $this->password );
@@ -194,6 +195,8 @@ class CentralAuthTestUser {
 		if ( count( $this->wikis ) ) {
 			$db->insert( 'localuser', $this->wikis, __METHOD__ );
 		}
+
+		CentralAuthUser::getInstance( $user )->invalidateCache();
 	}
 
 }
