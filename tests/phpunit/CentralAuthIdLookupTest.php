@@ -158,6 +158,10 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	 */
 	public function testCentralIdFromLocalUser( $username, $id, $succeed ) {
 		$user = User::newFromName( $username );
+
+		// Extensions using CentralIdLookup may prefilled invalid values
+		CentralAuthUser::getInstance( $user )->invalidateCache();
+
 		$lookup = new CentralAuthIdLookup();
 		$ret = $lookup->centralIdFromLocalUser( $user );
 		if ( $succeed ) {
