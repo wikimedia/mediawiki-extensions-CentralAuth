@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "51c3d3b2_8c948043",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 42
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2020-01-13T19:14:45Z",
+      "side": 1,
+      "message": "Belatedly, this should\u0027ve used preg_quote. I suggest doing that as a follow-up, since the current code is potentially very fragile.",
+      "range": {
+        "startLine": 128,
+        "startChar": 4,
+        "endLine": 128,
+        "endChar": 42
+      },
+      "revId": "c18695aa7079371a6909ad614511a392ff394757",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
