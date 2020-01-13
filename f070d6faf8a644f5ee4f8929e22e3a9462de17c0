@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0394e830_eb8af086",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 40
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2020-01-13T17:59:16Z",
+      "side": 1,
+      "message": "We don\u0027t normally have the Foundation denoted as a copyright owner. Individual devs are fine.",
+      "range": {
+        "startLine": 26,
+        "startChar": 40,
+        "endLine": 26,
+        "endChar": 60
+      },
+      "revId": "f070d6faf8a644f5ee4f8929e22e3a9462de17c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7512b142_0601b69b",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 40
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 366
+      },
+      "writtenOn": "2020-01-13T17:59:16Z",
+      "side": 1,
+      "message": "2020. ;-)",
+      "range": {
+        "startLine": 26,
+        "startChar": 16,
+        "endLine": 26,
+        "endChar": 20
+      },
+      "revId": "f070d6faf8a644f5ee4f8929e22e3a9462de17c0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
