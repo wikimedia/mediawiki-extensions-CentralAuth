@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe965b6b_e13a4dd3",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2020-01-13T19:52:30Z",
+      "side": 1,
+      "message": "Please pass the second argument (generally speaking, preg_quote without the second argument may be a vulnerability)",
+      "revId": "1dce8ebcb55ef0bb587a1391e508fc6059980257",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
