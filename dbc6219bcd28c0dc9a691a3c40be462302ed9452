@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "73e419a5_aa434c21",
+        "filename": ".phpcs.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 161
+      },
+      "writtenOn": "2020-01-14T21:33:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f57fa04_9577a87d",
+      "revId": "dbc6219bcd28c0dc9a691a3c40be462302ed9452",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cbeea061_379357c0",
         "filename": "includes/specials/SpecialCentralAuth.php",
         "patchSetId": 1
