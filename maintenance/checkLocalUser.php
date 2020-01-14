@@ -162,11 +162,11 @@ class CheckLocalUser extends Maintenance {
 		$centralSlave = CentralAuthUtils::getCentralReplicaDB();
 		$wikis = [];
 
-		if ( !is_null( $this->wiki ) ) {
+		if ( $this->wiki !== null ) {
 			$wikis[] = $this->wiki;
 		} else {
 			$conds = [];
-			if ( !is_null( $this->user ) ) {
+			if ( $this->user !== null ) {
 				$conds['lu_name'] = $this->user;
 			}
 			$result = $centralSlave->select(
@@ -189,7 +189,7 @@ class CheckLocalUser extends Maintenance {
 	}
 
 	protected function getUsers( $wiki ) {
-		if ( !is_null( $this->user ) ) {
+		if ( $this->user !== null ) {
 			$this->output( "\t ... querying '$this->user'\n" );
 			yield $this->user;
 			return;

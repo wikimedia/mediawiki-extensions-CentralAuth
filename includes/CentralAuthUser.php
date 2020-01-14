@@ -1395,10 +1395,10 @@ class CentralAuthUser implements IDBAccessObject {
 	public static function getWikiList() {
 		global $wgLocalDatabases;
 		static $wikiList;
-		if ( is_null( $wikiList ) ) {
+		if ( $wikiList === null ) {
 			Hooks::run( 'CentralAuthWikiList', [ &$wikiList ] );
 			// @phan-suppress-next-line PhanRedundantCondition May set by hook
-			if ( is_null( $wikiList ) ) {
+			if ( $wikiList === null ) {
 				$wikiList = $wgLocalDatabases;
 			}
 		}
@@ -1630,13 +1630,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$added = [];
 		$removed = [];
 
-		if ( is_null( $setLocked ) ) {
+		if ( $setLocked === null ) {
 			$setLocked = $isLocked;
 		} elseif ( !$pm->userHasRight( $context->getUser(), 'centralauth-lock' ) ) {
 			return Status::newFatal( 'centralauth-admin-not-authorized' );
 		}
 
-		if ( is_null( $setHidden ) ) {
+		if ( $setHidden === null ) {
 			$setHidden = $oldHiddenLevel;
 		} elseif ( $setHidden != self::HIDDEN_NONE
 			|| $oldHiddenLevel != self::HIDDEN_NONE ) {
@@ -1711,8 +1711,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$good =
-			( is_null( $lockStatus ) || $lockStatus->isGood() ) &&
-			( is_null( $hideStatus ) || $hideStatus->isGood() );
+			( $lockStatus === null || $lockStatus->isGood() ) &&
+			( $hideStatus === null || $hideStatus->isGood() );
 
 		// Setup Status object to return all of the information for logging
 		if ( $good && ( count( $added ) || count( $removed ) ) ) {
@@ -1737,10 +1737,10 @@ class CentralAuthUser implements IDBAccessObject {
 			);
 
 		} elseif ( !$good ) {
-			if ( !is_null( $lockStatus ) && !$lockStatus->isGood() ) {
+			if ( $lockStatus !== null && !$lockStatus->isGood() ) {
 				$returnStatus->merge( $lockStatus );
 			}
-			if ( !is_null( $hideStatus ) && !$hideStatus->isGood() ) {
+			if ( $hideStatus !== null && !$hideStatus->isGood() ) {
 				$returnStatus->merge( $hideStatus );
 			}
 		}
@@ -2537,7 +2537,7 @@ class CentralAuthUser implements IDBAccessObject {
 		];
 
 		// Edit count field may not be initialized...
-		if ( is_null( $row->user_editcount ) ) {
+		if ( $row->user_editcount === null ) {
 			$actorWhere = ActorMigration::newMigration()
 				->getWhere( $db, 'rev_user', User::newFromId( $data['id'] ) );
 			$data['editCount'] = 0;

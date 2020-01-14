@@ -36,12 +36,12 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$prop = array_flip( (array)$params['prop'] );
-		if ( is_null( $params['user'] ) && is_null( $params['id'] ) ) {
+		if ( $params['user'] === null && $params['id'] === null ) {
 			$params['user'] = $this->getUser()->getName();
 		}
 
 		// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
-		if ( is_null( $params['user'] ) ) {
+		if ( $params['user'] === null ) {
 			// @phan-suppress-next-line PhanTypePossiblyInvalidDimOffset
 			$user = CentralAuthUser::newFromId( $params['id'] );
 			if ( $user === false ) {
@@ -164,7 +164,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	}
 
 	public function getCacheMode( $params ) {
-		if ( !is_null( $params['user'] ) || !is_null( $params['id'] ) ) {
+		if ( $params['user'] !== null || $params['id'] !== null ) {
 			// URL determines user, public caching is fine
 			return 'public';
 		} else {

@@ -28,7 +28,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
-		if ( !is_null( $subpage ) && preg_match( "/^[0-9a-zA-Z]{32}$/", $subpage ) ) {
+		if ( $subpage !== null && preg_match( "/^[0-9a-zA-Z]{32}$/", $subpage ) ) {
 			$user = User::newFromConfirmationCode( $subpage );
 
 			if ( is_object( $user ) ) {

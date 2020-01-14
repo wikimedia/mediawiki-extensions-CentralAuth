@@ -1,7 +1,7 @@
 <?php
 
-use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
+use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\MediaWikiServices;
 
 class SpecialCentralAuth extends SpecialPage {

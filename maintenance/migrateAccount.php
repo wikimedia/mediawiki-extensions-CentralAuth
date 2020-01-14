@@ -170,12 +170,12 @@ class MigrateAccount extends Maintenance {
 
 			if (
 				$this->getOption( 'attachmissing', false )
-				&& !is_null( $central->getEmailAuthenticationTimestamp() )
+				&& $central->getEmailAuthenticationTimestamp() !== null
 			) {
 				foreach ( $unattached as $wiki => $local ) {
 					if (
 						$central->getEmail() === $local['email']
-						&& !is_null( $local['emailAuthenticated'] )
+						&& $local['emailAuthenticated'] !== null
 					) {
 						$this->output( "ATTACHING: $username@$wiki\n" );
 						$central->attach( $wiki, 'mail', /** $sendToRC = */ !$this->suppressRC );
@@ -235,10 +235,10 @@ class MigrateAccount extends Maintenance {
 			$emailMatch = true;
 			$email = null;
 			foreach ( $unattached as $local ) {
-				if ( is_null( $email ) ) {
+				if ( $email === null ) {
 					$email = $local['email'];
 				}
-				if ( $local['email'] === $email && !is_null( $local['emailAuthenticated'] ) ) {
+				if ( $local['email'] === $email && $local['emailAuthenticated'] !== null ) {
 					continue;
 				}
 				$emailMatch = false;
