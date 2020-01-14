@@ -1,7 +1,7 @@
 <?php
 
-use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
+use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\MediaWikiServices;
 
 class SpecialCentralAuth extends SpecialPage {
@@ -250,7 +250,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param $wikitext string
+	 * @param string $wikitext
 	 */
 	private function showStatusError( $wikitext ) {
 		$this->getOutput()->wrapWikiTextAsInterface(

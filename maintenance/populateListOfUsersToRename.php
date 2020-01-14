@@ -84,7 +84,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 						foreach ( $unattached as $wiki => $info ) {
 							if ( $ca->getEmailAuthenticationTimestamp() &&
 								$info['email'] === $ca->getEmail() &&
-								!is_null( $info['emailAuthenticated'] )
+								$info['emailAuthenticated'] !== null
 							) {
 								$attachableWikis[] = $wiki;
 							}

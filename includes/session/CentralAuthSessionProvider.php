@@ -1,9 +1,9 @@
 <?php
 
-use MediaWiki\Session\SessionManager;
-use MediaWiki\Session\SessionInfo;
-use MediaWiki\Session\UserInfo;
 use MediaWiki\Session\SessionBackend;
+use MediaWiki\Session\SessionInfo;
+use MediaWiki\Session\SessionManager;
+use MediaWiki\Session\UserInfo;
 
 /**
  * CentralAuth cookie-based sessions.

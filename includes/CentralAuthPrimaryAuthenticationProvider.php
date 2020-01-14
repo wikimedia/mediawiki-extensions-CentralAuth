@@ -19,12 +19,12 @@
  * @ingroup Auth
  */
 
-use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
-use MediaWiki\Auth\PasswordAuthenticationRequest;
+use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
+use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -43,7 +43,8 @@ class CentralAuthPrimaryAuthenticationProvider
 	protected $autoMigrateNonGlobalAccounts = null;
 
 	/** @var bool Whether to prevent a new account from being created if the
-	 * account exists on other wikis in the SUL group. */
+	 * account exists on other wikis in the SUL group.
+	 */
 	protected $preventUnattached = null;
 
 	/** @var bool Whether to check for spoofed user names */

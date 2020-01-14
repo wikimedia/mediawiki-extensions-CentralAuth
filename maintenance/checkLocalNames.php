@@ -69,7 +69,7 @@ class CheckLocalNames extends Maintenance {
 		// because of the database shards, grab a list of the wikis and we will
 		// iterate from there
 		$wikis = [];
-		if ( !is_null( $this->wiki ) ) {
+		if ( $this->wiki !== null ) {
 			$wikis[] = $this->wiki;
 		} else {
 			$result = $centralSlave->select(
