@@ -1,11 +1,11 @@
 <?php
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
-use MediaWiki\MediaWikiServices;
 use Wikimedia\WaitConditionLoop;
-use MediaWiki\Logger\LoggerFactory;
 
 class CentralAuthUtils {
 	/** @var BagOStuff|null Session cache */

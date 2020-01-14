@@ -42,7 +42,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	protected function getDB() {
 		static $db = null;
 
-		if ( is_null( $db ) ) {
+		if ( $db === null ) {
 			$db = CentralAuthUtils::getCentralReplicaDB();
 		}
 		return $db;
@@ -77,7 +77,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			isset( $params['to'] ) ? $this->getCanonicalUserName( $params['to'] ) : null
 		);
 
-		if ( !is_null( $params['prefix'] ) ) {
+		if ( $params['prefix'] !== null ) {
 			$this->addWhere(
 				'gu_name' . $db->buildLike( $this->getCanonicalUserName( $params['prefix'] ), $db->anyString() )
 			);

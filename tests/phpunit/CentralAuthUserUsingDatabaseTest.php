@@ -24,7 +24,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertEquals( wfWikiID(), $caUser->getHomeWiki() );
 		$this->assertSame( true, $caUser->isAttached() );
 		$this->assertSame( false, $caUser->isLocked() );
-		$this->assertEquals( '20130627183537', $caUser->getRegistration() );
+		$this->assertSame( '20130627183537', $caUser->getRegistration() );
 		$this->assertEquals(
 			CentralAuthUser::HIDDEN_NONE,
 			$caUser->getHiddenLevel()
