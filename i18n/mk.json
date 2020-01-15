@@ -501,5 +501,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Вашата}} сметка '''$1''' е преименувана во '''$2''' во текот на автоматскиот преод кон обединетиот најавен систем на {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Вашата}} сметка е отстранета",
 	"sulrenamewarning-usenew": "Во иднина, за најава користете го {{GENDER:$1|вашето}} ново корисничко име '''$1'''.",
-	"userswhowillberenamed": "Корисниците што ќе бидат преименувани"
+	"userswhowillberenamed": "Корисниците што ќе бидат преименувани",
+	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на црн список."
 }

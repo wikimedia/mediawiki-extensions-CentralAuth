@@ -548,5 +548,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|}}Votre compte '''$1''' a été renommé en '''$2''' lors de la migration automatique vers le système d’identification unifié de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|}}Votre compte a été renommé",
 	"sulrenamewarning-usenew": "Veuillez utiliser votre nouveau nom d’utilisat{{GENDER:$1|eur|rice}} '''$1''' lorsque vous vous connecterez à l’avenir.",
-	"userswhowillberenamed": "Utilisateurs qui seront renommés"
+	"userswhowillberenamed": "Utilisateurs qui seront renommés",
+	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas interroger un renommage global, parce que vous êtes en liste noire."
 }

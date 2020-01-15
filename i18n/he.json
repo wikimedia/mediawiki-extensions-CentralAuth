@@ -507,5 +507,6 @@
 	"sulrenamewarning-renamed": "שם החשבון {{GENDER:$2|שלך}} '''$1''' שוּנָה אל '''$2''' במהלך מעבר אוטומטי למערכת כניסה מאוחדת של {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה",
 	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד.",
-	"userswhowillberenamed": "משתמשים ששמם ישונה"
+	"userswhowillberenamed": "משתמשים ששמם ישונה",
+	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשך הימצאותך ברשימה שחורה."
 }

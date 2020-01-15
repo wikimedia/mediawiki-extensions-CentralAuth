@@ -41,7 +41,8 @@
 			"佛壁灯",
 			"WQL",
 			"A2B4C",
-			"Xiplus"
+			"Xiplus",
+			"Josephine W."
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -534,5 +535,6 @@
 	"sulrenamewarning-renamed": "在自动迁移至{{int:Centralauth-groupname}}的统一登录系统过程中，{{GENDER:$2|您}}的账户'''$1'''已被重命名至'''$2'''。",
 	"sulrenamewarning-title": "{{GENDER:$1|您}}的账户已被重命名",
 	"sulrenamewarning-usenew": "今后，请使用{{GENDER:$1|您}}的新用户名'''$1'''登录。",
-	"userswhowillberenamed": "将被重命名的用户"
+	"userswhowillberenamed": "将被重命名的用户",
+	"centralauth-badaccess-blacklisted": "您因为在黑名单上无法申请全球改名。"
 }

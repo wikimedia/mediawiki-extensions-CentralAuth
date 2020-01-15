@@ -529,5 +529,6 @@
 	"sulrenamewarning-renamed": "在自動移轉至 {{int:Centralauth-groupname}} 的整合登入系統時已重新命名{{GENDER:$2|您的}}帳號 '''$1''' 至 '''$2'''。",
 	"sulrenamewarning-title": "已重新命名{{GENDER:$1|您的}}帳號",
 	"sulrenamewarning-usenew": "往後在登入時請使用{{GENDER:$1|您的}}新使用者名稱 '''$1'''。",
-	"userswhowillberenamed": "將會被重新命名的使用者"
+	"userswhowillberenamed": "將會被重新命名的使用者",
+	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。"
 }

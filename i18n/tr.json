@@ -524,5 +524,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Sizin}} hesabınız '''$1''', {{int:centralauth-groupname}} birleşik giriş sistemine otomatik geçiş sırasında '''$2''' olarak yeniden adlandırıldı.",
 	"sulrenamewarning-title": "{{GENDER:$1|Sizin}} hesabınız yeniden adlandırıldı",
 	"sulrenamewarning-usenew": "İleride giriş yaparken lütfen {{GENDER:$1|sizin}} yeni kullanıcı adı '''$1''' kullanın.",
-	"userswhowillberenamed": "Yeniden adlandırılacak kullanıcılar"
+	"userswhowillberenamed": "Yeniden adlandırılacak kullanıcılar",
+	"centralauth-badaccess-blacklisted": "Genel bir yeniden adlandırma isteğinde bulunamazsınız, çünkü kara listede olursunuz."
 }
