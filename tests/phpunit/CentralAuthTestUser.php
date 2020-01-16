@@ -153,14 +153,7 @@ class CentralAuthTestUser {
 	 * @param IDatabase $db
 	 */
 	public function save( IDatabase $db ) {
-		// Setup local wiki user
-		if ( $this->createLocal ) {
-			$user = User::newFromName( $this->username );
-			if ( $user->idForName() == 0 ) {
-				$user->addToDatabase();
-				TestUser::setPasswordForUser( $user, $this->password );
-			}
-		}
+		$user = User::newFromName( $this->username );
 
 		// Setup global user
 		$row = [
@@ -193,6 +186,14 @@ class CentralAuthTestUser {
 
 		if ( count( $this->wikis ) ) {
 			$db->insert( 'localuser', $this->wikis, __METHOD__ );
+		}
+
+		// Setup local wiki user
+		if ( $this->createLocal ) {
+			if ( $user->idForName() == 0 ) {
+				$user->addToDatabase();
+				TestUser::setPasswordForUser( $user, $this->password );
+			}
 		}
 	}
 
