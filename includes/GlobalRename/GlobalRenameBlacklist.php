@@ -93,6 +93,7 @@ class GlobalRenameBlacklist {
 		}
 
 		$rows = explode( "\n", $text );
+		$this->blacklist = [];
 		foreach ( $rows as $row ) {
 			$trimmedRow = trim( $row );
 			if ( $trimmedRow === "" ) { // Empty line

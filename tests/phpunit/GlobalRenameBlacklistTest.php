@@ -52,4 +52,12 @@ class GlobalRenameBlacklistTest extends MediaWikiIntegrationTestCase {
 			'BadUser passed GlobalRenameBlacklist'
 		);
 	}
+
+	public function testEmptyBlacklist() {
+		$this->editPage( 'Blacklist', '' );
+
+		$this->assertTrue(
+			$this->blacklist->checkUser( User::newFromName( 'BadUser' ) )
+		);
+	}
 }
