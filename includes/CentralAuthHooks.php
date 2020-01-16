@@ -1011,12 +1011,13 @@ class CentralAuthHooks {
 
 	/**
 	 * @param array &$vars
+	 * @param OutputPage $out
 	 * @return bool
 	 */
-	public static function onMakeGlobalVariablesScript( &$vars ) {
-		global $wgUser;
-		if ( !$wgUser->isAnon() ) {
-			$centralUser = CentralAuthUser::getInstance( $wgUser );
+	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
+		$user = $out->getUser();
+		if ( !$user->isAnon() ) {
+			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
 				$vars['wgGlobalGroups'] = $centralUser->getGlobalGroups();
 			}
