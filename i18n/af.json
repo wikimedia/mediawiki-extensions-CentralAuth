@@ -6,7 +6,8 @@
 			"SPQRobin",
 			"Spacebirdy",
 			"පසිඳු කාවින්ද",
-			"Fwolff"
+			"Fwolff",
+			"Joris Darlington Quarshie"
 		]
 	},
 	"centralauth": "Global Gebruikers Bestuur",
@@ -218,5 +219,6 @@
 	"right-centralauth-oversight": "Onderdruk globale gebruiker",
 	"right-centralauth-unmerge": "Ontknoop globale gebruiker",
 	"right-globalgroupmembership": "Wysig lidmaatskap aan globale groepe",
-	"right-globalgrouppermissions": "Bestuur globale groepe"
+	"right-globalgrouppermissions": "Bestuur globale groepe",
+	"centralauth-badaccess-blacklisted": "U kan nie 'n globale hernoeming versoek nie,want u is op 'n swartlys."
 }
