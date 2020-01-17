@@ -549,5 +549,5 @@
 	"sulrenamewarning-title": "{{GENDER:$1|}}Votre compte a été renommé",
 	"sulrenamewarning-usenew": "Veuillez utiliser votre nouveau nom d’utilisat{{GENDER:$1|eur|rice}} '''$1''' lorsque vous vous connecterez à l’avenir.",
 	"userswhowillberenamed": "Utilisateurs qui seront renommés",
-	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas interroger un renommage global, parce que vous êtes en liste noire."
+	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, parce que vous êtes en liste noire."
 }

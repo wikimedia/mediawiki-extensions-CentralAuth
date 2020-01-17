@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Silovan"
+			"Silovan",
+			"Narazeni"
 		]
 	},
 	"centralauth-admin-blocklog": "ბლოკირაფაშ ისტორია",
@@ -12,5 +13,6 @@
 	"log-action-filter-globalauth-delete": "გლობალური ანგარიშიშ ლასუა",
 	"log-action-filter-globalauth-setstatus": "გლობალური ანგარიშიშ სტატუსიშ თირუა",
 	"log-action-filter-suppress-cadelete": "გლობალური ანგარიშიშ ლასუა",
-	"log-action-filter-suppress-setstatus": "გლობალური ანგარიშიშ სტატუსიშ თირუა"
+	"log-action-filter-suppress-setstatus": "გლობალური ანგარიშიშ სტატუსიშ თირუა",
+	"centralauth-badaccess-blacklisted": "თქვა ვეშეილებჷნა გლობალური ჯოხოშ თირუა მითხუათინ, თიშ გეშა, ნამჷ-და თქვა უჩა ერკებულს რეთ."
 }
