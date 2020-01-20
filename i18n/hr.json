@@ -163,7 +163,7 @@
 	"centralauth-foreign-link": "Suradnik $1 na $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Dodjela prava",
 	"centralauth-globalgroupperms-group": "Skupina",
-	"centralauth-globalgroupperms-group-disabled": "(nije omogućeno na ovoj wiki)",
+	"centralauth-globalgroupperms-group-disabled": "(nije omogućeno na ovom wikiju)",
 	"centralauth-globalgroupperms-group-listmembers": "popis članova",
 	"centralauth-globalgroupperms-group-wikiset": "Skup wikija gdje je ova skupina aktivna: $1",
 	"centralauth-globalgroupperms-management": "upravljanje",

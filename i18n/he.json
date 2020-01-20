@@ -396,7 +396,7 @@
 	"centralauth-uwbr-registration-nodate": "אינו ידוע",
 	"centralauth-warning-notattached": "החשבון המקומי אינו מחובר לחשבון גלובלי.",
 	"centralauth-warning-notloggedin": "אינכם מחוברים כעת.",
-	"centralauth-years-ago": "לפני {{PLURAL:$1|שנה|שנתיים|$1 שנים}}",
+	"centralauth-years-ago": "לפני {{PLURAL:$1|שנה|שנתיים|$1 שנה|$1 שנים}}",
 	"centralautologin": "כניסה מרכזית",
 	"centrallogin": "כניסת משתמש מרכזית",
 	"centralloginsuccesful": "נכנסת לחשבון",

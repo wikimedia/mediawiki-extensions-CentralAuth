@@ -525,5 +525,6 @@
 	"sulrenamewarning-renamed": "تم تغيير اسم {{GENDER:$1|حسابك|حسابكِ}} «$1» إلى «$2» خلال الانتقال الآلي إلى نظام الدخول الموحد لل{{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "تم تغيير اسم {{GENDER:$1|حسابك|حسابكِ}}",
 	"sulrenamewarning-usenew": "من فضلك، استخدم اسم حساب{{GENDER:$1|ك|كِ}} الجديد '''$1''' لتسجيل الدخول في المستقبل.",
-	"userswhowillberenamed": "المستخدمون الذين ستتم إعادة تسميتهم"
+	"userswhowillberenamed": "المستخدمون الذين ستتم إعادة تسميتهم",
+	"centralauth-badaccess-blacklisted": "لا يمكنك طلب عملية إعادة تسمية عالمية، لأنك على قائمة سوداء."
 }
