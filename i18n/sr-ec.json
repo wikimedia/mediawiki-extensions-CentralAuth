@@ -126,7 +126,7 @@
 	"centralauth-centralautologin-logged-in-nouser": "Јединствено сте пријављени. Освежите страницу да примените ваша корисничка подешавања.",
 	"centralauth-centralautologin-lostsession": "Подаци о сесији су изгубљени",
 	"centralauth-complete": "Обједињавање налога је завршено!",
-	"centralauth-complete-text": "Сада можете да се пријавите на све вики локације {{int:Centralauth-groupname}}, без отварања новог налога.",
+	"centralauth-complete-text": "Сада можете да се пријавите на све вики пројекте {{int:Centralauth-groupname}}, без отварања новог налога.",
 	"centralauth-completelogin-back": "Назад на претходну страницу.",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
 	"centralauth-contribs-locked-log": "Овај налог је глобално закључан.\nПоследње закључавање је наведено испод:",
