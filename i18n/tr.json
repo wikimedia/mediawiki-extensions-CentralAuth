@@ -363,7 +363,7 @@
 	"centralauth-rename-queued": "$1 ile $2 yeniden adlandırılan işler $3 olarak sıraya alınmıştır.\n\nİlerlemeyi [[Special:GlobalRenameProgress/$2]]'de görüntüleyin.",
 	"centralauth-rename-table-domain": "Yerel viki",
 	"centralauth-rename-table-status": "Durum",
-	"centralauth-rename-table-status-done": "Tamam",
+	"centralauth-rename-table-status-done": "Yapıldı",
 	"centralauth-rename-table-status-failed": "Başarısız",
 	"centralauth-rename-table-status-inprogress": "Devam ediyor",
 	"centralauth-rename-table-status-queued": "Sırada",
