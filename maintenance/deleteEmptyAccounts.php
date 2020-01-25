@@ -81,7 +81,7 @@ class DeleteEmptyAccounts extends Maintenance {
 			);
 
 			foreach ( $result as $row ) {
-				$this->process( $row->gu_name );
+				$this->process( $row->gu_name, $wgUser );
 			}
 			if ( $this->fix ) {
 				CentralAuthUtils::waitForSlaves();
@@ -91,7 +91,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	private function process( $username ) {
+	private function process( $username, User $deleter ) {
 		$central = new CentralAuthUser( $username, CentralAuthUser::READ_LATEST );
 		if ( !$central->exists() ) {
 			$this->output(
@@ -117,7 +117,7 @@ class DeleteEmptyAccounts extends Maintenance {
 
 		if ( $this->fix ) {
 			$reason = wfMessage( 'centralauth-delete-empty-account' )->inContentLanguage()->text();
-			$status = $central->adminDelete( $reason );
+			$status = $central->adminDelete( $reason, $deleter );
 			if ( !$status->isGood() ) {
 				$msg = $status->errors[0]['message'];
 				if ( $msg instanceof Message ) {
