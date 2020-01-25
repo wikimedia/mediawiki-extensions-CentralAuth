@@ -598,7 +598,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			[
 				$this->makeRightsList( $addRights ),
 				$this->makeRightsList( $removeRights )
-			]
+			],
+			$this->getUser()
 		);
 	}
 
@@ -620,7 +621,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			[
 				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName )->getPrefixedText(),
 				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName )->getPrefixedText()
-			]
+			],
+			$this->getUser()
 		);
 	}
 
@@ -642,7 +644,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			[
 				$this->getWikiSetName( $old ),
 				$this->getWikiSetName( $new ),
-			]
+			],
+			$this->getUser()
 		);
 	}
 

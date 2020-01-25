@@ -208,7 +208,7 @@ class SpecialCentralAuth extends SpecialPage {
 					/* deprecated */ $status->successCount );
 			}
 		} elseif ( $this->mMethod == 'delete' && $this->mCanUnmerge ) {
-			$status = $globalUser->adminDelete( $request->getVal( 'reason' ) );
+			$status = $globalUser->adminDelete( $request->getVal( 'reason' ), $this->getUser() );
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} else {
