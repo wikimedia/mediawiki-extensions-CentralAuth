@@ -391,20 +391,45 @@ class SpecialWikiSets extends SpecialPage {
 		// Now logging
 		$log = new LogPage( 'gblrights' );
 		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
+		$user = $this->getUser();
 		if ( !$oldname ) {
 			// New set
-			$log->addEntry( 'newset', $title, $reason, [ $name, $type, implode( ', ', $wikis ) ] );
+			$log->addEntry(
+				'newset',
+				$title,
+				$reason,
+				[ $name, $type, implode( ', ', $wikis ) ],
+				$user
+			);
 		} else {
 			if ( $oldname != $name ) {
-				$log->addEntry( 'setrename', $title, $reason, [ $name, $oldname ] );
+				$log->addEntry(
+					'setrename',
+					$title,
+					$reason,
+					[ $name, $oldname ],
+					$user
+				);
 			}
 			if ( $oldtype != $type ) {
-				$log->addEntry( 'setnewtype', $title, $reason, [ $name, $oldtype, $type ] );
+				$log->addEntry(
+					'setnewtype',
+					$title,
+					$reason,
+					[ $name, $oldtype, $type ],
+					$user
+				);
 			}
 			$added = implode( ', ', array_diff( $wikis, $oldwikis ) );
 			$removed = implode( ', ', array_diff( $oldwikis, $wikis ) );
 			if ( $added || $removed ) {
-				$log->addEntry( 'setchange', $title, $reason, [ $name, $added, $removed ] );
+				$log->addEntry(
+					'setchange',
+					$title,
+					$reason,
+					[ $name, $added, $removed ],
+					$user
+				 );
 			}
 		}
 
@@ -435,7 +460,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
 		$log = new LogPage( 'gblrights' );
-		$log->addEntry( 'deleteset', $title, $reason, [ $name ] );
+		$log->addEntry( 'deleteset', $title, $reason, [ $name ], $this->getUser() );
 
 		$this->buildMainView( '<strong class="success">' .
 			$this->msg( 'centralauth-editset-success-delete' )->escaped() . '</strong>'

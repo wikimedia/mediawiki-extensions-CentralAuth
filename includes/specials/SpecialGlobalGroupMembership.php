@@ -160,7 +160,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			[
 				$this->makeGroupNameList( $oldGroups ),
 				$this->makeGroupNameList( $newGroups )
-			]
+			],
+			$this->getUser()
 		);
 	}
 }
