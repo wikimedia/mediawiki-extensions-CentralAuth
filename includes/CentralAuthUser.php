@@ -13,6 +13,7 @@ likely construction types...
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -2104,7 +2105,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string[] of database name strings
 	 */
 	public function listUnattached() {
-		if ( IP::isIPAddress( $this->mName ) ) {
+		if ( IPUtils::isIPAddress( $this->mName ) ) {
 			return []; // don't bother with master queries
 		}
 

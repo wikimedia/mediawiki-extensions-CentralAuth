@@ -5,6 +5,7 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionInfo;
+use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -1277,7 +1278,7 @@ class CentralAuthHooks {
 	 * @return bool true
 	 */
 	public static function getBlockLogLink( &$msg, $user ) {
-		if ( IP::isIPAddress( $user ) ) {
+		if ( IPUtils::isIPAddress( $user ) ) {
 			return true; // Return if it is an IP as only usernames can be locked.
 		}
 
