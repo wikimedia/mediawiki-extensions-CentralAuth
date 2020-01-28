@@ -1540,6 +1540,12 @@ class CentralAuthHooks {
 			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
 		}
 
+		$updater->dropExtensionIndex(
+			'localnames',
+			'ln_name_wiki',
+			__DIR__ . '/../db_patches/patch-localnames-unique.sql'
+		);
+
 		return true;
 	}
 
