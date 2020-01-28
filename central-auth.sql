@@ -36,7 +36,7 @@ CREATE TABLE /*_*/localnames (
   primary key (ln_wiki, ln_name)
 ) /*$wgDBTableOptions*/;
 
-CREATE INDEX /*i*/ln_name_wiki ON /*_*/localnames (ln_name, ln_wiki);
+CREATE UNIQUE INDEX /*i*/ln_name_wiki_unique ON /*_*/localnames (ln_name, ln_wiki);
 
 --
 -- Global account data.
