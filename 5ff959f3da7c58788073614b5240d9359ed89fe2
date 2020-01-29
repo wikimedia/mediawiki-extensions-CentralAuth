@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3cebf990_1c65b3b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2020-01-29T09:38:01Z",
+      "side": 1,
+      "message": "Is it? And even if, why does this blacklist need to behave the same?\n\nIn other words: What is the motivation for this change? Is there a specific problem you are trying to solve? Can you link a discussion somewhere, either on wiki or on Phabricator?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 41
+      },
+      "revId": "5ff959f3da7c58788073614b5240d9359ed89fe2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
