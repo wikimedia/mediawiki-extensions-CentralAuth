@@ -127,7 +127,7 @@ class GlobalRenameBlacklist {
 			$res = true;
 			foreach ( $this->blacklist as $row ) {
 				$row = str_replace( '/', '\/', $row );
-				$regex = "/$row/u";
+				$regex = "/^$row$/u";
 				if ( !StringUtils::isValidPCRERegex( $regex ) ) {
 					continue; // Skip invalid regex
 				}
