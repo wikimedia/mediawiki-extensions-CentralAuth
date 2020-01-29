@@ -419,7 +419,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getNewName()
 		);
 
-		if ( $req->userIsGlobal() ) {
+		if ( isset( $globalUser ) ) {
 			$infoMsg->numParams( $globalUser->getGlobalEditCount() );
 		}
 
