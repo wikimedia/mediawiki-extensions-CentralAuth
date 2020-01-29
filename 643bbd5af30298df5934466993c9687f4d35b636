@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4989fd06_841ed527",
+        "filename": "central-auth.sql",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5450
+      },
+      "writtenOn": "2020-01-29T11:12:00Z",
+      "side": 1,
+      "message": "There\u0027s a primary key already, hence AFAIK the UNIQUE index (and the pre-existing non-UNIQUE index) is already being ignored by MySQL.\n\nWe may ask a DBA for advice, but IMHO, we should just get rid of the unnecessary index.",
+      "range": {
+        "startLine": 36,
+        "startChar": 2,
+        "endLine": 36,
+        "endChar": 32
+      },
+      "revId": "643bbd5af30298df5934466993c9687f4d35b636",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
