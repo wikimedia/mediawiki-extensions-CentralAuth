@@ -82,7 +82,7 @@ class LocalPageMoveJob extends Job {
 		} finally {
 			self::$moveInProgress = false;
 		}
-		if ( !$status->isOK() ) {
+		if ( isset( $status ) && !$status->isOK() ) {
 			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage} -> {$newPage}" );
 		}
 	}

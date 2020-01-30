@@ -115,6 +115,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		$userName = null;
 		$token = null;
+		$from = null;
 
 		$prefix = $this->centralCookieOptions['prefix'];
 		$userCookie = $this->getCookie( $request, 'User', $prefix );
