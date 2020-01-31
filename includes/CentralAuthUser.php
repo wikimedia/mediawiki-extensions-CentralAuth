@@ -1630,10 +1630,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$lockStatus = $hideStatus = null;
 		$added = [];
 		$removed = [];
+		$user = $context->getUser();
 
 		if ( $setLocked === null ) {
 			$setLocked = $isLocked;
-		} elseif ( !$pm->userHasRight( $context->getUser(), 'centralauth-lock' ) ) {
+		} elseif ( !$pm->userHasRight( $user, 'centralauth-lock' ) ) {
 			return Status::newFatal( 'centralauth-admin-not-authorized' );
 		}
 
@@ -1641,7 +1642,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$setHidden = $oldHiddenLevel;
 		} elseif ( $setHidden != self::HIDDEN_NONE
 			|| $oldHiddenLevel != self::HIDDEN_NONE ) {
-			if ( !$pm->userHasRight( $context->getUser(), 'centralauth-oversight' )
+			if ( !$pm->userHasRight( $user, 'centralauth-oversight' )
 			) {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
@@ -1704,10 +1705,11 @@ class CentralAuthUser implements IDBAccessObject {
 					break;
 			}
 
+			$userName = $user->getName();
 			if ( $setHidden == self::HIDDEN_OVERSIGHT ) {
-				$this->suppress( $reason );
+				$this->suppress( $userName, $reason );
 			} elseif ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
-				$this->unsuppress( $reason );
+				$this->unsuppress( $userName, $reason );
 			}
 		}
 
@@ -1751,21 +1753,20 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Suppresses all user accounts in all wikis.
+	 * @param string $name
 	 * @param string $reason
 	 */
-	public function suppress( $reason ) {
-		global $wgUser;
-		$this->doCrosswikiSuppression( true, $wgUser->getName(), $reason );
+	public function suppress( $name, $reason ) {
+		$this->doCrosswikiSuppression( true, $name, $reason );
 	}
 
 	/**
 	 * Unsuppresses all user accounts in all wikis.
-	 *
+	 * @param string $name
 	 * @param string $reason
 	 */
-	public function unsuppress( $reason ) {
-		global $wgUser;
-		$this->doCrosswikiSuppression( false, $wgUser->getName(), $reason );
+	public function unsuppress( $name, $reason ) {
+		$this->doCrosswikiSuppression( false, $name, $reason );
 	}
 
 	/**
