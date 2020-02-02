@@ -289,7 +289,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$viewMsg = $this->msg( 'globalrenamequeue-view',
 			$req->getName(),
 			$req->getNewName(),
-			$reason,
+			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>",
 			$this->msg( 'globalrenamequeue-view-' . $req->getStatus() )->text(),
 			$this->getLanguage()->userTimeAndDate(
 				$req->getRequested(), $this->getUser()
@@ -480,7 +480,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
 		$htmlForm->addHeaderText( $this->msg( 'globalrenamequeue-request-reason',
-			$reason
+			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>"
 		)->parseAsBlock() );
 
 		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
