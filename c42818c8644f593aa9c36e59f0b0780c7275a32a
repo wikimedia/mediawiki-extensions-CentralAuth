@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "829b3b01_b8384cb6",
+        "filename": "i18n/en.json",
+        "patchSetId": 12
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-02-02T22:14:04Z",
+      "side": 1,
+      "message": "That would be specific to Wikimedia. I\u0027d prefer having it overriden in WikimediaMessages extension.",
+      "parentUuid": "c45d618b_227ff476",
+      "revId": "c42818c8644f593aa9c36e59f0b0780c7275a32a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "14574363_5385d433",
         "filename": "includes/specials/SpecialGlobalRenameRequest.php",
         "patchSetId": 12
@@ -30,6 +48,30 @@
       "writtenOn": "2019-10-29T02:33:42Z",
       "side": 1,
       "message": "Why not `if ( $value \u003d\u003d\u003d null || $alldata[\u0027vanish\u0027] \u003d\u003d\u003d true )` rather than having 2 checks?",
+      "range": {
+        "startLine": 235,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 3
+      },
+      "revId": "c42818c8644f593aa9c36e59f0b0780c7275a32a",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a8cf58a_a7f95c0a",
+        "filename": "includes/specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 12
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-02-02T22:14:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14574363_5385d433",
       "range": {
         "startLine": 235,
         "startChar": 0,
