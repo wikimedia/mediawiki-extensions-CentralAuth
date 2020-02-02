@@ -457,7 +457,7 @@
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> is requesting a rename to <strong>$3</strong>.",
 	"globalrenamequeue-request-movepages": "Move user pages",
 	"globalrenamequeue-request-previous-renames": "Previous {{PLURAL:$1|rename|renames}}",
-	"globalrenamequeue-request-reason": "<strong>Reason for requesting rename</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Reason for requesting rename</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Public log entry comment (if accepting)",
 	"globalrenamequeue-request-reason-sul": "User notified of global name conflict in preparation for SUL finalization.",
 	"globalrenamequeue-request-savefailed": "Failure saving change to request status.",

@@ -480,7 +480,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
 		$htmlForm->addHeaderText( $this->msg( 'globalrenamequeue-request-reason',
-			$reason
+			"<dl><dd>" . str_replace("\n", "</dd><dd>", $reason) . "</dd></dl>"
 		)->parseAsBlock() );
 
 		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
