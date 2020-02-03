@@ -139,7 +139,7 @@
 	"centralauth-editgroup-success": "Глобалан тоба хийцина",
 	"centralauth-editgroup-success-text": "Ахьа кхиамца глобалан тобан бакъо хийцина $1.\n[[Special:GlobalGroupPermissions|ЮхагӀо тобанийн урхалла дечу агӀоне]]",
 	"centralauth-editset": "Вики гӀирсийн гулам",
-	"centralauth-editset-badname": "Еса я цамагийна гуламан цӀе.",
+	"centralauth-editset-badname": "Яьсса я цамагийна гуламан цӀе.",
 	"centralauth-editset-badtype": "Цамагийна гуламан тайп",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|1=ТӀехьайогӀу википеди|ТӀехьайогӀу википедеш}} яц: $1.",
 	"centralauth-editset-intro-ro": "Лахахь гайтина, болуш болу вики гӀирсийн гулам.",

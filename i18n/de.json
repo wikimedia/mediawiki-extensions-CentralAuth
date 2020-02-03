@@ -18,7 +18,8 @@
 			"Luke081515",
 			"MGChecker",
 			"ThePiscin",
-			"FF11"
+			"FF11",
+			"Mglaser"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale Gruppen, in der der Benutzer ist",
@@ -515,5 +516,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Dein}} Benutzerkonto '''$1''' wurde während der automatischen Migration zum vereinheitlichten Anmeldesystem {{int:Centralauth-groupname}} umbenannt in '''$2'''.",
 	"sulrenamewarning-title": "{{GENDER:$1|Dein}} Benutzerkonto wurde umbenannt",
 	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''.",
-	"userswhowillberenamed": "Benutzer, die umbenannt werden"
+	"userswhowillberenamed": "Benutzer, die umbenannt werden",
+	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Blacklist stehst."
 }
