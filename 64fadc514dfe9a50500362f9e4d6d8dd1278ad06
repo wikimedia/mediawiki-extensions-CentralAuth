@@ -22,6 +22,30 @@
       "revId": "64fadc514dfe9a50500362f9e4d6d8dd1278ad06",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c67865bd_e3b2d041",
+        "filename": "modules/ext.centralauth.globalrenamerequest.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-02-03T09:09:36Z",
+      "side": 1,
+      "message": "Thank you!",
+      "parentUuid": "7306ce18_5c35e79a",
+      "range": {
+        "startLine": 16,
+        "startChar": 5,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "64fadc514dfe9a50500362f9e4d6d8dd1278ad06",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
