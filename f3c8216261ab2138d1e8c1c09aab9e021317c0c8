@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e21cf35_939ba8de",
+        "filename": "includes/specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 16
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2020-02-03T12:23:27Z",
+      "side": 1,
+      "message": "This sounds confusing to me and am not sure what it means.\n\nDid you mean\n\n* \"newname is only required if vanish is checked\" - meaning, that when varnish is not checked, then newname is optional but still possible.\n\nOr:\n\n* \"Choosing a newname is only possible when varnish is checked. It cannot be required all the time.\" The code currently does the opposite.\n\nLooking at it more closely, I understand the following:\n\nWhen the varnish option is on, the newname is automatically generated and cannot be chosen. When the varnish option is off, the newname field is available but also required.\n\nHowever, this is not possible to express right now, so we make it optional.\n\nWe will need to make sure that the PHP code shows an error if vanish\u003doff and newname is empty. Can you confirm that and explain in the commit message which code makes the error?",
+      "range": {
+        "startLine": 158,
+        "startChar": 6,
+        "endLine": 158,
+        "endChar": 54
+      },
+      "revId": "f3c8216261ab2138d1e8c1c09aab9e021317c0c8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
