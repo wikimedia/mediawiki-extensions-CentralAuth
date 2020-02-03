@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7306ce18_5c35e79a",
+        "filename": "modules/ext.centralauth.globalrenamerequest.js",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 2664
+      },
+      "writtenOn": "2020-02-03T09:04:44Z",
+      "side": 1,
+      "message": "I think this whole file can be replaced with:\n\n \u0027hide-if\u0027 \u003d\u003e [ \u0027\u003d\u003d\u003d\u0027, \u0027vanish\u0027, \u00271\u0027 ]\n\nin getFormFields()[\u0027newname\u0027]\n\nsee https://gerrit.wikimedia.org/g/mediawiki/core/+/d60c1c1b3f38f5b466516fc69692c043fa1ad4e9/includes/htmlform/HTMLForm.php#95",
+      "range": {
+        "startLine": 16,
+        "startChar": 5,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "64fadc514dfe9a50500362f9e4d6d8dd1278ad06",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
