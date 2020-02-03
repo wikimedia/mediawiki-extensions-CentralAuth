@@ -22,6 +22,30 @@
       "revId": "dc215b8b39d5b350206dda69b321fefccfd7cef1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c5f6198_0ecc1bf5",
+        "filename": "includes/specials/SpecialGlobalRenameRequest.php",
+        "patchSetId": 15
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-02-03T11:55:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29337c45_8d2e01fd",
+      "range": {
+        "startLine": 152,
+        "startChar": 47,
+        "endLine": 152,
+        "endChar": 82
+      },
+      "revId": "dc215b8b39d5b350206dda69b321fefccfd7cef1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
