@@ -223,7 +223,7 @@
 	"centralauth-error-unmerged": "Değişiklik yapamazsınız çünkü hesabınız birleştirilmemiş.",
 	"centralauth-error-wrongprovider": "$1 kullanılırken bu özel sayfa kullanılamıyor.",
 	"centralauth-finish-incomplete": "Bu parola kullanılarak birçok hesap birleştirildi.\nDiğer hesaplar henüz doğrulanmadı.",
-	"centralauth-finish-login": "Oturum açma",
+	"centralauth-finish-login": "Oturum aç",
 	"centralauth-finish-noconfirms": "Bu parola kullanılarak hiçbir hesap onaylanamadı.",
 	"centralauth-finish-password": "Parola:",
 	"centralauth-finish-problems": "Sorun mu yaşıyorsunuz, yoksa bu hesapların sahibi değil misiniz?\n[[m:Special:MyLanguage/Help:Unified login|Nasıl yardım bulunur]]…",
