@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "688c6e96_bdf7664f",
+        "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1453
+      },
+      "writtenOn": "2020-02-07T11:22:34Z",
+      "side": 1,
+      "message": "I don\u0027t think it makes sense to change one, but not the other.\n\nSame many more times in the code below.",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 26
+      },
+      "revId": "4dfb5f599946db4a3b242d041e8d0a44ae87c5b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
