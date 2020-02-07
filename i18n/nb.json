@@ -13,7 +13,8 @@
 			"Kingu",
 			"Cocu",
 			"Jon Harald Søby",
-			"Macofe"
+			"Macofe",
+			"1233qwer1234qwer4"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper som brukeren tilhører",
@@ -53,7 +54,7 @@
 	"centralauth-admin-group-temporary": "$1 ''(midlertidig)''",
 	"centralauth-admin-hidden-list": "fra den globale brukerlista",
 	"centralauth-admin-hidden-oversight": "sensurert",
-	"centralauth-admin-info-attached": "Antall tilkoblede kontoer",
+	"centralauth-admin-info-attached": "Antall tilkoblede kontoer:",
 	"centralauth-admin-info-editcount": "Totalt antall redigeringer:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Global gruppe|Globale grupper}}:",
 	"centralauth-admin-info-header": "Global brukerinformasjon",
