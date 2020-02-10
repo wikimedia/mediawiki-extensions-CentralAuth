@@ -420,7 +420,9 @@
 		"SessionCheckInfo": "CentralAuthHooks::onSessionCheckInfo",
 		"ImportHandleUnknownUser": "CentralAuthHooks::onImportHandleUnknownUser",
 		"UnitTestsAfterDatabaseSetup": "CentralAuthHooks::onUnitTestsAfterDatabaseSetup",
-		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown"
+		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown",
+		"ContentSecurityPolicyDefaultSource": "CentralAuthHooks::onContentSecurityPolicyDefaultSource",
+		"ContentSecurityPolicyScriptSource": "CentralAuthHooks::onContentSecurityPolicyScriptSource"
 	},
 	"config": {
 		"CentralAuthDatabase": {
