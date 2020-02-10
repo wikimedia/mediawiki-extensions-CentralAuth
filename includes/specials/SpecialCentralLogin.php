@@ -291,8 +291,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// Show HTML to trigger cross-domain cookies.
 			// This will trigger filling in the "remember me" token cookie on the
 			// central wiki, which can only be done once authorization is completed.
+			$csp = $this->getOutput()->getCSP();
 			$this->getOutput()->addHtml(
-				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser ) );
+				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser, $csp ) );
 		}
 
 		$helper = new LoginHelper( $this->getContext() );
@@ -331,8 +332,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 		// Show HTML to trigger cross-domain cookies
+		$csp = $this->getOutput()->getCSP();
 		$this->getOutput()->addHtml(
-			CentralAuthHooks::getDomainAutoLoginHtml( $this->getUser(), $centralUser ) );
+			CentralAuthHooks::getDomainAutoLoginHtml( $this->getUser(), $centralUser, $csp ) );
 	}
 
 	protected function showError( ...$args ) {
