@@ -152,9 +152,12 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว",
 	"centralautologin": "การเข้าสู่ระบบกลาง",
 	"centralloginsuccesful": "ลงชื่อเข้าแล้ว",
+	"globalgroupmembership": "การเป็นสมาชิกในกลุ่มทั่วโลก",
+	"globalgrouppermissions": "การจัดการกลุ่มทั่วโลก",
 	"globalrenameprogress": "กระบวนการเปลี่ยนชื่อทั่วโลก",
 	"globalrenameprogress-legend": "ดูกระบวนการเปลี่ยนชื่อทั่วโลก",
 	"globalrenamerequest": "แจ้งขอเปลี่ยนชื่อบัญชีผู้ใช้ทั่วโลก",
+	"globalusers": "รายการบัญชีทั่วโลก",
 	"log-name-gblrename": "ปูมการเปลี่ยนชื่อทั่วโลก",
 	"mergeaccount": "สถานะการรวมชื่อล็อกอิน",
 	"right-centralauth-merge": "รวมบัญชีของพวกเขา"
