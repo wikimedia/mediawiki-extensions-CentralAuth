@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f68256e_345c550c",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2020-02-10T06:26:48Z",
+      "side": 1,
+      "message": "No point in checking that.",
+      "range": {
+        "startLine": 1271,
+        "startChar": 6,
+        "endLine": 1271,
+        "endChar": 35
+      },
+      "revId": "522eda2c00fc16f86a5d65d0442be786081cd7f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4ef47469_5f15f317",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2020-02-10T06:26:48Z",
+      "side": 1,
+      "message": "Should check if it is set.",
+      "revId": "522eda2c00fc16f86a5d65d0442be786081cd7f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0e8de67_67f08d19",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 1321,
+      "author": {
+        "id": 389
+      },
+      "writtenOn": "2020-02-10T06:26:48Z",
+      "side": 1,
+      "message": "Should check if it is set.",
+      "revId": "522eda2c00fc16f86a5d65d0442be786081cd7f0",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
