@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Stavanger7"
+			"Stavanger7",
+			"OIS"
 		]
 	},
-	"centralauth-admin-blocklog": "diarium de bloc"
+	"centralauth-admin-blocklog": "diarium de bloc",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributiones}} in $2",
+	"centralauth-foreign-link": "Usator $1 in $2"
 }
