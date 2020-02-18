@@ -1626,7 +1626,11 @@ class CentralAuthHooks {
 		global $wgWikimediaJenkinsCI;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {
-			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
+			$filename = 'central-auth.sql';
+			if ( $updater->getDB()->getType() === 'postgres' ) {
+				$filename = 'central-auth.postgres.sql';
+			}
+			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../' . $filename );
 		}
 
 		return true;
@@ -1646,12 +1650,17 @@ class CentralAuthHooks {
 	 */
 	public static function onUnitTestsAfterDatabaseSetup( IMaintainableDatabase $db, $prefix ) {
 		global $wgCentralAuthDatabase;
+
 		$wgCentralAuthDatabase = false;
 
 		$originalPrefix = $db->tablePrefix();
 		$db->tablePrefix( $prefix );
 		if ( !$db->tableExists( 'globaluser' ) ) {
-			$db->sourceFile( __DIR__ . '/../central-auth.sql' );
+			$filename = 'central-auth.sql';
+			if ( $db->getType() === 'postgres' ) {
+				$filename = 'central-auth.postgres.sql';
+			}
+			$db->sourceFile( __DIR__ . '/../' . $filename );
 		}
 		$db->tablePrefix( $originalPrefix );
 	}
