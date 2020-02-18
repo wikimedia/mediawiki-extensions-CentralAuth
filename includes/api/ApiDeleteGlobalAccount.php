@@ -89,20 +89,4 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	public function needsToken() {
 		return 'deleteglobalaccount';
 	}
-
-	public static function getToken() {
-		global $wgUser;
-		if ( !MediaWikiServices::getInstance()->getPermissionManager()
-			->userHasRight( $wgUser, 'centralauth-unmerge' )
-		) {
-			return false;
-		}
-
-		return $wgUser->getEditToken( 'deleteglobalaccount' );
-	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['deleteglobalaccount'] = [ __CLASS__, 'getToken' ];
-		return true; // Hooks must return bool
-	}
 }

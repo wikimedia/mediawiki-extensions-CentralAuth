@@ -140,20 +140,4 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	public function needsToken() {
 		return 'setglobalaccountstatus';
 	}
-
-	public static function getToken() {
-		global $wgUser;
-		if ( !MediaWikiServices::getInstance()->getPermissionManager()
-			->userHasRight( $wgUser, 'centralauth-lock' )
-		) {
-			return false;
-		}
-
-		return $wgUser->getEditToken( 'setglobalaccountstatus' );
-	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['setglobalaccountstatus'] = [ __CLASS__, 'getToken' ];
-		return true; // Hooks must return bool
-	}
 }
