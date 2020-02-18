@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc1b5ca4_2ab2a578",
+        "filename": "includes/api/ApiDeleteGlobalAccount.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2681
+      },
+      "writtenOn": "2020-02-18T21:21:24Z",
+      "side": 1,
+      "message": "It seems like you\u0027ve just removed the only usage of this method.",
+      "revId": "da4caf5648384399eea8bff460b4b7974399da76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1b9be16_c3aab3cf",
+        "filename": "includes/api/ApiSetGlobalAccountStatus.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 2681
+      },
+      "writtenOn": "2020-02-18T21:21:24Z",
+      "side": 1,
+      "message": "It seems like you\u0027ve just removed the only usage of this method.",
+      "revId": "da4caf5648384399eea8bff460b4b7974399da76",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
