@@ -151,9 +151,4 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 		return $wgUser->getEditToken( 'setglobalaccountstatus' );
 	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['setglobalaccountstatus'] = [ __CLASS__, 'getToken' ];
-		return true; // Hooks must return bool
-	}
 }

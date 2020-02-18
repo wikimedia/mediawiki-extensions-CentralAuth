@@ -100,9 +100,4 @@ class ApiDeleteGlobalAccount extends ApiBase {
 
 		return $wgUser->getEditToken( 'deleteglobalaccount' );
 	}
-
-	public static function injectTokenFunction( &$list ) {
-		$list['deleteglobalaccount'] = [ __CLASS__, 'getToken' ];
-		return true; // Hooks must return bool
-	}
 }

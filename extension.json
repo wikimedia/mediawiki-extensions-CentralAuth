@@ -395,10 +395,6 @@
 		"SpecialPasswordResetOnSubmit": "CentralAuthHooks::onSpecialPasswordResetOnSubmit",
 		"OtherBlockLogLink": "CentralAuthHooks::getBlockLogLink",
 		"BeforePageDisplay": "CentralAuthHooks::onBeforePageDisplay",
-		"ApiTokensGetTokenTypes": [
-			"ApiDeleteGlobalAccount::injectTokenFunction",
-			"ApiSetGlobalAccountStatus::injectTokenFunction"
-		],
 		"ApiQueryTokensRegisterTypes": "CentralAuthHooks::onApiQueryTokensRegisterTypes",
 		"TestCanonicalRedirect": "CentralAuthHooks::onTestCanonicalRedirect",
 		"LogEventsListGetExtraInputs": "CentralAuthHooks::onLogEventsListGetExtraInputs",
