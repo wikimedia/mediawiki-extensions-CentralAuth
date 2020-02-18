@@ -4,7 +4,7 @@
 -- GRANT all on centralauth.* to 'wikiuser'@'localhost';
 -- source central-auth.sql
 
--- IMPORTANT: If you want to run the AntiSpoof Extention with
+-- IMPORTANT: If you want to run the AntiSpoof extension with
 -- CentralAuth, you must run patch-antispoof-global.mysql.sql,
 -- located in the AntiSpoof folder of this extension.
 

@@ -8,7 +8,7 @@ ALTER TABLE globaluser
 
 -- Not hidden (was 0)
 UPDATE globaluser SET gu_hidden = '' WHERE gu_hidden = '0';
--- Hidden from public lists, but remains visible in Special:CentralSuth log
+-- Hidden from public lists, but remains visible in Special:CentralAuth log
 UPDATE globaluser SET gu_hidden = 'lists' WHERE gu_hidden = '1';
 -- There's also "suppressed" level, which wasn't used before this schema change
 
