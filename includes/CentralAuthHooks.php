@@ -430,9 +430,14 @@ class CentralAuthHooks {
 	/**
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
+	 * @param ContentSecurityPolicy $csp From OutputPage::getCsp
 	 * @return string
 	 */
-	public static function getDomainAutoLoginHtml( User $user, CentralAuthUser $centralUser ) {
+	public static function getDomainAutoLoginHtml(
+		User $user,
+		CentralAuthUser $centralUser,
+		ContentSecurityPolicy $csp
+	) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
 		// No other domains
@@ -458,6 +463,7 @@ class CentralAuthHooks {
 					$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
 					$params
 				);
+				$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
 				$inject_html .= Xml::element( 'img',
 					[
 						'src' => $url,
@@ -480,6 +486,7 @@ class CentralAuthHooks {
 				'wikiid' => wfWikiID(),
 				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 			] );
+			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
 			$inject_html .= Xml::element( 'img',
 				[
 					'src' => $url,
@@ -642,7 +649,6 @@ class CentralAuthHooks {
 	 */
 	public static function onUserLogoutComplete( User &$user, &$inject_html, $userName ) {
 		global $wgCentralAuthCookies, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
-
 		if ( !$wgCentralAuthCookies ) {
 			return true;
 		}
@@ -652,6 +658,7 @@ class CentralAuthHooks {
 			$wikis[$wgCentralAuthLoginWiki] = $wgCentralAuthLoginWiki;
 		}
 
+		$csp = RequestContext::getMain()->getOutput()->getCSP();
 		// No other domains
 		if ( !$wikis ) {
 			$inject_html = wfMessage( 'centralauth-logout-no-others' )->escaped();
@@ -669,6 +676,7 @@ class CentralAuthHooks {
 						'type' => 'icon',
 					]
 				);
+				$csp->addDefaultSrc( wfParseUrl( $wiki->getCanonicalServer() )['host'] );
 				$inject_html .= Xml::element( 'img',
 					[
 						'src' => $url,
@@ -1234,6 +1242,87 @@ class CentralAuthHooks {
 		$html .= Xml::closeElement( 'div' );
 
 		return $html;
+	}
+
+	/**
+	 * Add other domains as CSP source if auto-login is going to be attempted
+	 *
+	 * This is adding domains for images (and other req types), not scripts.
+	 *
+	 * @note We can't do $out->getCSP()->addDefaultSrc in onBeforePageDisplay,
+	 * because that hook runs after the header is already outputted.
+	 * @param array &$defaultSrc Array of allowed CSP sources.
+	 * @param Mixed $cspConfig
+	 * @param bool $mode
+	 */
+	public static function onContentSecurityPolicyDefaultSource(
+		array &$defaultSrc,
+		$cspConfig,
+		$mode
+	) {
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
+		$out = RequestContext::getMain()->getOutput();
+		// So possibilities:
+		// * We are doing edge login because initial login was via API and this is next request.
+		// * We are doing edge login because JS loaded Special:CentralAutoLogin/start or /checkCookies
+		//   and user is logged in on a different wiki, which eventually loads edge html.
+		if (
+			!$out->getUser()->isLoggedIn() ||
+				$out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' )
+		) {
+			foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
+				$wiki = WikiMap::getWiki( $wiki );
+				if ( self::isMobileDomain() ) {
+					$url = MobileContext::singleton()->getMobileUrl(
+						$wiki->getFullUrl( 'Special:CentralAutoLogin/start' )
+					);
+					$defaultSrc[] = wfParseUrl( $url )['host'];
+				} else {
+					$defaultSrc[] = wfParseUrl( $wiki->getCanonicalServer() )['host'];
+				}
+			}
+		}
+
+		if ( $out->getUser()->isAnon() && $wgCentralAuthLoginWiki ) {
+			// For the non-js case, there is local image loaded, but it redirects to
+			// central wiki, so include it.
+			$loginWiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+			if ( self::isMobileDomain() ) {
+				$url = MobileContext::singleton()->getMobileUrl(
+					$loginWiki->getFullUrl( 'Special:CentralAutoLogin/checkLoggedIn' )
+				);
+				$defaultSrc[] = wfParseUrl( $url )['host'];
+			} else {
+				$defaultSrc[] = wfParseUrl( $loginWiki->getCanonicalServer() )['host'];
+			}
+		}
+	}
+
+	/**
+	 * Add other domains as CSP source if auto-login is going to be attempted
+	 *
+	 * This is adding domains for scripts but not images.
+	 *
+	 * This is basically for ext.centralauth.centralautologin and corresponds
+	 * to self::getCentralautologinJsData
+	 *
+	 * @note We can't do $out->getCSP()->addScriptSrc() in onBeforePageDisplay,
+	 * because that hook runs after the header is already outputted.
+	 * @param array &$scriptSrc Array of allowed CSP sources.
+	 * @param Mixed $cspConfig
+	 * @param bool $mode
+	 */
+	public static function onContentSecurityPolicyScriptSource(
+		array &$scriptSrc,
+		$cspConfig,
+		$mode
+	) {
+		global $wgCentralAuthLoginWiki;
+		$out = RequestContext::getMain()->getOutput();
+		if ( $wgCentralAuthLoginWiki && $out->getUser()->isAnon() ) {
+			$loginWiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
+			$scriptSrc[] = wfParseUrl( $loginWiki->getCanonicalServer() )['host'];
+		}
 	}
 
 	/**
