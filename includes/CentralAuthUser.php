@@ -1494,9 +1494,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Delete a global account and log what happened
 	 *
 	 * @param string $reason Reason for the deletion
+	 * @param User $deleter User doing the deletion
 	 * @return Status
 	 */
-	public function adminDelete( $reason ) {
+	public function adminDelete( $reason, User $deleter ) {
 		$this->checkWriteMode();
 		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
@@ -1540,9 +1541,9 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $wasSuppressed ) {
 			// "suppress/delete" is taken by core, so use "cadelete"
-			$this->logAction( 'cadelete', $reason, [], /* $suppressLog = */ true );
+			$this->logAction( 'cadelete', $deleter, $reason, [], /* $suppressLog = */ true );
 		} else {
-			$this->logAction( 'delete', $reason, [], /* $suppressLog = */ false );
+			$this->logAction( 'delete', $deleter, $reason, [], /* $suppressLog = */ false );
 		}
 		$this->invalidateCache();
 
@@ -1734,6 +1735,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			$this->logAction(
 				'setstatus',
+				$context->getUser(),
 				$reason,
 				$logParams,
 				$setHidden != self::HIDDEN_NONE
@@ -3043,11 +3045,18 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Log an action for the current user
 	 *
 	 * @param string $action
+	 * @param User $user
 	 * @param string $reason
 	 * @param array $params
 	 * @param bool $suppressLog
 	 */
-	public function logAction( $action, $reason = '', $params = [], $suppressLog = false ) {
+	public function logAction(
+		$action,
+		User $user,
+		$reason = '',
+		$params = [],
+		$suppressLog = false
+	) {
 		// Not centralauth because of some weird length limitiations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
 		$log = new LogPage( $logType );
@@ -3057,7 +3066,8 @@ class CentralAuthUser implements IDBAccessObject {
 				MWNamespace::getCanonicalName( NS_USER ) . ":{$this->mName}@global"
 			),
 			$reason,
-			$params
+			$params,
+			$user
 		);
 	}
 

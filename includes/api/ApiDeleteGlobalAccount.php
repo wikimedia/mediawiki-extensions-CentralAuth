@@ -44,7 +44,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 
 		}
 
-		$status = $globalUser->adminDelete( $params['reason'] );
+		$status = $globalUser->adminDelete( $params['reason'], $this->getUser() );
 		if ( $status->isGood() ) {
 			$this->getResult()->addValue( null, $this->getModuleName(), [
 				'user' => $globalUser->getName(),
