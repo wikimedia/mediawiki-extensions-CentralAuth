@@ -115,7 +115,7 @@
 	"centralauth-admin-no": "否",
 	"centralauth-admin-no-unified": "该用户名没有统一账户。",
 	"centralauth-admin-none-selected": "选中的账户未被修改。",
-	"centralauth-admin-nonexistent": "这里没有\"<nowiki>$1</nowiki>\"的全域账户",
+	"centralauth-admin-nonexistent": "没有\"<nowiki>$1</nowiki>\"的全域账户",
 	"centralauth-admin-not-authorized": "您没有权限来执行此操作",
 	"centralauth-admin-permission": "只有监管员才能为他人合并账户。",
 	"centralauth-admin-reason": "原因：",
