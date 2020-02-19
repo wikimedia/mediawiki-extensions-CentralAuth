@@ -1,0 +1,8 @@
+Code-Review+1: Umherirrender <umherirrender_de.wp@web.de>
+Code-Review+2: Ppchelko <ppchelko@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Wed, 19 Feb 2020 05:02:36 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/567174
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
