@@ -1,0 +1,204 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21352953_66f75107",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "I had started on a similar patch, but I set it aside when I started testing and ran into all sorts of MySQLisms. This will need a lot of testing to ensure that the schema actually works.",
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7bfff96_c6b9495c",
+        "filename": "AntiSpoof/patch-antispoof-global.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "varchar(255)?",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b62f7f6_2267b718",
+        "filename": "AntiSpoof/patch-antispoof-global.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "same?",
+      "range": {
+        "startLine": 11,
+        "startChar": 16,
+        "endLine": 11,
+        "endChar": 33
+      },
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45f07c30_2d561eab",
+        "filename": "central-auth.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "varchar(255)? Same or similar for many other instances of \"TEXT\" below.",
+      "range": {
+        "startLine": 9,
+        "startChar": 10,
+        "endLine": 9,
+        "endChar": 14
+      },
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6071e1f_776b41c5",
+        "filename": "central-auth.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "Note type names have to be unique like table names and sequences. We might want to choose a naming convention more like that for sequences to reduce the risk of collisions.",
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d157d1ca_710b99b5",
+        "filename": "central-auth.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "Check whether the value here is always valid UTF-8. The MySQL schema uses a blob type.",
+      "range": {
+        "startLine": 36,
+        "startChar": 14,
+        "endLine": 36,
+        "endChar": 18
+      },
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43bb2b4b_8be9cedb",
+        "filename": "central-auth.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "Same as line 36.",
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69471001_f389acc4",
+        "filename": "central-auth.postgres.sql",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "Same as line 36.",
+      "range": {
+        "startLine": 105,
+        "startChar": 11,
+        "endLine": 105,
+        "endChar": 15
+      },
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf3ad2a5_94e2ff31",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1632,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "Core has MediaWiki\\DB\\PatchFileLocation that is supposed to help with this sort of logic, but unfortunately it\u0027s a trait so using it in a static method is a bit of a pain\n\n $tmp \u003d new class {\n     use PatchFileLocation { getSqlPatchPath as public; }\n };\n $updater-\u003eaddExtensionTable(\n     \u0027globaluser\u0027,\n     $tmp-\u003egetSqlPatchPath( $updater-\u003egetDB(), \u0027central-auth\u0027, dirname( __DIR__ ) )\n );",
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f30b2ce3_7650ea3f",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 2
+      },
+      "lineNbr": 1663,
+      "author": {
+        "id": 221
+      },
+      "writtenOn": "2020-02-19T14:44:34Z",
+      "side": 1,
+      "message": "(same)",
+      "revId": "2f1dfd3e22732ef999c04aec3f50568363cd8de9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
