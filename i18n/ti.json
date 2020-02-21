@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joanmp17"
+		]
+	},
+	"centralauth-admin-info-username": "ስም ተጠቃሚ:",
+	"centralauth-admin-no": "ኣይፋል",
+	"centralauth-admin-username": "ስም ተጠቃሚ:",
+	"centralauth-admin-yes": "እወ",
+	"centralauth-editgroup-reason": "ምኽንያት:",
+	"centralauth-editset-name": "ስም:",
+	"centralauth-editset-submit-delete": "ሰረዘ",
+	"centralauth-finish-login": "ብመንነት እተው",
+	"centralauth-finish-password": "ቃለ-ምስጢር:",
+	"centralloginsuccesful": "ብመንነት ኣቲኻ"
+}
