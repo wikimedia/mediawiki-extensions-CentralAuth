@@ -1,0 +1,480 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eaf612b5_8e2c4dd5",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 1646,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Not needed yet, declare lower down",
+      "range": {
+        "startLine": 1646,
+        "startChar": 2,
+        "endLine": 1646,
+        "endChar": 28
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "125443d8_bff9e080",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 1660,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Suggest splitting lines",
+      "range": {
+        "startLine": 1660,
+        "startChar": 3,
+        "endLine": 1660,
+        "endChar": 35
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b15fb456_b5b9a3e3",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Should be on the next line",
+      "range": {
+        "startLine": 1677,
+        "startChar": 72,
+        "endLine": 1677,
+        "endChar": 75
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7d32b19_459e3bd7",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Should be combined into a single query with variables for fields and conditions. If $wgUseCAUserGroupExpiry is true, just do `$fields[] \u003d \u0027gug_expiry\u0027;` and `$conds[] \u003d \u0027gug_expiry IS NULL...`",
+      "range": {
+        "startLine": 439,
+        "startChar": 0,
+        "endLine": 457,
+        "endChar": 3
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ceca239_7e164fc6",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 2936,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "null?",
+      "range": {
+        "startLine": 2936,
+        "startChar": 27,
+        "endLine": 2936,
+        "endChar": 32
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b40b3987_37cbcd83",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 2948,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Again, can combine:\n$row \u003d [\n    \u0027gug_user\u0027 \u003d\u003e $this-\u003egetId(),\n    \u0027gug_group\u0027 \u003d\u003e $group\n];\nif ( $wgUseCAUserGroupExpiry ) {\n    $row[\u0027gug_expiry\u0027] \u003d $expiry;\n}\n\n$insert_rows[] \u003d $row;",
+      "range": {
+        "startLine": 2939,
+        "startChar": 0,
+        "endLine": 2948,
+        "endChar": 6
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "517baf67_0aa69d31",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 2950,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "What happens if someone tries to set a 1s (or shorter) expiry, and this lags?",
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f8de4163_7e84c5b7",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 2962,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Split onto 6 lines",
+      "range": {
+        "startLine": 2960,
+        "startChar": 3,
+        "endLine": 2962,
+        "endChar": 31
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "34453c0e_bc87809b",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 2964,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "same",
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04d23c99_022d98c9",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 2970,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Should only run if $wgUseCAUserGroupExpiry is true",
+      "range": {
+        "startLine": 2970,
+        "startChar": 2,
+        "endLine": 2970,
+        "endChar": 35
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cce99023_22ff7aff",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "this seems to be the only reason",
+      "range": {
+        "startLine": 339,
+        "startChar": 56,
+        "endLine": 339,
+        "endChar": 60
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2548388_b96e459e",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Split",
+      "range": {
+        "startLine": 360,
+        "startChar": 5,
+        "endLine": 362,
+        "endChar": 41
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3cb76790_44574932",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "split",
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2c736e4_a89a63a3",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Can just end the if, and return $purgedRows outside of the conditionals",
+      "range": {
+        "startLine": 386,
+        "startChar": 0,
+        "endLine": 390,
+        "endChar": 3
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2137f2d2_a25a7273",
+        "filename": "includes/api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Only when $wg... is true, otherwise this won\u0027t exist",
+      "range": {
+        "startLine": 214,
+        "startChar": 48,
+        "endLine": 214,
+        "endChar": 58
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd9ffead_3d50001e",
+        "filename": "includes/api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Need to handle when not enabled",
+      "range": {
+        "startLine": 242,
+        "startChar": 3,
+        "endLine": 246,
+        "endChar": 4
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a175262_96830883",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Only when enabled",
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5675e3a_f76245e0",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Can be combined:\nif ( $wgUseCA... ) {\n    $fields[\u0027gug_expiry\u0027] \u003d \u0027GROUP_CONCAT...\u0027;\n}",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 3
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "355e5eee_d525bf11",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "should this be null or a string?",
+      "range": {
+        "startLine": 168,
+        "startChar": 7,
+        "endLine": 168,
+        "endChar": 13
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e2e7e8e_ca42909a",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "`getContext`? Can\u0027t find another use with it capitalized[1]\n\n[1] https://codesearch.wmflabs.org/search/?q\u003dGetContext\u0026i\u003dnope\u0026files\u003d\u0026repos\u003d",
+      "range": {
+        "startLine": 263,
+        "startChar": 2,
+        "endLine": 264,
+        "endChar": 43
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "707ab65a_5caa73c1",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Suggest splitting on onto a fe more lines",
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6969e320_b52ea6d4",
+        "filename": "includes/specials/SpecialGlobalUsers.php",
+        "patchSetId": 41
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-22T00:12:05Z",
+      "side": 1,
+      "message": "Now duplicated above",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 45,
+        "endChar": 43
+      },
+      "revId": "274fe7e834919bdc0318f094cd11bca37d69f7a2",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
