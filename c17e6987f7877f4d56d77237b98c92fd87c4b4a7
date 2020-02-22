@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56450b6c_7b5d36fb",
+        "filename": "central-auth.sql",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2020-02-22T16:41:04Z",
+      "side": 1,
+      "message": "stylistically, the file uses null not NULL, but that\u0027s not really an issue",
+      "range": {
+        "startLine": 132,
+        "startChar": 27,
+        "endLine": 132,
+        "endChar": 44
+      },
+      "revId": "c17e6987f7877f4d56d77237b98c92fd87c4b4a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
