@@ -93,8 +93,8 @@ CREATE TABLE /*_*/globaluser (
 
 CREATE UNIQUE INDEX /*i*/gu_name ON /*_*/globaluser (gu_name);
 CREATE INDEX /*i*/gu_email ON /*_*/globaluser (gu_email);
-CREATE INDEX /*i*/gu_locked ON /*_*/globaluser ( gu_name(255), gu_locked );
-CREATE INDEX /*i*/gu_hidden ON /*_*/globaluser ( gu_name(255), gu_hidden(255) );
+CREATE INDEX /*i*/gu_locked ON /*_*/globaluser (gu_name(255), gu_locked);
+CREATE INDEX /*i*/gu_hidden ON /*_*/globaluser (gu_name(255), gu_hidden(255));
 
 --
 -- Local linkage info, listing which wikis the username is attached
