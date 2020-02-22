@@ -133,7 +133,6 @@ CREATE TABLE /*_*/global_user_groups (
   PRIMARY KEY (gug_user,gug_group)
 ) /*$wgDBTableOptions*/;
 
-CREATE INDEX /*i*/gug_user ON /*_*/global_user_groups (gug_user);
 CREATE INDEX /*i*/gug_group ON /*_*/global_user_groups (gug_group);
 
 -- Global group permissions.
@@ -144,7 +143,6 @@ CREATE TABLE /*_*/global_group_permissions (
   PRIMARY KEY (ggp_group, ggp_permission)
 ) /*$wgDBTableOptions*/;
 
-CREATE INDEX /*i*/ggp_group ON /*_*/global_group_permissions (ggp_group);
 CREATE INDEX /*i*/ggp_permission ON /*_*/global_group_permissions (ggp_permission);
 
 -- Sets of wikis (for things like restricting global groups)
