@@ -123,6 +123,8 @@
 	"centralauth-attach-text": "Esta conta aínda non se pasou á conta unificada. Se a conta global tamén é súa, pode unificar esta conta se escribe o contrasinal da conta global:",
 	"centralauth-attach-title": "Confirmar a conta",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] xa está bloqueada globalmente.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|páxina|páxinas}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espazo de nomes|espazos de nomes}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Xa está identificado localmente",
 	"centralauth-centralautologin-badparams": "Os parámetros de autenticación especificados non eran válidos",
 	"centralauth-centralautologin-badstate": "Estado \"$1\" inválido",
@@ -508,5 +510,6 @@
 	"sulrenamewarning-renamed": "A {{GENDER:$2|súa}} conta '''$1''' foi renomeada a '''$2''' durante a migración automática ó sistema de conta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|A súa conta}} foi cambiada de nome",
 	"sulrenamewarning-usenew": "Por favor, use o seu nome de {{GENDER:$1|usuario|usuaria|usuario/a}} \"$1\" para iniciar a sesión a partires de agora.",
-	"userswhowillberenamed": "Usuarios que serán renomeados"
+	"userswhowillberenamed": "Usuarios que serán renomeados",
+	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está incluído nunha lista negra."
 }
