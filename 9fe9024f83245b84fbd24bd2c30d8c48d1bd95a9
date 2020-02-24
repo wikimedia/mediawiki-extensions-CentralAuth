@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc132d64_f674a317",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 44
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-24T04:21:21Z",
+      "side": 1,
+      "message": "too many tabs",
+      "range": {
+        "startLine": 74,
+        "startChar": 2,
+        "endLine": 74,
+        "endChar": 3
+      },
+      "revId": "9fe9024f83245b84fbd24bd2c30d8c48d1bd95a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5552256_022a7570",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 44
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-24T04:21:21Z",
+      "side": 1,
+      "message": "suggest adding a linebreak",
+      "revId": "9fe9024f83245b84fbd24bd2c30d8c48d1bd95a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d77dd00f_c4b2efa8",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 44
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-24T04:21:21Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "9fe9024f83245b84fbd24bd2c30d8c48d1bd95a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff59396a_ab0ea975",
+        "filename": "includes/specials/SpecialGlobalGroupMembership.php",
+        "patchSetId": 44
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-02-24T04:21:21Z",
+      "side": 1,
+      "message": "No longer needed, this is what UserrightsPage::canProcessExpiries already does (and that function can probably be removed altogether after this)",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "9fe9024f83245b84fbd24bd2c30d8c48d1bd95a9",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
