@@ -9,7 +9,8 @@
 			"NehalDaveND",
 			"राम प्रसाद जोशी",
 			"सरोज कुमार ढकाल",
-			"पर्वत सुबेदी"
+			"पर्वत सुबेदी",
+			"हिमाल सुबेदी"
 		]
 	},
 	"centralauth": "वैश्विक खाता प्रवन्धक",
@@ -104,6 +105,7 @@
 	"centralauth-finish-title": "मिलाउने कार्य समाप्त गर्ने",
 	"centralauth-foreign-contributions": " $2मा $1 {{PLURAL:$1|योगदान|योगदानहरू}}",
 	"centralauth-foreign-link": "$2मा $1 प्रयोगकर्ता",
+	"centralauth-globalgroupperms-group-listmembers": "सदस्यहरूको सूची",
 	"centralauth-groupname": "विकिमिडिया फाउन्डेसन",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|घण्टा|घण्टा}} अघि",
 	"centralauth-incomplete": "प्रवेश सम्बन्धित एकीकरण पूर्ण भएन!",

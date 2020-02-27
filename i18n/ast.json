@@ -498,5 +498,6 @@
 	"sulrenamewarning-renamed": "La {{GENDER:$2|to}} cuenta '''$1''' cambióse de nome a '''$2''' demientres la migración automática al sistema de cuenta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|La to cuenta}} cambióse de nome",
 	"sulrenamewarning-usenew": "Usa'l nome d'{{GENDER:$1|usuariu|usuaria}} nuevu '''$1''' cuando anicies sesión nel futuru.",
-	"userswhowillberenamed": "Usuarios que van renomase"
+	"userswhowillberenamed": "Usuarios que van renomase",
+	"centralauth-badaccess-blacklisted": "Nun pues solicitar un cambiu de nome global porque tas nuna llista negra."
 }

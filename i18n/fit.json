@@ -10,6 +10,7 @@
 	"centralauth-admin-delete-title": "Ota poies käyttäjäkonttu",
 	"centralauth-admin-list-editcount": "Mookkausmäärä",
 	"centralauth-admin-list-method": "Metuuti",
+	"centralauth-admin-multi-bot": "Verekset muutokset",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|nimityhjyys|nimityhjyyttä}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Olet lokannu sisäle jo paikallisesti",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|mookkaus|mookkausta}} wikissä $2",
