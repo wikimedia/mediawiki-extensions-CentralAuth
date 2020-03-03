@@ -119,7 +119,7 @@ class DeleteEmptyAccounts extends Maintenance {
 			$reason = wfMessage( 'centralauth-delete-empty-account' )->inContentLanguage()->text();
 			$status = $central->adminDelete( $reason, $deleter );
 			if ( !$status->isGood() ) {
-				$msg = $status->errors[0]['message'];
+				$msg = $status->getErrors()[0]['message'];
 				if ( $msg instanceof Message ) {
 					$msg = $msg->getKey();
 				}
