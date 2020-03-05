@@ -646,7 +646,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$properties = [];
 
-		if ( $wgConf->get( 'wgEnablePartialBlocks', $row['wiki'] ) && $row['block-sitewide'] ) {
+		if ( $row['block-sitewide'] ) {
 			$properties[] = $this->msg( 'blocklist-editing-sitewide' )->escaped();
 		}
 
