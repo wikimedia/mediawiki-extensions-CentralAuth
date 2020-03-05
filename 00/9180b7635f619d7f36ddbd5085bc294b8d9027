@@ -1,0 +1,7 @@
+Code-Review+2: Jforrester <jforrester@wikimedia.org>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Thu, 05 Mar 2020 21:16:38 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/576084
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
