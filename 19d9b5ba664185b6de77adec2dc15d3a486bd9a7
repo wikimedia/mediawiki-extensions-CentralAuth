@@ -1,0 +1,676 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31b23dc6_27c4267a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 48
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Merged, can be removed",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 53
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ce86e40_52c2be68",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "It does? Where?",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "483fa0d3_8160d917",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 1635,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Where?",
+      "range": {
+        "startLine": 1635,
+        "startChar": 12,
+        "endLine": 1635,
+        "endChar": 23
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24dd7e1e_e12053a0",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Where?",
+      "range": {
+        "startLine": 134,
+        "startChar": 12,
+        "endLine": 134,
+        "endChar": 21
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aab2043_481c2f8d",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2905,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Only appears to throw UnexpectedValueException",
+      "range": {
+        "startLine": 2905,
+        "startChar": 12,
+        "endLine": 2905,
+        "endChar": 23
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5d228a0_5c7f25e5",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2912,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Not needed until later [1], should be moved down past the expiry checks",
+      "range": {
+        "startLine": 2912,
+        "startChar": 2,
+        "endLine": 2912,
+        "endChar": 42
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d57643d_2f5519f1",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2914,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Not needed until later [2], should be moved down pass the group existing check",
+      "range": {
+        "startLine": 2914,
+        "startChar": 2,
+        "endLine": 2914,
+        "endChar": 48
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d4b2eb49_29ff214a",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2922,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Now that this only accepts a single group at a time, $insert_rows shouldn\u0027t be declared here. See [3]",
+      "range": {
+        "startLine": 2922,
+        "startChar": 2,
+        "endLine": 2922,
+        "endChar": 20
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab3f1981_5051c9e3",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2923,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "[2] first use",
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71a14790_d1785f8a",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2928,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "[3] Should just be: \n```\n$insert_row \u003d [\n    ...\n];\n```\nonly 1 row",
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "50eaa4f9_6b698dfb",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2942,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "[1] First use",
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62af1592_6ab629d5",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2952,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Does this need to be read from DB_MASTER? Suggest adding\n$dbr \u003d CentralAuthUtils::getCentralReplicaDB();\nand then using $dbr instead of $dbw",
+      "range": {
+        "startLine": 2952,
+        "startChar": 20,
+        "endLine": 2952,
+        "endChar": 24
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f05fa4a_3e8618ee",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Is this needed, if its only used once? Either way, it should go //after// the read only check",
+      "range": {
+        "startLine": 344,
+        "startChar": 2,
+        "endLine": 344,
+        "endChar": 47
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a03614b9_dab0a1c6",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Not needed until after the $scopedLock check",
+      "range": {
+        "startLine": 347,
+        "startChar": 3,
+        "endLine": 351,
+        "endChar": 64
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f70b58cf_c80be630",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Unneeded line",
+      "range": {
+        "startLine": 370,
+        "startChar": 9,
+        "endLine": 371,
+        "endChar": 4
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f6a459b3_f04f0f29",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Is former_global_user_groups a thing // is this left over from something else // nothing is being moved arround",
+      "range": {
+        "startLine": 380,
+        "startChar": 35,
+        "endLine": 380,
+        "endChar": 62
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfd93e5b_fc09c18a",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 389,
+        "startChar": 23,
+        "endLine": 389,
+        "endChar": 42
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76e21c87_f1a8216f",
+        "filename": "includes/api/ApiGlobalUserRights.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "always true now, function should just return a big array",
+      "range": {
+        "startLine": 45,
+        "startChar": 7,
+        "endLine": 45,
+        "endChar": 55
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a882427_85671cd8",
+        "filename": "includes/api/ApiQueryGlobalAllUsers.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Awkward splitting of the lines - can the `);` go on a new line?",
+      "range": {
+        "startLine": 242,
+        "startChar": 3,
+        "endLine": 243,
+        "endChar": 53
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0e447af_4d816706",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "I know this comment was here earlier, but since we\u0027re moving it, shouldn\u0027t it be \"that //don\u0027t// belong to any group\"?",
+      "range": {
+        "startLine": 138,
+        "startChar": 31,
+        "endLine": 138,
+        "endChar": 55
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1a88c3_a4a64fff",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "This now does the opposite, is that intentional?",
+      "range": {
+        "startLine": 169,
+        "startChar": 3,
+        "endLine": 169,
+        "endChar": 76
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23b07689_69e6992d",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "where?",
+      "range": {
+        "startLine": 236,
+        "startChar": 12,
+        "endLine": 236,
+        "endChar": 23
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a10af48_e388cc27",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Can this be on the next line?",
+      "range": {
+        "startLine": 248,
+        "startChar": 60,
+        "endLine": 248,
+        "endChar": 63
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1aa4be4_f0bba6b9",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "1 tab too many, and a bit confusing to follow. I suggest\n```\n$expiryMsg \u003d $this-\u003egetContext()\n    -\u003emsg( \u0027group-membership-link-with-expiry\u0027 )\n    -\u003eparams( $wikitextLink, $expiryDT )\n    -\u003etext();\n```\nthat being said, is $expiryDT needed for one-time use? Could just be\n```\n$expiryMsg \u003d $this-\u003egetContext()\n    -\u003emsg( \u0027group-membership-link-with-expiry\u0027 )\n    -\u003eparams(\n        $wikitextLink,\n        $uiLanguage-\u003euserTimeAndDate( $ugm-\u003egetExpiry(), $uiUser )\n    )\n    -\u003etext();\n```",
+      "range": {
+        "startLine": 251,
+        "startChar": 17,
+        "endLine": 253,
+        "endChar": 14
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9abd2a3_e6bacebf",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Where?",
+      "range": {
+        "startLine": 359,
+        "startChar": 12,
+        "endLine": 359,
+        "endChar": 23
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b59bc37_764c330b",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Kind of awkward to follow, same comment re single-use $expiryDT\n```\n$expiryMsg \u003d $this-\u003egetContext()\n    -\u003emsg( \u0027group-membership-link-with-expiry\u0027 )\n    -\u003eparams(\n        $linkGroup,\n        $uiLanguage-\u003euserTimeAndDate( $groupMemberships-\u003egetExpiry(), $uiUser )\n    )\n    -\u003etext();\n```",
+      "range": {
+        "startLine": 404,
+        "startChar": 5,
+        "endLine": 405,
+        "endChar": 85
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9283a8a_412b5804",
+        "filename": "includes/specials/SpecialGlobalGroupMembership.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Where?",
+      "range": {
+        "startLine": 155,
+        "startChar": 12,
+        "endLine": 155,
+        "endChar": 23
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f02505b5_88436a32",
+        "filename": "includes/specials/SpecialGlobalGroupMembership.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Should go //after// tags are added",
+      "range": {
+        "startLine": 183,
+        "startChar": 2,
+        "endLine": 183,
+        "endChar": 31
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12b1bb7b_27d6dabd",
+        "filename": "includes/specials/SpecialGlobalGroupMembership.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "Unneeded check, can just addTags",
+      "range": {
+        "startLine": 185,
+        "startChar": 2,
+        "endLine": 185,
+        "endChar": 25
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71edcb06_b3d2d79d",
+        "filename": "tests/phpunit/CentralAuthUserUsingDatabaseTest.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-03-05T21:49:14Z",
+      "side": 1,
+      "message": "option was removed, line unneeded",
+      "range": {
+        "startLine": 322,
+        "startChar": 2,
+        "endLine": 322,
+        "endChar": 62
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
