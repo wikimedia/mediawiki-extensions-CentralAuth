@@ -67,7 +67,7 @@
 	"apihelp-query+wikisets-example-1": "Viki gruplarını listele",
 	"apihelp-query+wikisets-example-2": "Türlü viki kümelerini göster",
 	"apihelp-query+wikisets-param-from": "Başlamak için ayarlanan viki adı.",
-	"apihelp-query+wikisets-param-limit": "Geri dönmek için kaç wiki seti.",
+	"apihelp-query+wikisets-param-limit": "Geri dönmek için viki ayarı.",
 	"apihelp-query+wikisets-param-orderbyname": "Sonuçları ada göre sıralayın.",
 	"apihelp-query+wikisets-param-prop": "Hangi bilgileri içerecek.\n;type:Kaydolma tabanlı (yalnızca belirtilen vikileri içerir) veya devre dışı bırakma tabanlı (belirtilen hariç tüm vikileri içerir).\n;wikisincluded:Bu viki setine dahil olan vikiler.\n;wikisnotincluded:Bu viki setine dahil olmayan vikiler.",
 	"apihelp-query+wikisets-summary": "Tüm viki kümelerini numaralandırın.",
