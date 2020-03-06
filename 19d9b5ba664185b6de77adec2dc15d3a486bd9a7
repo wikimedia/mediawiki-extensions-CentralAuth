@@ -260,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "4628bb20_bfa8c825",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 2952,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2020-03-06T01:02:05Z",
+      "side": 1,
+      "message": "This is intentional as done in UserGroupMembership\\insert",
+      "parentUuid": "62af1592_6ab629d5",
+      "range": {
+        "startLine": 2952,
+        "startChar": 20,
+        "endLine": 2952,
+        "endChar": 24
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6f05fa4a_3e8618ee",
         "filename": "includes/CentralAuthUtils.php",
         "patchSetId": 48
@@ -455,6 +479,30 @@
       "writtenOn": "2020-03-05T21:49:14Z",
       "side": 1,
       "message": "This now does the opposite, is that intentional?",
+      "range": {
+        "startLine": 169,
+        "startChar": 3,
+        "endLine": 169,
+        "endChar": 76
+      },
+      "revId": "19d9b5ba664185b6de77adec2dc15d3a486bd9a7",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4dbf3ff_5f322486",
+        "filename": "includes/specials/GlobalUsersPager.php",
+        "patchSetId": 48
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5211
+      },
+      "writtenOn": "2020-03-06T01:02:05Z",
+      "side": 1,
+      "message": "Yes, it is intentional. See logic for the groupnotappliedhere class at line 254",
+      "parentUuid": "3a1a88c3_a4a64fff",
       "range": {
         "startLine": 169,
         "startChar": 3,
