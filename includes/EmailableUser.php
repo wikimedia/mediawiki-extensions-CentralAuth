@@ -2,10 +2,6 @@
 
 class EmailableUser extends User {
 
-	public function __construct() {
-		parent::__construct();
-	}
-
 	/**
 	 * Static factory method for creation from username.
 	 *
