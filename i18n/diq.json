@@ -126,7 +126,7 @@
 	"centralauth-centralautologin-lostsession": "Melumatê hesabi biyo vindi",
 	"centralauth-complete": "Yewkerdışê cıkewtışi biyo temam!",
 	"centralauth-complete-text": "Tı, bê vıraştışê hesabey newey, nêşenay pelê da wikiyê {{int:Centralauth-groupname}} kewê.",
-	"centralauth-completelogin-back": "Peyser şo pela vêren.",
+	"centralauth-completelogin-back": "Peyser şo pela vêrene.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|roc|roca}} veror",
 	"centralauth-delete-empty-account": "Hesabê vengi",
 	"centralauth-desc": "[[Special:MergeAccount|Hesabê pêrabestışi]] sera wikiyê de {{int:Centralauth-groupname}}",

@@ -171,7 +171,7 @@
 	"centralauth-centralautologin-badwiki": "Le wiki « $1 » n’est pas valide pour la connexion centralisée",
 	"centralauth-centralautologin-corsfail": "La vérification d’origine CORS a échoué",
 	"centralauth-centralautologin-desc": "Cette page spéciale est utilisée en interne par MediaWiki.\nQuand vous visitez un domaine lié sans être connecté, le système de connexion centralisée utilise cette page pour déterminer si vous êtes connecté au domaine central.\nVous avez demandé cette page sans fournir de donnée d’authentification ; elle ne fait donc rien.",
-	"centralauth-centralautologin-logged-in": "Vous être connecté de façon centralisée en tant que $1. Rechargez la page pour appliquer vos préférences utilisateur.",
+	"centralauth-centralautologin-logged-in": "Vous êtes connecté de façon centralisée en tant que $1. Rechargez la page pour appliquer vos préférences utilisateur.",
 	"centralauth-centralautologin-logged-in-nouser": "Vous êtes connecté en central. Rechargez la page pour appliquer vos préférences utilisateur.",
 	"centralauth-centralautologin-lostsession": "Les données de session ont été perdues",
 	"centralauth-centralautologin-notposted": "Le formulaire de connexion centralisée doit être publié",
