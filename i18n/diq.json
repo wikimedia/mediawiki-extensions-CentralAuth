@@ -183,6 +183,7 @@
 	"centralauth-editset-usage": "Grupan de kar keno:",
 	"centralauth-editset-wikis": "Wîkîyan:",
 	"centralauth-editset-zerowikis": "Wikiya unasin çıniya.",
+	"centralauth-error-badtoken": "Tedarik bıyaye wahdey heqan biyo pır ya zi nêravêrdeyo",
 	"centralauth-error-locked": "Ti nieşkeno bivurne çunkî hesabê tu kilit biyo.",
 	"centralauth-error-unmerged": "Şıma nêşenê bıvurnê çıke hesabê şıma yewbiyaye niyo.",
 	"centralauth-finish-incomplete": "Yew di hesab ser ena parola de yew biyo.\nHesabanê binan hewna konfirme nibiyo.",
