@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Erdemaslancan",
-			"Гусейн"
+			"Гусейн",
+			"Patriot Kur"
 		]
 	},
 	"centralauth-admin-no": "не",
 	"centralauth-admin-username": "Иштирокәкә ном:",
 	"centralauth-admin-yes": "бәле",
 	"centralauth-antispoof-desc": "AntiSpoof технологијә зијод кардә бә CentralAuth",
-	"centralauth-editset-name": "Ном:",
+	"centralauth-editset-name": "Nom:",
 	"centralauth-editset-reason": "Сәбәб:",
 	"centralauth-editset-type": "Тип:",
 	"centralauth-finish-login": "Ыштәни едаштеј",
