@@ -612,7 +612,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$msg = $this->msg( 'centralauth-admin-blocked-reason' );
 				$msg->rawParams( '<span class="plainlinks">' . $reason . '</span>' );
 
-				$additionalHtml .= HTML::rawElement( 'br' ) . $msg->parse();
+				$additionalHtml .= Html::rawElement( 'br' ) . $msg->parse();
 			}
 
 			$additionalHtml .= ' ' . $optionMessage;
