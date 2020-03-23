@@ -95,7 +95,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			in_array( $par, [ 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
 			'createSession', 'validateSession', 'setCookies' ], true )
 		) {
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info(
+			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->debug(
 				'Autologin ' . $par, [
 					'event' => 'autologin',
 					'eventType' => $par,
