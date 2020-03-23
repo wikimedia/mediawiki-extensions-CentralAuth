@@ -94,6 +94,8 @@
 	"centralauth-attach-title": "Konfirmi konton",
 	"centralauth-block-already-locked": "La konto [[Special:CentralAuth/$1|$1]] jam estas ŝlosita ĝenerale.",
 	"centralauth-centralautologin-badstate": "Nevalida stato \"$1\"",
+	"centralauth-centralautologin-logged-in": "Vi estas centre ensalutita kiel $1. Reŝargu la paĝon por apliki viajn uzanto-agordojn.",
+	"centralauth-centralautologin-logged-in-nouser": "Vi estas centre ensalutita. Reŝargu la paĝon por apliki viajn uzanto-agordojn.",
 	"centralauth-centralautologin-lostsession": "Sesia dateno estas perdita",
 	"centralauth-complete": "Unuigado de uzantnomoj estas finita!",
 	"centralauth-complete-text": "Vi povas nun ensaluti iun ajn vikian retejon de {{int:Centralauth-groupname}} sen kreado de nova konto.",
