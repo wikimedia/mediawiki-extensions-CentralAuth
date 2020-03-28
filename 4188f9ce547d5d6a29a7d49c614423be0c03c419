@@ -77,6 +77,24 @@
     },
     {
       "key": {
+        "uuid": "eec8b23f_e6dde4e2",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-03-28T18:36:13Z",
+      "side": 1,
+      "message": "actually, given the parameter is type \u003d\u003e user, MW would die regardless of my in-api logic",
+      "parentUuid": "57ab086d_222403f5",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "19603e9f_296b2a61",
         "filename": "includes/api/ApiQueryGlobalUserInfo.php",
         "patchSetId": 3
@@ -108,6 +126,24 @@
       "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7eeb5fe_b4ed4309",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-03-28T18:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "948e93bc_afb05fa5",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     },
     {
       "key": {
@@ -196,6 +232,24 @@
     },
     {
       "key": {
+        "uuid": "7990f136_2a6d7f6d",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-03-28T18:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b105d860_be564482",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f3999460_d9ce7d8a",
         "filename": "includes/api/ApiQueryGlobalUserInfo.php",
         "patchSetId": 3
@@ -227,6 +281,24 @@
       "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08dd07ab_1219bd22",
+        "filename": "includes/api/ApiQueryGlobalUserInfo.php",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-03-28T18:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f97b29d0_129b0ffe",
+      "revId": "4188f9ce547d5d6a29a7d49c614423be0c03c419",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
