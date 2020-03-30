@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"2nd-player",
-			"Yusuke1109"
+			"Yusuke1109",
+			"Shirayuki"
 		]
 	},
 	"apierror-centralauth-badusername": "利用者名「$1」はこのウィキでは使用できません",
@@ -16,5 +17,5 @@
 	"apihelp-globaluserrights-param-add": "これらのグローバルグループに利用者を追加します。",
 	"apihelp-globaluserrights-param-reason": "変更の理由。",
 	"apihelp-globaluserrights-param-remove": "これらのグローバルグループから利用者を削除します。",
-	"apihelp-globaluserrights-param-tags": "このパラメータは現在使用されていません。"
+	"apihelp-globaluserrights-param-tags": "このパラメーターは現在使用されていません。"
 }
