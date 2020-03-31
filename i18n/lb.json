@@ -132,7 +132,7 @@
 	"centralauth-editgroup-member": "Lokaliséierten Numm vun de Membere vun de Gruppen:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|änneren]])",
 	"centralauth-editgroup-members": "Lëscht vun de Memberen:",
-	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|Lëscht vu Benotzer matt $2 Rechter]]",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|Lëscht vu Benotzer mat $2 Rechter]]",
 	"centralauth-editgroup-name": "Numm vun der Grupp:",
 	"centralauth-editgroup-nonexistent": "De globale Grupp \"$1\" gëtt et elo net.",
 	"centralauth-editgroup-noset": "(keen)",
