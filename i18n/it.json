@@ -215,7 +215,7 @@
 	"centralauth-error-unmerged": "Non puoi effettuare modifiche perché la tua utenza non è stata unificata.",
 	"centralauth-error-wrongprovider": "Questa pagina speciale non è disponibile quando utilizzi $1.",
 	"centralauth-finish-incomplete": "Sono state unificate alcune utenze mediante questa password. Sono presenti altre utenze in attesa di conferma.",
-	"centralauth-finish-login": "Esegui il login",
+	"centralauth-finish-login": "Entra",
 	"centralauth-finish-noconfirms": "È impossibile confermare alcuna utenza mediante questa password.",
 	"centralauth-finish-password": "Password:",
 	"centralauth-finish-problems": "Se non si è il titolare di queste utenze, o se si incontrano altri problemi, si invita a consultare la [[m:Special:MyLanguage/Help:Unified login|pagina di aiuto]]...",

@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pyscowicz"
+		]
+	},
+	"apihelp-query+globalrenamestatus-param-user": "Käyttäjä, jota olhaan nimeämässä uuesti. Voi olla joko vanha eli uusi nimi."
+}

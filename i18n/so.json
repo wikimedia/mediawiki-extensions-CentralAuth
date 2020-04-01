@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abshirdheere"
+			"Abshirdheere",
+			"Abdullahi"
 		]
 	},
+	"centralauth-admin-blocklog": "inta la xanibay",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|maalin|maalmood}} ka hor",
 	"centralauth-login-progress": "Waxaa kudaha ugalaysaa wikiyaasha kale ee {{int:Centralauth-groupname}}:",
 	"centralauth-merge-method-new": "Akoon cusub",

@@ -39,6 +39,7 @@
 	"centralauth-attach-submit": "Migrar konto",
 	"centralauth-attach-title": "Konfirmar konto",
 	"centralauth-block-already-locked": "L'uzero [[Special:CentralAuth/$1|$1]] ja esas blokusata en omna Wiki.",
+	"centralauth-centralautologin-logged-in": "Vu ja esas centrale enrejistrata kom $1. Richarjez ca pagino, por aplikar vua personal ajusti.",
 	"centralauth-complete": "Unigata 'login' kompleta!",
 	"centralauth-complete-text": "Nun vu povas facar 'login' de irga sito de {{int:Centralauth-groupname}} sen krear nova konto.",
 	"centralauth-editgroup-noset": "(nula)",
