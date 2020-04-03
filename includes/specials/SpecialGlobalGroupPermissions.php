@@ -673,8 +673,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				__METHOD__
 			);
 		} else {
-			$dbw->replace( 'global_group_restrictions',
-				[ 'ggr_group' ],
+			$dbw->replace(
+				'global_group_restrictions',
+				'ggr_group',
 				[ 'ggr_group' => $group, 'ggr_set' => $set, ],
 				__METHOD__
 			);
