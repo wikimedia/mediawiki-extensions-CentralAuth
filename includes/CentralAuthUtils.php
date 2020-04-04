@@ -184,7 +184,7 @@ class CentralAuthUtils {
 		// Ignore warnings about master connections/writes...hard to avoid here
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 
-		$authManager = AuthManager::singleton();
+		$authManager = MediaWikiServices::getInstance()->getAuthManager();
 		$source = CentralAuthPrimaryAuthenticationProvider::class;
 		if ( !$authManager->getAuthenticationProvider( $source ) ) {
 			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
