@@ -25,7 +25,8 @@
 			"Giromin Cangiaxo",
 			"Margherita.mignanelli",
 			"Daimona Eaytoy",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"Sakretsu"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
@@ -360,10 +361,10 @@
 	"centralauth-renameuser-merged": "L'utente $1 è stato migrato al sistema di login unificato. Rinominarlo implicherà che l'utenza locale si separerà da quella globale.",
 	"centralauth-renameuser-reserved": "Il nome utente $2 è riservato a un'utenza globale.",
 	"centralauth-rightslog-entry-deleteset": "cancellato l'insieme di wiki \"$1\"",
-	"centralauth-rightslog-entry-groupperms": "cambiati i permessi di gruppo per $1 da $2 a $3",
-	"centralauth-rightslog-entry-groupperms2": "cambiati i permessi globali di gruppo per $1: aggiunto $2; rimosso $3",
-	"centralauth-rightslog-entry-groupperms3": "cambiato il gruppo dell'insieme ristretto di wiki per $1 da $2 a $3",
-	"centralauth-rightslog-entry-grouprename": "rinominato il gruppo $2 in $1",
+	"centralauth-rightslog-entry-groupperms": "ha cambiato i permessi di gruppo per $1 da $2 a $3",
+	"centralauth-rightslog-entry-groupperms2": "ha cambiato i permessi globali di gruppo per $1: aggiunto $2; rimosso $3",
+	"centralauth-rightslog-entry-groupperms3": "ha cambiato il gruppo dell'insieme ristretto di wiki per $1 da $2 a $3",
+	"centralauth-rightslog-entry-grouprename": "ha rinominato il gruppo $2 in $1",
 	"centralauth-rightslog-entry-newset": "creato l'insieme di wiki $1 di tipo $2 con le seguenti wiki: $3",
 	"centralauth-rightslog-entry-setchange": "cambiate le wiki in \"$1\": aggiunte: $2; rimosse: $3",
 	"centralauth-rightslog-entry-setnewtype": "cambiato il tipo di \"$1\" da \"$2\" a \"$3\"",
