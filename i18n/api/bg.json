@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250",
-			"StanProg"
+			"StanProg",
+			"Vlad5250"
 		]
 	},
 	"apierror-centralauth-badsession": "Могат да получат маркер само при използване на сесии на Central Auth.",

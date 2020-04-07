@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diralik",
 			"Kaganer",
 			"Kareyac",
 			"Mouse21",
@@ -8,8 +9,7 @@
 			"Okras",
 			"Stjn",
 			"Vlad5250",
-			"Ядерный Трамвай",
-			"Diralik"
+			"Ядерный Трамвай"
 		]
 	},
 	"apierror-centralauth-badsession": "Токен можно получить только при использовании сессий CentralAuth.",

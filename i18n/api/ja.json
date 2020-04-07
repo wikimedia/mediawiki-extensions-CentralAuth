@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"2nd-player",
-			"Yusuke1109",
-			"Shirayuki"
+			"Shirayuki",
+			"Yusuke1109"
 		]
 	},
 	"apierror-centralauth-badusername": "利用者名「$1」はこのウィキでは使用できません",

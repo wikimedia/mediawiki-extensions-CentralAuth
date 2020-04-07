@@ -2,8 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Adam78",
+			"BanKris",
 			"Bdamokos",
+			"Bencemac",
 			"Bináris",
+			"Csega",
 			"Dani",
 			"Dj",
 			"Dorgan",
@@ -11,16 +14,13 @@
 			"Gondnok",
 			"KossuthRad",
 			"Misibacsi",
+			"Máté",
+			"Notramo",
+			"Nyuszika7H",
 			"Samat",
 			"Tacsipacsi",
 			"Tgr",
-			"ViDam",
-			"Csega",
-			"Nyuszika7H",
-			"Máté",
-			"BanKris",
-			"Notramo",
-			"Bencemac"
+			"ViDam"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "A felhasználó globális csoportjai",

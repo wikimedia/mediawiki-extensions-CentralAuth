@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Caliburn",
 			"Jdforrester",
-			"Shirayuki",
 			"Mdann52",
-			"Caliburn"
+			"Shirayuki"
 		]
 	},
 	"action-centralauth-usermerge": "Globally merge multiple users",

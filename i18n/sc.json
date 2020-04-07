@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Taxandru",
-			"L2212"
+			"L2212",
+			"Taxandru"
 		]
 	},
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minutu|minutos}} a como",

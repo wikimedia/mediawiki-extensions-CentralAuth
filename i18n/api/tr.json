@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Hedda",
 			"Incelemeelemani",
 			"TmY e12",
-			"ToprakM",
-			"BaRaN6161 TURK"
+			"ToprakM"
 		]
 	},
 	"apierror-centralauth-badsession": "CentralAuth oturumları kullanılırken yalnızca bir centralauthtoken alınabilir.",

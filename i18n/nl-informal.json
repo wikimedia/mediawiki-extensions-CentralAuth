@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Siebrand",
-			"Mar(c)"
+			"Mar(c)",
+			"Siebrand"
 		]
 	},
 	"centralauth-admin-delete-confirm": "Weet je zeker dat je deze gebruiker wilt verwijderen?",

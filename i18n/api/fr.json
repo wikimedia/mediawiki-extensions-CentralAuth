@@ -4,9 +4,9 @@
 			"Derugon",
 			"Gomoko",
 			"McDutchie",
+			"Thibaut120094",
 			"Tuxxic",
-			"Wladek92",
-			"Thibaut120094"
+			"Wladek92"
 		]
 	},
 	"apierror-centralauth-badsession": "Un centralauthtoken ne peut être obtenu qu’en utilisant des sessions CentralAuth.",

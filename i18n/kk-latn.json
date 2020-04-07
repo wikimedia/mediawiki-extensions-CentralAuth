@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"centralauth": "Birizdendirilgen kirw äkimşildigi",
 	"centralauth-account-exists": "Tirkelgi jasalmadı: suralğan qatıswşı atı aldaqaşan birizdendirilgen kirw jüýesine alındı.",
 	"centralauth-admin-already-unmerged": "$1 qaldırıp ketti, aldaqaşan biriktirwi öşirilgen",

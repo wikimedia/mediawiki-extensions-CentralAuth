@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"AmaryllisGardener",
 			"John Reid",
-			"McDutchie",
 			"Macofe",
-			"AmaryllisGardener"
+			"McDutchie"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groops that the uiser is in",

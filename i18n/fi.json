@@ -1,29 +1,29 @@
 {
 	"@metadata": {
 		"authors": [
+			"01miki10",
 			"Agony",
 			"Cimon Avaro",
 			"Crt",
+			"Ejs-80",
 			"Harriv",
 			"Jaakonam",
 			"Linnea",
+			"Macofe",
+			"Mikahama",
+			"MrTapsa",
 			"Nedergard",
 			"Nike",
 			"Olli",
 			"Pxos",
+			"Pyscowicz",
+			"SMAUG",
 			"Silvonen",
 			"Str4nd",
 			"Stryn",
-			"Tarmo",
-			"SMAUG",
-			"MrTapsa",
-			"Ejs-80",
-			"Mikahama",
-			"01miki10",
-			"Macofe",
 			"Surjection",
-			"Valtlait",
-			"Pyscowicz"
+			"Tarmo",
+			"Valtlait"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",

@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Snakesteuben",
-			"Robin0van0der0vliet",
 			"McDutchie",
+			"PiefPafPier",
 			"Robin van der Vliet",
-			"PiefPafPier"
+			"Robin0van0der0vliet",
+			"Snakesteuben"
 		]
 	},
 	"centralauth-admin-blocked-reason": "Reden: $1",
