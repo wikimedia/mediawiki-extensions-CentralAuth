@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "1513f854_91008a29",
+        "filename": "extension.json",
+        "patchSetId": 42
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2020-04-09T18:53:57Z",
+      "side": 1,
+      "message": "Why was only one variable added to extension.json?\n\nYou\u0027re using two new ones in the PHP files",
+      "range": {
+        "startLine": 530,
+        "startChar": 0,
+        "endLine": 532,
+        "endChar": 3
+      },
+      "revId": "c18695aa7079371a6909ad614511a392ff394757",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59f4b6a0_f9c0d950",
+        "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
+        "patchSetId": 42
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2020-04-09T18:53:57Z",
+      "side": 1,
+      "message": "Undefined except in wmf-config",
+      "range": {
+        "startLine": 42,
+        "startChar": 9,
+        "endLine": 42,
+        "endChar": 33
+      },
+      "revId": "c18695aa7079371a6909ad614511a392ff394757",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51c3d3b2_8c948043",
         "filename": "includes/GlobalRename/GlobalRenameBlacklist.php",
         "patchSetId": 42
