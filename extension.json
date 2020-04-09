@@ -525,6 +525,9 @@
 		"CentralAuthOldNameAntiSpoofWiki": {
 			"value": false
 		},
+		"GlobalRenameBlacklist": {
+			"value": null
+		},
 		"GlobalRenameBlacklistRegex": {
 			"value": false
 		}
