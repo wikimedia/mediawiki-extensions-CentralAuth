@@ -21,6 +21,6 @@
 		]
 	},
 	"extra": {
-		"phan-taint-check-plugin": "2.0.2"
+		"phan-taint-check-plugin": "3.0.2"
 	}
 }
