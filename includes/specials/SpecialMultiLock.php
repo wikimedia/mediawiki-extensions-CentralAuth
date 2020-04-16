@@ -339,6 +339,7 @@ class SpecialMultiLock extends SpecialPage {
 			}
 
 			$rowtext .= Xml::closeElement( 'tr' );
+			// @phan-suppress-next-line SecurityCheck-XSS False positive (T249859)
 			$out->addHTML( $rowtext );
 		}
 
