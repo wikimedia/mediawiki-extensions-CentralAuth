@@ -76,6 +76,10 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		} else {
 			// The user doesn't exist or we pretend it doesn't if it's hidden
 			$data['missing'] = true;
+
+			// If we are pretending that the user doesn't exist because it is hidden,
+			// do not add any more information
+			$userExists = false;
 		}
 		$result->addValue( 'query', $this->getModuleName(), $data );
 
