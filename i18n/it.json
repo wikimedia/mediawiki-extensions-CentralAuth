@@ -348,7 +348,7 @@
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|mostra progressi]])",
 	"centralauth-rename-progress-logs-fieldset": "Voci del registro",
 	"centralauth-rename-progress-username": "Nome utente",
-	"centralauth-rename-queued": "Le operazioni di rinomina di $1 in $2 sono state messe in coda su $3.\n\nVedi lo stato di avanzamento su [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Le operazioni per rinominare $1 in $2 sono state messe in coda su $3.\n\nVedi lo stato di avanzamento su [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Wiki locale",
 	"centralauth-rename-table-status": "Stato",
 	"centralauth-rename-table-status-done": "Fatto",

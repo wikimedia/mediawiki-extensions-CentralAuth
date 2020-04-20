@@ -184,7 +184,7 @@
 	"centralauth-editset-badwikis": "{{PLURAL:$2|ویکی|ویکی‌های}} زیر وجود {{PLURAL:$2|ندارد|ندارند}}: $1.",
 	"centralauth-editset-grouplink": "[[Special:GlobalGroupPermissions/$1|$1]]",
 	"centralauth-editset-intro-ro": "در پایین فهرست مجموعه‌های ویکی موجود قرار دارد.",
-	"centralauth-editset-intro-rw": "مجموعه‌های ویکی زیر تاکنون ایجاد شده‌اند.\nشما می‌توانید هر یک از آن‌ها را مشاهده یا تغییر دهید، یا مجموعه‌ای تازه ایجاد کنید.",
+	"centralauth-editset-intro-rw": "مجموعه‌های ویکی زیر تا کنون ایجاد شده‌اند.\nشما می‌توانید هر یک از آن‌ها را مشاهده کنید یا تغییر دهید، یا مجموعه‌ای تازه ایجاد کنید.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|حذف]])",
 	"centralauth-editset-legend-delete": "حذف مجموعهٔ ویکی «$1»",
 	"centralauth-editset-legend-edit": "ویرایش مجموعهٔ ویکی «$1»",
