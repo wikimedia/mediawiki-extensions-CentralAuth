@@ -1,0 +1,7 @@
+Verified+2: jenkins-bot
+Code-Review+2: Libraryupgrader <tools.libraryupgrader@tools.wmflabs.org>
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 20 Apr 2020 01:55:17 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/590067
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
