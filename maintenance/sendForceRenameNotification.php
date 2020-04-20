@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\MassMessage\MassMessageServerSideJob;
+use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
