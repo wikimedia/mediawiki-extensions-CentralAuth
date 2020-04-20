@@ -189,7 +189,10 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		// Ask for confirmation if the new username matches the title blacklist.
-		if ( !$this->overrideTitleBlacklist && class_exists( TitleBlacklist::class ) ) {
+		if (
+			!$this->overrideTitleBlacklist
+			&& ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' )
+		) {
 				$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
 					Title::makeTitleSafe( NS_USER, $newUser->getName() ),
 					'new-account'
