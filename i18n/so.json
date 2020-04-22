@@ -8,6 +8,7 @@
 	"centralauth-admin-blocklog": "diiwaanka xanibka",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|maalin|maalmood}} ka hor",
 	"centralauth-login-progress": "Waxaa kudaha ugalaysaa wikiyaasha kale ee {{int:Centralauth-groupname}}:",
+	"centralauth-merge-method-login": "ku abuuray soo galida",
 	"centralauth-merge-method-new": "Akoon cusub",
 	"centralauth-merge-method-new-desc": "Waxa ay muujinaysaa  in la sameeyey akoon caalami ah si iskeed ah markii la sameeyey akoonkaan maxalliga ah.",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|bil|bilood}} ka hor",
