@@ -22,6 +22,30 @@
       "revId": "65d22630aadb3daec5bb794d8cc618b336f4bff1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "258540a0_c813b9d9",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 51
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-04-27T23:12:42Z",
+      "side": 1,
+      "message": "https://gerrit.wikimedia.org/r/#/c/mediawiki/extensions/CentralAuth/+/572647/ - already added separately",
+      "parentUuid": "67995c6c_24cde443",
+      "range": {
+        "startLine": 1662,
+        "startChar": 26,
+        "endLine": 1662,
+        "endChar": 36
+      },
+      "revId": "65d22630aadb3daec5bb794d8cc618b336f4bff1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
