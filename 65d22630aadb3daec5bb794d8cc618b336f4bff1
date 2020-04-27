@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b7d7cd1f_ebf0565f",
+        "filename": "includes/CentralAuthGroupMembershipProxy.php",
+        "patchSetId": 51
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-04-27T23:41:33Z",
+      "side": 1,
+      "message": "Where?",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 23
+      },
+      "revId": "65d22630aadb3daec5bb794d8cc618b336f4bff1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "67995c6c_24cde443",
         "filename": "includes/CentralAuthHooks.php",
         "patchSetId": 51
@@ -46,6 +69,29 @@
       "revId": "65d22630aadb3daec5bb794d8cc618b336f4bff1",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2d7cc02_84f52a97",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 51
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-04-27T23:41:33Z",
+      "side": 1,
+      "message": "Lines 344-346 suggest that if its read only it just returns false instead of throwing",
+      "range": {
+        "startLine": 341,
+        "startChar": 4,
+        "endLine": 341,
+        "endChar": 36
+      },
+      "revId": "65d22630aadb3daec5bb794d8cc618b336f4bff1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
