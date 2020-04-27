@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"FarsiNevis",
 			"Huji",
 			"Ladsgroup",
 			"Mehran",
@@ -11,7 +12,7 @@
 	"apierror-centralauth-badtoken": "بلیط ورود سراسری معتبر نیست.",
 	"apierror-centralauth-badusername": "نام کاربری «$1» قابل استفاده در این ویکی نیست",
 	"apierror-centralauth-editconflict": "تعارض ویرایشی کشف شد، فرایند متوقف شد.",
-	"apierror-centralauth-notloggedin": "کاربر گمنام نمی‌تواند بلیط سراسری بگیرد.",
+	"apierror-centralauth-notloggedin": "کاربران ناشناس نمی‌توانند بلیت سراسری بگیرند.",
 	"apierror-centralauth-renameinprogress": "این کاربر در حال تغییرنام داده شدن است، امکان تغییرنام نیست.",
 	"apihelp-centralauthtoken-description": "دریافت یک بلیط ورود متمرکز برای ارسال یک  درخواست تأییدشده به یک ویکی متصل شده.",
 	"apihelp-centralauthtoken-example-1": "دریافت یک بلیط ورود متمرکز",

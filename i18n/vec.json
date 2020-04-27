@@ -208,7 +208,7 @@
 	"centralauth-merge-home-password": "La wiki prinçipal par sto account (elencà qua soto) la gà na password difarente de quela che ti gà inserìo.\nPar piaser inserissi la password par la wiki prinçipal.",
 	"centralauth-merge-method-admin": "account unificà da un aministrador",
 	"centralauth-merge-method-admin-desc": "Indica che l'account locale el xe stà unìo a man dai steward.\nDesso sta funsionalità la xe disativà par sicuressa.",
-	"centralauth-merge-method-empty": "nissun contributo",
+	"centralauth-merge-method-empty": "nisuna contribusion",
 	"centralauth-merge-method-empty-desc": "Indica che l'account locale el xe stà unìo parché no'l gaveva contributi.",
 	"centralauth-merge-method-login": "creada co l'entrada",
 	"centralauth-merge-method-login-desc": "Indica che l'account locale el xe stà creà da solo co l'utente el xe entrà.",
