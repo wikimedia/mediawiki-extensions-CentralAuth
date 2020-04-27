@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33455eb0_ff4b35b3",
+        "filename": "tests/phpunit/ApiQueryGlobalUserinfoTest.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-04-27T22:59:20Z",
+      "side": 1,
+      "message": "You can have multiple primary wikis?",
+      "range": {
+        "startLine": 20,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 29
+      },
+      "revId": "e18d44091367f0da5303c613235c8924ae99168e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
