@@ -22,6 +22,30 @@
       "revId": "e18d44091367f0da5303c613235c8924ae99168e",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79dca39f_d48bf538",
+        "filename": "tests/phpunit/ApiQueryGlobalUserinfoTest.php",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-04-27T23:01:33Z",
+      "side": 1,
+      "message": "Seems so. Really not from my head, merely copied what https://github.com/wikimedia/mediawiki-extensions-CentralAuth/blob/master/tests/phpunit/CentralAuthHooksUsingDatabaseTest.php suggested me to do :-).",
+      "parentUuid": "33455eb0_ff4b35b3",
+      "range": {
+        "startLine": 20,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 29
+      },
+      "revId": "e18d44091367f0da5303c613235c8924ae99168e",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
