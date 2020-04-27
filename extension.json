@@ -258,6 +258,7 @@
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
+		"CentralAuthUsingDatabaseApiTestCase": "tests/phpunit/CentralAuthUsingDatabaseApiTestCase.php",
 		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php"
 	},
 	"ResourceModules": {
