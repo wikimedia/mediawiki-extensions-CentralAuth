@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67995c6c_24cde443",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 51
+      },
+      "lineNbr": 1662,
+      "author": {
+        "id": 2945
+      },
+      "writtenOn": "2020-04-27T23:06:07Z",
+      "side": 1,
+      "message": "maybe I\u0027m missing something really obvious, but where should I find this?",
+      "range": {
+        "startLine": 1662,
+        "startChar": 26,
+        "endLine": 1662,
+        "endChar": 36
+      },
+      "revId": "65d22630aadb3daec5bb794d8cc618b336f4bff1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
