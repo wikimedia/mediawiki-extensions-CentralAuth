@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Starladin"
+		]
+	},
+	"centralauth-admin-blocklog": "reister dles blocades",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribut|contribuc}} sön $2",
+	"centralauth-foreign-link": "Utënt $1 sön $2",
+	"centralauth-merge-method-login": "cherié tres l'azes"
+}

@@ -502,5 +502,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|'U}} cunde tune '''$1''' ha state renomenate jndr'à '''$2''' duranne 'a migrazione automateche a 'u sisteme de accesse aunificate de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "'U cunde {{GENDER:$1|tune}} ha state renomenate",
 	"sulrenamewarning-usenew": "Pe piacere ause 'u nome utende nuève {{GENDER:$1|tune}} '''$1''' quanne le prosseme vote pruève a trasè.",
-	"userswhowillberenamed": "Utinde ca onna essere renomenate"
+	"userswhowillberenamed": "Utinde ca onna essere renomenate",
+	"centralauth-badaccess-blacklisted": "Non ge puè cercà 'nu renomenamende globbale, purcé tu ste jndr'à lista gnore."
 }
