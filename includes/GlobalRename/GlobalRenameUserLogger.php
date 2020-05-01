@@ -23,8 +23,12 @@ class GlobalRenameUserLogger {
 	 * @param string $oldName
 	 * @param string $newName
 	 * @param array $options
+	 * @param bool $disableLogger
 	 */
-	public function log( $oldName, $newName, $options ) {
+	public function log( $oldName, $newName, $options, $disableLogger ) {
+		if ( $disableLogger ) {
+			return;
+		}
 		$logEntry = new ManualLogEntry( 'gblrename', 'rename' );
 		$logEntry->setPerformer( $this->performingUser );
 
