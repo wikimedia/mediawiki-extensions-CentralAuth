@@ -614,7 +614,7 @@ class CentralAuthHooks {
 	}
 
 	private static function isMobileDomain() {
-		return class_exists( MobileContext::class )
+		return ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' )
 			&& MobileContext::singleton()->usingMobileDomain();
 	}
 

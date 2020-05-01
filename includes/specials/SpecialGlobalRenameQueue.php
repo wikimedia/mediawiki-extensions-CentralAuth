@@ -449,7 +449,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 
 		// Show a message if the new username matches the title blacklist.
-		if ( class_exists( TitleBlacklist::class ) ) {
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' ) ) {
 			$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
 				Title::makeTitleSafe( NS_USER, $req->getNewName() ),
 				'new-account'
