@@ -98,9 +98,10 @@ class GlobalRenameUser {
 	 * and that $newUser is being a creatable user)!
 	 *
 	 * @param array $options
+	 * @param bool $disableLogger
 	 * @return Status
 	 */
-	public function rename( array $options ) {
+	public function rename( array $options, bool $disableLogger = false ) {
 		static $keepDetails = [ 'attachedMethod' => true, 'attachedTimestamp' => true ];
 
 		$wikisAttached = array_map(
@@ -146,7 +147,8 @@ class GlobalRenameUser {
 		$this->logger->log(
 			$this->oldUser->getName(),
 			$this->newUser->getName(),
-			$options
+			$options,
+			$disableLogger
 		);
 
 		return Status::newGood();
