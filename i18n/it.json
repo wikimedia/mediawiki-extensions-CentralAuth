@@ -332,6 +332,7 @@
 	"centralauth-rename-cannotself": "Non puoi rinominare te stesso.",
 	"centralauth-rename-confirm": "Vuoi davvero rinominare globalmente questo utente?",
 	"centralauth-rename-conflict-hidden": "nome utente nascosto",
+	"centralauth-rename-deny": "Sei sicuro di voler rifiutare la rinomina?",
 	"centralauth-rename-desc": "Consente di rinominare le utenze globali",
 	"centralauth-rename-doesnotexist": "L'utenza indicata non esiste.",
 	"centralauth-rename-form-movepages": "Sposta le pagine utente",
