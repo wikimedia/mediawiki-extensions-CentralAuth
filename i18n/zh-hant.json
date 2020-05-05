@@ -176,7 +176,7 @@
 	"centralauth-editgroup-member": "在地的群組成員名稱：",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|編輯]])",
 	"centralauth-editgroup-members": "成員清單：",
-	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|擁有 $2 權限的使用者清單]]",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|擁有$2權限的使用者清單]]",
 	"centralauth-editgroup-name": "群組名稱：",
 	"centralauth-editgroup-nonexistent": "全域群組 \"$1\" 目前不存在。",
 	"centralauth-editgroup-noset": "（無）",
