@@ -39,7 +39,7 @@
 	/**
 	 * @inheritdoc
 	 */
-	GlobalUserInputWidget.prototype.onLookupMenuItemChoose = function ( item ) {
+	GlobalUserInputWidget.prototype.onLookupMenuChoose = function ( item ) {
 		this.closeLookupMenu();
 		this.setLookupsDisabled( true );
 		this.setValue( item.getData() );
