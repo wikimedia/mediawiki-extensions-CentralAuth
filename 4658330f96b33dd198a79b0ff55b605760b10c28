@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd1ce1c8_08fb9427",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 52
+      },
+      "lineNbr": 1642,
+      "author": {
+        "id": 3
+      },
+      "writtenOn": "2020-05-07T21:11:04Z",
+      "side": 1,
+      "message": "You can remove the else block and just have $hasRunOnce \u003d true;... If it goes into the if, it\u0027s an unconditional return, so the else is redundant",
+      "range": {
+        "startLine": 1642,
+        "startChar": 4,
+        "endLine": 1642,
+        "endChar": 10
+      },
+      "revId": "4658330f96b33dd198a79b0ff55b605760b10c28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
