@@ -22,6 +22,52 @@
       "revId": "4658330f96b33dd198a79b0ff55b605760b10c28",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "631fff1b_111723f0",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 52
+      },
+      "lineNbr": 2843,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-05-07T23:11:01Z",
+      "side": 1,
+      "message": "Why not just array_keys ?",
+      "range": {
+        "startLine": 2840,
+        "startChar": 2,
+        "endLine": 2843,
+        "endChar": 3
+      },
+      "revId": "4658330f96b33dd198a79b0ff55b605760b10c28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6ea0931_c32d603a",
+        "filename": "includes/CentralAuthUtils.php",
+        "patchSetId": 52
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-05-07T23:11:01Z",
+      "side": 1,
+      "message": "Or if it was already running",
+      "range": {
+        "startLine": 339,
+        "startChar": 55,
+        "endLine": 340,
+        "endChar": 13
+      },
+      "revId": "4658330f96b33dd198a79b0ff55b605760b10c28",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
     }
   ]
 }
