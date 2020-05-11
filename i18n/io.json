@@ -87,6 +87,7 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yaro|yari}} ante nun",
 	"globalgroupmembership": "Membreso en globala grupi",
 	"globalrenamequeue-form-status-all": "omna",
+	"globalrenamequeue-request-cancel-text": "Anular",
 	"globalusers": "Listo di generala konti",
 	"mergeaccount": "Stando dil 'login' por omna konti"
 }

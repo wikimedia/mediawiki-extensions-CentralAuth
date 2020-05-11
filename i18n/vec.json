@@ -164,6 +164,7 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribusion|}} so $2",
 	"centralauth-foreign-link": "Utente $1 so $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Assegna i parmessi",
+	"centralauth-globalgroupperms-group-disabled": "(Mija ativà in sta Wiki)",
 	"centralauth-globalgroupperms-newgroupname": "Nome del novo grupo:",
 	"centralauth-globalgroupperms-nogroups": "No xe stà definìo nissun grupo globale.",
 	"centralauth-groupname": "la Fondasion Wikimedia",

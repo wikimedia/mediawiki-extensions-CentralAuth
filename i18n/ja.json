@@ -36,7 +36,7 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
 	"action-centralauth-lock": "グローバルアカウントのロックまたはロック解除",
-	"action-centralauth-merge": "自身のアカウントを統合",
+	"action-centralauth-merge": "自分のアカウントの統合",
 	"action-centralauth-oversight": "グローバルアカウントを秘匿または非表示",
 	"action-centralauth-rename": "グローバルアカウントの名前の変更",
 	"action-centralauth-unmerge": "グローバルアカウントの統合解除",

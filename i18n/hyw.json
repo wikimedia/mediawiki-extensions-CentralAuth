@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kareyac",
 			"Rajemian"
 		]
 	},
 	"centralauth-admin-blocklog": "Արգելակումներու տեղեկատետր",
+	"centralauth-admin-yes": "այո",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2ին մէջ",
 	"centralauth-foreign-link": "$2էն $1 մասնակից",
 	"centralauth-merge-method-login": "Մուտքի ատեն ստեղծուած"
