@@ -80,7 +80,7 @@ class CentralAuthHooks {
 				"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
 
 			$wgHooks['LocalUserCreated'][] =
-				'CentralAuthAntiSpoofHooks::asAddNewAccountHook';
+				'CentralAuthAntiSpoofHooks::asLocalUserCreated';
 			$wgHooks['RenameUserComplete'][] =
 				'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
 		}

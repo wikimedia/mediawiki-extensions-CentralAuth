@@ -112,13 +112,13 @@ class CentralAuthAntiSpoofHooks {
 	}
 
 	/**
-	 * On new account creation, record the username's thing-bob.
+	 * On local user creation, record the username's thing-bob.
 	 * (Called after a user account is created)
 	 *
 	 * @param User $user
 	 * @return bool
 	 */
-	public static function asAddNewAccountHook( $user ) {
+	public static function asLocalUserCreated( $user ) {
 		$spoof = new CentralAuthSpoofUser( $user->getName() );
 		$spoof->record();
 		return true;
