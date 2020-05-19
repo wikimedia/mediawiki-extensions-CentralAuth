@@ -4,9 +4,9 @@ use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\Database;
 
 class WikiSet {
-	const OPTIN = 'optin';
-	const OPTOUT = 'optout';
-	const VERSION = 1;
+	public const OPTIN = 'optin';
+	public const OPTOUT = 'optout';
+	private const VERSION = 1;
 
 	/** @var int ID of the group */
 	private $mId;

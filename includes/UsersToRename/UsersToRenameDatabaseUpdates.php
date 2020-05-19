@@ -7,15 +7,15 @@ class UsersToRenameDatabaseUpdates {
 	/**
 	 * Notified via talk apge
 	 */
-	const NOTIFIED = 4;
+	public const NOTIFIED = 4;
 	/**
 	 * A redirect, temporarily skipped
 	 */
-	const REDIRECT = 5;
+	private const REDIRECT = 5;
 	/**
 	 * Renamed!
 	 */
-	const RENAMED = 8;
+	private const RENAMED = 8;
 
 	/**
 	 * @var IDatabase

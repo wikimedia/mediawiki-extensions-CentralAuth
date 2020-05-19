@@ -31,11 +31,11 @@ use MediaWiki\MediaWikiServices;
  */
 class SpecialGlobalRenameQueue extends SpecialPage {
 
-	const PAGE_OPEN_QUEUE = 'open';
-	const PAGE_PROCESS_REQUEST = 'request';
-	const PAGE_CLOSED_QUEUE = 'closed';
-	const ACTION_CANCEL = 'cancel';
-	const ACTION_VIEW = 'view';
+	public const PAGE_OPEN_QUEUE = 'open';
+	public const PAGE_PROCESS_REQUEST = 'request';
+	public const PAGE_CLOSED_QUEUE = 'closed';
+	public const ACTION_CANCEL = 'cancel';
+	public const ACTION_VIEW = 'view';
 
 	/**
 	 * @var string $par Request subpage string

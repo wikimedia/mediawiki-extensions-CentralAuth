@@ -104,14 +104,14 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	const VERSION = 8;
+	private const VERSION = 8;
 
-	const HIDDEN_NONE = '';
-	const HIDDEN_LISTS = 'lists';
-	const HIDDEN_OVERSIGHT = 'suppressed';
+	public const HIDDEN_NONE = '';
+	public const HIDDEN_LISTS = 'lists';
+	public const HIDDEN_OVERSIGHT = 'suppressed';
 
 	// The maximum number of edits a user can have and still be hidden
-	const HIDE_CONTRIBLIMIT = 1000;
+	private const HIDE_CONTRIBLIMIT = 1000;
 
 	/**
 	 * @note Don't call this directly. Use self::getInstanceByName() or
