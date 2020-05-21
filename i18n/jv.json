@@ -3,6 +3,7 @@
 		"authors": [
 			"Bennylin",
 			"Meursault2004",
+			"N219",
 			"NoiX180",
 			"Pras"
 		]
@@ -147,7 +148,7 @@
 	"centralauth-finish-incomplete": "Sawenèh akun wis digabung nganggo tembung wadi iki.\nAkun-akun liyané durung dikonfirmasi.",
 	"centralauth-finish-login": "Mlebu log",
 	"centralauth-finish-noconfirms": "Ora ana akun kang bisa dikonfirmasi nganggo tembung wadi iki.",
-	"centralauth-finish-password": "Tembung wadi:",
+	"centralauth-finish-password": "Tembung sandi:",
 	"centralauth-finish-problems": "Panjenengan ana masalah, utawa dudu kang ndarbèni akun iki?\n[[m:Special:MyLanguage/Help:Unified login|Kepriyé golèk pitulung]]…",
 	"centralauth-finish-send-confirmation": "Kirimi tembung wadi lumantar layang-èl",
 	"centralauth-finish-text": "Yèn akun iki kabèh darbéné panjenengan, panjenengan bisa ngrampungaké prosès panggabungan namung mawa ngetikaké tembung sandhi kanggo akun liya ing kéné:",
@@ -202,7 +203,7 @@
 	"centralauth-merge-dryrun-incomplete": "Panjenengan bakal dibanjuraké, nanging sawetara akun ora bisa divérifikasi minangka otomatis lan ora bakal langsung dimigrasi utawa dihijrahaké.\nPanjenengan bisa nggabung iki mengko ing tembé.\n\nNganti sepréné durung ana owah-owahan kang dilakokaké marang akun panjenengan.",
 	"centralauth-merge-dryrun-or": "'''utawa'''",
 	"centralauth-merge-home-password": "Wiki asalé akun ini (tiliki pratélan ing ngisor) tembung wadiné béda saka kang panjenengan lebokaké.\nMangga isinen tembung wadiné kang padha ing wiki asalé.",
-	"centralauth-merge-method-admin": "akun kang digabung déning pangurus",
+	"centralauth-merge-method-admin": "akun panata kang wis digabung",
 	"centralauth-merge-method-admin-desc": "Menunjukkan bahwa akun lokal digabungkan secara manual oleh penatalayan.\nFitur tersebut saat ini dinonaktifkan karena alasan keamanan.",
 	"centralauth-merge-method-empty": "ora ana sumbangsihé",
 	"centralauth-merge-method-empty-desc": "Nuduhaké yèn akun lokal kagabungaké amarga ora ana besutané.",
@@ -227,7 +228,7 @@
 	"centralauth-merge-step3-detail": "Panjenengan saiki wis siap nggawé akun gabungan panjenengan mawa wiki-wiki kang kapacak ing ngisor iki:",
 	"centralauth-merge-step3-submit": "Panunggalaké akun-akun",
 	"centralauth-merge-step3-title": "Gawé akun manunggal",
-	"centralauth-merge-welcome": "'''Akuné panjenengan durung diboyong menyang sistem mlebu log manunggal {{int:Centralauth-groupname}}.'''\n\nYèn panjenengan mboyong akuné panjenengan, panjenengan bisa nganggo jeneng panganggo sarta tembung wadi kang padha saperlu mlebu log menyang kabèh proyèk wiki {{int:Centralauth-groupname}} kabèh basa kang ana.\n\nYèn wong jebul liya wis nganggo jeneng panganggoné panjenengan ing situs liyané, bab iki ora bakal nganggu wong iku, nanging bab iki ing tembé njalari panjenengan kudu rembugan karo wong iku utawa karo pangurus.",
+	"centralauth-merge-welcome": "'''Akuné panjenengan durung diboyong menyang sistem mlebu log manunggal {{int:Centralauth-groupname}}.'''\n\nYèn panjenengan mboyong akuné panjenengan, panjenengan bisa nganggo jeneng naraguna sarta tembung sandi kang padha saperlu mlebu log menyang kabèh proyèk wiki {{int:Centralauth-groupname}} kabèh basa kang ana.\n\nYèn wong jebul liya wis nganggo jeneng panganggoné panjenengan ing situs liyané, bab iki ora bakal nganggu wong iku, nanging bab iki ing tembé njalari panjenengan kudu rembugan karo wong iku utawa karo panata.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Nggabungaké rena-rena akun]] kanggo Log Mlebu Panganggo Tunggal",
 	"centralauth-minutes-ago": "$1 menit kapungkur",
 	"centralauth-months-ago": "$1 wulan kapungkur",
