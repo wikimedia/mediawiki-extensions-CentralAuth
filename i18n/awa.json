@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"1AnuraagPandey",
+			"1PandeyAnurag",
 			"McDutchie"
 		]
 	},
@@ -94,7 +95,7 @@
 	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|$2 अधिकार वाले सदस्यन् कय सूची]]",
 	"centralauth-editgroup-name": "सदस्य-समूह कय नाँव:",
 	"centralauth-editgroup-noset": "(कवनो नाहीं)",
-	"centralauth-editgroup-nowikiset": "कोई नहीं, सभी विकियों पर लागू",
+	"centralauth-editgroup-nowikiset": "कुछ नाइ, कुल विकिन् पर लागू",
 	"centralauth-editgroup-perms": "दिहल अधिकार:",
 	"centralauth-editgroup-reason": "कारण:",
 	"centralauth-editgroup-rename-taken": "नाम बदलब विफल रहा: $1 नाँव कय सदस्य-समूह पहलवै से मौजूद है।",
