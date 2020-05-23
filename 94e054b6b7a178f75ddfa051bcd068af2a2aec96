@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48fb8891_1d5e8036",
+        "filename": "includes/LocalRenameJob/LocalPageMoveJob.php",
+        "patchSetId": 14
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-05-23T09:21:19Z",
+      "side": 1,
+      "message": "Should be saved intead of retrieved twice",
+      "range": {
+        "startLine": 48,
+        "startChar": 8,
+        "endLine": 48,
+        "endChar": 64
+      },
+      "revId": "94e054b6b7a178f75ddfa051bcd068af2a2aec96",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
