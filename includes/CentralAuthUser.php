@@ -458,7 +458,7 @@ class CentralAuthUser implements IDBAccessObject {
 		foreach ( $res as $row ) {
 			/** @var User|bool $set */
 			$set = $sets[$row->ggp_group] ?? '';
-			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getID() : false ];
+			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getId() : false ];
 			$groups[$row->ggp_group] = 1;
 		}
 

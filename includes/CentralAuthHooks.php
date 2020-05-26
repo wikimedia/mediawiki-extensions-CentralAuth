@@ -391,7 +391,7 @@ class CentralAuthHooks {
 		}
 
 		$firstUser = $users[0];
-		if ( !$firstUser->getID() ) {
+		if ( !$firstUser->getId() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
 				$abortError = [ 'centralauth-account-exists-reset', $centralUser->getName() ];
@@ -937,7 +937,7 @@ class CentralAuthHooks {
 				return false;
 			}
 
-			$blocks = $block instanceof Compositeblock ?
+			$blocks = $block instanceof CompositeBlock ?
 				$block->getOriginalBlocks() :
 				[ $block ];
 
