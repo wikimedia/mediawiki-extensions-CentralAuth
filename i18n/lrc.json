@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BaRaN6161 TURK",
 			"Bonevarluri",
 			"Lorestani",
 			"Macofe",
@@ -197,7 +198,7 @@
 	"centralauth-finish-text": "ار شما صاحاو ای حساویایت، می تونیت روند سریک کاری حساویا کاریاری نه وا دئن رازینه گواردن سرتاسری د ایچه تموم بکیت:",
 	"centralauth-finish-title": "آخر گوشه",
 	"centralauth-finishglobaliseemail_body": "تیرنشون انجومانامه شما وا د ویر داشتن حساو شما «$2» د همه پروجه یا هوم دنگ بیه. حسا اصلی شما ئم ها د{{SITENAME}}.\n\nسی پشت راسکاری یه که ای حساو د راستکی مال شمانه. الوت د ویر داشتوئیت که سریک سازی حساویا کاریاری نمی تونه وه شکل خودانجوم با.\nهمچنی ار شما رازینه گواردن حساو خوتونه گم کردیته می تونیت هوم پیوند هاری نه وه کار بئریت.\n\n$3\n\nار ای حشاو مال شما نئ، لطف بکیت روئیت مین هوم پیوند هار تا ای حاست تموم با.\n\n$5\n\nای حاست د گات $6 ساعت $7 تمام بوئه.",
-	"centralauth-finishglobaliseemail_subject": "{{نوم دیارگه}} پشت راس کردن حساو",
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} پشت راس کردن حساو",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|هومیاری|هومیاریا}} د $2{{PLURAL:$1|}}",
 	"centralauth-foreign-link": "کاریار $1 د $2",
 	"centralauth-globalgroupperms-creategroup-submit": "دئن اختیار",
