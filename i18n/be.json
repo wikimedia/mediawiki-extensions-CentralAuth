@@ -33,6 +33,7 @@
 	"centralauth-admin-view": "Паглядзець звесткі пра ўліковы запіс",
 	"centralauth-admin-yes": "так",
 	"centralauth-attach-list-attached": "Аб’яднаны ўліковы запіс «$1» уключае наступныя ўліковыя запісы:",
+	"centralauth-block-already-locked": "Уліковы запіс [[Special:CentralAuth/$1|$1]] ужо заблакаваны глабальна.",
 	"centralauth-centralautologin-logged-in": "Вы глабальна аўтарызаваліся як $1. Перазагрузіце старонку, каб прымяніліся вашыя персанальныя настройкі.",
 	"centralauth-centralautologin-logged-in-nouser": "Вы глабальна аўтарызаваліся. Перазагрузіце старонку, каб прымяніліся вашыя персанальныя настройкі.",
 	"centralauth-complete": "Аб’яднанне рахункаў завершана!",
