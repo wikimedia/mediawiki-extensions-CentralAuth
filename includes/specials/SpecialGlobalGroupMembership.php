@@ -30,7 +30,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	/**
 	 * Output a form to allow searching for a user
 	 */
-	public function switchForm() {
+	protected function switchForm() {
 		global $wgScript;
 
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
@@ -61,7 +61,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	/**
 	 * @return array
 	 */
-	public function changeableGroups() {
+	protected function changeableGroups() {
 		if (
 			$this->mGlobalUser->exists() &&
 			$this->mGlobalUser->isAttached() &&
