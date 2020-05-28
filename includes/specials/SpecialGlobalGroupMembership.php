@@ -21,13 +21,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @return string
-	 */
-	public function getSuccessURL() {
-		return $this->getPageTitle( $this->mTarget )->getFullURL();
-	}
-
-	/**
 	 * @return bool
 	 */
 	public function canProcessExpiries() {
