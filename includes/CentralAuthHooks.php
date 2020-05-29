@@ -1086,7 +1086,7 @@ class CentralAuthHooks {
 			return true;
 		}
 		if (
-			$centralUser->isOversighted() ||	// Oversighted users should *never* be able to edit
+			$centralUser->isOversighted() || // Oversighted users should *never* be able to edit
 			( $centralUser->isLocked() &&
 				!in_array( $title->getPrefixedText(), $wgCentralAuthLockedCanEdit ) )
 		) {
