@@ -269,7 +269,7 @@
 	"centralauth-rightslog-set-optin": "iscrìvete",
 	"centralauth-rightslog-set-optout": "scancèlete",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|secondi}} fa",
-	"centralauth-state-mismatch": "Eror: se gà verificà un conflito de edizion par sto utente. Par piaser verifica la to modifica e proa da novo.",
+	"centralauth-state-mismatch": "Eror: Se ga vesto on ràdego de edision par sto utente. Verìfega el to canbiamento e prova da novo.",
 	"centralauth-token-mismatch": "Ne dispiase, ma no gavemo mìa podesto elaborar el modulo che te ghè invià parché xe 'ndà persi i dati de la session.",
 	"centralauth-warning-notattached": "L'utensa locale no la xe tacà a una globale.",
 	"centralauth-warning-notloggedin": "No te ghè mia fato el login.",

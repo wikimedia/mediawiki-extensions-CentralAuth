@@ -7,6 +7,7 @@
 			"Cryptocoryne",
 			"DCamer",
 			"Dim Grits",
+			"Diman Russkov",
 			"Diralik",
 			"Eugrus",
 			"Gamliel Fishkin",
@@ -50,6 +51,8 @@
 	"action-centralauth-rename": "переименование глобальных учётных записей",
 	"action-centralauth-unmerge": "разделение глобальных учётных записей",
 	"action-centralauth-usermerge": "глобальное объединение нескольких участников",
+	"action-globalgroupmembership": "изменить членство в глобальных группах",
+	"action-globalgrouppermissions": "управление глобальными группами",
 	"centralauth": "Менеджер глобальной учётной записи",
 	"centralauth-abortlogin-renamed": "Ваш аккаунт был переименован в \"$1\". Пожалуйста, используйте это имя пользователя.",
 	"centralauth-account-exists": "Невозможно создать учётную запись. Запрашиваемое имя уже занято участником другой вики.",
@@ -148,6 +151,8 @@
 	"centralauth-attach-text": "Эта учётная запись ещё не была перемещена в систему единой учётной записи. Если глобальная учётная запись также принадлежит вам, вы можете присоединить данную учётную запись, указав пароль глобальной учётной записи:",
 	"centralauth-attach-title": "Подтверждение учётной записи",
 	"centralauth-block-already-locked": "Учётная запись [[Special:CentralAuth/$1|$1]] уже отключена.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|страница|страницы|страниц}}",
+	"centralauth-block-editing-ns": "{{PLURAL:$1|пространство имён|пространства имён|пространств имён}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Вы уже авторизовались локально",
 	"centralauth-centralautologin-badparams": "Указаны недействительные параметры аутентификации",
 	"centralauth-centralautologin-badstate": "Недопустимое состояние «$1»",
@@ -443,6 +448,7 @@
 	"globalrenamequeue-column-rq-status": "Состояние",
 	"globalrenamequeue-column-rq-wiki": "Локальный вики-проект",
 	"globalrenamequeue-desc": "Обработка запросов на глобальное переименование",
+	"globalrenamequeue-email-body-approved-with-note": "Запрос на переименование «{{GENDER:$1|$1}}» В «{{GENDER:$1|$2}}» был одобрен.\n\nПримечание: $3",
 	"globalrenamequeue-email-body-approved": "Запрос на переименование «{{GENDER:$1|$1}}» в «{{GENDER:$1|$2}}» был одобрен.",
 	"globalrenamequeue-email-body-rejected": "Запрос на переименование «{{GENDER:$1|$1}}» В «{{GENDER:$1|$2}}» был отклонён.\n\nПримечание: $3",
 	"globalrenamequeue-email-subject-approved": "Запрос на переименование учётной записи одобрен",
@@ -533,5 +539,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$1|Ваша}} учётная запись была переименована в '''$2''' в процессе автоматической миграции в систему единой учётной записи {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ваша}} учётная запись была переименована",
 	"sulrenamewarning-usenew": "Пожалуйста, используйте {{GENDER:$1|ваше}} новое имя участника '''$1''' при входе в систему в будущем.",
-	"userswhowillberenamed": "Участники, которые будут переименованы"
+	"userswhowillberenamed": "Участники, которые будут переименованы",
+	"centralauth-badaccess-blacklisted": "Вы не можете запросить глобальное переименование, поскольку вы находитесь в чёрном списке."
 }
