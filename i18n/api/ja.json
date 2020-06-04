@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"2nd-player",
+			"Kkairri",
 			"Shirayuki",
 			"Yusuke1109"
 		]
@@ -14,8 +15,15 @@
 	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
 	"apihelp-deleteglobalaccount-param-user": "削除対象の利用者。",
 	"apihelp-deleteglobalaccount-summary": "グローバル利用者を削除します。",
+	"apihelp-globaluserrights-description": "利用者にグローバルグループを追加したり、利用者からグローバルグループを除去します。",
+	"apihelp-globaluserrights-example-1": "グローバル利用者 FooBot に、グローバルグループ “bot” を追加し、この利用者からグローバルグループ “sysop” と “bureaucrat”を除去する。",
+	"apihelp-globaluserrights-example-2": "ID が 123 であるグローバル利用者に、グローバルグループ “bot” を追加し、この利用者からグローバルグループ “sysop” と “bureaucrat”を除去する。",
 	"apihelp-globaluserrights-param-add": "これらのグローバルグループに利用者を追加します。",
+	"apihelp-globaluserrights-param-expiry": "このパラメーターは現在使われていません。",
 	"apihelp-globaluserrights-param-reason": "変更の理由。",
 	"apihelp-globaluserrights-param-remove": "これらのグローバルグループから利用者を削除します。",
-	"apihelp-globaluserrights-param-tags": "このパラメーターは現在使用されていません。"
+	"apihelp-globaluserrights-param-tags": "このパラメーターは現在使用されていません。",
+	"apihelp-globaluserrights-param-user": "グローバル利用者名",
+	"apihelp-globaluserrights-param-userid": "グローバル利用者ID",
+	"apihelp-globaluserrights-summary": "利用者にグローバルグループを追加したり、利用者からグローバルグループを除去します。"
 }
