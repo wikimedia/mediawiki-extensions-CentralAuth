@@ -52,7 +52,7 @@
 	"centralauth-admin-blocked2": "Bloccato, scade il $2 alle $3.",
 	"centralauth-admin-blocked2-indef": "Bloccato a tempo indeterminato.",
 	"centralauth-admin-blocklog": "registro dei blocchi",
-	"centralauth-admin-delete-button": "Elimina questa utenza globale",
+	"centralauth-admin-delete-button": "Cancella questa utenza globale",
 	"centralauth-admin-delete-confirm": "Vuoi veramente cancellare questa utenza?",
 	"centralauth-admin-delete-description": "La cancellazione dell'utenza globale scollegherà tutte le utenze locali, e lascerà il nome globale libero per essere usato da un altro utente.\nTutte le utenze locali continueranno ad esistere.",
 	"centralauth-admin-delete-nonexistent": "Errore: l'utenza globale \"<nowiki>$1</nowiki>\" non esiste.",
