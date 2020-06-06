@@ -45,7 +45,7 @@ class UpdateUsersToRename extends Maintenance {
 				);
 				$total += $count;
 			}
-			CentralAuthUtils::waitForSlaves();
+			CentralAuthUtils::waitForReplicas();
 		} while ( $rows->numRows() >= $this->mBatchSize );
 		$this->output( "Removed $total users in total.\n" );
 	}

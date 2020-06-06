@@ -236,13 +236,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @deprecated use CentralAuthUtils instead
-	 */
-	public static function waitForSlaves() {
-		CentralAuthUtils::waitForSlaves();
-	}
-
-	/**
 	 * @param string $wikiID
 	 * @return IDatabase
 	 */

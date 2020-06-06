@@ -103,7 +103,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			$this->output(
 				"Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n"
 			);
-			CentralAuthUtils::waitForSlaves();
+			CentralAuthUtils::waitForReplicas();
 		} while ( $numRows >= $this->mBatchSize );
 		$this->output( "Completed $wiki \n" );
 	}

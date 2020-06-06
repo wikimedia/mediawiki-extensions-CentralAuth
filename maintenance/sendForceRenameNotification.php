@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
+use MediaWiki\MediaWikiServices;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -40,6 +41,9 @@ class SendForceRenameNotification extends Maintenance {
 		$commonParams = [
 			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
 		];
+
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+
 		while ( true ) {
 			$jobs = [];
 			$markNotified = [];
@@ -84,8 +88,11 @@ class SendForceRenameNotification extends Maintenance {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
 			$this->output( "Waiting for slaves..." );
-			CentralAuthUtils::waitForSlaves(); // users_to_rename
-			wfWaitForSlaves(); // And on the local wiki!
+			// users_to_rename
+			CentralAuthUtils::waitForReplicas();
+			// And on the local wiki!
+			$lbFactory->waitForReplication();
+
 			$this->output( " done.\n" );
 			$queued = $this->getQueuedCount();
 			while ( $queued > 100000 ) {
