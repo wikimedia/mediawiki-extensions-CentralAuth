@@ -225,7 +225,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @param string|array $value The value the field was submitted with
 	 * @param array $alldata The data collected from the form
 	 * @param HTMLForm $form
-	 * @return bool|string True on success, or String error to display, or
+	 * @return bool|Message True on success, or String error to display, or
 	 *   false to fail validation without displaying an error.
 	 */
 	public function validateNewname( $value, $alldata, HTMLForm $form ) {
@@ -241,7 +241,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @param string|array $value The value the field was submitted with
 	 * @param array $alldata The data collected from the form
 	 * @param HTMLForm $form
-	 * @return bool|string True on success, or String error to display, or
+	 * @return bool|Message True on success, or String error to display, or
 	 *   false to fail validation without displaying an error.
 	 */
 	public function validateEmail( $value, $alldata, HTMLForm $form ) {
