@@ -84,7 +84,7 @@ class DeleteEmptyAccounts extends Maintenance {
 				$this->process( $row->gu_name, $wgUser );
 			}
 			if ( $this->fix ) {
-				CentralAuthUtils::waitForSlaves();
+				CentralAuthUtils::waitForReplicas();
 			}
 		}
 

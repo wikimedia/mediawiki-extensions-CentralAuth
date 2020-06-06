@@ -43,7 +43,7 @@ class ForceRenameUsers extends Maintenance {
 			foreach ( $rowsToRename as $row ) {
 				$this->rename( $row, $dbw );
 			}
-			CentralAuthUtils::waitForSlaves();
+			CentralAuthUtils::waitForReplicas();
 			$count = $this->getCurrentRenameCount( $dbw );
 			while ( $count > 50 ) {
 				$this->output( "There are currently $count renames queued, pausing...\n" );

@@ -120,7 +120,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 			$this->output( "Inserted $count users who we will rename\n" );
 
 			$this->output( "Waiting for slaves...\n" );
-			CentralAuthUtils::waitForSlaves();
+			CentralAuthUtils::waitForReplicas();
 
 		} while ( $count !== 0 );
 	}

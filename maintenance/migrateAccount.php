@@ -134,7 +134,7 @@ class MigrateAccount extends Maintenance {
 				}
 				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for slaves to catch up ... " );
-					CentralAuthUtils::waitForSlaves();
+					CentralAuthUtils::waitForReplicas();
 					$this->output( "done\n" );
 				}
 			}

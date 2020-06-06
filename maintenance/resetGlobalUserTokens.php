@@ -96,7 +96,7 @@ class ResetGlobalUserTokens extends Maintenance {
 				$max = $maxid;
 			}
 
-			CentralAuthUtils::waitForSlaves();
+			CentralAuthUtils::waitForReplicas();
 
 		} while ( $min < $maxid );
 	}

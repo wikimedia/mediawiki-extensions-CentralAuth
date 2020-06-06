@@ -33,12 +33,13 @@ class CentralAuthUtils {
 	}
 
 	/**
-	 * Wait for the CentralAuth DB slaves to catch up
+	 * Wait for the CentralAuth DB replicas to catch up
 	 */
-	public static function waitForSlaves() {
+	public static function waitForReplicas() {
 		global $wgCentralAuthDatabase;
 
-		wfWaitForSlaves( null, $wgCentralAuthDatabase );
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lbFactory->waitForReplication( [ 'domain' => $wgCentralAuthDatabase ] );
 	}
 
 	/**

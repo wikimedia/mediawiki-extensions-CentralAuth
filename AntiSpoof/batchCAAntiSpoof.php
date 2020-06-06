@@ -48,7 +48,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	}
 
 	protected function waitForSlaves() {
-		CentralAuthUtils::waitForSlaves();
+		CentralAuthUtils::waitForReplicas();
 	}
 
 	/**
