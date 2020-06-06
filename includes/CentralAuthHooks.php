@@ -225,7 +225,6 @@ class CentralAuthHooks {
 			$old = htmlspecialchars( $oldName );
 		}
 
-		// @phan-suppress-next-line SecurityCheck-XSS
 		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )
 			->rawParams( $new, $old );
 		if ( $skin ) {
