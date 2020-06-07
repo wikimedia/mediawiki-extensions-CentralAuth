@@ -19,6 +19,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Utility class to deal with global rename blacklist.
  *
@@ -85,8 +87,9 @@ class GlobalRenameBlacklist {
 				$this->logger->info( 'GlobalRenameBlacklist is not specified, not fetching anything' );
 				return;
 			}
-			$text = Http::get( $this->file );
-			if ( $text === false ) {
+			$text = MediaWikiServices::getInstance()->getHttpRequestFactory()
+				->get( $this->file, [], __METHOD__ );
+			if ( $text === null ) {
 				$this->logger->warning( 'GlobalRenameBlacklist failed to fetch global rename blacklist.' );
 				return;
 			}
