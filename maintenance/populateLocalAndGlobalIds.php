@@ -28,7 +28,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 		$globalRenames = [];
 		$rows = $dbr->select(
 			'renameuser_status',
-			'ru_oldname'
+			'ru_oldname',
+			[],
+			__METHOD__
 		);
 		foreach ( $rows as $row ) {
 			$globalRenames[] = $row->ru_oldname;
@@ -74,7 +76,8 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			$localIds = $ldbr->select(
 				'user',
 				[ 'user_id', 'user_name' ],
-				[ 'user_name' => array_values( $globalUidToLocalName ) ]
+				[ 'user_name' => array_values( $globalUidToLocalName ) ],
+				__METHOD__
 			);
 			foreach ( $localIds as $lid ) {
 				$localNameToUid[$lid->user_name] = $lid->user_id;
@@ -89,7 +92,8 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 						'lu_local_id' => $localNameToUid[$uname],
 						'lu_global_id' => $gid
 					],
-					[ 'lu_name' => $uname, 'lu_wiki' => $wiki ]
+					[ 'lu_name' => $uname, 'lu_wiki' => $wiki ],
+					__METHOD__
 				);
 				if ( !$result ) {
 					$this->output(

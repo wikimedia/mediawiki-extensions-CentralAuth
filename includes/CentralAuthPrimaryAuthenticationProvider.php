@@ -541,7 +541,8 @@ class CentralAuthPrimaryAuthenticationProvider
 		CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
 			function () use ( $centralUser ) {
 				CentralAuthUtils::scheduleCreationJobs( $centralUser );
-			}
+			},
+			__METHOD__
 		);
 		return null;
 	}

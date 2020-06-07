@@ -156,7 +156,8 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 					[ $nameWhere, 'ru_wiki' => $wiki ],
 					$fname
 				);
-			}
+			},
+			$fname
 		);
 	}
 

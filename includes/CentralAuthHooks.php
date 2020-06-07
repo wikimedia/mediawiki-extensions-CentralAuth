@@ -270,7 +270,8 @@ class CentralAuthHooks {
 				CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
 					function () use ( $centralUser ) {
 						CentralAuthUtils::scheduleCreationJobs( $centralUser );
-					}
+					},
+					__METHOD__
 				);
 			}
 		}
@@ -1650,7 +1651,7 @@ class CentralAuthHooks {
 
 		$originalPrefix = $db->tablePrefix();
 		$db->tablePrefix( $prefix );
-		if ( !$db->tableExists( 'globaluser' ) ) {
+		if ( !$db->tableExists( 'globaluser', __METHOD__ ) ) {
 			$db->sourceFile( __DIR__ . '/../central-auth.sql' );
 		}
 		$db->tablePrefix( $originalPrefix );

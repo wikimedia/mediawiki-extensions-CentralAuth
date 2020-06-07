@@ -55,7 +55,8 @@ class GlobalUserMergeDatabaseUpdates {
 		$attachedWikis = $dbw->selectFieldValues(
 			'localuser',
 			'lu_wiki',
-			[ 'lu_name' => $newname ]
+			[ 'lu_name' => $newname ],
+			__METHOD__
 		);
 		// For each attached account, update the lu_local_id field
 		$user = CentralAuthUser::newFromId( $newId );
@@ -69,7 +70,8 @@ class GlobalUserMergeDatabaseUpdates {
 				[
 					'lu_name' => $newname,
 					'lu_wiki' => $wiki
-				]
+				],
+				__METHOD__
 			);
 		}
 
@@ -77,7 +79,8 @@ class GlobalUserMergeDatabaseUpdates {
 		// we'll use the existing rows
 		$dbw->delete(
 			'localuser',
-			[ 'lu_name' => $oldname ]
+			[ 'lu_name' => $oldname ],
+			__METHOD__
 		);
 
 		$dbw->endAtomic( __METHOD__ );

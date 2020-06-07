@@ -62,7 +62,7 @@ class DeleteEmptyAccounts extends Maintenance {
 			$this->suppressRC = true;
 		}
 
-		$end = $dbr->selectField( 'globaluser', 'MAX(gu_id)' );
+		$end = $dbr->selectField( 'globaluser', 'MAX(gu_id)', [], __METHOD__ );
 		for ( $cur = 0; $cur <= $end; $cur += $this->mBatchSize ) {
 			$this->output( "PROGRESS: $cur / $end\n" );
 			$result = $dbr->select(

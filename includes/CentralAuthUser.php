@@ -1797,7 +1797,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$dbw = self::getCentralDB();
 			$dbw->onTransactionPreCommitOrIdle( function () use ( $jobs ) {
 				JobQueueGroup::singleton()->push( $jobs );
-			} );
+			}, __METHOD__ );
 		}
 	}
 
@@ -2981,7 +2981,7 @@ class CentralAuthUser implements IDBAccessObject {
 		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function () {
 			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 			$cache->delete( $this->getCacheKey( $cache ) );
-		} );
+		}, __METHOD__ );
 	}
 
 	/**
