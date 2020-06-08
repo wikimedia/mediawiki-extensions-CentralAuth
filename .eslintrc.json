@@ -7,11 +7,5 @@
 	],
 	"env": {
 		"commonjs": true
-	},
-	"globals": {
-		"OO": "readonly"
-	},
-	"rules": {
-		"valid-jsdoc": "off"
 	}
 }
