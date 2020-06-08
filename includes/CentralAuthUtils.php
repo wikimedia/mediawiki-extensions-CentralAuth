@@ -61,7 +61,7 @@ class CentralAuthUtils {
 	}
 
 	/**
-	 * Gets a slave (readonly) database connection to the CentralAuth database
+	 * Gets a replica (readonly) database connection to the CentralAuth database
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */

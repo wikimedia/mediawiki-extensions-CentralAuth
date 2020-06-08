@@ -251,12 +251,12 @@ class CentralAuthUser implements IDBAccessObject {
 	private function checkWriteMode() {
 		if ( !$this->mFromMaster ) {
 			wfDebugLog( 'CentralAuth',
-				"Setter called on a slave instance: " . wfGetAllCallers( 10 ) );
+				"Setter called on a replicae instance: " . wfGetAllCallers( 10 ) );
 		}
 	}
 
 	/**
-	 * @return IDatabase Master or slave based on shouldUseMasterDB()
+	 * @return IDatabase Master or replica based on shouldUseMasterDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
@@ -478,7 +478,7 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
-		$renameUser = $renameUserStatus->getNames( null, $fromMaster ? 'master' : 'slave' );
+		$renameUser = $renameUserStatus->getNames( null, $fromMaster ? 'master' : 'replica' );
 
 		$this->loadFromRow( $row, $renameUser, $fromMaster );
 	}
@@ -2315,7 +2315,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// Use master as this is being used for various critical things
 		$names = $renameState->getNames(
 			$wiki,
-			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'master' : 'slave'
+			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'master' : 'replica'
 		);
 
 		if ( $names ) {
@@ -2384,7 +2384,7 @@ class CentralAuthUser implements IDBAccessObject {
 				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localuser table told us that the user was attached
-				// from $wikiId but there is no data in the master or slaves
+				// from $wikiId but there is no data in the master or replicas
 				// that corroborates that.
 				unset( $wikis[$wikiId] );
 				// Queue a job to delete the bogus attachment record.
@@ -2465,7 +2465,7 @@ class CentralAuthUser implements IDBAccessObject {
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localnames table told us that the name was
 				// unattached on $wikiId but there is no data in the master
-				// or slaves that corroborates that.
+				// or replicas that corroborates that.
 				// Queue a job to delete the bogus record.
 				$this->queueAdminUnattachJob( $wikiID );
 			}
@@ -2500,7 +2500,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$conds = [ 'user_name' => $this->mName ];
 		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		if ( !$row ) {
-			# Row missing from slave, try the master instead
+			# Row missing from replica, try the master instead
 			$db = $lb->getConnectionRef( DB_MASTER, [], $wikiID );
 			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		}
@@ -2806,7 +2806,7 @@ class CentralAuthUser implements IDBAccessObject {
 			// Maybe the problem was a missed cache update; clear it to be safe
 			$this->invalidateCache();
 			// User was changed in the meantime or loaded with stale data
-			$from = ( $this->mFromMaster ) ? 'master' : 'slave';
+			$from = ( $this->mFromMaster ) ? 'master' : 'replica';
 			LoggerFactory::getInstance( 'CentralAuth' )->warning(
 				"CAS update failed on gu_cas_token for user ID '{globalId}' " .
 				"(read from {from}); the version of the user to be saved is older than " .

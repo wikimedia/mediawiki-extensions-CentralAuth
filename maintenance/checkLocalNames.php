@@ -50,7 +50,7 @@ class CheckLocalNames extends Maintenance {
 
 	public function execute() {
 		$centralMaster = CentralAuthUtils::getCentralDB();
-		$centralSlave = CentralAuthUtils::getCentralReplicaDB();
+		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
 
 		if ( $this->getOption( 'delete', false ) !== false ) {
 			$this->dryrun = false;
@@ -72,7 +72,7 @@ class CheckLocalNames extends Maintenance {
 		if ( $this->wiki !== null ) {
 			$wikis[] = $this->wiki;
 		} else {
-			$result = $centralSlave->select(
+			$result = $centralReplica->select(
 				'localnames',
 				[ 'ln_wiki' ],
 				"",
@@ -98,12 +98,12 @@ class CheckLocalNames extends Maintenance {
 			// batch query localnames from the wiki
 			do{
 				$this->output( "\t ... querying from '$lastUsername'\n" );
-				$result = $centralSlave->select(
+				$result = $centralReplica->select(
 					'localnames',
 					[ 'ln_name' ],
 					[
 						"ln_wiki" => $wiki,
-						"ln_name > " . $centralSlave->addQuotes( $lastUsername )
+						"ln_name > " . $centralReplica->addQuotes( $lastUsername )
 					],
 					__METHOD__,
 					[

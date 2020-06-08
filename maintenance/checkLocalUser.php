@@ -159,7 +159,7 @@ class CheckLocalUser extends Maintenance {
 	}
 
 	protected function getWikis() {
-		$centralSlave = CentralAuthUtils::getCentralReplicaDB();
+		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
 		$wikis = [];
 
 		if ( $this->wiki !== null ) {
@@ -169,7 +169,7 @@ class CheckLocalUser extends Maintenance {
 			if ( $this->user !== null ) {
 				$conds['lu_name'] = $this->user;
 			}
-			$result = $centralSlave->select(
+			$result = $centralReplica->select(
 				'localuser',
 				[ 'lu_wiki' ],
 				$conds,
@@ -195,16 +195,16 @@ class CheckLocalUser extends Maintenance {
 			return;
 		}
 
-		$centralSlave = CentralAuthUtils::getCentralReplicaDB();
+		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
 		$lastUsername = '';
 		do {
 			$this->output( "\t ... querying from '$lastUsername'\n" );
-			$result = $centralSlave->select(
+			$result = $centralReplica->select(
 				'localuser',
 				[ 'lu_name' ],
 				[
 					'lu_wiki' => $wiki,
-					'lu_name > ' . $centralSlave->addQuotes( $lastUsername ),
+					'lu_name > ' . $centralReplica->addQuotes( $lastUsername ),
 				],
 				__METHOD__,
 				[

@@ -66,7 +66,7 @@ class ResetGlobalUserTokens extends Maintenance {
 			$this->countDown( 5 );
 		}
 
-		// We list user by user_id from one of the slave database
+		// We list user by user_id from one of the replica database
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
 		$maxid = $this->getOption( 'maxid', -1 );
 
