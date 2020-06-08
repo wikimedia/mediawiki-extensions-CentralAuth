@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54ad2293_cb343667",
+        "filename": "includes/CentralAuthUser.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-06-08T21:43:15Z",
+      "side": 1,
+      "message": "MediaWiki\\User\\UserIdentityValue",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 21
+      },
+      "revId": "e1322332ec189d3c3d962456496805264ef4a7b1",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
