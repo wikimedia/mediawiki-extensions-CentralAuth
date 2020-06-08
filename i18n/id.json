@@ -3,6 +3,7 @@
 		"authors": [
 			"Ahdan",
 			"Aldnonymous",
+			"Bagas Chrisara",
 			"Bennylin",
 			"Borgx",
 			"C5st4wr6ch",
@@ -15,7 +16,8 @@
 			"Lukman Tomayahu",
 			"Rachmat.Wahidi",
 			"Rachmat04",
-			"Rex"
+			"Rex",
+			"Sumbukompor"
 		]
 	},
 	"centralauth": "Manajemen akun global (Otoritas pusat)",
@@ -299,7 +301,7 @@
 	"globalrenamerequest-reason-label": "Alasan permintaan perubahan",
 	"globalrenamerequest-save-error": "Gagal untuk menyimpan permintaan, silakan coba lagi.",
 	"globalrenamerequest-status-text": "Permintaan pengubahan nama pengguna sedang diproses dan menunggu persetujuan oleh seorang steward. Anda akan diinformasikan melalui surel ketika proses tersebut telah dijalankan.\n\n;Nama pengguna saat ini:\n:$1\n;Nama pengguna yang diminta:\n:$2",
-	"globalrenamerequest-status-title": "Permintaan ubah nama menunggu persetujuan.",
+	"globalrenamerequest-status-title": "Permohonan untuk mengganti nama menunggu persetujuan",
 	"globalrenamerequest-submit-text": "Mintakan perubahan nama",
 	"globalrenamerequest-username-label": "Nama pengguna saat ini:",
 	"globalusers": "Daftar pengguna global",

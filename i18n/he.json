@@ -9,6 +9,7 @@
 			"YaronSh",
 			"Yona b",
 			"אור שפירא",
+			"דגש חזק",
 			"דולב",
 			"המקיסט",
 			"חיים"
@@ -335,7 +336,7 @@
 	"centralauth-rename-form-reason": "סיבה",
 	"centralauth-rename-form-suppressredirects": "לא ליצור הפניות",
 	"centralauth-rename-globaleditcount-threshold": "המשתמש הזה עשה יותר {{PLURAL:$1|מעריכה אחת|מ־$1 עריכות}} נא לאשר שבאמת התכוונת לשנות את שם המשתמש הזה ושמפעיל מערכת זמין לבדוק את שינוי השם.",
-	"centralauth-rename-movelog": "הדף הועבר אוטמטית בעת שינוי שם המשתמש \"[[Special:CentralAuth/$1|$1]]\" אל \"[[Special:CentralAuth/$2|$2]]\"",
+	"centralauth-rename-movelog": "הדף הועבר אוטומטית בעת שינוי שם המשתמש \"[[Special:CentralAuth/$1|$1]]\" אל \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "אין תהליכי שינוי שם נוכחי עבור $1. ייתכן שהם כבר הסתיימו.",
 	"centralauth-rename-notinstalled": "ההרחבה Renameuser אינה מותקנת.",
 	"centralauth-rename-progress-fieldset": "רשימת חשבונות מקומיים",
