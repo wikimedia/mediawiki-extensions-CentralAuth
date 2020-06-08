@@ -2551,8 +2551,16 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// And we have to fetch groups separately, sigh...
-		$data['groupMemberships'] =
-			UserGroupMembership::getMembershipsForUser( $data['id'], $db );
+		$data['groupMemberships'] = MediaWikiServices::getInstance()
+				->getUserGroupManagerFactory()
+				->getUserGroupManager( $db )
+				->getUserGroupMemberships(
+					new UserIdentityValue(
+						$data['id'],
+						$data['name'],
+						0
+					)
+				);
 
 		// And while we're in here, look for user blocks :D
 		$commentStore = CommentStore::getStore();
