@@ -13,6 +13,7 @@ likely construction types...
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserIdentityValue;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
@@ -2551,8 +2552,16 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// And we have to fetch groups separately, sigh...
-		$data['groupMemberships'] =
-			UserGroupMembership::getMembershipsForUser( $data['id'], $db );
+		$data['groupMemberships'] = MediaWikiServices::getInstance()
+			->getUserGroupManagerFactory()
+			->getUserGroupManager( $wikiID )
+			->getUserGroupMemberships(
+				new UserIdentityValue(
+					(int)$data['id'],
+					$data['name'],
+					0
+				)
+			);
 
 		// And while we're in here, look for user blocks :D
 		$commentStore = CommentStore::getStore();
