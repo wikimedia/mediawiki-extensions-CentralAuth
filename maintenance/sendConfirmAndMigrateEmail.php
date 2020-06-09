@@ -105,7 +105,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				$this->resendConfirmationEmail( $username );
 
 				if ( $this->total % $this->mBatchSize == 0 ) {
-					$this->output( "Waiting for slaves to catch up ... " );
+					$this->output( "Waiting for replicas to catch up ... " );
 					if ( !$this->dryrun ) {
 						CentralAuthUtils::waitForReplicas();
 					}

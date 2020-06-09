@@ -66,7 +66,7 @@ class MigratePass0 extends Maintenance {
 				$rate ) );
 
 			if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
-				$this->output( "Waiting for slaves to catch up ... " );
+				$this->output( "Waiting for replicas to catch up ... " );
 				CentralAuthUtils::waitForReplicas();
 				$this->output( "done" );
 			}

@@ -106,7 +106,7 @@ class AttachAccount extends Maintenance {
 		// @codingStandardsIgnoreEnd
 			$this->attach( $username );
 			if ( $this->total % $this->mBatchSize == 0 ) {
-				$this->output( "Waiting for slaves to catch up ... " );
+				$this->output( "Waiting for replicas to catch up ... " );
 				CentralAuthUtils::waitForReplicas();
 				$this->output( "done\n" );
 			}

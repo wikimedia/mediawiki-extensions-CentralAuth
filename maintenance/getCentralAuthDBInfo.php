@@ -10,7 +10,7 @@ class GetCentralAuthDBInfo extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->addDescription( 'Display info for slave server hosting the CentralAuth database' );
+		$this->addDescription( 'Display info for replica server hosting the CentralAuth database' );
 	}
 
 	public function execute() {

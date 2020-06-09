@@ -87,7 +87,7 @@ class SendForceRenameNotification extends Maintenance {
 			foreach ( $markNotified as $row ) {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
-			$this->output( "Waiting for slaves..." );
+			$this->output( "Waiting for replicas..." );
 			// users_to_rename
 			CentralAuthUtils::waitForReplicas();
 			// And on the local wiki!
