@@ -308,7 +308,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$request->getSessionData( 'CentralAuthForcedRename' ) === true
 		) {
 			wfDebugLog( 'CentralAuth',
-				"CentralAuthMigration: Login completed for renamed user '{$wgUser->getName()}'"
+				"CentralAuthMigration: Login completed for renamed user '{$user->getName()}'"
 			);
 		}
 	}

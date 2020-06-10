@@ -43,8 +43,9 @@ class DeleteEmptyAccounts extends Maintenance {
 	public function execute() {
 		global $wgUser;
 
-		$wgUser = User::newFromName( 'Maintenance script' );
-		RequestContext::getMain()->setUser( $wgUser );
+		$user = User::newFromName( 'Maintenance script' );
+		$wgUser = $user;
+		RequestContext::getMain()->setUser( $user );
 
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
@@ -81,7 +82,7 @@ class DeleteEmptyAccounts extends Maintenance {
 			);
 
 			foreach ( $result as $row ) {
-				$this->process( $row->gu_name, $wgUser );
+				$this->process( $row->gu_name, $user );
 			}
 			if ( $this->fix ) {
 				CentralAuthUtils::waitForReplicas();
