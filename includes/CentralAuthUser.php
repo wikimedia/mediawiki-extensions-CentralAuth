@@ -218,13 +218,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @deprecated use CentralAuthUtils instead
-	 */
-	public static function getCentralSlaveDB() {
-		return CentralAuthUtils::getCentralReplicaDB();
-	}
-
-	/**
 	 * Check hasOrMadeRecentMasterChanges() on the CentralAuth load balancer
 	 *
 	 * @return bool
