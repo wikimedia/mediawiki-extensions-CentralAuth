@@ -206,7 +206,6 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		}, $this->oldCAUsers );
 		$userList = $lang->commaList( $globalUsers );
 
-		// @phan-suppress-next-line SecurityCheck-XSS
 		$msg = $this->msg( 'centralauth-usermerge-queued' )
 			->rawParams(
 				$userList,
