@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f669b94a_295a1f29",
+        "filename": "includes/GlobalRename/GlobalRenameUser.php",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6729
+      },
+      "writtenOn": "2020-06-13T10:08:11Z",
+      "side": 1,
+      "message": "why pass $disableLogger to the logger instead of just checking here to determine if it should be logged?",
+      "range": {
+        "startLine": 147,
+        "startChar": 2,
+        "endLine": 152,
+        "endChar": 4
+      },
+      "revId": "14fcc0d657bfff71e56c623c3bb1b687cd77fde3",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
