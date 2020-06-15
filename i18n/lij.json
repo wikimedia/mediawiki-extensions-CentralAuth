@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Giromin Cangiaxo"
+			"Giromin Cangiaxo",
+			"S4b1nuz E.656"
 		]
 	},
 	"centralauth": "Amministraçion de l'utença globâ",
@@ -101,6 +102,7 @@
 	"centralauth-attach-title": "Conferma l'utença",
 	"centralauth-complete": "Unificaçion di utençe completâ!",
 	"centralauth-complete-text": "Oua ti poeu accede a tutti i sciti de {{int:Centralauth-groupname}} sença dovei creâ de noeuve utençe.",
+	"centralauth-contribs-locked": "Sto uténte o l'é blocòu globalménte.\nVéddi i [[Special:CentralAuth/$1|detàggi de l'uténza globâle]] pe ciù informaçioìn.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|giorno|giorni}} fa",
 	"centralauth-desc": "[[Special:MergeAccount|Uniffica e to utençe]] in scê wiki gestie da {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "L'unificaçion di utençe a l'è attualmente in modalitæ ''demo'' ò ''debugging'', quindi i opiaçioin d'effettiva unificaçion son disabilitæ. Spiaxenti!",
