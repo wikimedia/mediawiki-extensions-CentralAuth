@@ -7,18 +7,19 @@
 		]
 	},
 	"centralauth-admin-no": "не",
-	"centralauth-admin-username": "Иштирокәкә ном:",
+	"centralauth-admin-username": "İştirokəkə nom:",
 	"centralauth-admin-yes": "бәле",
 	"centralauth-antispoof-desc": "AntiSpoof технологијә зијод кардә бә CentralAuth",
 	"centralauth-editset-name": "Nom:",
 	"centralauth-editset-reason": "Сәбәб:",
 	"centralauth-editset-type": "Тип:",
-	"centralauth-finish-login": "Ыштәни едаштеј",
+	"centralauth-finish-login": "Dəşey",
 	"centralauth-finish-password": "Парол:",
 	"centralauth-finish-send-confirmation": "Бә е-номә нујә парол вығандеј",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|дәгиши|дәгиши}} бә $2",
 	"centralauth-groupname": "Викимедијә Фонд",
 	"centralauth-list-home-title": "Че кә вики",
 	"centralauth-merge-dryrun-or": "'''ја''",
-	"centralauth-merge-method-primary": "\"кә\" вики-нәхшә"
+	"centralauth-merge-method-primary": "\"кә\" вики-нәхшә",
+	"globalrenamequeue-request-cancel-text": "Ləğv karde"
 }
