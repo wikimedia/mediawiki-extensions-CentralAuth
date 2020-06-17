@@ -213,7 +213,7 @@
 	"centralauth-login-no-others": "Boli ste automaticky prihlásený do ostatných projektov {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Prihlasujeme vás do {{PLURAL:$2|wiki}} {{GRAMMAR:2sg|{{int:Centralauth-groupname}}}}:",
 	"centralauth-logout-no-others": "Boli ste automaticky odhlásený z ostatných projektov {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Odhlasujeme vás s ostatných {{PLURAL:$2|wiki}} {{GRAMMAR:2sg|{{int:Centralauth-groupname}}}}:",
+	"centralauth-logout-progress": "Odhlasujeme vás z ostatných {{PLURAL:$2|wiki}} {{GRAMMAR:2sg|{{int:Centralauth-groupname}}}}:",
 	"centralauth-merge-attempt": "'''Poskytnuté heslá sa kontrolujú voči zostávajúcim zatiaľ nezjednoteným účtom...'''",
 	"centralauth-merge-denied": "Prepáčte, nemáte oprávnenie pristupovať na túto stránku.",
 	"centralauth-merge-dryrun-complete": "Všetky existujúce účty boli automaticky zjednotené!\n\nVo vašich účtoch sa zatiaľ nevykonali žiadne zmeny.",
