@@ -74,14 +74,6 @@ class CentralAuthUtils {
 	}
 
 	/**
-	 * @return \Wikimedia\Rdbms\IDatabase
-	 * @deprecated Since 1.33; use getCentralReplicaDB()
-	 */
-	public function getCentralSlaveDB() {
-		return self::getCentralReplicaDB();
-	}
-
-	/**
 	 * @param WebRequest|null $request
 	 */
 	public static function setP3P( WebRequest $request = null ) {
