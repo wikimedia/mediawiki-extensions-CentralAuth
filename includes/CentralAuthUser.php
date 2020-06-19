@@ -2209,7 +2209,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$rows = [];
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		foreach ( self::getWikiList() as $wikiID ) {
-			$dbr = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
+			$lb = $lbFactory->getMainLB( $wikiID );
+			$dbr = $lb->getConnectionRef( DB_REPLICA, [], $wikiID );
 			$id = $dbr->selectField(
 				'user',
 				'user_id',
@@ -2219,6 +2220,7 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( $id ) {
 				$rows[] = [ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ];
 			}
+			$lb->reuseConnection( $dbr );
 		}
 
 		if ( $rows || $this->exists() ) {
