@@ -336,7 +336,7 @@
 	"globalrenamequeue-request-title": "Μετονομασία του \"$1\";",
 	"globalrenamequeue-view-approved": "εγκρίθηκε",
 	"globalrenamequeue-view-rejected": "Απορρίφθηκε",
-	"globalrenamerequest": "Αίτημα μετονομασίας παγκόσμιου λογαριασμού χρήστη",
+	"globalrenamerequest": "Αίτημα μετονομασίας καθολικού λογαριασμού χρήστη",
 	"globalrenamerequest-newname-err-invalid": "Δεν έχετε καθορίσει έγκυρο όνομα χρήστη.",
 	"globalrenamerequest-newname-err-taken": "Το όνομα χρήστη που εισαγάγατε βρίσκεται ήδη σε χρήση. Παρακαλούμε, επιλέξτε ένα διαφορετικό όνομα.",
 	"globalrenamerequest-newname-help": "Εισαγάγετε το νέο όνομα χρήστη που θέλετε να χρησιμοποιήσετε, π.χ. «$1»",
