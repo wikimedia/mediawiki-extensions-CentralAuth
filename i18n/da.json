@@ -358,6 +358,7 @@
 	"globalrenamequeue-column-rq-status": "Status",
 	"globalrenamequeue-column-rq-wiki": "Lokal wiki",
 	"globalrenamequeue-form-status": "Status:",
+	"globalrenamequeue-form-status-all": "alle",
 	"globalrenamequeue-form-username": "Brugernavn:",
 	"globalrenamequeue-request-approve-text": "Accepter omdøbning",
 	"globalrenamequeue-request-cancel-text": "Annullér",

@@ -100,6 +100,7 @@
 	"centralauth-attach-success": "L'utença a l'è stæta transfeia a l'utença unificâ.",
 	"centralauth-attach-text": "St'utença a no l'è ancon stæta conligâ a l'utença globâ. Se t'ê o titolâ de l'utença globâ, ti poeu conligâ st'utenza inseindo a password de l'utença globâ:",
 	"centralauth-attach-title": "Conferma l'utença",
+	"centralauth-block-already-locked": "L'uténte [[Special:CentralAuth/$1|$1]] o l'é za bloccòu globalménte.",
 	"centralauth-complete": "Unificaçion di utençe completâ!",
 	"centralauth-complete-text": "Oua ti poeu accede a tutti i sciti de {{int:Centralauth-groupname}} sença dovei creâ de noeuve utençe.",
 	"centralauth-contribs-locked": "Sto uténte o l'é blocòu globalménte.\nVéddi i [[Special:CentralAuth/$1|detàggi de l'uténza globâle]] pe ciù informaçioìn.",
