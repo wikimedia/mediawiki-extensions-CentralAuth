@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d2e9680_aac960bd",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 2664
+      },
+      "writtenOn": "2020-06-24T08:09:59Z",
+      "side": 0,
+      "message": "I believe this must go away. Otherwise LogPager::limitTitle will limit results to this title.",
+      "range": {
+        "startLine": 985,
+        "startChar": 3,
+        "endLine": 985,
+        "endChar": 28
+      },
+      "revId": "ba2c79736cad55a8919af3ea958c0d1aac5f9424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
