@@ -22,6 +22,30 @@
       "revId": "7bf73fab5de3fbaf9aa52e8e0618d9cefe07c710",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df4b5e78_8fbafc5b",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 6619
+      },
+      "writtenOn": "2020-06-24T10:39:22Z",
+      "side": 1,
+      "message": "\u003e I believe this must go away. Otherwise LogPager::limitTitle will limit results to this title.\n\nYes, I believe we want limit the log to the this title only. $title-\u003egetPrefixedText() is a userpage here with interwiki delimiter like \"User:Example@global\". Why should we remove it? and what would that mean for  \u0027globalauth\u0027 log which is currently using it?",
+      "parentUuid": "5605dcf6_b41ad918",
+      "range": {
+        "startLine": 985,
+        "startChar": 3,
+        "endLine": 985,
+        "endChar": 28
+      },
+      "revId": "7bf73fab5de3fbaf9aa52e8e0618d9cefe07c710",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
