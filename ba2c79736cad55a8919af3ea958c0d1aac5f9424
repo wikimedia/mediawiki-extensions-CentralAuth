@@ -22,6 +22,30 @@
       "revId": "ba2c79736cad55a8919af3ea958c0d1aac5f9424",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46dc81ab_d0c25123",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 2664
+      },
+      "writtenOn": "2020-06-24T08:10:58Z",
+      "side": 0,
+      "message": "(nonsense)",
+      "parentUuid": "3d2e9680_aac960bd",
+      "range": {
+        "startLine": 985,
+        "startChar": 3,
+        "endLine": 985,
+        "endChar": 28
+      },
+      "revId": "ba2c79736cad55a8919af3ea958c0d1aac5f9424",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }

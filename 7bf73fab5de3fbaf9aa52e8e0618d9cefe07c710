@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5605dcf6_b41ad918",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 2664
+      },
+      "writtenOn": "2020-06-24T08:10:58Z",
+      "side": 1,
+      "message": "Oh, this is what I mean. My mistake.",
+      "range": {
+        "startLine": 985,
+        "startChar": 3,
+        "endLine": 985,
+        "endChar": 28
+      },
+      "revId": "7bf73fab5de3fbaf9aa52e8e0618d9cefe07c710",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
+    }
+  ]
+}
