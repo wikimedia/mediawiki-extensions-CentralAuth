@@ -46,6 +46,30 @@
       "revId": "7bf73fab5de3fbaf9aa52e8e0618d9cefe07c710",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13a6bf49_c75d9229",
+        "filename": "includes/specials/SpecialCentralAuth.php",
+        "patchSetId": 7
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 2664
+      },
+      "writtenOn": "2020-06-24T10:47:38Z",
+      "side": 1,
+      "message": "\u003e Why should we remove it?\n\nI suppose we want to allow both $title and $caTitle? Otherwise, what is the point of the $dbr-\u003emakeList parade below (with $caTitle)?",
+      "parentUuid": "df4b5e78_8fbafc5b",
+      "range": {
+        "startLine": 985,
+        "startChar": 3,
+        "endLine": 985,
+        "endChar": 28
+      },
+      "revId": "7bf73fab5de3fbaf9aa52e8e0618d9cefe07c710",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
