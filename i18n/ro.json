@@ -3,6 +3,7 @@
 		"authors": [
 			"Andrei Stroe",
 			"Andreyyshore",
+			"BaRaN6161 TURK",
 			"Cin",
 			"Firilacroco",
 			"ImGelu",
@@ -278,7 +279,7 @@
 	"centralauth-prefs-status": "Cont global:",
 	"centralauth-prefs-unattached": "Neunificat complet",
 	"centralauth-prefs-view": "Vezi informațiile globale despre cont",
-	"centralauth-readmore-text": ":''Citiți despre {{en icon}} [[m:Special:MyLanguage/Help:Unified login| '''autentificarea unificată''']]…''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Citiți mai multe despre '''autentificare unificată''']]…''",
 	"centralauth-readonly": "Baza de date CentralAuth blocată",
 	"centralauth-readonlytext": "Noile intrări și alte modificări din baza de date CentralAuth sunt momentan blocate, probabil pentru lucrări de întreținere de rutină, după care va reveni la normal.",
 	"centralauth-rename-abortlogin": "Contul dumneavoastră se află în acest moment în curs de redenumire sau unificare. [[Special:GlobalRenameProgress/$1|Vizualizați starea]].",
