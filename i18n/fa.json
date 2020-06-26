@@ -433,7 +433,7 @@
 	"globalrenamequeue-column-rq-wiki": "ویکی محلی",
 	"globalrenamequeue-desc": "رسیدگی به درخواست‌های تغییر نام سراسری",
 	"globalrenamequeue-email-body-approved-with-note": "درخواست تغییر نام «{{GENDER:$1|$1}}» به «{{GENDER:$1|$2}}» تأیید شد.\n\nتوضیحات: $3",
-	"globalrenamequeue-email-body-approved": "درخواست تغییر نام از \"{{$1|GENDER:$1}}\" به \"{{GENDER:$1|$2}}\" تایید شد.",
+	"globalrenamequeue-email-body-approved": "درخواست تغییر نام از \"{{GENDER:$1|$1}}\" به \"{{GENDER:$1|$2}}\" تایید شد.",
 	"globalrenamequeue-email-body-rejected": "درخواست تغییر نام «{{GENDER:$1|$1}}» به «{{GENDER:$1|$2}}» رد شد.\n\nتوضیحات: $3",
 	"globalrenamequeue-email-subject-approved": "تغییر نام حساب تایید شد",
 	"globalrenamequeue-email-subject-rejected": "تغییر نام حساب رد شد",

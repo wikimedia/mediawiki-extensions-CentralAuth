@@ -340,7 +340,7 @@
 	"centralauth-rename-form-newname": "Neuer Benutzername",
 	"centralauth-rename-form-oldname": "Aktueller Benutzername",
 	"centralauth-rename-form-overrideantispoof": "Alle AntiSpoof-Konflikte überschreiben",
-	"centralauth-rename-form-overridetitleblacklist": "Titel-Blacklist umgehen",
+	"centralauth-rename-form-overridetitleblacklist": "Titel-Negativliste umgehen",
 	"centralauth-rename-form-reason": "Grund",
 	"centralauth-rename-form-suppressredirects": "Erstellung von Weiterleitungen unterdrücken",
 	"centralauth-rename-globaleditcount-threshold": "Dieser Benutzer hat mehr als {{PLURAL:$1|eine Bearbeitung|$1 Bearbeitungen}}. Bitte bestätige, dass du dir sicher bist, dass du diesen Benutzer umbenennen möchtest und dass ein Systemadministrator diese Umbenennung überwachen kann.",
@@ -359,7 +359,7 @@
 	"centralauth-rename-table-status-failed": "Fehlgeschlagen",
 	"centralauth-rename-table-status-inprogress": "In Bearbeitung",
 	"centralauth-rename-table-status-queued": "In der Warteschlange",
-	"centralauth-rename-titleblacklist-match": "Der neue Benutzername entspricht dem folgenden Eintrag der Titel-Blacklist: $1",
+	"centralauth-rename-titleblacklist-match": "Der neue Benutzername entspricht dem folgenden Eintrag der Titel-Negativliste: $1",
 	"centralauth-rename-unattached-intheway": "Es gibt nicht verbundene Benutzerkonten, die den angeforderten Benutzernamen verwenden.",
 	"centralauth-rename-viewprogress": "Fortschritt anzeigen",
 	"centralauth-renameuser-global-inprogress": "Es ist bereits eine globale Umbenennung für $1 in [[Special:GlobalRenameProgress/$1|Bearbeitung]].",
@@ -451,7 +451,7 @@
 	"globalrenamequeue-request-status-title": "„$1“ in „$2“ umbenennen",
 	"globalrenamequeue-request-suppressredirects": "Erstellung von Weiterleitungen unterdrücken",
 	"globalrenamequeue-request-title": "„$1“ umbenennen?",
-	"globalrenamequeue-request-titleblacklist": "<strong>Der gewählte Benutzername stimmt mit dem folgenden Eintrag in der Titel-Blacklist überein:</strong> $1",
+	"globalrenamequeue-request-titleblacklist": "<strong>Der gewählte Benutzername stimmt mit dem folgenden Eintrag in der Titel-Negativliste überein:</strong> $1",
 	"globalrenamequeue-request-unknown-body": "Die Umbenennungsanfrage wurde nicht gefunden.",
 	"globalrenamequeue-request-unknown-title": "Anfrage nicht gefunden",
 	"globalrenamequeue-request-userinfo-global": "* Aktueller Benutzername: [[Special:CentralAuth/$1|$1]]\n* Heimatwiki: $2\n* Neuer Benutzername: [[Special:CentralAuth/$3|$3]]\n* Anzahl der globalen Bearbeitungen: $4",
@@ -517,5 +517,5 @@
 	"sulrenamewarning-title": "{{GENDER:$1|Dein}} Benutzerkonto wurde umbenannt",
 	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''.",
 	"userswhowillberenamed": "Benutzer, die umbenannt werden",
-	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Blacklist stehst."
+	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Negativliste stehst."
 }

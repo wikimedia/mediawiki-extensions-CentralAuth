@@ -41,5 +41,6 @@
 	"centralauth-not-owner-text": "Der Benutzername „$1“ wurde automatisch dem Eigentümer des Benutzerkontos auf $2 zugewiesen.\n\nWenn dies Ihr Benutzername ist, können Sie die Zusammenführung der Benutzerkonten durch Eingabe des Haupt-Passwortes für dieses Benutzerkonto vollenden:",
 	"centralauth-prefs-count-attached": "Ihr Benutzerkonto ist bei $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.",
 	"centralauth-prefs-count-unattached": "Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit Ihrem Namen.",
-	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da Ihre Sitzungsdaten verloren gegangen sind."
+	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da Ihre Sitzungsdaten verloren gegangen sind.",
+	"centralauth-badaccess-blacklisted": "Sie können keine globale Umbenennung beantragen, weil Sie auf einer Negativliste stehen."
 }
