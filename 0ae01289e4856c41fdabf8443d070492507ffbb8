@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fba443b_2bee71e9",
+        "filename": "includes/CentralAuthHooks.php",
+        "patchSetId": 4
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 34
+      },
+      "writtenOn": "2020-06-28T01:08:41Z",
+      "side": 1,
+      "message": "wfParseUrl() can return false, in which case this silently becomes null. What does/should addDefaultSrc() do in that case?",
+      "range": {
+        "startLine": 466,
+        "startChar": 24,
+        "endLine": 466,
+        "endChar": 51
+      },
+      "revId": "0ae01289e4856c41fdabf8443d070492507ffbb8",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": false
+    }
+  ]
+}
