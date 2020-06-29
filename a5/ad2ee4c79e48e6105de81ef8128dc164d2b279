@@ -1,0 +1,7 @@
+Code-Review+2: L10n-bot <l10n-bot@translatewiki.net>
+Verified+2: jenkins-bot
+Submitted-by: jenkins-bot
+Submitted-at: Mon, 29 Jun 2020 14:29:45 +0000
+Reviewed-on: https://gerrit.wikimedia.org/r/c/mediawiki/extensions/CentralAuth/+/608354
+Project: mediawiki/extensions/CentralAuth
+Branch: refs/heads/master
