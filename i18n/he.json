@@ -490,7 +490,7 @@
 	"log-description-gblrename": "היומן הזה עוקב אחרי שינוי שם גלובלי של משתמשים.",
 	"log-name-gblrename": "יומן שינוי שם גלובלי",
 	"logentry-gblrename-merge": "$1 {{GENDER:$2|מיזג|מיזגה}} את $4 אל $5 באופן גלובלי",
-	"logentry-gblrename-promote": "$1 {{GENDER:$2|שינה|שינתה}} גלובלית את השם של $4 ל{{GRAMMAR|תחילית|$5}}",
+	"logentry-gblrename-promote": "$1 {{GENDER:$2|שינה|שינתה}} גלובלית את השם של $4 ל{{GRAMMAR:prefixed|$5}}",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|שינה|שינתה}} באופן גלובלי את השם $4 ל{{GRAMMAR:תחילית|$5}}",
 	"mergeaccount": "מצב מיזוג החשבונות",
 	"multilock": "נעילת חשבונות גלובליים מרובים",
