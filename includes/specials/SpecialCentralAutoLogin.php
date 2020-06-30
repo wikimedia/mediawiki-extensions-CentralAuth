@@ -682,6 +682,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return array
 	 */
 	private function getCentralSession( $centralUser, $user ) {
+		global $wgForceHTTPS;
+
 		$centralSession = CentralAuthUtils::getCentralSession( $this->session );
 		$request = $this->getRequest();
 
@@ -698,7 +700,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a value for secureCookies
 		if ( !isset( $centralSession['secureCookies'] ) ) {
-			$centralSession['secureCookies'] = (
+			$centralSession['secureCookies'] = $wgForceHTTPS || (
 				$user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() )
 			);
 		}
