@@ -513,7 +513,7 @@ class CentralAuthHooks {
 	protected static function doCentralLoginRedirect(
 		User $user, CentralAuthUser $centralUser, &$inject_html, $direct
 	) {
-		global $wgCentralAuthLoginWiki, $wgSecureLogin;
+		global $wgCentralAuthLoginWiki, $wgSecureLogin, $wgForceHTTPS;
 
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
@@ -542,22 +542,27 @@ class CentralAuthHooks {
 			}
 
 			// Determine the final protocol of page, after login
-			$finalProto = WebRequest::detectProtocol();
-			$secureCookies = ( $finalProto === 'https' );
+			if ( $wgForceHTTPS ) {
+				$finalProto = 'https';
+				$secureCookies = true;
+			} else {
+				$finalProto = WebRequest::detectProtocol();
+				$secureCookies = ( $finalProto === 'https' );
 
-			if ( $wgSecureLogin ) {
-				$finalProto = 'http';
+				if ( $wgSecureLogin ) {
+					$finalProto = 'http';
 
-				if ( $request->getBool( 'wpForceHttps', false ) ||
-					$request->getSession()->shouldForceHTTPS() ||
-					( $user->getBoolOption( 'prefershttps' ) &&
-					wfCanIPUseHTTPS( $request->getIP() ) )
-				) {
-					$finalProto = 'https';
+					if ( $request->getBool( 'wpForceHttps', false ) ||
+						$request->getSession()->shouldForceHTTPS() ||
+						( $user->getBoolOption( 'prefershttps' ) &&
+						wfCanIPUseHTTPS( $request->getIP() ) )
+					) {
+						$finalProto = 'https';
+					}
+
+					$secureCookies = ( ( $finalProto === 'https' ) &&
+						$user->getBoolOption( 'prefershttps' ) );
 				}
-
-				$secureCookies = ( ( $finalProto === 'https' ) &&
-					$user->getBoolOption( 'prefershttps' ) );
 			}
 
 			$remember = $request->getSession()->shouldRememberUser();

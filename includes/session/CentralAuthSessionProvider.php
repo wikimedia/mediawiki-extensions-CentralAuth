@@ -65,7 +65,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			'prefix' => $wgCentralAuthCookiePrefix,
 			'path' => $wgCentralAuthCookiePath,
 			'domain' => $wgCentralAuthCookieDomain,
-			'secure' => $config->get( 'CookieSecure' ),
+			'secure' => $config->get( 'CookieSecure' ) || $config->get( 'ForceHTTPS' ),
 			'httpOnly' => $config->get( 'CookieHttpOnly' ),
 		];
 
@@ -333,7 +333,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				// Don't set the secure flag if the request came in
 				// over "http", for backwards compat.
 				// @todo Break that backwards compat properly.
-				$options['secure'] = $this->config->get( 'CookieSecure' );
+				$options['secure'] = $this->config->get( 'ForceHTTPS' )
+					|| $this->config->get( 'CookieSecure' );
 			}
 
 			// We only save the user into the central session if it's not a
@@ -437,6 +438,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 * @inheritDoc
 	 */
 	protected function setForceHTTPSCookie( $set, ?SessionBackend $backend, WebRequest $request ) {
+		if ( $this->config->get( 'ForceHTTPS' ) ) {
+			// No need to send a cookie if the wiki is always HTTPS (T256095)
+			return;
+		}
 		$response = $request->response();
 		$central = $backend
 			? CentralAuthUser::getInstance( $backend->getUser() )->isAttached()
