@@ -15,13 +15,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	public function execute( $subpage ) {
 		// Enforce $wgSecureLogin
-		global $wgSecureLogin;
-
 		$request = $this->getRequest();
-		if ( $wgSecureLogin
-			&& WebRequest::detectProtocol() == 'http'
-			&& wfCanIPUseHTTPS( $request->getIP() )
-		) {
+		if ( $this->shouldDoProtocolRedirect() ) {
 			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
 			$output = $this->getOutput();
 			$output->addVaryHeader( 'X-Forwarded-Proto' );
@@ -58,6 +53,27 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		// Auto-submit and back links
 		$this->getOutput()->addModules( 'ext.centralauth' );
+	}
+
+	/**
+	 * Should we redirect from HTTP to HTTPS, according to $wgForceHTTPS and
+	 * $wgSecureLogin?
+	 *
+	 * @return bool
+	 */
+	private function shouldDoProtocolRedirect() {
+		global $wgForceHTTPS, $wgSecureLogin;
+		if (  WebRequest::detectProtocol() !== 'http' ) {
+			return false;
+		}
+		if ( $wgForceHTTPS ) {
+			return true;
+		}
+		$request = $this->getRequest();
+		if ( $wgSecureLogin && wfCanIPUseHTTPS( $request->getIP() ) ) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -126,10 +142,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$sessionStore->delete( $key );
 
 		if ( $createStubSession ) {
-			// Determine if we can use the default cookie security, or if we need
-			// to override it to insecure
-			$secureCookie = $info['secureCookies'];
-
 			// Start an unusable placeholder session stub and send a cookie.
 			// The cookie will not be usable until the session is unstubbed.
 			// Note: the "remember me" token must be dealt with later (security).
