@@ -35,6 +35,10 @@ class CentralAuthSessionProviderTest extends PHPUnit\Framework\TestCase {
 
 	public function testGetRememberUserDuration() {
 		$config = new HashConfig( [
+			'CentralAuthCookies' => true,
+			'CentralAuthCookiePrefix' => 'central_',
+			'CentralAuthCookiePath' => '/',
+			'CentralAuthCookieDomain' => '',
 			'CookieExpiration' => 100,
 			'ExtendedLoginCookieExpiration' => 200,
 			// these are needed by CookieSessionProvider::getConfig
@@ -44,6 +48,7 @@ class CentralAuthSessionProviderTest extends PHPUnit\Framework\TestCase {
 			'CookieDomain' => 'example.com',
 			'CookieSecure' => true,
 			'CookieHttpOnly' => true,
+			'CookieSameSite' => '',
 		] );
 		$provider = new CentralAuthSessionProvider( [ 'priority' => 42 ] );
 		$provider->setConfig( $config );
