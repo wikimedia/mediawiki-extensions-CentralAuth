@@ -459,7 +459,8 @@
 		"CentralAuthGlobalPasswordPolicies": [],
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
-		"CentralAuthOldNameAntiSpoofWiki": false
+		"CentralAuthOldNameAntiSpoofWiki": false,
+		"CentralAuthSessionCacheType": null
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
