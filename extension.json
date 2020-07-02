@@ -415,6 +415,7 @@
 		"UnitTestsBeforeDatabaseTeardown": "CentralAuthHooks::onUnitTestsBeforeDatabaseTeardown"
 	},
 	"config": {
+<<<<<<< HEAD   (652e4e SECURITY: Do not leak user info via API)
 		"@doc": "see CentralAuth.php",
 		"CentralAuthDatabase": "centralauth",
 		"CentralAuthAutoMigrate": false,
@@ -460,6 +461,121 @@
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
 		"CentralAuthOldNameAntiSpoofWiki": false
+=======
+		"CentralAuthDatabase": {
+			"value": "centralauth"
+		},
+		"CentralAuthAutoMigrate": {
+			"value": false
+		},
+		"CentralAuthAutoMigrateNonGlobalAccounts": {
+			"value": false
+		},
+		"CentralAuthStrict": {
+			"value": false
+		},
+		"CentralAuthDryRun": {
+			"value": false
+		},
+		"CentralAuthCookies": {
+			"value": false
+		},
+		"CentralAuthLoginWiki": {
+			"value": false
+		},
+		"CentralAuthCookieDomain": {
+			"value": ""
+		},
+		"CentralAuthCookiePrefix": {
+			"value": "centralauth_"
+		},
+		"CentralAuthCookiePath": {
+			"value": "/"
+		},
+		"CentralAuthAutoLoginWikis": {
+			"value": []
+		},
+		"CentralAuthAutoCreateWikis": {
+			"value": []
+		},
+		"CentralAuthLoginIcon": {
+			"value": false
+		},
+		"CentralAuthPrefsForUIReload": {
+			"value": [
+				"skin",
+				"language",
+				"thumbsize",
+				"underline",
+				"stubthreshold",
+				"showhiddencats",
+				"justify",
+				"numberheadings",
+				"editondblclick",
+				"editsection",
+				"editsectiononrightclick",
+				"usenewrc",
+				"extendwatchlist"
+			]
+		},
+		"CentralAuthCookiesP3P": {
+			"value": true
+		},
+		"CentralAuthCreateOnView": {
+			"value": false
+		},
+		"CentralAuthRC": {
+			"value": []
+		},
+		"CentralAuthLockedCanEdit": {
+			"value": []
+		},
+		"DisableUnmergedEditing": {
+			"value": false
+		},
+		"CentralAuthWikisPerSuppressJob": {
+			"value": 10
+		},
+		"CentralAuthReadOnly": {
+			"value": false
+		},
+		"CentralAuthUseEventLogging": {
+			"value": false
+		},
+		"CentralAuthPreventUnattached": {
+			"value": false
+		},
+		"CentralAuthEnableUserMerge": {
+			"value": false
+		},
+		"CentralAuthEnableGlobalRenameRequest": {
+			"value": false
+		},
+		"CentralAuthCheckSULMigration": {
+			"value": false
+		},
+		"CentralAuthGlobalPasswordPolicies": {
+			"value": []
+		},
+		"CentralAuthGlobalBlockInterwikiPrefix": {
+			"value": "global"
+		},
+		"OverrideCentralIdLookupProvider": {
+			"value": true
+		},
+		"CentralAuthOldNameAntiSpoofWiki": {
+			"value": false
+		},
+		"GlobalRenameBlacklist": {
+			"value": null
+		},
+		"GlobalRenameBlacklistRegex": {
+			"value": false
+		},
+		"CentralAuthSessionCacheType": {
+			"value": null
+		}
+>>>>>>> CHANGE (50fc92 Add SameSite=None support)
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
