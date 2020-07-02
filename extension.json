@@ -529,6 +529,9 @@
 		},
 		"GlobalRenameBlacklistRegex": {
 			"value": false
+		},
+		"CentralAuthSessionCacheType": {
+			"value": null
 		}
 	},
 	"AuthManagerAutoConfig": {
