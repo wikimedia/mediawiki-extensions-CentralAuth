@@ -6,7 +6,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.34.0"
+		"MediaWiki": ">= 1.34.3"
 	},
 	"GroupPermissions": {
 		"steward": {
@@ -459,7 +459,8 @@
 		"CentralAuthGlobalPasswordPolicies": [],
 		"CentralAuthGlobalBlockInterwikiPrefix": "global",
 		"OverrideCentralIdLookupProvider": true,
-		"CentralAuthOldNameAntiSpoofWiki": false
+		"CentralAuthOldNameAntiSpoofWiki": false,
+		"CentralAuthSessionCacheType": null
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {

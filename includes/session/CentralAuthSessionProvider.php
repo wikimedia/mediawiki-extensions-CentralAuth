@@ -37,6 +37,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 *     - domain: Cookie domain, defaults to $wgCentralAuthCookieDomain
 	 *     - secure: Cookie secure flag, defaults to $wgCookieSecure
 	 *     - httpOnly: Cookie httpOnly flag, defaults to $wgCookieHttpOnly
+	 *     - sameSite: Cookie SameSite attribute, defaults to $wgCookieSameSite
 	 */
 	public function __construct( $params = [] ) {
 		$params += [
@@ -56,21 +57,19 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	public function setConfig( Config $config ) {
-		global $wgCentralAuthCookies, $wgCentralAuthCookiePrefix, $wgCentralAuthCookiePath,
-			$wgCentralAuthCookieDomain;
-
 		parent::setConfig( $config );
 
 		$this->centralCookieOptions += [
-			'prefix' => $wgCentralAuthCookiePrefix,
-			'path' => $wgCentralAuthCookiePath,
-			'domain' => $wgCentralAuthCookieDomain,
+			'prefix' => $config->get( 'CentralAuthCookiePrefix' ),
+			'path' => $config->get( 'CentralAuthCookiePath' ),
+			'domain' => $config->get( 'CentralAuthCookieDomain' ),
 			'secure' => $config->get( 'CookieSecure' ),
 			'httpOnly' => $config->get( 'CookieHttpOnly' ),
+			'sameSite' => $config->get( 'CookieSameSite' )
 		];
 
 		$params = [
-			'enable' => $wgCentralAuthCookies,
+			'enable' => $config->get( 'CentralAuthCookies' ),
 			'centralSessionName' => $this->centralCookieOptions['prefix'] . 'Session',
 		];
 		$this->params += $params;
@@ -128,13 +127,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			if ( $id !== null ) {
 				$data = CentralAuthUtils::getCentralSessionById( $id );
 				if ( isset( $data['pending_name'] ) || isset( $data['pending_guid'] ) ) {
-					$this->logger->debug( __METHOD__ . ': unintialized session' );
+					$this->logger->debug( __METHOD__ . ': uninitialized session' );
 				} elseif ( isset( $data['token'] ) && isset( $data['user'] ) ) {
 					$token = $data['token'];
 					$userName = $data['user'];
 					$from = 'session';
 				} else {
-					$this->logger->debug( __METHOD__ . ': unintialized session' );
+					$this->logger->debug( __METHOD__ . ': uninitialized session' );
 				}
 			}
 		}
