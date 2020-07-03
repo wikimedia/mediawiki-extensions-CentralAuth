@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * Handles the following log types:
+ * - gblrights/grouprename
+ */
+class GroupRenameLogFormatter extends LogFormatter {
+
+	protected function getMessageKey() {
+		return 'logentry-gblrights-grouprename';
+	}
+
+	protected function extractParameters() {
+		$params = parent::extractParameters();
+		if ( $this->entry->isLegacy() ) {
+			if ( isset( $params[4] ) ) {
+				$newName = $params[3];
+				$oldName = $params[4];
+			} else {
+				$newName = $this->entry->getTarget()->getSubpageText();
+				$oldName = $params[3];
+			}
+			$new = Title::newFromText( $newName );
+			$old = Title::newFromText( $oldName );
+		} else {
+			[ 'newName' => $newName, 'oldName' => $oldName ] = $this->entry->getParameters();
+			$new = SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName );
+			$old = SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName );
+		}
+		$params[3] = $this->makePageLink( $new );
+		$params[4] = $this->makePageLink( $old );
+		return $params;
+	}
+
+}
