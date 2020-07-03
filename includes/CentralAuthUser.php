@@ -1655,12 +1655,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( !$isLocked && $setLocked ) {
 			$lockStatus = $this->adminLock();
-			$added[] =
-				$context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
+			$added[] = 'locked';
 		} elseif ( $isLocked && !$setLocked ) {
 			$lockStatus = $this->adminUnlock();
-			$removed[] =
-				$context->msg( 'centralauth-log-status-locked' )->inContentLanguage()->text();
+			$removed[] = 'locked';
 		}
 
 		if ( $oldHiddenLevel != $setHidden ) {
@@ -1668,27 +1666,21 @@ class CentralAuthUser implements IDBAccessObject {
 			switch ( $setHidden ) {
 				case self::HIDDEN_NONE:
 					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
-						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )
-							->inContentLanguage()->text();
+						$removed[] = 'oversighted';
 					} else {
-						$removed[] = $context->msg( 'centralauth-log-status-hidden' )
-							->inContentLanguage()->text();
+						$removed[] = 'hidden';
 					}
 					break;
 				case self::HIDDEN_LISTS:
-					$added[] = $context->msg( 'centralauth-log-status-hidden' )
-						->inContentLanguage()->text();
+					$added[] = 'hidden';
 					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
-						$removed[] = $context->msg( 'centralauth-log-status-oversighted' )
-							->inContentLanguage()->text();
+						$removed[] = 'oversighted';
 					}
 					break;
 				case self::HIDDEN_OVERSIGHT:
-					$added[] = $context->msg( 'centralauth-log-status-oversighted' )
-						->inContentLanguage()->text();
+					$added[] = 'oversighted';
 					if ( $oldHiddenLevel == self::HIDDEN_LISTS ) {
-						$removed[] = $context->msg( 'centralauth-log-status-hidden' )
-							->inContentLanguage()->text();
+						$removed[] = 'hidden';
 					}
 					break;
 			}
@@ -1707,17 +1699,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 		// Setup Status object to return all of the information for logging
 		if ( $good && ( count( $added ) || count( $removed ) ) ) {
-			$addedMsg = count( $added ) ?
-				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )
-					->inContentLanguage()->text();
-			$removedMsg = count( $removed ) ?
-				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )
-					->inContentLanguage()->text();
-
 			$returnStatus->successCount = count( $added ) + count( $removed );
 			$logParams = [
-				'added' => $addedMsg,
-				'removed' => $removedMsg,
+				'added' => $added,
+				'removed' => $removed,
 			];
 
 			$this->logAction(
@@ -3054,16 +3039,15 @@ class CentralAuthUser implements IDBAccessObject {
 	) {
 		// Not centralauth because of some weird length limitiations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
-		$log = new LogPage( $logType );
-		$log->addEntry(
-			$action,
-			Title::newFromText(
-				MWNamespace::getCanonicalName( NS_USER ) . ":{$this->mName}@global"
-			),
-			$reason,
-			$params,
-			$user
-		);
+		$entry = new ManualLogEntry( $logType, $action );
+		$entry->setTarget( Title::newFromText(
+			MWNamespace::getCanonicalName( NS_USER ) . ":{$this->mName}@global"
+		) );
+		$entry->setPerformer( $user );
+		$entry->setComment( $reason );
+		$entry->setParameters( $params );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
