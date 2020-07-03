@@ -160,60 +160,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Format global group rename log entries
-	 *
-	 * @param string $type Unused
-	 * @param string $action Unused
-	 * @param Title $title Unused
-	 * @param Skin|null $skin If null, we want to use the wiki content language, since that will
-	 *   go to the IRC feed.
-	 * @param array $params
-	 * @param bool $filterWikilinks Unused
-	 *
-	 * @return string
-	 */
-	public static function onHandleGrouprenameLogEntry(
-		$type, $action, $title, $skin, $params, $filterWikilinks = false
-	) {
-		if ( isset( $params[1] ) ) {
-			// current log format
-			$newName = $params[0];
-			$oldName = $params[1];
-		} else {
-			// old log format
-			$newName = $title->getSubpageText();
-			$oldName = $params[0];
-		}
-		$newTitle = Title::newFromText( $newName );
-		$oldTitle = Title::newFromText( $oldName );
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		if ( $skin && $newTitle ) {
-			$new = $linkRenderer->makeLink(
-				$newTitle,
-				$newName
-			);
-		} else {
-			$new = htmlspecialchars( $newName );
-		}
-		if ( $skin && $oldTitle ) {
-			$old = $linkRenderer->makeLink(
-				$oldTitle,
-				$oldName
-			);
-		} else {
-			$old = htmlspecialchars( $oldName );
-		}
-
-		$msg = wfMessage( 'centralauth-rightslog-entry-grouprename' )
-			->rawParams( $new, $old );
-		if ( $skin ) {
-			return $msg->text();
-		} else {
-			return $msg->inContentLanguage()->text();
-		}
-	}
-
-	/**
 	 * Add a little pretty to the preferences user info section
 	 *
 	 * @param User $user

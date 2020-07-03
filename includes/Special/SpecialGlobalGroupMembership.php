@@ -8,6 +8,7 @@ use CentralAuthUser;
 use HTMLForm;
 use LogEventsList;
 use LogPage;
+use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use OutputPage;
@@ -168,16 +169,15 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	protected function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
 		array $tags, array $oldUGMs, array $newUGMs
 	) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry( 'usergroups',
-			$user->getUserPage(),
-			$reason,
-			[
-				$this->makeGroupNameList( $oldGroups ),
-				$this->makeGroupNameList( $newGroups )
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'usergroups' );
+		$entry->setTarget( $user->getUserPage() );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'oldGroups' => $oldGroups,
+			'newGroups' => $newGroups,
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 }
