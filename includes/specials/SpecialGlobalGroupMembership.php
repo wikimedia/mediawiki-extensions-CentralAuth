@@ -145,16 +145,15 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	protected function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
 		array $tags, array $oldUGMs, array $newUGMs
 	) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry( 'usergroups',
-			$user->getUserPage(),
-			$reason,
-			[
-				$this->makeGroupNameList( $oldGroups ),
-				$this->makeGroupNameList( $newGroups )
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'usergroups' );
+		$entry->setTarget( $user->getUserPage() );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'4::oldGroups' => $this->makeGroupNameList( $oldGroups ),
+			'5::newGroups' => $this->makeGroupNameList( $newGroups ),
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 }

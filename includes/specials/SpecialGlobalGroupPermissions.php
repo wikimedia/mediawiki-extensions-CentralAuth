@@ -589,18 +589,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry(
-			'groupprms2',
-			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
-			$reason,
-			[
-				$this->makeRightsList( $addRights ),
-				$this->makeRightsList( $removeRights )
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'groupprms2' );
+		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $group ) );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'4::addRights' => $this->makeRightsList( $addRights ),
+			'5::removeRights' => $this->makeRightsList( $removeRights ),
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
@@ -611,19 +609,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addRenameLog( $oldName, $newName, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry(
-			'grouprename',
-			// This has to point to 'Special:GlobalUsers so that self::showLogFragment can find it
-			SpecialPage::getTitleFor( 'GlobalUsers', $newName ),
-			$reason,
-			[
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName )->getPrefixedText(),
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName )->getPrefixedText()
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'grouprename' );
+		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $newName ) );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'newName' => $newName,
+			'oldName' => $oldName,
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
@@ -635,18 +630,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addWikiSetLog( $group, $old, $new, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry(
-			'groupprms3',
-			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
-			$reason,
-			[
-				$this->getWikiSetName( $old ),
-				$this->getWikiSetName( $new ),
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'groupprms3' );
+		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $group ) );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'4::old' => $this->getWikiSetName( $old ),
+			'5::new' => $this->getWikiSetName( $new ),
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
