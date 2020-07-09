@@ -523,5 +523,6 @@
 	"sulrenamewarning-renamed": "O nome da {{GENDER:$2|sua}} conta '''$1''' foi alterado para '''$2''' durante a migração automática para o sistema de autenticação unificado da {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "O nome da {{GENDER:$1|sua}} conta foi alterado",
 	"sulrenamewarning-usenew": "Use o seu {{GENDER:$1|nome de utilizador}} \"$1\" de futuro quando iniciar uma sessão, por favor.",
-	"userswhowillberenamed": "Utilizadores cujo nome será alterado"
+	"userswhowillberenamed": "Utilizadores cujo nome será alterado",
+	"centralauth-badaccess-blacklisted": "Não pode pedir uma alteração global de nome, porque está numa lista negra."
 }
