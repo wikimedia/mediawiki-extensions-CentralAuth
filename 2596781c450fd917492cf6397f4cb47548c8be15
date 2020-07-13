@@ -22,6 +22,30 @@
       "revId": "2596781c450fd917492cf6397f4cb47548c8be15",
       "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4fad3a9b_c06c73d8",
+        "filename": "extension.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1665
+      },
+      "writtenOn": "2020-07-13T15:13:27Z",
+      "side": 1,
+      "message": "Should i up it or leave it?",
+      "parentUuid": "4f1f99a6_80979021",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 25
+      },
+      "revId": "2596781c450fd917492cf6397f4cb47548c8be15",
+      "serverId": "e9e9afe9-4712-486d-8885-f54b72dd1951",
+      "unresolved": true
     }
   ]
 }
