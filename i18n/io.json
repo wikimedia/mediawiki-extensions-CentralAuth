@@ -72,7 +72,6 @@
 	"centralauth-merge-method-login": "kreita dum l'eniro",
 	"centralauth-merge-method-new": "nova konto",
 	"centralauth-merge-notlogged": "Voluntez facar <span class=\"plainlinks\">[$1 log in]</span> e verifikar se omna ek vua konti unigesis.",
-	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuto|minuti}} ante nun",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|monato|monati}} ante nun",
 	"centralauth-newgroup-legend": "Krear nova grupo",
 	"centralauth-notice-dryrun": "<div class='successbox'>Nur demonstro-modo</div><br clear='all'/>",
