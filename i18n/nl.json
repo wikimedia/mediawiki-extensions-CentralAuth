@@ -141,6 +141,8 @@
 	"centralauth-attach-text": "Dit account is nog niet gemigreerd naar een samengevoegd account.\nAls het overkoepelende account ook van u is, dan kunt u dit account samenvoegen als u het wachtwoord voor het overkoepelende account ingeeft:",
 	"centralauth-attach-title": "Account bevestigen",
 	"centralauth-block-already-locked": "De gebruiker [[Special:CentralAuth/$1|$1]] is al globaal geblokkeerd.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|pagina's}}",
+	"centralauth-block-editing-ns": "{{PLURAL:$1|naamruimte|naamruimten}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "U bent al lokaal aangemeld",
 	"centralauth-centralautologin-badparams": "De opgegeven aanmeldgegevens zijn ongeldig",
 	"centralauth-centralautologin-badstate": "Ongeldige status \"$1\"",
@@ -518,5 +520,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Uw}} account '''$1''' is hernoemd naar '''$2''' gedurende het automatische proces van de migratie naar een eenduidig aanmeldsysteem bij {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Uw}} account is hernoemd",
 	"sulrenamewarning-usenew": "Gebruik vanaf nu {{GENDER:$1|uw}} nieuwe gebruikersnaam '''$1''' bij het aanmelden.",
-	"userswhowillberenamed": "Gebruikers die hernoemd gaan worden"
+	"userswhowillberenamed": "Gebruikers die hernoemd gaan worden",
+	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat."
 }
