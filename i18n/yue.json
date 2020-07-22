@@ -5,6 +5,7 @@
 			"Hello903hello",
 			"Horacewai2",
 			"Liangent",
+			"Moon0319",
 			"Shinjiman",
 			"Waihorace"
 		]
@@ -21,7 +22,7 @@
 	"centralauth-admin-delete-success": "已經刪除咗「<nowiki>$1</nowiki>」嘅全域戶口",
 	"centralauth-admin-delete-title": "刪除戶口",
 	"centralauth-admin-info-attached": "連咗嘅戶口數：",
-	"centralauth-admin-info-editcount": "總共編輯數：",
+	"centralauth-admin-info-editcount": "夾埋嘅編輯數：",
 	"centralauth-admin-info-header": "全域用戶信息",
 	"centralauth-admin-info-hidden": "隱藏：",
 	"centralauth-admin-info-locked": "鎖咗:",
@@ -146,7 +147,7 @@
 	"centralauth-merge-step1-title": "開始登入統一",
 	"centralauth-merge-step2-detail": "有啲戶口唔會自動噉同你自己嘅自家wiki站配合到。如果呢啲戶口係屬於你嘅話，你可以為佢哋提供一個密碼去確認佢哋係屬於你嘅。",
 	"centralauth-merge-step2-submit": "確認登入資料",
-	"centralauth-merge-step2-title": "確認更多戶口",
+	"centralauth-merge-step2-title": "確認多啲戶口",
 	"centralauth-merge-step3-detail": "你已經預備好響加入咗嘅wiki度，去開一個統一戶口：",
 	"centralauth-merge-step3-submit": "統一戶口",
 	"centralauth-merge-step3-title": "開個統一戶口",
