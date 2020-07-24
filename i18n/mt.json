@@ -4,7 +4,8 @@
 			"Chrisportelli",
 			"Leli Forte",
 			"Macofe",
-			"Roderick Mallia"
+			"Roderick Mallia",
+			"ToniSant"
 		]
 	},
 	"centralauth": "Amministrazzjoni tal-kontijiet globali",
@@ -274,5 +275,6 @@
 	"right-centralauth-oversight": "Iħassar kont globali",
 	"right-centralauth-unmerge": "Jiskonnettja kont globali",
 	"right-globalgroupmembership": "Jimmodifika s-sħubija fi gruppi globali",
-	"right-globalgrouppermissions": "Jamministra l-gruppi globali"
+	"right-globalgrouppermissions": "Jamministra l-gruppi globali",
+	"sessionprovider-centralauthsessionprovider": "sessjonijiet ċentrali bbażati fuq cookie/s"
 }
