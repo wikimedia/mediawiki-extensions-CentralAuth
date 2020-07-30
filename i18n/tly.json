@@ -6,6 +6,7 @@
 			"Гусейн"
 		]
 	},
+	"centralauth-admin-blocklog": "bastə bıə siyohi",
 	"centralauth-admin-no": "не",
 	"centralauth-admin-username": "İştirokəkə nom:",
 	"centralauth-admin-yes": "бәле",
@@ -17,9 +18,11 @@
 	"centralauth-finish-password": "Pərol:",
 	"centralauth-finish-send-confirmation": "Бә е-номә нујә парол вығандеј",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|дәгиши|дәгиши}} бә $2",
+	"centralauth-foreign-link": "İştirokəkə $1 bə $2",
 	"centralauth-groupname": "Викимедијә Фонд",
 	"centralauth-list-home-title": "Че кә вики",
 	"centralauth-merge-dryrun-or": "'''ја''",
+	"centralauth-merge-method-login": "soxtə bıə dəşeyədə",
 	"centralauth-merge-method-primary": "\"кә\" вики-нәхшә",
 	"globalrenamequeue-request-cancel-text": "Ləğv karde"
 }
