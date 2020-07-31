@@ -18,7 +18,7 @@
 	"centralauth-admin-blocklog": "封鎖日誌",
 	"centralauth-admin-delete-button": "刪除呢個戶口",
 	"centralauth-admin-delete-confirm": "你係咪諗住刪咗呢個戶口？",
-	"centralauth-admin-delete-description": "剷咗個全域戶口會剷埋冚唪唥嘅全域喜好設定，解除全部附加上去嘅戶口，留低個全域名畀另一位用戶去用。\n冚唪唥嘅本地戶口會繼續喺到。\n響合併之前開咗嘅本地戶口會還原到佢哋之前嘅值。",
+	"centralauth-admin-delete-description": "剷咗個全域戶口會刪除任何嘅全域喜好設定，解除全部附加上去嘅戶口，留低個全域名畀另一位用戶去用。\n全部嘅本地戶口會繼續喺到。\n響合併之前開咗嘅本地戶口會還原到佢哋之前嘅值。",
 	"centralauth-admin-delete-nonexistent": "錯誤: 個全域戶口\"<nowiki>$1</nowiki>\"唔存在。",
 	"centralauth-admin-delete-success": "已經刪除咗「<nowiki>$1</nowiki>」嘅全域戶口",
 	"centralauth-admin-delete-title": "刪除戶口",
