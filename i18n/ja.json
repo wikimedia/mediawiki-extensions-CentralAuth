@@ -41,7 +41,7 @@
 	"action-centralauth-oversight": "グローバルアカウントの秘匿または非表示",
 	"action-centralauth-rename": "グローバルアカウントの名前の変更",
 	"action-centralauth-unmerge": "グローバルアカウントの統合解除",
-	"action-centralauth-usermerge": "グローバルに複数の利用者を統合",
+	"action-centralauth-usermerge": "グローバルに複数の利用者の統合",
 	"action-globalgroupmembership": "グローバルグループのメンバーの編集",
 	"action-globalgrouppermissions": "グローバルグループの管理",
 	"centralauth": "グローバルアカウント管理",
