@@ -16,32 +16,15 @@ class CreateLocalAccount extends Maintenance {
 
 	public function execute() {
 		$username = $this->getArg( 0 );
+		$status = CentralAuthUtils::attemptAutoCreateLocalUserFromName( $username );
 
-		$user = User::newFromName( $username );
-		if ( $user === false ) {
-			$this->fatalError( "'$username' is an invalid username\n" );
+		if ( !$status->isGood() ) {
+			$this->error( "autoCreateUser failed for $username: " .
+				Status::wrap( $status )->getWikiText( false, false, 'en' ) );
+			return;
 		}
-		// Normalize username
-		$username = $user->getName();
-		if ( $user->getId() ) {
-			$this->fatalError( "User '$username' already exists\n" );
-		} else {
-			$central = CentralAuthUser::getInstance( $user );
-			if ( !$central->exists() ) {
-				$this->fatalError( "No such global user: '$username'\n" );
-			}
 
-			$status = CentralAuthUtils::autoCreateUser( $user );
-			if ( !$status->isGood() ) {
-				$this->error( "autoCreateUser failed for $username: " .
-					Status::wrap( $status )->getWikiText( false, false, 'en' ) );
-			}
-
-			# Update user count
-			$ssUpdate = SiteStatsUpdate::factory( [ 'users' => 1 ] );
-			$ssUpdate->doUpdate();
-			$this->output( "User '$username' created\n" );
-		}
+		$this->output( "User '$username' created\n" );
 	}
 }
 

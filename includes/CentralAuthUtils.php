@@ -210,6 +210,70 @@ class CentralAuthUtils {
 	}
 
 	/**
+	 * Attempt to create a local user for the specified username.
+	 * @param string $username
+	 * @param User|null $performer
+	 * @param string|null $reason
+	 * @return Status
+	 */
+	public static function attemptAutoCreateLocalUserFromName(
+		string $username,
+		$performer = null,
+		$reason = null
+	): Status {
+		$user = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $username );
+
+		if ( !$user ) {
+			// invalid username
+			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
+		}
+
+		if ( $user->getId() ) {
+			return Status::newFatal( 'centralauth-createlocal-already-exists' );
+		}
+
+		$centralUser = CentralAuthUser::getInstance( $user );
+
+		if ( !$centralUser->exists() ) {
+			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
+		}
+
+		if ( $centralUser->isOversighted() ) {
+			$canOversight = $performer && MediaWikiServices::getInstance()
+				->getPermissionManager()
+				->userHasRight( $performer, 'centralauth-oversight' );
+
+			return Status::newFatal( $canOversight
+				? 'centralauth-createlocal-suppressed'
+				: 'centralauth-createlocal-no-global-account' );
+		}
+
+		$status = self::autoCreateUser( $user );
+		if ( !$status->isGood() ) {
+			return Status::wrap( $status );
+		}
+
+		// Add log entry
+		if ( $performer ) {
+			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
+			$logEntry->setPerformer( $performer );
+			$logEntry->setTarget( $user->getUserPage() );
+			$logEntry->setComment( $reason );
+			$logEntry->setParameters( [
+				'4::userid' => $user->getId(),
+			] );
+
+			$logId = $logEntry->insert();
+			$logEntry->publish( $logId );
+		}
+
+		// Update user count
+		SiteStatsUpdate::factory( [ 'users' => 1 ] )->doUpdate();
+
+		return Status::newGood();
+	}
+
+	/**
 	 * Get the central session data
 	 * @param string $id
 	 * @return array

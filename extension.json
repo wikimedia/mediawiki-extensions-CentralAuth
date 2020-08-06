@@ -10,9 +10,13 @@
 	},
 	"GroupPermissions": {
 		"steward": {
+			"centralauth-createlocal": true,
 			"centralauth-unmerge": true,
 			"centralauth-lock": true,
 			"centralauth-oversight": true
+		},
+		"sysop": {
+			"centralauth-createlocal": true
 		},
 		"*": {
 			"centralauth-merge": true
@@ -22,12 +26,16 @@
 		"setglobalaccountstatus": {
 			"centralauth-lock": true,
 			"centralauth-oversight": true
+		},
+		"createlocalaccount": {
+			"centralauth-createlocal": true
 		}
 	},
 	"GrantPermissionGroups": {
 		"setglobalaccountstatus": "administration"
 	},
 	"AvailableRights": [
+		"centralauth-createlocal",
 		"centralauth-merge",
 		"centralauth-unmerge",
 		"centralauth-lock",
@@ -63,6 +71,7 @@
 		"CentralAuth": "SpecialCentralAuth",
 		"CentralLogin": "SpecialCentralLogin",
 		"CentralAutoLogin": "SpecialCentralAutoLogin",
+		"CreateLocalAccount": "SpecialCreateLocalAccount",
 		"MergeAccount": "SpecialMergeAccount",
 		"GlobalGroupMembership": "SpecialGlobalGroupMembership",
 		"GlobalGroupPermissions": "SpecialGlobalGroupPermissions",
@@ -133,9 +142,16 @@
 				"setrename",
 				"setnewtype"
 			]
-		}
+		},
+		"newusers": {
+			"forcecreatelocal": [
+				"forcecreatelocal"
+			]
+		},
+		"_merge_strategy": "array_plus_2d"
 	},
 	"LogActions": {
+		"newusers/forcecreatelocal": "centralauth-createlocal-logentry",
 		"globalauth/delete": "centralauth-log-entry-delete",
 		"globalauth/lock": "centralauth-log-entry-lock",
 		"globalauth/unlock": "centralauth-log-entry-unlock",
@@ -189,6 +205,7 @@
 	"AutoloadClasses": {
 		"SpecialCentralAuth": "includes/specials/SpecialCentralAuth.php",
 		"SpecialCentralLogin": "includes/specials/SpecialCentralLogin.php",
+		"SpecialCreateLocalAccount": "includes/specials/SpecialCreateLocalAccount.php",
 		"SpecialMergeAccount": "includes/specials/SpecialMergeAccount.php",
 		"SpecialGlobalUsers": "includes/specials/SpecialGlobalUsers.php",
 		"GlobalUsersPager": "includes/specials/GlobalUsersPager.php",
