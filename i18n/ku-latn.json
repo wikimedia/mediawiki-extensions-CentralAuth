@@ -5,6 +5,7 @@
 			"George Animal",
 			"Ghybu",
 			"Gomada",
+			"Guherto",
 			"Welathêja"
 		]
 	},
@@ -50,6 +51,7 @@
 	"centralauth-login-progress": "Tu dikevî wîkiyên {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Derketina te ya ji {{int:Centralauth-groupname}}:",
 	"centralauth-merge-dryrun-or": " '''an'''",
+	"centralauth-merge-method-login": "di têketin de cêbû",
 	"centralauth-merge-method-new": "hesabê nû",
 	"centralauth-prefs-count-attached": "Hesabê te li ser $1 {{PLURAL:$1|wîkiyê|wikiyên}} projeyan çalak e.",
 	"centralauth-prefs-manage": "Hesabê xwe yê gerdûnî bi rê ve bibe",
