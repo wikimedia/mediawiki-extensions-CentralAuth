@@ -3,6 +3,7 @@
 		"authors": [
 			"Irus",
 			"Kaganer",
+			"Kotwys",
 			"Mouse21",
 			"Wadorgurt"
 		]
@@ -13,10 +14,10 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тупатон}} $2 проектын",
 	"centralauth-foreign-link": "$2 викиысь $1 викиавтор",
 	"centralauth-groupname": "Викимедиа Фондлэн",
-	"centralauth-logout-progress": "Ортче потон {{int:Centralauth-groupname}} мукет проектъёсысьтыз:",
+	"centralauth-logout-progress": "Ортче {{int:Centralauth-groupname}} мукет {{PLURAL:$2|проектысь|проектъёсысь}} потон:",
 	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
 	"globalrenamequeue-action-view": "Учкон",
 	"globalrenamequeue-form-status-all": "ваньзэ",
-	"globalrenamerequest-status-text": "Тӥляд викиавтор ним воштон ласянь куронды ужын луэ но стюардэн юнматонэз вите. Ужан йылпумъяськоз бере, тӥ ивортӥськоды электрон почта пыр.\n\n;Али нимды:\n:$1\n;Курем нимды:\n:$2",
+	"globalrenamerequest-status-text": "Тӥляд викиавтор нимдэс воштон ласянь куронды ужын луэ но стюардэн юнматонэз вите. Ужан йылпумъяськоз бере, тӥ электрон почта пыр ивортон басьтоды.\n\n;Али нимды:\n:$1\n;Курем нимды:\n:$2",
 	"globalusers": "Огъя викиавторъёслэн списоксы"
 }
