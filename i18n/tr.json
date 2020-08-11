@@ -26,6 +26,7 @@
 			"Suelnur",
 			"TmY e12",
 			"ToprakM",
+			"Uncitoyen",
 			"Violetanka",
 			"Vito Genovese"
 		]
@@ -155,7 +156,7 @@
 	"centralauth-complete": "Bütün hesaplar birleştirilmiş!",
 	"centralauth-complete-text": "Artık herhangi bir {{int:Centralauth-groupname}} viki sitelerine yeni bir hesap açmaksızın giriş yapabilirsiniz.",
 	"centralauth-completelogin-back": "Önceki sayfaya geri dön.",
-	"centralauth-contribs-locked": "Bu hesap küresel olarak engellendi. \nDaha fazla bilgi için [[Special:CentralAuth/$1|küresel hesap ayrıntılarına]] bakınız.",
+	"centralauth-contribs-locked": "Bu hesap küresel olarak kilitlendi. \nDaha fazla bilgi için [[Special:CentralAuth/$1|küresel hesap ayrıntılarına]] bakınız.",
 	"centralauth-contribs-locked-log": "Bu hesap küresel olarak kilitlendi.\nEn son kilit günlüğü girişi referans olarak aşağıda verilmiştir:",
 	"centralauth-days-ago": "$1 gün önce",
 	"centralauth-delete-empty-account": "Hesap boş",
