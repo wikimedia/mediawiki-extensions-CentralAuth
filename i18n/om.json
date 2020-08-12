@@ -6,6 +6,8 @@
 		]
 	},
 	"centralauth-editset-nowikis": "(homaa)",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|gumaacha}} $1 $2 gubbaatti",
+	"centralauth-foreign-link": "Fayyadamaa $1 $2 gubbaatti",
 	"centralauth-rename-conflict-hidden": "Maqaa fayyadamaa dhokatee",
 	"centralauth-uwbr-editcount": "Lakkoofsa gulaalaa",
 	"centralauth-uwbr-name": "Maqaa fayyadamaa",

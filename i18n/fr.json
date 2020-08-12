@@ -284,7 +284,7 @@
 	"centralauth-listusers-attached": "[[User:$1|existe localement]]",
 	"centralauth-listusers-locked": "verrouillé",
 	"centralauth-listusers-nolocal": "non rattaché ou n’existe pas localement",
-	"centralauth-log-entry-chgstatus": "a changé le statut du compte global « $1 » : $2 activé ; $3 désactivé",
+	"centralauth-log-entry-chgstatus": "a changé le statut du compte global « $1 » : il est maintenant $2 et n’est plus $3",
 	"centralauth-log-entry-delete": "a supprimé le compte global « $1 »",
 	"centralauth-log-entry-hide": "a masqué le compte global « $1 »",
 	"centralauth-log-entry-lock": "a verrouillé le compte global « $1 »",
