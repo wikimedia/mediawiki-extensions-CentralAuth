@@ -371,6 +371,7 @@
 	"globalusermerge": "Глобалан декъашхойн дӀаяздарш вовшахтохар",
 	"globalusermerge-legend": "Глобалан декъашхойн дӀаяздарш вовшахтохар",
 	"globalusers": "Глобалан декъашхойн могIам",
+	"grant-setglobalaccountstatus": "Глобалан декъашхочун агӀонан урхалла дар",
 	"log-description-gblrename": "ХӀокху тептар чохь гойту декъашхойн глобалан цӀерш хийцар.",
 	"log-name-gblrename": "Глобалан цӀерш хийцаран тептар",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально цӀе хийцина $4 → $5",
