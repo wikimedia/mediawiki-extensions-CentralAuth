@@ -306,7 +306,7 @@
 	"centralauth-rename-form-newname": "Ново корисничко име",
 	"centralauth-rename-form-oldname": "Тренутно корисничко име",
 	"centralauth-rename-form-reason": "Разлог",
-	"centralauth-rename-movelog": "Аутоматско премештање странице због преименовања корисника „[[Special:CentralAuth/$1|$1]]“ у „[[Special:CentralAuth/$2|$2]]“",
+	"centralauth-rename-movelog": "Аутоматско премештање странице због преименовања корисника [[Special:CentralAuth/$1|$1]] у [[Special:CentralAuth/$2|$2]]",
 	"centralauth-rename-notinprogress": "Нема преименовања у току за корисника $1. Можда су се већ завршила.",
 	"centralauth-rename-progress-fieldset": "Списак локалних налога",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|погледај напредак]])",
