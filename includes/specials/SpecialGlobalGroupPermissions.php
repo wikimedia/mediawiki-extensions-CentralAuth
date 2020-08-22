@@ -35,7 +35,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	public function userCanEdit( $user ) {
 		$globalUser = CentralAuthUser::getInstance( $user );
 
-		# # Should be a global user
+		# Should be a global user
 		if ( !$globalUser->exists() || !$globalUser->isAttached() ) {
 			return false;
 		}
