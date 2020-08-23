@@ -349,7 +349,7 @@
 		"UserGetEmail": "CentralAuthHooks::onUserGetEmail",
 		"UserGetEmailAuthenticationTimestamp": "CentralAuthHooks::onUserGetEmailAuthenticationTimestamp",
 		"UserGetReservedNames": "CentralAuthHooks::onUserGetReservedNames",
-		"UserInvalidateEmailComplete": "CentralAuthHooks::onUserInvalidateEmailComplete",
+		"InvalidateEmailComplete": "CentralAuthHooks::onInvalidateEmailComplete",
 		"UserSetEmail": "CentralAuthHooks::onUserSetEmail",
 		"UserSaveSettings": "CentralAuthHooks::onUserSaveSettings",
 		"UserSetEmailAuthenticationTimestamp": "CentralAuthHooks::onUserSetEmailAuthenticationTimestamp",
