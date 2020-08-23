@@ -803,7 +803,7 @@ class CentralAuthHooks {
 	 * @param User $user
 	 * @return bool
 	 */
-	public static function onUserInvalidateEmailComplete( $user ) {
+	public static function onInvalidateEmailComplete( $user ) {
 		$ca = CentralAuthUser::getMasterInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( '' );
