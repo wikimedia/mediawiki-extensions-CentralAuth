@@ -120,7 +120,7 @@
 	"centralauth-admin-status-nonexistent": "Error: the global account \"<nowiki>$1</nowiki>\" does not exist.",
 	"centralauth-admin-status-reasons": "* Common lock reasons\n** vandalism-only account\n** spam-only account\n* Common lock-and-hide reasons\n** abusive user name\n** inappropriate personal information",
 	"centralauth-admin-status-submit": "Set status",
-	"centralauth-admin-suppressreason": "Globally suppressed by $1 for following reason: $2",
+	"centralauth-admin-suppressreason": "Globally suppressed by $1 for the following reason: $2",
 	"centralauth-admin-title": "Global account manager for $1",
 	"centralauth-admin-title-ro": "Global account information for $1",
 	"centralauth-admin-too-many-edits": "The global account \"<nowiki>$1</nowiki>\" has over $2 {{PLURAL:$2|edit|edits}} and cannot be hidden.",
