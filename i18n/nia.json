@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"NoiX180"
+			"NoiX180",
+			"Slaia"
 		]
 	},
-	"centralauth-admin-blocklog": "lahe womba'agö"
+	"centralauth-admin-blocklog": "lahe womba'agö",
+	"centralauth-foreign-link": "Sangoguna $1 ba $2",
+	"centralauth-merge-method-login": "tefazökhi me möi bakha ba mbolokha gu'ö"
 }
