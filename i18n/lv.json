@@ -45,6 +45,7 @@
 	"centralauth-admin-no-unified": "Šim lietotājvārdam nav vienotā konta.",
 	"centralauth-admin-none-selected": "Izmainīšanai nav izvēlēts neviens konts.",
 	"centralauth-admin-nonexistent": "Nav globālā konta \"<nowiki>$1</nowiki>\"",
+	"centralauth-admin-not-authorized": "Tev nav tiesību veikt šo darbību",
 	"centralauth-admin-reason": "Iemesls:",
 	"centralauth-admin-reason-other": "Cits/papildu iemesls:",
 	"centralauth-admin-reason-other-select": "Cits iemesls:",
