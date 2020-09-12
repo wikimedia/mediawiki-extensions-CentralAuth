@@ -18,7 +18,8 @@ module.exports = function ( grunt ) {
 		},
 		eslint: {
 			options: {
-				cache: true
+				cache: true,
+				fix: grunt.option( 'fix' )
 			},
 			all: '.'
 		}
