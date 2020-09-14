@@ -508,6 +508,8 @@
 	"globalrenamerequest-pretext": "Instructions for rename process.",
 	"globalrenamerequest-reason-label": "Form field label.",
 	"globalrenamerequest-save-error": "Used as error message.",
+	"globalrenamerequest-self-error": "Used as error message.",
+	"globalrenamerequest-self-warning": "Shown as a warning in form.",
 	"globalrenamerequest-status-text": "Pending request description.\n\n* $1 is the user's current name\n* $2 is the user's requested name",
 	"globalrenamerequest-status-title": "Page title when request is pending.",
 	"globalrenamerequest-submit-text": "Form button text.",
