@@ -4,7 +4,8 @@
 			"AmaryllisGardener",
 			"John Reid",
 			"Macofe",
-			"McDutchie"
+			"McDutchie",
+			"NGC 54"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groops that the uiser is in",
@@ -421,7 +422,7 @@
 	"globalusermerge-legend": "Merge global uiser",
 	"globalusers": "Global accoonts leet",
 	"log-description-gblrename": "This log tracks the global renamin o uisers.",
-	"log-name-gblrename": "Global rename log",
+	"log-name-gblrename": "Jurnal redenumiri globale",
 	"logentry-gblrename-merge": "$1 globalie {{GENDER:$2|merged}} $4 intae $5",
 	"logentry-gblrename-rename": "$1 globalie {{GENDER:$2|renamed}} $4 tae $5",
 	"mergeaccount": "Login uneefeecation status",
