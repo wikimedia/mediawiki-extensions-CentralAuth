@@ -361,7 +361,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$attribs['disabled'] = 'disabled';
 		}
 
-		$rights = MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions();
+		$rights = array_unique(
+			array_merge(
+				MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions(),
+				$assignedRights
+			)
+		);
 		sort( $rights );
 
 		foreach ( $rights as $right ) {
@@ -487,7 +492,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$addRights = [];
 		$removeRights = [];
 		$oldRights = $this->getAssignedRights( $group );
-		$allRights = MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions();
+		$allRights = array_unique(
+			array_merge(
+				MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions(),
+				$oldRights
+			)
+		);
 
 		foreach ( $allRights as $right ) {
 			$alreadyAssigned = in_array( $right, $oldRights );
