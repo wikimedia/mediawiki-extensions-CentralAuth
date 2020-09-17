@@ -1850,7 +1850,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'ipb_id',
 				[
 					'ipb_user' => $data['id'],
-					$blockQuery['fields']['ipb_by'] . ' = 0', // Our blocks will have ipb_by = 0
+					$blockQuery['fields']['ipb_by'] . ' IS NULL', // Our blocks don't have an user associated
 					'ipb_deleted' => true,
 				],
 				__METHOD__,
