@@ -508,6 +508,8 @@
 	"globalrenamerequest-pretext": "Demander un nouveau nom d’utilisateur sous lequel vous serez connu sur l’ensemble des projets.\n\nToutes vos contributions précédentes seront rattachées à ce nouveau nom d’utilisateur.\n\nUne liste des requêtes effectuées via ce formulaire sera rendue disponible aux utilisateurs autorisés à effectuer cette opération pour vous. Vous serez informé par courriel quand cela aura été fait.\n\nSi votre requête est en rapport avec un souhait d’anonymat/vie privée, veuillez prendre note qu’un enregistrement de journal permanent sera créé en notant votre nom antérieur. De telle sorte que vous pourriez plutôt envisager de simplement [[Special:CreateAccount|créer un nouveau compte séparé et indépendant]], et de renommer votre compte actuel en quelque chose d’aléatoire avant de l’abandonner.",
 	"globalrenamerequest-reason-label": "Motif de la demande",
 	"globalrenamerequest-save-error": "Échec d’enregistrement de la demande. Veuillez réessayer.",
+	"globalrenamerequest-self-error": "Vous ne pouvez pas approuver cette requête car vous n’êtes pas autorisé à renommer votre propre compte.",
+	"globalrenamerequest-self-warning": "Vous ne pouvez que refuser cette requête parce que vous n’êtes pas autorisé à renommer votre propre compte.",
 	"globalrenamerequest-status-text": "Votre demande de changement de nom d’utilisateur est actuellement en cours de traitement et attend une approbation par ceux autorisés à effectuer cette opération. Vous serez informé par courriel quand le traitement sera effectué.\n\n; Nom d’utilisateur actuel &#58;\n: $1\n; Nom d’utilisateur demandé &#58;\n: $2",
 	"globalrenamerequest-status-title": "Demande de renommage en attente d’approbation",
 	"globalrenamerequest-submit-text": "Demander un renommage",

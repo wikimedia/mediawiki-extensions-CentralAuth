@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Edwingudfriend",
 			"Kipala",
 			"Kwisha",
 			"Lloffiwr",
@@ -121,6 +122,8 @@
 	"centralauth-seconds-ago": "sekunde $1 {{PLURAL:$1|iliyo|zilizo}}pita",
 	"centralauth-uwbr-name": "Jina la mtumiaji:",
 	"centralauth-years-ago": "{{PLURAL:$1|mwaka $1 ulio|miaka $1 iliyo}}pita",
+	"globalrenamerequest-self-error": "Labda hauwezi kuidhinisha ombi hili kwa kuwa huruhusiwi kubadilisha jina la akaunti yako mwenyewe.",
+	"globalrenamerequest-self-warning": "Unaweza kukataa tu ombi hili kwa kuwa huruhusiwi kubadilisha jina la akaunti yako mwenyewe.",
 	"mergeaccount": "Kuunganishwa kwa hali ya kuingia",
 	"right-centralauth-merge": "Shikanisha akaunti yao"
 }
