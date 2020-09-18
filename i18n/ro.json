@@ -371,6 +371,7 @@
 	"globalrenameuser": "Redenumire utilizator global",
 	"globalrenameuser-legend": "Redenumește utilizator global",
 	"globalusers": "Listă de conturi globale",
+	"log-name-gblrename": "Jurnal redenumiri globale",
 	"mergeaccount": "Statusul despre unificarea autentificării",
 	"multilock": "Blocare conturi globale multiple",
 	"right-centralauth-lock": "Blochează sau deblochează un cont global",
