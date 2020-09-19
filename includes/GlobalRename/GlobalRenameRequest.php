@@ -29,9 +29,9 @@ use Wikimedia\Rdbms\IDatabase;
  */
 class GlobalRenameRequest {
 
-	const PENDING = 'pending';
-	const APPROVED = 'approved';
-	const REJECTED = 'rejected';
+	public const PENDING = 'pending';
+	public const APPROVED = 'approved';
+	public const REJECTED = 'rejected';
 
 	protected $id;
 	protected $name;

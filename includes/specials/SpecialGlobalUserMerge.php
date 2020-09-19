@@ -6,7 +6,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	 * Maximum number of users that can be
 	 * merged at once
 	 */
-	const MAX_USERS_TO_MERGE = 5;
+	private const MAX_USERS_TO_MERGE = 5;
 
 	/**
 	 * @var CentralAuthUser[]
