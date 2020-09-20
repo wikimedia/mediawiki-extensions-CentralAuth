@@ -284,6 +284,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
+		if ( strpos( $reason, "\n" ) !== false ) {
+			$reason = "<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>";
+		} else {
+			$reason = ': ' . $reason;
+		}
+
 		// Done as one big message so that admins can create a local
 		// translation to customize the output as they see fit.
 		// @TODO: Do that actually in here... this is not how we do interfaces in 2015.
@@ -488,7 +494,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
 		$htmlForm->addHeaderText( $this->msg( 'globalrenamequeue-request-reason',
-			$reason
+			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>"
 		)->parseAsBlock() );
 
 		// Show warning when reviewing own request
