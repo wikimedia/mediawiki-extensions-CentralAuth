@@ -74,5 +74,5 @@
 	"globalrenamequeue-form-status-all": "موچین",
 	"globalrenamequeue-form-username": "کار زورؤکین نام:",
 	"globalrenamequeue-request-cancel-text": "کنسیل",
-	"globalrenamequeue-view": ";شه:\n:[[Special:CentralAuth/$1|$1]]\n;بی:\n:[[Special:CentralAuth/$2|$2]]\n;دلیل:\n:$3\n;وضئیت:\n:$4\n;داته بوته ئین درخواست:\n:$5\n;کامل بوته ئین:\n:$6\n;انجام بوته بی واسطه:\n:[$7 $8]\n;توضیحات:\n:$9"
+	"globalrenamequeue-view": ";شه:\n:[[Special:CentralAuth/$1|$1]]\n;بی:\n:[[Special:CentralAuth/$2|$2]]\n;دلیل:\n$3\n;وضئیت:\n:$4\n;داته بوته ئین درخواست:\n:$5\n;کامل بوته ئین:\n:$6\n;انجام بوته بی واسطه:\n:[$7 $8]\n;توضیحات:\n:$9"
 }

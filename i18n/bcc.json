@@ -256,7 +256,7 @@
 	"globalgroupmembership": "عضویت ته گروهان سراسری",
 	"globalgrouppermissions": "مدیریت گروه سراسری",
 	"globalrenamequeue-request-cancel-text": "کنسیل",
-	"globalrenamequeue-view": ";From:\n:[[Special:CentralAuth/$1|$1]]\n;To:\n:[[Special:CentralAuth/$2|$2]]\n;Reason:\n:$3\n;Status:\n:$4\n;Requested:\n:$5\n;Completed:\n:$6\n;Done by:\n:[$7 $8]\n;Notes:\n:$9",
+	"globalrenamequeue-view": ";From:\n:[[Special:CentralAuth/$1|$1]]\n;To:\n:[[Special:CentralAuth/$2|$2]]\n;Reason:\n$3\n;Status:\n:$4\n;Requested:\n:$5\n;Completed:\n:$6\n;Done by:\n:[$7 $8]\n;Notes:\n:$9",
 	"globalusers": "سرجمین اکانتانء لیست",
 	"mergeaccount": "وضعیت یک داب کتن ورود",
 	"multilock": "چندین سرجمین اکانتء کبل کتن",

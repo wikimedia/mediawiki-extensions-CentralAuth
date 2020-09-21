@@ -359,7 +359,7 @@
 	"globalrenamequeue-request-approve-text": "Приемане на преименуването",
 	"globalrenamequeue-request-cancel-text": "Отказ",
 	"globalrenamequeue-request-movepages": "Преместване на потребителски страници",
-	"globalrenamequeue-request-reason": "<strong>Причина за заявката</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Причина за заявката</strong>\n$1",
 	"globalrenamequeue-request-unknown-body": "Заявка за преименуване не беше открита.",
 	"globalrenamerequest": "Заявка за глобално преименуване на потребителската сметка",
 	"globalrenamerequest-desc": "Заявка за преименуване на глобална сметка",

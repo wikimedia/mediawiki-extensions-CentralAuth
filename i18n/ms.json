@@ -342,7 +342,7 @@
 	"globalrenamequeue-request-approve-text": "Terima nama baru",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> sedang meminta untuk ditukarkan namanya kepada <strong>$3</strong>.",
 	"globalrenamequeue-request-movepages": "Pindahkan laman-laman pengguna",
-	"globalrenamequeue-request-reason": "<strong>Sebab memohon penukaran nama</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Sebab memohon penukaran nama</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Komen entri log awam (jika menerima)",
 	"globalrenamequeue-request-status-title": "Tukar nama \"$1\" kepada \"$2\"",
 	"globalrenamequeue-request-title": "Tukar nama \"$1\"?",

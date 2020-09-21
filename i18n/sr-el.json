@@ -340,7 +340,7 @@
 	"globalrenamequeue-request-approve-text": "Prihvati preimenovanje",
 	"globalrenamequeue-request-cancel-text": "Otkaži",
 	"globalrenamequeue-request-deny-text": "Odbij preimenovanje",
-	"globalrenamequeue-request-reason": "<strong>Razlog za preimenovanje</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Razlog za preimenovanje</strong>\n$1",
 	"globalrenamequeue-view-approved": "odobreno",
 	"globalrenamerequest": "Promena korisničkog imena",
 	"globalrenamerequest-email-label": "Imejl adresa:",

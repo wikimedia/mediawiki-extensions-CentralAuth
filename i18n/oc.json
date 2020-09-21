@@ -262,7 +262,7 @@
 	"globalgrouppermissions": "Gestion dels gropes globals",
 	"globalrenameprogress": "Progression del cambiament de nom global",
 	"globalrenameprogress-legend": "Afichar la progression del cambiament de nom global",
-	"globalrenamequeue-request-reason": "<strong>Rason per demandar lo cambiament de nom</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Rason per demandar lo cambiament de nom</strong>\n$1",
 	"globalrenamerequest": "Demanda de renomenatge global de compte utilizaire",
 	"globalrenamerequest-email-label": "Adreça de corrièr electronic:",
 	"globalrenamerequest-legend": "Demanda de cambiament de nom de l’unificacion",

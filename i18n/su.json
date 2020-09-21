@@ -161,7 +161,7 @@
 	"globalgroupmembership": "Kaanggotaan dina grup global",
 	"globalrenamequeue-request-cancel-text": "Bolay",
 	"globalrenamequeue-request-comments-label": "Catetan/alesaneun",
-	"globalrenamequeue-request-reason": "<strong>Alesan pundutan parobahan ngaran</strong>\n:$1",
+	"globalrenamequeue-request-reason": "<strong>Alesan pundutan parobahan ngaran</strong>\n$1",
 	"globalrenamerequest-reason-label": "Alasan paamundutan",
 	"globalusers": "Béréndélan akun global",
 	"mergeaccount": "Status ngahijikeun log asup",

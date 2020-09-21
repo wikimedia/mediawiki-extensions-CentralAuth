@@ -174,7 +174,7 @@
 	"globalrenamequeue-request-unknown-title": "တောင်းဆိုမှု မတွေ့ပါ",
 	"globalrenamequeue-request-userinfo-global": "* လက်ရှိ အသုံးပြုသူအမည်: [[Special:CentralAuth/$1|$1]]\n* မိခင် ဝီကီ: $2\n* အသုံးပြုသူအမည် အသစ်: [[Special:CentralAuth/$3|$3]]\n* ဂလိုဘယ်တည်းဖြတ်မှု အရေအတွက်: $4",
 	"globalrenamequeue-request-userinfo-local": "* အသုံးပြုသူ: [[Special:CentralAuth/$1|$1]]\n* မိခင် ဝီကီ: $2\n* နာမည် အသစ်: [[Special:CentralAuth/$3|$3]]",
-	"globalrenamequeue-view": ";မှ:\n:[[Special:CentralAuth/$1|$1]]\n;သို့:\n:[[Special:CentralAuth/$2|$2]]\n;အကြောင်းပြချက်:\n:$3\n;အခြေနေ:\n:$4\n;တောင်းဆိုခဲ့:\n:$5\n;ပြီးဆုံး:\n:$6\n;လုပ်ဆောင်ပေးသူ:\n:[$7 $8]\n;မှတ်စုများ:\n:$9",
+	"globalrenamequeue-view": ";မှ:\n:[[Special:CentralAuth/$1|$1]]\n;သို့:\n:[[Special:CentralAuth/$2|$2]]\n;အကြောင်းပြချက်:\n$3\n;အခြေနေ:\n:$4\n;တောင်းဆိုခဲ့:\n:$5\n;ပြီးဆုံး:\n:$6\n;လုပ်ဆောင်ပေးသူ:\n:[$7 $8]\n;မှတ်စုများ:\n:$9",
 	"globalrenamequeue-view-approved": "အတည်ပြုခဲ့သည်",
 	"globalrenamequeue-view-rejected": "ငြင်းပယ်ခဲ့သည်",
 	"globalrenamerequest": "ဂလိုဘယ်အသုံးပြုသူအကောင့် ပြန်မှည့်ခြင်း တောင်းဆိုမှု",
