@@ -488,7 +488,7 @@
 	"globalrenamequeue-request-unknown-title": "Demande non trouvée",
 	"globalrenamequeue-request-userinfo-global": "* nom d’utilisateur actuel : [[Special:CentralAuth/$1|$1]]\n* wiki d’origine : $2 \n* nouveau nom d’utilisateur : [[Special:CentralAuth/$3|$3]]\n* compteur global de modifications : $4",
 	"globalrenamequeue-request-userinfo-local": "* utilisateur : [[Special:CentralAuth/$1|$1]]\n* wiki d’origine : $2 \n* nouveau nom : [[Special:CentralAuth/$3|$3]]",
-	"globalrenamequeue-view": "; De &#58;\n: [[Special:CentralAuth/$1|$1]]\n; À &#58;\n: [[Special:CentralAuth/$2|$2]]\n; Raison &#58;\n: $3\n; Statut &#58;\n: $4\n; Demandé &#58;\n: $5\n; Terminé &#58;\n: $6\n; Par &#58;\n: [$7 $8]\n; Notes &#58;\n: $9",
+	"globalrenamequeue-view": "; De &#58;\n: [[Special:CentralAuth/$1|$1]]\n; À &#58;\n: [[Special:CentralAuth/$2|$2]]\n; Raison &#58;\n$3\n; Statut &#58;\n: $4\n; Demandé &#58;\n: $5\n; Terminé &#58;\n: $6\n; Par &#58;\n: [$7 $8]\n; Notes &#58;\n: $9",
 	"globalrenamequeue-view-approved": "approuvé",
 	"globalrenamequeue-view-rejected": "rejeté",
 	"globalrenamerequest": "Demande de renommage global de compte utilisateur",
