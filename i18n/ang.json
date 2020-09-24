@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gott wisst"
+			"Gott wisst",
+			"Heahwrita"
 		]
 	},
+	"centralauth-admin-blocklog": "forbodennessa tidgewrit",
 	"centralauth-admin-username": "Brūcendnama:",
-	"centralauth-foreign-link": "Brūcend $1 on $2"
+	"centralauth-foreign-link": "Brucend $1 on $2",
+	"centralauth-merge-method-login": "wæs gescapen mid wisbocfange"
 }
