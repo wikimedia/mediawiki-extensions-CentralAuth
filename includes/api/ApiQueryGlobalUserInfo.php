@@ -169,7 +169,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 			// URL determines user, public caching is fine
 			return 'public';
 		} else {
-			// Code will fall back to $wgUser, don't cache
+			// Code will fall back to the context user, don't cache
 			return 'private';
 		}
 	}
