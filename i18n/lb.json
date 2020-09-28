@@ -391,6 +391,7 @@
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> freet eng Ëmbenennung op  <strong>$3</strong> un.",
 	"globalrenamequeue-request-movepages": "Benotzersäite réckelen",
 	"globalrenamequeue-request-previous-renames": "Vireg {{PLURAL:$1|Ëmbenennung|Ëmbenennungen}}",
+	"globalrenamequeue-request-reason": "<strong>Grund fir d'Ufro vum Ëmbenennen</strong>\n$1",
 	"globalrenamequeue-request-status-title": "\"$1\" an \"$2\" ëmbenennen",
 	"globalrenamequeue-request-title": "\"$1\" ëmbenennen?",
 	"globalrenamequeue-request-unknown-body": "D'Ufro fir d'Ëmbenenne gouf net fonnt.",
