@@ -409,7 +409,7 @@
 	"centralauth-warning-notloggedin": "Du är för närvarande inte inloggad.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år}} sedan",
 	"centralautologin": "Central inloggning",
-	"centrallogin": "Centrala användarinloggning",
+	"centrallogin": "Central användarinloggning",
 	"centralloginsuccesful": "Inloggad",
 	"globalgroupmembership": "Medlemskap i globala grupper",
 	"globalgrouppermissions": "Hantering av globala grupper",

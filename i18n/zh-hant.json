@@ -490,6 +490,8 @@
 	"globalrenamerequest-pretext": "請求一個能在所有專案使用的新使用者名稱。\n\n所有您先前所做的貢獻將會改連結至新使用者名稱。\n\n透過此清單建立的請求清單，將提供給能執行此操作的使用者。當處理完畢後，您將會收到電子郵件的通知。\n\n若您的請求與匿名/隱私需求相關，請注意將會建立保存日誌的紀錄來註明您先前的名稱。因此，您可以考慮簡單地來[[Special:CreateAccount|建立一個單獨且獨立的新帳號]]，並將您目前的帳號重新命名至隨機名稱後捨棄。",
 	"globalrenamerequest-reason-label": "請求原因",
 	"globalrenamerequest-save-error": "儲存請求失敗，請再試一次。",
+	"globalrenamerequest-self-error": "您不被核准此請求，因為您不能重新命名自己的帳號。",
+	"globalrenamerequest-self-warning": "您僅被拒絕此請求，因為您不能重新命名自己的帳號。",
 	"globalrenamerequest-status-text": "您的使用者名稱變更請求目前正在處理中，且正在等候可執行此操作的人審核。在請求處理後會再以電子郵件通知您。\n\n;目前的使用者名稱：\n:$1\n;請求的使用者名稱：\n:$2",
 	"globalrenamerequest-status-title": "重新命名請求正在等待審核",
 	"globalrenamerequest-submit-text": "請求變更名稱",

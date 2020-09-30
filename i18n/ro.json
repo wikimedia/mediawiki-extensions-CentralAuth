@@ -300,6 +300,7 @@
 	"centralauth-rename-form-overrideantispoof": "Suprascrie orice conflict AntiSpoof",
 	"centralauth-rename-form-reason": "Motiv",
 	"centralauth-rename-form-suppressredirects": "Oprește crearea de redirecționări",
+	"centralauth-rename-movelog": "Pagină mutată automat la redenumirea {{GENDER:$2|utilizatorului|utilizatoarei|utilizatorului}} „[[Special:CentralAuth/$1|$1]]” în „[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "Nu există redenumiri în desfășurare pentru $1. Este posibil ca acestea să se finalizat deja.",
 	"centralauth-rename-notinstalled": "Extensia Redenumire utilizator nu este instalată",
 	"centralauth-rename-progress-fieldset": "Lista conturilor locale",
