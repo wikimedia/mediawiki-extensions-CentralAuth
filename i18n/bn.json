@@ -3,6 +3,7 @@
 		"authors": [
 			"Aftab1995",
 			"Aftabuzzaman",
+			"Al Riaz Uddin Ripon",
 			"Bellayet",
 			"Elias Ahmmad",
 			"Gitartha.bordoloi",
@@ -13,7 +14,7 @@
 			"আফতাবুজ্জামান"
 		]
 	},
-	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একীভূত করার",
+	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একত্রিকরণ করুন",
 	"action-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর করার",
 	"centralauth": "বৈশ্বিক অ্যাকাউন্টের ব্যবস্থাপক",
 	"centralauth-abortlogin-renamed": "আপনার অ্যাকাউন্টটির নাম পরিবর্তন করে \"$1\" করা হয়েছে। এটির পরিবর্তে সেই ব্যবহারকারী নামটি ব্যবহার করুন।",

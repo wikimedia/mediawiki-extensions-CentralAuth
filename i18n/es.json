@@ -479,7 +479,7 @@
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> ha solicitado renombrarse como <strong>$3</strong>.",
 	"globalrenamequeue-request-movepages": "Trasladar las páginas del usuario",
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Cambio de nombre previo|Cambios de nombre previos}}",
-	"globalrenamequeue-request-reason": "<strong>Motivo de solicitud de renombramiento</strong>\n$1",
+	"globalrenamequeue-request-reason": "<strong>Motivo de solicitud de cambio de nombre</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Entrada de registro pública (en caso de aceptar)",
 	"globalrenamequeue-request-reason-sul": "Usuario notificado de conflicto con cuenta global preparándose para finalizar su cuenta unificada (SUL).",
 	"globalrenamequeue-request-savefailed": "Fallo al guardar el estado de la solicitud.",
