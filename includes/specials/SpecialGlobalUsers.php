@@ -2,7 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 
-class SpecialGlobalUsers extends SpecialPage {
+class SpecialGlobalUsers extends IncludableSpecialPage {
 	public function __construct() {
 		parent::__construct( 'GlobalUsers' );
 	}
@@ -42,7 +42,10 @@ class SpecialGlobalUsers extends SpecialPage {
 		}
 
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
-		$pg->getPageHeader();
+		if ( !$this->including() ) {
+			$pg->getPageHeader();
+		}
+
 		$this->getOutput()->addHTML(
 			$pg->getNavigationBar() .
 			Html::rawElement( 'ul', [], $pg->getBody() ) .
