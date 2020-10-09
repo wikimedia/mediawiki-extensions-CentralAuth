@@ -136,7 +136,7 @@
 	"centralauth-centralautologin-badwiki": "El wiki «$1» no és vàlid per a connexió centralitzada",
 	"centralauth-centralautologin-corsfail": "La verificació d’origen CORS ha fallat",
 	"centralauth-centralautologin-desc": "Aquesta pàgina especial és utilitzada internament per MediaWiki.\nQuan visiteu un domini vinculat sense tenir una sessió iniciada, el sistema central de connexió utilitza aquesta pàgina per determinar si heu iniciat la sessió en el domini central.\nHeu demanat aquesta pàgina sense proporcionar cap dada d'autenticació, per la qual cosa no fa res.",
-	"centralauth-centralautologin-logged-in": "Esteu connectat centralitzadament com a $1. Torneu a carregar la pàgina per aplicar la vostra configuració.",
+	"centralauth-centralautologin-logged-in": "Esteu connectat centralitzadament com a $1. Torneu a carregar la pàgina per a aplicar la vostra configuració.",
 	"centralauth-centralautologin-logged-in-nouser": "Teniu la sessió iniciada globalment. Carregeu de nou la pàgina per aplicar la configuració d'usuari.",
 	"centralauth-centralautologin-lostsession": "Pèrdua de dades de la sessió",
 	"centralauth-centralautologin-notposted": "El formulari de connexió centralitzada ha de ser publicat",
