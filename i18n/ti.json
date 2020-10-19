@@ -14,5 +14,8 @@
 	"centralauth-editset-submit-delete": "ሰርዝ",
 	"centralauth-finish-login": "ብመንነት እተው",
 	"centralauth-finish-password": "ቃለ-ምስጢር:",
-	"centralloginsuccesful": "ብመንነት ኣትዩ ኣሎ"
+	"centralauth-rename-progress-username": "ሽም ተጠቃሚ",
+	"centralloginsuccesful": "ብመንነት ኣትዩ ኣሎ",
+	"globalrenamequeue-column-rq-name": "ሽም ተጠቃሚ",
+	"globalrenamequeue-form-username": "ሽም ተጠቃሚ፦"
 }
