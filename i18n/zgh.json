@@ -3,10 +3,13 @@
 		"authors": [
 			"Amara-Amaziɣ",
 			"Aslmad mohamed belarhzali",
+			"Hakim1bal",
 			"ⵕⴰⵊⵉ"
 		]
 	},
 	"centralauth-admin-blocklog": "ⴰⵖⵎⵉⵙ ⵏ ⵉⴳⴷⴷⵓⵍⵏ",
+	"centralauth-admin-no": "ⵓⵀⵓ",
+	"centralauth-admin-yes": "ⵢⴰⵀ",
 	"centralauth-editgroup-noset": "(ⵓⵍⴰ ⵢⴰⵏ)",
 	"centralauth-editset-nouse": "(ⵓⵍⴰ ⵢⴰⵏ)",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ⵓⵏⴰⵎⵓ|ⵉⵏⴰⵎⵓⵜⵏ}} ⴳ $2",
