@@ -5,7 +5,7 @@
 		]
 	},
 	"centralauth-admin-blocklog": "блокировкалардыҥ журналы",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тӱзедӱзи|тӱзедӱлери}} $2-е",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тӱзедӱзи}} $2",
 	"centralauth-foreign-link": "$1 туружаачызы $2-е",
 	"centralauth-merge-method-login": "системага кирип јадарда эдилген"
 }

@@ -3,6 +3,7 @@
 		"authors": [
 			"AmaryllisGardener",
 			"John Reid",
+			"MJL",
 			"Macofe",
 			"McDutchie",
 			"NGC 54"
@@ -98,7 +99,7 @@
 	"centralauth-admin-unmerge-success": "Successfulie onmerged $1 {{PLURAL:$1|accoont|accoonts}}",
 	"centralauth-admin-username": "Uisername:",
 	"centralauth-admin-view": "See accoont information",
-	"centralauth-admin-yes": "ay",
+	"centralauth-admin-yes": "aye",
 	"centralauth-antispoof-desc": "Eiks AntiSpoof technologie til CentralAuth",
 	"centralauth-attach-list-attached": "The uneefied accoont named \"$1\" incluids the follaein accoonts:",
 	"centralauth-attach-submit": "Migrate accoont",

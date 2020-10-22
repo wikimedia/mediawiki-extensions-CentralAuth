@@ -7,5 +7,6 @@
 	},
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|silua|angka silua}} di $2",
 	"centralauth-foreign-link": "Panghasea $1 di $2",
-	"centralauth-groupname": "Wikimedia Foundation"
+	"centralauth-groupname": "Wikimedia Foundation",
+	"centralauth-merge-method-login": "ditompa di tingki masuk log"
 }
