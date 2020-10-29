@@ -188,6 +188,7 @@ $specialPageAliases['ce'] = [
 /** Czech (čeština) */
 $specialPageAliases['cs'] = [
 	'CentralAuth' => [ 'Centrální_ověření' ],
+	'CreateLocalAccount' => [ 'Vytvoření_lokálního_účtu' ],
 	'MergeAccount' => [ 'Sloučení_účtů' ],
 	'GlobalGroupMembership' => [ 'Globální_práva_uživatele' ],
 	'GlobalGroupPermissions' => [ 'Práva_globálních_skupin' ],
