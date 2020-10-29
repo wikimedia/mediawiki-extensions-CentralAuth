@@ -9,11 +9,11 @@ use MediaWiki\Block\DatabaseBlock;
 class UsersWhoWillBeRenamedPager extends TablePager {
 
 	/**
-	 * @var SpecialPage $owner
+	 * @var SpecialPage
 	 */
 	protected $owner;
 	/**
-	 * @var $mFieldNames array
+	 * @var array
 	 */
 	protected $mFieldNames;
 

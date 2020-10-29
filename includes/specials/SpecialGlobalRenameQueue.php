@@ -39,7 +39,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	public const ACTION_VIEW = 'view';
 
 	/**
-	 * @var string $par Request subpage string
+	 * @var string Request subpage string
 	 */
 	protected $par;
 

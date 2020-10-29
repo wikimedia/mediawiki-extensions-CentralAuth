@@ -92,22 +92,22 @@ class SpecialMergeAccount extends SpecialPage {
 				throw new ErrorPageError( 'sessionfailure-title', 'sessionfailure' );
 			}
 			switch ( $this->mMergeAction ) {
-			case "dryrun":
-				$this->doDryRunMerge();
-				break;
-			case "initial":
-				$this->doInitialMerge();
-				break;
-			case "cleanup":
-				$this->doCleanupMerge();
-				break;
-			case "attach":
-				$this->doAttachMerge();
-				break;
-			default:
-				throw new InvalidArgumentException(
-					'Invalid merge action ' . $this->mMergeAction . ' given'
-				);
+				case "dryrun":
+					$this->doDryRunMerge();
+					break;
+				case "initial":
+					$this->doInitialMerge();
+					break;
+				case "cleanup":
+					$this->doCleanupMerge();
+					break;
+				case "attach":
+					$this->doAttachMerge();
+					break;
+				default:
+					throw new InvalidArgumentException(
+						'Invalid merge action ' . $this->mMergeAction . ' given'
+					);
 			}
 			return;
 		}

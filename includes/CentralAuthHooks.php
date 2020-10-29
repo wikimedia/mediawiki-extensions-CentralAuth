@@ -1258,7 +1258,7 @@ class CentralAuthHooks {
 	 * @note We can't do $out->getCSP()->addDefaultSrc in onBeforePageDisplay,
 	 * because that hook runs after the header is already outputted.
 	 * @param array &$defaultSrc Array of allowed CSP sources.
-	 * @param Mixed $cspConfig
+	 * @param mixed $cspConfig
 	 * @param bool $mode
 	 */
 	public static function onContentSecurityPolicyDefaultSource(
@@ -1315,7 +1315,7 @@ class CentralAuthHooks {
 	 * @note We can't do $out->getCSP()->addScriptSrc() in onBeforePageDisplay,
 	 * because that hook runs after the header is already outputted.
 	 * @param array &$scriptSrc Array of allowed CSP sources.
-	 * @param Mixed $cspConfig
+	 * @param mixed $cspConfig
 	 * @param bool $mode
 	 */
 	public static function onContentSecurityPolicyScriptSource(

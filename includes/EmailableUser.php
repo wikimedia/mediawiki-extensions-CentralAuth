@@ -9,7 +9,7 @@ class EmailableUser extends User {
 	 * you have both an ID and a name handy.
 	 *
 	 * @param string $name Username, validated by Title::newFromText()
-	 * @param string|Bool $validate Validate username. Takes the same parameters as
+	 * @param string|bool $validate Validate username. Takes the same parameters as
 	 *    User::getCanonicalName(), except that true is accepted as an alias
 	 *    for 'valid', for BC.
 	 *
