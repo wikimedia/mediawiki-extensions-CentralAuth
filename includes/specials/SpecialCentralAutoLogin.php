@@ -88,6 +88,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return true;
 	}
 
+	/**
+	 * @param string|null $par
+	 */
 	public function execute( $par ) {
 		global $wgCentralAuthLoginWiki;
 
@@ -132,6 +135,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'proto',
 			'mobile'
 		);
+		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
 		case 'P3P': // Explain the bogus P3P header
 			$this->setHeaders();
@@ -299,7 +303,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			return;
 
 		case 'createSession': // Create the local session and shared memcache token
-
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
