@@ -160,7 +160,7 @@
 	"centralauth-contribs-locked": "This account is globally locked.\nSee [[Special:CentralAuth/$1|global account details]] for more information.",
 	"centralauth-contribs-locked-log": "This account is globally locked.\nThe latest lock log entry is provided below for reference:",
 	"centralauth-createlocal-already-exists": "There already is a local account for the specified global account.",
-	"centralauth-createlocal-logentry": "forcibly created a local account for $1",
+	"centralauth-createlocal-logentry": "forcibly {{GENDER:$2|created}} a local account for $1",
 	"centralauth-createlocal-no-global-account": "There is no such global account.",
 	"centralauth-createlocal-pretext": "You can use this form to create a local account for a global account if they are unable to do it themselves for some reason.",
 	"centralauth-createlocal-reason": "Reason",
