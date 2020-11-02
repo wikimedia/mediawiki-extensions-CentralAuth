@@ -132,6 +132,7 @@
 	"centralauth-completelogin-back": "Назад на претходну страницу.",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
 	"centralauth-contribs-locked-log": "Овај налог је глобално закључан.\nПоследње закључавање је наведено испод:",
+	"centralauth-createlocal-reason": "Разлог",
 	"centralauth-days-ago": "пре $1 {{PLURAL:$1|дан|дана|дана}}",
 	"centralauth-delete-empty-account": "Празан налог",
 	"centralauth-desc": "[[Special:MergeAccount|Обједињава налог]] на викијима {{int:Centralauth-groupname}}",

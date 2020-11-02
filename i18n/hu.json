@@ -144,6 +144,7 @@
 	"centralauth-completelogin-back": "Vissza az előző oldalra.",
 	"centralauth-contribs-locked": "Ezt a fiókot globálisan zárolták.\nTovábbi információkért lásd a [[Special:CentralAuth/$1|globális fiók adatait]].",
 	"centralauth-contribs-locked-log": "Ez a fiók globálisan zárolva van.\nA zárolási napló legutóbbi ide vonatkozó bejegyzése a következő:",
+	"centralauth-createlocal-reason": "Indoklás",
 	"centralauth-days-ago": "$1 nappal ezelőtt",
 	"centralauth-delete-empty-account": "Üres fiók",
 	"centralauth-desc": "[[Special:MergeAccount|Szerkesztői fiókok egységesítése]] {{int:Centralauth-groupname}} wikijein",

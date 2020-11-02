@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ahmad252",
+			"Ajam",
 			"Alifakoor",
 			"Alirezaaa",
 			"Armin1392",
@@ -154,6 +155,7 @@
 	"centralauth-completelogin-back": "بازگشت به صفحهٔ پیشین.",
 	"centralauth-contribs-locked": "این حساب سراسری بسته‌شده‌است.\nبرای اطلاعات بیشتر [[Special:CentralAuth/$1|جزئیات حساب سراسری]] را ببینید.",
 	"centralauth-contribs-locked-log": "دسترسی این کاربر در حال حاضر بسته است.\nآخرین مورد سیاهه قطع دسترسی در زیر آمده‌است:",
+	"centralauth-createlocal-reason": "دلیل",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|روز|روز}} قبل",
 	"centralauth-delete-empty-account": "حساب خالی",
 	"centralauth-desc": "[[Special:MergeAccount|یکی‌کردن]] حساب‌های کاربری در ویکی‌های {{int:Centralauth-groupname}}",

@@ -180,7 +180,7 @@
 	"centralauth-contribs-locked": "This is displayed on [[Special:Contributions]] for locked accounts when we cannot display the log entry. Parameters:\n* $1 - the username",
 	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}",
 	"centralauth-createlocal-already-exists": "Error message on [[Special:CreateLocalAccount]]",
-	"centralauth-createlocal-logentry": "Log entry message when an administrator manually created a local account for a global user",
+	"centralauth-createlocal-logentry": "Log entry message when an administrator manually created a local account for a global user.\n\n{{Logentry}}",
 	"centralauth-createlocal-no-global-account": "Error message on [[Special:CreateLocalAccount]]",
 	"centralauth-createlocal-pretext": "Instructional text shown on [[Special:CreateLocalAccount]]",
 	"centralauth-createlocal-reason": "Form input asking for a reason on [[Special:CreateLocalAccount]]",

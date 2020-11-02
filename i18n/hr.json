@@ -8,6 +8,7 @@
 			"Herr Mlinka",
 			"Kolega2357",
 			"MaGa",
+			"Neptune, the Mystic",
 			"Roberta F.",
 			"SpeedyGonsales"
 		]
@@ -100,6 +101,9 @@
 	"centralauth-completelogin-back": "Vrati se na prethodnu stranicu.",
 	"centralauth-contribs-locked": "Ovaj je suradnički račun globalno zaključan.\nPogledajte više informacija [[Special:CentralAuth/$1|o globalnom računu]].",
 	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:",
+	"centralauth-createlocal-already-exists": "Već postoji lokalni račun za navedeni globalni račun.",
+	"centralauth-createlocal-no-global-account": "Taj globalni račun ne postoji.",
+	"centralauth-createlocal-reason": "Razlog",
 	"centralauth-days-ago": "prije $1 {{PLURAL:$1|dana|dana}}",
 	"centralauth-desc": "[[Special:MergeAccount|Spajanje suradničkih računa]] na svim wikijima {{MediaWiki:Centralauth-groupname|gen}}",
 	"centralauth-disabled-dryrun": "Spajanje računa je trenutno u demo / debugging modu, pa je stvarno spajanje računa onemogućeno.",

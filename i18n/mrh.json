@@ -5,6 +5,7 @@
 		]
 	},
 	"centralauth-admin-blocklog": "Pakhâpa log",
+	"centralauth-createlocal-reason": "A chhâpa",
 	"centralauth-foreign-contributions": "$2 chô liata $2 {{PLURAL:$1|paduapa|paduapazy}}",
 	"centralauth-foreign-link": "$2 liata hmâhtuhpa $1",
 	"centralauth-merge-method-login": "Angiana chô liata taopa"
