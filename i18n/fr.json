@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"0x010C",
+			"Alno",
 			"Automatik",
 			"Boniface",
 			"Caliburn",
@@ -188,7 +189,7 @@
 	"centralauth-createlocal-pretext": "Vous pouvez utiliser ce formulaire pour créer un compte local pour un compte global, s’ils ne peuvent pas le faire eux-mêmes pour une raison quelconque.",
 	"centralauth-createlocal-reason": "Motif",
 	"centralauth-createlocal-success": "Compte local créé.",
-	"centralauth-createlocal-suppressed": "Vous ne pouvez pas crée de compte local pour un utilisateur supprimé.",
+	"centralauth-createlocal-suppressed": "Vous ne pouvez pas créer de compte local pour un utilisateur supprimé.",
 	"centralauth-createlocal-username": "Nom du compte global",
 	"centralauth-days-ago": "depuis $1 jour{{PLURAL:$1||s}}",
 	"centralauth-delete-empty-account": "Compte vide",
@@ -538,7 +539,7 @@
 	"log-action-filter-globalauth": "Type de modification :",
 	"log-action-filter-globalauth-delete": "Suppression de compte global",
 	"log-action-filter-globalauth-setstatus": "Modification d’état de compte global",
-	"log-action-filter-newusers-forcecreatelocal": "Création forcée du compte local",
+	"log-action-filter-newusers-forcecreatelocal": "Compte local créé de force",
 	"log-action-filter-suppress-cadelete": "Suppression de compte global",
 	"log-action-filter-suppress-setstatus": "Modification d’état de compte global",
 	"log-description-gblrename": "Ce journal trace les renommages globaux des utilisateurs.",
