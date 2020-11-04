@@ -5,7 +5,8 @@
 			"S.Örvarr.S",
 			"Snævar",
 			"Spacebirdy",
-			"Sveinn í Felli"
+			"Sveinn í Felli",
+			"Þjarkur"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Altækir hópar sem þessi notandi tilheyrir",
@@ -107,6 +108,7 @@
 	"centralauth-complete": "Samræmingu aðganga lokið!",
 	"centralauth-complete-text": "Þú getur nú skráð þig inn á hvaða wiki verkefni {{int:Centralauth-groupname}} án stofnunar nýs aðgangs.",
 	"centralauth-completelogin-back": "Fara aftur á fyrri síðu",
+	"centralauth-createlocal-reason": "Ástæða",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|degi|dögum}} síðan",
 	"centralauth-desc": "[[Special:MergeAccount|Samræma aðgang]] á öllum wiki verkefnum {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Samræming aðganga er í sýniskeyrslu / villuleitun, þannig engir aðgangar verða sameinaðir.\nÞví miður!",

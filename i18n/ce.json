@@ -98,7 +98,7 @@
 	"centralauth-antispoof-desc": "ТӀетуху технологи AntiSpoof CentralAuth тӀе",
 	"centralauth-attach-submit": "Декъашхочун агӀо дехьа якха",
 	"centralauth-attach-success": "Декъашхочун агӀо юкъара агӀонийн системехь тоьхна.",
-	"centralauth-attach-text": "ХӀара декъашхочун агӀо юкъара дӀаяздарин системан юкъа тоьхна дац. Глобалан декъашхочун агӀо хьа делахь хьан йиш ю хьай пароль дӀаязйина и юкъа тоха:",
+	"centralauth-attach-text": "ХӀара декъашхочун агӀо юкъара дӀаяздарин системин юкъа тоьхна дац. Глобалан декъашхочун агӀо хьа делахь хьан йиш ю хьай пароль дӀаязйина и юкъа тоха:",
 	"centralauth-attach-title": "Декъашхочун агӀо бакъяр",
 	"centralauth-block-already-locked": "Декъашхочун агӀо [[Special:CentralAuth/$1|$1]] хӀинцале глобалан блоктоьхна ю.",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Ахьа хӀинцале локально болх беш бу",
