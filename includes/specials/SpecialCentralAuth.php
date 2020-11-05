@@ -751,7 +751,7 @@ class SpecialCentralAuth extends SpecialPage {
 			'Special:Contributions/' . $this->mUserName,
 			$editCount,
 			$this->msg( 'centralauth-foreign-contributions' )
-				->params( $editCount, $wikiname )->text()
+				->numParams( $editCount )->params( $wikiname )->text()
 		);
 	}
 
