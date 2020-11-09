@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Balyozxane",
 			"Bikarhêner",
 			"George Animal",
 			"Ghybu",
@@ -18,7 +19,7 @@
 	"centralauth-admin-info-locked": "Hatiye astengkirin:",
 	"centralauth-admin-info-registered": "Xweqeydkirin:",
 	"centralauth-admin-info-username": "Navê bikarhêner:",
-	"centralauth-admin-list-blocked": "Hate astengkirin",
+	"centralauth-admin-list-blocked": "Hat astengkirin",
 	"centralauth-admin-list-groups": "Kom",
 	"centralauth-admin-list-legend-ro": "Lîsteya hesabên herêmî",
 	"centralauth-admin-lookup-ro": "Agahiyên bikarhêner bibîne",

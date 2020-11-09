@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"CRCHF",
+			"ChoiChong",
 			"Hello903hello",
 			"Horacewai2",
 			"Liangent",
@@ -71,6 +72,7 @@
 	"centralauth-attach-title": "確認戶口",
 	"centralauth-complete": "戶口統一已經搞掂！",
 	"centralauth-complete-text": "你而家可以響唔使個新戶口嘅情況之下登入任何一個{{int:Centralauth-groupname}}嘅wiki網站。",
+	"centralauth-createlocal-success": "開咗本地戶口。",
 	"centralauth-days-ago": "$1 日前",
 	"centralauth-desc": "響Wikimedia Foundation wiki度[[Special:MergeAccount|合併戶口]]",
 	"centralauth-disabled-dryrun": "戶口統一而家係響示範／除錯模式，噉實際嘅合併動作已經停用。對唔住！",

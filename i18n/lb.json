@@ -121,6 +121,7 @@
 	"centralauth-complete": "D'Vereenheetleche vum Benotzerkont ass fäerdeg.",
 	"centralauth-complete-text": "Dir kënnt Iech elo op all Wiki-Site vun {{int:Centralauth-groupname}} aloggen ouni een neie Benotzerkont opmaachen ze mussen.",
 	"centralauth-completelogin-back": "Zréck op déi vireg Säit",
+	"centralauth-createlocal-reason": "Grond",
 	"centralauth-days-ago": "{{PLURAL:$1|virun 1 Dag| viru(n) $1 Deeg}}",
 	"centralauth-delete-empty-account": "Eidele Benotzerkont",
 	"centralauth-desc": "Benotzerkonten op de Wikie vun  {{int:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]",

@@ -133,6 +133,7 @@
 	"centralauth-complete-text": "Du kan nu logge på på enhver af {{int:Centralauth-groupname}}s wikier uden at oprette en ny konto.",
 	"centralauth-completelogin-back": "Vend tilbage til foregående side.",
 	"centralauth-contribs-locked": "Denne konto er globalt låst. \nSe [[Special:CentralAuth/$1|globale kontodetaljer]] for mere information.",
+	"centralauth-createlocal-success": "Lokal konto oprettet.",
 	"centralauth-createlocal-username": "Globalt kontonavn",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dag|dage}} siden",
 	"centralauth-delete-empty-account": "Tom konto",
