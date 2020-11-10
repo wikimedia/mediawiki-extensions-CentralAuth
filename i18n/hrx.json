@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Iohanen"
+		]
+	},
+	"centralauth-admin-blocklog": "Benutzersperr-Logbuch",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|Beaarvetung|Beaarvetunge}} uff $2",
+	"centralauth-foreign-link": "Benutzer $1 uff $2",
+	"centralauth-merge-method-login": "erstelld dorrich Aanmeldung"
+}
