@@ -63,8 +63,14 @@
 	"centralauth-ro": "Agahiyên hesabê global",
 	"centralauth-uwbr-name": "Navê bikarhêner",
 	"centralauth-uwbr-registration-nodate": "Nenas",
+	"globalrenamequeue-column-rq-newname": "Navê hesabê yê ku tên xwestin",
+	"globalrenamequeue-email-subject-approved": "Daxwaza ji nû ve binavkirina hesabê hat pejirandin",
 	"globalrenamequeue-request-cancel-text": "Betal bike",
 	"globalrenamequeue-request-title": "Bila navê \"$1\" bê guherandin?",
+	"globalrenamerequest": "Daxwazên ji nû ve binavkirinê ji bo hesabê bikarhêneriyê ya gerdûnî",
+	"globalrenamerequest-desc": "Ji nû ve binavkirina hesabê gerdûnî bixwaze.",
 	"globalusers": "Lîsteya bikarhênerên global",
-	"grant-setglobalaccountstatus": "Rewşa hesabê xwe yê global bi rê ve bibe"
+	"grant-setglobalaccountstatus": "Rewşa hesabê xwe yê global bi rê ve bibe",
+	"log-action-filter-gblrights": "Cureyê guhertinê:",
+	"log-action-filter-globalauth": "Cureyê guhertinê:"
 }

@@ -17,7 +17,8 @@
 			"Rachmat.Wahidi",
 			"Rachmat04",
 			"Rex",
-			"Sumbukompor"
+			"Sumbukompor",
+			"William Surya Permana"
 		]
 	},
 	"centralauth": "Manajemen akun global (Otoritas pusat)",
@@ -312,7 +313,7 @@
 	"log-action-filter-suppress-setstatus": "Perubahan status akun global",
 	"mergeaccount": "Status penggabungan log masuk",
 	"right-centralauth-lock": "Kunci atau buka kunci akun global",
-	"right-centralauth-merge": "Menggabungkan akun mereka",
+	"right-centralauth-merge": "Menggabungkan akun sendiri",
 	"right-centralauth-oversight": "Sembunyikan akun global",
 	"right-centralauth-unmerge": "Jangan gabung akun global",
 	"right-globalgroupmembership": "Sunting keanggotaan kelompok global",
