@@ -415,8 +415,12 @@ class CentralAuthUser implements IDBAccessObject {
 			return;
 		}
 		// We need the user id from the database, but this should be checked by the getId accessor.
-
-		wfDebugLog( 'CentralAuthVerbose', "Loading groups for global user {$this->mName}" );
+		wfDebugLog(
+			'CentralAuthVerbose',
+			'Loading groups for global user {user}',
+			'all',
+			[ 'user' => $this->mName ]
+		);
 
 		$db = $this->getSafeReadDB();
 
@@ -456,7 +460,12 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	protected function loadFromDatabase() {
-		wfDebugLog( 'CentralAuthVerbose', "Loading state for global user {$this->mName} from DB" );
+		wfDebugLog(
+			'CentralAuthVerbose',
+			'Loading state for global user {user} from DB',
+			'all',
+			[ 'user' => $this->mName ]
+		);
 
 		$fromMaster = $this->shouldUseMasterDB();
 		$db = $this->getSafeReadDB(); // matches $fromMaster above
@@ -558,8 +567,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array $object
 	 */
 	protected function loadFromCacheObject( array $object ) {
-		wfDebugLog( 'CentralAuthVerbose',
-			"Loading CentralAuthUser for user {$this->mName} from cache object" );
+		wfDebugLog(
+			'CentralAuthVerbose',
+			'Loading CentralAuthUser for user {user} from cache object',
+			'all',
+			[ 'user' => $this->mName ]
+		);
 		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
 		}
@@ -829,11 +842,19 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$ok = $dbw->affectedRows() === 1;
 		if ( $ok ) {
-			wfDebugLog( 'CentralAuth',
-				"registered global account '$this->mName'" );
+			wfDebugLog(
+				'CentralAuth',
+				'registered global account \'{user}\'',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 		} else {
-			wfDebugLog( 'CentralAuth',
-				"registration failed for global account '$this->mName'" );
+			wfDebugLog(
+				'CentralAuth',
+				'registration failed for global account \'{user}\'',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 		}
 
 		// Kill any cache entries saying we don't exist
@@ -1124,9 +1145,19 @@ class CentralAuthUser implements IDBAccessObject {
 		// And we need to match the home wiki before proceeding...
 		$localPassword = $this->getPasswordFromString( $local['password'], $local['id'] );
 		if ( $this->matchHashes( $passwords, $localPassword ) ) {
-			wfDebugLog( 'CentralAuth', "dry run: passed password match to home $home" );
+			wfDebugLog(
+				'CentralAuth',
+				'dry run: passed password match to home {home}',
+				'all',
+				[ 'home' => $home ]
+			);
 		} else {
-			wfDebugLog( 'CentralAuth', "dry run: failed password match to home $home" );
+			wfDebugLog(
+				'CentralAuth',
+				'dry run: failed password match to home {home}',
+				'all',
+				[ 'home' => $home ]
+			);
 			return Status::newFatal( 'centralauth-merge-home-password' );
 		}
 
@@ -1230,8 +1261,12 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( isset( $this->mHomeWiki ) ) {
 			if ( !array_key_exists( $this->mHomeWiki, $migrationSet ) ) {
-				wfDebugLog( 'CentralAuth',
-					"Invalid home wiki specification '$this->mName'@'$this->mHomeWiki'" );
+				wfDebugLog(
+					'CentralAuth',
+					'Invalid home wiki specification \'{user}@{home}\'',
+					'all',
+					[ 'user' => $this->mName, 'home' => $this->mHomeWiki ]
+				);
 				return false;
 			}
 		} else {
@@ -1244,8 +1279,12 @@ class CentralAuthUser implements IDBAccessObject {
 		// like we did in migrationDryRun
 		$homePassword = $this->getPasswordFromString( $home['password'], $home['id'] );
 		if ( $checkHome && !$this->matchHashes( $passwords, $homePassword ) ) {
-			wfDebugLog( 'CentralAuth',
-				"auto migrate: failed password match to home {$this->mHomeWiki}" );
+			wfDebugLog(
+				'CentralAuth',
+				'auto migrate: failed password match to home {home}',
+				'all',
+				[ 'home' => $this->mHomeWiki ]
+			);
 			return false;
 		}
 
@@ -1256,7 +1295,12 @@ class CentralAuthUser implements IDBAccessObject {
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
 		if ( $safe && count( $attach ) !== count( $migrationSet ) ) {
-			wfDebugLog( 'CentralAuth', "Safe auto-migration for '$this->mName' failed" );
+			wfDebugLog(
+				'CentralAuth',
+				'Safe auto-migration for \'{user}\' failed',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 			return false;
 		}
 
@@ -1276,21 +1320,37 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		if ( !$ok ) {
-			wfDebugLog( 'CentralAuth',
-				"attemptedAutoMigration for existing entry '$this->mName'" );
+			wfDebugLog(
+				'CentralAuth',
+				'attemptedAutoMigration for existing entry \'{user}\'',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 			return false;
 		}
 
 		if ( count( $attach ) < count( $migrationSet ) ) {
-			wfDebugLog( 'CentralAuth',
-				"Incomplete migration for '$this->mName'" );
+			wfDebugLog(
+				'CentralAuth',
+				'Incomplete migration for \'{user}\'',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 		} else {
 			if ( count( $migrationSet ) == 1 ) {
-				wfDebugLog( 'CentralAuth',
-					"Singleton migration for '$this->mName' on $homeWiki" );
+				wfDebugLog(
+					'CentralAuth',
+					'Singleton migration for \'{user}\' on {home}',
+					'all',
+					[ 'user' => $this->mName, 'home' => $homeWiki ]
+				);
 			} else {
-				wfDebugLog( 'CentralAuth',
-					"Full automatic migration for '$this->mName'" );
+				wfDebugLog(
+					'CentralAuth',
+					'Full automatic migration for \'{user}\'',
+					'all',
+					[ 'user' => $this->mName ]
+				);
 			}
 		}
 
@@ -1321,8 +1381,12 @@ class CentralAuthUser implements IDBAccessObject {
 		$rows = $this->queryUnattached();
 
 		if ( count( $rows ) == 0 ) {
-			wfDebugLog( 'CentralAuth',
-				"Already fully migrated user '$this->mName'" );
+			wfDebugLog(
+				'CentralAuth',
+				'Already fully migrated user \'{user}\'',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 			return true;
 		}
 
@@ -1338,13 +1402,27 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( $this->matchHash( $password,
 				$this->getPasswordFromString( $row['password'], $row['id'] ) )->isGood()
 			) {
-				wfDebugLog( 'CentralAuth',
-					"Attaching '$this->mName' on $wiki by password" );
+				wfDebugLog(
+					'CentralAuth',
+					'Attaching \'{user}\' on {wiki} by password',
+					'all',
+					[
+						'user' => $this->mName,
+						'wiki' => $wiki
+					]
+				);
 				$this->attach( $wiki, 'password' );
 				$migrated[] = $wiki;
 			} else {
-				wfDebugLog( 'CentralAuth',
-					"No password match for '$this->mName' on $wiki" );
+				wfDebugLog(
+					'CentralAuth',
+					'No password match for \'{user}\' on {wiki}',
+					'all',
+					[
+						'user' => $this->mName,
+						'wiki' => $wiki
+					]
+				);
 				$remaining[] = $wiki;
 			}
 		}
@@ -1352,13 +1430,21 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->endTransaction();
 
 		if ( count( $remaining ) == 0 ) {
-			wfDebugLog( 'CentralAuth',
-				"Successful auto migration for '$this->mName'" );
+			wfDebugLog(
+				'CentralAuth',
+				'Successful auto migration for \'{user}\'',
+				'all',
+				[ 'user' => $this->mName ]
+			);
 			return true;
 		}
 
-		wfDebugLog( 'CentralAuth',
-			"Incomplete migration for '$this->mName'" );
+		wfDebugLog(
+			'CentralAuth',
+			'Incomplete migration for \'{user}\'',
+			'all',
+			[ 'user' => $this->mName ]
+		);
 		return false;
 	}
 
@@ -1488,7 +1574,13 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminDelete( $reason, User $deleter ) {
 		$this->checkWriteMode();
-		wfDebugLog( 'CentralAuth', "Deleting global account for user {$this->mName}" );
+
+		wfDebugLog(
+			'CentralAuth',
+			'Deleting global account for user \'{user}\'',
+			'all',
+			[ 'user' => $this->mName ]
+		);
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$centralDB = CentralAuthUtils::getCentralDB();
 
@@ -1905,13 +1997,21 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->invalidateCache();
 
 		if ( !$success ) {
-			wfDebugLog( 'CentralAuth',
-				"Race condition? Already attached $this->mName@$wikiID, just tried by '$method'" );
+			wfDebugLog(
+				'CentralAuth',
+				'Race condition? Already attached {user}@{wiki}, just tried by \'{method}\'',
+				'all',
+				[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
+			);
 			return;
 		}
 
-		wfDebugLog( 'CentralAuth',
-			"Attaching local user $this->mName@$wikiID by '$method'" );
+		wfDebugLog(
+			'CentralAuth',
+			'Attaching local user {user}@{wiki} by \'{method}\'',
+			'all',
+			[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
+		);
 
 		if ( $sendToRC ) {
 			global $wgCentralAuthRC;
