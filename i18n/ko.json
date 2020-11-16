@@ -39,6 +39,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "사용자가 속한 전역 권한 그룹",
+	"action-centralauth-createlocal": "로컬 계정을 강제로 생성할",
 	"action-centralauth-lock": "통합 계정을 잠그거나 잠금 해제",
 	"action-centralauth-merge": "계정 병합",
 	"action-centralauth-rename": "전역 계정 이름 바꾸기",
@@ -165,6 +166,7 @@
 	"centralauth-contribs-locked-log": "이 계정은 전역으로 잠겨 있습니다.\n해당 사용자의 최신 잠금 기록은 다음과 같습니다:",
 	"centralauth-createlocal-no-global-account": "해당 통합 계정이 없습니다.",
 	"centralauth-createlocal-reason": "이유",
+	"centralauth-createlocal-success": "로컬 계정이 생성되었습니다.",
 	"centralauth-createlocal-username": "통합 계정 이름",
 	"centralauth-days-ago": "$1일 전",
 	"centralauth-delete-empty-account": "빈 계정",
