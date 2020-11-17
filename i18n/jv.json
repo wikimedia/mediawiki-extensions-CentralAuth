@@ -218,7 +218,7 @@
 	"centralauth-merge-method-password": "kakonfirmasi déning tembung sandi",
 	"centralauth-merge-method-password-desc": "Nuduhaké yèn akun lokal mau digabungaké amarga naraguna awèh tembung sandi kang trep mungguh ing akun mau.",
 	"centralauth-merge-method-primary": "Wiki asal",
-	"centralauth-merge-method-primary-desc": "Ini adalah wiki tempat akun pertama kali digabungkan.\nIngat bahwa wiki ini mungkin berbeda dari wiki utama si pengguna.",
+	"centralauth-merge-method-primary-desc": "Iki yaiku wiki papan akun kaping pisanan digabungaké.\nÉlingana manawa wiki iki bokmanawa béda saka wiki utama naraguna iku.",
 	"centralauth-merge-no-accounts": "Ora ana akun kang cocog karo jeneng panjenengan ing tabel dhaptar akun sentral!\nKamungkinan ana karusakan ing basis data.",
 	"centralauth-merge-notlogged": "Mangga <span class=\"plainlinks\">[mlebu log $1]</span> kanggo mesthèkaké yèn akuné panjenengan wis kasil digabungaké.",
 	"centralauth-merge-step1-detail": "Mangga isi tembung sandi akun panjenengan.\nTembung sandi lan alamat layang-èl panjenengan bakal dibandhingaké karo akun ing wiki-wiki liyané kanggo ndhedhes kacocogané.\nOwah-owahan ora bisa dilakoni nganti panjenengan ndhedhes yèn ora ana masalah.",
