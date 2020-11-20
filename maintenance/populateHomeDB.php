@@ -41,6 +41,7 @@ class PopulateHomeDB extends Maintenance {
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$conds = [ 'gu_name > ' . $db->addQuotes( $row->gu_name ) ];
 		} while ( true );
 		$this->output( "done.\n" );
