@@ -58,7 +58,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	}
 
 	/**
-	 * Get the old and new name of a user being renamed (or an emtpy array if
+	 * Get the old and new name of a user being renamed (or an empty array if
 	 * no rename is happening).
 	 *
 	 * This is useful if we have a user specified name, but don't know
