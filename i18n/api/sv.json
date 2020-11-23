@@ -3,6 +3,7 @@
 		"authors": [
 			"Lokal Profil",
 			"Magol",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -51,7 +52,7 @@
 	"apihelp-query+wikisets-param-from": "Namnet på wiki-setet att starta från.",
 	"apihelp-query+wikisets-param-limit": "Antalet wiki-set som ska returneras.",
 	"apihelp-query+wikisets-param-orderbyname": "Sortera resultat efter namn.",
-	"apihelp-query+wikisets-param-prop": "Vilka informationsbitar som ska inkluderas.\n;type:Opt-in-baserad (inkluderar enbart angivna wikis) eller opt-out-baserad (inkluderar all wikis utom de angivna).\n;wikisincluded:The wikis som är inkluderade i detta wiki-set.\n;wikisnotincluded:The wikis som inte är inkluderade i detta wiki-set.",
+	"apihelp-query+wikisets-param-prop": "Vilka informationsbitar som ska inkluderas.\n;type:Opt-in-baserad (inkluderar enbart angivna wikier) eller opt-out-baserad (inkluderar all wikier utom de angivna).\n;wikisincluded:The wikier som är inkluderade i detta wiki-set.\n;wikisnotincluded:The wikier som inte är inkluderade i detta wiki-set.",
 	"apihelp-setglobalaccountstatus-description": "Ställ in en global användares status.",
 	"apihelp-setglobalaccountstatus-example-1": "Lås det globala kontot för [[User:Example]] med anledning \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Lås upp och censurera det globala kontot för [[User:Example]] med motivationen \"I can\"",
