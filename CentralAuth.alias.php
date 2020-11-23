@@ -36,6 +36,7 @@ $specialPageAliases['af'] = [
 /** Arabic (العربية) */
 $specialPageAliases['ar'] = [
 	'CentralAuth' => [ 'تحقق_مركزي' ],
+	'CreateLocalAccount' => [ 'إنشاء_حساب_محلي' ],
 	'MergeAccount' => [ 'دمج_حساب' ],
 	'GlobalGroupMembership' => [ 'صلاحيات_المستخدم_العامة', 'عضوية_المجموعة_العامة' ],
 	'GlobalGroupPermissions' => [ 'سماحات_المجموعة_العامة' ],
