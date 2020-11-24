@@ -54,8 +54,12 @@
 				}
 			]
 		},
-		"CentralAuthTokenSessionProvider": {
-			"class": "CentralAuthTokenSessionProvider",
+		"CentralAuthApiSessionProvider": {
+			"class": "CentralAuthApiSessionProvider",
+			"args": []
+		},
+		"CentralAuthHeaderSessionProvider": {
+			"class": "CentralAuthHeaderSessionProvider",
 			"args": []
 		}
 	},
@@ -243,6 +247,8 @@
 		"ApiCentralAuthToken": "includes/api/ApiCentralAuthToken.php",
 		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
+		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
+		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
 		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php",
 		"CARCFeedFormatter": "includes/rcfeed/CARCFeedFormatter.php",
 		"IRCColourfulCARCFeedFormatter": "includes/rcfeed/IRCColourfulCARCFeedFormatter.php",
@@ -275,7 +281,8 @@
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
-		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php"
+		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php",
+		"CentralAuthTokenSessionProviderTest": "tests/phpunit/CentralAuthTokenSessionProviderTest.php"
 	},
 	"ResourceModules": {
 		"ext.centralauth": {

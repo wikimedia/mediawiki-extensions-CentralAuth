@@ -1110,6 +1110,19 @@ class CentralAuthHooks {
 	 */
 	public static function onBeforePageDisplay( &$out, &$skin ) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
+
+		if ( $out->getRequest()->getSession()->getProvider()
+			instanceof CentralAuthTokenSessionProvider
+		) {
+			// Prevent user scripts and styles when centralauthtoken is in use
+			$out->reduceAllowedModules(
+				ResourceLoaderModule::TYPE_SCRIPTS, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
+			);
+			$out->reduceAllowedModules(
+				ResourceLoaderModule::TYPE_STYLES, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
+			);
+		}
+
 		if ( $out->getUser()->isAnon() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
 				// Let the frontend know if this is a mobile domain, T100413
