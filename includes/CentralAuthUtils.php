@@ -70,7 +70,7 @@ class CentralAuthUtils {
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		return $lbFactory->getMainLB( $wgCentralAuthDatabase )
-			->getConnectionRef( DB_REPLICA, 'centralauth', $wgCentralAuthDatabase );
+			->getConnectionRef( DB_REPLICA, [], $wgCentralAuthDatabase );
 	}
 
 	/**
