@@ -47,6 +47,10 @@ class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider
 			'id' => $id,
 			'userInfo' => UserInfo::newAnonymous(),
 			'persisted' => false,
+			'metadata' => [
+				'error-code' => $code,
+				'error' => $error,
+			],
 		] );
 	}
 

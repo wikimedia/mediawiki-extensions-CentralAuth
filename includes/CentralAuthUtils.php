@@ -169,6 +169,19 @@ class CentralAuthUtils {
 	}
 
 	/**
+	 * Set or reset the session store. If no store is provided,
+	 * a session store will be located based on configuration
+	 * the next time getSessionStore() is called.
+	 *
+	 * This method is intended for use in tests only.
+	 *
+	 * @param BagOStuff|null $store
+	 */
+	public static function setSessionStore( BagOStuff $store = null ) {
+		self::$sessionStore = $store;
+	}
+
+	/**
 	 * Auto-create a user
 	 * @param User $user
 	 * @return StatusValue
