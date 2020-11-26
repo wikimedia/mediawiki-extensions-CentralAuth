@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
+			"Kareyac",
 			"Mechanizatar",
 			"Yury Tarasievich",
 			"Дзяніс Тутэйшы",
@@ -83,6 +84,7 @@
 	"globalgrouppermissions": "Кіраванне глабальнымі групамі",
 	"globalrenameprogress": "Стан чаргі глабальных перайменаванняў",
 	"globalrenamequeue-column-rq-wiki": "Лакальны вікі-праект",
+	"globalrenamequeue-form-status-all": "усе",
 	"globalrenamequeue-request-reason-label": "Агульнадаступны каментарый",
 	"globalrenamerequest": "Запыт на перайменаванне глабальнага ўліковага запісу",
 	"globalusers": "Глабальны спіс удзельнікаў",
