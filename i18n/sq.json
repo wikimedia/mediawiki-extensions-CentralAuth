@@ -229,6 +229,7 @@
 	"centralauth-readonly": "Baza e të dhënave CentralAuth e kyçur",
 	"centralauth-readonlytext": "Baza e të dhënave CentralAuth është aktualisht e kyçur për hyrjet e reja dhe modifikime të tjera, ndoshta për mirëmbajtje rutinë të bazës së të dhënave, pas së cilës do të kthehet sërish në normalitet.",
 	"centralauth-rename-form-reason": "Arsyeja",
+	"centralauth-rename-table-status-done": "U bë",
 	"centralauth-renameuser-merged": "Përdoruesi $1 është shkrirë në sistemin e unifikuar.\nRiemërimi do t'i shkaktojë përdoruesit lokal shkëputjen nga përdoruesi global.",
 	"centralauth-renameuser-reserved": "Përdoruesi $2 është rezervuar për një llogari globale.",
 	"centralauth-rightslog-entry-deleteset": "Grupi-wiki \"$1\" është grisur",
