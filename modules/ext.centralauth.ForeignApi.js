@@ -89,6 +89,9 @@
 	 */
 	CentralAuthForeignApi.prototype.checkForeignLogin = function () {
 		var foreignApi = this;
+		if ( this.foreignLoginPromise ) {
+			return this.foreignLoginPromise;
+		}
 		return CentralAuthForeignApi.parent.prototype.ajax.call(
 			this,
 			{ action: 'query', meta: 'userinfo|tokens' },

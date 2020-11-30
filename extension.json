@@ -361,7 +361,10 @@
 			]
 		},
 		"ext.centralauth.ForeignApi": {
-			"scripts": "ext.centralauth.ForeignApi.js",
+			"scripts": [
+				"ext.centralauth.ForeignApi.js",
+				"ext.centralauth.ForeignRest.js"
+			],
 			"dependencies": [
 				"mediawiki.ForeignApi.core"
 			],
@@ -389,7 +392,10 @@
 	"QUnitTestModule": {
 		"localBasePath": "",
 		"remoteExtPath": "CentralAuth",
-		"scripts": "tests/qunit/ext.centralauth.ForeignApi.test.js",
+		"scripts": [
+			"tests/qunit/ext.centralauth.ForeignApi.test.js",
+			"tests/qunit/ext.centralauth.ForeignRest.test.js"
+		],
 		"dependencies": [
 			"ext.centralauth.ForeignApi"
 		]
