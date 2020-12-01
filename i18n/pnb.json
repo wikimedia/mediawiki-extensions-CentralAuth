@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abbas dhothar",
 			"Khalid Mahmood"
 		]
 	},
@@ -245,5 +246,5 @@
 	"right-centralauth-oversight": "گلوبل کھاتہ دبادیو",
 	"right-centralauth-unmerge": "گلوبل کھاتہ وکھرا کرو",
 	"right-globalgroupmembership": "گلوبل گروپاں دی سنگت تبدیل کرو",
-	"right-globalgrouppermissions": "کلوبل ٹولیاں نون ویکھو"
+	"right-globalgrouppermissions": "گلوبل ٹولیاں نون ویکھو"
 }
