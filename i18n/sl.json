@@ -277,7 +277,7 @@
 	"centralauth-merge-notlogged": "Prosimo, <span class=\"plainlinks\">[$1 prijavite se]</span>, da preverite, ali so bili vaši računi v celoti združeni.",
 	"centralauth-merge-step1-detail": "Prosimo, vnesite geslo svojega računa.\nVaše geslo in vpisani e-poštni naslov bosta primerjana z računi na drugih wikijih, da se potrdi njihovo ujemanje.\nDokler ne potrdite, da so vse stvari v redu, se ne bo shranila nobena sprememba.",
 	"centralauth-merge-step1-submit": "Potrdi prijavne podatke",
-	"centralauth-merge-step1-title": "Začni s poenotenjem prijave",
+	"centralauth-merge-step1-title": "Začni poenotenje prijave",
 	"centralauth-merge-step2-detail": "Nekateri računi ne morejo biti samodejno povezani z določenim domačim wikijem.\nČe ti računi pripadajo vam, lahko potrdite njihovo lastništvo z vpisom njihovega gesla.",
 	"centralauth-merge-step2-submit": "Potrdi prijavne podatke",
 	"centralauth-merge-step2-title": "Potrdite več računov",
