@@ -133,6 +133,7 @@
 	"centralauth-completelogin-back": "Tuèrne 'a pàgene d'apprime.",
 	"centralauth-contribs-locked": "Stu cunde jè bloccate globbalmende.\n'Ndruche [[Special:CentralAuth/$1||dettaglie d'u cunde globbale]] pe cchiù 'mbormaziune.",
 	"centralauth-contribs-locked-log": "Stu utende jè correndemende bloccate.\nL'urteme archivije de le bloccaminde se iacche aqquà sotte pe referimende:",
+	"centralauth-createlocal-reason": "Mutive",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|sciurne|sciurne}} fà",
 	"centralauth-delete-empty-account": "Cunde vacande",
 	"centralauth-desc": "[[Special:MergeAccount|Merge account]] 'mbrà uicchi de {{int:Centralauth-groupname}}",
