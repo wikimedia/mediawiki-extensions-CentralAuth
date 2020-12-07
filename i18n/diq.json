@@ -142,7 +142,7 @@
 	"centralauth-editgroup-member": "Namey ezanê grubiyê lokali",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|vurnayîşî]])",
 	"centralauth-editgroup-members": "Listeyê ezayî:",
-	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|listeyanê karaberanî ke pê heqa $2]]",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|Lista karberanê be heqê $2]]",
 	"centralauth-editgroup-name": "Nameyê grupî:",
 	"centralauth-editgroup-nonexistent": "Global grube \"$1\" enewke mewcud niya.",
 	"centralauth-editgroup-noset": "(çiniyo)",

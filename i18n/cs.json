@@ -11,6 +11,7 @@
 			"Matěj Suchánek",
 			"Michaelbrabec",
 			"Mormegil",
+			"Patriccck",
 			"Polda18"
 		]
 	},
@@ -326,7 +327,7 @@
 	"centralauth-rename-form-reason": "Důvod",
 	"centralauth-rename-form-suppressredirects": "Nevytvářet přesměrování",
 	"centralauth-rename-globaleditcount-threshold": "Tento uživatel provedl více než {{PLURAL:$1|jednu editaci|$1 editace|$1 editací}}. Prosím potvrďte, že jste si jisti tím, že chcete tohoto uživatele přejmenovat a že systémový administrátor je připraven sledovat toto přejmenování.",
-	"centralauth-rename-movelog": "Automatické přesunutí stránky kvůli přejmenování uživatele „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
+	"centralauth-rename-movelog": "automatické přesunutí stránky z důvodu přejmenování uživatele „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-notinprogress": "U uživatele $1 neprobíhá žádné přejmenování. Možná už bylo dokončeno.",
 	"centralauth-rename-notinstalled": "Není nainstalováno rozšíření Renameuser.",
 	"centralauth-rename-progress-fieldset": "Seznam místních účtů",
