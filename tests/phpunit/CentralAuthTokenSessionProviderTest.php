@@ -1,24 +1,21 @@
 <?php
 
-use MediaWiki\Api\ApiHookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\NullSpi;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;
-use MediaWiki\Session\SessionManager;
 use MediaWiki\User\UserFactory;
 use PHPUnit\Framework\MockObject\MockObject;
-use Psr\Log\NullLogger;
 
 /**
  * @covers CentralAuthTokenSessionProvider
  * @group medium
  * @group Database
  */
-class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
+abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 
 	/** @var BagOStuff */
-	private $sessionStore;
+	protected $sessionStore;
 
 	/** @var int */
 	private $idCounter = 0;
@@ -34,10 +31,6 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$this->setUserLang( 'qqx' );
 		LoggerFactory::registerProvider( new NullSpi() );
 
-		if ( !defined( 'MW_API' ) ) {
-			define( 'MW_API', 'test' );
-		}
-
 		$this->sessionStore = new HashBagOStuff();
 		CentralAuthUtils::setSessionStore( $this->sessionStore );
 
@@ -46,11 +39,14 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$this->setMwGlobals( 'wgHooks', $GLOBALS[ 'wgHooks' ] );
 	}
 
-	private function assertSessionInfoError(
+	protected function assertSessionInfoError(
+		WebRequest $request,
 		?SessionInfo $result,
 		string $error = null,
 		string $code = null
 	) {
+		$this->assertNotNull( $result );
+
 		$data = $result->getProviderMetadata();
 		$this->assertIsArray( $data );
 		$this->assertArrayHasKey( 'error', $data );
@@ -65,7 +61,7 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		}
 	}
 
-	private function assertSessionInfoOk( ?SessionInfo $result ) {
+	protected function assertSessionInfoOk( ?SessionInfo $result ) {
 		$data = $result->getProviderMetadata();
 		if ( $data !== null ) {
 			$this->assertArrayNotHasKey( 'error', $data, $data['error'] ?? '' );
@@ -75,44 +71,9 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotNull( $result->getUserInfo() );
 	}
 
-	private function assertErrorFromApiBeforeMain( WebRequest $request, $error ) {
-		$context = new RequestContext();
-		$context->setRequest( $request );
-		$processor = new ApiMain( RequestContext::getMain(), true );
+	abstract protected function newSessionProvider();
 
-		try {
-			Hooks::runner()->onApiBeforeMain( $processor );
-			$this->fail( 'Expected ApiUsageException' );
-		} catch ( ApiUsageException $ex ) {
-			$this->assertSame( $error, $ex->getMessageObject()->getKey() );
-		}
-	}
-
-	private function newSessionProvider() {
-		$config = new HashConfig( [
-			'SecretKey' => 'hunter2',
-		] );
-
-		$logger = new NullLogger();
-
-		$hookContainer = $this->getServiceContainer()->getHookContainer();
-
-		$manager = new SessionManager( [
-			'config' => $config,
-			'logger' => $logger,
-			'store' => $this->sessionStore,
-			'hookContainer' => $hookContainer
-		] );
-
-		$provider = new CentralAuthTokenSessionProvider();
-		$provider->setLogger( $logger );
-		$provider->setConfig( $config );
-		$provider->setManager( $manager );
-		$provider->setHookContainer( $hookContainer );
-		return $provider;
-	}
-
-	private function makeValidToken( $data = [] ) {
+	protected function makeValidToken( $data = [] ) {
 		// NOTE: logic stolen from ApiCentralAuthToken
 
 		$data += [
@@ -135,7 +96,7 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 	 *
 	 * @return MockObject|User
 	 */
-	private function makeUser( $id, $name ) {
+	protected function makeUser( $id, $name ) {
 		/** @var MockObject|CentralAuthUser $caUser */
 		$user = $this->createNoOpMock( User::class, [
 			'getName', 'getId', 'isAnon'
@@ -170,7 +131,7 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 	 *
 	 * @return MockObject|CentralAuthUser
 	 */
-	private function makeCentralAuthUser( $name, $return = [], $methods = [] ) {
+	protected function makeCentralAuthUser( $name, $return = [], $methods = [] ) {
 		$id = ++$this->idCounter;
 
 		$methods += [
@@ -209,6 +170,8 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		return $caUser;
 	}
 
+	abstract protected function makeRequest( $token );
+
 	public function testProvideSessinInfo_noToken() {
 		$provider = $this->newSessionProvider();
 		$request = new FauxRequest();
@@ -220,10 +183,9 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 	public function testProvideSessinInfo_unknownToken() {
 		$provider = $this->newSessionProvider();
 
-		$request = new FauxRequest( [ 'centralauthtoken' => 'bogus' ] );
+		$request = $this->makeRequest( 'bogus' );
 		$result = $provider->provideSessionInfo( $request );
-		$this->assertSessionInfoError( $result, 'apierror-centralauth-badtoken', 'badtoken' );
-		$this->assertErrorFromApiBeforeMain( $request, 'apierror-centralauth-badtoken' );
+		$this->assertSessionInfoError( $request, $result, 'apierror-centralauth-badtoken', 'badtoken' );
 	}
 
 	public function testProvideSessinInfo() {
@@ -231,7 +193,7 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
 		$provider = $this->newSessionProvider();
 
-		$request = new FauxRequest( [ 'centralauthtoken' => $token ] );
+		$request = $this->makeRequest( $token );
 		$result = $provider->provideSessionInfo( $request );
 		$this->assertSessionInfoOk( $result );
 
@@ -274,30 +236,9 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
 		$provider = $this->newSessionProvider();
 
-		$request = new FauxRequest( [ 'centralauthtoken' => $token ] );
+		$request = $this->makeRequest( $token );
 		$result = $provider->provideSessionInfo( $request );
-		$this->assertSessionInfoError( $result, $error, $code );
-		$this->assertErrorFromApiBeforeMain( $request, $error );
-	}
-
-	private function runApiCheckCanExecute( WebRequest $request ) {
-		$user = $this->makeUser( 0, 'anon' );
-
-		$context = new RequestContext();
-		$context->setRequest( $request );
-		$context->setUser( $user );
-
-		$main = new ApiMain();
-		$main->setContext( $context );
-
-		$module = new ApiHelp( $main, 'help' );
-
-		$runner = new ApiHookRunner( $this->getServiceContainer()->getHookContainer() );
-
-		$message = 'hookaborted';
-		$ok = $runner->onApiCheckCanExecute( $module, $user, $message );
-
-		$this->assertTrue( $ok );
+		$this->assertSessionInfoError( $request, $result, $error, $code );
 	}
 
 	public function testCannotReuseToken() {
@@ -305,17 +246,13 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
 		$provider = $this->newSessionProvider();
 
-		$request = new FauxRequest( [ 'centralauthtoken' => $token ] );
+		$request = $this->makeRequest( $token );
 		$result = $provider->provideSessionInfo( $request );
 		$this->assertSessionInfoOk( $result );
 
-		// consume token!
-		$this->runApiCheckCanExecute( $request );
-
 		// the token should now be unknown
 		$result = $provider->provideSessionInfo( $request );
-		$this->assertSessionInfoError( $result, 'apierror-centralauth-badtoken', 'badtoken' );
-		$this->assertErrorFromApiBeforeMain( $request, 'apierror-centralauth-badtoken' );
+		$this->assertSessionInfoError( $request, $result, 'apierror-centralauth-badtoken', 'badtoken' );
 	}
 
 	public function testInvalidateSessionForUser() {
@@ -335,11 +272,10 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 
 		$provider->preventSessionsForUser( $user->getName() );
 
-		$request = new FauxRequest( [ 'centralauthtoken' => $token ] );
+		$request = $this->makeRequest( $token );
 		$result = $provider->provideSessionInfo( $request );
 
-		$this->assertSessionInfoError( $result, 'apierror-centralauth-badtoken', 'badtoken' );
-		$this->assertErrorFromApiBeforeMain( $request, 'apierror-centralauth-badtoken' );
+		$this->assertSessionInfoError( $request, $result, 'apierror-centralauth-badtoken', 'badtoken' );
 	}
 
 	public function testUserScriptsDisabled() {
@@ -377,17 +313,6 @@ class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 			ResourceLoaderModule::ORIGIN_USER_SITEWIDE,
 			$out->getAllowedModules( ResourceLoaderModule::TYPE_STYLES )
 		);
-	}
-
-	public function testApiParameterDeclared() {
-		// hook is registered dynamically when creating the SessionProvider
-		$this->newSessionProvider();
-
-		$this->setMwGlobals( 'wgCentralAuthCookies', true );
-		$main = new ApiMain();
-
-		$params = $main->getFinalParams();
-		$this->assertArrayHasKey( 'centralauthtoken', $params );
 	}
 
 }
