@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Session\SessionInfo;
 
 /**
@@ -11,15 +12,10 @@ use MediaWiki\Session\SessionInfo;
  * bogus SessionInfo and hooks ApiBeforeMain to throw an appropriate exception
  * later when MediaWiki is ready to handle it.
  */
-class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
-
-	public function __construct() {
-		global $wgHooks;
-
-		parent::__construct();
-
-		$wgHooks['APIGetAllowedParams'][] = $this;
-	}
+class CentralAuthApiSessionProvider
+	extends CentralAuthTokenSessionProvider
+	implements ApiCheckCanExecuteHook
+	{
 
 	/**
 	 * @param WebRequest $request
@@ -43,14 +39,12 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 	 * @return SessionInfo
 	 */
 	protected function makeBogusSessionInfo( $code, $error ) {
-		global $wgHooks;
-
 		// Schedule the throwing of the exception for later when the API
 		// is ready to catch it.
 		$exception = \ApiUsageException::newWithMessage( null, $error, $code );
-		$wgHooks['ApiBeforeMain'][] = function () use ( $exception ) {
+		$this->getHookContainer()->register( 'ApiBeforeMain', function () use ( $exception ) {
 			throw $exception;
-		};
+		} );
 
 		return parent::makeBogusSessionInfo( $code, $error );
 	}
@@ -73,32 +67,8 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 	 * @return bool
 	 */
 	protected function consumeToken( $token ) {
-		global $wgHooks;
-
 		// Delete the token once it's actually used
-		$wgHooks['ApiCheckCanExecute'][] = $this;
-		return true;
-	}
-
-	/**
-	 * Inject the "centralauthtoken" parameter into the API
-	 * @param ApiBase &$module API module
-	 * @param array &$params Array of parameter specifications
-	 * @param int $flags
-	 * @return bool
-	 */
-	public function onAPIGetAllowedParams( &$module, &$params, $flags ) {
-		global $wgCentralAuthCookies;
-		if ( !$wgCentralAuthCookies ) {
-			return true;
-		}
-
-		if ( $module instanceof ApiMain ) {
-			$params['centralauthtoken'] = [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_SENSITIVE => true,
-			];
-		}
+		$this->getHookContainer()->register( 'ApiCheckCanExecute', $this );
 		return true;
 	}
 

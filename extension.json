@@ -401,6 +401,7 @@
 		"AbuseFilter-generateUserVars": "CentralAuthHooks::abuseFilterGenerateUserVars",
 		"AbuseFilterShouldFilterAction": "CentralAuthHooks::onAbuseFilterShouldFilterAction",
 		"ApiQueryTokensRegisterTypes": "CentralAuthHooks::onApiQueryTokensRegisterTypes",
+		"APIGetAllowedParams": "CentralAuthHooks::onAPIGetAllowedParams",
 		"BeforePageDisplay": "CentralAuthHooks::onBeforePageDisplay",
 		"ContentSecurityPolicyDefaultSource": "CentralAuthHooks::onContentSecurityPolicyDefaultSource",
 		"ContentSecurityPolicyScriptSource": "CentralAuthHooks::onContentSecurityPolicyScriptSource",

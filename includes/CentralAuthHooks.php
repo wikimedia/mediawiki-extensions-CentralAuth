@@ -1539,6 +1539,28 @@ class CentralAuthHooks {
 	}
 
 	/**
+	 * Inject the "centralauthtoken" parameter into the API
+	 * @param ApiBase $module API module
+	 * @param array &$params Array of parameter specifications
+	 * @param int $flags
+	 * @return bool
+	 */
+	public static function onAPIGetAllowedParams( $module, &$params, $flags ) {
+		global $wgCentralAuthCookies;
+		if ( !$wgCentralAuthCookies ) {
+			return true;
+		}
+
+		if ( $module instanceof ApiMain ) {
+			$params['centralauthtoken'] = [
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_SENSITIVE => true,
+			];
+		}
+		return true;
+	}
+
+	/**
 	 * @param string $type
 	 * @param WebRequest $request
 	 * @param string[] &$qc

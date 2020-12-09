@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use Psr\Log\NullLogger;
@@ -11,12 +12,17 @@ use Psr\Log\NullLogger;
  */
 class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderTest {
 
+	/** @var \MediaWiki\HookContainer\HookContainer */
+	private $hookContainer;
+
 	public function setUp(): void {
 		parent::setUp();
 
 		if ( !defined( 'MW_API' ) ) {
 			define( 'MW_API', 'TEST' );
 		}
+
+		$this->hookContainer = $this->createHookContainer();
 	}
 
 	protected function makeRequest( $token ) {
@@ -39,7 +45,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$processor = new ApiMain( RequestContext::getMain(), true );
 
 		try {
-			Hooks::runner()->onApiBeforeMain( $processor );
+			( new HookRunner( $this->hookContainer ) )->onApiBeforeMain( $processor );
 			$this->fail( 'Expected ApiUsageException' );
 		} catch ( ApiUsageException $ex ) {
 			$this->assertSame( $error, $ex->getMessageObject()->getKey() );
@@ -53,20 +59,18 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 
 		$logger = new NullLogger();
 
-		$hookContainer = $this->getServiceContainer()->getHookContainer();
-
 		$manager = new SessionManager( [
 			'config' => $config,
 			'logger' => $logger,
 			'store' => $this->sessionStore,
-			'hookContainer' => $hookContainer
+			'hookContainer' => $this->hookContainer
 		] );
 
 		$provider = new CentralAuthApiSessionProvider();
 		$provider->setLogger( $logger );
 		$provider->setConfig( $config );
 		$provider->setManager( $manager );
-		$provider->setHookContainer( $hookContainer );
+		$provider->setHookContainer( $this->hookContainer );
 		return $provider;
 	}
 
@@ -85,10 +89,8 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 			->onlyMethods( [ 'execute' ] )
 			->getMock();
 
-		$hookContainer = $this->getServiceContainer()->getHookContainer();
-
 		$message = 'hookaborted';
-		$ok = $hookContainer->run( 'ApiCheckCanExecute', [ $module, $user, &$message ] );
+		$ok = $this->hookContainer->run( 'ApiCheckCanExecute', [ $module, $user, &$message ] );
 
 		$this->assertTrue( $ok );
 	}
@@ -113,11 +115,15 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$this->assertSessionInfoError( $request, $result, 'apierror-centralauth-badtoken', 'badtoken' );
 	}
 
+	/**
+	 * @covers CentralAuthHooks::onAPIGetAllowedParams
+	 */
 	public function testApiParameterDeclared() {
 		// hook is registered dynamically when creating the SessionProvider
 		$this->newSessionProvider();
 
 		$this->setMwGlobals( 'wgCentralAuthCookies', true );
+
 		$main = new ApiMain();
 
 		$params = $main->getFinalParams();
