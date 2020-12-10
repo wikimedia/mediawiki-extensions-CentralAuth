@@ -539,7 +539,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->msg( 'centralauth-admin-unattached' )->parse();
 		} else {
 			$html = Xml::openElement( 'td',
-				[ 'data-sort-value' => htmlspecialchars( $attachedTimestamp ) ] ) .
+				[ 'data-sort-value' => $attachedTimestamp ] ) .
 				// visible date and time in users preference
 				htmlspecialchars( $this->getLanguage()->timeanddate( $attachedTimestamp, true ) );
 		}
@@ -698,7 +698,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function getRestrictionListHTML( array $row ) {
 		$count = array_reduce( $row['block-restrictions'], function ( $carry, $restriction ) {
-			$carry[$restriction->getType()] = $carry[$restriction->getType()] + 1;
+			$carry[$restriction->getType()] += 1;
 			return $carry;
 		}, [
 			PageRestriction::TYPE => 0,
@@ -875,6 +875,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 			Xml::buildForm(
 				[ 'centralauth-admin-reason' => Xml::input( 'reason',
 					false, false, [ 'id' => "{$action}-reason" ] ) ],
@@ -941,6 +942,7 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
 
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 		$form .= Xml::buildForm(
 			[
 				'centralauth-admin-status-locked' => $radioLocked,

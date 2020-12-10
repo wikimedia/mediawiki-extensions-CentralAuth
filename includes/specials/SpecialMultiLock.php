@@ -229,6 +229,7 @@ class SpecialMultiLock extends SpecialPage {
 		$botField = Xml::check( 'markasbot' ) .
 			$this->msg( 'centralauth-admin-multi-botcheck' )->parse();
 
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 		$form .= Xml::buildForm(
 			[
 				'centralauth-admin-status-locked' => $radioLocked,
