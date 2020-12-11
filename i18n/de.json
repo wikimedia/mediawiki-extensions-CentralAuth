@@ -151,7 +151,7 @@
 	"centralauth-contribs-locked": "Dieses Benutzerkonto ist global gesperrt.\nSiehe die [[Special:CentralAuth/$1|Einzelheiten zum globalen Benutzerkonto]] für weitere Informationen.",
 	"centralauth-contribs-locked-log": "Dieses Benutzerkonto ist global gesperrt.\nEs folgt der aktuellste Eintrag aus dem Sperr-Logbuch:",
 	"centralauth-createlocal-already-exists": "Für das angegebene globale Benutzerkonto gibt es bereits ein lokales Benutzerkonto.",
-	"centralauth-createlocal-logentry": "zwangsweose ein lokales Benutzerkonto für $1 erstellt",
+	"centralauth-createlocal-logentry": "zwangsweise ein lokales Benutzerkonto für $1 {{GENDER:$2|erstellt}}",
 	"centralauth-createlocal-no-global-account": "Ein solches globales Benutzerkonto gibt es nicht.",
 	"centralauth-createlocal-pretext": "Verwende dieses Formular, um ein lokales Benutzerkonto für ein globales Benutzerkonto zu erstellen, wenn der Benutzer aus irgendeinem Grund nicht in der Lage ist, dies selbst zu tun.",
 	"centralauth-createlocal-reason": "Grund",
