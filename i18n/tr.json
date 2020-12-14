@@ -162,7 +162,7 @@
 	"centralauth-contribs-locked": "Bu hesap küresel olarak kilitlendi. \nDaha fazla bilgi için [[Special:CentralAuth/$1|küresel hesap ayrıntılarına]] bakınız.",
 	"centralauth-contribs-locked-log": "Bu hesap küresel olarak kilitlendi.\nEn son kilit günlüğü girişi referans olarak aşağıda verilmiştir:",
 	"centralauth-createlocal-already-exists": "Belirtilen küresel hesap için zaten yerel bir hesap var.",
-	"centralauth-createlocal-logentry": "$1 için zorla yerel bir hesap oluşturdu",
+	"centralauth-createlocal-logentry": "$1 için zorla yerel bir hesap {{GENDER:$2|oluşturdu}}",
 	"centralauth-createlocal-no-global-account": "Böyle bir küresel hesap yok.",
 	"centralauth-createlocal-pretext": "Herhangi bir nedenle kendi başlarına yapamazlarsa, küresel bir hesap için yerel bir hesap oluşturmak için bu formu kullanabilirsiniz.",
 	"centralauth-createlocal-reason": "Sebep",

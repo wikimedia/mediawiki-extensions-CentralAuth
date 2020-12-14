@@ -33,7 +33,7 @@
 	"apihelp-globaluserrights-param-user": "Глобальне ім'я користувача.",
 	"apihelp-globaluserrights-param-userid": "ID глобального користувача.",
 	"apihelp-globaluserrights-summary": "Додати/вилучити користувача до/з глобальних груп.",
-	"apihelp-main-param-centralauthtoken": "При доступі до API з використанням міждоменного AJAX-запиту (CORS), використовуйте це для авторизації як поточного SUL-користувача. Використовуйте <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> у цій вікі, аби вивести токен, перш ніж здійснювати запит CORS. Кожен токен можна використати лише раз, через 10 секунд він стає недійсним. Це має бути включено в будь-який попередній запит, і, зважаючи на це, — у запитуваний URI (не в POST-тіло).",
+	"apihelp-main-param-centralauthtoken": "При доступі до API з використанням міждоменного AJAX-запиту (CORS), використовуйте це для автентифікації як поточний SUL-користувач. Використовуйте <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> у цій вікі, аби вивести токен, перш ніж здійснювати запит CORS. Кожен токен можна використати лише раз, через 10 секунд він стає недійсним. Це має бути включено в будь-який попередній запит, і, зважаючи на це, — у запитуваний URI (не в POST-тіло).",
 	"apihelp-query+globalallusers-description": "Перелічити всіх глобальних користувачів.",
 	"apihelp-query+globalallusers-example-1": "Вивести список глобальних користувачів",
 	"apihelp-query+globalallusers-example-2": "Показати інформацію про користувачів, що починаються з «ABC»",

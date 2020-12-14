@@ -153,7 +153,7 @@
 	"centralauth-contribs-locked": "Questo utente è bloccato globalmente.\nVedi i [[Special:CentralAuth/$1|dettagli dell'utenza globale]] per ulteriori informazioni.",
 	"centralauth-contribs-locked-log": "Questo utente è bloccato globalmente.\nL'ultimo elemento del registro dei blocchi è riportato di seguito per informazione:",
 	"centralauth-createlocal-already-exists": "Un'utenza locale già esiste per l'utenza globale indicata.",
-	"centralauth-createlocal-logentry": "ha forzato la creazione di un'utenza locale per $1",
+	"centralauth-createlocal-logentry": "ha forzato la {{GENDER:$2|creazione}} di un'utenza locale per $1",
 	"centralauth-createlocal-no-global-account": "L'utenza globale specificata non esiste.",
 	"centralauth-createlocal-pretext": "Con questo modulo puoi creare un'utenza locale per un'utenza globale nel caso in cui l'utente si ritrovi impossibilitato a farlo da sé per un motivo o per un altro.",
 	"centralauth-createlocal-reason": "Motivo",

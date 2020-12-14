@@ -184,7 +184,7 @@
 	"centralauth-contribs-locked": "Ce compte est verrouillé globalement.\nVoyez [[Special:CentralAuth/$1|les détails du compte global]] pour plus d’information.",
 	"centralauth-contribs-locked-log": "Ce compte est verrouillé globalement.\nLa dernière entrée du journal des blocages est fournie ci-dessous à titre d’information :",
 	"centralauth-createlocal-already-exists": "Il y a déjà un compte local pour le compte global spécifié.",
-	"centralauth-createlocal-logentry": "créer de force un compte local pour $1",
+	"centralauth-createlocal-logentry": "un compte local a été {{GENDER:$2|créé}} de force pour $1",
 	"centralauth-createlocal-no-global-account": "Il n’y a pas de tel compte global.",
 	"centralauth-createlocal-pretext": "Vous pouvez utiliser ce formulaire pour créer un compte local pour un compte global, s’ils ne peuvent pas le faire eux-mêmes pour une raison quelconque.",
 	"centralauth-createlocal-reason": "Motif",
