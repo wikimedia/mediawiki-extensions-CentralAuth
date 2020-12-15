@@ -185,7 +185,7 @@
 	"centralauth-contribs-locked": "Esta cuenta está bloqueada globalmente.\nConsulta los [[Special:CentralAuth/$1|detalles de cuenta global]] para más información.",
 	"centralauth-contribs-locked-log": "Esta cuenta está bloqueada globalmente.\nComo referencia, a continuación se muestra la última entrada del registro de bloqueos:",
 	"centralauth-createlocal-already-exists": "Ya existe una cuenta local para la cuenta global especificada.",
-	"centralauth-createlocal-logentry": "se creó forzosamente una cuenta local para $1",
+	"centralauth-createlocal-logentry": "se {{GENDER:$2|creó}} forzosamente una cuenta local para $1",
 	"centralauth-createlocal-no-global-account": "No existe esa cuenta global.",
 	"centralauth-createlocal-pretext": "Se puede utilizar este formulario para crear una cuenta local para una cuenta global si por cualquier motivo el titular no lo puede hacer por sí mismo/a.",
 	"centralauth-createlocal-reason": "Razón",
