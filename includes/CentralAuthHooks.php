@@ -1697,6 +1697,7 @@ class CentralAuthHooks {
 		$db->tablePrefix( $originalPrefix );
 	}
 
+	/** @var string[] */
 	public static $centralauthTables = [
 		'global_group_permissions',
 		'global_group_restrictions',

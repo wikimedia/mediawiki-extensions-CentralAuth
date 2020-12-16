@@ -90,7 +90,7 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	/**
 	 * Formats a row
-	 * @param object $row The row to be formatted for output
+	 * @param stdClass $row The row to be formatted for output
 	 * @return string HTML li element with username and info about this user
 	 */
 	public function formatRow( $row ) {
