@@ -77,12 +77,12 @@ class CentralAuthTestUser {
 
 	/**
 	 * Array of attachments to insert into localuser
-	 * @var array of arrays
+	 * @var array[]
 	 */
 	private $wikis;
 
 	/**
-	 * If we should create the local wiki user too. Usually we do, but
+	 * @var bool If we should create the local wiki user too. Usually we do, but
 	 * sometimes we want to test when it doesn't.
 	 */
 	private $createLocal;
@@ -91,7 +91,7 @@ class CentralAuthTestUser {
 	 * @param string $username
 	 * @param string $password password for the account
 	 * @param array $attrs associative array of global user attributs
-	 * @param array $wikis array of arrays of wiki, attachement method
+	 * @param array[] $wikis array of arrays of wiki, attachement method
 	 * @param bool $createLocal
 	 */
 	public function __construct(

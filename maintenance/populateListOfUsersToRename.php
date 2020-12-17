@@ -20,7 +20,9 @@ require_once "$IP/maintenance/Maintenance.php";
  * notifications to users who are going to lose their accounts.
  */
 class PopulateListOfUsersToRename extends Maintenance {
+	/** @var string|null */
 	private $lName = '';
+	/** @var string|null */
 	private $lWiki = '';
 
 	public function __construct() {

@@ -33,16 +33,27 @@ class GlobalRenameRequest {
 	public const APPROVED = 'approved';
 	public const REJECTED = 'rejected';
 
+	/** @var int|null */
 	protected $id;
+	/** @var string|null */
 	protected $name;
+	/** @var string|null */
 	protected $wiki;
+	/** @var string|null */
 	protected $newName;
+	/** @var string|null */
 	protected $reason;
+	/** @var string|null */
 	protected $requested;
+	/** @var string|null */
 	protected $status;
+	/** @var string|null */
 	protected $completed;
+	/** @var int|null */
 	protected $deleted;
+	/** @var int|null */
 	protected $performer;
+	/** @var string|null */
 	protected $comments;
 
 	/**

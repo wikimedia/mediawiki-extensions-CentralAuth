@@ -109,7 +109,7 @@ class SpecialMultiLock extends SpecialPage {
 	 *
 	 * @param string[] $usernames
 	 * @param bool $fromMaster
-	 * @return (CentralAuthUser|string|bool)[] User object, a HTML error string, or false.
+	 * @return (CentralAuthUser|string|false)[] User object, a HTML error string, or false.
 	 */
 	private function getGlobalUsers( $usernames, $fromMaster = false ) {
 		$ret = [];

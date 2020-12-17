@@ -440,7 +440,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$sets = [];
 		foreach ( $resSets as $row ) {
-			/* @var object $row */
+			/* @var stdClass $row */
 			$sets[$row->ggr_group] = WikiSet::newFromRow( $row );
 		}
 
@@ -1117,7 +1117,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
 	 * @param array &$methods on success, associative array of each wiki's attachment method	 *
-	 * @return Status object
+	 * @return Status
 	 */
 	public function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
@@ -1590,7 +1590,7 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'lu_name' => $this->mName ], __METHOD__ );
 		$name = $this->getName();
 		foreach ( $localUserRes as $localUserRow ) {
-			/** @var $localUserRow object */
+			/** @var stdClass $localUserRow */
 			$wiki = $localUserRow->lu_wiki;
 			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$lb = $lbFactory->getMainLB( $wiki );
@@ -2238,7 +2238,7 @@ class CentralAuthUser implements IDBAccessObject {
 				continue;
 			}
 
-			/** @var $row object */
+			/** @var stdClass $row */
 			$dbs[] = $row->ln_wiki;
 		}
 
@@ -2376,7 +2376,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$wikis = [];
 		foreach ( $result as $row ) {
-			/** @var $row object */
+			/** @var stdClass $row */
 			$wikis[] = $row->lu_wiki;
 		}
 
@@ -2527,7 +2527,7 @@ class CentralAuthUser implements IDBAccessObject {
 				continue;
 			}
 
-			/** @var $row object */
+			/** @var stdClass $row */
 			$wikis[$row->lu_wiki] = [
 				'wiki' => $row->lu_wiki,
 				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
@@ -3006,7 +3006,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$groups = [];
 
 		foreach ( $res as $row ) {
-			/** @var $row object */
+			/** @var stdClass $row */
 			$groups[] = $row->ggp_group;
 		}
 
@@ -3026,7 +3026,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$rights = [];
 
 		foreach ( $res as $row ) {
-			/** @var $row object */
+			/** @var stdClass $row */
 			$rights[] = $row->ggp_permission;
 		}
 
@@ -3055,7 +3055,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$rights = [];
 
 		foreach ( $res as $row ) {
-			/** @var $row object */
+			/** @var stdClass $row */
 			$rights[] = $row->ggp_permission;
 		}
 
