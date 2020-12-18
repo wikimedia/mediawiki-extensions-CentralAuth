@@ -326,7 +326,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	protected function showLoginStatus() {
-		if ( !$this->getUser()->isLoggedIn() ) {
+		if ( !$this->getUser()->isRegistered() ) {
 			$this->showError( 'centralauth-warning-notloggedin' );
 			return;
 		}

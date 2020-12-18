@@ -228,7 +228,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			if ( $this->getUser()->isLoggedIn() ) {
+			if ( $this->getUser()->isRegistered() ) {
 				$this->doFinalOutput( false, 'Cannot delete cookies while still logged in' );
 				return;
 			}
@@ -271,7 +271,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			CentralAuthUtils::setP3P();
-			if ( $this->getUser()->isLoggedIn() ) {
+			if ( $this->getUser()->isRegistered() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
 				$this->doFinalOutput( false, 'Not centrally logged in',
@@ -376,7 +376,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			if ( !$this->getUser()->isLoggedIn() ) {
+			if ( !$this->getUser()->isRegistered() ) {
 				$this->doFinalOutput( false, 'Not logged in' );
 				return;
 			}

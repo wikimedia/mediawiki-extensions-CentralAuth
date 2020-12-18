@@ -1286,7 +1286,7 @@ class CentralAuthHooks {
 		// * We are doing edge login because JS loaded Special:CentralAutoLogin/start or /checkCookies
 		//   and user is logged in on a different wiki, which eventually loads edge html.
 		if (
-			!$out->getUser()->isLoggedIn() ||
+			!$out->getUser()->isRegistered() ||
 				$out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' )
 		) {
 			foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
