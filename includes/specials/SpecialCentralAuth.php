@@ -560,7 +560,7 @@ class SpecialCentralAuth extends SpecialPage {
 		// centralauth-merge-method-mail, centralauth-merge-method-password,
 		// centralauth-merge-method-admin, centralauth-merge-method-new,
 		// centralauth-merge-method-login
-		$brief = wfMessage( "centralauth-merge-method-{$method}" )->text();
+		$brief = $this->msg( "centralauth-merge-method-{$method}" )->text();
 		$html =
 			Html::element(
 				'img', [

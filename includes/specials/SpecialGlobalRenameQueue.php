@@ -724,7 +724,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		global $wgPasswordSender;
 		$from = new MailAddress(
 			$wgPasswordSender,
-			wfMessage( 'emailsender' )->inContentLanguage()->text()
+			$this->msg( 'emailsender' )->inContentLanguage()->text()
 		);
 		return UserMailer::send( $to, $from, $subject, $body );
 	}

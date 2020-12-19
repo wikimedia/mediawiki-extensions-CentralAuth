@@ -585,15 +585,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
 				[
 					'centralauth-centralautologin-logged-in' =>
-						wfMessage( 'centralauth-centralautologin-logged-in' )
+						$this->msg( 'centralauth-centralautologin-logged-in' )
 							->inLanguage( $code )->plain(),
 
 					'centralauth-centralautologin-logged-in-nouser' =>
-						wfMessage( 'centralauth-centralautologin-logged-in-nouser' )
+						$this->msg( 'centralauth-centralautologin-logged-in-nouser' )
 							->inLanguage( $code )->plain(),
 
 					'centralautologin' =>
-						wfMessage( 'centralautologin' )
+						$this->msg( 'centralautologin' )
 							->inLanguage( $code )->plain(),
 				]
 			] );
