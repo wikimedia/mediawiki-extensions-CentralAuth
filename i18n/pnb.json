@@ -242,6 +242,7 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ورہ|ورے}} پہلاں",
 	"globalgroupmembership": "گلوبل ٹولیاں چ سنگت",
 	"globalgrouppermissions": "گلوبل ٹولی پربندھ",
+	"globalrenamequeue-column-rq-completed-ts": "خاتمہ تریخ",
 	"globalusers": "گلوبل اکاونٹس لسٹ",
 	"mergeaccount": "لاگان اکٹھا سٹیٹس",
 	"right-centralauth-lock": "گلوبل کھاتہ لکاؤ یا تالہ لاؤ",

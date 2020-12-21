@@ -10,7 +10,7 @@
 	"apierror-centralauth-badtoken": "ה־centralauthtoken אינו תקין.",
 	"apierror-centralauth-badusername": "שם המשתמש \"$1\" אינו שמיש בוויקי הזה",
 	"apierror-centralauth-editconflict": "זוהתה התנגשות עריכה, הפעולה מתבטלת.",
-	"apierror-centralauth-notattached": "לא ניתן לקבל centralauthtoken ללא חשבון גלובלי מחובר.",
+	"apierror-centralauth-notattached": "לא ניתן לקבל centralauthtoken ללא חשבון גלובלי משויך.",
 	"apierror-centralauth-notloggedin": "משתמשים אלמוניים אינם יכולים לקבל centralauthtoken.",
 	"apierror-centralauth-renameinprogress": "המשתמש בתהליך שינוי שם, לא ניתן להשתמש בו.",
 	"apihelp-centralauthtoken-description": "אחזור centralauthtoken לביצוע בקשה מאומתת לוויקי משויך.",
