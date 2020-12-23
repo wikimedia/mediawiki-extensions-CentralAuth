@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Azniv Stepanian",
 			"Kareyac",
 			"Rajemian"
 		]
 	},
 	"centralauth-admin-blocklog": "Արգելակումներու տեղեկատետր",
+	"centralauth-admin-list-groups": "Խումբեր",
 	"centralauth-admin-multi-bot": "Վերջին փոփոխութիւնները",
 	"centralauth-admin-yes": "այո",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2ին մէջ",
