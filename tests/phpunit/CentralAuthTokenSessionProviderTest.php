@@ -6,6 +6,7 @@ use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\User\UserFactory;
 use PHPUnit\Framework\MockObject\MockObject;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers CentralAuthTokenSessionProvider
@@ -13,6 +14,9 @@ use PHPUnit\Framework\MockObject\MockObject;
  * @group Database
  */
 abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
+
+	/** @var CentralAuthUtilityService */
+	protected $centralAuthUtilityService;
 
 	/** @var BagOStuff */
 	protected $sessionStore;
@@ -25,18 +29,27 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 	 */
 	private $userObjects;
 
-	public function setUp(): void {
+	public function setUp() : void {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
 		LoggerFactory::registerProvider( new NullSpi() );
 
 		$this->sessionStore = new HashBagOStuff();
-		CentralAuthUtils::setSessionStore( $this->sessionStore );
+		$this->patchSessionStore();
 
 		// CentralAuthTokenSessionProvider registers hooks dynamically.
 		// Make sure the original hooks are restored before the next test.
 		$this->setMwGlobals( 'wgHooks', $GLOBALS[ 'wgHooks' ] );
+	}
+
+	/**
+	 * Patch our modified session store into CentralAuthUtilityService
+	 */
+	private function patchSessionStore() {
+		$service = CentralAuthServices::getUtilityService();
+		$this->centralAuthUtilityService = TestingAccessWrapper::newFromObject( $service );
+		$this->centralAuthUtilityService->sessionStore = $this->sessionStore;
 	}
 
 	protected function assertSessionInfoError(
@@ -118,7 +131,10 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 				return $this->userObjects[ $name ] ?? null;
 			} );
 
+			$this->centralAuthUtilityService->userFactory = $userFactory;
 			$this->setService( 'UserFactory', $userFactory );
+			// setService resets existing objects, so make sure our sessionStore patch will be there
+			$this->patchSessionStore();
 		}
 
 		$this->userObjects[ $name ] = $user;
@@ -172,7 +188,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 
 	abstract protected function makeRequest( $token );
 
-	public function testProvideSessinInfo_noToken() {
+	public function testProvideSessionInfo_noToken() {
 		$provider = $this->newSessionProvider();
 		$request = new FauxRequest();
 
@@ -180,7 +196,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 		$this->assertNull( $result );
 	}
 
-	public function testProvideSessinInfo_unknownToken() {
+	public function testProvideSessionInfo_unknownToken() {
 		$provider = $this->newSessionProvider();
 
 		$request = $this->makeRequest( 'bogus' );
@@ -188,7 +204,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 		$this->assertSessionInfoError( $request, $result, 'apierror-centralauth-badtoken', 'badtoken' );
 	}
 
-	public function testProvideSessinInfo() {
+	public function testProvideSessionInfo() {
 		$user = $this->makeCentralAuthUser( 'Frank' );
 		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
 		$provider = $this->newSessionProvider();
@@ -229,7 +245,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 	/**
 	 * @dataProvider provideBadUsers
 	 */
-	public function testProvideSessinInfo_badUser( $name, $return, $error, $code ) {
+	public function testProvideSessionInfo_badUser( $name, $return, $error, $code ) {
 		// NOTE: the user gets registered in a fake service,
 		//       we can't construct it in teh data provider!
 		$user = $this->makeCentralAuthUser( $name, $return );
