@@ -41,6 +41,7 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 		$this->requireLogin();
 		$this->checkPermissions();
 
+		$this->addHelpLink( 'Help:Extension:CentralAuth/CreateLocalAccount' );
 		$out = $this->getOutput();
 		$out->addModules( 'ext.centralauth.globaluserautocomplete' );
 
