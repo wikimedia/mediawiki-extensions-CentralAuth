@@ -15,6 +15,8 @@ class SpecialCentralAuth extends SpecialPage {
 	private $mCanOversight;
 	/** @var bool */
 	private $mCanEdit;
+	/** @var bool */
+	private $mCanChangeGroups;
 
 	/**
 	 * @var CentralAuthUser
@@ -57,6 +59,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanLock = $pm->userHasRight( $this->getUser(), 'centralauth-lock' );
 		$this->mCanOversight = $pm->userHasRight( $this->getUser(), 'centralauth-oversight' );
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
+		$this->mCanChangeGroups = $pm->userHasRight( $this->getUser(), 'globalgroupmembership' );
 
 		$this->getOutput()->setPageTitle(
 			$this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' )
@@ -394,6 +397,20 @@ class SpecialCentralAuth extends SpecialPage {
 				);
 			}, $groups );
 			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
+		}
+
+		if ( $this->mCanChangeGroups ) {
+			if ( !isset( $attribs['groups'] ) ) {
+				$attribs['groups'] = $this->msg( 'rightsnone' )->escaped();
+			}
+
+			$manageGroupsLink = $this->getLinkRenderer()->makeKnownLink(
+				SpecialPage::getTitleFor( 'GlobalGroupMembership', $globalUser->getName() ),
+				$this->msg( 'centralauth-admin-info-groups-manage' )->text()
+			);
+
+			$attribs['groups'] .= $this->msg( 'word-separator' )->text();
+			$attribs['groups'] .= $this->msg( 'parentheses', $manageGroupsLink )->text();
 		}
 
 		return $attribs;

@@ -71,6 +71,7 @@
 	"centralauth-admin-info-attached": "Number of attached accounts:",
 	"centralauth-admin-info-editcount": "Total edit count:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|group|groups}}:",
+	"centralauth-admin-info-groups-manage": "manage",
 	"centralauth-admin-info-header": "Global account information",
 	"centralauth-admin-info-hidden": "Hidden level:",
 	"centralauth-admin-info-locked": "Locked:",
