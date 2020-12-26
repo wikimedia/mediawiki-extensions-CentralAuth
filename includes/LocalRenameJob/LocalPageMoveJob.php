@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -64,7 +65,8 @@ class LocalPageMoveJob extends Job {
 	}
 
 	protected function movePage( Title $oldPage, Title $newPage ) {
-		$mp = new MovePage( $oldPage, $newPage );
+		$mp = MediaWikiServices::getInstance()->getMovePageFactory()->newMovePage( $oldPage, $newPage );
+
 		$valid = $mp->isValidMove();
 		if ( !$valid->isOK() ) {
 			wfDebugLog( 'CentralAuthRename', "Invalid page move: {$oldPage} -> {$newPage}" );
