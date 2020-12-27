@@ -9,8 +9,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var Session */
 	protected $session = null;
 
+	/** @var CentralAuthHookRunner */
+	private $hookRunner;
+
 	public function __construct() {
 		parent::__construct( 'CentralLogin' );
+
+		$this->hookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
 	}
 
 	public function execute( $subpage ) {
@@ -180,7 +185,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$url = $info['currentProto'] . ':' . $url;
 
 		$url = wfAppendQuery( $url, $query ); // expands to PROTO_CURRENT if $url doesn't have protocol
-		Hooks::run( 'CentralAuthSilentLoginRedirect', [ $centralUser, &$url, $info ] );
+
+		$this->hookRunner->onCentralAuthSilentLoginRedirect(
+			$centralUser, $url, $info );
+
 		$this->getOutput()->redirect( $url );
 	}
 
@@ -189,6 +197,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginComplete( $token ) {
+		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
 		global $wgUser;
 		global $wgCentralAuthCheckSULMigration;
 
@@ -282,13 +291,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Allow other extensions to modify the returnTo and returnToQuery
-		Hooks::run( 'CentralAuthPostLoginRedirect', [
-			&$attempt['returnTo'],
-			&$attempt['returnToQuery'],
+		$this->hookRunner->onCentralAuthPostLoginRedirect(
+			$attempt['returnTo'],
+			$attempt['returnToQuery'],
 			$attempt['stickHTTPS'],
 			$attempt['type'],
-			&$inject_html
-		] );
+			$inject_html
+		);
 
 		if ( $inject_html === '' ) {
 			$action = 'successredirect';

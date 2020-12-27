@@ -158,7 +158,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$user->isAnon() ) {
 				$skin = $this->getSkin();
 				if (
-					!CentralAuthHooks::isUIReloadRecommended( $user ) &&
+					!$this->centralAuthUtilityService->isUIReloadRecommended( $user ) &&
 					$skin instanceof SkinTemplate
 				) {
 					$html = $skin->getPersonalToolsList();
@@ -583,9 +583,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
 			$code = $this->getUser()->getOption( 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
-			Hooks::run( 'UserGetLanguageObject',
-				[ $this->getUser(), &$code, $this->getContext() ]
-			);
+			$this->getHookRunner()->onUserGetLanguageObject( $this->getUser(), $code, $this->getContext() );
 			$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
 				[
 					'centralauth-centralautologin-logged-in' =>

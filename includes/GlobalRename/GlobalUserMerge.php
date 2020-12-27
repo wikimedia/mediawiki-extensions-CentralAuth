@@ -50,6 +50,9 @@ class GlobalUserMerge {
 	 */
 	private $session;
 
+	/** @var CentralAuthHookRunner */
+	private $hookRunner;
+
 	/**
 	 * @param User $performingUser
 	 * @param CentralAuthUser[] $oldCAUsers
@@ -59,6 +62,7 @@ class GlobalUserMerge {
 	 * @param GlobalUserMergeDatabaseUpdates $databaseUpdates
 	 * @param GlobalUserMergeLogger $logger
 	 * @param array $session
+	 * @param CentralAuthHookRunner $hookRunner
 	 */
 	public function __construct(
 		User $performingUser,
@@ -68,7 +72,8 @@ class GlobalUserMerge {
 		/* callable */ $jobQueueGroupGenerator,
 		GlobalUserMergeDatabaseUpdates $databaseUpdates,
 		GlobalUserMergeLogger $logger,
-		array $session
+		array $session,
+		CentralAuthHookRunner $hookRunner
 	) {
 		$this->performingUser = $performingUser;
 		$this->oldCAUsers = $oldCAUsers;
@@ -78,6 +83,7 @@ class GlobalUserMerge {
 		$this->databaseUpdates = $databaseUpdates;
 		$this->logger = $logger;
 		$this->session = $session;
+		$this->hookRunner = $hookRunner;
 	}
 
 	private function addLogEntry( $reason ) {
@@ -130,8 +136,8 @@ class GlobalUserMerge {
 			$this->databaseUpdates->mergeRenameUserQueue( $oldId, $newId );
 			$oldCAUser->removeAntiSpoof();
 
-			Hooks::run( 'CentralAuthGlobalUserMerged',
-				[ $oldName, $newName, $oldId, $newId ] );
+			$this->hookRunner->onCentralAuthGlobalUserMerged(
+				$oldName, $newName, $oldId, $newId );
 		}
 
 		$this->clearCaches();

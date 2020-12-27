@@ -41,6 +41,7 @@ class DeleteEmptyAccounts extends Maintenance {
 	}
 
 	public function execute() {
+		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
 		global $wgUser;
 
 		$user = User::newFromName( 'Maintenance script' );

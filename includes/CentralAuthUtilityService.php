@@ -1,11 +1,13 @@
 <?php
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserOptionsLookup;
 use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\WaitConditionLoop;
 
@@ -42,6 +44,12 @@ class CentralAuthUtilityService {
 	/** @var TitleFactory */
 	private $titleFactory;
 
+	/** @var UserOptionsLookup */
+	private $userOptionsLookup;
+
+	/** @var CentralAuthHookRunner */
+	private $hookRunner;
+
 	public function __construct(
 		LBFactory $lbFactory,
 		ReadOnlyMode $readOnlyMode,
@@ -50,7 +58,9 @@ class CentralAuthUtilityService {
 		UserFactory $userFactory,
 		PermissionManager $permissionManager,
 		IBufferingStatsdDataFactory $statsdDataFactory,
-		TitleFactory $titleFactory
+		TitleFactory $titleFactory,
+		UserOptionsLookup $userOptionsLookup,
+		HookContainer $hookContainer
 	) {
 		$this->lbFactory = $lbFactory;
 		$this->readOnlyMode = $readOnlyMode;
@@ -60,6 +70,8 @@ class CentralAuthUtilityService {
 		$this->permissionManager = $permissionManager;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->titleFactory = $titleFactory;
+		$this->userOptionsLookup = $userOptionsLookup;
+		$this->hookRunner = new CentralAuthHookRunner( $hookContainer );
 	}
 
 	/**
@@ -431,5 +443,24 @@ class CentralAuthUtilityService {
 			);
 			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
 		}
+	}
+
+	/**
+	 * Check whether the user's preferences are such that a UI reload is
+	 * recommended.
+	 * @param User $user
+	 * @return bool
+	 */
+	public function isUIReloadRecommended( User $user ) {
+		foreach ( $this->config->get( 'CentralAuthPrefsForUIReload' ) as $pref ) {
+			if ( $this->userOptionsLookup->getOption( $user, $pref )
+				!== $this->userOptionsLookup->getDefaultOption( $pref ) ) {
+				return true;
+			}
+		}
+
+		$recommendReload = false;
+		$this->hookRunner->onCentralAuthIsUIReloadRecommended( $user, $recommendReload );
+		return $recommendReload;
 	}
 }
