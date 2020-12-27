@@ -42,6 +42,8 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		$APIResult = $this->getResult();
 		$data = [];
 
+		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+
 		/**
 		 * @var $wikiSet WikiSet
 		 */
@@ -65,7 +67,7 @@ class ApiQueryWikiSets extends ApiQueryBase {
 
 			if ( isset( $prop['wikisnotincluded'] ) ) {
 				$entry['wikisnotincluded'] = array_diff(
-					CentralAuthUser::getWikiList(), $wikiSet->getWikis() );
+					$wikiList, $wikiSet->getWikis() );
 				if ( count( $entry['wikisnotincluded'] ) ) {
 					$APIResult->setIndexedTagName( $entry['wikisnotincluded'], 'wiki' );
 				}

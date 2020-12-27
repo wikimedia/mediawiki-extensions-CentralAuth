@@ -89,7 +89,12 @@
 		"MergeAccount": "SpecialMergeAccount",
 		"GlobalGroupMembership": "SpecialGlobalGroupMembership",
 		"GlobalGroupPermissions": "SpecialGlobalGroupPermissions",
-		"WikiSets": "SpecialWikiSets",
+		"WikiSets": {
+			"class": "SpecialWikiSets",
+			"services": [
+				"CentralAuth.CentralAuthWikiListService"
+			]
+		},
 		"GlobalUsers": "SpecialGlobalUsers",
 		"MultiLock": "SpecialMultiLock",
 		"GlobalRenameUser": "SpecialGlobalRenameUser",
@@ -216,6 +221,9 @@
 		"SpecialCentralAuthAliases": "CentralAuth.alias.php",
 		"SpecialCentralAuthAliasesNoTranslate": "CentralAuth.notranslate-alias.php"
 	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\CentralAuth\\Hooks\\": "includes/Hooks/"
+	},
 	"AutoloadClasses": {
 		"SpecialCentralAuth": "includes/specials/SpecialCentralAuth.php",
 		"SpecialCentralLogin": "includes/specials/SpecialCentralLogin.php",
@@ -235,6 +243,7 @@
 		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",
 		"CentralAuthSecondaryAuthenticationProvider": "includes/CentralAuthSecondaryAuthenticationProvider.php",
 		"CentralAuthHooks": "includes/CentralAuthHooks.php",
+		"CentralAuthHookRunner": "includes/CentralAuthHookRunner.php",
 		"CentralAuthSuppressUserJob": "includes/CentralAuthSuppressUserJob.php",
 		"CentralAuthUnattachUserJob": "includes/CentralAuthUnattachUserJob.php",
 		"CentralAuthCreateLocalAccountJob": "includes/CentralAuthCreateLocalAccountJob.php",
@@ -289,7 +298,8 @@
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
 		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php",
-		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php"
+		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php",
+		"CentralAuthWikiListService": "includes/CentralAuthWikiListService.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",

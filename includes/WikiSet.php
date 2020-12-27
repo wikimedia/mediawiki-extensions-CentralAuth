@@ -293,7 +293,8 @@ class WikiSet {
 		if ( $this->mType == self::OPTIN ) {
 			return $this->mWikis;
 		} else {
-			return array_diff( CentralAuthUser::getWikiList(), $this->mWikis );
+			$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+			return array_diff( $wikiList, $this->mWikis );
 		}
 	}
 

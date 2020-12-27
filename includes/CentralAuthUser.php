@@ -601,8 +601,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getLocalId( $wikiId ) {
 		// Make sure the wiki ID is valid. (This prevents DBConnectionError in unit tests)
-		$validWikis = self::getWikiList();
-		if ( !in_array( $wikiId, $validWikis ) ) {
+		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+		if ( !in_array( $wikiId, $wikiList ) ) {
 			return null;
 		}
 		// Retrieve the local user ID from the specified database.
@@ -1449,36 +1449,11 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @throws Exception
-	 * @param string[] $list
-	 * @return array
-	 */
-	protected static function validateList( $list ) {
-		$unique = array_unique( $list );
-		$valid = array_intersect( $unique, self::getWikiList() );
-
-		if ( count( $valid ) != count( $list ) ) {
-			// fixme: handle this gracefully
-			throw new Exception( "Invalid input" );
-		}
-
-		return $valid;
-	}
-
-	/**
 	 * @return string[]
+	 * @deprecated since 1.36, use CentralAuthWikiListService instead
 	 */
 	public static function getWikiList() {
-		global $wgLocalDatabases;
-		static $wikiList;
-		if ( $wikiList === null ) {
-			Hooks::run( 'CentralAuthWikiList', [ &$wikiList ] );
-			// @phan-suppress-next-line PhanSuspiciousValueComparison May set by hook
-			if ( $wikiList === null ) {
-				$wikiList = $wgLocalDatabases;
-			}
-		}
-		return $wikiList;
+		return CentralAuthServices::getWikiListService()->getWikiList();
 	}
 
 	/**
@@ -1492,19 +1467,20 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( !count( $list ) ) {
 			return Status::newFatal( 'centralauth-admin-none-selected' );
 		}
-		$status = new Status;
-		$valid = $this->validateList( $list );
-		$invalid = array_diff( $list, $valid );
-		foreach ( $invalid as $wikiName ) {
-			$status->error( 'centralauth-invalid-wiki', $wikiName );
-			$status->failCount++;
-		}
 
+		$existingWikis = CentralAuthServices::getWikiListService()->getWikiList();
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$dbcw = CentralAuthUtils::getCentralDB();
 		$password = $this->getPassword();
+		$status = new Status;
 
-		foreach ( $valid as $wikiName ) {
+		foreach ( $list as $wikiName ) {
+			if ( !in_array( $wikiName, $existingWikis ) ) {
+				$status->error( 'centralauth-invalid-wiki', $wikiName );
+				$status->failCount++;
+				continue;
+			}
+
 			# Delete the user from the central localuser table
 			$dbcw->delete( 'localuser',
 				[
@@ -1539,7 +1515,8 @@ class CentralAuthUser implements IDBAccessObject {
 			$status->successCount++;
 		}
 
-		if ( in_array( wfWikiID(), $valid ) ) {
+		$currentWikiId = WikiMap::getCurrentWikiId();
+		if ( in_array( $currentWikiId, $list ) && in_array( $currentWikiId, $existingWikis ) ) {
 			$this->resetState();
 		}
 
@@ -2310,7 +2287,9 @@ class CentralAuthUser implements IDBAccessObject {
 	protected function importLocalNames() {
 		$rows = [];
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		foreach ( self::getWikiList() as $wikiID ) {
+		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+
+		foreach ( $wikiList as $wikiID ) {
 			$dbr = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
 			$id = $dbr->selectField(
 				'user',
