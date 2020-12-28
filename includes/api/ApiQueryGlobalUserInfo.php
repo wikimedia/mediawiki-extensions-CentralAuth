@@ -22,6 +22,8 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+use MediaWiki\ParamValidator\TypeDef\UserDef;
+
 /**
  * Query module to list global user info and attachments
  *
@@ -178,6 +180,10 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		return [
 			'user' => [
 				ApiBase::PARAM_TYPE => 'user',
+				UserDef::PARAM_ALLOWED_USER_TYPES => [
+					'name',
+					'interwiki',
+				],
 			],
 			'id' => [
 				ApiBase::PARAM_TYPE => 'integer',
