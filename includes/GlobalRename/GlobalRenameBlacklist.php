@@ -50,6 +50,15 @@ class GlobalRenameBlacklist {
 	}
 
 	/**
+	 * Is global rename blacklist enabled?
+	 *
+	 * @return bool
+	 */
+	private function isEnabled() {
+		return $this->file !== null;
+	}
+
+	/**
 	 * Internal method for fetching blacklist.
 	 *
 	 * Blacklist is fetched and parsed into $blacklist. Blacklist source is
@@ -116,6 +125,11 @@ class GlobalRenameBlacklist {
 	 * @return bool
 	 */
 	public function checkUser( UserIdentity $user ) {
+		if ( !$this->isEnabled() ) {
+			$this->logger->debug( 'GlobalRenameBlacklist::checkUser() returns true, blacklist is disabled' );
+			return true;
+		}
+
 		global $wgGlobalRenameBlacklistRegex;
 
 		if ( $this->blacklist === null ) {
