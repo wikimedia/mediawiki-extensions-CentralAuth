@@ -63,6 +63,7 @@
 	"centralauth-admin-info-attached": "Anzahl der verbundenen Benutzerkonten:",
 	"centralauth-admin-info-editcount": "Anzahl der Bearbeitungen in allen Wikis:",
 	"centralauth-admin-info-groups": "Globale {{PLURAL:$1|Gruppe|Gruppen}}:",
+	"centralauth-admin-info-groups-manage": "verwalten",
 	"centralauth-admin-info-header": "Globale Benutzerkonteninformationen",
 	"centralauth-admin-info-hidden": "Versteckt:",
 	"centralauth-admin-info-locked": "Gesperrt:",

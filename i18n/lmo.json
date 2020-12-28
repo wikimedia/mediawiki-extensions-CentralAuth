@@ -1,13 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dakrismeno"
+			"Dakrismeno",
+			"Salvemm el lombard"
 		]
 	},
-	"centralauth-login-no-others": "Te see staa culegaa utumaticament a i alter pruget de {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Culegaa ai pruget de {{int:Centralauth-groupname}}:",
-	"centralauth-prefs-count-attached": "'L to cünt l'è ativ sura de $1 sit del pruget.",
-	"centralauth-prefs-manage": "Gestión del to cünt glubal",
-	"centralauth-prefs-status": "Sitüazión del cünt glubal:",
-	"centralauth-prefs-unattached": "Mía cunfermaa"
+	"centralauth-admin-blocklog": "register di bloch",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribuzzion}} su $2",
+	"centralauth-foreign-link": "Utent $1 in su $2",
+	"centralauth-login-no-others": "Te see stad conligaa in automatich a i alter proget de {{int:Centralauth-groupname}}.",
+	"centralauth-login-progress": "Coness {{PLURAL:$2|a l'alter proget|a i alter proget}} de {{int:Centralauth-groupname}}:",
+	"centralauth-merge-method-login": "cread per mezz del reconossiment a l'entrada",
+	"centralauth-prefs-count-attached": "La toa utenza l'è attiva in su $1 {{PLURAL:$1|wiki}}.",
+	"centralauth-prefs-manage": "Gestion de la toa utenza global",
+	"centralauth-prefs-status": "Utenza global",
+	"centralauth-prefs-unattached": "Conligada insema minga del tutt"
 }

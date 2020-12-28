@@ -60,6 +60,7 @@
 	"centralauth-admin-info-attached": "Nombre de comptes associats:",
 	"centralauth-admin-info-editcount": "Total d'edicions:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grup global|Grups globals}}:",
+	"centralauth-admin-info-groups-manage": "administra",
 	"centralauth-admin-info-header": "Informació global del compte",
 	"centralauth-admin-info-hidden": "Nivell ocult:",
 	"centralauth-admin-info-locked": "Blocat:",

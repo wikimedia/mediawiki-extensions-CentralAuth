@@ -6,7 +6,7 @@
 			"Yona b"
 		]
 	},
-	"apierror-centralauth-badsession": "אפשר לקבל centralauthtoken רק בעת שימוש בחיבורי CentralAuth.",
+	"apierror-centralauth-badsession": "אפשר לקבל centralauthtoken רק בעת שימוש בהתחברויות CentralAuth.",
 	"apierror-centralauth-badtoken": "ה־centralauthtoken אינו תקין.",
 	"apierror-centralauth-badusername": "שם המשתמש \"$1\" אינו שמיש בוויקי הזה",
 	"apierror-centralauth-editconflict": "זוהתה התנגשות עריכה, הפעולה מתבטלת.",

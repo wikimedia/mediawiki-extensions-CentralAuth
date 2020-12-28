@@ -65,6 +65,7 @@
 	"centralauth-admin-info-attached": "Numero di utenze collegate:",
 	"centralauth-admin-info-editcount": "Totale delle modifiche:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Gruppo globale|Gruppi globali}}:",
+	"centralauth-admin-info-groups-manage": "gestisci",
 	"centralauth-admin-info-header": "Informazioni globali utenza",
 	"centralauth-admin-info-hidden": "Nascosta:",
 	"centralauth-admin-info-locked": "Bloccata:",

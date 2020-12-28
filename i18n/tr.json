@@ -74,6 +74,7 @@
 	"centralauth-admin-info-attached": "Bağlı olan hesap sayısı:",
 	"centralauth-admin-info-editcount": "Toplam değişiklik sayısı:",
 	"centralauth-admin-info-groups": "Küresel {{PLURAL:$1|grup|gruplar}}:",
+	"centralauth-admin-info-groups-manage": "yönet",
 	"centralauth-admin-info-header": "Küresel hesap bilgisi",
 	"centralauth-admin-info-hidden": "Gizlilik seviyesi:",
 	"centralauth-admin-info-locked": "Kilitli:",

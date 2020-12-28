@@ -77,6 +77,7 @@
 	"centralauth-admin-info-attached": "묶인 계정의 수:",
 	"centralauth-admin-info-editcount": "총 편집 수:",
 	"centralauth-admin-info-groups": "전역 {{PLURAL:$1|그룹}}:",
+	"centralauth-admin-info-groups-manage": "관리",
 	"centralauth-admin-info-header": "통합 계정 정보",
 	"centralauth-admin-info-hidden": "숨김 여부:",
 	"centralauth-admin-info-locked": "잠김 여부:",

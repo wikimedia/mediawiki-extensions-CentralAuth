@@ -71,6 +71,7 @@
 	"centralauth-admin-info-attached": "Antal anslutna konton:",
 	"centralauth-admin-info-editcount": "Totalt antal redigeringar:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Global grupp|Globala grupper}}:",
+	"centralauth-admin-info-groups-manage": "hantera",
 	"centralauth-admin-info-header": "Global kontoinformation",
 	"centralauth-admin-info-hidden": "Dold nivå:",
 	"centralauth-admin-info-locked": "Låst:",

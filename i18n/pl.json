@@ -78,6 +78,7 @@
 	"centralauth-admin-info-attached": "Liczba przyłączonych kont:",
 	"centralauth-admin-info-editcount": "Wszystkich edycji:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupa globalna|Grupy globalne}}:",
+	"centralauth-admin-info-groups-manage": "zarządzaj",
 	"centralauth-admin-info-header": "Informacje o koncie uniwersalnym",
 	"centralauth-admin-info-hidden": "Ukryte",
 	"centralauth-admin-info-locked": "Zablokowane:",

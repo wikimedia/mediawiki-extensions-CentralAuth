@@ -74,6 +74,7 @@
 	"centralauth-admin-info-attached": "Número de contas ligadas:",
 	"centralauth-admin-info-editcount": "Total de edições:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupo global|Grupos globais}}:",
+	"centralauth-admin-info-groups-manage": "administrar",
 	"centralauth-admin-info-header": "Informação de contas globais",
 	"centralauth-admin-info-hidden": "Nível de ocultação:",
 	"centralauth-admin-info-locked": "Travado:",
