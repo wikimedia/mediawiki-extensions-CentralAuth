@@ -594,10 +594,12 @@
 			"value": false
 		},
 		"GlobalRenameBlacklist": {
-			"value": null
+			"value": null,
+			"description": "Source URL for the global rename blacklist feature; if null, the feature is disabled."
 		},
 		"GlobalRenameBlacklistRegex": {
-			"value": false
+			"value": false,
+			"description": "Does the global rename blacklist allow regexes? Does not have any effect when GlobalRenameBlacklist is null."
 		},
 		"CentralAuthSessionCacheType": {
 			"value": null
