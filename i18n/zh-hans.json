@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			")8",
 			"94rain",
 			"A Chinese Wikipedian",
 			"A2093064",
@@ -172,6 +173,7 @@
 	"centralauth-completelogin-back": "返回前一页",
 	"centralauth-contribs-locked": "此账户已被全域锁定。\n参见[[Special:CentralAuth/$1|全域账户详情]]以获取更多信息。",
 	"centralauth-contribs-locked-log": "此账户已被全域锁定。\n最近的锁定日志记录在下面提供以便参考：",
+	"centralauth-createlocal-reason": "原因",
 	"centralauth-days-ago": "$1日前",
 	"centralauth-delete-empty-account": "空账户",
 	"centralauth-desc": "[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的维基帐号",

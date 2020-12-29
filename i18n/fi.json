@@ -68,6 +68,7 @@
 	"centralauth-admin-info-attached": "Liitettyjen tunnusten lukumäärä:",
 	"centralauth-admin-info-editcount": "Muokkauksia yhteensä:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Järjestelmänlaajuinen ryhmä|Järjestelmänlaajuiset ryhmät}}:",
+	"centralauth-admin-info-groups-manage": "hallitse",
 	"centralauth-admin-info-header": "Järjestelmänlaajuiset käyttäjätiedot",
 	"centralauth-admin-info-hidden": "Piilotuksen taso:",
 	"centralauth-admin-info-locked": "Lukittu:",
@@ -156,7 +157,7 @@
 	"centralauth-contribs-locked": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti.\nLisätietoja löytyy [[Special:CentralAuth/$1|järjestelmänlaajuisen tunnuksen tiedoista]].",
 	"centralauth-contribs-locked-log": "Tämä käyttäjätunnus on lukittu järjestelmänlaajuisesti. Alla on viimeisin lukituslokin merkintä:",
 	"centralauth-createlocal-already-exists": "Tähän järjestelmänlaajuiseen käyttäjätunnukseen on jo liitetty paikallinen käyttäjätunnus.",
-	"centralauth-createlocal-logentry": "pakotti paikallisen käyttäjän luonnin käyttäjälle $1",
+	"centralauth-createlocal-logentry": "{{GENDER:$2|pakotti}} paikallisen käyttäjän luonnin käyttäjälle $1",
 	"centralauth-createlocal-no-global-account": "Järjestelmänlaajuista käyttäjätunnusta ei löytynyt.",
 	"centralauth-createlocal-pretext": "Voit käyttää tätä lomaketta luodaksesi paikallisen käyttäjän järjestelmänlaajuiselle tunnukselle, jos tunnuksen omistaja ei voi itse tehdä sitä jostain syystä.",
 	"centralauth-createlocal-reason": "Syy",
@@ -535,5 +536,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Tunnuksellesi}} '''$1''' on annettu uudeksi nimeksi '''$2''' siirryttäessä automaattisesti yhdistettyyn kirjautumisjärjestelmään, jonka toiminnasta vastaa {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Käyttäjätunnuksesi}} nimi on vaihdettu",
 	"sulrenamewarning-usenew": "Käytäthän uutta käyttäjänimeäsi '''$1''' kirjautuessasi sisään jatkossa.",
-	"userswhowillberenamed": "Käyttäjät, joiden tunnuksen nimi vaihdetaan"
+	"userswhowillberenamed": "Käyttäjät, joiden tunnuksen nimi vaihdetaan",
+	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja."
 }
