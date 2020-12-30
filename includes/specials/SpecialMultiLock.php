@@ -114,6 +114,7 @@ class SpecialMultiLock extends SpecialPage {
 	private function getGlobalUsers( $usernames, $fromMaster = false ) {
 		$ret = [];
 		foreach ( $usernames as $username ) {
+			$username = str_replace( '_', ' ', $username ); // T270954
 			$username = trim( $username );
 			if ( $username === '' ) {
 				$ret[] = false;
