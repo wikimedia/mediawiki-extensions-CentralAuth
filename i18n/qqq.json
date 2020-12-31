@@ -277,7 +277,7 @@
 	"centralauth-globalgroupperms-nogroups": "Message shown on Special:GlobalGroupPermissions when there is no existing global groups.",
 	"centralauth-globalgroupperms-rights": "Message used on column header at the table on Special:GlobalGroupPermissions. See also {{msg-mw|centralauth-globalgroupperms-group}}.\n{{Identical|Right}}",
 	"centralauth-globalgroupperms-wikiset-none": "Message used on Special:GlobalGroupPermissions table when a group does not belong to any wikiset.",
-	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-login-progress}}\n* {{msg-mw|centralauth-logout-progress}}\n{{Identical|Wikimedia Foundation}}",
+	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-login-progress}}\n* {{msg-mw|centralauth-logout-progress}}",
 	"centralauth-hidden-blockreason": "Unused at this time. Parameters:\n* $1 - username\n* $2 - ...\n* $3 - reason",
 	"centralauth-hours-ago": "Parameters:\n* $1 - number of hours\n{{Related|Centralauth-ago}}",
 	"centralauth-incomplete": "Title of special page \"Special:MergeAccount\"",
