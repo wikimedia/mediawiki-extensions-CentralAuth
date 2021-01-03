@@ -1460,7 +1460,7 @@ class CentralAuthHooks {
 		User $user,
 		array &$skipReasons
 	) {
-		$action = $vars->getVar( 'action' )->toString();
+		$action = $vars->getComputedVariable( 'action' )->toString();
 		if ( $action === 'move' && LocalPageMoveJob::$moveInProgress === true ) {
 			$skipReasons[] = "CentralAuth: $user is moving $title for global rename";
 			// Don't allow reusing this flag
