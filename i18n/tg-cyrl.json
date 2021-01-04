@@ -88,7 +88,6 @@
 	"centralauth-foreign-link": "Ҳисоби корбари $1 дар $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Таъйини ихтиёрот",
 	"centralauth-globalgroupperms-newgroupname": "Номи ҷадиди гурӯҳ:",
-	"centralauth-groupname": "Бунёди Викимедиа",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|соат|соат}} пеш",
 	"centralauth-incomplete": "Эҷод кардани ҳисобҳо комил нашуд!",
 	"centralauth-incomplete-text": "Дар ҳоле, ки ҳисоби корбарии шумо якка шавад, шумо қодир хоҳед буд дар ҳар яки аз викиҳои Викимедиа бидуни эҷоди ҳисоби ҷадид вуруд кунед. Як ҳисоб ва калима убур дар Википедиа, Викилуғат, Викикитобҳо ва дигар лоиҳаҳои Википедиа дар тамоми забонҳо кор хоҳад кард.",

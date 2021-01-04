@@ -151,7 +151,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "අවසර පවරන්න",
 	"centralauth-globalgroupperms-newgroupname": "නව කණ්ඩායමේ නම:",
 	"centralauth-globalgroupperms-nogroups": "කිසිදු ගෝලීය කණ්ඩායමක් සකසා නැත.",
-	"centralauth-groupname": "විකිමී‍ඩියා පදනම",
 	"centralauth-hidden-blockreason": "$1 විසින් $2 දී පහත හේතුව නිසා ගෝලීයව සඟවා ඇත: $3",
 	"centralauth-hours-ago": "{{PLURAL:$1|පැය|පැය}} $1 කට පෙර",
 	"centralauth-incomplete": "පිවිසීම් සංයුක්තකරණය අවසන්නැත!",

@@ -176,7 +176,6 @@
 	"centralauth-globalgroupperms-nogroups": "Nijedna globalna grupa nije definirana.",
 	"centralauth-globalgroupperms-rights": "Prava",
 	"centralauth-globalgroupperms-wikiset-none": "Ova suradnička skupina aktivna je na svim wikijima.",
-	"centralauth-groupname": "{{#SWITCH:{{{1|}}}\n|#default=Zaklada Wikimedije\n|gen=Wikimedijine zaklade\n}}",
 	"centralauth-hidden-blockreason": "globalno skriven od strane $1 u $2 sa sljedećim razlogom: $3",
 	"centralauth-hours-ago": "prije $1 {{PLURAL:$1|sata|sati}}",
 	"centralauth-incomplete": "Spajanje suradničkih računa nije izvršeno!",

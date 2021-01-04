@@ -13,7 +13,6 @@
 	"centralauth-contribs-locked": "Та учётной запись глобально ӵогамын.\nУчке [[Special:CentralAuth/$1|огъя учётной записьлэсь даннойёссэ]] пыр-поч информация понна.",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тупатон}} $2 проектын",
 	"centralauth-foreign-link": "$2 викиысь $1 викиавтор",
-	"centralauth-groupname": "Викимедиа Фондлэн",
 	"centralauth-logout-progress": "Ортче {{int:Centralauth-groupname}} мукет {{PLURAL:$2|проектысь|проектъёсысь}} потон:",
 	"centralauth-merge-method-login": "системае пырыку кылдытэмын",
 	"globalrenamequeue-action-view": "Учкон",

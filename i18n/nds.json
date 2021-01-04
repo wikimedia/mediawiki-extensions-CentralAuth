@@ -107,7 +107,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Rechten tokennen",
 	"centralauth-globalgroupperms-newgroupname": "Ne’en Gruppennaam:",
 	"centralauth-globalgroupperms-nogroups": "Sünd keen globale Gruppen anleggt.",
-	"centralauth-groupname": "de Wikimedia Foundation",
 	"centralauth-hours-ago": "vör $1 {{PLURAL:$1|Stünn|Stünnen}}",
 	"centralauth-incomplete": "Vereenigen vun de Brukerkonten nich trech.",
 	"centralauth-incomplete-text": "Wenn diene Brukerkonten tohoopföhrt sünd, kannst du di op all Projekten vun {{int:Centralauth-groupname}} anmellen ahn en nee Brukerkonto optostellen.",

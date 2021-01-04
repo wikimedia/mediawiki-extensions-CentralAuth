@@ -143,7 +143,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Asignar premisos",
 	"centralauth-globalgroupperms-newgroupname": "Nombre d'a nueva colla:",
 	"centralauth-globalgroupperms-nogroups": "No ye definiu garra grupo global.",
-	"centralauth-groupname": "a Fundación Wikimedia",
 	"centralauth-hidden-blockreason": "amagada globalment por $1 a las $2 por a siguient razón: $3",
 	"centralauth-hours-ago": "fa $1 {{PLURAL:$1|ora|oras}}",
 	"centralauth-incomplete": "No s'ha rematau a unificación d'as cuentas!",

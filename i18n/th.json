@@ -208,7 +208,6 @@
 	"centralauth-globalgroupperms-nogroups": "ไม่ได้กำหนดกลุ่มส่วนกลางใด ๆ",
 	"centralauth-globalgroupperms-rights": "สิทธิ",
 	"centralauth-globalgroupperms-wikiset-none": "กลุ่มนี้มีการเคลื่อนไหวบนวิกิทั้งหมด",
-	"centralauth-groupname": "มูลนิธิวิกิมีเดีย",
 	"centralauth-hidden-blockreason": "ถูกซ่อนทั่วโลกโดย $1 เมื่อ $2 ด้วยเหตุผลดังต่อไปนี้: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ชั่วโมง|ชั่วโมง}} ที่แล้ว",
 	"centralauth-incomplete": "การรวมบัญชีสำหรับล็อกอินไม่สำเร็จ",

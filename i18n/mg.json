@@ -11,7 +11,6 @@
 	"centralauth-desc": "[[Special:MergeAccount|Hampitokana ny kaonty]] eraky ny wiki-n'i {{int:Centralauth-grouname}}",
 	"centralauth-foreign-contributions": "Fandraisan'anjara {{PLURAL:$1}} amin'i $2",
 	"centralauth-foreign-link": "Mpikambana $1 eo amin'i $2",
-	"centralauth-groupname": "ny Wikimedia Foundation",
 	"centralauth-incomplete": "Tsy vita tanteraka ny fampiraisana ny anaram-pikambana !",
 	"centralauth-log-entry-hide": "nanafina ny kaonty eran-tontolo \"$1\"",
 	"centralauth-log-entry-lock": "nanakana ny kaonty eran-tontolo \"$1\"",

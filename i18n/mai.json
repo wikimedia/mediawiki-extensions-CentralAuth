@@ -145,7 +145,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "अनुमतियाँ असाइन करु",
 	"centralauth-globalgroupperms-newgroupname": "नयाँ सदस्य-समूहक नाम:",
 	"centralauth-globalgroupperms-nogroups": "कोनो वैश्विक सदस्य-समूह परिभाषित नै अछि।",
-	"centralauth-groupname": "विकिमेडिया फाउंडेशन",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|घंटा}} पहिने",
 	"centralauth-incomplete": "खाता एकत्रिकरण पूर्ण नै भेल!",
 	"centralauth-incomplete-text": "खाता एकत्रित भऽ गेला पर अहाँ {{int:Centralauth-groupname}} कोनो भी विकि साइट पर नव खाता बनौने बिना सम्प्रवेश कऽ सकएत छी।",

@@ -85,7 +85,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Baimenak esleitu",
 	"centralauth-globalgroupperms-newgroupname": "Talde berriaren izena:",
 	"centralauth-globalgroupperms-nogroups": "Ez da definitu talde globalik.",
-	"centralauth-groupname": "Wikimedia Fundazioa",
 	"centralauth-hours-ago": "Orain dela {{PLURAL:$1|ordu bat|$1 ordu}}",
 	"centralauth-incomplete": "Saio-hasiera bateratua amaitu gabe!",
 	"centralauth-list-home-title": "Wiki nagusia",

@@ -199,7 +199,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Assign permeessions",
 	"centralauth-globalgroupperms-newgroupname": "New groop name:",
 	"centralauth-globalgroupperms-nogroups": "Nae global groops ar defined.",
-	"centralauth-groupname": "the Wikimedia Foondation",
 	"centralauth-hidden-blockreason": "globallie skaukt bi $1 at $2 wi the follaein raison: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|hoor|hoors}} syne",
 	"centralauth-incomplete": "Login uneefeecation na compleate!",

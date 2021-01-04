@@ -124,7 +124,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Rugsat belle",
 	"centralauth-globalgroupperms-newgroupname": "Täze toparyň ady:",
 	"centralauth-globalgroupperms-nogroups": "Hiç hili global topar kesgitlenmedi.",
-	"centralauth-groupname": "Wikimedia fondy",
 	"centralauth-hidden-blockreason": "$1 tarapyndan global tertipde $2 senesinde şu sebäp ilen gizlendi: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|sagat|sagat}} ozal",
 	"centralauth-incomplete": "Sessiýa açyş doly birleşdirilmedi!",

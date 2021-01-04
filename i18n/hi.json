@@ -215,7 +215,6 @@
 	"centralauth-globalgroupperms-nogroups": "कोई वैश्विक सदस्य-समूह परिभाषित नहीं हैं।",
 	"centralauth-globalgroupperms-rights": "अधिकार",
 	"centralauth-globalgroupperms-wikiset-none": "यह समूह सभी विकि में सक्रिय है।",
-	"centralauth-groupname": "विकिमीडिया फ़ाउंडेशन",
 	"centralauth-hidden-blockreason": "$1 द्वारा वैश्विक रूप से छुपाया गया $2 पर निम्नलिखित कारण के साथ: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|घंटा|घंटे}} पहले",
 	"centralauth-incomplete": "खाता एकत्रिकरण पूरा नहीं हुआ!",

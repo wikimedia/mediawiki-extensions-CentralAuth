@@ -85,7 +85,6 @@
 	"centralauth-globalgroupperms-group-listmembers": "အဖွဲ့ဝင်များစာရင်း",
 	"centralauth-globalgroupperms-newgroupname": "အုပ်စုအမည်သစ်:",
 	"centralauth-globalgroupperms-rights": "အခွင့်အရေးများ",
-	"centralauth-groupname": "ဝီကီမီဒီယာ ဖောင်ဒေးရှင်း",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|နာရီ|နာရီ}}အကြာက",
 	"centralauth-list-home-title": "မိခင် ဝီကီ",
 	"centralauth-listusers-attached": "[[User:$1|ဒေသတွင်း တည်ရှိသည်]]",

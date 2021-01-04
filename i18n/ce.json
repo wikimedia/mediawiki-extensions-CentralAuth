@@ -189,7 +189,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Бакъо ялар",
 	"centralauth-globalgroupperms-newgroupname": "Керла тобан цӀе:",
 	"centralauth-globalgroupperms-nogroups": "Глобалан тобанаш билгалйина яц.",
-	"centralauth-groupname": "Викимедин фондан",
 	"centralauth-hidden-blockreason": "Декъашхочун $1 $2 агӀо глобалан дӀахьуляран бахьана: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|сахьт}} хьалха",
 	"centralauth-incomplete": "ДIавазвалар цхьаьнатохар чакх ца дели!",

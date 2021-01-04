@@ -106,7 +106,6 @@
 	"centralauth-foreign-link": "響 $2 嘅用戶 $1",
 	"centralauth-globalgroupperms-creategroup-submit": "指定許可",
 	"centralauth-globalgroupperms-newgroupname": "新組名:",
-	"centralauth-groupname": "維基媒體基金會",
 	"centralauth-hours-ago": "$1 個鐘之前",
 	"centralauth-incomplete": "戶口統一重未搞掂！",
 	"centralauth-incomplete-text": "一旦你嘅登入完成統一，你就可以登入所有{{int:Centralauth-groupname}}嘅wiki網站，而無需再開個新戶口",

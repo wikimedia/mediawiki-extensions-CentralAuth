@@ -62,7 +62,6 @@
 	"centralauth-globalgroupperms-group-listmembers": "әгъзалар",
 	"centralauth-globalgroupperms-management": "идарә",
 	"centralauth-globalgroupperms-rights": "Хокуклар",
-	"centralauth-groupname": "Викимедиа Фонды",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|cәгать}} элек",
 	"centralauth-incomplete": "Хисап язмаларын берләштерү тәмамланмады!",
 	"centralauth-incomplete-text": "Барлык кулланучы язмалары берләштерү тәмамланганнан соң сезгә {{int:Centralauth-groupname}}ның проектларында аерым теркәлү кирәк булмаячак.",

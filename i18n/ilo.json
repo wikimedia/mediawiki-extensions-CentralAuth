@@ -203,7 +203,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Manginagan kadagiti pammalubos",
 	"centralauth-globalgroupperms-newgroupname": "Baro a nagan ti grupo:",
 	"centralauth-globalgroupperms-nogroups": "Awan dagiti naipalawag a global a grupo.",
-	"centralauth-groupname": "Pundasion ti Wikimedia",
 	"centralauth-hidden-blockreason": "global a nailemmeng babaen ni $1 iti $2 nga addaan iti sumaganad a rason: $3",
 	"centralauth-hours-ago": "$1 idi nga {{PLURAL:$1|oras|or-oras}}",
 	"centralauth-incomplete": "Saan pay a nalpas ti panagkaykaysa ti panagserrek!",

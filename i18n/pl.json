@@ -257,7 +257,6 @@
 	"centralauth-globalgroupperms-nogroups": "Brak zdefiniowanych grup globalnych.",
 	"centralauth-globalgroupperms-rights": "Uprawnienia",
 	"centralauth-globalgroupperms-wikiset-none": "Ta grupa jest aktywna na wszystkich wiki.",
-	"centralauth-groupname": "Fundacji Wikimedia",
 	"centralauth-hidden-blockreason": "centralnie ukryte przez $1 o $2 ponieważ $3",
 	"centralauth-hours-ago": "{{PLURAL:$1|przed godziną|$1 godziny temu|$1 godzin temu}}",
 	"centralauth-incomplete": "Tworzenie konta uniwersalnego nie zostało ukończone!",

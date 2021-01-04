@@ -248,7 +248,6 @@
 	"centralauth-globalgroupperms-nogroups": "Er zijn geen globale groepen gedefinieerd.",
 	"centralauth-globalgroupperms-rights": "Rechten",
 	"centralauth-globalgroupperms-wikiset-none": "Deze groep is actief op alle wiki's.",
-	"centralauth-groupname": "de Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "globaal verborgen door $1 op $2 met reden: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur|uur}} geleden",
 	"centralauth-incomplete": "Samenvoegen gebruikers niet volledig!",

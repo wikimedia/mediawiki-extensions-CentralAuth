@@ -154,7 +154,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Nýtt heiti hóps:",
 	"centralauth-globalgroupperms-nogroups": "Engir altækir hópar eru skilgreindir.",
 	"centralauth-globalgroupperms-rights": "Réttindi",
-	"centralauth-groupname": "Wikimedia félagsins",
 	"centralauth-hidden-blockreason": "falinn altækt af $1 $2 vegna: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|klukkustund|klukkustundum}} síðan",
 	"centralauth-incomplete": "Samræming aðganga mistókst!",

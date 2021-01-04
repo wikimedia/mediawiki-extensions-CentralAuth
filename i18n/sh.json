@@ -154,7 +154,6 @@
 	"centralauth-globalgroupperms-nogroups": "Nema opredjeljeno globalnih grupa.",
 	"centralauth-globalgroupperms-rights": "Prava",
 	"centralauth-globalgroupperms-wikiset-none": "Ova grupa je aktivna na svim vikijima.",
-	"centralauth-groupname": "Wikimedija Fondacija",
 	"centralauth-hidden-blockreason": "globalno sakriven od strane $1 u $2 sa sljedećim razlogom: $3",
 	"centralauth-hours-ago": "prije {{PLURAL:$1|jedan sat|$1 sata|$1 sati}}",
 	"centralauth-incomplete": "Unifikacija logina nije potpuna!",

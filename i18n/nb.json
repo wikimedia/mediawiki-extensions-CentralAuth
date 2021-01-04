@@ -240,7 +240,6 @@
 	"centralauth-globalgroupperms-nogroups": "Ingen globale grupper er definert.",
 	"centralauth-globalgroupperms-rights": "Rettigheter",
 	"centralauth-globalgroupperms-wikiset-none": "Denne gruppa er aktiv på alle wikier.",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "globalt skjult av $1 på $2 med følgende årsak: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|time|timer}} siden",
 	"centralauth-incomplete": "Kontosammenslåingen er ikke ferdig.",

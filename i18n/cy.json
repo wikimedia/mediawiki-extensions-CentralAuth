@@ -162,7 +162,6 @@
 	"centralauth-foreign-link": "Defnyddiwr $1 ar $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Rhowch ganiatâd",
 	"centralauth-globalgroupperms-newgroupname": "Enw'r grŵp newydd:",
-	"centralauth-groupname": "Sefydliad Wicimedia",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|awr}} yn ôl",
 	"centralauth-incomplete": "Ni chwblhawyd uno'r cyfrifon!",
 	"centralauth-incomplete-text": "Cyn gynted ag y bydd eich mewngofnodiad wedi'i uno, gallwch fewngofnodi i unrhyw safle wici {{int:Centralauth-groupname}} heb greu cyfrif newydd.",

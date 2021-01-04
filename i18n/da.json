@@ -214,7 +214,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Navn på ny gruppe:",
 	"centralauth-globalgroupperms-nogroups": "Ingen globale grupper er definerede.",
 	"centralauth-globalgroupperms-rights": "Rettigheder",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "skjult globalt af $1 på $2 med følgende begrundelse: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|time|timer}} siden",
 	"centralauth-incomplete": "Kontosammenlægningen er ikke fuldført!",

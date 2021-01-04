@@ -230,7 +230,6 @@
 	"centralauth-globalgroupperms-nogroups": "No hi ha grups globals definits",
 	"centralauth-globalgroupperms-rights": "Permisos",
 	"centralauth-globalgroupperms-wikiset-none": "Aquest grup és actiu en tots els wikis.",
-	"centralauth-groupname": "la Fundació Wikimedia",
 	"centralauth-hidden-blockreason": "ocultat globalment per $1 a les $2 amb la següent raó: $3",
 	"centralauth-hours-ago": "fa $1 {{PLURAL:$1|hora|hores}}",
 	"centralauth-incomplete": "No s'ha completat la unificació dels comptes.",

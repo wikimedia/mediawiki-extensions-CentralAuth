@@ -15,7 +15,6 @@
 	"centralauth-desc": "Dameeglicht a [[Special:MergeAccount|Speziaalseiten]] zum Zåmmmfyrn voh Benutzerkontos in Wikis ({{int:Centralauth-groupname}})",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|beorweiten]])",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|beorweiten]])",
-	"centralauth-groupname": "vo da Wikimedia Foundation",
 	"centralauth-list-home-title": "Hoamadwiki",
 	"centralauth-merge-denied": "Tschudige, ower du host koah Berechtigung fyr de Seiten do.",
 	"centralauth-merge-method-admin": "durch an Administraator zåmmgfyrds Benutzerkontó",

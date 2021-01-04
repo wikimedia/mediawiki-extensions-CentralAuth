@@ -89,7 +89,6 @@
 	"centralauth-foreign-link": "Mtumiaji $1 kwa $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Pea ruhusa",
 	"centralauth-globalgroupperms-newgroupname": "Jina la Kikundi kipya:",
-	"centralauth-groupname": "Wakfu wa Wikimedia",
 	"centralauth-hours-ago": "{{PLURAL:$1|saa $1 iliyo|masaa $1 yaliyo}}pita",
 	"centralauth-invalid-wiki": "Hakuna hifdhidata ya wiki kama hiyo: $1",
 	"centralauth-list-attached-title": "Akaunti zinazoandamana",

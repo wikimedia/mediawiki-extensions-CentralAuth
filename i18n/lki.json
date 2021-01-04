@@ -201,7 +201,6 @@
 	"centralauth-globalgroupperms-group": "داکووکە(گروو)",
 	"centralauth-globalgroupperms-newgroupname": "نام گروه تازه:",
 	"centralauth-globalgroupperms-nogroups": "هیچ گروه سراسری‌ای تعریف نشده‌است.",
-	"centralauth-groupname": "بنیاد ویکی‌مدیا",
 	"centralauth-hidden-blockreason": "پنهان سراسری توسط $1 در $2 به دلیل: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ساعت |ساعتةلئ}} دماتر",
 	"centralauth-incomplete": "یکی کردن حساب‌ها کامل نشد!",

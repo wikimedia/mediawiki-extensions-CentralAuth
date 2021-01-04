@@ -81,7 +81,6 @@
 	"centralauth-foreign-link": "Geban $1 in $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Givülön dälis",
 	"centralauth-globalgroupperms-newgroupname": "Nem grupa nulik:",
-	"centralauth-groupname": "Fünod: Wikimedia",
 	"centralauth-hours-ago": "bü {{PLURAL:$1|düp|düps}} $1",
 	"centralauth-incomplete": "Kals olik no pebalons!",
 	"centralauth-incomplete-text": "Posä kals olik pubalons, okanol nunädön oli in vüks valik in {{int:Centralauth-groupname}} nes jafön kali nulik.",

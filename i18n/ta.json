@@ -146,7 +146,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "அனுமதிகளை அமைக்கவும்",
 	"centralauth-globalgroupperms-newgroupname": "புதிய குழுவின் பெயர்:",
 	"centralauth-globalgroupperms-nogroups": "உலகளாவிய குழு ஏதும் வரையறுக்கப்படவில்லை.",
-	"centralauth-groupname": "விக்கிமீடியா அறக்கட்டளை",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|மணி|மணிகள்}} முன்பு",
 	"centralauth-incomplete": "ஒருங்கமைந்த உள்நுழைவு முழுமையாகவில்லை",
 	"centralauth-incomplete-text": "உங்கள் புகுபகுதிகை ஒருங்கிணைக்கப்பட்டதும் நீங்கள் {{int:Centralauth-groupname}} இன் எந்த ஒரு விக்கித் தளத்திலும் நீங்கள் புதிய கணக்கு உருவாக்காமல் புகுபதிகை செய்யலாம்.",

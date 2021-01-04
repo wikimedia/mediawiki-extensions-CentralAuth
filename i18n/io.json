@@ -57,7 +57,6 @@
 	"centralauth-finish-send-confirmation": "Sendar pasovorto e-poste",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontributado|kontributadi}} en $2",
 	"centralauth-foreign-link": "Uzero $1 en $2",
-	"centralauth-groupname": "la fonduro Wikimedia",
 	"centralauth-incomplete-text": "Kande vua 'login' unigesos, vu povos konektar su ad omna siti Wiki de {{int:Centralauth-groupname}}, sen krear nova konto",
 	"centralauth-list-attached": "La {{PLURAL:$2|konto nomizita \"$1\" en ca sito|konti nomizita \"$1\" en la sequanta siti}} automatale ligesis a ca unigata konto:",
 	"centralauth-listusers-nolocal": "ne ligata, o ne existas lokale",

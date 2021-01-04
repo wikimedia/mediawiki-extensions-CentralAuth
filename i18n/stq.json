@@ -92,7 +92,6 @@
 	"centralauth-foreign-link": "Benutser $1 ap $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Gjuchte touwiese",
 	"centralauth-globalgroupperms-newgroupname": "Näie Gruppennoome:",
-	"centralauth-groupname": "die Wikimedia Foundation",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|Uure|Uuren}} foartied",
 	"centralauth-incomplete": "Ju Touhoopefierenge fon do Benutserkonten is nit kompläit!",
 	"centralauth-incomplete-text": "Sogau dien Benutserkonten touhoopefierd sunt, koast du die ap älke Wikimedia-Websiede {{int:Centralauth-groupname}} anmäldje, sunner n näi Benutserkonto antoulääsen.",

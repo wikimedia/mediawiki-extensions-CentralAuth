@@ -202,7 +202,6 @@
 	"centralauth-globalgroupperms-nogroups": "Et si keng global Gruppen definéiert.",
 	"centralauth-globalgroupperms-rights": "Rechter",
 	"centralauth-globalgroupperms-wikiset-none": "Dës Grupp ass op alle Wikien aktiv.",
-	"centralauth-groupname": "der Wikimedia Fondatioun",
 	"centralauth-hidden-blockreason": "global verstoppt vum $1 de(n) $2 mat dësem Grond: $3",
 	"centralauth-hours-ago": "{{PLURAL:$1|virun 1 Stonn| viru(n) $1 Stonnen}}",
 	"centralauth-incomplete": "D'Zesummeféierung vun de Benotzerkonten ass net komplett!",

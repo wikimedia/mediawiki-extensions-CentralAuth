@@ -251,7 +251,6 @@
 	"centralauth-globalgroupperms-nogroups": "Järjestelmänlaajuisia ryhmiä ei ole määritelty.",
 	"centralauth-globalgroupperms-rights": "Oikeudet",
 	"centralauth-globalgroupperms-wikiset-none": "Tämä ryhmä on aktiivinen kaikissa wikeissä.",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|tunti|tuntia}} sitten",
 	"centralauth-incomplete": "Käyttäjätunnusten yhdistäminen on jäänyt kesken!",

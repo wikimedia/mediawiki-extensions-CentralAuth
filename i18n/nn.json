@@ -156,7 +156,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Gje løyve",
 	"centralauth-globalgroupperms-newgroupname": "Namn på ny gruppa:",
 	"centralauth-globalgroupperms-nogroups": "Ingen globale grupper er definerte.",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hours-ago": "{{PLURAL:$1|Éin time|$1 timar}} sidan",
 	"centralauth-incomplete": "Kontosamanslåinga er ikkje ferdig.",
 	"centralauth-incomplete-text": "Etter at du har slege saman kontoane dine, vil du kunna logga inn på kvart av {{int:Centralauth-groupname}} sine prosjekt utan å oppretta ein ny konto",

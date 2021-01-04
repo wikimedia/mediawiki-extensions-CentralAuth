@@ -34,7 +34,6 @@
 	"centralauth-finish-password": "Password:",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ambag|mga ambag}} sa $2",
 	"centralauth-globalgroupperms-newgroupname": "Bagong ngaran ka grupo:",
-	"centralauth-groupname": "a Wikimedia Foundation",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|oras|mga oras}} na a nakalabos",
 	"centralauth-log-status-hidden": "nakatago",
 	"centralauth-log-status-none": "(uda)",

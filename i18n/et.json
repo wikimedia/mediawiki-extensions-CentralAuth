@@ -204,7 +204,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Määra õigused",
 	"centralauth-globalgroupperms-newgroupname": "Uue rühma nimi:",
 	"centralauth-globalgroupperms-nogroups": "Globaalseid rühmi pole määratletud.",
-	"centralauth-groupname": "Wikimedia",
 	"centralauth-hours-ago": "{{PLURAL:$1|ühe|$1}} tunni eest",
 	"centralauth-incomplete": "Ühendkonto loomine pole lõpule viidud.",
 	"centralauth-incomplete-text": "Kui su ühendkonto on loodud, saad kõigisse {{int:Centralauth-groupname}} vikidesse uut kontot loomata sisse logida.",

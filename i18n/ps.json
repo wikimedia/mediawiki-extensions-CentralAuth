@@ -101,7 +101,6 @@
 	"centralauth-globalgroupperms-group-listmembers": "د غړو لړليک",
 	"centralauth-globalgroupperms-newgroupname": "د نوې ډلې نوم:",
 	"centralauth-globalgroupperms-rights": "رښتې",
-	"centralauth-groupname": "ويکيمېډيا بنسټ",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|گړۍ|گړۍ}} دمخه",
 	"centralauth-invalid-wiki": "د ويکي دا ډول توکبنسټ نشته: $1",
 	"centralauth-list-attached-title": "نښلول شوي گڼونونه",

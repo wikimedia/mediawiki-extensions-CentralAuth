@@ -155,7 +155,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Dodijeli dopuštenja",
 	"centralauth-globalgroupperms-newgroupname": "Ime nove grupe:",
 	"centralauth-globalgroupperms-nogroups": "Nijedna globalna grupa nije definisana.",
-	"centralauth-groupname": "Zadužbine Wikimedije",
 	"centralauth-hidden-blockreason": "globalno sakriven od strane $1 u $2 sa sljedećim razlogom: $3",
 	"centralauth-hours-ago": "prije $1 {{PLURAL:$1|sata|sata|sati}}",
 	"centralauth-incomplete": "Unificiranje prijave nije završeno!",

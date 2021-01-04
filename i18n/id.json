@@ -177,7 +177,6 @@
 	"centralauth-globalgroupperms-nogroups": "Tidak ada kelompok global didefinisikan.",
 	"centralauth-globalgroupperms-rights": "Hak",
 	"centralauth-globalgroupperms-wikiset-none": "Grup ini aktif di semua wiki.",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "disembunyikan secara global oleh $1 pada $2 dengan alasan berikut: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|jam|jam}} yang lalu",
 	"centralauth-incomplete": "Tidak semua akun berhasil digabungkan!",

@@ -11,7 +11,6 @@
 	"centralauth-admin-blocklog": "acta obstructionum",
 	"centralauth-admin-username": "Nomen usoris:",
 	"centralauth-finish-password": "Tessera:",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-login-progress": "Simul nomen das in his {{grammar:genitive|{{int:Centralauth-groupname}}}} inceptis:",
 	"centralauth-logout-progress": "Pariter a ceteris tuis inceptis dimitteris:",
 	"centralauth-prefs-manage": "Curare personam tuam universalem",

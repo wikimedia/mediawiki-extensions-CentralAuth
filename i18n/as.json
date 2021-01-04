@@ -144,7 +144,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "অনুমতি প্ৰদান কৰক",
 	"centralauth-globalgroupperms-newgroupname": "নতুন গোটৰ নাম:",
 	"centralauth-globalgroupperms-nogroups": "কোনো গোলকীয় গোট নিৰ্ধাৰণ কৰা নাই।",
-	"centralauth-groupname": "ৱিকিমিডিয়া ফাউণ্ডেশ্যন",
 	"centralauth-hidden-blockreason": " এই কাৰণৰ বাবে $1ৰ দ্বাৰা $2ত গোলকীয়ভাৱে গোপন কৰা হৈছে: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ঘন্টা|ঘন্টা}} পূৰ্বে",
 	"centralauth-incomplete": "একাউণ্ট একত্ৰীকৰণ সমাপ্ত হোৱা নাই!",

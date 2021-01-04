@@ -105,7 +105,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Jaunās grupas vārds:",
 	"centralauth-globalgroupperms-nogroups": "Nav definēta neviena globālā grupa.",
 	"centralauth-globalgroupperms-rights": "Tiesības",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hours-ago": "Pirms $1 {{PLURAL:$1|stundām|stundas|stundām}}",
 	"centralauth-incomplete": "Kontu apvienošana nav pabeigta!",
 	"centralauth-incomplete-text": "Tad, kad tavi konti būs apvienoti, tu varēsi ielogoties jebkurā {{int:Centralauth-groupname}} projektā neveidojot jaunu kontu.",

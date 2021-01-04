@@ -180,7 +180,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Názov novej skupiny:",
 	"centralauth-globalgroupperms-nogroups": "Neboli definované žiadne globálne skupiny.",
 	"centralauth-globalgroupperms-rights": "Práva",
-	"centralauth-groupname": "Nadácie Wikimedia",
 	"centralauth-hidden-blockreason": "globálne skryl $1 na $2 z týchto dôvodov: $3",
 	"centralauth-hours-ago": "{{PLURAL:$1|pred hodinou|pred $1 hodinami}}",
 	"centralauth-incomplete": "Zjednotenie prihlasovacích účtov nebolo dokončené!",

@@ -177,7 +177,6 @@
 	"centralauth-globalgroupperms-newgroupname": "নতুন গ্রুপ নাম:",
 	"centralauth-globalgroupperms-nogroups": "কোনো বৈশ্বিক গ্রুপ নির্ধারণ করা হয়নি।",
 	"centralauth-globalgroupperms-rights": "অধিকারসমূহ",
-	"centralauth-groupname": "উইকিমিডিয়া ফাউন্ডেশন",
 	"centralauth-hidden-blockreason": "নিন্মলিখিত কারণে $1 কর্তৃক $2-এ বৈশ্বিকভাবে আড়াল করা হয়েছে: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ঘণ্টা}} পূর্বে",
 	"centralauth-incomplete": "অ্যাকাউন্ট একত্রীকরণ নিষ্পন্ন হয়নি!",

@@ -197,7 +197,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "უფლებების მინიჭება",
 	"centralauth-globalgroupperms-newgroupname": "ახალი ჯგუფის სახელი:",
 	"centralauth-globalgroupperms-nogroups": "გლობალური ჯგუფები მითითებული არაა.",
-	"centralauth-groupname": "ფონდი ვიკიმედია",
 	"centralauth-hidden-blockreason": "გლობალურად დამალა მომხმარებელმა $1 $2 შემდეგი მიზეზის გამო: $3",
 	"centralauth-hours-ago": "$1 საათის წინ",
 	"centralauth-incomplete": "ანგარიშების გაერთიანება არ დასრულებულა!",

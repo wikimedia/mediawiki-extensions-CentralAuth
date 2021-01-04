@@ -232,7 +232,6 @@
 	"centralauth-globalgroupperms-nogroups": "Нема определено глобални групи.",
 	"centralauth-globalgroupperms-rights": "Права",
 	"centralauth-globalgroupperms-wikiset-none": "Групава е активна на сите викија.",
-	"centralauth-groupname": "фондацијата Викимедија",
 	"centralauth-hidden-blockreason": "глобално скриен од $1 во $2 од следнава причина: $3",
 	"centralauth-hours-ago": "пред {{PLURAL:$1|еден час|$1 часа}}",
 	"centralauth-incomplete": "Обединувањето на најавувањето не е завршено!",

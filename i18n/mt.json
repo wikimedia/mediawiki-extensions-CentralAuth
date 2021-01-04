@@ -145,7 +145,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Agħti l-permessi",
 	"centralauth-globalgroupperms-newgroupname": "Isem tal-grupp ġdid:",
 	"centralauth-globalgroupperms-nogroups": "L-ebda grupp globali mhu definit.",
-	"centralauth-groupname": "Fondazzjoni Wikimedia",
 	"centralauth-hidden-blockreason": "moħbi b'mod globali minn $1 fuq $2 bir-raġuni segwenti: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|siegħa|sigħat}} ago",
 	"centralauth-incomplete": "Il-proċess ta' unifikazzjoni tal-login ma ġiex komplut!",

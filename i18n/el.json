@@ -190,7 +190,6 @@
 	"centralauth-globalgroupperms-nogroups": "Καμία καθολική ομάδα δεν είναι ορισμένη.",
 	"centralauth-globalgroupperms-rights": "Δικαιώματα",
 	"centralauth-globalgroupperms-wikiset-none": "Αυτή η ομάδα είναι ενεργή σε όλα τα βίκι.",
-	"centralauth-groupname": "Ίδρυμα Wikimedia",
 	"centralauth-hidden-blockreason": "παγκοσμίως αποκρυμμένο από $1 στο $2 με τον εξής λόγο: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ώρα|ώρες}} πριν",
 	"centralauth-incomplete": "Η ενοποίηση σύνδεσης δεν ολοκληρώθηκε!",

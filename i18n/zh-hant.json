@@ -261,7 +261,6 @@
 	"centralauth-globalgroupperms-nogroups": "尚未定義任何全域群組。",
 	"centralauth-globalgroupperms-rights": "權限",
 	"centralauth-globalgroupperms-wikiset-none": "此群組在所有wiki上啟用。",
-	"centralauth-groupname": "維基媒體基金會",
 	"centralauth-hidden-blockreason": "己由 $1 於 $2 全域隱藏，由於以下原因：$3",
 	"centralauth-hours-ago": "$1 小時前",
 	"centralauth-incomplete": "登入整合未完成！",

@@ -204,7 +204,6 @@
 	"centralauth-globalgroupperms-nogroups": "Не са дефинирани глобални групи.",
 	"centralauth-globalgroupperms-rights": "Права",
 	"centralauth-globalgroupperms-wikiset-none": "Тази група е активна на всички уикита.",
-	"centralauth-groupname": "Фондация Уикимедия",
 	"centralauth-hidden-blockreason": "глобално скрит от $1 в $2 по следната причина: $3",
 	"centralauth-hours-ago": "преди $1 {{PLURAL:$1|час|часа}}",
 	"centralauth-incomplete": "Обединяването на сметките не е завършено!",

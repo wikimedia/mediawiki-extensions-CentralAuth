@@ -144,7 +144,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Caktoi drejtat",
 	"centralauth-globalgroupperms-newgroupname": "Emri e grupit të ri:",
 	"centralauth-globalgroupperms-nogroups": "Asnjë grup globale nuk janë përcaktuar.",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "fshehur globalisht nga $1 tek $2 për këtë arsye: $3",
 	"centralauth-hours-ago": "$1 orë më parë",
 	"centralauth-incomplete": "Unifikimi i hyrjes nuk përfundoi!",

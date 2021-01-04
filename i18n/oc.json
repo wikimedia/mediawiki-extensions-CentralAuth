@@ -150,7 +150,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Atribuir las permissions",
 	"centralauth-globalgroupperms-newgroupname": "Nom del grop novèl :",
 	"centralauth-globalgroupperms-nogroups": "Cap de grop global es pas estat definit.",
-	"centralauth-groupname": "la fondacion Wikimedia",
 	"centralauth-hidden-blockreason": "amagat globalament per $1 a $2 per aquela rason: $3",
 	"centralauth-hours-ago": "dempuèi $1 {{PLURAL:$1|ora|oras}}",
 	"centralauth-incomplete": "Fusion dels comptes incompleta !",

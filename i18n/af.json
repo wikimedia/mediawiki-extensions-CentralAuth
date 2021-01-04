@@ -132,7 +132,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Ken regte toe",
 	"centralauth-globalgroupperms-newgroupname": "Nuwe groepnaam:",
 	"centralauth-globalgroupperms-nogroups": "Geen globale groepe is gedefinieer nie.",
-	"centralauth-groupname": "die Wikimedia-stigting",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur|ure}} gelede",
 	"centralauth-incomplete": "Aantekenversmelting is nie voltooi nie!",
 	"centralauth-invalid-wiki": "Die wikidatabasis bestaan nie: $1",

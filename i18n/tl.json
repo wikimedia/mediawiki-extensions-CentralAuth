@@ -142,7 +142,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Magtalaga ng mga kapahintulutan",
 	"centralauth-globalgroupperms-newgroupname": "Pangalan ng bagong pangkat:",
 	"centralauth-globalgroupperms-nogroups": "Walang binigyang-kahulugang mga pandaigdigang pangkat.",
-	"centralauth-groupname": "ang Pundasyong Wikimedia",
 	"centralauth-hidden-blockreason": "pandaigdigang ikinubli ni $1 noong $2 na may kasunod na dahilang: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|oras|mga oras}} na ang lumipas",
 	"centralauth-incomplete": "Hindi pa ganap ang pag-iisa ng pag-login!",

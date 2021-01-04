@@ -221,7 +221,6 @@
 	"centralauth-globalgroupperms-nogroups": "Nejsou definovány žádné globální skupiny.",
 	"centralauth-globalgroupperms-rights": "Práva",
 	"centralauth-globalgroupperms-wikiset-none": "Tato skupina je aktivní na všech wiki.",
-	"centralauth-groupname": "nadace Wikimedia",
 	"centralauth-hidden-blockreason": "globálně skryl $1 v $2 se zdůvodněním: $3",
 	"centralauth-hours-ago": "před $1 {{PLURAL:$1|hodinou|hodinami|hodinami}}",
 	"centralauth-incomplete": "Sjednocení přihlašovacích účtů nebylo dokončeno!",

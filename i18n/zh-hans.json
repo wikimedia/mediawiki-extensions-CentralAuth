@@ -261,7 +261,6 @@
 	"centralauth-globalgroupperms-nogroups": "没有定义全域组。",
 	"centralauth-globalgroupperms-rights": "权限",
 	"centralauth-globalgroupperms-wikiset-none": "此用户组在所有wiki上激活。",
-	"centralauth-groupname": "维基媒体基金会",
 	"centralauth-hidden-blockreason": "已由$1在$2全域隐藏，原因：$3",
 	"centralauth-hours-ago": "$1小时前",
 	"centralauth-incomplete": "账户整合未完成！",

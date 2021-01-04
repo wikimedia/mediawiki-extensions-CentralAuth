@@ -96,7 +96,6 @@
 	"centralauth-foreign-link": "اليوزر $1 فى $2",
 	"centralauth-globalgroupperms-creategroup-submit": "إدى الاذونات",
 	"centralauth-globalgroupperms-newgroupname": "اسم المجموعة الجديدة:",
-	"centralauth-groupname": "مؤسسة ويكيميديا",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ساعة|ساعة}} فاتو",
 	"centralauth-incomplete": "توحيد الدخول ما اكتملش!",
 	"centralauth-incomplete-text": "اول ما تسجيلك يتوحد، ح تقدر تدخل على اى موقع ويكى من {{int:Centralauth-groupname}} من غير ما تفتح حساب جديد.",

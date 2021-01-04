@@ -15,7 +15,6 @@
 	"centralauth-centralautologin-alreadyloggedinlocally": "Olet lokannu sisäle jo paikallisesti",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|mookkaus|mookkausta}} wikissä $2",
 	"centralauth-foreign-link": "Konttu $1 prujektissa $2",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-merge-denied": "Sulla ei ole luppaa käyttää tätä sivua.",
 	"centralauth-merge-method-login": "luotu lokkaushetkelä",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Lokkaa sisäle]</span>, jos halvaat tarkistaa, jos sinun käyttäjätunnukset oon täyesti yhistetty.",

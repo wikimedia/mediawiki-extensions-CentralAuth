@@ -206,7 +206,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "അവകാശങ്ങൾ അനുവദിക്കുക",
 	"centralauth-globalgroupperms-newgroupname": "പുതിയ സംഘത്തിന്റെ പേര്‌:",
 	"centralauth-globalgroupperms-nogroups": "ആഗോള അംഗത്വങ്ങൾ ഒന്നും നിർവചിച്ചിട്ടില്ല.",
-	"centralauth-groupname": "വിക്കിമീഡിയ ഫൗണ്ടേഷൻ",
 	"centralauth-hidden-blockreason": "$1 $2-വിൽ ആഗോളമായി മറച്ചിരിക്കുന്നു, കാരണം: $3",
 	"centralauth-hours-ago": "{{PLURAL:$1|ഒരു മണിക്കൂർ|$1 മണിക്കൂർ}} മുൻപ്",
 	"centralauth-incomplete": "ലോഗിൻ സം‌യോജനം പൂർത്തീകരിക്കപ്പെട്ടില്ല!",

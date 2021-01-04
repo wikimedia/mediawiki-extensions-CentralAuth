@@ -182,7 +182,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Magtugot nin mga permiso",
 	"centralauth-globalgroupperms-newgroupname": "Baguhong pangaran nin grupo:",
 	"centralauth-globalgroupperms-nogroups": "Mayong pankinaban na mga grupo an pinagkahulugan.",
-	"centralauth-groupname": "an Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "Pankinabanong ipinagtago ni $1 sa $2 na igwa kan minasunod na rason: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|oras|mga oras}} an nakaagi",
 	"centralauth-incomplete": "Pagkasararo kan panlaog dae nakumpleto!",

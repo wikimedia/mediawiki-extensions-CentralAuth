@@ -141,7 +141,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "अधिकारः दीयताम्",
 	"centralauth-globalgroupperms-newgroupname": "नूतनगणस्य नाम",
 	"centralauth-globalgroupperms-nogroups": "कोपि वैश्विकगणः परिभाषितः नास्ति ।",
-	"centralauth-groupname": "विकिमाधमसंस्थानम्",
 	"centralauth-hidden-blockreason": "$1 द्वारा  वैश्विकस्तरे $2 इत्यत्र प्रच्छन्नः अधोनिर्दिष्टेन कारणेन : $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|घण्टा|घण्टाः}} पूर्वम्",
 	"centralauth-incomplete": "अभिलेखसंयोजनं न सम्पन्नम् !",

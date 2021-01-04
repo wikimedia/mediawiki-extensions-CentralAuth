@@ -187,7 +187,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Ime nove grupe:",
 	"centralauth-globalgroupperms-nogroups": "Nijedna globalna grupa nije definisana.",
 	"centralauth-globalgroupperms-wikiset-none": "Ova grupa je aktivna na svim vikijima.",
-	"centralauth-groupname": "Zadužbine Vikimedije",
 	"centralauth-hidden-blockreason": "globalno sakriven od $1 u $2 zbog sledećeg razloga: $3",
 	"centralauth-hours-ago": "pre $1 {{PLURAL:$1|sat|sata|sati}}",
 	"centralauth-incomplete": "Objedinjavanje naloga nije završeno!",

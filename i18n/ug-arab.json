@@ -116,7 +116,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "بەلگىلەنگەن ئىجازەت",
 	"centralauth-globalgroupperms-newgroupname": "يېڭى گۇرۇپپا ئىسمى:",
 	"centralauth-globalgroupperms-nogroups": "ئومۇمىيەت گۇرۇپپىسى بەلگىلەنمىگەن.",
-	"centralauth-groupname": "Wikimedia ۋەخپىسى",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|سائەت}} ئىلگىرى",
 	"centralauth-incomplete": "بىر تۇتاش تىزىمغا كىرىش تاماملانمىدى!",
 	"centralauth-invalid-wiki": "بۇنداق ۋىكى ساندانى يوق: $1",

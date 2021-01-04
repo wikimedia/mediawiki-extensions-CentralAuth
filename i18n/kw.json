@@ -10,7 +10,6 @@
 	"centralauth-admin-blocklog": "kovnoten lettya",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|gevro|kevro}} war $2",
 	"centralauth-foreign-link": "Devnydhyer $1 war $2",
-	"centralauth-groupname": "an Fondyans Wikimedia",
 	"centralauth-login-progress": "Orth agas omgelmi orth wikiow {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Owth omdenna dhyworth {{PLURAL:$2|wiki aral|wikis erel}} a {{int:Centralauth-groupname}}:",
 	"centralauth-merge-method-login": "gwruthys owth omgelmi",

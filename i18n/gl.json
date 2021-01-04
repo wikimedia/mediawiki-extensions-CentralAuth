@@ -231,7 +231,6 @@
 	"centralauth-globalgroupperms-nogroups": "Non hai definidos grupos globais.",
 	"centralauth-globalgroupperms-rights": "Dereitos",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está activo en todas as wikis.",
-	"centralauth-groupname": "da Fundación Wikimedia",
 	"centralauth-hidden-blockreason": "agochada globalmente por $1 en $2 polo seguinte motivo: $3",
 	"centralauth-hours-ago": "hai {{PLURAL:$1|unha hora|$1 horas}}",
 	"centralauth-incomplete": "A unificación do rexistro non está completa!",

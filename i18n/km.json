@@ -93,7 +93,6 @@
 	"centralauth-foreign-link": "អ្នកប្រើប្រាស់ឈ្មោះ $1 នៅលើ $2",
 	"centralauth-globalgroupperms-group": "ក្រុម",
 	"centralauth-globalgroupperms-newgroupname": "ឈ្មោះក្រុមថ្មី៖",
-	"centralauth-groupname": "មូលនិធិវិគីមេឌា",
 	"centralauth-hours-ago": "$1{{PLURAL:$1|ម៉ោង|ម៉ោង}}មុន",
 	"centralauth-incomplete": "ការច្របាច់គណនីបញ្ចូលគ្នាមិនបានសំរេចទេ!",
 	"centralauth-list-attached": "គណនីឈ្មោះ \"$1\" នៅលើវិបសាយខាងក្រោមនេះ ត្រូវបានភ្ជាប់ដោយស្វ័យប្រវត្តិទៅគណនីរួមគ្នាហើយ៖",

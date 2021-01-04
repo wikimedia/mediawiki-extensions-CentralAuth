@@ -240,7 +240,6 @@
 	"centralauth-globalgroupperms-nogroups": "Nincsenek globális csoportok.",
 	"centralauth-globalgroupperms-rights": "Jogosultságok",
 	"centralauth-globalgroupperms-wikiset-none": "Ez a csoport az összes wikin aktív.",
-	"centralauth-groupname": "a Wikimédia Alapítvány",
 	"centralauth-hidden-blockreason": "$1 globálisan elrejtette $2-kor a következő ok miatt: $3",
 	"centralauth-hours-ago": "$1 órával ezelőtt",
 	"centralauth-incomplete": "A bejelentkezés egységesítése nincs befejezve!",

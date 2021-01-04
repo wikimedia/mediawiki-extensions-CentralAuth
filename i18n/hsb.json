@@ -185,7 +185,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "Prawa připokazać",
 	"centralauth-globalgroupperms-newgroupname": "Mjeno noweje skupiny:",
 	"centralauth-globalgroupperms-nogroups": "Žane globalne skupiny definowane.",
-	"centralauth-groupname": "załožby Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "wot $1 $2 ze slědowaceje přičiny globalnje schowany: $3",
 	"centralauth-hours-ago": "před $1 {{PLURAL:$1|hodźinu|hodźinomaj|hodźinami|hodźinami}}",
 	"centralauth-incomplete": "Wužiwarske konta <b>njejsu</b> so dospołnje zjednoćili!",

@@ -247,7 +247,6 @@
 	"centralauth-globalgroupperms-nogroups": "グローバルグループが定義されていません。",
 	"centralauth-globalgroupperms-rights": "権限",
 	"centralauth-globalgroupperms-wikiset-none": "このグループはすべてのウィキで有効化されています。",
-	"centralauth-groupname": "ウィキメディア財団",
 	"centralauth-hidden-blockreason": "$1 により $2 にグローバルに秘匿。理由: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|時間}}前",
 	"centralauth-incomplete": "アカウントの統一に失敗しました!",

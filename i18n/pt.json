@@ -254,7 +254,6 @@
 	"centralauth-globalgroupperms-nogroups": "Não estão definidos grupos globais.",
 	"centralauth-globalgroupperms-rights": "Privilégios",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está presente em todas as wikis.",
-	"centralauth-groupname": "Wikimedia Foundation",
 	"centralauth-hidden-blockreason": "globalmente ocultada por $1 na $2 com o seguinte motivo: $3",
 	"centralauth-hours-ago": "há $1 {{PLURAL:$1|hora|horas}}",
 	"centralauth-incomplete": "Unificação da autenticação incompleta!",

@@ -207,7 +207,6 @@
 	"centralauth-globalgroupperms-creategroup-submit": "परवानग्या नेमून द्या",
 	"centralauth-globalgroupperms-newgroupname": "नवीन गटाचे नाव:",
 	"centralauth-globalgroupperms-nogroups": "कोणतेही वैश्विक गट प्रतिरूपित नाहीत.",
-	"centralauth-groupname": "विकीमेडिया प्रतिष्ठान",
 	"centralauth-hidden-blockreason": "$1 द्वारे वैश्विक पातळीवर   $2 येथे लपविण्यात आले. खालील कारणांसाठी: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|तास}} पूर्वी",
 	"centralauth-incomplete": "खाते एकत्रीकरण पूर्ण झालेले नाही!",

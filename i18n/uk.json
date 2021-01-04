@@ -256,7 +256,6 @@
 	"centralauth-globalgroupperms-nogroups": "Не визначено глобальні групи.",
 	"centralauth-globalgroupperms-rights": "Права",
 	"centralauth-globalgroupperms-wikiset-none": "Ця група діє в усіх вікі.",
-	"centralauth-groupname": "Фонду Вікімедіа",
 	"centralauth-hidden-blockreason": "глобально прихований $1 $2 через $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|годину|години|годин}} тому",
 	"centralauth-incomplete": "Об'єднання облікових записів не завершене!",

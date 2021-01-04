@@ -217,7 +217,6 @@
 	"centralauth-globalgroupperms-nogroups": "Opredeljena ni nobena globalna skupina.",
 	"centralauth-globalgroupperms-rights": "Pravice",
 	"centralauth-globalgroupperms-wikiset-none": "Ta skupina je aktivna na vseh wikijih.",
-	"centralauth-groupname": "Wikimedie",
 	"centralauth-hidden-blockreason": "globalno skril $1 dne $2 zaradi naslednjega razloga: $3",
 	"centralauth-hours-ago": "pred $1 {{PLURAL:$1|uro|urama|urami}}",
 	"centralauth-incomplete": "Poenotenje prijave ni dokončano!",

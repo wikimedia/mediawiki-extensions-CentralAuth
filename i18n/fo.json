@@ -142,7 +142,6 @@
 	"centralauth-foreign-link": "Brúkari $1 á $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Gev loyvi",
 	"centralauth-globalgroupperms-newgroupname": "Nýtt bólka heiti",
-	"centralauth-groupname": "Wikimedia Grunnurin",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|tími|tímar}} síðan",
 	"centralauth-incomplete": "Logg inn sameinan er ikki fullførd!",
 	"centralauth-incomplete-text": "Tá tín innritan er sameind, fer tú at kunna rita teg inn á eina og hvørja wiki síðu av {{int:Centralauth-groupname}} uttan at skula upprætta nýggja konto",
