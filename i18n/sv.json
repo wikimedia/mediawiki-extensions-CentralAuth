@@ -251,6 +251,7 @@
 	"centralauth-globalgroupperms-nogroups": "Inga globala grupper är definierade.",
 	"centralauth-globalgroupperms-rights": "Rättigheter",
 	"centralauth-globalgroupperms-wikiset-none": "Denna grupp är aktiv på alla wikier.",
+	"centralauth-groupname": "denna wikifarm",
 	"centralauth-hidden-blockreason": "globalt dold av $1 vid $2 med följande anledning: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|timme|timmar}} sedan",
 	"centralauth-incomplete": "Sammanslagning av inloggningar är inte fullständig!",
