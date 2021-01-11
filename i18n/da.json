@@ -204,7 +204,7 @@
 	"centralauth-finish-send-confirmation": "Send adgangskode med e-mail",
 	"centralauth-finish-text": "Hvis disse kontoer tilhører dig, kan du fuldføre kontosammenlægningen ved at skrive adgangskoderne for de andre kontoer her:",
 	"centralauth-finish-title": "Fuldfør sammenlægning",
-	"centralauth-finishglobaliseemail_body": "Din e-mailadresse er angivet som tilknyttet kontoen \"$2\" på alle Wikimediaprojekter, med din hovedkonto på {{SITENAME}}.\n\nFor at bekræfte, at denne konto virkelig hører til dig, flette nogen af dine kontoer vi ikke kunne gøre automatisk, og tillade dig at genoprette din konto hvis du mister din adgangskode, skal du åbne dette link i en browser:\n\n$3\n\nHvis kontoen *ikke* tilhører dig, så følg dette link for at annullere e-mailadresse bekræftelse:\n\n$5\n\nDenne bekræftelseskode udløber $6 $7.",
+	"centralauth-finishglobaliseemail_body": "Din e-mailadresse er angivet som tilknyttet kontoen \"$2\" på alle projekter, med din hovedkonto på {{SITENAME}}.\n\nFor at bekræfte, at denne konto virkelig hører til dig, flette nogen af dine kontoer vi ikke kunne gøre automatisk, og tillade dig at genoprette din konto hvis du mister din adgangskode, skal du åbne dette link i en browser:\n\n$3\n\nHvis kontoen *ikke* tilhører dig, så følg dette link for at annullere e-mailadresse bekræftelse:\n\n$5\n\nDenne bekræftelseskode udløber $6 $7.",
 	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} kontobekræftelse",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bidrag|bidrag}} på $2",
 	"centralauth-foreign-link": "Bruger $1 på $2",

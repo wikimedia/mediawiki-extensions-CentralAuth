@@ -401,7 +401,7 @@
 	"centralauth-usermerge-ratelimited": "בתור אמצעי אבטחה, מותר לך למזג משתמש גלובלי פעם בדקה. נא להמתין ולנסות שוב בעוד דקה.",
 	"centralauth-usermerge-toomany": "אפשר למזג רק {{PLURAL:$1|משתמש אחד|$1 משתמשים}} בפעם אחת.",
 	"centralauth-uwbr-editcount": "מספר העריכות",
-	"centralauth-uwbr-intro": "בדף הזה מופיעה רשימה של משתמשים שנרשמו בוויקי הזה וששמם ישונה.",
+	"centralauth-uwbr-intro": "הדף הזה מציג רשימת משתמשים שנרשמו בוויקי הזה וששמם ישונה.",
 	"centralauth-uwbr-name": "שם המשתמש",
 	"centralauth-uwbr-registration": "תאריך הרישום",
 	"centralauth-uwbr-registration-nodate": "אינו ידוע",
