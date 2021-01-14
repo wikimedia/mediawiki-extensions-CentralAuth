@@ -44,6 +44,7 @@
 			"下一次登录",
 			"乌拉跨氪",
 			"佛壁灯",
+			"列维劳德",
 			"范",
 			"阿pp",
 			"飞舞回堂前"
@@ -491,7 +492,7 @@
 	"globalrenamerequest-email-why-explain": "在此过程中我们需要一个电子邮件地址，以确保您不会丢失访问此账户的权利。<br />您可在重命名过程完成后移除电子邮件地址。",
 	"globalrenamerequest-email2-help": "输入您在上方输入的电子邮件地址进行确认。",
 	"globalrenamerequest-email2-label": "确认电子邮件地址：",
-	"globalrenamerequest-forced": "维基媒体基金会[[:mw:SUL_finalisation|统一所有项目的用户账户]]。您的用户名已确定在其他wiki使用，因此为了完成统一登录步骤它必须更改。这意味着您必须选择一个新用户名才能继续。",
+	"globalrenamerequest-forced": "这个 wiki 农场统一所有项目的用户账户。您的用户名已确定在其他wiki使用，因此为了完成统一登录步骤它必须更改。这意味着您必须选择一个新用户名才能继续。",
 	"globalrenamerequest-legend": "统一账户重命名申请",
 	"globalrenamerequest-newname-err-invalid": "您没有指定有效的用户名。",
 	"globalrenamerequest-newname-err-taken": "输入的用户名已经使用。请选择不同的用户名。",
