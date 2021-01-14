@@ -816,6 +816,7 @@ $specialPageAliases['sk'] = [
 /** Serbian (Cyrillic script) (српски (ћирилица)‎) */
 $specialPageAliases['sr-ec'] = [
 	'CentralAuth' => [ 'Централна_пријава', 'Глобални_налог' ],
+	'CreateLocalAccount' => [ 'Отвори_локални_налог' ],
 	'MergeAccount' => [ 'Споји_налог' ],
 	'GlobalGroupMembership' => [ 'Глобална_корисничка_права', 'Чланство_у_глобалним_групама' ],
 	'GlobalGroupPermissions' => [ 'Глобална_права_група' ],
@@ -834,6 +835,7 @@ $specialPageAliases['sr-ec'] = [
 /** Serbian (Latin script) (srpski (latinica)‎) */
 $specialPageAliases['sr-el'] = [
 	'CentralAuth' => [ 'Centralna_prijava', 'Globalni_nalog' ],
+	'CreateLocalAccount' => [ 'Otvori_lokalni_nalog' ],
 	'MergeAccount' => [ 'Spoji_nalog' ],
 	'GlobalGroupMembership' => [ 'Globalna_korisnička_prava', 'Članstvo_u_globalnim_grupama' ],
 	'GlobalGroupPermissions' => [ 'Globalna_prava_grupa' ],
