@@ -764,6 +764,7 @@ $specialPageAliases['ru'] = [
 	'GlobalGroupPermissions' => [ 'Права_глобальных_групп' ],
 	'WikiSets' => [ 'Наборы_вики' ],
 	'GlobalUsers' => [ 'Глобальные_участники' ],
+	'GlobalRenameRequest' => [ 'Запрос_на_глобальное_переименование' ],
 ];
 
 /** Sanskrit (संस्कृतम्) */
