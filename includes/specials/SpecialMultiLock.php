@@ -341,6 +341,10 @@ class SpecialMultiLock extends SpecialPage {
 			}
 
 			$rowtext .= Xml::closeElement( 'tr' );
+
+			// FIXME why does phan think that $rowtext is a tainted argument?
+			// no caused by lines to explain...
+			// @phan-suppress-next-line SecurityCheck-XSS
 			$out->addHTML( $rowtext );
 		}
 

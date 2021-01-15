@@ -206,6 +206,10 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		}, $this->oldCAUsers );
 		$userList = $lang->commaList( $globalUsers );
 
+		// $userList is based on user input (via $this->oldCAUsers), but was processed
+		// by LinkRenderer::makeKnownLink in the array_map with getLocalizedCentralAuthLink,
+		// and should be fine HTML, i.e. is not SecurityCheck-XSS
+		// @phan-suppress-next-line SecurityCheck-XSS
 		$msg = $this->msg( 'centralauth-usermerge-queued' )
 			->rawParams(
 				$userList,
