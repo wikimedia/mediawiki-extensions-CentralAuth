@@ -200,9 +200,8 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	public function onSuccess() {
 		$lang = $this->getLanguage();
-		$us = $this;
-		$globalUsers = array_map( function ( CentralAuthUser $user ) use ( $us ) {
-			return $us->getLocalizedCentralAuthLink( $user->getName() );
+		$globalUsers = array_map( function ( CentralAuthUser $user ) {
+			return $this->getLocalizedCentralAuthLink( $user->getName() );
 		}, $this->oldCAUsers );
 		$userList = $lang->commaList( $globalUsers );
 
