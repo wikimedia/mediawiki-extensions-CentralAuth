@@ -99,7 +99,7 @@
 	"centralauth-admin-status-nonexistent": "Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.",
 	"centralauth-admin-status-reasons": "* Běžné důvody zamčení\n** pouze vandalský účet\n** pouze spamující účet\n* Běžné důvody zamčení a skrytí\n** nepřijatelné uživatelské jméno\n** nevhodné osobní údaje",
 	"centralauth-admin-status-submit": "Změnit stav",
-	"centralauth-admin-suppressreason": "Globálně utajil $1 se zdůvodněním: $2",
+	"centralauth-admin-suppressreason": "Globálně {{GENDER:$2|utajil|utajila|utajil(a)}} $1 se zdůvodněním: $2",
 	"centralauth-admin-title": "Správa globálních účtů {{GENDER:$1|uživatele|uživatelky}} $1",
 	"centralauth-admin-title-ro": "Informace o globálním účtu $1",
 	"centralauth-admin-too-many-edits": "Globální účet „<nowiki>$1</nowiki>“ má více než $2 {{PLURAL:$2|editaci|editace|editací}} a nelze ho skrýt.",
