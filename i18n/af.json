@@ -7,6 +7,7 @@
 			"Naudefj",
 			"SPQRobin",
 			"Spacebirdy",
+			"Winstonza",
 			"පසිඳු කාවින්ද"
 		]
 	},
@@ -124,7 +125,7 @@
 	"centralauth-finish-login": "Meld aan",
 	"centralauth-finish-noconfirms": "Geen rekeninge kan bevestig word deur gebruik te maak van hierdie wagwoord.",
 	"centralauth-finish-password": "Wagwoord:",
-	"centralauth-finish-send-confirmation": "E-pos wagwoord",
+	"centralauth-finish-send-confirmation": "E-poswagwoord",
 	"centralauth-finish-text": "As hierdie rekeninge nie aan jou behoort nie, kan jy die aanmelding eenwording proses eenvoudig klaar deur die tik van die wagwoorde vir die ander rekeninge hier:",
 	"centralauth-finish-title": "Voltooi samevoeging",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bydrae|bydraes}} op $2",
