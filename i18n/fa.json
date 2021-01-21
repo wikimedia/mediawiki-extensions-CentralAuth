@@ -31,6 +31,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه‌های سراسری که کاربر در آن عضو است",
+	"action-centralauth-createlocal": "تاکید بر ایجاد حساب محلی",
 	"action-centralauth-lock": "قفل یا بازکردن حساب‌های سراسری",
 	"action-centralauth-merge": "ادغام حساب‌های کاربری آن‌ها",
 	"action-centralauth-oversight": "فرونشانی یا پنهان‌سازی حساب سراسری",
@@ -155,6 +156,7 @@
 	"centralauth-completelogin-back": "بازگشت به صفحهٔ پیشین.",
 	"centralauth-contribs-locked": "این حساب سراسری بسته‌شده‌است.\nبرای اطلاعات بیشتر [[Special:CentralAuth/$1|جزئیات حساب سراسری]] را ببینید.",
 	"centralauth-contribs-locked-log": "دسترسی این کاربر در حال حاضر بسته است.\nآخرین مورد سیاهه قطع دسترسی در زیر آمده‌است:",
+	"centralauth-createlocal-pretext": "شما می‌توانید از این فرم برای ایجاد یک حساب محلی برای یک حساب سراسری استفاده کنید در صورتی آن‌ها قادر به انجام این کار به دلایلی نیستند.",
 	"centralauth-createlocal-reason": "دلیل",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|روز|روز}} قبل",
 	"centralauth-delete-empty-account": "حساب خالی",
