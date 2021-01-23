@@ -92,6 +92,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 	}
 
 	/**
+	 * @param int $id
 	 * @param string $name
 	 *
 	 * @return MockObject|User
@@ -128,6 +129,8 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 
 	/**
 	 * @param string $name
+	 * @param array $return
+	 * @param array $methods
 	 *
 	 * @return MockObject|CentralAuthUser
 	 */

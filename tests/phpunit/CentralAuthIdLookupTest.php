@@ -10,6 +10,7 @@ use MediaWiki\MediaWikiServices;
  */
 class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 
+	/** @var int[] */
 	private $centralUsers = [
 		'GlobalUser' => 1001,
 		'GlobalLockedUser' => 1003,
