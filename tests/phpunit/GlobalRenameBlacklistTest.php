@@ -25,6 +25,7 @@
  * @group Database
  */
 class GlobalRenameBlacklistTest extends MediaWikiIntegrationTestCase {
+	/** @var GlobalRenameBlacklist|null */
 	private $blacklist = null;
 
 	protected function setUp(): void {
