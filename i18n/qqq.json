@@ -197,6 +197,7 @@
 	"centralauth-editgroup-editsets": "Preceded by the wiki set selector.",
 	"centralauth-editgroup-fieldset": "Used as fieldset label. Parameters:\n* $1 - group name",
 	"centralauth-editgroup-invalid-name": "Error shown in case the name given for the global group is invalid",
+	"centralauth-editgroup-invalid-name-lowercase": "Error shown in case the name given for the global group is not all lowercase",
 	"centralauth-editgroup-member": "Used as label for the group name or for {{msg-mw|centralauth-editgroup-member-edit}}.",
 	"centralauth-editgroup-member-edit": "\"edit\" is link text.\n\nParameters:\n* $1 - group name\n* $2 - group member name (localized) e.g. {{msg-mw|group-editor-member}}, {{msg-mw|group-sysop-member}}",
 	"centralauth-editgroup-members": "Used as label for {{msg-mw|Centralauth-editgroup-members-link}}.",

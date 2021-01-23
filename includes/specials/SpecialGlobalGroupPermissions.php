@@ -231,13 +231,23 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$assignedRights = $this->getAssignedRights( $group );
 		$this->getOutput()->addBacklinkSubtitle( $this->getPageTitle() );
 
-		// if the group doesn't exist and the user can not manage the global groups,
-		// an error message should be shown instead of the permission list box.
-		if ( !$assignedRights && !$editable ) {
-			$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
-				[ 'centralauth-editgroup-nonexistent', $group ] );
-			$this->showLogFragment( $group, $this->getOutput() );
-			return;
+		if ( !$assignedRights ) {
+			// if the group doesn't exist and the user can not manage the global groups,
+			// an error message should be shown instead of the permission list box.
+			if ( !$editable ) {
+				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
+					[ 'centralauth-editgroup-nonexistent', $group ] );
+				$this->showLogFragment( $group, $this->getOutput() );
+				return;
+			}
+
+			$nameValidationResult = $this->validateGroupName( $group );
+			if ( !$nameValidationResult->isGood() ) {
+				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
+					$nameValidationResult->getMessage() );
+				$this->showLogFragment( $group, $this->getOutput() );
+				return;
+			}
 		}
 
 		$fieldsetClass = $editable
@@ -462,6 +472,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return;
 		}
 		$newname = ltrim( substr( $newname->getDBkey(), 2 ), '_' );
+
+		// all new group names should be lowercase: check all new and changed group names (T202095)
+		if ( !in_array( $group, CentralAuthUser::availableGlobalGroups() ) || ( $group !== $newname ) ) {
+			$nameValidationResult = $this->validateGroupName( $newname );
+			if ( !$nameValidationResult->isGood() ) {
+				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
+					$nameValidationResult->getMessage() );
+				return;
+			}
+		}
 
 		if ( $group != $newname ) {
 			if ( in_array( $newname, CentralAuthUser::availableGlobalGroups() ) ) {
@@ -733,5 +753,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	protected function getGroupName() {
 		return 'users';
+	}
+
+	private function validateGroupName( string $name ) : Status {
+		// all new group names should be lowercase (T202095)
+		if ( $name !== strtolower( $name ) ) {
+			return Status::newFatal( 'centralauth-editgroup-invalid-name-lowercase' );
+		}
+
+		return Status::newGood();
 	}
 }
