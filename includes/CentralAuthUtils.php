@@ -1,45 +1,29 @@
 <?php
 
-use MediaWiki\Auth\AuthManager;
-use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
-use MediaWiki\Session\SessionManager;
-use Wikimedia\WaitConditionLoop;
+use Psr\Container\ContainerInterface;
 
+/**
+ * @deprecated since 1.36, use CentralAuthUtilityService instead
+ */
 class CentralAuthUtils {
-	/** @var BagOStuff|null Session cache */
-	private static $sessionStore = null;
+	private static function getUtilityService( ContainerInterface $services = null ) : CentralAuthUtilityService {
+		return CentralAuthServices::getUtilityService( $services );
+	}
 
 	public static function isReadOnly() {
-		return ( self::getReadOnlyReason() !== false );
+		return self::getUtilityService()->isReadOnly();
 	}
 
 	public static function getReadOnlyReason() {
-		global $wgCentralAuthDatabase;
-
-		if ( wfReadOnly() ) {
-			return wfReadOnlyReason();
-		}
-
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lb = $lbFactory->getMainLB( $wgCentralAuthDatabase );
-		$reason = $lb->getReadOnlyReason( $wgCentralAuthDatabase );
-		if ( $reason !== false ) {
-			return $reason;
-		}
-
-		return false;
+		return self::getUtilityService()->getReadOnlyReason();
 	}
 
 	/**
 	 * Wait for the CentralAuth DB replicas to catch up
 	 */
 	public static function waitForReplicas() {
-		global $wgCentralAuthDatabase;
-
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lbFactory->waitForReplication( [ 'domain' => $wgCentralAuthDatabase ] );
+		self::getUtilityService()->waitForReplicas();
 	}
 
 	/**
@@ -49,15 +33,7 @@ class CentralAuthUtils {
 	 * @throws CentralAuthReadOnlyError
 	 */
 	public static function getCentralDB() {
-		global $wgCentralAuthDatabase, $wgCentralAuthReadOnly;
-
-		if ( $wgCentralAuthReadOnly ) {
-			throw new CentralAuthReadOnlyError();
-		}
-
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		return $lbFactory->getMainLB( $wgCentralAuthDatabase )->getConnectionRef( DB_MASTER, [],
-			$wgCentralAuthDatabase );
+		return self::getUtilityService()->getCentralDB();
 	}
 
 	/**
@@ -66,42 +42,14 @@ class CentralAuthUtils {
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	public static function getCentralReplicaDB() {
-		global $wgCentralAuthDatabase;
-
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		return $lbFactory->getMainLB( $wgCentralAuthDatabase )
-			->getConnectionRef( DB_REPLICA, [], $wgCentralAuthDatabase );
+		return self::getUtilityService()->getCentralReplicaDB();
 	}
 
 	/**
 	 * @param WebRequest|null $request
 	 */
 	public static function setP3P( WebRequest $request = null ) {
-		if ( !$request ) {
-			$request = RequestContext::getMain()->getRequest();
-		}
-		$response = $request->response();
-
-		$sent = is_callable( [ $response, 'headersSent' ] )
-			? $response->headersSent()
-			: headers_sent();
-
-		if ( !$sent && $response->getHeader( 'P3P' ) === null ) {
-			// IE requires that a P3P header be provided for the cookies to be
-			// visible to the auto-login check.
-			global $wgCentralAuthCookiesP3P;
-			if ( $wgCentralAuthCookiesP3P === true ) {
-				// Note this policy is not valid: it has no valid tokens, while
-				// a valid policy would contain an "access" token and at least
-				// one statement, which would contain either the NID token or
-				// at least one "purpose" token, one "recipient" token, and one
-				// "retention" token.
-				$url = Title::makeTitle( NS_SPECIAL, 'CentralAutoLogin/P3P' )->getCanonicalURL();
-				$response->header( "P3P: CP=\"This is not a P3P policy! See $url for more info.\"" );
-			} elseif ( $wgCentralAuthCookiesP3P ) {
-				$response->header( "P3P: $wgCentralAuthCookiesP3P" );
-			}
-		}
+		self::getUtilityService()->setP3P( $request );
 	}
 
 	/**
@@ -109,8 +57,7 @@ class CentralAuthUtils {
 	 * @return string
 	 */
 	public static function memcKey( ...$args ) {
-		global $wgCentralAuthDatabase;
-		return $wgCentralAuthDatabase . ':' . implode( ':', $args );
+		return self::getUtilityService()->memcKey( ...$args );
 	}
 
 	/**
@@ -122,63 +69,14 @@ class CentralAuthUtils {
 	 * @return mixed Key value; false if not found or on error
 	 */
 	public static function getKeyValueUponExistence( BagOStuff $store, $key, $timeout = 3 ) {
-		$value = false;
-
-		$result = ( new WaitConditionLoop(
-			function () use ( $store, $key, &$value ) {
-				$store->clearLastError();
-				$value = $store->get( $key );
-				$error = $store->getLastError();
-				if ( $value !== false ) {
-					return WaitConditionLoop::CONDITION_REACHED;
-				} elseif ( $error === $store::ERR_NONE ) {
-					return WaitConditionLoop::CONDITION_CONTINUE;
-				} else {
-					return WaitConditionLoop::CONDITION_ABORTED;
-				}
-			},
-			$timeout
-		) )->invoke();
-
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
-		if ( $result === WaitConditionLoop::CONDITION_REACHED ) {
-			$logger->info( "Expected key {key} found.", [ 'key' => $key ] );
-		} elseif ( $result === WaitConditionLoop::CONDITION_TIMED_OUT ) {
-			$logger->error( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
-		} else {
-			$logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
-		}
-
-		return $value;
+		return self::getUtilityService()->getKeyValueUponExistence( $store, $key, $timeout );
 	}
 
 	/**
 	 * @return BagOStuff
 	 */
 	public static function getSessionStore() {
-		global $wgCentralAuthSessionCacheType;
-		global $wgSessionCacheType;
-
-		if ( !self::$sessionStore ) {
-			$sessionCacheType = $wgCentralAuthSessionCacheType ?? $wgSessionCacheType;
-			$cache = ObjectCache::getInstance( $sessionCacheType );
-			self::$sessionStore = $cache instanceof CachedBagOStuff
-				? $cache : new CachedBagOStuff( $cache );
-		}
-		return self::$sessionStore;
-	}
-
-	/**
-	 * Set or reset the session store. If no store is provided,
-	 * a session store will be located based on configuration
-	 * the next time getSessionStore() is called.
-	 *
-	 * This method is intended for use in tests only.
-	 *
-	 * @param BagOStuff|null $store
-	 */
-	public static function setSessionStore( BagOStuff $store = null ) {
-		self::$sessionStore = $store;
+		return self::getUtilityService()->getSessionStore();
 	}
 
 	/**
@@ -187,21 +85,7 @@ class CentralAuthUtils {
 	 * @return StatusValue
 	 */
 	public static function autoCreateUser( User $user ) {
-		// Ignore warnings about master connections/writes...hard to avoid here
-		Profiler::instance()->getTransactionProfiler()->resetExpectations();
-
-		$authManager = MediaWikiServices::getInstance()->getAuthManager();
-		$source = CentralAuthPrimaryAuthenticationProvider::class;
-		if ( !$authManager->getAuthenticationProvider( $source ) ) {
-			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
-		}
-		$sv = $authManager->autoCreateUser( $user, $source, false );
-
-		\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
-			'event' => 'autocreate',
-			'status' => $sv,
-		] );
-		return $sv;
+		return self::getUtilityService()->autoCreateUser( $user );
 	}
 
 	/**
@@ -210,16 +94,7 @@ class CentralAuthUtils {
 	 * @return array
 	 */
 	public static function getCentralSession( $session = null ) {
-		if ( !$session ) {
-			$session = SessionManager::getGlobalSession();
-		}
-		$id = $session->get( 'CentralAuth::centralSessionId' );
-
-		if ( $id !== null ) {
-			return self::getCentralSessionById( $id );
-		} else {
-			return [];
-		}
+		return self::getUtilityService()->getCentralSession( $session );
 	}
 
 	/**
@@ -234,56 +109,7 @@ class CentralAuthUtils {
 		$performer = null,
 		$reason = null
 	): Status {
-		$user = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $username );
-
-		if ( !$user ) {
-			// invalid username
-			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
-		}
-
-		if ( $user->getId() ) {
-			return Status::newFatal( 'centralauth-createlocal-already-exists' );
-		}
-
-		$centralUser = CentralAuthUser::getInstance( $user );
-
-		if ( !$centralUser->exists() ) {
-			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
-		}
-
-		if ( $centralUser->isOversighted() ) {
-			$canOversight = $performer && MediaWikiServices::getInstance()
-				->getPermissionManager()
-				->userHasRight( $performer, 'centralauth-oversight' );
-
-			return Status::newFatal( $canOversight
-				? 'centralauth-createlocal-suppressed'
-				: 'centralauth-createlocal-no-global-account' );
-		}
-
-		$status = self::autoCreateUser( $user );
-		if ( !$status->isGood() ) {
-			return Status::wrap( $status );
-		}
-
-		// Add log entry
-		if ( $performer ) {
-			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
-			$logEntry->setPerformer( $performer );
-			$logEntry->setTarget( $user->getUserPage() );
-			$logEntry->setComment( $reason );
-			$logEntry->setParameters( [
-				'4::userid' => $user->getId(),
-			] );
-
-			$logId = $logEntry->insert();
-			$logEntry->publish( $logId );
-		}
-
-		// Update user count
-		SiteStatsUpdate::factory( [ 'users' => 1 ] )->doUpdate();
-
-		return Status::newGood();
+		return self::getUtilityService()->attemptAutoCreateLocalUserFromName( $username, $performer, $reason );
 	}
 
 	/**
@@ -292,17 +118,7 @@ class CentralAuthUtils {
 	 * @return array
 	 */
 	public static function getCentralSessionById( $id ) {
-		$sessionStore = self::getSessionStore();
-		$key = self::memcKey( 'session', $id );
-
-		$stime = microtime( true );
-		$data = $sessionStore->get( $key ) ?: [];
-		$real = microtime( true ) - $stime;
-
-		MediaWikiServices::getInstance()
-			->getStatsdDataFactory()->timing( 'centralauth.session.read', $real );
-
-		return $data;
+		return self::getUtilityService()->getCentralSessionById( $id );
 	}
 
 	/**
@@ -313,47 +129,7 @@ class CentralAuthUtils {
 	 * @return string|null Session ID
 	 */
 	public static function setCentralSession( array $data, $reset = false, $session = null ) {
-		static $keepKeys = [ 'user' => true, 'token' => true, 'expiry' => true ];
-
-		if ( $session === null ) {
-			$session = SessionManager::getGlobalSession();
-		}
-		$id = $session->get( 'CentralAuth::centralSessionId' );
-
-		if ( $reset || $id === null ) {
-			$id = is_string( $reset ) ? $reset : MWCryptRand::generateHex( 32 );
-		}
-		$data['sessionId'] = $id;
-
-		$sessionStore = self::getSessionStore();
-		$key = self::memcKey( 'session', $id );
-
-		// Copy certain keys from the existing session, if any (T124821)
-		$existing = $sessionStore->get( $key );
-		if ( is_array( $existing ) ) {
-			$data += array_intersect_key( $existing, $keepKeys );
-		}
-
-		$isDirty = ( $data !== $existing );
-		if ( $isDirty || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
-			$data['expiry'] = time() + $sessionStore::TTL_DAY;
-			$stime = microtime( true );
-			$sessionStore->set(
-				$key,
-				$data,
-				$sessionStore::TTL_DAY,
-				$isDirty ? $sessionStore::WRITE_SYNC : 0
-			);
-			$real = microtime( true ) - $stime;
-			MediaWikiServices::getInstance()
-				->getStatsdDataFactory()->timing( 'centralauth.session.write', $real );
-		}
-
-		if ( $session ) {
-			$session->set( 'CentralAuth::centralSessionId', $id );
-		}
-
-		return $id;
+		return self::getUtilityService()->setCentralSession( $data, $reset, $session );
 	}
 
 	/**
@@ -361,22 +137,7 @@ class CentralAuthUtils {
 	 * @param Session|null $session
 	 */
 	public static function deleteCentralSession( $session = null ) {
-		if ( !$session ) {
-			$session = SessionManager::getGlobalSession();
-		}
-		$id = $session->get( 'CentralAuth::centralSessionId' );
-
-		if ( $id !== null ) {
-			$sessionStore = self::getSessionStore();
-			$key = self::memcKey( 'session', $id );
-
-			$stime = microtime( true );
-			$sessionStore->delete( $key, $sessionStore::WRITE_SYNC );
-			$real = microtime( true ) - $stime;
-
-			MediaWikiServices::getInstance()
-				->getStatsdDataFactory()->timing( "centralauth.session.delete", $real );
-		}
+		self::getUtilityService()->deleteCentralSession( $session );
 	}
 
 	/**
@@ -385,21 +146,6 @@ class CentralAuthUtils {
 	 * @param CentralAuthUser $centralUser
 	 */
 	public static function scheduleCreationJobs( CentralAuthUser $centralUser ) {
-		global $wgCentralAuthAutoCreateWikis;
-
-		$name = $centralUser->getName();
-		$thisWiki = wfWikiID();
-		$session = RequestContext::getMain()->exportSession();
-		foreach ( $wgCentralAuthAutoCreateWikis as $wiki ) {
-			if ( $wiki === $thisWiki ) {
-				continue;
-			}
-			$job = Job::factory(
-				'CentralAuthCreateLocalAccountJob',
-				Title::makeTitleSafe( NS_USER, $name ),
-				[ 'name' => $name, 'from' => $thisWiki, 'session' => $session ]
-			);
-			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
-		}
+		self::getUtilityService()->scheduleCreationJobs( $centralUser );
 	}
 }

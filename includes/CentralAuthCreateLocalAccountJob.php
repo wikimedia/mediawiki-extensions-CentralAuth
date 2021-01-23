@@ -10,12 +10,11 @@ use Wikimedia\ScopedCallback;
  */
 class CentralAuthCreateLocalAccountJob extends Job {
 	/**
-	 * @param Title $title Not used
 	 * @param array $params name => user name, from => wiki where the job is created,
 	 *   [session] => session data from RequestContext::exportSession()
 	 */
-	public function __construct( $title, $params ) {
-		parent::__construct( 'CentralAuthCreateLocalAccountJob', $title, $params );
+	public function __construct( $params ) {
+		parent::__construct( 'CentralAuthCreateLocalAccountJob', $params );
 	}
 
 	/**
