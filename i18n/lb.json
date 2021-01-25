@@ -30,7 +30,7 @@
 	"centralauth-admin-blocked-reason": "Grond: $1",
 	"centralauth-admin-blocked2": "Gespaart bis de(n) $2 ëm $3.",
 	"centralauth-admin-blocked2-indef": "Onbegrenzt gespaart.",
-	"centralauth-admin-blocklog": "Spärlescht",
+	"centralauth-admin-blocklog": "Spärlëscht",
 	"centralauth-admin-delete-button": "Dëse Kont läschen",
 	"centralauth-admin-delete-confirm": "Wëllt Dir dëse Kont wierklech läschen?",
 	"centralauth-admin-delete-description": "Wann dir de globale Benotzerkont läscht da ginn all lokal Benotzerkonte nees onofhängeg vuneneen, an den Numm vum globale Benotzerkont ka vun engem anere Benotzer benotzt ginn.\nAll lokal Benotzerkonte besti weider.",

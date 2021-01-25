@@ -12,7 +12,8 @@
 			"Michaelbrabec",
 			"Mormegil",
 			"Patriccck",
-			"Polda18"
+			"Polda18",
+			"Robins7"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globální skupiny, do kterých uživatel patří",
@@ -135,6 +136,12 @@
 	"centralauth-completelogin-back": "Zpět na předchozí stránku.",
 	"centralauth-contribs-locked": "Tento účet je globálně uzamčen.\nVíce informací najdete v [[Special:CentralAuth/$1|podrobnostech globálního účtu]].",
 	"centralauth-contribs-locked-log": "Tento účet je globálně uzamčen.\nZde je pro přehled zobrazen nejnovější záznam z knihy uzamčení účtů:",
+	"centralauth-createlocal-already-exists": "Pro zadaný globální účet již existuje lokální účet.",
+	"centralauth-createlocal-logentry": "{{GENDER:$2|vytvořil|vytvořila|vytvořil(a)}} lokální účet uživateli $1",
+	"centralauth-createlocal-pretext": "Tento formulář můžete použít k vytvoření lokálního účtu pro globální účet, pokud to z nějakého důvodu nemůže udělat uživatel sám.",
+	"centralauth-createlocal-reason": "Důvod",
+	"centralauth-createlocal-success": "Lokální účet vytvořen.",
+	"centralauth-createlocal-username": "Jméno globálního účtu",
 	"centralauth-days-ago": "před $1 {{PLURAL:$1|dnem|dny|dny}}",
 	"centralauth-delete-empty-account": "Prázdný účet",
 	"centralauth-desc": "[[Special:MergeAccount|Sloučení účtů]] na jednotlivých wiki {{grammar:2sg|{{int:Centralauth-groupname}}}}",
@@ -391,6 +398,7 @@
 	"centralautologin": "Ústřední přihlášení",
 	"centrallogin": "Ústřední přihlášení uživatele",
 	"centralloginsuccesful": "Přihlášení bylo úspěšné",
+	"createlocalaccount": "Vytvořit lokální účet",
 	"globalgroupmembership": "Členství v globálních skupinách",
 	"globalgrouppermissions": "Správa globálních skupin",
 	"globalrenameprogress": "Průběh globálního přejmenování",
