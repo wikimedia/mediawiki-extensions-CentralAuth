@@ -161,6 +161,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|עריכה]])",
 	"centralauth-editgroup-fieldset": "ההרשאות של $1",
 	"centralauth-editgroup-invalid-name": "ניתן שם קבוצה גלובלית בלתי־תקין",
+	"centralauth-editgroup-invalid-name-lowercase": "מזהי קבוצות גלובליות צריכים להיות כתובים רק באותיות קטנות.",
 	"centralauth-editgroup-member": "שם חברי הקבוצה המתורגם:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|עריכה]])",
 	"centralauth-editgroup-members": "רשימת חברים:",
