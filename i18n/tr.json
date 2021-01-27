@@ -180,6 +180,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|düzenle]])",
 	"centralauth-editgroup-fieldset": "$1 için izinler",
 	"centralauth-editgroup-invalid-name": "Geçersiz küresel grup adı verildi",
+	"centralauth-editgroup-invalid-name-lowercase": "Küresel grup tanımlayıcılarının tümü küçük harf olmalıdır.",
 	"centralauth-editgroup-member": "Grup üyelerinin yerelleştirilmiş adları:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|düzenle]])",
 	"centralauth-editgroup-members": "Üye listesi:",
