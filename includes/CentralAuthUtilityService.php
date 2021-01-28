@@ -421,12 +421,21 @@ class CentralAuthUtilityService {
 		$name = $centralUser->getName();
 		$thisWiki = WikiMap::getCurrentWikiId();
 		$session = RequestContext::getMain()->exportSession();
+
+		$title = $this->titleFactory->makeTitleSafe( NS_USER, $name );
+
+		if ( !$title ) {
+			throw new Exception( "Failed to create title for user page of $name" );
+		}
+
 		foreach ( $this->config->get( 'CentralAuthAutoCreateWikis' ) as $wiki ) {
 			if ( $wiki === $thisWiki ) {
 				continue;
 			}
+
 			$job = Job::factory(
 				'CentralAuthCreateLocalAccountJob',
+				$title,
 				[ 'name' => $name, 'from' => $thisWiki, 'session' => $session ]
 			);
 			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
