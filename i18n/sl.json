@@ -135,7 +135,7 @@
 	"centralauth-days-ago": "pred $1 {{PLURAL:$1|dnevom|dnevoma|dnevi}}",
 	"centralauth-delete-empty-account": "Prazen račun",
 	"centralauth-desc": "[[Special:MergeAccount|Združite račune]] skozi wikije {{int:Centralauth-groupname}}",
-	"centralauth-disabled-dryrun": "Poenotenje računov je trenutno v predstavitvenem načinu oz. načinu popravljanja napak, zato so dejanske dejavnosti združevanja onemogočene.\nOprostite!",
+	"centralauth-disabled-dryrun": "Poenotenje računov je trenutno v demonstracijskem načinu oz. načinu za odpravo napak, zato so dejanske dejavnosti združevanja onemogočene.\nOpravičujemo se!",
 	"centralauth-editgroup-display": "Lokalizirano ime skupine:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|uredi]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|uredi]])",
