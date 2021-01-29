@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Dbc334",
+			"Eleassar",
 			"Janezdrilc"
 		]
 	},
 	"apierror-centralauth-badtoken": "Žeton za preverjanje pristnosti ni veljaven.",
 	"apierror-centralauth-badusername": "Uporabniško ime $1 je neuporabno na tem wikiju",
 	"apierror-centralauth-editconflict": "Zaznano navzkrižje urejanja, prenehanje.",
-	"apierror-centralauth-notattached": "Ni mogoče pridobiti žetona za preverjanje pristnosti brez priključenega globalnega računa.",
+	"apierror-centralauth-notattached": "Žetona za preverjanje pristnosti ni mogoče pridobiti brez povezanega globalnega računa.",
 	"apierror-centralauth-notloggedin": "Anonimni uporabniki ne morejo pridobiti žetona za preverjanje pristnosti.",
 	"apierror-centralauth-renameinprogress": "Uporabnik je bil preimenovan, uporaba nemogoča.",
 	"apihelp-deleteglobalaccount-description": "Izbriši globalnega uporabnika.",
