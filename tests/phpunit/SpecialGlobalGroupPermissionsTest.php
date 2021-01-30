@@ -14,9 +14,6 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @param $name
-	 * @param $result
-	 *
 	 * @covers SpecialGlobalGroupPermissions::validateGroupName
 	 * @dataProvider provideValidateGroupName
 	 */
