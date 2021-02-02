@@ -83,7 +83,7 @@
 		"CreateLocalAccount": {
 			"class": "SpecialCreateLocalAccount",
 			"services": [
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthForcedLocalCreationService"
 			]
 		},
 		"MergeAccount": "SpecialMergeAccount",
@@ -230,6 +230,7 @@
 		"SpecialSulRenameWarning": "includes/specials/SpecialSulRenameWarning.php",
 		"CentralAuthUser": "includes/CentralAuthUser.php",
 		"CentralAuthUtils": "includes/CentralAuthUtils.php",
+		"CentralAuthForcedLocalCreationService": "includes/CentralAuthForcedLocalCreationService.php",
 		"CentralAuthUtilityService": "includes/CentralAuthUtilityService.php",
 		"CentralAuthServices": "includes/CentralAuthServices.php",
 		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",

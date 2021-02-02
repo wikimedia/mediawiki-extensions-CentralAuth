@@ -3,6 +3,15 @@
 use MediaWiki\MediaWikiServices;
 
 return [
+	'CentralAuth.CentralAuthForcedLocalCreationService' => function (
+		MediaWikiServices $services
+	) : CentralAuthForcedLocalCreationService {
+		return new CentralAuthForcedLocalCreationService(
+			$services->getUserFactory(),
+			$services->getPermissionManager(),
+			CentralAuthServices::getUtilityService( $services )
+		);
+	},
 	'CentralAuth.CentralAuthUtilityService' => function ( MediaWikiServices $services ) : CentralAuthUtilityService {
 		return new CentralAuthUtilityService(
 			$services->getDBLoadBalancerFactory(),
@@ -10,7 +19,6 @@ return [
 			$services->getMainConfig(),
 			$services->getAuthManager(),
 			$services->getUserFactory(),
-			$services->getPermissionManager(),
 			$services->getStatsdDataFactory(),
 			$services->getTitleFactory()
 		);

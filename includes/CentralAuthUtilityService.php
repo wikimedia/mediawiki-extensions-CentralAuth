@@ -2,7 +2,6 @@
 
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\User\UserFactory;
@@ -33,9 +32,6 @@ class CentralAuthUtilityService {
 	/** @var UserFactory */
 	private $userFactory;
 
-	/** @var PermissionManager */
-	private $permissionManager;
-
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
 
@@ -48,7 +44,6 @@ class CentralAuthUtilityService {
 		Config $config,
 		AuthManager $authManager,
 		UserFactory $userFactory,
-		PermissionManager $permissionManager,
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		TitleFactory $titleFactory
 	) {
@@ -57,7 +52,6 @@ class CentralAuthUtilityService {
 		$this->config = $config;
 		$this->authManager = $authManager;
 		$this->userFactory = $userFactory;
-		$this->permissionManager = $permissionManager;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->titleFactory = $titleFactory;
 	}
@@ -257,69 +251,6 @@ class CentralAuthUtilityService {
 		} else {
 			return [];
 		}
-	}
-
-	/**
-	 * Attempt to create a local user for the specified username.
-	 * @param string $username
-	 * @param User|null $performer
-	 * @param string|null $reason
-	 * @return Status
-	 */
-	public function attemptAutoCreateLocalUserFromName(
-		string $username,
-		$performer = null,
-		$reason = null
-	) : Status {
-		$user = $this->userFactory->newFromName( $username );
-
-		if ( !$user ) {
-			// invalid username
-			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
-		}
-
-		if ( $user->getId() ) {
-			return Status::newFatal( 'centralauth-createlocal-already-exists' );
-		}
-
-		$centralUser = CentralAuthUser::getInstance( $user );
-
-		if ( !$centralUser->exists() ) {
-			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
-		}
-
-		if ( $centralUser->isOversighted() ) {
-			$canOversight = $performer && $this->permissionManager
-				->userHasRight( $performer, 'centralauth-oversight' );
-
-			return Status::newFatal( $canOversight
-				? 'centralauth-createlocal-suppressed'
-				: 'centralauth-createlocal-no-global-account' );
-		}
-
-		$status = $this->autoCreateUser( $user );
-		if ( !$status->isGood() ) {
-			return Status::wrap( $status );
-		}
-
-		// Add log entry
-		if ( $performer ) {
-			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
-			$logEntry->setPerformer( $performer );
-			$logEntry->setTarget( $user->getUserPage() );
-			$logEntry->setComment( $reason );
-			$logEntry->setParameters( [
-				'4::userid' => $user->getId(),
-			] );
-
-			$logId = $logEntry->insert();
-			$logEntry->publish( $logId );
-		}
-
-		// Update user count
-		SiteStatsUpdate::factory( [ 'users' => 1 ] )->doUpdate();
-
-		return Status::newGood();
 	}
 
 	/**

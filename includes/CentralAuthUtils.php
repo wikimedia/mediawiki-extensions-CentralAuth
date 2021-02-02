@@ -98,21 +98,6 @@ class CentralAuthUtils {
 	}
 
 	/**
-	 * Attempt to create a local user for the specified username.
-	 * @param string $username
-	 * @param User|null $performer
-	 * @param string|null $reason
-	 * @return Status
-	 */
-	public static function attemptAutoCreateLocalUserFromName(
-		string $username,
-		$performer = null,
-		$reason = null
-	): Status {
-		return self::getUtilityService()->attemptAutoCreateLocalUserFromName( $username, $performer, $reason );
-	}
-
-	/**
 	 * Get the central session data
 	 * @param string $id
 	 * @return array

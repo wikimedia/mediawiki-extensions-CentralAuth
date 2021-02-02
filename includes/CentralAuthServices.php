@@ -13,6 +13,19 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
+	 *
+	 * @return CentralAuthForcedLocalCreationService
+	 */
+	public static function getForcedLocalCreationService(
+		ContainerInterface $services = null
+	) : CentralAuthForcedLocalCreationService {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthForcedLocalCreationService' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
 	 * @return CentralAuthUtilityService
 	 */
 	public static function getUtilityService( ContainerInterface $services = null ) : CentralAuthUtilityService {

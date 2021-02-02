@@ -1,11 +1,9 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 /**
  * @author Taavi "Majavah" Väänänen
  * @covers SpecialCreateLocalAccount::onSubmit
- * @covers CentralAuthUtilityService::attemptAutoCreateLocalUserFromName
+ * @covers CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
  * @group Database
  */
 class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
@@ -28,7 +26,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 		parent::setUp();
 
 		$this->specialCreateLocalAccount = new SpecialCreateLocalAccount(
-			MediaWikiServices::getInstance()->get( 'CentralAuth.CentralAuthUtilityService' )
+			CentralAuthServices::getForcedLocalCreationService()
 		);
 	}
 

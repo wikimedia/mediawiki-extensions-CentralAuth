@@ -16,7 +16,8 @@ class CreateLocalAccount extends Maintenance {
 
 	public function execute() {
 		$username = $this->getArg( 0 );
-		$status = CentralAuthUtils::attemptAutoCreateLocalUserFromName( $username );
+		$status = CentralAuthServices::getForcedLocalCreationService()
+			->attemptAutoCreateLocalUserFromName( $username );
 
 		if ( !$status->isGood() ) {
 			$this->error( "autoCreateUser failed for $username: " .
