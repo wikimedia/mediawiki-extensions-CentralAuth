@@ -11,7 +11,7 @@
 	"apierror-centralauth-editconflict": "Zaznano navzkrižje urejanja, prenehanje.",
 	"apierror-centralauth-notattached": "Žetona za preverjanje pristnosti ni mogoče pridobiti brez povezanega globalnega računa.",
 	"apierror-centralauth-notloggedin": "Anonimni uporabniki ne morejo pridobiti žetona za preverjanje pristnosti.",
-	"apierror-centralauth-renameinprogress": "Uporabnik je bil preimenovan, uporaba nemogoča.",
+	"apierror-centralauth-renameinprogress": "Uporabnik bo preimenovan, uporaba ni mogoča.",
 	"apihelp-deleteglobalaccount-description": "Izbriši globalnega uporabnika.",
 	"apihelp-deleteglobalaccount-example-1": "Izbriši globalni račun za [[User:Example|Uporabnik:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Razlog za izbris uporabnika.",
