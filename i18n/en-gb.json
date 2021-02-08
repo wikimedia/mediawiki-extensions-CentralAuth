@@ -8,7 +8,7 @@
 		]
 	},
 	"action-centralauth-usermerge": "Globally merge multiple users",
-	"centralauth-finishglobaliseemail_body": "Your email address has been set as associated\nwith the account \"$2\" on all Wikimedia projects, with your main account being\non {{SITENAME}}.\n\nTo confirm that this account really does belong to you, merge in any of your\naccounts that we could not do automatically, and allow you to recover your\naccount if you lose your password, please open this link in your browser:\n\n$3\n\nIf the account does *not* belong to you, follow this link to cancel the email\naddress confirmation:\n\n$5\n\nThis confirmation code will expire on $6 at $7.",
+	"centralauth-finishglobaliseemail_body": "Your e-mail address has been set as associated\nwith the account \"$2\" on all projects, with your main account being\non {{SITENAME}}.\n\nTo confirm that this account really does belong to you, merge in any of your\naccounts that we could not do automatically, and allow you to recover your\naccount if you lose your password, please open this link in your browser:\n\n$3\n\nIf the account does *not* belong to you, follow this link to cancel the e-mail\naddress confirmation:\n\n$5\n\nThis confirmation code will expire on $6 at $7.",
 	"centralauth-rename-abortlogin": "Your account is currently being renamed or merged. [[Special:GlobalRenameProgress/$1|View the status]].",
 	"centralauth-usermerge-already": "There is already a global rename or merge in progress for $1.",
 	"centralauth-usermerge-confirm": "Are you sure you want to globally merge these users?",
