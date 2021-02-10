@@ -202,6 +202,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|editar]])",
 	"centralauth-editgroup-fieldset": "Permisos para $1",
 	"centralauth-editgroup-invalid-name": "No se proporcionó un nombre de grupo global válido",
+	"centralauth-editgroup-invalid-name-lowercase": "Los identificadores de los grupos globales han de escribirse en letras minúsculas.",
 	"centralauth-editgroup-member": "Nombre localizado de los miembros del grupo:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|editar]])",
 	"centralauth-editgroup-members": "Lista de miembros:",
