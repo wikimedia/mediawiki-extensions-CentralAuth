@@ -493,7 +493,7 @@
 	"sessionprovider-centralauthtokensessionprovider": "seja s centralnim žetonom za preverjanje pristnosti",
 	"sulrenamewarning-authmanager-ok-help": "Nadaljuj po prikazu obvestila o preimenovanju.",
 	"sulrenamewarning-renamed": "{{GENDER:$2|tvoj}} račun '''$1''' je bil preimenovan v '''$2''' tekom samodejnega prehoda na sistem enotne prijave {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "Vaš račun je preimenovan",
+	"sulrenamewarning-title": "{{GENDER:$1|Vaš}} račun je preimenovan",
 	"sulrenamewarning-usenew": "Prosimo, ob prihodnjih prijavah uporabljaj {{GENDER:$1|svoje}} novo uporabniško ime.",
 	"userswhowillberenamed": "Uporabniki, ki bodo preimenovani"
 }

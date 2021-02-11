@@ -184,6 +184,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|編輯]])",
 	"centralauth-editgroup-fieldset": "$1 的權限",
 	"centralauth-editgroup-invalid-name": "無效的全域群組名稱",
+	"centralauth-editgroup-invalid-name-lowercase": "全域群組識別碼必須全部小寫。",
 	"centralauth-editgroup-member": "在地的群組成員名稱：",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|編輯]])",
 	"centralauth-editgroup-members": "成員清單：",
