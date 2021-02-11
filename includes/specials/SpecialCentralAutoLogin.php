@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use Wikimedia\ScopedCallback;
 
@@ -27,12 +26,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/**
 	 * Get contents of a javascript file for inline use.
 	 *
-	 * Roughly based MediaWiki core methods:
-	 * - ResourceLoader::filter()
-	 * - ResourceLoaderFileModule::readScriptFiles()
-	 *
 	 * @param string $name Path to file relative to /modules/inline/
-	 * @return string Minified script
+	 * @return string Minified JavaScript code
 	 * @throws Exception If file doesn't exist
 	 */
 	protected static function getInlineScript( $name ) {
@@ -40,34 +35,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		if ( !file_exists( $filePath ) ) {
 			throw new Exception( __METHOD__ . ": file not found: \"$filePath\"" );
 		}
-		$contents = file_get_contents( $filePath );
+		$rawScript = file_get_contents( $filePath );
 
-		$cache = MediaWikiServices::getInstance()->getLocalServerObjectCache();
-		if ( $cache instanceof EmptyBagOStuff ) {
-			$cache = ObjectCache::getLocalClusterInstance();
-		}
-
-		$e = null;
-		$fname = __METHOD__;
-		$result = $cache->getWithSetCallback(
-			$cache->makeGlobalKey( 'centralauth', 'minify-js', md5( $contents ) ),
-			$cache::TTL_INDEFINITE,
-			function () use ( $contents, $name, &$e, $fname ) {
-				try {
-					$value = JavaScriptMinifier::minify( $contents );
-				} catch ( Exception $e ) {
-					$value = false; // uncacheable
-					MWExceptionHandler::logException( $e );
-					wfDebugLog( 'CentralAuth', $fname . ": minification failed for $name: $e" );
-				}
-
-				return $value;
-			}
-		);
-
-		return $e
-			? ( ResourceLoader::formatException( $e ) . "\n" . $contents )
-			: $result;
+		// Hot path, static content, must use a cache
+		return ResourceLoader::filter( 'minify-js', $rawScript, [ 'cache' => true ] );
 	}
 
 	/**
