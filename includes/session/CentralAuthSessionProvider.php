@@ -235,7 +235,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 						'Session "{session}": CentralAuth saved source {saved} ' .
 							'!= expected source {expected}',
 						[
-							'session' => $info,
+							'session' => $info->__toString(),
 							'saved' => $metadata['CentralAuthSource'],
 							'expected' => $source,
 						]
