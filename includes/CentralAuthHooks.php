@@ -116,8 +116,9 @@ class CentralAuthHooks {
 				'class' => SpecialGlobalRenameQueue::class,
 				'services' => [
 					'UserNameUtils',
-					'DBLoadBalancerFactory'
-				]
+					'DBLoadBalancerFactory',
+					'CentralAuth.CentralAuthUIService',
+				],
 			];
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [
 				'scripts'        => 'ext.centralauth.globalrenamequeue.js',
@@ -265,8 +266,9 @@ class CentralAuthHooks {
 				'class' => SpecialGlobalRenameQueue::class,
 				'services' => [
 					'UserNameUtils',
-					'DBLoadBalancerFactory'
-				]
+					'DBLoadBalancerFactory',
+					'CentralAuth.CentralAuthUIService',
+				],
 			];
 		}
 	}

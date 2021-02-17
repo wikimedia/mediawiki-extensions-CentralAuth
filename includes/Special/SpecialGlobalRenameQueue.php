@@ -38,6 +38,7 @@ use JobQueueGroup;
 use LocalRenameUserJob;
 use LogEventsList;
 use MailAddress;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\User\UserNameUtils;
 use OOUI\MessageWidget;
 use SpecialPage;
@@ -66,6 +67,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/** @var LBFactory */
 	private $lbFactory;
 
+	/** @var CentralAuthUIService */
+	private $uiService;
+
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';
 	public const PAGE_CLOSED_QUEUE = 'closed';
@@ -73,10 +77,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	private const ACTION_CANCEL = 'cancel';
 	public const ACTION_VIEW = 'view';
 
-	public function __construct( UserNameUtils $userNameUtils, LBFactory $lbFactory ) {
+	public function __construct( UserNameUtils $userNameUtils, LBFactory $lbFactory, CentralAuthUIService $uiService ) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
 		$this->lbFactory = $lbFactory;
+		$this->uiService = $uiService;
 	}
 
 	public function doesWrites() {
@@ -481,11 +486,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
-			// @todo move this code somewhere else
-			$specialGblRename = new SpecialGlobalRenameUser();
-			$specialGblRename->setContext( $this->getContext() );
-			$conflicts = $specialGblRename->processAntiSpoofConflicts( $req->getName(),
-				$spoofUser->getConflicts() );
+			$conflicts = $this->uiService->processAntiSpoofConflicts(
+				$this->getContext(),
+				$req->getName(),
+				$spoofUser->getConflicts()
+			);
 
 			$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $req->getNewName() );
 			if ( $renamedUser !== null ) {

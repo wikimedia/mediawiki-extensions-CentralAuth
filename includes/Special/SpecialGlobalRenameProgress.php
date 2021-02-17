@@ -7,10 +7,9 @@ use FormSpecialPage;
 use GlobalRenameUserStatus;
 use Html;
 use HTMLForm;
-use LogEventsList;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserNameUtils;
-use Title;
 use WikiMap;
 use Xml;
 
@@ -19,15 +18,19 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
+	/** @var CentralAuthUIService */
+	private $uiService;
+
 	/**
 	 * @var GlobalRenameUserStatus
 	 */
 	private $renameuserStatus;
 
-	public function __construct( UserNameUtils $userNameUtils ) {
+	public function __construct( UserNameUtils $userNameUtils, CentralAuthUIService $uiService ) {
 		parent::__construct( 'GlobalRenameProgress' );
 		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->userNameUtils = $userNameUtils;
+		$this->uiService = $uiService;
 	}
 
 	public function getFormFields() {
@@ -48,30 +51,6 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			->setAction( $this->getPageTitle()->getLocalURL() )
 			->setSubmitText( $this->msg( 'centralauth-rename-viewprogress' )->text() )
 			->setWrapperLegendMsg( 'globalrenameprogress-legend' );
-	}
-
-	public function showLogExtract( $name ) {
-		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $name );
-		$out = $this->getOutput();
-		$logs = '';
-		LogEventsList::showLogExtract( $logs, 'gblrename', $caTitle, '', [
-			'showIfEmpty' => true,
-		] );
-
-		$formDescriptor = [
-			'logs' => [
-				'type' => 'info',
-				'raw' => true,
-				'default' => $logs,
-			],
-		];
-
-		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
-		$htmlForm
-			->suppressDefaultSubmit()
-			->setWrapperLegendMsg( 'centralauth-rename-progress-logs-fieldset' )
-			->prepareForm()
-			->displayForm( false );
 	}
 
 	/**
@@ -128,7 +107,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			$this->checkCachePurge( $name );
 			$out->addWikiMsg( 'centralauth-rename-notinprogress', $name );
 			$this->getForm()->prepareForm()->displayForm( false );
-			$this->showLogExtract( $name );
+			$this->uiService->showRenameLogExtract( $this->getContext(), $name );
 			return true;
 		}
 
@@ -180,7 +159,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$fieldset = Xml::fieldset(
 			$this->msg( 'centralauth-rename-progress-fieldset' )->text(), $table );
 
-		$this->showLogExtract( $newName );
+		$this->uiService->showRenameLogExtract( $this->getContext(), $newName );
 		$out->addHTML( $fieldset );
 		$out->addModuleStyles( 'jquery.tablesorter.styles' );
 		$out->addModules( 'jquery.tablesorter' );

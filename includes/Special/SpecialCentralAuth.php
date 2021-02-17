@@ -14,8 +14,8 @@ use Linker;
 use LogEventsList;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserNameUtils;
 use NamespaceInfo;
 use ReadOnlyError;
 use Sanitizer;
@@ -65,19 +65,19 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var string[] */
 	private $mWikis;
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 
+	/** @var CentralAuthUIService */
+	private $uiService;
+
 	public function __construct(
-		UserNameUtils $userNameUtils,
-		NamespaceInfo $namespaceInfo
+		NamespaceInfo $namespaceInfo,
+		CentralAuthUIService $uiService
 	) {
 		parent::__construct( 'CentralAuth' );
-		$this->userNameUtils = $userNameUtils;
 		$this->namespaceInfo = $namespaceInfo;
+		$this->uiService = $uiService;
 	}
 
 	public function doesWrites() {
@@ -217,11 +217,9 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private function showRenameInProgressError() {
 		$this->showError( 'centralauth-admin-rename-in-progress', $this->mUserName );
-		$special = new SpecialGlobalRenameProgress( $this->userNameUtils );
-		$special->setContext( $this->getContext() );
 		$renameStatus = new GlobalRenameUserStatus( $this->mUserName );
 		$names = $renameStatus->getNames();
-		$special->showLogExtract( $names[1] );
+		$this->uiService->showRenameLogExtract( $this->getContext(), $names[1] );
 	}
 
 	/**
@@ -334,36 +332,6 @@ class SpecialCentralAuth extends SpecialPage {
 			->displayForm( false );
 	}
 
-	/**
-	 * @param int $span
-	 * @return string
-	 */
-	public function prettyTimespan( $span ) {
-		// @FIXME: This is nastily being used in SpecialMultiLock... fix that
-		$units = [
-			'seconds' => 60,
-			'minutes' => 60,
-			'hours' => 24,
-			'days' => 30.417,
-			'months' => 12,
-			'years' => 1
-		];
-		foreach ( $units as $unit => $chunk ) {
-			// Used messaged (to make sure that grep finds them):
-			// 'centralauth-seconds-ago', 'centralauth-minutes-ago', 'centralauth-hours-ago'
-			// 'centralauth-days-ago', 'centralauth-months-ago', 'centralauth-years-ago'
-			if ( $span < 2 * $chunk ) {
-				return $this->msg( "centralauth-$unit-ago" )->numParams( $span )->text();
-			}
-			$span = intval( $span / $chunk );
-		}
-
-		end( $units );
-		$lastUnit = key( $units );
-
-		return $this->msg( "centralauth-$lastUnit-ago" )->numParams( $span )->text();
-	}
-
 	private function showInfo() {
 		$attribs = $this->getInfoFields();
 
@@ -398,7 +366,10 @@ class SpecialCentralAuth extends SpecialPage {
 		$globalUser = $this->mGlobalUser;
 
 		$reg = $globalUser->getRegistration();
-		$age = $this->prettyTimespan( (int)wfTimestamp( TS_UNIX ) - (int)wfTimestamp( TS_UNIX, $reg ) );
+		$age = $this->uiService->prettyTimespan(
+			$this->getContext(),
+			(int)wfTimestamp( TS_UNIX ) - (int)wfTimestamp( TS_UNIX, $reg )
+		);
 		$attribs = [
 			'username' => htmlspecialchars( $globalUser->getName() ),
 			'registered' => htmlspecialchars(
@@ -419,7 +390,10 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		if ( $this->mCanOversight ) {
-			$attribs['hidden'] = $this->formatHiddenLevel( $globalUser->getHiddenLevel() );
+			$attribs['hidden'] = $this->uiService->formatHiddenLevel(
+				$this->getContext(),
+				$globalUser->getHiddenLevel()
+			);
 		}
 
 		$groups = $globalUser->getGlobalGroups();
@@ -829,23 +803,6 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 		}
 		return $this->getLanguage()->commaList( array_merge( $listTemporary, $list ) );
-	}
-
-	/**
-	 * @param string $level
-	 * @return string Already html escaped
-	 */
-	public function formatHiddenLevel( $level ) {
-		// @FIXME: This shouldn't be used in SpecialMultiLock
-		switch ( $level ) {
-			case CentralAuthUser::HIDDEN_NONE:
-				return $this->msg( 'centralauth-admin-no' )->escaped();
-			case CentralAuthUser::HIDDEN_LISTS:
-				return $this->msg( 'centralauth-admin-hidden-list' )->escaped();
-			case CentralAuthUser::HIDDEN_OVERSIGHT:
-				return $this->msg( 'centralauth-admin-hidden-oversight' )->escaped();
-		}
-		return '';
 	}
 
 	/**

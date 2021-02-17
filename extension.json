@@ -94,8 +94,8 @@
 		"CentralAuth": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAuth",
 			"services": [
-				"UserNameUtils",
-				"NamespaceInfo"
+				"NamespaceInfo",
+				"CentralAuth.CentralAuthUIService"
 			]
 		},
 		"CentralLogin": {
@@ -141,15 +141,20 @@
 		"MultiLock": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMultiLock",
 			"services": [
-				"UserNameUtils",
-				"NamespaceInfo"
+				"CentralAuth.CentralAuthUIService"
 			]
 		},
-		"GlobalRenameUser": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
+		"GlobalRenameUser": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
+			"services": [
+				"CentralAuth.CentralAuthUIService"
+			]
+		},
 		"GlobalRenameProgress": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameProgress",
 			"services": [
-				"UserNameUtils"
+				"UserNameUtils",
+				"CentralAuth.CentralAuthUIService"
 			]
 		},
 		"GlobalUserMerge": {

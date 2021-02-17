@@ -13,6 +13,7 @@ use GlobalRenameUserDatabaseUpdates;
 use GlobalRenameUserLogger;
 use GlobalRenameUserStatus;
 use GlobalRenameUserValidator;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use Message;
 use Status;
 use Title;
@@ -47,13 +48,20 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideTitleBlacklist = false;
 
+	/** @var CentralAuthUIService */
+	private $uiService;
+
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
 	private const EDITCOUNT_THRESHOLD = 100000;
 
-	public function __construct() {
+	/**
+	 * @param CentralAuthUIService $uiService
+	 */
+	public function __construct( CentralAuthUIService $uiService ) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
+		$this->uiService = $uiService;
 	}
 
 	public function doesWrites() {
@@ -176,7 +184,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 		if ( !$this->overrideAntiSpoof && class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $newUser->getName() );
-			$conflicts = $this->processAntiSpoofConflicts(
+			$conflicts = $this->uiService->processAntiSpoofConflicts(
+				$this->getContext(),
 				$oldUser->getName(),
 				$spoofUser->getConflicts()
 			);
@@ -235,31 +244,6 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$status = $validator->validate( $oldUser, $newUser );
 
 		return $status;
-	}
-
-	/**
-	 * This is also used in SpecialGlobalRenameQueue
-	 *
-	 * @param string $oldname User's old (current) name
-	 * @param array $conflicts Conflicting usernames
-	 * @return array Usernames that are safe to display -
-	 *  non-hidden usernames are linked to Special:CentralAuth
-	 */
-	public function processAntiSpoofConflicts( $oldname, array $conflicts ) {
-		$display = [];
-		foreach ( $conflicts as $name ) {
-			if ( $name === $oldname ) {
-				// Not a conflict since the old usage will go away
-				continue;
-			}
-			$ca = CentralAuthUser::getPrimaryInstanceByName( $name );
-			if ( $ca->isHidden() ) {
-				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
-			} else {
-				$display[] = "[[Special:CentralAuth/$name|$name]]";
-			}
-		}
-		return $display;
 	}
 
 	/**

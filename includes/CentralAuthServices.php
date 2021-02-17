@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
@@ -35,6 +36,17 @@ class CentralAuthServices {
 	): CentralAuthForcedLocalCreationService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthForcedLocalCreationService' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
+	 * @return CentralAuthUIService
+	 */
+	public static function getUIService( ContainerInterface $services = null ): CentralAuthUIService {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthUIService' );
 	}
 
 	/**

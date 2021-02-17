@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 
@@ -25,6 +26,13 @@ return [
 		return new CentralAuthForcedLocalCreationService(
 			$services->getUserFactory(),
 			CentralAuthServices::getUtilityService( $services )
+		);
+	},
+	'CentralAuth.CentralAuthUIService' => static function (
+		MediaWikiServices $services
+	): CentralAuthUIService {
+		return new CentralAuthUIService(
+			$services->getTitleFactory()
 		);
 	},
 	'CentralAuth.CentralAuthUtilityService' => static function (

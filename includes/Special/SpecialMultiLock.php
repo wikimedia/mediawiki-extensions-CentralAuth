@@ -6,9 +6,8 @@ use CentralAuthUser;
 use CentralAuthUtils;
 use Html;
 use LogEventsList;
+use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserNameUtils;
-use NamespaceInfo;
 use SpecialPage;
 use Wikimedia\ScopedCallback;
 use Xml;
@@ -42,18 +41,15 @@ class SpecialMultiLock extends SpecialPage {
 	private $mReason;
 	/** @var string[] */
 	private $mActionUserNames;
-	/** @var UserNameUtils */
-	private $userNameUtils;
-	/** @var NamespaceInfo */
-	private $namespaceInfo;
+	/** @var CentralAuthUIService */
+	private $uiService;
 
-	public function __construct(
-		UserNameUtils $userNameUtils,
-		NamespaceInfo $namespaceInfo
-	) {
+	/**
+	 * @param CentralAuthUIService $uiService
+	 */
+	public function __construct( CentralAuthUIService $uiService ) {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
-		$this->userNameUtils = $userNameUtils;
-		$this->namespaceInfo = $namespaceInfo;
+		$this->uiService = $uiService;
 	}
 
 	public function doesWrites() {
@@ -372,11 +368,6 @@ class SpecialMultiLock extends SpecialPage {
 	private function getUserTableRow( CentralAuthUser $globalUser ) {
 		$rowHtml = '';
 
-		// @TODO: Don't use methods from the special page directly,
-		// rather move them somewhere sane
-		$sca = new SpecialCentralAuth( $this->userNameUtils, $this->namespaceInfo );
-		$sca->setContext( $this->getContext() );
-
 		$guName = $globalUser->getName();
 		$guLink = $this->getLinkRenderer()->makeLink(
 			SpecialPage::getTitleFor( 'CentralAuth', $guName ),
@@ -384,9 +375,9 @@ class SpecialMultiLock extends SpecialPage {
 			$guName
 		);
 		// formatHiddenLevel html escapes its output
-		$guHidden = $sca->formatHiddenLevel( $globalUser->getHiddenLevel() );
+		$guHidden = $this->uiService->formatHiddenLevel( $this->getContext(), $globalUser->getHiddenLevel() );
 		$accountAge = time() - (int)wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
-		$guRegister = $sca->prettyTimespan( $accountAge );
+		$guRegister = $this->uiService->prettyTimespan( $this->getContext(), $accountAge );
 		$guLocked = $this->msg( 'centralauth-admin-status-locked-no' )->text();
 		if ( $globalUser->isLocked() ) {
 			$guLocked = $this->msg( 'centralauth-admin-status-locked-yes' )->text();
