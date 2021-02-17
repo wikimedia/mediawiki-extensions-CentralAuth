@@ -58,7 +58,7 @@ class FixStuckGlobalRename extends Maintenance {
 		$suppressredirects = false;
 		if ( $row ) {
 			$logEntry = DatabaseLogEntry::newFromRow( $row );
-			$renamer = $logEntry->getPerformer()->getName();
+			$renamer = $logEntry->getPerformerIdentity()->getName();
 			$comment = $logEntry->getComment();
 			$logParams = $logEntry->getParameters();
 			if ( isset( $logParams['movepages'] ) ) {
