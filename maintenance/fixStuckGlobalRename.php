@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -24,9 +26,10 @@ class FixStuckGlobalRename extends Maintenance {
 
 	public function execute() {
 		global $wgLocalDatabases;
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 
-		$oldName = User::getCanonicalName( $this->getArg( 0 ) );
-		$newName = User::getCanonicalName( $this->getArg( 1 ) );
+		$oldName = $userNameUtils->getCanonical( $this->getArg( 0 ) );
+		$newName = $userNameUtils->getCanonical( $this->getArg( 1 ) );
 		if ( $oldName === false || $newName === false ) {
 			$this->fatalError( 'Invalid name' );
 		}

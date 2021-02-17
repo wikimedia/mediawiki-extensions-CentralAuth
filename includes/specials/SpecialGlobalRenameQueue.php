@@ -20,7 +20,8 @@
  * @ingroup SpecialPage
  */
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
+use Wikimedia\Rdbms\LBFactory;
 
 /**
  * Process account rename requests made via [[Special:GlobalRenameRequest]].
@@ -30,6 +31,12 @@ use MediaWiki\MediaWikiServices;
  * @ingroup SpecialPage
  */
 class SpecialGlobalRenameQueue extends SpecialPage {
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	/** @var LBFactory */
+	private $lbFactory;
 
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';
@@ -43,8 +50,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected $par;
 
-	public function __construct() {
+	public function __construct( UserNameUtils $userNameUtils, LBFactory $lbFactory ) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
+		$this->userNameUtils = $userNameUtils;
+		$this->lbFactory = $lbFactory;
 	}
 
 	public function doesWrites() {
@@ -176,7 +185,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->commonNav( self::PAGE_OPEN_QUEUE );
 		$this->outputFilterForm( $this->getCommonFormFieldsArray() );
 
-		$pager = new RenameQueueTablePager( $this, self::PAGE_OPEN_QUEUE );
+		$pager = new RenameQueueTablePager(
+			$this,
+			self::PAGE_OPEN_QUEUE,
+			$this->getContext(),
+			$this->userNameUtils
+		);
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
 
@@ -204,7 +218,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		);
 		$this->outputFilterForm( $formDescriptor );
 
-		$pager = new RenameQueueTablePager( $this, self::PAGE_CLOSED_QUEUE );
+		$pager = new RenameQueueTablePager(
+			$this,
+			self::PAGE_CLOSED_QUEUE,
+			$this->getContext(),
+			$this->userNameUtils
+		);
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
 
@@ -691,14 +710,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @return MailAddress|null
 	 */
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lb = $lbFactory->getMainLB( $wiki );
+		$lb = $this->lbFactory->getMainLB( $wiki );
 		$remoteDB = $lb->getConnectionRef( DB_REPLICA, [], $wiki );
 		$row = $remoteDB->selectRow(
 			'user',
 			[ 'user_email', 'user_name', 'user_real_name' ],
 			[
-				'user_name' => User::getCanonicalName( $username ),
+				'user_name' => $this->userNameUtils->getCanonical( $username ),
 			],
 			__METHOD__
 		);

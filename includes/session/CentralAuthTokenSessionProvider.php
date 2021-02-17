@@ -1,7 +1,9 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
@@ -74,12 +76,13 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		$authToken = $data['token'];
 
 		// Clean up username
-		$userName = User::getCanonicalName( $userName, 'valid' );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$userName = $userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
-		if ( !User::isUsableName( $userName ) ) {
+		if ( !$userNameUtils->isUsable( $userName ) ) {
 			$this->logger->debug( __METHOD__ . ': unusable username' );
 			return $this->makeBogusSessionInfo( 'badusername',
 				[ 'apierror-centralauth-badusername', wfEscapeWikiText( $userName ) ] );
@@ -177,7 +180,8 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	}
 
 	public function preventSessionsForUser( $username ) {
-		$username = User::getCanonicalName( $username, 'valid' );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$username = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {
 			return;
 		}

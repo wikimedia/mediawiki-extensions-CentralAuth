@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IDatabase;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -66,10 +68,11 @@ class ForceRenameUsers extends Maintenance {
 	protected function rename( $row, IDatabase $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
-		$newNamePrefix = User::getCanonicalName(
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$newNamePrefix = $userNameUtils->getCanonical(
 			// Some database names have _'s in them, replace with dashes -
 			$name . '~' . str_replace( '_', '-', $wiki ),
-			'usable'
+			UserNameUtils::RIGOR_USABLE
 		);
 		if ( !$newNamePrefix ) {
 			$this->log( "ERROR: New name '$name~$wiki' is not valid" );
@@ -139,6 +142,7 @@ class ForceRenameUsers extends Maintenance {
 		$rows = $updates->findUsers(
 			$wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize
 		);
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 
 		foreach ( $rows as $row ) {
 			$user = User::newFromName( $row->utr_name );
@@ -153,7 +157,7 @@ class ForceRenameUsers extends Maintenance {
 				$this->log( "'{$row->utr_name}' has become attached to a global account since " .
 					"the list as last generated." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );
-			} elseif ( !User::isUsableName( $row->utr_name ) ) {
+			} elseif ( !$userNameUtils->isUsable( $row->utr_name ) ) {
 				// Reserved for a system account, ignore
 				$this->log( "'{$row->utr_name}' is a reserved username, skipping." );
 				$updates->remove( $row->utr_name, $row->utr_wiki );

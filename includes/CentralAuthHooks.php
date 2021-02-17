@@ -94,7 +94,12 @@ class CentralAuthHooks {
 				'descriptionmsg' => 'globalrenamerequest-desc',
 				'license-name' => 'GPL-2.0-or-later',
 			];
-			$wgSpecialPages['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
+			$wgSpecialPages['GlobalRenameRequest'] = [
+				'class' => SpecialGlobalRenameRequest::class,
+				'services' => [
+					'UserNameUtils'
+				]
+			];
 
 			$wgExtensionCredits['specialpage'][] = [
 				'path' => "{$caBase}/CentralAuth.php",
@@ -104,7 +109,13 @@ class CentralAuthHooks {
 				'descriptionmsg' => 'globalrenamequeue-desc',
 				'license-name' => 'GPL-2.0-or-later',
 			];
-			$wgSpecialPages['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
+			$wgSpecialPages['GlobalRenameQueue'] = [
+				'class' => SpecialGlobalRenameQueue::class,
+				'services' => [
+					'UserNameUtils',
+					'DBLoadBalancerFactory'
+				]
+			];
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [
 				'scripts'        => 'ext.centralauth.globalrenamequeue.js',
 				'localBasePath' => "{$caBase}/modules",
@@ -244,8 +255,19 @@ class CentralAuthHooks {
 	public static function onSpecialPage_initList( &$list ) {
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
-			$list['GlobalRenameRequest'] = 'SpecialGlobalRenameRequest';
-			$list['GlobalRenameQueue'] = 'SpecialGlobalRenameQueue';
+			$list['GlobalRenameRequest'] = [
+				'class' => SpecialGlobalRenameRequest::class,
+				'services' => [
+					'UserNameUtils'
+				]
+			];
+			$list['GlobalRenameQueue'] = [
+				'class' => SpecialGlobalRenameQueue::class,
+				'services' => [
+					'UserNameUtils',
+					'DBLoadBalancerFactory'
+				]
+			];
 		}
 
 		return true;
@@ -1570,8 +1592,9 @@ class CentralAuthHooks {
 		$type, WebRequest $request, array &$qc
 	) {
 		if ( $type === 'gblrename' ) {
+			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 			$oldname = trim( $request->getText( 'oldname' ) );
-			$canonicalOldname = User::getCanonicalName( $oldname );
+			$canonicalOldname = $userNameUtils->getCanonical( $oldname );
 			if ( $oldname !== '' ) {
 				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
 			}
@@ -1592,7 +1615,8 @@ class CentralAuthHooks {
 		if ( $type === 'gblrename' ) {
 			$value = $list->getRequest()->getVal( 'oldname' );
 			if ( $value !== null ) {
-				$name = User::getCanonicalName( $value );
+				$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+				$name = $userNameUtils->getCanonical( $value );
 				$value = $name !== false ? $name : '';
 			}
 			$formDescriptor = [

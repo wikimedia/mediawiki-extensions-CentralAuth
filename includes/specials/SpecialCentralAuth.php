@@ -3,6 +3,7 @@
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 
 class SpecialCentralAuth extends SpecialPage {
 	/** @var string */
@@ -42,8 +43,12 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var string[] */
 	private $mWikis;
 
-	public function __construct() {
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	public function __construct( UserNameUtils $userNameUtils ) {
 		parent::__construct( 'CentralAuth' );
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function doesWrites() {
@@ -183,7 +188,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private function showRenameInProgressError() {
 		$this->showError( 'centralauth-admin-rename-in-progress', $this->mUserName );
-		$special = new SpecialGlobalRenameProgress();
+		$special = new SpecialGlobalRenameProgress( $this->userNameUtils );
 		$special->setContext( $this->getContext() );
 		$renameStatus = new GlobalRenameUserStatus( $this->mUserName );
 		$names = $renameStatus->getNames();

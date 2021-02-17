@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\User\UserNameUtils;
+
 class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	/**
@@ -18,9 +20,13 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	 */
 	private $newUsername;
 
-	public function __construct() {
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	public function __construct( UserNameUtils $userNameUtils ) {
 		parent::__construct( 'GlobalUserMerge', 'centralauth-usermerge' );
 		$this->addHelpLink( 'Extension:CentralAuth' );
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function doesWrites() {
@@ -90,7 +96,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			return true;
 		}
 
-		$name = User::getCanonicalName( $name, 'usable' );
+		$name = $this->userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
 		if ( !$name ) {
 			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
 		}
@@ -148,7 +154,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 		foreach ( $data['usernames'] as $field ) {
 			if ( trim( $field['name'] ) !== '' ) {
-				$name = User::getCanonicalName( $field['name'] );
+				$name = $this->userNameUtils->getCanonical( $field['name'] );
 				if ( $name === $newUser->getName() ) {
 					// The new user is also specified as one of the targets,
 					// DWIM and ignore it

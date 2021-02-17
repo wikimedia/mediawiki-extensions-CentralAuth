@@ -90,9 +90,10 @@ abstract class LocalRenameJob extends Job {
 	 */
 	protected function getRenameUser() {
 		$user = User::newFromName( $this->params['renamer'] );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		// If the username is a reserved name, don't worry about the account
 		// existing, just use it.
-		if ( !User::isUsableName( $user->getName() ) ) {
+		if ( !$userNameUtils->isUsable( $user->getName() ) ) {
 			return $user;
 		}
 

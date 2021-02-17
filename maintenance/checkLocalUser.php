@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -68,7 +70,8 @@ class CheckLocalUser extends Maintenance {
 
 		$user = $this->getOption( 'user', false );
 		if ( $user !== false ) {
-			$this->user = User::getCanonicalName( $user );
+			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+			$this->user = $userNameUtils->getCanonical( $user );
 		}
 
 		if ( $this->getOption( 'verbose', false ) !== false ) {

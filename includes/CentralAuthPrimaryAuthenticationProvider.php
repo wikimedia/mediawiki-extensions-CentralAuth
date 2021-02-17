@@ -25,7 +25,8 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\UserNameUtils;
 
 /**
  * A primary authentication provider that uses the CentralAuth password.
@@ -33,6 +34,15 @@ use MediaWiki\MediaWikiServices;
 class CentralAuthPrimaryAuthenticationProvider
 	extends AbstractPasswordPrimaryAuthenticationProvider
 {
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	/** @var PermissionManager */
+	private $permissionManager;
+
+	/** @var IBufferingStatsdDataFactory */
+	private $statsdDataFactory;
+
 	/** @var bool Whether to check for force-renamed users on login */
 	protected $checkSULMigration = null;
 
@@ -51,6 +61,9 @@ class CentralAuthPrimaryAuthenticationProvider
 	protected $antiSpoofAccounts = null;
 
 	/**
+	 * @param UserNameUtils $userNameUtils
+	 * @param PermissionManager $permissionManager
+	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - checkSULMigration: If true, check if the user was force-renamed for
@@ -64,11 +77,19 @@ class CentralAuthPrimaryAuthenticationProvider
 	 *  - antiSpoofAccounts: Whether to anti-spoof new accounts. Ignored if the
 	 *    AntiSpoof extension isn't installed or the extension is outdated.
 	 */
-	public function __construct( $params = [] ) {
+	public function __construct(
+		UserNameUtils $userNameUtils,
+		PermissionManager $permissionManager,
+		IBufferingStatsdDataFactory $statsdDataFactory,
+		$params = []
+	) {
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
 			$wgCentralAuthAutoMigrateNonGlobalAccounts, $wgCentralAuthPreventUnattached,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
+		$this->userNameUtils = $userNameUtils;
+		$this->permissionManager = $permissionManager;
+		$this->statsdDataFactory = $statsdDataFactory;
 		$params += [
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
@@ -94,8 +115,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			class_exists( AntiSpoofAuthenticationRequest::class )
 		) {
 			$user = User::newFromName( $options['username'] ) ?: new User();
-			if ( MediaWikiServices::getInstance()->getPermissionManager()
-				->userHasRight( $user, 'override-antispoof' )
+			if ( $this->permissionManager->userHasRight( $user, 'override-antispoof' )
 			) {
 				$ret[] = new AntiSpoofAuthenticationRequest();
 			}
@@ -124,7 +144,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			return AuthenticationResponse::newAbstain();
 		}
 
-		$username = User::getCanonicalName( $req->username, 'usable' );
+		$username = $this->userNameUtils->getCanonical( $req->username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
 			return AuthenticationResponse::newAbstain();
 		}
@@ -153,7 +173,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		// See if it's a user affected by a rename, if applicable.
 		if ( !$pass && $this->checkSULMigration ) {
-			$renamedUsername = User::getCanonicalName(
+			$renamedUsername = $this->userNameUtils->getCanonical(
 				$req->username . '~' . str_replace( '_', '-', wfWikiID() )
 			);
 			if ( $renamedUsername !== false ) {
@@ -166,8 +186,7 @@ class CentralAuthPrimaryAuthenticationProvider
 							'newname' => $renamedUsername,
 						]
 					);
-					MediaWikiServices::getInstance()
-						->getStatsdDataFactory()->increment( 'centralauth.migration.check' );
+					$this->statsdDataFactory->increment( 'centralauth.migration.check' );
 
 					if ( $renamed->authenticate( $req->password ) === 'ok' ) {
 						// At this point the user will be passed, so set the
@@ -327,7 +346,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function testUserCanAuthenticate( $username ) {
-		$username = User::getCanonicalName( $username, 'usable' );
+		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
 			return false;
 		}
@@ -347,7 +366,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function testUserExists( $username, $flags = User::READ_NORMAL ) {
-		$username = User::getCanonicalName( $username, 'usable' );
+		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
 			return false;
 		}
@@ -364,7 +383,7 @@ class CentralAuthPrimaryAuthenticationProvider
 				return StatusValue::newGood();
 			}
 
-			$username = User::getCanonicalName( $req->username, 'usable' );
+			$username = $this->userNameUtils->getCanonical( $req->username, UserNameUtils::RIGOR_USABLE );
 			if ( $username !== false ) {
 				$centralUser = CentralAuthUser::getInstanceByName( $username );
 				if ( $centralUser->exists() &&
@@ -389,7 +408,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	public function providerChangeAuthenticationData( AuthenticationRequest $req ) {
 		$username = $req->username !== null
-			? User::getCanonicalName( $req->username, 'usable' )
+			? $this->userNameUtils->getCanonical( $req->username, UserNameUtils::RIGOR_USABLE )
 			: false;
 		if ( $username === false ) {
 			return;
@@ -457,8 +476,9 @@ class CentralAuthPrimaryAuthenticationProvider
 		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
 		if ( $this->antiSpoofAccounts && class_exists( AntiSpoofAuthenticationRequest::class ) &&
 			// @phan-suppress-next-line PhanRedundantCondition
-			empty( $options['creating'] ) && !MediaWikiServices::getInstance()->getPermissionManager()
-				->userHasRight( RequestContext::getMain()->getUser(), 'override-antispoof' )
+			empty( $options['creating'] ) && !$this->permissionManager->userHasRight(
+				RequestContext::getMain()->getUser(), 'override-antispoof'
+			)
 		) {
 			$status->merge( CentralAuthAntiSpoofHooks::testNewAccount(
 				$user, new User, true, false, new \Psr\Log\NullLogger

@@ -1,16 +1,22 @@
 <?php
 
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\User\UserNameUtils;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
 	/**
 	 * @var GlobalRenameUserStatus
 	 */
 	private $renameuserStatus;
 
-	public function __construct() {
+	public function __construct( UserNameUtils $userNameUtils ) {
 		parent::__construct( 'GlobalRenameProgress' );
 		$this->addHelpLink( 'Extension:CentralAuth' );
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function getFormFields() {
@@ -96,7 +102,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			$this->showCurrentRenames();
 			return false;
 		}
-		$name = User::getCanonicalName( $data['username'], 'usable' );
+		$name = $this->userNameUtils->getCanonical( $data['username'], UserNameUtils::RIGOR_USABLE );
 		if ( !$name ) {
 			$this->showCurrentRenames();
 			return false;

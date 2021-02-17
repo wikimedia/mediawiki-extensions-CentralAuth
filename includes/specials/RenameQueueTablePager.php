@@ -20,11 +20,16 @@
  * @ingroup SpecialPage
  */
 
+use MediaWiki\User\UserNameUtils;
+
 /**
  * Paginated table of search results.
  * @ingroup Pager
  */
 class RenameQueueTablePager extends TablePager {
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
 
 	/**
 	 * @var SpecialPage
@@ -44,14 +49,19 @@ class RenameQueueTablePager extends TablePager {
 	/**
 	 * @param SpecialPage $owner Containing page
 	 * @param string $page Subpage
-	 * @param IContextSource|null $context
+	 * @param IContextSource $context
+	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
-		SpecialPage $owner, $page, IContextSource $context = null
+		SpecialPage $owner,
+		$page,
+		IContextSource $context,
+		UserNameUtils $userNameUtils
 	) {
 		$this->mOwner = $owner;
 		$this->mPage = $page;
 		$this->mDb = CentralAuthUtils::getCentralReplicaDB();
+		$this->userNameUtils = $userNameUtils;
 
 		$limit = $this->getRequest()->getInt( 'limit', 25 );
 		// Override default cap of 5000
@@ -97,13 +107,13 @@ class RenameQueueTablePager extends TablePager {
 		$conds = [];
 
 		$username = $this->getRequest()->getText( 'username' );
-		$username = User::getCanonicalName( $username );
+		$username = $this->userNameUtils->getCanonical( $username );
 		if ( $username ) {
 			$conds['rq_name'] = $username;
 		}
 
 		$newname = $this->getRequest()->getText( 'newname' );
-		$newname = User::getCanonicalName( $newname );
+		$newname = $this->userNameUtils->getCanonical( $newname );
 		if ( $newname ) {
 			$conds['rq_newname'] = $newname;
 		}

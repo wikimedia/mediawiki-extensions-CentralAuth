@@ -1,9 +1,11 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\UserInfo;
+use Mediawiki\User\UserNameUtils;
 
 /**
  * CentralAuth cookie-based sessions.
@@ -157,12 +159,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 
 		// Clean up username
-		$userName = User::getCanonicalName( $userName, 'valid' );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$userName = $userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
 			return self::returnParentSessionInfo( $request );
 		}
-		if ( !User::isUsableName( $userName ) ) {
+		if ( !$userNameUtils->isUsable( $userName ) ) {
 			$this->logger->warning(
 				__METHOD__ . ': username {username} is not usable on this wiki', [
 					'username' => $userName,
@@ -409,7 +412,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	public function preventSessionsForUser( $username ) {
-		$username = User::getCanonicalName( $username, 'valid' );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$username = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {
 			return;
 		}
@@ -509,7 +513,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	public function suggestLoginUsername( WebRequest $request ) {
 		$name = $this->getCookie( $request, 'User', $this->centralCookieOptions['prefix'] );
 		if ( $name !== null ) {
-			$name = User::getCanonicalName( $name, 'usable' );
+			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+			$name = $userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
+
 		}
 		return ( $name === false || $name === null )
 			? parent::suggestLoginUsername( $request )
