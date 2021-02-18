@@ -385,6 +385,7 @@
 	"globalrenameuser": "Redenumire utilizator global",
 	"globalrenameuser-legend": "Redenumește utilizator global",
 	"globalusers": "Listă de conturi globale",
+	"log-action-filter-newusers-forcecreatelocal": "Creare de cont locală forțată",
 	"log-name-gblrename": "Jurnal redenumiri globale",
 	"mergeaccount": "Statusul despre unificarea autentificării",
 	"multilock": "Blocare conturi globale multiple",
