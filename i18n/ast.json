@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
+			"Tokvo",
 			"Xuacu"
 		]
 	},
@@ -204,7 +205,7 @@
 	"centralauth-finish-send-confirmation": "Unviar la contraseña per corréu",
 	"centralauth-finish-text": "Si estes cuentes son de to, pues finar el procesu de fusión de cuentes escribiendo simplemente les claves de les otres cuentes equí:",
 	"centralauth-finish-title": "Completar la fusión",
-	"centralauth-finishglobaliseemail_body": "La so direición de corréu electrónicu asocióse\ncola cuenta \"$2\" en tolos proyeutos de Wikimedia, tando la so cuenta principal en {{SITENAME}}.\n\nPa confirmar qu'esta cuenta realmente ye suya,\namieste toles demás cuentes que nun pudimos\namestar automáticamente, y que-y permitirán\nrecuperar la cuenta si pierde la contraseña;\npor favor, abra esti enllaz nel navegador:\n\n$3\n\nSi la cuenta *nun* ye suya, siga esti enllaz pa\nencaboxar la confirmación de la direición de corréu:\n\n$5\n\nEsti códigu de confirmación caducará'l día $6 a les $7",
+	"centralauth-finishglobaliseemail_body": "La so direición de corréu electrónicu asocióse\ncola cuenta \"$2\" en tolos proyeutos, tando la so cuenta principal en {{SITENAME}}.\n\nPa confirmar qu'esta cuenta realmente ye suya,\namieste toles demás cuentes que nun pudimos\namestar automáticamente, y que-y permitirán\nrecuperar la cuenta si pierde la contraseña;\npor favor, abra esti enllaz nel navegador:\n\n$3\n\nSi la cuenta *nun* ye suya, siga esti enllaz pa\nencaboxar la confirmación de la direición de corréu:\n\n$5\n\nEsti códigu de confirmación caducará'l día $6 a les $7",
 	"centralauth-finishglobaliseemail_subject": "Confirmación de cuenta de {{SITENAME}}",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|collaboración|collaboraciones}} en $2",
 	"centralauth-foreign-link": "Usuariu $1 en $2",
