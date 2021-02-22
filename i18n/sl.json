@@ -311,7 +311,7 @@
 	"centralauth-rename-cannotself": "Samega sebe ni mogoče preimenovati.",
 	"centralauth-rename-confirm": "Ali res želite globalno preimenovati tega uporabnika?",
 	"centralauth-rename-conflict-hidden": "uporabniško ime je skrito",
-	"centralauth-rename-deny": "Ali res želite zavreči to prošnjo?",
+	"centralauth-rename-deny": "Ali to prošnjo res želite zavreči?",
 	"centralauth-rename-desc": "Omogoča preimenovanje globalni računov",
 	"centralauth-rename-doesnotexist": "Navedeni račun ne obstaja.",
 	"centralauth-rename-form-allowhigheditcount": "Potrdi preimenovanje uporabnika z več kot $1 {{PLURAL:$1|urejanjem|urejanjima|urejanjim}}",

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Äberlausitzer"
+		]
+	},
+	"centralauth-admin-blocklog": "Sperr-Logbuch",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|Beorbeetung|Beorbeetunga}} uff $2",
+	"centralauth-foreign-link": "Benutzer $1 uff $2",
+	"centralauth-merge-method-login": "erstallt durch Oameldung"
+}
