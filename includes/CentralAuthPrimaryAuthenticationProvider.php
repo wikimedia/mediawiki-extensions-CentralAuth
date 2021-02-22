@@ -25,7 +25,6 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
-use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserNameUtils;
 
 /**
@@ -36,9 +35,6 @@ class CentralAuthPrimaryAuthenticationProvider
 {
 	/** @var UserNameUtils */
 	private $userNameUtils;
-
-	/** @var PermissionManager */
-	private $permissionManager;
 
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
@@ -62,7 +58,6 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/**
 	 * @param UserNameUtils $userNameUtils
-	 * @param PermissionManager $permissionManager
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
@@ -79,7 +74,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	 */
 	public function __construct(
 		UserNameUtils $userNameUtils,
-		PermissionManager $permissionManager,
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		$params = []
 	) {
@@ -88,7 +82,6 @@ class CentralAuthPrimaryAuthenticationProvider
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
 		$this->userNameUtils = $userNameUtils;
-		$this->permissionManager = $permissionManager;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$params += [
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
@@ -115,8 +108,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			class_exists( AntiSpoofAuthenticationRequest::class )
 		) {
 			$user = User::newFromName( $options['username'] ) ?: new User();
-			if ( $this->permissionManager->userHasRight( $user, 'override-antispoof' )
-			) {
+			if ( $user->isAllowed( 'override-antispoof' ) ) {
 				$ret[] = new AntiSpoofAuthenticationRequest();
 			}
 		}
@@ -476,9 +468,8 @@ class CentralAuthPrimaryAuthenticationProvider
 		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
 		if ( $this->antiSpoofAccounts && class_exists( AntiSpoofAuthenticationRequest::class ) &&
 			// @phan-suppress-next-line PhanRedundantCondition
-			empty( $options['creating'] ) && !$this->permissionManager->userHasRight(
-				RequestContext::getMain()->getUser(), 'override-antispoof'
-			)
+			empty( $options['creating'] ) &&
+			!RequestContext::getMain()->getAuthority()->isAllowed( 'override-antispoof' )
 		) {
 			$status->merge( CentralAuthAntiSpoofHooks::testNewAccount(
 				$user, new User, true, false, new \Psr\Log\NullLogger

@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\User\UserFactory;
 
 /**
@@ -13,37 +13,31 @@ class CentralAuthForcedLocalCreationService {
 	/** @var UserFactory */
 	private $userFactory;
 
-	/** @var PermissionManager */
-	private $permissionManager;
-
 	/** @var CentralAuthUtilityService */
 	private $utilityService;
 
 	/**
 	 * @param UserFactory $userFactory
-	 * @param PermissionManager $permissionManager
 	 * @param CentralAuthUtilityService $utilityService
 	 */
 	public function __construct(
 		UserFactory $userFactory,
-		PermissionManager $permissionManager,
 		CentralAuthUtilityService $utilityService
 	) {
 		$this->userFactory = $userFactory;
-		$this->permissionManager = $permissionManager;
 		$this->utilityService = $utilityService;
 	}
 
 	/**
 	 * Attempt to create a local user for the specified username.
 	 * @param string $username
-	 * @param User|null $performer
+	 * @param Authority|null $performer
 	 * @param string|null $reason
 	 * @return Status
 	 */
 	public function attemptAutoCreateLocalUserFromName(
 		string $username,
-		$performer = null,
+		Authority $performer = null,
 		$reason = null
 	) : Status {
 		$user = $this->userFactory->newFromName( $username );
@@ -64,8 +58,7 @@ class CentralAuthForcedLocalCreationService {
 		}
 
 		if ( $centralUser->isOversighted() ) {
-			$canOversight = $performer && $this->permissionManager
-					->userHasRight( $performer, 'centralauth-oversight' );
+			$canOversight = $performer && $performer->isAllowed( 'centralauth-oversight' );
 
 			return Status::newFatal( $canOversight
 				? 'centralauth-createlocal-suppressed'
@@ -80,7 +73,7 @@ class CentralAuthForcedLocalCreationService {
 		// Add log entry
 		if ( $performer ) {
 			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
-			$logEntry->setPerformer( $performer );
+			$logEntry->setPerformer( $performer->getPerformer() );
 			$logEntry->setTarget( $user->getUserPage() );
 			$logEntry->setComment( $reason );
 			$logEntry->setParameters( [

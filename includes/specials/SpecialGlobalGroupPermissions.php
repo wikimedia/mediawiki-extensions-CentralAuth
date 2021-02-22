@@ -40,8 +40,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			return false;
 		}
 
-		return MediaWikiServices::getInstance()->getPermissionManager()
-			->userHasRight( $user, 'globalgrouppermissions' );
+		return $user->isAllowed( 'globalgrouppermissions' );
 	}
 
 	public function execute( $subpage ) {
@@ -278,9 +277,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-name'] = htmlspecialchars( $group );
 		}
 
-		if ( MediaWikiServices::getInstance()->getPermissionManager()
-			->userHasRight( $this->getUser(), 'editinterface' )
-		) {
+		if ( $this->getContext()->getAuthority()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
 			$fields['centralauth-editgroup-display'] = $this->msg(
 				'centralauth-editgroup-display-edit',

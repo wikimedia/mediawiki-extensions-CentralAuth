@@ -1,7 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 /**
  * Equivalent of Special:Userrights for global groups.
  *
@@ -66,8 +64,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		if (
 			$this->mGlobalUser->exists() &&
 			$this->mGlobalUser->isAttached() &&
-			MediaWikiServices::getInstance()->getPermissionManager()
-				->userHasRight( $this->getUser(), 'globalgroupmembership' )
+			$this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' )
 		) {
 			$allGroups = CentralAuthUser::availableGlobalGroups();
 
