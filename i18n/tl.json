@@ -65,7 +65,7 @@
 	"centralauth-admin-unattached": "hindi nakakabit",
 	"centralauth-admin-unhide-nonexistent": "Kamalian: hindi umiiral ang pandaigdigang account na \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-unmerge": "Pinili ang huwag pagsanibin",
-	"centralauth-admin-unmerge-success": "Matagumpay na natanggal mula sa pagkakasanib ang $1 {{PLURAL:$1|account|mga account}}",
+	"centralauth-admin-unmerge-success": "Natanggal mula sa pagkakasanib ang $1 account",
 	"centralauth-admin-username": "Pangalan ng tagagamit:",
 	"centralauth-admin-yes": "oo",
 	"centralauth-antispoof-desc": "Nagdaragdag ng teknolohiyang AntiSpoof sa CentralAuth",
