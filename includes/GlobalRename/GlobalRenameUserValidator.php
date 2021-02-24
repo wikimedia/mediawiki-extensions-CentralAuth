@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Verify whether a potential global rename is valid
  *
@@ -17,8 +19,9 @@ class GlobalRenameUserValidator {
 	 */
 	public function validate( User $oldUser, User $newUser ) {
 		$status = new Status();
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 
-		if ( !User::isCreatableName( $newUser->getName() ) ) {
+		if ( !$userNameUtils->isCreatable( $newUser->getName() ) ) {
 			$status->fatal( 'centralauth-rename-badusername' );
 		}
 

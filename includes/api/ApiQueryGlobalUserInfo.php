@@ -23,6 +23,7 @@
  */
 
 use MediaWiki\ParamValidator\TypeDef\UserDef;
+use MediaWiki\User\UserNameUtils;
 
 /**
  * Query module to list global user info and attachments
@@ -31,8 +32,13 @@ use MediaWiki\ParamValidator\TypeDef\UserDef;
  * @ingroup Extensions
  */
 class ApiQueryGlobalUserInfo extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	public function __construct( $query, $moduleName, UserNameUtils $userNameUtils ) {
 		parent::__construct( $query, $moduleName, 'gui' );
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function execute() {
@@ -48,7 +54,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				$this->dieWithError( [ 'apierror-invaliduserid', wfEscapeWikiText( $params['id'] ) ] );
 			}
 		} else {
-			$username = User::getCanonicalName( $params['user'] );
+			$username = $this->userNameUtils->getCanonical( $params['user'] );
 			if ( $username === false ) {
 				$this->dieWithError( [ 'apierror-invaliduser', wfEscapeWikiText( $params['user'] ) ] );
 			}

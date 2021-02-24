@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
+
 class EmailableUser extends User {
 
 	/**
@@ -9,20 +12,26 @@ class EmailableUser extends User {
 	 * you have both an ID and a name handy.
 	 *
 	 * @param string $name Username, validated by Title::newFromText()
-	 * @param string|bool $validate Validate username. Takes the same parameters as
-	 *    User::getCanonicalName(), except that true is accepted as an alias
-	 *    for 'valid', for BC.
+	 * @param string|bool $validate Type of validation to use
+	 *   Takes the same parameters as UserNameUtils::getCanonical(),
+	 *   except that true is accepted as an alias for RIGOR_VALID
+	 *   Use of UserNameUtils' class public constants RIGOR_* is preferred
+	 *   - RIGOR_NONE        No validation
+	 *   - RIGOR_VALID       Valid for batch processes
+	 *   - RIGOR_USABLE      Valid for batch processes and login
+	 *   - RIGOR_CREATABLE   Valid for batch processes, login and account creation
 	 *
 	 * @return EmailableUser|false EmailableUser object, or false if the
 	 *    username is invalid (e.g. if it contains illegal characters or is an IP address).
 	 *    If the username is not present in the database, the result will be a user object
 	 *    with a name, zero user ID and default settings.
 	 */
-	public static function newFromName( $name, $validate = 'valid' ) {
+	public static function newFromName( $name, $validate = UserNameUtils::RIGOR_VALID ) {
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		if ( $validate === true ) {
-			$validate = 'valid';
+			$validate = UserNameUtils::RIGOR_VALID;
 		}
-		$name = self::getCanonicalName( $name, $validate );
+		$name = $userNameUtils->getCanonical( $name, $validate );
 		if ( $name === false ) {
 			return false;
 		} else {

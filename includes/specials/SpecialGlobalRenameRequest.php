@@ -19,6 +19,8 @@
  * @file
  */
 
+use MediaWiki\User\UserNameUtils;
+
 /**
  * Request an account rename.
  *
@@ -27,8 +29,12 @@
  */
 class SpecialGlobalRenameRequest extends FormSpecialPage {
 
-	public function __construct() {
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	public function __construct( UserNameUtils $userNameUtils ) {
 		parent::__construct( 'GlobalRenameRequest' );
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function doesWrites() {
@@ -260,7 +266,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	public function onSubmit( array $data ) {
 		$wiki = $this->isGlobalUser() ? null : wfWikiID();
 		$reason = $data['reason'] ?? null;
-		$safeName = User::getCanonicalName( $data['newname'], 'creatable' );
+		$safeName = $this->userNameUtils->getCanonical( $data['newname'], UserNameUtils::RIGOR_CREATABLE );
 
 		$request = new GlobalRenameRequest;
 		$request->setName( $this->getUser()->getName() );

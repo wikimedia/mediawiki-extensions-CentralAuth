@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Cut-down copy of User interface for local-interwiki-database
  * user rights manipulation.
@@ -42,7 +44,8 @@ class CentralAuthGroupMembershipProxy {
 	 * @return CentralAuthGroupMembershipProxy|null
 	 */
 	public static function newFromName( $name ) {
-		$name = User::getCanonicalName( $name );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$name = $userNameUtils->getCanonical( $name );
 		if ( $name === false ) {
 			return null;
 		}

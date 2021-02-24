@@ -19,6 +19,8 @@
  * @file
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
@@ -157,7 +159,8 @@ class GlobalRenameRequest {
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setNewName( $newName ) {
-		$canonicalName = User::getCanonicalName( $newName, 'creatable' );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$canonicalName = $userNameUtils->getCanonical( $newName, UserNameUtils::RIGOR_CREATABLE );
 		if ( $canonicalName === false ) {
 			throw new Exception( "Invalid username '{$newName}'" );
 		}
@@ -426,7 +429,8 @@ class GlobalRenameRequest {
 	 * @return Status Canonicalized name
 	 */
 	public static function isNameAvailable( $name ) {
-		$safe = User::getCanonicalName( $name, 'creatable' );
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$safe = $userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_CREATABLE );
 		$status = Status::newGood( $safe );
 
 		if ( $safe === false || $safe === '' ) {

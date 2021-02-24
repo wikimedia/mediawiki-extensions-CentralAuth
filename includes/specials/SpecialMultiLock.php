@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -32,9 +33,12 @@ class SpecialMultiLock extends SpecialPage {
 	private $mReason;
 	/** @var string[] */
 	private $mActionUserNames;
+	/** @var UserNameUtils */
+	private $userNameUtils;
 
-	public function __construct() {
+	public function __construct( UserNameUtils $userNameUtils ) {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function doesWrites() {
@@ -357,7 +361,7 @@ class SpecialMultiLock extends SpecialPage {
 
 		// @TODO: Don't use methods from the special page directly,
 		// rather move them somewhere sane
-		$sca = new SpecialCentralAuth;
+		$sca = new SpecialCentralAuth( $this->userNameUtils );
 		$sca->setContext( $this->getContext() );
 
 		$guName = $globalUser->getName();

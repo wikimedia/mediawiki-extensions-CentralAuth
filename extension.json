@@ -72,7 +72,12 @@
 		"CentralAuthHooks::onRunExtensionFunctions"
 	],
 	"SpecialPages": {
-		"CentralAuth": "SpecialCentralAuth",
+		"CentralAuth": {
+			"class": "SpecialCentralAuth",
+			"services": [
+				"UserNameUtils"
+			]
+		},
 		"CentralLogin": "SpecialCentralLogin",
 		"CentralAutoLogin": {
 			"class": "SpecialCentralAutoLogin",
@@ -91,10 +96,25 @@
 		"GlobalGroupPermissions": "SpecialGlobalGroupPermissions",
 		"WikiSets": "SpecialWikiSets",
 		"GlobalUsers": "SpecialGlobalUsers",
-		"MultiLock": "SpecialMultiLock",
+		"MultiLock": {
+			"class": "SpecialMultiLock",
+			"services": [
+				"UserNameUtils"
+			]
+		},
 		"GlobalRenameUser": "SpecialGlobalRenameUser",
-		"GlobalRenameProgress": "SpecialGlobalRenameProgress",
-		"GlobalUserMerge": "SpecialGlobalUserMerge"
+		"GlobalRenameProgress": {
+			"class": "SpecialGlobalRenameProgress",
+			"services": [
+				"UserNameUtils"
+			]
+		},
+		"GlobalUserMerge": {
+			"class": "SpecialGlobalUserMerge",
+			"services": [
+				"UserNameUtils"
+			]
+		}
 	},
 	"JobClasses": {
 		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
@@ -198,7 +218,12 @@
 		"globaluserrights": "ApiGlobalUserRights"
 	},
 	"APIMetaModules": {
-		"globaluserinfo": "ApiQueryGlobalUserInfo",
+		"globaluserinfo": {
+			"class": "ApiQueryGlobalUserInfo",
+			"services": [
+				"UserNameUtils"
+			]
+		},
 		"globalrenamestatus": "ApiQueryGlobalRenameStatus"
 	},
 	"APIListModules": {
@@ -582,7 +607,12 @@
 		"primaryauth": {
 			"CentralAuthPrimaryAuthenticationProvider": {
 				"class": "CentralAuthPrimaryAuthenticationProvider",
-				"sort": 10
+				"sort": 10,
+				"services": [
+					"UserNameUtils",
+					"PermissionManager",
+					"StatsdDataFactory"
+				]
 			}
 		},
 		"secondaryauth": {
