@@ -59,12 +59,12 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
-		$pm = MediaWikiServices::getInstance()->getPermissionManager();
-		$this->mCanUnmerge = $pm->userHasRight( $this->getUser(), 'centralauth-unmerge' );
-		$this->mCanLock = $pm->userHasRight( $this->getUser(), 'centralauth-lock' );
-		$this->mCanOversight = $pm->userHasRight( $this->getUser(), 'centralauth-oversight' );
+		$authority = $this->getContext()->getAuthority();
+		$this->mCanUnmerge = $authority->isAllowed( 'centralauth-unmerge' );
+		$this->mCanLock = $authority->isAllowed( 'centralauth-lock' );
+		$this->mCanOversight = $authority->isAllowed( 'centralauth-oversight' );
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
-		$this->mCanChangeGroups = $pm->userHasRight( $this->getUser(), 'globalgroupmembership' );
+		$this->mCanChangeGroups = $authority->isAllowed( 'globalgroupmembership' );
 
 		$this->getOutput()->setPageTitle(
 			$this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' )

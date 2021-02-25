@@ -360,9 +360,7 @@ class CentralAuthHooks {
 
 		$manageButtons = [];
 
-		if ( $unattached && MediaWikiServices::getInstance()->getPermissionManager()
-				->userHasRight( $user, 'centralauth-merge' )
-		) {
+		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
 			// Add "Manage your global account" button
 			$manageButtons[] = new \OOUI\ButtonWidget( [
 				'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),

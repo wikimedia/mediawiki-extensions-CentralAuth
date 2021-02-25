@@ -8,7 +8,6 @@ return [
 	) : CentralAuthForcedLocalCreationService {
 		return new CentralAuthForcedLocalCreationService(
 			$services->getUserFactory(),
-			$services->getPermissionManager(),
 			CentralAuthServices::getUtilityService( $services )
 		);
 	},

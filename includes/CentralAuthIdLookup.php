@@ -1,7 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 /**
  * Look up central IDs using CentralAuth
  */
@@ -32,8 +30,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromMaster );
 			if ( $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE
-				|| $audience === null || MediaWikiServices::getInstance()->getPermissionManager()
-					->userHasRight( $audience, 'centralauth-oversight' )
+				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
 			) {
 				$idToName[$centralUser->getId()] = $centralUser->getName();
 			} else {
@@ -70,8 +67,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromMaster );
 			if ( $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE
-				|| $audience === null || MediaWikiServices::getInstance()->getPermissionManager()
-					->userHasRight( $audience, 'centralauth-oversight' )
+				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
 			) {
 				$nameToId[$centralUser->getName()] = $centralUser->getId();
 			}
