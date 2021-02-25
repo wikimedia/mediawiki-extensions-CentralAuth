@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Logger\LoggerFactory;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -40,18 +41,40 @@ class CentralAuthCreateLocalAccountJob extends Job {
 
 		$user = User::newFromName( $username );
 		$centralUser = CentralAuthUser::getInstance( $user );
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 
 		if ( $user->getId() !== 0 ) {
-			wfDebugLog( 'CentralAuth', __CLASS__ . ": tried to create local account for $username "
-				. "on $wiki from $from but one already exists\n" );
+			$logger->info(
+				__CLASS__ . ': tried to create local account for {username} '
+					. 'on {wiki} from {from} but one already exists',
+				[
+					'username' => $username,
+					'wiki' => $wiki,
+					'from' => $from,
+				]
+			);
 			return true;
 		} elseif ( !$centralUser->exists() ) {
-			wfDebugLog( 'CentralAuth', __CLASS__ . ": tried to create local account for $username "
-				. "on $wiki from $from but no global account exists\n" );
+			$logger->info(
+				__CLASS__ . ': tried to create local account for {username} '
+					. 'on {wiki} from {from} but no global account exists',
+				[
+					'username' => $username,
+					'wiki' => $wiki,
+					'from' => $from,
+				]
+			);
 			return true;
 		} elseif ( $centralUser->attachedOn( $wiki ) ) {
-			wfDebugLog( 'CentralAuth', __CLASS__ . ": tried to create local account for $username "
-				. "on $wiki from $from but an attached local account already exists\n" );
+			$logger->info(
+				__CLASS__ . ': tried to create local account for {username} '
+					. 'on {wiki} from {from} but an attached local account already exists',
+				[
+					'username' => $username,
+					'wiki' => $wiki,
+					'from' => $from,
+				]
+			);
 			return true;
 		}
 
