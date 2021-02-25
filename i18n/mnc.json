@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chulsu463"
+			"Chulsu463",
+			"Foavi33"
 		]
 	},
-	"centralauth-foreign-link": "$2 i baitalasi $1"
+	"centralauth-admin-blocklog": "horihangge i ejebun",
+	"centralauth-foreign-link": "$2 i baitalasi $1",
+	"centralauth-merge-method-login": "dosire de jalin araha"
 }
