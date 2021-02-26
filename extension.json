@@ -212,6 +212,12 @@
 		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry"
 	},
 	"APIModules": {
+		"createlocalaccount": {
+			"class": "ApiCreateLocalAccount",
+			"services": [
+				"CentralAuth.CentralAuthForcedLocalCreationService"
+			]
+		},
 		"deleteglobalaccount": "ApiDeleteGlobalAccount",
 		"setglobalaccountstatus": "ApiSetGlobalAccountStatus",
 		"centralauthtoken": "ApiCentralAuthToken",
@@ -275,6 +281,7 @@
 		"SpecialWikiSets": "includes/specials/SpecialWikiSets.php",
 		"ApiQueryGlobalUserInfo": "includes/api/ApiQueryGlobalUserInfo.php",
 		"ApiQueryGlobalRenameStatus": "includes/api/ApiQueryGlobalRenameStatus.php",
+		"ApiCreateLocalAccount": "includes/api/ApiCreateLocalAccount.php",
 		"ApiDeleteGlobalAccount": "includes/api/ApiDeleteGlobalAccount.php",
 		"ApiSetGlobalAccountStatus": "includes/api/ApiSetGlobalAccountStatus.php",
 		"ApiQueryGlobalGroups": "includes/api/ApiQueryGlobalGroups.php",
