@@ -726,7 +726,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onUserArrayFromResult( &$userArray, $res ) {
-		$userArray = CentralAuthUserArray::newFromResult( $res );
+		$userArray = new CentralAuthUserArrayFromResult( $res );
 		return true;
 	}
 

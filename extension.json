@@ -267,7 +267,6 @@
 		"LocalUserNotFoundException": "includes/LocalUserNotFoundException.php",
 		"WikiSet": "includes/WikiSet.php",
 		"SpecialCentralAutoLogin": "includes/specials/SpecialCentralAutoLogin.php",
-		"CentralAuthUserArray": "includes/CentralAuthUserArray.php",
 		"CentralAuthUserArrayFromResult": "includes/CentralAuthUserArrayFromResult.php",
 		"CentralAuthIdLookup": "includes/CentralAuthIdLookup.php",
 		"SpecialGlobalGroupMembership": "includes/specials/SpecialGlobalGroupMembership.php",
