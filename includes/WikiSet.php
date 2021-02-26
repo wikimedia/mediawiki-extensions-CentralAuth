@@ -61,10 +61,10 @@ class WikiSet {
 	}
 
 	/**
-	 * @param string $n
+	 * @param string $name
 	 */
-	public function setName( $n ) {
-		$this->setDbField( 'ws_name', $n );
+	public function setName( $name ) {
+		$this->mName = $name;
 	}
 
 	/**
@@ -75,10 +75,10 @@ class WikiSet {
 	}
 
 	/**
-	 * @param string[] $w
+	 * @param string[] $wikis
 	 */
-	public function setWikisRaw( $w ) {
-		$this->setDbField( 'ws_wikis', $w );
+	public function setWikisRaw( $wikis ) {
+		$this->mWikis = $wikis;
 	}
 
 	/**
@@ -89,23 +89,13 @@ class WikiSet {
 	}
 
 	/**
-	 * @param string $t
+	 * @param string $type
 	 */
-	public function setType( $t ) {
-		if ( !in_array( $t, [ self::OPTIN, self::OPTOUT ] ) ) {
+	public function setType( $type ) {
+		if ( !in_array( $type, [ self::OPTIN, self::OPTOUT ] ) ) {
 			return;
 		}
-		$this->setDbField( 'ws_type', $t );
-	}
-
-	/**
-	 * @param string $field
-	 * @param mixed $value
-	 */
-	protected function setDbField( $field, $value ) {
-		$map = [ 'ws_name' => 'mName', 'ws_type' => 'mType', 'ws_wikis' => 'mWikis' ];
-		$mname = $map[$field];
-		$this->$mname = $value;
+		$this->mType = $type;
 	}
 
 	/**
@@ -313,11 +303,11 @@ class WikiSet {
 	 */
 	public function getRestrictedGroups() {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
-		$r = $dbr->select(
+		$res = $dbr->select(
 			'global_group_restrictions', '*', [ 'ggr_set' => $this->mId ], __METHOD__
 		);
 		$result = [];
-		foreach ( $r as $row ) {
+		foreach ( $res as $row ) {
 			$result[] = $row->ggr_group;
 		}
 		return $result;
@@ -361,7 +351,12 @@ class WikiSet {
 	 */
 	public static function getWikiSetForGroup( $group ) {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
-		$res = $dbr->selectRow( 'global_group_restrictions', '*', [ 'ggr_group' => $group ], __METHOD__ );
+		$res = $dbr->selectRow(
+			'global_group_restrictions',
+			'*',
+			[ 'ggr_group' => $group ],
+			__METHOD__
+		);
 		return $res ? $res->ggr_set : 0;
 	}
 
