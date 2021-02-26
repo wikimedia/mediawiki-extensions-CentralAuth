@@ -8,9 +8,6 @@ class EmailableUser extends User {
 	/**
 	 * Static factory method for creation from username.
 	 *
-	 * This is slightly less efficient than newFromId(), so use newFromId() if
-	 * you have both an ID and a name handy.
-	 *
 	 * @param string $name Username, validated by Title::newFromText()
 	 * @param string|bool $validate Type of validation to use
 	 *   Takes the same parameters as UserNameUtils::getCanonical(),
@@ -23,8 +20,8 @@ class EmailableUser extends User {
 	 *
 	 * @return EmailableUser|false EmailableUser object, or false if the
 	 *    username is invalid (e.g. if it contains illegal characters or is an IP address).
-	 *    If the username is not present in the database, the result will be a user object
-	 *    with a name, zero user ID and default settings.
+	 *    If the username is not present in the database, the result will be a EmailableUser
+	 *    object with a name, zero user ID and default settings.
 	 */
 	public static function newFromName( $name, $validate = UserNameUtils::RIGOR_VALID ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
