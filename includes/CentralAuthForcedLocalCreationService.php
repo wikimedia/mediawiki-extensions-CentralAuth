@@ -65,7 +65,7 @@ class CentralAuthForcedLocalCreationService {
 				: 'centralauth-createlocal-no-global-account' );
 		}
 
-		$status = $this->utilityService->autoCreateUser( $user );
+		$status = $this->utilityService->autoCreateUser( $user, false );
 		if ( !$status->isGood() ) {
 			return Status::wrap( $status );
 		}

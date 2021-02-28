@@ -217,7 +217,14 @@ class CentralAuthUtilityService {
 		return $this->sessionStore;
 	}
 
-	public function autoCreateUser( User $user ) : StatusValue {
+	/**
+	 * Auto-create an account
+	 *
+	 * @param User $user User to auto-create
+	 * @param bool $log Whether to generate a user creation log entry
+	 * @return StatusValue a status value
+	 */
+	public function autoCreateUser( User $user, $log = true ) : StatusValue {
 		// Ignore warnings about master connections/writes...hard to avoid here
 
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
@@ -226,7 +233,7 @@ class CentralAuthUtilityService {
 		if ( !$this->authManager->getAuthenticationProvider( $source ) ) {
 			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
 		}
-		$sv = $this->authManager->autoCreateUser( $user, $source, false );
+		$sv = $this->authManager->autoCreateUser( $user, $source, false, $log );
 
 		LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',
