@@ -22,6 +22,12 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiUserrights;
+use CentralAuthUser;
+use SpecialGlobalGroupMembership;
+
 /**
  * @ingroup API
  */

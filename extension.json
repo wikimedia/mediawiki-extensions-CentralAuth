@@ -213,29 +213,29 @@
 	},
 	"APIModules": {
 		"createlocalaccount": {
-			"class": "ApiCreateLocalAccount",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCreateLocalAccount",
 			"services": [
 				"CentralAuth.CentralAuthForcedLocalCreationService"
 			]
 		},
-		"deleteglobalaccount": "ApiDeleteGlobalAccount",
-		"setglobalaccountstatus": "ApiSetGlobalAccountStatus",
-		"centralauthtoken": "ApiCentralAuthToken",
-		"globaluserrights": "ApiGlobalUserRights"
+		"deleteglobalaccount": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiDeleteGlobalAccount",
+		"setglobalaccountstatus": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiSetGlobalAccountStatus",
+		"centralauthtoken": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCentralAuthToken",
+		"globaluserrights": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights"
 	},
 	"APIMetaModules": {
 		"globaluserinfo": {
-			"class": "ApiQueryGlobalUserInfo",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalUserInfo",
 			"services": [
 				"UserNameUtils"
 			]
 		},
-		"globalrenamestatus": "ApiQueryGlobalRenameStatus"
+		"globalrenamestatus": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalRenameStatus"
 	},
 	"APIListModules": {
-		"globalgroups": "ApiQueryGlobalGroups",
-		"wikisets": "ApiQueryWikiSets",
-		"globalallusers": "ApiQueryGlobalAllUsers"
+		"globalgroups": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalGroups",
+		"wikisets": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryWikiSets",
+		"globalallusers": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers"
 	},
 	"MessagesDirs": {
 		"SpecialCentralAuth": [
@@ -246,6 +246,9 @@
 	"ExtensionMessagesFiles": {
 		"SpecialCentralAuthAliases": "CentralAuth.alias.php",
 		"SpecialCentralAuthAliasesNoTranslate": "CentralAuth.notranslate-alias.php"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\CentralAuth\\Api\\": "includes/Api/"
 	},
 	"AutoloadClasses": {
 		"SpecialCentralAuth": "includes/specials/SpecialCentralAuth.php",
@@ -279,16 +282,6 @@
 		"CentralAuthGroupMembershipProxy": "includes/CentralAuthGroupMembershipProxy.php",
 		"SpecialGlobalGroupPermissions": "includes/specials/SpecialGlobalGroupPermissions.php",
 		"SpecialWikiSets": "includes/specials/SpecialWikiSets.php",
-		"ApiQueryGlobalUserInfo": "includes/api/ApiQueryGlobalUserInfo.php",
-		"ApiQueryGlobalRenameStatus": "includes/api/ApiQueryGlobalRenameStatus.php",
-		"ApiCreateLocalAccount": "includes/api/ApiCreateLocalAccount.php",
-		"ApiDeleteGlobalAccount": "includes/api/ApiDeleteGlobalAccount.php",
-		"ApiSetGlobalAccountStatus": "includes/api/ApiSetGlobalAccountStatus.php",
-		"ApiQueryGlobalGroups": "includes/api/ApiQueryGlobalGroups.php",
-		"ApiQueryWikiSets": "includes/api/ApiQueryWikiSets.php",
-		"ApiQueryGlobalAllUsers": "includes/api/ApiQueryGlobalAllUsers.php",
-		"ApiGlobalUserRights": "includes/api/ApiGlobalUserRights.php",
-		"ApiCentralAuthToken": "includes/api/ApiCentralAuthToken.php",
 		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",

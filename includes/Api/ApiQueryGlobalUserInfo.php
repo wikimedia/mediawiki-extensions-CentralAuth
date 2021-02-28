@@ -22,8 +22,14 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiBase;
+use ApiQueryBase;
+use CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserNameUtils;
+use WikiMap;
 
 /**
  * Query module to list global user info and attachments

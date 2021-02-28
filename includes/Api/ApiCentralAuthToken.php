@@ -22,6 +22,16 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiBase;
+use ApiMain;
+use CentralAuthSessionProvider;
+use CentralAuthUser;
+use CentralAuthUtils;
+use MediaWiki\Session\SessionManager;
+use MWCryptRand;
+
 /**
  * Module to fetch the centralauthtoken for cross-wiki queries.
  *
@@ -45,7 +55,7 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieWithError( 'apierror-centralauth-notloggedin', 'notloggedin' );
 		}
 
-		$session = MediaWiki\Session\SessionManager::getGlobalSession();
+		$session = SessionManager::getGlobalSession();
 		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
 			$this->dieWithError( 'apierror-centralauth-badsession', 'badsession' );
 		}

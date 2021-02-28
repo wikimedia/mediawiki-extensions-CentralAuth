@@ -22,6 +22,13 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiBase;
+use ApiQueryBase;
+use CentralAuthUser;
+use WikiSet;
+
 /**
  * Query module to list the wiki sets
  *

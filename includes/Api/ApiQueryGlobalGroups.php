@@ -22,6 +22,12 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiBase;
+use ApiQueryBase;
+use CentralAuthUtils;
+
 /**
  * Query module to list all global groups
  *

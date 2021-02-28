@@ -18,6 +18,13 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiQuery;
+use ApiQueryBase;
+use ApiResult;
+use GlobalRenameUserStatus;
+
 /**
  * API module equivalent of Special:GlobalRenameStatus
  */

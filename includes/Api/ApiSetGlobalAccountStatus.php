@@ -22,6 +22,11 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiBase;
+use CentralAuthUser;
+
 /**
  * API module to lock/hide a global account.
  *

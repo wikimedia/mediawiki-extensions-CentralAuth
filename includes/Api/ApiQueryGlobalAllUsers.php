@@ -1,5 +1,11 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Api;
+
+use ApiBase;
+use ApiQueryBase;
+use CentralAuthUser;
+use CentralAuthUtils;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
