@@ -13,6 +13,7 @@ likely construction types...
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Session\SessionManager;
 use MediaWiki\User\UserIdentityValue;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
@@ -213,31 +214,41 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @deprecated use CentralAuthUtils instead
+	 * @deprecated use CentralAuthUtilityService instead
 	 */
 	public static function getCentralDB() {
-		return CentralAuthUtils::getCentralDB();
+		return CentralAuthServices::getUtilityService()
+			->getCentralDB();
 	}
 
 	/**
 	 * Check hasOrMadeRecentMasterChanges() on the CentralAuth load balancer
+	 *
+	 * @todo this should be in CentralAuthUtilityService instead, it has nothing
+	 * to do with CentralAuthUser
 	 *
 	 * @return bool
 	 */
 	public static function centralLBHasRecentMasterChanges() {
 		global $wgCentralAuthDatabase;
 
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		return $lbFactory->getMainLB( $wgCentralAuthDatabase )->hasOrMadeRecentMasterChanges();
+		return MediaWikiServices::getInstance()
+			->getDBLoadBalancerFactory()
+			->getMainLB( $wgCentralAuthDatabase )
+			->hasOrMadeRecentMasterChanges();
 	}
 
 	/**
+	 * @todo this should be in CentralAuthUtilityService instead
+	 *
 	 * @param string $wikiID
 	 * @return IDatabase
 	 */
 	public static function getLocalDB( $wikiID ) {
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		return $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_MASTER, [], $wikiID );
+		return MediaWikiServices::getInstance()
+			->getDBLoadBalancerFactory()
+			->getMainLB( $wikiID )
+			->getConnectionRef( DB_MASTER, [], $wikiID );
 	}
 
 	/**
@@ -245,8 +256,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function checkWriteMode() {
 		if ( !$this->mFromMaster ) {
-			wfDebugLog( 'CentralAuth',
-				"Setter called on a replicae instance: " . wfGetAllCallers( 10 ) );
+			wfDebugLog(
+				'CentralAuth',
+				"Setter called on a replica instance: " . wfGetAllCallers( 10 )
+			);
 		}
 	}
 
@@ -869,28 +882,33 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array $users Associative array of ids => names
 	 */
 	public static function storeMigrationData( $wiki, $users ) {
-		if ( $users ) {
-			$dbw = CentralAuthUtils::getCentralDB();
-			$globalTuples = [];
-			$tuples = [];
-			foreach ( $users as $name ) {
-				$globalTuples[] = [ 'gn_name' => $name ];
-				$tuples[] = [
-					'ln_wiki' => $wiki,
-					'ln_name' => $name
-				];
-			}
-			$dbw->insert(
-				'globalnames',
-				$globalTuples,
-				__METHOD__,
-				[ 'IGNORE' ] );
-			$dbw->insert(
-				'localnames',
-				$tuples,
-				__METHOD__,
-				[ 'IGNORE' ] );
+		if ( !$users ) {
+			return;
 		}
+
+		$globalTuples = [];
+		$tuples = [];
+		foreach ( $users as $name ) {
+			$globalTuples[] = [ 'gn_name' => $name ];
+			$tuples[] = [
+				'ln_wiki' => $wiki,
+				'ln_name' => $name
+			];
+		}
+
+		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw->insert(
+			'globalnames',
+			$globalTuples,
+			__METHOD__,
+			[ 'IGNORE' ]
+		);
+		$dbw->insert(
+			'localnames',
+			$tuples,
+			__METHOD__,
+			[ 'IGNORE' ]
+		);
 	}
 
 	/**
@@ -904,7 +922,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->insert( 'globaluser',
+		$dbw->insert(
+			'globaluser',
 			[
 				'gu_name' => $this->mName,
 				'gu_salt' => $salt,
@@ -914,10 +933,11 @@ class CentralAuthUser implements IDBAccessObject {
 				'gu_email_authenticated' => $dbw->timestampOrNull( $emailAuth ),
 				'gu_registration' => $dbw->timestamp(), // hmmmm
 				'gu_locked' => 0,
-				'gu_hidden' => '',
+				'gu_hidden' => self::HIDDEN_NONE,
 			],
 			__METHOD__,
-			[ 'IGNORE' ] );
+			[ 'IGNORE' ]
+		);
 
 		$this->resetState();
 		return $dbw->affectedRows() != 0;
@@ -1122,6 +1142,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
 
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$home = false;
 		$attached = [];
 		$unattached = [];
@@ -1130,13 +1151,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$self = $this->localUserData( wfWikiID() );
 		$selfPassword = $this->getPasswordFromString( $self['password'], $self['id'] );
 		if ( !$this->matchHashes( $passwords, $selfPassword ) ) {
-			wfDebugLog( 'CentralAuth', "dry run: failed self-password check" );
+			$logger->info( 'dry run: failed self-password check' );
 			return Status::newFatal( 'wrongpassword' );
 		}
 
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
-			wfDebugLog( 'CentralAuth', 'dry run: no accounts to merge, failed migration' );
+			$logger->info( 'dry run: no accounts to merge, failed migration' );
 			return Status::newFatal( 'centralauth-merge-no-accounts' );
 		}
 		$home = $this->chooseHomeWiki( $migrationSet );
@@ -1145,17 +1166,13 @@ class CentralAuthUser implements IDBAccessObject {
 		// And we need to match the home wiki before proceeding...
 		$localPassword = $this->getPasswordFromString( $local['password'], $local['id'] );
 		if ( $this->matchHashes( $passwords, $localPassword ) ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'dry run: passed password match to home {home}',
-				'all',
 				[ 'home' => $home ]
 			);
 		} else {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'dry run: failed password match to home {home}',
-				'all',
 				[ 'home' => $home ]
 			);
 			return Status::newFatal( 'centralauth-merge-home-password' );
@@ -1254,17 +1271,16 @@ class CentralAuthUser implements IDBAccessObject {
 	) {
 		$this->checkWriteMode();
 		$migrationSet = $this->queryUnattached();
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( empty( $migrationSet ) ) {
-			wfDebugLog( 'CentralAuth', 'no accounts to merge, failed migration' );
+			$logger->info( 'no accounts to merge, failed migration' );
 			return false;
 		}
 
 		if ( isset( $this->mHomeWiki ) ) {
 			if ( !array_key_exists( $this->mHomeWiki, $migrationSet ) ) {
-				wfDebugLog(
-					'CentralAuth',
+				$logger->info(
 					'Invalid home wiki specification \'{user}@{home}\'',
-					'all',
 					[ 'user' => $this->mName, 'home' => $this->mHomeWiki ]
 				);
 				return false;
@@ -1279,10 +1295,8 @@ class CentralAuthUser implements IDBAccessObject {
 		// like we did in migrationDryRun
 		$homePassword = $this->getPasswordFromString( $home['password'], $home['id'] );
 		if ( $checkHome && !$this->matchHashes( $passwords, $homePassword ) ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'auto migrate: failed password match to home {home}',
-				'all',
 				[ 'home' => $this->mHomeWiki ]
 			);
 			return false;
@@ -1295,10 +1309,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
 		if ( $safe && count( $attach ) !== count( $migrationSet ) ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'Safe auto-migration for \'{user}\' failed',
-				'all',
 				[ 'user' => $this->mName ]
 			);
 			return false;
@@ -1320,35 +1332,27 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		if ( !$ok ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'attemptedAutoMigration for existing entry \'{user}\'',
-				'all',
 				[ 'user' => $this->mName ]
 			);
 			return false;
 		}
 
 		if ( count( $attach ) < count( $migrationSet ) ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'Incomplete migration for \'{user}\'',
-				'all',
 				[ 'user' => $this->mName ]
 			);
 		} else {
 			if ( count( $migrationSet ) == 1 ) {
-				wfDebugLog(
-					'CentralAuth',
+				$logger->info(
 					'Singleton migration for \'{user}\' on {home}',
-					'all',
 					[ 'user' => $this->mName, 'home' => $homeWiki ]
 				);
 			} else {
-				wfDebugLog(
-					'CentralAuth',
+				$logger->info(
 					'Full automatic migration for \'{user}\'',
-					'all',
 					[ 'user' => $this->mName ]
 				);
 			}
@@ -1379,12 +1383,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function attemptPasswordMigration( $password, &$migrated = [], &$remaining = [] ) {
 		$rows = $this->queryUnattached();
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 
 		if ( count( $rows ) == 0 ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'Already fully migrated user \'{user}\'',
-				'all',
 				[ 'user' => $this->mName ]
 			);
 			return true;
@@ -1402,10 +1405,8 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( $this->matchHash( $password,
 				$this->getPasswordFromString( $row['password'], $row['id'] ) )->isGood()
 			) {
-				wfDebugLog(
-					'CentralAuth',
+				$logger->info(
 					'Attaching \'{user}\' on {wiki} by password',
-					'all',
 					[
 						'user' => $this->mName,
 						'wiki' => $wiki
@@ -1414,10 +1415,8 @@ class CentralAuthUser implements IDBAccessObject {
 				$this->attach( $wiki, 'password' );
 				$migrated[] = $wiki;
 			} else {
-				wfDebugLog(
-					'CentralAuth',
+				$logger->info(
 					'No password match for \'{user}\' on {wiki}',
-					'all',
 					[
 						'user' => $this->mName,
 						'wiki' => $wiki
@@ -1430,19 +1429,15 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->endTransaction();
 
 		if ( count( $remaining ) == 0 ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'Successful auto migration for \'{user}\'',
-				'all',
 				[ 'user' => $this->mName ]
 			);
 			return true;
 		}
 
-		wfDebugLog(
-			'CentralAuth',
+		$logger->info(
 			'Incomplete migration for \'{user}\'',
-			'all',
 			[ 'user' => $this->mName ]
 		);
 		return false;
@@ -1470,7 +1465,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public static function getWikiList() {
 		global $wgLocalDatabases;
-		static $wikiList;
+		static $wikiList = null;
 		if ( $wikiList === null ) {
 			Hooks::run( 'CentralAuthWikiList', [ &$wikiList ] );
 			// @phan-suppress-next-line PhanSuspiciousValueComparison May set by hook
@@ -1506,11 +1501,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 		foreach ( $valid as $wikiName ) {
 			# Delete the user from the central localuser table
-			$dbcw->delete( 'localuser',
+			$dbcw->delete(
+				'localuser',
 				[
-					'lu_name'   => $this->mName,
-					'lu_wiki' => $wikiName ],
-				__METHOD__ );
+					'lu_name' => $this->mName,
+					'lu_wiki' => $wikiName
+				],
+				__METHOD__
+			);
 			if ( !$dbcw->affectedRows() ) {
 				$wiki = WikiMap::getWiki( $wikiName );
 				$status->error( 'centralauth-admin-already-unmerged', $wiki->getDisplayName() );
@@ -1519,13 +1517,15 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 
 			# Touch the local user row, update the password
-			$lb = $lbFactory->getMainLB( $wikiName );
-			$dblw = $lb->getConnectionRef( DB_MASTER, [], $wikiName );
-			$dblw->update( 'user',
+			$dblw = $lbFactory->getMainLB( $wikiName )->getConnectionRef( DB_MASTER, [], $wikiName );
+			$dblw->update(
+				'user',
 				[
 					'user_touched' => wfTimestampNow(),
 					'user_password' => $password
-				], [ 'user_name' => $this->mName ], __METHOD__
+				],
+				[ 'user_name' => $this->mName ],
+				__METHOD__
 			);
 
 			$id = $dblw->selectField(
@@ -1575,10 +1575,9 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminDelete( $reason, User $deleter ) {
 		$this->checkWriteMode();
 
-		wfDebugLog(
-			'CentralAuth',
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
+		$logger->info(
 			'Deleting global account for user \'{user}\'',
-			'all',
 			[ 'user' => $this->mName ]
 		);
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
@@ -1586,23 +1585,31 @@ class CentralAuthUser implements IDBAccessObject {
 
 		# Synchronise passwords
 		$password = $this->getPassword();
-		$localUserRes = $centralDB->select( 'localuser', '*',
-			[ 'lu_name' => $this->mName ], __METHOD__ );
+		$localUserRes = $centralDB->select(
+			'localuser',
+			'*',
+			[ 'lu_name' => $this->mName ],
+			__METHOD__
+		);
 		$name = $this->getName();
 		foreach ( $localUserRes as $localUserRow ) {
 			/** @var stdClass $localUserRow */
 			$wiki = $localUserRow->lu_wiki;
-			wfDebug( __METHOD__ . ": Fixing password on $wiki\n" );
-			$lb = $lbFactory->getMainLB( $wiki );
-			$localDB = $lb->getConnectionRef( DB_MASTER, [], $wiki );
-			$localDB->update( 'user',
+			$logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
+			$localDB = $lbFactory->getMainLB( $wiki )->getConnectionRef( DB_MASTER, [], $wiki );
+			$localDB->update(
+				'user',
 				[ 'user_password' => $password ],
 				[ 'user_name' => $name ],
 				__METHOD__
 			);
 
-			$id = $localDB->selectField( 'user', 'user_id',
-				[ 'user_name' => $this->mName ], __METHOD__ );
+			$id = $localDB->selectField(
+				'user',
+				'user_id',
+				[ 'user_name' => $this->mName ],
+				__METHOD__
+			);
 			$this->clearLocalUserCache( $wiki, $id );
 		}
 		$wasSuppressed = $this->isOversighted();
@@ -1639,15 +1646,19 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminLock() {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->update( 'globaluser', [ 'gu_locked' => 1 ],
-			[ 'gu_name' => $this->mName ], __METHOD__ );
+		$dbw->update(
+			'globaluser',
+			[ 'gu_locked' => 1 ],
+			[ 'gu_name' => $this->mName ],
+			__METHOD__
+		);
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
 
 		$this->invalidateCache();
 		$user = User::newFromName( $this->mName );
-		\MediaWiki\Session\SessionManager::singleton()->invalidateSessionsForUser( $user );
+		SessionManager::singleton()->invalidateSessionsForUser( $user );
 
 		return Status::newGood();
 	}
@@ -1660,8 +1671,12 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminUnlock() {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->update( 'globaluser', [ 'gu_locked' => 0 ],
-			[ 'gu_name' => $this->mName ], __METHOD__ );
+		$dbw->update(
+			'globaluser',
+			[ 'gu_locked' => 0 ],
+			[ 'gu_name' => $this->mName ],
+			__METHOD__
+		);
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
@@ -1680,8 +1695,12 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminSetHidden( $level ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->update( 'globaluser', [ 'gu_hidden' => $level ],
-			[ 'gu_name' => $this->mName ], __METHOD__ );
+		$dbw->update(
+			'globaluser',
+			[ 'gu_hidden' => $level ],
+			[ 'gu_name' => $this->mName ],
+			__METHOD__
+		);
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-admin-unhide-nonexistent', $this->mName );
 		}
@@ -1722,9 +1741,9 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $setHidden === null ) {
 			$setHidden = $oldHiddenLevel;
 		} elseif ( $setHidden != self::HIDDEN_NONE
-			|| $oldHiddenLevel != self::HIDDEN_NONE ) {
-			if ( !$context->getAuthority()->isAllowed( 'centralauth-oversight' )
-			) {
+			|| $oldHiddenLevel != self::HIDDEN_NONE
+		) {
+			if ( !$context->getAuthority()->isAllowed( 'centralauth-oversight' ) ) {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
 				return Status::newFatal(
@@ -1794,18 +1813,16 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 		}
 
-		$good =
-			( $lockStatus === null || $lockStatus->isGood() ) &&
-			( $hideStatus === null || $hideStatus->isGood() );
+		$good = ( !$lockStatus || $lockStatus->isGood() ) &&
+			( !$hideStatus || $hideStatus->isGood() );
 
 		// Setup Status object to return all of the information for logging
-		if ( $good && ( count( $added ) || count( $removed ) ) ) {
-			$addedMsg = count( $added ) ?
-				implode( ', ', $added ) : $context->msg( 'centralauth-log-status-none' )
-					->inContentLanguage()->text();
-			$removedMsg = count( $removed ) ?
-				implode( ', ', $removed ) : $context->msg( 'centralauth-log-status-none' )
-					->inContentLanguage()->text();
+		if ( $good && ( $added || $removed ) ) {
+			$noChange = $context->msg( 'centralauth-log-status-none' )
+				->inContentLanguage()->text();
+
+			$addedMsg = count( $added ) ? implode( ', ', $added ) : $noChange;
+			$removedMsg = count( $removed ) ? implode( ', ', $removed ) : $noChange;
 
 			$returnStatus->successCount = count( $added ) + count( $removed );
 			$logParams = [
@@ -1877,7 +1894,8 @@ class CentralAuthUser implements IDBAccessObject {
 				$jobs[] = Job::factory(
 					'crosswikiSuppressUser',
 					Title::makeTitleSafe( NS_USER, $this->getName() ),
-					$jobParams );
+					$jobParams
+				);
 			}
 			// Push the jobs right before COMMIT (which is likely to succeed).
 			// If the job push fails, then the transaction will roll back.
@@ -1912,6 +1930,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
+			// TODO DatabaseBlock is not @newable
 			$block = new DatabaseBlock( [
 				'address' => $this->mName,
 				'user' => $data['id'],
@@ -1976,7 +1995,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->checkWriteMode();
 
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->insert( 'localuser',
+		$dbw->insert(
+			'localuser',
 			[
 				'lu_wiki'               => $wikiID,
 				'lu_name'               => $this->mName,
@@ -1995,20 +2015,17 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->invalidateCache();
 
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( !$success ) {
-			wfDebugLog(
-				'CentralAuth',
+			$logger->info(
 				'Race condition? Already attached {user}@{wiki}, just tried by \'{method}\'',
-				'all',
 				[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
 			);
 			return;
 		}
 
-		wfDebugLog(
-			'CentralAuth',
+		$logger->info(
 			'Attaching local user {user}@{wiki} by \'{method}\'',
-			'all',
 			[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
 		);
 
@@ -2034,8 +2051,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function canAuthenticate() {
 		if ( !$this->getId() ) {
-			wfDebugLog( 'CentralAuth',
-				"authentication for '$this->mName' failed due to missing account" );
+			wfDebugLog(
+				'CentralAuth',
+				"authentication for '$this->mName' failed due to missing account"
+			);
 			return "no user";
 		}
 
@@ -2074,9 +2093,9 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$status = $this->matchHash( $password, $this->getPasswordObject() );
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $status->isGood() ) {
-			wfDebugLog( 'CentralAuth',
-				"authentication for '$this->mName' succeeded" );
+			$logger->info( "authentication for '$this->mName' succeeded" );
 
 			$passwordFactory = new PasswordFactory();
 			$passwordFactory->init( RequestContext::getMain()->getConfig() );
@@ -2101,8 +2120,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			return "ok";
 		} else {
-			wfDebugLog( 'CentralAuth',
-				"authentication for '$this->mName' failed, bad pass" );
+			$logger->info( "authentication for '$this->mName' failed, bad pass" );
 			return "bad password";
 		}
 	}
@@ -2225,23 +2243,28 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'ln_name' => $this->mName, 'lu_name IS NULL' ],
 			__METHOD__,
 			[],
-			[ 'localuser' => [ 'LEFT OUTER JOIN',
-				[ 'ln_wiki=lu_wiki', 'ln_name=lu_name' ] ] ]
+			[
+				'localuser' => [
+					'LEFT OUTER JOIN',
+					[ 'ln_wiki=lu_wiki', 'ln_name=lu_name' ]
+				]
+			]
 		);
 
-		$dbs = [];
+		$wikis = [];
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		foreach ( $result as $row ) {
+			/** @var stdClass $row */
+
 			if ( !WikiMap::getWiki( $row->ln_wiki ) ) {
-				LoggerFactory::getInstance( 'CentralAuth' )->warning(
-					__METHOD__ . ': invalid wiki in localnames: ' . $row->ln_wiki );
+				$logger->warning( __METHOD__ . ': invalid wiki in localnames: ' . $row->ln_wiki );
 				continue;
 			}
 
-			/** @var stdClass $row */
-			$dbs[] = $row->ln_wiki;
+			$wikis[] = $row->ln_wiki;
 		}
 
-		return $dbs;
+		return $wikis;
 	}
 
 	/**
@@ -2249,12 +2272,15 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function addLocalName( $wikiID ) {
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->insert( 'localnames',
+		$dbw->insert(
+			'localnames',
 			[
 				'ln_wiki' => $wikiID,
-				'ln_name' => $this->mName ],
+				'ln_name' => $this->mName
+			],
 			__METHOD__,
-			[ 'IGNORE' ] );
+			[ 'IGNORE' ]
+		);
 	}
 
 	/**
@@ -2262,11 +2288,14 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function removeLocalName( $wikiID ) {
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->delete( 'localnames',
+		$dbw->delete(
+			'localnames',
 			[
 				'ln_wiki' => $wikiID,
-				'ln_name' => $this->mName ],
-			__METHOD__ );
+				'ln_name' => $this->mName
+			],
+			__METHOD__
+		);
 	}
 
 	/**
@@ -2289,7 +2318,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function lazyImportLocalNames() {
 		$known = (bool)CentralAuthUtils::getCentralReplicaDB()->selectField(
-			'globalnames', '1', [ 'gn_name' => $this->mName ], __METHOD__
+			'globalnames',
+			'1',
+			[ 'gn_name' => $this->mName ],
+			__METHOD__
 		);
 		if ( $known ) {
 			// No need...
@@ -2368,10 +2400,12 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$db = $this->getSafeReadDB();
 
-		$result = $db->select( 'localuser',
+		$result = $db->select(
+			'localuser',
 			[ 'lu_wiki' ],
 			[ 'lu_name' => $this->mName ],
-			__METHOD__ );
+			__METHOD__
+		);
 
 		$wikis = [];
 		foreach ( $result as $row ) {
@@ -2513,24 +2547,22 @@ class CentralAuthUser implements IDBAccessObject {
 				'lu_attached_timestamp',
 				'lu_attached_method',
 			],
-			[
-				'lu_name' => $this->mName,
-			],
+			[ 'lu_name' => $this->mName, ],
 			__METHOD__ );
 
 		$wikis = [];
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		foreach ( $result as $row ) {
+			/** @var stdClass $row */
+
 			if ( !WikiMap::getWiki( $row->lu_wiki ) ) {
-				LoggerFactory::getInstance( 'CentralAuth' )->warning(
-					__METHOD__ . ': invalid wiki in localuser: ' . $row->lu_wiki );
+				$logger->warning( __METHOD__ . ': invalid wiki in localuser: ' . $row->lu_wiki );
 				continue;
 			}
 
-			/** @var stdClass $row */
 			$wikis[$row->lu_wiki] = [
 				'wiki' => $row->lu_wiki,
-				'attachedTimestamp' => wfTimestampOrNull( TS_MW,
-					$row->lu_attached_timestamp ),
+				'attachedTimestamp' => wfTimestampOrNull( TS_MW, $row->lu_attached_timestamp ),
 				'attachedMethod' => $row->lu_attached_method,
 			];
 		}
@@ -2578,8 +2610,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array
 	 */
 	protected function localUserData( $wikiID ) {
-		$blockRestrictions = MediaWikiServices::getInstance()->getBlockRestrictionStore();
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$mwServices = MediaWikiServices::getInstance();
+		$blockRestrictions = $mwServices->getBlockRestrictionStore();
+		$lbFactory = $mwServices->getDBLoadBalancerFactory();
+
 		$lb = $lbFactory->getMainLB( $wikiID );
 		$db = $lb->getConnectionRef( DB_REPLICA, [], $wikiID );
 		$fields = [
@@ -2618,10 +2652,8 @@ class CentralAuthUser implements IDBAccessObject {
 			'id' => $row->user_id,
 			'name' => $row->user_name,
 			'email' => $row->user_email,
-			'emailAuthenticated' =>
-				wfTimestampOrNull( TS_MW, $row->user_email_authenticated ),
-			'registration' =>
-				wfTimestampOrNull( TS_MW, $row->user_registration ),
+			'emailAuthenticated' => wfTimestampOrNull( TS_MW, $row->user_email_authenticated ),
+			'registration' => wfTimestampOrNull( TS_MW, $row->user_registration ),
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
 			'groupMemberships' => [], // array of (group name => UserGroupMembership object)
@@ -2630,8 +2662,11 @@ class CentralAuthUser implements IDBAccessObject {
 
 		// Edit count field may not be initialized...
 		if ( $row->user_editcount === null ) {
-			$actorWhere = ActorMigration::newMigration()
-				->getWhere( $db, 'rev_user', User::newFromId( $data['id'] ) );
+			$actorWhere = $mwServices->getActorMigration()->getWhere(
+				$db,
+				'rev_user',
+				User::newFromId( $data['id'] )
+			);
 			$data['editCount'] = 0;
 			foreach ( $actorWhere['orconds'] as $cond ) {
 				$data['editCount'] += $db->selectField(
@@ -2646,7 +2681,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// And we have to fetch groups separately, sigh...
-		$data['groupMemberships'] = MediaWikiServices::getInstance()
+		$data['groupMemberships'] = $mwServices
 			->getUserGroupManagerFactory()
 			->getUserGroupManager( $wikiID )
 			->getUserGroupMemberships(
@@ -2658,15 +2693,18 @@ class CentralAuthUser implements IDBAccessObject {
 			);
 
 		// And while we're in here, look for user blocks :D
-		$commentStore = CommentStore::getStore();
+		$commentStore = $mwServices->getCommentStore();
 		$commentQuery = $commentStore->getJoin( 'ipb_reason' );
 		$result = $db->select(
 			[ 'ipblocks' ] + $commentQuery['tables'],
 			[
 				'ipb_id',
-				'ipb_expiry', 'ipb_block_email',
-				'ipb_anon_only', 'ipb_create_account',
-				'ipb_enable_autoblock', 'ipb_allow_usertalk',
+				'ipb_expiry',
+				'ipb_block_email',
+				'ipb_anon_only',
+				'ipb_create_account',
+				'ipb_enable_autoblock',
+				'ipb_allow_usertalk',
 				'ipb_sitewide',
 			] + $commentQuery['fields'],
 			[ 'ipb_user' => $data['id'] ],
@@ -2676,20 +2714,23 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 		global $wgLang;
 		foreach ( $result as $row ) {
-			if ( $wgLang->formatExpiry( $row->ipb_expiry, TS_MW ) > wfTimestampNow() ) {
-				$data['block-expiry'] = $row->ipb_expiry;
-				$data['block-reason'] = $commentStore->getComment( 'ipb_reason', $row )->text;
-				$data['block-anononly'] = (bool)$row->ipb_anon_only;
-				$data['block-nocreate'] = (bool)$row->ipb_create_account;
-				$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
-				// Poorly named database column
-				$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
-				$data['block-noemail'] = (bool)$row->ipb_block_email;
-				$data['block-sitewide'] = (bool)$row->ipb_sitewide;
-				$data['block-restrictions'] = (bool)$row->ipb_sitewide ? [] :
-					$blockRestrictions->loadByBlockId( $row->ipb_id, $db );
-				$data['blocked'] = true;
+			// Check expiration
+			if ( $wgLang->formatExpiry( $row->ipb_expiry, TS_MW ) <= wfTimestampNow() ) {
+				continue;
 			}
+
+			$data['block-expiry'] = $row->ipb_expiry;
+			$data['block-reason'] = $commentStore->getComment( 'ipb_reason', $row )->text;
+			$data['block-anononly'] = (bool)$row->ipb_anon_only;
+			$data['block-nocreate'] = (bool)$row->ipb_create_account;
+			$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
+			// Poorly named database column
+			$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
+			$data['block-noemail'] = (bool)$row->ipb_block_email;
+			$data['block-sitewide'] = (bool)$row->ipb_sitewide;
+			$data['block-restrictions'] = (bool)$row->ipb_sitewide ? [] :
+				$blockRestrictions->loadByBlockId( $row->ipb_id, $db );
+			$data['blocked'] = true;
 		}
 
 		return $data;
@@ -2768,23 +2809,22 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->mPassword = $hash;
 		$this->mSalt = $salt;
 
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $this->getId() ) {
 			$dbw = CentralAuthUtils::getCentralDB();
-			$dbw->update( 'globaluser',
+			$dbw->update(
+				'globaluser',
 				[
 					'gu_salt'     => $salt,
 					'gu_password' => $hash,
 				],
-				[
-					'gu_id' => $this->getId(),
-				],
-				__METHOD__ );
+				[ 'gu_id' => $this->getId(), ],
+				__METHOD__
+			);
 
-			wfDebugLog( 'CentralAuth',
-				"Set global password for '$this->mName'" );
+			$logger->info( "Set global password for '$this->mName'" );
 		} else {
-			wfDebugLog( 'CentralAuth',
-				__METHOD__ . " was called for a global user that doesn't exist ('$this->mName')." );
+			$logger->info( __METHOD__ . " was called for a global user that doesn't exist ('$this->mName')." );
 		}
 
 		if ( $resetAuthToken ) {
@@ -2811,8 +2851,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthSessionProvider
 	 */
 	private static function getSessionProvider(): CentralAuthSessionProvider {
-		return MediaWiki\Session\SessionManager::singleton()
-			->getProvider( CentralAuthSessionProvider::class );
+		return SessionManager::singleton()->getProvider( CentralAuthSessionProvider::class );
 	}
 
 	/**
@@ -2876,7 +2915,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$newCasToken = $this->mCasToken + 1;
 
 		$dbw = CentralAuthUtils::getCentralDB();
-		$dbw->update( 'globaluser',
+		$dbw->update(
+			'globaluser',
 			[ # SET
 				'gu_password' => $this->mPassword,
 				'gu_salt' => $this->mSalt,
@@ -2909,7 +2949,8 @@ class CentralAuthUser implements IDBAccessObject {
 					'globalId' => $this->mGlobalId,
 					'from' => $from,
 					'exception' => new Exception( 'CentralAuth gu_cas_token conflict' ),
-				] );
+				]
+			);
 			return;
 		}
 
@@ -2962,9 +3003,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw = CentralAuthUtils::getCentralDB();
 
 		# Delete from the DB
-		$dbw->delete( 'global_user_groups',
+		$dbw->delete(
+			'global_user_groups',
 			[ 'gug_user' => $this->getId(), 'gug_group' => $groups ],
-			__METHOD__ );
+			__METHOD__
+		);
 
 		$this->invalidateCache();
 	}
@@ -2987,9 +3030,12 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		# Replace into the DB
-		$dbw->replace( 'global_user_groups',
+		$dbw->replace(
+			'global_user_groups',
 			[ [ 'gug_user', 'gug_group' ] ],
-			$insert_rows, __METHOD__ );
+			$insert_rows,
+			__METHOD__
+		);
 
 		$this->invalidateCache();
 	}
@@ -3000,10 +3046,14 @@ class CentralAuthUser implements IDBAccessObject {
 	public static function availableGlobalGroups() {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
-		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_group', [], __METHOD__ );
+		$res = $dbr->select(
+			'global_group_permissions',
+			'distinct ggp_group',
+			[],
+			__METHOD__
+		);
 
 		$groups = [];
-
 		foreach ( $res as $row ) {
 			/** @var stdClass $row */
 			$groups[] = $row->ggp_group;
@@ -3019,11 +3069,14 @@ class CentralAuthUser implements IDBAccessObject {
 	public static function globalGroupPermissions( $group ) {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
-		$res = $dbr->select( [ 'global_group_permissions' ],
-			[ 'ggp_permission' ], [ 'ggp_group' => $group ], __METHOD__ );
+		$res = $dbr->select(
+			'global_group_permissions',
+			'ggp_permission',
+			[ 'ggp_group' => $group ],
+			__METHOD__
+		);
 
 		$rights = [];
-
 		foreach ( $res as $row ) {
 			/** @var stdClass $row */
 			$rights[] = $row->ggp_permission;
@@ -3048,11 +3101,14 @@ class CentralAuthUser implements IDBAccessObject {
 	public static function getUsedRights() {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
 
-		$res = $dbr->select( 'global_group_permissions', 'distinct ggp_permission',
-			[], __METHOD__ );
+		$res = $dbr->select(
+			'global_group_permissions',
+			'distinct ggp_permission',
+			[],
+			__METHOD__
+		);
 
 		$rights = [];
-
 		foreach ( $res as $row ) {
 			/** @var stdClass $row */
 			$rights[] = $row->ggp_permission;
@@ -3062,15 +3118,15 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	public function invalidateCache() {
+		$logger = LoggerFactory::getInstance( 'CentralAuthVerbose' );
 		if ( !$this->mDelayInvalidation ) {
-			wfDebugLog( 'CentralAuthVerbose', "Updating cache for global user {$this->mName}" );
+			$logger->info( "Updating cache for global user {$this->mName}" );
 			// Purge the cache
 			$this->quickInvalidateCache();
 			// Reload the state
 			$this->loadStateNoCache();
 		} else {
-			wfDebugLog( 'CentralAuthVerbose',
-				"Deferring cache invalidation because we're in a transaction" );
+			$logger->info( "Deferring cache invalidation because we're in a transaction" );
 		}
 	}
 
@@ -3078,8 +3134,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * For when speed is of the essence (e.g. when batch-purging users after rights changes)
 	 */
 	public function quickInvalidateCache() {
-		wfDebugLog( 'CentralAuthVerbose',
-			"Quick cache invalidation for global user {$this->mName}" );
+		LoggerFactory::getInstance( 'CentralAuthVerbose' )->info(
+			"Quick cache invalidation for global user {$this->mName}"
+		);
 
 		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function () {
 			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -3094,8 +3151,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Intended to be used for things like migration.
 	 */
 	public function endTransaction() {
-		wfDebugLog( 'CentralAuthVerbose',
-			"Finishing CentralAuthUser cache-invalidating transaction" );
+		LoggerFactory::getInstance( 'CentralAuthVerbose' )->info(
+			"Finishing CentralAuthUser cache-invalidating transaction"
+		);
 		$this->mDelayInvalidation = false;
 		$this->invalidateCache();
 	}
@@ -3107,8 +3165,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Intended to be used for things like migration.
 	 */
 	public function startTransaction() {
-		wfDebugLog( 'CentralAuthVerbose',
-			"Beginning CentralAuthUser cache-invalidating transaction" );
+		LoggerFactory::getInstance( 'CentralAuthVerbose' )->info(
+			"Beginning CentralAuthUser cache-invalidating transaction"
+		);
 		// Delay cache invalidation
 		$this->mDelayInvalidation = 1;
 	}
@@ -3153,14 +3212,15 @@ class CentralAuthUser implements IDBAccessObject {
 		$params = [],
 		$suppressLog = false
 	) {
+		$nsUser = MediaWikiServices::getInstance()
+			->getNamespaceInfo()
+			->getCanonicalName( NS_USER );
 		// Not centralauth because of some weird length limitiations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
 		$log = new LogPage( $logType );
 		$log->addEntry(
 			$action,
-			Title::newFromText(
-				MWNamespace::getCanonicalName( NS_USER ) . ":{$this->mName}@global"
-			),
+			Title::newFromText( $nsUser . ":{$this->mName}@global" ),
 			$reason,
 			$params,
 			$user
