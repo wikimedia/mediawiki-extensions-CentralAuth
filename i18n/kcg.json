@@ -8,5 +8,8 @@
 	"centralauth-admin-blocklog": "ri̱jista fwun",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|nwuat|nwuat mi̱ nwuat}} mi̱ $2",
 	"centralauth-foreign-link": "A̱tyuta̱m $1 da̱ $2",
-	"centralauth-merge-method-login": "á̱ khwuk di̱ nwuai"
+	"centralauth-merge-method-login": "á̱ khwuk di̱ nwuai",
+	"centralauth-rename-form-overrideantispoof": "Swuo cet kuzang zók AntiSpoof",
+	"centralauth-state-mismatch": "Ghyuap: Á̱ ta̱taat zok njhyuk mat a̱tyuta̱m wuni. Ma̱sa̱kut nwuak a̱cucuk a̱shai ang ka a bu kwan.",
+	"globalrenamequeue-request-reason-sul": "Á̱ tak ma̱ng a̱tyuta̱m tazwa fwuon zok ta̱cya̱ si̱ a̱lyoot mi̱ jhyi tyiai SUL."
 }
