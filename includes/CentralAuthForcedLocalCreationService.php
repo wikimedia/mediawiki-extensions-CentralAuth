@@ -73,7 +73,7 @@ class CentralAuthForcedLocalCreationService {
 		// Add log entry
 		if ( $performer ) {
 			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
-			$logEntry->setPerformer( $performer->getPerformer() );
+			$logEntry->setPerformer( $performer->getUser() );
 			$logEntry->setTarget( $user->getUserPage() );
 			$logEntry->setComment( $reason );
 			$logEntry->setParameters( [
