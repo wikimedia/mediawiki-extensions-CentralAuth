@@ -5,6 +5,8 @@
 			"আফতাবুজ্জামান"
 		]
 	},
+	"apihelp-createlocalaccount-example-1": "জোর করে [[User:Example]]-এর জন্য একটি স্থানীয় অ্যাকাউন্ট তৈরি করুন।",
+	"apihelp-createlocalaccount-summary": "জোর করে একটি স্থানীয় অ্যাকাউন্ট তৈরি",
 	"apihelp-globaluserrights-param-tags": "এই প্যারামিটারটি বর্তমানে অব্যবহৃত।",
 	"apihelp-query+globalallusers-example-1": "বৈশ্বিক ব্যবহারকারীদের তালিকা",
 	"apihelp-query+globalgroups-example-1": "বৈশ্বিক দলের তালিকা"
