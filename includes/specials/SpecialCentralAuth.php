@@ -738,7 +738,7 @@ class SpecialCentralAuth extends SpecialPage {
 				[],
 				self::foreignLink(
 					$row['wiki'],
-					'Special:BlockList/' . urlencode( $row['name'] ),
+					'Special:BlockList/' . $row['name'],
 					$this->msg( 'centralauth-block-editing-' . $type, $value )->text()
 				)
 			);
