@@ -107,13 +107,13 @@ class RenameQueueTablePager extends TablePager {
 		$conds = [];
 
 		$username = $this->getRequest()->getText( 'username' );
-		$username = $this->userNameUtils->getCanonical( $username );
+		$username = $this->userNameUtils->getCanonical( (string)$username );
 		if ( $username ) {
 			$conds['rq_name'] = $username;
 		}
 
 		$newname = $this->getRequest()->getText( 'newname' );
-		$newname = $this->userNameUtils->getCanonical( $newname );
+		$newname = $this->userNameUtils->getCanonical( (string)$newname );
 		if ( $newname ) {
 			$conds['rq_newname'] = $newname;
 		}

@@ -28,7 +28,7 @@ class EmailableUser extends User {
 		if ( $validate === true ) {
 			$validate = UserNameUtils::RIGOR_VALID;
 		}
-		$name = $userNameUtils->getCanonical( $name, $validate );
+		$name = $userNameUtils->getCanonical( (string)$name, $validate );
 		if ( $name === false ) {
 			return false;
 		} else {

@@ -71,7 +71,7 @@ class CheckLocalUser extends Maintenance {
 		$user = $this->getOption( 'user', false );
 		if ( $user !== false ) {
 			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-			$this->user = $userNameUtils->getCanonical( $user );
+			$this->user = $userNameUtils->getCanonical( (string)$user );
 		}
 
 		if ( $this->getOption( 'verbose', false ) !== false ) {

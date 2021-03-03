@@ -71,7 +71,7 @@ class ForceRenameUsers extends Maintenance {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		$newNamePrefix = $userNameUtils->getCanonical(
 			// Some database names have _'s in them, replace with dashes -
-			$name . '~' . str_replace( '_', '-', $wiki ),
+			(string)$name . '~' . str_replace( '_', '-', $wiki ),
 			UserNameUtils::RIGOR_USABLE
 		);
 		if ( !$newNamePrefix ) {

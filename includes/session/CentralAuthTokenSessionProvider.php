@@ -77,7 +77,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		// Clean up username
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$userName = $userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
+		$userName = $userNameUtils->getCanonical( (string)$userName, UserNameUtils::RIGOR_VALID );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
@@ -181,7 +181,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 	public function preventSessionsForUser( $username ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$username = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
+		$username = $userNameUtils->getCanonical( (string)$username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {
 			return;
 		}

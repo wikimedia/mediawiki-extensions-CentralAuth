@@ -28,8 +28,8 @@ class FixStuckGlobalRename extends Maintenance {
 		global $wgLocalDatabases;
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 
-		$oldName = $userNameUtils->getCanonical( $this->getArg( 0 ) );
-		$newName = $userNameUtils->getCanonical( $this->getArg( 1 ) );
+		$oldName = $userNameUtils->getCanonical( (string)$this->getArg( 0 ) );
+		$newName = $userNameUtils->getCanonical( (string)$this->getArg( 1 ) );
 		if ( $oldName === false || $newName === false ) {
 			$this->fatalError( 'Invalid name' );
 		}

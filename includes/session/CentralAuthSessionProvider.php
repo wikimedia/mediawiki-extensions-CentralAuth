@@ -413,7 +413,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	public function preventSessionsForUser( $username ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$username = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
+		$username = $userNameUtils->getCanonical( (string)$username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {
 			return;
 		}

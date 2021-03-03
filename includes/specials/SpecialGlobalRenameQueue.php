@@ -716,7 +716,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'user',
 			[ 'user_email', 'user_name', 'user_real_name' ],
 			[
-				'user_name' => $this->userNameUtils->getCanonical( $username ),
+				'user_name' => $this->userNameUtils->getCanonical( (string)$username ),
 			],
 			__METHOD__
 		);

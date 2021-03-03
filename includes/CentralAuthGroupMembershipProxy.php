@@ -45,7 +45,7 @@ class CentralAuthGroupMembershipProxy {
 	 */
 	public static function newFromName( $name ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$name = $userNameUtils->getCanonical( $name );
+		$name = $userNameUtils->getCanonical( (string)$name );
 		if ( $name === false ) {
 			return null;
 		}

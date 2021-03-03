@@ -154,7 +154,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 		foreach ( $data['usernames'] as $field ) {
 			if ( trim( $field['name'] ) !== '' ) {
-				$name = $this->userNameUtils->getCanonical( $field['name'] );
+				$name = $this->userNameUtils->getCanonical( (string)$field['name'] );
 				if ( $name === $newUser->getName() ) {
 					// The new user is also specified as one of the targets,
 					// DWIM and ignore it

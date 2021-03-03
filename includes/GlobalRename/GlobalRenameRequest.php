@@ -160,7 +160,7 @@ class GlobalRenameRequest {
 	 */
 	public function setNewName( $newName ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$canonicalName = $userNameUtils->getCanonical( $newName, UserNameUtils::RIGOR_CREATABLE );
+		$canonicalName = $userNameUtils->getCanonical( (string)$newName, UserNameUtils::RIGOR_CREATABLE );
 		if ( $canonicalName === false ) {
 			throw new Exception( "Invalid username '{$newName}'" );
 		}
@@ -430,7 +430,7 @@ class GlobalRenameRequest {
 	 */
 	public static function isNameAvailable( $name ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$safe = $userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_CREATABLE );
+		$safe = $userNameUtils->getCanonical( (string)$name, UserNameUtils::RIGOR_CREATABLE );
 		$status = Status::newGood( $safe );
 
 		if ( $safe === false || $safe === '' ) {
