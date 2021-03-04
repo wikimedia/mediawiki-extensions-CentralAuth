@@ -2338,7 +2338,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return bool whether any results were found
 	 */
-	protected function importLocalNames() {
+	public function importLocalNames() {
 		$rows = [];
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		foreach ( self::getWikiList() as $wikiID ) {
