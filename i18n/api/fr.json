@@ -6,6 +6,7 @@
 			"McDutchie",
 			"Thibaut120094",
 			"Tuxxic",
+			"Verdy p",
 			"Wladek92"
 		]
 	},
@@ -21,7 +22,7 @@
 	"apihelp-centralauthtoken-summary": "Récupérer un centralauthtoken pour faire une requête d’authentification vers un wiki attaché.",
 	"apihelp-createlocalaccount-description": "Forcer la création d’un compte local. C’est fonctionnellement équivalent à utiliser [[Special:CreateLocalAccount]].",
 	"apihelp-createlocalaccount-example-1": "Forcer la création d’un compte local pour [[User:Example]].",
-	"apihelp-createlocalaccount-param-reason": "Motif pour créer le compte local.",
+	"apihelp-createlocalaccount-param-reason": "Motif de création du compte local.",
 	"apihelp-createlocalaccount-param-username": "Utilisateur pour lequel créer le compte local.",
 	"apihelp-createlocalaccount-summary": "Forcer la création d’un compte local",
 	"apihelp-deleteglobalaccount-description": "Supprimer un utilisateur global.",
