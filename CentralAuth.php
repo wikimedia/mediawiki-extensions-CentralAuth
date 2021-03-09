@@ -149,9 +149,8 @@ $wgCentralAuthLoginIcon = false;
  * User preferences for which we should recommend reloading the page after
  * a successful central login query.
  *
- * If you need to do something more complicated than just
- * $user->getOption( $pref ) !== User::getDefaultOption( $pref ), use the hook
- * CentralAuthIsUIReloadRecommended.
+ * If you need to do something more complicated than just compare the user option to default,
+ * use the hook CentralAuthIsUIReloadRecommended.
  */
 $wgCentralAuthPrefsForUIReload = [ /* See extension.json */ ];
 
