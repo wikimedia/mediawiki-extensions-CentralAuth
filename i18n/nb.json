@@ -163,6 +163,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|rediger]])",
 	"centralauth-editgroup-fieldset": "Tillatelser for $1",
 	"centralauth-editgroup-invalid-name": "Det er angitt et ugyldig gruppenavn",
+	"centralauth-editgroup-invalid-name-lowercase": "Globale gruppeidentifikatorer må være i små bokstaver.",
 	"centralauth-editgroup-member": "Oversatt navn på gruppemedlemmer:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|rediger]])",
 	"centralauth-editgroup-members": "Medlemsliste:",
