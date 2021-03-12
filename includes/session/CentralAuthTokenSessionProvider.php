@@ -59,9 +59,9 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
 
-		$sessionStore = CentralAuthUtils::getSessionStore();
+		$tokenStore = CentralAuthUtils::getTokenStore();
 		$key = CentralAuthUtils::memcKey( 'api-token', $oneTimeToken );
-		$data = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
+		$data = CentralAuthUtils::getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
 			!isset( $data['token'] ) ||
@@ -109,6 +109,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		}
 
 		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
+		$sessionStore = CentralAuthUtils::getSessionStore();
 		if ( $sessionStore->get( $key ) ) {
 			$this->logger->debug( __METHOD__ . ': user is blacklisted' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
@@ -143,10 +144,10 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	 * @return bool
 	 */
 	protected function consumeToken( $token ) {
-		$sessionStore = CentralAuthUtils::getSessionStore();
+		$tokenStore = CentralAuthUtils::getTokenStore();
 		$key = CentralAuthUtils::memcKey( 'api-token', $token );
 
-		if ( !$sessionStore->changeTTL( $key, time() - 3600, BagOStuff::WRITE_SYNC ) ) {
+		if ( !$tokenStore->changeTTL( $key, time() - 3600, BagOStuff::WRITE_SYNC ) ) {
 			$this->logger->error( 'Raced out trying to mark the token as expired' );
 			return false;
 		}

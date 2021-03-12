@@ -82,10 +82,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 */
 	protected function doLoginStart( $token ) {
 		$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
-		$sessionStore = CentralAuthUtils::getSessionStore();
+		$tokenStore = CentralAuthUtils::getTokenStore();
 
 		// Get the token information
-		$info = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
+		$info = CentralAuthUtils::getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -139,7 +139,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$sessionStore->delete( $key );
+		$tokenStore->delete( $key );
 
 		if ( $createStubSession ) {
 			// Start an unusable placeholder session stub and send a cookie.
@@ -165,7 +165,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
 		];
-		$sessionStore->set( $key, $data, $sessionStore::TTL_MINUTE );
+		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
 
 		$query = [ 'token' => $token ];
 
@@ -194,13 +194,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		global $wgCentralAuthCheckSULMigration;
 
 		$request = $this->getRequest();
-		$sessionStore = CentralAuthUtils::getSessionStore();
+		$tokenStore = CentralAuthUtils::getTokenStore();
 
 		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
-		$info = CentralAuthUtils::getKeyValueUponExistence( $sessionStore, $key );
+		$info = CentralAuthUtils::getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -246,7 +246,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$sessionStore->delete( $key );
+		$tokenStore->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		$delay = $this->session->delaySave();

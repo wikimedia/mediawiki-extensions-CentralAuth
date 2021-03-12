@@ -80,6 +80,13 @@ class CentralAuthUtils {
 	}
 
 	/**
+	 * @return BagOStuff
+	 */
+	public static function getTokenStore() {
+		return self::getUtilityService()->getTokenStore();
+	}
+
+	/**
 	 * Auto-create a user
 	 * @param User $user
 	 * @return StatusValue

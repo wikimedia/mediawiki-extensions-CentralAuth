@@ -607,6 +607,9 @@
 		},
 		"CentralAuthSessionCacheType": {
 			"value": null
+		},
+		"CentralAuthTokenCacheType": {
+			"value": null
 		}
 	},
 	"AuthManagerAutoConfig": {
