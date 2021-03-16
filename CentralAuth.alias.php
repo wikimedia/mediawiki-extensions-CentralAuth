@@ -654,12 +654,17 @@ $specialPageAliases['myv'] = [
 
 /** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = [
-	'CentralAuth' => [ 'Enhetlig_innlogging' ],
+	'CentralAuth' => [ 'Global_konto', 'Enhetlig_innlogging' ],
+	'CreateLocalAccount' => [ 'Opprett_lokal_konto' ],
 	'MergeAccount' => [ 'Kontosammenslåing' ],
 	'GlobalGroupMembership' => [ 'Globale_brukerrettigheter' ],
 	'GlobalGroupPermissions' => [ 'Globale_gruppetillatelser' ],
-	'WikiSets' => [ 'Rediger_wikisett' ],
+	'WikiSets' => [ 'Wikisett', 'Rediger_wikisett' ],
 	'GlobalUsers' => [ 'Globale_brukere' ],
+	'GlobalRenameUser' => [ 'Gi_en_bruker_nytt_navn_globalt' ],
+	'GlobalUserMerge' => [ 'Global_brukersammenslåing' ],
+	'GlobalRenameRequest' => [ 'Forespørsel_om_global_brukernavnendring' ],
+	'UsersWhoWillBeRenamed' => [ 'Brukere_som_vil_endre_navn' ],
 ];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
