@@ -1942,7 +1942,9 @@ class CentralAuthUser implements IDBAccessObject {
 				'enableAutoblock' => true,
 				'hideName' => true,
 				'blockEmail' => true,
-				'byText' => $wgCentralAuthGlobalBlockInterwikiPrefix . '>' . $by
+				'by' => UserIdentityValue::newExternal(
+					$wgCentralAuthGlobalBlockInterwikiPrefix, $by, $wiki
+				)
 			] );
 
 			# On normal block, BlockIp hook would be run here, but doing
