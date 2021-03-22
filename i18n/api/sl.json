@@ -28,7 +28,7 @@
 	"apihelp-globaluserrights-summary": "Dodaj/odstrani uporabnika k/iz globalne skupine.",
 	"apihelp-query+globalallusers-description": "Oštevilči vse globalne uporabnike.",
 	"apihelp-query+globalallusers-example-1": "Izpiši seznam globalnih uporabnikov",
-	"apihelp-query+globalallusers-example-2": "Prikaži kakšne informacije o globalnih uporabnikih, začenši z \"ABC\"",
+	"apihelp-query+globalallusers-example-2": "Prikaži nekaj informacij o globalnih uporabnikih, začenši z »ABC«",
 	"apihelp-query+globalallusers-param-dir": "Smer razvrščanja.",
 	"apihelp-query+globalallusers-param-excludegroup": "Izključi uporabnike v danih globalnih skupinah.",
 	"apihelp-query+globalallusers-param-from": "Začetno uporabniško ime za številčenje.",
