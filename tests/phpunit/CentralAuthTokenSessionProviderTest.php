@@ -50,6 +50,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 		$service = CentralAuthServices::getUtilityService();
 		$this->centralAuthUtilityService = TestingAccessWrapper::newFromObject( $service );
 		$this->centralAuthUtilityService->sessionStore = $this->sessionStore;
+		$this->centralAuthUtilityService->tokenStore = $this->sessionStore;
 	}
 
 	protected function assertSessionInfoError(

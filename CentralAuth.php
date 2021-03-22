@@ -277,3 +277,11 @@ $wgOverrideCentralIdLookupProvider = true;
  * @var string|int|null
  */
 $wgCentralAuthSessionCacheType = null;
+
+/**
+ * If set, this will be used instead of $wgCentralAuthSessionCacheType for
+ * storage of temporary tokens, which are used to carry login data across
+ * domains. Normally these tokens are single-use and have a TTL of 1 minute.
+ * @var string|int|null
+ */
+$wgCentralAuthTokenCacheType = null;

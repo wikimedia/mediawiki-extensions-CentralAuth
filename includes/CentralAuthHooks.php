@@ -606,7 +606,7 @@ class CentralAuthHooks {
 			] );
 
 			// Create a new token to pass to Special:CentralLogin/start (central wiki)
-			$sessionStore = CentralAuthUtils::getSessionStore();
+			$tokenStore = CentralAuthUtils::getTokenStore();
 			$token = MWCryptRand::generateHex( 32 );
 			$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
 			$data = [
@@ -620,7 +620,7 @@ class CentralAuthHooks {
 				'currentProto'  => WebRequest::detectProtocol()
 			];
 			Hooks::run( 'CentralAuthLoginRedirectData', [ $centralUser, &$data ] );
-			$sessionStore->set( $key, $data, $sessionStore::TTL_MINUTE );
+			$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
 
 			$query = [ 'token' => $token ];
 

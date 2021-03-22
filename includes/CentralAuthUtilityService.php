@@ -17,6 +17,9 @@ class CentralAuthUtilityService {
 	/** @var BagOStuff|null Session cache */
 	private $sessionStore = null;
 
+	/** @var BagOStuff|null Token cache */
+	private $tokenStore = null;
+
 	/** @var LBFactory */
 	private $lbFactory;
 
@@ -205,6 +208,10 @@ class CentralAuthUtilityService {
 		return $value;
 	}
 
+	/**
+	 * Get a cache for storage of central sessions
+	 * @return BagOStuff
+	 */
 	public function getSessionStore() : BagOStuff {
 		if ( !$this->sessionStore ) {
 			$sessionCacheType = $this->config->get( 'CentralAuthSessionCacheType' )
@@ -215,6 +222,20 @@ class CentralAuthUtilityService {
 		}
 
 		return $this->sessionStore;
+	}
+
+	/**
+	 * Get a cache for storage of temporary cross-site tokens
+	 * @return BagOStuff
+	 */
+	public function getTokenStore() : BagOStuff {
+		if ( !$this->tokenStore ) {
+			$cacheType = $this->config->get( 'CentralAuthTokenCacheType' )
+				?? $this->config->get( 'CentralAuthSessionCacheType' )
+				?? $this->config->get( 'SessionCacheType' );
+			$this->tokenStore = ObjectCache::getInstance( $cacheType );
+		}
+		return $this->tokenStore;
 	}
 
 	/**
