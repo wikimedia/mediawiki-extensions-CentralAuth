@@ -101,9 +101,8 @@ class AttachAccount extends Maintenance {
 			$this->output( "ERROR - Could not open file: {$list}" );
 			exit( 1 );
 		}
-		// @codingStandardsIgnoreStart
+		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 		while ( strlen( $username = trim( fgets( $file ) ) ) ) {
-		// @codingStandardsIgnoreEnd
 			$this->attach( $username );
 			if ( $this->total % $this->mBatchSize == 0 ) {
 				$this->output( "Waiting for replicas to catch up ... " );

@@ -92,9 +92,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list\n" );
 				exit( 1 );
 			}
-			// @codingStandardsIgnoreStart
+			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 			while ( $username = fgets( $file ) ) {
-			// @codingStandardsIgnoreEnd
 				$username = trim( $username ); // trim the \n
 				if ( $this->resume !== true ) {
 					if ( $username === $this->resume ) {

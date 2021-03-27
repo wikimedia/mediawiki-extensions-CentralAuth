@@ -117,9 +117,8 @@ class MigrateAccount extends Maintenance {
 				exit( 1 );
 			}
 
-			// @codingStandardsIgnoreStart
+			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 			while ( strlen( $line = trim( fgets( $file ) ) ) ) {
-			// @codingStandardsIgnoreEnd
 				$values = explode( "\t", $line );
 				switch ( count( $values ) ) {
 					case 1:
