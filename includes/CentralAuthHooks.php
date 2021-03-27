@@ -571,17 +571,18 @@ class CentralAuthHooks {
 
 				if ( $wgSecureLogin ) {
 					$finalProto = 'http';
+					$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 
 					if ( $request->getBool( 'wpForceHttps', false ) ||
 						$request->getSession()->shouldForceHTTPS() ||
-						( $user->getBoolOption( 'prefershttps' ) &&
+						( $userOptionsLookup->getBoolOption( $user, 'prefershttps' ) &&
 						wfCanIPUseHTTPS( $request->getIP() ) )
 					) {
 						$finalProto = 'https';
 					}
 
 					$secureCookies = ( ( $finalProto === 'https' ) &&
-						$user->getBoolOption( 'prefershttps' ) );
+						$userOptionsLookup->getBoolOption( $user, 'prefershttps' ) );
 				}
 			}
 
