@@ -4,6 +4,7 @@
 			"Amire80",
 			"Erdemaslancan",
 			"Patriot Kur",
+			"QeneralĞasım",
 			"Гусейн"
 		]
 	},
@@ -13,7 +14,7 @@
 	"centralauth-admin-yes": "бәле",
 	"centralauth-antispoof-desc": "AntiSpoof технологијә зијод кардә бә CentralAuth",
 	"centralauth-editset-name": "Nom:",
-	"centralauth-editset-reason": "Сәбәб:",
+	"centralauth-editset-reason": "Səbəb:",
 	"centralauth-editset-type": "Тип:",
 	"centralauth-finish-login": "Dəşi",
 	"centralauth-finish-password": "Pərol:",
@@ -21,7 +22,7 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|дәгиши}} бә $2",
 	"centralauth-foreign-link": "İştirokəkə $1 bə $2",
 	"centralauth-list-home-title": "Че кә вики",
-	"centralauth-merge-dryrun-or": "'''ya''",
+	"centralauth-merge-dryrun-or": "'''ya'''",
 	"centralauth-merge-method-login": "soxtə bıə dəşeyədə",
 	"centralauth-merge-method-primary": "\"кә\" вики-нәхшә",
 	"globalrenamequeue-form-status-all": "həmə",
