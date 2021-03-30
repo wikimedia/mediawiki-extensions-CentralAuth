@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Session\Session;
+use MediaWiki\User\UserOptionsLookup;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -18,9 +19,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var CentralAuthUtilityService */
 	private $centralAuthUtilityService;
 
-	public function __construct( CentralAuthUtilityService $centralAuthUtilityService ) {
+	/** @var UserOptionsLookup */
+	private $userOptionsLookup;
+
+	public function __construct(
+		CentralAuthUtilityService $centralAuthUtilityService,
+		UserOptionsLookup $userOptionsLookup
+	) {
 		parent::__construct( 'CentralAutoLogin' );
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
+		$this->userOptionsLookup = $userOptionsLookup;
 	}
 
 	/**
@@ -171,7 +179,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Refresh 'remember me' preference
 				$user = $this->getUser();
 				$remember = (bool)$centralSession['remember'];
-				if ( $remember != $user->getBoolOption( 'rememberpassword' ) ) {
+				if ( $remember != $this->userOptionsLookup->getBoolOption( $user, 'rememberpassword' ) ) {
 					$user->setOption( 'rememberpassword', $remember ? 1 : 0 );
 					DeferredUpdates::addCallableUpdate( function () use ( $user ) {
 						if ( wfReadOnly() ) {
@@ -684,13 +692,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// If there's no "remember", pull from the user preference.
 		if ( !isset( $centralSession['remember'] ) ) {
-			$centralSession['remember'] = $user->getBoolOption( 'rememberpassword' );
+			$centralSession['remember'] = $this->userOptionsLookup->getBoolOption( $user, 'rememberpassword' );
 		}
 
 		// Make sure there's a value for secureCookies
 		if ( !isset( $centralSession['secureCookies'] ) ) {
 			$centralSession['secureCookies'] = $wgForceHTTPS || (
-				$user->getBoolOption( 'prefershttps' ) && wfCanIPUseHTTPS( $request->getIP() )
+				$this->userOptionsLookup->getBoolOption( $user, 'prefershttps' ) &&
+				wfCanIPUseHTTPS( $request->getIP() )
 			);
 		}
 
