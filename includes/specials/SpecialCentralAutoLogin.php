@@ -1,7 +1,7 @@
 <?php
 
 use MediaWiki\Session\Session;
-use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\User\UserOptionsManager;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -19,16 +19,17 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var CentralAuthUtilityService */
 	private $centralAuthUtilityService;
 
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
+	/** @var UserOptionsManager */
+	private $userOptionsManager;
 
 	public function __construct(
 		CentralAuthUtilityService $centralAuthUtilityService,
-		UserOptionsLookup $userOptionsLookup
+		UserOptionsManager $userOptionsManager
 	) {
 		parent::__construct( 'CentralAutoLogin' );
+
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
-		$this->userOptionsLookup = $userOptionsLookup;
+		$this->userOptionsManager = $userOptionsManager;
 	}
 
 	/**
@@ -179,14 +180,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Refresh 'remember me' preference
 				$user = $this->getUser();
 				$remember = (bool)$centralSession['remember'];
-				if ( $remember != $this->userOptionsLookup->getBoolOption( $user, 'rememberpassword' ) ) {
-					$user->setOption( 'rememberpassword', $remember ? 1 : 0 );
-					DeferredUpdates::addCallableUpdate( static function () use ( $user ) {
+				if ( $remember != $this->userOptionsManager
+					->getBoolOption( $user, 'rememberpassword', UserOptionsManager::READ_LOCKING )
+				) {
+					$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
+					DeferredUpdates::addCallableUpdate( function () use ( $user ) {
 						if ( wfReadOnly() ) {
 							return; // not possible to save
 						}
 
-						$user->saveSettings();
+						$this->userOptionsManager->saveOptions( $user );
 					} );
 				}
 
@@ -692,13 +695,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// If there's no "remember", pull from the user preference.
 		if ( !isset( $centralSession['remember'] ) ) {
-			$centralSession['remember'] = $this->userOptionsLookup->getBoolOption( $user, 'rememberpassword' );
+			$centralSession['remember'] = $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' );
 		}
 
 		// Make sure there's a value for secureCookies
 		if ( !isset( $centralSession['secureCookies'] ) ) {
 			$centralSession['secureCookies'] = $wgForceHTTPS ||
-				$this->userOptionsLookup->getBoolOption( $user, 'prefershttps' );
+				$this->userOptionsManager->getBoolOption( $user, 'prefershttps' );
 		}
 
 		// Make sure there's a session id by creating a session if necessary.
