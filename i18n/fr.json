@@ -260,7 +260,7 @@
 	"centralauth-error-unmerged": "Vous ne pouvez effectuer aucune modification parce que votre compte n’est pas unifié.",
 	"centralauth-error-wrongprovider": "Cette page spéciale n’est pas disponible lors de l’utilisation de $1.",
 	"centralauth-finish-incomplete": "Plusieurs comptes ont été fusionnés en utilisant ce mot de passe. D’autres comptes n’ont cependant pas encore été confirmés.",
-	"centralauth-finish-login": "Connexion",
+	"centralauth-finish-login": "Se connecter",
 	"centralauth-finish-noconfirms": "Aucun compte n’a été confirmé en utilisant ce mot de passe.",
 	"centralauth-finish-password": "Mot de passe :",
 	"centralauth-finish-problems": "En cas de problème ou si vous ne possédez pas ces autres comptes :\nConsultez l’[[m:Special:MyLanguage/Help:Unified login|aide sur la connexion unifiée]]...",
