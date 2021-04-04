@@ -14,6 +14,7 @@ use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
@@ -145,10 +146,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param CentralAuthUser $caUser
 	 */
-	public static function setInstance( User $user, CentralAuthUser $caUser ) {
+	public static function setInstance( UserIdentity $user, CentralAuthUser $caUser ) {
 		self::setInstanceByName( $user->getName(), $caUser );
 	}
 
@@ -163,10 +164,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return CentralAuthUser
 	 */
-	public static function getInstance( User $user ) {
+	public static function getInstance( UserIdentity $user ) {
 		return self::getInstanceByName( $user->getName() );
 	}
 
@@ -188,11 +189,11 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * This object will use DB_MASTER.
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return CentralAuthUser
 	 * @since 1.27
 	 */
-	public static function getMasterInstance( User $user ) {
+	public static function getMasterInstance( UserIdentity $user ) {
 		return self::getMasterInstanceByName( $user->getName() );
 	}
 
@@ -1569,10 +1570,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Delete a global account and log what happened
 	 *
 	 * @param string $reason Reason for the deletion
-	 * @param User $deleter User doing the deletion
+	 * @param UserIdentity $deleter User doing the deletion
 	 * @return Status
 	 */
-	public function adminDelete( $reason, User $deleter ) {
+	public function adminDelete( $reason, UserIdentity $deleter ) {
 		$this->checkWriteMode();
 
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
@@ -3200,14 +3201,14 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Log an action for the current user
 	 *
 	 * @param string $action
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @param string $reason
 	 * @param array $params
 	 * @param bool $suppressLog
 	 */
 	public function logAction(
 		$action,
-		User $user,
+		UserIdentity $user,
 		$reason = '',
 		$params = [],
 		$suppressLog = false
