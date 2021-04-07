@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"AnakngAraw",
+			"GinawaSaHapon",
 			"Jewel457",
 			"Jojit fb",
 			"LR Guanzon",
@@ -137,8 +138,8 @@
 	"centralauth-finish-send-confirmation": "I-email ang password",
 	"centralauth-finish-text": "Kung ikaw nga ang nagmamay-ari ng mga account na ito, maaaring mong tapusin na ang proseso ng pag-iisa ng paglogin sa pamamagitan lamang ng payak na pagtitipa ng mga password para sa iba pang mga account dito:",
 	"centralauth-finish-title": "Tapusin na ang pagsasanib",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusyon|mga kontribusyon}} sa $2",
-	"centralauth-foreign-link": "Tagagamit na $1 sa $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusyon|(na) kontribusyon}} sa $2",
+	"centralauth-foreign-link": "Si $1 sa $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Magtalaga ng mga kapahintulutan",
 	"centralauth-globalgroupperms-newgroupname": "Pangalan ng bagong pangkat:",
 	"centralauth-globalgroupperms-nogroups": "Walang binigyang-kahulugang mga pandaigdigang pangkat.",
@@ -186,7 +187,7 @@
 	"centralauth-merge-method-admin-desc": "Nagpapahiwatig na ang lokal na account ay minanu-mano na isinanib ng mga katiwala.\nHindi na pinapagana ang ganyang katangian (feature) dahil sa mga dahilang pangkaligtasan.",
 	"centralauth-merge-method-empty": "walang mga ambag",
 	"centralauth-merge-method-empty-desc": "Nagpapahiwatig na ang lokal na account ay isinanib dahil wala itong mga pamamatnugot.",
-	"centralauth-merge-method-login": "nalikha noong nag-login",
+	"centralauth-merge-method-login": "nagawa pagka-login",
 	"centralauth-merge-method-login-desc": "Nagpapahiwatig na ang katutubong account ay kusang nalikha noong maglogin ang tagagamit.",
 	"centralauth-merge-method-mail": "napatotohanan sa pamamagitan ng e-liham",
 	"centralauth-merge-method-mail-desc": "Nagpapahiwatig na ang lokal na account ay isinanib dahil tumugma ang email address nito sa email address ng pangunahing account.",
