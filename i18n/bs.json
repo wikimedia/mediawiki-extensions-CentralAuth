@@ -235,7 +235,7 @@
 	"centralauth-prefs-not-managed": "Ne koristi unificirani račun",
 	"centralauth-prefs-status": "Globalni račun:",
 	"centralauth-prefs-unattached": "Nije u potpunosti spojen",
-	"centralauth-prefs-view": "Pogledaj globalne podatke o računu",
+	"centralauth-prefs-view": "Prikaži podatke o globalnom računu",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Pročitajte više o '''unificiranoj prijavi''']]…''",
 	"centralauth-rename-alreadyexists": "Traženo korisničko ime već postoji.",
 	"centralauth-rename-badusername": "Traženo korisničko ime nije ispravno.",

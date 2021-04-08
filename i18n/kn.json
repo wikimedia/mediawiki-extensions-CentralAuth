@@ -7,7 +7,8 @@
 			"Pavanaja",
 			"Shushruth",
 			"VASANTH S.N.",
-			"రహ్మానుద్దీన్"
+			"రహ్మానుద్దీన్",
+			"ಮಲ್ನಾಡಾಚ್ ಕೊಂಕ್ಣೊ"
 		]
 	},
 	"centralauth-admin-blocked-reason": "ಕಾರಣ: $1",
@@ -22,7 +23,7 @@
 	"centralauth-admin-list-legend-ro": "ಸ್ಥಳೀಯ ಖಾತೆಗಳ ಪಟ್ಟಿ",
 	"centralauth-admin-list-legend-rw": "ಸ್ಥಳೀಯ ಖಾತೆಗಳನ್ನು ಬೇರೆಗೊಳಿಸಿ",
 	"centralauth-admin-list-localwiki": "ಪ್ರಾದೇಶಿಕ ವಿಕಿ",
-	"centralauth-admin-multi-bot": "ಇತ್ತೀಚಿನ ಬದಲಾವಣೆಗಳು",
+	"centralauth-admin-multi-bot": "ಇತ್ತೀಚೆಗಿನ ಬದಲಾವಣೆಗಳು",
 	"centralauth-admin-no": "ಇಲ್ಲ",
 	"centralauth-admin-reason": "ಕಾರಣ:",
 	"centralauth-admin-reason-other": "ಇತರ/ಹೆಚ್ಚುವರಿ ಕಾರಣ:",
