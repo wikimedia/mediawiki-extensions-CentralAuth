@@ -84,7 +84,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$main = new ApiMain();
 		$main->setContext( $context );
 
-		$module = $this->getMockBuilder( 'ApiBase' )
+		$module = $this->getMockBuilder( ApiBase::class )
 			->setConstructorArgs( [ $main, 'test', '' ] )
 			->onlyMethods( [ 'execute' ] )
 			->getMock();
