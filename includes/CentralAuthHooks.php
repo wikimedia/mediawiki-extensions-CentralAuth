@@ -159,7 +159,8 @@ class CentralAuthHooks {
 		$type, $action, $title, $skin, $params, $filterWikilinks = false
 	) {
 		if ( $skin ) {
-			$link = Linker::link( $title, htmlspecialchars( $params[0] ) );
+			$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+			$link = $linkRenderer->makeLink( $title, $params[0] );
 		} else {
 			$link = $params[0];
 		}
@@ -221,18 +222,23 @@ class CentralAuthHooks {
 			$newName = $title->getSubpageText();
 			$oldName = $params[0];
 		}
-
-		if ( $skin ) {
-			$new = Linker::link(
-				Title::newFromText( $newName ),
-				htmlspecialchars( $newName )
-			);
-			$old = Linker::link(
-				Title::newFromText( $oldName ),
-				htmlspecialchars( $oldName )
+		$newTitle = Title::newFromText( $newName );
+		$oldTitle = Title::newFromText( $oldName );
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		if ( $skin && $newTitle ) {
+			$new = $linkRenderer->makeLink(
+				$newTitle,
+				$newName
 			);
 		} else {
 			$new = htmlspecialchars( $newName );
+		}
+		if ( $skin && $oldTitle ) {
+			$old = $linkRenderer->makeLink(
+				$oldTitle,
+				$oldName
+			);
+		} else {
 			$old = htmlspecialchars( $oldName );
 		}
 
