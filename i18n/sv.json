@@ -524,7 +524,7 @@
 	"right-globalgrouppermissions": "Hantera globala grupper",
 	"sessionprovider-centralauthsessionprovider": "centrala cookie-baserad sessioner",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-sessioner",
-	"sulrenamewarning-authmanager-ok-help": "Fortsätt efter att ha visat namnförändringvarslet.",
+	"sulrenamewarning-authmanager-ok-help": "Fortsätt efter att ha visat namnändringsnotisen.",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Ditt}} konto '''$1''' har bytt namn till '''$2''' under en automatisk migration till det sammanslagna inloggningssystemet av {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ditt}} konto har bytt namn",
 	"sulrenamewarning-usenew": "Vänligen använd {{GENDER:$1|ditt}} nya användarnamn '''$1''' när du loggar in i framtiden.",
