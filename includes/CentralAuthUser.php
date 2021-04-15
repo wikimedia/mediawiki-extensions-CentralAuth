@@ -2688,8 +2688,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->getUserGroupMemberships(
 				new UserIdentityValue(
 					(int)$data['id'],
-					$data['name'],
-					0
+					$data['name']
 				)
 			);
 
