@@ -49,7 +49,6 @@ class CentralAuthHooks {
 		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
-		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		$caBase = __DIR__ . '/..';
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
@@ -132,17 +131,6 @@ class CentralAuthHooks {
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 			];
-		}
-		if ( $wgCentralAuthEnableUsersWhoWillBeRenamed ) {
-			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/CentralAuth.php",
-				'name' => 'UsersWhoWillBeRenamed',
-				'author' => 'Kunal Mehta',
-				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
-				'descriptionmsg' => 'centralauth-uwbr-intro',
-				'license-name' => 'GPL-2.0',
-			];
-			$wgSpecialPages['UsersWhoWillBeRenamed'] = 'SpecialUsersWhoWillBeRenamed';
 		}
 	}
 
@@ -253,14 +241,16 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * This hook is used in cases where SpecialPageFactory::getPageList() is called before
-	 * $wgExtensionFunctions are run, which happens when E:ShortUrl is installed.
-	 *
 	 * @param array &$list
-	 * @return bool
 	 */
-	public static function onSpecialPage_initList( &$list ) {
+	public static function onSpecialPage_initList( &$list ): void {
+		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		global $wgCentralAuthEnableGlobalRenameRequest;
+		if ( $wgCentralAuthEnableUsersWhoWillBeRenamed ) {
+			$list['UsersWhoWillBeRenamed'] = [
+				'class' => SpecialUsersWhoWillBeRenamed::class,
+			];
+		}
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
 			$list['GlobalRenameRequest'] = [
 				'class' => SpecialGlobalRenameRequest::class,
@@ -276,8 +266,6 @@ class CentralAuthHooks {
 				]
 			];
 		}
-
-		return true;
 	}
 
 	/**
