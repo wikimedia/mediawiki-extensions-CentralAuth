@@ -398,7 +398,7 @@
 	"globalrenamerequest-newname-label": "Waziyayê namey karberi:",
 	"globalrenamerequest-reason-label": "Sebeba waşten",
 	"globalrenamerequest-save-error": "Waşten qeyd nêbı. Fına bıcerebnê",
-	"globalrenamerequest-status-text": "Taleba namey karberi vurnayışa şıma ma gırot rêze u tesdiqê yo idarekari paweno. Cewab do şıma rê e-postaya do bırışi yo.  \n\n;Namey karberi newkeyên:\n:$1\n;Namey karberi yo ke wazêno:\n:$2",
+	"globalrenamerequest-status-text": "Talebê vurnayışê nameyê karberiyê şıma ma gırêt rêze u tesdiqê yew idarekari paweno. Cewab do şıma rê e-posteyê do bırışiyo.  \n\n;Nameyê karberiyo nıkayên:\n:$1\n;Nameyê karberiyo ke waziyeno:\n:$2",
 	"globalrenamerequest-status-title": "Tesdiq wazayen waştena fına name kerdışi",
 	"globalrenamerequest-submit-text": "Name  vurnayışi bıwazê",
 	"globalrenamerequest-username-label": "Nameyê karberio nıkayên:",
