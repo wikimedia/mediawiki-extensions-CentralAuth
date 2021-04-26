@@ -33,8 +33,6 @@ use MediaWiki\User\UserNameUtils;
 class CentralAuthPrimaryAuthenticationProvider
 	extends AbstractPasswordPrimaryAuthenticationProvider
 {
-	/** @var UserNameUtils */
-	private $userNameUtils;
 
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
@@ -81,6 +79,10 @@ class CentralAuthPrimaryAuthenticationProvider
 			$wgCentralAuthAutoMigrateNonGlobalAccounts, $wgCentralAuthPreventUnattached,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
+		// AbstractAuthenticationProvider::$userNameUtils is protected
+		// TODO this is probably unneeded since AbstractAuthenticationProvider::init
+		// will be called and that will set the $userNameUtils, no need to even inject
+		// into this class
 		$this->userNameUtils = $userNameUtils;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$params += [
