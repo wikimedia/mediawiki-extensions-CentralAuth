@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"129femtoseconds",
 			"2nd-player",
 			"Alexsh",
 			"Aotake",
@@ -263,7 +264,7 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "ロックされている",
 	"centralauth-listusers-nolocal": "未統合、またはローカルに未作成",
-	"centralauth-log-entry-chgstatus": "グローバルアカウント「$1」の状態を変更しました: $2 を設定、$3 を解除",
+	"centralauth-log-entry-chgstatus": "が グローバルアカウント「$1」の状態を変更しました: $2 を設定、$3 を解除",
 	"centralauth-log-entry-delete": "グローバルアカウント「$1」を削除しました",
 	"centralauth-log-entry-hide": "グローバルアカウント「$1」を秘匿しました",
 	"centralauth-log-entry-lock": "グローバルアカウント「$1」をロックしました",
@@ -444,7 +445,7 @@
 	"globalrenamequeue-form-status": "状態:",
 	"globalrenamequeue-form-status-all": "すべて",
 	"globalrenamequeue-form-username": "利用者名:",
-	"globalrenamequeue-request-approve-text": "改名に承諾する",
+	"globalrenamequeue-request-approve-text": "改名を承認する",
 	"globalrenamequeue-request-cancel-text": "キャンセル",
 	"globalrenamequeue-request-comments-label": "備考／理由",
 	"globalrenamequeue-request-deny-text": "改名を却下する",
@@ -478,6 +479,8 @@
 	"globalrenamerequest-newname-label": "希望利用者名:",
 	"globalrenamerequest-pretext": "全プロジェクトにわたって使用する新しい利用者名を依頼してください。\n\nこのフォームを使ってリクエストした場合、この操作を行う権限のある利用者に一括して表示されます。対処が完了したら、メールであなたに通知が届きます。\n\nもしリクエスト内容を匿名にしたい／プライバシーに関連する場合には、この処理は永久保存用のログ記録が作成され以前の利用者名が記載される点にご注意ください。そこで単に[[Special:CreateAccount|新規の独立したアカウントを作成して]]、これまで使ってきたアカウントを無関係の名前に改名し放棄する方法をご検討ください。",
 	"globalrenamerequest-reason-label": "改名を希望する理由",
+	"globalrenamerequest-status-text": "あなたの利用者名変更依頼は現在進行中で、権限のある利用者による承認を待っています。承認された場合、メールで通知します。\n\n;現在の利用者名:\n:$1\n;希望利用者名:\n:$2",
+	"globalrenamerequest-status-title": "改名依頼の承認待ち",
 	"globalrenamerequest-submit-text": "改名を依頼",
 	"globalrenamerequest-username-label": "現在の利用者名:",
 	"globalrenameuser": "グローバル利用者名の変更",

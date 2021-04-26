@@ -39,7 +39,7 @@
 	"centralauth-admin-action-lock-lock": "לנעול את החשבונות הנבחרים",
 	"centralauth-admin-action-lock-nochange": "לא לשנות נעילות",
 	"centralauth-admin-action-lock-unlock": "לבטל את הנעילה של החשבונות הנבחרים",
-	"centralauth-admin-already-unmerged": "החשבון $1 כבר מוזג",
+	"centralauth-admin-already-unmerged": "פוסח על $1, המיזוג שלו כבר בוטל",
 	"centralauth-admin-bad-input": "בחירה שגויה של מיזוג",
 	"centralauth-admin-blocked-reason": "סיבה: $1",
 	"centralauth-admin-blocked2": "חסום עד $2 ב־$3.",
