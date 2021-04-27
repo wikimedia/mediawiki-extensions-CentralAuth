@@ -477,16 +477,16 @@ class SpecialMultiLock extends SpecialPage {
 	 */
 	private function showStatusError( $wikitext ) {
 		$this->getOutput()->wrapWikiTextAsInterface(
-			'error', $wikitext
+			'errorbox', $wikitext
 		);
 	}
 
 	private function showError( ...$args ) {
-		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
+		$this->getOutput()->addHTML( Html::errorBox( $this->msg( ...$args )->parse() ) );
 	}
 
 	private function showSuccess( ...$args ) {
-		$this->getOutput()->wrapWikiMsg( '<div class="success">$1</div>', $args );
+		$this->getOutput()->addHTML( Html::successBox( $this->msg( ...$args )->parse() ) );
 	}
 
 	private function showUsernameForm() {

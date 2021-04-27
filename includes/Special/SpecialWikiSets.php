@@ -70,7 +70,7 @@ class SpecialWikiSets extends SpecialPage {
 				} else {
 					$this->getOutput()->setPageTitle( $this->msg( 'error' ) );
 					$error = $this->msg( 'centralauth-editset-notfound', $subpage )->escaped();
-					$this->buildMainView( "<strong class='error'>{$error}</strong>" );
+					$this->buildMainView( Html::errorBox( $error ) );
 					return;
 				}
 			}
@@ -198,7 +198,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		if ( $this->mCanEdit ) {
 			if ( $error ) {
-				$this->getOutput()->addHTML( "<strong class='error'>{$error}</strong>" );
+				$this->getOutput()->addHTML( Html::errorBox( $error ) );
 			}
 			$this->getOutput()->addHTML(
 				Html::openElement(
@@ -314,10 +314,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		$set = WikiSet::newFromID( $subpage );
 		if ( !$set ) {
-			$this->buildMainView( '<strong class="error">' .
-				$this->msg( 'centralauth-editset-notfound', $subpage )->escaped() .
-				'</strong>'
-			);
+			$this->buildMainView( Html::errorBox( $this->msg( 'centralauth-editset-notfound', $subpage )->escaped() ) );
 			return;
 		}
 
@@ -449,9 +446,9 @@ class SpecialWikiSets extends SpecialPage {
 		$returnLink = $this->getLinkRenderer()->makeKnownLink(
 			$this->getPageTitle(), $this->msg( 'centralauth-editset-return' )->text() );
 
-		$this->getOutput()->addHTML( '<strong class="success">' .
-			$this->msg( 'centralauth-editset-success' )->escaped() . '</strong> <p>' . $returnLink .
-			'</p>'
+		$this->getOutput()->addHTML(
+			Html::successBox( $this->msg( 'centralauth-editset-success' )->escaped() ) .
+			'<p>' . $returnLink . '</p>'
 		);
 	}
 
@@ -461,9 +458,7 @@ class SpecialWikiSets extends SpecialPage {
 	private function doDelete( $set ) {
 		$set = WikiSet::newFromID( $set );
 		if ( !$set ) {
-			$this->buildMainView( '<strong class="error">' .
-				$this->msg( 'centralauth-editset-notfound', $set )->escaped() . '</strong>'
-			);
+			$this->buildMainView( Html::errorBox( $this->msg( 'centralauth-editset-notfound', $set )->escaped() ) );
 			return;
 		}
 
@@ -475,9 +470,7 @@ class SpecialWikiSets extends SpecialPage {
 		$log = new LogPage( 'gblrights' );
 		$log->addEntry( 'deleteset', $title, $reason, [ $name ], $this->getUser() );
 
-		$this->buildMainView( '<strong class="success">' .
-			$this->msg( 'centralauth-editset-success-delete' )->escaped() . '</strong>'
-		);
+		$this->buildMainView( Html::successBox( $this->msg( 'centralauth-editset-success-delete' )->escaped() ) );
 	}
 
 	/**
