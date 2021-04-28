@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"OIS",
+			"Renan",
 			"Stavanger7"
 		]
 	},
-	"centralauth-admin-blocklog": "diarium de bloc",
+	"centralauth-admin-blocklog": "diarium de blocada",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributiones}} in $2",
-	"centralauth-foreign-link": "Usator $1 in $2"
+	"centralauth-foreign-link": "Usator $1 in $2",
+	"centralauth-merge-method-login": "creat in aperter session"
 }
