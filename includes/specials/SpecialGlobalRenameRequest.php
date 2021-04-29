@@ -51,7 +51,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	/**
-	 * @param string $par Subpage string if one was specified
+	 * @param string|null $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
 		$this->requireLogin();

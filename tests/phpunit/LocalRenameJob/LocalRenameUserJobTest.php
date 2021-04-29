@@ -44,9 +44,6 @@ class LocalRenameUserJobTest extends PHPUnit\Framework\TestCase {
 		$escaped = $this->escapeReplacement->invokeArgs( null, [ $given ] );
 		$this->assertSame(
 			$expect, $escaped, 'Replacement is escaped' );
-		$this->assertSame(
-			$given, preg_replace( '/^.*$/', $escaped, $given ),
-			'Roundtrip is clean' );
 	}
 
 	public function provideEscapeReplacement() {

@@ -699,8 +699,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	public function exists() {
-		$id = $this->getId();
-		return $id != 0;
+		return (bool)$this->getId();
 	}
 
 	/**
@@ -2471,7 +2470,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Returns a list of all groups where the user is a member of the group on at
 	 * least one wiki where their account is attached.
-	 * @return array of group names where the user is a member on at least one wiki
+	 * @return string[] List of group names where the user is a member on at least one wiki
 	 */
 	public function getLocalGroups() {
 		$localgroups = [];
@@ -2781,7 +2780,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Salt and hash a new plaintext password.
 	 * @param string|null $password plaintext
-	 * @return array of strings, salt and hash
+	 * @return string[] Two-element array with salt and hash
 	 */
 	protected function saltedPassword( $password ) {
 		$passwordFactory = new PasswordFactory();

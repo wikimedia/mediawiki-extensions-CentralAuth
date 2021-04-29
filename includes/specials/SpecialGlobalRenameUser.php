@@ -28,7 +28,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private $overrideTitleBlacklist = false;
 
 	/**
-	 * @const int Require confirmation if olduser has more than this many global edits
+	 * Require confirmation if olduser has more than this many global edits
 	 */
 	private const EDITCOUNT_THRESHOLD = 100000;
 
@@ -41,7 +41,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	}
 
 	/**
-	 * @param string $par Subpage string if one was specified
+	 * @param string|null $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
 		parent::execute( $par );

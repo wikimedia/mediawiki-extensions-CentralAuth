@@ -114,7 +114,7 @@ class GlobalUsersPager extends AlphabeticPager {
 			$this->msg( 'centralauth-listusers-item', $user, $info )->parse() );
 	}
 
-	public function doBatchLookups() {
+	protected function doBatchLookups() {
 		$batch = new LinkBatch();
 		foreach ( $this->mResult as $row ) {
 			// userpage existence link cache

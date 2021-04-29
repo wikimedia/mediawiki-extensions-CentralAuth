@@ -25,16 +25,12 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 		// Skip people in global rename queue
 		$wiki = wfWikiID();
-		$globalRenames = [];
-		$rows = $dbr->select(
+		$globalRenames = $dbr->selectFieldValues(
 			'renameuser_status',
 			'ru_oldname',
 			[],
 			__METHOD__
 		);
-		foreach ( $rows as $row ) {
-			$globalRenames[] = $row->ru_oldname;
-		}
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wiki );

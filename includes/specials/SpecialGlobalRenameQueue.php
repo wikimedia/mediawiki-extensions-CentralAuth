@@ -45,11 +45,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	private const ACTION_CANCEL = 'cancel';
 	public const ACTION_VIEW = 'view';
 
-	/**
-	 * @var string Request subpage string
-	 */
-	protected $par;
-
 	public function __construct( UserNameUtils $userNameUtils, LBFactory $lbFactory ) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
@@ -61,11 +56,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	/**
-	 * @param string $par Subpage string if one was specified
+	 * @param string|null $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
-		$this->par = $par;
-
 		$navigation = explode( '/', $par );
 		$action = array_shift( $navigation );
 

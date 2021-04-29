@@ -45,9 +45,7 @@ class SpecialSulRenameWarning extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * Execute the page.
-	 *
-	 * @param string $subPage Ignored
+	 * @param string|null $subPage Ignored
 	 */
 	public function execute( $subPage ) {
 		$this->setHeaders();
@@ -55,7 +53,7 @@ class SpecialSulRenameWarning extends UnlistedSpecialPage {
 		$this->outputHeader();
 
 		$username = $this->getUser()->getName();
-		list( $oldname ) = explode( '~', $username, 2 );
+		$oldname = explode( '~', $username, 2 )[0];
 
 		$output = $this->getOutput();
 		$output->setPageTitle( $this->msg( 'sulrenamewarning-title', $username ) );

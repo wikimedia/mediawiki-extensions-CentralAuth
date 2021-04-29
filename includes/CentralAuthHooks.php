@@ -722,7 +722,7 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param array &$userArray
+	 * @param UserArrayFromResult|null &$userArray
 	 * @param IResultWrapper $res
 	 * @return bool
 	 */

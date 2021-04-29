@@ -956,7 +956,6 @@ class SpecialCentralAuth extends SpecialPage {
 				);
 		}
 
-		// Reason
 		$reasonList = Xml::listDropDown(
 			'wpReasonList',
 			$this->msg( 'centralauth-admin-status-reasons' )->inContentLanguage()->text(),
