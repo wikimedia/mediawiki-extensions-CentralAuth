@@ -21,14 +21,14 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		$cache->clear( $user->getName() );
 		$caUser = CentralAuthUser::getInstance( $user );
 		$this->assertInstanceOf( CentralAuthUser::class, $caUser );
-		$this->assertEquals( $user->getName(), $caUser->getName() );
+		$this->assertSame( $user->getName(), $caUser->getName() );
 		$this->assertSame( $cache->get( $user->getName() ), $caUser );
 
 		// Now test it just reads from the cache, no matter what
 		// @todo: Really?
 		$user2 = User::newFromName( 'BazBarFoo' );
 		$cache->set( $user2->getName(), 'blahblahblah' );
-		$this->assertEquals( 'blahblahblah', CentralAuthUser::getInstance( $user2 ) );
+		$this->assertSame( 'blahblahblah', CentralAuthUser::getInstance( $user2 ) );
 	}
 
 	/**
@@ -37,7 +37,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	public function testNewUnattached() {
 		$ca = CentralAuthUser::newUnattached( 'FooBar' );
 		$this->assertInstanceOf( CentralAuthUser::class, $ca );
-		$this->assertEquals( 'FooBar', $ca->getName() );
+		$this->assertSame( 'FooBar', $ca->getName() );
 		$this->assertFalse( $ca->isAttached() );
 	}
 
@@ -60,7 +60,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		$ca->expects( $this->any() )
 			->method( 'queryAttached' )
 			->will( $this->returnValue( $attached ) );
-		$this->assertEquals( $expected, $ca->getHomeWiki() );
+		$this->assertSame( $expected, $ca->getHomeWiki() );
 	}
 
 	public function provideGetHomeWiki() {
@@ -117,7 +117,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 	 */
 	public function testChooseHomeWiki( $expected, $attached ) {
 		$ca = new CentralAuthUser( 'FooBar' );
-		$this->assertEquals( $expected, $ca->chooseHomeWiki( $attached ) );
+		$this->assertSame( $expected, $ca->chooseHomeWiki( $attached ) );
 	}
 
 	public static function provideChooseHomeWiki() {
@@ -242,7 +242,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			->method( 'queryAttached' )
 			->will( $this->returnValue( $attached ) );
 
-		$this->assertEquals( $expected, $ca->getLocalGroups() );
+		$this->assertSame( $expected, $ca->getLocalGroups() );
 	}
 
 	public function provideOnPasswordPoliciesForUser() {
