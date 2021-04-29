@@ -51,7 +51,7 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieWithError( 'apiwarn-tokens-origin', 'hascallback' );
 		}
 
-		if ( $user->isAnon() ) {
+		if ( !$user->isRegistered() ) {
 			$this->dieWithError( 'apierror-centralauth-notloggedin', 'notloggedin' );
 		}
 
