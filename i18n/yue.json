@@ -58,7 +58,7 @@
 	"centralauth-admin-status-hidden-oversight": "完全收埋戶口",
 	"centralauth-admin-status-locked": "鎖咗：",
 	"centralauth-admin-status-locked-no": "戶口無鎖到",
-	"centralauth-admin-status-locked-yes": "戶口鎖咗唔畀登入",
+	"centralauth-admin-status-locked-yes": "戶口鎖咗唔畀簽到",
 	"centralauth-admin-title-ro": "$1嘅全域用戶信息",
 	"centralauth-admin-unattached": "未附加嘅戶口",
 	"centralauth-admin-unhide-nonexistent": "錯誤: 個全域戶口 \"<nowiki>$1</nowiki>\" 唔存在。",
