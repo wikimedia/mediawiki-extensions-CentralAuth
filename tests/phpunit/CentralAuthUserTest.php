@@ -52,14 +52,13 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			->setMethods( [ 'queryAttachedBasic', 'queryAttached', 'loadState' ] )
 			->getMock();
 
-		$ca->expects( $this->any() )->method( 'queryAttachedBasic' )->will( $this->returnValue(
+		$ca->method( 'queryAttachedBasic' )->willReturn(
 			array_map( function ( $data ) {
 				return array_intersect_key( $data, [ 'attachedMethod' => true ] );
 			}, $attached )
-		) );
-		$ca->expects( $this->any() )
-			->method( 'queryAttached' )
-			->will( $this->returnValue( $attached ) );
+		);
+		$ca->method( 'queryAttached' )
+			->willReturn( $attached );
 		$this->assertSame( $expected, $ca->getHomeWiki() );
 	}
 
@@ -238,9 +237,8 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			->disableOriginalConstructor()
 			->setMethods( [ 'queryAttached' ] )
 			->getMock();
-		$ca->expects( $this->any() )
-			->method( 'queryAttached' )
-			->will( $this->returnValue( $attached ) );
+		$ca->method( 'queryAttached' )
+			->willReturn( $attached );
 
 		$this->assertSame( $expected, $ca->getLocalGroups() );
 	}
