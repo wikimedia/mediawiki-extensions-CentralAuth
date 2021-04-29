@@ -32,12 +32,10 @@ class GlobalRenameBlacklist {
 	private $file = null;
 	/** @var string[]|null Content of blacklist */
 	private $blacklist = null;
-	/** @var \Psr\Log\LoggerInterface|null */
-	private $logger = null;
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
 
 	/**
-	 * Constructor
-	 *
 	 * @param string|Title|null $file Source of blacklist or null to use $wgGlobalRenameBlacklist
 	 */
 	public function __construct( $file = null ) {
