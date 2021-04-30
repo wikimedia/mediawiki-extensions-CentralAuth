@@ -69,11 +69,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $wgForceHTTPS ) {
 			return true;
 		}
-		$request = $this->getRequest();
-		if ( $wgSecureLogin && wfCanIPUseHTTPS( $request->getIP() ) ) {
-			return true;
-		}
-		return false;
+		return (bool)$wgSecureLogin;
 	}
 
 	/**

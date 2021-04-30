@@ -581,8 +581,7 @@ class CentralAuthHooks {
 
 					if ( $request->getBool( 'wpForceHttps', false ) ||
 						$request->getSession()->shouldForceHTTPS() ||
-						( $userOptionsLookup->getBoolOption( $user, 'prefershttps' ) &&
-						wfCanIPUseHTTPS( $request->getIP() ) )
+						$userOptionsLookup->getBoolOption( $user, 'prefershttps' )
 					) {
 						$finalProto = 'https';
 					}

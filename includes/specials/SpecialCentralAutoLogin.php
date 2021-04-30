@@ -697,10 +697,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a value for secureCookies
 		if ( !isset( $centralSession['secureCookies'] ) ) {
-			$centralSession['secureCookies'] = $wgForceHTTPS || (
-				$this->userOptionsLookup->getBoolOption( $user, 'prefershttps' ) &&
-				wfCanIPUseHTTPS( $request->getIP() )
-			);
+			$centralSession['secureCookies'] = $wgForceHTTPS ||
+				$this->userOptionsLookup->getBoolOption( $user, 'prefershttps' );
 		}
 
 		// Make sure there's a session id by creating a session if necessary.
