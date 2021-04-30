@@ -2218,13 +2218,7 @@ class CentralAuthUser implements IDBAccessObject {
 			return []; // don't bother with master queries
 		}
 
-		$unattached = $this->doListUnattached();
-		if ( empty( $unattached ) ) {
-			if ( $this->lazyImportLocalNames() ) {
-				$unattached = $this->doListUnattached();
-			}
-		}
-		return $unattached;
+		return $this->doListUnattached();
 	}
 
 	/**
@@ -2311,25 +2305,6 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ],
 			__METHOD__
 		);
-	}
-
-	/**
-	 * @return bool
-	 */
-	public function lazyImportLocalNames() {
-		$known = (bool)CentralAuthUtils::getCentralReplicaDB()->selectField(
-			'globalnames',
-			'1',
-			[ 'gn_name' => $this->mName ],
-			__METHOD__
-		);
-		if ( $known ) {
-			// No need...
-			// Hmm.. what about wikis added after localnames was populated? -werdna
-			return false;
-		}
-
-		return $this->importLocalNames();
 	}
 
 	/**
