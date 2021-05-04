@@ -181,7 +181,7 @@ class CentralAuthUtilityService {
 		$value = false;
 
 		$result = ( new WaitConditionLoop(
-			function () use ( $store, $key, &$value ) {
+			static function () use ( $store, $key, &$value ) {
 				$store->clearLastError();
 				$value = $store->get( $key );
 				$error = $store->getLastError();

@@ -42,7 +42,7 @@ class CentralAuthApiSessionProvider
 		// Schedule the throwing of the exception for later when the API
 		// is ready to catch it.
 		$exception = \ApiUsageException::newWithMessage( null, $error, $code );
-		$this->getHookContainer()->register( 'ApiBeforeMain', function () use ( $exception ) {
+		$this->getHookContainer()->register( 'ApiBeforeMain', static function () use ( $exception ) {
 			throw $exception;
 		} );
 

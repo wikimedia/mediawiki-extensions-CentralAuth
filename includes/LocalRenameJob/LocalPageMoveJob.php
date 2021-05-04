@@ -50,14 +50,14 @@ class LocalPageMoveJob extends Job {
 			$guard = $permissionManager->addTemporaryUserRights( $this->user,  'bot' );
 
 			// Remove it at the end of the job process
-			$this->addTeardownCallback( function () use ( &$guard ) {
+			$this->addTeardownCallback( static function () use ( &$guard ) {
 				ScopedCallback::consume( $guard );
 			} );
 		}
 
 		if ( isset( $this->params['session'] ) ) {
 			$callback = RequestContext::importScopedSession( $this->params['session'] );
-			$this->addTeardownCallback( function () use ( &$callback ) {
+			$this->addTeardownCallback( static function () use ( &$callback ) {
 				ScopedCallback::consume( $callback );
 			} );
 		}

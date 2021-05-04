@@ -252,7 +252,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			] );
 			if ( $centralUser->isAttached() ) {
 				// Defer any automatic migration for other wikis
-				DeferredUpdates::addCallableUpdate( function () use ( $username, $req ) {
+				DeferredUpdates::addCallableUpdate( static function () use ( $username, $req ) {
 					$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
 					$latestCentralUser->attemptPasswordMigration( $req->password );
 				} );
@@ -324,7 +324,7 @@ class CentralAuthPrimaryAuthenticationProvider
 				$centralUser->getEmail() != $user->getEmail() &&
 				!wfReadOnly()
 			) {
-				DeferredUpdates::addCallableUpdate( function () use ( $user ) {
+				DeferredUpdates::addCallableUpdate( static function () use ( $user ) {
 					$centralUser = CentralAuthUser::getMasterInstance( $user );
 					if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
 						return; // something major changed?
@@ -548,7 +548,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( wfWikiID(), 'new' );
 		CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
-			function () use ( $centralUser ) {
+			static function () use ( $centralUser ) {
 				CentralAuthUtils::scheduleCreationJobs( $centralUser );
 			},
 			__METHOD__

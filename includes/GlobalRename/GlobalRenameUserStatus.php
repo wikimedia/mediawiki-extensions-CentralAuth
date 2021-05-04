@@ -149,7 +149,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
-			function () use( $dbw, $status, $wiki, $nameWhere, $fname ) {
+			static function () use( $dbw, $status, $wiki, $nameWhere, $fname ) {
 				$dbw->update(
 					'renameuser_status',
 					[ 'ru_status' => $status ],
@@ -217,7 +217,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
-			function () use( $dbw, $wiki, $nameWhere, $fname ) {
+			static function () use( $dbw, $wiki, $nameWhere, $fname ) {
 				$dbw->delete(
 					'renameuser_status',
 					[ $nameWhere, 'ru_wiki' => $wiki ],

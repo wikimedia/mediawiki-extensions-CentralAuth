@@ -87,7 +87,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
-		$getException = function ( CentralAuthUser $centralUser, User $user, array $info ) {
+		$getException = static function ( CentralAuthUser $centralUser, User $user, array $info ) {
 			if ( !$centralUser->exists() ) { // sanity
 				return new Exception( "Global user '{$info['name']}' does not exist." );
 			} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
@@ -216,7 +216,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
-		$getException = function ( CentralAuthUser $centralUser, User $user ) {
+		$getException = static function ( CentralAuthUser $centralUser, User $user ) {
 			if ( !$user->getId() ) { // sanity
 				return new Exception( "The user account logged into does not exist." );
 			}

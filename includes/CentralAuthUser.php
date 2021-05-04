@@ -1900,7 +1900,7 @@ class CentralAuthUser implements IDBAccessObject {
 			// Push the jobs right before COMMIT (which is likely to succeed).
 			// If the job push fails, then the transaction will roll back.
 			$dbw = self::getCentralDB();
-			$dbw->onTransactionPreCommitOrIdle( function () use ( $jobs ) {
+			$dbw->onTransactionPreCommitOrIdle( static function () use ( $jobs ) {
 				JobQueueGroup::singleton()->push( $jobs );
 			}, __METHOD__ );
 		}
@@ -2450,7 +2450,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function getLocalGroups() {
 		$localgroups = [];
 		array_map(
-			function ( $local ) use ( &$localgroups ) {
+			static function ( $local ) use ( &$localgroups ) {
 				$localgroups = array_unique( array_merge(
 					$localgroups, array_keys( $local['groupMemberships'] )
 				) );

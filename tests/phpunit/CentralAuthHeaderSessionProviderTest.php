@@ -44,7 +44,7 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 			->onlyMethods( [ 'getHeader' ] )
 			->getMock();
 		$request->method( 'getHeader' )->willReturnCallback(
-			function ( $name ) use ( $authorization ) {
+			static function ( $name ) use ( $authorization ) {
 				return $name === 'Authorization' ? $authorization : null;
 			}
 		);

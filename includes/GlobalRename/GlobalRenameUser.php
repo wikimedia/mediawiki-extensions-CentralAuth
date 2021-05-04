@@ -104,7 +104,7 @@ class GlobalRenameUser {
 		static $keepDetails = [ 'attachedMethod' => true, 'attachedTimestamp' => true ];
 
 		$wikisAttached = array_map(
-			function ( $details ) use ( $keepDetails ) {
+			static function ( $details ) use ( $keepDetails ) {
 				return array_intersect_key( $details, $keepDetails );
 			},
 			$this->oldCAUser->queryAttached()

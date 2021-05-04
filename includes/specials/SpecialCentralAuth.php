@@ -699,7 +699,7 @@ class SpecialCentralAuth extends SpecialPage {
 		return Html::rawElement(
 			'ul',
 			[],
-			implode( '', array_map( function ( $prop ) {
+			implode( '', array_map( static function ( $prop ) {
 				return Html::rawElement(
 					'li',
 					[],
@@ -717,7 +717,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function getRestrictionListHTML( array $row ) {
-		$count = array_reduce( $row['block-restrictions'], function ( $carry, $restriction ) {
+		$count = array_reduce( $row['block-restrictions'], static function ( $carry, $restriction ) {
 			$carry[$restriction->getType()] += 1;
 			return $carry;
 		}, [

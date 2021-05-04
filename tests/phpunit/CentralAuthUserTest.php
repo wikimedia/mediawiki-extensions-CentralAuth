@@ -53,7 +53,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 			->getMock();
 
 		$ca->method( 'queryAttachedBasic' )->willReturn(
-			array_map( function ( $data ) {
+			array_map( static function ( $data ) {
 				return array_intersect_key( $data, [ 'attachedMethod' => true ] );
 			}, $attached )
 		);

@@ -296,7 +296,7 @@ class CentralAuthHooks {
 			if ( $centralUser->register( null, $user->getEmail() ) ) {
 				$centralUser->attach( wfWikiID(), 'new' );
 				CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
-					function () use ( $centralUser ) {
+					static function () use ( $centralUser ) {
 						CentralAuthUtils::scheduleCreationJobs( $centralUser );
 					},
 					__METHOD__
@@ -663,7 +663,7 @@ class CentralAuthHooks {
 		}
 
 		$username = $user->getName();
-		DeferredUpdates::addCallableUpdate( function () use ( $username ) {
+		DeferredUpdates::addCallableUpdate( static function () use ( $username ) {
 			$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
 			if ( $centralUser->exists() ) {
 				$centralUser->resetAuthToken();
