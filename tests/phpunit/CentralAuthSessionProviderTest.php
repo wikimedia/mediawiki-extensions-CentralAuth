@@ -1,9 +1,32 @@
 <?php
 
+use MediaWiki\Session\SessionManager;
+use MediaWiki\User\UserNameUtils;
+
 /**
  * @covers CentralAuthSessionProvider
  */
-class CentralAuthSessionProviderTest extends PHPUnit\Framework\TestCase {
+class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
+
+	private function getConfig() {
+		return new HashConfig( [
+			'CentralAuthCookies' => true,
+			'CentralAuthCookiePrefix' => 'central_',
+			'CentralAuthCookiePath' => '/',
+			'CentralAuthCookieDomain' => '',
+			'CookieExpiration' => 100,
+			'ExtendedLoginCookieExpiration' => 200,
+			// these are needed by CookieSessionProvider::getConfig
+			'SessionName' => null,
+			'CookiePrefix' => '',
+			'CookiePath' => '',
+			'CookieDomain' => 'example.com',
+			'CookieSecure' => true,
+			'CookieHttpOnly' => true,
+			'CookieSameSite' => '',
+		] );
+	}
+
 	/**
 	 * @dataProvider provideSuggestLoginUsername
 	 */
@@ -13,6 +36,13 @@ class CentralAuthSessionProviderTest extends PHPUnit\Framework\TestCase {
 			'cookieOptions' => [ 'prefix' => '' ],
 			'centralCookieOptions' => [ 'prefix' => '' ],
 		] );
+		$provider->init(
+			new TestLogger(),
+			$this->getConfig(),
+			$this->createNoOpMock( SessionManager::class ),
+			$this->createHookContainer(),
+			$this->getServiceContainer()->getUserNameUtils()
+		);
 		$request = new FauxRequest();
 		$request->setCookies( $cookies, '' );
 		$this->assertSame( $expectedUsername, $provider->suggestLoginUsername( $request ) );
@@ -34,24 +64,14 @@ class CentralAuthSessionProviderTest extends PHPUnit\Framework\TestCase {
 	}
 
 	public function testGetRememberUserDuration() {
-		$config = new HashConfig( [
-			'CentralAuthCookies' => true,
-			'CentralAuthCookiePrefix' => 'central_',
-			'CentralAuthCookiePath' => '/',
-			'CentralAuthCookieDomain' => '',
-			'CookieExpiration' => 100,
-			'ExtendedLoginCookieExpiration' => 200,
-			// these are needed by CookieSessionProvider::getConfig
-			'SessionName' => null,
-			'CookiePrefix' => '',
-			'CookiePath' => '',
-			'CookieDomain' => 'example.com',
-			'CookieSecure' => true,
-			'CookieHttpOnly' => true,
-			'CookieSameSite' => '',
-		] );
 		$provider = new CentralAuthSessionProvider( [ 'priority' => 42 ] );
-		$provider->setConfig( $config );
+		$provider->init(
+			new TestLogger(),
+			$this->getConfig(),
+			$this->createNoOpMock( SessionManager::class ),
+			$this->createHookContainer(),
+			$this->createNoOpMock( UserNameUtils::class )
+		);
 
 		$this->assertSame( 200, $provider->getRememberUserDuration() );
 	}

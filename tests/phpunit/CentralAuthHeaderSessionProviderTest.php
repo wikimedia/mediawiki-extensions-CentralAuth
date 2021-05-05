@@ -28,10 +28,13 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 		] );
 
 		$provider = new CentralAuthHeaderSessionProvider();
-		$provider->setLogger( $logger );
-		$provider->setConfig( $config );
-		$provider->setManager( $manager );
-		$provider->setHookContainer( $hookContainer );
+		$provider->init(
+			$logger,
+			$config,
+			$manager,
+			$hookContainer,
+			$this->getServiceContainer()->getUserNameUtils()
+		);
 		return $provider;
 	}
 

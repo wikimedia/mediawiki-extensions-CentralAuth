@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
@@ -58,20 +57,20 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		parent::__construct( $params );
 	}
 
-	public function setConfig( Config $config ) {
-		parent::setConfig( $config );
+	protected function postInitSetup() {
+		parent::postInitSetup();
 
 		$this->centralCookieOptions += [
-			'prefix' => $config->get( 'CentralAuthCookiePrefix' ),
-			'path' => $config->get( 'CentralAuthCookiePath' ),
-			'domain' => $config->get( 'CentralAuthCookieDomain' ),
-			'secure' => $config->get( 'CookieSecure' ) || $config->get( 'ForceHTTPS' ),
-			'httpOnly' => $config->get( 'CookieHttpOnly' ),
-			'sameSite' => $config->get( 'CookieSameSite' )
+			'prefix' => $this->getConfig()->get( 'CentralAuthCookiePrefix' ),
+			'path' => $this->getConfig()->get( 'CentralAuthCookiePath' ),
+			'domain' => $this->getConfig()->get( 'CentralAuthCookieDomain' ),
+			'secure' => $this->getConfig()->get( 'CookieSecure' ) || $this->getConfig()->get( 'ForceHTTPS' ),
+			'httpOnly' => $this->getConfig()->get( 'CookieHttpOnly' ),
+			'sameSite' => $this->getConfig()->get( 'CookieSameSite' )
 		];
 
 		$params = [
-			'enable' => $config->get( 'CentralAuthCookies' ),
+			'enable' => $this->getConfig()->get( 'CentralAuthCookies' ),
 			'centralSessionName' => $this->centralCookieOptions['prefix'] . 'Session',
 		];
 		$this->params += $params;
@@ -159,13 +158,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 
 		// Clean up username
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$userName = $userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
+		$userName = $this->userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
 			return self::returnParentSessionInfo( $request );
 		}
-		if ( !$userNameUtils->isUsable( $userName ) ) {
+		if ( !$this->userNameUtils->isUsable( $userName ) ) {
 			$this->logger->warning(
 				__METHOD__ . ': username {username} is not usable on this wiki', [
 					'username' => $userName,
@@ -335,8 +333,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 				// Don't set the secure flag if the request came in
 				// over "http", for backwards compat.
 				// @todo Break that backwards compat properly.
-				$options['secure'] = $this->config->get( 'ForceHTTPS' )
-					|| $this->config->get( 'CookieSecure' );
+				$options['secure'] = $this->getConfig()->get( 'ForceHTTPS' )
+					|| $this->getConfig()->get( 'CookieSecure' );
 			}
 
 			// We only save the user into the central session if it's not a
@@ -412,8 +410,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	public function preventSessionsForUser( $username ) {
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$username = $userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
+		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {
 			return;
 		}
@@ -441,7 +438,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 * @inheritDoc
 	 */
 	protected function setForceHTTPSCookie( $set, ?SessionBackend $backend, WebRequest $request ) {
-		if ( $this->config->get( 'ForceHTTPS' ) ) {
+		if ( $this->getConfig()->get( 'ForceHTTPS' ) ) {
 			// No need to send a cookie if the wiki is always HTTPS (T256095)
 			return;
 		}
@@ -513,8 +510,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	public function suggestLoginUsername( WebRequest $request ) {
 		$name = $this->getCookie( $request, 'User', $this->centralCookieOptions['prefix'] );
 		if ( $name !== null ) {
-			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-			$name = $userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
+			$name = $this->userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
 
 		}
 		return ( $name === false || $name === null )
