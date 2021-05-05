@@ -83,7 +83,7 @@
 			"class": "SpecialCentralAutoLogin",
 			"services": [
 				"CentralAuth.CentralAuthUtilityService",
-				"UserOptionsLookup"
+				"UserOptionsManager"
 			]
 		},
 		"CreateLocalAccount": {
