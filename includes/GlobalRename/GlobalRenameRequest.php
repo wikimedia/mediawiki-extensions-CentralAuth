@@ -259,7 +259,7 @@ class GlobalRenameRequest {
 	}
 
 	public function save() {
-		$dbw = self::getDB( DB_MASTER );
+		$dbw = self::getDB( DB_PRIMARY );
 		if ( $this->id === null ) {
 			$this->requested = wfTimestampNow();
 			$this->status = self::PENDING;
@@ -388,7 +388,7 @@ class GlobalRenameRequest {
 	 * @return IDatabase
 	 */
 	protected static function getDB( $type ) {
-		if ( $type === DB_MASTER ) {
+		if ( $type === DB_PRIMARY ) {
 			return CentralAuthUtils::getCentralDB();
 		} else {
 			return CentralAuthUtils::getCentralReplicaDB();

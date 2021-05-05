@@ -15,7 +15,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @param array $items
 	 */
 	protected function batchRecord( $items ) {
-		CentralAuthSpoofUser::batchRecord( $this->getDB( DB_MASTER ), $items );
+		CentralAuthSpoofUser::batchRecord( $this->getDB( DB_PRIMARY ), $items );
 	}
 
 	/**

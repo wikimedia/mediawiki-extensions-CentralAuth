@@ -62,7 +62,7 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 		}
 		return MediaWikiServices::getInstance()->getDBLoadBalancerFactory()
 			->getMainLB( $this->currentWiki )
-			->getMaintenanceConnectionRef( DB_MASTER, [], $this->currentWiki );
+			->getMaintenanceConnectionRef( DB_PRIMARY, [], $this->currentWiki );
 	}
 
 	protected function getWikis() {

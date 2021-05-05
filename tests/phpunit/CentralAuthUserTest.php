@@ -49,7 +49,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		/** @var MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'queryAttachedBasic', 'queryAttached', 'loadState' ] )
+			->onlyMethods( [ 'queryAttachedBasic', 'queryAttached', 'loadState' ] )
 			->getMock();
 
 		$ca->method( 'queryAttachedBasic' )->willReturn(
@@ -235,7 +235,7 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		/** @var MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
-			->setMethods( [ 'queryAttached' ] )
+			->onlyMethods( [ 'queryAttached' ] )
 			->getMock();
 		$ca->method( 'queryAttached' )
 			->willReturn( $attached );

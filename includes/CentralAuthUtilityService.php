@@ -107,7 +107,7 @@ class CentralAuthUtilityService {
 		$database = $this->config->get( 'CentralAuthDatabase' );
 
 		return $this->lbFactory->getMainLB( $database )
-			->getConnectionRef( DB_MASTER, [], $database );
+			->getConnectionRef( DB_PRIMARY, [], $database );
 	}
 
 	/**

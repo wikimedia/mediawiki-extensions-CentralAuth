@@ -59,7 +59,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
 			// any normalization at all done by User or Title.
 			$userQuery = User::getQueryInfo();
-			$row = wfGetDB( DB_MASTER )->selectRow(
+			$row = wfGetDB( DB_PRIMARY )->selectRow(
 				$userQuery['tables'],
 				$userQuery['fields'],
 				[ 'user_name' => $from ],

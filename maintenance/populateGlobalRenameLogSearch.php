@@ -55,7 +55,7 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 	private function insert( array $rows ) {
 		$count = count( $rows );
 		$this->output( "Inserting $count rows into log_search\n" );
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$dbw->insert( 'log_search', $rows, __METHOD__, [ 'IGNORE' ] );
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();

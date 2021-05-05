@@ -249,7 +249,7 @@ class CentralAuthUser implements IDBAccessObject {
 		return MediaWikiServices::getInstance()
 			->getDBLoadBalancerFactory()
 			->getMainLB( $wikiID )
-			->getConnectionRef( DB_MASTER, [], $wikiID );
+			->getConnectionRef( DB_PRIMARY, [], $wikiID );
 	}
 
 	/**
@@ -1517,7 +1517,7 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 
 			# Touch the local user row, update the password
-			$dblw = $lbFactory->getMainLB( $wikiName )->getConnectionRef( DB_MASTER, [], $wikiName );
+			$dblw = $lbFactory->getMainLB( $wikiName )->getConnectionRef( DB_PRIMARY, [], $wikiName );
 			$dblw->update(
 				'user',
 				[
@@ -1596,7 +1596,7 @@ class CentralAuthUser implements IDBAccessObject {
 			/** @var stdClass $localUserRow */
 			$wiki = $localUserRow->lu_wiki;
 			$logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
-			$localDB = $lbFactory->getMainLB( $wiki )->getConnectionRef( DB_MASTER, [], $wiki );
+			$localDB = $lbFactory->getMainLB( $wiki )->getConnectionRef( DB_PRIMARY, [], $wiki );
 			$localDB->update(
 				'user',
 				[ 'user_password' => $password ],
@@ -1920,7 +1920,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$lb = $lbFactory->getMainLB( $wiki );
-		$dbw = $lb->getConnectionRef( DB_MASTER, [], $wiki );
+		$dbw = $lb->getConnectionRef( DB_PRIMARY, [], $wiki );
 		$data = $this->localUserData( $wiki );
 
 		if ( $suppress ) {
@@ -2604,7 +2604,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		if ( !$row ) {
 			# Row missing from replica, try the master instead
-			$db = $lb->getConnectionRef( DB_MASTER, [], $wikiID );
+			$db = $lb->getConnectionRef( DB_PRIMARY, [], $wikiID );
 			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		}
 		if ( !$row ) {

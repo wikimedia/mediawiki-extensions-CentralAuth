@@ -36,7 +36,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return IDatabase
 	 */
 	protected function getDB( $type = DB_REPLICA ) {
-		if ( $type === DB_MASTER ) {
+		if ( $type === DB_PRIMARY ) {
 			return CentralAuthUtils::getCentralDB();
 		} else {
 			return CentralAuthUtils::getCentralReplicaDB();
@@ -70,7 +70,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return array (oldname, newname)
 	 */
 	public function getNames( $wiki = null, $useMaster = null ) {
-		$db = $this->getDB( $useMaster === 'master' ? DB_MASTER : DB_REPLICA );
+		$db = $this->getDB( $useMaster === 'master' ? DB_PRIMARY : DB_REPLICA );
 
 		$where = [ $this->getNameWhereClause( $db ) ];
 
@@ -143,7 +143,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @param string $status
 	 */
 	public function updateStatus( $wiki, $status ) {
-		$dbw = $this->getDB( DB_MASTER );
+		$dbw = $this->getDB( DB_PRIMARY );
 		// Can be inlined easily once we require more than 5.3
 		$nameWhere = $this->getNameWhereClause( $dbw );
 		$fname = __METHOD__;
@@ -167,7 +167,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return bool
 	 */
 	public function setStatuses( array $rows ) {
-		$dbw = $this->getDB( DB_MASTER );
+		$dbw = $this->getDB( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 		if ( $dbw->getType() === 'mysql' ) {
@@ -211,7 +211,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @param string $wiki
 	 */
 	public function done( $wiki ) {
-		$dbw = $this->getDB( DB_MASTER );
+		$dbw = $this->getDB( DB_PRIMARY );
 		// Can be inlined easily once we require more than 5.3
 		$nameWhere = $this->getNameWhereClause( $dbw );
 		$fname = __METHOD__;

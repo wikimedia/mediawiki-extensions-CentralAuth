@@ -1746,7 +1746,7 @@ class CentralAuthHooks {
 	 * Cleans up tables created by onUnitTestsAfterDatabaseSetup() above
 	 */
 	public static function onUnitTestsBeforeDatabaseTeardown() {
-		$db = wfGetDB( DB_MASTER );
+		$db = wfGetDB( DB_PRIMARY );
 		foreach ( self::$centralauthTables as $table ) {
 			$db->dropTable( $table );
 		}
