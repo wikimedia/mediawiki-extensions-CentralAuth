@@ -8,6 +8,7 @@
 		<exclude name="MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName"/>
 		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment.NewLineComment" />
 		<exclude name="Squiz.Scope.MethodScope.Missing" />
+		<exclude name="Squiz.WhiteSpace.LogicalOperatorSpacing.TooMuchSpaceAfter" />
 		<exclude name="MediaWiki.Commenting.FunctionComment.DefaultNullTypeParam" />
 	</rule>
 	<rule ref="Generic.Files.LineLength">
@@ -37,6 +38,6 @@
 	</rule>
 
 	<file>.</file>
-	<arg name="extensions" value="php,php5,inc"/>
+	<arg name="extensions" value="php"/>
 	<arg name="encoding" value="UTF-8"/>
 </ruleset>
