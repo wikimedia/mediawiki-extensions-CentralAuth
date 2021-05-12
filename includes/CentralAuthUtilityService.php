@@ -194,7 +194,7 @@ class CentralAuthUtilityService {
 
 		LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',
-			'status' => $sv,
+			'status' => strval( $sv ),
 		] );
 		return $sv;
 	}
