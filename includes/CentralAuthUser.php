@@ -2715,9 +2715,9 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @return string
 	 */
-	public function getEmail() {
+	public function getEmail(): string {
 		$this->loadState();
-		return $this->mEmail;
+		return $this->mEmail ?? '';
 	}
 
 	/**

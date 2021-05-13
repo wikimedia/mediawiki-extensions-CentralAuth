@@ -23,7 +23,6 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		$this->assertInstanceOf( CentralAuthUser::class, $caUser );
 		$this->assertSame( $user->getName(), $caUser->getName() );
 		$this->assertSame( $cache->get( $user->getName() ), $caUser );
-
 		// Now test it just reads from the cache, no matter what
 		// @todo: Really?
 		$user2 = User::newFromName( 'BazBarFoo' );
@@ -311,4 +310,19 @@ class CentralAuthUserTest extends MediaWikiTestCase {
 		];
 	}
 
+	/**
+	 * @covers CentralAuthUser::getEmail
+	 */
+	public function testGetEmail() {
+		$user = new CentralAuthUser( __METHOD__ );
+		$this->assertSame( '', $user->getEmail() );
+		$user->setEmail( 'test@test.test' );
+		$this->assertSame( 'test@test.test', $user->getEmail() );
+
+		$user->register( 'blabla', 'test@test.test' );
+		$this->assertSame( 'test@test.test', $user->getEmail() );
+
+		$user->getStateHash( true ); // reload
+		$this->assertSame( 'test@test.test', $user->getEmail() );
+	}
 }
