@@ -27,7 +27,7 @@ class CentralAuthUtils {
 	}
 
 	/**
-	 * Gets a master (read/write) database connection to the CentralAuth database
+	 * Gets a primary (read/write) database connection to the CentralAuth database
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 * @throws CentralAuthReadOnlyError

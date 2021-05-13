@@ -110,10 +110,10 @@ class SpecialMultiLock extends SpecialPage {
 	 * Get the CentralAuthUsers from lines of text
 	 *
 	 * @param string[] $usernames
-	 * @param bool $fromMaster
+	 * @param bool $fromPrimaryDb
 	 * @return (CentralAuthUser|string|false)[] User object, a HTML error string, or false.
 	 */
-	private function getGlobalUsers( $usernames, $fromMaster = false ) {
+	private function getGlobalUsers( $usernames, $fromPrimaryDb = false ) {
 		$ret = [];
 		foreach ( $usernames as $username ) {
 			$username = str_replace( '_', ' ', $username ); // T270954
@@ -124,7 +124,7 @@ class SpecialMultiLock extends SpecialPage {
 			}
 			$username = $this->getLanguage()->ucfirst( $username );
 
-			$globalUser = $fromMaster
+			$globalUser = $fromPrimaryDb
 				? CentralAuthUser::getMasterInstanceByName( $username )
 				: CentralAuthUser::getInstanceByName( $username );
 			if ( !$globalUser->exists()

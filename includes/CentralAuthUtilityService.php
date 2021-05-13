@@ -94,7 +94,7 @@ class CentralAuthUtilityService {
 	}
 
 	/**
-	 * Gets a master (read/write) database connection to the CentralAuth database
+	 * Gets a primary (read/write) database connection to the CentralAuth database
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 * @throws CentralAuthReadOnlyError
@@ -246,7 +246,7 @@ class CentralAuthUtilityService {
 	 * @return StatusValue a status value
 	 */
 	public function autoCreateUser( User $user, $log = true ) : StatusValue {
-		// Ignore warnings about master connections/writes...hard to avoid here
+		// Ignore warnings about primary database connections/writes...hard to avoid here
 
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 

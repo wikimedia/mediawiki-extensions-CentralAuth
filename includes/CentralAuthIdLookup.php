@@ -12,8 +12,8 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromMaster = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
-		$db = $fromMaster
+		$fromPrimaryDb = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
+		$db = $fromPrimaryDb
 			? CentralAuthUtils::getCentralDB()
 			: CentralAuthUtils::getCentralReplicaDB();
 
@@ -28,7 +28,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			$queryInfo['joinConds']
 		);
 		foreach ( $res as $row ) {
-			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromMaster );
+			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			if ( $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE
 				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
 			) {
@@ -49,8 +49,8 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromMaster = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
-		$db = $fromMaster
+		$fromPrimaryDb = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
+		$db = $fromPrimaryDb
 			? CentralAuthUtils::getCentralDB()
 			: CentralAuthUtils::getCentralReplicaDB();
 
@@ -65,7 +65,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			$queryInfo['joinConds']
 		);
 		foreach ( $res as $row ) {
-			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromMaster );
+			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			if ( $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_NONE
 				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
 			) {
