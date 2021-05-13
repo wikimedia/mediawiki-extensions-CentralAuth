@@ -5,6 +5,7 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -412,12 +413,12 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onSpecialPasswordResetOnSubmit( &$users, $data, &$abortError ) {
-		if ( count( $users ) == 0 || !$users[0] instanceof User ) {
+		$firstUser = reset( $users );
+		if ( !( $firstUser instanceof UserIdentity ) ) {
 			// We can't handle this
 			return true;
 		}
 
-		$firstUser = $users[0];
 		if ( !$firstUser->getId() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
@@ -903,7 +904,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onUserGetRights( $user, &$rights ) {
-		if ( !$user->isAnon() ) {
+		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
@@ -924,7 +925,7 @@ class CentralAuthHooks {
 	public static function onUserIsLocked( User $user, &$isLocked ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists()
-			&& ( $centralUser->isAttached() || $user->isAnon() )
+			&& ( $centralUser->isAttached() || !$user->isRegistered() )
 			&& $centralUser->isLocked()
 		) {
 			$isLocked = true;
@@ -955,7 +956,7 @@ class CentralAuthHooks {
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists()
-			&& ( $centralUser->isAttached() || $user->isAnon() )
+			&& ( $centralUser->isAttached() || !$user->isRegistered() )
 			&& $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_OVERSIGHT
 		) {
 			$hideUserBlock = new SystemBlock( [
@@ -992,7 +993,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onUserIsBot( User $user, &$isBot ) {
-		if ( !$user->isAnon() ) {
+		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists()
 				&& $centralUser->isAttached()
@@ -1013,7 +1014,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onSpecialContributionsBeforeMainOutput( $id, User $user, SpecialPage $sp ) {
-		if ( $user->isAnon() ) {
+		if ( !$user->isRegistered() ) {
 			return true;
 		}
 
@@ -1057,7 +1058,7 @@ class CentralAuthHooks {
 	 */
 	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
 		$user = $out->getUser();
-		if ( !$user->isAnon() ) {
+		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
 				$vars['wgGlobalGroups'] = $centralUser->getGlobalGroups();
@@ -1100,7 +1101,7 @@ class CentralAuthHooks {
 	 */
 	public static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
 		global $wgCentralAuthLockedCanEdit, $wgDisableUnmergedEditing;
-		if ( $action == 'read' || $user->isAnon() ) {
+		if ( $action == 'read' || !$user->isRegistered() ) {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
@@ -1149,7 +1150,7 @@ class CentralAuthHooks {
 			);
 		}
 
-		if ( $out->getUser()->isAnon() ) {
+		if ( !$out->getUser()->isRegistered() ) {
 			if ( $wgCentralAuthLoginWiki && wfWikiID() !== $wgCentralAuthLoginWiki ) {
 				// Let the frontend know if this is a mobile domain, T100413
 				$out->addJsConfigVars(
@@ -1328,7 +1329,7 @@ class CentralAuthHooks {
 			}
 		}
 
-		if ( $out->getUser()->isAnon() && $wgCentralAuthLoginWiki ) {
+		if ( !$out->getUser()->isRegistered() && $wgCentralAuthLoginWiki ) {
 			// For the non-js case, there is local image loaded, but it redirects to
 			// central wiki, so include it.
 			$loginWiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
@@ -1364,7 +1365,7 @@ class CentralAuthHooks {
 	) {
 		global $wgCentralAuthLoginWiki;
 		$out = RequestContext::getMain()->getOutput();
-		if ( $wgCentralAuthLoginWiki && $out->getUser()->isAnon() ) {
+		if ( $wgCentralAuthLoginWiki && !$out->getUser()->isRegistered() ) {
 			$loginWiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
 			$scriptSrc[] = wfParseUrl( $loginWiki->getCanonicalServer() )['host'];
 		}
@@ -1377,7 +1378,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onSecurePoll_GetUserParams( $auth, $user, &$params ) {
-		if ( $user->isAnon() ) {
+		if ( !$user->isRegistered() ) {
 			return true;
 		}
 

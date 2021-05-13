@@ -92,7 +92,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 				return new Exception( "Global user '{$info['name']}' does not exist." );
 			} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
 				return new Exception( "Global user does not have ID '{$info['guid']}'." );
-			} elseif ( !$centralUser->isAttached() && !$user->isAnon() ) { // sanity
+			} elseif ( !$centralUser->isAttached() && $user->isRegistered() ) { // sanity
 				return new Exception( "User '{$info['name']}' exists locally but is not attached." );
 			}
 			return null;

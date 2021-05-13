@@ -135,7 +135,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			$user = $this->getUser();
-			if ( !$user->isAnon() ) {
+			if ( $user->isRegistered() ) {
 				$skin = $this->getSkin();
 				if (
 					!CentralAuthHooks::isUIReloadRecommended( $user ) &&
