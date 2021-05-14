@@ -49,7 +49,7 @@ class CheckLocalNames extends Maintenance {
 	}
 
 	public function execute() {
-		$centralMaster = CentralAuthUtils::getCentralDB();
+		$centralPrimaryDb = CentralAuthUtils::getCentralDB();
 		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
 
 		if ( $this->getOption( 'delete', false ) !== false ) {
@@ -131,7 +131,7 @@ class CheckLocalNames extends Maintenance {
 						$this->total++;
 						if ( !$this->dryrun ) {
 							// go ahead and delete the extraneous entry
-							$centralMaster->delete(
+							$centralPrimaryDb->delete(
 								'localnames',
 								[
 									"ln_wiki" => $wiki,

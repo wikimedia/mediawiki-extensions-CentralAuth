@@ -220,7 +220,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		if ( !$centralUser->exists() ) {
 			$this->logger->debug(
 				'no global account for "{username}"', [ 'username' => $username ] );
-			// Confirm using DB_MASTER in case of replication lag
+			// Confirm using DB_PRIMARY in case of replication lag
 			$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
 			if ( $this->autoMigrateNonGlobalAccounts && !$latestCentralUser->exists() ) {
 				$ok = $latestCentralUser->storeAndMigrate(

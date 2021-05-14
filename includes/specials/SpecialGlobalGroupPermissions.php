@@ -729,7 +729,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 */
 	private function invalidateRightsCache( $group ) {
 		// Figure out all the users in this group.
-		// Use the master over here as this could go horribly wrong with newly created or just
+		// Use the primary database over here as this could go horribly wrong with newly created or just
 		// renamed groups
 		$dbr = CentralAuthUtils::getCentralDB();
 

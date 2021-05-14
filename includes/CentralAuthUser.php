@@ -122,7 +122,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @note Don't call this directly. Use self::getInstanceByName() or
 	 *  self::getMasterInstanceByName() instead.
 	 * @param string $username
-	 * @param int $flags Supports CentralAuthUser::READ_LATEST to use the master DB
+	 * @param int $flags Supports CentralAuthUser::READ_LATEST to use the primary DB
 	 */
 	public function __construct( $username, $flags = 0 ) {
 		$this->mName = $username;
@@ -188,7 +188,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
-	 * This object will use DB_MASTER.
+	 * This object will use DB_PRIMARY.
 	 * @param UserIdentity $user
 	 * @return CentralAuthUser
 	 * @since 1.27
@@ -199,7 +199,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
-	 * This object will use DB_MASTER.
+	 * This object will use DB_PRIMARY.
 	 * @param string $username Must be validated and canonicalized by the caller
 	 * @return CentralAuthUser
 	 * @since 1.27
@@ -265,7 +265,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return IDatabase Master or replica based on shouldUseMasterDB()
+	 * @return IDatabase Primary database or replica based on shouldUseMasterDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
@@ -412,7 +412,7 @@ class CentralAuthUser implements IDBAccessObject {
 			return;
 		}
 
-		// Check the cache (unless the master was requested via READ_LATEST)
+		// Check the cache (unless the primary database was requested via READ_LATEST)
 		if ( !$recache && $this->mFromMaster !== true ) {
 			$this->loadFromCache();
 		} else {
@@ -2217,7 +2217,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function listUnattached() {
 		if ( IPUtils::isIPAddress( $this->mName ) ) {
-			return []; // don't bother with master queries
+			return []; // don't bother with primary database queries
 		}
 
 		return $this->doListUnattached();
@@ -2228,7 +2228,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function doListUnattached() {
 		// Make sure lazy-loading in listUnattached() works, as we
-		// may need to *switch* to using the DB master for this query
+		// may need to *switch* to using the primary DB for this query
 		$db = self::centralLBHasRecentMasterChanges()
 			? CentralAuthUtils::getCentralDB()
 			: $this->getSafeReadDB();
@@ -2417,7 +2417,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function renameInProgressOn( $wiki, $flags = 0 ) {
 		$renameState = new GlobalRenameUserStatus( $this->mName );
 
-		// Use master as this is being used for various critical things
+		// Use primary database as this is being used for various critical things
 		$names = $renameState->getNames(
 			$wiki,
 			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'master' : 'replica'
@@ -2489,7 +2489,7 @@ class CentralAuthUser implements IDBAccessObject {
 				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localuser table told us that the user was attached
-				// from $wikiId but there is no data in the master or replicas
+				// from $wikiId but there is no data in the primary database or replicas
 				// that corroborates that.
 				unset( $wikis[$wikiId] );
 				// Queue a job to delete the bogus attachment record.
@@ -2567,7 +2567,7 @@ class CentralAuthUser implements IDBAccessObject {
 				$items[$wikiID] = $data;
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localnames table told us that the name was
-				// unattached on $wikiId but there is no data in the master
+				// unattached on $wikiId but there is no data in the primary database
 				// or replicas that corroborates that.
 				// Queue a job to delete the bogus record.
 				$this->queueAdminUnattachJob( $wikiID );
@@ -2605,7 +2605,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$conds = [ 'user_name' => $this->mName ];
 		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		if ( !$row ) {
-			# Row missing from replica, try the master instead
+			# Row missing from replica, try the primary database instead
 			$db = $lb->getConnectionRef( DB_PRIMARY, [], $wikiID );
 			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
 		}

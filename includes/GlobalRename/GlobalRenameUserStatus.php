@@ -31,7 +31,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	/**
 	 * Get a Database object for the CentralAuth db
 	 *
-	 * @param int $type DB_REPLICA or DB_MASTER
+	 * @param int $type DB_REPLICA or DB_PRIMARY
 	 *
 	 * @return IDatabase
 	 */
@@ -65,12 +65,12 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * whether it's the old or new name.
 	 *
 	 * @param string|null $wiki Only look for renames on the given wiki.
-	 * @param string|null $useMaster Set to 'master' to query the master db
+	 * @param string|null $usePrimaryDb Set to 'master' to query the primary db
 	 *
 	 * @return array (oldname, newname)
 	 */
-	public function getNames( $wiki = null, $useMaster = null ) {
-		$db = $this->getDB( $useMaster === 'master' ? DB_PRIMARY : DB_REPLICA );
+	public function getNames( $wiki = null, $usePrimaryDb = null ) {
+		$db = $this->getDB( $usePrimaryDb === 'master' ? DB_PRIMARY : DB_REPLICA );
 
 		$where = [ $this->getNameWhereClause( $db ) ];
 

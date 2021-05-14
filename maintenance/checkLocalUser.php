@@ -82,7 +82,7 @@ class CheckLocalUser extends Maintenance {
 	public function execute() {
 		$this->initialize();
 
-		$centralMaster = CentralAuthUtils::getCentralDB();
+		$centralPrimaryDb = CentralAuthUtils::getCentralDB();
 
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
@@ -99,7 +99,7 @@ class CheckLocalUser extends Maintenance {
 						if ( $this->user ) {
 							$conds['lu_name'] = $this->user;
 						}
-						$centralMaster->delete( 'localuser', $conds, __METHOD__ );
+						$centralPrimaryDb->delete( 'localuser', $conds, __METHOD__ );
 						$this->deleted ++;
 					} else {
 						$this->output(
@@ -133,7 +133,7 @@ class CheckLocalUser extends Maintenance {
 					$this->total++;
 					if ( !$this->dryrun ) {
 						// go ahead and delete the extraneous entry
-						$centralMaster->delete(
+						$centralPrimaryDb->delete(
 							'localuser',
 							[
 								"lu_wiki" => $wiki,

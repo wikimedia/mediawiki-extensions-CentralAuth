@@ -384,7 +384,7 @@ class GlobalRenameRequest {
 	/**
 	 * Get a Database object for the CentralAuth db
 	 *
-	 * @param int $type DB_REPLICA or DB_MASTER
+	 * @param int $type DB_REPLICA or DB_PRIMARY
 	 * @return IDatabase
 	 */
 	protected static function getDB( $type ) {

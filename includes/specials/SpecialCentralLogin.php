@@ -101,7 +101,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$user = User::newFromName( $info['name'] );
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $getException( $centralUser, $user, $info ) ) {
-			// Retry from master. Central login is done right after user creation so lag problems
+			// Retry from primary database. Central login is done right after user creation so lag problems
 			// are common.
 			$user = User::newFromName( $info['name'] );
 			$user->load( User::READ_LATEST );
