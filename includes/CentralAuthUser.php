@@ -1939,7 +1939,10 @@ class CentralAuthUser implements IDBAccessObject {
 				'timestamp' => wfTimestampNow(),
 				'expiry' => $dbw->getInfinity(),
 				'createAccount' => true,
-				'enableAutoblock' => true,
+				// T281972: This is currently disabled because it doesn't work with xwiki blocks
+				// It is fine to disable temporarily, because locks do not have any autoblock mechanism anyway,
+				// and stewards are used to it.
+				'enableAutoblock' => false,
 				'hideName' => true,
 				'blockEmail' => true,
 				'by' => UserIdentityValue::newExternal(
