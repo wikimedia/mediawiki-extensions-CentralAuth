@@ -367,6 +367,7 @@
 	"centralauth-rename-form-reason": "Reason",
 	"centralauth-rename-form-suppressredirects": "Suppress creation of redirects",
 	"centralauth-rename-globaleditcount-threshold": "This user has more than $1 {{PLURAL:$1|edit|edits}}. Please confirm that you are sure that you want to rename this user and that a system administrator is available to monitor this rename.",
+	"centralauth-rename-listed-on-denylist": "This user is listed on the global rename deny list. To rename this user, the deny list must be changed first.",
 	"centralauth-rename-movelog": "Automatically moved page while renaming the user \"[[Special:CentralAuth/$1|$1]]\" to \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "There are no renames in progress for $1. They may have already finished.",
 	"centralauth-rename-notinstalled": "The Renameuser extension is not installed.",

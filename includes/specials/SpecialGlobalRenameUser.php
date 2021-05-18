@@ -205,6 +205,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				}
 		}
 
+		// Validate rename deny list
+		$globalRenameDenyList = new GlobalRenameBlacklist();
+		if ( !$globalRenameDenyList->checkUser( $oldUser ) ) {
+			return Status::newFatal( 'centralauth-rename-listed-on-denylist' );
+		}
+
 		$validator = new GlobalRenameUserValidator();
 		$status = $validator->validate( $oldUser, $newUser );
 
