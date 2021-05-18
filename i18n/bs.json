@@ -6,6 +6,7 @@
 			"Kolega2357",
 			"Obsuser",
 			"Palapa",
+			"Semso98",
 			"Srdjan m",
 			"Srđan"
 		]
@@ -150,7 +151,7 @@
 	"centralauth-finish-send-confirmation": "Pošalji šifru e-mailom",
 	"centralauth-finish-text": "Ako ovi računi pripadaju Vama, možete završiti proces unificiranja prijave putem jednostavnog unosa šifri za ostale račune ovdje:",
 	"centralauth-finish-title": "Završavanje spajanja",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} na $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|doprinos|doprinosa}} na $2",
 	"centralauth-foreign-link": "Korisnik $1 na $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Dodijeli dopuštenja",
 	"centralauth-globalgroupperms-newgroupname": "Ime nove grupe:",
