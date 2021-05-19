@@ -13,6 +13,7 @@
 			"Prevert",
 			"Toliño",
 			"Vivaelcelta",
+			"Xabier Cid",
 			"Xosé"
 		]
 	},
@@ -31,10 +32,10 @@
 	"centralauth-account-exists": "Non se pode crear a conta: o nome de usuario solicitado xa está sendo usado por un usuario noutra wiki.",
 	"centralauth-account-exists-reset": "O nome de usuario $1 non está rexistrado neste wiki, pero pode restablecer o seu contrasinal [[Special:CentralAuth/$1|nun wiki no que estea presente]].",
 	"centralauth-account-rename-exists": "Non se pode crear a conta: O nome de usuario xa está sendo usado. Por favor escolla outro nome.",
-	"centralauth-account-unattached-exists": "Non se pode crear a conta: O nome escollido xa está en uso. Por favor escolla outro nome.",
+	"centralauth-account-unattached-exists": "Non se puido crear esta conta: o nome que escolleu xa o usa alguén. Por favor, escolla outro nome.",
 	"centralauth-admin-action-hide-lists": "Agochar as contas seleccionadas da lista global de usuarios",
 	"centralauth-admin-action-hide-nochange": "Non cambiar os niveis de visibilidade",
-	"centralauth-admin-action-hide-none": "Facer visibles as contas seleccionadas",
+	"centralauth-admin-action-hide-none": "Fai que se vexan as contas seleccionadas",
 	"centralauth-admin-action-hide-oversight": "Agochar por completo as contas seleccionadas",
 	"centralauth-admin-action-lock-lock": "Bloquear as contas seleccionadas",
 	"centralauth-admin-action-lock-nochange": "Non cambiar os bloqueos",
