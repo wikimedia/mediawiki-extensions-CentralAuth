@@ -117,7 +117,7 @@ class ForceRenameUsers extends Maintenance {
 			[
 				'from' => $name,
 				'to' => $newCAUser->getName(),
-				'renamer' => 'Maintenance script',
+				'renamer' => User::MAINTENANCE_SCRIPT_USER,
 				'movepages' => true,
 				'suppressredirects' => true,
 				'promotetoglobal' => true,
