@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Adehertogh"
+		]
+	},
+	"centralauth-admin-blocklog": "O zoznamos kana sas o redaktoris blokimen",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|diňipen|diňipena}} pre $2",
+	"centralauth-foreign-link": "Redaktoris $1 pre $2",
+	"centralauth-merge-method-login": "kerdlo pašo uštariben"
+}
