@@ -55,7 +55,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groups that the user is in. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.\n\nSee also:\n* {{msg-mw|Abusefilter-edit-builder-vars-user-groups}}.",
 	"action-centralauth-createlocal": "{{doc-action|centralauth-createlocal}}",
 	"action-centralauth-lock": "{{doc-action|centralauth-lock}}",
-	"action-centralauth-merge": "{{doc-action|centralauth-merge}}",
+	"action-centralauth-merge": "{{doc-action|centralauth-merge}}\n{{doc-singularthey}}",
 	"action-centralauth-oversight": "{{doc-action|centralauth-oversight}}",
 	"action-centralauth-rename": "{{doc-action|centralauth-rename}}",
 	"action-centralauth-unmerge": "{{doc-action|centralauth-unmerge}}",

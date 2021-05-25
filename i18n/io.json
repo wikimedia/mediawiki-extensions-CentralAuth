@@ -82,6 +82,7 @@
 	"centralauth-rename-progress-username": "Uzero-nomo",
 	"centralauth-rename-table-domain": "Lokala Wiki",
 	"centralauth-rename-table-status": "Stando",
+	"centralauth-rename-table-status-done": "Facita",
 	"centralauth-ro": "Informo globala pri l'uzero-konto",
 	"centralauth-usermerge-form-reason": "Motivo",
 	"centralauth-uwbr-registration-nodate": "Nekonocata",
@@ -89,6 +90,7 @@
 	"globalgroupmembership": "Membreso en globala grupi",
 	"globalrenamequeue-form-status-all": "omna",
 	"globalrenamequeue-request-cancel-text": "Anular",
+	"globalrenamerequest-email-label": "E-postal adreso:",
 	"globalusers": "Listo di generala konti",
 	"mergeaccount": "Stando dil 'login' por omna konti"
 }
