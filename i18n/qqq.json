@@ -389,6 +389,7 @@
 	"centralauth-rename-form-reason": "{{Identical|Reason}}\nLabel for form field of log reason for the rename",
 	"centralauth-rename-form-suppressredirects": "Label for checkbox of whether to suppress redirects when moving the user's userpages",
 	"centralauth-rename-globaleditcount-threshold": "Message shown on Special:GlobalRenameUser if the user has more than a certain number of edits. $1 is the number of edits.",
+	"centralauth-rename-listed-on-denylist": "Message shown by Special:GlobalRenameUser if the renamed user is listed in the deny list.",
 	"centralauth-rename-movelog": "Move log comment used when automatically moving user pages\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"centralauth-rename-notinprogress": "Message shown when there is no rename in progress for the provided user\n* $1 is the username",
 	"centralauth-rename-notinstalled": "Error message if the RenameUser extension is not installed.",
