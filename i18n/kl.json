@@ -1,9 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Qaqqalik"
-		]
-	},
-	"centralauth-login-progress": "Isersimalerputit {{int:Centralauth-groupname}}-p suliniutaani:",
-	"centralauth-logout-progress": "{{int:Centralauth-groupname}}-ip suliniutaani ukunani aamma anivutit:"
-}
