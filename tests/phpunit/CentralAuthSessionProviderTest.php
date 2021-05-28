@@ -1,12 +1,12 @@
 <?php
 
-use MediaWiki\Session\SessionManager;
-use MediaWiki\User\UserNameUtils;
+use MediaWiki\Session\SessionProviderTestTrait;
 
 /**
  * @covers CentralAuthSessionProvider
  */
 class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
+	use SessionProviderTestTrait;
 
 	private function getConfig() {
 		return new HashConfig( [
@@ -36,12 +36,8 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 			'cookieOptions' => [ 'prefix' => '' ],
 			'centralCookieOptions' => [ 'prefix' => '' ],
 		] );
-		$provider->init(
-			new TestLogger(),
-			$this->getConfig(),
-			$this->createNoOpMock( SessionManager::class ),
-			$this->createHookContainer(),
-			$this->getServiceContainer()->getUserNameUtils()
+		$this->initProvider(
+			$provider, null, $this->getConfig(), null, null, $this->getServiceContainer()->getUserNameUtils()
 		);
 		$request = new FauxRequest();
 		$request->setCookies( $cookies, '' );
@@ -65,13 +61,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetRememberUserDuration() {
 		$provider = new CentralAuthSessionProvider( [ 'priority' => 42 ] );
-		$provider->init(
-			new TestLogger(),
-			$this->getConfig(),
-			$this->createNoOpMock( SessionManager::class ),
-			$this->createHookContainer(),
-			$this->createNoOpMock( UserNameUtils::class )
-		);
+		$this->initProvider( $provider, null, $this->getConfig() );
 
 		$this->assertSame( 200, $provider->getRememberUserDuration() );
 	}

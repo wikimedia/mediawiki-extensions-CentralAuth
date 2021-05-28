@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Session\SessionManager;
+use MediaWiki\Session\SessionProviderTestTrait;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\NullLogger;
 
@@ -10,6 +11,7 @@ use Psr\Log\NullLogger;
  * @group Database
  */
 class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProviderTest {
+	use SessionProviderTestTrait;
 
 	protected function newSessionProvider() {
 		$config = new HashConfig( [
@@ -28,12 +30,8 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 		] );
 
 		$provider = new CentralAuthHeaderSessionProvider();
-		$provider->init(
-			$logger,
-			$config,
-			$manager,
-			$hookContainer,
-			$this->getServiceContainer()->getUserNameUtils()
+		$this->initProvider(
+			$provider, null, $config, $manager, $hookContainer, $this->getServiceContainer()->getUserNameUtils()
 		);
 		return $provider;
 	}

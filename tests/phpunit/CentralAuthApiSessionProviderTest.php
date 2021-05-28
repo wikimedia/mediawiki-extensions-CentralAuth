@@ -3,6 +3,7 @@
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
+use MediaWiki\Session\SessionProviderTestTrait;
 use Psr\Log\NullLogger;
 
 /**
@@ -11,6 +12,7 @@ use Psr\Log\NullLogger;
  * @group Database
  */
 class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderTest {
+	use SessionProviderTestTrait;
 
 	/** @var \MediaWiki\HookContainer\HookContainer */
 	private $hookContainer;
@@ -67,12 +69,8 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		] );
 
 		$provider = new CentralAuthApiSessionProvider();
-		$provider->init(
-			$logger,
-			$config,
-			$manager,
-			$this->hookContainer,
-			$this->getServiceContainer()->getUserNameUtils()
+		$this->initProvider(
+			$provider, null, $config, $manager, $this->hookContainer, $this->getServiceContainer()->getUserNameUtils()
 		);
 		return $provider;
 	}
