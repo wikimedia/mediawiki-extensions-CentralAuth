@@ -340,6 +340,7 @@
 	"centralauth-rename-form-reason": "Причина",
 	"centralauth-rename-form-suppressredirects": "Потисни создавање на пренасочувања",
 	"centralauth-rename-globaleditcount-threshold": "Корисников има повеќе од {{PLURAL:$1|едно уредување|$1 уредувања}}. Потврдете дека сте сигурни дека сакате да го преименувате и дека има администратор кој ќе врши надзор врз преименувањето.",
+	"centralauth-rename-listed-on-denylist": "Овој корисник се води на глобалниот список на одбиени преименувања. За да го преименувате, најпрвин ќе мора да се измени списокот.",
 	"centralauth-rename-movelog": "Автоматски преместена страницата при преименување на корисникот „[[Special:CentralAuth/$1|$1]]“ во „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-notinprogress": "Нема преименувања во тек за $1. Може веќе да завршило.",
 	"centralauth-rename-notinstalled": "Додатокот Renameuser не е воспоставен.",

@@ -5,7 +5,8 @@
 			"Chaipau",
 			"Dibya Dutta",
 			"Gitartha.bordoloi",
-			"Psneog"
+			"Psneog",
+			"Simbu123"
 		]
 	},
 	"centralauth": "গোলকীয় সদস্য ব্যৱস্থাপক",
@@ -41,6 +42,7 @@
 	"centralauth-admin-lookup-rw": "ব্যৱহাৰকাৰী একাউণ্টৰ ব্যৱস্থাপনা কৰক",
 	"centralauth-admin-manage": "ব্যৱহাৰকাৰী তথ্যৰ ব্যৱস্থাপনা কৰক",
 	"centralauth-admin-merge": "নিৰ্বাচিতসমূহ একত্ৰিত কৰক",
+	"centralauth-admin-multi-bot": "শেহতীয়া সাল-সলনি",
 	"centralauth-admin-no": "নহয়",
 	"centralauth-admin-no-unified": "এই সদস্যনামৰ বাবে কোনো একত্ৰিত একাউণ্ট নাই।",
 	"centralauth-admin-none-selected": "পৰিৱৰ্তনৰ বাবে কোনো একাউণ্ট নিৰ্বাচন কৰা হোৱা নাই।",
