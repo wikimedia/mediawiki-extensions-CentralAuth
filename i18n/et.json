@@ -41,6 +41,7 @@
 	"centralauth-admin-delete-nonexistent": "Tõrge: Globaalset kontot \"<nowiki>$1</nowiki>\" pole olemas.",
 	"centralauth-admin-delete-success": "Globaalne konto \"<nowiki>$1</nowiki>\" on kustutatud.",
 	"centralauth-admin-delete-title": "Konto kustutamine",
+	"centralauth-admin-group-temporary": "$1 (''ajutine'')",
 	"centralauth-admin-hidden-list": "globaalsete kasutajate loenditest",
 	"centralauth-admin-hidden-oversight": "varjatud",
 	"centralauth-admin-info-attached": "Ühendatud kontosid:",
