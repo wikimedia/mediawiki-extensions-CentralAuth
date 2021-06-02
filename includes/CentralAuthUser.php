@@ -1932,8 +1932,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			// TODO DatabaseBlock is not @newable
 			$block = new DatabaseBlock( [
-				'address' => $this->mName,
-				'user' => $data['id'],
+				'address' => UserIdentityValue::newRegistered( $data['id'], $this->mName, $wiki ),
 				'reason' => $blockReason,
 				'timestamp' => wfTimestampNow(),
 				'expiry' => $dbw->getInfinity(),
