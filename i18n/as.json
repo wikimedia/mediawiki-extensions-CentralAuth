@@ -253,6 +253,7 @@
 	"globalgroupmembership": "গোলকীয় গোটৰ সদস্যপদ",
 	"globalgrouppermissions": "গোলকীয় গোটৰ ব্যৱস্থাপনা",
 	"globalrenamequeue-request-userinfo-global": "* সদস্য: [[Special:CentralAuth/$1|$1]]\n* গৃহ ৱিকি: $2\n* নতুন নাম: [[Special:CentralAuth/$3|$3]]\n* গোলকীয় সম্পাদনাৰ সংখ্যা: $4",
+	"globalrenamerequest": "গোলকীয় সদস্য একাউণ্টৰ নাম সলনিৰ অনুৰোধ",
 	"globalusers": "গোলকীয় ব্যৱহাৰকাৰীৰ তালিকা",
 	"mergeaccount": "প্ৰৱেশ একত্ৰীকৰণ অৱস্থা",
 	"right-centralauth-lock": "গোলকীয় একাউণ্ট বন্ধ বা গোপন কৰক",

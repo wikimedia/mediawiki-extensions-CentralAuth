@@ -392,6 +392,7 @@
 	"centralauth-rename-form-reason": "Motif",
 	"centralauth-rename-form-suppressredirects": "Supprimer la création de redirections",
 	"centralauth-rename-globaleditcount-threshold": "Cet utilisateur a fait plus {{PLURAL:$1|d’une modification|de $1 modifications}}. Veuillez confirmer que vous voulez vraiment renommer cet utilisateur et qu’un administrateur système est disponible pour surveiller ce renommage.",
+	"centralauth-rename-listed-on-denylist": "Cet utilisateur est listé dans la liste de refus de renommage global. Pour renommer cet utilisateur, la liste de refus doit d’abord être modifiée.",
 	"centralauth-rename-movelog": "Page automatiquement déplacée lors du renommage de l’utilisateur « [[Special:CentralAuth/$1|$1]] » en « [[Special:CentralAuth/$2|$2]] »",
 	"centralauth-rename-notinprogress": "Il n’y a pas de renommage en cours pour $1. Ils peuvent s’être terminés.",
 	"centralauth-rename-notinstalled": "L’extension Renommage des utilisateurs n’est pas installée.",
