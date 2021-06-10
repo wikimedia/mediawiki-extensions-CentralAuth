@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Aushulz",
 			"C.R.",
 			"Gmelfi",
@@ -14,6 +15,7 @@
 	"centralauth-admin-info-hidden": "Liveddu ammucciatu:",
 	"centralauth-admin-info-locked": "Firmatu:",
 	"centralauth-admin-info-registered": "Riggistratu:",
+	"centralauth-admin-info-username": "Nomu utenti:",
 	"centralauth-admin-intro": "Sta ntirfaccia pò èssiri utilizzata pi l'amministrazzioni di l'utilizzatura glubbali.",
 	"centralauth-admin-list-blocked": "Bluccatu",
 	"centralauth-admin-lookup-ro": "Talìa nfurmazzioni utilizzaturi",
@@ -25,7 +27,7 @@
 	"centralauth-admin-reason": "Mutivu:",
 	"centralauth-admin-status-hidden": "Ammucciatu:",
 	"centralauth-admin-status-locked": "Firmatu:",
-	"centralauth-admin-username": "Nomu utilizzaturi:",
+	"centralauth-admin-username": "Nomu utenti:",
 	"centralauth-admin-yes": "sì",
 	"centralauth-antispoof-desc": "Junci la ticnoluggìa di AntiSpoof a CentralAuth",
 	"centralauth-desc": "[[Special:MergeAccount|Unifica li tò utenzi]] supra li sita gistiti dâ {{int:Centralauth-groupname}}",
@@ -67,8 +69,12 @@
 	"centralauth-prefs-status": "Utenza glubbali:",
 	"centralauth-prefs-view": "Ammùscia li nfurmazzioni glubbali supra l'utenti",
 	"centralauth-rename-desc": "Cunzenti di canciari nomu ê cunti glubbali",
+	"centralauth-rename-progress-username": "Nomu utenti",
+	"centralauth-uwbr-name": "Nomu utenti",
 	"globalgrouppermissions": "Gistioni dê gruppi glubbali",
 	"globalrenameprogress": "Prugressu rinòmina glubbali",
+	"globalrenamequeue-column-rq-name": "Nomu utenti",
+	"globalrenamequeue-form-username": "Nomu utenti:",
 	"globalrenamerequest": "Addumannata di rinòmina unificata",
 	"globalrenamerequest-legend": "Addumannata di rinòmina unificata",
 	"globalusers": "Elencu di l'utenti glubbali",
