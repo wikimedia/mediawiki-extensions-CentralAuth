@@ -73,13 +73,18 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	}
 
 	public function addDBData() {
-		$user = User::newFromName( "UTCentralAuthIdLookup1" );
+		$services = $this->getServiceContainer();
+		$user = $services->getUserFactory()->newFromName( "UTCentralAuthIdLookup1" );
 		if ( $user->getId() == 0 ) {
 			$user->addToDatabase();
 		}
-		$user->addGroup( 'centralauth-id-lookup-test' );
 
-		$user = User::newFromName( "UTCentralAuthIdLookup2" );
+		$groups = $services->getUserGroupManager()->getUserGroups( $user );
+		if ( !in_array( 'centralauth-id-lookup-test', $groups ) ) {
+			$services->getUserGroupManager()->addUserToGroup( $user, 'centralauth-id-lookup-test' );
+		}
+
+		$user = $services->getUserFactory()->newFromName( "UTCentralAuthIdLookup2" );
 		if ( $user->getId() == 0 ) {
 			$user->addToDatabase();
 		}
