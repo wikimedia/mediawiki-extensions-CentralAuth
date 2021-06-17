@@ -387,6 +387,7 @@
 	"centralauth-rename-form-reason": "原因",
 	"centralauth-rename-form-suppressredirects": "阻止重定向创建",
 	"centralauth-rename-globaleditcount-threshold": "该用户拥有超过$1次{{PLURAL:$1|编辑}}。请确认您要重命名该用户，然后系统管理员可监视这次重命名。",
+	"centralauth-rename-listed-on-denylist": "此用户列在全域重命名拒绝列表中。要重命名此用户，必须先更改拒绝列表。",
 	"centralauth-rename-movelog": "当重命名用户“[[Special:CentralAuth/$1|$1]]”至“[[Special:CentralAuth/$2|$2]]”時自动移动页面",
 	"centralauth-rename-notinprogress": "没有对$1的重命名进度。它们可能已经完成。",
 	"centralauth-rename-notinstalled": "重命名用户扩展未安装。",
