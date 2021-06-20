@@ -100,14 +100,24 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		if ( $username[0] == '#' ) {
 			$id = intval( substr( $username, 1 ) );
 			$user = CentralAuthGroupMembershipProxy::newFromId( $id );
+			$globalUser = CentralAuthUser::newMasterInstanceFromId( $id );
 
-			if ( !$user ) {
+			// If the user exists, but is hidden from the viewer, pretend that it does
+			// not exist. - T285190/T260863
+			if ( !$user || ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) &&
+				!$this->getContext()->getAuthority()->isAllowed( 'centralauth-oversight' ) )
+			) {
 				return Status::newFatal( 'noname', $id );
 			}
 		} else {
 			$user = CentralAuthGroupMembershipProxy::newFromName( $username );
 
-			if ( !$user ) {
+			// If the user exists, but is hidden from the viewer, pretend that it does
+			// not exist. - T285190
+			$globalUser = CentralAuthUser::getMasterInstanceByName( $username );
+			if ( !$user || ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) &&
+				!$this->getContext()->getAuthority()->isAllowed( 'centralauth-oversight' ) )
+			) {
 				return Status::newFatal( 'nosuchusershort', $username );
 			}
 		}
