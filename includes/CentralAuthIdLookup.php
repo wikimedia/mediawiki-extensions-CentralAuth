@@ -1,12 +1,14 @@
 <?php
 
+use MediaWiki\User\UserIdentity;
+
 /**
  * Look up central IDs using CentralAuth
  */
 class CentralAuthIdLookup extends CentralIdLookup {
 	public function lookupCentralIds(
 		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
-	) {
+	): array {
 		if ( !$idToName ) {
 			return [];
 		}
@@ -43,7 +45,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 	public function lookupUserNames(
 		array $nameToId, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
-	) {
+	): array {
 		if ( !$nameToId ) {
 			return [];
 		}
@@ -76,17 +78,15 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		return $nameToId;
 	}
 
-	public function isAttached( User $user, $wikiId = null ) {
-		if ( $wikiId === null ) {
-			$wikiId = wfWikiID();
-		}
+	public function isAttached( $user, $wikiId = UserIdentity::LOCAL ): bool {
+		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
 		$centralUser = CentralAuthUser::getInstance( $user );
 		return $centralUser->getId() != 0 && $centralUser->attachedOn( $wikiId );
 	}
 
 	public function centralIdFromLocalUser(
-		User $user, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
-	) {
+		$user, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
+	): int {
 		return $this->isAttached( $user ) ? CentralAuthUser::getInstance( $user )->getId() : 0;
 	}
 
