@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BadDog",
 			"Conquistador",
 			"Kolega2357",
 			"OC Ripper",
@@ -49,7 +50,7 @@
 	"centralauth-admin-lookup-rw": "Upravljanje korisničkim nalogom",
 	"centralauth-admin-manage": "Upravljanje korisničkim podacima",
 	"centralauth-admin-merge": "Spoji izabrane",
-	"centralauth-admin-multi-bot": "Nedavne izmjene / Скорашње измене",
+	"centralauth-admin-multi-bot": "Nedavne izmjene / Недавне измене",
 	"centralauth-admin-multi-botcheck": "Označuj stavke u [[Special:RecentChanges|{{int:recentchanges}}]] kao botovske stavke.",
 	"centralauth-admin-no": "ne",
 	"centralauth-admin-no-unified": "Nema objedinjenog naloga za ovo korisničko ime.",
