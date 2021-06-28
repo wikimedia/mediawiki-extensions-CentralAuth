@@ -339,6 +339,7 @@
 	"centralauth-rename-form-reason": "Motivo",
 	"centralauth-rename-form-suppressredirects": "Supprimer le creation de redirectiones",
 	"centralauth-rename-globaleditcount-threshold": "Iste usator ha plus de $1 {{PLURAL:$1|modification|modificationes}}. Per favor, confirma que tu es secur de voler renominar iste usator e que un administrator de systema es disponibile pro surveliar iste renomination.",
+	"centralauth-rename-listed-on-denylist": "Iste usator es in le lista global de refusa de renomination. Pro renominar iste usator, le lista de refusa debe primo esser modificate.",
 	"centralauth-rename-movelog": "Pagina renominate automaticamente in le curso de renominar le usator \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Il non ha renominationes in curso pro $1. Illos pote esser jam finite.",
 	"centralauth-rename-notinstalled": "Le extension Renameuser non es installate.",

@@ -7,9 +7,27 @@
 			"NoiX180"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-groups": "Seka global sané rumasuk sang anganggé puniki",
+	"action-centralauth-createlocal": "Maksa ngardi akun lokal",
+	"action-centralauth-lock": "Ngunci utawi ngabuka kunci akun global",
+	"centralauth-admin-blocked-reason": "Hawanan: $1",
 	"centralauth-admin-blocklog": "log pangempet",
+	"centralauth-admin-reason": "Hawanan:",
+	"centralauth-admin-reason-other": "Hawanan tiosan/wewehan:",
+	"centralauth-admin-reason-other-select": "Hawanan tiosan:",
+	"centralauth-admin-status-hidden": "Engkebang:",
+	"centralauth-admin-status-locked": "Kakunci:",
+	"centralauth-admin-username": "Peséngan sang anganggé:",
 	"centralauth-admin-yes": "inggih",
+	"centralauth-editset-type": "Soroh:",
+	"centralauth-finish-login": "Manjing log",
+	"centralauth-finish-password": "Kruna sandi:",
+	"centralauth-finish-send-confirmation": "Rerepél kata kunci",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pituut}} ring $2",
 	"centralauth-foreign-link": "Sang anganggé $1 ring $2",
-	"centralauth-merge-method-login": "kakardi ri tatkala manjing log"
+	"centralauth-globalgroupperms-group": "Seka",
+	"centralauth-logout-no-others": "Ragané otomatis sampun medal log saking proyék-proyék liyanan saking {{int:Centralauth-groupname}}.",
+	"centralauth-merge-method-login": "kakardi ri tatkala manjing log",
+	"centralauth-merge-method-questionmark": "(?)",
+	"centralauth-rename-form-reason": "Hawanan"
 }
