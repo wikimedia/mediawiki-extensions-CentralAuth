@@ -367,6 +367,7 @@
 	"centralauth-rename-form-reason": "Причина",
 	"centralauth-rename-form-suppressredirects": "Заборонити створення перенаправлень",
 	"centralauth-rename-globaleditcount-threshold": "Цей користувач здійснив більш ніж $1 {{PLURAL:$1|редагування|редагування|редагувань}}. Будь ласка, підтвердьте, що Ви хочете перейменувати цього користувача, і що системний адміністратор може простежити за цим процесом.",
+	"centralauth-rename-listed-on-denylist": "Цей користувач є у списку глобальних відмов на перейменування. Щоб перейменувати цього користувача, треба спочатку відредагувати список відмов.",
 	"centralauth-rename-movelog": "Автоматичне перейменування сторінки при перейменуванні користувача «[[Special:CentralAuth/$1|$1]]» на «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "Немає чинних перейменувань для $1. Можливо, вони вже закінчились.",
 	"centralauth-rename-notinstalled": "Розширення Renameuser не інстальоване.",
