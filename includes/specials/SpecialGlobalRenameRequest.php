@@ -145,6 +145,16 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return array
 	 */
 	public function getFormFields() {
+		$suggestedUsername = $this->suggestedUsername();
+		if ( $suggestedUsername !== false ) {
+			$suggestedHelp = [
+				'globalrenamerequest-newname-help',
+				$suggestedUsername,
+			];
+		} else {
+			// Help message if we couldn't generate a suggested username
+			$suggestedHelp = 'globalrenamerequest-newname-help-basic';
+		}
 		$fields = [
 			'username' => [
 				'cssclass'      => 'mw-globalrenamerequest-field',
@@ -162,10 +172,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'name'          => 'newname',
 				'required'      => true,
 				'type'          => 'text',
-				'help-message'  => [
-					'globalrenamerequest-newname-help',
-					$this->suggestedUsername(),
-				],
+				'help-message'  => $suggestedHelp,
 				'validation-callback' => [ $this, 'validateNewname' ],
 			],
 		];
@@ -218,13 +225,23 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * Generate a username that appears to be globally available that an
 	 * unimaginative user could use if they like.
 	 *
-	 * @return string
+	 * @return string|bool false if can't generate a username
 	 */
 	protected function suggestedUsername() {
-		do {
+		// Only allow 5 tries (T260865)
+		$counter = 0;
+		// Whether we found a username that is available to use
+		$found = false;
+		while ( !$found && $counter < 5 ) {
 			$rand = $this->getUser()->getName() . rand( 123, 999 );
-		} while ( !GlobalRenameRequest::isNameAvailable( $rand )->isOK() );
-		return $rand;
+			$found = GlobalRenameRequest::isNameAvailable( $rand )->isOK();
+			$counter++;
+		}
+		if ( $found ) {
+			return $rand;
+		} else {
+			return false;
+		}
 	}
 
 	/**
