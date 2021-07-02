@@ -504,6 +504,7 @@
 	"globalrenamerequest-newname-err-invalid": "Used as error message.",
 	"globalrenamerequest-newname-err-taken": "Used as error message.",
 	"globalrenamerequest-newname-help": "Form field inline help.\n\n* $1 is a randomly generated username suggestion.",
+	"globalrenamerequest-newname-help-basic": "Form field inline help.",
 	"globalrenamerequest-newname-label": "Form field label.",
 	"globalrenamerequest-pretext": "Instructions for rename process.",
 	"globalrenamerequest-reason-label": "Form field label.",
