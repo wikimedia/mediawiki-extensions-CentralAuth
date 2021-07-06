@@ -478,6 +478,7 @@
 	"globalrenamerequest-newname-err-invalid": "Il nome utente indicato non è valido.",
 	"globalrenamerequest-newname-err-taken": "Il nome utente inserito è già utilizzato. Scegli un nome utente diverso.",
 	"globalrenamerequest-newname-help": "Inserisci il nuovo nome utente che vuoi usare, ad esempio \"$1\"",
+	"globalrenamerequest-newname-help-basic": "Inserisci il nuovo nome utente che vuoi usare.",
 	"globalrenamerequest-newname-label": "Nome utente richiesto:",
 	"globalrenamerequest-pretext": "Richiedi un nuovo nome utente per essere conosciuto in tutti i progetti.\n\nTutti i tuoi contributi precedenti saranno collegati a questo nuovo nome utente.\n\nUn elenco di richieste fatte tramite questo modulo sarà reso disponibile agli utenti abilitati ad eseguire questa operazione. Sarai informato per email quando questo processo sarà completato.\n\nSe la tua richiesta è motivata dal desiderio di anonimato/privacy, tieni presente che verrà creato un record di registro permanente con il tuo nome precedente. Pertanto, potresti considerare semplicemente di [[Special:CreateAccount|creare una nuova utenza separata e indipendente]] e avere la tua utenza attuale rinominata in qualcosa di casuale e abbandonarla.",
 	"globalrenamerequest-reason-label": "Motivo della richiesta",

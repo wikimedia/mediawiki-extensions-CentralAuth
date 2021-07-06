@@ -3,6 +3,7 @@
 		"authors": [
 			"Imre",
 			"Kghbln",
+			"Killarnee",
 			"MichaelFrey",
 			"Umherirrender"
 		]
@@ -42,5 +43,6 @@
 	"centralauth-prefs-count-attached": "Ihr Benutzerkonto ist bei $1 {{PLURAL:$1|Projekt|Projekten}} aktiv.",
 	"centralauth-prefs-count-unattached": "Es gibt in $1 {{PLURAL:$1|Projekt|Projekten}} unbestätigte Benutzerkonten mit Ihrem Namen.",
 	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da Ihre Sitzungsdaten verloren gegangen sind.",
+	"globalrenamerequest-newname-help-basic": "Gib den neuen Benutzernamen ein, den du verwenden willst.",
 	"centralauth-badaccess-blacklisted": "Sie können keine globale Umbenennung beantragen, weil Sie auf einer Negativliste stehen."
 }
