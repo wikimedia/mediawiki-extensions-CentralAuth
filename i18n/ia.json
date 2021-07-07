@@ -469,6 +469,7 @@
 	"globalrenamerequest-newname-err-invalid": "Tu non ha specificate un nomine de usator valide.",
 	"globalrenamerequest-newname-err-taken": "Iste nomine de usator es jam in uso.\nElige un altere, per favor.",
 	"globalrenamerequest-newname-help": "Scribe le nove nomine de usator que tu vole usar, p.ex. \"$1\".",
+	"globalrenamerequest-newname-help-basic": "Scribe le nove nomine de usator que tu vole usar.",
 	"globalrenamerequest-newname-label": "Nomine de usator requestate:",
 	"globalrenamerequest-pretext": "Requesta un nove nomine de usator per le qual tu essera cognoscite in tote le projectos.\n\nTote tu contributiones previe essera connectite a iste nove nomine de usator.\n\nUn lista de requestas facite per medio de iste formulario essera divulgate al personas capace de exequer iste operation. Tu recipera un e-mail quando iste processo es completate.\n\nSi tu requesta es motivate per un desiro de anonymitate/confidentialitate, alora nota ben que le renomination essera permanentemente registrate con un indication de tu nomine ancian. In tal caso, tu poterea preferer de [[Special:CreateAccount|crear un conto nove que es separate e independente]], pois renominar tu conto actual in qualcosa aleatori e abandonar lo.",
 	"globalrenamerequest-reason-label": "Motivo del requesta",
