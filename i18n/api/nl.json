@@ -51,7 +51,7 @@
 	"apihelp-query+globaluserinfo-example-1": "Gegevens opvragen over de huidige globale gebruiker",
 	"apihelp-query+globaluserinfo-example-2": "Informatie ophalen over de globale gebruiker [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-prop": "Welke eigenschappen op te vragen:\n;groups:Een lijst van globale groepen waar deze gebruiker lid van is.\n;rights:Een lijst van globale rechten die deze gebruiker heeft.\n;merged:Een lijst van samengevoegde accounts.\n;unattached:Een lijst van niet-samengevoegde accounts.\n;editcount:Het globale aantal bewerkingen van de gebruiker.",
-	"apihelp-query+globaluserinfo-param-user": "Gebruiker om informatie over te krijgen. De standaardwaarde is de huidige gebruiker.",
+	"apihelp-query+globaluserinfo-param-user": "Gebruiker om informatie over te krijgen. Als zowel <var>$1user</var> als <var>$1id</var> worden weggelaten, wordt uitgegaan van de huidige gebruiker.",
 	"apihelp-query+globaluserinfo-summary": "Gegevens weergeven over een globale gebruiker.",
 	"apihelp-query+wikisets-description": "Alle wikisets weergeven.",
 	"apihelp-query+wikisets-example-1": "Wikisets weergeven",
