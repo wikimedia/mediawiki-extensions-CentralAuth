@@ -180,9 +180,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Refresh 'remember me' preference
 				$user = $this->getUser();
 				$remember = (bool)$centralSession['remember'];
-				if ( $remember != $this->userOptionsManager
-					->getBoolOption( $user, 'rememberpassword', UserOptionsManager::READ_LOCKING )
-				) {
+				if ( $remember != $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' ) ) {
 					$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
 					DeferredUpdates::addCallableUpdate( function () use ( $user ) {
 						if ( wfReadOnly() ) {
