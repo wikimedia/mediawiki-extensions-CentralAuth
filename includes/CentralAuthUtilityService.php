@@ -68,7 +68,7 @@ class CentralAuthUtilityService {
 	}
 
 	/**
-	 * Return the reason why either the the local or the shared CentralAuth database is read only, false otherwise
+	 * Return the reason why either the local or the shared CentralAuth database is read only, false otherwise
 	 * @return bool|string
 	 */
 	public function getReadOnlyReason() {
