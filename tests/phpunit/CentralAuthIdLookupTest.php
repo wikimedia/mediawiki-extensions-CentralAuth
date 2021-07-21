@@ -1,5 +1,10 @@
 <?php
 
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\User\CentralId\CentralIdLookupFactory;
+use MediaWiki\User\UserIdentity;
+
 /**
  * Setup database tests for centralauth
  * @group CentralAuthDB
@@ -7,6 +12,7 @@
  * @covers CentralAuthIdLookup
  */
 class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
+	use MockAuthorityTrait;
 
 	/** @var int[] */
 	private $centralUsers = [
@@ -28,7 +34,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 			'GUP@ssword',
 			[ 'gu_id' => '1001' ],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 				[ 'enwiki', 'primary' ],
 				[ 'dewiki', 'login' ],
 				[ 'metawiki', 'password' ],
@@ -67,40 +73,38 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 			]
 		);
 		$u->save( $this->db );
-
-		$this->setGroupPermissions( 'centralauth-id-lookup-test', 'centralauth-oversight', true );
-		$this->overrideMwServices();
 	}
 
-	public function addDBData() {
-		$services = $this->getServiceContainer();
-		$user = $services->getUserFactory()->newFromName( "UTCentralAuthIdLookup1" );
-		if ( $user->getId() == 0 ) {
-			$user->addToDatabase();
-		}
-
-		$groups = $services->getUserGroupManager()->getUserGroups( $user );
-		if ( !in_array( 'centralauth-id-lookup-test', $groups ) ) {
-			$services->getUserGroupManager()->addUserToGroup( $user, 'centralauth-id-lookup-test' );
-		}
-
-		$user = $services->getUserFactory()->newFromName( "UTCentralAuthIdLookup2" );
-		if ( $user->getId() == 0 ) {
-			$user->addToDatabase();
-		}
+	private function newLookup(): CentralIdLookup {
+		$factory = new CentralIdLookupFactory(
+			new ServiceOptions(
+				CentralIdLookupFactory::CONSTRUCTOR_OPTIONS,
+				[
+					'CentralIdLookupProviders' => [
+						'central' => [ 'class' => CentralAuthIdLookup::class ],
+					],
+					'CentralIdLookupProvider' => 'central',
+				]
+			),
+			$this->getServiceContainer()->getObjectFactory(),
+			$this->getServiceContainer()->getUserIdentityLookup()
+		);
+		return $factory->getLookup();
 	}
 
 	public function testRegistration() {
-		$this->assertInstanceOf( CentralAuthIdLookup::class, CentralIdLookup::factory( 'CentralAuth' ) );
+		$this->assertInstanceOf(
+			CentralAuthIdLookup::class,
+			$this->getServiceContainer()
+				->getCentralIdLookupFactory()
+				->getLookup( 'CentralAuth' )
+		);
 	}
 
 	public function testLookupCentralIds() {
-		$lookup = new CentralAuthIdLookup();
-		$user1 = User::newFromName( 'UTCentralAuthIdLookup1' );
-		$user2 = User::newFromName( 'UTCentralAuthIdLookup2' );
-
-		$this->assertTrue( $user1->isAllowed( 'centralauth-oversight' ), 'sanity check' );
-		$this->assertFalse( $user2->isAllowed( 'centralauth-oversight' ), 'sanity check' );
+		$lookup = $this->newLookup();
+		$permitted = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-oversight' ] );
+		$nonPermitted = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-oversight' ] );
 
 		$this->assertSame( [], $lookup->lookupCentralIds( [] ) );
 
@@ -115,17 +119,14 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 
 		$this->assertSame( $expect2, $lookup->lookupCentralIds( $arg ) );
 		$this->assertSame( $expect, $lookup->lookupCentralIds( $arg, CentralIdLookup::AUDIENCE_RAW ) );
-		$this->assertSame( $expect, $lookup->lookupCentralIds( $arg, $user1 ) );
-		$this->assertSame( $expect2, $lookup->lookupCentralIds( $arg, $user2 ) );
+		$this->assertSame( $expect, $lookup->lookupCentralIds( $arg, $permitted ) );
+		$this->assertSame( $expect2, $lookup->lookupCentralIds( $arg, $nonPermitted ) );
 	}
 
 	public function testLookupUserNames() {
-		$lookup = new CentralAuthIdLookup();
-		$user1 = User::newFromName( 'UTCentralAuthIdLookup1' );
-		$user2 = User::newFromName( 'UTCentralAuthIdLookup2' );
-
-		$this->assertTrue( $user1->isAllowed( 'centralauth-oversight' ), 'sanity check' );
-		$this->assertFalse( $user2->isAllowed( 'centralauth-oversight' ), 'sanity check' );
+		$lookup = $this->newLookup();
+		$permitted = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-oversight' ] );
+		$nonPermitted = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-oversight' ] );
 
 		$this->assertSame( [], $lookup->lookupUserNames( [] ) );
 
@@ -140,8 +141,8 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 
 		$this->assertSame( $expect2, $lookup->lookupUserNames( $arg ) );
 		$this->assertSame( $expect, $lookup->lookupUserNames( $arg, CentralIdLookup::AUDIENCE_RAW ) );
-		$this->assertSame( $expect, $lookup->lookupUserNames( $arg, $user1 ) );
-		$this->assertSame( $expect2, $lookup->lookupUserNames( $arg, $user2 ) );
+		$this->assertSame( $expect, $lookup->lookupUserNames( $arg, $permitted ) );
+		$this->assertSame( $expect2, $lookup->lookupUserNames( $arg, $nonPermitted ) );
 	}
 
 	public static function provideLocalUsers() {
@@ -160,7 +161,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	 */
 	public function testCentralIdFromLocalUser( $username, $id, $succeed ) {
 		$user = User::newFromName( $username );
-		$lookup = new CentralAuthIdLookup();
+		$lookup = $this->newLookup();
 		$ret = $lookup->centralIdFromLocalUser( $user );
 		if ( $succeed ) {
 			$this->assertSame( $id, $ret );
@@ -176,10 +177,10 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	 * @param bool $succeed
 	 */
 	public function testLocalUserFromCentralId( $username, $id, $succeed ) {
-		$lookup = new CentralAuthIdLookup();
+		$lookup = $this->newLookup();
 		$user = $lookup->localUserFromCentralId( $id );
 		if ( $succeed ) {
-			$this->assertInstanceOf( 'User', $user );
+			$this->assertInstanceOf( UserIdentity::class, $user );
 			$this->assertSame( $username, $user->getName() );
 		} else {
 			$this->assertNull( $user );
@@ -204,7 +205,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	 */
 	public function testIsAttached( $username, $wikiId, $succeed ) {
 		$user = User::newFromName( $username );
-		$lookup = new CentralAuthIdLookup();
+		$lookup = $this->newLookup();
 		$this->assertSame( $succeed, $lookup->isAttached( $user, $wikiId ) );
 	}
 
