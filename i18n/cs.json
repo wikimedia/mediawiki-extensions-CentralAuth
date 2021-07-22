@@ -207,7 +207,7 @@
 	"centralauth-error-token-wronguser": "Token neodpovídá uživatelskému jménu v této relaci.\nNěkdo se může pokoušet přihlásit vás k zlomyslnému účtu.\nPokud se jen snažíte přihlásit se jako jiný uživatel, nejprve se odhlašte.",
 	"centralauth-error-unmerged": "Nemůžete editovat, protože váš účet není sjednocen.",
 	"centralauth-error-wrongprovider": "Tato speciální stránka není dostupná, když se používají $1.",
-	"centralauth-finish-incomplete": "Použitím tohoto hesla bylo sloučeno několik účtů. Další účty zatím nejsou potvrzeny.",
+	"centralauth-finish-incomplete": "Použitím tohoto hesla bylo sloučeno několik účtů. Ostatní účty zatím nebyly potvrzeny.",
 	"centralauth-finish-login": "Přihlásit se",
 	"centralauth-finish-noconfirms": "Tímto heslem se nepodařilo potvrdit žádný účet.",
 	"centralauth-finish-password": "Heslo:",
