@@ -752,7 +752,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return 'users';
 	}
 
-	private function validateGroupName( string $name ) : Status {
+	private function validateGroupName( string $name ): Status {
 		// all new group names should be lowercase (T202095)
 		if ( $name !== strtolower( $name ) ) {
 			return Status::newFatal( 'centralauth-editgroup-invalid-name-lowercase' );

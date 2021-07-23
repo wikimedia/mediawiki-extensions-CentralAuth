@@ -29,7 +29,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 	 */
 	private $userObjects;
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );

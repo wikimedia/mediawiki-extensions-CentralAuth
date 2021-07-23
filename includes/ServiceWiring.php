@@ -5,7 +5,7 @@ use MediaWiki\MediaWikiServices;
 return [
 	'CentralAuth.CentralAuthForcedLocalCreationService' => static function (
 		MediaWikiServices $services
-	) : CentralAuthForcedLocalCreationService {
+	): CentralAuthForcedLocalCreationService {
 		return new CentralAuthForcedLocalCreationService(
 			$services->getUserFactory(),
 			CentralAuthServices::getUtilityService( $services )
@@ -13,7 +13,7 @@ return [
 	},
 	'CentralAuth.CentralAuthUtilityService' => static function (
 		MediaWikiServices $services
-	) : CentralAuthUtilityService {
+	): CentralAuthUtilityService {
 		return new CentralAuthUtilityService(
 			$services->getDBLoadBalancerFactory(),
 			$services->getReadOnlyMode(),

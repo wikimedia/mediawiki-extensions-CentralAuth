@@ -22,7 +22,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 	private const USER_ID_SUPPRESSED = '1202';
 	private const USERNAME_SUPPRESSED = 'SuppressedTestUser';
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->specialCreateLocalAccount = new SpecialCreateLocalAccount(

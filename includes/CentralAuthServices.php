@@ -18,7 +18,7 @@ class CentralAuthServices {
 	 */
 	public static function getForcedLocalCreationService(
 		ContainerInterface $services = null
-	) : CentralAuthForcedLocalCreationService {
+	): CentralAuthForcedLocalCreationService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthForcedLocalCreationService' );
 	}
@@ -28,7 +28,7 @@ class CentralAuthServices {
 	 * MediaWikiServices::getInstance() will be used instead.
 	 * @return CentralAuthUtilityService
 	 */
-	public static function getUtilityService( ContainerInterface $services = null ) : CentralAuthUtilityService {
+	public static function getUtilityService( ContainerInterface $services = null ): CentralAuthUtilityService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthUtilityService' );
 	}

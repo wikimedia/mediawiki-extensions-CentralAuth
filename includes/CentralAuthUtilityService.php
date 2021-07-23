@@ -63,7 +63,7 @@ class CentralAuthUtilityService {
 	 * Determine if either the local or the shared CentralAuth database is read only.
 	 * @return bool
 	 */
-	public function isReadOnly() : bool {
+	public function isReadOnly(): bool {
 		return ( $this->getReadOnlyReason() !== false );
 	}
 
@@ -89,7 +89,7 @@ class CentralAuthUtilityService {
 	/**
 	 * Wait for the CentralAuth DB replicas to catch up
 	 */
-	public function waitForReplicas() : void {
+	public function waitForReplicas(): void {
 		$this->lbFactory->waitForReplication( [ 'domain' => $this->config->get( 'CentralAuthDatabase' ) ] );
 	}
 
@@ -99,7 +99,7 @@ class CentralAuthUtilityService {
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 * @throws CentralAuthReadOnlyError
 	 */
-	public function getCentralDB() : IDatabase {
+	public function getCentralDB(): IDatabase {
 		if ( $this->config->get( 'CentralAuthReadOnly' ) ) {
 			throw new CentralAuthReadOnlyError();
 		}
@@ -115,7 +115,7 @@ class CentralAuthUtilityService {
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
-	public function getCentralReplicaDB() : IDatabase {
+	public function getCentralReplicaDB(): IDatabase {
 		$database = $this->config->get( 'CentralAuthDatabase' );
 
 		return $this->lbFactory->getMainLB( $database )
@@ -128,7 +128,7 @@ class CentralAuthUtilityService {
 	 *
 	 * @param WebRequest|null $request
 	 */
-	public function setP3P( WebRequest $request = null ) : void {
+	public function setP3P( WebRequest $request = null ): void {
 		if ( !$request ) {
 			$request = RequestContext::getMain()->getRequest();
 		}
@@ -164,7 +164,7 @@ class CentralAuthUtilityService {
 	 * @param string ...$args
 	 * @return string
 	 */
-	public function memcKey( ...$args ) : string {
+	public function memcKey( ...$args ): string {
 		$database = $this->config->get( 'CentralAuthDatabase' );
 		return $database . ':' . implode( ':', $args );
 	}
@@ -212,7 +212,7 @@ class CentralAuthUtilityService {
 	 * Get a cache for storage of central sessions
 	 * @return BagOStuff
 	 */
-	public function getSessionStore() : BagOStuff {
+	public function getSessionStore(): BagOStuff {
 		if ( !$this->sessionStore ) {
 			$sessionCacheType = $this->config->get( 'CentralAuthSessionCacheType' )
 				?? $this->config->get( 'SessionCacheType' );
@@ -228,7 +228,7 @@ class CentralAuthUtilityService {
 	 * Get a cache for storage of temporary cross-site tokens
 	 * @return BagOStuff
 	 */
-	public function getTokenStore() : BagOStuff {
+	public function getTokenStore(): BagOStuff {
 		if ( !$this->tokenStore ) {
 			$cacheType = $this->config->get( 'CentralAuthTokenCacheType' )
 				?? $this->config->get( 'CentralAuthSessionCacheType' )
@@ -245,7 +245,7 @@ class CentralAuthUtilityService {
 	 * @param bool $log Whether to generate a user creation log entry
 	 * @return StatusValue a status value
 	 */
-	public function autoCreateUser( User $user, $log = true ) : StatusValue {
+	public function autoCreateUser( User $user, $log = true ): StatusValue {
 		// Ignore warnings about primary database connections/writes...hard to avoid here
 
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();

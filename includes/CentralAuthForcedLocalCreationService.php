@@ -39,7 +39,7 @@ class CentralAuthForcedLocalCreationService {
 		string $username,
 		Authority $performer = null,
 		$reason = null
-	) : Status {
+	): Status {
 		$user = $this->userFactory->newFromName( $username );
 
 		if ( !$user ) {

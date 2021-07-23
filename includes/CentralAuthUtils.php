@@ -7,7 +7,7 @@ use Psr\Container\ContainerInterface;
  * @deprecated since 1.36, use CentralAuthUtilityService instead
  */
 class CentralAuthUtils {
-	private static function getUtilityService( ContainerInterface $services = null ) : CentralAuthUtilityService {
+	private static function getUtilityService( ContainerInterface $services = null ): CentralAuthUtilityService {
 		return CentralAuthServices::getUtilityService( $services );
 	}
 

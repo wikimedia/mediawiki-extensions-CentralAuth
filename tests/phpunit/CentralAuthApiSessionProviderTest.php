@@ -17,7 +17,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	/** @var \MediaWiki\HookContainer\HookContainer */
 	private $hookContainer;
 
-	public function setUp() : void {
+	public function setUp(): void {
 		parent::setUp();
 
 		if ( !defined( 'MW_API' ) ) {
