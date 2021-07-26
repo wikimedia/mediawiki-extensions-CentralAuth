@@ -40,7 +40,7 @@
 	"centralauth-admin-already-unmerged": "Прескачем $1, већ је раздвојен",
 	"centralauth-admin-bad-input": "Неисправан избор за спајање",
 	"centralauth-admin-blocked-reason": "Разлог: $1",
-	"centralauth-admin-blocked2": "Блокиран; датум истека: $2 у $3 ч.",
+	"centralauth-admin-blocked2": "Блокиран; датум истека: $2 у $3",
 	"centralauth-admin-blocked2-indef": "Трајно блокиран",
 	"centralauth-admin-blocklog": "дневник блокирања",
 	"centralauth-admin-delete-button": "Избриши глобални налог",
