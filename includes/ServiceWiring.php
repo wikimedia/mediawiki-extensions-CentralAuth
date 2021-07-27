@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 
 return [
@@ -22,6 +24,13 @@ return [
 			$services->getUserFactory(),
 			$services->getStatsdDataFactory(),
 			$services->getTitleFactory()
+		);
+	},
+	'CentralAuth.CentralAuthWikiListService' => static function (
+		MediaWikiServices $services
+	): CentralAuthWikiListService {
+		return new CentralAuthWikiListService(
+			new ServiceOptions( CentralAuthWikiListService::CONSTRUCTOR_OPTIONS, $services->getMainConfig() )
 		);
 	},
 ];

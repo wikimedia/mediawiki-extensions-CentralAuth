@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 
 /**
@@ -14,8 +15,13 @@ class SpecialWikiSets extends SpecialPage {
 	/** @var bool */
 	private $mCanEdit;
 
-	public function __construct() {
+	/** @var CentralAuthWikiListService */
+	private $wikiListService;
+
+	public function __construct( CentralAuthWikiListService $wikiListService ) {
 		parent::__construct( 'WikiSets' );
+
+		$this->wikiListService = $wikiListService;
 	}
 
 	/**
@@ -358,7 +364,7 @@ class SpecialWikiSets extends SpecialPage {
 		}
 
 		$badwikis = [];
-		$allwikis = CentralAuthUser::getWikiList();
+		$allwikis = $this->wikiListService->getWikiList();
 		foreach ( $wikis as $wiki ) {
 			if ( !in_array( $wiki, $allwikis ) ) {
 				$badwikis[] = $wiki;

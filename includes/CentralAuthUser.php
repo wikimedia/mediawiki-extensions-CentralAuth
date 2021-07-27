@@ -615,8 +615,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getLocalId( $wikiId ) {
 		// Make sure the wiki ID is valid. (This prevents DBConnectionError in unit tests)
-		$validWikis = self::getWikiList();
-		if ( !in_array( $wikiId, $validWikis ) ) {
+		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+		if ( !in_array( $wikiId, $wikiList ) ) {
 			return null;
 		}
 		// Retrieve the local user ID from the specified database.
@@ -1450,7 +1450,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected static function validateList( $list ) {
 		$unique = array_unique( $list );
-		$valid = array_intersect( $unique, self::getWikiList() );
+		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+		$valid = array_intersect( $unique, $wikiList );
 
 		if ( count( $valid ) != count( $list ) ) {
 			// fixme: handle this gracefully
@@ -1462,18 +1463,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * @return string[]
+	 * @deprecated since 1.37, use CentralAuthWikiListService instead
 	 */
 	public static function getWikiList() {
-		global $wgLocalDatabases;
-		static $wikiList = null;
-		if ( $wikiList === null ) {
-			Hooks::run( 'CentralAuthWikiList', [ &$wikiList ] );
-			// @phan-suppress-next-line PhanSuspiciousValueComparison May set by hook
-			if ( $wikiList === null ) {
-				$wikiList = $wgLocalDatabases;
-			}
-		}
-		return $wikiList;
+		return CentralAuthServices::getWikiListService()->getWikiList();
 	}
 
 	/**
@@ -2320,7 +2313,9 @@ class CentralAuthUser implements IDBAccessObject {
 	public function importLocalNames() {
 		$rows = [];
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		foreach ( self::getWikiList() as $wikiID ) {
+		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
+
+		foreach ( $wikiList as $wikiID ) {
 			$dbr = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
 			$id = $dbr->selectField(
 				'user',

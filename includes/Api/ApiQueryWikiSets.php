@@ -26,7 +26,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
 use ApiQueryBase;
-use CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use WikiSet;
 
 /**
@@ -36,8 +36,13 @@ use WikiSet;
  * @ingroup Extensions
  */
 class ApiQueryWikiSets extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+	/** @var CentralAuthWikiListService */
+	private $wikiListService;
+
+	public function __construct( $query, $moduleName, CentralAuthWikiListService $wikiListService ) {
 		parent::__construct( $query, $moduleName, 'ws' );
+
+		$this->wikiListService = $wikiListService;
 	}
 
 	public function execute() {
@@ -48,6 +53,8 @@ class ApiQueryWikiSets extends ApiQueryBase {
 
 		$APIResult = $this->getResult();
 		$data = [];
+
+		$wikiList = $this->wikiListService->getWikiList();
 
 		/**
 		 * @var $wikiSet WikiSet
@@ -72,7 +79,7 @@ class ApiQueryWikiSets extends ApiQueryBase {
 
 			if ( isset( $prop['wikisnotincluded'] ) ) {
 				$entry['wikisnotincluded'] = array_diff(
-					CentralAuthUser::getWikiList(), $wikiSet->getWikis() );
+					$wikiList, $wikiSet->getWikis() );
 				if ( count( $entry['wikisnotincluded'] ) ) {
 					$APIResult->setIndexedTagName( $entry['wikisnotincluded'], 'wiki' );
 				}

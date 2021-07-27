@@ -95,7 +95,12 @@
 		"MergeAccount": "SpecialMergeAccount",
 		"GlobalGroupMembership": "SpecialGlobalGroupMembership",
 		"GlobalGroupPermissions": "SpecialGlobalGroupPermissions",
-		"WikiSets": "SpecialWikiSets",
+		"WikiSets": {
+			"class": "SpecialWikiSets",
+			"services": [
+				"CentralAuth.CentralAuthWikiListService"
+			]
+		},
 		"GlobalUsers": "SpecialGlobalUsers",
 		"MultiLock": {
 			"class": "SpecialMultiLock",
@@ -235,7 +240,12 @@
 	},
 	"APIListModules": {
 		"globalgroups": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalGroups",
-		"wikisets": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryWikiSets",
+		"wikisets": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryWikiSets",
+			"services": [
+				"CentralAuth.CentralAuthWikiListService"
+			]
+		},
 		"globalallusers": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers"
 	},
 	"MessagesDirs": {
@@ -249,7 +259,7 @@
 		"SpecialCentralAuthAliasesNoTranslate": "CentralAuth.notranslate-alias.php"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\CentralAuth\\Api\\": "includes/Api/"
+		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
 		"SpecialCentralAuth": "includes/specials/SpecialCentralAuth.php",
