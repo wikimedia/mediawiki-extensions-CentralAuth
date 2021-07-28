@@ -5,7 +5,7 @@
 		]
 	},
 	"centralauth-admin-blocklog": "block moun bé journali",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|oukalè|oukalè}}, $2 i sou",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|oukalè|oukalè moun}}, $2 i sou",
 	"centralauth-foreign-link": "Interneti conti i yi fouè $1, $2 i sou",
 	"centralauth-merge-method-login": "kè bé wlou noun yè bé yili ô"
 }
