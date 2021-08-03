@@ -41,7 +41,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 		$this->checkUserRightsAny( 'centralauth-lock' );
 
-		$globalUser = CentralAuthUser::getMasterInstanceByName( $params['user'] );
+		$globalUser = CentralAuthUser::getPrimaryInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
 			$globalUser->isOversighted() && !$this->getAuthority()->isAllowed( 'centralauth-oversight' )
 		) {

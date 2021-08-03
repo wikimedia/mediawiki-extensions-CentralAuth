@@ -279,7 +279,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onLocalUserCreated( $user, $autocreated ) {
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 
 		// If some other AuthManager PrimaryAuthenticationProvider is creating
 		// the user, we should still create a central user for them so
@@ -309,7 +309,7 @@ class CentralAuthHooks {
 	public static function onImportHandleUnknownUser( $name ) {
 		$user = User::newFromName( $name );
 		if ( $user ) {
-			$centralUser = CentralAuthUser::getMasterInstance( $user );
+			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 
 			if ( $centralUser->exists() && CentralAuthUtils::autoCreateUser( $user )->isGood() ) {
 				$centralUser->invalidateCache();
@@ -656,7 +656,7 @@ class CentralAuthHooks {
 
 		$username = $user->getName();
 		DeferredUpdates::addCallableUpdate( static function () use ( $username ) {
-			$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
+			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
 			if ( $centralUser->exists() ) {
 				$centralUser->resetAuthToken();
 			}
@@ -737,7 +737,7 @@ class CentralAuthHooks {
 	 * @throws ErrorPageError
 	 */
 	public static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
-		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
+		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $oldName );
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
 			$warnings[] = [ 'centralauth-renameuser-merged', $oldName, $newName ];
 		}
@@ -745,7 +745,7 @@ class CentralAuthHooks {
 			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $oldName ];
 		}
 
-		$newCentral = CentralAuthUser::getMasterInstanceByName( $newName );
+		$newCentral = CentralAuthUser::getPrimaryInstanceByName( $newName );
 		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
 			$warnings[] = [ 'centralauth-renameuser-reserved', $oldName, $newName ];
 		}
@@ -768,7 +768,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
-		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
+		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $oldName );
 		// If we're doing a global rename, the account will not get unattached
 		// because the old account no longer exists
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
@@ -785,8 +785,8 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onRenameUserComplete( $userId, $oldName, $newName ) {
-		$oldCentral = CentralAuthUser::getMasterInstanceByName( $oldName );
-		$newCentral = CentralAuthUser::getMasterInstanceByName( $newName );
+		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $oldName );
+		$newCentral = CentralAuthUser::getPrimaryInstanceByName( $newName );
 
 		if ( $newCentral->exists() && $oldCentral->renameInProgressOn( wfWikiID() ) ) {
 			// This is a global rename, just update the row.
@@ -835,7 +835,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onInvalidateEmailComplete( $user ) {
-		$ca = CentralAuthUser::getMasterInstance( $user );
+		$ca = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( '' );
 			$ca->setEmailAuthenticationTimestamp( null );
@@ -850,7 +850,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onUserSetEmail( $user, &$email ) {
-		$ca = CentralAuthUser::getMasterInstance( $user );
+		$ca = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( $email );
 			$ca->saveSettings();
@@ -863,7 +863,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onUserSaveSettings( $user ) {
-		$ca = CentralAuthUser::getMasterInstance( $user );
+		$ca = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->saveSettings();
 		}
@@ -879,7 +879,7 @@ class CentralAuthHooks {
 	public static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
-			$latestCa = CentralAuthUser::newMasterInstanceFromId( $ca->getId() );
+			$latestCa = CentralAuthUser::newPrimaryInstanceFromId( $ca->getId() );
 			if ( $latestCa->isAttached() ) {
 				$latestCa->setEmailAuthenticationTimestamp( $timestamp );
 				$latestCa->saveSettings();
@@ -1528,7 +1528,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 */
 	public static function onDeleteAccount( User &$user ) {
-		$caUser = CentralAuthUser::getMasterInstance( $user );
+		$caUser = CentralAuthUser::getPrimaryInstance( $user );
 
 		if ( $caUser->isAttached() ) {
 			// Clean up localuser table.

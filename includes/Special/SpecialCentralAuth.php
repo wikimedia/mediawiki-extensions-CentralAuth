@@ -151,7 +151,7 @@ class SpecialCentralAuth extends SpecialPage {
 		) );
 
 		$globalUser = $this->getRequest()->wasPosted()
-			? CentralAuthUser::getMasterInstanceByName( $this->mUserName )
+			? CentralAuthUser::getPrimaryInstanceByName( $this->mUserName )
 			: CentralAuthUser::getInstanceByName( $this->mUserName );
 		$this->mGlobalUser = $globalUser;
 

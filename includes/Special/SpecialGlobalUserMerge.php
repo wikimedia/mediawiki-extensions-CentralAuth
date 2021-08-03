@@ -119,7 +119,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 			return $this->msg( 'centralauth-usermerge-noself' )->escaped();
 		}
 
-		$caUser = CentralAuthUser::getMasterInstanceByName( $name );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( $name );
 		if ( !$caUser->exists() ) {
 			return $this->msg( 'centralauth-usermerge-invalid', $name )->escaped();
 		}
@@ -174,7 +174,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 					// DWIM and ignore it
 					continue;
 				}
-				$caUser = CentralAuthUser::getMasterInstanceByName( $name );
+				$caUser = CentralAuthUser::getPrimaryInstanceByName( $name );
 				$this->oldCAUsers[] = $caUser;
 			}
 		}

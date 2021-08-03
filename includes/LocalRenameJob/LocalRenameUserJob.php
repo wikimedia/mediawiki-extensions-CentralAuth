@@ -114,7 +114,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 	private function promoteToGlobal() {
 		$newName = $this->params['to'];
-		$caUser = CentralAuthUser::getMasterInstanceByName( $newName );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( $newName );
 		$status = $caUser->promoteToGlobal( wfWikiID() );
 		if ( !$status->isOK() ) {
 			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {

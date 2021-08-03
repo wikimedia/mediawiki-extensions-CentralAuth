@@ -252,7 +252,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				// Not a conflict since the old usage will go away
 				continue;
 			}
-			$ca = CentralAuthUser::getMasterInstanceByName( $name );
+			$ca = CentralAuthUser::getPrimaryInstanceByName( $name );
 			if ( $ca->isHidden() ) {
 				$display[] = $this->msg( 'centralauth-rename-conflict-hidden' )->text();
 			} else {

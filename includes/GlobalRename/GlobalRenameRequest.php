@@ -445,7 +445,7 @@ class GlobalRenameRequest {
 
 		// New user creation checks against local wiki only using an API
 		// request, but we need to check against the central user table instead
-		$centralUser = CentralAuthUser::getMasterInstanceByName( $safe );
+		$centralUser = CentralAuthUser::getPrimaryInstanceByName( $safe );
 		if ( $centralUser->exists() || $centralUser->listUnattached() ) {
 			$status->fatal( 'globalrenamerequest-newname-err-taken' );
 			return $status;

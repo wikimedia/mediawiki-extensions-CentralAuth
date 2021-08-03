@@ -25,7 +25,7 @@ class CentralAuthSuppressUserJob extends Job {
 		$wikis = $this->params['wikis'];
 		$suppress = $this->params['suppress'];
 		$reason = $this->params['reason'];
-		$user = CentralAuthUser::getMasterInstanceByName( $username );
+		$user = CentralAuthUser::getPrimaryInstanceByName( $username );
 		if ( !$user->exists() ) {
 			wfDebugLog(
 				'suppressjob', "Requested to suppress non-existent user {$username} by {$by}."

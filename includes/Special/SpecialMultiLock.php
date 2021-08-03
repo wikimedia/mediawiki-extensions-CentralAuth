@@ -140,7 +140,7 @@ class SpecialMultiLock extends SpecialPage {
 			$username = $this->getLanguage()->ucfirst( $username );
 
 			$globalUser = $fromPrimaryDb
-				? CentralAuthUser::getMasterInstanceByName( $username )
+				? CentralAuthUser::getPrimaryInstanceByName( $username )
 				: CentralAuthUser::getInstanceByName( $username );
 			if ( !$globalUser->exists()
 				|| ( !$this->mCanOversight &&

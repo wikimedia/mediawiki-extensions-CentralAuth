@@ -65,12 +65,12 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * whether it's the old or new name.
 	 *
 	 * @param string|null $wiki Only look for renames on the given wiki.
-	 * @param string|null $usePrimaryDb Set to 'master' to query the primary db
+	 * @param string|null $usePrimaryDb Set to 'primary' to query the primary db
 	 *
 	 * @return array (oldname, newname)
 	 */
 	public function getNames( $wiki = null, $usePrimaryDb = null ) {
-		$db = $this->getDB( $usePrimaryDb === 'master' ? DB_PRIMARY : DB_REPLICA );
+		$db = $this->getDB( $usePrimaryDb === 'primary' ? DB_PRIMARY : DB_REPLICA );
 
 		$where = [ $this->getNameWhereClause( $db ) ];
 

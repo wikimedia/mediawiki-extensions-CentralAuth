@@ -126,7 +126,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// are common.
 			$user = User::newFromName( $info['name'] );
 			$user->load( User::READ_LATEST );
-			$centralUser = CentralAuthUser::getMasterInstance( $user );
+			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 			$e = $getException( $centralUser, $user, $info );
 			if ( $e ) {
 				throw $e;
@@ -255,7 +255,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $getException( $centralUser, $user ) ) {
 			$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
 			$user->load( User::READ_LATEST );
-			$centralUser = CentralAuthUser::getMasterInstance( $user );
+			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 			$e = $getException( $centralUser, $user );
 			if ( $e ) {
 				throw $e;

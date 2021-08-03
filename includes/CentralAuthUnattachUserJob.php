@@ -49,7 +49,7 @@ class CentralAuthUnattachUserJob extends Job {
 			// Races are fun!
 			return true;
 		}
-		$causer = CentralAuthUser::getMasterInstanceByName( $username );
+		$causer = CentralAuthUser::getPrimaryInstanceByName( $username );
 		$causer->removeLocalName( $wiki );
 		if ( $causer->exists() ) {
 			$causer->adminUnattach( [ $wiki ] );

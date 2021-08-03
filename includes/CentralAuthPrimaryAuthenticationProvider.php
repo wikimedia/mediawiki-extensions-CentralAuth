@@ -221,7 +221,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			$this->logger->debug(
 				'no global account for "{username}"', [ 'username' => $username ] );
 			// Confirm using DB_PRIMARY in case of replication lag
-			$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
+			$latestCentralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
 			if ( $this->autoMigrateNonGlobalAccounts && !$latestCentralUser->exists() ) {
 				$ok = $latestCentralUser->storeAndMigrate(
 					[ $req->password ],
@@ -253,13 +253,13 @@ class CentralAuthPrimaryAuthenticationProvider
 			if ( $centralUser->isAttached() ) {
 				// Defer any automatic migration for other wikis
 				DeferredUpdates::addCallableUpdate( static function () use ( $username, $req ) {
-					$latestCentralUser = CentralAuthUser::getMasterInstanceByName( $username );
+					$latestCentralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
 					$latestCentralUser->attemptPasswordMigration( $req->password );
 				} );
 			} else {
 				// The next steps depend on whether a migration happens for this wiki.
 				// Update the $centralUser instance so the checks below reflect any migrations.
-				$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
+				$centralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
 				$centralUser->attemptPasswordMigration( $req->password );
 			}
 		}
@@ -325,7 +325,7 @@ class CentralAuthPrimaryAuthenticationProvider
 				!wfReadOnly()
 			) {
 				DeferredUpdates::addCallableUpdate( static function () use ( $user ) {
-					$centralUser = CentralAuthUser::getMasterInstance( $user );
+					$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 					if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
 						return; // something major changed?
 					}
@@ -409,7 +409,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		if ( get_class( $req ) === PasswordAuthenticationRequest::class ) {
-			$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
+			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
 			if ( $centralUser->exists() &&
 				( $centralUser->isAttached() || !User::idFromName( $username, User::READ_LATEST ) )
 			) {
@@ -433,7 +433,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		$centralUser = ( $options['flags'] & User::READ_LATEST ) == User::READ_LATEST
-			? CentralAuthUser::getMasterInstance( $user )
+			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
 
 		// Rename in progress?
@@ -521,7 +521,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( $req ) {
 			if ( $req->username !== null && $req->password !== null ) {
-				$centralUser = CentralAuthUser::getMasterInstance( $user );
+				$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 				if ( $centralUser->exists() ) {
 					return AuthenticationResponse::newFail(
 						wfMessage( 'centralauth-account-exists' )
@@ -543,7 +543,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function finishAccountCreation( $user, $creator, AuthenticationResponse $response ) {
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( wfWikiID(), 'new' );
@@ -557,7 +557,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	public function autoCreatedAccount( $user, $source ) {
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( !$centralUser->exists() ) {
 			$this->logger->debug(
 				'Not centralizing auto-created user {username}, central account doesn\'t exist',

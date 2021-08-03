@@ -68,7 +68,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/** @var int|null */
 	private $mGlobalId;
 	/** @var bool */
-	private $mFromMaster;
+	private $mFromPrimary;
 	/** @var bool */
 	private $mIsAttached;
 	/** @var string */
@@ -120,7 +120,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * @note Don't call this directly. Use self::getInstanceByName() or
-	 *  self::getMasterInstanceByName() instead.
+	 *  self::getPrimaryInstanceByName() instead.
 	 * @param string $username
 	 * @param int $flags Supports CentralAuthUser::READ_LATEST to use the primary DB
 	 */
@@ -128,7 +128,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->mName = $username;
 		$this->resetState();
 		if ( ( $flags & self::READ_LATEST ) == self::READ_LATEST ) {
-			$this->mFromMaster = true;
+			$this->mFromPrimary = true;
 		}
 	}
 
@@ -187,14 +187,34 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
+	 * @param UserIdentity $user
+	 * @return CentralAuthUser
+	 * @since 1.27
+	 * @deprecated since 1.37, use ::getPrimaryInstance() instead
+	 */
+	public static function getMasterInstance( UserIdentity $user ) {
+		return self::getPrimaryInstance( $user );
+	}
+
+	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * This object will use DB_PRIMARY.
 	 * @param UserIdentity $user
 	 * @return CentralAuthUser
-	 * @since 1.27
+	 * @since 1.37
 	 */
-	public static function getMasterInstance( UserIdentity $user ) {
-		return self::getMasterInstanceByName( $user->getName() );
+	public static function getPrimaryInstance( UserIdentity $user ) {
+		return self::getPrimaryInstanceByName( $user->getName() );
+	}
+
+	/**
+	 * @param string $username Must be validated and canonicalized by the caller
+	 * @return CentralAuthUser
+	 * @since 1.27
+	 * @deprecated since 1.37, use ::getPrimaryInstanceByName() instead
+	 */
+	public static function getMasterInstanceByName( $username ) {
+		return self::getPrimaryInstanceByName( $username );
 	}
 
 	/**
@@ -202,12 +222,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * This object will use DB_PRIMARY.
 	 * @param string $username Must be validated and canonicalized by the caller
 	 * @return CentralAuthUser
-	 * @since 1.27
+	 * @since 1.37
 	 */
-	public static function getMasterInstanceByName( $username ) {
+	public static function getPrimaryInstanceByName( $username ) {
 		$cache = self::getUserCache();
 		$ret = $cache->get( $username );
-		if ( !$ret || !$ret->mFromMaster ) {
+		if ( !$ret || !$ret->mFromPrimary ) {
 			$ret = new self( $username, self::READ_LATEST );
 			$cache->set( $username, $ret );
 		}
@@ -230,7 +250,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return bool
 	 */
-	public static function centralLBHasRecentMasterChanges() {
+	public static function centralLBHasRecentPrimaryChanges() {
 		return CentralAuthServices::getDatabaseManager()
 			->getLoadBalancer()
 			->hasOrMadeRecentMasterChanges();
@@ -253,7 +273,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Test if this is a write-mode instance, and log if not.
 	 */
 	private function checkWriteMode() {
-		if ( !$this->mFromMaster ) {
+		if ( !$this->mFromPrimary ) {
 			wfDebugLog(
 				'CentralAuth',
 				"Setter called on a replica instance: " . wfGetAllCallers( 10 )
@@ -262,26 +282,26 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return IDatabase Primary database or replica based on shouldUseMasterDB()
+	 * @return IDatabase Primary database or replica based on shouldUsePrimaryDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
-		return $this->shouldUseMasterDB()
+		return $this->shouldUsePrimaryDB()
 			? CentralAuthUtils::getCentralDB()
 			: CentralAuthUtils::getCentralReplicaDB();
 	}
 
 	/**
-	 * Get (and init if needed) the value of mFromMaster
+	 * Get (and init if needed) the value of mFromPrimary
 	 *
 	 * @return bool
 	 */
-	protected function shouldUseMasterDB() {
-		if ( $this->mFromMaster === null ) {
-			$this->mFromMaster = self::centralLBHasRecentMasterChanges();
+	protected function shouldUsePrimaryDB() {
+		if ( $this->mFromPrimary === null ) {
+			$this->mFromPrimary = self::centralLBHasRecentPrimaryChanges();
 		}
 
-		return $this->mFromMaster;
+		return $this->mFromPrimary;
 	}
 
 	/**
@@ -332,12 +352,22 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Get a master CentralAuthUser object from a user's id
-	 *
+	 * @deprecated since 1.37, use ::newPrimaryInstanceFromId() instead
 	 * @param int $id
 	 * @return CentralAuthUser|bool false if no user exists with that id
 	 */
 	public static function newMasterInstanceFromId( $id ) {
+		return self::newPrimaryInstanceFromId( $id );
+	}
+
+	/**
+	 * Get a primary CentralAuthUser object from a user's id
+	 *
+	 * @param int $id
+	 * @return CentralAuthUser|bool false if no user exists with that id
+	 * @since 1.37
+	 */
+	public static function newPrimaryInstanceFromId( $id ) {
 		$name = CentralAuthUtils::getCentralDB()->selectField(
 			'globaluser',
 			'gu_name',
@@ -346,7 +376,7 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		if ( $name !== false ) {
-			return self::getMasterInstanceByName( $name );
+			return self::getPrimaryInstanceByName( $name );
 		} else {
 			return false;
 		}
@@ -357,24 +387,24 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param stdClass $row
 	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
-	 * @param bool $fromMaster
+	 * @param bool $fromPrimary
 	 * @return CentralAuthUser
 	 */
-	public static function newFromRow( $row, $renameUser, $fromMaster = false ) {
+	public static function newFromRow( $row, $renameUser, $fromPrimary = false ) {
 		$caUser = new self( $row->gu_name );
-		$caUser->loadFromRow( $row, $renameUser, $fromMaster );
+		$caUser->loadFromRow( $row, $renameUser, $fromPrimary );
 		return $caUser;
 	}
 
 	/**
 	 * Create a CentralAuthUser object for a user who is known to be unattached.
 	 * @param string $name The user name
-	 * @param bool $fromMaster
+	 * @param bool $fromPrimary
 	 * @return CentralAuthUser
 	 */
-	public static function newUnattached( $name, $fromMaster = false ) {
+	public static function newUnattached( $name, $fromPrimary = false ) {
 		$caUser = new self( $name );
-		$caUser->loadFromRow( false, [], $fromMaster );
+		$caUser->loadFromRow( false, [], $fromPrimary );
 		return $caUser;
 	}
 
@@ -410,7 +440,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// Check the cache (unless the primary database was requested via READ_LATEST)
-		if ( !$recache && $this->mFromMaster !== true ) {
+		if ( !$recache && $this->mFromPrimary !== true ) {
 			$this->loadFromCache();
 		} else {
 			$this->loadFromDatabase();
@@ -478,8 +508,8 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'user' => $this->mName ]
 		);
 
-		$fromMaster = $this->shouldUseMasterDB();
-		$db = $this->getSafeReadDB(); // matches $fromMaster above
+		$fromPrimary = $this->shouldUsePrimaryDB();
+		$db = $this->getSafeReadDB(); // matches $fromPrimary above
 
 		$queryInfo = self::selectQueryInfo();
 
@@ -493,9 +523,9 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
-		$renameUser = $renameUserStatus->getNames( null, $fromMaster ? 'master' : 'replica' );
+		$renameUser = $renameUserStatus->getNames( null, $fromPrimary ? 'primary' : 'replica' );
 
-		$this->loadFromRow( $row, $renameUser, $fromMaster );
+		$this->loadFromRow( $row, $renameUser, $fromPrimary );
 	}
 
 	/**
@@ -503,9 +533,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param stdClass|bool $row
 	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
-	 * @param bool $fromMaster
+	 * @param bool $fromPrimary
 	 */
-	protected function loadFromRow( $row, $renameUser, $fromMaster = false ) {
+	protected function loadFromRow( $row, $renameUser, $fromPrimary = false ) {
 		if ( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
 			$this->mIsAttached = ( $row->lu_wiki !== null );
@@ -528,7 +558,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->mCasToken = 0;
 		}
 
-		$this->mFromMaster = $fromMaster;
+		$this->mFromPrimary = $fromPrimary;
 
 		if ( $renameUser ) {
 			$this->mBeingRenamedArray = $renameUser;
@@ -591,7 +621,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->loadAttached();
 
 		$this->mIsAttached = $this->exists() && in_array( wfWikiID(), $this->mAttachedArray );
-		$this->mFromMaster = false;
+		$this->mFromPrimary = false;
 	}
 
 	/**
@@ -1126,7 +1156,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Do a dry run -- pick a winning master account and try to auto-merge
+	 * Do a dry run -- pick a winning primary account and try to auto-merge
 	 * as many as possible, but don't perform any actions yet.
 	 *
 	 * @param array $passwords
@@ -1254,7 +1284,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Pick a winning master account and try to auto-merge as many as possible.
+	 * Pick a winning primary account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 *
 	 * @param array $passwords
@@ -1302,7 +1332,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->mEmail = $home['email'];
 		$this->mEmailAuthenticated = $home['emailAuthenticated'];
 
-		// Pick all the local accounts matching the "master" home account
+		// Pick all the local accounts matching the "primary" home account
 		$attach = $this->prepareMigration( $migrationSet, $passwords );
 
 		if ( $safe && count( $attach ) !== count( $migrationSet ) ) {
@@ -2097,7 +2127,7 @@ class CentralAuthUser implements IDBAccessObject {
 						return;
 					}
 
-					$centralUser = CentralAuthUser::newMasterInstanceFromId( $this->getId() );
+					$centralUser = CentralAuthUser::newPrimaryInstanceFromId( $this->getId() );
 					if ( $centralUser ) {
 						// Don't bother resetting the auth token for a hash
 						// upgrade. It's not really a password *change*, and
@@ -2219,7 +2249,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private function doListUnattached() {
 		// Make sure lazy-loading in listUnattached() works, as we
 		// may need to *switch* to using the primary DB for this query
-		$db = self::centralLBHasRecentMasterChanges()
+		$db = self::centralLBHasRecentPrimaryChanges()
 			? CentralAuthUtils::getCentralDB()
 			: $this->getSafeReadDB();
 
@@ -2412,7 +2442,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// Use primary database as this is being used for various critical things
 		$names = $renameState->getNames(
 			$wiki,
-			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'master' : 'replica'
+			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'primary' : 'replica'
 		);
 
 		if ( $names ) {
@@ -2908,7 +2938,7 @@ class CentralAuthUser implements IDBAccessObject {
 			// Maybe the problem was a missed cache update; clear it to be safe
 			$this->invalidateCache();
 			// User was changed in the meantime or loaded with stale data
-			$from = ( $this->mFromMaster ) ? 'master' : 'replica';
+			$from = ( $this->mFromPrimary ) ? 'primary' : 'replica';
 			LoggerFactory::getInstance( 'CentralAuth' )->warning(
 				"CAS update failed on gu_cas_token for user ID '{globalId}' " .
 				"(read from {from}); the version of the user to be saved is older than " .

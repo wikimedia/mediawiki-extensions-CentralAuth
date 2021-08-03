@@ -42,7 +42,7 @@ class ImportMissingLocalNames extends Maintenance {
 				}
 
 				foreach ( $results as $row ) {
-					CentralAuthUser::getMasterInstanceByName( $row->gu_name )->importLocalNames();
+					CentralAuthUser::getPrimaryInstanceByName( $row->gu_name )->importLocalNames();
 					$count += 1;
 				}
 

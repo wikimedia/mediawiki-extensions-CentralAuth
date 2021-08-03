@@ -239,7 +239,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function doDryRunMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
+		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( $globalUser->exists() ) {
 			// Already exists - race condition
@@ -302,7 +302,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function doInitialMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
+		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( $wgCentralAuthDryRun ) {
 			$this->dryRunError();
@@ -330,7 +330,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function doCleanupMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
+		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
 			throw new Exception( "User doesn't exist -- race condition?" );
@@ -364,7 +364,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function doAttachMerge() {
 		global $wgCentralAuthDryRun;
 
-		$globalUser = CentralAuthUser::getMasterInstance( $this->getUser() );
+		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
 			throw new Exception( "User doesn't exist -- race condition?" );

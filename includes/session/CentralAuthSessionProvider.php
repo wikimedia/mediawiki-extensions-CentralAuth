@@ -403,7 +403,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	public function invalidateSessionsForUser( User $user ) {
-		$centralUser = CentralAuthUser::getMasterInstance( $user );
+		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->isRegistered() ) ) {
 			$centralUser->resetAuthToken();
 		}
@@ -415,7 +415,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		$centralUser = CentralAuthUser::getMasterInstanceByName( $username );
+		$centralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
 		if ( !$centralUser->exists() ) {
 			return;
 		}

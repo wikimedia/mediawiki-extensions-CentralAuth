@@ -97,7 +97,7 @@ abstract class LocalRenameJob extends Job {
 			return $user;
 		}
 
-		$caUser = CentralAuthUser::getMasterInstance( $user );
+		$caUser = CentralAuthUser::getPrimaryInstance( $user );
 		// Race condition where the renamer isn't attached here, but
 		// someone creates an account in the meantime and then bad
 		// stuff could happen...
