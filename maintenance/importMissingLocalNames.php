@@ -14,8 +14,8 @@ class ImportMissingLocalNames extends Maintenance {
 	}
 
 	public function execute() {
-		$utilityService = CentralAuthServices::getUtilityService();
-		$dbw = $utilityService->getCentralDB();
+		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
 
 		$lastUser = $dbw->selectField( 'globaluser', 'MAX(gu_id)', '', __METHOD__ );
 		$chunkSize = 10000;
@@ -47,7 +47,7 @@ class ImportMissingLocalNames extends Maintenance {
 				}
 
 				$this->output( "Processed $count global users so far. Waiting for replicas to catch up... " );
-				$utilityService->waitForReplicas();
+				$databaseManager->waitForReplication();
 				$this->output( "done\n" );
 			}
 		}

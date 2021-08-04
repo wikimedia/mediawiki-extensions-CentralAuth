@@ -215,27 +215,24 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @deprecated use CentralAuthUtilityService instead
+	 * @deprecated use CentralAuthDatabaseManager instead
 	 */
 	public static function getCentralDB() {
-		return CentralAuthServices::getUtilityService()
-			->getCentralDB();
+		return CentralAuthServices::getDatabaseManager()
+			->getCentralDB( DB_PRIMARY );
 	}
 
 	/**
 	 * Check hasOrMadeRecentMasterChanges() on the CentralAuth load balancer
 	 *
-	 * @todo this should be in CentralAuthUtilityService instead, it has nothing
+	 * @todo this should be in CentralAuthDatabaseManager instead, it has nothing
 	 * to do with CentralAuthUser
 	 *
 	 * @return bool
 	 */
 	public static function centralLBHasRecentMasterChanges() {
-		global $wgCentralAuthDatabase;
-
-		return MediaWikiServices::getInstance()
-			->getDBLoadBalancerFactory()
-			->getMainLB( $wgCentralAuthDatabase )
+		return CentralAuthServices::getDatabaseManager()
+			->getLoadBalancer()
 			->hasOrMadeRecentMasterChanges();
 	}
 

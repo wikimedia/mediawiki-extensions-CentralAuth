@@ -1,10 +1,10 @@
 <?php
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
-use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\WaitConditionLoop;
 
 /**
@@ -19,12 +19,6 @@ class CentralAuthUtilityService {
 	/** @var BagOStuff|null Token cache */
 	private $tokenStore = null;
 
-	/** @var LBFactory */
-	private $lbFactory;
-
-	/** @var ReadOnlyMode */
-	private $readOnlyMode;
-
 	/** @var Config */
 	private $config;
 
@@ -37,83 +31,31 @@ class CentralAuthUtilityService {
 	/** @var TitleFactory */
 	private $titleFactory;
 
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
 	public function __construct(
-		LBFactory $lbFactory,
-		ReadOnlyMode $readOnlyMode,
 		Config $config,
 		AuthManager $authManager,
 		IBufferingStatsdDataFactory $statsdDataFactory,
-		TitleFactory $titleFactory
+		TitleFactory $titleFactory,
+		CentralAuthDatabaseManager $databaseManager
 	) {
-		$this->lbFactory = $lbFactory;
-		$this->readOnlyMode = $readOnlyMode;
 		$this->config = $config;
 		$this->authManager = $authManager;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->titleFactory = $titleFactory;
-	}
-
-	/**
-	 * Determine if either the local or the shared CentralAuth database is read only.
-	 * @return bool
-	 */
-	public function isReadOnly(): bool {
-		return ( $this->getReadOnlyReason() !== false );
-	}
-
-	/**
-	 * Return the reason why either the local or the shared CentralAuth database is read only, false otherwise
-	 * @return bool|string
-	 */
-	public function getReadOnlyReason() {
-		if ( $this->readOnlyMode->isReadOnly() ) {
-			return $this->readOnlyMode->getReason();
-		}
-
-		$database = $this->config->get( 'CentralAuthDatabase' );
-		$lb = $this->lbFactory->getMainLB( $database );
-		$reason = $lb->getReadOnlyReason( $database );
-		if ( $reason !== false ) {
-			return $reason;
-		}
-
-		return false;
-	}
-
-	/**
-	 * Wait for the CentralAuth DB replicas to catch up
-	 */
-	public function waitForReplicas(): void {
-		$this->lbFactory->waitForReplication( [ 'domain' => $this->config->get( 'CentralAuthDatabase' ) ] );
-	}
-
-	/**
-	 * Gets a primary (read/write) database connection to the CentralAuth database
-	 *
-	 * @return \Wikimedia\Rdbms\IDatabase
-	 * @throws CentralAuthReadOnlyError
-	 */
-	public function getCentralDB(): IDatabase {
-		if ( $this->config->get( 'CentralAuthReadOnly' ) ) {
-			throw new CentralAuthReadOnlyError();
-		}
-
-		$database = $this->config->get( 'CentralAuthDatabase' );
-
-		return $this->lbFactory->getMainLB( $database )
-			->getConnectionRef( DB_PRIMARY, [], $database );
+		$this->databaseManager = $databaseManager;
 	}
 
 	/**
 	 * Gets a replica (readonly) database connection to the CentralAuth database
 	 *
 	 * @return \Wikimedia\Rdbms\IDatabase
+	 * @deprecated since 1.37, use CentralAuthDatabaseManager service instead
 	 */
 	public function getCentralReplicaDB(): IDatabase {
-		$database = $this->config->get( 'CentralAuthDatabase' );
-
-		return $this->lbFactory->getMainLB( $database )
-			->getConnectionRef( DB_REPLICA, [], $database );
+		return $this->databaseManager->getCentralDB( DB_REPLICA );
 	}
 
 	/**

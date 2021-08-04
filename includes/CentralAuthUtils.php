@@ -1,29 +1,33 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Session\Session;
-use Psr\Container\ContainerInterface;
 
 /**
- * @deprecated since 1.36, use CentralAuthUtilityService instead
+ * @deprecated since 1.36, use CentralAuthUtilityService or CentralAuthDatabaseManager instead
  */
 class CentralAuthUtils {
-	private static function getUtilityService( ContainerInterface $services = null ): CentralAuthUtilityService {
-		return CentralAuthServices::getUtilityService( $services );
+	private static function getUtilityService(): CentralAuthUtilityService {
+		return CentralAuthServices::getUtilityService();
+	}
+
+	private static function getDatabaseManager(): CentralAuthDatabaseManager {
+		return CentralAuthServices::getDatabaseManager();
 	}
 
 	public static function isReadOnly() {
-		return self::getUtilityService()->isReadOnly();
+		return self::getDatabaseManager()->isReadOnly();
 	}
 
 	public static function getReadOnlyReason() {
-		return self::getUtilityService()->getReadOnlyReason();
+		return self::getDatabaseManager()->getReadOnlyReason();
 	}
 
 	/**
 	 * Wait for the CentralAuth DB replicas to catch up
 	 */
 	public static function waitForReplicas() {
-		self::getUtilityService()->waitForReplicas();
+		self::getDatabaseManager()->waitForReplication();
 	}
 
 	/**
@@ -33,7 +37,7 @@ class CentralAuthUtils {
 	 * @throws CentralAuthReadOnlyError
 	 */
 	public static function getCentralDB() {
-		return self::getUtilityService()->getCentralDB();
+		return self::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 	}
 
 	/**
@@ -42,7 +46,7 @@ class CentralAuthUtils {
 	 * @return \Wikimedia\Rdbms\IDatabase
 	 */
 	public static function getCentralReplicaDB() {
-		return self::getUtilityService()->getCentralReplicaDB();
+		return self::getDatabaseManager()->getCentralDB( DB_REPLICA );
 	}
 
 	/**

@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
@@ -11,6 +12,18 @@ use Psr\Container\ContainerInterface;
  * @author Taavi "Majavah" Väänänen
  */
 class CentralAuthServices {
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
+	 * @return CentralAuthDatabaseManager
+	 * @since 1.37
+	 */
+	public static function getDatabaseManager( ContainerInterface $services = null ): CentralAuthDatabaseManager {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthDatabaseManager' );
+	}
+
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.

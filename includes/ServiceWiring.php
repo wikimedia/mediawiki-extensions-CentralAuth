@@ -1,10 +1,20 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 
 return [
+	'CentralAuth.CentralAuthDatabaseManager' => static function (
+		MediaWikiServices $services
+	): CentralAuthDatabaseManager {
+		return new CentralAuthDatabaseManager(
+			new ServiceOptions( CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
+			$services->getDBLoadBalancerFactory(),
+			$services->getReadOnlyMode()
+		);
+	},
 	'CentralAuth.CentralAuthForcedLocalCreationService' => static function (
 		MediaWikiServices $services
 	): CentralAuthForcedLocalCreationService {
@@ -17,12 +27,11 @@ return [
 		MediaWikiServices $services
 	): CentralAuthUtilityService {
 		return new CentralAuthUtilityService(
-			$services->getDBLoadBalancerFactory(),
-			$services->getReadOnlyMode(),
 			$services->getMainConfig(),
 			$services->getAuthManager(),
 			$services->getStatsdDataFactory(),
-			$services->getTitleFactory()
+			$services->getTitleFactory(),
+			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},
 	'CentralAuth.CentralAuthWikiListService' => static function (
