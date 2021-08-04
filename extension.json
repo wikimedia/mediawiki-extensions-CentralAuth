@@ -1,6 +1,9 @@
 {
 	"name": "CentralAuth",
-	"author": "Brion Vibber",
+	"author": [
+		"Brion Vibber",
+		"Kunal Mehta"
+	],
 	"url": "https://www.mediawiki.org/wiki/Extension:CentralAuth",
 	"descriptionmsg": "centralauth-desc",
 	"license-name": "GPL-2.0-or-later",
