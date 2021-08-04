@@ -133,7 +133,6 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 				return $this->userObjects[ $name ] ?? null;
 			} );
 
-			$this->centralAuthUtilityService->userFactory = $userFactory;
 			$this->setService( 'UserFactory', $userFactory );
 			// setService resets existing objects, so make sure our sessionStore patch will be there
 			$this->patchSessionStore();

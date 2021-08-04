@@ -19,7 +19,6 @@ return [
 			$services->getReadOnlyMode(),
 			$services->getMainConfig(),
 			$services->getAuthManager(),
-			$services->getUserFactory(),
 			$services->getStatsdDataFactory(),
 			$services->getTitleFactory()
 		);

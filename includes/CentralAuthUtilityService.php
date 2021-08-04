@@ -4,7 +4,6 @@ use MediaWiki\Auth\AuthManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
-use MediaWiki\User\UserFactory;
 use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\WaitConditionLoop;
 
@@ -32,9 +31,6 @@ class CentralAuthUtilityService {
 	/** @var AuthManager */
 	private $authManager;
 
-	/** @var UserFactory */
-	private $userFactory;
-
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
 
@@ -46,7 +42,6 @@ class CentralAuthUtilityService {
 		ReadOnlyMode $readOnlyMode,
 		Config $config,
 		AuthManager $authManager,
-		UserFactory $userFactory,
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		TitleFactory $titleFactory
 	) {
@@ -54,7 +49,6 @@ class CentralAuthUtilityService {
 		$this->readOnlyMode = $readOnlyMode;
 		$this->config = $config;
 		$this->authManager = $authManager;
-		$this->userFactory = $userFactory;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->titleFactory = $titleFactory;
 	}
