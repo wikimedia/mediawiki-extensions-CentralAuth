@@ -2,9 +2,8 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
-use MediaWiki\MediaWikiServices;
 
-class CentralAuthWikiListServiceTest extends MediaWikiIntegrationTestCase {
+class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideConfigValues
 	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthWikiListService::getWikiList
@@ -14,7 +13,8 @@ class CentralAuthWikiListServiceTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthWikiListService::CONSTRUCTOR_OPTIONS,
 				[ 'LocalDatabases' => $configValue ]
-			)
+			),
+			$this->createHookContainer()
 		);
 
 		$this->assertArrayEquals( $configValue, $wikiListService->getWikiList() );
@@ -32,7 +32,7 @@ class CentralAuthWikiListServiceTest extends MediaWikiIntegrationTestCase {
 	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthWikiListService::getWikiList
 	 */
 	public function testGetWikiListFromHook( array $hooks, array $expected ) {
-		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
+		$hookContainer = $this->createHookContainer();
 
 		foreach ( $hooks as $hook ) {
 			$hookContainer->register( 'CentralAuthWikiList', $hook );
@@ -42,7 +42,8 @@ class CentralAuthWikiListServiceTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthWikiListService::CONSTRUCTOR_OPTIONS,
 				[ 'LocalDatabases' => [ 'configuredwiki' ] ]
-			)
+			),
+			$hookContainer
 		);
 
 		$this->assertArrayEquals( $expected, $wikiListService->getWikiList() );
