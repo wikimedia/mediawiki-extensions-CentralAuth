@@ -1,5 +1,20 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthGroupMembershipProxy;
+use CentralAuthUser;
+use HTMLForm;
+use HTMLGlobalUserTextField;
+use LogEventsList;
+use LogPage;
+use OutputPage;
+use Status;
+use Title;
+use User;
+use UserrightsPage;
+use Xml;
+
 /**
  * Equivalent of Special:Userrights for global groups.
  *

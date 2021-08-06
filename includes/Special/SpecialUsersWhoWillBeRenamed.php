@@ -1,5 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use SpecialPage;
+
 class SpecialUsersWhoWillBeRenamed extends SpecialPage {
 	public function __construct() {
 		parent::__construct( 'UsersWhoWillBeRenamed' );

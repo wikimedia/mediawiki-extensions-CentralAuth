@@ -1,7 +1,11 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions;
 use Wikimedia\TestingAccessWrapper;
 
+/**
+ * @coversDefaultClass MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions
+ */
 class SpecialGlobalGroupPermissionsTest extends MediaWikiTestCase {
 
 	/** @var SpecialGlobalGroupPermissions|TestingAccessWrapper */
@@ -14,7 +18,7 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiTestCase {
 	}
 
 	/**
-	 * @covers SpecialGlobalGroupPermissions::validateGroupName
+	 * @covers ::validateGroupName
 	 * @dataProvider provideValidateGroupName
 	 */
 	public function testValidateGroupName( $name, $result ) {

@@ -1,7 +1,18 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use FormSpecialPage;
+use GlobalRenameUserStatus;
+use Html;
+use HTMLForm;
+use LogEventsList;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserNameUtils;
+use Title;
+use WikiMap;
+use Xml;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
 

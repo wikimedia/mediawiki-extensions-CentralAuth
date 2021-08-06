@@ -1,6 +1,16 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUtils;
+use IContextSource;
+use LinkBatch;
+use Linker;
 use MediaWiki\Block\DatabaseBlock;
+use SpecialPage;
+use TablePager;
+use User;
+use UserArray;
 
 /**
  * Paginated table of search results.

@@ -1,5 +1,19 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use AlphabeticPager;
+use CentralAuthUser;
+use CentralAuthUtils;
+use Html;
+use HTMLForm;
+use IContextSource;
+use LinkBatch;
+use stdClass;
+use Title;
+use UserGroupMembership;
+use WikiSet;
+
 class GlobalUsersPager extends AlphabeticPager {
 	/** @var string|false */
 	protected $requestedGroup = false;

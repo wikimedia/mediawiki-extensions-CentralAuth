@@ -1,5 +1,21 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use ErrorPageError;
+use Exception;
+use Html;
+use InvalidArgumentException;
+use MWCryptRand;
+use MWNamespace;
+use SpecialPage;
+use User;
+use WikiMap;
+use Wikimedia\AtEase\AtEase;
+use Xml;
+
 class SpecialMergeAccount extends SpecialPage {
 	/** @var string */
 	protected $mUserName;
@@ -152,14 +168,14 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return array|mixed
 	 */
 	private function getWorkingPasswords() {
-		Wikimedia\suppressWarnings();
+		AtEase::suppressWarnings();
 		$data = $this->getRequest()->getSessionData( 'wsCentralAuthMigration' );
 		$passwords = unserialize(
 			gzinflate(
 				$this->xorString(
 					$data[$this->mSessionToken],
 					$this->mSessionKey ) ) );
-		Wikimedia\restoreWarnings();
+		AtEase::restoreWarnings();
 		if ( is_array( $passwords ) ) {
 			return $passwords;
 		}

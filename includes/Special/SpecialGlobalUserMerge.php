@@ -1,6 +1,20 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use ErrorPageError;
+use ExtensionRegistry;
+use FormSpecialPage;
+use GlobalRenameUserStatus;
+use GlobalUserMerge;
+use GlobalUserMergeDatabaseUpdates;
+use GlobalUserMergeLogger;
 use MediaWiki\User\UserNameUtils;
+use ObjectCache;
+use SpecialPage;
+use Status;
+use User;
 
 class SpecialGlobalUserMerge extends FormSpecialPage {
 

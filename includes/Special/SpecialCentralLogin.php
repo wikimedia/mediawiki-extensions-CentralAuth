@@ -1,6 +1,21 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthHooks;
+use CentralAuthSessionProvider;
+use CentralAuthUser;
+use CentralAuthUtils;
+use Exception;
+use Hooks;
+use IBufferingStatsdDataFactory;
+use LoginHelper;
 use MediaWiki\Session\Session;
+use MWCryptRand;
+use UnlistedSpecialPage;
+use User;
+use WebRequest;
+use WikiMap;
 use Wikimedia\ScopedCallback;
 
 class SpecialCentralLogin extends UnlistedSpecialPage {

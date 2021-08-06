@@ -1,5 +1,25 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthAntiSpoofHooks;
+use CentralAuthSpoofUser;
+use CentralAuthUser;
+use ExtensionRegistry;
+use FormSpecialPage;
+use GlobalRenameBlacklist;
+use GlobalRenameUser;
+use GlobalRenameUserDatabaseUpdates;
+use GlobalRenameUserLogger;
+use GlobalRenameUserStatus;
+use GlobalRenameUserValidator;
+use Message;
+use Status;
+use Title;
+use TitleBlacklist;
+use TitleBlacklistEntry;
+use User;
+
 class SpecialGlobalRenameUser extends FormSpecialPage {
 
 	/**

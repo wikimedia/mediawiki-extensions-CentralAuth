@@ -19,6 +19,12 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use Title;
+use UnlistedSpecialPage;
+use User;
+
 /**
  * Display a warning and instructions to a user who has logged in with
  * a username that was affected by single user login (SUL) finalization.

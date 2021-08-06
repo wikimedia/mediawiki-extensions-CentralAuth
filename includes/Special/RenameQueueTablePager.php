@@ -20,7 +20,18 @@
  * @ingroup SpecialPage
  */
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use GlobalRenameRequest;
+use Html;
+use IContextSource;
 use MediaWiki\User\UserNameUtils;
+use SpecialPage;
+use stdClass;
+use TablePager;
+use WikiMap;
 
 /**
  * Paginated table of search results.

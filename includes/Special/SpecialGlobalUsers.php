@@ -1,5 +1,14 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use DerivativeContext;
+use Html;
+use IncludableSpecialPage;
+use Language;
+use Title;
+
 class SpecialGlobalUsers extends IncludableSpecialPage {
 	/** @var Language */
 	private $contentLanguage;

@@ -19,7 +19,20 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use FormSpecialPage;
+use GlobalRenameBlacklist;
+use GlobalRenameRequest;
+use HTMLForm;
 use MediaWiki\User\UserNameUtils;
+use Message;
+use PermissionsError;
+use Sanitizer;
+use SpecialPage;
+use Status;
+use User;
 
 /**
  * Request an account rename.

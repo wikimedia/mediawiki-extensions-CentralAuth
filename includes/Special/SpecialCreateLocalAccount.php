@@ -1,5 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthForcedLocalCreationService;
+use FormSpecialPage;
+use HTMLGlobalUserTextField;
+use Status;
+
 /**
  * Special page that can be used to manually create a local account for a global account.
  *

@@ -1,7 +1,17 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use Html;
+use LogEventsList;
+use LogPage;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
+use SpecialPage;
+use Title;
+use WikiSet;
+use Xml;
+use XmlSelect;
 
 /**
  * Special page to allow to edit "wikisets" which are used to restrict

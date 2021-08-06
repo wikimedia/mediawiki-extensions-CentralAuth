@@ -1,8 +1,10 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount;
+
 /**
  * @author Taavi "Majavah" Väänänen
- * @covers SpecialCreateLocalAccount::onSubmit
+ * @covers MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount::onSubmit
  * @covers CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
  * @group Database
  */

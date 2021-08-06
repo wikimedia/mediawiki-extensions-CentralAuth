@@ -1,9 +1,31 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use DerivativeContext;
+use Exception;
+use GlobalRenameUserStatus;
+use Html;
+use HTMLForm;
+use HTMLGlobalUserTextField;
+use Linker;
+use LogEventsList;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use NamespaceInfo;
+use ReadOnlyError;
+use Sanitizer;
+use SpecialPage;
+use Title;
+use User;
+use UserGroupMembership;
+use WikiMap;
+use WikiReference;
+use Xml;
 
 class SpecialCentralAuth extends SpecialPage {
 	/** @var string */

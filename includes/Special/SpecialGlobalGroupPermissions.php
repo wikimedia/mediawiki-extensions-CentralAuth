@@ -9,7 +9,25 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
+
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use Exception;
+use Html;
+use LogEventsList;
+use LogPage;
 use MediaWiki\MediaWikiServices;
+use OutputPage;
+use SpecialPage;
+use Status;
+use Title;
+use User;
+use UserGroupMembership;
+use WikiSet;
+use Xml;
+use XmlSelect;
 
 /**
  * Special page to allow managing global groups

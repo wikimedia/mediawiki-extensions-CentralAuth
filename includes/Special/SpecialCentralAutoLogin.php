@@ -1,8 +1,32 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthHooks;
+use CentralAuthSessionProvider;
+use CentralAuthUser;
+use CentralAuthUtilityService;
+use DeferredUpdates;
+use EventLogging;
+use Exception;
+use ExtensionRegistry;
+use FormatJson;
+use Hooks;
+use Language;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserOptionsManager;
+use MobileContext;
+use MWCryptRand;
+use RequestContext;
+use ResourceLoader;
+use SkinTemplate;
+use Title;
+use UnlistedSpecialPage;
+use User;
+use WebRequest;
+use WikiMap;
 use Wikimedia\ScopedCallback;
+use Xml;
 
 /**
  * Unlisted Special page to set requisite cookies for being logged into this wiki.

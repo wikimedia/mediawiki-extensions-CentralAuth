@@ -20,8 +20,36 @@
  * @ingroup SpecialPage
  */
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthAntiSpoofHooks;
+use CentralAuthSpoofUser;
+use CentralAuthUser;
+use Exception;
+use ExtensionRegistry;
+use GlobalRenameRequest;
+use GlobalRenameUser;
+use GlobalRenameUserDatabaseUpdates;
+use GlobalRenameUserLogger;
+use GlobalRenameUserStatus;
+use Html;
+use HTMLForm;
+use JobQueueGroup;
+use LocalRenameUserJob;
+use LogEventsList;
+use MailAddress;
 use MediaWiki\User\UserNameUtils;
+use OOUI\MessageWidget;
+use SpecialPage;
+use Status;
+use Title;
+use TitleBlacklist;
+use TitleBlacklistEntry;
+use User;
+use UserMailer;
+use WikiMap;
 use Wikimedia\Rdbms\LBFactory;
+use Xml;
 
 /**
  * Process account rename requests made via [[Special:GlobalRenameRequest]].
@@ -511,7 +539,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		// Show warning when reviewing own request
 		if ( $req->getName() === $this->getUser()->getName() ) {
-			$message = new OOUI\MessageWidget( [
+			$message = new MessageWidget( [
 				'label' => $this->msg( 'globalrenamerequest-self-warning' )->text(),
 				'type' => 'warning',
 				'inline' => true

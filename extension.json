@@ -76,62 +76,62 @@
 	],
 	"SpecialPages": {
 		"CentralAuth": {
-			"class": "SpecialCentralAuth",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAuth",
 			"services": [
 				"UserNameUtils",
 				"NamespaceInfo"
 			]
 		},
 		"CentralLogin": {
-			"class": "SpecialCentralLogin",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralLogin",
 			"services": [
 				"StatsdDataFactory"
 			]
 		},
 		"CentralAutoLogin": {
-			"class": "SpecialCentralAutoLogin",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAutoLogin",
 			"services": [
 				"CentralAuth.CentralAuthUtilityService",
 				"UserOptionsManager"
 			]
 		},
 		"CreateLocalAccount": {
-			"class": "SpecialCreateLocalAccount",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCreateLocalAccount",
 			"services": [
 				"CentralAuth.CentralAuthForcedLocalCreationService"
 			]
 		},
-		"MergeAccount": "SpecialMergeAccount",
-		"GlobalGroupMembership": "SpecialGlobalGroupMembership",
-		"GlobalGroupPermissions": "SpecialGlobalGroupPermissions",
+		"MergeAccount": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMergeAccount",
+		"GlobalGroupMembership": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
+		"GlobalGroupPermissions": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
 		"WikiSets": {
-			"class": "SpecialWikiSets",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialWikiSets",
 			"services": [
 				"CentralAuth.CentralAuthWikiListService"
 			]
 		},
 		"GlobalUsers": {
-			"class": "SpecialGlobalUsers",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalUsers",
 			"services": [
 				"ContentLanguage"
 			]
 		},
 		"MultiLock": {
-			"class": "SpecialMultiLock",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMultiLock",
 			"services": [
 				"UserNameUtils",
 				"NamespaceInfo"
 			]
 		},
-		"GlobalRenameUser": "SpecialGlobalRenameUser",
+		"GlobalRenameUser": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 		"GlobalRenameProgress": {
-			"class": "SpecialGlobalRenameProgress",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameProgress",
 			"services": [
 				"UserNameUtils"
 			]
 		},
 		"GlobalUserMerge": {
-			"class": "SpecialGlobalUserMerge",
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalUserMerge",
 			"services": [
 				"UserNameUtils"
 			]
@@ -277,17 +277,6 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"SpecialCentralAuth": "includes/specials/SpecialCentralAuth.php",
-		"SpecialCentralLogin": "includes/specials/SpecialCentralLogin.php",
-		"SpecialCreateLocalAccount": "includes/specials/SpecialCreateLocalAccount.php",
-		"SpecialMergeAccount": "includes/specials/SpecialMergeAccount.php",
-		"SpecialGlobalUsers": "includes/specials/SpecialGlobalUsers.php",
-		"GlobalUsersPager": "includes/specials/GlobalUsersPager.php",
-		"SpecialMultiLock": "includes/specials/SpecialMultiLock.php",
-		"SpecialGlobalRenameRequest": "includes/specials/SpecialGlobalRenameRequest.php",
-		"SpecialGlobalRenameQueue": "includes/specials/SpecialGlobalRenameQueue.php",
-		"RenameQueueTablePager": "includes/specials/RenameQueueTablePager.php",
-		"SpecialSulRenameWarning": "includes/specials/SpecialSulRenameWarning.php",
 		"CentralAuthUser": "includes/CentralAuthUser.php",
 		"CentralAuthUtils": "includes/CentralAuthUtils.php",
 		"CentralAuthForcedLocalCreationService": "includes/CentralAuthForcedLocalCreationService.php",
@@ -301,13 +290,9 @@
 		"CentralAuthCreateLocalAccountJob": "includes/CentralAuthCreateLocalAccountJob.php",
 		"LocalUserNotFoundException": "includes/LocalUserNotFoundException.php",
 		"WikiSet": "includes/WikiSet.php",
-		"SpecialCentralAutoLogin": "includes/specials/SpecialCentralAutoLogin.php",
 		"CentralAuthUserArrayFromResult": "includes/CentralAuthUserArrayFromResult.php",
 		"CentralAuthIdLookup": "includes/CentralAuthIdLookup.php",
-		"SpecialGlobalGroupMembership": "includes/specials/SpecialGlobalGroupMembership.php",
 		"CentralAuthGroupMembershipProxy": "includes/CentralAuthGroupMembershipProxy.php",
-		"SpecialGlobalGroupPermissions": "includes/specials/SpecialGlobalGroupPermissions.php",
-		"SpecialWikiSets": "includes/specials/SpecialWikiSets.php",
 		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
@@ -320,9 +305,6 @@
 		"LocalRenameUserJob": "includes/LocalRenameJob/LocalRenameUserJob.php",
 		"LocalUserMergeJob": "includes/LocalRenameJob/LocalUserMergeJob.php",
 		"LocalPageMoveJob": "includes/LocalRenameJob/LocalPageMoveJob.php",
-		"SpecialGlobalRenameUser": "includes/specials/SpecialGlobalRenameUser.php",
-		"SpecialGlobalUserMerge": "includes/specials/SpecialGlobalUserMerge.php",
-		"SpecialGlobalRenameProgress": "includes/specials/SpecialGlobalRenameProgress.php",
 		"GlobalRenameLogFormatter": "includes/GlobalRename/GlobalRenameLogFormatter.php",
 		"GlobalUserMergeLogFormatter": "includes/GlobalRename/GlobalUserMergeLogFormatter.php",
 		"GlobalRenameUser": "includes/GlobalRename/GlobalRenameUser.php",
@@ -334,8 +316,6 @@
 		"GlobalUserMergeLogger": "includes/GlobalRename/GlobalUserMergeLogger.php",
 		"GlobalUserMerge": "includes/GlobalRename/GlobalUserMerge.php",
 		"GlobalUserMergeDatabaseUpdates": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
-		"SpecialUsersWhoWillBeRenamed": "includes/specials/SpecialUsersWhoWillBeRenamed.php",
-		"UsersWhoWillBeRenamedPager": "includes/specials/UsersWhoWillBeRenamedPager.php",
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",

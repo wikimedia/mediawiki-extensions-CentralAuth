@@ -1,8 +1,17 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Special;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use Html;
+use LogEventsList;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use NamespaceInfo;
+use SpecialPage;
 use Wikimedia\ScopedCallback;
+use Xml;
 
 /**
  * Special page to allow locking and hiding multiple users

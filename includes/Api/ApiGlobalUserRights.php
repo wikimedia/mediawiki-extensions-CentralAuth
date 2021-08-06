@@ -26,14 +26,14 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiUserrights;
 use CentralAuthUser;
-use SpecialGlobalGroupMembership;
+use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 
 /**
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiUserrights {
 	protected function getUserRightsPage() {
-		return new SpecialGlobalGroupMembership;
+		return new SpecialGlobalGroupMembership();
 	}
 
 	protected function getAllGroups() {
