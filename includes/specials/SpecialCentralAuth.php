@@ -46,9 +46,16 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
-	public function __construct( UserNameUtils $userNameUtils ) {
+	/** @var NamespaceInfo */
+	private $namespaceInfo;
+
+	public function __construct(
+		UserNameUtils $userNameUtils,
+		NamespaceInfo $namespaceInfo
+	) {
 		parent::__construct( 'CentralAuth' );
 		$this->userNameUtils = $userNameUtils;
+		$this->namespaceInfo = $namespaceInfo;
 	}
 
 	public function doesWrites() {
@@ -864,7 +871,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$wikiname = $wiki->getDisplayName();
 		return self::foreignLink(
 			$wiki,
-			MWNamespace::getCanonicalName( NS_USER ) . ':' . $this->mUserName,
+			$this->namespaceInfo->getCanonicalName( NS_USER ) . ':' . $this->mUserName,
 			$wikiname,
 			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text()
 		);
@@ -987,7 +994,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private function showLogExtract() {
 		$user = $this->mGlobalUser->getName();
-		$title = Title::newFromText( MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global" );
+		$title = Title::newFromText( $this->namespaceInfo->getCanonicalName( NS_USER ) . ":{$user}@global" );
 		if ( !$title ) {
 			// Don't fatal even if a Title couldn't be generated
 			// because we've invalid usernames too :/

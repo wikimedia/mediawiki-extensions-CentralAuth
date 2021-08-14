@@ -78,7 +78,8 @@
 		"CentralAuth": {
 			"class": "SpecialCentralAuth",
 			"services": [
-				"UserNameUtils"
+				"UserNameUtils",
+				"NamespaceInfo"
 			]
 		},
 		"CentralLogin": "SpecialCentralLogin",
@@ -108,7 +109,8 @@
 		"MultiLock": {
 			"class": "SpecialMultiLock",
 			"services": [
-				"UserNameUtils"
+				"UserNameUtils",
+				"NamespaceInfo"
 			]
 		},
 		"GlobalRenameUser": "SpecialGlobalRenameUser",

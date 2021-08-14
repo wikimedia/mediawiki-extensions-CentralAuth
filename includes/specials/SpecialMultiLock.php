@@ -35,10 +35,16 @@ class SpecialMultiLock extends SpecialPage {
 	private $mActionUserNames;
 	/** @var UserNameUtils */
 	private $userNameUtils;
+	/** @var NamespaceInfo */
+	private $namespaceInfo;
 
-	public function __construct( UserNameUtils $userNameUtils ) {
+	public function __construct(
+		UserNameUtils $userNameUtils,
+		NamespaceInfo $namespaceInfo
+	) {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
 		$this->userNameUtils = $userNameUtils;
+		$this->namespaceInfo = $namespaceInfo;
 	}
 
 	public function doesWrites() {
@@ -359,7 +365,7 @@ class SpecialMultiLock extends SpecialPage {
 
 		// @TODO: Don't use methods from the special page directly,
 		// rather move them somewhere sane
-		$sca = new SpecialCentralAuth( $this->userNameUtils );
+		$sca = new SpecialCentralAuth( $this->userNameUtils, $this->namespaceInfo );
 		$sca->setContext( $this->getContext() );
 
 		$guName = $globalUser->getName();
