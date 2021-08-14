@@ -105,7 +105,12 @@
 				"CentralAuth.CentralAuthWikiListService"
 			]
 		},
-		"GlobalUsers": "SpecialGlobalUsers",
+		"GlobalUsers": {
+			"class": "SpecialGlobalUsers",
+			"services": [
+				"ContentLanguage"
+			]
+		},
 		"MultiLock": {
 			"class": "SpecialMultiLock",
 			"services": [

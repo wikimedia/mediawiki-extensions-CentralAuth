@@ -1,10 +1,15 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 class SpecialGlobalUsers extends IncludableSpecialPage {
-	public function __construct() {
+	/** @var Language */
+	private $contentLanguage;
+
+	/**
+	 * @param Language $contentLanguage
+	 */
+	public function __construct( Language $contentLanguage ) {
 		parent::__construct( 'GlobalUsers' );
+		$this->contentLanguage = $contentLanguage;
 	}
 
 	public function execute( $par ) {
@@ -35,8 +40,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 			}
 		}
 
-		$rqUsername = MediaWikiServices::getInstance()->getContentLanguage()
-			->ucfirst( $req->getVal( 'username' ) );
+		$rqUsername = $this->contentLanguage->ucfirst( $req->getVal( 'username' ) );
 		if ( $rqUsername ) {
 			$pg->setUsername( $rqUsername );
 		}
