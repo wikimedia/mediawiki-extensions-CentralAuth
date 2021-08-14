@@ -82,7 +82,12 @@
 				"NamespaceInfo"
 			]
 		},
-		"CentralLogin": "SpecialCentralLogin",
+		"CentralLogin": {
+			"class": "SpecialCentralLogin",
+			"services": [
+				"StatsdDataFactory"
+			]
+		},
 		"CentralAutoLogin": {
 			"class": "SpecialCentralAutoLogin",
 			"services": [

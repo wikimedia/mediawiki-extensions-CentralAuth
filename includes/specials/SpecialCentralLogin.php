@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use Wikimedia\ScopedCallback;
 
@@ -9,8 +8,15 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var Session */
 	protected $session = null;
 
-	public function __construct() {
+	/** @var IBufferingStatsdDataFactory */
+	private $statsdDataFactory;
+
+	/**
+	 * @param IBufferingStatsdDataFactory $statsdDataFactory
+	 */
+	public function __construct( IBufferingStatsdDataFactory $statsdDataFactory ) {
 		parent::__construct( 'CentralLogin' );
+		$this->statsdDataFactory = $statsdDataFactory;
 	}
 
 	public function execute( $subpage ) {
@@ -347,8 +353,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	protected function showError( ...$args ) {
-		$stats = MediaWikiServices::getInstance()->getStatsdDataFactory();
-		$stats->increment( 'centralauth.centrallogin_errors.' . $args[0] );
+		$this->statsdDataFactory->increment( 'centralauth.centrallogin_errors.' . $args[0] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' ); // JS only
 	}
