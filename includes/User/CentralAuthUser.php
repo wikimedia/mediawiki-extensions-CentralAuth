@@ -627,11 +627,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// Retrieve the local user ID from the specified database.
 		$db = $this->getLocalDB( $wikiId );
 		$id = $db->selectField( 'user', 'user_id', [ 'user_name' => $this->mName ], __METHOD__ );
-		// If user doesn't exist, return null instead of false
-		if ( $id === false ) {
-			return null;
-		}
-		return $id;
+		return $id ? (int)$id : null;
 	}
 
 	/**
@@ -2320,13 +2316,11 @@ class CentralAuthUser implements IDBAccessObject {
 
 		foreach ( $wikiList as $wikiID ) {
 			$dbr = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_REPLICA, [], $wikiID );
-			$id = $dbr->selectField(
-				'user',
-				'user_id',
+			$known = (bool)$dbr->selectField( 'user', '1',
 				[ 'user_name' => $this->mName ],
 				__METHOD__
 			);
-			if ( $id ) {
+			if ( $known ) {
 				$rows[] = [ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ];
 			}
 		}
