@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Agripinoduarte",
+			"Albertoleoncio",
 			"Araceletorres",
 			"Cainamarques",
 			"Dianakc",
@@ -232,7 +233,7 @@
 	"centralauth-editset-wikis": "Wikis:",
 	"centralauth-editset-zerowikis": "Nenhuma wiki especificada.",
 	"centralauth-error-badtoken": "O token de autenticação fornecido expirou ou não é válido.",
-	"centralauth-error-locked": "Você não tem como editar, já que sua conta está bloqueada.",
+	"centralauth-error-locked": "Você não pode editar, pois sua conta está travada.",
 	"centralauth-error-nologinattempt": "Nenhuma tentativa de login ativa em andamento para a sua sessão.",
 	"centralauth-error-token-wrongattempt": "O token de autenticação não pertence à sua tentativa atual de autenticar-se.\nAlguém pode estar tentando autenticar-se através de sua conta.",
 	"centralauth-error-token-wronguser": "O token não corresponde ao seu nome de usuário nesta sessão.\nAlguém pode estar tentando associá-lo a uma conta maliciosa.\nSe está tentando apenas autenticar-se como outro usuário, por favor saia primeiro de sua conta atual.",
@@ -289,7 +290,7 @@
 	"centralauth-log-header": "Este registro contém operações sobre contas globais: remoções, bloqueios e desbloqueios.",
 	"centralauth-log-name": "Registro de gestão de contas globais",
 	"centralauth-log-status-hidden": "ocultado",
-	"centralauth-log-status-locked": "bloqueada",
+	"centralauth-log-status-locked": "travada",
 	"centralauth-log-status-none": "(nenhum)",
 	"centralauth-log-status-oversighted": "suprimido",
 	"centralauth-login-error-locked": "Não {{GENDER:$1|pode}} entrar porque a {{GENDER:$1|sua}} conta está bloqueada globalmente.",

@@ -3,11 +3,12 @@
 		"authors": [
 			"Amara-Amaziɣ",
 			"Aslmad mohamed belarhzali",
+			"Brahim-essaidi",
 			"Hakim1bal",
 			"ⵕⴰⵊⵉ"
 		]
 	},
-	"centralauth-admin-blocklog": "ⴰⵖⵎⵉⵙ ⵏ ⵉⴳⴷⴷⵓⵍⵏ",
+	"centralauth-admin-blocklog": "ⵜⴰⵎⵙⵙⴽⵜⵉⵜ ⵏ ⵓⴳⴷⴷⵓⵍ",
 	"centralauth-admin-delete-button": "ⴽⴽⵙ ⴰⵎⵉⴹⴰⵏ ⴰ",
 	"centralauth-admin-no": "ⵓⵀⵓ",
 	"centralauth-admin-yes": "ⵢⴰⵀ",
@@ -18,6 +19,6 @@
 	"centralauth-foreign-link": "ⴰⵙⵎⵔⴰⵙ $1 ⴼ$ⴳ $2",
 	"centralauth-globalgroupperms-group-listmembers": "ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵉⴳⵎⴰⵎⵏ",
 	"centralauth-log-status-none": "(ⵓⵍⴰ ⵢⴰⵏ)",
-	"centralauth-merge-method-login": "ⵉⵜⵜⵓⵙⴽⴰⵔ ⴳ ⵜⵉⵣⵉ ⵏ ⵓⴽⵛⵛⵓⵎ",
+	"centralauth-merge-method-login": "ⵉⵏⵏⵓⵍⴼⴰⵏ ⴰⴽⴽⴷ ⵏ ⵓⴽⵛⴰⵎ",
 	"centralauth-usermerge-form-deleteuser": "ⵙⵉⵜⵜⵢ ⴰⵏⵙⵙⵎⵔⵙ"
 }
