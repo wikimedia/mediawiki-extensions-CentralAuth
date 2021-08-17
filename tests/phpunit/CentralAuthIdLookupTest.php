@@ -29,6 +29,10 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->setMwGlobals( [
+			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
+		] );
+
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',
@@ -48,7 +52,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
-				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
 			],
@@ -64,7 +68,7 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 			[
 				'gu_id' => '1004',
 				'gu_locked' => 1,
-				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 				'gu_email' => 'testsuppressed@localhost',
 				'gu_home_db' => 'metawiki',
 			],

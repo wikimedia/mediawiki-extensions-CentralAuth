@@ -6,7 +6,6 @@
  * @group Database
  */
 class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
-
 	/**
 	 * @covers CentralAuthUser::exists
 	 * @covers CentralAuthUser::getId
@@ -162,10 +161,10 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		// Check the DB
 		$this->assertSelect(
 			'globaluser',
-			[ 'gu_name', 'gu_locked', 'gu_hidden' ],
+			[ 'gu_name', 'gu_locked', 'gu_hidden_level' ],
 			[ 'gu_name' => 'GlobalUser' ],
 			[
-				[ 'GlobalUser', '1', CentralAuthUser::HIDDEN_LISTS ]
+				[ 'GlobalUser', '1', CentralAuthUser::HIDDEN_LEVEL_LISTS ]
 			]
 		);
 
@@ -229,7 +228,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
-				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
 			],
@@ -245,7 +244,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 			[
 				'gu_id' => '1004',
 				'gu_locked' => 1,
-				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 				'gu_email' => 'testsuppressed@localhost',
 				'gu_home_db' => 'metawiki',
 			],
@@ -254,6 +253,10 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 			]
 		);
 		$u->save( $this->db );
+
+		$this->setMwGlobals( [
+			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
+		] );
 	}
 
 }

@@ -1074,13 +1074,21 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
 
+		if ( $this->getConfig()->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD ) {
+			$hiddenField = 'gu_hidden';
+			$hiddenValue = CentralAuthUser::HIDDEN_NONE;
+		} else {
+			$hiddenField = 'gu_hidden_level';
+			$hiddenValue = CentralAuthUser::HIDDEN_LEVEL_NONE;
+		}
+
 		// Autocomplete subpage as user list - non-hidden users to allow caching
 		return $dbr->selectFieldValues(
 			[ 'globaluser' ],
 			'gu_name',
 			[
 				'gu_name' . $dbr->buildLike( $search, $dbr->anyString() ),
-				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+				$hiddenField => $hiddenValue,
 			],
 			__METHOD__,
 			[

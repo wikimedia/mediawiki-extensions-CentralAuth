@@ -41,9 +41,9 @@ class CentralAuthTestUser {
 	private $locked;
 
 	/**
-	 * @var string gu_hidden
+	 * @var string gu_hidden_level
 	 */
-	private $hidden;
+	private $hiddenLevel;
 
 	/**
 	 * @var string gu_registration
@@ -113,7 +113,7 @@ class CentralAuthTestUser {
 			'gu_salt' => '',
 			'gu_auth_token' => '1234',
 			'gu_locked' => 0,
-			'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+			'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
 			'gu_registration' => '20130627183537',
 			'gu_email' => 'test@localhost',
 			'gu_email_authenticated' => '20130801040214',
@@ -127,7 +127,7 @@ class CentralAuthTestUser {
 		$this->salt = $attrs['gu_salt'];
 		$this->authToken = $attrs['gu_auth_token'];
 		$this->locked = $attrs['gu_locked'];
-		$this->hidden = $attrs['gu_hidden'];
+		$this->hiddenLevel = $attrs['gu_hidden_level'];
 		$this->registration = $attrs['gu_registration'];
 		$this->email = $attrs['gu_email'];
 		$this->emailAuthenticated = $attrs['gu_email_authenticated'];
@@ -163,7 +163,7 @@ class CentralAuthTestUser {
 			'gu_salt' => $this->salt,
 			'gu_auth_token' => $this->authToken,
 			'gu_locked' => $this->locked,
-			'gu_hidden' => $this->hidden,
+			'gu_hidden_level' => $this->hiddenLevel,
 			'gu_registration' => $this->registration,
 			'gu_email' => $this->email,
 			'gu_email_authenticated' => $this->emailAuthenticated,

@@ -28,17 +28,30 @@ class CentralAuthUIService {
 	/**
 	 * Format a given CentralAuthUser::HIDDEN_* constant to a string.
 	 * @param MessageLocalizer $localizer
-	 * @param string $level one of the CentralAuthUser::HIDDEN_* constants
+	 * @param string|int $level one of the CentralAuthUser::HIDDEN_* constants
 	 * @return string Already html escaped
 	 */
-	public function formatHiddenLevel( MessageLocalizer $localizer, string $level ): string {
-		switch ( $level ) {
-			case CentralAuthUser::HIDDEN_NONE:
-				return $localizer->msg( 'centralauth-admin-no' )->escaped();
-			case CentralAuthUser::HIDDEN_LISTS:
-				return $localizer->msg( 'centralauth-admin-hidden-list' )->escaped();
-			case CentralAuthUser::HIDDEN_OVERSIGHT:
-				return $localizer->msg( 'centralauth-admin-hidden-oversight' )->escaped();
+	public function formatHiddenLevel( MessageLocalizer $localizer, $level ): string {
+		// PHP typing fun: without this if, invalid strings would match the hidden_normalize_none block,
+		// as 'any string' == 0 (yes, really!)
+		if ( is_int( $level ) ) {
+			switch ( $level ) {
+				case CentralAuthUser::HIDDEN_LEVEL_NONE:
+					return $localizer->msg( 'centralauth-admin-no' )->escaped();
+				case CentralAuthUser::HIDDEN_LEVEL_LISTS:
+					return $localizer->msg( 'centralauth-admin-hidden-list' )->escaped();
+				case CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED:
+					return $localizer->msg( 'centralauth-admin-hidden-oversight' )->escaped();
+			}
+		} else {
+			switch ( $level ) {
+				case CentralAuthUser::HIDDEN_NONE:
+					return $localizer->msg( 'centralauth-admin-no' )->escaped();
+				case CentralAuthUser::HIDDEN_LISTS:
+					return $localizer->msg( 'centralauth-admin-hidden-list' )->escaped();
+				case CentralAuthUser::HIDDEN_OVERSIGHT:
+					return $localizer->msg( 'centralauth-admin-hidden-oversight' )->escaped();
+			}
 		}
 
 		return '';

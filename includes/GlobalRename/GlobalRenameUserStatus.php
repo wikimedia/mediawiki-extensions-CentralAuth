@@ -3,8 +3,10 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use CentralAuthServices;
+use CentralAuthUser;
 use DBAccessObjectUtils;
 use IDBAccessObject;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Authority;
 use WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
@@ -236,8 +238,18 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$tables = [ 'renameuser_status' ];
 		if ( !$performer->isAllowed( 'centralauth-oversight' ) ) {
+			if (
+				MediaWikiServices::getInstance()
+					->getMainConfig()
+					->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD
+			) {
+				$hidden = "gu_hidden = " . $dbr->addQuotes( CentralAuthUser::HIDDEN_NONE );
+			} else {
+				$hidden = "gu_hidden_level = " . CentralAuthUser::HIDDEN_LEVEL_NONE;
+			}
+
 			$join_conds = [ 'globaluser' => [
-				'INNER JOIN', [ 'gu_name=ru_newname', 'gu_hidden=""' ]
+				'INNER JOIN', [ 'gu_name=ru_newname', $hidden ],
 			] ];
 			$tables[] = 'globaluser';
 		} else {

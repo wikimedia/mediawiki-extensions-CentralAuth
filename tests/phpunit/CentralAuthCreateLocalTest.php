@@ -27,6 +27,10 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->setMwGlobals( [
+			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
+		] );
+
 		$this->specialCreateLocalAccount = new SpecialCreateLocalAccount(
 			CentralAuthServices::getForcedLocalCreationService()
 		);
@@ -57,7 +61,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			[
 				'gu_id' => self::USER_ID_SUPPRESSED,
 				'gu_locked' => 1,
-				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 				'gu_email' => 'testsuppressed@localhost',
 				'gu_home_db' => 'metawiki',
 			],

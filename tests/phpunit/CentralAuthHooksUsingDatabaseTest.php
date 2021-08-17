@@ -23,6 +23,11 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase
 	 */
 	protected function setUp(): void {
 		parent::setUp();
+
+		$this->setMwGlobals( [
+			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
+		] );
+
 		$u = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',
@@ -42,7 +47,7 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase
 			[
 				'gu_id' => '1003',
 				'gu_locked' => 1,
-				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
 			],

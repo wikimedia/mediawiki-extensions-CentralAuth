@@ -76,6 +76,7 @@ CREATE TABLE /*_*/globaluser (
   -- If true, this account should be hidden from most public user lists.
   -- Used for "deleting" accounts without breaking referential integrity.
   gu_hidden varbinary(255) not null default '',
+  gu_hidden_level int not null default 0,
 
   -- Registration time
   gu_registration varchar(14) binary,
@@ -95,6 +96,7 @@ CREATE UNIQUE INDEX /*i*/gu_name ON /*_*/globaluser (gu_name);
 CREATE INDEX /*i*/gu_email ON /*_*/globaluser (gu_email);
 CREATE INDEX /*i*/gu_locked ON /*_*/globaluser (gu_name(255), gu_locked);
 CREATE INDEX /*i*/gu_hidden ON /*_*/globaluser (gu_name(255), gu_hidden(255));
+CREATE INDEX /*i*/gu_hidden_level ON /*_*/globaluser (gu_name(255), gu_hidden_level);
 
 --
 -- Local linkage info, listing which wikis the username is attached

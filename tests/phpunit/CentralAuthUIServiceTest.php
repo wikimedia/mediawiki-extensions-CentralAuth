@@ -23,7 +23,11 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 	 * @covers ::formatHiddenLevel
 	 * @dataProvider provideValidHiddenLevels
 	 */
-	public function testFormatHiddenLevelValid( string $level, string $msg ) {
+	public function testFormatHiddenLevelValid( int $level, string $msg ) {
+		$this->setMwGlobals( [
+			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
+		] );
+
 		$message = $this->createMock( Message::class );
 		$message->expects( $this->once() )
 			->method( 'escaped' )
@@ -41,9 +45,9 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 	}
 
 	public function provideValidHiddenLevels() {
-		yield 'HIDDEN_NONE' => [ CentralAuthUser::HIDDEN_NONE, 'no' ];
-		yield 'HIDDEN_LISTS' => [ CentralAuthUser::HIDDEN_LISTS, 'hidden-list' ];
-		yield 'HIDDEN_OVERSIGHT' => [ CentralAuthUser::HIDDEN_OVERSIGHT, 'hidden-oversight' ];
+		yield 'HIDDEN_NORMALIZE_NONE' => [ CentralAuthUser::HIDDEN_LEVEL_NONE, 'no' ];
+		yield 'HIDDEN_NORMALIZE_LISTS' => [ CentralAuthUser::HIDDEN_LEVEL_LISTS, 'hidden-list' ];
+		yield 'HIDDEN_NORMALIZE_SUPPRESSED' => [ CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'hidden-oversight' ];
 	}
 
 	/**
@@ -109,6 +113,10 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 	 * @covers ::processAntiSpoofConflicts
 	 */
 	public function testProcessAntiSpoofConflicts() {
+		$this->setMwGlobals( [
+			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
+		] );
+
 		$u = new CentralAuthTestUser(
 			'Existing',
 			'GUP@ssword',
@@ -134,7 +142,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 			'GUP@ssword',
 			[
 				'gu_id' => '3003',
-				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 			],
 			[
 				[ WikiMap::getCurrentWikiId(), 'primary' ],
