@@ -1,11 +1,23 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\UserIdentity;
 
 /**
  * Look up central IDs using CentralAuth
  */
 class CentralAuthIdLookup extends CentralIdLookup {
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
+	/**
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 */
+	public function __construct( CentralAuthDatabaseManager $databaseManager ) {
+		$this->databaseManager = $databaseManager;
+	}
+
 	public function lookupCentralIds(
 		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
 	): array {
@@ -15,9 +27,9 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$audience = $this->checkAudience( $audience );
 		$fromPrimaryDb = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
-		$db = $fromPrimaryDb
-			? CentralAuthUtils::getCentralDB()
-			: CentralAuthUtils::getCentralReplicaDB();
+		$db = $this->databaseManager->getCentralDB(
+			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
+		);
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 
@@ -52,9 +64,9 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$audience = $this->checkAudience( $audience );
 		$fromPrimaryDb = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
-		$db = $fromPrimaryDb
-			? CentralAuthUtils::getCentralDB()
-			: CentralAuthUtils::getCentralReplicaDB();
+		$db = $this->databaseManager->getCentralDB(
+			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
+		);
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 

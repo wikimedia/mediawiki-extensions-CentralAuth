@@ -81,7 +81,12 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 				CentralIdLookupFactory::CONSTRUCTOR_OPTIONS,
 				[
 					'CentralIdLookupProviders' => [
-						'central' => [ 'class' => CentralAuthIdLookup::class ],
+						'central' => [
+							'class' => CentralAuthIdLookup::class,
+							'services' => [
+								'CentralAuth.CentralAuthDatabaseManager',
+							]
+						],
 					],
 					'CentralIdLookupProvider' => 'central',
 				]

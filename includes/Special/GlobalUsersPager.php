@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use AlphabeticPager;
+use CentralAuthServices;
 use CentralAuthUser;
-use CentralAuthUtils;
 use Html;
 use HTMLForm;
 use IContextSource;
@@ -27,7 +27,8 @@ class GlobalUsersPager extends AlphabeticPager {
 	public function __construct( IContextSource $context ) {
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
-		$this->mDb = CentralAuthUtils::getCentralReplicaDB();
+		// TODO inject
+		$this->mDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 	}
 
 	/**

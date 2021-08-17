@@ -22,8 +22,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use CentralAuthServices;
 use CentralAuthUser;
-use CentralAuthUtils;
 use GlobalRenameRequest;
 use Html;
 use IContextSource;
@@ -71,7 +71,8 @@ class RenameQueueTablePager extends TablePager {
 	) {
 		$this->mOwner = $owner;
 		$this->mPage = $page;
-		$this->mDb = CentralAuthUtils::getCentralReplicaDB();
+		// TODO inject
+		$this->mDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$this->userNameUtils = $userNameUtils;
 
 		$limit = $this->getRequest()->getInt( 'limit', 25 );

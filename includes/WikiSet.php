@@ -126,7 +126,7 @@ class WikiSet {
 			self::getPerNameCacheKey( $cache, $name ),
 			$cache::TTL_INDEFINITE,
 			function ( $oldValue, &$ttl, &$setOpts ) use ( $name, $fname ) {
-				$dbr = CentralAuthUtils::getCentralReplicaDB();
+				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_name' => $name ], $fname );
@@ -166,7 +166,7 @@ class WikiSet {
 			self::getPerIdCacheKey( $cache, $id ),
 			$cache::TTL_INDEFINITE,
 			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
-				$dbr = CentralAuthUtils::getCentralReplicaDB();
+				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_id' => $id ], $fname );
@@ -221,7 +221,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function saveToDB() {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->replace(
 			'wikiset',
@@ -246,7 +246,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function delete() {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->delete( 'wikiset', [ 'ws_id' => $this->mId ], __METHOD__ );
 		$this->purge();
 		return (bool)$dbw->affectedRows();
@@ -303,7 +303,7 @@ class WikiSet {
 	 * @return array
 	 */
 	public function getRestrictedGroups() {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		return $dbr->selectFieldValues(
 			'global_group_restrictions',
 			'ggr_group',
@@ -319,7 +319,7 @@ class WikiSet {
 	 * @return array
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$where = [];
 		$options = [];
 
@@ -349,7 +349,7 @@ class WikiSet {
 	 * @return int
 	 */
 	public static function getWikiSetForGroup( $group ) {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		return (int)$dbr->selectField(
 			'global_group_restrictions',
 			'ggr_set',

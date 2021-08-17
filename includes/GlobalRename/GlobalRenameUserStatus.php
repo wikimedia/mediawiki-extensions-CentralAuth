@@ -36,11 +36,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return IDatabase
 	 */
 	protected function getDB( $type = DB_REPLICA ) {
-		if ( $type === DB_PRIMARY ) {
-			return CentralAuthUtils::getCentralDB();
-		} else {
-			return CentralAuthUtils::getCentralReplicaDB();
-		}
+		return CentralAuthServices::getDatabaseManager()->getCentralDB( $type );
 	}
 
 	/**
@@ -235,7 +231,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return string[] old username => new username
 	 */
 	public static function getInProgressRenames( Authority $performer ) {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$tables = [ 'renameuser_status' ];
 		if ( !$performer->isAllowed( 'centralauth-oversight' ) ) {
 			$join_conds = [ 'globaluser' => [

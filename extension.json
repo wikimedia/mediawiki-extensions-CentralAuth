@@ -85,7 +85,10 @@
 	},
 	"CentralIdLookupProviders": {
 		"CentralAuth": {
-			"class": "CentralAuthIdLookup"
+			"class": "CentralAuthIdLookup",
+			"services": [
+				"CentralAuth.CentralAuthDatabaseManager"
+			]
 		}
 	},
 	"ExtensionFunctions": [
@@ -96,6 +99,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAuth",
 			"services": [
 				"NamespaceInfo",
+				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService"
 			]
 		},
@@ -121,12 +125,18 @@
 		"MergeAccount": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMergeAccount",
 			"services": [
+				"CentralAuth.CentralAuthDatabaseManager",
 				"NamespaceInfo",
 				"UserFactory"
 			]
 		},
 		"GlobalGroupMembership": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
-		"GlobalGroupPermissions": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
+		"GlobalGroupPermissions": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
+			"services": [
+				"CentralAuth.CentralAuthDatabaseManager"
+			]
+		},
 		"WikiSets": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialWikiSets",
 			"services": [
@@ -142,6 +152,7 @@
 		"MultiLock": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMultiLock",
 			"services": [
+				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService"
 			]
 		},
@@ -282,14 +293,24 @@
 		"globalrenamestatus": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalRenameStatus"
 	},
 	"APIListModules": {
-		"globalgroups": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalGroups",
+		"globalgroups": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalGroups",
+			"services": [
+				"CentralAuth.CentralAuthDatabaseManager"
+			]
+		},
 		"wikisets": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryWikiSets",
 			"services": [
 				"CentralAuth.CentralAuthWikiListService"
 			]
 		},
-		"globalallusers": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers"
+		"globalallusers": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers",
+			"services": [
+				"CentralAuth.CentralAuthDatabaseManager"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"SpecialCentralAuth": [
@@ -648,6 +669,7 @@
 				"class": "CentralAuthPrimaryAuthenticationProvider",
 				"sort": 10,
 				"services": [
+					"CentralAuth.CentralAuthDatabaseManager",
 					"UserNameUtils",
 					"StatsdDataFactory"
 				]

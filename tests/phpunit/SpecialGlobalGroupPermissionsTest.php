@@ -14,7 +14,11 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->special = TestingAccessWrapper::newFromObject( new SpecialGlobalGroupPermissions() );
+		$this->special = TestingAccessWrapper::newFromObject(
+			new SpecialGlobalGroupPermissions(
+				CentralAuthServices::getDatabaseManager()
+			)
+		);
 	}
 
 	/**

@@ -9,11 +9,13 @@ use Wikimedia\Rdbms\IDatabase;
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalUserMergeDatabaseUpdates {
-	/**
-	 * @return IDatabase
-	 */
-	protected function getDB() {
-		return CentralAuthUtils::getCentralDB();
+
+	/** @var IDatabase */
+	private $dbw;
+
+	public function __construct() {
+		// TODO inject this
+		$this->dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 	}
 
 	/**
@@ -25,7 +27,7 @@ class GlobalUserMergeDatabaseUpdates {
 	 * @param int|null $newId New global user ID
 	 */
 	public function merge( $oldname, $newname, $newId = null ) {
-		$dbw = $this->getDB();
+		$dbw = $this->dbw;
 
 		$dbw->startAtomic( __METHOD__ );
 		// Delete the old user's globaluser row
@@ -97,7 +99,7 @@ class GlobalUserMergeDatabaseUpdates {
 			return;
 		}
 
-		$this->getDB()->update(
+		$this->dbw->update(
 			'renameuser_queue',
 			[ 'rq_performer' => $toId ],
 			[ 'rq_performer' => $fromId ],
@@ -111,7 +113,7 @@ class GlobalUserMergeDatabaseUpdates {
 	 * @param int $toId
 	 */
 	public function mergeGlobalUserGroups( $fromId, $toId ) {
-		$dbw = $this->getDB();
+		$dbw = $this->dbw;
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->update(
 			'global_user_groups',

@@ -25,8 +25,9 @@
 namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
+use ApiQuery;
 use ApiQueryBase;
-use CentralAuthUtils;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 
 /**
  * Query module to list all global groups
@@ -35,8 +36,22 @@ use CentralAuthUtils;
  * @ingroup Extensions
  */
 class ApiQueryGlobalGroups extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
+	/**
+	 * @param ApiQuery $query
+	 * @param string $moduleName
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 */
+	public function __construct(
+		$query,
+		$moduleName,
+		CentralAuthDatabaseManager $databaseManager
+	) {
 		parent::__construct( $query, $moduleName, 'ggp' );
+		$this->databaseManager = $databaseManager;
 	}
 
 	public function execute() {
@@ -47,7 +62,7 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$APIResult = $this->getResult();
 		$data = [];
 
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
 
 		$fields = [ 'ggp_group' ];
 

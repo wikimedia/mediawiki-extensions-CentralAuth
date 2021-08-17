@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthUser;
-use CentralAuthUtils;
 use Html;
 use LogEventsList;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\MediaWikiServices;
 use SpecialPage;
@@ -41,14 +41,21 @@ class SpecialMultiLock extends SpecialPage {
 	private $mReason;
 	/** @var string[] */
 	private $mActionUserNames;
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
 	/** @var CentralAuthUIService */
 	private $uiService;
 
 	/**
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 */
-	public function __construct( CentralAuthUIService $uiService ) {
+	public function __construct(
+		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthUIService $uiService
+	) {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
+		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 	}
 
@@ -154,7 +161,7 @@ class SpecialMultiLock extends SpecialPage {
 	 * Search the CentralAuth db for all usernames prefixed with mPrefixSearch
 	 */
 	private function searchForUsers() {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
 
 		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
 		if ( !$this->mCanOversight ) {

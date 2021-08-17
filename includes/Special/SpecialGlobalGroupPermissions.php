@@ -13,11 +13,11 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthUser;
-use CentralAuthUtils;
 use Exception;
 use Html;
 use LogEventsList;
 use LogPage;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use SpecialPage;
@@ -38,8 +38,16 @@ use XmlSelect;
  */
 
 class SpecialGlobalGroupPermissions extends SpecialPage {
-	public function __construct() {
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
+	/**
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 */
+	public function __construct( CentralAuthDatabaseManager $databaseManager ) {
 		parent::__construct( 'GlobalGroupPermissions' );
+		$this->databaseManager = $databaseManager;
 	}
 
 	public function doesWrites() {
@@ -504,7 +512,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				return;
 			}
 
-			$dbw = CentralAuthUtils::getCentralDB();
+			$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
 			$updates = [
 				'global_group_permissions' => 'ggp_group',
 				'global_group_restrictions' => 'ggr_group',
@@ -581,7 +589,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string[] $rights
 	 */
 	private function revokeRightsFromGroup( $group, $rights ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
 
 		# Delete from the DB
 		$dbw->delete(
@@ -596,7 +604,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string[]|string $rights
 	 */
 	private function grantRightsToGroup( $group, $rights ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
 
 		if ( !is_array( $rights ) ) {
 			$rights = [ $rights ];
@@ -712,7 +720,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return bool
 	 */
 	private function setRestrictions( $group, $set ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
 		if ( $set == 0 ) {
 			$dbw->delete(
 				'global_group_restrictions',
@@ -749,7 +757,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// Figure out all the users in this group.
 		// Use the primary database over here as this could go horribly wrong with newly created or just
 		// renamed groups
-		$dbr = CentralAuthUtils::getCentralDB();
+		$dbr = $this->databaseManager->getCentralDB( DB_PRIMARY );
 
 		$res = $dbr->select(
 			[ 'global_user_groups', 'globaluser' ],

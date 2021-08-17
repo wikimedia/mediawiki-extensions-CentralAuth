@@ -25,6 +25,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\UserNameUtils;
 
 /**
@@ -33,6 +34,9 @@ use MediaWiki\User\UserNameUtils;
 class CentralAuthPrimaryAuthenticationProvider
 	extends AbstractPasswordPrimaryAuthenticationProvider
 {
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
 
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
@@ -55,6 +59,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	protected $antiSpoofAccounts = null;
 
 	/**
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param UserNameUtils $userNameUtils
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param array $params Settings. All are optional, defaulting to the
@@ -71,6 +76,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 *    AntiSpoof extension isn't installed or the extension is outdated.
 	 */
 	public function __construct(
+		CentralAuthDatabaseManager $databaseManager,
 		UserNameUtils $userNameUtils,
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		$params = []
@@ -78,6 +84,8 @@ class CentralAuthPrimaryAuthenticationProvider
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
 			$wgCentralAuthAutoMigrateNonGlobalAccounts, $wgCentralAuthPreventUnattached,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
+
+		$this->databaseManager = $databaseManager;
 
 		// AbstractAuthenticationProvider::$userNameUtils is protected
 		// TODO this is probably unneeded since AbstractAuthenticationProvider::init
@@ -547,7 +555,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( wfWikiID(), 'new' );
-		CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
+		$this->databaseManager->getCentralDB( DB_PRIMARY )->onTransactionCommitOrIdle(
 			static function () use ( $centralUser ) {
 				CentralAuthUtils::scheduleCreationJobs( $centralUser );
 			},

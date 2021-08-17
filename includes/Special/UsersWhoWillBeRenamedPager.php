@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthUtils;
+use CentralAuthServices;
 use IContextSource;
 use LinkBatch;
 use Linker;
@@ -33,7 +33,8 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	 * @param LinkRenderer $linkRenderer
 	 */
 	public function __construct( IContextSource $context, LinkRenderer $linkRenderer ) {
-		$this->mDb = CentralAuthUtils::getCentralReplicaDB();
+		// TODO inject
+		$this->mDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		parent::__construct( $context, $linkRenderer );
 	}
 

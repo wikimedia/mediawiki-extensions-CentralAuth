@@ -21,7 +21,6 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
-use Wikimedia\Rdbms\IDatabase;
 
 /**
  * Data access object for global rename requests.
@@ -259,7 +258,7 @@ class GlobalRenameRequest {
 	}
 
 	public function save() {
-		$dbw = self::getDB( DB_PRIMARY );
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		if ( $this->id === null ) {
 			$this->requested = wfTimestampNow();
 			$this->status = self::PENDING;
@@ -337,7 +336,7 @@ class GlobalRenameRequest {
 	 * @return stdClass|bool Row as object or false if not found
 	 */
 	protected static function fetchRowFromDB( array $where ) {
-		return self::getDB( DB_REPLICA )->selectRow(
+		return CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA )->selectRow(
 			'renameuser_queue',
 			[
 				'id'        => 'rq_id',
@@ -382,27 +381,13 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * Get a Database object for the CentralAuth db
-	 *
-	 * @param int $type DB_REPLICA or DB_PRIMARY
-	 * @return IDatabase
-	 */
-	protected static function getDB( $type ) {
-		if ( $type === DB_PRIMARY ) {
-			return CentralAuthUtils::getCentralDB();
-		} else {
-			return CentralAuthUtils::getCentralReplicaDB();
-		}
-	}
-
-	/**
 	 * Check to see if there is a pending rename request to the given name.
 	 *
 	 * @param string $newname
 	 * @return bool
 	 */
 	public static function nameHasPendingRequest( $newname ) {
-		$dbw = self::getDB( DB_REPLICA );
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$res = $dbw->selectField(
 			'renameuser_queue',
 			'rq_id',

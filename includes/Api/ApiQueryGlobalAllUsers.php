@@ -3,9 +3,10 @@
 namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
+use ApiQuery;
 use ApiQueryBase;
 use CentralAuthUser;
-use CentralAuthUtils;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -35,8 +36,22 @@ use Wikimedia\Rdbms\IResultWrapper;
  * @author Marius Hoch < hoo@online.de >
  */
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
-	public function __construct( $query, $moduleName ) {
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
+	/**
+	 * @param ApiQuery $query
+	 * @param string $moduleName
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 */
+	public function __construct(
+		$query,
+		$moduleName,
+		CentralAuthDatabaseManager $databaseManager
+	) {
 		parent::__construct( $query, $moduleName, 'agu' );
+		$this->databaseManager = $databaseManager;
 	}
 
 	/**
@@ -49,7 +64,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		static $db = null;
 
 		if ( $db === null ) {
-			$db = CentralAuthUtils::getCentralReplicaDB();
+			$db = $this->databaseManager->getCentralDB( DB_REPLICA );
 		}
 		return $db;
 	}

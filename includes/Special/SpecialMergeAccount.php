@@ -3,11 +3,11 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthUser;
-use CentralAuthUtils;
 use ErrorPageError;
 use Exception;
 use Html;
 use InvalidArgumentException;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\UserFactory;
 use MWCryptRand;
 use NamespaceInfo;
@@ -31,16 +31,26 @@ class SpecialMergeAccount extends SpecialPage {
 	protected $mSessionToken;
 	/** @var string */
 	protected $mSessionKey;
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 	/** @var UserFactory */
 	private $userFactory;
 
+	/**
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param NamespaceInfo $namespaceInfo
+	 * @param UserFactory $userFactory
+	 */
 	public function __construct(
+		CentralAuthDatabaseManager $databaseManager,
 		NamespaceInfo $namespaceInfo,
 		UserFactory $userFactory
 	) {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
+		$this->databaseManager = $databaseManager;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->userFactory = $userFactory;
 	}
@@ -83,9 +93,12 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( CentralAuthUtils::isReadOnly() ) {
+		if ( $this->databaseManager->isReadOnly() ) {
 			$this->getOutput()->setPageTitle( $this->msg( 'readonly' ) );
-			$this->getOutput()->addWikiMsg( 'readonlytext', CentralAuthUtils::getReadOnlyReason() );
+			$this->getOutput()->addWikiMsg(
+				'readonlytext',
+				$this->databaseManager->getReadOnlyReason()
+			);
 			return;
 		}
 		$request = $this->getRequest();

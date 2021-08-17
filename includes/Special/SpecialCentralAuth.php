@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthUser;
-use CentralAuthUtils;
 use DerivativeContext;
 use Exception;
 use GlobalRenameUserStatus;
@@ -14,6 +13,7 @@ use Linker;
 use LogEventsList;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use NamespaceInfo;
 use ReadOnlyError;
@@ -70,12 +70,22 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var CentralAuthUIService */
 	private $uiService;
 
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
+	/**
+	 * @param NamespaceInfo $namespaceInfo
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param CentralAuthUIService $uiService
+	 */
 	public function __construct(
 		NamespaceInfo $namespaceInfo,
+		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService
 	) {
 		parent::__construct( 'CentralAuth' );
 		$this->namespaceInfo = $namespaceInfo;
+		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 	}
 
@@ -164,7 +174,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$continue = true;
 		if ( $this->mCanEdit && $this->mPosted ) {
-			if ( wfReadOnly() || CentralAuthUtils::getCentralDB()->isReadOnly() ) {
+			if ( wfReadOnly() || $this->databaseManager->isReadOnly() ) {
 				throw new ReadOnlyError();
 			}
 			$continue = $this->doSubmit();

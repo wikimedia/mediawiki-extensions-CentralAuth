@@ -1,7 +1,5 @@
 <?php
 
-use Wikimedia\Rdbms\IDatabase;
-
 /**
  * Update the rows in the CentralAuth tables during a rename
  *
@@ -9,19 +7,14 @@ use Wikimedia\Rdbms\IDatabase;
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserDatabaseUpdates {
-	/**
-	 * @return IDatabase
-	 */
-	protected function getDB() {
-		return CentralAuthUtils::getCentralDB();
-	}
 
 	/**
 	 * @param string $oldname
 	 * @param string $newname
 	 */
 	public function update( $oldname, $newname ) {
-		$dbw = $this->getDB();
+		// TODO inject this
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->update(
