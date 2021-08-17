@@ -6,7 +6,6 @@ use Html;
 use LogEventsList;
 use LogPage;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
-use MediaWiki\MediaWikiServices;
 use SpecialPage;
 use Title;
 use WikiSet;
@@ -343,8 +342,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $id
 	 */
 	private function doSubmit( $id ) {
-		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-		$name = $contLang->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
+		$name = $this->getContentLanguage()->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
 		$type = $this->getRequest()->getVal( 'wpType' );
 		$wikis = array_unique( preg_split(
 			'/(\s+|\s*\W\s*)/', $this->getRequest()->getVal( 'wpWikis' ), -1, PREG_SPLIT_NO_EMPTY )
