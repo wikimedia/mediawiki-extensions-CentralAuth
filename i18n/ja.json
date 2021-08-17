@@ -72,7 +72,7 @@
 	"centralauth-admin-delete-nonexistent": "エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。",
 	"centralauth-admin-delete-success": "グローバルアカウント「<nowiki>$1</nowiki>」を削除しました",
 	"centralauth-admin-delete-title": "アカウントの削除",
-	"centralauth-admin-group-temporary": "$1 ''(仮称)''",
+	"centralauth-admin-group-temporary": "$1 ''(一時的な権限)''",
 	"centralauth-admin-hidden-list": "グローバル利用者一覧から秘匿済み",
 	"centralauth-admin-hidden-oversight": "秘匿済み",
 	"centralauth-admin-info-attached": "関連付けられたアカウントの数:",
