@@ -101,7 +101,13 @@
 				"CentralAuth.CentralAuthForcedLocalCreationService"
 			]
 		},
-		"MergeAccount": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMergeAccount",
+		"MergeAccount": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMergeAccount",
+			"services": [
+				"NamespaceInfo",
+				"UserFactory"
+			]
+		},
 		"GlobalGroupMembership": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
 		"GlobalGroupPermissions": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
 		"WikiSets": {

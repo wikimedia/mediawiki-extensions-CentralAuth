@@ -8,10 +8,10 @@ use ErrorPageError;
 use Exception;
 use Html;
 use InvalidArgumentException;
+use MediaWiki\User\UserFactory;
 use MWCryptRand;
-use MWNamespace;
+use NamespaceInfo;
 use SpecialPage;
-use User;
 use WikiMap;
 use Wikimedia\AtEase\AtEase;
 use Xml;
@@ -31,9 +31,18 @@ class SpecialMergeAccount extends SpecialPage {
 	protected $mSessionToken;
 	/** @var string */
 	protected $mSessionKey;
+	/** @var NamespaceInfo */
+	private $namespaceInfo;
+	/** @var UserFactory */
+	private $userFactory;
 
-	public function __construct() {
+	public function __construct(
+		NamespaceInfo $namespaceInfo,
+		UserFactory $userFactory
+	) {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
+		$this->namespaceInfo = $namespaceInfo;
+		$this->userFactory = $userFactory;
 	}
 
 	public function doesWrites() {
@@ -45,7 +54,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
 		if ( $subpage !== null && preg_match( "/^[0-9a-zA-Z]{32}$/", $subpage ) ) {
-			$user = User::newFromConfirmationCode( $subpage );
+			$user = $this->userFactory->newFromConfirmationCode( $subpage );
 
 			if ( is_object( $user ) ) {
 				$user->confirmEmail();
@@ -551,7 +560,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$wikiname = $wiki->getDisplayName();
 		return SpecialCentralAuth::foreignLink(
 			$wiki,
-			MWNamespace::getCanonicalName( NS_USER ) . ':' . $this->mUserName,
+			$this->namespaceInfo->getCanonicalName( NS_USER ) . ':' . $this->mUserName,
 			$wikiname,
 			$this->msg( 'centralauth-foreign-link', $this->mUserName, $wikiname )->text()
 		);
