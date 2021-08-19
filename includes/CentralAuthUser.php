@@ -1575,16 +1575,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 		# Synchronise passwords
 		$password = $this->getPassword();
-		$localUserRes = $centralDB->select(
+		$localUserRes = $centralDB->selectFieldValues(
 			'localuser',
-			'*',
+			'lu_wiki',
 			[ 'lu_name' => $this->mName ],
 			__METHOD__
 		);
 		$name = $this->getName();
-		foreach ( $localUserRes as $localUserRow ) {
-			/** @var stdClass $localUserRow */
-			$wiki = $localUserRow->lu_wiki;
+		foreach ( $localUserRes as $wiki ) {
 			$logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$localDB = $lbFactory->getMainLB( $wiki )->getConnectionRef( DB_PRIMARY, [], $wiki );
 			$localDB->update(

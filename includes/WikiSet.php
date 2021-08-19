@@ -304,14 +304,12 @@ class WikiSet {
 	 */
 	public function getRestrictedGroups() {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
-		$res = $dbr->select(
-			'global_group_restrictions', '*', [ 'ggr_set' => $this->mId ], __METHOD__
+		return $dbr->selectFieldValues(
+			'global_group_restrictions',
+			'ggr_group',
+			[ 'ggr_set' => $this->mId ],
+			__METHOD__
 		);
-		$result = [];
-		foreach ( $res as $row ) {
-			$result[] = $row->ggr_group;
-		}
-		return $result;
 	}
 
 	/**
@@ -352,13 +350,12 @@ class WikiSet {
 	 */
 	public static function getWikiSetForGroup( $group ) {
 		$dbr = CentralAuthUtils::getCentralReplicaDB();
-		$res = $dbr->selectRow(
+		return (int)$dbr->selectField(
 			'global_group_restrictions',
-			'*',
+			'ggr_set',
 			[ 'ggr_group' => $group ],
 			__METHOD__
 		);
-		return $res ? $res->ggr_set : 0;
 	}
 
 	/**
