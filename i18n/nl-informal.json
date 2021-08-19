@@ -3,6 +3,7 @@
 		"authors": [
 			"Bdijkstra",
 			"Mar(c)",
+			"McDutchie",
 			"Siebrand"
 		]
 	},
@@ -10,7 +11,7 @@
 	"centralauth-admin-status-intro": "Je kunt dit formulier gebruiken om de status van deze globale gebruiker te wijzigen",
 	"centralauth-attach-text": "Deze gebruiker is nog niet gemigreerd naar een samengevoegde gebruiker.\nAls de overkoepelende gebruiker ook van jou is, dan kan je deze gebruiker samenvoegen als je het wachtwoord voor de overkoepelende gebruiker ingeeft:",
 	"centralauth-complete-text": "Je kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuw account aan te maken.",
-	"centralauth-editgroup-success-text": "Je hebt de groepsrechten voor de groep $1 aangepast. [[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]",
+	"centralauth-editgroup-success-text": "De globale groep \"$1\" is bijgewerkt.\n[[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]",
 	"centralauth-editset-intro-rw": "De volgende wikigroepen bestaan al.\nJe kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.",
 	"centralauth-error-locked": "Je kunt niet bewerken omdat je gebruiker geblokkeerd is.",
 	"centralauth-error-unmerged": "Je kunt niet bewerken omdat je gebruiker niet is samengevoegd.",
@@ -18,11 +19,11 @@
 	"centralauth-finish-text": "Als deze gebruikers bij jou horen, dan kan je het proces van samenvoegen afronden door de wachtwoorden voor de andere gebruikers hier in te voeren:",
 	"centralauth-incomplete-text": "Als je accounts zijn samengevoegd, kun je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuw account aan te maken.",
 	"centralauth-list-home-dryrun": "Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor je samengevoegde gebruiker.",
-	"centralauth-list-unattached": "De gebruiker \"$1\" kon niet automatisch aan jou toegewezen worden voor de volgende sites; waarschijnlijk omdat het wachtwoord afwijkt van je primaire gebruiker:",
+	"centralauth-list-unattached": "De gebruiker{{PLURAL:$2||s}} met de naam \"$1\" kon{{PLURAL:$2||den}} niet automatisch aan jou toegewezen worden voor de volgende site{{PLURAL:$2||s}};\nwaarschijnlijk omdat het wachtwoord afwijkt van dat van jouw primaire gebruiker:",
 	"centralauth-login-no-others": "Je bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Je wordt aangemeld bij andere wiki's van {{int:Centralauth-groupname}}:",
+	"centralauth-login-progress": "Je wordt aangemeld bij de {{PLURAL:$2|wiki|wiki's}} van {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Je bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Je wordt afgemeld bij andere wiki's van {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Je wordt afgemeld bij de andere {{PLURAL:$2|wiki|wiki's}} van {{int:Centralauth-groupname}}:",
 	"centralauth-merge-denied": "Je hebt geen toegang tot deze pagina.",
 	"centralauth-merge-dryrun-complete": "Alle bestaande gebruikers kunnen automatisch samengevoegd worden!\n\nEr zijn nog geen wijzigingen aan je gebruiker gemaakt.",
 	"centralauth-merge-dryrun-home": "Het migratiesysteem kon niet bevestigen dat jij de eigenaar bent van de gebruiker op de thuiswiki voor je gebruiker.\n\nEr is een andere wiki vastgesteld als thuiswiki voor je gebruiker; volg de link hieronder en meld je daar aan om je gebruikersmigratie te voltooien.",
@@ -36,8 +37,8 @@
 	"centralauth-merge-welcome": "'''Je gebruiker is nog niet gemigreerd naar het samengevoegde aanmeldsysteem van {{int:Centralauth-groupname}}.'''\n\nAls je ervoor kiest om je gebruikers te migreren, dan kan je met dezelfde gebruikersnaam-wachtwoordcombinatie aanmelden bij alle wiki's van {{int:Centralauth-groupname}} in alle beschikbare talen.\n\nAls iemand anders met jouw gebruikersnaam al actief is op een andere site, dan heeft dat geen gevolgen voor die gebruiker. Je hebt de mogelijkheid dat met die gebruiker of een beheerder op een later moment op te lossen.",
 	"centralauth-newgroup-intro": "Via dit formulier kan je rechten toekennen aan een nieuwe groep. Een groep bestaat niet, tenzij er rechten aan toegekend zijn",
 	"centralauth-not-owner-text": "De gebruikersnaam \"$1\" is automatisch toegewezen aan de eigenaar van de gebruiker op $2.\n\nAls jij dat bent, kan je het samenvoegen van gebruikers afronden door hier het wachtwoord voor die gebruiker in te geven:",
-	"centralauth-prefs-count-attached": "Je gebruiker is actief in {{PLURAL:$1|één projectsite|$1 projectsites}}.",
-	"centralauth-prefs-count-unattached": "Niet-bevestigde gebruikers met jouw naam zijn nog aanwezig op {{PLURAL:$1|één project|$1 projecten}}.",
+	"centralauth-prefs-count-attached": "Jouw account is actief op {{PLURAL:$1|één wiki|$1 wiki's}}.",
+	"centralauth-prefs-count-unattached": "Niet-bevestigde gebruikers met jouw naam zijn nog aanwezig op {{PLURAL:$1|één wiki|$1 wiki's}}.",
 	"centralauth-prefs-manage": "Je globale gebruiker beheren",
 	"centralauth-prefs-view": "Gegevens over je globale account bekijken",
 	"centralauth-token-mismatch": "Vanwege verlies van de sessiegegevens kon je verzoek niet verwerkt worden."
