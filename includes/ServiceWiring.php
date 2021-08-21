@@ -5,6 +5,10 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\MediaWikiServices;
 
+// PHPUnit does not understand coverage for this file.
+// It is covered though, see CentralAuthServiceWiringTest.
+// @codeCoverageIgnoreStart
+
 return [
 	'CentralAuth.CentralAuthDatabaseManager' => static function (
 		MediaWikiServices $services
@@ -42,3 +46,5 @@ return [
 		);
 	},
 ];
+
+// @codeCoverageIgnoreEnd
