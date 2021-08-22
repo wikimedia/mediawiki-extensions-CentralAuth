@@ -126,6 +126,10 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			] );
 
 			$this->addWhere( [ 'gug_group' => $params['group'] ] );
+			$this->addWhere( [
+				'gug_expiry IS NULL OR gug_expiry >= '
+				. $this->getDB()->addQuotes( $this->getDB()->timestamp() )
+			] );
 		}
 
 		if ( !empty( $params['excludegroup'] ) ) {
@@ -139,6 +143,10 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			] );
 
 			$this->addWhere( 'gug2.gug_user IS NULL' );
+			$this->addWhere( [
+				'gug2.gug_expiry IS NULL OR gug2.gug_expiry >= '
+				. $this->getDB()->addQuotes( $this->getDB()->timestamp() )
+			] );
 		}
 
 		if ( $this->getConfig()->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD ) {
@@ -249,6 +257,11 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		$this->addJoinConds( [
 			'global_user_groups' =>
 			[ 'INNER JOIN', 'gug_user = gu_id' ]
+		] );
+
+		$this->addWhere( [
+			'gug_expiry IS NULL OR gug_expiry >= '
+			. $this->getDB()->addQuotes( $this->getDB()->timestamp() )
 		] );
 
 		$groupResult = $this->select( __METHOD__ );

@@ -19,12 +19,14 @@
  */
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * Tests to make sure the whole global group membership flow works correctly.
  *
  * @covers CentralAuthUser::getGlobalRights
  * @covers CentralAuthUser::loadGroups
+ * @covers CentralAuthUser::getClosestGlobalUserGroupExpiry
  * @covers CentralAuthHooks::onUserGetRights
  *
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
@@ -39,7 +41,11 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 
 		$caDbw->insert(
 			'global_group_permissions',
-			[ 'ggp_group' => 'global-foos', 'ggp_permission' => 'some-global-right' ],
+			[
+				[ 'ggp_group' => 'global-foos', 'ggp_permission' => 'some-global-right' ],
+				[ 'ggp_group' => 'global-bars', 'ggp_permission' => 'some-other-right' ],
+				[ 'ggp_group' => 'global-bazes', 'ggp_permission' => 'yet-another-right' ],
+			],
 			__METHOD__
 		);
 	}
@@ -57,33 +63,43 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 
 	public function testReadGroupsFromDatabase() {
 		$user = $this->getRegisteredTestUser();
-		$caUser = CentralAuthUser::getPrimaryInstance( $user );
+		$caUser = TestingAccessWrapper::newFromObject( CentralAuthUser::getPrimaryInstance( $user ) );
 
-		$this->assertFalse(
-			$this->getServiceContainer()
-				->getPermissionManager()
-				->userHasRight( $user, 'some-global-right' )
-		);
+		$services = $this->getServiceContainer();
+		$permissionManager = $services->getPermissionManager();
 
+		$this->assertFalse( $permissionManager->userHasRight( $user, 'some-global-right' ) );
 		$this->assertFalse( $user->isAllowed( 'some-global-right' ) );
 
-		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
-			->getCentralDB( DB_PRIMARY );
+		$expiryFuture = time() + 1800;
+
+		$caDbw = CentralAuthServices::getDatabaseManager( $services )->getCentralDB( DB_PRIMARY );
 		$caDbw->insert(
 			'global_user_groups',
-			[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-foos' ]
+			[
+				[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-foos',  'gug_expiry' => null, ],
+				[
+					'gug_user' => $caUser->getId(),
+					'gug_group' => 'global-bars',
+					'gug_expiry' => wfTimestamp( TS_MW, $expiryFuture ),
+				],
+				[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-bazes', 'gug_expiry' => '20201201121212', ],
+			],
+			__METHOD__
 		);
 
 		$caUser->invalidateCache();
-		$this->getServiceContainer()->getPermissionManager()->invalidateUsersRightsCache( $user );
+		$permissionManager->invalidateUsersRightsCache( $user );
 
-		$this->assertTrue(
-			$this->getServiceContainer()
-				->getPermissionManager()
-				->userHasRight( $user, 'some-global-right' )
-		);
+		$this->assertTrue( $permissionManager->userHasRight( $user, 'some-global-right' ) );
+		$this->assertTrue( $permissionManager->userHasRight( $user, 'some-other-right' ) );
+		$this->assertFalse( $permissionManager->userHasRight( $user, 'yet-another-right' ) );
 
 		$this->assertTrue( $user->isAllowed( 'some-global-right' ) );
+		$this->assertTrue( $user->isAllowed( 'some-other-right' ) );
+		$this->assertFalse( $user->isAllowed( 'yet-another-right' ) );
+
+		$this->assertEquals( $expiryFuture, $caUser->getClosestGlobalUserGroupExpiry() );
 	}
 
 	/**

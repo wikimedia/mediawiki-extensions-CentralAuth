@@ -102,6 +102,8 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mGroups;
 	/** @var string[][] */
 	private $mRights;
+	/** @var array<string, string|null>|null */
+	private $mGroupExpirations;
 	/** @var string */
 	private $mPassword;
 	/** @var string */
@@ -139,6 +141,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mEmail',
 		'mAuthenticationTimestamp',
 		'mGroups',
+		'mGroupExpirations',
 		'mRights',
 		'mHomeWiki',
 		'mBeingRenamed',
@@ -150,7 +153,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	private const VERSION = 8;
+	private const VERSION = 9;
 
 	public const HIDDEN_NONE = '';
 	public const HIDDEN_LISTS = 'lists';
@@ -418,6 +421,7 @@ class CentralAuthUser implements IDBAccessObject {
 	protected function resetState() {
 		$this->mGlobalId = null;
 		$this->mGroups = null;
+		$this->mGroupExpirations = null;
 		$this->mAttachedArray = null;
 		$this->mAttachedList = null;
 		$this->mHomeWiki = null;
@@ -470,15 +474,24 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$res = $db->select(
 			[ 'global_group_permissions', 'global_user_groups' ],
-			[ 'ggp_permission', 'ggp_group' ],
-			[ 'ggp_group=gug_group', 'gug_user' => $this->getId() ],
+			[ 'ggp_permission', 'ggp_group', 'gug_expiry', ],
+			[
+				'ggp_group=gug_group',
+				'gug_user' => $this->getId(),
+				'gug_expiry IS NULL OR gug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
+			],
 			__METHOD__
 		);
 
 		$resSets = $db->select(
 			[ 'global_user_groups', 'global_group_restrictions', 'wikiset' ],
 			[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
-			[ 'ggr_group=gug_group', 'ggr_set=ws_id', 'gug_user' => $this->getId() ],
+			[
+				'ggr_group=gug_group',
+				'gug_expiry IS NULL OR gug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
+				'ggr_set=ws_id',
+				'gug_user' => $this->getId()
+			],
 			__METHOD__
 		);
 
@@ -496,11 +509,40 @@ class CentralAuthUser implements IDBAccessObject {
 			/** @var UserIdentity|bool $set */
 			$set = $sets[$row->ggp_group] ?? '';
 			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getId() : false ];
-			$groups[$row->ggp_group] = 1;
+			$groups[$row->ggp_group] = $row->gug_expiry;
 		}
 
 		$this->mRights = $rights;
 		$this->mGroups = array_keys( $groups );
+		$this->mGroupExpirations = $groups;
+	}
+
+	/**
+	 * @return int|null Time when a global user group membership for this user will expire
+	 * the next time in UNIX time, or null if this user has no temporary global group memberships.
+	 */
+	private function getClosestGlobalUserGroupExpiry(): ?int {
+		if ( !isset( $this->mGroupExpirations ) ) {
+			$this->loadGroups();
+		}
+
+		$closestExpiry = null;
+
+		foreach ( $this->mGroupExpirations as $expiration ) {
+			if ( !$expiration ) {
+				continue;
+			}
+
+			$expiration = wfTimestamp( TS_UNIX, $expiration );
+
+			if ( $closestExpiry ) {
+				$closestExpiry = min( $closestExpiry, $expiration );
+			} else {
+				$closestExpiry = $expiration;
+			}
+		}
+
+		return $closestExpiry;
 	}
 
 	protected function loadFromDatabase() {
@@ -597,6 +639,13 @@ class CentralAuthUser implements IDBAccessObject {
 				$this->loadFromDatabase();
 				$this->loadAttached();
 				$this->loadGroups();
+
+				// if this user has global user groups expiring in less than the default TTL (1 day),
+				// max out the TTL so that then-expired user groups will not be loaded from cache
+				$closestGugExpiry = $this->getClosestGlobalUserGroupExpiry();
+				if ( $closestGugExpiry ) {
+					$ttl = min( time() - $closestGugExpiry, $ttl );
+				}
 
 				$data = [];
 				foreach ( self::$mCacheVars as $var ) {
@@ -2974,6 +3023,15 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->loadGroups();
 
 		return $this->mGroups;
+	}
+
+	/**
+	 * @return array<string, string|null> of [group name => expiration timestamp or null if permanent]
+	 */
+	public function getGlobalGroupsWithExpiration() {
+		$this->loadGroups();
+
+		return $this->mGroupExpirations;
 	}
 
 	/**

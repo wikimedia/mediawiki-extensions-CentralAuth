@@ -109,6 +109,8 @@ class GlobalUsersPager extends AlphabeticPager {
 				'LEFT JOIN',
 				'gu_id = gug_user'
 			];
+
+			$conds[] = 'gug_expiry IS NULL OR gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() );
 		}
 
 		if ( $this->requestedUser !== false ) {
@@ -127,7 +129,20 @@ class GlobalUsersPager extends AlphabeticPager {
 					'|',
 					[ 'G' => 'global_user_groups' ],
 					'G.gug_group',
-					'G.gug_user = gu_id'
+					[
+						'G.gug_user = gu_id',
+						'G.gug_expiry IS NULL OR G.gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
+					]
+				),
+				'gug_expiry' => $this->mDb->buildGroupConcatField(
+					// | is not a part of any MW timestamp
+					'|',
+					[ 'G' => 'global_user_groups' ],
+					'IFNULL(G.gug_expiry, "null")',
+					[
+						'G.gug_user = gu_id',
+						'G.gug_expiry IS NULL OR G.gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
+					]
 				),
 			],
 			'conds' => $conds,
@@ -168,7 +183,24 @@ class GlobalUsersPager extends AlphabeticPager {
 			// userpage existence link cache
 			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
 			if ( $row->gug_group ) { // no point in adding users that belong to any group
-				$this->globalIDGroups[$row->gu_id] = explode( '|', $row->gug_group );
+				$groups = explode( '|', $row->gug_group );
+				$expiries = explode( '|', $row->gug_expiry );
+				$combined = array_combine( $groups, $expiries );
+
+				// Ensure temporary groups are displayed first, to avoid ambiguity like
+				// "first, second (expires at some point)" (unclear if only second expires or if both expire)
+				uasort( $combined, static function ( $first, $second ) {
+					// yes, this is 'null' not null, that's the string we get from the database if there's no expiry
+					if ( $first === 'null' && $second !== 'null' ) {
+						return 1;
+					} elseif ( $first !== 'null' && $second === 'null' ) {
+						return -1;
+					} else {
+						return 0;
+					}
+				} );
+
+				$this->globalIDGroups[$row->gu_id] = $combined;
 			}
 		}
 		$batch->execute();
@@ -176,7 +208,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		// Make an array of global groups for all users in the current result set
 		$globalGroups = [];
 		foreach ( $this->globalIDGroups as $gugGroup ) {
-			$globalGroups = array_merge( $globalGroups, $gugGroup );
+			$globalGroups = array_merge( $globalGroups, array_keys( $gugGroup ) );
 		}
 		if ( count( $globalGroups ) > 0 ) {
 			$wsQuery = $this->mDb->select(
@@ -255,9 +287,15 @@ class GlobalUsersPager extends AlphabeticPager {
 	 */
 	protected function getUserGroups( $id, $username ) {
 		$rights = [];
-		foreach ( $this->globalIDGroups[$id] as $group ) {
+		foreach ( $this->globalIDGroups[$id] as $group => $expiry ) {
+			$ugm = new UserGroupMembership(
+				(int)$id,
+				$group,
+				$expiry !== 'null' ? $expiry : null
+			);
+
 			$wikitextLink = UserGroupMembership::getLink(
-				$group, $this->getContext(), 'wiki', $username );
+				$ugm, $this->getContext(), 'wiki', $username );
 
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
