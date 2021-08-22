@@ -42,7 +42,8 @@ return [
 		MediaWikiServices $services
 	): CentralAuthWikiListService {
 		return new CentralAuthWikiListService(
-			new ServiceOptions( CentralAuthWikiListService::CONSTRUCTOR_OPTIONS, $services->getMainConfig() )
+			new ServiceOptions( CentralAuthWikiListService::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
+			$services->getHookContainer()
 		);
 	},
 ];
