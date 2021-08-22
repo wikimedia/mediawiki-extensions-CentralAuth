@@ -15,7 +15,6 @@ use LogEventsList;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
-use MediaWiki\MediaWikiServices;
 use NamespaceInfo;
 use ReadOnlyError;
 use Sanitizer;
@@ -110,8 +109,7 @@ class SpecialCentralAuth extends SpecialPage {
 				str_replace( '_', ' ',
 					$this->getRequest()->getText( 'target', $subpage ) ) );
 
-		$this->mUserName = MediaWikiServices::getInstance()->getContentLanguage()
-			->ucfirst( $this->mUserName );
+		$this->mUserName = $this->getContentLanguage()->ucfirst( $this->mUserName );
 
 		$this->mPosted = $this->getRequest()->wasPosted();
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod' );
