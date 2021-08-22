@@ -477,6 +477,7 @@
 		"ContentSecurityPolicyDefaultSource": "CentralAuthHooks::onContentSecurityPolicyDefaultSource",
 		"ContentSecurityPolicyScriptSource": "CentralAuthHooks::onContentSecurityPolicyScriptSource",
 		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
+		"GetLogTypesOnUser": "CentralAuthHooks::onGetLogTypesOnUser",
 		"GetPreferences": "CentralAuthHooks::onGetPreferences",
 		"GetUserBlock": "CentralAuthHooks::onGetUserBlock",
 		"getUserPermissionsErrorsExpensive": "CentralAuthHooks::onGetUserPermissionsErrorsExpensive",

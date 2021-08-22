@@ -1743,4 +1743,11 @@ class CentralAuthHooks {
 			$db->dropTable( $table );
 		}
 	}
+
+	/**
+	 * @param array &$types
+	 */
+	public static function onGetLogTypesOnUser( &$types ) {
+		$types[] = 'gblrights';
+	}
 }
