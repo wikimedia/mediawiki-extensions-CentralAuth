@@ -7,7 +7,7 @@ use IContextSource;
 use LinkBatch;
 use Linker;
 use MediaWiki\Block\DatabaseBlock;
-use SpecialPage;
+use MediaWiki\Linker\LinkRenderer;
 use TablePager;
 use User;
 use UserArray;
@@ -19,10 +19,6 @@ use UserArray;
 class UsersWhoWillBeRenamedPager extends TablePager {
 
 	/**
-	 * @var SpecialPage
-	 */
-	protected $owner;
-	/**
 	 * @var array
 	 */
 	protected $mFieldNames;
@@ -33,13 +29,12 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 	protected $users = [];
 
 	/**
-	 * @param SpecialPage $owner Containing page
 	 * @param IContextSource $context
+	 * @param LinkRenderer $linkRenderer
 	 */
-	public function __construct( SpecialPage $owner, IContextSource $context ) {
-		$this->owner = $owner;
+	public function __construct( IContextSource $context, LinkRenderer $linkRenderer ) {
 		$this->mDb = CentralAuthUtils::getCentralReplicaDB();
-		parent::__construct( $context );
+		parent::__construct( $context, $linkRenderer );
 	}
 
 	public function getQueryInfo() {
