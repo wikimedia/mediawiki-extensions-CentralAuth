@@ -4,6 +4,7 @@
 			"Murma174"
 		]
 	},
+	"action-centralauth-createlocal": "en lokaal konto iinracht saner fraagin",
 	"action-centralauth-rename": "globaal brükerkontos amtunäämen",
 	"centralauth": "Ferwaltang faan globaal brükerkontos",
 	"centralauth-admin-blocklog": "Brükersper-logbuk",
@@ -29,6 +30,7 @@
 	"centralauth-prefs-status": "Globaal brükerkonto:",
 	"centralauth-prefs-view": "Globaal brükerkonto uunluke",
 	"centralauth-uwbr-editcount": "Taal faan feranrangen",
+	"createlocalaccount": "En lokaal konto iinracht saner fraagin",
 	"globalgroupmembership": "Lasmootskap uun globaal sköölen",
 	"globalgrouppermissions": "Ferwaltang faan globaal brükersköölen",
 	"globalrenameprogress": "Stant faan't globaal amnäämen",

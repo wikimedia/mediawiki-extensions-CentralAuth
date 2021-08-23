@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"ChoiChong"
+		]
+	},
+	"centralauth-admin-blocklog": "ブロック記録",
+	"centralauth-foreign-contributions": "$2 で $1 {{PLURAL:$1|件ぬ投稿}}",
+	"centralauth-foreign-link": "$2 上ぬ利用者 $1",
+	"centralauth-merge-method-login": "ログイン時んかい自動作成"
+}
