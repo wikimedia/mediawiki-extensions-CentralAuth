@@ -98,7 +98,7 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 	protected function getUsers( $wiki ) {
 		if ( $this->user !== null ) {
 			$this->output( "\t ... querying '$this->user'\n" );
-			yield $this->user;
+			yield [ $this->user ];
 			return;
 		}
 
