@@ -24,7 +24,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	/** @var string[] */
 	private $localWikisets = [];
 
-	public function __construct( IContextSource $context = null, $par = null ) {
+	public function __construct( IContextSource $context ) {
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
 		$this->mDb = CentralAuthUtils::getCentralReplicaDB();

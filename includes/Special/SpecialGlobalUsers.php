@@ -28,7 +28,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$pg = new GlobalUsersPager( $context, $par );
+		$pg = new GlobalUsersPager( $context );
 		$req = $this->getRequest();
 
 		if ( $par ) {
