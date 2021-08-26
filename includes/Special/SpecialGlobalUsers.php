@@ -31,7 +31,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$pg = new GlobalUsersPager( $context );
 		$req = $this->getRequest();
 
-		if ( $par ) {
+		if ( $par !== null && $par !== '' ) {
 			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
 				$pg->setGroup( $par );
 			} else {
@@ -39,8 +39,8 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 			}
 		}
 
-		$rqGroup = $req->getVal( 'group' );
-		if ( $rqGroup ) {
+		$rqGroup = $req->getVal( 'group', '' );
+		if ( $rqGroup !== '' ) {
 			// XXX This is a horrible hack. We should not use Title for normalization. We need to
 			// prefix the group name so that the first letter doesn't get uppercased.
 			$groupTitle = Title::newFromText( "A/$rqGroup" );
@@ -49,8 +49,8 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 			}
 		}
 
-		$rqUsername = $this->contentLanguage->ucfirst( $req->getVal( 'username' ) );
-		if ( $rqUsername ) {
+		$rqUsername = $this->contentLanguage->ucfirst( $req->getVal( 'username', '' ) );
+		if ( $rqUsername !== '' ) {
 			$pg->setUsername( $rqUsername );
 		}
 

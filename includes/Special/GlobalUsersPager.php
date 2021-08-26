@@ -33,8 +33,8 @@ class GlobalUsersPager extends AlphabeticPager {
 	/**
 	 * @param string $group
 	 */
-	public function setGroup( $group = '' ) {
-		if ( !$group ) {
+	public function setGroup( string $group = '' ) {
+		if ( $group === '' ) {
 			$this->requestedGroup = false;
 			return;
 		}
@@ -44,8 +44,8 @@ class GlobalUsersPager extends AlphabeticPager {
 	/**
 	 * @param string $username
 	 */
-	public function setUsername( $username = '' ) {
-		if ( !$username ) {
+	public function setUsername( string $username = '' ) {
+		if ( $username === '' ) {
 			$this->requestedUser = false;
 			return;
 		}
@@ -64,7 +64,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 */
 	public function getDefaultQuery() {
 		$query = parent::getDefaultQuery();
-		if ( !isset( $query['group'] ) && $this->requestedGroup ) {
+		if ( !isset( $query['group'] ) && $this->requestedGroup !== false ) {
 			$query['group'] = $this->requestedGroup;
 		}
 		$this->mDefaultQuery = $query;
@@ -77,11 +77,11 @@ class GlobalUsersPager extends AlphabeticPager {
 	public function getQueryInfo() {
 		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
 
-		if ( $this->requestedGroup ) {
+		if ( $this->requestedGroup !== false ) {
 			$conds['gug_group'] = $this->requestedGroup;
 		}
 
-		if ( $this->requestedUser ) {
+		if ( $this->requestedUser !== false ) {
 			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->requestedUser );
 		}
 
