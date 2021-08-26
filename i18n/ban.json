@@ -47,6 +47,8 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|warsa}} sané ungkur",
 	"centralautologin": "Manjing log kapusat",
 	"globalrenamequeue-action-view": "Cingak",
+	"globalrenamequeue-column-rq-completed-ts": "Tanggal panyineban",
+	"globalrenamequeue-nav-closedqueue": "Pinunasan kasineb",
 	"globalrenamequeue-request-cancel-text": "Wangdé",
 	"globalrenamequeue-request-comments-label": "Cutetan/hawanan"
 }
