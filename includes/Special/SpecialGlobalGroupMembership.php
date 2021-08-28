@@ -10,7 +10,6 @@ use LogEventsList;
 use LogPage;
 use OutputPage;
 use Status;
-use Title;
 use User;
 use UserrightsPage;
 use Xml;
@@ -150,10 +149,9 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @param OutputPage $output
 	 */
 	protected function showLogFragment( $user, $output ) {
-		$pageTitle = Title::makeTitleSafe( NS_USER, $user->getName() );
 		$logPage = new LogPage( 'gblrights' );
 		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
-		LogEventsList::showLogExtract( $output, 'gblrights', $pageTitle->getPrefixedText() );
+		LogEventsList::showLogExtract( $output, 'gblrights', $user->getUserPage() );
 	}
 
 	/**
