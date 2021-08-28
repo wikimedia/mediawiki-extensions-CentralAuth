@@ -42,8 +42,7 @@ return [
 			$services->getMainConfig(),
 			$services->getAuthManager(),
 			$services->getStatsdDataFactory(),
-			$services->getTitleFactory(),
-			CentralAuthServices::getDatabaseManager( $services )
+			$services->getTitleFactory()
 		);
 	},
 	'CentralAuth.CentralAuthWikiListService' => static function (

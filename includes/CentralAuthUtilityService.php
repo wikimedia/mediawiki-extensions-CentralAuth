@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
@@ -31,31 +30,16 @@ class CentralAuthUtilityService {
 	/** @var TitleFactory */
 	private $titleFactory;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
 	public function __construct(
 		Config $config,
 		AuthManager $authManager,
 		IBufferingStatsdDataFactory $statsdDataFactory,
-		TitleFactory $titleFactory,
-		CentralAuthDatabaseManager $databaseManager
+		TitleFactory $titleFactory
 	) {
 		$this->config = $config;
 		$this->authManager = $authManager;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->titleFactory = $titleFactory;
-		$this->databaseManager = $databaseManager;
-	}
-
-	/**
-	 * Gets a replica (readonly) database connection to the CentralAuth database
-	 *
-	 * @return \Wikimedia\Rdbms\IDatabase
-	 * @deprecated since 1.37, use CentralAuthDatabaseManager service instead
-	 */
-	public function getCentralReplicaDB(): IDatabase {
-		return $this->databaseManager->getCentralDB( DB_REPLICA );
 	}
 
 	/**
