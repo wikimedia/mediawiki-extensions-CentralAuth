@@ -20,6 +20,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserIdentity;
 
 /**
  * Utility class to deal with global rename blacklist.
@@ -111,10 +112,10 @@ class GlobalRenameBlacklist {
 	/**
 	 * Checks if $user can request a global rename
 	 *
-	 * @param User $user User who is to be checked
+	 * @param UserIdentity $user User who is to be checked
 	 * @return bool
 	 */
-	public function checkUser( User $user ) {
+	public function checkUser( UserIdentity $user ) {
 		global $wgGlobalRenameBlacklistRegex;
 
 		if ( $this->blacklist === null ) {

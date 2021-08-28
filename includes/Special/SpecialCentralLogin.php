@@ -11,6 +11,7 @@ use Hooks;
 use IBufferingStatsdDataFactory;
 use LoginHelper;
 use MediaWiki\Session\Session;
+use MediaWiki\User\UserIdentity;
 use MWCryptRand;
 use UnlistedSpecialPage;
 use User;
@@ -108,7 +109,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
-		$getException = static function ( CentralAuthUser $centralUser, User $user, array $info ) {
+		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user, array $info ) {
 			if ( !$centralUser->exists() ) { // sanity
 				return new Exception( "Global user '{$info['name']}' does not exist." );
 			} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
@@ -237,7 +238,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			return;
 		}
 
-		$getException = static function ( CentralAuthUser $centralUser, User $user ) {
+		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user ) {
 			if ( !$user->getId() ) { // sanity
 				return new Exception( "The user account logged into does not exist." );
 			}

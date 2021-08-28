@@ -14,6 +14,7 @@ use FormatJson;
 use Hooks;
 use Language;
 use MediaWiki\Session\Session;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsManager;
 use MobileContext;
 use MWCryptRand;
@@ -700,7 +701,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	/**
 	 * @param CentralAuthUser $centralUser
-	 * @param User $user
+	 * @param UserIdentity $user
 	 * @return array
 	 */
 	private function getCentralSession( $centralUser, $user ) {
