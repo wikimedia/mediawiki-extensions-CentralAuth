@@ -503,13 +503,48 @@
 	"callback": "CentralAuthHooks::onRegistration",
 	"HookHandlers": {
 		"abusefilter": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\AbuseFilterHooks"
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\AbuseFilterHookHandler"
 		},
 		"default": {
 			"class": "CentralAuthHooks"
 		},
+		"importhandle": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ImportHandleHookHandler",
+			"services": [
+				"CentralAuth.CentralAuthUtilityService",
+				"UserFactory"
+			]
+		},
+		"log": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\LogHookHandler",
+			"services": [
+				"UserNameUtils"
+			]
+		},
+		"noservices": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\NoServicesHookHandler"
+		},
+		"specialcontributions": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialContributionsHookHandler",
+			"services": [
+				"NamespaceInfo"
+			]
+		},
 		"rename": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\GlobalRenameHooks"
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\GlobalRenameHookHandler"
+		},
+		"unittests": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UnitTestsHookHandler",
+			"services": [
+				"DBLoadBalancer"
+			]
+		},
+		"usercreation": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserCreationHookHandler",
+			"services": [
+				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthUtilityService"
+			]
 		}
 	},
 	"Hooks": {
@@ -527,11 +562,11 @@
 		"GetPreferences": "default",
 		"GetUserBlock": "default",
 		"getUserPermissionsErrorsExpensive": "default",
-		"ImportHandleUnknownUser": "default",
+		"ImportHandleUnknownUser": "importhandle",
 		"InvalidateEmailComplete": "default",
-		"LoadExtensionSchemaUpdates": "default",
-		"LocalUserCreated": "default",
-		"LogEventsListGetExtraInputs": "default",
+		"LoadExtensionSchemaUpdates": "noservices",
+		"LocalUserCreated": "usercreation",
+		"LogEventsListGetExtraInputs": "log",
 		"MakeGlobalVariablesScript": "default",
 		"OtherBlockLogLink": "default",
 		"PasswordPoliciesForUser": "default",
@@ -539,15 +574,15 @@
 		"RenameUserPreRename": "rename",
 		"RenameUserWarning": "rename",
 		"ResourceLoaderForeignApiModules": "default",
-		"SecurePoll_GetUserParams": "CentralAuthHooks::onSecurePoll_GetUserParams",
+		"SecurePoll_GetUserParams": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler::onSecurePoll_GetUserParams",
 		"SessionCheckInfo": "default",
-		"SpecialContributionsBeforeMainOutput": "default",
-		"SpecialLogAddLogSearchRelations": "default",
+		"SpecialContributionsBeforeMainOutput": "specialcontributions",
+		"SpecialLogAddLogSearchRelations": "log",
 		"SpecialPage_initList": "default",
 		"SpecialPasswordResetOnSubmit": "default",
 		"TestCanonicalRedirect": "default",
-		"UnitTestsAfterDatabaseSetup": "default",
-		"UnitTestsBeforeDatabaseTeardown": "default",
+		"UnitTestsAfterDatabaseSetup": "unittests",
+		"UnitTestsBeforeDatabaseTeardown": "unittests",
 		"UserArrayFromResult": "default",
 		"UserGetEmail": "default",
 		"UserGetEmailAuthenticationTimestamp": "default",
