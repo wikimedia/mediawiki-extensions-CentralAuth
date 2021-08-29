@@ -138,8 +138,6 @@ class SpecialWikiSets extends SpecialPage {
 	private function buildSetView(
 		$subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null
 	) {
-		global $wgLocalDatabases;
-
 		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editset-subtitle' )->parse() );
 
 		$set = ( $subpage || $subpage === '0' ) ? WikiSet::newFromID( $subpage ) : null;
@@ -191,7 +189,7 @@ class SpecialWikiSets extends SpecialPage {
 		# Make an array of the opposite list of wikis
 		# (all databases *excluding* the defined ones)
 		$restWikis = [];
-		foreach ( $wgLocalDatabases as $wiki ) {
+		foreach ( $this->getConfig()->get( 'LocalDatabases' ) as $wiki ) {
 			if ( !in_array( $wiki, $sortedWikis ) ) {
 				$restWikis[] = $wiki;
 			}

@@ -84,14 +84,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	private function shouldDoProtocolRedirect() {
-		global $wgForceHTTPS, $wgSecureLogin;
 		if ( WebRequest::detectProtocol() !== 'http' ) {
 			return false;
 		}
-		if ( $wgForceHTTPS ) {
+		if ( $this->getConfig()->get( 'ForceHTTPS' ) ) {
 			return true;
 		}
-		return (bool)$wgSecureLogin;
+		return (bool)$this->getConfig()->get( 'SecureLogin' );
 	}
 
 	/**
@@ -209,7 +208,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	protected function doLoginComplete( $token ) {
 		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
 		global $wgUser;
-		global $wgCentralAuthCheckSULMigration;
 
 		$request = $this->getRequest();
 		$tokenStore = CentralAuthUtils::getTokenStore();
@@ -335,7 +333,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-		if ( $wgCentralAuthCheckSULMigration &&
+		if ( $this->getConfig()->get( 'CentralAuthCheckSULMigration' ) &&
 			$request->getSessionData( 'CentralAuthForcedRename' ) === true
 		) {
 			wfDebugLog( 'CentralAuth',

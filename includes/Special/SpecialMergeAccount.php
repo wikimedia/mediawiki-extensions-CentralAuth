@@ -250,8 +250,6 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function doDryRunMerge() {
-		global $wgCentralAuthDryRun;
-
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( $globalUser->exists() ) {
@@ -260,7 +258,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( $wgCentralAuthDryRun ) {
+		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-notice-dryrun' );
 		}
 
@@ -313,11 +311,9 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function doInitialMerge() {
-		global $wgCentralAuthDryRun;
-
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
-		if ( $wgCentralAuthDryRun ) {
+		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
 			$this->dryRunError();
 			return;
 		}
@@ -341,8 +337,6 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function doCleanupMerge() {
-		global $wgCentralAuthDryRun;
-
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
@@ -353,7 +347,7 @@ class SpecialMergeAccount extends SpecialPage {
 			throw new Exception( "Can't cleanup merge if not already attached." );
 		}
 
-		if ( $wgCentralAuthDryRun ) {
+		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
 			$this->dryRunError();
 			return;
 		}
@@ -375,8 +369,6 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function doAttachMerge() {
-		global $wgCentralAuthDryRun;
-
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
@@ -389,7 +381,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( $wgCentralAuthDryRun ) {
+		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
 			$this->dryRunError();
 			return;
 		}
@@ -407,9 +399,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function showWelcomeForm() {
-		global $wgCentralAuthDryRun;
-
-		if ( $wgCentralAuthDryRun ) {
+		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
 			$this->getOutput()->addWikiMsg( 'centralauth-notice-dryrun' );
 		}
 
