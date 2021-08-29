@@ -13,7 +13,47 @@ use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
-class CentralAuthHooks {
+class CentralAuthHooks implements
+	MediaWiki\Api\Hook\APIGetAllowedParamsHook,
+	MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook,
+	MediaWiki\Auth\Hook\LocalUserCreatedHook,
+	MediaWiki\Block\Hook\GetUserBlockHook,
+	MediaWiki\Hook\BeforePageDisplayHook,
+	MediaWiki\Hook\ContentSecurityPolicyDefaultSourceHook,
+	MediaWiki\Hook\ContentSecurityPolicyScriptSourceHook,
+	MediaWiki\Hook\ImportHandleUnknownUserHook,
+	MediaWiki\Hook\LogEventsListGetExtraInputsHook,
+	MediaWiki\Hook\MakeGlobalVariablesScriptHook,
+	MediaWiki\Hook\OtherBlockLogLinkHook,
+	MediaWiki\Hook\PasswordPoliciesForUserHook,
+	MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook,
+	MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook,
+	MediaWiki\Hook\TestCanonicalRedirectHook,
+	MediaWiki\Hook\UserLoginCompleteHook,
+	MediaWiki\Hook\UserLogoutCompleteHook,
+	MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook,
+	MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook,
+	MediaWiki\Permissions\Hook\UserGetRightsHook,
+	MediaWiki\Preferences\Hook\GetPreferencesHook,
+	MediaWiki\ResourceLoader\Hook\ResourceLoaderForeignApiModulesHook,
+	MediaWiki\Session\Hook\SessionCheckInfoHook,
+	MediaWiki\SpecialPage\Hook\SpecialPage_initListHook,
+	MediaWiki\Hook\GetLogTypesOnUserHook,
+	MediaWiki\Hook\UnitTestsAfterDatabaseSetupHook,
+	MediaWiki\Hook\UnitTestsBeforeDatabaseTeardownHook,
+	MediaWiki\User\Hook\InvalidateEmailCompleteHook,
+	MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook,
+	MediaWiki\User\Hook\UserArrayFromResultHook,
+	MediaWiki\User\Hook\UserGetEmailAuthenticationTimestampHook,
+	MediaWiki\User\Hook\UserGetEmailHook,
+	MediaWiki\User\Hook\UserGetReservedNamesHook,
+	MediaWiki\User\Hook\UserIsBotHook,
+	MediaWiki\User\Hook\UserIsLockedHook,
+	MediaWiki\User\Hook\UserLogoutHook,
+	MediaWiki\User\Hook\UserSaveSettingsHook,
+	MediaWiki\User\Hook\UserSetEmailAuthenticationTimestampHook,
+	MediaWiki\User\Hook\UserSetEmailHook
+{
 
 	/**
 	 * Called right after configuration variables have been set.
@@ -247,7 +287,7 @@ class CentralAuthHooks {
 	/**
 	 * @param array &$list
 	 */
-	public static function onSpecialPage_initList( &$list ): void {
+	public function onSpecialPage_initList( &$list ) {
 		global $wgCentralAuthEnableUsersWhoWillBeRenamed;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		if ( $wgCentralAuthEnableUsersWhoWillBeRenamed ) {
@@ -280,7 +320,7 @@ class CentralAuthHooks {
 	 * @param bool $autocreated
 	 * @return bool
 	 */
-	public static function onLocalUserCreated( $user, $autocreated ) {
+	public function onLocalUserCreated( $user, $autocreated ) {
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 
 		// If some other AuthManager PrimaryAuthenticationProvider is creating
@@ -308,7 +348,7 @@ class CentralAuthHooks {
 	 * @param string $name
 	 * @return bool
 	 */
-	public static function onImportHandleUnknownUser( $name ) {
+	public function onImportHandleUnknownUser( $name ) {
 		$user = User::newFromName( $name );
 		if ( $user ) {
 			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
@@ -329,7 +369,7 @@ class CentralAuthHooks {
 	 * @param array &$preferences
 	 * @return bool
 	 */
-	public static function onGetPreferences( $user, &$preferences ) {
+	public function onGetPreferences( $user, &$preferences ) {
 		// Possible states:
 		// - account not merged at all
 		// - global accounts exists, but this local account is unattached
@@ -402,10 +442,10 @@ class CentralAuthHooks {
 	 * does exist globally
 	 * @param User[] &$users
 	 * @param array $data
-	 * @param string &$abortError
+	 * @param string &$error
 	 * @return bool
 	 */
-	public static function onSpecialPasswordResetOnSubmit( &$users, $data, &$abortError ) {
+	public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
 		$firstUser = reset( $users );
 		if ( !( $firstUser instanceof UserIdentity ) ) {
 			// We can't handle this
@@ -415,7 +455,7 @@ class CentralAuthHooks {
 		if ( !$firstUser->getId() ) {
 			$centralUser = CentralAuthUser::getInstance( $firstUser );
 			if ( $centralUser->exists() ) {
-				$abortError = [ 'centralauth-account-exists-reset', $centralUser->getName() ];
+				$error = [ 'centralauth-account-exists-reset', $centralUser->getName() ];
 				return false;
 			}
 		}
@@ -424,12 +464,12 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param User &$user
+	 * @param User $user
 	 * @param string &$inject_html
 	 * @param bool|null $direct Was this directly after a login? (see T140853)
 	 * @return bool
 	 */
-	public static function onUserLoginComplete( &$user, &$inject_html, $direct = null ) {
+	public function onUserLoginComplete( $user, &$inject_html, $direct = null ) {
 		global $wgCentralAuthCookies;
 
 		if ( !$wgCentralAuthCookies ) {
@@ -645,10 +685,10 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param User &$user
+	 * @param User $user
 	 * @return bool
 	 */
-	public static function onUserLogout( &$user ) {
+	public function onUserLogout( $user ) {
 		global $wgCentralAuthCookies;
 
 		if ( !$wgCentralAuthCookies ) {
@@ -668,12 +708,12 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param User &$user
+	 * @param User $user
 	 * @param string &$inject_html
-	 * @param string $userName Unused
+	 * @param string $oldName Unused
 	 * @return bool
 	 */
-	public static function onUserLogoutComplete( User &$user, &$inject_html, $userName ) {
+	public function onUserLogoutComplete( $user, &$inject_html, $oldName ) {
 		global $wgCentralAuthCookies, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 		if ( !$wgCentralAuthCookies ) {
 			return true;
@@ -725,79 +765,8 @@ class CentralAuthHooks {
 	 * @param IResultWrapper $res
 	 * @return bool
 	 */
-	public static function onUserArrayFromResult( &$userArray, $res ) {
+	public function onUserArrayFromResult( &$userArray, $res ) {
 		$userArray = new CentralAuthUserArrayFromResult( $res );
-		return true;
-	}
-
-	/**
-	 * Warn bureaucrat about possible conflicts with unified accounts
-	 * @param string $oldName
-	 * @param string $newName
-	 * @param array[] &$warnings
-	 * @return bool
-	 * @throws ErrorPageError
-	 */
-	public static function onRenameUserWarning( $oldName, $newName, &$warnings ) {
-		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $oldName );
-		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			$warnings[] = [ 'centralauth-renameuser-merged', $oldName, $newName ];
-		}
-		if ( $oldCentral->renameInProgress() ) {
-			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $oldName ];
-		}
-
-		$newCentral = CentralAuthUser::getPrimaryInstanceByName( $newName );
-		if ( $newCentral->exists() && !$newCentral->isAttached() ) {
-			$warnings[] = [ 'centralauth-renameuser-reserved', $oldName, $newName ];
-		}
-
-		if ( $newCentral->renameInProgress() ) {
-			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $newName ];
-			// Can potentially be renaming two accounts into the same name, so throw an error
-			throw new ErrorPageError(
-				'error', 'centralauth-renameuser-global-inprogress', [ $newName ]
-			);
-		}
-
-		return true;
-	}
-
-	/**
-	 * @param int $uid
-	 * @param string $oldName
-	 * @param string $newName
-	 * @return bool
-	 */
-	public static function onRenameUserPreRename( $uid, $oldName, $newName ) {
-		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $oldName );
-		// If we're doing a global rename, the account will not get unattached
-		// because the old account no longer exists
-		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			$oldCentral->adminUnattach( [ wfWikiID() ] );
-		}
-		return true;
-	}
-
-	/**
-	 * When renaming an account, ensure that the presence records are updated.
-	 * @param int $userId
-	 * @param string $oldName
-	 * @param string $newName
-	 * @return bool
-	 */
-	public static function onRenameUserComplete( $userId, $oldName, $newName ) {
-		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $oldName );
-		$newCentral = CentralAuthUser::getPrimaryInstanceByName( $newName );
-
-		if ( $newCentral->exists() && $oldCentral->renameInProgressOn( wfWikiID() ) ) {
-			// This is a global rename, just update the row.
-			$oldCentral->updateLocalName( wfWikiID(), $newName );
-		} else {
-			$oldCentral->removeLocalName( wfWikiID() );
-			$newCentral->addLocalName( wfWikiID() );
-		}
-
 		return true;
 	}
 
@@ -806,7 +775,7 @@ class CentralAuthHooks {
 	 * @param string &$email
 	 * @return bool
 	 */
-	public static function onUserGetEmail( $user, &$email ) {
+	public function onUserGetEmail( $user, &$email ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
 			$email = $ca->getEmail();
@@ -819,7 +788,7 @@ class CentralAuthHooks {
 	 * @param string|null &$timestamp
 	 * @return bool
 	 */
-	public static function onUserGetEmailAuthenticationTimestamp( $user, &$timestamp ) {
+	public function onUserGetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
 			if ( $ca->isLocked() ) {
@@ -836,7 +805,7 @@ class CentralAuthHooks {
 	 * @param User $user
 	 * @return bool
 	 */
-	public static function onInvalidateEmailComplete( $user ) {
+	public function onInvalidateEmailComplete( $user ) {
 		$ca = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( '' );
@@ -851,7 +820,7 @@ class CentralAuthHooks {
 	 * @param string &$email
 	 * @return bool
 	 */
-	public static function onUserSetEmail( $user, &$email ) {
+	public function onUserSetEmail( $user, &$email ) {
 		$ca = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->setEmail( $email );
@@ -864,7 +833,7 @@ class CentralAuthHooks {
 	 * @param User $user
 	 * @return bool
 	 */
-	public static function onUserSaveSettings( $user ) {
+	public function onUserSaveSettings( $user ) {
 		$ca = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $ca->isAttached() ) {
 			$ca->saveSettings();
@@ -875,10 +844,10 @@ class CentralAuthHooks {
 
 	/**
 	 * @param User $user
-	 * @param string &$timestamp
+	 * @param ?string &$timestamp
 	 * @return bool
 	 */
-	public static function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
+	public function onUserSetEmailAuthenticationTimestamp( $user, &$timestamp ) {
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
 			$latestCa = CentralAuthUser::newPrimaryInstanceFromId( $ca->getId() );
@@ -896,7 +865,7 @@ class CentralAuthHooks {
 	 * @param string[] &$rights
 	 * @return bool
 	 */
-	public static function onUserGetRights( $user, &$rights ) {
+	public function onUserGetRights( $user, &$rights ) {
 		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 
@@ -915,7 +884,7 @@ class CentralAuthHooks {
 	 * @param bool &$isLocked
 	 * @return bool
 	 */
-	public static function onUserIsLocked( User $user, &$isLocked ) {
+	public function onUserIsLocked( $user, &$isLocked ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists()
 			&& ( $centralUser->isAttached() || !$user->isRegistered() )
@@ -942,7 +911,7 @@ class CentralAuthHooks {
 	 * @param AbstractBlock|null &$block
 	 * @return bool
 	 */
-	public static function onGetUserBlock( User $user, $ip, &$block ) {
+	public function onGetUserBlock( $user, $ip, &$block ) {
 		if ( $block && $block->getHideName() ) {
 			return false;
 		}
@@ -985,7 +954,7 @@ class CentralAuthHooks {
 	 * @param bool &$isBot
 	 * @return bool
 	 */
-	public static function onUserIsBot( User $user, &$isBot ) {
+	public function onUserIsBot( $user, &$isBot ) {
 		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists()
@@ -1006,7 +975,7 @@ class CentralAuthHooks {
 	 * @param SpecialPage $sp
 	 * @return bool
 	 */
-	public static function onSpecialContributionsBeforeMainOutput( $id, User $user, SpecialPage $sp ) {
+	public function onSpecialContributionsBeforeMainOutput( $id, $user, $sp ) {
 		if ( !$user->isRegistered() ) {
 			return true;
 		}
@@ -1047,9 +1016,8 @@ class CentralAuthHooks {
 	/**
 	 * @param array &$vars
 	 * @param OutputPage $out
-	 * @return bool
 	 */
-	public static function onMakeGlobalVariablesScript( &$vars, $out ) {
+	public function onMakeGlobalVariablesScript( &$vars, $out ): void {
 		$user = $out->getUser();
 		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
@@ -1057,7 +1025,6 @@ class CentralAuthHooks {
 				$vars['wgGlobalGroups'] = $centralUser->getGlobalGroups();
 			}
 		}
-		return true;
 	}
 
 	/**
@@ -1092,7 +1059,7 @@ class CentralAuthHooks {
 	 * @param string &$result Message key
 	 * @return bool
 	 */
-	public static function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
+	public function onGetUserPermissionsErrorsExpensive( $title, $user, $action, &$result ) {
 		global $wgCentralAuthLockedCanEdit, $wgDisableUnmergedEditing;
 		if ( $action == 'read' || !$user->isRegistered() ) {
 			return true;
@@ -1123,12 +1090,11 @@ class CentralAuthHooks {
 	}
 
 	/**
-	 * @param OutputPage &$out
-	 * @param Skin &$skin
-	 * @return bool
+	 * @param OutputPage $out
+	 * @param Skin $skin
 	 * @todo Add 1x1 images somewhere besides page content
 	 */
-	public static function onBeforePageDisplay( &$out, &$skin ) {
+	public function onBeforePageDisplay( $out, $skin ): void {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthUseEventLogging;
 
 		if ( $out->getRequest()->getSession()->getProvider()
@@ -1206,7 +1172,6 @@ class CentralAuthHooks {
 				}
 			}
 		}
-		return true;
 	}
 
 	/**
@@ -1290,13 +1255,13 @@ class CentralAuthHooks {
 	 *
 	 * @note We can't do $out->getCSP()->addDefaultSrc in onBeforePageDisplay,
 	 * because that hook runs after the header is already outputted.
-	 * @param array &$defaultSrc Array of allowed CSP sources.
-	 * @param mixed $cspConfig
-	 * @param bool $mode
+	 * @param string[] &$defaultSrc Array of allowed CSP sources.
+	 * @param array $policyConfig
+	 * @param string $mode
 	 */
-	public static function onContentSecurityPolicyDefaultSource(
-		array &$defaultSrc,
-		$cspConfig,
+	public function onContentSecurityPolicyDefaultSource(
+		&$defaultSrc,
+		$policyConfig,
 		$mode
 	) {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
@@ -1347,13 +1312,13 @@ class CentralAuthHooks {
 	 *
 	 * @note We can't do $out->getCSP()->addScriptSrc() in onBeforePageDisplay,
 	 * because that hook runs after the header is already outputted.
-	 * @param array &$scriptSrc Array of allowed CSP sources.
-	 * @param mixed $cspConfig
-	 * @param bool $mode
+	 * @param string[] &$scriptSrc Array of allowed CSP sources.
+	 * @param array $policyConfig
+	 * @param string $mode
 	 */
-	public static function onContentSecurityPolicyScriptSource(
-		array &$scriptSrc,
-		$cspConfig,
+	public function onContentSecurityPolicyScriptSource(
+		&$scriptSrc,
+		$policyConfig,
 		$mode
 	) {
 		global $wgCentralAuthLoginWiki;
@@ -1401,91 +1366,22 @@ class CentralAuthHooks {
 
 	/**
 	 * Creates a link to the global lock log
-	 * @param array &$msg Message with a link to the global block log
+	 * @param array &$otherBlockLink Message with a link to the global block log
 	 * @param string $user The username to be checked
 	 * @return bool true
 	 */
-	public static function getBlockLogLink( &$msg, $user ) {
+	public function onOtherBlockLogLink( &$otherBlockLink, $user ) {
 		if ( IPUtils::isIPAddress( $user ) ) {
 			return true; // Return if it is an IP as only usernames can be locked.
 		}
 
 		$caUser = CentralAuthUser::getInstanceByName( $user );
 		if ( $caUser->isLocked() && in_array( wfWikiID(), $caUser->listAttached() ) ) {
-			$msg[] = Html::rawElement(
+			$otherBlockLink[] = Html::rawElement(
 				'span',
 				[ 'class' => 'mw-centralauth-lock-loglink plainlinks' ],
 				wfMessage( 'centralauth-block-already-locked', $user )->parse()
 			);
-		}
-		return true;
-	}
-
-	/**
-	 * Computes the global_user_groups variable
-	 * @param string $method
-	 * @param AbuseFilterVariableHolder $vars
-	 * @param array $parameters
-	 * @param null &$result
-	 * @return bool
-	 */
-	public static function abuseFilterComputeVariable( $method, $vars, $parameters, &$result ) {
-		if ( $method == 'global-user-groups' ) {
-			$user = CentralAuthUser::getInstance( $parameters['user'] );
-			if ( $user->exists() && $user->isAttached() ) {
-				$result = $user->getGlobalGroups();
-			} else {
-				$result = [];
-			}
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	/**
-	 * Load our global_user_groups variable
-	 * @param AbuseFilterVariableHolder $vars
-	 * @param User $user
-	 * @return bool
-	 */
-	public static function abuseFilterGenerateUserVars( $vars, $user ) {
-		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user ] );
-		return true;
-	}
-
-	/**
-	 * Tell AbuseFilter about our global_user_groups variable
-	 * @param array &$builderValues
-	 * @return bool
-	 */
-	public static function abuseFilterBuilder( &$builderValues ) {
-		// Uses: 'abusefilter-edit-builder-vars-global-user-groups'
-		$builderValues['vars']['global_user_groups'] = 'global-user-groups';
-		return true;
-	}
-
-	/**
-	 * Avoid filtering page moves during global rename
-	 *
-	 * @param AbuseFilterVariableHolder $vars
-	 * @param Title $title
-	 * @param User $user
-	 * @param array &$skipReasons
-	 * @return bool
-	 */
-	public static function onAbuseFilterShouldFilterAction(
-		AbuseFilterVariableHolder $vars,
-		Title $title,
-		User $user,
-		array &$skipReasons
-	) {
-		$action = $vars->getComputedVariable( 'action' )->toString();
-		if ( $action === 'move' && LocalPageMoveJob::$moveInProgress === true ) {
-			$skipReasons[] = "CentralAuth: $user is moving $title for global rename";
-			// Don't allow reusing this flag
-			LocalPageMoveJob::$moveInProgress = false;
-			return false;
 		}
 		return true;
 	}
@@ -1519,7 +1415,7 @@ class CentralAuthHooks {
 	 * @param OutputPage $output
 	 * @return bool
 	 */
-	public static function onTestCanonicalRedirect( $request, $title, $output ) {
+	public function onTestCanonicalRedirect( $request, $title, $output ) {
 		return $title->getNamespace() !== NS_SPECIAL ||
 			strncmp( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/', 25 ) !== 0;
 	}
@@ -1547,11 +1443,15 @@ class CentralAuthHooks {
 	 * Handler for UserGetReservedNames
 	 * @param array &$reservedUsernames
 	 */
-	public static function onUserGetReservedNames( &$reservedUsernames ) {
+	public function onUserGetReservedNames( &$reservedUsernames ) {
 		$reservedUsernames[] = 'Global rename script';
 	}
 
-	public static function onApiQueryTokensRegisterTypes( &$salts ) {
+	/**
+	 * @param array &$salts
+	 * @return bool
+	 */
+	public function onApiQueryTokensRegisterTypes( &$salts ) {
 		$salts += [
 			'setglobalaccountstatus' => 'setglobalaccountstatus',
 			'deleteglobalaccount' => 'deleteglobalaccount',
@@ -1566,7 +1466,7 @@ class CentralAuthHooks {
 	 * @param int $flags
 	 * @return bool
 	 */
-	public static function onAPIGetAllowedParams( $module, &$params, $flags ) {
+	public function onAPIGetAllowedParams( $module, &$params, $flags ) {
 		global $wgCentralAuthCookies;
 		if ( !$wgCentralAuthCookies ) {
 			return true;
@@ -1587,9 +1487,7 @@ class CentralAuthHooks {
 	 * @param string[] &$qc
 	 * @return bool
 	 */
-	public static function onSpecialLogAddLogSearchRelations(
-		$type, WebRequest $request, array &$qc
-	) {
+	public function onSpecialLogAddLogSearchRelations( $type, $request, &$qc ) {
 		if ( $type === 'gblrename' ) {
 			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 			$oldname = trim( $request->getText( 'oldname' ) );
@@ -1608,8 +1506,8 @@ class CentralAuthHooks {
 	 * @param string &$input HTML
 	 * @param array &$formDescriptor Form descriptor
 	 */
-	public static function onLogEventsListGetExtraInputs(
-		$type, LogEventsList $list, &$input, &$formDescriptor
+	public function onLogEventsListGetExtraInputs(
+		$type, $list, &$input, &$formDescriptor
 	) {
 		if ( $type === 'gblrename' ) {
 			$value = $list->getRequest()->getVal( 'oldname' );
@@ -1628,11 +1526,16 @@ class CentralAuthHooks {
 		}
 	}
 
-	public static function onResourceLoaderForeignApiModules(
-		array &$dependencies, ResourceLoaderContext $context = null
-	) {
+	/**
+	 * @param string[] &$dependencies
+	 * @param ResourceLoaderContext|null $context
+	 * @return void
+	 */
+	public function onResourceLoaderForeignApiModules(
+		&$dependencies,
+		$context = null
+	): void {
 		$dependencies[] = 'ext.centralauth.ForeignApi';
-		return true;
 	}
 
 	/**
@@ -1643,7 +1546,7 @@ class CentralAuthHooks {
 	 * @return bool
 	 * @throws Exception
 	 */
-	public static function onPasswordPoliciesForUser( User $user, array &$effectivePolicy ) {
+	public function onPasswordPoliciesForUser( $user, &$effectivePolicy ) {
 		global $wgCentralAuthGlobalPasswordPolicies;
 		$central = CentralAuthUser::getInstance( $user );
 
@@ -1667,9 +1570,18 @@ class CentralAuthHooks {
 	 * renamed.
 	 * @param string &$reason Failure reason to log
 	 * @param SessionInfo $info
+	 * @param WebRequest $request
+	 * @param array|bool $metadata
+	 * @param array|bool $data
 	 * @return bool
 	 */
-	public static function onSessionCheckInfo( &$reason, $info ) {
+	public function onSessionCheckInfo(
+		&$reason,
+		$info,
+		$request,
+		$metadata,
+		$data
+	) {
 		$name = $info->getUserInfo()->getName();
 		if ( $name !== null ) {
 			$centralUser = CentralAuthUser::getInstanceByName( $name );
@@ -1686,7 +1598,7 @@ class CentralAuthHooks {
 	 * @param DatabaseUpdater $updater
 	 * @return true
 	 */
-	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
+	public function onLoadExtensionSchemaUpdates( $updater ) {
 		global $wgWikimediaJenkinsCI;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {
@@ -1708,7 +1620,7 @@ class CentralAuthHooks {
 	 * @param IMaintainableDatabase $db
 	 * @param string $prefix
 	 */
-	public static function onUnitTestsAfterDatabaseSetup( IMaintainableDatabase $db, $prefix ) {
+	public function onUnitTestsAfterDatabaseSetup( $db, $prefix ) {
 		global $wgCentralAuthDatabase;
 		$wgCentralAuthDatabase = false;
 
@@ -1739,7 +1651,7 @@ class CentralAuthHooks {
 	 * UnitTestsBeforeDatabaseTeardown hook handler
 	 * Cleans up tables created by onUnitTestsAfterDatabaseSetup() above
 	 */
-	public static function onUnitTestsBeforeDatabaseTeardown() {
+	public function onUnitTestsBeforeDatabaseTeardown() {
 		$db = wfGetDB( DB_PRIMARY );
 		foreach ( self::$centralauthTables as $table ) {
 			$db->dropTable( $table );
@@ -1749,7 +1661,7 @@ class CentralAuthHooks {
 	/**
 	 * @param array &$types
 	 */
-	public static function onGetLogTypesOnUser( &$types ) {
+	public function onGetLogTypesOnUser( &$types ) {
 		$types[] = 'gblrights';
 	}
 }
