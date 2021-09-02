@@ -576,6 +576,9 @@
 		"CentralAuthEnableUserMerge": {
 			"value": false
 		},
+		"CentralAuthEnableUsersWhoWillBeRenamed": {
+			"value": false
+		},
 		"CentralAuthEnableGlobalRenameRequest": {
 			"value": false
 		},
