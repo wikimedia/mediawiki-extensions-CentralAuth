@@ -62,7 +62,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 				'gu_home_db' => 'metawiki',
 			],
 			[
-				[ 'not' . wfWikiID(), 'primary' ],
+				[ 'not' . WikiMap::getCurrentWikiId(), 'primary' ],
 			],
 			false
 		);
@@ -86,7 +86,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			'GUP@ssword',
 			[ 'gu_id' => self::USER_ID_EXISTING ],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
 		$u->save( $this->db );
@@ -108,7 +108,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			'GUP@ssword',
 			[ 'gu_id' => self::USER_ID_NOT_ATTACHED ],
 			[
-				[ 'not' . wfWikiID(), 'primary' ],
+				[ 'not' . WikiMap::getCurrentWikiId(), 'primary' ],
 			],
 			false
 		);

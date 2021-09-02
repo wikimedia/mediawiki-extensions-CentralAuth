@@ -10,6 +10,7 @@ use MediaWiki\MediaWikiServices;
 use RenameuserSQL;
 use Title;
 use User;
+use WikiMap;
 
 /**
  * Job class to rename a user locally
@@ -100,7 +101,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 		if ( $this->params['reattach'] ) {
 			$caUser = CentralAuthUser::getInstanceByName( $this->params['to'] );
-			$wikiId = wfWikiID();
+			$wikiId = WikiMap::getCurrentWikiId();
 			$details = $this->params['reattach'][$wikiId];
 			$caUser->attach(
 				$wikiId,
@@ -124,7 +125,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 	private function promoteToGlobal() {
 		$newName = $this->params['to'];
 		$caUser = CentralAuthUser::getPrimaryInstanceByName( $newName );
-		$status = $caUser->promoteToGlobal( wfWikiID() );
+		$status = $caUser->promoteToGlobal( WikiMap::getCurrentWikiId() );
 		if ( !$status->isOK() ) {
 			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
 				// Eh, what?

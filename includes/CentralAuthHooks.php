@@ -341,7 +341,7 @@ class CentralAuthHooks implements
 				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 				$params = [
 					'type' => 'icon',
-					'from' => wfWikiID(),
+					'from' => WikiMap::getCurrentWikiId(),
 				];
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
@@ -370,7 +370,7 @@ class CentralAuthHooks implements
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
-				'wikiid' => wfWikiID(),
+				'wikiid' => WikiMap::getCurrentWikiId(),
 				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 			] );
 			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
@@ -624,14 +624,14 @@ class CentralAuthHooks implements
 	public static function getCentralautologinJsData() {
 		global $wgCentralAuthLoginWiki;
 		$data = [];
-		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== wfWikiID() ) {
+		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== WikiMap::getCurrentWikiId() ) {
 			$url = WikiMap::getForeignURL(
 				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
 			);
 			if ( $url !== false ) {
 				$params = [
 					'type' => 'script',
-					'wikiid' => wfWikiID(),
+					'wikiid' => WikiMap::getCurrentWikiId(),
 				];
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
@@ -663,7 +663,7 @@ class CentralAuthHooks implements
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 			$params = [
 				'type' => '1x1',
-				'from' => wfWikiID(),
+				'from' => WikiMap::getCurrentWikiId(),
 			];
 			$url = wfAppendQuery(
 				$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
@@ -696,7 +696,7 @@ class CentralAuthHooks implements
 			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
-				'wikiid' => wfWikiID(),
+				'wikiid' => WikiMap::getCurrentWikiId(),
 				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 			] );
 			$html .= Xml::element( 'img',
@@ -728,7 +728,7 @@ class CentralAuthHooks implements
 		}
 
 		$caUser = CentralAuthUser::getInstanceByName( $user );
-		if ( $caUser->isLocked() && in_array( wfWikiID(), $caUser->listAttached() ) ) {
+		if ( $caUser->isLocked() && in_array( WikiMap::getCurrentWikiId(), $caUser->listAttached() ) ) {
 			$otherBlockLink[] = Html::rawElement(
 				'span',
 				[ 'class' => 'mw-centralauth-lock-loglink plainlinks' ],
@@ -782,11 +782,11 @@ class CentralAuthHooks implements
 
 		if ( $caUser->isAttached() ) {
 			// Clean up localuser table.
-			$caUser->adminUnattach( [ wfWikiID() ] );
+			$caUser->adminUnattach( [ WikiMap::getCurrentWikiId() ] );
 		}
 
 		// Clean up localnames table.
-		$caUser->removeLocalName( wfWikiID() );
+		$caUser->removeLocalName( WikiMap::getCurrentWikiId() );
 
 		return true;
 	}

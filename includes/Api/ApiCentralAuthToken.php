@@ -31,6 +31,7 @@ use CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Session\SessionManager;
 use MWCryptRand;
+use WikiMap;
 
 /**
  * Module to fetch the centralauthtoken for cross-wiki queries.
@@ -82,7 +83,7 @@ class ApiCentralAuthToken extends ApiBase {
 		$data = [
 			'userName' => $user->getName(),
 			'token' => $centralUser->getAuthToken(),
-			'origin' => wfWikiID(),
+			'origin' => WikiMap::getCurrentWikiId(),
 			'originSessionId' => $id,
 		];
 

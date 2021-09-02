@@ -42,7 +42,7 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		// Since logins are rare, check the actual DB
-		$rename = $centralUser->renameInProgressOn( wfWikiID() );
+		$rename = $centralUser->renameInProgressOn( WikiMap::getCurrentWikiId() );
 		if ( $rename ) {
 			// This wiki specifically has a rename in progress, so always abort
 			return AuthenticationResponse::newFail(

@@ -173,7 +173,7 @@ class LoginCompleteHookHandler implements
 				'secret'	=> $secret,
 				'name'	  => $centralUser->getName(),
 				'guid'	  => $centralUser->getId(),
-				'wikiId'	=> wfWikiID(),
+				'wikiId'	=> WikiMap::getCurrentWikiId(),
 				'secureCookies' => $secureCookies, // (bool) cookies secure or not
 				'finalProto'    => $finalProto, // http or https for very final page
 				// current proto (in case login is https, but final page is http)

@@ -117,7 +117,7 @@ class CentralAuthTestUser {
 			'gu_registration' => '20130627183537',
 			'gu_email' => 'test@localhost',
 			'gu_email_authenticated' => '20130801040214',
-			'gu_home_db' => wfWikiID(),
+			'gu_home_db' => WikiMap::getCurrentWikiId(),
 			'gu_enabled' => '',
 			'gu_enabled_method' => null,
 		];

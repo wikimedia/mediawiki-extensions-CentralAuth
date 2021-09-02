@@ -13,6 +13,7 @@ use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Title;
 use User;
+use WikiMap;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -113,7 +114,7 @@ abstract class LocalRenameJob extends Job {
 		// someone creates an account in the meantime and then bad
 		// stuff could happen...
 		// For the meantime, just use a system account
-		if ( !$caUser->attachedOn( wfWikiID() ) && $user->getId() !== 0 ) {
+		if ( !$caUser->attachedOn( WikiMap::getCurrentWikiId() ) && $user->getId() !== 0 ) {
 			return User::newFromName( 'Global rename script' );
 		} elseif ( $user->getId() == 0 ) {
 			// No local user, lets "auto-create" one
@@ -130,14 +131,14 @@ abstract class LocalRenameJob extends Job {
 	}
 
 	protected function done() {
-		$this->renameuserStatus->done( wfWikiID() );
+		$this->renameuserStatus->done( WikiMap::getCurrentWikiId() );
 
 		$caNew = CentralAuthUser::getInstanceByName( $this->params['to'] );
 		$caNew->quickInvalidateCache();
 	}
 
 	protected function updateStatus( $status ) {
-		$this->renameuserStatus->updateStatus( wfWikiID(), $status );
+		$this->renameuserStatus->updateStatus( WikiMap::getCurrentWikiId(), $status );
 	}
 
 	/**
@@ -157,7 +158,7 @@ abstract class LocalRenameJob extends Job {
 		$nextWiki = null;
 		$statuses = $this->renameuserStatus->getStatuses( GlobalRenameUserStatus::READ_LATEST );
 		foreach ( $statuses as $wiki => $status ) {
-			if ( $status === 'queued' && $wiki !== wfWikiID() ) {
+			if ( $status === 'queued' && $wiki !== WikiMap::getCurrentWikiId() ) {
 				$nextWiki = $wiki;
 				break;
 			}

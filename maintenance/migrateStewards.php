@@ -33,7 +33,7 @@ $result = $dbg->select(
 	[ 'gu_name', 'gu_id' ],
 	[
 		'gu_name = lu_name',
-		'lu_wiki' => wfWikiID(),
+		'lu_wiki' => WikiMap::getCurrentWikiId(),
 		'gu_name IN (' . $dbg->makeList( $localStewards ) . ')',
 	],
 	'migrateStewards.php'

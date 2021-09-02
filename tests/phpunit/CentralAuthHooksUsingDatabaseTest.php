@@ -28,7 +28,7 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase
 			'GUP@ssword',
 			[ 'gu_id' => '1001' ],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 				[ 'enwiki', 'primary' ],
 				[ 'dewiki', 'login' ],
 				[ 'metawiki', 'password' ],

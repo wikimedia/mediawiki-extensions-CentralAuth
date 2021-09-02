@@ -294,7 +294,7 @@ class WikiSet {
 	 */
 	public function inSet( $wiki = '' ) {
 		if ( !$wiki ) {
-			$wiki = wfWikiID();
+			$wiki = WikiMap::getCurrentWikiId();
 		}
 		return in_array( $wiki, $this->getWikis() );
 	}

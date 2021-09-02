@@ -66,7 +66,7 @@ class PageDisplayHookHandler implements
 
 		if ( !$out->getUser()->isRegistered() ) {
 			if ( $this->config->get( 'CentralAuthLoginWiki' ) &&
-				wfWikiID() !== $this->config->get( 'CentralAuthLoginWiki' )
+				WikiMap::getCurrentWikiId() !== $this->config->get( 'CentralAuthLoginWiki' )
 			) {
 				// Let the frontend know if this is a mobile domain, T100413
 				$out->addJsConfigVars(
@@ -77,7 +77,7 @@ class PageDisplayHookHandler implements
 
 				// For non-JS clients. Use WikiMap to avoid localization of the
 				// 'Special' namespace, see bug 54195.
-				$wiki = WikiMap::getWiki( wfWikiID() );
+				$wiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
 
 				$loginWiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
 				if ( $wiki->getCanonicalServer() !== $loginWiki->getCanonicalServer() ) {

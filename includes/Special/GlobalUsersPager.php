@@ -13,6 +13,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use stdClass;
 use Title;
 use UserGroupMembership;
+use WikiMap;
 use WikiSet;
 
 class GlobalUsersPager extends AlphabeticPager {
@@ -92,7 +93,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		$tables = [ 'globaluser', 'localuser' ];
 		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
 		$join_conds = [
-			'localuser' => [ 'LEFT JOIN', [ 'gu_name = lu_name', 'lu_wiki' => wfWikiID() ] ],
+			'localuser' => [ 'LEFT JOIN', [ 'gu_name = lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ],
 		];
 
 		if ( $this->requestedGroup !== false ) {

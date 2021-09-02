@@ -278,7 +278,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$this->centralAuthUtilityService->setP3P();
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
-				'wikiid' => wfWikiID(),
+				'wikiid' => WikiMap::getCurrentWikiId(),
 				'proto' => WebRequest::detectProtocol(),
 			] + $params );
 			return;
@@ -372,7 +372,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->session->persist();
 
 			// Create memc token
-			$wikiid = wfWikiID();
+			$wikiid = WikiMap::getCurrentWikiId();
 			$memcData = [
 				'gu_id' => $gu_id,
 				'wikiid' => $wikiid,
@@ -467,7 +467,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Load memc data
-			$wikiid = wfWikiID();
+			$wikiid = WikiMap::getCurrentWikiId();
 			$key = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
 			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence( $tokenStore, $key );
 			$tokenStore->delete( $key );
@@ -640,7 +640,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	private function do302Redirect( $target, $state, $params ) {
 		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
-		if ( wfWikiID() == $this->loginWiki
+		if ( WikiMap::getCurrentWikiId() == $this->loginWiki
 			&& ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' )
 			&& isset( $params['mobile'] )
 			&& $params['mobile']
@@ -683,7 +683,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	private function checkIsCentralWiki( &$wikiId ) {
-		if ( wfWikiID() !== $this->loginWiki ) {
+		if ( WikiMap::getCurrentWikiId() !== $this->loginWiki ) {
 			$this->doFinalOutput( false, 'Not central wiki' );
 			return false;
 		}
@@ -703,7 +703,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	private function checkIsLocalWiki() {
-		if ( wfWikiID() === $this->loginWiki ) {
+		if ( WikiMap::getCurrentWikiId() === $this->loginWiki ) {
 			$this->doFinalOutput( false, 'Is central wiki, should be local' );
 			return false;
 		}

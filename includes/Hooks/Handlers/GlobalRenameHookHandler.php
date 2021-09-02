@@ -25,6 +25,7 @@ use ErrorPageError;
 use RenameUserCompleteHook;
 use RenameUserPreRenameHook;
 use RenameUserWarningHook;
+use WikiMap;
 
 class GlobalRenameHookHandler implements
 	RenameUserCompleteHook,
@@ -72,7 +73,7 @@ class GlobalRenameHookHandler implements
 		// If we're doing a global rename, the account will not get unattached
 		// because the old account no longer exists
 		if ( $oldCentral->exists() && $oldCentral->isAttached() ) {
-			$oldCentral->adminUnattach( [ wfWikiID() ] );
+			$oldCentral->adminUnattach( [ WikiMap::getCurrentWikiId() ] );
 		}
 	}
 
@@ -86,12 +87,12 @@ class GlobalRenameHookHandler implements
 		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $old );
 		$newCentral = CentralAuthUser::getPrimaryInstanceByName( $new );
 
-		if ( $newCentral->exists() && $oldCentral->renameInProgressOn( wfWikiID() ) ) {
+		if ( $newCentral->exists() && $oldCentral->renameInProgressOn( WikiMap::getCurrentWikiId() ) ) {
 			// This is a global rename, just update the row.
-			$oldCentral->updateLocalName( wfWikiID(), $new );
+			$oldCentral->updateLocalName( WikiMap::getCurrentWikiId(), $new );
 		} else {
-			$oldCentral->removeLocalName( wfWikiID() );
-			$newCentral->addLocalName( wfWikiID() );
+			$oldCentral->removeLocalName( WikiMap::getCurrentWikiId() );
+			$newCentral->addLocalName( WikiMap::getCurrentWikiId() );
 		}
 	}
 }
