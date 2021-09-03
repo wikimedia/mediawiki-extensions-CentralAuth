@@ -586,8 +586,6 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function formatMergeMethod( $method ) {
-		global $wgExtensionAssetsPath;
-
 		// Give grep a chance to find the usages:
 		// centralauth-merge-method-primary, centralauth-merge-method-empty,
 		// centralauth-merge-method-mail, centralauth-merge-method-password,
@@ -597,7 +595,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$html =
 			Html::element(
 				'img', [
-					'src' => "{$wgExtensionAssetsPath}/CentralAuth/icons/merged-{$method}.png",
+					'src' => $this->getConfig()->get( 'ExtensionAssetsPath' )
+						. "/CentralAuth/icons/merged-{$method}.png",
 					'alt' => $brief,
 					'title' => $brief,
 				]

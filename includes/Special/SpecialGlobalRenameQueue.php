@@ -765,9 +765,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @return Status
 	 */
 	protected function sendNotificationEmail( MailAddress $to, $subject, $body ) {
-		global $wgPasswordSender;
 		$from = new MailAddress(
-			$wgPasswordSender,
+			$this->getConfig()->get( 'PasswordSender' ),
 			$this->msg( 'emailsender' )->inContentLanguage()->text()
 		);
 		return UserMailer::send( $to, $from, $subject, $body );

@@ -101,7 +101,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	private function buildMainView() {
-		global $wgScript;
 		$out = $this->getOutput();
 		$groups = CentralAuthUser::availableGlobalGroups();
 
@@ -121,7 +120,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
 			$html .= Xml::openElement( 'form', [
 				'method' => 'post',
-				'action' => $wgScript,
+				'action' => $this->getConfig()->get( 'Script' ),
 				'name' => 'centralauth-globalgroups-newgroup'
 			] );
 			$html .= Html::hidden( 'title',

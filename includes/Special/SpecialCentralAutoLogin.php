@@ -101,8 +101,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @param string|null $par
 	 */
 	public function execute( $par ) {
-		global $wgCentralAuthLoginWiki;
-
 		if (
 			in_array( $par, [ 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
 			'createSession', 'validateSession', 'setCookies' ], true )
@@ -118,7 +116,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 		$tokenStore = $this->centralAuthUtilityService->getTokenStore();
 
-		$this->loginWiki = $wgCentralAuthLoginWiki;
+		$this->loginWiki = $this->getConfig()->get( 'CentralAuthLoginWiki' );
 		if ( !$this->loginWiki ) {
 			// Ugh, no central wiki. If we're coming from an edge login, make
 			// the logged-into wiki the de-facto central wiki for this request
@@ -128,10 +126,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->loginWiki = $fromwiki;
 			}
 		} elseif ( $request->getVal( 'from' ) === WikiMap::getCurrentWikiId() &&
-			$wgCentralAuthLoginWiki !== WikiMap::getCurrentWikiId()
+			$this->loginWiki !== WikiMap::getCurrentWikiId()
 		) {
 			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
-			$this->do302Redirect( $wgCentralAuthLoginWiki, $par, $request->getValues() );
+			$this->do302Redirect( $this->loginWiki, $par, $request->getValues() );
 			return;
 		}
 
@@ -190,7 +188,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Do not cache this, we need to reset the cookies every time.
 			$this->getOutput()->enableClientCache( false );
 
-			if ( !$wgCentralAuthLoginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
+			if ( !$this->loginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
 			}
 			if ( !$this->checkSession() ) {
@@ -549,10 +547,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// If we're returning to returnto, do that
 			if ( $request->getCheck( 'return' ) ) {
-				global $wgRedirectOnLogin;
-
-				if ( $wgRedirectOnLogin !== null ) {
-					$returnTo = $wgRedirectOnLogin;
+				if ( $this->getConfig()->get( 'RedirectOnLogin' ) !== null ) {
+					$returnTo = $this->getConfig()->get( 'RedirectOnLogin' );
 					$returnToQuery = [];
 				} else {
 					$returnTo = $request->getVal( 'returnto', '' );
@@ -574,8 +570,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Otherwise, we need to rewrite p-personal and maybe notify the user too
-			global $wgCentralAuthUseEventLogging;
-			if ( $wgCentralAuthUseEventLogging ) {
+			if ( $this->getConfig()->get( 'CentralAuthUseEventLogging' ) ) {
 				EventLogging::logEvent( 'CentralAuth', 5690875,
 					[ 'version' => 1,
 						'userId' => $centralUser->getId(),
@@ -654,9 +649,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			header( 'Content-Type: image/png' );
 			header( "X-CentralAuth-Status: $status" );
 
-			global $wgCentralAuthLoginIcon;
-			if ( $ok && $wgCentralAuthLoginIcon && $type === 'icon' ) {
-				readfile( $wgCentralAuthLoginIcon );
+			if ( $ok && $this->getConfig()->get( 'CentralAuthLoginIcon' ) && $type === 'icon' ) {
+				readfile( $this->getConfig()->get( 'CentralAuthLoginIcon' ) );
 			} else {
 				readfile( __DIR__ . '/../../1x1.png' );
 			}
@@ -705,8 +699,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return array
 	 */
 	private function getCentralSession( $centralUser, $user ) {
-		global $wgForceHTTPS;
-
 		$centralSession = $this->centralAuthUtilityService->getCentralSession( $this->session );
 		$request = $this->getRequest();
 
@@ -723,7 +715,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a value for secureCookies
 		if ( !isset( $centralSession['secureCookies'] ) ) {
-			$centralSession['secureCookies'] = $wgForceHTTPS ||
+			$centralSession['secureCookies'] = $this->getConfig()->get( 'ForceHTTPS' ) ||
 				$this->userOptionsManager->getBoolOption( $user, 'prefershttps' );
 		}
 
