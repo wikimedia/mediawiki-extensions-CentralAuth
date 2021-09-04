@@ -1489,14 +1489,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return string[]
-	 * @deprecated since 1.37, use CentralAuthWikiListService instead
-	 */
-	public static function getWikiList() {
-		return CentralAuthServices::getWikiListService()->getWikiList();
-	}
-
-	/**
 	 * Unattach a list of local accounts from the global account
 	 * @param array $list List of wiki names
 	 * @return Status
