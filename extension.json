@@ -154,6 +154,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalUsers",
 			"services": [
 				"ContentLanguage",
+				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.GlobalGroupLookup"
 			]
 		},

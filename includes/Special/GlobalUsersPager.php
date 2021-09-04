@@ -3,12 +3,12 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use AlphabeticPager;
-use CentralAuthServices;
 use CentralAuthUser;
 use Html;
 use HTMLForm;
 use IContextSource;
 use LinkBatch;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use stdClass;
 use Title;
@@ -28,12 +28,20 @@ class GlobalUsersPager extends AlphabeticPager {
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
-	public function __construct( IContextSource $context ) {
+	/**
+	 * @param IContextSource $context
+	 * @param CentralAuthDatabaseManager $dbManager
+	 * @param GlobalGroupLookup $globalGroupLookup
+	 */
+	public function __construct(
+		IContextSource $context,
+		CentralAuthDatabaseManager $dbManager,
+		GlobalGroupLookup $globalGroupLookup
+	) {
+		$this->mDb = $dbManager->getCentralDB( DB_REPLICA );
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
-		// TODO inject
-		$this->mDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		$this->globalGroupLookup = CentralAuthServices::getGlobalGroupLookup();
+		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	/**

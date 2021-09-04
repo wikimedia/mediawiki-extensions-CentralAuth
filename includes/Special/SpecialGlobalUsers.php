@@ -6,6 +6,7 @@ use DerivativeContext;
 use Html;
 use IncludableSpecialPage;
 use Language;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use Title;
 
@@ -13,16 +14,25 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 	/** @var Language */
 	private $contentLanguage;
 
+	/** @var CentralAuthDatabaseManager */
+	private $dbManager;
+
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
 	/**
 	 * @param Language $contentLanguage
+	 * @param CentralAuthDatabaseManager $dbManager
 	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
-	public function __construct( Language $contentLanguage, GlobalGroupLookup $globalGroupLookup ) {
+	public function __construct(
+		Language $contentLanguage,
+		CentralAuthDatabaseManager $dbManager,
+		GlobalGroupLookup $globalGroupLookup
+	) {
 		parent::__construct( 'GlobalUsers' );
 		$this->contentLanguage = $contentLanguage;
+		$this->dbManager = $dbManager;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
@@ -33,7 +43,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$pg = new GlobalUsersPager( $context );
+		$pg = new GlobalUsersPager( $context, $this->dbManager, $this->globalGroupLookup );
 		$req = $this->getRequest();
 
 		if ( $par !== null && $par !== '' ) {
