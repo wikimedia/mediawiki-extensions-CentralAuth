@@ -9,6 +9,7 @@ use Html;
 use HTMLForm;
 use IContextSource;
 use LinkBatch;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use stdClass;
 use Title;
 use UserGroupMembership;
@@ -24,11 +25,15 @@ class GlobalUsersPager extends AlphabeticPager {
 	/** @var string[] */
 	private $localWikisets = [];
 
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
+
 	public function __construct( IContextSource $context ) {
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
 		// TODO inject
 		$this->mDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$this->globalGroupLookup = CentralAuthServices::getGlobalGroupLookup();
 	}
 
 	/**
@@ -245,7 +250,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 */
 	public function getAllGroups() {
 		$result = [];
-		foreach ( CentralAuthUser::availableGlobalGroups() as $group ) {
+		foreach ( $this->globalGroupLookup->getDefinedGroups() as $group ) {
 			$result[$group] = UserGroupMembership::getGroupName( $group );
 		}
 		asort( $result );

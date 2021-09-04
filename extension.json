@@ -131,11 +131,17 @@
 				"UserFactory"
 			]
 		},
-		"GlobalGroupMembership": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
+		"GlobalGroupMembership": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
+			"services": [
+				"CentralAuth.GlobalGroupLookup"
+			]
+		},
 		"GlobalGroupPermissions": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
 			"services": [
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.GlobalGroupLookup"
 			]
 		},
 		"WikiSets": {
@@ -147,7 +153,8 @@
 		"GlobalUsers": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalUsers",
 			"services": [
-				"ContentLanguage"
+				"ContentLanguage",
+				"CentralAuth.GlobalGroupLookup"
 			]
 		},
 		"MultiLock": {
@@ -288,7 +295,12 @@
 				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
-		"globaluserrights": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights"
+		"globaluserrights": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights",
+			"services": [
+				"CentralAuth.GlobalGroupLookup"
+			]
+		}
 	},
 	"APIMetaModules": {
 		"globaluserinfo": {
@@ -315,7 +327,8 @@
 		"globalallusers": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers",
 			"services": [
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.GlobalGroupLookup"
 			]
 		}
 	},

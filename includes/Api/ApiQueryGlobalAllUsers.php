@@ -7,6 +7,7 @@ use ApiQuery;
 use ApiQueryBase;
 use CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -40,18 +41,24 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
+
 	/**
 	 * @param ApiQuery $query
 	 * @param string $moduleName
 	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
 	public function __construct(
 		$query,
 		$moduleName,
-		CentralAuthDatabaseManager $databaseManager
+		CentralAuthDatabaseManager $databaseManager,
+		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $query, $moduleName, 'agu' );
 		$this->databaseManager = $databaseManager;
+		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	/**
@@ -253,7 +260,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	}
 
 	public function getAllowedParams() {
-		$globalGroups = CentralAuthUser::availableGlobalGroups();
+		$globalGroups = $this->globalGroupLookup->getDefinedGroups();
 		return [
 			'from' => null,
 			'to' => null,

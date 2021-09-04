@@ -16,7 +16,8 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiTestCase {
 
 		$this->special = TestingAccessWrapper::newFromObject(
 			new SpecialGlobalGroupPermissions(
-				CentralAuthServices::getDatabaseManager()
+				CentralAuthServices::getDatabaseManager(),
+				CentralAuthServices::getGlobalGroupLookup()
 			)
 		);
 	}

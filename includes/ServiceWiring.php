@@ -4,6 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -63,6 +64,11 @@ return [
 			$services->getWikiPageFactory(),
 			$config->get( 'GlobalRenameBlacklist' ),
 			$config->get( 'GlobalRenameBlacklistRegex' )
+		);
+	},
+	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {
+		return new GlobalGroupLookup(
+			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},
 ];

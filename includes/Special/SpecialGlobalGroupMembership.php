@@ -3,11 +3,13 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthGroupMembershipProxy;
+use CentralAuthServices;
 use CentralAuthUser;
 use HTMLForm;
 use HTMLGlobalUserTextField;
 use LogEventsList;
 use LogPage;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use OutputPage;
 use Status;
 use User;
@@ -25,12 +27,16 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 */
 	private $mGlobalUser;
 
-	public function __construct() {
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
+
+	public function __construct( GlobalGroupLookup $globalGroupLookup ) {
 		parent::__construct();
 		$this->mName = 'GlobalGroupMembership';
 
 		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->mGlobalUser = CentralAuthUser::getInstance( $this->getUser() );
+		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	/**
@@ -80,7 +86,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 			$this->mGlobalUser->isAttached() &&
 			$this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' )
 		) {
-			$allGroups = CentralAuthUser::availableGlobalGroups();
+			$allGroups = $this->globalGroupLookup->getDefinedGroups();
 
 			# specify addself and removeself as empty arrays -- bug 16098
 			return [
@@ -141,7 +147,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return array
 	 */
 	protected static function getAllGroups() {
-		return CentralAuthUser::availableGlobalGroups();
+		return CentralAuthServices::getGlobalGroupLookup()->getDefinedGroups();
 	}
 
 	/**

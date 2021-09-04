@@ -3001,51 +3001,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return array
-	 */
-	public static function availableGlobalGroups() {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
-
-		$res = $dbr->select(
-			'global_group_permissions',
-			'distinct ggp_group',
-			[],
-			__METHOD__
-		);
-
-		$groups = [];
-		foreach ( $res as $row ) {
-			/** @var stdClass $row */
-			$groups[] = $row->ggp_group;
-		}
-
-		return $groups;
-	}
-
-	/**
-	 * @param string $group
-	 * @return array
-	 */
-	public static function globalGroupPermissions( $group ) {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
-
-		$res = $dbr->select(
-			'global_group_permissions',
-			'ggp_permission',
-			[ 'ggp_group' => $group ],
-			__METHOD__
-		);
-
-		$rights = [];
-		foreach ( $res as $row ) {
-			/** @var stdClass $row */
-			$rights[] = $row->ggp_permission;
-		}
-
-		return $rights;
-	}
-
-	/**
 	 * @param string $perm
 	 * @return bool
 	 */
@@ -3053,28 +3008,6 @@ class CentralAuthUser implements IDBAccessObject {
 		$perms = $this->getGlobalRights();
 
 		return in_array( $perm, $perms );
-	}
-
-	/**
-	 * @return array
-	 */
-	public static function getUsedRights() {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
-
-		$res = $dbr->select(
-			'global_group_permissions',
-			'distinct ggp_permission',
-			[],
-			__METHOD__
-		);
-
-		$rights = [];
-		foreach ( $res as $row ) {
-			/** @var stdClass $row */
-			$rights[] = $row->ggp_permission;
-		}
-
-		return $rights;
 	}
 
 	public function invalidateCache() {
