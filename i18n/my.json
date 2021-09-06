@@ -106,6 +106,7 @@
 	"centralauth-log-entry-unhide": "ဂလိုဘယ်အကောင့် \"$1\" ကို မဝှက်တော့ပါ",
 	"centralauth-log-entry-unlock": "ဂလိုဘယ်အကောင့် \"$1\" ကို သော့မခတ်တော့ပါ",
 	"centralauth-log-gblrename-oldname": "ယခင် အသုံးပြုသူအမည်:",
+	"centralauth-log-header": "ဤမှတ်တမ်းတွင် ဂလိုဘယ်အကောင့်များအောက်ရှိ ဖျက်ပစ်ခြင်း၊ ပိတ်ပင်ခြင်းနှင့် ပြန်လည်ဖြေပေးခြင်းများစသော လုပ်ဆောင်ချက်များ ပါဝင်သည်။",
 	"centralauth-log-name": "ဂလိုဘယ် အကောင့်မှတ်တမ်း",
 	"centralauth-log-status-hidden": "ဝှက်ထားသည်",
 	"centralauth-log-status-locked": "သော့ခတ်ထားသည်",
