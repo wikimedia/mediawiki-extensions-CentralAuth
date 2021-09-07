@@ -24,14 +24,14 @@ class LocalUserMergeJob extends LocalRenameJob {
 		$this->updateStatus( 'inprogress' );
 		// Make the status update visible to all other transactions immediately
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$factory->commitMasterChanges( $fnameTrxOwner );
+		$factory->commitPrimaryChanges( $fnameTrxOwner );
 
 		$toUser = $this->maybeCreateNewUser( $to );
 		if ( $toUser instanceof Status ) {
-			$factory->rollbackMasterChanges( $fnameTrxOwner );
+			$factory->rollbackPrimaryChanges( $fnameTrxOwner );
 			$this->updateStatus( 'failed' );
 			// Make the status update visible to all other transactions immediately
-			$factory->commitMasterChanges( $fnameTrxOwner );
+			$factory->commitPrimaryChanges( $fnameTrxOwner );
 			throw new RuntimeException( "autoCreateUser failed for '{$to}': " .
 				$toUser->getWikiText( false, false, 'en' ) );
 		}

@@ -243,7 +243,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Check hasOrMadeRecentMasterChanges() on the CentralAuth load balancer
+	 * Check hasOrMadeRecentPrimaryChanges() on the CentralAuth load balancer
 	 *
 	 * @todo this should be in CentralAuthDatabaseManager instead, it has nothing
 	 * to do with CentralAuthUser
@@ -253,7 +253,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public static function centralLBHasRecentPrimaryChanges() {
 		return CentralAuthServices::getDatabaseManager()
 			->getLoadBalancer()
-			->hasOrMadeRecentMasterChanges();
+			->hasOrMadeRecentPrimaryChanges();
 	}
 
 	/**

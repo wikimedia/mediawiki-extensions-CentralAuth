@@ -35,7 +35,7 @@ abstract class LocalRenameJob extends Job {
 		// Making a new transaction also reduces deadlocks from the locking read.
 		$fnameTrxOwner = get_class( $this ) . '::' . __FUNCTION__; // T145596
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$factory->commitMasterChanges( $fnameTrxOwner );
+		$factory->commitPrimaryChanges( $fnameTrxOwner );
 
 		if ( empty( $this->params['ignorestatus'] ) ) {
 			if ( $status !== 'queued' && $status !== 'failed' ) {
@@ -64,9 +64,9 @@ abstract class LocalRenameJob extends Job {
 			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account until a sysadmin intervenes
-			$factory->rollbackMasterChanges( $fnameTrxOwner );
+			$factory->rollbackPrimaryChanges( $fnameTrxOwner );
 			$this->updateStatus( 'failed' );
-			$factory->commitMasterChanges( $fnameTrxOwner );
+			$factory->commitPrimaryChanges( $fnameTrxOwner );
 			throw $e;
 		}
 
