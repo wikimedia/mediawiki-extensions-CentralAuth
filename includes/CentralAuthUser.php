@@ -187,16 +187,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param UserIdentity $user
-	 * @return CentralAuthUser
-	 * @since 1.27
-	 * @deprecated since 1.37, use ::getPrimaryInstance() instead
-	 */
-	public static function getMasterInstance( UserIdentity $user ) {
-		return self::getPrimaryInstance( $user );
-	}
-
-	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * This object will use DB_PRIMARY.
 	 * @param UserIdentity $user
@@ -205,16 +195,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public static function getPrimaryInstance( UserIdentity $user ) {
 		return self::getPrimaryInstanceByName( $user->getName() );
-	}
-
-	/**
-	 * @param string $username Must be validated and canonicalized by the caller
-	 * @return CentralAuthUser
-	 * @since 1.27
-	 * @deprecated since 1.37, use ::getPrimaryInstanceByName() instead
-	 */
-	public static function getMasterInstanceByName( $username ) {
-		return self::getPrimaryInstanceByName( $username );
 	}
 
 	/**
@@ -349,15 +329,6 @@ class CentralAuthUser implements IDBAccessObject {
 		} else {
 			return false;
 		}
-	}
-
-	/**
-	 * @deprecated since 1.37, use ::newPrimaryInstanceFromId() instead
-	 * @param int $id
-	 * @return CentralAuthUser|bool false if no user exists with that id
-	 */
-	public static function newMasterInstanceFromId( $id ) {
-		return self::newPrimaryInstanceFromId( $id );
 	}
 
 	/**
