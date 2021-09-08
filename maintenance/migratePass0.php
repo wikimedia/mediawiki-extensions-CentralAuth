@@ -53,6 +53,7 @@ class MigratePass0 extends Maintenance {
 				++$migrated;
 			}
 
+			// @phan-suppress-next-line SecurityCheck-SQLInjection T290563
 			CentralAuthUser::storeMigrationData( $wgDBname, $users );
 			$users = []; // clear the array for the next pass
 

@@ -179,7 +179,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 		}
 
 		if ( !$this->oldCAUsers ) {
-			return $this->msg( 'centralauth-usermerge-nousers' )->escaped();
+			return Status::newFatal( 'centralauth-usermerge-nousers' );
 		}
 
 		if ( count( $this->oldCAUsers ) > self::MAX_USERS_TO_MERGE ) {

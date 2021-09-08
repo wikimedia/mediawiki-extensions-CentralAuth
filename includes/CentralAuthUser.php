@@ -2006,6 +2006,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * - completed migration state
 	 */
 	public function attach( $wikiID, $method = 'new', $sendToRC = true, $ts = 0 ) {
+		global $wgCentralAuthRC;
+
 		$this->checkWriteMode();
 
 		$dbw = CentralAuthUtils::getCentralDB();
@@ -2044,8 +2046,6 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		if ( $sendToRC ) {
-			global $wgCentralAuthRC;
-
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
 
 			foreach ( $wgCentralAuthRC as $rc ) {
@@ -2465,14 +2465,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getLocalGroups() {
 		$localgroups = [];
-		array_map(
-			static function ( $local ) use ( &$localgroups ) {
-				$localgroups = array_unique( array_merge(
-					$localgroups, array_keys( $local['groupMemberships'] )
-				) );
-			},
-			$this->queryAttached()
-		);
+		foreach ( $this->queryAttached() as $local ) {
+			$localgroups = array_unique( array_merge(
+				$localgroups, array_keys( $local['groupMemberships'] )
+			) );
+		}
 		return $localgroups;
 	}
 
@@ -2841,6 +2838,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthSessionProvider
 	 */
 	private static function getSessionProvider(): CentralAuthSessionProvider {
+		// @phan-suppress-next-line PhanTypeMismatchReturnSuperType
 		return SessionManager::singleton()->getProvider( CentralAuthSessionProvider::class );
 	}
 

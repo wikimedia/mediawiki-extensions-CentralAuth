@@ -52,6 +52,7 @@ foreach ( $globalStewards as $user => $id ) {
 	// Using id as a hack for phan-taint-check.
 	echo "Added user id " . ( (int)$id ) . "\n";
 
+	// @phan-suppress-next-line SecurityCheck-SQLInjection T290563
 	$u = new CentralAuthUser( $user );
 	$u->quickInvalidateCache(); // Don't bother regenerating the steward's cache.
 }

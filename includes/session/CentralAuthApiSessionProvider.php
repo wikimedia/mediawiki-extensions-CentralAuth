@@ -42,9 +42,11 @@ class CentralAuthApiSessionProvider
 		// Schedule the throwing of the exception for later when the API
 		// is ready to catch it.
 		$exception = \ApiUsageException::newWithMessage( null, $error, $code );
-		$this->getHookContainer()->register( 'ApiBeforeMain', static function () use ( $exception ) {
+		/** @return never */
+		$excepClosure = static function () use ( $exception ) {
 			throw $exception;
-		} );
+		};
+		$this->getHookContainer()->register( 'ApiBeforeMain', $excepClosure );
 
 		return parent::makeBogusSessionInfo( $code, $error );
 	}

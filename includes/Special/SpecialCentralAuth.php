@@ -368,7 +368,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @return array
+	 * @return array Content is already escaped
 	 */
 	private function getInfoFields() {
 		$globalUser = $this->mGlobalUser;
@@ -406,13 +406,14 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$groups = $globalUser->getGlobalGroups();
 		if ( $groups ) {
-			$groups = array_map( function ( $group ) {
-				return $this->getLinkRenderer()->makeLink(
+			$groupLinks = [];
+			foreach ( $groups as $group ) {
+				$groupLinks[] = $this->getLinkRenderer()->makeLink(
 					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
 					UserGroupMembership::getGroupName( $group )
 				);
-			}, $groups );
-			$attribs['groups'] = $this->getLanguage()->commaList( $groups );
+			}
+			$attribs['groups'] = $this->getLanguage()->commaList( $groupLinks );
 		}
 
 		if ( $this->mCanChangeGroups ) {
@@ -425,8 +426,8 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->msg( 'centralauth-admin-info-groups-manage' )->text()
 			);
 
-			$attribs['groups'] .= $this->msg( 'word-separator' )->text();
-			$attribs['groups'] .= $this->msg( 'parentheses', $manageGroupsLink )->text();
+			$attribs['groups'] .= $this->msg( 'word-separator' )->escaped();
+			$attribs['groups'] .= $this->msg( 'parentheses' )->rawParams( $manageGroupsLink )->escaped();
 		}
 
 		return $attribs;
