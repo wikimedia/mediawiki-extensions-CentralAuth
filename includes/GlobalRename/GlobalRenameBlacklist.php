@@ -19,8 +19,9 @@
  * @file
  */
 
-use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserIdentity;
+use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Page\WikiPageFactory;
+use Psr\Log\LoggerInterface;
 
 /**
  * Utility class to deal with global rename blacklist.
@@ -29,24 +30,44 @@ use MediaWiki\User\UserIdentity;
  * @copyright © 2020 Martin Urbanec
  */
 class GlobalRenameBlacklist {
-	/** @var string|Title|null Source of the blacklist, set to $wgGlobalRenameBlacklist */
+	/** @var string|Title|null Source of the blacklist, url to fetch it from, or null */
 	private $file = null;
+
+	/** @var bool whether the blacklist should be treated as a bunch of regexs */
+	private $blacklistRegex;
+
 	/** @var string[]|null Content of blacklist */
 	private $blacklist = null;
-	/** @var \Psr\Log\LoggerInterface */
+
+	/** @var LoggerInterface */
 	private $logger;
 
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
+	/** @var WikiPageFactory */
+	private $wikiPageFactory;
+
 	/**
-	 * @param string|Title|null $file Source of blacklist or null to use $wgGlobalRenameBlacklist
+	 * @param LoggerInterface $logger
+	 * @param HttpRequestFactory $httpRequestFactory
+	 * @param WikiPageFactory $wikiPageFactory
+	 * @param string|Title|null $blacklistSource Page with blacklist, url to fetch it from,
+	 *   or null for no list ($wgGlobalRenameBlacklist)
+	 * @param bool $blacklistRegex ($wgGlobalRenameBlacklistRegex)
 	 */
-	public function __construct( $file = null ) {
-		global $wgGlobalRenameBlacklist;
-		$this->logger = \MediaWiki\Logger\LoggerFactory::getInstance( 'CentralAuthRename' );
-		if ( $file === null ) {
-			$this->file = $wgGlobalRenameBlacklist;
-		} else {
-			$this->file = $file;
-		}
+	public function __construct(
+		LoggerInterface $logger,
+		HttpRequestFactory $httpRequestFactory,
+		WikiPageFactory $wikiPageFactory,
+		$blacklistSource,
+		bool $blacklistRegex
+	) {
+		$this->logger = $logger;
+		$this->httpRequestFactory = $httpRequestFactory;
+		$this->wikiPageFactory = $wikiPageFactory;
+		$this->file = $blacklistSource;
+		$this->blacklistRegex = $blacklistRegex;
 	}
 
 	/**
@@ -54,7 +75,7 @@ class GlobalRenameBlacklist {
 	 *
 	 * @return bool
 	 */
-	private function isEnabled() {
+	private function isEnabled(): bool {
 		return $this->file !== null;
 	}
 
@@ -76,7 +97,7 @@ class GlobalRenameBlacklist {
 
 		if ( $this->file instanceof Title ) {
 			$this->logger->debug( 'GlobalRenameBlacklist is fetching blacklist from a wikipage' );
-			$wikipage = WikiPage::factory( $this->file );
+			$wikipage = $this->wikiPageFactory->newFromTitle( $this->file );
 			$content = $wikipage->getContent();
 			if ( $content === null ) {
 				throw new MWException(
@@ -95,8 +116,7 @@ class GlobalRenameBlacklist {
 				$this->logger->info( 'GlobalRenameBlacklist is not specified, not fetching anything' );
 				return;
 			}
-			$text = MediaWikiServices::getInstance()->getHttpRequestFactory()
-				->get( $this->file, [], __METHOD__ );
+			$text = $this->httpRequestFactory->get( $this->file, [], __METHOD__ );
 			if ( $text === null ) {
 				$this->logger->warning( 'GlobalRenameBlacklist failed to fetch global rename blacklist.' );
 				return;
@@ -119,26 +139,24 @@ class GlobalRenameBlacklist {
 	}
 
 	/**
-	 * Checks if $user can request a global rename
+	 * Checks if $userName can request a global rename
 	 *
-	 * @param UserIdentity $user User who is to be checked
+	 * @param string $userName
 	 * @return bool
 	 */
-	public function checkUser( UserIdentity $user ) {
+	public function checkUser( string $userName ) {
 		if ( !$this->isEnabled() ) {
 			$this->logger->debug( 'GlobalRenameBlacklist::checkUser() returns true, blacklist is disabled' );
 			return true;
 		}
-
-		global $wgGlobalRenameBlacklistRegex;
 
 		if ( $this->blacklist === null ) {
 			$this->logger->debug( 'GlobalRenameBlacklist::checkUser() fetches blacklist, null found' );
 			$this->fetchBlacklist();
 		}
 
-		if ( !$wgGlobalRenameBlacklistRegex ) {
-			$res = !in_array( $user->getName(), $this->blacklist, true );
+		if ( !$this->blacklistRegex ) {
+			$res = !in_array( $userName, $this->blacklist, true );
 		} else {
 			$res = true;
 			foreach ( $this->blacklist as $row ) {
@@ -147,7 +165,7 @@ class GlobalRenameBlacklist {
 				if ( !StringUtils::isValidPCRERegex( $regex ) ) {
 					continue; // Skip invalid regex
 				}
-				$regexRes = preg_match( $regex, $user->getName() );
+				$regexRes = preg_match( $regex, $userName );
 				if ( $regexRes === 1 ) {
 					$res = false;
 					break;
@@ -157,7 +175,7 @@ class GlobalRenameBlacklist {
 		$this->logger->debug(
 			'GlobalRenameBlacklist returns {result} for {username}',
 			[
-				'username' => $user->getName(),
+				'username' => $userName,
 				'result' => $res,
 			]
 		);

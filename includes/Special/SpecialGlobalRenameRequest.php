@@ -42,11 +42,22 @@ use User;
  */
 class SpecialGlobalRenameRequest extends FormSpecialPage {
 
+	/** @var GlobalRenameBlacklist */
+	private $globalRenameBlacklist;
+
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
-	public function __construct( UserNameUtils $userNameUtils ) {
+	/**
+	 * @param GlobalRenameBlacklist $globalRenameBlacklist
+	 * @param UserNameUtils $userNameUtils
+	 */
+	public function __construct(
+		GlobalRenameBlacklist $globalRenameBlacklist,
+		UserNameUtils $userNameUtils
+	) {
 		parent::__construct( 'GlobalRenameRequest' );
+		$this->globalRenameBlacklist = $globalRenameBlacklist;
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -55,8 +66,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	public function userCanExecute( User $user ) {
-		$blacklist = new GlobalRenameBlacklist();
-		return $blacklist->checkUser( $user );
+		return $this->globalRenameBlacklist->checkUser( $user->getName() );
 	}
 
 	public function displayRestrictionError() {

@@ -4,6 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
 // PHPUnit does not understand coverage for this file.
@@ -51,6 +52,16 @@ return [
 		return new CentralAuthWikiListService(
 			new ServiceOptions( CentralAuthWikiListService::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
 			$services->getHookContainer()
+		);
+	},
+	'CentralAuth.GlobalRenameBlacklist' => static function ( MediaWikiServices $services ): GlobalRenameBlacklist {
+		$config = $services->getMainConfig();
+		return new GlobalRenameBlacklist(
+			LoggerFactory::getInstance( 'CentralAuthRename' ),
+			$services->getHttpRequestFactory(),
+			$services->getWikiPageFactory(),
+			$config->get( 'GlobalRenameBlacklist' ),
+			$config->get( 'GlobalRenameBlacklistRegex' )
 		);
 	},
 ];
