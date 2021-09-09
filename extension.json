@@ -281,7 +281,12 @@
 		},
 		"deleteglobalaccount": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiDeleteGlobalAccount",
 		"setglobalaccountstatus": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiSetGlobalAccountStatus",
-		"centralauthtoken": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCentralAuthToken",
+		"centralauthtoken": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCentralAuthToken",
+			"services": [
+				"CentralAuth.CentralAuthUtilityService"
+			]
+		},
 		"globaluserrights": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights"
 	},
 	"APIMetaModules": {
