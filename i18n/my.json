@@ -117,6 +117,7 @@
 	"centralauth-merge-method-primary": "မိခင် ဝီကီ",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|မိနစ်|မိနစ်}} အကြာက",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|လ|လ}} အကြာက",
+	"centralauth-multilock-homewiki": "မိခင် ဝီကီ",
 	"centralauth-newgroup-legend": "အုပ်စုအသစ်တစ်ခု ဖန်တီးပါ",
 	"centralauth-prefs-manage": "သင်၏ ဂလိုဘယ်အကောင့်ကို စီမံရန်",
 	"centralauth-prefs-status": "ဂလိုဘယ် အကောင့်:",
@@ -154,6 +155,7 @@
 	"centralauth-uwbr-registration-nodate": "မသိရ",
 	"centralauth-warning-notloggedin": "သင်သည်လက်ရှိ အကောင့်ထဲမဝင်ထားပါ။",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|နှစ်|နှစ်}} အကြာက",
+	"centralautologin": "ဗဟိုလော့ဂ်အင်ဝင်ရောက်ခြင်း",
 	"centralloginsuccesful": "အကောင့်ထဲဝင်ပြီးပြီ",
 	"createlocalaccount": "ဒေသတွင်းအကောင့်တစ်ခုကို အတင်းအဓမ္မဖန်တီးရန်",
 	"globalgroupmembership": "ဂလိုဘယ်အုပ်စုများတွင် အဖွဲ့ဝင်ဖြစ်မှု",
@@ -224,5 +226,6 @@
 	"right-centralauth-createlocal": "ဂလိုဘယ်အကောင့်တစ်ခုအတွက် ဒေသတွင်းအကောင့်တစ်ခုကို အတင်းအဓမ္မဖန်တီးရန်",
 	"right-centralauth-rename": "ဂလိုဘယ် အကောင့်များကို အမည်ပြန်မှည့်ရန်",
 	"right-globalgrouppermissions": "ဂလိုဘယ်အုပ်စုများကို စီမံရန်",
+	"sulrenamewarning-title": "{{GENDER:$1|သင်၏}}အကောင့်ကို အမည်ပြန်လည်မှည့်ပြီးပါပြီ",
 	"userswhowillberenamed": "အမည်ပြောင်းလဲခံရမည့် အသုံးပြုသူများ"
 }
