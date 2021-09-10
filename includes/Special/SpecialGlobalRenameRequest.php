@@ -23,7 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthUser;
 use FormSpecialPage;
-use GlobalRenameBlacklist;
+use GlobalRenameDenylist;
 use GlobalRenameRequest;
 use HTMLForm;
 use MediaWiki\User\UserNameUtils;
@@ -42,22 +42,22 @@ use User;
  */
 class SpecialGlobalRenameRequest extends FormSpecialPage {
 
-	/** @var GlobalRenameBlacklist */
-	private $globalRenameBlacklist;
+	/** @var GlobalRenameDenylist */
+	private $globalRenameDenylist;
 
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
 	/**
-	 * @param GlobalRenameBlacklist $globalRenameBlacklist
+	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
-		GlobalRenameBlacklist $globalRenameBlacklist,
+		GlobalRenameDenylist $globalRenameDenylist,
 		UserNameUtils $userNameUtils
 	) {
 		parent::__construct( 'GlobalRenameRequest' );
-		$this->globalRenameBlacklist = $globalRenameBlacklist;
+		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -66,7 +66,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	public function userCanExecute( User $user ) {
-		return $this->globalRenameBlacklist->checkUser( $user->getName() );
+		return $this->globalRenameDenylist->checkUser( $user->getName() );
 	}
 
 	public function displayRestrictionError() {

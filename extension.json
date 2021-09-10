@@ -161,7 +161,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 			"services": [
 				"CentralAuth.CentralAuthUIService",
-				"CentralAuth.GlobalRenameBlacklist"
+				"CentralAuth.GlobalRenameDenylist"
 			]
 		},
 		"GlobalRenameProgress": {
@@ -376,7 +376,7 @@
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
 		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php",
-		"GlobalRenameBlacklist": "includes/GlobalRename/GlobalRenameBlacklist.php"
+		"GlobalRenameDenylist": "includes/GlobalRename/GlobalRenameDenylist.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
@@ -671,11 +671,11 @@
 		},
 		"GlobalRenameBlacklist": {
 			"value": null,
-			"description": "Source URL for the global rename blacklist feature; if null, the feature is disabled."
+			"description": "Source URL for the global rename denylist feature; if null, the feature is disabled."
 		},
 		"GlobalRenameBlacklistRegex": {
 			"value": false,
-			"description": "Does the global rename blacklist allow regexes? Does not have any effect when GlobalRenameBlacklist is null."
+			"description": "Does the global rename denylist allow regexes? Does not have any effect when GlobalRenameBlacklist is null."
 		},
 		"CentralAuthSessionCacheType": {
 			"value": null

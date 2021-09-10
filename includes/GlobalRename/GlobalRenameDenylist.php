@@ -24,20 +24,20 @@ use MediaWiki\Page\WikiPageFactory;
 use Psr\Log\LoggerInterface;
 
 /**
- * Utility class to deal with global rename blacklist.
+ * Utility class to deal with global rename denylist.
  *
  * @author Martin Urbanec <martin.urbanec@wikimedia.cz>
  * @copyright © 2020 Martin Urbanec
  */
-class GlobalRenameBlacklist {
-	/** @var string|Title|null Source of the blacklist, url to fetch it from, or null */
+class GlobalRenameDenylist {
+	/** @var string|Title|null Source of the denylist, url to fetch it from, or null */
 	private $file = null;
 
-	/** @var bool whether the blacklist should be treated as a bunch of regexs */
-	private $blacklistRegex;
+	/** @var bool whether the denylist should be treated as a bunch of regexs */
+	private $denylistRegex;
 
-	/** @var string[]|null Content of blacklist */
-	private $blacklist = null;
+	/** @var string[]|null Content of the denylist */
+	private $denylist = null;
 
 	/** @var LoggerInterface */
 	private $logger;
@@ -52,26 +52,26 @@ class GlobalRenameBlacklist {
 	 * @param LoggerInterface $logger
 	 * @param HttpRequestFactory $httpRequestFactory
 	 * @param WikiPageFactory $wikiPageFactory
-	 * @param string|Title|null $blacklistSource Page with blacklist, url to fetch it from,
+	 * @param string|Title|null $denylistSource Page with denylist, url to fetch it from,
 	 *   or null for no list ($wgGlobalRenameBlacklist)
-	 * @param bool $blacklistRegex ($wgGlobalRenameBlacklistRegex)
+	 * @param bool $denylistRegex ($wgGlobalRenameBlacklistRegex)
 	 */
 	public function __construct(
 		LoggerInterface $logger,
 		HttpRequestFactory $httpRequestFactory,
 		WikiPageFactory $wikiPageFactory,
-		$blacklistSource,
-		bool $blacklistRegex
+		$denylistSource,
+		bool $denylistRegex
 	) {
 		$this->logger = $logger;
 		$this->httpRequestFactory = $httpRequestFactory;
 		$this->wikiPageFactory = $wikiPageFactory;
-		$this->file = $blacklistSource;
-		$this->blacklistRegex = $blacklistRegex;
+		$this->file = $denylistSource;
+		$this->denylistRegex = $denylistRegex;
 	}
 
 	/**
-	 * Is global rename blacklist enabled?
+	 * Is global rename denylist enabled?
 	 *
 	 * @return bool
 	 */
@@ -80,51 +80,51 @@ class GlobalRenameBlacklist {
 	}
 
 	/**
-	 * Internal method for fetching blacklist.
+	 * Internal method for fetching denylist.
 	 *
-	 * Blacklist is fetched and parsed into $blacklist. Blacklist source is
+	 * Denylist is fetched and parsed into denylist. Denylist source is
 	 * either an URL on the internet, or a wiki page.
 	 * $url has to be already set.
 	 *
 	 * @throws MWException
 	 */
-	private function fetchBlacklist() {
-		if ( $this->blacklist !== null && count( $this->blacklist ) !== 0 ) {
+	private function fetchList() {
+		if ( $this->denylist !== null && count( $this->denylist ) !== 0 ) {
 			throw new MWException(
-				'GlobalRenameBlacklist::fetchBlacklist called on already fully initialized class'
+				'GlobalRenameDenylist::fetchList called on already fully initialized class'
 			);
 		}
 
 		if ( $this->file instanceof Title ) {
-			$this->logger->debug( 'GlobalRenameBlacklist is fetching blacklist from a wikipage' );
+			$this->logger->debug( 'GlobalRenameDenylist is fetching denylist from a wikipage' );
 			$wikipage = $this->wikiPageFactory->newFromTitle( $this->file );
 			$content = $wikipage->getContent();
 			if ( $content === null ) {
 				throw new MWException(
-					'GlobalRenameBlacklist::fetchBlacklist was called with non-existent wikipage'
+					'GlobalRenameDenylist::fetchList was called with non-existent wikipage'
 				);
 			}
 			if ( !$content instanceof WikitextContent ) {
 				throw new MWException(
-					'Page used with GlobalRenameBlacklist has invalid content model'
+					'Page used with GlobalRenameDenylist has invalid content model'
 				);
 			}
 			$text = $content->getText();
 		} else {
-			$this->logger->debug( 'GlobalRenameBlacklist is fetching blacklist from the internet' );
+			$this->logger->debug( 'GlobalRenameDenylist is fetching denylist from the internet' );
 			if ( $this->file === null ) {
-				$this->logger->info( 'GlobalRenameBlacklist is not specified, not fetching anything' );
+				$this->logger->info( 'GlobalRenameDenylist is not specified, not fetching anything' );
 				return;
 			}
 			$text = $this->httpRequestFactory->get( $this->file, [], __METHOD__ );
 			if ( $text === null ) {
-				$this->logger->warning( 'GlobalRenameBlacklist failed to fetch global rename blacklist.' );
+				$this->logger->warning( 'GlobalRenameDenylist failed to fetch global rename denylist.' );
 				return;
 			}
 		}
 
 		$rows = explode( "\n", $text );
-		$this->blacklist = [];
+		$this->denylist = [];
 		foreach ( $rows as $row ) {
 			$trimmedRow = trim( $row );
 			if ( $trimmedRow === "" ) { // Empty line
@@ -134,7 +134,7 @@ class GlobalRenameBlacklist {
 				continue;
 			}
 			// TODO: Check user existance, if applicable
-			$this->blacklist[] = $trimmedRow;
+			$this->denylist[] = $trimmedRow;
 		}
 	}
 
@@ -146,20 +146,20 @@ class GlobalRenameBlacklist {
 	 */
 	public function checkUser( string $userName ) {
 		if ( !$this->isEnabled() ) {
-			$this->logger->debug( 'GlobalRenameBlacklist::checkUser() returns true, blacklist is disabled' );
+			$this->logger->debug( 'GlobalRenameDenylist::checkUser() returns true, denylist is disabled' );
 			return true;
 		}
 
-		if ( $this->blacklist === null ) {
-			$this->logger->debug( 'GlobalRenameBlacklist::checkUser() fetches blacklist, null found' );
-			$this->fetchBlacklist();
+		if ( $this->denylist === null ) {
+			$this->logger->debug( 'GlobalRenameDenylist::checkUser() fetches denylist, null found' );
+			$this->fetchList();
 		}
 
-		if ( !$this->blacklistRegex ) {
-			$res = !in_array( $userName, $this->blacklist, true );
+		if ( !$this->denylistRegex ) {
+			$res = !in_array( $userName, $this->denylist, true );
 		} else {
 			$res = true;
-			foreach ( $this->blacklist as $row ) {
+			foreach ( $this->denylist as $row ) {
 				$row = preg_replace( '!(\\\\\\\\)*(\\\\)?/!', '$1\/', $row );
 				$regex = "/$row/u";
 				if ( !StringUtils::isValidPCRERegex( $regex ) ) {
@@ -173,7 +173,7 @@ class GlobalRenameBlacklist {
 			}
 		}
 		$this->logger->debug(
-			'GlobalRenameBlacklist returns {result} for {username}',
+			'GlobalRenameDenylist returns {result} for {username}',
 			[
 				'username' => $userName,
 				'result' => $res,

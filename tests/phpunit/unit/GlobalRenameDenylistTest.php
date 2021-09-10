@@ -24,9 +24,9 @@ use Psr\Log\NullLogger;
 
 /**
  * @author DannyS712
- * @covers GlobalRenameBlacklist
+ * @covers GlobalRenameDenylist
  */
-class GlobalRenameBlacklistTest extends MediaWikiUnitTestCase {
+class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 
 	public function provideCheckUser() {
 		// $pageText, $userName, $expected
@@ -37,7 +37,7 @@ class GlobalRenameBlacklistTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideCheckUser
-	 * @covers GlobalRenameBlacklist::checkUser
+	 * @covers GlobalRenameDenylist::checkUser
 	 */
 	public function testCheckUser( $pageText, $userName, $expected ) {
 		// Current tests are only for the case when a Title is provided, not when a url
@@ -53,13 +53,13 @@ class GlobalRenameBlacklistTest extends MediaWikiUnitTestCase {
 			->with( $sourceTitle )
 			->willReturn( $sourceWikiPage );
 
-		$blacklist = new GlobalRenameBlacklist(
+		$denylist = new GlobalRenameDenylist(
 			new NullLogger(),
 			$this->createNoOpMock( HttpRequestFactory::class ),
 			$wikiPageFactory,
 			$sourceTitle,
 			false // No regex
 		);
-		$this->assertSame( $expected, $blacklist->checkUser( $userName ) );
+		$this->assertSame( $expected, $denylist->checkUser( $userName ) );
 	}
 }

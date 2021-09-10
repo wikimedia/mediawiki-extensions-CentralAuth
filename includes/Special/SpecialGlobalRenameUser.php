@@ -7,7 +7,7 @@ use CentralAuthSpoofUser;
 use CentralAuthUser;
 use ExtensionRegistry;
 use FormSpecialPage;
-use GlobalRenameBlacklist;
+use GlobalRenameDenylist;
 use GlobalRenameUser;
 use GlobalRenameUserDatabaseUpdates;
 use GlobalRenameUserLogger;
@@ -51,8 +51,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/** @var CentralAuthUIService */
 	private $uiService;
 
-	/** @var GlobalRenameBlacklist */
-	private $globalRenameBlacklist;
+	/** @var GlobalRenameDenylist */
+	private $globalRenameDenylist;
 
 	/**
 	 * Require confirmation if olduser has more than this many global edits
@@ -61,15 +61,15 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 	/**
 	 * @param CentralAuthUIService $uiService
-	 * @param GlobalRenameBlacklist $globalRenameBlacklist
+	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 */
 	public function __construct(
 		CentralAuthUIService $uiService,
-		GlobalRenameBlacklist $globalRenameBlacklist
+		GlobalRenameDenylist $globalRenameDenylist
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 		$this->uiService = $uiService;
-		$this->globalRenameBlacklist = $globalRenameBlacklist;
+		$this->globalRenameDenylist = $globalRenameDenylist;
 	}
 
 	public function doesWrites() {
@@ -243,7 +243,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		// Validate rename deny list
-		$globalRenameDenyList = $this->globalRenameBlacklist;
+		$globalRenameDenyList = $this->globalRenameDenylist;
 		if ( !$globalRenameDenyList->checkUser( $oldUser ) ) {
 			return Status::newFatal( 'centralauth-rename-listed-on-denylist' );
 		}

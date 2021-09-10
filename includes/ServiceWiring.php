@@ -54,9 +54,9 @@ return [
 			$services->getHookContainer()
 		);
 	},
-	'CentralAuth.GlobalRenameBlacklist' => static function ( MediaWikiServices $services ): GlobalRenameBlacklist {
+	'CentralAuth.GlobalRenameDenylist' => static function ( MediaWikiServices $services ): GlobalRenameDenylist {
 		$config = $services->getMainConfig();
-		return new GlobalRenameBlacklist(
+		return new GlobalRenameDenylist(
 			LoggerFactory::getInstance( 'CentralAuthRename' ),
 			$services->getHttpRequestFactory(),
 			$services->getWikiPageFactory(),

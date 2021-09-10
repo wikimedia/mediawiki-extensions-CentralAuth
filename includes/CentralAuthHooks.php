@@ -140,7 +140,7 @@ class CentralAuthHooks implements
 			$wgSpecialPages['GlobalRenameRequest'] = [
 				'class' => SpecialGlobalRenameRequest::class,
 				'services' => [
-					'CentralAuth.GlobalRenameBlacklist',
+					'CentralAuth.GlobalRenameDenylist',
 					'UserNameUtils',
 				]
 			];
@@ -300,7 +300,7 @@ class CentralAuthHooks implements
 			$list['GlobalRenameRequest'] = [
 				'class' => SpecialGlobalRenameRequest::class,
 				'services' => [
-					'CentralAuth.GlobalRenameBlacklist',
+					'CentralAuth.GlobalRenameDenylist',
 					'UserNameUtils',
 				]
 			];
