@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use CentralAuthHooks;
 use CentralAuthSessionProvider;
 use CentralAuthUser;
-use CentralAuthUtils;
+use CentralAuthUtilityService;
 use Exception;
 use Hooks;
 use IBufferingStatsdDataFactory;
@@ -27,12 +27,20 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
 
+	/** @var CentralAuthUtilityService */
+	private $utilityService;
+
 	/**
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
+	 * @param CentralAuthUtilityService $utilityService
 	 */
-	public function __construct( IBufferingStatsdDataFactory $statsdDataFactory ) {
+	public function __construct(
+		IBufferingStatsdDataFactory $statsdDataFactory,
+		CentralAuthUtilityService $utilityService
+	) {
 		parent::__construct( 'CentralLogin' );
 		$this->statsdDataFactory = $statsdDataFactory;
+		$this->utilityService = $utilityService;
 	}
 
 	public function execute( $subpage ) {
@@ -98,11 +106,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginStart( $token ) {
-		$key = CentralAuthUtils::memcKey( 'central-login-start-token', $token );
-		$tokenStore = CentralAuthUtils::getTokenStore();
+		$key = $this->utilityService->memcKey( 'central-login-start-token', $token );
+		$tokenStore = $this->utilityService->getTokenStore();
 
 		// Get the token information
-		$info = CentralAuthUtils::getKeyValueUponExistence( $tokenStore, $key );
+		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -133,7 +141,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			}
 		}
 
-		$session = CentralAuthUtils::getCentralSession();
+		$session = $this->utilityService->getCentralSession();
 		// If the user has a full session, make sure that the names match up.
 		// If they do, then send the user back to the "login successful" page.
 		// We want to avoid overwriting any session that may already exist.
@@ -164,7 +172,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// Note: the "remember me" token must be dealt with later (security).
 			$delay = $this->session->delaySave();
 			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			$newSessionId = CentralAuthUtils::setCentralSession( [
+			$newSessionId = $this->utilityService->setCentralSession( [
 				'pending_name' => $centralUser->getName(),
 				'pending_guid' => $centralUser->getId()
 			], true, $this->session );
@@ -177,7 +185,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
-		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
+		$key = $this->utilityService->memcKey( 'central-login-complete-token', $token );
 		$data = [
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
@@ -210,13 +218,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		global $wgUser;
 
 		$request = $this->getRequest();
-		$tokenStore = CentralAuthUtils::getTokenStore();
+		$tokenStore = $this->utilityService->getTokenStore();
 
-		$key = CentralAuthUtils::memcKey( 'central-login-complete-token', $token );
+		$key = $this->utilityService->memcKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
-		$info = CentralAuthUtils::getKeyValueUponExistence( $tokenStore, $key );
+		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -271,7 +279,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $attempt['stickHTTPS'] !== null ) {
 			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
 		}
-		CentralAuthUtils::setCentralSession( [
+		$this->utilityService->setCentralSession( [
 			'finalProto' => $attempt['finalProto'],
 			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],

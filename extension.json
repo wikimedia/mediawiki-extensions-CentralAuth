@@ -106,7 +106,8 @@
 		"CentralLogin": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralLogin",
 			"services": [
-				"StatsdDataFactory"
+				"StatsdDataFactory",
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
 		"CentralAutoLogin": {
