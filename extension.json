@@ -513,6 +513,18 @@
 		"abusefilter": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\AbuseFilterHookHandler"
 		},
+		"api": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ApiHookHandler",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"contentsecuritypolicy": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ContentSecurityPolicyHookHandler",
+			"services": [
+				"MainConfig"
+			]
+		},
 		"default": {
 			"class": "CentralAuthHooks"
 		},
@@ -529,8 +541,34 @@
 				"UserNameUtils"
 			]
 		},
+		"logincomplete": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\LoginCompleteHookHandler",
+			"services": [
+				"MainConfig",
+				"CentralAuth.CentralAuthSessionManager",
+				"UserOptionsLookup"
+			]
+		},
 		"noservices": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\NoServicesHookHandler"
+		},
+		"pagedisplay": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PageDisplayHookHandler",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"passwordpolicies": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PasswordPoliciesHookHandler",
+			"services": [
+				"MainConfig"
+			]
+		},
+		"permissions": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PermissionsHookHandler",
+			"services": [
+				"MainConfig"
+			]
 		},
 		"securepoll": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler",
@@ -542,6 +580,12 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialContributionsHookHandler",
 			"services": [
 				"NamespaceInfo"
+			]
+		},
+		"specialpageinit": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialPageInitHookHandler",
+			"services": [
+				"MainConfig"
 			]
 		},
 		"rename": {
@@ -559,6 +603,12 @@
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUtilityService"
 			]
+		},
+		"userlogout": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserLogoutHookHandler",
+			"services": [
+				"MainConfig"
+			]
 		}
 	},
 	"Hooks": {
@@ -567,15 +617,15 @@
 		"AbuseFilter-generateUserVars": "abusefilter",
 		"AbuseFilterShouldFilterAction": "abusefilter",
 		"ApiQueryTokensRegisterTypes": "default",
-		"APIGetAllowedParams": "default",
-		"BeforePageDisplay": "default",
-		"ContentSecurityPolicyDefaultSource": "default",
-		"ContentSecurityPolicyScriptSource": "default",
+		"APIGetAllowedParams": "api",
+		"BeforePageDisplay": "pagedisplay",
+		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
+		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
 		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
 		"GetLogTypesOnUser": "default",
 		"GetPreferences": "default",
 		"GetUserBlock": "default",
-		"getUserPermissionsErrorsExpensive": "default",
+		"getUserPermissionsErrorsExpensive": "permissions",
 		"ImportHandleUnknownUser": "importhandle",
 		"InvalidateEmailComplete": "default",
 		"LoadExtensionSchemaUpdates": "noservices",
@@ -583,7 +633,7 @@
 		"LogEventsListGetExtraInputs": "log",
 		"MakeGlobalVariablesScript": "default",
 		"OtherBlockLogLink": "default",
-		"PasswordPoliciesForUser": "default",
+		"PasswordPoliciesForUser": "passwordpolicies",
 		"RenameUserComplete": "rename",
 		"RenameUserPreRename": "rename",
 		"RenameUserWarning": "rename",
@@ -592,7 +642,7 @@
 		"SessionCheckInfo": "default",
 		"SpecialContributionsBeforeMainOutput": "specialcontributions",
 		"SpecialLogAddLogSearchRelations": "log",
-		"SpecialPage_initList": "default",
+		"SpecialPage_initList": "specialpageinit",
 		"SpecialPasswordResetOnSubmit": "default",
 		"TestCanonicalRedirect": "default",
 		"UnitTestsAfterDatabaseSetup": "unittests",
@@ -604,9 +654,9 @@
 		"UserGetRights": "default",
 		"UserIsBot": "default",
 		"UserIsLocked": "default",
-		"UserLoginComplete": "default",
-		"UserLogout": "default",
-		"UserLogoutComplete": "default",
+		"UserLoginComplete": "logincomplete",
+		"UserLogout": "userlogout",
+		"UserLogoutComplete": "userlogout",
 		"UserSaveSettings": "default",
 		"UserSetEmail": "default",
 		"UserSetEmailAuthenticationTimestamp": "default"

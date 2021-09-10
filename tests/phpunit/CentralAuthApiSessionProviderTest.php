@@ -117,7 +117,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	}
 
 	/**
-	 * @covers CentralAuthHooks::onAPIGetAllowedParams
+	 * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\ApiHookHandler::onAPIGetAllowedParams
 	 */
 	public function testApiParameterDeclared() {
 		// hook is registered dynamically when creating the SessionProvider
