@@ -19,8 +19,15 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthServices;
+use CentralAuthUser;
+use Exception;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use Status;
+use stdClass;
 
 /**
  * Data access object for global rename requests.

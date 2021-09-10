@@ -11,6 +11,7 @@ likely construction types...
 */
 
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;

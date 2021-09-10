@@ -19,9 +19,15 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;
+use MWException;
 use Psr\Log\LoggerInterface;
+use StringUtils;
+use Title;
+use WikitextContent;
 
 /**
  * Utility class to deal with global rename denylist.

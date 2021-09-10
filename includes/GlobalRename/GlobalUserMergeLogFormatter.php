@@ -1,5 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use LogFormatter;
+use Message;
+use SpecialPage;
+use Title;
+
 /**
  * Format the gblrename/merge log entries
  */

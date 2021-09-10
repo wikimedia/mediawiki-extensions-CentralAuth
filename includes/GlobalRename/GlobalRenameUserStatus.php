@@ -1,5 +1,10 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthServices;
+use DBAccessObjectUtils;
+use IDBAccessObject;
 use MediaWiki\Permissions\Authority;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;

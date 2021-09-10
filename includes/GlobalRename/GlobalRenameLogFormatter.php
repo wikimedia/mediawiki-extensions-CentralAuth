@@ -1,5 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use LogFormatter;
+use Message;
+use Title;
+use WikiMap;
+
 /**
  * Handles the following log types:
  *  - gblrename/rename

@@ -24,9 +24,9 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthServices;
 use CentralAuthUser;
-use GlobalRenameRequest;
 use Html;
 use IContextSource;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\User\UserNameUtils;
 use SpecialPage;
 use stdClass;

@@ -1,5 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthServices;
+use CentralAuthUser;
 use Wikimedia\Rdbms\IDatabase;
 
 /**

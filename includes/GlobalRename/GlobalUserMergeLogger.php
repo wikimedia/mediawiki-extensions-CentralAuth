@@ -1,5 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthUser;
+use ManualLogEntry;
+use Title;
+use User;
+
 /**
  * Log a global merge into the local log
  *

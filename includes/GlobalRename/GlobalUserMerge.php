@@ -1,6 +1,14 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthUser;
+use Hooks;
+use LocalUserMergeJob;
 use MediaWiki\Logger\LoggerFactory;
+use Status;
+use Title;
+use User;
 
 /**
  * Merge a global user

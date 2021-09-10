@@ -18,13 +18,14 @@
  * @file
  */
 
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;
 use Psr\Log\NullLogger;
 
 /**
  * @author DannyS712
- * @covers GlobalRenameDenylist
+ * @covers MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist
  */
 class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 
@@ -37,7 +38,7 @@ class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideCheckUser
-	 * @covers GlobalRenameDenylist::checkUser
+	 * @covers MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist::checkUser
 	 */
 	public function testCheckUser( $pageText, $userName, $expected ) {
 		// Current tests are only for the case when a Title is provided, not when a url

@@ -1,5 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthServices;
+
 /**
  * Update the rows in the CentralAuth tables during a rename
  *

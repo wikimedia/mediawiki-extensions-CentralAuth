@@ -1,5 +1,11 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use ManualLogEntry;
+use Title;
+use User;
+
 /**
  * Log a global rename into the local log
  *

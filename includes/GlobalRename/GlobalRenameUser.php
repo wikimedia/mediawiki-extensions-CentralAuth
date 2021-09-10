@@ -1,5 +1,15 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthSpoofUser;
+use CentralAuthUser;
+use Job;
+use LocalRenameUserJob;
+use Status;
+use Title;
+use User;
+
 /**
  * Rename a global user
  *

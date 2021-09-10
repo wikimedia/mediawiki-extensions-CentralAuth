@@ -23,7 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
-use GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 
 /**
  * API module equivalent of Special:GlobalRenameStatus

@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IDatabase;

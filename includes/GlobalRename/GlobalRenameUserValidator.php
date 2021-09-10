@@ -1,6 +1,11 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename;
+
+use CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use Status;
+use User;
 
 /**
  * Verify whether a potential global rename is valid

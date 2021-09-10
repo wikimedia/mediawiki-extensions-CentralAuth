@@ -23,9 +23,9 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthUser;
 use FormSpecialPage;
-use GlobalRenameDenylist;
-use GlobalRenameRequest;
 use HTMLForm;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\User\UserNameUtils;
 use Message;
 use PermissionsError;

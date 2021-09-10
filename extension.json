@@ -361,22 +361,10 @@
 		"LocalRenameUserJob": "includes/LocalRenameJob/LocalRenameUserJob.php",
 		"LocalUserMergeJob": "includes/LocalRenameJob/LocalUserMergeJob.php",
 		"LocalPageMoveJob": "includes/LocalRenameJob/LocalPageMoveJob.php",
-		"GlobalRenameLogFormatter": "includes/GlobalRename/GlobalRenameLogFormatter.php",
-		"GlobalUserMergeLogFormatter": "includes/GlobalRename/GlobalUserMergeLogFormatter.php",
-		"GlobalRenameUser": "includes/GlobalRename/GlobalRenameUser.php",
-		"GlobalRenameUserStatus": "includes/GlobalRename/GlobalRenameUserStatus.php",
-		"GlobalRenameRequest": "includes/GlobalRename/GlobalRenameRequest.php",
-		"GlobalRenameUserValidator": "includes/GlobalRename/GlobalRenameUserValidator.php",
-		"GlobalRenameUserDatabaseUpdates": "includes/GlobalRename/GlobalRenameUserDatabaseUpdates.php",
-		"GlobalRenameUserLogger": "includes/GlobalRename/GlobalRenameUserLogger.php",
-		"GlobalUserMergeLogger": "includes/GlobalRename/GlobalUserMergeLogger.php",
-		"GlobalUserMerge": "includes/GlobalRename/GlobalUserMerge.php",
-		"GlobalUserMergeDatabaseUpdates": "includes/GlobalRename/GlobalUserMergeDatabaseUpdates.php",
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
 		"EmailableUser": "includes/EmailableUser.php",
 		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
-		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php",
-		"GlobalRenameDenylist": "includes/GlobalRename/GlobalRenameDenylist.php"
+		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
