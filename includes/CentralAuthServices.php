@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 
@@ -68,5 +69,10 @@ class CentralAuthServices {
 	public static function getWikiListService( ContainerInterface $services = null ): CentralAuthWikiListService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.CentralAuthWikiListService' );
+	}
+
+	public static function getGlobalGroupLookup( ContainerInterface $services = null ): GlobalGroupLookup {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->get( 'CentralAuth.GlobalGroupLookup' );
 	}
 }

@@ -24,20 +24,38 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
+use ApiMain;
 use ApiUserrights;
-use CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 
 /**
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiUserrights {
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
+
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName
+	 * @param GlobalGroupLookup $globalGroupLookup
+	 */
+	public function __construct(
+		ApiMain $mainModule,
+		$moduleName,
+		GlobalGroupLookup $globalGroupLookup
+	) {
+		parent::__construct( $mainModule, $moduleName );
+		$this->globalGroupLookup = $globalGroupLookup;
+	}
+
 	protected function getUserRightsPage() {
-		return new SpecialGlobalGroupMembership();
+		return new SpecialGlobalGroupMembership( $this->globalGroupLookup );
 	}
 
 	protected function getAllGroups() {
-		return CentralAuthUser::availableGlobalGroups();
+		return $this->globalGroupLookup->getDefinedGroups();
 	}
 
 	/** @inheritDoc */

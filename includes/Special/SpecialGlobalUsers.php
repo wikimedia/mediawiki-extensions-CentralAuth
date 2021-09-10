@@ -2,23 +2,28 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthUser;
 use DerivativeContext;
 use Html;
 use IncludableSpecialPage;
 use Language;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use Title;
 
 class SpecialGlobalUsers extends IncludableSpecialPage {
 	/** @var Language */
 	private $contentLanguage;
 
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
+
 	/**
 	 * @param Language $contentLanguage
+	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
-	public function __construct( Language $contentLanguage ) {
+	public function __construct( Language $contentLanguage, GlobalGroupLookup $globalGroupLookup ) {
 		parent::__construct( 'GlobalUsers' );
 		$this->contentLanguage = $contentLanguage;
+		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	public function execute( $par ) {
@@ -32,7 +37,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$req = $this->getRequest();
 
 		if ( $par !== null && $par !== '' ) {
-			if ( in_array( $par, CentralAuthUser::availableGlobalGroups() ) ) {
+			if ( in_array( $par, $this->globalGroupLookup->getDefinedGroups() ) ) {
 				$pg->setGroup( $par );
 			} else {
 				$pg->setUsername( $par );

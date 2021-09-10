@@ -18,6 +18,7 @@ use Html;
 use LogEventsList;
 use LogPage;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use SpecialPage;
@@ -42,12 +43,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
+
 	/**
 	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
-	public function __construct( CentralAuthDatabaseManager $databaseManager ) {
+	public function __construct( CentralAuthDatabaseManager $databaseManager, GlobalGroupLookup $globalGroupLookup ) {
 		parent::__construct( 'GlobalGroupPermissions' );
 		$this->databaseManager = $databaseManager;
+		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	public function doesWrites() {
@@ -101,7 +107,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	private function buildMainView() {
 		$out = $this->getOutput();
-		$groups = CentralAuthUser::availableGlobalGroups();
+		$groups = $this->globalGroupLookup->getDefinedGroups();
 
 		if ( count( $groups ) ) {
 			$out->addHTML(
@@ -460,7 +466,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return array
 	 */
 	private function getAssignedRights( $group ) {
-		return CentralAuthUser::globalGroupPermissions( $group );
+		return $this->globalGroupLookup->getRightsForGroup( $group );
 	}
 
 	/**
@@ -495,7 +501,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$newname = ltrim( substr( $newname->getDBkey(), 2 ), '_' );
 
 		// all new group names should be lowercase: check all new and changed group names (T202095)
-		if ( !in_array( $group, CentralAuthUser::availableGlobalGroups() ) || ( $group !== $newname ) ) {
+		if (
+			!in_array( $group, $this->globalGroupLookup->getDefinedGroups( DB_PRIMARY ) )
+			|| ( $group !== $newname )
+		) {
 			$nameValidationResult = $this->validateGroupName( $newname );
 			if ( !$nameValidationResult->isGood() ) {
 				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
@@ -505,7 +514,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 
 		if ( $group != $newname ) {
-			if ( in_array( $newname, CentralAuthUser::availableGlobalGroups() ) ) {
+			if ( in_array( $newname, $this->globalGroupLookup->getDefinedGroups( DB_PRIMARY ) ) ) {
 				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-rename-taken', $newname );
 				return;
 			}
