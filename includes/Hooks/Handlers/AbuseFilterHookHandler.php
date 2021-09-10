@@ -21,12 +21,12 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthUser;
-use LocalPageMoveJob;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterBuilderHook;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterComputeVariableHook;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterGenerateUserVarsHook;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterShouldFilterActionHook;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
+use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalPageMoveJob;
 use RecentChange;
 use Title;
 use User;

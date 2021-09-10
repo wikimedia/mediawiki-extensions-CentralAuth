@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 use CentralAuthSpoofUser;
 use CentralAuthUser;
 use Job;
-use LocalRenameUserJob;
+use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use Status;
 use Title;
 use User;

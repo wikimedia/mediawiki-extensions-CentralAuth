@@ -1,6 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
+
+use Job;
 use MediaWiki\MediaWikiServices;
+use RequestContext;
+use Title;
+use User;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -103,4 +109,4 @@ class LocalPageMoveJob extends Job {
 	}
 }
 
-class_alias( 'LocalPageMoveJob', 'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob' );
+class_alias( LocalPageMoveJob::class, 'LocalPageMoveJob' );

@@ -192,9 +192,9 @@
 	},
 	"JobClasses": {
 		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
-		"LocalRenameUserJob": "LocalRenameUserJob",
-		"LocalUserMergeJob": "LocalUserMergeJob",
-		"LocalPageMoveJob": "LocalPageMoveJob",
+		"LocalRenameUserJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameUserJob",
+		"LocalUserMergeJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalUserMergeJob",
+		"LocalPageMoveJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob",
 		"CentralAuthCreateLocalAccountJob": "CentralAuthCreateLocalAccountJob",
 		"CentralAuthUnattachUserJob": "CentralAuthUnattachUserJob"
 	},

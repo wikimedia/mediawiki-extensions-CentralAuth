@@ -1,8 +1,18 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use Exception;
+use Job;
+use JobQueueGroup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use RequestContext;
+use Title;
+use User;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -158,4 +168,4 @@ abstract class LocalRenameJob extends Job {
 	}
 }
 
-class_alias( 'LocalRenameJob', 'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameJob' );
+class_alias( LocalRenameJob::class, 'LocalRenameJob' );

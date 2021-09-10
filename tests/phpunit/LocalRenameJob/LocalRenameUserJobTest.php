@@ -19,6 +19,8 @@
  * @file
  */
 
+use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
+
 /**
  * @copyright © 2018 Wikimedia Foundation and contributors
  */

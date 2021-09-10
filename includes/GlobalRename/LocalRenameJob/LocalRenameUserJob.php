@@ -1,6 +1,15 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
+
+use CentralAuthUser;
+use Exception;
+use ExtensionRegistry;
+use JobQueueGroup;
 use MediaWiki\MediaWikiServices;
+use RenameuserSQL;
+use Title;
+use User;
 
 /**
  * Job class to rename a user locally
@@ -208,7 +217,4 @@ class LocalRenameUserJob extends LocalRenameJob {
 	}
 }
 
-class_alias(
-	'LocalRenameUserJob',
-	'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameUserJob'
-);
+class_alias( LocalRenameUserJob::class, 'LocalRenameUserJob' );

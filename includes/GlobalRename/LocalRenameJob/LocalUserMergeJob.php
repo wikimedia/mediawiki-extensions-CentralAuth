@@ -1,6 +1,18 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
+
+use CentralAuthUser;
+use CentralAuthUtils;
+use Exception;
+use ExtensionRegistry;
 use MediaWiki\MediaWikiServices;
+use MergeUser;
+use RuntimeException;
+use Status;
+use Title;
+use User;
+use UserMergeLogger;
 
 /**
  * Job class to merge a user locally
@@ -86,7 +98,4 @@ class LocalUserMergeJob extends LocalRenameJob {
 
 }
 
-class_alias(
-	'LocalUserMergeJob',
-	'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalUserMergeJob'
-);
+class_alias( LocalUserMergeJob::class, 'LocalUserMergeJob' );

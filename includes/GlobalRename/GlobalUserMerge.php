@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use CentralAuthUser;
 use Hooks;
-use LocalUserMergeJob;
+use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalUserMergeJob;
 use MediaWiki\Logger\LoggerFactory;
 use Status;
 use Title;
