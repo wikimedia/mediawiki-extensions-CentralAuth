@@ -264,9 +264,9 @@
 	},
 	"LogActionsHandlers": {
 		"gblrights/grouprename": "CentralAuthHooks::onHandleGrouprenameLogEntry",
-		"gblrename/rename": "GlobalRenameLogFormatter",
-		"gblrename/promote": "GlobalRenameLogFormatter",
-		"gblrename/merge": "GlobalUserMergeLogFormatter",
+		"gblrename/rename": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
+		"gblrename/promote": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
+		"gblrename/merge": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalUserMergeLogFormatter",
 		"gblrights/newset": "CentralAuthHooks::onHandleWikiSetLogEntry",
 		"gblrights/setrename": "CentralAuthHooks::onHandleWikiSetLogEntry",
 		"gblrights/setnewtype": "CentralAuthHooks::onHandleWikiSetLogEntry",
