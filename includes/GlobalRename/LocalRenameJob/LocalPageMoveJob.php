@@ -108,5 +108,3 @@ class LocalPageMoveJob extends Job {
 		}
 	}
 }
-
-class_alias( LocalPageMoveJob::class, 'LocalPageMoveJob' );

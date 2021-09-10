@@ -217,5 +217,3 @@ class LocalRenameUserJob extends LocalRenameJob {
 		);
 	}
 }
-
-class_alias( LocalRenameUserJob::class, 'LocalRenameUserJob' );

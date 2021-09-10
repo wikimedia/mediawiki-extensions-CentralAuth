@@ -97,5 +97,3 @@ class LocalUserMergeJob extends LocalRenameJob {
 	}
 
 }
-
-class_alias( LocalUserMergeJob::class, 'LocalUserMergeJob' );

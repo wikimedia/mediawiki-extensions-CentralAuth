@@ -168,5 +168,3 @@ abstract class LocalRenameJob extends Job {
 		}
 	}
 }
-
-class_alias( LocalRenameJob::class, 'LocalRenameJob' );
