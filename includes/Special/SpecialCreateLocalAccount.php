@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthForcedLocalCreationService;
 use FormSpecialPage;
-use HTMLGlobalUserTextField;
+use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use Status;
 
 /**
