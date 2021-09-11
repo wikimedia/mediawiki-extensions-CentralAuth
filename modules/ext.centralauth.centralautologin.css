@@ -24,30 +24,6 @@
 	}
 }
 
-@-moz-keyframes centralAuthPPersonalAnimation {
-	0% {
-		opacity: 0;
-		-moz-transform: translateY( -20px );
-	}
-
-	100% {
-		opacity: 1;
-		-moz-transform: translateY( 0 );
-	}
-}
-
-@-o-keyframes centralAuthPPersonalAnimation {
-	0% {
-		opacity: 0;
-		-o-transform: translateY( -20px );
-	}
-
-	100% {
-		opacity: 1;
-		-o-transform: translateY( 0 );
-	}
-}
-
 @keyframes centralAuthPPersonalAnimation {
 	0% {
 		opacity: 0;
@@ -62,15 +38,9 @@
 
 .centralAuthPPersonalAnimation {
 	-webkit-animation-duration: 1s;
-	-moz-animation-duration: 1s;
-	-o-animation-duration: 1s;
 	animation-duration: 1s;
 	-webkit-animation-fill-mode: both;
-	-moz-animation-fill-mode: both;
-	-o-animation-fill-mode: both;
 	animation-fill-mode: both;
 	-webkit-animation-name: centralAuthPPersonalAnimation;
-	-moz-animation-name: centralAuthPPersonalAnimation;
-	-o-animation-name: centralAuthPPersonalAnimation;
 	animation-name: centralAuthPPersonalAnimation;
 }
