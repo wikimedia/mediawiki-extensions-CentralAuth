@@ -26,9 +26,9 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
 use ApiMain;
-use CentralAuthSessionProvider;
 use CentralAuthUser;
 use CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\Session\CentralAuthSessionProvider;
 use MediaWiki\Session\SessionManager;
 use MWCryptRand;
 

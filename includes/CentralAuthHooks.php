@@ -3,6 +3,8 @@
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
+use MediaWiki\Extension\CentralAuth\Session\CentralAuthSessionProvider;
+use MediaWiki\Extension\CentralAuth\Session\CentralAuthTokenSessionProvider;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\Special\SpecialUsersWhoWillBeRenamed;

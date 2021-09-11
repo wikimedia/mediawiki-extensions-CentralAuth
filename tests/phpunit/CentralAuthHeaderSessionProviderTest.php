@@ -1,12 +1,13 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\Session\CentralAuthHeaderSessionProvider;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionProviderTestTrait;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\NullLogger;
 
 /**
- * @covers CentralAuthHeaderSessionProvider
+ * @covers MediaWiki\Extension\CentralAuth\Session\CentralAuthHeaderSessionProvider
  * @group medium
  * @group Database
  */
