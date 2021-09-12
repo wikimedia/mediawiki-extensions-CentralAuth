@@ -13,7 +13,7 @@ class CentralAuthSpoofUser extends SpoofUser {
 	/**
 	 * @return IDatabase
 	 */
-	protected function getDBMaster() {
+	protected function getDBPrimary() {
 		return CentralAuthUtils::getCentralDB();
 	}
 
