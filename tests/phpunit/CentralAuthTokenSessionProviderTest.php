@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\NullSpi;
 use MediaWiki\Session\Session;
@@ -15,8 +16,8 @@ use Wikimedia\TestingAccessWrapper;
  */
 abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
 
-	/** @var CentralAuthUtilityService */
-	protected $centralAuthUtilityService;
+	/** @var CentralAuthSessionManager */
+	protected $sessionManager;
 
 	/** @var BagOStuff */
 	protected $sessionStore;
@@ -44,13 +45,13 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 	}
 
 	/**
-	 * Patch our modified session store into CentralAuthUtilityService
+	 * Patch our modified session store into CentralAuthSessionManager
 	 */
 	private function patchSessionStore() {
-		$service = CentralAuthServices::getUtilityService();
-		$this->centralAuthUtilityService = TestingAccessWrapper::newFromObject( $service );
-		$this->centralAuthUtilityService->sessionStore = $this->sessionStore;
-		$this->centralAuthUtilityService->tokenStore = $this->sessionStore;
+		$manager = CentralAuthServices::getSessionManager( $this->getServiceContainer() );
+		$this->sessionManager = TestingAccessWrapper::newFromObject( $manager );
+		$this->sessionManager->sessionStore = $this->sessionStore;
+		$this->sessionManager->tokenStore = $this->sessionStore;
 	}
 
 	protected function assertSessionInfoError(

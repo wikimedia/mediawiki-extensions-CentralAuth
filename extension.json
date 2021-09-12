@@ -108,7 +108,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralLogin",
 			"services": [
 				"StatsdDataFactory",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
 		"CentralAutoLogin": {
@@ -116,7 +117,8 @@
 			"services": [
 				"CentralAuth.CentralAuthUtilityService",
 				"UserOptionsManager",
-				"ReadOnlyMode"
+				"ReadOnlyMode",
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
 		"CreateLocalAccount": {
@@ -295,7 +297,7 @@
 		"centralauthtoken": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCentralAuthToken",
 			"services": [
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
 		"globaluserrights": {

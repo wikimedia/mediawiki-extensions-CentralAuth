@@ -1,10 +1,12 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Session\Session;
 
 /**
- * @deprecated since 1.36, use CentralAuthUtilityService or CentralAuthDatabaseManager instead
+ * @deprecated since 1.36, use CentralAuthUtilityService or CentralAuthDatabaseManager
+ * or CentralAuthSessionManager instead
  */
 class CentralAuthUtils {
 	private static function getUtilityService(): CentralAuthUtilityService {
@@ -13,6 +15,10 @@ class CentralAuthUtils {
 
 	private static function getDatabaseManager(): CentralAuthDatabaseManager {
 		return CentralAuthServices::getDatabaseManager();
+	}
+
+	private static function getSessionManager(): CentralAuthSessionManager {
+		return CentralAuthServices::getSessionManager();
 	}
 
 	public static function isReadOnly() {
@@ -61,7 +67,7 @@ class CentralAuthUtils {
 	 * @return string
 	 */
 	public static function memcKey( ...$args ) {
-		return self::getUtilityService()->memcKey( ...$args );
+		return self::getSessionManager()->memcKey( ...$args );
 	}
 
 	/**
@@ -80,14 +86,14 @@ class CentralAuthUtils {
 	 * @return BagOStuff
 	 */
 	public static function getSessionStore() {
-		return self::getUtilityService()->getSessionStore();
+		return self::getSessionManager()->getSessionStore();
 	}
 
 	/**
 	 * @return BagOStuff
 	 */
 	public static function getTokenStore() {
-		return self::getUtilityService()->getTokenStore();
+		return self::getSessionManager()->getTokenStore();
 	}
 
 	/**
@@ -105,7 +111,7 @@ class CentralAuthUtils {
 	 * @return array
 	 */
 	public static function getCentralSession( $session = null ) {
-		return self::getUtilityService()->getCentralSession( $session );
+		return self::getSessionManager()->getCentralSession( $session );
 	}
 
 	/**
@@ -114,7 +120,7 @@ class CentralAuthUtils {
 	 * @return array
 	 */
 	public static function getCentralSessionById( $id ) {
-		return self::getUtilityService()->getCentralSessionById( $id );
+		return self::getSessionManager()->getCentralSessionById( $id );
 	}
 
 	/**
@@ -125,7 +131,7 @@ class CentralAuthUtils {
 	 * @return string|null Session ID
 	 */
 	public static function setCentralSession( array $data, $reset = false, $session = null ) {
-		return self::getUtilityService()->setCentralSession( $data, $reset, $session );
+		return self::getSessionManager()->setCentralSession( $data, $reset, $session );
 	}
 
 	/**

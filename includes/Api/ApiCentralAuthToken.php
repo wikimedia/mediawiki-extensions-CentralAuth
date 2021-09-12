@@ -28,7 +28,7 @@ use ApiBase;
 use ApiMain;
 use CentralAuthSessionProvider;
 use CentralAuthUser;
-use CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Session\SessionManager;
 use MWCryptRand;
 
@@ -39,21 +39,21 @@ use MWCryptRand;
  * @ingroup Extensions
  */
 class ApiCentralAuthToken extends ApiBase {
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
+	/** @var CentralAuthSessionManager */
+	private $sessionManager;
 
 	/**
 	 * @param ApiMain $main
 	 * @param string $moduleName
-	 * @param CentralAuthUtilityService $utilityService
+	 * @param CentralAuthSessionManager $sessionManager
 	 */
 	public function __construct(
 		ApiMain $main,
 		$moduleName,
-		CentralAuthUtilityService $utilityService
+		CentralAuthSessionManager $sessionManager
 	) {
 		parent::__construct( $main, $moduleName );
-		$this->utilityService = $utilityService;
+		$this->sessionManager = $sessionManager;
 	}
 
 	public function execute() {
@@ -88,8 +88,8 @@ class ApiCentralAuthToken extends ApiBase {
 
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
 
-		$tokenStore = $this->utilityService->getTokenStore();
-		$key = $this->utilityService->memcKey( 'api-token', $loginToken );
+		$tokenStore = $this->sessionManager->getTokenStore();
+		$key = $this->sessionManager->memcKey( 'api-token', $loginToken );
 		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [

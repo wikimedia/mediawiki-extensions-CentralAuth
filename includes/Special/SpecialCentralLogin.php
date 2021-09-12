@@ -10,6 +10,7 @@ use Exception;
 use Hooks;
 use IBufferingStatsdDataFactory;
 use LoginHelper;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MWCryptRand;
@@ -31,17 +32,23 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var CentralAuthUtilityService */
 	private $utilityService;
 
+	/** @var CentralAuthSessionManager */
+	private $sessionManager;
+
 	/**
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param CentralAuthUtilityService $utilityService
+	 * @param CentralAuthSessionManager $sessionManager
 	 */
 	public function __construct(
 		IBufferingStatsdDataFactory $statsdDataFactory,
-		CentralAuthUtilityService $utilityService
+		CentralAuthUtilityService $utilityService,
+		CentralAuthSessionManager $sessionManager
 	) {
 		parent::__construct( 'CentralLogin' );
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->utilityService = $utilityService;
+		$this->sessionManager = $sessionManager;
 	}
 
 	public function execute( $subpage ) {
@@ -107,8 +114,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginStart( $token ) {
-		$key = $this->utilityService->memcKey( 'central-login-start-token', $token );
-		$tokenStore = $this->utilityService->getTokenStore();
+		$key = $this->sessionManager->memcKey( 'central-login-start-token', $token );
+		$tokenStore = $this->sessionManager->getTokenStore();
 
 		// Get the token information
 		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
@@ -142,7 +149,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			}
 		}
 
-		$session = $this->utilityService->getCentralSession();
+		$session = $this->sessionManager->getCentralSession();
 		// If the user has a full session, make sure that the names match up.
 		// If they do, then send the user back to the "login successful" page.
 		// We want to avoid overwriting any session that may already exist.
@@ -173,7 +180,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// Note: the "remember me" token must be dealt with later (security).
 			$delay = $this->session->delaySave();
 			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			$newSessionId = $this->utilityService->setCentralSession( [
+			$newSessionId = $this->sessionManager->setCentralSession( [
 				'pending_name' => $centralUser->getName(),
 				'pending_guid' => $centralUser->getId()
 			], true, $this->session );
@@ -186,7 +193,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
-		$key = $this->utilityService->memcKey( 'central-login-complete-token', $token );
+		$key = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
 		$data = [
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
@@ -216,9 +223,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 */
 	protected function doLoginComplete( $token ) {
 		$request = $this->getRequest();
-		$tokenStore = $this->utilityService->getTokenStore();
+		$tokenStore = $this->sessionManager->getTokenStore();
 
-		$key = $this->utilityService->memcKey( 'central-login-complete-token', $token );
+		$key = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
 		// Get the token information
@@ -277,7 +284,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $attempt['stickHTTPS'] !== null ) {
 			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
 		}
-		$this->utilityService->setCentralSession( [
+		$this->sessionManager->setCentralSession( [
 			'finalProto' => $attempt['finalProto'],
 			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
