@@ -1,15 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
+			"Seipinne",
 			"Trondtr",
 			"Yupik"
 		]
 	},
 	"centralauth-admin-blocklog": "iästuloki",
+	"centralauth-admin-info-hidden": "Čiehhum tääsi:",
 	"centralauth-admin-multi-bot": "Vorâs nubástusah",
+	"centralauth-admin-status-hidden": "Čiehhum:",
+	"centralauth-admin-status-hidden-oversight": "Tubdâldâh lii čiehhum ollásávt",
 	"centralauth-completelogin-back": "Maacâ ovdebáá siijđon",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|hammim|hammiimid}} wikist $2",
 	"centralauth-foreign-link": "Tubdâldâh $1 projektist $2",
+	"centralauth-log-status-hidden": "čiehhum",
 	"centralauth-merge-method-login": "rahtum siisâčälittempuudâ ääigi",
+	"centralauth-rename-conflict-hidden": "kevtteenommâ čiehhum",
 	"centralauth-uwbr-registration-nodate": "Tubdâmettum"
 }

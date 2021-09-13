@@ -5,5 +5,6 @@
 		]
 	},
 	"centralauth-admin-blocklog": "buođđomlåggå",
-	"centralauth-foreign-link": "Adnej $1 $2 sinne"
+	"centralauth-foreign-link": "Adnej $1 $2 sinne",
+	"globalrenamerequest-newname-err-taken": "Juo lä adnej dajn adnejnamajna. Vällji ietjá adnejnamav."
 }

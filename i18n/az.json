@@ -43,7 +43,7 @@
 	"centralauth-admin-merge": "Seçilənləri birləşdirmək",
 	"centralauth-admin-no": "xeyr",
 	"centralauth-admin-no-unified": "Bu istifadəçi adı üçün vahid hesab yoxdur.",
-	"centralauth-admin-permission": "İstifadəçi üçün başqa hesabları yalnız stürad birləşdirə bilər.",
+	"centralauth-admin-permission": "İstifadəçi hesablarını yalnız stüard birləşdirə bilər.",
 	"centralauth-admin-reason": "Səbəb:",
 	"centralauth-admin-reason-other": "Digər/əlavə səbəb:",
 	"centralauth-admin-reason-other-select": "Digər səbəb:",
