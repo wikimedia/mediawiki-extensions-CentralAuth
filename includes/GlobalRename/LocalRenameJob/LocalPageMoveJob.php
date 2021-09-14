@@ -102,3 +102,5 @@ class LocalPageMoveJob extends Job {
 		}
 	}
 }
+
+class_alias( 'LocalPageMoveJob', 'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob' );

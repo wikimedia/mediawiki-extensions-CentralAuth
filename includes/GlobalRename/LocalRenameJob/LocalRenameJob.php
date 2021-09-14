@@ -157,3 +157,5 @@ abstract class LocalRenameJob extends Job {
 		}
 	}
 }
+
+class_alias( 'LocalRenameJob', 'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameJob' );

@@ -85,3 +85,8 @@ class LocalUserMergeJob extends LocalRenameJob {
 	}
 
 }
+
+class_alias(
+	'LocalUserMergeJob',
+	'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalUserMergeJob'
+);

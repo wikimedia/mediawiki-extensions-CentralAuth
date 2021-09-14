@@ -207,3 +207,8 @@ class LocalRenameUserJob extends LocalRenameJob {
 		);
 	}
 }
+
+class_alias(
+	'LocalRenameUserJob',
+	'MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameUserJob'
+);
