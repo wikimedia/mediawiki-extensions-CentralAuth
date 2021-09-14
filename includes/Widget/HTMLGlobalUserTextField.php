@@ -1,12 +1,15 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Widget;
+
+use HTMLUserTextField;
+
 /**
  * Implements a text input field for user names.
  * Automatically auto-completes if using the OOUI display format.
  *
  * @since 1.33
  */
-
 class HTMLGlobalUserTextField extends HTMLUserTextField {
 
 	public function __construct( $params ) {

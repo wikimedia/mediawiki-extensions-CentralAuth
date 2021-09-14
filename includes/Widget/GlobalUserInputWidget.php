@@ -1,6 +1,10 @@
 <?php
 
-class GlobalUserInputWidget extends \OOUI\TextInputWidget {
+namespace MediaWiki\Extension\CentralAuth\Widget;
+
+use OOUI\TextInputWidget;
+
+class GlobalUserInputWidget extends TextInputWidget {
 
 	public function __construct( array $config = [] ) {
 		parent::__construct( $config );

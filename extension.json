@@ -380,9 +380,7 @@
 		"MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalUserMergeJob": "includes/GlobalRename/LocalRenameJob/LocalUserMergeJob.php",
 		"MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob": "includes/GlobalRename/LocalRenameJob/LocalPageMoveJob.php",
 		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
-		"EmailableUser": "includes/EmailableUser.php",
-		"GlobalUserInputWidget": "includes/Widget/GlobalUserInputWidget.php",
-		"HTMLGlobalUserTextField": "includes/Widget/HTMLGlobalUserTextField.php"
+		"EmailableUser": "includes/EmailableUser.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
