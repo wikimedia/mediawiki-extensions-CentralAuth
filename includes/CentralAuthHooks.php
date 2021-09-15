@@ -10,28 +10,21 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\User\UserIdentity;
 use Wikimedia\IPUtils;
-use Wikimedia\Rdbms\IMaintainableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthHooks implements
 	MediaWiki\Api\Hook\APIGetAllowedParamsHook,
 	MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook,
-	MediaWiki\Auth\Hook\LocalUserCreatedHook,
 	MediaWiki\Block\Hook\GetUserBlockHook,
 	MediaWiki\Hook\BeforePageDisplayHook,
 	MediaWiki\Hook\ContentSecurityPolicyDefaultSourceHook,
 	MediaWiki\Hook\ContentSecurityPolicyScriptSourceHook,
-	MediaWiki\Hook\ImportHandleUnknownUserHook,
-	MediaWiki\Hook\LogEventsListGetExtraInputsHook,
 	MediaWiki\Hook\MakeGlobalVariablesScriptHook,
 	MediaWiki\Hook\OtherBlockLogLinkHook,
 	MediaWiki\Hook\PasswordPoliciesForUserHook,
-	MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook,
-	MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook,
 	MediaWiki\Hook\TestCanonicalRedirectHook,
 	MediaWiki\Hook\UserLoginCompleteHook,
 	MediaWiki\Hook\UserLogoutCompleteHook,
-	MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook,
 	MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook,
 	MediaWiki\Permissions\Hook\UserGetRightsHook,
 	MediaWiki\Preferences\Hook\GetPreferencesHook,
@@ -39,8 +32,6 @@ class CentralAuthHooks implements
 	MediaWiki\Session\Hook\SessionCheckInfoHook,
 	MediaWiki\SpecialPage\Hook\SpecialPage_initListHook,
 	MediaWiki\Hook\GetLogTypesOnUserHook,
-	MediaWiki\Hook\UnitTestsAfterDatabaseSetupHook,
-	MediaWiki\Hook\UnitTestsBeforeDatabaseTeardownHook,
 	MediaWiki\User\Hook\InvalidateEmailCompleteHook,
 	MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook,
 	MediaWiki\User\Hook\UserArrayFromResultHook,
@@ -313,55 +304,6 @@ class CentralAuthHooks implements
 				],
 			];
 		}
-	}
-
-	/**
-	 * Make sure migration information in localuser table is populated
-	 * on local account creation
-	 * @param User $user
-	 * @param bool $autocreated
-	 * @return bool
-	 */
-	public function onLocalUserCreated( $user, $autocreated ) {
-		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
-
-		// If some other AuthManager PrimaryAuthenticationProvider is creating
-		// the user, we should still create a central user for them so
-		// CentralAuthIdLookup can have an ID for this new user right away.
-		if ( !$centralUser->exists() && !$centralUser->listUnattached() ) {
-			if ( $centralUser->register( null, $user->getEmail() ) ) {
-				$centralUser->attach( wfWikiID(), 'new' );
-				CentralAuthUtils::getCentralDB()->onTransactionCommitOrIdle(
-					static function () use ( $centralUser ) {
-						CentralAuthUtils::scheduleCreationJobs( $centralUser );
-					},
-					__METHOD__
-				);
-			}
-		}
-
-		$centralUser->addLocalName( wfWikiID() );
-
-		return true;
-	}
-
-	/**
-	 * Auto-create a user on import
-	 * @param string $name
-	 * @return bool
-	 */
-	public function onImportHandleUnknownUser( $name ) {
-		$user = User::newFromName( $name );
-		if ( $user ) {
-			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
-
-			if ( $centralUser->exists() && CentralAuthUtils::autoCreateUser( $user )->isGood() ) {
-				$centralUser->invalidateCache();
-				return false;
-			}
-		}
-
-		return true;
 	}
 
 	/**
@@ -972,50 +914,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * @param int $id User ID
-	 * @param User $user
-	 * @param SpecialPage $sp
-	 * @return bool
-	 */
-	public function onSpecialContributionsBeforeMainOutput( $id, $user, $sp ) {
-		if ( !$user->isRegistered() ) {
-			return true;
-		}
-
-		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( !$centralUser->exists() || !$centralUser->isAttached()
-			|| !$centralUser->isLocked() || $centralUser->isHidden()
-		) {
-			return true;
-		}
-
-		$out = $sp->getOutput();
-		$count = LogEventsList::showLogExtract(
-			$out,
-			[ 'globalauth' ],
-			MWNamespace::getCanonicalName( NS_USER ) . ":{$user}@global",
-			'',
-			[
-				'lim' => 1,
-				'showIfEmpty' => false,
-				'msgKey' => [
-					'centralauth-contribs-locked-log',
-					$user->getName()
-				],
-				'offset' => '',
-			]
-		);
-
-		if ( $count === 0 ) { // we couldn't load the log entry
-			$out->wrapWikiMsg( '<div class="warningbox mw-warning-with-logexcerpt">$1</div>',
-				[ 'centralauth-contribs-locked', $user ]
-			);
-		}
-
-		return true;
-	}
-
-	/**
 	 * @param array &$vars
 	 * @param OutputPage $out
 	 */
@@ -1332,41 +1230,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * @param mixed $auth Unused
-	 * @param User $user
-	 * @param array &$params
-	 * @return bool
-	 */
-	public static function onSecurePoll_GetUserParams( $auth, $user, &$params ) {
-		if ( !$user->isRegistered() ) {
-			return true;
-		}
-
-		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( !( $centralUser->exists() && $centralUser->isAttached() ) ) {
-			return true;
-		}
-
-		$wikiID = $centralUser->getHomeWiki();
-		if ( strval( $wikiID ) === '' ) {
-			return true;
-		}
-
-		$wiki = WikiMap::getWiki( $wikiID );
-		$wikiUrl = $wiki->getUrl( '' );
-		$parts = explode( '/', $wikiUrl );
-		if ( isset( $parts[2] ) ) {
-			$params['properties']['ca-local-domain'] = $params['domain'];
-			$params['domain'] = $parts[2];
-		}
-		$params['properties']['ca-local-url'] = $params['url'];
-		$params['url'] = $wiki->getUrl(
-			MWNamespace::getCanonicalName( NS_USER ) . ':' . $user->getTitleKey()
-		);
-		return true;
-	}
-
-	/**
 	 * Creates a link to the global lock log
 	 * @param array &$otherBlockLink Message with a link to the global block log
 	 * @param string $user The username to be checked
@@ -1484,51 +1347,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * @param string $type
-	 * @param WebRequest $request
-	 * @param string[] &$qc
-	 * @return bool
-	 */
-	public function onSpecialLogAddLogSearchRelations( $type, $request, &$qc ) {
-		if ( $type === 'gblrename' ) {
-			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-			$oldname = trim( $request->getText( 'oldname' ) );
-			$canonicalOldname = $userNameUtils->getCanonical( $oldname );
-			if ( $oldname !== '' ) {
-				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
-			}
-		}
-
-		return true;
-	}
-
-	/**
-	 * @param string $type
-	 * @param LogEventsList $list
-	 * @param string &$input HTML
-	 * @param array &$formDescriptor Form descriptor
-	 */
-	public function onLogEventsListGetExtraInputs(
-		$type, $list, &$input, &$formDescriptor
-	) {
-		if ( $type === 'gblrename' ) {
-			$value = $list->getRequest()->getVal( 'oldname' );
-			if ( $value !== null ) {
-				$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-				$name = $userNameUtils->getCanonical( $value );
-				$value = $name !== false ? $name : '';
-			}
-			$formDescriptor = [
-				'type' => 'text',
-				'label-message' => 'centralauth-log-gblrename-oldname',
-				'name' => 'oldname',
-				'id' => 'mw-log-gblrename-oldname',
-				'default' => $value,
-			];
-		}
-	}
-
-	/**
 	 * @param string[] &$dependencies
 	 * @param ResourceLoaderContext|null $context
 	 * @return void
@@ -1593,71 +1411,6 @@ class CentralAuthHooks implements
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * Create databases for WMF Jenkins unit tests
-	 * @param DatabaseUpdater $updater
-	 * @return true
-	 */
-	public function onLoadExtensionSchemaUpdates( $updater ) {
-		global $wgWikimediaJenkinsCI;
-
-		if ( !empty( $wgWikimediaJenkinsCI ) ) {
-			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../central-auth.sql' );
-		}
-
-		return true;
-	}
-
-	/**
-	 * UnitTestsAfterDatabaseSetup hook handler
-	 *
-	 * Setup the centralauth tables in the current DB, so we don't have
-	 * to worry about rights on another database. The first time it's called
-	 * we have to set the DB prefix ourselves, and reset it back to the original
-	 * so that CloneDatabase will work. On subsequent runs, the prefix is already
-	 * set up for us.
-	 *
-	 * @param IMaintainableDatabase $db
-	 * @param string $prefix
-	 */
-	public function onUnitTestsAfterDatabaseSetup( $db, $prefix ) {
-		global $wgCentralAuthDatabase;
-		$wgCentralAuthDatabase = false;
-
-		$originalPrefix = $db->tablePrefix();
-		$db->tablePrefix( $prefix );
-		if ( !$db->tableExists( 'globaluser', __METHOD__ ) ) {
-			$db->sourceFile( __DIR__ . '/../central-auth.sql' );
-		}
-		$db->tablePrefix( $originalPrefix );
-	}
-
-	/** @var string[] */
-	public static $centralauthTables = [
-		'global_group_permissions',
-		'global_group_restrictions',
-		'global_user_groups',
-		'globalnames',
-		'globaluser',
-		'localnames',
-		'localuser',
-		'wikiset',
-		'renameuser_status',
-		'renameuser_queue',
-		'users_to_rename',
-	];
-
-	/**
-	 * UnitTestsBeforeDatabaseTeardown hook handler
-	 * Cleans up tables created by onUnitTestsAfterDatabaseSetup() above
-	 */
-	public function onUnitTestsBeforeDatabaseTeardown() {
-		$db = wfGetDB( DB_PRIMARY );
-		foreach ( self::$centralauthTables as $table ) {
-			$db->dropTable( $table );
-		}
 	}
 
 	/**
