@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Soul Train"
+		]
+	},
+	"centralauth-admin-blocklog": "ЧӀиби лу лакьоврил",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|тӀайладаву|тӀайладавуртув}} $2-ву",
+	"centralauth-foreign-link": "Гьуртту увхма $1 $2-ву",
+	"centralauth-merge-method-login": "гьуртту увхма уххуни системалавун"
+}
