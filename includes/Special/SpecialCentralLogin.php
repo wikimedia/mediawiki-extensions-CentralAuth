@@ -13,6 +13,7 @@ use LoginHelper;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MWCryptRand;
+use StubGlobalUser;
 use UnlistedSpecialPage;
 use User;
 use WebRequest;
@@ -214,9 +215,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @throws Exception
 	 */
 	protected function doLoginComplete( $token ) {
-		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
-		global $wgUser;
-
 		$request = $this->getRequest();
 		$tokenStore = $this->utilityService->getTokenStore();
 
@@ -290,8 +288,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// Remove the "current login attempt" information
 		$request->setSessionData( $skey, null );
 
-		// Update the current user global
-		$wgUser = $user;
+		// Update the current user global $wgUser,
+		// bypassing deprecation warnings because CentralAuth is the one place outside
+		// of core where we still support writing to $wgUser
+		// See T291515
+		StubGlobalUser::setUser( $user );
+
 		// This should set it for OutputPage and the Skin
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
