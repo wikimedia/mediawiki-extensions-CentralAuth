@@ -5,6 +5,9 @@
 		]
 	},
 	"centralauth-admin-blocklog": "buođđomlåggå",
+	"centralauth-finish-login": "Luggi sisa",
 	"centralauth-foreign-link": "Adnej $1 $2 sinne",
+	"centralautologin": "Guovdálatj sisluggim",
+	"centrallogin": "Guovdálatj adnejsisluggim",
 	"globalrenamerequest-newname-err-taken": "Juo lä adnej dajn adnejnamajna. Vällji ietjá adnejnamav."
 }
