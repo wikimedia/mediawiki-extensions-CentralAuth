@@ -164,7 +164,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					!CentralAuthHooks::isUIReloadRecommended( $user ) &&
 					$skin instanceof SkinTemplate
 				) {
-					$html = $skin->getPersonalToolsList();
+					$html = $skin->makePersonalToolsList();
 					$json = FormatJson::encode( [ 'toolslist' => $html ] );
 				} else {
 					$gender = $this->getUser()->getOption( 'gender' );
