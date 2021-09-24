@@ -204,8 +204,8 @@ class CentralAuthHooks implements
 				break;
 			case 'setchange':
 				$args = [
-					$params[1] ?: wfMessage( 'rightsnone' )->text(),
-					$params[2] ?: wfMessage( 'rightsnone' )->text()
+					$params[1] ?: wfMessage( 'rightsnone' )->escaped(),
+					$params[2] ?: wfMessage( 'rightsnone' )->escaped()
 				];
 				break;
 			default: // 'deleteset'
