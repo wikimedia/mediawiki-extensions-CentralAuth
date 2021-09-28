@@ -104,7 +104,7 @@
 	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:",
 	"centralauth-createlocal-already-exists": "Već postoji lokalni račun za navedeni globalni račun.",
 	"centralauth-createlocal-no-global-account": "Taj globalni račun ne postoji.",
-	"centralauth-createlocal-pretext": "Ovaj obrazac možete rabiti za stvaranje lokalnog računa za globalni račun, ako iz nekog razloka suradnik to nije u mogućnosti učiniti samostalno.",
+	"centralauth-createlocal-pretext": "Ovaj obrazac možete rabiti za stvaranje lokalnog računa za globalni račun ako iz nekog razloga suradnik to ne može učiniti samostalno.",
 	"centralauth-createlocal-reason": "Razlog",
 	"centralauth-createlocal-username": "Ime globalnog računa",
 	"centralauth-days-ago": "prije $1 {{PLURAL:$1|dana|dana}}",
