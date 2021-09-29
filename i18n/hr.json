@@ -86,7 +86,7 @@
 	"centralauth-admin-unmerge": "Razdvoji odabrane",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|račun je odvojen|računa su odvojena}}",
 	"centralauth-admin-username": "Suradničko ime:",
-	"centralauth-admin-view": "Vidi informacije o računu",
+	"centralauth-admin-view": "Informacije o računu",
 	"centralauth-admin-yes": "da",
 	"centralauth-attach-list-attached": "Jedinstveni račun \"$1\" uključuje sljedeće račune:",
 	"centralauth-attach-submit": "Prenesi suradnički račun",
