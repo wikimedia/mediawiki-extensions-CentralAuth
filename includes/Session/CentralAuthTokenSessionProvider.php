@@ -1,8 +1,17 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Session;
+
+use BagOStuff;
+use CentralAuthUser;
+use CentralAuthUtils;
+use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\Session\SessionProvider;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\User\UserNameUtils;
+use User;
+use WebRequest;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
@@ -14,7 +23,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  * If the token is present but invalid, a CentralAuthTokenSessionProvider returns a
  * bogus SessionInfo to prevent other SessionProviders from establishing a session.
  */
-abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider {
+abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 
 	/**
 	 * Returns a bogus session, which can be used to prevent other SessionProviders
@@ -162,7 +171,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	}
 
 	public function persistSession(
-		MediaWiki\Session\SessionBackend $session, WebRequest $request
+		SessionBackend $session, WebRequest $request
 	) {
 		// Nothing to do
 	}
