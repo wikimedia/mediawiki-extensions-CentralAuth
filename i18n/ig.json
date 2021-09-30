@@ -5,6 +5,7 @@
 			"Ukabia"
 		]
 	},
+	"centralauth-admin-blocklog": "Kwụchie ntinye",
 	"centralauth-admin-info-locked": "Gbàchịrị:",
 	"centralauth-admin-info-username": "Ahàǹjìème:",
 	"centralauth-admin-list-blocked": "Kàchịrị",
@@ -24,11 +25,13 @@
 	"centralauth-editset-wikis": "Wiki:",
 	"centralauth-finish-login": "Banyé",
 	"centralauth-finish-password": "Okwúngáfè:",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|Ihe emetara|ihe emetara}} na $2",
 	"centralauth-foreign-link": "User $1 on $2",
 	"centralauth-hours-ago": "{{PLURAL:$1|àmànì|àmànì}} $1 gárá",
 	"centralauth-listusers-locked": "gbàchịrị",
 	"centralauth-log-status-locked": "gbàchịrị",
 	"centralauth-log-status-none": "(efù)",
+	"centralauth-merge-method-login": "ekere na nbanye",
 	"centralauth-merge-method-primary": "wiki nke úlọ",
 	"centralauth-months-ago": "{{PLURAL:$1|önwa|önwa}} $1 gárá",
 	"centralauth-rename-progress-username": "Ahàǹjìème",
