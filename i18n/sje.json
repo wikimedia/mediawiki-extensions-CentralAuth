@@ -7,7 +7,9 @@
 	"centralauth-admin-blocklog": "buođđomlåggå",
 	"centralauth-finish-login": "Luggi sisa",
 	"centralauth-foreign-link": "Adnej $1 $2 sinne",
+	"centralauth-rename-form-movepages": "Sirde adnejbelijt",
 	"centralautologin": "Guovdálatj sisluggim",
 	"centrallogin": "Guovdálatj adnejsisluggim",
+	"globalrenamequeue-request-movepages": "Sirde adnejbelijt",
 	"globalrenamerequest-newname-err-taken": "Juo lä adnej dajn adnejnamajna. Vällji ietjá adnejnamav."
 }
