@@ -21,7 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthUser;
-use MWNamespace;
+use MediaWiki\MediaWikiServices;
 use User;
 use WikiMap;
 
@@ -57,7 +57,9 @@ class SecurePollHookHandler {
 		}
 		$params['properties']['ca-local-url'] = $params['url'];
 		$params['url'] = $wiki->getUrl(
-			MWNamespace::getCanonicalName( NS_USER ) . ':' . $user->getTitleKey()
+			MediaWikiServices::getInstance()
+				->getNamespaceInfo()
+				->getCanonicalName( NS_USER ) . ':' . $user->getTitleKey()
 		);
 		return true;
 	}
