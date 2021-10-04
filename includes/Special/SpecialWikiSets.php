@@ -283,7 +283,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		# If there are less items than columns, limit the number of columns
 		$columns = $count < $columns ? $count : $columns;
-		$itemsPerCol = ceil( $count / $columns );
+		$itemsPerCol = (int)ceil( $count / $columns );
 		$i = 0;
 		$splitLists = [];
 		while ( $i < $columns ) {
