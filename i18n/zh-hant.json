@@ -533,7 +533,7 @@
 	"log-name-gblrename": "全域重新命名日誌",
 	"logentry-gblrename-merge": "$1 已全域{{GENDER:$2|合併}} $4 至 $5",
 	"logentry-gblrename-promote": "$1 全域 {{GENDER:$2|重新命名}} $4 為 $5",
-	"logentry-gblrename-rename": "$1 全域 {{GENDER:$2|重新命名}} $4 為 $5",
+	"logentry-gblrename-rename": "$1 全域{{GENDER:$2|重新命名}} $4 為 $5",
 	"mergeaccount": "帳號整合狀態",
 	"multilock": "鎖定多個全域帳號",
 	"right-centralauth-createlocal": "強制為全域帳號建立本地帳號",
