@@ -175,6 +175,7 @@
 	"centralauth-completelogin-back": "Вернуться на предыдущую страницу.",
 	"centralauth-contribs-locked": "Эта учётная запись отключена.\nСм. [[Special:CentralAuth/$1|данные глобальной учётной записи]] для получения более подробной информации:",
 	"centralauth-contribs-locked-log": "Эта учётная запись отключена.\nНиже приведена последняя запись журнала:",
+	"centralauth-createlocal-reason": "Причина",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|день|дня|дней}} назад",
 	"centralauth-delete-empty-account": "Пустая учётная запись",
 	"centralauth-desc": "[[Special:MergeAccount|Объединение учётных]] записей в вики-проектах {{int:Centralauth-groupname}}",
