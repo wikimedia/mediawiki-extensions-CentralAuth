@@ -270,28 +270,6 @@ class CentralAuthUtilityService {
 	}
 
 	/**
-	 * Delete the central session data
-	 * @param Session|null $session
-	 */
-	public function deleteCentralSession( $session = null ) {
-		if ( !$session ) {
-			$session = SessionManager::getGlobalSession();
-		}
-		$id = $session->get( 'CentralAuth::centralSessionId' );
-
-		if ( $id !== null ) {
-			$sessionStore = $this->getSessionStore();
-			$key = $this->memcKey( 'session', $id );
-
-			$stime = microtime( true );
-			$sessionStore->delete( $key, $sessionStore::WRITE_SYNC );
-			$real = microtime( true ) - $stime;
-
-			$this->statsdDataFactory->timing( "centralauth.session.delete", $real );
-		}
-	}
-
-	/**
 	 * Sets up jobs to create and attach a local account for the given user on every wiki listed in
 	 * $wgCentralAuthAutoCreateWikis.
 	 * @param CentralAuthUser $centralUser

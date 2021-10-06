@@ -129,14 +129,6 @@ class CentralAuthUtils {
 	}
 
 	/**
-	 * Delete the central session data
-	 * @param Session|null $session
-	 */
-	public static function deleteCentralSession( $session = null ) {
-		self::getUtilityService()->deleteCentralSession( $session );
-	}
-
-	/**
 	 * Sets up jobs to create and attach a local account for the given user on every wiki listed in
 	 * $wgCentralAuthAutoCreateWikis.
 	 * @param CentralAuthUser $centralUser
