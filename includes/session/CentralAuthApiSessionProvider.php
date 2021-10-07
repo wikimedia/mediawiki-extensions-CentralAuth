@@ -1,12 +1,7 @@
 <?php
 
-namespace MediaWiki\Extension\CentralAuth\Session;
-
-use ApiBase;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Session\SessionInfo;
-use User;
-use WebRequest;
 
 /**
  * Session provider for CentralAuth API centralauthtoken

@@ -9,7 +9,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\Session\CentralAuthTokenSessionProvider
+ * @covers CentralAuthTokenSessionProvider
  * @group medium
  * @group Database
  */

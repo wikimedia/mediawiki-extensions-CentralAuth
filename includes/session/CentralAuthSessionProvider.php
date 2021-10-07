@@ -1,22 +1,10 @@
 <?php
 
-namespace MediaWiki\Extension\CentralAuth\Session;
-
-use CentralAuthUser;
-use CentralAuthUtils;
-use FauxRequest;
-use InvalidPassword;
-use MediaWiki\Session\CookieSessionProvider;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\UserInfo;
 use Mediawiki\User\UserNameUtils;
-use PasswordError;
-use PasswordFactory;
-use RequestContext;
-use User;
-use WebRequest;
 
 /**
  * CentralAuth cookie-based sessions.
@@ -27,7 +15,7 @@ use WebRequest;
  *  sessions, this is somewhat complicated and is probably not a good example to
  *  copy if you're writing your own SessionProvider.
  */
-class CentralAuthSessionProvider extends CookieSessionProvider {
+class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider {
 
 	/** @var bool */
 	protected $enable = false;

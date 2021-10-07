@@ -1,9 +1,5 @@
 <?php
 
-namespace MediaWiki\Extension\CentralAuth\Session;
-
-use WebRequest;
-
 /**
  * Session provider for CentralAuth Authorization header for use in REST APIs.
  *

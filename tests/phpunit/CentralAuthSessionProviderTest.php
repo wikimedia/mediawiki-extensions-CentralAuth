@@ -1,10 +1,9 @@
 <?php
 
-use MediaWiki\Extension\CentralAuth\Session\CentralAuthSessionProvider;
 use MediaWiki\Session\SessionProviderTestTrait;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\Session\CentralAuthSessionProvider
+ * @covers CentralAuthSessionProvider
  */
 class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 	use SessionProviderTestTrait;

@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthHooks;
+use CentralAuthSessionProvider;
 use CentralAuthUser;
 use CentralAuthUtilityService;
 use DeferredUpdates;
@@ -12,7 +13,6 @@ use ExtensionRegistry;
 use FormatJson;
 use Hooks;
 use Language;
-use MediaWiki\Extension\CentralAuth\Session\CentralAuthSessionProvider;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsManager;
