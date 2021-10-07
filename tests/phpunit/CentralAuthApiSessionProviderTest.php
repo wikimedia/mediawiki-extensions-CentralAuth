@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Extension\CentralAuth\Session\CentralAuthApiSessionProvider;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
@@ -8,7 +7,7 @@ use MediaWiki\Session\SessionProviderTestTrait;
 use Psr\Log\NullLogger;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\Session\CentralAuthApiSessionProvider
+ * @covers CentralAuthApiSessionProvider
  * @group medium
  * @group Database
  */

@@ -67,7 +67,7 @@
 	],
 	"SessionProviders": {
 		"CentralAuthSessionProvider": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Session\\CentralAuthSessionProvider",
+			"class": "CentralAuthSessionProvider",
 			"args": [
 				{
 					"priority": 50
@@ -75,11 +75,11 @@
 			]
 		},
 		"CentralAuthApiSessionProvider": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Session\\CentralAuthApiSessionProvider",
+			"class": "CentralAuthApiSessionProvider",
 			"args": []
 		},
 		"CentralAuthHeaderSessionProvider": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Session\\CentralAuthHeaderSessionProvider",
+			"class": "CentralAuthHeaderSessionProvider",
 			"args": []
 		}
 	},
@@ -364,6 +364,10 @@
 		"CentralAuthIdLookup": "includes/CentralAuthIdLookup.php",
 		"CentralAuthGroupMembershipProxy": "includes/CentralAuthGroupMembershipProxy.php",
 		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
+		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
+		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
+		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
+		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php",
 		"CARCFeedFormatter": "includes/rcfeed/CARCFeedFormatter.php",
 		"IRCColourfulCARCFeedFormatter": "includes/rcfeed/IRCColourfulCARCFeedFormatter.php",
 		"JSONCARCFeedFormatter": "includes/rcfeed/JSONCARCFeedFormatter.php",
