@@ -7,7 +7,7 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\UnitTestsHookHandler;
  *
  * @group Database
  */
-abstract class CentralAuthUsingDatabaseTestCase extends MediaWikiTestCase {
+abstract class CentralAuthUsingDatabaseTestCase extends MediaWikiIntegrationTestCase {
 	public function __construct( $name = null, array $data = [], $dataName = '' ) {
 		$this->tablesUsed = array_merge(
 			$this->tablesUsed,

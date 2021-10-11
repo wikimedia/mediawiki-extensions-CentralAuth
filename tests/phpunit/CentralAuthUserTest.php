@@ -9,7 +9,7 @@ use Wikimedia\TestingAccessWrapper;
  *
  * @group CentralAuth
  */
-class CentralAuthUserTest extends MediaWikiTestCase {
+class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers CentralAuthUser::getInstance

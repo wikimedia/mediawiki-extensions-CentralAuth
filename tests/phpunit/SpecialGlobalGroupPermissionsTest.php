@@ -6,7 +6,7 @@ use Wikimedia\TestingAccessWrapper;
 /**
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions
  */
-class SpecialGlobalGroupPermissionsTest extends MediaWikiTestCase {
+class SpecialGlobalGroupPermissionsTest extends MediaWikiIntegrationTestCase {
 
 	/** @var SpecialGlobalGroupPermissions|TestingAccessWrapper */
 	private $special;

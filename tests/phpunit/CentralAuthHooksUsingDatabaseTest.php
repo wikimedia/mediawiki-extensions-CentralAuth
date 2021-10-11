@@ -18,7 +18,7 @@ class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase
 
 	/**
 	 * Setup a fresh set of global users for each test.
-	 * Note: MediaWikiTestCase::resetDB() will delete all tables between
+	 * Note: MediaWikiIntegrationTestCase::resetDB() will delete all tables between
 	 * test runs, so no explicite tearDown() is needed.
 	 */
 	protected function setUp(): void {
