@@ -89,10 +89,19 @@ class GlobalUsersPager extends AlphabeticPager {
 	 * @return array
 	 */
 	public function getQueryInfo() {
+		$tables = [ 'globaluser', 'localuser' ];
 		$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
+		$join_conds = [
+			'localuser' => [ 'LEFT JOIN', [ 'gu_name = lu_name', 'lu_wiki' => wfWikiID() ] ],
+		];
 
 		if ( $this->requestedGroup !== false ) {
+			$tables[] = 'global_user_groups';
 			$conds['gug_group'] = $this->requestedGroup;
+			$join_conds['global_user_groups'] = [
+				'LEFT JOIN',
+				'gu_id = gug_user'
+			];
 		}
 
 		if ( $this->requestedUser !== false ) {
@@ -100,19 +109,23 @@ class GlobalUsersPager extends AlphabeticPager {
 		}
 
 		return [
-			'tables' => [ 'globaluser', 'localuser', 'global_user_groups' ],
-			'fields' => [ 'gu_name',
+			'tables' => $tables,
+			'fields' => [
+				'gu_name',
 				'gu_id' => 'MAX(gu_id)',
 				'gu_locked' => 'MAX(gu_locked)',
 				'lu_attached_method' => 'MAX(lu_attached_method)',
-				// | cannot be used in a group name
-				'gug_group' => 'GROUP_CONCAT(gug_group SEPARATOR \'|\')' ],
+				'gug_group' => $this->mDb->buildGroupConcatField(
+					// | cannot be used in a group name
+					'|',
+					[ 'G' => 'global_user_groups' ],
+					'G.gug_group',
+					'G.gug_user = gu_id'
+				),
+			],
 			'conds' => $conds,
 			'options' => [ 'GROUP BY' => 'gu_name' ],
-			'join_conds' => [
-				'localuser' => [ 'LEFT JOIN', [ 'gu_name = lu_name', 'lu_wiki' => wfWikiID() ] ],
-				'global_user_groups' => [ 'LEFT JOIN', 'gu_id = gug_user' ]
-			],
+			'join_conds' => $join_conds,
 		];
 	}
 
