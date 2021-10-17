@@ -31,7 +31,7 @@
 							data.notify.gender
 						),
 						{
-							title: mw.message( 'centralautologin' ),
+							title: mw.msg( 'centralautologin' ),
 							autoHide: false,
 							tag: 'CentralAutoLogin'
 						}
@@ -43,7 +43,7 @@
 				mw.notify(
 					mw.message( 'centralauth-centralautologin-logged-in-nouser' ),
 					{
-						title: mw.message( 'centralautologin' ),
+						title: mw.msg( 'centralautologin' ),
 						autoHide: false,
 						tag: 'CentralAutoLogin'
 					}
