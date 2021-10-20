@@ -124,7 +124,7 @@
 	"centralauth-admin-status-reasons": "*دلایل متداول قفل\n**حساب فقط‌خرابکار\n**حساب فقط‌هرزنامه\n*دلایل متداول قفل و پنهان‌سازی\n**نام کاربری توهین‌آمیز\n**اطلاعات شخصی نامناسب",
 	"centralauth-admin-status-submit": "تنظیم وضعیت",
 	"centralauth-admin-suppressreason": "به طور سراسری توسط $1 موقوف شده‌است، به این دلیل: $2",
-	"centralauth-admin-title": "مدیر جهانی حساب برای $1",
+	"centralauth-admin-title": "مدیر سراسری حساب برای $1",
 	"centralauth-admin-title-ro": "اطلاعات سراسری در مورد حساب $1",
 	"centralauth-admin-too-many-edits": "حساب کاربری سراسری \"<nowiki>$1</nowiki>\" بیش از $2 {{PLURAL:$2|ویرایش|ویرایش}} دارد و نمی تواند پنهان باشد.",
 	"centralauth-admin-unattached": "متصل نشده است",
