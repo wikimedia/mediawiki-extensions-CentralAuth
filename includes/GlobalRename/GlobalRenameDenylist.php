@@ -59,8 +59,8 @@ class GlobalRenameDenylist {
 	 * @param HttpRequestFactory $httpRequestFactory
 	 * @param WikiPageFactory $wikiPageFactory
 	 * @param string|Title|null $denylistSource Page with denylist, url to fetch it from,
-	 *   or null for no list ($wgGlobalRenameBlacklist)
-	 * @param bool $denylistRegex ($wgGlobalRenameBlacklistRegex)
+	 *   or null for no list ($wgGlobalRenameDenylist)
+	 * @param bool $denylistRegex ($wgGlobalRenameDenylistRegex)
 	 */
 	public function __construct(
 		LoggerInterface $logger,

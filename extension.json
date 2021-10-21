@@ -708,13 +708,13 @@
 		"CentralAuthOldNameAntiSpoofWiki": {
 			"value": false
 		},
-		"GlobalRenameBlacklist": {
+		"GlobalRenameDenylist": {
 			"value": null,
 			"description": "Source URL for the global rename denylist feature; if null, the feature is disabled."
 		},
-		"GlobalRenameBlacklistRegex": {
+		"GlobalRenameDenylistRegex": {
 			"value": false,
-			"description": "Does the global rename denylist allow regexes? Does not have any effect when GlobalRenameBlacklist is null."
+			"description": "Does the global rename denylist allow regexes? Does not have any effect when GlobalRenameDenylist is null."
 		},
 		"CentralAuthSessionCacheType": {
 			"value": null

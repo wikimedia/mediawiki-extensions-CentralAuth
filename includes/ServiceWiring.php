@@ -62,8 +62,8 @@ return [
 			LoggerFactory::getInstance( 'CentralAuthRename' ),
 			$services->getHttpRequestFactory(),
 			$services->getWikiPageFactory(),
-			$config->get( 'GlobalRenameBlacklist' ),
-			$config->get( 'GlobalRenameBlacklistRegex' )
+			$config->get( 'GlobalRenameDenylist' ),
+			$config->get( 'GlobalRenameDenylistRegex' )
 		);
 	},
 	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {
