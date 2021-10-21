@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Baffo",
+			"Jakeukalane",
 			"MarcoAurelio"
 		]
 	},
 	"centralauth-abortlogin-renamed": "Se cambió el nombre de su cuenta a «$1». Por favor, utilice ese nombre de usuario.",
-	"centralauth-account-exists-reset": "El nombre de usuario $1 no está registrado en este wiki, pero puede restablecer su contraseña en [[Special:CentralAuth/$1|una wiki donde lo esté]].",
+	"centralauth-account-exists-reset": "El nombre de usuario $1 no está registrado en esta wiki, pero puede restablecer su contraseña en [[Special:CentralAuth/$1|una wiki donde lo esté]].",
 	"centralauth-account-rename-exists": "No se puede crear la cuenta: el nombre de usuario ya se está usando. Por favor, elija otro.",
 	"centralauth-account-unattached-exists": "No se puede crear la cuenta: el nombre de usuario ya se está usando. Por favor, elija otro.",
 	"centralauth-admin-delete-confirm": "¿Confirma que quiere eliminar esta cuenta?",
