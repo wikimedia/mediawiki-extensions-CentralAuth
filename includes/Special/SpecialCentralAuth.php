@@ -17,6 +17,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use NamespaceInfo;
 use ReadOnlyError;
+use ReadOnlyMode;
 use Sanitizer;
 use SpecialPage;
 use Title;
@@ -73,20 +74,26 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
+	/** @var ReadOnlyMode */
+	private $readOnlyMode;
+
 	/**
 	 * @param NamespaceInfo $namespaceInfo
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
+	 * @param ReadOnlyMode $readOnlyMode
 	 */
 	public function __construct(
 		NamespaceInfo $namespaceInfo,
 		CentralAuthDatabaseManager $databaseManager,
-		CentralAuthUIService $uiService
+		CentralAuthUIService $uiService,
+		ReadOnlyMode $readOnlyMode
 	) {
 		parent::__construct( 'CentralAuth' );
 		$this->namespaceInfo = $namespaceInfo;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
+		$this->readOnlyMode = $readOnlyMode;
 	}
 
 	public function doesWrites() {
@@ -174,7 +181,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$continue = true;
 		if ( $this->mCanEdit && $this->mPosted ) {
-			if ( wfReadOnly() || $this->databaseManager->isReadOnly() ) {
+			if ( $this->readOnlyMode->isReadOnly() || $this->databaseManager->isReadOnly() ) {
 				throw new ReadOnlyError();
 			}
 			$continue = $this->doSubmit();

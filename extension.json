@@ -100,7 +100,8 @@
 			"services": [
 				"NamespaceInfo",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.CentralAuthUIService"
+				"CentralAuth.CentralAuthUIService",
+				"ReadOnlyMode"
 			]
 		},
 		"CentralLogin": {
@@ -114,7 +115,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAutoLogin",
 			"services": [
 				"CentralAuth.CentralAuthUtilityService",
-				"UserOptionsManager"
+				"UserOptionsManager",
+				"ReadOnlyMode"
 			]
 		},
 		"CreateLocalAccount": {
@@ -731,7 +733,8 @@
 				"services": [
 					"CentralAuth.CentralAuthDatabaseManager",
 					"UserNameUtils",
-					"StatsdDataFactory"
+					"StatsdDataFactory",
+					"ReadOnlyMode"
 				]
 			}
 		},

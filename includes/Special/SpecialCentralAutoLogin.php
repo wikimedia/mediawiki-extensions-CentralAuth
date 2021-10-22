@@ -18,6 +18,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsManager;
 use MobileContext;
 use MWCryptRand;
+use ReadOnlyMode;
 use RequestContext;
 use ResourceLoader;
 use SkinTemplate;
@@ -47,14 +48,24 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var UserOptionsManager */
 	private $userOptionsManager;
 
+	/** @var ReadOnlyMode */
+	private $readOnlyMode;
+
+	/**
+	 * @param CentralAuthUtilityService $centralAuthUtilityService
+	 * @param UserOptionsManager $userOptionsManager
+	 * @param ReadOnlyMode $readOnlyMode
+	 */
 	public function __construct(
 		CentralAuthUtilityService $centralAuthUtilityService,
-		UserOptionsManager $userOptionsManager
+		UserOptionsManager $userOptionsManager,
+		ReadOnlyMode $readOnlyMode
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
 		$this->userOptionsManager = $userOptionsManager;
+		$this->readOnlyMode = $readOnlyMode;
 	}
 
 	/**
@@ -206,7 +217,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				if ( $remember != $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' ) ) {
 					$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
 					DeferredUpdates::addCallableUpdate( function () use ( $user ) {
-						if ( wfReadOnly() ) {
+						if ( $this->readOnlyMode->isReadOnly() ) {
 							return; // not possible to save
 						}
 

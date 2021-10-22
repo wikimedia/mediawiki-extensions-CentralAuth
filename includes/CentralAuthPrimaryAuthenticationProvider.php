@@ -42,6 +42,9 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
 
+	/** @var ReadOnlyMode */
+	private $readOnlyMode;
+
 	/** @var bool Whether to check for force-renamed users on login */
 	protected $checkSULMigration = null;
 
@@ -63,6 +66,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param UserNameUtils $userNameUtils
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
+	 * @param ReadOnlyMode $readOnlyMode
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - checkSULMigration: If true, check if the user was force-renamed for
@@ -80,6 +84,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		CentralAuthDatabaseManager $databaseManager,
 		UserNameUtils $userNameUtils,
 		IBufferingStatsdDataFactory $statsdDataFactory,
+		ReadOnlyMode $readOnlyMode,
 		$params = []
 	) {
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
@@ -94,6 +99,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		// into this class
 		$this->userNameUtils = $userNameUtils;
 		$this->statsdDataFactory = $statsdDataFactory;
+		$this->readOnlyMode = $readOnlyMode;
 		$params += [
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
@@ -331,7 +337,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			if ( $centralUser->exists() &&
 				$centralUser->isAttached() &&
 				$centralUser->getEmail() != $user->getEmail() &&
-				!wfReadOnly()
+				!$this->readOnlyMode->isReadOnly()
 			) {
 				DeferredUpdates::addCallableUpdate( static function () use ( $user ) {
 					$centralUser = CentralAuthUser::getPrimaryInstance( $user );
