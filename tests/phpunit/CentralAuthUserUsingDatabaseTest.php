@@ -17,7 +17,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::getStateHash
 	 */
 	public function testBasicAttrs() {
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertSame( 1001, $caUser->getId() );
 		$this->assertSame( 'GlobalUser', $caUser->getName() );
@@ -40,7 +40,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::loadState
 	 */
 	public function testLoadFromDB() {
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$caUser->loadStateNoCache();
 		$this->assertTrue( $caUser->exists() );
 		$this->assertSame( 1001, $caUser->getId() );
@@ -50,7 +50,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::listAttached
 	 */
 	public function testLoadAttached() {
-		$caUser = new CentralAuthUser( 'GlobalUser' );
+		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertArrayEquals(
 			[
 				wfWikiID(),
@@ -90,11 +90,11 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::register
 	 */
 	public function testRegister() {
-		$caUserNew = new CentralAuthUser( 'RegTest', CentralAuthUser::READ_LATEST );
+		$caUserNew = CentralAuthUser::getPrimaryInstanceByName( 'RegTest' );
 		$ok = $caUserNew->register( "R3gT3stP@ssword", "user@localhost" );
 		$this->assertTrue( $ok );
 
-		$caUser = new CentralAuthUser( 'RegTest' );
+		$caUser = CentralAuthUser::getInstanceByName( 'RegTest' );
 		$this->assertTrue( $caUser->exists() );
 
 		// And duplicate registration doesn't throw an exception (T108541)
@@ -105,7 +105,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::isLocked
 	 */
 	public function testLocked() {
-		$caUser = new CentralAuthUser( 'GlobalLockedUser' );
+		$caUser = CentralAuthUser::getInstanceByName( 'GlobalLockedUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isLocked() );
 	}
@@ -116,7 +116,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::getHiddenLevel
 	 */
 	public function testHidden() {
-		$caUser = new CentralAuthUser( 'GlobalSuppressedUser' );
+		$caUser = CentralAuthUser::getInstanceByName( 'GlobalSuppressedUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isHidden() );
 		$this->assertTrue( $caUser->isOversighted() );
@@ -151,7 +151,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::adminSetHidden
 	 */
 	public function testAdminLockAndHide() {
-		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() ); # sanity
 		$this->assertFalse( $caUser->isHidden() ); # sanity
 		$this->assertFalse( $caUser->isLocked() ); # sanity
@@ -174,7 +174,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertTrue( $caUser->isLocked() );
 		$this->assertTrue( $caUser->isHidden() );
 		// Ignore cache, read from DB for new instance
-		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isLocked() );
 		$this->assertTrue( $caUser->isHidden() );
@@ -187,7 +187,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertFalse( $caUser->isHidden() );
 		$this->assertFalse( $caUser->isLocked() );
 		// Ignore cache, read from DB for new instance
-		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertFalse( $caUser->isHidden() );
 		$this->assertFalse( $caUser->isLocked() );
@@ -197,7 +197,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::attach
 	 */
 	public function testAttach() {
-		$caUser = new CentralAuthUser( 'GlobalUser', CentralAuthUser::READ_LATEST );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
 		$caUser->attach( 'anotherwiki', 'admin', false );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertContains( 'anotherwiki', $caUser->listAttached() );
