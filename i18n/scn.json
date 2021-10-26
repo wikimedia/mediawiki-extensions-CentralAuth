@@ -32,7 +32,7 @@
 	"centralauth-admin-status-locked": "Firmatu:",
 	"centralauth-admin-username": "Nomu utenti:",
 	"centralauth-admin-yes": "sì",
-	"centralauth-antispoof-desc": "Junci la ticnoluggìa di AntiSpoof a CentralAuth",
+	"centralauth-antispoof-desc": "Agghiunci la ticnoluggìa di AntiSpoof a CentralAuth",
 	"centralauth-desc": "[[Special:MergeAccount|Unifica li tò utenzi]] supra li sita gistiti dâ {{int:Centralauth-groupname}}",
 	"centralauth-editgroup-noset": "(nuddu)",
 	"centralauth-editgroup-reason": "Mutivu:",
