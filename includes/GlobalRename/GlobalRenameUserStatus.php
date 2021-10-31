@@ -145,16 +145,14 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 */
 	public function updateStatus( $wiki, $status ) {
 		$dbw = $this->getDB( DB_PRIMARY );
-		// Can be inlined easily once we require more than 5.3
-		$nameWhere = $this->getNameWhereClause( $dbw );
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
-			static function () use( $dbw, $status, $wiki, $nameWhere, $fname ) {
+			function () use ( $dbw, $status, $wiki, $fname ) {
 				$dbw->update(
 					'renameuser_status',
 					[ 'ru_status' => $status ],
-					[ $nameWhere, 'ru_wiki' => $wiki ],
+					[ $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ],
 					$fname
 				);
 			},
@@ -213,15 +211,13 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 */
 	public function done( $wiki ) {
 		$dbw = $this->getDB( DB_PRIMARY );
-		// Can be inlined easily once we require more than 5.3
-		$nameWhere = $this->getNameWhereClause( $dbw );
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
-			static function () use( $dbw, $wiki, $nameWhere, $fname ) {
+			function () use ( $dbw, $wiki, $fname ) {
 				$dbw->delete(
 					'renameuser_status',
-					[ $nameWhere, 'ru_wiki' => $wiki ],
+					[ $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ],
 					$fname
 				);
 			},

@@ -73,7 +73,7 @@ class GlobalUserMerge {
 		array $oldCAUsers,
 		CentralAuthUser $newCAUser,
 		GlobalRenameUserStatus $renameuserStatus,
-		/* callable */ $jobQueueGroupGenerator,
+		callable $jobQueueGroupGenerator,
 		GlobalUserMergeDatabaseUpdates $databaseUpdates,
 		GlobalUserMergeLogger $logger,
 		array $session

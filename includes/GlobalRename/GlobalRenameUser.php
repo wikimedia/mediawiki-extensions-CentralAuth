@@ -86,7 +86,7 @@ class GlobalRenameUser {
 		User $newUser,
 		CentralAuthUser $newCAUser,
 		GlobalRenameUserStatus $renameuserStatus,
-		/* callable */ $jobQueueGroupGenerator,
+		callable $jobQueueGroupGenerator,
 		GlobalRenameUserDatabaseUpdates $databaseUpdates,
 		GlobalRenameUserLogger $logger,
 		array $session
