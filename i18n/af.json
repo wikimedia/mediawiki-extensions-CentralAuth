@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Arnobarnard",
+			"Danieldegroot2",
 			"Fwolff",
 			"Joris Darlington Quarshie",
 			"Naudefj",
@@ -205,7 +206,7 @@
 	"centralauth-rightslog-entry-setchange": "het die wiki's in \"$1\" gewysig: bygevoeg: $2; geskrap: $3",
 	"centralauth-rightslog-entry-setnewtype": "het tipe vir $1 gewysig van $2 na $3",
 	"centralauth-rightslog-entry-setrename": "het die wikigroep \"$2\" na \"$1\" hernoem",
-	"centralauth-rightslog-header": "Hierdie log-bedrywighede op die globale groepe: lidmaatskap en permissions veranderinge",
+	"centralauth-rightslog-header": "Hierdie log-bedrywighede op die globale groepe: lidmaatskap en regte veranderinge",
 	"centralauth-rightslog-name": "Logboek van globale regte",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonde|sekondes}} gelede",
 	"centralauth-token-mismatch": "Jammer, ons kan nie jou vorm voorlegging as gevolg van 'n verlies aan sessie-data te verwerk.",
