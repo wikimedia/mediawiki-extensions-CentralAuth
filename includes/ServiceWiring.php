@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
@@ -31,6 +32,17 @@ return [
 			CentralAuthServices::getUtilityService( $services )
 		);
 	},
+	'CentralAuth.CentralAuthSessionManager' => static function (
+		MediaWikiServices $services
+	): CentralAuthSessionManager {
+		return new CentralAuthSessionManager(
+			new ServiceOptions(
+				CentralAuthSessionManager::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getStatsdDataFactory()
+		);
+	},
 	'CentralAuth.CentralAuthUIService' => static function (
 		MediaWikiServices $services
 	): CentralAuthUIService {
@@ -44,7 +56,6 @@ return [
 		return new CentralAuthUtilityService(
 			$services->getMainConfig(),
 			$services->getAuthManager(),
-			$services->getStatsdDataFactory(),
 			$services->getTitleFactory()
 		);
 	},

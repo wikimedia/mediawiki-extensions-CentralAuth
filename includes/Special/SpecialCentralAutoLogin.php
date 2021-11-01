@@ -13,6 +13,7 @@ use ExtensionRegistry;
 use FormatJson;
 use Hooks;
 use Language;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsManager;
@@ -51,21 +52,27 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
+	/** @var CentralAuthSessionManager */
+	private $sessionManager;
+
 	/**
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 * @param UserOptionsManager $userOptionsManager
 	 * @param ReadOnlyMode $readOnlyMode
+	 * @param CentralAuthSessionManager $sessionManager
 	 */
 	public function __construct(
 		CentralAuthUtilityService $centralAuthUtilityService,
 		UserOptionsManager $userOptionsManager,
-		ReadOnlyMode $readOnlyMode
+		ReadOnlyMode $readOnlyMode,
+		CentralAuthSessionManager $sessionManager
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
 		$this->userOptionsManager = $userOptionsManager;
 		$this->readOnlyMode = $readOnlyMode;
+		$this->sessionManager = $sessionManager;
 	}
 
 	/**
@@ -125,7 +132,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 
 		$request = $this->getRequest();
-		$tokenStore = $this->centralAuthUtilityService->getTokenStore();
+		$tokenStore = $this->sessionManager->getTokenStore();
 
 		$this->loginWiki = $this->getConfig()->get( 'CentralAuthLoginWiki' );
 		if ( !$this->loginWiki ) {
@@ -312,7 +319,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$memcData = [ 'gu_id' => $centralUser->getId() ];
 			$token = MWCryptRand::generateHex( 32 );
-			$key = $this->centralAuthUtilityService->memcKey( 'centralautologin-token', $token );
+			$key = $this->sessionManager->memcKey( 'centralautologin-token', $token );
 			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
 
 			$this->do302Redirect( $wikiid, 'createSession', [
@@ -334,7 +341,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$gid = $request->getVal( 'gu_id', '' );
 			if ( $token !== '' ) {
 				// Load memc data
-				$key = $this->centralAuthUtilityService->memcKey( 'centralautologin-token', $token );
+				$key = $this->sessionManager->memcKey( 'centralautologin-token', $token );
 				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence( $tokenStore, $key );
 				$tokenStore->delete( $key );
 
@@ -371,7 +378,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'wikiid' => $wikiid,
 			];
 			$token = MWCryptRand::generateHex( 32 );
-			$key = $this->centralAuthUtilityService->memcKey( 'centralautologin-token', $token, $wikiid );
+			$key = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
 			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
 
 			// Save memc token for the 'setCookies' step
@@ -408,7 +415,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Load memc data
-			$key = $this->centralAuthUtilityService->memcKey( 'centralautologin-token', $token, $wikiid );
+			$key = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
 			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence( $tokenStore, $key );
 			$tokenStore->delete( $key );
 
@@ -461,7 +468,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Load memc data
 			$wikiid = wfWikiID();
-			$key = $this->centralAuthUtilityService->memcKey( 'centralautologin-token', $token, $wikiid );
+			$key = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
 			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence( $tokenStore, $key );
 			$tokenStore->delete( $key );
 
@@ -499,7 +506,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$delay = $this->session->delaySave();
 			$this->session->resetId();
-			$this->centralAuthUtilityService->setCentralSession( [
+			$this->sessionManager->setCentralSession( [
 				'finalProto' => $memcData['finalProto'],
 				'secureCookies' => $memcData['secureCookies'],
 				'remember' => $memcData['remember'],
@@ -710,7 +717,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return array
 	 */
 	private function getCentralSession( $centralUser, $user ) {
-		$centralSession = $this->centralAuthUtilityService->getCentralSession( $this->session );
+		$centralSession = $this->sessionManager->getCentralSession( $this->session );
 		$request = $this->getRequest();
 
 		// If there's no "finalProto", check if one was passed, and otherwise
@@ -732,7 +739,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Make sure there's a session id by creating a session if necessary.
 		if ( !isset( $centralSession['sessionId'] ) ) {
-			$centralSession['sessionId'] = $this->centralAuthUtilityService->setCentralSession(
+			$centralSession['sessionId'] = $this->sessionManager->setCentralSession(
 				$centralSession, false, $this->session );
 		}
 

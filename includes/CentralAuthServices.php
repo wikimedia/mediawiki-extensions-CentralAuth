@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
@@ -37,6 +38,17 @@ class CentralAuthServices {
 	): CentralAuthForcedLocalCreationService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthForcedLocalCreationService' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
+	 * @return CentralAuthSessionManager
+	 */
+	public static function getSessionManager( ContainerInterface $services = null ): CentralAuthSessionManager {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthSessionManager' );
 	}
 
 	/**
