@@ -12,6 +12,7 @@
 			"Kingu",
 			"Laaknor",
 			"Macofe",
+			"McDutchie",
 			"Nghtwlkr",
 			"Njardarlogar",
 			"Stigmj"
@@ -139,7 +140,7 @@
 	"centralauth-centralautologin-logged-in": "Du er sentralt innlogget som $1. Oppdater siden for at innstillingene dine skal få effekt.",
 	"centralauth-centralautologin-logged-in-nouser": "Du er sentralt innlogget. Oppdater siden for at dine innstillinger skal få effekt.",
 	"centralauth-centralautologin-lostsession": "Sesjonsdata gikk tapt",
-	"centralauth-centralautologin-notposted": "Sentralt innloggingsskjema må sendes inn",
+	"centralauth-centralautologin-notposted": "Sentralt innloggingsskjema må sendes inn med metoden POST.",
 	"centralauth-centralautologin-p3p-explanation": "Noen nettlesere krever at en [https://www.w3.org/TR/P3P/#compact_policies P3P-kompakt policy] for informasjonskapsler skal sendes eller mottas i noen tilfeller, herunder situasjonen som gjelder SUL-innloggingskontroll. Dette er her et unødvendig hinder tatt i betraktning at alle sidene dette gjelder er i den samme wikigruppen og at P3P for det mest er foreldet og forlatt; heldigvis betraktes den ugyldige policy-knytningen til denne siden som \"god nok\" av disse nettlesernes standard konfigurering.\n\nVær vennlig å gå gjennom dette nettstedets beskrivelse av sin fortrolighetspolicy for å avgjøre hvordan innsamlet informasjon kan bli brukt.",
 	"centralauth-complete": "Kontosammenslåingen er fullført!",
 	"centralauth-complete-text": "Du kan nå logge inn på enhver wiki som tilhører {{int:Centralauth-groupname}} uten å opprette en ny konto.",

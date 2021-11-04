@@ -153,7 +153,7 @@
 	"centralauth-centralautologin-logged-in": "Du är centralt inloggad som $1. Uppdatera sidan om du vill tillämpa dina användarinställningar.",
 	"centralauth-centralautologin-logged-in-nouser": "Du är centralt inloggad. Ladda om sidan för att tillämpa dina användarinställningar.",
 	"centralauth-centralautologin-lostsession": "Sessionsdata förlorades",
-	"centralauth-centralautologin-notposted": "Centrala inloggningsformuläret måste vara POST",
+	"centralauth-centralautologin-notposted": "Centrala inloggningsformuläret måste skickas med POST-metoden.",
 	"centralauth-centralautologin-p3p-explanation": "Vissa webbläsare kräver en [https://www.w3.org/TR/P3P/#compact_policies P3P-kompaktpolicy] för att kakor ska skickas eller tas emot i vissa fall, inklusive den situation som uppstår vid kontroll av SUL-inloggning. Detta är en onödig åtgärd att genomgå i denna situation med tanke på att alla inblandade sidor är en del av samma wikigrupp och P3P själv mestadels är föråldrad och övergiven; lyckligtvis anses den ogiltiga policyn som länkar till denna sida för närvarande vara \"tillräckligt bra\" av dessa webbläsares standardkonfigurationer.\n\nVar god läs igenom webbplatsens läsbara sekretesspolicy för att avgöra hur all information som samlas in kan användas.",
 	"centralauth-complete": "Dina användarkonton har slagits ihop!",
 	"centralauth-complete-text": "Du kan nu logga in på alla wikier som tillhör {{int:Centralauth-groupname}} utan att skapa nya konton.",

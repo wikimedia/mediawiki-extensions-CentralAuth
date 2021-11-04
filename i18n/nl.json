@@ -159,7 +159,7 @@
 	"centralauth-centralautologin-logged-in": "U bent centraal aangemeld als \"$1\". Herlaad de pagina om uw gebruikersinstellingen toe te passen.",
 	"centralauth-centralautologin-logged-in-nouser": "U bent centraal aangemeld. Herlaad de pagina om uw gebruikersinstellingen toe te passen.",
 	"centralauth-centralautologin-lostsession": "De sessiegegevens zijn verloren gegaan",
-	"centralauth-centralautologin-notposted": "Het formulier voor centraal aanmelden moet met POST opgegeven worden",
+	"centralauth-centralautologin-notposted": "Het formulier voor centraal aanmelden moet met de POST-methode ingezonden worden.",
 	"centralauth-centralautologin-p3p-explanation": "Bepaalde browsers vereisen in sommige gevallen een \"[https://www.w3.org/TR/P3P/#compact_policies P3P compact]\"-beleid voordat cookies worden verzonden of ontvangen; hier valt ook de SUL aanmeldcontrole onder. Dit is in deze situatie een onnodige drempel, aangezien alle betrokken pagina's zich in dezelfde wikigroep bevinden en P3P zelf verouderd is. Gelukkig is het koppelen naar deze pagina voor het ongeldige beleid op dit moment \"voldoende\" voor de standaardinstellingen van deze browsers.\n\nControleer het door mensen te lezen privacybeleid van deze site om te bepalen hoe deze verzamelde gegevens mag gebruiken.",
 	"centralauth-complete": "Samenvoegen gebruikers afgerond!",
 	"centralauth-complete-text": "U kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe account aan te maken.",

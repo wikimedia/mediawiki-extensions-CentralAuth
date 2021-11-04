@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Maxí",
+			"McDutchie",
 			"S.Örvarr.S",
 			"Snævar",
 			"Spacebirdy",
@@ -104,7 +105,7 @@
 	"centralauth-centralautologin-logged-in": "Þú ert skráður inn miðlægt sem $1. Lestu síðuna inn aftur til að breyta notandastillingunm þínum",
 	"centralauth-centralautologin-logged-in-nouser": "Þú ert skráður inn miðlægt. Lestu síðuna inn aftur til að virkja notandastillingarnar þínar.",
 	"centralauth-centralautologin-lostsession": "Lotugögn týndust",
-	"centralauth-centralautologin-notposted": "Miðlæga innskráningarformið verður að senda",
+	"centralauth-centralautologin-notposted": "Miðlæga innskráningarformið verður að senda inn með aðferðinni POST.",
 	"centralauth-complete": "Samræmingu aðganga lokið!",
 	"centralauth-complete-text": "Þú getur nú skráð þig inn á hvaða wiki verkefni {{int:Centralauth-groupname}} án stofnunar nýs aðgangs.",
 	"centralauth-completelogin-back": "Fara aftur á fyrri síðu",

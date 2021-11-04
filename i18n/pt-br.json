@@ -158,7 +158,7 @@
 	"centralauth-centralautologin-logged-in": "Está autenticado centralmente como $1. Recarregue a página para aplicar as suas configurações de usuário.",
 	"centralauth-centralautologin-logged-in-nouser": "Você está autenticado globalmente. Recarregue a página para aplicar suas configurações de usuário.",
 	"centralauth-centralautologin-lostsession": "Os dados da seção foram perdidos",
-	"centralauth-centralautologin-notposted": "O formulário de login central deve ser publicado",
+	"centralauth-centralautologin-notposted": "O formulário de login central deve ser enviado usando o método POST.",
 	"centralauth-centralautologin-p3p-explanation": "Alguns navegadores requerem a [https://www.w3.org/TR/P3P/#compact_policies política compacta P3P] para que os cookies sejam enviados ou recebidos em alguns casos, incluindo a situação envolvida na verificação de login SUL. Esta é uma etapa desnecessária nesta situação, considerando que todas as páginas envolvidas estão no mesmo grupo wiki e a própria P3P é considerada obsoleta e abandonada; felizmente, a política inválida ligando a esta página é atualmente considerada \"boa o suficiente\" por configurações padrão desses navegadores.\n\nPor favor, consulte a política de privacidade deste site para determinar como qualquer informação coletada pode ser usada.",
 	"centralauth-complete": "Unificação de logins concluída!",
 	"centralauth-complete-text": "Agora você pode se autenticar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma nova conta.",
