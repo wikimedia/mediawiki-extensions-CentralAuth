@@ -259,22 +259,22 @@
 		"_merge_strategy": "array_plus_2d"
 	},
 	"LogActions": {
-		"newusers/forcecreatelocal": "centralauth-createlocal-logentry",
-		"globalauth/delete": "centralauth-log-entry-delete",
 		"globalauth/lock": "centralauth-log-entry-lock",
 		"globalauth/unlock": "centralauth-log-entry-unlock",
 		"globalauth/hide": "centralauth-log-entry-hide",
 		"globalauth/unhide": "centralauth-log-entry-unhide",
 		"globalauth/lockandhid": "centralauth-log-entry-lockandhide",
-		"globalauth/setstatus": "centralauth-log-entry-chgstatus",
-		"suppress/setstatus": "centralauth-log-entry-chgstatus",
-		"suppress/cadelete": "centralauth-log-entry-delete",
 		"gblrights/usergroups": "centralauth-rightslog-entry-usergroups",
 		"gblrights/groupperms": "centralauth-rightslog-entry-groupperms",
 		"gblrights/groupprms2": "centralauth-rightslog-entry-groupperms2",
 		"gblrights/groupprms3": "centralauth-rightslog-entry-groupperms3"
 	},
 	"LogActionsHandlers": {
+		"globalauth/delete": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalDeleteLogFormatter",
+		"globalauth/setstatus": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ChangeStatusLogFormatter",
+		"newusers/forcecreatelocal": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ForceCreateLocalUserLogFormatter",
+		"suppress/cadelete": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalDeleteLogFormatter",
+		"suppress/setstatus": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ChangeStatusLogFormatter",
 		"gblrights/grouprename": "CentralAuthHooks::onHandleGrouprenameLogEntry",
 		"gblrename/rename": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
 		"gblrename/promote": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
