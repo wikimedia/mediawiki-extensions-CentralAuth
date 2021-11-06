@@ -160,58 +160,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * @param string $type Unused
-	 * @param string $action
-	 * @param Title $title
-	 * @param Skin|null $skin If null, we want to use the wiki content language,
-	 *   since that will go to the IRC feed.
-	 * @param array $params
-	 * @param bool $filterWikilinks
-	 * @return string
-	 */
-	public static function onHandleWikiSetLogEntry(
-		$type, $action, $title, $skin, $params, $filterWikilinks = false
-	) {
-		if ( $skin ) {
-			$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-			$link = $linkRenderer->makeLink( $title, $params[0] );
-		} else {
-			$link = $params[0];
-		}
-
-		switch ( $action ) {
-			case 'newset':
-				$args = [ WikiSet::formatType( $params[1] ), $params[2] ];
-				break;
-			case 'setrename':
-				$args = [ $params[1] ];
-				break;
-			case 'setnewtype':
-				$args = [ WikiSet::formatType( $params[1] ), WikiSet::formatType( $params[2] ) ];
-				break;
-			case 'setchange':
-				$args = [
-					$params[1] ?: wfMessage( 'rightsnone' )->escaped(),
-					$params[2] ?: wfMessage( 'rightsnone' )->escaped()
-				];
-				break;
-			default: // 'deleteset'
-				$args = [];
-		}
-
-		// Give grep a chance to find the usages:
-		// centralauth-rightslog-entry-newset, centralauth-rightslog-entry-setrename,
-		// centralauth-rightslog-entry-setnewtype, centralauth-rightslog-entry-setchange,
-		// centralauth-rightslog-entry-deleteset
-		$msg = wfMessage( "centralauth-rightslog-entry-{$action}", $link )->params( $args );
-		if ( $skin ) {
-			return $msg->text();
-		} else {
-			return $msg->inContentLanguage()->text();
-		}
-	}
-
-	/**
 	 * Format global group rename log entries
 	 *
 	 * @param string $type Unused

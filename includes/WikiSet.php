@@ -358,13 +358,4 @@ class WikiSet {
 		);
 	}
 
-	/**
-	 * @param string $type
-	 * @return string
-	 */
-	public static function formatType( $type ) {
-		// Give grep a chance to find the usages:
-		// centralauth-rightslog-set-optin, centralauth-rightslog-set-optout
-		return wfMessage( "centralauth-rightslog-set-{$type}" )->escaped();
-	}
 }

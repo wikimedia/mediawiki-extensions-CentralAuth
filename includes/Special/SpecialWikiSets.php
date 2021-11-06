@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use Html;
 use LogEventsList;
 use LogPage;
+use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use SpecialPage;
 use Title;
@@ -334,6 +335,24 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
+	 * Log action to 'gblrights' log
+	 *
+	 * @param string $action Type of action
+	 * @param Title $title
+	 * @param string $reason
+	 * @param array $params
+	 */
+	private function addEntry( $action, $title, $reason, $params ): void {
+		$entry = new ManualLogEntry( 'gblrights', $action );
+		$entry->setTarget( $title );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( $params );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
+	}
+
+	/**
 	 * @param string $id
 	 */
 	private function doSubmit( $id ) {
@@ -399,46 +418,55 @@ class SpecialWikiSets extends SpecialPage {
 		$set->saveToDB();
 
 		// Now logging
-		$log = new LogPage( 'gblrights' );
 		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
-		$user = $this->getUser();
 		if ( !$oldname ) {
 			// New set
-			$log->addEntry(
+			$this->addEntry(
 				'newset',
 				$title,
 				$reason,
-				[ $name, $type, implode( ', ', $wikis ) ],
-				$user
+				[
+					'4::name' => $name,
+					'5::type' => $type,
+					'wikis' => $wikis,
+				]
 			);
 		} else {
 			if ( $oldname != $name ) {
-				$log->addEntry(
+				$this->addEntry(
 					'setrename',
 					$title,
 					$reason,
-					[ $name, $oldname ],
-					$user
+					[
+						'4::name' => $name,
+						'5::oldName' => $oldname,
+					]
 				);
 			}
 			if ( $oldtype != $type ) {
-				$log->addEntry(
+				$this->addEntry(
 					'setnewtype',
 					$title,
 					$reason,
-					[ $name, $oldtype, $type ],
-					$user
+					[
+						'4::name' => $name,
+						'5::oldType' => $oldtype,
+						'6::type' => $type,
+					]
 				);
 			}
-			$added = implode( ', ', array_diff( $wikis, $oldwikis ) );
-			$removed = implode( ', ', array_diff( $oldwikis, $wikis ) );
+			$added = array_diff( $wikis, $oldwikis );
+			$removed = array_diff( $oldwikis, $wikis );
 			if ( $added || $removed ) {
-				$log->addEntry(
+				$this->addEntry(
 					'setchange',
 					$title,
 					$reason,
-					[ $name, $added, $removed ],
-					$user
+					[
+						'4::name' => $name,
+						'added' => $added,
+						'removed' => $removed,
+					]
 				 );
 			}
 		}
@@ -467,8 +495,7 @@ class SpecialWikiSets extends SpecialPage {
 		$set->delete();
 
 		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
-		$log = new LogPage( 'gblrights' );
-		$log->addEntry( 'deleteset', $title, $reason, [ $name ], $this->getUser() );
+		$this->addEntry( 'deleteset', $title, $reason, [ '4::name' => $name ] );
 
 		$this->buildMainView( Html::successBox( $this->msg( 'centralauth-editset-success-delete' )->escaped() ) );
 	}

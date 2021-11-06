@@ -280,11 +280,11 @@
 		"gblrename/rename": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
 		"gblrename/promote": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
 		"gblrename/merge": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalUserMergeLogFormatter",
-		"gblrights/newset": "CentralAuthHooks::onHandleWikiSetLogEntry",
-		"gblrights/setrename": "CentralAuthHooks::onHandleWikiSetLogEntry",
-		"gblrights/setnewtype": "CentralAuthHooks::onHandleWikiSetLogEntry",
-		"gblrights/setchange": "CentralAuthHooks::onHandleWikiSetLogEntry",
-		"gblrights/deleteset": "CentralAuthHooks::onHandleWikiSetLogEntry"
+		"gblrights/newset": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
+		"gblrights/setrename": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
+		"gblrights/setnewtype": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
+		"gblrights/setchange": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
+		"gblrights/deleteset": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter"
 	},
 	"APIModules": {
 		"createlocalaccount": {
