@@ -221,8 +221,6 @@
 	"centralauth-listusers-attached": "[[User:$1|പ്രാദേശിക വിക്കിയിൽ അംഗത്വം ഉണ്ട്]]",
 	"centralauth-listusers-locked": "ബന്ധിച്ചിരിക്കുന്നു",
 	"centralauth-listusers-nolocal": "ചേർക്കപ്പെട്ടിട്ടില്ല അല്ലെങ്കിൽ പ്രാദേശികമായി നിലവിലില്ല",
-	"centralauth-log-entry-chgstatus": "\"$1\" എന്ന ആഗോള അംഗത്വത്തിന്റെ സ്ഥിതിയിൽ മാറ്റം വരുത്തിയിരിക്കുന്നു: $2 ഉറപ്പിച്ചു, $3 എടുത്തുമാറ്റി",
-	"centralauth-log-entry-delete": "\"$1\" എന്ന ആഗോള അംഗത്വം മായ്ച്ചിരിക്കുന്നു",
 	"centralauth-log-entry-hide": "ആഗോള അംഗത്വം \"$1\" മറയ്ക്കപ്പെട്ടു",
 	"centralauth-log-entry-lock": "\"$1\" എന്ന ആഗോള അംഗത്വം ബന്ധിച്ചിരിക്കുന്നു",
 	"centralauth-log-entry-lockandhide": "ആഗോള അംഗത്വം \"$1\" പൂട്ടിയിരിക്കുന്നു, മറച്ചിരിക്കുന്നു",

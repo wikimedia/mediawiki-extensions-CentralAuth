@@ -216,8 +216,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "jesperrt",
 	"centralauth-listusers-nolocal": "nit zosamme jelaat udder jit et nit em Wiki",
-	"centralauth-log-entry-chgstatus": "hät dä Shtattus för de jemeinsam Aanmeldung „$1“ jeändert: $2 jesaz un $3 fott jenumme.",
-	"centralauth-log-entry-delete": "hät de jemeinsam Aanmeldung „$1“ fottjeschmeße.",
 	"centralauth-log-entry-hide": "hät de jemeinsam Aanmeldong „$1“ verschtoche.",
 	"centralauth-log-entry-lock": "hät de jemeinsam Aanmeldung „$1“ jesperrt.",
 	"centralauth-log-entry-lockandhide": "hät de jemeinsam Aanmeldong „$1“ jespächt un dobei verschtoche.",

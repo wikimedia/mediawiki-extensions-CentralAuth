@@ -121,8 +121,6 @@
 	"centralauth-listusers-attached": "[[User:$1|gifft dat lokal]]",
 	"centralauth-listusers-locked": "sperrt",
 	"centralauth-listusers-nolocal": "nich verbunnen oder lokal nich dor",
-	"centralauth-log-entry-chgstatus": "hett den Status för dat globale Konto „$1“ ännert: Instellt $2; wegdaan: $3",
-	"centralauth-log-entry-delete": "hett dat globale Brukerkonto „$1“ wegdaan",
 	"centralauth-log-entry-hide": "hett da globale Brukerkonto „$1“ versteken",
 	"centralauth-log-entry-lock": "hett dat globale Brukerkonto „$1“ sperrt",
 	"centralauth-log-entry-lockandhide": "hett dat globale Brukerkonto „$1“ sperrt un versteken",

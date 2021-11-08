@@ -135,8 +135,6 @@
 	"centralauth-listusers-attached": "[[User:$1|o l'existe localmente]]",
 	"centralauth-listusers-locked": "bloccou",
 	"centralauth-listusers-nolocal": "separou ò donque o no l'existe localmente",
-	"centralauth-log-entry-chgstatus": "o l'ha cangiou o stato pe l'utença globâ \"$1\": impostou $2; annulou $3",
-	"centralauth-log-entry-delete": "utença globâ \"$1\" scassâ",
 	"centralauth-log-entry-hide": "utença globâ \"$1\" ascosa",
 	"centralauth-log-entry-lock": "utença globâ \"$1\" blocâ",
 	"centralauth-log-entry-lockandhide": "utença globâ \"$1\" blocâ e ascosa",

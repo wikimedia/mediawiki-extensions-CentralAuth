@@ -166,8 +166,6 @@
 	"centralauth-listusers-attached": "[[User:$1|මෙහි පවතී]]",
 	"centralauth-listusers-locked": "අගුලුලා ඇත",
 	"centralauth-listusers-nolocal": "එක්කෝ කොබැඳි නැත්නම් ස්ථානීකව නොපවතියි",
-	"centralauth-log-entry-chgstatus": "\"$1\" ගෝලීය ගිණුම සඳහා තත්වය වෙනස් කරන ලදී: Set $2; Unset $3",
-	"centralauth-log-entry-delete": "\"$1\" ගෝලීය ගිණුම මකන ලදී",
 	"centralauth-log-entry-hide": "\"$1\" ගෝලීය ගිණුම සඟවන ලදී",
 	"centralauth-log-entry-lock": "\"$1\" ගෝලීය ගිණුම අගුලුලන ලදී",
 	"centralauth-log-entry-lockandhide": "\"$1\" ගෝලීය ගිණුම අගුලුලා සඟවන ලදී",

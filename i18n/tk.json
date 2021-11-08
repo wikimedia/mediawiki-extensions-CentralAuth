@@ -137,8 +137,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ýerli tertipde bar]]",
 	"centralauth-listusers-locked": "gulplandy",
 	"centralauth-listusers-nolocal": "goşundylanmadyk ýa-da ýerli tertipde ýok",
-	"centralauth-log-entry-chgstatus": "\"$1\" global hasabynyň statusyny üýtgetdi: $2 Sazlandy; $3 Sazlanmady",
-	"centralauth-log-entry-delete": "\"$1\" global hasaby öçürildi",
 	"centralauth-log-entry-hide": "\"$1\" global hasaby gizlendi",
 	"centralauth-log-entry-lock": "\"$1\" global hasaby gulplandy",
 	"centralauth-log-entry-lockandhide": "\"$1\" global hasaby gulplanyldy we gizlenildi",

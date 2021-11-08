@@ -159,8 +159,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "nakakandado",
 	"centralauth-listusers-nolocal": "hindi nakakabit o hindi umiiral sa pook (hindi lokal)",
-	"centralauth-log-entry-chgstatus": "baguhin ang kalagayan para sa pandaigdigang account na \"$1: Itakda ang $2; Huwag itakda ang $3",
-	"centralauth-log-entry-delete": "binura ang pandaigdigang kuwentang \"$1\"",
 	"centralauth-log-entry-hide": "itinago ang pandaigdigang kuwentang \"$1\"",
 	"centralauth-log-entry-lock": "kinandado ang pandaigdigang kuwentang \"$1\"",
 	"centralauth-log-entry-lockandhide": "ikinandado at itinago ang pandaigdigang kuwentang \"$1\"",

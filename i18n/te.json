@@ -191,8 +191,6 @@
 	"centralauth-listusers-attached": "[[User:$1|స్థానికంగా ఉనికిలో ఉంది]]",
 	"centralauth-listusers-locked": "లాకు అయింది",
 	"centralauth-listusers-nolocal": "దేనికీ జోడించి లేదు, లేదా స్థానికంగా లేదు",
-	"centralauth-log-entry-chgstatus": "సార్వత్రిక ఖాతా \"$1\" స్థితిని మార్చాం: $2 సెట్ చేసాం; $3 అన్సెట్ చేసాం",
-	"centralauth-log-entry-delete": "సార్వత్రిక ఖాతా \"$1\" ను తొలగించాం",
 	"centralauth-log-entry-hide": "సార్వత్రిక ఖాతా \"$1\"ని దాచారు",
 	"centralauth-log-entry-lock": "సార్వత్రిక ఖాతా \"$1\" ను లాకు చేసాం",
 	"centralauth-log-entry-lockandhide": "సార్వత్రిక ఖాతా \"$1\" కి తాళం వేసి దాచాం",

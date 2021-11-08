@@ -170,8 +170,6 @@
 	"centralauth-listusers-attached": "[[User:$1|er til staðbundið]]",
 	"centralauth-listusers-locked": "læstur",
 	"centralauth-listusers-nolocal": "ótengdur eða er ekki til staðbundið",
-	"centralauth-log-entry-chgstatus": "breytti stöðu altæka aðgangsins \"$1\" frá $3 í $2",
-	"centralauth-log-entry-delete": "eyddi altækum aðgangi \"$1\"",
 	"centralauth-log-entry-hide": "fól altækan aðgang \"$1\"",
 	"centralauth-log-entry-lock": "læsti altækum aðgangi \"$1\"",
 	"centralauth-log-entry-lockandhide": "læsti og fól altækan aðgang \"$1\"",

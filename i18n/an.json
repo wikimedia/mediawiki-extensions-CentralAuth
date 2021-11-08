@@ -159,8 +159,6 @@
 	"centralauth-listusers-attached": "[[User:$1|existe localment]]",
 	"centralauth-listusers-locked": "bloqueyata",
 	"centralauth-listusers-nolocal": "no ye ligato u no existe localment",
-	"centralauth-log-entry-chgstatus": "modificó o status d'a cuenta global \"$1\": Establiu $2; Eliminau $3",
-	"centralauth-log-entry-delete": "Ha borrato a cuenta global \"$1\"",
 	"centralauth-log-entry-hide": "S'ha amagato a cuenta global \"$1\"",
 	"centralauth-log-entry-lock": "Ha bloqueyato a cuenta global \"$1\"",
 	"centralauth-log-entry-lockandhide": "bloqueyata y amagata a cuenta global \"$1\"",

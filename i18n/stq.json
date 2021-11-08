@@ -106,7 +106,6 @@
 	"centralauth-listusers-attached": "[[User:$1|bestoant lokoal]]",
 	"centralauth-listusers-locked": "speerd",
 	"centralauth-listusers-nolocal": "nit ferbuunen of lokoal nit foarhounden",
-	"centralauth-log-entry-delete": "läskede dät globoale Benutserkonto „$1“",
 	"centralauth-log-entry-hide": "ferstatte dät globoale Benutserkonto „$1“",
 	"centralauth-log-entry-lock": "speerde dät globoale Benutserkonto „$1“",
 	"centralauth-log-entry-lockandhide": "speerde un ferboorch dät globoale Benutserkonto „$1“",

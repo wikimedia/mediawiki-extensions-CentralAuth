@@ -214,8 +214,6 @@
 	"centralauth-listusers-attached": "[[User:$1|به طور محلی وجود دارد]]",
 	"centralauth-listusers-locked": "قفل‌شده",
 	"centralauth-listusers-nolocal": "متصل نشده‌است یا به طور محلی وجود ندارد",
-	"centralauth-log-entry-chgstatus": "تغییر وضعیت حساب سراسری «$1»: $2 تنظیم شد؛ $3 برداشته شد",
-	"centralauth-log-entry-delete": "حساب کاربری مشترک «$1» را حذف کرد",
 	"centralauth-log-entry-hide": "حساب کاربری مشترک «$1» را پنهان کرد",
 	"centralauth-log-entry-lock": "حساب کاربری مشترک «$1» را بست",
 	"centralauth-log-entry-lockandhide": "حساب کاربری سراسری «$1» را قفل کرد و پنهان ساخت",

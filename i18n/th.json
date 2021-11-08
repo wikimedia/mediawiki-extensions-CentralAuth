@@ -224,8 +224,6 @@
 	"centralauth-listusers-attached": "[[User:$1|มีอยู่ในท้องถิ่น]]",
 	"centralauth-listusers-locked": "ถูกล็อก",
 	"centralauth-listusers-nolocal": "ไม่ได้ถูกเชื่อมโยงหรือไม่มีอยู่ในท้องถิ่น",
-	"centralauth-log-entry-chgstatus": "เปลี่ยนสถานะสำหรับบัญชีส่วนกลาง \"$1\": ตั้งค่า $2, เลิกตั้งค่า $3",
-	"centralauth-log-entry-delete": "ลบบัญชีส่วนกลาง \"$1\"",
 	"centralauth-log-entry-hide": "ซ่อนบัญชีส่วนกลาง \"$1\"",
 	"centralauth-log-entry-lock": "ล็อกบัญชีส่วนกลาง \"$1\"",
 	"centralauth-log-entry-lockandhide": "ล็อกและซ่อนบัญชีส่วนกลาง \"$1\"",

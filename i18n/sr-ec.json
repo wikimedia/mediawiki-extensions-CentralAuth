@@ -227,8 +227,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "закључан",
 	"centralauth-listusers-nolocal": "непривезан или не постоји локално",
-	"centralauth-log-entry-chgstatus": "је променио стање глобалног налога „$1“: постављено на $2; уклоњено $3",
-	"centralauth-log-entry-delete": "је избрисао глобални налог „$1“",
 	"centralauth-log-entry-hide": "је сакрио глобални налог „$1“",
 	"centralauth-log-entry-lock": "је закључао глобални налог „$1“",
 	"centralauth-log-entry-lockandhide": "је закључао и сакрио глобални налог „$1“",

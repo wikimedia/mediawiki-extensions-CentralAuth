@@ -282,8 +282,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "отключён",
 	"centralauth-listusers-nolocal": "неприсоединённый или не существует локально",
-	"centralauth-log-entry-chgstatus": "изменил статус глобальной учётной записи «$1». Установлено: $2; снято $3",
-	"centralauth-log-entry-delete": "удалил глобальную учётную запись «$1»",
 	"centralauth-log-entry-hide": "скрыл глобальную учётную запись «$1»",
 	"centralauth-log-entry-lock": "отключил глобальную учётную запись «$1»",
 	"centralauth-log-entry-lockandhide": "отключил и скрыл глобальную учётную запись «$1»",

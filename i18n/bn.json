@@ -196,8 +196,6 @@
 	"centralauth-listusers-attached": "[[User:$1|স্থানীয় ভাবে রয়েছে]]",
 	"centralauth-listusers-locked": "অবরুদ্ধ",
 	"centralauth-listusers-nolocal": "বিচ্ছিন্ন অথবা স্থানীয় ভাবে বিদ্যমান নয়",
-	"centralauth-log-entry-chgstatus": "\"$1\" বৈশ্বিক অ্যাকাউন্টের অবস্থা পরিবর্তন করা হয়েছে: $2 নির্ধারণ, $3 পরিবর্তন",
-	"centralauth-log-entry-delete": "বৈশ্বিক অ্যাকাউন্ট \"$1\" মুছে ফেলো",
 	"centralauth-log-entry-hide": "বৈশ্বিক অ্যাকাউন্ট \"$1\" লুকিয়ে ফেলো",
 	"centralauth-log-entry-lock": "বৈশ্বিক অ্যাকাউন্ট \"$1\" বন্ধ করো",
 	"centralauth-log-entry-lockandhide": "বৈশ্বিক অ্যাকাউন্ট \"$1\" বন্ধ এবং লুকিয়ে ফেলো",

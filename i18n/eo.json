@@ -185,8 +185,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ekzistas ĉi-loke]]",
 	"centralauth-listusers-locked": "ŝlosita",
 	"centralauth-listusers-nolocal": "neligita aŭ ne ekzistas ĉi-loke",
-	"centralauth-log-entry-chgstatus": "ŝanĝis statuson por ĝenerala konto \"$1\": Ŝaltita $2; Malŝaltita $3",
-	"centralauth-log-entry-delete": "forigis ĝeneralan konton \"$1\"",
 	"centralauth-log-entry-hide": "kaŝis ĝeneralan konton \"$1\"",
 	"centralauth-log-entry-lock": "ŝlosis ĝeneralan konton \"$1\"",
 	"centralauth-log-entry-lockandhide": "ŝlosis kaj kaŝis ĝeneralan konton \"$1\"",

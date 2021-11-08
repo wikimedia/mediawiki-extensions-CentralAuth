@@ -264,8 +264,6 @@
 	"centralauth-listusers-attached": "[[User:$1|موجود محليا]]",
 	"centralauth-listusers-locked": "مغلق",
 	"centralauth-listusers-nolocal": "غير مرتبط أو غير موجود محليا",
-	"centralauth-log-entry-chgstatus": "غير الحالة للحساب العام «$1»: ضبط $2؛ أزال ضبط $3",
-	"centralauth-log-entry-delete": "حذف الحساب العام «$1»",
 	"centralauth-log-entry-hide": "أخفى الحساب العام «$1»",
 	"centralauth-log-entry-lock": "أغلق الحساب العام «$1»",
 	"centralauth-log-entry-lockandhide": "أغلق وأخفى الحساب العام «$1»",

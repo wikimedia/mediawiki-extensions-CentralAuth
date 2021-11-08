@@ -222,8 +222,6 @@
 	"centralauth-listusers-attached": "[[User:$1|локаль иҫәп яҙмаһы бар]]",
 	"centralauth-listusers-locked": "бикләргә",
 	"centralauth-listusers-nolocal": "берләштерелмәгән йәки локаль иҫәп яҙмаһы бар",
-	"centralauth-log-entry-chgstatus": "\"$1\" дөйөм иҫәп яҙмаһының статусын үҙгәрткән. Яңы статусы: $2; Иҫке статусы: $3",
-	"centralauth-log-entry-delete": "\"$1\" дөйөм иҫәп яҙмаһын юйған",
 	"centralauth-log-entry-hide": "\"$1\" дөйөм иҫәп яҙмаһын йәшергән",
 	"centralauth-log-entry-lock": "\"$1\" дөйөм иҫәп яҙмаһын бикләгән",
 	"centralauth-log-entry-lockandhide": "\"$1\" дөйөм иҫәп яҙмаһын бикләгән һәм йәшергән",

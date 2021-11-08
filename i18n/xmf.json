@@ -14,5 +14,6 @@
 	"log-action-filter-globalauth-setstatus": "გლობალური ანგარიშიშ სტატუსიშ თირუა",
 	"log-action-filter-suppress-cadelete": "გლობალური ანგარიშიშ ლასუა",
 	"log-action-filter-suppress-setstatus": "გლობალური ანგარიშიშ სტატუსიშ თირუა",
+	"logentry-globalauth-delete": "მახვარებუქ $1 {{GENDER:$2|დოლასჷ}} გლობალური ანგარიში \"$3\"",
 	"centralauth-badaccess-blacklisted": "თქვა ვეშეილებჷნა გლობალური ჯოხოშ თირუა მითხუათინ, თიშ გეშა, ნამჷ-და თქვა უჩა ერკებულს რეთ."
 }

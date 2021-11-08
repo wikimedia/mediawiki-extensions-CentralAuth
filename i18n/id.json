@@ -234,8 +234,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ada di wiki lokal]]",
 	"centralauth-listusers-locked": "terkunci",
 	"centralauth-listusers-nolocal": "bukan akun global atau tidak ada di wiki lokal",
-	"centralauth-log-entry-chgstatus": "perubahan status untuk akun global \"$1\": diatur $2; tidak diatur $3",
-	"centralauth-log-entry-delete": "akun global \"$1\" dihapuskan",
 	"centralauth-log-entry-hide": "menyembunyikan akun global \"$1\"",
 	"centralauth-log-entry-lock": "akun global \"$1\" telah dikunci",
 	"centralauth-log-entry-lockandhide": "akun \"$1\" telah dikunci dan disembunyikan",

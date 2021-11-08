@@ -176,8 +176,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ar gael yn lleol]]",
 	"centralauth-listusers-locked": "ar glo",
 	"centralauth-listusers-nolocal": "Digyswllt neu ddim yn bodoli'n lleol",
-	"centralauth-log-entry-chgstatus": "wedi newid statws y cyfrif cydwici \"$1\": Gosodwyd $2; Gwrthdrowyd y statws $3",
-	"centralauth-log-entry-delete": "wedi dileu cyfrif cydwici \"$1\"",
 	"centralauth-log-entry-hide": "wedi cuddio cyfrif cydwici \"$1\"",
 	"centralauth-log-entry-lock": "wedi cloi cyfrif cydwici \"$1\"",
 	"centralauth-log-entry-lockandhide": "wedi cloi a chuddio cydwici \"$1\"",

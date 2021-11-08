@@ -159,8 +159,6 @@
 	"centralauth-listusers-attached": "[[user:$1 |உள்ளமைவாக உள்ளது]]",
 	"centralauth-listusers-locked": "மூடப்பட்டது",
 	"centralauth-listusers-nolocal": "இணைக்கப்படாதது அல்லது உள்ளமைவாக இல்லை",
-	"centralauth-log-entry-chgstatus": "உலகளவிய கணக்கு ' $1 ' க்கு நிலை மாற்றப்பட்டது : அமை  $2 ; அமைக்காதே $3",
-	"centralauth-log-entry-delete": "உலகலாவிய  கணக்கு \" $1 \" ஐ நீக்கு",
 	"centralauth-log-entry-hide": "உலகளவிய கணக்கு ''$1'' ஐ மறை",
 	"centralauth-log-entry-lock": "உலகலாவிய  கணக்கு \" $1 \" பூட்டப்பட்டுள்ளது.",
 	"centralauth-log-entry-lockandhide": "பூட்டப்பட்டுள்ளது மற்றும்உலகலாவிய  கணக்கு \" $1 \" ஐ மறை",

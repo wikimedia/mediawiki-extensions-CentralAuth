@@ -46,7 +46,6 @@
 	"centralauth-listusers-attached": "[[User:$1|egzistêye locålmint]]",
 	"centralauth-listusers-locked": "bloké",
 	"centralauth-listusers-nolocal": "nén aloyî ou n' egzistêye nén locålmint",
-	"centralauth-log-entry-chgstatus": "a candjî l' estat tot avå do conte «$1»: estat «$2» metou; «$3» dismetou",
 	"centralauth-log-status-hidden": "catchî",
 	"centralauth-log-status-locked": "bloké",
 	"centralauth-log-status-none": "(rén)",

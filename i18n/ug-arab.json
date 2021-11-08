@@ -123,7 +123,6 @@
 	"centralauth-listusers-attached": "[[User:$1|يەرلىكتە مەۋجۈت]]",
 	"centralauth-listusers-locked": "قۇلۇپلانغان \\",
 	"centralauth-listusers-nolocal": "قۇشۇلمىغان ياكى يەرلىكتە مەۋجۇت ئەمەس",
-	"centralauth-log-entry-delete": "ئومۇمىيەت ھېساباتى \"$1\" ئۆچۈرۈلدى",
 	"centralauth-log-entry-hide": "ئومۇمىيەت ھېساباتى \"$1\" يوشۇرۇلدى",
 	"centralauth-log-entry-lock": "ئومۇمىيەت ھېساباتى \"$1\" قۇلۇپلاندى",
 	"centralauth-log-entry-lockandhide": "ئومۇمىيەت ھېساباتى \"$1\" قۇلۇپلاندى ۋە يوشۇرۇلدى",

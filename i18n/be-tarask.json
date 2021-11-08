@@ -216,8 +216,6 @@
 	"centralauth-listusers-attached": "[[User:$1|існуе лякальна]]",
 	"centralauth-listusers-locked": "заблякаваныя",
 	"centralauth-listusers-nolocal": "недалучаны ці не існуе лякальна",
-	"centralauth-log-entry-chgstatus": "зьменены статус глябальнага рахунку «$1: устаноўлены $2; зьняты $3",
-	"centralauth-log-entry-delete": "выдалены глябальны рахунак «$1»",
 	"centralauth-log-entry-hide": "схаваў глябальны рахунак «$1»",
 	"centralauth-log-entry-lock": "заблякаваны глябальны рахунак «$1»",
 	"centralauth-log-entry-lockandhide": "закрыў і схаваў глябальны рахунак «$1»",

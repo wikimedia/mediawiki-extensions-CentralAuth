@@ -235,8 +235,6 @@
 	"centralauth-listusers-attached": "[[User:$1|esiste llocalmente]]",
 	"centralauth-listusers-locked": "candáu",
 	"centralauth-listusers-nolocal": "non asociáu o nun esiste llocalmente",
-	"centralauth-log-entry-chgstatus": "camudó l'estáu de la cuenta global «$1»: Puestu $2; Quitáu $3",
-	"centralauth-log-entry-delete": "eliminó la cuenta global \"$1\"",
 	"centralauth-log-entry-hide": "ocultó la cuenta global \"$1\"",
 	"centralauth-log-entry-lock": "protexó la cuenta global \"$1\"",
 	"centralauth-log-entry-lockandhide": "candó y ocultó la cuenta global \"<nowiki>$1</nowki>\"",

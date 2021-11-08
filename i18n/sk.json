@@ -195,8 +195,6 @@
 	"centralauth-listusers-attached": "[[User:$1|existuje lokálne]]",
 	"centralauth-listusers-locked": "zamknutý",
 	"centralauth-listusers-nolocal": "nepripojený alebo neexistuje lokálne",
-	"centralauth-log-entry-chgstatus": "zmenil stav tohto globálneho účtu „$1“: Nastavené $2; Zrušené $3",
-	"centralauth-log-entry-delete": "zmazal globálny účet „$1“",
 	"centralauth-log-entry-hide": "skryl globálny účet „$1”",
 	"centralauth-log-entry-lock": "zamkol globálny účet „$1“",
 	"centralauth-log-entry-lockandhide": "zamkol a skryl globálny účet „$1”",

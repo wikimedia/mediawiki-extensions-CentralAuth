@@ -273,8 +273,6 @@
 	"centralauth-listusers-attached": "[[User:$1|로컬에 존재]]",
 	"centralauth-listusers-locked": "잠김",
 	"centralauth-listusers-nolocal": "묶이지 않았거나 로컬에 존재하지 않음",
-	"centralauth-log-entry-chgstatus": "님이 \"$1\" 통합 계정의 상태를 바꿨습니다: $2 설정; $3 설정 해제",
-	"centralauth-log-entry-delete": "님이 \"$1\" 통합 계정을 삭제했습니다",
 	"centralauth-log-entry-hide": "님이 \"$1\" 통합 계정을 숨겼습니다",
 	"centralauth-log-entry-lock": "님이 \"$1\" 통합 계정을 잠갔습니다",
 	"centralauth-log-entry-lockandhide": "님이 \"$1\" 통합 계정을 잠그고 숨겼습니다",

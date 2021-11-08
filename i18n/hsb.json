@@ -207,8 +207,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "zawrjeny",
 	"centralauth-listusers-nolocal": "njepřipójsnjeny abo lokalnje njeeksistowacy",
-	"centralauth-log-entry-chgstatus": "je status za globalne konto \"$1 změnił: $2 stajeny, $3 njestajeny",
-	"centralauth-log-entry-delete": "globalne konto \"$1\" zničene",
 	"centralauth-log-entry-hide": "globalne konto \"$1\" schowane",
 	"centralauth-log-entry-lock": "globalne konto \"$1\" zawrjene",
 	"centralauth-log-entry-lockandhide": "globalne konto \"$1\" zawrjene a schowane",

@@ -230,8 +230,6 @@
 	"centralauth-listusers-attached": "[[User:$1|findes lokalt]]",
 	"centralauth-listusers-locked": "låst",
 	"centralauth-listusers-nolocal": "ikke tilknyttet eller findes ikke lokalt",
-	"centralauth-log-entry-chgstatus": "ændrede status for den globale konto \"$1\": Satte $2; fjernede $3",
-	"centralauth-log-entry-delete": "slettede den globale konto \"$1\"",
 	"centralauth-log-entry-hide": "skjulte den globale konto \"$1\"",
 	"centralauth-log-entry-lock": "låste den globale konto \"$1\"",
 	"centralauth-log-entry-lockandhide": "låste og skjulte den globale konto \"$1\"",

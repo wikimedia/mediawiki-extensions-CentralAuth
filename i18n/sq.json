@@ -160,8 +160,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ekziston në wiki-n lokal]]",
 	"centralauth-listusers-locked": "I bllokuar",
 	"centralauth-listusers-nolocal": "pabashkangjitur ose nuk ekziston në wiki-n lokal",
-	"centralauth-log-entry-chgstatus": "ndryshoi statusin e llogarisë globale \"$1\": Vendosi $2; Largoi $3",
-	"centralauth-log-entry-delete": "grisi llogarinë globale \"$1\"",
 	"centralauth-log-entry-hide": "e fshehu llogarinë globale \"$1\"",
 	"centralauth-log-entry-lock": "bllokoi llogarinë globale: $1",
 	"centralauth-log-entry-lockandhide": "e bllokoi dhe e fshehu llogarinë globale \"$1\"",

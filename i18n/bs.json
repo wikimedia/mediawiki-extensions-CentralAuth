@@ -171,8 +171,6 @@
 	"centralauth-listusers-attached": "[[User:$1|postoji lokalno]]",
 	"centralauth-listusers-locked": "zaključan",
 	"centralauth-listusers-nolocal": "neprispojen ili ne postoji lokalno",
-	"centralauth-log-entry-chgstatus": "promijenio je status globalnog računa \"$1\": Postavljeno $2; Uklonjeno $3",
-	"centralauth-log-entry-delete": "izbrisan globalni račun \"$1\"",
 	"centralauth-log-entry-hide": "sakrij globalni račun \"$1\"",
 	"centralauth-log-entry-lock": "zaključani globalni račun \"$1\"",
 	"centralauth-log-entry-lockandhide": "zaključaj i sakrij globalni račun \"$1\"",

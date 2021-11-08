@@ -215,8 +215,6 @@
 	"centralauth-listusers-attached": "[[User:$1|a esist localment]]",
 	"centralauth-listusers-locked": "blocà",
 	"centralauth-listusers-nolocal": "pa tacà o a esist pa localment",
-	"centralauth-log-entry-chgstatus": "a l'ha cangià lë statu dël cont global \"$1\": Ampostà $2; Anulà $3",
-	"centralauth-log-entry-delete": "scancelà ël cont global \"$1\"",
 	"centralauth-log-entry-hide": "a l'ha stërmà ël cont global \"$1\"",
 	"centralauth-log-entry-lock": "a l'ha blocà ël cont global \"$1\"",
 	"centralauth-log-entry-lockandhide": "a l'ha blocà e stërmà ël cont global \"$1\"",

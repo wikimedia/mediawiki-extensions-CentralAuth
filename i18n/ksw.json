@@ -6,6 +6,13 @@
 		]
 	},
 	"centralauth-admin-blocklog": "ဘျီၣ် လီၢ်ကု",
+	"centralauth-admin-status-hidden": "ပာ်ဘၢ-",
+	"centralauth-editgroup-noset": "(တအိၣ်ဘၣ်)",
+	"centralauth-editgroup-nowikiset": "တအိၣ်ဘၣ်, ဘၣ်ထွဲဒီးဝံၣ်ကံးခဲလၢာ်.",
+	"centralauth-editset-nouse": "(တအိၣ်ဘၣ်)",
+	"centralauth-editset-nowikis": "(တအိၣ်ဘၣ်)",
 	"centralauth-foreign-link": "ပှၤသူတၢ်ဖိ $1 လၢ $2",
-	"centralauth-merge-method-login": "တ့ထီၣ်လၢနနုာ်လီၤ"
+	"centralauth-log-status-none": "(တအိၣ်ဘၣ်)",
+	"centralauth-merge-method-login": "တ့ထီၣ်လၢနနုာ်လီၤ",
+	"globalrenamequeue-form-status-all": "ခဲလၢာ်"
 }

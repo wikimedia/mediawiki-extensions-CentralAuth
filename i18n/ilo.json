@@ -218,8 +218,6 @@
 	"centralauth-listusers-attached": "[[User:$1|lokal nga adda]]",
 	"centralauth-listusers-locked": "naserraan",
 	"centralauth-listusers-nolocal": "saan a naikabit wenno lokal nga awan",
-	"centralauth-log-entry-chgstatus": "sinukatan ti kasasaad ti global a pakabilangan ni \"$1\": Isaad iti $2; Di isaad iti $3",
-	"centralauth-log-entry-delete": "inikkat ti global a pakabilangan ni \"$1\"",
 	"centralauth-log-entry-hide": "inlemmeng ti global a pakabilangan ni \"$1\"",
 	"centralauth-log-entry-lock": "naserraan ti global a pakabilangan ni \"$1\"",
 	"centralauth-log-entry-lockandhide": "sinerraan ken inlemmeng ti global a pakabilangan ni \"$1\"",

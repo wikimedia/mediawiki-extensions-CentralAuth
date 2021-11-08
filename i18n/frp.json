@@ -150,8 +150,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ègziste localament]]",
 	"centralauth-listusers-locked": "vèrrolyê",
 	"centralauth-listusers-nolocal": "pas rapondu ou ben ègziste pas localament",
-	"centralauth-log-entry-chgstatus": "at changiê lo statut du compto globâl « $1 » : $2 activâ ; $3 dèsactivâ",
-	"centralauth-log-entry-delete": "at suprimâ lo compto globâl « $1 »",
 	"centralauth-log-entry-hide": "at cachiê lo compto globâl « $1 »",
 	"centralauth-log-entry-lock": "at vèrrolyê lo compto globâl « $1 »",
 	"centralauth-log-entry-lockandhide": "at vèrrolyê et pués cachiê lo compto globâl « $1 »",

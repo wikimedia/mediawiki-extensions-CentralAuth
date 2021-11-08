@@ -180,8 +180,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ana sacara lokal]]",
 	"centralauth-listusers-locked": "dikunci",
 	"centralauth-listusers-nolocal": "ora kalebu utawa ora kapernah ing enggonan",
-	"centralauth-log-entry-chgstatus": "ngganti wisésadharma dadi akun global \"$1\": masang $2; nyopot $3",
-	"centralauth-log-entry-delete": "akun global \"$1\" dibusak",
 	"centralauth-log-entry-hide": "dhelikaké akun global \"$1\"",
 	"centralauth-log-entry-lock": "akun global \"$1\" digembok",
 	"centralauth-log-entry-lockandhide": "akun \"$1\" wis dikunci lan didhelikaké",

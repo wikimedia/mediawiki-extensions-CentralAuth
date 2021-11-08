@@ -215,8 +215,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "dikunci",
 	"centralauth-listusers-nolocal": "tidak dicantumkan atau bukan tempatan",
-	"centralauth-log-entry-chgstatus": "status akaun sejagat \"$1\" diubah: Tetapkan $2; Nyahtetapkan $3",
-	"centralauth-log-entry-delete": "menghapuskan akaun sejagat \"$1\"",
 	"centralauth-log-entry-hide": "menyembunyikan akaun sejagat \"$1\"",
 	"centralauth-log-entry-lock": "mengunci akaun sejagat \"$1\"",
 	"centralauth-log-entry-lockandhide": "mengunci dan menyembunyikan akaun \"$1\"",

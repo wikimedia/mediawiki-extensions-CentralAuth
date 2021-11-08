@@ -196,8 +196,6 @@
 	"centralauth-listusers-attached": "[[User:$1|bez ez eus dioutañ en un doare lec'hel]]",
 	"centralauth-listusers-locked": "prennet",
 	"centralauth-listusers-nolocal": "nann-staget pe n'eus ket outañ en un doare lec'hel",
-	"centralauth-log-entry-chgstatus": "en deus kemmet statud ar gont hollek \"$1\": $2 gweredekaet ; $3 diweredekaet",
-	"centralauth-log-entry-delete": "en deus diverket ar gont hollek \"$1\"",
 	"centralauth-log-entry-hide": "en deus kuzhet ar gont hollek \"$1\"",
 	"centralauth-log-entry-lock": "en deus prennet ar gont hollek \"$1\"",
 	"centralauth-log-entry-lockandhide": "en deus prennet ha kuzhet ar gont hollek \"$1\"",

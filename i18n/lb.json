@@ -217,8 +217,6 @@
 	"centralauth-listusers-attached": "[[User:$1|gëtt et lokal]]",
 	"centralauth-listusers-locked": "gespaart",
 	"centralauth-listusers-nolocal": "net verbonnen oder existéiert net lokal",
-	"centralauth-log-entry-chgstatus": "huet de Statut fir de globale Benotzerkont \"$1\" geännert: $2 aktivéiert; $3 geläscht",
-	"centralauth-log-entry-delete": "geläschte globale Benotzerkont \"$1\"",
 	"centralauth-log-entry-hide": "verstopp de globale Benotzerkont \"$1\"",
 	"centralauth-log-entry-lock": "gespaarte globale Benotzerkont \"$1\"",
 	"centralauth-log-entry-lockandhide": "huet de globale Benotzerkont \"$1\" gespaart a verstoppt",

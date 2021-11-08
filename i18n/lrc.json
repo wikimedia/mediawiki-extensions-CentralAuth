@@ -237,8 +237,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ڤ شکل ڤلاتی هؽسش]]",
 	"centralauth-listusers-locked": "قلف بیٱ",
 	"centralauth-listusers-nolocal": "جگا بیٱ یا ڤ شکل ڤلات نشین ڤجۊد نارٱ",
-	"centralauth-log-entry-chgstatus": "آلشتکاری هال ۉ بار هساو سٱرتاسری «$1»: $2 میزوکاری بی؛ $3 ڤرداشتٱ بی",
-	"centralauth-log-entry-delete": "هساو جهونی \"$1\" پاکسا بیٱ",
 	"centralauth-log-entry-hide": "هساو جهونی \"$1\" پیس بۊئٱ",
 	"centralauth-log-entry-lock": "هساو جهونی  \"$1\"  قلف بیٱ",
 	"centralauth-log-entry-lockandhide": "هساو جهونی  \"$1\" ناْ قلف ۉ پیس کرد",

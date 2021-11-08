@@ -197,8 +197,6 @@
 	"centralauth-listusers-attached": "[[User:$1|lokal na eksistido]]",
 	"centralauth-listusers-locked": "ikinandado",
 	"centralauth-listusers-nolocal": "dae nakadukot o dae eksistido sa lokal",
-	"centralauth-log-entry-chgstatus": "Pinagliwat na kamugtakan para sa pankinabanong panindog \"$1\": Set $2; Dae ikaag $3",
-	"centralauth-log-entry-delete": "pinagpurang pankinabanong panindog na \"$1\"",
 	"centralauth-log-entry-hide": "tagoon an pankinabanong panindog \"$1\"",
 	"centralauth-log-entry-lock": "Kinandaduhan na pankinabanong panindog  na \"$1\"",
 	"centralauth-log-entry-lockandhide": "Kandaduhan asin tagoong an pankinabanong panindog \"$1\"",

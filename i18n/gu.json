@@ -174,8 +174,6 @@
 	"centralauth-listusers-attached": "[[User:$1|સ્થાનીય રીતે અસ્તિત્વ ધરાવે છે]]",
 	"centralauth-listusers-locked": "પ્રતિબંધીત",
 	"centralauth-listusers-nolocal": "ન જોડાયેલ અથવા સ્થાનિક રીતે અસ્તિત્વ ધરાવતું નથી",
-	"centralauth-log-entry-chgstatus": "વૈશ્વીક ખાતા \"$1\" નું સ્તર બદલાયું, : Set $2; Unset $3",
-	"centralauth-log-entry-delete": "વૈશ્વિક ખાતું  \"$1\" ને હટાવાયું",
 	"centralauth-log-entry-hide": "વૈશ્વિક ખાતું  \"$1\" ને છુપાડો",
 	"centralauth-log-entry-lock": "વૈશ્વિક ખાતું  \"$1\" પર પ્રતિબંધ મુકાયો",
 	"centralauth-log-entry-lockandhide": "તાળાવાસિત અને સંતાયેલા વૈશ્વીક ખાતા \"$1\"",

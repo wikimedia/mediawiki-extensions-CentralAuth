@@ -177,7 +177,6 @@
 	"centralauth-listusers-attached": "[[User:$1|жергілікте бар]]",
 	"centralauth-listusers-locked": "құлыпталған",
 	"centralauth-listusers-nolocal": "тіркеспеген не жергілікті емес",
-	"centralauth-log-entry-delete": "«$1» ғаламдық тіркелгісін жойды",
 	"centralauth-log-entry-hide": "\"$1\" ғаламдық тіркелгісін жасырды \"$1\"",
 	"centralauth-log-entry-lock": "«$1» ғаламдық тіркелгісін құлыптады",
 	"centralauth-log-entry-lockandhide": "\"$1\" ғаламдық тіркелгісін құлыптады және жасырды",

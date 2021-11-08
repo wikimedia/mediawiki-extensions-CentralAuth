@@ -107,7 +107,6 @@
 	"centralauth-list-home-title": "ويکي کور",
 	"centralauth-listusers-attached": "[[User:$1|بل سيمه ايز شته]]",
 	"centralauth-listusers-locked": "تړل شوی",
-	"centralauth-log-entry-delete": "د \"$1\" نړېوال گڼون ړنگ شو",
 	"centralauth-log-entry-hide": "د \"$1\" نړېوال گڼون پټ شو",
 	"centralauth-log-entry-lock": "د \"$1\" نړېوال گڼون وتړل شو",
 	"centralauth-log-entry-lockandhide": "د \"$1\" نړېوال گڼون وتړل او پټ شو",

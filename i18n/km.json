@@ -102,7 +102,6 @@
 	"centralauth-list-home-title": "វិគីទំព័រដើម",
 	"centralauth-list-unattached-title": "គណនីដែលមិនបានភ្ជាប់",
 	"centralauth-listusers-locked": "ត្រូវបានចាក់សោ",
-	"centralauth-log-entry-delete": "គណនីសាកល​ដែល​បានលុប \"$1\"",
 	"centralauth-log-entry-hide": "គណនីសាកល​ដែល​បាន​លាក់ \"$1\"",
 	"centralauth-log-entry-lock": "គណនីសាកល​ដែល​បានចាក់សោ \"$1\"",
 	"centralauth-log-entry-lockandhide": "គណនីសាកល​ដែល​បានចាក់សោ និង​បានលាក់ \"$1\"",

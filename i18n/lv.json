@@ -118,7 +118,6 @@
 	"centralauth-listusers-attached": "[[User:$1|eksistē lokāli]]",
 	"centralauth-listusers-locked": "bloķēti",
 	"centralauth-listusers-nolocal": "nav piesaistīts vai neeksistē lokāli",
-	"centralauth-log-entry-delete": "dzēsa globālo kontu \"$1\"",
 	"centralauth-log-entry-hide": "paslēpa globālo kontu \"$1\"",
 	"centralauth-log-entry-lock": "bloķēja globālo kontu \"$1\"",
 	"centralauth-log-entry-lockandhide": "bloķēja un slēpa globālo kontu \"$1\"",

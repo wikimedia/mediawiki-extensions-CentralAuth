@@ -220,8 +220,6 @@
 	"centralauth-listusers-attached": "[[User:$1|esiste localmente]]",
 	"centralauth-listusers-locked": "bloccato",
 	"centralauth-listusers-nolocal": "scucchiato o nun esiste localmente",
-	"centralauth-log-entry-chgstatus": "state cagnate p' 'o cunto utente globbale \"$1\": Mpustato $2; Luvato $3",
-	"centralauth-log-entry-delete": "scancellato 'o cunto globbale \"$1\"",
 	"centralauth-log-entry-hide": "annascunnuto 'o cunto globbale \"$1\"",
 	"centralauth-log-entry-lock": "bloccato 'o cunto globbale \"$1\"",
 	"centralauth-log-entry-lockandhide": "bloccato e annascunnuto 'o cunto globbale \"$1\"",

@@ -208,8 +208,6 @@
 	"centralauth-listusers-attached": "[[User:$1|υπάρχει τοπικά]]",
 	"centralauth-listusers-locked": "κλειδωμένο",
 	"centralauth-listusers-nolocal": "μη επισυνημμένο ἠ μη υπαρκτό τοπικά",
-	"centralauth-log-entry-chgstatus": "αλλαγή κατάστασης για τον καθολικό λογαριασμό \"$1\": Ενεργοποίηση $2; Απενεργοποίηση $3",
-	"centralauth-log-entry-delete": "διαγράφη καθολικού λογαριασμού \"$1\"",
 	"centralauth-log-entry-hide": "απόκρυψη καθολικού λογαριασμού \"$1\"",
 	"centralauth-log-entry-lock": "κλείδωμα καθολικού λογαριασμού \"$1\"",
 	"centralauth-log-entry-lockandhide": "κλείδωμα και απόκρυψη του καθολικού λογαριασμού \"$1\"",

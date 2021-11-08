@@ -153,7 +153,6 @@
 	"centralauth-list-unattached-title": "नैं जुड़ल खाता सभ",
 	"centralauth-listusers-attached": "[[User:$1|स्थानीय रूप सँ रहल]]",
 	"centralauth-listusers-locked": "अवरुद्ध बन्द केल गेल",
-	"centralauth-log-entry-delete": "नष्ट भेल वैश्विक खाता \"$1\"",
 	"centralauth-log-entry-hide": "\"$1\" विश्वव्यापी खाता नुकाएल",
 	"centralauth-log-entry-lock": "लॉक भेल वैश्विक खाता \"$1\"",
 	"centralauth-log-entry-unhide": "\"$1\" वैश्विक खाता नैं नुकाऊँ",

@@ -182,8 +182,6 @@
 	"centralauth-listusers-attached": "[[User:$1|besteit lokaal]]",
 	"centralauth-listusers-locked": "aafgesjörmp",
 	"centralauth-listusers-nolocal": "neet verbónje of besteit lokaal neet",
-	"centralauth-log-entry-chgstatus": "angerdje de staat venne globale gebroeker \"$1: Zatj $2; Ónzatj $3",
-	"centralauth-log-entry-delete": "wisde globale gebroeker \"$1\"",
 	"centralauth-log-entry-hide": "verbórg globale gebroeker \"$1\"",
 	"centralauth-log-entry-lock": "haet de globale gebroeker \"$1\" aafgeslaote",
 	"centralauth-log-entry-lockandhide": "sloot èn verbórg de globale gebroeker \"$1\"",

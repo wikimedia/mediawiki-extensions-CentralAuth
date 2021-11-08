@@ -231,8 +231,6 @@
 	"centralauth-listusers-attached": "[[User:$1|स्थानीय रूप से मौजूद]]",
 	"centralauth-listusers-locked": "लॉक किया हुआ",
 	"centralauth-listusers-nolocal": "ना जुड़ा हुआ या स्थानीय स्तर पर मौजूद नहीं",
-	"centralauth-log-entry-chgstatus": "वैश्विक खाते \"$1\" की स्थिति में परिवर्तन किया: $2 सेट किया; $3 हटाया",
-	"centralauth-log-entry-delete": "\"$1\" वैश्विक खाता हटाया गया है",
 	"centralauth-log-entry-hide": "\"$1\" वैश्विक खाता छुपाया",
 	"centralauth-log-entry-lock": "\"$1\" वैश्विक खाते को लॉक किया",
 	"centralauth-log-entry-lockandhide": "\"$1\" वैश्विक खाते को लॉक किया और छुपाया",

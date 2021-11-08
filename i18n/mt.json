@@ -160,8 +160,6 @@
 	"centralauth-listusers-attached": "[[User:$1|jeżisti lokalment]]",
 	"centralauth-listusers-locked": "imblukkat",
 	"centralauth-listusers-nolocal": "separat jew ma jeżistix lokalment",
-	"centralauth-log-entry-chgstatus": "biddel l-istat tal-kont globali \"$1\": Kien $2, Sar $3",
-	"centralauth-log-entry-delete": "kont globali \"$1\" imħassar",
 	"centralauth-log-entry-hide": "kont globali \"$1\" moħbi",
 	"centralauth-log-entry-lock": "kont globali \"$1\" imblukkat",
 	"centralauth-log-entry-lockandhide": "kont globali \"$1\" imblukkat u moħbi",

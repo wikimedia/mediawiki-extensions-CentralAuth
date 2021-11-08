@@ -206,8 +206,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "блоктоьхна",
 	"centralauth-listusers-nolocal": "цхьаьнатоьхна йа локалан йац",
-	"centralauth-log-entry-chgstatus": "хийцина глобалан декъашхочун дӀайаздаран статус «$1». ХӀоттина: $2; дӀайаьккхина $3",
-	"centralauth-log-entry-delete": "дӀайаккха декъашхочун глобалан агӀо «$1»",
 	"centralauth-log-entry-hide": "къайлайаккха декъашхочун глобалан агӀо «$1»",
 	"centralauth-log-entry-lock": "дӀаяйина декъашхочун глобалан агӀо «$1»",
 	"centralauth-log-entry-lockandhide": "йухатуьхира/хьулйира декъашхочун глобалан агӀо «$1»",

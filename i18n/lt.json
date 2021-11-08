@@ -233,8 +233,6 @@
 	"centralauth-listusers-attached": "[[User:$1|egzistuoja lokaliai]]",
 	"centralauth-listusers-locked": "užrakinta",
 	"centralauth-listusers-nolocal": "neprijungtas arba lokaliai neegzistuoja",
-	"centralauth-log-entry-chgstatus": "pakeista bendrosios paskyros „$1“ būsena: Įjungta $2; Išjungta $3",
-	"centralauth-log-entry-delete": "ištrinta bendroji paskyra „$1“",
 	"centralauth-log-entry-hide": "paslėpta bendroji paskyra „$1“",
 	"centralauth-log-entry-lock": "užrakinta bendroji paskyra „$1“",
 	"centralauth-log-entry-lockandhide": "užrakinta ir paslėpta bendroji paskyra „$1“",

@@ -151,8 +151,6 @@
 	"centralauth-listusers-attached": "[[User:$1|git s lokal]]",
 	"centralauth-listusers-locked": "gsperrt",
 	"centralauth-listusers-nolocal": "nit verbunde oder lokal nit vorhande",
-	"centralauth-log-entry-chgstatus": "het dr Status vum wältwyte Benutzerkonto \"$1 gänderet: Setze $2; Nit setze $3",
-	"centralauth-log-entry-delete": "het s wältwyt Benutzerkonto „$1“ glescht",
 	"centralauth-log-entry-hide": "het s wältwyt Benutzerkonto „$1“ versteckt",
 	"centralauth-log-entry-lock": "het s wältwyt Benutzerkonto „$1“ gsperrt",
 	"centralauth-log-entry-lockandhide": "het s wältwyt Benutzerkonto „$1“ gsperrt un versteckt",

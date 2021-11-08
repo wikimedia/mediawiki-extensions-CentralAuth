@@ -165,8 +165,6 @@
 	"centralauth-listusers-attached": "[[User:$1|existís localament]]",
 	"centralauth-listusers-locked": "verrolhat",
 	"centralauth-listusers-nolocal": "pas estacat o existís pas localament",
-	"centralauth-log-entry-chgstatus": "a cambiat l'estatut del compte global « $1 » : $2 activat ; $3 desactivat",
-	"centralauth-log-entry-delete": "a suprimit lo compte global « $1 »",
 	"centralauth-log-entry-hide": "a amagat lo compte global « $1 »",
 	"centralauth-log-entry-lock": "a verrolhat lo compte global « $1 »",
 	"centralauth-log-entry-lockandhide": "a verrolhat puèi a amagat lo compte global « $1 »",

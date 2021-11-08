@@ -78,7 +78,6 @@
 	"centralauth-listusers-attached": "[[User:$1|جەرگىلىكتى بار]]",
 	"centralauth-listusers-locked": "قۇلىپتالعان",
 	"centralauth-listusers-nolocal": "تىركەسپەگەن نە جەرگىلىكتى ەمەس",
-	"centralauth-log-entry-delete": "«$1» عالامدىق تىركەلگىسىن جويدى",
 	"centralauth-log-entry-lock": "«$1» عالامدىق تىركەلگىسىن قۇلىپتادى",
 	"centralauth-log-entry-unlock": "«$1» عالامدىق تىركەلگىسىنىڭ قۇلىپتاۋىن ٴوشىردى",
 	"centralauth-log-header": "بۇل جۋرنالدا عالامدىق تىركەلگىمەن جاسالعان امالدار جازىلىپ الىنادى: جويۋلار, قۇلىپتاۋ جانە قۇلىپتاۋدى ٴوشىرۋ.",

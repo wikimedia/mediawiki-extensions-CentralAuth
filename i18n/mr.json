@@ -222,8 +222,6 @@
 	"centralauth-listusers-attached": "[[User:$1|स्थानिक पातळीवरच अस्तित्वात]]",
 	"centralauth-listusers-locked": "कुलुपबंद",
 	"centralauth-listusers-nolocal": "जोडलेले नाही किंवा स्थानिक पातळीवर अस्तित्वात नाही",
-	"centralauth-log-entry-chgstatus": "वैश्विक खात्याकरिता बदललेली स्थिती \"$1\":   $2 (सेट) करा;  $3 पूर्ववत (अनसेट)करा",
-	"centralauth-log-entry-delete": "\"$1\" हे वैश्विक खाते वगळले",
 	"centralauth-log-entry-hide": "\"$1\" हे वैश्विक खाते लपवा",
 	"centralauth-log-entry-lock": "\"$1\" या वैश्विक खात्याला कुलुप लावले",
 	"centralauth-log-entry-lockandhide": "\"$1\" वैश्विक खात्यास कुलुप लावुन लपविण्यात आले.",

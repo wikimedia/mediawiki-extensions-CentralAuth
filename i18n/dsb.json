@@ -193,8 +193,6 @@
 	"centralauth-listusers-attached": "[[User:$1|eksistěrujo lokalnje]]",
 	"centralauth-listusers-locked": "zastajony",
 	"centralauth-listusers-nolocal": "wótpowjesony abo njeeksistěrujo lokalnje",
-	"centralauth-log-entry-chgstatus": "jo změnił status za globalne konto $1: Stajony $2; Njestajony $3",
-	"centralauth-log-entry-delete": "globalne konto \"$1\" wulašowane",
 	"centralauth-log-entry-hide": "globalne konto \"$1\" schowane",
 	"centralauth-log-entry-lock": "globalne konto \"$1\" zastajone",
 	"centralauth-log-entry-lockandhide": "globalne konto \"$1\" zastajone a schowane",

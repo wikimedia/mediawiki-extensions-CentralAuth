@@ -153,8 +153,6 @@
 	"centralauth-listusers-attached": "[[User:$1|єствує локално]]",
 	"centralauth-listusers-locked": "заблокованый",
 	"centralauth-listusers-nolocal": "не припоєный або локално не єствує",
-	"centralauth-log-entry-chgstatus": "змінив статус ґлобалного конта „$1“: Наставлене $2, Зняте $3",
-	"centralauth-log-entry-delete": "змазав ґлобалне конто „$1“",
 	"centralauth-log-entry-hide": "сховав ґлобалне конто „$1“",
 	"centralauth-log-entry-lock": "заблоковав ґлобалне конто „$1“",
 	"centralauth-log-entry-lockandhide": "заблоковав о сховав ґлобалне конто „$1“",

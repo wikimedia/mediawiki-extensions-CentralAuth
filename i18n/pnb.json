@@ -154,8 +154,6 @@
 	"centralauth-listusers-attached": "[[User:$1|لوکل کھاتا اے]]",
 	"centralauth-listusers-locked": "تالا",
 	"centralauth-listusers-nolocal": "وکھرے یا لوکلی ہے نئیں",
-	"centralauth-log-entry-chgstatus": "جگت کھاتے دا بدلیا سٹیٹس \"$1\": سیٹ $2؛ انسیٹ $3",
-	"centralauth-log-entry-delete": "مٹایا گیا گلوبل کھاتا \"$1\"",
 	"centralauth-log-entry-hide": "چھپایا گیا گلوبل کھاتا \"$1\"",
 	"centralauth-log-entry-lock": "روکیا گیا گلوبل کھاتا \"$1\"",
 	"centralauth-log-entry-lockandhide": "روکیا گیا تے چھپایا گیا گلوبل کھاتا \"$1\"",

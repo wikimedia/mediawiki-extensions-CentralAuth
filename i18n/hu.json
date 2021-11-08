@@ -255,8 +255,6 @@
 	"centralauth-listusers-attached": "[[User:$1|helyben létezik]]",
 	"centralauth-listusers-locked": "zárolva",
 	"centralauth-listusers-nolocal": "nincs csatolva vagy helyben nem létezik",
-	"centralauth-log-entry-chgstatus": "„$1” globális szerkesztői fiók állapota megváltoztatva: $2 bekapcsolva, $3 kikapcsolva",
-	"centralauth-log-entry-delete": "törölte a(z) „$1” nevű globális fiókot",
 	"centralauth-log-entry-hide": "elrejtette a(z) „$1” nevű globális fiókot",
 	"centralauth-log-entry-lock": "lezárta a(z) „$1” nevű globális fiókot",
 	"centralauth-log-entry-lockandhide": "lezárta és elrejtette a(z) „$1” nevű globális fiókot",

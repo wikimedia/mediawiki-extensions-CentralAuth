@@ -173,8 +173,6 @@
 	"centralauth-listusers-attached": "[[User:$1|существует локально]]",
 	"centralauth-listusers-locked": "хатаа",
 	"centralauth-listusers-nolocal": "холбоммотох эбэтэр не существует локально",
-	"centralauth-log-entry-chgstatus": "\"$1\" аат туругун уларыппыт. Туруоруу: $2; устуу $3",
-	"centralauth-log-entry-delete": "\"$1\" сүрүн аат сотулунна",
 	"centralauth-log-entry-hide": "биирдэһиллибит \"$1\" ааты кистээбит",
 	"centralauth-log-entry-lock": "\"$1\" сүрүн аат хатанна",
 	"centralauth-log-entry-lockandhide": "\"$1\" биирдэһиллибит ааты саппыт уонна кистээбит",

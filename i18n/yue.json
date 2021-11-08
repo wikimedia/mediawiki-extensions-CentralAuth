@@ -127,7 +127,6 @@
 	"centralauth-listusers-attached": "[[User:$1|響本地存在]]",
 	"centralauth-listusers-locked": "鎖咗",
 	"centralauth-listusers-nolocal": "未附加或唔響本地存在",
-	"centralauth-log-entry-delete": "已經刪咗全域戶口\"$1\"",
 	"centralauth-log-entry-hide": "已經隱藏咗全域戶口\"$1\"",
 	"centralauth-log-entry-lock": "已經鎖咗全域戶口\"$1\"",
 	"centralauth-log-entry-lockandhide": "已經鎖住同隱藏咗全域戶口\"$1\"",

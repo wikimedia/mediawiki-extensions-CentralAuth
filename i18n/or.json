@@ -171,8 +171,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ସ୍ଥାନୀୟ ଭାବେ ରହିଛନ୍ତି]]",
 	"centralauth-listusers-locked": "କିଳାଯାଇଥିବା",
 	"centralauth-listusers-nolocal": "ଯୋଡ଼ାନାହିଁ ବା ସ୍ଥାନୀୟ ଭାବରେ ନାହିଁ ।",
-	"centralauth-log-entry-chgstatus": "\"$1\" ଜଗତୀକରଣ ଖାତାର ସ୍ଥିତି ବଦଳାଗଲା: $2 ଗୋଠ ଭିତର କରିବେ; $3 ଗୋଠରୁ ବାହାର କରିବେ",
-	"centralauth-log-entry-delete": "ବିଶ୍ଵ ଖାତା \"$1\" ଟି ଲିଭାଯାଇଅଛି ।",
 	"centralauth-log-entry-hide": "ବିଶ୍ଵ ଏକାକୀରଣ କରାଯାଇଥିବା ଖାତା \"$1\"ଟି ଲୁଚାଇ ଦିଆଗଲା",
 	"centralauth-log-entry-lock": "ବିଶ୍ଵ ଏକାକୀରଣ କରାଯାଇଥିବା ଖାତା \"$1\" କିଳାଯାଇଅଛି",
 	"centralauth-log-entry-lockandhide": "ବିଶ୍ଵ ଏକାକୀରଣ କରାଯାଇଥିବା ଖାତା \"$1\" କିଳାଯାଇଅଛି ଓ ଲୁଚାଯାଇଅଛି",

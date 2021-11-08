@@ -148,7 +148,6 @@
 	"centralauth-list-unattached-title": "नजोड़ान खाता",
 	"centralauth-listusers-attached": "[[User:$1|स्थानीय रूप से मौजूद]]",
 	"centralauth-listusers-locked": "लॉक करा है",
-	"centralauth-log-entry-delete": "\"$1\" वैश्विक खाता हटाई गय",
 	"centralauth-log-entry-lock": "\"$1\" वैश्विक खाता कय लॉक कई गय",
 	"centralauth-log-name": "वैश्विक खाता लॉग",
 	"centralauth-log-status-hidden": "लुकुआवा है",

@@ -202,8 +202,6 @@
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
 	"centralauth-listusers-locked": "zaključan",
 	"centralauth-listusers-nolocal": "neprivezan ili ne postoji lokalno",
-	"centralauth-log-entry-chgstatus": "je promenio stanje globalnog naloga „$1“: postavljeno na $2; uklonjeno $3",
-	"centralauth-log-entry-delete": "je obrisao globalni nalog „$1“",
 	"centralauth-log-entry-hide": "je sakrio globalni nalog „$1“",
 	"centralauth-log-entry-lock": "je zaključao globalni nalog „$1“",
 	"centralauth-log-entry-lockandhide": "je zaključao i sakrio globalni nalog „$1“",

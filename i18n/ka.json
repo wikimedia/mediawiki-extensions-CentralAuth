@@ -213,8 +213,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ლოკალურად არსებობს]]",
 	"centralauth-listusers-locked": "ჩაკწტილია",
 	"centralauth-listusers-nolocal": "არ არის მიერთებული ან ლოკალურად არ არსებობს",
-	"centralauth-log-entry-chgstatus": "შეცვალა გლობალური ანგარიშის \"$1\" სტატუსი: გახდა $2; იყო $3",
-	"centralauth-log-entry-delete": "წაიშალა გლობალური ანგარიში „$1“",
 	"centralauth-log-entry-hide": "დამალა გლობალური ანგარიში \"$1\"",
 	"centralauth-log-entry-lock": "დაბლოკა გლობალური ანგარიში \"$1\"",
 	"centralauth-log-entry-lockandhide": "დაბლოკა და დამალა გლობალური ანგარიში  «$1»",

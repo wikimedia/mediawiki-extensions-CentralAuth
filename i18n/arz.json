@@ -110,7 +110,6 @@
 	"centralauth-listusers-attached": "[[User:$1|موجود ع المستوى المحلي]]",
 	"centralauth-listusers-locked": "مقفول",
 	"centralauth-listusers-nolocal": "مش مرتبط او مش موجود ع المستوى المحلي",
-	"centralauth-log-entry-delete": "مسح الحساب العام \"$1\"",
 	"centralauth-log-entry-hide": "خبى الحساب العام \"$1\"",
 	"centralauth-log-entry-lock": "قفل الحساب العام \"$1\"",
 	"centralauth-log-entry-lockandhide": "قفل و خبى الحساب العام \"$1\"",

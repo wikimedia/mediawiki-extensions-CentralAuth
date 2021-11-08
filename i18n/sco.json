@@ -214,8 +214,6 @@
 	"centralauth-listusers-attached": "[[User:$1|exeests locallie]]",
 	"centralauth-listusers-locked": "lockt",
 	"centralauth-listusers-nolocal": "onattached or disna exeest locallie",
-	"centralauth-log-entry-chgstatus": "chynged status fer global accoont \"$1\": Set $2; Onset $3",
-	"centralauth-log-entry-delete": "delyted global accoont \"$1\"",
 	"centralauth-log-entry-hide": "skaukt global accoont \"$1\"",
 	"centralauth-log-entry-lock": "lockt global accoont \"$1\"",
 	"centralauth-log-entry-lockandhide": "lockt n skaukt global accoont \"$1\"",

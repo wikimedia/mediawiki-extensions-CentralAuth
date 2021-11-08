@@ -167,8 +167,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ملکی در بیت]]",
 	"centralauth-listusers-locked": "کبلنت",
 	"centralauth-listusers-nolocal": "هورنهنت یا که ملکی موجود نهنت",
-	"centralauth-log-entry-chgstatus": "تغییر وضعیت حساب سراسری «$1»: $2 تنظیم شد؛ $3 برداشته شد",
-	"centralauth-log-entry-delete": "حذف بوت حساب سراسری \"$1\"",
 	"centralauth-log-entry-hide": "حساب سراسری پناه کن \"$1\"",
 	"centralauth-log-entry-lock": "حساب سراسری کبلنت \"$1\"",
 	"centralauth-log-entry-lockandhide": "حساب سراسری \"$1\" کبل و پناه بوت",

@@ -170,8 +170,6 @@
 	"centralauth-listusers-attached": "[[User:$1|finst lokalt]]",
 	"centralauth-listusers-locked": "låst",
 	"centralauth-listusers-nolocal": "ikkje tilslutta eller finst ikkje lokalt",
-	"centralauth-log-entry-chgstatus": "endra status for den globale kontoen «$1»: Sette $2; Tok vekk $3",
-	"centralauth-log-entry-delete": "sletta den globale kontoen «<nowii>$1</nowiki>»",
 	"centralauth-log-entry-hide": "gøymde den globale kontoen «$1»",
 	"centralauth-log-entry-lock": "låste den globale kontoen «$1»",
 	"centralauth-log-entry-lockandhide": "låste og gøymde den globale kontoen «$1»",

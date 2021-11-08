@@ -101,7 +101,6 @@
 	"centralauth-list-unattached": "Rekening \"$1\" teu bisa sacara otomatis dikonfirmasi milik anjeun di loka di handap ieu; sigana mah alatan beda sandina ti rekening utama anjeun:",
 	"centralauth-list-unattached-title": "Akun misah",
 	"centralauth-listusers-locked": "dikonci",
-	"centralauth-log-entry-delete": "akun global \"$1\" dihapus",
 	"centralauth-log-entry-hide": "Nyumputkeun akun global \"$1\"",
 	"centralauth-log-entry-lock": "akun global \"$1\" geus dikonci",
 	"centralauth-log-entry-unhide": "Nembongkeun deui akun global \"$1\"",

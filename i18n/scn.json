@@ -123,6 +123,7 @@
 	"globalrenamerequest-legend": "Addumannata di rinòmina unificata",
 	"globalrenamerequest-username-label": "Nomu utenti attuali:",
 	"globalusers": "Elencu di l'utenti glubbali",
+	"logentry-globalauth-delete": "$1 {{GENDER:$2|cancillau}} lu cuntu glubbali \"$3\"",
 	"mergeaccount": "Prucessu d'unificazzioni di l'utenzi - status",
 	"userswhowillberenamed": "Utenti c'hannu a èssiri rinuminati"
 }

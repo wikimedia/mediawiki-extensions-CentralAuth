@@ -156,7 +156,6 @@
 	"centralauth-listusers-attached": "[[User:$1|er lokalur]]",
 	"centralauth-listusers-locked": "stongd",
 	"centralauth-listusers-nolocal": "er ikki tilknýttur ella er ikki til lokalt",
-	"centralauth-log-entry-delete": "strikaði globala konto \"$1\"",
 	"centralauth-log-entry-hide": "fjal globala konto \"$1\"",
 	"centralauth-log-entry-lock": "stongdi globala konto \"$1\"",
 	"centralauth-log-entry-lockandhide": "stongd og fjald global konta \"$1\"",

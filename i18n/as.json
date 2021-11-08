@@ -161,8 +161,6 @@
 	"centralauth-listusers-attached": "[[User:$1|স্থানীয়ভাৱে আছে]]",
 	"centralauth-listusers-locked": "বন্ধ",
 	"centralauth-listusers-nolocal": "বিচ্ছিন্ন বা স্থানীয়ভাৱে অস্তিত্ব নাই",
-	"centralauth-log-entry-chgstatus": "গোলকীয় একাউণ্ট \"$1\"ৰ অৱস্থা সলনি কৰা হৈছে: সংহতি $2; অসংহতি $3",
-	"centralauth-log-entry-delete": "মছি পেলোৱা গোলকীয় একাউণ্ট \"$1\"",
 	"centralauth-log-entry-hide": "গোলকীয় একাউণ্ট \"$1\" গোপন কৰা হৈছে",
 	"centralauth-log-entry-lock": "গোলকীয় একাউণ্ট \"$1\" বন্ধ কৰা হৈছে",
 	"centralauth-log-entry-lockandhide": "গোলকীয় একাউণ্ট \"$1\" বন্ধ আৰু গোপন কৰা হৈছে",

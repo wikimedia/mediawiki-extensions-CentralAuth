@@ -166,8 +166,6 @@
 	"centralauth-listusers-attached": "[[User:$1|یئرلی اولا‌راق واردیر]]",
 	"centralauth-listusers-locked": "باغلانمیش",
 	"centralauth-listusers-nolocal": "متصل اولمویوب و یا یئرلی اولا‌راق مؤوجود دئییل",
-	"centralauth-log-entry-chgstatus": "ایستفاده چی حساب \"$1 اوچون وضعیت دییشدی: $2 نیزاملاندی؛ $3 نیزاملانما گؤتورولدو",
-	"centralauth-log-entry-delete": "\"$1\" ایستفاده چی حسابی سیلیندی",
 	"centralauth-log-entry-hide": "\"$1\" ایستفاده چی حسابی گیزلندی",
 	"centralauth-log-entry-lock": "\"$1\" ایستفاده چی حسابی باغلاندی",
 	"centralauth-log-entry-lockandhide": "\"$1\" ایستفاده چی حسابی باغلاندی و گیزلندی",

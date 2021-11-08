@@ -246,8 +246,6 @@
 	"centralauth-listusers-attached": "[[User:$1|existeix localment]]",
 	"centralauth-listusers-locked": "Blocat",
 	"centralauth-listusers-nolocal": "no unit o no existeix localment",
-	"centralauth-log-entry-chgstatus": "canviat l'estatus del compte global «$1»: Posat $2; Tret $3",
-	"centralauth-log-entry-delete": "esborrat el compte global «$1»",
 	"centralauth-log-entry-hide": "ocultar el compte global \"$1\"",
 	"centralauth-log-entry-lock": "blocat el compte global «$1»",
 	"centralauth-log-entry-lockandhide": "ha blocat i amagat el compte global \"$1\"",

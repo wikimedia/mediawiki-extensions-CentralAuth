@@ -156,8 +156,6 @@
 	"centralauth-listusers-attached": "[[User:$1|स्थानीयशः विद्यते]]",
 	"centralauth-listusers-locked": "अवरुद्धम्",
 	"centralauth-listusers-nolocal": "अयोजितम् अथवा स्थानीयशः न विद्यते",
-	"centralauth-log-entry-chgstatus": "\"$1\" वैश्विकाभिलेखस्य परिवर्तिता स्थितिः : सगणः $2; विगणः $3",
-	"centralauth-log-entry-delete": "\"$1\" वैश्विकाभिलेखः विलोपितः",
 	"centralauth-log-entry-hide": "\"$1\" वैश्विकाभिलेखः गोपितः",
 	"centralauth-log-entry-lock": "\"$1\" वैश्विकाभिलेखः अवरुद्धः ।",
 	"centralauth-log-entry-lockandhide": "\"$1\" वैश्विकाभिलेखः अवरुद्धः गोपितश्च",

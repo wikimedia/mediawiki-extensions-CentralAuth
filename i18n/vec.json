@@ -182,8 +182,6 @@
 	"centralauth-listusers-attached": "[[User:$1|esiste localmente]]",
 	"centralauth-listusers-locked": "inciavà",
 	"centralauth-listusers-nolocal": "destacà o mìa esistente localmente",
-	"centralauth-log-entry-chgstatus": "el ga modifegà el stato de l'utensa globałe \"$1\": inpostà $2, desfà $3",
-	"centralauth-log-entry-delete": "scancelà account globale \"$1\"",
 	"centralauth-log-entry-hide": "gà sconto l'account globale \"$1\"",
 	"centralauth-log-entry-lock": "blocà account globale \"$1\"",
 	"centralauth-log-entry-lockandhide": "gà inciavà e sconto l'account globale \"$1\"",
