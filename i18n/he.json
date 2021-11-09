@@ -195,8 +195,8 @@
 	"centralauth-editset-notfound": "קבוצת אתרי הוויקי \"$1\" לא נמצאה.",
 	"centralauth-editset-nouse": "(לא בשימוש)",
 	"centralauth-editset-nowikis": "(אין)",
-	"centralauth-editset-optin": "לפי בחירה (רק אתרי הוויקי שברשימה נמצאים בקבוצה)",
-	"centralauth-editset-optout": "מבוססת רשימה שחורה (רק אתרי הוויקי שאינם ברשימה נמצאים בקבוצה)",
+	"centralauth-editset-optin": "לפי בחירה להשתמש (כולל רק את אתרי הוויקי שצוינו)",
+	"centralauth-editset-optout": "לפי בחירה לא להשתמש (כולל את כל אתרי הוויקי מלבד אלה שצוינו)",
 	"centralauth-editset-reason": "סיבה:",
 	"centralauth-editset-restwikis": "אתרי ויקי שאינם כלולים לעיל:",
 	"centralauth-editset-return": "חזרה לתצוגה הראשית",
@@ -379,8 +379,8 @@
 	"centralauth-rightslog-entry-usergroups": "שינה את ההרשאות הגלובליות של $1 מ־$2 ל־$3",
 	"centralauth-rightslog-header": "היומן הזה כולל פעולות על קבוצות גלובליות, כולל חברות בקבוצות ושינויי הרשאות",
 	"centralauth-rightslog-name": "יומן הרשאות גלובליות",
-	"centralauth-rightslog-set-optin": "לפי בחירה",
-	"centralauth-rightslog-set-optout": "רשימה שחורה",
+	"centralauth-rightslog-set-optin": "לפי בחירה להשתמש",
+	"centralauth-rightslog-set-optout": "לפי בחירה לא להשתמש",
 	"centralauth-ro": "מידע על החשבון הגלובלי",
 	"centralauth-seconds-ago": "לפני {{PLURAL:$1|שנייה|$1 שניות}}",
 	"centralauth-state-mismatch": "שגיאה: התגלתה התנגשות עבור המשתמש הזה. נא לבדוק את השינוי שלך ולנסות שוב.",
@@ -529,5 +529,5 @@
 	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה",
 	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד.",
 	"userswhowillberenamed": "משתמשים ששמם ישונה",
-	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשך הימצאותך ברשימה שחורה."
+	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה."
 }
