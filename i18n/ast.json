@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Esbardu",
+			"McDutchie",
 			"Tokvo",
 			"Xuacu"
 		]
@@ -126,7 +127,7 @@
 	"centralauth-centralautologin-logged-in": "Tien fechu l'aniciu de sesión central como $1. Recargue la páxina p'aplicar la so configuración d'usuariu.",
 	"centralauth-centralautologin-logged-in-nouser": "Tien fechu l'aniciu de sesión central. Recargue la páxina p'aplicar la so configuración d'usuariu.",
 	"centralauth-centralautologin-lostsession": "Perdieronse los datos de sesión",
-	"centralauth-centralautologin-notposted": "L'aniciu de sesión central tien d'usar el métodu POST",
+	"centralauth-centralautologin-notposted": "L'aniciu de sesión central tien d'usar el métodu POST.",
 	"centralauth-centralautologin-p3p-explanation": "Ciertos navegadores requieren una [https://www.w3.org/TR/P3P/#compact_policies política P3P compauta] pa unviar y recibir cookies en dalgunos casos, incluyendo la situación rellacionada cola comprobación d'aniciu de sesión SUL. Esto ye un enguedeyu innecesariu nesta situación, considerando que toles páxines implicaes tan nel mesmu grupu de wikis y la propia P3P ta anticuada y abandonada; por suerte, la política inválida qu'enllaza con esta páxina inda considerase \"lo bastante bona\" poles configuraciones predeterminaes d'esos navegadores.\n\nPor favor revisa la política de proteición de datos lleíble por humanos d'esti sitiu pa determinar cómo puede usase la información collechada.",
 	"centralauth-complete": "¡Fusión de cuentes completada!",
 	"centralauth-complete-text": "Agora yá pues identificate en cualesquier wiki de {{int:Centralauth-groupname}} ensin crear una cuenta nueva.",

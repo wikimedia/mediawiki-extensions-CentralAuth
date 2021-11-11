@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Derbeth",
+			"McDutchie",
 			"Michawiki"
 		]
 	},
@@ -102,7 +103,7 @@
 	"centralauth-centralautologin-logged-in": "Sy centralnje ako $1 pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.",
 	"centralauth-centralautologin-logged-in-nouser": "Sy centralnje pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.",
 	"centralauth-centralautologin-lostsession": "Daty pósejźenja su se zgubili",
-	"centralauth-centralautologin-notposted": "Formular za centralne pśizjawjenje musy se z metodu POST rozpósłaś",
+	"centralauth-centralautologin-notposted": "Formular za centralne pśizjawjenje musy se z metodu POST rozpósłaś.",
 	"centralauth-complete": "Pśizjawjeńske zjadnośenje dopołne!",
 	"centralauth-complete-text": "Móžoś se něnto do kuždego wikijego sedła {{int:Centralauth-groupname}} bźez napóranja nowego konta pśizjawiś.",
 	"centralauth-completelogin-back": "Slědk k pjerwjejšnemu bokoju.",

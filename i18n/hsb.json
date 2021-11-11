@@ -3,6 +3,7 @@
 		"authors": [
 			"Dundak",
 			"J budissin",
+			"McDutchie",
 			"Michawiki"
 		]
 	},
@@ -110,7 +111,7 @@
 	"centralauth-centralautologin-logged-in": "Sy centralnje jako $1 přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.",
 	"centralauth-centralautologin-logged-in-nouser": "Sy centralnje přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.",
 	"centralauth-centralautologin-lostsession": "Daty posedźenja su so zhubili",
-	"centralauth-centralautologin-notposted": "Formular za centralne přizjewjenje dyrbi so z metodu POST rozpósłać",
+	"centralauth-centralautologin-notposted": "Formular za centralne přizjewjenje dyrbi so z metodu POST rozpósłać.",
 	"centralauth-centralautologin-p3p-explanation": "Wěste wobhladowaki wužaduja sej kompaktnu P3P-směrnicu za placki, kotrež maja so w někotrych padach pósłać abo dóstać, inkluziwnje situaciju w přizjewjenskej kontroli SUL. To je njetrěbna rynka, přez kotruž dyrbiš skakać, hdyž wobmysluješ, zo wšě strony su w samsnej wikiskupinje a P3P sam je do dalokeje měry zestarjeny a spušćeny; na zbožo standardne konfiguracije tutych wobhladowakow maja njepłaćiwu směrnicu, kotraž na tutu stronu wotkazuje, za \"dobru dosć\".\n\nProšu přepruwuj wot čłowjeka čitajomne prawidła priwatnosće tutoho websydła, zo by zwěsćił, kak zhromadźene informacije bychu so wužiwali.",
 	"centralauth-complete": "Wužiwarske konta su so dospołnje zjednoćili.",
 	"centralauth-complete-text": "Móžeš so nětko do někajkeho wikijoweho sydła na {{int:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.",
