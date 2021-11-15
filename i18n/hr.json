@@ -10,6 +10,7 @@
 			"Kolega2357",
 			"MaGa",
 			"Neptune, the Mystic",
+			"Ponor",
 			"Roberta F.",
 			"SpeedyGonsales"
 		]
@@ -29,7 +30,7 @@
 	"centralauth-admin-blocklog": "evidencija blokiranja",
 	"centralauth-admin-delete-button": "Obriši ovaj račun",
 	"centralauth-admin-delete-description": "Brisanje globalnih računa će obrisati sve globalne postavke, odvojiti sve lokalne račune, i ostaviti globalno ime slobodno za drugog suradnika.\nSvi lokalni računi će ostati prisutni.\nLozinke za lokalne račune napravljene prije spajanja će se vratiti na vrijednost prije spajanja.",
-	"centralauth-admin-delete-nonexistent": "Pogrješka: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
+	"centralauth-admin-delete-nonexistent": "Pogreška: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
 	"centralauth-admin-delete-success": "Globalni račun za \"<nowiki>$1</nowiki>\" je izbrisan.",
 	"centralauth-admin-delete-title": "Obriši račun",
 	"centralauth-admin-group-temporary": "$1 ''(privremeno)''",
@@ -75,7 +76,7 @@
 	"centralauth-admin-status-locked": "Zaključano:",
 	"centralauth-admin-status-locked-no": "Suradnički račun nije zaključan",
 	"centralauth-admin-status-locked-yes": "Račun je zaključan za uređivanje",
-	"centralauth-admin-status-nonexistent": "Pogrješka: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
+	"centralauth-admin-status-nonexistent": "Pogreška: globalni račun »<nowiki>$1</nowiki>« ne postoji.",
 	"centralauth-admin-status-reasons": "* Uobičajeni razlozi zaključavanja\n** račun samo za vandalizam\n** račun samo za spam\n* Uobičajeni razlozi za zaključavanje i sakrivanje\n** zabranjena suradnička imena\n** neprimjereni osobni podaci",
 	"centralauth-admin-status-submit": "Postavite status",
 	"centralauth-admin-suppressreason": "Globalno sakriven od strane $1 iz sljedećeg razloga: $2",
