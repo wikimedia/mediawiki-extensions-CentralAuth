@@ -250,7 +250,7 @@
 	"centralauth-finish-text": "如果這些帳號屬於您的，您只要輸入這些帳號的密碼，便可完成帳號整合：",
 	"centralauth-finish-title": "完成合併",
 	"centralauth-finishglobaliseemail_body": "你的電子郵件地址與計劃上的使用者 \"$2\" 己設連結，該帳號的主要帳號位於 {{SITENAME}}。\n\n為確保該帳號確實屬於您的，我們不會自動合併所有您的帳號並且允許您可以於密碼遺失後還原密碼，請開啟以下連結：\n\n$3\n\n若該帳號 *並不* 屬於您的，請按以下連結以取消電子郵件確認：\n\n$5\n\n此確認代號將於 $6 $7 後過期。",
-	"centralauth-finishglobaliseemail_subject": "{{SITENAME}} 帳號確認",
+	"centralauth-finishglobaliseemail_subject": "{{SITENAME}}帳號確認",
 	"centralauth-foreign-contributions": "於 $2 貢獻 $1 次",
 	"centralauth-foreign-link": "於 $2 的使用者 $1",
 	"centralauth-globalgroupperms-creategroup-submit": "指派權限",
