@@ -26,7 +26,8 @@
 			"Stryn",
 			"Surjection",
 			"Tarmo",
-			"Valtlait"
+			"Valtlait",
+			"Veikk0.ma"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
@@ -100,7 +101,7 @@
 	"centralauth-admin-no": "ei",
 	"centralauth-admin-no-unified": "Käyttäjänimellä ei ole yhdistettyä käyttäjätunnusta.",
 	"centralauth-admin-none-selected": "Et valinnut tunnuksia, joita haluat muokata.",
-	"centralauth-admin-nonexistent": "Järjestelmänlaajuista käyttäjätunnusta ”<nowiki>$1</nowiki>” ei ole.",
+	"centralauth-admin-nonexistent": "Järjestelmänlaajuista käyttäjätunnusta \"<nowiki>$1</nowiki>\" ei ole olemassa.",
 	"centralauth-admin-not-authorized": "Sinulla ei ole oikeuksia suorittaa tätä toimintoa.",
 	"centralauth-admin-permission": "Vain ylivalvojat (steward) voivat yhdistää toisten ihmisten tunnuksia heidän puolestaan.",
 	"centralauth-admin-reason": "Syy:",
@@ -141,7 +142,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|sivu|sivua}}",
 	"centralauth-block-editing-ns": "{{PLURAL:$1|nimiavaruus|nimiavaruutta}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Olet kirjautunut sisään jo paikallisesti.",
-	"centralauth-centralautologin-badparams": "Määritetyt todennusparametrit olivat epäkelpoja.",
+	"centralauth-centralautologin-badparams": "Määritetyt todennusparametrit olivat virheelliset.",
 	"centralauth-centralautologin-badstate": "Epäkelpo tila ”$1”.",
 	"centralauth-centralautologin-badstate-central": "Tila ”$1” ei kelpaa keskuswikissä.",
 	"centralauth-centralautologin-badstate-local": "Tila ”$1” ei ole käytössä paikallisessa wikissä.",
@@ -480,7 +481,7 @@
 	"globalrenamerequest-email-why-explain": "Tarvitsemme tämän prosessin aikana sähköpostiosoitteesi sen takaamiseksi, että tämä käyttäjätunnus pysyy varmasti käytössäsi.<br />Voit poistaa sähköpostiosoitteesi sen jälkeen, kun nimeämisprosessi on saatu valmiiksi.",
 	"globalrenamerequest-email2-help": "Kirjoita sama sähköpostiosoite tähän kuin ylempänä.",
 	"globalrenamerequest-email2-label": "Vahvista sähköpostiosoitteesi:",
-	"globalrenamerequest-forced": "Wikimedia Foundation [[:mw:SUL_finalisation|yhdistää käyttäjänimiä kaikissa Wikimedia-hankkeissa]]. Tämän käyttäjänimen havaittiin olevan käytössä muissa Wikimedia-wikeissä, ja se täytyy muuttaa, jotta yhdistämisoperaatio saataisiin vietyä loppuun. Näin ollen sinun on valittava itsellesi uusi käyttäjänimi.",
+	"globalrenamerequest-forced": "Tämä wikistö yhdistää käyttäjänimiä kaikissa projekteissaan. Tämän käyttäjänimen havaittiin olevan käytössä muissa wikeissä ja se täytyy muuttaa, jotta yhdistämisoperaatio saadaan vietyä loppuun. Näin ollen sinun on valittava itsellesi uusi käyttäjänimi.",
 	"globalrenamerequest-legend": "Yhdistetty nimenvaihtopyyntö",
 	"globalrenamerequest-newname-err-invalid": "Et ole antanut kelvollista käyttäjänimeä.",
 	"globalrenamerequest-newname-err-taken": "Olet syöttänyt sellaisen käyttäjänimen, joka on jo käytössä. Valitse joku toinen nimi sen sijaan.",
