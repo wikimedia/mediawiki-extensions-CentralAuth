@@ -552,6 +552,7 @@
 	"logentry-gblrename-rename": "$1已全域{{GENDER:$2|重命名}}$4至$5",
 	"logentry-globalauth-delete": "$1 已{{GENDER:$2|删除}}全域账户 “$3”",
 	"logentry-globalauth-setstatus": "$1 已为全域账户“$3”{{GENDER:$2|更改}}状态：设置 $4；取消设置 $5",
+	"logentry-newusers-forcecreatelocal": "$1 已为 $3 强制{{GENDER:$2|创建}}本地账号",
 	"mergeaccount": "统一登录状态",
 	"multilock": "锁定多个全局账户",
 	"right-centralauth-createlocal": "强制为全域账号创建本地账号",
