@@ -101,7 +101,8 @@
 				"NamespaceInfo",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService",
-				"ReadOnlyMode"
+				"ReadOnlyMode",
+				"UserNameUtils"
 			]
 		},
 		"CentralLogin": {

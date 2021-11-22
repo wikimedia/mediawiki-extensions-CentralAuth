@@ -15,6 +15,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
+use MediaWiki\User\UserNameUtils;
 use NamespaceInfo;
 use ReadOnlyError;
 use ReadOnlyMode;
@@ -77,23 +78,29 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
 	/**
 	 * @param NamespaceInfo $namespaceInfo
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 * @param ReadOnlyMode $readOnlyMode
+	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
 		NamespaceInfo $namespaceInfo,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
-		ReadOnlyMode $readOnlyMode
+		ReadOnlyMode $readOnlyMode,
+		UserNameUtils $userNameUtils
 	) {
 		parent::__construct( 'CentralAuth' );
 		$this->namespaceInfo = $namespaceInfo;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->readOnlyMode = $readOnlyMode;
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function doesWrites() {
@@ -1048,6 +1055,40 @@ class SpecialCentralAuth extends SpecialPage {
 			];
 		}
 		return $mergeMethodDescriptions;
+	}
+
+	/**
+	 * Return an array of subpages beginning with $search that this special page will accept.
+	 *
+	 * @param string $search Prefix to search for
+	 * @param int $limit Maximum number of results to return (usually 10)
+	 * @param int $offset Number of results to skip (usually 0)
+	 * @return string[] Matching subpages
+	 */
+	public function prefixSearchSubpages( $search, $limit, $offset ) {
+		$search = $this->userNameUtils->getCanonical( $search );
+		if ( !$search ) {
+			// No prefix suggestion for invalid user
+			return [];
+		}
+
+		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+
+		// Autocomplete subpage as user list - non-hidden users to allow caching
+		return $dbr->selectFieldValues(
+			[ 'globaluser' ],
+			'gu_name',
+			[
+				'gu_name' . $dbr->buildLike( $search, $dbr->anyString() ),
+				'gu_hidden' => CentralAuthUser::HIDDEN_NONE,
+			],
+			__METHOD__,
+			[
+				'LIMIT' => $limit,
+				'ORDER BY' => 'gu_name',
+				'OFFSET' => $offset,
+			]
+		);
 	}
 
 	protected function getGroupName() {
