@@ -185,7 +185,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					$html = $skin->makePersonalToolsList();
 					$json = FormatJson::encode( [ 'toolslist' => $html ] );
 				} else {
-					$gender = $this->getUser()->getOption( 'gender' );
+					$gender = $this->userOptionsManager->getOption( $this->getUser(), 'gender' );
 					if ( strval( $gender ) === '' ) {
 						$gender = 'unknown';
 					}
@@ -599,7 +599,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Add a script to the page that will pull in the user's toolslist
 			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
-			$code = $this->getUser()->getOption( 'language' );
+			$code = $this->userOptionsManager->getOption( $this->getUser(), 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
 			Hooks::run( 'UserGetLanguageObject',
 				[ $this->getUser(), &$code, $this->getContext() ]
