@@ -7,9 +7,7 @@ use Html;
 use LogEventsList;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
-use MediaWiki\MediaWikiServices;
 use SpecialPage;
-use Wikimedia\ScopedCallback;
 use Xml;
 
 /**
@@ -438,15 +436,6 @@ class SpecialMultiLock extends SpecialPage {
 			$setHidden = $this->mActionHide;
 		}
 
-		$guard = null;
-		if ( $this->getRequest()->getCheck( 'markasbot' ) ) {
-			if ( !$this->getContext()->getAuthority()->isAllowed( 'bot' ) ) {
-				$guard = MediaWikiServices::getInstance()->getPermissionManager()
-					->addTemporaryUserRights( $this->getUser(), 'bot' );
-			}
-			$this->getRequest()->setVal( 'bot', true );
-		}
-
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 			if ( !$globalUser instanceof CentralAuthUser ) {
 				// Somehow the user submitted a bad user name
@@ -458,7 +447,8 @@ class SpecialMultiLock extends SpecialPage {
 				$setLocked,
 				$setHidden,
 				$this->mReason,
-				$this->getContext()
+				$this->getContext(),
+				$this->getRequest()->getCheck( 'markasbot' )
 			);
 
 			if ( !$status->isGood() ) {
@@ -467,9 +457,6 @@ class SpecialMultiLock extends SpecialPage {
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $globalUser->getName() );
 			}
 		}
-
-		// revoke temporary bot right
-		ScopedCallback::consume( $guard );
 	}
 
 	/**
