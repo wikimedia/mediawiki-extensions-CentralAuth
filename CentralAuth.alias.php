@@ -895,6 +895,7 @@ $specialPageAliases['tr'] = [
 	'MergeAccount' => [ 'HesapBirleştir', 'HesapBirleştirme' ],
 	'GlobalGroupMembership' => [ 'KüreselGrupÜyeliği' ],
 	'GlobalGroupPermissions' => [ 'KüreselGrupİzinleri' ],
+	'GlobalRenameRequest' => [ 'KüreselYenidenAdlandırmaİsteği' ],
 	'WikiSets' => [ 'VikiDizileriniDüzenle' ],
 	'GlobalUsers' => [ 'KüreselKullanıcılar' ],
 ];
