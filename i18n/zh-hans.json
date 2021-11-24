@@ -51,7 +51,8 @@
 			"范",
 			"铁桶",
 			"阿pp",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"落花有意12138"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -164,7 +165,7 @@
 	"centralauth-attach-title": "确认账户",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] 的帐户已被全域锁定。",
 	"centralauth-block-editing-page": "$1{{PLURAL:$1|个页面|个页面}}",
-	"centralauth-block-editing-ns": "$1{{PLURAL:$1|个名字空间|个名字空间}}",
+	"centralauth-block-editing-ns": "$1{{PLURAL:$1|个命名空间}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "您已经在本地登录了",
 	"centralauth-centralautologin-badparams": "指定的认证参数无效",
 	"centralauth-centralautologin-badstate": "无效状态“$1”",

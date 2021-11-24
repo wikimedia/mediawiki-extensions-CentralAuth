@@ -410,7 +410,7 @@
 	"globalrenamerequest-legend": "Eenheetlech Ëmbenennung ufroen",
 	"globalrenamerequest-newname-err-invalid": "Dir hutt kee valabele Benotzernumm uginn.",
 	"globalrenamerequest-newname-err-taken": "De Benotzernumm deen agi gouf gëtt scho benotzt.\nSicht Iech wgl. een anere Benotzernumm.",
-	"globalrenamerequest-newname-help": "Gitt den neie Benotzernumm an deen Dir benotze wëllt, z. Bsp. \"$1\".",
+	"globalrenamerequest-newname-help": "Gitt den neie Benotzernumm an deen Dir benotze wëllt, z. B. \"$1\".",
 	"globalrenamerequest-newname-help-basic": "Gitt den neie Benotzernumm an deen Dir benotze wëllt.",
 	"globalrenamerequest-newname-label": "Ugefrote Benotzernumm:",
 	"globalrenamerequest-reason-label": "Grond fir d'Ufro",

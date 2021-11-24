@@ -26,7 +26,8 @@
 			"Stryn",
 			"Surjection",
 			"Tarmo",
-			"Valtlait"
+			"Valtlait",
+			"Veikk0.ma"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
@@ -483,7 +484,7 @@
 	"globalrenamerequest-email-why-explain": "Tarvitsemme tämän prosessin aikana sähköpostiosoitteesi sen takaamiseksi, että tämä käyttäjätunnus pysyy varmasti käytössäsi.<br />Voit poistaa sähköpostiosoitteesi sen jälkeen, kun nimeämisprosessi on saatu valmiiksi.",
 	"globalrenamerequest-email2-help": "Kirjoita sama sähköpostiosoite tähän kuin ylempänä.",
 	"globalrenamerequest-email2-label": "Vahvista sähköpostiosoitteesi:",
-	"globalrenamerequest-forced": "Wikimedia Foundation [[:mw:SUL_finalisation|yhdistää käyttäjänimiä kaikissa Wikimedia-hankkeissa]]. Tämän käyttäjänimen havaittiin olevan käytössä muissa Wikimedia-wikeissä, ja se täytyy muuttaa, jotta yhdistämisoperaatio saataisiin vietyä loppuun. Näin ollen sinun on valittava itsellesi uusi käyttäjänimi.",
+	"globalrenamerequest-forced": "Tämä wikistö yhdistää käyttäjänimiä kaikissa projekteissaan. Tämän käyttäjänimen havaittiin olevan käytössä muissa wikeissä ja se täytyy muuttaa, jotta yhdistämisoperaatio saadaan vietyä loppuun. Näin ollen sinun on valittava itsellesi uusi käyttäjänimi.",
 	"globalrenamerequest-legend": "Yhdistetty nimenvaihtopyyntö",
 	"globalrenamerequest-newname-err-invalid": "Et ole antanut kelvollista käyttäjänimeä.",
 	"globalrenamerequest-newname-err-taken": "Olet syöttänyt sellaisen käyttäjänimen, joka on jo käytössä. Valitse joku toinen nimi sen sijaan.",

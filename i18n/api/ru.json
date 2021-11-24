@@ -9,7 +9,8 @@
 			"Okras",
 			"Stjn",
 			"Vlad5250",
-			"Ядерный Трамвай"
+			"Ядерный Трамвай",
+			"MirandaBlack"
 		]
 	},
 	"apierror-centralauth-badsession": "Токен можно получить только при использовании сессий CentralAuth.",
@@ -22,6 +23,7 @@
 	"apihelp-centralauthtoken-description": "Получить токен CentralAuth для аутентифицированного запроса к связанной вики.",
 	"apihelp-centralauthtoken-example-1": "Получить токен CentralAuth",
 	"apihelp-centralauthtoken-summary": "Получить токен CentralAuth для аутентифицированного запроса к связанной вики",
+	"apihelp-createlocalaccount-param-reason": "Причина создания локальной учётной записи.",
 	"apihelp-deleteglobalaccount-description": "Удалить глобального участника.",
 	"apihelp-deleteglobalaccount-example-1": "Удалить глобальную учётную запись для [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Причина удаления участника.",
@@ -68,6 +70,9 @@
 	"apihelp-query+globaluserinfo-param-user": "Участник, о котором нужно получить информацию. Если и <var>$1user</var>, и <var>$1id</var> пропускаются, по умолчанию используется текущий участник.",
 	"apihelp-query+globaluserinfo-summary": "Показать информацию о глобальном участнике.",
 	"apihelp-query+wikisets-param-orderbyname": "Сортировать результаты по названию.",
+	"apihelp-setglobalaccountstatus-description": "Установить глобальный статус пользователя.",
+	"apihelp-setglobalaccountstatus-example-1": "Отключить глобальную учётную запись [[User:Example]] по причине «Спам».",
+	"apihelp-setglobalaccountstatus-param-locked": "Изменить, отключён этот пользователь или нет.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина смены статуса участника.",
 	"apihelp-setglobalaccountstatus-summary": "Установить глобальный статус пользователя."
 }

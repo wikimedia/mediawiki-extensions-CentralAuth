@@ -4,12 +4,14 @@
 			"Beta16",
 			"F. Cosoleto",
 			"Gianfranco",
-			"Margherita.mignanelli"
+			"Margherita.mignanelli",
+			"Ajeje Brazorf"
 		]
 	},
 	"apierror-centralauth-badusername": "Il nome utente \"$1\" non è utilizzabile su questo wiki",
 	"apihelp-centralauthtoken-description": "Recupera un centralauthtoken per l'esecuzione di una richiesta autenticata ad un wiki collegato.",
 	"apihelp-centralauthtoken-example-1": "Recupera un centralauthtoken",
+	"apihelp-centralauthtoken-summary": "Recupera un centralauthtoken per l'esecuzione di una richiesta autenticata a un wiki collegato.",
 	"apihelp-createlocalaccount-description": "Forza la creazione di un'utenza locale. Questa funzionalità equivale ad usare [[Special:CreateLocalAccount]].",
 	"apihelp-createlocalaccount-example-1": "Forza la creazione di un'utenza locale per [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo per la creazione dell'utenza locale.",
