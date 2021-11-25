@@ -26,7 +26,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.37.0"
+		"MediaWiki": ">= 1.38.0"
 	},
 	"GroupPermissions": {
 		"steward": {
@@ -531,6 +531,12 @@
 		"noservices": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\NoServicesHookHandler"
 		},
+		"securepoll": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler",
+			"services": [
+				"NamespaceInfo"
+			]
+		},
 		"specialcontributions": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialContributionsHookHandler",
 			"services": [
@@ -581,7 +587,7 @@
 		"RenameUserPreRename": "rename",
 		"RenameUserWarning": "rename",
 		"ResourceLoaderForeignApiModules": "default",
-		"SecurePoll_GetUserParams": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler::onSecurePoll_GetUserParams",
+		"SecurePoll_GetUserParams": "securepoll",
 		"SessionCheckInfo": "default",
 		"SpecialContributionsBeforeMainOutput": "specialcontributions",
 		"SpecialLogAddLogSearchRelations": "log",

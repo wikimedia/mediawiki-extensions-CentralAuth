@@ -21,19 +21,30 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthUser;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Extensions\SecurePoll\Hooks\SecurePoll_GetUserParamsHook;
+use MediaWiki\Extensions\SecurePoll\User\LocalAuth;
+use NamespaceInfo;
 use User;
 use WikiMap;
 
-class SecurePollHookHandler {
+class SecurePollHookHandler implements SecurePoll_GetUserParamsHook {
+	/** @var NamespaceInfo */
+	private $namespaceInfo;
 
 	/**
-	 * @param mixed $auth Unused
+	 * @param NamespaceInfo $namespaceInfo
+	 */
+	public function __construct( NamespaceInfo $namespaceInfo ) {
+		$this->namespaceInfo = $namespaceInfo;
+	}
+
+	/**
+	 * @param LocalAuth $localAuth Unused
 	 * @param User $user
 	 * @param array &$params
 	 * @return bool
 	 */
-	public static function onSecurePoll_GetUserParams( $auth, $user, &$params ) {
+	public function onSecurePoll_GetUserParams( LocalAuth $localAuth, User $user, array &$params ) {
 		if ( !$user->isRegistered() ) {
 			return true;
 		}
@@ -55,11 +66,10 @@ class SecurePollHookHandler {
 			$params['properties']['ca-local-domain'] = $params['domain'];
 			$params['domain'] = $parts[2];
 		}
+
 		$params['properties']['ca-local-url'] = $params['url'];
 		$params['url'] = $wiki->getUrl(
-			MediaWikiServices::getInstance()
-				->getNamespaceInfo()
-				->getCanonicalName( NS_USER ) . ':' . $user->getTitleKey()
+			$this->namespaceInfo->getCanonicalName( NS_USER ) . ':' . $user->getTitleKey()
 		);
 		return true;
 	}

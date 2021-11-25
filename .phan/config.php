@@ -12,6 +12,7 @@ $cfg['directory_list'] = array_merge(
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
 		'../../extensions/Renameuser',
+		'../../extensions/SecurePoll',
 		'../../extensions/TitleBlacklist',
 		'../../extensions/UserMerge',
 	]
@@ -26,6 +27,7 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
 		'../../extensions/Renameuser',
+		'../../extensions/SecurePoll',
 		'../../extensions/TitleBlacklist',
 		'../../extensions/UserMerge',
 	]
