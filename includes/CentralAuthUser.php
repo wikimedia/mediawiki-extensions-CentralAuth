@@ -1704,9 +1704,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 *  null = don't change
 	 * @param string $reason reason for hiding
 	 * @param IContextSource $context
+	 * @param bool $markAsBot Whether to mark the log entry in RC with the bot flag
 	 * @return Status
 	 */
-	public function adminLockHide( $setLocked, $setHidden, $reason, IContextSource $context ) {
+	public function adminLockHide(
+		$setLocked, $setHidden, $reason, IContextSource $context, bool $markAsBot = false
+	) {
 		$isLocked = $this->isLocked();
 		$oldHiddenLevel = $this->getHiddenLevel();
 		$lockStatus = $hideStatus = null;
@@ -1803,7 +1806,8 @@ class CentralAuthUser implements IDBAccessObject {
 				$context->getUser(),
 				$reason,
 				$logParams,
-				$setHidden != self::HIDDEN_NONE
+				$setHidden != self::HIDDEN_NONE,
+				$markAsBot
 			);
 
 		} elseif ( !$good ) {
@@ -3083,18 +3087,20 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $reason
 	 * @param array $params
 	 * @param bool $suppressLog
+	 * @param bool $markAsBot
 	 */
 	public function logAction(
 		$action,
 		UserIdentity $user,
 		$reason = '',
 		$params = [],
-		$suppressLog = false
+		bool $suppressLog = false,
+		bool $markAsBot = false
 	) {
 		$nsUser = MediaWikiServices::getInstance()
 			->getNamespaceInfo()
 			->getCanonicalName( NS_USER );
-		// Not centralauth because of some weird length limitiations
+		// Not centralauth because of some weird length limitations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
 		$entry = new ManualLogEntry( $logType, $action );
 		$entry->setTarget( Title::newFromText( "$nsUser:{$this->mName}@global" ) );
@@ -3102,7 +3108,28 @@ class CentralAuthUser implements IDBAccessObject {
 		$entry->setComment( $reason );
 		$entry->setParameters( $params );
 		$logid = $entry->insert();
-		$entry->publish( $logid );
+		if ( $suppressLog ) {
+			return;
+		}
+		// Dirty hack: We need to do "Mark entries on Recent changes as bot
+		// entries" if requested, but RecentChange::newLogEntry doesn't allow
+		// setting the bot flag directly and global state is problematic
+		// because the recent change entry is inserted in a deferred callback.
+		// And there is no hook that would allow us intercept the recent change
+		// before it is inserted to the database.
+		// The code below is a simplified copy of ManualLogEntry::publish.
+		DeferredUpdates::addCallableUpdate(
+			static function () use ( $markAsBot, $logid, $entry ) {
+				Hooks::runner()->onManualLogEntryBeforePublish( $entry );
+				$rc = $entry->getRecentChange( $logid );
+				if ( $markAsBot ) {
+					$rc->mAttribs['rc_bot'] = 1;
+				}
+				$rc->save( $rc::SEND_FEED );
+			},
+			DeferredUpdates::POSTSEND,
+			wfGetDB( DB_PRIMARY )
+		);
 	}
 
 	/**
