@@ -102,6 +102,7 @@
 	"centralauth-rename-table-status-done": "Fattu",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sicunnu|sicunni}} fa",
 	"centralauth-usermerge-form-adduser": "Agghiunci utenti",
+	"centralauth-usermerge-form-deleteuser": "Leva utenti",
 	"centralauth-usermerge-form-reason": "Mutivu",
 	"centralauth-usermerge-form-usernames": "Nomi utenti attuali",
 	"centralauth-usermerge-toomany": "{{PLURAL:$1|Pò|Ponnu}} èssiri {{PLURAL:$1|junciutu|junciuti}} sulu $1 {{PLURAL:$1|utenti}} â vota.",
