@@ -243,7 +243,7 @@
 	"centralauth-login-no-others": "Ați fost logat în mod automat în alte proiecte a {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Sunteți în curs de autentificare la {{PLURAL:$2|wikiul susținut|wikiurile susținute}} de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Ați fost deconectat în mod automat din alte proiecte ale {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Sunteți în curs de deconectare de la {{PLURAL:$2|alt wiki|alte wikiuri}} ale {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Sunteți în curs de deconectare de la {{PLURAL:$2|alt wiki|alte wiki-uri}} ale {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Se verifică parola introdusă pentru conturile rămase neunite...'''",
 	"centralauth-merge-denied": "Ne pare rău, nu aveți permisiunea de a accesa această pagină.",
 	"centralauth-merge-dryrun-complete": "Toate conturile existente pot fi asimilate automat!\n\nÎncă nu s-a efectuat nici o modificare asupra conturilor dumneavoastră.",
