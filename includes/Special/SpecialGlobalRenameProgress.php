@@ -28,7 +28,6 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 	public function __construct( UserNameUtils $userNameUtils, CentralAuthUIService $uiService ) {
 		parent::__construct( 'GlobalRenameProgress' );
-		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->userNameUtils = $userNameUtils;
 		$this->uiService = $uiService;
 	}
@@ -46,6 +45,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 	}
 
 	public function alterForm( HTMLForm $htmlForm ) {
+		$this->addHelpLink( 'Extension:CentralAuth' );
 		$htmlForm
 			->setMethod( 'get' )
 			->setAction( $this->getPageTitle()->getLocalURL() )

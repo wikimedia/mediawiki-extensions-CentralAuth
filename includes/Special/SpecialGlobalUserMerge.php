@@ -39,7 +39,6 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 
 	public function __construct( UserNameUtils $userNameUtils ) {
 		parent::__construct( 'GlobalUserMerge', 'centralauth-usermerge' );
-		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -48,6 +47,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	}
 
 	public function execute( $par ) {
+		$this->addHelpLink( 'Extension:CentralAuth' );
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'UserMerge' ) ) {
 			$this->setHeaders();
 			throw new ErrorPageError( 'error', 'centralauth-usermerge-notinstalled' );

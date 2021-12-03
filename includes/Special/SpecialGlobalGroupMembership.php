@@ -22,10 +22,6 @@ use Xml;
  * @ingroup Extensions
  */
 class SpecialGlobalGroupMembership extends UserrightsPage {
-	/**
-	 * @var CentralAuthUser
-	 */
-	private $mGlobalUser;
 
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
@@ -33,9 +29,6 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	public function __construct( GlobalGroupLookup $globalGroupLookup ) {
 		parent::__construct();
 		$this->mName = 'GlobalGroupMembership';
-
-		$this->addHelpLink( 'Extension:CentralAuth' );
-		$this->mGlobalUser = CentralAuthUser::getInstance( $this->getUser() );
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
@@ -52,6 +45,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	protected function switchForm() {
 		global $wgScript;
 
+		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$formDescriptor = [
 			'user' => [
@@ -68,6 +62,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$htmlForm
 			->addHiddenField( 'title', $this->getPageTitle() )
 			->setMethod( 'get' )
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			->setAction( $wgScript )
 			->setId( 'mw-userrights-form1' )
 			->setName( 'uluser' )
@@ -81,9 +76,10 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return array
 	 */
 	protected function changeableGroups() {
+		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 		if (
-			$this->mGlobalUser->exists() &&
-			$this->mGlobalUser->isAttached() &&
+			$globalUser->exists() &&
+			$globalUser->isAttached() &&
 			$this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' )
 		) {
 			$allGroups = $this->globalGroupLookup->getDefinedGroups();
