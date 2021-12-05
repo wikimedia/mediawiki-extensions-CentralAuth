@@ -78,7 +78,7 @@ class CentralAuthHooks implements
 			// Credits should only appear on wikis with Extension:Renameuser
 			// installed
 			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/CentralAuth.php",
+				'path' => "{$caBase}/extension.json",
 				'name' => 'Renameuser for CentralAuth',
 				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 				'author' => [ 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ],
@@ -90,7 +90,7 @@ class CentralAuthHooks implements
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'AntiSpoof' ) ) {
 			// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
 			$wgExtensionCredits['antispam'][] = [
-				'path' => "{$caBase}/CentralAuth.php",
+				'path' => "{$caBase}/extension.json",
 				'name' => 'AntiSpoof for CentralAuth',
 				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
 				'author' => 'Sam Reed',
@@ -110,7 +110,7 @@ class CentralAuthHooks implements
 
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
 			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/CentralAuth.php",
+				'path' => "{$caBase}/extension.json",
 				'name' => 'GlobalRenameRequest',
 				'author' => 'Bryan Davis',
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
@@ -126,7 +126,7 @@ class CentralAuthHooks implements
 			];
 
 			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/CentralAuth.php",
+				'path' => "{$caBase}/extension.json",
 				'name' => 'GlobalRenameQueue',
 				'author' => 'Bryan Davis',
 				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
