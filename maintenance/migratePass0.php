@@ -22,10 +22,10 @@ class MigratePass0 extends Maintenance {
 
 	public function execute() {
 		global $wgDBname;
-		$this->output( "CentralAuth migration pass 0:" );
-		$this->output( "$wgDBname preparing migration data..." );
+		$this->output( "CentralAuth migration pass 0:\n" );
+		$this->output( "$wgDBname preparing migration data...\n" );
 		$this->doPassZero();
-		$this->output( "done." );
+		$this->output( "done.\n" );
 	}
 
 	private function doPassZero() {
@@ -59,7 +59,7 @@ class MigratePass0 extends Maintenance {
 
 			$delta = microtime( true ) - $start;
 			$rate = ( $delta == 0.0 ) ? 0.0 : $migrated / $delta;
-			$this->output( sprintf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).",
+			$this->output( sprintf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
 				$wgDBname,
 				$migrated,
 				min( $max, $lastUser ) / $lastUser * 100.0,
@@ -69,7 +69,7 @@ class MigratePass0 extends Maintenance {
 			if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
 				$this->output( "Waiting for replicas to catch up ... " );
 				CentralAuthUtils::waitForReplicas();
-				$this->output( "done" );
+				$this->output( "done\n" );
 			}
 		}
 	}
