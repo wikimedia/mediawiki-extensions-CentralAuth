@@ -279,7 +279,7 @@
 		"gblrights/grouprename": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GroupRenameLogFormatter",
 		"gblrename/rename": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
 		"gblrename/promote": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
-		"gblrename/merge": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalUserMergeLogFormatter",
+		"gblrename/merge": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalUserMergeLogFormatter",
 		"gblrights/newset": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
 		"gblrights/setrename": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
 		"gblrights/setnewtype": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\WikiSetLogFormatter",
