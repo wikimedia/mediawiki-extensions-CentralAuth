@@ -2037,11 +2037,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// If the global account has been locked, we don't want to spam
-		// other wikis with local account creations. But, if we have explicitly
-		// given a list of pages that locked accounts should be able to edit,
-		// we'll allow it.
-		global $wgCentralAuthLockedCanEdit;
-		if ( !count( $wgCentralAuthLockedCanEdit ) && $this->isLocked() ) {
+		// other wikis with local account creations.
+		if ( $this->isLocked() ) {
 			return "locked";
 		}
 

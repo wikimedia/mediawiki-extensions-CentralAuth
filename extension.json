@@ -728,9 +728,6 @@
 		"CentralAuthRC": {
 			"value": []
 		},
-		"CentralAuthLockedCanEdit": {
-			"value": []
-		},
 		"DisableUnmergedEditing": {
 			"value": false
 		},
