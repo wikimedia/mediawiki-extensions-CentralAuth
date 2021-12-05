@@ -59,21 +59,19 @@ class WikiSetLogFormatter extends LogFormatter {
 						: $this->formatWikis( $this->entry->getParameters()['wikis'] ),
 				];
 			case 'setchange':
-				// TODO: plural support for "added"/"removed"
 				if ( $this->entry->isLegacy() ) {
-					return [
-						3 => $this->formatWikiSetLink( $params[3] ),
-						4 => $params[4],
-						5 => $params[5],
-					];
+					$added = $params[4] !== '' ? explode( ', ', $params[4] ) : [];
+					$removed = $params[5] !== '' ? explode( ', ', $params[5] ) : [];
 				} else {
 					[ 'added' => $added, 'removed' => $removed ] = $this->entry->getParameters();
-					return [
-						3 => $this->formatWikiSetLink( $params[3] ), // 4::name
-						4 => $this->formatWikis( $added ),
-						5 => $this->formatWikis( $removed ),
-					];
 				}
+				return [
+					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
+					4 => $this->formatWikis( $added ),
+					5 => $this->formatWikis( $removed ),
+					6 => Message::numParam( count( $added ) ),
+					7 => Message::numParam( count( $removed ) ),
+				];
 			case 'setnewtype':
 				return [
 					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
