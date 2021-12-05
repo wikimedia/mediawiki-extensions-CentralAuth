@@ -17,6 +17,7 @@ use Exception;
 use Html;
 use LogEventsList;
 use LogPage;
+use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\MediaWikiServices;
@@ -651,18 +652,16 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry(
-			'groupprms2',
-			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
-			$reason,
-			[
-				$this->makeRightsList( $addRights ),
-				$this->makeRightsList( $removeRights )
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'groupprms2' );
+		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $group ) );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'addRights' => $addRights,
+			'removeRights' => $removeRights,
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
@@ -673,52 +672,48 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addRenameLog( $oldName, $newName, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry(
-			'grouprename',
-			// This has to point to 'Special:GlobalUsers so that self::showLogFragment can find it
-			SpecialPage::getTitleFor( 'GlobalUsers', $newName ),
-			$reason,
-			[
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $newName )->getPrefixedText(),
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions', $oldName )->getPrefixedText()
-			],
-			$this->getUser()
-		);
+		$entry = new ManualLogEntry( 'gblrights', 'grouprename' );
+		// This has to point to 'Special:GlobalUsers so that self::showLogFragment can find it
+		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $newName ) );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$entry->setParameters( [
+			'newName' => $newName,
+			'oldName' => $oldName,
+		] );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
 	 * Log wikiset changes
 	 *
 	 * @param string $group
-	 * @param string|int $old
-	 * @param string|int $new
+	 * @param int $old
+	 * @param int $new
 	 * @param string $reason
 	 */
 	private function addWikiSetLog( $group, $old, $new, $reason ) {
-		$log = new LogPage( 'gblrights' );
-
-		$log->addEntry(
-			'groupprms3',
-			SpecialPage::getTitleFor( 'GlobalUsers', $group ),
-			$reason,
-			[
-				$this->getWikiSetName( $old ),
-				$this->getWikiSetName( $new ),
-			],
-			$this->getUser()
-		);
-	}
-
-	/**
-	 * @param string[] $ids
-	 * @return string
-	 */
-	private function makeRightsList( $ids ) {
-		return (bool)count( $ids )
-			? implode( ', ', $ids )
-			: $this->msg( 'rightsnone' )->inContentLanguage()->text();
+		$entry = new ManualLogEntry( 'gblrights', 'groupprms3' );
+		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $group ) );
+		$entry->setPerformer( $this->getUser() );
+		$entry->setComment( $reason );
+		$params = [];
+		$mapping = [
+			'old' => [ 4, $old ],
+			'new' => [ 5, $new ],
+		];
+		foreach ( $mapping as $param => [ $id, $set ] ) {
+			$name = $this->getWikiSetName( $set );
+			if ( $name !== null ) {
+				$params["$id::$param"] = $name;
+			} else {
+				$params["$id:msg:$param"] = 'centralauth-editgroup-noset';
+			}
+		}
+		$entry->setParameters( $params );
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
@@ -747,14 +742,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	/**
 	 * @param string|int $id
-	 * @return string
+	 * @return string|null
 	 */
 	private function getWikiSetName( $id ) {
-		if ( $id ) {
-			return WikiSet::newFromID( $id )->getName();
-		} else {
-			return $this->msg( 'centralauth-editgroup-noset' )->inContentLanguage()->text();
+		$wikiset = WikiSet::newFromID( $id );
+		if ( $wikiset !== null ) {
+			return $wikiset->getName();
 		}
+		return null;
 	}
 
 	/**

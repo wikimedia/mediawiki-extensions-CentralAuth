@@ -265,10 +265,7 @@
 		"globalauth/hide": "centralauth-log-entry-hide",
 		"globalauth/unhide": "centralauth-log-entry-unhide",
 		"globalauth/lockandhid": "centralauth-log-entry-lockandhide",
-		"gblrights/usergroups": "centralauth-rightslog-entry-usergroups",
-		"gblrights/groupperms": "centralauth-rightslog-entry-groupperms",
-		"gblrights/groupprms2": "centralauth-rightslog-entry-groupperms2",
-		"gblrights/groupprms3": "centralauth-rightslog-entry-groupperms3"
+		"gblrights/groupperms": "centralauth-rightslog-entry-groupperms"
 	},
 	"LogActionsHandlers": {
 		"globalauth/delete": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalDeleteLogFormatter",
@@ -276,7 +273,10 @@
 		"newusers/forcecreatelocal": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ForceCreateLocalUserLogFormatter",
 		"suppress/cadelete": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalDeleteLogFormatter",
 		"suppress/setstatus": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ChangeStatusLogFormatter",
-		"gblrights/grouprename": "CentralAuthHooks::onHandleGrouprenameLogEntry",
+		"gblrights/usergroups": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GroupMembershipChangeLogFormatter",
+		"gblrights/groupprms2": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\PermissionChangeLogFormatter",
+		"gblrights/groupprms3": "LogFormatter",
+		"gblrights/grouprename": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GroupRenameLogFormatter",
 		"gblrename/rename": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
 		"gblrename/promote": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameLogFormatter",
 		"gblrename/merge": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalUserMergeLogFormatter",
