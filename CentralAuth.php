@@ -194,11 +194,6 @@ $wgCentralAuthCreateOnView = false;
 $wgCentralAuthRC = [];
 
 /**
- * List of local pages global users may edit while being globally locked.
- */
-$wgCentralAuthLockedCanEdit = [];
-
-/**
  * Disable editing for non-global accounts (except on NS_USER_TALK and NS_PROJECT_TALK)
  */
 $wgDisableUnmergedEditing = false;

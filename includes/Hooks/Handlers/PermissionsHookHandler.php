@@ -64,14 +64,12 @@ class PermissionsHookHandler implements
 		if ( !( $centralUser->exists() && $centralUser->isAttached() ) ) {
 			return true;
 		}
-		if (
-			$centralUser->isOversighted() || // Oversighted users should *never* be able to edit
-			( $centralUser->isLocked() &&
-				!in_array( $title->getPrefixedText(), $this->config->get( 'CentralAuthLockedCanEdit' ) ) )
-		) {
+
+		if ( $centralUser->isLocked() || $centralUser->isHidden() ) {
 			$result = 'centralauth-error-locked';
 			return false;
 		}
+
 		return true;
 	}
 }
