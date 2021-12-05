@@ -34,7 +34,7 @@ class SendForceRenameNotification extends Maintenance {
 
 	public function execute() {
 		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
-		$message = str_replace( '{{WIKI}}', wfWikiID(), $message );
+		$message = str_replace( '{{WIKI}}', WikiMap::getCurrentWikiId(), $message );
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";
 		$dbw = CentralAuthUtils::getCentralDB();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
@@ -49,7 +49,7 @@ class SendForceRenameNotification extends Maintenance {
 		while ( true ) {
 			$jobs = [];
 			$markNotified = [];
-			$rows = $updates->findUsers( wfWikiID(), 0, $this->mBatchSize );
+			$rows = $updates->findUsers( WikiMap::getCurrentWikiId(), 0, $this->mBatchSize );
 			if ( $rows->numRows() === 0 ) {
 				break;
 			}

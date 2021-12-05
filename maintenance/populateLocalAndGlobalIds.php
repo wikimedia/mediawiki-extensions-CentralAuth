@@ -24,7 +24,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 		$lastGlobalId = -1;
 
 		// Skip people in global rename queue
-		$wiki = wfWikiID();
+		$wiki = WikiMap::getCurrentWikiId();
 		$globalRenames = $dbr->selectFieldValues(
 			'renameuser_status',
 			'ru_oldname',

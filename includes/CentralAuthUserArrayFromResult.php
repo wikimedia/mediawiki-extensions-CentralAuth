@@ -32,7 +32,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			[
 				'gu_name' => $names,
 				'lu_name=gu_name',
-				'lu_wiki' => wfWikiID()
+				'lu_wiki' => WikiMap::getCurrentWikiId()
 			],
 			__METHOD__,
 			[],

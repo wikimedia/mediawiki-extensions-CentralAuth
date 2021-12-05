@@ -33,6 +33,7 @@ use Sanitizer;
 use SpecialPage;
 use Status;
 use User;
+use WikiMap;
 
 /**
  * Request an account rename.
@@ -85,7 +86,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				// Render status page
 				$user = $this->getUser();
 				$username = $user->getName();
-				$wiki = $this->isGlobalUser() ? null : wfWikiID();
+				$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 				$pending = GlobalRenameRequest::newForUser(
 					$username, $wiki
 				);
@@ -113,7 +114,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				// Request form
 				$out = $this->getOutput();
 				$user = $this->getUser();
-				$wiki = $this->isGlobalUser() ? null : wfWikiID();
+				$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 
 				$pending = GlobalRenameRequest::newForUser(
 					$user->getName(), $wiki
@@ -305,7 +306,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
-		$wiki = $this->isGlobalUser() ? null : wfWikiID();
+		$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 		$reason = $data['reason'] ?? null;
 		$safeName = $this->userNameUtils->getCanonical( $data['newname'], UserNameUtils::RIGOR_CREATABLE );
 

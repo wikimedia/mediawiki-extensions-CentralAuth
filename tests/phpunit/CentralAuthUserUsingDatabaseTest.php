@@ -21,7 +21,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertTrue( $caUser->exists() );
 		$this->assertSame( 1001, $caUser->getId() );
 		$this->assertSame( 'GlobalUser', $caUser->getName() );
-		$this->assertSame( wfWikiID(), $caUser->getHomeWiki() );
+		$this->assertSame( WikiMap::getCurrentWikiId(), $caUser->getHomeWiki() );
 		$this->assertTrue( $caUser->isAttached() );
 		$this->assertFalse( $caUser->isLocked() );
 		$this->assertSame( '20130627183537', $caUser->getRegistration() );
@@ -53,7 +53,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertArrayEquals(
 			[
-				wfWikiID(),
+				WikiMap::getCurrentWikiId(),
 				'enwiki',
 				'dewiki',
 				'metawiki',
@@ -215,7 +215,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 			'GUP@ssword',
 			[ 'gu_id' => '1001' ],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 				[ 'enwiki', 'primary' ],
 				[ 'dewiki', 'login' ],
 				[ 'metawiki', 'password' ],

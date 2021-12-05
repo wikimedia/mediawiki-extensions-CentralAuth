@@ -11,6 +11,7 @@ use MediaWiki\Linker\LinkRenderer;
 use TablePager;
 use User;
 use UserArray;
+use WikiMap;
 
 /**
  * Paginated table of search results.
@@ -46,7 +47,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 				'utr_name',
 				'utr_status',
 			],
-			'conds' => [ 'utr_wiki' => wfWikiID(), 'lu_attached_method IS NULL' ],
+			'conds' => [ 'utr_wiki' => WikiMap::getCurrentWikiId(), 'lu_attached_method IS NULL' ],
 			'join_conds' => [ 'localuser' => [ 'LEFT JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ] ],
 		];
 	}

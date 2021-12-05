@@ -27,7 +27,7 @@ class CentralAuthCreateLocalAccountJob extends Job {
 	public function run() {
 		$username = $this->params['name'];
 		$from = $this->params['from'];
-		$wiki = wfWikiID();
+		$wiki = WikiMap::getCurrentWikiId();
 
 		if ( isset( $this->params['session'] ) ) {
 			// restore IP and other request data

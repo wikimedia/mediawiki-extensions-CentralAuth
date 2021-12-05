@@ -123,7 +123,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	}
 
 	private function resendConfirmationEmail( $username ) {
-		$wikiID = wfWikiID();
+		$wikiID = WikiMap::getCurrentWikiId();
 
 		$this->total++;
 		$this->output( "Sending confirmation email for: '$username@$wikiID'\n" );
@@ -180,7 +180,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$delta = microtime( true ) - $this->start;
 		$this->output( sprintf(
 			"%s: %s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",
-			wfWikiID(),
+			WikiMap::getCurrentWikiId(),
 			wfTimestamp( TS_DB ),
 			$this->total,
 			$this->total / $delta,

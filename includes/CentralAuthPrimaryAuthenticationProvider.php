@@ -183,7 +183,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		// See if it's a user affected by a rename, if applicable.
 		if ( !$pass && $this->checkSULMigration ) {
 			$renamedUsername = $this->userNameUtils->getCanonical(
-				$req->username . '~' . str_replace( '_', '-', wfWikiID() )
+				$req->username . '~' . str_replace( '_', '-', WikiMap::getCurrentWikiId() )
 			);
 			if ( $renamedUsername !== false ) {
 				$renamed = CentralAuthUser::getInstanceByName( $renamedUsername );
@@ -452,7 +452,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			: CentralAuthUser::getInstance( $user );
 
 		// Rename in progress?
-		if ( $centralUser->renameInProgressOn( wfWikiID(), $options['flags'] ) ) {
+		if ( $centralUser->renameInProgressOn( WikiMap::getCurrentWikiId(), $options['flags'] ) ) {
 			$status->fatal( 'centralauth-rename-abortlogin', $user->getName() );
 			return $status;
 		}
@@ -560,7 +560,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
-		$centralUser->attach( wfWikiID(), 'new' );
+		$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
 		$this->databaseManager->getCentralDB( DB_PRIMARY )->onTransactionCommitOrIdle(
 			static function () use ( $centralUser ) {
 				CentralAuthUtils::scheduleCreationJobs( $centralUser );
@@ -595,7 +595,7 @@ class CentralAuthPrimaryAuthenticationProvider
 				]
 			);
 			$centralUser->attach( wfWikiID(), 'login' );
-			$centralUser->addLocalName( wfWikiID() );
+			$centralUser->addLocalName( WikiMap::getCurrentWikiId() );
 
 			if ( $centralUser->getEmail() != $user->getEmail() ) {
 				$user->setEmail( $centralUser->getEmail() );

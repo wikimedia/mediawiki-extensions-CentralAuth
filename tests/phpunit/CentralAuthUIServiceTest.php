@@ -114,7 +114,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 			'GUP@ssword',
 			[ 'gu_id' => '3001' ],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
 		$u->save( $this->db );
@@ -124,7 +124,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 			'GUP@ssword',
 			[ 'gu_id' => '3002' ],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
 		$u->save( $this->db );
@@ -137,7 +137,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 				'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
 			],
 			[
-				[ wfWikiID(), 'primary' ],
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
 		$u->save( $this->db );

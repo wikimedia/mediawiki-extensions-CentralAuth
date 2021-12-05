@@ -6,6 +6,7 @@ use CentralAuthServices;
 use DBAccessObjectUtils;
 use IDBAccessObject;
 use MediaWiki\Permissions\Authority;
+use WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -134,7 +135,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 */
 	public function getStatus( $flags = 0 ) {
 		$statuses = $this->getStatuses( $flags );
-		return $statuses[wfWikiID()] ?? null;
+		return $statuses[WikiMap::getCurrentWikiId()] ?? null;
 	}
 
 	/**

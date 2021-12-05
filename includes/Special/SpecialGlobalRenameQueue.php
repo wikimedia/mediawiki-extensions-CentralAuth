@@ -692,7 +692,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)->inContentLanguage()->text();
 				}
 
-				if ( $request->userIsGlobal() || $request->getWiki() === wfWikiID() ) {
+				if ( $request->userIsGlobal() || $request->getWiki() === WikiMap::getCurrentWikiId() ) {
 					$notifyEmail = MailAddress::newFromUser( $oldUser );
 				} else {
 					$notifyEmail = $this->getRemoteUserMailAddress(

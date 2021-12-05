@@ -39,7 +39,7 @@ class ForceRenameUsers extends Maintenance {
 	public function execute() {
 		$dbw = CentralAuthUtils::getCentralDB();
 		while ( true ) {
-			$rowsToRename = $this->findUsers( wfWikiID(), $dbw );
+			$rowsToRename = $this->findUsers( WikiMap::getCurrentWikiId(), $dbw );
 			if ( !$rowsToRename ) {
 				break;
 			}

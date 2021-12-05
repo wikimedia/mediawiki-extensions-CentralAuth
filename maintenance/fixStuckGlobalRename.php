@@ -37,7 +37,7 @@ class FixStuckGlobalRename extends Maintenance {
 
 		$logTitle = Title::newFromText( 'Special:CentralAuth' )->getSubpage( $newName );
 		$ca = new CentralAuthUser( $newName );
-		if ( !$ca->renameInProgressOn( wfWikiID() ) ) {
+		if ( !$ca->renameInProgressOn( WikiMap::getCurrentWikiId() ) ) {
 			$this->fatalError( "{$ca->getName()} does not have a rename in progress on this wiki." );
 		}
 
@@ -88,7 +88,7 @@ class FixStuckGlobalRename extends Maintenance {
 			'ignorestatus' => $this->getOption( 'ignorestatus', false ),
 			// No way to recover localuser attachment details, faking it.
 			// $wgLocalDatabases will contain wikis where the user does not have an account.
-			// That's fine, LocalRenameUserJob will only use the one that matches wfWikiID().
+			// That's fine, LocalRenameUserJob will only use the one that matches WikiMap::getCurrentWikiId().
 			// FIXME the real attachment info should be saved & restored instead, see T215107
 			'reattach' => array_fill_keys( $wgLocalDatabases, [
 				'attachedMethod' => 'admin',

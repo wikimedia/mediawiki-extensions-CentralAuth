@@ -8,6 +8,7 @@ use ApiQueryBase;
 use CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use WikiMap;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -151,7 +152,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			$this->addFields( 'lu_wiki' );
 			$this->addJoinConds( [
 				'localuser' =>
-				[ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ] ]
+				[ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ]
 			] );
 		}
 

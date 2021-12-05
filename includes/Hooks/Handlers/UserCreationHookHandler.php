@@ -25,6 +25,7 @@ use CentralAuthUtilityService;
 use MediaWiki\Auth\Hook\LocalUserCreatedHook;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use User;
+use WikiMap;
 
 class UserCreationHookHandler implements
 	LocalUserCreatedHook
@@ -62,7 +63,7 @@ class UserCreationHookHandler implements
 		// CentralAuthIdLookup can have an ID for this new user right away.
 		if ( !$centralUser->exists() && !$centralUser->listUnattached() ) {
 			if ( $centralUser->register( null, $user->getEmail() ) ) {
-				$centralUser->attach( wfWikiID(), 'new' );
+				$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
 				$this->databaseManager->getCentralDB( DB_PRIMARY )->onTransactionCommitOrIdle(
 					function () use ( $centralUser ) {
 						$this->utilityService->scheduleCreationJobs( $centralUser );
@@ -72,6 +73,6 @@ class UserCreationHookHandler implements
 			}
 		}
 
-		$centralUser->addLocalName( wfWikiID() );
+		$centralUser->addLocalName( WikiMap::getCurrentWikiId() );
 	}
 }

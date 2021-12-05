@@ -306,7 +306,7 @@ class CentralAuthUser implements IDBAccessObject {
 			'where' => [],
 			'options' => [],
 			'joinConds' => [
-				'localuser' => [ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => wfWikiID() ] ]
+				'localuser' => [ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ]
 			],
 		];
 	}
@@ -592,7 +592,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->loadAttached();
 
-		$this->mIsAttached = $this->exists() && in_array( wfWikiID(), $this->mAttachedArray );
+		$this->mIsAttached = $this->exists() && in_array( WikiMap::getCurrentWikiId(), $this->mAttachedArray );
 		$this->mFromPrimary = false;
 	}
 
@@ -1147,7 +1147,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$unattached = [];
 
 		// First, make sure we were given the current wiki's password.
-		$self = $this->localUserData( wfWikiID() );
+		$self = $this->localUserData( WikiMap::getCurrentWikiId() );
 		$selfPassword = $this->getPasswordFromString( $self['password'], $self['id'] );
 		if ( !$this->matchHashes( $passwords, $selfPassword ) ) {
 			$logger->info( 'dry run: failed self-password check' );
@@ -1523,7 +1523,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$status->successCount++;
 		}
 
-		if ( in_array( wfWikiID(), $valid ) ) {
+		if ( in_array( WikiMap::getCurrentWikiId(), $valid ) ) {
 			$this->resetState();
 		}
 
@@ -1987,7 +1987,7 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 		$success = $dbw->affectedRows() === 1;
 
-		if ( $wikiID === wfWikiID() ) {
+		if ( $wikiID === WikiMap::getCurrentWikiId() ) {
 			$this->resetState();
 		}
 
