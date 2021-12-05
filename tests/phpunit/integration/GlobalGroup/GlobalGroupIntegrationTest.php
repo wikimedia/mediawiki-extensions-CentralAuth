@@ -103,7 +103,7 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::addToGlobalGroups
+	 * @covers CentralAuthUser::addToGlobalGroup
 	 */
 	public function testAddToGlobalGroups() {
 		$user = $this->getRegisteredTestUser();
@@ -117,7 +117,7 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 
 		$this->assertFalse( $user->isAllowed( 'some-global-right' ) );
 
-		$caUser->addToGlobalGroups( 'global-foos' );
+		$caUser->addToGlobalGroup( 'global-foos' );
 
 		$caUser->invalidateCache();
 		$this->getServiceContainer()->getPermissionManager()->invalidateUsersRightsCache( $user );

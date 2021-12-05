@@ -782,6 +782,10 @@
 		},
 		"CentralAuthHiddenLevelMigrationStage": {
 			"value": 3
+		},
+		"CentralAuthEnableTemporaryGlobalGroups": {
+			"value": false,
+			"description": "Temporary feature flag to allow grating temporary global group memberships."
 		}
 	},
 	"AuthManagerAutoConfig": {

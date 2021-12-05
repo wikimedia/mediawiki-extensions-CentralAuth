@@ -37,7 +37,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	 * @return bool
 	 */
 	public function canProcessExpiries() {
-		return false;
+		return $this->getConfig()->get( 'CentralAuthEnableTemporaryGlobalGroups' );
 	}
 
 	/**
@@ -169,6 +169,20 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	protected function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
 		array $tags, array $oldUGMs, array $newUGMs
 	) {
+		// make sure $oldUGMs and $newUGMs are in the same order, and serialise
+		// each UGM object to a simplified array
+		$oldUGMs = array_map( function ( $group ) use ( $oldUGMs ) {
+			return isset( $oldUGMs[$group] )
+				? self::serialiseUgmForLog( $oldUGMs[$group] )
+				: null;
+		}, $oldGroups );
+
+		$newUGMs = array_map( function ( $group ) use ( $newUGMs ) {
+			return isset( $newUGMs[$group] )
+				? self::serialiseUgmForLog( $newUGMs[$group] )
+				: null;
+		}, $newGroups );
+
 		$entry = new ManualLogEntry( 'gblrights', 'usergroups' );
 		$entry->setTarget( $user->getUserPage() );
 		$entry->setPerformer( $this->getUser() );
@@ -176,6 +190,8 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 		$entry->setParameters( [
 			'oldGroups' => $oldGroups,
 			'newGroups' => $newGroups,
+			'oldMetadata' => $oldUGMs,
+			'newMetadata' => $newUGMs,
 		] );
 		$logid = $entry->insert();
 		$entry->publish( $logid );

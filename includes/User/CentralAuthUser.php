@@ -3080,23 +3080,25 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param string[]|string $groups
+	 * @param string $group
+	 * @param string|null $expiry Timestamp of membership expiry in TS_MW format, or null if no expiry
 	 * @return void
 	 */
-	public function addToGlobalGroups( $groups ) {
+	public function addToGlobalGroup( string $group, ?string $expiry = null ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
-
-		$insert_rows = [];
-		foreach ( (array)$groups as $group ) {
-			$insert_rows[] = [ 'gug_user' => $this->getId(), 'gug_group' => $group ];
-		}
 
 		# Replace into the DB
 		$dbw->replace(
 			'global_user_groups',
 			[ [ 'gug_user', 'gug_group' ] ],
-			$insert_rows,
+			[
+				[
+					'gug_user' => $this->getId(),
+					'gug_group' => $group,
+					'gug_expiry' => $dbw->timestampOrNull( $expiry )
+				]
+			],
 			__METHOD__
 		);
 

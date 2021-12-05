@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use InvalidArgumentException;
 use MediaWiki\MediaWikiServices;
 use Title;
 use UserGroupMembership;
@@ -126,25 +125,24 @@ class CentralAuthGroupMembershipProxy {
 	 * @return UserGroupMembership[] Associative array of (group name => UserGroupMembership object)
 	 */
 	public function getGroupMemberships() {
-		$groups = $this->getGroups();
-		return array_combine( $groups, array_map( function ( $group ) {
-			return new UserGroupMembership( $this->getId(), $group );
-		}, $groups ) );
+		$memberships = [];
+
+		foreach ( $this->mGlobalUser->getGlobalGroupsWithExpiration() as $groupName => $expiry ) {
+			$memberships[$groupName] = new UserGroupMembership( $this->getId(), $groupName, $expiry );
+		}
+
+		return $memberships;
 	}
 
 	/**
 	 * replaces addUserGroup
-	 * @param string[]|string $group
+	 * @param string $group
 	 * @param string|null $expiry
 	 *
 	 * @return bool
 	 */
-	public function addGroup( $group, $expiry = null ) {
-		if ( $expiry !== null ) {
-			throw new InvalidArgumentException( __METHOD__ . ' cannot process expiries' );
-		}
-
-		$this->mGlobalUser->addToGlobalGroups( $group );
+	public function addGroup( string $group, string $expiry = null ) {
+		$this->mGlobalUser->addToGlobalGroup( $group, $expiry );
 		return true;
 	}
 
