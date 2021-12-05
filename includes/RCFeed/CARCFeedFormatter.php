@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,20 +18,19 @@
  * @file
  */
 
-class JSONCARCFeedFormatter implements CARCFeedFormatter {
+namespace MediaWiki\Extension\CentralAuth\RCFeed;
+
+use Title;
+
+/**
+ * Interface for CentralAuth RC feed formatters
+ */
+interface CARCFeedFormatter {
 	/**
-	 * Generates a user unification/creation entry that can be easily interpreted by a machine.
+	 * Generate an IRC line corresponding to user unification/creation
 	 * @param Title $userpage
 	 * @param string $wikiID
 	 * @return string
 	 */
-	public function getLine( $userpage, $wikiID ) {
-		$packet = [
-			'title' => $userpage->getPrefixedText(),
-			'wikiid' => $wikiID,
-			'user' => $userpage->getText(),
-			'url' => $userpage->getCanonicalURL()
-		];
-		return FormatJson::encode( $packet );
-	}
+	public function getLine( $userpage, $wikiID );
 }
