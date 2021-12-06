@@ -556,13 +556,8 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->mFromPrimary = $fromPrimary;
 
-		if ( $renameUser ) {
-			$this->mBeingRenamedArray = $renameUser;
-			$this->mBeingRenamed = implode( '|', $this->mBeingRenamedArray );
-		} else {
-			$this->mBeingRenamedArray = [];
-			$this->mBeingRenamed = '';
-		}
+		$this->mBeingRenamedArray = $renameUser ?? [];
+		$this->mBeingRenamed = implode( '|', $this->mBeingRenamedArray );
 	}
 
 	/**
@@ -3039,12 +3034,8 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 
-		if ( !is_array( $groups ) ) {
-			$groups = [ $groups ];
-		}
-
 		$insert_rows = [];
-		foreach ( $groups as $group ) {
+		foreach ( (array)$groups as $group ) {
 			$insert_rows[] = [ 'gug_user' => $this->getId(), 'gug_group' => $group ];
 		}
 
