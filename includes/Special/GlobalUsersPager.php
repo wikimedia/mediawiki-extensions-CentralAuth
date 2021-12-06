@@ -274,7 +274,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getAllGroups() {
 		$result = [];

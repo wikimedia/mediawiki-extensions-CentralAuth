@@ -60,7 +60,7 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	public function getFormFields() {
 		return [

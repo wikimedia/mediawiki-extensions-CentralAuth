@@ -1032,7 +1032,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	private function getMergeMethodDescriptions() {
 		// Give grep a chance to find the usages:

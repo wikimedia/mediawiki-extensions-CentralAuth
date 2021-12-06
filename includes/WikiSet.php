@@ -300,7 +300,7 @@ class WikiSet {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getRestrictedGroups() {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
@@ -316,7 +316,7 @@ class WikiSet {
 	 * @param string|null $from The wiki set name to start from (result is ordered by name)
 	 * @param int|null $limit Limit for the selection (0 or null = no limit)
 	 * @param bool $orderByName Order the result by name?
-	 * @return array
+	 * @return self[]
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );

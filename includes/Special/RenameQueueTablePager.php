@@ -149,7 +149,7 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	protected function getExtraSortFields() {
 		// Break order ties based on the unique id

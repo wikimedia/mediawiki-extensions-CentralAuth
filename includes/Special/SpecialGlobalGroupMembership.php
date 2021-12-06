@@ -74,7 +74,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	protected function changeableGroups() {
 		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
@@ -141,7 +141,7 @@ class SpecialGlobalGroupMembership extends UserrightsPage {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	protected static function getAllGroups() {
 		return CentralAuthServices::getGlobalGroupLookup()->getDefinedGroups();
