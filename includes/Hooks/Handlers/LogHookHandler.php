@@ -69,7 +69,7 @@ class LogHookHandler implements
 			$value = $list->getRequest()->getVal( 'oldname' );
 			if ( $value !== null ) {
 				$name = $this->userNameUtils->getCanonical( $value );
-				$value = $name ?: '';
+				$value = $name === false ? '' : $name;
 			}
 			$formDescriptor = [
 				'type' => 'text',
