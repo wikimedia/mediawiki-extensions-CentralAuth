@@ -187,7 +187,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @return array|mixed
+	 * @return string[]
 	 */
 	private function getWorkingPasswords() {
 		AtEase::suppressWarnings();

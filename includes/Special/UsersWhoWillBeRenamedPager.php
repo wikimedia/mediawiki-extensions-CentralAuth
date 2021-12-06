@@ -113,7 +113,7 @@ class UsersWhoWillBeRenamedPager extends TablePager {
 
 	/**
 	 * @param string $name The database field name
-	 * @param string $value The value retrieved from the database
+	 * @param string|null $value The value retrieved from the database
 	 * @return string HTML to place inside table cell
 	 */
 	public function formatValue( $name, $value ) {
