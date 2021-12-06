@@ -336,11 +336,7 @@ class CentralAuthUser implements IDBAccessObject {
 			__METHOD__
 		);
 
-		if ( $name !== false ) {
-			return self::getInstanceByName( $name );
-		} else {
-			return false;
-		}
+		return $name === false ? false : self::getInstanceByName( $name );
 	}
 
 	/**
@@ -358,11 +354,7 @@ class CentralAuthUser implements IDBAccessObject {
 			__METHOD__
 		);
 
-		if ( $name !== false ) {
-			return self::getPrimaryInstanceByName( $name );
-		} else {
-			return false;
-		}
+		return $name === false ? false : self::getPrimaryInstanceByName( $name );
 	}
 
 	/**
@@ -889,21 +881,13 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		$ok = $dbw->affectedRows() === 1;
-		if ( $ok ) {
-			wfDebugLog(
-				'CentralAuth',
-				'registered global account \'{user}\'',
-				'all',
-				[ 'user' => $this->mName ]
-			);
-		} else {
-			wfDebugLog(
-				'CentralAuth',
+		wfDebugLog(
+			'CentralAuth',
+			$ok ? 'registered global account \'{user}\'' :
 				'registration failed for global account \'{user}\'',
-				'all',
-				[ 'user' => $this->mName ]
-			);
-		}
+			'all',
+			[ 'user' => $this->mName ]
+		);
 
 		// Kill any cache entries saying we don't exist
 		$this->invalidateCache();
@@ -1828,11 +1812,9 @@ class CentralAuthUser implements IDBAccessObject {
 			$hideStatus = $this->adminSetHidden( $setHidden );
 			switch ( $setHidden ) {
 				case self::HIDDEN_NONE:
-					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
-						$removed[] = 'oversighted';
-					} else {
-						$removed[] = 'hidden';
-					}
+					$removed[] = $oldHiddenLevel === self::HIDDEN_OVERSIGHT ?
+						'oversighted' :
+						'hidden';
 					break;
 				case self::HIDDEN_LISTS:
 					$added[] = 'hidden';
@@ -2176,11 +2158,7 @@ class CentralAuthUser implements IDBAccessObject {
 			return $ret;
 		}
 
-		if ( $this->validateAuthToken( $token ) ) {
-			return "ok";
-		} else {
-			return "bad token";
-		}
+		return $this->validateAuthToken( $token ) ? 'ok' : 'bad token';
 	}
 
 	/**
@@ -2463,11 +2441,7 @@ class CentralAuthUser implements IDBAccessObject {
 			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'primary' : 'replica'
 		);
 
-		if ( $names ) {
-			return $names;
-		} else {
-			return false;
-		}
+		return $names ?: false;
 	}
 
 	/**
