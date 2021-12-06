@@ -51,12 +51,14 @@ class WikiSetLogFormatter extends LogFormatter {
 					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
 				];
 			case 'newset':
+				$wikis = $this->entry->isLegacy()
+					? explode( ', ', $params[5] ) // shouldn't be empty
+					: $this->entry->getParameters()['wikis'];
 				return [
 					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
 					4 => $this->formatType( $params[4] ), // 5::type
-					5 => $this->entry->isLegacy()
-						? $params[5]
-						: $this->formatWikis( $this->entry->getParameters()['wikis'] ),
+					5 => $this->formatWikis( $wikis ),
+					6 => Message::numParam( count( $wikis ) ),
 				];
 			case 'setchange':
 				if ( $this->entry->isLegacy() ) {
