@@ -1622,14 +1622,13 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'lu_name' => $this->mName ],
 			__METHOD__
 		);
-		$name = $this->getName();
 		foreach ( $localUserRes as $wiki ) {
 			$logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$localDB = $lbFactory->getMainLB( $wiki )->getConnectionRef( DB_PRIMARY, [], $wiki );
 			$localDB->update(
 				'user',
 				[ 'user_password' => $password ],
-				[ 'user_name' => $name ],
+				[ 'user_name' => $this->mName ],
 				__METHOD__
 			);
 
@@ -1862,20 +1861,14 @@ class CentralAuthUser implements IDBAccessObject {
 		// Setup Status object to return all of the information for logging
 		if ( $good && ( $added || $removed ) ) {
 			$returnStatus->successCount = count( $added ) + count( $removed );
-			$logParams = [
-				'added' => $added,
-				'removed' => $removed,
-			];
-
 			$this->logAction(
 				'setstatus',
 				$context->getUser(),
 				$reason,
-				$logParams,
+				[ 'added' => $added, 'removed' => $removed ],
 				$setHidden != self::HIDDEN_NONE,
 				$markAsBot
 			);
-
 		} elseif ( !$good ) {
 			if ( $lockStatus !== null && !$lockStatus->isGood() ) {
 				$returnStatus->merge( $lockStatus );
@@ -2600,8 +2593,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$items = [];
 		foreach ( $wikiIDs as $wikiID ) {
 			try {
-				$data = $this->localUserData( $wikiID );
-				$items[$wikiID] = $data;
+				$items[$wikiID] = $this->localUserData( $wikiID );
 			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localnames table told us that the name was
 				// unattached on $wikiId but there is no data in the primary database
@@ -3078,9 +3070,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	public function hasGlobalPermission( $perm ) {
-		$perms = $this->getGlobalRights();
-
-		return in_array( $perm, $perms );
+		return in_array( $perm, $this->getGlobalRights() );
 	}
 
 	public function invalidateCache() {
