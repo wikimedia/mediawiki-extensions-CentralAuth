@@ -189,8 +189,6 @@
 	"centralauth-renameuser-merged": "用戶$1已經搬咗去統一登入系統。改佢嘅名會令到本地用戶自全域度拉走。",
 	"centralauth-renameuser-reserved": "用戶名$2已經預留畀個全域戶口用。",
 	"centralauth-rightslog-entry-groupperms": "改咗$1嘅成員組許可由$2到$3",
-	"centralauth-rightslog-entry-groupperms2": "改咗$1嘅全域用戶組許可。加咗$2；剷咗$3",
-	"centralauth-rightslog-entry-usergroups": "改咗$1嘅全域成員組由$2到$3",
 	"centralauth-rightslog-header": "呢個日誌包括咗全域組嘅動作：組同許可更改",
 	"centralauth-rightslog-name": "全域權限日誌",
 	"centralauth-ro": "統一用戶信息",

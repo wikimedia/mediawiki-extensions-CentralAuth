@@ -15,6 +15,5 @@
 	"centralauth-prefs-manage": "Global hisob yozuvini boshqarish",
 	"centralauth-prefs-status": "Global hisob holati:",
 	"centralauth-prefs-view": "Foydalanuvchi haqida global maʼlumotlarni koʻrish",
-	"centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi",
 	"globalrenamerequest-newname-err-taken": "Bunday foydalanuvchi nomi avvalroq yaratilgan. Iltimos, boshqa nom tanlang."
 }

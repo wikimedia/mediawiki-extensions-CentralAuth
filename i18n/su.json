@@ -150,7 +150,6 @@
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Baca lengkepna ngeunaan '''log asup nu dihijikeun''']]...''",
 	"centralauth-rename-form-reason": "Alesan",
 	"centralauth-rightslog-entry-groupperms": "kawenangan grup pikeun $1 dirobah tina $2 jadi $3",
-	"centralauth-rightslog-entry-usergroups": "kaanggotaan grup $1 dirobah tina $2 jadi $3",
 	"centralauth-rightslog-name": "Log hak global",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|detik|detik}} kaliwat",
 	"centralauth-usermerge-form-deleteuser": "Pupus pamaké",

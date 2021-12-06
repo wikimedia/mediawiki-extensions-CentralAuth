@@ -137,7 +137,6 @@
 	"centralauth-prefs-unattached": "Mana takyachisqa",
 	"centralauth-prefs-view": "Sapsi rakiqunamanta willakunata qhaway",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Hukllachasqa yaykuy''' nisqamanta astawan ñawiriy]]…''",
-	"centralauth-rightslog-entry-setchange": "\"$1\" nisqapi hukchasqa wikikuna: yapasqa: $2; qichusqa: $3",
 	"centralauth-rightslog-name": "Sapsi hayñikunamanta hallch'asqa",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sikundu|sikundukuna}} ñaqha",
 	"centralauth-token-mismatch": "Achachaw, manam atinichu kachamusqaykita llamk'apuyta, willakuna chinkaptinmi.",

@@ -201,8 +201,6 @@
 	"centralauth-renameuser-merged": "L'utente $1 o l'è stæto migrou a-o scistema de login unificou. Rinominâlo faiâ destacâ l'utença locâ da quella globâ.",
 	"centralauth-renameuser-reserved": "O nomme utente $2 o l'è riservou a 'n'utença globâ.",
 	"centralauth-rightslog-entry-groupperms": "cangiou i permissi de groppo pe $1 da $2 a $3",
-	"centralauth-rightslog-entry-groupperms2": "cangiou i permissi globæ de groppo pe $1: azonto $2; rimosso $3",
-	"centralauth-rightslog-entry-usergroups": "modificaou l'appartegninça a-i groppi globæ de $1 da $2 a $3",
 	"centralauth-rightslog-name": "Driti globæ",
 	"centralauth-ro": "Informaçioin in sce l'utença globâ",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|segondo|segondi}} fa",
