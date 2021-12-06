@@ -67,18 +67,17 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 
 	protected function getWikis() {
 		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
-		$wikis = [];
 
 		if ( $this->wiki !== null ) {
-			$wikis[] = $this->wiki;
+			return [ $this->wiki ];
 		} else {
 			$conds = [];
 			if ( $this->user !== null ) {
 				$conds['lu_name'] = $this->user;
 			}
-			$result = $centralReplica->select(
+			return $centralReplica->selectFieldValues(
 				'localuser',
-				[ 'lu_wiki' ],
+				'lu_wiki',
 				$conds,
 				__METHOD__,
 				[
@@ -86,13 +85,7 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 					"ORDER BY" => "lu_wiki ASC"
 				]
 			);
-
-			foreach ( $result as $row ) {
-				$wikis[] = $row->lu_wiki;
-			}
 		}
-
-		return $wikis;
 	}
 
 	protected function getUsers( $wiki ) {

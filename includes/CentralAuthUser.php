@@ -2410,18 +2410,12 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$db = $this->getSafeReadDB();
 
-		$result = $db->select(
+		$wikis = $db->selectFieldValues(
 			'localuser',
-			[ 'lu_wiki' ],
+			'lu_wiki',
 			[ 'lu_name' => $this->mName ],
 			__METHOD__
 		);
-
-		$wikis = [];
-		foreach ( $result as $row ) {
-			/** @var stdClass $row */
-			$wikis[] = $row->lu_wiki;
-		}
 
 		$this->mAttachedArray = $wikis;
 		$this->mAttachedList = implode( "\n", $wikis );
