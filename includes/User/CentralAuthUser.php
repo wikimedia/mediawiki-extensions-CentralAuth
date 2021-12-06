@@ -32,7 +32,6 @@ use IContextSource;
 use IDBAccessObject;
 use Job;
 use JobQueueGroup;
-use Language;
 use LocalUserNotFoundException;
 use ManualLogEntry;
 use MapCacheLRU;
@@ -2027,15 +2026,16 @@ class CentralAuthUser implements IDBAccessObject {
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
 		global $wgConf, $wgCentralAuthGlobalBlockInterwikiPrefix;
 
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lb = $lbFactory->getMainLB( $wiki );
+		$services = MediaWikiServices::getInstance();
+		$lb = $services->getDBLoadBalancerFactory()->getMainLB( $wiki );
 		$dbw = $lb->getConnectionRef( DB_PRIMARY, [], $wiki );
 		$data = $this->localUserData( $wiki );
 
 		if ( $suppress ) {
 			list( , $lang ) = $wgConf->siteFromDB( $wiki );
-			$langNames = Language::fetchLanguageNames();
-			$lang = isset( $langNames[$lang] ) ? $lang : 'en';
+			if ( !$services->getLanguageNameUtils()->isSupportedLanguage( $lang ) ) {
+				$lang = 'en';
+			}
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
