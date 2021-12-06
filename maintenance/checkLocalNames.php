@@ -68,13 +68,12 @@ class CheckLocalNames extends Maintenance {
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
 		// iterate from there
-		$wikis = [];
 		if ( $this->wiki !== null ) {
-			$wikis[] = $this->wiki;
+			$wikis = [ $this->wiki ];
 		} else {
-			$result = $centralReplica->select(
+			$wikis = $centralReplica->selectFieldValues(
 				'localnames',
-				[ 'ln_wiki' ],
+				'ln_wiki',
 				"",
 				__METHOD__,
 				[
@@ -82,10 +81,6 @@ class CheckLocalNames extends Maintenance {
 					"ORDER BY" => "ln_wiki ASC"
 				]
 			);
-
-			foreach ( $result as $row ) {
-				$wikis[] = $row->ln_wiki;
-			}
 		}
 
 		// iterate through the wikis

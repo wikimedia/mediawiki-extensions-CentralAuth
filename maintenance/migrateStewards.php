@@ -10,9 +10,9 @@ echo "Populating global groups table with stewards...\n";
 
 // Fetch local stewards
 $dbl = wfGetDB( DB_REPLICA );	// Get local database
-$result = $dbl->select(
+$localStewards = $dbl->selectFieldValues(
 	[ 'user', 'user_groups' ],
-	[ 'user_name' ],
+	'user_name',
 	[
 		'ug_group' => 'steward',
 		'ug_expiry IS NULL OR ug_expiry >= ' . $dbl->addQuotes( $dbl->timestamp() ),
@@ -20,10 +20,6 @@ $result = $dbl->select(
 	],
 	'migrateStewards.php'
 );
-$localStewards = [];
-foreach ( $result as $row ) {
-	$localStewards[] = $row->user_name;
-}
 
 echo "Fetched " . count( $localStewards ) . " from local database... Checking for attached ones\n";
 $dbg = CentralAuthUtils::getCentralDB();
