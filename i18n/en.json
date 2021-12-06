@@ -520,7 +520,7 @@
 	"logentry-gblrename-promote": "$1 globally {{GENDER:$2|renamed}} $4 to $5",
 	"logentry-gblrename-rename": "$1 globally {{GENDER:$2|renamed}} $4 to $5",
 	"logentry-gblrights-deleteset": "$1 {{GENDER:$2|deleted}} wiki set \"$4\"",
-	"logentry-gblrights-newset": "$1 {{GENDER:$2|created}} $5 wiki set $4 with the following wikis: $6",
+	"logentry-gblrights-newset": "$1 {{GENDER:$2|created}} $5 wiki set $4 with the following {{PLURAL:$7|wiki|wikis}}: $6",
 	"logentry-gblrights-setchange": "$1 {{GENDER:$2|changed}} wikis in \"$4\": {{PLURAL:$7|added}}: $5; {{PLURAL:$8|removed}}: $6",
 	"logentry-gblrights-setnewtype": "$1 {{GENDER:$2|changed}} type of \"$4\" from $5 to $6",
 	"logentry-gblrights-setrename": "$1 {{GENDER:$2|renamed}} wiki set \"$5\" to \"$4\"",
