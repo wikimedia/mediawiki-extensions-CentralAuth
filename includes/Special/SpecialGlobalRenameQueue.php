@@ -159,7 +159,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/**
 	 * Get an array of fields for use by the HTMLForm shown above the pager.
 	 *
-	 * @return array
+	 * @return array[]
 	 */
 	private function getCommonFormFieldsArray() {
 		$lang = $this->getLanguage();

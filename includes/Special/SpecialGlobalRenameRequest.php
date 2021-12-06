@@ -166,7 +166,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	public function getFormFields() {
 		$suggestedUsername = $this->suggestedUsername();

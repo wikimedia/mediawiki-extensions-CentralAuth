@@ -944,7 +944,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param array $passwords
+	 * @param string[] $passwords
 	 * @param bool $sendToRC
 	 * @param bool $safe Only allow migration if all users can be migrated
 	 * @param bool $checkHome Re-check the user's ownership of the home wiki
@@ -1054,9 +1054,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * can be automatically migrated based on the available criteria.
 	 *
 	 * @param array[] $migrationSet
-	 * @param array $passwords Optional, pre-authenticated passwords.
+	 * @param string[] $passwords Optional, pre-authenticated passwords.
 	 *     Should match an account which is known to be attached.
-	 * @return array Array of <wiki> => <authentication method>
+	 * @return string[] Array of <wiki> => <authentication method>
 	 */
 	public function prepareMigration( $migrationSet, $passwords = [] ) {
 		// If the primary account has an email address set,
@@ -1132,7 +1132,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Do a dry run -- pick a winning primary account and try to auto-merge
 	 * as many as possible, but don't perform any actions yet.
 	 *
-	 * @param array $passwords
+	 * @param string[] $passwords
 	 * @param string|false &$home set to false if no permission to do checks
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
@@ -1260,7 +1260,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Pick a winning primary account and try to auto-merge as many as possible.
 	 * @fixme add some locking or something
 	 *
-	 * @param array $passwords
+	 * @param string[] $passwords
 	 * @param bool $sendToRC
 	 * @param bool $safe Only migrate if all accounts can be merged
 	 * @param bool $checkHome Re-check the user's ownership of the home wiki
@@ -1446,7 +1446,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @throws Exception
 	 * @param string[] $list
-	 * @return array
+	 * @return string[]
 	 */
 	protected static function validateList( $list ) {
 		$unique = array_unique( $list );
@@ -2148,7 +2148,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param array $passwords
+	 * @param string[] $passwords
 	 * @param Password $password Password to check against
 	 *
 	 * @return bool
@@ -2197,7 +2197,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	private function doListUnattached() {
 		// Make sure lazy-loading in listUnattached() works, as we
@@ -2387,7 +2387,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @see CentralAuthUser::renameInProgress
 	 * @param string $wiki
 	 * @param int $flags Bitfield of CentralAuthUser::READ_* constants
-	 * @return array|bool
+	 * @return string[]|false
 	 */
 	public function renameInProgressOn( $wiki, $flags = 0 ) {
 		$renameState = new GlobalRenameUserStatus( $this->mName );
@@ -2407,7 +2407,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Check if a rename from the old name is in progress
-	 * @return array (oldname, newname) if being renamed, or empty if not
+	 * @return string[] (oldname, newname) if being renamed, or empty if not
 	 */
 	public function renameInProgress() {
 		$this->loadState();
@@ -2908,7 +2908,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getGlobalGroups() {
 		$this->loadGroups();
@@ -2917,7 +2917,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getGlobalRights() {
 		$this->loadGroups();

@@ -492,7 +492,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	/**
-	 * @return array
+	 * @return string[]
 	 */
 	public function getVaryCookies() {
 		$cookies = parent::getVaryCookies();

@@ -378,7 +378,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		 * @var $set WikiSet
 		 */
 		foreach ( $sets as $set ) {
-			$select->addOption( $set->getName(), $set->getID() );
+			$select->addOption( $set->getName(), (string)$set->getID() );
 		}
 
 		$editlink = $this->msg( 'centralauth-editgroup-editsets' )->parse();
@@ -464,7 +464,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	/**
 	 * @param string $group
-	 * @return array
+	 * @return string[]
 	 */
 	private function getAssignedRights( $group ) {
 		return $this->globalGroupLookup->getRightsForGroup( $group );

@@ -63,7 +63,7 @@ class SpecialGlobalUserMerge extends FormSpecialPage {
 	}
 
 	/**
-	 * @return array
+	 * @return array[]
 	 */
 	protected function getFormFields() {
 		return [

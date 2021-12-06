@@ -71,7 +71,7 @@ class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 
 	/**
 	 * @see ApiBase::getAllowedParams()
-	 * @return array
+	 * @return array[]
 	 */
 	public function getAllowedParams( /* $flags = 0 */ ) {
 		return [

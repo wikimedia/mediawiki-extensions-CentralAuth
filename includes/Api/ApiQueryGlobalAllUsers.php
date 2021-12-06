@@ -216,7 +216,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 * @param IResultWrapper $result Result of a globaluser table select
 	 * @param string $dir Sorting directory
 	 *
-	 * @return array
+	 * @return string[][]
 	 */
 	protected function getGlobalGroups( IResultWrapper $result, $dir ) {
 		$this->resetQueryParams();
