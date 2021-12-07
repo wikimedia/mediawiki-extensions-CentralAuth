@@ -4,12 +4,14 @@
 			"Beta16",
 			"F. Cosoleto",
 			"Gianfranco",
-			"Margherita.mignanelli"
+			"Margherita.mignanelli",
+			"Ajeje Brazorf"
 		]
 	},
 	"apierror-centralauth-badusername": "Il nome utente \"$1\" non è utilizzabile su questo wiki",
 	"apihelp-centralauthtoken-description": "Recupera un centralauthtoken per l'esecuzione di una richiesta autenticata ad un wiki collegato.",
 	"apihelp-centralauthtoken-example-1": "Recupera un centralauthtoken",
+	"apihelp-centralauthtoken-summary": "Recupera un centralauthtoken per l'esecuzione di una richiesta autenticata a un wiki collegato.",
 	"apihelp-createlocalaccount-description": "Forza la creazione di un'utenza locale. Questa funzionalità equivale ad usare [[Special:CreateLocalAccount]].",
 	"apihelp-createlocalaccount-example-1": "Forza la creazione di un'utenza locale per [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo per la creazione dell'utenza locale.",
@@ -22,7 +24,7 @@
 	"apihelp-globaluserrights-description": "Aggiunge/rimuove un utente a/da gruppi globali.",
 	"apihelp-globaluserrights-param-add": "Aggiungi l'utente a questi gruppi globali.",
 	"apihelp-globaluserrights-param-expiry": "Questo parametro è attualmente inutilizzato.",
-	"apihelp-globaluserrights-param-reason": "Motivo del cambiamento.",
+	"apihelp-globaluserrights-param-reason": "Motivo per la modifica.",
 	"apihelp-globaluserrights-param-remove": "Rimuovi l'utente da questi gruppi globali.",
 	"apihelp-globaluserrights-param-tags": "Questo parametro attualmente non è utilizzato.",
 	"apihelp-globaluserrights-param-user": "Nome utente globale.",

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"ChoiChong"
+		]
+	},
+	"centralauth-admin-blocklog": "封禁日志",
+	"centralauth-foreign-contributions": "在$2{{PLURAL:$1|贡献}}$1次",
+	"centralauth-foreign-link": "$2上亇用户$1",
+	"centralauth-merge-method-login": "因登录而创建"
+}

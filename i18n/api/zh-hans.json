@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Shizhao"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
@@ -14,6 +15,11 @@
 	"apihelp-centralauthtoken-description": "取得centralauthtoken用于已认证的一个附加到wiki的请求。",
 	"apihelp-centralauthtoken-example-1": "取得一个centralauthtoken",
 	"apihelp-centralauthtoken-summary": "取得centralauthtoken用于已认证的一个附加到wiki的请求。",
+	"apihelp-createlocalaccount-description": "强行创建本地帐户。这在功能上等同于使用[[Special:CreateLocalAccount]]。",
+	"apihelp-createlocalaccount-example-1": "强行为[[User:Example]]创建本地账号。",
+	"apihelp-createlocalaccount-param-reason": "创建本地帐户的原因。",
+	"apihelp-createlocalaccount-param-username": "为其创建本地帐户的用户。",
+	"apihelp-createlocalaccount-summary": "强行创建本地账号",
 	"apihelp-deleteglobalaccount-description": "删除一个全域用户。",
 	"apihelp-deleteglobalaccount-example-1": "删除[[User:Example]]的全域账户",
 	"apihelp-deleteglobalaccount-param-reason": "删除用户的原因。",

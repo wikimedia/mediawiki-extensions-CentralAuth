@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Khun Kt",
+			"咽頭べさ"
+		]
+	},
+	"centralauth-admin-info-attached": "ဆွိုက်ပယ်ခါꩻဒါႏ အကောက်ဆေ့ꩻအာ:",
+	"centralauth-admin-info-editcount": "မွဉ်းဖျင်မုꩻခြွောန်း:",
+	"centralauth-admin-info-header": "ဂလိုဗယ်အကောက် သꩻတင်ꩻအချက်လက်",
+	"centralauth-admin-info-registered": "ဒင်ႏခါꩻလဲဉ်းမတ်ပိုင်တိဉ်:",
+	"centralauth-admin-list-legend-ro": "ဒေႏသကိုအကောက်ဖိုင်ႏစာႏရင်ꩻ",
+	"centralauth-admin-multi-bot": "ထွာပြောင်ꩻယိုခါကျာꩻ",
+	"centralauth-admin-view": "ထွား အကောက်အချက်လက်",
+	"centralauth-merge-denied": "သꩻဟဝ်တဝ်းသွူ။ အီႏနွို့လိတ်မဲ့ငါယိုတာႏ ဖေႏခွင်ꩻခါꩻအဝ်ႏတဝ်း။",
+	"centralauth-prefs-status": "ဂလိုဗယ်အကောက်:",
+	"centralauth-prefs-view": "အွောန်ႏနယ် ဂလိုဗယ်အကောက်အချက်လက်",
+	"centralauth-rename-progress-fieldset": "ဒေႏသကိုအကောက်ဖိုင်ႏစာႏရင်ꩻ",
+	"centralauth-ro": "ဂလိုဗယ်အကောက် သꩻတင်ꩻအချက်လက်",
+	"globalrenamerequest-newname-help": "နျꩻသော့ꩻသွော့ ကမဲဉ်သုင်ꩻဒါႏ မိဉ်ꩻတသာသြ။ ဥပမာႏ  \"$1\""
+}

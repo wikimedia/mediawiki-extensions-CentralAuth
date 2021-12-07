@@ -14,7 +14,8 @@
 			"Patriccck",
 			"Patrik L.",
 			"Polda18",
-			"Robins7"
+			"Robins7",
+			"McDutchie"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globální skupiny, do kterých uživatel patří",
@@ -207,7 +208,7 @@
 	"centralauth-error-token-wronguser": "Token neodpovídá uživatelskému jménu v této relaci.\nNěkdo se může pokoušet přihlásit vás k zlomyslnému účtu.\nPokud se jen snažíte přihlásit se jako jiný uživatel, nejprve se odhlašte.",
 	"centralauth-error-unmerged": "Nemůžete editovat, protože váš účet není sjednocen.",
 	"centralauth-error-wrongprovider": "Tato speciální stránka není dostupná, když se používají $1.",
-	"centralauth-finish-incomplete": "Použitím tohoto hesla bylo sloučeno několik účtů. Další účty zatím nejsou potvrzeny.",
+	"centralauth-finish-incomplete": "Použitím tohoto hesla bylo sloučeno několik účtů. Ostatní účty zatím nebyly potvrzeny.",
 	"centralauth-finish-login": "Přihlásit se",
 	"centralauth-finish-noconfirms": "Tímto heslem se nepodařilo potvrdit žádný účet.",
 	"centralauth-finish-password": "Heslo:",
@@ -215,7 +216,7 @@
 	"centralauth-finish-send-confirmation": "Zaslat heslo emailem",
 	"centralauth-finish-text": "Pokud tyto účty opravdu patří vám, můžete proces sloučení jednoduše dokončit napsáním hesel dotyčných účtů:",
 	"centralauth-finish-title": "Dokončit sloučení",
-	"centralauth-finishglobaliseemail_body": "Vaše e-mailová adresa byla přiřazena k účtu „$2“\nna všech projektech nadace Wikimedia, přičemž hlavním účtem\nje ten na {{grammar:6sg|{{SITENAME}}}}.\n\nPokud si přejete připojit všechny účty, u kterých jsme to nemohli\nprovést automaticky, a umožnit znovuzpřístupnění účtu v případě, že\nztratíte heslo, tak pro potvrzení, že tento účet opravdu patří vám,\npřejděte svým internetovým prohlížečem na následující adresu:\n\n$3\n\nPokud vám tento účet *nepatří*, klikněte na následující\nodkaz, čímž potvrzení zrušíte:\n\n$5\n\nPlatnost tohoto potvrzovacího kódu vyprší $6 v $7.",
+	"centralauth-finishglobaliseemail_body": "Vaše e-mailová adresa byla přiřazena k účtu „$2“\nna všech projektech, přičemž hlavním účtem\nje ten na {{grammar:6sg|{{SITENAME}}}}.\n\nPokud si přejete připojit všechny účty, u kterých jsme to nemohli\nprovést automaticky, a umožnit znovuzpřístupnění účtu v případě, že\nztratíte heslo, tak pro potvrzení, že tento účet opravdu patří vám,\npřejděte svým internetovým prohlížečem na následující adresu:\n\n$3\n\nPokud vám tento účet *nepatří*, klikněte na následující\nodkaz, čímž potvrzení zrušíte:\n\n$5\n\nPlatnost tohoto potvrzovacího kódu vyprší $6 v $7.",
 	"centralauth-finishglobaliseemail_subject": "Potvrzení účtu na {{grammar:6sg|{{SITENAME}}}}",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|příspěvek|příspěvky|příspěvků}} na $2",
 	"centralauth-foreign-link": "Uživatel $1 na $2",
@@ -457,7 +458,7 @@
 	"globalrenamerequest-email-why-explain": "E-mailovou adresu v rámci tohoto procesu potřebujeme k tomu, abychom zajistili, že nepřijdete o přístup ke svému účtu.<br />Jakmile bude přejmenovávací proces dokončen, můžete e-mailovou adresu odstranit.",
 	"globalrenamerequest-email2-help": "Zadejte stejnou e-mailovou adresu pro potvrzení.",
 	"globalrenamerequest-email2-label": "Potvrzení e-mailové adresy:",
-	"globalrenamerequest-forced": "Nadace Wikimedia [[:mw:SUL_finalisation|sjednocuje uživatelská jména napříč všemi projekty]]. Bylo zjištěno, že toto uživatelské jméno se používá na jiných wiki nadace Wikimedia a pro dokončení tohoto sjednocování je potřeba ho změnit. To znamená, že si do budoucna musíte zvolit nové uživatelské jméno.",
+	"globalrenamerequest-forced": "Tato farma wiki sjednocuje uživatelská jména napříč všemi projekty. Bylo zjištěno, že toto uživatelské jméno se používá na jiných wiki a pro dokončení tohoto sjednocování je potřeba ho změnit. To znamená, že si do budoucna musíte zvolit nové uživatelské jméno.",
 	"globalrenamerequest-legend": "Žádost o přejmenování pro sjednocení",
 	"globalrenamerequest-newname-err-invalid": "{{GENDER:|Nezadal|Nezadala|Nezadali}} jste platné uživatelské jméno.",
 	"globalrenamerequest-newname-err-taken": "Zadané uživatelské jméno se již používá. Zvolte prosím jiné jméno.",

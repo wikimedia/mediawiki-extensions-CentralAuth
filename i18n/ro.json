@@ -15,7 +15,8 @@
 			"Stelistcristi",
 			"Strainu",
 			"WebSourceContentRO",
-			"XXN"
+			"XXN",
+			"McDutchie"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupuri globale de care aparține utilizatorul",
@@ -134,7 +135,7 @@
 	"centralauth-complete": "Unificarea conturilor este completă!",
 	"centralauth-complete-text": "Acum puteți să vă autentificați în orice proiect wiki al {{int:Centralauth-groupname}} fără să vă creați un nou cont.",
 	"centralauth-completelogin-back": "Înapoi la pagina precedentă.",
-	"centralauth-contribs-locked": "Acest cont este încuiat la nivel global. Consultați [[Special:CentralAuth/$1|detaliile despre contul global]] pentru mai multe informații.",
+	"centralauth-contribs-locked": "Acest cont este încuiat la nivel global. Consultați [[:m:Special:CentralAuth/$1|detaliile despre contul global]] pentru mai multe informații.",
 	"centralauth-contribs-locked-log": "Acest cont este blocat la nivel global. Ultima intrare din jurnalul de blocare este furnizată mai jos pentru referință:",
 	"centralauth-days-ago": "acum $1 {{PLURAL:$1|zi|zile}}",
 	"centralauth-delete-empty-account": "Cont gol",
@@ -244,7 +245,7 @@
 	"centralauth-login-no-others": "Ați fost logat în mod automat în alte proiecte a {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Sunteți în curs de autentificare la {{PLURAL:$2|wikiul susținut|wikiurile susținute}} de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Ați fost deconectat în mod automat din alte proiecte ale {{int:Centralauth-groupname}}.",
-	"centralauth-logout-progress": "Sunteți în curs de deconectare de la {{PLURAL:$2|alt wiki|alte wikiuri}} ale {{int:Centralauth-groupname}}:",
+	"centralauth-logout-progress": "Sunteți în curs de deconectare de la {{PLURAL:$2|alt wiki|alte wiki-uri}} ale {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Se verifică parola introdusă pentru conturile rămase neunite...'''",
 	"centralauth-merge-denied": "Ne pare rău, nu aveți permisiunea de a accesa această pagină.",
 	"centralauth-merge-dryrun-complete": "Toate conturile existente pot fi asimilate automat!\n\nÎncă nu s-a efectuat nici o modificare asupra conturilor dumneavoastră.",

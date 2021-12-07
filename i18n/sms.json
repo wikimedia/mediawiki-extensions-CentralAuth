@@ -4,5 +4,20 @@
 			"Yupik"
 		]
 	},
-	"centralauth-finish-password": "Peittsääʹnn:"
+	"centralauth-admin-info-username": "Õõʹnninõmm:",
+	"centralauth-admin-multi-bot": "Võõrâs muttâz",
+	"centralauth-admin-username": "Õõʹnninõmm:",
+	"centralauth-finish-login": "Ǩeeʹrjtõõđ sizz",
+	"centralauth-finish-password": "Peittsääʹnn:",
+	"centralauth-rename-form-movepages": "Seeʹrd õõʹnniseeidaid",
+	"centralauth-rename-form-newname": "Ođđ õõʹnninõmm",
+	"centralauth-rename-progress-username": "Õõʹnninõmm",
+	"centralauth-rename-table-status-failed": "Ij oʹnnstam",
+	"centralauth-usermerge-form-adduser": "Lââʹzzet õõʹnni",
+	"globalrenamequeue-action-view": "Čuäʹjet",
+	"globalrenamequeue-column-rq-name": "Õõʹnninõmm",
+	"globalrenamequeue-form-status-all": "puk",
+	"globalrenamequeue-form-username": "Õõʹnninõmm:",
+	"globalrenamequeue-request-movepages": "Seeʹrd õõʹnniseeidaid",
+	"globalrenamerequest-email-label": "E-pååʹštaddrõs:"
 }

@@ -11,7 +11,8 @@
 			"Nodar Kherkheulidze",
 			"Otogi",
 			"Tokoko",
-			"გიორგიმელა"
+			"გიორგიმელა",
+			"Გიო ოქრო"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "მომხმარებლის გლობალური ჯგუფები",
@@ -367,6 +368,7 @@
 	"globalrenamequeue-email-body-rejected": "სახელის შეცვლის მოთხოვნა „$1“-დან „$2“-ზე უარყოფილია.\n\nშენიშვნა: $3",
 	"globalrenamequeue-email-subject-approved": "ანგარიშის გადარქმევის მოთხოვნა ნებადართულია",
 	"globalrenamequeue-email-subject-rejected": "ანგარიშის გადარქმევის მოთხოვნა უარყოფილია",
+	"globalrenamequeue-form-username": "მომხმარებლის სახელი:",
 	"globalrenamequeue-nav-closedqueue": "თხოვნების დახურვა",
 	"globalrenamequeue-nav-openqueue": "ღია თხოვნები",
 	"globalrenamequeue-request-approve-text": "სახელის გადარქმევის მიღება",

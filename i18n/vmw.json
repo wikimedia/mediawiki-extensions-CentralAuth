@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gildo Máquina"
+		]
+	},
+	"centralauth-admin-blocklog": "Mulepelo wa iplokeiyo",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|mukhaliheryo|mikhaliheryo}} on $2",
+	"centralauth-foreign-link": "Namarumeela $1 mwa $2",
+	"centralauth-merge-method-login": "Yoopakiwa nvolowaka"
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nērtiks Jōrgesuns"
+		]
+	},
+	"centralauth-admin-blocklog": "blōkisnas registerin",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|redigisnā|redigīsnas}} en $2",
+	"centralauth-foreign-link": "Tērpautajs $1 na $2",
+	"centralauth-merge-method-login": "teīktan prei enēisnan"
+}

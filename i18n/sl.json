@@ -385,7 +385,7 @@
 	"centralauth-warning-notattached": "Lokalni račun ni pripet globalnemu.",
 	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni.",
 	"centralauth-years-ago": "pred $1 {{PLURAL:$1|letom|letoma|leti}}",
-	"centralautologin": "Osrednja prijava",
+	"centralautologin": "Centralna prijava",
 	"centrallogin": "Centralna prijava uporabnika",
 	"centralloginsuccesful": "Sedaj ste prijavljeni",
 	"globalgroupmembership": "Članstvo v globalnih skupinah",
