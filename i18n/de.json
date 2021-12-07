@@ -507,7 +507,7 @@
 	"logentry-gblrename-promote": "$1 hat $4 global in $5 {{GENDER:$2|umbenannt}}",
 	"logentry-gblrename-rename": "$1 hat „$4“ global in „$5“ {{GENDER:$2|umbenannt}}",
 	"logentry-gblrights-deleteset": "$1 {{GENDER:$2|löschte}} die Wikigruppe „$4“.",
-	"logentry-gblrights-newset": "$1 {{GENDER:$2|erstellte}} $5 Wikigruppe $4 mit den folgenden Wikis: $6",
+	"logentry-gblrights-newset": "$1 {{GENDER:$2|erstellte}} $5 Wikigruppe $4 mit {{PLURAL:$7|dem folgenden Wiki|den folgenden Wikis}}: $6",
 	"logentry-gblrights-setchange": "$1 {{GENDER:$2|änderte}} die Wikis in „$4“: {{PLURAL:$7|ergänzt}}: $5; {{PLURAL:$8|entfernt}}: $6",
 	"logentry-gblrights-setnewtype": "$1 {{GENDER:$2|änderte}} den Typ von „$4“ von $5 nach $6",
 	"logentry-gblrights-setrename": "$1 {{GENDER:$2|benannte}} die Wikigruppe von „$5“ nach „$4“ um",
