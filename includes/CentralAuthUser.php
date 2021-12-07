@@ -229,20 +229,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Check hasOrMadeRecentPrimaryChanges() on the CentralAuth load balancer
-	 *
-	 * @todo this should be in CentralAuthDatabaseManager instead, it has nothing
-	 * to do with CentralAuthUser
-	 *
-	 * @return bool
-	 */
-	public static function centralLBHasRecentPrimaryChanges() {
-		return CentralAuthServices::getDatabaseManager()
-			->getLoadBalancer()
-			->hasOrMadeRecentPrimaryChanges();
-	}
-
-	/**
 	 * @todo this should be in CentralAuthUtilityService instead
 	 *
 	 * @param string $wikiID
@@ -284,7 +270,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected function shouldUsePrimaryDB() {
 		if ( $this->mFromPrimary === null ) {
-			$this->mFromPrimary = self::centralLBHasRecentPrimaryChanges();
+			$this->mFromPrimary = CentralAuthServices::getDatabaseManager()
+				->centralLBHasRecentPrimaryChanges();
 		}
 
 		return $this->mFromPrimary;
@@ -2231,10 +2218,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string[]
 	 */
 	private function doListUnattached() {
+		$databaseManager = CentralAuthServices::getDatabaseManager();
 		// Make sure lazy-loading in listUnattached() works, as we
 		// may need to *switch* to using the primary DB for this query
-		$db = self::centralLBHasRecentPrimaryChanges()
-			? CentralAuthUtils::getCentralDB()
+		$db = $databaseManager->centralLBHasRecentPrimaryChanges()
+			? $databaseManager->getCentralDB( DB_PRIMARY )
 			: $this->getSafeReadDB();
 
 		$result = $db->select(

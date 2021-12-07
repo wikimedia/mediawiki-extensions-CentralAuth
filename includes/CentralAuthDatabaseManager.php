@@ -109,4 +109,13 @@ class CentralAuthDatabaseManager {
 		return $this->getLoadBalancer()
 			->getConnectionRef( $index, [], $database );
 	}
+
+	/**
+	 * Check hasOrMadeRecentPrimaryChanges() on the CentralAuth load balancer
+	 *
+	 * @return bool
+	 */
+	public function centralLBHasRecentPrimaryChanges() {
+		return $this->getLoadBalancer()->hasOrMadeRecentPrimaryChanges();
+	}
 }
