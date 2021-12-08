@@ -341,7 +341,7 @@
 	"centralauth-merge-method-password": "confirmada por contraseña",
 	"centralauth-merge-method-password-desc": "Indica que la cuenta local fue unificada porque el usuario especificó una contraseña válida para ella.",
 	"centralauth-merge-method-primary": "wiki de origen",
-	"centralauth-merge-method-primary-desc": "Esta es la wiki en el que la cuenta fue unificada inicialmente.\nNótese que puede diferir de el wiki de origen real del usuario.",
+	"centralauth-merge-method-primary-desc": "Esta es la wiki en el que la cuenta fue unificada inicialmente.\nNótese que puede diferir de la wiki de origen real del usuario.",
 	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "¡No existen cuentas que coincidan con tu nombre en la tabla central de búsqueda de cuentas!\nLa base de datos puede estar dañada.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Inicia sesión]</span> para comprobar si tus cuentas se han fusionado completamente.",
