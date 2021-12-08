@@ -193,6 +193,7 @@
 	"globalrenamerequest-reason-label": "Pieprasījuma iemesls",
 	"globalrenamerequest-username-label": "Pašreizējais lietotājvārds:",
 	"globalusers": "Globālo kontu uzskaitījums",
+	"logentry-gblrights-grouprename": "$1 {{GENDER:$2|pārsauca}} grupu $5 par $4",
 	"mergeaccount": "Kontu apvienošanas statuss",
 	"right-centralauth-lock": "Slēgt vai noslēpt globālo kontu"
 }
