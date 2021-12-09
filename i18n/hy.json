@@ -11,6 +11,7 @@
 	"centralauth-admin-list-groups": "Խմբեր",
 	"centralauth-admin-no": "ոչ",
 	"centralauth-admin-yes": "այո",
+	"centralauth-editset-submit-delete": "Ջնջել",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2-ում",
 	"centralauth-foreign-link": "$2-ից $1 մասնակից",
 	"centralauth-globalgroupperms-group": "Խումբ",

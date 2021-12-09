@@ -500,7 +500,7 @@
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|שינה|שינתה}} גלובלית את השם של $4 ל{{GRAMMAR:prefixed|$5}}",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|שינה|שינתה}} באופן גלובלי את השם $4 ל{{GRAMMAR:תחילית|$5}}",
 	"logentry-gblrights-deleteset": "$1 {{GENDER:$2|מחק|מחקה}} את קבוצת אתרי הוויקי \"$4\"",
-	"logentry-gblrights-newset": "$1 {{GENDER:$2|יצר|יצרה}} את קבוצת אתרי הוויקי $5 בשם $4 עם אתרי הוויקי הבאים: $6",
+	"logentry-gblrights-newset": "$1 {{GENDER:$2|יצר|יצרה}} את קבוצת אתרי הוויקי $5 בשם $4 עם {{PLURAL:$7|אתר הוויקי הבא|אתרי הוויקי הבאים}}: $6",
 	"logentry-gblrights-setchange": "$1 {{GENDER:$2|שינה|שינתה}} את אתרי הוויקי בקבוצה \"$4\": {{PLURAL:$7|נוסף|נוספו}}: $5; {{PLURAL:$8|הוסר|הוסרו}}: $6",
 	"logentry-gblrights-setnewtype": "$1 {{GENDER:$2|שינה|שינתה}} את הסוג של הקבוצה \"$4\" מ$5 ל$6",
 	"logentry-gblrights-setrename": "$1 {{GENDER:$2|שינה|שינתה}} את השם של ערכת הוויקי \"$5\" לשם \"$4\"",
