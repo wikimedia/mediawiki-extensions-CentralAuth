@@ -510,6 +510,7 @@
 	"logentry-gblrename-merge": "$1 {{GENDER:$2|yhdisti}} käyttäjätunnuksen $4 järjestelmänlaajuisesti tunnukseen $5",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|siirsi}} järjestelmänlaajuisesti käyttäjän $4 nimelle $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|siirsi}} käyttäjätunnuksen $4 järjestelmänlaajuisesti nimelle $5",
+	"logentry-gblrights-grouprename": "$1 {{GENDER:$2|uudelleennimesi}} ryhmän $5 nimeksi $4",
 	"logentry-globalauth-delete": "$1 {{GENDER:$2|poisti}} järjestelmänlaajuisen käyttäjän \"$3\"",
 	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|vaihtoi}} järjestelmänlaajuisen käyttäjän \"$3\" tilaa: asetettu $4; poistettu $5",
 	"logentry-newusers-forcecreatelocal": "$1 {{GENDER:$2|loi}} väkisin paikallisen käyttäjän $3",

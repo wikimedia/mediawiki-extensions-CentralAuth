@@ -519,6 +519,8 @@
 	"logentry-gblrename-merge": "$1 globalnie {{GENDER:$2|połączył|połączyła}} $4 z $5",
 	"logentry-gblrename-promote": "$1 globalnie {{GENDER:$2|zmienił|zmieniła}} nazwę $4 na $5",
 	"logentry-gblrename-rename": "$1 globalnie {{GENDER:$2|zmienił|zmieniła}} nazwę $4 na $5",
+	"logentry-gblrights-groupprms2": "$1 {{GENDER:$2|zmienił|zmieniła|zmienił(a)}} uprawnienia grupy $3: dodano $4; usunięto $5",
+	"logentry-gblrights-usergroups": "$1 {{GENDER:$2|zmienił|zmieniła|zmienił(a)}} przynależność $3 z grupy $4 do $5",
 	"mergeaccount": "Status tworzenia konta uniwersalnego",
 	"multilock": "Zablokuj wiele kont uniwersalnych",
 	"right-centralauth-createlocal": "Wymuszone tworzenie lokalnych kont dla kont uniwersalnych",

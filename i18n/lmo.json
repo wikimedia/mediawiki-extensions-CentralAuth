@@ -18,5 +18,6 @@
 	"centralauth-prefs-unattached": "Conligada insema minga del tutt",
 	"globalgrouppermissions": "Manegg di grup globai.",
 	"globalrenamerequest": "Domanda de rinomina de l'utenza global",
-	"globalusers": "Lista di cunt globai"
+	"globalusers": "Lista di cunt globai",
+	"logentry-gblrights-grouprename": "El / la $1 {{GENDER:$2|l'ha rinominad}} el grup $5 come $4"
 }

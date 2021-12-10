@@ -508,6 +508,7 @@
 	"logentry-gblrename-merge": "$1님이 $4 통합 계정을 $5 계정으로 {{GENDER:$2|병합했습니다}}",
 	"logentry-gblrename-promote": "$1님이 모든 위키에서 $4의 이름을 $5(으)로 {{GENDER:$2|바꾸었습니다}}",
 	"logentry-gblrename-rename": "$1님이 모든 위키에서 $4의 이름을 $5(으)로 {{GENDER:$2|바꾸었습니다}}",
+	"logentry-gblrights-grouprename": "$1님이 $5 그룹을 $4 그룹으로 {{GENDER:$2|바꾸었습니다}}",
 	"mergeaccount": "통합 계정으로 로그인",
 	"multilock": "여러 통합 계정을 잠그기",
 	"right-centralauth-createlocal": "통합 계정에 대해 로컬 계정을 강제로 생성하기",
