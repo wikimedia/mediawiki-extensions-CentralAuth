@@ -54,6 +54,9 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/** @var GlobalRenameDenylist */
 	private $globalRenameDenylist;
 
+	/** @var GlobalRenameUserValidator */
+	private $globalRenameUserValidator;
+
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
@@ -62,14 +65,17 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/**
 	 * @param CentralAuthUIService $uiService
 	 * @param GlobalRenameDenylist $globalRenameDenylist
+	 * @param GlobalRenameUserValidator $globalRenameUserValidator
 	 */
 	public function __construct(
 		CentralAuthUIService $uiService,
-		GlobalRenameDenylist $globalRenameDenylist
+		GlobalRenameDenylist $globalRenameDenylist,
+		GlobalRenameUserValidator $globalRenameUserValidator
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
+		$this->globalRenameUserValidator = $globalRenameUserValidator;
 	}
 
 	public function doesWrites() {
@@ -243,15 +249,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		// Validate rename deny list
-		$globalRenameDenyList = $this->globalRenameDenylist;
-		if ( !$globalRenameDenyList->checkUser( $oldUser ) ) {
+		if ( !$this->globalRenameDenylist->checkUser( $oldUser ) ) {
 			return Status::newFatal( 'centralauth-rename-listed-on-denylist' );
 		}
 
-		$validator = new GlobalRenameUserValidator();
-		$status = $validator->validate( $oldUser, $newUser );
-
-		return $status;
+		return $this->globalRenameUserValidator->validate( $oldUser, $newUser );
 	}
 
 	/**
