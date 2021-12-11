@@ -122,6 +122,7 @@ class CentralAuthHooks implements
 				'services' => [
 					'CentralAuth.GlobalRenameDenylist',
 					'UserNameUtils',
+					'CentralAuth.GlobalRenameRequestStore',
 				]
 			];
 
@@ -139,6 +140,7 @@ class CentralAuthHooks implements
 					'UserNameUtils',
 					'DBLoadBalancerFactory',
 					'CentralAuth.CentralAuthUIService',
+					'CentralAuth.GlobalRenameRequestStore',
 				],
 			];
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [

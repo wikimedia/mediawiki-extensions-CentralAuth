@@ -34,6 +34,7 @@ use LogEventsList;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUser;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
@@ -70,6 +71,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/** @var CentralAuthUIService */
 	private $uiService;
 
+	/** @var GlobalRenameRequestStore */
+	private $globalRenameRequestStore;
+
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';
 	public const PAGE_CLOSED_QUEUE = 'closed';
@@ -77,11 +81,17 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	private const ACTION_CANCEL = 'cancel';
 	public const ACTION_VIEW = 'view';
 
-	public function __construct( UserNameUtils $userNameUtils, LBFactory $lbFactory, CentralAuthUIService $uiService ) {
+	public function __construct(
+		UserNameUtils $userNameUtils,
+		LBFactory $lbFactory,
+		CentralAuthUIService $uiService,
+		GlobalRenameRequestStore $globalRenameRequestStore
+	) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
 		$this->lbFactory = $lbFactory;
 		$this->uiService = $uiService;
+		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
 	public function doesWrites() {
@@ -659,7 +669,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 			$request->setComments( $data['comments'] );
 
-			if ( $request->save() ) {
+			if ( $this->globalRenameRequestStore->save( $request ) ) {
 				// Send email to the user about the change in status.
 				if ( $approved ) {
 					$subject = $this->msg(

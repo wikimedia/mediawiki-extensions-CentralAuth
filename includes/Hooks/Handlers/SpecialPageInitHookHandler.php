@@ -54,6 +54,7 @@ class SpecialPageInitHookHandler implements
 				'services' => [
 					'CentralAuth.GlobalRenameDenylist',
 					'UserNameUtils',
+					'CentralAuth.GlobalRenameRequestStore',
 				]
 			];
 			$list['GlobalRenameQueue'] = [
@@ -62,6 +63,7 @@ class SpecialPageInitHookHandler implements
 					'UserNameUtils',
 					'DBLoadBalancerFactory',
 					'CentralAuth.CentralAuthUIService',
+					'CentralAuth.GlobalRenameRequestStore',
 				],
 			];
 		}
