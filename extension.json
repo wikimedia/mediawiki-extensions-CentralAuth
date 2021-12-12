@@ -306,21 +306,19 @@
 		},
 		"_merge_strategy": "array_plus_2d"
 	},
-	"LogActions": {
-		"globalauth/lock": "centralauth-log-entry-lock",
-		"globalauth/unlock": "centralauth-log-entry-unlock",
-		"globalauth/hide": "centralauth-log-entry-hide",
-		"globalauth/unhide": "centralauth-log-entry-unhide",
-		"globalauth/lockandhid": "centralauth-log-entry-lockandhide",
-		"gblrights/groupperms": "centralauth-rightslog-entry-groupperms"
-	},
 	"LogActionsHandlers": {
 		"globalauth/delete": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalDeleteLogFormatter",
 		"globalauth/setstatus": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ChangeStatusLogFormatter",
+		"globalauth/hide": "LogFormatter",
+		"globalauth/lock": "LogFormatter",
+		"globalauth/lockandhid": "LogFormatter",
+		"globalauth/unhide": "LogFormatter",
+		"globalauth/unlock": "LogFormatter",
 		"newusers/forcecreatelocal": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ForceCreateLocalUserLogFormatter",
 		"suppress/cadelete": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GlobalDeleteLogFormatter",
 		"suppress/setstatus": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\ChangeStatusLogFormatter",
 		"gblrights/usergroups": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GroupMembershipChangeLogFormatter",
+		"gblrights/groupperms": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\PermissionChangeLogFormatter",
 		"gblrights/groupprms2": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\PermissionChangeLogFormatter",
 		"gblrights/groupprms3": "LogFormatter",
 		"gblrights/grouprename": "MediaWiki\\Extension\\CentralAuth\\LogFormatter\\GroupRenameLogFormatter",
