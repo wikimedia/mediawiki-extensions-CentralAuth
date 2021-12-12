@@ -170,16 +170,16 @@ class SpecialMultiLock extends SpecialPage {
 			}
 		}
 
-		$result = $dbr->select(
+		$result = $dbr->selectFieldValues(
 			[ 'globaluser' ],
-			[ 'gu_name' ],
+			'gu_name',
 			$where,
 			__METHOD__,
 			[ 'LIMIT' => 100 ]
 		);
 
-		foreach ( $result as $row ) {
-			$this->mUserNames[] = $row->gu_name;
+		foreach ( $result as $name ) {
+			$this->mUserNames[] = $name;
 		}
 	}
 

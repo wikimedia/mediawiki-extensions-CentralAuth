@@ -761,7 +761,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// renamed groups
 		$dbr = $this->databaseManager->getCentralDB( DB_PRIMARY );
 
-		$res = $dbr->select(
+		$res = $dbr->selectFieldValues(
 			[ 'global_user_groups', 'globaluser' ],
 			'gu_name',
 			[ 'gug_group' => $group, 'gu_id=gug_user' ],
@@ -769,9 +769,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		);
 
 		// Invalidate their rights cache.
-		foreach ( $res as $row ) {
+		foreach ( $res as $name ) {
 			// Use READ_LATEST for paranoia, though the DB isn't used in this method
-			$cu = CentralAuthUser::getPrimaryInstanceByName( $row->gu_name );
+			$cu = CentralAuthUser::getPrimaryInstanceByName( $name );
 			$cu->quickInvalidateCache();
 		}
 	}
