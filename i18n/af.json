@@ -7,7 +7,9 @@
 			"Naudefj",
 			"SPQRobin",
 			"Spacebirdy",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Danieldegroot2",
+			"Winstonza"
 		]
 	},
 	"centralauth": "Global Gebruikers Bestuur",
@@ -124,7 +126,7 @@
 	"centralauth-finish-login": "Meld aan",
 	"centralauth-finish-noconfirms": "Geen rekeninge kan bevestig word deur gebruik te maak van hierdie wagwoord.",
 	"centralauth-finish-password": "Wagwoord:",
-	"centralauth-finish-send-confirmation": "E-pos wagwoord",
+	"centralauth-finish-send-confirmation": "E-poswagwoord",
 	"centralauth-finish-text": "As hierdie rekeninge nie aan jou behoort nie, kan jy die aanmelding eenwording proses eenvoudig klaar deur die tik van die wagwoorde vir die ander rekeninge hier:",
 	"centralauth-finish-title": "Voltooi samevoeging",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|bydrae|bydraes}} op $2",
@@ -205,7 +207,7 @@
 	"centralauth-rightslog-entry-setchange": "het die wiki's in \"$1\" gewysig: bygevoeg: $2; geskrap: $3",
 	"centralauth-rightslog-entry-setnewtype": "het tipe vir $1 gewysig van $2 na $3",
 	"centralauth-rightslog-entry-setrename": "het die wikigroep \"$2\" na \"$1\" hernoem",
-	"centralauth-rightslog-header": "Hierdie log-bedrywighede op die globale groepe: lidmaatskap en permissions veranderinge",
+	"centralauth-rightslog-header": "Hierdie log-bedrywighede op die globale groepe: lidmaatskap en regte veranderinge",
 	"centralauth-rightslog-name": "Logboek van globale regte",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonde|sekondes}} gelede",
 	"centralauth-token-mismatch": "Jammer, ons kan nie jou vorm voorlegging as gevolg van 'n verlies aan sessie-data te verwerk.",

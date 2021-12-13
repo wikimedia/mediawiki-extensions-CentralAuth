@@ -30,7 +30,10 @@
 			"TheGabrielZaum",
 			"Tks4Fish",
 			"Tuliouel",
-			555
+			555,
+			"Albertoleoncio",
+			"Eduardoaddad",
+			"Isabelle Belato"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o usuário está",
@@ -219,7 +222,7 @@
 	"centralauth-editset-wikis": "Wikis:",
 	"centralauth-editset-zerowikis": "Nenhuma wiki especificada.",
 	"centralauth-error-badtoken": "O token de autenticação fornecido expirou ou não é válido.",
-	"centralauth-error-locked": "Você não tem como editar, já que sua conta está bloqueada.",
+	"centralauth-error-locked": "Você não pode editar, pois sua conta está travada.",
 	"centralauth-error-nologinattempt": "Nenhuma tentativa de login ativa em andamento para a sua sessão.",
 	"centralauth-error-token-wrongattempt": "O token de autenticação não pertence à sua tentativa atual de autenticar-se.\nAlguém pode estar tentando autenticar-se através de sua conta.",
 	"centralauth-error-token-wronguser": "O token não corresponde ao seu nome de usuário nesta sessão.\nAlguém pode estar tentando associá-lo a uma conta maliciosa.\nSe está tentando apenas autenticar-se como outro usuário, por favor saia primeiro de sua conta atual.",
@@ -276,7 +279,7 @@
 	"centralauth-log-header": "Este registro contém operações sobre contas globais: remoções, bloqueios e desbloqueios.",
 	"centralauth-log-name": "Registro de gestão de contas globais",
 	"centralauth-log-status-hidden": "ocultado",
-	"centralauth-log-status-locked": "bloqueada",
+	"centralauth-log-status-locked": "travada",
 	"centralauth-log-status-none": "(nenhum)",
 	"centralauth-log-status-oversighted": "suprimido",
 	"centralauth-login-error-locked": "Não {{GENDER:$1|pode}} entrar porque a {{GENDER:$1|sua}} conta está bloqueada globalmente.",
@@ -485,6 +488,7 @@
 	"globalrenamerequest-newname-err-invalid": "Você não especificou um nome de usuário(a) válido.",
 	"globalrenamerequest-newname-err-taken": "O nome de usuário inserido já está em uso.\nPor favor, escolha um diferente.",
 	"globalrenamerequest-newname-help": "Insira o novo nome de usuário(a) que você deseja usar, por exemplo, \"$1\".",
+	"globalrenamerequest-newname-help-basic": "Insira o novo nome de usuário(a) que deseja usar.",
 	"globalrenamerequest-newname-label": "Nome de usuário solicitado:",
 	"globalrenamerequest-pretext": "Peça um novo nome de usuário para todos os projetos.\n\nAs suas contribuições anteriores serão ligadas ao novo nome de usuário.\n\nSerá disponibilizada uma lista dos pedidos feitos com este formulário aos utilizadores que podem executar a operação. Receberá uma notificação por e-mail quando este processo estiver concluído.\n\nSe o seu pedido tem por objetivo anonimato e privacidade, note que será criado um registo permanente a anotar o seu nome anterior. Por isso, pondere criar simplesmente [[Special:CreateAccount|uma conta nova separada e independente]], alterar o nome da sua conta atual para algo aleatório e abandoná-la.",
 	"globalrenamerequest-reason-label": "Motivo da solicitação",

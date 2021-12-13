@@ -3,9 +3,11 @@
 		"authors": [
 			"Jewbask",
 			"Maor X",
-			"Menachem.Moreira"
+			"Menachem.Moreira",
+			"WikiiiTranslator"
 		]
 	},
+	"centralauth-admin-blocklog": "registro de bloqueos",
 	"centralauth-admin-info-username": "Nombre de usuario:",
 	"centralauth-admin-list-groups": "Grupos",
 	"centralauth-admin-no": "no",
@@ -27,6 +29,8 @@
 	"centralauth-finish-login": "Entrar",
 	"centralauth-finish-password": "Kontrasenya:",
 	"centralauth-finish-send-confirmation": "Mandar una nueva parola por e-posta",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ajustamiento|ajustamientos}} en $2",
+	"centralauth-foreign-link": "Usador $1 en $2",
 	"centralauth-groupname": "la Fondasion Wikimedia",
 	"centralauth-hours-ago": "aze $1{{PLURAL:$1|ora|oras}}",
 	"centralauth-incomplete": "Unifikasiyon de kuentos no kompletada!",

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Juanpabl",
-			"Liangent"
+			"Liangent",
+			"Willtron"
 		]
 	},
 	"centralauth": "Administrador de cuentas globals",
@@ -187,7 +188,7 @@
 	"centralauth-merge-method-admin-desc": "Indica que a cuenta local fue unificada manualment por os stewards.\nIxa capacidat ye desactivada por razons de seguranza.",
 	"centralauth-merge-method-empty": "sin de contrebucions",
 	"centralauth-merge-method-empty-desc": "Indica que a cuenta local fue unificada porque no teneba edicions.",
-	"centralauth-merge-method-login": "creyato en encetar a sesión",
+	"centralauth-merge-method-login": "creyau en encetar a sesión",
 	"centralauth-merge-method-login-desc": "Indica que a cuenta local fue creyada automaticament quan l'usuario encetó una sesión.",
 	"centralauth-merge-method-mail": "confirmata por correu eletronico",
 	"centralauth-merge-method-mail-desc": "Indica que a cuenta local fue unificada porque a suya adreza de correu electronico coincidió con l'adreza de correu electronico d'a cuenta prencipal.",

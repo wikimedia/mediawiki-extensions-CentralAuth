@@ -31,7 +31,10 @@
 			"Southparkfan",
 			"TBloemink",
 			"Trijnstel",
-			"Whaledad"
+			"Whaledad",
+			"Danieldegroot2",
+			"DutchTom",
+			"Encycloon"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale groepen waar de gebruiker lid van is",
@@ -141,6 +144,8 @@
 	"centralauth-attach-text": "Dit account is nog niet gemigreerd naar een samengevoegd account.\nAls het overkoepelende account ook van u is, dan kunt u dit account samenvoegen als u het wachtwoord voor het overkoepelende account ingeeft:",
 	"centralauth-attach-title": "Account bevestigen",
 	"centralauth-block-already-locked": "De gebruiker [[Special:CentralAuth/$1|$1]] is al globaal geblokkeerd.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|pagina's}}",
+	"centralauth-block-editing-ns": "{{PLURAL:$1|naamruimte|naamruimten}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "U bent al lokaal aangemeld",
 	"centralauth-centralautologin-badparams": "De opgegeven aanmeldgegevens zijn ongeldig",
 	"centralauth-centralautologin-badstate": "Ongeldige status \"$1\"",
@@ -472,16 +477,17 @@
 	"globalrenamerequest-email-invalid": "Ongeldige IP-adres opgegeven.",
 	"globalrenamerequest-email-label": "E-mailadres:",
 	"globalrenamerequest-email-mismatch": "De e-mailadressen zijn niet gelijk.<br />Controleer de adressen en probeer het nogmaals.",
-	"globalrenamerequest-email-why-explain": "We hebben tijdens dit proces een e-mail adres nodig om ervoor te zorgen dat u de toegang tot dit account niet verliest.<br />U kunt het e-mailadres weer verwijderen zodra na het hernoemingsproces is afgerond.",
+	"globalrenamerequest-email-why-explain": "We hebben tijdens dit proces een e-mailadres nodig om ervoor te zorgen dat u de toegang tot dit account niet verliest.<br />U kunt het e-mailadres weer verwijderen zodra na het hernoemingsproces is afgerond.",
 	"globalrenamerequest-email2-help": "Voer het e-mnailadres ter bevestiging nogmaals in.",
 	"globalrenamerequest-email2-label": "E-mailadres bevestigen:",
 	"globalrenamerequest-forced": "De Wikimedia Foundation is bezig met het [[:mw:SUL_finalisation|eenduidig maken van gebruikersnamen op Wikimedia projecten]]. Deze gebruikersnaam is reeds in gebruik op andere Wikimedia projecten en dient te worden gewijzigd om dit proces te kunnen afronden. U dient daarom een andere gebruikersnaam te kiezen.",
 	"globalrenamerequest-legend": "Verzoek om gebruikers eenduidig te hernoemen.",
 	"globalrenamerequest-newname-err-invalid": "U hebt een ongeldige gebruikersnaam opgegeven.",
 	"globalrenamerequest-newname-err-taken": "De gekozen gebruikersnaam is al in gebruik.\nKies een andere naam.",
-	"globalrenamerequest-newname-help": "Voer de nieuwe gebruikersnaam in die u wenst te gebruiken, e.g. \"$1\".",
+	"globalrenamerequest-newname-help": "Voer de nieuwe gebruikersnaam in die u wilt gebruiken, bv. \"$1\".",
+	"globalrenamerequest-newname-help-basic": "Voer de nieuwe gebruikersnaam in die u wilt gebruiken.",
 	"globalrenamerequest-newname-label": "Gevraagde gebruikersnaam:",
-	"globalrenamerequest-pretext": "Vraag een nieuwe gebruikersnaam aan om die op alle projecten te kunnen gebruiken.\n\nAl uw eerdere bijdragen worden gekoppeld aan uw nieuwe gebruikersnaam.\n\nEen lijst van aanvragen die via dit formulier worden gemaakt, zullen getoond worden aan de gebruikers die het recht hebben deze actie uit te voeren. U wordt per e-mail geïnformeerd wanneer dit proces is voltooid.\n\nAls uw aanvraag gerelateerd is aan een wens voor anoniemiteit of privacy, wees er dan bewust van dat een permanente logboekregel wordt aangemaakt met daarin uw vorige gebruikersnaam. U kunt er voor kiezen om [[Special:CreateAccount|een nieuw en onafhankelijk gebruikersaccount aan te maken]] en uw huidige account laten hernoemen naar iets willekeurigs, om het daarna te verlaten.",
+	"globalrenamerequest-pretext": "Vraag een nieuwe gebruikersnaam aan om die op alle projecten te kunnen gebruiken.\n\nAl uw eerdere bijdragen worden gekoppeld aan uw nieuwe gebruikersnaam.\n\nEen lijst van aanvragen die via dit formulier worden gemaakt, zullen getoond worden aan de gebruikers die het recht hebben deze actie uit te voeren. U wordt per e-mail geïnformeerd wanneer dit proces is voltooid.\n\nAls uw aanvraag gerelateerd is aan een wens voor anonimiteit of privacy, wees er dan bewust van dat een permanente logboekregel wordt aangemaakt met daarin uw vorige gebruikersnaam. U kunt er voor kiezen om [[Special:CreateAccount|een nieuw en onafhankelijk gebruikersaccount aan te maken]] en uw huidige account laten hernoemen naar iets willekeurigs, om het daarna te verlaten.",
 	"globalrenamerequest-reason-label": "Reden voor het verzoek",
 	"globalrenamerequest-save-error": "Fout bij het opslaan van de aanvraag. Probeer het opnieuw.",
 	"globalrenamerequest-status-text": "Uw hernoemingsverzoek is momenteel in bewerking en wacht op goedkeuring door iemand die dit kan uitvoeren. U krijgt per e-mail bericht zodra het verzoek verwerkt is.\n\n;Huidige gebruikersnaam:\n:$1\n;Gevraagde gebruikersnaam:\n:$2",
@@ -518,5 +524,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Uw}} account '''$1''' is hernoemd naar '''$2''' gedurende het automatische proces van de migratie naar een eenduidig aanmeldsysteem bij {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Uw}} account is hernoemd",
 	"sulrenamewarning-usenew": "Gebruik vanaf nu {{GENDER:$1|uw}} nieuwe gebruikersnaam '''$1''' bij het aanmelden.",
-	"userswhowillberenamed": "Gebruikers die hernoemd gaan worden"
+	"userswhowillberenamed": "Gebruikers die hernoemd gaan worden",
+	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat."
 }

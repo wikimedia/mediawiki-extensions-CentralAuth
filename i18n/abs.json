@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Anok kutai jang"
+			"Anok kutai jang",
+			"MuratTheTurkish"
 		]
 	},
 	"centralauth-admin-blocklog": "Catatan pamblokiran",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusi|kontribusi}} di $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribusi}} di $2",
 	"centralauth-foreign-link": "Pangguna $1 di $2",
 	"centralauth-merge-method-login": "Dibiking waktu maso ka log"
 }

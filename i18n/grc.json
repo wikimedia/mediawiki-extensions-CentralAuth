@@ -4,7 +4,8 @@
 			"Crazymadlover",
 			"Gts-tg",
 			"LeighvsOptimvsMaximvs",
-			"Omnipaedista"
+			"Omnipaedista",
+			"PastelKos"
 		]
 	},
 	"centralauth-admin-blocklog": "Αἱ ἀποκλῄσεις",
@@ -26,7 +27,7 @@
 	"centralauth-editset-reason": "Αἰτία:",
 	"centralauth-editset-submit": "Ὑποβάλλειν",
 	"centralauth-editset-type": "Τύπος:",
-	"centralauth-editset-wikis": "Τὰ βίκι:",
+	"centralauth-editset-wikis": "Τὰ οὐίκι:",
 	"centralauth-finish-login": "Συνδεῖσθαι",
 	"centralauth-finish-password": "Σῆμα:",
 	"centralauth-finish-send-confirmation": "Πέμπειν ἠλεκτρονικῇ ἐπιστολῇ τὸ σύνθημα",

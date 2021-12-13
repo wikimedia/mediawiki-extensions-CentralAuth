@@ -11,16 +11,22 @@
 	"centralauth-admin-list-groups": "Խմբեր",
 	"centralauth-admin-no": "ոչ",
 	"centralauth-admin-yes": "այո",
+	"centralauth-editset-submit-delete": "Ջնջել",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2-ում",
 	"centralauth-foreign-link": "$2-ից $1 մասնակից",
 	"centralauth-globalgroupperms-group": "Խումբ",
+	"centralauth-merge-dryrun-or": "'''կամ'''",
 	"centralauth-merge-method-login": "ստեծղվել է մուտքի ժամանակ",
 	"centralauth-rename-form-reason": "Պատճառ",
 	"centralauth-rename-globaleditcount-threshold": "Այս մասնակիցն ունի ավելի քան $1 {{PLURAL:$1|խմբագրում|խմբագրումներ}}։ Խնդրում ենք հաստատել որ դուք համաձայն եք անվանափոխել այս մասնակցին և սիսադմինը կարող է վերահսկել այս անվանափոխումը։",
 	"centralauth-rename-table-status-done": "Արված է",
+	"centralauth-usermerge-form-reason": "Պատճառ",
 	"centralauth-uwbr-registration-nodate": "Անհայտ",
+	"globalrenamequeue-action-address": "Դիմել",
+	"globalrenamequeue-column-row-actions": "Գործողություն",
 	"globalrenamequeue-column-rq-status": "Կարգավիճակ",
 	"globalrenamequeue-form-newname": "Մասնակցային անվան հայտ:",
 	"globalrenamequeue-form-status-all": "լրիվ",
-	"globalrenamequeue-form-username": "Մասնակցի անուն:"
+	"globalrenamequeue-form-username": "Մասնակցի անուն:",
+	"globalrenamequeue-request-cancel-text": "Չեղարկել"
 }

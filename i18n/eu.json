@@ -80,7 +80,7 @@
 	"centralauth-finish-password": "Pasahitza:",
 	"centralauth-finish-send-confirmation": "Pasahitza e-posta bidez bidali",
 	"centralauth-finish-title": "Batzea amaitu",
-	"centralauth-foreign-contributions": "{{PLURAL:$1|Ekarpen $1|$1 ekarpen}} $2(e)n",
+	"centralauth-foreign-contributions": "{{PLURAL:$1|Ekarpen bat|$1 ekarpen}}, $2 wikian",
 	"centralauth-foreign-link": "$1 lankidea $2(a)n",
 	"centralauth-globalgroupperms-creategroup-submit": "Baimenak esleitu",
 	"centralauth-globalgroupperms-newgroupname": "Talde berriaren izena:",

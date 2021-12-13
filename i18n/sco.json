@@ -4,7 +4,9 @@
 			"AmaryllisGardener",
 			"John Reid",
 			"Macofe",
-			"McDutchie"
+			"McDutchie",
+			"MJL",
+			"NGC 54"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groops that the uiser is in",
@@ -97,7 +99,7 @@
 	"centralauth-admin-unmerge-success": "Successfulie onmerged $1 {{PLURAL:$1|accoont|accoonts}}",
 	"centralauth-admin-username": "Uisername:",
 	"centralauth-admin-view": "See accoont information",
-	"centralauth-admin-yes": "ay",
+	"centralauth-admin-yes": "aye",
 	"centralauth-antispoof-desc": "Eiks AntiSpoof technologie til CentralAuth",
 	"centralauth-attach-list-attached": "The uneefied accoont named \"$1\" incluids the follaein accoonts:",
 	"centralauth-attach-submit": "Migrate accoont",
@@ -421,7 +423,7 @@
 	"globalusermerge-legend": "Merge global uiser",
 	"globalusers": "Global accoonts leet",
 	"log-description-gblrename": "This log tracks the global renamin o uisers.",
-	"log-name-gblrename": "Global rename log",
+	"log-name-gblrename": "Jurnal redenumiri globale",
 	"logentry-gblrename-merge": "$1 globalie {{GENDER:$2|merged}} $4 intae $5",
 	"logentry-gblrename-rename": "$1 globalie {{GENDER:$2|renamed}} $4 tae $5",
 	"mergeaccount": "Login uneefeecation status",

@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Awangba Mangang"
+			"Awangba Mangang",
+			"Afingba Mangang"
 		]
 	},
 	"centralauth-admin-blocklog": "ꯆꯪꯁꯤꯟꯕꯥ ꯊꯤꯡꯕꯥ",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ꯈꯣꯝꯖꯤꯟꯂꯛꯄ|ꯈꯣꯝꯖꯤꯟꯂꯛꯄꯁꯤꯡ}}  $2 ꯗ",
 	"centralauth-foreign-link": "ꯁꯤꯖꯤꯟꯅꯔꯤꯕ $1  $2 ꯗ",
+	"centralauth-merge-method-login": "ꯁꯦꯝꯈ꯭ꯔꯦ ꯅꯠꯇ꯭ꯔꯒ ꯃꯅꯨꯡ ꯆꯪꯉꯨ",
 	"centralauth-multilock-homewiki": "ꯌꯨꯝ ꯋꯤꯀꯤ"
 }

@@ -2,10 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Amara-Amaziɣ",
-			"Zanatos"
+			"Zanatos",
+			"Amire80",
+			"Ayour2002",
+			"Lhoussine AIT TAYFST"
 		]
 	},
-	"centralauth-admin-no": "ⵓⵀⵓ",
-	"centralauth-admin-yes": "ⵢⴰⵀ",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ⵜⴷⵔⴰⵡⵜ|ⵜⴷⵔⴰⵡⵉⵏ}} ⵖ $2"
+	"centralauth-admin-blocklog": "Sbdd aɣmis",
+	"centralauth-admin-no": "Uhu",
+	"centralauth-admin-yes": "Yah",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|tdrawt|tdrawin}} ɣ $2",
+	"centralauth-foreign-link": "Asmras $1 f $2",
+	"centralauth-merge-method-login": "Ittsnulfa f wassaɣ n usmras"
 }

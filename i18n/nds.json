@@ -139,7 +139,7 @@
 	"centralauth-logout-no-others": "Du büst nu ok automaatsch bi de annern Projekten vun {{int:Centralauth-groupname}} afmellt.",
 	"centralauth-logout-progress": "Du büst nu ok vun de annern Projekten vun {{int:Centralauth-groupname}} afmellt:",
 	"centralauth-merge-attempt": "'''Dat ingevene Passwoort warrt mit de nablevenen nich tohoopföhrten Brukerkonten vergleken …'''",
-	"centralauth-merge-denied": "Du hest nich de Rechten, disse Sied antokieken.",
+	"centralauth-merge-denied": "Du hest nich de Rechten, disse Siet antokieken.",
 	"centralauth-merge-dryrun-complete": "All vörhannen Brukerkonten köönt automaatsch tohoopföhrt warrn!\n\nBetherto hett sik an dien Brukerkonto noch nix ännert.",
 	"centralauth-merge-dryrun-home": "Dat Tohoopföhrsystem kunn nich bestätigen, dat du de Egendömer vun dat Heimatwiki-Brukerkonto för dissen Brukernaam büst.\n\nEn anner Wiki is för dien Brukernaam as Heimatwiki bestimmt worrn; folg den Lenk ünnen un mell di dor an, dat de Brukerkonten tohoopföhrt warrt.",
 	"centralauth-merge-dryrun-incomplete": "Dat kann wiedergahn, aver welk Brukerkonten kunnen nich automaatsch prööft warrn un warrt nu noch nich mit tohoopföhrt.\nDat geiht, jem later noch tohooptoföhren.\n\nBetherto hett sik an dien Brukerkonto noch nix ännert.",

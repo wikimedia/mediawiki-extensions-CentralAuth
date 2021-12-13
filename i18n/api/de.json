@@ -4,7 +4,8 @@
 			"FF11",
 			"MGChecker",
 			"Metalhead64",
-			"Predatorix"
+			"Predatorix",
+			"FF-11"
 		]
 	},
 	"apierror-centralauth-badsession": "Nur bei Verwendung von CentralAuth-Sitzungen kann ein centralauthtoken abgerufen werden.",
@@ -33,6 +34,7 @@
 	"apihelp-globaluserrights-param-user": "Globaler Benutzername.",
 	"apihelp-globaluserrights-param-userid": "Globale Benutzerkennung.",
 	"apihelp-globaluserrights-summary": "Fügt einen Benutzer zu globalen Gruppen hinzu oder entfernt ihn aus diesen.",
+	"apihelp-main-param-centralauthtoken": "Wenn du mit einer domänenübergreifenden AJAX-Anfrage (CORS) auf die API zugreifst, verwendest du dies, um sich als der aktuelle SUL-Benutzer zu authentifizieren. Verwende <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> in diesem Wiki, um das Token abzurufen, bevor du die CORS-Anfrage stellst. Jedes Token darf nur einmal verwendet werden und verfällt nach 10 Sekunden. Dies sollte in jeder Pre-Flight-Anfrage enthalten sein und daher in der Anfrage-URI (nicht im POST-Body) enthalten sein.",
 	"apihelp-query+globalallusers-description": "Alle globalen Benutzer auflisten.",
 	"apihelp-query+globalallusers-example-1": "Globale Benutzer auflisten",
 	"apihelp-query+globalallusers-example-2": "Zeigt einige Informationen für globale Benutzer, beginnend ab „ABC“",
@@ -42,6 +44,7 @@
 	"apihelp-query+globalallusers-param-group": "Benutzer auf die angegebenen globalen Gruppen beschränken.",
 	"apihelp-query+globalallusers-param-limit": "Welche Gesamtanzahl an Benutzernamen zurückgegeben werden soll.",
 	"apihelp-query+globalallusers-param-prefix": "Sucht nach allen Benutzern, die mit diesem Wert beginnen.",
+	"apihelp-query+globalallusers-param-prop": "Welche Informationen enthalten sein sollen:\n;lockinfo:Ob das Benutzerkonto gesperrt ist.\n;groups:Listet globale Gruppen auf, in denen der Benutzer ist. Dies verbraucht mehr Serverressourcen und kann weniger Ergebnisse als das Limit liefern.\n;existslocally:Fügt die Informationen hinzu, wenn der Benutzer lokal existiert.",
 	"apihelp-query+globalallusers-param-to": "Der Benutzername, bei dem die Auflistung enden soll.",
 	"apihelp-query+globalallusers-summary": "Listet alle globalen Benutzer auf.",
 	"apihelp-query+globalgroups-description": "Alle globalen Gruppen aufzählen.",
@@ -57,6 +60,7 @@
 	"apihelp-query+globaluserinfo-example-1": "Ruft Informationen über den aktuellen globalen Benutzer ab",
 	"apihelp-query+globaluserinfo-example-2": "Ruft Informationen über den globalen Benutzer [[User:Example|Example]] ab",
 	"apihelp-query+globaluserinfo-param-id": "Globale Benutzerkennung, für die Informationen abgerufen werden sollen. Falls <var>$1user</var> und <var>$1id</var> gleichzeitig übergeben werden, ist der aktuelle Benutzer Standard.",
+	"apihelp-query+globaluserinfo-param-prop": "Welche Eigenschaften abgerufen werden sollen:\n;groups:Liefert eine Liste der globalen Gruppen, zu denen dieser Benutzer gehört.\n;rights:Liefert eine Liste der globalen Rechte, die dieser Benutzer hat.\n;merged:Liefert eine Liste der zusammengeführten Konten.\n;unattached:Liefert eine Liste der unverbundenen Konten.\n;editcount:Liefert die globale Bearbeitungsanzahl des Benutzers.",
 	"apihelp-query+globaluserinfo-param-user": "Benutzer, für den Informationen abgerufen werden sollen. Falls <var>$1user</var> und <var>$1id</var> gleichzeitig übergeben werden, ist der aktuelle Benutzer Standard.",
 	"apihelp-query+globaluserinfo-summary": "Zeigt Informationen über einen globalen Benutzer an.",
 	"apihelp-query+wikisets-description": "Zählt alle Wikigruppen auf.",
@@ -65,6 +69,7 @@
 	"apihelp-query+wikisets-param-from": "Der Name der Wikigruppe, von der gestartet werden soll.",
 	"apihelp-query+wikisets-param-limit": "Wie viele Wikigruppen zurückgegeben werden sollen.",
 	"apihelp-query+wikisets-param-orderbyname": "Ergebnisse nach Namen sortieren.",
+	"apihelp-query+wikisets-param-prop": "Welche Informationen aufgenommen werden sollen.\n;type:Opt-in-basiert (schließt nur bestimmte Wikis ein) oder opt-out-basiert (schließt alle Wikis außer den angegebenen ein).\n;wikisincluded:Die Wikis, die in diesem Wikiset enthalten sind.\n;wikisnotincluded:Die Wikis, die nicht in diesem Wikiset enthalten sind.",
 	"apihelp-query+wikisets-summary": "Zählt alle Wikisätze auf.",
 	"apihelp-setglobalaccountstatus-description": "Legt den Status eines globalen Benutzers fest.",
 	"apihelp-setglobalaccountstatus-example-1": "Sperrt das globale Benutzerkonto für [[User:Example]] mit der Begründung „Spam“",

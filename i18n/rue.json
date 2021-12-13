@@ -3,7 +3,8 @@
 		"authors": [
 			"Gazeb",
 			"KHMELNYTSKYIA",
-			"Vlad5250"
+			"Vlad5250",
+			"Gramo6"
 		]
 	},
 	"centralauth": "Ґлобалный менежер конт",
@@ -241,6 +242,7 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|рік|рокы|років}} тому",
 	"globalgroupmembership": "Членство у ґлобалных ґрупах",
 	"globalgrouppermissions": "Адміністрація ґлобалных ґруп",
+	"globalrenamerequest-newname-help-basic": "Задайте новоє хосновачськоє имня, котроє хочете хосновати.",
 	"globalusers": "Список ґлобалных конт",
 	"mergeaccount": "Статус зъєдинїня",
 	"right-centralauth-lock": "Блокованя і одблокованя ґлобалных конт",

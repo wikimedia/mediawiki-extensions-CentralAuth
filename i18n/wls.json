@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Lea.Fakauvea"
+		]
+	},
+	"centralauth-admin-blocklog": "tohi ta'ofi",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|gaue tokoni}} on $2",
+	"centralauth-foreign-link": "Kaiga $1 i te $2",
+	"centralauth-merge-method-login": "fa'u i te 'aho ne'e hū mai"
+}

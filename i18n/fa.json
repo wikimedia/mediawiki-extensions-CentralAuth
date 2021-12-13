@@ -26,7 +26,10 @@
 			"Wayiran",
 			"ZxxZxxZ",
 			"درفش کاویانی",
-			"پسر یاس"
+			"پسر یاس",
+			"Ajam",
+			"Darafsh",
+			"Jeeputer"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه‌های سراسری که کاربر در آن عضو است",
@@ -78,7 +81,7 @@
 	"centralauth-admin-intro": "این رابط می‌تواند برای مدیریت حساب‌های سراسری استفاده شود.",
 	"centralauth-admin-list-attached-on": "متصل‌شده در",
 	"centralauth-admin-list-blocked": "بسته شده",
-	"centralauth-admin-list-editcount": "شمارش ویرایش‌ها",
+	"centralauth-admin-list-editcount": "شمار ویرایش‌ها",
 	"centralauth-admin-list-groups": "گروه‌ها",
 	"centralauth-admin-list-legend-ro": "فهرست حساب‌های محلی",
 	"centralauth-admin-list-legend-rw": "حساب‌های محلی را جدا کن",
@@ -119,7 +122,7 @@
 	"centralauth-admin-status-reasons": "*دلایل متداول قفل\n**حساب فقط‌خرابکار\n**حساب فقط‌هرزنامه\n*دلایل متداول قفل و پنهان‌سازی\n**نام کاربری توهین‌آمیز\n**اطلاعات شخصی نامناسب",
 	"centralauth-admin-status-submit": "تنظیم وضعیت",
 	"centralauth-admin-suppressreason": "به طور سراسری توسط $1 موقوف شده‌است، به این دلیل: $2",
-	"centralauth-admin-title": "مدیر جهانی حساب برای $1",
+	"centralauth-admin-title": "مدیر سراسری حساب برای $1",
 	"centralauth-admin-title-ro": "اطلاعات سراسری در مورد حساب $1",
 	"centralauth-admin-too-many-edits": "حساب کاربری سراسری \"<nowiki>$1</nowiki>\" بیش از $2 {{PLURAL:$2|ویرایش|ویرایش}} دارد و نمی تواند پنهان باشد.",
 	"centralauth-admin-unattached": "متصل نشده است",
@@ -136,6 +139,8 @@
 	"centralauth-attach-text": "این حساب کاربری هنوز به حساب کاربری مشترک انتقال داده نشده‌است. اگر حساب کاربری مشترک متعلق به شما است، می‌توانید این حساب را هم با واردکردن گذرواژهٔ آن به حساب کاربری مشترک متصل کنید:",
 	"centralauth-attach-title": "تأیید حساب کاربری",
 	"centralauth-block-already-locked": "حساب کاربری [[Special:CentralAuth/$1|$1]] در حال حاضر به صورت سراسری قفل‌شده است.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|صفحه}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|فضای نام}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "شما هم‌اکنون نیز به صورت محلی ثبت ورود کرده‌اید",
 	"centralauth-centralautologin-badparams": "پارامترهای اصالت‌سنجی یادشده نامعتبر بودند",
 	"centralauth-centralautologin-badstate": "وضعیت نامعتبر «$1»",
@@ -214,7 +219,7 @@
 	"centralauth-editset-zerowikis": "هیچ ویکی مشخص نشده‌است.",
 	"centralauth-error-badtoken": "بهامُهر اصالت‌سنجی فراهم‌شده منقضی شده یا نامعتبر است",
 	"centralauth-error-locked": "شما نمی‌توانید ویرایش کنید چون حساب کاربری شما قفل شده‌است.",
-	"centralauth-error-nologinattempt": "هیچ اقدام ثبت ورود فعالی برای نشت شما در جریان نیست.",
+	"centralauth-error-nologinattempt": "هیچ اقدام ثبت ورود فعالی برای نشست شما در جریان نیست.",
 	"centralauth-error-token-wrongattempt": "بهامُهر اصالت‌سنجی، به ثبت ورود کنونی شما تعلق ندارد.\nممکن است کسی تلاش داشته باشد شما را در یک حساب بدکار ثبت ورود کند.",
 	"centralauth-error-token-wronguser": "بهامُهر با نام کاربری نشت شما هم‌خوانی ندارد.\nممکن است کسی تلاش داشته باشد شما را در یک حساب بدکار ثبت ورود کند.\nاگر تلاش دارید به عنوان کاربر دیگری ثبت ورود کنید، لطفاً‌ نخست ثبت خروج نمایید.",
 	"centralauth-error-unmerged": "شما نمی‌توانید ویرایش کنید، چون حساب کاربری شما یکپارچه نشده‌است.",
@@ -479,6 +484,7 @@
 	"globalrenamerequest-newname-err-invalid": "شما یک نام کاربری معتبر مشخص نکرده‌اید.",
 	"globalrenamerequest-newname-err-taken": "نام کاربری در حال حاضر در استفاده استفاده است. لطفاً نام دیگری برگزینید.",
 	"globalrenamerequest-newname-help": "نام کاربری جدیدی که می‌خواهید استفاده کنید را وارد کنید، برای مثال «$1».",
+	"globalrenamerequest-newname-help-basic": "نام کاربری که مایل به استفاده از آن هستید را وارد کنید.",
 	"globalrenamerequest-newname-label": "نام کاربری درخواستی:",
 	"globalrenamerequest-pretext": "یک نام کاربری جدید برای شناخته شدن در همهٔ پروژه‌ها انتخاب کنید.\n\nهمهٔ مشارکت‌های قبلی شما به این نام کاربری جدید متصل خواهد شد.\n\nفهرستی از درخواست‌های فرستاده‌شده از طریق این بخش در دسترس تمام کاربرانی که توانایی تغییر نام کاربری را دارند است. پس از اتمام کار، از طریق ایمیل به شما اطلاع‌رسانی خواهد شد.\n\nاگر درخواستتان مربوط به حفظ حریم شخصی/ناشناس ماندن است، لطفاً توجه کنید که سیاهه‌ای دائمی برجای خواهد ماند که نام کاربری پیشین شما را نشان می‌دهد. بر همین اساس، ممکن است بخواهید [[Special:CreateAccount|حساب تازه و مستقلی بسازید]] و درخواست کنید که نام حساب فعلی به یک نام تصادفی تغییر کند. پس از آن، می‌توانید حساب فعلی را رها کنید.",
 	"globalrenamerequest-reason-label": "دلیل برای درخواست",
@@ -523,5 +529,6 @@
 	"sulrenamewarning-renamed": "ضمن مهاجرت سامانه {{int:Centralauth-groupname}}  به ورود سراسری، نام حساب {{GENDER:$2|شما}} از '''$1''' به '''$2''' تغییر یافت.",
 	"sulrenamewarning-title": "نام حساب {{GENDER:$1|شما}} تغییر یافت",
 	"sulrenamewarning-usenew": "لطفاً از نام کاربری {{GENDER:$1|جدیدتان}}، '''$1'''، برای ورود به سامانه استفاده کنید.",
-	"userswhowillberenamed": "کاربرانی که تغییر نام خواهند یافت"
+	"userswhowillberenamed": "کاربرانی که تغییر نام خواهند یافت",
+	"centralauth-badaccess-blacklisted": "از آنجا که نام شما در فهرست سیاه قرار داد، قادر به درخواست تغییر نام سراسری نیستید."
 }

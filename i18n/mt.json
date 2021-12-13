@@ -4,7 +4,8 @@
 			"Chrisportelli",
 			"Leli Forte",
 			"Macofe",
-			"Roderick Mallia"
+			"Roderick Mallia",
+			"ToniSant"
 		]
 	},
 	"centralauth": "Amministrazzjoni tal-kontijiet globali",
@@ -13,6 +14,7 @@
 	"centralauth-account-rename-exists": "Ma jistax joħloq kont: Hemm kunflitt bejn l-isem ta' utent mitlub u isem ta' utent ieħor fis-sistema unifikata tad-dħul fil-kont",
 	"centralauth-admin-already-unmerged": "Maqbuż $1, diġà separat",
 	"centralauth-admin-bad-input": "Għażla invalida għat-twaħħid",
+	"centralauth-admin-blocked-reason": "Raġuni: $1",
 	"centralauth-admin-blocklog": "reġistru tal-blokki",
 	"centralauth-admin-delete-button": "Ħassar dan il-kont",
 	"centralauth-admin-delete-confirm": "Inti ċert li tixtieq tħassar dan il-kont?",
@@ -48,6 +50,7 @@
 	"centralauth-admin-permission": "L-istwetti biss jistgħu jwaħħdu l-kontijiet ta' nies oħra għalihom",
 	"centralauth-admin-reason": "Raġuni:",
 	"centralauth-admin-reason-other": "Raġuni oħra/addizzjonali:",
+	"centralauth-admin-reason-other-select": "Raġuni oħra:",
 	"centralauth-admin-setstatus-success": "Għadek kif biddilt l-istat ta' dan il-kont globali.",
 	"centralauth-admin-status": "Agħżel l-istat tal-kont globali",
 	"centralauth-admin-status-hidden": "Moħbi:",
@@ -226,6 +229,7 @@
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Aqra aktar dwar il-'''login imwaħħad''']]…''",
 	"centralauth-readonly": "Id-databażi ta' CentralAuth hi mblukkata",
 	"centralauth-readonlytext": "Id-databażi ta' CentralAuth hija attwalment imblukkata għal daħliet ġodda u modifiki oħra, probabilment minħabba rutina ta' manutenzjoni. Iktar tard kollox jiġi għan-normal.",
+	"centralauth-rename-form-reason": "Raġuni",
 	"centralauth-renameuser-merged": "L-utent $1 għadu kif ġie migrat għas-sistema tal-login imwaħħad. Jekk tbiddel ismu dan iwassal sabiex l-utent lokali jiġi separat minn dak globali.",
 	"centralauth-renameuser-reserved": "L-utent $2 huwa riservat għal kont globali.",
 	"centralauth-rightslog-entry-deleteset": "ħassar is-sett ta' wikis \"$1\"",
@@ -243,9 +247,11 @@
 	"centralauth-rightslog-set-optout": "opt-out",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonda|sekondi}} ilu",
 	"centralauth-token-mismatch": "Skużana, ma nistgħux nipproċessaw il-formola tiegħek minħabba li ntilfet l-informazzjoni tas-sessjoni.",
+	"centralauth-usermerge-form-reason": "Raġuni",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|sena|snin}} ilu",
 	"globalgroupmembership": "Sħubija fil-gruppi globali",
 	"globalgrouppermissions": "Ġestjoni tal-gruppi globali",
+	"globalrenamequeue-request-comments-label": "Noti/motivazzjoni",
 	"globalrenamerequest": "Talba għal isem ġdid għall-unifikazzjoni",
 	"globalrenamerequest-desc": "Itlob isem ġdid għal kont globali",
 	"globalrenamerequest-email-invalid": "Indirizz elettroniku mogħti mhuwiex validu.",
@@ -274,5 +280,6 @@
 	"right-centralauth-oversight": "Iħassar kont globali",
 	"right-centralauth-unmerge": "Jiskonnettja kont globali",
 	"right-globalgroupmembership": "Jimmodifika s-sħubija fi gruppi globali",
-	"right-globalgrouppermissions": "Jamministra l-gruppi globali"
+	"right-globalgrouppermissions": "Jamministra l-gruppi globali",
+	"sessionprovider-centralauthsessionprovider": "sessjonijiet ċentrali bbażati fuq cookie/s"
 }

@@ -4,8 +4,15 @@
 			"Starladin"
 		]
 	},
+	"centralauth": "Aministraziun dles utënzes globales",
 	"centralauth-admin-blocklog": "reister dles blocades",
+	"centralauth-editset": "Grups de wiki",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribut|contribuc}} sön $2",
 	"centralauth-foreign-link": "Utënt $1 sön $2",
-	"centralauth-merge-method-login": "cherié tres l'azes"
+	"centralauth-merge-method-login": "cherié tres l'azes",
+	"globalgroupmembership": "Utënzes di grups globai",
+	"globalgrouppermissions": "Gestiun di grups globai",
+	"globalrenameprogress": "Progress global da nominé danü",
+	"globalusers": "Lista globala di utënc",
+	"mergeaccount": "Prozes de unificaziun dles utënzes"
 }

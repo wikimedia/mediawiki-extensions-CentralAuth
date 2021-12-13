@@ -3,15 +3,22 @@
 		"authors": [
 			"Amara-Amaziɣ",
 			"Aslmad mohamed belarhzali",
-			"ⵕⴰⵊⵉ"
+			"ⵕⴰⵊⵉ",
+			"Brahim-essaidi",
+			"Hakim1bal"
 		]
 	},
-	"centralauth-admin-blocklog": "ⴰⵖⵎⵉⵙ ⵏ ⵉⴳⴷⴷⵓⵍⵏ",
+	"centralauth-admin-blocklog": "ⵜⴰⵎⵙⵙⴽⵜⵉⵜ ⵏ ⵓⴳⴷⴷⵓⵍ",
+	"centralauth-admin-delete-button": "ⴽⴽⵙ ⴰⵎⵉⴹⴰⵏ ⴰ",
+	"centralauth-admin-no": "ⵓⵀⵓ",
+	"centralauth-admin-yes": "ⵢⴰⵀ",
 	"centralauth-editgroup-noset": "(ⵓⵍⴰ ⵢⴰⵏ)",
 	"centralauth-editset-nouse": "(ⵓⵍⴰ ⵢⴰⵏ)",
+	"centralauth-editset-submit-delete": "ⴽⴽⵙ",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ⵓⵏⴰⵎⵓ|ⵉⵏⴰⵎⵓⵜⵏ}} ⴳ $2",
 	"centralauth-foreign-link": "ⴰⵙⵎⵔⴰⵙ $1 ⴼ$ⴳ $2",
 	"centralauth-globalgroupperms-group-listmembers": "ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵉⴳⵎⴰⵎⵏ",
 	"centralauth-log-status-none": "(ⵓⵍⴰ ⵢⴰⵏ)",
-	"centralauth-merge-method-login": "ⵉⵜⵜⵓⵙⴽⴰⵔ ⴳ ⵜⵉⵣⵉ ⵏ ⵓⴽⵛⵛⵓⵎ"
+	"centralauth-merge-method-login": "ⵉⵏⵏⵓⵍⴼⴰⵏ ⴰⴽⴽⴷ ⵏ ⵓⴽⵛⴰⵎ",
+	"centralauth-usermerge-form-deleteuser": "ⵙⵉⵜⵜⵢ ⴰⵏⵙⵙⵎⵔⵙ"
 }

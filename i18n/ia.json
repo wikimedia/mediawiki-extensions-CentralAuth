@@ -114,6 +114,8 @@
 	"centralauth-attach-text": "Iste conto non ha ancora essite migrate al conto unificate.\nSi le conto global es etiam tue, tu pote fusionar iste conto si tu entra le contrasigno del conto global:",
 	"centralauth-attach-title": "Confirmar conto",
 	"centralauth-block-already-locked": "Le conto [[Special:CentralAuth/$1|$1]] es jam blocate globalmente.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|paginas}}",
+	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|spatio|spatios}} de nomines",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Tu ha jam aperite session localmente.",
 	"centralauth-centralautologin-badparams": "Le parametros de authentication specificate es invalide",
 	"centralauth-centralautologin-badstate": "Stato \"$1\" non valide",
@@ -213,7 +215,7 @@
 	"centralauth-globalgroupperms-group-disabled": "(non activate in iste wiki)",
 	"centralauth-globalgroupperms-group-listmembers": "lista de membros",
 	"centralauth-globalgroupperms-group-wikiset": "Insimul de wikis ubi iste gruppo es active: $1",
-	"centralauth-globalgroupperms-groups-intro": "Iste es un lista de tote le gruppos de usatores global configurate in iste ferma de wikis, con lor derectos de accesso e insimules de wiki associate. Usatores con le debite permissiones pote deler un gruppo per remover tote le derectos de illo.",
+	"centralauth-globalgroupperms-groups-intro": "Iste es un lista de tote le gruppos de usatores global configurate in iste ferma de wikis, con lor derectos de accesso e insimules de wiki associate. Pro deler un gruppo, usatores con le debite permissiones pote remover tote le derectos de illo.",
 	"centralauth-globalgroupperms-management": "gestion",
 	"centralauth-globalgroupperms-newgroupname": "Nomine del nove gruppo:",
 	"centralauth-globalgroupperms-nogroups": "Nulle gruppo global es definite.",
@@ -407,6 +409,7 @@
 	"globalrenamequeue-column-rq-status": "Stato",
 	"globalrenamequeue-column-rq-wiki": "Wiki local",
 	"globalrenamequeue-desc": "Processar requestas de renomination global",
+	"globalrenamequeue-email-body-approved-with-note": "Le requesta de renominar \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\" ha essite approbate.\n\nNota: $3",
 	"globalrenamequeue-email-body-approved": "Le requesta de renominar \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\" ha essite approbate.",
 	"globalrenamequeue-email-body-rejected": "Le requesta de renominar \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\" ha essite rejectate.\n\nNota: $3",
 	"globalrenamequeue-email-subject-approved": "Requesta de renomination approbate",
@@ -453,6 +456,7 @@
 	"globalrenamerequest-newname-err-invalid": "Tu non ha specificate un nomine de usator valide.",
 	"globalrenamerequest-newname-err-taken": "Iste nomine de usator es jam in uso.\nElige un altere, per favor.",
 	"globalrenamerequest-newname-help": "Scribe le nove nomine de usator que tu vole usar, p.ex. \"$1\".",
+	"globalrenamerequest-newname-help-basic": "Scribe le nove nomine de usator que tu vole usar.",
 	"globalrenamerequest-newname-label": "Nomine de usator requestate:",
 	"globalrenamerequest-pretext": "Requesta un nove nomine de usator per le qual tu essera cognoscite in tote le projectos.\n\nTote tu contributiones previe essera connectite a iste nove nomine de usator.\n\nUn lista de requestas facite per medio de iste formulario essera divulgate al personas capace de exequer iste operation. Tu recipera un e-mail quando iste processo es completate.\n\nSi tu requesta es motivate per un desiro de anonymitate/confidentialitate, alora nota ben que le renomination essera permanentemente registrate con un indication de tu nomine ancian. In tal caso, tu poterea preferer de [[Special:CreateAccount|crear un conto nove que es separate e independente]], pois renominar tu conto actual in qualcosa aleatori e abandonar lo.",
 	"globalrenamerequest-reason-label": "Motivo del requesta",
@@ -497,5 +501,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Tu}} conto '''$1''' ha essite renominate a '''$2''' durante le migration automatic al systema de contos unificate de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Tu}} conto ha essite renominate",
 	"sulrenamewarning-usenew": "Per favor, usa {{GENDER:$1|tu}} nove nomine de usadtor '''$1''' quando tu aperi session in le futuro.",
-	"userswhowillberenamed": "Usatores que essera renominate"
+	"userswhowillberenamed": "Usatores que essera renominate",
+	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre."
 }

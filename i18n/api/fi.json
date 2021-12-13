@@ -5,12 +5,13 @@
 			"Nike",
 			"Stryn",
 			"Surjection",
-			"Valtlait"
+			"Valtlait",
+			"01miki10"
 		]
 	},
 	"apierror-centralauth-badsession": "centralauthtoken on saatavilla vain CentralAuth-istunnoissa.",
 	"apierror-centralauth-badtoken": "centralauthtoken on virheellinen.",
-	"apierror-centralauth-badusername": "Käyttäjätunnus ”$1” ei kelpaa tässä wikissä",
+	"apierror-centralauth-badusername": "Käyttäjänimi ”$1” ei kelpaa tässä wikissä",
 	"apierror-centralauth-editconflict": "Päällekkäinen muokkaus havaittu, keskeytetään.",
 	"apierror-centralauth-notattached": "centralauthtoken ei ole saatavilla ilman liitettyä järjestelmänlaajuista tunnusta",
 	"apierror-centralauth-notloggedin": "centralauthtoken ei ole saatavilla anonyymeille käyttäjille.",

@@ -458,6 +458,7 @@
 	"globalrenamerequest-newname-err-invalid": "Non g'è specificate 'nu nome utende valide.",
 	"globalrenamerequest-newname-err-taken": "Nome de l'utende mise jè ggià ausate. Pe piacere scacchie 'n'otre nome.",
 	"globalrenamerequest-newname-help": "Mitte 'u nome de l'utende ca tu vuè ccu ause, p.e., \"$1\".",
+	"globalrenamerequest-newname-help-basic": "Mitte 'u nome de l'utende ca tu vuè ccu ause.",
 	"globalrenamerequest-newname-label": "Nome de l'utende cercate:",
 	"globalrenamerequest-pretext": "Cirche 'nu nome utende nuève pe essere canusciute jndr'à tutte le pruggette.\n\nTutte le condrebbute tune d'apprime avènene collegate a stu nome utende nuève.\n\n'N'elenghe de richieste fatte ausanne stu module jè disponibbele a le utinde abbilitate a fà st'operazione.\n\nCe 'a richiesta toje jè motivate da 'u desiderie de anonimate/privacy, tìne presende ca avène ccrejate 'nu record jndr'à l'archivije permanende cu 'u nome tune d'aprrime. Accussì, puè conziderà semblicemende de [[Special:CreateAccount|ccrejà 'n'utenza nove separate e indipendende]] e mandenè l'utenza toje de mò renomenate jndr'à quacchecose de casuale e lassarle.",
 	"globalrenamerequest-reason-label": "Mutive d'a richieste",
