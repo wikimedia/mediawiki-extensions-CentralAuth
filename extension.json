@@ -62,8 +62,7 @@
 		"centralauth-oversight",
 		"globalgrouppermissions",
 		"globalgroupmembership",
-		"centralauth-rename",
-		"centralauth-usermerge"
+		"centralauth-rename"
 	],
 	"SessionProviders": {
 		"CentralAuthSessionProvider": {
@@ -184,18 +183,11 @@
 				"UserNameUtils",
 				"CentralAuth.CentralAuthUIService"
 			]
-		},
-		"GlobalUserMerge": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalUserMerge",
-			"services": [
-				"UserNameUtils"
-			]
 		}
 	},
 	"JobClasses": {
 		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
 		"LocalRenameUserJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameUserJob",
-		"LocalUserMergeJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalUserMergeJob",
 		"LocalPageMoveJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob",
 		"CentralAuthCreateLocalAccountJob": "CentralAuthCreateLocalAccountJob",
 		"CentralAuthUnattachUserJob": "CentralAuthUnattachUserJob"
@@ -458,8 +450,7 @@
 				"mediawiki.util"
 			],
 			"messages": [
-				"centralauth-rename-confirm",
-				"centralauth-usermerge-confirm"
+				"centralauth-rename-confirm"
 			]
 		},
 		"ext.centralauth.ForeignApi": {
@@ -756,10 +747,6 @@
 		},
 		"CentralAuthPreventUnattached": {
 			"description": "Don't allow new unattached accounts to be created",
-			"value": false
-		},
-		"CentralAuthEnableUserMerge": {
-			"description": "Whether to enable the global user merge tool This only controls the availability of the special page, and does not prevent LocalUserMergeJobs from running on the given wiki.",
 			"value": false
 		},
 		"CentralAuthEnableUsersWhoWillBeRenamed": {
