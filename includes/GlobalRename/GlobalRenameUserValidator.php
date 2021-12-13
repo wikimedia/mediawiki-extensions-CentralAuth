@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use CentralAuthUser;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 use Status;
 use User;
 
@@ -14,6 +14,16 @@ use User;
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserValidator {
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	/**
+	 * @param UserNameUtils $userNameUtils
+	 */
+	public function __construct( UserNameUtils $userNameUtils ) {
+		$this->userNameUtils = $userNameUtils;
+	}
+
 	/**
 	 * Check that we can perform the rename
 	 *
@@ -24,9 +34,8 @@ class GlobalRenameUserValidator {
 	 */
 	public function validate( User $oldUser, User $newUser ) {
 		$status = new Status();
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 
-		if ( !$userNameUtils->isCreatable( $newUser->getName() ) ) {
+		if ( !$this->userNameUtils->isCreatable( $newUser->getName() ) ) {
 			$status->fatal( 'centralauth-rename-badusername' );
 		}
 

@@ -174,7 +174,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 			"services": [
 				"CentralAuth.CentralAuthUIService",
-				"CentralAuth.GlobalRenameDenylist"
+				"CentralAuth.GlobalRenameDenylist",
+				"CentralAuth.GlobalRenameUserValidator"
 			]
 		},
 		"GlobalRenameProgress": {
