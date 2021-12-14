@@ -29,7 +29,6 @@
 	"action-centralauth-oversight": "menyembunyikan akun global",
 	"action-centralauth-rename": "mengganti nama akun global",
 	"action-centralauth-unmerge": "membatalkan penggabungan akun global",
-	"action-centralauth-usermerge": "menggabungkan multiakun secara global",
 	"action-globalgroupmembership": "menyunting keanggotaan kelompok global",
 	"action-globalgrouppermissions": "mengelola kelompok global",
 	"centralauth": "Manajemen akun global (Otoritas pusat)",

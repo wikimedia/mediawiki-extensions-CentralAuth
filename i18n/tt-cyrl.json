@@ -108,7 +108,6 @@
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Гомуми кулланучы язмасы''' турында күбрәк белү]]…''",
 	"centralauth-rename-form-reason": "Сәбәп",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} элек",
-	"centralauth-usermerge-form-reason": "Сәбәп",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ел}} элек",
 	"globalrenamequeue-action-view": "Карау",
 	"globalrenamequeue-column-rq-name": "Кулланучы исеме",

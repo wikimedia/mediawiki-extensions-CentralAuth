@@ -8,6 +8,5 @@
 	"centralauth-admin-blocklog": "blak lag",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kanchribyuushan|kanchribyuushandem}} pah $2‎",
 	"centralauth-foreign-link": "Yuuza $1 pah $2",
-	"centralauth-merge-method-login": "kriet pah lagiin",
-	"centralauth-usermerge-form-deleteuser": "Tekout yuuza"
+	"centralauth-merge-method-login": "kriet pah lagiin"
 }

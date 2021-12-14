@@ -152,8 +152,6 @@
 	"centralauth-rightslog-entry-groupperms": "kawenangan grup pikeun $1 dirobah tina $2 jadi $3",
 	"centralauth-rightslog-name": "Log hak global",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|detik|detik}} kaliwat",
-	"centralauth-usermerge-form-deleteuser": "Pupus pamaké",
-	"centralauth-usermerge-form-reason": "Alesan",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|taun|taun}} kaliwat",
 	"globalgroupmembership": "Kaanggotaan dina grup global",
 	"globalrenamequeue-request-cancel-text": "Bolay",

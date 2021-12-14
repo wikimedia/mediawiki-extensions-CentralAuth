@@ -20,7 +20,6 @@
 	"centralauth-rename-form-reason": "Պատճառ",
 	"centralauth-rename-globaleditcount-threshold": "Այս մասնակիցն ունի ավելի քան $1 {{PLURAL:$1|խմբագրում|խմբագրումներ}}։ Խնդրում ենք հաստատել որ դուք համաձայն եք անվանափոխել այս մասնակցին և սիսադմինը կարող է վերահսկել այս անվանափոխումը։",
 	"centralauth-rename-table-status-done": "Արված է",
-	"centralauth-usermerge-form-reason": "Պատճառ",
 	"centralauth-uwbr-registration-nodate": "Անհայտ",
 	"globalrenamequeue-action-address": "Դիմել",
 	"globalrenamequeue-column-row-actions": "Գործողություն",

@@ -257,7 +257,6 @@
 	"centralauth-ro": "વૈશ્વિક ખાતાની માહિતી",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|સેકંડ|સેકંડો}} પહેલાં",
 	"centralauth-token-mismatch": "માફ કરશો, સત્ર માહિતીનો ક્ષય થવાથી અમે તમારું ફોર્મ જમા કરી શકીશું નહી.",
-	"centralauth-usermerge-form-reason": "કારણ",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|વર્ષ|વર્ષો}} પહેલાં",
 	"centralloginsuccesful": "પ્રવેશ સફળ",
 	"globalgroupmembership": "વૈશ્વિક સમૂહોમાં સભ્યપદ",

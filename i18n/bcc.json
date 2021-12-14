@@ -244,7 +244,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|دقیقه|دقیقه}} پیشتر",
 	"centralauth-state-mismatch": "ارور: یک تعارضء ویرایشی پر ائ کاربرء پجارگ بوت. دزبندی انت وتی تغییرء تأیید ءُ رندء جهد بکن ات.",
 	"centralauth-token-mismatch": "شرمنده، ما نه نونت شمی دیم دهگ فرمء بوانین په حاطر شی که دیتا دیوان گار بوت/",
-	"centralauth-usermerge-form-reason": "دلیل",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|سال|سال}} پیشتر",
 	"globalgroupmembership": "عضویت ته گروهان سراسری",
 	"globalgrouppermissions": "مدیریت گروه سراسری",

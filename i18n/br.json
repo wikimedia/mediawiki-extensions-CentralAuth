@@ -290,8 +290,6 @@
 	"centralauth-rightslog-set-optout": "Aozet diwar opt-out",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|eilenn|eilenn}} zo",
 	"centralauth-token-mismatch": "Ho tigarez, n'omp ket bet gouest d'ober war-dro ho furmskrid rak kollet eo bet roadennoù an dalc'h.",
-	"centralauth-usermerge-form-reason": "Abeg",
-	"centralauth-usermerge-invalid": "N'eus kont hollek ebet anvet \"$1\".",
 	"centralauth-warning-notattached": "n'eo ket stag ar gont lec'hel ouzh unan hollek.",
 	"centralauth-warning-notloggedin": "N'oc'h ket kevreet evit c'hoazh.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|bloaz|bloaz}} zo",

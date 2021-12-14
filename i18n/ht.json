@@ -29,6 +29,5 @@
 	"centralauth-merge-step3-title": "Kreye kont inik la",
 	"centralauth-merge-welcome": "'''Kont itilizatè ou an poko fizyone nan nouvo sistèm kont inifye {{int:Centralauth-groupname}}.'''\n\nSi ou chwazi mete tout kont ou yo ansanm, w ap kapab itilize menm non ak mopas nan tout pwojè wiki {{int:Centralauth-groupname}} yo nan tout lang ki egziste.\nSi yon lòt moun genyen menm non itilizatè ave w nan yon lòt pwojè wiki, sa pap deranje yo, men w ap genyen pou ou kontakte moun sa oubyen yon administratè pi ta.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Mete ansanm plizyè kont itilizatè]] pou ou kapab idantifye w ak yon sèl non itilizatè.",
-	"centralauth-usermerge-nousers": "Ou dwe bay de kont itilizatè mondyal",
 	"mergeaccount": "Estati fizyon kont itilizatè yo"
 }

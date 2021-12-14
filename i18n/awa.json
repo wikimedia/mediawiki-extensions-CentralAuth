@@ -202,8 +202,6 @@
 	"centralauth-rightslog-set-optout": "ऑप्ट-आउट आधारित",
 	"centralauth-ro": "वैश्विक खाता जानकारी",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सॅकेंड}} पहीले",
-	"centralauth-usermerge-form-reason": "कारण",
-	"centralauth-usermerge-form-usernames": "अबहीन कय प्रयोगकर्ता नाँव",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|साल}} पहीले",
 	"centralautologin": "वैश्विक लॉगिन",
 	"centrallogin": "वैश्विक सदस्य लॉगिन",

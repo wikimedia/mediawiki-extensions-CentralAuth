@@ -14,7 +14,6 @@
 	"action-centralauth-oversight": "potiskivanje ili skrivanje globalnog računa",
 	"action-centralauth-rename": "preimenovanje globalnih računa",
 	"action-centralauth-unmerge": "razdvojite globalne račune",
-	"action-centralauth-usermerge": "globalno spajanje više korisnika",
 	"action-globalgroupmembership": "mijenjanje članstva u globalnim grupama",
 	"action-globalgrouppermissions": "upravljanje globalnim grupama",
 	"centralauth": "Globalno upravljanje korisnicima",
@@ -213,7 +212,6 @@
 	"grant-setglobalaccountstatus": "Upravljanje globalnim korisničkim računima",
 	"log-name-gblrename": "Evidencija globalnih preimenovanja",
 	"mergeaccount": "Stanje objedinjavanja prijave",
-	"right-centralauth-usermerge": "Globalno spajanje više korisnika",
 	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama"
 }

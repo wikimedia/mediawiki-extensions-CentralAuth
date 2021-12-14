@@ -237,7 +237,6 @@
 	"centralauth-rightslog-set-optout": "opt-out",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekondë|sekonda}} më parë",
 	"centralauth-token-mismatch": "Na vjen keq, ne nuk mundëm ta procesonim paraqitjen tuaj të formularit për shkak të një humbje të të dhënave.",
-	"centralauth-usermerge-form-reason": "Arsyeja",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|vit|vjet}} më parë",
 	"globalgroupmembership": "Anëtarësimi në grupet globale",
 	"globalgrouppermissions": "Menaxhimin e grupet globale",

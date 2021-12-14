@@ -236,7 +236,6 @@
 	"centralauth-rightslog-set-optout": "opt-out",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonda|sekondi}} ilu",
 	"centralauth-token-mismatch": "Skużana, ma nistgħux nipproċessaw il-formola tiegħek minħabba li ntilfet l-informazzjoni tas-sessjoni.",
-	"centralauth-usermerge-form-reason": "Raġuni",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|sena|snin}} ilu",
 	"globalgroupmembership": "Sħubija fil-gruppi globali",
 	"globalgrouppermissions": "Ġestjoni tal-gruppi globali",

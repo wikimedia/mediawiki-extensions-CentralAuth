@@ -75,8 +75,6 @@
 	"centralauth-rightslog-name": "Журнал глабальных правоў",
 	"centralauth-ro": "Звесткі пра глабальны ўліковы запіс",
 	"centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|}} назад",
-	"centralauth-usermerge-confirm": "Вы сапраўды хочаце глабальна аб’яднаць гэтых ўдзельнікаў?",
-	"centralauth-usermerge-form-reason": "Прычына",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гады|гадоў}} таму",
 	"centralautologin": "Цэнтральны ўваход",
 	"globalgroupmembership": "Членства ў глабальных групах",

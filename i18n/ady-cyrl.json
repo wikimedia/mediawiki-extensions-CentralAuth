@@ -10,6 +10,5 @@
 	"centralauth-admin-blocklog": "блокхэм я тхылъ",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|хэгъэхъоныгъэ|хэгъэхъоныгъ}} $2-м хэтэу",
 	"centralauth-foreign-link": "ХэлэжьакӀоу $1, $2-м хэтэу",
-	"centralauth-merge-method-login": "системэ хэхьэным игъо егъэжьагъэ",
-	"centralauth-usermerge-nousers": "Мыхъуми нэбгыритӀум я уплъэкӀужьыгъэ глобал аккаунтхэр къэгъэлъэгъогъэн фае."
+	"centralauth-merge-method-login": "системэ хэхьэным игъо егъэжьагъэ"
 }

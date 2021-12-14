@@ -64,8 +64,6 @@
 	"centralauth-rename-table-status-done": "Klear",
 	"centralauth-ro": "Ynformaasje globaal akkount",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonde|sekonden}} lyn",
-	"centralauth-usermerge-form-adduser": "Meidogger tafoegje",
-	"centralauth-usermerge-form-reason": "Reden",
 	"centralauth-uwbr-editcount": "Tal bewurkings",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jier|jier}} lyn",
 	"globalrenamequeue-action-address": "Adres",

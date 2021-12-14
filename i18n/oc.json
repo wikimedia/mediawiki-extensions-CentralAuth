@@ -240,7 +240,6 @@
 	"centralauth-rightslog-set-optout": "basat fòra opcion",
 	"centralauth-seconds-ago": "dempuèi $1 {{PLURAL:$1|segonda|segondas}}",
 	"centralauth-token-mismatch": "O planhèm, podèm sometre vòstre formulari a causa de la pèrda de donadas de vòstra session.",
-	"centralauth-usermerge-form-adduser": "Apondre un utilizaire",
 	"centralauth-uwbr-registration-nodate": "Desconegut",
 	"centralauth-years-ago": "dempuèi $1 {{PLURAL:$1|an|ans}}",
 	"centralautologin": "Connexion centralizada",
