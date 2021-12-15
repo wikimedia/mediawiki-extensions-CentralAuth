@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gazimagomedov"
+			"Gazimagomedov",
+			"Omarov M."
 		]
 	},
-	"centralauth-foreign-contributions": "$2 сайталда $1 {{PLURAL:$1|хиса-баси}}",
-	"centralauth-foreign-link": "$2 сайталдасан гӀахьалчи $1"
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|хисизаби}} $2-лда жаниб",
+	"centralauth-foreign-link": " $1 гӀахьалчи $2-лда жанив"
 }
