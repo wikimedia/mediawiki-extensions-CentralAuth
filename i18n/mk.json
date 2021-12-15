@@ -474,7 +474,7 @@
 	"logentry-gblrename-promote": "$1 глобално {{GENDER:$2|го преименуваше}} корисникот $4 во $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобално го преименува $4 во $5",
 	"logentry-gblrights-deleteset": "$1 {{GENDER:$2|го избриша}} викизбирот „$4“.",
-	"logentry-gblrights-newset": "$1 {{GENDER:$2|го созадде}} викизбирот $5 $4 со следниве викија: $6",
+	"logentry-gblrights-newset": "$1 {{GENDER:$2|го созадде}} викизбирот $5 $4 со {{PLURAL:$7|следново вики|следниве викија}}: $6",
 	"logentry-gblrights-setchange": "$1 {{GENDER:$2|измени}} викија во „$4“: {{PLURAL:$7|додадено|додадени}}: $5; {{PLURAL:$8|отстрането|отстранети}}: $6",
 	"logentry-gblrights-setnewtype": "$1 {{GENDER:$2|го измени}} видот на „$4“ од $5 во $6",
 	"logentry-gblrights-setrename": "$1 {{GENDER:$2|го преименуваше}} викизбирот „$5“ во „$4“",
