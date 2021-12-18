@@ -22,11 +22,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthServices;
 use CentralAuthUser;
 use Html;
 use IContextSource;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\User\UserNameUtils;
 use SpecialPage;
 use stdClass;
@@ -43,11 +44,6 @@ class RenameQueueTablePager extends TablePager {
 	private $userNameUtils;
 
 	/**
-	 * @var SpecialPage
-	 */
-	protected $mOwner;
-
-	/**
 	 * @var string
 	 */
 	protected $mPage;
@@ -58,21 +54,22 @@ class RenameQueueTablePager extends TablePager {
 	protected $mFieldNames;
 
 	/**
-	 * @param SpecialPage $owner Containing page
-	 * @param string $page Subpage
 	 * @param IContextSource $context
+	 * @param LinkRenderer $linkRenderer
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param UserNameUtils $userNameUtils
+	 * @param string $page Subpage
 	 */
 	public function __construct(
-		SpecialPage $owner,
-		$page,
 		IContextSource $context,
-		UserNameUtils $userNameUtils
+		LinkRenderer $linkRenderer,
+		CentralAuthDatabaseManager $databaseManager,
+		UserNameUtils $userNameUtils,
+		string $page
 	) {
-		$this->mOwner = $owner;
+		$this->setContext( $context );
 		$this->mPage = $page;
-		// TODO inject
-		$this->mDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$this->mDb = $databaseManager->getCentralDB( DB_REPLICA );
 		$this->userNameUtils = $userNameUtils;
 
 		$limit = $this->getRequest()->getInt( 'limit', 25 );
@@ -84,7 +81,7 @@ class RenameQueueTablePager extends TablePager {
 		} else {
 			$this->mDefaultDirection = self::DIR_DESCENDING;
 		}
-		parent::__construct( $context );
+		parent::__construct( null, $linkRenderer );
 	}
 
 	protected function showOpenRequests() {
@@ -139,9 +136,8 @@ class RenameQueueTablePager extends TablePager {
 				// User requested closed status - either approved or rejected
 				$conds['rq_status'] = $status;
 			} else {
-				$dbr = wfGetDB( DB_REPLICA );
 				// All closed requests
-				$conds[] = 'rq_status <> ' . $dbr->addQuotes( GlobalRenameRequest::PENDING );
+				$conds[] = 'rq_status <> ' . $this->mDb->addQuotes( GlobalRenameRequest::PENDING );
 			}
 		}
 
@@ -191,7 +187,7 @@ class RenameQueueTablePager extends TablePager {
 			case 'rq_name':
 			case 'rq_newname':
 				$title = SpecialPage::getTitleFor( 'CentralAuth', $value );
-				$formatted = $this->mOwner->getLinkRenderer()->makeLink( $title, $value );
+				$formatted = $this->getLinkRenderer()->makeLink( $title, $value );
 				break;
 			case 'rq_performer':
 				$renamer = CentralAuthUser::newFromId( $value );
@@ -233,7 +229,7 @@ class RenameQueueTablePager extends TablePager {
 		}
 		return Html::element( 'a',
 			[
-				'href' => $this->mOwner->getPageTitle( $target )->getFullURL(),
+				'href' => SpecialPage::getTitleFor( 'GlobalRenameQueue', $target )->getFullURL(),
 				'class' => 'mw-ui-progressive',
 			],
 			$this->msg( $label )->text()

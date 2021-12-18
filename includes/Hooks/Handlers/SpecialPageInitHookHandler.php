@@ -62,6 +62,7 @@ class SpecialPageInitHookHandler implements
 				'services' => [
 					'UserNameUtils',
 					'DBLoadBalancerFactory',
+					'CentralAuth.CentralAuthDatabaseManager',
 					'CentralAuth.CentralAuthUIService',
 					'CentralAuth.GlobalRenameRequestStore',
 				],
