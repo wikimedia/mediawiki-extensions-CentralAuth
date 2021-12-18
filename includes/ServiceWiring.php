@@ -7,6 +7,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
@@ -76,6 +77,13 @@ return [
 			$services->getWikiPageFactory(),
 			$config->get( 'GlobalRenameDenylist' ),
 			$config->get( 'GlobalRenameDenylistRegex' )
+		);
+	},
+	'CentralAuth.GlobalRenameRequestStore' => static function (
+		MediaWikiServices $services
+	): GlobalRenameRequestStore {
+		return new GlobalRenameRequestStore(
+			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},
 	'CentralAuth.GlobalRenameUserValidator' => static function (

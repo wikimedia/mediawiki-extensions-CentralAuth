@@ -26,6 +26,7 @@ use FormSpecialPage;
 use HTMLForm;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\User\UserNameUtils;
 use Message;
 use PermissionsError;
@@ -49,17 +50,23 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
+	/** @var GlobalRenameRequestStore */
+	private $globalRenameRequestStore;
+
 	/**
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 * @param UserNameUtils $userNameUtils
+	 * @param GlobalRenameRequestStore $globalRenameRequestStore
 	 */
 	public function __construct(
 		GlobalRenameDenylist $globalRenameDenylist,
-		UserNameUtils $userNameUtils
+		UserNameUtils $userNameUtils,
+		GlobalRenameRequestStore $globalRenameRequestStore
 	) {
 		parent::__construct( 'GlobalRenameRequest' );
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->userNameUtils = $userNameUtils;
+		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
 	public function doesWrites() {
@@ -316,7 +323,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		$request->setNewName( $safeName );
 		$request->setReason( $reason );
 
-		if ( $request->save() ) {
+		if ( $this->globalRenameRequestStore->save( $request ) ) {
 			$status = Status::newGood();
 
 			if ( isset( $data['email'] ) ) {

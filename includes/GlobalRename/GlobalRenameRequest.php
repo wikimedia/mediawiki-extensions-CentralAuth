@@ -26,6 +26,7 @@ use CentralAuthUser;
 use Exception;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use MWException;
 use Status;
 use stdClass;
 
@@ -57,8 +58,8 @@ class GlobalRenameRequest {
 	protected $status;
 	/** @var string|null */
 	protected $completed;
-	/** @var int|null */
-	protected $deleted;
+	/** @var int */
+	protected $deleted = 0;
 	/** @var int|null */
 	protected $performer;
 	/** @var string|null */
@@ -139,6 +140,17 @@ class GlobalRenameRequest {
 	 */
 	public function getComments() {
 		return $this->comments;
+	}
+
+	/**
+	 * @param int $id
+	 */
+	public function setId( int $id ) {
+		if ( $this->id !== null ) {
+			throw new MWException( "Can't replace id when already set" );
+		}
+
+		$this->id = $id;
 	}
 
 	/**
@@ -262,47 +274,6 @@ class GlobalRenameRequest {
 	 */
 	public function userIsGlobal() {
 		return $this->wiki === null;
-	}
-
-	public function save() {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
-		if ( $this->id === null ) {
-			$this->requested = wfTimestampNow();
-			$this->status = self::PENDING;
-			$dbw->insert(
-				'renameuser_queue',
-				[
-					'rq_name'         => $this->name,
-					'rq_wiki'         => $this->wiki,
-					'rq_newname'      => $this->newName,
-					'rq_reason'       => $this->reason,
-					'rq_requested_ts' => $this->requested,
-					'rq_status'       => $this->status,
-				],
-				__METHOD__
-			);
-			$this->id = $dbw->insertId();
-		} else {
-			$dbw->update(
-				'renameuser_queue',
-				[
-					'rq_name'         => $this->name,
-					'rq_wiki'         => $this->wiki,
-					'rq_newname'      => $this->newName,
-					'rq_reason'       => $this->reason,
-					'rq_requested_ts' => $this->requested,
-					'rq_status'       => $this->status,
-					'rq_completed_ts' => $this->completed,
-					'rq_deleted'      => $this->deleted,
-					'rq_performer'    => $this->performer,
-					'rq_comments'     => $this->comments,
-				],
-				[ 'rq_id' => $this->id ],
-				__METHOD__
-			);
-		}
-
-		return $dbw->affectedRows() === 1;
 	}
 
 	/**
