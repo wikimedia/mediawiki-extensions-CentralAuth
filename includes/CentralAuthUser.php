@@ -2225,9 +2225,9 @@ class CentralAuthUser implements IDBAccessObject {
 			? $databaseManager->getCentralDB( DB_PRIMARY )
 			: $this->getSafeReadDB();
 
-		$result = $db->select(
+		$result = $db->selectFieldValues(
 			[ 'localnames', 'localuser' ],
-			[ 'ln_wiki' ],
+			'ln_wiki',
 			[ 'ln_name' => $this->mName, 'lu_name IS NULL' ],
 			__METHOD__,
 			[],
@@ -2241,15 +2241,13 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$wikis = [];
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
-		foreach ( $result as $row ) {
-			/** @var stdClass $row */
-
-			if ( !WikiMap::getWiki( $row->ln_wiki ) ) {
-				$logger->warning( __METHOD__ . ': invalid wiki in localnames: ' . $row->ln_wiki );
+		foreach ( $result as $wiki ) {
+			if ( !WikiMap::getWiki( $wiki ) ) {
+				$logger->warning( __METHOD__ . ': invalid wiki in localnames: ' . $wiki );
 				continue;
 			}
 
-			$wikis[] = $row->ln_wiki;
+			$wikis[] = $wiki;
 		}
 
 		return $wikis;
