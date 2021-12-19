@@ -21,6 +21,8 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
+use MediaWiki\User\UserNameUtils;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore
@@ -36,7 +38,8 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 		$this->assertInstanceOf(
 			GlobalRenameRequestStore::class,
 			new GlobalRenameRequestStore(
-				$this->createMock( CentralAuthDatabaseManager::class )
+				$this->createMock( CentralAuthDatabaseManager::class ),
+				$this->createMock( UserNameUtils::class )
 			)
 		);
 	}
@@ -45,19 +48,17 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 	 * @covers ::save
 	 */
 	public function testSave(): void {
-		$request = new GlobalRenameRequest;
-		$request->setName( 'Example' );
-		$request->setWiki( 'abcwiki' );
-		$request->setNewName( 'Test' );
-		$request->setReason( 'I ate too many bananas.' );
-
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		$dbManager->method( 'getCentralDB' )
 			->with( DB_PRIMARY )
 			->willReturn( $this->db );
 
-		$store = new GlobalRenameRequestStore( $dbManager );
-		$store->save( $request );
+		$store = new GlobalRenameRequestStore(
+			$dbManager,
+			$this->allValidUserNameUtils()
+		);
+
+		$request = $this->createSampleRequest( $store, 'abcwiki' );
 
 		$id = $this->db->selectField(
 			'renameuser_queue',
@@ -89,4 +90,116 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 		);
 	}
 
+	/**
+	 * @covers ::newBlankRequest
+	 */
+	public function testGetBlankRequest() {
+		$userNameUtils = $this->createMock( UserNameUtils::class );
+		$store = new GlobalRenameRequestStore(
+			$this->createMock( CentralAuthDatabaseManager::class ),
+			$userNameUtils
+		);
+
+		$blankRequest = $store->newBlankRequest();
+
+		$this->assertInstanceOf( GlobalRenameRequest::class, $blankRequest );
+		$this->assertEquals( $userNameUtils, TestingAccessWrapper::newFromObject( $blankRequest )->userNameUtils );
+		$this->assertFalse( $blankRequest->exists() );
+	}
+
+	/**
+	 * @covers ::newForUser
+	 * @covers ::fetchRowFromDB
+	 * @covers ::newFromRow
+	 * @dataProvider provideWiki
+	 */
+	public function testNewForUser( $wiki ) {
+		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$dbManager->method( 'getCentralDB' )
+			->willReturn( $this->db );
+
+		$store = new GlobalRenameRequestStore(
+			$dbManager,
+			$this->allValidUserNameUtils()
+		);
+
+		$request = $this->createSampleRequest( $store, $wiki );
+
+		$retrieved = $store->newForUser( 'Example', $wiki );
+
+		$this->assertEquals( $request->getId(), $retrieved->getId() );
+		$this->assertEquals( $request->getReason(), $retrieved->getReason() );
+	}
+
+	/**
+	 * @covers ::newFromId
+	 * @covers ::fetchRowFromDB
+	 * @covers ::newFromRow
+	 * @dataProvider provideWiki
+	 */
+	public function testNewFromId( $wiki ) {
+		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$dbManager->method( 'getCentralDB' )
+			->willReturn( $this->db );
+
+		$store = new GlobalRenameRequestStore(
+			$dbManager,
+			$this->allValidUserNameUtils()
+		);
+
+		$request = $this->createSampleRequest( $store, $wiki );
+		$retrieved = $store->newFromId( $request->getId() );
+		$this->assertEquals( $request->getReason(), $retrieved->getReason() );
+	}
+
+	public function provideWiki(): array {
+		return [
+			'null' => [ null ],
+			'set' => [ 'abcwiki' ],
+		];
+	}
+
+	/**
+	 * @covers ::nameHasPendingRequest
+	 */
+	public function testNameHasPendingRequest() {
+		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$dbManager->method( 'getCentralDB' )
+			->willReturn( $this->db );
+
+		$store = new GlobalRenameRequestStore(
+			$dbManager,
+			$this->allValidUserNameUtils()
+		);
+
+		$request = $this->createSampleRequest( $store, 'abcwiki' );
+
+		$this->assertTrue( $store->nameHasPendingRequest( $request->getNewName() ) );
+		$this->assertFalse( $store->nameHasPendingRequest( 'not-' . $request->getNewName() ) );
+	}
+
+	/**
+	 * @param GlobalRenameRequestStore $store
+	 * @param string|null $wiki
+	 * @return GlobalRenameRequest
+	 */
+	private function createSampleRequest( GlobalRenameRequestStore $store, $wiki ): GlobalRenameRequest {
+		$request = $store->newBlankRequest();
+		$request->setName( 'Example' );
+		$request->setWiki( $wiki );
+		$request->setNewName( 'Test' );
+		$request->setReason( 'I ate too many bananas.' );
+		$store->save( $request );
+		return $request;
+	}
+
+	private function allValidUserNameUtils(): UserNameUtils {
+		$userNameUtils = $this->createMock( UserNameUtils::class );
+		$userNameUtils->method( 'getCanonical' )
+			->willReturnCallback( static function ( string $newName, $rigor ) {
+				return $newName;
+			} );
+
+		return $userNameUtils;
+	}
 }

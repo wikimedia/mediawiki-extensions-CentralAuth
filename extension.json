@@ -804,7 +804,8 @@
 					"CentralAuth.CentralAuthDatabaseManager",
 					"UserNameUtils",
 					"StatsdDataFactory",
-					"ReadOnlyMode"
+					"ReadOnlyMode",
+					"CentralAuth.GlobalRenameRequestStore"
 				]
 			}
 		},

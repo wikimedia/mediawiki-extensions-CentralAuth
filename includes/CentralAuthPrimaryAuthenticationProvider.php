@@ -26,7 +26,7 @@ use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\User\UserNameUtils;
 
 /**
@@ -44,6 +44,9 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
+
+	/** @var GlobalRenameRequestStore */
+	private $globalRenameRequestStore;
 
 	/** @var bool Whether to check for force-renamed users on login */
 	protected $checkSULMigration = null;
@@ -67,6 +70,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param UserNameUtils $userNameUtils
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param ReadOnlyMode $readOnlyMode
+	 * @param GlobalRenameRequestStore $globalRenameRequestStore
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - checkSULMigration: If true, check if the user was force-renamed for
@@ -85,6 +89,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		UserNameUtils $userNameUtils,
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		ReadOnlyMode $readOnlyMode,
+		GlobalRenameRequestStore $globalRenameRequestStore,
 		$params = []
 	) {
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
@@ -100,6 +105,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->userNameUtils = $userNameUtils;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->readOnlyMode = $readOnlyMode;
+		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$params += [
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
@@ -475,7 +481,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 			// Block account creation if name is a pending rename request
 			if ( $wgCentralAuthEnableGlobalRenameRequest &&
-				GlobalRenameRequest::nameHasPendingRequest( $user->getName() )
+				$this->globalRenameRequestStore->nameHasPendingRequest( $user->getName() )
 			) {
 				$status->fatal( 'centralauth-account-rename-exists' );
 				return $status;

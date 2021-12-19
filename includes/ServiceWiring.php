@@ -83,7 +83,8 @@ return [
 		MediaWikiServices $services
 	): GlobalRenameRequestStore {
 		return new GlobalRenameRequestStore(
-			CentralAuthServices::getDatabaseManager( $services )
+			CentralAuthServices::getDatabaseManager( $services ),
+			$services->getUserNameUtils()
 		);
 	},
 	'CentralAuth.GlobalRenameUserValidator' => static function (
