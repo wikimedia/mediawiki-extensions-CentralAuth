@@ -20,9 +20,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
 use Config;
 use DeferredUpdates;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
 use RequestContext;

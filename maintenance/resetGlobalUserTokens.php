@@ -31,6 +31,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+
 /**
  * Maintenance script to reset the user_token for all users on the wiki.
  *

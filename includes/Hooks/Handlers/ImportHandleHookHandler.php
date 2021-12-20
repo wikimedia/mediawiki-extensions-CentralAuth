@@ -20,8 +20,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
 use CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\ImportHandleUnknownUserHook;
 use MediaWiki\User\UserFactory;
 

@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralAuthUser;
 use CentralAuthUtils;
 use stdClass;
 use UserArrayFromResult;

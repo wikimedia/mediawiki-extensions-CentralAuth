@@ -18,6 +18,24 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\User;
+
+use CentralAuthReadOnlyError;
+use CentralAuthServices;
+use CentralAuthSessionProvider;
+use CentralAuthSpoofUser;
+use CentralAuthUtils;
+use DeferredUpdates;
+use Exception;
+use Hooks;
+use IContextSource;
+use IDBAccessObject;
+use Job;
+use JobQueueGroup;
+use Language;
+use LocalUserNotFoundException;
+use ManualLogEntry;
+use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
@@ -26,9 +44,24 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
+use MWCryptHash;
+use MWCryptRand;
+use Password;
+use PasswordFactory;
+use Pbkdf2Password;
+use RecentChange;
+use RequestContext;
+use RevisionDeleteUser;
+use Status;
+use stdClass;
+use Title;
+use User;
+use WANObjectCache;
+use WikiMap;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
+use WikiSet;
 
 class CentralAuthUser implements IDBAccessObject {
 	/** @var MapCacheLRU Cache of loaded CentralAuthUsers */
@@ -2154,9 +2187,9 @@ class CentralAuthUser implements IDBAccessObject {
 		} elseif ( !( $password instanceof Pbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
-			Wikimedia\suppressWarnings();
+			\Wikimedia\suppressWarnings();
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			Wikimedia\restoreWarnings();
+			\Wikimedia\restoreWarnings();
 			if ( $latin1 !== false && $password->verify( $latin1 ) ) {
 				$matched = true;
 			}
@@ -3161,4 +3194,4 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 }
 
-class_alias( 'CentralAuthUser', 'MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUser' );
+class_alias( CentralAuthUser::class, 'CentralAuthUser' );

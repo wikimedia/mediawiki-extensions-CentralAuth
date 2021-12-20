@@ -22,10 +22,10 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthHooks;
 use CentralAuthTokenSessionProvider;
-use CentralAuthUser;
 use Config;
 use EventLogging;
 use Html;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use OutputPage;
 use ResourceLoaderModule;

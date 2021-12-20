@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
 use CentralAuthUtilityService;
 use MediaWiki\Auth\Hook\LocalUserCreatedHook;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use User;
 use WikiMap;
 

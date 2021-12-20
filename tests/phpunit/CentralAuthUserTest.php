@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\TestingAccessWrapper;
 

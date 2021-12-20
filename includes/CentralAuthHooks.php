@@ -5,6 +5,7 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionInfo;

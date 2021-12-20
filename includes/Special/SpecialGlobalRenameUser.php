@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthAntiSpoofHooks;
 use CentralAuthSpoofUser;
-use CentralAuthUser;
 use ExtensionRegistry;
 use FormSpecialPage;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
@@ -15,6 +14,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use Message;
 use Status;
 use Title;

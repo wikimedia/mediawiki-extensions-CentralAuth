@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralAuthUser;
 use InvalidArgumentException;
 use MediaWiki\MediaWikiServices;
 use Title;

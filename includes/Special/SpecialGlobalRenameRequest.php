@@ -21,12 +21,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthUser;
 use FormSpecialPage;
 use HTMLForm;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
 use Message;
 use PermissionsError;

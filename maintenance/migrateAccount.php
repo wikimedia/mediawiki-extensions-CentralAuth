@@ -6,6 +6,7 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use Wikimedia\Rdbms\IDatabase;
 
 class MigrateAccount extends Maintenance {

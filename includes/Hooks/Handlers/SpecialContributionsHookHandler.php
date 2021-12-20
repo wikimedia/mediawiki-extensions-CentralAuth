@@ -20,8 +20,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
 use LogEventsList;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use NamespaceInfo;
 use SpecialPage;

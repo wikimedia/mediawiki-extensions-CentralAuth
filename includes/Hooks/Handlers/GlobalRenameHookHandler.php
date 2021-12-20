@@ -20,8 +20,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
 use ErrorPageError;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use RenameUserCompleteHook;
 use RenameUserPreRenameHook;
 use RenameUserWarningHook;

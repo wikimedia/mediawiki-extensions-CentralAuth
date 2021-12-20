@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthUser;
 use ErrorPageError;
 use Exception;
 use Html;
 use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserFactory;
 use MWCryptRand;
 use NamespaceInfo;
