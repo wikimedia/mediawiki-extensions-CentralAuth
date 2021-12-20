@@ -121,6 +121,8 @@
 	"centralauth-centralautologin-badparams": "Пазначаныя парамэтры аўтэнтыфікацыі былі няслушныя.",
 	"centralauth-centralautologin-badstate": "Няслушны стан «$1».",
 	"centralauth-centralautologin-corsfail": "Памылка праверкі крыніцы CORS.",
+	"centralauth-centralautologin-logged-in": "Вы глябальна аўтарызаваліся як $1. Перазагрузеце старонку, каб ужыць пэрсанальныя налады ўдзельніка.",
+	"centralauth-centralautologin-logged-in-nouser": "Вы глябальна аўтарызаваліся. Перазагрузеце старонку, каб ужыць пэрсанальныя налады ўдзельніка.",
 	"centralauth-centralautologin-lostsession": "Зьвесткі сэсіі былі страчаныя.",
 	"centralauth-centralautologin-notposted": "Неабходна даслаць форму цэнтральнага ўваходу.",
 	"centralauth-complete": "Аб’яднаньне рахункаў выканана!",
