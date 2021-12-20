@@ -32,6 +32,7 @@ use HTMLForm;
 use JobQueueGroup;
 use LogEventsList;
 use MailAddress;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -68,6 +69,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/** @var LBFactory */
 	private $lbFactory;
 
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
 	/** @var CentralAuthUIService */
 	private $uiService;
 
@@ -84,12 +88,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	public function __construct(
 		UserNameUtils $userNameUtils,
 		LBFactory $lbFactory,
+		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameRequestStore $globalRenameRequestStore
 	) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
 		$this->lbFactory = $lbFactory;
+		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
@@ -222,10 +228,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->outputFilterForm( $this->getCommonFormFieldsArray() );
 
 		$pager = new RenameQueueTablePager(
-			$this,
-			self::PAGE_OPEN_QUEUE,
 			$this->getContext(),
-			$this->userNameUtils
+			$this->getLinkRenderer(),
+			$this->databaseManager,
+			$this->userNameUtils,
+			self::PAGE_OPEN_QUEUE
 		);
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
@@ -255,10 +262,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->outputFilterForm( $formDescriptor );
 
 		$pager = new RenameQueueTablePager(
-			$this,
-			self::PAGE_CLOSED_QUEUE,
 			$this->getContext(),
-			$this->userNameUtils
+			$this->getLinkRenderer(),
+			$this->databaseManager,
+			$this->userNameUtils,
+			self::PAGE_OPEN_QUEUE
 		);
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
