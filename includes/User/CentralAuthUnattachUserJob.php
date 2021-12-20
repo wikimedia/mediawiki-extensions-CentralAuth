@@ -19,6 +19,13 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\User;
+
+use CentralAuthUser;
+use Job;
+use Title;
+use User;
+
 /**
  * A job to unattach a user.
  *

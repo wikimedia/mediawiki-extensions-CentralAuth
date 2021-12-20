@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\CentralId\CentralIdLookupFactory;
 use MediaWiki\User\UserIdentity;
@@ -9,7 +10,7 @@ use MediaWiki\User\UserIdentity;
  * Setup database tests for centralauth
  * @group CentralAuthDB
  * @group Database
- * @covers CentralAuthIdLookup
+ * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup
  */
 class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	use MockAuthorityTrait;

@@ -6,6 +6,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\User\EmailableUser;
+
 /**
  * This maintenance script is used to resend confirmation emails to users with
  * unattached accounts in the hopes that we will then be able to automatically

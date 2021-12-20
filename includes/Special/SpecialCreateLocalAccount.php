@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthForcedLocalCreationService;
 use FormSpecialPage;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use Status;
 

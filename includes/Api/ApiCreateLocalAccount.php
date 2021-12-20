@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
 use ApiMain;
-use CentralAuthForcedLocalCreationService;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 
 /**
  * API module that can be used to manually create a local account for a global account.

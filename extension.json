@@ -84,7 +84,7 @@
 	},
 	"CentralIdLookupProviders": {
 		"CentralAuth": {
-			"class": "CentralAuthIdLookup",
+			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthIdLookup",
 			"services": [
 				"CentralAuth.CentralAuthDatabaseManager"
 			]
@@ -186,11 +186,11 @@
 		}
 	},
 	"JobClasses": {
-		"crosswikiSuppressUser": "CentralAuthSuppressUserJob",
+		"crosswikiSuppressUser": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthSuppressUserJob",
 		"LocalRenameUserJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameUserJob",
 		"LocalPageMoveJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob",
-		"CentralAuthCreateLocalAccountJob": "CentralAuthCreateLocalAccountJob",
-		"CentralAuthUnattachUserJob": "CentralAuthUnattachUserJob"
+		"CentralAuthCreateLocalAccountJob": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthCreateLocalAccountJob",
+		"CentralAuthUnattachUserJob": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUnattachUserJob"
 	},
 	"LogTypes": [
 		"globalauth",
@@ -345,22 +345,16 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"CentralAuthUser": "includes/CentralAuthUser.php",
+		"CentralAuthUser": "includes/User/CentralAuthUser.php",
+		"MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUser": "includes/User/CentralAuthUser.php",
 		"CentralAuthUtils": "includes/CentralAuthUtils.php",
-		"CentralAuthForcedLocalCreationService": "includes/CentralAuthForcedLocalCreationService.php",
 		"CentralAuthUtilityService": "includes/CentralAuthUtilityService.php",
 		"CentralAuthServices": "includes/CentralAuthServices.php",
 		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",
 		"CentralAuthSecondaryAuthenticationProvider": "includes/CentralAuthSecondaryAuthenticationProvider.php",
 		"CentralAuthHooks": "includes/CentralAuthHooks.php",
-		"CentralAuthSuppressUserJob": "includes/CentralAuthSuppressUserJob.php",
-		"CentralAuthUnattachUserJob": "includes/CentralAuthUnattachUserJob.php",
-		"CentralAuthCreateLocalAccountJob": "includes/CentralAuthCreateLocalAccountJob.php",
 		"LocalUserNotFoundException": "includes/LocalUserNotFoundException.php",
 		"WikiSet": "includes/WikiSet.php",
-		"CentralAuthUserArrayFromResult": "includes/CentralAuthUserArrayFromResult.php",
-		"CentralAuthIdLookup": "includes/CentralAuthIdLookup.php",
-		"CentralAuthGroupMembershipProxy": "includes/CentralAuthGroupMembershipProxy.php",
 		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
@@ -369,8 +363,7 @@
 		"IRCColourfulCARCFeedFormatter": "includes/RCFeed/IRCColourfulCARCFeedFormatter.php",
 		"JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php",
 		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\IRCColourfulCARCFeedFormatter": "includes/RCFeed/IRCColourfulCARCFeedFormatter.php",
-		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php",
-		"EmailableUser": "includes/EmailableUser.php"
+		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",

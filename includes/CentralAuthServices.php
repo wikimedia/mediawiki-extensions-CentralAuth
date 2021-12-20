@@ -6,6 +6,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 

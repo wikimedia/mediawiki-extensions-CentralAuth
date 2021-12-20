@@ -5,7 +5,7 @@ use MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount;
 /**
  * @author Taavi "Majavah" Väänänen
  * @covers MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount::onSubmit
- * @covers CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
+ * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
  * @group Database
  */
 class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
