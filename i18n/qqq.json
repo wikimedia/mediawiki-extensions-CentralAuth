@@ -364,7 +364,7 @@
 	"centralauth-rename-antispoofconflicts2": "Error message shown if the username conflicts in AntiSpoof either because of similarity or the target used to be someone else's username. $1 is a comma-separated list of conflicting usernames. $2 is number of conflicting usernames - for use with PLURAL.",
 	"centralauth-rename-badusername": "Error message if the new username is not valid.",
 	"centralauth-rename-cannotself": "Error message if the user tries renaming themselves.",
-	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed.\n\nSee also:\n* {{msg-mw|Centralauth-usermerge-confirm}}",
+	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed.",
 	"centralauth-rename-conflict-hidden": "Text displayed instead of the username if the user has been hidden",
 	"centralauth-rename-deny": "Confirm text asking whether the global rename request should really be denied.",
 	"centralauth-rename-desc": "{{desc|name=Renameuser for CentralAuth|url=https://www.mediawiki.org/wiki/Extension:CentralAuth}}\nSee also:\n* {{msg-mw|Centralauth-antispoof-desc}}",
