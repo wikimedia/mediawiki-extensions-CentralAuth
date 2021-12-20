@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use Wikimedia\Rdbms\IResultWrapper;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
