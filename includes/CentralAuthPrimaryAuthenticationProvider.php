@@ -594,7 +594,7 @@ class CentralAuthPrimaryAuthenticationProvider
 					'user' => $user->getName(),
 				]
 			);
-			$centralUser->attach( wfWikiID(), 'login' );
+			$centralUser->attach( WikiMap::getCurrentWikiId(), 'login' );
 			$centralUser->addLocalName( WikiMap::getCurrentWikiId() );
 
 			if ( $centralUser->getEmail() != $user->getEmail() ) {
