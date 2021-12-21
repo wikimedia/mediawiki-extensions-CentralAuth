@@ -1,5 +1,7 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\UsersToRename;
+
 use Wikimedia\Rdbms\IDatabase;
 
 class UsersToRenameDatabaseUpdates {

@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
+use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IDatabase;

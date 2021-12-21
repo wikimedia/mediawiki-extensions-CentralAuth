@@ -370,7 +370,6 @@
 		"JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php",
 		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\IRCColourfulCARCFeedFormatter": "includes/RCFeed/IRCColourfulCARCFeedFormatter.php",
 		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php",
-		"UsersToRenameDatabaseUpdates": "includes/UsersToRename/UsersToRenameDatabaseUpdates.php",
 		"EmailableUser": "includes/EmailableUser.php"
 	},
 	"TestAutoloadClasses": {
