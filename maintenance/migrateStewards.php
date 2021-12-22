@@ -24,7 +24,7 @@ $localStewards = $dbl->selectFieldValues(
 );
 
 echo "Fetched " . count( $localStewards ) . " from local database... Checking for attached ones\n";
-$dbg = CentralAuthUtils::getCentralDB();
+$dbg = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 $globalStewards = [];
 $result = $dbg->select(
 	[ 'globaluser', 'localuser' ],

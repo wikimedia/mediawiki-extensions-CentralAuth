@@ -362,7 +362,6 @@
 	"AutoloadClasses": {
 		"CentralAuthUser": "includes/User/CentralAuthUser.php",
 		"MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUser": "includes/User/CentralAuthUser.php",
-		"CentralAuthUtils": "includes/CentralAuthUtils.php",
 		"CentralAuthUtilityService": "includes/CentralAuthUtilityService.php",
 		"CentralAuthServices": "includes/CentralAuthServices.php",
 		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",
@@ -814,7 +813,8 @@
 					"UserNameUtils",
 					"StatsdDataFactory",
 					"ReadOnlyMode",
-					"CentralAuth.GlobalRenameRequestStore"
+					"CentralAuth.GlobalRenameRequestStore",
+					"CentralAuth.CentralAuthUtilityService"
 				]
 			}
 		},

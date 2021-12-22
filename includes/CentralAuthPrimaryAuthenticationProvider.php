@@ -49,6 +49,9 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var GlobalRenameRequestStore */
 	private $globalRenameRequestStore;
 
+	/** @var CentralAuthUtilityService */
+	private $utilityService;
+
 	/** @var bool Whether to check for force-renamed users on login */
 	protected $checkSULMigration = null;
 
@@ -72,6 +75,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param GlobalRenameRequestStore $globalRenameRequestStore
+	 * @param CentralAuthUtilityService $utilityService
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - checkSULMigration: If true, check if the user was force-renamed for
@@ -91,6 +95,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		ReadOnlyMode $readOnlyMode,
 		GlobalRenameRequestStore $globalRenameRequestStore,
+		CentralAuthUtilityService $utilityService,
 		$params = []
 	) {
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
@@ -98,6 +103,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
 		$this->databaseManager = $databaseManager;
+		$this->utilityService = $utilityService;
 
 		// AbstractAuthenticationProvider::$userNameUtils is protected
 		// TODO this is probably unneeded since AbstractAuthenticationProvider::init
@@ -569,8 +575,8 @@ class CentralAuthPrimaryAuthenticationProvider
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
 		$this->databaseManager->getCentralDB( DB_PRIMARY )->onTransactionCommitOrIdle(
-			static function () use ( $centralUser ) {
-				CentralAuthUtils::scheduleCreationJobs( $centralUser );
+			function () use ( $centralUser ) {
+				$this->utilityService->scheduleCreationJobs( $centralUser );
 			},
 			__METHOD__
 		);

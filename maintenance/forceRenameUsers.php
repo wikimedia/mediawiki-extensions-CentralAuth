@@ -39,7 +39,7 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		while ( true ) {
 			$rowsToRename = $this->findUsers( WikiMap::getCurrentWikiId(), $dbw );
 			if ( !$rowsToRename ) {
@@ -49,7 +49,7 @@ class ForceRenameUsers extends Maintenance {
 			foreach ( $rowsToRename as $row ) {
 				$this->rename( $row, $dbw );
 			}
-			CentralAuthUtils::waitForReplicas();
+			CentralAuthServices::getDatabaseManager()->waitForReplication();
 			$count = $this->getCurrentRenameCount( $dbw );
 			while ( $count > 50 ) {
 				$this->output( "There are currently $count renames queued, pausing...\n" );

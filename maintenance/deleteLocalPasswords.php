@@ -66,7 +66,7 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 	}
 
 	protected function getWikis() {
-		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
+		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 
 		if ( $this->wiki !== null ) {
 			return [ $this->wiki ];
@@ -95,7 +95,7 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 			return;
 		}
 
-		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
+		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$lastUsername = '';
 		do {
 			$this->output( "\t ... querying from '$lastUsername'\n" );

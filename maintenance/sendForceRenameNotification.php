@@ -37,7 +37,8 @@ class SendForceRenameNotification extends Maintenance {
 		$message = $this->getLocalizedText( $this->getOption( 'message' ) );
 		$message = str_replace( '{{WIKI}}', WikiMap::getCurrentWikiId(), $message );
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";
-		$dbw = CentralAuthUtils::getCentralDB();
+		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$commonParams = [
 			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
@@ -93,7 +94,7 @@ class SendForceRenameNotification extends Maintenance {
 			}
 			$this->output( "Waiting for replicas..." );
 			// users_to_rename
-			CentralAuthUtils::waitForReplicas();
+			$databaseManager->waitForReplication();
 			// And on the local wiki!
 			$lbFactory->waitForReplication();
 

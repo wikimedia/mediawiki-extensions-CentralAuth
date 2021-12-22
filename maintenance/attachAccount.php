@@ -87,7 +87,8 @@ class AttachAccount extends Maintenance {
 	}
 
 	public function execute() {
-		$this->dbBackground = CentralAuthUtils::getCentralReplicaDB();
+		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$this->dbBackground = $databaseManager->getCentralDB( DB_REPLICA );
 
 		$this->dryRun = $this->hasOption( 'dry-run' );
 		$this->quiet = $this->hasOption( 'quiet' );
@@ -107,7 +108,7 @@ class AttachAccount extends Maintenance {
 			$this->attach( $username );
 			if ( $this->total % $this->mBatchSize == 0 ) {
 				$this->output( "Waiting for replicas to catch up ... " );
-				CentralAuthUtils::waitForReplicas();
+				$databaseManager->waitForReplication();
 				$this->output( "done\n" );
 			}
 		}

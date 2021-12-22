@@ -24,7 +24,6 @@ use CentralAuthReadOnlyError;
 use CentralAuthServices;
 use CentralAuthSessionProvider;
 use CentralAuthSpoofUser;
-use CentralAuthUtils;
 use DeferredUpdates;
 use Exception;
 use Hooks;
@@ -317,9 +316,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
-		return $this->shouldUsePrimaryDB()
-			? CentralAuthUtils::getCentralDB()
-			: CentralAuthUtils::getCentralReplicaDB();
+		return CentralAuthServices::getDatabaseManager()->getCentralDB(
+			$this->shouldUsePrimaryDB() ? DB_PRIMARY : DB_REPLICA
+		);
 	}
 
 	/**
@@ -375,7 +374,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthUser|bool false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
-		$name = CentralAuthUtils::getCentralReplicaDB()->selectField(
+		$name = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA )->selectField(
 			'globaluser',
 			'gu_name',
 			[ 'gu_id' => $id ],
@@ -393,7 +392,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @since 1.37
 	 */
 	public static function newPrimaryInstanceFromId( $id ) {
-		$name = CentralAuthUtils::getCentralDB()->selectField(
+		$name = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY )->selectField(
 			'globaluser',
 			'gu_name',
 			[ 'gu_id' => $id ],
@@ -643,7 +642,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->getCacheKey( $cache ),
 			$cache::TTL_DAY,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = CentralAuthUtils::getCentralReplicaDB();
+				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$this->loadFromDatabase();
@@ -919,7 +918,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function register( $password, $email ) {
 		$this->checkWriteMode();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		list( $salt, $hash ) = $this->saltedPassword( $password );
 		if ( !$this->mAuthToken ) {
 			$this->mAuthToken = MWCryptRand::generateHex( 32 );
@@ -993,7 +992,7 @@ class CentralAuthUser implements IDBAccessObject {
 			];
 		}
 
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->insert(
 			'globalnames',
 			$globalTuples,
@@ -1018,7 +1017,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool Whether we were successful or not.
 	 */
 	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$data = [
 			'gu_name' => $this->mName,
 			'gu_salt' => $salt,
@@ -1589,7 +1588,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$dbcw = CentralAuthUtils::getCentralDB();
+		$dbcw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$password = $this->getPassword();
 
 		foreach ( $valid as $wikiName ) {
@@ -1674,7 +1673,7 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'user' => $this->mName ]
 		);
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$centralDB = CentralAuthUtils::getCentralDB();
+		$centralDB = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 
 		# Synchronise passwords
 		$password = $this->getPassword();
@@ -1735,7 +1734,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminLock() {
 		$this->checkWriteMode();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->update(
 			'globaluser',
 			[ 'gu_locked' => 1 ],
@@ -1760,7 +1759,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminUnlock() {
 		$this->checkWriteMode();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->update(
 			'globaluser',
 			[ 'gu_locked' => 0 ],
@@ -1784,7 +1783,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminSetHidden( int $level ) {
 		$this->checkWriteMode();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 
 		$hiddenMigrationStage = MediaWikiServices::getInstance()
 			->getMainConfig()
@@ -2109,7 +2108,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->checkWriteMode();
 
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->insert(
 			'localuser',
 			[
@@ -2211,7 +2210,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$passwordFactory->init( RequestContext::getMain()->getConfig() );
 			if ( $passwordFactory->needsUpdate( $status->getValue() ) ) {
 				DeferredUpdates::addCallableUpdate( function () use ( $password ) {
-					if ( CentralAuthUtils::getCentralDB()->isReadOnly() ) {
+					if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
 						return;
 					}
 
@@ -2370,7 +2369,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiID
 	 */
 	public function addLocalName( $wikiID ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->insert(
 			'localnames',
 			[
@@ -2386,7 +2385,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiID
 	 */
 	public function removeLocalName( $wikiID ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->delete(
 			'localnames',
 			[
@@ -2403,7 +2402,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $newname
 	 */
 	public function updateLocalName( $wikiID, $newname ) {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$dbw->update(
 			'localnames',
 			[ 'ln_name' => $newname ],
@@ -2435,7 +2434,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		if ( $rows || $this->exists() ) {
-			$dbw = CentralAuthUtils::getCentralDB();
+			$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 			$dbw->startAtomic( __METHOD__ );
 			$dbw->insert(
 				'globalnames',
@@ -2876,7 +2875,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $this->getId() ) {
-			$dbw = CentralAuthUtils::getCentralDB();
+			$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 			$dbw->update(
 				'globaluser',
 				[
@@ -2969,7 +2968,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 		$this->mStateDirty = false;
 
-		if ( CentralAuthUtils::isReadOnly() ) {
+		$databaseManager = CentralAuthServices::getDatabaseManager();
+		if ( $databaseManager->isReadOnly() ) {
 			return;
 		}
 
@@ -2980,7 +2980,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$newCasToken = $this->mCasToken + 1;
 
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
 
 		$toSet = [
 			'gu_password' => $this->mPassword,
@@ -3089,7 +3089,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function removeFromGlobalGroups( $groups ) {
 		$this->checkWriteMode();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 
 		# Delete from the DB
 		$dbw->delete(
@@ -3108,7 +3108,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function addToGlobalGroup( string $group, ?string $expiry = null ) {
 		$this->checkWriteMode();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 
 		# Replace into the DB
 		$dbw->replace(
@@ -3156,10 +3156,12 @@ class CentralAuthUser implements IDBAccessObject {
 			"Quick cache invalidation for global user {$this->mName}"
 		);
 
-		CentralAuthUtils::getCentralDB()->onTransactionPreCommitOrIdle( function () {
-			$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-			$cache->delete( $this->getCacheKey( $cache ) );
-		}, __METHOD__ );
+		CentralAuthServices::getDatabaseManager()
+			->getCentralDB( DB_PRIMARY )
+			->onTransactionPreCommitOrIdle( function () {
+				$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+				$cache->delete( $this->getCacheKey( $cache ) );
+			}, __METHOD__ );
 	}
 
 	/**

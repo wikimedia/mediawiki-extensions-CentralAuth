@@ -84,7 +84,7 @@ class MigrateAccount extends Maintenance {
 	}
 
 	public function execute() {
-		$this->dbBackground = CentralAuthUtils::getCentralReplicaDB();
+		$this->dbBackground = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 
 		if ( $this->getOption( 'safe', false ) !== false ) {
 			$this->safe = true;
@@ -134,7 +134,7 @@ class MigrateAccount extends Maintenance {
 				}
 				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for replicas to catch up ... " );
-					CentralAuthUtils::waitForReplicas();
+					CentralAuthServices::getDatabaseManager()->waitForReplication();
 					$this->output( "done\n" );
 				}
 			}

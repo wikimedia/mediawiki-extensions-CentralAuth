@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralAuthUtils;
+use CentralAuthServices;
 use stdClass;
 use UserArrayFromResult;
 use WikiMap;
@@ -49,7 +49,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		}
 		$res->rewind();
 
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$caRes = $dbr->select(
 			[ 'localuser', 'globaluser', 'renameuser_status' ],
 			'*',

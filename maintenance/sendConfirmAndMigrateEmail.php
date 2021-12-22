@@ -95,6 +95,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list\n" );
 				exit( 1 );
 			}
+			$databaseManager = CentralAuthServices::getDatabaseManager();
 			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 			while ( $username = fgets( $file ) ) {
 				$username = trim( $username ); // trim the \n
@@ -109,7 +110,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for replicas to catch up ... " );
 					if ( !$this->dryrun ) {
-						CentralAuthUtils::waitForReplicas();
+						$databaseManager->waitForReplication();
 					}
 					$this->output( "done\n" );
 				}

@@ -17,7 +17,7 @@ class PopulateHomeDB extends Maintenance {
 	}
 
 	public function execute() {
-		$db = CentralAuthUtils::getCentralReplicaDB();
+		$db = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$conds = [];
 		$count = 0;
 		do {
@@ -39,7 +39,7 @@ class PopulateHomeDB extends Maintenance {
 				$count++;
 			}
 			$this->output( "$count\n" );
-			CentralAuthUtils::waitForReplicas();
+			CentralAuthServices::getDatabaseManager()->waitForReplication();
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}

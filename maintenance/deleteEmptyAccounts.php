@@ -52,7 +52,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$wgUser = $user;
 		RequestContext::getMain()->setUser( $user );
 
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 
 		if ( $this->getOption( 'fix', false ) !== false ) {
 			$this->fix = true;
@@ -90,7 +90,7 @@ class DeleteEmptyAccounts extends Maintenance {
 				$this->process( $row->gu_name, $user );
 			}
 			if ( $this->fix ) {
-				CentralAuthUtils::waitForReplicas();
+				CentralAuthServices::getDatabaseManager()->waitForReplication();
 			}
 		}
 

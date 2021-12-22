@@ -68,8 +68,9 @@ class ResetGlobalUserTokens extends Maintenance {
 			$this->countDown( 5 );
 		}
 
+		$databaseManager = CentralAuthServices::getDatabaseManager();
 		// We list user by user_id from one of the replica database
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = $databaseManager->getCentralDB( DB_REPLICA );
 		$maxid = $this->getOption( 'maxid', -1 );
 
 		if ( $maxid == -1 ) {
@@ -98,7 +99,7 @@ class ResetGlobalUserTokens extends Maintenance {
 				$max = $maxid;
 			}
 
-			CentralAuthUtils::waitForReplicas();
+			$databaseManager->waitForReplication();
 
 		} while ( $min < $maxid );
 	}

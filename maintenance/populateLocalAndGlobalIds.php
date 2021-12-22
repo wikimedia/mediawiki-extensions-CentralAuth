@@ -19,8 +19,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
-		$dbw = CentralAuthUtils::getCentralDB();
+		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$dbr = $databaseManager->getCentralDB( DB_REPLICA );
+		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
 		$lastGlobalId = -1;
 
 		// Skip people in global rename queue
@@ -103,7 +104,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			$this->output(
 				"Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n"
 			);
-			CentralAuthUtils::waitForReplicas();
+			$databaseManager->waitForReplication();
 		} while ( $numRows >= $this->mBatchSize );
 		$this->output( "Completed $wiki \n" );
 	}

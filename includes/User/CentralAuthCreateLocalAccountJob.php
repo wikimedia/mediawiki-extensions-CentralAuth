@@ -21,7 +21,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralAuthUtils;
+use CentralAuthServices;
 use Exception;
 use Job;
 use MediaWiki\Logger\LoggerFactory;
@@ -106,7 +106,7 @@ class CentralAuthCreateLocalAccountJob extends Job {
 			return true;
 		}
 
-		$success = CentralAuthUtils::autoCreateUser( $user )->isGood();
+		$success = CentralAuthServices::getUtilityService()->autoCreateUser( $user )->isGood();
 		if ( $success ) {
 			$centralUser->invalidateCache();
 		}

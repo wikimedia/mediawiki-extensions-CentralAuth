@@ -38,7 +38,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	 * @return IResultWrapper
 	 */
 	private function doQuery() {
-		$dbr = CentralAuthUtils::getCentralReplicaDB();
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$rows = $dbr->select(
 			[ 'localnames', 'localuser' ],
 			[ 'ln_name AS name', 'ln_wiki AS wiki' ],
@@ -65,7 +65,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = CentralAuthUtils::getCentralDB();
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
 		// multiple times, so lets cache it.
@@ -123,7 +123,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 			$this->output( "Inserted $count users who we will rename\n" );
 
 			$this->output( "Waiting for replicas...\n" );
-			CentralAuthUtils::waitForReplicas();
+			CentralAuthServices::getDatabaseManager()->waitForReplication();
 
 		} while ( $count !== 0 );
 	}

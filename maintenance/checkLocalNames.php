@@ -49,8 +49,9 @@ class CheckLocalNames extends Maintenance {
 	}
 
 	public function execute() {
-		$centralPrimaryDb = CentralAuthUtils::getCentralDB();
-		$centralReplica = CentralAuthUtils::getCentralReplicaDB();
+		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$centralPrimaryDb = $databaseManager->getCentralDB( DB_PRIMARY );
+		$centralReplica = $databaseManager->getCentralDB( DB_REPLICA );
 
 		if ( $this->getOption( 'delete', false ) !== false ) {
 			$this->dryrun = false;
