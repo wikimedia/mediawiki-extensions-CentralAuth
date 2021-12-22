@@ -14,7 +14,8 @@
 			"Macofe",
 			"Nghtwlkr",
 			"Njardarlogar",
-			"Stigmj"
+			"Stigmj",
+			"McDutchie"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper som brukeren tilhører",
@@ -478,6 +479,7 @@
 	"globalrenamerequest-newname-err-invalid": "Du har ikke oppgitt et gyldig brukernavn.",
 	"globalrenamerequest-newname-err-taken": "Brukernavnet er allerede i bruk. Velg et annet navn.",
 	"globalrenamerequest-newname-help": "Skriv inn det nye brukernavnet du ønsker å bruke, f.eks. «$1».",
+	"globalrenamerequest-newname-help-basic": "Skriv inn brukernavnet du ønsker å bruke.",
 	"globalrenamerequest-newname-label": "Ønsket brukernavn:",
 	"globalrenamerequest-pretext": "Be om et nytt brukernavn som kan brukes på alle prosjekter.\n\nEn liste over forespørsler som gjøres med dette skjemaet gjøres tilgjengelig for brukerne som kan utføre handlingen. Du vil få et epostvarsel når prosessen er fullført.\n\nDersom forespørselen din gjøres av personvernshensyn eller anonymitet, merk at en permanent loggoppføring vil være tilgjengelig der det gamle brukernavnet er tilgjengelig. Det kan derfor kanskje være bedre å [[Special:CreateAccount|opprette en ny og uavhengig konto]], og endre navnet på den eksisterende kontoen til noe tilfeldig og legge den brakk.",
 	"globalrenamerequest-reason-label": "Årsak for forespørselen",
