@@ -32,4 +32,10 @@ class GroupMembershipChangeLogFormatter extends LogFormatter {
 		];
 	}
 
+	protected function getMessageParameters() {
+		$params = parent::getMessageParameters();
+		// remove "User:" prefix
+		$params[2] = $this->formatParameterValue( 'user-link', $this->entry->getTarget()->getText() );
+		return $params;
+	}
 }
