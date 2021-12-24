@@ -94,7 +94,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				$user = $this->getUser();
 				$username = $user->getName();
 				$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
-				$pending = GlobalRenameRequest::newForUser(
+				$pending = $this->globalRenameRequestStore->newForUser(
 					$username, $wiki
 				);
 				if ( !$pending->exists() ) {
@@ -123,7 +123,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				$user = $this->getUser();
 				$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 
-				$pending = GlobalRenameRequest::newForUser(
+				$pending = $this->globalRenameRequestStore->newForUser(
 					$user->getName(), $wiki
 				);
 				if ( $pending->exists() ) {
@@ -317,7 +317,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		$reason = $data['reason'] ?? null;
 		$safeName = $this->userNameUtils->getCanonical( $data['newname'], UserNameUtils::RIGOR_CREATABLE );
 
-		$request = new GlobalRenameRequest;
+		$request = $this->globalRenameRequestStore->newBlankRequest();
 		$request->setName( $this->getUser()->getName() );
 		$request->setWiki( $wiki );
 		$request->setNewName( $safeName );

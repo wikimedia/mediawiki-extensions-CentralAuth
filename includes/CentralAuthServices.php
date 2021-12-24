@@ -5,6 +5,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 
@@ -86,5 +87,17 @@ class CentralAuthServices {
 	public static function getGlobalGroupLookup( ContainerInterface $services = null ): GlobalGroupLookup {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalGroupLookup' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 * @return GlobalRenameRequestStore
+	 */
+	public static function getGlobalRenameRequestStore(
+		ContainerInterface $services = null
+	): GlobalRenameRequestStore {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->get( 'CentralAuth.GlobalRenameRequestStore' );
 	}
 }

@@ -38,6 +38,9 @@ use stdClass;
  */
 class GlobalRenameRequest {
 
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
 	public const PENDING = 'pending';
 	public const APPROVED = 'approved';
 	public const REJECTED = 'rejected';
@@ -64,6 +67,14 @@ class GlobalRenameRequest {
 	protected $performer;
 	/** @var string|null */
 	protected $comments;
+
+	/**
+	 * @internal Use GlobalRenameRequestStore::newBlankRequest instead
+	 * @param UserNameUtils $userNameUtils
+	 */
+	public function __construct( UserNameUtils $userNameUtils ) {
+		$this->userNameUtils = $userNameUtils;
+	}
 
 	/**
 	 * @return int
@@ -177,8 +188,7 @@ class GlobalRenameRequest {
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setNewName( $newName ) {
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
-		$canonicalName = $userNameUtils->getCanonical( $newName, UserNameUtils::RIGOR_CREATABLE );
+		$canonicalName = $this->userNameUtils->getCanonical( $newName, UserNameUtils::RIGOR_CREATABLE );
 		if ( $canonicalName === false ) {
 			throw new Exception( "Invalid username '{$newName}'" );
 		}
@@ -277,106 +287,21 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * Get the pending rename request for the given user and wiki.
-	 *
-	 * @param string $username
-	 * @param string $wiki
-	 * @return GlobalRenameRequest
+	 * @internal
+	 * @param stdClass $row Database row
 	 */
-	public static function newForUser( $username, $wiki ) {
-		return self::newFromRow(
-			self::fetchRowFromDB( [
-				'rq_name'   => $username,
-				'rq_wiki'   => $wiki,
-				'rq_status' => self::PENDING,
-			] )
-		);
-	}
-
-	/**
-	 * Get a request record.
-	 *
-	 * @param int $id Request id
-	 * @return GlobalRenameRequest
-	 */
-	public static function newFromId( $id ) {
-		return self::newFromRow(
-			self::fetchRowFromDB( [
-				'rq_id' => $id,
-			] )
-		);
-	}
-
-	/**
-	 * Fetch a single request from the database.
-	 *
-	 * @param array $where Where clause criteria
-	 * @return stdClass|bool Row as object or false if not found
-	 */
-	protected static function fetchRowFromDB( array $where ) {
-		return CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA )->selectRow(
-			'renameuser_queue',
-			[
-				'id'        => 'rq_id',
-				'name'      => 'rq_name',
-				'wiki'      => 'rq_wiki',
-				'newname'   => 'rq_newname',
-				'reason'    => 'rq_reason',
-				'requested' => 'rq_requested_ts',
-				'status'    => 'rq_status',
-				'completed' => 'rq_completed_ts',
-				'deleted'   => 'rq_deleted',
-				'performer' => 'rq_performer',
-				'comments'  => 'rq_comments',
-			],
-			$where,
-			__METHOD__
-		);
-	}
-
-	/**
-	 * Factory to build a GlobalRenameRequest from a database result.
-	 *
-	 * @param stdClass|bool $row Database result
-	 * @return GlobalRenameRequest
-	 */
-	public static function newFromRow( $row ) {
-		$req = new GlobalRenameRequest;
-		if ( $row !== false ) {
-			$req->id = $row->id;
-			$req->name = $row->name;
-			$req->wiki = $row->wiki;
-			$req->newName = $row->newname;
-			$req->reason = $row->reason;
-			$req->requested = $row->requested;
-			$req->status = $row->status;
-			$req->completed = $row->completed;
-			$req->deleted = $row->deleted;
-			$req->performer = $row->performer;
-			$req->comments = $row->comments;
-		}
-		return $req;
-	}
-
-	/**
-	 * Check to see if there is a pending rename request to the given name.
-	 *
-	 * @param string $newname
-	 * @return bool
-	 */
-	public static function nameHasPendingRequest( $newname ) {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		$res = $dbw->selectField(
-			'renameuser_queue',
-			'rq_id',
-			[
-				'rq_newname' => $newname,
-				'rq_status'  => self::PENDING,
-			],
-			__METHOD__
-		);
-
-		return $res !== false;
+	public function importRow( stdClass $row ) {
+		$this->id = $row->id;
+		$this->name = $row->name;
+		$this->wiki = $row->wiki;
+		$this->newName = $row->newname;
+		$this->reason = $row->reason;
+		$this->requested = $row->requested;
+		$this->status = $row->status;
+		$this->completed = $row->completed;
+		$this->deleted = $row->deleted;
+		$this->performer = $row->performer;
+		$this->comments = $row->comments;
 	}
 
 	/**
@@ -401,7 +326,7 @@ class GlobalRenameRequest {
 			return $status;
 		}
 
-		if ( self::nameHasPendingRequest( $safe ) ) {
+		if ( CentralAuthServices::getGlobalRenameRequestStore()->nameHasPendingRequest( $safe ) ) {
 			$status->fatal( 'globalrenamerequest-newname-err-taken' );
 			return $status;
 		}

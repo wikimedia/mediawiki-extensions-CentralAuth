@@ -283,7 +283,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 
 		$rqId = array_shift( $pathArgs );
-		$req = GlobalRenameRequest::newFromId( $rqId );
+		$req = $this->globalRenameRequestStore->newFromId( $rqId );
 		if ( !$req->exists() ) {
 			$this->commonPreamble( 'globalrenamequeue-request-unknown-title' );
 			$this->getOutput()->addWikiMsg(
@@ -609,7 +609,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	protected function doResolveRequest( $approved, $data ) {
-		$request = GlobalRenameRequest::newFromId( $data['rid'] );
+		$request = $this->globalRenameRequestStore->newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
 
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
