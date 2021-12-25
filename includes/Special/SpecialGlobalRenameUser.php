@@ -7,6 +7,7 @@ use CentralAuthSpoofUser;
 use CentralAuthUser;
 use ExtensionRegistry;
 use FormSpecialPage;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUser;
@@ -57,6 +58,9 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/** @var GlobalRenameUserValidator */
 	private $globalRenameUserValidator;
 
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
@@ -66,16 +70,19 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @param CentralAuthUIService $uiService
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 * @param GlobalRenameUserValidator $globalRenameUserValidator
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 */
 	public function __construct(
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
-		GlobalRenameUserValidator $globalRenameUserValidator
+		GlobalRenameUserValidator $globalRenameUserValidator,
+		CentralAuthDatabaseManager $databaseManager
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameUserValidator = $globalRenameUserValidator;
+		$this->databaseManager = $databaseManager;
 	}
 
 	public function doesWrites() {
@@ -292,7 +299,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			CentralAuthUser::getInstance( $newUser ),
 			new GlobalRenameUserStatus( $newUser->getName() ),
 			'JobQueueGroup::singleton',
-			new GlobalRenameUserDatabaseUpdates(),
+			new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
 			new GlobalRenameUserLogger( $this->getUser() ),
 			$session
 		);

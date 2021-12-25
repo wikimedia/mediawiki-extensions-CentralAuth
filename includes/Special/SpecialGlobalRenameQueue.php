@@ -632,7 +632,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					CentralAuthUser::getInstance( $newUser ),
 					new GlobalRenameUserStatus( $newUser->getName() ),
 					'JobQueueGroup::singleton',
-					new GlobalRenameUserDatabaseUpdates(),
+					new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
 					new GlobalRenameUserLogger( $this->getUser() ),
 					$session
 				);
