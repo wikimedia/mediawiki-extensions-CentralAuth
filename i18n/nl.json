@@ -495,6 +495,8 @@
 	"logentry-gblrename-merge": "$1 heeft $4 globaal {{GENDER:$2|samengevoegd}} naar $5",
 	"logentry-gblrename-promote": "$1 heeft $4 globaal {{GENDER:$2|hernoemd}} naar $5",
 	"logentry-gblrename-rename": "$1 heeft $4 globaal {{GENDER:$2|hernoemd}} naar $5",
+	"logentry-gblrights-setnewtype": "$1 {{GENDER:$2|heeft}} het type van \"$4\" van $5 naar $6 gewijzigd",
+	"logentry-gblrights-grouprename": "$1 {{GENDER:$2|heeft}} de groep $5 naar $4 hernoemd",
 	"mergeaccount": "Status samenvoegen gebruikers",
 	"multilock": "Meerdere globale gebruikers vergrendelen",
 	"right-centralauth-createlocal": "Geforceerd een lokaal account aanmaken voor een globaal account",
