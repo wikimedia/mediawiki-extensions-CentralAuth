@@ -314,7 +314,7 @@
 	"centralauth-merge-method-password": "potwierdzone hasłem",
 	"centralauth-merge-method-password-desc": "Wskazuje, że konto lokalne zostało przyłączone ponieważ użytkownik podał dla niego prawidłowe hasło.",
 	"centralauth-merge-method-primary": "macierzysta wiki",
-	"centralauth-merge-method-primary-desc": "Na tej wiki konta stają się domyślnie kontami uniwersalnymi.\nZauważ, że inaczej może być na prawdziwej domowej wiki użytkownika.",
+	"centralauth-merge-method-primary-desc": "Na tej wiki ustawiono konto jako uniwersalne.\nZauważ, że to nie musi być prawdziwa domowa (główna) wiki użytkownika.",
 	"centralauth-merge-no-accounts": "W tabeli kont uniwersalnych brak wpisu pasującego do nazwy Twojego konta.\nPrawdopodobnie uszkodzona jest baza danych.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Zaloguj się]</span>, by sprawdzić, czy wszystkie Twoje konta zostały przyłączone do konta uniwersalnego.",
 	"centralauth-merge-step1-detail": "Podaj hasło swojego konta.\nHasło i zarejestrowany adres e‐mail zostaną porównane z kontami na innych wiki w celu potwierdzenia ich zgodności. Żadne zmiany nie zostaną wykonane, zanim ich nie zaakceptujesz.",
