@@ -479,6 +479,7 @@
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|ha rinominato}} globalmente $4 in $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|ha rinominato}} globalmente $4 in $5",
 	"logentry-gblrights-grouprename": "$1 {{GENDER:$2|ha rinominato}} il gruppo $5 in $4",
+	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|ha cambiato}} stato all'utenza globale \"$3\": impostato $4; rimosso $5",
 	"mergeaccount": "Processo di unificazione delle utenze - status",
 	"multilock": "Blocca più utenze globali",
 	"right-centralauth-createlocal": "Forza la creazione di utenze locali per utenze globali",
