@@ -251,7 +251,13 @@ class SpecialCentralAuth extends SpecialPage {
 		$deleted = false;
 		$globalUser = $this->mGlobalUser;
 		$request = $this->getRequest();
-		$stateCheck = $request->getVal( 'wpUserState' ) === $globalUser->getStateHash( true );
+
+		$givenState = $request->getVal( 'wpUserState' );
+		$stateCheck = (
+			$givenState === $globalUser->getStateHash( true )
+			// allow forms with old hidden values to still work for at least one train
+			|| $givenState === $globalUser->getStateHash( true, true )
+		);
 
 		if ( !$this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			$this->showError( 'centralauth-token-mismatch' );
@@ -414,7 +420,7 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( $this->mCanOversight ) {
 			$attribs['hidden'] = $this->uiService->formatHiddenLevel(
 				$this->getContext(),
-				$globalUser->getHiddenLevel()
+				$globalUser->getHiddenLevelInt()
 			);
 		}
 
@@ -965,25 +971,25 @@ class SpecialCentralAuth extends SpecialPage {
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-status-hidden-no' )->text(),
 				'wpStatusHidden',
-				CentralAuthUser::HIDDEN_NONE,
+				(string)CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'mw-centralauth-status-hidden-no',
-				$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_NONE );
+				$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_NONE );
 		if ( $this->mCanOversight ) {
 			$radioHidden .= '<br />' .
 				Xml::radioLabel(
 					$this->msg( 'centralauth-admin-status-hidden-list' )->text(),
 					'wpStatusHidden',
-					CentralAuthUser::HIDDEN_LISTS,
+					(string)CentralAuthUser::HIDDEN_LEVEL_LISTS,
 					'mw-centralauth-status-hidden-list',
-					$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_LISTS
+					$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_LISTS
 				) .
 				'<br />' .
 				Xml::radioLabel(
 					$this->msg( 'centralauth-admin-status-hidden-oversight' )->text(),
 					'wpStatusHidden',
-					CentralAuthUser::HIDDEN_OVERSIGHT,
+					(string)CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 					'mw-centralauth-status-hidden-oversight',
-					$this->mGlobalUser->getHiddenLevel() == CentralAuthUser::HIDDEN_OVERSIGHT
+					$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED
 				);
 		}
 

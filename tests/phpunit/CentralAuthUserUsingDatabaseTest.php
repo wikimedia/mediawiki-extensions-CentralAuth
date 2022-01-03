@@ -31,8 +31,16 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 			$caUser->getHiddenLevel()
 		);
 		$this->assertSame(
-			'2234d7949459185926a50073d174b673',
+			CentralAuthUser::HIDDEN_LEVEL_NONE,
+			$caUser->getHiddenLevelInt()
+		);
+		$this->assertSame(
+			'8de7319aacab2020d38db1fbfac313a4',
 			$caUser->getStateHash()
+		);
+		$this->assertSame(
+			'2234d7949459185926a50073d174b673',
+			$caUser->getStateHash( false, true )
 		);
 	}
 
@@ -115,6 +123,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers CentralAuthUser::isHidden
 	 * @covers CentralAuthUser::isOversighted
 	 * @covers CentralAuthUser::getHiddenLevel
+	 * @covers CentralAuthUser::getHiddenLevelInt
 	 */
 	public function testHidden() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalSuppressedUser' );
@@ -122,6 +131,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertTrue( $caUser->isHidden() );
 		$this->assertTrue( $caUser->isOversighted() );
 		$this->assertSame( CentralAuthUser::HIDDEN_OVERSIGHT, $caUser->getHiddenLevel() );
+		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, $caUser->getHiddenLevelInt() );
 	}
 
 	/**
@@ -158,7 +168,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertFalse( $caUser->isLocked() ); # sanity
 
 		$caUser->adminLock();
-		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LISTS );
+		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_LISTS );
 
 		// Check the DB
 		$this->assertSelect(
@@ -181,7 +191,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertTrue( $caUser->isHidden() );
 
 		$caUser->adminUnlock();
-		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_NONE );
+		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_NONE );
 
 		// Check that the instance was reloaded from the DB
 		$this->assertTrue( $caUser->exists() );

@@ -62,7 +62,11 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		$stateCheck = $params['statecheck'];
 
 		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
-			$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
+			if ( $stateCheck !== $globalUser->getStateHash( true, true ) ) {
+				$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
+			}
+
+			// TODO: throw a deprecation warning when this module supports new int hidden values
 		}
 
 		$status = $globalUser->adminLockHide(

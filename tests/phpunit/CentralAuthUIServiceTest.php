@@ -61,7 +61,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 
 		$service = new CentralAuthUIService( $this->createMock( TitleFactory::class ) );
 
-		$service->formatHiddenLevel( $localizer, 'does_not_exist' );
+		$service->formatHiddenLevel( $localizer, 1337 );
 	}
 
 	/**

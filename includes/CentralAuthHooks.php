@@ -504,7 +504,7 @@ class CentralAuthHooks implements
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->exists()
 			&& ( $centralUser->isAttached() || !$user->isRegistered() )
-			&& $centralUser->getHiddenLevel() === CentralAuthUser::HIDDEN_OVERSIGHT
+			&& $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED
 		) {
 			$hideUserBlock = new SystemBlock( [
 				'address' => $user,

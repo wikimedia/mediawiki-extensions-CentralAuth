@@ -223,21 +223,21 @@ class SpecialMultiLock extends SpecialPage {
 			$radioHidden .= Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-none' )->text(),
 				'wpActionHide',
-				CentralAuthUser::HIDDEN_NONE,
+				(string)CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'mw-centralauth-status-hidden-no',
 				false ) .
 			'<br />' .
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-lists' )->text(),
 				'wpActionHide',
-				CentralAuthUser::HIDDEN_LISTS,
+				(string)CentralAuthUser::HIDDEN_LEVEL_LISTS,
 				'mw-centralauth-status-hidden-list',
 				false ) .
 			'<br />' .
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-oversight' )->text(),
 				'wpActionHide',
-				CentralAuthUser::HIDDEN_OVERSIGHT,
+				(string)CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 				'mw-centralauth-status-hidden-oversight',
 				false
 			);
@@ -384,7 +384,7 @@ class SpecialMultiLock extends SpecialPage {
 			$guName
 		);
 		// formatHiddenLevel html escapes its output
-		$guHidden = $this->uiService->formatHiddenLevel( $this->getContext(), $globalUser->getHiddenLevel() );
+		$guHidden = $this->uiService->formatHiddenLevel( $this->getContext(), $globalUser->getHiddenLevelInt() );
 		$accountAge = time() - (int)wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 		$guRegister = $this->uiService->prettyTimespan( $this->getContext(), $accountAge );
 		$guLocked = $this->msg( 'centralauth-admin-status-locked-no' )->text();

@@ -88,8 +88,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @internal
 	 */
 	public $mHomeWiki;
-	/** @var string|null */
-	private $mHidden;
+	/** @var int|null */
+	private $mHiddenLevel;
 	/** @var bool */
 	private $mLocked;
 	/**
@@ -136,7 +136,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mPassword',
 		'mAuthToken',
 		'mLocked',
-		'mHidden',
+		'mHiddenLevel',
 		'mRegistration',
 		'mEmail',
 		'mAuthenticationTimestamp',
@@ -153,15 +153,32 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	private const VERSION = 9;
+	private const VERSION = 10;
 
+	/** @deprecated use HIDDEN_LEVEL_* instead */
 	public const HIDDEN_NONE = '';
+	/** @deprecated use HIDDEN_LEVEL_* instead */
 	public const HIDDEN_LISTS = 'lists';
+	/** @deprecated use HIDDEN_LEVEL_* instead */
 	public const HIDDEN_OVERSIGHT = 'suppressed';
 
 	public const HIDDEN_LEVEL_NONE = 0;
 	public const HIDDEN_LEVEL_LISTS = 1;
 	public const HIDDEN_LEVEL_SUPPRESSED = 2;
+
+	/** @var int[] Mapping for old string hidden values to the new int "level" values. */
+	private const HIDDEN_LEVEL_MAPPING = [
+		self::HIDDEN_NONE => self::HIDDEN_LEVEL_NONE,
+		self::HIDDEN_LISTS => self::HIDDEN_LEVEL_LISTS,
+		self::HIDDEN_OVERSIGHT => self::HIDDEN_LEVEL_SUPPRESSED,
+	];
+
+	/** @var string[] Mapping for new int "level" hidden values to the old string values. */
+	private const HIDDEN_LEVEL_MAPPING_REVERSE = [
+		self::HIDDEN_LEVEL_NONE => self::HIDDEN_NONE,
+		self::HIDDEN_LEVEL_LISTS => self::HIDDEN_LISTS,
+		self::HIDDEN_LEVEL_SUPPRESSED => self::HIDDEN_OVERSIGHT,
+	];
 
 	/**
 	 * The maximum number of edits a user can have and still be hidden
@@ -593,14 +610,9 @@ class CentralAuthUser implements IDBAccessObject {
 					->getMainConfig()
 					->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD
 			) {
-				$this->mHidden = $row->gu_hidden;
+				$this->mHiddenLevel = self::HIDDEN_LEVEL_MAPPING[$row->gu_hidden];
 			} else {
-				// todo: use the normalized value
-				$this->mHidden = [
-					self::HIDDEN_LEVEL_NONE => self::HIDDEN_NONE,
-					self::HIDDEN_LEVEL_LISTS => self::HIDDEN_LISTS,
-					self::HIDDEN_LEVEL_SUPPRESSED => self::HIDDEN_OVERSIGHT,
-				][(int)$row->gu_hidden_level];
+				$this->mHiddenLevel = (int)$row->gu_hidden_level;
 			}
 			$this->mRegistration = wfTimestamp( TS_MW, $row->gu_registration );
 			$this->mEmail = $row->gu_email;
@@ -612,7 +624,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
 			$this->mLocked = false;
-			$this->mHidden = '';
+			$this->mHiddenLevel = self::HIDDEN_LEVEL_NONE;
 			$this->mCasToken = 0;
 		}
 
@@ -802,7 +814,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function isHidden() {
 		$this->loadState();
-		return (bool)$this->mHidden;
+		return $this->mHiddenLevel !== self::HIDDEN_LEVEL_NONE;
 	}
 
 	/**
@@ -813,25 +825,25 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function isOversighted() {
 		$this->loadState();
-		return $this->mHidden == self::HIDDEN_OVERSIGHT;
+		return $this->mHiddenLevel == self::HIDDEN_LEVEL_SUPPRESSED;
 	}
 
 	/**
-	 * Returns the hidden level of
-	 * the account.
+	 * Returns the hidden level of the account.
 	 * @return string
+	 * @deprecated use getHiddenLevelInt() instead
 	 */
 	public function getHiddenLevel() {
+		return self::HIDDEN_LEVEL_MAPPING_REVERSE[$this->getHiddenLevelInt()];
+	}
+
+	/**
+	 * Temporary name, will be getHiddenLevel() when migration is complete
+	 * @return int one of self::HIDDEN_LEVEL_* constants
+	 */
+	public function getHiddenLevelInt(): int {
 		$this->loadState();
-
-		// backwards compatibility for mid-migration
-		if ( strval( $this->mHidden ) === '0' ) {
-			$this->mHidden = '';
-		} elseif ( strval( $this->mHidden ) === '1' ) {
-			$this->mHidden = self::HIDDEN_LISTS;
-		}
-
-		return $this->mHidden;
+		return $this->mHiddenLevel;
 	}
 
 	/**
@@ -1769,10 +1781,10 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Change account hiding level.
 	 *
-	 * @param string $level CentralAuthUser::HIDDEN_ class constant
+	 * @param int $level CentralAuthUser::HIDDEN_LEVEL_* class constant
 	 * @return Status
 	 */
-	public function adminSetHidden( $level ) {
+	public function adminSetHidden( int $level ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthUtils::getCentralDB();
 
@@ -1782,16 +1794,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$toSet = [];
 
 		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$toSet['gu_hidden'] = $level;
+			$toSet['gu_hidden'] = self::HIDDEN_LEVEL_MAPPING_REVERSE[$level];
 		}
 
 		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			// todo: take normalized values as parameters
-			$toSet['gu_hidden_level'] = [
-				self::HIDDEN_NONE => self::HIDDEN_LEVEL_NONE,
-				self::HIDDEN_LISTS => self::HIDDEN_LEVEL_LISTS,
-				self::HIDDEN_OVERSIGHT => self::HIDDEN_LEVEL_SUPPRESSED,
-			][$level];
+			$toSet['gu_hidden_level'] = $level;
 		}
 
 		$dbw->update(
@@ -1816,7 +1823,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *  true = lock
 	 *  false = unlock
 	 *  null = don't change
-	 * @param string|null $setHidden
+	 * @param string|int|null $setHidden
 	 *  hidden level, one of the HIDDEN_ constants
 	 *  null = don't change
 	 * @param string $reason reason for hiding
@@ -1828,7 +1835,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$setLocked, $setHidden, $reason, IContextSource $context, bool $markAsBot = false
 	) {
 		$isLocked = $this->isLocked();
-		$oldHiddenLevel = $this->getHiddenLevel();
+		$oldHiddenLevel = $this->getHiddenLevelInt();
 		$lockStatus = $hideStatus = null;
 		$added = [];
 		$removed = [];
@@ -1842,8 +1849,15 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $setHidden === null ) {
 			$setHidden = $oldHiddenLevel;
-		} elseif ( $setHidden != self::HIDDEN_NONE
-			|| $oldHiddenLevel != self::HIDDEN_NONE
+		} elseif (
+			(
+				$setHidden !== self::HIDDEN_NONE
+				&& $setHidden !== self::HIDDEN_LEVEL_NONE
+				// temporary while forms may pass either strings or ints. when migration is done,
+				// the special/api code needs to convert to int and we can remove all the special cases
+				&& $setHidden !== (string)self::HIDDEN_LEVEL_NONE
+			)
+			|| $oldHiddenLevel !== self::HIDDEN_LEVEL_NONE
 		) {
 			if ( !$context->getAuthority()->isAllowed( 'centralauth-oversight' ) ) {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
@@ -1860,11 +1874,25 @@ class CentralAuthUser implements IDBAccessObject {
 		$hiddenLevels = [
 			self::HIDDEN_NONE,
 			self::HIDDEN_LISTS,
-			self::HIDDEN_OVERSIGHT
+			self::HIDDEN_OVERSIGHT,
+			self::HIDDEN_LEVEL_NONE,
+			self::HIDDEN_LEVEL_LISTS,
+			self::HIDDEN_LEVEL_SUPPRESSED,
 		];
 
+		// convert normalized/int passed as form params/strings to ints if needed
+		if ( is_numeric( $setHidden ) ) {
+			$setHidden = (int)$setHidden;
+		}
+
+		// if not a known value, default to none
 		if ( !in_array( $setHidden, $hiddenLevels ) ) {
-			$setHidden = self::HIDDEN_NONE;
+			$setHidden = self::HIDDEN_LEVEL_NONE;
+		}
+
+		// aand convert old strings to new ints
+		if ( is_string( $setHidden ) ) {
+			$setHidden = self::HIDDEN_LEVEL_MAPPING[$setHidden];
 		}
 
 		if ( !$isLocked && $setLocked ) {
@@ -1878,29 +1906,29 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $oldHiddenLevel != $setHidden ) {
 			$hideStatus = $this->adminSetHidden( $setHidden );
 			switch ( $setHidden ) {
-				case self::HIDDEN_NONE:
-					$removed[] = $oldHiddenLevel === self::HIDDEN_OVERSIGHT ?
+				case self::HIDDEN_LEVEL_NONE:
+					$removed[] = $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ?
 						'oversighted' :
 						'hidden';
 					break;
-				case self::HIDDEN_LISTS:
+				case self::HIDDEN_LEVEL_LISTS:
 					$added[] = 'hidden';
-					if ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
+					if ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
 						$removed[] = 'oversighted';
 					}
 					break;
-				case self::HIDDEN_OVERSIGHT:
+				case self::HIDDEN_LEVEL_SUPPRESSED:
 					$added[] = 'oversighted';
-					if ( $oldHiddenLevel == self::HIDDEN_LISTS ) {
+					if ( $oldHiddenLevel === self::HIDDEN_LEVEL_LISTS ) {
 						$removed[] = 'hidden';
 					}
 					break;
 			}
 
 			$userName = $user->getName();
-			if ( $setHidden == self::HIDDEN_OVERSIGHT ) {
+			if ( $setHidden === self::HIDDEN_LEVEL_SUPPRESSED ) {
 				$this->suppress( $userName, $reason );
-			} elseif ( $oldHiddenLevel == self::HIDDEN_OVERSIGHT ) {
+			} elseif ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
 				$this->unsuppress( $userName, $reason );
 			}
 		}
@@ -1916,7 +1944,7 @@ class CentralAuthUser implements IDBAccessObject {
 				$context->getUser(),
 				$reason,
 				[ 'added' => $added, 'removed' => $removed ],
-				$setHidden != self::HIDDEN_NONE,
+				$setHidden !== self::HIDDEN_LEVEL_NONE,
 				$markAsBot
 			);
 		} elseif ( !$good ) {
@@ -2976,12 +3004,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			// todo: take normalized values as parameters
-			$toSet['gu_hidden_level'] = [
-				self::HIDDEN_NONE => self::HIDDEN_LEVEL_NONE,
-				self::HIDDEN_LISTS => self::HIDDEN_LEVEL_LISTS,
-				self::HIDDEN_OVERSIGHT => self::HIDDEN_LEVEL_SUPPRESSED,
-			][$this->getHiddenLevel()];
+			$toSet['gu_hidden_level'] = $this->getHiddenLevelInt();
 		}
 
 		$dbw->update(
@@ -3184,11 +3207,15 @@ class CentralAuthUser implements IDBAccessObject {
 	 * used to check for edit conflicts
 	 *
 	 * @param bool $recache Force a reload of the user from the database
+	 * @param bool $oldHiddenValue Use the old string values for hidden instead of the new int values
 	 * @return string
 	 */
-	public function getStateHash( $recache = false ) {
+	public function getStateHash( bool $recache = false, bool $oldHiddenValue = false ) {
 		$this->loadState( $recache );
-		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHidden . ':' .
+
+		$hidden = $oldHiddenValue ? $this->getHiddenLevel() : $this->mHiddenLevel;
+
+		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $hidden . ':' .
 			( $this->mLocked ? '1' : '0' ) );
 	}
 
