@@ -266,7 +266,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->getLinkRenderer(),
 			$this->databaseManager,
 			$this->userNameUtils,
-			self::PAGE_OPEN_QUEUE
+			self::PAGE_CLOSED_QUEUE
 		);
 		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
 	}
