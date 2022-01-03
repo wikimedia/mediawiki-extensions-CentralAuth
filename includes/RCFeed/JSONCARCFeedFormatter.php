@@ -40,5 +40,3 @@ class JSONCARCFeedFormatter implements CARCFeedFormatter {
 		return FormatJson::encode( $packet );
 	}
 }
-
-class_alias( JSONCARCFeedFormatter::class, 'JSONCARCFeedFormatter' );

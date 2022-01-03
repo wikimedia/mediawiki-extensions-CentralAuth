@@ -360,11 +360,7 @@
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
-		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php",
-		"IRCColourfulCARCFeedFormatter": "includes/RCFeed/IRCColourfulCARCFeedFormatter.php",
-		"JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php",
-		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\IRCColourfulCARCFeedFormatter": "includes/RCFeed/IRCColourfulCARCFeedFormatter.php",
-		"MediaWiki\\Extension\\CentralAuth\\RCFeed\\JSONCARCFeedFormatter": "includes/RCFeed/JSONCARCFeedFormatter.php"
+		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",

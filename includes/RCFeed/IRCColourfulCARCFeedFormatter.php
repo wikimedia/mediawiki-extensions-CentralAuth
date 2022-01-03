@@ -44,5 +44,3 @@ class IRCColourfulCARCFeedFormatter implements CARCFeedFormatter {
 		"\00302$url\003 \0035*\003 \00303$user\003 \0035*\003\n";
 	}
 }
-
-class_alias( IRCColourfulCARCFeedFormatter::class, 'IRCColourfulCARCFeedFormatter' );
