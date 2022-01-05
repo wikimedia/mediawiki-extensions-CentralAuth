@@ -108,7 +108,7 @@
 	"centralauth-admin-no": "いいえ",
 	"centralauth-admin-no-unified": "この利用者名には統一アカウントはありません。",
 	"centralauth-admin-none-selected": "変更対象のアカウントが選択されていません。",
-	"centralauth-admin-nonexistent": "利用者、「 <nowiki> $1 </ nowiki> 」 のグローバルアカウントはありません。",
+	"centralauth-admin-nonexistent": "グローバルアカウント「<nowiki>$1</nowiki>」はありません",
 	"centralauth-admin-not-authorized": "このアクションを実行する権限がありません。",
 	"centralauth-admin-permission": "他人同士のアカウントを統合できるのは、スチュワードのみです。",
 	"centralauth-admin-reason": "理由:",
