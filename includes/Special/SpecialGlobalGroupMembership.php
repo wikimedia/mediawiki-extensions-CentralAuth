@@ -3,13 +3,13 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthServices;
-use CentralAuthUser;
 use HTMLForm;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use OutputPage;
 use Status;

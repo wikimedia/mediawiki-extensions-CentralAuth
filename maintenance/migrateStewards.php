@@ -6,6 +6,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/CommandLineInc.php";
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+
 echo "Populating global groups table with stewards...\n";
 
 // Fetch local stewards

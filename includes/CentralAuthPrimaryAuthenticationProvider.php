@@ -27,6 +27,7 @@ use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
 
 /**

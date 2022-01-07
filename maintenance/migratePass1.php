@@ -10,6 +10,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+
 class MigratePass1 extends Maintenance {
 
 	/** @var float */

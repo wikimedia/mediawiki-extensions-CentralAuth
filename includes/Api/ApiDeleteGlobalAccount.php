@@ -25,7 +25,7 @@
 namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
-use CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 /**
  * API module to delete a global account.

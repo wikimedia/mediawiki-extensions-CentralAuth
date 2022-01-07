@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
 use Status;
 use User;

@@ -18,6 +18,8 @@
  * @file
  */
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+
 /**
  * Tests to make sure the whole global group membership flow works correctly.
  *

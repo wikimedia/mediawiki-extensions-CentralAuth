@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extensions\SecurePoll\Hooks\SecurePoll_GetUserParamsHook;
 use MediaWiki\Extensions\SecurePoll\User\LocalAuth;
 use NamespaceInfo;

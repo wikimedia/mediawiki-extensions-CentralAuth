@@ -3,13 +3,13 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use AlphabeticPager;
-use CentralAuthUser;
 use Html;
 use HTMLForm;
 use IContextSource;
 use LinkBatch;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use stdClass;
 use Title;
 use UserGroupMembership;

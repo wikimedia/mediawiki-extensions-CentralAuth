@@ -26,7 +26,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
 use ApiQueryBase;
-use CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserNameUtils;
 use WikiMap;

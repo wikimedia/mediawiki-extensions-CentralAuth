@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+
 /**
  * Setup database tests for centralauth
  * @group CentralAuthDB

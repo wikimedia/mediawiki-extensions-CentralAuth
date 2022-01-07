@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;

@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 /**
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\CentralAuthUIService

@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthUser;
 use Html;
 use LogEventsList;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use SpecialPage;
 use Xml;
 

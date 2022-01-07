@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
-use CentralAuthUser;
 use Exception;
 use ExtensionRegistry;
 use JobQueueGroup;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use RenameuserSQL;
 use Title;

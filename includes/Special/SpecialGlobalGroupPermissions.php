@@ -12,7 +12,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthUser;
 use Exception;
 use Html;
 use LogEventsList;
@@ -20,6 +19,7 @@ use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use OutputPage;
 use SpecialPage;

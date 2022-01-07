@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use CentralAuthServices;
-use CentralAuthUser;
 use DBAccessObjectUtils;
 use IDBAccessObject;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Authority;
 use WikiMap;

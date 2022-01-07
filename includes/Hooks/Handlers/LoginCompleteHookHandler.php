@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthUser;
 use Config;
 use Hooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLoginCompleteHook;
 use MediaWiki\User\UserOptionsLookup;
 use MWCryptRand;

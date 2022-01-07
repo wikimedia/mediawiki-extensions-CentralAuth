@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 /**
  * @author Taavi "Majavah" Väänänen
