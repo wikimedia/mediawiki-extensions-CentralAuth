@@ -6,6 +6,7 @@ use CentralAuthSpoofUser;
 use Job;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\JobQueueGroupFactory;
 use Status;
 use Title;
 use User;
@@ -47,10 +48,8 @@ class GlobalRenameUser {
 	 */
 	private $renameuserStatus;
 
-	/**
-	 * @var callable
-	 */
-	private $jobQueueGroupGenerator;
+	/** @var JobQueueGroupFactory */
+	private $jobQueueGroupFactory;
 
 	/**
 	 * @var GlobalRenameUserDatabaseUpdates
@@ -74,7 +73,7 @@ class GlobalRenameUser {
 	 * @param User $newUser Validated (creatable!) new user
 	 * @param CentralAuthUser $newCAUser
 	 * @param GlobalRenameUserStatus $renameuserStatus
-	 * @param callable $jobQueueGroupGenerator Callable for getting a job queue group for a given wiki
+	 * @param JobQueueGroupFactory $jobQueueGroupFactory
 	 * @param GlobalRenameUserDatabaseUpdates $databaseUpdates
 	 * @param GlobalRenameUserLogger $logger
 	 * @param array $session output of RequestContext::exportSession()
@@ -86,7 +85,7 @@ class GlobalRenameUser {
 		User $newUser,
 		CentralAuthUser $newCAUser,
 		GlobalRenameUserStatus $renameuserStatus,
-		callable $jobQueueGroupGenerator,
+		JobQueueGroupFactory $jobQueueGroupFactory,
 		GlobalRenameUserDatabaseUpdates $databaseUpdates,
 		GlobalRenameUserLogger $logger,
 		array $session
@@ -97,7 +96,7 @@ class GlobalRenameUser {
 		$this->newUser = $newUser;
 		$this->newCAUser = $newCAUser;
 		$this->renameuserStatus = $renameuserStatus;
-		$this->jobQueueGroupGenerator = $jobQueueGroupGenerator;
+		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->databaseUpdates = $databaseUpdates;
 		$this->logger = $logger;
 		$this->session = $session;
@@ -199,7 +198,7 @@ class GlobalRenameUser {
 		$statuses = $this->renameuserStatus->getStatuses( GlobalRenameUserStatus::READ_LATEST );
 		foreach ( $statuses as $wiki => $status ) {
 			if ( $status === 'queued' ) {
-				call_user_func( $this->jobQueueGroupGenerator, $wiki )->push( $job );
+				$this->jobQueueGroupFactory->makeJobQueueGroup( $wiki )->push( $job );
 				break;
 			}
 		}

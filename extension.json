@@ -175,7 +175,8 @@
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",
 				"CentralAuth.GlobalRenameUserValidator",
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthDatabaseManager",
+				"JobQueueGroupFactory"
 			]
 		},
 		"GlobalRenameProgress": {

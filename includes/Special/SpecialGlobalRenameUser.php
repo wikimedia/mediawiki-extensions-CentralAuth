@@ -15,6 +15,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\JobQueueGroupFactory;
 use Message;
 use Status;
 use Title;
@@ -61,6 +62,9 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
+	/** @var JobQueueGroupFactory */
+	private $jobQueueGroupFactory;
+
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
@@ -71,18 +75,21 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 * @param GlobalRenameUserValidator $globalRenameUserValidator
 	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param JobQueueGroupFactory $jobQueueGroupFactory
 	 */
 	public function __construct(
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
 		GlobalRenameUserValidator $globalRenameUserValidator,
-		CentralAuthDatabaseManager $databaseManager
+		CentralAuthDatabaseManager $databaseManager,
+		JobQueueGroupFactory $jobQueueGroupFactory
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameUserValidator = $globalRenameUserValidator;
 		$this->databaseManager = $databaseManager;
+		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 	}
 
 	public function doesWrites() {
@@ -298,7 +305,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			$newUser,
 			CentralAuthUser::getInstance( $newUser ),
 			new GlobalRenameUserStatus( $newUser->getName() ),
-			'JobQueueGroup::singleton',
+			$this->jobQueueGroupFactory,
 			new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
 			new GlobalRenameUserLogger( $this->getUser() ),
 			$session
