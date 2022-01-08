@@ -418,16 +418,41 @@ class SpecialCentralAuth extends SpecialPage {
 			);
 		}
 
-		$groups = $globalUser->getGlobalGroups();
+		$groups = $globalUser->getGlobalGroupsWithExpiration();
 		if ( $groups ) {
 			$groupLinks = [];
-			foreach ( $groups as $group ) {
-				$groupLinks[] = $this->getLinkRenderer()->makeLink(
+			// Ensure temporary groups are displayed first, to avoid ambiguity like
+			// "first, second (expires at some point)" (unclear if only second expires or if both expire)
+			uasort( $groups, static function ( $first, $second ) {
+				if ( !$first && $second ) {
+					return 1;
+				} elseif ( $first && !$second ) {
+					return -1;
+				} else {
+					return 0;
+				}
+			} );
+
+			$uiLanguage = $this->getLanguage();
+			$uiUser = $this->getUser();
+
+			foreach ( $groups as $group => $expiry ) {
+				$link = $this->getLinkRenderer()->makeLink(
 					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group ),
-					UserGroupMembership::getGroupName( $group )
+					$uiLanguage->getGroupName( $group )
 				);
+
+				if ( $expiry ) {
+					$link = $this->msg( 'group-membership-link-with-expiry' )
+						->rawParams( $link )
+						->params( $uiLanguage->userTimeAndDate( $expiry, $uiUser ) )
+						->escaped();
+				}
+
+				$groupLinks[] = $link;
 			}
-			$attribs['groups'] = $this->getLanguage()->commaList( $groupLinks );
+
+			$attribs['groups'] = $uiLanguage->commaList( $groupLinks );
 		}
 
 		if ( $this->mCanChangeGroups ) {
