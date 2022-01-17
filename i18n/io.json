@@ -90,6 +90,7 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekundo|sekundi}} ante nun",
 	"centralauth-uwbr-registration-nodate": "Nekonocata",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yaro|yari}} ante nun",
+	"centralloginsuccesful": "Konektita",
 	"globalgroupmembership": "Membreso en globala grupi",
 	"globalgrouppermissions": "Administrado di globala grupi",
 	"globalrenamequeue-form-status-all": "omna",

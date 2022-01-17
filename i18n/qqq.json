@@ -48,6 +48,7 @@
 			"Toliño",
 			"Umherirrender",
 			"Verdy p",
+			"Xiplus",
 			"Yekrats",
 			"דולב"
 		]
@@ -100,7 +101,7 @@
 	"centralauth-admin-info-unattached": "Label of information shown in box of 'Global user info' on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-info-username": "Label of information shown in box of 'Global user info' on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Username}}",
 	"centralauth-admin-intro": "Introduction to [[m:Special:CentralAuth|Global User Manager]] special page.",
-	"centralauth-admin-list-attached-on": "Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
+	"centralauth-admin-list-attached-on": "Column heading for a table column displaying the times and dates when local accounts were attached to a global account. See [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n\nSee also:\n* {{msg-mw|Checkuser-investigate-preliminary-table-header-registration}}",
 	"centralauth-admin-list-blocked": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Blocked}}",
 	"centralauth-admin-list-editcount": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-list-groups": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Group}}",
