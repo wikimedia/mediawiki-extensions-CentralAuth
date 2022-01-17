@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use CentralAuthServices;
 use Exception;
+use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
@@ -314,9 +315,10 @@ class GlobalRenameRequest {
 	 * something.
 	 *
 	 * @param string $name
+	 * @param int $flags one of IDBAccessObject::READ_* flags
 	 * @return Status Canonicalized name
 	 */
-	public static function isNameAvailable( $name ) {
+	public static function isNameAvailable( string $name, int $flags = IDBAccessObject::READ_LATEST ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		$safe = $userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_CREATABLE );
 		$status = Status::newGood( $safe );
@@ -326,14 +328,20 @@ class GlobalRenameRequest {
 			return $status;
 		}
 
-		if ( CentralAuthServices::getGlobalRenameRequestStore()->nameHasPendingRequest( $safe ) ) {
+		if ( CentralAuthServices::getGlobalRenameRequestStore()->nameHasPendingRequest( $safe, $flags ) ) {
 			$status->fatal( 'globalrenamerequest-newname-err-taken' );
 			return $status;
 		}
 
 		// New user creation checks against local wiki only using an API
 		// request, but we need to check against the central user table instead
-		$centralUser = CentralAuthUser::getPrimaryInstanceByName( $safe );
+
+		if ( $flags & IDBAccessObject::READ_LATEST ) {
+			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $safe );
+		} else {
+			$centralUser = CentralAuthUser::getInstanceByName( $safe );
+		}
+
 		if ( $centralUser->exists() || $centralUser->listUnattached() ) {
 			$status->fatal( 'globalrenamerequest-newname-err-taken' );
 			return $status;

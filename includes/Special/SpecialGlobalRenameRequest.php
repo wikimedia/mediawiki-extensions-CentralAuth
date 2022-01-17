@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use FormSpecialPage;
 use HTMLForm;
+use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -266,7 +267,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		$rand = '';
 		while ( !$found && $counter < 5 ) {
 			$rand = $this->getUser()->getName() . rand( 123, 999 );
-			$found = GlobalRenameRequest::isNameAvailable( $rand )->isOK();
+			$found = GlobalRenameRequest::isNameAvailable( $rand, IDBAccessObject::READ_NORMAL )->isOK();
 			$counter++;
 		}
 		if ( $found ) {
