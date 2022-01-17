@@ -145,7 +145,7 @@ class CentralAuthUIService {
 				// Not a conflict since the old usage will go away
 				continue;
 			}
-			$ca = CentralAuthUser::getPrimaryInstanceByName( $name );
+			$ca = CentralAuthUser::getInstanceByName( $name );
 			if ( $ca->isHidden() ) {
 				$display[] = $localizer->msg( 'centralauth-rename-conflict-hidden' )->text();
 			} else {
