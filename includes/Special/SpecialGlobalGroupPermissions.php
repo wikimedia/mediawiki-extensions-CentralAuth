@@ -20,7 +20,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionManager;
 use OutputPage;
 use SpecialPage;
 use Status;
@@ -47,14 +47,23 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
+	/** @var PermissionManager */
+	private $permissionManager;
+
 	/**
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param GlobalGroupLookup $globalGroupLookup
+	 * @param PermissionManager $permissionManager
 	 */
-	public function __construct( CentralAuthDatabaseManager $databaseManager, GlobalGroupLookup $globalGroupLookup ) {
+	public function __construct(
+		CentralAuthDatabaseManager $databaseManager,
+		GlobalGroupLookup $globalGroupLookup,
+		PermissionManager $permissionManager
+	) {
 		parent::__construct( 'GlobalGroupPermissions' );
 		$this->databaseManager = $databaseManager;
 		$this->globalGroupLookup = $globalGroupLookup;
+		$this->permissionManager = $permissionManager;
 	}
 
 	public function doesWrites() {
@@ -403,7 +412,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$rights = array_unique(
 			array_merge(
-				MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions(),
+				$this->permissionManager->getAllPermissions(),
 				$assignedRights
 			)
 		);
@@ -514,6 +523,51 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			}
 		}
 
+		// Calculate permission changes already! We'll only save any changes
+		// here after processing a possible group rename, but want to add
+		// validation logic before that.
+		$addRights = [];
+		$removeRights = [];
+		$oldRights = $this->getAssignedRights( $group );
+		$allRights = array_unique(
+			array_merge(
+				$this->permissionManager->getAllPermissions(),
+				$oldRights
+			)
+		);
+
+		foreach ( $allRights as $right ) {
+			$alreadyAssigned = in_array( $right, $oldRights );
+			$checked = $this->getRequest()->getCheck( "wpRightAssigned-$right" );
+
+			if ( !$alreadyAssigned && $checked ) {
+				$addRights[] = $right;
+			} elseif ( $alreadyAssigned && !$checked ) {
+				$removeRights[] = $right;
+			} # Otherwise, do nothing.
+		}
+
+		// Disallow deleting existing groups with members in them
+		if (
+			count( $oldRights ) !== 0
+			&& count( $addRights ) === 0
+			&& count( $removeRights ) === count( $oldRights )
+		) {
+			$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+			$memberCount = $dbr->selectRow(
+				'global_user_groups',
+				'gug_group',
+				[ 'gug_group' => $group ],
+				__METHOD__
+			);
+
+			if ( $memberCount ) {
+				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-delete-removemembers' );
+				return;
+			}
+		}
+
+		// Check if we need to rename the group
 		if ( $group != $newname ) {
 			if ( in_array( $newname, $this->globalGroupLookup->getDefinedGroups( DB_PRIMARY ) ) ) {
 				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-rename-taken', $newname );
@@ -539,29 +593,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			// The rest of the changes here will be performed on the "new" group
 			$group = $newname;
-		}
-
-		// Permissions
-		$addRights = [];
-		$removeRights = [];
-		$oldRights = $this->getAssignedRights( $group );
-		$allRights = array_unique(
-			array_merge(
-				MediaWikiServices::getInstance()->getPermissionManager()->getAllPermissions(),
-				$oldRights
-			)
-		);
-
-		foreach ( $allRights as $right ) {
-			$alreadyAssigned = in_array( $right, $oldRights );
-
-			if ( !$alreadyAssigned && $this->getRequest()->getCheck( "wpRightAssigned-$right" ) ) {
-				$addRights[] = $right;
-			} elseif ( $alreadyAssigned &&
-				!$this->getRequest()->getCheck( "wpRightAssigned-$right" )
-			) {
-				$removeRights[] = $right;
-			} # Otherwise, do nothing.
 		}
 
 		// Assign the rights.
