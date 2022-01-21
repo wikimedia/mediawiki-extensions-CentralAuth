@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
@@ -24,7 +25,15 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	/** @var array */
 	protected $centralCookieOptions = [];
 
+	/** @var CentralAuthSessionManager */
+	private $sessionManager;
+
+	/** @var CentralAuthUtilityService */
+	private $utilityService;
+
 	/**
+	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthUtilityService $utilityService
 	 * @param array $params In addition to the parameters for
 	 * CookieSessionProvider, the following are
 	 * recognized:
@@ -41,7 +50,14 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 *     - httpOnly: Cookie httpOnly flag, defaults to $wgCookieHttpOnly
 	 *     - sameSite: Cookie SameSite attribute, defaults to $wgCookieSameSite
 	 */
-	public function __construct( $params = [] ) {
+	public function __construct(
+		CentralAuthSessionManager $sessionManager,
+		CentralAuthUtilityService $utilityService,
+		$params = []
+	) {
+		$this->sessionManager = $sessionManager;
+		$this->utilityService = $utilityService;
+
 		$params += [
 			'centralCookieOptions' => [],
 		];
@@ -128,7 +144,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		} else {
 			$id = $this->getCookie( $request, $this->params['centralSessionName'], '' );
 			if ( $id !== null ) {
-				$data = CentralAuthUtils::getCentralSessionById( $id );
+				$data = $this->sessionManager->getCentralSessionById( $id );
 				if ( isset( $data['pending_name'] ) || isset( $data['pending_guid'] ) ) {
 					$this->logger->debug( __METHOD__ . ': uninitialized session' );
 				} elseif ( isset( $data['token'] ) && isset( $data['user'] ) ) {
@@ -255,15 +271,15 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		// We need a Session to pass to CentralAuthUtils::setCentralSession()
+		// We need a Session to pass to CentralAuthSessionManager::setCentralSession()
 		// to reset the session ID, so create one on a new FauxRequest.
 		$s = $session->getSession( new FauxRequest() );
 
 		// We also need to fetch the current central data to pass to
-		// CentralAuthUtils::setCentralSession() when resetting the ID.
-		$data = CentralAuthUtils::getCentralSession( $s );
+		// CentralAuthSessionManager::setCentralSession() when resetting the ID.
+		$data = $this->sessionManager->getCentralSession( $s );
 
-		CentralAuthUtils::setCentralSession( $data, true, $s );
+		$this->sessionManager->setCentralSession( $data, true, $s );
 	}
 
 	protected function sessionDataToExport( $user ) {
@@ -306,7 +322,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		CentralAuthUtils::setP3P( $request );
+		$this->utilityService->setP3P( $request );
 
 		$s = $session->getSession( $request );
 
@@ -340,14 +356,14 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 			// We only save the user into the central session if it's not a
 			// "pending" session, but we still need the ID to set the cookie.
-			$data = CentralAuthUtils::getCentralSession( $s );
+			$data = $this->sessionManager->getCentralSession( $s );
 			if ( isset( $data['pending_name'] ) ) {
 				$remember = false;
 			} else {
 				$data['user'] = $centralUser->getName();
 				$data['token'] = $centralUser->getAuthToken();
 			}
-			$centralSessionId = CentralAuthUtils::setCentralSession( $data, false, $s );
+			$centralSessionId = $this->sessionManager->setCentralSession( $data, false, $s );
 
 			$cookies = [
 				'User' => (string)$centralUser->getName(),
@@ -394,7 +410,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		CentralAuthUtils::setP3P( $request );
+		$this->utilityService->setP3P( $request );
 
 		$expiry = time() - 86400;
 		$response->clearCookie( 'User', $this->centralCookieOptions );
@@ -486,7 +502,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$loggedOut !== (int)$this->getCookie(
 				$request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
 		) {
-			CentralAuthUtils::setP3P( $request );
+			$this->utilityService->setP3P( $request );
 			$request->response()->setCookie( 'LoggedOut', (string)$loggedOut, $loggedOut + 86400,
 				$this->centralCookieOptions );
 		}

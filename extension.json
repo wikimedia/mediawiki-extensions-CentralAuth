@@ -71,15 +71,27 @@
 				{
 					"priority": 50
 				}
+			],
+			"services": [
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
 		"CentralAuthApiSessionProvider": {
 			"class": "CentralAuthApiSessionProvider",
-			"args": []
+			"args": [],
+			"services": [
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthUtilityService"
+			]
 		},
 		"CentralAuthHeaderSessionProvider": {
 			"class": "CentralAuthHeaderSessionProvider",
-			"args": []
+			"args": [],
+			"services": [
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthUtilityService"
+			]
 		}
 	},
 	"CentralIdLookupProviders": {

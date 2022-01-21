@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
@@ -16,6 +17,24 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  * bogus SessionInfo to prevent other SessionProviders from establishing a session.
  */
 abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider {
+	/** @var CentralAuthSessionManager */
+	private $sessionManager;
+
+	/** @var CentralAuthUtilityService */
+	private $utilityService;
+
+	/**
+	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthUtilityService $utilityService
+	 */
+	public function __construct(
+		CentralAuthSessionManager $sessionManager,
+		CentralAuthUtilityService $utilityService
+	) {
+		parent::__construct();
+		$this->sessionManager = $sessionManager;
+		$this->utilityService = $utilityService;
+	}
 
 	/**
 	 * Returns a bogus session, which can be used to prevent other SessionProviders
@@ -59,9 +78,9 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
 
-		$tokenStore = CentralAuthUtils::getTokenStore();
-		$key = CentralAuthUtils::memcKey( 'api-token', $oneTimeToken );
-		$data = CentralAuthUtils::getKeyValueUponExistence( $tokenStore, $key );
+		$tokenStore = $this->sessionManager->getTokenStore();
+		$key = $this->sessionManager->memcKey( 'api-token', $oneTimeToken );
+		$data = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
 			!isset( $data['token'] ) ||
@@ -107,8 +126,8 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
-		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
-		$sessionStore = CentralAuthUtils::getSessionStore();
+		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
+		$sessionStore = $this->sessionManager->getSessionStore();
 		if ( $sessionStore->get( $key ) ) {
 			$this->logger->debug( __METHOD__ . ': user is blacklisted' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
@@ -143,8 +162,8 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	 * @return bool
 	 */
 	protected function consumeToken( $token ) {
-		$tokenStore = CentralAuthUtils::getTokenStore();
-		$key = CentralAuthUtils::memcKey( 'api-token', $token );
+		$tokenStore = $this->sessionManager->getTokenStore();
+		$key = $this->sessionManager->memcKey( 'api-token', $token );
 
 		if ( !$tokenStore->changeTTL( $key, time() - 3600, BagOStuff::WRITE_SYNC ) ) {
 			$this->logger->error( 'Raced out trying to mark the token as expired' );
@@ -193,8 +212,8 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		// Assume blacklisting for a day will be enough because we assume by
 		// then CentralAuth itself will have been instructed to more
 		// permanently block the user.
-		$sessionStore = CentralAuthUtils::getSessionStore();
-		$key = CentralAuthUtils::memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
+		$sessionStore = $this->sessionManager->getSessionStore();
+		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
 		$sessionStore->set( $key, true, ExpirationAwareness::TTL_DAY, BagOStuff::WRITE_SYNC );
 	}
 
