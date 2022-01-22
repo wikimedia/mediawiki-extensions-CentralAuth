@@ -144,6 +144,7 @@ class CentralAuthHooks implements
 					'CentralAuth.CentralAuthDatabaseManager',
 					'CentralAuth.CentralAuthUIService',
 					'CentralAuth.GlobalRenameRequestStore',
+					'JobQueueGroupFactory',
 				],
 			];
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [

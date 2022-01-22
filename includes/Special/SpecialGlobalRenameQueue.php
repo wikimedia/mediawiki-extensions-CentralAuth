@@ -41,6 +41,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\User\UserNameUtils;
 use OOUI\MessageWidget;
 use SpecialPage;
@@ -78,6 +79,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/** @var GlobalRenameRequestStore */
 	private $globalRenameRequestStore;
 
+	/** @var JobQueueGroupFactory */
+	private $jobQueueGroupFactory;
+
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';
 	public const PAGE_CLOSED_QUEUE = 'closed';
@@ -90,7 +94,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		LBFactory $lbFactory,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
-		GlobalRenameRequestStore $globalRenameRequestStore
+		GlobalRenameRequestStore $globalRenameRequestStore,
+		JobQueueGroupFactory $jobQueueGroupFactory
 	) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
@@ -98,6 +103,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
+		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 	}
 
 	public function doesWrites() {
@@ -631,7 +637,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					$newUser,
 					CentralAuthUser::getInstance( $newUser ),
 					new GlobalRenameUserStatus( $newUser->getName() ),
-					'JobQueueGroup::singleton',
+					$this->jobQueueGroupFactory,
 					new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
 					new GlobalRenameUserLogger( $this->getUser() ),
 					$session
