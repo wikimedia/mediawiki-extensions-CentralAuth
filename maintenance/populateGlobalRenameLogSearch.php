@@ -36,7 +36,7 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 		$insert = [];
 
 		foreach ( $rows as $row ) {
-			$params = unserialize( $row->log_params );
+			$params = LogEntryBase::extractParams( $row->log_params );
 			$insert[] = [
 				'ls_field' => 'oldname',
 				'ls_value' => $params['4::olduser'],
