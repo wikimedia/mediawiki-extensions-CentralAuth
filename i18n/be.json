@@ -38,6 +38,7 @@
 	"centralauth-centralautologin-logged-in": "Вы глабальна аўтарызаваліся як $1. Перазагрузіце старонку, каб прымяніліся вашыя персанальныя настройкі.",
 	"centralauth-centralautologin-logged-in-nouser": "Вы глабальна аўтарызаваліся. Перазагрузіце старонку, каб прымяніліся вашыя персанальныя настройкі.",
 	"centralauth-complete": "Аб’яднанне рахункаў завершана!",
+	"centralauth-contribs-locked": "Гэты ўліковы запіс заблакаваны.\nГл. [[Special:CentralAuth/$1|даныя глабальнага ўліковага запісу]] для атрымання болей падрабязнай інфармацыі.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|дзень|дні|дзён}} назад",
 	"centralauth-desc": "[[Special:MergeAccount|Аб’яднанне рахункаў]] у вікі-праектах {{int:Centralauth-groupname}}",
 	"centralauth-editgroup-reason": "Прычына:",

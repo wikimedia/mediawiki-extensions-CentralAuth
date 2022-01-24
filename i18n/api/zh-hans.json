@@ -1,21 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Shizhao",
+			"Tranve"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
 	"apierror-centralauth-badtoken": "centralauthtoken无效。",
 	"apierror-centralauth-badusername": "用户名“$1”在此wiki不可用",
 	"apierror-centralauth-editconflict": "检测到编辑冲突，操作终止。",
-	"apierror-centralauth-notattached": "不能通过已附加的全域账户获得centralauthtoken。",
+	"apierror-centralauth-notattached": "不能通过已附加的全域账号获得centralauthtoken。",
 	"apierror-centralauth-notloggedin": "匿名用户不能获得centralauthtoken。",
 	"apierror-centralauth-renameinprogress": "用户已被重命名，不能使用。",
 	"apihelp-centralauthtoken-description": "取得centralauthtoken用于已认证的一个附加到wiki的请求。",
 	"apihelp-centralauthtoken-example-1": "取得一个centralauthtoken",
 	"apihelp-centralauthtoken-summary": "取得centralauthtoken用于已认证的一个附加到wiki的请求。",
 	"apihelp-deleteglobalaccount-description": "删除一个全域用户。",
-	"apihelp-deleteglobalaccount-example-1": "删除[[User:Example]]的全域账户",
+	"apihelp-deleteglobalaccount-example-1": "删除[[User:Example]]的全域账号",
 	"apihelp-deleteglobalaccount-param-reason": "删除用户的原因。",
 	"apihelp-deleteglobalaccount-param-user": "要删除的用户。",
 	"apihelp-deleteglobalaccount-summary": "删除一个全域用户。",
@@ -68,7 +70,7 @@
 	"apihelp-query+wikisets-param-prop": "要包含的信息链。\n;type:基于选择性加入（只包含特定wiki）或选择性退出（包含除特定wiki以外的所有wiki）。\n;wikisincluded:包含于此wiki集合中的wiki。\n;wikisnotincluded:未包含于此wiki集合中的wiki。",
 	"apihelp-query+wikisets-summary": "列举所有wiki集合。",
 	"apihelp-setglobalaccountstatus-description": "设置全域用户状态。",
-	"apihelp-setglobalaccountstatus-example-1": "锁定全域账户[[User:Example]]，原因“Spam”",
+	"apihelp-setglobalaccountstatus-example-1": "锁定全域账号[[User:Example]]，原因为“Spam”",
 	"apihelp-setglobalaccountstatus-example-2": "解除锁定并监督隐藏全域账户[[User:Example]]，原因“I can”",
 	"apihelp-setglobalaccountstatus-param-hidden": "更改此用户是否被隐藏、从全域用户列表隐藏或屏蔽的状态。",
 	"apihelp-setglobalaccountstatus-param-locked": "更改此用户的锁定与否。",
