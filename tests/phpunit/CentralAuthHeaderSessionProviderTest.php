@@ -20,7 +20,8 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 
 		$logger = new NullLogger();
 
-		$hookContainer = $this->getServiceContainer()->getHookContainer();
+		$services = $this->getServiceContainer();
+		$hookContainer = $services->getHookContainer();
 
 		$manager = new SessionManager( [
 			'config' => $config,
@@ -29,9 +30,12 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 			'hookContainer' => $hookContainer
 		] );
 
-		$provider = new CentralAuthHeaderSessionProvider();
+		$provider = new CentralAuthHeaderSessionProvider(
+			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
+			$services->get( 'CentralAuth.CentralAuthUtilityService' )
+		);
 		$this->initProvider(
-			$provider, null, $config, $manager, $hookContainer, $this->getServiceContainer()->getUserNameUtils()
+			$provider, null, $config, $manager, $hookContainer, $services->getUserNameUtils()
 		);
 		return $provider;
 	}

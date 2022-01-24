@@ -68,9 +68,15 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 			'hookContainer' => $this->hookContainer
 		] );
 
-		$provider = new CentralAuthApiSessionProvider();
+		$services = $this->getServiceContainer();
+
+		$provider = new CentralAuthApiSessionProvider(
+			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
+			$services->get( 'CentralAuth.CentralAuthUtilityService' )
+		);
+
 		$this->initProvider(
-			$provider, null, $config, $manager, $this->hookContainer, $this->getServiceContainer()->getUserNameUtils()
+			$provider, null, $config, $manager, $this->hookContainer, $services->getUserNameUtils()
 		);
 		return $provider;
 	}

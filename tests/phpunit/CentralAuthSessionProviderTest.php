@@ -31,13 +31,18 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideSuggestLoginUsername
 	 */
 	public function testSuggestLoginUsername( $cookies, $expectedUsername ) {
-		$provider = new CentralAuthSessionProvider( [
-			'priority' => 42,
-			'cookieOptions' => [ 'prefix' => '' ],
-			'centralCookieOptions' => [ 'prefix' => '' ],
-		] );
+		$services = $this->getServiceContainer();
+		$provider = new CentralAuthSessionProvider(
+			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
+			$services->get( 'CentralAuth.CentralAuthUtilityService' ),
+			[
+				'priority' => 42,
+				'cookieOptions' => [ 'prefix' => '' ],
+				'centralCookieOptions' => [ 'prefix' => '' ],
+			]
+		);
 		$this->initProvider(
-			$provider, null, $this->getConfig(), null, null, $this->getServiceContainer()->getUserNameUtils()
+			$provider, null, $this->getConfig(), null, null, $services->getUserNameUtils()
 		);
 		$request = new FauxRequest();
 		$request->setCookies( $cookies, '' );
@@ -60,7 +65,12 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetRememberUserDuration() {
-		$provider = new CentralAuthSessionProvider( [ 'priority' => 42 ] );
+		$services = $this->getServiceContainer();
+		$provider = new CentralAuthSessionProvider(
+			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
+			$services->get( 'CentralAuth.CentralAuthUtilityService' ),
+			[ 'priority' => 42 ]
+		);
 		$this->initProvider( $provider, null, $this->getConfig() );
 
 		$this->assertSame( 200, $provider->getRememberUserDuration() );
