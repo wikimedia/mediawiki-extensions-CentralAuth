@@ -54,7 +54,8 @@
 			"落花有意12138",
 			"铁桶",
 			"Stang",
-			"Tranve"
+			"Tranve",
+			"星海"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -260,7 +261,7 @@
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
 	"centralauth-error-unmerged": "您不能编辑，因为您的账号未统一。",
 	"centralauth-error-wrongprovider": "此特殊页面在使用$1时不可用。",
-	"centralauth-finish-incomplete": "部份账户已经由密码整合，其他帐号尚未确认。",
+	"centralauth-finish-incomplete": "部分账户已经由密码整合，其他帐号尚未确认。",
 	"centralauth-finish-login": "登录",
 	"centralauth-finish-noconfirms": "没有账号可经密码确认。",
 	"centralauth-finish-password": "密码：",
@@ -323,7 +324,7 @@
 	"centralauth-merge-denied": "很抱歉，您没有权限访问这个页面",
 	"centralauth-merge-dryrun-complete": "所有已存在的的账户都能被自动整合！\n\n目前尚未对您的帐号进行任何修改。",
 	"centralauth-merge-dryrun-home": "迁移系统无法从主维基站确认您是这个名称的拥有者。\n\n已有其他维基站使用此名称；请参阅以下的链接和记录以完成账户迁移。",
-	"centralauth-merge-dryrun-incomplete": "您的账户已经确认完毕并准备进行整合作业，但部份帐号无法确认，也将不会立即合并。您可以在稍后再次合并这些账户。\n\n目前尚未对您的帐号进行任何修改。",
+	"centralauth-merge-dryrun-incomplete": "您的账户已经确认完毕并准备进行整合作业，但部分帐号无法确认，也将不会立即合并。您可以在稍后再次合并这些账户。\n\n目前尚未对您的帐号进行任何修改。",
 	"centralauth-merge-dryrun-or": "'''或者是'''",
 	"centralauth-merge-home-password": "该账户在起始wiki（在下面列出）上的密码跟您输入的密码不同。请输入起始wiki的密码。",
 	"centralauth-merge-method-admin": "管理员整合的账号",
