@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 use CentralAuthUtils;
 use Exception;
 use Job;
-use JobQueueGroup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
@@ -164,7 +163,7 @@ abstract class LocalRenameJob extends Job {
 			}
 		}
 		if ( $nextWiki ) {
-			JobQueueGroup::singleton( $nextWiki )->push( $job );
+			MediaWikiServices::getInstance()->getJobQueueGroupFactory()->makeJobQueueGroup( $nextWiki )->push( $job );
 		}
 	}
 }
