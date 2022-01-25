@@ -157,7 +157,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
 			"services": [
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupLookup",
+				"PermissionManager"
 			]
 		},
 		"WikiSets": {

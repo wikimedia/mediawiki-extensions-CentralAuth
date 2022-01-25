@@ -170,6 +170,7 @@
 	"centralauth-delete-empty-account": "Empty account",
 	"centralauth-desc": "[[Special:MergeAccount|Merge account]] across wikis of {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Account unification is currently in a demo / debugging mode, so actual merging operations are disabled.\nSorry!",
+	"centralauth-editgroup-delete-removemembers": "You must remove all members from a group before deleting that group.",
 	"centralauth-editgroup-display": "Localised name of group:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|edit]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|edit]])",

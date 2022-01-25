@@ -1,12 +1,15 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions;
+use MediaWiki\Permissions\PermissionManager;
 use Wikimedia\TestingAccessWrapper;
 
 /**
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions
  */
-class SpecialGlobalGroupPermissionsTest extends MediaWikiIntegrationTestCase {
+class SpecialGlobalGroupPermissionsTest extends MediaWikiUnitTestCase {
 
 	/** @var SpecialGlobalGroupPermissions|TestingAccessWrapper */
 	private $special;
@@ -16,8 +19,9 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiIntegrationTestCase {
 
 		$this->special = TestingAccessWrapper::newFromObject(
 			new SpecialGlobalGroupPermissions(
-				CentralAuthServices::getDatabaseManager(),
-				CentralAuthServices::getGlobalGroupLookup()
+				$this->createNoOpMock( CentralAuthDatabaseManager::class ),
+				$this->createNoOpMock( GlobalGroupLookup::class ),
+				$this->createNoOpMock( PermissionManager::class )
 			)
 		);
 	}

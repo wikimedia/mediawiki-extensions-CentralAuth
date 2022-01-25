@@ -193,6 +193,7 @@
 	"centralauth-delete-empty-account": "Used as the reason by the deleteEmptyAccounts.php maintenance script when deleting an account with no attached local accounts.",
 	"centralauth-desc": "{{desc|name=CentralAuth|url=https://www.mediawiki.org/wiki/Extension:CentralAuth}}",
 	"centralauth-disabled-dryrun": "Message displayed while account unification is disabled.",
+	"centralauth-editgroup-delete-removemembers": "Error message when deleting a global group with members in it.",
 	"centralauth-editgroup-display": "This is a label for a localised group name.",
 	"centralauth-editgroup-display-edit": "\"edit\" is link text.\n\nParameters:\n* $1 - group name\n* $2 - group name (localized) e.g. {{msg-mw|group-editor}}, {{msg-mw|group-sysop}}",
 	"centralauth-editgroup-editsets": "Preceded by the wiki set selector.",
