@@ -609,7 +609,6 @@
 		"BeforePageDisplay": "pagedisplay",
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
-		"DeleteAccount": "CentralAuthHooks::onDeleteAccount",
 		"GetLogTypesOnUser": "default",
 		"GetPreferences": "default",
 		"GetUserBlock": "default",

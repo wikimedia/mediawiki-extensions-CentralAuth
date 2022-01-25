@@ -725,25 +725,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Hook for UserMerge extension after an account is deleted
-	 * @param User &$user account that was just deleted
-	 * @return bool
-	 */
-	public static function onDeleteAccount( User &$user ) {
-		$caUser = CentralAuthUser::getPrimaryInstance( $user );
-
-		if ( $caUser->isAttached() ) {
-			// Clean up localuser table.
-			$caUser->adminUnattach( [ WikiMap::getCurrentWikiId() ] );
-		}
-
-		// Clean up localnames table.
-		$caUser->removeLocalName( WikiMap::getCurrentWikiId() );
-
-		return true;
-	}
-
-	/**
 	 * Handler for UserGetReservedNames
 	 * @param array &$reservedUsernames
 	 */
