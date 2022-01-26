@@ -200,6 +200,7 @@
 	"centralauth-delete-empty-account": "Cuenta vacía",
 	"centralauth-desc": "[[Special:MergeAccount|Fusiona cuentas]] entre wikis de {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "La unificación de cuentas está por ahora en modo demostración / depuración, por lo que las operaciones de fusión están desactivadas. ¡Lo sentimos!",
+	"centralauth-editgroup-delete-removemembers": "Debes retirar los permisos a todos los miembros del grupo antes de poder eliminarlo.",
 	"centralauth-editgroup-display": "Nombre traducido del grupo:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|editar]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|editar]])",

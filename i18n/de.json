@@ -161,6 +161,7 @@
 	"centralauth-delete-empty-account": "Leeres Benutzerkonto",
 	"centralauth-desc": "Erweitert das Wiki um eine [[Special:MergeAccount|Spezialseite]] zum Zusammenführen von Benutzerkonten in Wikis {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Die Benutzerkontozusammenführung befindet sich gegenwärtig in einem Demonstrations-/Fehlersuchmodus. Zusammenführungsaktionen sind daher deaktiviert.",
+	"centralauth-editgroup-delete-removemembers": "Vor dem Löschen einer Gruppe müssen alle Mitglieder aus der Gruppe entfernt werden.",
 	"centralauth-editgroup-display": "Lokalisierter Name der Gruppe:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|bearbeiten]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|bearbeiten]])",

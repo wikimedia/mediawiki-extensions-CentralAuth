@@ -147,6 +147,7 @@
 	"centralauth-delete-empty-account": "Празна сметка",
 	"centralauth-desc": "[[Special:MergeAccount|Спојување на сметки]] од повеќе викија на {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Обединувањето на сметки е моментално во демонстрационен режим / режим на отстранување грешки, и затоа постапките за спојување се оневозможени.\nСе извинуваме!",
+	"centralauth-editgroup-delete-removemembers": "Ќе мора да ги отстраните сите членови од групата пред да ја избришете.",
 	"centralauth-editgroup-display": "Преведено име на групата:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|уреди]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|уреди]])",

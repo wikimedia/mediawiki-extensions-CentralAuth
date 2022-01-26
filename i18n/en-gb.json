@@ -4,8 +4,10 @@
 			"Caliburn",
 			"Jdforrester",
 			"Mdann52",
-			"Shirayuki"
+			"Shirayuki",
+			"TheSkull28870"
 		]
 	},
+	"centralauth-editgroup-delete-removemembers": "You must remove all members from a group before deleting that group.",
 	"centralauth-finishglobaliseemail_body": "Your e-mail address has been set as associated\nwith the account \"$2\" on all projects, with your main account being\non {{SITENAME}}.\n\nTo confirm that this account really does belong to you, merge in any of your\naccounts that we could not do automatically, and allow you to recover your\naccount if you lose your password, please open this link in your browser:\n\n$3\n\nIf the account does *not* belong to you, follow this link to cancel the e-mail\naddress confirmation:\n\n$5\n\nThis confirmation code will expire on $6 at $7."
 }
