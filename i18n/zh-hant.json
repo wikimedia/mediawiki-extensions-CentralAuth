@@ -374,7 +374,7 @@
 	"centralauth-rename-form-reason": "原因",
 	"centralauth-rename-form-suppressredirects": "禁止建立重新導向",
 	"centralauth-rename-globaleditcount-threshold": "此使用者擁有超過 $1 {{PLURAL:$1|次編輯|次編輯}}。請確認您確定要重新命名此使用者，並讓系統管理員可監看此次的重新命名。",
-	"centralauth-rename-listed-on-denylist": "此使用者被列在全域重新命名拒絕列表中，要重新命名此使用者，必須先變更拒絕列表。",
+	"centralauth-rename-listed-on-denylist": "此使用者被列在全域重新命名拒絕名單中，要重新命名此使用者，必須先變更拒絕名單。",
 	"centralauth-rename-movelog": "當重新命名使用者「[[Special:CentralAuth/$1|$1]]」至「[[Special:CentralAuth/$2|$2]]」時自動移動頁面",
 	"centralauth-rename-notinprogress": "目前 $1 沒有正在重新命名。工作可能已完成。",
 	"centralauth-rename-notinstalled": "未安裝Renameuser擴充功能。",
