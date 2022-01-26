@@ -28,7 +28,6 @@ use Exception;
 use ExtensionRegistry;
 use Html;
 use HTMLForm;
-use JobQueueGroup;
 use LogEventsList;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
@@ -661,7 +660,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'session' => $session,
 					]
 				);
-				JobQueueGroup::singleton( $request->getWiki() )->push( $job );
+				$this->jobQueueGroupFactory->makeJobQueueGroup( $request->getWiki() )->push( $job );
 				// Now log it
 				$this->logPromotionRename(
 					$oldUser->getName(),

@@ -72,7 +72,8 @@ class ForceRenameUsers extends Maintenance {
 	protected function rename( $row, IDatabase $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$services = MediaWikiServices::getInstance();
+		$userNameUtils = $services->getUserNameUtils();
 		$newNamePrefix = $userNameUtils->getCanonical(
 			// Some database names have _'s in them, replace with dashes -
 			$name . '~' . str_replace( '_', '-', $wiki ),
@@ -129,7 +130,7 @@ class ForceRenameUsers extends Maintenance {
 			]
 		);
 
-		JobQueueGroup::singleton( $row->utr_wiki )->push( $job );
+		$services->getJobQueueGroupFactory()->makeJobQueueGroup( $row->utr_wiki )->push( $job );
 		$this->log( "Submitted job for {$newCAUser->getName()}." );
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$updates->markRenamed( $row->utr_name, $row->utr_wiki );

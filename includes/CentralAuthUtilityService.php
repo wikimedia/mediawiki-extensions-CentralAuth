@@ -2,6 +2,7 @@
 
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use Wikimedia\WaitConditionLoop;
 
@@ -21,14 +22,19 @@ class CentralAuthUtilityService {
 	/** @var TitleFactory */
 	private $titleFactory;
 
+	/** @var JobQueueGroupFactory */
+	private $jobQueueGroupFactory;
+
 	public function __construct(
 		Config $config,
 		AuthManager $authManager,
-		TitleFactory $titleFactory
+		TitleFactory $titleFactory,
+		JobQueueGroupFactory $jobQueueGroupFactory
 	) {
 		$this->config = $config;
 		$this->authManager = $authManager;
 		$this->titleFactory = $titleFactory;
+		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 	}
 
 	/**
@@ -159,7 +165,7 @@ class CentralAuthUtilityService {
 				$title,
 				[ 'name' => $name, 'from' => $thisWiki, 'session' => $session ]
 			);
-			JobQueueGroup::singleton( $wiki )->lazyPush( $job );
+			$this->jobQueueGroupFactory->makeJobQueueGroup( $wiki )->lazyPush( $job );
 		}
 	}
 }

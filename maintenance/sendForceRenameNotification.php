@@ -46,6 +46,7 @@ class SendForceRenameNotification extends Maintenance {
 		$services = MediaWikiServices::getInstance();
 		$lbFactory = $services->getDBLoadBalancerFactory();
 		$namespaceInfo = $services->getNamespaceInfo();
+		$jobQueueGroup = $services->getJobQueueGroup();
 
 		while ( true ) {
 			$jobs = [];
@@ -86,7 +87,7 @@ class SendForceRenameNotification extends Maintenance {
 
 			$count = count( $jobs );
 			$this->output( "Queued job for $count users.\n" );
-			JobQueueGroup::singleton()->push( $jobs );
+			$jobQueueGroup->push( $jobs );
 			foreach ( $markNotified as $row ) {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
@@ -107,7 +108,7 @@ class SendForceRenameNotification extends Maintenance {
 	}
 
 	protected function getQueuedCount() {
-		$group = JobQueueGroup::singleton();
+		$group = MediaWikiServices::getInstance()->getJobQueueGroup();
 		$queue = $group->get( 'MassMessageServerSideJob' );
 		$pending = $queue->getSize();
 		$claimed = $queue->getAcquiredCount();

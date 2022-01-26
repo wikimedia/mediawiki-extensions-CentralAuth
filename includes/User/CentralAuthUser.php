@@ -31,7 +31,6 @@ use Hooks;
 use IContextSource;
 use IDBAccessObject;
 use Job;
-use JobQueueGroup;
 use LocalUserNotFoundException;
 use ManualLogEntry;
 use MapCacheLRU;
@@ -1656,7 +1655,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'wiki' => $wikiId,
 			]
 		);
-		JobQueueGroup::singleton( $wikiId )->lazyPush( $job );
+		MediaWikiServices::getInstance()->getJobQueueGroupFactory()->makeJobQueueGroup( $wikiId )->lazyPush( $job );
 	}
 
 	/**
@@ -2009,7 +2008,7 @@ class CentralAuthUser implements IDBAccessObject {
 			// If the job push fails, then the transaction will roll back.
 			$dbw = self::getCentralDB();
 			$dbw->onTransactionPreCommitOrIdle( static function () use ( $jobs ) {
-				JobQueueGroup::singleton()->push( $jobs );
+				MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
 			}, __METHOD__ );
 		}
 	}

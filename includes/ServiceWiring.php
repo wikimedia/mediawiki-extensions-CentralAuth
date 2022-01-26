@@ -59,7 +59,8 @@ return [
 		return new CentralAuthUtilityService(
 			$services->getMainConfig(),
 			$services->getAuthManager(),
-			$services->getTitleFactory()
+			$services->getTitleFactory(),
+			$services->getJobQueueGroupFactory()
 		);
 	},
 	'CentralAuth.CentralAuthWikiListService' => static function (
