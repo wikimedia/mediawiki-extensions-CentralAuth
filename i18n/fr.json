@@ -197,6 +197,7 @@
 	"centralauth-delete-empty-account": "Compte vide",
 	"centralauth-desc": "[[Special:MergeAccount|Fusionne un compte utilisateur]] sur les wikis de {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "L’unification des comptes est actuellement en mode de démonstration ou de test, par conséquent les véritables opérations de fusion des comptes et de migration des données d’identification vers la base centrale des comptes unifiés sont désactivées.\nDésolé !\n\nCe mode permet toutefois de tester les comptes utilisateurs homonymes des différents wikis reconnus pour permettre aux utilisateurs de connaître les wikis qui disposent de données d’identifications différentes. Chaque projet wiki testé ici continue donc à maintenir et utiliser pour l’identification sa propre base locale de comptes, sans utiliser les identifications unifiées sur la base centrale.",
+	"centralauth-editgroup-delete-removemembers": "Vous devez supprimer tous les membres d’un groupe avant de le supprimer.",
 	"centralauth-editgroup-display": "Nom traduit du groupe global :",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|modifier]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|modifier]])",
