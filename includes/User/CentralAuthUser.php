@@ -2677,7 +2677,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected function localUserData( $wikiID ) {
 		$mwServices = MediaWikiServices::getInstance();
-		$blockRestrictions = $mwServices->getBlockRestrictionStore();
+		$blockRestrictions = $mwServices->getBlockRestrictionStoreFactory()->getBlockRestrictionStore( $wikiID );
 		$lbFactory = $mwServices->getDBLoadBalancerFactory();
 
 		$lb = $lbFactory->getMainLB( $wikiID );
@@ -2794,7 +2794,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$data['block-noemail'] = (bool)$row->ipb_block_email;
 			$data['block-sitewide'] = (bool)$row->ipb_sitewide;
 			$data['block-restrictions'] = (bool)$row->ipb_sitewide ? [] :
-				$blockRestrictions->loadByBlockId( $row->ipb_id, $db );
+				$blockRestrictions->loadByBlockId( $row->ipb_id );
 			$data['blocked'] = true;
 		}
 
