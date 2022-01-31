@@ -592,6 +592,12 @@
 				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
+		"usereditcountupdate": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserEditCountUpdateHookHandler",
+			"services": [
+				"CentralAuth.CentralAuthEditCounter"
+			]
+		},
 		"userlogout": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserLogoutHookHandler",
 			"services": [
@@ -635,6 +641,7 @@
 		"UnitTestsAfterDatabaseSetup": "unittests",
 		"UnitTestsBeforeDatabaseTeardown": "unittests",
 		"UserArrayFromResult": "default",
+		"UserEditCountUpdate": "usereditcountupdate",
 		"UserGetEmail": "default",
 		"UserGetEmailAuthenticationTimestamp": "default",
 		"UserGetReservedNames": "default",
