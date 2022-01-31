@@ -1,0 +1,567 @@
+[
+	{
+		"name": "globalnames",
+		"comment": "This table simply lists all known usernames in the system. If no record is present here when migration processing begins, we know we have to sweep all the local databases and populate the localnames table.",
+		"columns": [
+			{
+				"name": "gn_name",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			}
+		],
+		"indexes": [],
+		"pk": [ "gn_name" ]
+	},
+	{
+		"name": "localnames",
+		"comment": "For each known username in globalnames, the presence of an acount on each local database is listed here. Email and password information used for migration checks are grabbed from local databases on demand when needed. This is an optimization measure, so we don't have to poke on 600+ separate databases to look for unmigrated accounts every time we log in; only existing databases not yet migrated have to be loaded.",
+		"columns": [
+			{
+				"name": "ln_wiki",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ln_name",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "ln_name_wiki",
+				"columns": [ "ln_name", "ln_wiki" ],
+				"unique": false
+			}
+		],
+		"pk": [ "ln_wiki", "ln_name" ]
+	},
+	{
+		"name": "globaluser",
+		"comment": "Global account data.",
+		"columns": [
+			{
+				"name": "gu_id",
+				"comment": "Internal unique ID for the authentication server",
+				"type": "integer",
+				"options": { "autoincrement": true, "notnull": false }
+			},
+			{
+				"name": "gu_name",
+				"comment": "Username.",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "gu_enabled",
+				"comment": "Timestamp of creation of the global account (unused)",
+				"type": "binary",
+				"options": { "notnull": true, "length": 14, "default": "", "fixed": true }
+			},
+			{
+				"name": "gu_enabled_method",
+				"comment": "Method used to create the global account (unused)",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "opt-in", "batch", "auto", "admin" ]
+					}
+				}
+			},
+			{
+				"name": "gu_home_db",
+				"comment": "Local database name of the user's 'home' wiki. By default, the 'winner' of a migration check for old accounts or the account the user was first registered at for new ones. May be changed over time.",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "gu_email",
+				"comment": "Registered email address, may be empty.",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "gu_email_authenticated",
+				"comment": "Timestamp when the address was confirmed as belonging to the user. NULL if not confirmed.",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "gu_salt",
+				"comment": "Salt. For migrated passwords, the salt is the local user_id.",
+				"type": "binary",
+				"options": { "notnull": false, "length": 16 }
+			},
+			{
+				"name": "gu_password",
+				"comment": "hashed password",
+				"type": "blob",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "gu_locked",
+				"comment": "If true, this account cannot be used to log in on any wiki.",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "length": 1, "default": 0 }
+			},
+			{
+				"name": "gu_hidden",
+				"comment": "If true, this account should be hidden from most public user lists. Used for 'deleting' accounts without breaking referential integrity.",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255, "default": "" }
+			},
+			{
+				"name": "gu_hidden_level",
+				"comment": "If true, this account should be hidden from most public user lists. Used for 'deleting' accounts without breaking referential integrity.",
+				"type": "integer",
+				"options": { "notnull": true, "default": 0 }
+			},
+			{
+				"name": "gu_registration",
+				"comment": "Registration time",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "gu_password_reset_key",
+				"comment": "Random key for password resets",
+				"type": "blob",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "gu_password_reset_expiration",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "gu_auth_token",
+				"comment": "Random key for crosswiki authentication tokens",
+				"type": "binary",
+				"options": { "notnull": false, "length": 32 }
+			},
+			{
+				"name": "gu_cas_token",
+				"comment": "Value used for CAS operations",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "default": 1 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "gu_name",
+				"columns": [ "gu_name" ],
+				"unique": true
+			},
+			{
+				"name": "gu_email",
+				"columns": [ "gu_email" ],
+				"unique": false
+			},
+			{
+				"name": "gu_locked",
+				"columns": [ "gu_name", "gu_locked" ],
+				"options": { "lengths": [ 255, null ] },
+				"unique": false
+			},
+			{
+				"name": "gu_hidden",
+				"columns": [ "gu_name", "gu_hidden" ],
+				"options": { "lengths": [ 255, 255 ] },
+				"unique": false
+			},
+			{
+				"name": "gu_hidden_level",
+				"columns": [ "gu_name", "gu_hidden_level" ],
+				"options": { "lengths": [ 255, null ] },
+				"unique": false
+			}
+		],
+		"pk": [ "gu_id" ]
+	},
+	{
+		"name": "localuser",
+		"comment": "Local linkage info, listing which wikis the username is attached to the global account. All local DBs will be swept on an opt-in check event.",
+		"columns": [
+			{
+				"name": "lu_wiki",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "lu_name",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "lu_attached_timestamp",
+				"comment": "Migration status/logging information, to help diagnose issues",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "lu_attached_method",
+				"comment": "Migration status/logging information, to help diagnose issues",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "primary", "empty", "mail", "password", "admin", "new", "login" ]
+					}
+				}
+			},
+			{
+				"name": "lu_local_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "lu_global_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "lu_name_wiki",
+				"columns": [ "lu_name", "lu_wiki" ],
+				"unique": false
+			}
+		],
+		"pk": [ "lu_wiki", "lu_name" ]
+	},
+	{
+		"name": "global_user_groups",
+		"comment": "Global user groups.",
+		"columns": [
+			{
+				"name": "gug_user",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gug_group",
+				"type": "string",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "gug_expiry",
+				"type": "mwtimestamp",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": { "allowInfinite": true }
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "gug_group",
+				"columns": [ "gug_group" ],
+				"unique": false
+			},
+			{
+				"name": "gug_expiry",
+				"columns": [ "gug_expiry" ],
+				"unique": false
+			}
+		],
+		"pk": [ "gug_user", "gug_group" ]
+	},
+	{
+		"name": "global_group_permissions",
+		"comment": "Global group permissions.",
+		"columns": [
+			{
+				"name": "ggp_group",
+				"type": "string",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ggp_permission",
+				"type": "string",
+				"options": { "notnull": true, "length": 255 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "ggp_permission",
+				"columns": [ "ggp_permission" ],
+				"unique": false
+			}
+		],
+		"pk": [ "ggp_group", "ggp_permission" ]
+	},
+	{
+		"name": "wikiset",
+		"comment": "Sets of wikis (for things like restricting global groups) May be defined in two ways: only specified wikis or all wikis except opt-outed",
+		"columns": [
+			{
+				"name": "ws_id",
+				"comment": "ID of wikiset",
+				"type": "integer",
+				"options": { "autoincrement": true, "notnull": false }
+			},
+			{
+				"name": "ws_name",
+				"comment": "Display name of wikiset",
+				"type": "string",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ws_type",
+				"comment": "Type of set: opt-in or opt-out",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "optin", "optout" ]
+					}
+				}
+			},
+			{
+				"name": "ws_wikis",
+				"comment": "Wikis in that set. Why isn't it a separate table? Because we can just use such simple list, we don't need complicated queries on it Let's suppose that max length of db name is 31 (32 with ','), then we have space for 2048 wikis. More than we need",
+				"type": "blob",
+				"options": { "notnull": true, "length": 65530 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "ws_name",
+				"columns": [ "ws_name" ],
+				"unique": true
+			}
+		],
+		"pk": [ "ws_id" ]
+	},
+	{
+		"name": "global_group_restrictions",
+		"comment": "Allow certain global groups to have their permissions only on certain wikis",
+		"columns": [
+			{
+				"name": "ggr_group",
+				"comment": "Group to restrict",
+				"type": "string",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ggr_set",
+				"comment": "Wikiset to use",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "ggr_set",
+				"columns": [ "ggr_set" ],
+				"unique": false
+			}
+		],
+		"pk": [ "ggr_group" ]
+	},
+	{
+		"name": "renameuser_status",
+		"comment": "Table for global rename status",
+		"columns": [
+			{
+				"name": "ru_oldname",
+				"comment": "Old name being renamed from",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_newname",
+				"comment": "New name being renamed to",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_wiki",
+				"comment": "WikiID",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_status",
+				"comment": "current state of the renaming",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "queued", "inprogress", "failed" ]
+					}
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "ru_oldname",
+				"columns": [ "ru_oldname", "ru_wiki" ],
+				"unique": true
+			}
+		],
+		"pk": []
+	},
+	{
+		"name": "renameuser_queue",
+		"comment": "Request queue for global account renames. Used to power special pages for requesting a global rename from a user's home wiki and a work queue of pending renames for stewards.",
+		"columns": [
+			{
+				"name": "rq_id",
+				"comment": "Internal unique ID for the authentication server",
+				"type": "integer",
+				"options": { "autoincrement": true, "notnull": false }
+			},
+			{
+				"name": "rq_name",
+				"comment": "User requesting to be renamed. Not a gu_id because user may not be global yet",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "rq_wiki",
+				"comment": "WikiID of home wiki for requesting user. Will be null if user is a CentralAuth account",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "rq_newname",
+				"comment": "New name being requested",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "rq_reason",
+				"comment": "Reason given by the user for the rename request",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			},
+			{
+				"name": "rq_requested_ts",
+				"comment": "Request timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_status",
+				"comment": "Current state of the request",
+				"type": "mwenum",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"enum_values": [ "pending", "approved", "rejected" ]
+					}
+				}
+			},
+			{
+				"name": "rq_completed_ts",
+				"comment": "Completion timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_deleted",
+				"comment": "Delete/suppress flag",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "rq_performer",
+				"comment": "User who completed the request (foreign key to globaluser.gu_id)",
+				"type": "integer",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_comments",
+				"comment": "Steward's comments on the request",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "rq_oldstatus",
+				"columns": [ "rq_name", "rq_wiki", "rq_status" ],
+				"unique": false
+			},
+			{
+				"name": "rq_newstatus",
+				"columns": [ "rq_newname", "rq_status" ],
+				"unique": false
+			},
+			{
+				"name": "rq_requested_ts",
+				"columns": [ "rq_requested_ts" ],
+				"unique": false
+			}
+		],
+		"pk": [ "rq_id" ]
+	},
+	{
+		"name": "users_to_rename",
+		"comment": "Table to store a list of users who will be renamed in the glorious finalization.",
+		"columns": [
+			{
+				"name": "utr_id",
+				"comment": "id",
+				"type": "integer",
+				"options": { "autoincrement": true, "notnull": false }
+			},
+			{
+				"name": "utr_name",
+				"comment": "username",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "utr_wiki",
+				"comment": "wiki the user is on",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "utr_status",
+				"comment": "bitfield of a user's status. Could be: notified via email, talk page, and finally: renamed",
+				"type": "integer",
+				"options": { "notnull": false, "default": 0 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "utr_user",
+				"columns": [ "utr_name", "utr_wiki" ],
+				"unique": true
+			},
+			{
+				"name": "utr_notif",
+				"columns": [ "utr_status" ],
+				"unique": false
+			},
+			{
+				"name": "utr_wiki",
+				"columns": [ "utr_wiki" ],
+				"unique": false
+			}
+		],
+		"pk": [ "utr_id" ]
+	},
+	{
+		"name": "global_edit_count",
+		"comment": "Table for caching the total global edit count",
+		"columns": [
+			{
+				"name": "gec_user",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "gec_count",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [],
+		"pk": [ "gec_user" ]
+	}
+]

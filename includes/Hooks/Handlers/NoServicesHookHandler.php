@@ -36,7 +36,10 @@ class NoServicesHookHandler implements
 		global $wgWikimediaJenkinsCI;
 
 		if ( !empty( $wgWikimediaJenkinsCI ) ) {
-			$updater->addExtensionTable( 'globaluser', __DIR__ . '/../../../central-auth.sql' );
+			$dbType = $updater->getDB()->getType();
+			$updater->addExtensionTable(
+				'globaluser', __DIR__ . '/../../../schema/' . $dbType . '/tables-generated.sql'
+			);
 		}
 	}
 }
