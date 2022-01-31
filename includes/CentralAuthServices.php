@@ -45,6 +45,13 @@ class CentralAuthServices {
 			->getService( 'CentralAuth.CentralAuthDatabaseManager' );
 	}
 
+	public static function getEditCounter(
+		ContainerInterface $services = null
+	): CentralAuthEditCounter {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthEditCounter' );
+	}
+
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.

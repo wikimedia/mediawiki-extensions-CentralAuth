@@ -923,12 +923,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getGlobalEditCount() {
 		if ( $this->mGlobalEditCount === null ) {
-			$this->mGlobalEditCount = 0;
-			foreach ( $this->queryAttached() as $acc ) {
-				if ( isset( $acc['editCount'] ) ) {
-					$this->mGlobalEditCount += (int)$acc['editCount'];
-				}
-			}
+			$this->mGlobalEditCount = CentralAuthServices::getEditCounter()
+				->getCount( $this );
 		}
 		return $this->mGlobalEditCount;
 	}
@@ -992,6 +988,18 @@ class CentralAuthUser implements IDBAccessObject {
 			'all',
 			[ 'user' => $this->mName ]
 		);
+
+		if ( $ok ) {
+			// Avoid lazy initialisation of edit count
+			$dbw->insert(
+				'global_edit_count',
+				[
+					'gec_user' => $dbw->insertId(),
+					'gec_count' => 0
+				],
+				__METHOD__
+			);
+		}
 
 		// Kill any cache entries saying we don't exist
 		$this->invalidateCache();
@@ -1648,13 +1656,18 @@ class CentralAuthUser implements IDBAccessObject {
 				__METHOD__
 			);
 
-			$id = $dblw->selectField(
+			$userRow = $dblw->selectRow(
 				'user',
-				'user_id',
+				[ 'user_id', 'user_editcount' ],
 				[ 'user_name' => $this->mName ],
 				__METHOD__
 			);
-			$this->clearLocalUserCache( $wikiName, $id );
+
+			# Remove the edits from the global edit count
+			$counter = CentralAuthServices::getEditCounter();
+			$counter->increment( $this, -(int)$userRow->user_editcount );
+
+			$this->clearLocalUserCache( $wikiName, $userRow->user_id );
 
 			$status->successCount++;
 		}
@@ -2138,20 +2151,20 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->checkWriteMode();
 
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
-		$dbw->insert(
+		$dbcw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		$dbcw->insert(
 			'localuser',
 			[
 				'lu_wiki'               => $wikiID,
 				'lu_name'               => $this->mName,
-				'lu_attached_timestamp' => $dbw->timestamp( $ts ),
+				'lu_attached_timestamp' => $dbcw->timestamp( $ts ),
 				'lu_attached_method'    => $method,
 				'lu_local_id'           => $this->getLocalId( $wikiID ),
 				'lu_global_id'          => $this->getId() ],
 			__METHOD__,
 			[ 'IGNORE' ]
 		);
-		$success = $dbw->affectedRows() === 1;
+		$success = $dbcw->affectedRows() === 1;
 
 		if ( $wikiID === WikiMap::getCurrentWikiId() ) {
 			$this->resetState();
@@ -2173,6 +2186,8 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
 		);
 
+		$this->addLocalEdits( $wikiID );
+
 		if ( $sendToRC ) {
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
 
@@ -2184,6 +2199,24 @@ class CentralAuthUser implements IDBAccessObject {
 				$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
 			}
 		}
+	}
+
+	/**
+	 * Add edits from a wiki to the global edit count
+	 *
+	 * @param string $wikiID
+	 */
+	protected function addLocalEdits( $wikiID ) {
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$dblw = $lbFactory->getMainLB( $wikiID )->getConnectionRef( DB_PRIMARY, [], $wikiID );
+		$editCount = $dblw->selectField(
+			'user',
+			'user_editcount',
+			[ 'user_name' => $this->mName ],
+			__METHOD__
+		);
+		$counter = CentralAuthServices::getEditCounter();
+		$counter->increment( $this, $editCount );
 	}
 
 	/**

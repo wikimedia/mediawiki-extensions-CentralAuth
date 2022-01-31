@@ -25,6 +25,14 @@ return [
 			$services->getReadOnlyMode()
 		);
 	},
+	'CentralAuth.CentralAuthEditCounter' => static function (
+		MediaWikiServices $services
+	): CentralAuthEditCounter {
+		return new CentralAuthEditCounter(
+			CentralAuthServices::getDatabaseManager( $services ),
+			$services->getMainWANObjectCache()
+		);
+	},
 	'CentralAuth.CentralAuthForcedLocalCreationService' => static function (
 		MediaWikiServices $services
 	): CentralAuthForcedLocalCreationService {
