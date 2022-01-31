@@ -20,6 +20,7 @@
 			"Rachmat04",
 			"Rex",
 			"Sumbukompor",
+			"Syman51",
 			"William Surya Permana"
 		]
 	},
@@ -157,6 +158,7 @@
 	"centralauth-delete-empty-account": "Akun kosong",
 	"centralauth-desc": "[[Special:MergeAccount|Menggabungkan akun]] lintas wiki {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Penggabungan akun saat ini masih dalam mode demo/debugging, jadi operasi penggabungan yang sesungguhnya dinon-aktifkan. Mohon maaf!",
+	"centralauth-editgroup-delete-removemembers": "Anda harus menghapus semua anggota dari grup sebelum menghapus grup itu.",
 	"centralauth-editgroup-display": "Nama lokal kelompok:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|sunting]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|sunting]])",

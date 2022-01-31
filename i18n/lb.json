@@ -125,6 +125,7 @@
 	"centralauth-delete-empty-account": "Eidele Benotzerkont",
 	"centralauth-desc": "Benotzerkonten op de Wikie vun  {{int:Centralauth-groupname}} [[Special:MergeAccount|zesummeleeën]]",
 	"centralauth-disabled-dryrun": "D'zesummeféierung vun de Benotzerkonten ass elo an engem Viféier- oder Test-Modus, dofir  kann een zur Zäit nach keng Benotzerkonten zesummeféieren. Pardon!",
+	"centralauth-editgroup-delete-removemembers": "Dir musst all Memberen aus dem Grupp eraushuelen ier de Grupp ka geläscht ginn.",
 	"centralauth-editgroup-display": "Lokaliséierten Numm vun der Grupp:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|änneren]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|änneren]])",
