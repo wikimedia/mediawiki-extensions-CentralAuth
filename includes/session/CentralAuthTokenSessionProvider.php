@@ -80,7 +80,8 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		$tokenStore = $this->sessionManager->getTokenStore();
 		$key = $this->sessionManager->memcKey( 'api-token', $oneTimeToken );
-		$data = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
+		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
+		$data = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key, $timeout );
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
 			!isset( $data['token'] ) ||

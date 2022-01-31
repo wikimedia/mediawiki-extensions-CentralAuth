@@ -1,8 +1,6 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\Logger\NullSpi;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\User\UserFactory;
@@ -34,7 +32,6 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 		parent::setUp();
 
 		$this->setUserLang( 'qqx' );
-		LoggerFactory::registerProvider( new NullSpi() );
 
 		$this->sessionStore = new HashBagOStuff();
 		$this->patchSessionStore();

@@ -801,6 +801,10 @@
 		"CentralAuthEnableTemporaryGlobalGroups": {
 			"value": false,
 			"description": "Temporary feature flag to allow grating temporary global group memberships."
+		},
+		"CentralAuthTokenSessionTimeout": {
+			"description": "The amount of time to wait for tokens to appear in the session store, in seconds",
+			"value": 3
 		}
 	},
 	"AuthManagerAutoConfig": {

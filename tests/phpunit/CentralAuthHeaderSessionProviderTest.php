@@ -16,6 +16,7 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 	protected function newSessionProvider() {
 		$config = new HashConfig( [
 			'SecretKey' => 'hunter2',
+			'CentralAuthTokenSessionTimeout' => 0
 		] );
 
 		$logger = new NullLogger();
