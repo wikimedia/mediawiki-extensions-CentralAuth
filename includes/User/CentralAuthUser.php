@@ -34,6 +34,7 @@ use LocalUserNotFoundException;
 use ManualLogEntry;
 use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
+use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
 use MediaWiki\Logger\LoggerFactory;
@@ -2037,10 +2038,12 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
+			$wikiId = $wiki === WikiMap::getCurrentWikiId() ? WikiAwareEntity::LOCAL : $wiki;
+
 			// TODO DatabaseBlock is not @newable
 			$block = new DatabaseBlock( [
-				'address' => UserIdentityValue::newRegistered( $data['id'], $this->mName, $wiki ),
-				'wiki' => $wiki,
+				'address' => UserIdentityValue::newRegistered( $data['id'], $this->mName, $wikiId ),
+				'wiki' => $wikiId,
 				'reason' => $blockReason,
 				'timestamp' => wfTimestampNow(),
 				'expiry' => $dbw->getInfinity(),
@@ -2052,7 +2055,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'hideName' => true,
 				'blockEmail' => true,
 				'by' => UserIdentityValue::newExternal(
-					$wgCentralAuthGlobalBlockInterwikiPrefix, $by, $wiki
+					$wgCentralAuthGlobalBlockInterwikiPrefix, $by, $wikiId
 				)
 			] );
 
