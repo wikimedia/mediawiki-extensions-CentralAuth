@@ -360,8 +360,6 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"CentralAuthUser": "includes/User/CentralAuthUser.php",
-		"MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUser": "includes/User/CentralAuthUser.php",
 		"CentralAuthUtilityService": "includes/CentralAuthUtilityService.php",
 		"CentralAuthServices": "includes/CentralAuthServices.php",
 		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",

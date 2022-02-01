@@ -8,12 +8,13 @@ use Wikimedia\TestingAccessWrapper;
  * Only for tests that do not require the database to be
  * set up.
  *
+ * @coversDefaultClass MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group CentralAuth
  */
 class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 
 	/**
-	 * @covers CentralAuthUser::getInstance
+	 * @covers ::getInstance
 	 */
 	public function testGetInstance() {
 		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
@@ -32,7 +33,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::newUnattached
+	 * @covers ::newUnattached
 	 */
 	public function testNewUnattached() {
 		$ca = CentralAuthUser::newUnattached( 'FooBar' );
@@ -42,7 +43,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::getHomeWiki
+	 * @covers ::getHomeWiki
 	 * @dataProvider provideGetHomeWiki
 	 */
 	public function testGetHomeWiki( $attached, $expected ) {
@@ -111,7 +112,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::chooseHomeWiki
+	 * @covers ::chooseHomeWiki
 	 * @dataProvider provideChooseHomeWiki
 	 */
 	public function testChooseHomeWiki( $expected, $attached ) {
@@ -192,7 +193,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::getPasswordFromString
+	 * @covers ::getPasswordFromString
 	 * @dataProvider provideGetPasswordFromString
 	 */
 	public function testGetPasswordFromString( $pass, $salt, $type ) {
@@ -228,7 +229,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::getLocalGroups
+	 * @covers ::getLocalGroups
 	 * @dataProvider provideOnPasswordPoliciesForUser
 	 */
 	public function testGetLocalGroups( $attached, $expected ) {
@@ -312,7 +313,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers CentralAuthUser::getEmail
+	 * @covers ::getEmail
 	 */
 	public function testGetEmail() {
 		$user = new CentralAuthUser( __METHOD__ );

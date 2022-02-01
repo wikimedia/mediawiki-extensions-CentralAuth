@@ -3284,5 +3284,3 @@ class CentralAuthUser implements IDBAccessObject {
 		User::purge( $wikiId, $userId );
 	}
 }
-
-class_alias( CentralAuthUser::class, 'CentralAuthUser' );

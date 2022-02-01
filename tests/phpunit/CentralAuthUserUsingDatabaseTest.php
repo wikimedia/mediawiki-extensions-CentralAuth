@@ -4,18 +4,20 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 /**
  * Setup database tests for centralauth
+ *
+ * @coversDefaultClass MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group CentralAuthDB
  * @group Database
  */
 class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 	/**
-	 * @covers CentralAuthUser::exists
-	 * @covers CentralAuthUser::getId
-	 * @covers CentralAuthUser::getName
-	 * @covers CentralAuthUser::getHomeWiki
-	 * @covers CentralAuthUser::isAttached
-	 * @covers CentralAuthUser::getRegistration
-	 * @covers CentralAuthUser::getStateHash
+	 * @covers ::exists
+	 * @covers ::getId
+	 * @covers ::getName
+	 * @covers ::getHomeWiki
+	 * @covers ::isAttached
+	 * @covers ::getRegistration
+	 * @covers ::getStateHash
 	 */
 	public function testBasicAttrs() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
@@ -45,8 +47,8 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::loadStateNoCache
-	 * @covers CentralAuthUser::loadState
+	 * @covers ::loadStateNoCache
+	 * @covers ::loadState
 	 */
 	public function testLoadFromDB() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
@@ -56,7 +58,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::listAttached
+	 * @covers ::listAttached
 	 */
 	public function testLoadAttached() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
@@ -72,8 +74,8 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::getAuthToken
-	 * @covers CentralAuthUser::resetAuthToken
+	 * @covers ::getAuthToken
+	 * @covers ::resetAuthToken
 	 */
 	public function testGetAuthToken() {
 		$caUserUnattached = CentralAuthUser::newUnattached(
@@ -85,7 +87,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::newFromId
+	 * @covers ::newFromId
 	 */
 	public function testNewFromId() {
 		$ca = CentralAuthUser::newFromId( 1001 );
@@ -96,7 +98,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::register
+	 * @covers ::register
 	 */
 	public function testRegister() {
 		$caUserNew = CentralAuthUser::getPrimaryInstanceByName( 'RegTest' );
@@ -111,7 +113,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::isLocked
+	 * @covers ::isLocked
 	 */
 	public function testLocked() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalLockedUser' );
@@ -120,10 +122,10 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::isHidden
-	 * @covers CentralAuthUser::isOversighted
-	 * @covers CentralAuthUser::getHiddenLevel
-	 * @covers CentralAuthUser::getHiddenLevelInt
+	 * @covers ::isHidden
+	 * @covers ::isOversighted
+	 * @covers ::getHiddenLevel
+	 * @covers ::getHiddenLevelInt
 	 */
 	public function testHidden() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalSuppressedUser' );
@@ -135,7 +137,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::storeMigrationData
+	 * @covers ::storeMigrationData
 	 */
 	public function testStoreMigrationData() {
 		$caUsers = [
@@ -157,9 +159,9 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::adminLock
-	 * @covers CentralAuthUser::adminUnlock
-	 * @covers CentralAuthUser::adminSetHidden
+	 * @covers ::adminLock
+	 * @covers ::adminUnlock
+	 * @covers ::adminSetHidden
 	 */
 	public function testAdminLockAndHide() {
 		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
@@ -205,7 +207,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	}
 
 	/**
-	 * @covers CentralAuthUser::attach
+	 * @covers ::attach
 	 */
 	public function testAttach() {
 		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
