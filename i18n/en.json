@@ -343,7 +343,7 @@
 	"centralauth-prefs-view": "View your global account info",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Read more about '''unified login''']]…''",
 	"centralauth-readonly": "CentralAuth database locked.",
-	"centralauth-readonlytext": "The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.",
+	"centralauth-readonlytext": "The CentralAuth database is currently locked to new entries and other modifications, probably for routine database maintenance, after which it will be back to normal.\n\nThe system administrator who locked it offered this explanation: $1",
 	"centralauth-rename-abortlogin": "Your account is currently being renamed or merged. [[Special:GlobalRenameProgress/$1|View the status]].",
 	"centralauth-rename-alreadyexists": "The requested username already exists.",
 	"centralauth-rename-alreadyinprogress": "There is already a rename for this user in [[Special:GlobalRenameProgress/$1|progress]].",

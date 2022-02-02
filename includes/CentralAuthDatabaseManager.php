@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use CentralAuthReadOnlyError;
 use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
+use ReadOnlyError;
 use ReadOnlyMode;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -54,23 +55,46 @@ class CentralAuthDatabaseManager {
 	}
 
 	/**
-	 * Determine if either the local or the shared CentralAuth database is read only.
-	 * @return bool
+	 * Throw an exception if the database is read-only.
+	 *
+	 * @throws CentralAuthReadOnlyError
 	 */
-	public function isReadOnly(): bool {
-		return ( $this->getReadOnlyReason() !== false );
+	public function assertNotReadOnly() {
+		if ( $this->readOnlyMode->isReadOnly() ) {
+			// ReadOnlyError gets its reason text from the global ReadOnlyMode
+			throw new ReadOnlyError;
+		}
+		$reason = $this->getCentralReadOnlyReason();
+		if ( $reason ) {
+			throw new CentralAuthReadOnlyError( $reason );
+		}
 	}
 
 	/**
-	 * Return the reason why either the local or the shared CentralAuth database is read only, false otherwise
+	 * Determine if either the local or the shared CentralAuth database is
+	 * read only. This should determine whether assertNotReadOnly() would
+	 * throw.
+	 *
+	 * @return bool
+	 */
+	public function isReadOnly(): bool {
+		return $this->readOnlyMode->isReadOnly()
+			|| ( $this->getCentralReadOnlyReason() !== false );
+	}
+
+	/**
+	 * Return the reason why either the shared CentralAuth database is read
+	 * only, false otherwise.
+	 *
 	 * @return bool|string
 	 */
-	public function getReadOnlyReason() {
-		if ( $this->readOnlyMode->isReadOnly() ) {
-			return $this->readOnlyMode->getReason();
+	private function getCentralReadOnlyReason() {
+		$configReason = $this->options->get( 'CentralAuthReadOnly' );
+		if ( $configReason === true ) {
+			return '(no reason given)';
+		} elseif ( $configReason ) {
+			return $configReason;
 		}
-
-		// TODO: is there a reason not to check $wgCentralAuthReadOnly here?
 
 		$database = $this->options->get( 'CentralAuthDatabase' );
 		$lb = $this->getLoadBalancer();
@@ -99,9 +123,8 @@ class CentralAuthDatabaseManager {
 			throw new InvalidArgumentException( "Unknown index $index, expected DB_PRIMARY or DB_REPLICA" );
 		}
 
-		// TODO: is there a reason not to check db-level RO data ($this->isReadOnly()) here?
-		if ( $index === DB_PRIMARY && $this->options->get( 'CentralAuthReadOnly' ) ) {
-			throw new CentralAuthReadOnlyError();
+		if ( $index === DB_PRIMARY ) {
+			$this->assertNotReadOnly();
 		}
 
 		$database = $this->options->get( 'CentralAuthDatabase' );

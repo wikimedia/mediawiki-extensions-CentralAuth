@@ -17,7 +17,6 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\User\UserNameUtils;
 use NamespaceInfo;
-use ReadOnlyError;
 use ReadOnlyMode;
 use Sanitizer;
 use SpecialPage;
@@ -188,9 +187,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$continue = true;
 		if ( $this->mCanEdit && $this->mPosted ) {
-			if ( $this->readOnlyMode->isReadOnly() || $this->databaseManager->isReadOnly() ) {
-				throw new ReadOnlyError();
-			}
+			$this->databaseManager->assertNotReadOnly();
 			$continue = $this->doSubmit();
 		}
 

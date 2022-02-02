@@ -366,7 +366,7 @@
 	"centralauth-prefs-view": "Used as a button in [[Special:Preferences|{{int:Preferences}}]]",
 	"centralauth-readmore-text": "Message that refers to more information on account unification.\n\nPreceded by any one of the following messages:\n* {{msg-mw|Centralauth-merge-denied}}\n* {{msg-mw|Centralauth-merge-notlogged}}\n* {{msg-mw|Centralauth-merge-welcome}}\n* {{msg-mw|Centralauth-incomplete-text}}\n* {{msg-mw|Centralauth-complete-text}}",
 	"centralauth-readonly": "Error message displayed when the CentralAuth database is locked.",
-	"centralauth-readonlytext": "Description of the centralauth-readonlytext error",
+	"centralauth-readonlytext": "Description of the centralauth-readonly error. Parameters:\n* $1 - the configured reason for the read only mode.",
 	"centralauth-rename-abortlogin": "Error message shown to the user when they try logging in while their account is being renamed or merged.\n\nParameters:\n* $1 - the user's username",
 	"centralauth-rename-alreadyexists": "Error message if there is already an account at the new username.",
 	"centralauth-rename-alreadyinprogress": "Error message if the user is already being renamed. $1 the new username.",

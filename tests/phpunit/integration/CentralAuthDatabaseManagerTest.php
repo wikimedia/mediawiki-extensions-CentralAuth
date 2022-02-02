@@ -62,7 +62,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::getReadOnlyReason
+	 * @covers ::getCentralReadOnlyReason
 	 * @covers ::isReadOnly
 	 */
 	public function testGetReadOnlyReasonReadOnlyMode() {
@@ -70,6 +70,15 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$roMode = $this->createMock( ReadOnlyMode::class );
 		$roMode->method( 'isReadOnly' )->willReturn( true );
 		$roMode->method( 'getReason' )->willReturn( $roReason );
+
+		// Override global mode for ReadOnlyError::__construct()
+		$this->overrideMwServices( null,
+			[
+				'ReadOnlyMode' => static function () use ( $roMode ) {
+					return $roMode;
+				}
+			]
+		);
 
 		$manager = new CentralAuthDatabaseManager(
 			new ServiceOptions(
@@ -83,12 +92,13 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			$roMode
 		);
 
-		$this->assertEquals( $roReason, $manager->getReadOnlyReason() );
-		$this->assertTrue( $manager->isReadOnly() );
+		$this->expectException( ReadOnlyError::class );
+		$this->expectExceptionMessageMatches( '/' . preg_quote( $roReason, '/' ) . '/' );
+		$manager->assertNotReadOnly();
 	}
 
 	/**
-	 * @covers ::getReadOnlyReason
+	 * @covers ::getCentralReadOnlyReason
 	 * @covers ::isReadOnly
 	 */
 	public function testGetReadOnlyReasonDatabase() {
@@ -115,12 +125,13 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			$roMode
 		);
 
-		$this->assertEquals( $roReason, $manager->getReadOnlyReason() );
-		$this->assertTrue( $manager->isReadOnly() );
+		$this->expectException( CentralAuthReadOnlyError::class );
+		$this->expectExceptionMessageMatches( '/' . preg_quote( $roReason, '/' ) . '/' );
+		$manager->assertNotReadOnly();
 	}
 
 	/**
-	 * @covers ::getReadOnlyReason
+	 * @covers ::getCentralReadOnlyReason
 	 * @covers ::isReadOnly
 	 */
 	public function testGetReadOnlyReasonWriteable() {
@@ -145,8 +156,8 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			$roMode
 		);
 
-		$this->assertFalse( $manager->getReadOnlyReason() );
 		$this->assertFalse( $manager->isReadOnly() );
+		$manager->assertNotReadOnly();
 	}
 
 	/**

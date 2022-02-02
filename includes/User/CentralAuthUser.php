@@ -328,9 +328,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	protected function shouldUsePrimaryDB() {
+		$dbManager = CentralAuthServices::getDatabaseManager();
+		if ( $dbManager->isReadOnly() ) {
+			return false;
+		}
 		if ( $this->mFromPrimary === null ) {
-			$this->mFromPrimary = CentralAuthServices::getDatabaseManager()
-				->centralLBHasRecentPrimaryChanges();
+			$this->mFromPrimary = $dbManager->centralLBHasRecentPrimaryChanges();
 		}
 
 		return $this->mFromPrimary;

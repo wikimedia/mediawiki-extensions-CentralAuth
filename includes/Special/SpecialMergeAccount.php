@@ -93,14 +93,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( $this->databaseManager->isReadOnly() ) {
-			$this->getOutput()->setPageTitle( $this->msg( 'readonly' ) );
-			$this->getOutput()->addWikiMsg(
-				'readonlytext',
-				$this->databaseManager->getReadOnlyReason()
-			);
-			return;
-		}
+		$this->databaseManager->assertNotReadOnly();
 		$request = $this->getRequest();
 
 		$this->mUserName = $this->getUser()->getName();
