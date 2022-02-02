@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use Wikimedia\Rdbms\IResultWrapper;
 
