@@ -332,7 +332,7 @@
 	"centralauth-prefs-view": "Informationen zu deinem globalen Benutzerkonto ansehen",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Informationen über die Zusammenführung der Benutzerkonten]].''",
 	"centralauth-readonly": "Die CentralAuth-Datenbank ist gesperrt.",
-	"centralauth-readonlytext": "Die CentralAuth-Datenbank ist derzeit für neue Einträge und andere Änderungen gesperrt. Dies ist wahrscheinlich aufgrund routinemäßiger Wartungsarbeiten der Fall, nach deren Abschluss die Datenbank wieder regulär verfügbar sein wird.",
+	"centralauth-readonlytext": "Die CentralAuth-Datenbank ist derzeit für neue Einträge und andere Änderungen gesperrt. Dies ist wahrscheinlich aufgrund routinemäßiger Wartungsarbeiten der Fall, nach deren Abschluss die Datenbank wieder regulär verfügbar sein wird.\n\nGrund der Sperrung: $1",
 	"centralauth-rename-abortlogin": "Dein Benutzerkonto wird derzeit umbenannt oder zusammengeführt. ([[Special:GlobalRenameProgress/$1|Status ansehen]])",
 	"centralauth-rename-alreadyexists": "Der angeforderte Benutzername ist bereits vorhanden.",
 	"centralauth-rename-alreadyinprogress": "Es [[Special:GlobalRenameProgress/$1|läuft]] bereits eine Umbenennung für diesen Benutzer.",

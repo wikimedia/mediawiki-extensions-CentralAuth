@@ -234,7 +234,7 @@
 	"centralauth-editset-wikis": "Wiki：",
 	"centralauth-editset-zerowikis": "未指定wiki。",
 	"centralauth-error-badtoken": "提供的身份認證密鑰已過期或無效。",
-	"centralauth-error-locked": "您的帳號已鎖定，您無法編輯。",
+	"centralauth-error-locked": "您的帳號已被鎖定，您無法編輯。",
 	"centralauth-error-nologinattempt": "您的連線階段沒有正在進行的登入嘗試。",
 	"centralauth-error-token-wrongattempt": "身份認證密鑰並不屬於您目前嘗試的登入。\n可能有人試圖利用惡意帳號登入您的帳號。",
 	"centralauth-error-token-wronguser": "密鑰與您的連線階段使用者名稱不相符。\n可能有人試圖利用惡意帳號登入您的帳號。\n如果只是您嘗試登入另一個使用者，請先登出。",

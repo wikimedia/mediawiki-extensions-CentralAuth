@@ -324,7 +324,7 @@
 	"centralauth-prefs-view": "צפייה בפרטי החשבון הגלובלי שלך",
 	"centralauth-readmore-text": ":[[m:Special:MyLanguage/Help:Unified login|מידע נוסף על '''כניסה מאוחדת''']]...",
 	"centralauth-readonly": "מסד נתונים של CentralAuth נעול.",
-	"centralauth-readonlytext": "מסד הנתונים של CentralAuth נעול כעת לרשומות חדשות ולשינויים אחרים, כנראה לצורך תחזוקה שוטפת, שבסיומה הוא יחזור לפעילות רגילה.",
+	"centralauth-readonlytext": "מסד הנתונים של CentralAuth נעול כעת לרשומות חדשות ולשינויים אחרים, כנראה לצורך תחזוקה שוטפת, שבסיומה הוא יחזור לפעילות רגילה.\n\nמנהל המערכת שנעל אותו סיפק את ההסבר הבא: $1",
 	"centralauth-rename-abortlogin": "החשבון שלך עובר כרגע שינוי שם או מיזוג. [[Special:GlobalRenameProgress/$1|הצגת המצב]].",
 	"centralauth-rename-alreadyexists": "שם המשתמש המבוקש כבר קיים.",
 	"centralauth-rename-alreadyinprogress": "עבור המשתמש הזה כבר התחיל [[Special:GlobalRenameProgress/$1|תהליך שינוי שם]].",
