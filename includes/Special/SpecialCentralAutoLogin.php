@@ -169,7 +169,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		case 'toolslist':
 			// Do not cache this, we want updated Echo numbers and such.
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			if ( !$this->checkSession( '', 'json' ) ) {
 				return;
@@ -204,7 +204,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		case 'refreshCookies': // Refresh central cookies (e.g. in case 'remember me' was set)
 			// Do not cache this, we need to reset the cookies every time.
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			if ( !$this->loginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
@@ -247,7 +247,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		case 'deleteCookies': // Delete central cookies
 			// Do not cache this, we need to reset the cookies every time.
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			if ( !$this->checkSession() ) {
 				return;
@@ -306,7 +306,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// We're pretty sure this user is logged in, so pass back
 			// headers to prevent caching, just in case
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			// Sanity check: If the loginwiki account isn't attached, things are broken (T137551)
 			if ( !$centralUser->isAttached() ) {
@@ -366,7 +366,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// At this point we can't cache anymore because we need to set
 			// cookies and memc each time.
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			// Ensure that a session exists
 			$this->session->persist();
@@ -392,7 +392,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		case 'validateSession': // Validate the shared memcached token
 			// Do not cache this, we need to reset the cookies and memc every time.
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
@@ -449,7 +449,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		case 'setCookies': // Check that memcached is validated, and set cookies
 			// Do not cache this, we need to reset the cookies and memc every time.
-			$this->getOutput()->enableClientCache( false );
+			$this->getOutput()->disableClientCache();
 
 			if ( !$this->checkIsLocalWiki() ) {
 				return;

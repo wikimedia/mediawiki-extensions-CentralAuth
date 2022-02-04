@@ -96,7 +96,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
-		$this->getOutput()->enableClientCache( false );
+		$this->getOutput()->disableClientCache();
 
 		if ( $subpage == '' ) {
 			$subpage = $this->getRequest()->getVal( 'wpGroup' );
