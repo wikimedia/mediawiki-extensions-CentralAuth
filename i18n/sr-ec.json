@@ -204,6 +204,7 @@
 	"centralauth-foreign-link": "Корисник $1 на $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Давање права",
 	"centralauth-globalgroupperms-group": "Група",
+	"centralauth-globalgroupperms-group-disabled": "(није омогућено на овом викију)",
 	"centralauth-globalgroupperms-group-listmembers": "списак чланова",
 	"centralauth-globalgroupperms-group-wikiset": "Скуп викија у којима је ова група активна: $1",
 	"centralauth-globalgroupperms-management": "управљање",
