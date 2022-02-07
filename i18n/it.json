@@ -331,7 +331,7 @@
 	"centralauth-prefs-view": "Mostra le informazioni globali sulla tua utenza",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Per saperne di più sul '''login unificato''']]…''",
 	"centralauth-readonly": "Il database di CentralAuth è bloccato.",
-	"centralauth-readonlytext": "Il database di CentralAuth è al momento bloccato in scrittura, probabilmente per un operazione di manutenzione di routine, presto tutto tornerà alla normalità.",
+	"centralauth-readonlytext": "In questo momento il database CentralAuth è bloccato e non sono possibili aggiunte o modifiche agli elementi. Il blocco è di solito legato a operazioni di manutenzione ordinaria, al termine delle quali il database è di nuovo accessibile.\n\nL'amministratore di sistema che ha imposto il blocco ha fornito questa spiegazione: $1",
 	"centralauth-rename-abortlogin": "La tua utenza è attualmente in fase di rinomina o unione.[[Special:GlobalRenameProgress/$1|Vedi lo stato]].",
 	"centralauth-rename-alreadyexists": "Il nome utente richiesto esiste già.",
 	"centralauth-rename-alreadyinprogress": "C'è già una rinomina [[Special:GlobalRenameProgress/$1|in corso]] per questo utente.",

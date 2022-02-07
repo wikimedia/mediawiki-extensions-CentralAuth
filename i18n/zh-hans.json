@@ -368,7 +368,7 @@
 	"centralauth-prefs-view": "查看您的全域账号信息",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|关于'''账号整合'''的更多内容]]......''",
 	"centralauth-readonly": "CentralAuth数据库被锁。",
-	"centralauth-readonlytext": "中央认证数据库目前被锁定，所以无法接受新条目和其他修改。它可能正在进行常规的数据库维护，然后将恢复正常。",
+	"centralauth-readonlytext": "中央认证数据库目前被锁定，所以无法接受新条目和其他修改。它可能正在进行常规的数据库维护，然后将恢复正常。\n\n锁定数据库的系统管理员提供的解释：$1",
 	"centralauth-rename-abortlogin": "您的账户已启动重命名或合并。[[Special:GlobalRenameProgress/$1|查看状态]]。",
 	"centralauth-rename-alreadyexists": "请求的用户名已存在。",
 	"centralauth-rename-alreadyinprogress": "对此用户的重命名已在[[Special:GlobalRenameProgress/$1|进行中]]。",

@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Atej2*",
 			"Gadarawamo",
 			"Misteld",
 			"Samatics"
 		]
 	},
 	"centralauth-admin-blocklog": "blọnalina kandai lẹ",
+	"centralauth-editgroup-delete-removemembers": "A dona de mahẹtọ́ pipli de tọn lẹpo sẹ̀ whẹpo do súnsún pipli lọ",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|Nunina|Nunina lẹ}} on $2",
 	"centralauth-foreign-link": "Zinzato $1 to $2",
 	"centralauth-merge-method-login": "hùn adà yọyọ bo biọemẹ"

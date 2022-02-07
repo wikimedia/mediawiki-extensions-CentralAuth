@@ -345,7 +345,7 @@
 	"centralauth-prefs-view": "Pokaż informacje o Twoim koncie uniwersalnym",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Czytaj więcej o '''tworzeniu konta uniwersalnego''']]...''",
 	"centralauth-readonly": "Baza danych CentralAuth jest zablokowana.",
-	"centralauth-readonlytext": "Baza danych CentralAuth jest zablokowana do dodawania nowych wpisów i edycji, prawdopodobnie na czas rutynowej konserwacji bazy danych, po której powróci do normalności.",
+	"centralauth-readonlytext": "Baza danych CentralAuth jest zablokowana do dodawania nowych wpisów i edycji, prawdopodobnie na czas rutynowej konserwacji bazy danych, po której powróci do normalności.\n\nAdministrator systemu, który zablokował bazę, podał następujące wyjaśnienie: $1",
 	"centralauth-rename-abortlogin": "Twoje konto ma obecnie zmienianą nazwę lub jest łączone. [[Special:GlobalRenameProgress/$1|Wyświetl stan]].",
 	"centralauth-rename-alreadyexists": "Podana nazwa użytkownika już istnieje.",
 	"centralauth-rename-alreadyinprogress": "Jest już [[Special:GlobalRenameProgress/$1|trwający proces]] zmiany nazwy tego użytkownika.",
