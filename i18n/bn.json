@@ -12,7 +12,8 @@
 			"Wikitanvir",
 			"Yahya",
 			"Zaheen",
-			"আফতাবুজ্জামান"
+			"আফতাবুজ্জামান",
+			"খাত্তাব হাসান"
 		]
 	},
 	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একত্রিকরণ করুন",
@@ -193,7 +194,7 @@
 	"centralauth-list-home-title": "প্রধান উইকি",
 	"centralauth-list-unattached": "\"$1\" নামের {{PLURAL:$2|অ্যাকাউন্টটি|অ্যাকাউন্টগুলি}} নিন্মলিখিত {{PLURAL:$2|সাইটে|সাইটসমূহে}} আপনাকে দেওয়ার জন্য স্বয়ংক্রিয়ভাবে নিশ্চিত করা যাচ্ছে না; সম্ভবত {{PLURAL:$2|এটিতে|এগুলিতে}} আপনার প্রধান অ্যাকাউন্ট থেকে ভিন্ন পাসওয়ার্ড ব্যবহৃত হয়েছে:",
 	"centralauth-list-unattached-title": "অসংযুক্ত অ্যাকাউন্ট",
-	"centralauth-listusers-attached": "[[User:$1|স্থানীয় ভাবে রয়েছে]]",
+	"centralauth-listusers-attached": "[[User:$1|স্থানীয়ভাবে রয়েছে]]",
 	"centralauth-listusers-locked": "অবরুদ্ধ",
 	"centralauth-listusers-nolocal": "বিচ্ছিন্ন অথবা স্থানীয় ভাবে বিদ্যমান নয়",
 	"centralauth-log-entry-chgstatus": "\"$1\" বৈশ্বিক অ্যাকাউন্টের অবস্থা পরিবর্তন করা হয়েছে: $2 নির্ধারণ, $3 পরিবর্তন",
@@ -347,6 +348,7 @@
 	"globalrenamerequest": "বৈশ্বিক ব্যবহারকারী অ্যাকাউন্ট পুনঃনামকরণের অনুরোধ",
 	"globalrenamerequest-email-invalid": "অবৈধ ইমেল ঠিকানা প্রদান করা হয়েছে।",
 	"globalrenamerequest-email-label": "ইমেইল ঠিকানা:",
+	"globalrenamerequest-email-why-explain": "আপনি এই অ্যাকাউন্টের প্রবেশাধিকার হারাবেন না তা নিশ্চিত করার জন্য এই প্রক্রিয়া চলাকালীন আমাদের একটি ইমেল ঠিকানার প্রয়োজন।<br />নামান্তর প্রক্রিয়া সম্পন্ন হওয়ার পর আপনি ইমেল ঠিকানাটি অপসারণ করতে পারবেন।",
 	"globalrenamerequest-email2-label": "ইমেইলের ঠিকানা নিশ্চিত করুন:",
 	"globalrenamerequest-newname-err-invalid": "আপনি একটি বৈধ ব্যবহারকারী নাম নির্দিষ্ট করেননি।",
 	"globalrenamerequest-newname-help": "নতুন ব্যবহারকারীর নাম লিখুন যেটি আপনি ব্যবহার করতে ইচ্ছুক, উদা: \"$1\"।",
