@@ -93,7 +93,7 @@
 	"centralauth-attach-text": "Ĉi tiu konto ne jam estis migrigita al unuigita konto.\nSe la ĝenerala konto ankaŭ estas via, vi povas unuigi ĉi tiun konton se vi tajpas la pasvorton de la ĝenerala konto:",
 	"centralauth-attach-title": "Konfirmi konton",
 	"centralauth-block-already-locked": "La konto [[Special:CentralAuth/$1|$1]] jam estas ŝlosita ĝenerale.",
-	"centralauth-centralautologin-badstate": "Nevalida stato \"$1\"",
+	"centralauth-centralautologin-badstate": "Nevalida stato \"$1\".",
 	"centralauth-centralautologin-logged-in": "Vi estas centre ensalutita kiel $1. Reŝargu la paĝon por apliki viajn uzanto-agordojn.",
 	"centralauth-centralautologin-logged-in-nouser": "Vi estas centre ensalutita. Reŝargu la paĝon por apliki viajn uzanto-agordojn.",
 	"centralauth-centralautologin-lostsession": "Sesia dateno estas perdita",
