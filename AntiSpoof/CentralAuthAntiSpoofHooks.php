@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Logger\LoggerFactory;
 use Psr\Log\LoggerInterface;
 
 class CentralAuthAntiSpoofHooks {
@@ -15,7 +16,7 @@ class CentralAuthAntiSpoofHooks {
 	 */
 	public static function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
 		if ( $logger === null ) {
-			$logger = \MediaWiki\Logger\LoggerFactory::getInstance( 'antispoof' );
+			$logger = LoggerFactory::getInstance( 'antispoof' );
 		}
 
 		if ( !$enable ) {
@@ -124,7 +125,7 @@ class CentralAuthAntiSpoofHooks {
 
 	/**
 	 * On rename, remove the old entry and add the new
-	 * (After a sucessful user rename)
+	 * (After a successful user rename)
 	 *
 	 * @param int $uid Unused
 	 * @param string $oldName
