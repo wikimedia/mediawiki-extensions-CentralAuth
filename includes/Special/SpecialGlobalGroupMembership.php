@@ -32,10 +32,8 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
-use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserGroupManagerFactory;
-use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use OutputPage;
@@ -65,7 +63,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	protected $mTarget;
 
 	/**
-	 * @var null|User The user object of the target username or null.
+	 * @var null|User|CentralAuthGroupMembershipProxy The user object of the target username or null.
 	 */
 	protected $mFetchedUser = null;
 
@@ -84,65 +82,27 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/** @var UserNamePrefixSearch */
 	private $userNamePrefixSearch;
 
-	/** @var UserFactory */
-	private $userFactory;
-
 	/**
 	 * @param GlobalGroupLookup $globalGroupLookup
 	 * @param UserGroupManagerFactory $userGroupManagerFactory
 	 * @param UserNameUtils $userNameUtils
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
-	 * @param UserFactory $userFactory
 	 */
 	public function __construct(
 		GlobalGroupLookup $globalGroupLookup,
 		UserGroupManagerFactory $userGroupManagerFactory,
 		UserNameUtils $userNameUtils,
-		UserNamePrefixSearch $userNamePrefixSearch,
-		UserFactory $userFactory
+		UserNamePrefixSearch $userNamePrefixSearch
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
 		$this->userNameUtils = $userNameUtils;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userFactory = $userFactory;
 		$this->userGroupManager = $userGroupManagerFactory->getUserGroupManager( false );
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	public function doesWrites() {
 		return true;
-	}
-
-	/**
-	 * Check whether the current user (from context) can change the target user's rights.
-	 *
-	 * @param UserIdentity $targetUser User whose rights are being changed
-	 * @param bool $checkIfSelf If false, assume that the current user can add/remove groups defined
-	 *   in $wgGroupsAddToSelf / $wgGroupsRemoveFromSelf, without checking if it's the same as target
-	 *   user
-	 * @return bool
-	 */
-	public function userCanChangeRights( UserIdentity $targetUser, $checkIfSelf = true ) {
-		$isself = $this->getUser()->equals( $targetUser );
-
-		$available = $this->changeableGroups();
-		if ( $targetUser->getId() === 0 ) {
-			return false;
-		}
-
-		if ( $available['add'] || $available['remove'] ) {
-			// can change some rights for any user
-			return true;
-		}
-
-		if ( ( $available['add-self'] || $available['remove-self'] )
-			&& ( $isself || !$checkIfSelf )
-		) {
-			// can change some rights for self
-			return true;
-		}
-
-		return false;
 	}
 
 	/**
@@ -297,7 +257,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * @return bool
 	 */
-	public function canProcessExpiries() {
+	private function canProcessExpiries() {
 		return $this->getConfig()->get( 'CentralAuthEnableTemporaryGlobalGroups' );
 	}
 
@@ -310,7 +270,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @param User|UserRightsProxy $user Target user object.
 	 * @return Status
 	 */
-	protected function saveUserGroups( $username, $reason, $user ) {
+	private function saveUserGroups( $username, $reason, $user ) {
 		$allgroups = $this->getAllGroups();
 		$addgroup = [];
 		$groupExpiries = []; // associative array of (group name => expiry)
@@ -374,7 +334,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * Save user groups changes in the database. This function does not throw errors;
 	 * instead, it ignores groups that the performer does not have permission to set.
 	 *
-	 * @param User|UserRightsProxy $user
+	 * @param User|CentralAuthGroupMembershipProxy $user
 	 * @param array $add Array of groups to add
 	 * @param array $remove Array of groups to remove
 	 * @param string $reason Reason for group change
@@ -467,7 +427,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @param UserGroupMembership|null $ugm May be null if things get borked
 	 * @return array|null
 	 */
-	protected static function serialiseUgmForLog( $ugm ) {
+	private static function serialiseUgmForLog( $ugm ) {
 		if ( !$ugm instanceof UserGroupMembership ) {
 			return null;
 		}
@@ -483,7 +443,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @param array $oldUGMs Not currently used
 	 * @param array $newUGMs Not currently used
 	 */
-	protected function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
+	private function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
 		array $tags, array $oldUGMs, array $newUGMs
 	) {
 		// make sure $oldUGMs and $newUGMs are in the same order, and serialise
@@ -528,9 +488,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			return;
 		}
 
-		/** @var User $user */
+		/** @var User|CentralAuthGroupMembershipProxy $user */
 		$user = $status->value;
-		'@phan-var User $user';
+		'@phan-var User|CentralAuthGroupMembershipProxy $user';
 
 		$groups = $user->getGroups();
 		$groupMemberships = $user->getGroupMemberships();
@@ -582,7 +542,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * Output a form to allow searching for a user
 	 */
-	protected function switchForm() {
+	private function switchForm() {
 		$this->addHelpLink( 'Extension:CentralAuth' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
 		$formDescriptor = [
@@ -612,13 +572,13 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * Show the form to edit group memberships.
 	 *
-	 * @param User|UserRightsProxy $user User or UserRightsProxy you're editing
+	 * @param User|CentralAuthGroupMembershipProxy $user User or UserRightsProxy you're editing
 	 * @param string[] $groups Array of groups the user is in. Not used by this implementation
 	 *   anymore, but kept for backward compatibility with subclasses
 	 * @param UserGroupMembership[] $groupMemberships Associative array of (group name => UserGroupMembership
 	 *   object) containing the groups the user is in
 	 */
-	protected function showEditUserGroupsForm( $user, $groups, $groupMemberships ) {
+	private function showEditUserGroupsForm( $user, $groups, $groupMemberships ) {
 		$list = $membersList = $tempList = $tempMembersList = [];
 		foreach ( $groupMemberships as $ugm ) {
 			$linkG = UserGroupMembership::getLink( $ugm, $this->getContext(), 'html' );
@@ -772,7 +732,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * @return string[]
 	 */
-	protected static function getAllGroups() {
+	private static function getAllGroups() {
 		return CentralAuthServices::getGlobalGroupLookup()->getDefinedGroups();
 	}
 
@@ -1002,7 +962,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * @return array[]
 	 */
-	protected function changeableGroups() {
+	private function changeableGroups() {
 		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 		if (
 			$globalUser->exists() &&
@@ -1029,10 +989,10 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * @param User $user
+	 * @param User|CentralAuthGroupMembershipProxy $user
 	 * @param OutputPage $output
 	 */
-	protected function showLogFragment( $user, $output ) {
+	private function showLogFragment( $user, $output ) {
 		$logPage = new LogPage( 'gblrights' );
 		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $user->getUserPage() );
