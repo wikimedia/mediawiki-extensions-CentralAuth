@@ -33,6 +33,10 @@ use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserGroupManagerFactory;
+use MediaWiki\User\UserNamePrefixSearch;
+use MediaWiki\User\UserNameUtils;
 use UserrightsPage;
 
 /**
@@ -45,22 +49,52 @@ class ApiGlobalUserRights extends ApiBase {
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
+	/** @var UserGroupManagerFactory */
+	private $userGroupManagerFactory;
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
+	/** @var UserNamePrefixSearch */
+	private $userNamePrefixSearch;
+
+	/** @var UserFactory */
+	private $userFactory;
+
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param GlobalGroupLookup $globalGroupLookup
+	 * @param UserGroupManagerFactory $userGroupManagerFactory
+	 * @param UserNameUtils $userNameUtils
+	 * @param UserNamePrefixSearch $userNamePrefixSearch
+	 * @param UserFactory $userFactory
 	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
-		GlobalGroupLookup $globalGroupLookup
+		GlobalGroupLookup $globalGroupLookup,
+		UserGroupManagerFactory $userGroupManagerFactory,
+		UserNameUtils $userNameUtils,
+		UserNamePrefixSearch $userNamePrefixSearch,
+		UserFactory $userFactory
 	) {
 		parent::__construct( $mainModule, $moduleName );
+		$this->userNameUtils = $userNameUtils;
+		$this->userNamePrefixSearch = $userNamePrefixSearch;
+		$this->userFactory = $userFactory;
+		$this->userGroupManagerFactory = $userGroupManagerFactory;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	protected function getUserRightsPage() {
-		return new SpecialGlobalGroupMembership( $this->globalGroupLookup );
+		return new SpecialGlobalGroupMembership(
+			$this->globalGroupLookup,
+			$this->userGroupManagerFactory,
+			$this->userNameUtils,
+			$this->userNamePrefixSearch,
+			$this->userFactory
+		);
 	}
 
 	protected function getAllGroups() {

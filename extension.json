@@ -150,7 +150,11 @@
 		"GlobalGroupMembership": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
 			"services": [
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupLookup",
+				"UserGroupManagerFactory",
+				"UserNameUtils",
+				"UserNamePrefixSearch",
+				"UserFactory"
 			]
 		},
 		"GlobalGroupPermissions": {
@@ -312,7 +316,11 @@
 		"globaluserrights": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights",
 			"services": [
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupLookup",
+				"UserGroupManagerFactory",
+				"UserNameUtils",
+				"UserNamePrefixSearch",
+				"UserFactory"
 			]
 		}
 	},
