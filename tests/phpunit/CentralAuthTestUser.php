@@ -166,11 +166,11 @@ class CentralAuthTestUser {
 			'gu_auth_token' => $this->authToken,
 			'gu_locked' => $this->locked,
 			'gu_hidden_level' => $this->hiddenLevel,
-			'gu_registration' => $this->registration,
+			'gu_registration' => $db->timestamp( $this->registration ),
 			'gu_email' => $this->email,
-			'gu_email_authenticated' => $this->emailAuthenticated,
+			'gu_email_authenticated' => $db->timestamp( $this->emailAuthenticated ),
 			'gu_home_db' => $this->homeDb,
-			'gu_enabled' => $this->enabled,
+			'gu_enabled' => $db->timestamp( $this->enabled ),
 			'gu_enabled_method' => $this->enabledMethod,
 		];
 		$db->insert(
@@ -187,6 +187,9 @@ class CentralAuthTestUser {
 		);
 
 		if ( count( $this->wikis ) ) {
+			foreach ( $this->wikis as &$wikiRows ) {
+				$wikiRows['lu_attached_timestamp'] = $db->timestamp( $wikiRows['lu_attached_timestamp'] );
+			}
 			$db->insert( 'localuser', $this->wikis, __METHOD__ );
 		}
 

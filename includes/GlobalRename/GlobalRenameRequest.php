@@ -297,9 +297,9 @@ class GlobalRenameRequest {
 		$this->wiki = $row->wiki;
 		$this->newName = $row->newname;
 		$this->reason = $row->reason;
-		$this->requested = $row->requested;
+		$this->requested = wfTimestampOrNull( TS_MW, $row->requested );
 		$this->status = $row->status;
-		$this->completed = $row->completed;
+		$this->completed = wfTimestampOrNull( TS_MW, $row->completed );
 		$this->deleted = $row->deleted;
 		$this->performer = $row->performer;
 		$this->comments = $row->comments;
