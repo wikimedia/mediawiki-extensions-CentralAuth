@@ -30,10 +30,10 @@ use ApiResult;
 use ChangeTags;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Permissions\Authority;
-use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupManagerFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
@@ -43,7 +43,7 @@ use UserrightsPage;
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiBase {
-	/** @var CentralAuthUser */
+	/** @var CentralAuthUser|CentralAuthGroupMembershipProxy */
 	private $mUser = null;
 
 	/** @var GlobalGroupLookup */
@@ -58,9 +58,6 @@ class ApiGlobalUserRights extends ApiBase {
 	/** @var UserNamePrefixSearch */
 	private $userNamePrefixSearch;
 
-	/** @var UserFactory */
-	private $userFactory;
-
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
@@ -68,7 +65,6 @@ class ApiGlobalUserRights extends ApiBase {
 	 * @param UserGroupManagerFactory $userGroupManagerFactory
 	 * @param UserNameUtils $userNameUtils
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
-	 * @param UserFactory $userFactory
 	 */
 	public function __construct(
 		ApiMain $mainModule,
@@ -76,29 +72,22 @@ class ApiGlobalUserRights extends ApiBase {
 		GlobalGroupLookup $globalGroupLookup,
 		UserGroupManagerFactory $userGroupManagerFactory,
 		UserNameUtils $userNameUtils,
-		UserNamePrefixSearch $userNamePrefixSearch,
-		UserFactory $userFactory
+		UserNamePrefixSearch $userNamePrefixSearch
 	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->userNameUtils = $userNameUtils;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userFactory = $userFactory;
 		$this->userGroupManagerFactory = $userGroupManagerFactory;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
-	protected function getUserRightsPage() {
+	private function getUserRightsPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
 			$this->globalGroupLookup,
 			$this->userGroupManagerFactory,
 			$this->userNameUtils,
-			$this->userNamePrefixSearch,
-			$this->userFactory
+			$this->userNamePrefixSearch
 		);
-	}
-
-	protected function getAllGroups() {
-		return $this->globalGroupLookup->getDefinedGroups();
 	}
 
 	public function execute() {
@@ -162,8 +151,6 @@ class ApiGlobalUserRights extends ApiBase {
 		$r['userid'] = $user->getId();
 		list( $r['added'], $r['removed'] ) = $form->doSaveUserGroups(
 			// Don't pass null to doSaveUserGroups() for array params, cast to empty array
-			// doSaveUserGroup does work with CentralAuthGroupMembership
-			// @phan-suppress-next-line PhanTypeMismatchArgument
 			$user, $add, (array)$params['remove'],
 			$params['reason'], (array)$tags, $groupExpiries
 		);
@@ -175,7 +162,7 @@ class ApiGlobalUserRights extends ApiBase {
 
 	/**
 	 * @param array $params
-	 * @return CentralAuthUser
+	 * @return CentralAuthUser|CentralAuthGroupMembershipProxy
 	 */
 	private function getUrUser( array $params ) {
 		if ( $this->mUser !== null ) {
@@ -202,11 +189,11 @@ class ApiGlobalUserRights extends ApiBase {
 	}
 
 	public function getAllowedParams( $flags = 0 ) {
-		$allGroups = $this->getAllGroups();
+		$allGroups = $this->globalGroupLookup->getDefinedGroups();
 		if ( $flags & ApiBase::GET_VALUES_FOR_HELP ) {
 			sort( $allGroups );
 		}
-		$a = [
+		return [
 			'user' => [
 				ApiBase::PARAM_TYPE => 'user',
 				UserDef::PARAM_ALLOWED_USER_TYPES => [ 'name', 'id' ],
@@ -235,7 +222,6 @@ class ApiGlobalUserRights extends ApiBase {
 				ApiBase::PARAM_ISMULTI => true
 			],
 		];
-		return $a;
 	}
 
 	public function needsToken() {

@@ -153,8 +153,7 @@
 				"CentralAuth.GlobalGroupLookup",
 				"UserGroupManagerFactory",
 				"UserNameUtils",
-				"UserNamePrefixSearch",
-				"UserFactory"
+				"UserNamePrefixSearch"
 			]
 		},
 		"GlobalGroupPermissions": {
@@ -319,8 +318,7 @@
 				"CentralAuth.GlobalGroupLookup",
 				"UserGroupManagerFactory",
 				"UserNameUtils",
-				"UserNamePrefixSearch",
-				"UserFactory"
+				"UserNamePrefixSearch"
 			]
 		}
 	},

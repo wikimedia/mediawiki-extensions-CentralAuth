@@ -48,20 +48,6 @@ class CentralAuthGroupMembershipProxy {
 	}
 
 	/**
-	 * @param string $wikiID Unused
-	 * @param int $id
-	 * @return string|false
-	 */
-	public static function whoIs( $wikiID, $id ) {
-		$user = self::newFromId( $id );
-		if ( $user ) {
-			return $user->name;
-		} else {
-			return false;
-		}
-	}
-
-	/**
 	 * @param string $name
 	 * @return CentralAuthGroupMembershipProxy|null
 	 */
