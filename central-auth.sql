@@ -49,7 +49,7 @@ CREATE TABLE /*_*/globaluser (
   gu_name varchar(255) binary,
 
   -- Timestamp and method used to create the global account
-  gu_enabled varchar(14) not null default '',
+  gu_enabled binary(14) not null,
   gu_enabled_method enum('opt-in', 'batch', 'auto', 'admin') default null,
 
   -- Local database name of the user's 'home' wiki.
@@ -79,11 +79,11 @@ CREATE TABLE /*_*/globaluser (
   gu_hidden_level int not null default 0,
 
   -- Registration time
-  gu_registration varchar(14) binary,
+  gu_registration binary(14),
 
   -- Random key for password resets
   gu_password_reset_key tinyblob,
-  gu_password_reset_expiration varchar(14) binary,
+  gu_password_reset_expiration binary(14),
 
   -- Random key for crosswiki authentication tokens
   gu_auth_token varbinary(32) NULL,
@@ -109,7 +109,7 @@ CREATE TABLE /*_*/localuser (
   lu_name varchar(255) binary not null,
 
   -- Migration status/logging information, to help diagnose issues
-  lu_attached_timestamp varchar(14) binary,
+  lu_attached_timestamp binary(14),
   lu_attached_method enum (
     'primary',
     'empty',
@@ -215,13 +215,13 @@ CREATE TABLE /*_*/renameuser_queue (
   rq_reason blob,
 
   -- Request timestamp
-  rq_requested_ts varchar(14) binary,
+  rq_requested_ts binary(14),
 
   -- Current state of the request
   rq_status enum ('pending', 'approved', 'rejected') not null,
 
   -- Completion timestamp
-  rq_completed_ts varchar(14) binary,
+  rq_completed_ts binary(14),
 
   -- Delete/suppress flag
   rq_deleted tinyint unsigned not null default '0',
