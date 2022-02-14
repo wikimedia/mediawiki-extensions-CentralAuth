@@ -325,7 +325,7 @@
 	"centralauth-prefs-view": "Vis global brukerkontoinformasjon",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Les mer om '''kontosammenslåing''']]…''",
 	"centralauth-readonly": "CentralAuth-databasen er låst.",
-	"centralauth-readonlytext": "CentralAuth-databasen er låst for nytt innhold og andre endringer, sannsynligvis på grunn av rutinemessig vedlikehold. Den vil snart fungere som vanlig igjen.",
+	"centralauth-readonlytext": "CentralAuth-databasen er låst for nytt innhold og andre endringer, sannsynligvis på grunn av rutinemessig vedlikehold. Den vil snart fungere som vanlig igjen.\n\nSystemadministratoren som låste den ga følgende forklaring: $1",
 	"centralauth-rename-abortlogin": "Kontoen din er i ferd med å endre navn eller slås sammen. [[Special:GlobalRenameProgress/$1|Vis statusen]].",
 	"centralauth-rename-alreadyexists": "Det forespurte brukernavnet finnes allerede.",
 	"centralauth-rename-alreadyinprogress": "Det er allerede en navneendring [[Special:GlobalRenameProgress/$1|på gang]] for denne brukeren.",

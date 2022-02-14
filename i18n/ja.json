@@ -344,7 +344,7 @@
 	"centralauth-prefs-view": "自分のグローバルアカウント情報を閲覧",
 	"centralauth-readmore-text": ":''<span class=\"plainlinks\">[https://meta.wikimedia.org/wiki/Special:MyLanguage/Help:Unified_login '''統一ログイン'''についての詳しい説明]…</span>''",
 	"centralauth-readonly": "CentralAuth データベースがロックされています。",
-	"centralauth-readonlytext": "CentralAuth データベースが現在ロックされているため、新しい項目作成やその他の変更ができません。おそらく定期的なデータベース保守作業のためこの状態になっており、終わりしだい正常に戻ります。",
+	"centralauth-readonlytext": "CentralAuthデータベースは現在、新規登録やその他の変更ができないようにロックされていますが、おそらく定期的なデータベースメンテナンスのためで、その後、通常通りになります。\n\nロックしたシステム管理者は、次のように説明しています: $1",
 	"centralauth-rename-abortlogin": "あなたの利用者名は現在、改名または統合処理中です。[[Special:GlobalRenameProgress/$1|状況を確認する]]。",
 	"centralauth-rename-alreadyexists": "対象の利用者名は既に存在しています。",
 	"centralauth-rename-alreadyinprogress": "対象に対する利用者名の変更が[[Special:GlobalRenameProgress/$1|進行]]しています。",

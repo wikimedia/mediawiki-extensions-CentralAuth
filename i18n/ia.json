@@ -314,7 +314,7 @@
 	"centralauth-prefs-view": "Vider info de tu conto global",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lege plus a proposito del '''unification de contos''']]…''",
 	"centralauth-readonly": "Base de datos CentralAuth blocate.",
-	"centralauth-readonlytext": "Al momento, le base de datos CentralAuth es blocate contra nove entratas e altere modificationes. Isto es probabilemente pro mantenentia routinari del base de datos. Postea, illo retornara al stato normal.",
+	"centralauth-readonlytext": "Al momento, le base de datos CentralAuth es blocate contra nove entratas e altere modificationes. Isto es probabilemente pro mantenentia routinari del base de datos. Postea, illo retornara al stato normal.\n\nLe administrator responsabile pro le blocada ha fornite iste explication: $1",
 	"centralauth-rename-abortlogin": "Tu conto es in curso de renomination o fusion. [[Special:GlobalRenameProgress/$1|Vider le stato]].",
 	"centralauth-rename-alreadyexists": "Le nomine de usator requestate jam existe.",
 	"centralauth-rename-alreadyinprogress": "Il ha jam un renomination [[Special:GlobalRenameProgress/$1|in curso]] pro iste usator.",
