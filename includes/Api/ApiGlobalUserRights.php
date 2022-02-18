@@ -31,10 +31,8 @@ use ChangeTags;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
-use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Permissions\Authority;
-use MediaWiki\User\UserGroupManagerFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use UserrightsPage;
@@ -44,14 +42,11 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiBase {
-	/** @var CentralAuthUser|CentralAuthGroupMembershipProxy */
+	/** @var CentralAuthGroupMembershipProxy */
 	private $mUser = null;
 
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
-
-	/** @var UserGroupManagerFactory */
-	private $userGroupManagerFactory;
 
 	/** @var UserNameUtils */
 	private $userNameUtils;
@@ -63,7 +58,6 @@ class ApiGlobalUserRights extends ApiBase {
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
 	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param UserGroupManagerFactory $userGroupManagerFactory
 	 * @param UserNameUtils $userNameUtils
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
 	 */
@@ -71,21 +65,18 @@ class ApiGlobalUserRights extends ApiBase {
 		ApiMain $mainModule,
 		$moduleName,
 		GlobalGroupLookup $globalGroupLookup,
-		UserGroupManagerFactory $userGroupManagerFactory,
 		UserNameUtils $userNameUtils,
 		UserNamePrefixSearch $userNamePrefixSearch
 	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->userNameUtils = $userNameUtils;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userGroupManagerFactory = $userGroupManagerFactory;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	private function getUserRightsPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
 			$this->globalGroupLookup,
-			$this->userGroupManagerFactory,
 			$this->userNameUtils,
 			$this->userNamePrefixSearch
 		);
@@ -163,7 +154,7 @@ class ApiGlobalUserRights extends ApiBase {
 
 	/**
 	 * @param array $params
-	 * @return CentralAuthUser|CentralAuthGroupMembershipProxy
+	 * @return CentralAuthGroupMembershipProxy
 	 */
 	private function getUrUser( array $params ) {
 		if ( $this->mUser !== null ) {

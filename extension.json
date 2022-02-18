@@ -152,7 +152,6 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
 			"services": [
 				"CentralAuth.GlobalGroupLookup",
-				"UserGroupManagerFactory",
 				"UserNameUtils",
 				"UserNamePrefixSearch"
 			]
@@ -317,7 +316,6 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights",
 			"services": [
 				"CentralAuth.GlobalGroupLookup",
-				"UserGroupManagerFactory",
 				"UserNameUtils",
 				"UserNamePrefixSearch"
 			]

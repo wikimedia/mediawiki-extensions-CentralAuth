@@ -27,20 +27,16 @@ use Linker;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
-use MediaWiki\User\UserGroupManager;
-use MediaWiki\User\UserGroupManagerFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use OutputPage;
 use PermissionsError;
 use SpecialPage;
 use Status;
-use User;
 use UserBlockedError;
 use UserGroupMembership;
 use UserrightsPage;
@@ -62,7 +58,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	protected $mTarget;
 
 	/**
-	 * @var null|User|CentralAuthGroupMembershipProxy The user object of the target username or null.
+	 * @var null|CentralAuthGroupMembershipProxy The user object of the target username or null.
 	 */
 	protected $mFetchedUser = null;
 
@@ -72,9 +68,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
-	/** @var UserGroupManager */
-	private $userGroupManager;
-
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
@@ -83,23 +76,23 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 	/**
 	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param UserGroupManagerFactory $userGroupManagerFactory
 	 * @param UserNameUtils $userNameUtils
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
 	 */
 	public function __construct(
 		GlobalGroupLookup $globalGroupLookup,
-		UserGroupManagerFactory $userGroupManagerFactory,
 		UserNameUtils $userNameUtils,
 		UserNamePrefixSearch $userNamePrefixSearch
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
 		$this->userNameUtils = $userNameUtils;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userGroupManager = $userGroupManagerFactory->getUserGroupManager( false );
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	public function doesWrites() {
 		return true;
 	}
@@ -130,14 +123,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 
 		$fetchedStatus = $this->mTarget === null ? Status::newFatal( 'nouserspecified' ) :
-			$this->fetchUser( $this->mTarget, true );
+			$this->fetchUser( $this->mTarget );
 		if ( $fetchedStatus->isOK() ) {
 			$this->mFetchedUser = $fetchedStatus->value;
-			if ( $this->mFetchedUser instanceof User ) {
-				// Set the 'relevant user' in the skin, so it displays links like Contributions,
-				// User logs, UserRights, etc.
-				$this->getSkin()->setRelevantUser( $this->mFetchedUser );
-			}
 		}
 
 		// show a successbox, if the user rights was saved successfully
@@ -209,9 +197,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			}
 
 			$targetUser = $this->mFetchedUser;
-			if ( $targetUser instanceof User ) {
-				$targetUser->clearInstanceCache(); // T40989
-			}
 
 			$conflictCheck = $request->getVal( 'conflictcheck-originalgroups' );
 			$conflictCheck = ( $conflictCheck === '' ) ? [] : explode( ',', $conflictCheck );
@@ -259,11 +244,11 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 *
 	 * @param string $username Username to apply changes to.
 	 * @param string $reason Reason for group change
-	 * @param User|CentralAuthGroupMembershipProxy $user Target user object.
+	 * @param CentralAuthGroupMembershipProxy $user Target user object.
 	 * @return Status
 	 */
 	private function saveUserGroups( $username, $reason, $user ) {
-		$allgroups = $this->getAllGroups();
+		$allgroups = $this->globalGroupLookup->getDefinedGroups();
 		$addgroup = [];
 		$groupExpiries = []; // associative array of (group name => expiry)
 		$removegroup = [];
@@ -324,7 +309,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * Save user groups changes in the database. This function does not throw errors;
 	 * instead, it ignores groups that the performer does not have permission to set.
 	 *
-	 * @param User|CentralAuthGroupMembershipProxy $user
+	 * @param CentralAuthGroupMembershipProxy $user
 	 * @param array $add Array of groups to add
 	 * @param array $remove Array of groups to remove
 	 * @param string $reason Reason for group change
@@ -419,7 +404,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * @param User $user
+	 * @param CentralAuthGroupMembershipProxy $user
 	 * @param array $oldGroups
 	 * @param array $newGroups
 	 * @param string $reason
@@ -463,7 +448,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @param string $username Name of the user.
 	 */
 	private function editUserGroupsForm( $username ) {
-		$status = $this->fetchUser( $username, true );
+		$status = $this->fetchUser( $username );
 		if ( !$status->isOK() ) {
 			$this->getOutput()->addWikiTextAsInterface(
 				$status->getWikiText( false, false, $this->getLanguage() )
@@ -472,9 +457,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			return;
 		}
 
-		/** @var User|CentralAuthGroupMembershipProxy $user */
+		/** @var CentralAuthGroupMembershipProxy $user */
 		$user = $status->value;
-		'@phan-var User|CentralAuthGroupMembershipProxy $user';
+		'@phan-var CentralAuthGroupMembershipProxy $user';
 
 		$groups = $user->getGroups();
 		$groupMemberships = $user->getGroupMemberships();
@@ -487,10 +472,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 	/**
 	 * @param string $username
-	 * @param bool $writing
 	 * @return Status
 	 */
-	public function fetchUser( $username, $writing = true ) {
+	public function fetchUser( $username ) {
 		if ( $username === '' ) {
 			return Status::newFatal( 'nouserspecified' );
 		}
@@ -557,7 +541,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * Show the form to edit group memberships.
 	 *
-	 * @param User|CentralAuthGroupMembershipProxy $user User you're editing
+	 * @param CentralAuthGroupMembershipProxy $user CentralAuthGroupMembershipProxy you're editing
 	 * @param string[] $groups Array of groups the user is in. Not used by this implementation
 	 *   anymore, but kept for backward compatibility with subclasses
 	 * @param UserGroupMembership[] $groupMemberships Associative array of (group name => UserGroupMembership
@@ -579,31 +563,12 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			}
 		}
 
-		$autoList = [];
-		$autoMembersList = [];
-
-		$isUserInstance = $user instanceof User;
-
-		if ( $isUserInstance ) {
-			foreach ( $this->userGroupManager->getUserAutopromoteGroups( $user ) as $group ) {
-				$autoList[] = UserGroupMembership::getLink( $group, $this->getContext(), 'html' );
-				$autoMembersList[] = UserGroupMembership::getLink( $group, $this->getContext(),
-					'html', $user->getName() );
-			}
-		}
-
 		$language = $this->getLanguage();
 		// @phan-suppress-next-line SecurityCheck-XSS T183174
 		$displayedList = $this->msg( 'userrights-groupsmember-type' )
 			->rawParams(
 				$language->commaList( array_merge( $tempList, $list ) ),
 				$language->commaList( array_merge( $tempMembersList, $membersList ) )
-			)->escaped();
-		// @phan-suppress-next-line SecurityCheck-XSS T183174
-		$displayedAutolist = $this->msg( 'userrights-groupsmember-type' )
-			->rawParams(
-				$language->commaList( $autoList ),
-				$language->commaList( $autoMembersList )
 			)->escaped();
 
 		$grouplist = '';
@@ -616,30 +581,11 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			$grouplist = '<p>' . $grouplist . ' ' . $displayedList . "</p>\n";
 		}
 
-		$count = count( $autoList );
-		if ( $count > 0 ) {
-			$autogrouplistintro = $this->msg( 'userrights-groupsmember-auto' )
-				->numParams( $count )
-				->params( $user->getName() )
-				->parse();
-			$grouplist .= '<p>' . $autogrouplistintro . ' ' . $displayedAutolist . "</p>\n";
-		}
-
-		$systemUser = $isUserInstance && $user->isSystemUser();
-		if ( $systemUser ) {
-			$systemusernote = $this->msg( 'userrights-systemuser' )
-				->params( $user->getName() )
-				->parse();
-			$grouplist .= '<p>' . $systemusernote . "</p>\n";
-		}
-
-		// Only add an email link if the user is not a system user
-		$flags = $systemUser ? 0 : Linker::TOOL_LINKS_EMAIL;
 		$userToolLinks = Linker::userToolLinks(
 			$user->getId(),
 			$user->getName(),
 			false, /* default for redContribsWhenNoEdits */
-			$flags
+			Linker::TOOL_LINKS_EMAIL
 		);
 
 		list( $groupCheckboxes, $canChangeAny ) =
@@ -715,23 +661,16 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * @return string[]
-	 */
-	private static function getAllGroups() {
-		return CentralAuthServices::getGlobalGroupLookup()->getDefinedGroups();
-	}
-
-	/**
 	 * Adds a table with checkboxes where you can select what groups to add/remove
 	 *
 	 * @param UserGroupMembership[] $usergroups Associative array of (group name as string =>
 	 *   UserGroupMembership object) for groups the user belongs to
-	 * @param User $user
+	 * @param CentralAuthGroupMembershipProxy $user
 	 * @return array Array with 2 elements: the XHTML table element with checkxboes, and
 	 * whether any groups are changeable
 	 */
 	private function groupCheckboxes( $usergroups, $user ) {
-		$allgroups = $this->getAllGroups();
+		$allgroups = $this->globalGroupLookup->getDefinedGroups();
 		$ret = '';
 
 		// Get the list of preset expiry times from the system message
@@ -973,7 +912,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * @param User|CentralAuthGroupMembershipProxy $user
+	 * @param CentralAuthGroupMembershipProxy $user
 	 * @param OutputPage $output
 	 */
 	private function showLogFragment( $user, $output ) {
@@ -1001,6 +940,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			->search( UserNamePrefixSearch::AUDIENCE_PUBLIC, $search, $limit, $offset );
 	}
 
+	/**
+	 * @inheritDoc
+	 */
 	protected function getGroupName() {
 		return 'users';
 	}
