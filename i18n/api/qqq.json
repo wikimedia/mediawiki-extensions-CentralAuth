@@ -6,12 +6,13 @@
 			"Kunal Mehta",
 			"McDutchie",
 			"Purodha",
-			"TTO"
+			"TTO",
+			"Amire80"
 		]
 	},
 	"apierror-centralauth-badsession": "{{doc-apierror}}",
 	"apierror-centralauth-badtoken": "{{doc-apierror}}",
-	"apierror-centralauth-badusername": "{{doc-apierror}}\n\nParameters:\n* $1 - User name.",
+	"apierror-centralauth-badusername": "{{doc-apierror}}\n\nParameters:\n* $1 - Username.",
 	"apierror-centralauth-editconflict": "{{doc-apierror}}",
 	"apierror-centralauth-notattached": "{{doc-apierror}}",
 	"apierror-centralauth-notloggedin": "{{doc-apierror}}",
