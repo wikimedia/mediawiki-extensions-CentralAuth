@@ -657,7 +657,7 @@ class CentralAuthUser implements IDBAccessObject {
 				// max out the TTL so that then-expired user groups will not be loaded from cache
 				$closestGugExpiry = $this->getClosestGlobalUserGroupExpiry();
 				if ( $closestGugExpiry ) {
-					$ttl = min( time() - $closestGugExpiry, $ttl );
+					$ttl = min( $closestGugExpiry - time(), $ttl );
 				}
 
 				$data = [];
