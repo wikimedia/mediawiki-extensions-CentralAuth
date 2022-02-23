@@ -2192,7 +2192,9 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( !$this->getId() ) {
 			wfDebugLog(
 				'CentralAuth',
-				"authentication for '$this->mName' failed due to missing account"
+				"authentication for '{user}' failed due to missing account",
+				'all',
+				[ 'user' => $this->mName ]
 			);
 			return "no user";
 		}
@@ -2231,7 +2233,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$status = $this->matchHash( $password, $this->getPasswordObject() );
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $status->isGood() ) {
-			$logger->info( "authentication for '$this->mName' succeeded" );
+			$logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
 
 			$passwordFactory = new PasswordFactory();
 			$passwordFactory->init( RequestContext::getMain()->getConfig() );
@@ -2256,7 +2258,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			return "ok";
 		} else {
-			$logger->info( "authentication for '$this->mName' failed, bad pass" );
+			$logger->info( "authentication for '{user}' failed, bad pass", [ 'user' => $this->mName ] );
 			return "bad password";
 		}
 	}
