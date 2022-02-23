@@ -95,13 +95,11 @@ class AttachAccount extends Maintenance {
 
 		$list = $this->getOption( 'userlist' );
 		if ( !is_file( $list ) ) {
-			$this->output( "ERROR - File not found: {$list}" );
-			exit( 1 );
+			$this->fatalError( "ERROR - File not found: {$list}" );
 		}
 		$file = fopen( $list, 'r' );
 		if ( $file === false ) {
-			$this->output( "ERROR - Could not open file: {$list}" );
-			exit( 1 );
+			$this->fatalError( "ERROR - Could not open file: {$list}" );
 		}
 		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 		while ( strlen( $username = trim( fgets( $file ) ) ) ) {
