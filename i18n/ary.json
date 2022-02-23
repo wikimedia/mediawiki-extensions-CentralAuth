@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Abdeaitali",
+			"Ideophagous",
 			"Reda Benkhadra",
 			"SADIQUI"
 		]
 	},
 	"centralauth-admin-blocklog": "سجل المنع",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|مساهمة|مساهمات}} في $2",
-	"centralauth-foreign-link": "المستخدم $1 في $2",
+	"centralauth-foreign-link": "لخدايمي $1 ف $2",
 	"centralauth-merge-method-login": "دير ملي دير تسجيل الدخول",
 	"globalrenamequeue-form-status-all": "كلشي"
 }
