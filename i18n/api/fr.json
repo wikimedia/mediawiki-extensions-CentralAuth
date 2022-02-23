@@ -10,8 +10,8 @@
 			"Wladek92"
 		]
 	},
-	"apierror-centralauth-badsession": "Un centralauthtoken ne peut être obtenu qu’en utilisant des sessions CentralAuth.",
-	"apierror-centralauth-badtoken": "Le symbole central d’identification est invalide.",
+	"apierror-centralauth-badsession": "Un jeton central d’identification ne peut être obtenu qu’en utilisant des sessions d’authentification centrale.",
+	"apierror-centralauth-badtoken": "Le jeton central d’identification n’est pas valide.",
 	"apierror-centralauth-badusername": "Le nom d’utilisateur \"$1\" n’est pas utilisable sur ce wiki",
 	"apierror-centralauth-editconflict": "Détection d’un conflit d’édition, abandon.",
 	"apierror-centralauth-notattached": "Impossible d’obtenir un centralauthtoken sans un compte global attaché.",
