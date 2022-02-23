@@ -474,9 +474,11 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Load user groups and rights from the database.
+	 *
+	 * @param bool $force Set to true to load even when already loaded.
 	 */
-	protected function loadGroups() {
-		if ( isset( $this->mGroups ) ) {
+	protected function loadGroups( bool $force = false ) {
+		if ( isset( $this->mGroups ) && !$force ) {
 			// Already loaded
 			return;
 		}
@@ -695,6 +697,25 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->mIsAttached = $this->exists() && in_array( WikiMap::getCurrentWikiId(), $this->mAttachedArray );
 		$this->mFromPrimary = false;
+
+		$closestUserGroupExpiration = $this->getClosestGlobalUserGroupExpiry();
+		if ( $closestUserGroupExpiration !== null && $closestUserGroupExpiration < time() ) {
+			LoggerFactory::getInstance( 'CentralAuth' )
+				->warning(
+					'Cached user {user} had a global group expiration in the past '
+						. '({unixTimestamp}), this should not be possible',
+					[
+						'user' => $this->getName(),
+						'unixTimestamp' => $closestUserGroupExpiration,
+					]
+				);
+
+			// load accurate data for this request from the database
+			$this->loadGroups( true );
+
+			// kill the current cache entry so that next request can use the cached value
+			$this->quickInvalidateCache();
+		}
 	}
 
 	/**
