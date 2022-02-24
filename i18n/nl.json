@@ -491,6 +491,7 @@
 	"log-action-filter-gblrights-setmodify": "Wikigroep wijziging",
 	"log-action-filter-gblrights-usergroups": "Globale gebruikersrechten wijziging",
 	"log-action-filter-globalauth": "Soort wijziging:",
+	"log-action-filter-globalauth-delete": "Verwijdering van globaal account",
 	"log-description-gblrename": "Dit logboek bevat de gebruikersnamen die globaal gewijzigd zijn.",
 	"log-name-gblrename": "Logboek globale gebruikersnaamwijzigingen",
 	"logentry-gblrename-merge": "$1 heeft $4 globaal {{GENDER:$2|samengevoegd}} naar $5",
