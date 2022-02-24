@@ -50,7 +50,7 @@ class ContentSecurityPolicyHookHandler implements
 	 * because that hook runs after the header is already outputted.
 	 * @param string[] &$defaultSrc Array of allowed CSP sources.
 	 * @param array $policyConfig
-	 * @param string $mode
+	 * @param int $mode
 	 */
 	public function onContentSecurityPolicyDefaultSource(
 		&$defaultSrc,
@@ -106,7 +106,7 @@ class ContentSecurityPolicyHookHandler implements
 	 * because that hook runs after the header is already outputted.
 	 * @param string[] &$scriptSrc Array of allowed CSP sources.
 	 * @param array $policyConfig
-	 * @param string $mode
+	 * @param int $mode
 	 */
 	public function onContentSecurityPolicyScriptSource(
 		&$scriptSrc,
