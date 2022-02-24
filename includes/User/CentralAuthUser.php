@@ -56,6 +56,7 @@ use Title;
 use User;
 use WANObjectCache;
 use WikiMap;
+use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
@@ -2291,9 +2292,9 @@ class CentralAuthUser implements IDBAccessObject {
 		} elseif ( !( $password instanceof Pbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
-			\Wikimedia\suppressWarnings();
+			AtEase::suppressWarnings();
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			\Wikimedia\restoreWarnings();
+			AtEase::restoreWarnings();
 			if ( $latin1 !== false && $password->verify( $latin1 ) ) {
 				$matched = true;
 			}
