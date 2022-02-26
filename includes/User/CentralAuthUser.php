@@ -952,6 +952,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$data = [
 			'gu_name'  => $this->mName,
+			'gu_enabled' => $dbw->timestamp(),
 
 			'gu_email' => $email,
 			'gu_email_authenticated' => null,
@@ -1046,6 +1047,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 		$data = [
 			'gu_name' => $this->mName,
+			'gu_enabled' => $dbw->timestamp(),
 			'gu_salt' => $salt,
 			'gu_password' => $hash,
 			'gu_auth_token' => MWCryptRand::generateHex( 32 ), // So it doesn't have to be done later

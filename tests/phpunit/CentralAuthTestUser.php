@@ -120,7 +120,7 @@ class CentralAuthTestUser {
 			'gu_email' => 'test@localhost',
 			'gu_email_authenticated' => '20130801040214',
 			'gu_home_db' => WikiMap::getCurrentWikiId(),
-			'gu_enabled' => '',
+			'gu_enabled' => wfTimestampNow(),
 			'gu_enabled_method' => null,
 		];
 
