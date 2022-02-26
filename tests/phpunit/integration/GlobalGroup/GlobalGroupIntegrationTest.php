@@ -81,9 +81,13 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 				[
 					'gug_user' => $caUser->getId(),
 					'gug_group' => 'global-bars',
-					'gug_expiry' => wfTimestamp( TS_MW, $expiryFuture ),
+					'gug_expiry' => $caDbw->timestamp( $expiryFuture ),
 				],
-				[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-bazes', 'gug_expiry' => '20201201121212', ],
+				[
+					'gug_user' => $caUser->getId(),
+					'gug_group' => 'global-bazes',
+					'gug_expiry' => $caDbw->timestamp( '20201201121212' ),
+				],
 			],
 			__METHOD__
 		);
