@@ -24,7 +24,6 @@ $specialPageAliases['en'] = [
 	'GlobalRenameRequest' => [ 'GlobalRenameRequest' ],
 	'GlobalRenameQueue' => [ 'GlobalRenameQueue' ],
 	'SulRenameWarning' => [ 'SulRenameWarning' ],
-	'UsersWhoWillBeRenamed' => [ 'UsersWhoWillBeRenamed' ],
 ];
 
 /** Afrikaans (Afrikaans) */
@@ -47,7 +46,6 @@ $specialPageAliases['ar'] = [
 	'GlobalRenameRequest' => [ 'طلب_إعادة_تسمية_عام' ],
 	'GlobalRenameQueue' => [ 'طابور|_إعادة_تسمية_عام' ],
 	'SulRenameWarning' => [ 'تحذير_إعادة_تسمية_إس_يو_إل' ],
-	'UsersWhoWillBeRenamed' => [ 'المستخدمون_الذين_ستتم_إعادة_تسميتهم' ],
 ];
 
 /** Egyptian Arabic (مصرى) */
@@ -102,7 +100,6 @@ $specialPageAliases['bn'] = [
 	'GlobalRenameRequest' => [ 'বৈশ্বিক_নামান্তরের_অনুরোধ' ],
 	'GlobalRenameQueue' => [ 'বৈশ্বিক_নামান্তরের_সারি' ],
 	'SulRenameWarning' => [ 'SUL_নামান্তরের_সতর্কবার্তা' ],
-	'UsersWhoWillBeRenamed' => [ 'ব্যবহারকারী_যারা_নামান্তরিত_হবেন' ],
 ];
 
 /** Bulgarian (български) */
@@ -127,7 +124,6 @@ $specialPageAliases['bgn'] = [
 	'GlobalRenameRequest' => [ 'درخواست_په_سراسرین_کامرزوکی_ادغاما' ],
 	'GlobalRenameQueue' => [ 'سراسرین_نامی_سپ_ئی_تغیر' ],
 	'SulRenameWarning' => [ 'سراسرین_نامی_تغیر_ئی_هشدار' ],
-	'UsersWhoWillBeRenamed' => [ 'کار_مرزوکان_که_تغیر_نام_ئه_به_ینت' ],
 ];
 
 /** Banjar (Bahasa Banjar) */
@@ -212,7 +208,6 @@ $specialPageAliases['de'] = [
 	'GlobalRenameRequest' => [ 'Globale_Umbenennungsanfrage' ],
 	'GlobalRenameQueue' => [ 'Globale_Umbenennungs-Warteschlange' ],
 	'SulRenameWarning' => [ 'SUL-Umbenennungswarnung' ],
-	'UsersWhoWillBeRenamed' => [ 'Umzubenennende_Benutzer' ],
 ];
 
 /** Zazaki (Zazaki) */
@@ -262,7 +257,6 @@ $specialPageAliases['es'] = [
 	'WikiSets' => [ 'AjustesWiki', 'EditarAjustesWiki' ],
 	'GlobalUsers' => [ 'Usuarios_globales' ],
 	'GlobalRenameRequest' => [ 'Solicitud_de_renombrado_global' ],
-	'UsersWhoWillBeRenamed' => [ 'Usuarios_que_cambiarán_de_nombre', 'Usuarias_que_cambiarán_de_nombre' ],
 ];
 
 /** Estonian (eesti) */
@@ -292,7 +286,6 @@ $specialPageAliases['fa'] = [
 	'GlobalRenameRequest' => [ 'درخواست_ادغام_کاربر_سراسری' ],
 	'GlobalRenameQueue' => [ 'صف_تغییر_نام_سراسری' ],
 	'SulRenameWarning' => [ 'هشدار_تغییر_نام_سراسری' ],
-	'UsersWhoWillBeRenamed' => [ 'کاربرانی_که_تغییر_نام_خواهند_یافت' ],
 ];
 
 /** Finnish (suomi) */
@@ -363,7 +356,6 @@ $specialPageAliases['he'] = [
 	'GlobalRenameRequest' => [ 'בקשת_שינוי_שם_גלובלית' ],
 	'GlobalRenameQueue' => [ 'תור_שינויי_שם_גלובלי' ],
 	'SulRenameWarning' => [ 'אזהרה_שינוי_שם_של_SUL' ],
-	'UsersWhoWillBeRenamed' => [ 'משתמשים_ששמם_ישונה' ],
 ];
 
 /** Hindi (हिन्दी) */
@@ -534,7 +526,6 @@ $specialPageAliases['lb'] = [
 	'GlobalRenameRequest' => [ 'Global_Ufro_fir_Benotzer_ëmzebenennen' ],
 	'GlobalRenameQueue' => [ 'Lëscht_vun_de_globalen_Ëmbenennungen_déi_am_Gaang_sinn' ],
 	'SulRenameWarning' => [ 'Warnung_bei_der_SUL_Ëmbenennung' ],
-	'UsersWhoWillBeRenamed' => [ 'Benotzer_déi_wäerten_ëmbenannt_ginn' ],
 ];
 
 /** Northern Luri (لۊری شومالی) */
@@ -550,7 +541,6 @@ $specialPageAliases['lrc'] = [
 	'GlobalRenameRequest' => [ 'حاست_د_نۊ_نوٙم_نیائن_جأھوٙنی' ],
 	'GlobalRenameQueue' => [ 'گئی_بأنی_د_نۊ_نوٙم_نیائن_جأھوٙنی' ],
 	'SulRenameWarning' => [ 'ھشدار_تأک_کاری_د_نۊ_نوٙم_نیائن' ],
-	'UsersWhoWillBeRenamed' => [ 'کاریاری_کئ_د_نۊ_نوٙم_نیائە_بوئە' ],
 ];
 
 /** Lithuanian (lietuvių) */
@@ -591,7 +581,6 @@ $specialPageAliases['mk'] = [
 	'GlobalRenameRequest' => [ 'ГлобалноСпојувањеБарање' ],
 	'GlobalRenameQueue' => [ 'РедицаГлобалноПреименување' ],
 	'SulRenameWarning' => [ 'ПредупредувањеПреименувањеSUL' ],
-	'UsersWhoWillBeRenamed' => [ 'КориснициКоиЌеБидатПреименувани' ],
 ];
 
 /** Malayalam (മലയാളം) */
@@ -649,7 +638,6 @@ $specialPageAliases['nb'] = [
 	'GlobalUsers' => [ 'Globale_brukere' ],
 	'GlobalRenameUser' => [ 'Gi_en_bruker_nytt_navn_globalt' ],
 	'GlobalRenameRequest' => [ 'Forespørsel_om_global_brukernavnendring' ],
-	'UsersWhoWillBeRenamed' => [ 'Brukere_som_vil_endre_navn' ],
 ];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
@@ -817,7 +805,6 @@ $specialPageAliases['sr-ec'] = [
 	'GlobalRenameRequest' => [ 'Глобални_захтев_за_преименовање' ],
 	'GlobalRenameQueue' => [ 'Глобални_ред_за_преименовање' ],
 	'SulRenameWarning' => [ 'Упозорење_о_преименовању' ],
-	'UsersWhoWillBeRenamed' => [ 'Корисници_који_ће_бити_преименовани' ],
 ];
 
 /** Serbian (Latin script) (srpski (latinica)‎) */
@@ -835,7 +822,6 @@ $specialPageAliases['sr-el'] = [
 	'GlobalRenameRequest' => [ 'Globalni_zahtev_za_preimenovanje' ],
 	'GlobalRenameQueue' => [ 'Globalni_red_za_preimenovanje' ],
 	'SulRenameWarning' => [ 'Upozorenje_o_preimenovanju' ],
-	'UsersWhoWillBeRenamed' => [ 'Korisnici_koji_će_biti_preimenovani' ],
 ];
 
 /** Sundanese (Basa Sunda) */
@@ -893,7 +879,6 @@ $specialPageAliases['uk'] = [
 	'GlobalGroupPermissions' => [ 'Права_глобальних_груп', 'Права_глобальных_групп' ],
 	'WikiSets' => [ 'Набори_вікі', 'Наборы_вики' ],
 	'GlobalUsers' => [ 'Глобальні_користувачі', 'Глобальные_участники' ],
-	'UsersWhoWillBeRenamed' => [ 'Користувачі_що_будуть_перейменовані' ],
 ];
 
 /** Urdu (اردو) */
@@ -910,7 +895,6 @@ $specialPageAliases['ur'] = [
 	'GlobalRenameRequest' => [ 'درخواست_تبدیلی_عالمی_نام' ],
 	'GlobalRenameQueue' => [ 'قطار_عالمی_تبدیلی_نام' ],
 	'SulRenameWarning' => [ 'انتباہ_عالمی_تبدیلی_نام' ],
-	'UsersWhoWillBeRenamed' => [ 'صارفین_جن_کے_نام_تبدیل_ہوں_گے' ],
 ];
 
 /** Venetian (vèneto) */
@@ -956,7 +940,6 @@ $specialPageAliases['zh-hans'] = [
 	'GlobalRenameRequest' => [ '全域重命名申请' ],
 	'GlobalRenameQueue' => [ '全域重命名队列' ],
 	'SulRenameWarning' => [ 'SUL重命名警告' ],
-	'UsersWhoWillBeRenamed' => [ '将被重命名的用户' ],
 ];
 
 /** Traditional Chinese (中文（繁體）‎) */
@@ -972,7 +955,6 @@ $specialPageAliases['zh-hant'] = [
 	'GlobalRenameProgress' => [ '全域重新命名進度' ],
 	'GlobalRenameRequest' => [ '全域重命名申請' ],
 	'GlobalRenameQueue' => [ '全域重命名佇列' ],
-	'UsersWhoWillBeRenamed' => [ '將被重命名的使用者' ],
 ];
 
 /** Chinese (Hong Kong) (中文（香港）‎) */

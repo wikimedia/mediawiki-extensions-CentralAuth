@@ -757,10 +757,6 @@
 			"description": "Don't allow new unattached accounts to be created",
 			"value": false
 		},
-		"CentralAuthEnableUsersWhoWillBeRenamed": {
-			"description": "Feature flag for Special:UsersWhoWillBeRenamed",
-			"value": false
-		},
 		"CentralAuthEnableGlobalRenameRequest": {
 			"description": "Feature flag for Special:GlobalRenameRequest",
 			"value": false

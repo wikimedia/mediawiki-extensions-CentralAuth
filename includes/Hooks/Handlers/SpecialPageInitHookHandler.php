@@ -23,7 +23,6 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use Config;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
-use MediaWiki\Extension\CentralAuth\Special\SpecialUsersWhoWillBeRenamed;
 use MediaWiki\SpecialPage\Hook\SpecialPage_initListHook;
 
 class SpecialPageInitHookHandler implements
@@ -43,11 +42,6 @@ class SpecialPageInitHookHandler implements
 	 * @param array &$list
 	 */
 	public function onSpecialPage_initList( &$list ) {
-		if ( $this->config->get( 'CentralAuthEnableUsersWhoWillBeRenamed' ) ) {
-			$list['UsersWhoWillBeRenamed'] = [
-				'class' => SpecialUsersWhoWillBeRenamed::class,
-			];
-		}
 		if ( $this->config->get( 'CentralAuthEnableGlobalRenameRequest' ) ) {
 			$list['GlobalRenameRequest'] = [
 				'class' => SpecialGlobalRenameRequest::class,

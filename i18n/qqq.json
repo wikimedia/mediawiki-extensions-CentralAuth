@@ -418,11 +418,6 @@
 	"centralauth-seconds-ago": "Parameters:\n* $1 - number of seconds\n{{Related|Centralauth-ago}}",
 	"centralauth-state-mismatch": "Error message when another admin has updated the user, and an edit conflict was detected.\n\nSee also:\n* {{msg-mw|Centralauth-token-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}",
 	"centralauth-token-mismatch": "Used as error message.\n\nSee also:\n* {{msg-mw|Centralauth-state-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}\n{{Identical|Loss of session data}}",
-	"centralauth-uwbr-editcount": "Heading for column in table",
-	"centralauth-uwbr-intro": "Text above table which lists users who will be renamed.",
-	"centralauth-uwbr-name": "Heading for column in table\n{{Identical|Username}}",
-	"centralauth-uwbr-registration": "Heading for column in table",
-	"centralauth-uwbr-registration-nodate": "Message displayed in place of a registration date when one has not been recorded\n{{Identical|Unknown}}",
 	"centralauth-warning-notattached": "Used as error message.",
 	"centralauth-warning-notloggedin": "Used as error message.",
 	"centralauth-welcomecreation-msg": "{{ignored}}\nEmpty message, can be used on wiki to show extra html on the special page \"CentralLogin\" while signup a new account.",
@@ -553,6 +548,5 @@
 	"sulrenamewarning-renamed": "Notice to user that their account has been renamed.\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"sulrenamewarning-title": "[[Special:SulRenameWarning]] title\n\n* $1 is the user's new name for GENDER",
 	"sulrenamewarning-usenew": "Instructions to user to login with new name in the future\n\n* $1 is the user's new name",
-	"userswhowillberenamed": "{{doc-special|UsersWhoWillBeRenamed}}",
 	"centralauth-badaccess-blacklisted": "Message shown to users who can't request to be renamed because they are listed on a blacklist."
 }
