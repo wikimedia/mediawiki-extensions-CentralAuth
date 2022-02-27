@@ -33,6 +33,7 @@
 			"centralauth-createlocal": true,
 			"centralauth-unmerge": true,
 			"centralauth-lock": true,
+			"centralauth-suppress": true,
 			"centralauth-oversight": true
 		},
 		"sysop": {
@@ -45,6 +46,7 @@
 	"GrantPermissions": {
 		"setglobalaccountstatus": {
 			"centralauth-lock": true,
+			"centralauth-suppress": true,
 			"centralauth-oversight": true
 		},
 		"createlocalaccount": {
@@ -59,6 +61,7 @@
 		"centralauth-merge",
 		"centralauth-unmerge",
 		"centralauth-lock",
+		"centralauth-suppress",
 		"centralauth-oversight",
 		"globalgrouppermissions",
 		"globalgroupmembership",
