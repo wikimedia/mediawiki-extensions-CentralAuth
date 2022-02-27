@@ -43,7 +43,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 
 		$globalUser = CentralAuthUser::getPrimaryInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
-			$globalUser->isOversighted() && !$this->getAuthority()->isAllowed( 'centralauth-oversight' )
+			$globalUser->isOversighted() && !$this->getAuthority()->isAllowed( 'centralauth-suppress' )
 		) {
 			$this->dieWithError(
 				[ 'nosuchusershort', wfEscapeWikiText( $globalUser->getName() ) ], 'nosuchuser'

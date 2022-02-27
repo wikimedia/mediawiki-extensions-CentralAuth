@@ -54,7 +54,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 
 		$this->overrideUserPermissions(
 			$this->specialCreateLocalAccount->getUser(),
-			[ 'centralauth-oversight' => false ] );
+			[ 'centralauth-suppress' => false ] );
 
 		$u = new CentralAuthTestUser(
 			$name,

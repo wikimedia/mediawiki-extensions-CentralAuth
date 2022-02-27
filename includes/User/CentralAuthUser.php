@@ -1884,7 +1884,7 @@ class CentralAuthUser implements IDBAccessObject {
 			)
 			|| $oldHiddenLevel !== self::HIDDEN_LEVEL_NONE
 		) {
-			if ( !$context->getAuthority()->isAllowed( 'centralauth-oversight' ) ) {
+			if ( !$context->getAuthority()->isAllowed( 'centralauth-suppress' ) ) {
 				return Status::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
 				return Status::newFatal(

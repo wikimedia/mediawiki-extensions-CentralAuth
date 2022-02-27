@@ -237,7 +237,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	public static function getInProgressRenames( Authority $performer ) {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 		$tables = [ 'renameuser_status' ];
-		if ( !$performer->isAllowed( 'centralauth-oversight' ) ) {
+		if ( !$performer->isAllowed( 'centralauth-suppress' ) ) {
 			if (
 				MediaWikiServices::getInstance()
 					->getMainConfig()

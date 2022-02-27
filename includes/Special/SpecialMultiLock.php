@@ -20,7 +20,7 @@ use Xml;
 
 class SpecialMultiLock extends SpecialPage {
 	/** @var bool */
-	private $mCanOversight;
+	private $mCanSuppress;
 	/** @var string[] */
 	private $mGlobalUsers;
 	/** @var string[]|string|null */
@@ -65,7 +65,7 @@ class SpecialMultiLock extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 
-		$this->mCanOversight = $this->getContext()->getAuthority()->isAllowed( 'centralauth-oversight' );
+		$this->mCanSuppress = $this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' );
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod', '' );
@@ -144,7 +144,7 @@ class SpecialMultiLock extends SpecialPage {
 				? CentralAuthUser::getPrimaryInstanceByName( $username )
 				: CentralAuthUser::getInstanceByName( $username );
 			if ( !$globalUser->exists()
-				|| ( !$this->mCanOversight &&
+				|| ( !$this->mCanSuppress &&
 					( $globalUser->isOversighted() || $globalUser->isHidden() ) )
 			) {
 				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
@@ -162,7 +162,7 @@ class SpecialMultiLock extends SpecialPage {
 		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
 
 		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
-		if ( !$this->mCanOversight ) {
+		if ( !$this->mCanSuppress ) {
 			if ( $this->getConfig()->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD ) {
 				$where['gu_hidden'] = CentralAuthUser::HIDDEN_NONE;
 			} else {
@@ -219,7 +219,7 @@ class SpecialMultiLock extends SpecialPage {
 				'mw-centralauth-status-hidden-nochange',
 				true ) .
 			'<br />';
-		if ( $this->mCanOversight ) {
+		if ( $this->mCanSuppress ) {
 			$radioHidden .= Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-none' )->text(),
 				'wpActionHide',
@@ -424,7 +424,7 @@ class SpecialMultiLock extends SpecialPage {
 			return;
 		}
 
-		if ( $this->mActionHide != 'nochange' && !$this->mCanOversight ) {
+		if ( $this->mActionHide != 'nochange' && !$this->mCanSuppress ) {
 			$this->showError( 'centralauth-admin-not-authorized' );
 			return;
 		}

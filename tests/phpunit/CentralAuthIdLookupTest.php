@@ -114,8 +114,8 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 
 	public function testLookupCentralIds() {
 		$lookup = $this->newLookup();
-		$permitted = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-oversight' ] );
-		$nonPermitted = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-oversight' ] );
+		$permitted = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-suppress' ] );
+		$nonPermitted = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-suppress' ] );
 
 		$this->assertSame( [], $lookup->lookupCentralIds( [] ) );
 
@@ -136,8 +136,8 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 
 	public function testLookupUserNames() {
 		$lookup = $this->newLookup();
-		$permitted = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-oversight' ] );
-		$nonPermitted = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-oversight' ] );
+		$permitted = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-suppress' ] );
+		$nonPermitted = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-suppress' ] );
 
 		$this->assertSame( [], $lookup->lookupUserNames( [] ) );
 
