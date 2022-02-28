@@ -123,7 +123,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 
 	/**
 	 * @covers ::isHidden
-	 * @covers ::isOversighted
+	 * @covers ::isSuppressed
 	 * @covers ::getHiddenLevel
 	 * @covers ::getHiddenLevelInt
 	 */
@@ -131,7 +131,7 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalSuppressedUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isHidden() );
-		$this->assertTrue( $caUser->isOversighted() );
+		$this->assertTrue( $caUser->isSuppressed() );
 		$this->assertSame( CentralAuthUser::HIDDEN_OVERSIGHT, $caUser->getHiddenLevel() );
 		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, $caUser->getHiddenLevelInt() );
 	}
