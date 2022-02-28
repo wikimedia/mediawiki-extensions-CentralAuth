@@ -240,7 +240,6 @@
 	"centralauth-rightslog-set-optout": "basat fòra opcion",
 	"centralauth-seconds-ago": "dempuèi $1 {{PLURAL:$1|segonda|segondas}}",
 	"centralauth-token-mismatch": "O planhèm, podèm sometre vòstre formulari a causa de la pèrda de donadas de vòstra session.",
-	"centralauth-uwbr-registration-nodate": "Desconegut",
 	"centralauth-years-ago": "dempuèi $1 {{PLURAL:$1|an|ans}}",
 	"centralautologin": "Connexion centralizada",
 	"centrallogin": "Connexion utilizaire centralizada",
@@ -263,6 +262,5 @@
 	"right-centralauth-oversight": "Suprimir o amagar lo compte global",
 	"right-centralauth-unmerge": "Anullar la fusion del compte global",
 	"right-globalgroupmembership": "Modificar las apartenéncias als gropes globals",
-	"right-globalgrouppermissions": "Gestion dels gropes globals",
-	"userswhowillberenamed": "Utilizaires que seràn renomenats"
+	"right-globalgrouppermissions": "Gestion dels gropes globals"
 }

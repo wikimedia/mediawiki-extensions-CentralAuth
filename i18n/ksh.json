@@ -329,11 +329,6 @@
 	"centralauth-seconds-ago": "för {{PLURAL:$1|eine Sekund|$1 Sekunde|keine Sekund}}",
 	"centralauth-state-mismatch": "Fähler: Dä Metmaaacher wohd dubbelt beärbeidt. Pröhv Ding Ängeronge un versöhg_et norr_ens.",
 	"centralauth-token-mismatch": "Schad, mer kunnte nit beärrbeide, de Sessions-Date sin futsch. Donn et norr_ens versöke.",
-	"centralauth-uwbr-editcount": "Aanzahl Änderonge",
-	"centralauth-uwbr-intro": "Heh di Sigg zeisch de Metmaacher en hehe dämm Wikki, di ömjedeuf wähde.",
-	"centralauth-uwbr-name": "Metmaacher_Nahme",
-	"centralauth-uwbr-registration": "Aanjemäldt zigg",
-	"centralauth-uwbr-registration-nodate": "Onbikannt",
 	"centralauth-warning-notattached": "Dä lokahle Zohjang es nit med enem jemeinesamme verbonge.",
 	"centralauth-warning-notloggedin": "Do bes jrahd nit ennjelogg.",
 	"centralauth-years-ago": "för {{PLURAL:$1|einem Johr|$1 Johre|keinem Johr}}",
@@ -420,6 +415,5 @@
 	"right-globalgroupmembership": "Metjleedschaff en jemeinsame Metmaacher-Jroppe beärbeide",
 	"right-globalgrouppermissions": "Jemeinsamme Metmaacher_Jroppe beärbeide",
 	"sulrenamewarning-title": "Dinge Zohjang wood ömjedeuf.{{GENDER:$1|}}",
-	"sulrenamewarning-usenew": "Nemm en de Zohkonft Dinge neue Metmaacher_Nahme '''„$1“''' zom Enlogge.{{GENDER:$1|}}",
-	"userswhowillberenamed": "Metmaacher zom Ömnänne"
+	"sulrenamewarning-usenew": "Nemm en de Zohkonft Dinge neue Metmaacher_Nahme '''„$1“''' zom Enlogge.{{GENDER:$1|}}"
 }

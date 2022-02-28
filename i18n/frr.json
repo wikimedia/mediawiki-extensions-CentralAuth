@@ -29,7 +29,6 @@
 	"centralauth-prefs-manage": "Globaal brükerkonto ferwalte",
 	"centralauth-prefs-status": "Globaal brükerkonto:",
 	"centralauth-prefs-view": "Globaal brükerkonto uunluke",
-	"centralauth-uwbr-editcount": "Taal faan feranrangen",
 	"createlocalaccount": "En lokaal konto iinracht saner fraagin",
 	"globalgroupmembership": "Lasmootskap uun globaal sköölen",
 	"globalgrouppermissions": "Ferwaltang faan globaal brükersköölen",
@@ -38,6 +37,5 @@
 	"globalrenamerequest-legend": "Uunfraage am en iandüüdagen brükernööm",
 	"globalusers": "Fertiaknis faan globaal brükerkontos",
 	"mergeaccount": "Stant faan't tuupfeeren faan brükerkontos",
-	"right-globalgroupmembership": "Lasmootskap uun globaal sköölen bewerke",
-	"userswhowillberenamed": "Brükern, diar amnäämd wurd"
+	"right-globalgroupmembership": "Lasmootskap uun globaal sköölen bewerke"
 }

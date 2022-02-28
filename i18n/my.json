@@ -155,10 +155,6 @@
 	"centralauth-rightslog-name": "ဂလိုဘယ် ရပိုင်ခွင့်များ မှတ်တမ်း",
 	"centralauth-ro": "ဂလိုဘယ်အကောင့် သတင်းအချက်အလက်",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|စက္ကန့်|စက္ကန့်}} အကြာက",
-	"centralauth-uwbr-editcount": "တည်းဖြတ်မှု အရေအတွက်",
-	"centralauth-uwbr-name": "အသုံးပြုသူအမည်",
-	"centralauth-uwbr-registration": "မှတ်ပုံတင်သည့် အချိန်",
-	"centralauth-uwbr-registration-nodate": "မသိရ",
 	"centralauth-warning-notloggedin": "သင်သည်လက်ရှိ အကောင့်ထဲမဝင်ထားပါ။",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|နှစ်|နှစ်}} အကြာက",
 	"centralautologin": "ဗဟိုလော့ဂ်အင်ဝင်ရောက်ခြင်း",
@@ -231,6 +227,5 @@
 	"right-centralauth-rename": "ဂလိုဘယ် အကောင့်များကို အမည်ပြန်မှည့်ရန်",
 	"right-globalgroupmembership": "ဂလိုဘယ်အုပ်စုများသို့ အဖွဲ့ဝင်ဖြစ်မှုအား ပြင်ဆင်ရန်",
 	"right-globalgrouppermissions": "ဂလိုဘယ်အုပ်စုများကို စီမံရန်",
-	"sulrenamewarning-title": "{{GENDER:$1|သင်၏}}အကောင့်ကို အမည်ပြန်လည်မှည့်ပြီးပါပြီ",
-	"userswhowillberenamed": "အမည်ပြောင်းလဲခံရမည့် အသုံးပြုသူများ"
+	"sulrenamewarning-title": "{{GENDER:$1|သင်၏}}အကောင့်ကို အမည်ပြန်လည်မှည့်ပြီးပါပြီ"
 }

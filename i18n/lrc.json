@@ -355,11 +355,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|سانیٱ|سانیٱیا}} نوئا",
 	"centralauth-state-mismatch": "خٱتا: یاٛ ری ڤ ری کاری ڤیرایشی سی اؽ مؽنتۏر دؽاری کردٱ. لٛۏتف بٱکؽت آلشتکاری خوتوناْ تٱئید بٱکؽت ۉ هنی تٱفرٱ بٱکؽت.",
 	"centralauth-token-mismatch": "شٱرمٱندٱ! سی یٱ کاْ دونسمٱنیا نشسجا مؽنتۏری تو د باٛن رٱتٱ نمؽ تونؽم نوم بٱلگٱ شما ناْ پٱردازش بٱکؽم.",
-	"centralauth-uwbr-editcount": "شمارٱ ڤیرایشؽا",
-	"centralauth-uwbr-intro": "بٱلگٱ نومگٱ مؽنتۏرؽا سٱبت نوم بیٱ د اؽ ڤیکی کاْ نومشو آلشتکاری بیٱ.",
-	"centralauth-uwbr-name": "نوم مؽنتۏری",
-	"centralauth-uwbr-registration": "گات سٱبت نوم",
-	"centralauth-uwbr-registration-nodate": "نادؽار",
 	"centralauth-warning-notattached": "هساو ڤلات نشینی ڤا یاٛ هساو جهونی یٱکؽ ناٛئیٱ.",
 	"centralauth-warning-notloggedin": "شما ایسنی نۏمائؽتٱ ڤ سیستم.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|سال|سالؽا}} نوئا",
@@ -470,6 +465,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|نوم هساو شما}} د \"$1\" ڤ \"$2\" د گات جا ڤ جاکاری خودٱنجوم سی اومایئن ڤامؽن یٱکاگری بیٱ د سامونٱ{{int:Centralauth-groupname}} آلشت بی.",
 	"sulrenamewarning-title": "{{GENDER:$1|شما}} نوم هساو آلشت بی",
 	"sulrenamewarning-usenew": "لٛۏتف بٱکؽت نوم مؽنتۏری جدید {{GENDER:$1|خوتو}} ناْ کاْ'''$1''' ڤ  کار باٛئیرؽت د گاتؽ کاْ د نوئاتر مؽایت ڤامؽن.",
-	"userswhowillberenamed": "مؽنتۏرؽایؽ کاْ نومشو ڤ یاٛ نوم هنی آلشت بیٱ",
 	"centralauth-badaccess-blacklisted": "شما نمؽ تونؽت دٱرهاست آلشت نوم جهونی باٛئؽت، سی یٱ کاْ شما جۏز نومگاٛ سؽ هؽسؽت."
 }

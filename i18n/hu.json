@@ -366,10 +366,6 @@
 	"centralauth-seconds-ago": "$1 másodperccel ezelőtt",
 	"centralauth-state-mismatch": "Hiba: Ennél a felhasználónál szerkesztési ütközést észleltünk. Nézd át a változtatást, és próbálkozz újra!",
 	"centralauth-token-mismatch": "Sajnáljuk, nem tudtuk feldolgozni a küldött adatokat a munkamenet-adatok hiánya miatt",
-	"centralauth-uwbr-editcount": "Szerkesztésszám",
-	"centralauth-uwbr-name": "Felhasználónév",
-	"centralauth-uwbr-registration": "Regisztráció dátuma",
-	"centralauth-uwbr-registration-nodate": "Ismeretlen",
 	"centralauth-warning-notloggedin": "Jelenleg nem vagy bejelentkezve.",
 	"centralauth-years-ago": "$1 évvel ezelőtt",
 	"centralautologin": "Központi bejelentkezés",
@@ -447,6 +443,5 @@
 	"right-globalgroupmembership": "globális csoportok tagjainak szerkesztése",
 	"right-globalgrouppermissions": "globális csoportok kezelése",
 	"sulrenamewarning-title": "A {{GENDER:$1|fiókod}} átnevezésre került",
-	"sulrenamewarning-usenew": "A jövőben már az új {{GENDER:$1|felhasználónevedet}} („$1”) használd, amikor bejelentkezel.",
-	"userswhowillberenamed": "Hamarosan átnevezésre kerülő felhasználók"
+	"sulrenamewarning-usenew": "A jövőben már az új {{GENDER:$1|felhasználónevedet}} („$1”) használd, amikor bejelentkezel."
 }

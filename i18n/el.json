@@ -352,6 +352,5 @@
 	"right-centralauth-rename": "Μετονομασία καθολικών λογαριασμών",
 	"right-centralauth-unmerge": "Κατάργηση συγχώνευσης καθολικού λογαριασμού",
 	"right-globalgroupmembership": "Επεξεργασία ιδιότητας μέλους στις καθολικές ομάδες",
-	"right-globalgrouppermissions": "Διαχείριση καθολικών λογαριασμών",
-	"userswhowillberenamed": "Χρήστες που θα μετονομαστούν"
+	"right-globalgrouppermissions": "Διαχείριση καθολικών λογαριασμών"
 }

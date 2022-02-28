@@ -386,11 +386,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekunti|sekuntia}} sitten",
 	"centralauth-state-mismatch": "Virhe: Päällekkäinen muokkaus tämän käyttäjän kanssa on havaittu. Varmista muutoksesi ja yritä uudelleen.",
 	"centralauth-token-mismatch": "Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.",
-	"centralauth-uwbr-editcount": "Muokkausten lukumäärä",
-	"centralauth-uwbr-intro": "Tällä sivulla on lueteltu ne tähän wikiin rekisteröityneet käyttäjät, joiden tunnuksen nimi tullaan vaihtamaan.",
-	"centralauth-uwbr-name": "Tunnuksen nimi",
-	"centralauth-uwbr-registration": "Rekisteröinnin päivämäärä",
-	"centralauth-uwbr-registration-nodate": "Tuntematon",
 	"centralauth-warning-notattached": "Paikallista tunnusta ei ole liitetty järjestelmänlaajuiseen tunnukseen.",
 	"centralauth-warning-notloggedin": "Et ole kirjautuneena sisään.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|vuosi|vuotta}} sitten",
@@ -512,6 +507,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Tunnuksellesi}} '''$1''' on annettu uudeksi nimeksi '''$2''' siirryttäessä automaattisesti yhdistettyyn kirjautumisjärjestelmään, jonka toiminnasta vastaa {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Käyttäjätunnuksesi}} nimi on vaihdettu",
 	"sulrenamewarning-usenew": "Käytäthän uutta käyttäjänimeäsi '''$1''' kirjautuessasi sisään jatkossa.",
-	"userswhowillberenamed": "Käyttäjät, joiden tunnuksen nimi vaihdetaan",
 	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja."
 }

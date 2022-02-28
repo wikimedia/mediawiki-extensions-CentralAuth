@@ -321,11 +321,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|ثانیه|ثانیه ها}} قبل",
 	"centralauth-state-mismatch": "خطا: یک تعارض ویرایشی برای این کاربر شناسایی شد. لطفاً تغییر خود را تأیید کنید و دوباره تلاش نمایید.",
 	"centralauth-token-mismatch": "پوزش! به علت از دست رفتن اطلاعات نشست کاربری نمی‌توانیم فرم شما را پردازش کنیم.",
-	"centralauth-uwbr-editcount": "شماردن دةسکاریةل",
-	"centralauth-uwbr-intro": "این صفحه کاربرانی که در این ویکی ثبت شده‌اند و تغییر نام  خواهند یافت را فهرست می‌کند.",
-	"centralauth-uwbr-name": "نام کاربری",
-	"centralauth-uwbr-registration": "زمان ثبت‌نام",
-	"centralauth-uwbr-registration-nodate": "ناشنا/نادیار",
 	"centralauth-warning-notattached": "حساب محلی به یک حساب سراسری نپیوسته است.",
 	"centralauth-warning-notloggedin": "شما در حال حاضر ثبت ورود نشده‌اید.",
 	"centralauth-years-ago": "$1{{PLURAL:$1| سال|سال ها}}",
@@ -399,6 +394,5 @@
 	"right-centralauth-rename": "تغییرنام حساب‌های سراسری",
 	"right-centralauth-unmerge": "جدا کردن حساب سراسری",
 	"right-globalgroupmembership": "ویرایش عضویت در گروه‌های سراسری",
-	"right-globalgrouppermissions": "مدیریت گروه‌های سراسری",
-	"userswhowillberenamed": "کاربرانی که تغییر نام خواهند یافت"
+	"right-globalgrouppermissions": "مدیریت گروه‌های سراسری"
 }

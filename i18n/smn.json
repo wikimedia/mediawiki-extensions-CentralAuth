@@ -22,6 +22,7 @@
 	"centralauth-editset-reason": "Suijâ:",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|hammim|hammiimid}} wikist $2",
 	"centralauth-foreign-link": "Tubdâldâh $1 projektist $2",
+	"centralauth-globalgroupperms-rights": "Vuoigâdvuođah",
 	"centralauth-list-home-title": "Päikkiwiki",
 	"centralauth-log-status-hidden": "čiehhum",
 	"centralauth-merge-method-login": "rahtum siisâčälittempuudâ ääigi",
@@ -30,8 +31,6 @@
 	"centralauth-prefs-status": "Globaal tubdâldâh:",
 	"centralauth-rename-conflict-hidden": "kevtteenommâ čiehhum",
 	"centralauth-rename-form-reason": "Suijâ",
-	"centralauth-uwbr-registration": "Registeristem peivimeeri",
-	"centralauth-uwbr-registration-nodate": "Tubdâmettum",
 	"globalrenamequeue-form-status-all": "puoh",
 	"globalrenamerequest-email-label": "Šleđgâpostâčujottâs:"
 }

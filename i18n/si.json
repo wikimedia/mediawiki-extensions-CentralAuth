@@ -240,7 +240,6 @@
 	"centralauth-rightslog-set-optout": "තෝරා නොගැනීම් සම්බන්ධ",
 	"centralauth-seconds-ago": " {{PLURAL:$1|තත්පරයකට|තත්පර $1 කට}} පෙර",
 	"centralauth-token-mismatch": "කණගාටුයි, සැසියේ දත්ත හානියක් නිසා ඔබේ පෝර්ම යොමුව සැකසීමට අපට නොහැකි විය.",
-	"centralauth-uwbr-name": "පරිශීලක නාමය",
 	"centralauth-years-ago": "{{PLURAL:$1|වසර|වසර}} $1 කට පෙර",
 	"globalgroupmembership": "ගෝලීය කණ්ජායම්වල සමාජිකත්වය",
 	"globalgrouppermissions": "ගෝලීය කණ්ඩායම් හැසුරුම",

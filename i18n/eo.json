@@ -275,8 +275,6 @@
 	"centralauth-ro": "Informoj pri tutvikia uzantokonto",
 	"centralauth-seconds-ago": "antaŭ $1 {{PLURAL:$1|sekundo|sekundoj}}",
 	"centralauth-token-mismatch": "Bedaŭrinde via enigo ne estis operaciita pro malapero de seancaj datenoj.",
-	"centralauth-uwbr-name": "Uzantnomo",
-	"centralauth-uwbr-registration-nodate": "Nekonata",
 	"centralauth-years-ago": "antaŭ $1 {{PLURAL:$1|jaro|jaroj}}",
 	"centralloginsuccesful": "Ensalutita",
 	"globalgroupmembership": "Membreco en ĝeneralaj grupoj",

@@ -368,11 +368,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|seconde|seconde}} fà",
 	"centralauth-state-mismatch": "Errore: Stè 'nu conflitte de cangiamende pe stu utende. Pe piacere condrolle le cangiaminde tune e pruève arrete.",
 	"centralauth-token-mismatch": "Ne dispiace, non ge putime processà 'u module de sottoscrizione tune purcé s'onne perse le date d'a sessione.",
-	"centralauth-uwbr-editcount": "Condatore de le cangiaminde",
-	"centralauth-uwbr-intro": "Sta pàgene elenghe le utinde sus a sta uicchi ca onna essere renominate.",
-	"centralauth-uwbr-name": "Nome de l'utende",
-	"centralauth-uwbr-registration": "Date de reggistrazione",
-	"centralauth-uwbr-registration-nodate": "Scanusciute",
 	"centralauth-warning-notattached": "'U cunde locale non g'è attaccate a une globbale.",
 	"centralauth-warning-notloggedin": "Tu pe mò non ge sì collegate.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anne|anne}} fà",
@@ -490,6 +485,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|'U}} cunde tune '''$1''' ha state renomenate jndr'à '''$2''' duranne 'a migrazione automateche a 'u sisteme de accesse aunificate de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "'U cunde {{GENDER:$1|tune}} ha state renomenate",
 	"sulrenamewarning-usenew": "Pe piacere ause 'u nome utende nuève {{GENDER:$1|tune}} '''$1''' quanne le prosseme vote pruève a trasè.",
-	"userswhowillberenamed": "Utinde ca onna essere renomenate",
 	"centralauth-badaccess-blacklisted": "Non ge puè cercà 'nu renomenamende globbale, purcé tu ste jndr'à lista gnore."
 }

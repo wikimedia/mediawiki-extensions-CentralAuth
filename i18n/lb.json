@@ -325,10 +325,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}",
 	"centralauth-state-mismatch": "Feeler: En Ännerungskonflikt fir dëse Benotzer gouf fonnt. Kuckt wgl. Är Ännerung no a probéiert nach eng Kéier.",
 	"centralauth-token-mismatch": "Pardon, mir konnten d'Donnéeë vun ärer Demande (Formulaire) net verschaffe wëll Date vun ärer Sessioun verluer gi sinn.",
-	"centralauth-uwbr-editcount": "Zuel vun den Ännerungen",
-	"centralauth-uwbr-name": "Benotzernumm",
-	"centralauth-uwbr-registration": "Datum vun der Umeldung",
-	"centralauth-uwbr-registration-nodate": "Onbekannt",
 	"centralauth-warning-notattached": "De lokale Benotzerkont ass net mat engem globale Benotzerkont verbonn.",
 	"centralauth-warning-notloggedin": "Dir sidd elo net ageloggt.",
 	"centralauth-years-ago": "{{PLURAL:$1|virun|viru(n)}} $1 Joer",
@@ -417,6 +413,5 @@
 	"right-centralauth-unmerge": "Globale Benotzerkont nees trennen",
 	"right-globalgroupmembership": "Zougehéieregkeet zu lokale Gruppen änneren",
 	"right-globalgrouppermissions": "Gestioun vu globale Gruppen",
-	"sulrenamewarning-title": "{{GENDER:$1|Äre}} Benotzerkont gouf ëmbenannt",
-	"userswhowillberenamed": "Benotzer déi ëmbenannt ginn"
+	"sulrenamewarning-title": "{{GENDER:$1|Äre}} Benotzerkont gouf ëmbenannt"
 }

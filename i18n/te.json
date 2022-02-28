@@ -277,8 +277,6 @@
 	"centralauth-ro": "సార్వత్రిక ఖాతా సమాచారం",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|క్షణం|క్షణాల}} క్రితం",
 	"centralauth-token-mismatch": "సారీ, సెషను డేటా పోవడం వలన మీ ఫారమును సమర్పణను ప్రాసెస్ చెయ్యలేకపోతున్నాం.",
-	"centralauth-uwbr-name": "వాడుకరి పేరు",
-	"centralauth-uwbr-registration": "నమోదు తేదీ",
 	"centralauth-warning-notattached": "స్థానిక ఖాతా సార్వత్రిక ఖాతాతో అనుసంధానం కాలేదు.",
 	"centralauth-warning-notloggedin": "ప్రస్తుతం మీరు లాగినై లేరు.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|సంవత్సరం|సంవత్సరాల}} క్రితం",

@@ -105,8 +105,6 @@
 	"centralauth-rename-table-status": "Statu",
 	"centralauth-rename-table-status-done": "Fattu",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sicunnu|sicunni}} fa",
-	"centralauth-uwbr-name": "Nomu utenti",
-	"centralauth-uwbr-registration-nodate": "Scanusciutu",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|annu|anni}} fa",
 	"centralloginsuccesful": "Trasuta rinisciuta",
 	"globalgrouppermissions": "Gistioni dê gruppi glubbali",
@@ -128,6 +126,5 @@
 	"globalrenamerequest-username-label": "Nomu utenti attuali:",
 	"globalusers": "Elencu di l'utenti glubbali",
 	"logentry-globalauth-delete": "$1 {{GENDER:$2|cancillau}} lu cuntu glubbali \"$3\"",
-	"mergeaccount": "Prucessu d'unificazzioni di l'utenzi - status",
-	"userswhowillberenamed": "Utenti c'hannu a èssiri rinuminati"
+	"mergeaccount": "Prucessu d'unificazzioni di l'utenzi - status"
 }

@@ -398,11 +398,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунду|секунди|секунд}} тому",
 	"centralauth-state-mismatch": "Помилка: виявлено конфлікт редагування цього користувача. Будь ласка, перегляньте ваші зміни та спробуйте знову.",
 	"centralauth-token-mismatch": "На жаль, ми не можемо продовжити обробку вашої форми через втрату даних сеансу.",
-	"centralauth-uwbr-editcount": "Число редагувань",
-	"centralauth-uwbr-intro": "Ця сторінка перелічує користувачів, які зареєстровані через цю вікі, яких буде перейменовано.",
-	"centralauth-uwbr-name": "Ім'я користувача",
-	"centralauth-uwbr-registration": "Дата реєстрації",
-	"centralauth-uwbr-registration-nodate": "Невідома",
 	"centralauth-warning-notattached": "Локальний обліковий запис не приєднано до глобального.",
 	"centralauth-warning-notloggedin": "Наразі Ви не увійшли до системи.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|рік|роки|років}} тому",
@@ -532,6 +527,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Ваш}} обліковий запис '''$1''' перейменовано на '''$2''' в процесі автоматичної міграції до системи єдиного облікового запису. {{ucfirst:{{int:Centralauth-groupname}}}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ваш}} обліковий запис перейменовано",
 	"sulrenamewarning-usenew": "Будь ласка, відтепер для автентифікації користуйтеся {{GENDER:$1|Вашим}} новим ім'ям користувача '''$1'''.",
-	"userswhowillberenamed": "Користувачі, яких буде перейменовано",
 	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в чорному списку."
 }

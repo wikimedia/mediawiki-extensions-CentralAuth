@@ -266,9 +266,6 @@
 	"centralauth-ro": "Informacije o globalnom računu",
 	"centralauth-seconds-ago": "prije $1 {{PLURAL:$1|sekunde|sekunde|sekundi}}",
 	"centralauth-token-mismatch": "Žao nam je, Vašu izmjenu nije bilo moguće obraditi zbog gubljenja podataka sesije.",
-	"centralauth-uwbr-name": "Korisničko ime",
-	"centralauth-uwbr-registration": "Datum registracije",
-	"centralauth-uwbr-registration-nodate": "Nepoznato",
 	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni.",
 	"centralauth-years-ago": "prije $1 {{PLURAL:$1|godinu|godine|godina}}",
 	"globalgroupmembership": "Članstvo u globalnim grupama",
@@ -313,6 +310,5 @@
 	"right-centralauth-rename": "Preimenovanje globalnih računa",
 	"right-centralauth-unmerge": "Razdvajanje globalnog računa",
 	"right-globalgroupmembership": "Uređivanje članstva globalnih grupa",
-	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
-	"userswhowillberenamed": "Korisnici koji će biti preimenovani"
+	"right-globalgrouppermissions": "Upravljanje globalnim grupama"
 }

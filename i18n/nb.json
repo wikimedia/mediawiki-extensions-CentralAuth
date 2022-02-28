@@ -376,11 +376,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekund|sekunder}} siden",
 	"centralauth-state-mismatch": "Feil: Det ble oppdaget en redigeringskollisjon for denne brukeren. Vær vennlig å sjekke dine endringer og prøve igjen.",
 	"centralauth-token-mismatch": "Beklager, skjemaet kunne ikke lagres på grunn av et tap av øktdata.",
-	"centralauth-uwbr-editcount": "Redigeringsteller",
-	"centralauth-uwbr-intro": "Denne siden lister brukere som er registrert på denne wikien og vil få endrit navnene sine.",
-	"centralauth-uwbr-name": "Brukernavn",
-	"centralauth-uwbr-registration": "Registreringsdato",
-	"centralauth-uwbr-registration-nodate": "Ukjent",
 	"centralauth-warning-notattached": "Den lokale kontoen er ikke tilknyttet en global konto.",
 	"centralauth-warning-notloggedin": "Du er ikke innlogget for øyeblikket.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år|år}} siden",
@@ -505,6 +500,5 @@
 	"sulrenamewarning-renamed": "Kontoen {{GENDER:$2|din}} («$1») har byttet navn til «$2» under automatisk migrasjon til det sammenslåtte innloggingssystemet av {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "Kontoen {{GENDER:$1|din}} har byttet navn",
 	"sulrenamewarning-usenew": "Vennligst bruk {{GENDER:$1|ditt}} nye brukernavn «$1» når du logger inn i framtida.",
-	"userswhowillberenamed": "Brukere som vil endre navn",
 	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste."
 }

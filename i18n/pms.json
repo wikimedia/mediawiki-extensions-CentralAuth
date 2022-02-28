@@ -325,11 +325,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second|second}} fa",
 	"centralauth-state-mismatch": "Eror: Un conflit d'edission con st'utent-sì a l'é stàit trovà. Për piasì, ch'a contròla soa modìfica e ch'a preuva torna.",
 	"centralauth-token-mismatch": "An dëspias, i podoma pa processé la spedission ëd sò formolari për na pèrdita ëd dat ëd session.",
-	"centralauth-uwbr-editcount": "Nùmer ëd modìfiche",
-	"centralauth-uwbr-intro": "Costa pàgina a lista j'utent anscrit a costa wiki ch'a saran arnominà.",
-	"centralauth-uwbr-name": "Stranòm",
-	"centralauth-uwbr-registration": "Dàita d'anscrission",
-	"centralauth-uwbr-registration-nodate": "Pa conossù",
 	"centralauth-warning-notattached": "Ël cont local a l'é nen tacà a 'n cont global.",
 	"centralauth-warning-notloggedin": "Al moment a l'é nen rintrà ant ël sistema.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ann|agn}} fa",
@@ -418,6 +413,5 @@
 	"right-globalgrouppermissions": "Gestì le partìe globaj",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Sò}} cont '''$1''' a l'é stàit arnominà '''$2''' durant la migrassion automàtica al sistema d'identificassion unificà ëd {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Sò}} cont a l'é stàit arnominà",
-	"sulrenamewarning-usenew": "Për piasì, ch'a deuvra {{GENDER:$1|sò}} neuv ëstranòm '''$1''' për rintré ant ël sistema ant l'avnì.",
-	"userswhowillberenamed": "Utent ch'a saran arnominà"
+	"sulrenamewarning-usenew": "Për piasì, ch'a deuvra {{GENDER:$1|sò}} neuv ëstranòm '''$1''' për rintré ant ël sistema ant l'avnì."
 }

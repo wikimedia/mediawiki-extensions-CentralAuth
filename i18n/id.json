@@ -383,11 +383,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|detik|detik}} yang lalu",
 	"centralauth-state-mismatch": "Terdeteksi konflik penyuntingan untuk pengguna ini. Silakan verifikasi perubahan Anda dan coba lagi.",
 	"centralauth-token-mismatch": "Maaf, kami tidak dapat mengolah pengiriman formulir Anda akibat terhapusnya data sesi.",
-	"centralauth-uwbr-editcount": "Jumlah suntingan",
-	"centralauth-uwbr-intro": "Halaman ini menampilkan pengguna yang terdaftar dalam wiki ini untuk namanya diganti.",
-	"centralauth-uwbr-name": "Nama pengguna",
-	"centralauth-uwbr-registration": "Waktu pendaftaran",
-	"centralauth-uwbr-registration-nodate": "Tidak diketahui",
 	"centralauth-warning-notattached": "Akun lokal tidak terhubung dengan akun global.",
 	"centralauth-warning-notloggedin": "Anda saat ini tidak masuk log.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|tahun|tahun}} yang lalu",
@@ -513,6 +508,5 @@
 	"sulrenamewarning-renamed": "Akun {{GENDER:$2|Anda}} '''$1''' telah diganti namanya dengan '''$2''' saat proses migrasi otomatis ke sistem masuk log tunggal {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "Akun {{GENDER:$1|Anda}} telah diganti namanya",
 	"sulrenamewarning-usenew": "Tolong gunakan nama pengguna baru {{GENDER:$1|Anda}} '''$1''' ketika masuk log di masa mendatang.",
-	"userswhowillberenamed": "Pengguna yang akan diganti namanya",
 	"centralauth-badaccess-blacklisted": "Anda tidak bisa meminta penggantian nama global, karena Anda masuk dalam daftar hitam."
 }

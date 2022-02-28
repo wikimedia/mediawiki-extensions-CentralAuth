@@ -276,10 +276,6 @@
 	"centralauth-ro": "Informacije o globalnim računima",
 	"centralauth-seconds-ago": "prije $1 {{PLURAL:$1|sekundu|sekunde|sekundi}}",
 	"centralauth-token-mismatch": "Ispričavamo se, nismo mogli obraditi vaš zahtjev zbog gubitka podataka o prijavi.",
-	"centralauth-uwbr-editcount": "Broj uređivanja",
-	"centralauth-uwbr-intro": "Ova stranica prikazuje popis suradnika registriranih na ovom wikiju koji će biti preimenovani.",
-	"centralauth-uwbr-name": "Suradničko ime",
-	"centralauth-uwbr-registration": "Datum prijave",
 	"centralauth-years-ago": "prije $1 {{PLURAL:$1|godine|godina}}",
 	"centralautologin": "Središnja prijava",
 	"centrallogin": "Središnja suradnička prijava",
@@ -320,6 +316,5 @@
 	"right-centralauth-rename": "Promjena imena globalnih računa",
 	"right-centralauth-unmerge": "Razdvoji globalni račun",
 	"right-globalgroupmembership": "Uređivanje članstva za globalne skupine",
-	"right-globalgrouppermissions": "Uređivanje globalnih skupina",
-	"userswhowillberenamed": "Suradnici koji će biti preimenovani"
+	"right-globalgrouppermissions": "Uređivanje globalnih skupina"
 }

@@ -253,10 +253,6 @@
 	"centralauth-ro": "باشاباش حساب ایطلاعاتینا باخ",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|سانی|سانییه}} اونجه",
 	"centralauth-token-mismatch": "عوذر ایستییریک، ایجلاس معلومات ایتکی‌سین‌دن اؤتری فورما گؤندئریمینیزی ایشلیمیوروز.",
-	"centralauth-uwbr-editcount": "دییشدیرمه سایی",
-	"centralauth-uwbr-name": "ایشلدن آدی",
-	"centralauth-uwbr-registration": "آد یازدیرما تاریخی",
-	"centralauth-uwbr-registration-nodate": "بیلینمه‌ین",
 	"centralauth-years-ago": "$1{{PLURAL:$1|یل |یل}} اول",
 	"centralautologin": "مرکزی گیریش",
 	"centralloginsuccesful": "اوغورلو گیریش",
@@ -287,6 +283,5 @@
 	"right-centralauth-oversight": "سراسری حسابی باغلا",
 	"right-centralauth-unmerge": "سراسری حسابی آییر",
 	"right-globalgroupmembership": "سراسری گروه‌لاردا حقوق‌لاری دییش‌دیر",
-	"right-globalgrouppermissions": "سراسری گروه لاری ایداره ائت",
-	"userswhowillberenamed": "آدلاری دَییشدیریله‌جک ایشلدنلر"
+	"right-globalgrouppermissions": "سراسری گروه لاری ایداره ائت"
 }

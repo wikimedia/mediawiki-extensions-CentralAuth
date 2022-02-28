@@ -397,11 +397,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|przed sekundą|$1 sekundy temu|$1 sekund temu}}",
 	"centralauth-state-mismatch": "Błąd : Wykryto konflikt edycji. Sprawdź swoje zmiany i spróbuj ponownie",
 	"centralauth-token-mismatch": "Niemożliwe było wykonanie polecenia ze względu na utratę danych sesji.",
-	"centralauth-uwbr-editcount": "Liczba edycji",
-	"centralauth-uwbr-intro": "Ta strona zawiera spis użytkowników tej wiki, których nazwy zostaną zmienione.",
-	"centralauth-uwbr-name": "Nazwa użytkownika",
-	"centralauth-uwbr-registration": "Data rejestracji",
-	"centralauth-uwbr-registration-nodate": "Nieznana",
 	"centralauth-warning-notattached": "Lokalne konto nie jest podłączone do globalnego.",
 	"centralauth-warning-notloggedin": "Nie jesteś aktualnie zalogowany.",
 	"centralauth-years-ago": "{{PLURAL:$1|rok|$1 lata|$1 lat}} temu",
@@ -530,6 +525,5 @@
 	"sulrenamewarning-renamed": "Nazwa {{GENDER:$2|twojego}} konta '''$1''' została zmieniona na '''$1''' podczas automatycznej migracji do zunifikowanego systemu logowania {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "Została zmieniona nazwa {{GENDER:$1|Twojego}} konta",
 	"sulrenamewarning-usenew": "Użyj {{GENDER:$1|twojej}} nowej nazwy użytkownika '''$1''' podczas następnego logowania.",
-	"userswhowillberenamed": "Użytkownicy, których nazwy zostaną zmienione",
 	"centralauth-badaccess-blacklisted": "Nie możesz poprosić o globalną zmianę nazwy, ponieważ znajdujesz się na czarnej liście."
 }

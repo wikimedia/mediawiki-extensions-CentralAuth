@@ -43,6 +43,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
 	"action-centralauth-lock": "グローバルアカウントのロックまたはロック解除",
 	"action-centralauth-merge": "自分のアカウントの統合",
+	"action-centralauth-suppress": "グローバルアカウントの秘匿または非表示",
 	"action-centralauth-oversight": "グローバルアカウントの秘匿または非表示",
 	"action-centralauth-rename": "グローバルアカウントの名前の変更",
 	"action-centralauth-unmerge": "グローバルアカウントの統合解除",
@@ -395,11 +396,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|秒}}前",
 	"centralauth-state-mismatch": "エラー: この利用者について編集の競合が検出されました。変更内容を確認し、やり直してください。",
 	"centralauth-token-mismatch": "申し訳ありませんが、セッションデータが消失したため、フォームでの投稿を処理できませんでした。",
-	"centralauth-uwbr-editcount": "編集回数",
-	"centralauth-uwbr-intro": "このページには、このウィキに登録されていて名前が変更される利用者名が列挙されています。",
-	"centralauth-uwbr-name": "利用者名",
-	"centralauth-uwbr-registration": "登録日時",
-	"centralauth-uwbr-registration-nodate": "不明",
 	"centralauth-warning-notattached": "ローカルのアカウントはグローバルのそれと結び付けられていません。",
 	"centralauth-warning-notloggedin": "あなたは現在ログインしていません。",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|年}}前",
@@ -491,10 +487,10 @@
 	"multilock": "複数のグローバルアカウントのロック",
 	"right-centralauth-lock": "グローバルアカウントをロックまたはロック解除",
 	"right-centralauth-merge": "自身のアカウントを統合",
+	"right-centralauth-suppress": "グローバルアカウントを秘匿または非表示",
 	"right-centralauth-oversight": "グローバルアカウントを秘匿または非表示",
 	"right-centralauth-rename": "グローバルアカウントの名前を変更",
 	"right-centralauth-unmerge": "グローバルアカウントを統合解除",
 	"right-globalgroupmembership": "グローバルグループのメンバーを編集",
-	"right-globalgrouppermissions": "グローバルグループを管理",
-	"userswhowillberenamed": "改名される予定の利用者"
+	"right-globalgrouppermissions": "グローバルグループを管理"
 }

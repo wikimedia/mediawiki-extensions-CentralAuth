@@ -327,7 +327,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सेकंदापूर्वी|सेकंदांपूर्वी}}",
 	"centralauth-state-mismatch": "त्रुटी:या सदस्याचा संपादन विसंवाद आढळला. कृपया आपले बदल तपासा व पुन्हा प्रयत्न करा.",
 	"centralauth-token-mismatch": "माफ करा, सत्र विदेच्या क्षयामुळे आपल्या अर्जावर प्रक्रिया होउ शकत नाही.",
-	"centralauth-uwbr-registration": "नोंदणीचा दिनांक",
 	"centralauth-warning-notattached": "हे स्थानिक खाते वैश्विक खात्याशी जोडण्यात आलेले नाही.",
 	"centralauth-warning-notloggedin": "आपण सध्या सनोंद प्रवेशित नाहीत.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|वर्षापूर्वी|वर्षांपूर्वी}}",
@@ -367,6 +366,5 @@
 	"right-globalgroupmembership": "वैश्विक गट सदस्यत्व बदला",
 	"right-globalgrouppermissions": "वैश्विक गटांचे व्यवस्थापन करा",
 	"sessionprovider-centralauthsessionprovider": "केंद्रीय कुकि-आधारीत सत्रे",
-	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken सत्रे",
-	"userswhowillberenamed": "सदस्य ज्यांचे पुनर्नामाभिधान होईल"
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken सत्रे"
 }

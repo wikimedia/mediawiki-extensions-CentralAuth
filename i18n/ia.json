@@ -366,11 +366,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secunda|secundas}} retro",
 	"centralauth-state-mismatch": "Error: un conflicto de modification ha essite detegite pro iste usator. Verifica le cambiamento e essaya de novo.",
 	"centralauth-token-mismatch": "Pardono, nos non poteva processar tu submission del formulario a causa de un perdita de datos del session.",
-	"centralauth-uwbr-editcount": "Numero de modificationes",
-	"centralauth-uwbr-intro": "Iste pagina lista le usatores registrate in iste wiki le quales essera renominate.",
-	"centralauth-uwbr-name": "Nomine de usator",
-	"centralauth-uwbr-registration": "Data de registration",
-	"centralauth-uwbr-registration-nodate": "Incognite",
 	"centralauth-warning-notattached": "Le conto local non es attachate a un conto global.",
 	"centralauth-warning-notloggedin": "Tu non ha aperite session.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|annos}} retro",
@@ -491,6 +486,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Tu}} conto '''$1''' ha essite renominate a '''$2''' durante le migration automatic al systema de contos unificate de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Tu}} conto ha essite renominate",
 	"sulrenamewarning-usenew": "Per favor, usa {{GENDER:$1|tu}} nove nomine de usadtor '''$1''' quando tu aperi session in le futuro.",
-	"userswhowillberenamed": "Usatores que essera renominate",
 	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre."
 }

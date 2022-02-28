@@ -361,11 +361,6 @@
 	"centralauth-seconds-ago": "před $1 {{PLURAL:$1|sekundou|sekundami|sekundami}}",
 	"centralauth-state-mismatch": "Chyba: U tohoto uživatele byl detekován editační konflikt. Zkontrolujte své změny a zkuste to znovu.",
 	"centralauth-token-mismatch": "Je nám líto, nebylo možné zpracovat údaje z formuláře, které jste poslali, z důvodu ztráty informací o vaší relaci.",
-	"centralauth-uwbr-editcount": "Počet editací",
-	"centralauth-uwbr-intro": "Tato stránka uvádí uživatele registrované na této wiki, kteří budou přejmenováni.",
-	"centralauth-uwbr-name": "Uživatelské jméno",
-	"centralauth-uwbr-registration": "Datum registrace",
-	"centralauth-uwbr-registration-nodate": "Neznámé",
 	"centralauth-warning-notattached": "Lokální účet není připojen ke globálnímu.",
 	"centralauth-warning-notloggedin": "Momentálně nejste přihlášen(a).",
 	"centralauth-years-ago": "před $1 {{PLURAL:$1|rokem|roky|lety}}",
@@ -467,6 +462,5 @@
 	"sessionprovider-centralauthtokensessionprovider": "relace pomocí centralauthtoken",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Váš}} uživatelský účet '''$1''' byl v průběhu automatické migrace na sjednocený systém přihlašování {{int:Centralauth-groupname}} přejmenován na '''$2'''.",
 	"sulrenamewarning-title": "{{GENDER:$1|Váš}} uživatelský účet byl přejmenován",
-	"sulrenamewarning-usenew": "Pro přihlašování v budoucnu prosím používejte {{GENDER:$1|své}} nové uživatelské jméno '''$1'''.",
-	"userswhowillberenamed": "Uživatelé, kteří budou přejmenováni"
+	"sulrenamewarning-usenew": "Pro přihlašování v budoucnu prosím používejte {{GENDER:$1|své}} nové uživatelské jméno '''$1'''."
 }

@@ -331,11 +331,6 @@
 	"centralauth-seconds-ago": "$1 a {{PLURAL:$1|segundo|segsegundo}} ti napalabas",
 	"centralauth-state-mismatch": "Biddut: Naduktalan ti maysa a suppiat ti panagurnos para iti daytoy nga agar-aramat. Pangngaasi a pasingkedam ti binaliwam ken padasem manen.",
 	"centralauth-token-mismatch": "Pasensia, saanmi a maaramid ti naitedmo a porma ngamin ket napukaw ti sesion ti datos.",
-	"centralauth-uwbr-editcount": "Bilang ti inurnos",
-	"centralauth-uwbr-intro": "Daytoy a panid ket ilistana dagiti agar-aramat a nairehistro iti daytoy a wiki a managananto manen.",
-	"centralauth-uwbr-name": "Nagan ti agar-aramat",
-	"centralauth-uwbr-registration": "Petsa a nairehistro",
-	"centralauth-uwbr-registration-nodate": "Di ammo",
 	"centralauth-warning-notattached": "Ti lokal a pakabilangan ket saan a naikabit iti global.",
 	"centralauth-warning-notloggedin": "Saanka nga agdama a nakastrek.",
 	"centralauth-years-ago": "$1 a {{PLURAL:$1|tawen|tawtawen}} ti napalabas",
@@ -427,6 +422,5 @@
 	"right-globalgrouppermissions": "Taripatuen dagiti global a grupo",
 	"sulrenamewarning-renamed": "Ti {{GENDER:$2|pakabilangam}} iti '''$1''' ket nanaganan manen iti '''$2''' idi las-ud ti automatiko a panangiyakar iti sistema ti naikaykaysa a panagserrek iti {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "Ti {{GENDER:$1|pakabilangam}} ken nanagana manen",
-	"sulrenamewarning-usenew": "Pangngaasi nga usaren ti{{GENDER:$1|bukodmo}} a baro a nagan ti agar-aramat iti '''$1''' no sumrekka iti masakbayan.",
-	"userswhowillberenamed": "Dagiti agar-aramat a managananto manen"
+	"sulrenamewarning-usenew": "Pangngaasi nga usaren ti{{GENDER:$1|bukodmo}} a baro a nagan ti agar-aramat iti '''$1''' no sumrekka iti masakbayan."
 }

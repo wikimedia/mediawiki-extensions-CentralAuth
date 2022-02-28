@@ -420,11 +420,6 @@
 	"centralauth-seconds-ago": "$1秒前",
 	"centralauth-state-mismatch": "错误：检测到对此用户发生编辑冲突。请确认您的更改并重试。",
 	"centralauth-token-mismatch": "对不起，由于会话数据丢失，我们不能处理您的表单提交行为。",
-	"centralauth-uwbr-editcount": "编辑计数",
-	"centralauth-uwbr-intro": "此页面列出在此wiki注册的将要被重命名的用户。",
-	"centralauth-uwbr-name": "用户名",
-	"centralauth-uwbr-registration": "注册日期",
-	"centralauth-uwbr-registration-nodate": "未知",
 	"centralauth-warning-notattached": "本地账号未附属至全域账号。",
 	"centralauth-warning-notloggedin": "您目前没有登录。",
 	"centralauth-years-ago": "$1年前",
@@ -554,6 +549,5 @@
 	"sulrenamewarning-renamed": "在自动迁移至{{int:Centralauth-groupname}}的统一登录系统过程中，{{GENDER:$2|您}}的账户'''$1'''已被重命名至'''$2'''。",
 	"sulrenamewarning-title": "{{GENDER:$1|您}}的账号已被重命名",
 	"sulrenamewarning-usenew": "今后，请使用{{GENDER:$1|您}}的新用户名'''$1'''登录。",
-	"userswhowillberenamed": "将被重命名的用户",
 	"centralauth-badaccess-blacklisted": "由于您在黑名单上，故无法申请全域更名。"
 }

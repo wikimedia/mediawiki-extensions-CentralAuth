@@ -287,10 +287,6 @@
 	"centralauth-ro": "বৈশ্বিক অ্যাকাউন্টের তথ্য",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|সেকেন্ড}} পূর্বে",
 	"centralauth-token-mismatch": "দুঃখিত, সেশন তথ্য হারিয়ে ফেলায় আমরা আপনার পেশ করা ফরম প্রক্রিয়াজাত করতে পারছি না।",
-	"centralauth-uwbr-editcount": "সম্পাদনা গণনা",
-	"centralauth-uwbr-name": "ব্যবহারকারী নাম",
-	"centralauth-uwbr-registration": "নিবন্ধনের তারিখ",
-	"centralauth-uwbr-registration-nodate": "অজানা",
 	"centralauth-warning-notattached": "স্থানীয় অ্যাকাউন্ট বৈশ্বিকের সাথে সংযুক্ত করা হয়নি।",
 	"centralauth-warning-notloggedin": "আপনি বর্তমানে প্রবেশ করেন নি।",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|বছর|বছর}} পূর্বে",
@@ -373,6 +369,5 @@
 	"right-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর",
 	"right-globalgroupmembership": "সদস্যপদ বৈশ্বিক গ্রুপে সম্পাদনা করো",
 	"right-globalgrouppermissions": "বৈশ্বিক গ্রুপ ব্যবস্থাপনা",
-	"sulrenamewarning-title": "{{GENDER:$1|আপনার}} অ্যাকাউন্ট নামান্তরিত হয়েছে",
-	"userswhowillberenamed": "ব্যবহারকারীগণ যারা নামান্তরিত হবেন"
+	"sulrenamewarning-title": "{{GENDER:$1|আপনার}} অ্যাকাউন্ট নামান্তরিত হয়েছে"
 }

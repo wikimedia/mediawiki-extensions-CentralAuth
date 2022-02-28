@@ -330,10 +330,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|ഒരു സെക്കന്റ്|$1 സെക്കന്റ്}} മുൻപ്",
 	"centralauth-state-mismatch": "പിഴവ്: ഈ ഉപയോക്താവുമായി ഒരു തിരുത്തൽ സമരസപ്പെടായ്ക കണ്ടെത്താനായി. ദയവായി താങ്കളുടെ മാറ്റം പരിശോധിച്ച ശേഷം വീണ്ടും ശ്രമിക്കുക.",
 	"centralauth-token-mismatch": "ക്ഷമിക്കണം. സെഷൻ ഡാറ്റ നഷ്ടപ്പെട്ടതിനാൽ താങ്കളുടെ ഫോം സമർപ്പിക്കുന്നതിനു കഴിഞ്ഞില്ല.",
-	"centralauth-uwbr-editcount": "തിരുത്തുകളുടെ എണ്ണം",
-	"centralauth-uwbr-name": "ഉപയോക്തൃനാമം",
-	"centralauth-uwbr-registration": "അംഗത്വം എടുത്തത്:",
-	"centralauth-uwbr-registration-nodate": "അജ്ഞാതം",
 	"centralauth-warning-notattached": "പ്രാദേശികാംഗത്വം ആഗോളാംഗത്വവുമായി ചേർത്തിട്ടില്ല.",
 	"centralauth-warning-notloggedin": "താങ്കൾ ഇപ്പോൾ പ്രവേശിച്ചിട്ടില്ല.",
 	"centralauth-years-ago": "{{PLURAL:$1|ഒരു വർഷം|$1 വർഷം}} മുൻപ്",
@@ -397,6 +393,5 @@
 	"right-centralauth-rename": "ആഗോളാംഗത്വങ്ങൾ പുനർനാമകരണം ചെയ്യുക",
 	"right-centralauth-unmerge": "ആഗോള അംഗത്വ സംയോജനം നീക്കുക",
 	"right-globalgroupmembership": "ആഗോള സംഘങ്ങളിലുള്ള അംഗത്വം തിരുത്തുക",
-	"right-globalgrouppermissions": "ആഗോള സംഘങ്ങൾ പരിപാലിക്കുക",
-	"userswhowillberenamed": "പുനർനാമകരണം ചെയ്യപ്പെടാൻ പോകുന്ന ഉപയോക്താക്കൾ"
+	"right-globalgrouppermissions": "ആഗോള സംഘങ്ങൾ പരിപാലിക്കുക"
 }

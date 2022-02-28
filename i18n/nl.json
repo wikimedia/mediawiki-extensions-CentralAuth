@@ -395,11 +395,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|seconde|seconden}} geleden",
 	"centralauth-state-mismatch": "Fout: er is een bewerkingsconflict geconstateerd voor deze gebruiker. Controleer uw wijziging en probeer het opnieuw.",
 	"centralauth-token-mismatch": "Vanwege verlies van de sessiegegevens kon uw verzoek niet verwerkt worden.",
-	"centralauth-uwbr-editcount": "Aantal bewerkingen",
-	"centralauth-uwbr-intro": "Op deze pagina wordt een lijst weergegeven van gebruikers die op deze wiki geregistreerd zijn en die hernoemd gaan worden.",
-	"centralauth-uwbr-name": "Gebruikersnaam",
-	"centralauth-uwbr-registration": "Registratiedatum",
-	"centralauth-uwbr-registration-nodate": "Onbekend",
 	"centralauth-warning-notattached": "De lokale gebruiker is niet gekoppeld aan een globale gebruiker.",
 	"centralauth-warning-notloggedin": "U bent niet aangemeld.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jaar|jaar}} geleden",
@@ -513,6 +508,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Uw}} account '''$1''' is hernoemd naar '''$2''' gedurende het automatische proces van de migratie naar een eenduidig aanmeldsysteem bij {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Uw}} account is hernoemd",
 	"sulrenamewarning-usenew": "Gebruik vanaf nu {{GENDER:$1|uw}} nieuwe gebruikersnaam '''$1''' bij het aanmelden.",
-	"userswhowillberenamed": "Gebruikers die hernoemd gaan worden",
 	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat."
 }

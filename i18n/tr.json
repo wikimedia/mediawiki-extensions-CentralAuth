@@ -397,11 +397,6 @@
 	"centralauth-seconds-ago": "$1 saniye önce",
 	"centralauth-state-mismatch": "Hata: Bu kullanıcı için bir değişiklik çakışması algılandı. Lütfen değişikliklerinizi doğrulayın ve yeniden deneyin.",
 	"centralauth-token-mismatch": "Üzgünüz, oturum veri kaybından dolayı form gönderiminizi işleyemiyoruz.",
-	"centralauth-uwbr-editcount": "Değişiklik sayısı",
-	"centralauth-uwbr-intro": "Bu sayfada bu viki için yeniden adlandırılacak kayıtlı kullanıcılar listelenmektedir.",
-	"centralauth-uwbr-name": "Kullanıcı adı",
-	"centralauth-uwbr-registration": "Kayıt tarihi",
-	"centralauth-uwbr-registration-nodate": "Bilinmiyor",
 	"centralauth-warning-notattached": "Yerel hesap küresel olana bağlı değil.",
 	"centralauth-warning-notloggedin": "Şu anda oturum açmadınız.",
 	"centralauth-years-ago": "$1 yıl önce",
@@ -519,6 +514,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Sizin}} hesabınız '''$1''', {{int:centralauth-groupname}} birleşik giriş sistemine otomatik geçiş sırasında '''$2''' olarak yeniden adlandırıldı.",
 	"sulrenamewarning-title": "{{GENDER:$1|Sizin}} hesabınız yeniden adlandırıldı",
 	"sulrenamewarning-usenew": "İleride giriş yaparken lütfen {{GENDER:$1|sizin}} yeni kullanıcı adı '''$1''' kullanın.",
-	"userswhowillberenamed": "Yeniden adlandırılacak kullanıcılar",
 	"centralauth-badaccess-blacklisted": "Genel bir yeniden adlandırma isteğinde bulunamazsınız, çünkü kara listede olursunuz."
 }

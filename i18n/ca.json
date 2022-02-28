@@ -359,11 +359,6 @@
 	"centralauth-seconds-ago": "fa $1 {{PLURAL:$1|segon|segons}}",
 	"centralauth-state-mismatch": "Error: S'ha detectat un conflicte d'edició per a aquest usuari. Verifiqueu el canvi i torneu-ho a provar.",
 	"centralauth-token-mismatch": "No s'ha pogut processar la informació a causa d'una pèrdua de les dades de sessió.",
-	"centralauth-uwbr-editcount": "Recompte d'edicions",
-	"centralauth-uwbr-intro": "Aquesta pàgina llista els usuaris registrats en aquest wiki que seran reanoments.",
-	"centralauth-uwbr-name": "Nom d'usuari",
-	"centralauth-uwbr-registration": "Data de registre",
-	"centralauth-uwbr-registration-nodate": "Desconeguda",
 	"centralauth-warning-notattached": "El compte local no està lligat a cap de global.",
 	"centralauth-warning-notloggedin": "Actualment no esteu connectat.",
 	"centralauth-years-ago": "fa $1 {{PLURAL:$1|any|anys}}",
@@ -459,6 +454,5 @@
 	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
 	"sulrenamewarning-renamed": "El {{GENDER:$2|vostre}} compte '''$1''' ha canviat al nom '''$2''' durant la migració automàtica al sistema de sessions unificades de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "El {{GENDER:$1|vostre}} compte ha canviat de nom",
-	"sulrenamewarning-usenew": "Utilitzeu el {{GENDER:$1|vostre}} nou nom d'usuari '''$1''' per iniciar sessió a partir d'ara.",
-	"userswhowillberenamed": "Usuaris que seran reanomenats"
+	"sulrenamewarning-usenew": "Utilitzeu el {{GENDER:$1|vostre}} nou nom d'usuari '''$1''' per iniciar sessió a partir d'ara."
 }

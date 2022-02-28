@@ -265,11 +265,6 @@
 	"centralauth-seconds-ago": "$1 секунд бұрын",
 	"centralauth-state-mismatch": "Қате: Бұл қатысушы үшін өңдеме қақтығысы табылды. Өзгерісіңізді тексеріңіз және қайталап көріңіз.",
 	"centralauth-token-mismatch": "Ғафу етіңіз, сессия деректері жоғалтылған себебінен пішініңізді жөнелту үдерісін істей алмаймыз.",
-	"centralauth-uwbr-editcount": "Өңдеме саны",
-	"centralauth-uwbr-intro": "Аттары өзгертілетін мына уикимен тіркелген қатысушыларды  мына бет тізімдейді",
-	"centralauth-uwbr-name": "Қатысушы есімі",
-	"centralauth-uwbr-registration": "Тіркелген уақытыңыз",
-	"centralauth-uwbr-registration-nodate": "Белгісіз",
 	"centralauth-warning-notloggedin": "сіз қазір жүйеге кіріп отырған жоқсыз.",
 	"centralauth-years-ago": "$1 жыл бұрын",
 	"centralautologin": "Орталық кіруі",
@@ -343,6 +338,5 @@
 	"right-globalgrouppermissions": "Ғаламдық топтарды реттеу",
 	"sulrenamewarning-renamed": "Бір шоттақ {{int:Centralauth-groupname}} жазба  системасына автоматты көшірілім барысында {{GENDER:$2|Сіздің}} '''$1''' аккаунтыңыз '''$2'''  деп өзгертілді.",
 	"sulrenamewarning-title": "{{GENDER:$1|Сіздің}} аккаунтыңыз өзгертілді.",
-	"sulrenamewarning-usenew": "{{GENDER:$1|Сіз}} жаңа қатысушы есім «$1» дегенді қолданыңыз  болашақта кірген кезде.",
-	"userswhowillberenamed": "Есімдері өзгертілетін қатысушылар"
+	"sulrenamewarning-usenew": "{{GENDER:$1|Сіз}} жаңа қатысушы есім «$1» дегенді қолданыңыз  болашақта кірген кезде."
 }

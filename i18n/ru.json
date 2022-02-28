@@ -409,11 +409,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунду|секунды|секунд}} назад",
 	"centralauth-state-mismatch": "Ошибка: был обнаружен конфликт редактирования для этого пользователя. Проверьте ваши изменения и повторите попытку.",
 	"centralauth-token-mismatch": "К сожалению, мы не можем продолжить обработку вашей формы, так как были потеряны данные сеанса.",
-	"centralauth-uwbr-editcount": "Число правок",
-	"centralauth-uwbr-intro": "На этой странице перечислены участники, зарегистрированные в этой вики, которые будут переименованы.",
-	"centralauth-uwbr-name": "Имя участника",
-	"centralauth-uwbr-registration": "Дата регистрации",
-	"centralauth-uwbr-registration-nodate": "Неизвестна",
 	"centralauth-warning-notattached": "Локальная учётная запись не присоединена к глобальной.",
 	"centralauth-warning-notloggedin": "Вы не авторизовались.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|года|лет}} назад",
@@ -530,6 +525,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$1|Ваша}} учётная запись была переименована в '''$2''' в процессе автоматической миграции в систему единой учётной записи {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ваша}} учётная запись была переименована",
 	"sulrenamewarning-usenew": "Пожалуйста, используйте {{GENDER:$1|ваше}} новое имя участника '''$1''' при входе в систему в будущем.",
-	"userswhowillberenamed": "Участники, которые будут переименованы",
 	"centralauth-badaccess-blacklisted": "Вы не можете запросить глобальное переименование, поскольку вы находитесь в чёрном списке."
 }

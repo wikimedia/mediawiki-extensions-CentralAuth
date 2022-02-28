@@ -342,10 +342,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सॅकेंड}} पहले",
 	"centralauth-state-mismatch": "त्रुटि: इस सदस्य के लिए एक सम्पादन अंतर्विरोध पाया गया है। कृपया अपने बदलाव जाँचें और पुनः प्रयास करें।",
 	"centralauth-token-mismatch": "क्षमा करें, सेशन डाटा खो जाने के कारण हम आपकी अर्जी प्रोसेस नहीं कर पाए।",
-	"centralauth-uwbr-editcount": "सम्पादन संख्या",
-	"centralauth-uwbr-name": "सदस्यनाम",
-	"centralauth-uwbr-registration": "पंजीकरण तिथि",
-	"centralauth-uwbr-registration-nodate": "अज्ञात",
 	"centralauth-warning-notattached": "स्थानीय खाता वैश्विक खाते से नहीं जुड़ा है।",
 	"centralauth-warning-notloggedin": "आप इस समय लॉग इन नहीं हैं।",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|साल}} पहले",
@@ -431,6 +427,5 @@
 	"right-centralauth-rename": "वैश्विक खातों के पुनः नामकरण करें",
 	"right-centralauth-unmerge": "वैश्विक खाता अलग करें",
 	"right-globalgroupmembership": "वैश्विक सदस्य-समूहों में सदस्यता सम्पादन",
-	"right-globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन",
-	"userswhowillberenamed": "सदस्य जिसका नाम परिवर्तित किया जाएगा"
+	"right-globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन"
 }

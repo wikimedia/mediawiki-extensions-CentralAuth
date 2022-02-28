@@ -394,11 +394,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|ثانیه|ثانیه}} قبل",
 	"centralauth-state-mismatch": "خطا: یک تعارض ویرایشی برای این کاربر شناسایی شد. لطفاً تغییر خود را تأیید کنید و دوباره تلاش نمایید.",
 	"centralauth-token-mismatch": "شرمنده! به علت از دست رفتن اطلاعات نشست کاربری نمی‌توانیم فرم شما را پردازش کنیم.",
-	"centralauth-uwbr-editcount": "شمار ویرایش‌ها",
-	"centralauth-uwbr-intro": "این صفحه کاربرانی که در این ویکی ثبت شده‌اند و تغییر نام  خواهند یافت را فهرست می‌کند.",
-	"centralauth-uwbr-name": "نام کاربری",
-	"centralauth-uwbr-registration": "تاریخ ثبت نام",
-	"centralauth-uwbr-registration-nodate": "نامشخص",
 	"centralauth-warning-notattached": "حساب محلی به یک حساب سراسری نپیوسته است.",
 	"centralauth-warning-notloggedin": "شما در حال حاضر ثبت ورود نشده‌اید.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|سال|سال}} قبل",
@@ -516,6 +511,5 @@
 	"sulrenamewarning-renamed": "ضمن مهاجرت سامانه {{int:Centralauth-groupname}}  به ورود سراسری، نام حساب {{GENDER:$2|شما}} از '''$1''' به '''$2''' تغییر یافت.",
 	"sulrenamewarning-title": "نام حساب {{GENDER:$1|شما}} تغییر یافت",
 	"sulrenamewarning-usenew": "لطفاً از نام کاربری {{GENDER:$1|جدیدتان}}، '''$1'''، برای ورود به سامانه استفاده کنید.",
-	"userswhowillberenamed": "کاربرانی که تغییر نام خواهند یافت",
 	"centralauth-badaccess-blacklisted": "از آنجا که نام شما در فهرست سیاه قرار داد، قادر به درخواست تغییر نام سراسری نیستید."
 }

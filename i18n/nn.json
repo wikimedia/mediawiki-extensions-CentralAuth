@@ -260,8 +260,6 @@
 	"centralauth-ro": "Informasjon for global konto",
 	"centralauth-seconds-ago": "{{PLURAL:$1|Eitt sekund|$1 sekund}} sidan",
 	"centralauth-token-mismatch": "Orsak, skjemaet kunne ikkje bli lagra grunna tap av øktdata.",
-	"centralauth-uwbr-editcount": "Endringstal",
-	"centralauth-uwbr-registration-nodate": "Ukjend",
 	"centralauth-years-ago": "{{PLURAL:$1|Eitt år|$1 år}} sidan",
 	"globalgroupmembership": "Medlemskap i globale grupper",
 	"globalgrouppermissions": "Handsaming av globale grupper",

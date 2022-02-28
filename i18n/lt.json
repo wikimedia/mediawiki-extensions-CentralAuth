@@ -346,11 +346,6 @@
 	"centralauth-seconds-ago": "prieš $1 {{PLURAL:$1|sekundę|sekundes|sekundžių}}",
 	"centralauth-state-mismatch": "Klaida: Šiam vartotojui buvo aptiktas redagavimo konfliktas. Prašome patvirtinti savo pakeitimą ir bandyti iš naujo.",
 	"centralauth-token-mismatch": "Deja, mes negalime apdoroti jūsų pateiktos formos duomenų dėl sesijos duomenų praradimo.",
-	"centralauth-uwbr-editcount": "Pakeitimų skaičius",
-	"centralauth-uwbr-intro": "Šiame puslapyje pateikia užregistruoti viki vartotojai, kurie bus pervadinti.",
-	"centralauth-uwbr-name": "Naudotojo vardas",
-	"centralauth-uwbr-registration": "Registracijos data",
-	"centralauth-uwbr-registration-nodate": "Nežinomas",
 	"centralauth-warning-notattached": "Vietinė paskyra nėra susieta su visuotine.",
 	"centralauth-warning-notloggedin": "Jūs nesate šiuo metu prisijungęs.",
 	"centralauth-years-ago": "prieš $1 {{PLURAL:$1|metus|metus|metų}}",
@@ -450,6 +445,5 @@
 	"right-globalgrouppermissions": "Tvarkyti globaliąsias grupes",
 	"sulrenamewarning-authmanager-ok-help": "Tęsti po pervadinimo pranešimo parodymo.",
 	"sulrenamewarning-title": "{{GENDER:$1|Jūsų}} paskyra buvo pervadinta",
-	"sulrenamewarning-usenew": "Prašome naudoti {{GENDER:$1|savo}} naują vartotojo vardą '''$1''', kai prisijungsite ateityje.",
-	"userswhowillberenamed": "Vartotojai, kurie bus pervadinti"
+	"sulrenamewarning-usenew": "Prašome naudoti {{GENDER:$1|savo}} naują vartotojo vardą '''$1''', kai prisijungsite ateityje."
 }

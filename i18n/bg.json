@@ -309,10 +309,6 @@
 	"centralauth-ro": "Информация за глобалната сметка",
 	"centralauth-seconds-ago": "преди $1 {{PLURAL:$1|секунда|секунди}}",
 	"centralauth-token-mismatch": "За съжаление не успяхме да обработим изпратения формуляр поради загуба на данните за текущата сесия.",
-	"centralauth-uwbr-editcount": "Брой редакции",
-	"centralauth-uwbr-name": "Потребителско име",
-	"centralauth-uwbr-registration": "Дата на регистрация",
-	"centralauth-uwbr-registration-nodate": "Неизвестно",
 	"centralauth-warning-notattached": "Локалната сметка не е свързана с глобална.",
 	"centralauth-warning-notloggedin": "В момента не сте влезли.",
 	"centralauth-years-ago": "преди $1 {{PLURAL:$1|година|години}}",
@@ -385,6 +381,5 @@
 	"right-centralauth-rename": "Преименуване на глобални сметки",
 	"right-centralauth-unmerge": "Разделяне на глобалната сметка",
 	"right-globalgroupmembership": "Промяна на членството в глобални групи",
-	"right-globalgrouppermissions": "Управление на глобалните групи",
-	"userswhowillberenamed": "Потребители, които ще бъдат преименувани"
+	"right-globalgrouppermissions": "Управление на глобалните групи"
 }

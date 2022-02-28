@@ -401,11 +401,6 @@
 	"centralauth-seconds-ago": "$1 秒前",
 	"centralauth-state-mismatch": "錯誤：己偵測到此使用者的編輯衝突。 請檢查您的變更並再試一次。",
 	"centralauth-token-mismatch": "抱歉，由於連線階段的資料遺失，我們無法處理你送出的表單",
-	"centralauth-uwbr-editcount": "編輯次數",
-	"centralauth-uwbr-intro": "此頁面列出在此 wiki 註冊的使用者中將要重新命名的使用者。",
-	"centralauth-uwbr-name": "使用者名稱",
-	"centralauth-uwbr-registration": "註冊日期",
-	"centralauth-uwbr-registration-nodate": "不明",
 	"centralauth-warning-notattached": "該本地帳號未連結到全域帳號。",
 	"centralauth-warning-notloggedin": "您目前尚未登入。",
 	"centralauth-years-ago": "$1 年前",
@@ -535,6 +530,5 @@
 	"sulrenamewarning-renamed": "在自動移轉至 {{int:Centralauth-groupname}} 的整合登入系統時已重新命名{{GENDER:$2|您的}}帳號 '''$1''' 至 '''$2'''。",
 	"sulrenamewarning-title": "已重新命名{{GENDER:$1|您的}}帳號",
 	"sulrenamewarning-usenew": "往後在登入時請使用{{GENDER:$1|您的}}新使用者名稱 '''$1'''。",
-	"userswhowillberenamed": "將會被重新命名的使用者",
 	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。"
 }

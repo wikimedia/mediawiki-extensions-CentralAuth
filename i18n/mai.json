@@ -217,10 +217,6 @@
 	"centralauth-rightslog-set-optout": "ऑप्ट-आउट आधारित",
 	"centralauth-ro": "वैश्विक खाता जानकारी",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सेकेन्ड}} पहिने",
-	"centralauth-uwbr-editcount": "सम्पादन संख्या",
-	"centralauth-uwbr-name": "प्रयोक्ता नाम",
-	"centralauth-uwbr-registration": "दर्ता तिथि",
-	"centralauth-uwbr-registration-nodate": "अज्ञात",
 	"centralauth-warning-notattached": "स्थानीय खाता वैश्विक खाता सs नै जुड़ल अछि।",
 	"centralauth-warning-notloggedin": "अपने ई समय लॉग इन नैं छि ।",
 	"centralautologin": "विश्वव्यापी सम्प्रवेश",
@@ -279,6 +275,5 @@
 	"right-centralauth-rename": "वैश्विक खाता कs नाम बदलु",
 	"right-centralauth-unmerge": "विश्वव्यापी खाता अलग करी",
 	"right-globalgroupmembership": "विश्वव्यापी सदस्य-समूहमे सदस्यता सम्पादन",
-	"right-globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन करु",
-	"userswhowillberenamed": "नाम बदले जाई वाला प्रयोक्ता सभ"
+	"right-globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन करु"
 }

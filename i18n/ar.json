@@ -383,11 +383,6 @@
 	"centralauth-seconds-ago": "قبل {{PLURAL:$1|ثانية واحدة|ثانيتين|$1 ثوانٍ|$1 ثانية}}",
 	"centralauth-state-mismatch": "خطأ: هناك تعارض في التحرير لهذا المستخدم. الرجاء التأكد من تغييراتك والمحاولة مرة أخرى.",
 	"centralauth-token-mismatch": "عذرا، لم نستطع معالجة طلبك نتيجة لفقد بيانات الجلسة.",
-	"centralauth-uwbr-editcount": "عدد التعديلات",
-	"centralauth-uwbr-intro": "تسرد هذه الصفحة المستخدمين المسجلين في ويكي الذين ستتم إعادة تسميتهم.",
-	"centralauth-uwbr-name": "اسم المستخدم",
-	"centralauth-uwbr-registration": "تاريخ التسجيل",
-	"centralauth-uwbr-registration-nodate": "غير معروف",
 	"centralauth-warning-notattached": "الحساب المحلي غير مرتبط بحساب موحد.",
 	"centralauth-warning-notloggedin": "أنت غير مسجل الدخول حاليا",
 	"centralauth-years-ago": "قبل {{PLURAL:$1||سنة واحدة|سنتين|$1 سنين|$1 سنة}}",
@@ -502,6 +497,5 @@
 	"sulrenamewarning-renamed": "تم تغيير اسم {{GENDER:$1|حسابك|حسابكِ}} «$1» إلى «$2» خلال الانتقال الآلي إلى نظام الدخول الموحد لل{{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "تم تغيير اسم {{GENDER:$1|حسابك|حسابكِ}}",
 	"sulrenamewarning-usenew": "من فضلك، استخدم اسم حساب{{GENDER:$1|ك|كِ}} الجديد '''$1''' لتسجيل الدخول في المستقبل.",
-	"userswhowillberenamed": "المستخدمون الذين ستتم إعادة تسميتهم",
 	"centralauth-badaccess-blacklisted": "لا يمكنك طلب عملية إعادة تسمية عالمية، لأنك على قائمة سوداء."
 }

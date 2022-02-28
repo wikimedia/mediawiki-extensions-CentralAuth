@@ -393,11 +393,6 @@
 	"centralauth-seconds-ago": "$1{{PLURAL:$1|초}} 전",
 	"centralauth-state-mismatch": "오류: 이 사용자에 대한 편집 충돌을 감지했습니다. 바뀜을 확인하고 다시 시도하세요.",
 	"centralauth-token-mismatch": "죄송합니다. 세션 데이터 손실로 양식을 제출하지 못했습니다.",
-	"centralauth-uwbr-editcount": "편집 수",
-	"centralauth-uwbr-intro": "이 문서는 이 위키에 등록된 사용자 중 이름이 바뀔 사용자를 나열하고 있습니다.",
-	"centralauth-uwbr-name": "사용자 이름",
-	"centralauth-uwbr-registration": "등록 날짜",
-	"centralauth-uwbr-registration-nodate": "알 수 없음",
 	"centralauth-warning-notattached": "로컬 계정이 통합 계정에 묶여있지 않습니다.",
 	"centralauth-warning-notloggedin": "현재 로그인하고 있지 않습니다.",
 	"centralauth-years-ago": "$1{{PLURAL:$1|년}} 전",
@@ -510,6 +505,5 @@
 	"sulrenamewarning-authmanager-ok-help": "이름 바꾸기 알림을 표시한 뒤 계속합니다.",
 	"sulrenamewarning-renamed": "{{GENDER:$2|당신의}} 계정인 '''$1'''이(가) {{int:Centralauth-groupname}}의 통합 계정 자동 병합 과정에서'''$2'''(으)로 바뀌었습니다.",
 	"sulrenamewarning-title": "{{GENDER:$1|당신의}} 계정 이름이 바뀜",
-	"sulrenamewarning-usenew": "앞으로는 {{GENDER:$1}}새 사용자 계정 이름인 '''$1'''을(를) 사용해주세요.",
-	"userswhowillberenamed": "계정 이름이 바뀔 사용자"
+	"sulrenamewarning-usenew": "앞으로는 {{GENDER:$1}}새 사용자 계정 이름인 '''$1'''을(를) 사용해주세요."
 }

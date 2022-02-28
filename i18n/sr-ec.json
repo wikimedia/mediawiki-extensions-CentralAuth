@@ -331,10 +331,6 @@
 	"centralauth-ro": "Подаци о глобалном налогу",
 	"centralauth-seconds-ago": "пре $1 {{PLURAL:$1|секунде|секунде|секунди}}",
 	"centralauth-token-mismatch": "Нажалост, не можемо да обрадимо поднесени образац због губитка података о сесији.",
-	"centralauth-uwbr-editcount": "Број измена",
-	"centralauth-uwbr-name": "Корисничко име",
-	"centralauth-uwbr-registration": "Датум регистрације",
-	"centralauth-uwbr-registration-nodate": "Непознато",
 	"centralauth-warning-notattached": "Локални налог није повезан с глобалним.",
 	"centralauth-warning-notloggedin": "Тренутно нисте пријављени.",
 	"centralauth-years-ago": "пре {{PLURAL:$1|годину дана|$1 године|$1 година}}",
@@ -418,6 +414,5 @@
 	"right-globalgrouppermissions": "управљање глобалним групама",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Ваш}} налог '''$1''' је аутоматски преименован у '''$2''' у склопу преласка на SUL систем {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ваш}} налог је преименован",
-	"sulrenamewarning-usenew": "Убудуће за пријављивање користите {{GENDER:$1|ваше}} ново корисничко име '''$1'''.",
-	"userswhowillberenamed": "Корисници који ће бити преименовани"
+	"sulrenamewarning-usenew": "Убудуће за пријављивање користите {{GENDER:$1|ваше}} ново корисничко име '''$1'''."
 }

@@ -374,11 +374,6 @@
 	"centralauth-seconds-ago": "cách đây $1 giây",
 	"centralauth-state-mismatch": "Lỗi: Đã phát hiện mâu thuẫn sửa đổi cho người dùng này. Xin vui lòng kiểm tra thay đổi của bạn và thử lại.",
 	"centralauth-token-mismatch": "Rất tiếc, chúng tôi không thể thực hiện yêu cầu của bạn do mất dữ liệu phiên làm việc.",
-	"centralauth-uwbr-editcount": "Số lần sửa đổi",
-	"centralauth-uwbr-intro": "Đây là danh sách các thành viên có tài khoản trên wiki này mà sẽ được đổi tên.",
-	"centralauth-uwbr-name": "Tên người dùng",
-	"centralauth-uwbr-registration": "Lúc mở tài khoản",
-	"centralauth-uwbr-registration-nodate": "Không rõ",
 	"centralauth-warning-notattached": "Tài khoản địa phương chưa được đính kèm vào một tài khoản toàn cục.",
 	"centralauth-warning-notloggedin": "Bạn hiện không đăng nhập.",
 	"centralauth-years-ago": "cách đây $1 năm",
@@ -496,6 +491,5 @@
 	"sulrenamewarning-renamed": "Tài khoản '''$1''' của bạn đã được đổi tên thành '''$2''' trong quá trình chuyển đổi qua hệ thống tài khoản hợp nhất của {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "Tài khoản của {{GENDER:$1}}bạn đã được đổi tên",
 	"sulrenamewarning-usenew": "Xin vui lòng đăng nhập từ nay với tên người dùng mới '''$1'''.",
-	"userswhowillberenamed": "Các thành viên sẽ được đổi tên",
 	"centralauth-badaccess-blacklisted": "Bạn không thể yêu cầu đổi tên toàn cục, vì bạn đang nằm trong danh sách cấm."
 }

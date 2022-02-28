@@ -306,9 +306,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} хьалха",
 	"centralauth-state-mismatch": "ГӀалат: хӀокху декъашхочун карина тадаран доьвнаш. Хьайн хийцамашка хьаже йуха гӀорта.",
 	"centralauth-token-mismatch": "Хьан форма кечян цало, сеансан хаамаш байна хилар бахьнехь.",
-	"centralauth-uwbr-editcount": "Нисдарийн дукхалла",
-	"centralauth-uwbr-name": "Декъашхочун цӀе",
-	"centralauth-uwbr-registration": "Регистрацийина терахь",
 	"centralauth-warning-notattached": "Локалан дӀайаздар глобалан йукъатоьхна дац.",
 	"centralauth-warning-notloggedin": "ЦӀарца доцуш",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|шо}} хьалха",
@@ -364,6 +361,5 @@
 	"right-centralauth-rename": "Глобалан декъашхойн цӀерш хийцар",
 	"right-centralauth-unmerge": "Глобалан дӀайаздарш вовшахдахар",
 	"right-globalgroupmembership": "глобалан тобанаш чохь дакъалацар хийцар",
-	"right-globalgrouppermissions": "глобалан тобанашна урхалладар",
-	"userswhowillberenamed": "ЦӀерш хуьйцур йолу декъашхой"
+	"right-globalgrouppermissions": "глобалан тобанашна урхалладар"
 }

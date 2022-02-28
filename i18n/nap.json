@@ -335,11 +335,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|seconde}} fà",
 	"centralauth-state-mismatch": "Errore: Nce sta nu conflitto 'e cagnamiente pe' st'utente. Pe' piacere cuntrullate 'e cagnamiente vuoste 'e provate n'ata vota.",
 	"centralauth-token-mismatch": "Ce dispiace, nun se pùo prucessà 'o modulo 'e sottoscrizione vuoste pecchè se so' sperdute 'e date d' 'a sessiona.",
-	"centralauth-uwbr-editcount": "Cagna cunto",
-	"centralauth-uwbr-intro": "Sta paggena elenca ll'utente riggistrate int'a sta wiki ca sarranno renommenate.",
-	"centralauth-uwbr-name": "Paggena utente",
-	"centralauth-uwbr-registration": "Data 'e riggistrazione",
-	"centralauth-uwbr-registration-nodate": "Scanusciuto",
 	"centralauth-warning-notattached": "'O cunto lucale nun è accucchiato a nu cunto globbale.",
 	"centralauth-warning-notloggedin": "Mo nun site trasuto/a.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|anne}} fà",
@@ -434,6 +429,5 @@
 	"right-globalgrouppermissions": "Gestisce 'e gruppe globbale",
 	"sulrenamewarning-renamed": "{{GENDER:$2|'O cunto vuosto}} '''$1''' è stato renommenato '''$2''' pe' tramente ca se faceva 'a migrazione a 'o sistema d'accesso aunito {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|'O cunto vuosto}} è stato renommenato",
-	"sulrenamewarning-usenew": "Pe' piacere ausate {{GENDER:$1|'o}} nomme utente '''$1''' d' 'o vuosto quanno facerrate login p' 'o futuro.",
-	"userswhowillberenamed": "Utente ca se renommenarrano"
+	"sulrenamewarning-usenew": "Pe' piacere ausate {{GENDER:$1|'o}} nomme utente '''$1''' d' 'o vuosto quanno facerrate login p' 'o futuro."
 }

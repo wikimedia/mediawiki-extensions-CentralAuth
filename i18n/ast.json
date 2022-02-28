@@ -354,11 +354,6 @@
 	"centralauth-seconds-ago": "hai $1 {{PLURAL:$1|segundu|segundos}}",
 	"centralauth-state-mismatch": "Error: Detectose un conflictu d'edición pa esti usuariu. Por favor compruebe'l cambiu y vuelva a intentalo.",
 	"centralauth-token-mismatch": "Sentímoslo, nun se pudo procesar el to formulariu pol mor una perda de datos de la sesión.",
-	"centralauth-uwbr-editcount": "Contador d'ediciones",
-	"centralauth-uwbr-intro": "Esta páxina amuesa la llista de los usuarios rexistraos n'esta wiki que van renomase.",
-	"centralauth-uwbr-name": "Nome d'usuariu",
-	"centralauth-uwbr-registration": "Data de rexistru",
-	"centralauth-uwbr-registration-nodate": "Desconocida",
 	"centralauth-warning-notattached": "La cuenta llocal nun ta xunida con una global.",
 	"centralauth-warning-notloggedin": "Nun anició sesión.",
 	"centralauth-years-ago": "hai $1 {{PLURAL:$1|añu|años}}",
@@ -469,6 +464,5 @@
 	"sulrenamewarning-renamed": "La {{GENDER:$2|to}} cuenta '''$1''' cambióse de nome a '''$2''' demientres la migración automática al sistema de cuenta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|La to cuenta}} cambióse de nome",
 	"sulrenamewarning-usenew": "Usa'l nome d'{{GENDER:$1|usuariu|usuaria}} nuevu '''$1''' cuando anicies sesión nel futuru.",
-	"userswhowillberenamed": "Usuarios que van renomase",
 	"centralauth-badaccess-blacklisted": "Nun pues solicitar un cambiu de nome global porque tas nuna llista negra."
 }

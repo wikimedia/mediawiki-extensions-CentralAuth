@@ -393,11 +393,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekund|sekunder}} sedan",
 	"centralauth-state-mismatch": "Fel: En redigeringskonflikt för denna användare upptäcktes. Var god kontrollera din ändring och försök igen.",
 	"centralauth-token-mismatch": "Beklagar, formuläret kunde inte behandlas på grund av förlorad sessionsdata.",
-	"centralauth-uwbr-editcount": "Antal redigeringar",
-	"centralauth-uwbr-intro": "Denna sida listar användare registrerade på denna wiki som kommer att döpas om.",
-	"centralauth-uwbr-name": "Användarnamn",
-	"centralauth-uwbr-registration": "Registreringsdatum",
-	"centralauth-uwbr-registration-nodate": "Okänt",
 	"centralauth-warning-notattached": "Det lokala kontot är inte kopplat till ett globalt.",
 	"centralauth-warning-notloggedin": "Du är för närvarande inte inloggad.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år}} sedan",
@@ -515,6 +510,5 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|Ditt}} konto '''$1''' har bytt namn till '''$2''' under en automatisk migration till det sammanslagna inloggningssystemet av {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ditt}} konto har bytt namn",
 	"sulrenamewarning-usenew": "Vänligen använd {{GENDER:$1|ditt}} nya användarnamn '''$1''' när du loggar in i framtiden.",
-	"userswhowillberenamed": "Användare som kommer att döpas om",
 	"centralauth-badaccess-blacklisted": "Du kan inte be om en global namnändring då du är på en svartlista."
 }

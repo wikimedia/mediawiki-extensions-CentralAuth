@@ -339,7 +339,6 @@
 	"centralauth-seconds-ago": "acum $1 {{PLURAL:$1|secundă|secunde}}",
 	"centralauth-state-mismatch": "Eroare: S-a detectat un conflict de modificare pentru acest utilizator. Vă rugăm să vă verificați modificarea și să încercați din nou.",
 	"centralauth-token-mismatch": "Ne pare rău, nu am putut procesa formularul trimis datorită unei pierderi de date din această sesiune.",
-	"centralauth-uwbr-editcount": "Contor de modificări",
 	"centralauth-warning-notattached": "Contul local nu este atașat unuia global.",
 	"centralauth-warning-notloggedin": "Nu sunteți autentificat în acest moment.",
 	"centralauth-years-ago": "acum $1 {{PLURAL:$1|an|ani}}",
@@ -380,6 +379,5 @@
 	"right-centralauth-rename": "Redenumește conturi globale",
 	"right-centralauth-unmerge": "Dezunificarea contului global",
 	"right-globalgroupmembership": "Modificarea apartenenței la grupuri globale",
-	"right-globalgrouppermissions": "Administrează grupurile globale",
-	"userswhowillberenamed": "Utilizatori care vor fi redenumiți"
+	"right-globalgrouppermissions": "Administrează grupurile globale"
 }

@@ -374,6 +374,5 @@
 	"right-centralauth-rename": "เปลี่ยนชื่อบัญชีกลาง",
 	"right-centralauth-unmerge": "ยกเลิกการรวมบัญชีกลาง",
 	"right-globalgroupmembership": "แก้ไขการเป็นสมาชิกในกลุ่มกลาง",
-	"right-globalgrouppermissions": "จัดการกลุ่มกลาง",
-	"userswhowillberenamed": "ผู้ใช้ที่จะถูกเปลี่ยนชื่อ"
+	"right-globalgrouppermissions": "จัดการกลุ่มกลาง"
 }

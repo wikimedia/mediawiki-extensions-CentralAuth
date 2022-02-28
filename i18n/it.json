@@ -34,6 +34,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
 	"action-centralauth-createlocal": "forzare la creazione di un'utenza locale",
 	"action-centralauth-lock": "bloccare o sbloccare le utenze globali",
+	"action-centralauth-suppress": "sopprimere o nascondere utenze globali",
 	"action-centralauth-rename": "rinominare gli utenti globalmente",
 	"centralauth": "Amministrazione dell'utenza globale",
 	"centralauth-abortlogin-renamed": "La tua utenza è stata rinominata in \"$1\". Usa questo nome.",
@@ -378,11 +379,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|secondi}} fa",
 	"centralauth-state-mismatch": "Errore: è stato rilevato un conflitto di modifica per questo utente. Verifica la tua modifica e prova di nuovo.",
 	"centralauth-token-mismatch": "Spiacente, non possiamo processare la tua sottoscrizione del form per una perdita dei dati di sessione.",
-	"centralauth-uwbr-editcount": "Conteggio delle modifiche",
-	"centralauth-uwbr-intro": "Questa pagina elenca gli utenti registrati con questa wiki che saranno rinominati.",
-	"centralauth-uwbr-name": "Nome utente",
-	"centralauth-uwbr-registration": "Data di registrazione",
-	"centralauth-uwbr-registration-nodate": "Sconosciuto",
 	"centralauth-warning-notattached": "L'utenza locale non è collegata ad una globale.",
 	"centralauth-warning-notloggedin": "Attualmente non sei connesso.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|anni}} fa",
@@ -485,6 +481,7 @@
 	"right-centralauth-createlocal": "Forza la creazione di utenze locali per utenze globali",
 	"right-centralauth-lock": "Blocca o sblocca utenze globali",
 	"right-centralauth-merge": "Unifica le proprie utenze",
+	"right-centralauth-suppress": "Sopprime o nasconde utenze globali",
 	"right-centralauth-oversight": "Elimina o nasconde l'utenza globale",
 	"right-centralauth-rename": "Rinomina gli utenti globalmente",
 	"right-centralauth-unmerge": "Scollega dalle utenze globali",
@@ -494,6 +491,5 @@
 	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken",
 	"sulrenamewarning-renamed": "{{GENDER:$2|La tua}} utenza '''$1''' è stata rinominata in '''$2''' durante la migrazione automatica al sistema di accesso unificato di {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|La tua}} utenza è stata rinominata",
-	"sulrenamewarning-usenew": "Si prega di utilizzare {{GENDER:$1|il tuo}} nuovo nome utente '''$1''' quando in futuro effettui l'accesso.",
-	"userswhowillberenamed": "Utenti che saranno rinominati"
+	"sulrenamewarning-usenew": "Si prega di utilizzare {{GENDER:$1|il tuo}} nuovo nome utente '''$1''' quando in futuro effettui l'accesso."
 }

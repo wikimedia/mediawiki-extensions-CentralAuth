@@ -302,7 +302,7 @@
 	"centralauth-prefs-view": "Vaata globaalse konto teavet",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Loe veel '''ühtse sisselogimise''' kohta]]…''",
 	"centralauth-readonly": "CentralAuthi andmebaas on lukustatud.",
-	"centralauth-readonlytext": "CentralAuthi andmebaas on praegu lukus ning uusi sissekandeid ja muid muudatusi ei saa teha. Arvatavasti on tegu plaanipärase hooldustööga, mille järel taastatakse andmebaasi tavaseisund.",
+	"centralauth-readonlytext": "CentralAuthi andmebaas on praegu lukus ning uusi sissekandeid ja muid muudatusi ei saa teha. Arvatavasti on tegu plaanipärase hooldustööga, mille järel taastatakse andmebaasi tavaseisund.\n\nLukustuse seadnud süsteemiadministraator tõi ära järgmise põhjuse: $1",
 	"centralauth-rename-abortlogin": "Sinu kontot nimetatakse parasjagu ümber või ühendatakse. [[Special:GlobalRenameProgress/$1|Vaata seisu]].",
 	"centralauth-rename-alreadyexists": "Soovitud kasutajanimi on juba olemas.",
 	"centralauth-rename-alreadyinprogress": "Selle kasutaja ümbernimetamine juba [[Special:GlobalRenameProgress/$1|käib]].",
@@ -348,11 +348,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|ühe|$1}} sekundi eest",
 	"centralauth-state-mismatch": "Tõrge: Sattusid selle kasutajaga seoses redigeerimiskonflikti. Palun kontrolli oma muudatust ja proovi uuesti.",
 	"centralauth-token-mismatch": "Läkitatud vormi töötlemine ei õnnestunud seansiandmete kaotsimineku tõttu.",
-	"centralauth-uwbr-editcount": "Redigeerimisi",
-	"centralauth-uwbr-intro": "Sellel leheküljel on loetletud siin vikis registreeritud kasutajad, kelle nimi muudetakse.",
-	"centralauth-uwbr-name": "Kasutajanimi",
-	"centralauth-uwbr-registration": "Registreerunud",
-	"centralauth-uwbr-registration-nodate": "Teadmata",
 	"centralauth-warning-notattached": "Kohalik konto pole ühendatud globaalsega.",
 	"centralauth-warning-notloggedin": "Sa pole praegu sisse logitud.",
 	"centralauth-years-ago": "{{PLURAL:$1|ühe|$1}} aasta eest",
@@ -412,6 +407,7 @@
 	"logentry-gblrename-merge": "$1 {{GENDER:$2|ühendas}} globaalselt konto $4 kontoga $5",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|muutis}} globaalselt kasutaja $4 nime; uus nimi: $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|muutis}} globaalselt kasutaja $4 nime; uus nimi: $5",
+	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|muutis}} globaalse konto \"$3\" seisundit: määratud $4; ärastatud $5",
 	"mergeaccount": "Kontode ühendamise seis",
 	"multilock": "Mitme globaalse konto lukustamine",
 	"right-centralauth-createlocal": "Luua globaalsele kontole kohalik konto sundkorras",
@@ -426,6 +422,5 @@
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-tüüpi seansid",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Sinu}} konto '''$1''' uueks nimeks on automaatselt pandud '''$2'''. Nimemuutus on seotud {{int:Centralauth-groupname}} sisselogimissüsteemi ühtlustamisega.",
 	"sulrenamewarning-title": "{{GENDER:$1|Sinu}} konto on ümber nimetatud",
-	"sulrenamewarning-usenew": "Edaspidi kasuta palun sisselogimiseks uut kasutajanime '''$1'''.",
-	"userswhowillberenamed": "Kasutajad, kelle nimi muudetakse"
+	"sulrenamewarning-usenew": "Edaspidi kasuta palun sisselogimiseks uut kasutajanime '''$1'''."
 }

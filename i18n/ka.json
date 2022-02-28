@@ -317,10 +317,6 @@
 	"centralauth-seconds-ago": "$1 წამის წინ",
 	"centralauth-state-mismatch": "შეცდომა: აღმოჩენილია ამ მომხმარებლის რედაქტირების კონფლიქტი. გთხოვთ, შეამოწმოთ თქვენი ცვლილება და თავიდან სცადოთ.",
 	"centralauth-token-mismatch": "სამწუხაროდ ჩვენ ვერ გავაგრძელებთ თქვენი ფორმის დამუშავებას, რადგანაც სეანსის მონაცემები დაიკარგა.",
-	"centralauth-uwbr-editcount": "რედაქტირებათა მთვლელი",
-	"centralauth-uwbr-name": "მომხმარებლის სახელი",
-	"centralauth-uwbr-registration": "რეგისტრაციის თარიღი",
-	"centralauth-uwbr-registration-nodate": "უცნობი",
 	"centralauth-warning-notattached": "ლოკალური ანგარიში არ არის დაკავშირებული გლობალურთან.",
 	"centralauth-warning-notloggedin": "თქვენ არ ხართ შესული სისტემაში",
 	"centralauth-years-ago": "$1 წლის წინ",
@@ -390,6 +386,5 @@
 	"right-globalgroupmembership": "გლობალურ ჯგუფებში წევრობის გადაკეთება",
 	"right-globalgrouppermissions": "გლობალური ჯგუფების მართვა",
 	"sulrenamewarning-title": "{{GENDER:$1|თქვენი}} ანგარიშის სახელი შეიცვალა",
-	"sulrenamewarning-usenew": "გთხოვთ, სამომავლოდ სისტემაში შესასვლელად გამოიყენოთ {{GENDER:$1|თქვენი}} ახალი მომხმარებლის სახელი '''$1'''.",
-	"userswhowillberenamed": "მომხმარებლები, რომლებიც იქნებიან გადარქმეულები"
+	"sulrenamewarning-usenew": "გთხოვთ, სამომავლოდ სისტემაში შესასვლელად გამოიყენოთ {{GENDER:$1|თქვენი}} ახალი მომხმარებლის სახელი '''$1'''."
 }

@@ -398,11 +398,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|segundo|segundos}} atrás",
 	"centralauth-state-mismatch": "Erro: Um conflito de edição para este usuário foi detectado. Por favor verifique sua mudança e tente novamente.",
 	"centralauth-token-mismatch": "Desculpe, não foi possível processar a sua submissão do formulário devido à perda dos dados da sessão.",
-	"centralauth-uwbr-editcount": "Contagem de edições",
-	"centralauth-uwbr-intro": "Esta página lista os usuários registrados nesta wiki que serão renomeados.",
-	"centralauth-uwbr-name": "Nome de usuário",
-	"centralauth-uwbr-registration": "Data de registro",
-	"centralauth-uwbr-registration-nodate": "Desconhecida",
 	"centralauth-warning-notattached": "A conta local não está associada a uma global.",
 	"centralauth-warning-notloggedin": "Você não esta logado.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ano|anos}} atrás",
@@ -520,6 +515,5 @@
 	"sulrenamewarning-renamed": "A {{GENDER:$2|sua}} conta '''$1''' foi renomeada para '''$2''' durante a migração automática para o sistema de conta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "A {{GENDER:$1|sua}} conta foi renomeada",
 	"sulrenamewarning-usenew": "Por favor, utilize {{GENDER:$1|seu}} novo nome de usuário '''$1''' ao logar no futuro.",
-	"userswhowillberenamed": "Usuários que serão renomeados",
 	"centralauth-badaccess-blacklisted": "Você não pode solicitar uma renomeação global porque está em uma lista negra."
 }

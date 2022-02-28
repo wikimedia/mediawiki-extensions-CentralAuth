@@ -350,11 +350,6 @@
 	"centralauth-seconds-ago": "pred $1 {{PLURAL:$1|sekundo|sekundama|sekundami}}",
 	"centralauth-state-mismatch": "Napaka: Zaznana je bila težava pri urejanju. Prosimo, preveri svoje spremembe in poskusi ponovno.",
 	"centralauth-token-mismatch": "Oprostite, nismo mogli obdelati vašega poslanega obrazca zaradi izgube podatkov o seji.",
-	"centralauth-uwbr-editcount": "Števec urejanj",
-	"centralauth-uwbr-intro": "Ta stran navaja uporabnike, ki so bili registrirani na tem wikiju in ki bodo preimenovani.",
-	"centralauth-uwbr-name": "Uporabniško ime",
-	"centralauth-uwbr-registration": "Datum registracije",
-	"centralauth-uwbr-registration-nodate": "Neznano",
 	"centralauth-warning-notattached": "Lokalni račun ni pripet globalnemu.",
 	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni.",
 	"centralauth-years-ago": "pred $1 {{PLURAL:$1|letom|letoma|leti}}",
@@ -464,6 +459,5 @@
 	"sulrenamewarning-authmanager-ok-help": "Nadaljuj po prikazu obvestila o preimenovanju.",
 	"sulrenamewarning-renamed": "{{GENDER:$2|tvoj}} račun '''$1''' je bil preimenovan v '''$2''' tekom samodejnega prehoda na sistem enotne prijave {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Vaš}} račun je preimenovan",
-	"sulrenamewarning-usenew": "Prosimo, ob prihodnjih prijavah uporabljaj {{GENDER:$1|svoje}} novo uporabniško ime.",
-	"userswhowillberenamed": "Uporabniki, ki bodo preimenovani"
+	"sulrenamewarning-usenew": "Prosimo, ob prihodnjih prijavah uporabljaj {{GENDER:$1|svoje}} novo uporabniško ime."
 }
