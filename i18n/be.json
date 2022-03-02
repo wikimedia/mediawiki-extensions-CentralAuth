@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Artsiom91",
+			"Chadyka",
 			"Kareyac",
 			"Mechanizatar",
 			"Yury Tarasievich",
@@ -12,7 +13,14 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік",
+	"action-centralauth-lock": "замыкаць ці адмыкаць глабальныя рахункі",
+	"action-centralauth-merge": "аб’яднаць свой рахунак",
+	"action-centralauth-suppress": "затойваць ці схаваць глабальны рахунак",
+	"action-centralauth-oversight": "затойваць ці схаваць глабальны рахунак",
+	"action-centralauth-rename": "перайменаваць глабальныя рахункі",
+	"action-centralauth-unmerge": "раз’яднаць глабальныя рахункі",
 	"action-globalgroupmembership": "змяненне членства ў лакальных групах",
+	"action-globalgrouppermissions": "кіраваць глабальнымі групамі",
 	"centralauth": "Менеджар глабальнага ўліковага запісу",
 	"centralauth-admin-blocked-reason": "Прычына: $1",
 	"centralauth-admin-blocklog": "журнал блакіровак",
