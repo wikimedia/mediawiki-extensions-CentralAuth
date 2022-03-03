@@ -122,6 +122,7 @@
 	"centralauth-contribs-locked": "Тази сметка е глобално заключена.\nПовече информация ще намерите в [[Special:CentralAuth/$1|подробностите за глобалната сметка]].",
 	"centralauth-contribs-locked-log": "Тази сметка е глобално заключена.\nЗа справка по-долу е показан последният запис от дневника на заключванията:",
 	"centralauth-createlocal-pretext": "Можете да използвате този формуляр, за да създадете локална потребителска сметка към глобална потребителска сметка, в случай че потребителят не може сам да създаде такава.",
+	"centralauth-createlocal-reason": "Причина",
 	"centralauth-createlocal-username": "Име на глобалната потребителска сметка",
 	"centralauth-days-ago": "преди $1 {{PLURAL:$1|ден|дни}}",
 	"centralauth-delete-empty-account": "Празна сметка",
