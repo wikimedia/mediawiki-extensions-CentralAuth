@@ -100,7 +100,7 @@
 	"centralauth-admin-lookup-rw": "管理使用者帳號",
 	"centralauth-admin-manage": "管理帳號資料",
 	"centralauth-admin-merge": "合併選擇的",
-	"centralauth-admin-multi-bot": "最近變更",
+	"centralauth-admin-multi-bot": "近期變更",
 	"centralauth-admin-multi-botcheck": "將 [[Special:RecentChanges|{{int:recentchanges}}]] 裡的項目標記為機械人的項目。",
 	"centralauth-admin-multi-intro": "一次更新多個全域帳號",
 	"centralauth-admin-multi-notfound": "查無使用者名稱。",
