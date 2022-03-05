@@ -288,12 +288,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 
 		$rqId = array_shift( $pathArgs );
+		if ( !is_numeric( $rqId ) ) {
+			$this->showUnkownRequest();
+			return;
+		}
 		$req = $this->globalRenameRequestStore->newFromId( $rqId );
 		if ( !$req->exists() ) {
-			$this->commonPreamble( 'globalrenamequeue-request-unknown-title' );
-			$this->getOutput()->addWikiMsg(
-				'globalrenamequeue-request-unknown-body'
-			);
+			$this->showUnkownRequest();
 			return;
 		}
 
@@ -313,6 +314,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				$this->doShowProcessForm( $req );
 				break;
 		}
+	}
+
+	private function showUnkownRequest() {
+		$this->commonPreamble( 'globalrenamequeue-request-unknown-title' );
+		$this->getOutput()->addWikiMsg(
+			'globalrenamequeue-request-unknown-body'
+		);
 	}
 
 	protected function doRedirectToOpenQueue() {
