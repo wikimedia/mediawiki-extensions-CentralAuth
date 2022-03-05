@@ -21,8 +21,8 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Extensions\SecurePoll\Hooks\SecurePoll_GetUserParamsHook;
-use MediaWiki\Extensions\SecurePoll\User\LocalAuth;
+use MediaWiki\Extension\SecurePoll\Hooks\SecurePoll_GetUserParamsHook;
+use MediaWiki\Extension\SecurePoll\User\LocalAuth;
 use NamespaceInfo;
 use User;
 use WikiMap;
