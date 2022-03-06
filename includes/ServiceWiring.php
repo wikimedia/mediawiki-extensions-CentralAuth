@@ -1,10 +1,8 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth;
+
 use MediaWiki\Config\ServiceOptions;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
-use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;

@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthHooks;
 use CentralAuthTokenSessionProvider;
 use Config;
 use Html;
+use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\BeforePageDisplayHook;

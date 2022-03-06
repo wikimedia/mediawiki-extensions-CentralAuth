@@ -10,7 +10,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
 
 	/**
-	 * @covers CentralAuthHooks::onUserGetEmailAuthenticationTimestamp
+	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetEmailAuthenticationTimestamp
 	 */
 	public function testLockedEmailDisabled() {
 		$user = User::newFromName( 'GlobalLockedUser' );

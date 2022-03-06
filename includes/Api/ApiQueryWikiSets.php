@@ -27,7 +27,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use ApiBase;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
-use WikiSet;
+use MediaWiki\Extension\CentralAuth\WikiSet;
 
 /**
  * Query module to list the wiki sets

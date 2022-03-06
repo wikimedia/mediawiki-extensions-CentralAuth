@@ -27,7 +27,7 @@ use Wikimedia\TestingAccessWrapper;
  * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::getGlobalRights
  * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::loadGroups
  * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::getClosestGlobalUserGroupExpiry
- * @covers CentralAuthHooks::onUserGetRights
+ * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetRights
  *
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  * @group Database

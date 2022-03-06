@@ -21,9 +21,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use CentralAuthServices;
 use Exception;
 use IDBAccessObject;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;

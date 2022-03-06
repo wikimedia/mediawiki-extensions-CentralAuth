@@ -7,9 +7,9 @@ use LogEventsList;
 use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
+use MediaWiki\Extension\CentralAuth\WikiSet;
 use SpecialPage;
 use Title;
-use WikiSet;
 use Xml;
 use XmlSelect;
 

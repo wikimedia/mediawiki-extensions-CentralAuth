@@ -20,8 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralAuthReadOnlyError;
-use CentralAuthServices;
 use CentralAuthSessionProvider;
 use CentralAuthSpoofUser;
 use DeferredUpdates;
@@ -30,13 +28,16 @@ use Hooks;
 use IContextSource;
 use IDBAccessObject;
 use Job;
-use LocalUserNotFoundException;
 use ManualLogEntry;
 use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\DAO\WikiAwareEntity;
+use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\LocalUserNotFoundException;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
+use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;
@@ -60,7 +61,6 @@ use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IDatabase;
-use WikiSet;
 
 class CentralAuthUser implements IDBAccessObject {
 	/** @var MapCacheLRU Cache of loaded CentralAuthUsers */

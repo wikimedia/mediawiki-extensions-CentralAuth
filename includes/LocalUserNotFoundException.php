@@ -19,6 +19,10 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth;
+
+use Exception;
+
 /**
  * @copyright © 2016 Wikimedia Foundation and contributors
  */

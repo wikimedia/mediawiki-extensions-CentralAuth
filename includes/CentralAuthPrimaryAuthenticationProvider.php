@@ -19,6 +19,12 @@
  * @ingroup Auth
  */
 
+namespace MediaWiki\Extension\CentralAuth;
+
+use CentralAuthAntiSpoofHooks;
+use DeferredUpdates;
+use IBufferingStatsdDataFactory;
+use InvalidPassword;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
@@ -26,10 +32,14 @@ use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
+use ReadOnlyMode;
+use RequestContext;
+use StatusValue;
+use User;
+use WikiMap;
 
 /**
  * A primary authentication provider that uses the CentralAuth password.

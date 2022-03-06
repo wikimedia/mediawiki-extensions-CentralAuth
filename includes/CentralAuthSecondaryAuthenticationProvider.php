@@ -19,9 +19,12 @@
  * @ingroup Auth
  */
 
+namespace MediaWiki\Extension\CentralAuth;
+
 use MediaWiki\Auth\AbstractSecondaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use WikiMap;
 
 /**
  * This implements CentralAuth checks that should be done on all logins, e.g.

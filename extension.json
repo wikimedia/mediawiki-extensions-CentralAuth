@@ -106,7 +106,7 @@
 		}
 	},
 	"ExtensionFunctions": [
-		"CentralAuthHooks::onRunExtensionFunctions"
+		"MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks::onRunExtensionFunctions"
 	],
 	"SpecialPages": {
 		"CentralAuth": {
@@ -369,14 +369,8 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"CentralAuthUtilityService": "includes/CentralAuthUtilityService.php",
 		"CentralAuthServices": "includes/CentralAuthServices.php",
-		"CentralAuthPrimaryAuthenticationProvider": "includes/CentralAuthPrimaryAuthenticationProvider.php",
-		"CentralAuthSecondaryAuthenticationProvider": "includes/CentralAuthSecondaryAuthenticationProvider.php",
-		"CentralAuthHooks": "includes/CentralAuthHooks.php",
-		"LocalUserNotFoundException": "includes/LocalUserNotFoundException.php",
-		"WikiSet": "includes/WikiSet.php",
-		"CentralAuthReadOnlyError": "includes/CentralAuthReadOnlyError.php",
+		"MediaWiki\\Extension\\CentralAuth\\CentralAuthServices": "includes/CentralAuthServices.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
@@ -419,7 +413,7 @@
 				"ext.centralauth.centralautologin.js",
 				{
 					"name": "data.json",
-					"callback": "CentralAuthHooks::getCentralautologinJsData"
+					"callback": "MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks::getCentralautologinJsData"
 				}
 			],
 			"styles": "ext.centralauth.centralautologin.css",
@@ -502,7 +496,7 @@
 			"ext.centralauth.ForeignApi"
 		]
 	},
-	"callback": "CentralAuthHooks::onRegistration",
+	"callback": "MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks::onRegistration",
 	"HookHandlers": {
 		"abusefilter": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\AbuseFilterHookHandler"
@@ -520,7 +514,7 @@
 			]
 		},
 		"default": {
-			"class": "CentralAuthHooks"
+			"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks"
 		},
 		"importhandle": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ImportHandleHookHandler",
@@ -813,7 +807,7 @@
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
 			"CentralAuthPrimaryAuthenticationProvider": {
-				"class": "CentralAuthPrimaryAuthenticationProvider",
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthPrimaryAuthenticationProvider",
 				"sort": 10,
 				"services": [
 					"CentralAuth.CentralAuthDatabaseManager",
@@ -827,7 +821,7 @@
 		},
 		"secondaryauth": {
 			"CentralAuthSecondaryAuthenticationProvider": {
-				"class": "CentralAuthSecondaryAuthenticationProvider",
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthSecondaryAuthenticationProvider",
 				"sort": 0
 			}
 		}

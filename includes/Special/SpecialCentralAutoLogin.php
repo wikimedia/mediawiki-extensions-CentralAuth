@@ -2,16 +2,16 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthHooks;
 use CentralAuthSessionProvider;
-use CentralAuthUtilityService;
 use DeferredUpdates;
 use Exception;
 use ExtensionRegistry;
 use FormatJson;
 use Hooks;
 use Language;
+use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Session\Session;

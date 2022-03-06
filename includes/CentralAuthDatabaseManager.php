@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use CentralAuthReadOnlyError;
 use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
 use ReadOnlyError;

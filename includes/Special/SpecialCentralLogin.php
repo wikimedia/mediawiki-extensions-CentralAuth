@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthHooks;
 use CentralAuthSessionProvider;
-use CentralAuthUtilityService;
 use Exception;
 use Hooks;
 use IBufferingStatsdDataFactory;
 use LoginHelper;
+use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;

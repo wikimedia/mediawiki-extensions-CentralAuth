@@ -20,6 +20,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Permissions\PermissionManager;
 use OutputPage;
 use SpecialPage;
@@ -27,7 +28,6 @@ use Status;
 use Title;
 use User;
 use UserGroupMembership;
-use WikiSet;
 use Xml;
 use XmlSelect;
 

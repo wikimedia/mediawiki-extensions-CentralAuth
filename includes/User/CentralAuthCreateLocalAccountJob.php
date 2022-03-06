@@ -21,9 +21,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralAuthServices;
 use Exception;
 use Job;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Logger\LoggerFactory;
 use RequestContext;
 use Title;

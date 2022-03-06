@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthServices;
 use CommentStore;
 use Html;
 use HTMLForm;
@@ -28,6 +27,7 @@ use Linker;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;

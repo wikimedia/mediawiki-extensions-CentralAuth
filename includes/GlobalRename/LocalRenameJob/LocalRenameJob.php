@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
-use CentralAuthServices;
 use Exception;
 use Job;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;

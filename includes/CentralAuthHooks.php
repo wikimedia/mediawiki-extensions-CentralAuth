@@ -1,40 +1,102 @@
 <?php
+/**
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * @file
+ */
 
+namespace MediaWiki\Extension\CentralAuth;
+
+use CentralAuthSessionProvider;
+use ContentSecurityPolicy;
+use ExtensionRegistry;
+use Hooks;
+use Html;
+use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\CompositeBlock;
+use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
+use MediaWiki\Hook\GetLogTypesOnUserHook;
+use MediaWiki\Hook\MakeGlobalVariablesScriptHook;
+use MediaWiki\Hook\OtherBlockLogLinkHook;
+use MediaWiki\Hook\TestCanonicalRedirectHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\Hook\UserGetRightsHook;
+use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderForeignApiModulesHook;
+use MediaWiki\Session\CookieSessionProvider;
+use MediaWiki\Session\Hook\SessionCheckInfoHook;
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\User\Hook\InvalidateEmailCompleteHook;
+use MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook;
+use MediaWiki\User\Hook\UserArrayFromResultHook;
+use MediaWiki\User\Hook\UserGetEmailAuthenticationTimestampHook;
+use MediaWiki\User\Hook\UserGetEmailHook;
+use MediaWiki\User\Hook\UserGetReservedNamesHook;
+use MediaWiki\User\Hook\UserIsBotHook;
+use MediaWiki\User\Hook\UserIsLockedHook;
+use MediaWiki\User\Hook\UserSaveSettingsHook;
+use MediaWiki\User\Hook\UserSetEmailAuthenticationTimestampHook;
+use MediaWiki\User\Hook\UserSetEmailHook;
 use MediaWiki\User\UserIdentity;
+use Message;
+use MobileContext;
+use OOUI\ButtonWidget;
+use OOUI\HorizontalLayout;
+use OOUI\IconWidget;
+use OutputPage;
+use RequestContext;
+use ResourceLoaderContext;
+use SpecialPage;
+use Title;
+use User;
+use UserArrayFromResult;
+use WebRequest;
+use WikiMap;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IResultWrapper;
+use Xml;
 
 class CentralAuthHooks implements
-	MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook,
-	MediaWiki\Block\Hook\GetUserBlockHook,
-	MediaWiki\Hook\MakeGlobalVariablesScriptHook,
-	MediaWiki\Hook\OtherBlockLogLinkHook,
-	MediaWiki\Hook\TestCanonicalRedirectHook,
-	MediaWiki\Permissions\Hook\UserGetRightsHook,
-	MediaWiki\Preferences\Hook\GetPreferencesHook,
-	MediaWiki\ResourceLoader\Hook\ResourceLoaderForeignApiModulesHook,
-	MediaWiki\Session\Hook\SessionCheckInfoHook,
-	MediaWiki\Hook\GetLogTypesOnUserHook,
-	MediaWiki\User\Hook\InvalidateEmailCompleteHook,
-	MediaWiki\User\Hook\SpecialPasswordResetOnSubmitHook,
-	MediaWiki\User\Hook\UserArrayFromResultHook,
-	MediaWiki\User\Hook\UserGetEmailAuthenticationTimestampHook,
-	MediaWiki\User\Hook\UserGetEmailHook,
-	MediaWiki\User\Hook\UserGetReservedNamesHook,
-	MediaWiki\User\Hook\UserIsBotHook,
-	MediaWiki\User\Hook\UserIsLockedHook,
-	MediaWiki\User\Hook\UserSaveSettingsHook,
-	MediaWiki\User\Hook\UserSetEmailAuthenticationTimestampHook,
-	MediaWiki\User\Hook\UserSetEmailHook
+	ApiQueryTokensRegisterTypesHook,
+	GetUserBlockHook,
+	MakeGlobalVariablesScriptHook,
+	OtherBlockLogLinkHook,
+	TestCanonicalRedirectHook,
+	UserGetRightsHook,
+	GetPreferencesHook,
+	ResourceLoaderForeignApiModulesHook,
+	SessionCheckInfoHook,
+	GetLogTypesOnUserHook,
+	InvalidateEmailCompleteHook,
+	SpecialPasswordResetOnSubmitHook,
+	UserArrayFromResultHook,
+	UserGetEmailAuthenticationTimestampHook,
+	UserGetEmailHook,
+	UserGetReservedNamesHook,
+	UserIsBotHook,
+	UserIsLockedHook,
+	UserSaveSettingsHook,
+	UserSetEmailAuthenticationTimestampHook,
+	UserSetEmailHook
 {
 
 	/**
@@ -51,10 +113,10 @@ class CentralAuthHooks implements
 
 		// CentralAuthSessionProvider is supposed to replace core
 		// CookieSessionProvider, so remove the latter if both are configured
-		if ( isset( $wgSessionProviders[MediaWiki\Session\CookieSessionProvider::class] ) &&
+		if ( isset( $wgSessionProviders[CookieSessionProvider::class] ) &&
 			isset( $wgSessionProviders[CentralAuthSessionProvider::class] )
 		) {
-			unset( $wgSessionProviders[MediaWiki\Session\CookieSessionProvider::class] );
+			unset( $wgSessionProviders[CookieSessionProvider::class] );
 		}
 
 		// Assume they want CentralAuth as the default central ID provider, unless
@@ -205,19 +267,19 @@ class CentralAuthHooks implements
 
 		if ( $unattached && $user->isAllowed( 'centralauth-merge' ) ) {
 			// Add "Manage your global account" button
-			$manageButtons[] = new \OOUI\ButtonWidget( [
+			$manageButtons[] = new ButtonWidget( [
 				'href' => SpecialPage::getTitleFor( 'MergeAccount' )->getLinkURL(),
 				'label' => wfMessage( 'centralauth-prefs-manage' )->text(),
 			] );
 		}
 
 		// Add "View your global account info" button
-		$manageButtons[] = new \OOUI\ButtonWidget( [
+		$manageButtons[] = new ButtonWidget( [
 			'href' => SpecialPage::getTitleFor( 'CentralAuth', $user->getName() )->getLinkURL(),
 			'label' => wfMessage( 'centralauth-prefs-view' )->text(),
 		] );
 
-		$manageLinkList = (string)( new \OOUI\HorizontalLayout( [ 'items' => $manageButtons ] ) );
+		$manageLinkList = (string)( new HorizontalLayout( [ 'items' => $manageButtons ] ) );
 
 		$preferences['globalaccountstatus'] = [
 			'section' => 'personal/info',
@@ -229,7 +291,7 @@ class CentralAuthHooks implements
 
 		// Display a notice about the user account status with an alert icon
 		if ( isset( $message ) ) {
-			$messageIconWidget = (string)new \OOUI\IconWidget( [
+			$messageIconWidget = (string)new IconWidget( [
 				'icon' => 'alert',
 				'flags' => [ 'destructive' ]
 			] );
