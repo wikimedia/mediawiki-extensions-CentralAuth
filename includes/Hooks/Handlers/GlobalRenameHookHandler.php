@@ -22,9 +22,9 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use ErrorPageError;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use RenameUserCompleteHook;
-use RenameUserPreRenameHook;
-use RenameUserWarningHook;
+use MediaWiki\Extension\Renameuser\Hook\RenameUserCompleteHook;
+use MediaWiki\Extension\Renameuser\Hook\RenameUserPreRenameHook;
+use MediaWiki\Extension\Renameuser\Hook\RenameUserWarningHook;
 use WikiMap;
 
 class GlobalRenameHookHandler implements
