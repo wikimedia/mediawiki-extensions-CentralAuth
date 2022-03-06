@@ -66,7 +66,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			if ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE
-				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
+				|| $audience === null || $audience->isAllowed( 'centralauth-suppress' )
 			) {
 				$idToName[$centralUser->getId()] = $centralUser->getName();
 			} else {
@@ -103,7 +103,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			if ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE
-				|| $audience === null || $audience->isAllowed( 'centralauth-oversight' )
+				|| $audience === null || $audience->isAllowed( 'centralauth-suppress' )
 			) {
 				$nameToId[$centralUser->getName()] = $centralUser->getId();
 			}

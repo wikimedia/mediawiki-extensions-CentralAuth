@@ -35,7 +35,7 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var bool */
 	private $mCanLock;
 	/** @var bool */
-	private $mCanOversight;
+	private $mCanSuppress;
 	/** @var bool */
 	private $mCanEdit;
 	/** @var bool */
@@ -113,8 +113,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$authority = $this->getContext()->getAuthority();
 		$this->mCanUnmerge = $authority->isAllowed( 'centralauth-unmerge' );
 		$this->mCanLock = $authority->isAllowed( 'centralauth-lock' );
-		$this->mCanOversight = $authority->isAllowed( 'centralauth-oversight' );
-		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanOversight;
+		$this->mCanSuppress = $authority->isAllowed( 'centralauth-suppress' );
+		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanSuppress;
 		$this->mCanChangeGroups = $authority->isAllowed( 'globalgroupmembership' );
 
 		$this->getOutput()->setPageTitle(
@@ -177,7 +177,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mGlobalUser = $globalUser;
 
 		if ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) &&
-			!$this->mCanOversight
+			!$this->mCanSuppress
 		) {
 			// Claim that there's nothing if the global account is hidden and the user is not
 			// allowed to see it.
@@ -414,7 +414,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$attribs['locked'] = $this->msg( 'centralauth-admin-yes' )->escaped();
 		}
 
-		if ( $this->mCanOversight ) {
+		if ( $this->mCanSuppress ) {
 			$attribs['hidden'] = $this->uiService->formatHiddenLevel(
 				$this->getContext(),
 				$globalUser->getHiddenLevelInt()
@@ -971,7 +971,7 @@ class SpecialCentralAuth extends SpecialPage {
 				(string)CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'mw-centralauth-status-hidden-no',
 				$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_NONE );
-		if ( $this->mCanOversight ) {
+		if ( $this->mCanSuppress ) {
 			$radioHidden .= '<br />' .
 				Xml::radioLabel(
 					$this->msg( 'centralauth-admin-status-hidden-list' )->text(),
@@ -1030,7 +1030,7 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 		$logTypes = [ 'globalauth' ];
-		if ( $this->mCanOversight ) {
+		if ( $this->mCanSuppress ) {
 			$logTypes[] = 'suppress';
 		}
 		$text = '';
