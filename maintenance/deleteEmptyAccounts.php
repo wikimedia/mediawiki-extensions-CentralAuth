@@ -112,7 +112,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		try {
 			$unattached = $central->queryUnattached();
 		} catch ( Exception $e ) {
-			// This might happen due to localnames inconsistencies (bug 67350)
+			// This might happen due to localnames inconsistencies (T69350)
 			$this->output( "ERROR: [$username] Fetching unattached accounts failed.\n" );
 			return;
 		}

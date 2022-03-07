@@ -971,7 +971,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		) {
 			$allGroups = $this->globalGroupLookup->getDefinedGroups();
 
-			# specify addself and removeself as empty arrays -- bug 16098
+			# specify addself and removeself as empty arrays - T18098
 			return [
 				'add' => $allGroups,
 				'remove' => $allGroups,
