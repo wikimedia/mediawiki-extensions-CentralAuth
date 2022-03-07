@@ -162,7 +162,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->getSkin()->setRelevantUser( $localUser );
 		}
 
-		// per bug 47991
+		// per T49991
 		$this->getOutput()->setHTMLTitle( $this->msg(
 			'pagetitle',
 			$this->msg(

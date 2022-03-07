@@ -115,7 +115,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				break;
 
 			case 'available':
-				// TODO: ajax name availability check (bug 70623)
+				// TODO: ajax name availability check (T72623)
 				break;
 
 			default:

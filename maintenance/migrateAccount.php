@@ -157,7 +157,7 @@ class MigrateAccount extends Maintenance {
 		try {
 			$unattached = $central->queryUnattached();
 		} catch ( Exception $e ) {
-			// This might happen due to localnames inconsistencies (bug 67350)
+			// This might happen due to localnames inconsistencies (T69350)
 			$this->output( "ERROR: Fetching unattached accounts for $username failed." );
 			return;
 		}
@@ -184,7 +184,7 @@ class MigrateAccount extends Maintenance {
 			}
 
 			if ( $this->getOption( 'attachbroken', false ) ) {
-				// This option is for bug 61876 / bug 39996 where the account has
+				// This option is for T63876 / T41996 where the account has
 				// an empty password and email set, and became unattached.
 				// Since there is no way an account can have an empty password manually
 				// it has to be due to a CentralAuth bug. So just attach it then.

@@ -522,7 +522,7 @@ class SpecialMultiLock extends SpecialPage {
 			'',
 			[
 				'conds' => [
-					'log_action' => 'setstatus' // bug 57253
+					'log_action' => 'setstatus' // T59253
 				],
 				'showIfEmpty' => true
 			] );

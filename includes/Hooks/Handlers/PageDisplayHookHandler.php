@@ -76,7 +76,7 @@ class PageDisplayHookHandler implements
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
 				// For non-JS clients. Use WikiMap to avoid localization of the
-				// 'Special' namespace, see bug 54195.
+				// 'Special' namespace, see T56195.
 				$wiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
 
 				$loginWiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );

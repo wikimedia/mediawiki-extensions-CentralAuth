@@ -775,7 +775,7 @@ class CentralAuthHooks implements
 
 	/**
 	 * Prevent "canonicalization" of Special:CentralAutoLogin to a localized
-	 * Special namespace name. See bug 54195.
+	 * Special namespace name. See T56195.
 	 * @param WebRequest $request
 	 * @param Title $title
 	 * @param OutputPage $output

@@ -598,7 +598,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Add a script to the page that will pull in the user's toolslist
-			// via ajax, and update the UI. Don't write out the tools here (bug 57081).
+			// via ajax, and update the UI. Don't write out the tools here (T59081).
 			$code = $this->userOptionsManager->getOption( $this->getUser(), 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
 			Hooks::run( 'UserGetLanguageObject',

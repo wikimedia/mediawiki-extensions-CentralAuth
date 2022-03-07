@@ -134,7 +134,7 @@ class AttachAccount extends Maintenance {
 		try {
 			$unattached = $central->listUnattached();
 		} catch ( Exception $e ) {
-			// This might happen due to localnames inconsistencies (bug 67350)
+			// This might happen due to localnames inconsistencies (T69350)
 			$this->missing++;
 			$this->output(
 				"ERROR: Fetching unattached accounts for {$username} failed.\n"
