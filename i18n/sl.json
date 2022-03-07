@@ -299,7 +299,7 @@
 	"centralauth-prefs-view": "Prikaži podatke o globalnem računu",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Preberite si več o '''enotni prijavi''']] ...''",
 	"centralauth-readonly": "Zbirka podatkov CentralAuth je zaklenjena.",
-	"centralauth-readonlytext": "Zbirka podatkov CentralAuth je trenutno zaklenjena za nove vnose in druge spremembe, verjetno zaradi rutinskega vzdrževanja zbirke podatkov, po katerem se bo vrnila v normalno stanje.",
+	"centralauth-readonlytext": "Zbirka podatkov CentralAuth je trenutno zaklenjena za nove vnose in druge spremembe, verjetno zaradi rutinskega vzdrževanja zbirke podatkov, po katerem se bo vrnila v normalno stanje.\n\nSistemski skrbnik, ki jo je zaklenil, je podal naslednjo razlago: $1",
 	"centralauth-rename-abortlogin": "Tvoj račun je trenutno v preimenovanju ali združevanju. [[Special:GlobalRenameProgress/$1|Prikaži status]].",
 	"centralauth-rename-alreadyexists": "Zaprošeno uporabniško ime že obstaja.",
 	"centralauth-rename-alreadyinprogress": "Preimenovanje tega uporabnika je že v [[Special:GlobalRenameProgress/$1|teku]].",
