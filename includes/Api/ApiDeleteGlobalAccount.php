@@ -42,7 +42,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 
 		$globalUser = CentralAuthUser::getPrimaryInstanceByName( $params['user'] );
 		if ( !$globalUser->exists() ||
-			$globalUser->isOversighted() &&
+			$globalUser->isSuppressed() &&
 			!$this->getAuthority()->isAllowed( 'centralauth-suppress' )
 		) {
 			$this->dieWithError( [ 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ] );

@@ -145,7 +145,7 @@ class SpecialMultiLock extends SpecialPage {
 				: CentralAuthUser::getInstanceByName( $username );
 			if ( !$globalUser->exists()
 				|| ( !$this->mCanSuppress &&
-					( $globalUser->isOversighted() || $globalUser->isHidden() ) )
+					( $globalUser->isSuppressed() || $globalUser->isHidden() ) )
 			) {
 				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
 			} else {

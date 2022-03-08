@@ -176,7 +176,7 @@ class SpecialCentralAuth extends SpecialPage {
 			: CentralAuthUser::getInstanceByName( $this->mUserName );
 		$this->mGlobalUser = $globalUser;
 
-		if ( ( $globalUser->isOversighted() || $globalUser->isHidden() ) &&
+		if ( ( $globalUser->isSuppressed() || $globalUser->isHidden() ) &&
 			!$this->mCanSuppress
 		) {
 			// Claim that there's nothing if the global account is hidden and the user is not

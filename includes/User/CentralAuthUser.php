@@ -846,7 +846,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * of privacy issues.
 	 * @return bool
 	 */
-	public function isOversighted() {
+	public function isSuppressed() {
 		$this->loadState();
 		return $this->mHiddenLevel == self::HIDDEN_LEVEL_SUPPRESSED;
 	}
@@ -1729,7 +1729,7 @@ class CentralAuthUser implements IDBAccessObject {
 			);
 			$this->clearLocalUserCache( $wiki, $id );
 		}
-		$wasSuppressed = $this->isOversighted();
+		$wasSuppressed = $this->isSuppressed();
 
 		$centralDB->startAtomic( __METHOD__ );
 		# Delete and lock the globaluser row
@@ -2214,7 +2214,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// FIXME: this will give users "password incorrect" error.
 		// Giving correct message requires AuthPlugin and SpecialUserlogin
 		// rewriting.
-		if ( !User::idFromName( $this->getName() ) && $this->isOversighted() ) {
+		if ( !User::idFromName( $this->getName() ) && $this->isSuppressed() ) {
 			return "locked";
 		}
 

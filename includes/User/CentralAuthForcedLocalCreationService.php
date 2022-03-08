@@ -82,7 +82,7 @@ class CentralAuthForcedLocalCreationService {
 			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
 		}
 
-		if ( $centralUser->isOversighted() ) {
+		if ( $centralUser->isSuppressed() ) {
 			$canSuppress = $performer && $performer->isAllowed( 'centralauth-suppress' );
 
 			return Status::newFatal( $canSuppress
