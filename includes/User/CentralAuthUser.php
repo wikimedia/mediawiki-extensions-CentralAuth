@@ -1136,7 +1136,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		// Sysops get priority
 		$found = [];
-		$priorityGroups = [ 'checkuser', 'oversight', 'bureaucrat', 'sysop' ];
+		$priorityGroups = [ 'checkuser', 'suppress', 'bureaucrat', 'sysop' ];
 		foreach ( $priorityGroups as $group ) {
 			foreach ( $migrationSet as $wiki => $local ) {
 				if ( isset( $local['groupMemberships'][$group] ) ) {
