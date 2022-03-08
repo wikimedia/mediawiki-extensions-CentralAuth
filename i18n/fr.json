@@ -427,7 +427,7 @@
 	"centralauth-years-ago": "depuis $1 an{{PLURAL:$1||s}}",
 	"centralautologin": "Connexion centralisée",
 	"centrallogin": "Connexion utilisateur centralisée",
-	"centralloginsuccesful": "Connecté",
+	"centralloginsuccesful": "Connecté{{GENDER:||e}}",
 	"createlocalaccount": "Créer de force un compte local",
 	"globalgroupmembership": "Appartenance aux groupes globaux",
 	"globalgrouppermissions": "Gestion des groupes globaux",
