@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use Wikimedia\ScopedCallback;

@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

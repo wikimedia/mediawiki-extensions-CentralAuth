@@ -6,6 +6,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+
 /**
  * Removes attached accounts from the users_to_rename
  * table

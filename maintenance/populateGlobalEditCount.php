@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use CentralAuthServices;
 use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
 use RuntimeException;
 use Wikimedia\Rdbms\LBFactory;

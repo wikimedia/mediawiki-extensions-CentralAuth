@@ -125,5 +125,3 @@ class CentralAuthServices {
 			->get( 'CentralAuth.GlobalRenameRequestStore' );
 	}
 }
-
-class_alias( CentralAuthServices::class, 'CentralAuthServices' );

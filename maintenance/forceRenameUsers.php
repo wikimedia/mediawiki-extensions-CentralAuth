@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;

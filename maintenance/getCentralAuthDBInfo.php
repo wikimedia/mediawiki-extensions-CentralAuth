@@ -6,6 +6,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+
 class GetCentralAuthDBInfo extends Maintenance {
 	public function __construct() {
 		parent::__construct();

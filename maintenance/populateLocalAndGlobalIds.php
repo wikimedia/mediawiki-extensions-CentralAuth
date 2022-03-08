@@ -5,6 +5,7 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
 
 class PopulateLocalAndGlobalIds extends Maintenance {

@@ -1,6 +1,7 @@
 <?php
 // Go through all usernames and calculate and record spoof thingies
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use Wikimedia\Rdbms\IDatabase;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

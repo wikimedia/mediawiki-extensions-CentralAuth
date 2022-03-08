@@ -366,8 +366,6 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"CentralAuthServices": "includes/CentralAuthServices.php",
-		"MediaWiki\\Extension\\CentralAuth\\CentralAuthServices": "includes/CentralAuthServices.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",

@@ -18,6 +18,7 @@
  * @file
  */
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use Wikimedia\TestingAccessWrapper;
 

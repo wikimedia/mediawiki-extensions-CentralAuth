@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\AntiSpoof\SpoofUser;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use Wikimedia\Rdbms\IDatabase;
 
 class CentralAuthSpoofUser extends SpoofUser {

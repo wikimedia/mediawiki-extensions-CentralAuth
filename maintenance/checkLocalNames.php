@@ -6,6 +6,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+
 class CheckLocalNames extends Maintenance {
 
 	/** @var float */
