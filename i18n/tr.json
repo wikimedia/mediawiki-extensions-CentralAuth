@@ -345,7 +345,7 @@
 	"centralauth-prefs-view": "Küresel hesap bilgilerinizi görüntüle",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Birleşik giriş''' hakkında daha fazla bilgi edinin]]…''",
 	"centralauth-readonly": "CentralAuth veritabanı kilitlendi.",
-	"centralauth-readonlytext": "CentralAuth veritabanı şuanda yeni girişlere ve diğer değişikliklere kilitli, muhtemelen rutin veritabanı bakımı için, sonrasında normale dönecektir.",
+	"centralauth-readonlytext": "CentralAuth veritabanı şu anda muhtemelen rutin veritabanı bakımı için yeni girişlere ve diğer değişikliklere kilitlenmiştir ve ardından normale dönecektir.\n\nBunu kilitleyen sistem hizmetlisi şu açıklamayı yaptı: $1",
 	"centralauth-rename-abortlogin": "Hesabınız şu anda yeniden adlandırıldı ya da birleştirildi. [[Special:GlobalRenameProgress/$1|Durumu görüntüleyin]].",
 	"centralauth-rename-alreadyexists": "İstenen kullanıcı adı zaten mevcut.",
 	"centralauth-rename-alreadyinprogress": "Bu kullanıcı için [[Special:GlobalRenameProgress/$1|devam eden]] bir yeniden adlandırma var.",
