@@ -13,7 +13,8 @@
 			"Yahya",
 			"Zaheen",
 			"আফতাবুজ্জামান",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"MdsShakil"
 		]
 	},
 	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একত্রিকরণ করুন",
@@ -46,6 +47,7 @@
 	"centralauth-admin-info-registered": "নিবন্ধিত:",
 	"centralauth-admin-info-unattached": "অসংযুক্ত অ্যাকাউন্টের সংখ্যা:",
 	"centralauth-admin-info-username": "ব্যবহারকারী নাম:",
+	"centralauth-admin-intro": "এই ইন্টারফেস বৈশ্বিক অ্যাকাউন্ট পরিচালনা করার জন্য ব্যবহার করা যেতে পারে।",
 	"centralauth-admin-list-attached-on": "সংযুক্তের তারিখ",
 	"centralauth-admin-list-blocked": "বাধাপ্রাপ্ত",
 	"centralauth-admin-list-editcount": "সম্পাদনা সংখ্যা",
@@ -106,6 +108,7 @@
 	"centralauth-complete": "অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!",
 	"centralauth-complete-text": "আপনি এখন যেকোন {{int:Centralauth-groupname}} উইকি সাইটে অ্যাকাউন্ট তৈরি ছাড়াই প্রবেশ করতে পারবেন।",
 	"centralauth-completelogin-back": "পূর্ববর্তী পাতায় ফিরুন।",
+	"centralauth-createlocal-pretext": "আপনি এই ফর্মটি ব্যবহার করে একটি বৈশ্বিক অ্যাকাউন্টের স্থানীয় অ্যাকাউন্ট তৈরি করতে পারবেন, যদি কোন কারণে একজন ব্যবহারকারী নিজে নিজে তা না করতে পারেন।",
 	"centralauth-createlocal-reason": "কারণ",
 	"centralauth-createlocal-success": "স্থানীয় অ্যাকাউন্ট তৈরি করা হয়েছে।",
 	"centralauth-createlocal-username": "বৈশ্বিক অ্যাকাউন্টের নাম",
@@ -308,6 +311,7 @@
 	"centralautologin": "কেন্দ্রীয় প্রবেশ",
 	"centrallogin": "কেন্দ্রীয়ভাবে ব্যবহারকারীর প্রবেশ",
 	"centralloginsuccesful": "প্রবেশ করেছেন",
+	"createlocalaccount": "জোরপূর্বক একটি স্থানীয় অ্যাকাউন্ট তৈরি করুন",
 	"globalgroupmembership": "বৈশ্বিক গ্রুপে সদস্যপদ",
 	"globalgrouppermissions": "বৈশ্বিক দল ব্যবস্থাপনা",
 	"globalrenameprogress": "বৈশ্বিক নামান্তরের অগ্রগতি",
@@ -382,6 +386,7 @@
 	"logentry-gblrename-rename": "$1 বৈশ্বিকভাবে $4 কে $5 নামে {{GENDER:$2|নামান্তরিত করেছেন}}",
 	"mergeaccount": "প্রবেশ একত্রীকরণ অবস্থা",
 	"multilock": "একাধিক বৈশ্বিক অ্যাকাউন্ট তালাবদ্ধ করুন",
+	"right-centralauth-createlocal": "জোরপূর্বক একটি বৈশ্বিক অ্যাকাউন্টের স্থানীয় অ্যাকাউন্ট তৈরি করুন",
 	"right-centralauth-merge": "তাদের অ্যাকাউন্ট একীভূত করো",
 	"right-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর",
 	"right-globalgroupmembership": "সদস্যপদ বৈশ্বিক গ্রুপে সম্পাদনা করো",

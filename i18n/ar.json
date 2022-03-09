@@ -29,7 +29,8 @@
 			"علاء",
 			"محمد أحمد عبد الفتاح",
 			"مشعل الحربي",
-			"وهراني"
+			"وهراني",
+			"FiberAhmed"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "المجموعات العامة التي ينتمي إليها الحساب",
@@ -72,6 +73,7 @@
 	"centralauth-admin-info-attached": "عدد الحسابات المرفقة:",
 	"centralauth-admin-info-editcount": "مجموع عدد التعديلات:",
 	"centralauth-admin-info-groups": "ال{{PLURAL:$1|مجموعة|مجموعات}} العامة:",
+	"centralauth-admin-info-groups-manage": "إدارة",
 	"centralauth-admin-info-header": "معلومات الحساب العام",
 	"centralauth-admin-info-hidden": "مستوى مخفي:",
 	"centralauth-admin-info-locked": "مقفل:",
@@ -161,6 +163,7 @@
 	"centralauth-contribs-locked-log": "هذا المستخدم ممنوع حاليا، آخر مدخلة في سجل المنع موجودة أدناه كمرجع:",
 	"centralauth-createlocal-pretext": "أنت يمكنك استخدام هذا النموذج لإنشاء حساب محلي لحساب عالمي إذا لم يتمكنوا من القيام بذلك بأنفسهم لسبب ما.",
 	"centralauth-createlocal-reason": "السبب",
+	"centralauth-createlocal-success": "تم إنشاء الحساب المحلي.",
 	"centralauth-createlocal-username": "اسم الحساب العالمي",
 	"centralauth-days-ago": "قبل {{PLURAL:$1|يوم واحد|يومين|$1 أيام|$1 يومًا|$1 يوم}}",
 	"centralauth-delete-empty-account": "حساب فارغ",
