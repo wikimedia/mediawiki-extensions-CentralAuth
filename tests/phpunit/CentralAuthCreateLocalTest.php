@@ -49,7 +49,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 		$this->assertSame( 0, User::newFromName( $name )->getId() );
 	}
 
-	public function testWithOversightedAccount() {
+	public function testWithSuppressedAccount() {
 		$name = self::USERNAME_SUPPRESSED;
 
 		$this->overrideUserPermissions(
