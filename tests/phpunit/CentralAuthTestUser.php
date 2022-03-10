@@ -68,16 +68,6 @@ class CentralAuthTestUser {
 	private $homeDb;
 
 	/**
-	 * @var string gu_enabled
-	 */
-	private $enabled;
-
-	/**
-	 * @var string gu_enabled_method
-	 */
-	private $enabledMethod;
-
-	/**
 	 * Array of attachments to insert into localuser
 	 * @var array[]
 	 */
@@ -120,8 +110,6 @@ class CentralAuthTestUser {
 			'gu_email' => 'test@localhost',
 			'gu_email_authenticated' => '20130801040214',
 			'gu_home_db' => WikiMap::getCurrentWikiId(),
-			'gu_enabled' => wfTimestampNow(),
-			'gu_enabled_method' => null,
 		];
 
 		$this->guId = $attrs['gu_id'];
@@ -134,8 +122,6 @@ class CentralAuthTestUser {
 		$this->email = $attrs['gu_email'];
 		$this->emailAuthenticated = $attrs['gu_email_authenticated'];
 		$this->homeDb = $attrs['gu_home_db'];
-		$this->enabled = $attrs['gu_enabled'];
-		$this->enabledMethod = $attrs['gu_enabled_method'];
 
 		$this->wikis = [];
 		foreach ( $wikis as $wiki ) {
@@ -170,8 +156,6 @@ class CentralAuthTestUser {
 			'gu_email' => $this->email,
 			'gu_email_authenticated' => $db->timestamp( $this->emailAuthenticated ),
 			'gu_home_db' => $this->homeDb,
-			'gu_enabled' => $db->timestamp( $this->enabled ),
-			'gu_enabled_method' => $this->enabledMethod,
 		];
 		$db->insert(
 			'globaluser',
