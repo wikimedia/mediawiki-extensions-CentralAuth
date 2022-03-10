@@ -210,7 +210,11 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	 * @covers ::attach
 	 */
 	public function testAttach() {
-		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
+		$caUser = new class( 'GlobalUser' ) extends CentralAuthUser {
+			protected function addLocalEdits( $wikiID ) {
+				// This test can't connect to anotherwiki to fetch edit counts
+			}
+		};
 		$caUser->attach( 'anotherwiki', 'admin', false );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertContains( 'anotherwiki', $caUser->listAttached() );

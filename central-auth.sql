@@ -259,3 +259,9 @@ CREATE TABLE /*_*/users_to_rename (
 CREATE UNIQUE INDEX /*i*/utr_user ON /*_*/users_to_rename (utr_name, utr_wiki);
 CREATE INDEX /*i*/utr_notif ON /*_*/users_to_rename (utr_status);
 CREATE INDEX /*i*/utr_wiki ON /*_*/users_to_rename (utr_wiki);
+
+-- Table for caching the total global edit count
+CREATE TABLE /*_*/global_edit_count (
+    gec_user int primary key,
+    gec_count int not null
+) /*$wgDBTableOptions*/;
