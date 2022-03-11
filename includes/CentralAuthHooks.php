@@ -603,7 +603,9 @@ class CentralAuthHooks implements
 	 * @return bool
 	 */
 	public function onUserIsBot( $user, &$isBot ) {
-		if ( $user->isRegistered() ) {
+		// No need to check global groups if the user is already marked as a bot,
+		// and no global groups for unregistered user
+		if ( !$isBot && $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists()
 				&& $centralUser->isAttached()
