@@ -13,12 +13,14 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsManager;
 use MobileContext;
 use MWCryptRand;
+use Psr\Log\LoggerInterface;
 use ReadOnlyMode;
 use RequestContext;
 use SkinTemplate;
@@ -54,6 +56,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
 
+	/** @var LoggerInterface */
+	private $logger;
+
 	/**
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 * @param UserOptionsManager $userOptionsManager
@@ -72,6 +77,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->userOptionsManager = $userOptionsManager;
 		$this->readOnlyMode = $readOnlyMode;
 		$this->sessionManager = $sessionManager;
+		$this->logger = LoggerFactory::getInstance( 'CentralAutoLogin' );
 	}
 
 	/**
@@ -200,7 +206,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Do not cache this, we need to reset the cookies every time.
 			$this->getOutput()->disableClientCache();
 
-			if ( !$this->loginWiki || !$this->checkIsCentralWiki( $wikiid ) ) {
+			if ( !$this->loginWiki ) {
+				$this->logger->debug( "refreshCookies: no login wiki" );
+				return;
+			}
+			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
 				return;
 			}
 			if ( !$this->checkSession() ) {
@@ -475,14 +485,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$centralUser = CentralAuthUser::getInstanceByName( $memcData['userName'] );
 			if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
 				$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
-				wfDebug( __METHOD__ . ": $msg\n" );
+				$this->logger->warning( __METHOD__ . ": $msg" );
 				$this->doFinalOutput( false, 'Lost session' );
 				return;
 			}
 			$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
 			if ( $loginResult != 'ok' ) {
 				$msg = "Bad token: $loginResult";
-				wfDebug( __METHOD__ . ": $msg\n" );
+				$this->logger->warning( __METHOD__ . ": $msg" );
 				$this->doFinalOutput( false, 'Lost session' );
 				return;
 			}
@@ -647,6 +657,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->getOutput()->disable();
 		wfResetOutputBuffers();
 		$this->getOutput()->sendCacheControl();
+		$this->logger->debug( "final output: $status" );
 
 		$type = $type ?: $this->getRequest()->getVal( 'type', 'script' );
 		if ( $type === 'icon' || $type === '1x1' ) {

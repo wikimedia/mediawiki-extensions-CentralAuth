@@ -539,5 +539,25 @@
 		],
 		"indexes": [],
 		"pk": [ "gec_user" ]
+	},
+	{
+		"name": "global_user_autocreate_serial",
+		"comment": "Table copied from core to allow global allocation of serial numbers for temporary users. The column names must be the same as core.",
+		"columns": [
+			{
+				"name": "uas_shard",
+				"comment": "The segment of ID space, ID mod N, referred to by this row",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			},
+			{
+				"name": "uas_value",
+				"comment": "The maximum allocated ID value",
+				"type": "integer",
+				"options": { "unsigned": true, "notnull": true }
+			}
+		],
+		"indexes": [],
+		"pk": [ "uas_shard" ]
 	}
 ]

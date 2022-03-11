@@ -24,8 +24,11 @@ use Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Hook\TempUserCreatedRedirectHook;
 use MediaWiki\Hook\UserLoginCompleteHook;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Session\Session;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
 use MWCryptRand;
 use RequestContext;
@@ -35,7 +38,8 @@ use WebRequest;
 use WikiMap;
 
 class LoginCompleteHookHandler implements
-	UserLoginCompleteHook
+	UserLoginCompleteHook,
+	TempUserCreatedRedirectHook
 {
 	/** @var Config */
 	private $config;
@@ -117,18 +121,6 @@ class LoginCompleteHookHandler implements
 		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) ||
 			$title->isSpecial( 'CreateAccount' ) )
 		) {
-			// User will be redirected to Special:CentralLogin/start (central wiki),
-			// then redirected back to Special:CentralLogin/complete (this wiki).
-			// Sanity check that "returnto" is not one of the central login pages. If it
-			// is, then clear the "returnto" options (LoginForm will use the main page).
-			$returnTo = $request->getVal( 'returnto', '' );
-			$returnToQuery = $request->getVal( 'returntoquery', '' );
-			$returnToTitle = Title::newFromText( $returnTo );
-			if ( $returnToTitle && $returnToTitle->isSpecial( 'CentralLogin' ) ) {
-				$returnTo = '';
-				$returnToQuery = '';
-			}
-
 			// Determine the final protocol of page, after login
 			if ( $this->config->get( 'ForceHTTPS' ) ) {
 				$finalProto = 'https';
@@ -152,52 +144,17 @@ class LoginCompleteHookHandler implements
 				}
 			}
 
-			$remember = $request->getSession()->shouldRememberUser();
-			$type = $title->isSpecial( 'CreateAccount' ) ? 'signup' : '';
-
-			// When POSTs triggered from Special:CentralLogin/start are sent back to
-			// this wiki, the token will be checked to see if it was signed with this.
-			// This is needed as Special:CentralLogin/start only takes a token argument
-			// and we need to make sure an agent requesting such a URL actually initiated
-			// the login request that spawned that token server-side.
-			$secret = MWCryptRand::generateHex( 32 );
-			$request->setSessionData( 'CentralAuth:autologin:current-attempt', [
-				'secret'	=> $secret,
-				'remember'      => $remember,
-				'returnTo'      => $returnTo,
-				'returnToQuery' => $returnToQuery,
-				// cookies set secure or not (local CentralAuth cookies)
-				'stickHTTPS'    => $secureCookies,
-				'finalProto'    => $finalProto, // final page http or https
-				'type'	  => $type
-			] );
-
-			// Create a new token to pass to Special:CentralLogin/start (central wiki)
-			$tokenStore = $this->sessionManager->getTokenStore();
-			$token = MWCryptRand::generateHex( 32 );
-			$key = $this->sessionManager->memcKey( 'central-login-start-token', $token );
-			$data = [
-				'secret'	=> $secret,
-				'name'	  => $centralUser->getName(),
-				'guid'	  => $centralUser->getId(),
-				'wikiId'	=> WikiMap::getCurrentWikiId(),
-				'secureCookies' => $secureCookies, // (bool) cookies secure or not
-				'finalProto'    => $finalProto, // http or https for very final page
-				// current proto (in case login is https, but final page is http)
-				'currentProto'  => WebRequest::detectProtocol()
-			];
-
-			$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
-
-			$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
-
-			$query = [ 'token' => $token ];
-
-			$wiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
-			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$context->getOutput()->redirect( // expands to PROTO_CURRENT
-				wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), $query )
+			$redirectUrl = $this->getRedirectUrl(
+				$request->getSession(),
+				$centralUser,
+				$request->getVal( 'returnto', '' ),
+				$request->getVal( 'returntoquery', '' ),
+				'',
+				$title->isSpecial( 'CreateAccount' ) ? 'signup' : '',
+				$secureCookies,
+				$finalProto
 			);
+			$context->getOutput()->redirect( $redirectUrl );
 			// Set $inject_html to some text to bypass the LoginForm redirection
 			$inject_html .= '<!-- do CentralAuth redirect -->';
 		} else {
@@ -206,5 +163,127 @@ class LoginCompleteHookHandler implements
 		}
 
 		return true;
+	}
+
+	public function onTempUserCreatedRedirect(
+		Session $session,
+		UserIdentity $user,
+		string $returnTo,
+		string $returnToQuery,
+		string $returnToAnchor,
+		&$redirectUrl
+	) {
+		if ( !$this->config->get( 'CentralAuthLoginWiki' ) || defined( 'MW_API' ) ) {
+			return true;
+		}
+		if ( $this->config->get( 'ForceHTTPS' ) ) {
+			$finalProto = 'https';
+			$secureCookies = true;
+		} else {
+			$finalProto = WebRequest::detectProtocol();
+			$secureCookies = ( $finalProto === 'https' );
+			$prefersHttps = $this->userOptionsLookup->getBoolOption( $user, 'prefershttps' );
+
+			if ( $this->config->get( 'SecureLogin' ) ) {
+				$finalProto = 'http';
+
+				if ( $session->shouldForceHTTPS() || $prefersHttps ) {
+					$finalProto = 'https';
+				}
+
+				$secureCookies = ( ( $finalProto === 'https' ) && $prefersHttps );
+			}
+		}
+		$centralUser = CentralAuthUser::getInstance( $user );
+
+		$redirectUrl = $this->getRedirectUrl(
+			$session,
+			$centralUser,
+			$returnTo,
+			$returnToQuery,
+			$returnToAnchor,
+			'signup',
+			$secureCookies,
+			$finalProto
+		);
+		return false;
+	}
+
+	/**
+	 * Set up a session for redirection to the login wiki, and return the redirect URL.
+	 *
+	 * @param Session $session
+	 * @param CentralAuthUser $centralUser
+	 * @param string $returnTo
+	 * @param string $returnToQuery
+	 * @param string $returnToAnchor
+	 * @param string $loginType
+	 * @param bool $secureCookies
+	 * @param string $finalProto
+	 * @return string
+	 */
+	private function getRedirectUrl(
+		Session $session,
+		CentralAuthUser $centralUser,
+		$returnTo,
+		$returnToQuery,
+		$returnToAnchor,
+		$loginType,
+		$secureCookies,
+		$finalProto
+	) {
+		// User will be redirected to Special:CentralLogin/start (central wiki),
+		// then redirected back to Special:CentralLogin/complete (this wiki).
+		// Sanity check that "returnto" is not one of the central login pages. If it
+		// is, then clear the "returnto" options (LoginForm will use the main page).
+		$returnToTitle = Title::newFromText( $returnTo );
+		if ( $returnToTitle && $returnToTitle->isSpecial( 'CentralLogin' ) ) {
+			$returnTo = '';
+			$returnToQuery = '';
+		}
+
+		$remember = $session->shouldRememberUser();
+
+		// When POSTs triggered from Special:CentralLogin/start are sent back to
+		// this wiki, the token will be checked to see if it was signed with this.
+		// This is needed as Special:CentralLogin/start only takes a token argument
+		// and we need to make sure an agent requesting such a URL actually initiated
+		// the login request that spawned that token server-side.
+		$secret = MWCryptRand::generateHex( 32 );
+		$session->set( 'CentralAuth:autologin:current-attempt', [
+			'secret'	=> $secret,
+			'remember'      => $remember,
+			'returnTo'      => $returnTo,
+			'returnToQuery' => $returnToQuery,
+			'returnToAnchor' => $returnToAnchor,
+			// cookies set secure or not (local CentralAuth cookies)
+			'stickHTTPS'    => $secureCookies,
+			'finalProto'    => $finalProto, // final page http or https
+			'type'	  => $loginType
+		] );
+
+		// Create a new token to pass to Special:CentralLogin/start (central wiki)
+		$tokenStore = $this->sessionManager->getTokenStore();
+		$token = MWCryptRand::generateHex( 32 );
+		$key = $this->sessionManager->memcKey( 'central-login-start-token', $token );
+		$data = [
+			'secret'	=> $secret,
+			'name'	  => $centralUser->getName(),
+			'guid'	  => $centralUser->getId(),
+			'wikiId'	=> WikiMap::getCurrentWikiId(),
+			'secureCookies' => $secureCookies, // (bool) cookies secure or not
+			'finalProto'    => $finalProto, // http or https for very final page
+			// current proto (in case login is https, but final page is http)
+			'currentProto'  => WebRequest::detectProtocol()
+		];
+		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
+		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
+
+		$query = [ 'token' => $token ];
+
+		$wiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
+		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
+		// OutputPage::redirect() will expand it to PROTO_CURRENT
+		return wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), $query );
 	}
 }

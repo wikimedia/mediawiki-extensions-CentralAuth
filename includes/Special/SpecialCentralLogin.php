@@ -351,7 +351,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$action,
 			$attempt['returnTo'],
 			$attempt['returnToQuery'],
-			( $attempt['finalProto'] == 'https' ) // influnces http/https of returnTo page
+			( $attempt['finalProto'] == 'https' ), // influnces http/https of returnTo page
+			$attempt['returnToAnchor'] ?? ''
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 		if ( $this->getConfig()->get( 'CentralAuthCheckSULMigration' ) &&

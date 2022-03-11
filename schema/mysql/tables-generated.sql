@@ -144,3 +144,10 @@ CREATE TABLE /*_*/global_edit_count (
   gec_count INT NOT NULL,
   PRIMARY KEY(gec_user)
 ) /*$wgDBTableOptions*/;
+
+
+CREATE TABLE /*_*/global_user_autocreate_serial (
+  uas_shard INT UNSIGNED NOT NULL,
+  uas_value INT UNSIGNED NOT NULL,
+  PRIMARY KEY(uas_shard)
+) /*$wgDBTableOptions*/;

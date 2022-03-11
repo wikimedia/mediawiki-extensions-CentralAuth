@@ -137,3 +137,10 @@ CREATE TABLE /*_*/global_edit_count (
   gec_count INTEGER NOT NULL,
   PRIMARY KEY(gec_user)
 );
+
+
+CREATE TABLE /*_*/global_user_autocreate_serial (
+  uas_shard INTEGER UNSIGNED NOT NULL,
+  uas_value INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(uas_shard)
+);

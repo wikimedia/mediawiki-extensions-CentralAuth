@@ -523,8 +523,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	public function suggestLoginUsername( WebRequest $request ) {
 		$name = $this->getCookie( $request, 'User', $this->centralCookieOptions['prefix'] );
 		if ( $name !== null ) {
-			$name = $this->userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
-
+			if ( $this->userNameUtils->isTemp( $name ) ) {
+				$name = false;
+			} else {
+				$name = $this->userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
+			}
 		}
 		return ( $name === false || $name === null )
 			? parent::suggestLoginUsername( $request )
