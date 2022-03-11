@@ -33,6 +33,7 @@ class PopulateGlobalEditCount extends Maintenance {
 
 		// Batch size for write queries
 		$this->setBatchSize( 100 );
+		$this->addOption( 'start', 'gu_id value to start at', false, true );
 	}
 
 	private function init() {
@@ -54,7 +55,8 @@ class PopulateGlobalEditCount extends Maintenance {
 		$numGlobalAccounts = 0;
 		$numUpdated = 0;
 
-		for ( $batchStartId = 0; $batchStartId < $lastId; $batchStartId += self::READ_BATCH_SIZE ) {
+		$start = (int)$this->getOption( 'start', 0 );
+		for ( $batchStartId = $start; $batchStartId < $lastId; $batchStartId += self::READ_BATCH_SIZE ) {
 			$this->showProgress( $batchStartId, $lastId );
 			$batchEndId = $batchStartId + self::READ_BATCH_SIZE - 1;
 			$res = $dbcr->newSelectQueryBuilder()
@@ -68,7 +70,10 @@ class PopulateGlobalEditCount extends Maintenance {
 				->from( 'globaluser' )
 				->join( 'localuser', null, [ 'lu_name=gu_name' ] )
 				->leftJoin( 'global_edit_count', null, [ 'gu_id=gec_user' ] )
-				->where( "gu_id BETWEEN $batchStartId AND $batchEndId" )
+				->where( [
+					"gu_id BETWEEN $batchStartId AND $batchEndId",
+					"lu_global_id <> 0",
+				] )
 				->orderBy( [ 'gu_id', 'lu_wiki' ] )
 				->caller( __METHOD__ )
 				->fetchResultSet();
