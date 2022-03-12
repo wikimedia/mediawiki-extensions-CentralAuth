@@ -195,8 +195,6 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			$entry['id'] = $row->gu_id;
 			$entry['name'] = $row->gu_name;
 
-			$user = null;
-
 			if ( isset( $prop['groups'] ) ) {
 				if ( !empty( $groupsOfUser[$row->gu_id] ) ) {
 					$entry['groups'] = $groupsOfUser[$row->gu_id];
@@ -267,10 +265,6 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		$groupResult = $this->select( __METHOD__ );
 
 		foreach ( $groupResult as $groupRow ) {
-			if ( !isset( $groupsOfUser[$groupRow->gug_user] ) ) {
-				$groupsOfUser[$groupRow->gug_user] = [];
-			}
-
 			$groupsOfUser[$groupRow->gug_user][] = $groupRow->gug_group;
 		}
 
