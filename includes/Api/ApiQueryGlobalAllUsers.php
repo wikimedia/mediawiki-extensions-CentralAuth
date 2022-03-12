@@ -192,7 +192,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			$i++;
 
 			$entry = [];
-			$entry['id'] = $row->gu_id;
+			$entry['id'] = (int)$row->gu_id;
 			$entry['name'] = $row->gu_name;
 
 			$user = null;
