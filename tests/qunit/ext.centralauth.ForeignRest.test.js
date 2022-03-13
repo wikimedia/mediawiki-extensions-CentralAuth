@@ -23,7 +23,7 @@
 
 		api = new mw.ForeignRest( '//localhost:4242/w/rest.php', actionApi );
 		return api.get( '/hello' ).then( function () {
-			assert.notOk( spy.called, 'Anonymous users do not ask for centralauthtoken' );
+			assert.false( spy.called, 'Anonymous users do not ask for centralauthtoken' );
 		} );
 	} );
 
@@ -47,8 +47,8 @@
 
 		api = new mw.ForeignRest( '//localhost:4242/w/rest.php', actionApi );
 		return api.get( '/hello' ).then( function () {
-			assert.ok( loginSpy.called, 'Login spy called' );
-			assert.ok( tokenSpy.called, 'Token spy called' );
+			assert.true( loginSpy.called, 'Login spy called' );
+			assert.true( tokenSpy.called, 'Token spy called' );
 		} );
 	} );
 
@@ -69,8 +69,8 @@
 
 		api = new mw.ForeignRest( '//localhost:4242/w/rest.php', actionApi );
 		return api.get( {} ).then( function () {
-			assert.ok( loginSpy.called, 'Login called' );
-			assert.notOk( tokenSpy.called, 'Token not called' );
+			assert.true( loginSpy.called, 'Login called' );
+			assert.false( tokenSpy.called, 'Token not called' );
 		} );
 	} );
 
