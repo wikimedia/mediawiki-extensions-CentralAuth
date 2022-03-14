@@ -312,6 +312,7 @@
 	"right-centralauth-createlocal": "Zahtijevanje stvaranja lokalnoga računa za globalni račun",
 	"right-centralauth-lock": "Zaključaj ili sakrij globalni račun",
 	"right-centralauth-merge": "Spajanje svojih računa",
+	"right-centralauth-suppress": "Sakrivanje globalnog računa",
 	"right-centralauth-rename": "Promjena imena globalnih računa",
 	"right-centralauth-unmerge": "Razdvoji globalni račun",
 	"right-globalgroupmembership": "Uređivanje članstva za globalne skupine",

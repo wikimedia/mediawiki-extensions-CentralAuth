@@ -363,6 +363,7 @@
 	"multilock": "Kunci berbilang akaun sejagat",
 	"right-centralauth-lock": "Mengunci atau membuka kunci akaun sejagat",
 	"right-centralauth-merge": "Menggabungkan akaun sendiri",
+	"right-centralauth-suppress": "Menyekat atau menyorokkan akaun sejagat",
 	"right-centralauth-rename": "Menukar nama akaun sejagat",
 	"right-centralauth-unmerge": "Menyahgabungkan akaun global",
 	"right-globalgroupmembership": "Mengubah keahlian kumpulan sejagat",

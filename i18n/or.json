@@ -257,6 +257,7 @@
 	"multilock": "ଏକାଧିକ ଗ୍ଲୋବାଲ ଏକାଉଣ୍ଟକୁ ବନ୍ଦ କରନ୍ତୁ",
 	"right-centralauth-lock": "ବିଶ୍ଵ ଖାତାତିକୁ କିଳିବେ ଅବା ଲୁଚାଇବେ",
 	"right-centralauth-merge": "ତାହାଙ୍କର ଖାତାକୁ ଯୋଡ଼ିଦେବେ",
+	"right-centralauth-suppress": "ଜାଗତିକ ଖାତାଟିକୁ ଚପାଇରଖିବେ କିମ୍ବା ଲୁଚାଇବେ",
 	"right-centralauth-unmerge": "ଯୋଡ଼ି ରହିଥିବା ବିଶ୍ଵ ଖାତାକୁ ଅଲଗା କରିଦେବେ",
 	"right-globalgroupmembership": "ବିଶ୍ଵଶ୍ରେଣୀର ଗୋଠମାନଙ୍କରେ ସଭ୍ୟପଦ ବଦଳାଇବେ",
 	"right-globalgrouppermissions": "ବିଶ୍ଵ ଗୋଠ ପରିଚାଳନା କରିବେ"

@@ -243,6 +243,7 @@
 	"multilock": "Blocar multiples cuentas globals",
 	"right-centralauth-lock": "Bloqueyar u amagar a cuenta global",
 	"right-centralauth-merge": "Combinar a cuenta",
+	"right-centralauth-suppress": "Suprimir cuenta global",
 	"right-centralauth-unmerge": "Deseparar a cuenta global",
 	"right-globalgroupmembership": "Editar a pertenencia ta collas globals",
 	"right-globalgrouppermissions": "Confegurar collas globals"

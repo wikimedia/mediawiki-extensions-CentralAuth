@@ -354,6 +354,7 @@
 	"mergeaccount": "Stav zjednotenia prihlasovacích účtov",
 	"right-centralauth-lock": "Zamknúť alebo odomknúť globálny účet",
 	"right-centralauth-merge": "Zlúčiť ich účty",
+	"right-centralauth-suppress": "Utajiť alebo skryť globálny účet",
 	"right-centralauth-rename": "Premenovávanie globálnych účtov",
 	"right-centralauth-unmerge": "Zrušiť zlúčenie globálneho účtu",
 	"right-globalgroupmembership": "Upraviť členstvo v globálnych skupinách",

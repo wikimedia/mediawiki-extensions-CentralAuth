@@ -306,6 +306,7 @@
 	"mergeaccount": "Status spajanja korisničkih računa",
 	"right-centralauth-lock": "Zaključavanje ili otključavanje globalnog računa",
 	"right-centralauth-merge": "Spajanje vlastitog računa",
+	"right-centralauth-suppress": "Obustavljanje ili sakrivanje globalnog računa",
 	"right-centralauth-rename": "Preimenovanje globalnih računa",
 	"right-centralauth-unmerge": "Razdvajanje globalnog računa",
 	"right-globalgroupmembership": "Uređivanje članstva globalnih grupa",

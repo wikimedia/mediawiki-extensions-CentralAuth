@@ -437,6 +437,7 @@
 	"multilock": "Több globális fiók zárolása",
 	"right-centralauth-lock": "Globális fiók zárolása vagy feloldása",
 	"right-centralauth-merge": "saját fiókok egyesítése",
+	"right-centralauth-suppress": "Globális fiók elrejtése",
 	"right-centralauth-rename": "Globális fiókok átnevezése",
 	"right-centralauth-unmerge": "Globális fiók szétválasztása",
 	"right-globalgroupmembership": "globális csoportok tagjainak szerkesztése",

@@ -331,6 +331,7 @@
 	"multilock": "Бірнеше ғаламдық тіркелгілерді құлыптау",
 	"right-centralauth-lock": "Ғаламдық аккаунтты құлыптау не құлыпталуын болдырмау",
 	"right-centralauth-merge": "Тіркелгілерін біріктіру",
+	"right-centralauth-suppress": "Ғаламдық аккаунтты бастыру не жасыру",
 	"right-centralauth-rename": "Ғаламдықы тіркелгілердің атауын өзгерту",
 	"right-centralauth-unmerge": "Ғаламдық аккаунтты біріктірмеу",
 	"right-globalgroupmembership": "Ғаламдық топтарға кіруін өзгерту",

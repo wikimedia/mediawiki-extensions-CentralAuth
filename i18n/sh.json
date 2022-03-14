@@ -11,6 +11,7 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine kojima korisnik pripada",
 	"action-centralauth-lock": "zaključavanje ili otključavanje globalnih računa",
 	"action-centralauth-merge": "spajanje svog računa",
+	"action-centralauth-suppress": "potiskivanje ili skrivanje globalnog računa",
 	"action-centralauth-rename": "preimenovanje globalnih računa",
 	"action-centralauth-unmerge": "razdvojite globalne račune",
 	"action-globalgroupmembership": "mijenjanje članstva u globalnim grupama",

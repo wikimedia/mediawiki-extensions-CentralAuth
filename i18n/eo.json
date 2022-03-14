@@ -303,6 +303,7 @@
 	"mergeaccount": "Statuso de unuigado de uzantnomoj",
 	"right-centralauth-lock": "Ŝlosi aŭ malŝlosi tutvikian konton",
 	"right-centralauth-merge": "Kunfandi la konton",
+	"right-centralauth-suppress": "Subpremi aŭ kaŝi ĝeneralan konton",
 	"right-centralauth-unmerge": "Malkunigi ĝeneralan konton",
 	"right-globalgroupmembership": "Redakti membrecon al ĝeneralaj grupoj",
 	"right-globalgrouppermissions": "Administri ĝeneralajn grupojn"

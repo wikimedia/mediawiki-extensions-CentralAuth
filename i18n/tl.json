@@ -242,6 +242,7 @@
 	"mergeaccount": "Kalagayan ng pag-iisa ng pag-login",
 	"right-centralauth-lock": "Ikandado o ikubli ang pandaigdigang akawnt",
 	"right-centralauth-merge": "Pagsanibin/pagsamahin ang kanilang account",
+	"right-centralauth-suppress": "Pigilin ang pandaigdigang akawnt",
 	"right-centralauth-unmerge": "Huwag pagsanibin ang pandaigdigang account",
 	"right-globalgroupmembership": "Baguhin ang kasapian sa mga kapangkatang pandaigdigan",
 	"right-globalgrouppermissions": "Pamahalaan ang kapangkatang pandaigdigan"

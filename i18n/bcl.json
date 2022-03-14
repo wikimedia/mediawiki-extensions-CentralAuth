@@ -286,6 +286,7 @@
 	"multilock": "Kandaduhon an dagmang na pankinaban na mga panindog",
 	"right-centralauth-lock": "Ikandado o bukasan an pankinaban na panindog",
 	"right-centralauth-merge": "Salakon an saindang panindog",
+	"right-centralauth-suppress": "Pugulan o tagoon an pankinaban na panindog",
 	"right-centralauth-unmerge": "Dae pagsalakon an pankinaban na panindog",
 	"right-globalgroupmembership": "Liwaton an pagkamiyembro na magin pankinaban na mga grupo",
 	"right-globalgrouppermissions": "Manihoon an pankinaban na mga grupo"

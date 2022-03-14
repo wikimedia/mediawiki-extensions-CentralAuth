@@ -271,6 +271,7 @@
 	"multilock": "बहुत वैश्विक खातासभ लॉक यs",
 	"right-centralauth-lock": "वैश्विक खाता लॉक करु या अनलॉक",
 	"right-centralauth-merge": "उनकर खाता कs मर्ज करु",
+	"right-centralauth-suppress": "वैश्विक खाता के नुकाऊँ या अवरोध करु",
 	"right-centralauth-rename": "वैश्विक खाता कs नाम बदलु",
 	"right-centralauth-unmerge": "विश्वव्यापी खाता अलग करी",
 	"right-globalgroupmembership": "विश्वव्यापी सदस्य-समूहमे सदस्यता सम्पादन",

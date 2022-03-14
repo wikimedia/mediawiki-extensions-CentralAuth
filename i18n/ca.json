@@ -445,6 +445,7 @@
 	"multilock": "Blocatge múltiple d'usuaris globals",
 	"right-centralauth-lock": "Blocatge o desblocatge de compte global",
 	"right-centralauth-merge": "Fusionar el compte propi",
+	"right-centralauth-suppress": "Supressió o ocultació de compte global",
 	"right-centralauth-rename": "Canviar el nom de comptes globals",
 	"right-centralauth-unmerge": "Anuŀlar la unificació del compte global",
 	"right-globalgroupmembership": "Editar els membres dels grups globals",

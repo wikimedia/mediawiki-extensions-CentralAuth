@@ -389,6 +389,7 @@
 	"multilock": "ഒന്നിലധികം ആഗോള അംഗത്വങ്ങൾ ബന്ധിക്കുക",
 	"right-centralauth-lock": "ആഗോള അംഗത്വം ബന്ധിക്കുക അല്ലെങ്കിൽ ബന്ധനം അഴിക്കുക",
 	"right-centralauth-merge": "അംഗത്വങ്ങൾ സം‌യോജിപ്പിക്കുക",
+	"right-centralauth-suppress": "ആഗോള അംഗത്വം ഒതുക്കുക അല്ലെങ്കിൽ മറയ്ക്കുക",
 	"right-centralauth-rename": "ആഗോളാംഗത്വങ്ങൾ പുനർനാമകരണം ചെയ്യുക",
 	"right-centralauth-unmerge": "ആഗോള അംഗത്വ സംയോജനം നീക്കുക",
 	"right-globalgroupmembership": "ആഗോള സംഘങ്ങളിലുള്ള അംഗത്വം തിരുത്തുക",

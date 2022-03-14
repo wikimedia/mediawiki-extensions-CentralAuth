@@ -375,6 +375,7 @@
 	"multilock": "Blocare conturi globale multiple",
 	"right-centralauth-lock": "Blochează sau deblochează un cont global",
 	"right-centralauth-merge": "Unifică conturile sale",
+	"right-centralauth-suppress": "Suprimă sau ascunde un cont global",
 	"right-centralauth-rename": "Redenumește conturi globale",
 	"right-centralauth-unmerge": "Dezunificarea contului global",
 	"right-globalgroupmembership": "Modificarea apartenenței la grupuri globale",

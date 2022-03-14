@@ -407,6 +407,7 @@
 	"multilock": "Закључај више глобалних налога",
 	"right-centralauth-lock": "закључавање/откључавање глобалног налога",
 	"right-centralauth-merge": "спајање сопствених налога",
+	"right-centralauth-suppress": "потискивање или скривање глобалног налога",
 	"right-centralauth-rename": "преименовање глобалних налога",
 	"right-centralauth-unmerge": "раздвајање глобалних налога",
 	"right-globalgroupmembership": "измена чланства у глобалним групама",

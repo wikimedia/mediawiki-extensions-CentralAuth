@@ -259,6 +259,7 @@
 	"mergeaccount": "Estatut d’unificacion del compte d'utilizaire",
 	"right-centralauth-lock": "Blocar o desblocar lo compte global",
 	"right-centralauth-merge": "Fusionar son compte",
+	"right-centralauth-suppress": "Suprimir o amagar lo compte global",
 	"right-centralauth-unmerge": "Anullar la fusion del compte global",
 	"right-globalgroupmembership": "Modificar las apartenéncias als gropes globals",
 	"right-globalgrouppermissions": "Gestion dels gropes globals"

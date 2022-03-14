@@ -423,6 +423,7 @@
 	"multilock": "अनेक वैश्विक खाते लॉक करें",
 	"right-centralauth-lock": "वैश्विक खाता लॉक करें या लॉक हटाएँ",
 	"right-centralauth-merge": "उनके खाते एकत्रित करें",
+	"right-centralauth-suppress": "वैश्विक खाते को छुपाएँ",
 	"right-centralauth-rename": "वैश्विक खातों के पुनः नामकरण करें",
 	"right-centralauth-unmerge": "वैश्विक खाता अलग करें",
 	"right-globalgroupmembership": "वैश्विक सदस्य-समूहों में सदस्यता सम्पादन",
