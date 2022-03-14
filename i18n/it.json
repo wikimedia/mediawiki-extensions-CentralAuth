@@ -482,7 +482,6 @@
 	"right-centralauth-lock": "Blocca o sblocca utenze globali",
 	"right-centralauth-merge": "Unifica le proprie utenze",
 	"right-centralauth-suppress": "Sopprime o nasconde utenze globali",
-	"right-centralauth-oversight": "Elimina o nasconde l'utenza globale",
 	"right-centralauth-rename": "Rinomina gli utenti globalmente",
 	"right-centralauth-unmerge": "Scollega dalle utenze globali",
 	"right-globalgroupmembership": "Modifica l'appartenenza ai gruppi globali",

@@ -378,7 +378,6 @@
 	"right-centralauth-createlocal": "Изрично създаване на локална потребителска сметка към глобална потребителска сметка",
 	"right-centralauth-lock": "Заключване или отключване на глобална сметка",
 	"right-centralauth-merge": "Сливане на тяхната сметка",
-	"right-centralauth-oversight": "Скриване на глобална сметка",
 	"right-centralauth-rename": "Преименуване на глобални сметки",
 	"right-centralauth-unmerge": "Разделяне на глобалната сметка",
 	"right-globalgroupmembership": "Промяна на членството в глобални групи",

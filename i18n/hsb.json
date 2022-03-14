@@ -10,7 +10,6 @@
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupiny, w kotrychž wužiwar je čłon",
 	"action-centralauth-lock": "globalne konta zawrěć abo wotewrěć",
 	"action-centralauth-merge": "wužiwarske konta zjednoćić",
-	"action-centralauth-oversight": "globalne wužiwarske konta potłóčić abo schować",
 	"action-centralauth-rename": "globalne wužiwarske konta přemjenować",
 	"action-centralauth-unmerge": "zjednoćenje globalnych kontow zběhnyć",
 	"action-globalgroupmembership": "čłonstwo w globalnych skupinach wobdźěłać",
@@ -305,7 +304,6 @@
 	"multilock": "Wjacore globalne konta blokować",
 	"right-centralauth-lock": "Globalne konto zawrěć abo wotewrěć",
 	"right-centralauth-merge": "Jich konta zjednoćić",
-	"right-centralauth-oversight": "Globalne konto potłóčić abo schować",
 	"right-centralauth-unmerge": "Zjednoćenje globalneho konta zběhnyć",
 	"right-globalgroupmembership": "Čłonstwo w globalnych skupinach wobdźěłać",
 	"right-globalgrouppermissions": "Globalne skupiny zrjadować"

@@ -380,7 +380,6 @@
 	"multilock": "რამდენიმე გლობალური ანგარიშის დაბლოკვა",
 	"right-centralauth-lock": "გლობალური ანგარიშის დაბლოკვა ან განბლოკვა",
 	"right-centralauth-merge": "მათი ანგარიშის გაერთიანება",
-	"right-centralauth-oversight": "გლობალური ანგარიშის შეჩერება ან დამალვა",
 	"right-centralauth-rename": "გლობალური ანგარიშების გადარქმევა",
 	"right-centralauth-unmerge": "ადგილობრივი ანგარიშის განცალკევება",
 	"right-globalgroupmembership": "გლობალურ ჯგუფებში წევრობის გადაკეთება",

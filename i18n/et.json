@@ -413,7 +413,6 @@
 	"right-centralauth-createlocal": "Luua globaalsele kontole kohalik konto sundkorras",
 	"right-centralauth-lock": "Lukustada globaalset kontot või seda lukust lahti teha",
 	"right-centralauth-merge": "Luua ühendkonto",
-	"right-centralauth-oversight": "Varjata või peita globaalset kontot",
 	"right-centralauth-rename": "Muuta globaalse konto nime",
 	"right-centralauth-unmerge": "Lahti ühendada globaalset kontot",
 	"right-globalgroupmembership": "Muuta globaalsete rühmade liikmesust",

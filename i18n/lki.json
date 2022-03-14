@@ -390,7 +390,6 @@
 	"multilock": "قفل‌کردن چندین حساب کاربری سراسری",
 	"right-centralauth-lock": "قفل یا بازکردن حساب سراسری",
 	"right-centralauth-merge": "ادغام حساب‌های کاربری آن‌ها",
-	"right-centralauth-oversight": "فرونشانی یا پنهان‌سازی حساب سراسری",
 	"right-centralauth-rename": "تغییرنام حساب‌های سراسری",
 	"right-centralauth-unmerge": "جدا کردن حساب سراسری",
 	"right-globalgroupmembership": "ویرایش عضویت در گروه‌های سراسری",

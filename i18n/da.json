@@ -368,7 +368,6 @@
 	"multilock": "Låse flere globale brugerkonti",
 	"right-centralauth-lock": "Lås global konto eller lås op",
 	"right-centralauth-merge": "Sammenlægge konti",
-	"right-centralauth-oversight": "Undertryk eller skjul global konto",
 	"right-centralauth-rename": "Omdøb globale kontoer",
 	"right-centralauth-unmerge": "Ophæv fletning af global konto",
 	"right-globalgroupmembership": "Redigere medlemskab i globale grupper",

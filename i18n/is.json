@@ -324,7 +324,6 @@
 	"multilock": "Læsa nokkrum altækum aðgöngum",
 	"right-centralauth-lock": "Læsa eða aflæsa altækan aðgang",
 	"right-centralauth-merge": "Sameina aðganga",
-	"right-centralauth-oversight": "Bæla niður eða fela altækan aðgang",
 	"right-centralauth-rename": "Endurnefna altæka aðganga",
 	"right-centralauth-unmerge": "Aðgreina altækan aðgang",
 	"right-globalgroupmembership": "Breyta meðlimum altækra hópa",
