@@ -13,7 +13,8 @@
 			"আফতাবুজ্জামান",
 			"Al Riaz Uddin Ripon",
 			"Yahya",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"MdsShakil"
 		]
 	},
 	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একত্রিকরণ করুন",
@@ -46,6 +47,7 @@
 	"centralauth-admin-info-registered": "নিবন্ধিত:",
 	"centralauth-admin-info-unattached": "অসংযুক্ত অ্যাকাউন্টের সংখ্যা:",
 	"centralauth-admin-info-username": "ব্যবহারকারী নাম:",
+	"centralauth-admin-intro": "এই ইন্টারফেস বৈশ্বিক অ্যাকাউন্ট পরিচালনা করার জন্য ব্যবহার করা যেতে পারে।",
 	"centralauth-admin-list-attached-on": "সংযুক্তের তারিখ",
 	"centralauth-admin-list-blocked": "বাধাপ্রাপ্ত",
 	"centralauth-admin-list-editcount": "সম্পাদনা সংখ্যা",
@@ -121,6 +123,7 @@
 	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|$2 অধিকার প্রাপ্ত ব্যবহারকারীদের তালিকা]]",
 	"centralauth-editgroup-name": "গ্রুপের নাম:",
 	"centralauth-editgroup-noset": "(কিছু নাই)",
+	"centralauth-editgroup-nowikiset": "কিছুই না, এটি সকল উইকির জন্য প্রযোজ্য।",
 	"centralauth-editgroup-perms": "প্রদানকৃত অনুমতিসমূহ:",
 	"centralauth-editgroup-reason": "কারণ:",
 	"centralauth-editgroup-restrictions": "এই গ্রুপটি সক্রিয় এমন উইকিসমূহের সেট:",
