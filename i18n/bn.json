@@ -127,6 +127,7 @@
 	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|$2 অধিকার প্রাপ্ত ব্যবহারকারীদের তালিকা]]",
 	"centralauth-editgroup-name": "গ্রুপের নাম:",
 	"centralauth-editgroup-noset": "(কিছু নাই)",
+	"centralauth-editgroup-nowikiset": "কিছুই না, এটি সকল উইকির জন্য প্রযোজ্য।",
 	"centralauth-editgroup-perms": "প্রদানকৃত অনুমতিসমূহ:",
 	"centralauth-editgroup-reason": "কারণ:",
 	"centralauth-editgroup-restrictions": "এই গ্রুপটি সক্রিয় এমন উইকিসমূহের সেট:",
