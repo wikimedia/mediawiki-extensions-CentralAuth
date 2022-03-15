@@ -53,23 +53,6 @@
 				"options": { "notnull": false, "length": 255 }
 			},
 			{
-				"name": "gu_enabled",
-				"comment": "Timestamp of creation of the global account (unused)",
-				"type": "binary",
-				"options": { "notnull": true, "length": 14, "default": "", "fixed": true }
-			},
-			{
-				"name": "gu_enabled_method",
-				"comment": "Method used to create the global account (unused)",
-				"type": "mwenum",
-				"options": {
-					"notnull": false,
-					"CustomSchemaOptions": {
-						"enum_values": [ "opt-in", "batch", "auto", "admin" ]
-					}
-				}
-			},
-			{
 				"name": "gu_home_db",
 				"comment": "Local database name of the user's 'home' wiki. By default, the 'winner' of a migration check for old accounts or the account the user was first registered at for new ones. May be changed over time.",
 				"type": "binary",
