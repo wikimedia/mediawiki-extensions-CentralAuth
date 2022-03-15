@@ -22,7 +22,7 @@
 		spy = this.sandbox.spy( api, 'getCentralAuthToken' );
 
 		return api.get( {} ).then( function () {
-			assert.notOk( spy.called, 'Anonymous users do not ask for centralauthtoken' );
+			assert.false( spy.called, 'Anonymous users do not ask for centralauthtoken' );
 		} );
 	} );
 
@@ -45,7 +45,7 @@
 		);
 
 		return api.get( {} ).then( function () {
-			assert.ok( spy.called, 'Called' );
+			assert.true( spy.called, 'Called' );
 		} );
 	} );
 
@@ -68,7 +68,7 @@
 		);
 
 		return api.get( {} ).then( function () {
-			assert.notOk( spy.called, 'Called' );
+			assert.false( spy.called, 'Called' );
 		} );
 	} );
 
