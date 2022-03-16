@@ -24,6 +24,7 @@ use CentralAuthSessionProvider;
 use CentralAuthSpoofUser;
 use DeferredUpdates;
 use Exception;
+use FormattedRCFeed;
 use Hooks;
 use IContextSource;
 use IDBAccessObject;
@@ -48,7 +49,7 @@ use MWCryptRand;
 use Password;
 use PasswordFactory;
 use Pbkdf2Password;
-use RecentChange;
+use RCFeed;
 use RequestContext;
 use RevisionDeleteUser;
 use Status;
@@ -2190,10 +2191,17 @@ class CentralAuthUser implements IDBAccessObject {
 			$userpage = Title::makeTitleSafe( NS_USER, $this->mName );
 
 			foreach ( $wgCentralAuthRC as $rc ) {
+				$engine = RCFeed::factory( $rc );
+				if ( !( $engine instanceof FormattedRCFeed ) ) {
+					throw new \RuntimeException(
+						'wgCentralAuthRC only supports feeds that use FormattedRCFeed, got '
+						. get_class( $engine ) . ' instead'
+					);
+				}
+
 				/** @var CARCFeedFormatter $formatter */
 				$formatter = new $rc['formatter']();
-				/** @var RCFeedEngine $engine */
-				$engine = RecentChange::getEngine( $rc['uri'] );
+
 				$engine->send( $rc, $formatter->getLine( $userpage, $wikiID ) );
 			}
 		}
