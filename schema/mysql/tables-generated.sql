@@ -25,7 +25,6 @@ CREATE TABLE /*_*/globaluser (
   gu_salt VARBINARY(16) DEFAULT NULL,
   gu_password TINYBLOB DEFAULT NULL,
   gu_locked TINYINT(1) DEFAULT 0 NOT NULL,
-  gu_hidden VARBINARY(255) DEFAULT '' NOT NULL,
   gu_hidden_level INT DEFAULT 0 NOT NULL,
   gu_registration BINARY(14) DEFAULT NULL,
   gu_password_reset_key TINYBLOB DEFAULT NULL,
@@ -37,10 +36,6 @@ CREATE TABLE /*_*/globaluser (
   INDEX gu_locked (
     gu_name(255),
     gu_locked
-  ),
-  INDEX gu_hidden (
-    gu_name(255),
-    gu_hidden(255)
   ),
   INDEX gu_hidden_level (
     gu_name(255),

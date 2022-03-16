@@ -23,7 +23,6 @@ CREATE TABLE /*_*/globaluser (
   gu_email BLOB DEFAULT NULL, gu_email_authenticated BLOB DEFAULT NULL,
   gu_salt BLOB DEFAULT NULL, gu_password BLOB DEFAULT NULL,
   gu_locked SMALLINT DEFAULT 0 NOT NULL,
-  gu_hidden BLOB DEFAULT '' NOT NULL,
   gu_hidden_level INTEGER DEFAULT 0 NOT NULL,
   gu_registration BLOB DEFAULT NULL,
   gu_password_reset_key BLOB DEFAULT NULL,
@@ -36,8 +35,6 @@ CREATE UNIQUE INDEX gu_name ON /*_*/globaluser (gu_name);
 CREATE INDEX gu_email ON /*_*/globaluser (gu_email);
 
 CREATE INDEX gu_locked ON /*_*/globaluser (gu_name, gu_locked);
-
-CREATE INDEX gu_hidden ON /*_*/globaluser (gu_name, gu_hidden);
 
 CREATE INDEX gu_hidden_level ON /*_*/globaluser (gu_name, gu_hidden_level);
 
