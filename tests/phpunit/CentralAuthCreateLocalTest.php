@@ -28,10 +28,6 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
-		] );
-
 		$this->specialCreateLocalAccount = new SpecialCreateLocalAccount(
 			CentralAuthServices::getForcedLocalCreationService()
 		);

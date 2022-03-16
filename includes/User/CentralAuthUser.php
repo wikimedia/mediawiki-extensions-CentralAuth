@@ -351,17 +351,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 *  )
 	 */
 	public static function selectQueryInfo() {
-		$hiddenLevel = MediaWikiServices::getInstance()
-			->getMainConfig()
-			->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD
-				? 'gu_hidden'
-				: 'gu_hidden_level';
-
 		return [
 			'tables' => [ 'globaluser', 'localuser' ],
 			'fields' => [
 				'gu_id', 'gu_name', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
-				'gu_locked', $hiddenLevel, 'gu_registration', 'gu_email',
+				'gu_locked', 'gu_hidden_level', 'gu_registration', 'gu_email',
 				'gu_email_authenticated', 'gu_home_db', 'gu_cas_token'
 			],
 			'where' => [],
@@ -609,15 +603,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->mPassword = $row->gu_password;
 			$this->mAuthToken = $row->gu_auth_token;
 			$this->mLocked = $row->gu_locked;
-			if (
-				MediaWikiServices::getInstance()
-					->getMainConfig()
-					->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD
-			) {
-				$this->mHiddenLevel = self::HIDDEN_LEVEL_MAPPING[$row->gu_hidden];
-			} else {
-				$this->mHiddenLevel = (int)$row->gu_hidden_level;
-			}
+			$this->mHiddenLevel = (int)$row->gu_hidden_level;
 			$this->mRegistration = wfTimestamp( TS_MW, $row->gu_registration );
 			$this->mEmail = $row->gu_email;
 			$this->mAuthenticationTimestamp =
@@ -958,19 +944,10 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_auth_token' => $this->mAuthToken,
 
 			'gu_locked' => 0,
+			'gu_hidden_level' => self::HIDDEN_LEVEL_NONE,
 
 			'gu_registration' => $dbw->timestamp(),
 		];
-
-		$hiddenMigrationStage = MediaWikiServices::getInstance()
-			->getMainConfig()
-			->get( 'CentralAuthHiddenLevelMigrationStage' );
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$data['gu_hidden'] = self::HIDDEN_NONE;
-		}
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			$data['gu_hidden_level'] = self::HIDDEN_LEVEL_NONE;
-		}
 
 		$dbw->insert(
 			'globaluser',
@@ -1061,17 +1038,8 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_email_authenticated' => $dbw->timestampOrNull( $emailAuth ),
 			'gu_registration' => $dbw->timestamp(), // hmmmm
 			'gu_locked' => 0,
+			'gu_hidden_level' => self::HIDDEN_LEVEL_NONE,
 		];
-
-		$hiddenMigrationStage = MediaWikiServices::getInstance()
-			->getMainConfig()
-			->get( 'CentralAuthHiddenLevelMigrationStage' );
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$data['gu_hidden'] = self::HIDDEN_NONE;
-		}
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			$data['gu_hidden_level'] = self::HIDDEN_LEVEL_NONE;
-		}
 
 		$dbw->insert(
 			'globaluser',
@@ -1822,24 +1790,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminSetHidden( int $level ) {
 		$this->checkWriteMode();
+
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
-
-		$hiddenMigrationStage = MediaWikiServices::getInstance()
-			->getMainConfig()
-			->get( 'CentralAuthHiddenLevelMigrationStage' );
-		$toSet = [];
-
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$toSet['gu_hidden'] = self::HIDDEN_LEVEL_MAPPING_REVERSE[$level];
-		}
-
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			$toSet['gu_hidden_level'] = $level;
-		}
-
 		$dbw->update(
 			'globaluser',
-			$toSet,
+			[ 'gu_hidden_level' => $level ],
 			[ 'gu_name' => $this->mName ],
 			__METHOD__
 		);
@@ -3050,24 +3005,13 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_salt' => $this->mSalt,
 			'gu_auth_token' => $this->mAuthToken,
 			'gu_locked' => $this->mLocked,
+			'gu_hidden_level' => $this->getHiddenLevelInt(),
 			'gu_email' => $this->mEmail,
 			'gu_email_authenticated' =>
 				$dbw->timestampOrNull( $this->mAuthenticationTimestamp ),
 			'gu_home_db' => $this->getHomeWiki(),
 			'gu_cas_token' => $newCasToken
 		];
-
-		$hiddenMigrationStage = MediaWikiServices::getInstance()
-			->getMainConfig()
-			->get( 'CentralAuthHiddenLevelMigrationStage' );
-
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_OLD ) {
-			$toSet['gu_hidden'] = $this->getHiddenLevel();
-		}
-
-		if ( $hiddenMigrationStage & SCHEMA_COMPAT_WRITE_NEW ) {
-			$toSet['gu_hidden_level'] = $this->getHiddenLevelInt();
-		}
 
 		$dbw->update(
 			'globaluser',

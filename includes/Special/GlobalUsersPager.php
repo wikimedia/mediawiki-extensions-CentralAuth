@@ -92,11 +92,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	public function getQueryInfo() {
 		$tables = [ 'globaluser', 'localuser' ];
 
-		if ( $this->getConfig()->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD ) {
-			$conds = [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ];
-		} else {
-			$conds = [ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE ];
-		}
+		$conds = [ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE ];
 
 		$join_conds = [
 			'localuser' => [ 'LEFT JOIN', [ 'gu_name = lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ],

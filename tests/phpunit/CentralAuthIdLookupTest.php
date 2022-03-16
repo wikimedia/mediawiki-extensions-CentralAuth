@@ -31,10 +31,6 @@ class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->setMwGlobals( [
-			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
-		] );
-
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
 			'GUP@ssword',

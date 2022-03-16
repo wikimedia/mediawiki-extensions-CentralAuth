@@ -271,10 +271,6 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 			]
 		);
 		$u->save( $this->db );
-
-		$this->setMwGlobals( [
-			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
-		] );
 	}
 
 }
