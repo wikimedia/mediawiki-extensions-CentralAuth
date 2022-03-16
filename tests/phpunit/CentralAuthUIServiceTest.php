@@ -25,10 +25,6 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 	 * @dataProvider provideValidHiddenLevels
 	 */
 	public function testFormatHiddenLevelValid( int $level, string $msg ) {
-		$this->setMwGlobals( [
-			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
-		] );
-
 		$message = $this->createMock( Message::class );
 		$message->expects( $this->once() )
 			->method( 'escaped' )
@@ -114,10 +110,6 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 	 * @covers ::processAntiSpoofConflicts
 	 */
 	public function testProcessAntiSpoofConflicts() {
-		$this->setMwGlobals( [
-			'wgCentralAuthHiddenLevelMigrationStage' => SCHEMA_COMPAT_NEW,
-		] );
-
 		$u = new CentralAuthTestUser(
 			'Existing',
 			'GUP@ssword',

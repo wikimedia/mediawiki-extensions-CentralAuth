@@ -163,11 +163,7 @@ class SpecialMultiLock extends SpecialPage {
 
 		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
 		if ( !$this->mCanSuppress ) {
-			if ( $this->getConfig()->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD ) {
-				$where['gu_hidden'] = CentralAuthUser::HIDDEN_NONE;
-			} else {
-				$where['gu_hidden_level'] = CentralAuthUser::HIDDEN_LEVEL_NONE;
-			}
+			$where['gu_hidden_level'] = CentralAuthUser::HIDDEN_LEVEL_NONE;
 		}
 
 		$result = $dbr->selectFieldValues(

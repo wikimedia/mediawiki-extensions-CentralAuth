@@ -149,11 +149,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 			] );
 		}
 
-		if ( $this->getConfig()->get( 'CentralAuthHiddenLevelMigrationStage' ) & SCHEMA_COMPAT_READ_OLD ) {
-			$this->addWhere( [ 'gu_hidden' => CentralAuthUser::HIDDEN_NONE ] );
-		} else {
-			$this->addWhere( [ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE ] );
-		}
+		$this->addWhere( [ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE ] );
 
 		if ( isset( $prop['lockinfo'] ) ) {
 			$this->addFields( 'gu_locked' );
