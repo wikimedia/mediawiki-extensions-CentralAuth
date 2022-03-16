@@ -26,7 +26,6 @@ CREATE TABLE globaluser (
   gu_salt TEXT DEFAULT NULL,
   gu_password TEXT DEFAULT NULL,
   gu_locked SMALLINT DEFAULT 0 NOT NULL,
-  gu_hidden TEXT DEFAULT '' NOT NULL,
   gu_hidden_level INT DEFAULT 0 NOT NULL,
   gu_registration TIMESTAMPTZ DEFAULT NULL,
   gu_password_reset_key TEXT DEFAULT NULL,
@@ -41,8 +40,6 @@ CREATE UNIQUE INDEX gu_name ON globaluser (gu_name);
 CREATE INDEX gu_email ON globaluser (gu_email);
 
 CREATE INDEX gu_locked ON globaluser (gu_name, gu_locked);
-
-CREATE INDEX gu_hidden ON globaluser (gu_name, gu_hidden);
 
 CREATE INDEX gu_hidden_level ON globaluser (gu_name, gu_hidden_level);
 

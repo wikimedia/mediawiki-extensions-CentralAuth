@@ -89,12 +89,6 @@
 				"options": { "notnull": true, "length": 1, "default": 0 }
 			},
 			{
-				"name": "gu_hidden",
-				"comment": "If true, this account should be hidden from most public user lists. Used for 'deleting' accounts without breaking referential integrity.",
-				"type": "binary",
-				"options": { "notnull": true, "length": 255, "default": "" }
-			},
-			{
 				"name": "gu_hidden_level",
 				"comment": "If true, this account should be hidden from most public user lists. Used for 'deleting' accounts without breaking referential integrity.",
 				"type": "integer",
@@ -145,12 +139,6 @@
 				"name": "gu_locked",
 				"columns": [ "gu_name", "gu_locked" ],
 				"options": { "lengths": [ 255, null ] },
-				"unique": false
-			},
-			{
-				"name": "gu_hidden",
-				"columns": [ "gu_name", "gu_hidden" ],
-				"options": { "lengths": [ 255, 255 ] },
 				"unique": false
 			},
 			{
