@@ -255,13 +255,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * @return bool
-	 */
-	private function canProcessExpiries() {
-		return $this->getConfig()->get( 'CentralAuthEnableTemporaryGlobalGroups' );
-	}
-
-	/**
 	 * Save user groups changes in the database.
 	 * Data comes from the editUserGroupsForm() form function
 	 *
@@ -285,40 +278,38 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			if ( $this->getRequest()->getCheck( "wpGroup-$group" ) ) {
 				$addgroup[] = $group;
 
-				if ( $this->canProcessExpiries() ) {
-					// read the expiry information from the request
-					$expiryDropdown = $this->getRequest()->getVal( "wpExpiry-$group" );
-					if ( $expiryDropdown === 'existing' ) {
-						continue;
-					}
+				// read the expiry information from the request
+				$expiryDropdown = $this->getRequest()->getVal( "wpExpiry-$group" );
+				if ( $expiryDropdown === 'existing' ) {
+					continue;
+				}
 
-					if ( $expiryDropdown === 'other' ) {
-						$expiryValue = $this->getRequest()->getVal( "wpExpiry-$group-other" );
-					} else {
-						$expiryValue = $expiryDropdown;
-					}
+				if ( $expiryDropdown === 'other' ) {
+					$expiryValue = $this->getRequest()->getVal( "wpExpiry-$group-other" );
+				} else {
+					$expiryValue = $expiryDropdown;
+				}
 
-					// validate the expiry
-					$groupExpiries[$group] = UserrightsPage::expiryToTimestamp( $expiryValue );
+				// validate the expiry
+				$groupExpiries[$group] = UserrightsPage::expiryToTimestamp( $expiryValue );
 
-					if ( $groupExpiries[$group] === false ) {
-						return Status::newFatal( 'userrights-invalid-expiry', $group );
-					}
+				if ( $groupExpiries[$group] === false ) {
+					return Status::newFatal( 'userrights-invalid-expiry', $group );
+				}
 
-					// not allowed to have things expiring in the past
-					if ( $groupExpiries[$group] && $groupExpiries[$group] < wfTimestampNow() ) {
-						return Status::newFatal( 'userrights-expiry-in-past', $group );
-					}
+				// not allowed to have things expiring in the past
+				if ( $groupExpiries[$group] && $groupExpiries[$group] < wfTimestampNow() ) {
+					return Status::newFatal( 'userrights-expiry-in-past', $group );
+				}
 
-					// if the user can only add this group (not remove it), the expiry time
-					// cannot be brought forward (T156784)
-					if ( !$this->canRemove( $group ) &&
-						isset( $existingUGMs[$group] ) &&
-						( $existingUGMs[$group]->getExpiry() ?: 'infinity' ) >
-							( $groupExpiries[$group] ?: 'infinity' )
-					) {
-						return Status::newFatal( 'userrights-cannot-shorten-expiry', $group );
-					}
+				// if the user can only add this group (not remove it), the expiry time
+				// cannot be brought forward (T156784)
+				if ( !$this->canRemove( $group ) &&
+					isset( $existingUGMs[$group] ) &&
+					( $existingUGMs[$group]->getExpiry() ?: 'infinity' ) >
+						( $groupExpiries[$group] ?: 'infinity' )
+				) {
+					return Status::newFatal( 'userrights-cannot-shorten-expiry', $group );
 				}
 			} else {
 				$removegroup[] = $group;
@@ -829,98 +820,97 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				$checkboxHtml = Xml::checkLabel( $text, "wpGroup-" . $group,
 					"wpGroup-" . $group, $checkbox['set'], $attr );
 
-				if ( $this->canProcessExpiries() ) {
-					$uiUser = $this->getUser();
-					$uiLanguage = $this->getLanguage();
+				$uiUser = $this->getUser();
+				$uiLanguage = $this->getLanguage();
 
-					$currentExpiry = isset( $usergroups[$group] ) ?
-						$usergroups[$group]->getExpiry() :
-						null;
+				$currentExpiry = isset( $usergroups[$group] ) ?
+					$usergroups[$group]->getExpiry() :
+					null;
 
-					// If the user can't modify the expiry, print the current expiry below
-					// it in plain text. Otherwise provide UI to set/change the expiry
-					if ( $checkbox['set'] &&
-						( $checkbox['irreversible'] || $checkbox['disabled-expiry'] )
-					) {
-						if ( $currentExpiry ) {
-							$expiryFormatted = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-							$expiryFormattedD = $uiLanguage->userDate( $currentExpiry, $uiUser );
-							$expiryFormattedT = $uiLanguage->userTime( $currentExpiry, $uiUser );
-							$expiryHtml = Xml::element( 'span', null,
-								$this->msg( 'userrights-expiry-current' )->params(
-								$expiryFormatted, $expiryFormattedD, $expiryFormattedT )->text() );
-						} else {
-							$expiryHtml = Xml::element( 'span', null,
-								$this->msg( 'userrights-expiry-none' )->text() );
-						}
-						// T171345: Add a hidden form element so that other groups can still be manipulated,
-						// otherwise saving errors out with an invalid expiry time for this group.
-						$expiryHtml .= Html::hidden( "wpExpiry-$group",
-							$currentExpiry ? 'existing' : 'infinite' );
-						$expiryHtml .= "<br />\n";
+				// If the user can't modify the expiry, print the current expiry below
+				// it in plain text. Otherwise provide UI to set/change the expiry
+				if ( $checkbox['set'] &&
+					( $checkbox['irreversible'] || $checkbox['disabled-expiry'] )
+				) {
+					if ( $currentExpiry ) {
+						$expiryFormatted = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
+						$expiryFormattedD = $uiLanguage->userDate( $currentExpiry, $uiUser );
+						$expiryFormattedT = $uiLanguage->userTime( $currentExpiry, $uiUser );
+						$expiryHtml = Xml::element( 'span', null,
+							$this->msg( 'userrights-expiry-current' )->params(
+							$expiryFormatted, $expiryFormattedD, $expiryFormattedT )->text() );
 					} else {
 						$expiryHtml = Xml::element( 'span', null,
-							$this->msg( 'userrights-expiry' )->text() );
-						$expiryHtml .= Xml::openElement( 'span' );
+							$this->msg( 'userrights-expiry-none' )->text() );
+					}
+					// T171345: Add a hidden form element so that other groups can still be manipulated,
+					// otherwise saving errors out with an invalid expiry time for this group.
+					$expiryHtml .= Html::hidden( "wpExpiry-$group",
+						$currentExpiry ? 'existing' : 'infinite' );
+					$expiryHtml .= "<br />\n";
+				} else {
+					$expiryHtml = Xml::element( 'span', null,
+						$this->msg( 'userrights-expiry' )->text() );
+					$expiryHtml .= Xml::openElement( 'span' );
 
-						// add a form element to set the expiry date
-						$expiryFormOptions = new XmlSelect(
-							"wpExpiry-$group",
-							"mw-input-wpExpiry-$group", // forward compatibility with HTMLForm
-							$currentExpiry ? 'existing' : 'infinite'
-						);
-						if ( $checkbox['disabled-expiry'] ) {
-							$expiryFormOptions->setAttribute( 'disabled', 'disabled' );
-						}
-
-						if ( $currentExpiry ) {
-							$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-							$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
-							$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
-							$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
-								$timestamp, $d, $t );
-							$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
-						}
-
-						$expiryFormOptions->addOption(
-							$this->msg( 'userrights-expiry-none' )->text(),
-							'infinite'
-						);
-						$expiryFormOptions->addOption(
-							$this->msg( 'userrights-expiry-othertime' )->text(),
-							'other'
-						);
-
-						$expiryFormOptions->addOptions( $expiryOptions );
-
-						// Add expiry dropdown
-						$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
-
-						// Add custom expiry field
-						$attribs = [
-							'id' => "mw-input-wpExpiry-$group-other",
-							'class' => 'mw-userrights-expiryfield',
-						];
-						if ( $checkbox['disabled-expiry'] ) {
-							$attribs['disabled'] = 'disabled';
-						}
-						$expiryHtml .= Xml::input( "wpExpiry-$group-other", 30, '', $attribs );
-
-						// If the user group is set but the checkbox is disabled, mimic a
-						// checked checkbox in the form submission
-						if ( $checkbox['set'] && $checkbox['disabled'] ) {
-							$expiryHtml .= Html::hidden( "wpGroup-$group", 1 );
-						}
-
-						$expiryHtml .= Xml::closeElement( 'span' );
+					// add a form element to set the expiry date
+					$expiryFormOptions = new XmlSelect(
+						"wpExpiry-$group",
+						"mw-input-wpExpiry-$group", // forward compatibility with HTMLForm
+						$currentExpiry ? 'existing' : 'infinite'
+					);
+					if ( $checkbox['disabled-expiry'] ) {
+						$expiryFormOptions->setAttribute( 'disabled', 'disabled' );
 					}
 
-					$divAttribs = [
-						'id' => "mw-userrights-nested-wpGroup-$group",
-						'class' => 'mw-userrights-nested',
+					if ( $currentExpiry ) {
+						$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
+						$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
+						$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
+						$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
+							$timestamp, $d, $t );
+						$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
+					}
+
+					$expiryFormOptions->addOption(
+						$this->msg( 'userrights-expiry-none' )->text(),
+						'infinite'
+					);
+					$expiryFormOptions->addOption(
+						$this->msg( 'userrights-expiry-othertime' )->text(),
+						'other'
+					);
+
+					$expiryFormOptions->addOptions( $expiryOptions );
+
+					// Add expiry dropdown
+					$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
+
+					// Add custom expiry field
+					$attribs = [
+						'id' => "mw-input-wpExpiry-$group-other",
+						'class' => 'mw-userrights-expiryfield',
 					];
-					$checkboxHtml .= "\t\t\t" . Xml::tags( 'div', $divAttribs, $expiryHtml ) . "\n";
+					if ( $checkbox['disabled-expiry'] ) {
+						$attribs['disabled'] = 'disabled';
+					}
+					$expiryHtml .= Xml::input( "wpExpiry-$group-other", 30, '', $attribs );
+
+					// If the user group is set but the checkbox is disabled, mimic a
+					// checked checkbox in the form submission
+					if ( $checkbox['set'] && $checkbox['disabled'] ) {
+						$expiryHtml .= Html::hidden( "wpGroup-$group", 1 );
+					}
+
+					$expiryHtml .= Xml::closeElement( 'span' );
 				}
+
+				$divAttribs = [
+					'id' => "mw-userrights-nested-wpGroup-$group",
+					'class' => 'mw-userrights-nested',
+				];
+				$checkboxHtml .= "\t\t\t" . Xml::tags( 'div', $divAttribs, $expiryHtml ) . "\n";
+
 				$ret .= "\t\t" . ( ( $checkbox['disabled'] && $checkbox['disabled-expiry'] )
 					? Xml::tags( 'div', [ 'class' => 'mw-userrights-disabled' ], $checkboxHtml )
 					: Xml::tags( 'div', [], $checkboxHtml )
