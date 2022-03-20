@@ -48,7 +48,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$this->addHelpLink( 'Extension:CentralAuth' );
 		$htmlForm
 			->setMethod( 'get' )
-			->setAction( $this->getPageTitle()->getLocalURL() )
+			->setTitle( $this->getPageTitle() )
 			->setSubmitText( $this->msg( 'centralauth-rename-viewprogress' )->text() )
 			->setWrapperLegendMsg( 'globalrenameprogress-legend' );
 	}
