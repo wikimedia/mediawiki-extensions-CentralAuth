@@ -252,7 +252,11 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
-			$this->getOutput()->addWikiMsg( 'centralauth-notice-dryrun' );
+			$this->getOutput()->addHTML(
+				Html::successBox(
+					$this->msg( 'centralauth-notice-dryrun' )->parseAsBlock()
+				)
+			);
 		}
 
 		$password = $this->getRequest()->getVal( 'wpPassword' );
@@ -285,9 +289,12 @@ class SpecialMergeAccount extends SpecialPage {
 			$this->getOutput()->addHTML( $this->step3ActionForm( $home, $subAttached, $methods ) );
 		} else {
 			// Show error message from status
-			$this->getOutput()->addHTML( '<div class="errorbox" style="float:none;">' );
-			$this->getOutput()->addWikiTextAsInterface( $status->getWikiText() );
-			$this->getOutput()->addHTML( '</div>' );
+			$out = $this->getOutput();
+			$out->addHTML(
+				Html::errorBox(
+					$out->parseAsInterface( $status->getWikiText() )
+				)
+			);
 
 			// Show wiki list if required
 			if ( $status->hasMessage( 'centralauth-merge-home-password' ) ) {
@@ -385,15 +392,20 @@ class SpecialMergeAccount extends SpecialPage {
 			$this->showCleanupForm();
 		} else {
 			$this->getOutput()->addHTML(
-				Html::rawElement( 'div', [ "class" => "errorbox" ],
+				Html::errorBox(
 					$this->msg( 'wrongpassword' )->escaped()
-				) . $this->attachActionForm() );
+				) . $this->attachActionForm()
+			);
 		}
 	}
 
 	private function showWelcomeForm() {
 		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
-			$this->getOutput()->addWikiMsg( 'centralauth-notice-dryrun' );
+			$this->getOutput()->addHTML(
+				Html::successBox(
+					$this->msg( 'centralauth-notice-dryrun' )->parseAsBlock()
+				)
+			);
 		}
 
 		$this->getOutput()->addWikiMsg( 'centralauth-merge-welcome' );

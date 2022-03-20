@@ -463,8 +463,11 @@ class SpecialMultiLock extends SpecialPage {
 	 * @param string $wikitext
 	 */
 	private function showStatusError( $wikitext ) {
-		$this->getOutput()->wrapWikiTextAsInterface(
-			'errorbox', $wikitext
+		$out = $this->getOutput();
+		$out->addHTML(
+			Html::errorBox(
+				$out->parseAsInterface( $wikitext )
+			)
 		);
 	}
 

@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use Html;
 use LogEventsList;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
@@ -76,8 +77,11 @@ class SpecialContributionsHookHandler implements
 		);
 
 		if ( $count === 0 ) { // we couldn't load the log entry
-			$out->wrapWikiMsg( '<div class="warningbox mw-warning-with-logexcerpt">$1</div>',
-				[ 'centralauth-contribs-locked', $user ]
+			$out->addHTML(
+				Html::warningBox(
+					$out->msg( 'centralauth-contribs-locked', $user )->parse(),
+					'mw-warning-with-logexcerpt'
+				)
 			);
 		}
 	}
