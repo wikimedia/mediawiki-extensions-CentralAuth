@@ -14,7 +14,7 @@
 	},
 	{
 		"name": "localnames",
-		"comment": "For each known username in globalnames, the presence of an acount on each local database is listed here. Email and password information used for migration checks are grabbed from local databases on demand when needed. This is an optimization measure, so we don't have to poke on 600+ separate databases to look for unmigrated accounts every time we log in; only existing databases not yet migrated have to be loaded.",
+		"comment": "For each known username in globalnames, the presence of an account on each local database is listed here. Email and password information used for migration checks are grabbed from local databases on demand when needed. This is an optimization measure, so we don't have to poke on 600+ separate databases to look for unmigrated accounts every time we log in; only existing databases not yet migrated have to be loaded.",
 		"columns": [
 			{
 				"name": "ln_wiki",
