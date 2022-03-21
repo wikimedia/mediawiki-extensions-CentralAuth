@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"FarsiNevis",
 			"Huji",
 			"Ladsgroup",
@@ -47,7 +48,7 @@
 	"apihelp-query+globalallusers-summary": "شمارش تمام حساب‌های سراسری.",
 	"apihelp-query+globalgroups-description": "شمارش تمام گروه‌های سراسری.",
 	"apihelp-query+globalgroups-example-1": "فهرست گروه‌های سراسری",
-	"apihelp-query+globalgroups-example-2": "نمایش گروه‌های سراسری و اختیاراتی که می‌توانند اعطا کنند",
+	"apihelp-query+globalgroups-example-2": "نمایش گروه‌های سراسری و امتیازاتی که می‌توانند اعطا کنند",
 	"apihelp-query+globalgroups-param-prop": "چه اطلاعاتی را شامل شود.",
 	"apihelp-query+globalgroups-summary": "شمارش تمام گروه‌های کاربری.",
 	"apihelp-query+globalrenamestatus-description": "نمایش اطلاعات تغییرنام‌های سراسری در حال انجام.",
