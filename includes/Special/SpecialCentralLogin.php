@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthSessionProvider;
 use Exception;
-use Hooks;
 use IBufferingStatsdDataFactory;
 use LoginHelper;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
@@ -213,7 +213,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$url = $info['currentProto'] . ':' . $url;
 
 		$url = wfAppendQuery( $url, $query ); // expands to PROTO_CURRENT if $url doesn't have protocol
-		Hooks::run( 'CentralAuthSilentLoginRedirect', [ $centralUser, &$url, $info ] );
+
+		$caHookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
+		$caHookRunner->onCentralAuthSilentLoginRedirect( $centralUser, $url, $info );
+
 		$this->getOutput()->redirect( $url );
 	}
 
@@ -316,13 +319,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Allow other extensions to modify the returnTo and returnToQuery
-		Hooks::run( 'CentralAuthPostLoginRedirect', [
-			&$attempt['returnTo'],
-			&$attempt['returnToQuery'],
+		$caHookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
+		$caHookRunner->onCentralAuthPostLoginRedirect(
+			$attempt['returnTo'],
+			$attempt['returnToQuery'],
 			$attempt['stickHTTPS'],
 			$attempt['type'],
-			&$inject_html
-		] );
+			$inject_html
+		);
 
 		if ( $inject_html === '' ) {
 			$action = 'successredirect';

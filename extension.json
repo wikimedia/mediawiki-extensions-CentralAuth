@@ -530,7 +530,8 @@
 			"services": [
 				"MainConfig",
 				"CentralAuth.CentralAuthSessionManager",
-				"UserOptionsLookup"
+				"UserOptionsLookup",
+				"HookContainer"
 			]
 		},
 		"noservices": {

@@ -23,13 +23,13 @@ namespace MediaWiki\Extension\CentralAuth;
 use CentralAuthSessionProvider;
 use ContentSecurityPolicy;
 use ExtensionRegistry;
-use Hooks;
 use Html;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\SystemBlock;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -770,8 +770,10 @@ class CentralAuthHooks implements
 			}
 		}
 
+		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
+
 		$recommendReload = false;
-		Hooks::run( 'CentralAuthIsUIReloadRecommended', [ $user, &$recommendReload ] );
+		$hookRunner->onCentralAuthIsUIReloadRecommended( $user, $recommendReload );
 		return $recommendReload;
 	}
 
