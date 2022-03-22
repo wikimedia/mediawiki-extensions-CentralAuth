@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"Fitoschido"
 		]
 	},
 	"apierror-centralauth-badsession": "Sólo puede llograse un pase centralauthtoken usando sesiones CentralAuth.",
@@ -70,7 +71,7 @@
 	"apihelp-setglobalaccountstatus-description": "Definir l'estáu d'un usuariu global.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloquiar la cuenta global de [[User:Example]] col motivu \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Desbloquiar y suprimir la cuenta global pa [[User:Example]] col motivu \"Puedo\"",
-	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar si esti usuariu nun ta tapecíu, ta tapecíu na llista global d'usuarios o ta suprimíu.",
+	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar si esti usuariu nun ta anubríu, ta anubríu na llista global d’usuarios o ta suprimíu.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cambiar si esti usuariu ta bloquiáu o non.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivu pa cambiar l'estáu del usuariu.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional del <username>:<hidden>:<locked> actual esperáu, pa detectar conflictos d'edición. Define <locked> como 1 para bloquiáu, 0 pa desbloquiáu.",
