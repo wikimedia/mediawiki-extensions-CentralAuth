@@ -21,10 +21,11 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use Config;
-use Hooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLoginCompleteHook;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\User\UserOptionsLookup;
 use MWCryptRand;
 use RequestContext;
@@ -45,19 +46,25 @@ class LoginCompleteHookHandler implements
 	/** @var UserOptionsLookup */
 	private $userOptionsLookup;
 
+	/** @var CentralAuthHookRunner */
+	private $caHookRunner;
+
 	/**
 	 * @param Config $config
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param UserOptionsLookup $userOptionsLookup
+	 * @param HookContainer $hookContainer
 	 */
 	public function __construct(
 		Config $config,
 		CentralAuthSessionManager $sessionManager,
-		UserOptionsLookup $userOptionsLookup
+		UserOptionsLookup $userOptionsLookup,
+		HookContainer $hookContainer
 	) {
 		$this->config = $config;
 		$this->sessionManager = $sessionManager;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
 	}
 
 	/**
@@ -179,7 +186,9 @@ class LoginCompleteHookHandler implements
 				// current proto (in case login is https, but final page is http)
 				'currentProto'  => WebRequest::detectProtocol()
 			];
-			Hooks::run( 'CentralAuthLoginRedirectData', [ $centralUser, &$data ] );
+
+			$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
+
 			$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
 
 			$query = [ 'token' => $token ];

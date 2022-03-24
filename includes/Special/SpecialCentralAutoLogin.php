@@ -7,7 +7,6 @@ use DeferredUpdates;
 use Exception;
 use ExtensionRegistry;
 use FormatJson;
-use Hooks;
 use Language;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
@@ -601,9 +600,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// via ajax, and update the UI. Don't write out the tools here (T59081).
 			$code = $this->userOptionsManager->getOption( $this->getUser(), 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
-			Hooks::run( 'UserGetLanguageObject',
-				[ $this->getUser(), &$code, $this->getContext() ]
-			);
+
+			$this->getHookRunner()->onUserGetLanguageObject( $this->getUser(), $code, $this->getContext() );
+
 			$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
 				[
 					'centralauth-centralautologin-logged-in' =>
