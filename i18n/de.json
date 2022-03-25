@@ -20,7 +20,8 @@
 			"Revolus",
 			"ThePiscin",
 			"Umherirrender",
-			"Vogone"
+			"Vogone",
+			"Wnme"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale Gruppen, in der der Benutzer ist",
@@ -156,7 +157,7 @@
 	"centralauth-createlocal-pretext": "Verwende dieses Formular, um ein lokales Benutzerkonto für ein globales Benutzerkonto zu erstellen, wenn der Benutzer aus irgendeinem Grund nicht in der Lage ist, dies selbst zu tun.",
 	"centralauth-createlocal-reason": "Grund",
 	"centralauth-createlocal-success": "Lokales Benutzerkonto erstellt.",
-	"centralauth-createlocal-suppressed": "Du kannst kein lokales Benutzerkonto für einen unterdrückten Benutzer erstellen.",
+	"centralauth-createlocal-suppressed": "Du kannst kein lokales Benutzerkonto für einen versteckten Benutzer erstellen.",
 	"centralauth-createlocal-username": "Name des globalen Benutzerkonto",
 	"centralauth-days-ago": "Vor $1 {{PLURAL:$1|Tag|Tagen}}",
 	"centralauth-delete-empty-account": "Leeres Benutzerkonto",
