@@ -182,6 +182,11 @@
 				}
 			},
 			{
+				"name": "lu_attachment_method",
+				"type": "mwtinyint",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
 				"name": "lu_local_id",
 				"type": "integer",
 				"options": { "notnull": false, "unsigned": true }

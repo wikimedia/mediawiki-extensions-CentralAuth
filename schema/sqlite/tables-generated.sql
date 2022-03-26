@@ -44,6 +44,7 @@ CREATE TABLE /*_*/localuser (
   lu_name BLOB NOT NULL,
   lu_attached_timestamp BLOB DEFAULT NULL,
   lu_attached_method TEXT DEFAULT NULL,
+  lu_attachment_method SMALLINT UNSIGNED DEFAULT NULL,
   lu_local_id INTEGER UNSIGNED DEFAULT NULL,
   lu_global_id INTEGER UNSIGNED DEFAULT NULL,
   PRIMARY KEY(lu_wiki, lu_name)

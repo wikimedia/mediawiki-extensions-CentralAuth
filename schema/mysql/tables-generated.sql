@@ -53,6 +53,7 @@ CREATE TABLE /*_*/localuser (
     'primary', 'empty', 'mail', 'password',
     'admin', 'new', 'login'
   ) DEFAULT NULL,
+  lu_attachment_method TINYINT UNSIGNED DEFAULT NULL,
   lu_local_id INT UNSIGNED DEFAULT NULL,
   lu_global_id INT UNSIGNED DEFAULT NULL,
   INDEX lu_name_wiki (lu_name, lu_wiki),

@@ -1,0 +1,109 @@
+{
+	"before": {
+		"name": "localuser",
+		"comment": "Local linkage info, listing which wikis the username is attached to the global account. All local DBs will be swept on an opt-in check event.",
+		"columns": [
+			{
+				"name": "lu_wiki",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "lu_name",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "lu_attached_timestamp",
+				"comment": "Migration status/logging information, to help diagnose issues",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "lu_attached_method",
+				"comment": "Migration status/logging information, to help diagnose issues",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "primary", "empty", "mail", "password", "admin", "new", "login" ]
+					}
+				}
+			},
+			{
+				"name": "lu_local_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "lu_global_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "lu_name_wiki",
+				"columns": [ "lu_name", "lu_wiki" ],
+				"unique": false
+			}
+		],
+		"pk": [ "lu_wiki", "lu_name" ]
+	},
+	"after": {
+		"name": "localuser",
+		"comment": "Local linkage info, listing which wikis the username is attached to the global account. All local DBs will be swept on an opt-in check event.",
+		"columns": [
+			{
+				"name": "lu_wiki",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "lu_name",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "lu_attached_timestamp",
+				"comment": "Migration status/logging information, to help diagnose issues",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "lu_attached_method",
+				"comment": "Migration status/logging information, to help diagnose issues",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "primary", "empty", "mail", "password", "admin", "new", "login" ]
+					}
+				}
+			},
+			{
+				"name": "lu_attachment_method",
+				"type": "mwtinyint",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "lu_local_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			},
+			{
+				"name": "lu_global_id",
+				"type": "integer",
+				"options": { "notnull": false, "unsigned": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "lu_name_wiki",
+				"columns": [ "lu_name", "lu_wiki" ],
+				"unique": false
+			}
+		],
+		"pk": [ "lu_wiki", "lu_name" ]
+	}
+}
