@@ -523,7 +523,8 @@
 		"log": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\LogHookHandler",
 			"services": [
-				"UserNameUtils"
+				"UserNameUtils",
+				"DBLoadBalancerFactory"
 			]
 		},
 		"logincomplete": {

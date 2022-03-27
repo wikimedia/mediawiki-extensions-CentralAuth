@@ -21,10 +21,12 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use LogEventsList;
+use LogPage;
 use MediaWiki\Hook\LogEventsListGetExtraInputsHook;
 use MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook;
 use MediaWiki\User\UserNameUtils;
 use WebRequest;
+use Wikimedia\Rdbms\LBFactory;
 
 class LogHookHandler implements
 	LogEventsListGetExtraInputsHook,
@@ -33,11 +35,19 @@ class LogHookHandler implements
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
+	/** @var LBFactory */
+	private $lbFactory;
+
 	/**
 	 * @param UserNameUtils $userNameUtils
+	 * @param LBFactory $lbFactory
 	 */
-	public function __construct( UserNameUtils $userNameUtils ) {
+	public function __construct(
+		UserNameUtils $userNameUtils,
+		LBFactory $lbFactory
+	) {
 		$this->userNameUtils = $userNameUtils;
+		$this->lbFactory = $lbFactory;
 	}
 
 	/**
@@ -52,6 +62,22 @@ class LogHookHandler implements
 			$canonicalOldname = $this->userNameUtils->getCanonical( $oldname );
 			if ( $oldname !== '' ) {
 				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
+
+				$hiddenBits = 0;
+				$user = $request->getSession()->getUser();
+				if ( !$user->isAllowed( 'deletedhistory' ) ) {
+					$hiddenBits = LogPage::DELETED_ACTION;
+				} elseif ( !$user->isAllowedAny( 'suppressrevision', 'viewsuppressed' ) ) {
+					$hiddenBits = LogPage::DELETED_ACTION | LogPage::DELETED_RESTRICTED;
+				}
+
+				if ( $hiddenBits ) {
+					$bitfield = $this->lbFactory
+						->getMainLB()
+						->getConnection( DB_REPLICA )
+						->bitAnd( 'log_deleted', $hiddenBits );
+					$qc[] = "$bitfield != $hiddenBits";
+				}
 			}
 		}
 	}
