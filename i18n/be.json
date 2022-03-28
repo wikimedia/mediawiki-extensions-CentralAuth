@@ -9,7 +9,8 @@
 			"Хомелка",
 			"Чаховіч Уладзіслаў",
 			"Kareyac",
-			"Chadyka"
+			"Chadyka",
+			"Maksim L."
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік",
@@ -238,7 +239,7 @@
 	"centralauth-log-status-locked": "замкнуты",
 	"centralauth-log-status-none": "(нічога)",
 	"centralauth-log-status-oversighted": "утоены",
-	"centralauth-login-error-locked": "{{GENDER:$1|Вы}} не можаце ўвайсці, таму што ваш рахунак глабальна замкнуты.",
+	"centralauth-login-error-locked": "{{GENDER:$1|Вы}} не можаце ўвайсці, бо ваш рахунак глабальна заблакаваны.",
 	"centralauth-login-no-others": "Вы аўтаматычна ўвайшлі ў іншыя праекты {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Апрацоўваецца ўваход у {{PLURAL:$2|праект|праекты}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Вы аўтаматычна выйшлі з іншых праектаў {{int:Centralauth-groupname}}.",
@@ -253,7 +254,7 @@
 	"centralauth-merge-method-admin": "уліковы запіс, аб’яднаны адміністратарам",
 	"centralauth-merge-method-admin-desc": "Паказвае, што лякальны рахунак быў аб’яднаны ўручную сцюардам.\nЦяпер гэта магчымасць адключаная па прычынах бяспекі.",
 	"centralauth-merge-method-empty": "няма ўкладу",
-	"centralauth-merge-method-empty-desc": "Азначае, што лакальны рахунак быў аб’яднаны, таму што не меў правак.",
+	"centralauth-merge-method-empty-desc": "Азначае, што лакальны рахунак быў аб’яднаны, бо не меў правак.",
 	"centralauth-merge-method-login": "створаны пры ўваходзе ў сістэму",
 	"centralauth-merge-method-login-desc": "Паказвае, што лакальны рахунак быў створаны аўтаматычна пад час уваходу ўдзельніка ў сістэму.",
 	"centralauth-merge-method-mail": "пацверджаны эл. поштай",
@@ -261,7 +262,7 @@
 	"centralauth-merge-method-new": "новы рахунак",
 	"centralauth-merge-method-new-desc": "Паказвае, што глабальны рахунак быў створаны аўтаматычна, пад час стварэння лакальнага рахунку.",
 	"centralauth-merge-method-password": "пацверджаны паролем",
-	"centralauth-merge-method-password-desc": "Паказвае, што лакальны рахунак быў аб’яднаны, таму што ўдзельнік падаў слушны пароль.",
+	"centralauth-merge-method-password-desc": "Паказвае, што лакальны рахунак быў аб’яднаны, бо ўдзельнік падаў слушны пароль.",
 	"centralauth-merge-method-primary": "хатняя вікі",
 	"centralauth-merge-method-primary-desc": "Гэта вікі, на якой было пачатае аб’яднанне рахункаў.\nЗаўважце, што яна можа адрознівацца ад сапраўднай хатняй вікі гэтага ўдзельніка.",
 	"centralauth-merge-no-accounts": "У цэнтральнай табліцы адсочвання рахункаў не знойдзена запісу, адпаведнага вашаму імю! Мабыць база звестак пашкоджаная.",

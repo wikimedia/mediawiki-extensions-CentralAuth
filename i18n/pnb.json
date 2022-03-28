@@ -93,7 +93,7 @@
 	"centralauth-editgroup-success": "گلوبل گروپ بدل دتا",
 	"centralauth-editgroup-success-text": "تساں کامیابی نال $1 گلوبل گروپ اجازت بدل دتی اے۔\n[[Special:GlobalGroupPermissions|گروپ مینیجمنٹ ول واپس]]",
 	"centralauth-editset": "وکی سیٹ",
-	"centralauth-editset-badname": "ناں منیا یا خالی ناں",
+	"centralauth-editset-badname": "نا منیا یا خالی ناں",
 	"centralauth-editset-badtype": "ناں منیا سیٹ ٹائپ",
 	"centralauth-editset-badwikis": "اے {{PLURAL:$2|وکی نئیں بنے ہوۓ|نئیں بنیا ہویا}}: $1",
 	"centralauth-editset-intro-ro": "تھلے وکی سیٹاں دی لسٹ اے۔",
