@@ -392,7 +392,7 @@
 			},
 			{
 				"name": "rq_wiki",
-				"comment": "WikiID of home wiki for requesting user. Will be null if user is a CentralAuth account",
+				"comment": "WikiID of the wiki where the renaming was requested.",
 				"type": "binary",
 				"options": { "notnull": false, "length": 255 }
 			},
