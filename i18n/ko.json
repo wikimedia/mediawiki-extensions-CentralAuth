@@ -35,7 +35,8 @@
 			"관인생략",
 			"밝은소년",
 			"아라",
-			"콩가루"
+			"콩가루",
+			"MemphisA5"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "사용자가 속한 전역 권한 그룹",
@@ -166,10 +167,12 @@
 	"centralauth-completelogin-back": "이전 문서로 돌아갑니다.",
 	"centralauth-contribs-locked": "이 계정은 전역으로 잠겨 있습니다.\n더 자세한 정보는 [[Special:CentralAuth/$1|통합 계정 정보]]를 참조하세요.",
 	"centralauth-contribs-locked-log": "이 계정은 전역으로 잠겨 있습니다.\n해당 사용자의 최신 잠금 기록은 다음과 같습니다:",
+	"centralauth-createlocal-already-exists": "지정된 전역 계정에 대한 로컬 계정이 이미 있습니다.",
 	"centralauth-createlocal-no-global-account": "해당 통합 계정이 없습니다.",
 	"centralauth-createlocal-pretext": "특정한 이유로 스스로 로컬 계정을 생성할 수 없는 경우 이 폼을 사용하여 통합 계정에 대해 로컬 계정을 생성할 수 있습니다.",
 	"centralauth-createlocal-reason": "이유",
 	"centralauth-createlocal-success": "로컬 계정이 생성되었습니다.",
+	"centralauth-createlocal-suppressed": "숨겨진 사용자에 대한 로컬 계정을 만들 수 없습니다.",
 	"centralauth-createlocal-username": "통합 계정 이름",
 	"centralauth-days-ago": "$1일 전",
 	"centralauth-delete-empty-account": "빈 계정",
@@ -366,6 +369,7 @@
 	"centralauth-rename-form-reason": "이유",
 	"centralauth-rename-form-suppressredirects": "넘겨주기 만들기를 막기",
 	"centralauth-rename-globaleditcount-threshold": "이 사용자는 {{PLURAL:$1|편집}} $1회 이상 기여하였습니다. 정말로 이 사용자의 이름을 바꾸려고 하고, 시스템 관리자가 이 이름 바꾸기를 감독하고 있는지 확인하세요.",
+	"centralauth-rename-listed-on-denylist": "이 사용자는 전역 이름 바꾸기 거부 목록에 있습니다. 이 사용자의 이름을 바꾸려면 먼저 거부 목록을 변경해야 합니다.",
 	"centralauth-rename-movelog": "계정 이름을 \"[[Special:CentralAuth/$1|$1]]\"에서 \"[[Special:CentralAuth/$2|$2]]\"(으)로 바꾸는 동안 자동으로 문서를 이동함",
 	"centralauth-rename-notinprogress": "$1님에 대한 진행 중인 이름 바꾸기가 없습니다. 이미 완료되어 있을 수 있습니다.",
 	"centralauth-rename-notinstalled": "Renameuser 확장 기능이 설치되어 있지 않습니다.",
@@ -538,5 +542,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|당신의}} 계정인 '''$1'''이(가) {{int:Centralauth-groupname}}의 통합 계정 자동 병합 과정에서'''$2'''(으)로 바뀌었습니다.",
 	"sulrenamewarning-title": "{{GENDER:$1|당신의}} 계정 이름이 바뀜",
 	"sulrenamewarning-usenew": "앞으로는 {{GENDER:$1}}새 사용자 계정 이름인 '''$1'''을(를) 사용해주세요.",
-	"userswhowillberenamed": "계정 이름이 바뀔 사용자"
+	"userswhowillberenamed": "계정 이름이 바뀔 사용자",
+	"centralauth-badaccess-blacklisted": "블랙리스트에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다."
 }
