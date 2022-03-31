@@ -549,8 +549,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
 		$htmlForm
-			->addHiddenField( 'title', $this->getPageTitle() )
 			->setMethod( 'get' )
+			// Strip subpage
+			->setTitle( $this->getPageTitle() )
 			->setAction( $this->getConfig()->get( 'Script' ) )
 			->setId( 'mw-userrights-form1' )
 			->setName( 'uluser' )
