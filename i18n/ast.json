@@ -4,7 +4,8 @@
 			"Esbardu",
 			"McDutchie",
 			"Tokvo",
-			"Xuacu"
+			"Xuacu",
+			"Fitoschido"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales nos que ta l'usuariu",
@@ -66,7 +67,7 @@
 	"centralauth-admin-lookup-rw": "Xestionar cuenta d'usuariu",
 	"centralauth-admin-manage": "Xestionar los datos de la cuenta",
 	"centralauth-admin-merge": "Fusionar seleicionaes",
-	"centralauth-admin-multi-bot": "Cambeos recientes",
+	"centralauth-admin-multi-bot": "Cambeos recién",
 	"centralauth-admin-multi-botcheck": "Marcar les entraes de [[Special:RecentChanges|{{int:recentchanges}}]] como entraes de bot.",
 	"centralauth-admin-multi-intro": "Anovar múltiples cuentes globales nel intre",
 	"centralauth-admin-multi-notfound": "La gueta nun devolvió dengún nome d'usuariu.",
