@@ -117,7 +117,7 @@ class GlobalUsersPager extends AlphabeticPager {
 			'tables' => $tables,
 			'fields' => [
 				'gu_name',
-				'gu_id',
+				'gu_id' => 'MAX(gu_id)',
 				'gu_locked' => 'MAX(gu_locked)',
 				'lu_attached_method' => 'MAX(lu_attached_method)',
 				'gug_group' => $this->mDb->buildGroupConcatField(
@@ -142,7 +142,7 @@ class GlobalUsersPager extends AlphabeticPager {
 				),
 			],
 			'conds' => $conds,
-			'options' => [ 'GROUP BY' => 'gu_name, gu_id' ],
+			'options' => [ 'GROUP BY' => 'gu_name' ],
 			'join_conds' => $join_conds,
 		];
 	}
