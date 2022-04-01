@@ -120,26 +120,6 @@ class GlobalUsersPager extends AlphabeticPager {
 				'gu_id' => 'MAX(gu_id)',
 				'gu_locked' => 'MAX(gu_locked)',
 				'lu_attached_method' => 'MAX(lu_attached_method)',
-				'gug_group' => $this->mDb->buildGroupConcatField(
-					// | cannot be used in a group name
-					'|',
-					[ 'G' => 'global_user_groups' ],
-					'G.gug_group',
-					[
-						'G.gug_user = gu_id',
-						'G.gug_expiry IS NULL OR G.gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
-					]
-				),
-				'gug_expiry' => $this->mDb->buildGroupConcatField(
-					// | is not a part of any MW timestamp
-					'|',
-					[ 'G' => 'global_user_groups' ],
-					'IFNULL(G.gug_expiry, "null")',
-					[
-						'G.gug_user = gu_id',
-						'G.gug_expiry IS NULL OR G.gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
-					]
-				),
 			],
 			'conds' => $conds,
 			'options' => [ 'GROUP BY' => 'gu_name' ],
@@ -163,8 +143,9 @@ class GlobalUsersPager extends AlphabeticPager {
 		} else {
 			array_unshift( $info, $this->msg( 'centralauth-listusers-nolocal' )->text() );
 		}
-		if ( $row->gug_group ) {
-			$groups = $this->getUserGroups( $row->gu_id, $row->gu_name );
+
+		$groups = $this->getUserGroups( $row->gu_id, $row->gu_name );
+		if ( $groups ) {
 			$info[] = $groups;
 		}
 
@@ -175,44 +156,55 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	protected function doBatchLookups() {
 		$batch = new LinkBatch();
+
 		foreach ( $this->mResult as $row ) {
 			// userpage existence link cache
 			$batch->addObj( Title::makeTitleSafe( NS_USER, $row->gu_name ) );
-			if ( $row->gug_group ) { // no point in adding users that belong to any group
-				$groups = explode( '|', $row->gug_group );
-				$expiries = explode( '|', $row->gug_expiry );
-				$combined = array_combine( $groups, $expiries );
-
-				// Ensure temporary groups are displayed first, to avoid ambiguity like
-				// "first, second (expires at some point)" (unclear if only second expires or if both expire)
-				uasort( $combined, static function ( $first, $second ) {
-					// yes, this is 'null' not null, that's the string we get from the database if there's no expiry
-					if ( $first === 'null' && $second !== 'null' ) {
-						return 1;
-					} elseif ( $first !== 'null' && $second === 'null' ) {
-						return -1;
-					} else {
-						return 0;
-					}
-				} );
-
-				$this->globalIDGroups[$row->gu_id] = $combined;
-			}
+			$this->globalIDGroups[$row->gu_id] = [];
 		}
+
 		$batch->execute();
 
+		$groups = $this->mDb->select(
+			[ 'global_user_groups' ],
+			[ 'gug_user', 'gug_group', 'gug_expiry' ],
+			[
+				'gug_user' => array_keys( $this->globalIDGroups ),
+				'gug_expiry IS NULL OR gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
+			],
+			__METHOD__
+		);
+
 		// Make an array of global groups for all users in the current result set
-		$globalGroups = [];
-		foreach ( $this->globalIDGroups as $gugGroup ) {
-			$globalGroups = array_merge( $globalGroups, array_keys( $gugGroup ) );
+		$allGroups = [];
+
+		foreach ( $groups as $row ) {
+			$this->globalIDGroups[$row->gug_user][$row->gug_group] = $row->gug_expiry;
+			$allGroups[] = $row->gug_group;
 		}
-		if ( count( $globalGroups ) > 0 ) {
+
+		foreach ( $this->globalIDGroups as $user => &$groups ) {
+			// Ensure temporary groups are displayed first, to avoid ambiguity like
+			// "first, second (expires at some point)" (unclear if only second expires or if both expire)
+			uasort( $groups, static function ( $first, $second ) {
+				if ( !$first && $second ) {
+					return 1;
+				} elseif ( $first && !$second ) {
+					return -1;
+				} else {
+					return 0;
+				}
+			} );
+		}
+
+		if ( count( $allGroups ) > 0 ) {
 			$wsQuery = $this->mDb->select(
-					[ 'global_group_restrictions', 'wikiset' ],
-					[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
-					[ 'ggr_set=ws_id', 'ggr_group' => array_unique( $globalGroups ) ],
-					__METHOD__
+				[ 'global_group_restrictions', 'wikiset' ],
+				[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
+				[ 'ggr_set=ws_id', 'ggr_group' => array_unique( $allGroups ) ],
+				__METHOD__
 			);
+
 			// Make an array of locally enabled wikisets
 			foreach ( $wsQuery as $wsRow ) {
 				if ( WikiSet::newFromRow( $wsRow )->inSet() ) {
@@ -279,9 +271,9 @@ class GlobalUsersPager extends AlphabeticPager {
 	 *
 	 * @param string $id
 	 * @param string $username
-	 * @return string
+	 * @return string|null
 	 */
-	protected function getUserGroups( $id, $username ) {
+	protected function getUserGroups( $id, $username ): ?string {
 		$rights = [];
 		foreach ( $this->globalIDGroups[$id] as $group => $expiry ) {
 			$ugm = new UserGroupMembership(
@@ -304,7 +296,11 @@ class GlobalUsersPager extends AlphabeticPager {
 			}
 		}
 
-		return $this->getLanguage()->listToText( $rights );
+		if ( count( $rights ) > 0 ) {
+			return $this->getLanguage()->listToText( $rights );
+		}
+
+		return null;
 	}
 
 	/**
@@ -313,7 +309,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	public function getAllGroups() {
 		$result = [];
 		foreach ( $this->globalGroupLookup->getDefinedGroups() as $group ) {
-			$result[$group] = UserGroupMembership::getGroupName( $group );
+			$result[$group] = $this->getLanguage()->getGroupName( $group );
 		}
 		asort( $result );
 		return $result;
