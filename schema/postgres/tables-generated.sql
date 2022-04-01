@@ -49,6 +49,7 @@ CREATE TABLE localuser (
   lu_name TEXT NOT NULL,
   lu_attached_timestamp TIMESTAMPTZ DEFAULT NULL,
   lu_attached_method TEXT DEFAULT NULL,
+  lu_attachment_method SMALLINT DEFAULT NULL,
   lu_local_id INT DEFAULT NULL,
   lu_global_id INT DEFAULT NULL,
   PRIMARY KEY(lu_wiki, lu_name)
