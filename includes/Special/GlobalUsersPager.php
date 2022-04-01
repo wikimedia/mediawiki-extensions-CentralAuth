@@ -205,12 +205,21 @@ class GlobalUsersPager extends AlphabeticPager {
 				__METHOD__
 			);
 
+			$notLocalWikiSets = [];
+
 			// Make an array of locally enabled wikisets
 			foreach ( $wsQuery as $wsRow ) {
-				if ( WikiSet::newFromRow( $wsRow )->inSet() ) {
-					$this->localWikisets[] = $wsRow->ggr_group;
+				if ( !WikiSet::newFromRow( $wsRow )->inSet() ) {
+					$notLocalWikiSets[] = $wsRow->ggr_group;
 				}
 			}
+
+			// This is reversed so that wiki sets active everywhere (without
+			// global_group_restrictions rows) are shown as enabled everywhere
+			$this->localWikisets = array_diff(
+				array_unique( $allGroups ),
+				$notLocalWikiSets
+			);
 		}
 
 		$this->mResult->rewind();
