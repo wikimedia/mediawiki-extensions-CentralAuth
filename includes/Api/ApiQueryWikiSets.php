@@ -28,6 +28,7 @@ use ApiBase;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 
 /**
  * Query module to list the wiki sets
@@ -111,9 +112,9 @@ class ApiQueryWikiSets extends ApiQueryBase {
 			'limit' => [
 				ApiBase::PARAM_DFLT => 10,
 				ApiBase::PARAM_TYPE => 'limit',
-				ApiBase::PARAM_MIN => 1,
-				ApiBase::PARAM_MAX => ApiBase::LIMIT_BIG1,
-				ApiBase::PARAM_MAX2 => ApiBase::LIMIT_BIG2
+				IntegerDef::PARAM_MIN => 1,
+				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
+				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2
 			],
 			'orderbyname' => [
 				ApiBase::PARAM_DFLT => false,
