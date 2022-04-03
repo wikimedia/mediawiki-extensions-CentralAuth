@@ -26,6 +26,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module to delete a global account.
@@ -64,11 +65,11 @@ class ApiDeleteGlobalAccount extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'user' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'reason' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 		];
 	}

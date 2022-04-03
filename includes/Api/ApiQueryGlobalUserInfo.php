@@ -24,12 +24,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserNameUtils;
 use WikiMap;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Query module to list global user info and attachments
@@ -192,24 +192,24 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'user' => [
-				ApiBase::PARAM_TYPE => 'user',
+				ParamValidator::PARAM_TYPE => 'user',
 				UserDef::PARAM_ALLOWED_USER_TYPES => [
 					'name',
 					'interwiki',
 				],
 			],
 			'id' => [
-				ApiBase::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_TYPE => 'integer',
 			],
 			'prop' => [
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_TYPE => [
 					'groups',
 					'rights',
 					'merged',
 					'unattached',
 					'editcount'
 				],
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true
 			]
 		];
 	}

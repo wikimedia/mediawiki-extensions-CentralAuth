@@ -24,10 +24,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
 use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * Query module to list all global groups
@@ -113,8 +113,8 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 	public function getAllowedParams() {
 		return [
 			'prop' => [
-				ApiBase::PARAM_ISMULTI => true,
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_TYPE => [
 					'rights',
 				]
 			]

@@ -38,6 +38,7 @@ use MediaWiki\User\UserGroupManagerFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use UserrightsPage;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * @ingroup API
@@ -195,31 +196,31 @@ class ApiGlobalUserRights extends ApiBase {
 		}
 		return [
 			'user' => [
-				ApiBase::PARAM_TYPE => 'user',
+				ParamValidator::PARAM_TYPE => 'user',
 				UserDef::PARAM_ALLOWED_USER_TYPES => [ 'name', 'id' ],
 			],
 			'userid' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_DEPRECATED => true,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_DEPRECATED => true,
 			],
 			'add' => [
-				ApiBase::PARAM_TYPE => $allGroups,
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_TYPE => $allGroups,
+				ParamValidator::PARAM_ISMULTI => true
 			],
 			'remove' => [
-				ApiBase::PARAM_TYPE => $allGroups,
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_TYPE => $allGroups,
+				ParamValidator::PARAM_ISMULTI => true
 			],
 			'reason' => [
-				ApiBase::PARAM_DFLT => ''
+				ParamValidator::PARAM_DEFAULT => ''
 			],
 			'token' => [
 				// Standard definition automatically inserted
 				ApiBase::PARAM_HELP_MSG_APPEND => [ 'api-help-param-token-webui' ],
 			],
 			'tags' => [
-				ApiBase::PARAM_TYPE => 'tags',
-				ApiBase::PARAM_ISMULTI => true
+				ParamValidator::PARAM_TYPE => 'tags',
+				ParamValidator::PARAM_ISMULTI => true
 			],
 		];
 	}

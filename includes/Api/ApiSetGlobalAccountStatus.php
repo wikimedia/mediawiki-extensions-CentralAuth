@@ -26,6 +26,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module to lock/hide a global account.
@@ -98,29 +99,29 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'user' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'locked' => [
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_TYPE => [
 					'lock',
 					'unlock',
 					'' // Unset - basically means 'do not modify lock status'
 				]
 			],
 			'hidden' => [
-				ApiBase::PARAM_TYPE => [
+				ParamValidator::PARAM_TYPE => [
 					CentralAuthUser::HIDDEN_NONE,
 					CentralAuthUser::HIDDEN_LISTS,
 					CentralAuthUser::HIDDEN_OVERSIGHT
 				]
 			],
 			'reason' => [
-				ApiBase::PARAM_TYPE => 'string'
+				ParamValidator::PARAM_TYPE => 'string'
 			],
 			'statecheck' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false
 			],
 		];
 	}

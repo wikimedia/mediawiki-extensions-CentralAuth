@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use ApiBase;
 use ApiMain;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module that can be used to manually create a local account for a global account.
@@ -50,11 +51,11 @@ class ApiCreateLocalAccount extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'username' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true
 			],
 			'reason' => [
-				ApiBase::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_TYPE => 'string',
 			],
 		];
 	}

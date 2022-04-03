@@ -24,6 +24,7 @@ use ApiBase;
 use ApiMain;
 use Config;
 use MediaWiki\Api\Hook\APIGetAllowedParamsHook;
+use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiHookHandler implements
 	APIGetAllowedParamsHook
@@ -52,8 +53,8 @@ class ApiHookHandler implements
 
 		if ( $module instanceof ApiMain ) {
 			$params['centralauthtoken'] = [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_SENSITIVE => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_SENSITIVE => true,
 			];
 		}
 		return true;
