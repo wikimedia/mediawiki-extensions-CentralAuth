@@ -332,7 +332,7 @@
 	"centralauth-newgroup-intro": "You can use this form to assign permissions to a new group.\nNote that a group does not exist unless it has permissions assigned to it.",
 	"centralauth-newgroup-legend": "Create a new group",
 	"centralauth-not-owner-text": "The username \"$1\" was automatically assigned to the owner of the account on $2.\n\nIf this is you, you can finish the login unification process simply by typing the master password for that account here:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Demo mode only</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Demo mode only",
 	"centralauth-prefs-count-attached": "Your account is active on $1 {{PLURAL:$1|wiki|wikis}}.",
 	"centralauth-prefs-count-unattached": "Unconfirmed accounts with your name remain on $1 {{PLURAL:$1|wiki|wikis}}.",
 	"centralauth-prefs-detail-unattached": "Your account has not been confirmed as belonging to the global account.",
