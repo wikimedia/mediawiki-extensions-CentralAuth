@@ -470,6 +470,7 @@
 	"globalusermerge": "Sloučit globálního uživatele",
 	"globalusermerge-legend": "Sloučení globálního uživatele",
 	"globalusers": "Seznam globálních uživatelů",
+	"grant-setglobalaccountstatus": "Spravovat stav globálního účtu",
 	"log-action-filter-gblrights": "Typ změny:",
 	"log-action-filter-gblrights-groupprms": "Změna globální skupiny uživatelů",
 	"log-action-filter-gblrights-usergroups": "Změna globálních práv uživatele",

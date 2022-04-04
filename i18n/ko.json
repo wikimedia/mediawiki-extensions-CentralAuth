@@ -35,7 +35,8 @@
 			"밝은소년",
 			"아라",
 			"콩가루",
-			"Codenstory"
+			"Codenstory",
+			"MemphisA5"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "사용자가 속한 전역 권한 그룹",
@@ -525,5 +526,6 @@
 	"sulrenamewarning-renamed": "{{GENDER:$2|당신의}} 계정인 '''$1'''이(가) {{int:Centralauth-groupname}}의 통합 계정 자동 병합 과정에서'''$2'''(으)로 바뀌었습니다.",
 	"sulrenamewarning-title": "{{GENDER:$1|당신의}} 계정 이름이 바뀜",
 	"sulrenamewarning-usenew": "앞으로는 {{GENDER:$1}}새 사용자 계정 이름인 '''$1'''을(를) 사용해주세요.",
-	"userswhowillberenamed": "계정 이름이 바뀔 사용자"
+	"userswhowillberenamed": "계정 이름이 바뀔 사용자",
+	"centralauth-badaccess-blacklisted": "블랙리스트에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다."
 }

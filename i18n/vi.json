@@ -11,7 +11,9 @@
 			"Trần Nguyễn Minh Huy",
 			"Vinhtantran",
 			"McDutchie",
-			"NguoiDungKhongDinhDanh"
+			"NguoiDungKhongDinhDanh",
+			"Keo010122",
+			"Nghiemtrongdai VN"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục bao gồm thành viên",
@@ -335,7 +337,7 @@
 	"centralauth-rename-form-reason": "Lý do",
 	"centralauth-rename-form-suppressredirects": "Tắt các trang đổi hướng",
 	"centralauth-rename-globaleditcount-threshold": "Người dùng này có hơn $1 sửa đổi. Xin vui lòng xác nhận chắc chắn muốn đổi tên người dùng này và rằng một quản lý viên hệ thống có sẵn sàng quan sát việc đổi tên này.",
-	"centralauth-rename-movelog": "Tự động di chuyển trang trong việc đổi tên thành viên “[[Special:CentralAuth/$1|$1]]” thành “[[Special:CentralAuth/$2|$2]]”",
+	"centralauth-rename-movelog": "Tự động di chuyển trang khi đổi tên thành viên “[[Special:CentralAuth/$1|$1]]” thành “[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "$1 không phải đang được đổi tên. Việc đổi tên có thể hoàn thành rồi.",
 	"centralauth-rename-notinstalled": "Phần mở rộng Renameuser chưa được cài đặt.",
 	"centralauth-rename-progress-fieldset": "Danh sách tài khoản địa phương",
