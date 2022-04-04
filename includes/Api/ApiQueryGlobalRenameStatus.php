@@ -24,6 +24,7 @@ use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use Wikimedia\ParamValidator\ParamValidator;
 
 /**
  * API module equivalent of Special:GlobalRenameStatus
@@ -76,7 +77,7 @@ class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 	public function getAllowedParams( /* $flags = 0 */ ) {
 		return [
 			'user' => [
-				self::PARAM_TYPE => 'user',
+				ParamValidator::PARAM_TYPE => 'user',
 			]
 		];
 	}
