@@ -17,7 +17,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục bao gồm thành viên",
-	"action-centralauth-createlocal": "ép phải tạo tài khoản cục bộ",
+	"action-centralauth-createlocal": "ép tạo tài khoản cục bộ",
 	"action-centralauth-lock": "khóa hoặc mở khóa tài khoản chung",
 	"action-centralauth-merge": "trộn tài khoản của họ",
 	"action-centralauth-suppress": "cưỡng chế hoặc ẩn tài khoản chung",
@@ -380,7 +380,7 @@
 	"centralautologin": "Đăng nhập trung ương",
 	"centrallogin": "Đăng nhập thành viên trung ương",
 	"centralloginsuccesful": "Đã đăng nhập",
-	"createlocalaccount": "Ép phải tạo tài khoản cục bộ",
+	"createlocalaccount": "Ép tạo tài khoản cục bộ",
 	"globalgroupmembership": "Thành viên trong nhóm toàn cục",
 	"globalgrouppermissions": "Quản lý nhóm toàn cục",
 	"globalrenameprogress": "Tiến độ đổi tên toàn cục",

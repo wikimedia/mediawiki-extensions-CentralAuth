@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joao Xavier"
+		]
+	},
+	"apihelp-createlocalaccount-description": "Koakte krear lokala konto. To esas equivalanta ad uzar [[Special:CreateLocalAccount]]."
+}
