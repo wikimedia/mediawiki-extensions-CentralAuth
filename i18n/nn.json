@@ -7,6 +7,7 @@
 			"Harald Khan",
 			"Jon Harald Søby",
 			"Jorunn",
+			"Matma Rex",
 			"Nghtwlkr",
 			"Njardarlogar",
 			"Ranveig"
@@ -224,7 +225,7 @@
 	"centralauth-newgroup-intro": "Du kan nytta dette skjemaet til å gje løyve til ei ny gruppa.\nMerk at gruppa ikkje finst med mindre ho har fått tildelt rettar.",
 	"centralauth-newgroup-legend": "Opprett ei ny gruppa",
 	"centralauth-not-owner-text": "Brukarnamnet «$1» vart automatisk tildeld eigaren av kontoen på $2.\n\nOm dette er deg kan du fullføre prosessen for samanslåing ved å skrive inn hovudpassordet for kontoen her:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Berre demonstrasjonsmodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Berre demonstrasjonsmodus",
 	"centralauth-prefs-count-attached": "Kontoen din er aktiv på {{PLURAL:$1|éitt prosjekt|$1 prosjekt}}.",
 	"centralauth-prefs-count-unattached": "Ikkje-stadfesta kontoar med namnet ditt står att på {{PLURAL:$1|éitt prosjekt|$1 prosjekt}}.",
 	"centralauth-prefs-detail-unattached": "Det er ikkje stadfesta at denne kontoen er slått saman med hovudkontoen.",

@@ -3,6 +3,7 @@
 		"authors": [
 			"Amire80",
 			"Lloffiwr",
+			"Matma Rex",
 			"Pwyll",
 			"Robin Owain",
 			"Xxglennxx"
@@ -228,7 +229,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mis|mis|fis|mis|mis|mis}} yn ôl",
 	"centralauth-newgroup-legend": "Creu grŵp newydd",
 	"centralauth-not-owner-text": "Pennwyd y defnyddiwr \"$1\" yn awtomatig i berchennog y cyfrif ar $2.\nOs mai chi yw'r person hwnnw, gallwch gwblhau'r broses o uno mewngofnodi trwy deipio'r prif gyfrinair ar gyfer y cyfrif hwnnw yn y fan hon:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Fersiwn enghreifftiol yn unig</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Fersiwn enghreifftiol yn unig",
 	"centralauth-prefs-count-attached": "Mae'ch cyfrif ar waith ar $1 {{PLURAL:$1|safle|safle|safle|safle|safle|safle}} prosiect.",
 	"centralauth-prefs-detail-unattached": "Ni chadarnhawyd bod y safle prosiect hwn yn aelod o'r cyfrif cydwici.",
 	"centralauth-prefs-manage": "Rheoli'ch cyfrif cydwici",

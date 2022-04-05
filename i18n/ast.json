@@ -3,6 +3,7 @@
 		"authors": [
 			"Esbardu",
 			"Fitoschido",
+			"Matma Rex",
 			"McDutchie",
 			"Tokvo",
 			"Xuacu"
@@ -293,7 +294,7 @@
 	"centralauth-newgroup-intro": "Pues usar esti formulariu p'asignar permisos a un grupu nuevu.\nDate cuenta qu'un grupu nun esiste a nun ser que tenga permisos asignaos.",
 	"centralauth-newgroup-legend": "Crear un grupu nuevu",
 	"centralauth-not-owner-text": "Diose de mou automáticu'l nome d'usuariu \"$1\" al poseyedor de la cuenta en $2.\n\nSi yes tu, puedes finar el procesu de fusión de cuentes sólo con escribir la contraseña maestra d'esa cuenta equí:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Namái mou demo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Namái mou demo",
 	"centralauth-prefs-count-attached": "La to cuenta ta activa {{PLURAL:$1|n'una wiki|en $1 wikis}}.",
 	"centralauth-prefs-count-unattached": "Queden cuentes sin confirmar col to nome {{PLURAL:$1|n'una wiki|en $1 wikis}}.",
 	"centralauth-prefs-detail-unattached": "Nun se confirmó la to cuenta como perteneciente a la cuenta global.",

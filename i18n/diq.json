@@ -11,6 +11,7 @@
 			"Kumkumuk",
 			"Macofe",
 			"Marmase",
+			"Matma Rex",
 			"Mirzali",
 			"Orbot707",
 			"Xoser"
@@ -283,7 +284,7 @@
 	"centralauth-newgroup-intro": "Pê ena form, ti eşkeno desturanê yew grupî bide.\nYew grup ne esto heta ti heqanê hemî bido.",
 	"centralauth-newgroup-legend": "Yew grubê newî viraze",
 	"centralauth-not-owner-text": "Ena nameyê karber ê \"$1\"î, hesabê $2î rê otomatik reserve biyo.\n\nEka ena tu ya, ti eşkeno processa yew kerdişî pê paraloya masterî nuştiş ra beqedne.",
-	"centralauth-notice-dryrun": "<div class='successbox'>Teyna mode demo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Teyna mode demo",
 	"centralauth-prefs-count-attached": "Hesabê şıma $1 site da {{PLURAL:$1|proce|proceyan}} de aktivo.",
 	"centralauth-prefs-count-unattached": "Hesbanê konfirme nebiyo ke pê nameyê tu $1 {{PLURAL:$1|project|projects}} esto.",
 	"centralauth-prefs-detail-unattached": "Hesabê  şıma ena projede araşt nêbiyo ke hesab dê globali de bıaso.",

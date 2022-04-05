@@ -3,6 +3,7 @@
 		"authors": [
 			"Huslåke",
 			"Jyllanj",
+			"Matma Rex",
 			"Ælsån"
 		]
 	},
@@ -40,7 +41,7 @@
 	"centralauth-merge-welcome": "'''Det brugekonto ä ennu ett bløwen öweførtj te {{int:Centralauth-groupname}}s fælls loginsystem.'''\n\nHwes du vælge å flytt din konto, kan du brug sam brugenaun å adgångskode te å logg på mä på åll {{int:Centralauth-groupname}}s wikie på åll spraw.\n\nHwes där ä no som ållried hår tan det brugenaun på e ånj projekt, will dä ett påwirk dem, men djie dej mulihed for å finj en lösneng mä dem elle mä i administrator siena.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Sammellägg flier konto]] te fælls inloggneng",
 	"centralauth-not-owner-text": "Brugenaune \"$1\" bløw automatisk tildieltj ejan å kontoe på $2.\n\nHwes dä ä du, kan du fullför prosessi for fælls login we å skriiw adgångskoden for kontoe her:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Kons demonstrasjonsmodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Kons demonstrasjonsmodus",
 	"centralauth-prefs-unattached": "Ukonfirmærn",
 	"mergeaccount": "Status for sammelläggneng å konto"
 }

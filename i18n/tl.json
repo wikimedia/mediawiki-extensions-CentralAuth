@@ -6,6 +6,7 @@
 			"Jewel457",
 			"Jojit fb",
 			"LR Guanzon",
+			"Matma Rex",
 			"Namayan",
 			"Sky Harbor"
 		]
@@ -214,7 +215,7 @@
 	"centralauth-newgroup-intro": "Magagamit mo ang pormularyong ito para sa pagtatakda ng mga kapahintulutan para sa isang bagong pangkat.\nPakitaandaan lamang na hindi iiral ang isang pangkat hangga't hindi pa ito nabibigyan ng mga kapahintulutan.",
 	"centralauth-newgroup-legend": "Lumikha ng isang bagong pangkat",
 	"centralauth-not-owner-text": "Ang pangalan ng tagagamit na \"$1\" ay kusang itinalaga para sa may-ari ng account na nasa $2.\n\nKung ikaw ito, maaari mong tapusin ang pagsasagawa ng pag-iisa ng paglogin sa pamamagitan lamang ng payak na paglalagay dito ng pangunahing password para sa account na iyon:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Nasa modalidad ng pagpapatunghay (pagpapamalas) lamang kung paano gagawin/gagamitin</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Nasa modalidad ng pagpapatunghay (pagpapamalas) lamang kung paano gagawin/gagamitin",
 	"centralauth-prefs-count-attached": "Aktibo ang kuwenta mo sa $1 {{PLURAL:$1|sayt|sayt}} ng proyekto",
 	"centralauth-prefs-count-unattached": "May nananatiling kuwentang 'di-nakatiyak na may pangalan mo sa $1 {{PLURAL:$1|proyekto|proyekto}}.",
 	"centralauth-prefs-detail-unattached": "Hindi pa natitiyak ang pamproyektong site na ito bilang kabilang sa kuwentang pandaigdig.",

@@ -3,6 +3,7 @@
 		"authors": [
 			"Clockery",
 			"Les Meloures",
+			"Matma Rex",
 			"Robby",
 			"Soued031"
 		]
@@ -273,7 +274,7 @@
 	"centralauth-newgroup-intro": "Dir kënnt dëse Formulaire benotze fir Rechter un en neie Gruppe ze verginn.\nBedenkt datt e Grupp nëmmen existéiert wann e Rechter huet déi en zougedeelt kritt huet.",
 	"centralauth-newgroup-legend": "Eng nei Grupp opmaachen",
 	"centralauth-not-owner-text": "De Benotzernumm \"$1\" gouf automatesch dem Proprietär vum Benotzerkont op $2 zougedeelt.\n\nWann Dir dat sidd, kënnt Dir de Prozess vum Zesummeleeë vu Benotzerkonten ofschléissen andeems Dir d'Haaptpasswuert fir dëse Benotzerkont hei agitt:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Demonstratiounsmodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Demonstratiounsmodus",
 	"centralauth-prefs-count-attached": "Äre Benotzerkont ass op $1 {{PLURAL:$1|Wiki|Wikien}} aktiv.",
 	"centralauth-prefs-count-unattached": "$1{{PLURAL:$1|Wiki|Wikien}}.",
 	"centralauth-prefs-detail-unattached": "Fir äre Benotzerkont gouf net confirméiert datt en zum globale Benotzerkont gehéiert.",

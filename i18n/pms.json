@@ -3,7 +3,8 @@
 		"authors": [
 			"Borichèt",
 			"Bèrto 'd Sèra",
-			"Dragonòt"
+			"Dragonòt",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Partìe globaj anté ch'a-i é l'utent",
@@ -270,7 +271,7 @@
 	"centralauth-newgroup-intro": "A peul dovré sto formulari-sì për assigné dij përmess a na partìa neuva.\nCh'a nòta che na partìa a esist pa, gavà che a l'abia dij përmess assignà.",
 	"centralauth-newgroup-legend": "Creé na partìa neuva",
 	"centralauth-not-owner-text": "Lë stranòm \"$1\" e l'é stait dait n'aotomàtich al proprietari dël cont ansima a $2.\n\nSe as trata ëd chiel/chila, a peul mandé a bon fin ël process dla mës-cia dë stranòm e ciav ën butand-ie ambelessì la ciav prinsipal dël cont:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Mach për dimostrassion, da bon a-i riva gnente</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Mach për dimostrassion, da bon a-i riva gnente",
 	"centralauth-prefs-count-attached": "Sò cont a travaja ansima a $1 {{PLURAL:$1|sit|sit}} ëd proget.",
 	"centralauth-prefs-count-unattached": "A resto dij cont nen confermà con sò stranòm ansima a $1 {{PLURAL:$1|proget|proget}}.",
 	"centralauth-prefs-detail-unattached": "Ës sit-sì a l'é pa restà confermà coma bon për sò cont global.",

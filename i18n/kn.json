@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Abhirama",
+			"Matma Rex",
 			"Nayvik",
 			"Omshivaprakash",
 			"Pavanaja",
@@ -100,7 +101,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|ನಿಮಿಷದ|ನಿಮಿಷಗಳ}} ಹಿಂದೆ",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ತಿಂಗಳ|ತಿಂಗಳುಗಳ}} ಹಿಂದೆ",
 	"centralauth-newgroup-legend": "ಹೊಸ ಗುಂಪನ್ನು ರಚಿಸಿ",
-	"centralauth-notice-dryrun": "<div class='successbox'>ಪ್ರಾತ್ಯಕ್ಷಿಕಾಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "ಪ್ರಾತ್ಯಕ್ಷಿಕಾಕ್ರಮದಲ್ಲಿ ಮಾತ್ರ",
 	"centralauth-prefs-status": "ಜಾಗತಿಕ ಖಾತೆ:",
 	"centralauth-rename-form-reason": "ಕಾರಣ",
 	"centralauth-ro": "ಎಲ್ಲ ವಿಕಿಗಳ ಖಾತೆ ವಿವರ",

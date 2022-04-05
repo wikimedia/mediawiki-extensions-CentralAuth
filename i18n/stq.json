@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Matma Rex",
 			"Pyt"
 		]
 	},
@@ -148,7 +149,7 @@
 	"centralauth-newgroup-intro": "Du koast mäd dit Formular ne näie Gruppe Gjuchte tou-oardenje. Beoachtje, dät ju Gruppe soloange nit foarhounden is, bit hiere Gjuchte touwiesd wäide.",
 	"centralauth-newgroup-legend": "Näie Gruppe moakje",
 	"centralauth-not-owner-text": "Die Benutsernoome „$1“ wuude automatisk dän Oaindummer fon dät Benutserkonto ap $2 touwiesd.\n\nWan dit din Benutsernoome is, koast du ju Touhoopefoatenge fon do Benutserkonten truch Iengoawe fon dät Haud-Paaswoud fon dit Benutserkonto be-eendje.",
-	"centralauth-notice-dryrun": "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Demonstrationsmodus",
 	"centralauth-prefs-count-attached": "Dien Benutserkonto is in $1 {{PLURAL:$1|Projekt|Projekte}} aktiv.",
 	"centralauth-prefs-count-unattached": "Dät rakt in $1 {{PLURAL:$1|Projekt|Projekte}} uunbestäätigede Benutserkonten mäd din Noome.",
 	"centralauth-prefs-detail-unattached": "Foar dit Projekt lait neen Bestäätigenge foar dät touhoopefierde Benutserkonto foar.",

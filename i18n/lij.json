@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Giromin Cangiaxo",
+			"Matma Rex",
 			"S4b1nuz E.656"
 		]
 	},
@@ -186,7 +187,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|menuto|menuti}} fa",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|meise|meixi}} fa",
 	"centralauth-not-owner-text": "O nomme utente \"$1\" o l'è stæto assegnou aotomaticamente a-o titolâ de l'utença co-o mæximo nomme in sciô progetto $2.\n\nSe t'ê ti, ti poeu terminâ o processo d'unificaçion sempiçemente inseindo chì a password prinçipâ de quell'utença:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Solo modalitæ Demo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Solo modalitæ Demo",
 	"centralauth-prefs-count-attached": "A to utença a l'è attiva insce $1 {{PLURAL:$1|wiki}}.",
 	"centralauth-prefs-count-unattached": "Gh'è de utençe non confermæ co-o to nomme utente insce $1 {{PLURAL:$1|wiki}}.",
 	"centralauth-prefs-detail-unattached": "A to utença a no l'è stæta confermâ comme appartegninte a l'utença globâ.",

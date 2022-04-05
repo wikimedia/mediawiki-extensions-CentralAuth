@@ -3,6 +3,7 @@
 		"authors": [
 			"Irwangatot",
 			"Kandar",
+			"Matma Rex",
 			"Uchup19"
 		]
 	},
@@ -139,7 +140,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|bulan|bulan}} kaliwat",
 	"centralauth-newgroup-legend": "Jieun grup anyar",
 	"centralauth-not-owner-text": "Sandiasma pamaké \"$1\" geus diajangkeun ka nu boga akun di $2.\n\nMun éta téh anjeun, anjeun bisa nganggeuskeun prosés ngahijikeun log asup ku cara ngetikkeun kecap sandi pikeun éta akun di dieu:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Ukur mode démo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Ukur mode démo",
 	"centralauth-prefs-count-attached": "Rekening anjeun aktif di $1 proyék {{PLURAL:$1|loka|loka}}.",
 	"centralauth-prefs-count-unattached": "Sababaraha rekening anjeun di $1 {{PLURAL:$1|proyék|proyék}} can konfirmasi.",
 	"centralauth-prefs-detail-unattached": "Loka ieu proyék can dikonfirmasi kaasup kana rekening global.",

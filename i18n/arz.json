@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ghaly",
+			"Matma Rex",
 			"Meno25",
 			"Ramsis II"
 		]
@@ -151,7 +152,7 @@
 	"centralauth-newgroup-intro": "ممكن تستعمل الاستمارة دى علشان تدى الاذونات لمجموعة جديدة.\nاعمل حسابك ان اى مجموعة مابيبقالهاش وجود الا لما يكون عندها الاذونات",
 	"centralauth-newgroup-legend": "انشئ مجموعة جديدة",
 	"centralauth-not-owner-text": "اسم اليوزر \"$1\" اتخصص اوتوماتيكى لمالك الحساب على  $2.\n\nلو انت اليوزر دا،ممكن تخلص عملية توحيد الدخول ببساطة اذا كتبت الباسورد الرئيسية للحساب دا هنا.",
-	"centralauth-notice-dryrun": "<div class='successbox'>نمط التجربة بس</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "نمط التجربة بس",
 	"centralauth-prefs-count-attached": "حسابك نشيط فى $1 {{PLURAL:$1|موقع}} مشروع.",
 	"centralauth-prefs-count-unattached": "حسابات مش مؤكدة باسمك  لسة موجودة فى $1 {{PLURAL:$1|مشروع}}.",
 	"centralauth-prefs-detail-unattached": "احنا  ماتاكدناش  ان موقع المشروع دا فعلا منتمى للحساب العام",

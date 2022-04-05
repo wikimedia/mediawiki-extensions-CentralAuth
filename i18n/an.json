@@ -3,6 +3,7 @@
 		"authors": [
 			"Juanpabl",
 			"Liangent",
+			"Matma Rex",
 			"Willtron"
 		]
 	},
@@ -213,7 +214,7 @@
 	"centralauth-newgroup-intro": "Puede fer servir iste formulario ta asignar premisos ta una nueva colla. Pare cuenta que una colla no existe si no se l'han asignato premisos.",
 	"centralauth-newgroup-legend": "Creyar una colla nueva",
 	"centralauth-not-owner-text": "O nombre d'usuario \"$1\" s'ha asignato ta o proprietario d'a cuenta en $2.\n\nSi ye vusté, puede rematar o proceso d'unificación de cuentas escribindo aquí a clau mayestra ta ixa cuenta.",
-	"centralauth-notice-dryrun": "<div class='successbox'>Sólo modo contrimuestra</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Sólo modo contrimuestra",
 	"centralauth-prefs-count-attached": "A suya cuenta ye activa en $1 {{PLURAL:$1|procheuto|procheutos}}.",
 	"centralauth-prefs-count-unattached": "Quedan cuentas no confirmatas con o suyo nombre en $1 {{PLURAL:$1|procheuto|procheutos}}.",
 	"centralauth-prefs-detail-unattached": "Iste procheuto no s'ha confirmau como parte d'a cuenta global.",

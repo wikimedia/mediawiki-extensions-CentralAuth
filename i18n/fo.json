@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Diupwijk",
-			"EileenSanda"
+			"EileenSanda",
+			"Matma Rex"
 		]
 	},
 	"action-centralauth-rename": "nýnevn globalar kontur",
@@ -202,7 +203,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mánaður|mánaðar}} síðan",
 	"centralauth-newgroup-legend": "Upprætta ein nýggja bólk",
 	"centralauth-not-owner-text": "Brúkaranavnið \"$1\" var sjálvvirkandi skrivað til eigaran av konto á $2.\nUm hetta er tú, so kanst tú fullfíggja gondina við at samanleggja kontur við heilt einfalt at skriva títt høvuðs loyniorðið fyri tað kontuna her:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Bert framsýningar støða (demo mode)</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Bert framsýningar støða (demo mode)",
 	"centralauth-prefs-count-attached": "Tín konta er virkin á $1 verkætlanar {{PLURAL:$1|síðu|síðum}}.",
 	"centralauth-prefs-not-managed": "Brúkar ikki samanlagda konto",
 	"centralauth-prefs-status": "Global status fyri konto:",

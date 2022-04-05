@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Matma Rex",
 			"Maxí",
 			"McDutchie",
 			"S.Örvarr.S",
@@ -224,7 +225,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|mánuði|mánuðum}} síðan",
 	"centralauth-newgroup-legend": "Búa til nýjan hóp",
 	"centralauth-not-owner-text": "Notandanafnið \"$1\" var sjálfvirkt úthlutað til eiganda aðgangsins $2.\n\nEf þú átt þennan aðgang, þá er hægt að ljúka samræmingu aðgangana með því að slá inn lykilorð aðgangsins hér:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Sýnis keyrsla eingöngu</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Sýnis keyrsla eingöngu",
 	"centralauth-prefs-count-attached": "Aðgangurinn þinn er virkur á $1 {{PLURAL:$1|wiki}}",
 	"centralauth-prefs-count-unattached": "Óstaðfestir aðgangar með þínu notendanafni eru enn á $1 {{PLURAL:$1|wiki}}",
 	"centralauth-prefs-detail-unattached": "Ekki hefur verið staðfest að aðgangurinn þinn tilheyri altækum aðgangi.",

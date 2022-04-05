@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ansumang",
+			"Matma Rex",
 			"NehalDaveND",
 			"Shubha"
 		]
@@ -210,7 +211,7 @@
 	"centralauth-newgroup-intro": "नूतनगणाय अधिकारदानाय भवान् अस्य प्रपत्रस्य उपयॊगं कर्तुमर्हति ।\nअधिकाररहितः गणः निष्कासितः भवति इति ज्ञायताम् ।",
 	"centralauth-newgroup-legend": "नूतनगणः आरभताम्",
 	"centralauth-not-owner-text": "\"$1\" सदस्यनाम $2 लेखायाः स्वामिने स्वचालितरूपेण प्रदत्तम् ।\n\nयदि सः, भवान् एव, तर्हि तस्या लेखायाः कृते मुख्यकूटशब्दम् अत्र लिखित्वा एकत्रीकरणप्रक्रियां समापयितुम् अर्हति :",
-	"centralauth-notice-dryrun": "<div class='successbox'>डेमो मोड् एव</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "डेमो मोड् एव",
 	"centralauth-prefs-count-attached": "भवतः अभिलेखः $1 {{PLURAL:$1|क्षेत्रे|क्षेत्रेषु}} सक्रिया विद्यते ।",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|प्रकल्पे|प्रकल्पेषु}} भवतः नाम्नी अस्थिरीकृतः अभिलेखः विद्यते ।",
 	"centralauth-prefs-detail-unattached": "इदं प्रकल्पक्षेत्रं जागतिकाभिलेखे विद्यते इत्येतत् स्थिरीकृतं नास्ति ।",

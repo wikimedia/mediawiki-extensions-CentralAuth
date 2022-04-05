@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Als-Chlämens",
-			"Als-Holder"
+			"Als-Holder",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "Verwaltig vu dr wältwyte Benutzerkonte",
@@ -205,7 +206,7 @@
 	"centralauth-newgroup-intro": "Du chasch ere neije Gruppe mit däm Formular Rächt zueordne. Obacht: Die Gruppe git s eso lang nit, bis ere d Rächt zuegwise sin.",
 	"centralauth-newgroup-legend": "Neiji Gruppe aalege",
 	"centralauth-not-owner-text": "Dr Benutzername „$1“ isch automatisch im Bsitzer vum Benutzerkonto uf $2 zuegwise wore.\n\nWänn des Dyy Benutzername isch, chasch d Zämmefierig vu dr Benutzerkonte dur d Yygab vum Haupt-Passwort fir des Benutzerkonto vollände:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Demonstrationsmodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Demonstrationsmodus",
 	"centralauth-prefs-count-attached": "Dyy Benutzerkonto isch in $1 {{PLURAL:$1|Projäkt|Projäkt}} aktiv.",
 	"centralauth-prefs-count-unattached": "S git in $1 {{PLURAL:$1|Projäkt|Projäkt}} nit bstätigti Benutzerkonte mit Dyynem Name.",
 	"centralauth-prefs-detail-unattached": "Fir des Projäkt git s kei Bstätigung fir s zämmegfiert Benutzerkonto.",

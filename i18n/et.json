@@ -6,6 +6,7 @@
 			"Jaan513",
 			"Ker",
 			"Macofe",
+			"Matma Rex",
 			"Morel",
 			"Pikne",
 			"WikedKentaur"
@@ -291,7 +292,7 @@
 	"centralauth-newgroup-intro": "Selle vormiga saad uuele rühmale õigused anda.\nPane tähele, et rühma pole olemas, kui sellele pole õiguseid antud.",
 	"centralauth-newgroup-legend": "Uue rühma loomine",
 	"centralauth-not-owner-text": "Kasutajanimi \"$1\" anti automaatselt konto $2 omanikule.\nKui see oled sina, saad kontode ühendamise lõpetada, sisestades siia selle konto ülemparooli:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Üksnes proovimine</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Üksnes proovimine",
 	"centralauth-prefs-count-attached": "Sinu konto on aktiivne {{PLURAL:$1|ühes|$1}} vikis.",
 	"centralauth-prefs-count-unattached": "{{PLURAL:$1|Ühes|$1}} vikis on endiselt sinu nimega {{PLURAL:$1|konto|kontod}} ühendamata.",
 	"centralauth-prefs-detail-unattached": "Sinu konto kuulumine globaalse konto koosseisu on kinnitamata.",

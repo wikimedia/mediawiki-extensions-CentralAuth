@@ -4,6 +4,7 @@
 			"Chrisportelli",
 			"Leli Forte",
 			"Macofe",
+			"Matma Rex",
 			"Roderick Mallia",
 			"ToniSant"
 		]
@@ -214,7 +215,7 @@
 	"centralauth-newgroup-intro": "Tista' tuża' din il-formola sabiex tagħti permessi għal grupp ġdid.\nKun af li grupp ma jeżistix sakemm ikunu għadhom ma ngħatawlux il-permessi.",
 	"centralauth-newgroup-legend": "Oħloq grupp ġdid",
 	"centralauth-not-owner-text": "L-isem tal-utent \"$1\" ġie awtomatikament assenjat lill-proprjetatarju tal-kont fuq il-proġett $2.\n\nJekk int dan, tista' tlesti dan il-proċess ta' twaħħid tal-kontijiet billi ddaħħal il-password prinċipali tal-kont hawnhekk:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Modalità ta' prova biss</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Modalità ta' prova biss",
 	"centralauth-prefs-count-attached": "Il-kont tiegħek huwa attiv fuq $1 {{PLURAL:$1|sit wieħed|siti}} ta' proġett.",
 	"centralauth-prefs-count-unattached": "Kontijiet mhux konfermati bl-isem tal-utent tiegħek fuq $1 {{PLURAL:$1|proġett|proġetti}}.",
 	"centralauth-prefs-detail-unattached": "Dan is-sit tal-proġett għadu ma ġiex ikkonfermat bħala appartenenti għall-kont globali.",

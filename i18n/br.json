@@ -6,6 +6,7 @@
 			"Gwendal",
 			"Gwenn-Ael",
 			"Kouign-amann",
+			"Matma Rex",
 			"Y-M D"
 		]
 	},
@@ -251,7 +252,7 @@
 	"centralauth-newgroup-intro": "Gallout a rit impljout ar furmskrid-mañ evit reiñ aotreoù d'ur strollad nevez.\nUr strollad a c'hell bezañ nemet en ur reiñ dezhañ aotreoù.",
 	"centralauth-newgroup-legend": "Krouiñ ur strollad nevez",
 	"centralauth-not-owner-text": "Staget eo bet ent emgefre an anv implijer \"$1\" ouzh perc'henn ar gont $2.\n\nMard eo c'hwi e c'hallot kas da benn vat an argerzh kendeuziñ kontoù dre verkañ amañ ar ger-tremen pennañ evit ar gont-se :",
-	"centralauth-notice-dryrun": "<div class='successbox'>Mod demo hepken</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Mod demo hepken",
 	"centralauth-prefs-count-attached": "Mont a ra ho kont en-dro war {{PLURAL:$1|ur raktres|$1 raktres}}.",
 	"centralauth-prefs-count-unattached": "Kontoù ankadarnaet gant hoc'h anv implijer a chom war $1 {{PLURAL:$1|raktres|raktres}}.",
 	"centralauth-prefs-detail-unattached": "N'eo ket bet kadarnaet e vije ar raktres-se e-touez raktresoù ar gont hollek",

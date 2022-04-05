@@ -3,7 +3,8 @@
 		"authors": [
 			"Boulaur",
 			"Cedric31",
-			"Jfblanc"
+			"Jfblanc",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gropes globals als quals aparten l'utilizaire",
@@ -220,7 +221,7 @@
 	"centralauth-newgroup-intro": "Podètz utilizar aqueste formulari per balhar de permissions a un grop novèl. Notatz qu'un grop existís unicament s'a de permissions que li son acordadas.",
 	"centralauth-newgroup-legend": "Crear un grop novèl",
 	"centralauth-not-owner-text": "Lo compte d'utilizaire « $1 » es estat automaticament assignat al proprietari del compte sus $2.\n\nSe es vos, poiretz acabar lo procediment d’unificacion de compte en picant lo senhal mèstre per aqueste compte sus :",
-	"centralauth-notice-dryrun": "<div class='successbox'>Mòde de demonstracion solament</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Mòde de demonstracion solament",
 	"centralauth-prefs-count-attached": "Vòstre compte es actiu sus $1 wiki{{PLURAL:$1||s}}.",
 	"centralauth-prefs-count-unattached": "Comptes pas confirmats amb vòstre nom que demòra sus $1 wiki{{PLURAL:$1||s}}.",
 	"centralauth-prefs-detail-unattached": "Vòstre compte sus aqueste projècte a pas pogut èsser ratachat al compte unic.",

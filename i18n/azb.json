@@ -7,6 +7,7 @@
 			"Ebrahimi-amir",
 			"Ilğım",
 			"Koroğlu",
+			"Matma Rex",
 			"Mousa"
 		]
 	},
@@ -220,7 +221,7 @@
 	"centralauth-newgroup-intro": "بو فورمو یئنی بیر گروها ایجازه تعیین ائتمک اوچون ایستیفاده ائده بیلرسینیز.\nاونوتمایین کی بیر گروه، اونا ایجازه‌لر آتانمادیکچا وار اولا بیلمز.",
 	"centralauth-newgroup-legend": "یئنی گروه یارات",
 	"centralauth-not-owner-text": "\"$1\" ایستیفاده‌چی آدی آوتوماتیک اولا‌راق $2 سایتین‌داکی حسابین صاحبینه تعیین ائدیلمیش‌دیر.\n\nاگر بو سیزسینیزسه، آنا پسووردی بورا یازا‌راق داخیل بیرلشدیرمه مدتینی تاماملایا:",
-	"centralauth-notice-dryrun": "</div><br clear='all'/> یالنیز گوسترمه مودلی <div class='successbox'>",
+	"centralauth-notice-dryrun": " یالنیز گوسترمه مودلی",
 	"centralauth-prefs-count-attached": "سیزین حسابینیز {{PLURAL:$1|بیر|$1}} پروژه سایتیندا چالیشقان‌دیر.",
 	"centralauth-prefs-count-unattached": "{{PLURAL:$1|بیر|$1}} پروژه‌ده سیزین آدینیزدا دوغرولانمامیش حسابلار قالیر.",
 	"centralauth-prefs-detail-unattached": "بو لاییهه سایتی ایستفادچی حسابا عاید اولا‌راق تصدیقلنمه‌دی.",

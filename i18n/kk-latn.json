@@ -1,6 +1,8 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Matma Rex"
+		]
 	},
 	"centralauth": "Birizdendirilgen kirw äkimşildigi",
 	"centralauth-account-exists": "Tirkelgi jasalmadı: suralğan qatıswşı atı aldaqaşan birizdendirilgen kirw jüýesine alındı.",
@@ -114,7 +116,7 @@
 	"centralauth-newgroup-intro": "Bul pişindi jaña topqa ruqsattardı tüýistirw üşin qoldana alasız. Añğartpa: ruqsattarı tüýistirilgenşe deýin top joq dep esepteledi.",
 	"centralauth-newgroup-legend": "Jaña top qurw",
 	"centralauth-not-owner-text": "«$1» qatıswşı atı $2 degendegi tirkelgi ïesine özdiktik tüýistirilgen.\n\nBul öziñiz bolsañız, tirkelgi birizdendirw üderisin bitirw üşin, basqı qupïya söziñizdi kädimgideý mında engiziñiz:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Tek tanısıp şığw küýi</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Tek tanısıp şığw küýi",
 	"centralauth-prefs-count-attached": "Tirkelgiñiz $1 joba torabında belsendi.",
 	"centralauth-prefs-count-unattached": "Atıñız bar quptalmağan tirkelgiler $1 jobada qalıp tur.",
 	"centralauth-prefs-detail-unattached": "Bul joba torabı ğalamdıq tirkelgige täñ dep quptalmağan.",

@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Matma Rex",
 			"StefanusRA"
 		]
 	},
@@ -118,7 +119,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|menit|menit}} kapungkur",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|sasi|sasi}} kapungkur",
 	"centralauth-not-owner-text": "Jeneng panganggo \"$1\" diwènèhna sacara otomatis marang sing duwé akun $2.\n\nNek kiye pancen Rika dhéwék, panjenengan bisa ngrampungna prosès panggabungan log mlebu namung mawa ngetikna tembung kunci utama kanggo akun kuwe nang kene:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Mung mode démo thok</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Mung mode démo thok",
 	"centralauth-prefs-count-attached": "Akune Rika kuwe aktif nang $1 {{PLURAL:$1|situs|situs}} proyek.",
 	"centralauth-prefs-count-unattached": "Akun sing durung dekonfirmasi nganggo jenenge Rika egin ana nang $1 {{PLURAL:$1|proyek|proyek}}.",
 	"centralauth-prefs-detail-unattached": "Situs proyek kiye durung dikonfirmasi dadi bageyane sekang akun global.",

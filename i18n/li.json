@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Matma Rex",
 			"Matthias",
 			"Ooswesthoesbes",
 			"Pahles",
@@ -237,7 +238,7 @@
 	"centralauth-newgroup-intro": "Via dit formeleer kans doe rechte toekènne aon 'n nuuj gróp. 'n Gróp besteit neet, behauve es d'r rechte aon toegekènd zeen.",
 	"centralauth-newgroup-legend": "Nuuj gróp aanmake",
 	"centralauth-not-owner-text": "De gebroekersnaam \"$1\" is automatisch toegeweze aan de eigenaar van de gebroeker op $2.\n\nEs geer det böntj, kintj geer uch 't samevoege van gebroekers aafrönje door hiej 't wachwaprd veur dae gebroeker te gaeve:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Allein demonstratiemodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Allein demonstratiemodus",
 	"centralauth-prefs-count-attached": "Diene gebroeker is actief in $1 {{PLURAL:$1|perjèksite|perjèksites}}",
 	"centralauth-prefs-count-unattached": "Neet-bevestigde gebroekers mit diene naam zeen nog aanwezig op {{PLURAL:$1|ein projek|$1 projekte}}.",
 	"centralauth-prefs-detail-unattached": "Dees perjèksite is neet bevestig es beheurendje bie de globale gebroeker.",

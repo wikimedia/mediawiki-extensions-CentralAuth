@@ -3,6 +3,7 @@
 		"authors": [
 			"Bennylin",
 			"Diki Ananta",
+			"Matma Rex",
 			"Meursault2004",
 			"N219",
 			"NoiX180",
@@ -234,7 +235,7 @@
 	"centralauth-newgroup-intro": "Panjenengan bisa nganggo blangko iki kanggo ngidini golongan anyar. \nGatèkaké menawa sawènèh golongan kaanggep ora ana kajaba diwènèhi idin.",
 	"centralauth-newgroup-legend": "Nggawé kelompok anyar",
 	"centralauth-not-owner-text": "Jeneng naraguna \"$1\" diwènèhaké otomatis marang kang duwé akun $2.\n\nYèn iki panjenengan dhéwé, panjenengan bisa ngrampungaké prosès panggabungan log mlebu namung mawa ngetikaké tembung kunci utama kanggo akun iku ing kéné:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Mung modus démo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Mung modus démo",
 	"centralauth-prefs-count-attached": "Akun panjenengan aktif ing $1 {{PLURAL:$1|situs|situs}} proyèk.",
 	"centralauth-prefs-count-unattached": "Akun kang durung dikonfirmasi mawa jenengé panjenengan isih ing {{PLURAL:$1|wiki}} $1.",
 	"centralauth-prefs-detail-unattached": "Akuné panjenengan durung dikonfirmasi minangka akun global.",

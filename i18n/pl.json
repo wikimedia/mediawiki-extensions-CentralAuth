@@ -334,7 +334,7 @@
 	"centralauth-newgroup-intro": "Ten formularz służy przydzielaniu uprawnień nowej grupy. Grupa nie istnieje do momentu przydzielenia jej uprawnień.",
 	"centralauth-newgroup-legend": "Utwórz nową grupę",
 	"centralauth-not-owner-text": "Nazwa użytkownika „$1” została automatycznie przypisana właścicielowi konta uniwersalnego na $2.\n\nJeśli chcesz przyłączyć konto użytkownika „$1” do konta uniwersalnego podaj hasło konta na $2:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Tylko tryb demonstracyjny</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Tylko tryb demonstracyjny",
 	"centralauth-prefs-count-attached": "Twoje konto jest aktywne w $1 {{PLURAL:$1|projekcie|projektach}}.",
 	"centralauth-prefs-count-unattached": "Nieprzyłączone konta o nazwie zbieżnej z Twoją są w $1 {{PLURAL:$1|wiki}}.",
 	"centralauth-prefs-detail-unattached": "Twoje konto nie zostało przyłączone do konta uniwersalnego.",

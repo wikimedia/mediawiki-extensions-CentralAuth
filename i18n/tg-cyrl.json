@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Ibrahim",
+			"Matma Rex",
 			"ToJack"
 		]
 	},
@@ -132,7 +133,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|моҳ|моҳ}} пеш",
 	"centralauth-newgroup-legend": "Эҷод кардани гурӯҳи ҷадид",
 	"centralauth-not-owner-text": "Ҳисоби корбарии \"$1\" ба таври худкор ба соҳиби ҳисоби корбарӣ дар $2 ихтисос дода шуд.\n\nАгар шумо соҳиби ин ҳисоб ҳастед, шумо метавонед раванди якка кардан ҳисобҳои корбариро бо ворид кардани калимаи убури саросарӣ дар ин ҷо поён бирасонед:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Фақат тарзи намоишӣ</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Фақат тарзи намоишӣ",
 	"centralauth-prefs-count-attached": "Ҳисоби корбарии шумо дар $1 {{PLURAL:$1|лоиҳа|лоиҳаҳо}} фаъол аст.",
 	"centralauth-prefs-count-unattached": "Ҳисобҳои корбарии таъйиднашуда бо номи шумо дар $1 {{PLURAL:$1|лоиҳа|лоиҳаҳо}} боқӣ мемонад.",
 	"centralauth-prefs-detail-unattached": "Сомонаи ин лоиҳа мавриди таъйид барои истифода аз ҳисоби корбарии муштарак қарор нагирифтааст.",

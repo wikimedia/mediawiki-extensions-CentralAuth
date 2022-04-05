@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Joachim Mos",
+			"Matma Rex",
 			"Servien",
 			"Slomox"
 		]
@@ -167,7 +168,7 @@
 	"centralauth-newgroup-intro": "Mit dit Formular kannst du en ne’e Grupp Rechten towiesen.\nEn ne’e Grupp gifft dat so lang noch nich, betdat dor Rechten towiest sünd.",
 	"centralauth-newgroup-legend": "Ne’e Grupp opstellen",
 	"centralauth-not-owner-text": "De Brukernaam „$1“ is automaatsch den Egendömer vun dat Brukerkonto op $2 towiest worrn.\n\nWenn dat dien Brukerkonto is, denn kannst du dat Tohoopföhren dör Ingeven vun dat Passwoort för dat Brukerkonto toenn bringen:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Demomodus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Demomodus",
 	"centralauth-prefs-count-attached": "Dien Brukerkonto is op {{PLURAL:$1|een Projekt|$1 Projekten}} aktiv.",
 	"centralauth-prefs-count-unattached": "Dat gifft op {{PLURAL:$1|een Projekt noch en Brukerkonto mit dien Naam, dat nich bestätigt is.|$1 Projekten noch Brukerkonten mit dien Naam, de nich bestätigt sünd.}}",
 	"centralauth-prefs-detail-unattached": "För dit Projekt is dat tohoopföhrte Brukerkonto noch nich bestätigt.",

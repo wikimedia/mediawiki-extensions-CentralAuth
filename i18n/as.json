@@ -5,6 +5,7 @@
 			"Chaipau",
 			"Dibya Dutta",
 			"Gitartha.bordoloi",
+			"Matma Rex",
 			"Psneog",
 			"Simbu123"
 		]
@@ -216,7 +217,7 @@
 	"centralauth-newgroup-intro": "এই প্ৰপত্ৰ ব্যৱহাৰ কৰি আপুনি এটা নতুন গোটক অনুমতি প্ৰদান কৰিব পাৰে।\nমন কৰক যে অনুমতি প্ৰদান নকৰিলে গোটটোৰ কোনো অস্তিত্ব নাথাকে।",
 	"centralauth-newgroup-legend": "নতুন গোট সৃষ্টি কৰক",
 	"centralauth-not-owner-text": "\"$1\" সদস্যনামটো স্বয়ংক্ৰিয়ভাৱে $2 একাউণ্টৰ অধিকাৰীক প্ৰদান কৰা হ'ল।\n\nযদি এয়া আপুনিয়েই, তেন্তে আপুনি সেই একাউণ্টৰ গুপ্তশব্দ টাইপ কৰি প্ৰৱেশ একত্ৰীকৰণ সমাপ্ত কৰিব পাৰে।",
-	"centralauth-notice-dryrun": "<div class='successbox'>কেৱল পৰীক্ষামূলক অৱস্থা</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "কেৱল পৰীক্ষামূলক অৱস্থা",
 	"centralauth-prefs-count-attached": "আপোনাৰ একাউণ্টটো $1টা প্ৰকল্প {{PLURAL:$1|ছাইট}}ত সক্ৰিয় হৈ আছে।",
 	"centralauth-prefs-count-unattached": "আপোনাৰ নাম থকা অনিশ্চিত একাউণ্ট $1 {{PLURAL:$1|প্ৰকল্প|প্ৰকল্পসমূহ}}ত আছে।",
 	"centralauth-prefs-detail-unattached": "এই প্ৰকল্প ছাইট গোলকীয় একাউণ্টৰ অন্তৰ্গত বুলি নিশ্চিত কৰা হোৱা নাই।",

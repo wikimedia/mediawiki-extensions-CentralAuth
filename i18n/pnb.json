@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Abbas dhothar",
-			"Khalid Mahmood"
+			"Khalid Mahmood",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "گلوبل اکاؤنٹ مینیجر",
@@ -208,7 +209,7 @@
 	"centralauth-newgroup-intro": "تسیں ایس فارم نوں  اک نویںٹولی کم دین لئی ورت سکدے او۔\nاے کل یاد رکھنا اک ٹولی اودوں تک نئیں ہوسکدی جدوں تک اونوں کم ناں دتا جاوے۔",
 	"centralauth-newgroup-legend": "اک نویں ٹولی بناؤ",
 	"centralauth-not-owner-text": "اے کھاتا \"$1\" اس کھاتے \"$2\" دے مالک  نوں اپنے آپ دے دتا گیا سی۔\n\nاگر اے تواڈا کھاتا اے تے تسی اینوں رلان آلے کم نوں اس کھاتے دی ماسٹر کنجی دے کے مکمل کر سکدے او:",
-	"centralauth-notice-dryrun": "<div class='successbox'>صرف ڈیمو موڈ</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "صرف ڈیمو موڈ",
 	"centralauth-prefs-count-attached": "تواڈا کھاتے $1 {{PLURAL:$1|وکی سائٹ|وکی سائٹاں}} تے موجود اے۔",
 	"centralauth-prefs-count-unattached": "تواڈے ناں دے انجانچے کھاتے $1 {{PLURAL:$1|ویکی|ویکیاں}} تے موجود نیں۔",
 	"centralauth-prefs-detail-unattached": "اس ویونت سائٹ نوں جانچیا نئیں گیا کہ اے گلوبل کھاتے وچ اے",

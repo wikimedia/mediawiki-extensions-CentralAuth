@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Matma Rex",
 			"McDutchie",
 			"Sasan700",
 			"Исмаил Садуев",
@@ -267,7 +268,7 @@
 	"centralauth-newgroup-intro": "Ахьа лело мега хӀара форма керлачу тобана бакъонаш xӀoттo. Дагахь латтаде цӀа бакъо йоцуш тоба хила йиш йац.",
 	"centralauth-newgroup-legend": "Кхолла керла тоба",
 	"centralauth-not-owner-text": "Декъашхочун «$1» цӀе авто дола йаьккхи $2 проектехь агӀо долчун.\n\nИ агӀо хьай йелахь хьа йиш йу декъашхочун агӀонаш цхьаьнатохар чекхдаккха хьай коьрта декъашхочун агӀонан пароль йазйина:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Гайтаран дӀахӀоттам</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Гайтаран дӀахӀоттам",
 	"centralauth-prefs-count-attached": "Хьан йиш йу $1 {{PLURAL:$1|проектехь|проекташкахь}} болх ба.",
 	"centralauth-prefs-count-unattached": "Хьан цӀарца долу бакъдина доцу дӀайаздарш $1 чохь дуьсуш ду {{PLURAL:$1|проектан|проекташ}} чохь.",
 	"centralauth-prefs-detail-unattached": "ХӀара проект хьан декъашхочун дӀайаздарца йац.",

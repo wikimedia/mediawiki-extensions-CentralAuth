@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Baloch Afghanistan",
+			"Matma Rex",
 			"Mostafadaneshvar",
 			"RigiMahnoor",
 			"Sultanselim baloch"
@@ -222,7 +223,7 @@
 	"centralauth-newgroup-intro": "شما نونیت چه ای فرم په اجازت دهگ په یک نوکین گروهی استفاده کنیت.\nتوجه کنیت که یک گروهی موجود نهنت مگر شی که په آیی اجازتانی دهگ بیت.",
 	"centralauth-newgroup-legend": "یک نوکین گروهی شرکن",
 	"centralauth-not-owner-text": "نام کاربری \"$1\"  اتوماتیکی په داروک حساب $2 نشان بوت.\n\nاگر شی شما ایت شما نوتیت مرحله یک داب کتنء گون وارد کتن اصلی کلمه رمز ادان تمام کنیت:",
-	"centralauth-notice-dryrun": "<div class='successbox'>مدل نمایش فقط</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "مدل نمایش فقط",
 	"centralauth-prefs-count-attached": "شمی حساب فعال انت ته پروژه $1 {{PLURAL:$1|سایت|سایتان}}.",
 	"centralauth-prefs-count-unattached": "تایید نه بوتگین حسابان گون شمی نام ماننت ته $1 {{PLURAL:$1|پروژه|پروژهان}}.",
 	"centralauth-prefs-detail-unattached": "ای سایت پروژه تایید نه کتت که جزء حساب سراسری اینت.",

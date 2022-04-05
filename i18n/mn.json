@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chinneeb"
+			"Chinneeb",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "Глобал хэрэглэгчийн удирдлага",
@@ -79,7 +80,7 @@
 	"centralauth-merge-step3-title": "Нэгдмэл бүртгэлийг үүсгэх",
 	"centralauth-mergeaccount-desc": "Ганц хэрэглэгчийн нэвтрэлтэд [[Special:MergeAccount|олон бүртгэлийг нэгтгэнэ]]",
 	"centralauth-not-owner-text": "\"$1\" хэрэглэгчийн нэрийг $2 дээрх бүртгэл эзэмшигчид автоматаар оноолоо.\n\nХэрэв энэ нь та бол энд өөрийн үндсэн нууц үгийг бичиж нэвтрэлт нэгтгэх явцыг дуусгаж болно:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Зөвхөн туршилтын хувилбар</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Зөвхөн туршилтын хувилбар",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Нэгдмэл нэвтрэлтийн''' талаар дэлгэрэнгүйг унших]]…''",
 	"mergeaccount": "Нэвтрэлтийг нэгдүүлсэн байдал"
 }

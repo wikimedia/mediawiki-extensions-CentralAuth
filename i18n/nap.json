@@ -5,6 +5,7 @@
 			"Candalua",
 			"Chelin",
 			"Macofe",
+			"Matma Rex",
 			"McDutchie",
 			"Ruthven"
 		]
@@ -275,7 +276,7 @@
 	"centralauth-newgroup-intro": "Putite ausà stu modulo pe n'accucchià permesse a nu gruppo nuovo.\nVedite ca nu gruppo nun esiste a meno ca nun ce mettessero permesse suoccie a isso.",
 	"centralauth-newgroup-legend": "Crèa nu gruppo nuovo",
 	"centralauth-not-owner-text": "'O nomme utente \"$1\" è stato assegnato automatecamente a 'o titolare d' 'o cunto ncopp'a $2.\n\nSi chisto site vuje, putite spiccià 'o processo 'e cunte pe l'aunificazione sempricemente scrivenno 'a password prencepale p' 'o cunto ccà:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Sulamente 'o modo Demo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Sulamente 'o modo Demo",
 	"centralauth-prefs-count-attached": "'O cunto vuosto è attivo ncopp'a $1 {{PLURAL:$1|wiki}}.",
 	"centralauth-prefs-count-unattached": "'E cunte nun cunfermate c' 'o nomme vuosto rimaneno ncopp' 'a $1 {{PLURAL:$1|wiki}}.",
 	"centralauth-prefs-detail-unattached": "'O cunto vuosto nun è stato cunfermato comme appartenente 'o cunto globbale.",

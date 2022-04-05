@@ -6,6 +6,7 @@
 			"Hosseinblue",
 			"Lakzon",
 			"Macofe",
+			"Matma Rex",
 			"McDutchie",
 			"Mogoeilor"
 		]
@@ -269,7 +270,7 @@
 	"centralauth-newgroup-intro": "شما می‌توانید با استفاده از این فرم اختیاراتی را به یک گروه بدهید. توجه داشته باشید که یک گروه نمی‌تواند وجود داشته باشد مگر آن که اختیارات به وی داده شده باشد.",
 	"centralauth-newgroup-legend": "ایجاد یک گروه جدید",
 	"centralauth-not-owner-text": "حساب کاربری «$1» به طور خودکار به صاحب حساب کاربری در $2 اختصاص داده شد.\n\nاگر شما صاحب این حساب هستید، می‌توانید روند یکی‌کردن حساب‌های کاربری را با واردکردن گذرواژه سراسری در اینجا به پایان برسانید:",
-	"centralauth-notice-dryrun": "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "فقط مدل نمایشی",
 	"centralauth-prefs-count-attached": "حساووەت ڤە $1 {{PLURAL:$1|ڤیکی}}کارە مەکەێ(فەعاڵە).",
 	"centralauth-prefs-manage": "مدیریت حساوو کاربەری مشترک",
 	"centralauth-prefs-not-managed": "عدم استفاده از حساب کاربری مشترک",

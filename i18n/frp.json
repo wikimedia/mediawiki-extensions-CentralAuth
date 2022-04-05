@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ChrisPtDe"
+			"ChrisPtDe",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "Administrator ux usanciérs globâls",
@@ -204,7 +205,7 @@
 	"centralauth-newgroup-intro": "Vos pouede utilisar ceti formulèro por balyér des pèrmissions a una tropa novèla.\nNotâd qu’una tropa pôt ègzistar ren que se des pèrmissions lyé sont balyês.",
 	"centralauth-newgroup-legend": "Fâre una tropa novèla",
 	"centralauth-not-owner-text": "Lo nom d’usanciér « $1 » at étâ assignê ôtomaticament u propriètèro du compto dessus $2.\n\nS’o est vos, vos pouede chavonar lo procès d’unificacion du branchement en buchient ique lo contresegno principâl por cél compto :",
-	"centralauth-notice-dryrun": "<div class='successbox'>Solament la fôrma de dèmonstracion</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Solament la fôrma de dèmonstracion",
 	"centralauth-prefs-count-attached": "Voutron compto est actif dessus $1 seto{{PLURAL:$1||s}} de projèt.",
 	"centralauth-prefs-count-unattached": "Subsiste $1 projèt{{PLURAL:$1||s}} qu’{{PLURAL:$1|a|on}}t un compto pas confirmâ a voutron nom.",
 	"centralauth-prefs-detail-unattached": "Ceti seto de projèt at pas étâ confirmâ coment étent u compto globâl.",

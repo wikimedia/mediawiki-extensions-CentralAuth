@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Budhajeewa",
+			"Matma Rex",
 			"Sahan.ssw",
 			"Singhalawap",
 			"SusithCM",
@@ -220,7 +221,7 @@
 	"centralauth-newgroup-intro": "නව කණ්ඩායමකට අවසර පැවරීමට මෙම ෆෝරමය භාවිතා කළ හැක.\nයම් කණ්ඩායමකට අවසර පවරා නැතිනම් එම කණ්ඩායම නොපවතින බව සලකන්න.",
 	"centralauth-newgroup-legend": "නව කණ්ඩායමක් තනන්න",
 	"centralauth-not-owner-text": "$2 හි ගිණුම හිමිකරුට \"$1\" පරිශීලක නාමය ස්වයංක්‍රීයව පිරිනැමිණි.\n\nමේ ඔබ නම්, එම ගිණුම සඳහා පාලක මුරපදය මෙහි ටයිප් කිරීමෙන්  පරිශීලක සංයුක්තකිරීම් ක්‍රියාවලිය අවසන් කිරීමට ඔබට හැකිවේ:",
-	"centralauth-notice-dryrun": "<div class='successbox'>ආදර්ශන ප්‍රකාරය පමණි</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "ආදර්ශන ප්‍රකාරය පමණි",
 	"centralauth-prefs-count-attached": "ඔබගේ ගිණුම ව්‍යාපෘති {{PLURAL:$1|අඩවි|අඩවි}} $1 ක් තුල සක්‍රීයය.",
 	"centralauth-prefs-count-unattached": " {{PLURAL:$1|එක් ව්‍යාපෘතියක|ව්‍යාපෘති $1 ක }} ඔබගේ නම සහිත හා තහවුරු කොකෙරුණු ගිණුම්  තවමත් පවතියි.",
 	"centralauth-prefs-detail-unattached": "මෙම ව්‍යාපෘති අඩවිය ගෝලීය ගිණුමකට අයත් බව තහවුරු කර නොමැත.",

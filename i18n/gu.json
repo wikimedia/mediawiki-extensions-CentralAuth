@@ -8,6 +8,7 @@
 			"Dineshjk",
 			"Dsvyas",
 			"KartikMistry",
+			"Matma Rex",
 			"Rangilo Gujarati",
 			"Sushant savla"
 		]
@@ -228,7 +229,7 @@
 	"centralauth-newgroup-intro": "તમે આ પત્રકનો ઉપયોગ કરીને નવા જૂથને પરવાનગીઓ આપી શકો છો.\nએ વાતની નોધ લેશો કે જ્યાં સુધી જૂથને પરવાનગીઓ આપવામાં નહી આવે ત્યાં સુધી તે અસ્તિત્વમાં નહી આવે.",
 	"centralauth-newgroup-legend": "નવો સમૂહ બનાવો",
 	"centralauth-not-owner-text": "સભ્યનામ \"$1\" આપોઆપ $2 પરના ખાતાના માલિકને નામે કરવામાં આવ્યું છે.\n\nજો તે તમે હોવ તો, ફક્ત અહીં તમારી ગુરુકળ ટાઈપ કરીને તમારી સંગઠિત પ્રવેશ પ્રક્રિયા પૂરી કરી શકો છો:",
-	"centralauth-notice-dryrun": "<div class='successbox'>માત્ર નિદર્શન સ્થિતિ</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "માત્ર નિદર્શન સ્થિતિ",
 	"centralauth-prefs-count-attached": "તમારું ખાતું $1 {{PLURAL:$1|વિકિ|વિકિઓ}} પર સક્રિય છે.",
 	"centralauth-prefs-count-unattached": "તમારા નામ સાથેના ખાતરી ન કરાયેલ ખાતાઓ $1 {{PLURAL:$1|પ્રોજેક્ટ|પ્રોજેક્ટ્સ}} પર રહેશે.",
 	"centralauth-prefs-detail-unattached": "આ પરિયોજનાના પાનાને વૈશ્વીક ખાતાના ભાગ તરીકે માન્યતા નથી મળી.",

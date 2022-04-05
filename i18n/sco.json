@@ -5,6 +5,7 @@
 			"John Reid",
 			"MJL",
 			"Macofe",
+			"Matma Rex",
 			"McDutchie",
 			"NGC 54"
 		]
@@ -268,7 +269,7 @@
 	"centralauth-newgroup-intro": "Ye can uise this form tae assign permeessions til ae new groop.\nMynd that ae groop disna exeest onless it has permeessions assigned til it.",
 	"centralauth-newgroup-legend": "Cræft ae new groop",
 	"centralauth-not-owner-text": "The uisername \"$1\" wis autæmateeclie assigned til the ainer o the accoont oan $2.\n\nGif this is ye, that ye can finish the login uneefeecation process bi simplie typin the maister passwaird fer that accoont here:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Demo mode yinlie</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Demo mode yinlie",
 	"centralauth-prefs-count-attached": "Yer accoont is acteev oan $1 waurk {{PLURAL:$1|steid|steids}}.",
 	"centralauth-prefs-count-unattached": "Onconfirmed accoonts wi yer name remain oan $1 {{PLURAL:$1|waurk|waurks}}.",
 	"centralauth-prefs-detail-unattached": "This waurk steid haesna been confirmed aes belangin til the global accoont.",

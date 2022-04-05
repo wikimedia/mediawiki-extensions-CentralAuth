@@ -3,6 +3,7 @@
 		"authors": [
 			"Jnanaranjan Sahu",
 			"MKar",
+			"Matma Rex",
 			"Odisha1",
 			"Psubhashish"
 		]
@@ -225,7 +226,7 @@
 	"centralauth-newgroup-intro": "ଏକ ନୂଆ ଗୋଠକୁ ଅନୁମତି ଦେବା ନିମନ୍ତେ ଆପଣ ଏହି ଫର୍ମ ଟି ବ୍ୟବହାର କରିପାରିବେ ।\nଜାଣିରଖନ୍ତୁ ଯେ ଯେତେ ଯାଏଁ ଏକ ଗୋଟାକୁ ଅନୁମତି ମିଳିନାହିଁ ସେତେ ଯାଏଁ ଏହା ତିଆରି ହୋଇନାହିଁ ।",
 	"centralauth-newgroup-legend": "ନୂଆ ଗୋଠଟିଏ ତିଆରିବେ",
 	"centralauth-not-owner-text": "\"$1\" ଇଉଜର ନାମଟି ଆପେଆପେ $2ର ମାଲିକଙ୍କୁ ଦିଆଯାଇଅଛି ।\n\nଯଦି ସେହି ଜଣକ ଆପଣ ତେବେ ଆପଣ ଏଠାରେ ମୂଳ ପାସବାର୍ଡ଼ଟିକୁ ଦେଇ ଲଗ ଇନ ଏକାକୀକରଣ ପ୍ରକ୍ରିୟାକୁ ସାରିପାରିବେ:",
-	"centralauth-notice-dryrun": "<div class='successbox'>ଖାଲି ଦେଖିବା ପାଇଁ</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "ଖାଲି ଦେଖିବା ପାଇଁ",
 	"centralauth-prefs-count-attached": "ଆପଣଙ୍କ ଖାତା $1ଟି ପ୍ରକଳ୍ପ {{PLURAL:$1|ସାଇଟ|ସାଇଟ}}ରେ ସଚଳ ଅଛି ।",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|ପ୍ରକଳ୍ପ|ପ୍ରକଳ୍ପ  ସମୂହ}}ରେ ଥୟ କରାଯାଇନଥିବା ଖାତା ସବୁ ଆପଣଙ୍କ ନାମରେ ରହିଅଛି ।",
 	"centralauth-prefs-detail-unattached": "ଏହି ପ୍ରକଳ୍ପ ସାଇଟଟି ବିଶ୍ଵ ଖାତାର ବୋଲି ଏଯାଏଁ ଥୟ କରାଯାଇନାହିଁ ।",

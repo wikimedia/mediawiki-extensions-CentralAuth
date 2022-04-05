@@ -4,6 +4,7 @@
 			"Amire80",
 			"Lam-ang",
 			"Macofe",
+			"Matma Rex",
 			"McDutchie"
 		]
 	},
@@ -273,7 +274,7 @@
 	"centralauth-newgroup-intro": "Mausarmo daytoy a porma tapno manginaganka kadagiti pammalubos iti baro a grupo.\nPammmo a ti grupo ket awan mailaksid no adda karbengan a nakainagananna.",
 	"centralauth-newgroup-legend": "Agpartuat iti baro a grupo",
 	"centralauth-not-owner-text": "Ti nagan ti agar-aramat ti \"$1\" ket automatiko idi a naited iti akinkukua ti pakabilangan iti $2.\n\nNo sika daytoy, mailippasmo ti proseso ti panagkaykaysa ti panaserrek babaen ti panangimakinilia ti agturay a kontrasenias iti dayta a pakabilangan ditoy:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Pagsubokan laeng</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Pagsubokan laeng",
 	"centralauth-prefs-count-attached": "Aktibo ti pakabilangam {{PLURAL:$1|iti $1 a wiki|kadagiti $1 a wiki}}.",
 	"centralauth-prefs-count-unattached": "Dagiti saan a napasingkedan a pakabilangan nga addaan iti naganmo ket addaan {{PLURAL:$1|iti $1 a wiki|kadagiti $1 a wiki}}.",
 	"centralauth-prefs-detail-unattached": "Ti pakabilangam ket saan pay a napasingkedan a kas tagikua ti global a pakabilangan.",

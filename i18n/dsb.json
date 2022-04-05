@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Derbeth",
+			"Matma Rex",
 			"McDutchie",
 			"Michawiki"
 		]
@@ -249,7 +250,7 @@
 	"centralauth-newgroup-intro": "Móžoš wužywaś toš ten formular, aby pśipokazał nowej kupce pšawa.\nŹiwaj na to, až kupka njeeksistěrujo, snaźkuli jo dostała pšawa pśipokazane.",
 	"centralauth-newgroup-legend": "Nowu kupku napóraś",
 	"centralauth-not-owner-text": "Wužywarske mě \"$1\" jo se awtomatiski wobsejźarjeju konta na $2 pśipokazało.\n\nJolic tebje słuša, móžoš zjadnośeński proces jadnorje pśez zapódaśe głownego gronidła za toś to konto dokóńcyś:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Jano demonstraciski modus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Jano demonstraciski modus",
 	"centralauth-prefs-count-attached": "Twójo konto jo na $1 {{PLURAL:$1|projektowem sedle|projektowyma sedłoma|projektowych sedłach|projektowych sedłach}} aktiwne.",
 	"centralauth-prefs-count-unattached": "Su hyšći njewobkšuśone konta z twójim mjenim w $1 {{PLURAL:$1|projekśe|projektoma|projektach|projektach}}.",
 	"centralauth-prefs-detail-unattached": "Za toś ten projekt njejo wobkšuśenje, až słuša ku globalnemu kontoju.",

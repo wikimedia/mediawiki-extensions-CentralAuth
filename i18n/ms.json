@@ -8,6 +8,7 @@
 			"Jeluang Terluang",
 			"Kurniasan",
 			"Macofe",
+			"Matma Rex",
 			"Pizza1016",
 			"Tofeiku"
 		]
@@ -270,7 +271,7 @@
 	"centralauth-newgroup-intro": "Anda boleh menggunakan borang ini untuk memberi keizinan kepada kumpulan baru.\nSila ambil perhatian bahawa sesebuah kumpulan tidak wujud kecuali setelah diberikan sebarang keizinan.",
 	"centralauth-newgroup-legend": "Tubuhkan kumpulan baru",
 	"centralauth-not-owner-text": "Nama pengguna \"$1\" telah diserahkan secara automatik kepada pemilik akaun di $2.\n\nSekiranya anda pemilik akaun tersebut, anda boleh menamatkan proses penggabungan akaun dengan menaip kata laluan bagi akaun tersebut di sini:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Mod demonstrasi</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Mod demonstrasi",
 	"centralauth-prefs-count-attached": "Akaun anda aktif di $1 buah projek.",
 	"centralauth-prefs-count-unattached": "Akaun dengan nama anda di $1 buah projek belum disahkan.",
 	"centralauth-prefs-detail-unattached": "Projek ini tidak disahkan sebagai milikan akaun sejagat tersebut.",

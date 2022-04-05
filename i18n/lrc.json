@@ -5,6 +5,7 @@
 			"Bonevarluri",
 			"Lorestani",
 			"Macofe",
+			"Matma Rex",
 			"McDutchie",
 			"Mogoeilor"
 		]
@@ -293,7 +294,7 @@
 	"centralauth-newgroup-intro": "شما مؽ تونؽت ڤا ڤ کار گرتن اؽ نوم بٱلگٱ اْختؽارؽایؽ ناْ باٛئؽت ڤ یاٛ جٱرغٱ. ڤ ڤیر داشتۊئؽت کاْ یاٛ جٱرغٱ تا گاتؽ کاْ اْختؽارؽا دش داٛئٱ نوئٱ نمؽ تونٱ بۊئٱ.",
 	"centralauth-newgroup-legend": "دۏرس گردن یاٛ جٱرغٱ جدید",
 	"centralauth-not-owner-text": "هساو مؽنتۏری «$1» ڤ شکل خودٱنجوم هؽن هساو مؽنتۏری خودکار د $2 ئٱ.\n\nٱر شما سهاو اؽ هساو هؽسؽت، مؽ تونؽت رڤٱن سٱریٱک سازی هساویا مؽنتۏری ناْ ڤا داٛئن رازینٱ گوئارسن سٱرتارسری د ایچاْ تموم بٱکؽت.",
-	"centralauth-notice-dryrun": "<div class='successbox'>فقٱت شکل دمو</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "فقٱت شکل دمو",
 	"centralauth-prefs-count-attached": "هساو مؽنتۏری شما د پرۉژٱ $1 کونشکار ٱ {{PLURAL:$1|مالگٱ|مالگٱیا}}.",
 	"centralauth-prefs-count-unattached": "هساویا مؽنتۏری تٱئید ناٛئیاٛ ڤا نوم شما د $1 مٱننٱ {{PLURAL:$1|پرۉژٱ|پرۉژٱیا}}.",
 	"centralauth-prefs-detail-unattached": "اؽ پرۉژٱ سی یٱ کاْ هؽن هساو جهونی بۊئٱ، تٱئید ناٛئیٱ.",

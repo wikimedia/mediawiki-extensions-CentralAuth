@@ -3,6 +3,7 @@
 		"authors": [
 			"Abdul Kadir",
 			"Karthi.dr",
+			"Matma Rex",
 			"Thakurji"
 		]
 	},
@@ -63,7 +64,7 @@
 	"centralauth-merge-step2-title": "Aur account ke confirm karo",
 	"centralauth-merge-step3-submit": "Sab account ke unify karo",
 	"centralauth-merge-step3-title": "Unified account ke banao",
-	"centralauth-notice-dryrun": "<div class='successbox'>Khaali demo mode</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Khaali demo mode",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Aur parrho about '''unified login''']]…''",
 	"centralauth-ro": "Global account ke jaankari",
 	"mergeaccount": "Login unification ke status"

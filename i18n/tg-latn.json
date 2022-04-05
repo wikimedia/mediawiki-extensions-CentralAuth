@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liangent"
+			"Liangent",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "Mudirijati hisobi korbariji muştarak",
@@ -122,7 +123,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|moh|moh}} peş",
 	"centralauth-newgroup-legend": "Eçod kardani gurūhi çadid",
 	"centralauth-not-owner-text": "Hisobi korbariji \"$1\" ba tavri xudkor ba sohibi hisobi korbarī dar $2 ixtisos doda şud.\n\nAgar şumo sohibi in hisob hasted, şumo metavoned ravandi jakka kardan hisobhoi korbariro bo vorid kardani kalimai uburi sarosarī dar in ço pojon birasoned:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Faqat tarzi namoişī</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Faqat tarzi namoişī",
 	"centralauth-prefs-count-attached": "Hisobi korbariji şumo dar $1 {{PLURAL:$1|loiha|loihaho}} fa'ol ast.",
 	"centralauth-prefs-count-unattached": "Hisobhoi korbariji ta'jidnaşuda bo nomi şumo dar $1 {{PLURAL:$1|loiha|loihaho}} boqī memonad.",
 	"centralauth-prefs-detail-unattached": "Somonai in loiha mavridi ta'jid baroi istifoda az hisobi korbariji muştarak qaror nagiriftaast.",

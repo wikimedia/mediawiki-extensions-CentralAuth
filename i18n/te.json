@@ -3,6 +3,7 @@
 		"authors": [
 			"Chaduvari",
 			"Kiranmayee",
+			"Matma Rex",
 			"Mpradeep",
 			"Ravichandra",
 			"Veeven",
@@ -246,7 +247,7 @@
 	"centralauth-newgroup-intro": "ఈ ఫారము ద్వారా కొత్త గుంపుకు అనుమతులను ఇవ్వవచ్చు. అనుమతులు లేనిదే గుంపు ఉనికిలో ఉండదని గమనించండి.",
 	"centralauth-newgroup-legend": "కొత్త గుంపును సృష్టించు",
 	"centralauth-not-owner-text": "\"$1\" అన్న వాడుకరి పేరు $2లోని ఖాతా యజమానికి ఆటోమేటిగ్గా ఆపాదించివుంది.\n\nఅది మీరే అయితే, ఆ ఖాతాకి ప్రధాన సంకేతపదాన్ని ఇక్కడ ఇవ్వడం ద్వారా తేలిగ్గా ప్రవేశపు ఏకీకృత ప్రక్రియని ముగించవచ్చు:",
-	"centralauth-notice-dryrun": "<div class='successbox'>డెమో మాత్రమే</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "డెమో మాత్రమే",
 	"centralauth-prefs-count-attached": "మీ ఖాతా $1 ప్రాజెక్టు {{PLURAL:$1|సైటు|సైట్ల}}లో సచేతనంగా ఉంది.",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|ప్రాజెక్టు|ప్రాజెక్టుల}}లో మీ పేరుతో ఉండి నిర్ధారణకాని ఖాతాలు.",
 	"centralauth-prefs-detail-unattached": "ఈ ప్రాజెక్టు సైటు సార్వత్రిక ఖాతాకు చెందినదని నిర్ధారణ కాలేదు.",

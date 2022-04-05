@@ -3,6 +3,7 @@
 		"authors": [
 			"Dundak",
 			"J budissin",
+			"Matma Rex",
 			"McDutchie",
 			"Michawiki"
 		]
@@ -270,7 +271,7 @@
 	"centralauth-newgroup-intro": "Móžeš tutón formular wužiwać, zo by nowej skupinje prawa připokazał.\nWobkedźbuj, zo skupina njeeksistuje, doniž prawa njejsu připokazane.",
 	"centralauth-newgroup-legend": "Nowu skupinu wutworić",
 	"centralauth-not-owner-text": "Wužiwarske mjeno \"$1\" bu awtomatisce swójstwownikej wužiwarskeho konta $2 připokazane. Jeli je to twoje wužiwarske mjeno, móžeš zjednoćenje wužiwarskich kontow přez zapodaće hłowneho hesła za tute wužiwarske konto dokónčić:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Jenož demonstraciski modus</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Jenož demonstraciski modus",
 	"centralauth-prefs-count-attached": "Twoje konto je na $1 {{PLURAL:$1|projektowym sydle|projektowymaj sydłomaj|projektowych sydłach}} aktiwne.",
 	"centralauth-prefs-count-unattached": "Njepotwjerdźene konta z twojim mjenom zwostanu na $1 {{PLURAL:$1|projekće|projektomaj|projektach|projektach}}.",
 	"centralauth-prefs-detail-unattached": "Njeje potwjerdźenje, zo tute projektowe sydło ke globalnemu kontu słuša.",

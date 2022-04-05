@@ -5,6 +5,7 @@
 			"Bjankuloski06",
 			"Brest",
 			"M4r51n",
+			"Matma Rex",
 			"Vlad5250"
 		]
 	},
@@ -308,7 +309,7 @@
 	"centralauth-newgroup-intro": "Со овој образец можете да доделувате дозволи на нова група.\nИмајте предвид дека групата не постои доколку нема доделени дозволи.",
 	"centralauth-newgroup-legend": "Создај нова група",
 	"centralauth-not-owner-text": "Корисничкото име „$1“ му беше автоматски припишано на имателот на сметката на $2.\n\nАко тоа сте вие, можете да го довршите процесот на обединување едноставно со внесување на главната лозинка за таа сметка овде:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Демонстрационен режим</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Демонстрационен режим",
 	"centralauth-prefs-count-attached": "Вашата корисничка сметка е активна на $1 {{PLURAL:$1|вики|викија}}.",
 	"centralauth-prefs-count-unattached": "На $1 {{PLURAL:$1|вики|викија}} останаа непотврдени сметки со вашето име.",
 	"centralauth-prefs-detail-unattached": "За вашата сметка не е потврдено дека ѝ припаѓа на глобалната сметка.",

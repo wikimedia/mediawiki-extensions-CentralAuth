@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Joetaras",
+			"Matma Rex",
 			"McDutchie",
 			"Reder"
 		]
@@ -305,7 +306,7 @@
 	"centralauth-newgroup-intro": "Puè ausà stu module pe assegnà le permesse a 'nu gruppe nuéve.\nVide ca 'nu gruppe non g'esiste senze ca l'onne state assignate le permesse.",
 	"centralauth-newgroup-legend": "Ccreje 'nu gruppe nuève",
 	"centralauth-not-owner-text": "'U nome utende \"$1\" ha state assegnate automaticamende a 'u titolare d'u cunde sus a $2.\n\nCe quiste si tu, tu puè spiccià 'u processe de trasute pe aunificazione semblicemenne scrivenne 'a passuord prengepàle pu cunde aqquà:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Sulamende 'u mode Demo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Sulamende 'u mode Demo",
 	"centralauth-prefs-count-attached": "'U cunde tune jè attive sus a $1 {{PLURAL:$1|proggette|pruggette}}.",
 	"centralauth-prefs-count-unattached": "Le cunde non confermate cu 'u nome tune remanene sus a $1 {{PLURAL:$1|proggette|pruggette}}.",
 	"centralauth-prefs-detail-unattached": "'U cunde tune non g'à state confermate cumme appartenènde ad 'u cunde globbale.",

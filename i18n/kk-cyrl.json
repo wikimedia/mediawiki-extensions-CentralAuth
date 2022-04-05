@@ -5,6 +5,7 @@
 			"Arystanbek",
 			"GaiJin",
 			"Kaztrans",
+			"Matma Rex",
 			"McDutchie",
 			"Нұрлан Рахымжанов"
 		]
@@ -222,7 +223,7 @@
 	"centralauth-newgroup-intro": "Бұл пішінді жаңа топқа рұқсаттарды түйістіру үшін қолдана аласыз. Аңғартпа: рұқсаттары түйістірілгенше дейін топ жоқ деп есептеледі.",
 	"centralauth-newgroup-legend": "Жаңа топ құру",
 	"centralauth-not-owner-text": "«$1» қатысушы аты $2 дегендегі тіркелгі иесіне өздіктік түйістірілген.\n\nБұл өзіңіз болсаңыз, тіркелгі біріздендіру үдерісін бітіру үшін, басқы құпия сөзіңізді кәдімгідей мында енгізіңіз:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Тек танысып шығу күйі</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Тек танысып шығу күйі",
 	"centralauth-prefs-count-attached": "Тіркелгіңіз $1 жоба {{PLURAL:$1|сайтында|сайтында}} белсенді.",
 	"centralauth-prefs-count-unattached": "Атыңыз бар құпталмаған тіркелгілер $1 жобада қалып тұр.",
 	"centralauth-prefs-detail-unattached": "Бұл жоба торабы ғаламдық тіркелгіге тәң деп құпталмаған.",

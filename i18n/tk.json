@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hanberke"
+			"Hanberke",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "Global ulanyjy menejeri",
@@ -174,7 +175,7 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|aý|aý}} ozal",
 	"centralauth-newgroup-intro": "Bu formy täze bir topara rugsat bellemek üçin ulanyp bilersiňiz.\nÝatda saklaň - rugsat berilmese topar hem bolýan däldir.",
 	"centralauth-newgroup-legend": "Täze topar döret",
-	"centralauth-notice-dryrun": "<div class='successbox'>Diňe demo režimi</div><br clear='all'/",
+	"centralauth-notice-dryrun": "Diňe demo režimi",
 	"centralauth-prefs-count-attached": "Hasabyňyz $1 taslama {{PLURAL:$1|saýtynda|saýtynda}} işjeň.",
 	"centralauth-prefs-count-unattached": "$1 {{PLURAL:$1|taslamada|taslamada}} siziň adyňyzda tassyklanmadyk hasaplar bar.",
 	"centralauth-prefs-detail-unattached": "Bu taslama saýty global hasaba degişli diýip tassyklanmady.",

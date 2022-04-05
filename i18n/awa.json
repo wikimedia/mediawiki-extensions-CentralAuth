@@ -3,6 +3,7 @@
 		"authors": [
 			"1AnuraagPandey",
 			"1PandeyAnurag",
+			"Matma Rex",
 			"McDutchie"
 		]
 	},
@@ -175,7 +176,7 @@
 	"centralauth-mergeaccount-desc": "एकत्रित लॉगिन कय लिये [[Special:MergeAccount|कुल खाता एकत्रित करा जाय]]।",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|मिनट}} पहीले",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|महिना}} पहीले",
-	"centralauth-notice-dryrun": "<div class='successbox'>खाली डेमो मोड</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "खाली डेमो मोड",
 	"centralauth-prefs-manage": "आपन वैश्विक खाता मैनेज करा जाय",
 	"centralauth-prefs-status": "वैश्विक खाता स्थिति:",
 	"centralauth-prefs-unattached": "अप्रमाणित",

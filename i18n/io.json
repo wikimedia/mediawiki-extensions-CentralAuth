@@ -4,6 +4,7 @@
 			"Joao Xavier",
 			"Lakaoso",
 			"Malafaya",
+			"Matma Rex",
 			"Robin van der Vliet",
 			"Wyvernoid",
 			"सरोज कुमार ढकाल"
@@ -78,7 +79,7 @@
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minuto|minuti}} ante nun",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|monato|monati}} ante nun",
 	"centralauth-newgroup-legend": "Krear nova grupo",
-	"centralauth-notice-dryrun": "<div class='successbox'>Nur demonstro-modo</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Nur demonstro-modo",
 	"centralauth-prefs-status": "Stando di la generala konto:",
 	"centralauth-prefs-view": "Videz la generala informo",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lektez pluse pri '''unigata 'login'''']]…''",

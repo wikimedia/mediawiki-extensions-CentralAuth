@@ -4,6 +4,7 @@
 			"Julian Mendez",
 			"Macofe",
 			"Malafaya",
+			"Matma Rex",
 			"McDutchie"
 		]
 	},
@@ -304,7 +305,7 @@
 	"centralauth-newgroup-intro": "Tu pote usar iste formulario pro assignar permissiones a un nove gruppo.\nNota que un gruppo non existe si nulle permissiones ha essite assignate a illo.",
 	"centralauth-newgroup-legend": "Crear un nove gruppo",
 	"centralauth-not-owner-text": "Le nomine de usator \"$1\" esseva automaticamente assignate al proprietario del conto in $2.\n\nSi isto es tu, tu pote completar le processo de unification de contos simplemente per entrar hic le contrasigno principal de ille conto:",
-	"centralauth-notice-dryrun": "<div class='successbox'>Modo de demonstration solmente</div><br clear='all'/>",
+	"centralauth-notice-dryrun": "Modo de demonstration solmente",
 	"centralauth-prefs-count-attached": "Tu conto es active in $1 {{PLURAL:$1|wiki|wikis}}.",
 	"centralauth-prefs-count-unattached": "In $1 {{PLURAL:$1|wiki|wikis}} remane ancora contos non confirmate con tu nomine.",
 	"centralauth-prefs-detail-unattached": "Tu conto non ha essite confirmate como pertinente al conto global.",
