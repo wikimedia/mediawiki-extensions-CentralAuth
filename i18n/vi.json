@@ -11,11 +11,13 @@
 			"Trần Nguyễn Minh Huy",
 			"Vinhtantran",
 			"McDutchie",
-			"NguoiDungKhongDinhDanh"
+			"NguoiDungKhongDinhDanh",
+			"Keo010122",
+			"Nghiemtrongdai VN"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục bao gồm thành viên",
-	"action-centralauth-createlocal": "ép phải tạo tài khoản cục bộ",
+	"action-centralauth-createlocal": "ép tạo tài khoản cục bộ",
 	"action-centralauth-lock": "khóa hoặc mở khóa tài khoản chung",
 	"action-centralauth-merge": "trộn tài khoản của họ",
 	"action-centralauth-oversight": "cưỡng chế hoặc ẩn tài khoản chung",
@@ -345,7 +347,7 @@
 	"centralauth-rename-form-reason": "Lý do",
 	"centralauth-rename-form-suppressredirects": "Tắt các trang đổi hướng",
 	"centralauth-rename-globaleditcount-threshold": "Người dùng này có hơn $1 sửa đổi. Xin vui lòng xác nhận chắc chắn muốn đổi tên người dùng này và rằng một quản lý viên hệ thống có sẵn sàng quan sát việc đổi tên này.",
-	"centralauth-rename-movelog": "Tự động di chuyển trang trong việc đổi tên thành viên “[[Special:CentralAuth/$1|$1]]” thành “[[Special:CentralAuth/$2|$2]]”",
+	"centralauth-rename-movelog": "Tự động di chuyển trang khi đổi tên thành viên “[[Special:CentralAuth/$1|$1]]” thành “[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "$1 không phải đang được đổi tên. Việc đổi tên có thể hoàn thành rồi.",
 	"centralauth-rename-notinstalled": "Phần mở rộng Renameuser chưa được cài đặt.",
 	"centralauth-rename-progress-fieldset": "Danh sách tài khoản địa phương",
@@ -410,7 +412,7 @@
 	"centralautologin": "Đăng nhập trung ương",
 	"centrallogin": "Đăng nhập thành viên trung ương",
 	"centralloginsuccesful": "Đã đăng nhập",
-	"createlocalaccount": "Ép phải tạo tài khoản cục bộ",
+	"createlocalaccount": "Ép tạo tài khoản cục bộ",
 	"globalgroupmembership": "Thành viên trong nhóm toàn cục",
 	"globalgrouppermissions": "Quản lý nhóm toàn cục",
 	"globalrenameprogress": "Tiến độ đổi tên toàn cục",
