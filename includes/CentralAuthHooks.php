@@ -1592,11 +1592,27 @@ class CentralAuthHooks {
 		$type, WebRequest $request, array &$qc
 	) {
 		if ( $type === 'gblrename' ) {
-			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+			$services = MediaWikiServices::getInstance();
+			$userNameUtils = $services->getUserNameUtils();
 			$oldname = trim( $request->getText( 'oldname' ) );
 			$canonicalOldname = $userNameUtils->getCanonical( $oldname );
 			if ( $oldname !== '' ) {
 				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
+
+				$hiddenBits = 0;
+				$user = $request->getSession()->getUser();
+				if ( !$user->isAllowed( 'deletedhistory' ) ) {
+					$hiddenBits = LogPage::DELETED_ACTION;
+				} elseif ( !$user->isAllowedAny( 'suppressrevision', 'viewsuppressed' ) ) {
+					$hiddenBits = LogPage::DELETED_ACTION | LogPage::DELETED_RESTRICTED;
+				}
+				if ( $hiddenBits ) {
+					$bitfield = $services->getDBLoadBalancerFactory()
+						->getMainLB()
+						->getConnection( DB_REPLICA )
+						->bitAnd( 'log_deleted', $hiddenBits );
+					$qc[] = "$bitfield != $hiddenBits";
+				}
 			}
 		}
 
