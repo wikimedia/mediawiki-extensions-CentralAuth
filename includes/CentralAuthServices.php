@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
+use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
 
@@ -123,5 +124,17 @@ class CentralAuthServices {
 	): GlobalRenameRequestStore {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalRenameRequestStore' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 * @return GlobalUserSelectQueryBuilderFactory
+	 */
+	public static function getGlobalUserSelectQueryBuilderFactory(
+		ContainerInterface $services = null
+	): GlobalUserSelectQueryBuilderFactory {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->get( 'CentralAuth.GlobalUserSelectQueryBuilderFactory' );
 	}
 }
