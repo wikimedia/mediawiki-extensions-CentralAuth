@@ -1539,6 +1539,22 @@ class CentralAuthHooks {
 			$canonicalOldname = User::getCanonicalName( $oldname );
 			if ( $oldname !== '' ) {
 				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
+
+				$hiddenBits = 0;
+				$user = $request->getSession()->getUser();
+				if ( !$user->isAllowed( 'deletedhistory' ) ) {
+					$hiddenBits = LogPage::DELETED_ACTION;
+				} elseif ( !$user->isAllowedAny( 'suppressrevision', 'viewsuppressed' ) ) {
+					$hiddenBits = LogPage::DELETED_ACTION | LogPage::DELETED_RESTRICTED;
+				}
+				if ( $hiddenBits ) {
+					$bitfield = MediaWikiServices::getInstance()
+						->getDBLoadBalancerFactory()
+						->getMainLB()
+						->getConnection( DB_REPLICA )
+						->bitAnd( 'log_deleted', $hiddenBits );
+					$qc[] = "$bitfield != $hiddenBits";
+				}
 			}
 		}
 
