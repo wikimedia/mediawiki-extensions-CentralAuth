@@ -6,9 +6,11 @@
 			"Malafaya",
 			"Robin van der Vliet",
 			"Wyvernoid",
-			"सरोज कुमार ढकाल"
+			"सरोज कुमार ढकाल",
+			"Matma Rex"
 		]
 	},
+	"action-centralauth-createlocal": "koakte krear lokala konto",
 	"centralauth": "Administrero di globala konti",
 	"centralauth-account-exists-reset": "L'uzeronomo $1 ne enrejistresis en ica Wiki, ma vu povas modifikar lua pasovorto en [[Special:CentralAuth/$1|ula Wiki ube ol havas registro]].",
 	"centralauth-admin-blocked-reason": "Motivo: $1",
@@ -92,12 +94,14 @@
 	"centralauth-uwbr-registration-nodate": "Nekonocata",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yaro|yari}} ante nun",
 	"centralloginsuccesful": "Konektita",
+	"createlocalaccount": "Koakte krear lokala konto",
 	"globalgroupmembership": "Membreso en globala grupi",
 	"globalgrouppermissions": "Administrado di globala grupi",
 	"globalrenamequeue-form-status": "Stando:",
 	"globalrenamequeue-form-status-all": "omna",
 	"globalrenamequeue-request-cancel-text": "Anular",
 	"globalrenamequeue-view-approved": "aprobita",
+	"globalrenamerequest": "Demando dal uzero pri rinomizo globala",
 	"globalrenamerequest-email-label": "E-postal adreso:",
 	"globalrenamerequest-newname-help-basic": "Informez l'uzero-nomo quon vu deziras uzar.",
 	"globalusers": "Listo di generala konti",
