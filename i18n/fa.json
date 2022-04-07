@@ -97,7 +97,7 @@
 	"centralauth-admin-merge": "انتخاب ادغام",
 	"centralauth-admin-multi-bot": "تغییرات اخیر",
 	"centralauth-admin-multi-botcheck": "نشانه‌گذاری مدخل‌های [[Special:RecentChanges|{{int:recentchanges}}]] به عنوان ویرایش ربات.",
-	"centralauth-admin-multi-intro": "روزآمدسازی یکبارهٔ چندین حساب‌های سراسری",
+	"centralauth-admin-multi-intro": "به‌روزرسانی یکبارهٔ چندین حساب‌های سراسری",
 	"centralauth-admin-multi-notfound": "جست‌وجو هیچ نام کاربری‌ای باز نگرداند.",
 	"centralauth-admin-multi-searchprefix": "یا جست‌وجو برای نام‌های کاربری دارای یک پیشوند معین",
 	"centralauth-admin-multi-username": "یک یا چند نام کاربری وارد کنید، در هر خط یک نام کاربری",
