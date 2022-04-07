@@ -9,7 +9,8 @@
 			"Renessaince",
 			"W",
 			"Wizardist",
-			"Zedlik"
+			"Zedlik",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глябальныя групы, у якія ўваходзіць удзельнік",
@@ -282,7 +283,7 @@
 	"centralauth-prefs-view": "Паказаць інфармацыю вашага глябальнага рахунку",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Падрабязьней пра '''аб'яднаньне рахункаў''']]…''",
 	"centralauth-readonly": "База зьвестак CentralAuth заблякаваная.",
-	"centralauth-readonlytext": "База зьвестак CentralAuth у цяперашні момант заблякаваная ад новых запісаў і іншых зьменаў, верагодна для звычайнага абслугоўваньня базы зьвестак, пасьля якога праца будзе адноўленая.",
+	"centralauth-readonlytext": "База зьвестак CentralAuth у цяперашні момант заблякаваная ад новых запісаў і іншых зьменаў, верагодна для звычайнага абслугоўваньня базы зьвестак, пасьля якога праца будзе адноўленая.\n\nСыстэмны адміністратар, які заблякаваў яе, прапанаваў такое тлумачэньне: $1",
 	"centralauth-rename-form-reason": "Прычына",
 	"centralauth-rename-movelog": "Аўтаматычны перанос старонкі пры перайменаваньні ўдзельніка з «[[Special:CentralAuth/$1|$1]]» у «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-table-status": "Стан",
@@ -331,7 +332,7 @@
 	"multilock": "Блякаваньне некалькіх глябальных рахункаў",
 	"right-centralauth-lock": "блякаваць ці разблякоўваць глябальныя рахункі",
 	"right-centralauth-merge": "аб’яднаньне сваіх рахункаў",
-	"right-centralauth-suppress": "падаўляць ці хаваць глябальныя рахункі",
+	"right-centralauth-suppress": "Падаўляць ці хаваць глябальныя рахункі",
 	"right-centralauth-rename": "перайменаваньне глябальных рахункаў",
 	"right-centralauth-unmerge": "разьдзяленьне глябальных рахункаў",
 	"right-globalgroupmembership": "Рэдагаваньне ўдзелу ў глябальных групах",

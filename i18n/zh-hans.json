@@ -55,7 +55,9 @@
 			"落花有意12138",
 			"铁桶",
 			"阿pp",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"Matma Rex",
+			"StarrySky"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -197,6 +199,7 @@
 	"centralauth-delete-empty-account": "空账号",
 	"centralauth-desc": "[[Special:MergeAccount|合并]]{{int:Centralauth-groupname}}的维基帐号",
 	"centralauth-disabled-dryrun": "账户合并正处于演示／除错模式，因此合并操作已被禁止。抱歉！",
+	"centralauth-editgroup-delete-removemembers": "您必须先从组中删除所有成员，然后才能删除该组。",
 	"centralauth-editgroup-display": "本地化组名:",
 	"centralauth-editgroup-display-edit": "$2 （[[MediaWiki:Group-$1|编辑]]）",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|编辑]])",
