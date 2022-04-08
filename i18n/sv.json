@@ -500,7 +500,7 @@
 	"right-centralauth-createlocal": "Tvingas skapa ett lokalt konto för ett globalt konto",
 	"right-centralauth-lock": "Lås eller lås upp globalt konto",
 	"right-centralauth-merge": "Slå samman sina konton",
-	"right-centralauth-suppress": "Censurera eller dölj globalt konto",
+	"right-centralauth-suppress": "Censurera eller dölja globalt konto",
 	"right-centralauth-rename": "Byt namn på globala konton",
 	"right-centralauth-unmerge": "Separera globalt konto",
 	"right-globalgroupmembership": "Redigera medlemskap i globala grupper",
