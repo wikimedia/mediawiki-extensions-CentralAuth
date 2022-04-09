@@ -84,7 +84,8 @@ class UnitTestsHookHandler implements
 		$originalPrefix = $db->tablePrefix();
 		$db->tablePrefix( $prefix );
 		if ( !$db->tableExists( 'globaluser', __METHOD__ ) ) {
-			$db->sourceFile( __DIR__ . '/../../../central-auth.sql' );
+			$engine = $db->getType();
+			$db->sourceFile( __DIR__ . "/../../../schema/$engine/tables-generated.sql" );
 		}
 		$db->tablePrefix( $originalPrefix );
 	}
