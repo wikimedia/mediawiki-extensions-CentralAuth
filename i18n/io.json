@@ -6,7 +6,8 @@
 			"Malafaya",
 			"Robin van der Vliet",
 			"Wyvernoid",
-			"सरोज कुमार ढकाल"
+			"सरोज कुमार ढकाल",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "Administrero di globala konti",
@@ -99,6 +100,7 @@
 	"globalrenamequeue-form-status-all": "omna",
 	"globalrenamequeue-request-cancel-text": "Anular",
 	"globalrenamequeue-view-approved": "aprobita",
+	"globalrenamerequest": "Demando dal uzero pri rinomizo globala",
 	"globalrenamerequest-email-label": "E-postal adreso:",
 	"globalrenamerequest-newname-help-basic": "Informez l'uzero-nomo quon vu deziras uzar.",
 	"globalusers": "Listo di generala konti",
