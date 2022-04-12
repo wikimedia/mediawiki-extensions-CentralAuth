@@ -10,7 +10,8 @@
 			"Хомелка",
 			"Чаховіч Уладзіслаў",
 			"Chadyka",
-			"Maksim L."
+			"Maksim L.",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік",
@@ -200,7 +201,7 @@
 	"centralauth-error-token-wrongattempt": "Токен аўтэнтыфікацыі не належыць да вашай бягучай спробы ўваходу.\nМагчыма, хтосьці спрабуе ўвайсці ў сістэму пад шкоднасным рахункам.",
 	"centralauth-error-token-wronguser": "Токен не супадае з імем удзельніка сеансу.\nМагчыма, хтосьці спрабуе ўвайсці ў сістэму пад шкоднасным рахункам.\nКалі вы проста спрабуеце ўвайсці ў сістэму як іншы ўдзельнік, спачатку выйдзіце з сістэмы.",
 	"centralauth-error-unmerged": "Вы не можаце правіць, бо ваш рахунак не аб’яднаны.",
-	"centralauth-error-wrongprovider": "Гэта спецыяльная старонка недаступная пры выкарыстанні віду сесіі «$1».",
+	"centralauth-error-wrongprovider": "Гэта спецыяльная старонка недаступная пры выкарыстанні віду сеансу «$1».",
 	"centralauth-finish-incomplete": "Некалькі рахункаў былі аб’яднаныя з выкарыстаннем гэтага паролю.\nІншыя рахункі пакуль не пацверджаны.",
 	"centralauth-finish-login": "Увайсці",
 	"centralauth-finish-noconfirms": "Няма рахункаў, якія могуць быць пацверджаныя гэтым паролем.",
@@ -355,7 +356,7 @@
 	"centralauth-ro": "Звесткі пра глабальны ўліковы запіс",
 	"centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|}} назад",
 	"centralauth-state-mismatch": "Памылка: выяўлены канфлікт правак гэтага ўдзельніка. Праверце вашыя змены і паспрабуйце зноў.",
-	"centralauth-token-mismatch": "Прабачце, немагчыма працягваць апрацоўку вашай формы ў выніку страты звестак сесіі.",
+	"centralauth-token-mismatch": "Прабачце, немагчыма працягваць апрацоўку вашай формы ў выніку страты звестак сеансу.",
 	"centralauth-usermerge-confirm": "Вы сапраўды хочаце глабальна аб’яднаць гэтых ўдзельнікаў?",
 	"centralauth-usermerge-form-reason": "Прычына",
 	"centralauth-warning-notattached": "Лакальны рахунак не злучаны з глабальным.",
@@ -468,8 +469,8 @@
 	"right-centralauth-unmerge": "Раз’яднанне глабальных рахункаў",
 	"right-globalgroupmembership": "Змяненне членства ў глабальных групах",
 	"right-globalgrouppermissions": "Кіраванне глабальнымі рахункамі",
-	"sessionprovider-centralauthsessionprovider": "сесіяў на аснове файлаў cookie",
-	"sessionprovider-centralauthtokensessionprovider": "сесіяў на аснове centralauthtoken",
+	"sessionprovider-centralauthsessionprovider": "сеансаў на аснове файлаў cookie",
+	"sessionprovider-centralauthtokensessionprovider": "сеансаў на аснове centralauthtoken",
 	"sulrenamewarning-authmanager-ok-help": "Працягнуць пасля адлюстравання апавяшчэння аб перайменаванні.",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Ваш}} рахунак '''$1''' быў перайменаваны ў '''$2''' падчас аўтаматычнага пераходу ў адзіную сістэму ўваходу групы {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Ваш}} рахунак быў перайменаваны",
