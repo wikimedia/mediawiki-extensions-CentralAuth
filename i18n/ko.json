@@ -63,7 +63,7 @@
 	"centralauth-admin-action-lock-nochange": "잠금을 바꾸지 마세요",
 	"centralauth-admin-action-lock-unlock": "선택한 계정 잠금 해제",
 	"centralauth-admin-already-unmerged": "이미 병합 해제되었기 때문에, $1을 건너뜁니다",
-	"centralauth-admin-bad-input": "잘못된 계정 합치기 설정",
+	"centralauth-admin-bad-input": "잘못된 계정 합치기 선택입니다.",
 	"centralauth-admin-blocked-reason": "이유: $1",
 	"centralauth-admin-blocked2": "차단됨, $2 $3에 차단 만료.",
 	"centralauth-admin-blocked2-indef": "무기한 차단되었습니다.",
