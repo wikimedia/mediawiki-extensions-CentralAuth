@@ -9,7 +9,8 @@
 			"KATRINE1992",
 			"Macofe",
 			"MarcoAurelio",
-			"Ryo567"
+			"Ryo567",
+			"DiegoAmbrocio"
 		]
 	},
 	"apierror-centralauth-badsession": "Solo se puede obtener una centralauthtoken cuando se utilizan en sesiones de CentralAuth.",
@@ -22,6 +23,8 @@
 	"apihelp-centralauthtoken-description": "Recuperar una ficha de autenticación central para realizar una solicitud autenticada a una wiki adjunta.",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-centralauthtoken-summary": "Obtener un \"centralauthtoken\" para realizar una solicitud autenticada a una wiki adjunta.",
+	"apihelp-createlocalaccount-param-username": "Usuario para el que se crea la cuenta local.",
+	"apihelp-createlocalaccount-summary": "Forcibly create a local account",
 	"apihelp-deleteglobalaccount-description": "Borrar un usuario global.",
 	"apihelp-deleteglobalaccount-example-1": "Eliminar la cuenta global de [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Razón para borrar al usuario.",

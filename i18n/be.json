@@ -11,7 +11,8 @@
 			"Хомелка",
 			"Чаховіч Уладзіслаў",
 			"Maksim L.",
-			"Matma Rex"
+			"Matma Rex",
+			"Tomato Cream"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік",
@@ -322,7 +323,7 @@
 	"centralauth-prefs-view": "Звесткі пра глабальны ўліковы запіс",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Падрабязьней пра '''аб’яднаный рахунак''']]…''",
 	"centralauth-readonly": "База дадзеных CentralAuth замкнутая.",
-	"centralauth-readonlytext": "База дадзеных CentralAuth зараз замкнутая ад дабаўлення новых запісаў і іншых змен, верагодна, дзеля планавага абслугоўвання, пасля якога яна будзе вернута да нармальнай працы.\n\nСістэмны адміністратар, які замкнуў базу, растлумачыў гэта так: $1",
+	"centralauth-readonlytext": "База дадзеных CentralAuth зараз замкнутая ад дабаўлення новых запісаў і іншых змен, імаверна, дзеля планавага абслугоўвання, пасля якога яна будзе вернута да нармальнай працы.\n\nСістэмны адміністратар, які замкнуў базу, растлумачыў гэта так: $1",
 	"centralauth-rename-abortlogin": "Ваш рахунак зараз пераймяноўваецца або аб’ядноўваецца. [[Special:GlobalRenameProgress/$1|Праглядзець стан]].",
 	"centralauth-rename-alreadyexists": "Запытанае імя ўдзельніка ўжо існуе.",
 	"centralauth-rename-alreadyinprogress": "Ужо [[Special:GlobalRenameProgress/$1|ідзе]] перайменаванне гэтага ўдзельніка.",
