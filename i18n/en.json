@@ -153,7 +153,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "You are centrally logged in. Reload the page to apply your user settings.",
 	"centralauth-centralautologin-lostsession": "Session data was lost.",
 	"centralauth-centralautologin-notposted": "Central login form must be posted.",
-	"centralauth-centralautologin-p3p-explanation": "Certain browsers require a [https://www.w3.org/TR/P3P/#compact_policies P3P compact policy] for cookies to be sent or received in some cases, including the situation involved in the SUL login check. This is a needless hoop to jump through in this situation, considering that all pages involved are in the same wiki group and P3P itself is mostly obsolete and abandoned; fortunately, the invalid policy linking to this page is currently considered \"good enough\" by these browsers' default configurations.\n\nPlease review this site's human-readable privacy policy to determine how any information collected might be used.",
 	"centralauth-complete": "Login unification complete!",
 	"centralauth-complete-text": "You can now log in to any wiki site of {{int:Centralauth-groupname}} without creating a new account.",
 	"centralauth-completelogin-back": "Return to the previous page.",

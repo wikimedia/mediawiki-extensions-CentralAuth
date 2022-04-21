@@ -323,8 +323,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		$this->utilityService->setP3P( $request );
-
 		$s = $session->getSession( $request );
 
 		$user = $session->getUser();
@@ -410,8 +408,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$this->logger->debug( __METHOD__ . ': Headers already sent' );
 			return;
 		}
-
-		$this->utilityService->setP3P( $request );
 
 		$expiry = time() - 86400;
 		$response->clearCookie( 'User', $this->centralCookieOptions );
@@ -503,7 +499,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$loggedOut !== (int)$this->getCookie(
 				$request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
 		) {
-			$this->utilityService->setP3P( $request );
 			$request->response()->setCookie( 'LoggedOut', (string)$loggedOut, $loggedOut + 86400,
 				$this->centralCookieOptions );
 		}

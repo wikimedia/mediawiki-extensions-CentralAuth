@@ -161,11 +161,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		);
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
-		case 'P3P': // Explain the bogus P3P header
-			$this->setHeaders();
-			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-p3p-explanation' );
-			return;
-
 		case 'toolslist':
 			// Do not cache this, we want updated Echo numbers and such.
 			$this->getOutput()->disableClientCache();
@@ -212,7 +207,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$this->centralAuthUtilityService->setP3P();
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			if ( $centralUser && $centralUser->getId() && $centralUser->isAttached() ) {
 				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
@@ -257,7 +251,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$this->centralAuthUtilityService->setP3P();
 			$this->session->setUser( new User );
 			$this->session->persist();
 			$this->doFinalOutput( true, 'success' );
@@ -275,7 +268,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$this->centralAuthUtilityService->setP3P();
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
 				'wikiid' => WikiMap::getCurrentWikiId(),
 				'proto' => WebRequest::detectProtocol(),
@@ -294,7 +286,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$this->centralAuthUtilityService->setP3P();
 			if ( $this->getUser()->isRegistered() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 			} else {
@@ -333,8 +324,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( !$this->checkSession() ) {
 				return;
 			}
-
-			$this->centralAuthUtilityService->setP3P();
 
 			$token = $request->getVal( 'token', '' );
 			$gid = $request->getVal( 'gu_id', '' );
@@ -405,7 +394,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$this->centralAuthUtilityService->setP3P();
 			// Validate params
 			$token = $request->getVal( 'token', '' );
 			if ( $token === '' ) {
@@ -457,7 +445,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 
-			$this->centralAuthUtilityService->setP3P();
 			// Check saved memc token
 			$token = $this->getRequest()->getSessionData( 'centralautologin-token' );
 			if ( $token === null ) {
