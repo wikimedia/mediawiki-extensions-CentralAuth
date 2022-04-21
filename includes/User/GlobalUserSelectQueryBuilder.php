@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
+use EmptyIterator;
 use Iterator;
 use MediaWiki\User\ActorStore;
 use MediaWiki\User\UserIdentity;
@@ -127,6 +128,10 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 		$localUserIds = [];
 		foreach ( $result as $row ) {
 			$localUserIds[] = $row->lu_local_id;
+		}
+
+		if ( $localUserIds === [] ) {
+			return new EmptyIterator();
 		}
 
 		return $this->actorStore->newSelectQueryBuilder()
