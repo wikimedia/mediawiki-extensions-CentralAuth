@@ -332,7 +332,7 @@
 	"centralauth-prefs-view": "Lihat info akun global Anda",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Baca lebih lanjut mengenai '''log masuk global''']]...''",
 	"centralauth-readonly": "Basis data CentralAuth dikunci.",
-	"centralauth-readonlytext": "Basis data CentralAuth saat ini terkunci untuk entri baru dan perubahan lainnya, mungkin untuk pemeliharaan basis data secara rutin, yang setelahnya akan kembali normal.",
+	"centralauth-readonlytext": "Basis data CentralAuth saat ini terkunci untuk entri baru dan perubahan lainnya, mungkin untuk pemeliharaan basis data secara rutin, yang setelahnya akan kembali normal.\n\nAdministrator sistem yang menguncinya memberikan penjelasan ini: $1",
 	"centralauth-rename-abortlogin": "Akun Anda sedang diubahnamakan atau digabungkan.\n[[Special:GlobalRenameProgress/$1|Lihat status]].",
 	"centralauth-rename-alreadyexists": "Nama pengguna yang diinginkan sudah dipakai.",
 	"centralauth-rename-alreadyinprogress": "Ada pengubahan nama untuk pengguna ini yang sedang dalam [[Special:GlobalRenameProgress/$1|progres]].",
