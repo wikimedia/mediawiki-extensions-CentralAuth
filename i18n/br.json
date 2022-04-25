@@ -6,7 +6,9 @@
 			"Gwendal",
 			"Gwenn-Ael",
 			"Kouign-amann",
-			"Y-M D"
+			"Y-M D",
+			"Huñvreüs",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Strolladoù hollek m'emañ an implijer",
@@ -275,6 +277,7 @@
 	"centralauth-rename-form-newname": "Anv implijer nevez",
 	"centralauth-rename-form-oldname": "Anv implijer a vremañ",
 	"centralauth-rename-form-reason": "Abeg",
+	"centralauth-rename-movelog": "Pajenn dilec’hiet emgefre en un adenvel an implijer \"[[Special:CentralAuth/$1|$1]]\" da \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-progress-fieldset": "Roll ar c'hontoù lec'hel",
 	"centralauth-rename-progress-username": "Anv implijer",
 	"centralauth-rename-table-domain": "Wiki lec'hel",
