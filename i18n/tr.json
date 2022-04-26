@@ -32,7 +32,10 @@
 			"Uncitoyen",
 			"Violetanka",
 			"Vito Genovese",
-			"Mim.saitkilic"
+			"Mim.saitkilic",
+			"DDPAT",
+			"Ice bulldog",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Kullanıcının olduğu küresel gruplar",
@@ -80,7 +83,7 @@
 	"centralauth-admin-info-header": "Küresel hesap bilgisi",
 	"centralauth-admin-info-hidden": "Gizlilik seviyesi:",
 	"centralauth-admin-info-locked": "Kilitli:",
-	"centralauth-admin-info-registered": "Kayıtlı:",
+	"centralauth-admin-info-registered": "Kayıt tarihi:",
 	"centralauth-admin-info-unattached": "Bağlı olmayan hesap sayısı:",
 	"centralauth-admin-info-username": "Kullanıcı adı:",
 	"centralauth-admin-intro": "Bu arayüz küresel hesapların yönetimi için kullanılabilir.",
