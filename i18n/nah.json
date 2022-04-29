@@ -3,6 +3,7 @@
 		"authors": [
 			"Akapochtli",
 			"Fluence",
+			"Languaeditor",
 			"Ricardo gs",
 			"Taresi",
 			"Teòtlalili"
@@ -16,7 +17,7 @@
 	"centralauth-editgroup-noset": "(ahtlein)",
 	"centralauth-editset-name": "Tocaitl:",
 	"centralauth-editset-reason": "Ipampa:",
-	"centralauth-foreign-link": "Tequitiuhqui $1 inipan $2",
+	"centralauth-foreign-link": "Tekitiketl $1 pan $2",
 	"centralauth-list-home-title": "Wikichaneh",
 	"centralauth-merge-dryrun-or": "'''nozo'''",
 	"centralauth-merge-method-primary": "wikinelhuatl",
