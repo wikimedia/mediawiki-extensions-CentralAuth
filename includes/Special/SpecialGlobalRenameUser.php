@@ -15,12 +15,12 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
+use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use Message;
 use Status;
 use Title;
-use TitleBlacklist;
-use TitleBlacklistEntry;
 use User;
 
 class SpecialGlobalRenameUser extends FormSpecialPage {
