@@ -44,7 +44,6 @@ use User;
 use UserBlockedError;
 use UserGroupMembership;
 use UserrightsPage;
-use UserRightsProxy;
 use Xml;
 use XmlSelect;
 
@@ -210,7 +209,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			}
 
 			$targetUser = $this->mFetchedUser;
-			if ( $targetUser instanceof User ) { // UserRightsProxy doesn't have this method (T63252)
+			if ( $targetUser instanceof User ) {
 				$targetUser->clearInstanceCache(); // T40989
 			}
 
@@ -260,7 +259,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 *
 	 * @param string $username Username to apply changes to.
 	 * @param string $reason Reason for group change
-	 * @param User|UserRightsProxy $user Target user object.
+	 * @param User|CentralAuthGroupMembershipProxy $user Target user object.
 	 * @return Status
 	 */
 	private function saveUserGroups( $username, $reason, $user ) {
@@ -564,7 +563,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * Show the form to edit group memberships.
 	 *
-	 * @param User|CentralAuthGroupMembershipProxy $user User or UserRightsProxy you're editing
+	 * @param User|CentralAuthGroupMembershipProxy $user User you're editing
 	 * @param string[] $groups Array of groups the user is in. Not used by this implementation
 	 *   anymore, but kept for backward compatibility with subclasses
 	 * @param UserGroupMembership[] $groupMemberships Associative array of (group name => UserGroupMembership
