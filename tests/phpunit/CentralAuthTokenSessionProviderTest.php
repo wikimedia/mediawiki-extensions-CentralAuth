@@ -250,7 +250,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 	 */
 	public function testProvideSessionInfo_badUser( $name, $return, $error, $code ) {
 		// NOTE: the user gets registered in a fake service,
-		//       we can't construct it in teh data provider!
+		//       we can't construct it in the data provider!
 		$user = $this->makeCentralAuthUser( $name, $return );
 		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
 		$provider = $this->newSessionProvider();
