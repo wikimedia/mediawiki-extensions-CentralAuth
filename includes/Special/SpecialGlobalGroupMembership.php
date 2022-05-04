@@ -363,8 +363,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				return !in_array( $group, $groups ) || array_key_exists( $group, $groupExpiries );
 			} );
 
-		$this->getHookRunner()->onChangeUserGroups( $this->getUser(), $user, $add, $remove );
-
 		$oldGroups = $groups;
 		$oldUGMs = $user->getGroupMemberships();
 		$newGroups = $oldGroups;
@@ -392,10 +390,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 		// Ensure that caches are cleared
 		$user->invalidateCache();
-
-		// update groups in external authentication database
-		$this->getHookRunner()->onUserGroupsChanged( $user, $add, $remove,
-			$this->getUser(), $reason, $oldUGMs, $newUGMs );
 
 		wfDebug( 'oldGroups: ' . print_r( $oldGroups, true ) );
 		wfDebug( 'newGroups: ' . print_r( $newGroups, true ) );
