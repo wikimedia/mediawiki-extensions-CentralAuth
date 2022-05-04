@@ -521,7 +521,7 @@
 	"log-action-filter-gblrights": "نوع تغییر:",
 	"log-action-filter-gblrights-groupprms": "تغییر گروه‌های حساب سراسری",
 	"log-action-filter-gblrights-setmodify": "تغییر مجموعهٔ ویکی",
-	"log-action-filter-gblrights-usergroups": "تغییر اختیارات حساب سراسری",
+	"log-action-filter-gblrights-usergroups": "تغییر سراسری اختیارات کاربر",
 	"log-action-filter-globalauth": "نوع تغییر:",
 	"log-action-filter-globalauth-delete": "حذف سراسری حساب",
 	"log-action-filter-globalauth-setstatus": "تغییر وضعیت حساب سراسری",
