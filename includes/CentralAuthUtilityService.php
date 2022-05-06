@@ -33,7 +33,6 @@ use RequestContext;
 use StatusValue;
 use TitleFactory;
 use User;
-use WebRequest;
 use WikiMap;
 use Wikimedia\WaitConditionLoop;
 
@@ -66,44 +65,6 @@ class CentralAuthUtilityService {
 		$this->authManager = $authManager;
 		$this->titleFactory = $titleFactory;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
-	}
-
-	/**
-	 * Sets the Platform for Privacy Preferences Project (P3P) policy header,
-	 * if one is configured and the browser requests one.
-	 *
-	 * @param WebRequest|null $request
-	 */
-	public function setP3P( WebRequest $request = null ): void {
-		if ( !$request ) {
-			$request = RequestContext::getMain()->getRequest();
-		}
-
-		$response = $request->response();
-
-		$sent = is_callable( [ $response, 'headersSent' ] )
-			? $response->headersSent()
-			: headers_sent();
-
-		if ( !$sent && $response->getHeader( 'P3P' ) === null ) {
-			// IE requires that a P3P header be provided for the cookies to be
-			// visible to the auto-login check.
-			$policy = $this->config->get( 'CentralAuthCookiesP3P' );
-
-			if ( $policy === true ) {
-				// Note this policy is not valid: it has no valid tokens, while
-				// a valid policy would contain an "access" token and at least
-				// one statement, which would contain either the NID token or
-				// at least one "purpose" token, one "recipient" token, and one
-				// "retention" token.
-				$url = $this->titleFactory
-					->makeTitle( NS_SPECIAL, 'CentralAutoLogin/P3P' )
-					->getCanonicalURL();
-				$response->header( "P3P: CP=\"This is not a P3P policy! See $url for more info.\"" );
-			} elseif ( $policy ) {
-				$response->header( "P3P: $policy" );
-			}
-		}
 	}
 
 	/**

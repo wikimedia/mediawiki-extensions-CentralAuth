@@ -176,7 +176,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "See also:\n* {{msg-mw|Centralauth-centralautologin-logged-in}}",
 	"centralauth-centralautologin-lostsession": "Error message when the session data is lost or overwritten",
 	"centralauth-centralautologin-notposted": "Error message shown when [[Special:CentralAutoLogin]] is called in form mode with an HTTP method other than POST",
-	"centralauth-centralautologin-p3p-explanation": "This is the text of a Special page. See example [[mw:Special:CentralAutoLogin/P3P]].\n\nThis provides an explanation for the [[:w:en:P3P|P3P]] hack that allows IE to set cookies. The text is technical and is only linked from a url in an http header response, so it is not something end users will generally find.",
 	"centralauth-complete": "Title of special page \"MergeAccount\" when a user account is unified.",
 	"centralauth-complete-text": "{{doc-important|Please leave <code><nowiki>{{int:Centralauth-groupname}}</nowiki></code> exactly as it is.}}\nStatus message after successful unification of a user account.\n\nRefers to {{msg-mw|Centralauth-groupname}}.",
 	"centralauth-completelogin-back": "Used as action link text.",

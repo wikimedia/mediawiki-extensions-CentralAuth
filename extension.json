@@ -727,10 +727,6 @@
 				"extendwatchlist"
 			]
 		},
-		"CentralAuthCookiesP3P": {
-			"description": "Specify a P3P header value to be used when setting CentralAuth cookies on the login wiki ($wgCentralAuthLoginWiki). When set true, a invalid policy (lacking all required tokens) will be sent that none the less serves to allow current versions of IE with the default privacy settings to see the cookies in the auto-login check. Set false to disable sending the P3P header altogether. Note this will likely break the auto-login check in IE, unless the header is being set globally elsewhere (e.g. in the webserver). Otherwise, whatever string is assigned here will be sent as the value of the P3P header.",
-			"value": true
-		},
 		"CentralAuthCreateOnView": {
 			"description": "If true, local accounts will be created for active global sessions on any page view. This is kind of creepy, so we're gonna have it off for a little bit. With other default options, the local autocreation will be held off until an active login attempt, while global sessions will still automatically log in those who already have a merged account.",
 			"value": false
