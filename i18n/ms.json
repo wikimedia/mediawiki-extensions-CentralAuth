@@ -120,7 +120,6 @@
 	"centralauth-centralautologin-logged-in": "Anda telah log masuk secara terpusat sebagai $1. Muat semula halaman untuk menghidupkan tetapan pengguna anda.",
 	"centralauth-centralautologin-lostsession": "Data sesi hilang",
 	"centralauth-centralautologin-notposted": "Borang log masuk berpusat mesti dihantar",
-	"centralauth-centralautologin-p3p-explanation": "Sesetengah pelayar memerlukan dasar pemampatan P3P untuk membolehkan penghantaran dan penerimaan cecikut dalam sesetengah hal, termasuk situasi yang terlibat dalam pemeriksaan log masuk SUL. Tindakan ini tidak perlu dalam situasi ini memandangkan semua halaman yang terlibat berada dalam kumpulan wiki yang sama padahal P3P sendiri rata-rat sudah lapuk dan terbiar; mujurlah dasar tak sah yang berpaut dengan halaman ini kini dianggap \"sudah memadai\" oleh konfigurasi azali pelayar-pelayar berkenaan.\n\nSila semak dasar privasi tapak ini untuk menentukan bagaimana sebarang maklumat yang terkumpul boleh digunakan.",
 	"centralauth-complete": "Penggabungan akaun selesai!",
 	"centralauth-complete-text": "Sekarang anda boleh log masuk ke dalam mana-mana wiki kelolaan {{int:Centralauth-groupname}} tanpa membuka akaun baru.",
 	"centralauth-completelogin-back": "Kembali ke halaman sebelumnya.",

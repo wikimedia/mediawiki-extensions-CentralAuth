@@ -129,7 +129,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Tu è trasute cendralmende. Recareche 'a pàgene pe applecà le 'mbostaziune tune.",
 	"centralauth-centralautologin-lostsession": "Le date de sessione onne state perse",
 	"centralauth-centralautologin-notposted": "'U module cendralizzate pe trasè adda essere mannate",
-	"centralauth-centralautologin-p3p-explanation": "Cere browser volene 'na [https://www.w3.org/TR/P3P/#compact_policies regole P3P combatte] pe le  cookie da essere mannate o avute jndr'à certe case, 'ngludenne 'a situazione jndr'à verifiche de trasute SUL. Quiste jè 'nu gire ca non g'abbesògne de zumbà pe sta situazione, conzideranne tutte le pàggene coinvolte stonne jndr'à 'u stesse gruppe uicchi e P3P da sule jè cacate; pe fortune, 'a regole invalide de collegamende a sta pàgene avène conziderate \"abbastanza bbone\" da 'a configurazione ste browser.\n\nPe piacere revide sta regole d'a privacy d'u site cchiù crestiane pe determinà accumme tutte le 'mbormaziune collezzionate onna essere ausate.",
 	"centralauth-complete": "Trasùte aunifecate combletate!",
 	"centralauth-complete-text": "Tu puè trasè jndr'à tutte le uicchi de {{int:Centralauth-groupname}} senze ccrejà 'nu cunde nuève.",
 	"centralauth-completelogin-back": "Tuèrne 'a pàgene d'apprime.",

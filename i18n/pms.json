@@ -118,7 +118,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "A l'é rintrà an tël sistema ëd fasson global. Ch'a caria torna la pàgina për apliché ij sò gust.",
 	"centralauth-centralautologin-lostsession": "Ij dàit ëd session a son ëstàit përdù",
 	"centralauth-centralautologin-notposted": "Ël formolari ëd conession sentralisà a dev esse publicà",
-	"centralauth-centralautologin-p3p-explanation": "Chèich navigador a l'han damanca ëd régole P3P satìe për mandé o arsèive dij bëscotin an chèich cas, dont la situassion amplicà ant la verìfica dla conession SUL. A l'é na tapa inùtil da fé an costa situassion, dagià che tute le pàgine amplicà a son ant la midema partìa ëd wiki e che l'istess P3P a l'é për la pipart vej e bandonà; për boneur, le régole nen vàlide ch'a armando a sta pàgina a son al moment considerà «bon-e a basta» da le configurassion dë stàndard ëd costi navigador.\n\nPër piasì, ch'a lesa torna le régole d'arservatëssa lesìbij da le përson-e ëd cost sit për savèj coma tuta anformassion cujìa a podrìa esse dovrà.",
 	"centralauth-complete": "Mës-cia dij cont bele faita!",
 	"centralauth-complete-text": "Adess a peul intré an qualsëssìa sit wiki dla {{int:Centralauth-groupname}} sensa da manca dë deurb-se un cont neuv.",
 	"centralauth-completelogin-back": "Torné a la pàgina precedenta.",

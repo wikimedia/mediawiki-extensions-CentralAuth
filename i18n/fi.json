@@ -153,7 +153,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Olet kirjautunut keskitetysti sisään. Lataa sivu uudelleen, jotta asetuksesi tulevat voimaan.",
 	"centralauth-centralautologin-lostsession": "Istuntotiedot hävinneet.",
 	"centralauth-centralautologin-notposted": "Keskitettyä kirjautumista koskevat lomaketiedot on lähetettävä POST-menetelmällä.",
-	"centralauth-centralautologin-p3p-explanation": "Jotkin selaimet vaativat [https://www.w3.org/TR/P3P/#compact_policies P3P-yksityisyyskäytännön], jotta evästeitä voitaisiin lähettää sekä vastaanottaa joissain tapauksissa, kuten SUL-kirjautumiseen liittyvissä tarkistuksissa. Tämä on turha lisävaihe tässä tilanteessa, sillä kaikki sivut kuuluvat samaan wikiryhmään ja P3P on itse lähes kokonaan vanhentunut; onneksi tähän sivuun linkittävä viallinen käytäntö koetaan tarpeeksi päteväksi näiden selainten oletusasetuksilla.\n\nArvioi tämän sivun ihmisluettava yksityisyyskäytäntö nähdäksesi, miten kerättyä tietoa saatetaan käyttää.",
 	"centralauth-complete": "Käyttäjätunnusten yhdistäminen on tehty.",
 	"centralauth-complete-text": "Voit nyt kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.",
 	"centralauth-completelogin-back": "Palaa edelliselle sivulle.",

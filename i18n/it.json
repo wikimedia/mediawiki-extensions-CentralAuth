@@ -150,7 +150,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Hai effettuato l'accesso globalmente. Ricarica la pagina per applicare le impostazioni utente.",
 	"centralauth-centralautologin-lostsession": "I dati della sessione sono andati perduti.",
 	"centralauth-centralautologin-notposted": "Il modulo di accesso centralizzato deve essere inviato utilizzando il metodo POST.",
-	"centralauth-centralautologin-p3p-explanation": "Alcuni browser richiedono una [https://www.w3.org/TR/P3P/#compact_policies  policy P3P compatta] per l'invio e la ricezione di cookie in determinati casi, compresa la situazione riguardante il controllo di accesso SUL. Questa è un'inutile complicazione in questa situazione, considerando che tutte le pagine coinvolte sono nello stesso gruppo di wiki e P3P stesso è sostanzialmente obsoleto e abbandonato; fortunatamente, la policy non valida collegata a questa pagina è attualmente considerata \"abbastanza buona\" per le configurazioni predefinite di questi browser.\n\nSi prega di rileggere la policy di tutela della riservatezza di questo sito per determinare come potrebbero essere utilizzate tutte le informazioni raccolte.",
 	"centralauth-complete": "Il processo di unificazione delle utenze è stato completato.",
 	"centralauth-complete-text": "È ora possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuove utenze.",
 	"centralauth-completelogin-back": "Torna alla pagina precedente.",

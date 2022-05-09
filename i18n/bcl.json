@@ -104,7 +104,6 @@
 	"centralauth-centralautologin-logged-in": "Ika sentral na nakalaoag na bilang $1. Ikarga otro an pahina tanganing paganahon an saimong paragamit na mga panuytoy.",
 	"centralauth-centralautologin-lostsession": "Nawara an datos nin sesyon",
 	"centralauth-centralautologin-notposted": "Dapat ipagpaskil an porma kan sentral na paglalaog",
-	"centralauth-centralautologin-p3p-explanation": "An siyertong mga pangilyaw naghahagad nin P3P kompak na palisiya para sa mga kokies na ipinapadara o nareresibe sa ibang kaso, kabali na an sitwasyon na imbuwelto sa pagrekisa kan SUL na paglaog. Ini bakong gayo kinakaipuhan na gutlang sa paglukso dagos kaining sitwasyon, kundi minakonsidera na an gabos na mga pahinang imbuwelto yaon sa laog nin kaparehong grupo kan wiki asin an P3P mismo iyo na an lumaon asin abandonado na; maray ngani, an imbalidong palisiya na nagsusugpon kaining pahina sa presente pinagkokonsiderang \"labi karahay\" kaining mga panugmad na konpigurasyon nin mga pangilyaw.",
 	"centralauth-complete": "Pagkasararo kan panlaog nakumpleto na!",
 	"centralauth-complete-text": "Ika puwede nang makalaog sa arin man na sityo kan wiki sa {{int:Centralauth-groupname}} na dae na magmumukna nin baguhong panindog.",
 	"centralauth-completelogin-back": "Ibalik sa nakaaging pahina.",

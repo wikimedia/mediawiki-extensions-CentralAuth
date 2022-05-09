@@ -120,7 +120,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Setralka a nakastrek. Ikargam manen ti panid tapno maipakat dagiti pannakaisaadmo nga agar-aramat.",
 	"centralauth-centralautologin-lostsession": "Napukaw idi ti sesion ti datos",
 	"centralauth-centralautologin-notposted": "Ti sentral a panagserrek ket nasken a maipablaak",
-	"centralauth-centralautologin-p3p-explanation": "Dagiti dadduma a pagbasabasa ket makasapulda ti kompakto nga annuroten ti [https://www.w3.org/TR/P3P/#compact_policies kompakto nga annuroten ti P3P] para kadagiti galieta a maipatulod wenno maawat kadagiti dadduma a kaso, a mairaman ti situasion a pakairamanan ti panagkita ti panagserrek ti SUL. Daytoy ket awan serbina a silo a laktawan iti daytoy a situasion, gapu ta amin a panid ti wiki a nairaman iti isumet laeng a grupo ken P3P ket baak ken napanawanen; daksanggasat met, ti imbalido nga annuroten a mangisilpo iti daytoy a panid ket agdama a naikedkeddeng a \"nasayaaten\" babaen dagiti kasisigud a pannakaaramid dagiti pagbasabasa.\n\nPangngaasi nga irepaso ti mabalin a mabasa ti tao ti kinapribado nga annuroten daytoy a sitio tapno makeddengan no kasano ti panangusar ti ania man a nakolekta a pakaammo.",
 	"centralauth-complete": "Nalpasen ti panagkaykaysa ti panagserrek!",
 	"centralauth-complete-text": "Makastrekkan iti ania man a wiki iti {{int:Centralauth-groupname}} a saanen nga agpartuat iti baro a pakabilangan.",
 	"centralauth-completelogin-back": "Agsubli iti dati a panid.",

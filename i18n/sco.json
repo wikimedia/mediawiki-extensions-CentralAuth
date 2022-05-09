@@ -119,7 +119,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Ye'r centrallie loggit in. Relaid the page tae applie yer uiser settins.",
 	"centralauth-centralautologin-lostsession": "Session data wis lost",
 	"centralauth-centralautologin-notposted": "Central login form maun be posted",
-	"centralauth-centralautologin-p3p-explanation": "Certain brousers need ae P3P compact policie fer cookies tae be sent or receeved in some cases, incluidin the situation involved in the SUL login check. This is ae needless huip tae jump throoch in this situation, conseederin that aw pages involved ar in the same wiki groop n P3P itsel is maistlie obsileate n abandoned; fortunatelie, the onvalid policie linkin til this page is nou conseedered \"guid enooch\" bi thir brousers' defaut confeegurations.\n\nPlease luikower this steid's person-readable preevacie policie tae determine hou onie information collectit micht be uised.",
 	"centralauth-complete": "Login uneefeecation compleate!",
 	"centralauth-complete-text": "Ye can nou log in til onie wiki steid o {{int:Centralauth-groupname}} wioot cræftin ae new accoont.",
 	"centralauth-completelogin-back": "Return til the afore gane page.",

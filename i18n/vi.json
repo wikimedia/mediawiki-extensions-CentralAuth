@@ -139,7 +139,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Bạn đã đăng nhập trung ương. Hãy tải lại trang để áp dụng các tùy chọn cá nhân của bạn.",
 	"centralauth-centralautologin-lostsession": "Mất dữ liệu phiên.",
 	"centralauth-centralautologin-notposted": "Mẫu đăng nhập trung ương phải được gửi qua phương thức POST.",
-	"centralauth-centralautologin-p3p-explanation": "Một số trình duyệt yêu cầu gửi hoặc nhận  [https://www.w3.org/TR/P3P/#compact_policies chính sách thỏa thuận P3P] về cookie trong một số trường hợp, bao gồm tình huống liên quan đến kiểm tra đăng nhập cho tài khoản hợp nhất. Đây là một trở ngại không cần thiết để khắc phục trong tình huống này, bởi vì tất cả các trang có liên quan thuộc cùng một nhóm wiki và P3P chủ yếu đã lỗi thời và không còn được sử dụng. May mắn thay, chính sách không hợp lệ liên kết đến trang này hiện nay có vẻ “đủ tốt” đối với cấu hình mặc định của các trình duyệt này.\n\nVui lòng xem lại quy định về quyền riêng tư cho người đọc của trang này để xác định thông tin nào được thu thập sẽ được sử dụng như thế nào.",
 	"centralauth-complete": "Đã hợp nhất xong các tài khoản!",
 	"centralauth-complete-text": "Bây giờ bạn đã có thể đăng nhập vào bất kỳ trang wiki nào thuộc {{int:Centralauth-groupname}} mà không cần mở tài khoản mới.",
 	"centralauth-completelogin-back": "Trở về trang trước.",

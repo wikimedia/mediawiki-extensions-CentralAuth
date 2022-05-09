@@ -160,7 +160,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Jesteś centralnie zalogowany. Przeładuj stronę, aby stosować ustawienia użytkownika.",
 	"centralauth-centralautologin-lostsession": "Dane sesji zostały utracone.",
 	"centralauth-centralautologin-notposted": "Formularz centralnego logowania musi być wysłany metodą POST.",
-	"centralauth-centralautologin-p3p-explanation": "Niektóre przeglądarki wymagają w niektórych sytuacjach użycia [https://www.w3.org/TR/P3P/#compact_policies P3P compact policy], by zapisywać ciasteczka. Jedną z nich jest sprawdzenie centralnego logowania. Ta strona służy do obejścia wymogów P3P, które samo w sobie jest przestarzałe i porzucone. Na szczęście linkowanie do niej jest uznawane przez domyślnie skonfigurowane przeglądarki jako „wystarczająco dobre”.\n\nZapoznaj się z polityką prywatności niniejszej witryny, by dowiedzieć się w jaki sposób mogą zostać użyte zbierane informacje.",
 	"centralauth-complete": "Tworzenie konta uniwersalnego zakończone!",
 	"centralauth-complete-text": "Możesz teraz zalogować się do każdej wiki należącej do {{int:Centralauth-groupname}} bez potrzeby zakładania nowego konta.",
 	"centralauth-completelogin-back": "Powrót do poprzedniej strony.",

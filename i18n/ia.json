@@ -130,7 +130,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Tu ha essite authenticate centralmente. Recarga le pagina pro applicar tu configuration de usator.",
 	"centralauth-centralautologin-lostsession": "Le datos del session ha essite perdite.",
 	"centralauth-centralautologin-notposted": "Le formulario de authentication central debe esser inviate usante le methodo POST.",
-	"centralauth-centralautologin-p3p-explanation": "Certe navigatores require un [https://www.w3.org/TR/P3P/#compact_policies politica compacte P3P] pro le invio o reception de cookies in alcun casos, incluse le situation implicate in le verification de authentication SUL. Isto es un procedura superflue in iste situation, considerante que tote le paginas implicate es in le mesme gruppo de wikis e que P3P mesme es generalmente obsolete e abandonate; fortunatemente, le politica invalide que liga a iste pagina es actualmente considerate como sufficiente in le configuration predefinite de iste navigatores.\n\nPer favor consulta le politica de confidentialitate in texto normal pro determinar como le information colligite pote esser utilisate.",
 	"centralauth-complete": "Unification de contos complete!",
 	"centralauth-complete-text": "Tu pote ora aperir un session in omne sito wiki del {{int:Centralauth-groupname}} sin necessitate de crear un nove conto.",
 	"centralauth-completelogin-back": "Retornar al pagina precedente.",

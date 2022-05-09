@@ -122,7 +122,6 @@
 	"centralauth-centralautologin-logged-in-nouser": "Site trasuto/a centralmente. Recarrecate 'a paggena pe n'apprecà 'e mpustaziune utente vuoste.",
 	"centralauth-centralautologin-lostsession": "'E date d' 'a sessiona so' state spierze",
 	"centralauth-centralautologin-notposted": "'O modulo d'acciesso centrale adda essere mannato",
-	"centralauth-centralautologin-p3p-explanation": "Ce sta cocche navigatóre ca vulesse na [https://www.w3.org/TR/P3P/#compact_policies policy P3P] cumpatta pe' mannà e ricevere 'e cookie 'n cocche caso, pure quanno se vulesse fà acceso SUL. Chest'è na complicazione senza ùso pe' se putè zumpà sta situaziona, tenenn'a mmente ca tutt' 'e paggene coinvolte songo dint' 'o stesso gruppo 'e wiki e P3P stisso è sostanzialmente obsoleto e abbandunato; pe' fortuna, 'a policy nun valida culleganno sta paggena è cunziderata \"sufficientemente bbona\" p' 'a mpustaziuna standard d' 'o navigatóre.\n\nPe' piacere cuntrullate stu sito, liggite n'ata vota 'a tutela 'e riservatezza pe' sapé comme se ponno ausà tutt' 'e nfurmaziune accucchiate ccà.",
 	"centralauth-complete": "Aunificazione d' 'e cunte cumpleta!",
 	"centralauth-complete-text": "Mo putite trasì dint'a ogne paggena web 'e {{int:Centralauth-groupname}} senza crià nu cunto nuovo.",
 	"centralauth-completelogin-back": "Tuorna 'a paggena 'e primma.",
