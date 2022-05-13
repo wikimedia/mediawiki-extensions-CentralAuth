@@ -1,6 +1,6 @@
 ( function () {
 	QUnit.module( 'ext.centralauth.ForeignRest', QUnit.newMwEnvironment( {
-		setup: function () {
+		beforeEach: function () {
 			this.server = this.sandbox.useFakeServer();
 			this.server.respondImmediately = true;
 		},
