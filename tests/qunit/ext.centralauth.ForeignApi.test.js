@@ -1,75 +1,63 @@
-( function () {
-	QUnit.module( 'ext.centralauth.ForeignApi', QUnit.newMwEnvironment( {
-		beforeEach: function () {
-			this.server = this.sandbox.useFakeServer();
-			this.server.respondImmediately = true;
-		},
-		config: {
-			wgUserName: true
-		}
-	} ) );
+QUnit.module( 'ext.centralauth.ForeignApi', QUnit.newMwEnvironment( {
+	beforeEach: function () {
+		this.server = this.sandbox.useFakeServer();
+		this.server.respondImmediately = true;
+	}
+} ) );
 
-	QUnit.test( 'Anonymous users do not get centralauthtoken', function ( assert ) {
-		var api, spy;
+QUnit.test( 'Anonymous users do not get centralauthtoken', function ( assert ) {
+	mw.config.set( 'wgUserName', null );
 
-		mw.config.set( 'wgUserName', null );
-
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
-		} );
-
-		api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-		spy = this.sandbox.spy( api, 'getCentralAuthToken' );
-
-		return api.get( {} ).then( function () {
-			assert.false( spy.called, 'Anonymous users do not ask for centralauthtoken' );
-		} );
+	this.server.respond( function ( request ) {
+		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-	QUnit.test( 'Logged in users get centralauthtoken if not logged in remotely', function ( assert ) {
-		var api, spy;
+	var api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
+	var spy = this.sandbox.spy( api, 'getCentralAuthToken' );
 
-		mw.config.set( 'wgUserName', 'User' );
+	return api.get( {} ).then( function () {
+		assert.false( spy.called, 'Not called' );
+	} );
+} );
 
-		this.sandbox.stub( mw.ForeignApi.prototype, 'checkForeignLogin' ).returns(
-			$.Deferred().reject()
-		);
+QUnit.test( 'Logged in users get centralauthtoken if not logged in remotely', function ( assert ) {
+	mw.config.set( 'wgUserName', 'User' );
 
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
-		} );
+	this.sandbox.stub( mw.ForeignApi.prototype, 'checkForeignLogin' ).returns(
+		$.Deferred().reject()
+	);
 
-		api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-		spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
-			$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
-		);
-
-		return api.get( {} ).then( function () {
-			assert.true( spy.called, 'Called' );
-		} );
+	this.server.respond( function ( request ) {
+		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-	QUnit.test( 'Logged in users do not get centralauthtoken if logged in remotely', function ( assert ) {
-		var api, spy;
+	var api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
+	var spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
+		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
+	);
 
-		mw.config.set( 'wgUserName', 'User' );
+	return api.get( {} ).then( function () {
+		assert.true( spy.called, 'Called' );
+	} );
+} );
 
-		this.sandbox.stub( mw.ForeignApi.prototype, 'checkForeignLogin' ).returns(
-			$.Deferred().resolve()
-		);
+QUnit.test( 'Logged in users do not get centralauthtoken if logged in remotely', function ( assert ) {
+	mw.config.set( 'wgUserName', 'User' );
 
-		this.server.respond( function ( request ) {
-			request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
-		} );
+	this.sandbox.stub( mw.ForeignApi.prototype, 'checkForeignLogin' ).returns(
+		$.Deferred().resolve()
+	);
 
-		api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-		spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
-			$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
-		);
-
-		return api.get( {} ).then( function () {
-			assert.false( spy.called, 'Called' );
-		} );
+	this.server.respond( function ( request ) {
+		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-}() );
+	var api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
+	var spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
+		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
+	);
+
+	return api.get( {} ).then( function () {
+		assert.false( spy.called, 'Called' );
+	} );
+} );
