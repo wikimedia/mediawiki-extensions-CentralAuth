@@ -23,7 +23,9 @@
 			"ZaDiak",
 			"Αντιγόνη",
 			"Απεργός",
-			"Περίεργος"
+			"Περίεργος",
+			"Matma Rex",
+			"McDutchie"
 		]
 	},
 	"centralauth": "Διαχειριστής καθολικού λογαριασμού",
@@ -53,7 +55,7 @@
 	"centralauth-admin-info-unattached": "Αριθμός ασύνδετων λογαριασμών:",
 	"centralauth-admin-info-username": "Όνομα χρήστη:",
 	"centralauth-admin-intro": "Αυτή η επιφάνεια μπορεί να χρησιμοποιηθεί για διαχείριση των παγκόσμιων λογαριασμών.",
-	"centralauth-admin-list-attached-on": "Επισυνάπτεται σε",
+	"centralauth-admin-list-attached-on": "Σχετίστηκε στις",
 	"centralauth-admin-list-blocked": "Φραγμένος",
 	"centralauth-admin-list-editcount": "Καταμέτρηση επεξεργασιών",
 	"centralauth-admin-list-groups": "Ομάδες",
