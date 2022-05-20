@@ -27,8 +27,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\ResourceLoader\Module;
 use OutputPage;
-use ResourceLoaderModule;
 use Skin;
 use WikiMap;
 use Xml;
@@ -57,10 +57,10 @@ class PageDisplayHookHandler implements
 		) {
 			// Prevent user scripts and styles when centralauthtoken is in use
 			$out->reduceAllowedModules(
-				ResourceLoaderModule::TYPE_SCRIPTS, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
+				Module::TYPE_SCRIPTS, Module::ORIGIN_USER_SITEWIDE
 			);
 			$out->reduceAllowedModules(
-				ResourceLoaderModule::TYPE_STYLES, ResourceLoaderModule::ORIGIN_USER_SITEWIDE
+				Module::TYPE_STYLES, Module::ORIGIN_USER_SITEWIDE
 			);
 		}
 

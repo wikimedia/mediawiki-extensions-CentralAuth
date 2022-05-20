@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\User\UserFactory;
@@ -325,12 +326,12 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 
 		$out->output( true );
 		$this->assertSame(
-			ResourceLoaderModule::ORIGIN_USER_SITEWIDE,
-			$out->getAllowedModules( ResourceLoaderModule::TYPE_SCRIPTS )
+			Module::ORIGIN_USER_SITEWIDE,
+			$out->getAllowedModules( Module::TYPE_SCRIPTS )
 		);
 		$this->assertSame(
-			ResourceLoaderModule::ORIGIN_USER_SITEWIDE,
-			$out->getAllowedModules( ResourceLoaderModule::TYPE_STYLES )
+			Module::ORIGIN_USER_SITEWIDE,
+			$out->getAllowedModules( Module::TYPE_STYLES )
 		);
 	}
 

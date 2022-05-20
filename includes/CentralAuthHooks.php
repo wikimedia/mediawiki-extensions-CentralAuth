@@ -41,6 +41,7 @@ use MediaWiki\Hook\TestCanonicalRedirectHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\UserGetRightsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\ResourceLoader as RL;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderForeignApiModulesHook;
 use MediaWiki\Session\CookieSessionProvider;
 use MediaWiki\Session\Hook\SessionCheckInfoHook;
@@ -64,7 +65,6 @@ use OOUI\HorizontalLayout;
 use OOUI\IconWidget;
 use OutputPage;
 use RequestContext;
-use ResourceLoaderContext;
 use SpecialPage;
 use Title;
 use User;
@@ -812,7 +812,7 @@ class CentralAuthHooks implements
 
 	/**
 	 * @param string[] &$dependencies
-	 * @param ResourceLoaderContext|null $context
+	 * @param RL\Context|null $context
 	 * @return void
 	 */
 	public function onResourceLoaderForeignApiModules(
