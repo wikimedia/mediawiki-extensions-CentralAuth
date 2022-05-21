@@ -314,7 +314,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
-		$wiki = WikiMap::getCurrentWikiId();
+		$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 		$reason = $data['reason'] ?? null;
 		$safeName = $this->userNameUtils->getCanonical( $data['newname'], UserNameUtils::RIGOR_CREATABLE );
 
