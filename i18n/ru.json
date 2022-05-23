@@ -48,7 +48,9 @@
 			"MirandaBlack",
 			"Pacha Tchernof",
 			"VMThrash123",
-			"Wileyfoxyx"
+			"Wileyfoxyx",
+			"Matma Rex",
+			"Tanzun"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника",
@@ -446,7 +448,7 @@
 	"globalrenameprogress-legend": "Посмотреть состояние глобальных переименований",
 	"globalrenamequeue": "Очередь запросов на глобальное переименование",
 	"globalrenamequeue-action-address": "Адресовать",
-	"globalrenamequeue-action-view": "Просмотр",
+	"globalrenamequeue-action-view": "Посмотреть",
 	"globalrenamequeue-column-row-actions": "Действие",
 	"globalrenamequeue-column-rq-completed-ts": "Дата закрытия",
 	"globalrenamequeue-column-rq-name": "Имя участника",
