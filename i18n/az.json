@@ -11,7 +11,8 @@
 			"Toghrul Rahimli",
 			"Vago",
 			"Vugar 1981",
-			"Wertuose"
+			"Wertuose",
+			"Serkanland"
 		]
 	},
 	"centralauth-admin-blocked-reason": "Səbəb: $1",
@@ -116,7 +117,7 @@
 	"centralauth-logout-progress": "Siz {{int:Centralauth-groupname}} digər {{PLURAL:$2|layihələrində}} də sistemdən çıxarılacaqsınız:",
 	"centralauth-merge-denied": "Üzr istəyirik, sizin bu səhifəyə giriş üçün hüququnuz yoxdur.",
 	"centralauth-merge-dryrun-or": "'''və ya'''",
-	"centralauth-merge-method-admin": "idarəçi hesabı birləşdirdi",
+	"centralauth-merge-method-admin": "inzibatçı hesabı birləşdirdi",
 	"centralauth-merge-method-empty": "fəaliyyət yoxdur",
 	"centralauth-merge-method-login": "girişdə yaradıldı",
 	"centralauth-merge-method-mail": "e-maillə təsdiqləndi",
