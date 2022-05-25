@@ -7,6 +7,12 @@
 		]
 	},
 	"centralauth-admin-blocklog": "ߜߊ߲߬ߞߎ߲߬ߠߌ߲ ߓߊ߬ߟߊ߲߬",
+	"centralauth-admin-lookup-ro": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ ߞߎ߲߬ߠߊ߬ߝߏߣߌ߲ ߦߋ߫",
+	"centralauth-admin-lookup-rw": "ߖߊ߬ߕߋ߬ߘߊ߫ ߟߊߓߊ߯ߙߕߊ ߡߊߡߙߊ߬",
+	"centralauth-admin-no": "ߊ߬ߦߌ߫",
+	"centralauth-admin-no-unified": "ߖߊ߬ߕߋ߬ߘߊ߫ ߘߟߊߘߍ߰ߣߍ߲߫ ߕߍ߫ ߟߊ߬ߓߊ߰ߙߊ߬ ߕߐ߮ ߣߌ߲߬ ߦߋ߫.",
+	"centralauth-admin-none-selected": "ߖߊ߬ߕߋ߬ߘߊ߫ ߓߊߕߐ߬ߡߐ߲߬ߣߍ߲߫ ߕߍ߫ ߞߊ߬ ߡߊߦߟߍ߬ߡߊ߲߫",
+	"centralauth-admin-unmerge": "ߓߊߕߐ߬ߡߐ߲߬ߣߍ߲ ߓߐ߫ ߢߐ߲߮ ߞߊ߲߬",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} ߦߴߊ߬ ߟߊ߫ $2",
 	"centralauth-foreign-link": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ $1 ߦߴߊ߬ ߟߊ߫ $2",
 	"centralauth-merge-method-login": "ߊ߬ ߓߘߊ߫ ߟߊߞߊ߬߸ ߌ ߜߊ߲߬ߞߎ߲߬",
