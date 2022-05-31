@@ -12,7 +12,8 @@
 			"Chadyka",
 			"Maksim L.",
 			"Matma Rex",
-			"Tomato Cream"
+			"Tomato Cream",
+			"No Sleep till Krupki"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік",
@@ -306,7 +307,7 @@
 	"centralauth-prefs-not-managed": "Уніфікаваны рахунак не ўжываецца",
 	"centralauth-prefs-status": "Глабальны ўліковы запіс:",
 	"centralauth-prefs-unattached": "Не цалкам аб’яднана",
-	"centralauth-prefs-view": "Звесткі пра глабальны ўліковы запіс",
+	"centralauth-prefs-view": "Паказаць звесткі пра ваш глабальны рахунак",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Падрабязьней пра '''аб’яднаный рахунак''']]…''",
 	"centralauth-rename-abortlogin": "Ваш рахунак зараз пераймяноўваецца або аб’ядноўваецца. [[Special:GlobalRenameProgress/$1|Праглядзець стан]].",
 	"centralauth-rename-alreadyexists": "Запытанае імя ўдзельніка ўжо існуе.",
