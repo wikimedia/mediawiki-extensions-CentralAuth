@@ -726,6 +726,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 
 		$ret .= "</tr>\n<tr>\n";
+		$uiLanguage = $this->getLanguage();
 		foreach ( $columns as $column ) {
 			if ( $column === [] ) {
 				continue;
@@ -737,7 +738,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 					$attr['disabled'] = 'disabled';
 				}
 
-				$member = UserGroupMembership::getGroupMemberName( $group, $user->getName() );
+				$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
 				if ( $checkbox['irreversible'] ) {
 					$text = $this->msg( 'userrights-irreversible-marker', $member )->text();
 				} elseif ( $checkbox['disabled'] && !$checkbox['disabled-expiry'] ) {
@@ -749,7 +750,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 					"wpGroup-" . $group, $checkbox['set'], $attr );
 
 				$uiUser = $this->getUser();
-				$uiLanguage = $this->getLanguage();
 
 				$currentExpiry = isset( $usergroups[$group] ) ?
 					$usergroups[$group]->getExpiry() :
