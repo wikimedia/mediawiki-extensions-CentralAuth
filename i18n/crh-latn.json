@@ -7,7 +7,7 @@
 	},
 	"centralauth-days-ago": "$1 {{PLURAL:$1|kün|kün}} önce",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} önce",
-	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqqa|daqqa}} önce",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqıqa|daqıqa}} önce",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ay|ay}} önce",
 	"centralauth-prefs-count-attached": "Esabıñız $1 leyha {{PLURAL:$1|saytında|saytında}} faaldir.",
 	"centralauth-prefs-count-unattached": "Adıñıznı taşığan tasdıqlanmağan esaplar $1 {{PLURAL:$1|leyhada|leyhada}} qalıp tura.",
