@@ -14,7 +14,8 @@
 			"Yahya",
 			"Zaheen",
 			"আফতাবুজ্জামান",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"Matma Rex"
 		]
 	},
 	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একত্রিকরণ করুন",
@@ -109,6 +110,8 @@
 	"centralauth-complete": "অ্যাকাউন্ট একত্রীকরণ সমাপ্ত!",
 	"centralauth-complete-text": "আপনি এখন যেকোন {{int:Centralauth-groupname}} উইকি সাইটে অ্যাকাউন্ট তৈরি ছাড়াই প্রবেশ করতে পারবেন।",
 	"centralauth-completelogin-back": "পূর্ববর্তী পাতায় ফিরুন।",
+	"centralauth-contribs-locked": "এই অ্যাকাউন্টটিকে বৈশ্বিকভাবে তালাবদ্ধ করা হয়েছে। আরও তথ্যের জন্য [[Special:CentralAuth/$1|বৈশ্বিক অ্যাকাউন্টের বিস্তারিত]] দেখুন।",
+	"centralauth-contribs-locked-log": "এই অ্যাকাউন্টটিকে বৈশ্বিকভাবে তালাবদ্ধ করা হয়েছে। সূত্রের জন্য সাম্প্রতিক লগের ভুক্তিটি নিচে দেওয়া হল:",
 	"centralauth-createlocal-pretext": "আপনি এই ফর্মটি ব্যবহার করে একটি বৈশ্বিক অ্যাকাউন্টের স্থানীয় অ্যাকাউন্ট তৈরি করতে পারবেন, যদি কোন কারণে একজন ব্যবহারকারী নিজে নিজে তা না করতে পারেন।",
 	"centralauth-createlocal-reason": "কারণ",
 	"centralauth-createlocal-success": "স্থানীয় অ্যাকাউন্ট তৈরি করা হয়েছে।",
