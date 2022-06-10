@@ -656,7 +656,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $ok && $this->getConfig()->get( 'CentralAuthLoginIcon' ) && $type === 'icon' ) {
 				readfile( $this->getConfig()->get( 'CentralAuthLoginIcon' ) );
 			} else {
-				readfile( __DIR__ . '/../../1x1.png' );
+				readfile( __DIR__ . '/../../images/1x1.png' );
 			}
 		} elseif ( $type === 'json' ) {
 			header( 'Content-Type: application/json; charset=utf-8' );

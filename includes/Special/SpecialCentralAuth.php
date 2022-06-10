@@ -642,7 +642,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::element(
 				'img', [
 					'src' => $this->getConfig()->get( 'ExtensionAssetsPath' )
-						. "/CentralAuth/icons/merged-{$method}.png",
+						. "/CentralAuth/images/icons/merged-{$method}.png",
 					'alt' => $brief,
 					'title' => $brief,
 				]
