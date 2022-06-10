@@ -25,6 +25,7 @@
 			"Wnme"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globale Bearbeitungsanzahl des Benutzers",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale Gruppen, in der der Benutzer ist",
 	"action-centralauth-createlocal": "zwangsweise ein lokales Benutzerkonto erstellen",
 	"action-centralauth-lock": "globale Benutzerkonten zu sperren oder freizugeben",

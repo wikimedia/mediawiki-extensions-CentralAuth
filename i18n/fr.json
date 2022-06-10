@@ -59,6 +59,7 @@
 			"Yasten"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur",
 	"abusefilter-edit-builder-vars-global-user-groups": "Groupes globaux auxquels appartient l’utilisateur",
 	"action-centralauth-createlocal": "créer de force un compte local",
 	"action-centralauth-lock": "verrouiller ou déverrouiller les comptes globaux",
