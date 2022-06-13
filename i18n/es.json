@@ -63,6 +63,7 @@
 			"Vivaelcelta"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Recuento global de ediciones de la cuenta",
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales a los que pertenece el usuario",
 	"action-centralauth-createlocal": "crear manualmente una cuenta local",
 	"action-centralauth-lock": "bloquear o desbloquear cuentas globales",

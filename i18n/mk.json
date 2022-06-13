@@ -9,6 +9,7 @@
 			"Vlad5250"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Глобален број на уредувања на корисникот",
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи во кои членува корисникот",
 	"action-centralauth-createlocal": "принудно создавање на месна сметка",
 	"action-centralauth-lock": "заклучување или отклучување на глобални сметки",
@@ -146,7 +147,7 @@
 	"centralauth-days-ago": "пред {{PLURAL:$1|еден ден|$1 дена}}",
 	"centralauth-delete-empty-account": "Празна сметка",
 	"centralauth-desc": "[[Special:MergeAccount|Спојување на сметки]] од повеќе викија на {{int:Centralauth-groupname}}",
-	"centralauth-disabled-dryrun": "Обединувањето на сметки е моментално во демонстрационен режим / режим на отстранување грешки, и затоа постапките за спојување се оневозможени.\nСе извинуваме!",
+	"centralauth-disabled-dryrun": "Обединувањето на сметки е моментално во показен режим / режим на отстранување грешки, и затоа постапките за спојување се оневозможени.\nСе извинуваме!",
 	"centralauth-editgroup-delete-removemembers": "Ќе мора да ги отстраните сите членови од групата пред да ја избришете.",
 	"centralauth-editgroup-display": "Преведено име на групата:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|уреди]])",
@@ -308,7 +309,7 @@
 	"centralauth-newgroup-intro": "Со овој образец можете да доделувате дозволи на нова група.\nИмајте предвид дека групата не постои доколку нема доделени дозволи.",
 	"centralauth-newgroup-legend": "Создај нова група",
 	"centralauth-not-owner-text": "Корисничкото име „$1“ му беше автоматски припишано на имателот на сметката на $2.\n\nАко тоа сте вие, можете да го довршите процесот на обединување едноставно со внесување на главната лозинка за таа сметка овде:",
-	"centralauth-notice-dryrun": "Демонстрационен режим",
+	"centralauth-notice-dryrun": "Само показен режим",
 	"centralauth-prefs-count-attached": "Вашата корисничка сметка е активна на $1 {{PLURAL:$1|вики|викија}}.",
 	"centralauth-prefs-count-unattached": "На $1 {{PLURAL:$1|вики|викија}} останаа непотврдени сметки со вашето име.",
 	"centralauth-prefs-detail-unattached": "За вашата сметка не е потврдено дека ѝ припаѓа на глобалната сметка.",

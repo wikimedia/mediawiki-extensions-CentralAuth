@@ -6,6 +6,7 @@
 			"Aiman titi",
 			"Alnokta",
 			"Asaifm",
+			"Asma",
 			"Avocato",
 			"Calak",
 			"Ciphers",
@@ -35,6 +36,7 @@
 			"وهراني"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "عدد التحرير العمومي للمستخدم",
 	"abusefilter-edit-builder-vars-global-user-groups": "المجموعات العامة التي ينتمي إليها الحساب",
 	"action-centralauth-lock": "إقفال أو فتح حسابات عامة",
 	"action-centralauth-merge": "دمج حسابه",

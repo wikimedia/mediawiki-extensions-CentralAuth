@@ -18,6 +18,7 @@
 			"לואיקה"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "מספר העריכות הגלובלי של המשתמש",
 	"abusefilter-edit-builder-vars-global-user-groups": "קבוצות גלובליות שהמשתמש הזה חבר בהן",
 	"action-centralauth-createlocal": "לכפות יצירה של חשבון מקומי",
 	"action-centralauth-lock": "לנעול או לבטל נעילה של חשבונות גלובליים",

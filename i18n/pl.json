@@ -38,6 +38,7 @@
 			"Ymar"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globalna liczba edycji użytkownika",
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupy globalne, do których należy użytkownik",
 	"action-centralauth-createlocal": "wymuszonego tworzenia lokalnych kont",
 	"action-centralauth-lock": "zablokuj lub odblokuj konta globalne",

@@ -31,11 +31,13 @@
 			"Sahim",
 			"Sunfyre",
 			"Wayiran",
+			"Yoosef Pooranvary",
 			"ZxxZxxZ",
 			"درفش کاویانی",
 			"پسر یاس"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "شمارشگر کلی ویرایش‌های کاربر",
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه‌های سراسری که کاربر در آن عضو است",
 	"action-centralauth-createlocal": "تاکید بر ایجاد حساب محلی",
 	"action-centralauth-lock": "قفل یا بازکردن حساب‌های سراسری",
