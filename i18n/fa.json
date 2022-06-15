@@ -33,7 +33,8 @@
 			"Beginneruser",
 			"Matma Rex",
 			"LordProfo",
-			"Sunfyre"
+			"Sunfyre",
+			"Yoosef Pooranvary"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه‌های سراسری که کاربر در آن عضو است",
@@ -130,11 +131,11 @@
 	"centralauth-admin-suppressreason": "به طور سراسری توسط $1 موقوف شده‌است، به این دلیل: $2",
 	"centralauth-admin-title": "مدیر سراسری حساب برای $1",
 	"centralauth-admin-title-ro": "اطلاعات سراسری حساب برای $1",
-	"centralauth-admin-too-many-edits": "حساب سراسری \"<nowiki>$1</nowiki>\" بیش از $2 {{PLURAL:$2|ویرایش|ویرایش}} دارد و نمی‌تواند پنهان شود.",
+	"centralauth-admin-too-many-edits": "حساب سراسری «<nowiki>$1</nowiki>» بیش از $2 {{PLURAL:$2|ویرایش}} دارد و نمی‌تواند پنهان شود.",
 	"centralauth-admin-unattached": "متصل نشده است",
 	"centralauth-admin-unhide-nonexistent": "خطا: حساب سراسری «<nowiki>$1</nowiki>» وجود ندارد.",
 	"centralauth-admin-unmerge": "جدا کردن موارد انتخاب‌شده",
-	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|حساب|حساب}} جدا شدند",
+	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|حساب}} از یکدیگر جدا شدند",
 	"centralauth-admin-username": "نام کاربری:",
 	"centralauth-admin-view": "مشاهدهٔ اطلاعات حساب",
 	"centralauth-admin-yes": "بله",
@@ -339,7 +340,7 @@
 	"centralauth-newgroup-legend": "ایجاد یک گروه جدید",
 	"centralauth-not-owner-text": "نام کاربری «$1» به طور خودکار به صاحب حساب در $2 اختصاص داده شد.\n\nاگر آن حساب برای شماست، می‌توانید فرایند یکی‌کردن را به آسانی با واردکردن رمز عیور اصلی برای آن حساب در اینجا به پایان برسانید:",
 	"centralauth-notice-dryrun": "<div class='successbox'>فقط مدل نمایشی</div><br clear='all'/>",
-	"centralauth-prefs-count-attached": "حساب شما در $1 {{PLURAL:$1|ویکی|ویکی}} فعال است.",
+	"centralauth-prefs-count-attached": "حساب شما در $1 {{PLURAL:$1|ویکی}} فعال است.",
 	"centralauth-prefs-count-unattached": "حساب‌های کاربری تأییدنشده‌ای با نام شما در $1 {{PLURAL:$1|ویکی|ویکی}} باقی می‌مانند.",
 	"centralauth-prefs-detail-unattached": "تعلق حساب شما به این حساب سراسری تأیید نشده‌است.",
 	"centralauth-prefs-manage": "مدیریت حساب سراسری‌تان",
