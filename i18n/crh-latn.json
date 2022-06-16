@@ -5,17 +5,17 @@
 			"TayfunEt."
 		]
 	},
-	"centralauth-days-ago": "$1 {{PLURAL:$1|kün|kün}} önce",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} önce",
-	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqıqa|daqıqa}} önce",
-	"centralauth-months-ago": "$1 {{PLURAL:$1|ay|ay}} önce",
-	"centralauth-prefs-count-attached": "Esabıñız $1 leyha {{PLURAL:$1|saytında|saytında}} faaldir.",
-	"centralauth-prefs-count-unattached": "Adıñıznı taşığan tasdıqlanmağan esaplar $1 {{PLURAL:$1|leyhada|leyhada}} qalıp tura.",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|kün}} önce",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat}} önce",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqıqa}} önce",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|ay}} önce",
+	"centralauth-prefs-count-attached": "Esabıñız $1 {{PLURAL:$1|vikide}} faaldir.",
+	"centralauth-prefs-count-unattached": "Adıñıznı taşığan tasdıqlanmağan esaplar $1 {{PLURAL:$1|vikide}} qalıp tura.",
 	"centralauth-prefs-manage": "Global esapnı idare et",
 	"centralauth-prefs-not-managed": "Global esap qullanılmamaqta",
 	"centralauth-prefs-status": "Global esap alı:",
 	"centralauth-prefs-unattached": "Tasdıqlanmağan",
-	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniye|saniye}} önce",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl|yıl}} önce",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniye}} önce",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl}} önce",
 	"centralloginsuccesful": "İçkerdesiñiz"
 }
