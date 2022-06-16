@@ -36,6 +36,7 @@
 			"Тест"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Глобальне число редагувань користувача",
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальні групи, у яких знаходиться користувач",
 	"action-centralauth-createlocal": "примусово створити локальний обліковий запис",
 	"action-centralauth-lock": "закриття або відкриття глобальних облікових записів",

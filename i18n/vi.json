@@ -17,6 +17,7 @@
 			"Vinhtantran"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
 	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục bao gồm thành viên",
 	"action-centralauth-createlocal": "ép tạo tài khoản cục bộ",
 	"action-centralauth-lock": "khóa hoặc mở khóa tài khoản chung",
