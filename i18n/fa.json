@@ -500,7 +500,7 @@
 	"logentry-gblrename-merge": "$1 سراسری $4 را به $5 {{GENDER:$2|ادغام کرد}}",
 	"logentry-gblrename-promote": "$1 به طور سراسری نام حساب $4 را به $5 {{GENDER:$2|تغییر داد}}",
 	"logentry-gblrename-rename": "$1 به‌طور سراسری $4 را به $5 {{GENDER:$2|تغییرنام داد}}",
-	"mergeaccount": "وضعیت یکی‌کردن حساب‌های کاربری",
+	"mergeaccount": "وضعیت یکپارچه‌سازی ورود به سامانه",
 	"multilock": "قفل‌کردن چندین حساب‌های سراسری",
 	"right-centralauth-createlocal": "ایجاد اجباری یک حساب محلی برای یک حساب سراسری",
 	"right-centralauth-lock": "قفل یا بازکردن حساب سراسری",

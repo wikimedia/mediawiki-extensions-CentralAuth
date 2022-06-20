@@ -8,6 +8,7 @@
 			"McDutchie"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Numero global de modificationes del usator",
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppos global al quales le usator pertine",
 	"action-centralauth-createlocal": "fortiar le creation de un conto local",
 	"action-centralauth-lock": "serrar o disserrar contos global",
