@@ -7,9 +7,9 @@ use Job;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
+use MediaWiki\User\UserIdentity;
 use Status;
 use Title;
-use User;
 
 /**
  * Rename a global user
@@ -19,12 +19,12 @@ use User;
  */
 class GlobalRenameUser {
 	/**
-	 * @var User
+	 * @var UserIdentity
 	 */
 	private $performingUser;
 
 	/**
-	 * @var User
+	 * @var UserIdentity
 	 */
 	private $oldUser;
 
@@ -34,7 +34,7 @@ class GlobalRenameUser {
 	private $oldCAUser;
 
 	/**
-	 * @var User
+	 * @var UserIdentity
 	 */
 	private $newUser;
 
@@ -67,10 +67,10 @@ class GlobalRenameUser {
 	private $session;
 
 	/**
-	 * @param User $performingUser
-	 * @param User $oldUser
+	 * @param UserIdentity $performingUser
+	 * @param UserIdentity $oldUser
 	 * @param CentralAuthUser $oldCAUser
-	 * @param User $newUser Validated (creatable!) new user
+	 * @param UserIdentity $newUser Validated (creatable!) new user
 	 * @param CentralAuthUser $newCAUser
 	 * @param GlobalRenameUserStatus $renameuserStatus
 	 * @param JobQueueGroupFactory $jobQueueGroupFactory
@@ -79,10 +79,10 @@ class GlobalRenameUser {
 	 * @param array $session output of RequestContext::exportSession()
 	 */
 	public function __construct(
-		User $performingUser,
-		User $oldUser,
+		UserIdentity $performingUser,
+		UserIdentity $oldUser,
 		CentralAuthUser $oldCAUser,
-		User $newUser,
+		UserIdentity $newUser,
 		CentralAuthUser $newCAUser,
 		GlobalRenameUserStatus $renameuserStatus,
 		JobQueueGroupFactory $jobQueueGroupFactory,
