@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
 use Status;
-use User;
 
 /**
  * Verify whether a potential global rename is valid
@@ -27,12 +27,12 @@ class GlobalRenameUserValidator {
 	/**
 	 * Check that we can perform the rename
 	 *
-	 * @param User $oldUser
-	 * @param User $newUser
+	 * @param UserIdentity $oldUser
+	 * @param UserIdentity $newUser
 	 *
 	 * @return Status
 	 */
-	public function validate( User $oldUser, User $newUser ) {
+	public function validate( UserIdentity $oldUser, UserIdentity $newUser ) {
 		$status = new Status();
 
 		if ( !$this->userNameUtils->isCreatable( $newUser->getName() ) ) {

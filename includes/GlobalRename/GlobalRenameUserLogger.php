@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use ManualLogEntry;
+use MediaWiki\User\UserIdentity;
 use Title;
-use User;
 
 /**
  * Log a global rename into the local log
@@ -14,14 +14,14 @@ use User;
  */
 class GlobalRenameUserLogger {
 	/**
-	 * @var User
+	 * @var UserIdentity
 	 */
 	private $performingUser;
 
 	/**
-	 * @param User $performingUser
+	 * @param UserIdentity $performingUser
 	 */
-	public function __construct( User $performingUser ) {
+	public function __construct( UserIdentity $performingUser ) {
 		$this->performingUser = $performingUser;
 	}
 
