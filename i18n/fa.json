@@ -33,7 +33,8 @@
 			"Beginneruser",
 			"LordProfo",
 			"Matma Rex",
-			"Sunfyre"
+			"Sunfyre",
+			"Yoosef Pooranvary"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "گروه‌های سراسری که کاربر در آن عضو است",
@@ -517,7 +518,7 @@
 	"logentry-gblrename-merge": "$1 سراسری $4 را به $5 {{GENDER:$2|ادغام کرد}}",
 	"logentry-gblrename-promote": "$1 به طور سراسری نام حساب $4 را به $5 {{GENDER:$2|تغییر داد}}",
 	"logentry-gblrename-rename": "$1 به‌طور سراسری $4 را به $5 {{GENDER:$2|تغییرنام داد}}",
-	"mergeaccount": "وضعیت یکی‌کردن حساب‌های کاربری",
+	"mergeaccount": "وضعیت یکپارچه‌سازی ورود به سامانه",
 	"multilock": "قفل‌کردن چندین حساب‌های سراسری",
 	"right-centralauth-lock": "قفل یا بازکردن حساب سراسری",
 	"right-centralauth-merge": "ادغام حساب‌هایشان",

@@ -132,7 +132,7 @@
 	"centralauth-admin-status-submit": "設定狀態",
 	"centralauth-admin-suppressreason": "由 $1 全域禁止顯示因下列原因：$2",
 	"centralauth-admin-title": "$1 的全域帳號管理",
-	"centralauth-admin-title-ro": "$1 的全域帳號資訊",
+	"centralauth-admin-title-ro": "$1的全域帳號資訊",
 	"centralauth-admin-too-many-edits": "全域帳號 \"<nowiki>$1</nowiki>\" 已有超過 $2 次的編輯，無法隱藏。",
 	"centralauth-admin-unattached": "尚未連結",
 	"centralauth-admin-unhide-nonexistent": "錯誤：全域帳號 \"<nowiki>$1</nowiki>\" 不存在。",

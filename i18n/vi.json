@@ -419,7 +419,7 @@
 	"globalrenamequeue-column-rq-status": "Trạng thái",
 	"globalrenamequeue-column-rq-wiki": "Wiki bộ phận",
 	"globalrenamequeue-desc": "Xử lý yêu cầu đổi tên toàn cục",
-	"globalrenamequeue-email-body-approved-with-note": "Yêu cầu đổi tên \"{{GENDER:$1|$1}}\" thành \"{{GENDER:$1|$2}}\" đã được chấp thuận.\n\nGhi chú: $3",
+	"globalrenamequeue-email-body-approved-with-note": "Yêu cầu đổi tên “$1” thành “$2” đã được chấp thuận.\n\nGhi chú: $3",
 	"globalrenamequeue-email-body-approved": "Lời yêu cầu đổi tên “$1” thành “$2” đã được chấp nhận.",
 	"globalrenamequeue-email-body-rejected": "Lời yêu cầu đổi tên “$1” thành “$2” đã bị từ chối.\n\nGhi chú: $3",
 	"globalrenamequeue-email-subject-approved": "Lời yêu cầu đổi tên tài khoản được chấp nhận",
