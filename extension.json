@@ -633,6 +633,7 @@
 		"SpecialLogAddLogSearchRelations": "log",
 		"SpecialPage_initList": "specialpageinit",
 		"SpecialPasswordResetOnSubmit": "default",
+		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",
 		"UnitTestsAfterDatabaseSetup": "unittests",
 		"UnitTestsBeforeDatabaseTeardown": "unittests",
@@ -816,6 +817,14 @@
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthSecondaryAuthenticationProvider",
 				"sort": 0
 			}
+		}
+	},
+	"TempUserSerialProviders": {
+		"centralauth": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthTempUserSerialProvider",
+			"services": [
+				"CentralAuth.CentralAuthDatabaseManager"
+			]
 		}
 	},
 	"ServiceWiringFiles": [
