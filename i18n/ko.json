@@ -36,10 +36,12 @@
 			"밝은소년",
 			"아라",
 			"콩가루",
-			"MemphisA5"
+			"MemphisA5",
+			"Bluehill",
+			"Matma Rex"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "사용자가 속한 전역 권한 그룹",
+	"abusefilter-edit-builder-vars-global-user-groups": "사용자가 속한 전역 그룹",
 	"action-centralauth-createlocal": "로컬 계정을 강제로 생성할",
 	"action-centralauth-lock": "통합 계정을 잠그거나 잠금 해제",
 	"action-centralauth-merge": "계정 병합",
@@ -146,7 +148,7 @@
 	"centralauth-attach-success": "계정이 통합 계정으로 이동되었습니다.",
 	"centralauth-attach-text": "이 계정은 아직 통합 계정과 합쳐지지 않았습니다.\n통합 계정이 당신의 계정이라면, 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:",
 	"centralauth-attach-title": "계정 확인",
-	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] 계정는 이미 통합 계정이 잠겨 있습니다.",
+	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] 계정은(는) 이미 통합 계정이 잠겨 있습니다.",
 	"centralauth-block-editing-page": "{{PLURAL:$1|문서}} $1개",
 	"centralauth-block-editing-ns": "{{PLURAL:$1|이름공간}} $1개",
 	"centralauth-centralautologin-alreadyloggedinlocally": "이미 로컬에 로그인하고 있습니다",
