@@ -475,6 +475,7 @@ $specialPageAliases['km'] = [
 /** Korean (한국어) */
 $specialPageAliases['ko'] = [
 	'CentralAuth' => [ '통합계정관리' ],
+	'CreateLocalAccount' => [ '로컬계정만들기' ],
 	'MergeAccount' => [ '계정합치기' ],
 	'GlobalGroupMembership' => [ '공통권한조정', '공통권한그룹구성원' ],
 	'GlobalGroupPermissions' => [ '전역그룹권한' ],
@@ -484,6 +485,7 @@ $specialPageAliases['ko'] = [
 	'GlobalRenameUser' => [ '전역사용자이름바꾸기' ],
 	'GlobalRenameProgress' => [ '전역이름바꾸기진행' ],
 	'GlobalRenameRequest' => [ '전역이름바꾸기요청' ],
+	'GlobalRenameQueue' => [ '전역이름바꾸기대기열' ],
 ];
 
 /** Colognian (Ripoarisch) */
