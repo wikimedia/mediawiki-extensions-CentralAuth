@@ -33,7 +33,7 @@ class SpecialMultiLock extends SpecialPage {
 	private $mMethod;
 	/** @var string */
 	private $mActionLock;
-	/** @var string */
+	/** @var int */
 	private $mActionHide;
 	/** @var string */
 	private $mReason;
@@ -70,7 +70,7 @@ class SpecialMultiLock extends SpecialPage {
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod', '' );
 		$this->mActionLock = $this->getRequest()->getVal( 'wpActionLock', 'nochange' );
-		$this->mActionHide = $this->getRequest()->getVal( 'wpActionHide', 'nochange' );
+		$this->mActionHide = $this->getRequest()->getInt( 'wpActionHide', -1 );
 		$this->mUserNames = $this->getRequest()->getVal( 'wpTarget', '' );
 		$this->mPrefixSearch = $this->getRequest()->getVal( 'wpSearchTarget', '' );
 		$this->mActionUserNames = $this->getRequest()->getArray( 'wpActionTarget' );
@@ -211,7 +211,7 @@ class SpecialMultiLock extends SpecialPage {
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-nochange' )->text(),
 				'wpActionHide',
-				'nochange',
+				'-1',
 				'mw-centralauth-status-hidden-nochange',
 				true ) .
 			'<br />';
@@ -420,7 +420,7 @@ class SpecialMultiLock extends SpecialPage {
 			return;
 		}
 
-		if ( $this->mActionHide != 'nochange' && !$this->mCanSuppress ) {
+		if ( $this->mActionHide !== -1 && !$this->mCanSuppress ) {
 			$this->showError( 'centralauth-admin-not-authorized' );
 			return;
 		}
@@ -432,7 +432,7 @@ class SpecialMultiLock extends SpecialPage {
 			$setLocked = ( $this->mActionLock == 'lock' );
 		}
 
-		if ( $this->mActionHide != 'nochange' ) {
+		if ( $this->mActionHide !== -1 ) {
 			$setHidden = $this->mActionHide;
 		}
 

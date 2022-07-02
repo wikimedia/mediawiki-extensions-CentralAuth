@@ -81,7 +81,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Change whether this user is not hidden, hidden from the global users list, or suppressed.",
 	"apihelp-setglobalaccountstatus-param-locked": "Change whether this user is locked or not.",
 	"apihelp-setglobalaccountstatus-param-reason": "Reason for changing the user's status.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Optional MD5 of the expected current <username>:<hidden>:<locked>, to detect edit conflicts. Set <locked> to 1 for locked, 0 for unlocked.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Optional MD5 of the expected current <userid>:<username>:<hidden>:<locked>, to detect edit conflicts. Set <locked> to 1 for locked, 0 for unlocked.",
 	"apihelp-setglobalaccountstatus-param-user": "User to change the status of.",
 	"apihelp-setglobalaccountstatus-summary": "Set a global user's status."
 }

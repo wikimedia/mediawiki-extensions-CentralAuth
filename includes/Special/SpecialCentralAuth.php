@@ -250,11 +250,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$request = $this->getRequest();
 
 		$givenState = $request->getVal( 'wpUserState' );
-		$stateCheck = (
-			$givenState === $globalUser->getStateHash( true )
-			// allow forms with old hidden values to still work for at least one train
-			|| $givenState === $globalUser->getStateHash( true, true )
-		);
+		$stateCheck = $givenState === $globalUser->getStateHash( true );
 
 		if ( !$this->getUser()->matchEditToken( $request->getVal( 'wpEditToken' ) ) ) {
 			$this->showError( 'centralauth-token-mismatch' );
@@ -279,7 +275,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->showError( 'centralauth-state-mismatch' );
 		} elseif ( $this->mMethod == 'set-status' && $this->mCanLock ) {
 			$setLocked = $request->getBool( 'wpStatusLocked' );
-			$setHidden = $request->getVal( 'wpStatusHidden' );
+			$setHidden = $request->getInt( 'wpStatusHidden', -1 );
 			$reason = $request->getText( 'wpReasonList' );
 			$reasonDetail = $request->getText( 'wpReason' );
 

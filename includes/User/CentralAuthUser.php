@@ -155,30 +155,9 @@ class CentralAuthUser implements IDBAccessObject {
 
 	private const VERSION = 10;
 
-	/** @deprecated use HIDDEN_LEVEL_* instead */
-	public const HIDDEN_NONE = '';
-	/** @deprecated use HIDDEN_LEVEL_* instead */
-	public const HIDDEN_LISTS = 'lists';
-	/** @deprecated use HIDDEN_LEVEL_* instead */
-	public const HIDDEN_OVERSIGHT = 'suppressed';
-
 	public const HIDDEN_LEVEL_NONE = 0;
 	public const HIDDEN_LEVEL_LISTS = 1;
 	public const HIDDEN_LEVEL_SUPPRESSED = 2;
-
-	/** @var int[] Mapping for old string hidden values to the new int "level" values. */
-	private const HIDDEN_LEVEL_MAPPING = [
-		self::HIDDEN_NONE => self::HIDDEN_LEVEL_NONE,
-		self::HIDDEN_LISTS => self::HIDDEN_LEVEL_LISTS,
-		self::HIDDEN_OVERSIGHT => self::HIDDEN_LEVEL_SUPPRESSED,
-	];
-
-	/** @var string[] Mapping for new int "level" hidden values to the old string values. */
-	private const HIDDEN_LEVEL_MAPPING_REVERSE = [
-		self::HIDDEN_LEVEL_NONE => self::HIDDEN_NONE,
-		self::HIDDEN_LEVEL_LISTS => self::HIDDEN_LISTS,
-		self::HIDDEN_LEVEL_SUPPRESSED => self::HIDDEN_OVERSIGHT,
-	];
 
 	/**
 	 * The maximum number of edits a user can have and still be hidden
@@ -827,11 +806,13 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Returns the hidden level of the account.
-	 * @return string
+	 * @throws Exception for now
+	 * @return never
 	 * @deprecated use getHiddenLevelInt() instead
 	 */
-	public function getHiddenLevel() {
-		return self::HIDDEN_LEVEL_MAPPING_REVERSE[$this->getHiddenLevelInt()];
+	public function getHiddenLevel(): int {
+		// Have it like this for one train, then rename getHiddenLevelInt to this
+		throw new Exception( 'Nothing should call this!' );
 	}
 
 	/**
@@ -1802,7 +1783,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *  true = lock
 	 *  false = unlock
 	 *  null = don't change
-	 * @param string|int|null $setHidden
+	 * @param int|null $setHidden
 	 *  hidden level, one of the HIDDEN_ constants
 	 *  null = don't change
 	 * @param string $reason reason for hiding
@@ -1811,7 +1792,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	public function adminLockHide(
-		$setLocked, $setHidden, $reason, IContextSource $context, bool $markAsBot = false
+		$setLocked, ?int $setHidden, $reason, IContextSource $context, bool $markAsBot = false
 	) {
 		$isLocked = $this->isLocked();
 		$oldHiddenLevel = $this->getHiddenLevelInt();
@@ -1829,13 +1810,7 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $setHidden === null ) {
 			$setHidden = $oldHiddenLevel;
 		} elseif (
-			(
-				$setHidden !== self::HIDDEN_NONE
-				&& $setHidden !== self::HIDDEN_LEVEL_NONE
-				// temporary while forms may pass either strings or ints. when migration is done,
-				// the special/api code needs to convert to int and we can remove all the special cases
-				&& $setHidden !== (string)self::HIDDEN_LEVEL_NONE
-			)
+			$setHidden !== self::HIDDEN_LEVEL_NONE
 			|| $oldHiddenLevel !== self::HIDDEN_LEVEL_NONE
 		) {
 			if ( !$context->getAuthority()->isAllowed( 'centralauth-suppress' ) ) {
@@ -1851,27 +1826,14 @@ class CentralAuthUser implements IDBAccessObject {
 		$returnStatus = Status::newGood();
 
 		$hiddenLevels = [
-			self::HIDDEN_NONE,
-			self::HIDDEN_LISTS,
-			self::HIDDEN_OVERSIGHT,
 			self::HIDDEN_LEVEL_NONE,
 			self::HIDDEN_LEVEL_LISTS,
 			self::HIDDEN_LEVEL_SUPPRESSED,
 		];
 
-		// convert normalized/int passed as form params/strings to ints if needed
-		if ( is_numeric( $setHidden ) ) {
-			$setHidden = (int)$setHidden;
-		}
-
 		// if not a known value, default to none
 		if ( !in_array( $setHidden, $hiddenLevels ) ) {
 			$setHidden = self::HIDDEN_LEVEL_NONE;
-		}
-
-		// aand convert old strings to new ints
-		if ( is_string( $setHidden ) ) {
-			$setHidden = self::HIDDEN_LEVEL_MAPPING[$setHidden];
 		}
 
 		if ( !$isLocked && $setLocked ) {
@@ -3207,15 +3169,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * used to check for edit conflicts
 	 *
 	 * @param bool $recache Force a reload of the user from the database
-	 * @param bool $oldHiddenValue Use the old string values for hidden instead of the new int values
 	 * @return string
 	 */
-	public function getStateHash( bool $recache = false, bool $oldHiddenValue = false ) {
+	public function getStateHash( bool $recache = false ) {
 		$this->loadState( $recache );
 
-		$hidden = $oldHiddenValue ? $this->getHiddenLevel() : $this->mHiddenLevel;
-
-		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $hidden . ':' .
+		return md5( $this->mGlobalId . ':' . $this->mName . ':' . $this->mHiddenLevel . ':' .
 			( $this->mLocked ? '1' : '0' ) );
 	}
 

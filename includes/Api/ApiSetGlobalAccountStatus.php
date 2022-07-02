@@ -35,6 +35,20 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup Extensions
  */
 class ApiSetGlobalAccountStatus extends ApiBase {
+	/** @var array<string, int> Mapping for string hidden values to the new int "level" values. */
+	private const HIDDEN_LEVEL_MAPPING = [
+		''           => CentralAuthUser::HIDDEN_LEVEL_NONE,
+		'lists'      => CentralAuthUser::HIDDEN_LEVEL_LISTS,
+		'suppressed' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+	];
+
+	/** @var array<int, string> Mapping for new int "level" hidden values to the string values. */
+	private const HIDDEN_LEVEL_MAPPING_REVERSE = [
+		CentralAuthUser::HIDDEN_LEVEL_NONE       => '',
+		CentralAuthUser::HIDDEN_LEVEL_LISTS      => 'lists',
+		CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED => 'suppressed',
+	];
+
 	public function execute() {
 		// Heavily based on code from SpecialCentralAuth::doSubmit
 		$params = $this->extractRequestParams();
@@ -58,16 +72,17 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			$setLocked = $params['locked'] === 'lock';
 		}
 
-		$setHidden = $params['hidden'];
+		if ( $params['hidden'] == null ) {
+			$setHidden = null;
+		} else {
+			$setHidden = self::HIDDEN_LEVEL_MAPPING[$params['hidden']];
+		}
+
 		$reason = $params['reason'];
 		$stateCheck = $params['statecheck'];
 
-		if ( $stateCheck && $stateCheck !== $globalUser->getStateHash( true ) ) {
-			if ( $stateCheck !== $globalUser->getStateHash( true, true ) ) {
-				$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
-			}
-
-			// TODO: throw a deprecation warning when this module supports new int hidden values
+		if ( $stateCheck && $stateCheck !== $this->getStateHash( $globalUser ) ) {
+			$this->dieWithError( 'apierror-centralauth-editconflict', 'editconflict' );
 		}
 
 		$status = $globalUser->adminLockHide(
@@ -77,12 +92,14 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			$this->getContext()
 		);
 
+		$hidden = self::HIDDEN_LEVEL_MAPPING_REVERSE[$globalUser->getHiddenLevelInt()];
+
 		// Logging etc
 		if ( $status->isGood() ) {
 			$this->getResult()->addValue( null, $this->getModuleName(), [
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),
-				'hidden' => $globalUser->getHiddenLevel(),
+				'hidden' => $hidden,
 				'reason' => $reason
 			] );
 		} else {
@@ -91,9 +108,28 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			$this->getResult()->addValue( null, $this->getModuleName(), [
 				'user' => $globalUser->getName(),
 				'locked' => $globalUser->isLocked(),
-				'hidden' => $globalUser->getHiddenLevel(),
+				'hidden' => $hidden,
 			] );
 		}
+	}
+
+	/**
+	 * Calculates a state hash for edit conflict detection. This is separate
+	 * from {@link CentralAuthUser::getStateHash()} as it uses the 'old'
+	 * (non-normalized string) values for the hidden level value.
+	 *
+	 * @param CentralAuthUser $user
+	 * @return string
+	 */
+	private function getStateHash( CentralAuthUser $user ): string {
+		$parts = [
+			(string)$user->getId(),
+			$user->getName(),
+			self::HIDDEN_LEVEL_MAPPING_REVERSE[$user->getHiddenLevelInt()],
+			$user->isLocked() ? '1' : '0'
+		];
+
+		return md5( implode( ':', $parts ) );
 	}
 
 	public function getAllowedParams() {
@@ -111,9 +147,9 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 			],
 			'hidden' => [
 				ParamValidator::PARAM_TYPE => [
-					CentralAuthUser::HIDDEN_NONE,
-					CentralAuthUser::HIDDEN_LISTS,
-					CentralAuthUser::HIDDEN_OVERSIGHT
+					'',
+					'lists',
+					'suppressed'
 				]
 			],
 			'reason' => [

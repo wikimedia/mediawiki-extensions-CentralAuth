@@ -29,20 +29,12 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertFalse( $caUser->isLocked() );
 		$this->assertSame( '20130627183537', $caUser->getRegistration() );
 		$this->assertSame(
-			CentralAuthUser::HIDDEN_NONE,
-			$caUser->getHiddenLevel()
-		);
-		$this->assertSame(
 			CentralAuthUser::HIDDEN_LEVEL_NONE,
 			$caUser->getHiddenLevelInt()
 		);
 		$this->assertSame(
 			'8de7319aacab2020d38db1fbfac313a4',
 			$caUser->getStateHash()
-		);
-		$this->assertSame(
-			'2234d7949459185926a50073d174b673',
-			$caUser->getStateHash( false, true )
 		);
 	}
 
@@ -124,7 +116,6 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 	/**
 	 * @covers ::isHidden
 	 * @covers ::isSuppressed
-	 * @covers ::getHiddenLevel
 	 * @covers ::getHiddenLevelInt
 	 */
 	public function testHidden() {
@@ -132,7 +123,6 @@ class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase 
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isHidden() );
 		$this->assertTrue( $caUser->isSuppressed() );
-		$this->assertSame( CentralAuthUser::HIDDEN_OVERSIGHT, $caUser->getHiddenLevel() );
 		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, $caUser->getHiddenLevelInt() );
 	}
 

@@ -52,7 +52,7 @@ class MigrateHiddenLevel extends Maintenance {
 				'globaluser',
 				[ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_LISTS ],
 				[
-					'gu_hidden' => CentralAuthUser::HIDDEN_LISTS,
+					'gu_hidden' => 'lists',
 					"gu_id BETWEEN $min AND $max"
 				],
 				__METHOD__
@@ -62,7 +62,7 @@ class MigrateHiddenLevel extends Maintenance {
 				'globaluser',
 				[ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED ],
 				[
-					'gu_hidden' => CentralAuthUser::HIDDEN_OVERSIGHT,
+					'gu_hidden' => 'suppressed',
 					"gu_id BETWEEN $min AND $max"
 				],
 				__METHOD__
