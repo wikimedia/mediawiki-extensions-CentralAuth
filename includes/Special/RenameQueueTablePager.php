@@ -145,11 +145,10 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	/**
-	 * @return string[]
+	 * @return array
 	 */
-	protected function getExtraSortFields() {
-		// Break order ties based on the unique id
-		return [ 'rq_id' ];
+	public function getIndexField() {
+		return [ [ parent::getIndexField(), 'rq_id' ] ];
 	}
 
 	/**
