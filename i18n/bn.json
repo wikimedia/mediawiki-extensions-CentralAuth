@@ -304,6 +304,7 @@
 	"globalgroupmembership": "বৈশ্বিক গ্রুপে সদস্যপদ",
 	"globalgrouppermissions": "বৈশ্বিক দল ব্যবস্থাপনা",
 	"globalrenameprogress": "বৈশ্বিক নামান্তরের অগ্রগতি",
+	"globalrenameprogress-legend": "বৈশ্বিক নামান্তরের অগ্ৰগতি দেখুন",
 	"globalrenamequeue-action-address": "পরীক্ষা করুন",
 	"globalrenamequeue-action-view": "দেখুন",
 	"globalrenamequeue-column-row-actions": "কার্য",
