@@ -4,7 +4,8 @@
 			"Julian Mendez",
 			"Macofe",
 			"Malafaya",
-			"McDutchie"
+			"McDutchie",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppos global al quales le usator pertine",
@@ -279,7 +280,7 @@
 	"centralauth-merge-method-empty": "nulle contributiones",
 	"centralauth-merge-method-empty-desc": "Indica que le conto local ha essite fusionate proque illo non habeva facite modificationes.",
 	"centralauth-merge-method-login": "create al apertura del session",
-	"centralauth-merge-method-login-desc": "Indica que le conto local ha essite create automaticamente quando le usator aperiva un session.",
+	"centralauth-merge-method-login-desc": "Indica que le conto local ha essite create automaticamente quando le usator aperiva session.",
 	"centralauth-merge-method-mail": "confirmate per e-mail",
 	"centralauth-merge-method-mail-desc": "Indica que le conto local ha essite fusionate proque su adresse de e-mail correspondeva a illo del conto principal.",
 	"centralauth-merge-method-new": "nove conto",
