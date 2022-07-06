@@ -19,7 +19,9 @@
 			"YmKavishwar",
 			"~aanzx",
 			"आलोक",
-			"संजीव कुमार"
+			"संजीव कुमार",
+			"Matma Rex",
+			"Saurmandal"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "वैश्विक सदस्य-समूह जिनमें सदस्य है",
@@ -198,7 +200,7 @@
 	"centralauth-finish-incomplete": "इस कूटशब्द से कई खाते एकत्रित किये गए।\nअन्य खाते अभी तक प्रमाणित नहीं हैं।",
 	"centralauth-finish-login": "प्रवेश",
 	"centralauth-finish-noconfirms": "दिये हुए कूटशब्द से कोई भी खाता प्रमाणित नहीं किया जा सका।",
-	"centralauth-finish-password": "कूटशब्द:",
+	"centralauth-finish-password": "पासवर्ड:",
 	"centralauth-finish-problems": "क्या आपको कोई समस्या आ रही है, या फिर ये खाते आपके नहीं हैं?\n[[m:Special:MyLanguage/Help:Unified login|सहायता कैसे प्राप्त करें]]...",
 	"centralauth-finish-send-confirmation": "कूटशब्द ई-मेल से भेजें",
 	"centralauth-finish-text": "अगर निम्नलिखित खाते आपके हैं तो उनके कूटशब्द देकर आप इन्हें एकत्रित कर सकतें हैं:",
