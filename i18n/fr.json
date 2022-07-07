@@ -126,7 +126,7 @@
 	"centralauth-admin-multi-intro": "Mettre à jour de multiples comptes globaux à la fois",
 	"centralauth-admin-multi-notfound": "La recherche n’a renvoyé aucun nom d’utilisateur.",
 	"centralauth-admin-multi-searchprefix": "Ou, rechercher des noms d’utilisateur avec un préfixe",
-	"centralauth-admin-multi-username": "Entrez un ou plusieurs noms d’utilisateur, un par ligne",
+	"centralauth-admin-multi-username": "Saisissez un ou plusieurs noms d’utilisateur, un seul par ligne",
 	"centralauth-admin-no": "non",
 	"centralauth-admin-no-unified": "Aucun compte unifié pour ce nom d’utilisateur.",
 	"centralauth-admin-none-selected": "Aucun compte à modifier sélectionné.",
