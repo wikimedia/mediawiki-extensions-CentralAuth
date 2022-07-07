@@ -165,7 +165,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	/**
 	 * @return string
 	 */
-	protected function preText() {
+	protected function preHtml() {
 		$msg = $this->msg( 'globalrenamerequest-pretext' )->parse();
 		if ( !$this->isGlobalUser() ) {
 			$msg = $this->msg( 'globalrenamerequest-forced' )->parse() . $msg;
