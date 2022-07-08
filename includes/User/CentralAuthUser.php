@@ -340,12 +340,14 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthUser|bool false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
-		$name = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB()->selectField(
-			'globaluser',
-			'gu_name',
-			[ 'gu_id' => $id ],
-			__METHOD__
-		);
+		$name = CentralAuthServices::getDatabaseManager()
+			->getCentralReplicaDB()
+			->newSelectQueryBuilder()
+			->select( 'gu_name' )
+			->from( 'globaluser' )
+			->where( [ 'gu_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return $name === false ? false : self::getInstanceByName( $name );
 	}
@@ -358,12 +360,14 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @since 1.37
 	 */
 	public static function newPrimaryInstanceFromId( $id ) {
-		$name = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB()->selectField(
-			'globaluser',
-			'gu_name',
-			[ 'gu_id' => $id ],
-			__METHOD__
-		);
+		$name = CentralAuthServices::getDatabaseManager()
+			->getCentralPrimaryDB()
+			->newSelectQueryBuilder()
+			->select( 'gu_name' )
+			->from( 'globaluser' )
+			->where( [ 'gu_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return $name === false ? false : self::getPrimaryInstanceByName( $name );
 	}
@@ -452,28 +456,28 @@ class CentralAuthUser implements IDBAccessObject {
 		// We need the user id from the database, but this should be checked by the getId accessor.
 		$db = $this->getSafeReadDB();
 
-		$res = $db->select(
-			[ 'global_group_permissions', 'global_user_groups' ],
-			[ 'ggp_permission', 'ggp_group', 'gug_expiry', ],
-			[
-				'ggp_group=gug_group',
+		$res = $db->newSelectQueryBuilder()
+			->select( [ 'ggp_permission', 'ggp_group', 'gug_expiry' ] )
+			->from( 'global_group_permissions' )
+			->join( 'global_user_groups', null, 'ggp_group=gug_group' )
+			->where( [
 				'gug_user' => $this->getId(),
 				$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
-		$resSets = $db->select(
-			[ 'global_user_groups', 'global_group_restrictions', 'wikiset' ],
-			[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
-			[
-				'ggr_group=gug_group',
+		$resSets = $db->newSelectQueryBuilder()
+			->select( [ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
+			->from( 'global_user_groups' )
+			->join( 'global_group_restrictions', null, 'ggr_group=gug_group' )
+			->join( 'wikiset', null, 'ggr_set=ws_id' )
+			->where( [
 				$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
-				'ggr_set=ws_id',
-				'gug_user' => $this->getId()
-			],
-			__METHOD__
-		);
+				'gug_user' => $this->getId(),
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$sets = [];
 		foreach ( $resSets as $row ) {
@@ -692,7 +696,12 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 		// Retrieve the local user ID from the specified database.
 		$db = CentralAuthServices::getDatabaseManager()->getLocalDB( DB_PRIMARY, $wikiId );
-		$id = $db->selectField( 'user', 'user_id', [ 'user_name' => $this->mName ], __METHOD__ );
+		$id = $db->newSelectQueryBuilder()
+			->select( 'user_id' )
+			->from( 'user' )
+			->where( [ 'user_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->fetchField();
 		return $id ? (int)$id : null;
 	}
 
@@ -1582,12 +1591,12 @@ class CentralAuthUser implements IDBAccessObject {
 				__METHOD__
 			);
 
-			$userRow = $dblw->selectRow(
-				'user',
-				[ 'user_id', 'user_editcount' ],
-				[ 'user_name' => $this->mName ],
-				__METHOD__
-			);
+			$userRow = $dblw->newSelectQueryBuilder()
+				->select( [ 'user_id', 'user_editcount' ] )
+				->from( 'user' )
+				->where( [ 'user_name' => $this->mName ] )
+				->caller( __METHOD__ )
+				->fetchRow();
 
 			# Remove the edits from the global edit count
 			$counter = CentralAuthServices::getEditCounter();
@@ -1645,12 +1654,12 @@ class CentralAuthUser implements IDBAccessObject {
 
 		# Synchronise passwords
 		$password = $this->getPassword();
-		$localUserRes = $centralDB->selectFieldValues(
-			'localuser',
-			'lu_wiki',
-			[ 'lu_name' => $this->mName ],
-			__METHOD__
-		);
+		$localUserRes = $centralDB->newSelectQueryBuilder()
+			->select( 'lu_wiki' )
+			->from( 'localuser' )
+			->where( [ 'lu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 		foreach ( $localUserRes as $wiki ) {
 			$this->logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$localDB = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
@@ -1661,12 +1670,13 @@ class CentralAuthUser implements IDBAccessObject {
 				__METHOD__
 			);
 
-			$id = $localDB->selectField(
-				'user',
-				'user_id',
-				[ 'user_name' => $this->mName ],
-				__METHOD__
-			);
+			$id = $localDB->newSelectQueryBuilder()
+				->select( 'user_id' )
+				->from( 'user' )
+				->where( [ 'user_name' => $this->mName ] )
+				->caller( __METHOD__ )
+				->fetchField();
+
 			$this->clearLocalUserCache( $wiki, $id );
 		}
 		$wasSuppressed = $this->isSuppressed();
@@ -2114,12 +2124,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected function addLocalEdits( $wikiID ) {
 		$dblw = CentralAuthServices::getDatabaseManager()->getLocalDB( DB_PRIMARY, $wikiID );
-		$editCount = $dblw->selectField(
-			'user',
-			'user_editcount',
-			[ 'user_name' => $this->mName ],
-			__METHOD__
-		);
+		$editCount = $dblw->newSelectQueryBuilder()
+			->select( 'user_editcount' )
+			->from( 'user' )
+			->where( [ 'user_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->fetchField();
 		$counter = CentralAuthServices::getEditCounter();
 		$counter->increment( $this, $editCount );
 	}
@@ -2426,10 +2436,12 @@ class CentralAuthUser implements IDBAccessObject {
 
 		foreach ( $wikiList as $wikiID ) {
 			$dbr = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
-			$known = (bool)$dbr->selectField( 'user', '1',
-				[ 'user_name' => $this->mName ],
-				__METHOD__
-			);
+			$known = (bool)$dbr->newSelectQueryBuilder()
+				->select( '1' )
+				->from( 'user' )
+				->where( [ 'user_name' => $this->mName ] )
+				->caller( __METHOD__ )
+				->fetchField();
 			if ( $known ) {
 				$rows[] = [ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ];
 			}
@@ -2481,12 +2493,12 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$db = $this->getSafeReadDB();
 
-		$wikis = $db->selectFieldValues(
-			'localuser',
-			'lu_wiki',
-			[ 'lu_name' => $this->mName ],
-			__METHOD__
-		);
+		$wikis = $db->newSelectQueryBuilder()
+			->select( 'lu_wiki' )
+			->from( 'localuser' )
+			->where( [ 'lu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		$this->mAttachedArray = $wikis;
 		$this->mAttachedList = implode( "\n", $wikis );
@@ -2608,15 +2620,16 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$db = $this->getSafeReadDB();
 
-		$result = $db->select(
-			'localuser',
-			[
+		$result = $db->newSelectQueryBuilder()
+			->select( [
 				'lu_wiki',
 				'lu_attached_timestamp',
 				'lu_attached_method',
-			],
-			[ 'lu_name' => $this->mName, ],
-			__METHOD__ );
+			] )
+			->from( 'localuser' )
+			->where( [ 'lu_name' => $this->mName, ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$wikis = [];
 		foreach ( $result as $row ) {
@@ -2690,11 +2703,21 @@ class CentralAuthUser implements IDBAccessObject {
 			'user_registration',
 		];
 		$conds = [ 'user_name' => $this->mName ];
-		$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
+		$row = $db->newSelectQueryBuilder()
+			->select( $fields )
+			->from( 'user' )
+			->where( $conds )
+			->caller( __METHOD__ )
+			->fetchRow();
 		if ( !$row ) {
 			# Row missing from replica, try the primary database instead
 			$db = $databaseManager->getLocalDB( DB_PRIMARY, $wikiID );
-			$row = $db->selectRow( 'user', $fields, $conds, __METHOD__ );
+			$row = $db->newSelectQueryBuilder()
+				->select( $fields )
+				->from( 'user' )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->fetchRow();
 		}
 		if ( !$row ) {
 			$ex = new LocalUserNotFoundException(
