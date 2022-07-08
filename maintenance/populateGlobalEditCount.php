@@ -7,7 +7,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
 use RuntimeException;
-use Wikimedia\Rdbms\LBFactory;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -17,9 +16,6 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class PopulateGlobalEditCount extends Maintenance {
 	private const READ_BATCH_SIZE = 1000;
-
-	/** @var LBFactory */
-	private $lbFactory;
 
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
@@ -38,7 +34,6 @@ class PopulateGlobalEditCount extends Maintenance {
 
 	private function init() {
 		$services = MediaWikiServices::getInstance();
-		$this->lbFactory = $services->getDBLoadBalancerFactory();
 		$this->databaseManager = CentralAuthServices::getDatabaseManager( $services );
 	}
 
@@ -102,8 +97,7 @@ class PopulateGlobalEditCount extends Maintenance {
 
 			// Get the edit counts on each wiki using a batch query
 			foreach ( $localIds as $wiki => $ids ) {
-				$dblr = $this->lbFactory->getMainLB( $wiki )
-					->getConnectionRef( DB_REPLICA, [], $wiki );
+				$dblr = $this->databaseManager->getLocalDB( DB_REPLICA, $wiki );
 				$res = $dblr->newSelectQueryBuilder()
 					->select( [
 						'user_id',

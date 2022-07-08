@@ -6,7 +6,6 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\MediaWikiServices;
 
 class PopulateLocalAndGlobalIds extends Maintenance {
 
@@ -34,9 +33,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			__METHOD__
 		);
 
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lb = $lbFactory->getMainLB( $wiki );
-		$ldbr = $lb->getConnectionRef( DB_REPLICA, [], $wiki );
+		$ldbr = $databaseManager->getLocalDB( DB_REPLICA, $wiki );
 
 		$this->output( "Populating fields for wiki $wiki... \n" );
 		do {

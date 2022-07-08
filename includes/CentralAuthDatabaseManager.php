@@ -6,6 +6,7 @@ use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
 use ReadOnlyError;
 use ReadOnlyMode;
+use WikiMap;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\LBFactory;
@@ -130,6 +131,29 @@ class CentralAuthDatabaseManager {
 
 		return $this->getLoadBalancer()
 			->getConnectionRef( $index, [], $database );
+	}
+
+	/**
+	 * Gets a database connection to the local database based on a wikiId
+	 *
+	 * @param int $index DB_PRIMARY or DB_REPLICA
+	 * @param string $wikiId
+	 *
+	 * @return IDatabase
+	 * @throws CentralAuthReadOnlyError
+	 * @throws InvalidArgumentException
+	 */
+	public function getLocalDB( int $index, string $wikiId ): IDatabase {
+		if ( $index !== DB_PRIMARY && $index !== DB_REPLICA ) {
+			throw new InvalidArgumentException( "Unknown index $index, expected DB_PRIMARY or DB_REPLICA" );
+		}
+
+		if ( WikiMap::isCurrentWikiId( $wikiId ) ) {
+			$wikiId = false;
+		}
+
+		return $this->lbFactory->getMainLB( $wikiId )
+			->getConnectionRef( $index, [], $wikiId );
 	}
 
 	/**
