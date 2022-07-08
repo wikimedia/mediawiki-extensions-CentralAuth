@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -117,12 +118,12 @@ class CheckLocalUser extends Maintenance {
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {
-				$localUser = $localdb->select(
-					'user',
-					[ 'user_name' ],
-					[ 'user_name' => $username ],
-					__METHOD__
-				);
+				$localUser = $localdb->newSelectQueryBuilder()
+					->select( 'user_name' )
+					->from( 'user' )
+					->where( [ 'user_name' => $username ] )
+					->caller( __METHOD__ )
+					->fetchResultSet();
 
 				// check to see if the user did not exist in the local user table
 				if ( $localUser->numRows() == 0 ) {
@@ -172,16 +173,14 @@ class CheckLocalUser extends Maintenance {
 			if ( $this->user !== null ) {
 				$conds['lu_name'] = $this->user;
 			}
-			return $centralReplica->selectFieldValues(
-				'localuser',
-				'lu_wiki',
-				$conds,
-				__METHOD__,
-				[
-					"DISTINCT",
-					"ORDER BY" => "lu_wiki ASC"
-				]
-			);
+			return $centralReplica->newSelectQueryBuilder()
+				->select( 'lu_wiki' )
+				->distinct()
+				->from( 'localuser' )
+				->where( $conds )
+				->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
+				->caller( __METHOD__ )
+				->fetchFieldValues();
 		}
 	}
 
@@ -196,19 +195,18 @@ class CheckLocalUser extends Maintenance {
 		$lastUsername = '';
 		do {
 			$this->output( "\t ... querying from '$lastUsername'\n" );
-			$result = $centralReplica->select(
-				'localuser',
-				[ 'lu_name' ],
-				[
+			$result = $centralReplica->newSelectQueryBuilder()
+				->select( 'lu_name' )
+				->from( 'localuser' )
+				->where( [
 					'lu_wiki' => $wiki,
 					'lu_name > ' . $centralReplica->addQuotes( $lastUsername ),
-				],
-				__METHOD__,
-				[
-					"LIMIT" => $this->mBatchSize,
-					"ORDER BY" => "lu_name ASC"
-				]
-			);
+				] )
+				->orderBy( 'lu_name', SelectQueryBuilder::SORT_ASC )
+				->limit( $this->mBatchSize )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+
 			foreach ( $result as $u ) {
 				yield $u->lu_name;
 			}

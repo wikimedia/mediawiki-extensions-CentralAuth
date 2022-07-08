@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -44,19 +45,21 @@ class FixStuckGlobalRename extends Maintenance {
 
 		$dbr = wfGetDB( DB_REPLICA, [], $this->getOption( 'logwiki' ) );
 		$queryData = DatabaseLogEntry::getSelectQueryData();
-		$row = $dbr->selectRow(
-			$queryData['tables'],
-			$queryData['fields'],
-			array_merge( $queryData['conds'], [
+		$row = $dbr->newSelectQueryBuilder()
+			->tables( $queryData['tables'] )
+			->select( $queryData['fields'] )
+			->where( $queryData['conds'] )
+			->andWhere( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
 				'log_namespace' => NS_SPECIAL,
 				'log_title' => $logTitle->getDBkey(),
-			] ),
-			__METHOD__,
-			array_merge( $queryData['options'], [ 'ORDER BY' => 'log_timestamp DESC' ] ),
-			$queryData['join_conds']
-		);
+			] )
+			->options( $queryData['options'] )
+			->orderBy( 'log_timestamp', SelectQueryBuilder::SORT_DESC )
+			->joinConds( $queryData['join_conds'] )
+			->caller( __METHOD__ )
+			->fetchRow();
 
 		// try to guess the options if the log record does not contain them
 		$movepages = true;

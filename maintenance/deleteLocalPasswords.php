@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -76,16 +77,14 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 			if ( $this->user !== null ) {
 				$conds['lu_name'] = $this->user;
 			}
-			return $centralReplica->selectFieldValues(
-				'localuser',
-				'lu_wiki',
-				$conds,
-				__METHOD__,
-				[
-					"DISTINCT",
-					"ORDER BY" => "lu_wiki ASC"
-				]
-			);
+			return $centralReplica->newSelectQueryBuilder()
+				->select( 'lu_wiki' )
+				->distinct()
+				->from( 'localuser' )
+				->where( $conds )
+				->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
+				->caller( __METHOD__ )
+				->fetchFieldValues();
 		}
 	}
 
@@ -100,19 +99,18 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 		$lastUsername = '';
 		do {
 			$this->output( "\t ... querying from '$lastUsername'\n" );
-			$users = $centralReplica->selectFieldValues(
-				'localuser',
-				'lu_name',
-				[
+			$users = $centralReplica->newSelectQueryBuilder()
+				->select( 'lu_name' )
+				->from( 'localuser' )
+				->where( [
 					'lu_wiki' => $wiki,
 					'lu_name > ' . $centralReplica->addQuotes( $lastUsername ),
-				],
-				__METHOD__,
-				[
-					"LIMIT" => $this->getBatchSize(),
-					"ORDER BY" => "lu_name ASC"
-				]
-			);
+				] )
+				->orderBy( 'lu_name', SelectQueryBuilder::SORT_ASC )
+				->limit( $this->getBatchSize() )
+				->caller( __METHOD__ )
+				->fetchFieldValues();
+
 			if ( $users ) {
 				yield $users;
 				$lastUsername = end( $users );

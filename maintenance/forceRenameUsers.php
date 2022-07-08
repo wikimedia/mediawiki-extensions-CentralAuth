@@ -66,12 +66,11 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	protected function getCurrentRenameCount( IDatabase $dbw ) {
-		$row = $dbw->selectRow(
-			[ 'renameuser_status' ],
-			[ 'COUNT(*) as count' ],
-			[],
-			__METHOD__
-		);
+		$row = $dbw->newSelectQueryBuilder()
+			->select( 'COUNT(*) as count' )
+			->from( 'renameuser_status' )
+			->caller( __METHOD__ )
+			->fetchRow();
 		return (int)$row->count;
 	}
 

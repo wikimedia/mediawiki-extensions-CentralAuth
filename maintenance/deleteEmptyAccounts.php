@@ -69,23 +69,26 @@ class DeleteEmptyAccounts extends Maintenance {
 			$this->suppressRC = true;
 		}
 
-		$end = $dbr->selectField( 'globaluser', 'MAX(gu_id)', [], __METHOD__ );
+		$end = $dbr->newSelectQueryBuilder()
+			->select( 'MAX(gu_id)' )
+			->from( 'globaluser' )
+			->caller( __METHOD__ )
+			->fetchField();
+
 		for ( $cur = 0; $cur <= $end; $cur += $this->mBatchSize ) {
 			$this->output( "PROGRESS: $cur / $end\n" );
-			$result = $dbr->select(
-				[ 'globaluser', 'localuser' ],
-				[ 'gu_name' ],
-				[
+			$result = $dbr->newSelectQueryBuilder()
+				->select( 'gu_name' )
+				->from( 'globaluser' )
+				->leftJoin( 'localuser', null, 'gu_name=lu_name' )
+				->where( [
 					'lu_name' => null,
 					"gu_id >= $cur",
 					'gu_id < ' . ( $cur + $this->mBatchSize ),
-				],
-				__METHOD__,
-				[
-					'ORDER BY' => 'gu_id',
-				],
-				[ 'localuser' => [ 'LEFT JOIN', 'gu_name=lu_name' ] ]
-			);
+				] )
+				->orderBy( 'gu_id' )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			foreach ( $result as $row ) {
 				$this->process( $row->gu_name, $user );

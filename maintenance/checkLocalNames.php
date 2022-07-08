@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class CheckLocalNames extends Maintenance {
 
@@ -74,16 +75,13 @@ class CheckLocalNames extends Maintenance {
 		if ( $this->wiki !== null ) {
 			$wikis = [ $this->wiki ];
 		} else {
-			$wikis = $centralReplica->selectFieldValues(
-				'localnames',
-				'ln_wiki',
-				"",
-				__METHOD__,
-				[
-					"DISTINCT",
-					"ORDER BY" => "ln_wiki ASC"
-				]
-			);
+			$wikis = $centralReplica->newSelectQueryBuilder()
+				->select( 'ln_wiki' )
+				->distinct()
+				->from( 'localnames' )
+				->orderBy( "ln_wiki", SelectQueryBuilder::SORT_ASC )
+				->caller( __METHOD__ )
+				->fetchFieldValues();
 		}
 
 		// iterate through the wikis
@@ -96,28 +94,26 @@ class CheckLocalNames extends Maintenance {
 			// batch query localnames from the wiki
 			do{
 				$this->output( "\t ... querying from '$lastUsername'\n" );
-				$result = $centralReplica->select(
-					'localnames',
-					[ 'ln_name' ],
-					[
+				$result = $centralReplica->newSelectQueryBuilder()
+					->select( 'ln_name' )
+					->from( 'localnames' )
+					->where( [
 						"ln_wiki" => $wiki,
 						"ln_name > " . $centralReplica->addQuotes( $lastUsername )
-					],
-					__METHOD__,
-					[
-						"LIMIT" => $this->mBatchSize,
-						"ORDER BY" => "ln_name ASC"
-					]
-				);
+					] )
+					->orderBy( 'ln_name', SelectQueryBuilder::SORT_ASC )
+					->limit( $this->mBatchSize )
+					->caller( __METHOD__ )
+					->fetchResultSet();
 
 				// iterate through each of the localnames to confirm that a local user
 				foreach ( $result as $u ) {
-					$localUser = $localdb->select(
-						'user',
-						[ 'user_name' ],
-						[ "user_name" => $u->ln_name ],
-						__METHOD__
-					);
+					$localUser = $localdb->newSelectQueryBuilder()
+						->select( 'user_name' )
+						->from( 'user' )
+						->where( [ "user_name" => $u->ln_name ] )
+						->caller( __METHOD__ )
+						->fetchResultSet();
 
 					// check to see if the user did not exist in the local user table
 					if ( $localUser->numRows() == 0 ) {

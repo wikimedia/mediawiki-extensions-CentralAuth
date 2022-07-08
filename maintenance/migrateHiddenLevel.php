@@ -42,7 +42,11 @@ class MigrateHiddenLevel extends Maintenance {
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
 
-		$lastUser = $dbw->selectField( 'globaluser', 'MAX(gu_id)', '', __METHOD__ );
+		$lastUser = $dbw->newSelectQueryBuilder()
+			->select( 'MAX(gu_id)' )
+			->from( 'globaluser' )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		for ( $min = 0; $min <= $lastUser; $min += $this->getBatchSize() ) {
 			$max = $min + $this->getBatchSize();
