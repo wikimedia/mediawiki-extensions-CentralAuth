@@ -152,17 +152,16 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	public function nameHasPendingRequest( string $newname, int $flags = self::READ_NORMAL ) {
 		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
 
-		$res = $this->dbManager->getCentralDB( $dbIndex )
-			->selectField(
-				'renameuser_queue',
-				'rq_id',
-				[
-					'rq_newname' => $newname,
-					'rq_status'  => GlobalRenameRequest::PENDING,
-				],
-				__METHOD__,
-				$dbOptions
-			);
+		$res = $this->dbManager->getCentralDB( $dbIndex )->newSelectQueryBuilder()
+			->select( 'rq_id' )
+			->from( 'renameuser_queue' )
+			->where( [
+				'rq_newname' => $newname,
+				'rq_status'  => GlobalRenameRequest::PENDING,
+			] )
+			->options( $dbOptions )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		return $res !== false;
 	}
@@ -177,26 +176,25 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	protected function fetchRowFromDB( array $where, int $flags = self::READ_NORMAL ) {
 		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
 
-		return $this->dbManager->getCentralDB( $dbIndex )
-			->selectRow(
-				'renameuser_queue',
-				[
-					'id'        => 'rq_id',
-					'name'      => 'rq_name',
-					'wiki'      => 'rq_wiki',
-					'newname'   => 'rq_newname',
-					'reason'    => 'rq_reason',
-					'requested' => 'rq_requested_ts',
-					'status'    => 'rq_status',
-					'completed' => 'rq_completed_ts',
-					'deleted'   => 'rq_deleted',
-					'performer' => 'rq_performer',
-					'comments'  => 'rq_comments',
-				],
-				$where,
-				__METHOD__,
-				$dbOptions
-			);
+		return $this->dbManager->getCentralDB( $dbIndex )->newSelectQueryBuilder()
+			->select( [
+				'id'        => 'rq_id',
+				'name'      => 'rq_name',
+				'wiki'      => 'rq_wiki',
+				'newname'   => 'rq_newname',
+				'reason'    => 'rq_reason',
+				'requested' => 'rq_requested_ts',
+				'status'    => 'rq_status',
+				'completed' => 'rq_completed_ts',
+				'deleted'   => 'rq_deleted',
+				'performer' => 'rq_performer',
+				'comments'  => 'rq_comments',
+			] )
+			->from( 'renameuser_queue' )
+			->where( $where )
+			->options( $dbOptions )
+			->caller( __METHOD__ )
+			->fetchRow();
 	}
 
 	/**
