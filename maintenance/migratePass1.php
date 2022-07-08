@@ -42,11 +42,13 @@ class MigratePass1 extends Maintenance {
 		$this->output( "Finding accounts which can be migrated without interaction...\n" );
 
 		$dbBackground = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		$result = $dbBackground->select(
-			'globalnames',
-			[ 'gn_name' ],
-			[],
-			__METHOD__ );
+
+		$result = $dbBackground->newSelectQueryBuilder()
+			->select( 'gn_name' )
+			->from( 'globalnames' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
 		foreach ( $result as $row ) {
 			$this->fromPrefix = $row->gn_name;
 			$central = new CentralAuthUser( $row->gn_name, CentralAuthUser::READ_LATEST );

@@ -43,20 +43,26 @@ class MigratePass0 extends Maintenance {
 		// List all user accounts on this wiki in the migration table
 		// on the central authentication server.
 
-		$lastUser = $dbr->selectField( 'user', 'MAX(user_id)', '', __FUNCTION__ );
+		$lastUser = $dbr->newSelectQueryBuilder()
+			->select( 'MAX(gu_id)' )
+			->from( 'globaluser' )
+			->caller( __METHOD__ )
+			->fetchField();
+
 		for ( $min = 0; $min <= $lastUser; $min += $chunkSize ) {
 			$max = $min + $chunkSize - 1;
-			$result = $dbr->select( 'user',
-				[ 'user_id', 'user_name' ],
-				"user_id BETWEEN $min AND $max",
-				__FUNCTION__ );
+			$result = $dbr->newSelectQueryBuilder()
+				->select( [ 'user_id', 'user_name' ] )
+				->from( 'user' )
+				->where( "user_id BETWEEN $min AND $max" )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			foreach ( $result as $row ) {
 				$users[intval( $row->user_id )] = $row->user_name;
 				++$migrated;
 			}
 
-			// @phan-suppress-next-line SecurityCheck-SQLInjection T290563
 			CentralAuthUser::storeMigrationData( $wgDBname, $users );
 			$users = []; // clear the array for the next pass
 

@@ -12,31 +12,31 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 echo "Populating global groups table with stewards...\n";
 
 // Fetch local stewards
-$dbl = wfGetDB( DB_REPLICA );	// Get local database
-$localStewards = $dbl->selectFieldValues(
-	[ 'user', 'user_groups' ],
-	'user_name',
-	[
+$dbl = wfGetDB( DB_REPLICA ); // Get local database
+$localStewards = $dbl->newSelectQueryBuilder()
+	->select( 'user_name' )
+	->from( 'user' )
+	->join( 'user_groups', null, 'user_id = ug_user' )
+	->where( [
 		'ug_group' => 'steward',
-		'ug_expiry IS NULL OR ug_expiry >= ' . $dbl->addQuotes( $dbl->timestamp() ),
-		'user_id = ug_user'
-	],
-	'migrateStewards.php'
-);
+		'ug_expiry IS NULL OR ug_expiry >= ' . $dbl->addQuotes( $dbl->timestamp() )
+	] )
+	->caller( 'migrateStewards.php' )
+	->fetchFieldValues();
 
 echo "Fetched " . count( $localStewards ) . " from local database... Checking for attached ones\n";
 $dbg = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 $globalStewards = [];
-$result = $dbg->select(
-	[ 'globaluser', 'localuser' ],
-	[ 'gu_name', 'gu_id' ],
-	[
-		'gu_name = lu_name',
+$result = $dbg->newSelectQueryBuilder()
+	->select( [ 'gu_name', 'gu_id' ] )
+	->from( 'globaluser' )
+	->join( 'localuser', null, 'gu_name = lu_name' )
+	->where( [
 		'lu_wiki' => WikiMap::getCurrentWikiId(),
 		'gu_name IN (' . $dbg->makeList( $localStewards ) . ')',
-	],
-	'migrateStewards.php'
-);
+	] )
+	->caller( 'migrateStewards.php' )
+	->fetchResultSet();
 foreach ( $result as $row ) {
 	$globalStewards[$row->gu_name] = $row->gu_id;
 }
@@ -51,7 +51,6 @@ foreach ( $globalStewards as $user => $id ) {
 	// Using id as a hack for phan-taint-check.
 	echo "Added user id " . ( (int)$id ) . "\n";
 
-	// @phan-suppress-next-line SecurityCheck-SQLInjection T290563
 	$u = new CentralAuthUser( $user );
 	$u->quickInvalidateCache(); // Don't bother regenerating the steward's cache.
 }

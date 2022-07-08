@@ -41,10 +41,11 @@ class PopulateListOfUsersToRename extends Maintenance {
 	 */
 	private function doQuery() {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		$rows = $dbr->select(
-			[ 'localnames', 'localuser' ],
-			[ 'ln_name AS name', 'ln_wiki AS wiki' ],
-			[
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'ln_name AS name', 'ln_wiki AS wiki' ] )
+			->from( 'localnames' )
+			->leftJoin( 'localuser', null, 'ln_name=lu_name AND ln_wiki=lu_wiki' )
+			->where( [
 				$dbr->makeList(
 					[
 						'ln_name > ' . $dbr->addQuotes( $this->lName ),
@@ -54,14 +55,11 @@ class PopulateListOfUsersToRename extends Maintenance {
 					LIST_OR
 				),
 				'lu_attached_method IS NULL'
-			],
-			__METHOD__,
-			[
-				'LIMIT' => $this->mBatchSize,
-				'ORDER BY' => [ 'ln_name', 'ln_wiki' ],
-			],
-			[ 'localuser' => [ 'LEFT JOIN', 'ln_name=lu_name AND ln_wiki=lu_wiki' ] ]
-		);
+			] )
+			->orderBy( [ 'ln_name', 'ln_wiki' ] )
+			->limit( $this->mBatchSize )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		return $rows;
 	}
