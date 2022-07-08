@@ -60,18 +60,18 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 
 		$request = $this->createSampleRequest( $store, 'abcwiki' );
 
-		$id = $this->db->selectField(
-			'renameuser_queue',
-			'rq_id',
-			[
+		$id = $this->db->newSelectQueryBuilder()
+			->select( 'rq_id' )
+			->from( 'renameuser_queue' )
+			->where( [
 				'rq_name' => 'Example',
 				'rq_wiki' => 'abcwiki',
 				'rq_newname' => 'Test',
 				'rq_reason' => 'I ate too many bananas.',
 				'rq_status' => GlobalRenameRequest::PENDING,
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		$this->assertNotNull( $id );
 		$this->assertEquals( $id, $request->getId() );
@@ -81,12 +81,12 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 
 		$this->assertEquals(
 			GlobalRenameRequest::REJECTED,
-			$this->db->selectField(
-				'renameuser_queue',
-				'rq_status',
-				[ 'rq_id' => $request->getId() ],
-				__METHOD__
-			)
+			$this->db->newSelectQueryBuilder()
+				->select( 'rq_status' )
+				->from( 'renameuser_queue' )
+				->where( [ 'rq_id' => $request->getId() ] )
+				->caller( __METHOD__ )
+				->fetchField()
 		);
 	}
 
