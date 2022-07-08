@@ -48,13 +48,13 @@ class GlobalGroupLookup implements IDBAccessObject {
 		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
 		return $this->dbManager
 			->getCentralDB( $dbIndex )
-			->selectFieldValues(
-				'global_group_permissions',
-				'distinct ggp_group',
-				[],
-				__METHOD__,
-				$dbOptions
-			);
+			->newSelectQueryBuilder()
+			->select( 'ggp_group' )
+			->distinct()
+			->from( 'global_group_permissions' )
+			->options( $dbOptions )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
 	/**
@@ -67,12 +67,12 @@ class GlobalGroupLookup implements IDBAccessObject {
 		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
 		return $this->dbManager
 			->getCentralDB( $dbIndex )
-			->selectFieldValues(
-				'global_group_permissions',
-				'ggp_permission',
-				[ 'ggp_group' => $group ],
-				__METHOD__,
-				$dbOptions
-			);
+			->newSelectQueryBuilder()
+			->select( 'ggp_permission' )
+			->from( 'global_group_permissions' )
+			->where( [ 'ggp_group' => $group ] )
+			->options( $dbOptions )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 }
