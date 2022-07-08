@@ -166,13 +166,13 @@ class SpecialMultiLock extends SpecialPage {
 			$where['gu_hidden_level'] = CentralAuthUser::HIDDEN_LEVEL_NONE;
 		}
 
-		$result = $dbr->selectFieldValues(
-			[ 'globaluser' ],
-			'gu_name',
-			$where,
-			__METHOD__,
-			[ 'LIMIT' => 100 ]
-		);
+		$result = $dbr->newSelectQueryBuilder()
+			->select( 'gu_name' )
+			->from( 'globaluser' )
+			->where( $where )
+			->limit( 100 )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		foreach ( $result as $name ) {
 			$this->mUserNames[] = $name;

@@ -773,14 +773,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
 		$lb = $this->lbFactory->getMainLB( $wiki );
 		$remoteDB = $lb->getConnectionRef( DB_REPLICA, [], $wiki );
-		$row = $remoteDB->selectRow(
-			'user',
-			[ 'user_email', 'user_name', 'user_real_name' ],
-			[
+		$row = $remoteDB->newSelectQueryBuilder()
+			->select( [ 'user_email', 'user_name', 'user_real_name' ] )
+			->from( 'user' )
+			->where( [
 				'user_name' => $this->userNameUtils->getCanonical( $username ),
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchRow();
 		if ( $row === false ) {
 			$address = null;
 		} else {

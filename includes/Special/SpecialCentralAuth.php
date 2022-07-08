@@ -1111,20 +1111,18 @@ class SpecialCentralAuth extends SpecialPage {
 		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
 
 		// Autocomplete subpage as user list - non-hidden users to allow caching
-		return $dbr->selectFieldValues(
-			[ 'globaluser' ],
-			'gu_name',
-			[
+		return $dbr->newSelectQueryBuilder()
+			->select( 'gu_name' )
+			->from( 'globaluser' )
+			->where( [
 				'gu_name' . $dbr->buildLike( $search, $dbr->anyString() ),
 				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
-			],
-			__METHOD__,
-			[
-				'LIMIT' => $limit,
-				'ORDER BY' => 'gu_name',
-				'OFFSET' => $offset,
-			]
-		);
+			] )
+			->orderBy( 'gu_name' )
+			->limit( $limit )
+			->offset( $offset )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
 	protected function getGroupName() {

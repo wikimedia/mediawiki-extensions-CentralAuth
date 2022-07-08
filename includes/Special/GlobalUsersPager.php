@@ -170,15 +170,15 @@ class GlobalUsersPager extends AlphabeticPager {
 
 		$batch->execute();
 
-		$groups = $this->mDb->select(
-			[ 'global_user_groups' ],
-			[ 'gug_user', 'gug_group', 'gug_expiry' ],
-			[
+		$groups = $this->mDb->newSelectQueryBuilder()
+			->select( [ 'gug_user', 'gug_group', 'gug_expiry' ] )
+			->from( 'global_user_groups' )
+			->where( [
 				'gug_user' => array_keys( $this->globalIDGroups ),
 				'gug_expiry IS NULL OR gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		// Make an array of global groups for all users in the current result set
 		$allGroups = [];
@@ -203,12 +203,13 @@ class GlobalUsersPager extends AlphabeticPager {
 		}
 
 		if ( count( $allGroups ) > 0 ) {
-			$wsQuery = $this->mDb->select(
-				[ 'global_group_restrictions', 'wikiset' ],
-				[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
-				[ 'ggr_set=ws_id', 'ggr_group' => array_unique( $allGroups ) ],
-				__METHOD__
-			);
+			$wsQuery = $this->mDb->newSelectQueryBuilder()
+				->select( [ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
+				->from( 'global_group_restrictions' )
+				->join( 'wikiset', null, 'ggr_set=ws_id' )
+				->where( [ 'ggr_group' => array_unique( $allGroups ) ] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			$notLocalWikiSets = [];
 

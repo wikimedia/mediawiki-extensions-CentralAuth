@@ -555,12 +555,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			&& count( $removeRights ) === count( $oldRights )
 		) {
 			$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
-			$memberCount = $dbr->selectRow(
-				'global_user_groups',
-				'gug_group',
-				[ 'gug_group' => $group ],
-				__METHOD__
-			);
+			$memberCount = $dbr->newSelectQueryBuilder()
+				->select( 'gug_group' )
+				->from( 'global_user_groups' )
+				->where( [ 'gug_group' => $group ] )
+				->caller( __METHOD__ )
+				->fetchRow();
 
 			if ( $memberCount ) {
 				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-delete-removemembers' );
@@ -793,12 +793,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// renamed groups
 		$dbr = $this->databaseManager->getCentralDB( DB_PRIMARY );
 
-		$res = $dbr->selectFieldValues(
-			[ 'global_user_groups', 'globaluser' ],
-			'gu_name',
-			[ 'gug_group' => $group, 'gu_id=gug_user' ],
-			__METHOD__
-		);
+		$res = $dbr->newSelectQueryBuilder()
+			->select( 'gu_name' )
+			->from( 'globaluser' )
+			->join( 'global_user_groups', null, 'gu_id=gug_user' )
+			->where( [ 'gug_group' => $group ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		// Invalidate their rights cache.
 		foreach ( $res as $name ) {
