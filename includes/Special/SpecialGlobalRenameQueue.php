@@ -43,6 +43,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserNameUtils;
 use OOUI\MessageWidget;
 use SpecialPage;
@@ -81,6 +82,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/** @var JobQueueGroupFactory */
 	private $jobQueueGroupFactory;
 
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
+
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';
 	public const PAGE_CLOSED_QUEUE = 'closed';
@@ -103,6 +107,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	public function doesWrites() {
@@ -733,9 +738,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 				if ( $notifyEmail !== null && $notifyEmail->address ) {
 					$type = $approved ? 'approval' : 'rejection';
-					wfDebugLog(
-						'CentralAuthRename',
-						"Sending $type email to User:{$oldUser->getName()}/{$notifyEmail->address}"
+					$this->logger->info(
+						"Send $type email to User:{$oldUser->getName()}"
 					);
 					$this->sendNotificationEmail( $notifyEmail, $subject, $body );
 				}

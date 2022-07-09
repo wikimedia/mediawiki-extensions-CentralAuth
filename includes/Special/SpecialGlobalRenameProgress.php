@@ -138,11 +138,11 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$table .= Html::closeElement( 'tr' );
 		$table .= Html::closeElement( 'thead' );
 		$table .= Html::openElement( 'tbody' );
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		foreach ( $statuses as $wiki => $status ) {
 			$wikiReference = WikiMap::getWiki( $wiki );
 			if ( !$wikiReference ) {
-				LoggerFactory::getInstance( 'CentralAuth' )->warning( __METHOD__ .
-					': invalid wiki: ' . $wiki );
+				$logger->warning( __METHOD__ . ': invalid wiki: ' . $wiki );
 				continue;
 			}
 

@@ -52,6 +52,7 @@ use Pbkdf2Password;
 use RCFeed;
 use RequestContext;
 use RevisionDeleteUser;
+use RuntimeException;
 use Status;
 use stdClass;
 use Title;
@@ -128,6 +129,8 @@ class CentralAuthUser implements IDBAccessObject {
 	protected $mAttachedInfo;
 	/** @var int */
 	protected $mCasToken = 0;
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
 
 	/** @var string[] */
 	private static $mCacheVars = [
@@ -176,6 +179,7 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( ( $flags & self::READ_LATEST ) == self::READ_LATEST ) {
 			$this->mFromPrimary = true;
 		}
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	/**
@@ -273,9 +277,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function checkWriteMode() {
 		if ( !$this->mFromPrimary ) {
-			wfDebugLog(
-				'CentralAuth',
-				"Setter called on a replica instance: " . wfGetAllCallers( 10 )
+			$this->logger->warning(
+				'Write mode called on replica-loaded object',
+				[ 'exception' => new RuntimeException() ]
 			);
 		}
 	}
@@ -444,14 +448,12 @@ class CentralAuthUser implements IDBAccessObject {
 			// Already loaded
 			return;
 		}
-		// We need the user id from the database, but this should be checked by the getId accessor.
-		wfDebugLog(
-			'CentralAuthVerbose',
+		$this->logger->debug(
 			'Loading groups for global user {user}',
-			'all',
 			[ 'user' => $this->mName ]
 		);
 
+		// We need the user id from the database, but this should be checked by the getId accessor.
 		$db = $this->getSafeReadDB();
 
 		$res = $db->select(
@@ -528,10 +530,8 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	protected function loadFromDatabase() {
-		wfDebugLog(
-			'CentralAuthVerbose',
+		$this->logger->debug(
 			'Loading state for global user {user} from DB',
-			'all',
 			[ 'user' => $this->mName ]
 		);
 
@@ -637,12 +637,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array $object
 	 */
 	protected function loadFromCacheObject( array $object ) {
-		wfDebugLog(
-			'CentralAuthVerbose',
+		$this->logger->debug(
 			'Loading CentralAuthUser for user {user} from cache object',
-			'all',
 			[ 'user' => $this->mName ]
 		);
+
 		foreach ( self::$mCacheVars as $var ) {
 			$this->$var = $object[$var];
 		}
@@ -654,15 +653,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$closestUserGroupExpiration = $this->getClosestGlobalUserGroupExpiry();
 		if ( $closestUserGroupExpiration !== null && $closestUserGroupExpiration < time() ) {
-			LoggerFactory::getInstance( 'CentralAuth' )
-				->warning(
-					'Cached user {user} had a global group expiration in the past '
-						. '({unixTimestamp}), this should not be possible',
-					[
-						'user' => $this->getName(),
-						'unixTimestamp' => $closestUserGroupExpiration,
-					]
-				);
+			$this->logger->warning(
+				'Cached user {user} had a global group expiration in the past '
+					. '({unixTimestamp}), this should not be possible',
+				[
+					'user' => $this->getName(),
+					'unixTimestamp' => $closestUserGroupExpiration,
+				]
+			);
 
 			// load accurate data for this request from the database
 			$this->loadGroups( true );
@@ -926,11 +924,10 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		$ok = $dbw->affectedRows() === 1;
-		wfDebugLog(
-			'CentralAuth',
-			$ok ? 'registered global account \'{user}\'' :
-				'registration failed for global account \'{user}\'',
-			'all',
+		$this->logger->info(
+			$ok
+				? 'registered global account "{user}"'
+				: 'registration failed for global account "{user}"',
 			[ 'user' => $this->mName ]
 		);
 
@@ -1196,10 +1193,10 @@ class CentralAuthUser implements IDBAccessObject {
 				// If the password matches, it will be automigrated
 				// at next login. If no match, user will have to input
 				// the conflicting password or deal with the conflict.
-				wfDebugLog( 'CentralAuth', "unresolvable $localName" );
+				$this->logger->info( 'unresolvable {user}', [ 'user' => $localName ] );
 				continue;
 			}
-			wfDebugLog( 'CentralAuth', "$method $localName" );
+			$this->logger->info( '$method {user}', [ 'user' => $localName ] );
 			$attach[$wiki] = $method;
 		}
 
@@ -1220,7 +1217,6 @@ class CentralAuthUser implements IDBAccessObject {
 	public function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
 
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$home = false;
 		$attached = [];
 		$unattached = [];
@@ -1229,13 +1225,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$self = $this->localUserData( WikiMap::getCurrentWikiId() );
 		$selfPassword = $this->getPasswordFromString( $self['password'], $self['id'] );
 		if ( !$this->matchHashes( $passwords, $selfPassword ) ) {
-			$logger->info( 'dry run: failed self-password check' );
+			$this->logger->info( 'dry run: failed self-password check' );
 			return Status::newFatal( 'wrongpassword' );
 		}
 
 		$migrationSet = $this->queryUnattached();
 		if ( empty( $migrationSet ) ) {
-			$logger->info( 'dry run: no accounts to merge, failed migration' );
+			$this->logger->info( 'dry run: no accounts to merge, failed migration' );
 			return Status::newFatal( 'centralauth-merge-no-accounts' );
 		}
 		$home = $this->chooseHomeWiki( $migrationSet );
@@ -1244,12 +1240,12 @@ class CentralAuthUser implements IDBAccessObject {
 		// And we need to match the home wiki before proceeding...
 		$localPassword = $this->getPasswordFromString( $local['password'], $local['id'] );
 		if ( $this->matchHashes( $passwords, $localPassword ) ) {
-			$logger->info(
+			$this->logger->info(
 				'dry run: passed password match to home {home}',
 				[ 'home' => $home ]
 			);
 		} else {
-			$logger->info(
+			$this->logger->info(
 				'dry run: failed password match to home {home}',
 				[ 'home' => $home ]
 			);
@@ -1349,7 +1345,7 @@ class CentralAuthUser implements IDBAccessObject {
 	) {
 		$this->checkWriteMode();
 		$migrationSet = $this->queryUnattached();
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
+		$logger = $this->logger;
 		if ( empty( $migrationSet ) ) {
 			$logger->info( 'no accounts to merge, failed migration' );
 			return false;
@@ -1461,7 +1457,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function attemptPasswordMigration( $password, &$migrated = [], &$remaining = [] ) {
 		$rows = $this->queryUnattached();
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
+		$logger = $this->logger;
 
 		if ( count( $rows ) == 0 ) {
 			$logger->info(
@@ -1643,8 +1639,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminDelete( $reason, UserIdentity $deleter ) {
 		$this->checkWriteMode();
 
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
-		$logger->info(
+		$this->logger->info(
 			'Deleting global account for user \'{user}\'',
 			[ 'user' => $this->mName ]
 		);
@@ -1660,7 +1655,7 @@ class CentralAuthUser implements IDBAccessObject {
 			__METHOD__
 		);
 		foreach ( $localUserRes as $wiki ) {
-			$logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
+			$this->logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$localDB = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
 			$localDB->update(
 				'user',
@@ -2074,16 +2069,15 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->invalidateCache();
 
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( !$success ) {
-			$logger->info(
+			$this->logger->info(
 				'Race condition? Already attached {user}@{wiki}, just tried by \'{method}\'',
 				[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
 			);
 			return;
 		}
 
-		$logger->info(
+		$this->logger->info(
 			'Attaching local user {user}@{wiki} by \'{method}\'',
 			[ 'user' => $this->mName, 'wiki' => $wikiID, 'method' => $method ]
 		);
@@ -2096,7 +2090,7 @@ class CentralAuthUser implements IDBAccessObject {
 			foreach ( $wgCentralAuthRC as $rc ) {
 				$engine = RCFeed::factory( $rc );
 				if ( !( $engine instanceof FormattedRCFeed ) ) {
-					throw new \RuntimeException(
+					throw new RuntimeException(
 						'wgCentralAuthRC only supports feeds that use FormattedRCFeed, got '
 						. get_class( $engine ) . ' instead'
 					);
@@ -2134,10 +2128,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function canAuthenticate() {
 		if ( !$this->getId() ) {
-			wfDebugLog(
-				'CentralAuth',
+			$this->logger->info(
 				"authentication for '{user}' failed due to missing account",
-				'all',
 				[ 'user' => $this->mName ]
 			);
 			return "no user";
@@ -2175,9 +2167,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$status = $this->matchHash( $password, $this->getPasswordObject() );
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $status->isGood() ) {
-			$logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
+			$this->logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
 
 			$passwordFactory = new PasswordFactory();
 			$passwordFactory->init( RequestContext::getMain()->getConfig() );
@@ -2202,7 +2193,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			return "ok";
 		} else {
-			$logger->info( "authentication for '{user}' failed, bad pass", [ 'user' => $this->mName ] );
+			$this->logger->info( "authentication for '{user}' failed, bad pass", [ 'user' => $this->mName ] );
 			return "bad password";
 		}
 	}
@@ -2325,10 +2316,9 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		$wikis = [];
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		foreach ( $result as $wiki ) {
 			if ( !WikiMap::getWiki( $wiki ) ) {
-				$logger->warning( __METHOD__ . ': invalid wiki in localnames: ' . $wiki );
+				$this->logger->warning( __METHOD__ . ': invalid wiki in localnames: ' . $wiki );
 				continue;
 			}
 
@@ -2446,7 +2436,7 @@ class CentralAuthUser implements IDBAccessObject {
 			return;
 		}
 
-		wfDebugLog( 'CentralAuthVerbose',
+		$this->logger->debug(
 			"Loading attached wiki list for global user {$this->mName} from DB"
 		);
 
@@ -2590,12 +2580,11 @@ class CentralAuthUser implements IDBAccessObject {
 			__METHOD__ );
 
 		$wikis = [];
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		foreach ( $result as $row ) {
 			/** @var stdClass $row */
 
 			if ( !WikiMap::getWiki( $row->lu_wiki ) ) {
-				$logger->warning( __METHOD__ . ': invalid wiki in localuser: ' . $row->lu_wiki );
+				$this->logger->warning( __METHOD__ . ': invalid wiki in localuser: ' . $row->lu_wiki );
 				continue;
 			}
 
@@ -2673,7 +2662,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$ex = new LocalUserNotFoundException(
 				"Could not find local user data for {$this->mName}@{$wikiID}"
 			);
-			LoggerFactory::getInstance( 'CentralAuth' )->warning(
+			$this->logger->warning(
 				'Could not find local user data for {username}@{wikiId}',
 				[
 					'username' => $this->mName,
@@ -2845,7 +2834,6 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->mPassword = $hash;
 		$this->mSalt = $salt;
 
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $this->getId() ) {
 			$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
 			$dbw->update(
@@ -2858,9 +2846,10 @@ class CentralAuthUser implements IDBAccessObject {
 				__METHOD__
 			);
 
-			$logger->info( "Set global password for '$this->mName'" );
+			$this->logger->info( "Set global password for {user}", [ 'user' => $this->mName ] );
 		} else {
-			$logger->info( __METHOD__ . " was called for a global user that doesn't exist ('$this->mName')." );
+			$this->logger->warning( "Tried changing password for user that doesn't exist {user}",
+				[ 'user' => $this->mName ] );
 		}
 
 		if ( $resetAuthToken ) {
@@ -2982,7 +2971,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->invalidateCache();
 			// User was changed in the meantime or loaded with stale data
 			$from = ( $this->mFromPrimary ) ? 'primary' : 'replica';
-			LoggerFactory::getInstance( 'CentralAuth' )->warning(
+			$this->logger->warning(
 				"CAS update failed on gu_cas_token for user ID '{globalId}' " .
 				"(read from {from}); the version of the user to be saved is older than " .
 				"the current version.",
@@ -3097,15 +3086,14 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	public function invalidateCache() {
-		$logger = LoggerFactory::getInstance( 'CentralAuthVerbose' );
 		if ( !$this->mDelayInvalidation ) {
-			$logger->info( "Updating cache for global user {$this->mName}" );
+			$this->logger->debug( "Updating cache for global user {$this->mName}" );
 			// Purge the cache
 			$this->quickInvalidateCache();
 			// Reload the state
 			$this->loadStateNoCache();
 		} else {
-			$logger->info( "Deferring cache invalidation because we're in a transaction" );
+			$this->logger->debug( "Deferring cache invalidation because we're in a transaction" );
 		}
 	}
 
@@ -3113,7 +3101,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * For when speed is of the essence (e.g. when batch-purging users after rights changes)
 	 */
 	public function quickInvalidateCache() {
-		LoggerFactory::getInstance( 'CentralAuthVerbose' )->info(
+		$this->logger->debug(
 			"Quick cache invalidation for global user {$this->mName}"
 		);
 
@@ -3132,9 +3120,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Intended to be used for things like migration.
 	 */
 	public function endTransaction() {
-		LoggerFactory::getInstance( 'CentralAuthVerbose' )->info(
-			"Finishing CentralAuthUser cache-invalidating transaction"
-		);
+		$this->logger->debug( 'End CentralAuthUser cache-invalidating transaction' );
 		$this->mDelayInvalidation = false;
 		$this->invalidateCache();
 	}
@@ -3146,9 +3132,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Intended to be used for things like migration.
 	 */
 	public function startTransaction() {
-		LoggerFactory::getInstance( 'CentralAuthVerbose' )->info(
-			"Beginning CentralAuthUser cache-invalidating transaction"
-		);
+		$this->logger->debug( 'Start CentralAuthUser cache-invalidating transaction' );
 		// Delay cache invalidation
 		$this->mDelayInvalidation = 1;
 	}

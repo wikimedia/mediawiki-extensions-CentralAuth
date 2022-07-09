@@ -50,12 +50,12 @@ abstract class LocalRenameJob extends Job {
 
 		if ( empty( $this->params['ignorestatus'] ) ) {
 			if ( $status !== 'queued' && $status !== 'failed' ) {
-				LoggerFactory::getInstance( 'CentralAuthRename' )
-					->info( 'skipping duplicate rename from {user}', [
-						'user' => $this->params['from'],
-						'to' => $this->params['to'],
-						'status' => $status,
-					] );
+				$logger = LoggerFactory::getInstance( 'CentralAuth' );
+				$logger->info( 'Skipping duplicate rename from {user}', [
+					'user' => $this->params['from'],
+					'to' => $this->params['to'],
+					'status' => $status,
+				] );
 				return true;
 			}
 		}

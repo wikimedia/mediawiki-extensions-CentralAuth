@@ -11,6 +11,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MWCryptRand;
@@ -35,6 +36,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
 
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
+
 	/**
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param CentralAuthUtilityService $utilityService
@@ -49,6 +53,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->utilityService = $utilityService;
 		$this->sessionManager = $sessionManager;
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	public function execute( $subpage ) {
@@ -355,10 +360,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$attempt['returnToAnchor'] ?? ''
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
+
 		if ( $this->getConfig()->get( 'CentralAuthCheckSULMigration' ) &&
 			$request->getSessionData( 'CentralAuthForcedRename' ) === true
 		) {
-			wfDebugLog( 'CentralAuth',
+			$this->logger->info(
 				"CentralAuthMigration: Login completed for renamed user '{$user->getName()}'"
 			);
 		}

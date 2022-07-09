@@ -5,6 +5,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IDatabase;
@@ -26,16 +27,20 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class ForceRenameUsers extends Maintenance {
 
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( 'Forcibly renames and migrates unattached accounts to global ones' );
 		$this->addOption( 'reason', 'Reason to use for log summaries', true, true );
 		$this->setBatchSize( 10 );
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	private function log( $msg ) {
-		wfDebugLog( 'CentralAuthSULRename', $msg );
+		$this->logger->debug( "ForceRenameUsers: $msg" );
 		$this->output( $msg . "\n" );
 	}
 

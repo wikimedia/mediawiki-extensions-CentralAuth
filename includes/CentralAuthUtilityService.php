@@ -55,6 +55,9 @@ class CentralAuthUtilityService {
 	/** @var JobQueueGroupFactory */
 	private $jobQueueGroupFactory;
 
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
+
 	public function __construct(
 		Config $config,
 		AuthManager $authManager,
@@ -65,6 +68,7 @@ class CentralAuthUtilityService {
 		$this->authManager = $authManager;
 		$this->titleFactory = $titleFactory;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	/**
@@ -94,13 +98,12 @@ class CentralAuthUtilityService {
 			$timeout
 		) )->invoke();
 
-		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( $result === WaitConditionLoop::CONDITION_REACHED ) {
-			$logger->info( "Expected key {key} found.", [ 'key' => $key ] );
+			$this->logger->info( "Expected key {key} found.", [ 'key' => $key ] );
 		} elseif ( $result === WaitConditionLoop::CONDITION_TIMED_OUT ) {
-			$logger->error( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
+			$this->logger->error( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
 		} else {
-			$logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
+			$this->logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
 		}
 
 		return $value;

@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
 use Job;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use RequestContext;
 use Title;
@@ -85,10 +86,11 @@ class LocalPageMoveJob extends Job {
 
 	protected function movePage( Title $oldPage, Title $newPage ) {
 		$mp = MediaWikiServices::getInstance()->getMovePageFactory()->newMovePage( $oldPage, $newPage );
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 
 		$valid = $mp->isValidMove();
 		if ( !$valid->isOK() ) {
-			wfDebugLog( 'CentralAuthRename', "Invalid page move: {$oldPage} -> {$newPage}" );
+			$logger->info( "Invalid page move: {$oldPage} -> {$newPage}" );
 			return;
 		}
 
@@ -104,7 +106,7 @@ class LocalPageMoveJob extends Job {
 			self::$moveInProgress = false;
 		}
 		if ( isset( $status ) && !$status->isOK() ) {
-			wfDebugLog( 'CentralAuthRename', "Page move failed: {$oldPage} -> {$newPage}" );
+			$logger->info( "Page move failed: {$oldPage} -> {$newPage}" );
 		}
 	}
 }

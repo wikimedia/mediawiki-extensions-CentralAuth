@@ -81,7 +81,7 @@ return [
 	'CentralAuth.GlobalRenameDenylist' => static function ( MediaWikiServices $services ): GlobalRenameDenylist {
 		$config = $services->getMainConfig();
 		return new GlobalRenameDenylist(
-			LoggerFactory::getInstance( 'CentralAuthRename' ),
+			LoggerFactory::getInstance( 'CentralAuth' ),
 			$services->getHttpRequestFactory(),
 			$services->getWikiPageFactory(),
 			$config->get( 'GlobalRenameDenylist' ),

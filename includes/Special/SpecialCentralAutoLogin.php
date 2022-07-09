@@ -77,7 +77,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->userOptionsManager = $userOptionsManager;
 		$this->readOnlyMode = $readOnlyMode;
 		$this->sessionManager = $sessionManager;
-		$this->logger = LoggerFactory::getInstance( 'CentralAutoLogin' );
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	/**
@@ -128,7 +128,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			in_array( $par, [ 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
 			'createSession', 'validateSession', 'setCookies' ], true )
 		) {
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->debug(
+			LoggerFactory::getInstance( 'authevents' )->debug(
 				'Autologin ' . $par, [
 					'event' => 'autologin',
 					'eventType' => $par,
@@ -549,7 +549,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			ScopedCallback::consume( $delay );
 
-			\MediaWiki\Logger\LoggerFactory::getInstance( 'authevents' )->info(
+			LoggerFactory::getInstance( 'authevents' )->info(
 				'Autologin success',
 				[
 					'event' => 'autologin',

@@ -22,6 +22,7 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use Job;
+use MediaWiki\Logger\LoggerFactory;
 use Title;
 
 /**
@@ -50,18 +51,17 @@ class CentralAuthSuppressUserJob extends Job {
 		$suppress = $this->params['suppress'];
 		$reason = $this->params['reason'];
 		$user = CentralAuthUser::getPrimaryInstanceByName( $username );
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		if ( !$user->exists() ) {
-			wfDebugLog(
-				'suppressjob', "Requested to suppress non-existent user {$username} by {$by}."
-			);
+			$logger->debug( "Requested to suppress non-existent user {$username} by {$by}" );
 		}
 
 		foreach ( $wikis as $wiki ) {
 			$user->doLocalSuppression( $suppress, $wiki, $by, $reason );
-			wfDebugLog(
-				'suppressjob',
-				( $suppress ? 'S' : 'Uns' ) .
-					"uppressed {$username} at {$wiki} by {$by} via job queue."
+			$logger->debug(
+				$suppress
+					? "Suppressed {$username} at {$wiki} by {$by} via job queue"
+					: "Unsuppressed {$username} at {$wiki} by {$by} via job queue"
 			);
 		}
 		return true;
