@@ -64,19 +64,17 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 
 		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
 
-		$fields = [ 'ggp_group' ];
+		$qb = $dbr->newSelectQueryBuilder()
+			->select( 'ggp_group' )
+			->distinct()
+			->from( 'global_group_permissions' )
+			->caller( __METHOD__ );
 
 		if ( isset( $prop['rights'] ) ) {
-			$fields[] = 'ggp_permission';
+			$qb->select( 'ggp_permission' );
 		}
 
-		$result = $dbr->select(
-			'global_group_permissions',
-			$fields,
-			[],
-			__METHOD__,
-			[ 'DISTINCT' ]
-		);
+		$result = $qb->fetchResultSet();
 
 		$globalGroups = [];
 
