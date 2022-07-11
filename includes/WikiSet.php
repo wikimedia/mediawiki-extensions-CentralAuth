@@ -152,7 +152,12 @@ class WikiSet {
 				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_name' => $name ], $fname );
+				$row = $dbr->newSelectQueryBuilder()
+					->select( '*' )
+					->from( 'wikiset' )
+					->where( [ 'ws_name' => $name ] )
+					->caller( $fname )
+					->fetchRow();
 
 				$wikiSet = self::newFromRow( $row );
 				if ( $wikiSet ) {
@@ -192,7 +197,12 @@ class WikiSet {
 				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
-				$row = $dbr->selectRow( 'wikiset', '*', [ 'ws_id' => $id ], $fname );
+				$row = $dbr->newSelectQueryBuilder()
+					->select( '*' )
+					->from( 'wikiset' )
+					->where( [ 'ws_id' => $id ] )
+					->caller( $fname )
+					->fetchRow();
 
 				$wikiSet = self::newFromRow( $row );
 				if ( $wikiSet ) {
@@ -327,12 +337,12 @@ class WikiSet {
 	 */
 	public function getRestrictedGroups() {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		return $dbr->selectFieldValues(
-			'global_group_restrictions',
-			'ggr_group',
-			[ 'ggr_set' => $this->mId ],
-			__METHOD__
-		);
+		return $dbr->newSelectQueryBuilder()
+			->select( 'ggr_group' )
+			->from( 'global_group_restrictions' )
+			->where( [ 'ggr_set' => $this->mId ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
 	/**
@@ -343,23 +353,27 @@ class WikiSet {
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		$where = [];
-		$options = [];
+
+		$qb = $dbr->newSelectQueryBuilder()
+			->select( '*' )
+			->from( 'wikiset' )
+			->caller( __METHOD__ );
 
 		if ( $from != null ) {
-			$where[] = 'ws_name >= ' . $dbr->addQuotes( $from );
+			$qb->where( 'ws_name >= ' . $dbr->addQuotes( $from ) );
 			$orderByName = true;
 		}
 
 		if ( $limit ) {
-			$options['LIMIT'] = intval( $limit );
+			$qb->limit( intval( $limit ) );
 		}
 
 		if ( $orderByName ) {
-			$options['ORDER BY'] = 'ws_name';
+			$qb->orderBy( 'ws_name' );
 		}
 
-		$res = $dbr->select( 'wikiset', '*', $where, __METHOD__, $options );
+		$res = $qb->fetchResultSet();
+
 		$result = [];
 		foreach ( $res as $row ) {
 			$result[] = self::newFromRow( $row );
@@ -373,12 +387,12 @@ class WikiSet {
 	 */
 	public static function getWikiSetForGroup( $group ) {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		return (int)$dbr->selectField(
-			'global_group_restrictions',
-			'ggr_set',
-			[ 'ggr_group' => $group ],
-			__METHOD__
-		);
+		return (int)$dbr->newSelectQueryBuilder()
+			->select( 'ggr_set' )
+			->from( 'global_group_restrictions' )
+			->where( [ 'ggr_group' => $group ] )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 
 }
