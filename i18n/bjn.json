@@ -6,6 +6,7 @@
 			"Riemogerz"
 		]
 	},
+	"action-centralauth-lock": "kunci atawa buka kunci akun global",
 	"centralauth-admin-already-unmerged": "Lalui $1, sudah dilapas gabungannya",
 	"centralauth-admin-bad-input": "Pamilihan gabungan kada sah",
 	"centralauth-admin-blocked2-indef": "Diblukir salawasan.",
@@ -91,7 +92,7 @@
 	"centralauth-rename-movelog": "Sacara utumatis mamindahakan laman wayah mangganti ngaran pamakai \"[[Special:CentralAuth/$1|$1]]\" manjadi \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-token-mismatch": "Ampun, kami kada kawa prusis pormulir Pian karana sesi data hilang.",
 	"mergeaccount": "Satatus panggabungan babuat log",
-	"right-centralauth-lock": "Sunduk atawa sungkupakan akun global",
+	"right-centralauth-lock": "Kunci atawa buka kunci akun global",
 	"right-centralauth-merge": "Gabungakan akun mereka",
 	"right-centralauth-oversight": "Tikin akun global",
 	"right-centralauth-unmerge": "Kada usah gabungi akun global",
