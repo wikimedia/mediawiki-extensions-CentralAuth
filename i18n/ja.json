@@ -37,7 +37,8 @@
 			"カッパ鳥",
 			"朝彦",
 			"神樂坂秀吉",
-			"青子守歌"
+			"青子守歌",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
@@ -484,6 +485,7 @@
 	"logentry-gblrename-rename": "$1 が $4 から $5 へグローバルに{{GENDER:$2|利用者名変更しました}}",
 	"mergeaccount": "統一ログイン状態",
 	"multilock": "複数のグローバルアカウントのロック",
+	"right-centralauth-createlocal": "グローバルアカウントに紐付けられたローカルアカウントを強制的に作成する",
 	"right-centralauth-lock": "グローバルアカウントをロックまたはロック解除",
 	"right-centralauth-merge": "自身のアカウントを統合",
 	"right-centralauth-suppress": "グローバルアカウントを秘匿または非表示",
