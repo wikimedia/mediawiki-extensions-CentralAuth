@@ -91,6 +91,8 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Panggabungan babarapa akun]] gasan Sistem Pamakai Tunggal",
 	"centralauth-rename-movelog": "Sacara utumatis mamindahakan laman wayah mangganti ngaran pamakai \"[[Special:CentralAuth/$1|$1]]\" manjadi \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-token-mismatch": "Ampun, kami kada kawa prusis pormulir Pian karana sesi data hilang.",
+	"log-description-gblrename": "Catatan ini mancatat paubahan ngaran pamakai global.",
+	"log-name-gblrename": "Log paubahan ngaran global",
 	"mergeaccount": "Satatus panggabungan babuat log",
 	"right-centralauth-lock": "Kunci atawa buka kunci akun global",
 	"right-centralauth-merge": "Gabungakan akun mereka",
