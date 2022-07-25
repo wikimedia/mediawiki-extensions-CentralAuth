@@ -78,7 +78,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Indicar si iste usator non es celate, es celate del lista global de usatores, o es supprimite.",
 	"apihelp-setglobalaccountstatus-param-locked": "Indicar si iste usator es blocate o non.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo pro cambiar le stato del usator.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Summa MD5 facultative del <username>:<hidden>:<locked> actualmente expectate, pro deteger conflictos de modification. Mitte <locked> a 1 pro blocar, 0 pro disblocar.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Summa MD5 facultative del <userid>:<username>:<hidden>:<locked> actualmente expectate, pro deteger conflictos de modification. Mitte <locked> a 1 pro blocar, 0 pro disblocar.",
 	"apihelp-setglobalaccountstatus-param-user": "Usator de que cambiar le stato.",
 	"apihelp-setglobalaccountstatus-summary": "Definir le stato de un usator global."
 }

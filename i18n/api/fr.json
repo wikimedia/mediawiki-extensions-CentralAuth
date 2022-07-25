@@ -84,7 +84,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Modifier l’état de cet utilisateur qui indique s’il est caché ou pas dans les listes des utilisateurs globaux ou s’il est masqué.",
 	"apihelp-setglobalaccountstatus-param-locked": "Modifier l’état de cet utilisateur qui indique s’il est verrouillé ou pas.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motif pour modifier l’état de l’utilisateur.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 facultatif de l’actuel « <username>:<hidden>:<locked> » attendu, pour détecter les conflits de modification. Mettre « <locked> » à 1 pour verrouillé, 0 pour déverrouillé.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Hachage MD5 facultatif de l’actuel « <userid>:<username>:<hidden>:<locked> » attendu, pour détecter les conflits de modification. Mettre « <locked> » à 1 pour verrouillé, ou 0 pour déverrouillé.",
 	"apihelp-setglobalaccountstatus-param-user": "Utilisateur dont l’état doit être modifié.",
 	"apihelp-setglobalaccountstatus-summary": "Définir l’état d’un utilisateur global."
 }
