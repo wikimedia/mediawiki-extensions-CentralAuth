@@ -186,7 +186,7 @@
 	"centralauth-editgroup-member": "نام محلی اعضای گروه:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|ویرایش]])",
 	"centralauth-editgroup-members": "فهرست اعضا:",
-	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|فهرست کاربران دارای امتیازات $2]]",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|فهرست کاربران با اختیارات $2]]",
 	"centralauth-editgroup-name": "نام گروه:",
 	"centralauth-editgroup-nonexistent": "گروه سراسری «$1» هنوز وجود ندارد.",
 	"centralauth-editgroup-noset": "(هیچ)",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Chrumps",
 			"Woytecr",
-			"Msz2001"
+			"Msz2001",
+			"Rail"
 		]
 	},
 	"apierror-centralauth-badsession": "centralauthtoken można otrzymać wyłącznie w czasie sesji CentralAuth.",
@@ -63,5 +64,7 @@
 	"apihelp-query+globaluserinfo-example-2": "Pobierz informacje o globalnym koncie [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-id": "Globalny identyfikator konta, dla którego pobrać informacje. Jeśli nie podano ani <var>$1user</var> ani <var>$1id</var>, uwzględniony zostanie bieżący użytkownik.",
 	"apihelp-query+globaluserinfo-param-prop": "Które właściwości zwrócić:\n;groups:Zwraca listę globalnych grup, do których należy użytkownik.\n;rights:Zwraca listę globalnych uprawnień, które użytkownik posiada.\n;merged:Zwraca listę połączonych kont.\n;unattached:Zwraca listę niepołączonych kont.\n;editcount:Zwraca globalną liczbę edycji użytkownika.",
-	"apihelp-setglobalaccountstatus-param-reason": "Powód zmiany statusu użytkownika."
+	"apihelp-setglobalaccountstatus-param-reason": "Powód zmiany statusu użytkownika.",
+	"apihelp-setglobalaccountstatus-param-user": "Użytkownik, którego status chcesz zmienić.",
+	"apihelp-setglobalaccountstatus-summary": "Ustaw globalny status użytkownika."
 }
