@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Diskdance",
+			"GuoPC",
 			"Liuxinyu970226",
 			"Shizhao",
 			"Tranve"
@@ -81,7 +82,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "更改此用户是否被隐藏、从全域用户列表隐藏或屏蔽的状态。",
 	"apihelp-setglobalaccountstatus-param-locked": "更改此用户的锁定与否。",
 	"apihelp-setglobalaccountstatus-param-reason": "更改用户状态的原因。",
-	"apihelp-setglobalaccountstatus-param-statecheck": "预期当前的<username>:<hidden>:<locked>的可选MD5，以检测编辑冲突。如果封禁，设置<locked>为1，未封禁则设置为0。",
+	"apihelp-setglobalaccountstatus-param-statecheck": "预期当前的<userid>:<username>:<hidden>:<locked>的可选MD5，以检测编辑冲突。如果封禁，设置<locked>为1，未封禁则设置为0。",
 	"apihelp-setglobalaccountstatus-param-user": "要更改状态的用户。",
 	"apihelp-setglobalaccountstatus-summary": "设置全域用户状态。"
 }
