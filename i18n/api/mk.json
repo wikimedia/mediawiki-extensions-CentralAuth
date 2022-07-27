@@ -79,7 +79,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Дали корисников да биде скриен, скриен од списокот на глобални корисници или да биде притаен.",
 	"apihelp-setglobalaccountstatus-param-locked": "Дали корисников да биде заклучен или не.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промената на статусот на корисникот.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <username>:<hidden>:<locked> за утврдување на спротиставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <userid>:<username>:<hidden>:<locked> за утврдување на спротиставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
 	"apihelp-setglobalaccountstatus-param-user": "На кој корисник да му се смени статусот.",
 	"apihelp-setglobalaccountstatus-summary": "Задај глобален кориснички статус"
 }
