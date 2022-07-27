@@ -4,7 +4,8 @@
 			"Amire80",
 			"Lam-ang",
 			"Macofe",
-			"McDutchie"
+			"McDutchie",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Dagiti global a grupo nga ayan ti agar-aramat",
@@ -73,7 +74,7 @@
 	"centralauth-admin-not-authorized": "Awan dagiti pammalubosmo nga agarmid iti daytoy a tignay",
 	"centralauth-admin-permission": "Dagiti laeng mayordormo ti makaiyakar kadagiti pakabilangan ti sabali a tattao para kaniada.",
 	"centralauth-admin-reason": "Rason:",
-	"centralauth-admin-reason-other": "Sabali/maipatinayon a rason:",
+	"centralauth-admin-reason-other": "Dadduma/maipatinayon a rason:",
 	"centralauth-admin-reason-other-select": "Sabali a rason:",
 	"centralauth-admin-rename-in-progress": "Daytoy a pakabilangan ket agdama a managnaganan manen. Mabalinmo a [[Special:GlobalRenameProgress/$1|kitaen ti progreso]] iti pananginagan manen. Ti listaan ti global a pananginagan manen para iti daytoy nga agar-aramat ket naited dita baba.",
 	"centralauth-admin-setstatus-success": "Nagballigika a nangsukat ti kasasaad iti daytoy a global a pakabilangan.",

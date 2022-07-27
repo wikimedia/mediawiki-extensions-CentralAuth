@@ -10,7 +10,9 @@
 			"बिप्लब आनन्द",
 			"राम प्रसाद जोशी",
 			"सरोज कुमार ढकाल",
-			"हिमाल सुबेदी"
+			"हिमाल सुबेदी",
+			"Bada Kaji",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "विश्वव्यापी खाता प्रवन्धक",
@@ -173,7 +175,7 @@
 	"globalrenamequeue-column-rq-status": "स्थिति",
 	"globalrenamequeue-form-status": "स्थिति:",
 	"globalrenamequeue-form-status-all": "सबै",
-	"globalrenamequeue-request-cancel-text": "रद्द गर्ने",
+	"globalrenamequeue-request-cancel-text": "रद्द गर्नुहोस्",
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "अस्वीकार",
 	"globalusers": "विश्वव्यापी खाता सूची",

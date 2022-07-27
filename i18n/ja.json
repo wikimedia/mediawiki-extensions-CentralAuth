@@ -378,7 +378,7 @@
 	"centralauth-rename-table-domain": "ローカルウィキ",
 	"centralauth-rename-table-status": "状態",
 	"centralauth-rename-table-status-done": "完了",
-	"centralauth-rename-table-status-failed": "失敗しました。",
+	"centralauth-rename-table-status-failed": "失敗",
 	"centralauth-rename-table-status-inprogress": "処理中",
 	"centralauth-rename-table-status-queued": "待機中",
 	"centralauth-rename-titleblacklist-match": "新しいユーザ名は次のTitleBlacklistエントリと一致します: $1",
