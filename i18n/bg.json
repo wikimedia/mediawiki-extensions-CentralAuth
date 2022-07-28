@@ -76,6 +76,7 @@
 	"centralauth-admin-manage": "Управление на потребителските данни",
 	"centralauth-admin-merge": "Сливане на избраните",
 	"centralauth-admin-multi-bot": "Последни промени",
+	"centralauth-admin-multi-botcheck": "Маркиране на записи в [[Special:RecentChanges|{{int:recentchanges}}]] като записи на бот.",
 	"centralauth-admin-multi-intro": "Промяна на повече глобални сметки наведнъж",
 	"centralauth-admin-multi-username": "Въведете едно или повече потребителски имена, всяко на отделен ред",
 	"centralauth-admin-no": "не",
