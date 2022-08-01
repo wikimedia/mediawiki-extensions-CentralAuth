@@ -176,8 +176,7 @@ class CentralAuthSessionManager {
 			$sessionStore->set(
 				$key,
 				$data,
-				$sessionStore::TTL_DAY,
-				$isDirty ? $sessionStore::WRITE_SYNC : 0
+				$sessionStore::TTL_DAY
 			);
 			$real = microtime( true ) - $stime;
 			$this->statsdDataFactory->timing( 'centralauth.session.write', $real );

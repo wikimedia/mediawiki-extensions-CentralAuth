@@ -167,7 +167,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		$tokenStore = $this->sessionManager->getTokenStore();
 		$key = $this->sessionManager->memcKey( 'api-token', $token );
 
-		if ( !$tokenStore->changeTTL( $key, time() - 3600, BagOStuff::WRITE_SYNC ) ) {
+		if ( !$tokenStore->changeTTL( $key, time() - 3600 ) ) {
 			$this->logger->error( 'Raced out trying to mark the token as expired' );
 			return false;
 		}
@@ -216,7 +216,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		// permanently block the user.
 		$sessionStore = $this->sessionManager->getSessionStore();
 		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
-		$sessionStore->set( $key, true, ExpirationAwareness::TTL_DAY, BagOStuff::WRITE_SYNC );
+		$sessionStore->set( $key, true, ExpirationAwareness::TTL_DAY );
 	}
 
 }
