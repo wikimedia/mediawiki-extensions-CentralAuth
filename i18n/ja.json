@@ -37,7 +37,8 @@
 			"MathXplore",
 			"RYOUMA1117",
 			"Rrock9312",
-			"カッパ鳥"
+			"カッパ鳥",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
@@ -374,7 +375,7 @@
 	"centralauth-rename-table-domain": "ローカルウィキ",
 	"centralauth-rename-table-status": "状態",
 	"centralauth-rename-table-status-done": "完了",
-	"centralauth-rename-table-status-failed": "失敗しました。",
+	"centralauth-rename-table-status-failed": "失敗",
 	"centralauth-rename-table-status-inprogress": "処理中",
 	"centralauth-rename-table-status-queued": "待機中",
 	"centralauth-rename-titleblacklist-match": "新しいユーザ名は次のTitleBlacklistエントリと一致します: $1",
