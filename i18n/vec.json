@@ -4,7 +4,8 @@
 			"Candalua",
 			"Conky77",
 			"Fierodelveneto",
-			"GatoSelvadego"
+			"GatoSelvadego",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupi globałi a cui apartien l'utente",
@@ -278,6 +279,7 @@
 	"globalgroupmembership": "Apartenensa ai grupi globali",
 	"globalgrouppermissions": "Gestion del grupo global",
 	"globalrenameprogress": "Progreso renòmena globałe",
+	"globalrenamerequest": "Dimanda de canbiarghe nome a l'utensa globale",
 	"globalusers": "Lista utenti globali",
 	"mergeaccount": "Processo de unificazion de le utenze - status",
 	"multilock": "Bloca più utense globali",
