@@ -55,7 +55,7 @@
 	"centralauth-admin-action-lock-nochange": "Ändra inte lås",
 	"centralauth-admin-action-lock-unlock": "Lås upp markerade konton",
 	"centralauth-admin-already-unmerged": "Hoppar över $1, redan separerad",
-	"centralauth-admin-bad-input": "Ogiltigt val för sammanslagning",
+	"centralauth-admin-bad-input": "Ogiltigt val för sammanslagning.",
 	"centralauth-admin-blocked-reason": "Orsak: $1",
 	"centralauth-admin-blocked2": "Blockerad, upphör den $2, kl. $3.",
 	"centralauth-admin-blocked2-indef": "Blockerade på obestämd tid.",
