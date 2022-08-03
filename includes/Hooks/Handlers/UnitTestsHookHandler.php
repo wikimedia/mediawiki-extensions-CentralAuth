@@ -33,6 +33,7 @@ class UnitTestsHookHandler implements
 		'global_edit_count',
 		'global_group_permissions',
 		'global_group_restrictions',
+		'global_user_autocreate_serial',
 		'global_user_groups',
 		'globalnames',
 		'globaluser',
