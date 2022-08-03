@@ -6,7 +6,8 @@
 			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"McDutchie",
-			"TheEduGobi"
+			"TheEduGobi",
+			"YuriNikolai"
 		]
 	},
 	"apierror-centralauth-badsession": "Só pode obter um token central ao usar as sessões do CentralAuth.",
@@ -83,7 +84,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Alterar se esse usuário não está oculto, oculto da lista global de usuários ou suprimido.",
 	"apihelp-setglobalaccountstatus-param-locked": "Alterar se este usuário está bloqueado ou não.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo para alterar o status do usuário.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do atual <username>:<hidden>:<locked>, para detectar conflitos de edição. Definir <locked> para 1 para bloqueado, 0 para desbloqueado.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do atual <userid>:<hidden>:<locked>, para detectar conflitos de edição. Definir <locked> para 1 para bloqueado, 0 para desbloqueado.",
 	"apihelp-setglobalaccountstatus-param-user": "Usuário para o qual alterar status.",
 	"apihelp-setglobalaccountstatus-summary": "Definir o status de um usuário global."
 }
