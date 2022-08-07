@@ -127,10 +127,13 @@ class SpecialCentralAuth extends SpecialPage {
 			'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions()
 		);
 
-		$this->mUserName =
-			trim(
-				str_replace( '_', ' ',
-					$this->getRequest()->getText( 'target', $subpage ) ) );
+		$this->mUserName = trim(
+			str_replace(
+				'_',
+				' ',
+				$this->getRequest()->getText( 'target', $subpage ?? '' )
+			)
+		);
 
 		$this->mUserName = $this->getContentLanguage()->ucfirst( $this->mUserName );
 
