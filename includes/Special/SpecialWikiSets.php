@@ -8,6 +8,7 @@ use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use PermissionsError;
 use SpecialPage;
 use Title;
 use Xml;
@@ -41,6 +42,10 @@ class SpecialWikiSets extends SpecialPage {
 		return $this->msg( 'centralauth-editset' )->text();
 	}
 
+	/**
+	 * @param string|null $subpage
+	 * @return void
+	 */
 	public function execute( $subpage ) {
 		$this->mCanEdit = $this->getContext()->getAuthority()->isAllowed( 'globalgrouppermissions' );
 		$req = $this->getRequest();
@@ -49,48 +54,58 @@ class SpecialWikiSets extends SpecialPage {
 
 		$this->setHeaders();
 
-		if ( strpos( $subpage, 'delete/' ) === 0 && $this->mCanEdit ) {
-			$subpage = substr( $subpage, 7 );	// Remove delete/ part
+		if ( $subpage === null ) {
+			$this->buildMainView();
+			return;
+		}
+
+		if ( str_starts_with( $subpage, 'delete/' ) ) {
+			if ( !$this->mCanEdit ) {
+				$this->showNoPermissionsView();
+			}
+
+			$subpage = substr( $subpage, 7 ); // Remove delete/ part
+
 			if ( is_numeric( $subpage ) ) {
 				if ( $tokenOk ) {
 					$this->doDelete( $subpage );
-				} else {
-					$this->buildDeleteView( $subpage );
-				}
-			} else {
-				$this->buildMainView();
-			}
-		} else {
-			$newPage = ( $subpage === '0' && $this->mCanEdit );
-			if ( $subpage ) {
-				$set = is_numeric( $subpage )
-					? WikiSet::newFromId( $subpage )
-					: WikiSet::newFromName( $subpage );
-				if ( $set ) {
-					$subpage = (string)$set->getID();
-				} else {
-					$this->getOutput()->setPageTitle( $this->msg( 'error' ) );
-					$error = $this->msg( 'centralauth-editset-notfound', $subpage )->escaped();
-					$this->buildMainView( Html::errorBox( $error ) );
 					return;
 				}
-			}
 
-			if ( ( $subpage || $newPage ) && $this->mCanEdit && $tokenOk ) {
-				// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
-				$this->doSubmit( $subpage );
-			} elseif ( ( $subpage || $newPage ) && is_numeric( $subpage ) ) {
-				$this->buildSetView( $subpage );
-			} else {
-				$this->buildMainView();
+				$this->buildDeleteView( $subpage );
+				return;
 			}
 		}
+
+		$set = null;
+		if ( $subpage !== '0' ) {
+			$set = is_numeric( $subpage ) ? WikiSet::newFromId( $subpage ) : WikiSet::newFromName( $subpage );
+			if ( !$set ) {
+				$this->getOutput()->setPageTitle( $this->msg( 'error' ) );
+				$error = $this->msg( 'centralauth-editset-notfound', $subpage )->escaped();
+				$this->buildMainView( Html::errorBox( $error ) );
+				return;
+			}
+		} elseif ( !$this->mCanEdit ) {
+			$this->showNoPermissionsView();
+		}
+
+		if ( $tokenOk ) {
+			if ( !$this->mCanEdit ) {
+				$this->showNoPermissionsView();
+			}
+
+			$this->doSubmit( $set );
+			return;
+		}
+
+		$this->buildSetView( $set );
 	}
 
 	/**
-	 * @param string $msg Output directly as HTML. Caller must escape.
+	 * @param string|null $msg Output directly as HTML. Caller must escape.
 	 */
-	private function buildMainView( $msg = '' ) {
+	private function buildMainView( string $msg = null ) {
 		// Give grep a chance to find the usages: centralauth-editset-legend-rw,
 		// centralauth-editset-legend-ro
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';
@@ -129,7 +144,7 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param string $subpage integer ID of WikiSet
+	 * @param WikiSet|null $set wiki set to operate on
 	 * @param bool|string $error False or raw html to output as error
 	 * @param string|null $name (Optional) Name of WikiSet
 	 * @param string|null $type WikiSet::OPTIN or WikiSet::OPTOUT
@@ -137,11 +152,9 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string|null $reason
 	 */
 	private function buildSetView(
-		$subpage, $error = false, $name = null, $type = null, $wikis = null, $reason = null
+		?WikiSet $set, $error = false, $name = null, $type = null, $wikis = null, $reason = null
 	) {
 		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editset-subtitle' )->parse() );
-
-		$set = ( $subpage || $subpage === '0' ) ? WikiSet::newFromID( $subpage ) : null;
 
 		if ( !$name ) {
 			$name = $set ? $set->getName() : '';
@@ -152,9 +165,13 @@ class SpecialWikiSets extends SpecialPage {
 		if ( !$wikis ) {
 			$wikis = $set ? $set->getWikisRaw() : [];
 		}
+
 		sort( $wikis );
 		$wikis = implode( "\n", $wikis );
-		$url = SpecialPage::getTitleFor( 'WikiSets', $subpage )->getLocalUrl();
+
+		$url = SpecialPage::getTitleFor( 'WikiSets', (string)( $set->getId() ?? 0 ) )
+			->getLocalUrl();
+
 		if ( $this->mCanEdit ) {
 			// Give grep a chance to find the usages:
 			// centralauth-editset-legend-edit, centralauth-editset-legend-new
@@ -243,7 +260,9 @@ class SpecialWikiSets extends SpecialPage {
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
 		}
 
-		$this->showLogFragment( $subpage );
+		if ( $set ) {
+			$this->showLogFragment( (string)$set->getId() );
+		}
 	}
 
 	/**
@@ -353,34 +372,33 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param string $id
+	 * @param WikiSet|null $set wiki set to operate on
 	 */
-	private function doSubmit( $id ) {
+	private function doSubmit( ?WikiSet $set ) {
 		$name = $this->getContentLanguage()->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
 		$type = $this->getRequest()->getVal( 'wpType' );
 		$wikis = array_unique( preg_split(
 			'/(\s+|\s*\W\s*)/', $this->getRequest()->getVal( 'wpWikis' ), -1, PREG_SPLIT_NO_EMPTY )
 		);
 		$reason = $this->getRequest()->getVal( 'wpReason' );
-		$set = WikiSet::newFromId( $id );
 
 		if ( !Title::newFromText( $name ) ) {
-			$this->buildSetView( $id, $this->msg( 'centralauth-editset-badname' )->escaped(),
+			$this->buildSetView( $set, $this->msg( 'centralauth-editset-badname' )->escaped(),
 				$name, $type, $wikis, $reason );
 			return;
 		}
-		if ( ( !$id || $set->getName() != $name ) && WikiSet::newFromName( $name ) ) {
-			$this->buildSetView( $id, $this->msg( 'centralauth-editset-setexists' )->escaped(),
+		if ( ( !$set || $set->getName() != $name ) && WikiSet::newFromName( $name ) ) {
+			$this->buildSetView( $set, $this->msg( 'centralauth-editset-setexists' )->escaped(),
 				$name, $type, $wikis, $reason );
 			return;
 		}
 		if ( !in_array( $type, [ WikiSet::OPTIN, WikiSet::OPTOUT ] ) ) {
-			$this->buildSetView( $id, $this->msg( 'centralauth-editset-badtype' )->escaped(),
+			$this->buildSetView( $set, $this->msg( 'centralauth-editset-badtype' )->escaped(),
 				$name, $type, $wikis, $reason );
 			return;
 		}
 		if ( !$wikis ) {
-			$this->buildSetView( $id, $this->msg( 'centralauth-editset-zerowikis' )->escaped(),
+			$this->buildSetView( $set, $this->msg( 'centralauth-editset-zerowikis' )->escaped(),
 				$name, $type, $wikis, $reason );
 			return;
 		}
@@ -393,7 +411,7 @@ class SpecialWikiSets extends SpecialPage {
 			}
 		}
 		if ( $badwikis ) {
-			$this->buildSetView( $id, $this->msg(
+			$this->buildSetView( $set, $this->msg(
 				'centralauth-editset-badwikis',
 				implode( ', ', $badwikis ) )
 				->numParams( count( $badwikis ) )
@@ -513,5 +531,14 @@ class SpecialWikiSets extends SpecialPage {
 
 	protected function getGroupName() {
 		return 'wiki';
+	}
+
+	/**
+	 * @phan-return never
+	 * @return void
+	 * @throws PermissionsError
+	 */
+	private function showNoPermissionsView() {
+		throw new PermissionsError( 'globalgrouppermissions' );
 	}
 }
