@@ -9,7 +9,8 @@
 			"Renessaince",
 			"Wizardist",
 			"Zedlik",
-			"W"
+			"W",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глябальныя групы, у якія ўваходзіць удзельнік",
@@ -326,6 +327,7 @@
 	"globalrenamequeue-nav-openqueue": "Адкрытыя запыты",
 	"globalrenamequeue-request-approve-text": "Прыняць перайменаваньне",
 	"globalrenamequeue-request-cancel-text": "Скасаваць",
+	"globalrenamequeue-request-comments-label": "Заўвагі/аргумэнтацыя",
 	"globalrenamequeue-request-status-title": "Перайменаваць з «$1» на «$2»",
 	"globalrenamerequest": "Запыт перайменаваньня глябальнага рахунку карыстальніка",
 	"globalrenamerequest-email-label": "Адрас электроннай пошты:",

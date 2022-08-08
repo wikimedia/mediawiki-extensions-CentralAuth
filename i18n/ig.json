@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Ukabia",
-			"Tochiprecious"
+			"Tochiprecious",
+			"Akwugo"
 		]
 	},
 	"centralauth-admin-blocklog": "Kwụchie ntinye",
@@ -35,7 +36,7 @@
 	"centralauth-merge-method-primary": "wiki nke úlọ",
 	"centralauth-months-ago": "{{PLURAL:$1|önwa|önwa}} $1 gárá",
 	"centralauth-rename-progress-username": "Ahàǹjìème",
-	"centralauth-years-ago": "{PLURAL:$1|afọr|afọr}} $1 gárá",
+	"centralauth-years-ago": "{PLURAL:$1|afọ|afọ}} $1 gárá aga",
 	"globalrenamequeue-column-rq-name": "Ahàǹjìème",
 	"globalrenamequeue-form-username": "Ahàǹjìème:",
 	"globalrenamequeue-request-cancel-text": "Hapụ̀"
