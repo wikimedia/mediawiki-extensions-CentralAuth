@@ -160,6 +160,7 @@
 	"centralauth-prefs-view": "वैश्विक प्रयोगकर्ता खाता हेर्ने",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''एकल प्रवेश'''को लागि पढ्नुहोस्]]…''",
 	"centralauth-rename-desc": "विश्वव्यापी खाताहरू नामाकरण गर्न दिने",
+	"centralauth-rename-movelog": "प्रयोगकर्तालाई पुन: नामाकरण गर्दा \"[[Special:CentralAuth/$1|$1]]\" लाई \"[[Special:CentralAuth/$2|$2]]\"मा स्वचालित रूपमा सारियो",
 	"centralauth-rename-table-status": "स्थिति",
 	"centralauth-rename-table-status-done": "सकियो",
 	"centralauth-renameuser-reserved": "प्रयोगकर्ता $2 विश्वव्यापी खाताको निम्ति आरक्षित छ।",
