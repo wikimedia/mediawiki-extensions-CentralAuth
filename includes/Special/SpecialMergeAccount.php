@@ -386,7 +386,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 		$password = $this->getRequest()->getText( 'wpPassword' );
-		if ( $globalUser->authenticate( $password ) == 'ok' ) {
+		if ( $globalUser->authenticate( $password ) == [ CentralAuthUser::AUTHENTICATE_OK ] ) {
 			$globalUser->attach( WikiMap::getCurrentWikiId(), 'password' );
 			$this->getOutput()->addWikiMsg( 'centralauth-attach-success' );
 			$this->showCleanupForm();

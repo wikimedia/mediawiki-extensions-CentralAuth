@@ -47,6 +47,7 @@ use MediaWiki\User\UserIdentityValue;
 use MWCryptHash;
 use MWCryptRand;
 use Password;
+use PasswordError;
 use PasswordFactory;
 use Pbkdf2Password;
 use RCFeed;
@@ -166,6 +167,20 @@ class CentralAuthUser implements IDBAccessObject {
 	 * The maximum number of edits a user can have and still be hidden
 	 */
 	private const HIDE_CONTRIBLIMIT = 1000;
+
+	/**
+	 * The possible responses from self::authenticate(),
+	 * self::canAuthenticate() and self::authenticateWithToken().
+	 *
+	 * Constants are defined as lowercase strings for
+	 * backwards compatibility.
+	 */
+	public const AUTHENTICATE_OK = "ok";
+	public const AUTHENTICATE_NO_USER = "no user";
+	public const AUTHENTICATE_LOCKED = "locked";
+	public const AUTHENTICATE_BAD_PASSWORD = "bad password";
+	public const AUTHENTICATE_BAD_TOKEN = "bad token";
+	public const AUTHENTICATE_GOOD_PASSWORD = "good password";
 
 	/**
 	 * @note Don't call this directly. Use self::getInstanceByName() or
@@ -2124,7 +2139,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * If the user provides the correct password, would we let them log in?
 	 * This encompasses checks on missing and locked accounts, at present.
-	 * @return mixed true if login available, or string status, one of: "no user", "locked"
+	 * @return bool|string true if login available, or const authenticate status
 	 */
 	public function canAuthenticate() {
 		if ( !$this->getId() ) {
@@ -2132,23 +2147,23 @@ class CentralAuthUser implements IDBAccessObject {
 				"authentication for '{user}' failed due to missing account",
 				[ 'user' => $this->mName ]
 			);
-			return "no user";
+			return self::AUTHENTICATE_NO_USER;
 		}
 
 		// If the global account has been locked, we don't want to spam
 		// other wikis with local account creations.
 		if ( $this->isLocked() ) {
-			return "locked";
+			return self::AUTHENTICATE_LOCKED;
 		}
 
 		// Don't allow users to autocreate if they are oversighted.
 		// If they do, their name will appear on local user list
-		// (and since it contains private info, its inacceptable).
+		// (and since it contains private info, its unacceptable).
 		// FIXME: this will give users "password incorrect" error.
 		// Giving correct message requires AuthPlugin and SpecialUserlogin
 		// rewriting.
 		if ( !User::idFromName( $this->getName() ) && $this->isSuppressed() ) {
-			return "locked";
+			return self::AUTHENTICATE_LOCKED;
 		}
 
 		return true;
@@ -2157,59 +2172,82 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Attempt to authenticate the global user account with the given password
 	 * @param string $password
-	 * @return string status, one of: "ok", "no user", "locked", or "bad password".
-	 * @todo Currently only the "ok" result is used (i.e. either use, or return a bool).
+	 * @return string[] status represented by const(s) AUTHENTICATE_LOCKED,
+	 *  AUTHENTICATE_NO_USER, AUTHENTICATE_BAD_PASSWORD
+	 *  and AUTHENTICATE_OK
 	 */
 	public function authenticate( $password ) {
-		$ret = $this->canAuthenticate();
-		if ( $ret !== true ) {
-			return $ret;
+		$canAuthenticate = $this->canAuthenticate();
+		if (
+			$canAuthenticate !== true &&
+			$canAuthenticate !== self::AUTHENTICATE_LOCKED
+		) {
+			return [ $canAuthenticate ];
 		}
 
-		$status = $this->matchHash( $password, $this->getPasswordObject() );
-		if ( $status->isGood() ) {
-			$this->logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
+		$passwordMatchStatus = $this->matchHash( $password, $this->getPasswordObject() );
 
-			$passwordFactory = new PasswordFactory();
-			$passwordFactory->init( RequestContext::getMain()->getConfig() );
-			if ( $passwordFactory->needsUpdate( $status->getValue() ) ) {
-				DeferredUpdates::addCallableUpdate( function () use ( $password ) {
-					if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
-						return;
-					}
+		if ( $canAuthenticate === true ) {
+			if ( $passwordMatchStatus->isGood() ) {
+				$this->logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
 
-					$centralUser = CentralAuthUser::newPrimaryInstanceFromId( $this->getId() );
-					if ( $centralUser ) {
-						// Don't bother resetting the auth token for a hash
-						// upgrade. It's not really a password *change*, and
-						// since this is being done post-send it'll cause the
-						// user to be logged out when they just tried to log in
-						// since it can't update the just-sent session cookies.
-						$centralUser->setPassword( $password, false );
-						$centralUser->saveSettings();
-					}
-				} );
+				$passwordFactory = new PasswordFactory();
+				$passwordFactory->init( RequestContext::getMain()->getConfig() );
+				if ( $passwordFactory->needsUpdate( $passwordMatchStatus->getValue() ) ) {
+					DeferredUpdates::addCallableUpdate( function () use ( $password ) {
+						if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
+							return;
+						}
+
+						$centralUser = CentralAuthUser::newPrimaryInstanceFromId( $this->getId() );
+						if ( $centralUser ) {
+							// Don't bother resetting the auth token for a hash
+							// upgrade. It's not really a password *change*, and
+							// since this is being done post-send it'll cause the
+							// user to be logged out when they just tried to log in
+							// since it can't update the just-sent session cookies.
+							$centralUser->setPassword( $password, false );
+							$centralUser->saveSettings();
+						}
+					} );
+				}
+
+				return [ self::AUTHENTICATE_OK ];
+			} else {
+				$this->logger->info( "authentication for '{user}' failed, bad pass", [ 'user' => $this->mName ] );
+				return [ self::AUTHENTICATE_BAD_PASSWORD ];
 			}
-
-			return "ok";
 		} else {
-			$this->logger->info( "authentication for '{user}' failed, bad pass", [ 'user' => $this->mName ] );
-			return "bad password";
+			if ( $passwordMatchStatus->isGood() ) {
+				$this->logger->info(
+					"authentication for '{user}' failed, correct pass but locked",
+					[ 'user' => $this->mName ]
+				);
+				return [ self::AUTHENTICATE_LOCKED ];
+			} else {
+				$this->logger->info(
+					"authentication for '{user}' failed, locked with wrong password",
+					[ 'user' => $this->mName ]
+				);
+				return [ self::AUTHENTICATE_BAD_PASSWORD, self::AUTHENTICATE_LOCKED ];
+			}
 		}
 	}
 
 	/**
 	 * Attempt to authenticate the global user account with the given global authtoken
 	 * @param string $token
-	 * @return string status, one of: "ok", "no user", "locked", or "bad token"
+	 * @return string status, one of: AUTHENTICATE_LOCKED,
+	 *  AUTHENTICATE_NO_USER, AUTHENTICATE_BAD_TOKEN
+	 *  and AUTHENTICATE_OK
 	 */
 	public function authenticateWithToken( $token ) {
-		$ret = $this->canAuthenticate();
-		if ( $ret !== true ) {
-			return $ret;
+		$canAuthenticate = $this->canAuthenticate();
+		if ( $canAuthenticate !== true ) {
+			return $canAuthenticate;
 		}
 
-		return $this->validateAuthToken( $token ) ? 'ok' : 'bad token';
+		return $this->validateAuthToken( $token ) ? self::AUTHENTICATE_OK : self::AUTHENTICATE_BAD_TOKEN;
 	}
 
 	/**
@@ -2262,6 +2300,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $salt The hash "salt", eg a local id for migrated passwords.
 	 *
 	 * @return Password
+	 * @throws PasswordError
 	 */
 	private function getPasswordFromString( $encrypted, $salt ) {
 		$passwordFactory = new PasswordFactory();

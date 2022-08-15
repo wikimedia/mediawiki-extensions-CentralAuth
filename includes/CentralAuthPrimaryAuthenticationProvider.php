@@ -191,18 +191,24 @@ class CentralAuthPrimaryAuthenticationProvider
 		// First, check normal login
 		$centralUser = CentralAuthUser::getInstanceByName( $username );
 
-		// The secondary provider also checks this. It needs to check this
-		// for non-unified logins, but we also need to check this to show
-		// the right error message for unified logins as in that case the
-		// secondary auth wouldn't run as we would have already failed.
-		if ( $centralUser->canAuthenticate() === 'locked' ) {
+		$authenticateResult = $centralUser->authenticate( $req->password );
+
+		$pass = $authenticateResult === [ CentralAuthUser::AUTHENTICATE_OK ];
+
+		if ( in_array( CentralAuthUser::AUTHENTICATE_LOCKED, $authenticateResult ) ) {
+			if ( in_array( CentralAuthUser::AUTHENTICATE_BAD_PASSWORD, $authenticateResult ) === false ) {
+				// Because the absence of "bad password" for any code that hooks and receives
+				// the returned AuthenticationResponse means either that the password
+				// was correct or that the password was not checked, provide "good password"
+				// which removes the two possible meanings of no "bad password".
+				$authenticateResult[] = CentralAuthUser::AUTHENTICATE_GOOD_PASSWORD;
+			}
 			return AuthenticationResponse::newFail(
 				wfMessage( 'centralauth-login-error-locked' )
-					->params( wfEscapeWikiText( $centralUser->getName() ) )
+					->params( wfEscapeWikiText( $centralUser->getName() ) ),
+				$authenticateResult
 			);
 		}
-
-		$pass = $centralUser->authenticate( $req->password ) === 'ok';
 
 		// See if it's a user affected by a rename, if applicable.
 		if ( !$pass && $this->checkSULMigration ) {
@@ -221,7 +227,7 @@ class CentralAuthPrimaryAuthenticationProvider
 					);
 					$this->statsdDataFactory->increment( 'centralauth.migration.check' );
 
-					if ( $renamed->authenticate( $req->password ) === 'ok' ) {
+					if ( $renamed->authenticate( $req->password ) === [ CentralAuthUser::AUTHENTICATE_OK ] ) {
 						// At this point the user will be passed, so set the
 						// reset flag now.
 						$this->setPasswordResetFlag( $renamedUsername, $status );
