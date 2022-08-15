@@ -226,7 +226,7 @@
 	"centralauth-editset-legend-rw": "Modifier ou créer un ensemble de wikis",
 	"centralauth-editset-legend-view": "Ensemble de wikis « $1 ».",
 	"centralauth-editset-name": "Nom :",
-	"centralauth-editset-new": "Créer un nouveau jeu de wikis",
+	"centralauth-editset-new": "Créer un nouvel ensemble de wikis",
 	"centralauth-editset-notfound": "Jeu de wikis « $1 » introuvable.",
 	"centralauth-editset-nouse": "(aucun)",
 	"centralauth-editset-nowikis": "(aucun)",
