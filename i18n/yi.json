@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Imre",
-			"פוילישער"
+			"פוילישער",
+			"Pacha Tchernof"
 		]
 	},
 	"centralauth": "גלאבאלע קאנטע פארוואלטער",
@@ -189,6 +190,7 @@
 	"centralloginsuccesful": "אריינלאגירט",
 	"globalgroupmembership": "מיטגלידערשאפֿט אין גלאבאלע גרופעס",
 	"globalgrouppermissions": "גלאבאלע גרופע פֿארוואלטונג",
+	"globalrenamequeue-request-cancel-text": "אַנולירן",
 	"globalusers": "גלאבאלע קאנטעס ליסטע",
 	"grant-setglobalaccountstatus": "פֿארוואלטן גלאבאלן קאנטע סטאטוס",
 	"mergeaccount": "ארײַנלאגירן צוזאמענפירן סטאטוס",
