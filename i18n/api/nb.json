@@ -78,7 +78,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Endre hvorvidt brukeren er ikke-skjult, skjult fra den globale brukerlista eller sensurert.",
 	"apihelp-setglobalaccountstatus-param-locked": "Endre hvorvidt brukeren er låst.",
 	"apihelp-setglobalaccountstatus-param-reason": "Årsak for å endre brukerens status.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Valgfri MD5 for den forventede <username>:<hidden>:<locked>, for å oppdage redigeringskonflikter. Sett <locked> til 1 for låst, 0 for ulåst.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Valgfri MD5 for den forventede <userid>:<username>:<hidden>:<locked>, for å oppdage redigeringskonflikter. Sett <locked> til 1 for låst, 0 for ulåst.",
 	"apihelp-setglobalaccountstatus-param-user": "Bruker det skal endres status på.",
 	"apihelp-setglobalaccountstatus-summary": "Sett en global brukers status."
 }
