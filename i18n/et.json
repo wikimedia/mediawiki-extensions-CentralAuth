@@ -8,7 +8,9 @@
 			"Macofe",
 			"Morel",
 			"Pikne",
-			"WikedKentaur"
+			"WikedKentaur",
+			"Kareyac",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globaalsed rühmad, mille liige kasutaja on",
@@ -392,6 +394,7 @@
 	"globalgrouppermissions": "Globaalse rühma haldamine",
 	"globalrenameprogress": "Globaalse ümbernimetamise seis",
 	"globalrenameprogress-legend": "Globaalse ümbernimetamise seisu vaatamine",
+	"globalrenamequeue-action-address": "Aadress",
 	"globalrenamequeue-action-view": "Vaata",
 	"globalrenamequeue-column-rq-name": "Kasutajanimi",
 	"globalrenamequeue-desc": "Globaalse ümbernimetamise taotluste läbivaatus",

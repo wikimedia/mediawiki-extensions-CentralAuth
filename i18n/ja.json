@@ -511,6 +511,7 @@
 	"log-action-filter-globalauth": "変更の種類:",
 	"log-action-filter-globalauth-delete": "グローバルアカウントの削除",
 	"log-action-filter-globalauth-setstatus": "グローバルアカウントの状態の変更",
+	"log-action-filter-newusers-forcecreatelocal": "強制的なローカルアカウントの作成",
 	"log-action-filter-suppress-cadelete": "グローバルアカウントの削除",
 	"log-action-filter-suppress-setstatus": "グローバルアカウントの状態の変更",
 	"log-description-gblrename": "このログは、利用者のグローバルな名前変更を追跡します。",
