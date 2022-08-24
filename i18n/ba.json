@@ -10,7 +10,9 @@
 			"Кутлубаева Кунсулу Закиевна",
 			"Ләйсән",
 			"Рустам Нурыев",
-			"ҒатаУлла"
+			"ҒатаУлла",
+			"Kareyac",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Ҡатнашыусының глобаль төркөмдәре",
@@ -323,6 +325,7 @@
 	"globalgrouppermissions": "Дөйөм төркөмдәр менән идара итеү",
 	"globalrenameprogress": "Глобаль яңы атамалар биреү сираты торошо",
 	"globalrenameprogress-legend": "Глобаль яңы атамалар биреү торошон ҡарарға",
+	"globalrenamequeue-action-address": "Адрес",
 	"globalrenameuser": "Глобаль ҡатнашыусыға яңы атама бирергә",
 	"globalrenameuser-legend": "Глобаль ҡатнашыусыға яңы атама бирергә",
 	"globalusers": "Ҡатнашыусыларҙың глобаль исемлеге",

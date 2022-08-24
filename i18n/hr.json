@@ -12,7 +12,8 @@
 			"Neptune, the Mystic",
 			"Ponor",
 			"Roberta F.",
-			"SpeedyGonsales"
+			"SpeedyGonsales",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine kojima suradnik pripada:",
@@ -38,7 +39,7 @@
 	"centralauth-admin-hidden-oversight": "skriveno",
 	"centralauth-admin-info-attached": "Broj povezanih računa:",
 	"centralauth-admin-info-editcount": "Ukupno uređivanja:",
-	"centralauth-admin-info-groups": "{{PLURAL:$1|Globalna skupina|Globalne skupine|Globalnih skupinā}}:",
+	"centralauth-admin-info-groups": "{{PLURAL:$1|Globalna skupina|Globalne skupine}}:",
 	"centralauth-admin-info-header": "Informacije o globalnom računu",
 	"centralauth-admin-info-hidden": "Razina skrivanja:",
 	"centralauth-admin-info-locked": "Zaključano:",
@@ -276,7 +277,7 @@
 	"centralauth-ro": "Informacije o globalnim računima",
 	"centralauth-seconds-ago": "prije $1 {{PLURAL:$1|sekundu|sekunde|sekundi}}",
 	"centralauth-token-mismatch": "Ispričavamo se, nismo mogli obraditi vaš zahtjev zbog gubitka podataka o prijavi.",
-	"centralauth-years-ago": "prije $1 {{PLURAL:$1|godine|godina}}",
+	"centralauth-years-ago": "prije $1 {{PLURAL:$1|godinu|godine|godina}}",
 	"centralautologin": "Središnja prijava",
 	"centrallogin": "Središnja suradnička prijava",
 	"createlocalaccount": "Zahtijevano stvaranje lokalnog računa",
