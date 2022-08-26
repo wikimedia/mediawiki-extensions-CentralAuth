@@ -264,7 +264,7 @@
 	"centralauth-prefs-view": "Gwelout titouroù hollek ho kont",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Gouzout hiroc'h diwar-benn '''ar gont unvan''']]…''",
 	"centralauth-readonly": "Prennet eo diaz roadennoù CentralAuth.",
-	"centralauth-readonlytext": "Evit ar poent n'haller ket ouzhpennañ enmontoù nevez pe degas kemmoù war diaz roadennoù CentralAuth, abalamour da labourioù kempenn boas moarvat. A-benn nebeut ez aio plaen an traoù en-dro.\n\nGant ar merour reizhiad en deus prennet an diaz roadennoù eo bet roet an displegadenn-mañ: 1",
+	"centralauth-readonlytext": "Evit ar poent n'haller ket ouzhpennañ enmontoù nevez pe degas kemmoù war diaz roadennoù CentralAuth, abalamour da labourioù kempenn boas moarvat. A-benn nebeut ez aio plaen an traoù en-dro.\n\nGant ar merour reizhiad en deus prennet an diaz roadennoù eo bet roet an displegadenn-mañ: $1",
 	"centralauth-rename-alreadyexists": "An anv implijer goulenet zo anezhañ dija.",
 	"centralauth-rename-cannotself": "Ne c'hallit ket adenvel ac'hanoc'h hoc'h-unan.",
 	"centralauth-rename-confirm": "Ha sur oc'h e fell deoc'h adenvel an implijer-mañ en un doare hollek ?",
