@@ -792,7 +792,7 @@ $specialPageAliases['sk'] = [
 	'GlobalUsers' => [ 'GlobálniPoužívatelia' ],
 ];
 
-/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
+/** Serbian (Cyrillic script) (српски (ћирилица)) */
 $specialPageAliases['sr-ec'] = [
 	'CentralAuth' => [ 'Централна_пријава', 'Глобални_налог' ],
 	'CreateLocalAccount' => [ 'Отвори_локални_налог' ],
@@ -809,7 +809,7 @@ $specialPageAliases['sr-ec'] = [
 	'SulRenameWarning' => [ 'Упозорење_о_преименовању' ],
 ];
 
-/** Serbian (Latin script) (srpski (latinica)‎) */
+/** Serbian (Latin script) (srpski (latinica)) */
 $specialPageAliases['sr-el'] = [
 	'CentralAuth' => [ 'Centralna_prijava', 'Globalni_nalog' ],
 	'CreateLocalAccount' => [ 'Otvori_lokalni_nalog' ],
@@ -928,7 +928,7 @@ $specialPageAliases['yi'] = [
 	'GlobalUsers' => [ 'גלאבאלע_באניצער' ],
 ];
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
 	'CentralAuth' => [ '中央认证' ],
 	'MergeAccount' => [ '合并账户', '整合账户' ],
@@ -944,7 +944,7 @@ $specialPageAliases['zh-hans'] = [
 	'SulRenameWarning' => [ 'SUL重命名警告' ],
 ];
 
-/** Traditional Chinese (中文（繁體）‎) */
+/** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
 	'CentralAuth' => [ '中央認證' ],
 	'MergeAccount' => [ '合併帳號' ],
@@ -959,7 +959,7 @@ $specialPageAliases['zh-hant'] = [
 	'GlobalRenameQueue' => [ '全域重命名佇列' ],
 ];
 
-/** Chinese (Hong Kong) (中文（香港）‎) */
+/** Chinese (Hong Kong) (中文（香港）) */
 $specialPageAliases['zh-hk'] = [
 	'GlobalGroupMembership' => [ '全域用戶權限' ],
 ];
