@@ -2,8 +2,6 @@
 	var $methodHint;
 
 	function showMethodHint( methodName, e ) {
-		var hintHtml;
-
 		if ( !$methodHint ) {
 			$methodHint = $( '<div>' )
 				.addClass( 'merge-method-help-div' )
@@ -24,17 +22,15 @@
 		// * centralauth-merge-method-mail-desc, centralauth-merge-method-password-desc,
 		// * centralauth-merge-method-admin-desc, centralauth-merge-method-new-desc,
 		// * centralauth-merge-method-login-desc
-		hintHtml = mw.html.element(
-			'p', {
-				class: 'merge-method-help-name'
-			},
-			mw.msg( 'centralauth-merge-method-' + methodName )
-		) +
-		mw.message( 'centralauth-merge-method-' + methodName + '-desc' ).escaped();
-
 		// eslint-disable-next-line no-jquery/no-fade
 		$methodHint
-			.html( hintHtml )
+			.empty()
+			.append(
+				$( '<p>' )
+					.addClass( 'merge-method-help-name' )
+					.text( mw.msg( 'centralauth-merge-method-' + methodName ) ),
+				document.createTextNode( mw.msg( 'centralauth-merge-method-' + methodName + '-desc' ) )
+			)
 			.css( {
 				left: e.pageX + 'px',
 				top: e.pageY + 'px'
