@@ -6,7 +6,8 @@
 			"Emperyan",
 			"Janezdrilc",
 			"NegativeTwelveDollars",
-			"Yerpo"
+			"Yerpo",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik",
@@ -62,7 +63,7 @@
 	"centralauth-admin-list-groups": "Skupine",
 	"centralauth-admin-list-legend-ro": "Seznam lokalnih računov",
 	"centralauth-admin-list-legend-rw": "Razdruži lokalne račune",
-	"centralauth-admin-list-localwiki": "Lokalni wiki",
+	"centralauth-admin-list-localwiki": "Lokalni viki",
 	"centralauth-admin-list-method": "Način",
 	"centralauth-admin-logsnippet": "Pretekle spremembe globalnega računa",
 	"centralauth-admin-lookup-ro": "Ogled informacij o uporabniku",
@@ -332,7 +333,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Dnevniški vnosi",
 	"centralauth-rename-progress-username": "Uporabniško ime",
 	"centralauth-rename-queued": "Opravila za preimenovanje $1 v $2 so bila odložena na $3.\n\nPrikaži postopek na [[Special:GlobalRenameProgress/$2]].",
-	"centralauth-rename-table-domain": "Lokalni wiki",
+	"centralauth-rename-table-domain": "Lokalni viki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Končano",
 	"centralauth-rename-table-status-failed": "Spodletelo",
@@ -402,7 +403,7 @@
 	"globalrenamequeue-column-rq-performer": "Opravil",
 	"globalrenamequeue-column-rq-requested-ts": "Datum pričetka",
 	"globalrenamequeue-column-rq-status": "Status",
-	"globalrenamequeue-column-rq-wiki": "Lokalni wiki",
+	"globalrenamequeue-column-rq-wiki": "Lokalni viki",
 	"globalrenamequeue-desc": "Obravnavaj prošnje za globalno preimenovanje",
 	"globalrenamequeue-email-body-approved-with-note": "Prošnja za preimenovanje uporabnika \"{{GENDER:$1|$1}}\" v \"{{GENDER:$1|$2}}\" je bila odobrena.\n\nOpomba: $3",
 	"globalrenamequeue-email-body-approved": "Prošnja za preimenovanje uporabnika \"{{GENDER:$1|$1}}\" v \"{{GENDER:$1|$2}}\" je bila odobrena.",
