@@ -21,7 +21,7 @@
 	"centralauth-admin-blocked-reason": "कारण: $1",
 	"centralauth-admin-blocked2": "रोकावट समाप्ति $2 को $3मा।",
 	"centralauth-admin-blocked2-indef": "रोक्ने अनन्त।",
-	"centralauth-admin-blocklog": "रोकावट अभिलेखहरू",
+	"centralauth-admin-blocklog": "निषेध अभिलेखहरू",
 	"centralauth-admin-delete-button": "यो खाता मेट्ने",
 	"centralauth-admin-delete-nonexistent": "त्रुटि: यो विश्वव्यापी खाता \"<nowiki>$1</nowiki>\" छैन।",
 	"centralauth-admin-delete-success": "\"<nowiki>$1</nowiki>\"को विश्वव्यापी खाता सफलतापूर्वक मेटियो",
