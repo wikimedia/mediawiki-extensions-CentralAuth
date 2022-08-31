@@ -13,6 +13,7 @@
 	"centralauth-finish-login": "ДIадовзийта",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|1=тоадаьр|тоадаьр}} $2 чу",
 	"centralauth-foreign-link": "Доакъашхо $1 $2 чу",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|сахьат}} хьалха",
 	"centralauth-merge-method-login": "кхыйола вики-проекте система чувоалаш кхелла учета яздар",
 	"centralauth-prefs-status": "Глобальни аккаунт:",
 	"centralauth-prefs-view": "Хьа юкъарча аккаунтах бола хоам",
