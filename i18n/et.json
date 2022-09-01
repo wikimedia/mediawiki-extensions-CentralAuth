@@ -13,6 +13,7 @@
 			"WikedKentaur"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Kasutaja globaalne kaastööde hulk",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globaalsed rühmad, mille liige kasutaja on",
 	"action-centralauth-createlocal": "luua kohalikku kontot sundkorras",
 	"action-centralauth-lock": "globaalset kontot lukustada ega seda lukust lahti teha",

@@ -67,7 +67,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Wijzig of deze gebruiker is niet verborgen, verborgen van de globale gebruikerslijst of onderdrukt is.",
 	"apihelp-setglobalaccountstatus-param-locked": "Wijzigen of deze gebruiker op slot staat of niet.",
 	"apihelp-setglobalaccountstatus-param-reason": "Reden voor het wijzigen van de gebruikersstatus.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Optionele MD5 van de verwachte huidige <username>:<hidden>:<locked> om bewerkingsconflicten te detecteren. Set <locked> op 1 voor vergrendeld of 0 voor ontgrendeld.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Optionele MD5 van de verwachte huidige <userid>:<username>:<hidden>:<locked> om bewerkingsconflicten te detecteren. Zet <locked> op 1 voor vergrendeld of 0 voor ontgrendeld.",
 	"apihelp-setglobalaccountstatus-param-user": "Gebruiker om de status van te wijzigen.",
 	"apihelp-setglobalaccountstatus-summary": "De globale status van een gebruiker instellen."
 }
