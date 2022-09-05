@@ -133,34 +133,12 @@ class CentralAuthHooks implements
 	 * feature flags.
 	 */
 	public static function onRunExtensionFunctions() {
-		global $wgAutoloadClasses, $wgExtensionCredits, $wgHooks;
+		global $wgAutoloadClasses, $wgHooks;
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		$caBase = __DIR__ . '/..';
 
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
-			// Credits should only appear on wikis with Extension:Renameuser
-			// installed
-			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/extension.json",
-				'name' => 'Renameuser for CentralAuth',
-				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
-				'author' => [ 'Kunal Mehta', 'Marius Hoch', 'Chris Steipp' ],
-				'descriptionmsg' => 'centralauth-rename-desc',
-				'license-name' => 'GPL-2.0-or-later',
-			];
-		}
-
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'AntiSpoof' ) ) {
-			// If AntiSpoof is installed, we can do some AntiSpoof stuff for CA
-			$wgExtensionCredits['antispam'][] = [
-				'path' => "{$caBase}/extension.json",
-				'name' => 'AntiSpoof for CentralAuth',
-				'url' => 'https://www.mediawiki.org/wiki/Extension:CentralAuth',
-				'author' => 'Sam Reed',
-				'descriptionmsg' => 'centralauth-antispoof-desc',
-				'license-name' => 'GPL-2.0-or-later',
-			];
 			$wgAutoloadClasses['CentralAuthSpoofUser'] =
 				"$caBase/AntiSpoof/CentralAuthSpoofUser.php";
 			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
@@ -173,14 +151,6 @@ class CentralAuthHooks implements
 		}
 
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
-			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/extension.json",
-				'name' => 'GlobalRenameRequest',
-				'author' => 'Bryan Davis',
-				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
-				'descriptionmsg' => 'globalrenamerequest-desc',
-				'license-name' => 'GPL-2.0-or-later',
-			];
 			$wgSpecialPages['GlobalRenameRequest'] = [
 				'class' => SpecialGlobalRenameRequest::class,
 				'services' => [
@@ -190,14 +160,6 @@ class CentralAuthHooks implements
 				]
 			];
 
-			$wgExtensionCredits['specialpage'][] = [
-				'path' => "{$caBase}/extension.json",
-				'name' => 'GlobalRenameQueue',
-				'author' => 'Bryan Davis',
-				'url' => '//www.mediawiki.org/wiki/Extension:CentralAuth',
-				'descriptionmsg' => 'globalrenamequeue-desc',
-				'license-name' => 'GPL-2.0-or-later',
-			];
 			$wgSpecialPages['GlobalRenameQueue'] = [
 				'class' => SpecialGlobalRenameQueue::class,
 				'services' => [
