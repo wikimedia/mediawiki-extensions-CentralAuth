@@ -87,7 +87,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|konto|konśe|konta|kontow}} wuspěšnje {{PLURAL:$1|wótźělone|wótźělonej|wótźělone|wótźělone}}",
 	"centralauth-admin-username": "Wužywarske mě:",
 	"centralauth-admin-yes": "jo",
-	"centralauth-antispoof-desc": "Pśidawa CentralAuth technologiju AntiSpoof",
 	"centralauth-attach-list-attached": "Jadnotne konto z mjenim \"$1\" wopśimujo slědujuce konta:",
 	"centralauth-attach-submit": "Konto spóraś",
 	"centralauth-attach-success": "Konto jo se do jadnotnego konta spórało.",

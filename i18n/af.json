@@ -66,7 +66,6 @@
 	"centralauth-admin-unmerge-success": "Samevoeging is ongedaan gemaak vir $1 {{PLURAL:$1|gebruiker|gebruikers}}",
 	"centralauth-admin-username": "Gebruikersnaam:",
 	"centralauth-admin-yes": "ja",
-	"centralauth-antispoof-desc": "Hiermee word AntiSpoof tegnologie te CentralAuth",
 	"centralauth-attach-submit": "Migreer rekening",
 	"centralauth-attach-success": "Die rekening is migreer na die verenigde rekening.",
 	"centralauth-attach-text": "Hierdie rekening het nog nie na die verenigde rekening gemigreer het.\nAs die globale rekening is joune ook, kan jy hierdie rekening saamsmelt as jy tik die globale rekening wagwoord:",

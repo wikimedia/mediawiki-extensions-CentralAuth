@@ -64,7 +64,6 @@
 	"centralauth-admin-unmerge-success": "{{PLURAL:$1|1 Benutzerkonto isch| $1 Benutzerkonte sin}} erfolgryych abgspalte wore.",
 	"centralauth-admin-username": "Benutzername:",
 	"centralauth-admin-yes": "Jo",
-	"centralauth-antispoof-desc": "Macht CentralAuth d Nutzig vu dr AntiSpoof-Technologi megli",
 	"centralauth-attach-list-attached": "Im wältwyte Benutzerkonto mit em Name „$1“ het s die Benutzerkonte din:",
 	"centralauth-attach-submit": "Benutzerkonto integriere",
 	"centralauth-attach-success": "S Benutzerkonto isch in s wältwyt Benutzerkonto integriert wore.",

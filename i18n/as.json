@@ -71,7 +71,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|একাউণ্ট|একাউণ্টসমূহ}} সফলতাৰে বিচ্ছিন্ন কৰা হৈছে",
 	"centralauth-admin-username": "সদস্য নাম:",
 	"centralauth-admin-yes": "হয়",
-	"centralauth-antispoof-desc": "CentralAuthত AntiSpoof প্ৰযুক্তি যোগ কৰে",
 	"centralauth-attach-list-attached": "\"$1\" নামৰ একত্ৰিত একাউণ্টত তলৰ একাউণ্টসমূহ আছে:",
 	"centralauth-attach-submit": "একাউন্ট স্থানান্তৰ কৰক",
 	"centralauth-attach-success": "এই একাউণ্টটো একত্ৰিত একাউণ্টলৈ প্ৰব্ৰজন কৰোৱা হ'ল।",

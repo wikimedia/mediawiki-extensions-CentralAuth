@@ -66,7 +66,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|конто успішно одлучене|конта успішно одлучены|конт успішно одлученых}}",
 	"centralauth-admin-username": "Мено хоснователя:",
 	"centralauth-admin-yes": "гей",
-	"centralauth-antispoof-desc": "Додавать технолоґію CentralAuth до AntiSpoof",
 	"centralauth-attach-list-attached": "Ку єднотному конту з назвов „$1“ належать наслїдуючі конта:",
 	"centralauth-attach-submit": "Міґровати конто",
 	"centralauth-attach-success": "Конто было переведене на єднотне конто.",

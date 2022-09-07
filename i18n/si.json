@@ -78,7 +78,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|ගිණුම|ගිණුම්}} සාර්ථකව විඒකාබද්ධ කෙරිනි",
 	"centralauth-admin-username": "පරිශීලක නාමය:",
 	"centralauth-admin-yes": "ඔව්",
-	"centralauth-antispoof-desc": "ප්‍රතිප්‍රෝඩා තාක්ෂණය මධ්‍යඅවසරයට එක් කරයි",
 	"centralauth-attach-list-attached": "\"$1\" නමැති සංයුක්ත කෙරුණු ගිණුමට, පහත ගිණුම් අන්තර්ගත කොට ඇත:",
 	"centralauth-attach-submit": "ගිණුම සංක්‍රමණය කරන්න",
 	"centralauth-attach-success": "සංයුක්ත කෙරුණු ගිණුම වෙත ගිණුම සංක්‍රමණය කෙරිණි.",

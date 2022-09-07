@@ -71,7 +71,6 @@
 	"centralauth-admin-unmerge-success": "S'{{PLURAL:$1|ha|han}} deseparato con exito $1 {{PLURAL:$1|cuenta|cuentas}}",
 	"centralauth-admin-username": "Nombre d'usuario:",
 	"centralauth-admin-yes": "sí",
-	"centralauth-antispoof-desc": "Adhiba refirme d'AntiSpoof a CentralAuth.",
 	"centralauth-attach-list-attached": "A cuenta unificata \"$1\" encluye as siguients cuentas:",
 	"centralauth-attach-submit": "Migrar a cuenta",
 	"centralauth-attach-success": "S'ha migrato a cuenta t'a cuenta unificata.",

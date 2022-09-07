@@ -6,7 +6,6 @@
 	},
 	"centralauth": "Mpitantana ny mpikambana eraky ny wiki",
 	"centralauth-admin-blocklog": "laogim-panakanana",
-	"centralauth-antispoof-desc": "Hanampy ny teknôlôjia AntiSpoof amin'ny CentralAuth",
 	"centralauth-complete": "Tapitra ny fampiraisana ny anaram-pikambana !",
 	"centralauth-desc": "[[Special:MergeAccount|Hampitokana ny kaonty]] eraky ny wiki-n'i {{int:Centralauth-grouname}}",
 	"centralauth-foreign-contributions": "Fandraisan'anjara {{PLURAL:$1}} amin'i $2",

@@ -86,7 +86,6 @@
 	"centralauth-admin-unmerge-success": "Matrayumpong pinagsuhay na an $1 {{PLURAL:$1|panindog|mga panindog}}",
 	"centralauth-admin-username": "Paragamit na ngaran:",
 	"centralauth-admin-yes": "iyo",
-	"centralauth-antispoof-desc": "Minadugang nin AntiSpoof na teknolohiya sa CentralAuth",
 	"centralauth-attach-list-attached": "An pinagkasararong panindog na pinagngaranan na \"$1\" minabali sa mga minasunod na mga panindog:",
 	"centralauth-attach-submit": "Ibalyo an panindog",
 	"centralauth-attach-success": "An panindog naipagbalyo na pasiring sa pinagkasararong panindog.",

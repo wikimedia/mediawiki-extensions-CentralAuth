@@ -83,7 +83,6 @@
 	"centralauth-admin-unmerge-success": "Destacà con sucesso $1 {{PLURAL:$1|account|account}}",
 	"centralauth-admin-username": "Nome utente",
 	"centralauth-admin-yes": "sì",
-	"centralauth-antispoof-desc": "Xonta ła tenołoxia de AntiSpoof a CentralAuth",
 	"centralauth-attach-list-attached": "L'account unificà ciamà \"'''$1'''\" l'include i seguenti account:",
 	"centralauth-attach-submit": "Colèga l'account",
 	"centralauth-attach-success": "L'account el xe stà trasferìo a l'account unificà.",

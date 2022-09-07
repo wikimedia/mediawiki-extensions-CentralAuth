@@ -144,7 +144,6 @@
 	"centralauth-prefs-view": "د نړيوال گڼون مالومات کتل",
 	"centralauth-rename-alreadyexists": "غوښتلی کارن-نوم له پخوا څخه شته.",
 	"centralauth-rename-badusername": "غوښتلی کارن-نوم مو سم نه دی.",
-	"centralauth-rename-desc": "د نړېوالو گڼونونو نوم بدلون پرېښودل",
 	"centralauth-rename-form-oldname": "اوسنی کارن-نوم",
 	"centralauth-rename-progress-fieldset": "د سيمه ايزو گڼونونو لړليک",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|پرمختگ کتل]])",

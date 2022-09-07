@@ -279,7 +279,6 @@
 	"globalrenamequeue-column-rq-requested-ts": "Datum otvaranja",
 	"globalrenamequeue-column-rq-status": "Status",
 	"globalrenamequeue-column-rq-wiki": "Lokalni wiki",
-	"globalrenamequeue-desc": "Obrađivanje globalnih zahtjeva za preimenovanje",
 	"globalrenamequeue-form-newname": "Željeno korisničko ime:",
 	"globalrenamequeue-form-status": "Status:",
 	"globalrenamequeue-form-username": "Korisničko ime:",

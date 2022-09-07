@@ -91,7 +91,6 @@
 	"centralauth-admin-unmerge-success": "Dad-gyfuniad llwyddiannus $1 {{PLURAL:$1|account|accounts}}",
 	"centralauth-admin-username": "Enw'r defnyddiwr:",
 	"centralauth-admin-yes": "ydy",
-	"centralauth-antispoof-desc": "Ychwanegu technoleg gwrth-sbam i CentralAuth",
 	"centralauth-attach-list-attached": "Mae'r cyfrif cyfunedig o'r enw \"$1\" yn cynnwys y cyfrifon canlynol:",
 	"centralauth-attach-submit": "Muder y cyfrif",
 	"centralauth-attach-success": "Mudwyd y cyfrif i gyfrif unedig.",

@@ -63,7 +63,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|compto dèfusionâ|comptos dèfusionâs}} avouéc reusséta",
 	"centralauth-admin-username": "Nom d’utilisator :",
 	"centralauth-admin-yes": "ouè",
-	"centralauth-antispoof-desc": "Apond la tècnolog·ie AntiSpoof a CentralAuth.",
 	"centralauth-attach-list-attached": "Lo compto unifiâ apelâ « $1 » encllut cetos comptos :",
 	"centralauth-attach-submit": "Migrar lo compto",
 	"centralauth-attach-success": "Lo compto at étâ migrâ vers lo compto unifiâ.",

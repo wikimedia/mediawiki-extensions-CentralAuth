@@ -69,7 +69,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|अभिलेखः|अभिलेखाः}} पृथक्कृताः",
 	"centralauth-admin-username": "सदस्यनाम :",
 	"centralauth-admin-yes": "आम्",
-	"centralauth-antispoof-desc": "CentralAuth कृते AntiSpoof तन्त्रांशं योजयति",
 	"centralauth-attach-list-attached": "\"$1\" इत्येतस्मिन् संयुक्ताभिलेखे अधोनिर्दिष्टाः अभिलेखाः विद्यन्ते :",
 	"centralauth-attach-submit": "अभिलेखस्य स्थानान्तरणम्",
 	"centralauth-attach-success": "अभिलेखः संयुक्ताभिलेखं प्रति स्थानान्तरितम् ।",

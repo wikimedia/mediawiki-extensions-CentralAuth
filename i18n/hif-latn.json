@@ -28,7 +28,6 @@
 	"centralauth-admin-username": "Sadasya ke naam:",
 	"centralauth-admin-view": "Account ke jaankari dekho",
 	"centralauth-admin-yes": "haan",
-	"centralauth-antispoof-desc": "AntiSpoof technology ke CentralAuth me jorre hae",
 	"centralauth-attach-submit": "Account ke migrate karo",
 	"centralauth-complete": "Login unification puura hoe gais!",
 	"centralauth-complete-text": "Ab aap {{int:Centralauth-groupname}} wiki ke koi site me, bina nawaa accoun banae, login kare saktaa hae.",

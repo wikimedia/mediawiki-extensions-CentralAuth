@@ -70,7 +70,6 @@
 	"centralauth-admin-unmerge-success": "Natanggal mula sa pagkakasanib ang $1 account",
 	"centralauth-admin-username": "Pangalan ng tagagamit:",
 	"centralauth-admin-yes": "oo",
-	"centralauth-antispoof-desc": "Nagdaragdag ng teknolohiyang AntiSpoof sa CentralAuth",
 	"centralauth-attach-list-attached": "Kabilang sa pinag-isang account na may pangalang \"$1\" ang sumusunod na mga account:",
 	"centralauth-attach-submit": "Ilipat ang account",
 	"centralauth-attach-success": "Inilipat na ang account patungo sa pinag-isang account.",

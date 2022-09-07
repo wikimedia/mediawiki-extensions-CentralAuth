@@ -278,7 +278,6 @@
 	"centralauth-readonly": "Κλειδωμένη βάση δεδομένων του CentralAuth",
 	"centralauth-rename-abortlogin": "Ο λογαριασμός σας επί του παρόντος μετονομάζεται ή συγχωνεύεται. [[Special:GlobalRenameProgress/$1|Δείτε την κατάσταση]].",
 	"centralauth-rename-conflict-hidden": "όνομα χρήστη κρυμμένο",
-	"centralauth-rename-desc": "Επιτρέπει την μετονομασία καθολικών λογαριασμών",
 	"centralauth-rename-form-movepages": "Μετακίνηση σελίδων χρήστη",
 	"centralauth-rename-form-newname": "Νέο όνομα χρήστη",
 	"centralauth-rename-form-oldname": "Τρέχον όνομα χρήστη",

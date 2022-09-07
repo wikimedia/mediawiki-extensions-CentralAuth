@@ -51,7 +51,6 @@
 	"centralauth-admin-unmerge-success": "Ruhui malapas gabungan $1 {{PLURAL:$1|akun|akun}}",
 	"centralauth-admin-username": "Ngaran pamakai:",
 	"centralauth-admin-yes": "Iya",
-	"centralauth-antispoof-desc": "Tambahi tiknulugi AntiSpoof ka CentralAuth",
 	"centralauth-complete": "Panggabungan log babuat glubal tuntung!",
 	"centralauth-desc": "[[Special:MergeAccount|Panggabungan akun]] lintas wiki {{int:Centralauth-groupname}}",
 	"centralauth-editset-reason": "Alasan:",

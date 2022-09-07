@@ -100,7 +100,6 @@
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|konto bu|konće buštej|konta buchu|kontow bu}} wuspěšnje {{PLURAL:$1|rozdźělene|rozdźělenej|rozdźělene}}",
 	"centralauth-admin-username": "Wužiwarske mjeno",
 	"centralauth-admin-yes": "haj",
-	"centralauth-antispoof-desc": "Přidawa CentralAuth technologiju AntiSpoof",
 	"centralauth-attach-list-attached": "Zjednoćene konto z mjenom \"$1\" zapřijima slědowace konta:",
 	"centralauth-attach-submit": "Konto přewzać",
 	"centralauth-attach-success": "Tute konto bu do zjednoćeneho konta přewzate.",

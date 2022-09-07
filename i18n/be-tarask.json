@@ -111,7 +111,6 @@
 	"centralauth-admin-username": "Імя ўдзельніка:",
 	"centralauth-admin-view": "Праглядзець зьвесткі глябальнага рахунку",
 	"centralauth-admin-yes": "так",
-	"centralauth-antispoof-desc": "Дадае тэхналёгію AntiSpoof да CentralAuth",
 	"centralauth-attach-list-attached": "Аб’яднаны рахунак «$1» утрымлівае наступныя рахункі:",
 	"centralauth-attach-submit": "Перанесьці рахунак",
 	"centralauth-attach-success": "Рахунак быў далучаны да аб'яднанага рахунку.",

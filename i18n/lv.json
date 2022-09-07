@@ -65,7 +65,6 @@
 	"centralauth-admin-username": "Lietotāja vārds:",
 	"centralauth-admin-view": "Skatīt konta informāciju",
 	"centralauth-admin-yes": "jā",
-	"centralauth-antispoof-desc": "Pievieno AntiSpoof tehnoloģiju CentralAuth",
 	"centralauth-attach-submit": "Migrēt kontu",
 	"centralauth-attach-title": "Apstiprināt kontu",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|lapas|lapa|lapas}}",

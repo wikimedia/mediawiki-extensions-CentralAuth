@@ -74,7 +74,6 @@
 	"centralauth-admin-unmerge-success": "Çshkritë me sukses $1 llogari.",
 	"centralauth-admin-username": "Përdoruesi:",
 	"centralauth-admin-yes": "po",
-	"centralauth-antispoof-desc": "Shton teknologjinë AntiSpoof në CentralAuth",
 	"centralauth-attach-list-attached": "Llogaria e unifikuar me emrin \"$1\" përfshin llogaritë e mëposhtme:",
 	"centralauth-attach-submit": "Shkrini llogarinë",
 	"centralauth-attach-success": "Llogaria u shkri tek llogaritë e unifikuara.",

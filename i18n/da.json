@@ -111,7 +111,6 @@
 	"centralauth-admin-username": "Brugernavn:",
 	"centralauth-admin-view": "Se kontooplysninger",
 	"centralauth-admin-yes": "ja",
-	"centralauth-antispoof-desc": "Tilføjer AntiSpoof-teknologi til CentralAuth",
 	"centralauth-attach-list-attached": "Den sammenlagte konto med navnet \"$1\" inkluderer følgende konti:",
 	"centralauth-attach-submit": "Tilknyt konto",
 	"centralauth-attach-success": "Kontoen blev tilknyttet den globale konto.",

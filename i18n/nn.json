@@ -80,7 +80,6 @@
 	"centralauth-admin-username": "Brukarnamn:",
 	"centralauth-admin-view": "Sjå kontoinformasjon",
 	"centralauth-admin-yes": "ja",
-	"centralauth-antispoof-desc": "Legg til AntiSpoof-teknologi i CentralAuth",
 	"centralauth-attach-list-attached": "Den samanslegne kontoen med namnet «$1» femner desse kontoane:",
 	"centralauth-attach-submit": "Kopla til konto",
 	"centralauth-attach-success": "Kontoen vart kopla til hovudkontoen.",

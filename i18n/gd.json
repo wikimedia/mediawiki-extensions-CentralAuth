@@ -30,7 +30,6 @@
 	"centralauth-admin-none-selected": "Cha deach cunntas a thaghadh gus atharrachadh.",
 	"centralauth-admin-unmerge": "Neo-aonaich na thagh thu",
 	"centralauth-admin-yes": "tha",
-	"centralauth-antispoof-desc": "Cuiridh seo teicneolas AntiSpoof ri CentralAuth",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|latha|latha|làithean|latha}}",
 	"centralauth-desc": "[[Special:MergeAccount|Aontaich cunntasan]] air fheadh nan uicidhean aig {{int:Centralauth-groupname}}",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|deasachadh|dheasachadh|deasachaidhean|deasachadh}} air $2",
@@ -46,7 +45,6 @@
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Aontaichidh seo iomadh cunntas]] airson logadh a-steach leis an aon chunntas",
 	"centralauth-minutes-ago": "o chionn $1 {{PLURAL:$1|mhionaid|mhionaid|mionaidean|mionaid}}",
 	"centralauth-months-ago": "o chionn $1 {{PLURAL:$1|mhìos|mhìos|mìosan|mìos}}",
-	"centralauth-rename-desc": "Faodar ainm ùr a thoirt air cunntas coitcheann le seo",
 	"centralauth-seconds-ago": "o chionn $1 {{PLURAL:$1|diog|dhiog|diogan|diog}}",
 	"centralauth-years-ago": "o chionn $1 {{PLURAL:$1|bhliadhna|bhliadhna|bliadhnaichean|bliadhna}}",
 	"mergeaccount": "Staid aontachadh an logaidh a-steach"

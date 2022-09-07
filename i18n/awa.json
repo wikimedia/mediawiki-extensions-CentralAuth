@@ -76,7 +76,6 @@
 	"centralauth-admin-username": "सदस्यनावँ:",
 	"centralauth-admin-view": "वैश्विक खाता जानकारी",
 	"centralauth-admin-yes": "हाँ",
-	"centralauth-antispoof-desc": "CentralAuth में AntiSpoof तकनीक जोड़त है",
 	"centralauth-attach-submit": "खाता स्थातंरित करा जाय",
 	"centralauth-attach-title": "खाता प्रमाणित करा जाय",
 	"centralauth-centralautologin-badstate": "अमान्य स्थिति \"$1\"",

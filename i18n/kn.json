@@ -32,7 +32,6 @@
 	"centralauth-admin-unattached": "ಜೊತೆಗೂಡಿಸಿಲ್ಲ",
 	"centralauth-admin-username": "ಬಳಕೆದಾರರ ಹೆಸರು:",
 	"centralauth-admin-yes": "ಹೌದು",
-	"centralauth-antispoof-desc": "CentralAuth ಗೆ AntiSpoof ತಂತ್ರಜ್ಞಾನ ಸೇರಿಸುತ್ತದೆ",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|ನಾಮವರ್ಗ|ನಾಮವರ್ಗಗಳು}}",
 	"centralauth-complete": "ಪ್ರವೇಶ ಏಕೀಕರಣ ಸಫಲವಾಗಿದೆ!",
