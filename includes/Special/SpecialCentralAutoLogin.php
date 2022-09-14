@@ -7,12 +7,12 @@ use DeferredUpdates;
 use Exception;
 use ExtensionRegistry;
 use FormatJson;
-use Language;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
+use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
@@ -59,17 +59,22 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var LoggerInterface */
 	private $logger;
 
+	/** @var LanguageFactory */
+	private $languageFactory;
+
 	/**
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 * @param UserOptionsManager $userOptionsManager
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param CentralAuthSessionManager $sessionManager
+	 * @param LanguageFactory $languageFactory
 	 */
 	public function __construct(
 		CentralAuthUtilityService $centralAuthUtilityService,
 		UserOptionsManager $userOptionsManager,
 		ReadOnlyMode $readOnlyMode,
-		CentralAuthSessionManager $sessionManager
+		CentralAuthSessionManager $sessionManager,
+		LanguageFactory $languageFactory
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
@@ -78,6 +83,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->readOnlyMode = $readOnlyMode;
 		$this->sessionManager = $sessionManager;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
+		$this->languageFactory = $languageFactory;
 	}
 
 	/**
@@ -110,7 +116,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->doFinalOutput(
 				false,
 				'Cannot operate when using ' .
-					$session->getProvider()->describe( Language::factory( 'en' ) ),
+					$session->getProvider()->describe( $this->languageFactory->getLanguage( 'en' ) ),
 				$body,
 				$type
 			);

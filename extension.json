@@ -131,7 +131,8 @@
 				"CentralAuth.CentralAuthUtilityService",
 				"UserOptionsManager",
 				"ReadOnlyMode",
-				"CentralAuth.CentralAuthSessionManager"
+				"CentralAuth.CentralAuthSessionManager",
+				"LanguageFactory"
 			]
 		},
 		"CreateLocalAccount": {
