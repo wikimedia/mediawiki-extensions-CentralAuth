@@ -28,7 +28,8 @@
 			"Surjection",
 			"Tarmo",
 			"Valtlait",
-			"Veikk0.ma"
+			"Veikk0.ma",
+			"Kyykaarme"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
@@ -471,7 +472,7 @@
 	"globalrenameuser-legend": "Vaihda järjestelmänlaajuisen käyttäjän nimi",
 	"globalusers": "Järjestelmänlaajuinen käyttäjäluettelo",
 	"grant-createlocalaccount": "Luoda paikallisia käyttäjiä järjestelmänlaajuisille tunnuksille",
-	"grant-setglobalaccountstatus": "Hallinnoi järjestelmänlaajuisen tunnuksen tilaa",
+	"grant-setglobalaccountstatus": "Hallinnoida järjestelmänlaajuisen tunnuksen tilaa",
 	"log-action-filter-gblrights": "Muutostyyppi:",
 	"log-action-filter-gblrights-groupprms": "Järjestelmänlaajuinen käyttäjän ryhmän vaihdos",
 	"log-action-filter-gblrights-setmodify": "Wikijoukon muutos",
