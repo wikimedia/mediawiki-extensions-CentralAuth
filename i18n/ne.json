@@ -12,7 +12,8 @@
 			"सरोज कुमार ढकाल",
 			"हिमाल सुबेदी",
 			"Bada Kaji",
-			"Matma Rex"
+			"Matma Rex",
+			"बडा काजी"
 		]
 	},
 	"centralauth": "विश्वव्यापी खाता प्रवन्धक",
@@ -46,7 +47,7 @@
 	"centralauth-admin-list-localwiki": "स्थानीय विकि",
 	"centralauth-admin-list-method": "विधि",
 	"centralauth-admin-logsnippet": "पहिलेका विश्वव्यापी खाता परिवर्तनहरू",
-	"centralauth-admin-lookup-ro": "प्रयोगकर्ता विवरण हेर्ने",
+	"centralauth-admin-lookup-ro": "प्रयोगकर्ता जानकारी हेर्नुहोस्",
 	"centralauth-admin-lookup-rw": "प्रयोगकर्ता खाता मिलाउने",
 	"centralauth-admin-manage": "खाता तथ्याङ्क मिलाउने",
 	"centralauth-admin-merge": "छानिएकालाई मिलाउने",
@@ -75,7 +76,7 @@
 	"centralauth-admin-unmerge": "छानिएकालाई छुट्याउने",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|खाता|खाताहरू}} सफलता पूर्वक छुट्याइयो",
 	"centralauth-admin-username": "प्रयोगकर्ता नाम:",
-	"centralauth-admin-view": "खाता जानकारी हेर्ने",
+	"centralauth-admin-view": "खाता जानकारी हेर्नुहोस्",
 	"centralauth-admin-yes": "हुन्छ",
 	"centralauth-antispoof-desc": "केन्द्रीयअधिकारमा एन्टीस्पुफ प्रविधि जोड्ने",
 	"centralauth-attach-list-attached": "\"$1\" नाम गरेको एकीकृत खातामा निम्न खाताहरू पर्दछन्:",
@@ -126,6 +127,7 @@
 	"centralauth-listusers-attached": "[[User:$1|स्थानीय रुपमा छ]]",
 	"centralauth-listusers-locked": "प्रतिबन्धित",
 	"centralauth-listusers-nolocal": "असंलग्न अथवा स्थानीय रुपमा नभएको",
+	"centralauth-log-name": "विश्वव्यापी खाता अभिलेखहरू",
 	"centralauth-log-status-hidden": "लुकाइएको",
 	"centralauth-log-status-none": "(कुनै पनि होइन)",
 	"centralauth-login-progress": "तपाईंलाई {{int:Centralauth-groupname}}का विकिहरूमा प्रवेश गराइँदै:",
@@ -156,7 +158,7 @@
 	"centralauth-prefs-count-attached": "तपाईंको खाता $1 परियोजना {{PLURAL:$1|साइट|साइटहरु}}मा सक्रिय छ।",
 	"centralauth-prefs-manage": "तपाईंको विश्वव्यापी खाता मिलाउनुहोस्",
 	"centralauth-prefs-not-managed": "एकीकृत खाता प्रयोग नगरिएको",
-	"centralauth-prefs-status": "विश्वव्यापी खाताको स्थिति:",
+	"centralauth-prefs-status": "विश्वव्यापी खाता:",
 	"centralauth-prefs-unattached": "अनिश्चित",
 	"centralauth-prefs-view": "वैश्विक प्रयोगकर्ता खाता हेर्ने",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''एकल प्रवेश'''को लागि पढ्नुहोस्]]…''",
@@ -188,6 +190,9 @@
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "अस्वीकार",
 	"globalusers": "विश्वव्यापी खाता सूची",
+	"log-action-filter-globalauth-delete": "ग्लोबल खाता मेटिएको",
+	"log-action-filter-globalauth-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
+	"log-action-filter-suppress-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
 	"mergeaccount": "प्रवेश एकीकरण स्थिति",
 	"right-centralauth-unmerge": "नमिलाइएको प्रयोगकर्ता खाता"
 }

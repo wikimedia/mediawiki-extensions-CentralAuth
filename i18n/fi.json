@@ -27,7 +27,9 @@
 			"MITO",
 			"Majavah",
 			"Nwme",
-			"Veikk0.ma"
+			"Veikk0.ma",
+			"Kyykaarme",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
@@ -493,7 +495,7 @@
 	"globalusermerge": "Yhdistä järjestelmänlaajuinen tunnus",
 	"globalusermerge-legend": "Yhdistä järjestelmänlaajuinen tunnus",
 	"globalusers": "Järjestelmänlaajuinen käyttäjäluettelo",
-	"grant-setglobalaccountstatus": "Hallinnoi järjestelmänlaajuisen tunnuksen tilaa",
+	"grant-setglobalaccountstatus": "Hallinnoida järjestelmänlaajuisen tunnuksen tilaa",
 	"log-action-filter-gblrights": "Muutostyyppi:",
 	"log-action-filter-gblrights-groupprms": "Järjestelmänlaajuinen käyttäjän ryhmän vaihdos",
 	"log-action-filter-gblrights-setmodify": "Wikijoukon muutos",
