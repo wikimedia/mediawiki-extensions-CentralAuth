@@ -126,6 +126,7 @@
 	"centralauth-listusers-attached": "[[User:$1|स्थानीय रुपमा छ]]",
 	"centralauth-listusers-locked": "प्रतिबन्धित",
 	"centralauth-listusers-nolocal": "असंलग्न अथवा स्थानीय रुपमा नभएको",
+	"centralauth-log-name": "विश्वव्यापी खाता अभिलेखहरू",
 	"centralauth-log-status-hidden": "लुकाइएको",
 	"centralauth-log-status-none": "(कुनै पनि होइन)",
 	"centralauth-login-progress": "तपाईंलाई {{int:Centralauth-groupname}}का विकिहरूमा प्रवेश गराइँदै:",
@@ -188,6 +189,9 @@
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "अस्वीकार",
 	"globalusers": "विश्वव्यापी खाता सूची",
+	"log-action-filter-globalauth-delete": "ग्लोबल खाता मेटिएको",
+	"log-action-filter-globalauth-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
+	"log-action-filter-suppress-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
 	"mergeaccount": "प्रवेश एकीकरण स्थिति",
 	"right-centralauth-unmerge": "नमिलाइएको प्रयोगकर्ता खाता"
 }
