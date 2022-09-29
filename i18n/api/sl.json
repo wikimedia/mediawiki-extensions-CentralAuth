@@ -54,7 +54,7 @@
 	"apihelp-query+wikisets-example-2": "Prikaži skupine wikijev z vrsto",
 	"apihelp-query+wikisets-param-from": "Začetno ime skupine wikijev.",
 	"apihelp-query+wikisets-param-limit": "Koliko skupin wikijev naj vrnem.",
-	"apihelp-query+wikisets-param-orderbyname": "Razvrsti rezultate po imenu.",
+	"apihelp-query+wikisets-param-orderbyname": "Razvrsti zadetke po imenu.",
 	"apihelp-query+wikisets-summary": "Oštevilči vse skupine wikijev.",
 	"apihelp-setglobalaccountstatus-description": "Določi status globalnega uporabnika.",
 	"apihelp-setglobalaccountstatus-example-1": "Zakleni globalni račun [[User:Example|Uporabnik:Example]] zaradi smetenja",
