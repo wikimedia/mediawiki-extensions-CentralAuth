@@ -196,7 +196,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$pass = $authenticateResult === [ CentralAuthUser::AUTHENTICATE_OK ];
 
 		if ( in_array( CentralAuthUser::AUTHENTICATE_LOCKED, $authenticateResult ) ) {
-			if ( in_array( CentralAuthUser::AUTHENTICATE_BAD_PASSWORD, $authenticateResult ) === false ) {
+			if ( !in_array( CentralAuthUser::AUTHENTICATE_BAD_PASSWORD, $authenticateResult ) ) {
 				// Because the absence of "bad password" for any code that hooks and receives
 				// the returned AuthenticationResponse means either that the password
 				// was correct or that the password was not checked, provide "good password"
