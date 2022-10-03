@@ -61,7 +61,7 @@ class MigratePass0 extends Maintenance {
 			$users = []; // clear the array for the next pass
 
 			$delta = microtime( true ) - $start;
-			$rate = ( $delta == 0.0 ) ? 0.0 : $migrated / $delta;
+			$rate = $delta ? $migrated / $delta : 0.0;
 			$this->output( sprintf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
 				$wgDBname,
 				$migrated,
