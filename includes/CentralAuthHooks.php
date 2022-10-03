@@ -172,7 +172,7 @@ class CentralAuthHooks implements
 				],
 			];
 			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [
-				'scripts'        => 'ext.centralauth.globalrenamequeue.js',
+				'scripts'       => 'ext.centralauth.globalrenamequeue.js',
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
 				'messages' => [
@@ -181,7 +181,7 @@ class CentralAuthHooks implements
 				]
 			];
 			$wgResourceModules['ext.centralauth.globalrenamequeue.styles'] = [
-				'position'		=> 'top',
+				'position'      => 'top',
 				'styles'        => 'ext.centralauth.globalrenamequeue.less',
 				'localBasePath' => "{$caBase}/modules",
 				'remoteExtPath' => 'CentralAuth/modules',
