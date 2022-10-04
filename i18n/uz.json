@@ -52,6 +52,7 @@
 	"centralauth-rename-table-status": "Holati",
 	"centralauth-rename-table-status-done": "Bajarildi",
 	"centralauth-rightslog-entry-usergroups": "$1ning global guruhlardagi aʼzoligini  $2dan $3ga oʻzgartirdi",
+	"centralauth-ro": "Global hisob maʼlumotlari",
 	"globalrenamequeue-action-view": "Koʻrish",
 	"globalrenamequeue-column-rq-wiki": "Mahalliy viki",
 	"globalrenamequeue-form-status": "Holati:",
