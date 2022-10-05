@@ -213,7 +213,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 					'zgZcdLsEcLWqF7vG0CcMyviqWaq8smXCj2HBY0sV/w2kxpsTXXOgUrJJTEjuXmEsxHTtpMO4fCfZ' .
 					'5nb3a1kCYA44owCzKu96i8I6VrmGYu3waxmVAzlXld3bNIxrhGUjra/Y0TmWOe1q0=',
 				'',
-				'Pbkdf2Password'
+				'AbstractPbkdf2Password'
 			],
 			[
 				':B:6540e6ad:b02a3700be1eec9488a46b042a831646',

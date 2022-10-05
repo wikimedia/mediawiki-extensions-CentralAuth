@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
+use AbstractPbkdf2Password;
 use CentralAuthSessionProvider;
 use CentralAuthSpoofUser;
 use DeferredUpdates;
@@ -49,7 +50,6 @@ use MWCryptRand;
 use Password;
 use PasswordError;
 use PasswordFactory;
-use Pbkdf2Password;
 use RCFeed;
 use RequestContext;
 use RevisionDeleteUser;
@@ -2261,7 +2261,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $password->verify( $plaintext ) ) {
 			$matched = true;
-		} elseif ( !( $password instanceof Pbkdf2Password ) && function_exists( 'iconv' ) ) {
+		} elseif ( !( $password instanceof AbstractPbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
 			AtEase::suppressWarnings();
