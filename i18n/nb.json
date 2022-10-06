@@ -380,7 +380,7 @@
 	"centralauth-warning-notloggedin": "Du er ikke innlogget for øyeblikket.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år|år}} siden",
 	"centralautologin": "Sentral innlogging",
-	"centrallogin": "Sentral brukerinnlogging",
+	"centrallogin": "Sentral innlogging",
 	"centralloginsuccesful": "Innlogget",
 	"createlocalaccount": "Påtving opprettelse av lokal konto",
 	"globalgroupmembership": "Medlemskap i globale grupper",
