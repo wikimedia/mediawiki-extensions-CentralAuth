@@ -35,7 +35,9 @@
 			"Danieldegroot2",
 			"DutchTom",
 			"Encycloon",
-			"Nickthijssen1994"
+			"Nickthijssen1994",
+			"Elderson",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale groepen waar de gebruiker lid van is",
@@ -246,6 +248,7 @@
 	"centralauth-globalgroupperms-group-disabled": "(niet ingeschakeld op deze wiki)",
 	"centralauth-globalgroupperms-group-listmembers": "lijst van leden",
 	"centralauth-globalgroupperms-group-wikiset": "Groep van wiki's waar deze groep actief is: $1",
+	"centralauth-globalgroupperms-groups-intro": "Dit is een lijst van alle globale gebruikersgroepen die op deze wikifarm zijn ingesteld, met hun bijbehorende gebruikerstoegangsrechten en wikisets. Gebruikers met de vereiste machtigingen kunnen een groep verwijderen door alle rechten ervan te in te trekken.",
 	"centralauth-globalgroupperms-management": "beheren",
 	"centralauth-globalgroupperms-newgroupname": "Groepsnaam:",
 	"centralauth-globalgroupperms-nogroups": "Er zijn geen globale groepen gedefinieerd.",
@@ -507,6 +510,9 @@
 	"log-action-filter-gblrights-usergroups": "Globale gebruikersrechten wijziging",
 	"log-action-filter-globalauth": "Soort wijziging:",
 	"log-action-filter-globalauth-delete": "Verwijdering van globaal account",
+	"log-action-filter-globalauth-setstatus": "Wijziging van de globale accountstatus",
+	"log-action-filter-suppress-cadelete": "Verwijdering van globaal account",
+	"log-action-filter-suppress-setstatus": "Wijziging van de globale accountstatus",
 	"log-description-gblrename": "Dit logboek bevat de gebruikersnamen die globaal gewijzigd zijn.",
 	"log-name-gblrename": "Logboek globale gebruikersnaamwijzigingen",
 	"logentry-gblrename-merge": "$1 heeft $4 globaal {{GENDER:$2|samengevoegd}} naar $5",
@@ -522,6 +528,8 @@
 	"right-centralauth-usermerge": "Meerdere gebruikers globaal samenvoegen",
 	"right-globalgroupmembership": "Lidmaatschap van globale groepen bewerken",
 	"right-globalgrouppermissions": "Globale groepen beheren",
+	"sessionprovider-centralauthsessionprovider": "centrale op cookies gebaseerde sessies",
+	"sessionprovider-centralauthtokensessionprovider": "op CentralAuthToken gebaseerde sessies",
 	"sulrenamewarning-authmanager-ok-help": "Doorgaan na het tonen van de hernoemings melding.",
 	"sulrenamewarning-renamed": "{{GENDER:$2|Uw}} account '''$1''' is hernoemd naar '''$2''' gedurende het automatische proces van de migratie naar een eenduidig aanmeldsysteem bij {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|Uw}} account is hernoemd",

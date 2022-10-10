@@ -15,7 +15,8 @@
 			"Nghtwlkr",
 			"Njardarlogar",
 			"Stigmj",
-			"McDutchie"
+			"McDutchie",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper som brukeren tilhører",
@@ -402,7 +403,7 @@
 	"centralauth-warning-notloggedin": "Du er ikke innlogget for øyeblikket.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år|år}} siden",
 	"centralautologin": "Sentral innlogging",
-	"centrallogin": "Sentral brukerinnlogging",
+	"centrallogin": "Sentral innlogging",
 	"centralloginsuccesful": "Innlogget",
 	"globalgroupmembership": "Medlemskap i globale grupper",
 	"globalgrouppermissions": "Behandling av globale grupper",
