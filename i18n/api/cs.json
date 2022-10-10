@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Dvorapa",
+			"Martin Urbanec",
 			"Mormegil",
 			"Polda18"
 		]
 	},
 	"apierror-centralauth-badusername": "Uživatelské jméno „$1“ není na této wiki použitelné.",
+	"apierror-centralauth-editconflict": "Detekován editační konflikt, ukončeno.",
 	"apihelp-centralauthtoken-description": "Žádat o token globálního účtu pro vytvoření ověřeného požadavku pro cílovou wiki.",
 	"apihelp-centralauthtoken-example-1": "Žádat o token globálního účtu",
 	"apihelp-deleteglobalaccount-description": "Zrušit globální účet.",
@@ -42,6 +44,7 @@
 	"apihelp-query+globaluserinfo-example-2": "Vypsat informace o globálním uživateli [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-prop": "Jaké vlastnosti uvádět:\n;groups:Vypsat seznam globálních skupin, do kterých uživatel patří.\n;rights:Vypsat seznam globálních práv, které uživatel má.\n;merged:Vypsat seznam připojených účtů.\n;unattached:Vypsat seznam nepřipojených účtů.\n;editcount:Vypsat globální počet editací uživatele.",
 	"apihelp-query+globaluserinfo-param-user": "Účet, ke kterému se mají získat informace. Pokud není ani jedno z <var>$1user</var> a <var>$1id</var> uvedeno, je implicitně nastaven přihlášený uživatel.",
+	"apihelp-query+globaluserinfo-summary": "Zobrazit informace o globálním účtu",
 	"apihelp-query+wikisets-description": "Vypsat všechny sady wiki.",
 	"apihelp-query+wikisets-example-1": "Vypsat sady wiki",
 	"apihelp-query+wikisets-example-2": "Ukázat sady wiki s jejich typy",
@@ -56,5 +59,6 @@
 	"apihelp-setglobalaccountstatus-param-locked": "Nastavit, zda je tento uživatel zamčený nebo ne.",
 	"apihelp-setglobalaccountstatus-param-reason": "Důvod změny stavu uživatele.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Volitelné MD5 pro očekávané stávající <uživatelské jméno>:<skrytý>:<zamčený> k detekci editačních konfliktů. Nastavte <zamčený> na 1 pro zamčené účty a 0 pro odemčené.",
-	"apihelp-setglobalaccountstatus-param-user": "Uživatel, kterému se má změnit status."
+	"apihelp-setglobalaccountstatus-param-user": "Uživatel, kterému se má změnit status.",
+	"apihelp-setglobalaccountstatus-summary": "Nastavit stav globálního účtu"
 }
