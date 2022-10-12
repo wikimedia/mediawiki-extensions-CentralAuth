@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Akamycoco",
-			"Vickylin77s"
+			"Vickylin77s",
+			"Amire80"
 		]
 	},
-	"centralauth-admin-blocklog": " pikilokan to kalonicikeran",
+	"centralauth-admin-blocklog": "pikilokan to kalonicikeran",
 	"centralauth-foreign-contributions": "Nani tiniay i $2 kina $1 {{PLURAL:$1|a mipafeli}}",
 	"centralauth-foreign-link": "Nani tiniay i $2 ko micokaymasay a $1",
 	"centralauth-merge-method-login": "masanga’ to yo micomoday toya tatokian"
