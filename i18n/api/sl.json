@@ -54,7 +54,7 @@
 	"apihelp-query+wikisets-example-1": "Izpiši seznam skupin wikijev",
 	"apihelp-query+wikisets-example-2": "Prikaži skupine vikijev z vrsto",
 	"apihelp-query+wikisets-param-from": "Začetno ime skupine vikijev.",
-	"apihelp-query+wikisets-param-limit": "Koliko skupin wikijev naj vrnem.",
+	"apihelp-query+wikisets-param-limit": "Koliko skupin vikijev naj se vrne.",
 	"apihelp-query+wikisets-param-orderbyname": "Razvrsti zadetke po imenu.",
 	"apihelp-query+wikisets-summary": "Oštevilči vse skupine vikijev.",
 	"apihelp-setglobalaccountstatus-description": "Določi status globalnega uporabnika.",
