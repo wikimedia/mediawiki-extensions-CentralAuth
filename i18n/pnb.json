@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Abbas dhothar",
-			"Khalid Mahmood"
+			"Khalid Mahmood",
+			"Bgo eiu",
+			"Matma Rex"
 		]
 	},
 	"centralauth": "گلوبل اکاؤنٹ مینیجر",
@@ -151,13 +153,13 @@
 	"centralauth-list-home-title": "ہوم وکی",
 	"centralauth-list-unattached": "کھاتہ \"$1\" اپنے آپ پکا نئیں کیتا جاسکدا جے ایہ تواڈا اے تھلے دتیاں گیاں سائیٹاں تے؛ زیادہ اے ای ہوسکدا اے جے اوناں کول اک وکھری کنجی ہووے تواڈے پرائمری کھاتے توں:",
 	"centralauth-list-unattached-title": "رلے اکاؤنٹ وکھرے کرو",
-	"centralauth-listusers-attached": "[[User:$1|لوکل کھاتا اے]]",
+	"centralauth-listusers-attached": "[[User:$1|لوکل کھاتہ اے]]",
 	"centralauth-listusers-locked": "تالا",
 	"centralauth-listusers-nolocal": "وکھرے یا لوکلی ہے نئیں",
 	"centralauth-log-entry-hide": "چھپایا گیا گلوبل کھاتا \"$1\"",
 	"centralauth-log-entry-lock": "روکیا گیا گلوبل کھاتا \"$1\"",
 	"centralauth-log-entry-lockandhide": "روکیا گیا تے چھپایا گیا گلوبل کھاتا \"$1\"",
-	"centralauth-log-entry-unhide": "سامنے لیایا گیا گلوبل کھاتا \"$1\"",
+	"centralauth-log-entry-unhide": "سامنے لیایا گیا گلوبل کھاتہ \"$1\"",
 	"centralauth-log-entry-unlock": "ہٹائی گئی روک آلا گلوبل کھاتا \"$1\"",
 	"centralauth-log-header": "ایس لاگ چ کم جگت کھاتیاں اندر اندے نیں: مٹالا، تالہ لانا یا کھولنا۔",
 	"centralauth-log-name": "جگت کھاتہ لاگ",
@@ -200,7 +202,7 @@
 	"centralauth-merge-step2-title": "باقی کھاتے کنفرم کرلو",
 	"centralauth-merge-step3-detail": "تسی ایناں وکیاں دے کھاتیاں نوں رلا کے اکو کھاتا بنان لگے او:",
 	"centralauth-merge-step3-submit": "اکاؤنٹ کٹھے کرو",
-	"centralauth-merge-step3-title": "رلیا ہویا کھاتا بناؤ",
+	"centralauth-merge-step3-title": "رلیا ہویا کھاتہ بݨاؤ",
 	"centralauth-merge-welcome": "'''تواڈے ورتن کھاتے نوں کٹھے لاکان پربندھ{{int:Centralauth-groupname}} چ ہلے نئیں پیجیا گیا.'''\n\nاکر تسیں اپنے کھاتے نوں لجان ول اندے او, تسیں اوسے ورتن ناں تے کنجی نوں ورت سکدے او سارے وکیاں چ لاگان ہون لئی  {{int:Centralauth-groupname}} .\n\nاگر کوئی تواڈا ورتن ناں کسے ہور سائیٹ تے اے تے ایہ اوناں نوں تنگ نئیں کریگا، پر ایہ توانوں موقعہ دیگا  جے تسیں اوناں نال اے طے کرو یا کسے مکھۓ نال مگروں.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|کئی ورتن ناواں نوں کول]] دیو تے اکو ورتن ناں توں اندر آیا کرو",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|منٹ|منٹاں}} پہلاں",
