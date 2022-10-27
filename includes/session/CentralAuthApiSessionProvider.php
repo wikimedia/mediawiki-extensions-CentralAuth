@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
-use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
 
 /**

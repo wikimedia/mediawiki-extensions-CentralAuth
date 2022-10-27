@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionProviderTestTrait;
 use PHPUnit\Framework\MockObject\MockObject;

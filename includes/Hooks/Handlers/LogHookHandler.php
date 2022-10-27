@@ -24,8 +24,8 @@ use LogEventsList;
 use LogPage;
 use MediaWiki\Hook\LogEventsListGetExtraInputsHook;
 use MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook;
-use MediaWiki\Request\WebRequest;
 use MediaWiki\User\UserNameUtils;
+use WebRequest;
 use Wikimedia\Rdbms\LBFactory;
 
 class LogHookHandler implements

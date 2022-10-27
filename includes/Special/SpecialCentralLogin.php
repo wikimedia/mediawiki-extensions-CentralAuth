@@ -12,13 +12,13 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MWCryptRand;
 use StubGlobalUser;
 use UnlistedSpecialPage;
 use User;
+use WebRequest;
 use WikiMap;
 use Wikimedia\ScopedCallback;
 
