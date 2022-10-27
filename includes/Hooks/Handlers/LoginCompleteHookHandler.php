@@ -27,6 +27,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\TempUserCreatedRedirectHook;
 use MediaWiki\Hook\UserLoginCompleteHook;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
@@ -34,7 +35,6 @@ use MWCryptRand;
 use RequestContext;
 use Title;
 use User;
-use WebRequest;
 use WikiMap;
 
 class LoginCompleteHookHandler implements

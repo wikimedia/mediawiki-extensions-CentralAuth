@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;

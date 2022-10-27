@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\HookContainer\HookRunner;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionProviderTestTrait;
