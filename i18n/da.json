@@ -19,7 +19,8 @@
 			"Sarrus",
 			"Steenth",
 			"Thomsen",
-			"McDutchie"
+			"McDutchie",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper, som brugeren er i",
@@ -117,6 +118,7 @@
 	"centralauth-attach-text": "Denne konto er endnu ikke lagt sammen med den den globale konto.\nHvis den globale konto også er din, kan du tilkytte denne konto hvis du skriver den globale kontos adgangskode:",
 	"centralauth-attach-title": "Bekræft konto",
 	"centralauth-block-already-locked": "Brugerkontoen [[Special:CentralAuth/$1|$1]] er allerede låst globalt.",
+	"centralauth-block-editing-page": "$1 {{PLURAL:$1|side|sider}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Du er allerede logget på lokalt",
 	"centralauth-centralautologin-badparams": "Godkendelsesparametrene der blev angivet var ugyldige",
 	"centralauth-centralautologin-badstate": "Ugyldig tilstand \"$1\"",
