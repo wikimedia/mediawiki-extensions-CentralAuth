@@ -351,6 +351,7 @@
 	"centralauth-rename-form-reason": "Årsak",
 	"centralauth-rename-form-suppressredirects": "Ikke opprett omdirigeringer",
 	"centralauth-rename-globaleditcount-threshold": "Denne brukeren har mer enn $1 {{PLURAL:$1|redigering|redigeringer}}. Bekreft at du er sikker på at du vil endre navn på brukeren og at en systemadministrator er tilgjengelig for å overvåke prosessen.",
+	"centralauth-rename-listed-on-denylist": "Denne brukeren er på lista over navn som ikke kan endres globalt. For å endre navn på brukeren må lista endres først.",
 	"centralauth-rename-movelog": "Flyttet siden automatisk under navneendring fra «[[Special:CentralAuth/$1|$1]]» til «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "Det er ingen navneendringer på gang for $1. Det kan hende det allerede er fullført.",
 	"centralauth-rename-notinstalled": "Utvidelsen Renameuser er ikke installert.",
