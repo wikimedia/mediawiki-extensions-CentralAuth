@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Abanima",
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"apierror-centralauth-badsession": "يمكن الحصول على centralauthtoken فقط عند استخدام جلسات centralauthtoken.",
@@ -15,6 +16,11 @@
 	"apihelp-centralauthtoken-description": "أحضر centralauthtoken لتقديم طلب مسجل الهوية للويكي المتصلة.",
 	"apihelp-centralauthtoken-example-1": "جلب centralauthtoken",
 	"apihelp-centralauthtoken-summary": "جلب centralauthtoken لتقديم طلب مصادق إلى ويكي مرفق.",
+	"apihelp-createlocalaccount-description": "إنشاء حساب محلي بالقوة. هذا يعادل وظيفيًا استخدام [[Special:CreateLocalAccount]].",
+	"apihelp-createlocalaccount-example-1": "إنشاء حساب محلي بالقوة لـ [[User:Example]].",
+	"apihelp-createlocalaccount-param-reason": "سبب إنشاء الحساب المحلي.",
+	"apihelp-createlocalaccount-param-username": "مستخدم لإنشاء الحساب المحلي لـ.",
+	"apihelp-createlocalaccount-summary": "إنشاء حساب محلي بالقوة",
 	"apihelp-deleteglobalaccount-description": "احذف حساب مستخدم موحد.",
 	"apihelp-deleteglobalaccount-example-1": "احذف حساب الدخول الموحد الخاص بـ[[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "سبب حذف المستخدم.",
