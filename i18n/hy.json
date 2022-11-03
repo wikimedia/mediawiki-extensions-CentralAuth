@@ -4,12 +4,15 @@
 			"Beko",
 			"Kareyac",
 			"Xelgen",
-			"Դավիթ Սարոյան"
+			"Դավիթ Սարոյան",
+			"Սերգեյ Սաֆարյան"
 		]
 	},
 	"centralauth-admin-blocklog": "արգելափակման տեղեկամատյան",
+	"centralauth-admin-info-username": "Օգտանուն՝",
 	"centralauth-admin-list-groups": "Խմբեր",
 	"centralauth-admin-no": "ոչ",
+	"centralauth-admin-username": "Օգտանուն՝",
 	"centralauth-admin-yes": "այո",
 	"centralauth-editset-submit-delete": "Ջնջել",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ներդրում|ներդրումներ}} $2-ում",
@@ -19,9 +22,11 @@
 	"centralauth-merge-method-login": "ստեծղվել է մուտքի ժամանակ",
 	"centralauth-rename-form-reason": "Պատճառ",
 	"centralauth-rename-globaleditcount-threshold": "Այս մասնակիցն ունի ավելի քան $1 {{PLURAL:$1|խմբագրում|խմբագրումներ}}։ Խնդրում ենք հաստատել որ դուք համաձայն եք անվանափոխել այս մասնակցին և սիսադմինը կարող է վերահսկել այս անվանափոխումը։",
+	"centralauth-rename-progress-username": "Օգտանուն",
 	"centralauth-rename-table-status-done": "Արված է",
 	"globalrenamequeue-action-address": "Դիմել",
 	"globalrenamequeue-column-row-actions": "Գործողություն",
+	"globalrenamequeue-column-rq-name": "Օգտանուն",
 	"globalrenamequeue-column-rq-status": "Կարգավիճակ",
 	"globalrenamequeue-form-newname": "Մասնակցային անվան հայտ:",
 	"globalrenamequeue-form-status-all": "լրիվ",
