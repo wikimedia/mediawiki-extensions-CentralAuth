@@ -99,10 +99,10 @@ CREATE TABLE /*_*/global_group_restrictions (
 
 CREATE TABLE /*_*/renameuser_status (
   ru_oldname VARBINARY(255) NOT NULL,
-  ru_newname VARBINARY(255) NOT NULL,
   ru_wiki VARBINARY(255) NOT NULL,
+  ru_newname VARBINARY(255) NOT NULL,
   ru_status ENUM('queued', 'inprogress', 'failed') DEFAULT NULL,
-  UNIQUE INDEX ru_oldname (ru_oldname, ru_wiki)
+  PRIMARY KEY(ru_oldname, ru_wiki)
 ) /*$wgDBTableOptions*/;
 
 

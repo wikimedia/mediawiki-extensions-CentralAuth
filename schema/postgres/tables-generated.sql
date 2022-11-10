@@ -100,11 +100,12 @@ CREATE INDEX ggr_set ON global_group_restrictions (ggr_set);
 
 
 CREATE TABLE renameuser_status (
-  ru_oldname TEXT NOT NULL, ru_newname TEXT NOT NULL,
-  ru_wiki TEXT NOT NULL, ru_status TEXT DEFAULT NULL
+  ru_oldname TEXT NOT NULL,
+  ru_wiki TEXT NOT NULL,
+  ru_newname TEXT NOT NULL,
+  ru_status TEXT DEFAULT NULL,
+  PRIMARY KEY(ru_oldname, ru_wiki)
 );
-
-CREATE UNIQUE INDEX ru_oldname ON renameuser_status (ru_oldname, ru_wiki);
 
 
 CREATE TABLE renameuser_queue (

@@ -1,0 +1,82 @@
+{
+	"comment": "Convert unique index to primary key (T300577)",
+	"before": {
+		"name": "renameuser_status",
+		"comment": "Table for global rename status",
+		"columns": [
+			{
+				"name": "ru_oldname",
+				"comment": "Old name being renamed from",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_newname",
+				"comment": "New name being renamed to",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_wiki",
+				"comment": "WikiID",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_status",
+				"comment": "current state of the renaming",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "queued", "inprogress", "failed" ]
+					}
+				}
+			}
+		],
+		"indexes": [
+			{
+				"name": "ru_oldname",
+				"columns": [ "ru_oldname", "ru_wiki" ],
+				"unique": true
+			}
+		]
+	},
+	"after": {
+		"name": "renameuser_status",
+		"comment": "Table for global rename status",
+		"columns": [
+			{
+				"name": "ru_oldname",
+				"comment": "Old name being renamed from",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_newname",
+				"comment": "New name being renamed to",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_wiki",
+				"comment": "WikiID",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "ru_status",
+				"comment": "current state of the renaming",
+				"type": "mwenum",
+				"options": {
+					"notnull": false,
+					"CustomSchemaOptions": {
+						"enum_values": [ "queued", "inprogress", "failed" ]
+					}
+				}
+			}
+		],
+		"indexes": [],
+		"pk": [ "ru_oldname", "ru_wiki" ]
+	}
+}

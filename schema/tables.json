@@ -370,14 +370,8 @@
 				}
 			}
 		],
-		"indexes": [
-			{
-				"name": "ru_oldname",
-				"columns": [ "ru_oldname", "ru_wiki" ],
-				"unique": true
-			}
-		],
-		"pk": []
+		"indexes": [],
+		"pk": [ "ru_oldname", "ru_wiki" ]
 	},
 	{
 		"name": "renameuser_queue",
