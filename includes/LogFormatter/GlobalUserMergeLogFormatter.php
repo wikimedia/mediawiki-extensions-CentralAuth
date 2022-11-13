@@ -28,7 +28,8 @@ class GlobalUserMergeLogFormatter extends LogFormatter {
 
 	/**
 	 * @param string $name
-	 * @return string
+	 * @return string wikitext or html
+	 * @return-taint onlysafefor_html
 	 */
 	protected function getCentralAuthLink( $name ) {
 		if ( $this->plaintext ) {

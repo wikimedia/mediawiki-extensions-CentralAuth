@@ -16,10 +16,14 @@ use MWException;
  */
 class WikiSetLogFormatter extends LogFormatter {
 
+	/**
+	 * @param string $name
+	 * @return string wikitext or html
+	 * @return-taint onlysafefor_html
+	 */
 	private function formatWikiSetLink( $name ) {
 		if ( !$this->plaintext ) {
-			$link = $this->makePageLink( $this->entry->getTarget(), [], htmlspecialchars( $name ) );
-			return Message::rawParam( $link );
+			return $this->makePageLink( $this->entry->getTarget(), [], htmlspecialchars( $name ) );
 		}
 		return $name;
 	}
@@ -48,14 +52,16 @@ class WikiSetLogFormatter extends LogFormatter {
 		switch ( $action ) {
 			case 'deleteset':
 				return [
-					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 				];
 			case 'newset':
 				$wikis = $this->entry->isLegacy()
 					? explode( ', ', $params[5] ) // shouldn't be empty
 					: $this->entry->getParameters()['wikis'];
 				return [
-					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $this->formatType( $params[4] ), // 5::type
 					5 => $this->formatWikis( $wikis ),
 					6 => Message::numParam( count( $wikis ) ),
@@ -68,7 +74,8 @@ class WikiSetLogFormatter extends LogFormatter {
 					[ 'added' => $added, 'removed' => $removed ] = $this->entry->getParameters();
 				}
 				return [
-					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $this->formatWikis( $added ),
 					5 => $this->formatWikis( $removed ),
 					6 => Message::numParam( count( $added ) ),
@@ -76,13 +83,15 @@ class WikiSetLogFormatter extends LogFormatter {
 				];
 			case 'setnewtype':
 				return [
-					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $this->formatType( $params[4] ), // 5::oldType
 					5 => $this->formatType( $params[5] ), // 6::type
 				];
 			case 'setrename':
 				return [
-					3 => $this->formatWikiSetLink( $params[3] ), // 4::name
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $params[4], // 5::oldName
 				];
 			default:

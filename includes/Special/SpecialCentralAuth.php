@@ -320,12 +320,12 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 
-	private function showError( ...$args ) {
-		$this->getOutput()->addHTML( Html::errorBox( $this->msg( ...$args )->parse() ) );
+	private function showError( $key, ...$params ) {
+		$this->getOutput()->addHTML( Html::errorBox( $this->msg( $key, ...$params )->parse() ) );
 	}
 
-	private function showSuccess( ...$args ) {
-		$this->getOutput()->addHTML( Html::successBox( $this->msg( ...$args )->parse() ) );
+	private function showSuccess( $key, ...$params ) {
+		$this->getOutput()->addHTML( Html::successBox( $this->msg( $key, ...$params )->parse() ) );
 	}
 
 	private function showUsernameForm() {
