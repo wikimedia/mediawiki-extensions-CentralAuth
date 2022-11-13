@@ -93,13 +93,7 @@ class ApiGlobalUserRights extends ApiBase {
 			}
 		}
 		$params = $this->extractRequestParams();
-		// Figure out expiry times from the input
-		// $params['expiry'] is not set in CentralAuth's ApiGlobalUserRights subclass
-		if ( isset( $params['expiry'] ) ) {
-			$expiry = (array)$params['expiry'];
-		} else {
-			$expiry = [ 'infinity' ];
-		}
+		$expiry = (array)$params['expiry'];
 		$add = (array)$params['add'];
 		if ( !$add ) {
 			$expiry = [];
@@ -197,6 +191,11 @@ class ApiGlobalUserRights extends ApiBase {
 			'add' => [
 				ParamValidator::PARAM_TYPE => $allGroups,
 				ParamValidator::PARAM_ISMULTI => true
+			],
+			'expiry' => [
+				ParamValidator::PARAM_ISMULTI => true,
+				ParamValidator::PARAM_ALLOW_DUPLICATES => true,
+				ParamValidator::PARAM_DEFAULT => 'infinite',
 			],
 			'remove' => [
 				ParamValidator::PARAM_TYPE => $allGroups,
