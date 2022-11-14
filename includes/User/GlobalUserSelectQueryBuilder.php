@@ -106,13 +106,11 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	public function fetchCentralAuthUsers(): Iterator {
 		$this->init();
 
-		return call_user_func( function () {
-			$result = $this->fetchResultSet();
-			foreach ( $result as $row ) {
-				yield CentralAuthUser::newFromRow( $row, [] );
-			}
-			$result->free();
-		} );
+		$result = $this->fetchResultSet();
+		foreach ( $result as $row ) {
+			yield CentralAuthUser::newFromRow( $row, [] );
+		}
+		$result->free();
 	}
 
 	/**
