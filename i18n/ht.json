@@ -3,21 +3,22 @@
 		"authors": [
 			"Bfpage",
 			"Boukman",
-			"Masterches"
+			"Masterches",
+			"Kitanago"
 		]
 	},
 	"centralauth-complete": "Fizyon kont yo fini !",
 	"centralauth-complete-text": "Kounye a, ou mèt konekte w nan nenpòt pwojè wiki {{int:Centralauth-groupname}} a san ou pa bezwen kreye yon nouvo kont.",
 	"centralauth-desc": "[[Special:MergeAccount|Vin fè yon sèl kont]] atravè tout wiki {{int:Centralauth-groupname}} yo",
 	"centralauth-incomplete": "Fizyon kont yo poko fini !",
-	"centralauth-logout-no-others": "Ou te otomatikman dekonekte de lòt pwojè {{int:Centralauth-groupname}} yo.",
-	"centralauth-logout-progress": "Dekoneksyon de lòt pwojè {{int:Centralauth-groupname}} yo:",
+	"centralauth-logout-no-others": "Ou te dekonekte otomatikman nan lòt pwojè {{int:Centralauth-groupname}} yo.",
+	"centralauth-logout-progress": "W ap dekonekte w nan {{PLURAL:$2| yon lòt wiki|lòt wiki yo}} nan {{int:Centralauth-groupname}}:",
 	"centralauth-merge-denied": "Eskize nou, ou pa gen dwa rantre nan paj sa.",
 	"centralauth-merge-dryrun-complete": "Tout kont yo kapab mete ansanm ak kont prensipal ou an !\n\nPoko gen pyès chanjman ki fèt nan kont ou yo.",
 	"centralauth-merge-dryrun-home": "Sistèm pou fizyon kont yo pa kapab konfime ke ou se mèt kont itilizatè sou wiki prensipal la.\n\nYon lòt kont wiki sanble kont prensipal pou non itilizatè ou an; swiv lyen anba epi konekte w pou fini fizyon kont ou an.",
 	"centralauth-merge-dryrun-incomplete": "Ou deside kontinye, men plizyè kont pa t ka verifye otomatikman, kidonk nou pap mete yo ansanm ak kont prensipal ou an kounye a.\nOu mèt mete yo ansanm pi ta.\n\nPoko gen pyès chanjman ki fèt nan kont ou yo.",
 	"centralauth-merge-dryrun-or": "'''oubyen'''",
-	"centralauth-merge-notlogged": "Tanpri <span class=\"plainlinks\">[{{fullurl:{{#special:UserLogin}}|returnto={{#special:MergeAccount}}}} konekte w]</span> pou verifye si kont ou an byen fizyone ak tout lòt kont ou yo.",
+	"centralauth-merge-notlogged": "Tanpri <span class=\"plainlinks\">[ $1 konekte]</span> pou tcheke si kont ou yo te konplètman fizyone.",
 	"centralauth-merge-step1-detail": "Tanpri, antre mopas ou an.\nNou pral konpare adrès imèl ou an ak mopas ou an pou verifye ke yo menm ak pa lòt wiki yo.\nPap gen pyès chanjman k ap fèt san ou pa valide etap sa.",
 	"centralauth-merge-step1-submit": "Konfime enfòmasyon pou konekte w",
 	"centralauth-merge-step1-title": "Koumanse fizyon kont yo",
