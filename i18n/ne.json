@@ -158,7 +158,7 @@
 	"centralauth-prefs-not-managed": "एकीकृत खाता प्रयोग नगरिएको",
 	"centralauth-prefs-status": "विश्वव्यापी खाता:",
 	"centralauth-prefs-unattached": "अनिश्चित",
-	"centralauth-prefs-view": "वैश्विक प्रयोगकर्ता खाता हेर्ने",
+	"centralauth-prefs-view": "वैश्विक प्रयोगकर्ता खाता हेर्नुहोस्",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''एकल प्रवेश'''को लागि पढ्नुहोस्]]…''",
 	"centralauth-rename-movelog": "प्रयोगकर्तालाई पुन: नामाकरण गर्दा \"[[Special:CentralAuth/$1|$1]]\" लाई \"[[Special:CentralAuth/$2|$2]]\"मा स्वचालित रूपमा सारियो",
 	"centralauth-rename-table-status": "स्थिति",

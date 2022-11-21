@@ -124,7 +124,7 @@
 	"centralauth-attach-submit": "Перанесці рахунак",
 	"centralauth-attach-success": "Рахунак быў перанесены да аб’яднанага рахунку.",
 	"centralauth-attach-text": "Гэты рахунак яшчэ не быў перанесены да адзінага рахунку.\nКалі глабальны рахунак таксама належыць вам, вы можаце аб’яднаць гэты рахунак, пазначыўшы пароль глабальнага рахунку:",
-	"centralauth-attach-title": "Пацвярджэнне ўліковага запісу",
+	"centralauth-attach-title": "Пацвердзіць уліковы запіс",
 	"centralauth-block-already-locked": "Уліковы запіс [[Special:CentralAuth/$1|$1]] ужо заблакаваны глабальна.",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|старонка|старонкі|старонак}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|прастора|прасторы|прастораў}} назваў",
