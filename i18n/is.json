@@ -7,7 +7,8 @@
 			"Spacebirdy",
 			"Sveinn í Felli",
 			"McDutchie",
-			"Þjarkur"
+			"Þjarkur",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Altækir hópar sem þessi notandi tilheyrir",
@@ -30,7 +31,7 @@
 	"centralauth-admin-delete-title": "Eyða aðgangi",
 	"centralauth-admin-group-temporary": "$1 ''(tímabundið)''",
 	"centralauth-admin-hidden-list": "frá almennum notendalistum",
-	"centralauth-admin-hidden-oversight": "falinn",
+	"centralauth-admin-hidden-oversight": "bælt",
 	"centralauth-admin-info-editcount": "Fjöldi breytinga:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Altækur hópur|Altækir hópar}}:",
 	"centralauth-admin-info-header": "Upplýsingar altæks aðgangs",
@@ -182,7 +183,7 @@
 	"centralauth-log-status-hidden": "falinn",
 	"centralauth-log-status-locked": "læstur",
 	"centralauth-log-status-none": "(engin)",
-	"centralauth-log-status-oversighted": "falinn",
+	"centralauth-log-status-oversighted": "bælt",
 	"centralauth-login-error-locked": "Þú getur ekki skráð þig inn því aðgangurinn þinn er læstur altækt.",
 	"centralauth-login-no-others": "Þú hefur sjálfvirkt verið útskráður á verkefnum {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Skrái þig inn á wiki verkefni {{int:Centralauth-groupname}}:",
@@ -234,7 +235,7 @@
 	"centralauth-prefs-not-managed": "Notar ekki samræmdan aðgang",
 	"centralauth-prefs-status": "Altækur aðgangur:",
 	"centralauth-prefs-unattached": "Ekki sameinaður að fullu",
-	"centralauth-prefs-view": "Skoða upplýsingar altæks aðgangs",
+	"centralauth-prefs-view": "Skoðaðu almennar reikningsupplýsingar þínar",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lesa meira um '''samræmda innskráningu''']]…''",
 	"centralauth-readonly": "CentralAuth gagnabankinn er læstur",
 	"centralauth-readonlytext": "CentralAuth gangnabankinn er læstur í augnablikinu. Ekki er hægt að bæta nýjum færslum við eða gera breytingar. Þetta er væntanlega vegna reglulegs viðhalds og eftir það verður hann virka eins og venjulega aftur.",
