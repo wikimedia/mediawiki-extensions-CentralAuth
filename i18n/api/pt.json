@@ -81,7 +81,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Alterar mesmo que o utilizador não esteja oculto, esteja ocultado da lista global de utilizadores, ou esteja suprimido.",
 	"apihelp-setglobalaccountstatus-param-locked": "Alterar mesmo que o utilizador esteja bloqueado.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo da alteração de estado do utilizador.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do <username>:<hidden>:<locked> atual, para detetar conflitos de edição. Definir <locked> como 1 para bloqueado, 0 para desbloqueado.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do <userid>:<username>:<hidden>:<locked> atual esperado, para detetar conflitos de edição. Definir <locked> como 1 para bloqueado, 0 para desbloqueado.",
 	"apihelp-setglobalaccountstatus-param-user": "Utilizador cujo estado será alterado.",
 	"apihelp-setglobalaccountstatus-summary": "Definir o estado de um utilizador global."
 }
