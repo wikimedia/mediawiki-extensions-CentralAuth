@@ -559,7 +559,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 
 		$language = $this->getLanguage();
-		// @phan-suppress-next-line SecurityCheck-XSS T183174
 		$displayedList = $this->msg( 'userrights-groupsmember-type' )
 			->rawParams(
 				$language->commaList( array_merge( $tempList, $list ) ),
