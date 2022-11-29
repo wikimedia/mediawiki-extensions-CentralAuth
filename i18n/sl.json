@@ -477,7 +477,7 @@
 	"logentry-gblrights-setrename": "$1 je {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} sklop vikijev »$5« v »$4«",
 	"logentry-gblrights-grouprename": "$1 je {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} skupino $5 v $4",
 	"logentry-gblrights-groupprms2": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil/a}} dovoljenja globalne skupine za $3: dodano $4; odstranjeno $5",
-	"logentry-gblrights-groupprms3": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil/<}} skupinsko omejeni nabor vikijev za $3 iz $4 v $5",
+	"logentry-gblrights-groupprms3": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} skupinsko omejeni nabor vikijev za $3 iz $4 v $5",
 	"logentry-gblrights-usergroups": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil/a}} članstvo v globalni skupini za uporabnika $3 iz $4 v $5",
 	"logentry-globalauth-delete": "$1 je {{GENDER:$2|izbrisal|izbrisala|izbrisal/a}} globalni račun »$3«",
 	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|je spremenil|je spremenila|je spremenil/a}} status globalnega računa »$3«; nastavljeno: $4; odnastavljeno: $5",
