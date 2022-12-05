@@ -395,7 +395,7 @@
 	"centralauth-years-ago": "pred $1 {{PLURAL:$1|letom|letoma|leti}}",
 	"centralautologin": "Centralna prijava",
 	"centrallogin": "Centralna prijava uporabnika",
-	"centralloginsuccesful": "Sedaj ste prijavljeni",
+	"centralloginsuccesful": "Zdaj ste prijavljeni",
 	"globalgroupmembership": "Članstvo v globalnih skupinah",
 	"globalgrouppermissions": "Upravljanje globalnih skupin",
 	"globalrenameprogress": "Napredek globalnega preimenovanja",
