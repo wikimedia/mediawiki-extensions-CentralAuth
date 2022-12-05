@@ -28,7 +28,7 @@
 	"apihelp-globaluserrights-example-1": "Adder le usator FooBot al gruppo global \"bot\", e remover le del gruppos global \"sysop\" e \"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "Adder le usator global con ID 123 al gruppo global \"bot\", e remover le del gruppos \"sysop\" e \"bureaucrat\"",
 	"apihelp-globaluserrights-param-add": "Adder le usator a iste gruppos global.",
-	"apihelp-globaluserrights-param-expiry": "Iste parametro es actualmente inutilisate.",
+	"apihelp-globaluserrights-param-expiry": "Datas e horas de expiration. Pote esser relative (p.ex. <kbd>5 months</kbd> o <kbd>2 weeks</kbd>) o absolute (p.ex. <kbd>2014-09-18T12:34:56Z</kbd>). Si solmente un data e hora es definite, illo essera usate pro tote le gruppos passate al parametro <var>$1add</var>. Usa <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> o <kbd>never</kbd> pro un gruppo de usatores que non expira jammais.",
 	"apihelp-globaluserrights-param-reason": "Motivo del cambiamento.",
 	"apihelp-globaluserrights-param-remove": "Remover le usator de iste gruppos global.",
 	"apihelp-globaluserrights-param-tags": "Iste parametro actualmente non es usate.",

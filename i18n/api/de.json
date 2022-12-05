@@ -5,6 +5,7 @@
 			"FF-11",
 			"FF11",
 			"MGChecker",
+			"McDutchie",
 			"Metalhead64",
 			"Predatorix",
 			"Wnme"
@@ -34,7 +35,7 @@
 	"apihelp-globaluserrights-example-1": "Fügt den Benutzer FooBot zur globalen Gruppe „Bot“ hinzu und entfernt ihn aus den globalen Gruppen „Administrator“ und „Bürokrat“",
 	"apihelp-globaluserrights-example-2": "Fügt den globalen Benutzer mit der Kennung 123 zur globalen Gruppe „Bot“ hinzu und entfernt ihn aus den globalen Gruppen „Administrator“ und „Bürokrat“.",
 	"apihelp-globaluserrights-param-add": "Fügt den Benutzer zu diesen globalen Gruppen hinzu.",
-	"apihelp-globaluserrights-param-expiry": "Dieser Parameter wird derzeit nicht verwendet.",
+	"apihelp-globaluserrights-param-expiry": "Ablaufzeitstempel. Kann relativ (z. B. <kbd>5 months</kbd> oder <kbd>2 weeks</kbd>) oder absolut (z. B. <kbd>2014-09-18T12:34:56Z</kbd>) sein. Wenn nur ein Zeitstempel gesetzt ist, wird er für alle Gruppen verwendet, die an den Parameter <var>$1add</var> übergeben werden. Verwende <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> oder <kbd>never</kbd> für eine nie ablaufende Benutzergruppenberechtigung.",
 	"apihelp-globaluserrights-param-reason": "Grund für die Änderung.",
 	"apihelp-globaluserrights-param-remove": "Entfernt den Benutzer aus diesen globalen Gruppen.",
 	"apihelp-globaluserrights-param-tags": "Dieser Parameter wird derzeit nicht verwendet.",

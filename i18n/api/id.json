@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"DARMAS BUDI SANTOSO"
+		]
+	},
+	"apihelp-globaluserrights-param-expiry": "Expiry timestamps. May be relative (e.g. <kbd>5 months</kbd> or <kbd>2 weeks</kbd>) or absolute (e.g. <kbd>2014-09-18T12:34:56Z</kbd>). If only one timestamp is set, it will be used for all groups passed to the <var>$1add</var> parameter. Use <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd>, or <kbd>never</kbd> for a never-expiring user group."
+}

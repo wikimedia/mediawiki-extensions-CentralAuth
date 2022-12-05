@@ -30,7 +30,7 @@
 	"apihelp-globaluserrights-example-1": "הוספת המשתמש FooBot לקבוצה הגלובלית \"bot\", והסרתו מהקבוצות הגלובליות \"sysop\" ו־\"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "הוספת המשתמש הגלובלי עם מזהה 123 לקבוצה הגלובלית \"bot\", והסרתו מהקבוצות הגלובליות \"sysop\" ו־\"bureaucrat\"",
 	"apihelp-globaluserrights-param-add": "הספת משתמש לקבוצות הגלובליות האלו.",
-	"apihelp-globaluserrights-param-expiry": "הפרמטר הזה לא בשימוש כעת.",
+	"apihelp-globaluserrights-param-expiry": "חותמי־זמן תפוגה. יכולים להיות יחסיים (למשל <kbd>5 months</kbd> או <kbd>2 weeks</kbd>) או מוחלטים (למשל <kbd>2014-09-18T12:34:56Z</kbd>). אם מוגדר רק חותם־זמן אחד, הוא ישמש לכל הקבוצות שהועברו לפרמטר <var>$1add</var>. יש להשתמש ב־<kbd>infinite</kbd>‏, <kbd>indefinite</kbd>‏, <kbd>infinity</kbd>, או <kbd>never</kbd> בשביל קבוצת משתמשים שאינה פגה לעולם.",
 	"apihelp-globaluserrights-param-reason": "סיבה לשינוי",
 	"apihelp-globaluserrights-param-remove": "הסרת משתמש מהקבוצות הגלובליות האלו.",
 	"apihelp-globaluserrights-param-tags": "הפרמטר הזה לא נמצא בשימוש כעת.",

@@ -204,7 +204,7 @@
 	"centralauth-editset-usage": "Uporabljeno v skupinah:",
 	"centralauth-editset-wikis": "Vikiji:",
 	"centralauth-editset-zerowikis": "Določen ni bil noben viki.",
-	"centralauth-error-badtoken": "Predloženi avtentikacijski žeton je potekel ali je neveljaven.",
+	"centralauth-error-badtoken": "Predloženi avtentikacijski žeton je pretekel ali je neveljaven.",
 	"centralauth-error-locked": "Ne morete urejati, ker je vaš račun zaklenjen.",
 	"centralauth-error-nologinattempt": "Za vašo sejo ne poteka noben aktiven poskus prijave.",
 	"centralauth-error-token-wrongattempt": "Avtentikacijski žeton ne pripada vašemu trenutnemu poskusu prijave. Morda vas poskuša prijaviti nekdo drug iz zlonamernega računa.",
