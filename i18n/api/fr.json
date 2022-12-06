@@ -34,7 +34,7 @@
 	"apihelp-globaluserrights-example-1": "Ajouter l’utilisateur FooBot au groupe global « robots » et le supprimer des groupes globaux « administrateurs » et « bureaucrates »",
 	"apihelp-globaluserrights-example-2": "Ajouter l’utilisateur global avec l’ID 123 au groupe global « robots » et le supprimer des groupes globaux « administrateurs » et « bureaucrates »",
 	"apihelp-globaluserrights-param-add": "Ajouter l’utilisateur à ces groupes globaux.",
-	"apihelp-globaluserrights-param-expiry": "Ce paramètre est actuellement inutilisé.",
+	"apihelp-globaluserrights-param-expiry": "Horodatage d’expiration. Peut être relatif (par ex. <kbd>5 months</kbd> pour 5 mois ou <kbd>2 weeks</kbd> pour 2 semaines) ou bien absolu (par ex. <kbd>2014-09-18T12:34:56Z</kbd>). Si un seul horodatage est indiqué, il sera utilisé pour tous les groupes passés au paramètre <var>$1add</var>. Utiliser <kbd>infinite</kbd> (infini), <kbd>indefinite</kbd> (indéfini), <kbd>infinity</kbd> (infinité) ou <kbd>never</kbd> (jamais) pour un groupe d’utilisateur qui ne doit jamais expirer.",
 	"apihelp-globaluserrights-param-reason": "Motif de la modification.",
 	"apihelp-globaluserrights-param-remove": "Supprimer l’utilisateur de ces groupes globaux.",
 	"apihelp-globaluserrights-param-tags": "Ce paramètre n’est pas utilisé actuellement.",
