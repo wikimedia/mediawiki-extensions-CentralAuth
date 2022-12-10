@@ -6,10 +6,10 @@ use DerivativeContext;
 use Exception;
 use Html;
 use HTMLForm;
-use Linker;
 use LogEventsList;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
+use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
@@ -80,19 +80,24 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
+	/** @var CommentFormatter */
+	private $commentFormatter;
+
 	/**
 	 * @param NamespaceInfo $namespaceInfo
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserNameUtils $userNameUtils
+	 * @param CommentFormatter $commentFormatter
 	 */
 	public function __construct(
 		NamespaceInfo $namespaceInfo,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		ReadOnlyMode $readOnlyMode,
-		UserNameUtils $userNameUtils
+		UserNameUtils $userNameUtils,
+		CommentFormatter $commentFormatter
 	) {
 		parent::__construct( 'CentralAuth' );
 		$this->namespaceInfo = $namespaceInfo;
@@ -100,6 +105,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->uiService = $uiService;
 		$this->readOnlyMode = $readOnlyMode;
 		$this->userNameUtils = $userNameUtils;
+		$this->commentFormatter = $commentFormatter;
 	}
 
 	public function doesWrites() {
@@ -679,7 +685,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 			if ( $row['block-reason'] ) {
 				$reason = Sanitizer::escapeHtmlAllowEntities( $row['block-reason'] );
-				$reason = Linker::formatLinksInComment(
+				$reason = $this->commentFormatter->formatLinks(
 					$reason,
 					null,
 					false,

@@ -114,7 +114,8 @@
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService",
 				"ReadOnlyMode",
-				"UserNameUtils"
+				"UserNameUtils",
+				"CommentFormatter"
 			]
 		},
 		"CentralLogin": {
