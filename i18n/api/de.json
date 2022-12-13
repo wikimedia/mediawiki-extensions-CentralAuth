@@ -7,7 +7,8 @@
 			"Metalhead64",
 			"Predatorix",
 			"Brettchenweber",
-			"Wnme"
+			"Wnme",
+			"McDutchie"
 		]
 	},
 	"apierror-centralauth-badsession": "Nur bei Verwendung von CentralAuth-Sitzungen kann ein centralauthtoken abgerufen werden.",
@@ -17,9 +18,9 @@
 	"apierror-centralauth-notattached": "Es kann kein centralauthtoken ohne ein zugewiesenes globales Benutzerkonto abgerufen werden.",
 	"apierror-centralauth-notloggedin": "Anonyme Benutzer können keinen centralauthtoken abrufen.",
 	"apierror-centralauth-renameinprogress": "Der Benutzer wird derzeit umbenannt, Verwendung nicht möglich.",
-	"apihelp-centralauthtoken-description": "Rufe einen CentralAuth - Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
+	"apihelp-centralauthtoken-description": "Rufe einen CentralAuth-Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
 	"apihelp-centralauthtoken-example-1": "Ruft einen centralauthtoken ab",
-	"apihelp-centralauthtoken-summary": "Rufe einen CentralAuth - Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
+	"apihelp-centralauthtoken-summary": "Rufe einen CentralAuth-Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
 	"apihelp-createlocalaccount-description": "Erzwingt die Erstellung eines lokalen Benutzerkontos. Dies ist funktional äquivalent zur Verwendung von [[Special:CreateLocalAccount]].",
 	"apihelp-createlocalaccount-example-1": "Erzwingt die Erstellung eines lokalen Benutzerkontos für [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Grund für die Erstellung des lokalen Benutzerkontos.",

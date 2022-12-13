@@ -17,7 +17,9 @@
 	"centralauth-merge-method-login": "кхыйола вики-проекте система чувоалаш кхелла учета яздар",
 	"centralauth-prefs-status": "Глобальни аккаунт:",
 	"centralauth-prefs-view": "Хьа юкъарча аккаунтах бола хоам",
+	"centralauth-rename-form-movepages": "Доакъашхочун оагӀоний цӀераш хувца",
 	"centralauth-rename-progress-username": "Доакъашхочун цӀи",
 	"globalrenamequeue-action-view": "Хьажар",
+	"globalrenamequeue-request-movepages": "Доакъашхочун оагӀоний цӀераш хувца",
 	"right-centralauth-merge": "дагара йоазонаш цхьантохар"
 }
