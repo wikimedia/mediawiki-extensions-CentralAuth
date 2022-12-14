@@ -412,7 +412,7 @@
 	"createlocalaccount": "強制建立本地帳號",
 	"globalgroupmembership": "於全域群組中的成員",
 	"globalgrouppermissions": "全域群組管理",
-	"globalrenameprogress": "全域重新命名進度",
+	"globalrenameprogress": "全域改名進度",
 	"globalrenameprogress-legend": "檢視全域重新命名進度",
 	"globalrenamequeue": "全域重新命名請求序列",
 	"globalrenamequeue-action-address": "解決",
