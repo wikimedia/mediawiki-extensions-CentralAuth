@@ -49,6 +49,7 @@ class SendForceRenameNotification extends Maintenance {
 		$lbFactory = $services->getDBLoadBalancerFactory();
 		$namespaceInfo = $services->getNamespaceInfo();
 		$jobQueueGroup = $services->getJobQueueGroup();
+		$linkBatchFactory = $services->getLinkBatchFactory();
 
 		while ( true ) {
 			$jobs = [];
@@ -57,7 +58,7 @@ class SendForceRenameNotification extends Maintenance {
 			if ( $rows->numRows() === 0 ) {
 				break;
 			}
-			$lb = new LinkBatch;
+			$lb = $linkBatchFactory->newLinkBatch();
 			foreach ( $rows as $row ) {
 				$title = Title::makeTitleSafe( NS_USER_TALK, $row->utr_name );
 				if ( !$title ) {

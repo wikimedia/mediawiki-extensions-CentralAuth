@@ -6,6 +6,7 @@ use DerivativeContext;
 use Html;
 use IncludableSpecialPage;
 use Language;
+use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use Title;
@@ -20,20 +21,26 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
+
 	/**
 	 * @param Language $contentLanguage
 	 * @param CentralAuthDatabaseManager $dbManager
 	 * @param GlobalGroupLookup $globalGroupLookup
+	 * @param LinkBatchFactory $linkBatchFactory
 	 */
 	public function __construct(
 		Language $contentLanguage,
 		CentralAuthDatabaseManager $dbManager,
-		GlobalGroupLookup $globalGroupLookup
+		GlobalGroupLookup $globalGroupLookup,
+		LinkBatchFactory $linkBatchFactory
 	) {
 		parent::__construct( 'GlobalUsers' );
 		$this->contentLanguage = $contentLanguage;
 		$this->dbManager = $dbManager;
 		$this->globalGroupLookup = $globalGroupLookup;
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function execute( $par ) {
@@ -43,7 +50,12 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
 
-		$pg = new GlobalUsersPager( $context, $this->dbManager, $this->globalGroupLookup );
+		$pg = new GlobalUsersPager(
+			$context,
+			$this->dbManager,
+			$this->globalGroupLookup,
+			$this->linkBatchFactory
+		);
 		$req = $this->getRequest();
 
 		if ( $par !== null && $par !== '' ) {

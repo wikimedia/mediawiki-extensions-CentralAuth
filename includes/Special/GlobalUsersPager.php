@@ -6,7 +6,7 @@ use AlphabeticPager;
 use Html;
 use HTMLForm;
 use IContextSource;
-use LinkBatch;
+use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -28,21 +28,26 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
 
 	/**
 	 * @param IContextSource $context
 	 * @param CentralAuthDatabaseManager $dbManager
 	 * @param GlobalGroupLookup $globalGroupLookup
+	 * @param LinkBatchFactory $linkBatchFactory
 	 */
 	public function __construct(
 		IContextSource $context,
 		CentralAuthDatabaseManager $dbManager,
-		GlobalGroupLookup $globalGroupLookup
+		GlobalGroupLookup $globalGroupLookup,
+		LinkBatchFactory $linkBatchFactory
 	) {
 		$this->mDb = $dbManager->getCentralDB( DB_REPLICA );
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
 		$this->globalGroupLookup = $globalGroupLookup;
+		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	/**
@@ -155,7 +160,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	}
 
 	protected function doBatchLookups() {
-		$batch = new LinkBatch();
+		$batch = $this->linkBatchFactory->newLinkBatch();
 
 		foreach ( $this->mResult as $row ) {
 			// userpage existence link cache
