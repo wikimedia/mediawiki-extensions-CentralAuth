@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Afalau",
 			"Amire80",
 			"Lloffiwr",
 			"Matma Rex",
@@ -72,6 +73,7 @@
 	"centralauth-admin-permission": "Dim ond stiward all uno cyfrifon pobl eraill drostynt.",
 	"centralauth-admin-reason": "Rheswm:",
 	"centralauth-admin-reason-other": "Rheswm arall:",
+	"centralauth-admin-reason-other-select": "Rheswm arall:",
 	"centralauth-admin-setstatus-success": "Rydych wedi llwyddo newid statws y cyfrif cydwici hwn.",
 	"centralauth-admin-status": "Gosod statws y cyfrif cydwici",
 	"centralauth-admin-status-hidden": "Ynghudd:",
