@@ -33,7 +33,8 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 
 		$provider = new CentralAuthHeaderSessionProvider(
 			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
-			$services->get( 'CentralAuth.CentralAuthUtilityService' )
+			$services->get( 'CentralAuth.CentralAuthUtilityService' ),
+			$services->getUserIdentityLookup()
 		);
 		$this->initProvider(
 			$provider, null, $config, $manager, $hookContainer, $services->getUserNameUtils()

@@ -2162,7 +2162,9 @@ class CentralAuthUser implements IDBAccessObject {
 		// FIXME: this will give users "password incorrect" error.
 		// Giving correct message requires AuthPlugin and SpecialUserlogin
 		// rewriting.
-		if ( !User::idFromName( $this->getName() ) && $this->isSuppressed() ) {
+		$userIdentity = MediaWikiServices::getInstance()->getUserIdentityLookup()
+			->getUserIdentityByName( $this->getName() );
+		if ( !( $userIdentity && $userIdentity->isRegistered() ) && $this->isSuppressed() ) {
 			return self::AUTHENTICATE_LOCKED;
 		}
 

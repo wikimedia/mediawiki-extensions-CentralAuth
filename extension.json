@@ -75,7 +75,8 @@
 			],
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"UserIdentityLookup"
 			]
 		},
 		"CentralAuthApiSessionProvider": {
@@ -83,7 +84,8 @@
 			"args": [],
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"UserIdentityLookup"
 			]
 		},
 		"CentralAuthHeaderSessionProvider": {
@@ -91,7 +93,8 @@
 			"args": [],
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"UserIdentityLookup"
 			]
 		}
 	},
@@ -133,7 +136,8 @@
 				"UserOptionsManager",
 				"ReadOnlyMode",
 				"CentralAuth.CentralAuthSessionManager",
-				"LanguageFactory"
+				"LanguageFactory",
+				"UserIdentityLookup"
 			]
 		},
 		"CreateLocalAccount": {
@@ -810,6 +814,7 @@
 					"UserNameUtils",
 					"StatsdDataFactory",
 					"ReadOnlyMode",
+					"UserIdentityLookup",
 					"CentralAuth.GlobalRenameRequestStore",
 					"CentralAuth.CentralAuthUtilityService"
 				]

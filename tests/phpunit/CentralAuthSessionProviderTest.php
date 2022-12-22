@@ -35,6 +35,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$provider = new CentralAuthSessionProvider(
 			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
 			$services->get( 'CentralAuth.CentralAuthUtilityService' ),
+			$services->getUserIdentityLookup(),
 			[
 				'priority' => 42,
 				'cookieOptions' => [ 'prefix' => '' ],
@@ -69,6 +70,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$provider = new CentralAuthSessionProvider(
 			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
 			$services->get( 'CentralAuth.CentralAuthUtilityService' ),
+			$services->getUserIdentityLookup(),
 			[ 'priority' => 42 ]
 		);
 		$this->initProvider( $provider, null, $this->getConfig() );

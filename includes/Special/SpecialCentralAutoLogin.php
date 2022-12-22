@@ -17,6 +17,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserOptionsManager;
 use MobileContext;
 use MWCryptRand;
@@ -62,19 +63,24 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var LanguageFactory */
 	private $languageFactory;
 
+	/** @var UserIdentityLookup */
+	private $userIdentityLookup;
+
 	/**
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 * @param UserOptionsManager $userOptionsManager
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param LanguageFactory $languageFactory
+	 * @param UserIdentityLookup $userIdentityLookup
 	 */
 	public function __construct(
 		CentralAuthUtilityService $centralAuthUtilityService,
 		UserOptionsManager $userOptionsManager,
 		ReadOnlyMode $readOnlyMode,
 		CentralAuthSessionManager $sessionManager,
-		LanguageFactory $languageFactory
+		LanguageFactory $languageFactory,
+		UserIdentityLookup $userIdentityLookup
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
@@ -84,6 +90,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->sessionManager = $sessionManager;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$this->languageFactory = $languageFactory;
+		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	/**
@@ -538,7 +545,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// If it is a script callback, then we do want to create the user
 			// if it doesn't already exist locally (and fail if that can't be
 			// done).
-			if ( !User::idFromName( $centralUser->getName() ) ) {
+			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $centralUser->getName() );
+			if ( !$userIdentity || !$userIdentity->isRegistered() ) {
 				$user = new User;
 				$user->setName( $centralUser->getName() );
 				if ( $this->centralAuthUtilityService->autoCreateUser( $user )->isGood() ) {

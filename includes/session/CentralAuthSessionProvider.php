@@ -7,6 +7,7 @@ use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\UserInfo;
+use MediaWiki\User\UserIdentityLookup;
 use Mediawiki\User\UserNameUtils;
 
 /**
@@ -32,9 +33,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	/** @var CentralAuthUtilityService */
 	private $utilityService;
 
+	/** @var UserIdentityLookup */
+	private $userIdentityLookup;
+
 	/**
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $utilityService
+	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param array $params In addition to the parameters for
 	 * CookieSessionProvider, the following are
 	 * recognized:
@@ -54,10 +59,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	public function __construct(
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthUtilityService $utilityService,
+		UserIdentityLookup $userIdentityLookup,
 		$params = []
 	) {
 		$this->sessionManager = $sessionManager;
 		$this->utilityService = $utilityService;
+		$this->userIdentityLookup = $userIdentityLookup;
 
 		$params += [
 			'centralCookieOptions' => [],
@@ -205,9 +212,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
 			return self::returnParentSessionInfo( $request );
 		}
-		if ( !$centralUser->isAttached() && User::idFromName( $userName ) ) {
-			$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-			return self::returnParentSessionInfo( $request );
+		if ( !$centralUser->isAttached() ) {
+			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $userName );
+			if ( $userIdentity && $userIdentity->isRegistered() ) {
+				$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
+				return self::returnParentSessionInfo( $request );
+			}
 		}
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
 			$this->logger->debug( __METHOD__ . ': token mismatch' );
@@ -240,9 +250,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 					$source = 'Local';
 				} else {
 					$centralUser = CentralAuthUser::getInstanceByName( $name );
+					$userIdentity = $this->userIdentityLookup
+						->getUserIdentityByName( $name, IDBAccessObject::READ_LATEST );
 					if ( $centralUser->exists() &&
 						( $centralUser->isAttached() ||
-							!User::idFromName( $name, User::READ_LATEST ) )
+							!$userIdentity || !$userIdentity->isRegistered() )
 					) {
 						$source = 'CentralAuth';
 					} else {

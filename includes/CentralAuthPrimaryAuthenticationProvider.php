@@ -24,6 +24,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use CentralAuthAntiSpoofHooks;
 use DeferredUpdates;
 use IBufferingStatsdDataFactory;
+use IDBAccessObject;
 use InvalidPassword;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
@@ -34,6 +35,7 @@ use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use ReadOnlyMode;
 use RequestContext;
@@ -56,6 +58,9 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
+
+	/** @var UserIdentityLookup */
+	private $userIdentityLookup;
 
 	/** @var GlobalRenameRequestStore */
 	private $globalRenameRequestStore;
@@ -85,6 +90,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param UserNameUtils $userNameUtils
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param ReadOnlyMode $readOnlyMode
+	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param GlobalRenameRequestStore $globalRenameRequestStore
 	 * @param CentralAuthUtilityService $utilityService
 	 * @param array $params Settings. All are optional, defaulting to the
@@ -105,6 +111,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		UserNameUtils $userNameUtils,
 		IBufferingStatsdDataFactory $statsdDataFactory,
 		ReadOnlyMode $readOnlyMode,
+		UserIdentityLookup $userIdentityLookup,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		CentralAuthUtilityService $utilityService,
 		$params = []
@@ -123,6 +130,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->userNameUtils = $userNameUtils;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->readOnlyMode = $readOnlyMode;
+		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$params += [
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
@@ -399,8 +407,9 @@ class CentralAuthPrimaryAuthenticationProvider
 		// will return true for such users.
 
 		$centralUser = CentralAuthUser::getInstanceByName( $username );
+		$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $username );
 		return $centralUser && $centralUser->exists() &&
-			( $centralUser->isAttached() || !User::idFromName( $username ) ) &&
+			( $centralUser->isAttached() || !$userIdentity || !$userIdentity->isRegistered() ) &&
 			!$centralUser->getPasswordObject() instanceof InvalidPassword;
 	}
 
@@ -425,9 +434,11 @@ class CentralAuthPrimaryAuthenticationProvider
 			$username = $this->userNameUtils->getCanonical( $req->username, UserNameUtils::RIGOR_USABLE );
 			if ( $username !== false ) {
 				$centralUser = CentralAuthUser::getInstanceByName( $username );
+				$userIdentity = $this->userIdentityLookup
+					->getUserIdentityByName( $username, IDBAccessObject::READ_LATEST );
 				if ( $centralUser->exists() &&
 					( $centralUser->isAttached() ||
-					!User::idFromName( $username, User::READ_LATEST ) )
+					!$userIdentity || !$userIdentity->isRegistered() )
 				) {
 					$sv = StatusValue::newGood();
 					if ( $req->password !== null ) {
@@ -455,8 +466,9 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		if ( get_class( $req ) === PasswordAuthenticationRequest::class ) {
 			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $username );
+			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $username, IDBAccessObject::READ_LATEST );
 			if ( $centralUser->exists() &&
-				( $centralUser->isAttached() || !User::idFromName( $username, User::READ_LATEST ) )
+				( $centralUser->isAttached() || !$userIdentity || !$userIdentity->isRegistered() )
 			) {
 				$centralUser->setPassword( $req->password );
 			}

@@ -5,6 +5,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
@@ -24,17 +25,23 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	/** @var CentralAuthUtilityService */
 	private $utilityService;
 
+	/** @var UserIdentityLookup */
+	private $userIdentityLookup;
+
 	/**
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $utilityService
+	 * @param UserIdentityLookup $userIdentityLookup
 	 */
 	public function __construct(
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $utilityService
+		CentralAuthUtilityService $utilityService,
+		UserIdentityLookup $userIdentityLookup
 	) {
 		parent::__construct();
 		$this->sessionManager = $sessionManager;
 		$this->utilityService = $utilityService;
+		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	/**
@@ -123,9 +130,12 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
-		if ( !$centralUser->isAttached() && User::idFromName( $userName ) ) {
-			$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
+		if ( !$centralUser->isAttached() ) {
+			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $userName );
+			if ( $userIdentity && $userIdentity->isRegistered() ) {
+				$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
+				return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
+			}
 		}
 
 		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
