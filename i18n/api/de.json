@@ -81,6 +81,6 @@
 	"apihelp-setglobalaccountstatus-param-locked": "Ändert, ob dieser Benutzer gesperrt ist oder nicht.",
 	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Optionaler MD5-Hash des erwarteten aktuellen <Benutzernamens>:<versteckt>:<gesperrt>, um Bearbeitungskonflikte festzustellen. Für gesperrt <gesperrt> auf 1 festlegen, 0 für freigegeben.",
-	"apihelp-setglobalaccountstatus-param-user": "Benutzer, von dem der Status geändert werden soll.",
+	"apihelp-setglobalaccountstatus-param-user": "Benutzer, dessen Status geändert werden soll.",
 	"apihelp-setglobalaccountstatus-summary": "Legt den Status eines globalen Benutzers fest."
 }
