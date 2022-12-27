@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"W"
+			"W",
+			"Vlad5250"
 		]
 	},
+	"apihelp-createlocalaccount-summary": "Прымусовае стварэньне лякальнага рахунку",
 	"apihelp-globaluserrights-param-reason": "Прычына зьмяненьня."
 }

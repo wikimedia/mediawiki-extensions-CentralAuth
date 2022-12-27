@@ -135,7 +135,7 @@
 	"centralauth-admin-not-authorized": "Vous n’avez pas les droits pour effectuer cette action.",
 	"centralauth-admin-permission": "Seuls les stewards peuvent fusionner les comptes d’autres personnes à leur place.",
 	"centralauth-admin-reason": "Motif :",
-	"centralauth-admin-reason-other": "Motif autre / supplémentaire :",
+	"centralauth-admin-reason-other": "Motif autre ou supplémentaire :",
 	"centralauth-admin-reason-other-select": "Autre motif :",
 	"centralauth-admin-rename-in-progress": "Ce compte va être renommé. Cliquez [[Special:GlobalRenameProgress/$1|ici]] pour voir l'état actuel d’avancement. L’historique global du renommage est fourni ci-après.",
 	"centralauth-admin-setstatus-success": "Vous avez modifié l’état de ce compte global.",
