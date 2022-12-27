@@ -502,7 +502,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getName(),
 			$req->getNewName()
 		);
-		$htmlForm->addHeaderText( '<span class="plainlinks">' . $headerMsg->parseAsBlock() .
+		$htmlForm->addHeaderHtml( '<span class="plainlinks">' . $headerMsg->parseAsBlock() .
 			'</span>' );
 
 		$homeWikiWiki = $homeWiki ? WikiMap::getWiki( $homeWiki ) : null;
@@ -518,7 +518,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$infoMsg->numParams( $globalUser->getGlobalEditCount() );
 		}
 
-		$htmlForm->addHeaderText( $infoMsg->parseAsBlock() );
+		$htmlForm->addHeaderHtml( $infoMsg->parseAsBlock() );
 
 		if ( class_exists( CentralAuthSpoofUser::class ) ) {
 			$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
@@ -534,7 +534,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			}
 
 			if ( $conflicts ) {
-				$htmlForm->addHeaderText(
+				$htmlForm->addHeaderHtml(
 					$this->msg(
 						'globalrenamequeue-request-antispoof-conflicts',
 						$this->getLanguage()->commaList( $conflicts )
@@ -550,7 +550,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				'new-account'
 			);
 			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
-				$htmlForm->addHeaderText(
+				$htmlForm->addHeaderHtml(
 					$this->msg( 'globalrenamequeue-request-titleblacklist' )
 						->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )->parseAsBlock()
 				);
@@ -564,7 +564,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'showIfEmpty' => false,
 		] );
 		if ( $extractCount ) {
-			$htmlForm->addHeaderText(
+			$htmlForm->addHeaderHtml(
 				Xml::fieldset( $this->msg( 'globalrenamequeue-request-previous-renames' )
 					->numParams( $extractCount )
 					->text(), $extract )
@@ -574,7 +574,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
-		$htmlForm->addHeaderText( $this->msg( 'globalrenamequeue-request-reason',
+		$htmlForm->addHeaderHtml( $this->msg( 'globalrenamequeue-request-reason',
 			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>"
 		)->parseAsBlock() );
 
@@ -585,7 +585,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				'type' => 'warning',
 				'inline' => true
 			] );
-			$htmlForm->addHeaderText( $message->toString() );
+			$htmlForm->addHeaderHtml( $message->toString() );
 		}
 
 		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
