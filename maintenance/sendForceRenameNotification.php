@@ -124,7 +124,7 @@ class SendForceRenameNotification extends Maintenance {
 
 	protected function getLocalizedText( $dir ) {
 		$langCode = $this->getConfig()->get( 'LanguageCode' );
-		$fallbacks = Language::getFallbacksFor( $langCode );
+		$fallbacks = MediaWikiServices::getInstance()->getLanguageFallback()->getAll( $langCode );
 		array_unshift( $fallbacks, $langCode );
 		foreach ( $fallbacks as $code ) {
 			if ( file_exists( "$dir/$code.txt" ) ) {
