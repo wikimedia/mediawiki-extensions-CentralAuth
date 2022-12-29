@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"apihelp-centralauthtoken-example-1": "Dobavljanje tokena za centralnu potvrdu identiteta",
+	"apihelp-deleteglobalaccount-description": "Brisanje globalnog korisnika.",
+	"apihelp-deleteglobalaccount-example-1": "Brisanje globalnog naloga [[User:Example|Korisnik:Example]]",
+	"apihelp-deleteglobalaccount-param-reason": "Razlog za brisanje korisnika.",
+	"apihelp-deleteglobalaccount-param-user": "Korisnik za brisanje.",
+	"apihelp-deleteglobalaccount-summary": "Brisanje globalnog korisnika.",
+	"apihelp-globaluserrights-description": "Dodaj/ukloni korisnika u/iz globalne grupe.",
+	"apihelp-globaluserrights-param-reason": "Razlog za promenu.",
+	"apihelp-globaluserrights-param-remove": "Ukloni korisnika iz ovih globalnih grupa.",
+	"apihelp-globaluserrights-param-tags": "Ovaj parametar se trenutno se koristi.",
+	"apihelp-globaluserrights-param-userid": "Globalni korisnički ID.",
+	"apihelp-globaluserrights-summary": "Dodaj/ukloni korisnika u/iz globalne grupe.",
+	"apihelp-query+globalallusers-example-1": "Lista globalnih korisnika",
+	"apihelp-query+wikisets-example-1": "Spisak viki skupova",
+	"apihelp-setglobalaccountstatus-param-user": "Korisnik čiji status treba promeniti.",
+	"apihelp-setglobalaccountstatus-summary": "Postavi status globalnog korisnika."
+}
