@@ -121,7 +121,7 @@ class CentralAuthUtilityService {
 
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 
-		$source = CentralAuthPrimaryAuthenticationProvider::class;
+		$source = CentralAuthPrimaryAuthenticationProvider::ID;
 		if ( !$this->authManager->getAuthenticationProvider( $source ) ) {
 			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
 		}

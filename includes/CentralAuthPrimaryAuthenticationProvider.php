@@ -47,6 +47,8 @@ use WikiMap;
 class CentralAuthPrimaryAuthenticationProvider
 	extends AbstractPasswordPrimaryAuthenticationProvider
 {
+	/** @var string The internal ID of this provider. */
+	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
