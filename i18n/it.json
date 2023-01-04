@@ -28,7 +28,9 @@
 			"Ricordisamoa",
 			"Sakretsu",
 			"Toadino2",
-			"Wim b"
+			"Wim b",
+			"Matma Rex",
+			"Pierpao"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
@@ -279,7 +281,7 @@
 	"centralauth-login-error-locked": "Non {{GENDER:$1|puoi}} accedere perché la {{GENDER:$1|tua}} utenza è bloccata globalmente.",
 	"centralauth-login-no-others": "Hai appena effettuato l'accesso negli altri progetti della {{int:Centralauth-groupname}}.",
 	"centralauth-login-progress": "Accesso effettuato {{PLURAL:$2|nell'altro progetto|negli altri progetti}} di {{int:Centralauth-groupname}}:",
-	"centralauth-logout-no-others": "Hai appena effettuato l'uscita dagli altri progetti della {{int:Centralauth-groupname}}.",
+	"centralauth-logout-no-others": "Hai appena effettuato la disconnessine dagli altri progetti della {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Disconnessione effettuata {{PLURAL:$2|dall'altro progetto|dagli altri progetti}} della {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Verifica della password inserita sulle utenze non ancora unificate...'''",
 	"centralauth-merge-denied": "Non si dispone dei permessi necessari per accedere a questa pagina.",
