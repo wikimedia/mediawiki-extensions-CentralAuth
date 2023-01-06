@@ -68,13 +68,14 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
 			// any normalization at all done by User or Title.
 			$userQuery = User::getQueryInfo();
-			$row = wfGetDB( DB_PRIMARY )->newSelectQueryBuilder()
-				->tables( $userQuery['tables'] )
-				->select( $userQuery['fields'] )
-				->where( [ 'user_name' => $from ] )
-				->joinConds( $userQuery['joins'] )
-				->caller( __METHOD__ )
-				->fetchRow();
+			$row = wfGetDB( DB_PRIMARY )->selectRow(
+				$userQuery['tables'],
+				$userQuery['fields'],
+				[ 'user_name' => $from ],
+				__METHOD__,
+				[],
+				$userQuery['joins']
+			);
 			$oldUser = User::newFromRow( $row );
 		} else {
 			$oldUser = User::newFromName( $from );
@@ -151,16 +152,16 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$toTitle = Title::makeTitleSafe( NS_USER, $to );
 		$dbr = wfGetDB( DB_REPLICA );
 
-		$rows = $dbr->newSelectQueryBuilder()
-			->select( [ 'page_namespace', 'page_title' ] )
-			->from( 'page' )
-			->where( [
+		$rows = $dbr->select(
+			'page',
+			[ 'page_namespace', 'page_title' ],
+			[
 				'page_namespace IN (' . NS_USER . ',' . NS_USER_TALK . ')',
 				'(page_title ' . $dbr->buildLike( $fromTitle->getDBkey() . '/', $dbr->anyString() ) .
 				' OR page_title = ' . $dbr->addQuotes( $fromTitle->getDBkey() ) . ')'
-			] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
+			],
+			__METHOD__
+		);
 
 		$jobParams = [
 			'to' => $to,
