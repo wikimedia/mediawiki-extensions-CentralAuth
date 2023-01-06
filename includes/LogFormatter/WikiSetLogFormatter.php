@@ -52,7 +52,7 @@ class WikiSetLogFormatter extends LogFormatter {
 		switch ( $action ) {
 			case 'deleteset':
 				return [
-					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped,SecurityCheck-XSS
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 				];
 			case 'newset':
@@ -60,9 +60,10 @@ class WikiSetLogFormatter extends LogFormatter {
 					? explode( ', ', $params[5] ) // shouldn't be empty
 					: $this->entry->getParameters()['wikis'];
 				return [
-					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped,SecurityCheck-XSS
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $this->formatType( $params[4] ), // 5::type
+					// @phan-suppress-next-line SecurityCheck-XSS
 					5 => $this->formatWikis( $wikis ),
 					6 => Message::numParam( count( $wikis ) ),
 				];
@@ -74,23 +75,25 @@ class WikiSetLogFormatter extends LogFormatter {
 					[ 'added' => $added, 'removed' => $removed ] = $this->entry->getParameters();
 				}
 				return [
-					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped,SecurityCheck-XSS
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
+					// @phan-suppress-next-line SecurityCheck-XSS
 					4 => $this->formatWikis( $added ),
+					// @phan-suppress-next-line SecurityCheck-XSS
 					5 => $this->formatWikis( $removed ),
 					6 => Message::numParam( count( $added ) ),
 					7 => Message::numParam( count( $removed ) ),
 				];
 			case 'setnewtype':
 				return [
-					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped,SecurityCheck-XSS
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $this->formatType( $params[4] ), // 5::oldType
 					5 => $this->formatType( $params[5] ), // 6::type
 				];
 			case 'setrename':
 				return [
-					// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+					// @phan-suppress-next-line SecurityCheck-DoubleEscaped,SecurityCheck-XSS
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
 					4 => $params[4], // 5::oldName
 				];
