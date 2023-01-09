@@ -32,7 +32,8 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  */
 interface CentralAuthSilentLoginRedirectHook {
 	/**
-	 * This hook is called during the auto-login process when the user is redirected back to the original wiki.
+	 * This hook is called during the cross-wiki login process when the user is redirected back
+	 * to the original wiki.
 	 *
 	 * @param CentralAuthUser $centralAuthUser User logging in
 	 * @param string &$url URL to redirect the user back to

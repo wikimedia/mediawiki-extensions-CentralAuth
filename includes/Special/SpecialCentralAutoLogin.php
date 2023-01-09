@@ -7,9 +7,11 @@ use DeferredUpdates;
 use Exception;
 use ExtensionRegistry;
 use FormatJson;
+use Html;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Languages\LanguageFactory;
@@ -175,12 +177,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$params = $request->getValues(
 			// The method by which autologin is initiated: 'script' (as the src of a <script> tag),
 			// 'json' (via AJAX), '1x1' (as the src of an invisible pixel), 'icon' (as the src of
-			// a site logo icon). Determines how the final response is formatted, in some cases
-			// might affect the logic in other ways as well.
+			// a site logo icon), 'redirect' (top-level redirect). Determines how the final response
+			// is formatted, in some cases might affect the logic in other ways as well.
 			'type',
 			// The wiki that started the autologin process. Not necessarily the wiki where the
 			// user is supposed to be logged in, because of edge autologin. Probably vestigial.
 			'from',
+			// Token for the final return URL for type=redirect
+			'returnUrlToken',
 			// When 'return' is set, at the end of autologin the user will be redirected based on
 			// returnto/returntoquery (like for normal login). Used for autologin triggered on the
 			// login page.
@@ -615,16 +619,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// First, set to redo the edge login on the next pageview
 			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 
-			// If it's not a script callback, just go for it.
-			if ( $request->getVal( 'type' ) !== 'script' ) {
+			// If it's not a script or redirect callback, just go for it.
+			if ( !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true ) ) {
 				$this->doFinalOutput( true, 'success' );
 				ScopedCallback::consume( $delay );
 				return;
 			}
 
-			// If it is a script callback, then we do want to create the user
-			// if it doesn't already exist locally (and fail if that can't be
-			// done).
+			// If it is a script or redirect callback, then we do want to create the user
+			// if it doesn't already exist locally (and fail if that can't be done).
 			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $centralUser->getName() );
 			if ( !$userIdentity || !$userIdentity->isRegistered() ) {
 				$user = new User;
@@ -748,12 +751,24 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	private function doFinalOutput( $ok, $status, $body = '', $type = false ) {
-		$this->getOutput()->disable();
-		wfResetOutputBuffers();
-		$this->getOutput()->sendCacheControl();
 		$this->logger->debug( "final output: $status" );
 
 		$type = $type ?: $this->getRequest()->getVal( 'type', 'script' );
+
+		if ( $type === 'redirect' ) {
+			$returnUrlToken = $this->getRequest()->getVal( 'returnUrlToken' );
+			$returnUrl = $this->centralAuthUtilityService->detokenize( $returnUrlToken,
+				'centralautologin-returnurl', $this->sessionManager );
+			if ( $returnUrl === false ) {
+				$type = 'error';
+				$status = 'invalid returnUrlToken';
+			}
+		}
+
+		$this->getOutput()->disable();
+		wfResetOutputBuffers();
+		$this->getOutput()->sendCacheControl();
+
 		if ( $type === 'icon' || $type === '1x1' ) {
 			header( 'Content-Type: image/png' );
 			header( "X-CentralAuth-Status: $status" );
@@ -767,6 +782,30 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			header( 'Content-Type: application/json; charset=utf-8' );
 			header( "X-CentralAuth-Status: $status" );
 			echo $body;
+		} elseif ( $type === 'redirect' ) {
+			$this->getRequest()->response()->statusHeader( 302 );
+			header( 'Content-Type: text/html; charset=UTF-8' );
+			header( "X-CentralAuth-Status: $status" );
+			// $returnUrl is always a string when $type==='redirect' but Phan can't figure it out
+			'@phan-var string $returnUrl';
+			$returnUrl = wfAppendQuery( $returnUrl, [
+				SpecialPageBeforeExecuteHookHandler::AUTOLOGIN_ERROR_QUERY_PARAM => $status,
+			] );
+			header( "Location: $returnUrl" );
+		} elseif ( $type === 'error' ) {
+			// type=redirect but the redirect URL is invalid. Just display the error message.
+			// This is poor UX (we might not even be on the wiki where the user started) but
+			// shouldn't happen unless the request was tampered with.
+			$this->getRequest()->response()->statusHeader( 400 );
+			header( 'Content-Type: text/html; charset=UTF-8' );
+			header( "X-CentralAuth-Status: $status" );
+			echo Html::element( 'p', [], $status );
+			echo Html::rawElement( 'p', [],
+				Html::element( 'a',
+					[ 'href' => 'javascript:window.history.back()' ],
+					$this->msg( 'centralauth-completelogin-back' )->text()
+				)
+			);
 		} else {
 			header( 'Content-Type: text/javascript; charset=utf-8' );
 			echo "/* $status */\n$body";

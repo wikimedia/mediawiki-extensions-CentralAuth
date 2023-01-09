@@ -31,7 +31,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks;
 interface CentralAuthPostLoginRedirectHook {
 	/**
 	 * This hook is called after the user has been redirected back to
-	 * the content wiki after completing the auto login process.
+	 * the content wiki after completing the cross-wiki login process.
 	 *
 	 * @param string &$returnTo page name to redirect to
 	 * @param string &$returnToQuery url parameters
