@@ -26,5 +26,6 @@
 	"globalrenamerequest-status-text": "La toa domanda de modifega del nom de la toa utenza adess a l'è in cors, 'dree a specià l'aprovazzion de quei che gh'hann l'abilitazzion de fà quell mester chì. El te sarà mandad on messaa de notifica per mez de la posta eletronica quand che la domanda la sarà scoduda.\n\n;Nom de l'utenza de adess:\n:$1\n;Nom de l'utenza domandada:\n:$2",
 	"globalrenamerequest-submit-text": "Ciama on cambiament de nom",
 	"globalrenamerequest-username-label": "Nom de l'utent de adessː",
-	"globalusers": "Lista di cunt globai"
+	"globalusers": "Lista di cunt globai",
+	"log-name-gblrename": "Register di cambi de nom globaj"
 }

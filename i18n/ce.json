@@ -72,7 +72,7 @@
 	"centralauth-admin-not-authorized": "Дешдерг кхочушдан хьан бакъонаш яц",
 	"centralauth-admin-permission": "Стюардийн бен таро йац декъашхойн дӀайаздарш цхьаьнатоха.",
 	"centralauth-admin-reason": "Бахьана:",
-	"centralauth-admin-reason-other": "Кхин бахьана:",
+	"centralauth-admin-reason-other": "Кхидолу/кхин бахьана:",
 	"centralauth-admin-reason-other-select": "Кхин бахьана:",
 	"centralauth-admin-setstatus-success": "Ахьа хӀокху глобалан аккаунтан статус кхиамца хийцина.",
 	"centralauth-admin-status": "Аккаунтан хӀоттайе глобалан статус",
