@@ -30,5 +30,6 @@
 	"globalrenamerequest-submit-text": "Ciama on cambiament de nom",
 	"globalrenamerequest-username-label": "Nom de l'utent de adessː",
 	"globalusers": "Lista di cunt globai",
+	"log-name-gblrename": "Register di cambi de nom globaj",
 	"logentry-gblrights-grouprename": "El / la $1 {{GENDER:$2|l'ha rinominad}} el grup $5 come $4"
 }
