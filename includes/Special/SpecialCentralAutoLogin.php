@@ -170,13 +170,28 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 
 		$params = $request->getValues(
+			// The method by which autologin is initiated: 'script' (as the src of a <script> tag),
+			// 'json' (via AJAX), '1x1' (as the src of an invisible pixel), 'icon' (as the src of
+			// a site logo icon). Determines how the final response is formatted, in some cases
+			// might affect the logic in other ways as well.
 			'type',
+			// The wiki that started the autologin process. Not necessarily the wiki where the
+			// user is supposed to be logged in, because of edge autologin. Probably vestigial.
 			'from',
+			// When 'return' is set, at the end of autologin the user will be redirected based on
+			// returnto/returntoquery (like for normal login). Used for autologin triggered on the
+			// login page.
 			'return',
 			'returnto',
 			'returntoquery',
+			// URI protocol used by the request that initiated autologin.
 			'proto',
-			'mobile'
+			// Whether the request that initiated autologin was to the mobile domain.
+			'mobile',
+			// also used:
+			// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
+			// 'token': Random store key, used to pass information in a secure manner.
+			// 'gu_id': Legacy parameter for global user ID, not used anymore.
 		);
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
