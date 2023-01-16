@@ -6,7 +6,9 @@
 	},
 	"apierror-centralauth-badsession": "Centralauthtoken se može dobiti samo kada se koriste CentralAuth sesije.",
 	"apierror-centralauth-badtoken": "Centralauthtoken nije važeći.",
+	"apierror-centralauth-editconflict": "Otkriven sukob izmjena. Prekidanje.",
 	"apierror-centralauth-notattached": "Nije moguće dobiti centralauthtoken bez priloženog globalnog računa.",
 	"apierror-centralauth-notloggedin": "Anonimni korisnici ne mogu dobiti centralauthtoken.",
+	"apierror-centralauth-renameinprogress": "Korisnik se preimenuje, ne može se koristiti.",
 	"apihelp-main-param-centralauthtoken": "Kada pristupate privitku pomoću AJAX zahtjeva između domena (CORS), koristite ovo za legitimaciju kao trenutni korisnik s jedinstvenom prijavom. Upotrijebite <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> na ovom wikiju da dohvatite token prije postavljanja zahtjeva. Svaki token može se koristiti samo jednom, a istječe nakon 10 sekundi. Ovo bi trebalo biti uključeno u bilo koji predzahtjev, i stoga bi trebalo biti uključeno u URI zahtjeva (ne u POST tijelo)."
 }

@@ -49,7 +49,7 @@
 	"centralauth-admin-delete-description": "Выдаленне глабальнага рахунку прывядзе да аддзялення ўсіх лакальных рахункаў і вызвалення глабальнага імя для іншых удзельнікаў.\nУсе лакальныя рахункі застануцца.",
 	"centralauth-admin-delete-nonexistent": "Памылка: глабальны рахунак «<nowiki>$1</nowiki>» не існуе.",
 	"centralauth-admin-delete-success": "Глабальны рахунак «<nowiki>$1</nowiki>» быў выдалены",
-	"centralauth-admin-delete-title": "Выдаленне ўліковага запісу",
+	"centralauth-admin-delete-title": "Выдаліць ўліковы запіс",
 	"centralauth-admin-group-temporary": "$1 «''(часова)''»",
 	"centralauth-admin-hidden-list": "з глабальнага спісу ўдзельнікаў",
 	"centralauth-admin-hidden-oversight": "утоена",

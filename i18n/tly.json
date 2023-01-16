@@ -5,7 +5,8 @@
 			"Patriot Kur",
 			"Гусейн",
 			"Amire80",
-			"QeneralĞasım"
+			"QeneralĞasım",
+			"Patriot Kor"
 		]
 	},
 	"centralauth-admin-blocklog": "бастә быә сијоһи",
@@ -15,6 +16,7 @@
 	"centralauth-antispoof-desc": "AntiSpoof технологијә әловә кардә бә CentralAuth",
 	"centralauth-editset-name": "Nom:",
 	"centralauth-editset-reason": "Səbəb:",
+	"centralauth-editset-submit": "Təğdim",
 	"centralauth-editset-type": "Тиспир:",
 	"centralauth-finish-login": "Dəşi",
 	"centralauth-finish-password": "Pərol:",
