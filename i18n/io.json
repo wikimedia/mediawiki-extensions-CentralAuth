@@ -35,6 +35,8 @@
 	"centralauth-admin-nonexistent": "Existas nula globala konto por \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-permission": "Nur super-administreri povas kunfuzar la konti de altra personi, por li.",
 	"centralauth-admin-reason": "Motivo:",
+	"centralauth-admin-reason-other": "Altra/suplementala motivo:",
+	"centralauth-admin-reason-other-select": "Altra motivo:",
 	"centralauth-admin-title-ro": "Informo globala pri la konti de $1",
 	"centralauth-admin-username": "Uzeronomo:",
 	"centralauth-admin-view": "Vidar informo pri la konto",
