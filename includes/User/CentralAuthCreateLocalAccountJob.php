@@ -25,8 +25,8 @@ use Exception;
 use Job;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Page\PageReference;
 use RequestContext;
-use Title;
 use User;
 use WikiMap;
 use Wikimedia\ScopedCallback;
@@ -39,12 +39,18 @@ use Wikimedia\ScopedCallback;
  */
 class CentralAuthCreateLocalAccountJob extends Job {
 	/**
-	 * @param Title $title Not used
-	 * @param array $params name => user name, from => wiki where the job is created,
+	 * @param array ...$params name => user name, from => wiki where the job is created,
 	 *   [session] => session data from RequestContext::exportSession()
 	 */
-	public function __construct( $title, $params ) {
-		parent::__construct( 'CentralAuthCreateLocalAccountJob', $title, $params );
+	public function __construct( ...$params ) {
+		// temporary, remove after a train
+		if ( func_get_arg( 0 ) instanceof PageReference ) {
+			$params = $params[1];
+		} else {
+			$params = $params[0];
+		}
+
+		parent::__construct( 'CentralAuthCreateLocalAccountJob', $params );
 	}
 
 	/**
