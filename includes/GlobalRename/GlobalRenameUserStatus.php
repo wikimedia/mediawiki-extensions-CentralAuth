@@ -81,12 +81,12 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 			$where['ru_wiki'] = $wiki;
 		}
 
-		$names = $db->selectRow(
-			'renameuser_status',
-			[ 'ru_oldname', 'ru_newname' ],
-			$where,
-			__METHOD__
-		);
+		$names = $db->newSelectQueryBuilder()
+			->select( [ 'ru_oldname', 'ru_newname' ] )
+			->from( 'renameuser_status' )
+			->where( $where )
+			->caller( __METHOD__ )
+			->fetchRow();
 
 		if ( !$names ) {
 			return [];
@@ -110,13 +110,13 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 		list( $index, $options ) = DBAccessObjectUtils::getDBOptions( $flags );
 		$db = $this->getDB( $index );
 
-		$res = $db->select(
-			'renameuser_status',
-			[ 'ru_wiki', 'ru_status' ],
-			[ $this->getNameWhereClause( $db ) ],
-			__METHOD__,
-			$options
-		);
+		$res = $db->newSelectQueryBuilder()
+			->select( [ 'ru_wiki', 'ru_status' ] )
+			->from( 'renameuser_status' )
+			->where( [ $this->getNameWhereClause( $db ) ] )
+			->options( $options )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$statuses = [];
 		foreach ( $res as $row ) {
@@ -189,13 +189,13 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 				$keyConds[] = $dbw->makeList( $key, LIST_AND );
 			}
 			// (a) Do a locking check for conflicting rows on the unique key
-			$ok = !$dbw->selectField(
-				'renameuser_status',
-				'1',
-				$dbw->makeList( $keyConds, LIST_OR ),
-				__METHOD__,
-				[ 'FOR UPDATE' ]
-			);
+			$ok = !$dbw->newSelectQueryBuilder()
+				->select( '1' )
+				->from( 'renameuser_status' )
+				->where( $dbw->makeList( $keyConds, LIST_OR ) )
+				->forUpdate()
+				->caller( __METHOD__ )
+				->fetchField();
 			// (b) Insert the new rows if no conflicts were found
 			if ( $ok ) {
 				$dbw->insert( 'renameuser_status', $rows, __METHOD__ );
@@ -235,27 +235,21 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 */
 	public static function getInProgressRenames( Authority $performer ) {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-		$tables = [ 'renameuser_status' ];
+
+		$qb = $dbr->newSelectQueryBuilder();
+
+		$qb->select( [ 'ru_oldname', 'ru_newname' ] )
+			->distinct()
+			->from( 'renameuser_status' );
+
 		if ( !$performer->isAllowed( 'centralauth-suppress' ) ) {
-			$join_conds = [ 'globaluser' => [
-				'INNER JOIN', [
-					'gu_name=ru_newname',
-					"gu_hidden_level" => CentralAuthUser::HIDDEN_LEVEL_NONE,
-				],
-			] ];
-			$tables[] = 'globaluser';
-		} else {
-			$join_conds = [];
+			$qb->join( 'globaluser', null, 'gu_name=ru_newname' );
+			$qb->where( [ "gu_hidden_level" => CentralAuthUser::HIDDEN_LEVEL_NONE ] );
 		}
 
-		$res = $dbr->select(
-			$tables,
-			[ 'ru_oldname', 'ru_newname' ],
-			[],
-			__METHOD__,
-			[ 'DISTINCT' ],
-			$join_conds
-		);
+		$res = $qb
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$ret = [];
 		foreach ( $res as $row ) {
