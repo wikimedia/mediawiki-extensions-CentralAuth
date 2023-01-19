@@ -29,7 +29,6 @@ use FormattedRCFeed;
 use Hooks;
 use IContextSource;
 use IDBAccessObject;
-use Job;
 use ManualLogEntry;
 use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
@@ -1633,15 +1632,17 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiId
 	 */
 	protected function queueAdminUnattachJob( $wikiId ) {
-		$job = Job::factory(
+		$services = MediaWikiServices::getInstance();
+
+		$job = $services->getJobFactory()->newJob(
 			'CentralAuthUnattachUserJob',
-			Title::makeTitleSafe( NS_USER, $this->getName() ),
 			[
 				'username' => $this->getName(),
 				'wiki' => $wikiId,
 			]
 		);
-		MediaWikiServices::getInstance()->getJobQueueGroupFactory()->makeJobQueueGroup( $wikiId )->lazyPush( $job );
+
+		$services->getJobQueueGroupFactory()->makeJobQueueGroup( $wikiId )->lazyPush( $job );
 	}
 
 	/**
@@ -1948,20 +1949,24 @@ class CentralAuthUser implements IDBAccessObject {
 				'reason' => $reason,
 			];
 			$jobs = [];
+
+			$services = MediaWikiServices::getInstance();
+			$jobFactory = $services->getJobFactory();
+
 			$chunks = array_chunk( $this->mAttachedArray, $wgCentralAuthWikisPerSuppressJob );
 			foreach ( $chunks as $wikis ) {
 				$jobParams['wikis'] = $wikis;
-				$jobs[] = Job::factory(
+				$jobs[] = $jobFactory->newJob(
 					'crosswikiSuppressUser',
-					Title::makeTitleSafe( NS_USER, $this->getName() ),
 					$jobParams
 				);
 			}
+
 			// Push the jobs right before COMMIT (which is likely to succeed).
 			// If the job push fails, then the transaction will roll back.
 			$dbw = self::getCentralDB();
-			$dbw->onTransactionPreCommitOrIdle( static function () use ( $jobs ) {
-				MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
+			$dbw->onTransactionPreCommitOrIdle( static function () use ( $services, $jobs ) {
+				$services->getJobQueueGroup()->push( $jobs );
 			}, __METHOD__ );
 		}
 	}
