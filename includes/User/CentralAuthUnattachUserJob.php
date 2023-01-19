@@ -22,7 +22,6 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use Job;
-use MediaWiki\Page\PageReference;
 use User;
 
 /**
@@ -33,16 +32,9 @@ use User;
 class CentralAuthUnattachUserJob extends Job {
 
 	/**
-	 * @param array ...$params Job parameters
+	 * @param array $params Job parameters
 	 */
-	public function __construct( ...$params ) {
-		// temporary, remove after a train
-		if ( func_get_arg( 0 ) instanceof PageReference ) {
-			$params = $params[1];
-		} else {
-			$params = $params[0];
-		}
-
+	public function __construct( $params ) {
 		parent::__construct( 'CentralAuthUnattachUserJob', $params );
 		$this->removeDuplicates = true;
 	}
