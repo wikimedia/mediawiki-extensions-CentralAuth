@@ -181,6 +181,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
 		case 'toolslist':
+			// Return the contents of the user menu so autologin.js can sort-of refresh the skin
+			// without reloading the page. This results in lots of inconsistencies and brokenness,
+			// but at least the user sees they are logged in.
+			// Runs on the local wiki.
+
 			// Do not cache this, we want updated Echo numbers and such.
 			$this->getOutput()->disableClientCache();
 
@@ -215,7 +220,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 			return;
 
-		case 'refreshCookies': // Refresh central cookies (e.g. in case 'remember me' was set)
+		case 'refreshCookies':
+			// Refresh cookies on the central login wiki at the end of a successful login,
+			// to fill in information that could not be set when those cookies where created
+			// (e.g. the 'remember me' token).
+			// Runs on the central login wiki.
+
 			// Do not cache this, we need to reset the cookies every time.
 			$this->getOutput()->disableClientCache();
 
@@ -261,7 +271,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 			return;
 
-		case 'deleteCookies': // Delete central cookies
+		case 'deleteCookies':
+			// Delete CentralAuth-specific cookies on logout. (This is just cleanup, the backend
+			// session will be invalidated regardless of whether this succeeds.)
+			// Runs on the central login wiki and the edge wikis.
+
 			// Do not cache this, we need to reset the cookies every time.
 			$this->getOutput()->disableClientCache();
 
@@ -279,7 +293,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->doFinalOutput( true, 'success' );
 			return;
 
-		case 'start': // Main entry point
+		case 'start':
+			// Entry point for edge autologin: this is called on various wikis via an <img> URL
+			// to preemptively log the user in on that wiki, so their session exists by the time
+			// they first visit.  Sometimes it is also used as the entry point for local autologin;
+			// there probably isn't much point in that (it's an extra redirect). This endpoint
+			// doesn't do much, just redirects to /checkLoggedIn on the central login wiki.
+			// Runs on the local wiki and the edge wikis.
+
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.
 			$this->getOutput()->setCdnMaxage( 1200 );
@@ -297,7 +318,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			] + $params );
 			return;
 
-		case 'checkLoggedIn': // Check if we're logged in centrally
+		case 'checkLoggedIn':
+			// Sometimes entry point for autologin, sometimes second step after /start.
+			// Runs on the central login wiki. Checks that the user has a valid session there,
+			// then redirects back to /createSession on the original wiki and passes the user ID
+			// (in the form of a lookup key for the shared token store, to prevent a malicious
+			// website from learning it).
+			// FIXME the indirection of user ID is supposedly for T59081, but unclear how that's
+			//   supposed to be a threat when the redirect URL has been validated via WikiMap.
+			// Runs on the central login wiki.
+
 			// Note this is safe to cache, because the cache already varies on
 			// the session cookies.
 			$this->getOutput()->setCdnMaxage( 1200 );
@@ -340,7 +370,17 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			] + $params );
 			return;
 
-		case 'createSession': // Create the local session and shared memcache token
+		case 'createSession':
+			// Creates an unvalidated local session, and redirects back to the central login wiki
+			// to validate it.
+			// At this point we received the user ID from /checkLoggedIn but must ensure this is
+			// not a session fixation attack, so we set a session cookie for an anonymous session,
+			// set a random proof token in that session, stash the user's supposed identity
+			// under that token in the shared store, and pass the token back to the /validateSession
+			// endpoint of the central login wiki.
+			// Runs on the wiki where the autologin needs to log the user in (the local wiki,
+			// or the edge wikis, or both).
+
 			if ( !$this->checkIsLocalWiki() ) {
 				return;
 			}
@@ -401,7 +441,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			] + $params );
 			return;
 
-		case 'validateSession': // Validate the shared memcached token
+		case 'validateSession':
+			// Validates the session created by /createSession by looking up the user ID in the
+			// shared store and comparing it to the actual user ID. Puts all extra information
+			// needed to create a logged-in session ("remember me" flag, ID of the central
+			// session etc.) under the same entry in the shared store that /createSession initiated.
+			// Runs on the central login wiki.
+
 			// Do not cache this, we need to reset the cookies and memc every time.
 			$this->getOutput()->disableClientCache();
 
@@ -457,7 +503,20 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->do302Redirect( $wikiid, 'setCookies', $params );
 			return;
 
-		case 'setCookies': // Check that memcached is validated, and set cookies
+		case 'setCookies':
+			// Final step of the autologin sequence, replaces the unvalidated session with a real
+			// logged-in session. Also schedules an edge login for the next pageview, and for
+			// type=script autocreates the user so that mw.messages notices can be shown in the
+			// user language.
+			// If all went well, the data about the user's session on the central login wiki will
+			// be in the shared store, under a random key that's stored in the temporary,
+			// anonymous local session. The access to that key proves that this is the same device
+			// that visited /createSession before with a preliminary central user ID, and the
+			// fact that /validateSession updated the store data proves that the preliminary ID was
+			// in fact correct.
+			// Runs on the wiki where the autologin needs to log the user in (the local wiki,
+			// or the edge wikis, or both).
+
 			// Do not cache this, we need to reset the cookies and memc every time.
 			$this->getOutput()->disableClientCache();
 
@@ -515,6 +574,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$delay = $this->session->delaySave();
 			$this->session->resetId();
+			// FIXME what is the purpose of this (beyond storing the central session ID in the
+			//   local session, which we could do directly)? We have just read this data from
+			//   the central session one redirect hop ago.
 			$this->sessionManager->setCentralSession( [
 				'finalProto' => $memcData['finalProto'],
 				'secureCookies' => $memcData['secureCookies'],
