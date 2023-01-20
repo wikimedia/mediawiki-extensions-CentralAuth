@@ -23,7 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use Job;
 use MediaWiki\Logger\LoggerFactory;
-use Title;
+use MediaWiki\Page\PageReference;
 
 /**
  * A job to do crosswiki suppression in batches, rather than
@@ -32,11 +32,17 @@ use Title;
  */
 class CentralAuthSuppressUserJob extends Job {
 	/**
-	 * @param Title $title Associated title
-	 * @param array $params Job parameters
+	 * @param array ...$params Job parameters
 	 */
-	public function __construct( $title, $params ) {
-		parent::__construct( 'crosswikiSuppressUser', $title, $params );
+	public function __construct( ...$params ) {
+		// temporary, remove after a train
+		if ( func_get_arg( 0 ) instanceof PageReference ) {
+			$params = $params[1];
+		} else {
+			$params = $params[0];
+		}
+
+		parent::__construct( 'crosswikiSuppressUser', $params );
 	}
 
 	/**
