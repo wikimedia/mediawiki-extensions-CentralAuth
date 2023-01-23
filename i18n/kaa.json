@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jiemurat"
+			"Jiemurat",
+			"Nurlan"
 		]
 	},
-	"centralauth-prefs-status": "Global akkaunt statusı:"
+	"centralauth-prefs-status": "Global akkaunt:"
 }
