@@ -22,7 +22,7 @@
 	"abusefilter-edit-builder-vars-global-user-editcount": "Antall redigeringer av brukeren globalt",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper som brukeren tilhører",
 	"action-centralauth-createlocal": "påtvinge opprettelse av lokal konto",
-	"action-centralauth-lock": "lås eller frigjør globale kontoer",
+	"action-centralauth-lock": "låse eller frigjøre globale kontoer",
 	"action-centralauth-merge": "slå sammen kontoen din",
 	"action-centralauth-suppress": "sensurere eller skjule global konto",
 	"action-centralauth-rename": "endre navn på globale kontoer",

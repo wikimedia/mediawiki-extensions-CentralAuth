@@ -23,6 +23,7 @@
 	"apihelp-centralauthtoken-description": "Recuperar una ficha de autenticación central para realizar una solicitud autenticada a una wiki adjunta.",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-centralauthtoken-summary": "Obtener un \"centralauthtoken\" para realizar una solicitud autenticada a una wiki adjunta.",
+	"apihelp-createlocalaccount-param-reason": "Razón para crear la cuenta local.",
 	"apihelp-createlocalaccount-param-username": "Usuario para el que se crea la cuenta local.",
 	"apihelp-createlocalaccount-summary": "Forcibly create a local account",
 	"apihelp-deleteglobalaccount-description": "Borrar un usuario global.",
