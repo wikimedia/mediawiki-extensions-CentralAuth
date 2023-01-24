@@ -23,7 +23,7 @@
 	"apihelp-globaluserrights-example-1": "Добавяне на потребителя FooBot в глобалната група „бот“ и премахване от глобалните групи „администратор“ и „бюрократ“",
 	"apihelp-globaluserrights-example-2": "Добавяне на глобалния потребител с ID 123 в глобалната група „бот“ и премахване от глобалните групи „администратор“ и „бюрократ“",
 	"apihelp-globaluserrights-param-add": "Добавяне на потребителя в тези глобални групи.",
-	"apihelp-globaluserrights-param-expiry": "Параметърът понастоящем не се ползва.",
+	"apihelp-globaluserrights-param-expiry": "Клеймо за време за изтичане. Може да е относително (напр. <kbd>5 месеца</kbd> или <kbd>2 седмици</kbd> ) или абсолютно (напр. <kbd>2014-09-18T12:34:56Z</kbd>). Ако е зададено само едно клеймо за време, то ще се използва за всички групи, предадени на параметъра за <var>$1add</var> . Използвайте <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> или <kbd>never</kbd> за потребителска група без изтичане.",
 	"apihelp-globaluserrights-param-reason": "Причина за промяната.",
 	"apihelp-globaluserrights-param-remove": "Премахване на потребителя от тези глобални групи.",
 	"apihelp-globaluserrights-param-tags": "Параметърът понастоящем не се ползва.",
