@@ -52,7 +52,7 @@
 	"apihelp-query+globalallusers-summary": "Oštevilči vse globalne uporabnike.",
 	"apihelp-query+globalgroups-description": "Oštevilči vse globalne skupine.",
 	"apihelp-query+globalgroups-example-1": "Izpiši seznam globalnih skupin",
-	"apihelp-query+globalgroups-example-2": "Pokaže globalne skupine s pripadajočimi pravicami",
+	"apihelp-query+globalgroups-example-2": "Prikaže globalne skupine s pravicami, ki jih podeljujejo",
 	"apihelp-query+globalgroups-param-prop": "Katere dele informacij naj vključim.",
 	"apihelp-query+globalgroups-summary": "Oštevilči vse globalne skupine.",
 	"apihelp-query+globalrenamestatus-description": "Prikaži informacije o globalnih preimenovanjih, ki so v teku.",

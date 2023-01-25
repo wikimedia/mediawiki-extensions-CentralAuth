@@ -12,7 +12,8 @@
 			"Otogi",
 			"Tokoko",
 			"გიორგიმელა",
-			"Გიო ოქრო"
+			"Გიო ოქრო",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "მომხმარებლის გლობალური ჯგუფები",
@@ -173,7 +174,7 @@
 	"centralauth-editset-restwikis": "ვიკი, რომელიც არ შედის ზევით:",
 	"centralauth-editset-return": "მთავარ არეზე დაბრუნება",
 	"centralauth-editset-setexists": "ასეთი სახელწოდების მქონე ნაკრები უკვე არსებობს.",
-	"centralauth-editset-submit": "შენახვა",
+	"centralauth-editset-submit": "მიღება",
 	"centralauth-editset-submit-delete": "წაშლა",
 	"centralauth-editset-subtitle": "< [[Special:WikiSets|ნაკრებების სია]]",
 	"centralauth-editset-success": "ვიკის ნაკრები განახლდა.",

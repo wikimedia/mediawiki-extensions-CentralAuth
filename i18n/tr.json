@@ -35,7 +35,8 @@
 			"Uncitoyen",
 			"Violetanka",
 			"Vito Genovese",
-			"Matma Rex"
+			"Matma Rex",
+			"Rapsar"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Kullanıcının olduğu küresel gruplar",
@@ -411,7 +412,7 @@
 	"globalrenameprogress": "Küresel yeniden adlandırma ilerlemesi",
 	"globalrenameprogress-legend": "Küresel yeniden adlandırma ilerlemesi görünümü",
 	"globalrenamequeue": "Küresel yeniden adlandırma istek sırası",
-	"globalrenamequeue-action-address": "Düzenle",
+	"globalrenamequeue-action-address": "Değiştir",
 	"globalrenamequeue-action-view": "Görüntüle",
 	"globalrenamequeue-column-row-actions": "Eylem",
 	"globalrenamequeue-column-rq-completed-ts": "Kapanış tarihi",

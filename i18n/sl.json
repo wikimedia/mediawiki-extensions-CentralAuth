@@ -353,7 +353,7 @@
 	"centralauth-rename-queued": "Opravila za preimenovanje $1 v $2 so bila odložena na $3.\n\nPrikaži postopek na [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Lokalni viki",
 	"centralauth-rename-table-status": "Status",
-	"centralauth-rename-table-status-done": "Končano",
+	"centralauth-rename-table-status-done": "Opravljeno",
 	"centralauth-rename-table-status-failed": "Spodletelo",
 	"centralauth-rename-table-status-inprogress": "V teku",
 	"centralauth-rename-table-status-queued": "Odloženo",
