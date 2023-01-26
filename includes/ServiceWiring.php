@@ -67,7 +67,9 @@ return [
 			$services->getMainConfig(),
 			$services->getAuthManager(),
 			$services->getTitleFactory(),
-			$services->getJobQueueGroupFactory()
+			$services->getJobQueueGroupFactory(),
+			$services->getJobFactory(),
+			LoggerFactory::getInstance( 'CentralAuth' )
 		);
 	},
 	'CentralAuth.CentralAuthWikiListService' => static function (

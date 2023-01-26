@@ -23,12 +23,13 @@ namespace MediaWiki\Extension\CentralAuth;
 use BagOStuff;
 use Config;
 use Exception;
-use Job;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use Profiler;
+use Psr\Log\LoggerInterface;
 use RequestContext;
 use StatusValue;
 use TitleFactory;
@@ -55,20 +56,26 @@ class CentralAuthUtilityService {
 	/** @var JobQueueGroupFactory */
 	private $jobQueueGroupFactory;
 
-	/** @var \Psr\Log\LoggerInterface */
+	/** @var JobFactory */
+	private $jobFactory;
+
+	/** @var LoggerInterface */
 	private $logger;
 
 	public function __construct(
 		Config $config,
 		AuthManager $authManager,
 		TitleFactory $titleFactory,
-		JobQueueGroupFactory $jobQueueGroupFactory
+		JobQueueGroupFactory $jobQueueGroupFactory,
+		JobFactory $jobFactory,
+		LoggerInterface $logger
 	) {
 		$this->config = $config;
 		$this->authManager = $authManager;
 		$this->titleFactory = $titleFactory;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
-		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
+		$this->jobFactory = $jobFactory;
+		$this->logger = $logger;
 	}
 
 	/**
@@ -155,9 +162,8 @@ class CentralAuthUtilityService {
 				continue;
 			}
 
-			$job = Job::factory(
+			$job = $this->jobFactory->newJob(
 				'CentralAuthCreateLocalAccountJob',
-				$title,
 				[ 'name' => $name, 'from' => $thisWiki, 'session' => $session ]
 			);
 			$this->jobQueueGroupFactory->makeJobQueueGroup( $wiki )->lazyPush( $job );

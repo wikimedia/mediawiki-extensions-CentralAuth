@@ -27,7 +27,7 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.39.0"
+		"MediaWiki": ">= 1.40.0"
 	},
 	"GroupPermissions": {
 		"steward": {
@@ -211,11 +211,20 @@
 		}
 	},
 	"JobClasses": {
-		"crosswikiSuppressUser": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthSuppressUserJob",
+		"crosswikiSuppressUser": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthSuppressUserJob",
+			"needsPage": false
+		},
 		"LocalRenameUserJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalRenameUserJob",
 		"LocalPageMoveJob": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\LocalRenameJob\\LocalPageMoveJob",
-		"CentralAuthCreateLocalAccountJob": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthCreateLocalAccountJob",
-		"CentralAuthUnattachUserJob": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUnattachUserJob"
+		"CentralAuthCreateLocalAccountJob": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthCreateLocalAccountJob",
+			"needsPage": false
+		},
+		"CentralAuthUnattachUserJob": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUnattachUserJob",
+			"needsPage": false
+		}
 	},
 	"LogTypes": [
 		"globalauth",
