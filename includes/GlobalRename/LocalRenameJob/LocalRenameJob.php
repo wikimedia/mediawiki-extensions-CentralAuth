@@ -114,14 +114,14 @@ abstract class LocalRenameJob extends Job {
 		// stuff could happen...
 		// For the meantime, just use a system account
 		if ( !$caUser->attachedOn( WikiMap::getCurrentWikiId() ) && $user->getId() !== 0 ) {
-			return User::newFromName( 'Global rename script' );
+			return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
 		} elseif ( $user->getId() == 0 ) {
 			// No local user, lets "auto-create" one
 			if ( CentralAuthServices::getUtilityService()->autoCreateUser( $user )->isGood() ) {
 				return User::newFromName( $user->getName() ); // So the internal cache is reloaded
 			} else {
 				// Auto-creation didn't work, fallback on the system account.
-				return User::newFromName( 'Global rename script' );
+				return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
 			}
 		} else {
 			// Account is attached and exists, just use it :)
