@@ -6,6 +6,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class PopulateLocalAndGlobalIds extends Maintenance {
 
@@ -26,31 +27,32 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 		// Skip people in global rename queue
 		$wiki = WikiMap::getCurrentWikiId();
-		$globalRenames = $dbr->selectFieldValues(
-			'renameuser_status',
-			'ru_oldname',
-			[],
-			__METHOD__
-		);
+		$globalRenames = $dbr->newSelectQueryBuilder()
+			->select( 'ru_oldname' )
+			->from( 'renameuser_status' )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		$ldbr = $databaseManager->getLocalDB( DB_REPLICA, $wiki );
 
 		$this->output( "Populating fields for wiki $wiki... \n" );
 		do {
-			$rows = $dbr->select(
-				[ 'localuser', 'globaluser' ],
-				[ 'lu_name', 'gu_id' ],
-				[
+			$rows = $dbr->newSelectQueryBuilder()
+				->select( [ 'lu_name', 'gu_id' ] )
+				->from( 'localuser' )
+				->join( 'globaluser', null, 'gu_name = lu_name' )
+				->where( [
 					// Start from where we left off in last batch
 					'gu_id >= ' . $lastGlobalId,
 					'lu_wiki' => $wiki,
 					// Only pick records not already populated
-					'lu_local_id' => null,
-					'gu_name = lu_name'
-				],
-				__METHOD__,
-				[ 'LIMIT' => $this->mBatchSize, 'ORDER BY' => 'gu_id ASC' ]
-			);
+					'lu_local_id' => null
+				] )
+				->orderBy( 'gu_id', SelectQueryBuilder::SORT_ASC )
+				->limit( $this->mBatchSize )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+
 			$numRows = $rows->numRows();
 
 			$globalUidToLocalName = [];
@@ -68,12 +70,13 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			}
 
 			$localNameToUid = [];
-			$localIds = $ldbr->select(
-				'user',
-				[ 'user_id', 'user_name' ],
-				[ 'user_name' => array_values( $globalUidToLocalName ) ],
-				__METHOD__
-			);
+			$localIds = $ldbr->newSelectQueryBuilder()
+				->select( [ 'user_id', 'user_name' ] )
+				->from( 'user' )
+				->where( [ 'user_name' => array_values( $globalUidToLocalName ) ] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+
 			foreach ( $localIds as $lid ) {
 				$localNameToUid[$lid->user_name] = $lid->user_id;
 			}

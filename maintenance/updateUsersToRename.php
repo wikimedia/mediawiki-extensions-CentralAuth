@@ -25,14 +25,14 @@ class UpdateUsersToRename extends Maintenance {
 		$dbr = $databaseManager->getCentralDB( DB_REPLICA );
 		$total = 0;
 		do {
-			$rows = $dbr->select(
-				[ 'users_to_rename', 'localuser' ],
-				[ 'utr_id', 'utr_name', 'utr_wiki' ],
-				[],
-				__METHOD__,
-				[ 'LIMIT' => $this->mBatchSize ],
-				[ 'localuser' => [ 'INNER JOIN', 'utr_wiki=lu_wiki AND utr_name=lu_name' ] ]
-			);
+			$rows = $dbr->newSelectQueryBuilder()
+				->select( [ 'utr_id', 'utr_name', 'utr_wiki' ] )
+				->from( 'users_to_rename' )
+				->join( 'localuser', null, 'utr_wiki=lu_wiki AND utr_name=lu_name' )
+				->limit( $this->mBatchSize )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+
 			$ids = [];
 			foreach ( $rows as $row ) {
 				$ids[] = $row->utr_id;

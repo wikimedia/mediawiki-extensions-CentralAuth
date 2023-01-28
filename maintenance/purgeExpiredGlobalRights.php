@@ -43,16 +43,14 @@ class PurgeExpiredGlobalRights extends Maintenance {
 		$counter = 0;
 
 		while ( true ) {
-			$rows = $dbw->select(
-				[ 'global_user_groups' ],
-				[ 'gug_user', 'gug_group', ],
-				[ 'gug_expiry < ' . $dbw->addQuotes( $dbw->timestamp() ), ],
-				__METHOD__,
-				[
-					'LIMIT' => $this->getBatchSize(),
-					'ORDER BY' => 'gug_expiry',
-				]
-			);
+			$rows = $dbw->newSelectQueryBuilder()
+				->select( [ 'gug_user', 'gug_group' ] )
+				->from( 'global_user_groups' )
+				->where( [ 'gug_expiry < ' . $dbw->addQuotes( $dbw->timestamp() ), ] )
+				->orderBy( 'gug_expiry' )
+				->limit( $this->getBatchSize() )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			if ( $rows->numRows() === 0 ) {
 				break;

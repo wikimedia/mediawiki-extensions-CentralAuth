@@ -22,16 +22,15 @@ class PopulateHomeDB extends Maintenance {
 		$conds = [];
 		$count = 0;
 		do {
-			$result = $db->select(
-				'globaluser',
-				[ 'gu_name' ],
-				array_merge( $conds, [ 'gu_home_db IS NULL OR gu_home_db = ""' ] ),
-				__METHOD__,
-				[
-					'LIMIT' => $this->mBatchSize,
-					'ORDER BY' => 'gu_name',
-				]
-			);
+			$result = $db->newSelectQueryBuilder()
+				->select( 'gu_name' )
+				->from( 'globaluser' )
+				->where( $conds )
+				->andWhere( [ 'gu_home_db IS NULL OR gu_home_db = ""' ] )
+				->orderBy( 'gu_name' )
+				->limit( $this->mBatchSize )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			foreach ( $result as $row ) {
 				$central = new CentralAuthUser( $row->gu_name, CentralAuthUser::READ_LATEST );
