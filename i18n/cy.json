@@ -34,7 +34,7 @@
 	"centralauth-admin-blocked-reason": "Rheswm: $1",
 	"centralauth-admin-blocked2": "Blociwyd, daw i ben $2 am $3.",
 	"centralauth-admin-blocked2-indef": "Blociwyd am gyfnod amhenodol.",
-	"centralauth-admin-blocklog": "Log rhwystro",
+	"centralauth-admin-blocklog": "Log blocio",
 	"centralauth-admin-delete-button": "Dileu'r cyfrif hwn",
 	"centralauth-admin-delete-confirm": "Ydych chi wir eisiau dileu'r cyfrif hwn?",
 	"centralauth-admin-delete-description": "Bydd dileu'r cyfrif global yn datgysylltu'r cyfrifon lleol, gan adael yr enw global ar gyfer defnyddiwr arall.\nBydd yr holl gyfrifon lleol yn parhau.",
