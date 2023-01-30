@@ -315,12 +315,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	}
 
 	public function onSuccess() {
-		$lang = $this->getLanguage();
-		$caUser = CentralAuthUser::getInstanceByName( $this->newUsername );
-		$wikiList = $lang->commaList( $caUser->listAttached() );
-
 		$msg = $this->msg( 'centralauth-rename-queued' )
-			->params( $this->oldUsername, $this->newUsername, $wikiList )
+			->params( $this->oldUsername, $this->newUsername )
 			->parse();
 		$this->getOutput()->addHTML( $msg );
 	}
