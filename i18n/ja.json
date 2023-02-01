@@ -39,6 +39,7 @@
 			"春春眠眠",
 			"朝彦",
 			"神樂坂秀吉",
+			"背番号4のエース",
 			"青子守歌"
 		]
 	},
@@ -377,7 +378,7 @@
 	"centralauth-rename-progress-list-header": "次のグローバルな名前変更が現在進行中です:",
 	"centralauth-rename-progress-logs-fieldset": "記録項目",
 	"centralauth-rename-progress-username": "利用者名",
-	"centralauth-rename-queued": "$1 から $2 に名前を変更するジョブは $3 でキューに追加されました。\n\n進行状況は [[Special:GlobalRenameProgress/$2]] で閲覧できます。",
+	"centralauth-rename-queued": "$1 から $2 に名前を変更するジョブはキューに追加されました。\n\n進行状況は [[Special:GlobalRenameProgress/$2]] で閲覧できます。",
 	"centralauth-rename-table-domain": "ローカルウィキ",
 	"centralauth-rename-table-status": "状態",
 	"centralauth-rename-table-status-done": "完了",

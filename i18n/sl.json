@@ -349,7 +349,7 @@
 	"centralauth-rename-progress-list-header": "Trenutno so v teku naslednja globalna preimenovanja:",
 	"centralauth-rename-progress-logs-fieldset": "Dnevniški vnosi",
 	"centralauth-rename-progress-username": "Uporabniško ime",
-	"centralauth-rename-queued": "Opravila za preimenovanje $1 v $2 so bila odložena na $3.\n\nPrikaži postopek na [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Opravila za preimenovanje $1 v $2 so v čakalni vrsti.\n\nNapredek si lahko ogledate na [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Lokalni viki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Opravljeno",
