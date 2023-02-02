@@ -399,7 +399,7 @@
 	"centralauth-rename-progress-list-header": "Les renommages globaux suivants sont actuellement en cours :",
 	"centralauth-rename-progress-logs-fieldset": "Entrées du journal",
 	"centralauth-rename-progress-username": "Nom d’utilisateur",
-	"centralauth-rename-queued": "Les tâches pour renommer $1 en $2 ont été mises en file dans $3.\n\nAfficher la progression sur [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Les tâches pour renommer $1 en $2 ont été mises en file.\n\nAfficher la progression sur [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "État",
 	"centralauth-rename-table-status-done": "Terminé",
