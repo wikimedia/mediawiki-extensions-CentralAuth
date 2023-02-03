@@ -474,6 +474,7 @@
 	"logentry-gblrename-promote": "$1 {{GENDER:$2}}đã đổi tên $4 thành $5 toàn cục",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}}đã đổi tên $4 thành $5 toàn cục",
 	"logentry-gblrights-grouprename": "$1 {{GENDER:$2|đổi tên}} nhóm $5 đến $4",
+	"logentry-gblrights-usergroups": "$1 {{GENDER:$2|đã đổi}} các nhóm toàn cục bao gồm $3 từ $4 đến $5",
 	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|đã thay đổi}} trạng thái tài khoản toàn cục \"$3\": đã thêm $4; đã bỏ $5",
 	"mergeaccount": "Tình trạng hợp nhất tài khoản",
 	"multilock": "Khóa nhiều tài khoản toàn cục",

@@ -367,7 +367,7 @@
 	"centralauth-rename-progress-list-header": "Os seguintes processos de alteração global de nome estão em progresso:",
 	"centralauth-rename-progress-logs-fieldset": "Entradas no registo",
 	"centralauth-rename-progress-username": "Nome de utilizador",
-	"centralauth-rename-queued": "O pedido para alterar o nome da conta $1 para $2 está em lista de espera em $3.\n\nVer o progresso em [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "As tarefas para alterar o nome da conta $1 para $2 foram colocadas na fila de espera.\n\nVer o progresso em [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
 	"centralauth-rename-table-status-done": "Terminado",
