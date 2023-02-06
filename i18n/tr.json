@@ -180,7 +180,7 @@
 	"centralauth-editgroup-delete-removemembers": "Bir grubu silmeden önce gruptaki tüm üyeleri çıkarmanız gerekir.",
 	"centralauth-editgroup-display": "Grubun yerelleştirilmiş adı:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|düzenle]])",
-	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|düzenle]])",
+	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|değiştir]])",
 	"centralauth-editgroup-fieldset": "$1 için izinler",
 	"centralauth-editgroup-invalid-name": "Geçersiz küresel grup adı verildi",
 	"centralauth-editgroup-invalid-name-lowercase": "Küresel grup tanımlayıcılarının tümü küçük harf olmalıdır.",
