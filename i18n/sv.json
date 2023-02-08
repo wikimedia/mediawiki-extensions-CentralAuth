@@ -29,7 +29,8 @@
 			"Stefan2",
 			"Sturban",
 			"WikiPhoenix",
-			"Matma Rex"
+			"Matma Rex",
+			"Haxpett"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Globala grupper som användaren är med i",
@@ -102,7 +103,7 @@
 	"centralauth-admin-no": "nej",
 	"centralauth-admin-no-unified": "Det finns inget gemensamt konto med det användarnamnet",
 	"centralauth-admin-none-selected": "Inga konton har valts för ändring.",
-	"centralauth-admin-nonexistent": "Det finns inget globalt konto för \"<nowiki>$1</nowiki>\"",
+	"centralauth-admin-nonexistent": "Det finns inget globalt konto för \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-not-authorized": "Du har inte behörighet att utföra denna åtgärd.",
 	"centralauth-admin-permission": "Endast stewarder kan slå samman andra användares konton åt dem.",
 	"centralauth-admin-reason": "Anledning:",
@@ -171,6 +172,7 @@
 	"centralauth-delete-empty-account": "Tomt konto",
 	"centralauth-desc": "[[Special:MergeAccount|Sammanfogar användarkonton]] på wikier som tillhör {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Sammanslagning av konton körs för närvarande i demonstrations- eller felsökningsläge, funktionerna som gör kontosammanslagningar är därför avaktiverade.\nBeklagar!",
+	"centralauth-editgroup-delete-removemembers": "Du måste ta bort alla medlemmar från en grupp innan du tar bort den gruppen.",
 	"centralauth-editgroup-display": "Översatt gruppnamn:",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|redigera]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|redigera]])",
