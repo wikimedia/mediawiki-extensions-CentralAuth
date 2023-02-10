@@ -108,7 +108,7 @@
 	"centralauth-admin-status-locked-no": "Tài khoản không bị khóa",
 	"centralauth-admin-status-locked-yes": "Tài khoản bị khóa không được đăng nhập",
 	"centralauth-admin-status-nonexistent": "Lỗi: tài khoản toàn hệ thống “<nowiki>$1</nowiki>” không tồn tại.",
-	"centralauth-admin-status-reasons": "* Lý do khóa thường gặp\n** tài khoản chỉ để phá hoại\n** tài khoản chỉ để spam\n* Lý do khóa–ẩn thường gặp\n** tên người dùng không được chấp nhận\n** thông tin cá nhân không thích hợp",
+	"centralauth-admin-status-reasons": "* Lý do khóa thường gặp\n** tài khoản chỉ để phá hoại\n** tài khoản chỉ để đăng spam\n* Lý do khóa–ẩn thường gặp\n** tên người dùng không được chấp nhận\n** thông tin cá nhân không thích hợp",
 	"centralauth-admin-status-submit": "Lưu trạng thái",
 	"centralauth-admin-suppressreason": "Đã bị $1 ẩn trên toàn hệ thống vì lý do sau: $2",
 	"centralauth-admin-title": "Quản lý tài khoản toàn cục của $1",
