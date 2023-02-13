@@ -7,6 +7,7 @@ use Exception;
 use Html;
 use HTMLForm;
 use LogEventsList;
+use MediaWiki\Block\Restriction\ActionRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\CommentFormatter\CommentFormatter;
@@ -784,6 +785,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}, [
 			PageRestriction::TYPE => 0,
 			NamespaceRestriction::TYPE => 0,
+			ActionRestriction::TYPE => 0,
 		] );
 
 		$restrictions = [];
