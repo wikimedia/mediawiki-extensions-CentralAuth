@@ -58,7 +58,10 @@
 			"DDPAT",
 			"Jackiezelaya",
 			"Jakeukalane",
-			"McDutchie"
+			"McDutchie",
+			"Francodiaz7",
+			"Ice bulldog",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales a los que pertenece el usuario",
@@ -311,8 +314,8 @@
 	"centralauth-login-progress": "Accediendo {{PLURAL:$2|a la wiki|a las wikis}} de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Automáticamente se ha cerrado la sesión de tu cuenta de los otros proyectos de {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Saliendo de {{PLURAL:$2|otro wiki|los otros wikis}} de {{int:Centralauth-groupname}}:",
-	"centralauth-merge-attempt": "'''Comprobando contraseña provista contra las cuentas restantes no fusionadas...'''",
-	"centralauth-merge-denied": "Lo sentimos, no tienes permisos para acceder a esta página.",
+	"centralauth-merge-attempt": "'''Comprobando la contraseña indicada sobre el resto de cuentas no unificadas...'''",
+	"centralauth-merge-denied": "No tienes permiso para acceder a esta página.",
 	"centralauth-merge-dryrun-complete": "¡Todas las cuentas existentes pueden unificarse automáticamente!\n\nTodavía no se han realizado cambios a las cuentas.",
 	"centralauth-merge-dryrun-home": "El sistema de migración no puede confirmar que eres el propietario de la wiki principal para el nombre de usuario.\n\nOtra wiki se designó como la cuenta principal para tu nombre de usuario. Sigue el enlace e ingresa en ella para terminar la migración de las cuentas.",
 	"centralauth-merge-dryrun-incomplete": "Todo está listo para continuar, pero algunas cuentas no pudieron ser verificadas automáticamente y no serán migradas de inmediato.\nPodrás fusionarlas más adelante.\n\nTodavía no se han realizado cambios a tus cuentas.",
