@@ -118,6 +118,7 @@
 	"centralauth-attach-text": "Ta račun še ni bil združen v enotni račun.\nČe je tudi globalni račun vaš, lahko ta račun združite z vpisom njegovega gesla:",
 	"centralauth-attach-title": "Potrdi račun",
 	"centralauth-block-already-locked": "Račun [[Special:CentralAuth/$1|$1]] je že globalno zaklenjen.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|dejanje|dejanji|dejanja|dejanj}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|stran|strani}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|imenski prostor|imenska prostora|imenski prostori|imenskih prostorov}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Lokalno ste že prijavljeni.",

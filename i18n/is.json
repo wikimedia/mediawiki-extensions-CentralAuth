@@ -255,7 +255,7 @@
 	"centralauth-rename-progress-fieldset": "Listi yfir staðbundna aðganga",
 	"centralauth-rename-progress-logs-fieldset": "Færsluskrá",
 	"centralauth-rename-progress-username": "Notendanafn",
-	"centralauth-rename-queued": "Verk til að endurnefna $1 í $2 hafa verið sett í biðröð á $3.\n\nSkoðaðu stöðuna á  [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Verk til að endurnefna $1 í $2 hafa verið sett í biðröð.\n\nSkoðaðu framvinduna á [[Special:GlobalRenameProgress/ $2 ]].",
 	"centralauth-rename-table-domain": "Staðbundinn wiki",
 	"centralauth-rename-table-status": "Staða",
 	"centralauth-rename-table-status-done": "Lokið",

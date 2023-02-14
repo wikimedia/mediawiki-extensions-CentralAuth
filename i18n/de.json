@@ -133,6 +133,7 @@
 	"centralauth-attach-text": "Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.\nWenn das globale Benutzerkonto auch von dir ist, kannst du die Zusammenführung veranlassen, indem du hier das Passwort des globalen Benutzerkontos eingibst:",
 	"centralauth-attach-title": "Benutzerkonto bestätigen",
 	"centralauth-block-already-locked": "Das Benutzerkonto [[Special:CentralAuth/$1|$1]] ist bereits global gesperrt.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|Aktion|Aktionen}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|Seite|Seiten}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|Namensraum|Namensräume}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Du bist bereits lokal angemeldet.",

@@ -168,6 +168,7 @@
 	"centralauth-attach-text": "Votre compte utilisé ici n’a pas encore été migré vers le compte unifié.\nSi le compte unifié vous appartient également, vous pouvez y fusionner votre compte local en tapant le mot de passe du compte unifié :",
 	"centralauth-attach-title": "Confirmer le compte",
 	"centralauth-block-already-locked": "Le compte [[Special:CentralAuth/$1|$1]] est déjà verrouillé globalement.",
+	"centralauth-block-editing-action": "$1 action{{PLURAL:$1||s}}",
 	"centralauth-block-editing-page": "$1 page{{PLURAL:$1||s}}",
 	"centralauth-block-editing-ns": "$1 espace{{PLURAL:$1||s}} de noms",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Vous êtes déjà connecté localement.",
