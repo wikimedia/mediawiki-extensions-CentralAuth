@@ -2019,7 +2019,10 @@ class CentralAuthUser implements IDBAccessObject {
 			# On normal block, BlockIp hook would be run here, but doing
 			# that from CentralAuth doesn't seem a good idea...
 
-			if ( !$block->insert( $dbw ) ) {
+			$databaseBlockStore = MediaWikiServices::getInstance()
+				->getDatabaseBlockStoreFactory()
+				->getDatabaseBlockStore( $wikiId );
+			if ( !$databaseBlockStore->insertBlock( $block ) ) {
 				return [ 'ipb_already_blocked' ];
 			}
 			# Ditto for BlockIpComplete hook.
