@@ -172,6 +172,7 @@
 	"centralauth-attach-text": "Esta cuenta aún no ha sido migrada a la cuenta unificada.\nSi la cuenta global también es suya, puede unir esta cuenta si escribe la contraseña de cuenta global:",
 	"centralauth-attach-title": "Confirmar cuenta",
 	"centralauth-block-already-locked": "La cuenta [[Special:CentralAuth/$1|$1]] ya está bloqueada globalmente.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|acción|acciones}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|página|páginas}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espacio|espacios}} de nombres",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Ya has iniciado sesión localmente.",
