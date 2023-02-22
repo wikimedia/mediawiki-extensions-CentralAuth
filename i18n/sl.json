@@ -444,7 +444,7 @@
 	"globalrenamerequest-newname-help": "Vnesite novo uporabniško ime, na primer »$1«.",
 	"globalrenamerequest-newname-help-basic": "Vnesite novo uporabniško ime, ki ga želite uporabljati.",
 	"globalrenamerequest-newname-label": "Želeno uporabniško ime:",
-	"globalrenamerequest-pretext": "Zahtevajte novo uporabniško ime, ki ga boste uporabljali v vseh vikijih.\n\nVsi vaši dozdajšnji prispevki bodo pripisani novemu imenu.\n\nUporabniki s pravico preimenovanja bodo v obravnavo prejeli seznam prošenj. Po končanem postopku boste o tem obveščeni po e-pošti.\n\nČe je vaša prošnja kakor&nbsp;koli povezana z anonimnostjo/zasebnostjo, upoštevajte, da bo ustvarjen dnevniški zapis z navedbo vašega prejšnjega imena. Razmislite o [[Special:CreateAccount|ustvaritvi ločenega in neodvisnega računa]] ter preimovanju trenutnega računa v naključno ime in njegovi opustitvi.",
+	"globalrenamerequest-pretext": "Zaprosite za novo uporabniško ime, ki ga boste uporabljali v vseh vikijih.\n\nVsi vaši dozdajšnji prispevki bodo pripisani novemu imenu.\n\nUporabniki s pravico preimenovanja bodo v obravnavo prejeli seznam prošenj. Po končanem postopku boste o tem obveščeni po e-pošti.\n\nČe je vaša prošnja kakor&nbsp;koli povezana z anonimnostjo/zasebnostjo, vedite, da bo ustvarjen dnevniški zapis z navedbo vašega prejšnjega imena. Razmislite o [[Special:CreateAccount|ustvaritvi ločenega in neodvisnega računa]] ter preimovanju trenutnega računa v naključno ime in njegovi opustitvi.",
 	"globalrenamerequest-reason-label": "Razlog za preimenovanje",
 	"globalrenamerequest-save-error": "Shranjevanje zahtevka ni uspelo. Prosimo, poskusite znova.",
 	"globalrenamerequest-self-error": "Tega zahtevka ne morete odobriti, ker nimate dovoljenja za preimenovanje svojega lastnega računa.",

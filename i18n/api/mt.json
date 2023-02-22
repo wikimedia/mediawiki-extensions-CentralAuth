@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"ToniSant"
+		]
+	},
+	"apihelp-deleteglobalaccount-param-reason": "Raġuni għat-tħassir tal-utent.",
+	"apihelp-setglobalaccountstatus-param-reason": "Raġuni għall-bidla fl-istatus tal-utent."
+}
