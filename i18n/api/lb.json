@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"apierror-centralauth-badusername": "De Benotzernumm \"$1\" kann op dëser Wiki net benotzt ginn",
@@ -24,7 +25,7 @@
 	"apihelp-query+globalgroups-example-1": "Global Gruppen opzielen",
 	"apihelp-query+globalgroups-summary": "All global Gruppen opzielen.",
 	"apihelp-query+globalrenamestatus-example-1": "Informatiounen iwwer den aktuelle Benotzer kréien",
-	"apihelp-query+globalrenamestatus-summary": "Informatiounen iwwer global Ëmbenennunge weisen déi am Gaang sinn.",
+	"apihelp-query+globalrenamestatus-summary": "Informatiounen iwwer global Ëmbenennunge weisen, déi am Gaang sinn.",
 	"apihelp-query+globaluserinfo-description": "Informatiounen iwwer e globale Benotzer weisen.",
 	"apihelp-query+globaluserinfo-summary": "Informatiounen iwwer e globale Benotzer weisen.",
 	"apihelp-query+wikisets-param-orderbyname": "Resultater nom Numm zortéieren",
