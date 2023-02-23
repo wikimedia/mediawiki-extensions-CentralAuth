@@ -296,7 +296,7 @@
 	"centralauth-rename-confirm": "Wëllt Dir dëse Benotzer wierklech global ëmbenennen?",
 	"centralauth-rename-conflict-hidden": "Benotzernumm verstoppt",
 	"centralauth-rename-deny": "Wëllt dir dës Ufro wierklech refuséieren?",
-	"centralauth-rename-doesnotexist": "De Benotzerkont deen ugi gouf gëtt et net.",
+	"centralauth-rename-doesnotexist": "De Benotzerkont, deen ugi gouf, gëtt et net.",
 	"centralauth-rename-form-allowhigheditcount": "Confirméiere fir Benotzer mat méi wéi $1 {{PLURAL:$1|äNNERUNG|Ännerungen}} ëmzebenennen",
 	"centralauth-rename-form-movepages": "Benotzersäite réckelen",
 	"centralauth-rename-form-newname": "Neie Benotzernumm",
