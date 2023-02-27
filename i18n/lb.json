@@ -5,7 +5,8 @@
 			"Les Meloures",
 			"Robby",
 			"Soued031",
-			"Matma Rex"
+			"Matma Rex",
+			"Volvox"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global Gruppen zu deenen de Benotzer gehéiert",
@@ -298,7 +299,7 @@
 	"centralauth-rename-conflict-hidden": "Benotzernumm verstoppt",
 	"centralauth-rename-deny": "Wëllt dir dës Ufro wierklech refuséieren?",
 	"centralauth-rename-desc": "Erlaabt et global Benotzerkonten ëmzebenennen",
-	"centralauth-rename-doesnotexist": "De Benotzerkont deen ugi gouf gëtt et net.",
+	"centralauth-rename-doesnotexist": "De Benotzerkont, deen ugi gouf, gëtt et net.",
 	"centralauth-rename-form-allowhigheditcount": "Confirméiere fir Benotzer mat méi wéi $1 {{PLURAL:$1|äNNERUNG|Ännerungen}} ëmzebenennen",
 	"centralauth-rename-form-movepages": "Benotzersäite réckelen",
 	"centralauth-rename-form-newname": "Neie Benotzernumm",
