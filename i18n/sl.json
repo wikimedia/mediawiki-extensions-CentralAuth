@@ -313,7 +313,7 @@
 	"centralauth-notice-dryrun": "Samo predstavitveni način",
 	"centralauth-prefs-count-attached": "Vaš račun je aktiven v $1 {{PLURAL:$1|vikiju|vikijih}}.",
 	"centralauth-prefs-count-unattached": "Nepotrjeni računi z vašim imenom ostajajo v $1 {{PLURAL:$1|vikiju|vikijih}}.",
-	"centralauth-prefs-detail-unattached": "Račun še ni bil potrjen kot pripadajoč globalnemu računu.",
+	"centralauth-prefs-detail-unattached": "Vaš račun še ni potrjen kot pripadajoč globalnemu računu.",
 	"centralauth-prefs-manage": "Upravljajte svoj globalni račun",
 	"centralauth-prefs-not-managed": "Ne uporabljate enotnega računa",
 	"centralauth-prefs-status": "Globalni račun:",
