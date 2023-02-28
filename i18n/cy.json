@@ -202,7 +202,7 @@
 	"centralauth-log-entry-unlock": "wedi datgloi cyfrif cydwici \"$1\"",
 	"centralauth-log-gblrename-oldname": "Enw defnyddiwr blaenorol:",
 	"centralauth-log-header": "Mae'r lòg hwn yn cynnwys gweithrediadau ar gyfrifon cydwici: dileu, cloi a datgloi.",
-	"centralauth-log-name": "Lòg cyfrifon cydwici",
+	"centralauth-log-name": "Log cyfrifon cydwici",
 	"centralauth-log-status-hidden": "o'r golwg",
 	"centralauth-log-status-locked": "ar glo",
 	"centralauth-log-status-none": "(dim)",
