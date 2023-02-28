@@ -28,6 +28,7 @@
 	"centralauth-admin-view": "Hisob haqida maʼlumotni koʻrish",
 	"centralauth-admin-yes": "ha",
 	"centralauth-attach-title": "Hisobni tasdiqlash",
+	"centralauth-contribs-locked": "Bu hisob global ravishda bloklangan.\nKoʻproq maʼlumot uchun [[Special:CentralAuth/$1|mana bu sahifa]] bilan tanishib chiqing.",
 	"centralauth-editset-name": "Nomi:",
 	"centralauth-editset-reason": "Sabab:",
 	"centralauth-editset-submit": "Joʻnatish",
