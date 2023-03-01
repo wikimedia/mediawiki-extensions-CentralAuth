@@ -328,7 +328,7 @@
 	"centralauth-rename-progress-list-header": "Järgmised globaalsed ümbernimetamised on praegu pooleli:",
 	"centralauth-rename-progress-logs-fieldset": "Logisissekanded",
 	"centralauth-rename-progress-username": "Kasutajanimi",
-	"centralauth-rename-queued": "Nime muutmine ($1 → $2) on tööjärjes ($3).\n\nVaata edenemist leheküljel [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Nime muutmine ($1 → $2) on tööjärjes.\n\nVaata edenemist leheküljel [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Kohalik viki",
 	"centralauth-rename-table-status": "Seis",
 	"centralauth-rename-table-status-done": "Valmis",
