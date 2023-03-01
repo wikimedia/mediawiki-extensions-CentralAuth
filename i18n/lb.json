@@ -5,7 +5,8 @@
 			"Les Meloures",
 			"Robby",
 			"Soued031",
-			"Matma Rex"
+			"Matma Rex",
+			"Volvox"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Global Gruppen zu deenen de Benotzer gehéiert",
@@ -255,7 +256,7 @@
 	"centralauth-merge-method-password": "confirméiert duerch d'Passwuert",
 	"centralauth-merge-method-password-desc": "Gëtt un dat de lokale Kont zesummegeluecht gouf well de Benotzer e valabelt Passwuert dofir uginn huet.",
 	"centralauth-merge-method-primary": "Heemechts-Wiki",
-	"centralauth-merge-method-primary-desc": "Dëst ass d'Wiki op där de Kont fir d'éischt zesummegeluecht gouf.\nDenkt drun datt et eventuel net d'Heemechtswiki vum Benotzer ass.",
+	"centralauth-merge-method-primary-desc": "Dëst ass d'Wiki, op där de Kont fir d'éischt zesummegeluecht gouf.\nDenkt drun, datt et eventuell net d'Heemechtswiki vum Benotzer ass.",
 	"centralauth-merge-no-accounts": "Et goufe keng Benotzerkonten déi mat Ärem Numm iwwerenee stëmmen an der Tabell an där all Benotzerkonten opgezeechent gi fonnt!\nD'Datebank muss feelerhaft sinn.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Loggt Iech wgl. an]</span> fir nozekucken ob all Är Benotzerkonte ganz zesummegefouert goufen.",
 	"centralauth-merge-step1-detail": "Gitt wgl. hei Äert Passwuert fir Äre Benotzerkont an.\nÄert Passwuert an déi ofgespäichert E-Mail gi mat de Benotzerkonten op anere Wikie verglach fir sécherzestellen datt se passen.\nEt gi keng Ännerunge gemaach bis datt Dir confirméiert hutt datt fir Iech alles an der Rei ass.",
@@ -296,7 +297,7 @@
 	"centralauth-rename-conflict-hidden": "Benotzernumm verstoppt",
 	"centralauth-rename-deny": "Wëllt dir dës Ufro wierklech refuséieren?",
 	"centralauth-rename-desc": "Erlaabt et global Benotzerkonten ëmzebenennen",
-	"centralauth-rename-doesnotexist": "De Benotzerkont deen ugi gouf gëtt et net.",
+	"centralauth-rename-doesnotexist": "De Benotzerkont, deen ugi gouf, gëtt et net.",
 	"centralauth-rename-form-allowhigheditcount": "Confirméiere fir Benotzer mat méi wéi $1 {{PLURAL:$1|äNNERUNG|Ännerungen}} ëmzebenennen",
 	"centralauth-rename-form-movepages": "Benotzersäite réckelen",
 	"centralauth-rename-form-newname": "Neie Benotzernumm",

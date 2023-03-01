@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nurlan"
+			"Nurlan",
+			"Ajiniyaz Nurniyazov"
 		]
 	},
-	"centralauth-prefs-status": "Global akkaunt:"
+	"centralauth-centralautologin-logged-in": "Siz oraylıq sistemaǵa $1 retinde kirgensiz. Paydalanıwshı sazlamaların qollanıw ushın betti qayta júkleńiz.",
+	"centralauth-prefs-status": "Global akkaunt:",
+	"centralautologin": "Oraylıq sistemaǵa kiriw",
+	"centrallogin": "Oraylıq paydalanıwshı kiriwi"
 }
