@@ -9,7 +9,9 @@
 			"Spacebirdy",
 			"පසිඳු කාවින්ද",
 			"Danieldegroot2",
-			"Winstonza"
+			"Winstonza",
+			"Matma Rex",
+			"Rooiratel"
 		]
 	},
 	"centralauth": "Global Gebruikers Bestuur",
@@ -200,6 +202,7 @@
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lees meer oor '''versmelte rekeninge''']]…''",
 	"centralauth-readonly": "CentralAuth Databasis gesluit",
 	"centralauth-readonlytext": "Die CentralAuth databasis is tans gesluit vir nuwe artikelwysigings en ​​ander veranderinge, waarskynlik vir roetine databasisonderhoud, waarna dit terug na normaal.",
+	"centralauth-rename-form-newname": "Nuwe gebruikersnaam",
 	"centralauth-rightslog-entry-deleteset": "het die wikigroep \"$1\" verwyder",
 	"centralauth-rightslog-entry-groupperms": "Verander groepsregte vir $1 van $2 na $3",
 	"centralauth-rightslog-entry-groupperms2": "groepsregte vir $1 is verander. Bygevoeg: $2. Verwyder: $3",
