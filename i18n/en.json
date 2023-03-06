@@ -367,7 +367,6 @@
 	"centralauth-rename-listed-on-denylist": "This user is listed on the global rename deny list. To rename this user, the deny list must be changed first.",
 	"centralauth-rename-movelog": "Automatically moved page while renaming the user \"[[Special:CentralAuth/$1|$1]]\" to \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "There are no renames in progress for $1. They may have already finished.",
-	"centralauth-rename-notinstalled": "The Renameuser extension is not installed.",
 	"centralauth-rename-progress-fieldset": "List of local accounts",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|view progress]])",
 	"centralauth-rename-progress-list-header": "The following global renames are currently in progress:",

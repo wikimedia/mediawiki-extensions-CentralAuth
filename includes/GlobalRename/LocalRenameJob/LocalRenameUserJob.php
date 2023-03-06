@@ -3,10 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
 use Exception;
-use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Extension\Renameuser\RenameuserSQL;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\RenameUser\RenameuserSQL;
 use Title;
 use User;
 use WikiMap;
@@ -52,10 +51,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 	}
 
 	public function doRun( $fnameTrxOwner ) {
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
-			throw new Exception( 'Extension:Renameuser is not installed' );
-		}
-
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 

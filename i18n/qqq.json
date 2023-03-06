@@ -392,7 +392,6 @@
 	"centralauth-rename-listed-on-denylist": "Message shown by Special:GlobalRenameUser if the renamed user is listed in the deny list.",
 	"centralauth-rename-movelog": "Move log comment used when automatically moving user pages\n\n* $1 is the user's old name\n* $2 is the user's new name",
 	"centralauth-rename-notinprogress": "Message shown when there is no rename in progress for the provided user\n* $1 is the username",
-	"centralauth-rename-notinstalled": "Error message if the RenameUser extension is not installed.",
 	"centralauth-rename-progress-fieldset": "Text on fieldset around rename progress table",
 	"centralauth-rename-progress-item": "Text for item in a list containing the currently active global renames. $1 is the user's old name, $2 is the user's new name.",
 	"centralauth-rename-progress-list-header": "Text above the list of currently active global renames",

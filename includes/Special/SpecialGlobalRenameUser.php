@@ -192,10 +192,6 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function validate( array $data ) {
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Renameuser' ) ) {
-			return Status::newFatal( 'centralauth-rename-notinstalled' );
-		}
-
 		$oldUser = User::newFromName( $data['oldname'] );
 		if ( !$oldUser ) {
 			return Status::newFatal( 'centralauth-rename-doesnotexist' );

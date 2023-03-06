@@ -11,7 +11,6 @@ $cfg['directory_list'] = array_merge(
 		'../../extensions/EventLogging',
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
-		'../../extensions/Renameuser',
 		'../../extensions/SecurePoll',
 		'../../extensions/TitleBlacklist',
 	]
@@ -25,7 +24,6 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 		'../../extensions/EventLogging',
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
-		'../../extensions/Renameuser',
 		'../../extensions/SecurePoll',
 		'../../extensions/TitleBlacklist',
 	]
