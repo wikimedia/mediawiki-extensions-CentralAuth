@@ -358,7 +358,6 @@
 	"centralauth-rename-globaleditcount-threshold": "Tällä käyttäjällä on yli $1 {{PLURAL:$1|muokkausta}}. Varmista, että haluat varmasti nimetä tämän käyttäjän uudelleen ja että järjestelmänvalvoja on paikalla valvomassa uudelleennimeämistä.",
 	"centralauth-rename-movelog": "Siirsi sivun automaattisesti, kun käyttäjätunnus \"[[Special:CentralAuth/$1|$1]]\" muutettiin nimelle \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Käyttäjätunnusta $1 koskevia nimenvaihtoja ei ole käynnissä. Ne saattavat olla jo valmistuneet.",
-	"centralauth-rename-notinstalled": "Renameuser-laajennusta ei ole asennettu.",
 	"centralauth-rename-progress-fieldset": "Luettelo paikallisista tunnuksista",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|näytä eteneminen]])",
 	"centralauth-rename-progress-list-header": "Seuraavat järjestelmänlaajuiset nimeämiset ovat tällä hetkellä käynnissä:",

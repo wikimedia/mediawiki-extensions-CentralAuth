@@ -352,7 +352,6 @@
 	"centralauth-rename-form-suppressredirects": "Sopprimi la creazione di redirect",
 	"centralauth-rename-movelog": "Pagina spostata automaticamente durante la rinomina dell'utente \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Non ci sono rinomine di $1 in corso. Potrebbero già essere terminate.",
-	"centralauth-rename-notinstalled": "L'estensione Renameuser non è installata.",
 	"centralauth-rename-progress-fieldset": "Elenco delle utenze locali",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|mostra progressi]])",
 	"centralauth-rename-progress-logs-fieldset": "Voci del registro",

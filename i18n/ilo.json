@@ -302,7 +302,6 @@
 	"centralauth-rename-form-suppressredirects": "Pasardengen ti panagpartuat kadagiti baw-ing",
 	"centralauth-rename-movelog": "Automatiko a mangiyalis iti panid bayat a manginagan manen iti agar-aramat iti \"[[Special:CentralAuth/$1|$1]]\" iti \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Adda dagiti pananginagan manen nga agprogprogreso para kenni $1. Mabalin a nalpasdan.",
-	"centralauth-rename-notinstalled": "Ti pagpaatiddog ti Renameuser ket saan a naisaad.",
 	"centralauth-rename-progress-fieldset": "Listaan dagiti lokal a pakabilangan",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|kitaen ti progreso]])",
 	"centralauth-rename-progress-list-header": "Agdama a maar-aramid dagiti sumaganad a global a pananginagan manen:",

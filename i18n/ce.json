@@ -293,7 +293,6 @@
 	"centralauth-rename-form-reason": "Бахьана",
 	"centralauth-rename-form-suppressredirects": "ДӀасахьажораш кхолларан бехкам бе",
 	"centralauth-rename-movelog": "Декъашхочун «[[Special:CentralAuth/$1|$1]]» → «[[Special:CentralAuth/$2|$2]]» цӀе хийцарца агӀонан цӀе авто-хийцар",
-	"centralauth-rename-notinstalled": "Шордийраг Renameuser дӀахӀоттийна йац.",
 	"centralauth-rename-progress-fieldset": "Локалан дӀаяздрийн могӀаме хьажа",
 	"centralauth-rename-progress-logs-fieldset": "Тептаран дӀайаздарш",
 	"centralauth-rename-progress-username": "Декъашхочун цӀе",

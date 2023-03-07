@@ -251,7 +251,6 @@
 	"centralauth-rename-form-suppressredirects": "Sleppa stofnun tilvísanna",
 	"centralauth-rename-movelog": "Færði síðuna sjálfvirkt þegar notendanafni „[[Special:CentralAuth/$1|$1]]” var breytt í „[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "Það eru engar endurnefningar í gangi fyrir $1. Það gæti verið að þeim sé lokið.",
-	"centralauth-rename-notinstalled": "RenameUser viðbótin er ekki sett upp.",
 	"centralauth-rename-progress-fieldset": "Listi yfir staðbundna aðganga",
 	"centralauth-rename-progress-logs-fieldset": "Færsluskrá",
 	"centralauth-rename-progress-username": "Notendanafn",

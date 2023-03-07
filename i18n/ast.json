@@ -325,7 +325,6 @@
 	"centralauth-rename-globaleditcount-threshold": "Esti usuariu tien más de $1 {{PLURAL:$1|edición|ediciones}}. Confirma que tas seguru de querer cambiar de nome a esti usuariu y que ta disponible un alministrador del sistema pa supervisar esti cambiu de nome.",
 	"centralauth-rename-movelog": "Páxina treslladada automáticamente al renomar l'usuariu \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Nun hai cambios de nomes en progresu pa $1. Podríen tar finaos yá.",
-	"centralauth-rename-notinstalled": "La estensión Renameuser nun ta instalada.",
 	"centralauth-rename-progress-fieldset": "Llista de cuentes llocales",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|mostra el progrés]])",
 	"centralauth-rename-progress-list-header": "Los siguientes cambios de nome globales tán en cursu anguaño:",

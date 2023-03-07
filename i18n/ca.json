@@ -331,7 +331,6 @@
 	"centralauth-rename-form-suppressredirects": "Suprimeix la creació de redireccions",
 	"centralauth-rename-movelog": "Pàgina traslladada automàticament en canviar el nom de l'usuari «[[Special:CentralAuth/$1|$1]]» a «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "No hi ha cap canvi de nom en curs per a $1. És possible que ja hagi acabat.",
-	"centralauth-rename-notinstalled": "L'extensió Renameuser no està instal·lada",
 	"centralauth-rename-progress-fieldset": "Llista de comptes locals",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|mostra el progrés]])",
 	"centralauth-rename-progress-list-header": "Els canvis globals de nom següents són actualment en curs:",

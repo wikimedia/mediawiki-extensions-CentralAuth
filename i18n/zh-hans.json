@@ -394,7 +394,6 @@
 	"centralauth-rename-listed-on-denylist": "此用户列在全域重命名拒绝列表中。要重命名此用户，必须先更改拒绝列表。",
 	"centralauth-rename-movelog": "当重命名用户“[[Special:CentralAuth/$1|$1]]”至“[[Special:CentralAuth/$2|$2]]”时自动移动页面",
 	"centralauth-rename-notinprogress": "没有对$1的重命名进度。它们可能已经完成。",
-	"centralauth-rename-notinstalled": "重命名用户扩展未安装。",
 	"centralauth-rename-progress-fieldset": "本地账号列表",
 	"centralauth-rename-progress-item": "$1 → $2（[[Special:GlobalRenameProgress/$2|查看进度]]）",
 	"centralauth-rename-progress-list-header": "目前正在进行以下全域更名：",

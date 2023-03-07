@@ -361,7 +361,6 @@
 	"centralauth-rename-globaleditcount-threshold": "هذا المستخدم لديه أكثر من $1 {{PLURAL:$1|تعديل}}، الرجاء تأكيد أنك متأكد من أنك تريد إعادة تسمية هذا المستخدم وأن إداري نظام متاح لمراقبة عملية إعادة التسمية هذه.",
 	"centralauth-rename-movelog": "نُقِلت الصفحة آليا عند إعادة تسمية المستخدم «[[Special:CentralAuth/$1|$1]]» إلى «[[Special:CentralAuth/$2|$2]]».",
 	"centralauth-rename-notinprogress": "لا يوجد عمليات إعادة تسمية فيد المعالجة لاسم المستخدم $1. من المحتمل أنها قد أنجزت.",
-	"centralauth-rename-notinstalled": "امتداد Renameuser لإعادة تسمية المستخدمين غير منصَّب على هذا الويكي.",
 	"centralauth-rename-progress-fieldset": "قائمة الحسابات المحلية",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|عرض التقدم]])",
 	"centralauth-rename-progress-list-header": "عمليات إعادة التسمية العالمية التالية قيد التنفيذ:",

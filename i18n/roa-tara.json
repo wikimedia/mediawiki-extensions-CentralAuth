@@ -338,7 +338,6 @@
 	"centralauth-rename-listed-on-denylist": "Stu utende jè elengate sus a le elenghe de diviete globbale de le renomenaminde. Pe renomenà stu utende, apprime adda essere cangiate l'elenghe de le diviete.",
 	"centralauth-rename-movelog": "Pàgena spustate automaticamende quanne ha state renominate l'utende \"[[Special:CentralAuth/$1|$1]]\" jndr'à \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Non ge stonne renomenaminde in corse pe $1. Pò essere ca onne già spicciate.",
-	"centralauth-rename-notinstalled": "L'estenzione Renameuser non g'a state installate.",
 	"centralauth-rename-progress-fieldset": "Elenghe de le cunde locale",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|'ndruche 'u progresse]])",
 	"centralauth-rename-progress-list-header": "Le renomenaminde globbale seguende stonne in esecuzione:",

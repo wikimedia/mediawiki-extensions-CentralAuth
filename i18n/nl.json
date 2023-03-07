@@ -371,7 +371,6 @@
 	"centralauth-rename-listed-on-denylist": "Deze gebruiker staat op de lijst van gebruikers waarvan hernoemen niet is toegestaan. Om deze gebruiker te hernoemen moet de lijst eerst worden gewijzigd.",
 	"centralauth-rename-movelog": "Automatisch hernoemd bij het hernoemen van gebruiker \"[[Special:CentralAuth/$1|$1]]\" naar \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Er zijn geen hernoemingen gaande voor $1. Deze kunnen al afgerond zijn.",
-	"centralauth-rename-notinstalled": "De uitbreiding \"Gebruiker hernoemen\" is niet geïnstalleerd.",
 	"centralauth-rename-progress-fieldset": "Lijst van lokale gebruikersaccounts",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|bekijk de voortgang]])",
 	"centralauth-rename-progress-list-header": "De volgende globale hernoemingen zijn momenteel in bewerking.",

@@ -354,7 +354,6 @@
 	"centralauth-rename-listed-on-denylist": "Pengguna ini dicantumkan dalam daftar penolakan pengubahan nama global. Untuk mengubah nama pengguna ini, daftar penolakan harus diubah terlebih dahulu.",
 	"centralauth-rename-movelog": "Secara otomatis memindahkan halaman ketika mengganti nama pengguna \"[[Special:CentralAuth/$1|$1]]\" menjadi \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Tidak ada perubahan nama yang sedang berjalan untuk $1. Perubahan tersebut mungkin sudah selesai.",
-	"centralauth-rename-notinstalled": "Ekstensi Renameuser tidak diinstal.",
 	"centralauth-rename-progress-fieldset": "Daftar akun lokal",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|lihat progres]])",
 	"centralauth-rename-progress-list-header": "Pengubahan nama global berikut sedang dalam progres:",

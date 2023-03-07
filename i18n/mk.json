@@ -343,7 +343,6 @@
 	"centralauth-rename-listed-on-denylist": "Овој корисник се води на глобалниот список на одбиени преименувања. За да го преименувате, најпрвин ќе мора да се измени списокот.",
 	"centralauth-rename-movelog": "Автоматски преместена страницата при преименување на корисникот „[[Special:CentralAuth/$1|$1]]“ во „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-notinprogress": "Нема преименувања во тек за $1. Може веќе да завршило.",
-	"centralauth-rename-notinstalled": "Додатокот Renameuser не е воспоставен.",
 	"centralauth-rename-progress-fieldset": "Список на месни сметки",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|напредок]])",
 	"centralauth-rename-progress-list-header": "Во тек се следниве глобални преименувања:",

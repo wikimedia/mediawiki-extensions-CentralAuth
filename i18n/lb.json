@@ -303,7 +303,6 @@
 	"centralauth-rename-form-oldname": "Aktuelle Benotzernumm",
 	"centralauth-rename-form-reason": "Grond",
 	"centralauth-rename-globaleditcount-threshold": "Dëse Benotzer huet méi wéi $1 {{PLURAL:$1|Ännerung|Ännerungen}}. Confirméiert wgl. datt Dir sécher sidd datt Dir dëse Benotzer ëmbenenne wëllt an datt ee System-Administrateur disponibel ass fir dës Ëmbenennung z'iwwerwaachen.",
-	"centralauth-rename-notinstalled": "D'Erweiderung Renameuser ass net installéiert.",
 	"centralauth-rename-progress-fieldset": "Lëscht vun de lokale Benotzerkonten",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Fortschrëtt weisen]])",
 	"centralauth-rename-progress-list-header": "Dës global Ëmbenennunge sinn elo am Gaang:",

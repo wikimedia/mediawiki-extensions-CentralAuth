@@ -357,7 +357,6 @@
 	"centralauth-rename-listed-on-denylist": "Dieser Benutzer ist in der globalen Umbenennungsablehnungsliste aufgeführt. Um diesen Benutzer umzubenennen, muss zuerst die Ablehnungsliste geändert werden.",
 	"centralauth-rename-movelog": "Seite während der Umbenennung des Benutzers „[[Special:CentralAuth/$1|$1]]“ in „[[Special:CentralAuth/$2|$2]]“ automatisch verschoben",
 	"centralauth-rename-notinprogress": "Es gibt derzeit keine Umbenennungen für $1. Vielleicht wurden sie bereits abgeschlossen.",
-	"centralauth-rename-notinstalled": "Die Erweiterung „Renameuser“ ist nicht installiert.",
 	"centralauth-rename-progress-fieldset": "Liste lokaler Benutzerkonten",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Fortschritt ansehen]])",
 	"centralauth-rename-progress-list-header": "Die folgenden globalen Umbenennungen sind derzeit in Bearbeitung:",

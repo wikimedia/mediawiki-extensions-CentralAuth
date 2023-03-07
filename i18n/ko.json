@@ -370,7 +370,6 @@
 	"centralauth-rename-listed-on-denylist": "이 사용자는 전역 이름 바꾸기 거부 목록에 있습니다. 이 사용자의 이름을 바꾸려면 먼저 거부 목록을 변경해야 합니다.",
 	"centralauth-rename-movelog": "계정 이름을 \"[[Special:CentralAuth/$1|$1]]\"에서 \"[[Special:CentralAuth/$2|$2]]\"(으)로 바꾸는 동안 자동으로 문서를 이동함",
 	"centralauth-rename-notinprogress": "$1님에 대한 진행 중인 이름 바꾸기가 없습니다. 이미 완료되어 있을 수 있습니다.",
-	"centralauth-rename-notinstalled": "Renameuser 확장 기능이 설치되어 있지 않습니다.",
 	"centralauth-rename-progress-fieldset": "로컬 계정의 목록",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|진행 상황]])",
 	"centralauth-rename-progress-list-header": "다음 전역 계정명 변경이 진행 중입니다:",

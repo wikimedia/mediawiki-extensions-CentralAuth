@@ -348,7 +348,6 @@
 	"centralauth-rename-listed-on-denylist": "Гэты ўдзельнік унесены ў глабальны спіс адмоваў перайменавання. Каб перайменаваць гэтага ўдзельніка, спачатку трэба змяніць спіс адмоваў.",
 	"centralauth-rename-movelog": "Аўтаматычна перанесена старонка пры змене імя ўдзельніка з «[[Special:CentralAuth/$1|$1]]» на «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "Няма перайменаванняў у апрацоўцы дзеля $1. Магчыма, яны ўжо скончыліся.",
-	"centralauth-rename-notinstalled": "Пашырэнне Renameuser не ўстаноўлена.",
 	"centralauth-rename-progress-fieldset": "Спіс лакальных уліковых запісаў",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|паглядзець поступ]])",
 	"centralauth-rename-progress-list-header": "Зараз выконваюцца наступныя глабальныя перайменаванні:",

@@ -370,7 +370,6 @@
 	"centralauth-rename-listed-on-denylist": "Цей користувач є у списку глобальних відмов на перейменування. Щоб перейменувати цього користувача, треба спочатку відредагувати список відмов.",
 	"centralauth-rename-movelog": "Автоматичне перейменування сторінки при перейменуванні користувача «[[Special:CentralAuth/$1|$1]]» на «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "Немає чинних перейменувань для $1. Можливо, вони вже закінчились.",
-	"centralauth-rename-notinstalled": "Розширення Renameuser не інстальоване.",
 	"centralauth-rename-progress-fieldset": "Список локальних облікових записів",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|переглянути прогрес]])",
 	"centralauth-rename-progress-list-header": "Такі глобальні перейменування наразі в процесі виконання:",

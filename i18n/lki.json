@@ -295,7 +295,6 @@
 	"centralauth-rename-form-suppressredirects": "از به وجود آمدن تغییرمسیر جلوگیری کن",
 	"centralauth-rename-movelog": "صفحه در ضمن تغییر نام کاربر «[[Special:CentralAuth/$1|$1]]» به «[[Special:CentralAuth/$2|$2]]» به طور خودکار منتقل شد",
 	"centralauth-rename-notinprogress": "هیچ پروسه‌ی تغییر نامی برای $1 وجود ندارد. احتمالا تمامی آن‌ها تمام شده‌اند.",
-	"centralauth-rename-notinstalled": "افزونه تغییرنام نصب نشده است.",
 	"centralauth-rename-progress-fieldset": "فهرست حساب‌های محلی",
 	"centralauth-rename-progress-logs-fieldset": "مدخل‌های سیاهه",
 	"centralauth-rename-progress-username": "نۆم کاربەری",

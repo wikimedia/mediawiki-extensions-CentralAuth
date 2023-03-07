@@ -303,7 +303,6 @@
 	"centralauth-rename-form-suppressredirects": "തിരിച്ചുവിടലുകളുടെ നിർമ്മിതി ഒതുക്കുക",
 	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" എന്ന ഉപയോക്താവിനെ \"[[Special:CentralAuth/$2|$2]]\" എന്നു പേരുമാറ്റിയപ്പോൾ താൾ കൂടെ സ്വയം മാറിയിട്ടുണ്ട്.",
 	"centralauth-rename-notinprogress": "$1 എന്ന ഉപയോക്താവിന്റെ പുനർനാമകരണമൊന്നും നടക്കുന്നില്ല. മിക്കവാറും അത് പൂർത്തിയായിട്ടുണ്ടാവാം.",
-	"centralauth-rename-notinstalled": "റീനേംയൂസർ അനുബന്ധം ഇൻസ്റ്റോൾ ചെയ്തിട്ടില്ല.",
 	"centralauth-rename-progress-fieldset": "പ്രാദേശിക അംഗത്വങ്ങളുടെ പട്ടിക",
 	"centralauth-rename-progress-logs-fieldset": "രേഖയിലെ ഉൾപ്പെടുത്തലുകൾ",
 	"centralauth-rename-progress-username": "ഉപയോക്തൃനാമം",

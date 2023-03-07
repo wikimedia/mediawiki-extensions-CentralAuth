@@ -298,7 +298,6 @@
 	"centralauth-rename-form-suppressredirects": "Eliminé la creassion ëd ridiression",
 	"centralauth-rename-movelog": "Pàgina tramudà an automàtich durant l'arnominament ëd l'utent «[[Special:CentralAuth/$1|$1]]» a «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "A-i é gnun arnominament an cors për $1. A podrìo esse già finì.",
-	"centralauth-rename-notinstalled": "L'estension për Arnominé j'utent a l'é nen anstalà.",
 	"centralauth-rename-progress-fieldset": "Lista dij cont locaj",
 	"centralauth-rename-progress-logs-fieldset": "Vos dl'argistr",
 	"centralauth-rename-progress-username": "Stranòm",

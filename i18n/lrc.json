@@ -325,7 +325,6 @@
 	"centralauth-rename-globaleditcount-threshold": "اؽ مؽنتۏر بؽشتر د $1{{PLURAL:$1|ڤیرایش}} دارٱ. لٛۏتفٱن تٱئید بٱکؽت کاْ موتمٱئن هؽسؽت کاْ مؽهایت نوم اؽ هساو ناْ آلشت باٛئؽت، ۉ یٱ کاْ یاٛ دیڤوندار هازر هؽ تا اؽ آلشت نوم ناْ زؽر نٱزٱر باٛئیرٱ.",
 	"centralauth-rename-movelog": "بٱلگٱ د زمن آلشت داٛئن نوم مؽنتۏر «[[Special:CentralAuth/$1|$1]]» ڤ شکل خودٱنجوم د «[[Special:CentralAuth/$2|$2]]» جا ڤ جاکاری بی",
 	"centralauth-rename-notinprogress": "هیچ پیشکرد آلشتکاری نوم سی $1 نؽ.\nگاسؽ هٱمٱ ڤنو تموم بینٱ.",
-	"centralauth-rename-notinstalled": "ٱفزۊنٱ آلشت نوم نٱسب ناٛئیٱ.",
 	"centralauth-rename-progress-fieldset": "نومگٱ هساویا ڤلاتی",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:پؽشکرد د نۏ نوم نیائن سٱرتاسری/$2|ساٛلٛ پؽشکرد بٱکؽت]])",
 	"centralauth-rename-progress-list-header": "د نۊ نوم نیائن سٱرتاسریا هاری ایسنی هان د پؽشکرد:",

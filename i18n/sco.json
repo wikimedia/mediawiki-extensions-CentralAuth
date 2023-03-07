@@ -294,7 +294,6 @@
 	"centralauth-rename-form-suppressredirects": "Suppress the creaution o reguidals",
 	"centralauth-rename-movelog": "Autæmateeclie muived page while renamin the uiser \"[[Special:CentralAuth/$1|$1]]\" tae \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Thaur's nae renames in progress fer $1. Thay micht hae finished awreadie.",
-	"centralauth-rename-notinstalled": "The Renameuser extension is no instawed.",
 	"centralauth-rename-progress-fieldset": "Leet o local accoonts",
 	"centralauth-rename-progress-logs-fieldset": "Log entries",
 	"centralauth-rename-progress-username": "Uisername",

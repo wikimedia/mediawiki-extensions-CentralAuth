@@ -352,7 +352,6 @@
 	"centralauth-rename-listed-on-denylist": "Thành viên này được liệt kê trong danh sách từ chối đổi tên toàn cục. Để đổi tên thành viên này, cần phải sửa đổi danh sách từ chối trước.",
 	"centralauth-rename-movelog": "Tự động di chuyển trang khi đổi tên thành viên “[[Special:CentralAuth/$1|$1]]” thành “[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "$1 không phải đang được đổi tên. Việc đổi tên có thể hoàn thành rồi.",
-	"centralauth-rename-notinstalled": "Phần mở rộng Renameuser chưa được cài đặt.",
 	"centralauth-rename-progress-fieldset": "Danh sách tài khoản địa phương",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|xem tiến triển]])",
 	"centralauth-rename-progress-list-header": "Các tác vụ đổi tên toàn cục hiện đang tiến triển:",

@@ -379,7 +379,6 @@
 	"centralauth-rename-globaleditcount-threshold": "У этого участника более $1 {{PLURAL:$1|правки|правок}}. Пожалуйста, подтвердите, что вы действительно хотите переименовать этого участника, а системный администратор может проконтролировать этот процесс.",
 	"centralauth-rename-movelog": "Автоматическое переименование страницы при переименовании участника «[[Special:CentralAuth/$1|$1]]» в «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "Для $1 нет переименований в процессе обработки. Возможно, они уже завершились.",
-	"centralauth-rename-notinstalled": "Расширение Renameuser не устанавлено.",
 	"centralauth-rename-progress-fieldset": "Список локальных учётных записей",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|посмотреть прогресс]])",
 	"centralauth-rename-progress-list-header": "Следующие глобальные переименования в настоящее время находятся в процессе:",

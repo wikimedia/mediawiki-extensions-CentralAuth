@@ -300,7 +300,6 @@
 	"centralauth-rename-form-suppressredirects": "Kein Ömleidonge aanjähje",
 	"centralauth-rename-movelog": "Di Sigg wohd beim Ömdeufe vum Metmaacher „[[Special:CentralAuth/$1|$1]]“ op „[[Special:CentralAuth/$2|$2]]“ automattesch met ömjenannt.",
 	"centralauth-rename-notinprogress": "För „$1“ es kein Ömdeufe aan Loufe.\nDe Vörjäng künnte ald affjeschloße sin.",
-	"centralauth-rename-notinstalled": "Et Zohsazprojramm föt Metmaacher ömtedeufe et nit enjebonge.",
 	"centralauth-rename-progress-fieldset": "Leß met Zohjäng op einzel Wikis",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Donn Der der Fottschredd belohre]])",
 	"centralauth-rename-progress-list-header": "Heh di Ömdäufe vun Metmaachere sin em Momang för alle Wikki em Jang:",

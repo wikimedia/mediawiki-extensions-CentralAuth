@@ -346,7 +346,6 @@
 	"centralauth-rename-globaleditcount-threshold": "Este usuario ten máis de $1 {{PLURAL:$1|edición|edicións}}. Por favor, confirme que está seguro de que quere renomear este usuarioe que un administrador de sistemas está dispoñible para vixiar este renomeado.",
 	"centralauth-rename-movelog": "A páxina foi movida automaticamente debido ao cambio de nome de usuario de \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Non hai procesos de cambio de nome para $1. Poden xa ter concluído.",
-	"centralauth-rename-notinstalled": "A extensión de renomeamento de usuarios (Renameuser) non está instalada.",
 	"centralauth-rename-progress-fieldset": "Lista de contas locais",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ver progreso]])",
 	"centralauth-rename-progress-list-header": "Os seguintes renomeados globais están actualmente en progreso:",

@@ -369,7 +369,6 @@
 	"centralauth-rename-listed-on-denylist": "Ten użytkownik znajduje się na globalnej liście odmawiania zmianie nazwy konta. Aby zmienić jego nick, musi zostać wpierw usunięty z tej listy.",
 	"centralauth-rename-movelog": "Automatycznie przeniesiono stronę podczas zmiany nazwy użytkownika z \"[[Special:CentralAuth/$1|$1]]\" na \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Nie ma obecnie zmian nazw dla $1. Zostały już wykonane.",
-	"centralauth-rename-notinstalled": "Rozszerzenie Renameuser nie jest zainstalowane.",
 	"centralauth-rename-progress-fieldset": "Lista kont lokalnych",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|pokaż postęp]])",
 	"centralauth-rename-progress-list-header": "Następujące globalne zmiany nazwy są w trakcie:",

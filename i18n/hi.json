@@ -316,7 +316,6 @@
 	"centralauth-rename-form-suppressredirects": "अनुप्रेषित कड़ियों के बनने पर रोक लगाएँ",
 	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" का नाम \"[[Special:CentralAuth/$2|$2]]\" करते समय पृष्ठ स्वतः स्थानांतरित हुआ।",
 	"centralauth-rename-notinprogress": "$1 के लिए कोई नामकरण जारी नहीं है। हो सकता है कि यह पूरा हो चुका है।",
-	"centralauth-rename-notinstalled": "सदस्यनाम-बदलाव विस्तार इन्स्टाल नहीं किया गया है।",
 	"centralauth-rename-progress-fieldset": "स्थानीय खातों की सूची",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|प्रगति देखिए]])",
 	"centralauth-rename-progress-list-header": "निम्न लिखित वैश्विक पुनःनामकरण वर्तमान में चालू हैं:",

@@ -28,7 +28,6 @@
 	"centralauth-rename-form-suppressredirects": "पुनर्निर्देश सृजन के रोकीं",
 	"centralauth-rename-movelog": "प्रयोगकर्ता के नाँव बदलाव के दौरान पन्ना \"[[Special:CentralAuth/$1|$1]]\" से \"[[Special:CentralAuth/$2|$2]]\" पर ऑटोमेटिक रूप से स्थानांतरित भइल।",
 	"centralauth-rename-notinprogress": "$1 खातिर कौनो नाम परिवर्तन के काम प्रगति में नईखे।\nहो सकता उ पहिले ही हो चुकल होखे।",
-	"centralauth-rename-notinstalled": "प्रयोगकर्ता पुनः नामांकन विस्तार स्थापित नईखे भईल।",
 	"centralauth-rename-progress-fieldset": "क्षेत्रीय खाता के सूची",
 	"centralauth-rename-progress-logs-fieldset": "लॉग एंट्री",
 	"centralauth-rename-progress-username": "सदस्यनाम",

@@ -311,7 +311,6 @@
 	"centralauth-rename-form-suppressredirects": "Oprește crearea de redirecționări",
 	"centralauth-rename-movelog": "Pagină mutată automat la redenumirea {{GENDER:$2|utilizatorului|utilizatoarei|utilizatorului}} „[[Special:CentralAuth/$1|$1]]” în „[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "Nu există redenumiri în desfășurare pentru $1. Este posibil ca acestea să se finalizat deja.",
-	"centralauth-rename-notinstalled": "Extensia Redenumire utilizator nu este instalată",
 	"centralauth-rename-progress-fieldset": "Lista conturilor locale",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|vezi progresul]])",
 	"centralauth-rename-progress-list-header": "Următoarele redenumiri globale sunt actualmente în desfășurare:",

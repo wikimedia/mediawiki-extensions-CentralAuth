@@ -394,7 +394,6 @@
 	"centralauth-rename-listed-on-denylist": "Cet utilisateur est listé dans la liste de refus de renommage global. Pour renommer cet utilisateur, la liste de refus doit d’abord être modifiée.",
 	"centralauth-rename-movelog": "Page automatiquement déplacée lors du renommage de l’utilisateur « [[Special:CentralAuth/$1|$1]] » en « [[Special:CentralAuth/$2|$2]] »",
 	"centralauth-rename-notinprogress": "Il n’y a pas de renommage en cours pour $1. Ils peuvent s’être terminés.",
-	"centralauth-rename-notinstalled": "L’extension Renommage des utilisateurs n’est pas installée.",
 	"centralauth-rename-progress-fieldset": "Liste des comptes locaux",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|afficher la progression]])",
 	"centralauth-rename-progress-list-header": "Les renommages globaux suivants sont actuellement en cours :",

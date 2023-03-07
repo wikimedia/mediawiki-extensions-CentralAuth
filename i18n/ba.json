@@ -299,7 +299,6 @@
 	"centralauth-rename-form-oldname": "Әлеге ваҡыттағы атамаһы",
 	"centralauth-rename-form-reason": "Сәбәп",
 	"centralauth-rename-form-suppressredirects": "Йүнәлтеүҙәрҙе яһауҙы тыйырға",
-	"centralauth-rename-notinstalled": "Renameuser киңәйтеүе ҡуйылмаған.",
 	"centralauth-rename-unattached-intheway": "Ҡатнашыусының исемен һоратыусы ҡушылмаған иҫәп яҙмалары бар.",
 	"centralauth-renameuser-merged": "$1 ҡатнашыусыһы берҙәм инеү системаһына күсте.\nУның исемен алыштырыу локаль иҫәп яҙмаһы менән глобаль иҫәп яҙмаһы араһында бәйләнеш юғалыуға килтерәсәк.",
 	"centralauth-renameuser-reserved": "$2 ҡатнашыусыһының исеме глобаль иҫәп яҙмаһы өсөн һаҡланған.",

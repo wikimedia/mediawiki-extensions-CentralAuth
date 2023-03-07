@@ -349,7 +349,6 @@
 	"centralauth-rename-listed-on-denylist": "Denne brukeren er på lista over navn som ikke kan endres globalt. For å endre navn på brukeren må lista endres først.",
 	"centralauth-rename-movelog": "Flyttet siden automatisk under navneendring fra «[[Special:CentralAuth/$1|$1]]» til «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "Det er ingen navneendringer på gang for $1. Det kan hende det allerede er fullført.",
-	"centralauth-rename-notinstalled": "Utvidelsen Renameuser er ikke installert.",
 	"centralauth-rename-progress-fieldset": "Liste over lokale kontoer",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|vis framgang]])",
 	"centralauth-rename-progress-list-header": "Følgende globale navneendringer foregår for øyeblikket:",

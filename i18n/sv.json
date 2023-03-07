@@ -366,7 +366,6 @@
 	"centralauth-rename-listed-on-denylist": "Den här användaren är listad på den globala listan för nekad åtkomst för namnändring. För att byta namn på den här användaren måste listan först ändras.",
 	"centralauth-rename-movelog": "Flyttade automatiskt sidan under namnbyte av användare \"[[Special:CentralAuth/$1|$1]]\" till \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Det finns inga pågående namnbyten för $1. De kan redan ha avslutats.",
-	"centralauth-rename-notinstalled": "Renameuser-tillägget är inte installerat.",
 	"centralauth-rename-progress-fieldset": "Lista över lokala konton",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|visa förlopp]])",
 	"centralauth-rename-progress-list-header": "Följande globala namnbyten pågår för närvarande:",

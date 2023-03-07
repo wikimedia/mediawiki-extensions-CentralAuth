@@ -397,7 +397,6 @@
 	"centralauth-rename-listed-on-denylist": "Este usuario se encuentra en la lista negra global que impide que su nombre de usuario sea cambiado. Para renombrar a este usuario, debes eliminarlo previamente de aquella lista.",
 	"centralauth-rename-movelog": "Página trasladada automáticamente al cambiar el nombre del usuario «[[Special:CentralAuth/$1|$1]]» a «[[Special:CentralAuth/$2|$2]]»",
 	"centralauth-rename-notinprogress": "No existen cambios de nombre de usuario en curso para $1. Es posible que éste haya ya terminado.",
-	"centralauth-rename-notinstalled": "La extensión Renameuser no está instalada.",
 	"centralauth-rename-progress-fieldset": "Lista de cuentas locales",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ver progreso]])",
 	"centralauth-rename-progress-list-header": "El siguiente cambio de nombre global está actualmente en curso:",

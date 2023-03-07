@@ -307,7 +307,6 @@
 	"centralauth-rename-globaleditcount-threshold": "St'utente tene cchiù 'e $1 {{PLURAL:$1|cagnamiento|cagnamiente}}. Pe' piacere cunfermate ca site sicuro ca vulite renommenà st'utente e ca ll'ammenistratore d' 'o sistema è pronto a cuntrullà stu cagnamiento 'e nomme.",
 	"centralauth-rename-movelog": "Paggena spustata automatecamente pe' tramente ca se fa 'a renommena 'e ll'utente \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Nun ce stanno renommene 'n prugresso pe' $1. Può darse chè già terminata.",
-	"centralauth-rename-notinstalled": "L'estensione Renameuser nun è installata.",
 	"centralauth-rename-progress-fieldset": "Lista 'e ll'acount locale",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|mmusta 'o prugresso]])",
 	"centralauth-rename-progress-list-header": "'E renommenaziune globbale ccà abbascio se stann'arricettann:",

@@ -343,7 +343,6 @@
 	"centralauth-rename-globaleditcount-threshold": "Tento uživatel provedl více než {{PLURAL:$1|jednu editaci|$1 editace|$1 editací}}. Prosím potvrďte, že jste si jisti tím, že chcete tohoto uživatele přejmenovat a že systémový administrátor je připraven sledovat toto přejmenování.",
 	"centralauth-rename-movelog": "automatické přesunutí stránky z důvodu přejmenování uživatele „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-notinprogress": "U uživatele $1 neprobíhá žádné přejmenování. Možná už bylo dokončeno.",
-	"centralauth-rename-notinstalled": "Není nainstalováno rozšíření Renameuser.",
 	"centralauth-rename-progress-fieldset": "Seznam místních účtů",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|zobrazit průběh]])",
 	"centralauth-rename-progress-list-header": "Momentálně probíhají následující globální přejmenování:",

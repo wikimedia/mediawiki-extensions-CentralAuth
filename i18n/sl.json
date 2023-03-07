@@ -344,7 +344,6 @@
 	"centralauth-rename-listed-on-denylist": "Ta uporabnik je naveden na globalnem seznamu zavrnjenih preimenovanj. Če želite preimenovati tega uporabnika, morate najprej spremeniti seznam zavrnjenih preimenovanj.",
 	"centralauth-rename-movelog": "Samodejno preimenovana stran ob preimenovanju uporabnika \"[[Special:CentralAuth/$1|$1]]\" v \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "V teku ni preimenovan za uporabnika $1. Morda so bila že zaključena.",
-	"centralauth-rename-notinstalled": "Vstavek Preimenuj uporabnika ni inštaliran.",
 	"centralauth-rename-progress-fieldset": "Seznam lokalnih računov",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|prikaži potek]])",
 	"centralauth-rename-progress-list-header": "Trenutno so v teku naslednja globalna preimenovanja:",

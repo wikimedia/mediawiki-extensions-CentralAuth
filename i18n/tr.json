@@ -370,7 +370,6 @@
 	"centralauth-rename-listed-on-denylist": "Bu kullanıcı, 'genel yeniden adlandırma reddetme listesi'nde listelenmiştir. Bu kullanıcıyı yeniden adlandırmak için önce 'reddetme listesi'nin değiştirilmesi gerekir.",
 	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" adlı kullanıcının adı \"[[Special:CentralAuth/$2|$2]]\" olarak değiştirilirken otomatik olarak taşındı",
 	"centralauth-rename-notinprogress": "$1 için devam eden yeniden adlandırma yok. Zaten bitirmiş olabilirler.",
-	"centralauth-rename-notinstalled": "Renameuser uzantısı kurulu değil.",
 	"centralauth-rename-progress-fieldset": "Yerel hesapların listesi",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ilerlemesi görünümü]])",
 	"centralauth-rename-progress-list-header": "Küresel yeniden adlandırma ilerlemesi devam edenler:",

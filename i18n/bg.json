@@ -298,7 +298,6 @@
 	"centralauth-rename-form-oldname": "Текущо потребителско име",
 	"centralauth-rename-form-reason": "Причина",
 	"centralauth-rename-movelog": "Автоматично преместена страница при преименуването на потребител „[[Special:CentralAuth/$1|$1]]“ като „[[Special:CentralAuth/$2|$2]]“",
-	"centralauth-rename-notinstalled": "Разширението Renameuser не е инсталирано.",
 	"centralauth-rename-progress-fieldset": "Списък на локалните сметки",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|преглед на напредъка]])",
 	"centralauth-rename-progress-logs-fieldset": "Записи в дневника",

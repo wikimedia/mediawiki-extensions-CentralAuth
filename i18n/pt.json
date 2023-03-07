@@ -361,7 +361,6 @@
 	"centralauth-rename-listed-on-denylist": "Este utilizador consta da lista global de recusa de alteração de nome. Para alterar o nome deste utilizador é preciso alterar primeiro a lista de recusas.",
 	"centralauth-rename-movelog": "Página movida automaticamente ao alterar o nome de utilizador \"[[Special:CentralAuth/$1|$1]]\" para \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Não existem pedidos de alteração global do nome de utilizador em progresso para $1. A alteração pode já ter sido concluída.",
-	"centralauth-rename-notinstalled": "A extensão Renameuser não está instalada.",
 	"centralauth-rename-progress-fieldset": "Lista de contas locais",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ver progresso]])",
 	"centralauth-rename-progress-list-header": "Os seguintes processos de alteração global de nome estão em progresso:",

@@ -268,7 +268,6 @@
 	"centralauth-rename-form-oldname": "Enw defnyddiwr cyfredol",
 	"centralauth-rename-form-reason": "Rheswm",
 	"centralauth-rename-form-suppressredirects": "Atal creu Ailgyfeirio",
-	"centralauth-rename-notinstalled": "Nid yw estyniad Renameuser wedi'i osod.",
 	"centralauth-rename-progress-fieldset": "Rhestr o gyfrifon lleol",
 	"centralauth-rename-progress-logs-fieldset": "Cofnodion log",
 	"centralauth-rename-progress-username": "Enw defnyddiwr",

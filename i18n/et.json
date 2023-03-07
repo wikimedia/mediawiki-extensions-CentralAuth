@@ -322,7 +322,6 @@
 	"centralauth-rename-form-suppressredirects": "Varja ümbersuunamiste loomine",
 	"centralauth-rename-movelog": "Teisaldatud automaatselt, kui \"[[Special:CentralAuth/$1|$1]]\" nimetati ümber kasutajaks \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Kasutaja $1 ümbernimetamine pole pooleli. Võimalik, et nimi on juba muudetud.",
-	"centralauth-rename-notinstalled": "Tarkvaralisa Renameuser on paigaldamata.",
 	"centralauth-rename-progress-fieldset": "Kohalike kontode loend",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|vaata edenemist]])",
 	"centralauth-rename-progress-list-header": "Järgmised globaalsed ümbernimetamised on praegu pooleli:",

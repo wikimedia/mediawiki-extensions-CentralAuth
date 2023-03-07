@@ -317,7 +317,6 @@
 	"centralauth-rename-globaleditcount-threshold": "Šis vartotojas turi daugiau nei $1 {{PLURAL:$1|pakeitimą|pakeitimus}}. Prašome patvirtinti, kad esate tikras, kad norite pervadinti šį vartotoją, ir kad sistemos administratorius gali stebėti šį pervadinimą.",
 	"centralauth-rename-movelog": "Automatiškai perkeltas puslapis vartotojo pervadinimo metu iš „[[Special:CentralAuth/$1|$1]]“ į „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-notinprogress": "Nėra vykstančių pervadinimų skirtu $1. Gali būti, kad jie jau baigti.",
-	"centralauth-rename-notinstalled": "Renameuser plėtinys nėra įdiegtas.",
 	"centralauth-rename-progress-fieldset": "Vietinių paskyrų sąrašas",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|žiūrėti pažangą]])",
 	"centralauth-rename-progress-list-header": "Šie visuotiniai pervadinimai vyksta šiuo metu:",

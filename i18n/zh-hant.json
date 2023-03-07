@@ -375,7 +375,6 @@
 	"centralauth-rename-listed-on-denylist": "此使用者被列在全域重新命名拒絕名單中，要重新命名此使用者，必須先變更拒絕名單。",
 	"centralauth-rename-movelog": "當重新命名使用者「[[Special:CentralAuth/$1|$1]]」至「[[Special:CentralAuth/$2|$2]]」時自動移動頁面",
 	"centralauth-rename-notinprogress": "目前 $1 沒有正在重新命名。工作可能已完成。",
-	"centralauth-rename-notinstalled": "未安裝Renameuser擴充功能。",
 	"centralauth-rename-progress-fieldset": "本地帳號清單",
 	"centralauth-rename-progress-item": "$1 → $2（[[Special:GlobalRenameProgress/$2|檢視進度]]）",
 	"centralauth-rename-progress-list-header": "現有以下全域改名：",

@@ -277,7 +277,6 @@
 	"centralauth-rename-form-suppressredirects": "Nevytvárať presmerovanie",
 	"centralauth-rename-movelog": "Automatické presunutie stránky kvôli premenovaniu používateľa „[[Special:CentralAuth/$1|$1]]“ na „[[Special:CentralAuth/$2|$2]]“",
 	"centralauth-rename-notinprogress": "U používateľa $1 neprebieha žiadne premenovanie. Možno už bolo dokončené.",
-	"centralauth-rename-notinstalled": "Nie je nainštalované rozšírenie Renameuser.",
 	"centralauth-rename-progress-fieldset": "Zoznam miestnych účtov",
 	"centralauth-rename-progress-username": "Používateľské meno",
 	"centralauth-rename-queued": "Úlohy pre premenovanie používateľského účtu $1 na $2 boli odoslané na $3.\n\nPriebeh môžete sledovať na [[Special:GlobalRenameProgress/$2]].",

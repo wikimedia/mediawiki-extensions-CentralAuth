@@ -369,7 +369,6 @@
 	"centralauth-rename-listed-on-denylist": "این کاربر در فهرست سراسری رد تغییر نام فهرست شده‌است. برای تغییر نام این کاربر، ابتدا باید فهرست رد درخواست تغییر یابد.",
 	"centralauth-rename-movelog": "صفحه در ضمن تغییر نام کاربر «[[Special:CentralAuth/$1|$1]]» به «[[Special:CentralAuth/$2|$2]]» به طور خودکار منتقل شد",
 	"centralauth-rename-notinprogress": "هیچ پروسه‌ی تغییر نامی برای $1 وجود ندارد. احتمالا تمامی آن‌ها تمام شده‌اند.",
-	"centralauth-rename-notinstalled": "افزونه تغییرنام نصب نشده است.",
 	"centralauth-rename-progress-fieldset": "فهرست حساب‌های محلی",
 	"centralauth-rename-progress-item": "$1 ← $2 ([[Special:GlobalRenameProgress/$2|نمایش پیشرفت]])",
 	"centralauth-rename-progress-list-header": "این تغییر نام‌های سراسری در حال پیشرفت هستند:",

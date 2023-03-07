@@ -349,7 +349,6 @@
 	"centralauth-rename-listed-on-denylist": "המשתמש הזה מופיע ברשימת סירוב שינוי השם הגלובלית. כדי לשנות את שם המשתמש הזה, יש לשנות קודם את רשימת הסירוב.",
 	"centralauth-rename-movelog": "הדף הועבר אוטומטית בעת שינוי שם המשתמש \"[[Special:CentralAuth/$1|$1]]\" אל \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "אין תהליכי שינוי שם נוכחי עבור $1. ייתכן שהם כבר הסתיימו.",
-	"centralauth-rename-notinstalled": "ההרחבה Renameuser אינה מותקנת.",
 	"centralauth-rename-progress-fieldset": "רשימת חשבונות מקומיים",
 	"centralauth-rename-progress-item": "$1 ‏← $2 ([[Special:GlobalRenameProgress/$2|הצגת התקדמות]])",
 	"centralauth-rename-progress-list-header": "שינויי השם הגלובליים מתבצעים עכשיו:",
