@@ -9,7 +9,9 @@
 			"SPQRobin",
 			"Spacebirdy",
 			"Winstonza",
-			"පසිඳු කාවින්ද"
+			"පසිඳු කාවින්ද",
+			"Matma Rex",
+			"Rooiratel"
 		]
 	},
 	"centralauth": "Global Gebruikers Bestuur",
@@ -199,6 +201,7 @@
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Lees meer oor '''versmelte rekeninge''']]…''",
 	"centralauth-readonly": "CentralAuth Databasis gesluit",
 	"centralauth-readonlytext": "Die CentralAuth databasis is tans gesluit vir nuwe artikelwysigings en ​​ander veranderinge, waarskynlik vir roetine databasisonderhoud, waarna dit terug na normaal.",
+	"centralauth-rename-form-newname": "Nuwe gebruikersnaam",
 	"centralauth-rightslog-entry-groupperms": "Verander groepsregte vir $1 van $2 na $3",
 	"centralauth-rightslog-header": "Hierdie log-bedrywighede op die globale groepe: lidmaatskap en regte veranderinge",
 	"centralauth-rightslog-name": "Logboek van globale regte",

@@ -368,7 +368,7 @@
 	"globalrenamequeue-request-unknown-title": "Захтев није пронађен",
 	"globalrenamequeue-view-approved": "одобрено",
 	"globalrenamequeue-view-rejected": "одбијено",
-	"globalrenamerequest": "Захтев за преименовање глобалног корисничког налога",
+	"globalrenamerequest": "Захтев за преименовање корисничког налога",
 	"globalrenamerequest-desc": "Захтева преименовање глобалног налога",
 	"globalrenamerequest-email-invalid": "Неисправна адреса е-поште.",
 	"globalrenamerequest-email-label": "Имејл адреса:",

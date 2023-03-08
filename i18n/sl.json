@@ -207,7 +207,7 @@
 	"centralauth-error-badtoken": "Predloženi avtentikacijski žeton je pretekel ali je neveljaven.",
 	"centralauth-error-locked": "Ne morete urejati, ker je vaš račun zaklenjen.",
 	"centralauth-error-nologinattempt": "Za vašo sejo ne poteka noben aktiven poskus prijave.",
-	"centralauth-error-token-wrongattempt": "Avtentikacijski žeton ne pripada vašemu trenutnemu poskusu prijave. Morda vas poskuša prijaviti nekdo drug iz zlonamernega računa.",
+	"centralauth-error-token-wrongattempt": "Avtentikacijski žeton ne pripada vašemu trenutnemu poskusu prijave. Mogoče vas poskuša prijaviti nekdo drug iz zlonamernega računa.",
 	"centralauth-error-token-wronguser": "Žeton se ne ujema z uporabniškim imenom vaše seje. Morda vas poskuša nekdo drug prijaviti iz zlonamernega računa. Če se poskušate prijaviti kot drug uporabnik, se najprej odjavite.",
 	"centralauth-error-unmerged": "Ne morete urejati, ker vaš račun ni poenoten.",
 	"centralauth-error-wrongprovider": "Ta posebna stran je nedosegljiva tekom uporabe $1.",
