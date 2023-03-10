@@ -579,7 +579,8 @@
 		"specialcontributions": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialContributionsHookHandler",
 			"services": [
-				"NamespaceInfo"
+				"NamespaceInfo",
+				"UserFactory"
 			]
 		},
 		"specialpageinit": {
@@ -646,6 +647,7 @@
 		"SecurePoll_GetUserParams": "securepoll",
 		"SessionCheckInfo": "default",
 		"SpecialContributionsBeforeMainOutput": "specialcontributions",
+		"ContributionsToolLinks": "specialcontributions",
 		"SpecialLogAddLogSearchRelations": "log",
 		"SpecialPage_initList": "specialpageinit",
 		"SpecialPasswordResetOnSubmit": "default",

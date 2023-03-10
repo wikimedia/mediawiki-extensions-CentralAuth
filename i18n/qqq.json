@@ -183,6 +183,7 @@
 	"centralauth-complete": "Title of special page \"MergeAccount\" when a user account is unified.",
 	"centralauth-complete-text": "{{doc-important|Please leave <code><nowiki>{{int:Centralauth-groupname}}</nowiki></code> exactly as it is.}}\nStatus message after successful unification of a user account.\n\nRefers to {{msg-mw|Centralauth-groupname}}.",
 	"centralauth-completelogin-back": "Used as action link text.",
+	"centralauth-contribs-link": "Used as [[Special:Contributions]] link text.",
 	"centralauth-contribs-locked": "This is displayed on [[Special:Contributions]] for locked accounts when we cannot display the log entry. Parameters:\n* $1 - the username",
 	"centralauth-contribs-locked-log": "This is displayed on [[Special:Contributions]] for locked accounts. Parameters:\n* $1 - the username\nSee also:\n{{msg-mw|Sp-contributions-blocked-notice}}",
 	"centralauth-createlocal-already-exists": "Error message on [[Special:CreateLocalAccount]]",

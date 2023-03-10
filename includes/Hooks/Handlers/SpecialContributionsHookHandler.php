@@ -23,22 +23,55 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use Html;
 use LogEventsList;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
+use MediaWiki\Title\Title;
+use MediaWiki\User\UserFactory;
 use NamespaceInfo;
 use SpecialPage;
 use User;
 
 class SpecialContributionsHookHandler implements
+	ContributionsToolLinksHook,
 	SpecialContributionsBeforeMainOutputHook
 {
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 
+	/** @var UserFactory */
+	private UserFactory $userFactory;
+
 	/**
 	 * @param NamespaceInfo $namespaceInfo
+	 * @param UserFactory $userFactory
 	 */
-	public function __construct( NamespaceInfo $namespaceInfo ) {
+	public function __construct( NamespaceInfo $namespaceInfo, UserFactory $userFactory ) {
 		$this->namespaceInfo = $namespaceInfo;
+		$this->userFactory = $userFactory;
+	}
+
+	/**
+	 * @param int $id User ID
+	 * @param Title $title User page title
+	 * @param array &$tools Array of tool links
+	 * @param SpecialPage $sp for context
+	 * @return bool|void
+	 */
+	public function onContributionsToolLinks( $id, Title $title, array &$tools, SpecialPage $sp ) {
+		$user = $this->userFactory->newFromId( $id );
+		if ( !$user->isRegistered() ) {
+			return true;
+		}
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
+			return true;
+		}
+		$linkRenderer = $sp->getLinkRenderer();
+		$tools['centralauth'] = $linkRenderer->makeKnownLink(
+			SpecialPage::getTitleFor( 'CentralAuth', $title->getText() ),
+			$sp->msg( 'centralauth-contribs-link' )->text(),
+			[ 'class' => 'mw-contributions-link-centralauth' ]
+		);
 	}
 
 	/**
