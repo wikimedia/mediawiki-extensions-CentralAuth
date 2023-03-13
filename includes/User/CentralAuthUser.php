@@ -26,7 +26,6 @@ use CentralAuthSpoofUser;
 use DeferredUpdates;
 use Exception;
 use FormattedRCFeed;
-use Hooks;
 use IContextSource;
 use IDBAccessObject;
 use ManualLogEntry;
@@ -3217,7 +3216,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $reason
 	 * @param array $params
 	 * @param bool $suppressLog
-	 * @param bool $markAsBot
+	 * @param bool $markAsBot If true, log entry is marked as made by a bot. If false, default
+	 * behavior is observed.
 	 */
 	public function logAction(
 		$action,
@@ -3237,29 +3237,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$entry->setPerformer( $user );
 		$entry->setComment( $reason );
 		$entry->setParameters( $params );
-		$logid = $entry->insert();
-		if ( $suppressLog ) {
-			return;
+		if ( $markAsBot ) {
+			// NOTE: This is intentionally called conditionally, to respect default behavior when
+			// $markAsBot is set to false.
+			$entry->setForceBotFlag( $markAsBot );
 		}
-		// Dirty hack: We need to do "Mark entries on Recent changes as bot
-		// entries" if requested, but RecentChange::newLogEntry doesn't allow
-		// setting the bot flag directly and global state is problematic
-		// because the recent change entry is inserted in a deferred callback.
-		// And there is no hook that would allow us intercept the recent change
-		// before it is inserted to the database.
-		// The code below is a simplified copy of ManualLogEntry::publish.
-		DeferredUpdates::addCallableUpdate(
-			static function () use ( $markAsBot, $logid, $entry ) {
-				Hooks::runner()->onManualLogEntryBeforePublish( $entry );
-				$rc = $entry->getRecentChange( $logid );
-				if ( $markAsBot ) {
-					$rc->mAttribs['rc_bot'] = 1;
-				}
-				$rc->save( $rc::SEND_FEED );
-			},
-			DeferredUpdates::POSTSEND,
-			wfGetDB( DB_PRIMARY )
-		);
+		$logid = $entry->insert();
+		$entry->publish( $logid );
 	}
 
 	/**
