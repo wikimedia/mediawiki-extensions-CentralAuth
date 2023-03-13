@@ -6,6 +6,16 @@
 			"Lanciné.kounfantoh.fofana"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-groups": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ ߦߋ߫ ߞߙߎ߫ ߖߊ߯ߓߡߊ ߡߍ߲ ߘߐ߫",
+	"action-centralauth-lock": "ߖߊ߬ߕߋ߬ߘߊ߫ ߖߊ߯ߓߡߊ ߟߎ߫ ߛߐ߰ ߥߟߊ߫ ߞߵߊ߬ߟߎ߫ ߛߐ߰ߣߍ߲ ߓߐ߫",
+	"action-centralauth-merge": "ߊ߬ߟߎ߬ ߟߊ߫ ߖߊ߬ߕߋ߬ߘߊ ߟߎ߫ ߞߍ߫ ߢߐ߲߮ ߞߊ߲߬",
+	"action-centralauth-rename": "ߖߊ߬ߕߋ߬ߘߊ߫ ߖߊ߯ߓߡߊ ߟߎ߫ ߕߐ߯ߟߊ߫",
+	"action-centralauth-unmerge": "ߖߊ߬ߕߋ߬ߘߊ߫ ߖߊ߯ߓߡߊ ߟߎ߫ ߝߘߊ߫ ߢߐ߲߯ ߠߊ߫",
+	"action-globalgroupmembership": "ߞߙߎ߫ ߖߊ߯ߓߡߊ ߛߌ߲߬ߝߏ߲߬ߦߊ ߡߊߦߟߍ߬ߡߊ߲߫",
+	"action-globalgrouppermissions": "ߞߙߎ߫ ߖߊ߯ߓߡߊ ߟߎ߫ ߘߐߛߌ߰",
+	"centralauth": "ߞߙߎ߫ ߖߊ߯ߓߡߊ ߘߐߛߌ߰ߟߊ߲",
+	"centralauth-abortlogin-renamed": "ߌ ߟߊ߫ ߖߊ߬ߕߋ߬ߘߊ ߓߘߊ߫ ߡߊߦߟߍ߬ߡߊ߲߫ ߞߵߊ߬ ߞߍ߫ «\"$1\"» ߘߌ߫. ߟߊ߬ߓߊ߰ߙߊ߬ߟߌ߫ ߕߐ߮ ߏ߬ ߟߊߓߊ߯ߙߊ߫ ߡߎ߬ߕߎ߲߫ ߛߊ߫.",
+	"centralauth-account-exists": "ߖߊ߬ߕߋ߬ߘߊ ߕߍߣߊ߬ ߛߐ߲߬ ߠߊ߫ ߛߌ߲ߘߌ߫ ߟߊ߫: ߟߊ߬ߓߊ߰ߙߊ߬ߟߌ߫ ߕߐ߮ ߓߘߊ߫ ߓߊ߲߫ ߕߊ߬ ߟߊ߫ ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ ߘߏ߫ ߓߟߏ߫ ߥߞߌ߫ ߜߘߍ߫ ߞߊ߲߬.",
 	"centralauth-admin-blocklog": "ߜߊ߲߬ߞߎ߲߬ߠߌ߲ ߓߊ߬ߟߊ߲߬",
 	"centralauth-admin-lookup-ro": "ߟߊ߬ߓߊ߰ߙߊ߬ߟߊ ߞߎ߲߬ߠߊ߬ߝߏߣߌ߲ ߦߋ߫",
 	"centralauth-admin-lookup-rw": "ߖߊ߬ߕߋ߬ߘߊ߫ ߟߊߓߊ߯ߙߕߊ ߡߊߡߙߊ߬",
