@@ -62,7 +62,7 @@ class GlobalRenameUser {
 	private $logger;
 
 	/**
-	 * @var array
+	 * @var array|null
 	 */
 	private $session;
 
@@ -76,7 +76,7 @@ class GlobalRenameUser {
 	 * @param JobQueueGroupFactory $jobQueueGroupFactory
 	 * @param GlobalRenameUserDatabaseUpdates $databaseUpdates
 	 * @param GlobalRenameUserLogger $logger
-	 * @param array $session output of RequestContext::exportSession()
+	 * @param array|null $session output of RequestContext::exportSession()
 	 */
 	public function __construct(
 		UserIdentity $performingUser,
@@ -88,7 +88,7 @@ class GlobalRenameUser {
 		JobQueueGroupFactory $jobQueueGroupFactory,
 		GlobalRenameUserDatabaseUpdates $databaseUpdates,
 		GlobalRenameUserLogger $logger,
-		array $session
+		?array $session
 	) {
 		$this->performingUser = $performingUser;
 		$this->oldUser = $oldUser;
@@ -110,6 +110,10 @@ class GlobalRenameUser {
 	 * @return Status
 	 */
 	public function rename( array $options ) {
+		if ( $this->oldUser->getName() === $this->newUser->getName() ) {
+			return Status::newFatal( 'centralauth-rename-same-name' );
+		}
+
 		static $keepDetails = [ 'attachedMethod' => true, 'attachedTimestamp' => true ];
 
 		$wikisAttached = array_map(
@@ -220,9 +224,11 @@ class GlobalRenameUser {
 			'suppressredirects' => $options['suppressredirects'],
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
-			'session' => $this->session,
 			'force' => isset( $options['force'] ) && $options['force'],
 		];
+		if ( $this->session !== null ) {
+			$params['session'] = $this->session;
+		}
 
 		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
 		return new LocalRenameUserJob( $title, $params );

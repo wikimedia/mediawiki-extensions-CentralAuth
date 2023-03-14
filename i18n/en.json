@@ -373,6 +373,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Log entries",
 	"centralauth-rename-progress-username": "Username",
 	"centralauth-rename-queued": "Jobs to rename $1 to $2 have been queued.\n\nView the progress at [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "The user already has the requested username.",
 	"centralauth-rename-table-domain": "Local wiki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Done",

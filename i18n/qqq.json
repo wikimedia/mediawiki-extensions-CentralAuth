@@ -398,6 +398,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Text on fieldset around log entries",
 	"centralauth-rename-progress-username": "{{identical|Username}}\nLabel for username form field on Special:RenameProgress",
 	"centralauth-rename-queued": "Message shown after the rename has started. $1 is the user's old name, $2 is the user's new name.",
+	"centralauth-rename-same-name": "Message shown if a rename is requested and the old username is the same as the requested new username.",
 	"centralauth-rename-table-domain": "{{Identical|Local wiki}}\nTable column header for domain name of wiki",
 	"centralauth-rename-table-status": "{{Identical|Status}}\nTable column header for status of rename",
 	"centralauth-rename-table-status-done": "{{Identical|Done}}\nStatus displayed if the job has completed successfully",
