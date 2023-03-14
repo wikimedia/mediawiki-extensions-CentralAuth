@@ -1050,11 +1050,29 @@ class SpecialCentralAuth extends SpecialPage {
 			$title->getPrefixedText(),
 			'',
 			[ 'showIfEmpty' => true ] );
+
 		if ( $numRows ) {
 			$this->getOutput()->addHTML( Xml::fieldset(
 				$this->msg( 'centralauth-admin-logsnippet' )->text(),
 				$text
 			) );
+
+			return;
+		}
+
+		if ( $this->mGlobalUser->isLocked() ) {
+			$logOtherWikiMsg = $this
+				->msg( 'centralauth-admin-log-otherwiki' )
+				->params( $this->mGlobalUser->getName() );
+
+			if ( !$logOtherWikiMsg->isDisabled() ) {
+				$this->getOutput()->addHTML(
+					Html::warningBox(
+						$logOtherWikiMsg->parse(),
+						'centralauth-admin-log-otherwiki'
+					)
+				);
+			}
 		}
 	}
 

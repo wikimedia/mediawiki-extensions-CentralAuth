@@ -114,6 +114,7 @@
 	"centralauth-admin-list-localwiki": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.\n{{Identical|Local wiki}}",
 	"centralauth-admin-list-method": "Column header on list of local accounts on [{{canonicalurl:m:Special:CentralAuth|target=Siebrand}} Global user manager] special page.",
 	"centralauth-admin-logsnippet": "Used as fieldset label in [[Special:CentralAuth]].",
+	"centralauth-admin-log-otherwiki": "{{notranslate}} Used on [[Special:CentralAuth]] when an account is locked but there are no log entries present for it, so wiki farms with a central management wiki can customize it to point to that central wiki.\n\nParameters:\n* $1 - the name of the user",
 	"centralauth-admin-lookup-ro": "Submit button on [[m:Special:CentralAuth|Global User Manager]] special page.\n*{{msg-mw|Centralauth-admin-lookup-rw}}\n*{{msg-mw|Centralauth-admin-lookup-ro}}",
 	"centralauth-admin-lookup-rw": "Submit button on [[m:Special:CentralAuth|Global User Manager]] special page.\n*{{msg-mw|Centralauth-admin-lookup-rw}}\n*{{msg-mw|Centralauth-admin-lookup-ro}}",
 	"centralauth-admin-manage": "Heading of dialog box on [[m:Special:CentralAuth|Global User Manager]] special page where the single selected global account can be controlled.\n*{{msg-mw|Centralauth-admin-manage}}\n*{{msg-mw|Centralauth-admin-view}}",
