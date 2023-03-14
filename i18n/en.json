@@ -89,6 +89,7 @@
 	"centralauth-admin-list-localwiki": "Local wiki",
 	"centralauth-admin-list-method": "Method",
 	"centralauth-admin-logsnippet": "Previous global account changes",
+	"centralauth-admin-log-otherwiki": "-",
 	"centralauth-admin-lookup-ro": "View user information",
 	"centralauth-admin-lookup-rw": "Manage user account",
 	"centralauth-admin-manage": "Manage account data",
