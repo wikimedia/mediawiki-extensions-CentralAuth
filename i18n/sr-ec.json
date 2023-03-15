@@ -313,6 +313,7 @@
 	"centralauth-rename-progress-list-header": "Следећа глобална преименовања су у току:",
 	"centralauth-rename-progress-logs-fieldset": "Ставке у дневницима",
 	"centralauth-rename-progress-username": "Корисничко име",
+	"centralauth-rename-same-name": "Корисник већ има тражено корисничко име.",
 	"centralauth-rename-table-domain": "Локални вики",
 	"centralauth-rename-table-status": "Статус",
 	"centralauth-rename-table-status-done": "Урађено",

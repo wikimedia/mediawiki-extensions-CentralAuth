@@ -363,6 +363,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Logbucheinträge",
 	"centralauth-rename-progress-username": "Benutzername",
 	"centralauth-rename-queued": "Aufträge zur Umbenennung von „$1“ in „$2“ wurden der Warteschlange hinzugefügt.\n\nDu kannst den Fortschritt unter [[Special:GlobalRenameProgress/$2]] ansehen.",
+	"centralauth-rename-same-name": "Der Benutzer hat bereits den angeforderten Benutzernamen.",
 	"centralauth-rename-table-domain": "Lokales Wiki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Fertig",
