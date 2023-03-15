@@ -44,8 +44,8 @@ class MigratePass0 extends Maintenance {
 		// on the central authentication server.
 
 		$lastUser = $dbr->newSelectQueryBuilder()
-			->select( 'MAX(gu_id)' )
-			->from( 'globaluser' )
+			->select( 'MAX(user_id)' )
+			->from( 'user' )
 			->caller( __METHOD__ )
 			->fetchField();
 
