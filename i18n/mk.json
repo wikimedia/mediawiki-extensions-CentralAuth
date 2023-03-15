@@ -349,6 +349,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Дневнички записи",
 	"centralauth-rename-progress-username": "Корисничко име",
 	"centralauth-rename-queued": "Задачите за преименување на $1 во $2 чекаат во редица.\n\nНапредокот можете да го погледате на [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "Корисникот веќе го има бараното корисничко име.",
 	"centralauth-rename-table-domain": "Месно вики",
 	"centralauth-rename-table-status": "Статус",
 	"centralauth-rename-table-status-done": "Готово",
