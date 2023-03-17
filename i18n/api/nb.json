@@ -28,7 +28,7 @@
 	"apihelp-globaluserrights-example-1": "Legg til brukeren FooBot i den globale gruppa «bot», og fjern fra de globale gruppene «sysop» og «bureaucrat»",
 	"apihelp-globaluserrights-example-2": "Legg til den globale brukeren med ID 123 til den globale gruppa «bot», og fjern fra de globale gruppene «sysop» og «bureaucrat»",
 	"apihelp-globaluserrights-param-add": "Legg til brukeren i disse globale gruppene.",
-	"apihelp-globaluserrights-param-expiry": "Denne parameteren er for tiden ubrukt.",
+	"apihelp-globaluserrights-param-expiry": "Utløpstidsstempler. Kan være relativt (f.eks. <kbd>5 months</kbd> eller <kbd>2 weeks</kbd>) eller absolutt (f.eks. <kbd>2014-09-18T12:34:56Z</kbd>). Hvis bare ett tidsstempel er satt vil det brukes for alle grupper som er med i parameteren <var>$1add</var>. Bruk <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> eller <kbd>never</kbd> for en brukergruppe som ikke skal ha utløpsdato.",
 	"apihelp-globaluserrights-param-reason": "Årsak for endringen.",
 	"apihelp-globaluserrights-param-remove": "Fjern brukeren fra disse globale gruppene.",
 	"apihelp-globaluserrights-param-tags": "Denne parameteren er for tiden ubrukt.",
