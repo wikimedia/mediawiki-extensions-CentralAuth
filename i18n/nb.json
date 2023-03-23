@@ -453,7 +453,7 @@
 	"globalrenamerequest-save-error": "Kunne ikke lagre forespørselen. Prøv igjen.",
 	"globalrenamerequest-self-error": "Du kan ikke godkjenne denneforespørselen siden det ikke er tillatt å endre navn på sin egen konto.",
 	"globalrenamerequest-self-warning": "Du kan bare avvise denne forespørselen, siden det ikke er tillatt å endre navn på sin egen konto.",
-	"globalrenamerequest-status-text": "Forespørselen din om å endre brukernavn pågår og venter på godkjenning av de som har muligheten til å utføre denne handlingen. Du vil få et varsel på epost når forespørselen blir bearbeidet.\n\n;Nåværende brukernavn:\n:$1\n;Ønsket brukernavn:\n:$2",
+	"globalrenamerequest-status-text": "Forespørselen din om å endre brukernavn pågår og venter på godkjenning av de som har muligheten til å utføre denne handlingen. Du vil få et varsel på e-post når forespørselen blir bearbeidet.\n\n;Nåværende brukernavn:\n:$1\n;Ønsket brukernavn:\n:$2",
 	"globalrenamerequest-status-title": "Forespørselen om navneendring venter på godkjenning",
 	"globalrenamerequest-submit-text": "Be om navneendring",
 	"globalrenamerequest-username-label": "Nåværende brukernavn:",
