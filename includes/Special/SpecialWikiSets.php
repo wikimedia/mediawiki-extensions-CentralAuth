@@ -234,7 +234,7 @@ class SpecialWikiSets extends SpecialPage {
 			$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
 			$form['centralauth-editset-restwikis'] = Xml::textarea( 'wpRestWikis',
 				implode( "\n", $restWikis ), 40, 5, [ 'readonly' => true ] );
-			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason );
+			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason ?? '' );
 
 			// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
