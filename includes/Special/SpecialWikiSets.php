@@ -169,7 +169,7 @@ class SpecialWikiSets extends SpecialPage {
 		sort( $wikis );
 		$wikis = implode( "\n", $wikis );
 
-		$url = SpecialPage::getTitleFor( 'WikiSets', (string)( $set->getId() ?? 0 ) )
+		$url = SpecialPage::getTitleFor( 'WikiSets', (string)( $set ? $set->getId() : 0 ) )
 			->getLocalUrl();
 
 		if ( $this->mCanEdit ) {
