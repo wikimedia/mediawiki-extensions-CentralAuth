@@ -102,6 +102,7 @@
 	"centralauth-complete": "Spajanje suradničkih računa izvršeno!",
 	"centralauth-complete-text": "Sad se možete prijaviti na bilo koji projekt {{MediaWiki:Centralauth-groupname|gen}} bez otvaranja novog računa.",
 	"centralauth-completelogin-back": "Vrati se na prethodnu stranicu.",
+	"centralauth-contribs-link": "globalni računi",
 	"centralauth-contribs-locked": "Ovaj je suradnički račun globalno zaključan.\nPogledajte više informacija [[Special:CentralAuth/$1|o globalnom računu]].",
 	"centralauth-contribs-locked-log": "Ovaj je suradnički račun globalno zaključan.\nNiže je navedena evidencija zaključavanja:",
 	"centralauth-createlocal-already-exists": "Već postoji lokalni račun za navedeni globalni račun.",

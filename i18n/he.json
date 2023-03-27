@@ -144,6 +144,7 @@
 	"centralauth-complete": "איחוד נתוני הכניסה הושלם!",
 	"centralauth-complete-text": "כעת באפשרותך להיכנס לכל אתר ויקי של {{int:Centralauth-groupname}} מבלי ליצור חשבון חדש.",
 	"centralauth-completelogin-back": "חזרה לדף הקודם.",
+	"centralauth-contribs-link": "חשבון גלובלי",
 	"centralauth-contribs-locked": "החשבון הזה נעול גלובלית.\nר' [[Special:CentralAuth/$1|פרטים על החשבון הגלובלי]] למידע נוסף.",
 	"centralauth-contribs-locked-log": "החשבון הזה נעול גלובלית.\nהרשומה האחרונה ביומן הנעילות ניתנת להלן לעיון:",
 	"centralauth-createlocal-already-exists": "כבר יש חשבון עבור החשבון הגלובלי שצוין.",
