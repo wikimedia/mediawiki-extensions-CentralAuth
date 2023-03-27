@@ -30,7 +30,8 @@
 			"Ajeje Brazorf",
 			"McDutchie",
 			"Matma Rex",
-			"Pierpao"
+			"Pierpao",
+			"Superpes15"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
@@ -153,8 +154,8 @@
 	"centralauth-complete": "Il processo di unificazione delle utenze è stato completato.",
 	"centralauth-complete-text": "È ora possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuove utenze.",
 	"centralauth-completelogin-back": "Torna alla pagina precedente.",
-	"centralauth-contribs-locked": "Questo utente è bloccato globalmente.\nVedi i [[Special:CentralAuth/$1|dettagli dell'utenza globale]] per ulteriori informazioni.",
-	"centralauth-contribs-locked-log": "Questo utente è bloccato globalmente.\nL'ultimo elemento del registro dei blocchi è riportato di seguito per informazione:",
+	"centralauth-contribs-locked": "L'accesso di questo utente è impedito globalmente.\nVedi i [[Special:CentralAuth/$1|dettagli dell'utenza globale]] per ulteriori informazioni.",
+	"centralauth-contribs-locked-log": "L'accesso di questo utente è impedito globalmente.\nL'ultimo elemento del registro è riportato di seguito per informazione:",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|giorno|giorni}} fa",
 	"centralauth-delete-empty-account": "Utenza vuota",
 	"centralauth-desc": "[[Special:MergeAccount|Unifica le tue utenze]] sui siti gestiti da {{int:Centralauth-groupname}}",
@@ -268,7 +269,7 @@
 	"centralauth-log-header": "Questo registro contiene le operazioni sulle utenze globali: cancellazioni, blocchi e sblocchi.",
 	"centralauth-log-name": "Utenze globali",
 	"centralauth-log-status-hidden": "nascosto",
-	"centralauth-log-status-locked": "bloccato",
+	"centralauth-log-status-locked": "accesso impedito",
 	"centralauth-log-status-none": "(nessuno)",
 	"centralauth-log-status-oversighted": "soppresso",
 	"centralauth-login-error-locked": "Non {{GENDER:$1|puoi}} accedere perché la {{GENDER:$1|tua}} utenza è bloccata globalmente.",
@@ -500,7 +501,7 @@
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|ha rinominato}} globalmente $4 in $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|ha rinominato}} globalmente $4 in $5",
 	"mergeaccount": "Processo di unificazione delle utenze - status",
-	"multilock": "Blocca più utenze globali",
+	"multilock": "Impedisci accesso a più utenze globali",
 	"right-centralauth-lock": "Blocca o sblocca utenze globali",
 	"right-centralauth-merge": "Unifica le proprie utenze",
 	"right-centralauth-oversight": "Elimina o nasconde l'utenza globale",
