@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use AutoLoader;
 use CentralAuthSessionProvider;
 use ContentSecurityPolicy;
 use ExtensionRegistry;
@@ -133,21 +134,23 @@ class CentralAuthHooks implements
 	 * feature flags.
 	 */
 	public static function onRunExtensionFunctions() {
-		global $wgAutoloadClasses, $wgHooks;
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		$caBase = __DIR__ . '/..';
 
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'AntiSpoof' ) ) {
-			$wgAutoloadClasses['CentralAuthSpoofUser'] =
-				"$caBase/AntiSpoof/CentralAuthSpoofUser.php";
-			$wgAutoloadClasses['CentralAuthAntiSpoofHooks'] =
-				"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php";
+			AutoLoader::registerClasses( [
+				'CentralAuthSpoofUser' =>
+					"$caBase/AntiSpoof/CentralAuthSpoofUser.php",
+				'CentralAuthAntiSpoofHooks' =>
+					"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php",
+			] );
 
-			$wgHooks['LocalUserCreated'][] =
-				'CentralAuthAntiSpoofHooks::asLocalUserCreated';
-			$wgHooks['RenameUserComplete'][] =
-				'CentralAuthAntiSpoofHooks::asAddRenameUserHook';
+			$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
+			$hookContainer->register( 'LocalUserCreated',
+				'CentralAuthAntiSpoofHooks::asLocalUserCreated' );
+			$hookContainer->register( 'RenameUserComplete',
+				'CentralAuthAntiSpoofHooks::asAddRenameUserHook' );
 		}
 
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
