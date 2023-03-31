@@ -168,6 +168,7 @@
 	"centralauth-complete": "アカウントの統一が完了しました!",
 	"centralauth-complete-text": "{{int:Centralauth-groupname}}のすべてのウィキサイトに、新しいアカウントを作成することなくログインできるようになりました。",
 	"centralauth-completelogin-back": "前のページに戻る。",
+	"centralauth-contribs-link": "統一ログイン情報",
 	"centralauth-contribs-locked": "このアカウントはグローバルロックされています。\n詳細は[[Special:CentralAuth/$1|グローバルアカウント情報]]を参照してください。",
 	"centralauth-contribs-locked-log": "このアカウントはグローバルロックされています。\n参考のために最新のロック記録を以下に示します:",
 	"centralauth-createlocal-already-exists": "指定されたグローバルアカウントに関連付けられたローカルアカウントは既に作成されています。",
