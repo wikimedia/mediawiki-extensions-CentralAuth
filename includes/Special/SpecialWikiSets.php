@@ -154,7 +154,7 @@ class SpecialWikiSets extends SpecialPage {
 	private function buildSetView(
 		?WikiSet $set, $error = false, $name = null, $type = null, $wikis = null, $reason = null
 	) {
-		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editset-subtitle' )->parse() );
+		$this->getOutput()->addBacklinkSubtitle( SpecialPage::getTitleFor( 'WikiSets' ) );
 
 		if ( !$name ) {
 			$name = $set ? $set->getName() : '';
@@ -330,7 +330,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $subpage
 	 */
 	private function buildDeleteView( $subpage ) {
-		$this->getOutput()->setSubtitle( $this->msg( 'centralauth-editset-subtitle' )->parse() );
+		$this->getOutput()->addBacklinkSubtitle( SpecialPage::getTitleFor( 'WikiSets' ) );
 
 		$set = WikiSet::newFromID( $subpage );
 		if ( !$set ) {
