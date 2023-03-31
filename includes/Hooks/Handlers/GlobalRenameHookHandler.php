@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use CentralAuthSpoofUser;
 use ErrorPageError;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\RenameUser\Hook\RenameUserCompleteHook;
@@ -78,7 +79,8 @@ class GlobalRenameHookHandler implements
 	}
 
 	/**
-	 * When renaming an account, ensure that the presence records are updated.
+	 * When renaming an account, update presence records and AntiSpoof system.
+	 *
 	 * @param int $uid
 	 * @param string $old
 	 * @param string $new
@@ -94,5 +96,9 @@ class GlobalRenameHookHandler implements
 			$oldCentral->removeLocalName( WikiMap::getCurrentWikiId() );
 			$newCentral->addLocalName( WikiMap::getCurrentWikiId() );
 		}
+
+		// Remove the old entry and add the new
+		$spoof = new CentralAuthSpoofUser( $new );
+		$spoof->update( $old );
 	}
 }

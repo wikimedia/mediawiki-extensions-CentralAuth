@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use CentralAuthSpoofUser;
 use MediaWiki\Auth\Hook\LocalUserCreatedHook;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
@@ -49,8 +50,8 @@ class UserCreationHookHandler implements
 	}
 
 	/**
-	 * Make sure migration information in localuser table is populated
-	 * on local account creation
+	 * Populate localuser table and update AntiSpoof system
+	 *
 	 * @param User $user
 	 * @param bool $autocreated
 	 * @return void
@@ -74,5 +75,9 @@ class UserCreationHookHandler implements
 		}
 
 		$centralUser->addLocalName( WikiMap::getCurrentWikiId() );
+
+		// Record the username's thing-bob after a user account is created
+		$spoof = new CentralAuthSpoofUser( $user->getName() );
+		$spoof->record();
 	}
 }

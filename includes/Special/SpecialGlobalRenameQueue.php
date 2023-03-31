@@ -520,27 +520,24 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		$htmlForm->addHeaderHtml( $infoMsg->parseAsBlock() );
 
-		if ( class_exists( CentralAuthSpoofUser::class ) ) {
-			$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
-			$conflicts = $this->uiService->processAntiSpoofConflicts(
-				$this->getContext(),
-				$req->getName(),
-				$spoofUser->getConflicts()
+		// Handle AntiSpoof integration
+		$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
+		$conflicts = $this->uiService->processAntiSpoofConflicts(
+			$this->getContext(),
+			$req->getName(),
+			$spoofUser->getConflicts()
+		);
+		$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $req->getNewName() );
+		if ( $renamedUser !== null ) {
+			$conflicts[] = $renamedUser;
+		}
+		if ( $conflicts ) {
+			$htmlForm->addHeaderHtml(
+				$this->msg(
+					'globalrenamequeue-request-antispoof-conflicts',
+					$this->getLanguage()->commaList( $conflicts )
+				)->numParams( count( $conflicts ) )->parseAsBlock()
 			);
-
-			$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $req->getNewName() );
-			if ( $renamedUser !== null ) {
-				$conflicts[] = $renamedUser;
-			}
-
-			if ( $conflicts ) {
-				$htmlForm->addHeaderHtml(
-					$this->msg(
-						'globalrenamequeue-request-antispoof-conflicts',
-						$this->getLanguage()->commaList( $conflicts )
-					)->numParams( count( $conflicts ) )->parseAsBlock()
-				);
-			}
 		}
 
 		// Show a message if the new username matches the title blacklist.

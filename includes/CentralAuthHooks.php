@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use AutoLoader;
 use CentralAuthSessionProvider;
 use ExtensionRegistry;
 use Html;
@@ -137,21 +136,6 @@ class CentralAuthHooks implements
 		global $wgSpecialPages, $wgResourceModules;
 		global $wgCentralAuthEnableGlobalRenameRequest;
 		$caBase = __DIR__ . '/..';
-
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'AntiSpoof' ) ) {
-			AutoLoader::registerClasses( [
-				'CentralAuthSpoofUser' =>
-					"$caBase/AntiSpoof/CentralAuthSpoofUser.php",
-				'CentralAuthAntiSpoofHooks' =>
-					"$caBase/AntiSpoof/CentralAuthAntiSpoofHooks.php",
-			] );
-
-			$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
-			$hookContainer->register( 'LocalUserCreated',
-				'CentralAuthAntiSpoofHooks::asLocalUserCreated' );
-			$hookContainer->register( 'RenameUserComplete',
-				'CentralAuthAntiSpoofHooks::asAddRenameUserHook' );
-		}
 
 		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
 			$wgSpecialPages['GlobalRenameRequest'] = [
