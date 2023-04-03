@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
+			"Dee",
 			"Guycn2",
 			"Inkbug",
 			"Matma Rex",
@@ -368,7 +369,7 @@
 	"centralauth-rename-viewprogress": "הצגת ההתקדמות",
 	"centralauth-renameuser-global-inprogress": "כבר [[Special:GlobalRenameProgress/$1|התחיל תהליך]] שינוי שם גלובלי עבור $1.",
 	"centralauth-renameuser-merged": "המשתמש $1 הועבר למערכת הכניסה המאוחדת.\nשינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הגלובלי.",
-	"centralauth-renameuser-reserved": "שם המתשמש $2 שמור לחשבון גלובלי.",
+	"centralauth-renameuser-reserved": "שם המשתמש $2 שמור לחשבון גלובלי.",
 	"centralauth-rightslog-entry-groupperms": "שינה את הרשאות הקבוצה $1 מ־$2 ל־$3",
 	"centralauth-rightslog-header": "היומן הזה כולל פעולות על קבוצות גלובליות, כולל חברות בקבוצות ושינויי הרשאות",
 	"centralauth-rightslog-name": "יומן הרשאות גלובליות",
