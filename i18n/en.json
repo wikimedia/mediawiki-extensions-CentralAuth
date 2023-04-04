@@ -223,7 +223,6 @@
 	"centralauth-editset-setexists": "Set with that name already exists.",
 	"centralauth-editset-submit": "Submit",
 	"centralauth-editset-submit-delete": "Delete",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|List of sets]]",
 	"centralauth-editset-success": "The wiki set was updated.",
 	"centralauth-editset-success-delete": "The wiki set was deleted.",
 	"centralauth-editset-type": "Type:",

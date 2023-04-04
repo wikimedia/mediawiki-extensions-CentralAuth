@@ -248,7 +248,6 @@
 	"centralauth-editset-setexists": "Used as error message.",
 	"centralauth-editset-submit": "{{Identical|Submit}}",
 	"centralauth-editset-submit-delete": "{{Identical|Delete}}",
-	"centralauth-editset-subtitle": "{{doc-important|Do not translate the <code>Special:WikiSets</code> part.}}",
 	"centralauth-editset-success": "Used as success message.\n\nFollowed by the link text {{msg-mw|Centralauth-editset-return}}.\n\nSee also:\n* {{msg-mw|Centralauth-editset-success-delete}}",
 	"centralauth-editset-success-delete": "Used as success message.\n\nSee also:\n* {{msg-mw|Centralauth-editset-success}}",
 	"centralauth-editset-type": "{{Identical|Type}}",
