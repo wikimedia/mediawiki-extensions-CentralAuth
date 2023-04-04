@@ -10,7 +10,8 @@
 			"KATRINE1992",
 			"Macofe",
 			"MarcoAurelio",
-			"Ryo567"
+			"Ryo567",
+			"Amire80"
 		]
 	},
 	"apierror-centralauth-badsession": "Solo se puede obtener una centralauthtoken cuando se utilizan en sesiones de CentralAuth.",
@@ -23,6 +24,7 @@
 	"apihelp-centralauthtoken-description": "Recuperar una ficha de autenticación central para realizar una solicitud autenticada a una wiki adjunta.",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-centralauthtoken-summary": "Obtener un \"centralauthtoken\" para realizar una solicitud autenticada a una wiki adjunta.",
+	"apihelp-createlocalaccount-description": "Forzar la creación de una cuenta local. Esto es funcionalmente equivalente a usar [[Special:CreateLocalAccount]].",
 	"apihelp-createlocalaccount-param-reason": "Razón para crear la cuenta local.",
 	"apihelp-createlocalaccount-param-username": "Usuario para el que se crea la cuenta local.",
 	"apihelp-createlocalaccount-summary": "Forcibly create a local account",

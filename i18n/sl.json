@@ -10,7 +10,7 @@
 			"Yerpo"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število urejanj uporabnika",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število uporabnikovih urejanj",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik",
 	"action-centralauth-createlocal": "prisilno ustvarjanje lokalnih računov",
 	"action-centralauth-lock": "zakleni ali odkleni globalni račun",
