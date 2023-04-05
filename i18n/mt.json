@@ -124,7 +124,6 @@
 	"centralauth-editset-setexists": "Sett b'dak l-isem diġà jeżisti",
 	"centralauth-editset-submit": "Ibgħat",
 	"centralauth-editset-submit-delete": "Ħassar",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista ta' settijiet]]",
 	"centralauth-editset-success": "Is-sett ta' wikis inbidel b'suċċess.",
 	"centralauth-editset-success-delete": "Is-sett ta' wikis ġie mħassar.",
 	"centralauth-editset-type": "Tip:",

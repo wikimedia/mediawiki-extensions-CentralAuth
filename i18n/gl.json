@@ -203,7 +203,6 @@
 	"centralauth-editset-setexists": "Xa existe unha configuración con ese nome",
 	"centralauth-editset-submit": "Enviar",
 	"centralauth-editset-submit-delete": "Borrar",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista de configuracións]]",
 	"centralauth-editset-success": "A configuración do wiki foi actualizada.",
 	"centralauth-editset-success-delete": "A configuración do wiki foi borrada.",
 	"centralauth-editset-type": "Tipo:",

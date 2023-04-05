@@ -196,7 +196,6 @@
 	"centralauth-editset-setexists": "Existe ja un gruppo con iste nomine",
 	"centralauth-editset-submit": "Submitter",
 	"centralauth-editset-submit-delete": "Deler",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista de gruppos]]",
 	"centralauth-editset-success": "Le insimul de wikis ha essite actualisate.",
 	"centralauth-editset-success-delete": "Le insimul de wikis ha essite delite.",
 	"centralauth-editset-type": "Typo:",

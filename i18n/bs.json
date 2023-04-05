@@ -137,7 +137,6 @@
 	"centralauth-editset-setexists": "Set s takvim imenom već postoji",
 	"centralauth-editset-submit": "Pošalji",
 	"centralauth-editset-submit-delete": "Izbriši",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Spisak setova]]",
 	"centralauth-editset-success": "Wiki skup je ažuriran.",
 	"centralauth-editset-success-delete": "Wiki skup je izbrisan.",
 	"centralauth-editset-type": "Vrsta:",

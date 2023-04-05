@@ -202,7 +202,6 @@
 	"centralauth-editset-setexists": "Sada s takovým názvem již existuje",
 	"centralauth-editset-submit": "Odeslat",
 	"centralauth-editset-submit-delete": "Smazat",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Seznam sad]]",
 	"centralauth-editset-success": "Sada wiki byla změněna.",
 	"centralauth-editset-success-delete": "Sada wiki byla smazána.",
 	"centralauth-editset-type": "Typ:",

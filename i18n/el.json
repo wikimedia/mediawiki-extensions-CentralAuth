@@ -182,7 +182,6 @@
 	"centralauth-editset-setexists": "Σύνολο με το ίδιο όνομα υπάρχει ήδη",
 	"centralauth-editset-submit": "Υποβολή",
 	"centralauth-editset-submit-delete": "Διαγραφή",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Κατάλογος συνόλων]]",
 	"centralauth-editset-success": "Το βικι-σύνολο ενημερώθηκε.",
 	"centralauth-editset-success-delete": "Το βικι-σύνολο διεγράφη επιτυχώς.",
 	"centralauth-editset-type": "Τύπος:",

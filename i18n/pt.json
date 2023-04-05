@@ -217,7 +217,6 @@
 	"centralauth-editset-setexists": "Um conjunto com esse nome já existe",
 	"centralauth-editset-submit": "Enviar",
 	"centralauth-editset-submit-delete": "Eliminar",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista de conjuntos]]",
 	"centralauth-editset-success": "Conjunto de wikis atualizado.",
 	"centralauth-editset-success-delete": "O conjunto de wikis foi eliminado.",
 	"centralauth-editset-type": "Tipo:",

@@ -153,7 +153,6 @@
 	"centralauth-editset-setexists": "Množina s takým názvom už existuje",
 	"centralauth-editset-submit": "Odoslať",
 	"centralauth-editset-submit-delete": "Zmazať",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Zoznam množín]]",
 	"centralauth-editset-success": "Množina wiki bola zmenená.",
 	"centralauth-editset-success-delete": "Množina wiki bola zmazaná.",
 	"centralauth-editset-type": "Typ:",

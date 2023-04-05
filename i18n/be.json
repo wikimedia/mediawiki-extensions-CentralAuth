@@ -204,7 +204,6 @@
 	"centralauth-editset-setexists": "Набор з такой назвай ужо ёсць",
 	"centralauth-editset-submit": "Адправіць",
 	"centralauth-editset-submit-delete": "Выдаліць",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Спіс набораў]]",
 	"centralauth-editset-success": "Набор вікі быў абноўлены.",
 	"centralauth-editset-success-delete": "Набор вікі быў выдалены.",
 	"centralauth-editset-type": "Тып:",

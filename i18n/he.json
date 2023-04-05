@@ -207,7 +207,6 @@
 	"centralauth-editset-setexists": "קיימת כבר קבוצה בשם זה",
 	"centralauth-editset-submit": "שליחה",
 	"centralauth-editset-submit-delete": "מחיקה",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|רשימת קבוצות]]",
 	"centralauth-editset-success": "קבוצת אתרי הוויקי עודכנה.",
 	"centralauth-editset-success-delete": "קבוצת אתרי הוויקי נמחקה.",
 	"centralauth-editset-type": "סוג:",

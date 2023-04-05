@@ -117,7 +117,6 @@
 	"centralauth-editset-setexists": "'n Wikigroep met hierdie naam bestaan reeds",
 	"centralauth-editset-submit": "Dien in",
 	"centralauth-editset-submit-delete": "Skrap",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lys met groepe]]",
 	"centralauth-editset-success": "Die wikigroep is suksesvol gewysig.",
 	"centralauth-editset-success-delete": "Die wikigroep is verwyder.",
 	"centralauth-editset-type": "Tipe:",

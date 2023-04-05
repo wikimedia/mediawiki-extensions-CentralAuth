@@ -230,7 +230,6 @@
 	"centralauth-editset-setexists": "指定した名前のウィキ集合は既に存在します。",
 	"centralauth-editset-submit": "送信",
 	"centralauth-editset-submit-delete": "削除",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|ウィキ集合一覧]]",
 	"centralauth-editset-success": "ウィキ集合を更新しました。",
 	"centralauth-editset-success-delete": "ウィキ集合を削除しました。",
 	"centralauth-editset-type": "種類:",

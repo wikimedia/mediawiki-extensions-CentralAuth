@@ -185,7 +185,6 @@
 	"centralauth-editset-setexists": "Rinkinys su tokiu pavadinimu jau egzistuoja",
 	"centralauth-editset-submit": "Vykdyti",
 	"centralauth-editset-submit-delete": "Ištrinti",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Rinkinių sąrašas]]",
 	"centralauth-editset-success": "Viki rinkinys buvo atnaujintas.",
 	"centralauth-editset-success-delete": "Viki rinkinys buvo ištrintas.",
 	"centralauth-editset-type": "Tipas:",

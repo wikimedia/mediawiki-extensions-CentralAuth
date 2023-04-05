@@ -206,7 +206,6 @@
 	"centralauth-editset-setexists": "Phạm vi cùng tên đã tồn tại",
 	"centralauth-editset-submit": "Lưu phạm vi",
 	"centralauth-editset-submit-delete": "Xóa",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Danh sách tập wiki]]",
 	"centralauth-editset-success": "Thay đổi phạm vi wiki.",
 	"centralauth-editset-success-delete": "Đã xóa tập wiki.",
 	"centralauth-editset-type": "Loại:",

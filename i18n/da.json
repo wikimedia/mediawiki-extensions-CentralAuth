@@ -185,7 +185,6 @@
 	"centralauth-editset-setexists": "En gruppe med det navn findes allerede",
 	"centralauth-editset-submit": "O.k.",
 	"centralauth-editset-submit-delete": "Slet",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Liste over sæt]]",
 	"centralauth-editset-success": "Wikisættet blev ændret.",
 	"centralauth-editset-success-delete": "Wikisættet blev slettet.",
 	"centralauth-editset-type": "Type:",

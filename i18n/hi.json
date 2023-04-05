@@ -184,7 +184,6 @@
 	"centralauth-editset-setexists": "उस नाम का विकि-समूह पहले से मौजूद है",
 	"centralauth-editset-submit": "जमा करें",
 	"centralauth-editset-submit-delete": "हटाएँ",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|विकि-समूहों की सूची]]",
 	"centralauth-editset-success": "विकी-समूह सफलतापूर्वक बदला गया",
 	"centralauth-editset-success-delete": "विकि-समूह सफलतापूर्वक हटाया गया",
 	"centralauth-editset-type": "प्रकार:",

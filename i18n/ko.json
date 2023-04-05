@@ -226,7 +226,6 @@
 	"centralauth-editset-setexists": "이 이름을 가진 위키 집합이 이미 존재합니다.",
 	"centralauth-editset-submit": "제출",
 	"centralauth-editset-submit-delete": "삭제",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|위키 집합 목록]]",
 	"centralauth-editset-success": "위키 집합이 업데이트되었습니다.",
 	"centralauth-editset-success-delete": "위키 집합이 삭제되었습니다.",
 	"centralauth-editset-type": "유형:",

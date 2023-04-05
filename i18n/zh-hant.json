@@ -231,7 +231,6 @@
 	"centralauth-editset-setexists": "已存在相同名稱的集合。",
 	"centralauth-editset-submit": "送出",
 	"centralauth-editset-submit-delete": "刪除",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|集合清單]]",
 	"centralauth-editset-success": "己變更 Wiki 集合。",
 	"centralauth-editset-success-delete": "己刪除 Wiki 集合。",
 	"centralauth-editset-type": "類型：",

@@ -195,7 +195,6 @@
 	"centralauth-editset-setexists": "Ja existeix un conjunt amb aquest nom",
 	"centralauth-editset-submit": "Tramet",
 	"centralauth-editset-submit-delete": "Esborra",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Llista d'ajustos]]",
 	"centralauth-editset-success": "El grup de wikis ha estat actualitzat.",
 	"centralauth-editset-success-delete": "El grup wiki ha estat eliminat.",
 	"centralauth-editset-type": "Tipus:",

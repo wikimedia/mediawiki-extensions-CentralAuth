@@ -176,7 +176,6 @@
 	"centralauth-editset-setexists": "Skup s tim nazivom već postoji.",
 	"centralauth-editset-submit": "Pošalji",
 	"centralauth-editset-submit-delete": "Izbriši",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista skupova]]",
 	"centralauth-editset-success": "Viki skup je promenjen.",
 	"centralauth-editset-success-delete": "Viki skup je izbrisan.",
 	"centralauth-editset-type": "Vrsta:",

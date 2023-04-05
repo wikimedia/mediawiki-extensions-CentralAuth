@@ -206,7 +206,6 @@
 	"centralauth-editset-setexists": "Már létezik ilyen nevű csoport",
 	"centralauth-editset-submit": "Elküldés",
 	"centralauth-editset-submit-delete": "Törlés",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Wikicsoportok listája]]",
 	"centralauth-editset-success": "A wikicsoport frissítve.",
 	"centralauth-editset-success-delete": "A wikicsoport törölve.",
 	"centralauth-editset-type": "Típus:",

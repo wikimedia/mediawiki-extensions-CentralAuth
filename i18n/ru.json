@@ -234,7 +234,6 @@
 	"centralauth-editset-setexists": "Набор с таким названием уже существует",
 	"centralauth-editset-submit": "Сохранить",
 	"centralauth-editset-submit-delete": "Удалить",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Список наборов]]",
 	"centralauth-editset-success": "Набор вики обновлён.",
 	"centralauth-editset-success-delete": "Набор вики удалён.",
 	"centralauth-editset-type": "Тип:",

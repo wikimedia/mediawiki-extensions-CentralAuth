@@ -135,7 +135,6 @@
 	"centralauth-editset-setexists": "Eit sett med dette namnet finst frå før",
 	"centralauth-editset-submit": "OK",
 	"centralauth-editset-submit-delete": "Slett",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Liste over sett]]",
 	"centralauth-editset-success": "Endra wikisett.",
 	"centralauth-editset-success-delete": "Sletta wikisett.",
 	"centralauth-editset-type": "Type:",

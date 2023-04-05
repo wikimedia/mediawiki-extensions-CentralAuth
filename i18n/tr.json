@@ -226,7 +226,6 @@
 	"centralauth-editset-setexists": "Bu adda bir set zaten mevcut",
 	"centralauth-editset-submit": "Gönder",
 	"centralauth-editset-submit-delete": "Sil",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Kümelerin listesi]]",
 	"centralauth-editset-success": "Viki seti güncellendi.",
 	"centralauth-editset-success-delete": "Viki seti silindi.",
 	"centralauth-editset-type": "Tür:",

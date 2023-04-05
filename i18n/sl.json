@@ -199,7 +199,6 @@
 	"centralauth-editset-setexists": "Množica s tem imenom že obstaja",
 	"centralauth-editset-submit": "Potrdi",
 	"centralauth-editset-submit-delete": "Izbriši",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Seznam skupin]]",
 	"centralauth-editset-success": "Skupina vikijev je posodobljena.",
 	"centralauth-editset-success-delete": "Skupina vikijev je izbrisana.",
 	"centralauth-editset-type": "Vrsta:",

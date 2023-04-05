@@ -131,7 +131,6 @@
 	"centralauth-editset-setexists": "Una configuracion amb aqueste nom de preferéncia existís ja",
 	"centralauth-editset-submit": "Sometre",
 	"centralauth-editset-submit-delete": "Escafar",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista dels jòcs]]",
 	"centralauth-editset-success": "L’ensemble de wikis es estat modificat.",
 	"centralauth-editset-type": "Tipe :",
 	"centralauth-editset-usage": "Utilizat dins los gropes :",

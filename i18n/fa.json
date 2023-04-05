@@ -223,7 +223,6 @@
 	"centralauth-editset-setexists": "مجموعه‌ای با این نام از قبل وجود دارد",
 	"centralauth-editset-submit": "ارسال",
 	"centralauth-editset-submit-delete": "حذف",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|فهرست مجموعه‌ها]]",
 	"centralauth-editset-success": "تنظیمات ویکی تغییر داده‌شد.",
 	"centralauth-editset-success-delete": "مجموعه ویکی حذف شد.",
 	"centralauth-editset-type": "نوع:",

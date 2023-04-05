@@ -211,7 +211,6 @@
 	"centralauth-editset-setexists": "Set wiki dengan nama tersebut sudah ada",
 	"centralauth-editset-submit": "Kirim",
 	"centralauth-editset-submit-delete": "Hapus",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Daftar set]]",
 	"centralauth-editset-success": "Set wiki berhasil diperbarui.",
 	"centralauth-editset-success-delete": "Set wiki berhasil dihapus.",
 	"centralauth-editset-type": "Tipe:",

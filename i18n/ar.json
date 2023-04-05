@@ -218,7 +218,6 @@
 	"centralauth-editset-setexists": "هناك مجموعة ويكي بهذا الاسم بالفعل",
 	"centralauth-editset-submit": "إرسال",
 	"centralauth-editset-submit-delete": "حذف",
-	"centralauth-editset-subtitle": "[[Special:WikiSets|قائمة المجموعات]]",
 	"centralauth-editset-success": "تم تغيير مجموعة الويكي.",
 	"centralauth-editset-success-delete": "تم حذف مجموعة الويكي .",
 	"centralauth-editset-type": "النوع:",

@@ -252,7 +252,6 @@
 	"centralauth-editset-setexists": "Ya existe un grupo con ese nombre",
 	"centralauth-editset-submit": "Enviar",
 	"centralauth-editset-submit-delete": "Borrar",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista de grupos]]",
 	"centralauth-editset-success": "El grupo de wikis ha sido actualizado.",
 	"centralauth-editset-success-delete": "Se ha eliminado el grupo de wikis.",
 	"centralauth-editset-type": "Tipo:",

@@ -173,7 +173,6 @@
 	"centralauth-editset-setexists": "Et gëtt schon eng Astellung mat dem Numm",
 	"centralauth-editset-submit": "Späicheren",
 	"centralauth-editset-submit-delete": "Läschen",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lëscht vu Gruppen]]",
 	"centralauth-editset-success": "Grupp vun de Wikië gouf aktualiséiert.",
 	"centralauth-editset-success-delete": "Grupp vun de Wikie gouf geläscht.",
 	"centralauth-editset-type": "Typ:",

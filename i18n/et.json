@@ -187,7 +187,6 @@
 	"centralauth-editset-setexists": "Sellise nimega komplekt on juba olemas.",
 	"centralauth-editset-submit": "Salvesta",
 	"centralauth-editset-submit-delete": "Kustuta",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Komplektide loend]]",
 	"centralauth-editset-success": "Vikikomplekt on muudetud.",
 	"centralauth-editset-success-delete": "Vikikomplekt on kustutatud.",
 	"centralauth-editset-type": "Tüüp:",

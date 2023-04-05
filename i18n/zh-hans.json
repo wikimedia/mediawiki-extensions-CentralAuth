@@ -250,7 +250,6 @@
 	"centralauth-editset-setexists": "已经存在名称为此的集合",
 	"centralauth-editset-submit": "提交",
 	"centralauth-editset-submit-delete": "删除",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|集合列表]]",
 	"centralauth-editset-success": "wiki集合已更新。",
 	"centralauth-editset-success-delete": "wiki集合已删除。",
 	"centralauth-editset-type": "类型：",

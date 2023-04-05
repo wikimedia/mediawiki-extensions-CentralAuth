@@ -191,7 +191,6 @@
 	"centralauth-editset-setexists": "มีชุดชื่อนั้นอยู่แล้ว",
 	"centralauth-editset-submit": "ตกลง",
 	"centralauth-editset-submit-delete": "ลบ",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|รายการชุด]]",
 	"centralauth-editset-success": "อัปเดตชุดวิกิแล้ว",
 	"centralauth-editset-success-delete": "ลบชุดวิกิแล้ว",
 	"centralauth-editset-type": "ประเภท:",

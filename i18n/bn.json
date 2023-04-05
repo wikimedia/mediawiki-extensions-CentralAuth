@@ -165,7 +165,6 @@
 	"centralauth-editset-setexists": "এই নামের উইকি সেট আগেই রয়েছে",
 	"centralauth-editset-submit": "জমা দিন",
 	"centralauth-editset-submit-delete": "অপসারণ",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|সেটের তালিকা]]",
 	"centralauth-editset-success": "উইকিসেট হালনাগাদ হয়েছে।",
 	"centralauth-editset-success-delete": "উইকিসেট অপসারিত হয়েছে।",
 	"centralauth-editset-type": "ধরন:",

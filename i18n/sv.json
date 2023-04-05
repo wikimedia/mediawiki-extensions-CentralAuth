@@ -220,7 +220,6 @@
 	"centralauth-editset-setexists": "En grupp med det här namnet finns redan",
 	"centralauth-editset-submit": "Verkställ",
 	"centralauth-editset-submit-delete": "Radera",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista över grupper]]",
 	"centralauth-editset-success": "Wikigruppen har uppdaterats.",
 	"centralauth-editset-success-delete": "Wikigruppen raderades.",
 	"centralauth-editset-type": "Typ:",

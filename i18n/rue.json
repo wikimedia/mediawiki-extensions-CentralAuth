@@ -118,7 +118,6 @@
 	"centralauth-editset-setexists": "Сет з таков назвов вже єствує",
 	"centralauth-editset-submit": "Одослати",
 	"centralauth-editset-submit-delete": "Вымазати",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Список сетів]]",
 	"centralauth-editset-success": "Вікі сет быв успішно зміненый",
 	"centralauth-editset-success-delete": "Вікі сет быв успішно змазаный.",
 	"centralauth-editset-type": "Тіп:",

@@ -226,7 +226,6 @@
 	"centralauth-editset-setexists": "Istnieje już zbiór o takiej samej nazwie",
 	"centralauth-editset-submit": "Zatwierdź",
 	"centralauth-editset-submit-delete": "Usuń",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista zbiorów]]",
 	"centralauth-editset-success": "Zbiór wiki został zaktualizowany.",
 	"centralauth-editset-success-delete": "Zbiór wiki został usunięty.",
 	"centralauth-editset-type": "Typ:",

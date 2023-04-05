@@ -175,7 +175,6 @@
 	"centralauth-editset-setexists": "ასეთი სახელწოდების მქონე ნაკრები უკვე არსებობს.",
 	"centralauth-editset-submit": "მიღება",
 	"centralauth-editset-submit-delete": "წაშლა",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|ნაკრებების სია]]",
 	"centralauth-editset-success": "ვიკის ნაკრები განახლდა.",
 	"centralauth-editset-success-delete": "ვიკის ნაკრები წაიშალა.",
 	"centralauth-editset-type": "ტიპი:",

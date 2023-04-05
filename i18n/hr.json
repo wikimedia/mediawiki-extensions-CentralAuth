@@ -154,7 +154,6 @@
 	"centralauth-editset-setexists": "Set s tim nazivom već postoji",
 	"centralauth-editset-submit": "Pošalji",
 	"centralauth-editset-submit-delete": "Obriši",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Popis skupova]]",
 	"centralauth-editset-success": "Uspješno promijenjen wiki set.",
 	"centralauth-editset-success-delete": "Uspješno obrisan wiki skup.",
 	"centralauth-editset-type": "Vrsta:",

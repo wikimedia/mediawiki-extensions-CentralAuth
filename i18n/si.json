@@ -131,7 +131,6 @@
 	"centralauth-editset-setexists": "එම නම ඇති කට්ටලයක් දැනටමත් පවතියි.",
 	"centralauth-editset-submit": "යොමන්න",
 	"centralauth-editset-submit-delete": "මකන්න",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|කට්ටළ ලැයිස්තුව]]",
 	"centralauth-editset-success": "විකි කට්ටලය සාර්ථකව වෙනස් කරන ලදී.",
 	"centralauth-editset-success-delete": "විකි කට්ටලය සාර්ථකව මකා දමන ලදී.",
 	"centralauth-editset-type": "වර්ගය:",

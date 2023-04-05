@@ -127,7 +127,6 @@
 	"centralauth-editset-setexists": "அந்த பெயரில் தொகுப்பு ஏற்கனவே உள்ளது",
 	"centralauth-editset-submit": "சமர்ப்பி",
 	"centralauth-editset-submit-delete": "நீக்கவும்",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|தொகுப்புகளின் பட்டியல் ]]",
 	"centralauth-editset-success": "விக்கி தொகுப்பு வெற்றிகரமாக மாற்றப்பட்டது",
 	"centralauth-editset-success-delete": "விக்கி தொகுப்பு வெற்றிகரமாக நீக்கப்பட்டது",
 	"centralauth-editset-type": "வகை:",

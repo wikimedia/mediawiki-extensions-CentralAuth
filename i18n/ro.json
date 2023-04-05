@@ -184,7 +184,6 @@
 	"centralauth-editset-setexists": "Un set cu acest nume există deja",
 	"centralauth-editset-submit": "Aplicare",
 	"centralauth-editset-submit-delete": "Șterge",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Listă de seturi]]",
 	"centralauth-editset-success": "Wiki set actualizat.",
 	"centralauth-editset-success-delete": "Wiki set șters cu succes.",
 	"centralauth-editset-type": "Tip:",

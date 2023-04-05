@@ -126,7 +126,6 @@
 	"centralauth-editset-setexists": "Nofka që përdorët është në përdorim. Zgjidhni një nofkë tjetër.",
 	"centralauth-editset-submit": "Dërgo",
 	"centralauth-editset-submit-delete": "Grise",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista e grupet-wiki]]",
 	"centralauth-editset-success": "Grupi-Wiki u ndryshuar me sukses.",
 	"centralauth-editset-success-delete": "Grupi-wiki u grise me sukses.",
 	"centralauth-editset-type": "Lloji:",

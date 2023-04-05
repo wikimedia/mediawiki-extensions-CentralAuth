@@ -123,7 +123,6 @@
 	"centralauth-editset-setexists": "Umiiral na ang pangkat (''set'') na may ganyang pangalan",
 	"centralauth-editset-submit": "Ipasa",
 	"centralauth-editset-submit-delete": "Burahin",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Talaan ng mga pangkat]]",
 	"centralauth-editset-success": "Matagumpay na nabago ang kapangkatang (''set'') pangwiki.",
 	"centralauth-editset-success-delete": "Matagumpay na nabura ang pangkat na pangwiki.",
 	"centralauth-editset-type": "Uri (tipo):",

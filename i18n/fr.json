@@ -250,7 +250,6 @@
 	"centralauth-editset-setexists": "Un jeu de wikis existe déjà sous ce nom",
 	"centralauth-editset-submit": "Soumettre",
 	"centralauth-editset-submit-delete": "Supprimer",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Liste des jeux]]",
 	"centralauth-editset-success": "Le jeu de wikis a été modifié.",
 	"centralauth-editset-success-delete": "Le jeu de wikis a été supprimé.",
 	"centralauth-editset-type": "Type :",

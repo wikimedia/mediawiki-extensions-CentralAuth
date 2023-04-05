@@ -156,7 +156,6 @@
 	"centralauth-editset-setexists": "ఆ పేరుతో సమితి ఇప్పటికే ఉంది",
 	"centralauth-editset-submit": "దాఖలుచెయ్యి",
 	"centralauth-editset-submit-delete": "తొలగించు",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|సమితుల జాబితా]]",
 	"centralauth-editset-success": "వికీ సమితిని విజయవంతంగా మార్చారు.",
 	"centralauth-editset-success-delete": "వికీ సమితిని విజయవంతంగా తొలగించారు.",
 	"centralauth-editset-type": "రకం:",

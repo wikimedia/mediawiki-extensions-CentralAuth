@@ -213,7 +213,6 @@
 	"centralauth-editset-setexists": "Un insieme con quel nome esiste già.",
 	"centralauth-editset-submit": "Invia",
 	"centralauth-editset-submit-delete": "Cancella",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Elenco degli insiemi]]",
 	"centralauth-editset-success": "L'insieme di wiki è stato aggiornato.",
 	"centralauth-editset-success-delete": "L'insieme di wiki è stato cancellato.",
 	"centralauth-editset-type": "Tipo:",

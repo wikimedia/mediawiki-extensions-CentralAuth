@@ -181,7 +181,6 @@
 	"centralauth-editset-setexists": "Набор с такова име вече съществува",
 	"centralauth-editset-submit": "Изпращане",
 	"centralauth-editset-submit-delete": "Изтриване",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Списък с набори]]",
 	"centralauth-editset-success": "Наборът от уикита е обновен.",
 	"centralauth-editset-success-delete": "Наборът от уикита е изтрит.",
 	"centralauth-editset-type": "Тип:",

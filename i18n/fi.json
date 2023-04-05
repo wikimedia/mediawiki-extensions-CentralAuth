@@ -217,7 +217,6 @@
 	"centralauth-editset-setexists": "Samanniminen joukko on jo olemassa",
 	"centralauth-editset-submit": "Lähetä",
 	"centralauth-editset-submit-delete": "Poista",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista joukoista]]",
 	"centralauth-editset-success": "Wikijoukko päivitettiin.",
 	"centralauth-editset-success-delete": "Wikijoukon poistaminen onnistui.",
 	"centralauth-editset-type": "Tyyppi:",

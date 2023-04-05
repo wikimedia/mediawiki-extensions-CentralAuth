@@ -224,7 +224,6 @@
 	"centralauth-editset-setexists": "Набір з такою назвою вже існує",
 	"centralauth-editset-submit": "Зберегти",
 	"centralauth-editset-submit-delete": "Вилучити",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Список наборів]]",
 	"centralauth-editset-success": "Набір вікі було оновлено.",
 	"centralauth-editset-success-delete": "Набір вікі було вилучено.",
 	"centralauth-editset-type": "Тип:",

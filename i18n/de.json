@@ -213,7 +213,6 @@
 	"centralauth-editset-setexists": "Es ist bereits eine Gruppe mit diesem Namen vorhanden",
 	"centralauth-editset-submit": "Speichern",
 	"centralauth-editset-submit-delete": "Löschen",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Liste der Wikigruppen]]",
 	"centralauth-editset-success": "Wikigruppe erfolgreich geändert.",
 	"centralauth-editset-success-delete": "Wikigruppe wurde erfolgreich gelöscht.",
 	"centralauth-editset-type": "Typ:",

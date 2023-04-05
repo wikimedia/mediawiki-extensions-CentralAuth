@@ -206,7 +206,6 @@
 	"centralauth-editset-setexists": "Et sett med dette navnet finnes allerede",
 	"centralauth-editset-submit": "OK",
 	"centralauth-editset-submit-delete": "Slett",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Liste over sett]]",
 	"centralauth-editset-success": "Wikisettet ble oppdatert.",
 	"centralauth-editset-success-delete": "Wikisettet ble slettet.",
 	"centralauth-editset-type": "Type:",

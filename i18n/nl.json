@@ -227,7 +227,6 @@
 	"centralauth-editset-setexists": "Er bestaat al een wikigroep met deze naam",
 	"centralauth-editset-submit": "Opslaan",
 	"centralauth-editset-submit-delete": "Verwijderen",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lijst met groepen]]",
 	"centralauth-editset-success": "De wikigroep is bijgewerkt.",
 	"centralauth-editset-success-delete": "De wikigroep is verwijderd.",
 	"centralauth-editset-type": "Type:",

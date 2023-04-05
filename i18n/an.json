@@ -123,7 +123,6 @@
 	"centralauth-editset-setexists": "Ya bi ha un conchunto con ixe nombre",
 	"centralauth-editset-submit": "Ninviar",
 	"centralauth-editset-submit-delete": "Borrar",
-	"centralauth-editset-subtitle": "< [[Special:WikiSets|Lista d'achustes]]",
 	"centralauth-editset-success": "S'ha cambiato o conchunto de wikis.",
 	"centralauth-editset-success-delete": "Achuste wiki borrau satisfactoriament.",
 	"centralauth-editset-type": "Mena:",
