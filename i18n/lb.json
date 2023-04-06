@@ -307,6 +307,7 @@
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|Fortschrëtt weisen]])",
 	"centralauth-rename-progress-list-header": "Dës global Ëmbenennunge sinn elo am Gaang:",
 	"centralauth-rename-progress-username": "Benotzernumm",
+	"centralauth-rename-same-name": "De Benotzer huet schonn den ugefrote Benotzernumm.",
 	"centralauth-rename-table-domain": "Lokal Wiki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Fäerdeg",

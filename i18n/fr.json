@@ -57,7 +57,8 @@
 			"Weft",
 			"Wladek92",
 			"Wyz",
-			"Yasten"
+			"Yasten",
+			"Alien333"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur",
@@ -400,6 +401,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Entrées du journal",
 	"centralauth-rename-progress-username": "Nom d’utilisateur",
 	"centralauth-rename-queued": "Les tâches pour renommer $1 en $2 ont été mises en file.\n\nAfficher la progression sur [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "L’utilisateur a déjà le nom d’utilisateur demandé.",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "État",
 	"centralauth-rename-table-status-done": "Terminé",

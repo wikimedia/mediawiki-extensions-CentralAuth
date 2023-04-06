@@ -15,7 +15,8 @@
 			"דולב",
 			"המקיסט",
 			"חיים",
-			"לואיקה"
+			"לואיקה",
+			"Dee"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "מספר העריכות הגלובלי של המשתמש",
@@ -355,6 +356,7 @@
 	"centralauth-rename-progress-logs-fieldset": "רשומות יומן",
 	"centralauth-rename-progress-username": "שם משתמש",
 	"centralauth-rename-queued": "משימות לשינוי השם של $1 ל{{GRAMMAR:תחילית|$2}} הוכנסו לתור.\n\nהצגת ההתקדמות בדף [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "למשתמש כבר יש את שם המשתמש המבוקש.",
 	"centralauth-rename-table-domain": "ויקי מקומי",
 	"centralauth-rename-table-status": "מצב",
 	"centralauth-rename-table-status-done": "בוצע",
@@ -366,7 +368,7 @@
 	"centralauth-rename-viewprogress": "הצגת ההתקדמות",
 	"centralauth-renameuser-global-inprogress": "כבר [[Special:GlobalRenameProgress/$1|התחיל תהליך]] שינוי שם גלובלי עבור $1.",
 	"centralauth-renameuser-merged": "המשתמש $1 הועבר למערכת הכניסה המאוחדת.\nשינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הגלובלי.",
-	"centralauth-renameuser-reserved": "שם המתשמש $2 שמור לחשבון גלובלי.",
+	"centralauth-renameuser-reserved": "שם המשתמש $2 שמור לחשבון גלובלי.",
 	"centralauth-rightslog-entry-groupperms": "שינה את הרשאות הקבוצה $1 מ־$2 ל־$3",
 	"centralauth-rightslog-header": "היומן הזה כולל פעולות על קבוצות גלובליות, כולל חברות בקבוצות ושינויי הרשאות",
 	"centralauth-rightslog-name": "יומן הרשאות גלובליות",

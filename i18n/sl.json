@@ -10,7 +10,7 @@
 			"Yerpo"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število urejanj uporabnika",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število uporabnikovih urejanj",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik",
 	"action-centralauth-createlocal": "prisilno ustvarjanje lokalnih računov",
 	"action-centralauth-lock": "zakleni ali odkleni globalni račun",
@@ -350,6 +350,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Dnevniški vnosi",
 	"centralauth-rename-progress-username": "Uporabniško ime",
 	"centralauth-rename-queued": "Opravila za preimenovanje $1 v $2 so v čakalni vrsti.\n\nNapredek si lahko ogledate na [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "Uporabnik že ima zahtevano uporabniško ime.",
 	"centralauth-rename-table-domain": "Lokalni viki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Opravljeno",

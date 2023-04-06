@@ -403,6 +403,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Entradas del registro",
 	"centralauth-rename-progress-username": "Nombre de usuario",
 	"centralauth-rename-queued": "Los trabajos para cambiar el nombre de la cuenta «$1» a «$2» se han añadido a la cola de trabajo.\n\nPuedes ver el progreso de esta operación en [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "El usuario ya tiene el nombre solicitado.",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
 	"centralauth-rename-table-status-done": "Hecho",

@@ -377,6 +377,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Logboekregels",
 	"centralauth-rename-progress-username": "Gebruikersnaam",
 	"centralauth-rename-queued": "De taken voor het hernoemen van $1 naar $2 staan nu in de wachtrij.\n\nBekijk de voortgang op [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "De gebruiker heeft al de gevraagde gebruikersnaam.",
 	"centralauth-rename-table-domain": "Lokale wiki",
 	"centralauth-rename-table-status": "Status",
 	"centralauth-rename-table-status-done": "Afgerond",

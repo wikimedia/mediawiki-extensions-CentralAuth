@@ -36,7 +36,9 @@
 			"Tks4Fish",
 			"Tuliouel",
 			"YuriNikolai",
-			555
+			555,
+			"Gito da Ana",
+			"Re demz"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o usuário está",
@@ -376,6 +378,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Entradas de registro",
 	"centralauth-rename-progress-username": "Nome de usuário",
 	"centralauth-rename-queued": "O pedido para renomear a conta $1 para $2 está em lista de espera.\n\nVeja o processo em [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "O usuário já possui o nome de usuário solicitado.",
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
 	"centralauth-rename-table-status-done": "Concluído",
