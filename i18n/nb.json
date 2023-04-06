@@ -145,6 +145,7 @@
 	"centralauth-complete": "Kontosammenslåingen er fullført!",
 	"centralauth-complete-text": "Du kan nå logge inn på enhver wiki som tilhører {{int:Centralauth-groupname}} uten å opprette en ny konto.",
 	"centralauth-completelogin-back": "Tilbake til forrige side.",
+	"centralauth-contribs-link": "CentralAuth",
 	"centralauth-contribs-locked": "Denne kontoen er låst globalt.\nSe [[Special:CentralAuth/$1|globale kontodetaljer]] for mer informasjon.",
 	"centralauth-contribs-locked-log": "Denne kontoen er låst globalt.\nDen siste låsingsloggoppføringen kan ses nedenfor.",
 	"centralauth-createlocal-already-exists": "Det er allerede en lokal konto for den gitte globale kontoen.",
