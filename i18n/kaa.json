@@ -5,8 +5,15 @@
 			"Nurlan"
 		]
 	},
+	"centralauth": "Globallıq esap beti menedjeri",
 	"centralauth-centralautologin-logged-in": "Siz oraylıq sistemaǵa $1 retinde kirgensiz. Paydalanıwshı sazlamaların qollanıw ushın betti qayta júkleńiz.",
+	"centralauth-editset": "Wiki toplamları",
 	"centralauth-prefs-status": "Global akkaunt:",
 	"centralautologin": "Oraylıq sistemaǵa kiriw",
-	"centrallogin": "Oraylıq paydalanıwshı kiriwi"
+	"centrallogin": "Oraylıq paydalanıwshı kiriwi",
+	"globalgroupmembership": "Globallıq toparlarǵa aǵzalıq",
+	"globalgrouppermissions": "Globallıq topar menedjmenti",
+	"globalrenameprogress": "Globallıq at ózgertiw náwbetiniń jaǵdayı",
+	"globalusers": "Globallıq esap betleri dizimi",
+	"mergeaccount": "Esap betleriniń birigiw jaǵdayı"
 }
