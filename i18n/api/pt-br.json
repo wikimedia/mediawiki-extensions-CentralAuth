@@ -34,7 +34,7 @@
 	"apihelp-globaluserrights-example-1": "Adicionar usuário FooBot ao grupo global \"bot\", e removê-lo dos grupos globais \"sysop\" e \"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "Adicionar o usuário global com ID 123 ao grupo global \"bot\", e removê-lo dos grupos globais \"sysop\" e \"bureaucrat\"",
 	"apihelp-globaluserrights-param-add": "Adicionar o usuário para estes grupos globais.",
-	"apihelp-globaluserrights-param-expiry": "Esse parâmetro não é usado no momento.",
+	"apihelp-globaluserrights-param-expiry": "Expiração de timestamps. Pode ser relativo (por exemplo <kbd>5 meses</kbd> ou <kbd>2 semanas</kbd>) ou absoluto (por exemplo <kbd>2014-09-18T12:34:56Z</kbd>). Se apenas um timestamp for configurado, ele sera usado para todos os grupos passados pelo parâmetro <var>$1add</var>. Use <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> ou <kbd>never</kbd>, para um grupo de usuários que nunca expiram.",
 	"apihelp-globaluserrights-param-reason": "Motivo para a mudança.",
 	"apihelp-globaluserrights-param-remove": "Remover o usuário destes grupos globais.",
 	"apihelp-globaluserrights-param-tags": "Esse parâmetro não é usado no momento.",
