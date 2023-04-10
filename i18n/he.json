@@ -15,7 +15,8 @@
 			"חיים",
 			"דגש",
 			"לואיקה",
-			"Matma Rex"
+			"Matma Rex",
+			"Dee"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "קבוצות גלובליות שהמשתמש הזה חבר בהן",
@@ -359,7 +360,7 @@
 	"centralauth-rename-viewprogress": "הצגת ההתקדמות",
 	"centralauth-renameuser-global-inprogress": "כבר [[Special:GlobalRenameProgress/$1|התחיל תהליך]] שינוי שם גלובלי עבור $1.",
 	"centralauth-renameuser-merged": "המשתמש $1 הועבר למערכת הכניסה המאוחדת.\nשינוי שמו יגרום לכך שהחשבון המקומי יופרד מהחשבון הגלובלי.",
-	"centralauth-renameuser-reserved": "שם המתשמש $2 שמור לחשבון גלובלי.",
+	"centralauth-renameuser-reserved": "שם המשתמש $2 שמור לחשבון גלובלי.",
 	"centralauth-rightslog-entry-deleteset": "מחק את קבוצת אתרי הוויקי \"$1\"",
 	"centralauth-rightslog-entry-groupperms": "שינה את הרשאות הקבוצה $1 מ־$2 ל־$3",
 	"centralauth-rightslog-entry-groupperms2": "שינה את הרשאות הקבוצה הגלובליות עבור $1: נוספו ההרשאות $2; הוסרו ההרשאות $3",

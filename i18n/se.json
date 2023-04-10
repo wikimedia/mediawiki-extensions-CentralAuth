@@ -6,15 +6,20 @@
 			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
+	"centralauth-admin-info-username": "Geavaheaddjinamma:",
+	"centralauth-admin-username": "Geavaheaddjinamma:",
 	"centralauth-editset-submit-delete": "Sihko",
 	"centralauth-finish-login": "Čálit sisa",
 	"centralauth-finish-password": "Beassansátni:",
 	"centralauth-prefs-count-attached": "Du dovddaldat lea registrerejuvvon $1 {{PLURAL:$1|prošektii|prošeavttaide}}.",
 	"centralauth-prefs-status": "Váldodovddaldaga dilli:",
+	"centralauth-rename-progress-username": "Geavaheaddjinamma",
 	"centralauth-uwbr-registration-nodate": "Dovdameahttun",
 	"centralloginsuccesful": "Leat čálihuvvon sisa",
 	"globalrenamequeue-action-view": "Čájet",
+	"globalrenamequeue-column-rq-name": "Geavaheaddjinamma",
 	"globalrenamequeue-form-status-all": "buot",
+	"globalrenamequeue-form-username": "Geavaheaddjinamma:",
 	"globalrenamequeue-request-cancel-text": "Šluhtte",
 	"globalrenamerequest-email-label": "E-poastačujuhus:"
 }

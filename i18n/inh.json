@@ -15,6 +15,7 @@
 	"centralauth-foreign-link": "Доакъашхо $1 $2 чу",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|сахьат}} хьалха",
 	"centralauth-merge-method-login": "кхыйола вики-проекте система чувоалаш кхелла учета яздар",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|минот}} хьалха",
 	"centralauth-prefs-status": "Глобальни аккаунт:",
 	"centralauth-prefs-view": "Хьа юкъарча аккаунтах бола хоам",
 	"centralauth-rename-form-movepages": "Доакъашхочун оагӀоний цӀераш хувца",
