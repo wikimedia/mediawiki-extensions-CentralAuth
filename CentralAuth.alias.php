@@ -44,13 +44,14 @@ $specialPageAliases['ar'] = [
 	'GlobalRenameUser' => [ 'إعادة_تسمية_مستخدم_عامة' ],
 	'GlobalRenameProgress' => [ 'تطور_إعادة_تسمية_عامة' ],
 	'GlobalRenameRequest' => [ 'طلب_إعادة_تسمية_عام' ],
-	'GlobalRenameQueue' => [ 'طابور|_إعادة_تسمية_عام' ],
+	'GlobalRenameQueue' => [ 'طابور_إعادة_تسمية_عام' ],
 	'SulRenameWarning' => [ 'تحذير_إعادة_تسمية_إس_يو_إل' ],
 ];
 
 /** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = [
 	'CentralAuth' => [ 'تحقيق_مركزى' ],
+	'CreateLocalAccount' => [ 'عمل_حساب_محلى' ],
 	'MergeAccount' => [ 'دمج_حساب' ],
 	'GlobalGroupMembership' => [ 'حقوق_اليوزر_العامه', 'عضوية_الجروپ_العامه' ],
 	'GlobalGroupPermissions' => [ 'اذن_الجروپ_العامه' ],
@@ -59,6 +60,9 @@ $specialPageAliases['arz'] = [
 	'MultiLock' => [ 'قفل_متعدد' ],
 	'GlobalRenameUser' => [ 'سمي_تاني_يوزر_عام' ],
 	'GlobalRenameProgress' => [ 'تطور_سمي_يوزر_عام' ],
+	'GlobalRenameRequest' => [ 'طلب_تسميه_عام' ],
+	'GlobalRenameQueue' => [ 'طابور_تسميه_عام' ],
+	'SulRenameWarning' => [ 'تنبيه_تسميه_عام' ],
 ];
 
 /** Assamese (অসমীয়া) */
