@@ -19,7 +19,7 @@
 	"apihelp-createlocalaccount-description": "כפיית יצירה של חשבון מקומי. זה שווה פונקציונלית לדף [[Special:CreateLocalAccount]].",
 	"apihelp-createlocalaccount-example-1": "כפיית יצירה של חשבון מקומי בשביל [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "סיבה ליצירה החשבון המקומי.",
-	"apihelp-createlocalaccount-param-username": "המשתמש שעברו נוצר החשבון המקומי.",
+	"apihelp-createlocalaccount-param-username": "המשתמש שהחשבון המקומי נוצר עבורו.",
 	"apihelp-createlocalaccount-summary": "לכפות יצירה של חשבון מקומי",
 	"apihelp-deleteglobalaccount-description": "מחיקת משתמש גלובלי.",
 	"apihelp-deleteglobalaccount-example-1": "מחיקת חשבון גלובלי עבור [[User:Example]]",
