@@ -165,6 +165,7 @@
 	"centralauth-complete": "계정을 통합했습니다!",
 	"centralauth-complete-text": "이제 모든 {{int:Centralauth-groupname}}의 위키 사이트에 새 계정을 만들지 않고 로그인할 수 있습니다.",
 	"centralauth-completelogin-back": "이전 문서로 돌아갑니다.",
+	"centralauth-contribs-link": "통합 계정",
 	"centralauth-contribs-locked": "이 계정은 전역으로 잠겨 있습니다.\n더 자세한 정보는 [[Special:CentralAuth/$1|통합 계정 정보]]를 참조하세요.",
 	"centralauth-contribs-locked-log": "이 계정은 전역으로 잠겨 있습니다.\n해당 사용자의 최신 잠금 기록은 다음과 같습니다:",
 	"centralauth-createlocal-already-exists": "지정된 전역 계정에 대한 로컬 계정이 이미 있습니다.",
