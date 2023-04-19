@@ -6,8 +6,8 @@ use HTMLForm;
 use IContextSource;
 use LogEventsList;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Title\TitleFactory;
 use MessageLocalizer;
-use TitleFactory;
 
 /**
  * Shared utilities for building UIs in CentralAuth
