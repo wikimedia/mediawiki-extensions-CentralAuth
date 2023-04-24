@@ -35,6 +35,7 @@
 	"centralauth-admin-username": "واپرائيندڙنانءُ:",
 	"centralauth-admin-view": "کاتي جي معلومات ڏسو",
 	"centralauth-attach-title": "کاتي جي پڪ ڪريو",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|ڏينھن}} اڳ",
 	"centralauth-editgroup-noset": "(ڪوبہ نہ)",
 	"centralauth-editgroup-success": "عالمي گروھ بدلايو ويو",
 	"centralauth-editset-name": "نالو:",
