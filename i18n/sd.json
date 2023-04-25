@@ -10,6 +10,8 @@
 			"Tweety"
 		]
 	},
+	"action-globalgroupmembership": "عالمي گروھن ۾ رڪنيت سنواريو",
+	"centralauth": "عالمي کاتو سنڀاليندڙ",
 	"centralauth-account-rename-exists": "کاتو کولي نہ ٿو سگهجي. اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ڪو ٻيو نالو چونڊيو.",
 	"centralauth-account-unattached-exists": "کاتو کلي نہ ٿو سگهي: اهو واپرائيندڙ-نانءُ اڳ ۾ ئي استعمال هيٺ آهي. مھرباني ڪري ٻيو نالو چونڊيو.",
 	"centralauth-admin-blocklog": "بندش لاگ",
@@ -28,10 +30,12 @@
 	"centralauth-admin-reason-other-select": "ٻيو ڪارڻ:",
 	"centralauth-admin-rename-in-progress": "ھن کاتي کي ٻيھر نالو ڏنو پيو وڃي. توهان ٻيھر نالو ڏيڻ جي [[Special:GlobalRenameProgress/$1|رفتار ڏسي]] سگهو ٿا. ھن واپرائيندڙ لاءِ عالمي ٻيھر نالي ڏيڻ جو لاگ واپرائيندڙ لاءِ هيٺ مھيا ڪيل آھي.",
 	"centralauth-admin-status-hidden": "لڪل",
+	"centralauth-admin-title": "$1 لاءِ عالمي کاتو سنڀاليندڙ",
 	"centralauth-admin-title-ro": "$1 لاءِ معلومات عالمي کاتو",
 	"centralauth-admin-username": "واپرائيندڙنانءُ:",
 	"centralauth-admin-view": "کاتي جي معلومات ڏسو",
 	"centralauth-attach-title": "کاتي جي پڪ ڪريو",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|ڏينھن}} اڳ",
 	"centralauth-editgroup-noset": "(ڪوبہ نہ)",
 	"centralauth-editgroup-success": "عالمي گروھ بدلايو ويو",
 	"centralauth-editset-name": "نالو:",
@@ -53,6 +57,7 @@
 	"centralauth-rename-progress-username": "واپرائيندڙنانءُ",
 	"centralauth-ro": "معلومات عالمي کاتو",
 	"centrallogin": "مرڪزي واپرائيندڙ داخلا",
+	"globalgroupmembership": "عالمي گروھن ۾ رڪنيت",
 	"globalgrouppermissions": "عالمي گروھ انتظام",
 	"globalrenamequeue-form-newname": "گهريل واپرائيندڙنانءُ:",
 	"globalrenamequeue-form-status": "صورتحال:",
@@ -62,5 +67,6 @@
 	"globalrenamerequest": "عالمي کاتي جو نالو تبديل ڪرڻ جي درخواست",
 	"globalusers": "عالمي کاتن جي فھرست",
 	"mergeaccount": "مرج اڪائونٽ",
-	"right-centralauth-merge": "انھن جي کاتي کي ضم ڪريو"
+	"right-centralauth-merge": "انھن جي کاتي کي ضم ڪريو",
+	"right-globalgroupmembership": "عالمي گروھن ۾ رڪنيت سنواريو"
 }
