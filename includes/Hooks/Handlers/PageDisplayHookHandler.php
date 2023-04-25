@@ -28,9 +28,9 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\ResourceLoader\Module;
+use MediaWiki\WikiMap\WikiMap;
 use OutputPage;
 use Skin;
-use WikiMap;
 use Xml;
 
 class PageDisplayHookHandler implements

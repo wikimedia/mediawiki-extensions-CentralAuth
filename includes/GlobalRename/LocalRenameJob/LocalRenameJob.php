@@ -9,10 +9,10 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
 use Title;
 use User;
-use WikiMap;
 use Wikimedia\ScopedCallback;
 
 /**

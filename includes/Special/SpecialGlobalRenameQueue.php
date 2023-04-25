@@ -45,13 +45,13 @@ use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use OOUI\MessageWidget;
 use SpecialPage;
 use Status;
 use Title;
 use User;
 use UserMailer;
-use WikiMap;
 use Wikimedia\Rdbms\LBFactory;
 use Xml;
 

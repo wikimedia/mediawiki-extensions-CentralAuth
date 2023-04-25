@@ -4,6 +4,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {

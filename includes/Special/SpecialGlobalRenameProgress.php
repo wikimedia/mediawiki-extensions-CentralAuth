@@ -10,7 +10,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\UserNameUtils;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 use Xml;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {

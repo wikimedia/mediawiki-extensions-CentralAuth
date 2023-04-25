@@ -23,7 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 use CentralIdLookup;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\UserIdentity;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Look up central IDs using CentralAuth

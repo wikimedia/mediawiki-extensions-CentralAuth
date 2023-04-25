@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IDatabase;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

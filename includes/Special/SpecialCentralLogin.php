@@ -15,11 +15,11 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\StubObject\StubGlobalUser;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use UnlistedSpecialPage;
 use User;
 use WebRequest;
-use WikiMap;
 use Wikimedia\ScopedCallback;
 
 class SpecialCentralLogin extends UnlistedSpecialPage {

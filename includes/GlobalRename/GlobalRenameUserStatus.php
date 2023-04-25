@@ -7,7 +7,7 @@ use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Authority;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
 

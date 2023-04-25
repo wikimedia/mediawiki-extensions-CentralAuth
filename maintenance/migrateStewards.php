@@ -8,6 +8,7 @@ require_once "$IP/maintenance/CommandLineInc.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\WikiMap\WikiMap;
 
 echo "Populating global groups table with stewards...\n";
 

@@ -30,12 +30,12 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsLookup;
+use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RequestContext;
 use Title;
 use User;
 use WebRequest;
-use WikiMap;
 
 class LoginCompleteHookHandler implements
 	UserLoginCompleteHook,

@@ -28,7 +28,7 @@ use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserNameUtils;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**

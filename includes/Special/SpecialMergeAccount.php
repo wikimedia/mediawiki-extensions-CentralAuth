@@ -9,10 +9,10 @@ use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserFactory;
+use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use NamespaceInfo;
 use SpecialPage;
-use WikiMap;
 use Wikimedia\AtEase\AtEase;
 use Xml;
 

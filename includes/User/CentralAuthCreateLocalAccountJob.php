@@ -25,9 +25,9 @@ use Exception;
 use Job;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
 use User;
-use WikiMap;
 use Wikimedia\ScopedCallback;
 
 /**

@@ -37,11 +37,11 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use ReadOnlyMode;
 use RequestContext;
 use StatusValue;
 use User;
-use WikiMap;
 
 /**
  * A primary authentication provider that uses the CentralAuth password.

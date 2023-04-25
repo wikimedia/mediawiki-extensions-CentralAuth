@@ -6,6 +6,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\CentralId\CentralIdLookupFactory;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Setup database tests for centralauth

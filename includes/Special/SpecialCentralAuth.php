@@ -17,6 +17,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use NamespaceInfo;
 use ReadOnlyMode;
 use Sanitizer;
@@ -24,7 +25,6 @@ use SpecialPage;
 use Title;
 use User;
 use UserGroupMembership;
-use WikiMap;
 use WikiReference;
 use Xml;
 

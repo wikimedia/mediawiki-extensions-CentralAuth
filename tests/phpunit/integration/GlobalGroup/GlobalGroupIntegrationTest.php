@@ -20,6 +20,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\TestingAccessWrapper;
 
 /**

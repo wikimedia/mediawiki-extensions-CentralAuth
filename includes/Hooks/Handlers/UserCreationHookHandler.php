@@ -24,8 +24,8 @@ use MediaWiki\Auth\Hook\LocalUserCreatedHook;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\WikiMap\WikiMap;
 use User;
-use WikiMap;
 
 class UserCreationHookHandler implements
 	LocalUserCreatedHook

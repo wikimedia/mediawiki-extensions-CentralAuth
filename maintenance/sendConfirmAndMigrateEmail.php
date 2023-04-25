@@ -9,6 +9,7 @@ require_once "$IP/maintenance/Maintenance.php";
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\EmailableUser;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * This maintenance script is used to resend confirmation emails to users with

@@ -8,7 +8,7 @@ use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\IDatabase;

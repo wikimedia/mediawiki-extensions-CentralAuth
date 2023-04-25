@@ -24,8 +24,8 @@ use Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Hook\ContentSecurityPolicyDefaultSourceHook;
 use MediaWiki\Hook\ContentSecurityPolicyScriptSourceHook;
+use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
-use WikiMap;
 
 class ContentSecurityPolicyHookHandler implements
 	ContentSecurityPolicyDefaultSourceHook,

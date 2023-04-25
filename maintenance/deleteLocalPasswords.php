@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

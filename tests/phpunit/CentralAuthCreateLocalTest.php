@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * @author Taavi "Majavah" Väänänen

@@ -25,7 +25,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\RenameUser\Hook\RenameUserCompleteHook;
 use MediaWiki\RenameUser\Hook\RenameUserPreRenameHook;
 use MediaWiki\RenameUser\Hook\RenameUserWarningHook;
-use WikiMap;
+use MediaWiki\WikiMap\WikiMap;
 
 class GlobalRenameHookHandler implements
 	RenameUserCompleteHook,

@@ -25,9 +25,9 @@ use DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
+use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
 use User;
-use WikiMap;
 use Xml;
 
 class UserLogoutHookHandler implements

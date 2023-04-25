@@ -6,9 +6,9 @@ use Exception;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\RenameUser\RenameuserSQL;
+use MediaWiki\WikiMap\WikiMap;
 use Title;
 use User;
-use WikiMap;
 
 /**
  * Job class to rename a user locally

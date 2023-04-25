@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Basic tests for CentralAuthHooks

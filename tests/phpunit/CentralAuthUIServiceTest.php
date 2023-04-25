@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Title\TitleFactory;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\CentralAuthUIService

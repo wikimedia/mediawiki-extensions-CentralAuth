@@ -30,8 +30,8 @@ use CentralAuthSessionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionManager;
+use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
-use WikiMap;
 
 /**
  * Module to fetch the centralauthtoken for cross-wiki queries.

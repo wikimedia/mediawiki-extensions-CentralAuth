@@ -29,12 +29,12 @@ use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\TitleFactory;
+use MediaWiki\WikiMap\WikiMap;
 use Profiler;
 use Psr\Log\LoggerInterface;
 use RequestContext;
 use StatusValue;
 use User;
-use WikiMap;
 use Wikimedia\WaitConditionLoop;
 
 /**

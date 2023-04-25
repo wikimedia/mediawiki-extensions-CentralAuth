@@ -11,10 +11,10 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 use Title;
 use UserGroupMembership;
-use WikiMap;
 
 class GlobalUsersPager extends AlphabeticPager {
 	/** @var string|false */

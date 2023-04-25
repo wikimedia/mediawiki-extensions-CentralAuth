@@ -29,13 +29,13 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use Message;
 use PermissionsError;
 use Sanitizer;
 use SpecialPage;
 use Status;
 use User;
-use WikiMap;
 
 /**
  * Request an account rename.

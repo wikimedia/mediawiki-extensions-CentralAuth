@@ -19,6 +19,7 @@ use MediaWiki\Session\Session;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserOptionsManager;
+use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
@@ -29,7 +30,6 @@ use Title;
 use UnlistedSpecialPage;
 use User;
 use WebRequest;
-use WikiMap;
 use Wikimedia\ScopedCallback;
 use Xml;
 

@@ -29,10 +29,10 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use SpecialPage;
 use stdClass;
 use TablePager;
-use WikiMap;
 
 /**
  * Paginated table of search results.
