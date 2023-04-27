@@ -1,16 +1,21 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Nokeoo"
 		]
 	},
 	"apierror-centralauth-badusername": "Vartotojo vardas „$1“ nėra tinkamas naudoti šioje viki",
 	"apierror-centralauth-editconflict": "Aptiktas keitimo konfliktas, atšaukiama.",
 	"apierror-centralauth-renameinprogress": "Vartotojas yra pervadinamas, negalima naudoti.",
+	"apihelp-createlocalaccount-param-reason": "Vietinės paskyros sukūrimo priežastis.",
+	"apihelp-createlocalaccount-param-username": "Naudotojas, kuriam reikia sukurti vietinę paskyrą.",
+	"apihelp-createlocalaccount-summary": "Priverstinai sukurti vietinę paskyrą",
 	"apihelp-deleteglobalaccount-description": "Trinti visuotinį vartotoją.",
 	"apihelp-deleteglobalaccount-example-1": "Ištrinti visuotinę [[User:Example]] paskyrą",
 	"apihelp-deleteglobalaccount-param-reason": "Priežastis dėl vartotojo ištrynimo.",
 	"apihelp-deleteglobalaccount-param-user": "Vartotojas trynimui.",
+	"apihelp-deleteglobalaccount-summary": "Trinti visuotinį naudotoją.",
 	"apihelp-globaluserrights-description": "Pridėti/pašalinti vartotoją į/iš visuotinių grupių.",
 	"apihelp-globaluserrights-param-add": "Pridėti vartotoją į šias visuotines grupes.",
 	"apihelp-globaluserrights-param-expiry": "Šis parametras šiuo metu nenaudojamas.",
@@ -19,6 +24,7 @@
 	"apihelp-globaluserrights-param-tags": "Šis parametras šiuo metu nenaudojamas.",
 	"apihelp-globaluserrights-param-user": "Visuotinis vartotojo vardas.",
 	"apihelp-globaluserrights-param-userid": "Visuotinis vartotojo ID.",
+	"apihelp-globaluserrights-summary": "Pridėti / pašalinti naudotoją prie / iš pasaulinių grupių.",
 	"apihelp-query+globalallusers-example-1": "Nurodyti visuotinius vartotojus",
 	"apihelp-query+globalallusers-param-dir": "Rūšiavimo kryptis.",
 	"apihelp-query+globalallusers-param-excludegroup": "Išskirti vartotojus, esančius pateiktuose visuotinėse grupėse.",
@@ -29,11 +35,17 @@
 	"apihelp-query+globalgroups-example-1": "Nurodyti visuotines grupes",
 	"apihelp-query+globalgroups-example-2": "Rodyti visuotines grupes ir jų suteikiamas teises",
 	"apihelp-query+globalgroups-param-prop": "Kokią informaciją įtraukti.",
+	"apihelp-query+globalrenamestatus-description": "Rodyti informaciją apie visuotinius pervadinimus, kurie šiuo metu vyksta.",
+	"apihelp-query+globalrenamestatus-example-1": "Gauna informaciją apie dabartinį visuotinį naudotoją",
+	"apihelp-query+globalrenamestatus-param-user": "Naudotojas, kuris pervardijamas. Gali būti senas arba naujas vardas.",
+	"apihelp-query+globalrenamestatus-summary": "Rodyti informaciją apie vykstančius visuotinius pervadinimus.",
 	"apihelp-query+globaluserinfo-description": "Rodyti informaciją apie visuotinį vartotoją.",
 	"apihelp-query+globaluserinfo-example-1": "Gauti informaciją apie dabartinį visuotinį vartotoją",
 	"apihelp-query+globaluserinfo-example-2": "Gauti informaciją apie visuotinį vartotoją [[User:Example|Pavyzdys]]",
+	"apihelp-query+globaluserinfo-param-id": "Visuotinio naudotojo ID, apie kurį informacija gautina. Jei <var>$1user</var> ir <var>$1id</var> yra praleisti, naudojamas dabartinis naudotojas.",
 	"apihelp-query+globaluserinfo-param-prop": "Kokias savybes gauti:\n;groups:Visuotinių grupių, kurioms vartotojas priklauso sąrašas.\n;rights:Vartotojo turimų visuotinių teisių sąrašas.\n;merged:Sujungtų paskyrų sąrašas.\n;unattached:Atskirtų paskyrų sąrašas.\n;editcount:Vartotojo visuotinis pakeitimų skaičius.",
-	"apihelp-query+globaluserinfo-param-user": "Vartotojas, apie kurį gauti informacija. Įprastai dabartinis vartotojas.",
+	"apihelp-query+globaluserinfo-param-user": "Naudotojas, apie kurį gauti informaciją. Jei <var>$1user</var> ir <var>$1id</var> yra praleisti, naudojamas dabartinis naudotojas.",
+	"apihelp-query+globaluserinfo-summary": "Rodyti informaciją apie visuotinį naudotoją.",
 	"apihelp-query+wikisets-example-1": "Nurodo viki rinkinius",
 	"apihelp-query+wikisets-example-2": "Rodo viki rinkinius su tipais",
 	"apihelp-query+wikisets-param-limit": "Kiek viki rinkinių gražinti.",
@@ -42,5 +54,6 @@
 	"apihelp-setglobalaccountstatus-example-1": "Užrakinti visuotinę paskyrą [[User:Example]] su priežastimi „Spam“",
 	"apihelp-setglobalaccountstatus-param-locked": "Pakeisti ar vartotojas yra užrakintas ar ne.",
 	"apihelp-setglobalaccountstatus-param-reason": "Vartotojo būsenos keitimo priežastis.",
-	"apihelp-setglobalaccountstatus-param-user": "Kuriam vartotojui pakeisti būseną"
+	"apihelp-setglobalaccountstatus-param-user": "Kuriam vartotojui pakeisti būseną",
+	"apihelp-setglobalaccountstatus-summary": "Nustatyti visuotinio naudotojo būseną."
 }

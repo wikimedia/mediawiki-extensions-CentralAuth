@@ -384,7 +384,7 @@
 	"centralauth-rename-progress-list-header": "Следующие глобальные переименования в настоящее время находятся в процессе:",
 	"centralauth-rename-progress-logs-fieldset": "Записи журнала",
 	"centralauth-rename-progress-username": "Имя пользователя",
-	"centralauth-rename-queued": "Задачи для переименования $1 в $2 были поставлены в очередь на $3.\n\nСостояние очереди можно посмотреть на [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Задачи для переименования $1 в $2 были поставлены в очередь.\n\nСостояние очереди можно посмотреть на [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Локальный вики-проект",
 	"centralauth-rename-table-status": "Статус",
 	"centralauth-rename-table-status-done": "Готово",
