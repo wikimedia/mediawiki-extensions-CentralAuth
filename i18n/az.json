@@ -15,6 +15,16 @@
 			"Serkanland"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-groups": "İstifadəçinin daxil olduğu qlobal qruplar",
+	"action-centralauth-lock": "qlobal hesabları kilidləmək və ya açmaq",
+	"action-centralauth-merge": "hesablarını birləşdirmək",
+	"action-centralauth-rename": "qlobal hesabların adını dəyişmək",
+	"action-centralauth-unmerge": "qlobal hesabları birləşdirilməsini ləğv etmək",
+	"action-globalgroupmembership": "qlobal qruplara üzvlüyü redaktə etmək",
+	"action-globalgrouppermissions": "qlobal qrupları idarə etmək",
+	"centralauth": "Qlobal hesab meneceri",
+	"centralauth-abortlogin-renamed": "Hesabınızın adı \"$1\" olaraq dəyişdirildi. Zəhmət olmasa bundan sonra bu istifadəçi adını istifadə edin.",
+	"centralauth-account-exists": "Hesab yaratmaq mümkün deyil: Tələb olunan istifadəçi adı artıq başqa vikidəki istifadəçi tərəfindən götürülüb.",
 	"centralauth-admin-blocked-reason": "Səbəb: $1",
 	"centralauth-admin-blocked2": "$2 $3 tarixinə qədər bloklanıb.",
 	"centralauth-admin-blocked2-indef": "Qeyri-müəyyən müddətə bloklanıb.",
