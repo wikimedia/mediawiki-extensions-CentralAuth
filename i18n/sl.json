@@ -136,7 +136,7 @@
 	"centralauth-complete": "Poenotenje prijave opravljeno!",
 	"centralauth-complete-text": "Zdaj se lahko prijavite v kateri koli vikiprojekt {{int:Centralauth-groupname}} brez ustvaritve novega računa.",
 	"centralauth-completelogin-back": "Vrnitev na prejšnjo stran.",
-	"centralauth-contribs-link": "CentralAuth",
+	"centralauth-contribs-link": "globalni računi",
 	"centralauth-contribs-locked": "Ta račun je globalno zaklenjen. Za več informacij glejte [[Special:CentralAuth/$1|globalne podatke o računu]].",
 	"centralauth-contribs-locked-log": "Ta uporabniški račun je globalno zaklenjen.\nZa sklicevanje je naveden zadnji dnevniški zapis zaklepanja:",
 	"centralauth-createlocal-already-exists": "Za navedeni globalni račun že obstaja lokalni račun.",
