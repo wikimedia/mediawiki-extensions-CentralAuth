@@ -93,7 +93,7 @@
 	"centralauth-complete": "Rampung manunggalaké log mlebu!",
 	"centralauth-complete-text": "Saiki panjenengan bisa mlebu log ing situs wiki {{int:Centralauth-groupname}} endi waé tanpa kudu gawé akun anyar.",
 	"centralauth-completelogin-back": "Bali menyang kaca sadhurunge",
-	"centralauth-contribs-link": "akun",
+	"centralauth-contribs-link": "akun global",
 	"centralauth-days-ago": "$1 dina kapungkur",
 	"centralauth-desc": "[[Special:MergeAccount|Nggabungaké akun]] lintas wiki {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Panggabungan akun saiki iki namung arupa modus demo/debugging, dadi operasi panggabungan kang sajati ora dilakokaké. Nuwun sèwu!",

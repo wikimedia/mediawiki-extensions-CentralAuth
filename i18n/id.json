@@ -149,7 +149,7 @@
 	"centralauth-complete": "Penggabungan log masuk global berhasil!",
 	"centralauth-complete-text": "Kini Anda dapat masuk log ke semua situs wiki {{int:Centralauth-groupname}} mana pun tanpa membuat akun baru.",
 	"centralauth-completelogin-back": "Kembali ke halaman sebelumnya.",
-	"centralauth-contribs-link": "akun",
+	"centralauth-contribs-link": "akun global",
 	"centralauth-contribs-locked": "Akun ini dikunci secara global.\nLihat [[Special:CentralAuth/$1|rincian akun global]] untuk informasi lebih lanjut.",
 	"centralauth-contribs-locked-log": "Pengguna ini sedang dikunci secara global. Log penguncian terakhir ditampilkan di bawah untuk referensi:",
 	"centralauth-createlocal-already-exists": "Sudah ada akun lokal untuk akun global yang diberikan.",
