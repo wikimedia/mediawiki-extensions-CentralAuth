@@ -8,7 +8,7 @@ use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\User\UserIdentityLookup;
-use Mediawiki\User\UserNameUtils;
+use MediaWiki\User\UserNameUtils;
 
 /**
  * CentralAuth cookie-based sessions.
