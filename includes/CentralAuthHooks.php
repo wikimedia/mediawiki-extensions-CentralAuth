@@ -22,7 +22,6 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use AutoLoader;
 use CentralAuthSessionProvider;
-use ContentSecurityPolicy;
 use ExtensionRegistry;
 use Html;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
@@ -42,6 +41,7 @@ use MediaWiki\Hook\TestCanonicalRedirectHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\Hook\UserGetRightsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Request\ContentSecurityPolicy;
 use MediaWiki\ResourceLoader as RL;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderForeignApiModulesHook;
 use MediaWiki\Session\CookieSessionProvider;
