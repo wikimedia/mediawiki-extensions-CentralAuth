@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Delim"
+		]
+	},
+	"centralauth-admin-blocklog": "막기 일지",
+	"centralauth-foreign-contributions": "$2에서 {{PLURAL:$1|기여}} $1개",
+	"centralauth-foreign-link": "$2의 $1 사용자",
+	"centralauth-merge-method-login": "가입으로 만들어짐"
+}
