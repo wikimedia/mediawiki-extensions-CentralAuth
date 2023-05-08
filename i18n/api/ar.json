@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Abanima",
+			"Alshamiri1",
 			"Meno25",
 			"ديفيد"
 		]
@@ -30,7 +31,7 @@
 	"apihelp-globaluserrights-example-1": "أضف المستخدم FooBot إلى المجموعة العالمية \"بوت\"، وأزل من المجموعات العالمية \"إداري\" و\"بيروقراط\"",
 	"apihelp-globaluserrights-example-2": "أضف المستخدم العالمي بمعرف 123 إلى المجموعة العالمية \"بوت\"، وأزل من المجموعات العالمية \"إداري\" و\"بيروقراط\"",
 	"apihelp-globaluserrights-param-add": "أضف المستخدم إلى هذه المجموعات العالمية.",
-	"apihelp-globaluserrights-param-expiry": "هذا الوسيط غير مستخدم حاليا.",
+	"apihelp-globaluserrights-param-expiry": "الطوابع الزمنية لانتهاء الصلاحية، قد تكون نسبية (على سبيل المثال <kbd>5 months</kbd> or <kbd>2 weeks</kbd>) أو مطلقة (على سبيل المثال <kbd>2014-09-18T12:34:56Z</kbd>). إذا تم تعيين طابع زمني واحد فقط، فسيتم استخدامه لكافة المجموعات التي تم تمريرها إلى الوسيط <var>$1add</var>، استخدم <kbd>infinite</kbd> أو <kbd>indefinite</kbd> أو <kbd>infinity</kbd> أو <kbd>never</kbd> لمجموعة مستخدمين لا تنتهي صلاحيتها أبدا.",
 	"apihelp-globaluserrights-param-reason": "سبب التغيير.",
 	"apihelp-globaluserrights-param-remove": "أزل المستخدم من هذه المجموعات العالمية.",
 	"apihelp-globaluserrights-param-tags": "هذا الوسيط غير مستخدم حاليا.",
