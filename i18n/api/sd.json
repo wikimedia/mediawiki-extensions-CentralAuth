@@ -4,5 +4,6 @@
 			"Mehtab ahmed"
 		]
 	},
-	"apierror-centralauth-badusername": "واپرائيندڙنانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي"
+	"apierror-centralauth-badusername": "واپرائيندڙنانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي",
+	"apihelp-query+globalrenamestatus-summary": "ھن وقت ھلندڙ عالمي نانءُمٽائن بابت معلومات ڏيکاريو."
 }
