@@ -166,7 +166,7 @@
 	"centralauth-complete": "Samenvoegen gebruikers afgerond!",
 	"centralauth-complete-text": "U kunt nu aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuwe account aan te maken.",
 	"centralauth-completelogin-back": "Terug naar de vorige pagina.",
-	"centralauth-contribs-link": "CentralAuth",
+	"centralauth-contribs-link": "globale accounts",
 	"centralauth-contribs-locked": "Dit account is globaal vergrendeld.\nZie de [[Special:CentralAuth/$1|globale accountgegevens]] voor meer informatie.",
 	"centralauth-contribs-locked-log": "Deze gebruiker is op het moment globaal geblokkeerd.\nDe laatste regel uit het locklogboek wordt hieronder ter referentie weergegeven:",
 	"centralauth-createlocal-already-exists": "Er is al een lokaal account voor het opgegeven globale account.",
