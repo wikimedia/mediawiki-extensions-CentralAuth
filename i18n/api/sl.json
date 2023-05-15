@@ -65,7 +65,7 @@
 	"apihelp-query+wikisets-example-1": "Izpiši skupine vikijev",
 	"apihelp-query+wikisets-example-2": "Prikaži skupine vikijev z vrsto",
 	"apihelp-query+wikisets-param-from": "Začetno ime skupine vikijev.",
-	"apihelp-query+wikisets-param-limit": "Koliko skupin vikijev naj se vrne.",
+	"apihelp-query+wikisets-param-limit": "Koliko skupin vikijev naj bo vrnjenih.",
 	"apihelp-query+wikisets-param-orderbyname": "Razvrsti zadetke po imenu.",
 	"apihelp-query+wikisets-param-prop": "Kateri podatki naj bodo vključeni.\n;type:Na podlagi privolitve (vključuje samo določene vikije) ali na podlagi izključitve (vključuje vse vikije razen navedenih).\n;wikiincluded: Vikiji, ki so vključeni v ta nabor vikijev.\n;wikinoincluded: Vikiji, ki niso vključeni v ta nabor vikijev.",
 	"apihelp-query+wikisets-summary": "Oštevilči vse skupine vikijev.",
