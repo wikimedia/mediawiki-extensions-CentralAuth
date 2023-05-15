@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Adriendelucca",
 			"Fohanno",
 			"Fulup",
 			"Gwendal",
@@ -112,6 +113,7 @@
 	"centralauth-complete": "Kendeuzet eo ar c'hontoù !",
 	"centralauth-complete-text": "Gallout a rit bremañ kevreañ ouzh ne vern pe raktres eus {{int:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.",
 	"centralauth-completelogin-back": "Distreiñ d'ar bajenn a-raok.",
+	"centralauth-contribs-link": "kontoù hollek",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|devezh|devezh}} zo",
 	"centralauth-desc": "[[Special:MergeAccount|Kendeuziñ a ra ar c'hontoù implijer]] war wikioù {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Emañ ar c'hendeuziñ kontoù er mod arnodiñ / dizreinañ evit poent, setu n'haller ket c'hoazh kendeuziñ kontoù da vat. Hon digarezit !",

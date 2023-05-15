@@ -129,6 +129,7 @@
 	"centralauth-complete": "Ühendkonto on loodud.",
 	"centralauth-complete-text": "Saad nüüd uut kontot loomata sisse logida kõigis vikides, mida haldab {{int:Centralauth-groupname}}.",
 	"centralauth-completelogin-back": "Naase eelmisele leheküljele.",
+	"centralauth-contribs-link": "globaalne konto",
 	"centralauth-contribs-locked": "See konto on globaalselt lukustatud.\nVaata [[Special:CentralAuth/$1|globaalse konto üksikasju]].",
 	"centralauth-contribs-locked-log": "See konto on globaalselt lukustatud.\nAllpool on toodud lukustamislogi viimane sissekanne:",
 	"centralauth-createlocal-already-exists": "Määratud globaalsel kontol juba on kohalik konto.",
