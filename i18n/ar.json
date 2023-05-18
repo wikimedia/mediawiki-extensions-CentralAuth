@@ -376,7 +376,7 @@
 	"centralauth-rename-progress-list-header": "عمليات إعادة التسمية العالمية التالية قيد التنفيذ:",
 	"centralauth-rename-progress-logs-fieldset": "ادخالات السجل",
 	"centralauth-rename-progress-username": "اسم المستخدم",
-	"centralauth-rename-queued": "المهام الضرورية لإعادة تسمية $1 إلى $2 مصفوفة في $3.\n\nتابع التقدم في معالجة الطلب في صفحة [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "تم وضع المهام المراد إعادة تسميتها $1 إلى $2 في قائمة الانتظار.! N !! N! اعرض التقدم في [[Special: GlobalRenameProgress / $2 ]].",
 	"centralauth-rename-same-name": "المستخدم لديه بالفعل اسم المستخدم المطلوب.",
 	"centralauth-rename-table-domain": "ويكي محلي",
 	"centralauth-rename-table-status": "الحالة",
