@@ -89,7 +89,7 @@ class GlobalGroupLookupTest extends CentralAuthUsingDatabaseTestCase {
 		$this->assertArrayEquals( [], $nonexistentGroupRights );
 	}
 
-	public function provideFlags(): array {
+	public static function provideFlags(): array {
 		return [
 			'READ_NORMAL' => [ GlobalGroupLookup::READ_NORMAL, DB_REPLICA ],
 			'READ_LATEST' => [ GlobalGroupLookup::READ_LATEST, DB_PRIMARY ],

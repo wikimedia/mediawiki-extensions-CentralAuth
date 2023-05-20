@@ -48,7 +48,7 @@ class LocalRenameUserJobTest extends PHPUnit\Framework\TestCase {
 			$expect, $escaped, 'Replacement is escaped' );
 	}
 
-	public function provideEscapeReplacement() {
+	public static function provideEscapeReplacement() {
 		return [
 			'$n' => [ 'Drytime%$1600', 'Drytime%\\$1600' ],
 			'${n}' => [ 'That${1}', 'That\\${1}' ],

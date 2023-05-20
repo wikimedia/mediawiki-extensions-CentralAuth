@@ -51,7 +51,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedUsername, $provider->suggestLoginUsername( $request ) );
 	}
 
-	public function provideSuggestLoginUsername() {
+	public static function provideSuggestLoginUsername() {
 		return [
 			[ [ 'Foo' => 'bar' ], null ],
 			[ [ 'User' => 'Foo' ], 'Foo' ],

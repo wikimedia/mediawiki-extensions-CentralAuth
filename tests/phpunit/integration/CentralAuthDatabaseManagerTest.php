@@ -221,7 +221,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $database, $manager->getCentralDB( $index ) );
 	}
 
-	public function provideValidIndexes(): Generator {
+	public static function provideValidIndexes(): Generator {
 		yield 'DB_PRIMARY' => [ DB_PRIMARY ];
 		yield 'DB_REPLICA' => [ DB_REPLICA ];
 	}

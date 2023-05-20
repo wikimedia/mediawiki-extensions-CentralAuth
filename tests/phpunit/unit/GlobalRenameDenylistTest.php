@@ -29,7 +29,7 @@ use Psr\Log\NullLogger;
  */
 class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 
-	public function provideCheckUser() {
+	public static function provideCheckUser() {
 		// $pageText, $userName, $expected
 		yield 'Good user does not match bad' => [ 'BadUser', 'GoodUser', true ];
 		yield 'Bad user matches bad' => [ 'BadUser', 'BadUser', false ];

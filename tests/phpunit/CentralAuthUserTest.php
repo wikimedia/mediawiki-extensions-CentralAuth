@@ -63,7 +63,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $ca->getHomeWiki() );
 	}
 
-	public function provideGetHomeWiki() {
+	public static function provideGetHomeWiki() {
 		return [
 			[
 				[],
@@ -244,7 +244,7 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $ca->getLocalGroups() );
 	}
 
-	public function provideOnPasswordPoliciesForUser() {
+	public static function provideOnPasswordPoliciesForUser() {
 		return [
 			[
 				[

@@ -222,7 +222,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 		$this->assertSame( $user->getId(), $result->getUserInfo()->getId() );
 	}
 
-	public function provideBadUsers() {
+	public static function provideBadUsers() {
 		yield 'bad user name' => [ '_', [], 'apierror-centralauth-badtoken', 'badtoken' ];
 
 		yield 'rename in progress' => [

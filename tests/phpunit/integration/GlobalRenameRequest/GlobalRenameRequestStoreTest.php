@@ -152,7 +152,7 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 		$this->assertEquals( $request->getReason(), $retrieved->getReason() );
 	}
 
-	public function provideWiki(): array {
+	public static function provideWiki(): array {
 		return [
 			'null' => [ null ],
 			'set' => [ 'abcwiki' ],

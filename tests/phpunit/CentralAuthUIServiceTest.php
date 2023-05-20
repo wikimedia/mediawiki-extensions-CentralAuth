@@ -43,7 +43,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 		$service->formatHiddenLevel( $localizer, $level );
 	}
 
-	public function provideValidHiddenLevels() {
+	public static function provideValidHiddenLevels() {
 		yield 'HIDDEN_NORMALIZE_NONE' => [ CentralAuthUser::HIDDEN_LEVEL_NONE, 'no' ];
 		yield 'HIDDEN_NORMALIZE_LISTS' => [ CentralAuthUser::HIDDEN_LEVEL_LISTS, 'hidden-list' ];
 		yield 'HIDDEN_NORMALIZE_SUPPRESSED' => [ CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'hidden-oversight' ];
@@ -87,7 +87,7 @@ class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
 		$service->prettyTimespan( $localizer, $seconds );
 	}
 
-	public function providePrettyTimespan(): Generator {
+	public static function providePrettyTimespan(): Generator {
 		yield '5 seconds ago' => [ 5, 5, 'seconds' ];
 		yield '70 seconds ago' => [ 70, 70, 'seconds' ];
 		yield '119 seconds ago' => [ 119, 119, 'seconds' ];
