@@ -16,6 +16,7 @@ class GlobalUserMergeLogFormatter extends LogFormatter {
 		$params = parent::extractParameters();
 
 		return [
+			// @phan-suppress-next-line SecurityCheck-XSS
 			3 => Message::rawParam( $lang->commaList(
 				array_map(
 					[ $this, 'getCentralAuthLink' ],
