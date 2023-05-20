@@ -122,6 +122,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				$a = [
 					'wiki' => $dbname,
 					'url' => $wiki->getCanonicalServer(),
+					'id' => intval( $account['id'] ),
 					'timestamp' => wfTimestamp( TS_ISO_8601, $account['attachedTimestamp'] ),
 					'method' => $account['attachedMethod'],
 					'editcount' => intval( $account['editCount'] ),
