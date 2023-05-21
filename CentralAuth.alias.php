@@ -890,6 +890,7 @@ $specialPageAliases['uk'] = [
 /** Urdu (اردو) */
 $specialPageAliases['ur'] = [
 	'CentralAuth' => [ 'اختیار_مرکزی' ],
+	'CreateLocalAccount' => [ 'تخلیق_مقامی_کھاتہ' ],
 	'MergeAccount' => [ 'ضم_کھاتہ' ],
 	'GlobalGroupMembership' => [ 'عالمی_اختیارات_صارف', 'عالمی_گروہی_رکنیت' ],
 	'GlobalGroupPermissions' => [ 'عالمی_گروہی_اجازتیں' ],
