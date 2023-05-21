@@ -545,9 +545,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	private function showEditUserGroupsForm( $user, $groups, $groupMemberships ) {
 		$list = $membersList = $tempList = $tempMembersList = [];
 		foreach ( $groupMemberships as $ugm ) {
-			$linkG = UserGroupMembership::getLink( $ugm, $this->getContext(), 'html' );
-			$linkM = UserGroupMembership::getLink( $ugm, $this->getContext(), 'html',
-				$user->getName() );
+			$linkG = UserGroupMembership::getLinkHTML( $ugm, $this->getContext() );
+			$linkM = UserGroupMembership::getLinkHTML( $ugm, $this->getContext(), $user->getName() );
 			if ( $ugm->getExpiry() ) {
 				$tempList[] = $linkG;
 				$tempMembersList[] = $linkM;
@@ -559,7 +558,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 
 		$language = $this->getLanguage();
-		// @phan-suppress-next-line SecurityCheck-XSS
 		$displayedList = $this->msg( 'userrights-groupsmember-type' )
 			->rawParams(
 				$language->commaList( array_merge( $tempList, $list ) ),

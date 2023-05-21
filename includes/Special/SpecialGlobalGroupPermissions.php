@@ -179,7 +179,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			// Column with group name, links and local disabled status
 			$table .= Html::openElement( 'td' );
 			$table .= $this->getOutput()->parseInlineAsInterface(
-				UserGroupMembership::getLink( $groupName, $this->getContext(), 'wiki' ) ) . '<br />';
+				UserGroupMembership::getLinkWiki( $groupName, $this->getContext() ) ) . '<br />';
 
 			$linkRenderer = $this->getLinkRenderer();
 			$links = [

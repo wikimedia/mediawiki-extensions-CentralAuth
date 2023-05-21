@@ -297,8 +297,7 @@ class GlobalUsersPager extends AlphabeticPager {
 				$expiry !== 'null' ? $expiry : null
 			);
 
-			$wikitextLink = UserGroupMembership::getLink(
-				$ugm, $this->getContext(), 'wiki', $username );
+			$wikitextLink = UserGroupMembership::getLinkWiki( $ugm, $this->getContext(), $username );
 
 			if ( !in_array( $group, $this->localWikisets ) ) {
 				// Mark if the group is not applied on this wiki
