@@ -76,6 +76,7 @@
 	"centralauth-attach-title": "Hesabı təsdiqlə",
 	"centralauth-centralautologin-logged-in": "Siz $1 olaraq mərkəzi giriş etmisiniz. İstifadəçi nizamlamalarınızı tətbiq etmək üçün səhifəni yenidən yükləyin.",
 	"centralauth-complete": "Hesabların birləşdirilməsi tamamlandı!",
+	"centralauth-contribs-link": "qlobal hesablar",
 	"centralauth-contribs-locked": "Bu istifadəçi qlobal bloklanmışdır.\nDaha ətraflı məlumat üçün [[Special:CentralAuth/$1|qlobal istifadəçi hesabına]] baxın.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|gün|gün}} əvvəl",
 	"centralauth-editgroup-display": "Qrupun lokallaşdırılmış adı:",
