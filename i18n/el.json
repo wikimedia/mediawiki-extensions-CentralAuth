@@ -25,7 +25,8 @@
 			"ZaDiak",
 			"Αντιγόνη",
 			"Απεργός",
-			"Περίεργος"
+			"Περίεργος",
+			"Jimkats"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Παγκόσμιος αριθμός επεξεργασιών του χρήστη",
@@ -126,7 +127,7 @@
 	"centralauth-centralautologin-badwiki": "Το wiki \" $1 \" δεν είναι έγκυρο για κεντρική σύνδεση",
 	"centralauth-centralautologin-logged-in": "Τώρα είστε κεντρικά συνδεδεμένοι ως $1. Ανανεώστε την σελίδα για να εφαρμοστούν οι ρυθμίσεις χρήστη.",
 	"centralauth-centralautologin-logged-in-nouser": "Τώρα είστε συνδεδεμένοι κεντρικά. Ανανεώστε την σελίδα για να εφαρμόσετε τις ρυθμίσεις χρήστη σας.",
-	"centralauth-centralautologin-lostsession": "Χάθηκαν τα δεδομένα της περιόδου σύνδεσης",
+	"centralauth-centralautologin-lostsession": "Χάθηκαν τα δεδομένα της περιόδου σύνδεσης.",
 	"centralauth-centralautologin-notposted": "Η φόρμα κεντρικής σύνδεσης πρέπει να υποβληθεί χρησιμοποιώντας τη μέθοδο POST.",
 	"centralauth-complete": "Η ενοποίηση σύνδεσης ολοκληρώθηκε!",
 	"centralauth-complete-text": "Μπορείτε πλέον να συνδεθείτε σε οποιοδήποτε ιστότοπο wiki του {{int:Centralauth-groupname}} χωρίς να δημιουργήσετε νέο λογαριασμό.",
@@ -293,7 +294,7 @@
 	"centralauth-prefs-unattached": "Δεν έχει ενοποιηθεί πλήρως",
 	"centralauth-prefs-view": "Προβολή πληροφοριών του καθολικού λογαριασμού σας",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Διαβάστε περισσότερα σχετικά με την '''ενιαία πρόσβαση''']]...''",
-	"centralauth-readonly": "Κλειδωμένη βάση δεδομένων του CentralAuth",
+	"centralauth-readonly": "Κλειδωμένη βάση δεδομένων του CentralAuth.",
 	"centralauth-rename-abortlogin": "Ο λογαριασμός σας επί του παρόντος μετονομάζεται ή συγχωνεύεται. [[Special:GlobalRenameProgress/$1|Δείτε την κατάσταση]].",
 	"centralauth-rename-conflict-hidden": "όνομα χρήστη κρυμμένο",
 	"centralauth-rename-desc": "Επιτρέπει την μετονομασία καθολικών λογαριασμών",
