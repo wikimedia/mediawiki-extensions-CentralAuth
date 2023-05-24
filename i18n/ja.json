@@ -44,7 +44,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
-	"action-centralauth-createlocal": "強制的にローカルアカウントを作成",
+	"action-centralauth-createlocal": "強制的なローカルアカウントの作成",
 	"action-centralauth-lock": "グローバルアカウントのロックまたはロック解除",
 	"action-centralauth-merge": "自分のアカウントの統合",
 	"action-centralauth-suppress": "グローバルアカウントの秘匿または非表示",
@@ -509,7 +509,7 @@
 	"logentry-newusers-forcecreatelocal": "$1 が $3 のローカルアカウントを強制的に{{GENDER:$2|作成しました}}",
 	"mergeaccount": "統一ログイン状態",
 	"multilock": "複数のグローバルアカウントのロック",
-	"right-centralauth-createlocal": "グローバルアカウントに紐付けられたローカルアカウントを強制的に作成する",
+	"right-centralauth-createlocal": "グローバルアカウントに紐付けられたローカルアカウントを強制的に作成",
 	"right-centralauth-lock": "グローバルアカウントをロックまたはロック解除",
 	"right-centralauth-merge": "自身のアカウントを統合",
 	"right-centralauth-suppress": "グローバルアカウントを秘匿または非表示",
