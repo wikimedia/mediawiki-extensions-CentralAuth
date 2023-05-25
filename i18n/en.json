@@ -394,7 +394,7 @@
 	"centralauth-rightslog-set-optout": "opt-out based",
 	"centralauth-ro": "Global account information",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second|seconds}} ago",
-	"centralauth-state-mismatch": "Error: An edit conflict for this user was detected. Please verify your change and try again.",
+	"centralauth-state-mismatch": "Error: The state of this user account has changed in the mean time. Please verify the current state and try again, if needed.",
 	"centralauth-token-mismatch": "Sorry, we could not process your form submission due to a loss of session data.",
 	"centralauth-warning-notattached": "The local account is not attached to a global one.",
 	"centralauth-warning-notloggedin": "You are not currently logged in.",
