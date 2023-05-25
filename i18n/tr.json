@@ -165,7 +165,7 @@
 	"centralauth-complete": "Bütün hesaplar birleştirilmiş!",
 	"centralauth-complete-text": "Artık herhangi bir {{int:Centralauth-groupname}} viki sitelerine yeni bir hesap açmaksızın oturum açabilirsiniz.",
 	"centralauth-completelogin-back": "Önceki sayfaya geri dön.",
-	"centralauth-contribs-link": "CentralAuth",
+	"centralauth-contribs-link": "küresel hesaplar",
 	"centralauth-contribs-locked": "Bu hesap küresel olarak kilitlendi. \nDaha fazla bilgi için [[Special:CentralAuth/$1|küresel hesap ayrıntılarına]] bakınız.",
 	"centralauth-contribs-locked-log": "Bu hesap küresel olarak kilitlendi.\nEn son kilit günlüğü girişi referans olarak aşağıda verilmiştir:",
 	"centralauth-createlocal-already-exists": "Belirtilen küresel hesap için zaten yerel bir hesap var.",
