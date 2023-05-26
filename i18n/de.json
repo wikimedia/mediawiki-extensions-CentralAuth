@@ -383,7 +383,7 @@
 	"centralauth-rightslog-set-optout": "opt-out",
 	"centralauth-ro": "Globale Benutzerkonteninformationen",
 	"centralauth-seconds-ago": "Vor $1 {{PLURAL:$1|Sekunde|Sekunden}}",
-	"centralauth-state-mismatch": "Fehler: Es wurde ein Bearbeitungskonflikt für diesen Benutzer entdeckt. Bitte überprüfe deine Änderungen und versuche es erneut.",
+	"centralauth-state-mismatch": "Fehler: Der Status dieses Benutzerkontos hat sich inzwischen geändert. Bitte überprüfe den aktuellen Status und versuche es bei Bedarf erneut.",
 	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.",
 	"centralauth-warning-notattached": "Das lokale Benutzerkonto ist mit keinem globalen Konto verbunden.",
 	"centralauth-warning-notloggedin": "Du bist derzeit nicht angemeldet.",
