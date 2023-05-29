@@ -43,7 +43,7 @@
 	"centralauth-admin-delete-title": "Dileu'r cyfrif",
 	"centralauth-admin-group-temporary": "$1 ''(dros dro)''",
 	"centralauth-admin-hidden-list": "o'r golwg ar restrau cyhoeddus",
-	"centralauth-admin-hidden-oversight": "atalwyd",
+	"centralauth-admin-hidden-oversight": "gorchuddiwyd",
 	"centralauth-admin-info-attached": "Nifer o gyfrifon a atodir:",
 	"centralauth-admin-info-editcount": "Cyfanswm y golygiadau:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1||Grŵp|Grwpiau}} cyd-wici:",
