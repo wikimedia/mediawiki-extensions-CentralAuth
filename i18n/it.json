@@ -376,7 +376,7 @@
 	"centralauth-rightslog-set-optout": "opt-out",
 	"centralauth-ro": "Informazioni sull'utenza globale",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|secondi}} fa",
-	"centralauth-state-mismatch": "Errore: è stato rilevato un conflitto di modifica per questo utente. Verifica la tua modifica e prova di nuovo.",
+	"centralauth-state-mismatch": "Errore: lo stato di questo utente è cambiato nel frattempo. Verifica lo stato attuale e riprova, se necessario.",
 	"centralauth-token-mismatch": "Spiacente, non possiamo processare la tua sottoscrizione del form per una perdita dei dati di sessione.",
 	"centralauth-warning-notattached": "L'utenza locale non è collegata ad una globale.",
 	"centralauth-warning-notloggedin": "Attualmente non sei connesso.",

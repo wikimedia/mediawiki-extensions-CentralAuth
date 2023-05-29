@@ -376,7 +376,7 @@
 	"centralauth-rightslog-set-optout": "utmeldingsbasert",
 	"centralauth-ro": "Global konto-informasjon",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekund|sekunder}} siden",
-	"centralauth-state-mismatch": "Feil: Det ble oppdaget en redigeringskollisjon for denne brukeren. Vær vennlig å sjekke dine endringer og prøve igjen.",
+	"centralauth-state-mismatch": "Feil: Statusen for denne brukerkontoen har endret seg i mellomtiden. Sjekk den nåværende statusen og prøv igjen om nødvendig.",
 	"centralauth-token-mismatch": "Beklager, skjemaet kunne ikke lagres på grunn av et tap av øktdata.",
 	"centralauth-warning-notattached": "Den lokale kontoen er ikke tilknyttet en global konto.",
 	"centralauth-warning-notloggedin": "Du er ikke innlogget for øyeblikket.",

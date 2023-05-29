@@ -8,7 +8,7 @@
 	"apierror-centralauth-badsession": "Можат да добијат шифра само користејќи седници на Central Auth.",
 	"apierror-centralauth-badtoken": "Шифрата за Central Auth е неважечка.",
 	"apierror-centralauth-badusername": "Корисничкото име „$1“ не е употребливо на ова вики",
-	"apierror-centralauth-editconflict": "Утврдив спротиставеност во уредувањето. Откажувам.",
+	"apierror-centralauth-editconflict": "Утврдив спротивставеност во уредувањето. Откажувам.",
 	"apierror-centralauth-notattached": "Не може да се добие шифра за Central Auth без приложена глобална сметка.",
 	"apierror-centralauth-notloggedin": "Анонимните корисници да не можат да добијат шифра за Central Auth",
 	"apierror-centralauth-renameinprogress": "Корисникот е во тек на преименување, не може да се користи.",
@@ -29,7 +29,7 @@
 	"apihelp-globaluserrights-example-1": "Додај го корисникот FooBot во глобалната група „бот“ и отстрани го од глобалните групи „администратор“ и „бирократ“",
 	"apihelp-globaluserrights-example-2": "Додај го глобалниот корисник со назнака 123 во глобалната група „бот“ и отстрани го од глобалните групи „администратор“ и „бирократ“",
 	"apihelp-globaluserrights-param-add": "Стави го корисникот во овие глобални групи.",
-	"apihelp-globaluserrights-param-expiry": "Параметаров тековно не се користи.",
+	"apihelp-globaluserrights-param-expiry": "Времиња и датуми на истек. Може да бидат односни (на пр. <kbd>5 months</kbd> или <kbd>2 weeks</kbd>) или апсолутни (на пр. <kbd>2014-09-18T12:34:56Z</kbd>). Ако е зададено само еден време-датум, тогаш тоа ќе се користи за сите групи што му се даваат на параметарот <var>$1add</var>. Користете <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> или <kbd>never</kbd> за корисничка група без истек.",
 	"apihelp-globaluserrights-param-reason": "Причина за промената.",
 	"apihelp-globaluserrights-param-remove": "Отстрани го корисникот од овие глобални групи.",
 	"apihelp-globaluserrights-param-tags": "Параметарот засега е неупотребен.",
@@ -79,7 +79,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Дали корисников да биде скриен, скриен од списокот на глобални корисници или да биде притаен.",
 	"apihelp-setglobalaccountstatus-param-locked": "Дали корисников да биде заклучен или не.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промената на статусот на корисникот.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <userid>:<username>:<hidden>:<locked> за утврдување на спротиставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <userid>:<username>:<hidden>:<locked> за утврдување на спротивставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
 	"apihelp-setglobalaccountstatus-param-user": "На кој корисник да му се смени статусот.",
 	"apihelp-setglobalaccountstatus-summary": "Задај глобален кориснички статус"
 }

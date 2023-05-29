@@ -422,7 +422,7 @@
 	"centralauth-rightslog-set-optout": "fondé par retraits explicites",
 	"centralauth-ro": "Informations globales de compte",
 	"centralauth-seconds-ago": "depuis $1 seconde{{PLURAL:$1||s}}",
-	"centralauth-state-mismatch": "Erreur : un conflit d’édition avec cet utilisateur a été détecté. Merci de vérifier votre modification et de réessayer.",
+	"centralauth-state-mismatch": "Erreur : l′état de ce compte utilisateur a été modifié entre-temps. Merci de vérifier l′état actuel avant d′essayer à nouveau.",
 	"centralauth-token-mismatch": "Désolé, nous ne pouvons soumettre votre formulaire, suite à la perte ou l’expiration des données de votre session.",
 	"centralauth-warning-notattached": "Le compte local n’est pas rattaché à un compte global.",
 	"centralauth-warning-notloggedin": "Vous n’êtes pas connecté pour le moment.",
