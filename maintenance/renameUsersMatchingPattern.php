@@ -9,6 +9,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUser;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\MediaWikiServices;
@@ -32,6 +33,9 @@ class RenameUsersMatchingPattern extends Maintenance {
 
 	/** @var JobQueueGroupFactory */
 	private $jobQueueGroupFactory;
+
+	/** @var GlobalRenameUserValidator */
+	private $validator;
 
 	/** @var User */
 	private $performer;
@@ -72,6 +76,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 		$this->dbManager = CentralAuthServices::getDatabaseManager();
 		$this->userFactory = $services->getUserFactory();
 		$this->jobQueueGroupFactory = $services->getJobQueueGroupFactory();
+		$this->validator = $services->get( 'CentralAuth.GlobalRenameUserValidator' );
 	}
 
 	public function execute() {
@@ -150,6 +155,14 @@ class RenameUsersMatchingPattern extends Maintenance {
 			$this->output( "Unable to rename \"$oldName\" to \"$newName\": invalid target username\n" );
 			return false;
 		}
+
+		$status = $this->validator->validate( $oldUser, $newUser );
+		if ( !$status->isOK() ) {
+			$this->output( "Unable to rename \"$oldName\" to \"$newName\": " .
+				$status->getWikiText() . "\n" );
+			return false;
+		}
+
 		$oldCaUser = new CentralAuthUser( $oldName, CentralAuthUser::READ_LATEST );
 		// @phan-suppress-next-line SecurityCheck-SQLInjection -- T290563 importLocalNames
 		$newCaUser = new CentralAuthUser( $newUser->getName() );
