@@ -281,7 +281,7 @@
 	"centralauth-renameuser-global-inprogress": "Mae'r broses o ailenwi global ar gyfer y defnyddiwr hwn [[Special:GlobalRenameProgress/$1|ar y gweill]].",
 	"centralauth-renameuser-reserved": "Cedwir yr enw defnyddiwr $2 ar gyfer cyfrif cydwici.",
 	"centralauth-rightslog-entry-groupperms": "wedi newid galluoedd y grŵp $1 o $2 i $3",
-	"centralauth-rightslog-name": "Lòg galluoedd cydwici",
+	"centralauth-rightslog-name": "Log galluoedd cydwici",
 	"centralauth-ro": "Gwybodaeth am gyfri global",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|eiliad}} yn ôl",
 	"centralauth-state-mismatch": "Gwall: Cafwyd dau olygiad ar yr un pryd. Gwiriwch eich newid a cheisiwch eto.",
