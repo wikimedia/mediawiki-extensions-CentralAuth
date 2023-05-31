@@ -70,7 +70,7 @@ class CentralAuthHookRunner implements
 	 */
 	public function onCentralAuthSilentLoginRedirect( CentralAuthUser $centralAuthUser, string &$url, array $data ) {
 		$this->hookContainer->run(
-			'CentralAuthLoginRedirectData',
+			'CentralAuthSilentLoginRedirect',
 			[ $centralAuthUser, &$url, $data ]
 		);
 	}
