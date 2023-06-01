@@ -11,7 +11,8 @@
 			"Roy17",
 			"Shinjiman",
 			"Sun8908",
-			"Waihorace"
+			"Waihorace",
+			"捍粵者"
 		]
 	},
 	"action-centralauth-merge": "合併佢哋嘅戶口",
@@ -145,7 +146,7 @@
 	"centralauth-merge-dryrun-or": "'''或'''",
 	"centralauth-merge-home-password": "呢個戶口嘅自家wiki（下面列示咗）同你之前輸入嘅密碼唔同。\n請輸入自家wiki嘅密碼。",
 	"centralauth-merge-method-admin": "管理員合併嘅戶口",
-	"centralauth-merge-method-admin-desc": "表示個本地戶口由執行員手動合併咗。\n基於安全原因，嗰個功能而家停用緊。",
+	"centralauth-merge-method-admin-desc": "表示個本地戶口由執行員人手合併咗。\n基於安全原因，嗰隻功能而家停用緊。",
 	"centralauth-merge-method-empty": "無貢獻",
 	"centralauth-merge-method-empty-desc": "由於嗰個用戶冇乜編輯過，所以佢會同主戶口合埋一齊。",
 	"centralauth-merge-method-login": "登入時開戶",
