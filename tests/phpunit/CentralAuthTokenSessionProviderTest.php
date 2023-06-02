@@ -3,6 +3,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
@@ -42,7 +43,7 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 
 		// CentralAuthTokenSessionProvider registers hooks dynamically.
 		// Make sure the original hooks are restored before the next test.
-		$this->setMwGlobals( 'wgHooks', $GLOBALS[ 'wgHooks' ] );
+		$this->overrideConfigValue( MainConfigNames::Hooks, $GLOBALS['wgHooks'] );
 	}
 
 	/**

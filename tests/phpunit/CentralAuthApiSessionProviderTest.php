@@ -132,7 +132,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		// hook is registered dynamically when creating the SessionProvider
 		$this->newSessionProvider();
 
-		$this->setMwGlobals( 'wgCentralAuthCookies', true );
+		$this->overrideConfigValue( 'CentralAuthCookies', true );
 
 		$main = new ApiMain();
 
