@@ -8,7 +8,7 @@ use MediaWiki\User\ActorStore;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Assert\Assert;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
@@ -26,12 +26,12 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	private $initRan = false;
 
 	/**
-	 * @param IDatabase $db
+	 * @param IReadableDatabase $db
 	 * @param ActorStore $actorStore
 	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
-		IDatabase $db,
+		IReadableDatabase $db,
 		ActorStore $actorStore,
 		UserNameUtils $userNameUtils
 	) {
