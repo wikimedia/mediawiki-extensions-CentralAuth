@@ -173,7 +173,7 @@ class LoginCompleteHookHandler implements
 		string $returnToAnchor,
 		&$redirectUrl
 	) {
-		if ( !$this->config->get( 'CentralAuthLoginWiki' ) || defined( 'MW_API' ) ) {
+		if ( !$this->config->get( 'CentralAuthLoginWiki' ) ) {
 			return true;
 		}
 		if ( $this->config->get( 'ForceHTTPS' ) ) {
