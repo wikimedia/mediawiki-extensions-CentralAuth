@@ -8,7 +8,7 @@
 	"apierror-centralauth-badsession": "Можат да добијат шифра само користејќи седници на Central Auth.",
 	"apierror-centralauth-badtoken": "Шифрата за Central Auth е неважечка.",
 	"apierror-centralauth-badusername": "Корисничкото име „$1“ не е употребливо на ова вики",
-	"apierror-centralauth-editconflict": "Утврдив спротиставеност во уредувањето. Откажувам.",
+	"apierror-centralauth-editconflict": "Утврдив спротивставеност во уредувањето. Откажувам.",
 	"apierror-centralauth-notattached": "Не може да се добие шифра за Central Auth без приложена глобална сметка.",
 	"apierror-centralauth-notloggedin": "Анонимните корисници да не можат да добијат шифра за Central Auth",
 	"apierror-centralauth-renameinprogress": "Корисникот е во тек на преименување, не може да се користи.",

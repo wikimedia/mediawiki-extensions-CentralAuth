@@ -286,7 +286,7 @@
 	"centralauth-rightslog-entry-groupperms2": "newidiwyd hawliau grwp global $1: ychwanegwyd $2: gwaredwyd $3",
 	"centralauth-rightslog-entry-grouprename": "ailenwyd y grŵp $2 i $1",
 	"centralauth-rightslog-entry-usergroups": "wedi newid aelodaeth grŵp cydwici $1 o $2 i $3",
-	"centralauth-rightslog-name": "Lòg galluoedd cydwici",
+	"centralauth-rightslog-name": "Log galluoedd cydwici",
 	"centralauth-ro": "Gwybodaeth am gyfri global",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|eiliad}} yn ôl",
 	"centralauth-state-mismatch": "Gwall: Cafwyd dau olygiad ar yr un pryd. Gwiriwch eich newid a cheisiwch eto.",
