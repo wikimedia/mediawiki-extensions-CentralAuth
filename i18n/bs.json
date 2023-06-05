@@ -92,6 +92,7 @@
 	"centralauth-attach-title": "Potvrdi račun",
 	"centralauth-complete": "Unifikacija prijave završena!",
 	"centralauth-complete-text": "Sada se možete prijaviti na bilo koji wiki sajt sa {{int:Centralauth-groupname}} bez otvaranja novog računa.",
+	"centralauth-contribs-link": "globalni računi",
 	"centralauth-contribs-locked": "Ovaj račun je globalno zaključan.\nZa više informacija pogledajte [[Special:CentralAuth/$1|detalje o globalnom računu]].",
 	"centralauth-contribs-locked-log": "Ovaj račun je globalno zaključan.\nIspod je prikazana posljednja stavka u zapisniku zaključavanja:",
 	"centralauth-days-ago": "prije $1 {{PLURAL:$1|dan|dana}}",
