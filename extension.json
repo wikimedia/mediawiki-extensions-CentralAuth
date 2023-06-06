@@ -27,7 +27,10 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.41.0"
+		"MediaWiki": ">= 1.41.0",
+		"extensions": {
+			"AntiSpoof": "*"
+		}
 	},
 	"GroupPermissions": {
 		"steward": {
@@ -381,9 +384,11 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
+		"CentralAuthAntiSpoofHooks": "includes/CentralAuthAntiSpoofHooks.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
+		"CentralAuthSpoofUser": "includes/CentralAuthSpoofUser.php",
 		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php"
 	},
 	"TestAutoloadClasses": {

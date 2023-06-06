@@ -110,32 +110,4 @@ class CentralAuthAntiSpoofHooks {
 		}
 		return null;
 	}
-
-	/**
-	 * On local user creation, record the username's thing-bob.
-	 * (Called after a user account is created)
-	 *
-	 * @param User $user
-	 * @return bool
-	 */
-	public static function asLocalUserCreated( $user ) {
-		$spoof = new CentralAuthSpoofUser( $user->getName() );
-		$spoof->record();
-		return true;
-	}
-
-	/**
-	 * On rename, remove the old entry and add the new
-	 * (After a successful user rename)
-	 *
-	 * @param int $uid Unused
-	 * @param string $oldName
-	 * @param string $newName
-	 * @return bool
-	 */
-	public static function asAddRenameUserHook( $uid, $oldName, $newName ) {
-		$spoof = new CentralAuthSpoofUser( $newName );
-		$spoof->update( $oldName );
-		return true;
-	}
 }

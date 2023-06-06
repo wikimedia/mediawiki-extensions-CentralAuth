@@ -1050,25 +1050,19 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Record the current username in the central AntiSpoof system
-	 * if that feature is enabled
+	 * Record the current username in the AntiSpoof system
 	 */
 	protected function recordAntiSpoof() {
-		if ( class_exists( CentralAuthSpoofUser::class ) ) {
-			$spoof = new CentralAuthSpoofUser( $this->mName );
-			$spoof->record();
-		}
+		$spoof = new CentralAuthSpoofUser( $this->mName );
+		$spoof->record();
 	}
 
 	/**
-	 * Remove the current username from the central AntiSpoof system
-	 * if that feature is enabled
+	 * Remove the current username from the AntiSpoof system
 	 */
 	public function removeAntiSpoof() {
-		if ( class_exists( CentralAuthSpoofUser::class ) ) {
-			$spoof = new CentralAuthSpoofUser( $this->mName );
-			$spoof->remove();
-		}
+		$spoof = new CentralAuthSpoofUser( $this->mName );
+		$spoof->remove();
 	}
 
 	/**
