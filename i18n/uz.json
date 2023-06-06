@@ -31,6 +31,7 @@
 	"centralauth-admin-view": "Hisob haqida maʼlumotni koʻrish",
 	"centralauth-admin-yes": "ha",
 	"centralauth-attach-title": "Hisobni tasdiqlash",
+	"centralauth-contribs-link": "global hisoblar",
 	"centralauth-contribs-locked": "Bu hisob global ravishda bloklangan.\nKoʻproq maʼlumot uchun [[Special:CentralAuth/$1|mana bu sahifa]] bilan tanishib chiqing.",
 	"centralauth-createlocal-reason": "Sabab",
 	"centralauth-editgroup-reason": "Sababi:",
