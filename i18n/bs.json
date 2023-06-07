@@ -8,7 +8,8 @@
 			"Palapa",
 			"Semso98",
 			"Srdjan m",
-			"Srđan"
+			"Srđan",
+			"Matma Rex"
 		]
 	},
 	"action-centralauth-lock": "zaključavate ili otključavate globalne račune",
@@ -60,7 +61,8 @@
 	"centralauth-admin-nonexistent": "Ne postoji globalni račun za \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-permission": "Samo stujardi mogu spajati račune drugih korisnika za njih.",
 	"centralauth-admin-reason": "Razlog:",
-	"centralauth-admin-reason-other": "Drugi/dodatni razlog:",
+	"centralauth-admin-reason-other": "Drugi / dodatni razlog:",
+	"centralauth-admin-reason-other-select": "Ostali razlozi:",
 	"centralauth-admin-setstatus-success": "Promijenili ste status ovog globalnog računa.",
 	"centralauth-admin-status": "Postavi status globalnog računa",
 	"centralauth-admin-status-hidden": "Sakriveno:",
