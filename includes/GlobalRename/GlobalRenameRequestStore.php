@@ -56,7 +56,7 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	 * @return bool
 	 */
 	public function save( GlobalRenameRequest $request ): bool {
-		$dbw = $this->dbManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->dbManager->getCentralPrimaryDB();
 		if ( $request->getId() === null ) {
 			$request
 				->setRequested( wfTimestampNow() )

@@ -554,7 +554,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			&& count( $addRights ) === 0
 			&& count( $removeRights ) === count( $oldRights )
 		) {
-			$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+			$dbr = $this->databaseManager->getCentralReplicaDB();
 			$memberCount = $dbr->newSelectQueryBuilder()
 				->select( 'gug_group' )
 				->from( 'global_user_groups' )
@@ -575,7 +575,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				return;
 			}
 
-			$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+			$dbw = $this->databaseManager->getCentralPrimaryDB();
 			$updates = [
 				'global_group_permissions' => 'ggp_group',
 				'global_group_restrictions' => 'ggr_group',
@@ -629,7 +629,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string[] $rights
 	 */
 	private function revokeRightsFromGroup( $group, $rights ) {
-		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		# Delete from the DB
 		$dbw->delete(
@@ -644,7 +644,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string[]|string $rights
 	 */
 	private function grantRightsToGroup( $group, $rights ) {
-		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		if ( !is_array( $rights ) ) {
 			$rights = [ $rights ];
@@ -754,7 +754,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return bool
 	 */
 	private function setRestrictions( $group, $set ) {
-		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		if ( $set == 0 ) {
 			$dbw->delete(
 				'global_group_restrictions',
@@ -791,7 +791,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// Figure out all the users in this group.
 		// Use the primary database over here as this could go horribly wrong with newly created or just
 		// renamed groups
-		$dbr = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbr = $this->databaseManager->getCentralPrimaryDB();
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'gu_name' )

@@ -39,8 +39,8 @@ class PopulateGlobalEditCount extends Maintenance {
 
 	public function execute() {
 		$this->init();
-		$dbcr = $this->databaseManager->getCentralDB( DB_REPLICA );
-		$dbcw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbcr = $this->databaseManager->getCentralReplicaDB();
+		$dbcw = $this->databaseManager->getCentralPrimaryDB();
 		$lastId = (int)$dbcr->newSelectQueryBuilder()
 			->select( 'MAX(gu_id)' )
 			->from( 'globaluser' )

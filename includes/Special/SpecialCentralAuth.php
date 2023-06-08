@@ -1128,7 +1128,7 @@ class SpecialCentralAuth extends SpecialPage {
 			return [];
 		}
 
-		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+		$dbr = $this->databaseManager->getCentralReplicaDB();
 
 		// Autocomplete subpage as user list - non-hidden users to allow caching
 		return $dbr->newSelectQueryBuilder()

@@ -3,20 +3,21 @@
 use MediaWiki\Extension\AntiSpoof\SpoofUser;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthSpoofUser extends SpoofUser {
 	/**
-	 * @return IDatabase
+	 * @return IReadableDatabase
 	 */
 	protected function getDBReplica() {
-		return CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		return CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 	}
 
 	/**
 	 * @return IDatabase
 	 */
 	protected function getDBPrimary() {
-		return CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		return CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 	}
 
 	/**

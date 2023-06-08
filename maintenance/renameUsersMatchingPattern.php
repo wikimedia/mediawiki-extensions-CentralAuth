@@ -104,7 +104,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 		$this->skipPageMoves = $this->getOption( 'skip-page-moves' );
 		$this->dryRun = $this->getOption( 'dry-run' );
 
-		$dbr = $this->dbManager->getCentralDB( DB_REPLICA );
+		$dbr = $this->dbManager->getCentralReplicaDB();
 		$batchConds = [];
 		$numRenamed = 0;
 
@@ -207,7 +207,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 	 */
 	private function waitForJobs() {
 		while ( true ) {
-			$count = $this->dbManager->getCentralDB( DB_PRIMARY )->newSelectQueryBuilder()
+			$count = $this->dbManager->getCentralPrimaryDB()->newSelectQueryBuilder()
 				->from( 'renameuser_status' )
 				->limit( 15 )
 				->caller( __METHOD__ )

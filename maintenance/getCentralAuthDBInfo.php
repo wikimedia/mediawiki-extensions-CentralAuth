@@ -16,7 +16,7 @@ class GetCentralAuthDBInfo extends Maintenance {
 	}
 
 	public function execute() {
-		$db = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$db = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		$host = $db->getServer();
 		$this->output( "$host\n" );
 	}

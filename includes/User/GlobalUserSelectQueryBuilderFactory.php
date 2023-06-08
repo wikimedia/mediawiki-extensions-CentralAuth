@@ -4,11 +4,11 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\User\ActorStore;
 use MediaWiki\User\UserNameUtils;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 class GlobalUserSelectQueryBuilderFactory {
 
-	/** @var IDatabase */
+	/** @var IReadableDatabase */
 	private $db;
 
 	/** @var ActorStore */
@@ -18,12 +18,12 @@ class GlobalUserSelectQueryBuilderFactory {
 	private $userNameUtils;
 
 	/**
-	 * @param IDatabase $db
+	 * @param IReadableDatabase $db
 	 * @param ActorStore $actorStore
 	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
-		IDatabase $db,
+		IReadableDatabase $db,
 		ActorStore $actorStore,
 		UserNameUtils $userNameUtils
 	) {

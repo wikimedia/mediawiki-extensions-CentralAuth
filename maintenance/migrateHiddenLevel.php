@@ -40,7 +40,7 @@ class MigrateHiddenLevel extends Maintenance {
 
 	public function execute() {
 		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $databaseManager->getCentralPrimaryDB();
 
 		$lastUser = $dbw->newSelectQueryBuilder()
 			->select( 'MAX(gu_id)' )

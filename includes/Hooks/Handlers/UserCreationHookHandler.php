@@ -65,7 +65,7 @@ class UserCreationHookHandler implements
 		if ( !$centralUser->exists() && !$centralUser->listUnattached() ) {
 			if ( $centralUser->register( null, $user->getEmail() ) ) {
 				$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
-				$this->databaseManager->getCentralDB( DB_PRIMARY )->onTransactionCommitOrIdle(
+				$this->databaseManager->getCentralPrimaryDB()->onTransactionCommitOrIdle(
 					function () use ( $centralUser ) {
 						$this->utilityService->scheduleCreationJobs( $centralUser );
 					},

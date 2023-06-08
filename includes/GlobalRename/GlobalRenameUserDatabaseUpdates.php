@@ -26,7 +26,7 @@ class GlobalRenameUserDatabaseUpdates {
 	 * @param string $newname
 	 */
 	public function update( $oldname, $newname ) {
-		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->update(

@@ -22,8 +22,8 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 	public function execute() {
 		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbr = $databaseManager->getCentralDB( DB_REPLICA );
-		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
+		$dbr = $databaseManager->getCentralReplicaDB();
+		$dbw = $databaseManager->getCentralPrimaryDB();
 		$lastGlobalId = -1;
 
 		// Skip people in global rename queue

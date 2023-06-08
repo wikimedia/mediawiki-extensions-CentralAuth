@@ -39,7 +39,7 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 		parent::setUp();
 
 		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
-			->getCentralDB( DB_PRIMARY );
+			->getCentralPrimaryDB();
 
 		$caDbw->insert(
 			'global_group_permissions',
@@ -75,7 +75,7 @@ class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
 
 		$expiryFuture = time() + 1800;
 
-		$caDbw = CentralAuthServices::getDatabaseManager( $services )->getCentralDB( DB_PRIMARY );
+		$caDbw = CentralAuthServices::getDatabaseManager( $services )->getCentralPrimaryDB();
 		$caDbw->insert(
 			'global_user_groups',
 			[

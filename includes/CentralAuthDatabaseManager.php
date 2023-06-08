@@ -9,6 +9,7 @@ use ReadOnlyError;
 use ReadOnlyMode;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LBFactory;
 
 /**
@@ -110,27 +111,50 @@ class CentralAuthDatabaseManager {
 	}
 
 	/**
+	 * @return IDatabase a connection to the CentralAuth database primary.
+	 */
+	public function getCentralPrimaryDB(): IDatabase {
+		$this->assertNotReadOnly();
+		return $this->lbFactory->getPrimaryDatabase(
+			$this->options->get( 'CentralAuthDatabase' )
+		);
+	}
+
+	/**
+	 * @return IReadableDatabase a connection to a CentralAuth database replica
+	 */
+	public function getCentralReplicaDB(): IReadableDatabase {
+		return $this->lbFactory->getReplicaDatabase(
+			$this->options->get( 'CentralAuthDatabase' )
+		);
+	}
+
+	/**
 	 * Gets a database connection to the CentralAuth database.
 	 *
 	 * @param int $index DB_PRIMARY or DB_REPLICA
+	 * @deprecated use {@link ::getCentralPrimaryDB}
+	 * 			   or {@link ::getCentralReplicaDB} instead
 	 *
 	 * @return IDatabase
 	 * @throws CentralAuthReadOnlyError
 	 * @throws InvalidArgumentException
 	 */
 	public function getCentralDB( int $index ): IDatabase {
-		if ( $index !== DB_PRIMARY && $index !== DB_REPLICA ) {
-			throw new InvalidArgumentException( "Unknown index $index, expected DB_PRIMARY or DB_REPLICA" );
-		}
-
 		if ( $index === DB_PRIMARY ) {
-			$this->assertNotReadOnly();
+			return $this->getCentralPrimaryDB();
 		}
 
-		$database = $this->options->get( 'CentralAuthDatabase' );
+		if ( $index === DB_REPLICA ) {
+			return $this->getLoadBalancer()
+				->getConnection(
+					DB_REPLICA,
+					[],
+					$this->options->get( 'CentralAuthDatabase' )
+				);
+		}
 
-		return $this->getLoadBalancer()
-			->getConnectionRef( $index, [], $database );
+		throw new InvalidArgumentException( "Unknown index $index, expected DB_PRIMARY or DB_REPLICA" );
 	}
 
 	/**
@@ -138,6 +162,8 @@ class CentralAuthDatabaseManager {
 	 *
 	 * @param int $index DB_PRIMARY or DB_REPLICA
 	 * @param string $wikiId
+	 *
+	 * @todo Split to two for IReadableDatabase support or drop entirely
 	 *
 	 * @return IDatabase
 	 * @throws CentralAuthReadOnlyError

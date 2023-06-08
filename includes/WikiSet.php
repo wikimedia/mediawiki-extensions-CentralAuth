@@ -254,7 +254,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function saveToDB() {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->replace(
 			'wikiset',
@@ -279,7 +279,7 @@ class WikiSet {
 	 * @return bool
 	 */
 	public function delete() {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->delete( 'wikiset', [ 'ws_id' => $this->mId ], __METHOD__ );
 		$this->purge();
 		return (bool)$dbw->affectedRows();
@@ -336,7 +336,7 @@ class WikiSet {
 	 * @return string[]
 	 */
 	public function getRestrictedGroups() {
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		return $dbr->newSelectQueryBuilder()
 			->select( 'ggr_group' )
 			->from( 'global_group_restrictions' )
@@ -352,7 +352,7 @@ class WikiSet {
 	 * @return self[]
 	 */
 	public static function getAllWikiSets( $from = null, $limit = null, $orderByName = false ) {
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		$qb = $dbr->newSelectQueryBuilder()
 			->select( '*' )
@@ -386,7 +386,7 @@ class WikiSet {
 	 * @return int
 	 */
 	public static function getWikiSetForGroup( $group ) {
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		return (int)$dbr->newSelectQueryBuilder()
 			->select( 'ggr_set' )
 			->from( 'global_group_restrictions' )

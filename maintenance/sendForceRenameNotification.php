@@ -40,7 +40,7 @@ class SendForceRenameNotification extends Maintenance {
 		$message = str_replace( '{{WIKI}}', WikiMap::getCurrentWikiId(), $message );
 		$message .= " ~~~~~\n<!-- SUL finalisation notification -->";
 		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $databaseManager->getCentralPrimaryDB();
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$commonParams = [
 			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),

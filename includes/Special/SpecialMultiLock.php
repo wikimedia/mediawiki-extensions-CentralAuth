@@ -159,7 +159,7 @@ class SpecialMultiLock extends SpecialPage {
 	 * Search the CentralAuth db for all usernames prefixed with mPrefixSearch
 	 */
 	private function searchForUsers() {
-		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+		$dbr = $this->databaseManager->getCentralReplicaDB();
 
 		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
 		if ( !$this->mCanSuppress ) {

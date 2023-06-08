@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthEditCounter {
 	/** @var CentralAuthDatabaseManager */
@@ -28,7 +28,7 @@ class CentralAuthEditCounter {
 	 */
 	public function getCount( CentralAuthUser $centralUser ) {
 		$userId = $centralUser->getId();
-		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+		$dbr = $this->databaseManager->getCentralReplicaDB();
 		$count = $this->getCountFromDB( $dbr, $userId );
 		if ( $count !== false ) {
 			return $count;
@@ -45,7 +45,7 @@ class CentralAuthEditCounter {
 			);
 		}
 
-		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		$count = $this->getCountFromDB( $dbw, $userId );
 		if ( $count !== false ) {
 			return $count;
@@ -100,12 +100,12 @@ class CentralAuthEditCounter {
 	}
 
 	/**
-	 * @param IDatabase $db
+	 * @param IReadableDatabase $dbr
 	 * @param int $userId
 	 * @return int|false
 	 */
-	private function getCountFromDB( $db, $userId ) {
-		$count = $db->newSelectQueryBuilder()
+	private function getCountFromDB( IReadableDatabase $dbr, int $userId ) {
+		$count = $dbr->newSelectQueryBuilder()
 			->select( 'gec_count' )
 			->from( 'global_edit_count' )
 			->where( [ 'gec_user' => $userId ] )
@@ -124,7 +124,7 @@ class CentralAuthEditCounter {
 		if ( !$increment || $this->databaseManager->isReadOnly() ) {
 			return;
 		}
-		$dbw = $this->databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		$dbw->update(
 			'global_edit_count',
 			[ 'gec_count = gec_count + ' . (int)$increment ],

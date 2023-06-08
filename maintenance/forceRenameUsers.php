@@ -46,7 +46,7 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		while ( true ) {
 			$rowsToRename = $this->findUsers( WikiMap::getCurrentWikiId(), $dbw );
 			if ( !$rowsToRename ) {

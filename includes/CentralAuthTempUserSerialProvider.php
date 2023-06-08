@@ -14,7 +14,7 @@ class CentralAuthTempUserSerialProvider extends DBSerialProvider {
 	}
 
 	protected function getDB() {
-		return $this->dbManager->getCentralDB( DB_PRIMARY );
+		return $this->dbManager->getCentralPrimaryDB();
 	}
 
 	protected function getTableName() {

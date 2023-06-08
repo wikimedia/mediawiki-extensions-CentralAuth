@@ -85,7 +85,7 @@ class CheckLocalUser extends Maintenance {
 	public function execute() {
 		$this->initialize();
 
-		$centralPrimaryDb = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		$centralPrimaryDb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
@@ -165,7 +165,7 @@ class CheckLocalUser extends Maintenance {
 	}
 
 	protected function getWikis() {
-		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		if ( $this->wiki !== null ) {
 			return [ $this->wiki ];
@@ -192,7 +192,7 @@ class CheckLocalUser extends Maintenance {
 			return;
 		}
 
-		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		$lastUsername = '';
 		do {
 			$this->output( "\t ... querying from '$lastUsername'\n" );

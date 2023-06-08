@@ -26,7 +26,7 @@ $localStewards = $dbl->newSelectQueryBuilder()
 	->fetchFieldValues();
 
 echo "Fetched " . count( $localStewards ) . " from local database... Checking for attached ones\n";
-$dbg = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+$dbg = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 $globalStewards = [];
 $result = $dbg->newSelectQueryBuilder()
 	->select( [ 'gu_name', 'gu_id' ] )

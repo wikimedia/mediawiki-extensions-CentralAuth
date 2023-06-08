@@ -38,7 +38,7 @@ class PurgeExpiredGlobalRights extends Maintenance {
 
 	public function execute() {
 		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $databaseManager->getCentralPrimaryDB();
 
 		$counter = 0;
 

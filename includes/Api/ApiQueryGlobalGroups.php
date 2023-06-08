@@ -62,7 +62,7 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$APIResult = $this->getResult();
 		$data = [];
 
-		$dbr = $this->databaseManager->getCentralDB( DB_REPLICA );
+		$dbr = $this->databaseManager->getCentralReplicaDB();
 
 		$qb = $dbr->newSelectQueryBuilder()
 			->select( 'ggp_group' )

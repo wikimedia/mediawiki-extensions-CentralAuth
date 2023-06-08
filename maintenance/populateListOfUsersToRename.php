@@ -40,7 +40,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	 * @return IResultWrapper
 	 */
 	private function doQuery() {
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'ln_name AS name', 'ln_wiki AS wiki' ] )
 			->from( 'localnames' )
@@ -65,7 +65,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_PRIMARY );
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$databaseUpdates = new UsersToRenameDatabaseUpdates( $dbw );
 		// CentralAuthUser::chooseHomeWiki is expensive and called
 		// multiple times, so lets cache it.

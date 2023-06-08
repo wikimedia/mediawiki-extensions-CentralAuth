@@ -605,7 +605,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
-		$this->databaseManager->getCentralDB( DB_PRIMARY )->onTransactionCommitOrIdle(
+		$this->databaseManager->getCentralPrimaryDB()->onTransactionCommitOrIdle(
 			function () use ( $centralUser ) {
 				$this->utilityService->scheduleCreationJobs( $centralUser );
 			},

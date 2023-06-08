@@ -114,7 +114,7 @@ return [
 		MediaWikiServices $services
 	): GlobalUserSelectQueryBuilderFactory {
 		return new GlobalUserSelectQueryBuilderFactory(
-			CentralAuthServices::getDatabaseManager( $services )->getCentralDB( DB_REPLICA ),
+			CentralAuthServices::getDatabaseManager( $services )->getCentralReplicaDB(),
 			$services->getActorStore(),
 			$services->getUserNameUtils()
 		);

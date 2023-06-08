@@ -66,7 +66,7 @@ class WrapOldPasswordHashes extends Maintenance {
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
 		// Get a list of password types that are applicable
-		$dbw = $databaseManager->getCentralDB( DB_PRIMARY );
+		$dbw = $databaseManager->getCentralPrimaryDB();
 		$typeCond = 'gu_password' . $dbw->buildLike( ":$firstType:", $dbw->anyString() );
 
 		$count = 0;

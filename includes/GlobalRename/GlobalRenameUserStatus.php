@@ -234,7 +234,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return string[] old username => new username
 	 */
 	public static function getInProgressRenames( Authority $performer ) {
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		$qb = $dbr->newSelectQueryBuilder();
 

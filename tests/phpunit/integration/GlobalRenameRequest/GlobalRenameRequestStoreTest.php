@@ -48,13 +48,8 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 	 * @covers ::save
 	 */
 	public function testSave(): void {
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDB' )
-			->with( DB_PRIMARY )
-			->willReturn( $this->db );
-
 		$store = new GlobalRenameRequestStore(
-			$dbManager,
+			$this->getMockDbManager(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -114,12 +109,8 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 	 * @dataProvider provideWiki
 	 */
 	public function testNewForUser( $wiki ) {
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDB' )
-			->willReturn( $this->db );
-
 		$store = new GlobalRenameRequestStore(
-			$dbManager,
+			$this->getMockDbManager(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -138,12 +129,8 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 	 * @dataProvider provideWiki
 	 */
 	public function testNewFromId( $wiki ) {
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDB' )
-			->willReturn( $this->db );
-
 		$store = new GlobalRenameRequestStore(
-			$dbManager,
+			$this->getMockDbManager(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -163,12 +150,8 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 	 * @covers ::nameHasPendingRequest
 	 */
 	public function testNameHasPendingRequest() {
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDB' )
-			->willReturn( $this->db );
-
 		$store = new GlobalRenameRequestStore(
-			$dbManager,
+			$this->getMockDbManager(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -191,6 +174,17 @@ class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
 		$request->setReason( 'I ate too many bananas.' );
 		$store->save( $request );
 		return $request;
+	}
+
+	private function getMockDbManager(): CentralAuthDatabaseManager {
+		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$dbManager->method( 'getCentralPrimaryDB' )
+			->willReturn( $this->db );
+		$dbManager->method( 'getCentralReplicaDB' )
+			->willReturn( $this->db );
+		$dbManager->method( 'getCentralDB' )
+			->willReturn( $this->db );
+		return $dbManager;
 	}
 
 	private function allValidUserNameUtils(): UserNameUtils {

@@ -196,12 +196,19 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$loadBalancer = $this->createMock( ILoadBalancer::class );
 
 		$database = $this->createMock( IDatabase::class );
-		$loadBalancer->method( 'getConnectionRef' )
+		$loadBalancer->method( 'getConnection' )
 			->with( $index, [], 'centralauth' )
 			->willReturn( $database );
 
 		$lbFactory = $this->createMock( LBFactory::class );
 		$lbFactory->method( 'getMainLB' )->with( 'centralauth' )->willReturn( $loadBalancer );
+
+		$lbFactory->method( 'getPrimaryDatabase' )
+			->with( 'centralauth' )
+			->willReturn( $database );
+		$lbFactory->method( 'getReplicaDatabase' )
+			->with( 'centralauth' )
+			->willReturn( $database );
 
 		$roMode = $this->createMock( ReadOnlyMode::class );
 		$roMode->method( 'isReadOnly' )->willReturn( false );
@@ -283,7 +290,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$loadBalancer = $this->createMock( ILoadBalancer::class );
 
 		$database = $this->createMock( IDatabase::class );
-		$loadBalancer->method( 'getConnectionRef' )
+		$loadBalancer->method( 'getConnection' )
 			->with( DB_REPLICA, [], 'centralauth' )
 			->willReturn( $database );
 

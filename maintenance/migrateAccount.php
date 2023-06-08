@@ -8,7 +8,6 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use Wikimedia\Rdbms\IDatabase;
 
 class MigrateAccount extends Maintenance {
 
@@ -26,9 +25,6 @@ class MigrateAccount extends Maintenance {
 
 	/** @var bool */
 	protected $safe;
-
-	/** @var IDatabase|null */
-	protected $dbBackground;
 
 	/** @var bool */
 	protected $autoMigrate;
@@ -49,7 +45,6 @@ class MigrateAccount extends Maintenance {
 		$this->migrated = 0;
 		$this->total = 0;
 		$this->safe = false;
-		$this->dbBackground = null;
 		$this->autoMigrate = false;
 		$this->resetToken = false;
 		$this->suppressRC = false;
@@ -85,8 +80,6 @@ class MigrateAccount extends Maintenance {
 	}
 
 	public function execute() {
-		$this->dbBackground = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
-
 		if ( $this->getOption( 'safe', false ) !== false ) {
 			$this->safe = true;
 		}

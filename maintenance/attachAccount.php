@@ -27,7 +27,6 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use Wikimedia\Rdbms\IDatabase;
 
 /**
  * @copyright © 2016 Wikimedia Foundation and contributors.
@@ -55,9 +54,6 @@ class AttachAccount extends Maintenance {
 	/** @var int */
 	protected $total;
 
-	/** @var IDatabase|null */
-	protected $dbBackground;
-
 	/** @var bool */
 	protected $dryRun;
 
@@ -75,7 +71,6 @@ class AttachAccount extends Maintenance {
 		$this->attached = 0;
 		$this->ok = 0;
 		$this->total = 0;
-		$this->dbBackground = null;
 		$this->dryRun = false;
 		$this->quiet = false;
 
@@ -89,7 +84,6 @@ class AttachAccount extends Maintenance {
 
 	public function execute() {
 		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$this->dbBackground = $databaseManager->getCentralDB( DB_REPLICA );
 
 		$this->dryRun = $this->hasOption( 'dry-run' );
 		$this->quiet = $this->hasOption( 'quiet' );
