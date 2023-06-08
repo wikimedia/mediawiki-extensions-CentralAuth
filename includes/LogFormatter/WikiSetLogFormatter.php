@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
 use Message;
-use MWException;
+use UnexpectedValueException;
 
 /**
  * Handles the following log types:
@@ -98,7 +98,7 @@ class WikiSetLogFormatter extends LogFormatter {
 					4 => $params[4], // 5::oldName
 				];
 			default:
-				throw new MWException( "Invalid log action: gblrights/$action" );
+				throw new UnexpectedValueException( "Invalid log action: gblrights/$action" );
 		}
 	}
 

@@ -21,13 +21,13 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
+use BadMethodCallException;
 use Exception;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
-use MWException;
 use Status;
 use stdClass;
 
@@ -159,7 +159,7 @@ class GlobalRenameRequest {
 	 */
 	public function setId( int $id ) {
 		if ( $this->id !== null ) {
-			throw new MWException( "Can't replace id when already set" );
+			throw new BadMethodCallException( "Can't replace id when already set" );
 		}
 
 		$this->id = $id;
