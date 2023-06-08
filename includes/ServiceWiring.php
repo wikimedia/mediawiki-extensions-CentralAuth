@@ -7,6 +7,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use MediaWiki\Logger\LoggerFactory;
@@ -17,6 +18,16 @@ use MediaWiki\MediaWikiServices;
 // @codeCoverageIgnoreStart
 
 return [
+	'CentralAuth.CentralAuthAntiSpoofManager' => static function (
+		MediaWikiServices $services
+	): CentralAuthAntiSpoofManager {
+		return new CentralAuthAntiSpoofManager(
+			new ServiceOptions( CentralAuthAntiSpoofManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
+			LoggerFactory::getInstance( 'antispoof' ),
+			$services->getDBLoadBalancerFactory(),
+			CentralAuthServices::getDatabaseManager( $services )
+		);
+	},
 	'CentralAuth.CentralAuthDatabaseManager' => static function (
 		MediaWikiServices $services
 	): CentralAuthDatabaseManager {

@@ -2,8 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthAntiSpoofHooks;
-use CentralAuthSpoofUser;
 use ExtensionRegistry;
 use FormSpecialPage;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
@@ -14,6 +12,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
@@ -53,6 +52,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/** @var JobQueueGroupFactory */
 	private $jobQueueGroupFactory;
 
+	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
@@ -72,6 +73,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 	/**
 	 * @param JobQueueGroupFactory $jobQueueGroupFactory
+	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 * @param GlobalRenameDenylist $globalRenameDenylist
@@ -79,6 +81,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	public function __construct(
 		JobQueueGroupFactory $jobQueueGroupFactory,
+		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
@@ -86,6 +89,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
+		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
@@ -207,14 +211,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		if ( !$this->overrideAntiSpoof ) {
-			$spoofUser = new CentralAuthSpoofUser( $newUser->getName() );
+			$spoofUser = $this->caAntiSpoofManager->getSpoofUser( $newUser->getName() );
 			$conflicts = $this->uiService->processAntiSpoofConflicts(
 				$this->getContext(),
 				$oldUser->getName(),
 				$spoofUser->getConflicts()
 			);
 
-			$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $newUser->getName() );
+			$renamedUser = $this->caAntiSpoofManager->getOldRenamedUserName( $newUser->getName() );
 			if ( $renamedUser !== null ) {
 				$conflicts[] = $renamedUser;
 			}

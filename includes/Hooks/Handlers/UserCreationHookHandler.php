@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthSpoofUser;
 use MediaWiki\Auth\Hook\LocalUserCreatedHook;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\WikiMap\WikiMap;
 use User;
@@ -31,6 +31,8 @@ use User;
 class UserCreationHookHandler implements
 	LocalUserCreatedHook
 {
+	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
@@ -38,13 +40,16 @@ class UserCreationHookHandler implements
 	private $utilityService;
 
 	/**
+	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUtilityService $utilityService
 	 */
 	public function __construct(
+		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUtilityService $utilityService
 	) {
+		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->databaseManager = $databaseManager;
 		$this->utilityService = $utilityService;
 	}
@@ -77,7 +82,7 @@ class UserCreationHookHandler implements
 		$centralUser->addLocalName( WikiMap::getCurrentWikiId() );
 
 		// Record the username's thing-bob after a user account is created
-		$spoof = new CentralAuthSpoofUser( $user->getName() );
+		$spoof = $this->caAntiSpoofManager->getSpoofUser( $user->getName() );
 		$spoof->record();
 	}
 }

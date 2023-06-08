@@ -22,7 +22,6 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use AbstractPbkdf2Password;
 use CentralAuthSessionProvider;
-use CentralAuthSpoofUser;
 use DeferredUpdates;
 use Exception;
 use FormattedRCFeed;
@@ -1045,7 +1044,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Record the current username in the AntiSpoof system
 	 */
 	protected function recordAntiSpoof() {
-		$spoof = new CentralAuthSpoofUser( $this->mName );
+		$spoof = CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $this->mName );
 		$spoof->record();
 	}
 
@@ -1053,7 +1052,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Remove the current username from the AntiSpoof system
 	 */
 	public function removeAntiSpoof() {
-		$spoof = new CentralAuthSpoofUser( $this->mName );
+		$spoof = CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $this->mName );
 		$spoof->remove();
 	}
 

@@ -21,7 +21,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use CentralAuthAntiSpoofHooks;
 use DeferredUpdates;
 use IBufferingStatsdDataFactory;
 use IDBAccessObject;
@@ -34,10 +33,12 @@ use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use Psr\Log\NullLogger;
 use ReadOnlyMode;
 use RequestContext;
 use StatusValue;
@@ -70,6 +71,8 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var CentralAuthUtilityService */
 	private $utilityService;
 
+	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+
 	/** @var bool Whether to check for force-renamed users on login */
 	protected $checkSULMigration = null;
 
@@ -95,6 +98,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param GlobalRenameRequestStore $globalRenameRequestStore
 	 * @param CentralAuthUtilityService $utilityService
+	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - checkSULMigration: If true, check if the user was force-renamed for
@@ -116,6 +120,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		UserIdentityLookup $userIdentityLookup,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		CentralAuthUtilityService $utilityService,
+		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		$params = []
 	) {
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
@@ -134,6 +139,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->readOnlyMode = $readOnlyMode;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
+		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$params += [
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
@@ -155,8 +161,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	public function getAuthenticationRequests( $action, array $options ) {
 		$ret = parent::getAuthenticationRequests( $action, $options );
 
-		if ( $this->antiSpoofAccounts && $action === AuthManager::ACTION_CREATE &&
-			class_exists( AntiSpoofAuthenticationRequest::class )
+		if ( $this->antiSpoofAccounts && $action === AuthManager::ACTION_CREATE
 		) {
 			$user = User::newFromName( $options['username'] ) ?: new User();
 			if ( $user->isAllowed( 'override-antispoof' ) ) {
@@ -527,12 +532,11 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		// Check CentralAuthAntiSpoof, if applicable. Assume the user will override if they can.
-		if ( $this->antiSpoofAccounts && class_exists( AntiSpoofAuthenticationRequest::class ) &&
-			empty( $options['creating'] ) &&
+		if ( $this->antiSpoofAccounts && empty( $options['creating'] ) &&
 			!RequestContext::getMain()->getAuthority()->isAllowed( 'override-antispoof' )
 		) {
-			$status->merge( CentralAuthAntiSpoofHooks::testNewAccount(
-				$user, new User, true, false, new \Psr\Log\NullLogger
+			$status->merge( $this->caAntiSpoofManager->testNewAccount(
+				$user, new User, true, false, new NullLogger
 			) );
 		}
 
@@ -564,13 +568,11 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		// Check CentralAuthAntiSpoof, if applicable
-		if ( class_exists( AntiSpoofAuthenticationRequest::class ) ) {
-			$antiSpoofReq = self::getAntiSpoofAuthenticationRequest( $reqs );
-			$ret->merge( CentralAuthAntiSpoofHooks::testNewAccount(
-				$user, $creator, $this->antiSpoofAccounts,
-				$antiSpoofReq && $antiSpoofReq->ignoreAntiSpoof
-			) );
-		}
+		$antiSpoofReq = self::getAntiSpoofAuthenticationRequest( $reqs );
+		$ret->merge( $this->caAntiSpoofManager->testNewAccount(
+			$user, $creator, $this->antiSpoofAccounts,
+			$antiSpoofReq && $antiSpoofReq->ignoreAntiSpoof
+		) );
 
 		return $ret;
 	}

@@ -2,6 +2,7 @@
 // Go through all usernames and calculate and record spoof thingies
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthSpoofUser;
 use Wikimedia\Rdbms\IDatabase;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -53,7 +54,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @return CentralAuthSpoofUser
 	 */
 	protected function makeSpoofUser( $name ) {
-		return new CentralAuthSpoofUser( $name );
+		return CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $name );
 	}
 }
 

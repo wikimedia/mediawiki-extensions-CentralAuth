@@ -60,6 +60,7 @@ class SpecialPageInitHookHandler implements
 					'CentralAuth.CentralAuthUIService',
 					'CentralAuth.GlobalRenameRequestStore',
 					'JobQueueGroupFactory',
+					'CentralAuth.CentralAuthAntiSpoofManager',
 				],
 			];
 		}

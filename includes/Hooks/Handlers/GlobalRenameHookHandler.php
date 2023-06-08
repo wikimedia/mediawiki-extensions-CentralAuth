@@ -20,8 +20,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use CentralAuthSpoofUser;
 use ErrorPageError;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\RenameUser\Hook\RenameUserCompleteHook;
 use MediaWiki\RenameUser\Hook\RenameUserPreRenameHook;
@@ -33,6 +33,14 @@ class GlobalRenameHookHandler implements
 	RenameUserPreRenameHook,
 	RenameUserWarningHook
 {
+	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+
+	/**
+	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
+	 */
+	public function __construct( CentralAuthAntiSpoofManager $caAntiSpoofManager ) {
+		$this->caAntiSpoofManager = $caAntiSpoofManager;
+	}
 
 	/**
 	 * Warn bureaucrat about possible conflicts with unified accounts
@@ -98,7 +106,7 @@ class GlobalRenameHookHandler implements
 		}
 
 		// Remove the old entry and add the new
-		$spoof = new CentralAuthSpoofUser( $new );
+		$spoof = $this->caAntiSpoofManager->getSpoofUser( $new );
 		$spoof->update( $old );
 	}
 }

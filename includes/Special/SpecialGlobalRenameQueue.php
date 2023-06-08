@@ -22,8 +22,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CentralAuthAntiSpoofHooks;
-use CentralAuthSpoofUser;
 use Exception;
 use ExtensionRegistry;
 use Html;
@@ -39,6 +37,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
@@ -82,6 +81,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/** @var JobQueueGroupFactory */
 	private $jobQueueGroupFactory;
 
+	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+
 	/** @var \Psr\Log\LoggerInterface */
 	private $logger;
 
@@ -98,7 +99,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
-		JobQueueGroupFactory $jobQueueGroupFactory
+		JobQueueGroupFactory $jobQueueGroupFactory,
+		CentralAuthAntiSpoofManager $caAntiSpoofManager
 	) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
@@ -107,6 +109,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
+		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -521,13 +524,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$htmlForm->addHeaderHtml( $infoMsg->parseAsBlock() );
 
 		// Handle AntiSpoof integration
-		$spoofUser = new CentralAuthSpoofUser( $req->getNewName() );
+		$spoofUser = $this->caAntiSpoofManager->getSpoofUser( $req->getNewName() );
 		$conflicts = $this->uiService->processAntiSpoofConflicts(
 			$this->getContext(),
 			$req->getName(),
 			$spoofUser->getConflicts()
 		);
-		$renamedUser = CentralAuthAntiSpoofHooks::getOldRenamedUserName( $req->getNewName() );
+		$renamedUser = $this->caAntiSpoofManager->getOldRenamedUserName( $req->getNewName() );
 		if ( $renamedUser !== null ) {
 			$conflicts[] = $renamedUser;
 		}

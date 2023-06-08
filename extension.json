@@ -196,6 +196,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 			"services": [
 				"JobQueueGroupFactory",
+				"CentralAuth.CentralAuthAntiSpoofManager",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",
@@ -381,11 +382,9 @@
 		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
 	},
 	"AutoloadClasses": {
-		"CentralAuthAntiSpoofHooks": "includes/CentralAuthAntiSpoofHooks.php",
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
-		"CentralAuthSpoofUser": "includes/CentralAuthSpoofUser.php",
 		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php"
 	},
 	"TestAutoloadClasses": {
@@ -602,7 +601,10 @@
 			]
 		},
 		"rename": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\GlobalRenameHookHandler"
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\GlobalRenameHookHandler",
+			"services": [
+				"CentralAuth.CentralAuthAntiSpoofManager"
+			]
 		},
 		"unittests": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UnitTestsHookHandler",
@@ -613,6 +615,7 @@
 		"usercreation": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserCreationHookHandler",
 			"services": [
+				"CentralAuth.CentralAuthAntiSpoofManager",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUtilityService"
 			]
@@ -839,7 +842,8 @@
 					"ReadOnlyMode",
 					"UserIdentityLookup",
 					"CentralAuth.GlobalRenameRequestStore",
-					"CentralAuth.CentralAuthUtilityService"
+					"CentralAuth.CentralAuthUtilityService",
+					"CentralAuth.CentralAuthAntiSpoofManager"
 				]
 			}
 		},

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use CentralAuthSpoofUser;
 use Job;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
@@ -137,7 +137,8 @@ class GlobalRenameUser {
 		);
 
 		// Update CA's AntiSpoof
-		$spoof = new CentralAuthSpoofUser( $this->newUser->getName() );
+		// TODO: inject services
+		$spoof = CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $this->newUser->getName() );
 		$spoof->update( $this->oldUser->getName() );
 
 		// From this point on all code using CentralAuthUser

@@ -1,30 +1,77 @@
 <?php
 
-use MediaWiki\Language\RawMessage;
-use MediaWiki\Logger\LoggerFactory;
-use Psr\Log\LoggerInterface;
+namespace MediaWiki\Extension\CentralAuth\User;
 
-class CentralAuthAntiSpoofHooks {
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Language\RawMessage;
+use Message;
+use Psr\Log\LoggerInterface;
+use StatusValue;
+use User;
+use Wikimedia\Rdbms\IConnectionProvider;
+
+class CentralAuthAntiSpoofManager {
+	/** @internal Only public for service wiring use. */
+	public const CONSTRUCTOR_OPTIONS = [
+		'CentralAuthOldNameAntiSpoofWiki',
+	];
+
+	private ServiceOptions $options;
+	private LoggerInterface $logger;
+	private IConnectionProvider $connectionProvider;
+	private CentralAuthDatabaseManager $databaseManager;
+
+	/**
+	 * @param ServiceOptions $options
+	 * @param LoggerInterface $logger
+	 * @param IConnectionProvider $connectionProvider
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 */
+	public function __construct(
+		ServiceOptions $options,
+		LoggerInterface $logger,
+		IConnectionProvider $connectionProvider,
+		CentralAuthDatabaseManager $databaseManager
+	) {
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->options = $options;
+		$this->logger = $logger;
+		$this->connectionProvider = $connectionProvider;
+		$this->databaseManager = $databaseManager;
+	}
+
+	/**
+	 * @param string $name
+	 * @return CentralAuthSpoofUser
+	 */
+	public function getSpoofUser( string $name ): CentralAuthSpoofUser {
+		return new CentralAuthSpoofUser(
+			$name,
+			$this->databaseManager
+		);
+	}
 
 	/**
 	 * Test if an account is acceptable
+	 *
 	 * @param User $user
 	 * @param User $creator
 	 * @param bool $enable
 	 * @param bool $override
 	 * @param LoggerInterface|null $logger
+	 *
 	 * @return StatusValue
 	 */
-	public static function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
+	public function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
 		if ( $logger === null ) {
-			$logger = LoggerFactory::getInstance( 'antispoof' );
+			$logger = $this->logger;
 		}
 
 		if ( !$enable ) {
 			$mode = 'LOGGING ';
 			$active = false;
-		} elseif ( $override && $creator->isAllowed( 'override-antispoof' )
-		) {
+		} elseif ( $override && $creator->isAllowed( 'override-antispoof' ) ) {
 			$mode = 'OVERRIDE ';
 			$active = false;
 		} else {
@@ -33,11 +80,11 @@ class CentralAuthAntiSpoofHooks {
 		}
 
 		$name = $user->getName();
-		$spoof = new CentralAuthSpoofUser( $name );
+		$spoof = $this->getSpoofUser( $name );
 		if ( $spoof->isLegal() ) {
 			$normalized = $spoof->getNormalized();
 			$conflicts = $spoof->getConflicts();
-			$oldUserName = self::getOldRenamedUserName( $name );
+			$oldUserName = $this->getOldRenamedUserName( $name );
 			if ( $oldUserName !== null ) {
 				$conflicts[] = $oldUserName;
 			}
@@ -79,18 +126,20 @@ class CentralAuthAntiSpoofHooks {
 
 	/**
 	 * Given a username, find the old name
-	 * TODO: Move it to a better place.
 	 *
 	 * @param string $name Name to lookup
+	 *
 	 * @return null|string Old username, or null
 	 */
-	public static function getOldRenamedUserName( $name ) {
-		global $wgCentralAuthOldNameAntiSpoofWiki;
-		// If nobody has set this variable, it will be false,
-		// which will mean the current wiki, which sounds like as
-		// good a default as we can get.
-		$dbLogWiki = wfGetDB( DB_REPLICA, [], $wgCentralAuthOldNameAntiSpoofWiki );
-		$newNameOfUser = $dbLogWiki->selectField(
+	public function getOldRenamedUserName( $name ) {
+		$dbrLogWiki = $this->connectionProvider->getReplicaDatabase(
+			// If nobody has set this variable, it will be false,
+			// which will mean the current wiki, which sounds like as
+			// good a default as we can get.
+			$this->options->get( 'CentralAuthOldNameAntiSpoofWiki' )
+		);
+
+		$newNameOfUser = $dbrLogWiki->selectField(
 			[ 'logging', 'log_search' ],
 			'log_title',
 			[

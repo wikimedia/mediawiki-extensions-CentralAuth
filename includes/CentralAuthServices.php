@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use MediaWiki\MediaWikiServices;
@@ -34,6 +35,18 @@ use Psr\Container\ContainerInterface;
  * @author Taavi "Majavah" Väänänen
  */
 class CentralAuthServices {
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
+	 * @return CentralAuthAntiSpoofManager
+	 * @since 1.41
+	 */
+	public static function getAntiSpoofManager( ContainerInterface $services = null ): CentralAuthAntiSpoofManager {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthAntiSpoofManager' );
+	}
+
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
