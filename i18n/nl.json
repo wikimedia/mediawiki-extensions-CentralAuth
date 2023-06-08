@@ -397,7 +397,7 @@
 	"centralauth-rightslog-set-optout": "opt-outgebaseerd",
 	"centralauth-ro": "Globale accountgegevens",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|seconde|seconden}} geleden",
-	"centralauth-state-mismatch": "Fout: er is een bewerkingsconflict geconstateerd voor deze gebruiker. Controleer uw wijziging en probeer het opnieuw.",
+	"centralauth-state-mismatch": "Fout: De status van deze gebruiker is ondertussen gewijzigd. Controleer de huidige status en probeer het opnieuw.",
 	"centralauth-token-mismatch": "Vanwege verlies van de sessiegegevens kon uw verzoek niet verwerkt worden.",
 	"centralauth-warning-notattached": "De lokale gebruiker is niet gekoppeld aan een globale gebruiker.",
 	"centralauth-warning-notloggedin": "U bent niet aangemeld.",
