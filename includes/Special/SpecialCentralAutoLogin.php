@@ -45,52 +45,52 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var Session|null */
 	protected $session = null;
 
-	/** @var CentralAuthUtilityService */
-	private $centralAuthUtilityService;
-
-	/** @var UserOptionsManager */
-	private $userOptionsManager;
+	/** @var LanguageFactory */
+	private $languageFactory;
 
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
+	/** @var UserIdentityLookup */
+	private $userIdentityLookup;
+
+	/** @var UserOptionsManager */
+	private $userOptionsManager;
+
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
+
+	/** @var CentralAuthUtilityService */
+	private $centralAuthUtilityService;
 
 	/** @var LoggerInterface */
 	private $logger;
 
-	/** @var LanguageFactory */
-	private $languageFactory;
-
-	/** @var UserIdentityLookup */
-	private $userIdentityLookup;
-
 	/**
-	 * @param CentralAuthUtilityService $centralAuthUtilityService
-	 * @param UserOptionsManager $userOptionsManager
-	 * @param ReadOnlyMode $readOnlyMode
-	 * @param CentralAuthSessionManager $sessionManager
 	 * @param LanguageFactory $languageFactory
+	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserIdentityLookup $userIdentityLookup
+	 * @param UserOptionsManager $userOptionsManager
+	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 */
 	public function __construct(
-		CentralAuthUtilityService $centralAuthUtilityService,
-		UserOptionsManager $userOptionsManager,
-		ReadOnlyMode $readOnlyMode,
-		CentralAuthSessionManager $sessionManager,
 		LanguageFactory $languageFactory,
-		UserIdentityLookup $userIdentityLookup
+		ReadOnlyMode $readOnlyMode,
+		UserIdentityLookup $userIdentityLookup,
+		UserOptionsManager $userOptionsManager,
+		CentralAuthSessionManager $sessionManager,
+		CentralAuthUtilityService $centralAuthUtilityService
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
-		$this->centralAuthUtilityService = $centralAuthUtilityService;
-		$this->userOptionsManager = $userOptionsManager;
-		$this->readOnlyMode = $readOnlyMode;
-		$this->sessionManager = $sessionManager;
-		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$this->languageFactory = $languageFactory;
+		$this->readOnlyMode = $readOnlyMode;
 		$this->userIdentityLookup = $userIdentityLookup;
+		$this->userOptionsManager = $userOptionsManager;
+		$this->sessionManager = $sessionManager;
+		$this->centralAuthUtilityService = $centralAuthUtilityService;
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	/**

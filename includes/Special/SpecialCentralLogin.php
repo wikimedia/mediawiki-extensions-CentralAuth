@@ -17,6 +17,7 @@ use MediaWiki\StubObject\StubGlobalUser;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
+use Psr\Log\LoggerInterface;
 use UnlistedSpecialPage;
 use User;
 use WebRequest;
@@ -30,29 +31,29 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
 
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
 
-	/** @var \Psr\Log\LoggerInterface */
+	/** @var CentralAuthUtilityService */
+	private $utilityService;
+
+	/** @var LoggerInterface */
 	private $logger;
 
 	/**
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
-	 * @param CentralAuthUtilityService $utilityService
 	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthUtilityService $utilityService
 	 */
 	public function __construct(
 		IBufferingStatsdDataFactory $statsdDataFactory,
-		CentralAuthUtilityService $utilityService,
-		CentralAuthSessionManager $sessionManager
+		CentralAuthSessionManager $sessionManager,
+		CentralAuthUtilityService $utilityService
 	) {
 		parent::__construct( 'CentralLogin' );
 		$this->statsdDataFactory = $statsdDataFactory;
-		$this->utilityService = $utilityService;
 		$this->sessionManager = $sessionManager;
+		$this->utilityService = $utilityService;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 

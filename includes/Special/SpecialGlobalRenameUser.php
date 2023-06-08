@@ -50,6 +50,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideTitleBlacklist = false;
 
+	/** @var JobQueueGroupFactory */
+	private $jobQueueGroupFactory;
+
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
 	/** @var CentralAuthUIService */
 	private $uiService;
 
@@ -59,37 +65,31 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/** @var GlobalRenameUserValidator */
 	private $globalRenameUserValidator;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/** @var JobQueueGroupFactory */
-	private $jobQueueGroupFactory;
-
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
 	private const EDITCOUNT_THRESHOLD = 100000;
 
 	/**
+	 * @param JobQueueGroupFactory $jobQueueGroupFactory
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 * @param GlobalRenameUserValidator $globalRenameUserValidator
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param JobQueueGroupFactory $jobQueueGroupFactory
 	 */
 	public function __construct(
+		JobQueueGroupFactory $jobQueueGroupFactory,
+		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
-		GlobalRenameUserValidator $globalRenameUserValidator,
-		CentralAuthDatabaseManager $databaseManager,
-		JobQueueGroupFactory $jobQueueGroupFactory
+		GlobalRenameUserValidator $globalRenameUserValidator
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
+		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
+		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameUserValidator = $globalRenameUserValidator;
-		$this->databaseManager = $databaseManager;
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 	}
 
 	public function doesWrites() {

@@ -44,31 +44,31 @@ class LoginCompleteHookHandler implements
 	/** @var Config */
 	private $config;
 
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
-
 	/** @var UserOptionsLookup */
 	private $userOptionsLookup;
+
+	/** @var CentralAuthSessionManager */
+	private $sessionManager;
 
 	/** @var CentralAuthHookRunner */
 	private $caHookRunner;
 
 	/**
-	 * @param Config $config
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @param UserOptionsLookup $userOptionsLookup
 	 * @param HookContainer $hookContainer
+	 * @param Config $config
+	 * @param UserOptionsLookup $userOptionsLookup
+	 * @param CentralAuthSessionManager $sessionManager
 	 */
 	public function __construct(
+		HookContainer $hookContainer,
 		Config $config,
-		CentralAuthSessionManager $sessionManager,
 		UserOptionsLookup $userOptionsLookup,
-		HookContainer $hookContainer
+		CentralAuthSessionManager $sessionManager
 	) {
-		$this->config = $config;
-		$this->sessionManager = $sessionManager;
-		$this->userOptionsLookup = $userOptionsLookup;
 		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
+		$this->config = $config;
+		$this->userOptionsLookup = $userOptionsLookup;
+		$this->sessionManager = $sessionManager;
 	}
 
 	/**

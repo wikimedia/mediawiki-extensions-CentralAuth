@@ -65,28 +65,28 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/** @var bool */
 	protected $isself = false;
 
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
+	/** @var UserNamePrefixSearch */
+	private $userNamePrefixSearch;
 
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
-	/** @var UserNamePrefixSearch */
-	private $userNamePrefixSearch;
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
 
 	/**
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param UserNameUtils $userNameUtils
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
+	 * @param UserNameUtils $userNameUtils
+	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
 	public function __construct(
-		GlobalGroupLookup $globalGroupLookup,
+		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
-		UserNamePrefixSearch $userNamePrefixSearch
+		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
-		$this->userNameUtils = $userNameUtils;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
+		$this->userNameUtils = $userNameUtils;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 

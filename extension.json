@@ -116,31 +116,31 @@
 		"CentralAuth": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAuth",
 			"services": [
+				"CommentFormatter",
 				"NamespaceInfo",
-				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.CentralAuthUIService",
 				"ReadOnlyMode",
 				"UserNameUtils",
-				"CommentFormatter"
+				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthUIService"
+			]
+		},
+		"CentralAutoLogin": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAutoLogin",
+			"services": [
+				"LanguageFactory",
+				"ReadOnlyMode",
+				"UserIdentityLookup",
+				"UserOptionsManager",
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
 		"CentralLogin": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralLogin",
 			"services": [
 				"StatsdDataFactory",
-				"CentralAuth.CentralAuthUtilityService",
-				"CentralAuth.CentralAuthSessionManager"
-			]
-		},
-		"CentralAutoLogin": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAutoLogin",
-			"services": [
-				"CentralAuth.CentralAuthUtilityService",
-				"UserOptionsManager",
-				"ReadOnlyMode",
 				"CentralAuth.CentralAuthSessionManager",
-				"LanguageFactory",
-				"UserIdentityLookup"
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
 		"CreateLocalAccount": {
@@ -152,25 +152,25 @@
 		"MergeAccount": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMergeAccount",
 			"services": [
-				"CentralAuth.CentralAuthDatabaseManager",
 				"NamespaceInfo",
-				"UserFactory"
+				"UserFactory",
+				"CentralAuth.CentralAuthDatabaseManager"
 			]
 		},
 		"GlobalGroupMembership": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
 			"services": [
-				"CentralAuth.GlobalGroupLookup",
+				"UserNamePrefixSearch",
 				"UserNameUtils",
-				"UserNamePrefixSearch"
+				"CentralAuth.GlobalGroupLookup"
 			]
 		},
 		"GlobalGroupPermissions": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
 			"services": [
+				"PermissionManager",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.GlobalGroupLookup",
-				"PermissionManager"
+				"CentralAuth.GlobalGroupLookup"
 			]
 		},
 		"WikiSets": {
@@ -183,9 +183,9 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalUsers",
 			"services": [
 				"ContentLanguage",
+				"LinkBatchFactory",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.GlobalGroupLookup",
-				"LinkBatchFactory"
+				"CentralAuth.GlobalGroupLookup"
 			]
 		},
 		"MultiLock": {
@@ -198,11 +198,11 @@
 		"GlobalRenameUser": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 			"services": [
+				"JobQueueGroupFactory",
+				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",
-				"CentralAuth.GlobalRenameUserValidator",
-				"CentralAuth.CentralAuthDatabaseManager",
-				"JobQueueGroupFactory"
+				"CentralAuth.GlobalRenameUserValidator"
 			]
 		},
 		"GlobalRenameProgress": {
@@ -334,9 +334,9 @@
 		"globaluserrights": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights",
 			"services": [
-				"CentralAuth.GlobalGroupLookup",
+				"UserNamePrefixSearch",
 				"UserNameUtils",
-				"UserNamePrefixSearch"
+				"CentralAuth.GlobalGroupLookup"
 			]
 		}
 	},
@@ -534,24 +534,24 @@
 		"importhandle": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ImportHandleHookHandler",
 			"services": [
-				"CentralAuth.CentralAuthUtilityService",
-				"UserFactory"
+				"UserFactory",
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
 		"log": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\LogHookHandler",
 			"services": [
-				"UserNameUtils",
-				"DBLoadBalancerFactory"
+				"DBLoadBalancerFactory",
+				"UserNameUtils"
 			]
 		},
 		"logincomplete": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\LoginCompleteHookHandler",
 			"services": [
+				"HookContainer",
 				"MainConfig",
-				"CentralAuth.CentralAuthSessionManager",
 				"UserOptionsLookup",
-				"HookContainer"
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
 		"noservices": {

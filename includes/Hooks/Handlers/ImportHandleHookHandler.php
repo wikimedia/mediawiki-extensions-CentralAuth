@@ -28,22 +28,22 @@ use MediaWiki\User\UserFactory;
 class ImportHandleHookHandler implements
 	ImportHandleUnknownUserHook
 {
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
 	/** @var UserFactory */
 	private $userFactory;
 
+	/** @var CentralAuthUtilityService */
+	private $utilityService;
+
 	/**
-	 * @param CentralAuthUtilityService $utilityService
 	 * @param UserFactory $userFactory
+	 * @param CentralAuthUtilityService $utilityService
 	 */
 	public function __construct(
-		CentralAuthUtilityService $utilityService,
-		UserFactory $userFactory
+		UserFactory $userFactory,
+		CentralAuthUtilityService $utilityService
 	) {
-		$this->utilityService = $utilityService;
 		$this->userFactory = $userFactory;
+		$this->utilityService = $utilityService;
 	}
 
 	/**

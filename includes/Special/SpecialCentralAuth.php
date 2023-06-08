@@ -66,47 +66,45 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var string[] */
 	private $mWikis;
 
+	/** @var CommentFormatter */
+	private $commentFormatter;
+
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
-
-	/** @var CentralAuthUIService */
-	private $uiService;
-
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
 
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
 	/** @var UserNameUtils */
 	private $userNameUtils;
-
-	/** @var CommentFormatter */
-	private $commentFormatter;
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+	/** @var CentralAuthUIService */
+	private $uiService;
 
 	/**
+	 * @param CommentFormatter $commentFormatter
 	 * @param NamespaceInfo $namespaceInfo
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param CentralAuthUIService $uiService
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserNameUtils $userNameUtils
-	 * @param CommentFormatter $commentFormatter
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param CentralAuthUIService $uiService
 	 */
 	public function __construct(
+		CommentFormatter $commentFormatter,
 		NamespaceInfo $namespaceInfo,
-		CentralAuthDatabaseManager $databaseManager,
-		CentralAuthUIService $uiService,
 		ReadOnlyMode $readOnlyMode,
 		UserNameUtils $userNameUtils,
-		CommentFormatter $commentFormatter
+		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthUIService $uiService
 	) {
 		parent::__construct( 'CentralAuth' );
-		$this->namespaceInfo = $namespaceInfo;
-		$this->databaseManager = $databaseManager;
-		$this->uiService = $uiService;
-		$this->readOnlyMode = $readOnlyMode;
 		$this->userNameUtils = $userNameUtils;
 		$this->commentFormatter = $commentFormatter;
+		$this->namespaceInfo = $namespaceInfo;
+		$this->readOnlyMode = $readOnlyMode;
+		$this->databaseManager = $databaseManager;
+		$this->uiService = $uiService;
 	}
 
 	public function doesWrites() {

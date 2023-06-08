@@ -32,27 +32,28 @@ class SpecialMergeAccount extends SpecialPage {
 	/** @var string */
 	protected $mSessionKey;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 	/** @var UserFactory */
 	private $userFactory;
 
+	/** @var CentralAuthDatabaseManager */
+	private $databaseManager;
+
 	/**
-	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param NamespaceInfo $namespaceInfo
 	 * @param UserFactory $userFactory
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 */
 	public function __construct(
-		CentralAuthDatabaseManager $databaseManager,
 		NamespaceInfo $namespaceInfo,
-		UserFactory $userFactory
+		UserFactory $userFactory,
+		CentralAuthDatabaseManager $databaseManager
 	) {
 		parent::__construct( 'MergeAccount', 'centralauth-merge' );
-		$this->databaseManager = $databaseManager;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->userFactory = $userFactory;
+		$this->databaseManager = $databaseManager;
 	}
 
 	public function doesWrites() {

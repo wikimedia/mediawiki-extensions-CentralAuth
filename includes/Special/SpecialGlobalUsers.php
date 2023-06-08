@@ -15,32 +15,32 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 	/** @var Language */
 	private $contentLanguage;
 
+	/** @var LinkBatchFactory */
+	private $linkBatchFactory;
+
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-
 	/**
 	 * @param Language $contentLanguage
+	 * @param LinkBatchFactory $linkBatchFactory
 	 * @param CentralAuthDatabaseManager $dbManager
 	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param LinkBatchFactory $linkBatchFactory
 	 */
 	public function __construct(
 		Language $contentLanguage,
+		LinkBatchFactory $linkBatchFactory,
 		CentralAuthDatabaseManager $dbManager,
-		GlobalGroupLookup $globalGroupLookup,
-		LinkBatchFactory $linkBatchFactory
+		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalUsers' );
 		$this->contentLanguage = $contentLanguage;
+		$this->linkBatchFactory = $linkBatchFactory;
 		$this->dbManager = $dbManager;
 		$this->globalGroupLookup = $globalGroupLookup;
-		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function execute( $par ) {

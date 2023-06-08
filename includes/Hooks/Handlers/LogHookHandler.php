@@ -32,22 +32,22 @@ class LogHookHandler implements
 	LogEventsListGetExtraInputsHook,
 	SpecialLogAddLogSearchRelationsHook
 {
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
 	/** @var LBFactory */
 	private $lbFactory;
 
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
 	/**
-	 * @param UserNameUtils $userNameUtils
 	 * @param LBFactory $lbFactory
+	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
-		UserNameUtils $userNameUtils,
-		LBFactory $lbFactory
+		LBFactory $lbFactory,
+		UserNameUtils $userNameUtils
 	) {
-		$this->userNameUtils = $userNameUtils;
 		$this->lbFactory = $lbFactory;
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**

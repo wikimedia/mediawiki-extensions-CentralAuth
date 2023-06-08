@@ -45,40 +45,40 @@ class ApiGlobalUserRights extends ApiBase {
 	/** @var CentralAuthGroupMembershipProxy */
 	private $mUser = null;
 
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
+	/** @var UserNamePrefixSearch */
+	private $userNamePrefixSearch;
 
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
-	/** @var UserNamePrefixSearch */
-	private $userNamePrefixSearch;
+	/** @var GlobalGroupLookup */
+	private $globalGroupLookup;
 
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param UserNameUtils $userNameUtils
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
+	 * @param UserNameUtils $userNameUtils
+	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
-		GlobalGroupLookup $globalGroupLookup,
+		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
-		UserNamePrefixSearch $userNamePrefixSearch
+		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->userNameUtils = $userNameUtils;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
+		$this->userNameUtils = $userNameUtils;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	private function getUserRightsPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
-			$this->globalGroupLookup,
+			$this->userNamePrefixSearch,
 			$this->userNameUtils,
-			$this->userNamePrefixSearch
+			$this->globalGroupLookup
 		);
 	}
 

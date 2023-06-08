@@ -19,9 +19,9 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiUnitTestCase {
 
 		$this->special = TestingAccessWrapper::newFromObject(
 			new SpecialGlobalGroupPermissions(
+				$this->createNoOpMock( PermissionManager::class ),
 				$this->createNoOpMock( CentralAuthDatabaseManager::class ),
-				$this->createNoOpMock( GlobalGroupLookup::class ),
-				$this->createNoOpMock( PermissionManager::class )
+				$this->createNoOpMock( GlobalGroupLookup::class )
 			)
 		);
 	}

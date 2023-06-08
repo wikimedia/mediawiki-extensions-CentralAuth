@@ -40,6 +40,8 @@ use XmlSelect;
  */
 
 class SpecialGlobalGroupPermissions extends SpecialPage {
+	/** @var PermissionManager */
+	private $permissionManager;
 
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
@@ -47,23 +49,20 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	/** @var GlobalGroupLookup */
 	private $globalGroupLookup;
 
-	/** @var PermissionManager */
-	private $permissionManager;
-
 	/**
+	 * @param PermissionManager $permissionManager
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param PermissionManager $permissionManager
 	 */
 	public function __construct(
+		PermissionManager $permissionManager,
 		CentralAuthDatabaseManager $databaseManager,
-		GlobalGroupLookup $globalGroupLookup,
-		PermissionManager $permissionManager
+		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupPermissions' );
+		$this->permissionManager = $permissionManager;
 		$this->databaseManager = $databaseManager;
 		$this->globalGroupLookup = $globalGroupLookup;
-		$this->permissionManager = $permissionManager;
 	}
 
 	public function doesWrites() {
