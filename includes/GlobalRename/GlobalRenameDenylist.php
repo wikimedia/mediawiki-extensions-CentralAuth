@@ -21,9 +21,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
+use BadMethodCallException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;
-use MWException;
 use Psr\Log\LoggerInterface;
 use StringUtils;
 use Title;
@@ -91,12 +91,10 @@ class GlobalRenameDenylist {
 	 * Denylist is fetched and parsed into denylist. Denylist source is
 	 * either an URL on the internet, or a wiki page.
 	 * $url has to be already set.
-	 *
-	 * @throws MWException
 	 */
 	private function fetchList() {
 		if ( $this->denylist !== null && count( $this->denylist ) !== 0 ) {
-			throw new MWException(
+			throw new BadMethodCallException(
 				'GlobalRenameDenylist::fetchList called on already fully initialized class'
 			);
 		}
@@ -106,12 +104,12 @@ class GlobalRenameDenylist {
 			$wikipage = $this->wikiPageFactory->newFromTitle( $this->file );
 			$content = $wikipage->getContent();
 			if ( $content === null ) {
-				throw new MWException(
+				throw new BadMethodCallException(
 					'GlobalRenameDenylist::fetchList was called with non-existent wikipage'
 				);
 			}
 			if ( !$content instanceof WikitextContent ) {
-				throw new MWException(
+				throw new BadMethodCallException(
 					'Page used with GlobalRenameDenylist has invalid content model'
 				);
 			}
