@@ -109,9 +109,6 @@
 			]
 		}
 	},
-	"ExtensionFunctions": [
-		"MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks::onRunExtensionFunctions"
-	],
 	"SpecialPages": {
 		"CentralAuth": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAuth",
@@ -494,6 +491,16 @@
 				"desktop",
 				"mobile"
 			]
+		},
+		"ext.centralauth.globalrenamequeue": {
+			"scripts": "ext.centralauth.globalrenamequeue.js",
+			"messages": [
+				"centralauth-rename-confirm",
+				"centralauth-rename-deny"
+			]
+		},
+		"ext.centralauth.globalrenamequeue.styles": {
+			"styles": "ext.centralauth.globalrenamequeue.less"
 		}
 	},
 	"ResourceFileModulePaths": {

@@ -29,8 +29,6 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
-use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
-use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
@@ -123,56 +121,6 @@ class CentralAuthHooks implements
 		// already configured otherwise.
 		if ( $wgCentralIdLookupProvider === 'local' && $wgOverrideCentralIdLookupProvider ) {
 			$wgCentralIdLookupProvider = 'CentralAuth';
-		}
-	}
-
-	/**
-	 * Callback to register with $wgExtensionFunctions to complete configuration
-	 * after other initial configuration has completed. This can be used to
-	 * avoid extension ordering issues and do things that are dependent on
-	 * feature flags.
-	 */
-	public static function onRunExtensionFunctions() {
-		global $wgSpecialPages, $wgResourceModules;
-		global $wgCentralAuthEnableGlobalRenameRequest;
-		$caBase = __DIR__ . '/..';
-
-		if ( $wgCentralAuthEnableGlobalRenameRequest ) {
-			$wgSpecialPages['GlobalRenameRequest'] = [
-				'class' => SpecialGlobalRenameRequest::class,
-				'services' => [
-					'CentralAuth.GlobalRenameDenylist',
-					'UserNameUtils',
-					'CentralAuth.GlobalRenameRequestStore',
-				]
-			];
-
-			$wgSpecialPages['GlobalRenameQueue'] = [
-				'class' => SpecialGlobalRenameQueue::class,
-				'services' => [
-					'UserNameUtils',
-					'DBLoadBalancerFactory',
-					'CentralAuth.CentralAuthDatabaseManager',
-					'CentralAuth.CentralAuthUIService',
-					'CentralAuth.GlobalRenameRequestStore',
-					'JobQueueGroupFactory',
-				],
-			];
-			$wgResourceModules['ext.centralauth.globalrenamequeue'] = [
-				'scripts'       => 'ext.centralauth.globalrenamequeue.js',
-				'localBasePath' => "{$caBase}/modules",
-				'remoteExtPath' => 'CentralAuth/modules',
-				'messages' => [
-					'centralauth-rename-confirm',
-					'centralauth-rename-deny'
-				]
-			];
-			$wgResourceModules['ext.centralauth.globalrenamequeue.styles'] = [
-				'position'      => 'top',
-				'styles'        => 'ext.centralauth.globalrenamequeue.less',
-				'localBasePath' => "{$caBase}/modules",
-				'remoteExtPath' => 'CentralAuth/modules',
-			];
 		}
 	}
 
