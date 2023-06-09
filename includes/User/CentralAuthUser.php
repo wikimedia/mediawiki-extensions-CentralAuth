@@ -607,7 +607,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->getCacheKey( $cache ),
 			$cache::TTL_DAY,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+				$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$this->loadFromDatabase();

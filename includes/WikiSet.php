@@ -149,7 +149,7 @@ class WikiSet {
 			self::getPerNameCacheKey( $cache, $name ),
 			$cache::TTL_INDEFINITE,
 			function ( $oldValue, &$ttl, &$setOpts ) use ( $name, $fname ) {
-				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+				$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$row = $dbr->newSelectQueryBuilder()
@@ -194,7 +194,7 @@ class WikiSet {
 			self::getPerIdCacheKey( $cache, $id ),
 			$cache::TTL_INDEFINITE,
 			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
-				$dbr = CentralAuthServices::getDatabaseManager()->getCentralDB( DB_REPLICA );
+				$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
 
 				$row = $dbr->newSelectQueryBuilder()
