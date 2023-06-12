@@ -423,7 +423,7 @@
 	"centralauth-rightslog-set-optout": "basado en exclusión",
 	"centralauth-ro": "Información de la cuenta global",
 	"centralauth-seconds-ago": "hace $1 {{PLURAL:$1|segundo|segundos}}",
-	"centralauth-state-mismatch": "Error: se detectó un conflicto de edición para este usuario. Comprueba tu cambio e inténtalo de nuevo.",
+	"centralauth-state-mismatch": "Error: se ha detectado una modificación en el estado de esta cuenta de usuario. Comprueba el estado actual y vuelve a intentar cambiarlo si es necesario.",
 	"centralauth-token-mismatch": "Lo sentimos, no pudimos procesar el envío del formulario a causa de una perdida de datos de sesión.",
 	"centralauth-warning-notattached": "La cuenta local no está unida a una global.",
 	"centralauth-warning-notloggedin": "No has iniciado sesión.",
