@@ -25,6 +25,7 @@
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
 	"apihelp-centralauthtoken-summary": "Obtener un \"centralauthtoken\" para realizar una solicitud autenticada a una wiki adjunta.",
 	"apihelp-createlocalaccount-description": "Forzar la creación de una cuenta local. Esto es funcionalmente equivalente a usar [[Special:CreateLocalAccount]].",
+	"apihelp-createlocalaccount-example-1": "Forzar la creación de una cuenta local para [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Razón para crear la cuenta local.",
 	"apihelp-createlocalaccount-param-username": "Usuario para el que se crea la cuenta local.",
 	"apihelp-createlocalaccount-summary": "Forcibly create a local account",
