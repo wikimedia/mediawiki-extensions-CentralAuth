@@ -397,7 +397,7 @@
 	"centralauth-rightslog-set-optout": "معتمد على إلغاء الاشتراك",
 	"centralauth-ro": "معلومات الحساب الموحد",
 	"centralauth-seconds-ago": "قبل {{PLURAL:$1|ثانية واحدة|ثانيتين|$1 ثوانٍ|$1 ثانية}}",
-	"centralauth-state-mismatch": "خطأ: هناك تعارض في التحرير لهذا المستخدم. الرجاء التأكد من تغييراتك والمحاولة مرة أخرى.",
+	"centralauth-state-mismatch": "خطأ: تغيرت حالة حساب المستخدم هذا في الوقت الحالي. يرجى التحقق من الحالة الحالية والمحاولة مرة أخرى ، إذا لزم الأمر.",
 	"centralauth-token-mismatch": "عذرا، لم نستطع معالجة طلبك نتيجة لفقد بيانات الجلسة.",
 	"centralauth-warning-notattached": "الحساب المحلي غير مرتبط بحساب موحد.",
 	"centralauth-warning-notloggedin": "أنت غير مسجل الدخول حاليا",
