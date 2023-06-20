@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"고솜"
+		]
+	},
+	"centralauth-admin-blocklog": "막기 기록",
+	"centralauth-foreign-contributions": "$2서 {{PLURAL:$1|이바지}} $1개",
+	"centralauth-foreign-link": "$2의 $1 나그네",
+	"centralauth-merge-method-login": "들어사기로 멩글어짐"
+}
