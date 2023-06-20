@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use Config;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
 use Title;
@@ -29,16 +28,6 @@ use User;
 class PermissionsHookHandler implements
 	GetUserPermissionsErrorsExpensiveHook
 {
-	/** @var Config */
-	private $config;
-
-	/**
-	 * @param Config $config
-	 */
-	public function __construct( Config $config ) {
-		$this->config = $config;
-	}
-
 	/**
 	 * @param Title $title
 	 * @param User $user
@@ -50,22 +39,14 @@ class PermissionsHookHandler implements
 		if ( $action == 'read' || !$user->isRegistered() ) {
 			return true;
 		}
+
 		$centralUser = CentralAuthUser::getInstance( $user );
 
-		if ( $this->config->get( 'DisableUnmergedEditing' )
-			&& ( $action === 'edit' || $action === 'delete' )
-			&& !$centralUser->exists()
-			&& !$title->inNamespaces( NS_USER_TALK, NS_PROJECT_TALK )
+		if (
+			$centralUser->exists()
+			&& $centralUser->isAttached()
+			&& ( $centralUser->isLocked() || $centralUser->isHidden() )
 		) {
-			$result = 'centralauth-error-unmerged';
-			return false;
-		}
-
-		if ( !( $centralUser->exists() && $centralUser->isAttached() ) ) {
-			return true;
-		}
-
-		if ( $centralUser->isLocked() || $centralUser->isHidden() ) {
 			$result = 'centralauth-error-locked';
 			return false;
 		}
