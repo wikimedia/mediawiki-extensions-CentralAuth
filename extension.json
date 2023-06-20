@@ -576,10 +576,7 @@
 			]
 		},
 		"permissions": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PermissionsHookHandler",
-			"services": [
-				"MainConfig"
-			]
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PermissionsHookHandler"
 		},
 		"securepoll": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler",
@@ -766,10 +763,6 @@
 		"CentralAuthRC": {
 			"description": "Array of settings for sending the CentralAuth events to the RC Feeds",
 			"value": []
-		},
-		"DisableUnmergedEditing": {
-			"description": "Disable editing for non-global accounts (except on NS_USER_TALK and NS_PROJECT_TALK)",
-			"value": false
 		},
 		"CentralAuthWikisPerSuppressJob": {
 			"description": "Size of wikis handled in one suppress user job. Keep in mind that one wiki requires ~10 queries.",

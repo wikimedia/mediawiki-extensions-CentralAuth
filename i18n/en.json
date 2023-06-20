@@ -234,7 +234,6 @@
 	"centralauth-error-nologinattempt": "No active login attempt is in progress for your session.",
 	"centralauth-error-token-wrongattempt": "The authentication token does not belong to your current login attempt.\nSomeone might be trying to log you in under a malicious account.",
 	"centralauth-error-token-wronguser": "The token does not match with your session username.\nSomeone might be trying to log you in under a malicious account.\nIf you are just trying to log in as another user, please log out first.",
-	"centralauth-error-unmerged": "You cannot edit because your account is not unified.",
 	"centralauth-error-wrongprovider": "This special page is unavailable when using $1.",
 	"centralauth-finish-incomplete": "Several accounts were merged using this password.\nOther accounts are not yet confirmed.",
 	"centralauth-finish-login": "Login",
