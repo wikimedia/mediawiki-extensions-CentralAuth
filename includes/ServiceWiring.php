@@ -97,8 +97,7 @@ return [
 			LoggerFactory::getInstance( 'CentralAuth' ),
 			$services->getHttpRequestFactory(),
 			$services->getWikiPageFactory(),
-			$config->get( 'GlobalRenameDenylist' ),
-			$config->get( 'GlobalRenameDenylistRegex' )
+			$config->get( 'GlobalRenameDenylist' )
 		);
 	},
 	'CentralAuth.GlobalRenameRequestStore' => static function (

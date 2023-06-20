@@ -39,9 +39,6 @@ class GlobalRenameDenylist {
 	/** @var string|Title|null Source of the denylist, url to fetch it from, or null */
 	private $file = null;
 
-	/** @var bool whether the denylist should be treated as a bunch of regexs */
-	private $denylistRegex;
-
 	/** @var string[]|null Content of the denylist */
 	private $denylist = null;
 
@@ -60,20 +57,17 @@ class GlobalRenameDenylist {
 	 * @param WikiPageFactory $wikiPageFactory
 	 * @param string|Title|null $denylistSource Page with denylist, url to fetch it from,
 	 *   or null for no list ($wgGlobalRenameDenylist)
-	 * @param bool $denylistRegex ($wgGlobalRenameDenylistRegex)
 	 */
 	public function __construct(
 		LoggerInterface $logger,
 		HttpRequestFactory $httpRequestFactory,
 		WikiPageFactory $wikiPageFactory,
-		$denylistSource,
-		bool $denylistRegex
+		$denylistSource
 	) {
 		$this->logger = $logger;
 		$this->httpRequestFactory = $httpRequestFactory;
 		$this->wikiPageFactory = $wikiPageFactory;
 		$this->file = $denylistSource;
-		$this->denylistRegex = $denylistRegex;
 	}
 
 	/**
@@ -159,23 +153,20 @@ class GlobalRenameDenylist {
 			$this->fetchList();
 		}
 
-		if ( !$this->denylistRegex ) {
-			$res = !in_array( $userName, $this->denylist, true );
-		} else {
-			$res = true;
-			foreach ( $this->denylist as $row ) {
-				$row = preg_replace( '!(\\\\\\\\)*(\\\\)?/!', '$1\/', $row );
-				$regex = "/$row/u";
-				if ( !StringUtils::isValidPCRERegex( $regex ) ) {
-					continue; // Skip invalid regex
-				}
-				$regexRes = preg_match( $regex, $userName );
-				if ( $regexRes === 1 ) {
-					$res = false;
-					break;
-				}
+		$res = true;
+		foreach ( $this->denylist as $row ) {
+			$row = preg_replace( '!(\\\\\\\\)*(\\\\)?/!', '$1\/', $row );
+			$regex = "/$row/u";
+			if ( !StringUtils::isValidPCRERegex( $regex ) ) {
+				continue; // Skip invalid regex
+			}
+			$regexRes = preg_match( $regex, $userName );
+			if ( $regexRes === 1 ) {
+				$res = false;
+				break;
 			}
 		}
+
 		$this->logger->debug(
 			'GlobalRenameDenylist returns {result} for {username}',
 			[
