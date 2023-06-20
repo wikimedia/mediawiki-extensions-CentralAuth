@@ -787,10 +787,6 @@
 		"CentralAuthGlobalBlockInterwikiPrefix": {
 			"value": "global"
 		},
-		"OverrideCentralIdLookupProvider": {
-			"description": "Set false if you really want to use 'local' rather than 'CentralAuth' for $wgCentralIdLookupProvider. This isn't the default because using CentralAuth is almost always what you want if CentralAuth is installed.",
-			"value": true
-		},
 		"CentralAuthOldNameAntiSpoofWiki": {
 			"value": false
 		},
