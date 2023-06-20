@@ -269,7 +269,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 							return; // not possible to save
 						}
 
-						$this->userOptionsManager->saveOptions( $user );
+						if ( $user->isNamed() ) {
+							$this->userOptionsManager->saveOptions( $user );
+						}
 					} );
 				}
 
