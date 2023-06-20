@@ -2746,7 +2746,8 @@ class CentralAuthUser implements IDBAccessObject {
 			->getUserGroupMemberships(
 				new UserIdentityValue(
 					(int)$data['id'],
-					$data['name']
+					$data['name'],
+					$wikiID === WikiMap::getCurrentWikiId() ? UserIdentity::LOCAL : $wikiID
 				)
 			);
 
