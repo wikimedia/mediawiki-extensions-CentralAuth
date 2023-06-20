@@ -756,10 +756,6 @@
 				"extendwatchlist"
 			]
 		},
-		"CentralAuthCreateOnView": {
-			"description": "If true, local accounts will be created for active global sessions on any page view. This is kind of creepy, so we're gonna have it off for a little bit. With other default options, the local autocreation will be held off until an active login attempt, while global sessions will still automatically log in those who already have a merged account.",
-			"value": false
-		},
 		"CentralAuthRC": {
 			"description": "Array of settings for sending the CentralAuth events to the RC Feeds",
 			"value": []
