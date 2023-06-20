@@ -772,10 +772,6 @@
 			"description": "Use the EventLogging extension to measure various activities",
 			"value": false
 		},
-		"CentralAuthPreventUnattached": {
-			"description": "Don't allow new unattached accounts to be created",
-			"value": false
-		},
 		"CentralAuthEnableGlobalRenameRequest": {
 			"description": "Feature flag for Special:GlobalRenameRequest",
 			"value": false

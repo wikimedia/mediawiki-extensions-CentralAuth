@@ -82,11 +82,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var bool Whether to auto-migrate non-global accounts on login */
 	protected $autoMigrateNonGlobalAccounts = null;
 
-	/** @var bool Whether to prevent a new account from being created if the
-	 * account exists on other wikis in the SUL group.
-	 */
-	protected $preventUnattached = null;
-
 	/** @var bool Whether to check for spoofed user names */
 	protected $antiSpoofAccounts = null;
 
@@ -107,8 +102,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	 *    wikis when logging in.
 	 *  - autoMigrateNonGlobalAccounts: If true, attempt to auto-migrate
 	 *    non-global accounts on login.
-	 *  - preventUnattached: Whether to prevent new unattached accounts from
-	 *    being created.
 	 *  - antiSpoofAccounts: Whether to anti-spoof new accounts. Ignored if the
 	 *    AntiSpoof extension isn't installed or the extension is outdated.
 	 */
@@ -124,7 +117,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$params = []
 	) {
 		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
-			$wgCentralAuthAutoMigrateNonGlobalAccounts, $wgCentralAuthPreventUnattached,
+			$wgCentralAuthAutoMigrateNonGlobalAccounts,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
 		$this->databaseManager = $databaseManager;
@@ -144,7 +137,6 @@ class CentralAuthPrimaryAuthenticationProvider
 			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
 			'autoMigrateNonGlobalAccounts' => $wgCentralAuthAutoMigrateNonGlobalAccounts,
-			'preventUnattached' => $wgCentralAuthPreventUnattached,
 			'antiSpoofAccounts' => $wgAntiSpoofAccounts,
 			'authoritative' => $wgCentralAuthStrict,
 		];
@@ -154,7 +146,6 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->checkSULMigration = (bool)$params['checkSULMigration'];
 		$this->autoMigrate = (bool)$params['autoMigrate'];
 		$this->autoMigrateNonGlobalAccounts = (bool)$params['autoMigrateNonGlobalAccounts'];
-		$this->preventUnattached = (bool)$params['preventUnattached'];
 		$this->antiSpoofAccounts = (bool)$params['antiSpoofAccounts'];
 	}
 
@@ -515,9 +506,8 @@ class CentralAuthPrimaryAuthenticationProvider
 				return $status;
 			}
 
-			// Prevent creation if the user exists anywhere else we know about,
-			// and we're asked to
-			if ( $this->preventUnattached && $centralUser->listUnattached() ) {
+			// Prevent creation if the user exists anywhere else we know about
+			if ( $centralUser->listUnattached() ) {
 				$status->fatal( 'centralauth-account-unattached-exists' );
 				return $status;
 			}
