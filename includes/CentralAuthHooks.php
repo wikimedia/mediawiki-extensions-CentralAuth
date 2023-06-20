@@ -102,7 +102,7 @@ class CentralAuthHooks implements
 	 */
 	public static function onRegistration() {
 		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase, $wgDBname, $wgSessionProviders,
-			$wgCentralIdLookupProvider, $wgOverrideCentralIdLookupProvider;
+			$wgCentralIdLookupProvider;
 
 		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
 		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
@@ -119,7 +119,7 @@ class CentralAuthHooks implements
 
 		// Assume they want CentralAuth as the default central ID provider, unless
 		// already configured otherwise.
-		if ( $wgCentralIdLookupProvider === 'local' && $wgOverrideCentralIdLookupProvider ) {
+		if ( $wgCentralIdLookupProvider === 'local' ) {
 			$wgCentralIdLookupProvider = 'CentralAuth';
 		}
 	}
