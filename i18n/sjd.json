@@ -5,6 +5,9 @@
 			"Merrahtar"
 		]
 	},
+	"centralauth-days-ago": "$1 {{PLURAL:$1|пе̄ййв|пе̄йв|пе̄ййвэ}} маӈас",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|лыһкмушш|лыһкмушше}} $2 проэктэсьт",
-	"centralauth-foreign-link": "Оаннӭй $1 $2 проэктэсьт"
+	"centralauth-foreign-link": "Оаннӭй $1 $2 проэктэсьт",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|ма̄нн|ма̄н|ма̄ннэ}} маӈас",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|ыгкь|ыгь|ыгке}} маӈас"
 }
