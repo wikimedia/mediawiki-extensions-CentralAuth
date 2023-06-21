@@ -361,14 +361,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$attempt['returnToAnchor'] ?? ''
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-
-		if ( $this->getConfig()->get( 'CentralAuthCheckSULMigration' ) &&
-			$request->getSessionData( 'CentralAuthForcedRename' ) === true
-		) {
-			$this->logger->info(
-				"CentralAuthMigration: Login completed for renamed user '{$user->getName()}'"
-			);
-		}
 	}
 
 	protected function showLoginStatus() {
