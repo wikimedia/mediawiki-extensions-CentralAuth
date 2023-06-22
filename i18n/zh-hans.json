@@ -58,7 +58,9 @@
 			"落花有意12138",
 			"铁桶",
 			"阿pp",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"Kishinsagi",
+			"Nervie"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑次数",
@@ -169,6 +171,7 @@
 	"centralauth-attach-text": "此账号还未被迁移到整合账号中。如果您已经拥有了一个整合账号，您可以在此输入该整合账号的密码来并入此账号：",
 	"centralauth-attach-title": "确认账号",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]]的账户已被全域锁定。",
+	"centralauth-block-editing-action": "$1个{{PLURAL:$1|操作}}",
 	"centralauth-block-editing-page": "$1{{PLURAL:$1|个页面|个页面}}",
 	"centralauth-block-editing-ns": "$1{{PLURAL:$1|个命名空间}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "您已经在本地登录了。",
@@ -400,6 +403,7 @@
 	"centralauth-rename-progress-logs-fieldset": "日志记录",
 	"centralauth-rename-progress-username": "用户名",
 	"centralauth-rename-queued": "重命名$1至$2的工作已加入队列。\n\n在[[Special:GlobalRenameProgress/$2]]查看进展。",
+	"centralauth-rename-same-name": "用户已经拥有请求的用户名。",
 	"centralauth-rename-table-domain": "本地wiki",
 	"centralauth-rename-table-status": "状态",
 	"centralauth-rename-table-status-done": "完成",

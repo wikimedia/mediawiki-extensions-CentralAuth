@@ -254,7 +254,7 @@
 	"centralauth-editset-wikis": "List of wiki databases defined in this wiki set (either opt-in or opt-out).\n{{Identical|Wiki}}",
 	"centralauth-editset-zerowikis": "Used as error message on Special:WikiSets.",
 	"centralauth-error-badtoken": "Used as error message.",
-	"centralauth-error-locked": "Message displayed while account unification is not possible because the acting user's account is locked.\n\nSee also:\n* {{msg-mw|Centralauth-error-unmerged}}\n* {{msg-mw|Centralauth-login-error-locked}}",
+	"centralauth-error-locked": "Message displayed while account unification is not possible because the acting user's account is locked.\n\nSee also:\n* {{msg-mw|Centralauth-login-error-locked}}",
 	"centralauth-error-nologinattempt": "Used as error message.",
 	"centralauth-error-token-wrongattempt": "Used as error message.",
 	"centralauth-error-token-wronguser": "Used as error message.",

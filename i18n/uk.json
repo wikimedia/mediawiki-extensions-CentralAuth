@@ -376,6 +376,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Записи в журналі",
 	"centralauth-rename-progress-username": "Ім'я користувача",
 	"centralauth-rename-queued": "Завдання з перейменування $1 на $2 додано до черги.\n\nВи можете переглядати прогрес на [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "Користувач уже має запитане ім'я користувача.",
 	"centralauth-rename-table-domain": "Локальна вікі",
 	"centralauth-rename-table-status": "Статус",
 	"centralauth-rename-table-status-done": "Виконано",
