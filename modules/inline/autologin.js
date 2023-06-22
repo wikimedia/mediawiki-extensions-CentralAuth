@@ -1,19 +1,20 @@
 ( function () {
-	mw.loader.using( 'mediawiki.Uri', function () {
+	mw.loader.using( 'web2017-polyfills', function () {
 		var current, login;
 
 		// Set returnto and returntoquery so the logout link in the returned
 		// html is correct.
-		current = new mw.Uri();
-		delete current.query.title;
-		delete current.query.returnto;
-		delete current.query.returntoquery;
+		current = new URL( location.href );
+		current.searchParams.delete( 'title' );
+		current.searchParams.delete( 'returnto' );
+		current.searchParams.delete( 'returntoquery' );
 
-		login = new mw.Uri(
-			mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/toolslist' )
+		login = new URL(
+			mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/toolslist' ),
+			location.href
 		);
-		login.query.returnto = mw.config.get( 'wgPageName' );
-		login.query.returntoquery = current.getQueryString();
+		login.searchParams.set( 'returnto', mw.config.get( 'wgPageName' ) );
+		login.searchParams.set( 'returntoquery', current.search.slice( 1 ) );
 
 		$.getJSON( login.toString() )
 			.then( function ( data ) {
