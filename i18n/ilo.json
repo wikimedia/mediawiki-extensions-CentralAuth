@@ -184,7 +184,6 @@
 	"centralauth-error-nologinattempt": "Awan ti agdama nga aktibo a panagpadas iti panaserrek para iti sesionmo.",
 	"centralauth-error-token-wrongattempt": "Ti pammasingked a tandaan ket saan a tagikua ti agdama a panagpadasmo a panaserrek.\nMabalin nga adda sabali a mangpadpadas a mangiserrek kenka babaen ti makapadakes a pakabilangan.",
 	"centralauth-error-token-wronguser": "Ti tandaan ket saan a maipada iti sesion ti naganmo nga agar-aramat.\nMabalin nga adda mangpadpadas a mangiserrek kenka babaen ti makapadakes a pakabilangan.\nNo padpadasem laeng ti sumrek a kas sabali nga agar-aramat, pangngaasi nga umunaka pay a rummuar.",
-	"centralauth-error-unmerged": "Saanka a makaurnos ngamin ket ti pakabilangam ket saan a naipagkaykaysa.",
 	"centralauth-finish-incomplete": "Adda dagidi nadumduma a pakabilangan a naipagtipon nga inusar iti daytoy a kontrasenias.\nDagiti sabali a pakabilangan ket saan pay a napasingkedan.",
 	"centralauth-finish-login": "Sumrek",
 	"centralauth-finish-noconfirms": "Awan dagiti pakabilangan a mapasingkedan nga agus-usar iti daytoy a kontrasenias.",

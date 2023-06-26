@@ -218,7 +218,6 @@
 	"centralauth-error-nologinattempt": "Ingen aktive innloggingsforsøk pågår for din sesjon.",
 	"centralauth-error-token-wrongattempt": "Autentiseringsnøkkelen tilhører ikke din pågående innlogging.\nNoen prøver kanskje å logge deg inn med en ondsinnet konto.",
 	"centralauth-error-token-wronguser": "Nøkkelen passer ikke med din sesjons brukernavn.\nNoen prøver kanskje å logge deg inn med en ondsinnet konto.\nHvis du bare gjorde et forsøk på å logge inn som en annen bruker, vær vennlig å logge ut først.",
-	"centralauth-error-unmerged": "Du kan ikke redigere fordi kontoen din ikke er sammenslått.",
 	"centralauth-error-wrongprovider": "Denne spesialsida er utilgjengelig når man bruker $1.",
 	"centralauth-finish-incomplete": "Flere kontoer ble slått sammen med dette passordet. Andre kontoer kan fortsatt ikke bekreftes.",
 	"centralauth-finish-login": "Logg inn",

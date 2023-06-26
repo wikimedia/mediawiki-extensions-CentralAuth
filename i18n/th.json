@@ -200,7 +200,6 @@
 	"centralauth-editset-wikis": "วิกิ:",
 	"centralauth-editset-zerowikis": "ไม่ได้ระบุวิกิใด ๆ",
 	"centralauth-error-locked": "คุณไม่สามารถแก้ไขได้เพราะบัญชีของคุณถูกล็อก",
-	"centralauth-error-unmerged": "คุณไม่สามารถแก้ไขเพราะบัญชีของคุณไม่ได้ถูกรวม",
 	"centralauth-finish-incomplete": "หลายบัญชีถูกรวมโดยใช้รหัสผ่านนี้\nบัญชีอื่น ๆ ยังไม่ถูกยืนยัน",
 	"centralauth-finish-login": "ล็อกอิน",
 	"centralauth-finish-noconfirms": "ไม่พบบัญชีผู้ใช้ที่จะสามารถยืนยันได้ด้วยรหัสผ่านนี้",

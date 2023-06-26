@@ -198,7 +198,6 @@
 	"centralauth-error-nologinattempt": "Sinu seansiga pole seotud ükski aktiivne sisselogimiskatse.",
 	"centralauth-error-token-wrongattempt": "Autentimisluba ei kuulu sinu praeguse sisselogimiskatse juurde.\nVõimalik, et keegi ründab su kontot ja proovib sellega sisse logida.",
 	"centralauth-error-token-wronguser": "Luba ei vasta sinu seansi kasutajanimele.\nVõimalik, et keegi ründab su kontot ja proovib sellega sisse logida.\nKui proovid lihtsalt teise kasutajaga sisse logida, siis logi palun enne välja.",
-	"centralauth-error-unmerged": "Sa ei saa redigeerida, sest su konto on ühendamata.",
 	"centralauth-finish-incomplete": "Mõned kontod ühendati seda parooli kasutades.\nÜlejäänud kontod on kinnitamata.",
 	"centralauth-finish-login": "Logi sisse",
 	"centralauth-finish-noconfirms": "Selle parooliga ei saa ühtegi kontot ühendada.",

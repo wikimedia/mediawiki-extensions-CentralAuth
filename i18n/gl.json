@@ -214,7 +214,6 @@
 	"centralauth-error-nologinattempt": "Non hai ningún intento de acceso activo para a súa sesión.",
 	"centralauth-error-token-wrongattempt": "O pase de autenticación non pertence ao seu intento actual de acceso.\nSe cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.",
 	"centralauth-error-token-wronguser": "O pase non coincide co nome de usuario da súa sesión.\nSe cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.\nSe está intentando acceder como outro usuario, saia primeiro do sistema.",
-	"centralauth-error-unmerged": "Non pode editar porque a súa conta non está unificada.",
 	"centralauth-error-wrongprovider": "Esta páxina especial non está dispoñible cando se usa $1.",
 	"centralauth-finish-incomplete": "Varias contas de usuario foron fusionadas usando este contrasinal.\nOutras contas aínda non están confirmadas.",
 	"centralauth-finish-login": "Rexistro",

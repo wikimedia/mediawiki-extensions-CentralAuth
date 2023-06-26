@@ -14,7 +14,6 @@
 	"centralauth-editgroup-success-text": "De globale groep \"$1\" is bijgewerkt.\n[[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]",
 	"centralauth-editset-intro-rw": "De volgende wikigroepen bestaan al.\nJe kunt ze bekijken of wijzigen, of een nieuwe groep aanmaken.",
 	"centralauth-error-locked": "Je kunt niet bewerken omdat je gebruiker geblokkeerd is.",
-	"centralauth-error-unmerged": "Je kunt niet bewerken omdat je gebruiker niet is samengevoegd.",
 	"centralauth-finish-problems": "Kom je er niet uit of zijn deze gebruikers niet van jou?\n[[m:Special:MyLanguage/Help:Unified login|Hoe hulp vinden]]…",
 	"centralauth-finish-text": "Als deze gebruikers bij jou horen, dan kan je het proces van samenvoegen afronden door de wachtwoorden voor de andere gebruikers hier in te voeren:",
 	"centralauth-incomplete-text": "Als je accounts zijn samengevoegd, kun je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuw account aan te maken.",

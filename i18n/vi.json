@@ -218,7 +218,6 @@
 	"centralauth-error-nologinattempt": "Không có đăng nhập được tiến hành trong phiên truy cập của bạn.",
 	"centralauth-error-token-wrongattempt": "Mã xác thực không phải cho lần đăng nhập hiện tại.\nAi đó có thể cố gắng đăng nhập dùng tài khoản của bạn ở dạng một tài khoản độc hại.",
 	"centralauth-error-token-wronguser": "Mã xác thực không phù hợp với tên người sử dụng hiện tại.\nAi đó có thể cố gắng đăng nhập vào tài khoản của bạn ở dạng một tài khoản độc hại.\nNếu bạn chỉ muốn đăng nhập dưới tên người dùng khác, xin vui lòng đăng xuất trước tiên.",
-	"centralauth-error-unmerged": "Bạn không thể sửa đổi vì tài khoản của bạn chưa được hợp nhất.",
 	"centralauth-error-wrongprovider": "Trang đặc biệt này không truy cập được khi sử dụng $1.",
 	"centralauth-finish-incomplete": "Một số tài khoản được tích hợp nhờ mật khẩu này.\nCác tài khoản khác chưa được xác nhận.",
 	"centralauth-finish-login": "Đăng nhập",

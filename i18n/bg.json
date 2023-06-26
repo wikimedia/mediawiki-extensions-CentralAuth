@@ -189,7 +189,6 @@
 	"centralauth-editset-zerowikis": "Няма указани уикита.",
 	"centralauth-error-locked": "Не можете да редактирате, тъй като сметката ви е заключена.",
 	"centralauth-error-nologinattempt": "В момента няма активен опит за влизане за сесията ви.",
-	"centralauth-error-unmerged": "Редактирането е невъзможно, тъй като сметката не е обединена.",
 	"centralauth-error-wrongprovider": "Тази специална страница е недостъпна при използване на $1.",
 	"centralauth-finish-incomplete": "Няколко сметки бяха слети с тази парола.\nДругите сметки все още не са потвърдени.",
 	"centralauth-finish-login": "Влизане",

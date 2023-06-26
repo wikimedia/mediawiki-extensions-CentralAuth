@@ -195,7 +195,6 @@
 	"centralauth-error-nologinattempt": "Ingen aktive forsøg på at logge på er i gang for din session.",
 	"centralauth-error-token-wrongattempt": "Godkendelsesbrikken tilhører ikke dit nuværende login forsøg. Nogen forsøger muligvis at indmelde dig ved hjælp af en ondsindet konto.",
 	"centralauth-error-token-wronguser": "Denne brik svarer ikke til mødenavnet.\nNogen forsøger muligvis, at indmelde dig ved hjælp af en ondsindet konto.\nHvis du bare forsøger, at melde dig ind som en anden bruger, skal du melde dig ud først.",
-	"centralauth-error-unmerged": "Du kan ikke redigere fordi din konto ikke er forenet.",
 	"centralauth-finish-incomplete": "Flere konti blev sammenlagt med denne adgangskode.\nAndre konti er fortsat ikke bekræftet.",
 	"centralauth-finish-login": "Log på",
 	"centralauth-finish-noconfirms": "Ingen konti kunne bekræftes med denne adgangskode.",

@@ -216,7 +216,6 @@
 	"centralauth-error-nologinattempt": "Nėra vykstančio aktyvaus prisijungimo bandymo jūsų sesijai.",
 	"centralauth-error-token-wrongattempt": "Autentifikavimo raktas nepriklauso jūsų dabartiniam prisijungimo bandymui.\nKažkas gali bandyti prisijungti naudodamas kenkėjišką paskyrą.",
 	"centralauth-error-token-wronguser": "Prieigos raktas nesutampa su jūsų sesijos naudotojo vardu.\nKažkas galimai bando prisijungti naudodamas kenkėjišką paskyrą.\nJei bandote prisijungti kaip kitas naudotojas, pirmiausia atsijunkite.",
-	"centralauth-error-unmerged": "Jūs negalite redaguoti, nes jūsų paskyra nėra vieninga.",
 	"centralauth-error-wrongprovider": "Šis specialus puslapis yra neprieinamas kai naudojamas $1.",
 	"centralauth-finish-incomplete": "Kelios paskyros buvo sujungtos naudojant šį slaptažodį.\nKitos paskyros dar nepatvirtintos.",
 	"centralauth-finish-login": "Prisijungti",

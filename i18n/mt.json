@@ -130,7 +130,6 @@
 	"centralauth-editset-usage": "Użat fil-gruppi:",
 	"centralauth-editset-wikis": "Wikis:",
 	"centralauth-error-locked": "Inti ma tistax timmodifika minħabba li l-kont tiegħek huwa mblukkat.",
-	"centralauth-error-unmerged": "Ma tistax timmodifika minħabba li l-kont tiegħek mhuwiex imwaħħad.",
 	"centralauth-finish-incomplete": "Diversi kontijiet ġew unifikati permezz ta' din il-passwords. Kontijiet oħra għadhom mhumiex konfermati.",
 	"centralauth-finish-login": "Idħol",
 	"centralauth-finish-noconfirms": "L-ebda kont ma jista' jiġi kkonfermat permezz ta' din il-password.",

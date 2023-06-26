@@ -224,7 +224,6 @@
 	"centralauth-error-nologinattempt": "Es ist kein aktiver Anmeldeversuch für deine Sitzung in Gang.",
 	"centralauth-error-token-wrongattempt": "Der Authentifikationstoken gehört nicht zu deinem aktuellen Anmeldeversuch.\nEin anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.",
 	"centralauth-error-token-wronguser": "Der Token stimmt nicht mit deinem Sitzungsbenutzernamen überein.\nEin anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.\nWenn du dich unter einem anderen Benutzer anmelden möchtest, melde dich bitte zuerst ab.",
-	"centralauth-error-unmerged": "Du kannst keine Bearbeitungen vornehmen, da dein Benutzerkonto nicht zusammengeführt ist.",
 	"centralauth-error-wrongprovider": "Diese Spezialseite ist mit Verwendung von $1 nicht verfügbar.",
 	"centralauth-finish-incomplete": "Mehrere Benutzerkonten wurden mit diesem Passwort zusammengeführt. Andere Benutzerkonten wurden noch nicht bestätigt.",
 	"centralauth-finish-login": "Anmeldung",

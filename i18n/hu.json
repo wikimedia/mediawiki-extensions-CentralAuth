@@ -223,7 +223,6 @@
 	"centralauth-error-nologinattempt": "Nincs folyamatban aktív bejelentkezési kísérlet a munkamenetedben.",
 	"centralauth-error-token-wrongattempt": "Az azonosítási token nem ehhez a bejelentkezési kísérlethez tartozik.\nLehet, hogy valaki arra próbál rávenni, hogy egy rosszindulatú fiókba jelentkezz be.",
 	"centralauth-error-token-wronguser": "A token nem a munkameneted felhasználónevéhez tartozik.\nLehet, hogy valaki arra próbál rávenni, hogy egy rosszindulatú fiókba jelentkezz be.\nHa csak másik felhasználóként akarsz bejelentkezni, akkor előbb jelentkezz ki.",
-	"centralauth-error-unmerged": "Nem szerkeszthetsz, mivel a fiókod nincs egyesítve.",
 	"centralauth-error-wrongprovider": "Ez a speciális lap nem érhető el $1 használatakor.",
 	"centralauth-finish-incomplete": "Számos azonosítót összevontunk, mert ugyanez volt a jelszavuk.\nVannak további azonosítók, amik még nincsenek megerősítve.",
 	"centralauth-finish-login": "Bejelentkezés",

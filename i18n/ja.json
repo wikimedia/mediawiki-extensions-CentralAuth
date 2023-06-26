@@ -242,7 +242,6 @@
 	"centralauth-error-nologinattempt": "あなたのセッションに関して現在ログインの試行は行われていません。",
 	"centralauth-error-token-wrongattempt": "認証トークンは現在のログインの試行に属していません。\n誰かがあなたを悪意のあるアカウントにログインさせようとしている可能性があります。",
 	"centralauth-error-token-wronguser": "トークンがセッションの利用者名と一致しません。\n誰かが悪意のあるアカウントのもとであなたをログインさせようとしているおそれがあります。\n別の利用者としてログインしようとしている場合は、まずログアウトしてください。",
-	"centralauth-error-unmerged": "あなたのアカウントは統合されていないため、編集はできません。",
 	"centralauth-error-wrongprovider": "$1 を使用している場合、この特別ページは利用できません。",
 	"centralauth-finish-incomplete": "このパスワードを使用してアカウントをいくつか統合しました。\n他にもまだ認証されていないアカウントがあります。",
 	"centralauth-finish-login": "ログイン",

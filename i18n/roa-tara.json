@@ -203,7 +203,6 @@
 	"centralauth-error-nologinattempt": "Nisciune tendative de trasè jè attive jndr'à sessiona toje.",
 	"centralauth-error-token-wrongattempt": "'U gettone de autendicazione non ge se iacchie jndr'à 'u tendative tune de trasè.\nQuacchedune ca no sì tu, pò essere ca ste prove a trasè a sgame.",
 	"centralauth-error-token-wronguser": "'U gettone non ge s'accocchie cu 'u nome tende d'a sessione.\nQuacchedune pò essere ca ste prove a trasé cu 'u cunde tune.\nCe tu ste pruéve a trasé cumme 'n'otre utende, pe piacere isse apprime.",
-	"centralauth-error-unmerged": "Tu non ge puè cangià purcé 'u cunde tune non g'è aunificate.",
 	"centralauth-error-wrongprovider": "Sta pàgena speciale non g'è disponibbele quanne ause $1.",
 	"centralauth-finish-incomplete": "Diverse cunde utende onne state scuagghiate ausanne sta passuord.\nOtre cunde angore non g'onne state confermate.",
 	"centralauth-finish-login": "Tràse",

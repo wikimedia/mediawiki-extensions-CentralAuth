@@ -191,7 +191,6 @@
 	"centralauth-editset-usage": "Folosit în grupurile:",
 	"centralauth-editset-wikis": "Wiki-uri:",
 	"centralauth-error-locked": "Nu puteți face modificări deoarece contul dumneavoastră este blocat.",
-	"centralauth-error-unmerged": "Nu puteți face modificări, deoarece contul dumneavoastră nu este unificat.",
 	"centralauth-finish-incomplete": "Mai multe conturi au fost asimilate folosind această parolă. Alte conturi încă nu au fost confirmate.",
 	"centralauth-finish-login": "Autentificare",
 	"centralauth-finish-noconfirms": "Nici un cont nu a putut fi confirmat folosind această parolă.",

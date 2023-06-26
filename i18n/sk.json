@@ -160,7 +160,6 @@
 	"centralauth-editset-wikis": "Wiki:",
 	"centralauth-error-badtoken": "Zadaný autentifikačný token už vypršal alebo je neplatný.",
 	"centralauth-error-locked": "Nemôžete vykonávať úpravy, pretože váš účet je zamknutý.",
-	"centralauth-error-unmerged": "Nemôžete vykonávať úpravy, pretože váš účet nie je zjednotený.",
 	"centralauth-finish-incomplete": "Týmto heslom bolo potvrdených niekoľko účtov. Ostatné účty zatiaľ nie sú potvrdené.",
 	"centralauth-finish-login": "Prihlasovacie meno",
 	"centralauth-finish-noconfirms": "Týmto heslom neboli potvrdené žiadne účty.",

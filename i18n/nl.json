@@ -239,7 +239,6 @@
 	"centralauth-error-nologinattempt": "Er is geen actieve aanmeldpoging voor uw sessie.",
 	"centralauth-error-token-wrongattempt": "Het authenticatietoken hoort niet bij uw huidige aanmeldpoging.\nMogelijk probeert iemand anders als u aan te melden.",
 	"centralauth-error-token-wronguser": "Het token hoort niet bij de gebruikersnaam voor uw sessie.\nMogelijk probeert iemand anders als u aan te melden.\nAls u probeert aan te melden als een andere gebruiker, meld u dan eerst af.",
-	"centralauth-error-unmerged": "U kunt niet bewerken omdat uw account niet is samengevoegd.",
 	"centralauth-error-wrongprovider": "Deze speciale pagina is niet beschikbaar bij het gebruik van $1.",
 	"centralauth-finish-incomplete": "Met dit wachtwoord zijn meerdere gebruikers bevestigd.\nEr zijn nog gebruikers die niet bevestigd zijn.",
 	"centralauth-finish-login": "Aanmelden",

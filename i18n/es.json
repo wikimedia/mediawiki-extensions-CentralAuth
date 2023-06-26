@@ -263,7 +263,6 @@
 	"centralauth-error-nologinattempt": "No hay ningún intento de inicio de sesión en curso",
 	"centralauth-error-token-wrongattempt": "El \"token\" de autenticación no pertenece a tu intento de inicio de sesión actual.\nAlguien podría estar intentando entrar a tu sesión bajo una cuenta maliciosa.",
 	"centralauth-error-token-wronguser": "La señal no coincide con el nombre de usuario de la sesión.\nPuede que alguien esté intentando iniciar sesión con una cuenta maliciosa.\nSi solo estabas tratando de iniciar sesión con otro usuario, cierra esta sesión antes.",
-	"centralauth-error-unmerged": "No puedes editar porque tu cuenta no está unificada.",
 	"centralauth-error-wrongprovider": "Esta página especial no está disponible cuando se usa $1.",
 	"centralauth-finish-incomplete": "Varias cuentas fueron fusionadas con esta contraseña.\nOtras cuentas no están confirmadas todavía.",
 	"centralauth-finish-login": "Acceder",

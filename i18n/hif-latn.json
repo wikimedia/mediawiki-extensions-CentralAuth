@@ -40,7 +40,6 @@
 	"centralauth-editset-submit": "Submit karo",
 	"centralauth-editset-submit-delete": "Mitao",
 	"centralauth-error-locked": "Aap edit nai kare saktaa hae kaahe ki aap ke account locked hae.",
-	"centralauth-error-unmerged": "Aap edit nai kare saktaa hae kaahe ki aap ke account unified nai hae.",
 	"centralauth-finish-login": "Login karo",
 	"centralauth-finish-send-confirmation": "Password ke email se bhejo",
 	"centralauth-finish-title": "Merge ke khalaas karo",

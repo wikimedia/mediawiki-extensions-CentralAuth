@@ -263,7 +263,6 @@
 	"centralauth-error-nologinattempt": "您的会话没有正在进行的登录尝试。",
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
-	"centralauth-error-unmerged": "您不能编辑，因为您的账号未统一。",
 	"centralauth-error-wrongprovider": "此特殊页面在使用$1时不可用。",
 	"centralauth-finish-incomplete": "部分账户已经由密码整合，其他帐号尚未确认。",
 	"centralauth-finish-login": "登录",

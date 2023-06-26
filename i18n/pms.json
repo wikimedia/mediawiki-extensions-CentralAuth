@@ -181,7 +181,6 @@
 	"centralauth-error-nologinattempt": "Gnun tentativ ëd conession ativ a l'é an cors për soa session.",
 	"centralauth-error-token-wrongattempt": "Ël geton d'autenticassion a aparten pa a sò tentativ atual ëd rintré ant ël sistema.\nCheidun a podrìa sërché ëd felo rintré ant ël sistema con un cont clandestin.",
 	"centralauth-error-token-wronguser": "Ël geton a corëspond pa a lë stranòm d'utent ëd soa session. Cheidun a podrìa sërché ëd felo rintré ant ël sistema con un cont clandestin. S'a l'é mach an camin ch'a sërca ëd rintré ant ël sistema tanme n'àutr utent, për piasì, prima ch'a seurta dal sistema.",
-	"centralauth-error-unmerged": "A peul pa modifiché përchè sò cont a l'é pa unificà.",
 	"centralauth-finish-incomplete": "Vàire cont a son ëstàit unificà an dovrand sta ciav-sì.\nD'àutri cont a son ancó pa stàit confirmà.",
 	"centralauth-finish-login": "Rintré ant ël sistema",
 	"centralauth-finish-noconfirms": "Gnun cont a l'ha podù esse confirmà an dovrand sta ciav-sì.",

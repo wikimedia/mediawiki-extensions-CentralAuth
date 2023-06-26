@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bosogo",
 			"Chorobek",
 			"Connexx",
 			"Growingup",
@@ -29,7 +30,6 @@
 	"centralauth-editgroup-noset": "(жок)",
 	"centralauth-editset-nouse": "(жок)",
 	"centralauth-error-locked": "Сиз оңдой албайсыз, себеби сиздин эсеп жазууңуз бөгөттөлгөн.",
-	"centralauth-error-unmerged": "Сиз оңдой албайсыз, себеби сиз бирдиктүү эсеп жазуу түзө элексиз.",
 	"centralauth-finish-login": "Кирүү",
 	"centralauth-finish-password": "Сырсөз:",
 	"centralauth-incomplete": "Эсеп жазууларды бириктирүү аяктаган жок!",
@@ -54,5 +54,6 @@
 	"centralauth-prefs-manage": "Глобалдык аккаунтуңузду башкаруу",
 	"centralauth-prefs-status": "Аккаунтун глобалдык статусу:",
 	"centralauth-prefs-view": "Аккаунттун глобалдык маалыматын көрүү",
+	"globalrenamequeue-request-cancel-text": "Жокко чыгаруу",
 	"mergeaccount": "Эсеп жазууларды бириктирүү абалы"
 }

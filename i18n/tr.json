@@ -239,7 +239,6 @@
 	"centralauth-error-nologinattempt": "Oturumunuz için devam eden etkin giriş denemesi yok.",
 	"centralauth-error-token-wrongattempt": "Kimlik doğrulama anahtarı mevcut giriş denemenize ait değil.\nBirisi sizi kötü amaçlı bir hesapla oturum açmaya çalışıyor olabilir.",
 	"centralauth-error-token-wronguser": "Simge, oturum kullanıcı adınızla eşleşmiyor.\nBirisi sizi kötü amaçlı bir hesapla oturum açmaya çalışıyor olabilir.\nBaşka bir kullanıcı olarak giriş yapmaya çalışıyorsanız, lütfen önce çıkış yapın.",
-	"centralauth-error-unmerged": "Değişiklik yapamazsınız çünkü hesabınız birleştirilmemiş.",
 	"centralauth-error-wrongprovider": "$1 kullanılırken bu özel sayfa kullanılamıyor.",
 	"centralauth-finish-incomplete": "Bu parola kullanılarak birçok hesap birleştirildi.\nDiğer hesaplar henüz doğrulanmadı.",
 	"centralauth-finish-login": "Oturum aç",

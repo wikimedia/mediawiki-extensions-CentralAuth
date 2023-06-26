@@ -194,7 +194,6 @@
 	"centralauth-error-nologinattempt": "Nun hai nengún intentu d'aniciu de sesión activu pa la sesión.",
 	"centralauth-error-token-wrongattempt": "El pase d'autenticación nun pertenez al intentu d'aniciu de sesión actual.\nDalguién podría tar intentando qu'anicie sesión baxo una cuenta maliciosa.",
 	"centralauth-error-token-wronguser": "El pase nun coincide col nome d'usuariu de la sesión.\nDalguién podría tar intentando qu'anicie sesión baxo una cuenta maliciosa.\nSi sólo intentan aniciar sesión como otru usuariu, zarre primero la sesión.",
-	"centralauth-error-unmerged": "Nun pues editar porque la to cuenta nun ta unificada.",
 	"centralauth-error-wrongprovider": "Esta páxina especial nun ta disponible cuando s'usa $1.",
 	"centralauth-finish-incomplete": "Se fusionaron delles cuentes usando esta contraseña.\nOtres cuentes inda nun se confirmaron.",
 	"centralauth-finish-login": "Entrar",

@@ -180,7 +180,6 @@
 	"centralauth-error-nologinattempt": "Aktiwny přizjewjenski pospyt za twoje posedźenje njeběži.",
 	"centralauth-error-token-wrongattempt": "Awtentifikaciski token njesłuša k twojemu přizjewjenskemu pospytej.\nNěchtó móhł spytać, će pod złóstnym kontom přizjewić.",
 	"centralauth-error-token-wronguser": "Token njewotpowěduje twojemu posedźenskemu wužiwarskemu mjenu.\nNěchtó móhł spytać, će pod złóstnym kontom přizjewić.\nJeli chceš so jako druhi wužiwar přizjewić, wotzjew so najprjedy.",
-	"centralauth-error-unmerged": "Njemóžeš wobdźěłać, dokelž twoje konto njeje zjednoćene.",
 	"centralauth-finish-incomplete": "Wjacore konto buchu z pomocu tutoho hesła zjednoćene.\nDruhe konta su hišće njewobkrućene.",
 	"centralauth-finish-login": "Přizjewjenje",
 	"centralauth-finish-noconfirms": "Z tutym hesłom njejsu so žane konta wobkrućić dali.",

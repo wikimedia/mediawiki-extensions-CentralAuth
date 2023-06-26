@@ -205,7 +205,6 @@
 	"centralauth-error-nologinattempt": "No hi cap temptativa d'inici de sessió en curs per la vostra connexió.",
 	"centralauth-error-token-wrongattempt": "El testimoni d'autenticació no pertany a la vostra temptativa actual d'inici de sessió. Algú podria estar intentant usar la vostra sessió amb un compte maliciós.",
 	"centralauth-error-token-wronguser": "El testimoni no coincideix amb el nom d'usuari de la vostra sessió. Algú podria intentar usar la vostra sessió amb un compte maliciós. Si simplement esteu intentant iniciar sessió amb un altre usuari, abans finalitzeu la sessió.",
-	"centralauth-error-unmerged": "No podeu editar perquè el vostre compte no està unificat.",
 	"centralauth-finish-incomplete": "Diversos comptes s'han fusionat usant aquesta contrasenya.\nAltres comptes encara no s'han confirmat.",
 	"centralauth-finish-login": "Inici de sessió",
 	"centralauth-finish-noconfirms": "No s'han pogut confirmar comptes fent servir aquesta contrasenya.",

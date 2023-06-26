@@ -164,7 +164,6 @@
 	"centralauth-error-nologinattempt": "Mayo nin aktibong paglalaog na pinuprubaran sa ngunyan para sa saimong sesyon.",
 	"centralauth-error-token-wrongattempt": "An senyal nin pagpapatotoo bakong kabali sa ngunyan mong pagprubar nin paglaog.\nBaka may sarong tawo na nagprubar na ilaog ka sa irarom nin sarong malisyosong panindog.",
 	"centralauth-error-token-wronguser": "An senyal dae tabi nagtugma sa pangaran nin paragamit sa saimong sesyon.\nBaka may sarong tawo na pinuprubaran na ilaog ka sa laog nin sarong malisyosong panindog.\nKun ika nagprubar na maglaog bilang laen na paragamit, enot magluwas ka nguna tabi.",
-	"centralauth-error-unmerged": "Ika dae makakapagliwat nin huli ta an saimong panindog bakong pinagkasararo.",
 	"centralauth-finish-incomplete": "Nagkapirang mga panindog an pinagkasararo na naggagamit kaining pasa-taramon.\nAn ibang mga panindog dae pa tabi kumpirmado.",
 	"centralauth-finish-login": "Maglaog",
 	"centralauth-finish-noconfirms": "Mayo nin mga panindog an puwedeng makapagkumpirma na minagamit kaining pasa-taramon.",

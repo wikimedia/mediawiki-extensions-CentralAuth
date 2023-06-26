@@ -187,7 +187,6 @@
 	"centralauth-error-nologinattempt": "Nisciunu tentativo 'e trasì è nprugresso p' 'a sessiona vosta.",
 	"centralauth-error-token-wrongattempt": "'O token d'autenticazione nun appartene a 'o tentativo vuosto d'acciesso currente.\nPuò darse ca coccherunno truvasse 'e ve fà trasì cu nu cunto manipolato.",
 	"centralauth-error-token-wronguser": "'O token nun s'azzecca a 'o nomme utente d' 'a sessiona vosta.\nCoccherunno putesse stà a ve fà trasì cu nu cunto maligno.\nSi state surtanto cercanno 'e trasì comm'a n'at'utente, pe' piacere ascite primma.",
-	"centralauth-error-unmerged": "Nun può cagnà pecché 'o cunto nun è aunito.",
 	"centralauth-finish-incomplete": "Cunte divierze so' state aunite ausanno sta password.\nAti cunti nun so' state cunfermate.",
 	"centralauth-finish-login": "Tràse",
 	"centralauth-finish-noconfirms": "Nisciuno cunto utente pò essere confermato ausanno sta password.",

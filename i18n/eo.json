@@ -150,7 +150,6 @@
 	"centralauth-editset-usage": "Uzitaj en grupoj:",
 	"centralauth-editset-wikis": "Vikioj:",
 	"centralauth-error-locked": "Vi ne povas redakti ĉar via konto estas ŝlosita.",
-	"centralauth-error-unmerged": "Vi ne povas redakti ĉar via konto ne estas kunigita.",
 	"centralauth-finish-incomplete": "Pluraj kontoj estis unuigitaj uzante ĉi tiun pasvorton.\nAliaj kontoj ne jam estas konfirmitaj.",
 	"centralauth-finish-login": "Ensaluti",
 	"centralauth-finish-noconfirms": "Neniu konto povis esti konfirmita uzante ĉi tiun pasvorton.",

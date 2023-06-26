@@ -141,7 +141,6 @@
 	"centralauth-editset-usage": "Nytta i desse gruppene:",
 	"centralauth-editset-wikis": "Wikiar:",
 	"centralauth-error-locked": "Du kan ikkje endra med di kontoen din er låst.",
-	"centralauth-error-unmerged": "Du kan ikkje endra av di kontoen din ikkje er samanslegen.",
 	"centralauth-finish-incomplete": "Fleire kontoar vart slegne saman med dette passordet. Andre kan framleis ikkje stadfestast.",
 	"centralauth-finish-login": "Logg inn",
 	"centralauth-finish-noconfirms": "Ingen kontoar kunne verte stadfesta med dette passordet.",

@@ -207,7 +207,6 @@
 	"centralauth-error-nologinattempt": "Nulle active tentativa de aperir session es in progresso pro tu session.",
 	"centralauth-error-token-wrongattempt": "Le token de authentication non pertine a tu actual tentativa de aperir session. Es possibile que alcuno tenta de aperir un session tue sub un conto malitiose.",
 	"centralauth-error-token-wronguser": "Le token non corresponde al nomine de usator de tu session.\nEs possibile que alcuno tenta authenticar se como tu per medio de un conto malitiose.\nSi tu simplemente tenta aperir session como un altere usator, per favor claude session primo.",
-	"centralauth-error-unmerged": "Tu non pote facer modificationes proque tu conto non es unificate.",
 	"centralauth-error-wrongprovider": "Iste pagina special es indisponibile durante le uso de $1.",
 	"centralauth-finish-incomplete": "Plure contos ha essite fusionate con iste contrasigno.\nAltere contos non es ancora confirmate.",
 	"centralauth-finish-login": "Aperir un session",

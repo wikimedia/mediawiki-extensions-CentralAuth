@@ -136,7 +136,6 @@
 	"centralauth-error-nologinattempt": "Engin virk innskráningar tilraun er í gangi fyrir lotuna þína",
 	"centralauth-error-token-wrongattempt": "Auðkennisteiknið tilheyrir ekki þessari tilraun til innskráningar.\nEinhver gæti verið að reyna að skrá þig inn frá skaðlegum aðgangi.",
 	"centralauth-error-token-wronguser": "Auðkennisteiknið passar ekki við notandanafn setunnar. Einhver gæti verið að skrá þig inn með skaðlegum aðgangi.\nEf þú ert aðeins að reyna að skrá þig inn með öðrum aðgangi, skaltu skrá þig héðan út fyrst.",
-	"centralauth-error-unmerged": "Þú getur ekki breytt því aðgangurinn þinn er ekki samræmdur.",
 	"centralauth-finish-incomplete": "Sumir aðgangar voru samræmdir með þessu lykilorði.\nAðrir aðgangar eru ekki enn staðfestir.",
 	"centralauth-finish-login": "Innskráning",
 	"centralauth-finish-noconfirms": "Mistókst að samræma aðganga með þessu lykilorði.",

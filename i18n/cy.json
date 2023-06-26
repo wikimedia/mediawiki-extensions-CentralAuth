@@ -162,7 +162,6 @@
 	"centralauth-error-nologinattempt": "Nid oes unrhyw ymgais i fewngofnodi i'ch sesiwn ar y gweill.",
 	"centralauth-error-token-wrongattempt": "Nid yw'r tocyn dilysu yn perthyn i'ch ymgais cyfredol i fewngofnodi.\nEfallai bod rhywun yn ceisio eich mewngofnodi yn enw rhyw gyfrif maleisus.",
 	"centralauth-error-token-wronguser": "Nid yw'r tocyn yn cyfateb ag enw defnyddiwr y sesiwn. Efallai bod rhywun yn ceisio eich mewngofnodi yn enw rhyw gyfrif maleisus. Os mai chi sydd yn ceisio mewngofnodi i gyfrif arall, allgofnodwch yn gyntaf.",
-	"centralauth-error-unmerged": "Ni allwch olygu oherwydd nad yw eich cyfrif yn unedig.",
 	"centralauth-finish-incomplete": "Cyfunwyd nifer o gyfrifon gan ddefnyddio'r cyfrinair hwn.\nNid yw cyfrifon eraill wedi'u cadarnhau hyd yn hyn.",
 	"centralauth-finish-login": "Mewngofnodi",
 	"centralauth-finish-noconfirms": "Ni ellid cadarnhau unrhyw gyfrifon gyda'r cyfrinair hwn.",

@@ -210,7 +210,6 @@
 	"centralauth-error-nologinattempt": "Za vašo sejo ne poteka noben aktiven poskus prijave.",
 	"centralauth-error-token-wrongattempt": "Avtentikacijski žeton ne pripada vašemu trenutnemu poskusu prijave. Mogoče vas poskuša prijaviti nekdo drug iz zlonamernega računa.",
 	"centralauth-error-token-wronguser": "Žeton se ne ujema z uporabniškim imenom vaše seje. Morda vas poskuša nekdo drug prijaviti iz zlonamernega računa. Če se poskušate prijaviti kot drug uporabnik, se najprej odjavite.",
-	"centralauth-error-unmerged": "Ne morete urejati, ker vaš račun ni poenoten.",
 	"centralauth-error-wrongprovider": "Ta posebna stran je nedosegljiva tekom uporabe $1.",
 	"centralauth-finish-incomplete": "Nekateri računi so bili združeni z uporabo tega gesla.\nOstali računi še niso potrjeni.",
 	"centralauth-finish-login": "Prijava",

@@ -223,7 +223,6 @@
 	"centralauth-error-nologinattempt": "Tidak ada percobaan masuk log yang berlangsung pada sesi Anda.",
 	"centralauth-error-token-wrongattempt": "Token autentikasi tidak berlaku untuk percobaan masuk log ini. Seseorang mungkin mencoba memasukkan log akun Anda dengan akun yang berniat jahat.",
 	"centralauth-error-token-wronguser": "Token ini tidak sesuai dengan nama pengguna sesi Anda.\nMungkin ada seseorang yang mencoba mencoba log sebagai Anda dengan niat jahat.\nJika Anda hanya mencoba masuk log sebagai pengguna lain, silakan keluar log dahulu.",
-	"centralauth-error-unmerged": "Anda tidak dapat menyunting karena akun Anda tidak disatukan.",
 	"centralauth-error-wrongprovider": "Halaman istimewa ini tidak tersedia ketika menggunakan $1.",
 	"centralauth-finish-incomplete": "Beberapa akun pengguna telah digabungkan menggunakan kata sandi ini.\nAkun-akun lain belum dikonfirmasikan.",
 	"centralauth-finish-login": "Masuk log",

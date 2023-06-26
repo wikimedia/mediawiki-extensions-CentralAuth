@@ -231,7 +231,6 @@
 	"centralauth-error-nologinattempt": "Inget aktivt inloggningsförsök pågår för din session.",
 	"centralauth-error-token-wrongattempt": "Autentiseringsnyckeln tillhör inte ditt nuvarande inloggningsförsök.\nNågon kanske försöker logga in dig med ett skadligt konto.",
 	"centralauth-error-token-wronguser": "Nyckeln matchar inte med din sessions användarnamn.\nNågon kanske försöker logga in dig med ett skadligt konto.\nOm du försöker logga in som en annan användare, logga ut först.",
-	"centralauth-error-unmerged": "Du kan inte redigera eftersom ditt konto inte är sammanslaget.",
 	"centralauth-error-wrongprovider": "Denna specialsida är inte tillgänglig när du använder $1.",
 	"centralauth-finish-incomplete": "Några konton anslöts med detta lösenord. Andra konton har ännu inte bekräftats.",
 	"centralauth-finish-login": "Logga in",

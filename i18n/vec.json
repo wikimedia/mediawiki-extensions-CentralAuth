@@ -151,7 +151,6 @@
 	"centralauth-error-nologinattempt": "No xe in corso nissun tentativo de login.",
 	"centralauth-error-token-wrongattempt": "El token de autenticasion no'l corisponde mia al to tentativo de login atuale. Po darse che calcheduni staga sercando de farte far login con na utensa malvagia.",
 	"centralauth-error-token-wronguser": "El token no'l corisponde mia al to nome utente de sesion. Po darse che calcheduni staga sercando de farte far login con na utensa malvagia. Se te vol solo far login con na utensa difarente, par piaser fà logout prima.",
-	"centralauth-error-unmerged": "No ti pol far modifeghe parché el to account nó 'l xe sta unifegà.",
 	"centralauth-finish-incomplete": "Xe stà unificà alcuni account mediante sta password. Ghe xe altri account in atesa de conferma.",
 	"centralauth-finish-login": "Esegui el login",
 	"centralauth-finish-noconfirms": "Inposibiłe confermar dei account co sta ciave cuà.",

@@ -262,7 +262,6 @@
 	"centralauth-error-nologinattempt": "Aucune tentative de connexion active n’est en cours pour votre session.",
 	"centralauth-error-token-wrongattempt": "Le jeton d’authentification n’appartient pas à votre tentative de connexion actuelle. Quelqu’un pourrait essayer de vous connecter avec un compte malveillant.",
 	"centralauth-error-token-wronguser": "Le jeton ne correspond pas au nom d’utilisateur de votre session. Quelqu’un pourrait essayer de vous connecter sous un compte malveillant. Si vous essayez simplement de vous connecter avec un autre utilisateur, veuillez d’abord vous déconnecter.",
-	"centralauth-error-unmerged": "Vous ne pouvez effectuer aucune modification parce que votre compte n’est pas unifié.",
 	"centralauth-error-wrongprovider": "Cette page spéciale n’est pas disponible lors de l’utilisation de $1.",
 	"centralauth-finish-incomplete": "Plusieurs comptes ont été fusionnés en utilisant ce mot de passe. D’autres comptes n’ont cependant pas encore été confirmés.",
 	"centralauth-finish-login": "Se connecter",

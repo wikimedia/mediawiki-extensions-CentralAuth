@@ -240,7 +240,6 @@
 	"centralauth-error-nologinattempt": "Nenhuma tentativa de login ativa em andamento para a sua sessão.",
 	"centralauth-error-token-wrongattempt": "O token de autenticação não pertence à sua tentativa atual de autenticar-se.\nAlguém pode estar tentando autenticar-se através de sua conta.",
 	"centralauth-error-token-wronguser": "O token não corresponde ao seu nome de usuário nesta sessão.\nAlguém pode estar tentando associá-lo a uma conta maliciosa.\nSe está tentando apenas autenticar-se como outro usuário, por favor saia primeiro de sua conta atual.",
-	"centralauth-error-unmerged": "Você não pode editar, pois sua conta não está unificada.",
 	"centralauth-error-wrongprovider": "Esta página especial não está disponível ao usar $1.",
 	"centralauth-finish-incomplete": "Diversas contas foram fundidas ao utilizar esta senha.\nOutras contas ainda não foram confirmadas.",
 	"centralauth-finish-login": "Entrar",

@@ -180,7 +180,6 @@
 	"centralauth-error-nologinattempt": "Tiada cubaan log masuk yang aktif sedang dilangsungkan untuk sesi anda.",
 	"centralauth-error-token-wrongattempt": "Token penentusahan ini bukan dari cubaan log masuk anda sekarang.\nMungkin ada seseorang yang cuba log masuk bagi pihak anda dengan akaun yang berniat jahat.",
 	"centralauth-error-token-wronguser": "Token ini tidak sepadan dengan nama pengguna sesi anda.\nMungkin ada seseorang yang cuba log masuk bagi pihak anda dengan akaun yang berniat jahat.\nJika anda sekadar log masuk sebagai pengguna lain, sila log keluar dahulu.",
-	"centralauth-error-unmerged": "Anda tidak boleh menyunting kerana akaun anda tidak disatukan.",
 	"centralauth-finish-incomplete": "Sebilangan akaun telah digabungkan menggunakan kata laluan ini.\nAkaun-akaun lain belum lagi disahkan.",
 	"centralauth-finish-login": "Log masuk",
 	"centralauth-finish-noconfirms": "Tiada akaun yang dapat disahkan menggunakan kata laluan ini.",

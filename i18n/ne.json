@@ -102,7 +102,6 @@
 	"centralauth-editset-usage": "समूहमा प्रयुक्त:",
 	"centralauth-editset-wikis": "विकिहरू:",
 	"centralauth-error-locked": "तपाईंले सम्पादन गर्न सक्नुहुन्न किन भने तपाईंको खातालाई प्रतिबन्धित गरिएकोछ।",
-	"centralauth-error-unmerged": "तपाईंले सम्पादन गर्न सक्नुहुन्न किन भने तपाईंको खातालाई एकीकरण गरिएको छैन।",
 	"centralauth-finish-incomplete": "यो प्रवेश शब्द प्रयोग गरेर धेरै खाताहरू सम्मिलित गरिए।\nअन्य खाताहरू अहिले सुनिश्चित गरिएका छैनन्।",
 	"centralauth-finish-login": "प्रवेश",
 	"centralauth-finish-noconfirms": "यो प्रवेश प्रयोग गरेर खाता सुनिश्चित हुँदैन।",

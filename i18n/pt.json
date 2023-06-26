@@ -228,7 +228,6 @@
 	"centralauth-error-nologinattempt": "Não está em progresso nenhuma tentativa de autenticação para a sua sessão.",
 	"centralauth-error-token-wrongattempt": "A chave de autenticação não pertence à sua tentativa atual de autenticação.\nAlguém pode estar a tentar autenticar-se através da sua conta.",
 	"centralauth-error-token-wronguser": "A chave não corresponde ao seu nome de utilizador nesta sessão.\nAlguém pode estar a tentar iniciar uma sessão por si usando uma conta maliciosa.\nSe está a tentar iniciar uma sessão com outro nome de utilizador saia primeiro da sessão atual, por favor.",
-	"centralauth-error-unmerged": "Não pode editar porque a sua conta não está unificada.",
 	"centralauth-error-wrongprovider": "Esta página especial não está disponível ao utilizar $1.",
 	"centralauth-finish-incomplete": "Várias contas foram fundidas usando esta palavra-passe.\nOutras contas ainda não estão confirmadas.",
 	"centralauth-finish-login": "Entrar",

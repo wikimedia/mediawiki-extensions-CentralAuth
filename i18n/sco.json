@@ -180,7 +180,6 @@
 	"centralauth-error-nologinattempt": "Nae acteeve login attempt is in progress fer yer session.",
 	"centralauth-error-token-wrongattempt": "The authentication token disna belang til yer Nou login attempt.\nSomebodie micht be ettlin tae log ye in unner ae maleecios accoont.",
 	"centralauth-error-token-wronguser": "The token disna match wi yer session uisername.\nSomebodie micht be ettlin tae log ye in unner ae maleecios accoont.\nGif ye'r jist ettlin tae log in aes anither uiser, please log oot first.",
-	"centralauth-error-unmerged": "You canna eedit cause yer accoont isna uneefied.",
 	"centralauth-finish-incomplete": "Several accoonts were merged uisin this passwaird.\nIther accoonts ar na yet confirmed.",
 	"centralauth-finish-login": "Login",
 	"centralauth-finish-noconfirms": "Nae accoonts coud be confirmed uisin this passwaird.",

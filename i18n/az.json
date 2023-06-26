@@ -113,6 +113,7 @@
 	"centralauth-globalgroupperms-newgroupname": "Yeni qrup adı:",
 	"centralauth-globalgroupperms-nogroups": "Qlobal qrup tapılmadı.",
 	"centralauth-globalgroupperms-rights": "Hüquqlar",
+	"centralauth-groupname": "bu viki ferması",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} əvvəl",
 	"centralauth-list-attached-title": "Əlavə edilmiş hesablar",
 	"centralauth-list-home-title": "Ev vikisi",

@@ -224,7 +224,6 @@
 	"centralauth-error-nologinattempt": "Nessun tentativo di accesso attivo è in corso per la sessione.",
 	"centralauth-error-token-wrongattempt": "Il token di autenticazione non appartiene al tuo tentativo di accesso corrente.\nQualcuno potrebbe star cercando di farti accedere con un account manipolato.",
 	"centralauth-error-token-wronguser": "Il token non corrisponde al nome utente della tua sessione.\nQualcuno potrebbe star tentando di farti accedere con un account maligno.\nSe stai solo cercando di accedere come un altro utente, per favore fai prima log-out.",
-	"centralauth-error-unmerged": "Non puoi effettuare modifiche perché la tua utenza non è stata unificata.",
 	"centralauth-error-wrongprovider": "Questa pagina speciale non è disponibile quando utilizzi $1.",
 	"centralauth-finish-incomplete": "Sono state unificate alcune utenze mediante questa password. Sono presenti altre utenze in attesa di conferma.",
 	"centralauth-finish-login": "Entra",

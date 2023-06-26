@@ -102,7 +102,6 @@
 	"centralauth-editset-submit": "遞交",
 	"centralauth-editset-submit-delete": "剷走",
 	"centralauth-error-locked": "你唔可以編輯因為你個戶口鎖咗。",
-	"centralauth-error-unmerged": "由於你嘅戶口重未統一，所以你唔可以改佢。",
 	"centralauth-finish-incomplete": "用呢個密碼確認唔到幾個戶口。\n其它戶口重未確認。",
 	"centralauth-finish-login": "登入",
 	"centralauth-finish-noconfirms": "用呢個密碼確認唔到任何戶口。",
