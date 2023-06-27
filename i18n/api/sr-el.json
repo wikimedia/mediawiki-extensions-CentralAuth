@@ -3,12 +3,10 @@
 		"authors": []
 	},
 	"apihelp-centralauthtoken-example-1": "Dobavljanje tokena za centralnu potvrdu identiteta",
-	"apihelp-deleteglobalaccount-description": "Brisanje globalnog korisnika.",
 	"apihelp-deleteglobalaccount-example-1": "Brisanje globalnog naloga [[User:Example|Korisnik:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Razlog za brisanje korisnika.",
 	"apihelp-deleteglobalaccount-param-user": "Korisnik za brisanje.",
 	"apihelp-deleteglobalaccount-summary": "Brisanje globalnog korisnika.",
-	"apihelp-globaluserrights-description": "Dodaj/ukloni korisnika u/iz globalne grupe.",
 	"apihelp-globaluserrights-param-reason": "Razlog za promenu.",
 	"apihelp-globaluserrights-param-remove": "Ukloni korisnika iz ovih globalnih grupa.",
 	"apihelp-globaluserrights-param-tags": "Ovaj parametar se trenutno se koristi.",

@@ -4,7 +4,6 @@
 			"KATRINE1992"
 		]
 	},
-	"apihelp-query+globalrenamestatus-description": "Προβάλετε πληροφορίες για αλλαγές ονομάτων που είναι σε εξέλιξη.",
 	"apihelp-query+globalrenamestatus-example-1": "Λάβετε πληροφορίες για τον παρόντα γενικό χρήστη",
 	"apihelp-query+globalrenamestatus-param-user": "Χρήστης του οποίου το όνομα άλλαξε. Μπορεί να είναι με το προηγούμενο όνομα ή το νέο όνομα.",
 	"apihelp-query+globalrenamestatus-summary": "Προβάλετε πληροφορίες για γενικές αλλαγές ονόματος που είναι σε εξέλιξη.",

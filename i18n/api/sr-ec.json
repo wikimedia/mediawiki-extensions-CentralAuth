@@ -8,12 +8,10 @@
 		]
 	},
 	"apihelp-centralauthtoken-example-1": "Добављање токена за централну потврду идентитета",
-	"apihelp-deleteglobalaccount-description": "Брисање глобалног корисника.",
 	"apihelp-deleteglobalaccount-example-1": "Брисање глобалног налога [[User:Example|Корисник:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Разлог за брисање корисника.",
 	"apihelp-deleteglobalaccount-param-user": "Корисник за брисање.",
 	"apihelp-deleteglobalaccount-summary": "Брисање глобалног корисника.",
-	"apihelp-globaluserrights-description": "Додај/уклони корисника у/из глобалне групе.",
 	"apihelp-globaluserrights-param-reason": "Разлог за промену.",
 	"apihelp-globaluserrights-param-remove": "Уклони корисника из ових глобалних група.",
 	"apihelp-globaluserrights-param-tags": "Овај параметар се тренутно се користи.",

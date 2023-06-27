@@ -5,12 +5,10 @@
 			"Mirzali"
 		]
 	},
-	"apihelp-deleteglobalaccount-description": "Yew karberê globali bestere.",
 	"apihelp-deleteglobalaccount-example-1": "Qandé [[User:Example]] global hesab besternayış",
 	"apihelp-deleteglobalaccount-param-reason": "Sebeba Karber besternayışi.",
 	"apihelp-deleteglobalaccount-param-user": "Karbero ke besteriyo.",
 	"apihelp-deleteglobalaccount-summary": "Yew karberê globali bestere.",
-	"apihelp-globaluserrights-description": "Yew karberi grubanê globalan ke/ra wedare.",
 	"apihelp-globaluserrights-param-add": "Nê karberi dek global gruber.",
 	"apihelp-globaluserrights-param-expiry": "No parametre nıka nêgureniyeno.",
 	"apihelp-globaluserrights-param-reason": "Sebebê vurnayışi.",
