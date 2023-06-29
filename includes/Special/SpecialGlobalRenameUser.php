@@ -4,19 +4,14 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use ExtensionRegistry;
 use FormSpecialPage;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUser;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
-use MediaWiki\JobQueue\JobQueueGroupFactory;
 use Message;
 use Status;
 use Title;
@@ -49,19 +44,15 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideTitleBlacklist = false;
 
-	/** @var JobQueueGroupFactory */
-	private $jobQueueGroupFactory;
-
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
 
 	/** @var CentralAuthUIService */
 	private $uiService;
 
 	/** @var GlobalRenameDenylist */
 	private $globalRenameDenylist;
+
+	private GlobalRenameFactory $globalRenameFactory;
 
 	/** @var GlobalRenameUserValidator */
 	private $globalRenameUserValidator;
@@ -72,27 +63,24 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private const EDITCOUNT_THRESHOLD = 100000;
 
 	/**
-	 * @param JobQueueGroupFactory $jobQueueGroupFactory
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
-	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 * @param GlobalRenameDenylist $globalRenameDenylist
+	 * @param GlobalRenameFactory $globalRenameFactory
 	 * @param GlobalRenameUserValidator $globalRenameUserValidator
 	 */
 	public function __construct(
-		JobQueueGroupFactory $jobQueueGroupFactory,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
+		GlobalRenameFactory $globalRenameFactory,
 		GlobalRenameUserValidator $globalRenameUserValidator
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
+		$this->globalRenameFactory = $globalRenameFactory;
 		$this->globalRenameUserValidator = $globalRenameUserValidator;
 	}
 
@@ -294,24 +282,15 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 		$this->newUsername = $data['newname'];
 		$this->oldUsername = $data['oldname'];
-		$oldUser = User::newFromName( $this->oldUsername );
-		$newUser = User::newFromName( $this->newUsername, 'creatable' );
 
-		$session = $this->getContext()->exportSession();
-		$globalRenameUser = new GlobalRenameUser(
-			$this->getUser(),
-			$oldUser,
-			CentralAuthUser::getInstance( $oldUser ),
-			$newUser,
-			CentralAuthUser::getInstance( $newUser ),
-			new GlobalRenameUserStatus( $newUser->getName() ),
-			$this->jobQueueGroupFactory,
-			new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
-			new GlobalRenameUserLogger( $this->getUser() ),
-			$session
-		);
-
-		return $globalRenameUser->rename( $data );
+		return $this->globalRenameFactory
+			->newGlobalRenameUser(
+				$this->getUser(),
+				CentralAuthUser::getInstanceByName( $this->oldUsername ),
+				$this->newUsername
+			)
+			->withSession( $this->getContext()->exportSession() )
+			->rename( $data );
 	}
 
 	public function onSuccess() {

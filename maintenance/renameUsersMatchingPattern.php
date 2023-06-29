@@ -5,13 +5,9 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUser;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\TempUser\Pattern;
 use MediaWiki\User\UserFactory;
@@ -31,8 +27,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 	/** @var UserFactory */
 	private $userFactory;
 
-	/** @var JobQueueGroupFactory */
-	private $jobQueueGroupFactory;
+	private GlobalRenameFactory $globalRenameFactory;
 
 	/** @var GlobalRenameUserValidator */
 	private $validator;
@@ -75,7 +70,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 		$services = MediaWikiServices::getInstance();
 		$this->dbManager = CentralAuthServices::getDatabaseManager();
 		$this->userFactory = $services->getUserFactory();
-		$this->jobQueueGroupFactory = $services->getJobQueueGroupFactory();
+		$this->globalRenameFactory = $services->get( 'CentralAuth.GlobalRenameFactory' );
 		$this->validator = $services->get( 'CentralAuth.GlobalRenameUserValidator' );
 	}
 
@@ -164,8 +159,6 @@ class RenameUsersMatchingPattern extends Maintenance {
 		}
 
 		$oldCaUser = new CentralAuthUser( $oldName, CentralAuthUser::READ_LATEST );
-		// @phan-suppress-next-line SecurityCheck-SQLInjection -- T290563 importLocalNames
-		$newCaUser = new CentralAuthUser( $newUser->getName() );
 
 		$data = [
 			'movepages' => !$this->skipPageMoves,
@@ -174,18 +167,12 @@ class RenameUsersMatchingPattern extends Maintenance {
 			'force' => true,
 		];
 
-		$globalRenameUser = new GlobalRenameUser(
+		$globalRenameUser = $this->globalRenameFactory->newGlobalRenameUser(
 			$this->performer,
-			$oldUser,
 			$oldCaUser,
-			$newUser,
-			$newCaUser,
-			new GlobalRenameUserStatus( $newUser->getName() ),
-			$this->jobQueueGroupFactory,
-			new GlobalRenameUserDatabaseUpdates( $this->dbManager ),
-			new GlobalRenameUserLogger( $this->performer ),
-			null
+			$newName
 		);
+
 		if ( $this->dryRun ) {
 			$this->output( "Would rename \"$oldName\" to \"$newName\"\n" );
 			return true;

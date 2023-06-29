@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
@@ -117,6 +118,14 @@ return [
 	},
 	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {
 		return new GlobalGroupLookup(
+			CentralAuthServices::getDatabaseManager( $services )
+		);
+	},
+	'CentralAuth.GlobalRenameFactory' => static function ( MediaWikiServices $services ): GlobalRenameFactory {
+		return new GlobalRenameFactory(
+			$services->getJobQueueGroupFactory(),
+			$services->getUserFactory(),
+			CentralAuthServices::getAntiSpoofManager( $services ),
 			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},

@@ -30,12 +30,10 @@ use LogEventsList;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUser;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserDatabaseUpdates;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -83,6 +81,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 
+	private GlobalRenameFactory $globalRenameFactory;
+
 	/** @var \Psr\Log\LoggerInterface */
 	private $logger;
 
@@ -100,7 +100,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		CentralAuthUIService $uiService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		JobQueueGroupFactory $jobQueueGroupFactory,
-		CentralAuthAntiSpoofManager $caAntiSpoofManager
+		CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		GlobalRenameFactory $globalRenameFactory
 	) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
@@ -110,6 +111,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
+		$this->globalRenameFactory = $globalRenameFactory;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -642,20 +644,14 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			if ( $request->userIsGlobal() ) {
 				// Trigger a global rename job
 
-				$globalRenameUser = new GlobalRenameUser(
-					$this->getUser(),
-					$oldUser,
-					CentralAuthUser::getInstance( $oldUser ),
-					$newUser,
-					CentralAuthUser::getInstance( $newUser ),
-					new GlobalRenameUserStatus( $newUser->getName() ),
-					$this->jobQueueGroupFactory,
-					new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
-					new GlobalRenameUserLogger( $this->getUser() ),
-					$session
-				);
-
-				$status = $globalRenameUser->rename( $data );
+				$status = $this->globalRenameFactory
+					->newGlobalRenameUser(
+						$this->getUser(),
+						CentralAuthUser::getInstanceByName( $request->getName() ),
+						$request->getNewName()
+					)
+					->withSession( $session )
+					->rename( $data );
 			} else {
 				// If the user is local-only:
 				// * rename the local user using LocalRenameUserJob
