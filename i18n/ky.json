@@ -4,7 +4,8 @@
 			"Chorobek",
 			"Connexx",
 			"Growingup",
-			"Викиней"
+			"Викиней",
+			"Bosogo"
 		]
 	},
 	"centralauth-admin-action-lock-lock": "Тандалган эсеп жазууларды бөгөттөө",
@@ -55,5 +56,6 @@
 	"centralauth-prefs-manage": "Глобалдык аккаунтуңузду башкаруу",
 	"centralauth-prefs-status": "Аккаунтун глобалдык статусу:",
 	"centralauth-prefs-view": "Аккаунттун глобалдык маалыматын көрүү",
+	"globalrenamequeue-request-cancel-text": "Жокко чыгаруу",
 	"mergeaccount": "Эсеп жазууларды бириктирүү абалы"
 }
