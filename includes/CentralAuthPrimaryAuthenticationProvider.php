@@ -29,7 +29,6 @@ use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Auth\ButtonAuthenticationRequest;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -73,9 +72,6 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 
-	/** @var bool Whether to check for force-renamed users on login */
-	protected $checkSULMigration = null;
-
 	/** @var bool Whether to auto-migrate non-merged accounts on login */
 	protected $autoMigrate = null;
 
@@ -96,8 +92,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
-	 *  - checkSULMigration: If true, check if the user was force-renamed for
-	 *    SUL unification on login.
 	 *  - autoMigrate: If true, attempt to auto-migrate local accounts on other
 	 *    wikis when logging in.
 	 *  - autoMigrateNonGlobalAccounts: If true, attempt to auto-migrate
@@ -116,7 +110,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		$params = []
 	) {
-		global $wgCentralAuthCheckSULMigration, $wgCentralAuthAutoMigrate,
+		global $wgCentralAuthAutoMigrate,
 			$wgCentralAuthAutoMigrateNonGlobalAccounts,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
@@ -134,7 +128,6 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$params += [
-			'checkSULMigration' => $wgCentralAuthCheckSULMigration,
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
 			'autoMigrateNonGlobalAccounts' => $wgCentralAuthAutoMigrateNonGlobalAccounts,
 			'antiSpoofAccounts' => $wgAntiSpoofAccounts,
@@ -143,7 +136,6 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		parent::__construct( $params );
 
-		$this->checkSULMigration = (bool)$params['checkSULMigration'];
 		$this->autoMigrate = (bool)$params['autoMigrate'];
 		$this->autoMigrateNonGlobalAccounts = (bool)$params['autoMigrateNonGlobalAccounts'];
 		$this->antiSpoofAccounts = (bool)$params['antiSpoofAccounts'];
@@ -216,56 +208,6 @@ class CentralAuthPrimaryAuthenticationProvider
 			);
 		}
 
-		// See if it's a user affected by a rename, if applicable.
-		if ( !$pass && $this->checkSULMigration ) {
-			$renamedUsername = $this->userNameUtils->getCanonical(
-				$req->username . '~' . str_replace( '_', '-', WikiMap::getCurrentWikiId() )
-			);
-			if ( $renamedUsername !== false ) {
-				$renamed = CentralAuthUser::getInstanceByName( $renamedUsername );
-				if ( $renamed->getId() ) {
-					$this->logger->debug(
-						'CentralAuthMigration: Checking for migration of "{oldname}" to "{newname}"',
-						[
-							'oldname' => $username,
-							'newname' => $renamedUsername,
-						]
-					);
-					$this->statsdDataFactory->increment( 'centralauth.migration.check' );
-
-					if ( $renamed->authenticate( $req->password ) === [ CentralAuthUser::AUTHENTICATE_OK ] ) {
-						// At this point the user will be passed, so set the
-						// reset flag now.
-						$this->setPasswordResetFlag( $renamedUsername, $status );
-
-						// Don't do any of the checks below if we checked for a
-						// renamed user. But do notify, unless this is coming
-						// through the API action=login where it's better to
-						// preserve BC and just let it go.
-						if ( defined( 'MW_API' ) &&
-							$this->manager->getRequest()->getVal( 'action' ) === 'login'
-						) {
-							return AuthenticationResponse::newPass( $renamedUsername );
-						}
-						$this->manager->setAuthenticationSessionData( 'CA-renamed-from', $username );
-						$this->manager->setAuthenticationSessionData(
-							'CA-renamed-to', $renamedUsername
-						);
-						return AuthenticationResponse::newUI(
-							[
-								new ButtonAuthenticationRequest(
-									'caRenameOk', wfMessage( 'ok' ),
-									wfMessage( 'sulrenamewarning-authmanager-ok-help' )
-								)
-							],
-							wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
-							'warning'
-						);
-					}
-				}
-			}
-		}
-
 		// If we don't have a central account, see if all local accounts match
 		// the password and can be globalized. (bug T72392)
 		if ( !$centralUser->exists() ) {
@@ -335,35 +277,6 @@ class CentralAuthPrimaryAuthenticationProvider
 			// We know the central user is attached at this point, so never
 			// fall back to other password providers.
 			return AuthenticationResponse::newFail( wfMessage( 'wrongpassword' ) );
-		}
-	}
-
-	public function continuePrimaryAuthentication( array $reqs ) {
-		$username = $this->manager->getAuthenticationSessionData( 'CA-renamed-from' );
-		$renamedUsername = $this->manager->getAuthenticationSessionData( 'CA-renamed-to' );
-		if ( $username === null || $renamedUsername === null ) {
-			// What?
-			$this->logger->debug( 'Missing "CA-renamed-from" or "CA-renamed-to" in session data' );
-			return AuthenticationResponse::newFail(
-				wfMessage( 'authmanager-authn-not-in-progress' )
-			);
-		}
-
-		$req = ButtonAuthenticationRequest::getRequestByName( $reqs, 'caRenameOk' );
-		if ( $req ) {
-			return AuthenticationResponse::newPass( $renamedUsername );
-		} else {
-			// Try again, client, and please get it right this time.
-			return AuthenticationResponse::newUI(
-				[
-					new ButtonAuthenticationRequest(
-						'caRenameOk', wfMessage( 'ok' ),
-						wfMessage( 'sulrenamewarning-authmanager-ok-help' )
-					)
-				],
-				wfMessage( 'sulrenamewarning-renamed', $username, $renamedUsername ),
-				'warning'
-			);
 		}
 	}
 

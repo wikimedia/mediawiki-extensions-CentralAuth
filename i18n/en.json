@@ -519,9 +519,5 @@
 	"right-globalgrouppermissions": "Manage global groups",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
-	"sulrenamewarning-authmanager-ok-help": "Continue after displaying the rename notification.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Your}} account '''$1''' has been renamed to '''$2''' during automatic migration to the unified login system of {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Your}} account has been renamed",
-	"sulrenamewarning-usenew": "Please use {{GENDER:$1|your}} new username '''$1''' when logging in in the future.",
 	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a blacklist."
 }

@@ -544,9 +544,5 @@
 	"right-globalgrouppermissions": "{{doc-right|globalgrouppermissions}}",
 	"sessionprovider-centralauthsessionprovider": "Description of the sessions provided by the CentralAuthSessionProvider class, which use HTTP cookies. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
 	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
-	"sulrenamewarning-authmanager-ok-help": "Description of the \"ok\" field when displaying the rename notification during AuthManager authentication.",
-	"sulrenamewarning-renamed": "Notice to user that their account has been renamed.\n\n* $1 is the user's old name\n* $2 is the user's new name",
-	"sulrenamewarning-title": "[[Special:SulRenameWarning]] title\n\n* $1 is the user's new name for GENDER",
-	"sulrenamewarning-usenew": "Instructions to user to login with new name in the future\n\n* $1 is the user's new name",
 	"centralauth-badaccess-blacklisted": "Message shown to users who can't request to be renamed because they are listed on a blacklist."
 }

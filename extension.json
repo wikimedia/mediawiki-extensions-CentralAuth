@@ -776,10 +776,6 @@
 			"description": "Feature flag for Special:GlobalRenameRequest",
 			"value": false
 		},
-		"CentralAuthCheckSULMigration": {
-			"description": "Enable special logic to attempt to ease the user facing impact of forced user migrations.",
-			"value": false
-		},
 		"CentralAuthGlobalPasswordPolicies": {
 			"description": "Global Password Policies. These are applied like local password policies, the strongest policy applicable to a user is used. Policies can apply to either a local group (if the user is a member of that group on any wiki, the policy will apply to that user) or global group.",
 			"value": []
