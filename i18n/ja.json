@@ -513,7 +513,5 @@
 	"right-centralauth-unmerge": "グローバルアカウントを統合解除",
 	"right-globalgroupmembership": "グローバルグループのメンバーを編集",
 	"right-globalgrouppermissions": "グローバルグループを管理",
-	"sulrenamewarning-title": "{{GENDER:$1|あなた}}のアカウントは改名されました",
-	"sulrenamewarning-usenew": "今後ログインする際は、{{GENDER:$1|あなた}}の新しい利用者名'''$1'''を使用してください。",
 	"centralauth-badaccess-blacklisted": "あなたはブラックリストに登録されているため、グローバル利用者アカウントの改名を依頼できません。"
 }

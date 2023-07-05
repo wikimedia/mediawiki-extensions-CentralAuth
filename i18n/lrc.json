@@ -454,9 +454,5 @@
 	"right-globalgrouppermissions": "دیڤونداری جٱرغٱیا سراسری",
 	"sessionprovider-centralauthsessionprovider": "نشسؽا مٱرکزی موبتنی ڤ کۊکی",
 	"sessionprovider-centralauthtokensessionprovider": "نشسؽا بلٛیت ٱندوم بیئن سراسری",
-	"sulrenamewarning-authmanager-ok-help": "اْدامٱ دما نشوݩ داٛئن ڤارٱسونی آلشت نوم",
-	"sulrenamewarning-renamed": "{{GENDER:$2|نوم هساو شما}} د \"$1\" ڤ \"$2\" د گات جا ڤ جاکاری خودٱنجوم سی اومایئن ڤامؽن یٱکاگری بیٱ د سامونٱ{{int:Centralauth-groupname}} آلشت بی.",
-	"sulrenamewarning-title": "{{GENDER:$1|شما}} نوم هساو آلشت بی",
-	"sulrenamewarning-usenew": "لٛۏتف بٱکؽت نوم مؽنتۏری جدید {{GENDER:$1|خوتو}} ناْ کاْ'''$1''' ڤ  کار باٛئیرؽت د گاتؽ کاْ د نوئاتر مؽایت ڤامؽن.",
 	"centralauth-badaccess-blacklisted": "شما نمؽ تونؽت دٱرهاست آلشت نوم جهونی باٛئؽت، سی یٱ کاْ شما جۏز نومگاٛ سؽ هؽسؽت."
 }

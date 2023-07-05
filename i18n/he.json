@@ -500,9 +500,5 @@
 	"right-globalgrouppermissions": "ניהול קבוצות גלובליות",
 	"sessionprovider-centralauthsessionprovider": "התחברויות מרכזיות מבוססות־עוגיות",
 	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "להמשיך אחרי הצגת הודעת שינוי השם.",
-	"sulrenamewarning-renamed": "שם החשבון {{GENDER:$2|שלך}} '''$1''' שוּנָה אל '''$2''' במהלך מעבר אוטומטי למערכת כניסה מאוחדת של {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "שם החשבון {{GENDER:$1|שלך}} שוּנָה",
-	"sulrenamewarning-usenew": "נא להשתמש בשם המשתמש החדש {{GENDER:$1|שלך}} '''$1''' בעת כניסה בעתיד.",
 	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה."
 }

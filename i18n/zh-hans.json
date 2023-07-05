@@ -547,9 +547,5 @@
 	"right-globalgrouppermissions": "管理全域组",
 	"sessionprovider-centralauthsessionprovider": "基于中心cookie的会话",
 	"sessionprovider-centralauthtokensessionprovider": "中心验证令牌会话",
-	"sulrenamewarning-authmanager-ok-help": "在显示重命名通知后继续。",
-	"sulrenamewarning-renamed": "在自动迁移至{{int:Centralauth-groupname}}的统一登录系统过程中，{{GENDER:$2|您}}的账户'''$1'''已被重命名至'''$2'''。",
-	"sulrenamewarning-title": "{{GENDER:$1|您}}的账号已被重命名",
-	"sulrenamewarning-usenew": "今后，请使用{{GENDER:$1|您}}的新用户名'''$1'''登录。",
 	"centralauth-badaccess-blacklisted": "由于您在黑名单上，故无法申请全域更名。"
 }

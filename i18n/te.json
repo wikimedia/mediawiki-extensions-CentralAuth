@@ -318,7 +318,5 @@
 	"right-centralauth-suppress": "సార్వత్రిక ఖాతాను అణచి పెట్టు లేదా దాచు",
 	"right-centralauth-unmerge": "సార్వత్రిక ఖాతాను విడదీయి",
 	"right-globalgroupmembership": "సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు",
-	"right-globalgrouppermissions": "సార్వత్రిక గుంపులను నిర్వహించు",
-	"sulrenamewarning-title": "{{GENDER:$1|మీ}}ఖాతా పేరు మార్చబడింది",
-	"sulrenamewarning-usenew": "ఇకనుండి లాగిన్ అయ్యేటపుడు {{GENDER:$1|మీ}} కొత్త వాడుకరిపేరు, '''$1''' ను వాడండి."
+	"right-globalgrouppermissions": "సార్వత్రిక గుంపులను నిర్వహించు"
 }

@@ -524,9 +524,5 @@
 	"right-globalgrouppermissions": "Gerenciar grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sessões centrais baseadas em cookies",
 	"sessionprovider-centralauthtokensessionprovider": "Sessões centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Continue depois de exibir a notificação de renomeação.",
-	"sulrenamewarning-renamed": "A {{GENDER:$2|sua}} conta '''$1''' foi renomeada para '''$2''' durante a migração automática para o sistema de conta unificada de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "A {{GENDER:$1|sua}} conta foi renomeada",
-	"sulrenamewarning-usenew": "Por favor, utilize {{GENDER:$1|seu}} novo nome de usuário '''$1''' ao logar no futuro.",
 	"centralauth-badaccess-blacklisted": "Você não pode solicitar uma renomeação global porque está em uma lista negra."
 }

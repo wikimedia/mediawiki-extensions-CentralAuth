@@ -403,8 +403,5 @@
 	"right-centralauth-rename": "Arnominé dij cont globaj",
 	"right-centralauth-unmerge": "Anulé la fusion dël cont global",
 	"right-globalgroupmembership": "Modìfica l'apartenensa a le partìe globaj",
-	"right-globalgrouppermissions": "Gestì le partìe globaj",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Sò}} cont '''$1''' a l'é stàit arnominà '''$2''' durant la migrassion automàtica al sistema d'identificassion unificà ëd {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Sò}} cont a l'é stàit arnominà",
-	"sulrenamewarning-usenew": "Për piasì, ch'a deuvra {{GENDER:$1|sò}} neuv ëstranòm '''$1''' për rintré ant ël sistema ant l'avnì."
+	"right-globalgrouppermissions": "Gestì le partìe globaj"
 }

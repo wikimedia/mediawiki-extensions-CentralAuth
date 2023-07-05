@@ -412,8 +412,5 @@
 	"right-centralauth-rename": "Naganan manen dagiti global a pakabilangan",
 	"right-centralauth-unmerge": "Ikkaten ti panagtipon ti global a pakabilangan",
 	"right-globalgroupmembership": "Baliwan ti pannakaikameng kadagiti global a grupo",
-	"right-globalgrouppermissions": "Taripatuen dagiti global a grupo",
-	"sulrenamewarning-renamed": "Ti {{GENDER:$2|pakabilangam}} iti '''$1''' ket nanaganan manen iti '''$2''' idi las-ud ti automatiko a panangiyakar iti sistema ti naikaykaysa a panagserrek iti {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "Ti {{GENDER:$1|pakabilangam}} ken nanagana manen",
-	"sulrenamewarning-usenew": "Pangngaasi nga usaren ti{{GENDER:$1|bukodmo}} a baro a nagan ti agar-aramat iti '''$1''' no sumrekka iti masakbayan."
+	"right-globalgrouppermissions": "Taripatuen dagiti global a grupo"
 }

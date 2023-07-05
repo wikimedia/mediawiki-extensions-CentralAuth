@@ -489,9 +489,5 @@
 	"right-globalgrouppermissions": "Gerer gruppos global",
 	"sessionprovider-centralauthsessionprovider": "sessiones basate sur cookies central",
 	"sessionprovider-centralauthtokensessionprovider": "sessiones centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Continuar post monstrar le notification de renomination.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Tu}} conto '''$1''' ha essite renominate a '''$2''' durante le migration automatic al systema de contos unificate de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Tu}} conto ha essite renominate",
-	"sulrenamewarning-usenew": "Per favor, usa {{GENDER:$1|tu}} nove nomine de usadtor '''$1''' quando tu aperi session in le futuro.",
 	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre."
 }

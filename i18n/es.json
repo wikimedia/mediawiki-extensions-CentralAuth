@@ -547,9 +547,5 @@
 	"right-globalgrouppermissions": "Gestionar grupos de usuario globales",
 	"sessionprovider-centralauthsessionprovider": "sesiones centrales basadas en cookies",
 	"sessionprovider-centralauthtokensessionprovider": "sesiones centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Continuar después de mostrar la notificación del cambio de nombre.",
-	"sulrenamewarning-renamed": "Tu cuenta de usuario '''$1''' ha sido renombrada a '''$2''' durante el proceso automático de migración al sistema unificado de inicio de sesión de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "Se renombró {{GENDER:$1|tu}} cuenta",
-	"sulrenamewarning-usenew": "Usa tu nuevo nombre de {{GENDER:$1|usuario|usuaria}} '''$1''' cuando inicies sesión en el futuro.",
 	"centralauth-badaccess-blacklisted": "Tu nombre de usuario figura en una lista que impide que puedas solicitar un cambio global de nombre de usuario."
 }

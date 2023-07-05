@@ -454,9 +454,5 @@
 	"right-globalgrouppermissions": "Remanar grupos globales",
 	"sessionprovider-centralauthsessionprovider": "sesiones centrales basaes en cookies",
 	"sessionprovider-centralauthtokensessionprovider": "sesiones centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Siguir dempués d'amosar l'avisu del cambéu de nome.",
-	"sulrenamewarning-renamed": "La {{GENDER:$2|to}} cuenta '''$1''' cambióse de nome a '''$2''' demientres la migración automática al sistema de cuenta unificada de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|La to cuenta}} cambióse de nome",
-	"sulrenamewarning-usenew": "Usa'l nome d'{{GENDER:$1|usuariu|usuaria}} nuevu '''$1''' cuando anicies sesión nel futuru.",
 	"centralauth-badaccess-blacklisted": "Nun pues solicitar un cambiu de nome global porque tas nuna llista negra."
 }

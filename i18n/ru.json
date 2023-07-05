@@ -516,9 +516,5 @@
 	"right-globalgrouppermissions": "Управление глобальными группами",
 	"sessionprovider-centralauthsessionprovider": "сессий на основе файлов cookie",
 	"sessionprovider-centralauthtokensessionprovider": "сессий centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Продолжить после отображения уведомления о переименовании.",
-	"sulrenamewarning-renamed": "{{GENDER:$1|Ваша}} учётная запись была переименована в '''$2''' в процессе автоматической миграции в систему единой учётной записи {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Ваша}} учётная запись была переименована",
-	"sulrenamewarning-usenew": "Пожалуйста, используйте {{GENDER:$1|ваше}} новое имя участника '''$1''' при входе в систему в будущем.",
 	"centralauth-badaccess-blacklisted": "Вы не можете запросить глобальное переименование, поскольку вы находитесь в чёрном списке."
 }

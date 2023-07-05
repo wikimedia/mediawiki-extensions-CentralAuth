@@ -509,9 +509,5 @@
 	"right-globalgrouppermissions": "Hallinnoida järjestelmänlaajuisia ryhmiä",
 	"sessionprovider-centralauthsessionprovider": "järjestelmänlaajuisia evästepohjaisia istuntoja",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-istuntoja",
-	"sulrenamewarning-authmanager-ok-help": "Jatka uudelleennimeämisilmoituksen jälkeen.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Tunnuksellesi}} '''$1''' on annettu uudeksi nimeksi '''$2''' siirryttäessä automaattisesti yhdistettyyn kirjautumisjärjestelmään, jonka toiminnasta vastaa {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Käyttäjätunnuksesi}} nimi on vaihdettu",
-	"sulrenamewarning-usenew": "Käytäthän uutta käyttäjänimeäsi '''$1''' kirjautuessasi sisään jatkossa.",
 	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja."
 }

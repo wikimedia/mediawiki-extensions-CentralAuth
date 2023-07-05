@@ -506,9 +506,5 @@
 	"right-globalgrouppermissions": "مدیریت گروه‌های سراسری",
 	"sessionprovider-centralauthsessionprovider": "نشست‌های مرکزی مبتنی بر کوکی",
 	"sessionprovider-centralauthtokensessionprovider": "نشست‌های بلیط ورود سراسری",
-	"sulrenamewarning-authmanager-ok-help": "ادامه پس از نمایش آگاه‌سازی تغییر نام.",
-	"sulrenamewarning-renamed": "در طی مهاجرت خودکار به سامانه ورود جامع {{int:Centralauth-groupname}} حساب {{GENDER:$2|شما}} از '''$1''' به '''$2''' تغییر نام پیدا کرد.",
-	"sulrenamewarning-title": "نام حساب {{GENDER:$1|شما}} تغییر یافت",
-	"sulrenamewarning-usenew": "لطفاً از نام کاربری {{GENDER:$1|جدیدتان}}، '''$1'''، برای ورود به سامانه استفاده کنید.",
 	"centralauth-badaccess-blacklisted": "از آنجا که نام شما در فهرست سیاه قرار داد، قادر به درخواست تغییر نام سراسری نیستید."
 }

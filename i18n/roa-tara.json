@@ -474,9 +474,5 @@
 	"right-globalgrouppermissions": "Gestisce le gruppe globbale",
 	"sessionprovider-centralauthsessionprovider": "sessiune basate sus a cookie centrali",
 	"sessionprovider-centralauthtokensessionprovider": "sessiune centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Condinue apprisse 'u 'ndrucamende d'a notifeche de renomenazione.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|'U}} cunde tune '''$1''' ha state renomenate jndr'à '''$2''' duranne 'a migrazione automateche a 'u sisteme de accesse aunificate de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "'U cunde {{GENDER:$1|tune}} ha state renomenate",
-	"sulrenamewarning-usenew": "Pe piacere ause 'u nome utende nuève {{GENDER:$1|tune}} '''$1''' quanne le prosseme vote pruève a trasè.",
 	"centralauth-badaccess-blacklisted": "Non ge puè cercà 'nu renomenamende globbale, purcé tu ste jndr'à lista gnore."
 }

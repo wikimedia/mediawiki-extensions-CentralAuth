@@ -446,8 +446,5 @@
 	"right-globalgroupmembership": "Editar els membres dels grups globals",
 	"right-globalgrouppermissions": "Gestionar els grups globals",
 	"sessionprovider-centralauthsessionprovider": "sessions basades en galetes centrals",
-	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
-	"sulrenamewarning-renamed": "El {{GENDER:$2|vostre}} compte '''$1''' ha canviat al nom '''$2''' durant la migració automàtica al sistema de sessions unificades de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "El {{GENDER:$1|vostre}} compte ha canviat de nom",
-	"sulrenamewarning-usenew": "Utilitzeu el {{GENDER:$1|vostre}} nou nom d'usuari '''$1''' per iniciar sessió a partir d'ara."
+	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken"
 }

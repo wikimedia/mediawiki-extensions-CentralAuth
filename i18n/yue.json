@@ -211,6 +211,5 @@
 	"mergeaccount": "登入統一狀態",
 	"right-centralauth-merge": "合併佢哋嘅戶口",
 	"right-globalgroupmembership": "編輯成員到全域組",
-	"right-globalgrouppermissions": "管理全域組",
-	"sulrenamewarning-title": "{{GENDER:$1|你}}嘅戶口已經改咗名"
+	"right-globalgrouppermissions": "管理全域組"
 }

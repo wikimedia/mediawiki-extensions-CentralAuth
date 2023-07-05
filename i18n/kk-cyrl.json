@@ -335,8 +335,5 @@
 	"right-centralauth-rename": "Ғаламдықы тіркелгілердің атауын өзгерту",
 	"right-centralauth-unmerge": "Ғаламдық аккаунтты біріктірмеу",
 	"right-globalgroupmembership": "Ғаламдық топтарға кіруін өзгерту",
-	"right-globalgrouppermissions": "Ғаламдық топтарды реттеу",
-	"sulrenamewarning-renamed": "Бір шоттақ {{int:Centralauth-groupname}} жазба  системасына автоматты көшірілім барысында {{GENDER:$2|Сіздің}} '''$1''' аккаунтыңыз '''$2'''  деп өзгертілді.",
-	"sulrenamewarning-title": "{{GENDER:$1|Сіздің}} аккаунтыңыз өзгертілді.",
-	"sulrenamewarning-usenew": "{{GENDER:$1|Сіз}} жаңа қатысушы есім «$1» дегенді қолданыңыз  болашақта кірген кезде."
+	"right-globalgrouppermissions": "Ғаламдық топтарды реттеу"
 }

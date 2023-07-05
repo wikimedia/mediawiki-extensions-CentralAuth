@@ -520,9 +520,5 @@
 	"right-globalgrouppermissions": "Керування глобальними групами",
 	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
 	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Продовжити після показу сповіщення про перейменування.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Ваш}} обліковий запис '''$1''' перейменовано на '''$2''' в процесі автоматичної міграції до системи єдиного облікового запису. {{ucfirst:{{int:Centralauth-groupname}}}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Ваш}} обліковий запис перейменовано",
-	"sulrenamewarning-usenew": "Будь ласка, відтепер для автентифікації користуйтеся {{GENDER:$1|Вашим}} новим ім'ям користувача '''$1'''.",
 	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в чорному списку."
 }

@@ -509,9 +509,5 @@
 	"right-globalgrouppermissions": "Küresel grupları düzenle",
 	"sessionprovider-centralauthsessionprovider": "merkezi çerez tabanlı oturumları",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken oturumları",
-	"sulrenamewarning-authmanager-ok-help": "Yeniden adlandırma bildirimini görüntüledikten sonra devam edin.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Sizin}} hesabınız '''$1''', {{int:centralauth-groupname}} birleşik giriş sistemine otomatik geçiş sırasında '''$2''' olarak yeniden adlandırıldı.",
-	"sulrenamewarning-title": "{{GENDER:$1|Sizin}} hesabınız yeniden adlandırıldı",
-	"sulrenamewarning-usenew": "İleride giriş yaparken lütfen {{GENDER:$1|sizin}} yeni kullanıcı adı '''$1''' kullanın.",
 	"centralauth-badaccess-blacklisted": "Genel bir yeniden adlandırma isteğinde bulunamazsınız, çünkü kara listede olursunuz."
 }

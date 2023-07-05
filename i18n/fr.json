@@ -546,9 +546,5 @@
 	"right-globalgrouppermissions": "Gérer les groupes globaux",
 	"sessionprovider-centralauthsessionprovider": "sessions basées sur les témoins (''cookies'') centraux",
 	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "Continuer après l’affichage de la notification de renommage.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|}}Votre compte '''$1''' a été renommé en '''$2''' lors de la migration automatique vers le système d’identification unifié de {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|}}Votre compte a été renommé",
-	"sulrenamewarning-usenew": "Veuillez utiliser votre nouveau nom d’utilisat{{GENDER:$1|eur|rice}} '''$1''' lorsque vous vous connecterez à l’avenir.",
 	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, parce que vous êtes en liste noire."
 }

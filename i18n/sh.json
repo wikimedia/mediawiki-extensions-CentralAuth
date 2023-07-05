@@ -350,6 +350,5 @@
 	"right-centralauth-unmerge": "Razdvajanje globalnog računa",
 	"right-globalgroupmembership": "Izmena članstva u globalnim grupama",
 	"right-globalgrouppermissions": "Upravljanje globalnim grupama",
-	"sulrenamewarning-usenew": "Ubuduće za prijavljivanje koristite {{GENDER:$1|vaše}} novo korisničko ime '''$1'''.",
 	"centralauth-badaccess-blacklisted": "Ne možete zatražiti globalno preimenovanje jer ste na crnoj listi."
 }

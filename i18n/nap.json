@@ -420,8 +420,5 @@
 	"right-centralauth-rename": "Renommena ll'utente globbalmente",
 	"right-centralauth-unmerge": "Scucchia 'e cunte globbale",
 	"right-globalgroupmembership": "Cagna ll'appartenenze ê membre dint' 'e gruppe globbale",
-	"right-globalgrouppermissions": "Gestisce 'e gruppe globbale",
-	"sulrenamewarning-renamed": "{{GENDER:$2|'O cunto vuosto}} '''$1''' è stato renommenato '''$2''' pe' tramente ca se faceva 'a migrazione a 'o sistema d'accesso aunito {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|'O cunto vuosto}} è stato renommenato",
-	"sulrenamewarning-usenew": "Pe' piacere ausate {{GENDER:$1|'o}} nomme utente '''$1''' d' 'o vuosto quanno facerrate login p' 'o futuro."
+	"right-globalgrouppermissions": "Gestisce 'e gruppe globbale"
 }

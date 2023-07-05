@@ -401,8 +401,5 @@
 	"right-centralauth-rename": "preimenovanje globalnih naloga",
 	"right-centralauth-unmerge": "razdvajanje globalnih naloga",
 	"right-globalgroupmembership": "izmena članstva u globalnim grupama",
-	"right-globalgrouppermissions": "upravljanje globalnim grupama",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Vaš}} nalog '''$1''' je automatski preimenovan u '''$2''' u sklopu prelaska na SUL sistem {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Vaš}} nalog je preimenovan",
-	"sulrenamewarning-usenew": "Ubuduće za prijavljivanje koristite {{GENDER:$1|vaše}} novo korisničko ime '''$1'''."
+	"right-globalgrouppermissions": "upravljanje globalnim grupama"
 }

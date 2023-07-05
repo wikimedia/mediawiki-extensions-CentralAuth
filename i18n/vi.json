@@ -501,9 +501,5 @@
 	"right-globalgrouppermissions": "Quản lý nhóm toàn cục",
 	"sessionprovider-centralauthsessionprovider": "phiên trung ương dựa trên cookie",
 	"sessionprovider-centralauthtokensessionprovider": "phiên dấu CentralAuth",
-	"sulrenamewarning-authmanager-ok-help": "Tiếp tục sau khi hiển thị thông báo đổi tên.",
-	"sulrenamewarning-renamed": "Tài khoản '''$1''' của bạn đã được đổi tên thành '''$2''' trong quá trình chuyển đổi qua hệ thống tài khoản hợp nhất của {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "Tài khoản của {{GENDER:$1}}bạn đã được đổi tên",
-	"sulrenamewarning-usenew": "Xin vui lòng đăng nhập từ nay với tên người dùng mới '''$1'''.",
 	"centralauth-badaccess-blacklisted": "Bạn không thể yêu cầu đổi tên toàn cục, vì bạn đang nằm trong danh sách cấm."
 }

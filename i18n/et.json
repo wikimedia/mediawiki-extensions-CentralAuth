@@ -417,8 +417,5 @@
 	"right-globalgroupmembership": "Muuta globaalsete rühmade liikmesust",
 	"right-globalgrouppermissions": "Hallata globaalseid rühmi",
 	"sessionprovider-centralauthsessionprovider": "kesksed küpsisepõhised seansid",
-	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-tüüpi seansid",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Sinu}} konto '''$1''' uueks nimeks on automaatselt pandud '''$2'''. Nimemuutus on seotud {{int:Centralauth-groupname}} sisselogimissüsteemi ühtlustamisega.",
-	"sulrenamewarning-title": "{{GENDER:$1|Sinu}} konto on ümber nimetatud",
-	"sulrenamewarning-usenew": "Edaspidi kasuta palun sisselogimiseks uut kasutajanime '''$1'''."
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-tüüpi seansid"
 }

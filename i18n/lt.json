@@ -479,8 +479,5 @@
 	"right-centralauth-rename": "Pervadinti visuotines paskyras",
 	"right-centralauth-unmerge": "Atsieti bendrąją paskyrą",
 	"right-globalgroupmembership": "Keisti globaliųjų grupių narystę",
-	"right-globalgrouppermissions": "Tvarkyti globaliąsias grupes",
-	"sulrenamewarning-authmanager-ok-help": "Tęsti po pervadinimo pranešimo parodymo.",
-	"sulrenamewarning-title": "{{GENDER:$1|Jūsų}} paskyra buvo pervadinta",
-	"sulrenamewarning-usenew": "Prašome naudoti {{GENDER:$1|savo}} naują vartotojo vardą '''$1''', kai prisijungsite ateityje."
+	"right-globalgrouppermissions": "Tvarkyti globaliąsias grupes"
 }

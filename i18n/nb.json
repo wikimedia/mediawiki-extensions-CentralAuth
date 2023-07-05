@@ -500,9 +500,5 @@
 	"right-globalgrouppermissions": "Behandle av globale grupper",
 	"sessionprovider-centralauthsessionprovider": "sentrale informasjonskapselbaserte økter",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-økter",
-	"sulrenamewarning-authmanager-ok-help": "Fortsett etter å ha vist navneendringsvarselet.",
-	"sulrenamewarning-renamed": "Kontoen {{GENDER:$2|din}} («$1») har byttet navn til «$2» under automatisk migrasjon til det sammenslåtte innloggingssystemet av {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "Kontoen {{GENDER:$1|din}} har byttet navn",
-	"sulrenamewarning-usenew": "Vennligst bruk {{GENDER:$1|ditt}} nye brukernavn «$1» når du logger inn i framtida.",
 	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste."
 }

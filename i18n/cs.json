@@ -474,8 +474,5 @@
 	"right-globalgroupmembership": "Upravování členství v globálních skupinách",
 	"right-globalgrouppermissions": "Spravování globálních skupin",
 	"sessionprovider-centralauthsessionprovider": "centrální relace pomocí cookies",
-	"sessionprovider-centralauthtokensessionprovider": "relace pomocí centralauthtoken",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Váš}} uživatelský účet '''$1''' byl v průběhu automatické migrace na sjednocený systém přihlašování {{int:Centralauth-groupname}} přejmenován na '''$2'''.",
-	"sulrenamewarning-title": "{{GENDER:$1|Váš}} uživatelský účet byl přejmenován",
-	"sulrenamewarning-usenew": "Pro přihlašování v budoucnu prosím používejte {{GENDER:$1|své}} nové uživatelské jméno '''$1'''."
+	"sessionprovider-centralauthtokensessionprovider": "relace pomocí centralauthtoken"
 }

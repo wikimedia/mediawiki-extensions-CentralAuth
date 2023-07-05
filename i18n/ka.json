@@ -379,7 +379,5 @@
 	"right-centralauth-rename": "გლობალური ანგარიშების გადარქმევა",
 	"right-centralauth-unmerge": "ადგილობრივი ანგარიშის განცალკევება",
 	"right-globalgroupmembership": "გლობალურ ჯგუფებში წევრობის გადაკეთება",
-	"right-globalgrouppermissions": "გლობალური ჯგუფების მართვა",
-	"sulrenamewarning-title": "{{GENDER:$1|თქვენი}} ანგარიშის სახელი შეიცვალა",
-	"sulrenamewarning-usenew": "გთხოვთ, სამომავლოდ სისტემაში შესასვლელად გამოიყენოთ {{GENDER:$1|თქვენი}} ახალი მომხმარებლის სახელი '''$1'''."
+	"right-globalgrouppermissions": "გლობალური ჯგუფების მართვა"
 }

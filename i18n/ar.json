@@ -521,9 +521,5 @@
 	"right-globalgrouppermissions": "إدارة المجموعات العامة",
 	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)",
 	"sessionprovider-centralauthtokensessionprovider": "جلسات centralauthtoken",
-	"sulrenamewarning-authmanager-ok-help": "تابع بعد عرض إشعار إعادة التسمية.",
-	"sulrenamewarning-renamed": "تم تغيير اسم {{GENDER:$1|حسابك|حسابكِ}} «$1» إلى «$2» خلال الانتقال الآلي إلى نظام الدخول الموحد لل{{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "تم تغيير اسم {{GENDER:$1|حسابك|حسابكِ}}",
-	"sulrenamewarning-usenew": "من فضلك، استخدم اسم حساب{{GENDER:$1|ك|كِ}} الجديد '''$1''' لتسجيل الدخول في المستقبل.",
 	"centralauth-badaccess-blacklisted": "لا يمكنك طلب عملية إعادة تسمية عالمية، لأنك على قائمة سوداء."
 }

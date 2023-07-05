@@ -445,7 +445,5 @@
 	"right-centralauth-rename": "Globális fiókok átnevezése",
 	"right-centralauth-unmerge": "Globális fiók szétválasztása",
 	"right-globalgroupmembership": "globális csoportok tagjainak szerkesztése",
-	"right-globalgrouppermissions": "globális csoportok kezelése",
-	"sulrenamewarning-title": "A {{GENDER:$1|fiókod}} átnevezésre került",
-	"sulrenamewarning-usenew": "A jövőben már az új {{GENDER:$1|felhasználónevedet}} („$1”) használd, amikor bejelentkezel."
+	"right-globalgrouppermissions": "globális csoportok kezelése"
 }

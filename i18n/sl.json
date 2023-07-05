@@ -494,9 +494,5 @@
 	"right-globalgrouppermissions": "Upravljanje globalnih skupin",
 	"sessionprovider-centralauthsessionprovider": "centralna seja z uporabo piškotkov",
 	"sessionprovider-centralauthtokensessionprovider": "seja s centralnim avtentikacijskim žetonom",
-	"sulrenamewarning-authmanager-ok-help": "Nadaljuj po prikazu obvestila o preimenovanju.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Vaš}} račun '''$1''' je bil v postopku samodejnega prehoda na sistem enotne prijave {{int:Centralauth-groupname}} preimenovan v '''$2'''.",
-	"sulrenamewarning-title": "{{GENDER:$1|Vaš}} račun je preimenovan",
-	"sulrenamewarning-usenew": "Prosimo, ob prihodnjih prijavah uporabljaj {{GENDER:$1|svoje}} novo uporabniško ime.",
 	"centralauth-badaccess-blacklisted": "Globalnega preimenovanja ne morete zahtevati, ker ste na črnem seznamu."
 }

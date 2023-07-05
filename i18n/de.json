@@ -507,9 +507,5 @@
 	"right-globalgrouppermissions": "Globale Gruppen verwalten",
 	"sessionprovider-centralauthsessionprovider": "zentralen cookiebasierten Sitzungen",
 	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen",
-	"sulrenamewarning-authmanager-ok-help": "Nach der Anzeige der Umbenennungsbenachrichtigung fortfahren.",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Dein}} Benutzerkonto '''$1''' wurde während der automatischen Migration zum vereinheitlichten Anmeldesystem {{int:Centralauth-groupname}} umbenannt in '''$2'''.",
-	"sulrenamewarning-title": "{{GENDER:$1|Dein}} Benutzerkonto wurde umbenannt",
-	"sulrenamewarning-usenew": "Bitte verwende in Zukunft zur Anmeldung {{GENDER:$1|deinen}} neuen Benutzernamen '''$1'''.",
 	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Negativliste stehst."
 }

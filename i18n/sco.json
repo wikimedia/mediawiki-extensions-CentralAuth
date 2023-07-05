@@ -398,8 +398,5 @@
 	"right-centralauth-rename": "Rename global accoonts",
 	"right-centralauth-unmerge": "Onmerge global accoont",
 	"right-globalgroupmembership": "Eedit memmership til global groops",
-	"right-globalgrouppermissions": "Manage global groops",
-	"sulrenamewarning-renamed": "{{GENDER:$2|Yer}} accoont '''$1''' haes been renamed tae '''$2''' durin autæmateec migration tae the uneefied login seestem o {{int:Centralauth-groupname}}.",
-	"sulrenamewarning-title": "{{GENDER:$1|Yer}} accoont haes been renamed",
-	"sulrenamewarning-usenew": "Please uise {{GENDER:$1|yer}} new uisername '''$1''' whan ye log-in in the futur."
+	"right-globalgrouppermissions": "Manage global groops"
 }
