@@ -687,12 +687,17 @@ $specialPageAliases['pa'] = [
 
 /** Polish (polski) */
 $specialPageAliases['pl'] = [
-	'CentralAuth' => [ 'Zarządzanie_kontem_uniwersalnym' ],
-	'MergeAccount' => [ 'Łączenie_kont', 'Konto_uniwersalne' ],
+	'CentralAuth' => [ 'Zarządzanie_kontem_uniwersalnym', 'Konto_uniwersalne' ],
+	'CreateLocalAccount' => [ 'Utwórz_konto_lokalne' ],
+	'MergeAccount' => [ 'Łączenie_kont' ],
 	'GlobalGroupMembership' => [ 'Globalne_uprawnienia' ],
 	'GlobalGroupPermissions' => [ 'Globalne_uprawnienia_grup' ],
 	'WikiSets' => [ 'Zbiory_wiki' ],
 	'GlobalUsers' => [ 'Spis_kont_uniwersalnych' ],
+	'GlobalRenameUser' => [ 'Globalna_zmiana_nazwy_konta' ],
+	'GlobalRenameProgress' => [ 'Postęp_globalnej_zmiany_nazwy_konta' ],
+	'GlobalRenameRequest' => [ 'Wniosek_o_globalną_zmianę_nazwy_konta' ],
+	'GlobalRenameQueue' => [ 'Kolejka_globalnych_zmian_nazwy_konta' ],
 ];
 
 /** Pashto (پښتو) */
