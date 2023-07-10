@@ -251,7 +251,7 @@
 	"centralauth-prefs-detail-unattached": "Ni chadarnhawyd bod y safle prosiect hwn yn aelod o'r cyfrif cydwici.",
 	"centralauth-prefs-manage": "Rheoli'ch cyfrif cydwici",
 	"centralauth-prefs-not-managed": "Ddim yn defnyddio cyfrif unedig",
-	"centralauth-prefs-status": "Cyfrif global:",
+	"centralauth-prefs-status": "Cyfrif cydwici:",
 	"centralauth-prefs-unattached": "Heb ei gadarnhau",
 	"centralauth-prefs-view": "Manylion y cyfrif cydwici",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Darllenwch fwy am '''fewngofnodi ar y cyd''']]…''",

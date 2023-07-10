@@ -23,6 +23,7 @@
 	"centralauth-attach-title": "کھاتہ دی تصدیق کرو",
 	"centralauth-contribs-link": "عالمی کھاتے",
 	"centralauth-createlocal-reason": "سبب",
+	"centralauth-createlocal-username": "عالمی کھاتہ ناں",
 	"centralauth-delete-empty-account": "خالی کھاتہ",
 	"centralauth-editgroup-name": "گروپ دا ناں:",
 	"centralauth-editgroup-noset": "(کوئی وی کائنی)",
@@ -37,6 +38,7 @@
 	"centralauth-editset-wikis": "وکیاں:",
 	"centralauth-finish-login": "لاگ ان",
 	"centralauth-finish-password": "پاس ورڈ:",
+	"centralauth-finish-send-confirmation": "ای میل پاس ورڈ",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|ترمیم|ترامیم}} تے $2",
 	"centralauth-foreign-link": "ورتݨ والا$1 $2 تے",
 	"centralauth-globalgroupperms-group": "گروپ",
@@ -62,6 +64,9 @@
 	"centralauth-rename-table-status-failed": "ناکام تھیا",
 	"centralauth-rename-table-status-inprogress": "تھیندا پئے",
 	"centralauth-rename-table-status-queued": "قطار وچ ہے",
+	"centralautologin": "مرکزی لاگ ان",
+	"centrallogin": "مرکزی ورتݨ لاگ ان",
+	"centralloginsuccesful": "لاگ ان تھی ڳیا",
 	"globalrenamequeue-action-address": "پتہ",
 	"globalrenamequeue-action-view": "ݙکھالے",
 	"globalrenamequeue-column-row-actions": "عمل",
@@ -73,5 +78,6 @@
 	"globalrenamequeue-form-username": "ورتݨ ناں:",
 	"globalrenamequeue-request-cancel-text": "منسوخ",
 	"globalrenamequeue-view-approved": "منظور تھی ڳیا",
-	"globalrenamequeue-view-rejected": "مسترد تھیا"
+	"globalrenamequeue-view-rejected": "مسترد تھیا",
+	"globalrenamerequest-email-label": "ای میل پتہ:"
 }
