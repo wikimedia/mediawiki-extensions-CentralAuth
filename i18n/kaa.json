@@ -25,6 +25,7 @@
 	"centralauth-admin-view": "Akkaunt maǵlıwmatı menen tanısıw",
 	"centralauth-centralautologin-logged-in": "Siz oraylıq sistemaǵa $1 retinde kirgensiz. Paydalanıwshı sazlamaların qollanıw ushın betti qayta júkleńiz.",
 	"centralauth-editset": "Wiki toplamları",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} burın",
 	"centralauth-merge-method-new": "jańa akkaunt",
 	"centralauth-merge-method-new-desc": "Globallıq akkaunttıń jergilikli akkaunt jartılǵan waqıtta avtomatlıq tárizde jaratılǵanlıǵın bildiredi.",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ay|ay}} burın",
