@@ -31,7 +31,7 @@
 	"action-globalgroupmembership": "לערוך חברות בקבוצות גלובליות",
 	"action-globalgrouppermissions": "לנהל קבוצות גלובליות",
 	"centralauth": "מנהל החשבונות הגלובלי",
-	"centralauth-abortlogin-renamed": "שם החשבון שלך שונה ל־\"$1\". נא להשתמש באותו השם.",
+	"centralauth-abortlogin-renamed": "שם החשבון שלך עודכן ועכשיו הוא \"$1\". נא להשתמש באותו השם.",
 	"centralauth-account-exists": "לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש של משתמש בוויקי אחר.",
 	"centralauth-account-exists-reset": "שם המשתמש $1 אינו רשום באתר הוויקי הזה, אבל באפשרותך לאפס את הסיסמה שלו ב[[Special:CentralAuth/$1|אחד מהאתרים בהם הוא רשום]].",
 	"centralauth-account-rename-exists": "לא ניתן ליצור חשבון: השם כבר בשימוש. נא לבחור שם אחר.",
