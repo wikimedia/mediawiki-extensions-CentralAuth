@@ -809,13 +809,13 @@
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthPrimaryAuthenticationProvider",
 				"sort": 10,
 				"services": [
-					"CentralAuth.CentralAuthDatabaseManager",
-					"UserNameUtils",
 					"ReadOnlyMode",
 					"UserIdentityLookup",
-					"CentralAuth.GlobalRenameRequestStore",
+					"UserNameUtils",
+					"CentralAuth.CentralAuthAntiSpoofManager",
+					"CentralAuth.CentralAuthDatabaseManager",
 					"CentralAuth.CentralAuthUtilityService",
-					"CentralAuth.CentralAuthAntiSpoofManager"
+					"CentralAuth.GlobalRenameRequestStore"
 				]
 			}
 		},

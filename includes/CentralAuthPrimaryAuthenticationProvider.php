@@ -51,22 +51,12 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var string The internal ID of this provider. */
 	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/** @var ReadOnlyMode */
-	private $readOnlyMode;
-
-	/** @var UserIdentityLookup */
-	private $userIdentityLookup;
-
-	/** @var GlobalRenameRequestStore */
-	private $globalRenameRequestStore;
-
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
+	private ReadOnlyMode $readOnlyMode;
+	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthUtilityService $utilityService;
+	private GlobalRenameRequestStore $globalRenameRequestStore;
 
 	/** @var bool Whether to auto-migrate non-merged accounts on login */
 	protected $autoMigrate = null;
@@ -78,13 +68,13 @@ class CentralAuthPrimaryAuthenticationProvider
 	protected $antiSpoofAccounts = null;
 
 	/**
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param UserNameUtils $userNameUtils
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserIdentityLookup $userIdentityLookup
-	 * @param GlobalRenameRequestStore $globalRenameRequestStore
-	 * @param CentralAuthUtilityService $utilityService
+	 * @param UserNameUtils $userNameUtils
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
+	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param CentralAuthUtilityService $utilityService
+	 * @param GlobalRenameRequestStore $globalRenameRequestStore
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - autoMigrate: If true, attempt to auto-migrate local accounts on other
@@ -95,31 +85,31 @@ class CentralAuthPrimaryAuthenticationProvider
 	 *    AntiSpoof extension isn't installed or the extension is outdated.
 	 */
 	public function __construct(
-		CentralAuthDatabaseManager $databaseManager,
-		UserNameUtils $userNameUtils,
 		ReadOnlyMode $readOnlyMode,
 		UserIdentityLookup $userIdentityLookup,
-		GlobalRenameRequestStore $globalRenameRequestStore,
-		CentralAuthUtilityService $utilityService,
+		UserNameUtils $userNameUtils,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthUtilityService $utilityService,
+		GlobalRenameRequestStore $globalRenameRequestStore,
 		$params = []
 	) {
 		global $wgCentralAuthAutoMigrate,
 			$wgCentralAuthAutoMigrateNonGlobalAccounts,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
-		$this->databaseManager = $databaseManager;
-		$this->utilityService = $utilityService;
-
+		$this->readOnlyMode = $readOnlyMode;
+		$this->userIdentityLookup = $userIdentityLookup;
 		// AbstractAuthenticationProvider::$userNameUtils is protected
 		// TODO this is probably unneeded since AbstractAuthenticationProvider::init
 		// will be called and that will set the $userNameUtils, no need to even inject
 		// into this class
 		$this->userNameUtils = $userNameUtils;
-		$this->readOnlyMode = $readOnlyMode;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
+		$this->databaseManager = $databaseManager;
+		$this->utilityService = $utilityService;
+		$this->globalRenameRequestStore = $globalRenameRequestStore;
+
 		$params += [
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
 			'autoMigrateNonGlobalAccounts' => $wgCentralAuthAutoMigrateNonGlobalAccounts,
