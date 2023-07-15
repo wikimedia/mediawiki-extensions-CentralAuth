@@ -879,12 +879,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @return array[]
 	 */
 	private function changeableGroups() {
-		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
-		if (
-			$globalUser->exists() &&
-			$globalUser->isAttached() &&
-			$this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' )
-		) {
+		if ( $this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' ) ) {
 			$allGroups = $this->globalGroupLookup->getDefinedGroups();
 
 			# specify addself and removeself as empty arrays - T18098
