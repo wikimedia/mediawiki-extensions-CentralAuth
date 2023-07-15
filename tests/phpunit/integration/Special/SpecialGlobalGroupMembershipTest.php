@@ -65,6 +65,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	protected function newSpecialPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
+			$this->getServiceContainer()->getTitleFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),
 			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
@@ -304,14 +305,14 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$this->assertEquals(
 			[
 				'oldGroups' => [ 'group-three', 'group-two' ],
-				'newGroups' => [ 'group-three', 'group-one' ],
+				'newGroups' => [ 'group-one', 'group-three' ],
 				'oldMetadata' => [
 					[ 'expiry' => $originalExpiry ],
 					[ 'expiry' => null ],
 				],
 				'newMetadata' => [
-					[ 'expiry' => $user->getGlobalGroupsWithExpiration()['group-three'] ],
 					[ 'expiry' => null ],
+					[ 'expiry' => $user->getGlobalGroupsWithExpiration()['group-three'] ],
 				],
 			],
 			$logData

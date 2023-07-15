@@ -28,9 +28,9 @@ use LogEventsList;
 use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
-use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use OutputPage;
@@ -58,12 +58,14 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	protected $mTarget;
 
 	/**
-	 * @var null|CentralAuthGroupMembershipProxy The user object of the target username or null.
+	 * @var null|CentralAuthUser The user object of the target username or null.
 	 */
 	protected $mFetchedUser = null;
 
 	/** @var bool */
 	protected $isself = false;
+
+	private TitleFactory $titleFactory;
 
 	/** @var UserNamePrefixSearch */
 	private $userNamePrefixSearch;
@@ -75,16 +77,19 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	private $globalGroupLookup;
 
 	/**
+	 * @param TitleFactory $titleFactory
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
 	 * @param UserNameUtils $userNameUtils
 	 * @param GlobalGroupLookup $globalGroupLookup
 	 */
 	public function __construct(
+		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
+		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
 		$this->globalGroupLookup = $globalGroupLookup;
@@ -195,7 +200,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 			$conflictCheck = $request->getVal( 'conflictcheck-originalgroups' );
 			$conflictCheck = ( $conflictCheck === '' ) ? [] : explode( ',', $conflictCheck );
-			$userGroups = $targetUser->getGroups();
+			$userGroups = $targetUser->getGlobalGroups();
 
 			if ( $userGroups !== $conflictCheck ) {
 				$out->addHTML( Html::errorBox(
@@ -203,9 +208,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				) );
 			} else {
 				$status = $this->saveUserGroups(
-					$this->mTarget,
-					$request->getVal( 'user-reason' ),
-					$targetUser
+					$targetUser,
+					$request->getVal( 'user-reason' )
 				);
 
 				if ( $status->isOK() ) {
@@ -237,17 +241,16 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * Save user groups changes in the database.
 	 * Data comes from the editUserGroupsForm() form function
 	 *
-	 * @param string $username Username to apply changes to.
+	 * @param CentralAuthUser $user Target user object.
 	 * @param string $reason Reason for group change
-	 * @param CentralAuthGroupMembershipProxy $user Target user object.
 	 * @return Status
 	 */
-	private function saveUserGroups( $username, $reason, $user ) {
+	private function saveUserGroups( CentralAuthUser $user, string $reason ): Status {
 		$allgroups = $this->globalGroupLookup->getDefinedGroups();
 		$addgroup = [];
 		$groupExpiries = []; // associative array of (group name => expiry)
 		$removegroup = [];
-		$existingUGMs = $user->getGroupMemberships();
+		$existingGroups = $user->getGlobalGroupsWithExpiration();
 
 		// This could possibly create a highly unlikely race condition if permissions are changed between
 		//  when the form is loaded and when the form is saved. Ignoring it for the moment.
@@ -284,8 +287,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				// if the user can only add this group (not remove it), the expiry time
 				// cannot be brought forward (T156784)
 				if ( !$this->canRemove( $group ) &&
-					isset( $existingUGMs[$group] ) &&
-					( $existingUGMs[$group]->getExpiry() ?: 'infinity' ) >
+					isset( $existingGroups[$group] ) &&
+					( $existingGroups[$group] ?: 'infinity' ) >
 						( $groupExpiries[$group] ?: 'infinity' )
 				) {
 					return Status::newFatal( 'userrights-cannot-shorten-expiry', $group );
@@ -304,7 +307,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * Save user groups changes in the database. This function does not throw errors;
 	 * instead, it ignores groups that the performer does not have permission to set.
 	 *
-	 * @param CentralAuthGroupMembershipProxy $user
+	 * @param CentralAuthUser $user
 	 * @param array $add Array of groups to add
 	 * @param array $remove Array of groups to remove
 	 * @param string $reason Reason for group change
@@ -313,29 +316,33 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 *   containing only those groups that are to have new expiry values set
 	 * @return array Tuple of added, then removed groups
 	 */
-	public function doSaveUserGroups( $user, array $add, array $remove, $reason = '',
-		array $tags = [], array $groupExpiries = []
+	public function doSaveUserGroups(
+		CentralAuthUser $user,
+		array $add,
+		array $remove,
+		string $reason = '',
+		array $tags = [],
+		array $groupExpiries = []
 	) {
 		// Validate input set...
 		$isself = $user->getName() == $this->getUser()->getName();
-		$groups = $user->getGroups();
-		$ugms = $user->getGroupMemberships();
+		$groups = $user->getGlobalGroupsWithExpiration();
 		$changeable = $this->changeableGroups();
 		$addable = array_merge( $changeable['add'], $isself ? $changeable['add-self'] : [] );
 		$removable = array_merge( $changeable['remove'], $isself ? $changeable['remove-self'] : [] );
 
-		$remove = array_unique( array_intersect( $remove, $removable, $groups ) );
+		$remove = array_unique( array_intersect( $remove, $removable, array_keys( $groups ) ) );
 		$add = array_intersect( $add, $addable );
 
 		// add only groups that are not already present or that need their expiry updated,
 		// UNLESS the user can only add this group (not remove it) and the expiry time
 		// is being brought forward (T156784)
 		$add = array_filter( $add,
-			static function ( $group ) use ( $groups, $groupExpiries, $removable, $ugms ) {
+			static function ( $group ) use ( $groups, $groupExpiries, $removable ) {
 				if ( isset( $groupExpiries[$group] ) &&
+					isset( $groups[$group] ) &&
 					!in_array( $group, $removable ) &&
-					isset( $ugms[$group] ) &&
-					( $ugms[$group]->getExpiry() ?: 'infinity' ) >
+					( $groups[$group] ?: 'infinity' ) >
 						( $groupExpiries[$group] ?: 'infinity' )
 				) {
 					return false;
@@ -343,96 +350,76 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				return !in_array( $group, $groups ) || array_key_exists( $group, $groupExpiries );
 			} );
 
-		$oldGroups = $groups;
-		$oldUGMs = $user->getGroupMemberships();
-		$newGroups = $oldGroups;
-
 		// Remove groups, then add new ones/update expiries of existing ones
 		if ( $remove ) {
-			foreach ( $remove as $index => $group ) {
-				if ( !$user->removeGroup( $group ) ) {
-					unset( $remove[$index] );
-				}
+			foreach ( $remove as $group ) {
+				$user->removeFromGlobalGroups( $group );
 			}
-			$newGroups = array_diff( $newGroups, $remove );
 		}
 		if ( $add ) {
-			foreach ( $add as $index => $group ) {
+			foreach ( $add as $group ) {
 				$expiry = $groupExpiries[$group] ?? null;
-				if ( !$user->addGroup( $group, $expiry ) ) {
-					unset( $add[$index] );
-				}
+				$user->addToGlobalGroup( $group, $expiry );
 			}
-			$newGroups = array_merge( $newGroups, $add );
 		}
-		$newGroups = array_unique( $newGroups );
-		$newUGMs = $user->getGroupMemberships();
+
+		$newGroups = $user->getGlobalGroupsWithExpiration();
 
 		// Ensure that caches are cleared
 		$user->invalidateCache();
 
-		wfDebug( 'oldGroups: ' . print_r( $oldGroups, true ) );
-		wfDebug( 'newGroups: ' . print_r( $newGroups, true ) );
-		wfDebug( 'oldUGMs: ' . print_r( $oldUGMs, true ) );
-		wfDebug( 'newUGMs: ' . print_r( $newUGMs, true ) );
-
 		// Only add a log entry if something actually changed
-		if ( $newGroups != $oldGroups || $newUGMs != $oldUGMs ) {
-			$this->addLogEntry( $user, $oldGroups, $newGroups, $reason, $tags, $oldUGMs, $newUGMs );
+		if ( $groups !== $newGroups ) {
+			$this->addLogEntry(
+				$user,
+				$groups,
+				$newGroups,
+				$reason,
+				$tags
+			);
 		}
 
 		return [ $add, $remove ];
 	}
 
 	/**
-	 * Serialise a UserGroupMembership object for storage in the log_params section
-	 * of the logging table. Only keeps essential data, removing redundant fields.
-	 *
-	 * @param UserGroupMembership|null $ugm May be null if things get borked
-	 * @return array|null
-	 */
-	private static function serialiseUgmForLog( $ugm ) {
-		if ( !$ugm instanceof UserGroupMembership ) {
-			return null;
-		}
-		return [ 'expiry' => $ugm->getExpiry() ];
-	}
-
-	/**
-	 * @param CentralAuthGroupMembershipProxy $user
+	 * @param CentralAuthUser $user
 	 * @param array $oldGroups
 	 * @param array $newGroups
 	 * @param string $reason
 	 * @param array $tags Not currently used
-	 * @param array $oldUGMs Not currently used
-	 * @param array $newUGMs Not currently used
 	 */
-	private function addLogEntry( $user, array $oldGroups, array $newGroups, $reason,
-		array $tags, array $oldUGMs, array $newUGMs
+	private function addLogEntry(
+		CentralAuthUser $user,
+		array $oldGroups,
+		array $newGroups,
+		string $reason,
+		array $tags
 	) {
-		// make sure $oldUGMs and $newUGMs are in the same order, and serialise
-		// each UGM object to a simplified array
-		$oldUGMs = array_map( function ( $group ) use ( $oldUGMs ) {
-			return isset( $oldUGMs[$group] )
-				? self::serialiseUgmForLog( $oldUGMs[$group] )
-				: null;
-		}, $oldGroups );
+		$oldGroupNames = [];
+		$newGroupNames = [];
+		$oldGroupMetadata = [];
+		$newGroupMetadata = [];
 
-		$newUGMs = array_map( function ( $group ) use ( $newUGMs ) {
-		return isset( $newUGMs[$group] )
-				? self::serialiseUgmForLog( $newUGMs[$group] )
-				: null;
-		}, $newGroups );
+		foreach ( $oldGroups as $key => &$value ) {
+			$oldGroupNames[] = $key;
+			$oldGroupMetadata[] = [ 'expiry' => $value ];
+		}
+
+		foreach ( $newGroups as $key => &$value ) {
+			$newGroupNames[] = $key;
+			$newGroupMetadata[] = [ 'expiry' => $value ];
+		}
 
 		$entry = new ManualLogEntry( 'gblrights', 'usergroups' );
-		$entry->setTarget( $user->getUserPage() );
+		$entry->setTarget( $this->titleFactory->makeTitle( NS_USER, $user->getName() ) );
 		$entry->setPerformer( $this->getUser() );
 		$entry->setComment( $reason );
 		$entry->setParameters( [
-			'oldGroups' => $oldGroups,
-			'newGroups' => $newGroups,
-			'oldMetadata' => $oldUGMs,
-			'newMetadata' => $newUGMs,
+			'oldGroups' => $oldGroupNames,
+			'newGroups' => $newGroupNames,
+			'oldMetadata' => $oldGroupMetadata,
+			'newMetadata' => $newGroupMetadata,
 		] );
 		$logid = $entry->insert();
 		$entry->publish( $logid );
@@ -452,13 +439,11 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			return;
 		}
 
-		/** @var CentralAuthGroupMembershipProxy $user */
+		/** @var CentralAuthUser $user */
 		$user = $status->value;
-		'@phan-var CentralAuthGroupMembershipProxy $user';
+		'@phan-var CentralAuthUser $user';
 
-		$groups = $user->getGroups();
-		$groupMemberships = $user->getGroupMemberships();
-		$this->showEditUserGroupsForm( $user, $groups, $groupMemberships );
+		$this->showEditUserGroupsForm( $user );
 
 		// This isn't really ideal logging behavior, but let's not hide the
 		// interwiki logs if we're using them as is.
@@ -476,30 +461,34 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 		if ( $username[0] == '#' ) {
 			$id = intval( substr( $username, 1 ) );
-			$user = CentralAuthGroupMembershipProxy::newFromId( $id );
 			$globalUser = CentralAuthUser::newPrimaryInstanceFromId( $id );
-
 			// If the user exists, but is hidden from the viewer, pretend that it does
 			// not exist. - T285190/T260863
-			if ( !$user || ( ( $globalUser->isSuppressed() || $globalUser->isHidden() ) &&
-				!$this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' ) )
+			if (
+				!$globalUser
+				|| (
+					( $globalUser->isSuppressed() || $globalUser->isHidden() )
+					&& !$this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' )
+				)
 			) {
 				return Status::newFatal( 'noname', $id );
 			}
 		} else {
-			$user = CentralAuthGroupMembershipProxy::newFromName( $username );
-
 			// If the user exists, but is hidden from the viewer, pretend that it does
 			// not exist. - T285190
 			$globalUser = CentralAuthUser::getPrimaryInstanceByName( $username );
-			if ( !$user || ( ( $globalUser->isSuppressed() || $globalUser->isHidden() ) &&
-				!$this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' ) )
+			if (
+				!$globalUser->exists()
+				|| (
+					( $globalUser->isSuppressed() || $globalUser->isHidden() )
+					&& !$this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' )
+				)
 			) {
 				return Status::newFatal( 'nosuchusershort', $username );
 			}
 		}
 
-		return Status::newGood( $user );
+		return Status::newGood( $globalUser );
 	}
 
 	/**
@@ -535,16 +524,12 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 	/**
 	 * Show the form to edit group memberships.
-	 *
-	 * @param CentralAuthGroupMembershipProxy $user CentralAuthGroupMembershipProxy you're editing
-	 * @param string[] $groups Array of groups the user is in. Not used by this implementation
-	 *   anymore, but kept for backward compatibility with subclasses
-	 * @param UserGroupMembership[] $groupMemberships Associative array of (group name => UserGroupMembership
-	 *   object) containing the groups the user is in
+	 * @param CentralAuthUser $user user you're editing
 	 */
-	private function showEditUserGroupsForm( $user, $groups, $groupMemberships ) {
+	private function showEditUserGroupsForm( CentralAuthUser $user ) {
 		$list = $membersList = $tempList = $tempMembersList = [];
-		foreach ( $groupMemberships as $ugm ) {
+		foreach ( $user->getGlobalGroupsWithExpiration() as $group => $expiration ) {
+			$ugm = new UserGroupMembership( $user->getId(), $group, $expiration );
 			$linkG = UserGroupMembership::getLinkHTML( $ugm, $this->getContext() );
 			$linkM = UserGroupMembership::getLinkHTML( $ugm, $this->getContext(), $user->getName() );
 			if ( $ugm->getExpiry() ) {
@@ -553,7 +538,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			} else {
 				$list[] = $linkG;
 				$membersList[] = $linkM;
-
 			}
 		}
 
@@ -581,8 +565,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			Linker::TOOL_LINKS_EMAIL
 		);
 
-		list( $groupCheckboxes, $canChangeAny ) =
-			$this->groupCheckboxes( $groupMemberships, $user );
+		[ $groupCheckboxes, $canChangeAny ] = $this->groupCheckboxes( $user );
 		$this->getOutput()->addHTML(
 			Xml::openElement(
 				'form',
@@ -597,7 +580,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken( $this->mTarget ) ) .
 			Html::hidden(
 				'conflictcheck-originalgroups',
-				implode( ',', $user->getGroups() )
+				implode( ',', $user->getGlobalGroups() )
 			) . // Conflict detection
 			Xml::openElement( 'fieldset' ) .
 			Xml::element(
@@ -656,14 +639,13 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	/**
 	 * Adds a table with checkboxes where you can select what groups to add/remove
 	 *
-	 * @param UserGroupMembership[] $usergroups Associative array of (group name as string =>
-	 *   UserGroupMembership object) for groups the user belongs to
-	 * @param CentralAuthGroupMembershipProxy $user
+	 * @param CentralAuthUser $user
 	 * @return array Array with 2 elements: the XHTML table element with checkxboes, and
 	 * whether any groups are changeable
 	 */
-	private function groupCheckboxes( $usergroups, $user ) {
+	private function groupCheckboxes( CentralAuthUser $user ) {
 		$allgroups = $this->globalGroupLookup->getDefinedGroups();
+		$currentGroups = $user->getGlobalGroupsWithExpiration();
 		$ret = '';
 
 		// Get the list of preset expiry times from the system message
@@ -677,12 +659,12 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$columns = [ 'unchangeable' => [], 'changeable' => [] ];
 
 		foreach ( $allgroups as $group ) {
-			$set = isset( $usergroups[$group] );
+			$set = array_key_exists( $group, $currentGroups );
 			// Users who can add the group, but not remove it, can only lengthen
 			// expiries, not shorten them. So they should only see the expiry
 			// dropdown if the group currently has a finite expiry
 			$canOnlyLengthenExpiry = ( $set && $this->canAdd( $group ) &&
-				!$this->canRemove( $group ) && $usergroups[$group]->getExpiry() );
+				!$this->canRemove( $group ) && $currentGroups[$group] );
 			// Should the checkbox be disabled?
 			$disabledCheckbox = !(
 				( $set && $this->canRemove( $group ) ) ||
@@ -749,9 +731,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 				$uiUser = $this->getUser();
 
-				$currentExpiry = isset( $usergroups[$group] ) ?
-					$usergroups[$group]->getExpiry() :
-					null;
+				$currentExpiry = $currentGroups[$group] ?? null;
 
 				// If the user can't modify the expiry, print the current expiry below
 				// it in plain text. Otherwise provide UI to set/change the expiry
@@ -900,13 +880,17 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * @param CentralAuthGroupMembershipProxy $user
+	 * @param CentralAuthUser $user
 	 * @param OutputPage $output
 	 */
 	private function showLogFragment( $user, $output ) {
 		$logPage = new LogPage( 'gblrights' );
 		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
-		LogEventsList::showLogExtract( $output, 'gblrights', $user->getUserPage() );
+		LogEventsList::showLogExtract(
+			$output,
+			'gblrights',
+			$this->titleFactory->makeTitle( NS_USER, $user->getName() )
+		);
 	}
 
 	/**
