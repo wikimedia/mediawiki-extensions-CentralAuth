@@ -387,6 +387,7 @@
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthUsingDatabaseTestCase": "tests/phpunit/CentralAuthUsingDatabaseTestCase.php",
+		"MediaWiki\\Extension\\CentralAuth\\Tests\\Phpunit\\Integration\\CentralAuthUsingDatabaseTrait": "tests/phpunit/integration/CentralAuthUsingDatabaseTrait.php",
 		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php",
 		"CentralAuthTokenSessionProviderTest": "tests/phpunit/CentralAuthTokenSessionProviderTest.php"
 	},

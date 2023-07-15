@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extension\CentralAuth\Hooks\Handlers\UnitTestsHookHandler;
+use MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\CentralAuthUsingDatabaseTrait;
 
 /**
  * Setup database tests for centralauth.
@@ -8,11 +8,10 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\UnitTestsHookHandler;
  * @group Database
  */
 abstract class CentralAuthUsingDatabaseTestCase extends MediaWikiIntegrationTestCase {
+	use CentralAuthUsingDatabaseTrait;
+
 	public function __construct( $name = null, array $data = [], $dataName = '' ) {
-		$this->tablesUsed = array_merge(
-			$this->tablesUsed,
-			UnitTestsHookHandler::CENTRALAUTH_TABLES
-		);
+		$this->setupCentralAuthTables();
 		parent::__construct( $name, $data, $dataName );
 	}
 }
