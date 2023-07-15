@@ -73,9 +73,9 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$services = $this->getServiceContainer();
 
 		$provider = new CentralAuthApiSessionProvider(
+			$services->getUserIdentityLookup(),
 			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
-			$services->get( 'CentralAuth.CentralAuthUtilityService' ),
-			$services->getUserIdentityLookup()
+			$services->get( 'CentralAuth.CentralAuthUtilityService' )
 		);
 
 		$this->initProvider(

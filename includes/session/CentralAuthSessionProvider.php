@@ -27,15 +27,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	/** @var array */
 	protected $centralCookieOptions = [];
 
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
-
-	/** @var UserIdentityLookup */
-	private $userIdentityLookup;
+	private UserIdentityLookup $userIdentityLookup;
+	private CentralAuthSessionManager $sessionManager;
 
 	/**
-	 * @param CentralAuthSessionManager $sessionManager
 	 * @param UserIdentityLookup $userIdentityLookup
+	 * @param CentralAuthSessionManager $sessionManager
 	 * @param array $params In addition to the parameters for
 	 * CookieSessionProvider, the following are
 	 * recognized:
@@ -53,12 +50,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 *     - sameSite: Cookie SameSite attribute, defaults to $wgCookieSameSite
 	 */
 	public function __construct(
-		CentralAuthSessionManager $sessionManager,
 		UserIdentityLookup $userIdentityLookup,
+		CentralAuthSessionManager $sessionManager,
 		$params = []
 	) {
-		$this->sessionManager = $sessionManager;
 		$this->userIdentityLookup = $userIdentityLookup;
+		$this->sessionManager = $sessionManager;
 
 		$params += [
 			'centralCookieOptions' => [],

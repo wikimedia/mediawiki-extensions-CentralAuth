@@ -34,8 +34,8 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 	public function testSuggestLoginUsername( $cookies, $expectedUsername ) {
 		$services = $this->getServiceContainer();
 		$provider = new CentralAuthSessionProvider(
-			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
 			$services->getUserIdentityLookup(),
+			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
 			[
 				'priority' => 42,
 				'cookieOptions' => [ 'prefix' => '' ],
@@ -68,8 +68,8 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 	public function testGetRememberUserDuration() {
 		$services = $this->getServiceContainer();
 		$provider = new CentralAuthSessionProvider(
-			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
 			$services->getUserIdentityLookup(),
+			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
 			[ 'priority' => 42 ]
 		);
 		$this->initProvider( $provider, null, $this->getConfig() );

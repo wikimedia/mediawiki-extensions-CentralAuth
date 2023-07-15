@@ -77,26 +77,26 @@
 				}
 			],
 			"services": [
-				"CentralAuth.CentralAuthSessionManager",
-				"UserIdentityLookup"
+				"UserIdentityLookup",
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
 		"CentralAuthApiSessionProvider": {
 			"class": "CentralAuthApiSessionProvider",
 			"args": [],
 			"services": [
+				"UserIdentityLookup",
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService",
-				"UserIdentityLookup"
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
 		"CentralAuthHeaderSessionProvider": {
 			"class": "CentralAuthHeaderSessionProvider",
 			"args": [],
 			"services": [
+				"UserIdentityLookup",
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService",
-				"UserIdentityLookup"
+				"CentralAuth.CentralAuthUtilityService"
 			]
 		}
 	},

@@ -19,29 +19,24 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  * bogus SessionInfo to prevent other SessionProviders from establishing a session.
  */
 abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider {
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
-
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
-	/** @var UserIdentityLookup */
-	private $userIdentityLookup;
+	private UserIdentityLookup $userIdentityLookup;
+	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthUtilityService $utilityService;
 
 	/**
+	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $utilityService
-	 * @param UserIdentityLookup $userIdentityLookup
 	 */
 	public function __construct(
+		UserIdentityLookup $userIdentityLookup,
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $utilityService,
-		UserIdentityLookup $userIdentityLookup
+		CentralAuthUtilityService $utilityService
 	) {
 		parent::__construct();
+		$this->userIdentityLookup = $userIdentityLookup;
 		$this->sessionManager = $sessionManager;
 		$this->utilityService = $utilityService;
-		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	/**
