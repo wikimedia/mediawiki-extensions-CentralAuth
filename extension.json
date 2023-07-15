@@ -78,7 +78,6 @@
 			],
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService",
 				"UserIdentityLookup"
 			]
 		},

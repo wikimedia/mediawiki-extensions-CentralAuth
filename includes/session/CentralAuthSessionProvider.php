@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionBackend;
@@ -31,15 +30,11 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
 
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
 	/** @var UserIdentityLookup */
 	private $userIdentityLookup;
 
 	/**
 	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthUtilityService $utilityService
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param array $params In addition to the parameters for
 	 * CookieSessionProvider, the following are
@@ -59,12 +54,10 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 */
 	public function __construct(
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $utilityService,
 		UserIdentityLookup $userIdentityLookup,
 		$params = []
 	) {
 		$this->sessionManager = $sessionManager;
-		$this->utilityService = $utilityService;
 		$this->userIdentityLookup = $userIdentityLookup;
 
 		$params += [
