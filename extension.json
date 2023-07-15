@@ -811,7 +811,6 @@
 				"services": [
 					"CentralAuth.CentralAuthDatabaseManager",
 					"UserNameUtils",
-					"StatsdDataFactory",
 					"ReadOnlyMode",
 					"UserIdentityLookup",
 					"CentralAuth.GlobalRenameRequestStore",

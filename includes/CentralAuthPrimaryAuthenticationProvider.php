@@ -22,7 +22,6 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use DeferredUpdates;
-use IBufferingStatsdDataFactory;
 use IDBAccessObject;
 use InvalidPassword;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
@@ -55,9 +54,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 
-	/** @var IBufferingStatsdDataFactory */
-	private $statsdDataFactory;
-
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
@@ -84,7 +80,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	/**
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param UserNameUtils $userNameUtils
-	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param GlobalRenameRequestStore $globalRenameRequestStore
@@ -102,7 +97,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	public function __construct(
 		CentralAuthDatabaseManager $databaseManager,
 		UserNameUtils $userNameUtils,
-		IBufferingStatsdDataFactory $statsdDataFactory,
 		ReadOnlyMode $readOnlyMode,
 		UserIdentityLookup $userIdentityLookup,
 		GlobalRenameRequestStore $globalRenameRequestStore,
@@ -122,7 +116,6 @@ class CentralAuthPrimaryAuthenticationProvider
 		// will be called and that will set the $userNameUtils, no need to even inject
 		// into this class
 		$this->userNameUtils = $userNameUtils;
-		$this->statsdDataFactory = $statsdDataFactory;
 		$this->readOnlyMode = $readOnlyMode;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
