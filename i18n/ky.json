@@ -44,7 +44,7 @@
 	"centralauth-merge-denied": "Кечиресиз, бул баракка киргенге сиздин укугуңуз жетишсиз.",
 	"centralauth-merge-dryrun-complete": "Бардык эсептериңизди автоматтык түрдө бириктирсе болот!\nАзырынча эсептериңиз өзгөртүлө элек.",
 	"centralauth-merge-dryrun-or": "'''же'''",
-	"centralauth-merge-method-login": "Системге кирүүдө түзүлгөн",
+	"centralauth-merge-method-login": "кирүү учурунда түзүлгөн",
 	"centralauth-merge-method-new": "жаңы эсеп жазуусу",
 	"centralauth-merge-step1-submit": "Эсептин маалыматын аныкта",
 	"centralauth-merge-step1-title": "Эсеп жазууларды бириктирүүнү баштоо",
@@ -56,6 +56,7 @@
 	"centralauth-prefs-manage": "Глобалдык аккаунтуңузду башкаруу",
 	"centralauth-prefs-status": "Аккаунтун глобалдык статусу:",
 	"centralauth-prefs-view": "Аккаунттун глобалдык маалыматын көрүү",
+	"centralloginsuccesful": "Кирдиңиз",
 	"globalrenamequeue-request-cancel-text": "Жокко чыгаруу",
 	"mergeaccount": "Эсеп жазууларды бириктирүү абалы"
 }

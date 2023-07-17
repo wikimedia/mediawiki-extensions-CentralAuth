@@ -24,8 +24,9 @@
 	"centralauth-admin-manage": "Akkaunt kodın basqarıw",
 	"centralauth-admin-username": "Paydalanıwshı atı:",
 	"centralauth-admin-view": "Akkaunt maǵlıwmatı menen tanısıw",
-	"centralauth-centralautologin-logged-in": "Siz oraylıq sistemaǵa $1 retinde kirgensiz. Paydalanıwshı sazlamaların qollanıw ushın betti qayta júkleńiz.",
+	"centralauth-centralautologin-logged-in": "Siz oraylıq sistemaǵa $1 sıpatında kirgensiz. Ózińizdiń paydalanıwshı sazlawlarıńızdı qollanıw ushın betti qayta júkleńiz.",
 	"centralauth-editset": "Wiki toplamları",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} burın",
 	"centralauth-merge-method-new": "jańa akkaunt",
 	"centralauth-merge-method-new-desc": "Globallıq akkaunttıń jergilikli akkaunt jartılǵan waqıtta avtomatlıq tárizde jaratılǵanlıǵın bildiredi.",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ay|ay}} burın",
@@ -39,5 +40,6 @@
 	"globalrenameprogress": "Globallıq at ózgertiw náwbetiniń jaǵdayı",
 	"globalrenamerequest": "Globallıq paydalanıwshı akkauntınıń atın ózgertiw sorawı",
 	"globalusers": "Globallıq esap betleri dizimi",
-	"mergeaccount": "Esap betleriniń birigiw jaǵdayı"
+	"mergeaccount": "Esap betleriniń birigiw jaǵdayı",
+	"right-centralauth-merge": "Esap betlerin biriktiriw"
 }

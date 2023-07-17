@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piano1forte2"
+		]
+	},
+	"apihelp-globaluserrights-example-1": "Add user FooBot to global group 'bot', and remove from global groups 'sysop' and 'bureaucrat'",
+	"apihelp-globaluserrights-example-2": "Add the global user with ID 123 to global group 'bot', and remove from global groups 'sysop' and 'bureaucrat'",
+	"apihelp-query+globalallusers-example-2": "Show some information for global users starting from 'ABC'",
+	"apihelp-setglobalaccountstatus-example-1": "Lock the global account for [[User:Example]] with reason 'Spam'",
+	"apihelp-setglobalaccountstatus-example-2": "Unlock and suppress the global account for [[User:Example]] with reason 'I can'"
+}

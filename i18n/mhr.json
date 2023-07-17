@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Сай"
+			"Сай",
+			"Lifeway"
 		]
 	},
 	"centralauth-admin-reason": "Амал:",
 	"centralauth-admin-username": "Пайдаланышын лӱмжӧ:",
 	"centralauth-editset-reason": "Амал:",
-	"centralauth-finish-password": "Шолыпмут:"
+	"centralauth-finish-password": "Шолыпмут:",
+	"globalrenamerequest-save-error": "Йодмашым арален кертме огыл. Порылий, уэш тӧчен ончо."
 }
