@@ -10,6 +10,7 @@
 	},
 	"centralauth-admin-action-lock-lock": "Тандалган эсеп жазууларды бөгөттөө",
 	"centralauth-admin-action-lock-unlock": "Тандалган эсеп жазууларды бошотуу",
+	"centralauth-admin-blocked-reason": "Себеп: $1",
 	"centralauth-admin-blocklog": "бөгөттөөлөр журналы",
 	"centralauth-admin-delete-button": "Бул эсеп жазууну өчүрүү",
 	"centralauth-admin-delete-title": "Эсеп жазууну өчүрүү",
