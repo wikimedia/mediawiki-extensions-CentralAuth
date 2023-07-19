@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use Job;
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\User\UserIdentity;
@@ -61,10 +61,12 @@ class GlobalRenameUser {
 	 */
 	private $logger;
 
+	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+
 	/**
 	 * @var array|null
 	 */
-	private $session;
+	private ?array $session = null;
 
 	/**
 	 * @param UserIdentity $performingUser
@@ -76,7 +78,7 @@ class GlobalRenameUser {
 	 * @param JobQueueGroupFactory $jobQueueGroupFactory
 	 * @param GlobalRenameUserDatabaseUpdates $databaseUpdates
 	 * @param GlobalRenameUserLogger $logger
-	 * @param array|null $session output of RequestContext::exportSession()
+	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 */
 	public function __construct(
 		UserIdentity $performingUser,
@@ -88,7 +90,7 @@ class GlobalRenameUser {
 		JobQueueGroupFactory $jobQueueGroupFactory,
 		GlobalRenameUserDatabaseUpdates $databaseUpdates,
 		GlobalRenameUserLogger $logger,
-		?array $session
+		CentralAuthAntiSpoofManager $caAntiSpoofManager
 	) {
 		$this->performingUser = $performingUser;
 		$this->oldUser = $oldUser;
@@ -99,7 +101,18 @@ class GlobalRenameUser {
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->databaseUpdates = $databaseUpdates;
 		$this->logger = $logger;
+		$this->caAntiSpoofManager = $caAntiSpoofManager;
+	}
+
+	/**
+	 * Set session data to use with this rename.
+	 *
+	 * @param array $session
+	 * @return GlobalRenameUser
+	 */
+	public function withSession( array $session ): GlobalRenameUser {
 		$this->session = $session;
+		return $this;
 	}
 
 	/**
@@ -137,9 +150,9 @@ class GlobalRenameUser {
 		);
 
 		// Update CA's AntiSpoof
-		// TODO: inject services
-		$spoof = CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $this->newUser->getName() );
-		$spoof->update( $this->oldUser->getName() );
+		$this->caAntiSpoofManager
+			->getSpoofUser( $this->newUser->getName() )
+			->update( $this->oldUser->getName() );
 
 		// From this point on all code using CentralAuthUser
 		// needs to use the new username, except for

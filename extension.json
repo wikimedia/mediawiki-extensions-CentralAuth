@@ -194,11 +194,10 @@
 		"GlobalRenameUser": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 			"services": [
-				"JobQueueGroupFactory",
 				"CentralAuth.CentralAuthAntiSpoofManager",
-				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",
+				"CentralAuth.GlobalRenameFactory",
 				"CentralAuth.GlobalRenameUserValidator"
 			]
 		},
