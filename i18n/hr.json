@@ -16,7 +16,8 @@
 			"SpeedyGonsales"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine kojima suradnik pripada:",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globalni broj suradnikovih uređivanja",
+	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine kojima suradnik pripada",
 	"action-centralauth-lock": "zaključavanje ili otključavanje globalnih računa",
 	"action-centralauth-merge": "spajanje svoga računa",
 	"action-centralauth-rename": "preimenovanje globalnih računa",
