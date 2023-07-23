@@ -767,10 +767,6 @@
 			"description": "Like $wgReadOnly, used to set extension to database read only mode",
 			"value": false
 		},
-		"CentralAuthUseEventLogging": {
-			"description": "Use the EventLogging extension to measure various activities",
-			"value": false
-		},
 		"CentralAuthEnableGlobalRenameRequest": {
 			"description": "Feature flag for Special:GlobalRenameRequest",
 			"value": false

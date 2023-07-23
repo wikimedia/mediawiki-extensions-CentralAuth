@@ -45,6 +45,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var Session|null */
 	protected $session = null;
 
+	private ExtensionRegistry $extensionRegistry;
+
 	/** @var LanguageFactory */
 	private $languageFactory;
 
@@ -84,6 +86,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
+		$this->extensionRegistry = ExtensionRegistry::getInstance();
 		$this->languageFactory = $languageFactory;
 		$this->readOnlyMode = $readOnlyMode;
 		$this->userIdentityLookup = $userIdentityLookup;
@@ -675,7 +678,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Otherwise, we need to rewrite p-personal and maybe notify the user too
-			if ( $this->getConfig()->get( 'CentralAuthUseEventLogging' ) ) {
+			if ( $this->extensionRegistry->isLoaded( 'EventLogging' ) ) {
 				EventLogging::logEvent( 'CentralAuth', 5690875,
 					[ 'version' => 1,
 						'userId' => $centralUser->getId(),
@@ -728,7 +731,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private function do302Redirect( $target, $state, $params ) {
 		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
 		if ( WikiMap::getCurrentWikiId() == $this->loginWiki
-			&& ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' )
+			&& $this->extensionRegistry->isLoaded( 'MobileFrontend' )
 			&& isset( $params['mobile'] )
 			&& $params['mobile']
 		) {
