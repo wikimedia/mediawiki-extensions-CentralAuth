@@ -245,7 +245,6 @@
 	"centralauth-merge-method-new": "керла аккаунт",
 	"centralauth-merge-method-password": "пароло бакъдина",
 	"centralauth-merge-method-primary": "«ЦӀера» вики-проект",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "Йукъара аккаунтийн таблицехь хьан аккаунтца догӀуш долу дӀайаздар цакарий!\nХаамийн база йоьхна йу.",
 	"centralauth-merge-notlogged": "Дехар до, <span class=\"plainlinks\">[$1 системин чугӀо]</span>, хьай декъашхочун дӀайаздарш массо вовшахтоьхна дуй хьажа.",
 	"centralauth-merge-step1-detail": "Дехар до, хьай аккаунтан пароль йазйе.\nХьа пароль а, электоронан адрес а кхечу вики-проекташкара аккаунтца цхьана догӀуш дуй хьожур ду.\nАхьа уьш нийса хилар бакъдича бен хийцамаш бира бац.",

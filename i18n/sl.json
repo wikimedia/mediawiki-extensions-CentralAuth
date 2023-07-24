@@ -289,7 +289,6 @@
 	"centralauth-merge-method-password-desc": "Kaže, da je bil lokalni račun združen, saj je uporabnik za njega navedel veljavno geslo.",
 	"centralauth-merge-method-primary": "domači viki",
 	"centralauth-merge-method-primary-desc": "To je viki, v katerem je bil račun prvotno združen.\nMorda se razlikuje od dejanskega domačega vikija tega uporabnika.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "V osrednji tabeli sledenja računov ni bil najden noben račun, ki bi se ujemal z vašim imenom!\nPodatkovna zbirka je očitno poškodovana.",
 	"centralauth-merge-notlogged": "Prosimo, <span class=\"plainlinks\">[$1 prijavite se]</span>, da preverite, ali so bili vaši računi v celoti združeni.",
 	"centralauth-merge-step1-detail": "Prosimo, vnesite geslo svojega računa.\nVaše geslo in vpisani e-poštni naslov bosta primerjana z računi v drugih vikijih, da se potrdi njihovo ujemanje.\nDokler ne potrdite, da so vse stvari v redu, se ne bo shranila nobena sprememba.",

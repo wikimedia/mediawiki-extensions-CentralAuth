@@ -248,7 +248,6 @@
 	"centralauth-merge-method-password-desc": "Podawa, zo lokalne konto bu zjednoćene, dokelž wužiwar je płaćiwe hesło za nje podał.",
 	"centralauth-merge-method-primary": "Domizniski wiki",
 	"centralauth-merge-method-primary-desc": "To je wiki, do kotrehož konto bu spočatnje zjednoćene.\nWobkedźbuj, zo móže so wot woprawdźiteho domizniskeho wikija toho wužiwarja rozeznać.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "W centralnej datowej bance njejsu konta, kotrež twojemu mjenu wotpowěduja. Datowa banka dyrbjała wobškodźena być.",
 	"centralauth-merge-notlogged": "Prošu <span class=\"plainlinks\"> [$1 přizjew so]</span>, zo by přepruwował, hač su so twoje wužiwarske konta dospołnje zjednoćili.",
 	"centralauth-merge-step1-detail": "Zapodaj tu prošu swoje hesło.\nTwoje hesło a zregistrowana e-mejlowa adresa přirunatej so z kontami w druhich wikijach, zo by so  zwěsćiło, hač su jenake.\n Ničo so njezměni, doniž njewobkrućiš, zo je wšo w porjadku.",

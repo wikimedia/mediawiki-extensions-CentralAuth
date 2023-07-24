@@ -61,7 +61,6 @@
 	"centralauth-logout-progress": "Ngamedalang ragané ring {{PLURAL:$2|wiki}} sané liyanan saking {{int:Centralauth-groupname}}:",
 	"centralauth-merge-dryrun-or": "'''atawi'''",
 	"centralauth-merge-method-login": "kakardi ri tatkala manjing log",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|menit}} sané ungkur",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|sasih}} sané lintang",
 	"centralauth-rename-form-reason": "Hawanan",

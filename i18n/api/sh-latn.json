@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Winston Sung"
 		]
 	},
 	"apierror-centralauth-badsession": "Centralauthtoken se može dobiti samo kada se koriste CentralAuth sesije.",

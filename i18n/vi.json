@@ -297,7 +297,6 @@
 	"centralauth-merge-method-password-desc": "Cho thấy tài khoản địa phương đã được hợp nhất vì người dùng đã cung cấp mật khẩu hợp lệ cho nó.",
 	"centralauth-merge-method-primary": "wiki nhà",
 	"centralauth-merge-method-primary-desc": "Đây là wiki mà tài khoản được hợp nhất đầu tiên.\nChú ý: wiki này có thể không phải wiki nhà thật sự của thành viên.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "Không tìm được tài khoản với tên của bạn trong bảng chung theo dõi tài khoản!\nCó lẽ cơ sở dữ liệu bị hư.",
 	"centralauth-merge-notlogged": "Xin hãy <span class=\"plainlinks\">[$1 đăng nhập]</span> để kiểm tra các tài khoản của bạn được hợp nhất hay không.",
 	"centralauth-merge-step1-detail": "Xin vui lòng nhập mật khẩu tài khoản của bạn.\nMật khẩu và địa chỉ thư mà bạn đã ghi trong tùy chọn sẽ được kiểm tra với các tài khoản trên các wiki khác để xác nhận rằng nó khớp với nhau.\nSẽ không có thay đổi nào diễn ra cho đến khi bạn xác nhận mọi thứ đều ổn.",

@@ -310,7 +310,6 @@
 	"centralauth-merge-method-password-desc": "Anger att det lokala kontot slogs samman eftersom användaren angett ett giltigt lösenord för det.",
 	"centralauth-merge-method-primary": "hemwiki",
 	"centralauth-merge-method-primary-desc": "Detta är wikin där kontot från början slogs samman.\nObservera att det kan skilja sig från den verkliga hemwikin för den användaren.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "Inga konton som matchar ditt namn kunde hittades i spårningstabellen för gemensamma konton!\nDatabasen måste vara skadad.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Logga in]</span> för att se om dina konton har blivit fullständigt sammanslagna.",
 	"centralauth-merge-step1-detail": "Var god ange ditt kontolösenord.\nDitt lösenord och registrerade e-postadress kommer att kontrolleras mot användarkonton på andra wikier för att bekräfta att de stämmer överens.\nInga ändringar kommer att genomföras innan du bekräftar att allting ser riktigt ut.",
