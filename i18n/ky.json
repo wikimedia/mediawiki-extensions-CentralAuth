@@ -42,6 +42,7 @@
 	"centralauth-createlocal-reason": "Себеп",
 	"centralauth-createlocal-success": "Жергиликтүү аккаунт түзүлдү.",
 	"centralauth-editgroup-members": "Мүчөлөр тизмеси:",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|$2 укугуна ээ колдонуучулардын тизмеси]]",
 	"centralauth-editgroup-noset": "(жок)",
 	"centralauth-editgroup-reason": "Себеп:",
 	"centralauth-editset-name": "Аталыш:",
