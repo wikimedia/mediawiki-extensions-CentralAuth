@@ -91,7 +91,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 			!isset( $data['origin'] ) ||
 			!isset( $data['originSessionId'] )
 		) {
-			$this->logger->debug( __METHOD__ . ': centralauthtoken is invalid' );
+			$this->logger->info( __METHOD__ . ': centralauthtoken is invalid' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
@@ -101,11 +101,11 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		// Clean up username
 		$userName = $this->userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
 		if ( !$userName ) {
-			$this->logger->debug( __METHOD__ . ': invalid username' );
+			$this->logger->info( __METHOD__ . ': invalid username' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 		if ( !$this->userNameUtils->isUsable( $userName ) ) {
-			$this->logger->debug( __METHOD__ . ': unusable username' );
+			$this->logger->info( __METHOD__ . ': unusable username' );
 			return $this->makeBogusSessionInfo( 'badusername',
 				[ 'apierror-centralauth-badusername', wfEscapeWikiText( $userName ) ] );
 		}
@@ -115,20 +115,20 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		// Skip if they're being renamed
 		if ( $centralUser->renameInProgress() ) {
-			$this->logger->debug( __METHOD__ . ': rename in progress' );
+			$this->logger->info( __METHOD__ . ': rename in progress' );
 			return $this->makeBogusSessionInfo(
 				'renameinprogress', 'apierror-centralauth-renameinprogress'
 			);
 		}
 
 		if ( !$centralUser->exists() ) {
-			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
+			$this->logger->info( __METHOD__ . ': global account doesn\'t exist' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 		if ( !$centralUser->isAttached() ) {
 			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $userName );
 			if ( $userIdentity && $userIdentity->isRegistered() ) {
-				$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
+				$this->logger->info( __METHOD__ . ': not attached and local account exists' );
 				return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 			}
 		}
@@ -136,12 +136,12 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
 		$sessionStore = $this->sessionManager->getSessionStore();
 		if ( $sessionStore->get( $key ) ) {
-			$this->logger->debug( __METHOD__ . ': user is blacklisted' );
+			$this->logger->info( __METHOD__ . ': user is blacklisted' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
 		if ( $centralUser->authenticateWithToken( $authToken ) != 'ok' ) {
-			$this->logger->debug( __METHOD__ . ': token mismatch' );
+			$this->logger->info( __METHOD__ . ': token mismatch' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
