@@ -2151,13 +2151,15 @@ class CentralAuthUser implements IDBAccessObject {
 		// Don't allow users to autocreate if they are oversighted.
 		// If they do, their name will appear on local user list
 		// (and since it contains private info, its unacceptable).
-		// FIXME: this will give users "password incorrect" error.
-		// Giving correct message requires AuthPlugin and SpecialUserlogin
-		// rewriting.
-		$userIdentity = MediaWikiServices::getInstance()->getUserIdentityLookup()
-			->getUserIdentityByName( $this->getName() );
-		if ( !( $userIdentity && $userIdentity->isRegistered() ) && $this->isSuppressed() ) {
-			return self::AUTHENTICATE_LOCKED;
+		if ( $this->isSuppressed() ) {
+			// Avoid unnecessary database connections by only loading the user
+			// details if the account is suppressed, since that's a very small minority
+			// of login attempts for non-locked users.
+			$userIdentity = MediaWikiServices::getInstance()->getUserIdentityLookup()
+				->getUserIdentityByName( $this->getName() );
+			if ( !$userIdentity || !$userIdentity->isRegistered() ) {
+				return self::AUTHENTICATE_LOCKED;
+			}
 		}
 
 		return true;
