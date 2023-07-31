@@ -150,6 +150,7 @@
 	"centralauth-prefs-status": "Qlobal hesab:",
 	"centralauth-prefs-unattached": "Tam birləşdirilməyib",
 	"centralauth-prefs-view": "Qlobal hesab məlumatınıza baxın",
+	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" istifadəçisinin adını \"[[Special:CentralAuth/$2|$2]]\" olaraq dəyişərkən avtomatik olaraq səhifənin adı dəyişdirildi",
 	"centralauth-rightslog-entry-deleteset": "\"$1\" viki dəstini sildi",
 	"centralauth-rightslog-entry-groupperms": "$1 adlı istifadəçinin istifadəçi qruplarındakı üzvlüyü dəyişdirildi: $2 ► $3",
 	"centralauth-rightslog-entry-usergroups": "$1 adlı istifadəçinin istifadəçi qruplarındakı üzvlüyü dəyişdirildi: $2 ► $3",
