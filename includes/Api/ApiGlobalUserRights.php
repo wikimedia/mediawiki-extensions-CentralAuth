@@ -30,9 +30,10 @@ use ApiResult;
 use ChangeTags;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
-use MediaWiki\Extension\CentralAuth\User\CentralAuthGroupMembershipProxy;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use UserrightsPage;
@@ -42,8 +43,9 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiBase {
-	/** @var CentralAuthGroupMembershipProxy */
-	private $mUser = null;
+	private ?CentralAuthUser $user = null;
+
+	private TitleFactory $titleFactory;
 
 	/** @var UserNamePrefixSearch */
 	private $userNamePrefixSearch;
@@ -57,6 +59,7 @@ class ApiGlobalUserRights extends ApiBase {
 	/**
 	 * @param ApiMain $mainModule
 	 * @param string $moduleName
+	 * @param TitleFactory $titleFactory
 	 * @param UserNamePrefixSearch $userNamePrefixSearch
 	 * @param UserNameUtils $userNameUtils
 	 * @param GlobalGroupLookup $globalGroupLookup
@@ -64,11 +67,13 @@ class ApiGlobalUserRights extends ApiBase {
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
+		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
+		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
 		$this->globalGroupLookup = $globalGroupLookup;
@@ -76,6 +81,7 @@ class ApiGlobalUserRights extends ApiBase {
 
 	private function getUserRightsPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
+			$this->titleFactory,
 			$this->userNamePrefixSearch,
 			$this->userNameUtils,
 			$this->globalGroupLookup
@@ -121,7 +127,9 @@ class ApiGlobalUserRights extends ApiBase {
 				$this->dieWithError( [ 'apierror-pastexpiry', wfEscapeWikiText( $expiryValue ) ] );
 			}
 		}
-		$user = $this->getUrUser( $params );
+
+		$user = $this->getCentralAuthUser( $params );
+
 		$tags = $params['tags'];
 		// Check if user can add tags
 		if ( $tags !== null ) {
@@ -148,12 +156,13 @@ class ApiGlobalUserRights extends ApiBase {
 
 	/**
 	 * @param array $params
-	 * @return CentralAuthGroupMembershipProxy
+	 * @return CentralAuthUser
 	 */
-	private function getUrUser( array $params ) {
-		if ( $this->mUser !== null ) {
-			return $this->mUser;
+	private function getCentralAuthUser( array $params ): CentralAuthUser {
+		if ( $this->user !== null ) {
+			return $this->user;
 		}
+
 		$this->requireOnlyOneParameter( $params, 'user', 'userid' );
 		$user = $params['user'] ?? '#' . $params['userid'];
 		$form = $this->getUserRightsPage();
@@ -162,7 +171,8 @@ class ApiGlobalUserRights extends ApiBase {
 		if ( !$status->isOK() ) {
 			$this->dieStatus( $status );
 		}
-		$this->mUser = $status->value;
+
+		$this->user = $status->value;
 		return $status->value;
 	}
 
@@ -220,7 +230,7 @@ class ApiGlobalUserRights extends ApiBase {
 	}
 
 	protected function getWebUITokenSalt( array $params ) {
-		return $this->getUrUser( $params )->getName();
+		return $this->getCentralAuthUser( $params )->getName();
 	}
 
 	/** @inheritDoc */
