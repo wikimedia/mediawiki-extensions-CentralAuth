@@ -15,6 +15,7 @@
 			"Mormegil",
 			"Patriccck",
 			"Patrik L.",
+			"Pavreh",
 			"Polda18",
 			"Robins7"
 		]
@@ -141,6 +142,7 @@
 	"centralauth-complete": "Sjednocení přihlašovacích účtů bylo dokončeno!",
 	"centralauth-complete-text": "Nyní se můžete přihlásit na kterýkoliv projekt {{grammar:2sg|{{int:Centralauth-groupname}}}}, aniž byste si museli zakládat nový účet.",
 	"centralauth-completelogin-back": "Zpět na předchozí stránku.",
+	"centralauth-contribs-link": "globální účty",
 	"centralauth-contribs-locked": "Tento účet je globálně uzamčen.\nVíce informací najdete v [[Special:CentralAuth/$1|podrobnostech globálního účtu]].",
 	"centralauth-contribs-locked-log": "Tento účet je globálně uzamčen.\nZde je pro přehled zobrazen nejnovější záznam z knihy uzamčení účtů:",
 	"centralauth-createlocal-already-exists": "Pro zadaný globální účet již existuje lokální účet.",
