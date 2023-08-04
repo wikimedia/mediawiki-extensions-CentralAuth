@@ -768,7 +768,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
 		$lb = $this->lbFactory->getMainLB( $wiki );
-		$remoteDB = $lb->getConnectionRef( DB_REPLICA, [], $wiki );
+		$remoteDB = $lb->getConnection( DB_REPLICA, [], $wiki );
 		$row = $remoteDB->newSelectQueryBuilder()
 			->select( [ 'user_email', 'user_name', 'user_real_name' ] )
 			->from( 'user' )

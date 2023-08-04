@@ -60,7 +60,7 @@ class UnitTestsHookHandler implements
 	 * Cleans up tables created by onUnitTestsAfterDatabaseSetup() above
 	 */
 	public function onUnitTestsBeforeDatabaseTeardown() {
-		$dbw = $this->loadBalancer->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->loadBalancer->getMaintenanceConnectionRef( DB_PRIMARY );
 		foreach ( self::CENTRALAUTH_TABLES as $table ) {
 			$dbw->dropTable( $table );
 		}

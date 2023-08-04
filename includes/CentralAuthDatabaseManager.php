@@ -179,7 +179,7 @@ class CentralAuthDatabaseManager {
 		}
 
 		return $this->lbFactory->getMainLB( $wikiId )
-			->getConnectionRef( $index, [], $wikiId );
+			->getConnection( $index, [], $wikiId );
 	}
 
 	/**
