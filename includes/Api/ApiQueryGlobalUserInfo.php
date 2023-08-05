@@ -24,6 +24,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
+use ApiBase;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
@@ -210,7 +211,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					'unattached',
 					'editcount'
 				],
-				ParamValidator::PARAM_ISMULTI => true
+				ParamValidator::PARAM_ISMULTI => true,
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 			]
 		];
 	}

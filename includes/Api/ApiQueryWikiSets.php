@@ -108,7 +108,8 @@ class ApiQueryWikiSets extends ApiQueryBase {
 					'type',
 					'wikisincluded',
 					'wikisnotincluded'
-				]
+				],
+				ApiBase::PARAM_HELP_MSG_PER_VALUE => [],
 			],
 			'limit' => [
 				ParamValidator::PARAM_DEFAULT => 10,
