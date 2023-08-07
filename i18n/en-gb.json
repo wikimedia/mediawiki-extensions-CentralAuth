@@ -6,7 +6,8 @@
 			"Mdann52",
 			"Shirayuki",
 			"Piano1forte2",
-			"TheSkull28870"
+			"TheSkull28870",
+			"Reedy"
 		]
 	},
 	"action-centralauth-usermerge": "Globally merge multiple users",
@@ -47,6 +48,7 @@
 	"centralauth-uwbr-registration": "Registration date",
 	"globalrenamequeue-email-body-approved-with-note": "The request to rename '{{GENDER:$1|$1}}' to '{{GENDER:$1|$2}}' has been approved.\n\nNote: $3",
 	"globalrenamequeue-email-body-approved": "The request to rename '{{GENDER:$1|$1}}' to '{{GENDER:$1|$2}}' has been approved.",
+	"globalrenamequeue-request-reason-sul": "User notified of global name conflict in preparation for SUL finalisation.",
 	"globalrenamequeue-request-status-title": "Rename from '$1' to '$2'",
 	"globalrenamequeue-request-title": "Rename '$1'?",
 	"globalrenamerequest-newname-help": "Enter the new username you wish to use, e.g., '$1'.",
