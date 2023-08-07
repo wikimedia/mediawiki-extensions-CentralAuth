@@ -349,8 +349,7 @@ class SpecialCentralAuth extends SpecialPage {
 			]
 		];
 
-		$legend = $this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )
-		->text();
+		$legend = $this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )->text();
 
 		$context = new DerivativeContext( $this->getContext() );
 		$context->setTitle( $this->getPageTitle() ); // Remove subpage
@@ -1011,8 +1010,9 @@ class SpecialCentralAuth extends SpecialPage {
 				'centralauth-admin-status-locked' => $radioLocked,
 				'centralauth-admin-status-hidden' => $radioHidden,
 				'centralauth-admin-reason' => $reasonList,
-				'centralauth-admin-reason-other' => $reasonField ],
-				'centralauth-admin-status-submit'
+				'centralauth-admin-reason-other' => $reasonField
+			],
+			'centralauth-admin-status-submit'
 		);
 
 		$form .= Xml::closeElement( 'fieldset' );
