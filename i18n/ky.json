@@ -89,6 +89,7 @@
 	"centralauth-rename-form-reason": "Себеп",
 	"centralauth-rename-progress-fieldset": "Жергиликтүү аккаунттардын тизмеси",
 	"centralauth-rename-table-domain": "Жергиликтүү вики",
+	"centralauth-rename-table-status-done": "Даяр",
 	"centralauth-warning-notloggedin": "Кире элексиз.",
 	"centralautologin": "Борбордук кирүү",
 	"centrallogin": "Борбордук кирүү",
@@ -101,5 +102,6 @@
 	"globalrenamequeue-form-status-all": "баары",
 	"globalrenamequeue-form-username": "Колдонуучунун ысымы:",
 	"globalrenamequeue-request-cancel-text": "Жокко чыгаруу",
+	"globalrenamequeue-request-title": "«‎$1» ысымы өзгөртүлсүнбү ?",
 	"mergeaccount": "Эсеп жазууларды бириктирүү абалы"
 }
