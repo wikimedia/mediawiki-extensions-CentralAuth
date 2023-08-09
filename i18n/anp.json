@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Angpradesh"
+			"Angpradesh",
+			"Proabscorp!"
 		]
 	},
 	"centralauth-admin-blocklog": "अवरोध लॉग",
+	"centralauth-admin-not-authorized": "तोरा पास हैय कार्य क करै के अनुमति नाय छौं।",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|योगदान}} $2 प॑",
 	"centralauth-foreign-link": "$2 पर सदस्य $1",
 	"centralauth-merge-method-login": "लॉगिन उपरांत सृजित करलऽ गेलै"
