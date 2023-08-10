@@ -12,6 +12,8 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
+use MediaWiki\User\UserNameUtils;
+use MediaWiki\User\UserRigorOptions;
 use Message;
 use Status;
 use Title;
@@ -44,6 +46,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideTitleBlacklist = false;
 
+	private UserNameUtils $userNameUtils;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 
 	/** @var CentralAuthUIService */
@@ -63,6 +66,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private const EDITCOUNT_THRESHOLD = 100000;
 
 	/**
+	 * @param UserNameUtils $userNameUtils
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param CentralAuthUIService $uiService
 	 * @param GlobalRenameDenylist $globalRenameDenylist
@@ -70,6 +74,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @param GlobalRenameUserValidator $globalRenameUserValidator
 	 */
 	public function __construct(
+		UserNameUtils $userNameUtils,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
@@ -77,6 +82,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		GlobalRenameUserValidator $globalRenameUserValidator
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
+		$this->userNameUtils = $userNameUtils;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
@@ -193,7 +199,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-rename-cannotself' );
 		}
 
-		$newUser = User::newFromName( $data['newname'] );
+		$newUser = User::newFromName(
+			$data['newname'],
+			// match GlobalRenameFactory
+			UserRigorOptions::RIGOR_CREATABLE
+		);
 		if ( !$newUser ) {
 			return Status::newFatal( 'centralauth-rename-badusername' );
 		}
@@ -280,8 +290,19 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return $valid;
 		}
 
-		$this->newUsername = $data['newname'];
-		$this->oldUsername = $data['oldname'];
+		// Turn old username into canonical form as CentralAuthUser:;getInstanceByName
+		// does not do that by default. See T343958, T343963.
+		$this->oldUsername = $this->userNameUtils->getCanonical(
+			$data['oldname'],
+			UserRigorOptions::RIGOR_VALID
+		);
+
+		// This isn't strictly necessary as of writing, but let's do that just in case too.
+		// The username should already been validated in validate().
+		$this->newUsername = $this->userNameUtils->getCanonical(
+			$data['newname'],
+			UserRigorOptions::RIGOR_CREATABLE
+		);
 
 		return $this->globalRenameFactory
 			->newGlobalRenameUser(

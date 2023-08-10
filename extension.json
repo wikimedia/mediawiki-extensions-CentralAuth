@@ -194,6 +194,7 @@
 		"GlobalRenameUser": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameUser",
 			"services": [
+				"UserNameUtils",
 				"CentralAuth.CentralAuthAntiSpoofManager",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",

@@ -70,6 +70,12 @@ class GlobalRenameFactory {
 			throw new InvalidArgumentException( 'Name of the old user is not valid' );
 		}
 
+		// Avoid repeats of T343958. Some forms of creating a CentralAuthUser
+		// object do not canonicalize the username.
+		if ( $userOld->getName() !== $userToRename->getName() ) {
+			throw new InvalidArgumentException( 'Name of the global user is not in canonical form' );
+		}
+
 		$userNew = $this->userFactory->newFromName( $newName, UserRigorOptions::RIGOR_CREATABLE );
 		if ( !$userNew ) {
 			throw new InvalidArgumentException( 'Name old the new user is not creatable' );
