@@ -79,6 +79,7 @@
 	"centralauth-admin-info-registered": "Registered:",
 	"centralauth-admin-info-unattached": "Number of unattached accounts:",
 	"centralauth-admin-info-username": "Username:",
+	"centralauth-admin-info-username-rename": "rename",
 	"centralauth-admin-intro": "This interface can be used for administration of global accounts.",
 	"centralauth-admin-list-attached-on": "Attached on",
 	"centralauth-admin-list-blocked": "Blocked",

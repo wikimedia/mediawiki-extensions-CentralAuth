@@ -411,6 +411,20 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) ),
 		];
 
+		if (
+			// Renaming self is not allowed.
+			$globalUser->getName() !== $this->getContext()->getUser()->getName()
+			&& $this->getContext()->getAuthority()->isAllowed( 'centralauth-rename' )
+		) {
+			$renameLink = $this->getLinkRenderer()->makeKnownLink(
+				SpecialPage::getTitleFor( 'GlobalRenameUser', $globalUser->getName() ),
+				$this->msg( 'centralauth-admin-info-username-rename' )->text()
+			);
+
+			$attribs['username'] .= $this->msg( 'word-separator' )->escaped();
+			$attribs['username'] .= $this->msg( 'parentheses' )->rawParams( $renameLink )->escaped();
+		}
+
 		if ( count( $this->mUnattachedLocalAccounts ) ) {
 			$attribs['unattached'] = htmlspecialchars(
 				$this->getLanguage()->formatNum( count( $this->mUnattachedLocalAccounts ) ) );
