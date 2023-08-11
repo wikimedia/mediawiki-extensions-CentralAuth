@@ -73,6 +73,7 @@
 	"centralauth-admin-info-registered": "Registriert:",
 	"centralauth-admin-info-unattached": "Anzahl der nicht verbundenen Benutzerkonten:",
 	"centralauth-admin-info-username": "Benutzername:",
+	"centralauth-admin-info-username-rename": "umbenennen",
 	"centralauth-admin-intro": "Spezialseite zur Verwaltung globaler Benutzerkonten.",
 	"centralauth-admin-list-attached-on": "Verbunden seit",
 	"centralauth-admin-list-blocked": "Gesperrt",
