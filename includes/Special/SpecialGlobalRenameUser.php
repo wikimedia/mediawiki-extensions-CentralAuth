@@ -182,6 +182,10 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		return $fields;
 	}
 
+	protected function getSubpageField() {
+		return 'oldname';
+	}
+
 	/**
 	 * Perform validation on the user submitted data
 	 * and check that we can perform the rename
