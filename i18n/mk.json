@@ -57,6 +57,7 @@
 	"centralauth-admin-info-registered": "Зачленет:",
 	"centralauth-admin-info-unattached": "Број на неприврзани сметки:",
 	"centralauth-admin-info-username": "Корисничко име:",
+	"centralauth-admin-info-username-rename": "преименувај",
 	"centralauth-admin-intro": "Овој посредник може да се користи за раководење со глобални сметки.",
 	"centralauth-admin-list-attached-on": "Приврзана кон",
 	"centralauth-admin-list-blocked": "Блокирана",

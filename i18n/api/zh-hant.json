@@ -3,7 +3,8 @@
 		"authors": [
 			"Cwlin0416",
 			"Kly",
-			"LNDDYL"
+			"LNDDYL",
+			"Winston Sung"
 		]
 	},
 	"apierror-centralauth-badsession": "當使用中央認證 session 時無法取得中央驗證令牌。",
@@ -56,6 +57,7 @@
 	"apihelp-query+globaluserinfo-example-2": "取得全域使用者 [[User:Example|Example]] 的資訊　",
 	"apihelp-query+globaluserinfo-param-id": "要取得相關訊息的全域使用者 ID。如果 <var>$1user</var> 與 <var>$1id</var> 皆被省略，將會預設為目前的使用者。",
 	"apihelp-query+globaluserinfo-param-prop": "取得的屬性：\n;groups：取得此使用者所屬的全域群組清單。\n;rights：取得此使用者所俱有的群組權限清單。\n;merged：取得已合併帳號清單。\n;unattached：取得未附加的帳號清單。\n;editcount：取得使用者的全域編輯計數。",
+	"apihelp-query+globaluserinfo-paramvalue-prop-editcount": "取得使用者的全域編輯次數。",
 	"apihelp-query+globaluserinfo-param-user": "要取得相關訊息的使用者。如果 <var>$1user</var> 與 <var>$1id</var> 皆被省略，將會預設為目前的使用者。",
 	"apihelp-query+globaluserinfo-summary": "顯示有關全域使用者的訊息。",
 	"apihelp-query+wikisets-example-1": "wiki 集合清單",

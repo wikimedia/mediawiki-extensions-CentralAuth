@@ -112,6 +112,7 @@
 	"centralauth-admin-info-registered": "Registrado:",
 	"centralauth-admin-info-unattached": "Número de cuentas no unificadas:",
 	"centralauth-admin-info-username": "Nombre de usuario:",
+	"centralauth-admin-info-username-rename": "renombrar",
 	"centralauth-admin-intro": "Esta interfaz puede utilizarse para gestionar cuentas globales.",
 	"centralauth-admin-list-attached-on": "Vinculada el",
 	"centralauth-admin-list-blocked": "Bloqueado",
