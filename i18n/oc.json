@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Boulaur",
+			"BrennodAloisi",
 			"Cedric31",
 			"Jfblanc",
 			"Matma Rex"
@@ -9,6 +10,7 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gropes globals als quals aparten l'utilizaire",
 	"action-centralauth-lock": "verrolhar o desverrolhar los comptes globals",
+	"action-centralauth-rename": "renomenar de comptes globals",
 	"centralauth": "Gestionari de compte global",
 	"centralauth-account-exists": "Impossible de crear lo compte : lo nom d’utilizaire demandat ja es pres per un utilizaire d'un autre wiki.",
 	"centralauth-admin-already-unmerged": "Sautar $1, ja desfusionat",
@@ -29,6 +31,7 @@
 	"centralauth-admin-info-locked": "verrolhat :",
 	"centralauth-admin-info-registered": "Enregistrat :",
 	"centralauth-admin-info-username": "Nom d'utilizaire :",
+	"centralauth-admin-info-username-rename": "renomenar",
 	"centralauth-admin-intro": "Aquesta interfàcia pòt èsser utilizada per administrar los comptes globals.",
 	"centralauth-admin-list-attached-on": "Estacats sus",
 	"centralauth-admin-list-blocked": "Blocat",
@@ -87,6 +90,7 @@
 	"centralauth-complete": "Unificacion dels comptes acabada !",
 	"centralauth-complete-text": "Ara vos podètz connectar sus un projècte {{int:Centralauth-groupname}} qué que siá sens aver de crear un compte novèl.",
 	"centralauth-completelogin-back": "Tornar a la pagina precedenta.",
+	"centralauth-contribs-link": "comptes globals",
 	"centralauth-days-ago": "dempuèi $1 {{PLURAL:$1|jorn|jorns}}",
 	"centralauth-desc": "[[Special:MergeAccount|Fusionar los comptes d'utilizaires]] dels wikis de {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "La fusion dels comptes es actualament en mòde de demonstracion o de tèst, doncas, se pòt pas encara vertadièrament fusionar los comptes. O planhèm !",
@@ -260,6 +264,7 @@
 	"right-centralauth-lock": "Blocar o desblocar lo compte global",
 	"right-centralauth-merge": "Fusionar son compte",
 	"right-centralauth-suppress": "Suprimir o amagar lo compte global",
+	"right-centralauth-rename": "Renomenar de comptes globals",
 	"right-centralauth-unmerge": "Anullar la fusion del compte global",
 	"right-globalgroupmembership": "Modificar las apartenéncias als gropes globals",
 	"right-globalgrouppermissions": "Gestion dels gropes globals"
