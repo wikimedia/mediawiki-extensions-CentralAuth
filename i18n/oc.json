@@ -3,11 +3,14 @@
 		"authors": [
 			"Boulaur",
 			"Cedric31",
-			"Jfblanc"
+			"Jfblanc",
+			"BrennodAloisi",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gropes globals als quals aparten l'utilizaire",
 	"action-centralauth-lock": "verrolhar o desverrolhar los comptes globals",
+	"action-centralauth-rename": "renomenar de comptes globals",
 	"centralauth": "Gestionari de compte global",
 	"centralauth-account-exists": "Impossible de crear lo compte : lo nom d’utilizaire demandat ja es pres per un utilizaire d'un autre wiki.",
 	"centralauth-admin-already-unmerged": "Sautar $1, ja desfusionat",
@@ -260,6 +263,7 @@
 	"right-centralauth-lock": "Blocar o desblocar lo compte global",
 	"right-centralauth-merge": "Fusionar son compte",
 	"right-centralauth-suppress": "Suprimir o amagar lo compte global",
+	"right-centralauth-rename": "Renomenar de comptes globals",
 	"right-centralauth-unmerge": "Anullar la fusion del compte global",
 	"right-globalgroupmembership": "Modificar las apartenéncias als gropes globals",
 	"right-globalgrouppermissions": "Gestion dels gropes globals"
