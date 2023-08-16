@@ -33,9 +33,7 @@ class NoServicesHookHandler implements
 	 * @return void
 	 */
 	public function onLoadExtensionSchemaUpdates( $updater ) {
-		global $wgWikimediaJenkinsCI;
-
-		if ( !empty( $wgWikimediaJenkinsCI ) ) {
+		if ( defined( 'MW_QUIBBLE_CI' ) ) {
 			$dbType = $updater->getDB()->getType();
 			$updater->addExtensionTable(
 				'globaluser', __DIR__ . '/../../../schema/' . $dbType . '/tables-generated.sql'

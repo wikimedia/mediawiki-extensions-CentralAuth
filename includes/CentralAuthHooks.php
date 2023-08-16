@@ -101,11 +101,11 @@ class CentralAuthHooks implements
 	 * Called right after configuration variables have been set.
 	 */
 	public static function onRegistration() {
-		global $wgWikimediaJenkinsCI, $wgCentralAuthDatabase, $wgDBname, $wgSessionProviders,
+		global $wgCentralAuthDatabase, $wgDBname, $wgSessionProviders,
 			$wgCentralIdLookupProvider;
 
 		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
-		if ( isset( $wgWikimediaJenkinsCI ) && $wgWikimediaJenkinsCI ) {
+		if ( defined( 'MW_QUIBBLE_CI' ) ) {
 			$wgCentralAuthDatabase = $wgDBname;
 		}
 
