@@ -475,7 +475,7 @@
 	"logentry-gblrights-newset": "$1 je {{GENDER:$2|ustvaril|ustvarila|ustvaril_a}} $5 vikinabor $4 z {{PLURAL:$7|naslednjim vikijem|naslednjima vikijema|naslednimi vikiji}}: $6",
 	"logentry-gblrights-setchange": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} vikije v  »$4«: {{PLURAL:$7|dodan|dodana|dodani|dodanih}}: $5 ; {{PLURAL:$8|odstranjen|odstranjena|odstranjeni|odstranjenih}}: $6",
 	"logentry-gblrights-setnewtype": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} tip »$4« iz $5 v $6",
-	"logentry-gblrights-setrename": "$1 je {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} sklop vikijev »$5« v »$4«",
+	"logentry-gblrights-setrename": "$1 je {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} nabor vikijev »$5« v »$4«",
 	"logentry-gblrights-grouprename": "$1 je {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} skupino $5 v $4",
 	"logentry-gblrights-groupprms2": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} dovoljenja globalnih skupin za stran $3: dodano $4; odstranjeno $5",
 	"logentry-gblrights-groupprms3": "$1 je {{GENDER:$2|spremenil|spremenila|spremenil_a}} skupinsko omejeni nabor vikijev za $3 iz $4 v $5",
