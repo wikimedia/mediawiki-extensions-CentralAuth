@@ -95,14 +95,32 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	}
 
 	/**
+	 * Get the local session info, with CentralAuthSource metadata.
+	 *
 	 * @param WebRequest $request
+	 * @param bool $forceEmptyPersist If this is true and there is no local
+	 *   session, return a persistent empty local session to override the
+	 *   non-functional CentralAuth one. This prevents the deletion of global
+	 *   cookies, allowing the user to retain their central login elsewhere
+	 *   in the same cookie domain. It makes sense to do this for problems with
+	 *   the central session that are specific to the local wiki. (T342475)
 	 * @return SessionInfo|null
 	 */
-	private function returnParentSessionInfo( WebRequest $request ) {
+	private function returnParentSessionInfo( WebRequest $request, $forceEmptyPersist = false ) {
 		$info = parent::provideSessionInfo( $request );
 		if ( $info ) {
 			return new SessionInfo( $info->getPriority(), [
 				'copyFrom' => $info,
+				'metadata' => [
+					'CentralAuthSource' => 'Local',
+				],
+			] );
+		} elseif ( $forceEmptyPersist ) {
+			return new SessionInfo( $this->priority, [
+				'id' => null,
+				'provider' => $this,
+				'idIsSafe' => true,
+				'persisted' => true,
 				'metadata' => [
 					'CentralAuthSource' => 'Local',
 				],
@@ -185,7 +203,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 					'username' => $userName,
 				]
 			);
-			return self::returnParentSessionInfo( $request );
+			return self::returnParentSessionInfo( $request, true );
 		}
 
 		// Try the central user
@@ -207,7 +225,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $userName );
 			if ( $userIdentity && $userIdentity->isRegistered() ) {
 				$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-				return self::returnParentSessionInfo( $request );
+				return self::returnParentSessionInfo( $request, true );
 			}
 		}
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
@@ -391,11 +409,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$metadata = $session->getProviderMetadata();
 			$metadata['CentralAuthSource'] = 'Local';
 			$session->setProviderMetadata( $metadata );
-
-			$response->clearCookie( 'User', $this->centralCookieOptions );
-			$response->clearCookie( 'Token', $this->centralCookieOptions );
-			$response->clearCookie( $this->params['centralSessionName'],
-				[ 'prefix' => '' ] + $this->centralCookieOptions );
 		}
 	}
 

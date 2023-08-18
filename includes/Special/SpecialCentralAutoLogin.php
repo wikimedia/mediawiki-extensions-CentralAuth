@@ -20,7 +20,6 @@ use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserOptionsManager;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
@@ -55,9 +54,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var ReadOnlyMode */
 	private $readOnlyMode;
 
-	/** @var UserIdentityLookup */
-	private $userIdentityLookup;
-
 	/** @var UserOptionsManager */
 	private $userOptionsManager;
 
@@ -73,7 +69,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/**
 	 * @param LanguageFactory $languageFactory
 	 * @param ReadOnlyMode $readOnlyMode
-	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param UserOptionsManager $userOptionsManager
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
@@ -81,7 +76,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	public function __construct(
 		LanguageFactory $languageFactory,
 		ReadOnlyMode $readOnlyMode,
-		UserIdentityLookup $userIdentityLookup,
 		UserOptionsManager $userOptionsManager,
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthUtilityService $centralAuthUtilityService
@@ -91,7 +85,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->extensionRegistry = ExtensionRegistry::getInstance();
 		$this->languageFactory = $languageFactory;
 		$this->readOnlyMode = $readOnlyMode;
-		$this->userIdentityLookup = $userIdentityLookup;
 		$this->userOptionsManager = $userOptionsManager;
 		$this->sessionManager = $sessionManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
@@ -590,6 +583,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->doFinalOutput( false, 'Lost session' );
 				return;
 			}
+			$localUser = User::newFromName( $centralUser->getName(), 'usable' );
+			if ( !$localUser ) {
+				$this->doFinalOutput( false, 'Invalid username' );
+				return;
+			}
+			if ( $localUser->isRegistered() && !$centralUser->isAttached() ) {
+				$this->doFinalOutput( false, 'Local user exists but is not attached' );
+				return;
+			}
 
 			/** @var ScopedCallback|null $delay */
 			$delay = null;
@@ -628,11 +630,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// If it is a script or redirect callback, then we do want to create the user
 			// if it doesn't already exist locally (and fail if that can't be done).
-			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $centralUser->getName() );
-			if ( !$userIdentity || !$userIdentity->isRegistered() ) {
-				$user = new User;
-				$user->setName( $centralUser->getName() );
-				if ( $this->centralAuthUtilityService->autoCreateUser( $user )->isGood() ) {
+			if ( !$localUser->isRegistered() ) {
+				$localUser = new User;
+				$localUser->setName( $centralUser->getName() );
+				if ( $this->centralAuthUtilityService->autoCreateUser( $localUser )->isGood() ) {
 					$centralUser->invalidateCache();
 				}
 			}
@@ -643,7 +644,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				return;
 			}
 			// Set the user on the session now that we know it exists.
-			$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+			$this->session->setUser( $localUser );
 			ScopedCallback::consume( $delay );
 
 			LoggerFactory::getInstance( 'authevents' )->info(
@@ -692,10 +693,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Add a script to the page that will pull in the user's toolslist
 			// via ajax, and update the UI. Don't write out the tools here (T59081).
-			$code = $this->userOptionsManager->getOption( $this->getUser(), 'language' );
+			$code = $this->userOptionsManager->getOption( $localUser, 'language' );
 			$code = RequestContext::sanitizeLangCode( $code );
 
-			$this->getHookRunner()->onUserGetLanguageObject( $this->getUser(), $code, $this->getContext() );
+			$this->getHookRunner()->onUserGetLanguageObject( $localUser, $code, $this->getContext() );
 
 			$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
 				[
