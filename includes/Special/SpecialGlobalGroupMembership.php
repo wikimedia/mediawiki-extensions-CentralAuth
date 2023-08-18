@@ -119,11 +119,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 		$this->mTarget = $par ?? $request->getVal( 'user' );
 
-		if ( is_string( $this->mTarget ) ) {
-			$this->mTarget = trim( $this->mTarget );
-		}
-
-		if ( $this->mTarget !== null && $this->userNameUtils->getCanonical( $this->mTarget ) === $user->getName() ) {
+		if ( $this->mTarget !== null && $this->mTarget === $user->getName() ) {
 			$this->isself = true;
 		}
 
@@ -474,6 +470,14 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				return Status::newFatal( 'noname', $id );
 			}
 		} else {
+			// fetchUser() is public; normalize in case the caller forgot to. See T343963 and
+			// T344495.
+			$username = $this->userNameUtils->getCanonical( $username );
+			if ( !is_string( $username ) ) {
+				// $username was invalid, return nosuchuser.
+				return Status::newFatal( 'nosuchusershort', $username );
+			}
+
 			// If the user exists, but is hidden from the viewer, pretend that it does
 			// not exist. - T285190
 			$globalUser = CentralAuthUser::getPrimaryInstanceByName( $username );
