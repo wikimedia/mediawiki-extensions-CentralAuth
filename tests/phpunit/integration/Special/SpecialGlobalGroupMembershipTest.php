@@ -111,6 +111,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	public static function provideFetchUserGood(): Generator {
 		yield 'Username' => [ fn ( CentralAuthUser $user ) => $user->getName() ];
+		yield 'Non-canonical username' => [ fn ( CentralAuthUser $user ) => lcfirst( $user->getName() ) ];
 		yield 'ID' => [ fn ( CentralAuthUser $user ) => "#{$user->getId()}" ];
 	}
 
@@ -130,6 +131,10 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			'Not in use',
 			[ 'nosuchusershort', 'Not in use' ]
 		];
+		yield 'Invalid username' => [
+			'Invalid@username',
+			[ 'nosuchusershort', 'Invalid@username' ]
+		];
 		yield 'ID' => [ '#12345678', [ 'noname', 12345678 ] ];
 	}
 
@@ -142,7 +147,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	public function testRenderFormForPrivilegedUser() {
 		$user = $this->getRegisteredTestUser();
 		[ $html, ] = $this->executeSpecialPage(
-			$user->getName(),
+			// test against a non-canonical username form (T344495)
+			lcfirst( $user->getName() ),
 			null,
 			null,
 			new UltimateAuthority( $this->getTestSysop()->getUser() )
@@ -266,13 +272,15 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$user = $this->getRegisteredTestUser();
 		$originalExpiry = $user->getGlobalGroupsWithExpiration()['group-three'];
 
+		// test against a non-canonical username form (T344495)
+		$username = lcfirst( $user->getName() );
 		$this->executeSpecialPage(
-			$user->getName(),
+			$username,
 			new FauxRequest(
 				[
-					'user' => $user->getName(),
+					'user' => $username,
 					'saveusergroups' => '1',
-					'wpEditToken' => SessionManager::getGlobalSession()->getToken( $user->getName() ),
+					'wpEditToken' => SessionManager::getGlobalSession()->getToken( $username ),
 					'conflictcheck-originalgroups' => 'group-three,group-two',
 					'wpGroup-group-one' => '1',
 					'wpExpiry-group-one' => 'infinite',
