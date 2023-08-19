@@ -5,8 +5,8 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 use Job;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use RequestContext;
-use Title;
 use User;
 use Wikimedia\ScopedCallback;
 

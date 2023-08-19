@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\RCFeed;
 
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Interface for CentralAuth RC feed formatters

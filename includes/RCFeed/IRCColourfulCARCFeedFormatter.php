@@ -21,7 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\RCFeed;
 
 use IRCColourfulRCFeedFormatter;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * Generates a colourful notification intended for humans on IRC.

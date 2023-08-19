@@ -8,9 +8,9 @@ use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use MediaWiki\Title\Title;
 use PermissionsError;
 use SpecialPage;
-use Title;
 use Xml;
 use XmlSelect;
 

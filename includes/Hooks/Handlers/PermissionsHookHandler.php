@@ -22,7 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
-use Title;
+use MediaWiki\Title\Title;
 use User;
 
 class PermissionsHookHandler implements

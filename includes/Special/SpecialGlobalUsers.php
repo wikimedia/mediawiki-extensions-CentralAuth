@@ -9,7 +9,7 @@ use Language;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
-use Title;
+use MediaWiki\Title\Title;
 
 class SpecialGlobalUsers extends IncludableSpecialPage {
 	/** @var Language */

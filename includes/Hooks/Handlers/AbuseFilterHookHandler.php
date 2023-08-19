@@ -27,8 +27,8 @@ use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterShouldFilterActionHook;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalPageMoveJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Title\Title;
 use RecentChange;
-use Title;
 use User;
 
 class AbuseFilterHookHandler implements

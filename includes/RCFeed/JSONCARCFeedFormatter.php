@@ -21,7 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\RCFeed;
 
 use FormatJson;
-use Title;
+use MediaWiki\Title\Title;
 
 class JSONCARCFeedFormatter implements CARCFeedFormatter {
 	/**
