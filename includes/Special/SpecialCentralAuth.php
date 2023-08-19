@@ -19,13 +19,13 @@ use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use MediaWiki\WikiMap\WikiReference;
 use NamespaceInfo;
 use ReadOnlyMode;
 use Sanitizer;
 use SpecialPage;
 use User;
 use UserGroupMembership;
-use WikiReference;
 use Xml;
 
 class SpecialCentralAuth extends SpecialPage {
