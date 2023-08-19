@@ -24,9 +24,9 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 use BadMethodCallException;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;
+use MediaWiki\Title\Title;
 use Psr\Log\LoggerInterface;
 use StringUtils;
-use Title;
 use WikitextContent;
 
 /**
