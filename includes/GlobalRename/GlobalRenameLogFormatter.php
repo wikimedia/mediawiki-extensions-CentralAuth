@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use LogFormatter;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
-use Title;
 
 /**
  * Handles the following log types:

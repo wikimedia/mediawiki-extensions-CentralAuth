@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use ManualLogEntry;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use Title;
 
 /**
  * Log a global rename into the local log
