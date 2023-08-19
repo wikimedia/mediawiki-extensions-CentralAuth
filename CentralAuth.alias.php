@@ -342,11 +342,23 @@ $specialPageAliases['gu'] = [
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = [
 	'CentralAuth' => [ 'חשבון_משתמש_מאוחד' ],
+	'CreateLocalAccount' => [ 'יצירת_חשבון_מקומי' ],
 	'MergeAccount' => [ 'מיזוג_חשבונות' ],
-	'GlobalGroupMembership' => [ 'הרשאות_משתמש_כלליות', 'חברות_בקבוצות_כלליות' ],
-	'GlobalGroupPermissions' => [ 'הרשאות_קבוצות_כלליות' ],
+	'GlobalGroupMembership' => [
+		'הרשאות_משתמש_גלובליות',
+		'חברות_בקבוצות_גלובליות',
+		'הרשאות_משתמש_כלליות',
+		'חברות_בקבוצות_כלליות'
+	],
+	'GlobalGroupPermissions' => [
+		'הרשאות_קבוצות_גלובליות',
+		'הרשאות_קבוצות_כלליות'
+	],
 	'WikiSets' => [ 'עריכת_קבוצות_אתרי_ויקי' ],
-	'GlobalUsers' => [ 'משתמשים_כלליים' ],
+	'GlobalUsers' => [
+		'משתמשים_גלובליים',
+		'משתמשים_כלליים'
+	],
 	'MultiLock' => [ 'נעילה_מרובה' ],
 	'GlobalRenameUser' => [ 'שינוי_שם_משתמש_גלובלי' ],
 	'GlobalRenameProgress' => [ 'התקדמות_שינוי_שם_משתמש_גלובלי' ],
