@@ -90,6 +90,7 @@ $specialPageAliases['ba'] = [
 /** Bengali (বাংলা) */
 $specialPageAliases['bn'] = [
 	'CentralAuth' => [ 'কেন্দ্রীয়_প্রমাণী' ],
+	'CreateLocalAccount' => [ 'স্থানীয়_অ্যাকাউন্ট_তৈরি_করুন' ],
 	'MergeAccount' => [ 'অ্যাকাউন্ট_একত্রীকরণ' ],
 	'GlobalGroupMembership' => [ 'বৈশ্বিক_ব্যবহারকারী_অধিকার', 'বৈশ্বিক_দলের_সদস্যপদ' ],
 	'GlobalGroupPermissions' => [ 'বৈশ্বিক_দলের_অনুমতি' ],
