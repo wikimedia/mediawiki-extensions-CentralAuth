@@ -27,6 +27,7 @@
 	"centralauth-centralautologin-logged-in": "Siz oraylıq sistemaǵa $1 sıpatında kirgensiz. Ózińizdiń paydalanıwshı sazlawlarıńızdı qollanıw ushın betti qayta júkleńiz.",
 	"centralauth-complete": "Kiriwdi bir túrge keltiriw juwmaqlandı!",
 	"centralauth-complete-text": "Endi siz {{int:Centralauth-groupname}} basqarıwındaǵı qálegen wiki saytqa jańa esap beti jaratpastan kiriwińiz múmkin.",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|kún|kún}} burın",
 	"centralauth-editset": "Wiki toplamları",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} burın",
 	"centralauth-incomplete-text": "Kiriw bir túrge keltirilgennen soń, siz {{int:Centralauth-groupname}}nıń qálegen wiki saytına jańa esap betin jaratpastan kiriwińiz múmkin boladı.",
