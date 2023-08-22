@@ -50,6 +50,7 @@
 	"centralauth-admin-info-registered": "নিবন্ধিত:",
 	"centralauth-admin-info-unattached": "অসংযুক্ত অ্যাকাউন্টের সংখ্যা:",
 	"centralauth-admin-info-username": "ব্যবহারকারী নাম:",
+	"centralauth-admin-info-username-rename": "নামান্তর করুন",
 	"centralauth-admin-intro": "এই ইন্টারফেস বৈশ্বিক অ্যাকাউন্ট পরিচালনা করার জন্য ব্যবহার করা যেতে পারে।",
 	"centralauth-admin-list-attached-on": "সংযুক্তের তারিখ",
 	"centralauth-admin-list-blocked": "বাধাপ্রাপ্ত",

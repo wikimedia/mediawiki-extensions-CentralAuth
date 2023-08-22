@@ -87,6 +87,7 @@
 	"centralauth-admin-info-registered": "Kayıt tarihi:",
 	"centralauth-admin-info-unattached": "Bağlı olmayan hesap sayısı:",
 	"centralauth-admin-info-username": "Kullanıcı adı:",
+	"centralauth-admin-info-username-rename": "yeniden adlandır",
 	"centralauth-admin-intro": "Bu arayüz küresel hesapların yönetimi için kullanılabilir.",
 	"centralauth-admin-list-attached-on": "Şurada ekli",
 	"centralauth-admin-list-blocked": "Engellendi",
