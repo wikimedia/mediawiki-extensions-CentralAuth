@@ -127,8 +127,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	public function getAuthenticationRequests( $action, array $options ) {
 		$ret = parent::getAuthenticationRequests( $action, $options );
 
-		if ( $this->antiSpoofAccounts && $action === AuthManager::ACTION_CREATE
-		) {
+		if ( $this->antiSpoofAccounts && $action === AuthManager::ACTION_CREATE ) {
 			$user = User::newFromName( $options['username'] ) ?: new User();
 			if ( $user->isAllowed( 'override-antispoof' ) ) {
 				$ret[] = new AntiSpoofAuthenticationRequest();
