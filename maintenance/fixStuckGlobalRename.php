@@ -79,7 +79,9 @@ class FixStuckGlobalRename extends Maintenance {
 			$this->output( "Using $renamer as the renamer.\n" );
 		} else {
 			$this->output( "Could not find log entry, falling back to system account\n" );
-			$renamer = 'Global rename script';
+			// Go through User::newSystemUser() to ensure the user exists (T344632).
+			// The username is reserved in onUserGetReservedNames() hook.
+			$renamer = User::newSystemUser( 'Global rename script', [ 'steal' => true ] )->getName();
 			$comment = '';
 		}
 
