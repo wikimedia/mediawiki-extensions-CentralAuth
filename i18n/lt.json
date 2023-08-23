@@ -68,6 +68,7 @@
 	"centralauth-admin-info-registered": "Registruotas:",
 	"centralauth-admin-info-unattached": "Neprisegtų paskyrų skaičius:",
 	"centralauth-admin-info-username": "Naudotojo vardas:",
+	"centralauth-admin-info-username-rename": "pervadinti",
 	"centralauth-admin-intro": "Ši sąsaja gali būti naudojama administruoti pagrindinėms paskyroms.",
 	"centralauth-admin-list-attached-on": "Prijungta prie",
 	"centralauth-admin-list-blocked": "Užblokuota",
