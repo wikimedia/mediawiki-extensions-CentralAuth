@@ -25,13 +25,32 @@ class FixStuckGlobalRename extends Maintenance {
 		$this->addOption( 'logwiki', 'Wiki where the log entry exists', true, true );
 		$this->addOption( 'ignorestatus', 'Ignore rename status. Don\'t do this when the rename '
 			. 'jobs might still be running.' );
+		$this->addOption( 'create-system-user', 'Create the system user "Global rename script" '
+			. 'if it is missing, then exit without doing anything else.' );
 		$this->addDescription( 'Unstuck global rename on a single wiki' );
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function validateParamsAndArgs() {
+		if ( $this->parameters->getOption( 'create-system-user' ) ) {
+			// Skip validation of other parameters
+			return;
+		}
+		parent::validateParamsAndArgs();
 	}
 
 	public function execute() {
 		global $wgLocalDatabases;
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 
+		if ( $this->getOption( 'create-system-user' ) ) {
+			// This option is used to fix misattributed log entries caused by T344632.
+			User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
+			return;
+		}
+
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		$oldName = $userNameUtils->getCanonical( $this->getArg( 0 ) );
 		$newName = $userNameUtils->getCanonical( $this->getArg( 1 ) );
 		if ( $oldName === false || $newName === false ) {
