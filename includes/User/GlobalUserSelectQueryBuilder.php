@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 use EmptyIterator;
 use Iterator;
 use MediaWiki\User\ActorStore;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Assert\Assert;
@@ -17,27 +18,30 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
 class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 
 	/** @var ActorStore for the local wiki */
-	private $actorStore;
+	private ActorStore $actorStore;
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
+	private UserNameUtils $userNameUtils;
+	private TempUserConfig $tempUserConfig;
 
 	/** @var bool */
-	private $initRan = false;
+	private bool $initRan = false;
 
 	/**
 	 * @param IReadableDatabase $db
 	 * @param ActorStore $actorStore
 	 * @param UserNameUtils $userNameUtils
+	 * @param TempUserConfig $tempUserConfig
 	 */
 	public function __construct(
 		IReadableDatabase $db,
 		ActorStore $actorStore,
-		UserNameUtils $userNameUtils
+		UserNameUtils $userNameUtils,
+		TempUserConfig $tempUserConfig
 	) {
 		parent::__construct( $db );
 		$this->actorStore = $actorStore;
 		$this->userNameUtils = $userNameUtils;
+		$this->tempUserConfig = $tempUserConfig;
 	}
 
 	/**
@@ -95,6 +99,56 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	 */
 	public function whereLocked( bool $isLocked ): self {
 		$this->conds( [ 'gu_locked' => $isLocked ] );
+		return $this;
+	}
+
+	/**
+	 * Return users registered before/after $timestamp
+	 *
+	 * @param string $timestamp
+	 * @param bool $before Direction flag (if true, user_registration must be before $timestamp)
+	 * @return self
+	 */
+	public function whereRegisteredTimestamp( string $timestamp, bool $before ): self {
+		$this->conds( 'gu_registration ' .
+			( $before ? '< ' : '> ' ) .
+			$this->db->addQuotes( $this->db->timestamp( $timestamp ) ) );
+		return $this;
+	}
+
+	/**
+	 * Only return named accounts
+	 *
+	 * @return $this
+	 */
+	public function named(): self {
+		if ( !$this->tempUserConfig->isEnabled() ) {
+			// nothing to do: getMatchPattern throws if temp accounts aren't enabled
+			return $this;
+		}
+
+		$this->conds( [
+			'gu_name NOT ' . $this->tempUserConfig->getMatchPattern()
+				->buildLike( $this->db )
+		] );
+		return $this;
+	}
+
+	/**
+	 * Only return temporary accounts
+	 *
+	 * @return $this
+	 */
+	public function temp(): self {
+		if ( !$this->tempUserConfig->isEnabled() ) {
+			// nothing to do: getMatchPattern throws if temp accounts aren't enabled
+			return $this;
+		}
+
+		$this->conds( [
+			'gu_name ' . $this->tempUserConfig->getMatchPattern()
+				->buildLike( $this->db )
+		] );
 		return $this;
 	}
 
