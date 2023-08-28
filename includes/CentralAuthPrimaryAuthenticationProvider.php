@@ -164,8 +164,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		$status = $this->checkPasswordValidity( $username, $req->password );
 		if ( !$status->isOK() ) {
-			// Fatal, can't log in
-			return AuthenticationResponse::newFail( $status->getMessage() );
+			return $this->getFatalPasswordErrorResponse( $username, $status );
 		}
 
 		// First, check normal login
