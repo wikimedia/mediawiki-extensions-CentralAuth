@@ -282,7 +282,7 @@
 	"centralauth-log-status-hidden": "پنهان",
 	"centralauth-log-status-locked": "قفل شده",
 	"centralauth-log-status-none": "(هیچ)",
-	"centralauth-log-status-oversighted": "پنهان شده",
+	"centralauth-log-status-oversighted": "فرونشانی‌شده",
 	"centralauth-login-error-locked": "{{GENDER:$1|شما}} نمی‌توانید وارد شوید چون {{GENDER:$1|حسابتان}} به طور سراسری قفل شده‌است.",
 	"centralauth-login-no-others": "به طور خودکار به همهٔ پروژه‌های {{int:Centralauth-groupname}} وارد شده‌اید.",
 	"centralauth-login-progress": "در حال ثبت ورود شما در {{PLURAL:$2|ویکی|ویکی‌های}} {{int:Centralauth-groupname}}:",
