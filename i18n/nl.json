@@ -88,6 +88,7 @@
 	"centralauth-admin-info-registered": "Geregistreerd:",
 	"centralauth-admin-info-unattached": "Aantal niet-verbonden accounts:",
 	"centralauth-admin-info-username": "Gebruikersnaam:",
+	"centralauth-admin-info-username-rename": "hernoemen",
 	"centralauth-admin-intro": "Deze interface kan gebruikt worden voor het beheer van globale gebruikers.",
 	"centralauth-admin-list-attached-on": "Gekoppeld op",
 	"centralauth-admin-list-blocked": "Geblokkeerd",
