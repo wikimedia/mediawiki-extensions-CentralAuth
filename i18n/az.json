@@ -30,7 +30,7 @@
 	"centralauth-admin-blocked-reason": "Səbəb: $1",
 	"centralauth-admin-blocked2": "$2 $3 tarixinə qədər bloklanıb.",
 	"centralauth-admin-blocked2-indef": "Qeyri-müəyyən müddətə bloklanıb.",
-	"centralauth-admin-blocklog": "bloklama qeydləri",
+	"centralauth-admin-blocklog": "blok jurnalı",
 	"centralauth-admin-delete-button": "Bu hesabı sil",
 	"centralauth-admin-delete-title": "Silinmiş hesab",
 	"centralauth-admin-hidden-list": "qlobal istifadəçilər siyahısından",
