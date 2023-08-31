@@ -10,6 +10,7 @@ use Wikimedia\TestingAccessWrapper;
  *
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group CentralAuth
+ * @group Database
  */
 class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 
