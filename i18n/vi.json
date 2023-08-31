@@ -16,7 +16,9 @@
 			"Skye Darcy",
 			"Tryvix1509",
 			"Trần Nguyễn Minh Huy",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Flyplanevn27",
+			"Phjtieudoc"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
@@ -127,6 +129,7 @@
 	"centralauth-attach-text": "Tài khoản này chưa được nhập vào tài khoản thống nhất. Nếu tài khoản toàn cục cũng là của bạn, bạn có thể nhập tài khoản này nếu bạn gõ vào mật khẩu của tài khoản chung:",
 	"centralauth-attach-title": "Xác nhận tài khoản",
 	"centralauth-block-already-locked": "Tài khoản [[Special:CentralAuth/$1|$1]] đã bị cấm toàn cục.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|tác vụ}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|}}trang",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1}}không gian tên",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Bạn đã đăng nhập tại wiki đại phương.",
@@ -358,6 +361,7 @@
 	"centralauth-rename-progress-logs-fieldset": "Mục nhật trình",
 	"centralauth-rename-progress-username": "Tên người dùng",
 	"centralauth-rename-queued": "Công việc đổi tên $1 thành $2 đã được xếp hàng đợi.\n\nXem tiến trình tại [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-same-name": "Thành viên đã có tên người dùng được yêu cầu.",
 	"centralauth-rename-table-domain": "Wiki bộ phận",
 	"centralauth-rename-table-status": "Trạng thái",
 	"centralauth-rename-table-status-done": "Xong",
