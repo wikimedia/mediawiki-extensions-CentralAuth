@@ -8,7 +8,7 @@
 		]
 	},
 	"centralauth-admin-blocklog": "سجل المنع",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|مساهمة|مساهمات}} في $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|مساهمة|مساهمات}} ف $2",
 	"centralauth-foreign-link": "لخدايمي $1 ف $2",
 	"centralauth-merge-method-login": "دير ملي دير تسجيل الدخول",
 	"centralauth-years-ago": "هادي {{PLURAL:$1||عام|عاماين|$1 سنين|$1 لعام}}",
