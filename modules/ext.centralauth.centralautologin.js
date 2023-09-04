@@ -5,6 +5,9 @@
 		return;
 	}
 
+	// TODO: Disable on Special:Userlogin if the autologin via SpecialPageBeforeExecute
+	//   proves reliable.
+
 	// Do we already know we're logged out centrally?
 	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Userlogin' ) {
 		try {

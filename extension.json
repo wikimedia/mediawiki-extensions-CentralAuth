@@ -599,6 +599,15 @@
 				"MainConfig"
 			]
 		},
+		"specialpagebeforeexecute": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialPageBeforeExecuteHookHandler",
+			"services": [
+				"AuthManager",
+				"MainConfig",
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthUtilityService"
+			]
+		},
 		"rename": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\GlobalRenameHookHandler",
 			"services": [
@@ -664,6 +673,7 @@
 		"ContributionsToolLinks": "specialcontributions",
 		"SpecialLogAddLogSearchRelations": "log",
 		"SpecialPage_initList": "specialpageinit",
+		"SpecialPageBeforeExecute": "specialpagebeforeexecute",
 		"SpecialPasswordResetOnSubmit": "default",
 		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",

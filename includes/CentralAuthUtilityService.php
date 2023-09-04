@@ -30,6 +30,7 @@ use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
+use MWCryptRand;
 use Profiler;
 use Psr\Log\LoggerInterface;
 use RequestContext;
@@ -114,6 +115,44 @@ class CentralAuthUtilityService {
 		}
 
 		return $value;
+	}
+
+	/**
+	 * Store a value for a short time via the shared token store, and return the random key it's
+	 * stored under. This can be used to replace an URL parameter (used to pass information between
+	 * wikis via redirect chains) with a random placeholder, to avoid sniffing or tampering.
+	 * @param string $value The value to store.
+	 * @param string $keyPrefix Namespace in the token store.
+	 * @param CentralAuthSessionManager $sessionManager
+	 * @return string The random key (without the prefix).
+	 */
+	public function tokenize(
+		string $value,
+		string $keyPrefix,
+		CentralAuthSessionManager $sessionManager
+	): string {
+		$tokenStore = $sessionManager->getTokenStore();
+		$token = MWCryptRand::generateHex( 16 );
+		$key = $sessionManager->memcKey( $keyPrefix, $token );
+		$tokenStore->set( $key, $value, $tokenStore::TTL_MINUTE );
+		return $token;
+	}
+
+	/**
+	 * Recover the value concealed with tokenize().
+	 * @param string $token The random key returned by tokenize().
+	 * @param string $keyPrefix Namespace in the token store.
+	 * @param CentralAuthSessionManager $sessionManager
+	 * @return string|false The value, or false if it was not found.
+	 */
+	public function detokenize(
+		string $token,
+		string $keyPrefix,
+		CentralAuthSessionManager $sessionManager
+	) {
+		$tokenStore = $sessionManager->getTokenStore();
+		$key = $sessionManager->memcKey( $keyPrefix, $token );
+		return $this->getKeyValueUponExistence( $tokenStore, $key );
 	}
 
 	/**
