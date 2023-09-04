@@ -4,7 +4,8 @@
 			"Abanima",
 			"Alshamiri1",
 			"Meno25",
-			"ديفيد"
+			"ديفيد",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"apierror-centralauth-badsession": "يمكن الحصول على centralauthtoken فقط عند استخدام جلسات centralauthtoken.",
@@ -57,6 +58,7 @@
 	"apihelp-query+globaluserinfo-example-2": "الحصول على معلومات حول المستخدم العالمي [[User:Example|مثال]]",
 	"apihelp-query+globaluserinfo-param-id": "المستخدم للحصول على معلومات عنه، إذا تم حذف كل من <var>$1user</var> و<var>$1id</var>، فسيتم افتراضها للمستخدم الحالي.",
 	"apihelp-query+globaluserinfo-param-prop": "الخصائص التي يمكن الحصول عليها \n;المجموعات: احصل على قائمة بالمجموعات العالمية التي ينتمي إليها هذا المستخدم.\n;الصلاحيات: الحصول على قائمة بالصلاحيات العالمية لهذا المستخدم.\n;دمج: الحصول على قائمة بالحسابات المدمجة.\n;غير المرفقة: الحصول على قائمة الحسابات غير المرفقة.\n;عدد التحرير:الحصول على عدد تحرير المستخدم العالمي.",
+	"apihelp-query+globaluserinfo-paramvalue-prop-editcount": "الحصول على عدد التعديلات العالمي للمستخدم.",
 	"apihelp-query+globaluserinfo-param-user": "المستخدم للحصول على معلومات عنه، إذا تم حذف كل من <var>$1user</var> و<var>$1id</var>، فسيتم افتراضها للمستخدم الحالي.",
 	"apihelp-query+globaluserinfo-summary": "عرض معلومات حول مستخدم عالمي.",
 	"apihelp-query+wikisets-example-1": "يسرد مجموعات الويكي للعودة",
