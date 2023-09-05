@@ -6,7 +6,8 @@
 			"Nike",
 			"Stryn",
 			"Surjection",
-			"Valtlait"
+			"Valtlait",
+			"Valtlai"
 		]
 	},
 	"apierror-centralauth-badsession": "centralauthtoken on saatavilla vain CentralAuth-istunnoissa.",
@@ -78,7 +79,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Muuta sitä, onko tämä käyttäjä piilottamaton, piilotettu järjestelmänlaajuisten käyttäjien listasta tai häivytetty.",
 	"apihelp-setglobalaccountstatus-param-locked": "Muuta sitä, onko tämä käyttäjätunnus lukittu vai ei.",
 	"apihelp-setglobalaccountstatus-param-reason": "Syy käyttäjätunnuksen tilan muuttamiselle.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Valinnainen MD5 odotetusta nykyisestä <käyttäjänimi>:<piilotettu>:<lukittu> -merkkijonosta päällekkäisten muokkausten estämiseksi. Aseta <lukittu> olemaan 1 tai 0, riippuen siitä onko lukittu vai ei.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Valinnainen MD5 odotetusta nykyisestä <käyttäjän id>:<käyttäjänimi>:<piilotettu>:<lukittu> -merkkijonosta päällekkäisten muokkausten estämiseksi. Aseta <lukittu> olemaan 1 tai 0, riippuen siitä onko lukittu vai ei.",
 	"apihelp-setglobalaccountstatus-param-user": "Käyttäjätunnus, jonka tila muutetaan.",
 	"apihelp-setglobalaccountstatus-summary": "Asettaa järjestelmänlaajuisen käyttäjätunnuksen tila"
 }
