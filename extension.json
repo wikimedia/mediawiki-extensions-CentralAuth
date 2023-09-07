@@ -46,6 +46,9 @@
 			"centralauth-merge": true
 		}
 	},
+	"PrivilegedGroups": [
+		"steward"
+	],
 	"GrantPermissions": {
 		"setglobalaccountstatus": {
 			"centralauth-lock": true,
