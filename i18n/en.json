@@ -33,6 +33,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Global edit count of the user",
 	"abusefilter-edit-builder-vars-global-user-groups": "Global groups that the user is in",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Global edit count of the user (on account creation)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Global groups that the user is in (on account creation)",
 	"action-centralauth-createlocal": "forcibly create a local account",
 	"action-centralauth-lock": "lock or unlock global accounts",
 	"action-centralauth-merge": "merge their account",

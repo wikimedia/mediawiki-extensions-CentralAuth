@@ -645,6 +645,7 @@
 		}
 	},
 	"Hooks": {
+		"AbuseFilterAlterVariables": "abusefilter",
 		"AbuseFilter-builder": "abusefilter",
 		"AbuseFilter-computeVariable": "abusefilter",
 		"AbuseFilter-generateUserVars": "abusefilter",

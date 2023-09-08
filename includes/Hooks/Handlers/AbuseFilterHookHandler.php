@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterAlterVariablesHook;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterBuilderHook;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterComputeVariableHook;
 use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterGenerateUserVarsHook;
@@ -32,6 +33,7 @@ use RecentChange;
 use User;
 
 class AbuseFilterHookHandler implements
+	AbuseFilterAlterVariablesHook,
 	AbuseFilterBuilderHook,
 	AbuseFilterComputeVariableHook,
 	AbuseFilterGenerateUserVarsHook,
@@ -39,7 +41,28 @@ class AbuseFilterHookHandler implements
 {
 
 	/**
-	 * Computes the global_user_groups variable
+	 * Load our global_account_groups and global_account_editcount variables
+	 * during (auto)createaccount actions.
+	 *
+	 * @param VariableHolder &$vars
+	 * @param Title $title Title object target of the action
+	 * @param User $user User object performer of the action
+	 */
+	public function onAbuseFilterAlterVariables(
+		VariableHolder &$vars,
+		Title $title,
+		User $user
+	) {
+		$action = $vars->getComputedVariable( 'action' )->toString();
+		if ( in_array( $action, [ 'createaccount', 'autocreateaccount' ] ) ) {
+			$accountname = $vars->getComputedVariable( 'accountname' )->toString();
+			$vars->setLazyLoadVar( 'global_account_groups', 'global-user-groups', [ 'user' => $accountname ] );
+			$vars->setLazyLoadVar( 'global_account_editcount', 'global-user-editcount', [ 'user' => $accountname ] );
+		}
+	}
+
+	/**
+	 * Computes the global_user_groups and global_user_editcount variables
 	 * @param string $method
 	 * @param VariableHolder $vars
 	 * @param array $parameters
@@ -53,7 +76,7 @@ class AbuseFilterHookHandler implements
 		?string &$result
 	) {
 		if ( $method == 'global-user-groups' ) {
-			$user = CentralAuthUser::getInstance( $parameters['user'] );
+			$user = CentralAuthUser::getInstanceByName( $parameters['user'] );
 			if ( $user->exists() && $user->isAttached() ) {
 				$result = $user->getGlobalGroups();
 			} else {
@@ -61,7 +84,7 @@ class AbuseFilterHookHandler implements
 			}
 			return false;
 		} elseif ( $method == 'global-user-editcount' ) {
-			$user = CentralAuthUser::getInstance( $parameters['user'] );
+			$user = CentralAuthUser::getInstanceByName( $parameters['user'] );
 			if ( $user->exists() && $user->isAttached() ) {
 				$result = $user->getGlobalEditCount();
 			} else {
@@ -74,7 +97,7 @@ class AbuseFilterHookHandler implements
 	}
 
 	/**
-	 * Load our global_user_groups variable
+	 * Load our global_user_groups and global_user_editcount variables
 	 * @param VariableHolder $vars
 	 * @param User $user
 	 * @param ?RecentChange $rc
@@ -85,13 +108,13 @@ class AbuseFilterHookHandler implements
 		User $user,
 		?RecentChange $rc
 	) {
-		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user ] );
-		$vars->setLazyLoadVar( 'global_user_editcount', 'global-user-editcount', [ 'user' => $user ] );
+		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user->getName() ] );
+		$vars->setLazyLoadVar( 'global_user_editcount', 'global-user-editcount', [ 'user' => $user->getName() ] );
 		return true;
 	}
 
 	/**
-	 * Tell AbuseFilter about our global_user_groups variable
+	 * Tell AbuseFilter about our global_user_groups and global_user_editcount variables
 	 * @param array &$realValues
 	 * @return bool
 	 */
