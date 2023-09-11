@@ -38,6 +38,7 @@
 			"TheGabrielZaum",
 			"Tks4Fish",
 			"Tuliouel",
+			"VasbXBR",
 			"YuriNikolai",
 			555
 		]
@@ -90,6 +91,7 @@
 	"centralauth-admin-info-registered": "Registrada:",
 	"centralauth-admin-info-unattached": "Número de contas não-ligadas:",
 	"centralauth-admin-info-username": "Nome de usuário:",
+	"centralauth-admin-info-username-rename": "Renomear",
 	"centralauth-admin-intro": "Esta interface pode ser usada para administração de contas globais.",
 	"centralauth-admin-list-attached-on": "Unificada em",
 	"centralauth-admin-list-blocked": "Bloqueado",

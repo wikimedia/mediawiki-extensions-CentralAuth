@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"1917 Ekim Devrimi",
+			"Amire80",
 			"BaRaN6161 TURK",
 			"DDPAT",
 			"Emperyan",
@@ -266,7 +267,7 @@
 	"centralauth-globalgroupperms-wikiset-none": "Bu grup tüm vikilerde aktiftir.",
 	"centralauth-groupname": "bu viki çiftliği",
 	"centralauth-hidden-blockreason": "$1 tarafından küresel olarak $2 tarihinde şu sebeple gizlendi: $3",
-	"centralauth-hours-ago": "$1 saat önce",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat}} önce",
 	"centralauth-incomplete": "Giriş birleştirme tamamlanmadı!",
 	"centralauth-incomplete-text": "Oturumunuz birleştirildiğinde, yeni bir hesap oluşturmadan herhangi bir {{int:Centralauth-groupname}} viki sitesinde oturum açabileceksiniz",
 	"centralauth-invalid-wiki": "Böyle viki veritabanı yok: $1.",
