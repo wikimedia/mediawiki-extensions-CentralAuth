@@ -36,7 +36,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|ಪುಟ|ಪುಟಗಳು}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|ನಾಮವರ್ಗ|ನಾಮವರ್ಗಗಳು}}",
 	"centralauth-complete": "ಪ್ರವೇಶ ಏಕೀಕರಣ ಸಫಲವಾಗಿದೆ!",
-	"centralauth-contribs-link": "ಜಾಗತಿಕ ಸಂಪಾದನೆಗಳು",
+	"centralauth-contribs-link": "ಜಾಗತಿಕ ಖಾತೆಗಳು",
 	"centralauth-createlocal-reason": "ಕಾರಣ",
 	"centralauth-createlocal-username": "ಜಾಗತಿಕ ಖಾತೆಯ ಹೆಸರು",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|ದಿನದ|ದಿನಗಳ}} ಹಿಂದೆ",
