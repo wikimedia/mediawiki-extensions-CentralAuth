@@ -845,6 +845,11 @@
 			]
 		}
 	},
+	"UserRegistrationProviders": {
+		"centralauth": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthGlobalRegistrationProvider"
+		}
+	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
 	],
