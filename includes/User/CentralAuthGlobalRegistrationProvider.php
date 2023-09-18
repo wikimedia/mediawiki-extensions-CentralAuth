@@ -7,6 +7,9 @@ use MediaWiki\User\UserIdentity;
 
 class CentralAuthGlobalRegistrationProvider implements IUserRegistrationProvider {
 
+	/** @var string */
+	public const TYPE = 'centralauth';
+
 	/**
 	 * @inheritDoc
 	 */
