@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"C.R.",
 			"Ruthven"
 		]
@@ -24,7 +25,7 @@
 	"apihelp-query+globalallusers-param-group": "Miette lemmeto d'utente dàte 'e gruppe globbale.",
 	"apihelp-query+globalallusers-param-limit": "Quante utente 'n globbale s'avesser'a dà.",
 	"apihelp-query+globalallusers-param-prefix": "Ascìa tutt' 'utenze c'accummenciano 'a stu valore.",
-	"apihelp-query+globalallusers-param-prop": "Quale piezze 'nfurmaziune 'azzeccà:\n;lockinfo:Si nu cunto utente è bloccato.\n;groups:Liste 'e gruppe utente globbale addo' l'utente nce sta.  Chesta aúsa cchiú risorsa 'e server e putesse turnà meno risultate ca 'o massimo.\n;existslocally:Azzecca nfurmaziune si l'utente esiste localmente.",
+	"apihelp-query+globalallusers-param-prop": "Quale piezze 'nfurmaziune 'azzeccà:\n;lockinfo:Si nu cunto utente è bloccato.\n;groups:Liste 'e gruppe utente globbale addo' l'utente nce sta. Chesta aúsa cchiú risorsa 'e server e putesse turnà meno risultate ca 'o massimo.\n;existslocally:Azzecca nfurmaziune si l'utente esiste localmente.",
 	"apihelp-query+globalallusers-param-to": "'O nomme utente pe' fernì 'annummerà ncoppa.",
 	"apihelp-query+globalgroups-example-1": "Lista 'e gruppe utente",
 	"apihelp-query+globalgroups-example-2": "Mmusta gruppe utente globbale ch' 'e diritte ca danno",
@@ -38,7 +39,7 @@
 	"apihelp-query+wikisets-param-from": "'O nomme d' 'o nzieme wiki p'accummencià 'a cap'a isso.",
 	"apihelp-query+wikisets-param-limit": "Quante nzieme wiki s'avesser'a turnà.",
 	"apihelp-query+wikisets-param-orderbyname": "Sistimà risultate pe' nomme.",
-	"apihelp-query+wikisets-param-prop": "Quale piezze nfurmazione s'avesser'azzeccà.\n;type:A-scigliuta-into 'e ll'utente(azzecca surtanto wiki specificate) o basate a a-scigliuta-fore  (azzecca tutt' 'e wiki eccettuanno 'e specificate).\n;wikisincluded:'E wiki ca stann'accucchiate dint'a stu nzieme wiki.\n;wikisnotincluded:'E wiki ca nun stann'accucchiate dint'a stu nzieme 'e wiki.",
+	"apihelp-query+wikisets-param-prop": "Quale piezze nfurmazione s'avesser'azzeccà.\n;type:A-scigliuta-into 'e ll'utente(azzecca surtanto wiki specificate) o basate a a-scigliuta-fore (azzecca tutt' 'e wiki eccettuanno 'e specificate).\n;wikisincluded:'E wiki ca stann'accucchiate dint'a stu nzieme wiki.\n;wikisnotincluded:'E wiki ca nun stann'accucchiate dint'a stu nzieme 'e wiki.",
 	"apihelp-setglobalaccountstatus-example-1": "Bloccate 'o cunto globbale pe' [[User:Example]] cu mutivo 'e \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Sbluccà e scancellà 'o cunto globbale pe' [[User:Example]] cu mutivo \"I pozzo\"",
 	"apihelp-setglobalaccountstatus-param-hidden": "Càgna sempe ca l'utente nun fosse annascunnuto, annascunnuto d' 'e liste, o luvàto.",

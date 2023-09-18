@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Lam-ang"
 		]
 	},
@@ -39,7 +40,7 @@
 	"apihelp-query+wikisets-param-orderbyname": "Urnosen dagiti resulta babaen ti nagan.",
 	"apihelp-query+wikisets-param-prop": "Ania dagiti iraman a pirgis ti pakaammo.\n;type:Naibatay iti opt-in (iraman laeng dagiti nainaganan a wiki) wenno naibatay iti opt-out (iraman amin dagiti wiki malaksid ti nainaganan).\n;wikisincluded:Dagiti wiki a nairaman iti daytoy nga agasmang ti wiki.\n;wikisnotincluded:Dagiti wiki a saan a nairaman iti daytoy nga agsmang ti wiki.",
 	"apihelp-setglobalaccountstatus-example-1": "Serraan ti global a pakabilangan para kenni [[User:Example]] iti rason iti \"Spam\"",
-	"apihelp-setglobalaccountstatus-example-2": "Lukatan ti serra ken pasardengen ti global a pakabilangan para kenni  [[User:Example]] iti rason iti \"Mabalinko\"",
+	"apihelp-setglobalaccountstatus-example-2": "Lukatan ti serra ken pasardengen ti global a pakabilangan para kenni [[User:Example]] iti rason iti \"Mabalinko\"",
 	"apihelp-setglobalaccountstatus-param-hidden": "Baliwan no daytoy nga agar-aramat ket nailemmeng, nailemmeng kadagiti listaan, wenno napasardeng.",
 	"apihelp-setglobalaccountstatus-param-locked": "Baliwan no daytoy nga agar-aramat ket naserraan wenno saan.",
 	"apihelp-setglobalaccountstatus-param-reason": "Rason para iti panagbaliw ti kasasaad ti agar-aramat.",

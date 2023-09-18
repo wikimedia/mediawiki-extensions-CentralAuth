@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Jon Harald Søby"
 		]
 	},
@@ -54,7 +55,7 @@
 	"apihelp-query+globaluserinfo-example-2": "Hent informasjon om den globale brukeren [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-id": "Global bruker-ID det skal hentes informasjon om. Om verken <var>$1user</var> eller <var>$1id</var> er med er standardresultatet den gjeldende brukeren.",
 	"apihelp-query+globaluserinfo-param-prop": "Hvilke egenskaper som skal hentes:\n;groups:Hent en liste over globale grupper brukeren tilhører.\n;rights:Hent en liste over globale rettigheter brukeren har.\n;Merged:Hent en liste over sammenslåtte kontoer.\n;unattached:Hent en liste over ikke-sammenslåtte kontoer.\n;editcount:Hent brukerens globale redigeringsteller.",
-	"apihelp-query+globaluserinfo-param-user": "Bruker det skal hentes informasjon om. Om verken <var>$1user</var> eller <var>$1id</var>  er med er standardresultatet den gjeldende brukeren.",
+	"apihelp-query+globaluserinfo-param-user": "Bruker det skal hentes informasjon om. Om verken <var>$1user</var> eller <var>$1id</var> er med er standardresultatet den gjeldende brukeren.",
 	"apihelp-query+globaluserinfo-summary": "Vis informasjon om en global bruker.",
 	"apihelp-query+wikisets-example-1": "List wikisett",
 	"apihelp-query+wikisets-example-2": "Vis wikisett med typer",

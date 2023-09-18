@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Purodha"
 		]
 	},
 	"apihelp-deleteglobalaccount-example-1": "Donn dä Metmaacher „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">[[User:Example]]</code>“ met singe jemeinsamme Aanmäldonge fottschmiiße",
-	"apihelp-deleteglobalaccount-param-reason": "Dä Jrond för dä  Metmaacher fottzeschmiiße.",
+	"apihelp-deleteglobalaccount-param-reason": "Dä Jrond för dä Metmaacher fottzeschmiiße.",
 	"apihelp-deleteglobalaccount-param-user": "Dä Metmaacher zom Fottschmiiße.",
 	"apihelp-globaluserrights-example-1": "Donn dä Metmaacher en di jemeinsamm Jropp „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">bot</code>“ eren un uß dä Jroppe „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">sysop</code>“ un „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">bureaucrat</code>“ eruß.",
 	"apihelp-globaluserrights-example-2": "Donn dä Metmaacher met dä jemeinsamm Kännong „<code>123</code>“ en de jemeinsamm Jropp „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">bot</code>“ eren un uß dä Jroppe „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">sysop</code>“ un „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">bureaucrat</code>“ eruß.",
@@ -29,7 +30,7 @@
 	"apihelp-query+globalgroups-param-prop": "Wat för en Aanjahbe med enzschlehße.",
 	"apihelp-query+globaluserinfo-example-1": "Holl Aanjahbe övver ene Metmaacher med ene jemeinsamme Aanmäldong.",
 	"apihelp-query+globaluserinfo-example-2": "Holl Aanjahbe övver dä Metmaacher med ene jemeinsamme Aanmäldong mem Nahme „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">[[User:Example|Example]]</code>“",
-	"apihelp-query+globaluserinfo-param-prop": "Wat för en Eijeschaffte holle:\n;groups:Holl en Leß met de global groups vun heh däm Metmaacher.\n;rights:Holl en Leß met de  global rights vun heh däm Metmaacher.\n;merged:Holl en Leß met de  merged accounts. vun heh däm Metmaacher.\n;unattached:Holl en Leß met de  unattached accounts. vun heh däm Metmaacher.\n;editcount:Holl däm Metmaacher singe global editcount.\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-query%2Bwikisets-param-prop/ksh\n-->",
+	"apihelp-query+globaluserinfo-param-prop": "Wat för en Eijeschaffte holle:\n;groups:Holl en Leß met de global groups vun heh däm Metmaacher.\n;rights:Holl en Leß met de global rights vun heh däm Metmaacher.\n;merged:Holl en Leß met de merged accounts. vun heh däm Metmaacher.\n;unattached:Holl en Leß met de unattached accounts. vun heh däm Metmaacher.\n;editcount:Holl däm Metmaacher singe global editcount.\n<!-- \nhttps://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Apihelp-query%2Bwikisets-param-prop/ksh\n-->",
 	"apihelp-query+globaluserinfo-param-user": "Dä metmaacher, för dä noh Aanjahbe jefrohch weed. Wann nix aanjejovve es, es et der aktoälle Metmaacher.",
 	"apihelp-query+wikisets-example-1": "Zeisch de Jroppe vun Wikkis",
 	"apihelp-query+wikisets-example-2": "Zeisch de Zoote vun Jroppe vun Wikkis",
