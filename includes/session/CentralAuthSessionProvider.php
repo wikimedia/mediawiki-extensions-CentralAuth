@@ -241,13 +241,17 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 					$source = 'Local';
 				} else {
 					$centralUser = CentralAuthUser::getInstanceByName( $name );
-					$userIdentity = $this->userIdentityLookup
-						->getUserIdentityByName( $name, IDBAccessObject::READ_LATEST );
-					if ( $centralUser->exists() &&
-						( $centralUser->isAttached() ||
-							!$userIdentity || !$userIdentity->isRegistered() )
-					) {
+					$centralUserExists = $centralUser->exists();
+					if ( $centralUserExists && $centralUser->isAttached() ) {
 						$source = 'CentralAuth';
+					} elseif ( $centralUserExists ) {
+						$userIdentity = $this->userIdentityLookup
+							->getUserIdentityByName( $name, IDBAccessObject::READ_LATEST );
+						if ( !$userIdentity || !$userIdentity->isRegistered() ) {
+							$source = 'CentralAuth';
+						} else {
+							$source = 'Local';
+						}
 					} else {
 						$source = 'Local';
 					}
