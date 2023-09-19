@@ -123,6 +123,10 @@ class AbuseFilterHookHandler implements
 		$realValues['vars']['global_user_groups'] = 'global-user-groups';
 		// Uses: 'abusefilter-edit-builder-vars-global-user-editcount'
 		$realValues['vars']['global_user_editcount'] = 'global-user-editcount';
+		// Uses: 'abusefilter-edit-builder-vars-global-account-groups'
+		$realValues['vars']['global_account_groups'] = 'global-account-groups';
+		// Uses: 'abusefilter-edit-builder-vars-global-account-editcount'
+		$realValues['vars']['global_account_editcount'] = 'global-account-editcount';
 		return true;
 	}
 
