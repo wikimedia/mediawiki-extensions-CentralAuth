@@ -27,6 +27,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globale Bearbeitungsanzahl des Benutzers",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globale Gruppen, in denen der Benutzer ist",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Globale Bearbeitungsanzahl des Benutzers (bei der Kontoerstellung)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Globale Gruppen, in denen der Benutzer ist (bei der Kontoerstellung)",
 	"action-centralauth-createlocal": "Erstellung eines lokalen Benutzerkontos erzwingen",
 	"action-centralauth-lock": "globale Benutzerkonten zu sperren oder freizugeben",
 	"action-centralauth-merge": "Benutzerkonten zusammenzuführen",

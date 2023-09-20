@@ -12,6 +12,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število uporabnikovih urejanj",
 	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Globalno število urejanj uporabnika (ob ustvaritvi računa)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Globalne skupine, v katerih je uporabnik (ob ustvaritvi računa)",
 	"action-centralauth-createlocal": "prisilno ustvarjanje lokalnih računov",
 	"action-centralauth-lock": "zakleni ali odkleni globalni račun",
 	"action-centralauth-merge": "spoji računa",

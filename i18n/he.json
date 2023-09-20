@@ -22,6 +22,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "מספר העריכות הגלובלי של המשתמש",
 	"abusefilter-edit-builder-vars-global-user-groups": "קבוצות גלובליות שהמשתמש הזה חבר בהן",
+	"abusefilter-edit-builder-vars-global-account-editcount": "מניין העריכות הגלובלי של המשתמש (בזמן יצירת החשבון)",
+	"abusefilter-edit-builder-vars-global-account-groups": "קבוצות גלובליות שהמשתמש נמצא בהן (בזמן יצירת חשבון)",
 	"action-centralauth-createlocal": "לכפות יצירה של חשבון מקומי",
 	"action-centralauth-lock": "לנעול או לבטל נעילה של חשבונות גלובליים",
 	"action-centralauth-merge": "למזג את החשבונות שלהם",
