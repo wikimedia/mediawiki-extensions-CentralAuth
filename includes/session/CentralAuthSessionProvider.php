@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
@@ -456,8 +457,12 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		// Reset the user's password to something invalid and reset the token,
 		// if it's not already invalid.
-		$passwordFactory = new PasswordFactory();
-		$passwordFactory->init( RequestContext::getMain()->getConfig() );
+		$config = RequestContext::getMain()->getConfig();
+		$passwordFactory = new PasswordFactory(
+			$config->get( MainConfigNames::PasswordConfig ),
+			$config->get( MainConfigNames::PasswordDefault )
+		);
+
 		try {
 			$password = $passwordFactory->newFromCiphertext( $centralUser->getPassword() );
 		} catch ( PasswordError $e ) {

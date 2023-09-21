@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IDatabase;
 
@@ -98,8 +99,11 @@ class CentralAuthTestUser {
 		$this->username = $username;
 		$this->password = $password;
 
-		$passwordFactory = new PasswordFactory();
-		$passwordFactory->init( RequestContext::getMain()->getConfig() );
+		$config = RequestContext::getMain()->getConfig();
+		$passwordFactory = new PasswordFactory(
+			$config->get( MainConfigNames::PasswordConfig ),
+			$config->get( MainConfigNames::PasswordDefault )
+		);
 
 		$attrs += [
 			'gu_id' => '1000',

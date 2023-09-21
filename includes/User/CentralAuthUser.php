@@ -38,6 +38,7 @@ use MediaWiki\Extension\CentralAuth\LocalUserNotFoundException;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Title\Title;
@@ -2187,8 +2188,12 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( $passwordMatchStatus->isGood() ) {
 				$this->logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
 
-				$passwordFactory = new PasswordFactory();
-				$passwordFactory->init( RequestContext::getMain()->getConfig() );
+				$config = RequestContext::getMain()->getConfig();
+				$passwordFactory = new PasswordFactory(
+					$config->get( MainConfigNames::PasswordConfig ),
+					$config->get( MainConfigNames::PasswordDefault )
+				);
+
 				if ( $passwordFactory->needsUpdate( $passwordMatchStatus->getValue() ) ) {
 					DeferredUpdates::addCallableUpdate( function () use ( $password ) {
 						if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
@@ -2299,8 +2304,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @throws PasswordError
 	 */
 	private function getPasswordFromString( $encrypted, $salt ) {
-		$passwordFactory = new PasswordFactory();
-		$passwordFactory->init( RequestContext::getMain()->getConfig() );
+		$config = RequestContext::getMain()->getConfig();
+		$passwordFactory = new PasswordFactory(
+			$config->get( MainConfigNames::PasswordConfig ),
+			$config->get( MainConfigNames::PasswordDefault )
+		);
 
 		if ( preg_match( '/^[0-9a-f]{32}$/', $encrypted ) ) {
 			$encrypted = ":B:{$salt}:{$encrypted}";
@@ -2845,8 +2853,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string[] Two-element array with salt and hash
 	 */
 	protected function saltedPassword( $password ) {
-		$passwordFactory = new PasswordFactory();
-		$passwordFactory->init( RequestContext::getMain()->getConfig() );
+		$config = RequestContext::getMain()->getConfig();
+		$passwordFactory = new PasswordFactory(
+			$config->get( MainConfigNames::PasswordConfig ),
+			$config->get( MainConfigNames::PasswordDefault )
+		);
+
 		return [
 			'',
 			$passwordFactory->newFromPlaintext( $password )->toString()
