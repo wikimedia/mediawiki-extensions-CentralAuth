@@ -46,6 +46,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "使用者的全域編輯計數",
 	"abusefilter-edit-builder-vars-global-user-groups": "使用者所在的全域群組",
+	"abusefilter-edit-builder-vars-global-account-editcount": "(自帳號建立起) 使用者的全域編輯數",
+	"abusefilter-edit-builder-vars-global-account-groups": "(自帳號建立起) 使用者加入的全域群組",
 	"action-centralauth-createlocal": "強制建立本地帳號",
 	"action-centralauth-lock": "鎖定或解除鎖定全域帳號",
 	"action-centralauth-merge": "合併其帳號",
