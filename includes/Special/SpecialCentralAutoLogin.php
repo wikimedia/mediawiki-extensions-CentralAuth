@@ -756,7 +756,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$type = $type ?: $this->getRequest()->getVal( 'type', 'script' );
 
 		if ( $type === 'redirect' ) {
-			$returnUrlToken = $this->getRequest()->getVal( 'returnUrlToken' );
+			$returnUrlToken = $this->getRequest()->getVal( 'returnUrlToken', '' );
 			$returnUrl = $this->centralAuthUtilityService->detokenize( $returnUrlToken,
 				'centralautologin-returnurl', $this->sessionManager );
 			if ( $returnUrl === false ) {
