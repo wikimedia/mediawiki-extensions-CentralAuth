@@ -54,10 +54,21 @@ class AbuseFilterHookHandler implements
 		User $user
 	) {
 		$action = $vars->getComputedVariable( 'action' )->toString();
-		if ( in_array( $action, [ 'createaccount', 'autocreateaccount' ] ) ) {
+		if ( $action === 'createaccount' ) {
+			$vars->setVar( 'global_account_groups', [] );
+			$vars->setVar( 'global_account_editcount', 0 );
+		} elseif ( $action === 'autocreateaccount' ) {
 			$accountname = $vars->getComputedVariable( 'accountname' )->toString();
-			$vars->setLazyLoadVar( 'global_account_groups', 'global-user-groups', [ 'user' => $accountname ] );
-			$vars->setLazyLoadVar( 'global_account_editcount', 'global-user-editcount', [ 'user' => $accountname ] );
+			$vars->setLazyLoadVar(
+				'global_account_groups',
+				'global-user-groups',
+				[ 'user' => $accountname, 'new' => true ]
+			);
+			$vars->setLazyLoadVar(
+				'global_account_editcount',
+				'global-user-editcount',
+				[ 'user' => $accountname, 'new' => true ]
+			);
 		}
 	}
 
@@ -77,18 +88,22 @@ class AbuseFilterHookHandler implements
 	) {
 		if ( $method == 'global-user-groups' ) {
 			$user = CentralAuthUser::getInstanceByName( $parameters['user'] );
-			if ( $user->exists() && $user->isAttached() ) {
-				$result = $user->getGlobalGroups();
-			} else {
+			if ( !$user->exists() ) {
 				$result = [];
+			} elseif ( !( $parameters['new'] ?? false ) && !$user->isAttached() ) {
+				$result = [];
+			} else {
+				$result = $user->getGlobalGroups();
 			}
 			return false;
 		} elseif ( $method == 'global-user-editcount' ) {
 			$user = CentralAuthUser::getInstanceByName( $parameters['user'] );
-			if ( $user->exists() && $user->isAttached() ) {
-				$result = $user->getGlobalEditCount();
-			} else {
+			if ( !$user->exists() ) {
 				$result = 0;
+			} elseif ( !( $parameters['new'] ?? false ) && !$user->isAttached() ) {
+				$result = 0;
+			} else {
+				$result = $user->getGlobalEditCount();
 			}
 			return false;
 		} else {
