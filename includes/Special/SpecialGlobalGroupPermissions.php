@@ -142,7 +142,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Xml::input( 'wpGroup' ) ];
 
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 			$html .= Xml::buildForm( $fields, 'centralauth-globalgroupperms-creategroup-submit' );
 			$html .= Xml::closeElement( 'form' );
 			$html .= Xml::closeElement( 'fieldset' );
@@ -347,7 +346,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-reason'] = Xml::input( 'wpReason', 60 );
 		}
 
-		// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 		$html .= Xml::buildForm( $fields,  $editable ? 'centralauth-editgroup-submit' : null );
 
 		if ( $editable ) {
