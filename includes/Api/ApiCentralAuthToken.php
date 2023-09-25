@@ -92,9 +92,11 @@ class ApiCentralAuthToken extends ApiBase {
 
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
 
-		$tokenStore = $this->sessionManager->getTokenStore();
-		$key = $this->sessionManager->memcKey( 'api-token', $loginToken );
-		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
+		$oldKey = $this->sessionManager->memcKey( 'api-token', $loginToken );
+		$newKey = $this->sessionManager->makeTokenKey( 'api-token', $loginToken );
+		$this->sessionManager->setTokenData(
+			[ $oldKey, $newKey ], $data, $this->sessionManager->getTokenStore()::TTL_MINUTE
+		);
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'centralauthtoken' => $loginToken
