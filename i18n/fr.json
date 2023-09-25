@@ -64,6 +64,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur",
 	"abusefilter-edit-builder-vars-global-user-groups": "Groupes globaux auxquels appartient l’utilisateur",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Nombre global de modifications de l’utilisateur (sur création de compte)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Groupes globaux auxquels appartient l’utilisateur (sur création de compte)",
 	"action-centralauth-createlocal": "créer de force un compte local",
 	"action-centralauth-lock": "verrouiller ou déverrouiller les comptes globaux",
 	"action-centralauth-merge": "fusionner des comptes",
