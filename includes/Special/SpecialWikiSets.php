@@ -236,6 +236,7 @@ class SpecialWikiSets extends SpecialPage {
 				implode( "\n", $restWikis ), 40, 5, [ 'readonly' => true ] );
 			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason ?? '' );
 
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
 
 			$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
@@ -255,6 +256,7 @@ class SpecialWikiSets extends SpecialPage {
 				$restWikis, 3, [ 'style' => 'width:100%;' ]
 			);
 
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
 		}
 
@@ -346,6 +348,7 @@ class SpecialWikiSets extends SpecialPage {
 		$this->getOutput()->addHTML(
 			"<fieldset><legend>{$legend}</legend><form action=\"{$url}\" method='post'>"
 		);
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 		$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit-delete' ) );
 		$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
 	}

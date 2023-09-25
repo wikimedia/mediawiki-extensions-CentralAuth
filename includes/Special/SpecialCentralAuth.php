@@ -952,6 +952,7 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::hidden( 'wpMethod', $action ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
+			// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 			Xml::buildForm(
 				[ 'centralauth-admin-reason' => Xml::input( 'reason',
 					false, false, [ 'id' => "{$action}-reason" ] ) ],
@@ -1017,6 +1018,7 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
 
+		// @phan-suppress-next-line SecurityCheck-DoubleEscaped taint-check tracks keys and values together
 		$form .= Xml::buildForm(
 			[
 				'centralauth-admin-status-locked' => $radioLocked,
