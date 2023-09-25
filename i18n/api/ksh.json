@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Amire80"
 		]
 	},
 	"apihelp-deleteglobalaccount-description": "Donn ene Metmaacher  met jemeinsamme Aanmäldonge fottschmiiße.",
 	"apihelp-deleteglobalaccount-example-1": "Donn dä Metmaacher „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">[[User:Example]]</code>“ met singe jemeinsamme Aanmäldonge fottschmiiße",
-	"apihelp-deleteglobalaccount-param-reason": "Dä Jrond för dä  Metmaacher fottzeschmiiße.",
+	"apihelp-deleteglobalaccount-param-reason": "Dä Jrond för dä Metmaacher fottzeschmiiße.",
 	"apihelp-deleteglobalaccount-param-user": "Dä Metmaacher zom Fottschmiiße.",
 	"apihelp-globaluserrights-description": "Donn dä Metmaacher en heh di jemeinsamm Jroppe eren udder uß dänne eruß.",
 	"apihelp-globaluserrights-example-1": "Donn dä Metmaacher en di jemeinsamm Jropp „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">bot</code>“ eren un uß dä Jroppe „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">sysop</code>“ un „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">bureaucrat</code>“ eruß.",

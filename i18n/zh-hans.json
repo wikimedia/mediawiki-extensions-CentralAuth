@@ -60,7 +60,8 @@
 			"StarrySky",
 			"Diskdance",
 			"Kishinsagi",
-			"Nervie"
+			"Nervie",
+			"LittlePaw365"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -521,7 +522,7 @@
 	"globalrenamerequest-reason-label": "申请原因",
 	"globalrenamerequest-save-error": "保存申请失败，请重试。",
 	"globalrenamerequest-status-text": "您的用户名更改申请当前进行中，并等待可以执行此操作的用户批准。您将在申请完成后接收到通知邮件。\n\n;当前用户名：\n:$1\n;申请的用户名：\n:$2",
-	"globalrenamerequest-status-title": "重命名申请等待批准",
+	"globalrenamerequest-status-title": "待批准的重命名申请",
 	"globalrenamerequest-submit-text": "申请用户名更改",
 	"globalrenamerequest-username-label": "当前用户名：",
 	"globalrenameuser": "重命名全域用户",

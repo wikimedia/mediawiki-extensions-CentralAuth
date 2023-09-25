@@ -7,7 +7,8 @@
 			"Mehran",
 			"Mjbmr",
 			"Reza1615",
-			"Beginneruser"
+			"Beginneruser",
+			"Amire80"
 		]
 	},
 	"apierror-centralauth-badtoken": "بلیط ورود سراسری معتبر نیست.",
@@ -17,7 +18,7 @@
 	"apierror-centralauth-renameinprogress": "این کاربر در حال تغییرنام داده شدن است، امکان تغییرنام نیست.",
 	"apihelp-centralauthtoken-description": "دریافت یک بلیط ورود متمرکز برای ارسال یک  درخواست تأییدشده به یک ویکی متصل شده.",
 	"apihelp-centralauthtoken-example-1": "دریافت یک بلیط ورود متمرکز",
-	"apihelp-centralauthtoken-summary": "دریافت یک بلیط ورود متمرکز برای ارسال یک  درخواست تأییدشده به یک ویکی متصل شده.",
+	"apihelp-centralauthtoken-summary": "دریافت یک بلیط ورود متمرکز برای ارسال یک درخواست تأییدشده به یک ویکی متصل شده.",
 	"apihelp-deleteglobalaccount-description": "حذف یک کاربر سراسری",
 	"apihelp-deleteglobalaccount-example-1": "حذف حساب سراسری برای [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "علت حذف نمودن کاربر",

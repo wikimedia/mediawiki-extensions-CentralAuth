@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Volvox"
+			"Volvox",
+			"Amire80"
 		]
 	},
 	"apierror-centralauth-badusername": "De Benotzernumm \"$1\" kann op dëser Wiki net benotzt ginn",
@@ -29,5 +30,5 @@
 	"apihelp-query+globaluserinfo-description": "Informatiounen iwwer e globale Benotzer weisen.",
 	"apihelp-query+globaluserinfo-summary": "Informatiounen iwwer e globale Benotzer weisen.",
 	"apihelp-query+wikisets-param-orderbyname": "Resultater nom Numm zortéieren",
-	"apihelp-setglobalaccountstatus-param-reason": "Grond fir dem  Benotzer säi Status z'änneren."
+	"apihelp-setglobalaccountstatus-param-reason": "Grond fir dem Benotzer säi Status z'änneren."
 }
