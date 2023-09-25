@@ -477,9 +477,7 @@ class CentralAuthHooks implements
 				return false;
 			}
 
-			$blocks = $block instanceof CompositeBlock ?
-				$block->getOriginalBlocks() :
-				[ $block ];
+			$blocks = $block->toArray();
 
 			$blocks[] = $hideUserBlock;
 			$block = new CompositeBlock( [
