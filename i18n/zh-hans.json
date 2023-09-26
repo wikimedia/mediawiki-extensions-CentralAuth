@@ -60,7 +60,8 @@
 			"阿pp",
 			"飞舞回堂前",
 			"Kishinsagi",
-			"Nervie"
+			"Nervie",
+			"LittlePaw365"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑次数",
@@ -504,7 +505,7 @@
 	"globalrenamerequest-self-error": "您不能核准此请求，因为您不能重命名自己的账号。",
 	"globalrenamerequest-self-warning": "您仅能拒绝此请求，因为您不能重命名自己的账号。",
 	"globalrenamerequest-status-text": "您的用户名更改申请当前进行中，并等待可以执行此操作的用户批准。您将在申请完成后接收到通知邮件。\n\n;当前用户名：\n:$1\n;申请的用户名：\n:$2",
-	"globalrenamerequest-status-title": "重命名申请等待批准",
+	"globalrenamerequest-status-title": "待批准的重命名申请",
 	"globalrenamerequest-submit-text": "申请用户名更改",
 	"globalrenamerequest-username-label": "当前用户名：",
 	"globalrenameuser": "重命名全域用户",
