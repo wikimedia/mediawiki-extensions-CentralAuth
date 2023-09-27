@@ -103,7 +103,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$user = $this->getRegisteredTestUser();
 		$status = $this->newSpecialPage()->fetchUser( $inputFunction( $user ) );
 
-		$this->assertTrue( $status->isGood() );
+		$this->assertStatusGood( $status );
 		$value = $status->getValue();
 		$this->assertEquals( $user->getName(), $value->getName() );
 		$this->assertEquals( $user->getId(), $value->getId() );
@@ -119,23 +119,16 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	 * @dataProvider provideFetchUserNonexistent
 	 * @covers ::fetchUser
 	 */
-	public function testFetchUserNonexistent( string $input, array $error ) {
+	public function testFetchUserNonexistent( string $input, string $error ) {
 		$status = $this->newSpecialPage()->fetchUser( $input );
-		$this->assertFalse( $status->isGood() );
-		$this->assertEquals( [ $error ], $status->getErrorsArray() );
+		$this->assertStatusError( $error, $status );
 	}
 
 	public static function provideFetchUserNonexistent() {
-		yield 'Blank' => [ '', [ 'nouserspecified' ] ];
-		yield 'Username' => [
-			'Not in use',
-			[ 'nosuchusershort', 'Not in use' ]
-		];
-		yield 'Invalid username' => [
-			'Invalid@username',
-			[ 'nosuchusershort', 'Invalid@username' ]
-		];
-		yield 'ID' => [ '#12345678', [ 'noname', 12345678 ] ];
+		yield 'Blank' => [ '', 'nouserspecified' ];
+		yield 'Username' => [ 'Not in use', 'nosuchusershort' ];
+		yield 'Invalid username' => [ 'Invalid@username', 'nosuchusershort' ];
+		yield 'ID' => [ '#12345678', 'noname' ];
 	}
 
 	/**

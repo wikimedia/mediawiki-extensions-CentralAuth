@@ -34,9 +34,9 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiUnitTestCase {
 		$status = $this->special->validateGroupName( $name );
 
 		if ( $result ) {
-			$this->assertSame( $result, $status->getMessage()->getKey() );
+			$this->assertStatusError( $result, $status );
 		} else {
-			$this->assertTrue( $status->isGood() );
+			$this->assertStatusGood( $status );
 		}
 	}
 

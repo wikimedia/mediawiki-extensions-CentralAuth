@@ -43,7 +43,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			'reason' => 'Test reason',
 		] );
 
-		$this->assertFalse( $result->isGood() );
+		$this->assertStatusNotGood( $result );
 		$this->assertSame( 0, User::newFromName( $name )->getId() );
 	}
 
@@ -76,8 +76,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			'reason' => 'Test reason',
 		] );
 
-		$this->assertFalse( $result->isGood() );
-		$this->assertSame( 'centralauth-createlocal-no-global-account', $result->getMessage()->getKey() );
+		$this->assertStatusError( 'centralauth-createlocal-no-global-account', $result );
 		$this->assertSame( 0, User::newFromName( $name )->getId() );
 	}
 
@@ -99,7 +98,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			'reason' => 'Test reason',
 		] );
 
-		$this->assertFalse( $result->isGood() );
+		$this->assertStatusNotGood( $result );
 		$this->assertNotEquals( 0, User::newFromName( $name )->getId() );
 	}
 
@@ -122,7 +121,7 @@ class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
 			'reason' => 'Test reason',
 		] );
 
-		$this->assertTrue( $result->isGood() );
+		$this->assertStatusGood( $result );
 		$this->assertNotEquals( 0, User::newFromName( $name )->getId() );
 	}
 }

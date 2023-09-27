@@ -51,7 +51,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 			( new HookRunner( $this->hookContainer ) )->onApiBeforeMain( $processor );
 			$this->fail( 'Expected ApiUsageException' );
 		} catch ( ApiUsageException $ex ) {
-			$this->assertSame( $error, $ex->getMessageObject()->getKey() );
+			$this->assertStatusError( $error, $ex->getStatusValue() );
 		}
 	}
 
