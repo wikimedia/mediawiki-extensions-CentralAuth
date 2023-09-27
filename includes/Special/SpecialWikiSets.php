@@ -36,10 +36,10 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @return string
+	 * @inheritDoc
 	 */
 	public function getDescription() {
-		return $this->msg( 'centralauth-editset' )->text();
+		return $this->msg( 'centralauth-editset' );
 	}
 
 	/**
