@@ -103,9 +103,8 @@ abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationT
 		$loginToken = 'testtoken' . ++$this->idCounter;
 
 		$sessionManager = CentralAuthServices::getSessionManager();
-		$oldKey = $sessionManager->memcKey( 'api-token', $loginToken );
-		$newKey = $sessionManager->makeTokenKey( 'api-token', $loginToken );
-		$sessionManager->setSessionData( [ $oldKey, $newKey ], $data, 60 * 60 );
+		$key = $sessionManager->makeTokenKey( 'api-token', $loginToken );
+		$sessionManager->getTokenStore()->set( $key, $data, 60 * 60 );
 
 		return $loginToken;
 	}

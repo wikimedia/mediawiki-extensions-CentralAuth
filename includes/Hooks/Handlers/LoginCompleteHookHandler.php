@@ -215,8 +215,7 @@ class LoginCompleteHookHandler implements
 		// Create a new token to pass to Special:CentralLogin/start (central wiki)
 		$tokenStore = $this->sessionManager->getTokenStore();
 		$token = MWCryptRand::generateHex( 32 );
-		$oldKey = $this->sessionManager->memcKey( 'central-login-start-token', $token );
-		$newKey = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
+		$key = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
 		$data = [
 			'secret'	=> $secret,
 			'name'	  => $centralUser->getName(),
@@ -225,7 +224,7 @@ class LoginCompleteHookHandler implements
 			'secureCookies' => $secureCookies, // (bool) cookies secure or not
 		];
 		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
-		$this->sessionManager->setTokenData( [ $oldKey, $newKey ], $data, $tokenStore::TTL_MINUTE );
+		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
 
 		$query = [ 'token' => $token ];
 
