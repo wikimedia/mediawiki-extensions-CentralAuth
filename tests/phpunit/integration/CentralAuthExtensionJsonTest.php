@@ -25,6 +25,12 @@ use MediaWiki\Tests\ExtensionJsonTestBase;
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
 class CentralAuthExtensionJsonTest extends ExtensionJsonTestBase {
+
+	protected function setUp(): void {
+		parent::setUp();
+		$this->markTestSkippedIfExtensionNotLoaded( 'AbuseFilter' );
+	}
+
 	/** @inheritDoc */
 	protected string $extensionJsonPath = __DIR__ . '/../../../extension.json';
 
