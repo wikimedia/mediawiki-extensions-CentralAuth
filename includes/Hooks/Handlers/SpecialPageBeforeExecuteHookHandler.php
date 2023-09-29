@@ -149,7 +149,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			if ( $request->getCheck( 'returnto' ) ) {
 				return true;
 			} else {
-				$special->getOutput()->redirect( Title::newMainPage( $special->getContext() ) );
+				$special->getOutput()->redirect( Title::newMainPage( $special->getContext() )->getLocalURL() );
 				return false;
 			}
 		}
