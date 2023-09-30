@@ -229,7 +229,6 @@ class RenameQueueTablePager extends TablePager {
 		return Html::element( 'a',
 			[
 				'href' => SpecialPage::getTitleFor( 'GlobalRenameQueue', $target )->getFullURL(),
-				'class' => 'mw-ui-progressive',
 			],
 			$this->msg( $label )->text()
 		);
