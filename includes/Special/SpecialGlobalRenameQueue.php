@@ -457,9 +457,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					'name' => 'approve',
 					'value' => $this->msg( 'globalrenamequeue-request-approve-text' )->text(),
 					'id' => 'mw-renamequeue-approve',
-					'attribs' => [
-						'class' => 'mw-ui-flush-right',
-					],
 					'flags' => [ 'primary', 'progressive' ],
 					'framed' => true
 				] );
@@ -471,9 +468,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				'name' => 'deny',
 				'value' => $this->msg( 'globalrenamequeue-request-deny-text' )->text(),
 				'id' => 'mw-renamequeue-deny',
-				'attribs' => [
-					'class' => 'mw-ui-flush-right',
-				],
 				'flags' => [ 'destructive' ],
 				'framed' => true
 			] )
@@ -481,9 +475,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				'name' => 'cancel',
 				'value' => $this->msg( 'globalrenamequeue-request-cancel-text' )->text(),
 				'id' => 'mw-renamequeue-cancel',
-				'attribs' => [
-					'class' => 'mw-ui-flush-left',
-				]
 			] )
 			->setId( 'mw-globalrenamequeue-request' );
 
