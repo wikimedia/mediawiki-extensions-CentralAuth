@@ -40,7 +40,8 @@
 			"カッパ鳥",
 			"Matma Rex",
 			"春春眠眠",
-			"背番号4のエース"
+			"背番号4のエース",
+			"Anonymoususer12321"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
@@ -251,6 +252,7 @@
 	"centralauth-globalgroupperms-group-disabled": "(このウィキでは有効になっていません)",
 	"centralauth-globalgroupperms-group-listmembers": "メンバーリスト",
 	"centralauth-globalgroupperms-group-wikiset": "このグループが有効化されているウィキ集合: $1",
+	"centralauth-globalgroupperms-groups-intro": "このウィキファームで設定されている全てのグローバルユーザーグループと、それらに関連付けられた利用者権限およびウィキ集合の一覧です。権限を持つ利用者は、グループから全ての権限を除去することでグループを削除できます。",
 	"centralauth-globalgroupperms-management": "管理",
 	"centralauth-globalgroupperms-newgroupname": "新規グループ名:",
 	"centralauth-globalgroupperms-nogroups": "グローバルグループが定義されていません。",
@@ -446,6 +448,7 @@
 	"globalrenamequeue-column-rq-status": "状態",
 	"globalrenamequeue-column-rq-wiki": "ローカル ウィキ",
 	"globalrenamequeue-desc": "グローバルな名前変更要求を処理する",
+	"globalrenamequeue-email-body-approved-with-note": "「{{GENDER:$1|$1}}」を「{{GENDER:$1|$2}}」に利用者名変更する依頼が承認されました。\n\n備考: $3",
 	"globalrenamequeue-email-body-approved": "「{{GENDER:$1|$1}}」を「{{GENDER:$1|$2}}」に利用者名変更する依頼が承認されました。",
 	"globalrenamequeue-email-body-rejected": "「{{GENDER:$1|$1}}」を「{{GENDER:$1|$2}}」に利用者名変更する依頼が却下されました。\n\n備考: $3",
 	"globalrenamequeue-email-subject-approved": "利用者名変更依頼が承認されました",

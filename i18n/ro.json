@@ -16,7 +16,8 @@
 			"WebSourceContentRO",
 			"XXN",
 			"McDutchie",
-			"NGC 54"
+			"NGC 54",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupuri globale de care aparține utilizatorul",
@@ -345,7 +346,7 @@
 	"centralauth-rightslog-entry-setrename": "a redenumit setul de wikiuri „$2” în „$1”",
 	"centralauth-rightslog-entry-usergroups": "a schimbat pentru $1 apartenența la grupul global de la $2 la $3",
 	"centralauth-rightslog-header": "Acest jurnal conține operațiuni pe grupurile globale: schimbări de membri și permisiuni",
-	"centralauth-rightslog-name": "Jurnalul drepturilor globale",
+	"centralauth-rightslog-name": "Jurnal drepturi globale",
 	"centralauth-rightslog-set-optin": "pe bază de opțiune explicită",
 	"centralauth-rightslog-set-optout": "pe bază de retragere explicită",
 	"centralauth-ro": "Informații cont global",
