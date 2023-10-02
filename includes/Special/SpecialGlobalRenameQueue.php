@@ -24,7 +24,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
 use ExtensionRegistry;
-use Html;
 use HTMLForm;
 use LogEventsList;
 use MailAddress;
@@ -127,6 +126,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$action = array_shift( $navigation );
 
 		$this->outputHeader();
+		$this->addSubtitleLinks();
 
 		switch ( $action ) {
 			case self::PAGE_OPEN_QUEUE:
@@ -159,32 +159,43 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	/**
-	 * @param string $page Active page
+	 * @inheritDoc
 	 */
-	protected function commonNav( $page ) {
-		$html = Html::openElement( 'div', [
-			'class' => 'mw-ui-button-group',
-		] );
-		$html .= Html::element( 'a',
-			[
-				'href' => $this->getPageTitle( self::PAGE_OPEN_QUEUE )->getFullURL(),
-				'class' => 'mw-ui-button' . (
-					( $page === self::PAGE_OPEN_QUEUE ) ? ' mw-ui-progressive' : ''
-				),
-			],
-			$this->msg( 'globalrenamequeue-nav-openqueue' )->text()
-		);
-		$html .= Html::element( 'a',
-			[
-				'href' => $this->getPageTitle( self::PAGE_CLOSED_QUEUE )->getFullURL(),
-				'class' => 'mw-ui-button' .
-					( ( $page === self::PAGE_CLOSED_QUEUE ) ? ' mw-ui-progressive' : '' ),
-			],
-			$this->msg( 'globalrenamequeue-nav-closedqueue' )->text()
-		);
-		$html .= Html::closeElement( 'div' );
-		$html .= Html::element( 'div', [ 'style' => 'clear:both' ] );
-		$this->getOutput()->addHtml( $html );
+	public function getAssociatedNavigationLinks() {
+		return [
+			$this->getPageTitle( self::PAGE_OPEN_QUEUE )->getPrefixedText(),
+			$this->getPageTitle( self::PAGE_CLOSED_QUEUE )->getPrefixedText(),
+		];
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getShortDescription( string $path = '' ): string {
+		switch ( $path ) {
+			case $this->getPageTitle( self::PAGE_OPEN_QUEUE )->getText():
+				return $this->msg( 'globalrenamequeue-nav-openqueue' )->text();
+			case $this->getPageTitle( self::PAGE_CLOSED_QUEUE )->getText():
+				return $this->msg( 'globalrenamequeue-nav-closedqueue' )->text();
+			default:
+				return '';
+		}
+	}
+
+	private function addSubtitleLinks() {
+		if ( $this->getSkin()->supportsMenu( 'associated-pages' ) ) {
+			// Already shown by the skin
+			return;
+		}
+		$links = [];
+		foreach ( $this->getAssociatedNavigationLinks() as $titleText ) {
+			$title = Title::newFromText( $titleText );
+			$links[] = $this->getLinkRenderer()->makeKnownLink(
+				$title,
+				$this->getShortDescription( $title->getText() )
+			);
+		}
+		$this->getOutput()->addSubtitle( $this->getLanguage()->pipeList( $links ) );
 	}
 
 	/**
@@ -239,7 +250,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function handleOpenQueue() {
 		$this->commonPreamble( 'globalrenamequeue' );
-		$this->commonNav( self::PAGE_OPEN_QUEUE );
 		$this->outputFilterForm( $this->getCommonFormFieldsArray() );
 
 		$pager = new RenameQueueTablePager(
@@ -257,7 +267,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function handleClosedQueue() {
 		$this->commonPreamble( 'globalrenamequeue' );
-		$this->commonNav( self::PAGE_CLOSED_QUEUE );
 		$formDescriptor = array_merge(
 			$this->getCommonFormFieldsArray(),
 			[
@@ -348,7 +357,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->commonPreamble( 'globalrenamequeue-request-status-title',
 			[ $req->getName(), $req->getNewName() ]
 		);
-		$this->commonNav( self::PAGE_PROCESS_REQUEST );
 
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
@@ -584,12 +592,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
 
 		$out = $this->getOutput();
-		$out->addModuleStyles( [
-			'mediawiki.ui',
-			'mediawiki.ui.button',
-			'mediawiki.ui.input',
-			'ext.centralauth.globalrenamequeue.styles',
-		] );
+		$out->addModuleStyles( 'ext.centralauth.globalrenamequeue.styles' );
 		$out->addModules( 'ext.centralauth.globalrenamequeue' );
 
 		$status = $htmlForm->show();
