@@ -99,7 +99,7 @@
 	"centralauth-admin-suppressreason": "$1 тарафынан түбәндәге сәбәп менән глобаль кимәлдә йәшерелгән: $2",
 	"centralauth-admin-title": "$1 өсөн глобаль иҫәп яҙмаһы менеджеры",
 	"centralauth-admin-title-ro": "$1 өсөн глобаль иҫәп яҙмаһы мәғлүмәттәре",
-	"centralauth-admin-too-many-edits": "Глобаль иҫәп яҙмаһы $2 артыҡ {{PLURAL:$2|төҙәтеүгә}} эйә һәм йәшерелә алмай.",
+	"centralauth-admin-too-many-edits": "\"<nowiki>$1</nowiki>\" глобаль иҫәп яҙмаһы $2 артыҡ {{PLURAL:$2|төҙәтеүгә}} эйә һәм йәшерелә алмай.",
 	"centralauth-admin-unattached": "бәйләнмәгән",
 	"centralauth-admin-unhide-nonexistent": "Хата: \"<nowiki>$1</nowiki>\" глобаль иҫәп яҙмаһы юҡ.",
 	"centralauth-admin-unmerge": "Һайланғандарҙы айырырға",
