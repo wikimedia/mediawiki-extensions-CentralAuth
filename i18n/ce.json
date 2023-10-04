@@ -23,7 +23,7 @@
 	"centralauth-admin-action-hide-oversight": "Дуьззина къайладаха хаьржина декъашхойн дӀайаздарш",
 	"centralauth-admin-action-lock-lock": "Хаьржина декъашхошна блоктоха",
 	"centralauth-admin-action-lock-nochange": "Ма хийца блоктохарш",
-	"centralauth-admin-action-lock-unlock": "Хаьржина декъашхошна тӀера блокдӀаяккха",
+	"centralauth-admin-action-lock-unlock": "Хаьржина декъашхошна тӀера блокдӀайаккха",
 	"centralauth-admin-already-unmerged": "ТӀехдалийтар $1, хӀинцале вовшахдаьккхина",
 	"centralauth-admin-bad-input": "ГӀалате вовшах тохар харжар",
 	"centralauth-admin-blocked-reason": "Бахьана: $1",
