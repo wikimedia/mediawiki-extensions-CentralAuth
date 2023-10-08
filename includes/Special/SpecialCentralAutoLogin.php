@@ -621,8 +621,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// If it's not a script or redirect callback, just go for it.
 			if ( !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true ) ) {
-				$this->doFinalOutput( true, 'success' );
 				ScopedCallback::consume( $delay );
+				$this->doFinalOutput( true, 'success' );
 				return;
 			}
 
@@ -637,9 +637,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 			}
 			if ( !$centralUser->isAttached() ) {
+				ScopedCallback::consume( $delay );
 				$this->doFinalOutput(
 					false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
-				ScopedCallback::consume( $delay );
 				return;
 			}
 			// Set the user on the session now that we know it exists.
