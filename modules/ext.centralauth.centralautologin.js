@@ -5,21 +5,22 @@
 		return;
 	}
 
-	// TODO: Disable on Special:Userlogin if the autologin via SpecialPageBeforeExecute
-	//   proves reliable.
+	// If we are on Special:Userlogin and logged out, type=redirect autologin failed.
+	// No point in trying the less reliable type=script version.
+	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
+		return;
+	}
 
 	// Do we already know we're logged out centrally?
-	if ( mw.config.get( 'wgCanonicalSpecialPageName' ) !== 'Userlogin' ) {
-		try {
-			if ( +localStorage.getItem( 'CentralAuthAnon' ) > Date.now() ) {
-				return;
-			}
-		} catch ( e ) {}
-
-		// Optimisation: Avoid $.cookie() to reduce depencency cost for all pages.
-		if ( /(^|; )CentralAuthAnon=1/.test( document.cookie ) ) {
+	try {
+		if ( +localStorage.getItem( 'CentralAuthAnon' ) > Date.now() ) {
 			return;
 		}
+	} catch ( e ) {}
+
+	// Optimisation: Avoid $.cookie() to reduce depencency cost for all pages.
+	if ( /(^|; )CentralAuthAnon=1/.test( document.cookie ) ) {
+		return;
 	}
 
 	// Perform the actual logged-in check via a <script> tag.
