@@ -179,7 +179,8 @@ class CentralAuthUtilityService {
 
 		LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',
-			'status' => strval( $sv ),
+			'successful' => $sv->isGood(),
+			'status' => ( $sv->getErrorsArray() ?: $sv->getWarningsArray() )[0][0] ?? '-',
 		] );
 		return $sv;
 	}
