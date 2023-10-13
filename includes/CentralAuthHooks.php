@@ -682,7 +682,7 @@ class CentralAuthHooks implements
 	 */
 	public function onTestCanonicalRedirect( $request, $title, $output ) {
 		return $title->getNamespace() !== NS_SPECIAL ||
-			strncmp( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/', 25 ) !== 0;
+			!str_starts_with( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/' );
 	}
 
 	/**
