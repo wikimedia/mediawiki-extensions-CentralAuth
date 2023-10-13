@@ -704,10 +704,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 						$this->msg( 'centralauth-centralautologin-logged-in' )
 							->inLanguage( $code )->plain(),
 
-					'centralauth-centralautologin-logged-in-nouser' =>
-						$this->msg( 'centralauth-centralautologin-logged-in-nouser' )
-							->inLanguage( $code )->plain(),
-
 					'centralautologin' =>
 						$this->msg( 'centralautologin' )
 							->inLanguage( $code )->plain(),

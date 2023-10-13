@@ -156,7 +156,6 @@
 	"centralauth-centralautologin-corsfail": "CORS origin check failed.",
 	"centralauth-centralautologin-desc": "This special page is used internally by MediaWiki.\nWhen you visit a linked domain while not logged in, the central login system uses this page to determine whether you are logged in to the central domain.\nYou have requested this page without providing any authentication data, so it does nothing.",
 	"centralauth-centralautologin-logged-in": "You are centrally logged in as $1. Reload the page to apply your user settings.",
-	"centralauth-centralautologin-logged-in-nouser": "You are centrally logged in. Reload the page to apply your user settings.",
 	"centralauth-centralautologin-lostsession": "Session data was lost.",
 	"centralauth-centralautologin-notposted": "Central login form must be posted.",
 	"centralauth-complete": "Login unification complete!",
