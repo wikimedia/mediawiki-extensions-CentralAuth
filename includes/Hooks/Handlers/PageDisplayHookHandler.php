@@ -25,6 +25,7 @@ use Config;
 use ExtensionRegistry;
 use Html;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
+use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\BeforePageDisplayHook;
@@ -49,9 +50,14 @@ class PageDisplayHookHandler implements
 	}
 
 	/**
+	 * This does several things; the most important one is to trigger autologin if the user
+	 * is not logged in.
+	 *
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 * @todo Add 1x1 images somewhere besides page content
+	 *
+	 * @see SpecialCentralAutoLogin
 	 */
 	public function onBeforePageDisplay( $out, $skin ): void {
 		if ( $out->getRequest()->getSession()->getProvider()

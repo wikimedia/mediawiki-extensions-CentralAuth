@@ -11,6 +11,7 @@ use Html;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\EventLogging\EventLogging;
@@ -35,9 +36,26 @@ use Wikimedia\ScopedCallback;
 use Xml;
 
 /**
- * Unlisted Special page to set requisite cookies for being logged into this wiki.
+ * Unlisted special page that handles central autologin and edge login, and some related
+ * functionality.
  *
- * @ingroup Extensions
+ * It does different things depending on the subpage name:
+ * - /start, /checkLoggedIn, /createSession, /validateSession, /setCookies: these are successive
+ *   steps of autologin/edge login, with each step calling the next one via a redirect.
+ *   (/start is somewhat optional.) The 'type' get parameter tells how the chain was triggered
+ *   (via a script tag, a visible or invisible img tag, or top-level redirect); the final step
+ *   needs to generate a response accordingly.
+ * - /refreshCookies: used right after login to update the central session cookies.
+ * - /deleteCookies: used after logout.
+ * - /toolslist: a helper used after successful autologin to update the skin's personal toolbar.
+ * See the inline comments in the big switch() construct for the description of each.
+ *
+ * @see CentralAuthHooks::getDomainAutoLoginHtml()
+ * @see CentralAuthHooks::getEdgeLoginHTML()
+ * @see PageDisplayHookHandler::onBeforePageDisplay()
+ * @see SpecialPageBeforeExecuteHookHandler::onSpecialPageBeforeExecute()
+ * @see SpecialCentralLogin
+ * @see https://www.mediawiki.org/wiki/Extension:CentralAuth/authentication
  */
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var string */

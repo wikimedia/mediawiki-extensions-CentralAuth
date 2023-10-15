@@ -10,6 +10,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\LoginCompleteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
@@ -23,6 +24,21 @@ use User;
 use WebRequest;
 use Wikimedia\ScopedCallback;
 
+/**
+ * Special page for handling the central login process, which is done right after a successful
+ * login to create a session on the central wiki.
+ *
+ * It does different things depending on the subpage name:
+ * - /start: Creates the stub central session and redirects to /complete. {@see self::doLoginStart()}
+ * - /complete: Unstubs the central session, and redirects back to where the central login was
+ *   started from. {@see self::doLoginComplete()}
+ * - /status: Shows a success/error page and triggers edge login. Doesn't seem to be used.
+ *
+ * @see LoginCompleteHookHandler::onUserLoginComplete()
+ * @see LoginCompleteHookHandler::onTempUserCreatedRedirect()
+ * @see SpecialCentralAutoLogin
+ * @see https://www.mediawiki.org/wiki/Extension:CentralAuth/authentication
+ */
 class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	/** @var Session */
@@ -116,8 +132,30 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	/**
+	 * First step of central login. Runs on the central login wiki.
+	 * - Reads the token store data stashed by getRedirectUrl() (using the token passed in the URL).
+	 * - Creates a stub central session (basically a session that stores the username under
+	 *   'pending_name' instead of 'user', and is not valid for authentication) in the central
+	 *   session backend.
+	 * - Creates the local session (which makes CentralAuthSessionProvider store the session
+	 *   metadata in the normal session backend, and issue normal and central session cookies).
+	 *   Since CentralAuthSessionProvider checks the central session when validating the local
+	 *   session, in effect this will also be a stub session until the central session is unstubbed.
+	 *   The "remember me" flag is forced off, since that would use the token mechanism which
+	 *   doesn't require a valid session and so would ignore stubbing. It will be updated later
+	 *   via Special:CentralAutoLogin/refreshCookies.
+	 * - Redirects to /complete, and uses the token store and a GET parameter to pass the session
+	 *   ID and the login secret from getRedirectUrl() in a secure way. It uses the
+	 *   CentralAuthSilentLoginRedirect hook so the redirect can take into account URL modifications
+	 *   not understood by WikiMap, such as a mobile domain.
+	 *
 	 * @param string $token
 	 * @throws Exception
+	 *
+	 * @see LoginCompleteHookHandler::getRedirectUrl()
+	 * @see CentralAuthSessionProvider
+	 * @see CentralAuthSilentLoginRedirect
+	 * @see SpecialCentralAutoLogin
 	 */
 	protected function doLoginStart( $token ) {
 		$key = $this->sessionManager->memcKey( 'central-login-start-token', $token );
@@ -227,8 +265,24 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	/**
+	 * Second step of central login. Runs on the wiki where the original login happened.
+	 * - Verifies the login secret that was passed along the redirect chain via the token store,
+	 *   against the login secret that was stored in the local session by getRedirectUrl().
+	 * - Unstubs the central session, and sets the local session and isues cookies for it.
+	 * - Shows a login page with edge login icons, or redirects and sets up edge login pixels to
+	 *   be shown on the next request, depending on whether returning to a different page was
+	 *   requested. Lets extensions influence this via the CentralAuthPostLoginRedirect hook.
+	 *
+	 * Security-wise, we know we are on the same redirect chain as the original login because of
+	 * the tokenstore data. This wouldn't necessarily mean the user is the same - an attacker might
+	 * stop at some step in the redirect, and trick another user to continue from that step. But we
+	 * know this is the same user who did the login, because of the login secret in the local session.
+	 *
 	 * @param string $token
 	 * @throws Exception
+	 *
+	 * @see LoginCompleteHookHandler::getRedirectUrl()
+	 * @see CentralAuthPostLoginRedirect
 	 */
 	protected function doLoginComplete( $token ) {
 		$request = $this->getRequest();
@@ -287,6 +341,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$tokenStore->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
+		// This is a bit tricky. We start with a stub session with 'pending_name' and no 'user'.
+		// CentralAuthSessionManager::setCentralSession() preserves most of the previous data,
+		// but drops 'pending_name'. CentralAuthSessionProvider::persistSession() then sets 'user'
+		// because it doesn't see 'pending_name'.
 		$delay = $this->session->delaySave();
 		$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 		$this->session->setRememberUser( (bool)$attempt['remember'] );
