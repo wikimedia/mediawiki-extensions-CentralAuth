@@ -8,6 +8,8 @@
  * corresponds to an existing token set up by ApiCentralAuthToken.
  * If the header is present but invalid, it returns a
  * bogus SessionInfo to prevent other SessionProviders from establishing a session.
+ *
+ * @see \MediaWiki\Extension\CentralAuth\Api\ApiCentralAuthToken
  */
 class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 

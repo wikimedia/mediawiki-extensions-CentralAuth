@@ -38,6 +38,9 @@ use MWCryptRand;
  *
  * @ingroup API
  * @ingroup Extensions
+ * @see \MediaWiki\Extension\CentralAuth\Hooks\Handlers\ApiHookHandler::onAPIGetAllowedParams
+ * @see \CentralAuthApiSessionProvider
+ * @see \CentralAuthHeaderSessionProvider
  */
 class ApiCentralAuthToken extends ApiBase {
 	/** @var CentralAuthSessionManager */

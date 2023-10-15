@@ -15,11 +15,12 @@
 	"apierror-centralauth-notloggedin": "Anonymous users cannot obtain a centralauthtoken.",
 	"apierror-centralauth-renameinprogress": "The user is being renamed, cannot use.",
 	"apihelp-centralauthtoken-example-1": "Fetch a centralauthtoken",
+	"apihelp-centralauthtoken-extended-description": "Returns a token that can be use to authenticate API requests on other wikis. For action API requests, put it in the <var>centralauthtoken</var> GET parameter. For REST API requests, add an <code>Authorization: CentralAuthToken {token}</code> header. In MediaWiki frontend logic, you can use the <code>mediawiki.ForeignApi</code> ResourceLoader module.",
 	"apihelp-centralauthtoken-summary": "Fetch a centralauthtoken for making an authenticated request to an attached wiki.",
 	"apihelp-createlocalaccount-example-1": "Forcibly create a local account for [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Reason for creating the local account.",
 	"apihelp-createlocalaccount-param-username": "User to create the local account for.",
-	"apihelp-createlocalaccount-summary": "Forcibly create a local account",
+	"apihelp-createlocalaccount-summary": "Forcibly create a local account. The central account must exist.",
 	"apihelp-deleteglobalaccount-example-1": "Delete the global account for [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Reason for deleting the user.",
 	"apihelp-deleteglobalaccount-param-user": "User to delete.",
@@ -84,5 +85,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Reason for changing the user's status.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Optional MD5 of the expected current <userid>:<username>:<hidden>:<locked>, to detect edit conflicts. Set <locked> to 1 for locked, 0 for unlocked.",
 	"apihelp-setglobalaccountstatus-param-user": "User to change the status of.",
-	"apihelp-setglobalaccountstatus-summary": "Set a global user's status."
+	"apihelp-setglobalaccountstatus-summary": "Hide or lock (or unhide or unlock) a global user account."
 }
