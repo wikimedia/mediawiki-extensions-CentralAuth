@@ -138,7 +138,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 				'type' => 'redirect',
 				'returnUrlToken' => $returnUrlToken,
 				'wikiid' => WikiMap::getCurrentWikiId(),
-				'proto' => $request->detectProtocol(),
 				'mobile' => $isMobile ? 1 : null,
 			] );
 			$special->getOutput()->redirect( $url );

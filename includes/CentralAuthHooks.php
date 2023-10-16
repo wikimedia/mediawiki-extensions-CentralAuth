@@ -66,7 +66,6 @@ use OOUI\ButtonWidget;
 use OOUI\HorizontalLayout;
 use OOUI\IconWidget;
 use OutputPage;
-use RequestContext;
 use SpecialPage;
 use User;
 use UserArrayFromResult;
@@ -296,7 +295,6 @@ class CentralAuthHooks implements
 			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
 				'wikiid' => WikiMap::getCurrentWikiId(),
-				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 			] );
 			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
 			$inject_html .= Xml::element( 'img',
@@ -633,7 +631,6 @@ class CentralAuthHooks implements
 			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
 				'wikiid' => WikiMap::getCurrentWikiId(),
-				'proto' => RequestContext::getMain()->getRequest()->detectProtocol(),
 			] );
 			$html .= Xml::element( 'img',
 				[

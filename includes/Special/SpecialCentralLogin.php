@@ -219,16 +219,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$query = [ 'token' => $token ];
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
-		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-		$url = $wiki->getFullUrl( 'Special:CentralLogin/complete' );
-		// Ensure $url really is proto relative, and prepend the protocol of the original
-		// login. If the local wiki is using wgSecureLogin, it will be https.
-		$url = strstr( $url, '//' );
-
-		// currentProto = the login form's protocol, so we go back to here. May then redir to finalProto
-		$url = $info['currentProto'] . ':' . $url;
-
-		$url = wfAppendQuery( $url, $query ); // expands to PROTO_CURRENT if $url doesn't have protocol
+		$url = $wiki->getCanonicalUrl( 'Special:CentralLogin/complete' );
+		$url = wfAppendQuery( $url, $query );
 
 		$caHookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
 		$caHookRunner->onCentralAuthSilentLoginRedirect( $centralUser, $url, $info );
@@ -324,7 +316,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
 		}
 		$this->sessionManager->setCentralSession( [
-			'finalProto' => $attempt['finalProto'],
 			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
 		], $info['sessionId'], $this->session );
@@ -387,7 +378,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$action,
 			$attempt['returnTo'],
 			$attempt['returnToQuery'],
-			( $attempt['finalProto'] == 'https' ), // influnces http/https of returnTo page
+			false,
 			$attempt['returnToAnchor'] ?? ''
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );

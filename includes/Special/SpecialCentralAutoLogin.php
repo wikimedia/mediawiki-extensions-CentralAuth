@@ -31,7 +31,6 @@ use RequestContext;
 use SkinTemplate;
 use UnlistedSpecialPage;
 use User;
-use WebRequest;
 use Wikimedia\ScopedCallback;
 use Xml;
 
@@ -202,8 +201,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'return',
 			'returnto',
 			'returntoquery',
-			// URI protocol used by the request that initiated autologin.
-			'proto',
 			// Whether the request that initiated autologin was to the mobile domain.
 			'mobile',
 			// also used:
@@ -347,7 +344,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
 				'wikiid' => WikiMap::getCurrentWikiId(),
-				'proto' => WebRequest::detectProtocol(),
 			] + $params );
 			return;
 
@@ -526,7 +522,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$memcData += [
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
-				'finalProto' => $centralSession['finalProto'],
 				'secureCookies' => $centralSession['secureCookies'],
 				'remember' => $centralSession['remember'],
 				'sessionId' => $centralSession['sessionId'],
@@ -620,7 +615,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			//   local session, which we could do directly)? We have just read this data from
 			//   the central session one redirect hop ago.
 			$this->sessionManager->setCentralSession( [
-				'finalProto' => $memcData['finalProto'],
 				'secureCookies' => $memcData['secureCookies'],
 				'remember' => $memcData['remember'],
 			], $memcData['sessionId'], $this->session );
@@ -864,12 +858,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private function getCentralSession( $centralUser, $user ) {
 		$centralSession = $this->sessionManager->getCentralSession( $this->session );
 		$request = $this->getRequest();
-
-		// If there's no "finalProto", check if one was passed, and otherwise
-		// assume the current.
-		if ( !isset( $centralSession['finalProto'] ) ) {
-			$centralSession['finalProto'] = $request->getVal( 'proto', WebRequest::detectProtocol() );
-		}
 
 		// If there's no "remember", pull from the user preference.
 		if ( !isset( $centralSession['remember'] ) ) {
