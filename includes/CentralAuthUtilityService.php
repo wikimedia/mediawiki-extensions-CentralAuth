@@ -28,6 +28,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
@@ -160,9 +161,12 @@ class CentralAuthUtilityService {
 	 *
 	 * @param User $user User to auto-create
 	 * @param bool $log Whether to generate a user creation log entry
+	 * @param Authority|null $performer The user performing the creation
 	 * @return StatusValue a status value
 	 */
-	public function autoCreateUser( User $user, $log = true ): StatusValue {
+	public function autoCreateUser( User $user, $log = true,
+		?Authority $performer = null
+	): StatusValue {
 		// Ignore warnings about primary database connections/writes...hard to avoid here
 
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
@@ -171,7 +175,7 @@ class CentralAuthUtilityService {
 		if ( !$this->authManager->getAuthenticationProvider( $source ) ) {
 			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
 		}
-		$sv = $this->authManager->autoCreateUser( $user, $source, false, $log );
+		$sv = $this->authManager->autoCreateUser( $user, $source, false, $log, $performer );
 
 		LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
 			'event' => 'autocreate',
