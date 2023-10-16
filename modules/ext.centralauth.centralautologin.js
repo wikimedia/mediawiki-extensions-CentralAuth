@@ -29,7 +29,6 @@
 	// The data comes from CentralAuthHooks::getCentralautologinJsData().
 	url = require( './data.json' ).checkLoggedInURL;
 	if ( url ) {
-		url += '&proto=' + encodeURIComponent( location.protocol.replace( ':', '' ) );
 		if ( mw.config.get( 'wgCentralAuthMobileDomain' ) === true ) {
 			url += '&mobile=1';
 		}

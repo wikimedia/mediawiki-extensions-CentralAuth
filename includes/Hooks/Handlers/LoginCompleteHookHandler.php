@@ -286,7 +286,6 @@ class LoginCompleteHookHandler implements
 			'returnToAnchor' => $returnToAnchor,
 			// cookies set secure or not (local CentralAuth cookies)
 			'stickHTTPS'    => $secureCookies,
-			'finalProto'    => $finalProto, // final page http or https
 			'type'	  => $loginType
 		] );
 
@@ -300,9 +299,6 @@ class LoginCompleteHookHandler implements
 			'guid'	  => $centralUser->getId(),
 			'wikiId'	=> WikiMap::getCurrentWikiId(),
 			'secureCookies' => $secureCookies, // (bool) cookies secure or not
-			'finalProto'    => $finalProto, // http or https for very final page
-			// current proto (in case login is https, but final page is http)
-			'currentProto'  => WebRequest::detectProtocol()
 		];
 		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
 		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
