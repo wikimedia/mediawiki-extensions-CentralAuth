@@ -26,6 +26,7 @@
 	// Perform the actual logged-in check via a <script> tag.
 	// The referenced URL will redirect a few times (HTTP 302) and then respond
 	// with JavaScript code that completes the login.
+	// The data comes from CentralAuthHooks::getCentralautologinJsData().
 	url = require( './data.json' ).checkLoggedInURL;
 	if ( url ) {
 		url += '&proto=' + encodeURIComponent( location.protocol.replace( ':', '' ) );

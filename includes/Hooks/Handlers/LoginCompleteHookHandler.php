@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
+use MediaWiki\Extension\CentralAuth\Special\SpecialCentralLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\TempUserCreatedRedirectHook;
 use MediaWiki\Hook\UserLoginCompleteHook;
@@ -76,6 +77,8 @@ class LoginCompleteHookHandler implements
 	 * @param string &$inject_html
 	 * @param bool|null $direct Was this directly after a login? (see T140853)
 	 * @return bool
+	 *
+	 * @see SpecialCentralLogin
 	 */
 	public function onUserLoginComplete( $user, &$inject_html, $direct = null ) {
 		if ( !$this->config->get( 'CentralAuthCookies' ) ) {
@@ -95,6 +98,9 @@ class LoginCompleteHookHandler implements
 	}
 
 	/**
+	 * Helper method that starts a central login redirect when it seems safe to do so.
+	 * Otherwise, it triggers edge login on the next request.
+	 *
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
 	 * @param string &$inject_html
@@ -165,6 +171,20 @@ class LoginCompleteHookHandler implements
 		return true;
 	}
 
+	/**
+	 * Initiate a central login redirect that sets up the central session for the temp user,
+	 * then returns.
+	 *
+	 * @param Session $session
+	 * @param UserIdentity $user
+	 * @param string $returnTo
+	 * @param string $returnToQuery
+	 * @param string $returnToAnchor
+	 * @param string &$redirectUrl
+	 * @return bool
+	 *
+	 * @see SpecialCentralLogin
+	 */
 	public function onTempUserCreatedRedirect(
 		Session $session,
 		UserIdentity $user,
@@ -210,17 +230,25 @@ class LoginCompleteHookHandler implements
 	}
 
 	/**
-	 * Set up a session for redirection to the login wiki, and return the redirect URL.
+	 * Sets up central login so the caller can start it.
+	 * - Stores a random-generated login secret, along with generic information about the
+	 *   user and the returnTo target, in the local session.
+	 * - Composes an URL to the next step of the central login, Special:CentralLogin/start, and
+	 *   uses the token store and a query parameter in the URL to pass the secret, and information
+	 *   about the user and the session, in a secure way.
+	 * - Returns the redirect URL.
 	 *
 	 * @param Session $session
 	 * @param CentralAuthUser $centralUser
 	 * @param string $returnTo
 	 * @param string $returnToQuery
 	 * @param string $returnToAnchor
-	 * @param string $loginType
+	 * @param string $loginType 'signup' or the empty string for normal login
 	 * @param bool $secureCookies
 	 * @param string $finalProto
 	 * @return string
+	 *
+	 * @see SpecialCentralLogin
 	 */
 	private function getRedirectUrl(
 		Session $session,

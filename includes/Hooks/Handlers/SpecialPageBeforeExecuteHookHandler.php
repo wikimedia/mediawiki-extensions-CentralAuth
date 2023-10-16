@@ -67,7 +67,16 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
 	}
 
-	/** @inheritDoc */
+	/**
+	 * Triggers top-level central autologin attempt on Special:Userlogin, and handles the
+	 * outcome of such an attempt at the end of the redirect chain.
+	 *
+	 * @param SpecialPage $special
+	 * @param string|null $subPage
+	 * @return bool
+	 *
+	 * @see SpecialCentralAutoLogin
+	 */
 	public function onSpecialPageBeforeExecute( $special, $subPage ) {
 		$request = $special->getRequest();
 		$amKey = 'AuthManagerSpecialPage:return:' . $special->getName();

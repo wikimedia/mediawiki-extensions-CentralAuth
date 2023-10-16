@@ -29,6 +29,8 @@ use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
+use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
@@ -226,10 +228,22 @@ class CentralAuthHooks implements
 	}
 
 	/**
+	 * Get a HTML fragment that will trigger central autologin, i.e. try to log in the user on
+	 * each of $wgCentralAuthAutoLoginWikis in the background by embedding images which point
+	 * to Special:CentralAutoLogin on each of those wikis.
+	 *
+	 * It also calls Special:CentralAutoLogin/refreshCookies on the central wiki, to refresh
+	 * central session cookies if needed (e.g. because the "remember me" setting changed).
+	 *
+	 * This is typically used after a successful login.
+	 *
 	 * @param User $user
 	 * @param CentralAuthUser $centralUser
 	 * @param ContentSecurityPolicy $csp From OutputPage::getCsp
 	 * @return string
+	 *
+	 * @see SpecialCentralAutoLogin
+	 * @see getEdgeLoginHTML()
 	 */
 	public static function getDomainAutoLoginHtml(
 		User $user,
@@ -554,8 +568,19 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Build the HTML containing the 1x1 images
+	 * Get a HTML fragment that will trigger central autologin. This is basically the same as
+	 * getDomainAutoLoginHtml() except it uses invisible pixels instead of visible favicons, so
+	 * it can be embedded in any page without distracting the user.
+	 *
+	 * It's used when showing a dedicated login success page is not possible (by setting the
+	 * CentralAuthDoEdgeLogin session flag, which causes this method to be called on the
+	 * next request).
+	 *
 	 * @return string
+	 *
+	 * @see SpecialCentralAutoLogin
+	 * @see getDomainAutoLoginHtml()
+	 * @see PageDisplayHookHandler::onBeforePageDisplay()
 	 */
 	public static function getEdgeLoginHTML() {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
