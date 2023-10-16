@@ -22,7 +22,6 @@ use Psr\Log\LoggerInterface;
 use SpecialPage;
 use UnlistedSpecialPage;
 use User;
-use WebRequest;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -74,22 +73,11 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	public function execute( $subpage ) {
-		// Enforce $wgSecureLogin
-		$request = $this->getRequest();
-		if ( $this->shouldDoProtocolRedirect() ) {
-			$redirUrl = str_replace( 'http://', 'https://', $request->getFullRequestURL() );
-			$output = $this->getOutput();
-			$output->addVaryHeader( 'X-Forwarded-Proto' );
-			$output->redirect( $redirUrl );
-			$output->output();
-			return;
-		}
-
 		$this->setHeaders();
 		$this->getOutput()->disallowUserJs(); // just in case...
 
 		// Check session, if possible
-		$session = $request->getSession();
+		$session = $this->getRequest()->getSession();
 		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
 			$this->showError(
 				'centralauth-error-wrongprovider',
@@ -113,22 +101,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		// Auto-submit and back links
 		$this->getOutput()->addModules( 'ext.centralauth' );
-	}
-
-	/**
-	 * Should we redirect from HTTP to HTTPS, according to $wgForceHTTPS and
-	 * $wgSecureLogin?
-	 *
-	 * @return bool
-	 */
-	private function shouldDoProtocolRedirect() {
-		if ( WebRequest::detectProtocol() !== 'http' ) {
-			return false;
-		}
-		if ( $this->getConfig()->get( 'ForceHTTPS' ) ) {
-			return true;
-		}
-		return (bool)$this->getConfig()->get( 'SecureLogin' );
 	}
 
 	/**
