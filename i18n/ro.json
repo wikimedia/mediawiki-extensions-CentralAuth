@@ -128,7 +128,6 @@
 	"centralauth-centralautologin-badwiki": "Wikiul „$1” nu este valid pentru autentificare centrală",
 	"centralauth-centralautologin-corsfail": "Verificarea originii CORS a eșuat",
 	"centralauth-centralautologin-logged-in": "Sunteți autentificat central ca $1. Reîncărcați pagina pentru a aplica setările dvs. de utilizator.",
-	"centralauth-centralautologin-logged-in-nouser": "Sunteți autentificat central. Reîncărcați pagina pentru a aplica setările dvs. de utilizator.",
 	"centralauth-centralautologin-lostsession": "Sesiunea de date s-a pierdut",
 	"centralauth-centralautologin-notposted": "Formularul de autentificare centrală trebuie trimis folosind metoda POST.",
 	"centralauth-complete": "Unificarea conturilor este completă!",

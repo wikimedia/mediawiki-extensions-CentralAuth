@@ -118,7 +118,6 @@
 	"centralauth-centralautologin-alreadyloggedinlocally": "Već ste prijavljeni lokalno.",
 	"centralauth-centralautologin-badstate": "Neispravno stanje „$1”.",
 	"centralauth-centralautologin-logged-in": "Centralno ste prijavljeni kao $1. Ponovo učitajte stranicu da biste primenili korisnička podešavanja.",
-	"centralauth-centralautologin-logged-in-nouser": "Centralno ste prijavljeni. Ponovo učitajte stranicu da biste primenili korisnička podešavanja.",
 	"centralauth-centralautologin-lostsession": "Podaci o sesiji su izgubljeni.",
 	"centralauth-complete": "Objedinjavanje naloga je završeno!",
 	"centralauth-complete-text": "Sada možete da se prijavite na sve viki projekte {{int:Centralauth-groupname}}, bez otvaranja novog naloga.",

@@ -84,7 +84,6 @@
 	"centralauth-centralautologin-alreadyloggedinlocally": "Sètz ja connectat localament.",
 	"centralauth-centralautologin-badstate": "Estat « $1 » invalid",
 	"centralauth-centralautologin-corsfail": "La verificacion d’origina CORS a fracassat",
-	"centralauth-centralautologin-logged-in-nouser": "Sètz connectat en central. Recargatz la pagina per aplicar vòstras preferéncias utilizaire.",
 	"centralauth-centralautologin-lostsession": "Las donadas de session son estadas perdudas",
 	"centralauth-centralautologin-notposted": "Lo formulari de connexion centralizada deu èsser publicat",
 	"centralauth-complete": "Unificacion dels comptes acabada !",

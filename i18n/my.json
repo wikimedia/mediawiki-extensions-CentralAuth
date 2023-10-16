@@ -66,7 +66,6 @@
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|အမည်ညွှန်း|အမည်ညွှန်းများ}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "သင်သည် ဒေသတွင်း လော့ဂ်အင်ဝင်ရောက်ပြီးဖြစ်သည်။",
 	"centralauth-centralautologin-logged-in": "လက်ရှိ $1 အဖြစ် ဗဟိုမှလော့ဂ်အင်ဝင်ထားပါသည်။ သင်၏အသုံးပြုသူအပြင်အဆင်များကို သက်ရောက်စေရန် စာမျက်နှာကို ပြန်လည်ခေါ်ယူပါ။",
-	"centralauth-centralautologin-logged-in-nouser": "လက်ရှိ ဗဟိုမှလော့ဂ်အင်ဝင်ထားပါသည်။ သင်၏အသုံးပြုသူအပြင်အဆင်များကို သက်ရောက်စေရန် စာမျက်နှာကို ပြန်လည်ခေါ်ယူပါ။",
 	"centralauth-complete-text": "ယခုအခါ သင်သည် {{int:Centralauth-groupname}}၏ မည်သည့်ဝီကီဆိုဒ်ကိုမဆို အကောင့်အသစ်ဖန်တီးစရာမလိုဘဲ လော့ဂ်အင်ဝင်ရောက်နိုင်ပါသည်။",
 	"centralauth-completelogin-back": "ယခင်စာမျက်နှာသို့ ပြန်သွားရန်။",
 	"centralauth-createlocal-no-global-account": "ယင်းကဲ့သို့သော ဂလိုဘယ်အကောင့်မရှိပါ။",

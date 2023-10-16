@@ -145,7 +145,6 @@
 	"centralauth-centralautologin-corsfail": "CORS-eredetellenőrzés sikertelen.",
 	"centralauth-centralautologin-desc": "Ez a lap a MediaWiki belső működéséhez szükséges.\nHa bejelentkezés nélkül látogatsz meg egy kapcsolt domaint, a központi bejelentkeztetést végző rendszer ezt a lapot használja annak megállapítására, hogy be vagy-e jelentkezve a központi domainen.\nBejelentkezési adatok megadása nélkül nyitottad meg ezt a lapot, így nem csinál semmit.",
 	"centralauth-centralautologin-logged-in": "Központilag be vagy jelentkezve $1 néven. Frissítsd ezt a lapot a beállításaid alkalmazásához.",
-	"centralauth-centralautologin-logged-in-nouser": "Központilag be vagy jelentkezve. Frissítsd ezt a lapot a beállításaid alkalmazásához.",
 	"centralauth-centralautologin-lostsession": "A munkamenetadatok elvesztek.",
 	"centralauth-centralautologin-notposted": "A központi bejelentkezési űrlapot POST kéréssel kell elküldeni.",
 	"centralauth-complete": "A bejelentkezés egységesítése sikeresen befejeződött!",

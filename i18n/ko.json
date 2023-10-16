@@ -159,7 +159,6 @@
 	"centralauth-centralautologin-corsfail": "CORS 오리진 확인을 실패했습니다.",
 	"centralauth-centralautologin-desc": "이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.\n로그인되지 않은 연결된 도메인을 방문할 때, 통합 로그인 시스템은 이 문서가 통합 도메인에 로그인되어 있을 때 결정하는 데 사용합니다.\n인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.",
 	"centralauth-centralautologin-logged-in": "$1 통합 계정으로 로그인되어 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.",
-	"centralauth-centralautologin-logged-in-nouser": "당신은 통합 계정으로 묶여 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.",
 	"centralauth-centralautologin-lostsession": "세션 데이터가 손실되었습니다.",
 	"centralauth-centralautologin-notposted": "통합 로그인 양식은 POST로 전달되어야 합니다.",
 	"centralauth-complete": "계정을 통합했습니다!",

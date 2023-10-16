@@ -125,7 +125,6 @@
 	"centralauth-centralautologin-corsfail": "Falló la comprobación del orixe CORS",
 	"centralauth-centralautologin-desc": "MediaWiki utiliza internamente esta páxina especial.\nCuando visita un dominiu enllazáu ensin aniciar sesión, o sistema d'aniciu de sesión central usa esta páxina pa determinar si ta coneutáu nel dominiu central.\nVusté solicitó esta páxina ensin dar dengún datu d'autenticación, de mou que nun fai nada.",
 	"centralauth-centralautologin-logged-in": "Tien fechu l'aniciu de sesión central como $1. Recargue la páxina p'aplicar la so configuración d'usuariu.",
-	"centralauth-centralautologin-logged-in-nouser": "Tien fechu l'aniciu de sesión central. Recargue la páxina p'aplicar la so configuración d'usuariu.",
 	"centralauth-centralautologin-lostsession": "Perdieronse los datos de sesión",
 	"centralauth-centralautologin-notposted": "L'aniciu de sesión central tien d'usar el métodu POST.",
 	"centralauth-complete": "¡Fusión de cuentes completada!",

@@ -140,7 +140,6 @@
 	"centralauth-centralautologin-corsfail": "CORS-opprinnelseskontroll feilet.",
 	"centralauth-centralautologin-desc": "Denne spesialsiden er brukt internt av MediaWiki.\nNår du besøker et lenket domene uten innlogging, vil det sentale innloggingssystemet bruke denne siden for å avgjøre om du er innlogged på det sentrale domenet.\nDu har spurt etter denne siden uten å angi autentiseringsdata, så ingenting skjer.",
 	"centralauth-centralautologin-logged-in": "Du er sentralt innlogget som $1. Oppdater siden for at innstillingene dine skal få effekt.",
-	"centralauth-centralautologin-logged-in-nouser": "Du er sentralt innlogget. Oppdater siden for at dine innstillinger skal få effekt.",
 	"centralauth-centralautologin-lostsession": "Sesjonsdata gikk tapt.",
 	"centralauth-centralautologin-notposted": "Sentralt innloggingsskjema må sendes inn med metoden POST.",
 	"centralauth-complete": "Kontosammenslåingen er fullført!",

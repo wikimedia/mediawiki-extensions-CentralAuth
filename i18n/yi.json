@@ -65,7 +65,6 @@
 	"centralauth-attach-title": "באַשטעטיקן קאנטע",
 	"centralauth-centralautologin-corsfail": "CORE מקור קאנטראלע אדורכגעפאלן",
 	"centralauth-centralautologin-logged-in": "איר זענט אריינלאגירט צענטראל ווי $1. טוט ווידערלאדן דעם בלאט אנצואווענדן אייערע באניצער־איינשטעלונגען.",
-	"centralauth-centralautologin-logged-in-nouser": "איר זענט אריינלאגירט צענטראל. טוט ווידערלאדן דעם בלאט אנצואווענדן אייערע באניצער־איינשטעלונגען.",
 	"centralauth-complete": "אריינלאגירן פאראייניקונג פֿארענדיקט!",
 	"centralauth-complete-text": "אצינד קענט איר אריינלאגירן צו נארוועלכן וויקי זײַטל פון {{int:Centraluth-groupname}} אן שאפן א נייע קאנטע.",
 	"centralauth-days-ago": "פֿאר $1 {{PLURAL:$1|טאג|טעג}}",

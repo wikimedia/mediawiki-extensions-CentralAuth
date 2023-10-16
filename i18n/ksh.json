@@ -114,7 +114,6 @@
 	"centralauth-centralautologin-corsfail": "De Pröhvong op der Orschprong mem [http://www.w3.org/TR/cors/ <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"Cross-Origin Resource Sharing\">CORS</i>] es scheif jeloufe.",
 	"centralauth-centralautologin-desc": "Heh di Sigg weed bloh ennerhallev vu MehdijaWikki jebuch.\n\nWann de obb en verbonge Domain jeihß, un nit enjelogg bes, kam_mer heh nohlohre, ov De zänthl enjelogg beß.\nDo häs heh di Sigg opjerohve un nix aan Dahte metjescheck, dröm deiht se nix.",
 	"centralauth-centralautologin-logged-in": "Do bes em zäntrahle Wikki als „$1“ aanjemäldt. Donn di Sigg neu oprohve, öm Ding Enschtällenge op der aktälle schtand ze bränge.",
-	"centralauth-centralautologin-logged-in-nouser": "Do bes em zäntrahle Wikki aanjemäldt. Donn di Sigg neu oprohve, öm Ding Enschtällenge op der aktälle schtand ze bränge.",
 	"centralauth-centralautologin-lostsession": "De Sezungsdaate sin fott",
 	"centralauth-centralautologin-notposted": "De Dahe för et zäntrahle enlogg möße med enem <code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">POST</code>-Oprohv övverdrahre wähde.",
 	"centralauth-complete": "Hurra!\nEt Zosammelääje fun de Aanmeldunge als Metmaacher es komplett un fädesch.",

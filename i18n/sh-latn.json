@@ -116,7 +116,6 @@
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|imenski prostor|imenskih prostora}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Već ste lokalno prijavljeni.",
 	"centralauth-centralautologin-logged-in": "Jedinstveno ste prijavljeni kao $1. Da biste aktivirali suradničke postavke, ponovo učitajte stranicu.",
-	"centralauth-centralautologin-logged-in-nouser": "Jedinstveno ste prijavljeni. Da biste primijenili suradničke postavke, ponovo učitajte stranicu.",
 	"centralauth-centralautologin-lostsession": "Podaci o sesiji su izgubljeni.",
 	"centralauth-complete": "Unifikacija korisnika završena!",
 	"centralauth-complete-text": "Sada možete se prijaviti na bilo koji viki-projekt {{int:Centralauth-groupname}} bez potrebe da pravite nove račune.",

@@ -158,7 +158,6 @@
 	"centralauth-centralautologin-corsfail": "Nie udało się sprawdzić pochodzenia CORS.",
 	"centralauth-centralautologin-desc": "Ta strona specjalna jest używana wewnętrznie przez MediaWiki.\nKiedy odwiedzasz linkowaną domenę gdy nie jesteś zalogowany, system centralnego logowania używa tej strony do określenia czy jesteś zalogowany na centralną domenę.\nŻądałeś wyświetlenia tej strony bez podania żadnych danych autoryzacyjnych, więc aktualnie ona nic nie wykona.",
 	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Zostałeś centralnie zalogowany|Zostałaś centralnie zalogowana|Zalogowano cię centralnie}} jako $1. Przeładuj stronę, aby zastosować ustawienia użytkownika.",
-	"centralauth-centralautologin-logged-in-nouser": "Jesteś centralnie zalogowany. Przeładuj stronę, aby stosować ustawienia użytkownika.",
 	"centralauth-centralautologin-lostsession": "Dane sesji zostały utracone.",
 	"centralauth-centralautologin-notposted": "Formularz centralnego logowania musi być wysłany metodą POST.",
 	"centralauth-complete": "Tworzenie konta uniwersalnego zakończone!",

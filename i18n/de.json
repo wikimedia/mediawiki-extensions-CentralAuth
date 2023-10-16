@@ -148,7 +148,6 @@
 	"centralauth-centralautologin-corsfail": "CORS-Origin-Prüfung fehlgeschlagen.",
 	"centralauth-centralautologin-desc": "Diese Spezialseite wird von MediaWiki intern verwendet.\nWenn du eine verlinkte Domain besuchst und du nicht angemeldet bist, verwendet das zentrale Anmeldesystem diese Seite, um zu bestimmen, ob du auf der zentralen Domain angemeldet bist.\nDu hast diese Seite ohne irgendwelche Authentifizierungsdaten angefordert, so dass nichts weiter geschieht.",
 	"centralauth-centralautologin-logged-in": "Du bist als „$1“ zentral angemeldet. Aktualisiere die Seite, um deine Benutzereinstellungen anzuwenden.",
-	"centralauth-centralautologin-logged-in-nouser": "Du bist zentral angemeldet. Lade die Seite erneut, um deine Benutzereinstellungen anzuwenden.",
 	"centralauth-centralautologin-lostsession": "Die Sitzungsdaten sind verloren gegangen.",
 	"centralauth-centralautologin-notposted": "Das zentrale Anmeldeformular muss mit der POST-Methode aufgerufen werden.",
 	"centralauth-complete": "Die Zusammenführung der Benutzerkonten ist abgeschlossen!",

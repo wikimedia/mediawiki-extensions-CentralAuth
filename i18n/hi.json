@@ -129,7 +129,6 @@
 	"centralauth-centralautologin-corsfail": "CORS (Cross-Origin Resource Sharing) स्रोत जाँच विफल हुई",
 	"centralauth-centralautologin-desc": "यह विशेष पृष्ठ मीडियाविकि के आतंरिक प्रयोग हेतु है।\nजब आप किसी जुड़ी हुई साइट को लॉगिन किये बिना देखते हैं तो वैश्विक लॉगिन प्रणाली इस पृष्ठ का प्रयोग कर के यह सुनिश्चित करती है कि आप वैश्विक रूप से लॉगिन कर चुके हैं या नहीं।\nआपने इस पृष्ठ को इ=बिना किसी प्रमाण डाटा के मँगाया है, इसलिए यह कुछ नहीं करेगा।",
 	"centralauth-centralautologin-logged-in": "आप वैश्विक रूप से $1 सदस्यनाम से लॉगिन कर चुके हैं। अपनी सदस्य वरीयताएँ लागू करने के लिए पृष्ठ रीलोड करें।",
-	"centralauth-centralautologin-logged-in-nouser": "आप वैश्विक रूप से लॉगिन कर चुके हैं। अपनी सदस्य वरीयताएँ लागू करने के लिए पृष्ठ रीलोड करें।",
 	"centralauth-centralautologin-lostsession": "सेशन डाटा खो गया",
 	"centralauth-centralautologin-notposted": "वैश्विक लॉगिन फ़ॉर्म को पोस्ट (HTTP POST) किया जाना चाहिए",
 	"centralauth-complete": "खाता एकत्रिकरण पूरा हुआ!",

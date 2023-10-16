@@ -150,7 +150,6 @@
 	"centralauth-centralautologin-corsfail": "A verificação de origem de CORS não teve êxito.",
 	"centralauth-centralautologin-desc": "Esta página especial é usada internamente pelo MediaWiki. \nQuando visita um domínio vinculado sem sessão iniciada, o sistema de autenticação central usa esta página para determinar se está autenticado no domínio central. Solicitou esta página sem fornecer quaisquer dados de autenticação, logo não tem nenhum propósito.",
 	"centralauth-centralautologin-logged-in": "Está autenticado centralmente como $1. Recarregue a página para aplicar as suas configurações de utilizador.",
-	"centralauth-centralautologin-logged-in-nouser": "Está autenticado centralmente. Recarregue a página para aplicar as suas configurações de utilizador.",
 	"centralauth-centralautologin-lostsession": "Os dados da sessão foram perdidos.",
 	"centralauth-centralautologin-notposted": "O formulário de autenticação central deve ser enviado usando o método POST.",
 	"centralauth-complete": "Unificação da autenticação completa!",

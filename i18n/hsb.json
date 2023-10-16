@@ -115,7 +115,6 @@
 	"centralauth-centralautologin-corsfail": "Pruwowanje CORS-pochada je so njeporadźiło",
 	"centralauth-centralautologin-desc": "Tuta strona so internje přez MediaWiki wužiwa.\nHdyž zwjazanu domenu wopytuješ, mjeztym zo njejsy přizjewjeny, wužiwa centralny přizjewjenski system tutu stronu, zo by zwěsćił, hač sy pod centralnej domenu přizjewjeny.\nSy tutu stronu požadał, bjeztoho zo by awtentifkaciske daty podał, tak zo so ničo njestawa.",
 	"centralauth-centralautologin-logged-in": "Sy centralnje jako $1 přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.",
-	"centralauth-centralautologin-logged-in-nouser": "Sy centralnje přizjewjeny. Začitaj stronu znowa, zo by swoje wužiwarske nastajenja nałožił.",
 	"centralauth-centralautologin-lostsession": "Daty posedźenja su so zhubili",
 	"centralauth-centralautologin-notposted": "Formular za centralne přizjewjenje dyrbi so z metodu POST rozpósłać.",
 	"centralauth-complete": "Wužiwarske konta su so dospołnje zjednoćili.",

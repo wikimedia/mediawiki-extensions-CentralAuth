@@ -166,7 +166,6 @@
 	"centralauth-centralautologin-corsfail": "CORSオリジンチェックに失敗しました。",
 	"centralauth-centralautologin-desc": "この特別ページは、MediaWiki が内部的に使用します。\n未ログインの状態でリンク済みドメインを訪れた際に、あなたがログイン済みかどうかを判定するために、中央管理ログインシステムがこのページを使用します。\nあなたは認証データを何も指定せずにこのページに訪れたため、何もしません。",
 	"centralauth-centralautologin-logged-in": "現在、$1 として一元的にログインしています。利用者設定を適用するにはページを再読み込みしてください。",
-	"centralauth-centralautologin-logged-in-nouser": "一元的にログインしています。利用者設定を適用するにはページを再読み込みしてください。",
 	"centralauth-centralautologin-lostsession": "セッションデータが失われました。",
 	"centralauth-centralautologin-notposted": "中央管理ログインフォームは POST メソッドで使用してください。",
 	"centralauth-complete": "アカウントの統一が完了しました!",

@@ -116,7 +116,6 @@
 	"centralauth-centralautologin-corsfail": "Napaay ti panagkita ti taudan ti CORS",
 	"centralauth-centralautologin-desc": "Daytoy nga espesial a panid ket akin-uneg nga inus-usar babaen ti MediaWiki.\nNo bisitaem ti naisilpo a dominio bayat a saanka a nakastrek, ti sistema ti sentral a pagserrekan ket usarenna daytoy a panid tapno maammuanna no nakastrekka iti sentral a dominio.\nKiniddawmo daytoy a panid nga awan ti panangited ti datos a pammasingked, isu nga awan aramidenna.",
 	"centralauth-centralautologin-logged-in": "Agdamaka nakastrek a kas ni $1. Ikargam manen ti panid tapno maipakat dagiti pannakaisaadmo nga agar-aramat.",
-	"centralauth-centralautologin-logged-in-nouser": "Setralka a nakastrek. Ikargam manen ti panid tapno maipakat dagiti pannakaisaadmo nga agar-aramat.",
 	"centralauth-centralautologin-lostsession": "Napukaw idi ti sesion ti datos",
 	"centralauth-centralautologin-notposted": "Ti sentral a panagserrek ket nasken a maipablaak",
 	"centralauth-complete": "Nalpasen ti panagkaykaysa ti panagserrek!",

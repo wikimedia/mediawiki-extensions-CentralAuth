@@ -119,7 +119,6 @@
 	"centralauth-centralautologin-corsfail": "Cuntrollo d'origgene CORS scassate",
 	"centralauth-centralautologin-desc": "Sta paggena spiciale véne ausata nternamente 'a MediaWiki.\nQuanno se tràse a nu dumminio cullegato pe' tramente ca nun s'è fatta 'a trasuta, 'o sistema centrale d'accesso aùsa sta paggena pe' determinà si site cullegato a 'o dumminio centrale.\nVuje avite addimannato sta paggena senza ce dà cocche dato d'autenticaziona, picciò ca nun succiere niente.",
 	"centralauth-centralautologin-logged-in": "Site trasuto/a centralmente comm'a $1. Recarrecate 'a paggena pe n'apprecà 'e mpustaziune utente vuoste.",
-	"centralauth-centralautologin-logged-in-nouser": "Site trasuto/a centralmente. Recarrecate 'a paggena pe n'apprecà 'e mpustaziune utente vuoste.",
 	"centralauth-centralautologin-lostsession": "'E date d' 'a sessiona so' state spierze",
 	"centralauth-centralautologin-notposted": "'O modulo d'acciesso centrale adda essere mannato",
 	"centralauth-complete": "Aunificazione d' 'e cunte cumpleta!",

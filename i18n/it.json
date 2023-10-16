@@ -149,7 +149,6 @@
 	"centralauth-centralautologin-corsfail": "Controllo di origine CORS non riuscito.",
 	"centralauth-centralautologin-desc": "Questa pagina speciale viene utilizzata internamente da MediaWiki.\nQuando si visita un dominio collegato mentre non si è loggati, il sistema centrale di accesso utilizza questa pagina per determinare se si è connessi al dominio centrale.\nHai richiesto questa pagina senza fornire alcun dato di autenticazione, quindi non succede niente.",
 	"centralauth-centralautologin-logged-in": "Hai effettuato l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
-	"centralauth-centralautologin-logged-in-nouser": "Hai effettuato l'accesso globalmente. Ricarica la pagina per applicare le impostazioni utente.",
 	"centralauth-centralautologin-lostsession": "I dati della sessione sono andati perduti.",
 	"centralauth-centralautologin-notposted": "Il modulo di accesso centralizzato deve essere inviato utilizzando il metodo POST.",
 	"centralauth-complete": "Il processo di unificazione delle utenze è stato completato.",

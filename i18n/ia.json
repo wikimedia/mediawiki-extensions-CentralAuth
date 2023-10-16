@@ -131,7 +131,6 @@
 	"centralauth-centralautologin-corsfail": "Le verification de origine CORS ha fallite.",
 	"centralauth-centralautologin-desc": "Iste pagina special es pro uso interne per MediaWiki.\nSi tu visita un dominio ligate sin session aperte, le systema de authentication central usa iste pagina pro determinar si tu es authenticate in le dominio central.\nTu ha requestate iste pagina sin fornir alcun dato de authentication, dunque illo face nihil.",
 	"centralauth-centralautologin-logged-in": "Tu ha essite authenticate centralmente como $1. Recarga le pagina pro applicar tu configuration de usator.",
-	"centralauth-centralautologin-logged-in-nouser": "Tu ha essite authenticate centralmente. Recarga le pagina pro applicar tu configuration de usator.",
 	"centralauth-centralautologin-lostsession": "Le datos del session ha essite perdite.",
 	"centralauth-centralautologin-notposted": "Le formulario de authentication central debe esser inviate usante le methodo POST.",
 	"centralauth-complete": "Unification de contos complete!",

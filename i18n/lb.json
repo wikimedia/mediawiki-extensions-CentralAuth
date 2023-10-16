@@ -118,7 +118,6 @@
 	"centralauth-centralautologin-badstate-local": "Status \"$1\" ass net valabel op der lokaler Wiki.",
 	"centralauth-centralautologin-badwiki": "D'Wiki \"$1\" ass net valabel fir den zentrale Login.",
 	"centralauth-centralautologin-logged-in": "Dir sidd zentral als $1 ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
-	"centralauth-centralautologin-logged-in-nouser": "Dir sidd zentral ageloggt. Aktualiséiert d'Säit fir Är Benotzerastellungen z'applizéieren.",
 	"centralauth-centralautologin-lostsession": "Donnéeë vun der Sessioun si verluer gaangen.",
 	"centralauth-complete": "D'Vereenheetleche vum Benotzerkont ass fäerdeg.",
 	"centralauth-complete-text": "Dir kënnt Iech elo op all Wiki-Site vun {{int:Centralauth-groupname}} aloggen ouni een neie Benotzerkont opmaachen ze mussen.",

@@ -114,7 +114,6 @@
 	"centralauth-centralautologin-badwiki": "«$1» йукъара чудаларан магийна йац",
 	"centralauth-centralautologin-corsfail": "CORS хьост талларна гӀалат",
 	"centralauth-centralautologin-logged-in": "Ахьа глобалан авторизаци йина $1 цӀарца. Иза гар хьама агӀо карлайаккха.",
-	"centralauth-centralautologin-logged-in-nouser": "Ахьа глобалан авторизаци йина, иза гар хьама агӀо карлайаккха.",
 	"centralauth-centralautologin-lostsession": "Сеансан хаамаш дӀабайна",
 	"centralauth-centralautologin-notposted": "Йукъара логинан форма йахьийта йезаш йу",
 	"centralauth-complete": "Аккаунташ цхьаьнатохар чекхдели!",

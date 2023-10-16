@@ -127,7 +127,6 @@
 	"centralauth-centralautologin-badstate": "Μη έγκυρη κατάσταση του \" $1 \"",
 	"centralauth-centralautologin-badwiki": "Το wiki \" $1 \" δεν είναι έγκυρο για κεντρική σύνδεση",
 	"centralauth-centralautologin-logged-in": "Τώρα είστε κεντρικά συνδεδεμένοι ως $1. Ανανεώστε την σελίδα για να εφαρμοστούν οι ρυθμίσεις χρήστη.",
-	"centralauth-centralautologin-logged-in-nouser": "Τώρα είστε συνδεδεμένοι κεντρικά. Ανανεώστε την σελίδα για να εφαρμόσετε τις ρυθμίσεις χρήστη σας.",
 	"centralauth-centralautologin-lostsession": "Χάθηκαν τα δεδομένα της περιόδου σύνδεσης.",
 	"centralauth-centralautologin-notposted": "Η φόρμα κεντρικής σύνδεσης πρέπει να υποβληθεί χρησιμοποιώντας τη μέθοδο POST.",
 	"centralauth-complete": "Η ενοποίηση σύνδεσης ολοκληρώθηκε!",

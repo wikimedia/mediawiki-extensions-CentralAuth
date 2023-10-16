@@ -139,7 +139,6 @@
 	"centralauth-centralautologin-badstate-local": "Būsena „$1“ nėra galima vietinėje viki.",
 	"centralauth-centralautologin-badwiki": "„$1“ viki nėra galima centriniam prisijungimui.",
 	"centralauth-centralautologin-logged-in": "Šiuo metu esate prisijungę kaip $1. Įkelkite puslapį iš naujo, kad pritaikytumėte savo vartotojo nustatymus.",
-	"centralauth-centralautologin-logged-in-nouser": "Esate prisijungęs centralizuotai. Įkelkite puslapį iš naujo, kad pritaikytumėte savo vartotojo nustatymus.",
 	"centralauth-centralautologin-lostsession": "Sesijos duomenis buvo prarasti.",
 	"centralauth-centralautologin-notposted": "Centrinio prisijungimo forma turi būti paskelbta.",
 	"centralauth-complete": "Prisijungimo bendrinimas baigtas!",

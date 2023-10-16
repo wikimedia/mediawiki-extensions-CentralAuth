@@ -143,7 +143,6 @@
 	"centralauth-centralautologin-corsfail": "בדיקת מקור CORS נכשלה.",
 	"centralauth-centralautologin-desc": "הדף המיוחד הזה משמש את מדיה־ויקי באופן פנימי.\nבעת ביקור בתחום מקושר שלא נכנסת אליו, מערכת הכניסה המרכזית משתמשת בדף הזה כדי להבין אם נכנסת למתחם המרכזי.\nביקשת את הדף הזה בלי לספק שום נתונים על אימות והוא לא יעשה דבר.",
 	"centralauth-centralautologin-logged-in": "נכנסת באופן מרכזי לחשבון בשם $1. יש לטעון מחדש את הדף כדי להחיל את הגדרות המשתמש שלך.",
-	"centralauth-centralautologin-logged-in-nouser": "נכנסת לחשבון באופן מרכזי. יש לטעון מחדש את הדף כדי להחיל את הגדרות המשתמש שלך.",
 	"centralauth-centralautologin-lostsession": "נתוני ההתחברות אבדו.",
 	"centralauth-centralautologin-notposted": "יש לשלוח טופס כניסה מרכזית בפעולת POST.",
 	"centralauth-complete": "איחוד נתוני הכניסה הושלם!",

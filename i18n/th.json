@@ -135,7 +135,6 @@
 	"centralauth-centralautologin-badwiki": "วิกิ \"$1\" ไม่ถูกต้องสำหรับการเข้าสู่ระบบส่วนกลาง",
 	"centralauth-centralautologin-corsfail": "การตรวจสอบที่มา CORS ล้มเหลว",
 	"centralauth-centralautologin-logged-in": "คุณเข้าสู่ระบบส่วนกลางในชื่อ $1 แล้ว โหลดหน้าใหม่เพื่อนำการตั้งค่าผู้ใช้ของคุณไปใช้",
-	"centralauth-centralautologin-logged-in-nouser": "คุณเข้าสู่ระบบส่วนกลางแล้ว โหลดหน้าใหม่เพื่อนำการตั้งค่าผู้ใช้ของคุณไปใช้",
 	"centralauth-centralautologin-lostsession": "ข้อมูลเซสชันสูญหาย",
 	"centralauth-centralautologin-notposted": "ต้องโพสต์ฟอร์มการเข้าสู่ระบบส่วนกลาง",
 	"centralauth-complete": "การรวมบัญชีสำหรับล็อกอินเสร็จสมบูรณ์!",

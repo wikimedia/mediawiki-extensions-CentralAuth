@@ -161,7 +161,6 @@
 	"centralauth-centralautologin-corsfail": "CORS kaynak denetimi başarısız oldu.",
 	"centralauth-centralautologin-desc": "Bu özel sayfa MediaWiki tarafından dahili olarak kullanılıyor.\nOturum açmamışken bağlantılı bir alanı ziyaret ederseniz, merkezi giriş sistemi merkezi alana giriş yapıp yapmadığınızı belirlemek için bu sayfayı kullanır.\nBu sayfayı herhangi bir yetkilendirme verisi olmadan istediniz, bu yüzden hiç bir şey yapmayacaktır.",
 	"centralauth-centralautologin-logged-in": "Merkezi olarak $1 kullanıcı adıyla giriş yaptınız. Kullanıcı ayarlarını uygulamak için sayfayı yeniden yükleyin.",
-	"centralauth-centralautologin-logged-in-nouser": "Merkezi giriş yaptınız. Kullanıcı ayarlarının uygulanması için sayfayı yeniden yükleyin.",
 	"centralauth-centralautologin-lostsession": "Oturum verisi kaybedildi.",
 	"centralauth-centralautologin-notposted": "Merkezi giriş formu gönderilmeli.",
 	"centralauth-complete": "Bütün hesaplar birleştirilmiş!",

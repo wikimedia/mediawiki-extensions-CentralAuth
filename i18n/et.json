@@ -126,7 +126,6 @@
 	"centralauth-centralautologin-badwiki": "Viki \"$1\" ei sobi keskse sisselogimise jaoks.",
 	"centralauth-centralautologin-desc": "See lehekülg on kasutusel MediaWiki tarkvara siseselt.\nKui külastad lingitud domeeni ja pole sisse logitud, kontrollitakse keskses sisselogimissüsteemis selle lehekülje abil, kas oled kesksesse domeeni sisse logitud.\nTegid selle lehekülje päringu autentimisandmeteta, seega ei tee see midagi.",
 	"centralauth-centralautologin-logged-in": "Oled keskselt sisse logitud nimega $1. Laadi lehekülg uuesti, et rakendada oma kasutajaeelistused.",
-	"centralauth-centralautologin-logged-in-nouser": "Oled juba keskselt sisse logitud. Laadi lehekülg uuesti, et rakendada oma eelistused.",
 	"centralauth-centralautologin-lostsession": "Seansiandmed läksid kaotsi.",
 	"centralauth-centralautologin-notposted": "Keskse sisselogimise vorm tuleb täita POST-meetodil.",
 	"centralauth-complete": "Ühendkonto on loodud.",

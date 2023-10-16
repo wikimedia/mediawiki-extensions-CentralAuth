@@ -159,7 +159,6 @@
 	"centralauth-centralautologin-corsfail": "فشلت عملية التحقق من أصل نص كورز (CORS).",
 	"centralauth-centralautologin-desc": "هذه صفحة خاصة للاستخدام من قبل ميدياويكي. إذا زرت هذه الصفحة وأنت غير مسجل بحسابك ستقوم هذه الصفحة بتحديد إذا ما قمت بالولوج على النطاق العام.\nوبما أنك قمت بطلب هذه الصفحة من غير توفير بيانات  الاستيثاق فلن تقوم الصفحة بعرض أي شيئ.",
 	"centralauth-centralautologin-logged-in": "لقد سجلت الدخول الموحد باسم $1. أعد تحميل الصفحة لتطبيق إعداداتك.",
-	"centralauth-centralautologin-logged-in-nouser": "لقد قمت بتسجيل الدخول الموحد. قم بإعادة تحميل الصفحة لتطبيق إعدادت المستخدم الخاصة بك.",
 	"centralauth-centralautologin-lostsession": "لقد فقدت بيانات الجلسة.",
 	"centralauth-centralautologin-notposted": "يجب إرسال نموذج الولوج المركزي.",
 	"centralauth-complete": "توحيد الدخول اكتمل!",

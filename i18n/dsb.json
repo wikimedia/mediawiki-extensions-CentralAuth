@@ -101,7 +101,6 @@
 	"centralauth-centralautologin-badwiki": "Wiki \"$1\" njejo płaśiwy za centralne pśizjawjenje",
 	"centralauth-centralautologin-corsfail": "Pśeglědanje CORS-póchada njejo se raźiło",
 	"centralauth-centralautologin-logged-in": "Sy centralnje ako $1 pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.",
-	"centralauth-centralautologin-logged-in-nouser": "Sy centralnje pśizjawjony. Zacytaj bok znowego, aby swóje wužywarske nastajenja nałožył.",
 	"centralauth-centralautologin-lostsession": "Daty pósejźenja su se zgubili",
 	"centralauth-centralautologin-notposted": "Formular za centralne pśizjawjenje musy se z metodu POST rozpósłaś.",
 	"centralauth-complete": "Pśizjawjeńske zjadnośenje dopołne!",

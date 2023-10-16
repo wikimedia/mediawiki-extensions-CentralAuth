@@ -114,7 +114,6 @@
 	"centralauth-centralautologin-corsfail": "La verìfica d'orìgin CORS a l'ha falì",
 	"centralauth-centralautologin-desc": "Costa pàgina special a l'é dovrà an antern da MediaWiki.\nCand chiel a vìsita un domini con na liura sensa esse intrà ant ël sistema, ël sistema ëd conession sentralisà a deuvra costa pàgina për determiné se chiel a l'é colegà al domini sentral.\nA l'ha ciamà costa pàgina sensa dé ëd dàit d'autenticassion, donca chila a fà gnente.",
 	"centralauth-centralautologin-logged-in": "A l'é intrà ant ël sistema ëd fasson sentralisà tanme $1. Ch'a cria torna la pàgina për apliché ij sò gust utent.",
-	"centralauth-centralautologin-logged-in-nouser": "A l'é rintrà an tël sistema ëd fasson global. Ch'a caria torna la pàgina për apliché ij sò gust.",
 	"centralauth-centralautologin-lostsession": "Ij dàit ëd session a son ëstàit përdù",
 	"centralauth-centralautologin-notposted": "Ël formolari ëd conession sentralisà a dev esse publicà",
 	"centralauth-complete": "Mës-cia dij cont bele faita!",

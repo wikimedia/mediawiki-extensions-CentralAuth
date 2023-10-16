@@ -141,7 +141,6 @@
 	"centralauth-centralautologin-corsfail": "Erro ao comprobar a orixe CORS.",
 	"centralauth-centralautologin-desc": "MediaWiki utiliza internamente esta páxina especial.\nCando vostede visita un dominio ligado sen estar conectado, o sistema de rexistro central usa esta páxina para determinar se está conectado no dominio central.\nVostede solicitou esta páxina sen achegar ningún dato de autenticación, de modo que non fai nada.",
 	"centralauth-centralautologin-logged-in": "Vostede está {{GENDER:$2|identificado|identificada}} centralmente como $1. Recargue a páxina para aplicar os seus parámetros de {{GENDER:$2|usuario|usuaria}}.",
-	"centralauth-centralautologin-logged-in-nouser": "Vostede está identificado centralmente. Recargue a páxina para aplicar os seus parámetros de usuario.",
 	"centralauth-centralautologin-lostsession": "Perdéronse os datos da sesión.",
 	"centralauth-centralautologin-notposted": "O formulario de inicio de sesión central debe enviarse mediante o método POST.",
 	"centralauth-complete": "Completouse a unificación do rexistro!",

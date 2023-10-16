@@ -125,7 +125,6 @@
 	"centralauth-centralautologin-corsfail": "Verifiche de CORS origgenale fallite.",
 	"centralauth-centralautologin-desc": "Sta pàgena speciale avène ausate da MediaUicchi.\nQuanne tu visite 'nu dominie collegate mendre ca non g'è trasute, 'u sisteme de trasute cendrale ause sta pàgene pe capì ce tu è trasute o none jndr'à 'u dominie cendrale.\nTu è richieste sta pàgene senze ca è mise date de autendicazione, accussì no face ninde.",
 	"centralauth-centralautologin-logged-in": "Tu è trasute cendralmende cumme a $1. Recareche 'a pàgene pe applecà le 'mbostaziune utende tune.",
-	"centralauth-centralautologin-logged-in-nouser": "Tu è trasute cendralmende. Recareche 'a pàgene pe applecà le 'mbostaziune tune.",
 	"centralauth-centralautologin-lostsession": "Le date de sessione onne state perse.",
 	"centralauth-centralautologin-notposted": "'U module cendralizzate pe trasè adda essere mannate.",
 	"centralauth-complete": "Trasùte aunifecate combletate!",

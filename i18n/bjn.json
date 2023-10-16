@@ -55,7 +55,6 @@
 	"centralauth-admin-yes": "Iya",
 	"centralauth-centralautologin-badwiki": "Wiki \"$1\" kada sah gasan babuat log tapusat.",
 	"centralauth-centralautologin-logged-in": "Pian sudah babuat log sacara tapusat sabagai $1. Muat imbal laman gasan manggawi pangaturan pamakai Pian.",
-	"centralauth-centralautologin-logged-in-nouser": "Pian sudah babuat log sacara tapusat sabagai $1. Muat imbal laman gasan manggawi pangaturan pamakai Pian.",
 	"centralauth-centralautologin-notposted": "Borang babuat log tapusat musti dikirimakan.",
 	"centralauth-complete": "Panggabungan log babuat glubal tuntung!",
 	"centralauth-desc": "[[Special:MergeAccount|Panggabungan akun]] lintas wiki {{int:Centralauth-groupname}}",

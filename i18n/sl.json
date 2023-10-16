@@ -133,7 +133,6 @@
 	"centralauth-centralautologin-corsfail": "Preverjanje izvora CORS ni uspelo.",
 	"centralauth-centralautologin-desc": "Ta je posebna stran, ki jo interno uporablja MediaWiki.\nV primeru, da obiščeš povezano domeno neprijavljen, centralni sistem za prijavo uporabi to stran, da ugotovi, če si prijavljen na centralno domeno.\nBrez legitimacije uporabnika ta stran ne ponuja svoje storitve.",
 	"centralauth-centralautologin-logged-in": "Ste centralno prijavljeni kot $1. Za uveljavitev svojih uporabniških nastavitev stran znova naložite.",
-	"centralauth-centralautologin-logged-in-nouser": "Ste centralno prijavljeni. Za uveljavitev svojih uporabniških nastavitev stran znova naložite.",
 	"centralauth-centralautologin-lostsession": "Podatki seje so bili izgubljeni.",
 	"centralauth-centralautologin-notposted": "Obrazec centralne prijave mora biti poslan.",
 	"centralauth-complete": "Poenotenje prijave opravljeno!",

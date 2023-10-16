@@ -142,7 +142,6 @@
 	"centralauth-centralautologin-corsfail": "Kiểm tra nguồn gốc CORS thất bại.",
 	"centralauth-centralautologin-desc": "Trang đặc biệt này được sử dụng nội bộ trong MediaWiki.\nKhi bạn truy cập vào một tên miền được liên kết trong khi không đăng nhập, hệ thống đăng nhập trung ương sử dụng trang này để xác định liệu bạn đã đăng nhập vào tiên miền trung ương chưa.\nBạn đã yêu cầu trang này mà không cung cấp bất kỳ dữ liệu xác thực, do đó, nó không làm gì.",
 	"centralauth-centralautologin-logged-in": "Bạn đã đăng nhập trung ương với tên $1. Hãy tải lại trang để kích hoạt thiết lập trang cá nhân của bạn.",
-	"centralauth-centralautologin-logged-in-nouser": "Bạn đã đăng nhập trung ương. Hãy tải lại trang để áp dụng các tùy chọn cá nhân của bạn.",
 	"centralauth-centralautologin-lostsession": "Mất dữ liệu phiên.",
 	"centralauth-centralautologin-notposted": "Mẫu đăng nhập trung ương phải được gửi qua phương thức POST.",
 	"centralauth-complete": "Đã hợp nhất xong các tài khoản!",

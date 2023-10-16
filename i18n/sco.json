@@ -115,7 +115,6 @@
 	"centralauth-centralautologin-corsfail": "CORS origin check failed",
 	"centralauth-centralautologin-desc": "This byordinair page is uised internallie bi MediaWiki.\nWhan ye veesit ae linkt domain while na loggit in, the central login system uises this page tae determine whather ye'r loggit in til the central domain.\nYe'v speired fer this page wioot providin onie authentication data, sae it dis nawthing.",
 	"centralauth-centralautologin-logged-in": "Ye'r nou loggit in aes $1. Relaid the page tae applie yer uiser settins.",
-	"centralauth-centralautologin-logged-in-nouser": "Ye'r centrallie loggit in. Relaid the page tae applie yer uiser settins.",
 	"centralauth-centralautologin-lostsession": "Session data wis lost",
 	"centralauth-centralautologin-notposted": "Central login form maun be posted",
 	"centralauth-complete": "Login uneefeecation compleate!",

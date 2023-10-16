@@ -163,7 +163,6 @@
 	"centralauth-centralautologin-corsfail": "De controle voor de CORS-oorsprong is mislukt.",
 	"centralauth-centralautologin-desc": "Deze speciale pagina is voor intern gebruik door MediaWiki\nAls u een gekoppeld domein bezoekt, terwijl u niet bent aangemeld, gebruikt het systeem voor centraal aanmelden deze pagina om te bepalen of u bent aangemeld bij het centrale domein.\nU hebt deze pagina opgevraagd zonder aanmeldgegevens te verstrekken en in dat geval gebeurt er niets.",
 	"centralauth-centralautologin-logged-in": "U bent centraal aangemeld als \"$1\". Herlaad de pagina om uw gebruikersinstellingen toe te passen.",
-	"centralauth-centralautologin-logged-in-nouser": "U bent centraal aangemeld. Herlaad de pagina om uw gebruikersinstellingen toe te passen.",
 	"centralauth-centralautologin-lostsession": "De sessiegegevens zijn verloren gegaan.",
 	"centralauth-centralautologin-notposted": "Het formulier voor centraal aanmelden moet met de POST-methode ingezonden worden.",
 	"centralauth-complete": "Samenvoegen gebruikers afgerond!",
