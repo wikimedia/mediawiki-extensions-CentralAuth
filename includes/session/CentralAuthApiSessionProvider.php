@@ -11,6 +11,8 @@ use MediaWiki\Session\SessionInfo;
  * ApiCentralAuthToken. If the parameter is present but invalid, it returns a
  * bogus SessionInfo and hooks ApiBeforeMain to throw an appropriate exception
  * later when MediaWiki is ready to handle it.
+ *
+ * @see \MediaWiki\Extension\CentralAuth\Api\ApiCentralAuthToken
  */
 class CentralAuthApiSessionProvider
 	extends CentralAuthTokenSessionProvider

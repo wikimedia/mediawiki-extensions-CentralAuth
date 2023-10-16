@@ -18,6 +18,7 @@
 	"apierror-centralauth-notloggedin": "{{doc-apierror}}",
 	"apierror-centralauth-renameinprogress": "{{doc-apierror}}",
 	"apihelp-centralauthtoken-example-1": "{{doc-apihelp-example|centralauthtoken}}",
+	"apihelp-centralauthtoken-extended-description": "{{doc-apihelp-extended-description|centralauthtoken}}",
 	"apihelp-centralauthtoken-summary": "{{doc-apihelp-summary|centralauthtoken}}",
 	"apihelp-createlocalaccount-example-1": "{{doc-apihelp-example|createlocalaccount}}",
 	"apihelp-createlocalaccount-param-reason": "{{doc-apihelp-param|createlocalaccount|reason}}",
