@@ -19,6 +19,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
+use SpecialPage;
 use UnlistedSpecialPage;
 use User;
 use WebRequest;
@@ -32,7 +33,6 @@ use Wikimedia\ScopedCallback;
  * - /start: Creates the stub central session and redirects to /complete. {@see self::doLoginStart()}
  * - /complete: Unstubs the central session, and redirects back to where the central login was
  *   started from. {@see self::doLoginComplete()}
- * - /status: Shows a success/error page and triggers edge login. Doesn't seem to be used.
  *
  * @see LoginCompleteHookHandler::onUserLoginComplete()
  * @see LoginCompleteHookHandler::onTempUserCreatedRedirect()
@@ -105,10 +105,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$this->doLoginStart( $token );
 		} elseif ( $subpage === 'complete' ) {
 			$this->doLoginComplete( $token );
-		} elseif ( $subpage === 'status' ) {
-			$this->showLoginStatus();
-		} else { // invalid request - @phan-suppress-current-line PhanPluginDuplicateIfStatements
-			$this->showLoginStatus();
+		} else {
+			// invalid request
+			$title = SpecialPage::getTitleFor( 'Userlogin' );
+			$this->getOutput()->redirect( $title->getLocalURL() );
 		}
 
 		// Auto-submit and back links
@@ -419,30 +419,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$attempt['returnToAnchor'] ?? ''
 		);
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-	}
-
-	protected function showLoginStatus() {
-		if ( !$this->getUser()->isRegistered() ) {
-			$this->showError( 'centralauth-warning-notloggedin' );
-			return;
-		}
-		$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-		if ( !$centralUser->getId() ) {
-			$this->showError( 'centralauth-warning-notattached' );
-			return;
-		}
-
-		// Show the login success page
-		$helper = new LoginHelper( $this->getContext() );
-		$helper->showReturnToPage( 'success',
-			$this->getRequest()->getVal( 'returnto', '' ),
-			$this->getRequest()->getVal( 'returntoquery', '' )
-		);
-		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
-		// Show HTML to trigger cross-domain cookies
-		$csp = $this->getOutput()->getCSP();
-		$this->getOutput()->addHtml(
-			CentralAuthHooks::getDomainAutoLoginHtml( $this->getUser(), $centralUser, $csp ) );
 	}
 
 	protected function showError( ...$args ) {
