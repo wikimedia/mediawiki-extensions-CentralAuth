@@ -18,7 +18,7 @@
 	"apihelp-createlocalaccount-example-1": "כפיית יצירה של חשבון מקומי בשביל [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "סיבה ליצירה החשבון המקומי.",
 	"apihelp-createlocalaccount-param-username": "המשתמש שהחשבון המקומי נוצר עבורו.",
-	"apihelp-createlocalaccount-summary": "לכפות יצירה של חשבון מקומי",
+	"apihelp-createlocalaccount-summary": "יצירת חשבון מקומי בכפייה. החשבון המרכזי חייב להתקיים.",
 	"apihelp-deleteglobalaccount-example-1": "מחיקת חשבון גלובלי עבור [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "סיבה למחיקת משתמש.",
 	"apihelp-deleteglobalaccount-param-user": "משתמש למחוק.",
@@ -83,5 +83,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "הסיבה לשינוי מצב המשתמש הזה.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "קוד MD5 אופציונלי לשילוב הנוכחי הצפוי של <userid>:<username>:<hidden>:<locked>, כדי לזהות התנגשויות עריכה. יש להגדיר <locked> בתור 1 עבור נעול ו־0 עבור לא נעול.",
 	"apihelp-setglobalaccountstatus-param-user": "מצב של איזה משתמש לשנות.",
-	"apihelp-setglobalaccountstatus-summary": "הגדרת מצב של המשתמש הזה."
+	"apihelp-setglobalaccountstatus-summary": "הסתרה או נעילה (או ביטול הסתרה או ביטול נעילה) של חשבון משתמש גלובלי."
 }

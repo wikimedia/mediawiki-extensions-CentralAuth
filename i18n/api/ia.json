@@ -16,7 +16,7 @@
 	"apihelp-createlocalaccount-example-1": "Fortiar le creation de un conto local pro [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo pro crear le conto local.",
 	"apihelp-createlocalaccount-param-username": "Usator pro le qual crear le conto local.",
-	"apihelp-createlocalaccount-summary": "Fortiar le creation de un conto local",
+	"apihelp-createlocalaccount-summary": "Fortiar le creation de un conto local. Le conto central debe exister.",
 	"apihelp-deleteglobalaccount-example-1": "Deler le conto global pro [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Motivo pro deler le usator.",
 	"apihelp-deleteglobalaccount-param-user": "Le usator a deler.",
@@ -81,5 +81,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo pro cambiar le stato del usator.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Summa MD5 facultative del <userid>:<username>:<hidden>:<locked> actualmente expectate, pro deteger conflictos de modification. Mitte <locked> a 1 pro blocar, 0 pro disblocar.",
 	"apihelp-setglobalaccountstatus-param-user": "Usator de que cambiar le stato.",
-	"apihelp-setglobalaccountstatus-summary": "Definir le stato de un usator global."
+	"apihelp-setglobalaccountstatus-summary": "Celar o serrar (o revelar o disserrar) un conto de usator global."
 }

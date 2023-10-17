@@ -19,11 +19,12 @@
 	"apierror-centralauth-notloggedin": "Anonyme Benutzer können keinen centralauthtoken abrufen.",
 	"apierror-centralauth-renameinprogress": "Der Benutzer wird derzeit umbenannt, Verwendung nicht möglich.",
 	"apihelp-centralauthtoken-example-1": "Ruft einen centralauthtoken ab",
+	"apihelp-centralauthtoken-extended-description": "Gibt ein Token zurück, das zur Authentifizierung von API-Anfragen in anderen Wikis verwendet werden kann. Gib für Aktions-API-Anfragen diese in den GET-Parameter <var>centralauthtoken</var> ein. Füge für REST-API-Anfragen einen <code>Authorization: CentralAuthToken {token}</code> -Header hinzu. In der MediaWiki-Frontend-Logik kann das ResourceLoader-Modul <code>mediawiki.ForeignApi</code> verwenden werden.",
 	"apihelp-centralauthtoken-summary": "Rufe einen CentralAuth-Token ab, um eine authenzifierte Anfrage zu einem angefügten Wiki zu machen.",
 	"apihelp-createlocalaccount-example-1": "Erzwingt die Erstellung eines lokalen Benutzerkontos für [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Grund für die Erstellung des lokalen Benutzerkontos.",
 	"apihelp-createlocalaccount-param-username": "Benutzer, für den das lokale Benutzerkonto erstellt werden soll.",
-	"apihelp-createlocalaccount-summary": "Erstellung eines lokalen Benutzerkontos erzwingen",
+	"apihelp-createlocalaccount-summary": "Erstellung eines lokalen Benutzerkontos erzwingen. Das globale Konto muss existieren.",
 	"apihelp-deleteglobalaccount-example-1": "Löscht das globale Benutzerkonto für [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Grund für das Löschen des Benutzers.",
 	"apihelp-deleteglobalaccount-param-user": "Zu löschender Benutzer.",
@@ -88,5 +89,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Optionaler MD5-Hash des erwarteten aktuellen <userid>:<username>:<hidden>:<locked>, um Bearbeitungskonflikte festzustellen. Für gesperrt <locked> auf 1 festlegen, 0 für freigegeben.",
 	"apihelp-setglobalaccountstatus-param-user": "Benutzer, dessen Status geändert werden soll.",
-	"apihelp-setglobalaccountstatus-summary": "Legt den Status eines globalen Benutzers fest."
+	"apihelp-setglobalaccountstatus-summary": "Ein globales Benutzerkonto ausblenden oder sperren (bzw. einblenden oder entsperren)."
 }

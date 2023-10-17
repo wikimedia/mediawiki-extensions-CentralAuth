@@ -17,7 +17,7 @@
 	"apihelp-createlocalaccount-example-1": "Принудно создавање на месна сметка за [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Причина за создавањето на месната сметка.",
 	"apihelp-createlocalaccount-param-username": "За кој корисник да се создаде месната сметка.",
-	"apihelp-createlocalaccount-summary": "Принудно создавање на месна сметка",
+	"apihelp-createlocalaccount-summary": "Принудно создавање на месна сметка. Мора да постои централна сметка.",
 	"apihelp-deleteglobalaccount-example-1": "Избриши ја глобалната сметка за [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Причина за бришење на корисникот.",
 	"apihelp-deleteglobalaccount-param-user": "Корисник за бришење.",
@@ -82,5 +82,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промената на статусот на корисникот.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <userid>:<username>:<hidden>:<locked> за утврдување на спротивставености во уредувањето. На <locked> задајте му 1 за заклучен или 0 за незаклучен.",
 	"apihelp-setglobalaccountstatus-param-user": "На кој корисник да му се смени статусот.",
-	"apihelp-setglobalaccountstatus-summary": "Задај глобален кориснички статус"
+	"apihelp-setglobalaccountstatus-summary": "Скриј или заклучи (или откриј/отклучи) глобална корисничка сметка."
 }
