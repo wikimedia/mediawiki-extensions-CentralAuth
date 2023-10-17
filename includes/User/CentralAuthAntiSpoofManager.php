@@ -93,20 +93,20 @@ class CentralAuthAntiSpoofManager {
 			} else {
 				$logger->info( "{$mode}CONFLICT new account '$name' [$normalized] spoofs " .
 					implode( ',', $conflicts ) );
-				if ( $active ) {
-					$numConflicts = count( $conflicts );
 
-					// This message pasting-together sucks.
-					$message = wfMessage( 'antispoof-conflict-top', $name )
-						->numParams( $numConflicts )->escaped();
-					$message .= '<ul>';
+				if ( $active ) {
+					$list = [];
 					foreach ( $conflicts as $simUser ) {
-						$message .= '<li>' .
-							wfMessage( 'antispoof-conflict-item', $simUser )->escaped() . '</li>';
+						$list[] = "* " . wfMessage( 'antispoof-conflict-item', $simUser )->plain();
 					}
-					$message .= '</ul>' . wfMessage( 'antispoof-conflict-bottom' )->escaped();
+					$list = implode( "\n", $list );
+
 					return StatusValue::newFatal(
-						new RawMessage( '$1', Message::rawParam( $message ) )
+						'antispoof-conflict',
+						$name,
+						Message::numParam( count( $conflicts ) ),
+						// Avoid forced wikitext escaping for params in the Status class
+						new RawMessage( $list )
 					);
 				}
 			}
