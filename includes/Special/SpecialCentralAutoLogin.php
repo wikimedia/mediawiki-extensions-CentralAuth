@@ -14,7 +14,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\ResourceLoader\ResourceLoader;
@@ -700,15 +699,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Otherwise, we need to rewrite p-personal and maybe notify the user too
-			if ( $this->extensionRegistry->isLoaded( 'EventLogging' ) ) {
-				EventLogging::logEvent( 'CentralAuth', 5690875,
-					[ 'version' => 1,
-						'userId' => $centralUser->getId(),
-						'action' => 'sul2-autologin-fallbacklogin'
-					]
-				);
-			}
-
 			// Add a script to the page that will pull in the user's toolslist
 			// via ajax, and update the UI. Don't write out the tools here (T59081).
 			$code = $this->userOptionsManager->getOption( $localUser, 'language' );
