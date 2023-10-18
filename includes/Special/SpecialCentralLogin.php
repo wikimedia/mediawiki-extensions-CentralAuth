@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthSessionProvider;
 use Exception;
-use IBufferingStatsdDataFactory;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
@@ -42,9 +41,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	/** @var Session */
 	protected $session = null;
 
-	/** @var IBufferingStatsdDataFactory */
-	private $statsdDataFactory;
-
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
 
@@ -55,17 +51,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	private $logger;
 
 	/**
-	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $utilityService
 	 */
 	public function __construct(
-		IBufferingStatsdDataFactory $statsdDataFactory,
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthUtilityService $utilityService
 	) {
 		parent::__construct( 'CentralLogin' );
-		$this->statsdDataFactory = $statsdDataFactory;
 		$this->sessionManager = $sessionManager;
 		$this->utilityService = $utilityService;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
@@ -369,7 +362,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'status' => $args[0],
 			'extension' => 'CentralAuth',
 		] );
-		$this->statsdDataFactory->increment( 'centralauth.centrallogin_errors.' . $args[0] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' ); // JS only
 	}
