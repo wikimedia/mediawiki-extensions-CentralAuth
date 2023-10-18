@@ -180,7 +180,7 @@
 	"centralauth-centralautologin-badwiki": "Error message shown when an unacceptable wiki ID is given to [[Special:CentralAutoLogin]].\n* $1 - The wiki ID",
 	"centralauth-centralautologin-corsfail": "Error message shown when the CORS origin check fails.\n\nCORS (Cross-Origin Resource Sharing) http://www.w3.org/TR/cors/",
 	"centralauth-centralautologin-desc": "This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.",
-	"centralauth-centralautologin-logged-in": "Message displayed by JavaScript when the auto-login succeeds. Parameters:\n* $1 - username\n* $2 - (Optional) user gender code, for GENDER support\nSee also:\n* {{msg-mw|Centralauth-centralautologin-logged-in-nouser}}",
+	"centralauth-centralautologin-logged-in": "Message displayed by JavaScript when the auto-login succeeds. Parameters:\n* $1 - username\n* $2 - (Optional) user gender code, for GENDER support",
 	"centralauth-centralautologin-logged-in-nouser": "See also:\n* {{msg-mw|Centralauth-centralautologin-logged-in}}",
 	"centralauth-centralautologin-lostsession": "Error message when the session data is lost or overwritten",
 	"centralauth-centralautologin-notposted": "Error message shown when [[Special:CentralAutoLogin]] is called in form mode with an HTTP method other than POST",
