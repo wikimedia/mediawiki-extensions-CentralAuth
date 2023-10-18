@@ -22,12 +22,10 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthTokenSessionProvider;
 use Config;
-use ExtensionRegistry;
 use Html;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Extension\EventLogging\EventLogging;
 use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\ResourceLoader\Module;
 use MediaWiki\WikiMap\WikiMap;
@@ -39,14 +37,12 @@ class PageDisplayHookHandler implements
 	BeforePageDisplayHook
 {
 	private Config $config;
-	private ExtensionRegistry $extensionRegistry;
 
 	/**
 	 * @param Config $config
 	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
-		$this->extensionRegistry = ExtensionRegistry::getInstance();
 	}
 
 	/**
@@ -125,16 +121,6 @@ class PageDisplayHookHandler implements
 			if ( $out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' ) ) {
 				$out->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', null );
 				$out->addHTML( CentralAuthHooks::getEdgeLoginHTML() );
-
-				if ( $this->extensionRegistry->isLoaded( 'EventLogging' ) ) {
-					// Need to correlate user_id across wikis
-					EventLogging::logEvent( 'CentralAuth', 5690875,
-						[ 'version' => 1,
-							'userId' => $centralUser->getId(),
-							'action' => 'sul2-autologin-login'
-						]
-					);
-				}
 			}
 		}
 	}
