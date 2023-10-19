@@ -262,7 +262,6 @@ class CentralAuthHooks implements
 					->escaped() . "</p>\n<p>";
 			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 				$params = [
 					'type' => 'icon',
 					'from' => WikiMap::getCurrentWikiId(),
@@ -271,7 +270,7 @@ class CentralAuthHooks implements
 					$params['mobile'] = 1;
 				}
 				$url = wfAppendQuery(
-					$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+					$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
 					$params
 				);
 				$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
@@ -291,8 +290,7 @@ class CentralAuthHooks implements
 
 		if ( $wgCentralAuthLoginWiki ) {
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
-			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
+			$url = wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
 				'wikiid' => WikiMap::getCurrentWikiId(),
 			] );
@@ -594,13 +592,12 @@ class CentralAuthHooks implements
 
 		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$wiki = WikiMap::getWiki( $wiki );
-			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 			$params = [
 				'type' => '1x1',
 				'from' => WikiMap::getCurrentWikiId(),
 			];
 			$url = wfAppendQuery(
-				$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+				$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
 				$params
 			);
 			if ( self::isMobileDomain() ) {
@@ -608,7 +605,7 @@ class CentralAuthHooks implements
 				// Do autologin on the mobile domain for each wiki
 				$url = MobileContext::singleton()->getMobileUrl(
 					wfAppendQuery(
-						$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+						$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
 						$params
 					)
 				);
@@ -627,8 +624,7 @@ class CentralAuthHooks implements
 
 		if ( $wgCentralAuthLoginWiki ) {
 			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
-			// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-			$url = wfAppendQuery( $wiki->getFullUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
+			$url = wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
 				'type' => '1x1',
 				'wikiid' => WikiMap::getCurrentWikiId(),
 			] );

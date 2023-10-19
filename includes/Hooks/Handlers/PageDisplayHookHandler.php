@@ -98,7 +98,7 @@ class PageDisplayHookHandler implements
 					$params['mobile'] = 1;
 				}
 				$url = wfAppendQuery(
-					$wiki->getFullUrl( 'Special:CentralAutoLogin/start' ),
+					$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
 					$params
 				);
 				$out->addHTML( '<noscript>' . Xml::element( 'img',

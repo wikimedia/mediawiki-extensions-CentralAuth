@@ -265,8 +265,6 @@ class LoginCompleteHookHandler implements
 		$query = [ 'token' => $token ];
 
 		$wiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
-		// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
-		// OutputPage::redirect() will expand it to PROTO_CURRENT
-		return wfAppendQuery( $wiki->getFullUrl( 'Special:CentralLogin/start' ), $query );
+		return wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralLogin/start' ), $query );
 	}
 }
