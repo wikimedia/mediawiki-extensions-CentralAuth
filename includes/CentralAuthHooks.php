@@ -287,7 +287,7 @@ class CentralAuthHooks implements
 		CentralAuthUser $centralUser,
 		ContentSecurityPolicy $csp
 	) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
 
 		// No other domains
 		if ( !$wgCentralAuthAutoLoginWikis ) {
@@ -298,7 +298,11 @@ class CentralAuthHooks implements
 					->params( $user->getName() )
 					->numParams( count( $wgCentralAuthAutoLoginWikis ) )
 					->escaped() . "</p>\n<p>";
-			foreach ( $wgCentralAuthAutoLoginWikis as $wikiID ) {
+			foreach ( $wgCentralAuthAutoLoginWikis as $domain => $wikiID ) {
+				if ( $domain === $wgCentralAuthCookieDomain ) {
+					// Don't autologin to self
+					continue;
+				}
 				$params = [
 					'type' => 'icon',
 					'from' => WikiMap::getCurrentWikiId(),
@@ -590,11 +594,15 @@ class CentralAuthHooks implements
 	 * @see PageDisplayHookHandler::onBeforePageDisplay()
 	 */
 	public static function getEdgeLoginHTML() {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
 
 		$html = '';
 
-		foreach ( $wgCentralAuthAutoLoginWikis as $wikiID ) {
+		foreach ( $wgCentralAuthAutoLoginWikis as $domain => $wikiID ) {
+			if ( $domain === $wgCentralAuthCookieDomain ) {
+				// Don't autologin to self
+				continue;
+			}
 			$params = [
 				'type' => '1x1',
 				'from' => WikiMap::getCurrentWikiId(),

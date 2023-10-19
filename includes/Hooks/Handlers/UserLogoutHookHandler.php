@@ -76,6 +76,7 @@ class UserLogoutHookHandler implements
 		}
 
 		$wikis = $this->config->get( 'CentralAuthAutoLoginWikis' );
+		$centralAuthCookieDomain = $this->config->get( 'CentralAuthCookieDomain' );
 		$loginWiki = $this->config->get( 'CentralAuthLoginWiki' );
 		if ( $loginWiki ) {
 			$wikis[$loginWiki] = $loginWiki;
@@ -91,7 +92,11 @@ class UserLogoutHookHandler implements
 					->params( $user->getName() )
 					->numParams( count( $wikis ) )
 					->escaped() . "</p>\n<p>";
-			foreach ( $wikis as $wikiID ) {
+			foreach ( $wikis as $domain => $wikiID ) {
+				if ( $domain === $centralAuthCookieDomain ) {
+					// Don't autologin (autologout?) to self
+					continue;
+				}
 				$params = [
 					'type' => 'icon',
 				];
