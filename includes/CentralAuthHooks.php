@@ -581,14 +581,7 @@ class CentralAuthHooks implements
 	public static function getEdgeLoginHTML() {
 		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
-		// Put images inside a div so that other code that manipulates page content can
-		// explicitly ignore them.
-		$html = Xml::openElement( 'div',
-			[
-				'id' => 'central-auth-images',
-				'style' => 'position: absolute;',
-			]
-		);
+		$html = '';
 
 		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
 			$wiki = WikiMap::getWiki( $wiki );
@@ -617,7 +610,7 @@ class CentralAuthHooks implements
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
-					'style' => 'border: none;',
+					'style' => 'border: none; position: absolute;',
 				]
 			);
 		}
@@ -635,12 +628,10 @@ class CentralAuthHooks implements
 					'title' => '',
 					'width' => 1,
 					'height' => 1,
-					'style' => 'border: none;',
+					'style' => 'border: none; position: absolute;',
 				]
 			);
 		}
-
-		$html .= Xml::closeElement( 'div' );
 
 		return $html;
 	}
