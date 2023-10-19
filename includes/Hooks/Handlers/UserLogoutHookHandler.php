@@ -94,9 +94,8 @@ class UserLogoutHookHandler implements
 					->escaped() . "</p>\n<p>";
 			foreach ( $wikis as $alt => $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
-				// Use WikiReference::getFullUrl(), returns a protocol-relative URL if needed
 				$url = wfAppendQuery(
-					$wiki->getFullUrl( 'Special:CentralAutoLogin/deleteCookies' ), [
+					$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/deleteCookies' ), [
 						'type' => 'icon',
 					]
 				);

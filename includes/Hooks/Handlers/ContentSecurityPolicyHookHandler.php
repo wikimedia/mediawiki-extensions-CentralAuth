@@ -70,7 +70,7 @@ class ContentSecurityPolicyHookHandler implements
 				$wiki = WikiMap::getWiki( $wiki );
 				if ( CentralAuthHooks::isMobileDomain() ) {
 					$url = \MobileContext::singleton()->getMobileUrl(
-						$wiki->getFullUrl( 'Special:CentralAutoLogin/start' )
+						$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' )
 					);
 					$defaultSrc[] = wfParseUrl( $url )['host'];
 				} else {
@@ -85,7 +85,7 @@ class ContentSecurityPolicyHookHandler implements
 			$loginWiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
 			if ( CentralAuthHooks::isMobileDomain() ) {
 				$url = \MobileContext::singleton()->getMobileUrl(
-					$loginWiki->getFullUrl( 'Special:CentralAutoLogin/checkLoggedIn' )
+					$loginWiki->getCanonicalUrl( 'Special:CentralAutoLogin/checkLoggedIn' )
 				);
 				$defaultSrc[] = wfParseUrl( $url )['host'];
 			} else {
