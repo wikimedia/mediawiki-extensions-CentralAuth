@@ -397,8 +397,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second|seconds}} ago",
 	"centralauth-state-mismatch": "Error: The state of this user account has changed in the meantime. Please verify the current state and try again, if needed.",
 	"centralauth-token-mismatch": "Sorry, we could not process your form submission due to a loss of session data.",
-	"centralauth-warning-notattached": "The local account is not attached to a global one.",
-	"centralauth-warning-notloggedin": "You are not currently logged in.",
 	"centralauth-welcomecreation-msg": "",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|year|years}} ago",
 	"centralautologin": "Central login",

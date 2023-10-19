@@ -422,8 +422,6 @@
 	"centralauth-seconds-ago": "Parameters:\n* $1 - number of seconds\n{{Related|Centralauth-ago}}",
 	"centralauth-state-mismatch": "Error message when another admin has updated the user, and an edit conflict was detected.\n\nSee also:\n* {{msg-mw|Centralauth-token-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}",
 	"centralauth-token-mismatch": "Used as error message.\n\nSee also:\n* {{msg-mw|Centralauth-state-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}\n{{Identical|Loss of session data}}",
-	"centralauth-warning-notattached": "Used as error message.",
-	"centralauth-warning-notloggedin": "Used as error message.",
 	"centralauth-welcomecreation-msg": "{{ignored}}\nEmpty message, can be used on wiki to show extra html on the special page \"CentralLogin\" while signup a new account.",
 	"centralauth-years-ago": "Parameters:\n* $1 - number of years\n{{Related|Centralauth-ago}}",
 	"centralautologin": "{{doc-special|CentralAutoLogin|unlisted=1}}\nSee example: [[w:Special:CentralAutoLogin]].",
