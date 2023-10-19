@@ -22,13 +22,12 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use Config;
 use DeferredUpdates;
+use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
-use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
 use User;
-use Xml;
 
 class UserLogoutHookHandler implements
 	UserLogoutCompleteHook,
@@ -92,23 +91,15 @@ class UserLogoutHookHandler implements
 					->params( $user->getName() )
 					->numParams( count( $wikis ) )
 					->escaped() . "</p>\n<p>";
-			foreach ( $wikis as $alt => $wikiID ) {
-				$wiki = WikiMap::getWiki( $wikiID );
-				$url = wfAppendQuery(
-					$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/deleteCookies' ), [
-						'type' => 'icon',
-					]
-				);
-				$csp->addDefaultSrc( wfParseUrl( $wiki->getCanonicalServer() )['host'] );
-				$inject_html .= Xml::element( 'img',
-					[
-						'src' => $url,
-						'alt' => $alt,
-						'title' => $alt,
-						'width' => 20,
-						'height' => 20,
-						'style' => 'border: 1px solid #ccc;',
-					]
+			foreach ( $wikis as $wikiID ) {
+				$params = [
+					'type' => 'icon',
+				];
+				if ( CentralAuthHooks::isMobileDomain() ) {
+					$params['mobile'] = 1;
+				}
+				$inject_html .= CentralAuthHooks::getAuthIconHtml(
+					$wikiID, 'Special:CentralAutoLogin/deleteCookies', $params, $csp
 				);
 			}
 			$inject_html .= "</p></div>\n";
