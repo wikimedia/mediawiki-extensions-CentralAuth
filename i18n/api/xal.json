@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ukhant Erdemt"
+		]
+	},
+	"apihelp-centralauthtoken-extended-description": "Талдан вики деерк API күслтиг батрулхд ашглҗ болх токеныг буцана. Үүлдлин API күслтин хүвд үүг <var>centralauthtoken</var> GET параметрт орултн. REST API күслтин хүвд <code>Authorization: CentralAuthToken {token}</code> толһа кесгиг немтн. MediaWiki frontend logic деер та <code>mediawiki.ForeignApi</code> ResourceLoader модулиг ашглҗ болна.",
+	"apihelp-createlocalaccount-summary": "Күчәр орн-нутгин даңс үүскх. Төв даңс бәәх йоста.",
+	"apihelp-setglobalaccountstatus-summary": "Глобал кергләчин бүртклиг нуутн эс гиҗ түгҗтн (үзүлтн эс гиҗ неетн)."
+}

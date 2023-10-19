@@ -14,7 +14,7 @@
 	"apihelp-createlocalaccount-example-1": "Forza la creazione di un'utenza locale per [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo per la creazione dell'utenza locale.",
 	"apihelp-createlocalaccount-param-username": "Utente per cui creare l'utenza locale.",
-	"apihelp-createlocalaccount-summary": "Forza la creazione di un'utenza locale",
+	"apihelp-createlocalaccount-summary": "Forza la creazione di un'utenza locale. L'utenza centrale deve esistere.",
 	"apihelp-deleteglobalaccount-example-1": "Cancella l'utenza globale per [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Motivo per la cancellazione dell'utente.",
 	"apihelp-deleteglobalaccount-param-user": "Utente da cancellare.",

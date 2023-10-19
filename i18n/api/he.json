@@ -14,6 +14,7 @@
 	"apierror-centralauth-notloggedin": "משתמשים אלמוניים אינם יכולים לקבל centralauthtoken.",
 	"apierror-centralauth-renameinprogress": "המשתמש בתהליך שינוי שם, לא ניתן להשתמש בו.",
 	"apihelp-centralauthtoken-example-1": "אחזור centralauthtoken",
+	"apihelp-centralauthtoken-extended-description": "מחזירה אסימון שניתן להשתמש בו כדי לאמת בקשות API באתרי ויקי אחרים. עבור בקשות API לפעולה, יש לשים אותו בפרמטר <var>centralauthtoken</var> ב־GET. עבור בקשות REST API, יש להוסיף כותר <code dir=\"ltr\">Authorization: CentralAuthToken {token}</code>. בלוגיקת ממשק המשתמש הקדמי של מדיה־ויקי, באפשרותך להשתמש במודול <code>mediawiki.ForeignApi</code> של ResourceLoader.",
 	"apihelp-centralauthtoken-summary": "אחזור centralauthtoken לביצוע בקשה מאומתת לוויקי משויך.",
 	"apihelp-createlocalaccount-example-1": "כפיית יצירה של חשבון מקומי בשביל [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "סיבה ליצירה החשבון המקומי.",

@@ -12,6 +12,7 @@
 	"apierror-centralauth-notloggedin": "Usatores anonyme non pote obtener un token de authentication central.",
 	"apierror-centralauth-renameinprogress": "Le usator es in curso de renomination; accesso impossibile.",
 	"apihelp-centralauthtoken-example-1": "Obtener un centralauthtoken",
+	"apihelp-centralauthtoken-extended-description": "Retorna un token que pote esser usate pro authenticar requestas API sur altere wikis. Pro requestas API de action, mitte lo in le parametro GET <var>centralauthtoken</var>. Pro requestas API REST, adde un capite <code>Authorization: CentralAuthToken {token}</code>. In le logica del interfacie de MediaWiki, tu pote usar le modulo ResourceLoader <code>mediawiki.ForeignApi</code>.",
 	"apihelp-centralauthtoken-summary": "Obtener un token \"centralauthtoken\" pro inviar un requesta authenticate a un wiki attachate.",
 	"apihelp-createlocalaccount-example-1": "Fortiar le creation de un conto local pro [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo pro crear le conto local.",
