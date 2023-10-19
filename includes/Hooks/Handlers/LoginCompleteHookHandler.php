@@ -31,7 +31,6 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Session\Session;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use MediaWiki\User\UserOptionsLookup;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RequestContext;
@@ -45,9 +44,6 @@ class LoginCompleteHookHandler implements
 	/** @var Config */
 	private $config;
 
-	/** @var UserOptionsLookup */
-	private $userOptionsLookup;
-
 	/** @var CentralAuthSessionManager */
 	private $sessionManager;
 
@@ -57,18 +53,15 @@ class LoginCompleteHookHandler implements
 	/**
 	 * @param HookContainer $hookContainer
 	 * @param Config $config
-	 * @param UserOptionsLookup $userOptionsLookup
 	 * @param CentralAuthSessionManager $sessionManager
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
 		Config $config,
-		UserOptionsLookup $userOptionsLookup,
 		CentralAuthSessionManager $sessionManager
 	) {
 		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
 		$this->config = $config;
-		$this->userOptionsLookup = $userOptionsLookup;
 		$this->sessionManager = $sessionManager;
 	}
 
@@ -127,28 +120,8 @@ class LoginCompleteHookHandler implements
 		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) ||
 			$title->isSpecial( 'CreateAccount' ) )
 		) {
-			// Determine the final protocol of page, after login
-			if ( $this->config->get( 'ForceHTTPS' ) ) {
-				$finalProto = 'https';
-				$secureCookies = true;
-			} else {
-				$finalProto = WebRequest::detectProtocol();
-				$secureCookies = ( $finalProto === 'https' );
-
-				if ( $this->config->get( 'SecureLogin' ) ) {
-					$finalProto = 'http';
-
-					if ( $request->getBool( 'wpForceHttps', false ) ||
-						$request->getSession()->shouldForceHTTPS() ||
-						$this->userOptionsLookup->getBoolOption( $user, 'prefershttps' )
-					) {
-						$finalProto = 'https';
-					}
-
-					$secureCookies = ( ( $finalProto === 'https' ) &&
-						$this->userOptionsLookup->getBoolOption( $user, 'prefershttps' ) );
-				}
-			}
+			$finalProto = WebRequest::detectProtocol();
+			$secureCookies = ( $finalProto === 'https' );
 
 			$redirectUrl = $this->getRedirectUrl(
 				$request->getSession(),
@@ -196,24 +169,10 @@ class LoginCompleteHookHandler implements
 		if ( !$this->config->get( 'CentralAuthLoginWiki' ) ) {
 			return true;
 		}
-		if ( $this->config->get( 'ForceHTTPS' ) ) {
-			$finalProto = 'https';
-			$secureCookies = true;
-		} else {
-			$finalProto = WebRequest::detectProtocol();
-			$secureCookies = ( $finalProto === 'https' );
-			$prefersHttps = $this->userOptionsLookup->getBoolOption( $user, 'prefershttps' );
 
-			if ( $this->config->get( 'SecureLogin' ) ) {
-				$finalProto = 'http';
+		$finalProto = WebRequest::detectProtocol();
+		$secureCookies = ( $finalProto === 'https' );
 
-				if ( $session->shouldForceHTTPS() || $prefersHttps ) {
-					$finalProto = 'https';
-				}
-
-				$secureCookies = ( ( $finalProto === 'https' ) && $prefersHttps );
-			}
-		}
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		$redirectUrl = $this->getRedirectUrl(

@@ -560,7 +560,6 @@
 			"services": [
 				"HookContainer",
 				"MainConfig",
-				"UserOptionsLookup",
 				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
