@@ -72,7 +72,6 @@ use UserArrayFromResult;
 use WebRequest;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IResultWrapper;
-use Xml;
 
 class CentralAuthHooks implements
 	ApiQueryTokensRegisterTypesHook,
@@ -227,6 +226,45 @@ class CentralAuthHooks implements
 	}
 
 	/**
+	 * Get the HTML for an <img> element used to perform edge login, autologin (no-JS), or central logout.
+	 *
+	 * @param string $wikiID Target wiki
+	 * @param string $page Target page, should be a Special:CentralAutoLogin subpage
+	 * @param array $params URL query parameters. Some also affect the generated HTML:
+	 *   - 'type': when set to '1x1', generate an invisible pixel image, instead of a visible icon
+	 *   - 'mobile': when set, use target wiki's mobile domain URL instead of canonical URL
+	 * @param ContentSecurityPolicy|null $csp If provided, it will be modified to allow requests to
+	 *   the target wiki. Otherwise, that must be done in 'ContentSecurityPolicyDefaultSource' hook.
+	 * @return string HTML
+	 */
+	public static function getAuthIconHtml(
+		string $wikiID, string $page, array $params, ?ContentSecurityPolicy $csp
+	): string {
+		// Use WikiMap to avoid localization of the 'Special' namespace, see T56195.
+		$wiki = WikiMap::getWiki( $wikiID );
+		$url = wfAppendQuery(
+			$wiki->getCanonicalUrl( $page ),
+			$params
+		);
+		if ( isset( $params['mobile'] ) ) {
+			// Do autologin on the mobile domain for each wiki
+			$url = MobileContext::singleton()->getMobileUrl( $url );
+		}
+		if ( $csp ) {
+			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
+		}
+
+		$type = $params['type'];
+		return Html::element( 'img', [
+			'src' => $url,
+			'alt' => '',
+			'width' => $type === '1x1' ? 1 : 20,
+			'height' => $type === '1x1' ? 1 : 20,
+			'style' => $type === '1x1' ? 'border: none; position: absolute;' : 'border: 1px solid #ccc;',
+		] );
+	}
+
+	/**
 	 * Get a HTML fragment that will trigger central autologin, i.e. try to log in the user on
 	 * each of $wgCentralAuthAutoLoginWikis in the background by embedding images which point
 	 * to Special:CentralAutoLogin on each of those wikis.
@@ -260,8 +298,7 @@ class CentralAuthHooks implements
 					->params( $user->getName() )
 					->numParams( count( $wgCentralAuthAutoLoginWikis ) )
 					->escaped() . "</p>\n<p>";
-			foreach ( $wgCentralAuthAutoLoginWikis as $alt => $wikiID ) {
-				$wiki = WikiMap::getWiki( $wikiID );
+			foreach ( $wgCentralAuthAutoLoginWikis as $wikiID ) {
 				$params = [
 					'type' => 'icon',
 					'from' => WikiMap::getCurrentWikiId(),
@@ -269,42 +306,16 @@ class CentralAuthHooks implements
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
-				$url = wfAppendQuery(
-					$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
-					$params
-				);
-				$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
-				$inject_html .= Xml::element( 'img',
-					[
-						'src' => $url,
-						'alt' => $alt,
-						'title' => $alt,
-						'width' => 20,
-						'height' => 20,
-						'style' => 'border: 1px solid #ccc;',
-					]
-				);
+				$inject_html .= self::getAuthIconHtml( $wikiID, 'Special:CentralAutoLogin/start', $params, $csp );
 			}
 			$inject_html .= "</p></div>\n";
 		}
 
 		if ( $wgCentralAuthLoginWiki ) {
-			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
-			$url = wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
+			$inject_html .= self::getAuthIconHtml( $wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/refreshCookies', [
 				'type' => '1x1',
 				'wikiid' => WikiMap::getCurrentWikiId(),
-			] );
-			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
-			$inject_html .= Xml::element( 'img',
-				[
-					'src' => $url,
-					'alt' => '',
-					'title' => '',
-					'width' => 1,
-					'height' => 1,
-					'style' => 'border: none; position: absolute;',
-				]
-			);
+			], $csp );
 		}
 
 		return $inject_html;
@@ -583,54 +594,22 @@ class CentralAuthHooks implements
 
 		$html = '';
 
-		foreach ( $wgCentralAuthAutoLoginWikis as $wiki ) {
-			$wiki = WikiMap::getWiki( $wiki );
+		foreach ( $wgCentralAuthAutoLoginWikis as $wikiID ) {
 			$params = [
 				'type' => '1x1',
 				'from' => WikiMap::getCurrentWikiId(),
 			];
-			$url = wfAppendQuery(
-				$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
-				$params
-			);
 			if ( self::isMobileDomain() ) {
 				$params['mobile'] = 1;
-				// Do autologin on the mobile domain for each wiki
-				$url = MobileContext::singleton()->getMobileUrl(
-					wfAppendQuery(
-						$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
-						$params
-					)
-				);
 			}
-			$html .= Xml::element( 'img',
-				[
-					'src' => $url,
-					'alt' => '',
-					'title' => '',
-					'width' => 1,
-					'height' => 1,
-					'style' => 'border: none; position: absolute;',
-				]
-			);
+			$html .= self::getAuthIconHtml( $wikiID, 'Special:CentralAutoLogin/start', $params, null );
 		}
 
 		if ( $wgCentralAuthLoginWiki ) {
-			$wiki = WikiMap::getWiki( $wgCentralAuthLoginWiki );
-			$url = wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralAutoLogin/refreshCookies' ), [
+			$html .= self::getAuthIconHtml( $wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/refreshCookies', [
 				'type' => '1x1',
 				'wikiid' => WikiMap::getCurrentWikiId(),
-			] );
-			$html .= Xml::element( 'img',
-				[
-					'src' => $url,
-					'alt' => '',
-					'title' => '',
-					'width' => 1,
-					'height' => 1,
-					'style' => 'border: none; position: absolute;',
-				]
-			);
+			], null );
 		}
 
 		return $html;

@@ -31,7 +31,6 @@ use MediaWiki\ResourceLoader\Module;
 use MediaWiki\WikiMap\WikiMap;
 use OutputPage;
 use Skin;
-use Xml;
 
 class PageDisplayHookHandler implements
 	BeforePageDisplayHook
@@ -69,9 +68,9 @@ class PageDisplayHookHandler implements
 		}
 
 		if ( !$out->getUser()->isRegistered() ) {
-			if ( $this->config->get( 'CentralAuthLoginWiki' ) &&
-				WikiMap::getCurrentWikiId() !== $this->config->get( 'CentralAuthLoginWiki' )
-			) {
+			$wikiId = WikiMap::getCurrentWikiId();
+			$loginWikiId = $this->config->get( 'CentralAuthLoginWiki' );
+			if ( $loginWikiId && $wikiId !== $loginWikiId ) {
 				// Let the frontend know if this is a mobile domain, T100413
 				$out->addJsConfigVars(
 					'wgCentralAuthMobileDomain',
@@ -79,11 +78,8 @@ class PageDisplayHookHandler implements
 				);
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
-				// For non-JS clients. Use WikiMap to avoid localization of the
-				// 'Special' namespace, see T56195.
-				$wiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
-
-				$loginWiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
+				$wiki = WikiMap::getWiki( $wikiId );
+				$loginWiki = WikiMap::getWiki( $loginWikiId );
 				if ( $wiki->getCanonicalServer() !== $loginWiki->getCanonicalServer() ) {
 					$out->addHeadItem( 'centralauth-dns-prefetch', Html::element( 'link', [
 						'rel' => 'dns-prefetch',
@@ -91,25 +87,15 @@ class PageDisplayHookHandler implements
 					] ) );
 				}
 
+				// For non-JS clients.
 				$params = [
 					'type' => '1x1',
 				];
 				if ( CentralAuthHooks::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
-				$url = wfAppendQuery(
-					$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' ),
-					$params
-				);
-				$out->addHTML( '<noscript>' . Xml::element( 'img',
-					[
-						'src' => $url,
-						'alt' => '',
-						'title' => '',
-						'width' => 1,
-						'height' => 1,
-						'style' => 'border: none; position: absolute;',
-					]
+				$out->addHTML( '<noscript>' . CentralAuthHooks::getAuthIconHtml(
+					$loginWikiId, 'Special:CentralAutoLogin/start', $params, null
 				) . '</noscript>' );
 			}
 		} else {
