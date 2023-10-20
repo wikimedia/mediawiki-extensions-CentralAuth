@@ -72,14 +72,11 @@ class ContentSecurityPolicyHookHandler implements
 					continue;
 				}
 				$wiki = WikiMap::getWiki( $wikiID );
+				$url = $wiki->getCanonicalServer();
 				if ( CentralAuthHooks::isMobileDomain() ) {
-					$url = \MobileContext::singleton()->getMobileUrl(
-						$wiki->getCanonicalUrl( 'Special:CentralAutoLogin/start' )
-					);
-					$defaultSrc[] = wfParseUrl( $url )['host'];
-				} else {
-					$defaultSrc[] = wfParseUrl( $wiki->getCanonicalServer() )['host'];
+					$url = \MobileContext::singleton()->getMobileUrl( $url );
 				}
+				$defaultSrc[] = wfParseUrl( $url )['host'];
 			}
 		}
 
@@ -87,14 +84,11 @@ class ContentSecurityPolicyHookHandler implements
 			// For the non-js case, there is local image loaded, but it redirects to
 			// central wiki, so include it.
 			$loginWiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
+			$url = $loginWiki->getCanonicalServer();
 			if ( CentralAuthHooks::isMobileDomain() ) {
-				$url = \MobileContext::singleton()->getMobileUrl(
-					$loginWiki->getCanonicalUrl( 'Special:CentralAutoLogin/checkLoggedIn' )
-				);
-				$defaultSrc[] = wfParseUrl( $url )['host'];
-			} else {
-				$defaultSrc[] = wfParseUrl( $loginWiki->getCanonicalServer() )['host'];
+				$url = \MobileContext::singleton()->getMobileUrl( $url );
 			}
+			$defaultSrc[] = wfParseUrl( $url )['host'];
 		}
 	}
 
