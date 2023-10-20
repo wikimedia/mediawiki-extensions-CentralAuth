@@ -120,9 +120,6 @@ class LoginCompleteHookHandler implements
 		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) ||
 			$title->isSpecial( 'CreateAccount' ) )
 		) {
-			$finalProto = WebRequest::detectProtocol();
-			$secureCookies = ( $finalProto === 'https' );
-
 			$redirectUrl = $this->getRedirectUrl(
 				$request->getSession(),
 				$centralUser,
@@ -130,8 +127,7 @@ class LoginCompleteHookHandler implements
 				$request->getVal( 'returntoquery', '' ),
 				'',
 				$title->isSpecial( 'CreateAccount' ) ? 'signup' : '',
-				$secureCookies,
-				$finalProto
+				WebRequest::detectProtocol() === 'https'
 			);
 			$context->getOutput()->redirect( $redirectUrl );
 			// Set $inject_html to some text to bypass the LoginForm redirection
@@ -170,9 +166,6 @@ class LoginCompleteHookHandler implements
 			return true;
 		}
 
-		$finalProto = WebRequest::detectProtocol();
-		$secureCookies = ( $finalProto === 'https' );
-
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		$redirectUrl = $this->getRedirectUrl(
@@ -182,8 +175,7 @@ class LoginCompleteHookHandler implements
 			$returnToQuery,
 			$returnToAnchor,
 			'signup',
-			$secureCookies,
-			$finalProto
+			WebRequest::detectProtocol() === 'https'
 		);
 		return false;
 	}
@@ -204,7 +196,6 @@ class LoginCompleteHookHandler implements
 	 * @param string $returnToAnchor
 	 * @param string $loginType 'signup' or the empty string for normal login
 	 * @param bool $secureCookies
-	 * @param string $finalProto
 	 * @return string
 	 *
 	 * @see SpecialCentralLogin
@@ -216,8 +207,7 @@ class LoginCompleteHookHandler implements
 		$returnToQuery,
 		$returnToAnchor,
 		$loginType,
-		$secureCookies,
-		$finalProto
+		$secureCookies
 	) {
 		// User will be redirected to Special:CentralLogin/start (central wiki),
 		// then redirected back to Special:CentralLogin/complete (this wiki).
