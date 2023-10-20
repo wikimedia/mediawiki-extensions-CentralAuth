@@ -380,8 +380,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|detik|detik}} yang lalu",
 	"centralauth-state-mismatch": "Kesalahan: Status akun pengguna ini telah berubah dalam jangka waktu yang dekat. Harap verifikasi status saat ini dan coba lagi, jika perlu.",
 	"centralauth-token-mismatch": "Maaf, kami tidak dapat mengolah pengiriman formulir Anda akibat terhapusnya data sesi.",
-	"centralauth-warning-notattached": "Akun lokal tidak terhubung dengan akun global.",
-	"centralauth-warning-notloggedin": "Anda saat ini tidak masuk log.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|tahun|tahun}} yang lalu",
 	"centralautologin": "Log masuk terpusat",
 	"centrallogin": "Log masuk pengguna terpusat",

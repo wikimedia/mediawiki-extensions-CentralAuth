@@ -349,8 +349,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|ühe|$1}} sekundi eest",
 	"centralauth-state-mismatch": "Tõrge: Selle kasutaja olek on vahepeal muutunud. Palun kontrolli praegust olekut ja proovi uuesti, kui vajalik.",
 	"centralauth-token-mismatch": "Läkitatud vormi töötlemine ei õnnestunud seansiandmete kaotsimineku tõttu.",
-	"centralauth-warning-notattached": "Kohalik konto pole ühendatud globaalsega.",
-	"centralauth-warning-notloggedin": "Sa pole praegu sisse logitud.",
 	"centralauth-years-ago": "{{PLURAL:$1|ühe|$1}} aasta eest",
 	"centralautologin": "Keskne sisselogimine",
 	"centrallogin": "Keskne sisselogimine",

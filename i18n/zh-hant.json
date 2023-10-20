@@ -408,8 +408,6 @@
 	"centralauth-seconds-ago": "$1 秒前",
 	"centralauth-state-mismatch": "錯誤：此名使用者帳號狀態在該期間發生更動。如有需要請驗證目前狀態並再試一次。",
 	"centralauth-token-mismatch": "抱歉，由於連線階段的資料遺失，我們無法處理你送出的表單",
-	"centralauth-warning-notattached": "該本地帳號未連結到全域帳號。",
-	"centralauth-warning-notloggedin": "您目前尚未登入。",
 	"centralauth-years-ago": "$1 年前",
 	"centralautologin": "中央登入",
 	"centrallogin": "中央使用者登入",

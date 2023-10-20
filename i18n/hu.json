@@ -370,7 +370,6 @@
 	"centralauth-seconds-ago": "$1 másodperccel ezelőtt",
 	"centralauth-state-mismatch": "Hiba: Ennél a felhasználónál szerkesztési ütközést észleltünk. Nézd át a változtatást, és próbálkozz újra!",
 	"centralauth-token-mismatch": "Sajnáljuk, nem tudtuk feldolgozni a küldött adatokat a munkamenet-adatok hiánya miatt",
-	"centralauth-warning-notloggedin": "Jelenleg nem vagy bejelentkezve.",
 	"centralauth-years-ago": "$1 évvel ezelőtt",
 	"centralautologin": "Központi bejelentkezés",
 	"centralloginsuccesful": "Bejelentkeztél",

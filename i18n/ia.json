@@ -368,8 +368,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secunda|secundas}} retro",
 	"centralauth-state-mismatch": "Error: Le stato de iste conto de usator ha cambiate intertanto. Verifica le stato actual e essaya lo de novo si es necessari.",
 	"centralauth-token-mismatch": "Pardono, nos non poteva processar tu submission del formulario a causa de un perdita de datos del session.",
-	"centralauth-warning-notattached": "Le conto local non es attachate a un conto global.",
-	"centralauth-warning-notloggedin": "Tu non ha aperite session.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|annos}} retro",
 	"centralautologin": "Authentication central",
 	"centrallogin": "Authentication central de usatores",

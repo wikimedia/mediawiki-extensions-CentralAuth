@@ -19,7 +19,7 @@
 	"apihelp-createlocalaccount-example-1": "De aanmaak van een lokaal account afdwingen voor [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Reden voor het aanmaken van het lokale account.",
 	"apihelp-createlocalaccount-param-username": "Gebruiker om het lokale account voor aan te maken.",
-	"apihelp-createlocalaccount-summary": "De aanmaak van een lokaal account afdwingen",
+	"apihelp-createlocalaccount-summary": "De aanmaak van een lokaal account afdwingen. Het centrale account moet bestaan.",
 	"apihelp-deleteglobalaccount-example-1": "Verwijder de globale gebruiker voor [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Reden voor het verwijderen van de gebruiker.",
 	"apihelp-deleteglobalaccount-param-user": "Te verwijderen gebruiker.",
@@ -84,5 +84,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Reden voor het wijzigen van de gebruikersstatus.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Optionele MD5 van de verwachte huidige <userid>:<username>:<hidden>:<locked> om bewerkingsconflicten te detecteren. Zet <locked> op 1 voor vergrendeld of 0 voor ontgrendeld.",
 	"apihelp-setglobalaccountstatus-param-user": "Gebruiker om de status van te wijzigen.",
-	"apihelp-setglobalaccountstatus-summary": "De globale status van een gebruiker instellen."
+	"apihelp-setglobalaccountstatus-summary": "Een globaal gebruikersaccount verbergen of vergrendelen (of weer zichtbaar maken of ontgrendelen)."
 }

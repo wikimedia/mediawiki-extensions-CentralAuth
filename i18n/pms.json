@@ -319,8 +319,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|second|second}} fa",
 	"centralauth-state-mismatch": "Eror: Un conflit d'edission con st'utent-sì a l'é stàit trovà. Për piasì, ch'a contròla soa modìfica e ch'a preuva torna.",
 	"centralauth-token-mismatch": "An dëspias, i podoma pa processé la spedission ëd sò formolari për na pèrdita ëd dat ëd session.",
-	"centralauth-warning-notattached": "Ël cont local a l'é nen tacà a 'n cont global.",
-	"centralauth-warning-notloggedin": "Al moment a l'é nen rintrà ant ël sistema.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ann|agn}} fa",
 	"centralautologin": "Conession sentralisà",
 	"centrallogin": "Conession utent sentralisà",

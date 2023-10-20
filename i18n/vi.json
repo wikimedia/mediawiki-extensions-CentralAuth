@@ -381,8 +381,6 @@
 	"centralauth-seconds-ago": "cách đây $1 giây",
 	"centralauth-state-mismatch": "Lỗi: Trạng thái của tài khoản thành viên này đã thay đổi trong thời gian chờ. Hãy xác minh trạng thái hiện tại và thử lại nếu cần.",
 	"centralauth-token-mismatch": "Rất tiếc, chúng tôi không thể thực hiện yêu cầu của bạn do mất dữ liệu phiên làm việc.",
-	"centralauth-warning-notattached": "Tài khoản địa phương chưa được đính kèm vào một tài khoản toàn cục.",
-	"centralauth-warning-notloggedin": "Bạn hiện không đăng nhập.",
 	"centralauth-years-ago": "cách đây $1 năm",
 	"centralautologin": "Đăng nhập trung ương",
 	"centrallogin": "Đăng nhập thành viên trung ương",

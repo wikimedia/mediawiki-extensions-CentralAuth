@@ -268,7 +268,6 @@
 	"centralauth-ro": "Informacije o globalnom računu",
 	"centralauth-seconds-ago": "prije $1 {{PLURAL:$1|sekunde|sekunde|sekundi}}",
 	"centralauth-token-mismatch": "Žao nam je, Vašu izmjenu nije bilo moguće obraditi zbog gubljenja podataka sesije.",
-	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni.",
 	"centralauth-years-ago": "prije $1 {{PLURAL:$1|godinu|godine|godina}}",
 	"globalgroupmembership": "Članstvo u globalnim grupama",
 	"globalgrouppermissions": "Upravljanje globalnim grupama",

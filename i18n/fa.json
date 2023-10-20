@@ -398,8 +398,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|ثانیه|ثانیه}} قبل",
 	"centralauth-state-mismatch": "خطا: یک تعارض ویرایشی برای این کاربر شناسایی شد. لطفاً تغییر خود را تأیید کنید و دوباره تلاش نمایید.",
 	"centralauth-token-mismatch": "شرمنده! به علت از دست رفتن اطلاعات نشست کاربری نمی‌توانیم فرم شما را پردازش کنیم.",
-	"centralauth-warning-notattached": "حساب محلی به یک حساب سراسری وصل نشده است.",
-	"centralauth-warning-notloggedin": "شما در حال حاضر ثبت ورود نشده‌اید.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|سال|سال}} قبل",
 	"centralautologin": "ورود مرکزی",
 	"centrallogin": "ثبت ورود مرکزی کاربر",

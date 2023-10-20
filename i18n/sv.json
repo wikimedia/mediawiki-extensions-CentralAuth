@@ -390,8 +390,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekund|sekunder}} sedan",
 	"centralauth-state-mismatch": "Fel: En redigeringskonflikt för denna användare upptäcktes. Var god kontrollera din ändring och försök igen.",
 	"centralauth-token-mismatch": "Beklagar, formuläret kunde inte behandlas på grund av förlorad sessionsdata.",
-	"centralauth-warning-notattached": "Det lokala kontot är inte kopplat till ett globalt.",
-	"centralauth-warning-notloggedin": "Du är för närvarande inte inloggad.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år}} sedan",
 	"centralautologin": "Central inloggning",
 	"centrallogin": "Central användarinloggning",

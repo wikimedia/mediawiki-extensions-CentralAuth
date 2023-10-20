@@ -287,8 +287,6 @@
 	"centralauth-seconds-ago": "před $1 {{PLURAL:$1|sekundu|sekundomaj|sekundami|sekundami}}",
 	"centralauth-state-mismatch": "Zmylk: Wobdźěłowanski konflikt za tutoho wužiwarja je so namakał. Prošu přepruwuj swoju změnu a spytaj hišće raz.",
 	"centralauth-token-mismatch": "Wodaj, njemóžachmy twoje formularne zapodaća předźěłać, dokelž su so daty posedźenja zhubili.",
-	"centralauth-warning-notattached": "Lokalne konto njeje z globalnym kontom zwjazane.",
-	"centralauth-warning-notloggedin": "Tuchwilu njejsy přizjewjeny.",
 	"centralauth-years-ago": "před $1 {{PLURAL:$1|lětom|lětomaj|lětami|lětami}}",
 	"centralautologin": "Centralne přizjewjenje",
 	"centrallogin": "Centralne wužiwarske přizjewjenje",

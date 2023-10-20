@@ -257,8 +257,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|secondi}} fa",
 	"centralauth-state-mismatch": "Eror: Se ga vesto on ràdego de edision par sto utente. Verìfega el to canbiamento e prova da novo.",
 	"centralauth-token-mismatch": "Ne dispiase, ma no gavemo mìa podesto elaborar el modulo che te ghè invià parché xe 'ndà persi i dati de la session.",
-	"centralauth-warning-notattached": "L'utensa locale no la xe tacà a una globale.",
-	"centralauth-warning-notloggedin": "No te ghè mia fato el login.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ano|ani}} fa",
 	"centrallogin": "Login sentrale utente",
 	"centralloginsuccesful": "Aceso efetuà",

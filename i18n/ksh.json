@@ -323,8 +323,6 @@
 	"centralauth-seconds-ago": "för {{PLURAL:$1|eine Sekund|$1 Sekunde|keine Sekund}}",
 	"centralauth-state-mismatch": "Fähler: Dä Metmaaacher wohd dubbelt beärbeidt. Pröhv Ding Ängeronge un versöhg_et norr_ens.",
 	"centralauth-token-mismatch": "Schad, mer kunnte nit beärrbeide, de Sessions-Date sin futsch. Donn et norr_ens versöke.",
-	"centralauth-warning-notattached": "Dä lokahle Zohjang es nit med enem jemeinesamme verbonge.",
-	"centralauth-warning-notloggedin": "Do bes jrahd nit ennjelogg.",
 	"centralauth-years-ago": "för {{PLURAL:$1|einem Johr|$1 Johre|keinem Johr}}",
 	"centralautologin": "Zäntral Enlogge",
 	"centrallogin": "Zäntrahl enlogge",

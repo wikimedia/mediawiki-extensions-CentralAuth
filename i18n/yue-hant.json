@@ -183,7 +183,6 @@
 	"centralauth-seconds-ago": "$1 秒前",
 	"centralauth-state-mismatch": "出錯：呢個編輯衝突已經俾用戶保護咗，唔該再肯定多次你嘅編輯。",
 	"centralauth-token-mismatch": "對唔住，由於小節資料遺失咗，我哋唔可以處理你嘅表格遞交",
-	"centralauth-warning-notloggedin": "你而家未簽到。",
 	"centralauth-years-ago": "$1 年前",
 	"centralautologin": "中央簽到",
 	"centrallogin": "中央用戶簽到",

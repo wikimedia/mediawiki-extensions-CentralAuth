@@ -338,8 +338,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सॅकेंड}} पहले",
 	"centralauth-state-mismatch": "त्रुटि: इस सदस्य के लिए एक सम्पादन अंतर्विरोध पाया गया है। कृपया अपने बदलाव जाँचें और पुनः प्रयास करें।",
 	"centralauth-token-mismatch": "क्षमा करें, सेशन डाटा खो जाने के कारण हम आपकी अर्जी प्रोसेस नहीं कर पाए।",
-	"centralauth-warning-notattached": "स्थानीय खाता वैश्विक खाते से नहीं जुड़ा है।",
-	"centralauth-warning-notloggedin": "आप इस समय लॉग इन नहीं हैं।",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|साल}} पहले",
 	"centralautologin": "वैश्विक लॉगिन",
 	"centrallogin": "वैश्विक सदस्य लॉगिन",

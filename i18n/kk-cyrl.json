@@ -266,7 +266,6 @@
 	"centralauth-seconds-ago": "$1 секунд бұрын",
 	"centralauth-state-mismatch": "Қате: Бұл қатысушы үшін өңдеме қақтығысы табылды. Өзгерісіңізді тексеріңіз және қайталап көріңіз.",
 	"centralauth-token-mismatch": "Ғафу етіңіз, сессия деректері жоғалтылған себебінен пішініңізді жөнелту үдерісін істей алмаймыз.",
-	"centralauth-warning-notloggedin": "сіз қазір жүйеге кіріп отырған жоқсыз.",
 	"centralauth-years-ago": "$1 жыл бұрын",
 	"centralautologin": "Орталық кіруі",
 	"centrallogin": "Орталық қатысушы кіруі",

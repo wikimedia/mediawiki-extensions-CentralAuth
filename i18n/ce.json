@@ -318,8 +318,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} хьалха",
 	"centralauth-state-mismatch": "ГӀалат: хӀокху декъашхочун карина тадаран доьвнаш. Хьайн хийцамашка хьаже йуха гӀорта.",
 	"centralauth-token-mismatch": "Хьан форма кечян цало, сеансан хаамаш байна хилар бахьнехь.",
-	"centralauth-warning-notattached": "Локалан аккаунт глобалан йукъатоьхна дац.",
-	"centralauth-warning-notloggedin": "ЦӀарца доцуш",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|шо}} хьалха",
 	"centralautologin": "Йукъара системин чугӀойла",
 	"centrallogin": "Йукъара системин чугӀойла меттиг",

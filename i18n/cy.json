@@ -285,8 +285,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|eiliad}} yn ôl",
 	"centralauth-state-mismatch": "Gwall: Cafwyd dau olygiad ar yr un pryd. Gwiriwch eich newid a cheisiwch eto.",
 	"centralauth-token-mismatch": "Mae'n ddrwg gennym, ni allem brosesu'r ffurflen a gyflwynwyd gennych oherwydd i ni golli data'r sesiwn.",
-	"centralauth-warning-notattached": "Nid yw'r cyfrif lleol hwn ynghlwm wrth gyfrif cyd-wici.",
-	"centralauth-warning-notloggedin": "Nid ydych wedi mewngofnodi ar hyn o bryd.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|mlynedd|mlynedd|flynedd|mlynedd|mlynedd|mlynedd}} yn ôl",
 	"centralautologin": "Mewngofnodi canolog",
 	"centrallogin": "Mewngofnodi defnyddiwr cydwici",

@@ -379,8 +379,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|secondi}} fa",
 	"centralauth-state-mismatch": "Errore: lo stato di questo utente è cambiato nel frattempo. Verifica lo stato attuale e riprova, se necessario.",
 	"centralauth-token-mismatch": "Spiacente, non possiamo processare la tua sottoscrizione del form per una perdita dei dati di sessione.",
-	"centralauth-warning-notattached": "L'utenza locale non è collegata ad una globale.",
-	"centralauth-warning-notloggedin": "Attualmente non sei connesso.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|anni}} fa",
 	"centralautologin": "Accesso centrale",
 	"centrallogin": "Accesso centrale utente",

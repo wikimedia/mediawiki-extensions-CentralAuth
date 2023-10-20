@@ -399,8 +399,6 @@
 	"centralauth-seconds-ago": "$1 saniye önce",
 	"centralauth-state-mismatch": "Hata: Bu kullanıcı hesabının durumu bu arada değişti. Lütfen şimdiki durumu doğrulayın ve gerekirse yeniden deneyin.",
 	"centralauth-token-mismatch": "Üzgünüz, oturum veri kaybından dolayı form gönderiminizi işleyemiyoruz.",
-	"centralauth-warning-notattached": "Yerel hesap küresel olana bağlı değil.",
-	"centralauth-warning-notloggedin": "Şu anda oturum açmadınız.",
 	"centralauth-years-ago": "$1 yıl önce",
 	"centralautologin": "Merkezi giriş",
 	"centrallogin": "Merkezi kullanıcı girişi",

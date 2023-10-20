@@ -395,8 +395,6 @@
 	"centralauth-seconds-ago": "$1{{PLURAL:$1|초}} 전",
 	"centralauth-state-mismatch": "오류: 이 사용자에 대한 편집 충돌을 감지했습니다. 바뀜을 확인하고 다시 시도하세요.",
 	"centralauth-token-mismatch": "죄송합니다. 세션 데이터 손실로 양식을 제출하지 못했습니다.",
-	"centralauth-warning-notattached": "로컬 계정이 통합 계정에 묶여있지 않습니다.",
-	"centralauth-warning-notloggedin": "현재 로그인하고 있지 않습니다.",
 	"centralauth-years-ago": "$1{{PLURAL:$1|년}} 전",
 	"centralautologin": "통합 로그인",
 	"centrallogin": "통합 사용자 로그인",

@@ -270,8 +270,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|segundo|segundos}} an nakaagi",
 	"centralauth-state-mismatch": "Kasalaan:Sarong kumplikto sa pagliwat para sa paragamit na ini an namansayan. Pakirekisaha tabi an saimong kaliwatan asin otroha giraray.",
 	"centralauth-token-mismatch": "Sori, dae mi tabi maiproseso an saimong pagsumite kan porma nin huli sa kakulangan nin datos sa sesyon.",
-	"centralauth-warning-notattached": "An lokal na panindog dae nakadukot sa sarong pankinabanon.",
-	"centralauth-warning-notloggedin": "Ika dae sa ngunyan nakalaog.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anyo|anyos}} an nakaagi",
 	"centralautologin": "Sentral na paglalaog",
 	"centrallogin": "Sentral na paglaog kan paragamit",

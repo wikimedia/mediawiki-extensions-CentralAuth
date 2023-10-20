@@ -369,8 +369,6 @@
 	"centralauth-seconds-ago": "před $1 {{PLURAL:$1|sekundou|sekundami|sekundami}}",
 	"centralauth-state-mismatch": "Chyba: U tohoto uživatele byl detekován editační konflikt. Zkontrolujte své změny a zkuste to znovu.",
 	"centralauth-token-mismatch": "Je nám líto, nebylo možné zpracovat údaje z formuláře, které jste poslali, z důvodu ztráty informací o vaší relaci.",
-	"centralauth-warning-notattached": "Lokální účet není připojen ke globálnímu.",
-	"centralauth-warning-notloggedin": "Momentálně nejste přihlášen(a).",
 	"centralauth-years-ago": "před $1 {{PLURAL:$1|rokem|roky|lety}}",
 	"centralautologin": "Ústřední přihlášení",
 	"centrallogin": "Ústřední přihlášení uživatele",

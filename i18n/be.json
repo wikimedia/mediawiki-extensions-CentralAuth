@@ -372,8 +372,6 @@
 	"centralauth-seconds-ago": "$1 секунд{{PLURAL:$1|у|}} таму",
 	"centralauth-state-mismatch": "Памылка: выяўлены канфлікт правак гэтага ўдзельніка. Праверце вашыя змены і паспрабуйце зноў.",
 	"centralauth-token-mismatch": "Прабачце, немагчыма працягваць апрацоўку вашай формы ў выніку страты звестак сеансу.",
-	"centralauth-warning-notattached": "Лакальны ўліковы запіс не злучаны з глабальным.",
-	"centralauth-warning-notloggedin": "Зараз вы не ў сістэме.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|год|гады|гадоў}} таму",
 	"centralautologin": "Цэнтральны ўваход",
 	"centrallogin": "Цэнтральны ўваход у сістэму",

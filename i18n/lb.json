@@ -324,8 +324,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}",
 	"centralauth-state-mismatch": "Feeler: En Ännerungskonflikt fir dëse Benotzer gouf fonnt. Kuckt wgl. Är Ännerung no a probéiert nach eng Kéier.",
 	"centralauth-token-mismatch": "Pardon, mir konnten d'Donnéeë vun ärer Demande (Formulaire) net verschaffe wëll Date vun ärer Sessioun verluer gi sinn.",
-	"centralauth-warning-notattached": "De lokale Benotzerkont ass net mat engem globale Benotzerkont verbonn.",
-	"centralauth-warning-notloggedin": "Dir sidd elo net ageloggt.",
 	"centralauth-years-ago": "{{PLURAL:$1|virun|viru(n)}} $1 Joer",
 	"centralautologin": "Zentrale Login",
 	"centrallogin": "Zentrale Login",

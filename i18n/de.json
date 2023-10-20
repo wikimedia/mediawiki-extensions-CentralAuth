@@ -385,8 +385,6 @@
 	"centralauth-seconds-ago": "Vor $1 {{PLURAL:$1|Sekunde|Sekunden}}",
 	"centralauth-state-mismatch": "Fehler: Der Status dieses Benutzerkontos hat sich inzwischen geändert. Bitte überprüfe den aktuellen Status und versuche es bei Bedarf erneut.",
 	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.",
-	"centralauth-warning-notattached": "Das lokale Benutzerkonto ist mit keinem globalen Konto verbunden.",
-	"centralauth-warning-notloggedin": "Du bist derzeit nicht angemeldet.",
 	"centralauth-years-ago": "Vor $1 {{PLURAL:$1|Jahr|Jahren}}",
 	"centralautologin": "Zentrale Anmeldung",
 	"centrallogin": "Zentrale Benutzeranmeldung",

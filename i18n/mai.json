@@ -215,8 +215,6 @@
 	"centralauth-rightslog-set-optout": "ऑप्ट-आउट आधारित",
 	"centralauth-ro": "वैश्विक खाता जानकारी",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सेकेन्ड}} पहिने",
-	"centralauth-warning-notattached": "स्थानीय खाता वैश्विक खाता सs नै जुड़ल अछि।",
-	"centralauth-warning-notloggedin": "अपने ई समय लॉग इन नैं छि ।",
 	"centralautologin": "विश्वव्यापी सम्प्रवेश",
 	"centrallogin": "विश्वव्यापी सदस्य सम्प्रवेश",
 	"centralloginsuccesful": "सम्प्रवेशित सफल",

@@ -313,8 +313,6 @@
 	"centralauth-seconds-ago": "$1 წამის წინ",
 	"centralauth-state-mismatch": "შეცდომა: აღმოჩენილია ამ მომხმარებლის რედაქტირების კონფლიქტი. გთხოვთ, შეამოწმოთ თქვენი ცვლილება და თავიდან სცადოთ.",
 	"centralauth-token-mismatch": "სამწუხაროდ ჩვენ ვერ გავაგრძელებთ თქვენი ფორმის დამუშავებას, რადგანაც სეანსის მონაცემები დაიკარგა.",
-	"centralauth-warning-notattached": "ლოკალური ანგარიში არ არის დაკავშირებული გლობალურთან.",
-	"centralauth-warning-notloggedin": "თქვენ არ ხართ შესული სისტემაში",
 	"centralauth-years-ago": "$1 წლის წინ",
 	"centralautologin": "გლობალური შესვლა",
 	"centrallogin": "ცენტრალური შესვლა სისტემაში",

@@ -158,7 +158,6 @@
 	"centralauth-rightslog-name": "ဂလိုဘယ် ရပိုင်ခွင့်များ မှတ်တမ်း",
 	"centralauth-ro": "ဂလိုဘယ်အကောင့် သတင်းအချက်အလက်",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|စက္ကန့်|စက္ကန့်}} အကြာက",
-	"centralauth-warning-notloggedin": "သင်သည်လက်ရှိ အကောင့်ထဲမဝင်ထားပါ။",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|နှစ်|နှစ်}} အကြာက",
 	"centralautologin": "ဗဟိုလော့ဂ်အင်ဝင်ရောက်ခြင်း",
 	"centralloginsuccesful": "အကောင့်ထဲဝင်ပြီးပြီ",

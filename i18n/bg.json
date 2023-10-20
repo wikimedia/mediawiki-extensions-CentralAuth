@@ -317,8 +317,6 @@
 	"centralauth-ro": "Информация за глобалната сметка",
 	"centralauth-seconds-ago": "преди $1 {{PLURAL:$1|секунда|секунди}}",
 	"centralauth-token-mismatch": "За съжаление не успяхме да обработим изпратения формуляр поради загуба на данните за текущата сесия.",
-	"centralauth-warning-notattached": "Локалната сметка не е свързана с глобална.",
-	"centralauth-warning-notloggedin": "В момента не сте влезли.",
 	"centralauth-years-ago": "преди $1 {{PLURAL:$1|година|години}}",
 	"centralautologin": "Централно влизане",
 	"centrallogin": "Централно потребителско влизане",

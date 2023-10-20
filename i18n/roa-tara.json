@@ -361,8 +361,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|seconde|seconde}} fà",
 	"centralauth-state-mismatch": "Errore: Stè 'nu conflitte de cangiamende pe stu utende. Pe piacere condrolle le cangiaminde tune e pruève arrete.",
 	"centralauth-token-mismatch": "Ne dispiace, non ge putime processà 'u module de sottoscrizione tune purcé s'onne perse le date d'a sessione.",
-	"centralauth-warning-notattached": "'U cunde locale non g'è attaccate a une globbale.",
-	"centralauth-warning-notloggedin": "Tu pe mò non ge sì collegate.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anne|anne}} fà",
 	"centralautologin": "Trasute cendralizzate",
 	"centrallogin": "Trasute de l'utende cendralizzate",

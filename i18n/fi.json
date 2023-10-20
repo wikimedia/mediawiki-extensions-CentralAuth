@@ -388,8 +388,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekunti|sekuntia}} sitten",
 	"centralauth-state-mismatch": "Virhe: Päällekkäinen muokkaus tämän käyttäjän kanssa on havaittu. Varmista muutoksesi ja yritä uudelleen.",
 	"centralauth-token-mismatch": "Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.",
-	"centralauth-warning-notattached": "Paikallista tunnusta ei ole liitetty järjestelmänlaajuiseen tunnukseen.",
-	"centralauth-warning-notloggedin": "Et ole kirjautuneena sisään.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|vuosi|vuotta}} sitten",
 	"centralautologin": "Keskitetty kirjautuminen",
 	"centrallogin": "Keskitetty kirjautuminen",

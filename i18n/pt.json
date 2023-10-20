@@ -385,8 +385,6 @@
 	"centralauth-seconds-ago": "há $1 {{PLURAL:$1|segundo|segundos}}",
 	"centralauth-state-mismatch": "Erro: Foi detetado um conflito de edição para este utilizador. Verifique a sua alteração e tente novamente, por favor.",
 	"centralauth-token-mismatch": "Desculpe, não foi possível processar a sua submissão do formulário devido à perda dos dados da sessão.",
-	"centralauth-warning-notattached": "A conta local não está anexada a uma global.",
-	"centralauth-warning-notloggedin": "Não está autenticado.",
 	"centralauth-years-ago": "há $1 {{PLURAL:$1|ano|anos}}",
 	"centralautologin": "Autenticação central",
 	"centrallogin": "Autenticação central",

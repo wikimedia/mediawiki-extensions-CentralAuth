@@ -328,7 +328,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|วินาที|วินาที}} ที่แล้ว",
 	"centralauth-state-mismatch": "ข้อผิดพลาด: ตรวจพบการแก้ไขชนกันสำหรับผู้ใช้นี้ โปรดตรวจสอบการเปลี่ยนแปลงของคุณและลองอีกครั้ง",
 	"centralauth-token-mismatch": "ขออภัย เราไม่สามารถดำเนินการส่งฟอร์มของคุณได้เนื่องจากข้อมูลเซสชันสูญหาย",
-	"centralauth-warning-notloggedin": "คุณยังไม่ได้ล็อกอิน",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|ปี|ปี}} ที่แล้ว",
 	"centralautologin": "การเข้าสู่ระบบกลาง",
 	"centrallogin": "การเข้าสู่ระบบผู้ใช้ส่วนกลาง",

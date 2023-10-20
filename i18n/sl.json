@@ -372,8 +372,6 @@
 	"centralauth-seconds-ago": "pred $1 {{PLURAL:$1|sekundo|sekundama|sekundami}}",
 	"centralauth-state-mismatch": "Napaka: Stanje uporabniškega računa se je v tem času spremenilo. Prosimo, preverite trenutno stanje in poskusite znova.",
 	"centralauth-token-mismatch": "Oprostite, nismo mogli obdelati vašega poslanega obrazca zaradi izgube podatkov o seji.",
-	"centralauth-warning-notattached": "Lokalni račun ni pripet globalnemu.",
-	"centralauth-warning-notloggedin": "Trenutno niste prijavljeni.",
 	"centralauth-years-ago": "pred $1 {{PLURAL:$1|letom|letoma|leti}}",
 	"centralautologin": "Centralna prijava",
 	"centrallogin": "Centralna prijava uporabnika",

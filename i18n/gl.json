@@ -379,8 +379,6 @@
 	"centralauth-seconds-ago": "hai {{PLURAL:$1|un segundo|$1 segundos}}",
 	"centralauth-state-mismatch": "Erro: O estado desta conta de usuario cambiou. Verifique o estado actual e inténteo de novo, se fose necesario.",
 	"centralauth-token-mismatch": "Sentímolo, non se pode procesar o formulario enviado debido a que se perderon os datos da sesión.",
-	"centralauth-warning-notattached": "A conta local non está ligada cunha conta global.",
-	"centralauth-warning-notloggedin": "Non accedeu ao sistema.",
 	"centralauth-years-ago": "hai {{PLURAL:$1|un ano|$1 anos}}",
 	"centralautologin": "Rexistro central",
 	"centrallogin": "Acceso central ao sistema",

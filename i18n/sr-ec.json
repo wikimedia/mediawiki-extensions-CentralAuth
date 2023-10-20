@@ -336,8 +336,6 @@
 	"centralauth-ro": "Подаци о глобалном налогу",
 	"centralauth-seconds-ago": "пре $1 {{PLURAL:$1|секунде|секунде|секунди}}",
 	"centralauth-token-mismatch": "Нажалост, не можемо да обрадимо поднесени образац због губитка података о сесији.",
-	"centralauth-warning-notattached": "Локални налог није повезан с глобалним.",
-	"centralauth-warning-notloggedin": "Тренутно нисте пријављени.",
 	"centralauth-years-ago": "пре {{PLURAL:$1|годину дана|$1 године|$1 година}}",
 	"centralautologin": "Централна пријава",
 	"centrallogin": "Централна корисничка пријава",

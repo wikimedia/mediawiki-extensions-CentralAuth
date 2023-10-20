@@ -330,8 +330,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|secondo|seconde}} fà",
 	"centralauth-state-mismatch": "Errore: Nce sta nu conflitto 'e cagnamiente pe' st'utente. Pe' piacere cuntrullate 'e cagnamiente vuoste 'e provate n'ata vota.",
 	"centralauth-token-mismatch": "Ce dispiace, nun se pùo prucessà 'o modulo 'e sottoscrizione vuoste pecchè se so' sperdute 'e date d' 'a sessiona.",
-	"centralauth-warning-notattached": "'O cunto lucale nun è accucchiato a nu cunto globbale.",
-	"centralauth-warning-notloggedin": "Mo nun site trasuto/a.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|anne}} fà",
 	"centralautologin": "Trasute centralizzate",
 	"centrallogin": "Accesso centrale utente",

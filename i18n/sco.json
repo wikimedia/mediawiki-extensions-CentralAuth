@@ -315,8 +315,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|seicont|seiconts}} syne",
 	"centralauth-state-mismatch": "Mistak: Aen eedit conflict fer this uiser wis detectit. Please vereefie yer chynge n gie it anither gae.",
 	"centralauth-token-mismatch": "Sairrie, we coudna process yer form haunin in cause o ae loss o session data.",
-	"centralauth-warning-notattached": "The local accoont isna attached til ae global accoont.",
-	"centralauth-warning-notloggedin": "Ye'r na loggit in the nou.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|year}} syne",
 	"centralautologin": "Central login",
 	"centrallogin": "Central uiser log in",

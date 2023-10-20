@@ -268,8 +268,6 @@
 	"centralauth-seconds-ago": "pśed $1 {{PLURAL:$1|sekundu|sekundoma|sekundami|sekundami}}",
 	"centralauth-state-mismatch": "Zmólka: Wobźěłowański konflikt za toś togo wužywarja jo se namakał. Pšosym pśeglědaj swóju změnu a wopytaj hyšći raz.",
 	"centralauth-token-mismatch": "Wódaj, njejsmy mógli twóje formularne pódaśa pśeźěłaś, dokulaž pósejźeńske daty su se zgubili.",
-	"centralauth-warning-notattached": "Lokalne konto njejo z globalnym kontom zwězane.",
-	"centralauth-warning-notloggedin": "Tuchylu njejsy pśizjawjony.",
 	"centralauth-years-ago": "pśed $1 {{PLURAL:$1|lětom|lětoma|lětami|lětami}}",
 	"centralautologin": "Centralne pśizjawjenje",
 	"centrallogin": "Centralne wužywarske pśizjawjenje",

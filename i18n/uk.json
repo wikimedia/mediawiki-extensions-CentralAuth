@@ -395,8 +395,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунду|секунди|секунд}} тому",
 	"centralauth-state-mismatch": "Помилка: стан цього облікового запису користувача тим часом змінився. Перевірте поточний стан і за потреби спробуйте ще раз.",
 	"centralauth-token-mismatch": "На жаль, ми не можемо продовжити обробку вашої форми через втрату даних сеансу.",
-	"centralauth-warning-notattached": "Локальний обліковий запис не приєднано до глобального.",
-	"centralauth-warning-notloggedin": "Наразі Ви не увійшли до системи.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|рік|роки|років}} тому",
 	"centralautologin": "Центральний вхід",
 	"centrallogin": "Центральний вхід в систему",

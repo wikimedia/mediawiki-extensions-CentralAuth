@@ -395,8 +395,6 @@
 	"centralauth-seconds-ago": "{{PLURAL:$1|przed sekundą|$1 sekundy temu|$1 sekund temu}}",
 	"centralauth-state-mismatch": "Błąd : Wykryto konflikt edycji. Sprawdź swoje zmiany i spróbuj ponownie",
 	"centralauth-token-mismatch": "Niemożliwe było wykonanie polecenia ze względu na utratę danych sesji.",
-	"centralauth-warning-notattached": "Lokalne konto nie jest podłączone do globalnego.",
-	"centralauth-warning-notloggedin": "Nie jesteś aktualnie zalogowany.",
 	"centralauth-years-ago": "{{PLURAL:$1|rok|$1 lata|$1 lat}} temu",
 	"centralautologin": "Logowanie centralne",
 	"centrallogin": "Centralne logowanie użytkownika",
