@@ -1069,7 +1069,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string|null
 	 */
 	public function chooseHomeWiki( $migrationSet ) {
-		if ( empty( $migrationSet ) ) {
+		if ( !$migrationSet ) {
 			throw new Exception( 'Logic error -- empty migration set in chooseHomeWiki' );
 		}
 
@@ -1229,7 +1229,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$migrationSet = $this->queryUnattached();
-		if ( empty( $migrationSet ) ) {
+		if ( !$migrationSet ) {
 			$this->logger->info( 'dry run: no accounts to merge, failed migration' );
 			return Status::newFatal( 'centralauth-merge-no-accounts' );
 		}
@@ -1345,7 +1345,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->checkWriteMode();
 		$migrationSet = $this->queryUnattached();
 		$logger = $this->logger;
-		if ( empty( $migrationSet ) ) {
+		if ( !$migrationSet ) {
 			$logger->info( 'no accounts to merge, failed migration' );
 			return false;
 		}

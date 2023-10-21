@@ -326,7 +326,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		$passwords = $this->getWorkingPasswords();
-		if ( empty( $passwords ) ) {
+		if ( !$passwords ) {
 			throw new Exception( "Submission error -- invalid input" );
 		}
 
@@ -360,7 +360,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->clearWorkingPasswords();
 
 		if ( !$ok ) {
-			if ( empty( $attached ) ) {
+			if ( !$attached ) {
 				$this->getOutput()->addWikiMsg( 'centralauth-finish-noconfirms' );
 			} else {
 				$this->getOutput()->addWikiMsg( 'centralauth-finish-incomplete' );

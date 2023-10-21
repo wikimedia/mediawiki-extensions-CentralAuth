@@ -88,7 +88,7 @@ class CentralAuthAntiSpoofManager {
 			if ( $oldUserName !== null ) {
 				$conflicts[] = $oldUserName;
 			}
-			if ( empty( $conflicts ) ) {
+			if ( !$conflicts ) {
 				$logger->info( "{$mode}PASS new account '$name' [$normalized]" );
 			} else {
 				$logger->info( "{$mode}CONFLICT new account '$name' [$normalized] spoofs " .
