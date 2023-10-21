@@ -210,7 +210,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		];
 
 		$currentEmail = $this->getUser()->getEmail();
-		if ( empty( $currentEmail ) ) {
+		if ( $currentEmail === '' ) {
 			$fields['email'] = [
 				'cssclass'      => 'mw-globalrenamerequest-field',
 				'csshelpclass'  => 'mw-globalrenamerequest-help',
