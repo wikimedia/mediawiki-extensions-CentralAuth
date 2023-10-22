@@ -66,11 +66,7 @@ class ContentSecurityPolicyHookHandler implements
 			!$out->getUser()->isRegistered() ||
 				$out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' )
 		) {
-			foreach ( $this->config->get( 'CentralAuthAutoLoginWikis' ) as $domain => $wikiID ) {
-				if ( $domain === $this->config->get( 'CentralAuthCookieDomain' ) ) {
-					// No need to add self
-					continue;
-				}
+			foreach ( CentralAuthHooks::getAutoLoginWikis() as $wikiID ) {
 				$wiki = WikiMap::getWiki( $wikiID );
 				$url = $wiki->getCanonicalServer();
 				if ( CentralAuthHooks::isMobileDomain() ) {

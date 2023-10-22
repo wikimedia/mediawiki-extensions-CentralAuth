@@ -265,6 +265,24 @@ class CentralAuthHooks implements
 	}
 
 	/**
+	 * Get autologin wikis, in the same format as $wgCentralAuthAutoLoginWikis, but with the
+	 * current domain removed.
+	 * @return string[]
+	 */
+	public static function getAutoLoginWikis(): array {
+		global $wgServer, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
+		$autoLoginWikis = $wgCentralAuthAutoLoginWikis;
+		if ( $wgCentralAuthCookieDomain ) {
+			unset( $autoLoginWikis[$wgCentralAuthCookieDomain] );
+		} else {
+			$serverParts = MediaWikiServices::getInstance()->getUrlUtils()->parse( $wgServer );
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+			unset( $autoLoginWikis[ $serverParts['host'] ] );
+		}
+		return $autoLoginWikis;
+	}
+
+	/**
 	 * Get a HTML fragment that will trigger central autologin, i.e. try to log in the user on
 	 * each of $wgCentralAuthAutoLoginWikis in the background by embedding images which point
 	 * to Special:CentralAutoLogin on each of those wikis.
@@ -287,7 +305,7 @@ class CentralAuthHooks implements
 		CentralAuthUser $centralUser,
 		ContentSecurityPolicy $csp
 	) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
+		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
 
 		// No other domains
 		if ( !$wgCentralAuthAutoLoginWikis ) {
@@ -298,11 +316,7 @@ class CentralAuthHooks implements
 					->params( $user->getName() )
 					->numParams( count( $wgCentralAuthAutoLoginWikis ) )
 					->escaped() . "</p>\n<p>";
-			foreach ( $wgCentralAuthAutoLoginWikis as $domain => $wikiID ) {
-				if ( $domain === $wgCentralAuthCookieDomain ) {
-					// Don't autologin to self
-					continue;
-				}
+			foreach ( self::getAutoLoginWikis() as $domain => $wikiID ) {
 				$params = [
 					'type' => 'icon',
 					'from' => WikiMap::getCurrentWikiId(),
@@ -594,15 +608,11 @@ class CentralAuthHooks implements
 	 * @see PageDisplayHookHandler::onBeforePageDisplay()
 	 */
 	public static function getEdgeLoginHTML() {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
+		global $wgCentralAuthLoginWiki;
 
 		$html = '';
 
-		foreach ( $wgCentralAuthAutoLoginWikis as $domain => $wikiID ) {
-			if ( $domain === $wgCentralAuthCookieDomain ) {
-				// Don't autologin to self
-				continue;
-			}
+		foreach ( self::getAutoLoginWikis() as $domain => $wikiID ) {
 			$params = [
 				'type' => '1x1',
 				'from' => WikiMap::getCurrentWikiId(),
