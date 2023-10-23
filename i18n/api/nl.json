@@ -15,6 +15,7 @@
 	"apierror-centralauth-notloggedin": "Anonieme gebruikers kunnen geen CentralAuthToken verkrijgen.",
 	"apierror-centralauth-renameinprogress": "De gebruiker wordt hernoemd, kan niet worden gebruikt.",
 	"apihelp-centralauthtoken-example-1": "Haal een centralauthtoken op",
+	"apihelp-centralauthtoken-extended-description": "Retourneert een token dat kan worden gebruikt om API-aanvragen op andere wiki's te authenticeren. Voor actie-API-aanvragen plaatst u deze in de GET-parameter <var>centralauthtoken</var>. Voor REST-API-aanvragen voegt u een header <code>Authorization: CentralAuthToken {token}</code> toe. In de frontend-logica van MediaWiki kunt u de ResourceLoader-module <code>mediawiki.ForeignApi</code> gebruiken.",
 	"apihelp-centralauthtoken-summary": "Een CentralAuthToken ophalen voor het indienen van geauthenticeerde verzoeken bij een gekoppelde wiki.",
 	"apihelp-createlocalaccount-example-1": "De aanmaak van een lokaal account afdwingen voor [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Reden voor het aanmaken van het lokale account.",
