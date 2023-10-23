@@ -81,7 +81,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
 
-		$key = $this->sessionManager->memcKey( 'api-token', $oneTimeToken );
+		$key = $this->sessionManager->makeTokenKey( 'api-token', $oneTimeToken );
 		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
 
 		$data = $this->utilityService->getKeyValueUponExistence(
@@ -136,7 +136,9 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 			}
 		}
 
-		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
+		$key = $this->sessionManager->makeSessionKey(
+			'api-token-blacklist', (string)$centralUser->getId()
+		);
 		$sessionStore = $this->sessionManager->getSessionStore();
 		if ( $sessionStore->get( $key ) ) {
 			$this->logger->info( __METHOD__ . ': user is blacklisted' );
@@ -175,13 +177,13 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		$tokenStore = $this->sessionManager->getTokenStore();
 
 		$oldKey = $this->sessionManager->memcKey( 'api-token', $token );
-		if ( !$tokenStore->changeTTL( $oldKey, time() - 3600 ) ) {
+		$tokenStore->changeTTL( $oldKey, time() - 3600 );
+
+		$newKey = $this->sessionManager->makeTokenKey( 'api-token', $token );
+		if ( !$tokenStore->changeTTL( $newKey, time() - 3600 ) ) {
 			$this->logger->error( 'Raced out trying to mark the token as expired' );
 			return false;
 		}
-
-		$newKey = $this->sessionManager->makeTokenKey( 'api-token', $token );
-		$tokenStore->changeTTL( $newKey, time() - 3600 );
 
 		return true;
 	}

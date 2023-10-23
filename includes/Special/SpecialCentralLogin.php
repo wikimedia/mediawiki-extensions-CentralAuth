@@ -138,12 +138,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	protected function doLoginStart( $token ) {
 		$tokenStore = $this->sessionManager->getTokenStore();
 
-		$oldKey = $this->sessionManager->memcKey( 'central-login-start-token', $token );
-		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $oldKey );
-
 		$newKey = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
+		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $newKey );
+
+		$oldKey = $this->sessionManager->memcKey( 'central-login-start-token', $token );
 		if ( !$info ) {
-			$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $newKey );
+			$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $oldKey );
 		}
 
 		if ( !is_array( $info ) ) {
@@ -199,8 +199,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$tokenStore->delete( $oldKey );
 		$tokenStore->delete( $newKey );
+		$tokenStore->delete( $oldKey );
 
 		if ( $createStubSession ) {
 			// Start an unusable placeholder session stub and send a cookie.
@@ -267,14 +267,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 		$tokenStore = $this->sessionManager->getTokenStore();
 
-		$oldKey = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
+		$newKey = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
-		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $oldKey );
+		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $newKey );
 
-		$newKey = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
+		$oldKey = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
 		if ( !$info ) {
-			$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $newKey );
+			$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $oldKey );
 		}
 
 		if ( !is_array( $info ) ) {
@@ -322,8 +322,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$tokenStore->delete( $oldKey );
 		$tokenStore->delete( $newKey );
+		$tokenStore->delete( $oldKey );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		// This is a bit tricky. We start with a stub session with 'pending_name' and no 'user'.
