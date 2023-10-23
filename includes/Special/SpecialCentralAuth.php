@@ -345,7 +345,8 @@ class SpecialCentralAuth extends SpecialPage {
 				'label-message' => 'centralauth-admin-username',
 				'size' => 25,
 				'id' => 'target',
-				'default' => $this->mUserName
+				'default' => $this->mUserName,
+				'required' => true
 			]
 		];
 
