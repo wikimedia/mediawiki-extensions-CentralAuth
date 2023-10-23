@@ -741,7 +741,7 @@
 			"value": "/"
 		},
 		"CentralAuthAutoLoginWikis": {
-			"description": "List of wiki IDs which should be called on login to try to set third-party cookies for the global session state. The wiki ID is typically the database name, except when table prefixes are used, in which case it is the database name, a hyphen separator, and then the table prefix. This allows a farm with multiple second-level domains to set up a global session on all of them by hitting one wiki from each domain (en.wikipedia.org, en.wikinews.org, etc). Done by accessing Special:CentralAutoLogin/start on each wiki. If empty, no other wikis will be hit. The key should be set to the cookie domain name.",
+			"description": "List of wiki IDs which should be called on login to try to set third-party cookies for the global session state. The wiki ID is typically the database name, except when table prefixes are used, in which case it is the database name, a hyphen separator, and then the table prefix. This allows a farm with multiple second-level domains to set up a global session on all of them by hitting one wiki from each domain (en.wikipedia.org, en.wikinews.org, etc). Done by accessing Special:CentralAutoLogin/start on each wiki. If empty, no other wikis will be hit. The key should be set to the cookie domain name, or to the wiki's domain name when that wiki does not use an explicit cookie domain.",
 			"value": []
 		},
 		"CentralAuthAutoCreateWikis": {

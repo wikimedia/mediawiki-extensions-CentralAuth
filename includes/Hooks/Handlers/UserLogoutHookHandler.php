@@ -26,6 +26,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
+use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
 use User;
 
@@ -75,10 +76,9 @@ class UserLogoutHookHandler implements
 			return true;
 		}
 
-		$wikis = $this->config->get( 'CentralAuthAutoLoginWikis' );
-		$centralAuthCookieDomain = $this->config->get( 'CentralAuthCookieDomain' );
+		$wikis = CentralAuthHooks::getAutoLoginWikis();
 		$loginWiki = $this->config->get( 'CentralAuthLoginWiki' );
-		if ( $loginWiki ) {
+		if ( $loginWiki && $loginWiki !== WikiMap::getCurrentWikiId() ) {
 			$wikis[$loginWiki] = $loginWiki;
 		}
 
@@ -92,11 +92,7 @@ class UserLogoutHookHandler implements
 					->params( $user->getName() )
 					->numParams( count( $wikis ) )
 					->escaped() . "</p>\n<p>";
-			foreach ( $wikis as $domain => $wikiID ) {
-				if ( $domain === $centralAuthCookieDomain ) {
-					// Don't autologin (autologout?) to self
-					continue;
-				}
+			foreach ( $wikis as $wikiID ) {
 				$params = [
 					'type' => 'icon',
 				];
