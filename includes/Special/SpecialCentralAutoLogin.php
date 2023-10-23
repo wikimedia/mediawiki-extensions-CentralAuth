@@ -646,6 +646,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$localUser->setName( $centralUser->getName() );
 				if ( $this->centralAuthUtilityService->autoCreateUser( $localUser )->isGood() ) {
 					$centralUser->invalidateCache();
+					$centralUser = CentralAuthUser::getPrimaryInstanceByName( $centralUser->getName() );
 				}
 			}
 			if ( !$centralUser->isAttached() ) {
