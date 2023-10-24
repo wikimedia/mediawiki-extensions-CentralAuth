@@ -9,6 +9,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
+use MobileContext;
 use SpecialPage;
 use Title;
 use WikiMap;
@@ -132,6 +133,11 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			$returnUrl = wfAppendQuery( $request->getFullRequestURL(), [
 				self::AUTOLOGIN_TRIED_QUERY_PARAM => 1,
 			] );
+			if ( CentralAuthHooks::isMobileDomain() ) {
+				// WebRequest::getFullRequestURL() uses $wgServer, not the actual request
+				// domain, but we do want to preserve that
+				$returnUrl = MobileContext::singleton()->getMobileUrl( $returnUrl );
+			}
 			$returnUrlToken = $this->centralAuthUtilityService->tokenize( $returnUrl,
 				'centralautologin-returnurl', $this->sessionManager );
 			$url = wfAppendQuery( $url, [
