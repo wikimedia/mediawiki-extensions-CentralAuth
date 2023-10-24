@@ -66,6 +66,9 @@ class LoginCompleteHookHandler implements
 	}
 
 	/**
+	 * Start a central login redirect when it seems safe to do so.
+	 * Otherwise, trigger edge login on the next request.
+	 *
 	 * @param User $user
 	 * @param string &$inject_html
 	 * @param bool|null $direct Was this directly after a login? (see T140853)
@@ -83,29 +86,8 @@ class LoginCompleteHookHandler implements
 			$direct = RequestContext::getMain()->getRequest()->wasPosted();
 		}
 
-		// Redirect to the central wiki and back to complete login, if necessary
 		$centralUser = CentralAuthUser::getInstance( $user );
-		$this->doCentralLoginRedirect( $user, $centralUser, $inject_html, $direct );
 
-		return true;
-	}
-
-	/**
-	 * Helper method that starts a central login redirect when it seems safe to do so.
-	 * Otherwise, it triggers edge login on the next request.
-	 *
-	 * @param User $user
-	 * @param CentralAuthUser $centralUser
-	 * @param string &$inject_html
-	 * @param bool $direct Was this directly after a login? (see T140853)
-	 * @return bool
-	 */
-	protected function doCentralLoginRedirect(
-		User $user,
-		CentralAuthUser $centralUser,
-		&$inject_html,
-		$direct
-	) {
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
 
