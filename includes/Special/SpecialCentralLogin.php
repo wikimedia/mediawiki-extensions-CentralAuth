@@ -73,6 +73,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	public function execute( $subpage ) {
+		if ( in_array( $subpage, [ 'start', 'complete' ], true ) ) {
+			$this->logger->debug( 'CentralLogin step {step}', [
+				'step' => $subpage,
+			] );
+		}
+
 		$this->setHeaders();
 		$this->getOutput()->disallowUserJs(); // just in case...
 
@@ -335,6 +341,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// which is needed or the personal links will be wrong.
 		$this->getContext()->setUser( $user );
 
+		LoggerFactory::getInstance( 'authevents' )->info( 'Central login attempt', [
+			'event' => 'centrallogin',
+			'successful' => true,
+			'extension' => 'CentralAuth',
+		] );
+
 		// Show the login success page
 
 		$inject_html = '';
@@ -359,6 +371,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$action = 'successredirect';
 
 			// Mark the session to include the edge login imgs on the next pageview
+			$this->logger->debug( 'Edge login on the next pageview after CentralLogin' );
 			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 		} else {
 			$action = 'success';
@@ -369,6 +382,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// This will trigger filling in the "remember me" token cookie on the
 			// central wiki, which can only be done once authorization is completed.
 			$csp = $this->getOutput()->getCSP();
+			$this->logger->debug( 'Edge login triggered in CentralLogin' );
 			$this->getOutput()->addHtml(
 				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser, $csp ) );
 		}
@@ -385,6 +399,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	protected function showError( ...$args ) {
+		LoggerFactory::getInstance( 'authevents' )->info( 'Central login attempt', [
+			'event' => 'centrallogin',
+			'successful' => false,
+			'status' => $args[0],
+			'extension' => 'CentralAuth',
+		] );
 		$this->statsdDataFactory->increment( 'centralauth.centrallogin_errors.' . $args[0] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' ); // JS only

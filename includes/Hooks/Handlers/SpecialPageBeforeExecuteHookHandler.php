@@ -187,7 +187,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 
 	private function log( string $message, SpecialPage $special, bool $isMobile ): void {
 		$request = $special->getRequest();
-		LoggerFactory::getInstance( 'CentralAuth' )->info( $message, [
+		LoggerFactory::getInstance( 'CentralAuth' )->debug( $message, [
 			'userAgent' => $request->getHeader( 'User-Agent' ),
 			'isMobile' => $isMobile,
 			'username' => $special->getUser()->isRegistered() ? $special->getUser()->getName() : '',
