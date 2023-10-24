@@ -89,7 +89,6 @@
 	"centralauth-attach-success": "Akun iki bisa dihijrahaké menyang akun gabungan.",
 	"centralauth-attach-text": "Akun iki durung diboyong menyang akun panunggal.\nYèn akun global uga duwèké panjenengan, panjenengan bisa nggabung akun iki yèn panjenengan ngetikaké tembung sandi akun global:",
 	"centralauth-attach-title": "Konfirmasi akun",
-	"centralauth-centralautologin-lostsession": "Data sesi ilang",
 	"centralauth-complete": "Rampung manunggalaké log mlebu!",
 	"centralauth-complete-text": "Saiki panjenengan bisa mlebu log ing situs wiki {{int:Centralauth-groupname}} endi waé tanpa kudu gawé akun anyar.",
 	"centralauth-completelogin-back": "Bali menyang kaca sadhurunge",

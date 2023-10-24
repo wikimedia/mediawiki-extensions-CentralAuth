@@ -41,8 +41,6 @@
 	"centralauth-admin-username": "Erabiltzaile izena:",
 	"centralauth-admin-yes": "bai",
 	"centralauth-attach-title": "Kontua egiaztatu",
-	"centralauth-centralautologin-badstate": "Baliogabeko egoera \"$1\"",
-	"centralauth-centralautologin-lostsession": "Saioko datuak galdurik",
 	"centralauth-complete": "Saio-hasiera bateratua egina!",
 	"centralauth-days-ago": "Orain dela {{PLURAL:$1|egun bat|$1 egun}}",
 	"centralauth-editgroup-display": "Hautemandako taldearen izena:",

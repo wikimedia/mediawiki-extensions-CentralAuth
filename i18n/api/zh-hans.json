@@ -23,7 +23,7 @@
 	"apihelp-createlocalaccount-example-1": "强行为[[User:Example]]创建本地账号。",
 	"apihelp-createlocalaccount-param-reason": "创建本地账号的原因。",
 	"apihelp-createlocalaccount-param-username": "为其创建本地账号的用户。",
-	"apihelp-createlocalaccount-summary": "强行创建本地账号",
+	"apihelp-createlocalaccount-summary": "强行创建本地账号。中央账号必须存在。",
 	"apihelp-deleteglobalaccount-example-1": "删除[[User:Example]]的全域账号",
 	"apihelp-deleteglobalaccount-param-reason": "删除用户的原因。",
 	"apihelp-deleteglobalaccount-param-user": "要删除的用户。",
@@ -88,5 +88,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "更改用户状态的原因。",
 	"apihelp-setglobalaccountstatus-param-statecheck": "预期当前的<userid>:<username>:<hidden>:<locked>的可选MD5，以检测编辑冲突。如果封禁，设置<locked>为1，未封禁则设置为0。",
 	"apihelp-setglobalaccountstatus-param-user": "要更改状态的用户。",
-	"apihelp-setglobalaccountstatus-summary": "设置全域用户状态。"
+	"apihelp-setglobalaccountstatus-summary": "隐藏/锁定（以及解除隐藏/锁定）全域用户账号。"
 }

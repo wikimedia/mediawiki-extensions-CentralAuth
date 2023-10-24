@@ -98,7 +98,6 @@
 	"centralauth-attach-title": "Potvrdi suradnički račun",
 	"centralauth-block-already-locked": "Račun [[Special:CentralAuth/$1|$1]] je već globalno zaključan.",
 	"centralauth-centralautologin-logged-in": "Jedinstveno ste prijavljeni kao $1. Da biste aktivirali suradničke postavke, ponovo učitajte stranicu.",
-	"centralauth-centralautologin-lostsession": "Podatci o sjednici su izgubljeni",
 	"centralauth-complete": "Spajanje suradničkih računa izvršeno!",
 	"centralauth-complete-text": "Sad se možete prijaviti na bilo koji projekt {{MediaWiki:Centralauth-groupname|gen}} bez otvaranja novog računa.",
 	"centralauth-completelogin-back": "Vrati se na prethodnu stranicu.",

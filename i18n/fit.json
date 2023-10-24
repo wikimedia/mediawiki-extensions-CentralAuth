@@ -12,7 +12,6 @@
 	"centralauth-admin-list-method": "Metuuti",
 	"centralauth-admin-multi-bot": "Verekset muutokset",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|nimityhjyys|nimityhjyyttä}}",
-	"centralauth-centralautologin-alreadyloggedinlocally": "Olet lokannu sisäle jo paikallisesti",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|mookkaus|mookkausta}} wikissä $2",
 	"centralauth-foreign-link": "Konttu $1 prujektissa $2",
 	"centralauth-merge-denied": "Sulla ei ole luppaa käyttää tätä sivua.",

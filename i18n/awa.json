@@ -78,8 +78,6 @@
 	"centralauth-admin-yes": "हाँ",
 	"centralauth-attach-submit": "खाता स्थातंरित करा जाय",
 	"centralauth-attach-title": "खाता प्रमाणित करा जाय",
-	"centralauth-centralautologin-badstate": "अमान्य स्थिति \"$1\"",
-	"centralauth-centralautologin-lostsession": "सेशन डाटा हेराई गय",
 	"centralauth-complete": "खाता एकत्रिकरण पूरा भय!",
 	"centralauth-completelogin-back": "पिछला पन्ना पे वापिस जावा जाय",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|दिन पहीले}}",

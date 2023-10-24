@@ -64,7 +64,6 @@
 	"centralauth-attach-title": "အကောင့် အတည်ပြုရန်",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|စာမျက်နှာ|စာမျက်နှာများ}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|အမည်ညွှန်း|အမည်ညွှန်းများ}}",
-	"centralauth-centralautologin-alreadyloggedinlocally": "သင်သည် ဒေသတွင်း လော့ဂ်အင်ဝင်ရောက်ပြီးဖြစ်သည်။",
 	"centralauth-centralautologin-logged-in": "လက်ရှိ $1 အဖြစ် ဗဟိုမှလော့ဂ်အင်ဝင်ထားပါသည်။ သင်၏အသုံးပြုသူအပြင်အဆင်များကို သက်ရောက်စေရန် စာမျက်နှာကို ပြန်လည်ခေါ်ယူပါ။",
 	"centralauth-complete-text": "ယခုအခါ သင်သည် {{int:Centralauth-groupname}}၏ မည်သည့်ဝီကီဆိုဒ်ကိုမဆို အကောင့်အသစ်ဖန်တီးစရာမလိုဘဲ လော့ဂ်အင်ဝင်ရောက်နိုင်ပါသည်။",
 	"centralauth-completelogin-back": "ယခင်စာမျက်နှာသို့ ပြန်သွားရန်။",

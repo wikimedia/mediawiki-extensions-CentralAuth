@@ -79,7 +79,6 @@
 	"centralauth-admin-yes": "ja",
 	"centralauth-attach-list-attached": "Tann samanlagda kontan sum eitur \"$1\" inniheldur hesar kontur:",
 	"centralauth-attach-title": "Vátta konto",
-	"centralauth-centralautologin-alreadyloggedinlocally": "Tú ert longu innritað/ur lokalt",
 	"centralauth-complete": "Logg inn sameinan er fullgjørd!",
 	"centralauth-complete-text": "Tú kanst nú logga inn á einhvørja wiki síðu hjá {{int:Centralauth-groupname}} uttan at skapa nýggja kontu.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dagur|dagar}} síðan",

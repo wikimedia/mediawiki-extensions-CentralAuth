@@ -63,7 +63,6 @@
 	"centralauth-admin-yes": "יא",
 	"centralauth-attach-list-attached": "די פאראייניגטע קאנטע מיטן נאמען \"$1\" שליסט איין די פאלגנדע קאנטעס:",
 	"centralauth-attach-title": "באַשטעטיקן קאנטע",
-	"centralauth-centralautologin-corsfail": "CORE מקור קאנטראלע אדורכגעפאלן",
 	"centralauth-centralautologin-logged-in": "איר זענט אריינלאגירט צענטראל ווי $1. טוט ווידערלאדן דעם בלאט אנצואווענדן אייערע באניצער־איינשטעלונגען.",
 	"centralauth-complete": "אריינלאגירן פאראייניקונג פֿארענדיקט!",
 	"centralauth-complete-text": "אצינד קענט איר אריינלאגירן צו נארוועלכן וויקי זײַטל פון {{int:Centraluth-groupname}} אן שאפן א נייע קאנטע.",
