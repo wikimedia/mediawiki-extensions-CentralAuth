@@ -382,7 +382,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// This will trigger filling in the "remember me" token cookie on the
 			// central wiki, which can only be done once authorization is completed.
 			$csp = $this->getOutput()->getCSP();
-			$this->logger->debug( 'Edge login triggered in CentralLogin' );
+			$this->logger->info( 'Edge login triggered in CentralLogin' );
 			$this->getOutput()->addHtml(
 				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser, $csp ) );
 		}

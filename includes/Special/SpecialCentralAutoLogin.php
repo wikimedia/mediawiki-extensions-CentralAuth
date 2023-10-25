@@ -179,7 +179,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		} elseif ( $request->getVal( 'from' ) === WikiMap::getCurrentWikiId() &&
 			$this->loginWiki !== WikiMap::getCurrentWikiId()
 		) {
-			$this->logger->debug( 'Inconsistent login wiki' );
+			$this->logger->info( 'Inconsistent login wiki' );
 
 			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
 			$this->do302Redirect( $this->loginWiki, $par, $request->getValues() );
@@ -436,7 +436,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$gu_id = intval( $memcData['gu_id'] );
 			} elseif ( $gid !== '' ) {
 				// Cached, or was logging in as we switched from gu_id to token
-				$this->logger->debug( 'CentralAutoLogin with gu_id parameter' );
+				$this->logger->info( 'CentralAutoLogin with gu_id parameter' );
 				$gu_id = intval( $gid );
 			} else {
 				$this->doFinalOutput( false, 'Invalid parameters' );
@@ -786,7 +786,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					// Log this so that we can differentiate between:
 					// - top-level autologin (type=redirect)
 					// - JS subresource autologin (type=script)
-					// - no-JS subresource autologin (type=1x1)
+					// - no-JS subresource autologin (type=1x1) (likely rarely successful - check this)
 					'type' => $type,
 					'extension' => 'CentralAuth',
 				] );
