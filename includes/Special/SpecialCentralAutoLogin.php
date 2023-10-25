@@ -171,7 +171,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Ugh, no central wiki. If we're coming from an edge login, make
 			// the logged-into wiki the de-facto central wiki for this request
 			// so auto-login still works.
-			$fromwiki = $request->getVal( 'from', $request->getVal( 'notifywiki' ) );
+			$fromwiki = $request->getVal( 'from' );
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
 				$this->loginWiki = $fromwiki;
 			}
