@@ -120,6 +120,7 @@
 	"centralauth-attach-text": "Гэты рахунак яшчэ ня быў далучаны да адзінага рахунку.\nКалі глябальны рахунак таксама належыць Вам, Вы можаце далучыць гэты рахунак, пазначыўшы пароль глябальнага рахунку:",
 	"centralauth-attach-title": "Пацьверджаньне рахунка",
 	"centralauth-block-already-locked": "Рахунак [[Special:CentralAuth/$1|$1]] ужо заблякаваны паўсюль.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|дзеяньне|дзеяньні|дзеяньняў}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|старонка|старонкі|старонак}}",
 	"centralauth-block-editing-ns": "{{PLURAL:$1|прастора|прасторы|прастораў}} назваў",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Вы ўжо ўвайшлі лякальна.",
