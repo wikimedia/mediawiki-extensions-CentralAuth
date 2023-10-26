@@ -36,7 +36,6 @@ use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RequestContext;
 use User;
-use WebRequest;
 
 class LoginCompleteHookHandler implements
 	UserLoginCompleteHook,
@@ -101,8 +100,7 @@ class LoginCompleteHookHandler implements
 				$request->getVal( 'returnto', '' ),
 				$request->getVal( 'returntoquery', '' ),
 				'',
-				$title->isSpecial( 'CreateAccount' ) ? 'signup' : '',
-				WebRequest::detectProtocol() === 'https'
+				$title->isSpecial( 'CreateAccount' ) ? 'signup' : ''
 			);
 			$context->getOutput()->redirect( $redirectUrl );
 			// Set $inject_html to some text to bypass the LoginForm redirection
@@ -148,8 +146,7 @@ class LoginCompleteHookHandler implements
 			$returnTo,
 			$returnToQuery,
 			$returnToAnchor,
-			'signup',
-			WebRequest::detectProtocol() === 'https'
+			'signup'
 		);
 		return false;
 	}
@@ -169,7 +166,6 @@ class LoginCompleteHookHandler implements
 	 * @param string $returnToQuery
 	 * @param string $returnToAnchor
 	 * @param string $loginType 'signup' or the empty string for normal login
-	 * @param bool $secureCookies
 	 * @return string
 	 *
 	 * @see SpecialCentralLogin
@@ -180,8 +176,7 @@ class LoginCompleteHookHandler implements
 		$returnTo,
 		$returnToQuery,
 		$returnToAnchor,
-		$loginType,
-		$secureCookies
+		$loginType
 	) {
 		// User will be redirected to Special:CentralLogin/start (central wiki),
 		// then redirected back to Special:CentralLogin/complete (this wiki).
@@ -207,8 +202,6 @@ class LoginCompleteHookHandler implements
 			'returnTo'      => $returnTo,
 			'returnToQuery' => $returnToQuery,
 			'returnToAnchor' => $returnToAnchor,
-			// cookies set secure or not (local CentralAuth cookies)
-			'stickHTTPS'    => $secureCookies,
 			'type'	  => $loginType
 		] );
 
@@ -221,7 +214,6 @@ class LoginCompleteHookHandler implements
 			'name'	  => $centralUser->getName(),
 			'guid'	  => $centralUser->getId(),
 			'wikiId'	=> WikiMap::getCurrentWikiId(),
-			'secureCookies' => $secureCookies, // (bool) cookies secure or not
 		];
 		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
 		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
