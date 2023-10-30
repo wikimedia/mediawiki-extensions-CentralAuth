@@ -5,7 +5,9 @@
 			"Xuacu",
 			"Fitoschido",
 			"McDutchie",
-			"Tokvo"
+			"Tokvo",
+			"Matma Rex",
+			"YoaR"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales nos que ta l'usuariu",
@@ -246,7 +248,7 @@
 	"centralauth-log-entry-unhide": "desocultó la cuenta global \"$1\"",
 	"centralauth-log-entry-unlock": "desprotexó la cuenta global \"$1\"",
 	"centralauth-log-gblrename-oldname": "Nome d'usuariu anterior:",
-	"centralauth-log-header": "Esti rexistru contien les operaciones baxo cuentes globales: desanicios, bloqueos y desbloqueos.",
+	"centralauth-log-header": "Esti rexistru contién les operaciones baxo cuentes globales: desanicios, bloqueos y desbloqueos.",
 	"centralauth-log-name": "Rexistru de cuenta global",
 	"centralauth-log-status-hidden": "anubríu",
 	"centralauth-log-status-locked": "candáu",
@@ -360,7 +362,7 @@
 	"centralauth-rightslog-entry-setnewtype": "camudó la triba de \"$1\" de $2 a $3",
 	"centralauth-rightslog-entry-setrename": "renomó'l conxuntu wiki \"$2\" como \"$1\"",
 	"centralauth-rightslog-entry-usergroups": "camudó la pertenencia de grupu global pa $1 de $2 a $3",
-	"centralauth-rightslog-header": "Esti rexistru contien operaciones de grupos globales: pertenencia y cambeos de permisos",
+	"centralauth-rightslog-header": "Esti rexistru contién operaciones de grupos globales: pertenencia y cambeos de permisos",
 	"centralauth-rightslog-name": "Rexistru de permisos globales",
 	"centralauth-rightslog-set-optin": "basada n'inclusión",
 	"centralauth-rightslog-set-optout": "basada n'esclusión",
@@ -423,7 +425,7 @@
 	"globalrenamequeue-nav-openqueue": "Solicitúes abiertes",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>El nome d'usuariu escoyíu aseméyase a {{PLURAL:$2|otru nome esistente|otros nomes esistentes}} o yera'l nome d'usuariu d'otra persona que lu cambió:</strong> $1",
 	"globalrenamequeue-request-approve-text": "Aceptar el cambiu de nome",
-	"globalrenamequeue-request-cancel-text": "Encaboxar",
+	"globalrenamequeue-request-cancel-text": "Zarrar",
 	"globalrenamequeue-request-comments-label": "Notes/motivos",
 	"globalrenamequeue-request-deny-text": "Refugar el cambiu de nome",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> ta solicitando un cambiu de nome a <strong>$3</strong>.",
