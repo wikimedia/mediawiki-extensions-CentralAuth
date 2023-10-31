@@ -83,10 +83,6 @@ class LoginCompleteHookHandler implements
 			return true;
 		}
 
-		if ( $direct === null ) { // B/C
-			$direct = RequestContext::getMain()->getRequest()->wasPosted();
-		}
-
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$centralUser = CentralAuthUser::getInstance( $user );
 
@@ -102,7 +98,7 @@ class LoginCompleteHookHandler implements
 
 		// Check that this is actually for a special login page view
 		$title = $context->getTitle();
-		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) ||
+		if ( $title && ( $title->isSpecial( 'Userlogin' ) ||
 			$title->isSpecial( 'CreateAccount' ) )
 		) {
 			$logger->debug( 'CentralLogin triggered in UserLoginComplete' );
@@ -118,10 +114,6 @@ class LoginCompleteHookHandler implements
 			$context->getOutput()->redirect( $redirectUrl );
 			// Set $inject_html to some text to bypass the LoginForm redirection
 			$inject_html .= '<!-- do CentralAuth redirect -->';
-		} else {
-			// Mark the session to include edge login imgs on the next pageview
-			$logger->debug( 'Edge login on the next pageview after non-direct login' );
-			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 		}
 
 		return true;
