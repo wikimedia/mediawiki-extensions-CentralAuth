@@ -27,6 +27,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\ResourceLoader\Module;
 use MediaWiki\WikiMap\WikiMap;
 use OutputPage;
@@ -55,6 +56,8 @@ class PageDisplayHookHandler implements
 	 * @see SpecialCentralAutoLogin
 	 */
 	public function onBeforePageDisplay( $out, $skin ): void {
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
+
 		if ( $out->getRequest()->getSession()->getProvider()
 			instanceof CentralAuthTokenSessionProvider
 		) {
@@ -76,6 +79,9 @@ class PageDisplayHookHandler implements
 					'wgCentralAuthMobileDomain',
 					CentralAuthHooks::isMobileDomain()
 				);
+
+				$logger->debug( 'CentralAutoLogin triggered in BeforePageDisplay' );
+
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
 				$wiki = WikiMap::getWiki( $wikiId );
@@ -105,6 +111,7 @@ class PageDisplayHookHandler implements
 			}
 
 			if ( $out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' ) ) {
+				$logger->debug( 'Edge login triggered in BeforePageDisplay' );
 				$out->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', null );
 				$out->addHTML( CentralAuthHooks::getEdgeLoginHTML() );
 			}

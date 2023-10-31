@@ -177,10 +177,11 @@ class CentralAuthUtilityService {
 		}
 		$sv = $this->authManager->autoCreateUser( $user, $source, false, $log, $performer );
 
-		LoggerFactory::getInstance( 'authevents' )->info( 'Autocreation attempt', [
+		LoggerFactory::getInstance( 'authevents' )->info( 'Central autocreation attempt', [
 			'event' => 'autocreate',
 			'successful' => $sv->isGood(),
 			'status' => ( $sv->getErrorsArray() ?: $sv->getWarningsArray() )[0][0] ?? '-',
+			'extension' => 'CentralAuth',
 		] );
 		return $sv;
 	}

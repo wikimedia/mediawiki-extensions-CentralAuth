@@ -28,6 +28,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\TempUserCreatedRedirectHook;
 use MediaWiki\Hook\UserLoginCompleteHook;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
@@ -86,6 +87,7 @@ class LoginCompleteHookHandler implements
 			$direct = RequestContext::getMain()->getRequest()->wasPosted();
 		}
 
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		$context = RequestContext::getMain();
@@ -93,6 +95,7 @@ class LoginCompleteHookHandler implements
 
 		if ( !$this->config->get( 'CentralAuthLoginWiki' ) || defined( 'MW_API' ) ) {
 			// Mark the session to include edge login imgs on the next pageview
+			$logger->debug( 'Edge login on the next pageview after API login' );
 			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 			return true;
 		}
@@ -102,6 +105,7 @@ class LoginCompleteHookHandler implements
 		if ( $direct && $title && ( $title->isSpecial( 'Userlogin' ) ||
 			$title->isSpecial( 'CreateAccount' ) )
 		) {
+			$logger->debug( 'CentralLogin triggered in UserLoginComplete' );
 			$redirectUrl = $this->getRedirectUrl(
 				$request->getSession(),
 				$centralUser,
@@ -116,6 +120,7 @@ class LoginCompleteHookHandler implements
 			$inject_html .= '<!-- do CentralAuth redirect -->';
 		} else {
 			// Mark the session to include edge login imgs on the next pageview
+			$logger->debug( 'Edge login on the next pageview after non-direct login' );
 			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 		}
 
@@ -148,8 +153,10 @@ class LoginCompleteHookHandler implements
 			return true;
 		}
 
+		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$centralUser = CentralAuthUser::getInstance( $user );
 
+		$logger->debug( 'CentralLogin triggered in TempUserCreatedRedirect' );
 		$redirectUrl = $this->getRedirectUrl(
 			$session,
 			$centralUser,

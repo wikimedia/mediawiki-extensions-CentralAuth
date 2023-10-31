@@ -82,6 +82,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var LoggerInterface */
 	private $logger;
 
+	private string $subpage;
+
 	/**
 	 * @param LanguageFactory $languageFactory
 	 * @param ReadOnlyMode $readOnlyMode
@@ -152,16 +154,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 */
 	public function execute( $par ) {
 		if (
-			in_array( $par, [ 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
-			'createSession', 'validateSession', 'setCookies' ], true )
+			in_array( $par, [ 'toolslist', 'refreshCookies', 'deleteCookies', 'start', 'checkLoggedIn',
+				'createSession', 'validateSession', 'setCookies' ], true )
 		) {
-			LoggerFactory::getInstance( 'authevents' )->debug(
-				'Autologin ' . $par, [
-					'event' => 'autologin',
-					'eventType' => $par,
-				]
-			);
+			$this->logger->debug( 'CentralAutoLogin step {step}', [
+				'step' => $par,
+			] );
 		}
+
+		$this->subpage = $par ?? '';
 
 		$request = $this->getRequest();
 		$tokenStore = $this->sessionManager->getTokenStore();
@@ -178,6 +179,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		} elseif ( $request->getVal( 'from' ) === WikiMap::getCurrentWikiId() &&
 			$this->loginWiki !== WikiMap::getCurrentWikiId()
 		) {
+			$this->logger->debug( 'Inconsistent login wiki' );
+
 			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
 			$this->do302Redirect( $this->loginWiki, $par, $request->getValues() );
 			return;
@@ -209,6 +212,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		);
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
+		// Extra steps, not part of the login process
 		case 'toolslist':
 			// Return the contents of the user menu so autologin.js can sort-of refresh the skin
 			// without reloading the page. This results in lots of inconsistencies and brokenness,
@@ -322,6 +326,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$this->doFinalOutput( true, 'success' );
 			return;
 
+		// Login process
 		case 'start':
 			// Entry point for edge autologin: this is called on various wikis via an <img> URL
 			// to preemptively log the user in on that wiki, so their session exists by the time
@@ -431,6 +436,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$gu_id = intval( $memcData['gu_id'] );
 			} elseif ( $gid !== '' ) {
 				// Cached, or was logging in as we switched from gu_id to token
+				$this->logger->debug( 'CentralAutoLogin with gu_id parameter' );
 				$gu_id = intval( $gid );
 			} else {
 				$this->doFinalOutput( false, 'Invalid parameters' );
@@ -630,6 +636,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Now, figure out how to report this back to the user.
 
 			// First, set to redo the edge login on the next pageview
+			$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
 			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 
 			// If it's not a script or redirect callback, just go for it.
@@ -658,14 +665,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// Set the user on the session now that we know it exists.
 			$this->session->setUser( $localUser );
 			ScopedCallback::consume( $delay );
-
-			LoggerFactory::getInstance( 'authevents' )->info(
-				'Autologin success',
-				[
-					'event' => 'autologin',
-					'eventType' => 'success',
-				]
-			);
 
 			$script = self::getInlineScript( 'anon-remove.js' );
 
@@ -716,6 +715,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$script .= "\n" . self::getInlineScript( 'autologin.js' );
 
 			// And for good measure, add the edge login HTML images to the page.
+			$this->logger->debug( 'Edge login triggered in CentralAutoLogin' );
 			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", [
 				CentralAuthHooks::getEdgeLoginHTML()
@@ -750,9 +750,52 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 	}
 
-	private function doFinalOutput( $ok, $status, $body = '', $type = false ) {
-		$this->logger->debug( "final output: $status" );
+	private function logFinished( $ok, $status, $type ): void {
+		switch ( $this->subpage ) {
+		// Extra steps, not part of the login process
+		case 'toolslist':
+		case 'refreshCookies':
+		case 'deleteCookies':
+			$this->logger->debug( "{$this->subpage} attempt", [
+				'successful' => $ok,
+				'status' => $status,
+			] );
+			break;
 
+		// Login process
+		default:
+			// Distinguish edge logins and autologins. Conveniently, all edge logins
+			// (and only edge logins) set the otherwise mostly vestigial 'from' parameter,
+			// and it's passed through all steps.
+			if ( $this->getRequest()->getCheck( 'from' ) ) {
+				LoggerFactory::getInstance( 'authevents' )->info( 'Edge login attempt', [
+					'event' => 'edgelogin',
+					'successful' => $ok,
+					'status' => $status,
+					// Log this so that we can differentiate between:
+					// - success page edge login (type=icon)
+					// - next pageview edge login (type=1x1)
+					'type' => $type,
+					'extension' => 'CentralAuth',
+				] );
+			} else {
+				LoggerFactory::getInstance( 'authevents' )->info( 'Central autologin attempt', [
+					'event' => 'centralautologin',
+					'successful' => $ok,
+					'status' => $status,
+					// Log this so that we can differentiate between:
+					// - top-level autologin (type=redirect)
+					// - JS subresource autologin (type=script)
+					// - no-JS subresource autologin (type=1x1)
+					'type' => $type,
+					'extension' => 'CentralAuth',
+				] );
+			}
+			break;
+		}
+	}
+
+	private function doFinalOutput( $ok, $status, $body = '', $type = false ) {
 		$type = $type ?: $this->getRequest()->getVal( 'type', 'script' );
 
 		if ( $type === 'redirect' ) {
@@ -764,6 +807,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$status = 'invalid returnUrlToken';
 			}
 		}
+
+		$this->logFinished( $ok, $status, $type );
 
 		$this->getOutput()->disable();
 		wfResetOutputBuffers();
