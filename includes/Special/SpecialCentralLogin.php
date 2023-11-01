@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use CentralAuthSessionProvider;
 use Exception;
 use IBufferingStatsdDataFactory;
-use LoginHelper;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
@@ -15,6 +14,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\StubObject\StubGlobalUser;
+use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
@@ -238,7 +238,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * Second step of central login. Runs on the wiki where the original login happened.
 	 * - Verifies the login secret that was passed along the redirect chain via the token store,
 	 *   against the login secret that was stored in the local session by getRedirectUrl().
-	 * - Unstubs the central session, and sets the local session and isues cookies for it.
+	 * - Unstubs the central session, and sets the local session and issues cookies for it.
 	 * - Shows a login page with edge login icons, or redirects and sets up edge login pixels to
 	 *   be shown on the next request, depending on whether returning to a different page was
 	 *   requested. Lets extensions influence this via the CentralAuthPostLoginRedirect hook.
@@ -348,7 +348,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		] );
 
 		// Show the login success page
-
 		$inject_html = '';
 		if ( $attempt['type'] === 'signup' ) {
 			$msg = $this->msg( 'centralauth-welcomecreation-msg' );
@@ -387,14 +386,18 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser, $csp ) );
 		}
 
-		$helper = new LoginHelper( $this->getContext() );
-		$helper->showReturnToPage(
-			$action,
-			$attempt['returnTo'],
-			$attempt['returnToQuery'],
-			false,
-			$attempt['returnToAnchor'] ?? ''
-		);
+		$returnToTitle = Title::newFromText( $attempt['returnTo'] ) ?: Title::newMainPage();
+
+		if ( $action === 'successredirect' ) {
+			$redirectUrl = $returnToTitle->getFullUrlForRedirect( $attempt['returnToQuery'] )
+				. $attempt['returnToAnchor'];
+			$this->getOutput()->redirect( $redirectUrl );
+		} else {
+			if ( is_string( $attempt['returnToQuery'] ) ) {
+				$attempt['returnToQuery'] = wfCgiToArray( $attempt['returnToQuery'] );
+			}
+			$this->getOutput()->addReturnTo( $returnToTitle, $attempt['returnToQuery'] );
+		}
 		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
 	}
 
