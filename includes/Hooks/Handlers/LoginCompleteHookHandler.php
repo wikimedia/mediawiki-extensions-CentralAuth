@@ -89,13 +89,6 @@ class LoginCompleteHookHandler implements
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
 
-		if ( !$this->config->get( 'CentralAuthLoginWiki' ) || defined( 'MW_API' ) ) {
-			// Mark the session to include edge login imgs on the next pageview
-			$logger->debug( 'Edge login on the next pageview after API login' );
-			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
-			return true;
-		}
-
 		// Check that this is actually for a special login page view
 		$title = $context->getTitle();
 		if ( $title && ( $title->isSpecial( 'Userlogin' ) ||
