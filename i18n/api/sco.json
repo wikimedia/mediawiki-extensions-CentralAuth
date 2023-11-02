@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"CiphriusKane",
 			"John Reid"
 		]
 	},
 	"apihelp-centralauthtoken-example-1": "Get ae centralauthtoken",
-	"apihelp-deleteglobalaccount-example-1": "Delyte the global accoont fer [[User:Example]]",
+	"apihelp-deleteglobalaccount-example-1": "Delete the global accoont fur [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "The raison fer delytin the uiser.",
 	"apihelp-deleteglobalaccount-param-user": "Uiser tae delyte.",
 	"apihelp-globaluserrights-example-1": "Eik the uiser FooBot tae global groop \"bot\", n remui fae global groops \"sysop\" n \"bureaucrat\"",
