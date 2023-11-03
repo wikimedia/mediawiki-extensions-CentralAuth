@@ -764,6 +764,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		// Login process
 		default:
+			if ( !in_array( $type, [ 'icon', '1x1', 'redirect', 'script', 'error' ] ) ) {
+				// The type is included in metric names, so don't allow weird user-controlled values
+				$type = 'unknown';
+			}
+
 			// Distinguish edge logins and autologins. Conveniently, all edge logins
 			// (and only edge logins) set the otherwise mostly vestigial 'from' parameter,
 			// and it's passed through all steps.
