@@ -15,11 +15,12 @@
 	"apierror-centralauth-notloggedin": "Os usuarios anónimos non poden obter un identificador central de autorización.",
 	"apierror-centralauth-renameinprogress": "Estase modificando o nome do usuario; non se pode utilizar.",
 	"apihelp-centralauthtoken-example-1": "Obter un identificador central de autorización",
+	"apihelp-centralauthtoken-extended-description": "Devolve un identificador que se pode usar para autenticar solicitudes á API doutros wikis. Para solicitudes á API que realicen accións, colóqueo no parámetro GET <var>centralauthtoken</var>. Para solicitudes á API REST, engada unha cabeceira <code>Authorization: CentralAuthToken {identificador}</code>. Na lóxica da interface de MediaWiki, pode usar o módulo ResourceLoader <code>mediawiki.ForeignApi</code>.",
 	"apihelp-centralauthtoken-summary": "Obter un identificador central de autorización para facer unha petición autenticada a un wiki asociado.",
 	"apihelp-createlocalaccount-example-1": "Crear á forza unha conta local para [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo para crear a conta local.",
 	"apihelp-createlocalaccount-param-username": "Usuario para crear a conta local.",
-	"apihelp-createlocalaccount-summary": "Forzar a creación dunha conta local",
+	"apihelp-createlocalaccount-summary": "Forzar a creación dunha conta local. Debe existir unha conta central.",
 	"apihelp-deleteglobalaccount-example-1": "Eliminar a conta global de [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Motivo para eliminar o usuario.",
 	"apihelp-deleteglobalaccount-param-user": "Usuario a eliminar.",
@@ -84,5 +85,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo para cambiar o estado do usuario.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do actual <userid>:<username>:<hidden>:<locked>, para detectar conflitos de edición. Estableza <locked> en 1 para bloquear, 0 para desbloquear.",
 	"apihelp-setglobalaccountstatus-param-user": "Usuario ó cal cambiar o estado.",
-	"apihelp-setglobalaccountstatus-summary": "Definir o estado dun usuario global."
+	"apihelp-setglobalaccountstatus-summary": "Agochar ou bloquear (ou amosar ou desbloquear) unha conta de usuario global."
 }
