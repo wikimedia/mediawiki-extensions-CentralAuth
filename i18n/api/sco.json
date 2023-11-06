@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"John Reid"
+			"John Reid",
+			"CiphriusKane"
 		]
 	},
 	"apihelp-centralauthtoken-description": "Get ae centralauthtoken fer makin aen authenteecatit speirin tae aen attached wiki.",
 	"apihelp-centralauthtoken-example-1": "Get ae centralauthtoken",
 	"apihelp-deleteglobalaccount-description": "Delyte ae global uiser.",
-	"apihelp-deleteglobalaccount-example-1": "Delyte the global accoont fer [[User:Example]]",
+	"apihelp-deleteglobalaccount-example-1": "Delete the global accoont fur [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "The raison fer delytin the uiser.",
 	"apihelp-deleteglobalaccount-param-user": "Uiser tae delyte.",
 	"apihelp-globaluserrights-description": "Eik/remuiv ae uiser tae/fae global groops.",
