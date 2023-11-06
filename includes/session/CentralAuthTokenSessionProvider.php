@@ -81,10 +81,13 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
 
-		$tokenStore = $this->sessionManager->getTokenStore();
 		$key = $this->sessionManager->memcKey( 'api-token', $oneTimeToken );
 		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
-		$data = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key, $timeout );
+
+		$data = $this->utilityService->getKeyValueUponExistence(
+			$this->sessionManager->getTokenStore(), $key, $timeout
+		);
+
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
 			!isset( $data['token'] ) ||
@@ -170,9 +173,15 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	 */
 	protected function consumeToken( $token ) {
 		$tokenStore = $this->sessionManager->getTokenStore();
-		$key = $this->sessionManager->memcKey( 'api-token', $token );
 
-		if ( !$tokenStore->changeTTL( $key, time() - 3600 ) ) {
+		$oldKey = $this->sessionManager->memcKey( 'api-token', $token );
+		if ( !$tokenStore->changeTTL( $oldKey, time() - 3600 ) ) {
+			$this->logger->error( 'Raced out trying to mark the token as expired' );
+			return false;
+		}
+
+		$newKey = $this->sessionManager->makeTokenKey( 'api-token', $token );
+		if ( !$tokenStore->changeTTL( $newKey, time() - 3600 ) ) {
 			$this->logger->error( 'Raced out trying to mark the token as expired' );
 			return false;
 		}
@@ -219,9 +228,15 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		// Assume blacklisting for a day will be enough because we assume by
 		// then CentralAuth itself will have been instructed to more
 		// permanently block the user.
-		$sessionStore = $this->sessionManager->getSessionStore();
-		$key = $this->sessionManager->memcKey( 'api-token-blacklist', (string)$centralUser->getId() );
-		$sessionStore->set( $key, true, ExpirationAwareness::TTL_DAY );
+		$oldKey = $this->sessionManager->makeSessionKey(
+			'api-token-blacklist', (string)$centralUser->getId()
+		);
+		$newKey = $this->sessionManager->memcKey(
+			'api-token-blacklist', (string)$centralUser->getId()
+		);
+		$this->sessionManager->setSessionData(
+			[ $oldKey, $newKey ], true, ExpirationAwareness::TTL_DAY
+		);
 	}
 
 }
