@@ -361,7 +361,7 @@
 	"centralauth-rename-queued": "משימות לשינוי השם של $1 ל{{GRAMMAR:תחילית|$2}} הוכנסו לתור ב־$3.\n\nהצגת ההתקדמות בדף [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "ויקי מקומי",
 	"centralauth-rename-table-status": "מצב",
-	"centralauth-rename-table-status-done": "בוצע",
+	"centralauth-rename-table-status-done": "סיום",
 	"centralauth-rename-table-status-failed": "נכשלה",
 	"centralauth-rename-table-status-inprogress": "בתהליך",
 	"centralauth-rename-table-status-queued": "בתור",
