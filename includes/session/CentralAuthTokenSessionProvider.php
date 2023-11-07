@@ -181,10 +181,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		}
 
 		$newKey = $this->sessionManager->makeTokenKey( 'api-token', $token );
-		if ( !$tokenStore->changeTTL( $newKey, time() - 3600 ) ) {
-			$this->logger->error( 'Raced out trying to mark the token as expired' );
-			return false;
-		}
+		$tokenStore->changeTTL( $newKey, time() - 3600 );
 
 		return true;
 	}
