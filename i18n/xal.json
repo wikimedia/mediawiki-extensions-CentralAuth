@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Huuchin"
+			"Huuchin",
+			"Алия"
 		]
 	},
+	"centralauth-merge-attempt": "'''Үлдсн негдкгдәд уга бүртклмүдтә өггдсн нууц үгиг тулһн хәрцүлҗәнә…'''",
 	"centralauth-prefs-count-attached": "Тана бичгдлһн $1 {{PLURAL:$1|1=төслд|төслмүдт}} болҗана.",
 	"centralauth-prefs-manage": "Делкән бичгдлһнә заалт",
 	"centralauth-prefs-status": "Делкән бичгдлһнә бәәдл:",
