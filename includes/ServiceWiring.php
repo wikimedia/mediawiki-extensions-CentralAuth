@@ -135,7 +135,8 @@ return [
 		return new GlobalUserSelectQueryBuilderFactory(
 			CentralAuthServices::getDatabaseManager( $services )->getCentralReplicaDB(),
 			$services->getActorStore(),
-			$services->getUserNameUtils()
+			$services->getUserNameUtils(),
+			$services->getTempUserConfig()
 		);
 	},
 ];
