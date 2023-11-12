@@ -695,10 +695,6 @@
 		"CentralAuth": "GlobalVarConfig::newInstance"
 	},
 	"config": {
-		"CentralAuthDatabase": {
-			"description": "Database name you keep central auth data in. If this is not on the primary database connection, don't forget to also set up $wgDBservers to have an entry with a groupLoads setting for the 'CentralAuth' group. Alternatively you can use $wgLBFactoryConf to set up an LBFactoryMulti object. To use a database with a table prefix, set this variable to \"{$database}-{$prefix}\".",
-			"value": "centralauth"
-		},
 		"CentralAuthAutoMigrate": {
 			"description": "If true, existing unattached accounts will be automatically migrated if possible at first login. Any new account creations will be required to attach. If false, unattached accounts will not be harassed unless the individual account has opted in to migration.",
 			"value": false
@@ -890,6 +886,9 @@
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
+	],
+	"DatabaseVirtualDomains": [
+		"virtual-centralauth"
 	],
 	"manifest_version": 2
 }

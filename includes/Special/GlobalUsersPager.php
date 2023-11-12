@@ -43,7 +43,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		GlobalGroupLookup $globalGroupLookup,
 		LinkBatchFactory $linkBatchFactory
 	) {
-		$this->mDb = $dbManager->getCentralDB( DB_REPLICA );
+		$this->mDb = $dbManager->getCentralReplicaDB();
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
 		$this->globalGroupLookup = $globalGroupLookup;

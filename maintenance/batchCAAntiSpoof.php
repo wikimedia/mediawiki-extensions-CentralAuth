@@ -3,7 +3,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthSpoofUser;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -17,18 +17,22 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 * @param array $items
 	 */
 	protected function batchRecord( $items ) {
-		CentralAuthSpoofUser::batchRecord( $this->getDB( DB_PRIMARY ), $items );
+		CentralAuthSpoofUser::batchRecord( CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB(), $items );
 	}
 
 	/**
 	 * @param int $db
 	 * @param string|string[] $groups
 	 * @param string|bool $wiki
-	 * @return IDatabase
+	 * @return IReadableDatabase
 	 * @suppress PhanParamSignatureMismatch
 	 */
 	protected function getDB( $db, $groups = [], $wiki = false ) {
-		return CentralAuthServices::getDatabaseManager()->getCentralDB( $db );
+		if ( $db === DB_PRIMARY ) {
+			return CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		} else {
+			return CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		}
 	}
 
 	/** @inheritDoc */
