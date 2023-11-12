@@ -6,8 +6,10 @@
 	try {
 		localStorage.setItem( 'CentralAuthAnon', t.getTime() );
 	} catch ( e ) {
-		/* When no localStorage or when QUOTA reached */
-		document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';
+		try {
+			/* When no localStorage or when QUOTA reached */
+			document.cookie = 'CentralAuthAnon=1; expires=' + t.toGMTString() + '; path=/';
+		} catch ( e2 ) {}
 	}
 
 }() );

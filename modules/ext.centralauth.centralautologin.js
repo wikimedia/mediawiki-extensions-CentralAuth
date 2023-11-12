@@ -19,7 +19,13 @@
 	} catch ( e ) {}
 
 	// Optimisation: Avoid $.cookie() to reduce depencency cost for all pages.
-	if ( /(^|; )CentralAuthAnon=1/.test( document.cookie ) ) {
+	try {
+		if ( /(^|; )CentralAuthAnon=1/.test( document.cookie ) ) {
+			return;
+		}
+	} catch ( e ) {
+		// If we can't read cookies, we can't write cookies either.
+		// Don't even try autologin.
 		return;
 	}
 
