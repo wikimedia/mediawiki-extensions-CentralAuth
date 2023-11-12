@@ -183,7 +183,7 @@ class CentralAuthSessionManager {
 	 * @return array
 	 */
 	public function getCentralSessionById( $id ) {
-		$key = $this->memcKey( 'session', $id );
+		$key = $this->makeSessionKey( 'session', $id );
 
 		$stime = microtime( true );
 		$data = $this->getSessionStore()->get( $key ) ?: [];
@@ -215,10 +215,10 @@ class CentralAuthSessionManager {
 		$data['sessionId'] = $id;
 
 		$sessionStore = $this->getSessionStore();
-		$oldKey = $this->memcKey( 'session', $id );
+		$newKey = $this->makeSessionKey( 'session', $id );
 
 		// Copy certain keys from the existing session, if any (T124821)
-		$existing = $sessionStore->get( $oldKey );
+		$existing = $sessionStore->get( $newKey );
 
 		if ( is_array( $existing ) ) {
 			$data += array_intersect_key( $existing, $keepKeys );
@@ -227,7 +227,7 @@ class CentralAuthSessionManager {
 		$isDirty = ( $data !== $existing );
 		if ( $isDirty || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
 			$data['expiry'] = time() + $sessionStore::TTL_DAY;
-			$newKey = $this->makeSessionKey( 'session', $id );
+			$oldKey = $this->memcKey( 'session', $id );
 			$stime = microtime( true );
 			$this->setSessionData(
 				[ $oldKey, $newKey ],

@@ -153,7 +153,7 @@ class CentralAuthUtilityService {
 		string $keyPrefix,
 		CentralAuthSessionManager $sessionManager
 	) {
-		$key = $sessionManager->memcKey( $keyPrefix, $token );
+		$key = $sessionManager->makeTokenKey( $keyPrefix, $token );
 
 		return $this->getKeyValueUponExistence( $sessionManager->getTokenStore(), $key );
 	}
