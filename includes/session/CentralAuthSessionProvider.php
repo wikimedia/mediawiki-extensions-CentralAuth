@@ -471,7 +471,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	protected function setForceHTTPSCookie( $set, ?SessionBackend $backend, WebRequest $request ) {
 		// Do nothing. We don't support mixed-protocol HTTP/HTTPS wikis in CentralAuth,
 		// so this cookie is not needed.
-		$this->logger->warning( __METHOD__ . " was called, this indicates bad HTTP/HTTPS config" );
 	}
 
 	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
