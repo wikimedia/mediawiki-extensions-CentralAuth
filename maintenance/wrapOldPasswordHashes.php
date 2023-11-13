@@ -80,7 +80,7 @@ class WrapOldPasswordHashes extends Maintenance {
 				'globaluser',
 				[ 'gu_id', 'gu_name', 'gu_password' ],
 				[
-					'gu_id > ' . $dbw->addQuotes( $minUserId ),
+					$dbw->expr( 'gu_id', '>', $minUserId ),
 					$typeCond
 				],
 				__METHOD__,

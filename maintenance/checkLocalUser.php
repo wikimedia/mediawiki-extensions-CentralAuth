@@ -201,7 +201,7 @@ class CheckLocalUser extends Maintenance {
 				->from( 'localuser' )
 				->where( [
 					'lu_wiki' => $wiki,
-					'lu_name > ' . $centralReplica->addQuotes( $lastUsername ),
+					$centralReplica->expr( 'lu_name', '>', $lastUsername ),
 				] )
 				->orderBy( 'lu_name', SelectQueryBuilder::SORT_ASC )
 				->limit( $this->mBatchSize )

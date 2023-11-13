@@ -44,7 +44,7 @@ class PopulateHomeDB extends Maintenance {
 				break;
 			}
 			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
-			$conds = [ 'gu_name > ' . $db->addQuotes( $row->gu_name ) ];
+			$conds = [ $db->expr( 'gu_name', '>', $row->gu_name ) ];
 		} while ( true );
 		$this->output( "done.\n" );
 	}

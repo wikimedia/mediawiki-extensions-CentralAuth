@@ -111,11 +111,11 @@ class GlobalUsersPager extends AlphabeticPager {
 				'gu_id = gug_user'
 			];
 
-			$conds[] = 'gug_expiry IS NULL OR gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() );
+			$conds[] = $this->mDb->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $this->mDb->timestamp() );
 		}
 
 		if ( $this->requestedUser !== false ) {
-			$conds[] = 'gu_name >= ' . $this->mDb->addQuotes( $this->requestedUser );
+			$conds[] = $this->mDb->expr( 'gu_name', '>=', $this->requestedUser );
 		}
 
 		return [
@@ -175,7 +175,7 @@ class GlobalUsersPager extends AlphabeticPager {
 			->from( 'global_user_groups' )
 			->where( [
 				'gug_user' => array_keys( $this->globalIDGroups ),
-				'gug_expiry IS NULL OR gug_expiry >= ' . $this->mDb->addQuotes( $this->mDb->timestamp() )
+				$this->mDb->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $this->mDb->timestamp() )
 			] )
 			->caller( __METHOD__ )
 			->fetchResultSet();

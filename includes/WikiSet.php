@@ -360,7 +360,7 @@ class WikiSet {
 			->caller( __METHOD__ );
 
 		if ( $from != null ) {
-			$qb->where( 'ws_name >= ' . $dbr->addQuotes( $from ) );
+			$qb->where( $dbr->expr( 'ws_name', '>=', $from ) );
 			$orderByName = true;
 		}
 
