@@ -45,13 +45,13 @@ class CentralAuthHookRunner implements
 	public function onCentralAuthPostLoginRedirect(
 		string &$returnTo,
 		string &$returnToQuery,
-		bool $stickHTTPS,
+		bool $unused,
 		string $type,
 		string &$injectedHtml
 	) {
 		$this->hookContainer->run(
 			'CentralAuthPostLoginRedirect',
-			[ &$returnTo, &$returnToQuery, $stickHTTPS, $type, &$injectedHtml ]
+			[ &$returnTo, &$returnToQuery, $unused, $type, &$injectedHtml ]
 		);
 	}
 

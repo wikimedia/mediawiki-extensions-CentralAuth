@@ -333,11 +333,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$delay = $this->session->delaySave();
 		$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 		$this->session->setRememberUser( (bool)$attempt['remember'] );
-		if ( $attempt['stickHTTPS'] !== null ) {
-			$this->session->setForceHTTPS( (bool)$attempt['stickHTTPS'] );
-		}
 		$this->sessionManager->setCentralSession( [
-			'secureCookies' => $attempt['stickHTTPS'],
 			'remember' => $attempt['remember'],
 		], $info['sessionId'], $this->session );
 		$this->session->persist();
@@ -376,7 +372,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$caHookRunner->onCentralAuthPostLoginRedirect(
 			$attempt['returnTo'],
 			$attempt['returnToQuery'],
-			$attempt['stickHTTPS'],
+			true,
 			$attempt['type'],
 			$inject_html
 		);

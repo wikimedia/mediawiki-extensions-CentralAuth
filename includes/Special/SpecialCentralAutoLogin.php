@@ -293,9 +293,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$delay = $this->session->delaySave();
 				$this->session->setRememberUser( $remember );
-				if ( $centralSession['secureCookies'] !== null ) {
-					$this->session->setForceHTTPS( $centralSession['secureCookies'] );
-				}
 				$this->session->persist();
 				ScopedCallback::consume( $delay );
 				$this->doFinalOutput( true, 'success' );
@@ -553,7 +550,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$memcData += [
 				'userName' => $centralUser->getName(),
 				'token' => $centralUser->getAuthToken(),
-				'secureCookies' => $centralSession['secureCookies'],
 				'remember' => $centralSession['remember'],
 				'sessionId' => $centralSession['sessionId'],
 			];
@@ -660,7 +656,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			//   local session, which we could do directly)? We have just read this data from
 			//   the central session one redirect hop ago.
 			$this->sessionManager->setCentralSession( [
-				'secureCookies' => $memcData['secureCookies'],
 				'remember' => $memcData['remember'],
 			], $memcData['sessionId'], $this->session );
 			if ( $centralUser->isAttached() ) {
@@ -668,9 +663,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 			}
 			$this->session->setRememberUser( $memcData['remember'] );
-			if ( $memcData['secureCookies'] !== null ) {
-				$this->session->setForceHTTPS( $memcData['secureCookies'] );
-			}
 			$this->session->persist();
 
 			// Now, figure out how to report this back to the user.
@@ -943,12 +935,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		// If there's no "remember", pull from the user preference.
 		if ( !isset( $centralSession['remember'] ) ) {
 			$centralSession['remember'] = $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' );
-		}
-
-		// Make sure there's a value for secureCookies
-		if ( !isset( $centralSession['secureCookies'] ) ) {
-			$centralSession['secureCookies'] = $this->getConfig()->get( 'ForceHTTPS' ) ||
-				$this->userOptionsManager->getBoolOption( $user, 'prefershttps' );
 		}
 
 		// Make sure there's a session id by creating a session if necessary.

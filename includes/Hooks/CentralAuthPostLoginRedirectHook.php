@@ -35,7 +35,8 @@ interface CentralAuthPostLoginRedirectHook {
 	 *
 	 * @param string &$returnTo page name to redirect to
 	 * @param string &$returnToQuery url parameters
-	 * @param bool $stickHTTPS Keep redirect link on HTTPs
+	 * @param bool $stickHTTPS Deprecated since MW 1.42, do not use.
+	 *   Previously indicated that the login session would force the HTTPS protocol.
 	 * @param string $type 'signup' on signup, empty string otherwise.
 	 * @param string &$injectedHtml HTML to show on the login success page.
 	 *   Set to empty string to skip the success page and redirect to $returnTo.

@@ -242,7 +242,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			'provider' => $this,
 			'persisted' => true, // CA sessions are always persistent
 			'remembered' => $tokenCookie !== null,
-			'forceHTTPS' => $this->getCookie( $request, 'forceHTTPS', '', false ),
 			'metadata' => [
 				'CentralAuthSource' => 'CentralAuth',
 			],
@@ -371,13 +370,6 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			$remember = $session->shouldRememberUser();
 
 			$options = $this->centralCookieOptions;
-			if ( $session->shouldForceHTTPS() || $user->requiresHTTPS() ) {
-				// Don't set the secure flag if the request came in
-				// over "http", for backwards compat.
-				// @todo Break that backwards compat properly.
-				$options['secure'] = $this->getConfig()->get( 'ForceHTTPS' )
-					|| $this->getConfig()->get( 'CookieSecure' );
-			}
 
 			// We only save the user into the central session if it's not a
 			// "pending" session, but we still need the ID to set the cookie.
@@ -477,46 +469,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	 * @inheritDoc
 	 */
 	protected function setForceHTTPSCookie( $set, ?SessionBackend $backend, WebRequest $request ) {
-		if ( $this->getConfig()->get( 'ForceHTTPS' ) ) {
-			// No need to send a cookie if the wiki is always HTTPS (T256095)
-			return;
-		}
-		$response = $request->response();
-		$central = $backend
-			? CentralAuthUser::getInstance( $backend->getUser() )->isAttached()
-			: false;
-		$sameCookie = (
-			$this->cookieOptions['path'] === $this->centralCookieOptions['path'] &&
-			$this->cookieOptions['domain'] === $this->centralCookieOptions['domain']
-		);
-
-		// If the account is centralized, have the parent clear its cookie and
-		// set the central cookie. If it's not centralized, clear the central
-		// cookie and have the parent set its cookie as it usually would.
-		if ( $set && $central ) {
-			if ( !$sameCookie ) {
-				parent::setForceHTTPSCookie( false, $backend, $request );
-			}
-
-			$shouldRemember = $backend->shouldRememberUser();
-			if ( $shouldRemember ) {
-				$expirationDuration = $this->getLoginCookieExpiration(
-					'forceHTTPS',
-					/* $shouldRememberUser */ true
-				);
-				$expiration = $expirationDuration ? $expirationDuration + time() : null;
-			} else {
-				$expiration = null;
-			}
-			$response->setCookie( 'forceHTTPS', 'true', $expiration,
-				[ 'prefix' => '', 'secure' => false ] + $this->centralCookieOptions );
-		} else {
-			if ( !$sameCookie ) {
-				$response->clearCookie( 'forceHTTPS',
-					[ 'prefix' => '', 'secure' => false ] + $this->centralCookieOptions );
-			}
-			parent::setForceHTTPSCookie( $set, $backend, $request );
-		}
+		// Do nothing. We don't support mixed-protocol HTTP/HTTPS wikis in CentralAuth,
+		// so this cookie is not needed.
+		$this->logger->warning( __METHOD__ . " was called, this indicates bad HTTP/HTTPS config" );
 	}
 
 	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
