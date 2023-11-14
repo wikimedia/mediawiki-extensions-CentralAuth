@@ -282,63 +282,6 @@ class CentralAuthHooks implements
 		return $autoLoginWikis;
 	}
 
-	/**
-	 * Get a HTML fragment that will trigger central autologin, i.e. try to log in the user on
-	 * each of $wgCentralAuthAutoLoginWikis in the background by embedding images which point
-	 * to Special:CentralAutoLogin on each of those wikis.
-	 *
-	 * It also calls Special:CentralAutoLogin/refreshCookies on the central wiki, to refresh
-	 * central session cookies if needed (e.g. because the "remember me" setting changed).
-	 *
-	 * This is typically used after a successful login.
-	 *
-	 * @param User $user
-	 * @param CentralAuthUser $centralUser
-	 * @param ContentSecurityPolicy $csp From OutputPage::getCsp
-	 * @return string
-	 *
-	 * @see SpecialCentralAutoLogin
-	 * @see getEdgeLoginHTML()
-	 */
-	public static function getDomainAutoLoginHtml(
-		User $user,
-		CentralAuthUser $centralUser,
-		ContentSecurityPolicy $csp
-	) {
-		global $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis;
-
-		// No other domains
-		if ( !$wgCentralAuthAutoLoginWikis ) {
-			$inject_html = wfMessage( 'centralauth-login-no-others' )->escaped();
-		} else {
-			$inject_html = '<div class="centralauth-login-box"><p>' .
-				wfMessage( 'centralauth-login-progress' )
-					->params( $user->getName() )
-					->numParams( count( $wgCentralAuthAutoLoginWikis ) )
-					->escaped() . "</p>\n<p>";
-			foreach ( self::getAutoLoginWikis() as $domain => $wikiID ) {
-				$params = [
-					'type' => 'icon',
-					'from' => WikiMap::getCurrentWikiId(),
-				];
-				if ( self::isMobileDomain() ) {
-					$params['mobile'] = 1;
-				}
-				$inject_html .= self::getAuthIconHtml( $wikiID, 'Special:CentralAutoLogin/start', $params, $csp );
-			}
-			$inject_html .= "</p></div>\n";
-		}
-
-		if ( $wgCentralAuthLoginWiki ) {
-			$inject_html .= self::getAuthIconHtml( $wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/refreshCookies', [
-				'type' => '1x1',
-				'wikiid' => WikiMap::getCurrentWikiId(),
-			], $csp );
-		}
-
-		return $inject_html;
-	}
-
 	public static function isMobileDomain() {
 		return ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' )
 			&& MobileContext::singleton()->usingMobileDomain();
@@ -593,18 +536,19 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Get a HTML fragment that will trigger central autologin. This is basically the same as
-	 * getDomainAutoLoginHtml() except it uses invisible pixels instead of visible favicons, so
-	 * it can be embedded in any page without distracting the user.
+	 * Get a HTML fragment that will trigger central autologin, i.e. try to log in the user on
+	 * each of $wgCentralAuthAutoLoginWikis in the background by embedding invisible pixel images
+	 * which point to Special:CentralAutoLogin on each of those wikis.
 	 *
-	 * It's used when showing a dedicated login success page is not possible (by setting the
-	 * CentralAuthDoEdgeLogin session flag, which causes this method to be called on the
-	 * next request).
+	 * It also calls Special:CentralAutoLogin/refreshCookies on the central wiki, to refresh
+	 * central session cookies if needed (e.g. because the "remember me" setting changed).
+	 *
+	 * This is typically used on the next page view after a successful login (by setting the
+	 * CentralAuthDoEdgeLogin session flag).
 	 *
 	 * @return string
 	 *
 	 * @see SpecialCentralAutoLogin
-	 * @see getDomainAutoLoginHtml()
 	 * @see PageDisplayHookHandler::onBeforePageDisplay()
 	 */
 	public static function getEdgeLoginHTML() {

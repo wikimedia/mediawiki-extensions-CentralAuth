@@ -38,8 +38,8 @@ interface CentralAuthPostLoginRedirectHook {
 	 * @param bool $stickHTTPS Deprecated since MW 1.42, do not use.
 	 *   Previously indicated that the login session would force the HTTPS protocol.
 	 * @param string $type 'signup' on signup, empty string otherwise.
-	 * @param string &$injectedHtml HTML to show on the login success page.
-	 *   Set to empty string to skip the success page and redirect to $returnTo.
+	 * @param string &$injectedHtml Deprecated since MW 1.42, do not use.
+	 *   Previously allowed setting HTML to show on the login success page.
 	 *
 	 * @return bool|void True or no return value to continue or false to abort
 	 * @since 1.39

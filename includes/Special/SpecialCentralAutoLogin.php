@@ -48,7 +48,6 @@ use Xml;
  * - /toolslist: a helper used after successful autologin to update the skin's personal toolbar.
  * See the inline comments in the big switch() construct for the description of each.
  *
- * @see CentralAuthHooks::getDomainAutoLoginHtml()
  * @see CentralAuthHooks::getEdgeLoginHTML()
  * @see PageDisplayHookHandler::onBeforePageDisplay()
  * @see SpecialPageBeforeExecuteHookHandler::onSpecialPageBeforeExecute()
@@ -810,7 +809,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'successful' => $ok,
 					'status' => $status,
 					// Log this so that we can differentiate between:
-					// - success page edge login (type=icon)
+					// - success page edge login (type=icon) [no longer used]
 					// - next pageview edge login (type=1x1)
 					'type' => $type,
 					'extension' => 'CentralAuth',

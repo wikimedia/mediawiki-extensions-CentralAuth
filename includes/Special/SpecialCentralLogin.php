@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use CentralAuthSessionProvider;
 use Exception;
 use IBufferingStatsdDataFactory;
-use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
@@ -248,9 +247,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * - Verifies the login secret that was passed along the redirect chain via the token store,
 	 *   against the login secret that was stored in the local session by getRedirectUrl().
 	 * - Unstubs the central session, and sets the local session and issues cookies for it.
-	 * - Shows a login page with edge login icons, or redirects and sets up edge login pixels to
-	 *   be shown on the next request, depending on whether returning to a different page was
-	 *   requested. Lets extensions influence this via the CentralAuthPostLoginRedirect hook.
+	 * - Redirects and sets up edge login pixels to be shown on the next request.
+	 *   Lets extensions influence the redirect target via the CentralAuthPostLoginRedirect hook.
 	 *
 	 * Security-wise, we know we are on the same redirect chain as the original login because of
 	 * the tokenstore data. This wouldn't necessarily mean the user is the same - an attacker might
@@ -358,15 +356,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'extension' => 'CentralAuth',
 		] );
 
-		// Show the login success page
-		$inject_html = '';
-		if ( $attempt['type'] === 'signup' ) {
-			$msg = $this->msg( 'centralauth-welcomecreation-msg' );
-			if ( !$msg->isDisabled() ) {
-				$inject_html .= $msg->params( wfEscapeWikiText( $user->getName() ) )->parseAsBlock();
-			}
-		}
-
+		$unusedReference = '';
 		// Allow other extensions to modify the returnTo and returnToQuery
 		$caHookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
 		$caHookRunner->onCentralAuthPostLoginRedirect(
@@ -374,42 +364,17 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			$attempt['returnToQuery'],
 			true,
 			$attempt['type'],
-			$inject_html
+			$unusedReference
 		);
 
-		if ( $inject_html === '' ) {
-			$action = 'successredirect';
-
-			// Mark the session to include the edge login imgs on the next pageview
-			$this->logger->debug( 'Edge login on the next pageview after CentralLogin' );
-			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
-		} else {
-			$action = 'success';
-
-			$this->getOutput()->addHTML( $inject_html );
-
-			// Show HTML to trigger cross-domain cookies.
-			// This will trigger filling in the "remember me" token cookie on the
-			// central wiki, which can only be done once authorization is completed.
-			$csp = $this->getOutput()->getCSP();
-			$this->logger->info( 'Edge login triggered in CentralLogin' );
-			$this->getOutput()->addHtml(
-				CentralAuthHooks::getDomainAutoLoginHtml( $user, $centralUser, $csp ) );
-		}
+		// Mark the session to include the edge login imgs on the next pageview
+		$this->logger->debug( 'Edge login on the next pageview after CentralLogin' );
+		$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 
 		$returnToTitle = Title::newFromText( $attempt['returnTo'] ) ?: Title::newMainPage();
-
-		if ( $action === 'successredirect' ) {
-			$redirectUrl = $returnToTitle->getFullUrlForRedirect( $attempt['returnToQuery'] )
-				. $attempt['returnToAnchor'];
-			$this->getOutput()->redirect( $redirectUrl );
-		} else {
-			if ( is_string( $attempt['returnToQuery'] ) ) {
-				$attempt['returnToQuery'] = wfCgiToArray( $attempt['returnToQuery'] );
-			}
-			$this->getOutput()->addReturnTo( $returnToTitle, $attempt['returnToQuery'] );
-		}
-		$this->getOutput()->setPageTitle( $this->msg( 'centralloginsuccesful' ) );
+		$redirectUrl = $returnToTitle->getFullUrlForRedirect( $attempt['returnToQuery'] )
+			. $attempt['returnToAnchor'];
+		$this->getOutput()->redirect( $redirectUrl );
 	}
 
 	protected function showError( ...$args ) {
