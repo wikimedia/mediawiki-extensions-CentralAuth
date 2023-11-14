@@ -176,14 +176,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
 				$this->loginWiki = $fromwiki;
 			}
-		} elseif ( $request->getVal( 'from' ) === WikiMap::getCurrentWikiId() &&
-			$this->loginWiki !== WikiMap::getCurrentWikiId()
-		) {
-			$this->logger->info( 'Inconsistent login wiki' );
-
-			// Remote wiki must not have wgCentralAuthLoginWiki set, but we do. Redirect them.
-			$this->do302Redirect( $this->loginWiki, $par, $request->getValues() );
-			return;
 		}
 
 		$params = $request->getValues(
