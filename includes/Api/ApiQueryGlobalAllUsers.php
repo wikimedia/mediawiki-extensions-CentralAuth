@@ -129,8 +129,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 			$this->addWhere( [ 'gug_group' => $params['group'] ] );
 			$this->addWhere( [
-				'gug_expiry IS NULL OR gug_expiry >= '
-				. $this->getDB()->addQuotes( $this->getDB()->timestamp() )
+				$this->getDB()->expr( 'gug_expiry', '=', null )
+					->or( 'gug_expiry', '>=', $this->getDB()->timestamp() )
 			] );
 		}
 
@@ -146,8 +146,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 			$this->addWhere( 'gug2.gug_user IS NULL' );
 			$this->addWhere( [
-				'gug2.gug_expiry IS NULL OR gug2.gug_expiry >= '
-				. $this->getDB()->addQuotes( $this->getDB()->timestamp() )
+				$this->getDB()->expr( 'gug2.gug_expiry', '=', null )
+					->or( 'gug2.gug_expiry', '>=', $this->getDB()->timestamp() )
 			] );
 		}
 
@@ -256,8 +256,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		] );
 
 		$this->addWhere( [
-			'gug_expiry IS NULL OR gug_expiry >= '
-			. $this->getDB()->addQuotes( $this->getDB()->timestamp() )
+			$this->getDB()->expr( 'gug_expiry', '=', null )
+				->or( 'gug_expiry', '>=', $this->getDB()->timestamp() )
 		] );
 
 		$groupResult = $this->select( __METHOD__ );

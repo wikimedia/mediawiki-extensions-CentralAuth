@@ -467,7 +467,7 @@ class CentralAuthUser implements IDBAccessObject {
 			[
 				'ggp_group=gug_group',
 				'gug_user' => $this->getId(),
-				'gug_expiry IS NULL OR gug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
+				$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
 			],
 			__METHOD__
 		);
@@ -477,7 +477,7 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ],
 			[
 				'ggr_group=gug_group',
-				'gug_expiry IS NULL OR gug_expiry >= ' . $db->addQuotes( $db->timestamp() ),
+				$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
 				'ggr_set=ws_id',
 				'gug_user' => $this->getId()
 			],

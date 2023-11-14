@@ -89,8 +89,8 @@ class ResetGlobalUserTokens extends Maintenance {
 				->select( [ 'gu_id', 'gu_name' ] )
 				->from( 'globaluser' )
 				->where( [
-					'gu_id > ' . $dbr->addQuotes( $min ),
-					'gu_id <= ' . $dbr->addQuotes( $max )
+					$dbr->expr( 'gu_id', '>', $min ),
+					$dbr->expr( 'gu_id', '<=', $max )
 				] )
 				->caller( __METHOD__ )
 				->fetchResultSet();

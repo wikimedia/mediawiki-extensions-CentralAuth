@@ -117,7 +117,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 				->fetchResultSet();
 			foreach ( $res as $row ) {
 				$oldName = $row->gu_name;
-				$batchConds = [ 'gu_name > ' . $dbr->addQuotes( $oldName ) ];
+				$batchConds = [ $dbr->expr( 'gu_name', '>', $oldName ) ];
 				$variablePart = $fromPattern->extract( $oldName );
 				if ( $variablePart === null ) {
 					$this->output( "Username \"fromName\" matched the LIKE " .
