@@ -208,7 +208,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// also used:
 			// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
 			// 'token': Random store key, used to pass information in a secure manner.
-			// 'gu_id': Legacy parameter for global user ID, not used anymore.
 		);
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
@@ -422,7 +421,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			$token = $request->getVal( 'token', '' );
-			$gid = $request->getVal( 'gu_id', '' );
 			if ( $token !== '' ) {
 				// Load memc data
 				$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
@@ -445,10 +443,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					return;
 				}
 				$gu_id = intval( $memcData['gu_id'] );
-			} elseif ( $gid !== '' ) {
-				// Cached, or was logging in as we switched from gu_id to token
-				$this->logger->info( 'CentralAutoLogin with gu_id parameter' );
-				$gu_id = intval( $gid );
 			} else {
 				$this->doFinalOutput( false, 'Invalid parameters' );
 				return;
