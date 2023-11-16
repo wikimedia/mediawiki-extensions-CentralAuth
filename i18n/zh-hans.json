@@ -263,7 +263,7 @@
 	"centralauth-finish-noconfirms": "没有账号可经密码确认。",
 	"centralauth-finish-password": "密码：",
 	"centralauth-finish-problems": "发生错误，您是否不拥有这些账户？[[m:Special:MyLanguage/Help:Unified login|寻求帮助]]……",
-	"centralauth-finish-send-confirmation": "电子邮件密码",
+	"centralauth-finish-send-confirmation": "电子邮件发送密码",
 	"centralauth-finish-text": "如果您的确拥有这些账户，您只需在此输入它们所使用的密码便可完成账户整合过程：",
 	"centralauth-finish-title": "合并完成",
 	"centralauth-finishglobaliseemail_body": "您的电子邮件地址已经与账户“$2”的所有项目关联，您的主账户位于{{SITENAME}}。\n\n为了确认该账户确实属于您,合并您不能自动合并的账户使您能在忘记密码后恢复账户，请在您的浏览器中打开该链接：\n\n$3\n\n如果该账户*不*属于您，请点击该链接取消电子邮件地址确认：\n\n$5\n\n该确认码将于$6 $7过期。",
