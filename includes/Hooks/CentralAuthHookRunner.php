@@ -47,11 +47,11 @@ class CentralAuthHookRunner implements
 		string &$returnToQuery,
 		bool $unused,
 		string $type,
-		string &$injectedHtml
+		string &$unused2
 	) {
 		$this->hookContainer->run(
 			'CentralAuthPostLoginRedirect',
-			[ &$returnTo, &$returnToQuery, $unused, $type, &$injectedHtml ]
+			[ &$returnTo, &$returnToQuery, $unused, $type, &$unused2 ]
 		);
 	}
 
