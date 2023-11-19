@@ -137,14 +137,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	protected function doLoginStart( $token ) {
 		$tokenStore = $this->sessionManager->getTokenStore();
 
-		$newKey = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
-		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $newKey );
-
-		$oldKey = $this->sessionManager->memcKey( 'central-login-start-token', $token );
-		if ( !$info ) {
-			$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $oldKey );
-		}
-
+		$key = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
+		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -198,8 +192,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$tokenStore->delete( $newKey );
-		$tokenStore->delete( $oldKey );
+		$tokenStore->delete( $key );
 
 		if ( $createStubSession ) {
 			// Start an unusable placeholder session stub and send a cookie.
@@ -220,15 +213,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
 		$token = MWCryptRand::generateHex( 32 );
-		$oldKey = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
-		$newKey = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
+		$key = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
 		$data = [
 			'sessionId' => $newSessionId,
 			'secret'    => $info['secret'] // should match the login attempt secret
 		];
-		$this->sessionManager->setTokenData(
-			[ $oldKey, $newKey ], $data, $this->sessionManager->getTokenStore()::TTL_MINUTE
-		);
+		$tokenStore = $this->sessionManager->getTokenStore();
+		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
 
 		$query = [ 'token' => $token ];
 
@@ -265,15 +256,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 		$tokenStore = $this->sessionManager->getTokenStore();
 
-		$newKey = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
+		$key = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
 		$skey = 'CentralAuth:autologin:current-attempt'; // session key
 
-		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $newKey );
-
-		$oldKey = $this->sessionManager->memcKey( 'central-login-complete-token', $token );
-		if ( !$info ) {
-			$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $oldKey );
-		}
+		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
 
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
@@ -320,8 +306,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$tokenStore->delete( $newKey );
-		$tokenStore->delete( $oldKey );
+		$tokenStore->delete( $key );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		// This is a bit tricky. We start with a stub session with 'pending_name' and no 'user'.

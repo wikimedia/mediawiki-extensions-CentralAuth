@@ -382,11 +382,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			$memcData = [ 'gu_id' => $centralUser->getId() ];
 			$token = MWCryptRand::generateHex( 32 );
-			$oldKey = $this->sessionManager->memcKey( 'centralautologin-token', $token );
-			$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
-			$this->sessionManager->setTokenData(
-				[ $oldKey, $newKey ], $memcData, $tokenStore::TTL_MINUTE
-			);
+			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
+			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
 
 			$this->do302Redirect( $wikiid, 'createSession', [
 				'token' => $token,
@@ -414,20 +411,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$token = $request->getVal( 'token', '' );
 			if ( $token !== '' ) {
 				// Load memc data
-				$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
+				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
 				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-					$this->sessionManager->getTokenStore(), $newKey
+					$this->sessionManager->getTokenStore(), $key
 				);
 
-				$oldKey = $this->sessionManager->memcKey( 'centralautologin-token', $token );
-				if ( !$memcData ) {
-					$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-						$this->sessionManager->getTokenStore(), $oldKey
-					);
-				}
-
-				$tokenStore->delete( $newKey );
-				$tokenStore->delete( $oldKey );
+				$tokenStore->delete( $key );
 
 				if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
 					$this->doFinalOutput( false, 'Invalid parameters' );
@@ -459,9 +448,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'wikiid' => $wikiid,
 			];
 			$token = MWCryptRand::generateHex( 32 );
-			$oldKey = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
-			$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-			$this->sessionManager->setTokenData( [ $oldKey, $newKey ], $memcData, $tokenStore::TTL_MINUTE );
+			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
 
 			// Save memc token for the 'setCookies' step
 			$request->setSessionData( 'centralautologin-token', $token );
@@ -502,20 +490,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 
 			// Load memc data
-			$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
 			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-				$this->sessionManager->getTokenStore(), $newKey
+				$this->sessionManager->getTokenStore(), $key
 			);
 
-			$oldKey = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
-			if ( !$memcData ) {
-				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-					$this->sessionManager->getTokenStore(), $oldKey
-				);
-			}
-
-			$tokenStore->delete( $newKey );
-			$tokenStore->delete( $oldKey );
+			$tokenStore->delete( $key );
 
 			// Check memc data
 			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
@@ -539,9 +519,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				'sessionId' => $centralSession['sessionId'],
 			];
 
-			$oldKey = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
-			$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-			$this->sessionManager->setTokenData( [ $oldKey, $newKey ], $memcData, $tokenStore::TTL_MINUTE );
+			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
 
 			$this->do302Redirect( $wikiid, 'setCookies', $params );
 			return;
@@ -579,20 +558,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 			// Load memc data
 			$wikiid = WikiMap::getCurrentWikiId();
-			$newKey = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
 			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-				$this->sessionManager->getTokenStore(), $newKey
+				$this->sessionManager->getTokenStore(), $key
 			);
 
-			$oldKey = $this->sessionManager->memcKey( 'centralautologin-token', $token, $wikiid );
-			if ( !$memcData ) {
-				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-					$this->sessionManager->getTokenStore(), $oldKey
-				);
-			}
-
-			$tokenStore->delete( $newKey );
-			$tokenStore->delete( $oldKey );
+			$tokenStore->delete( $key );
 
 			// Check memc data
 			if (

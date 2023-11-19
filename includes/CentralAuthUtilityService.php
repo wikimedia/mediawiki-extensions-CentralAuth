@@ -134,10 +134,9 @@ class CentralAuthUtilityService {
 	): string {
 		$tokenStore = $sessionManager->getTokenStore();
 		$token = MWCryptRand::generateHex( 16 );
-		$oldKey = $sessionManager->memcKey( $keyPrefix, $token );
-		$newKey = $sessionManager->makeTokenKey( $keyPrefix, $token );
+		$key = $sessionManager->makeTokenKey( $keyPrefix, $token );
 
-		$sessionManager->setTokenData( [ $oldKey, $newKey ], $value, $tokenStore::TTL_MINUTE );
+		$tokenStore->set( $key, $value, $tokenStore::TTL_MINUTE );
 		return $token;
 	}
 

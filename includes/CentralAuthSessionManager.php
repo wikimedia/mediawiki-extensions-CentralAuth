@@ -66,18 +66,6 @@ class CentralAuthSessionManager {
 	}
 
 	/**
-	 * TODO: Remove this code once ::makeSessionKey() and ::makeTokenKey() have
-	 *       been live for more than a week.
-	 *
-	 * @param string ...$args
-	 * @return string
-	 */
-	public function memcKey( ...$args ): string {
-		$database = $this->options->get( 'CentralAuthDatabase' );
-		return $database . ':' . implode( ':', $args );
-	}
-
-	/**
 	 * @param string $keygroup
 	 * @param string ...$components
 	 * @return string The global session key (with proper escaping)
@@ -97,36 +85,6 @@ class CentralAuthSessionManager {
 		return $this->getTokenStore()->makeGlobalKey(
 			$keygroup, $this->options->get( 'CentralAuthDatabase' ), ...$components
 		);
-	}
-
-	/**
-	 * Migration wrapper for setting data to the token store using the api token.
-	 *
-	 * @param array $keys Support for both old and new key format for migration
-	 * @param mixed $data The data to be written to the store.
-	 * @param int $exptime The expiration time for the data.
-	 *
-	 * @return void
-	 */
-	public function setTokenData( array $keys, $data, int $exptime = 0 ): void {
-		$tokenStore = $this->getTokenStore();
-		$tokenStore->set( $keys[0], $data, $exptime );
-		$tokenStore->set( $keys[1], $data, $exptime );
-	}
-
-	/**
-	 * Migration wrapper for setting data to the token store using the api token.
-	 *
-	 * @param array $keys Support for both old and new key format for migration
-	 * @param mixed $data The data to be written to the store.
-	 * @param int $exptime The expiration time for the data.
-	 *
-	 * @return void
-	 */
-	public function setSessionData( array $keys, $data, int $exptime = 0 ): void {
-		$sessionStore = $this->getSessionStore();
-		$sessionStore->set( $keys[0], $data, $exptime );
-		$sessionStore->set( $keys[1], $data, $exptime );
 	}
 
 	/**
@@ -215,10 +173,10 @@ class CentralAuthSessionManager {
 		$data['sessionId'] = $id;
 
 		$sessionStore = $this->getSessionStore();
-		$newKey = $this->makeSessionKey( 'session', $id );
+		$key = $this->makeSessionKey( 'session', $id );
 
 		// Copy certain keys from the existing session, if any (T124821)
-		$existing = $sessionStore->get( $newKey );
+		$existing = $sessionStore->get( $key );
 
 		if ( is_array( $existing ) ) {
 			$data += array_intersect_key( $existing, $keepKeys );
@@ -227,10 +185,9 @@ class CentralAuthSessionManager {
 		$isDirty = ( $data !== $existing );
 		if ( $isDirty || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
 			$data['expiry'] = time() + $sessionStore::TTL_DAY;
-			$oldKey = $this->memcKey( 'session', $id );
 			$stime = microtime( true );
-			$this->setSessionData(
-				[ $oldKey, $newKey ],
+			$sessionStore->set(
+				$key,
 				$data,
 				$sessionStore::TTL_DAY
 			);
