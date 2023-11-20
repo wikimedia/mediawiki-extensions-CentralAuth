@@ -171,8 +171,6 @@
 	"centralauth-log-status-locked": "I bllokuar",
 	"centralauth-log-status-none": "(asgjë)",
 	"centralauth-log-status-oversighted": "i shtypuar",
-	"centralauth-login-no-others": "Ju keni hyrë brenda automatikisht në projektet e tjera të {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Duke hyrë brenda në wikit e {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Ju keni dalë automatikisht nga projektet e tjera të {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Duke dalë nga wikit e tjerë të {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Duke kontrolluar fjalëkalimin e dhëmë kundër llogarive të mbetuar të pashkrira...'''",

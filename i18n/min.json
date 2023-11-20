@@ -50,7 +50,6 @@
 	"centralauth-foreign-link": "Pangguno $1 di $2",
 	"centralauth-list-attached": "{{PLURAL:$2|Akun dengan namo \"$1\" pado situs barikuik}} alah digabuangkan sacaro otomatih ka akun tungga ko:",
 	"centralauth-log-header": "Iko log operasi dari akun global: pangapuihan, panguncian, jo pambukaan kunci.",
-	"centralauth-login-progress": "Sanak masuak log ka {{PLURAL:$2|wiki}} dari {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Sanak kalua log {{PLURAL:$2|wiki}} dari {{int:Centralauth-groupname}}:",
 	"centralauth-merge-method-login": "dibuek katiko masuak log",
 	"centralauth-prefs-count-attached": "Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.",

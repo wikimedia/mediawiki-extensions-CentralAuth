@@ -44,7 +44,6 @@
 	"centralauth-list-home-title": "Нүүр вики",
 	"centralauth-list-unattached": "\"$1\" бүртгэл нь дараах сайтуудад таных гэдгийг автоматаар баталгаажуулж чадсангүй;\nтаны анхдагч бүртгэлээс өөр нууц үгтэй байж болзошгүй:",
 	"centralauth-list-unattached-title": "Холбогдоогүй бүртгэлүүд",
-	"centralauth-login-progress": "Таныг {{int:Centralauth-groupname}}-н төслүүд рүү нэвтрүүлж байна:",
 	"centralauth-logout-progress": "Таныг {{int:Centralauth-groupname}}-н бусад төслүүдээс гаргаж байна:",
 	"centralauth-merge-attempt": "'''Үлдсэн нэгтгэгдээгүй бүртгэлүүдтэй өгөгдсөн нууц үгийг тулган харьцуулж байна…'''",
 	"centralauth-merge-denied": "Уучлаарай, энэ хуудсанд хандах эрх таньд байхгүй байна.",

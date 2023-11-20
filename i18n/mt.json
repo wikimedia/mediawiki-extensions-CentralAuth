@@ -169,8 +169,6 @@
 	"centralauth-log-status-locked": "imblukkat",
 	"centralauth-log-status-none": "(xejn)",
 	"centralauth-log-status-oversighted": "sorveljat",
-	"centralauth-login-no-others": "Għadek kif dħalt fil-kont tiegħek fuq proġetti oħra ta' {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Login effettwat fil-wikis l-oħra ta' {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Għadek kif ħriġt mill-kont tiegħek minn proġetti oħra ta' {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Qed toħroġ mill-wikis l-oħra ta' {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Verifika tal-password imdaħħla fuq il-kontijiet li għadhom mhux imwaħħda…'''",

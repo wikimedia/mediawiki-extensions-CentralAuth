@@ -185,8 +185,6 @@
 	"centralauth-log-status-locked": "zaključano",
 	"centralauth-log-status-none": "(ništa)",
 	"centralauth-log-status-oversighted": "nagledano",
-	"centralauth-login-no-others": "Vi ste automatski prijavljeni na druge projekte {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Prijavljujem Vas na wikije {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Automatski ste odjavljeni s drugih projekata {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Odjavljujem Vas s drugih projekata {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Provjeravaju se navedene šifre sa ostalim nespojenim računima…'''",

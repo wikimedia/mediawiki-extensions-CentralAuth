@@ -192,8 +192,6 @@
 	"centralauth-log-status-none": "(gein)",
 	"centralauth-log-status-oversighted": "verbórge dórch toezichhajer",
 	"centralauth-login-error-locked": "Doe kans neet inlogge went diene account is wikiwied geslaote.",
-	"centralauth-login-no-others": "De bös aangemeldj óp projekte ven {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Doe waers aangemeld bie wiki's van {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "De bös autematis aafgemeldj op anger projekte van {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Doe waers aafgemeld bie wiki's van {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Bezig mit 't controlere van de opgegaeve wachwäörd veur de nag neet samegevoegde gebroekers...'''",

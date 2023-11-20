@@ -170,8 +170,6 @@
 	"centralauth-log-status-locked": "অৱৰোধ কৰা হৈছে",
 	"centralauth-log-status-none": "একো নাই",
 	"centralauth-log-status-oversighted": "অনৱেক্ষা",
-	"centralauth-login-no-others": "{{int:Centralauth-groupname}}ৰ আন প্ৰকল্পসমূহত আপোনাক স্বয়ংক্ৰিয়ভাৱে প্ৰৱেশ কৰোৱা হৈছে।",
-	"centralauth-login-progress": "{{int:Centralauth-groupname}}ৰ ৱিকিসমূহত আপোনাক লগ্‌ ইন্‌ কৰোৱা হৈছে:",
 	"centralauth-logout-no-others": "{{int:Centralauth-groupname}}ৰ আন প্ৰকল্পসমূহৰ পৰা আপোনাক স্বয়ংক্ৰিয়ভাৱে লগ্‌ আউট কৰোৱা হৈছে।",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ৰ আন ৱিকিসমূহৰ পৰা আপোনাক লগ্‌ আউট কৰোৱা হৈছে:",
 	"centralauth-merge-attempt": "'''বাকী থকা একত্ৰিত নোহোৱা একাউণ্টৰ বিপৰীতে প্ৰদত্ত গুপ্তশব্দ পৰীক্ষা কৰা হৈছে…'''",

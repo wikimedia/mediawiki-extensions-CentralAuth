@@ -40,7 +40,6 @@
 	"centralauth-list-home-title": "«Юй» вики-проект",
 	"centralauth-log-status-hidden": "джашырылгъан",
 	"centralauth-log-status-none": "(бир да)",
-	"centralauth-login-progress": "Сеанс Викимедиа Фондну башха проектлеринде да хайырланады:",
 	"centralauth-logout-progress": "Сеанс Викимедиа Фондну башха проектлеринде да бошалгъанды:",
 	"centralauth-merge-dryrun-or": "неда",
 	"centralauth-merge-method-empty": "къошум джокъ",
@@ -57,7 +56,6 @@
 	"centralauth-prefs-view": "Глобал тергеу джазыуну юсюнден билгилеге",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} алгъа",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|джыл}} алгъа",
-	"centralloginsuccesful": "Авторизация тыйыншлы ётдю",
 	"globalgrouppermissions": "Глобал группаланы джюрютюу",
 	"globalusers": "Къошулуучуланы глобал тизмеси"
 }

@@ -161,8 +161,6 @@
 	"centralauth-log-status-locked": "gsperrt",
 	"centralauth-log-status-none": "(keini)",
 	"centralauth-log-status-oversighted": "uusbländet dur Oversighter",
-	"centralauth-login-no-others": "Du bisch au automatisch aagmäldet bi andere Projäkt {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Du bisch automatisch au bi däne Wiki {{int:Centralauth-groupname}} aagmäldet:",
 	"centralauth-logout-no-others": "Du bisch au automatisch abgmäldet bi andere Projäkt {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Du bisch automatisch au bi däne Wiki {{int:Centralauth-groupname}} abgmäldet wore:",
 	"centralauth-merge-attempt": "'''Prief s Passwort, wu Du yygee hesch, mit dr räschtlige Benutzerkonte …'''",

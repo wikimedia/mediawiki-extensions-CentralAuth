@@ -163,8 +163,6 @@
 	"centralauth-log-status-locked": "замкнутый",
 	"centralauth-log-status-none": "(ніч)",
 	"centralauth-log-status-oversighted": "затаєне",
-	"centralauth-login-no-others": "{{GENDER:|Быв|Была|Быв}} сьте автоматічно {{GENDER:|приголошеный|приголошена|приголошеный}} на остатнї проєкты {{grammar:2sg|{{int:Centralauth-groupname}}}}.",
-	"centralauth-login-progress": "Приголошуєме вас на вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}:",
 	"centralauth-logout-no-others": "{{GENDER:|Быв|Была|Быв}} сьте автоматічно {{GENDER:|одголошеный|одголошена|одголошеный}} з остатнїх проєктів {{grammar:2sg|{{int:Centralauth-groupname}}}}.",
 	"centralauth-logout-progress": "Одголошуєме вас з другых вікі {{grammar:2sg|{{int:Centralauth-groupname}}}}:",
 	"centralauth-merge-attempt": "'''Овірює ся, ці задане гесло одповідать збылым незлученым контам...'''",

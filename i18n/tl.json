@@ -169,8 +169,6 @@
 	"centralauth-log-status-locked": "nakakandado",
 	"centralauth-log-status-none": "(wala)",
 	"centralauth-log-status-oversighted": "natingnan na",
-	"centralauth-login-no-others": "Kusa kang inilagdang papasok sa loob ng iba pang mga proyekto ng {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Inilalagda ka patungo sa mga wiki ng {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Kusa kang inalis sa pagkakalagdang papalabas mula sa iba pang mga proyekto ng {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Iniaalis ka sa pagkakalagda mula sa mga wiki ng {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Sinusuri/inihahambing ang ibinigay na password laban sa nananatiling hindi pa napagsasanib na mga account…'''",

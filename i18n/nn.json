@@ -180,8 +180,6 @@
 	"centralauth-log-status-locked": "låst",
 	"centralauth-log-status-none": "(ingen)",
 	"centralauth-log-status-oversighted": "sensurert",
-	"centralauth-login-no-others": "Du er vorten automatisk innlogga på andre prosjekt av {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Loggar deg inn på wikiar til {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Du er vorten automatisk logga ut av andre prosjekt av {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Loggar deg ut frå andre wikiar til {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Kontrollerer det oppgjevne passordet mot dei attståande kontoane…'''",

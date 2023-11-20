@@ -19,8 +19,6 @@
 	"centralauth-incomplete-text": "Als je accounts zijn samengevoegd, kun je aanmelden bij iedere wiki van {{int:Centralauth-groupname}} zonder een nieuw account aan te maken.",
 	"centralauth-list-home-dryrun": "Het wachtwoord en e-mailadres dat voor deze wiki is ingesteld wordt gebruikt voor je samengevoegde gebruiker.",
 	"centralauth-list-unattached": "De gebruiker{{PLURAL:$2||s}} met de naam \"$1\" kon{{PLURAL:$2||den}} niet automatisch aan jou toegewezen worden voor de volgende site{{PLURAL:$2||s}};\nwaarschijnlijk omdat het wachtwoord afwijkt van dat van jouw primaire gebruiker:",
-	"centralauth-login-no-others": "Je bent automatisch aangemeld bij andere projecten van {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Je wordt aangemeld bij de {{PLURAL:$2|wiki|wiki's}} van {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Je bent automatisch afgemeld bij andere projecten van {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Je wordt afgemeld bij de andere {{PLURAL:$2|wiki|wiki's}} van {{int:Centralauth-groupname}}:",
 	"centralauth-merge-denied": "Je hebt geen toegang tot deze pagina.",

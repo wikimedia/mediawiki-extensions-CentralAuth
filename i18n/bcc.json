@@ -179,8 +179,6 @@
 	"centralauth-log-status-none": "(هچ یک)",
 	"centralauth-log-status-oversighted": "پناه بیتگ",
 	"centralauth-login-error-locked": "شما نه توان ات لاگین کن ات پرچا که شمئی سرجمین اکانت کبل انت.",
-	"centralauth-login-no-others": "وتکارین حالتء مان پهکین پراجکت هان {{int:Centralauth-groupname}} لاگین بوتگ ات.",
-	"centralauth-login-progress": "شمئی لاگین کتن مان ائ ویکی هان {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "وتکارین حالتء چه ادگرین پراجکت هان {{int:Centralauth-groupname}} درشتگ ات.",
 	"centralauth-logout-progress": "شمئی درشتن چه ائ ویکی هان {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''عوض کنت داتیگن کلمه رمزء په ضد منتگین حسابان بی چند وبندی'''",

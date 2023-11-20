@@ -22,8 +22,6 @@
 	"centralauth-incomplete-text": "Sobald Ihre Benutzerkonten zusammengeführt sind, können Sie sich auf jedem Wiki {{int:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.",
 	"centralauth-list-home-dryrun": "Das Passwort und die E-Mail-Adresse, die Sie in diesem Wiki eingetragen haben, wird für die Zusammenführung der Benutzerkonten verwendet.",
 	"centralauth-list-unattached": "Das Benutzerkonto „$1“ konnte für die folgenden Projekte nicht automatisch als zu Ihnen gehörend bestätigt werden;\nvermutlich hat es ein anderes Passwort als Ihr primäres Benutzerkonto:",
-	"centralauth-login-no-others": "Sie wurden automatisch in anderen Projekten {{int:Centralauth-groupname}} angemeldet.",
-	"centralauth-login-progress": "Sie wurden auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch angemeldet:",
 	"centralauth-logout-no-others": "Sie wurden automatisch von anderen Projekten {{int:Centralauth-groupname}} abgemeldet.",
 	"centralauth-logout-progress": "Sie wurden auch bei den folgenden Wikis {{int:Centralauth-groupname}} automatisch abgemeldet:",
 	"centralauth-merge-attempt": "'''Prüfen Sie das eingegebene Passwort mit den restlichen Benutzerkonten …'''",

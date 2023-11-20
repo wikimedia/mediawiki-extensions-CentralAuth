@@ -176,8 +176,6 @@
 	"centralauth-log-status-locked": "අගුලුලා ඇත",
 	"centralauth-log-status-none": "(කිසිවක් නොමැත)",
 	"centralauth-log-status-oversighted": "ප්‍රමාද දෝෂයක්",
-	"centralauth-login-no-others": "ඔබ ස්‍වයංක්‍රීයවම {{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘති වලට ඇතුලත් කෙරිනි.",
-	"centralauth-login-progress": "{{int:Centralauth-groupname}} හී විකියන්වලට ඔබව ඇතුල් කරමින්:",
 	"centralauth-logout-no-others": "ඔබ ස්‍වයංක්‍රීයවම {{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘති වලින් පිට කෙරිනි.",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}} හි වෙනත් ව්‍යාපෘතිවලින් ඔබව පිට කරමින්:",
 	"centralauth-merge-attempt": "'''ඒකාබද්ධ නොකෙරුණු ගිණුම් සමග ලබාදුන් මුරපදය පරීක්‍ෂා කරමින්…'''",

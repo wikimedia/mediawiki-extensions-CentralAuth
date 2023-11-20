@@ -10,7 +10,6 @@
 	"centralauth-admin-blocklog": "kovnoten lettya",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|gevro|kevro}} war $2",
 	"centralauth-foreign-link": "Devnydhyer $1 war $2",
-	"centralauth-login-progress": "Orth agas omgelmi orth wikiow {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Owth omdenna dhyworth {{PLURAL:$2|wiki aral|wikis erel}} a {{int:Centralauth-groupname}}:",
 	"centralauth-merge-method-login": "gwruthys owth omgelmi",
 	"centralauth-prefs-count-attached": "Byw yw agas akont war $1 {{PLURAL:$1|wiasva|gwiasva}} ragdres.",

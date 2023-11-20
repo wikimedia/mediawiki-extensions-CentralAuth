@@ -128,7 +128,6 @@
 	"centralauth-log-status-locked": "slēgts",
 	"centralauth-log-status-none": "(nav)",
 	"centralauth-log-status-oversighted": "pārlūkots",
-	"centralauth-login-progress": "Ielogojam tevi citos {{int:Centralauth-groupname}} projektos:",
 	"centralauth-logout-progress": "Izlogojam tevi no citiem {{int:Centralauth-groupname}} projektiem:",
 	"centralauth-merge-denied": "Atvaino, bet tev nav pieejas šai lapai.",
 	"centralauth-merge-dryrun-complete": "Visus esošos kontus var apvienot automātiski!\n\nPagaidām vēl tavos kontos nav izdarītas nekādas izmaiņas.",

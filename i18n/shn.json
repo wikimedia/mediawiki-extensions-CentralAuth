@@ -97,8 +97,6 @@
 	"centralauth-log-entry-lock": "ၶတ်းပႅတ်ႈဢႅၵ်ႉၶၢဝ်ႉၸၼ်ႉလုမ်ႈ \"$1\"",
 	"centralauth-log-name": "မၢႆတမ်းဢႅၵ်ႉၶၢဝ်ႉၸၼ်ႉလုမ်ႈၾႃႉ",
 	"centralauth-login-error-locked": "သူဢမ်ႇၸၢင်ႊလွၵ်ႉၶဝ်ၵႂႃႇလႆႈ ယွၼ်ႉပိူဝ်ႈဝႃႈ ဢႅၵ်ႉၶၢဝ်ႉသူၼႆႉ တင်းလုမ်ႈၾႃႉၶတ်းပႅတ်ႈဝႆႉယဝ်ႉ။",
-	"centralauth-login-no-others": "သူလႆႈလွၵ်ႉၶဝ်ႈၵႂႃႇ ၼႂ်းပရေႃးၵျႅၵ်ႉတၢင်ႇဢၼ် ၶွင်{{int:Centralauth-groupname}}ယူႇႁင်းၵွၺ်းဝႅၼ်ႊဝႅၼ်ႊ။",
-	"centralauth-login-progress": "တိုၵ်ႉဢဝ်သူၶဝ်ႈၵႂႃႇၼႂ်းဝီႇၶီႇ ၶွင်{{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "သူလႆႈလွၵ်ႉဢွၵ်ႇမႃးၵႃႊတီႈ ပရေႃးၵျႅၵ်ႉတၢင်ႇဢၼ် ၶွင်{{int:Centralauth-groupname}} ယူႇႁင်းၵွၺ်းဝႅၼ်ႊဝႅၼ်ႊ",
 	"centralauth-logout-progress": "တိုၵ်ႉဢဝ်သူဢွၵ်ႇမႃးၵႃႊတီႈ ဝီႇၶီႇတၢင်ႇဢၼ် ၶွင်{{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''ထတ်းတူၺ်းမၢႆလပ်ႉဢၼ်ပၼ်ဝႆႉ ဢၼ်သၢၼ်ၶတ်းတင်းဢႅၵ်ႉၶၢဝ်ႉဢၼ်ပႆႇလႆႈႁူမ်ႈႁူမ်းသေၵိုတ်းဝႆႉယူႇၸိူဝ်းၼၼ် …'''",

@@ -132,8 +132,6 @@
 	"centralauth-log-status-hidden": "versteken",
 	"centralauth-log-status-locked": "sperrt",
 	"centralauth-log-status-none": "(keen)",
-	"centralauth-login-no-others": "Du büst nu ok automaatsch bi de annern Projekten vun {{int:Centralauth-groupname}} anmellt.",
-	"centralauth-login-progress": "Du büst nu ok op de annern Projekten vun {{int:Centralauth-groupname}} anmellt:",
 	"centralauth-logout-no-others": "Du büst nu ok automaatsch bi de annern Projekten vun {{int:Centralauth-groupname}} afmellt.",
 	"centralauth-logout-progress": "Du büst nu ok vun de annern Projekten vun {{int:Centralauth-groupname}} afmellt:",
 	"centralauth-merge-attempt": "'''Dat ingevene Passwoort warrt mit de nablevenen nich tohoopföhrten Brukerkonten vergleken …'''",

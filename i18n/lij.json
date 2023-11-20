@@ -144,8 +144,6 @@
 	"centralauth-log-status-hidden": "ascoso",
 	"centralauth-log-status-locked": "bloccou",
 	"centralauth-login-error-locked": "No ti poeu accede percose a to utença a l'è blocâ globalmente.",
-	"centralauth-login-no-others": "T'ê introu aotomaticamente inti atri progetti da {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Accesso effetoou inti atri progetti de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "T'ê sciortio aotomaticamente d-i atri progetti da {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Disconescion efettoâ da-i atre wiki da {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Veifica da password inseia co-e utençe non ancon unificæ...'''",

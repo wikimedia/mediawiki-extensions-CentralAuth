@@ -168,8 +168,6 @@
 	"centralauth-log-status-locked": "bloqueyau",
 	"centralauth-log-status-none": "(garra)",
 	"centralauth-log-status-oversighted": "borrau",
-	"centralauth-login-no-others": "Ha estau rechistrau automaticament en atros prochectos de {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Encetando a suya sesión en os wikis de {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Ha saliu automaticament d'atros prochectos de {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Salindo d'a sesión en atros wikis de {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Comprebando a clau d'acceso furnita con a resta de cuentas no unificatas...'''",

@@ -42,7 +42,6 @@
 	"centralauth-log-status-hidden": "ܛܘܫܝܐ",
 	"centralauth-log-status-locked": "ܩܦܝܠܐ",
 	"centralauth-log-status-none": "(ܠܐ ܡܕܡ)",
-	"centralauth-login-progress": "{{GENDER:|ܢܥܘܠܟ|ܢܥܘܠܟܝ}} ܠܘܝܩܝ̈ܐ ܕ {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "ܢܦܠܛܠܟ ܡܢ ܘܝܩܝ̈ܐ ܐܚܪ̈ܢܐ ܕ {{int:Centralauth-groupname}}:",
 	"centralauth-merge-dryrun-or": "'''ܐܘ'''",
 	"centralauth-merge-method-empty": "ܠܝܬ ܫܘܬܦܘ̈ܬܐ",

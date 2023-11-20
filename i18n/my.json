@@ -159,7 +159,6 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|စက္ကန့်|စက္ကန့်}} အကြာက",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|နှစ်|နှစ်}} အကြာက",
 	"centralautologin": "ဗဟိုလော့ဂ်အင်ဝင်ရောက်ခြင်း",
-	"centralloginsuccesful": "အကောင့်ထဲဝင်ပြီးပြီ",
 	"createlocalaccount": "ဒေသတွင်းအကောင့်တစ်ခုကို အတင်းအဓမ္မဖန်တီးရန်",
 	"globalgroupmembership": "ဂလိုဘယ်အုပ်စုများတွင် အဖွဲ့ဝင်ဖြစ်မှု",
 	"globalgrouppermissions": "ဂလိုဘယ်အုပ်စု စီမံခန့်ခွဲမှု",

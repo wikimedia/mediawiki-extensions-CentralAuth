@@ -211,8 +211,6 @@
 	"centralauth-log-status-none": "(nema statusa)",
 	"centralauth-log-status-oversighted": "nadgledom potpuno skriveno",
 	"centralauth-login-error-locked": "Ne možete se prijaviti jer je Vaš suradnički račun globalno zaključan.",
-	"centralauth-login-no-others": "Automatski ste prijavljeni na druge projekte {{int: Centralauth-groupname}}.",
-	"centralauth-login-progress": "Prijavljivanje na druge projekte {{int:Centralauth-groupname|gen}}:",
 	"centralauth-logout-no-others": "Automatski ste odjavljeni sa svih projekata koje drži {{int: Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Odjavljivanje iz drugih projekata {{MediaWiki:Centralauth-groupname|gen}}:",
 	"centralauth-merge-attempt": "'''Provjeravam navedene lozinke za ostale još nespojene račune...'''",

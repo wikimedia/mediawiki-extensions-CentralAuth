@@ -102,7 +102,6 @@
 	"centralauth-log-header": "Jenotalised at lisedons dunis kalis valemik tefölis: moükams, lökofärmükams e maifükams.",
 	"centralauth-log-name": "Jenotalised kalas valemik",
 	"centralauth-log-status-none": "(nonik)",
-	"centralauth-login-progress": "Nunädol oli proyeges in {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Sänunädol oli se proyegs in {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Letävod pegivöl pafümedon leigodü kals no nog peyümöls...'''",
 	"centralauth-merge-denied": "Liedo no labol däli ad logön padi at.",

@@ -165,8 +165,6 @@
 	"centralauth-log-status-locked": "تالہ",
 	"centralauth-log-status-none": "(کوئی نئیں)",
 	"centralauth-log-status-oversighted": "دبایا گیا",
-	"centralauth-login-no-others": "تسیں اپنے آپ ای {{int:Centralauth-groupname}} دے دوجے ویونت چ لاگان ہوگۓ او۔",
-	"centralauth-login-progress": "توانوں {{int:Centralauth-groupname}} {{PLURAL:$2|ویکی|ویکیاں}}وچ لاگان کیتا جاریا اے:",
 	"centralauth-logout-no-others": "تسیں اپنے آپ ای {{int:Centralauth-groupname}} دے دوجے ویونت چوں بار نکل گۓ او۔",
 	"centralauth-logout-progress": "توانوں {{int:Centralauth-groupname}} {{PLURAL:$2|ویکی|ویکیاں}}وچ لاگ ان کیتا جارہیا اے:",
 	"centralauth-merge-attempt": "'''چیک کرن لئی کنجی ریندے ہووے ناں رلے کھاتیاں لئی۔'''",

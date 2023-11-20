@@ -160,8 +160,6 @@
 	"centralauth-log-status-locked": "vèrrolyê",
 	"centralauth-log-status-none": "(nion)",
 	"centralauth-log-status-oversighted": "ôtâ",
-	"centralauth-login-no-others": "Vos avéd étâ branchiê ôtomaticament ux ôtros projèts de {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Vos éte branchiê ux vouiquis de {{int:Centralauth-groupname}} :",
 	"centralauth-logout-no-others": "Vos avéd étâ dèbranchiê ôtomaticament des ôtros projèts de {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Vos éte dèbranchiê des ôtros vouiquis de {{int:Centralauth-groupname}} :",
 	"centralauth-merge-attempt": "'''Contrôlo du contresegno balyê sur los comptos pas fusionâs que réstont...'''",

@@ -180,8 +180,6 @@
 	"centralauth-log-status-locked": "бобуллубут",
 	"centralauth-log-status-none": "(суох)",
 	"centralauth-log-status-oversighted": "ревизор кистээбит",
-	"centralauth-login-no-others": "Эн {{int:Centralauth-groupname}} бары бырайыактарыгар аптамаатынан бэлиэтэнниҥ.",
-	"centralauth-login-progress": "{{int:Centralauth-groupname}} атын бырайыактарыгар киирии:",
 	"centralauth-logout-no-others": "Эн {{int:Centralauth-groupname}} бары бырайыактарыгар үлэҕин түмүктээтиҥ.",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}} атын бырайыактарыттан тахсыы:",
 	"centralauth-merge-attempt": "'''Холбоно илик бэлиэ-ааттарга бу аһарык сөп түбэһэрин тургут...'''",

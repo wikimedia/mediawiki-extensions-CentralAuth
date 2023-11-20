@@ -15,7 +15,6 @@
 	"centralauth-editset-usage": "Implouéyé dins chés groupes globals:",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contérbuchon|contérbuchons}} édseur $2",
 	"centralauth-foreign-link": "Uzeu $1 édseur $2",
-	"centralauth-login-progress": "Vos ètes logué{{GENDER:||e|(e)}} à chés wikis éd {{int:Centralauth-groupname}} :",
 	"centralauth-merge-method-login": "créè lors éd l’idintificacion",
 	"centralauth-rightslog-set-optin": "basé par consintemint ésplicite",
 	"globalgroupmembership": "Aparténanche à chés globals groupes",

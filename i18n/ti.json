@@ -24,7 +24,6 @@
 	"centralauth-rename-progress-username": "ስም ተጠቃሚ",
 	"centralauth-seconds-ago": "ቅድሚ $1 {{PLURAL:$1|ካልኢት|ካልኢታት}}",
 	"centralauth-years-ago": "ቅድሚ $1 {{PLURAL:$1|ዓመት|ዓመታት}}",
-	"centralloginsuccesful": "ብመንነት ኣትዩ ኣሎ",
 	"globalrenamequeue-column-rq-name": "ስም ተጠቃሚ",
 	"globalrenamequeue-form-username": "ስም ተጠቃሚ፦"
 }

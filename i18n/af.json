@@ -152,7 +152,6 @@
 	"centralauth-log-status-locked": "gesluit",
 	"centralauth-log-status-none": "(geen)",
 	"centralauth-log-status-oversighted": "oversighted",
-	"centralauth-login-progress": "U word by al die wiki's van {{int:Centralauth-groupname}} aangemeld:",
 	"centralauth-logout-progress": "U word vanaf die ander wiki's van {{int:Centralauth-groupname}} afgeteken:",
 	"centralauth-merge-denied": "U het nie toegang tot hierdie bladsy nie.",
 	"centralauth-merge-dryrun-complete": "Alle bestaande rekeninge kan word outomaties verenig!\n\nGeen veranderinge het plaasgevind na jou rekeninge nog.",

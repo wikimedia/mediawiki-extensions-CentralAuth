@@ -17,6 +17,5 @@
 	"centralauth-prefs-status": "Global esap alı:",
 	"centralauth-prefs-unattached": "Tasdıqlanmağan",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniye}} önce",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl}} önce",
-	"centralloginsuccesful": "İçkerdesiñiz"
+	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl}} önce"
 }

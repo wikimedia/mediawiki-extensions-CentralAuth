@@ -24,8 +24,6 @@
 	"centralauth-listusers-attached": "[[User:$1|ekziston në nivel lokal]]",
 	"centralauth-listusers-locked": "i bllokuar",
 	"centralauth-listusers-nolocal": "pavarur ose nuk ekziston në nivel lokal",
-	"centralauth-login-no-others": "Ju keni qenë i regjistruar automatikisht në projekte të tjera të {{int:Centralauth-groupname}}.",
-	"centralauth-login-progress": "Logging ju në të projekteve të {{int:Centralauth-groupname}}:",
 	"centralauth-logout-no-others": "Keni automatikisht nga projekte të tjera të {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Logging t'ju nxjerrin nga projektet e tjera të {{int:Centralauth-groupname}}:",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minute|minuta}}  më parë",

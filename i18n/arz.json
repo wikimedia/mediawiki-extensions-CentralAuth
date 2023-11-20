@@ -118,7 +118,6 @@
 	"centralauth-log-entry-unlock": "شيل المنع من الحساب العام \"$1\"",
 	"centralauth-log-header": "السجل دا فيه العمليات اللى تحت الحسابات العامة:المسح،القفل و شيلان القفل",
 	"centralauth-log-name": "سجل الحساب العام",
-	"centralauth-login-progress": "بيسجل دخولك على {{PLURAL:$2|مشاريع}} {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "بيسجل خروجك من {{PLURAL:$2|مشاريع}} {{int:Centralauth-groupname}} التانية:",
 	"centralauth-merge-attempt": "'''التاكد من الباسورد اللى اديتها فى الحسابات الباقية اللى لسة ما ادمجتش...'''",
 	"centralauth-merge-denied": "متأسفين،انت مش من حقك تدخل الصفحة دى.",

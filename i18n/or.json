@@ -180,8 +180,6 @@
 	"centralauth-log-status-locked": "କିଳାଯାଇଛି",
 	"centralauth-log-status-none": "(କିଛି ନାହିଁ)",
 	"centralauth-log-status-oversighted": "ଅଜାଣତରେ ଅଣଦେଖା କରାଯାଇଛି",
-	"centralauth-login-no-others": "{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣ ଆପେଆପେ ଲଗଆଉଟ ହୋଇଯାଇଛନ୍ତି",
-	"centralauth-login-progress": "ଆପଣଙ୍କୁ {{int:Centralauth-groupname}}ର ଏହି ସବୁ ପ୍ରସଙ୍ଗରେ ଲଗ-ଇନ କରାଉଛୁ :",
 	"centralauth-logout-no-others": "{{int:Centralauth-groupname}}ର ବାକି ପ୍ରକଳ୍ପରୁ ଆପଣ ଆପେଆପେ ଲଗଆଉଟ ହୋଇଯାଇଛନ୍ତି",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}}ର ଅନ୍ୟ ସମସ୍ତ ପ୍ରକଳ୍ପରୁ ଆପଣଙ୍କୁ ଲଗଆଉଟ କରୁଅଛୁ:",
 	"centralauth-merge-attempt": "'''ଯୋଡ଼ାଯାଇନଥିବା ବାକି ଖାତା ପାଇଁ ପାସବାର୍ଡ଼ ପରଖୁଅଛୁଁ...'''",

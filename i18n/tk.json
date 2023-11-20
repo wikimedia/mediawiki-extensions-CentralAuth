@@ -148,8 +148,6 @@
 	"centralauth-log-status-locked": "gulply",
 	"centralauth-log-status-none": "(hiç)",
 	"centralauth-log-status-oversighted": "esewan edildi",
-	"centralauth-login-no-others": "Beýleki {{int:Centralauth-groupname}} taslamalarynda awtomatik sessiýa açdyňyz.",
-	"centralauth-login-progress": "{{int:Centralauth-groupname}} taslamalarynda sessiýaňyz açylýar:",
 	"centralauth-logout-no-others": "Beýleki {{int:Centralauth-groupname}} taslamalarynda awtomatik sessiýa ýapdyňyz.",
 	"centralauth-logout-progress": "Başga {{int:Centralauth-groupname}} taslamalarynda sessiýaňyz ýapylýar:",
 	"centralauth-merge-denied": "Bagyşlaň, bu sahypa girmäge siziň rugsadyňyz ýok.",

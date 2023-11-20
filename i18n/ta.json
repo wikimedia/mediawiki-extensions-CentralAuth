@@ -169,8 +169,6 @@
 	"centralauth-log-status-locked": "மூடப்பட்டது",
 	"centralauth-log-status-none": "(எதுவுமில்லை)",
 	"centralauth-log-status-oversighted": "கவனக்குறைவு",
-	"centralauth-login-no-others": "{{int:Centralauth-groupname}} இதன் இதர திட்டங்களுக்கு தானாகவே நீங்கள் உள்நுழைக்கப்பட்டாயிற்று",
-	"centralauth-login-progress": "உங்களை விக்கியின்  {{int:Centralauth-groupname}}: ல் உள்நுழைகிறது",
 	"centralauth-logout-no-others": "{{int:Centralauth-groupname}} இதன் இதர திட்டங்களுக்கு தானாகவே நீங்கள் வெளியேரிவிட்டீர்கள்",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}} இன் பிற விக்கிகளில் இருந்து விடுபதிகை செய்துள்ளீர்கள்.",
 	"centralauth-merge-attempt": "'''ஒன்றிணைக்கப்படாது எஞ்சியுள்ள கணக்குகளுடன் வழங்கப்பட்ட கடவுச் சொல்லைச் சரிபார்க்கிறது...'''",

@@ -114,7 +114,6 @@
 	"centralauth-log-entry-unlock": "äntspeerde dät globoale Benutserkonto „$1“",
 	"centralauth-log-header": "Dit Logbouk wiest aal Läskengen, Speerengen un Äntspeerengen fon globoale Benutserkonten.",
 	"centralauth-log-name": "Globoal Benutserkonten-Logbouk",
-	"centralauth-login-progress": "Automatisk wuudest du uk an foulgjende Projekte {{int:Centralauth-groupname}} anmälded:",
 	"centralauth-logout-progress": "Automatisk wuudest du uk fon foulgjende Projekte {{int:Centralauth-groupname}} oumälded:",
 	"centralauth-merge-attempt": "'''Wröigje dät ienroate Paaswoud mäd do uurblieuwene Benutserkonten...'''",
 	"centralauth-merge-denied": "Dät spiet uus, man du hääst neen Begjuchtigenge foar disse Siede.",

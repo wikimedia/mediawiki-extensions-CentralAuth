@@ -36,7 +36,6 @@
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur}} elejen",
 	"centralauth-log-header": "Dit logboek bevat haandelingen veur globale gebrukers: vortdoon, aofsluten en vriegeven.",
 	"centralauth-log-name": "Globaal gebrukersbeheerlogboek",
-	"centralauth-login-progress": "Je wörden an-emeld bie de wiki's van {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Je wörden aofemeld bie aandere wiki's van {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Bezig mit t kontroleren van de op-egeven wachtwoorden veur de nog niet samenevoegden gebrukers...'''",
 	"centralauth-merge-denied": "Je hebben gien toegang tot disse zied.",

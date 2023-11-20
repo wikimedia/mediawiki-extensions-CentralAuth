@@ -12,6 +12,5 @@
 	"centralauth-admin-list-legend-ro": "स्थानिय खाताअन सूची",
 	"centralauth-foreign-contributions": " $2मि $1 {{PLURAL:$1|योगदान|योगदानहरू}}",
 	"centralauth-foreign-link": "$2मी $1 प्रयोगकर्ता",
-	"centralauth-login-progress": "तमलाई {{int:Centralauth-groupname}}का विकिहरूमी प्रवेश गराइँदै:",
 	"centralauth-merge-method-login": "झान्याद्वार बनौन्या"
 }

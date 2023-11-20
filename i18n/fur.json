@@ -16,7 +16,6 @@
 	"centralauth-foreign-link": "Utent $1 su $2",
 	"centralauth-list-attached-title": "Identitâts leadis",
 	"centralauth-list-home-title": "Wiki principâl",
-	"centralauth-login-progress": "Daûr a jentrâ tai progjets di {{int:Centralauth-groupname}}:",
 	"centralauth-logout-progress": "Daûr a jessi dai altris progjets di {{int:Centralauth-groupname}}:",
 	"centralauth-merge-method-login": "Creade al inizi de session",
 	"centralauth-merge-method-new": "gnove identitât",

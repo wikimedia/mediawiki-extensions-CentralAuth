@@ -104,8 +104,6 @@
 	"centralauth-log-status-locked": "wichq'asqa",
 	"centralauth-log-status-none": "(mana ima)",
 	"centralauth-log-status-oversighted": "rikurparisqa",
-	"centralauth-login-no-others": "{{int:Centralauth-groupname}} nisqap huk ruraykamayninkunapi llamk'apuy tiyayniykita qallarirqankiñam.",
-	"centralauth-login-progress": "{{int:Centralauth-groupname}} nisqap wikinkunapi llamk'apuy tiyayniykita qallarispa:",
 	"centralauth-logout-no-others": "{{int:Centralauth-groupname}} nisqap huk ruraykamayninkunapi llamk'apuy tiyayniykimanta kikinmanta lluqsichisqa kankiñam.",
 	"centralauth-logout-progress": "{{int:Centralauth-groupname}} nisqap wikinkunapi llamk'apuy tiyayniykimanta lluqsispa:",
 	"centralauth-merge-denied": "Achachaw, manam saqillasunkichu kay p'anqaman riyta.",
