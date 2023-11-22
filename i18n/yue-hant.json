@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"H78c67c"
 		]
 	},
 	"action-centralauth-merge": "合併佢哋嘅戶口",
 	"centralauth": "統一戶口管理",
-	"centralauth-account-exists": "開唔到戶口：請求嘅用戶名已經俾另一個wiki度嘅用戶拎咗。",
+	"centralauth-account-exists": "開唔到戶口：請求嘅用戶名已經俾第個wiki度嘅用戶用緊。",
 	"centralauth-admin-already-unmerged": "跳緊$1，已經取消合併",
 	"centralauth-admin-bad-input": "唔啱嘅合併選擇",
 	"centralauth-admin-blocked-reason": "原因：$1",
