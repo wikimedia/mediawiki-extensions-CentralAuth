@@ -8,7 +8,7 @@
 	"apihelp-centralauthtoken-example-1": "Get ae centralauthtoken",
 	"apihelp-deleteglobalaccount-example-1": "Delete the global accoont fur [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "The raison fer delytin the uiser.",
-	"apihelp-deleteglobalaccount-param-user": "Uiser tae delyte.",
+	"apihelp-deleteglobalaccount-param-user": "Uiser tae delete.",
 	"apihelp-globaluserrights-example-1": "Eik the uiser FooBot tae global groop \"bot\", n remui fae global groops \"sysop\" n \"bureaucrat\"",
 	"apihelp-globaluserrights-example-2": "Eik the global uiser wi ID 123 tae the global groop \"bot\", n remuiv fae the global groops \"sysop\" n \"bureaucrat\"",
 	"apihelp-globaluserrights-param-add": "Eik the uiser tae thir global groops.",
