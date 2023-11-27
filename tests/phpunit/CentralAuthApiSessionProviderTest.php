@@ -12,7 +12,7 @@ use Psr\Log\NullLogger;
  * @group medium
  * @group Database
  */
-class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderTest {
+class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderTestBase {
 	use SessionProviderTestTrait;
 
 	/** @var \MediaWiki\HookContainer\HookContainer */

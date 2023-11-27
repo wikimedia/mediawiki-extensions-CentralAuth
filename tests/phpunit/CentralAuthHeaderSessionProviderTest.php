@@ -11,7 +11,7 @@ use Psr\Log\NullLogger;
  * @group medium
  * @group Database
  */
-class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProviderTest {
+class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProviderTestBase {
 	use SessionProviderTestTrait;
 
 	protected function newSessionProvider() {

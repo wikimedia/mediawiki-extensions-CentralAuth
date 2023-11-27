@@ -17,7 +17,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group medium
  * @group Database
  */
-abstract class CentralAuthTokenSessionProviderTest extends MediaWikiIntegrationTestCase {
+abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrationTestCase {
 
 	/** @var CentralAuthSessionManager */
 	protected $sessionManager;
