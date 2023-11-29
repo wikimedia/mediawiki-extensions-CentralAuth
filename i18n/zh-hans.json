@@ -61,6 +61,7 @@
 			"落花有意12138",
 			"铁桶",
 			"阿pp",
+			"阿南之人",
 			"飞舞回堂前"
 		]
 	},
@@ -525,7 +526,7 @@
 	"logentry-globalauth-setstatus": "$1 已为全域账户“$3”{{GENDER:$2|更改}}状态：设置 $4；取消设置 $5",
 	"logentry-newusers-forcecreatelocal": "$1 已为 $3 强制{{GENDER:$2|创建}}本地账号",
 	"mergeaccount": "统一登录状态",
-	"multilock": "锁定多个全局账号",
+	"multilock": "锁定多个全域账号",
 	"right-centralauth-createlocal": "强制为全域账号创建本地账号",
 	"right-centralauth-lock": "锁定或解锁全域账号",
 	"right-centralauth-merge": "合并其账号",
