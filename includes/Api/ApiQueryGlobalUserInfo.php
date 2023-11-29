@@ -197,6 +197,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 				ParamValidator::PARAM_TYPE => 'user',
 				UserDef::PARAM_ALLOWED_USER_TYPES => [
 					'name',
+					'temp',
 					'interwiki',
 				],
 			],
