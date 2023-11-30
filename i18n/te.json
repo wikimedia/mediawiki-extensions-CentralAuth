@@ -314,7 +314,7 @@
 	"globalusers": "సార్వత్రిక ఖాతాల జాబితా",
 	"mergeaccount": "ప్రవేశపు ఏకీకరణ స్థితి",
 	"multilock": "బహుళ బహిరంగ ఖాతాలకు తాళం వెయ్యి",
-	"right-centralauth-createlocal": "ఒక సార్వత్రిక ఖాతాకు బలవంతంగా ఓ స్థానిక ఖాతాను సృష్టించండి",
+	"right-centralauth-createlocal": "ఒక సార్వత్రిక ఖాతాకు బలవంతంగా ఓ స్థానిక ఖాతాను సృష్టించడం",
 	"right-centralauth-lock": "సార్వత్రిక ఖాతాకు తాళం వెయ్యి లేదా దాచు",
 	"right-centralauth-merge": "వారి ఖాతాలను విలీనం చెయ్యి",
 	"right-centralauth-suppress": "సార్వత్రిక ఖాతాను అణచి పెట్టు లేదా దాచు",
