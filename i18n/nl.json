@@ -118,7 +118,7 @@
 	"centralauth-admin-not-authorized": "U hebt geen rechten om deze handeling te verrichten.",
 	"centralauth-admin-permission": "Alleen stewards kunnen gebruikers van anderen samenvoegen.",
 	"centralauth-admin-reason": "Reden:",
-	"centralauth-admin-reason-other": "Andere reden:",
+	"centralauth-admin-reason-other": "Andere/aanvullende reden:",
 	"centralauth-admin-reason-other-select": "Andere reden:",
 	"centralauth-admin-rename-in-progress": "Deze account wordt op het moment hernoemd. U kunt de [[Special:GlobalRenameProgress/$1|huidige voortgang bekijken]]. Hieronder wordt het logboek globale hernoemingen voor deze gebruiker weergegeven.",
 	"centralauth-admin-setstatus-success": "De status van deze globale gebruiker is gewijzigd.",
