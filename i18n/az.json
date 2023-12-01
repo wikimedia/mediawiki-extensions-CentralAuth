@@ -10,6 +10,7 @@
 			"PPerviz",
 			"Serkanland",
 			"Toghrul Rahimli",
+			"Turkmen",
 			"Vago",
 			"Vugar 1981",
 			"Wertuose"
@@ -38,6 +39,7 @@
 	"centralauth-admin-hidden-oversight": "gizlədildi",
 	"centralauth-admin-info-attached": "Bağlanmış hesabların sayı:",
 	"centralauth-admin-info-editcount": "Ümumi redaktə sayı:",
+	"centralauth-admin-info-groups": "Qlobal {{PLURAL:$1|istifadəçi qrupu|istifadəçi qrupları}}:",
 	"centralauth-admin-info-header": "Qlobal istifadəçi haqqında məlumatlar",
 	"centralauth-admin-info-hidden": "Gizlilik səviyyəsi:",
 	"centralauth-admin-info-locked": "Kilidlənmiş:",
