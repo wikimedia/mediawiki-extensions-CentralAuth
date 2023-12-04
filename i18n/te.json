@@ -6,7 +6,8 @@
 			"Mpradeep",
 			"Ravichandra",
 			"Veeven",
-			"వైజాసత్య"
+			"వైజాసత్య",
+			"Matma Rex"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "వాడుకరి తాలూకు సార్వత్రిక గుంపులు",
@@ -272,7 +273,7 @@
 	"centralauth-rename-table-status-failed": "విఫలమైంది",
 	"centralauth-renameuser-merged": "వాడుకరి $1 ను ఏకీకృత లాగిన్ వ్యవస్థకు చేర్చాం.\nదాని పేరు మారిస్తే, స్థానిక ఖాతా సార్వత్రిక ఖాతా నుండి విడిపోతుంది.",
 	"centralauth-renameuser-reserved": "వాడుకరి పేరు $2, ఓ సార్వత్రిక ఖాతా కోసం రిజర్వు చేయబడి ఉంది.",
-	"centralauth-rightslog-entry-groupperms": "$1 యొక్క గుంపు అనుమతులను $2 నుండి $3 కు మార్చాం",
+	"centralauth-rightslog-entry-groupperms": "$1 గారి గుంపు అనుమతులను $2 నుండి $3 కు మార్చారు",
 	"centralauth-rightslog-entry-groupperms2": "$1 యొక్క గుంపు అనుమతులను మార్చాం. $2 ఇచ్చాం; $3 తీసేసాం",
 	"centralauth-rightslog-entry-groupperms3": "$1 కోసం సెట్ చేసిన గుంపు నిరోధక వికీలను $2 నుండి $3 కు మార్చాం",
 	"centralauth-rightslog-entry-grouprename": "$2 గుంపు పేరును $1 గా మార్చాం",

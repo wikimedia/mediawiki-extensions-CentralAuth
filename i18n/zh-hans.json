@@ -61,7 +61,8 @@
 			"Diskdance",
 			"Kishinsagi",
 			"Nervie",
-			"LittlePaw365"
+			"LittlePaw365",
+			"阿南之人"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
@@ -546,7 +547,7 @@
 	"logentry-gblrename-promote": "$1将$4全域{{GENDER:$2|更名}}为$5",
 	"logentry-gblrename-rename": "$1已全域{{GENDER:$2|重命名}}$4至$5",
 	"mergeaccount": "统一登录状态",
-	"multilock": "锁定多个全局账号",
+	"multilock": "锁定多个全域账号",
 	"right-centralauth-lock": "锁定或解锁全域账号",
 	"right-centralauth-merge": "合并其账号",
 	"right-centralauth-oversight": "禁止或隐藏全域帐户",
