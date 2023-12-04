@@ -7,7 +7,8 @@
 			"Thibaut120094",
 			"Tuxxic",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Wnagxsi"
 		]
 	},
 	"apierror-centralauth-badsession": "Un jeton central d’identification ne peut être obtenu qu’en utilisant des sessions d’authentification centrale.",
@@ -22,7 +23,7 @@
 	"apihelp-createlocalaccount-example-1": "Forcer la création d’un compte local pour [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motif de création du compte local.",
 	"apihelp-createlocalaccount-param-username": "Utilisateur pour lequel créer le compte local.",
-	"apihelp-createlocalaccount-summary": "Forcer la création d’un compte local",
+	"apihelp-createlocalaccount-summary": "Créez de force un compte local. Le compte central doit exister.",
 	"apihelp-deleteglobalaccount-example-1": "Supprimer le compte global pour [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Motif de suppression de l’utilisateur.",
 	"apihelp-deleteglobalaccount-param-user": "Utilisateur à supprimer.",
@@ -87,5 +88,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Motif pour modifier l’état de l’utilisateur.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Hachage MD5 facultatif de l’actuel « <userid>:<username>:<hidden>:<locked> » attendu, pour détecter les conflits de modification. Mettre « <locked> » à 1 pour verrouillé, ou 0 pour déverrouillé.",
 	"apihelp-setglobalaccountstatus-param-user": "Utilisateur dont l’état doit être modifié.",
-	"apihelp-setglobalaccountstatus-summary": "Définir l’état d’un utilisateur global."
+	"apihelp-setglobalaccountstatus-summary": "Masque ou verrouille (ou affiche ou déverrouille) un compte utilisateur global."
 }

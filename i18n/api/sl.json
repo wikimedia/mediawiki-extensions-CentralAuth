@@ -14,11 +14,12 @@
 	"apierror-centralauth-notloggedin": "Anonimni uporabniki ne morejo pridobiti centralnega avtentikacijskega žetona.",
 	"apierror-centralauth-renameinprogress": "Uporabnik bo preimenovan, uporaba ni mogoča.",
 	"apihelp-centralauthtoken-example-1": "Pridobi centralni avtentikacijski źeton",
+	"apihelp-centralauthtoken-extended-description": "Vrne žeton, ki ga je mogoče uporabiti za preverjanje pristnosti zahtevkov API-ja v drugih vikijih. Za zahtevke API-ja za dejanja ga postavite v parameter GET <var>centralauthtoken</var>. Za zahtevke API-ja REST dodajte glavo <code>Authorization: CentralAuthToken {token}</code>. V logiki obličja MediaWikija lahko uporabite modul <code>mediawiki.ForeignApi</code> ResourceLoader.",
 	"apihelp-centralauthtoken-summary": "Pridobi centralni avtentifikacijski žeton za avtentificirano zahtevo za priloženi viki.",
 	"apihelp-createlocalaccount-example-1": "Prisilno ustvari lokalni račun za [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Razlog za ustvaritev lokalnega računa.",
 	"apihelp-createlocalaccount-param-username": "Uporabnik, za katerega želite ustvariti lokalni račun.",
-	"apihelp-createlocalaccount-summary": "Prisilno ustvari lokalni račun",
+	"apihelp-createlocalaccount-summary": "Prisilno ustvari lokalni račun. Obstajati mora centralni račun.",
 	"apihelp-deleteglobalaccount-example-1": "Izbriši globalni račun za [[User:Example|Uporabnik:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Razlog za izbris uporabnika.",
 	"apihelp-deleteglobalaccount-param-user": "Uporabnik za izbris.",
@@ -83,5 +84,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Razlog za spremembo uporabnikovega statusa.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "Izbirni MD5 pričakovanega toka<userid>:<username>:<hidden>:<locked> za odkrivanje navzkrižij urejanja. Nastavite <locked> na 1 za zaklenjeno, 0 za odklenjeno.",
 	"apihelp-setglobalaccountstatus-param-user": "Uporabnik, čigar stanje naj se spremeni.",
-	"apihelp-setglobalaccountstatus-summary": "Določi status globalnega uporabnika."
+	"apihelp-setglobalaccountstatus-summary": "Skrij ali zakleni (ali razkrij ali odkleni) globalni uporabniški račun"
 }
