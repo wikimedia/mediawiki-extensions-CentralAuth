@@ -81,7 +81,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Змінити, чи цей користувач не прихований, прихований зі списку глобальних користувачів, або цілковито подавлений.",
 	"apihelp-setglobalaccountstatus-param-locked": "Змінити статус закритості чи відкритості облікового запису користувача.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина зміни статусу користувача.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Необов'язковий MD5 очікуваного поточного <username>:<hidden>:<locked> для виявлення конфліктів редагувань. Встановіть <locked> як 1 для закритого, 0 для відкритого.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Необов'язковий MD5 очікуваного поточного <userid>:<username>:<hidden>:<locked> для виявлення конфліктів редагувань. Встановіть <locked> як 1 для закритого, 0 для відкритого.",
 	"apihelp-setglobalaccountstatus-param-user": "Користувач, статус якого необхідно змінити.",
 	"apihelp-setglobalaccountstatus-summary": "Встановити статус глобального користувача."
 }
