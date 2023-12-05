@@ -61,10 +61,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			__METHOD__,
 			[],
 			[
-				'renameuser_status' => [ 'LEFT OUTER JOIN', [ $dbr->makeList(
-					[ 'ru_oldname=gu_name', 'ru_newname=gu_name' ],
-					LIST_OR
-				) ] ]
+				'renameuser_status' => [ 'LEFT OUTER JOIN', 'ru_oldname=gu_name OR ru_newname=gu_name' ]
 			]
 		);
 		$this->globalData = [];

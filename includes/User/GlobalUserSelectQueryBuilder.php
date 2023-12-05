@@ -110,9 +110,10 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	 * @return self
 	 */
 	public function whereRegisteredTimestamp( string $timestamp, bool $before ): self {
-		$this->conds( 'gu_registration ' .
-			( $before ? '< ' : '> ' ) .
-			$this->db->addQuotes( $this->db->timestamp( $timestamp ) ) );
+		$this->conds(
+			$this->db->expr( 'gu_registration', $before ? '<' : '>',
+				$this->db->timestamp( $timestamp ) )
+		);
 		return $this;
 	}
 

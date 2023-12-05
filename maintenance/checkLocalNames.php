@@ -79,7 +79,7 @@ class CheckLocalNames extends Maintenance {
 				->select( 'ln_wiki' )
 				->distinct()
 				->from( 'localnames' )
-				->orderBy( "ln_wiki", SelectQueryBuilder::SORT_ASC )
+				->orderBy( 'ln_wiki', SelectQueryBuilder::SORT_ASC )
 				->caller( __METHOD__ )
 				->fetchFieldValues();
 		}
@@ -92,14 +92,14 @@ class CheckLocalNames extends Maintenance {
 			$this->output( "Checking localnames for $wiki ...\n" );
 
 			// batch query localnames from the wiki
-			do{
+			do {
 				$this->output( "\t ... querying from '$lastUsername'\n" );
 				$result = $centralReplica->newSelectQueryBuilder()
 					->select( 'ln_name' )
 					->from( 'localnames' )
 					->where( [
-						"ln_wiki" => $wiki,
-						"ln_name > " . $centralReplica->addQuotes( $lastUsername )
+						'ln_wiki' => $wiki,
+						$centralReplica->expr( 'ln_name', '>', $lastUsername )
 					] )
 					->orderBy( 'ln_name', SelectQueryBuilder::SORT_ASC )
 					->limit( $this->mBatchSize )
@@ -111,7 +111,7 @@ class CheckLocalNames extends Maintenance {
 					$localUser = $localdb->newSelectQueryBuilder()
 						->select( 'user_name' )
 						->from( 'user' )
-						->where( [ "user_name" => $u->ln_name ] )
+						->where( [ 'user_name' => $u->ln_name ] )
 						->caller( __METHOD__ )
 						->fetchResultSet();
 
@@ -128,8 +128,8 @@ class CheckLocalNames extends Maintenance {
 							$centralPrimaryDb->delete(
 								'localnames',
 								[
-									"ln_wiki" => $wiki,
-									"ln_name" => $u->ln_name
+									'ln_wiki' => $wiki,
+									'ln_name' => $u->ln_name
 								],
 								__METHOD__
 							);

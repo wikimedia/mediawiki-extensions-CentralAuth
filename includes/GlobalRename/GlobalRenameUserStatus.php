@@ -10,6 +10,8 @@ use MediaWiki\Permissions\Authority;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\OrExpressionGroup;
 
 /**
  * Status handler for CentralAuth users being renamed.
@@ -51,13 +53,10 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 *
 	 * @param IDatabase $db
 	 *
-	 * @return string
+	 * @return IExpression
 	 */
-	private function getNameWhereClause( IDatabase $db ) {
-		return $db->makeList(
-			[ 'ru_oldname' => $this->name, 'ru_newname' => $this->name ],
-			LIST_OR
-		);
+	private function getNameWhereClause( IDatabase $db ): IExpression {
+		return $db->expr( 'ru_oldname', '=', $this->name )->or( 'ru_newname', '=', $this->name );
 	}
 
 	/**
@@ -185,14 +184,14 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 			// ROLLBACK or COMMIT as is. We could use SAVEPOINT here, but it's not worth it.
 			$keyConds = [];
 			foreach ( $rows as $row ) {
-				$key = [ 'ru_wiki' => $row->ru_wiki, 'ru_oldname' => $row->ru_oldname ];
-				$keyConds[] = $dbw->makeList( $key, LIST_AND );
+				$keyConds[] = $dbw->expr( 'ru_wiki', '=', $row->ru_wiki )
+					->and( 'ru_oldname', '=', $row->ru_oldname );
 			}
 			// (a) Do a locking check for conflicting rows on the unique key
 			$ok = !$dbw->newSelectQueryBuilder()
 				->select( '1' )
 				->from( 'renameuser_status' )
-				->where( $dbw->makeList( $keyConds, LIST_OR ) )
+				->where( new OrExpressionGroup( ...$keyConds ) )
 				->forUpdate()
 				->caller( __METHOD__ )
 				->fetchField();

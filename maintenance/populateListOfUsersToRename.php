@@ -46,14 +46,10 @@ class PopulateListOfUsersToRename extends Maintenance {
 			->from( 'localnames' )
 			->leftJoin( 'localuser', null, 'ln_name=lu_name AND ln_wiki=lu_wiki' )
 			->where( [
-				$dbr->makeList(
-					[
-						'ln_name > ' . $dbr->addQuotes( $this->lName ),
-						'ln_name = ' . $dbr->addQuotes( $this->lName ) . ' AND ln_wiki > ' .
-							$dbr->addQuotes( $this->lWiki )
-					],
-					LIST_OR
-				),
+				$dbr->buildComparison( '>', [
+					'ln_name' => $this->lName,
+					'ln_wiki' => $this->lWiki,
+				] ),
 				'lu_attached_method IS NULL'
 			] )
 			->orderBy( [ 'ln_name', 'ln_wiki' ] )

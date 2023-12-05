@@ -9,6 +9,8 @@ use MediaWiki\RenameUser\RenameuserSQL;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use User;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeValue;
 
 /**
  * Job class to rename a user locally
@@ -142,17 +144,17 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$from = $this->params['from'];
 		$to = $this->params['to'];
 
-		$fromTitle = $oldUser->getUserPage();
-		$toTitle = Title::makeTitleSafe( NS_USER, $to );
+		$fromDBkey = $oldUser->getUserPage()->getDBkey();
+		$toDBkey = Title::makeTitleSafe( NS_USER, $to )->getDBkey();
 		$dbr = wfGetDB( DB_REPLICA );
 
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_namespace', 'page_title' ] )
 			->from( 'page' )
 			->where( [
-				'page_namespace IN (' . NS_USER . ',' . NS_USER_TALK . ')',
-				'(page_title ' . $dbr->buildLike( $fromTitle->getDBkey() . '/', $dbr->anyString() ) .
-				' OR page_title = ' . $dbr->addQuotes( $fromTitle->getDBkey() ) . ')'
+				'page_namespace' => [ NS_USER, NS_USER_TALK ],
+				$dbr->expr( 'page_title', IExpression::LIKE, new LikeValue( $fromDBkey . '/', $dbr->anyString() ) )
+					->or( 'page_title', '=', $fromDBkey )
 			] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
@@ -168,7 +170,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 		$jobs = [];
 
-		$toReplace = static::escapeReplacement( $toTitle->getDBkey() );
+		$toReplace = static::escapeReplacement( $toDBkey );
 		foreach ( $rows as $row ) {
 			$oldPage = Title::newFromRow( $row );
 			$newPage = Title::makeTitleSafe( $row->page_namespace,
