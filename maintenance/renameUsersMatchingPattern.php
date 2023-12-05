@@ -13,6 +13,7 @@ use MediaWiki\User\TempUser\Pattern;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserRigorOptions;
 use User;
+use Wikimedia\Rdbms\IExpression;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
@@ -107,10 +108,8 @@ class RenameUsersMatchingPattern extends Maintenance {
 			$res = $dbr->newSelectQueryBuilder()
 				->select( 'gu_name' )
 				->from( 'globaluser' )
-				->where( array_merge(
-					[ 'gu_name' . $fromPattern->buildLike( $dbr ) ],
-					$batchConds
-				) )
+				->where( $dbr->expr( 'gu_name', IExpression::LIKE, $fromPattern->toLikeValue( $dbr ) ) )
+				->andWhere( $batchConds )
 				->orderBy( 'gu_name' )
 				->limit( $batchSize )
 				->caller( __METHOD__ )

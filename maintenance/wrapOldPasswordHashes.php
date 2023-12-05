@@ -24,6 +24,8 @@ require_once __DIR__ . '/Maintenance.php';
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeValue;
 
 /**
  * CentralAuth version of WrapOldPasswords
@@ -67,7 +69,7 @@ class WrapOldPasswordHashes extends Maintenance {
 
 		// Get a list of password types that are applicable
 		$dbw = $databaseManager->getCentralPrimaryDB();
-		$typeCond = 'gu_password' . $dbw->buildLike( ":$firstType:", $dbw->anyString() );
+		$typeCond = $dbw->expr( 'gu_password', IExpression::LIKE, new LikeValue( ":$firstType:", $dbw->anyString() ) );
 
 		$count = 0;
 		$minUserId = 0;

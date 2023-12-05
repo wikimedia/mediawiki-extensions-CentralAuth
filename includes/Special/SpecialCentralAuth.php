@@ -26,6 +26,8 @@ use Sanitizer;
 use SpecialPage;
 use User;
 use UserGroupMembership;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeValue;
 use Xml;
 
 class SpecialCentralAuth extends SpecialPage {
@@ -1148,7 +1150,7 @@ class SpecialCentralAuth extends SpecialPage {
 			->select( 'gu_name' )
 			->from( 'globaluser' )
 			->where( [
-				'gu_name' . $dbr->buildLike( $search, $dbr->anyString() ),
+				$dbr->expr( 'gu_name', IExpression::LIKE, new LikeValue( $search, $dbr->anyString() ) ),
 				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
 			] )
 			->orderBy( 'gu_name' )

@@ -12,7 +12,9 @@ use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Rdbms\LikeValue;
 
 /**
  * Api module for CentralAuth extension to list all global users.
@@ -110,7 +112,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 		if ( $params['prefix'] !== null ) {
 			$this->addWhere(
-				'gu_name' . $db->buildLike( $this->getCanonicalUserName( $params['prefix'] ), $db->anyString() )
+				$db->expr( 'gu_name', IExpression::LIKE,
+					new LikeValue( $this->getCanonicalUserName( $params['prefix'] ), $db->anyString() ) )
 			);
 		}
 

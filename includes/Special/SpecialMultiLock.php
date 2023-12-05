@@ -8,6 +8,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use SpecialPage;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeValue;
 use Xml;
 
 /**
@@ -161,7 +163,10 @@ class SpecialMultiLock extends SpecialPage {
 	private function searchForUsers() {
 		$dbr = $this->databaseManager->getCentralReplicaDB();
 
-		$where = [ 'gu_name' . $dbr->buildLike( $this->mPrefixSearch, $dbr->anyString() ) ];
+		$where = [
+			$dbr->expr( 'gu_name', IExpression::LIKE,
+				new LikeValue( $this->mPrefixSearch, $dbr->anyString() ) )
+		];
 		if ( !$this->mCanSuppress ) {
 			$where['gu_hidden_level'] = CentralAuthUser::HIDDEN_LEVEL_NONE;
 		}

@@ -9,6 +9,7 @@ use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Assert\Assert;
+use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -127,10 +128,10 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 			return $this;
 		}
 
-		$this->conds( [
-			'gu_name NOT ' . $this->tempUserConfig->getMatchPattern()
-				->buildLike( $this->db )
-		] );
+		$this->conds(
+			$this->db->expr( 'gu_name', IExpression::NOT_LIKE,
+				$this->tempUserConfig->getMatchPattern()->toLikeValue( $this->db ) )
+		);
 		return $this;
 	}
 
@@ -145,10 +146,10 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 			return $this;
 		}
 
-		$this->conds( [
-			'gu_name ' . $this->tempUserConfig->getMatchPattern()
-				->buildLike( $this->db )
-		] );
+		$this->conds(
+			$this->db->expr( 'gu_name', IExpression::LIKE,
+				$this->tempUserConfig->getMatchPattern()->toLikeValue( $this->db ) )
+		);
 		return $this;
 	}
 
