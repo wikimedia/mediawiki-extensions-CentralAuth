@@ -11,7 +11,8 @@
 			"TRYPPN",
 			"Trengarasu",
 			"செல்வா",
-			"மதனாஹரன்"
+			"மதனாஹரன்",
+			"Fahimrazick"
 		]
 	},
 	"centralauth": "உலகளாவிய பயனர் மேலாளர்",
@@ -77,7 +78,7 @@
 	"centralauth-admin-unmerge": "தேர்ந்தெடுத்ததைப் பிரி",
 	"centralauth-admin-unmerge-success": "வெற்றிகரமாக பிரிக்கப்பட்ட $1   {{PLURAL:$1|கணக்கு|கணக்குகள்}}",
 	"centralauth-admin-username": "பயனர் பெயர்:",
-	"centralauth-admin-view": "கணக்கு விவரம் காட்டுக",
+	"centralauth-admin-view": "கணக்குத் தகவல்களைக் காட்டு",
 	"centralauth-admin-yes": "ஆம்",
 	"centralauth-attach-list-attached": "\"$1\" என்ற ஒருங்கிணைக்கப்பட்ட கணக்கு பின்வரும் கணக்குகளை உள்ளடக்கியது:",
 	"centralauth-attach-submit": "கணக்கை புலம் பெயர்",
