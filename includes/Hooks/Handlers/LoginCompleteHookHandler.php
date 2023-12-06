@@ -77,7 +77,9 @@ class LoginCompleteHookHandler implements
 	 * @see SpecialCentralLogin
 	 */
 	public function onUserLoginComplete( $user, &$inject_html, $direct = null ) {
-		if ( !$this->config->get( 'CentralAuthCookies' ) ) {
+		if ( !$this->config->get( 'CentralAuthCookies' ) ||
+			!$this->config->get( 'CentralAuthLoginWiki' )
+		) {
 			// Use local sessions only.
 			return true;
 		}
