@@ -140,11 +140,9 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		if ( !empty( $params['excludegroup'] ) ) {
 			$this->addTables( 'global_user_groups', 'gug2' );
 
-			$in = $db->makeList( [ 'gug2.gug_group' => $params['excludegroup'] ], LIST_OR );
-
 			$this->addJoinConds( [
 				'gug2' =>
-				[ 'LEFT OUTER JOIN', [ 'gug2.gug_user = gu_id', $in ] ]
+				[ 'LEFT OUTER JOIN', [ 'gug2.gug_user = gu_id', 'gug2.gug_group' => $params['excludegroup'] ] ]
 			] );
 
 			$this->addWhere( 'gug2.gug_user IS NULL' );

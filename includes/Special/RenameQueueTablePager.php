@@ -137,7 +137,7 @@ class RenameQueueTablePager extends TablePager {
 				$conds['rq_status'] = $status;
 			} else {
 				// All closed requests
-				$conds[] = 'rq_status <> ' . $this->mDb->addQuotes( GlobalRenameRequest::PENDING );
+				$conds[] = $this->mDb->expr( 'rq_status', '!=', GlobalRenameRequest::PENDING );
 			}
 		}
 

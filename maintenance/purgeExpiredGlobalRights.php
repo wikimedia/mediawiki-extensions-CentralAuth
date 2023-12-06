@@ -25,6 +25,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use Wikimedia\Rdbms\OrExpressionGroup;
 
 /**
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
@@ -58,15 +59,13 @@ class PurgeExpiredGlobalRights extends Maintenance {
 
 			$conds = [];
 			foreach ( $rows as $row ) {
-				$conds[] = $dbw->makeList( [
-					'gug_user'  => (int)$row->gug_user,
-					'gug_group' => $row->gug_group,
-				], $dbw::LIST_AND );
+				$conds[] = $dbw->expr( 'gug_user', '=', (int)$row->gug_user )
+					->and( 'gug_group', '=', $row->gug_group );
 			}
 
 			$dbw->delete(
 				'global_user_groups',
-				$dbw->makeList( $conds, $dbw::LIST_OR ),
+				[ new OrExpressionGroup( ...$conds ) ],
 				__METHOD__
 			);
 
