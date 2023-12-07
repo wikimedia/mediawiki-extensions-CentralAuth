@@ -245,7 +245,7 @@
 	"centralauth-merge-method-mail": "confirmed bi email",
 	"centralauth-merge-method-mail-desc": "Indeecates that the local accoont wis merged cause its email address matched the email address o the main accoont.",
 	"centralauth-merge-method-new": "new accoont",
-	"centralauth-merge-method-new-desc": "Indeecates that the global accoont wis cræftit autæmateeclie whan that local accoont wis cræftit.",
+	"centralauth-merge-method-new-desc": "Indicates that the global accoont wis made automatically whan that local accoont wis made.",
 	"centralauth-merge-method-password": "confirmed bi passwaird",
 	"centralauth-merge-method-password-desc": "Indeecates that the local accoont wis merged cause the uiser speceefied ae valid passwaird fer it.",
 	"centralauth-merge-method-primary": "hame wiki",
