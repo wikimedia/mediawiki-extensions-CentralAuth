@@ -22,11 +22,11 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use ManualLogEntry;
+use MediaWiki\Deferred\SiteStatsUpdate;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Status\Status;
 use MediaWiki\User\UserFactory;
-use SiteStatsUpdate;
-use Status;
 
 /**
  * Service for forcing a local account to be created.

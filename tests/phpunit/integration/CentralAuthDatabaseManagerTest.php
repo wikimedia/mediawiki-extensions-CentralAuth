@@ -6,6 +6,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\LBFactory;
+use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
  * @coversDefaultClass \MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager

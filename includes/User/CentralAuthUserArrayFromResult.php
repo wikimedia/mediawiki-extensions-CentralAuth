@@ -21,9 +21,9 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\User\UserArrayFromResult;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
-use UserArrayFromResult;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {

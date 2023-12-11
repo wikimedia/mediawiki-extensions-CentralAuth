@@ -13,7 +13,6 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
-use Html;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
@@ -21,13 +20,14 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use MediaWiki\Html\Html;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use OutputPage;
-use SpecialPage;
-use Status;
-use User;
-use UserGroupMembership;
+use MediaWiki\User\User;
+use MediaWiki\User\UserGroupMembership;
 use Xml;
 use XmlSelect;
 

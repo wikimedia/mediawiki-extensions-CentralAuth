@@ -1,6 +1,8 @@
 <?php
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionProviderTestTrait;
 use PHPUnit\Framework\MockObject\MockObject;

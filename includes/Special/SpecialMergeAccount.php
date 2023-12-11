@@ -4,15 +4,15 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use ErrorPageError;
 use Exception;
-use Html;
 use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
-use NamespaceInfo;
-use SpecialPage;
 use Wikimedia\AtEase\AtEase;
 use Xml;
 

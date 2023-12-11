@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use FormSpecialPage;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
-use Status;
+use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\Status\Status;
 
 /**
  * Special page that can be used to manually create a local account for a global account.

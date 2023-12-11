@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
-use User;
+use MediaWiki\User\User;
 
 /**
  * Run hooks provided by CentralAuth.

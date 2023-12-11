@@ -6,11 +6,11 @@ use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\WikiMap\WikiMap;
 use ReadOnlyError;
-use ReadOnlyMode;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LBFactory;
+use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
  * Service providing access to the CentralAuth internal database.

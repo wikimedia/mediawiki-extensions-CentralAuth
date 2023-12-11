@@ -27,8 +27,8 @@ use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\User\UserNameUtils;
-use Status;
 use stdClass;
 
 /**

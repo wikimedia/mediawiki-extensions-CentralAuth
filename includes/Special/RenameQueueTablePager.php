@@ -22,17 +22,17 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use Html;
 use IContextSource;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\Pager\TablePager;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use SpecialPage;
 use stdClass;
-use TablePager;
 
 /**
  * Paginated table of search results.

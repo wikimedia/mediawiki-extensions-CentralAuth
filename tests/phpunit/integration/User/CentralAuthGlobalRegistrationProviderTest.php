@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\User\UserIdentityValue;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider

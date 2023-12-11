@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use Message;
-use SpecialPage;
 
 /**
  * Format the gblrename/merge log entries

@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Status\Status;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
-use Status;
 
 /**
  * Verify whether a potential global rename is valid

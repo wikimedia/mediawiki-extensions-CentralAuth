@@ -2,8 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use AlphabeticPager;
-use Html;
 use HTMLForm;
 use IContextSource;
 use MediaWiki\Cache\LinkBatchFactory;
@@ -11,10 +9,12 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use MediaWiki\Html\Html;
+use MediaWiki\Pager\AlphabeticPager;
 use MediaWiki\Title\Title;
+use MediaWiki\User\UserGroupMembership;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
-use UserGroupMembership;
 
 class GlobalUsersPager extends AlphabeticPager {
 	/** @var string|false */

@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionProviderTestTrait;
 

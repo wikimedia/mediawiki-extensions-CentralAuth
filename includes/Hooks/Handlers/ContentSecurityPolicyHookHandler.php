@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Hook\ContentSecurityPolicyDefaultSourceHook;
 use MediaWiki\Hook\ContentSecurityPolicyScriptSourceHook;

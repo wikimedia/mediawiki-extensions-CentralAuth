@@ -23,9 +23,9 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\SecurePoll\Hooks\SecurePoll_GetUserParamsHook;
 use MediaWiki\Extension\SecurePoll\User\LocalAuth;
+use MediaWiki\Title\NamespaceInfo;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use NamespaceInfo;
-use User;
 
 class SecurePollHookHandler implements SecurePoll_GetUserParamsHook {
 	/** @var NamespaceInfo */

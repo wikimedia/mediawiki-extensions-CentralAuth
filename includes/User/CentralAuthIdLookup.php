@@ -20,8 +20,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use CentralIdLookup;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 

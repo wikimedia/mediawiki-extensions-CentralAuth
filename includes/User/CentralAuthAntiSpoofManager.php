@@ -5,10 +5,10 @@ namespace MediaWiki\Extension\CentralAuth\User;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Language\RawMessage;
+use MediaWiki\User\User;
 use Message;
 use Psr\Log\LoggerInterface;
 use StatusValue;
-use User;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 class CentralAuthAntiSpoofManager {

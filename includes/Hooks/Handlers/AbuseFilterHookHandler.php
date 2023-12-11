@@ -29,8 +29,8 @@ use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalPageMoveJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use RecentChange;
-use User;
 
 class AbuseFilterHookHandler implements
 	AbuseFilterAlterVariablesHook,

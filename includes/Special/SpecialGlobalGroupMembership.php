@@ -20,26 +20,26 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use CommentStore;
-use Html;
 use HTMLForm;
-use Linker;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
+use MediaWiki\Html\Html;
+use MediaWiki\Linker\Linker;
+use MediaWiki\Output\OutputPage;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Specials\SpecialUserRights;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFactory;
+use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
-use OutputPage;
 use PermissionsError;
-use SpecialPage;
-use Status;
 use UserBlockedError;
-use UserGroupMembership;
-use UserrightsPage;
 use Xml;
 use XmlSelect;
 
@@ -269,7 +269,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				}
 
 				// validate the expiry
-				$groupExpiries[$group] = UserrightsPage::expiryToTimestamp( $expiryValue );
+				$groupExpiries[$group] = SpecialUserRights::expiryToTimestamp( $expiryValue );
 
 				if ( $groupExpiries[$group] === false ) {
 					return Status::newFatal( 'userrights-invalid-expiry', $group );

@@ -7,6 +7,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Status\Status;
 
 class CreateLocalAccount extends Maintenance {
 	public function __construct() {

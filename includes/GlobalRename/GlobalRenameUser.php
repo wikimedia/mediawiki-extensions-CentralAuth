@@ -7,9 +7,9 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJ
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
-use Status;
 
 /**
  * Rename a global user

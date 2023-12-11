@@ -20,11 +20,11 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use Config;
 use Exception;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PasswordPoliciesForUserHook;
-use User;
+use MediaWiki\User\User;
 use UserPasswordPolicy;
 
 class PasswordPoliciesHookHandler implements

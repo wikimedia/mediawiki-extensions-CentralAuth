@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use Config;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPage_initListHook;

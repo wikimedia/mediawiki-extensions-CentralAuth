@@ -1,7 +1,9 @@
 <?php
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\SessionProviderTestTrait;

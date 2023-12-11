@@ -22,8 +22,8 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use ApiBase;
 use ApiMain;
-use Config;
 use MediaWiki\Api\Hook\APIGetAllowedParamsHook;
+use MediaWiki\Config\Config;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiHookHandler implements

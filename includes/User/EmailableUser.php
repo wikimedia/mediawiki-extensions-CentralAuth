@@ -21,10 +21,10 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
-use Status;
-use User;
 
 class EmailableUser extends User {
 

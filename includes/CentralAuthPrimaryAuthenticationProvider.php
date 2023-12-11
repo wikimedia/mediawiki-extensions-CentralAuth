@@ -21,7 +21,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use DeferredUpdates;
 use IDBAccessObject;
 use InvalidPassword;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
@@ -29,18 +28,19 @@ use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Psr\Log\NullLogger;
-use ReadOnlyMode;
 use RequestContext;
 use StatusValue;
-use User;
+use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
  * A primary authentication provider that uses the CentralAuth password.

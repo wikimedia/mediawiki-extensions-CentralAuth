@@ -21,22 +21,22 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use BagOStuff;
-use Config;
 use Exception;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Title\TitleFactory;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use Profiler;
 use Psr\Log\LoggerInterface;
 use RequestContext;
 use StatusValue;
-use User;
 use Wikimedia\WaitConditionLoop;
 
 /**

@@ -20,16 +20,16 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use Html;
 use LogEventsList;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
-use NamespaceInfo;
-use SpecialPage;
-use User;
 
 class SpecialContributionsHookHandler implements
 	ContributionsToolLinksHook,

@@ -21,16 +21,16 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthTokenSessionProvider;
-use Config;
-use Html;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\BeforePageDisplayHook;
+use MediaWiki\Html\Html;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\ResourceLoader\Module;
 use MediaWiki\WikiMap\WikiMap;
-use OutputPage;
 use Skin;
 
 class PageDisplayHookHandler implements

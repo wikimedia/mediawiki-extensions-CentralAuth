@@ -20,15 +20,15 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use Config;
-use DeferredUpdates;
+use MediaWiki\Config\Config;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use RequestContext;
-use User;
 
 class UserLogoutHookHandler implements
 	UserLogoutCompleteHook,

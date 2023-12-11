@@ -22,7 +22,7 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use Job;
-use User;
+use MediaWiki\User\User;
 
 /**
  * A job to unattach a user.

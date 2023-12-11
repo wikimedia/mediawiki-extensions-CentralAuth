@@ -1,7 +1,9 @@
 <?php
 
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\User\User;
 
 /**
  * Session provider for CentralAuth API centralauthtoken

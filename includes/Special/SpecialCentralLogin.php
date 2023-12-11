@@ -11,15 +11,15 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\LoginCompleteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\StubObject\StubGlobalUser;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
-use SpecialPage;
-use UnlistedSpecialPage;
-use User;
 use Wikimedia\ScopedCallback;
 
 /**

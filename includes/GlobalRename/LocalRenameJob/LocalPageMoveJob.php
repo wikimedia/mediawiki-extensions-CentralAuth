@@ -6,8 +6,8 @@ use Job;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use RequestContext;
-use User;
 use Wikimedia\ScopedCallback;
 
 /**

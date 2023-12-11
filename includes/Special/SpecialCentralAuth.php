@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use DerivativeContext;
 use Exception;
-use Html;
 use HTMLForm;
 use LogEventsList;
 use MediaWiki\Block\Restriction\ActionRestriction;
@@ -16,18 +15,19 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
+use MediaWiki\Html\Html;
+use MediaWiki\Parser\Sanitizer;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
+use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\WikiMap\WikiReference;
-use NamespaceInfo;
-use ReadOnlyMode;
-use Sanitizer;
-use SpecialPage;
-use User;
-use UserGroupMembership;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
+use Wikimedia\Rdbms\ReadOnlyMode;
 use Xml;
 
 class SpecialCentralAuth extends SpecialPage {

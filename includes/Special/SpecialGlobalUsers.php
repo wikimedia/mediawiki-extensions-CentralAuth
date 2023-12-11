@@ -3,12 +3,12 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use DerivativeContext;
-use Html;
-use IncludableSpecialPage;
 use Language;
 use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
 
 class SpecialGlobalUsers extends IncludableSpecialPage {

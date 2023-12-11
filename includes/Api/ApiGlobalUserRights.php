@@ -33,10 +33,10 @@ use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
-use UserrightsPage;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -118,7 +118,7 @@ class ApiGlobalUserRights extends ApiBase {
 		$groupExpiries = [];
 		foreach ( $expiry as $index => $expiryValue ) {
 			$group = $add[$index];
-			$groupExpiries[$group] = UserrightsPage::expiryToTimestamp( $expiryValue );
+			$groupExpiries[$group] = SpecialUserRights::expiryToTimestamp( $expiryValue );
 			if ( $groupExpiries[$group] === false ) {
 				$this->dieWithError( [ 'apierror-invalidexpiry', wfEscapeWikiText( $expiryValue ) ] );
 			}

@@ -2,15 +2,15 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use Html;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use MediaWiki\Html\Html;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use PermissionsError;
-use SpecialPage;
 use Xml;
 use XmlSelect;
 
