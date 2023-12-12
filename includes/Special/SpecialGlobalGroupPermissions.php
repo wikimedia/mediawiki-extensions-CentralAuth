@@ -180,6 +180,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$table .= $this->getOutput()->parseInlineAsInterface(
 				UserGroupMembership::getLinkWiki( $groupName, $this->getContext() ) ) . '<br />';
 
+			$groupWithParentheses = $this->msg( 'parentheses' )->params( $groupName )->escaped();
+			$table .= Html::openElement( 'code' );
+			$table .= $groupWithParentheses;
+			$table .= Html::closeElement( 'code' ) . Html::element( 'br' );
+
 			$linkRenderer = $this->getLinkRenderer();
 			$links = [
 				$linkRenderer->makeKnownLink(
