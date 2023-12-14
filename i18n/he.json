@@ -334,7 +334,7 @@
 	"centralauth-rename-alreadyinprogress": "עבור המשתמש הזה כבר התחיל [[Special:GlobalRenameProgress/$1|תהליך שינוי שם]].",
 	"centralauth-rename-antispoofconflicts2": "השם שנבחר דומה מדי {{PLURAL:$2|לשם קיים|לשמות קיימים}} או שהוא היה פעם שם המשתמש של מישהו ששינה את השם: $1.",
 	"centralauth-rename-badusername": "שם המשתמש המבוקש אינו תקין.",
-	"centralauth-rename-cannotself": "לא נין לשנות את השם של עצמך.",
+	"centralauth-rename-cannotself": "לא ניתן לשנות את השם של עצמך.",
 	"centralauth-rename-confirm": "האם ברצונך באמת לשנות גלובלית את שם המשתמש הזה?",
 	"centralauth-rename-conflict-hidden": "שם המשתמש מוסתר",
 	"centralauth-rename-deny": "האם ברצונך באמת לדחות את הבקשה הזאת?",
