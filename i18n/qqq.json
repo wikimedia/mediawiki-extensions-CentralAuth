@@ -308,7 +308,7 @@
 	"centralauth-login-no-others": "Refers to {{msg-mw|Centralauth-groupname}}.\n\nSee also:\n* {{msg-mw|Centralauth-logout-no-others}}",
 	"centralauth-login-progress": "{{gender}}\nRefers to {{msg-mw|Centralauth-groupname}}.\n\nParameters:\n* $1 - (Optional) the username of the logged-in user\n* $2 - the number of wikis, used for PLURAL support\nSee also:\n* {{msg-mw|Centralauth-logout-progress}}",
 	"centralauth-logout-no-others": "Refers to {{msg-mw|Centralauth-groupname}}.\n\nSee also:\n* {{msg-mw|Centralauth-login-no-others}}",
-	"centralauth-logout-progress": "{{gender}}\nRefers to {{msg-mw|Centralauth-groupname}}.\n\nParameters:\n* $1 - (Optional) the username of the logged-out user\n* $2 - the number of wikis, used for PLURAL support\nSee also:\n* {{msg-mw|Centralauth-login-progress}}",
+	"centralauth-logout-progress": "{{gender}}\nRefers to {{msg-mw|Centralauth-groupname}}.\n\nParameters:\n* $1 - (Optional) the username of the logged-out user\n* $2 - the number of wikis, used for PLURAL support",
 	"centralauth-merge-attempt": "Unused at this time.",
 	"centralauth-merge-denied": "Error message displayed when trying to visit a web page without having the correct permissions.",
 	"centralauth-merge-dryrun-complete": "Status message after a dry run to check if user accounts can be unified.",

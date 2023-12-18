@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Ernác",
-			"Iltever"
+			"Iltever",
+			"Matma Rex",
+			"Къарачайлы"
 		]
 	},
 	"centralauth-admin-blocked-reason": "Чурум: $1",
@@ -10,7 +12,7 @@
 	"centralauth-admin-delete-button": "Бу аккаунтну кетер",
 	"centralauth-admin-info-groups": "Глобал {{PLURAL:$1|къауум|къауумла}}:",
 	"centralauth-admin-info-registered": "Регистрацияны ётгени:",
-	"centralauth-admin-info-username": "Къошулуучуну аты:",
+	"centralauth-admin-info-username": "Хайырланыучуну аты:",
 	"centralauth-admin-list-groups": "Къауумла",
 	"centralauth-admin-list-localwiki": "Локал вики-проект",
 	"centralauth-admin-list-method": "Лагъым",
@@ -18,7 +20,7 @@
 	"centralauth-admin-reason": "Чурум:",
 	"centralauth-admin-reason-other-select": "Башха чурум:",
 	"centralauth-admin-status-hidden": "Джашырылгъан:",
-	"centralauth-admin-username": "Къошулуучуну аты:",
+	"centralauth-admin-username": "Хайырланыучуну аты:",
 	"centralauth-admin-yes": "хоу",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|кюн}} алгъа",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|тюрлендир]])",
