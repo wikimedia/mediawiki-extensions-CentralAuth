@@ -11,6 +11,8 @@
 		]
 	},
 	"action-centralauth-createlocal": "koakte krear lokala konto",
+	"action-centralauth-rename": "rinomizar globala konti",
+	"action-centralauth-unmerge": "separar globala konti",
 	"centralauth": "Administrero di globala konti",
 	"centralauth-account-exists-reset": "L'uzeronomo $1 ne enrejistresis en ica Wiki, ma vu povas modifikar lua pasovorto en [[Special:CentralAuth/$1|ula Wiki ube ol havas registro]].",
 	"centralauth-admin-blocked-reason": "Motivo: $1",
@@ -48,6 +50,7 @@
 	"centralauth-centralautologin-logged-in": "Vu ja esas centrale enrejistrata kom $1. Richarjez ca pagino, por aplikar vua personal ajusti.",
 	"centralauth-complete": "Unigata 'login' kompleta!",
 	"centralauth-complete-text": "Nun vu povas facar 'login' de irga sito de {{int:Centralauth-groupname}} sen krear nova konto.",
+	"centralauth-contribs-link": "globala konti",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dio|dii}} ante nun",
 	"centralauth-editgroup-noset": "(nula)",
 	"centralauth-editgroup-reason": "Motivo:",
@@ -111,5 +114,7 @@
 	"globalrenamerequest-email-label": "E-postal adreso:",
 	"globalrenamerequest-newname-help-basic": "Informez l'uzero-nomo quon vu deziras uzar.",
 	"globalusers": "Listo di generala konti",
-	"mergeaccount": "Stando dil 'login' por omna konti"
+	"mergeaccount": "Stando dil 'login' por omna konti",
+	"multilock": "Protektar multopla globala konti",
+	"right-centralauth-rename": "Rinomizo di globala konti"
 }

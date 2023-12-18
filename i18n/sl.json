@@ -455,7 +455,7 @@
 	"log-action-filter-suppress-setstatus": "Sprememba statusa globalnega računa",
 	"log-description-gblrename": "Ta dnevnik beleži globalno preimenovanje uporabnikov.",
 	"log-name-gblrename": "Dnevnik globalnih preimenovanj",
-	"logentry-gblrename-merge": "$1 je globalno {{GENDER:$2|združil|združila|združil/a}} $4 v $5",
+	"logentry-gblrename-merge": "$1 je globalno {{GENDER:$2|združil|združila|združil_a}} $4 v $5",
 	"logentry-gblrename-promote": "$1 je globalno {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} $4 v $5",
 	"logentry-gblrename-rename": "$1 je globalno {{GENDER:$2|preimenoval|preimenovala|preimenoval_a}} $4 v $5",
 	"logentry-gblrights-deleteset": "$1 je {{GENDER:$2|izbrisal|izbrisala|izbrisal/a}} vikinabor »$4«",
