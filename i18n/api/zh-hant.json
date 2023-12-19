@@ -3,7 +3,9 @@
 		"authors": [
 			"Cwlin0416",
 			"Kly",
-			"LNDDYL"
+			"LNDDYL",
+			"SunAfterRain",
+			"Winston Sung"
 		]
 	},
 	"apierror-centralauth-badsession": "當使用中央認證 session 時無法取得中央驗證令牌。",
@@ -80,7 +82,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "更改此使用者的隱藏狀態，從全域使用者清單中隱藏或者禁止顯示。",
 	"apihelp-setglobalaccountstatus-param-locked": "變更此使用者的鎖定狀態。",
 	"apihelp-setglobalaccountstatus-param-reason": "變更使用者狀態的原因。",
-	"apihelp-setglobalaccountstatus-param-statecheck": "預測目前 <username>:<hidden>:<locked> 的選用 MD5 來偵測編輯衝突。設定 <locked> 為 1 來用於封鎖；0 用於解封。",
+	"apihelp-setglobalaccountstatus-param-statecheck": "預期目前的<userid>:<username>:<hidden>:<locked>的可選MD5，以檢測編輯衝突。如果封鎖，設定<locked>為1，未封鎖則設定為0。",
 	"apihelp-setglobalaccountstatus-param-user": "欲變更狀態的使用者。",
 	"apihelp-setglobalaccountstatus-summary": "設定一位全域使用者的狀態。"
 }
