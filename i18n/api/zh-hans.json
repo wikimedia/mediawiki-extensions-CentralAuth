@@ -8,7 +8,8 @@
 			"Lantianjialiang",
 			"Liuxinyu970226",
 			"Shizhao",
-			"Tranve"
+			"Tranve",
+			"SunAfterRain"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
@@ -31,7 +32,7 @@
 	"apihelp-globaluserrights-example-1": "将用户FooBot加入至全域用户组“bot”，并从“sysop”和“bureaucrat”全域用户组移除",
 	"apihelp-globaluserrights-example-2": "将ID为123的全域用户加入至“bot”全域用户组，并将其从全域用户组“sysop”和“bureaucrat”中移除",
 	"apihelp-globaluserrights-param-add": "将用户添加至这些全域用户组。",
-	"apihelp-globaluserrights-param-expiry": "到期时间戳。可以是相对值（例如<kbd>5 月</kbd>或<kbd>2 周</kbd>）或绝对值（例如<kbd>2014-09-18T12:34:56Z</kbd>）。\n如果只设置了一个时间戳，它将被用于所有传递给<var>$1add</var>参数的组。\n对于永不过期的用户组，使用<kbd>永久</kbd>、<kbd>没有定义</kbd>、<kbd>无限期</kbd>或<kbd>永不</kbd>。",
+	"apihelp-globaluserrights-param-expiry": "到期时间戳。可以是相对值（例如<kbd>5 months</kbd>或<kbd>2 weeks</kbd>）或绝对值（例如<kbd>2014-09-18T12:34:56Z</kbd>）。\n如果只设置了一个时间戳，它将被用于所有传递给<var>$1add</var>参数的组。\n对于永不过期的用户组，使用<kbd>infinite</kbd>、<kbd>indefinite</kbd>、<kbd>infinity</kbd>或<kbd>never</kbd>。",
 	"apihelp-globaluserrights-param-reason": "更改原因。",
 	"apihelp-globaluserrights-param-remove": "将用户从这些全域用户组中移除。",
 	"apihelp-globaluserrights-param-tags": "此参数目前不会使用。",
