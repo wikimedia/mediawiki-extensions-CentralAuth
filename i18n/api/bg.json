@@ -47,5 +47,5 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Дали потребителят да бъде скрит, скрит от списъка на глобални потребители или да бъде потиснат.",
 	"apihelp-setglobalaccountstatus-param-locked": "Променя статута на потребителят на заключен или отключен.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промяната на статуса на потребителя.",
-	"apihelp-setglobalaccountstatus-summary": "Установява глобален потребителски статус."
+	"apihelp-setglobalaccountstatus-summary": "Скрива или заключва (или премахва скриването или отключва) глобална потребителска сметка."
 }
