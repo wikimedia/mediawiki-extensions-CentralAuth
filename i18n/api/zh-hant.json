@@ -3,7 +3,9 @@
 		"authors": [
 			"Cwlin0416",
 			"Kly",
-			"LNDDYL"
+			"LNDDYL",
+			"SunAfterRain",
+			"Winston Sung"
 		]
 	},
 	"apierror-centralauth-badsession": "當使用中央認證 session 時無法取得中央驗證令牌。",
@@ -30,7 +32,7 @@
 	"apihelp-globaluserrights-example-1": "添加使用者 FooBot 至全域群組 \"bot\"，並從全域群組 \"sysop\" 與 \"bureaucrat\" 裡移除",
 	"apihelp-globaluserrights-example-2": "添加 ID 為 123 的使用者至全域群組 \"bot\"，並從全域群組 \"sysop\" 與 \"bureaucrat\" 裡移除",
 	"apihelp-globaluserrights-param-add": "加入使用者至這些全域群組。",
-	"apihelp-globaluserrights-param-expiry": "此參數目前不可使用。",
+	"apihelp-globaluserrights-param-expiry": "到期時間戳。可以是相對值（例如<kbd>5 months</kbd>或<kbd>2 weeks</kbd>）或絕對值（例如<kbd>2014-09-18T12:34:56Z</kbd>）。\n如果只設定了一個時間戳，它將被用於所有傳遞給<var>$1add</var>參數的組。\n對於永不過期的使用者群組，使用<kbd>infinite</kbd>、<kbd>indefinite</kbd>、<kbd>infinity</kbd>或<kbd>never</kbd>。",
 	"apihelp-globaluserrights-param-reason": "變更的原因。",
 	"apihelp-globaluserrights-param-remove": "從這些全域群組移除使用者。",
 	"apihelp-globaluserrights-param-tags": "此參數目前不可使用。",
@@ -80,7 +82,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "更改此使用者的隱藏狀態，從全域使用者清單中隱藏或者禁止顯示。",
 	"apihelp-setglobalaccountstatus-param-locked": "變更此使用者的鎖定狀態。",
 	"apihelp-setglobalaccountstatus-param-reason": "變更使用者狀態的原因。",
-	"apihelp-setglobalaccountstatus-param-statecheck": "預測目前 <username>:<hidden>:<locked> 的選用 MD5 來偵測編輯衝突。設定 <locked> 為 1 來用於封鎖；0 用於解封。",
+	"apihelp-setglobalaccountstatus-param-statecheck": "預期目前的<userid>:<username>:<hidden>:<locked>的可選MD5，以檢測編輯衝突。如果封鎖，設定<locked>為1，未封鎖則設定為0。",
 	"apihelp-setglobalaccountstatus-param-user": "欲變更狀態的使用者。",
 	"apihelp-setglobalaccountstatus-summary": "設定一位全域使用者的狀態。"
 }
