@@ -1972,6 +1972,12 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
 		$data = $this->localUserData( $wiki );
 
+		$wikiId = $wiki === WikiMap::getCurrentWikiId() ? WikiAwareEntity::LOCAL : $wiki;
+
+		$blockStore = MediaWikiServices::getInstance()
+			->getDatabaseBlockStoreFactory()
+			->getDatabaseBlockStore( $wikiId );
+
 		if ( $suppress ) {
 			list( , $lang ) = $wgConf->siteFromDB( $wiki );
 			if ( !MediaWikiServices::getInstance()->getLanguageNameUtils()->isSupportedLanguage( $lang ) ) {
@@ -1979,8 +1985,6 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
-
-			$wikiId = $wiki === WikiMap::getCurrentWikiId() ? WikiAwareEntity::LOCAL : $wiki;
 
 			// TODO DatabaseBlock is not @newable
 			$block = new DatabaseBlock( [
@@ -2004,10 +2008,7 @@ class CentralAuthUser implements IDBAccessObject {
 			# On normal block, BlockIp hook would be run here, but doing
 			# that from CentralAuth doesn't seem a good idea...
 
-			$databaseBlockStore = MediaWikiServices::getInstance()
-				->getDatabaseBlockStoreFactory()
-				->getDatabaseBlockStore( $wikiId );
-			if ( !$databaseBlockStore->insertBlock( $block ) ) {
+			if ( !$blockStore->insertBlock( $block ) ) {
 				return [ 'ipb_already_blocked' ];
 			}
 			# Ditto for BlockIpComplete hook.
@@ -2016,25 +2017,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 			# Locally log to suppress ?
 		} else {
-			$blockQuery = DatabaseBlock::getQueryInfo();
-			$ids = $dbw->selectFieldValues(
-				$blockQuery['tables'],
-				'ipb_id',
-				[
-					'ipb_user' => $data['id'],
-					$blockQuery['fields']['ipb_by'] . ' IS NULL', // Our blocks don't have an user associated
-					'ipb_deleted' => true,
-				],
-				__METHOD__,
-				[],
-				$blockQuery['joins']
-			);
-			if ( $ids ) {
-				$dbw->delete( 'ipblocks', [ 'ipb_id' => $ids ], __METHOD__ );
-			}
+			$affected = $blockStore->deleteBlocksMatchingConds( [
+				'bt_user' => $data['id'],
+				'bl_by' => null, // Our blocks don't have a user associated
+				'bl_deleted' => true,
+			] );
 
 			// Unsuppress only if unblocked
-			if ( $dbw->affectedRows() ) {
+			if ( $affected ) {
 				RevisionDeleteUser::unsuppressUserName( $this->mName, $data['id'], $dbw );
 			}
 		}
@@ -2681,7 +2671,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected function localUserData( $wikiID ) {
 		$mwServices = MediaWikiServices::getInstance();
-		$blockRestrictions = $mwServices->getBlockRestrictionStoreFactory()->getBlockRestrictionStore( $wikiID );
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
 		$db = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
@@ -2762,43 +2751,21 @@ class CentralAuthUser implements IDBAccessObject {
 			);
 
 		// And while we're in here, look for user blocks :D
-		$commentStore = $mwServices->getCommentStore();
-		$commentQuery = $commentStore->getJoin( 'ipb_reason' );
-		$result = $db->select(
-			[ 'ipblocks' ] + $commentQuery['tables'],
-			[
-				'ipb_id',
-				'ipb_expiry',
-				'ipb_block_email',
-				'ipb_anon_only',
-				'ipb_create_account',
-				'ipb_enable_autoblock',
-				'ipb_allow_usertalk',
-				'ipb_sitewide',
-			] + $commentQuery['fields'],
-			[ 'ipb_user' => $data['id'] ],
-			__METHOD__,
-			[],
-			$commentQuery['joins']
-		);
-		global $wgLang;
-		foreach ( $result as $row ) {
-			// Check expiration
-			if ( $wgLang->formatExpiry( $row->ipb_expiry, TS_MW ) <= wfTimestampNow() ) {
-				continue;
-			}
-
-			$data['block-expiry'] = $row->ipb_expiry;
-			$data['block-reason'] = $commentStore->getComment( 'ipb_reason', $row )->text;
-			$data['block-anononly'] = (bool)$row->ipb_anon_only;
-			$data['block-nocreate'] = (bool)$row->ipb_create_account;
-			$data['block-noautoblock'] = !( (bool)$row->ipb_enable_autoblock );
+		$blockStore = $mwServices
+			->getDatabaseBlockStoreFactory()
+			->getDatabaseBlockStore( $wikiID );
+		$blocks = $blockStore->newListFromConds( [ 'bt_user' => $data['id'] ] );
+		foreach ( $blocks as $block ) {
+			$data['block-expiry'] = $block->getExpiry();
+			$data['block-reason'] = $block->getReasonComment()->text;
+			$data['block-anononly'] = !$block->isHardblock();
+			$data['block-nocreate'] = $block->isCreateAccountBlocked();
+			$data['block-noautoblock'] = !$block->isAutoblocking();
 			// Poorly named database column
-			$data['block-nousertalk'] = !( (bool)$row->ipb_allow_usertalk );
-			$data['block-noemail'] = (bool)$row->ipb_block_email;
-			$data['block-sitewide'] = (bool)$row->ipb_sitewide;
-			$data['block-restrictions'] = (bool)$row->ipb_sitewide ? [] :
-				$blockRestrictions->loadByBlockId( $row->ipb_id );
+			$data['block-nousertalk'] = !$block->isUsertalkEditAllowed();
+			$data['block-noemail'] = $block->isEmailBlocked();
+			$data['block-sitewide'] = $block->isSitewide();
+			$data['block-restrictions'] = $block->getRestrictions();
 			$data['blocked'] = true;
 		}
 
