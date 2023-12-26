@@ -30,8 +30,7 @@ class AbuseFilterHookHandler implements
 {
 
 	/**
-	 * Load our global_account_groups and global_account_editcount variables
-	 * during (auto)createaccount actions.
+	 * Load our global_account_* variables during (auto)createaccount actions.
 	 *
 	 * @param VariableHolder &$vars
 	 * @param Title $title Title object target of the action
@@ -46,6 +45,7 @@ class AbuseFilterHookHandler implements
 		if ( $action === 'createaccount' ) {
 			$vars->setVar( 'global_account_groups', [] );
 			$vars->setVar( 'global_account_editcount', 0 );
+			$vars->setVar( 'global_account_age', 0 );
 		} elseif ( $action === 'autocreateaccount' ) {
 			$accountName = $vars->getComputedVariable( 'account_name' )->toString();
 			$vars->setLazyLoadVar(
@@ -58,11 +58,16 @@ class AbuseFilterHookHandler implements
 				'global-user-editcount',
 				[ 'user' => $accountName, 'new' => true ]
 			);
+			$vars->setLazyLoadVar(
+				'global_account_age',
+				'global-user-age',
+				[ 'user' => $accountName, 'new' => true ]
+			);
 		}
 	}
 
 	/**
-	 * Computes the global_user_groups and global_user_editcount variables
+	 * Computes CentralAuth-defined variables
 	 * @return bool
 	 */
 	public function onAbuseFilter_computeVariable(
@@ -91,13 +96,24 @@ class AbuseFilterHookHandler implements
 				$result = $user->getGlobalEditCount();
 			}
 			return false;
+		} elseif ( $method == 'global-user-age' ) {
+			$user = CentralAuthUser::getInstanceByName( $parameters['user'] );
+			if ( !$user->exists() ) {
+				$result = 0;
+			} elseif ( !( $parameters['new'] ?? false ) && !$user->isAttached() ) {
+				$result = 0;
+			} else {
+				$asOf = $parameters['asof'] ?? wfTimestampNow();
+				$result = (int)wfTimestamp( TS_UNIX, $asOf ) - (int)wfTimestamp( TS_UNIX, $user->getRegistration() );
+			}
+			return false;
 		} else {
 			return true;
 		}
 	}
 
 	/**
-	 * Load our global_user_groups and global_user_editcount variables
+	 * Load our global_user_groups, global_user_editcount, and global_user_age variables
 	 * @return bool
 	 */
 	public function onAbuseFilter_generateUserVars(
@@ -107,11 +123,15 @@ class AbuseFilterHookHandler implements
 	) {
 		$vars->setLazyLoadVar( 'global_user_groups', 'global-user-groups', [ 'user' => $user->getName() ] );
 		$vars->setLazyLoadVar( 'global_user_editcount', 'global-user-editcount', [ 'user' => $user->getName() ] );
+		$vars->setLazyLoadVar( 'global_user_age', 'global-user-age', [
+			'user' => $user->getName(),
+			'asof' => $rc ? $rc->getAttribute( 'rc_timestamp' ) : null,
+		] );
 		return true;
 	}
 
 	/**
-	 * Tell AbuseFilter about our global_user_groups and global_user_editcount variables
+	 * Tell AbuseFilter about our variables
 	 * @return bool
 	 */
 	public function onAbuseFilter_builder( array &$realValues ) {
@@ -119,10 +139,14 @@ class AbuseFilterHookHandler implements
 		$realValues['vars']['global_user_groups'] = 'global-user-groups';
 		// Uses: 'abusefilter-edit-builder-vars-global-user-editcount'
 		$realValues['vars']['global_user_editcount'] = 'global-user-editcount';
+		// Uses: 'abusefilter-edit-builder-vars-global-user-age'
+		$realValues['vars']['global_user_age'] = 'global-user-age';
 		// Uses: 'abusefilter-edit-builder-vars-global-account-groups'
 		$realValues['vars']['global_account_groups'] = 'global-account-groups';
 		// Uses: 'abusefilter-edit-builder-vars-global-account-editcount'
 		$realValues['vars']['global_account_editcount'] = 'global-account-editcount';
+		// Uses: 'abusefilter-edit-builder-vars-global-account-age'
+		$realValues['vars']['global_account_age'] = 'global-account-age';
 		return true;
 	}
 
