@@ -221,6 +221,7 @@
 	"centralauth-merge-method-empty": "రచనలేమీ లేవు",
 	"centralauth-merge-method-empty-desc": "స్థానిక ఖాతాలో మార్పుచేర్పులేమీ లేనందువలన అది విలీనమయిందని సూచిస్తుంది.",
 	"centralauth-merge-method-login": "ప్రవేశించినపుడు సృష్టించారు",
+	"centralauth-merge-method-login-desc": "ఈ వాడుకరి లాగిన్ అయినపుడు, స్థానికంగా ఈ ఖాతా ఆటోమాటిగ్గా సృష్టించబడిందని దీనర్థం.",
 	"centralauth-merge-method-mail": "ఈ-మెయిలు ద్వారా నిర్ధారించారు",
 	"centralauth-merge-method-mail-desc": "స్థానిక ఖాతాలోని ఈమెయిలైడీ ప్రధాన ఖాతాయొక్క ఈమెయిలైడీతో సరిపోయింది కాబట్టి అది విలీనమయిందని సూచిస్తుంది.",
 	"centralauth-merge-method-new": "కొత్త ఖాతా",
