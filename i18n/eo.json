@@ -96,6 +96,8 @@
 	"centralauth-centralautologin-logged-in": "Vi estas centre ensalutita kiel $1. Reŝargu la paĝon por apliki viajn uzanto-agordojn.",
 	"centralauth-complete": "Unuigado de uzantnomoj estas finita!",
 	"centralauth-complete-text": "Vi povas nun ensaluti iun ajn vikian retejon de {{int:Centralauth-groupname}} sen kreado de nova konto.",
+	"centralauth-contribs-link": "tutvikiaj uzantokontoj",
+	"centralauth-contribs-locked": "Ĉi tiu uzantokonto estas tutvikie ŝlosita.\nVidu [[Special:CentralAuth/$1|detalojn pri la tutvikia uzantokonto]] por pliaj informoj.",
 	"centralauth-days-ago": "antaŭ $1 {{PLURAL:$1|tago|tagoj}}",
 	"centralauth-desc": "[[Special:MergeAccount|Kunigi konton]] trans vikioj de {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Kontunuigo estas nun en prova fazo, do la unuigaj agoj estas malaktivitaj. Ni bedaŭras!",
