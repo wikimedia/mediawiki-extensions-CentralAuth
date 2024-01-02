@@ -305,7 +305,7 @@
 	"centralauth-months-ago": "לפני {{PLURAL:$1|חודש|חודשיים|$1 חודשים}}",
 	"centralauth-multilock-homewiki": "האתר הראשי",
 	"centralauth-newgroup-intro": "באפשרותך להשתמש בטופס הזה כדי להוסיף הרשאות לקבוצה חדשה.\nיש לשים לב שקבוצה אינה קיימת אלא אם כן משויכות אליה הרשאות.",
-	"centralauth-newgroup-legend": "יצירת קבוצה חדשה",
+	"centralauth-newgroup-legend": "יצירת קבוצת משתמשים חדשה",
 	"centralauth-not-owner-text": "שם המשתמש \"$1\" הוקצה אוטומטית לבעלי החשבון באתר $2.\n\nאם אתם בעלי החשבון, באפשרותכם לסיים את תהליך מיזוג החשבונות פשוט על־ידי הקלדת הסיסמה של החשבון הגלובלי כאן:",
 	"centralauth-notice-dryrun": "מצב הדגמה בלבד",
 	"centralauth-prefs-count-attached": "החשבון שלך פעיל {{PLURAL:$1|בוויקי אחד|ב־$1 אתרי ויקי}}.",
