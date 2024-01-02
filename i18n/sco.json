@@ -200,7 +200,7 @@
 	"centralauth-globalgroupperms-newgroupname": "New groop name:",
 	"centralauth-globalgroupperms-nogroups": "Nae global groops ar defined.",
 	"centralauth-hidden-blockreason": "globallie skaukt bi $1 at $2 wi the follaein raison: $3",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|hoor|hoors}} syne",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|oor|oor}} syne",
 	"centralauth-incomplete": "Login uneefeecation na compleate!",
 	"centralauth-incomplete-text": "Ance yer login is unified, ye will be able tae log intae onie wiki steid o {{int:Centralauth-groupname}} athoot makin ae new accoont",
 	"centralauth-invalid-wiki": "Nae sic wiki database: $1",
