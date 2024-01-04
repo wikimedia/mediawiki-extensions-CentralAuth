@@ -607,10 +607,14 @@ class CentralAuthHooks implements
 	 */
 	public static function isUIReloadRecommended( User $user ) {
 		global $wgCentralAuthPrefsForUIReload;
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 
 		foreach ( $wgCentralAuthPrefsForUIReload as $pref ) {
-			if ( $userOptionsLookup->getOption( $user, $pref ) !== $userOptionsLookup->getDefaultOption( $pref ) ) {
+			if (
+				$userOptionsLookup->getOption( $user, $pref ) !==
+				$userOptionsLookup->getDefaultOption( $pref, $userFactory->newAnonymous() )
+			) {
 				return true;
 			}
 		}
