@@ -112,6 +112,7 @@
 	"centralauth-complete": "Login uneefeecation compleate!",
 	"centralauth-complete-text": "Ye can nou log intae onie wiki steid o {{int:Centralauth-groupname}} athoot makin ae new accoont.",
 	"centralauth-completelogin-back": "Return til the afore gane page.",
+	"centralauth-contribs-locked": "This accoont is lockit globally.\nSee [[Special:CentralAuth/$1|the global accont details]] fur mair information.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|day|days}} syne",
 	"centralauth-desc": "[[Special:MergeAccount|Merge accont]] across wikis o {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Accoont uneefeecation is nou in ae demo / debuggin mode, sae actual mergin operations ar disabled.\nSairrie!",

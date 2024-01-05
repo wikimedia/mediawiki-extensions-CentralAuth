@@ -332,7 +332,7 @@
 	"centralauth-rename-badusername": "O nome de utilizador solicitado não é válido.",
 	"centralauth-rename-cannotself": "Não pode alterar o nome da sua própria conta.",
 	"centralauth-rename-confirm": "Tem a certeza de que pretende fazer a alteração global do nome desta conta?",
-	"centralauth-rename-conflict-hidden": "nome de utilizador oculto",
+	"centralauth-rename-conflict-hidden": "nome de utilizador ocultado",
 	"centralauth-rename-deny": "Tem a certeza de que pretende eliminar este pedido?",
 	"centralauth-rename-doesnotexist": "A conta fornecida não existe.",
 	"centralauth-rename-form-allowhigheditcount": "Confirmar a alteração do nome de um utilizador com mais de $1 {{PLURAL:$1|edição|edições}}",
