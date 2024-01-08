@@ -42,15 +42,15 @@ class PopulateListOfUsersToRename extends Maintenance {
 	private function doQuery() {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 		$rows = $dbr->newSelectQueryBuilder()
-			->select( [ 'ln_name AS name', 'ln_wiki AS wiki' ] )
+			->select( [ 'name' => 'ln_name', 'wiki' => 'ln_wiki' ] )
 			->from( 'localnames' )
-			->leftJoin( 'localuser', null, 'ln_name=lu_name AND ln_wiki=lu_wiki' )
+			->leftJoin( 'localuser', null, [ 'ln_name=lu_name', 'ln_wiki=lu_wiki' ] )
 			->where( [
 				$dbr->buildComparison( '>', [
 					'ln_name' => $this->lName,
 					'ln_wiki' => $this->lWiki,
 				] ),
-				'lu_attached_method IS NULL'
+				'lu_attached_method' => null,
 			] )
 			->orderBy( [ 'ln_name', 'ln_wiki' ] )
 			->limit( $this->mBatchSize )
