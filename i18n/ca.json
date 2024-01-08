@@ -23,7 +23,8 @@
 			"Solde",
 			"Ssola",
 			"Toniher",
-			"Vriullop"
+			"Vriullop",
+			"Robertgarrigos"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grups globals als que pertany l'usuari",
@@ -443,9 +444,10 @@
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|ha canviat el nom}} globalment $4 a $5",
 	"mergeaccount": "Estat de fusió de comptes d'usuari",
 	"multilock": "Blocatge múltiple d'usuaris globals",
-	"right-centralauth-lock": "Blocatge o desblocatge de compte global",
+	"right-centralauth-createlocal": "Forçar la creació d'un compte local per a un compte global",
+	"right-centralauth-lock": "Blocar o desblocar un compte global",
 	"right-centralauth-merge": "Fusionar el compte propi",
-	"right-centralauth-suppress": "Supressió o ocultació de compte global",
+	"right-centralauth-suppress": "Suprimir o ocultar de el compte global",
 	"right-centralauth-rename": "Canviar el nom de comptes globals",
 	"right-centralauth-unmerge": "Anuŀlar la unificació del compte global",
 	"right-globalgroupmembership": "Editar els membres dels grups globals",
