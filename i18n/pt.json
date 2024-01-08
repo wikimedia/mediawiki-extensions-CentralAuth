@@ -369,7 +369,7 @@
 	"centralauth-rightslog-header": "Este registo contém operações sobre grupos globais: alterações de membros e de permissões",
 	"centralauth-rightslog-name": "Registo de direitos globais",
 	"centralauth-rightslog-set-optin": "opção de inclusão (só as especificadas)",
-	"centralauth-rightslog-set-optout": "opção de exclusão (todas excepto as especificadas)",
+	"centralauth-rightslog-set-optout": "opção de exclusão (todas exceto as especificadas)",
 	"centralauth-ro": "Informações da conta global",
 	"centralauth-seconds-ago": "há $1 {{PLURAL:$1|segundo|segundos}}",
 	"centralauth-state-mismatch": "Erro: Foi detetado um conflito de edição para este utilizador. Verifique a sua alteração e tente novamente, por favor.",
