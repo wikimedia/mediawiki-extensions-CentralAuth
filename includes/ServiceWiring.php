@@ -62,7 +62,8 @@ return [
 				CentralAuthSessionManager::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getStatsdDataFactory()
+			$services->getStatsdDataFactory(),
+			$services->getMicroStash()
 		);
 	},
 	'CentralAuth.CentralAuthUIService' => static function (
