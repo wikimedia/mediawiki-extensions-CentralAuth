@@ -10,15 +10,12 @@ use Wikimedia\TestingAccessWrapper;
  * Only for tests that do not require the database to be
  * set up.
  *
- * @coversDefaultClass MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+ * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group CentralAuth
  * @group Database
  */
 class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 
-	/**
-	 * @covers ::getInstance
-	 */
 	public function testGetInstance() {
 		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
 
@@ -35,9 +32,21 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( 'blahblahblah', CentralAuthUser::getInstance( $user2 ) );
 	}
 
-	/**
-	 * @covers ::newUnattached
-	 */
+	public function testGetInstanceByNameNonCanonicalForm() {
+		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+
+		// Username in non-canonical form
+		$username = 'Example_user';
+		$canonicalUsername = $this->getServiceContainer()->getUserNameUtils()->getCanonical( $username );
+		$cache->clear( $username );
+		$caUser = CentralAuthUser::getInstance( $userFactory->newFromName( $username ) );
+		$this->assertInstanceOf( CentralAuthUser::class, $caUser );
+		// Assert that the username is in canonical form
+		$this->assertSame( 'Example user', $caUser->getName() );
+		$this->assertSame( $cache->get( $canonicalUsername ), $caUser );
+	}
+
 	public function testNewUnattached() {
 		$ca = CentralAuthUser::newUnattached( 'FooBar' );
 		$this->assertInstanceOf( CentralAuthUser::class, $ca );
@@ -46,7 +55,6 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::getHomeWiki
 	 * @dataProvider provideGetHomeWiki
 	 */
 	public function testGetHomeWiki( $attached, $expected ) {
@@ -116,7 +124,6 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::chooseHomeWiki
 	 * @dataProvider provideChooseHomeWiki
 	 */
 	public function testChooseHomeWiki( $expected, $attached ) {
@@ -197,7 +204,6 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::getPasswordFromString
 	 * @dataProvider provideGetPasswordFromString
 	 */
 	public function testGetPasswordFromString( $pass, $salt, $type ) {
@@ -233,7 +239,6 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::getLocalGroups
 	 * @dataProvider provideOnPasswordPoliciesForUser
 	 */
 	public function testGetLocalGroups( $attached, $expected ) {
@@ -316,9 +321,6 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	/**
-	 * @covers ::getEmail
-	 */
 	public function testGetEmail() {
 		$user = new CentralAuthUser( __METHOD__ );
 		$this->assertSame( '', $user->getEmail() );

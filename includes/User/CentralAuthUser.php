@@ -26,6 +26,7 @@ use Exception;
 use FormattedRCFeed;
 use IContextSource;
 use IDBAccessObject;
+use InvalidArgumentException;
 use ManualLogEntry;
 use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
@@ -43,6 +44,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\User\ExternalUserNames;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
@@ -230,15 +232,32 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied user.
-	 * @param string $username Must be validated and canonicalized by the caller
+	 *
+	 * @param string $username A valid username. (Since 1.42 it does not have to be in the
+	 *   canonical form anymore.) IP adresses and external usernames are also accepted for B/C
+	 *   but discouraged; they will be handled like a non-registered username.
 	 * @return CentralAuthUser
+	 * @throws InvalidArgumentException on invalid usernames.
 	 */
 	public static function getInstanceByName( $username ) {
+		if ( IPUtils::isValid( $username ) ) {
+			$canonUsername = IPUtils::sanitizeIP( $username );
+		} elseif ( ExternalUserNames::isExternal( $username ) ) {
+			$canonUsername = $username;
+		} else {
+			$canonUsername = MediaWikiServices::getInstance()->getUserNameUtils()
+				->getCanonical( $username );
+		}
+
+		if ( $canonUsername === false || $canonUsername === null ) {
+			throw new InvalidArgumentException( "Invalid username: $username" );
+		}
+
 		$cache = self::getUserCache();
-		$ret = $cache->get( $username );
+		$ret = $cache->get( $canonUsername );
 		if ( !$ret ) {
-			$ret = new self( $username );
-			$cache->set( $username, $ret );
+			$ret = new self( $canonUsername );
+			$cache->set( $canonUsername, $ret );
 		}
 		return $ret;
 	}
