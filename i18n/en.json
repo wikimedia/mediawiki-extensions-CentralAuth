@@ -152,7 +152,7 @@
 	"centralauth-complete": "Login unification complete!",
 	"centralauth-complete-text": "You can now log in to any wiki site of {{int:Centralauth-groupname}} without creating a new account.",
 	"centralauth-completelogin-back": "Return to the previous page.",
-	"centralauth-contribs-link": "global accounts",
+	"centralauth-contribs-link": "global account",
 	"centralauth-contribs-locked": "This account is globally locked.\nSee [[Special:CentralAuth/$1|global account details]] for more information.",
 	"centralauth-contribs-locked-log": "This account is globally locked.\nThe latest lock log entry is provided below for reference:",
 	"centralauth-createlocal-already-exists": "There already is a local account for the specified global account.",
