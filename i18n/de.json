@@ -144,7 +144,7 @@
 	"centralauth-complete": "Die Zusammenführung der Benutzerkonten ist abgeschlossen!",
 	"centralauth-complete-text": "Du kannst dich nun auf jedem Wiki {{int:Centralauth-groupname}} anmelden, ohne ein neues Benutzerkonto anzulegen.",
 	"centralauth-completelogin-back": "Zurück zur vorherigen Seite.",
-	"centralauth-contribs-link": "Globales Konto",
+	"centralauth-contribs-link": "globales Konto",
 	"centralauth-contribs-locked": "Dieses Benutzerkonto ist global gesperrt.\nSiehe die [[Special:CentralAuth/$1|Einzelheiten zum globalen Benutzerkonto]] für weitere Informationen.",
 	"centralauth-contribs-locked-log": "Dieses Benutzerkonto ist global gesperrt.\nEs folgt der aktuellste Eintrag aus dem Sperr-Logbuch:",
 	"centralauth-createlocal-already-exists": "Für das angegebene globale Benutzerkonto gibt es bereits ein lokales Benutzerkonto.",
