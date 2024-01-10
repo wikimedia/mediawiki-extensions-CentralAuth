@@ -157,7 +157,7 @@
 	"centralauth-complete": "Tworzenie konta uniwersalnego zakończone!",
 	"centralauth-complete-text": "Możesz teraz zalogować się do każdej wiki należącej do {{int:Centralauth-groupname}} bez potrzeby zakładania nowego konta.",
 	"centralauth-completelogin-back": "Powrót do poprzedniej strony.",
-	"centralauth-contribs-link": "konto uniwersalne",
+	"centralauth-contribs-link": "konto globalne",
 	"centralauth-contribs-locked": "To konto jest globalnie zablokowane.\nZobacz więcej szczegółów w [[Special:CentralAuth/$1|informacji o koncie globalnym]].",
 	"centralauth-contribs-locked-log": "To konto jest globalnie zablokowane.\nPoniżej podany jest informacyjnie ostatni wpis rejestru:",
 	"centralauth-createlocal-already-exists": "Dla podanego konta uniwersalnego istnieje już konto lokalne.",

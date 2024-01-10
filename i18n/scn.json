@@ -39,6 +39,7 @@
 	"centralauth-attach-title": "Cunferma lu cuntu",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pàggina|pàggini}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|namespace}}",
+	"centralauth-contribs-link": "cuntu glubbali",
 	"centralauth-createlocal-reason": "Mutivu",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|jornu|jorna}} fa",
 	"centralauth-delete-empty-account": "Cuntu vacanti",
