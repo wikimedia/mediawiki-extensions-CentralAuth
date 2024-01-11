@@ -167,7 +167,7 @@
 	"centralauth-complete": "Объединение учётных записей завершено!",
 	"centralauth-complete-text": "Теперь вы можете использовать одну учётную запись для работы во всех проектах {{int:Centralauth-groupname}}.",
 	"centralauth-completelogin-back": "Вернуться на предыдущую страницу.",
-	"centralauth-contribs-link": "глобальные учётные записи",
+	"centralauth-contribs-link": "глобальная учётная запись",
 	"centralauth-contribs-locked": "Эта учётная запись отключена.\nСм. [[Special:CentralAuth/$1|данные глобальной учётной записи]] для получения более подробной информации:",
 	"centralauth-contribs-locked-log": "Эта учётная запись отключена.\nНиже приведена последняя запись журнала:",
 	"centralauth-createlocal-no-global-account": "Такой глобальной учётной записи не существует.",
