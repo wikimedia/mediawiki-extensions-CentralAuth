@@ -13,6 +13,7 @@ use MediaWiki\Session\SessionInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserIdentity;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\TestingAccessWrapper;
 
@@ -190,7 +191,9 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 			$caUser->method( $method )->willReturn( $value );
 		}
 
-		CentralAuthUser::setInstanceByName( $name, $caUser );
+		$user = $this->createMock( UserIdentity::class );
+		$user->method( 'getName' )->willReturn( $name );
+		CentralAuthUser::setInstance( $user, $caUser );
 
 		$this->makeUser( $id, $name );
 

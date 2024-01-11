@@ -213,16 +213,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param CentralAuthUser $caUser
 	 */
 	public static function setInstance( UserIdentity $user, CentralAuthUser $caUser ) {
-		self::setInstanceByName( $user->getName(), $caUser );
-	}
-
-	/**
-	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
-	 * @param string $username Must be validated and canonicalized by the caller
-	 * @param CentralAuthUser $caUser
-	 */
-	public static function setInstanceByName( $username, CentralAuthUser $caUser ) {
-		self::getUserCache()->set( $username, $caUser );
+		self::getUserCache()->set( $user->getName(), $caUser );
 	}
 
 	/**
