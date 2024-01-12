@@ -431,20 +431,12 @@
 				}
 			],
 			"styles": "ext.centralauth.centralautologin.css",
-			"targets": [
-				"mobile",
-				"desktop"
-			],
 			"dependencies": [
 				"mediawiki.jqueryMsg"
 			]
 		},
 		"ext.centralauth.centralautologin.clearcookie": {
-			"scripts": "ext.centralauth.centralautologin.clearcookie.js",
-			"targets": [
-				"mobile",
-				"desktop"
-			]
+			"scripts": "ext.centralauth.centralautologin.clearcookie.js"
 		},
 		"ext.centralauth.misc.styles": {
 			"styles": [
@@ -477,10 +469,6 @@
 			],
 			"dependencies": [
 				"mediawiki.ForeignApi.core"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.widgets.GlobalUserInputWidget": {
@@ -488,10 +476,6 @@
 			"dependencies": [
 				"mediawiki.api",
 				"oojs-ui-widgets"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.centralauth.globalrenamequeue": {
