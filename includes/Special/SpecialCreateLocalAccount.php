@@ -49,7 +49,7 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 	}
 
 	public function execute( $par ) {
-		$this->requireLogin();
+		$this->requireNamedUser();
 		$this->checkPermissions();
 
 		$this->addHelpLink( 'Help:Extension:CentralAuth/CreateLocalAccount' );
