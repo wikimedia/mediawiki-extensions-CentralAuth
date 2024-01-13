@@ -36,7 +36,6 @@ class CentralAuthSessionManager {
 	public const CONSTRUCTOR_OPTIONS = [
 		'CentralAuthDatabase',
 		'CentralAuthSessionCacheType',
-		'CentralAuthTokenCacheType',
 		'SessionCacheType',
 	];
 
@@ -55,14 +54,17 @@ class CentralAuthSessionManager {
 	/**
 	 * @param ServiceOptions $options
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
+	 * @param BagOStuff $microStash
 	 */
 	public function __construct(
 		ServiceOptions $options,
-		IBufferingStatsdDataFactory $statsdDataFactory
+		IBufferingStatsdDataFactory $statsdDataFactory,
+		BagOStuff $microStash
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->statsdDataFactory = $statsdDataFactory;
+		$this->tokenStore = $microStash;
 	}
 
 	/**
@@ -108,12 +110,6 @@ class CentralAuthSessionManager {
 	 * @return BagOStuff
 	 */
 	public function getTokenStore(): BagOStuff {
-		if ( !$this->tokenStore ) {
-			$cacheType = $this->options->get( 'CentralAuthTokenCacheType' )
-				?? $this->options->get( 'CentralAuthSessionCacheType' )
-				?? $this->options->get( 'SessionCacheType' );
-			$this->tokenStore = ObjectCache::getInstance( $cacheType );
-		}
 		return $this->tokenStore;
 	}
 
