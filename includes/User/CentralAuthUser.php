@@ -500,6 +500,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getId() : false ];
 			$groups[$row->ggp_group] = $row->gug_expiry;
 		}
+		ksort( $groups );
 
 		$this->mRights = $rights;
 		$this->mGroups = array_keys( $groups );
