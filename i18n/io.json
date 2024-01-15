@@ -20,6 +20,7 @@
 	"centralauth-admin-blocked2-indef": "Blokusata permanante.",
 	"centralauth-admin-blocklog": "blokusar registraro",
 	"centralauth-admin-delete-button": "Efacar ca konto",
+	"centralauth-admin-delete-description": "Efacanta omna konti globala eskartos omna konti lokala, do la globala nomo divenos libera por ke altra persono uzez ol. Omna konti lokala duros existar.",
 	"centralauth-admin-delete-title": "Efacar konto",
 	"centralauth-admin-info-attached": "Quanto di konti ligita:",
 	"centralauth-admin-info-editcount": "Quanto di redakturi:",
