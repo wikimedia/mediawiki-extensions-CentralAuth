@@ -38,7 +38,7 @@ class LockUser extends Maintenance {
 	}
 
 	public function execute() {
-		$user = CentralAuthUser::getInstanceByName(
+		$user = CentralAuthUser::getPrimaryInstanceByName(
 			$this->getServiceContainer()
 				->getUserNameUtils()
 				->getCanonical( $this->getOption( 'username' ) )
