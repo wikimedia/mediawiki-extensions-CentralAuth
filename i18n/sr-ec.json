@@ -129,7 +129,7 @@
 	"centralauth-complete": "Обједињавање налога је завршено!",
 	"centralauth-complete-text": "Сада можете да се пријавите на све вики пројекте {{int:Centralauth-groupname}}, без отварања новог налога.",
 	"centralauth-completelogin-back": "Назад на претходну страницу.",
-	"centralauth-contribs-link": "глобални налози",
+	"centralauth-contribs-link": "глобални налог",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
 	"centralauth-contribs-locked-log": "Овај налог је глобално закључан.\nПоследње закључавање је наведено испод:",
 	"centralauth-createlocal-reason": "Разлог:",

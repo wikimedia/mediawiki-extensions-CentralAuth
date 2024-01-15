@@ -149,7 +149,7 @@
 	"centralauth-complete": "Dina användarkonton har slagits ihop!",
 	"centralauth-complete-text": "Du kan nu logga in på alla wikier som tillhör {{int:Centralauth-groupname}} utan att skapa nya konton.",
 	"centralauth-completelogin-back": "Tillbaka till föregående sida.",
-	"centralauth-contribs-link": "globala konton",
+	"centralauth-contribs-link": "globalt konto",
 	"centralauth-contribs-locked": "Detta kontot är globalt låst.\nSe [[Special:CentralAuth/$1|globala kontodetaljer]] för mer information.",
 	"centralauth-contribs-locked-log": "Detta kontot är globalt låst.\nDet senaste posten i lås-loggen ges nedan som referens:",
 	"centralauth-createlocal-already-exists": "Det finns redan ett lokalt konto för det angivna globala kontot.",

@@ -127,7 +127,7 @@
 	"centralauth-complete": "Unification de contos complete!",
 	"centralauth-complete-text": "Tu pote ora aperir un session in omne sito wiki del {{int:Centralauth-groupname}} sin necessitate de crear un nove conto.",
 	"centralauth-completelogin-back": "Retornar al pagina precedente.",
-	"centralauth-contribs-link": "contos global",
+	"centralauth-contribs-link": "conto global",
 	"centralauth-contribs-locked": "Iste conto es globalmente blocate.\nVide [[Special:CentralAuth/$1|le detalios del conto global]] pro plus information.",
 	"centralauth-contribs-locked-log": "Iste conto es globalmente blocate.\nLe ultime entrata del registro de blocadas es fornite hic infra:",
 	"centralauth-createlocal-already-exists": "Il ha jam un conto local pro le conto global specificate.",
