@@ -203,12 +203,20 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-rename-cannotself' );
 		}
 
+		if ( $oldUser->isTemp() ) {
+			return Status::newFatal( 'centralauth-rename-badusername' );
+		}
+
 		$newUser = User::newFromName(
 			$data['newname'],
 			// match GlobalRenameFactory
 			UserRigorOptions::RIGOR_CREATABLE
 		);
 		if ( !$newUser ) {
+			return Status::newFatal( 'centralauth-rename-badusername' );
+		}
+
+		if ( $newUser->isTemp() ) {
 			return Status::newFatal( 'centralauth-rename-badusername' );
 		}
 
