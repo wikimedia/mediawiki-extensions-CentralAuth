@@ -59,7 +59,12 @@
 		}
 	},
 	"GrantPermissionGroups": {
-		"setglobalaccountstatus": "administration"
+		"setglobalaccountstatus": "administration",
+		"createlocalaccount": "administration"
+	},
+	"GrantRiskGroups": {
+		"setglobalaccountstatus": "security",
+		"createlocalaccount": "vandalism"
 	},
 	"AvailableRights": [
 		"centralauth-createlocal",
