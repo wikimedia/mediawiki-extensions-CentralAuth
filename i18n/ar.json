@@ -42,6 +42,7 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "عدد التحرير العمومي للمستخدم",
 	"abusefilter-edit-builder-vars-global-user-groups": "المجموعات العامة التي ينتمي إليها الحساب",
+	"abusefilter-edit-builder-vars-global-account-editcount": "عدد التعديلات العالمي للمستخدم (عند إنشاء الحساب)",
 	"action-centralauth-createlocal": "إنشاء حساب محلي بالقوة",
 	"action-centralauth-lock": "إقفال أو فتح حسابات عامة",
 	"action-centralauth-merge": "دمج حسابه",
