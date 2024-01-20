@@ -10,7 +10,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @group CentralAuthDB
  * @group Database
  */
-class CentralAuthUserUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @covers ::exists
 	 * @covers ::getId

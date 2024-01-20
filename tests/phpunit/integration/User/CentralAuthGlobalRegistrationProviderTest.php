@@ -8,7 +8,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider
  * @group Database
  */
-class CentralAuthGlobalRegistrationProviderTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthGlobalRegistrationProviderTest extends MediaWikiIntegrationTestCase {
 
 	public function testUnregistered() {
 		$this->assertFalse(

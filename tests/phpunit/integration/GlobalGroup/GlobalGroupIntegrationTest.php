@@ -35,7 +35,7 @@ use Wikimedia\TestingAccessWrapper;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  * @group Database
  */
-class GlobalGroupIntegrationTest extends CentralAuthUsingDatabaseTestCase {
+class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 

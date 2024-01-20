@@ -26,7 +26,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
-class GlobalGroupLookupTest extends CentralAuthUsingDatabaseTestCase {
+class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();

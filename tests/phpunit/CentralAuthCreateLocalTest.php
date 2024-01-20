@@ -12,7 +12,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
  * @group Database
  */
-class CentralAuthCreateLocalTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 
 	/** @var SpecialCreateLocalAccount */
 	private $specialCreateLocalAccount;

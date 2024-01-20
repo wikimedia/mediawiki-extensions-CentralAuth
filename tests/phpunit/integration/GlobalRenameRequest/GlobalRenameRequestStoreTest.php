@@ -29,7 +29,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
-class GlobalRenameRequestStoreTest extends CentralAuthUsingDatabaseTestCase {
+class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers ::__construct

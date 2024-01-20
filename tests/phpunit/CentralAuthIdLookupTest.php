@@ -16,7 +16,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @group Database
  * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup
  */
-class CentralAuthIdLookupTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 	use MockAuthorityTrait;
 
 	/** @var int[] */

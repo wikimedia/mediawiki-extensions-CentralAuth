@@ -23,7 +23,6 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 use Generator;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
-use MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\CentralAuthUsingDatabaseTrait;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
 use MediaWiki\Permissions\UltimateAuthority;
@@ -39,13 +38,6 @@ use Xml;
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
 class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
-	use CentralAuthUsingDatabaseTrait;
-
-	public function __construct( $name = null, array $data = [], $dataName = '' ) {
-		$this->setupCentralAuthTables();
-		parent::__construct( $name, $data, $dataName );
-	}
-
 	protected function setUp(): void {
 		parent::setUp();
 

@@ -12,11 +12,8 @@ use Wikimedia\ScopedCallback;
  * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\UserEditCountUpdateHookHandler
  * @group Database
  */
-class CentralAuthEditCounterTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthEditCounterTest extends MediaWikiIntegrationTestCase {
 	public function testEdit() {
-		$this->tablesUsed[] = 'user';
-		$this->tablesUsed[] = 'page';
-
 		$testUser = new CentralAuthTestUser(
 			'CentralAuthEditCounterTest',
 			bin2hex( random_bytes( 6 ) ),

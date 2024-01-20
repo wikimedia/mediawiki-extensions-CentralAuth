@@ -9,7 +9,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @group CentralAuthDB
  * @group Database
  */
-class CentralAuthHooksUsingDatabaseTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetEmailAuthenticationTimestamp

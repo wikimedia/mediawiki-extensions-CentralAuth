@@ -9,7 +9,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @coversDefaultClass MediaWiki\Extension\CentralAuth\CentralAuthUIService
  * @group Database
  */
-class CentralAuthUIServiceTest extends CentralAuthUsingDatabaseTestCase {
+class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @covers ::__construct
 	 */
