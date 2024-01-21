@@ -35,7 +35,10 @@ abstract class LocalRenameJob extends Job {
 		parent::__construct( $this->command, $title, $params );
 	}
 
-	public function run() {
+	/**
+	 * @throws Exception
+	 */
+	public function run(): bool {
 		$this->setRenameUserStatus( new GlobalRenameUserStatus( $this->params['to'] ) );
 
 		// Bail if it's already done or in progress. Use a locking read to block until the
@@ -80,6 +83,13 @@ abstract class LocalRenameJob extends Job {
 			$factory->rollbackPrimaryChanges( $fnameTrxOwner );
 			$this->updateStatus( 'failed' );
 			$factory->commitPrimaryChanges( $fnameTrxOwner );
+			// Record job failure in CentralAuth channel (T217211)
+			$logger = LoggerFactory::getInstance( 'CentralAuth' );
+			$logger->error( 'Failed to rename {oldName} into {newName}. {error}', [
+				'oldName' => $this->params['from'],
+				'newName' => $this->params['to'],
+				'error' => $e->getMessage()
+			] );
 			throw $e;
 		}
 
