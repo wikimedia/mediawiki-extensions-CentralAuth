@@ -506,5 +506,6 @@
 	"right-globalgrouppermissions": "Manage global groups",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
-	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a blacklist."
+	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a blacklist.",
+	"centralauth-blocked-ip-reputation": "The IP address that you are currently using has been blocked because it is believed to be recently used for abusive purposes."
 }
