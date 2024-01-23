@@ -1,11 +1,9 @@
 <?php
 
-use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\CentralId\CentralIdLookup;
-use MediaWiki\User\CentralId\CentralIdLookupFactory;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
@@ -81,25 +79,18 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function newLookup(): CentralIdLookup {
-		$factory = new CentralIdLookupFactory(
-			new ServiceOptions(
-				CentralIdLookupFactory::CONSTRUCTOR_OPTIONS,
-				[
-					'CentralIdLookupProviders' => [
-						'central' => [
-							'class' => CentralAuthIdLookup::class,
-							'services' => [
-								'CentralAuth.CentralAuthDatabaseManager',
-							]
-						],
+		$this->setMwGlobals( [
+			'CentralIdLookupProviders' => [
+				'central' => [
+					'class' => CentralAuthIdLookup::class,
+					'services' => [
+						'CentralAuth.CentralAuthDatabaseManager',
 					],
-					'CentralIdLookupProvider' => 'central',
-				]
-			),
-			$this->getServiceContainer()->getObjectFactory(),
-			$this->getServiceContainer()->getUserIdentityLookup()
-		);
-		return $factory->getLookup();
+				],
+			],
+			'CentralIdLookupProvider' => 'central',
+		] );
+		return $this->getServiceContainer()->getCentralIdLookupFactory()->getLookup();
 	}
 
 	public function testRegistration() {
