@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
+use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
@@ -41,14 +42,14 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	}
 
 	public function lookupCentralIds(
-		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
+		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): array {
 		if ( !$idToName ) {
 			return [];
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromPrimaryDb = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
+		$fromPrimaryDb = ( $flags & IDBAccessObject::READ_LATEST ) === IDBAccessObject::READ_LATEST;
 		$db = $this->databaseManager->getCentralDB(
 			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
 		);
@@ -78,14 +79,14 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	}
 
 	public function lookupUserNames(
-		array $nameToId, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
+		array $nameToId, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): array {
 		if ( !$nameToId ) {
 			return [];
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromPrimaryDb = ( $flags & self::READ_LATEST ) === self::READ_LATEST;
+		$fromPrimaryDb = ( $flags & IDBAccessObject::READ_LATEST ) === IDBAccessObject::READ_LATEST;
 		$db = $this->databaseManager->getCentralDB(
 			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
 		);
@@ -119,7 +120,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	}
 
 	public function centralIdFromLocalUser(
-		$user, $audience = self::AUDIENCE_PUBLIC, $flags = self::READ_NORMAL
+		$user, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): int {
 		return $this->isAttached( $user ) ? CentralAuthUser::getInstance( $user )->getId() : 0;
 	}

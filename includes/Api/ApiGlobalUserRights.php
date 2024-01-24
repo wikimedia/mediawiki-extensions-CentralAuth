@@ -28,11 +28,11 @@ use ApiBase;
 use ApiMain;
 use ApiResult;
 use ChangeTags;
+use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
-use MediaWiki\Permissions\Authority;
 use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNamePrefixSearch;
@@ -93,7 +93,7 @@ class ApiGlobalUserRights extends ApiBase {
 		// Deny if the user is blocked and doesn't have the full 'userrights' permission.
 		// This matches what Special:UserRights does for the web UI.
 		if ( !$this->getAuthority()->isAllowed( 'userrights' ) ) {
-			$block = $pUser->getBlock( Authority::READ_LATEST );
+			$block = $pUser->getBlock( IDBAccessObject::READ_LATEST );
 			if ( $block && $block->isSitewide() ) {
 				$this->dieBlocked( $block );
 			}
@@ -143,7 +143,7 @@ class ApiGlobalUserRights extends ApiBase {
 		$r = [];
 		$r['user'] = $user->getName();
 		$r['userid'] = $user->getId();
-		list( $r['added'], $r['removed'] ) = $form->doSaveUserGroups(
+		[ $r['added'], $r['removed'] ] = $form->doSaveUserGroups(
 			// Don't pass null to doSaveUserGroups() for array params, cast to empty array
 			$user, $add, (array)$params['remove'],
 			$params['reason'], (array)$tags, $groupExpiries

@@ -91,8 +91,8 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideFlags(): array {
 		return [
-			'READ_NORMAL' => [ GlobalGroupLookup::READ_NORMAL, DB_REPLICA ],
-			'READ_LATEST' => [ GlobalGroupLookup::READ_LATEST, DB_PRIMARY ],
+			'READ_NORMAL' => [ IDBAccessObject::READ_NORMAL, DB_REPLICA ],
+			'READ_LATEST' => [ IDBAccessObject::READ_LATEST, DB_PRIMARY ],
 		];
 	}
 }

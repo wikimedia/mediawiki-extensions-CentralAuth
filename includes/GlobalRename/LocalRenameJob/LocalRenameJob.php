@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
 use Exception;
+use IDBAccessObject;
 use Job;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
@@ -40,7 +41,7 @@ abstract class LocalRenameJob extends Job {
 		// Bail if it's already done or in progress. Use a locking read to block until the
 		// transaction adding this job is done, so we can see its changes. This is similar to
 		// the trick that the RenameUser extension does.
-		$status = $this->renameuserStatus->getStatus( GlobalRenameUserStatus::READ_LOCKING );
+		$status = $this->renameuserStatus->getStatus( IDBAccessObject::READ_LOCKING );
 		// Clear any REPEATABLE-READ snapshot in case the READ_LOCKING blocked above. We want
 		// regular non-locking SELECTs to see all the changes from that transaction we waited on.
 		// Making a new transaction also reduces deadlocks from the locking read.
@@ -155,7 +156,7 @@ abstract class LocalRenameJob extends Job {
 
 		$job = new static( $this->getTitle(), $this->getParams() );
 		$nextWiki = null;
-		$statuses = $this->renameuserStatus->getStatuses( GlobalRenameUserStatus::READ_LATEST );
+		$statuses = $this->renameuserStatus->getStatuses( IDBAccessObject::READ_LATEST );
 		foreach ( $statuses as $wiki => $status ) {
 			if ( $status === 'queued' && $wiki !== WikiMap::getCurrentWikiId() ) {
 				$nextWiki = $wiki;

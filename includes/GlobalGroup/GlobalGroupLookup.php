@@ -28,7 +28,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
  * @since 1.37
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
-class GlobalGroupLookup implements IDBAccessObject {
+class GlobalGroupLookup {
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 
@@ -41,18 +41,18 @@ class GlobalGroupLookup implements IDBAccessObject {
 
 	/**
 	 * Returns all defined global groups.
-	 * @param int $flags One of the self::READ_* constants
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return string[]
 	 */
-	public function getDefinedGroups( int $flags = self::READ_NORMAL ): array {
-		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
+	public function getDefinedGroups( int $flags = IDBAccessObject::READ_NORMAL ): array {
+		[ $dbIndex ] = DBAccessObjectUtils::getDBOptions( $flags );
 		return $this->dbManager
 			->getCentralDB( $dbIndex )
 			->newSelectQueryBuilder()
 			->select( 'ggp_group' )
 			->distinct()
 			->from( 'global_group_permissions' )
-			->options( $dbOptions )
+			->recency( $flags )
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 	}
@@ -60,18 +60,18 @@ class GlobalGroupLookup implements IDBAccessObject {
 	/**
 	 * Returns all rights assigned to a specified global group.
 	 * @param string $group
-	 * @param int $flags One of the self::READ_* constants
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return string[]
 	 */
-	public function getRightsForGroup( string $group, int $flags = self::READ_NORMAL ): array {
-		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
+	public function getRightsForGroup( string $group, int $flags = IDBAccessObject::READ_NORMAL ): array {
+		[ $dbIndex, ] = DBAccessObjectUtils::getDBOptions( $flags );
 		return $this->dbManager
 			->getCentralDB( $dbIndex )
 			->newSelectQueryBuilder()
 			->select( 'ggp_permission' )
 			->from( 'global_group_permissions' )
 			->where( [ 'ggp_group' => $group ] )
-			->options( $dbOptions )
+			->recency( $flags )
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 	}

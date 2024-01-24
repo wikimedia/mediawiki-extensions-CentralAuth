@@ -184,12 +184,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @note Don't call this directly. Use self::getInstanceByName() or
 	 *  self::getPrimaryInstanceByName() instead.
 	 * @param string $username
-	 * @param int $flags Supports CentralAuthUser::READ_LATEST to use the primary DB
+	 * @param int $flags Supports IDBAccessObject::READ_LATEST to use the primary DB
 	 */
 	public function __construct( $username, $flags = 0 ) {
 		$this->mName = $username;
 		$this->resetState();
-		if ( ( $flags & self::READ_LATEST ) == self::READ_LATEST ) {
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
 			$this->mFromPrimary = true;
 		}
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
@@ -262,7 +262,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$cache = self::getUserCache();
 		$ret = $cache->get( $username );
 		if ( !$ret || !$ret->mFromPrimary ) {
-			$ret = new self( $username, self::READ_LATEST );
+			$ret = new self( $username, IDBAccessObject::READ_LATEST );
 			$cache->set( $username, $ret );
 		}
 		return $ret;
@@ -2495,7 +2495,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Not cached
 	 * @see CentralAuthUser::renameInProgress
 	 * @param string $wiki
-	 * @param int $flags Bitfield of CentralAuthUser::READ_* constants
+	 * @param int $flags Bitfield of IDBAccessObject::READ_* constants
 	 * @return string[]|false
 	 */
 	public function renameInProgressOn( $wiki, $flags = 0 ) {
@@ -2504,7 +2504,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// Use primary database as this is being used for various critical things
 		$names = $renameState->getNames(
 			$wiki,
-			( $flags & self::READ_LATEST ) == self::READ_LATEST ? 'primary' : 'replica'
+			( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ? 'primary' : 'replica'
 		);
 
 		return $names ?: false;

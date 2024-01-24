@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
+use IDBAccessObject;
 use Job;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
@@ -211,7 +212,7 @@ class GlobalRenameUser {
 		array $wikisAttached, array $options
 	) {
 		$job = $this->getJob( $options, $wikisAttached );
-		$statuses = $this->renameuserStatus->getStatuses( GlobalRenameUserStatus::READ_LATEST );
+		$statuses = $this->renameuserStatus->getStatuses( IDBAccessObject::READ_LATEST );
 		foreach ( $statuses as $wiki => $status ) {
 			if ( $status === 'queued' ) {
 				$this->jobQueueGroupFactory->makeJobQueueGroup( $wiki )->push( $job );

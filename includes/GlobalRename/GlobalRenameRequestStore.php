@@ -31,7 +31,7 @@ use stdClass;
  *
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
-class GlobalRenameRequestStore implements IDBAccessObject {
+class GlobalRenameRequestStore {
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 
@@ -114,10 +114,10 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	 *
 	 * @param string $username
 	 * @param string|null $wiki
-	 * @param int $flags One of the self::READ_* constants
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return GlobalRenameRequest
 	 */
-	public function newForUser( string $username, $wiki, int $flags = self::READ_NORMAL ) {
+	public function newForUser( string $username, $wiki, int $flags = IDBAccessObject::READ_NORMAL ) {
 		return $this->newFromRow(
 			$this->fetchRowFromDB( [
 				'rq_name'   => $username,
@@ -131,10 +131,10 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	 * Get a request record.
 	 *
 	 * @param int $id Request id
-	 * @param int $flags One of the self::READ_* constants
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return GlobalRenameRequest
 	 */
-	public function newFromId( int $id, int $flags = self::READ_NORMAL ) {
+	public function newFromId( int $id, int $flags = IDBAccessObject::READ_NORMAL ) {
 		return $this->newFromRow(
 			$this->fetchRowFromDB( [
 				'rq_id' => $id,
@@ -146,10 +146,10 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	 * Check to see if there is a pending rename request to the given name.
 	 *
 	 * @param string $newname
-	 * @param int $flags One of the self::READ_* constants
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return bool
 	 */
-	public function nameHasPendingRequest( string $newname, int $flags = self::READ_NORMAL ) {
+	public function nameHasPendingRequest( string $newname, int $flags = IDBAccessObject::READ_NORMAL ) {
 		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
 
 		$res = $this->dbManager->getCentralDB( $dbIndex )->newSelectQueryBuilder()
@@ -170,11 +170,11 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 	 * Fetch a single request from the database.
 	 *
 	 * @param array $where Where clause criteria
-	 * @param int $flags One of the self::READ_* constants
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return stdClass|false Row as object or false if not found
 	 */
-	protected function fetchRowFromDB( array $where, int $flags = self::READ_NORMAL ) {
-		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
+	protected function fetchRowFromDB( array $where, int $flags = IDBAccessObject::READ_NORMAL ) {
+		[ $dbIndex, ] = DBAccessObjectUtils::getDBOptions( $flags );
 
 		return $this->dbManager->getCentralDB( $dbIndex )->newSelectQueryBuilder()
 			->select( [
@@ -192,7 +192,7 @@ class GlobalRenameRequestStore implements IDBAccessObject {
 			] )
 			->from( 'renameuser_queue' )
 			->where( $where )
-			->options( $dbOptions )
+			->recency( $flags )
 			->caller( __METHOD__ )
 			->fetchRow();
 	}

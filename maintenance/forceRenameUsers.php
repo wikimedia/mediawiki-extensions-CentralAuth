@@ -92,7 +92,7 @@ class ForceRenameUsers extends Maintenance {
 			return;
 		}
 		$this->log( "Beginning rename of $newNamePrefix" );
-		$newCAUser = new CentralAuthUser( $newNamePrefix, CentralAuthUser::READ_LATEST );
+		$newCAUser = new CentralAuthUser( $newNamePrefix, IDBAccessObject::READ_LATEST );
 		$count = 0;
 		// Edge case: Someone created User:Foo~wiki manually.
 		// So just start appending numbers to the end of the name
@@ -101,7 +101,7 @@ class ForceRenameUsers extends Maintenance {
 			$count++;
 			$newCAUser = new CentralAuthUser(
 				$newNamePrefix . (string)$count,
-				CentralAuthUser::READ_LATEST
+				IDBAccessObject::READ_LATEST
 			);
 		}
 		if ( $newNamePrefix !== $newCAUser->getName() ) {
@@ -159,7 +159,7 @@ class ForceRenameUsers extends Maintenance {
 
 		foreach ( $rows as $row ) {
 			$user = User::newFromName( $row->utr_name );
-			$caUser = new CentralAuthUser( $row->utr_name, CentralAuthUser::READ_LATEST );
+			$caUser = new CentralAuthUser( $row->utr_name, IDBAccessObject::READ_LATEST );
 
 			if ( !$user->getId() ) {
 				$this->log(

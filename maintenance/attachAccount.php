@@ -118,7 +118,7 @@ class AttachAccount extends Maintenance {
 		}
 
 		$central = new CentralAuthUser(
-			$username, CentralAuthUser::READ_LATEST );
+			$username, IDBAccessObject::READ_LATEST );
 
 		if ( !$central->exists() ) {
 			$this->missing++;

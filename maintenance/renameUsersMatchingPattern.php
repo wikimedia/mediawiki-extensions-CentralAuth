@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
+use IDBAccessObject;
 use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
@@ -157,7 +158,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 			return false;
 		}
 
-		$oldCaUser = new CentralAuthUser( $oldName, CentralAuthUser::READ_LATEST );
+		$oldCaUser = new CentralAuthUser( $oldName, IDBAccessObject::READ_LATEST );
 
 		$data = [
 			'movepages' => !$this->skipPageMoves,

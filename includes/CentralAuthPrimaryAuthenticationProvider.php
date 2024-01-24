@@ -305,7 +305,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			!$centralUser->getPasswordObject() instanceof InvalidPassword;
 	}
 
-	public function testUserExists( $username, $flags = User::READ_NORMAL ) {
+	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
 		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
 			return false;
@@ -374,14 +374,14 @@ class CentralAuthPrimaryAuthenticationProvider
 	public function testUserForCreation( $user, $autocreate, array $options = [] ) {
 		global $wgCentralAuthEnableGlobalRenameRequest;
 
-		$options += [ 'flags' => User::READ_NORMAL ];
+		$options += [ 'flags' => IDBAccessObject::READ_NORMAL ];
 
 		$status = parent::testUserForCreation( $user, $autocreate, $options );
 		if ( !$status->isOK() ) {
 			return $status;
 		}
 
-		$centralUser = ( $options['flags'] & User::READ_LATEST ) == User::READ_LATEST
+		$centralUser = ( $options['flags'] & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST
 			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
 

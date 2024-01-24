@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthSessionProvider;
 use Exception;
+use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
@@ -154,7 +155,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			// Retry from primary database. Central login is done right after user creation so lag problems
 			// are common.
 			$user = User::newFromName( $info['name'] );
-			$user->load( User::READ_LATEST );
+			$user->load( IDBAccessObject::READ_LATEST );
 			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 			$e = $getException( $centralUser, $user, $info );
 			if ( $e ) {
@@ -290,7 +291,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $getException( $centralUser, $user ) ) {
 			$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
-			$user->load( User::READ_LATEST );
+			$user->load( IDBAccessObject::READ_LATEST );
 			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 			$e = $getException( $centralUser, $user );
 			if ( $e ) {
