@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Edwingudfriend",
+			"Killy95",
 			"Kipala",
 			"Kwisha",
 			"Lloffiwr",
@@ -42,6 +43,7 @@
 	"centralauth-attach-submit": "hamisha akaunti",
 	"centralauth-attach-title": "Dhibitisha akaunti",
 	"centralauth-complete-text": "Unaweza sasa kuingia katika tovuti yoyote ya wiki {{int:Centralauth-groupname}} bila kufungua akaunti mpay.",
+	"centralauth-contribs-link": "akaunti ya kimataifa",
 	"centralauth-days-ago": "{{PLURAL:$1|siku $1 iliyo|siku $1 zilizo}}pita",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|hariri]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|hariri]])",

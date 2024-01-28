@@ -83,7 +83,7 @@
 	"centralauth-admin-status-submit": "Postavite status",
 	"centralauth-admin-suppressreason": "Globalno sakriven od strane $1 iz sljedećeg razloga: $2",
 	"centralauth-admin-title": "Upravitelj globalnoga računa za $1",
-	"centralauth-admin-title-ro": "Informacije o globalnomu računu $1",
+	"centralauth-admin-title-ro": "Informacije o globalnome računu $1",
 	"centralauth-admin-unattached": "nije pridodan",
 	"centralauth-admin-unhide-nonexistent": "Greška: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
 	"centralauth-admin-unmerge": "Razdvoji odabrane",

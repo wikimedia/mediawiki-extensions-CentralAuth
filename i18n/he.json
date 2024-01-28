@@ -489,5 +489,6 @@
 	"right-globalgrouppermissions": "ניהול קבוצות גלובליות",
 	"sessionprovider-centralauthsessionprovider": "התחברויות מרכזיות מבוססות־עוגיות",
 	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken",
-	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה."
+	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה.",
+	"centralauth-blocked-ip-reputation": "כתובת ה־IP הנוכחית שלך נחסמה מכיוון שיש סיבה לחשוב שהיא משמשת לאחרונה למטרות פוגעניות."
 }

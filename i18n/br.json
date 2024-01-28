@@ -114,7 +114,7 @@
 	"centralauth-complete": "Kendeuzet eo ar c'hontoù !",
 	"centralauth-complete-text": "Gallout a rit bremañ kevreañ ouzh ne vern pe raktres eus {{int:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.",
 	"centralauth-completelogin-back": "Distreiñ d'ar bajenn a-raok.",
-	"centralauth-contribs-link": "kontoù hollek",
+	"centralauth-contribs-link": "kont hollek",
 	"centralauth-createlocal-reason": "Abeg",
 	"centralauth-createlocal-username": "Anv ar gont hollek",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|devezh|devezh}} zo",
