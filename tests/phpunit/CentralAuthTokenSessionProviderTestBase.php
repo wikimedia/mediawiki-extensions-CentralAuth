@@ -100,7 +100,8 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 		$data += [
 			'userName' => 'Frank',
-			'token' => 'CATOKEN', // not the login token
+			// not the login token
+			'token' => 'CATOKEN',
 			'origin' => 'test',
 			'originSessionId' => 1337,
 		];

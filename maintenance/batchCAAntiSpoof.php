@@ -31,20 +31,17 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 		return CentralAuthServices::getDatabaseManager()->getCentralDB( $db );
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @inheritDoc */
 	protected function getTableName() {
 		return 'globaluser';
 	}
 
+	/** @inheritDoc */
 	protected function getPrimaryKey() {
 		return 'gu_id';
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @inheritDoc */
 	protected function getUserColumn() {
 		return 'gu_name';
 	}

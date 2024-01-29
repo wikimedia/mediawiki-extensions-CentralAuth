@@ -244,7 +244,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	private function saveUserGroups( CentralAuthUser $user, string $reason ): Status {
 		$allgroups = $this->globalGroupLookup->getDefinedGroups();
 		$addgroup = [];
-		$groupExpiries = []; // associative array of (group name => expiry)
+		// associative array of (group name => expiry)
+		$groupExpiries = [];
 		$removegroup = [];
 		$existingGroups = $user->getGlobalGroupsWithExpiration();
 
@@ -565,7 +566,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$userToolLinks = Linker::userToolLinks(
 			$user->getId(),
 			$user->getName(),
-			false, /* default for redContribsWhenNoEdits */
+			// default for redContribsWhenNoEdits
+			false,
 			Linker::TOOL_LINKS_EMAIL
 		);
 
@@ -582,10 +584,11 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			) .
 			Html::hidden( 'user', $this->mTarget ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken( $this->mTarget ) ) .
+			// Conflict detection
 			Html::hidden(
 				'conflictcheck-originalgroups',
 				implode( ',', $user->getGlobalGroups() )
-			) . // Conflict detection
+			) .
 			Xml::openElement( 'fieldset' ) .
 			Xml::element(
 				'legend',
@@ -766,7 +769,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 					// add a form element to set the expiry date
 					$expiryFormOptions = new XmlSelect(
 						"wpExpiry-$group",
-						"mw-input-wpExpiry-$group", // forward compatibility with HTMLForm
+						// forward compatibility with HTMLForm
+						"mw-input-wpExpiry-$group",
 						$currentExpiry ? 'existing' : 'infinite'
 					);
 					if ( $checkbox['disabled-expiry'] ) {

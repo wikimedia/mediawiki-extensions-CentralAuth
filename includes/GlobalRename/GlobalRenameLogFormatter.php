@@ -13,6 +13,8 @@ use Message;
  *  - gblrename/promote
  */
 class GlobalRenameLogFormatter extends LogFormatter {
+
+	/** @inheritDoc */
 	protected function getMessageParameters() {
 		parent::getMessageParameters();
 		$params = $this->extractParameters();
@@ -20,7 +22,8 @@ class GlobalRenameLogFormatter extends LogFormatter {
 		if ( $this->entry->getSubtype() === 'promote' ) {
 			// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
 			$this->parsedParameters[3] = Message::rawParam( $this->getLocalWikiLink( $params[3], $params[5] ) );
-		} else { // rename
+		} else {
+			// rename
 			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 			$this->parsedParameters[3] = Message::rawParam( $this->getCentralAuthLink( $params[3] ) );
 		}

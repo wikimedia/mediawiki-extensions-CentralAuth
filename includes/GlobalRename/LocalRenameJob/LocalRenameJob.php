@@ -45,7 +45,8 @@ abstract class LocalRenameJob extends Job {
 		// Clear any REPEATABLE-READ snapshot in case the READ_LOCKING blocked above. We want
 		// regular non-locking SELECTs to see all the changes from that transaction we waited on.
 		// Making a new transaction also reduces deadlocks from the locking read.
-		$fnameTrxOwner = get_class( $this ) . '::' . __FUNCTION__; // T145596
+		// T145596
+		$fnameTrxOwner = get_class( $this ) . '::' . __FUNCTION__;
 		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 		$factory->commitPrimaryChanges( $fnameTrxOwner );
 
@@ -116,18 +117,21 @@ abstract class LocalRenameJob extends Job {
 		// For the meantime, just use a system account
 		if ( !$caUser->attachedOn( WikiMap::getCurrentWikiId() ) && $user->getId() !== 0 ) {
 			return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
-		} elseif ( $user->getId() == 0 ) {
+		}
+
+		if ( $user->getId() == 0 ) {
 			// No local user, lets "auto-create" one
 			if ( CentralAuthServices::getUtilityService()->autoCreateUser( $user )->isGood() ) {
-				return User::newFromName( $user->getName() ); // So the internal cache is reloaded
-			} else {
-				// Auto-creation didn't work, fallback on the system account.
-				return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
+				// So the internal cache is reloaded
+				return User::newFromName( $user->getName() );
 			}
-		} else {
-			// Account is attached and exists, just use it :)
-			return $user;
+
+			// Auto-creation didn't work, fallback on the system account.
+			return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
 		}
+
+		// Account is attached and exists, just use it :)
+		return $user;
 	}
 
 	protected function done() {

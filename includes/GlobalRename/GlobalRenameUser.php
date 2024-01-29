@@ -243,7 +243,8 @@ class GlobalRenameUser {
 			$params['session'] = $this->session;
 		}
 
-		$title = Title::newFromText( 'Global rename job' ); // This isn't used anywhere!
+		// This isn't used anywhere!
+		$title = Title::newFromText( 'Global rename job' );
 		return new LocalRenameUserJob( $title, $params );
 	}
 }

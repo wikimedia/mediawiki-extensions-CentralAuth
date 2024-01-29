@@ -111,6 +111,9 @@ class ResetGlobalUserTokens extends Maintenance {
 		} while ( $min < $maxid );
 	}
 
+	/**
+	 * @param string $username
+	 */
 	private function updateUser( $username ) {
 		$user = new CentralAuthUser( $username, IDBAccessObject::READ_LATEST );
 		$this->output( 'Resetting user_token for "' . $username . '": ' );

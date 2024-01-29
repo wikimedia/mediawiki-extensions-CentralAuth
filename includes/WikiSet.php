@@ -163,7 +163,8 @@ class WikiSet {
 				if ( $wikiSet ) {
 					$value = $wikiSet->getDataForCache();
 				} else {
-					$ttl = WANObjectCache::TTL_MINUTE; // cache negatives
+					// cache negatives
+					$ttl = WANObjectCache::TTL_MINUTE;
 					$value = null;
 				}
 
@@ -208,7 +209,8 @@ class WikiSet {
 				if ( $wikiSet ) {
 					$value = $wikiSet->getDataForCache();
 				} else {
-					$ttl = WANObjectCache::TTL_MINUTE; // cache negatives
+					// cache negatives
+					$ttl = WANObjectCache::TTL_MINUTE;
 					$value = null;
 				}
 

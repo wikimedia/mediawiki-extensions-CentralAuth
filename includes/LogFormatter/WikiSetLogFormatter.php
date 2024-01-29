@@ -28,6 +28,11 @@ class WikiSetLogFormatter extends LogFormatter {
 		return $name;
 	}
 
+	/**
+	 * @param string $type
+	 *
+	 * @return string
+	 */
 	private function formatType( $type ): string {
 		// Give grep a chance to find the usages:
 		// centralauth-rightslog-set-optin, centralauth-rightslog-set-optout
@@ -52,17 +57,21 @@ class WikiSetLogFormatter extends LogFormatter {
 		switch ( $action ) {
 			case 'deleteset':
 				return [
+					// 4::name
 					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
-					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
 				];
 			case 'newset':
 				$wikis = $this->entry->isLegacy()
-					? explode( ', ', $params[5] ) // shouldn't be empty
+					// shouldn't be empty
+					? explode( ', ', $params[5] )
 					: $this->entry->getParameters()['wikis'];
 				return [
+					// 4::name
 					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
-					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
-					4 => $this->formatType( $params[4] ), // 5::type
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
+					// 5::type
+					4 => $this->formatType( $params[4] ),
 					// @phan-suppress-next-line SecurityCheck-XSS
 					5 => $this->formatWikis( $wikis ),
 					6 => Message::numParam( count( $wikis ) ),
@@ -75,8 +84,9 @@ class WikiSetLogFormatter extends LogFormatter {
 					[ 'added' => $added, 'removed' => $removed ] = $this->entry->getParameters();
 				}
 				return [
+					// 4::name
 					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
-					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
 					// @phan-suppress-next-line SecurityCheck-XSS
 					4 => $this->formatWikis( $added ),
 					// @phan-suppress-next-line SecurityCheck-XSS
@@ -86,16 +96,21 @@ class WikiSetLogFormatter extends LogFormatter {
 				];
 			case 'setnewtype':
 				return [
+					// 4::name
 					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
-					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
-					4 => $this->formatType( $params[4] ), // 5::oldType
-					5 => $this->formatType( $params[5] ), // 6::type
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
+					// 5::oldType
+					4 => $this->formatType( $params[4] ),
+					// 6::type
+					5 => $this->formatType( $params[5] ),
 				];
 			case 'setrename':
 				return [
+					// 4::name
 					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
-					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ), // 4::name
-					4 => $params[4], // 5::oldName
+					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
+					// 5::oldName
+					4 => $params[4],
 				];
 			default:
 				throw new UnexpectedValueException( "Invalid log action: gblrights/$action" );

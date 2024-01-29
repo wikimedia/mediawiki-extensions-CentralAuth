@@ -52,6 +52,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 		parent::__construct( $title, $params );
 	}
 
+	/** @inheritDoc */
 	public function doRun( $fnameTrxOwner ) {
 		$from = $this->params['from'];
 		$to = $this->params['to'];
@@ -206,8 +207,10 @@ class LocalRenameUserJob extends LocalRenameJob {
 		// string passed to preg_replace so that it will not be treated as
 		// a backreference.
 		return preg_replace(
-			'/[$\\\\]{?\d+}?/', // find $n, ${n}, and \n
-			'\\\\${0}',       // prepend with a literal '\\'
+			// find $n, ${n}, and \n
+			'/[$\\\\]{?\d+}?/',
+			// prepend with a literal '\\'
+			'\\\\${0}',
 			$str
 		);
 	}

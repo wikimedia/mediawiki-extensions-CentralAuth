@@ -585,7 +585,8 @@ class CentralAuthHooks implements
 	 */
 	public function onOtherBlockLogLink( &$otherBlockLink, $user ) {
 		if ( IPUtils::isIPAddress( $user ) ) {
-			return true; // Return if it is an IP as only usernames can be locked.
+			// Return if it is an IP as only usernames can be locked.
+			return true;
 		}
 
 		$caUser = CentralAuthUser::getInstanceByName( $user );

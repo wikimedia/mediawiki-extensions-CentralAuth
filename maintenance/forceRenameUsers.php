@@ -42,6 +42,9 @@ class ForceRenameUsers extends Maintenance {
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
+	/**
+	 * @param string $msg
+	 */
 	private function log( $msg ) {
 		$this->logger->debug( "ForceRenameUsers: $msg" );
 		$this->output( $msg . "\n" );
@@ -68,6 +71,11 @@ class ForceRenameUsers extends Maintenance {
 		}
 	}
 
+	/**
+	 * @param IDatabase $dbw
+	 *
+	 * @return int
+	 */
 	protected function getCurrentRenameCount( IDatabase $dbw ) {
 		$row = $dbw->newSelectQueryBuilder()
 			->select( 'COUNT(*) as count' )
@@ -77,6 +85,10 @@ class ForceRenameUsers extends Maintenance {
 		return (int)$row->count;
 	}
 
+	/**
+	 * @param stdClass $row
+	 * @param IDatabase $dbw
+	 */
 	protected function rename( $row, IDatabase $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;

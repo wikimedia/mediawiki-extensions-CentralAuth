@@ -111,6 +111,9 @@ class AttachAccount extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
+	/**
+	 * @param string $username
+	 */
 	protected function attach( $username ) {
 		$this->total++;
 		if ( !$this->quiet ) {
@@ -149,7 +152,10 @@ class AttachAccount extends Maintenance {
 			$this->output( "ATTACHING: {$username}@{$wikiID}\n" );
 			if ( !$this->dryRun ) {
 				$central->attach(
-					$wikiID, /*method=*/ 'login', /*sendToRC=*/ false );
+					$wikiID,
+					'login',
+					false
+				);
 			}
 		}
 
@@ -175,6 +181,11 @@ class AttachAccount extends Maintenance {
 		}
 	}
 
+	/**
+	 * @param int|float $val
+	 *
+	 * @return float|int
+	 */
 	protected function reportPcnt( $val ) {
 		if ( $this->total > 0 ) {
 			return $val / $this->total * 100.0;

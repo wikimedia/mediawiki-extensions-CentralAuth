@@ -100,7 +100,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			$databaseManager = CentralAuthServices::getDatabaseManager();
 			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
 			while ( $username = fgets( $file ) ) {
-				$username = trim( $username ); // trim the \n
+				// trim the \n
+				$username = trim( $username );
 				if ( $this->resume !== true ) {
 					if ( $username === $this->resume ) {
 						$this->resume = true;
@@ -128,6 +129,9 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
+	/**
+	 * @param string $username
+	 */
 	private function resendConfirmationEmail( $username ) {
 		$wikiID = WikiMap::getCurrentWikiId();
 

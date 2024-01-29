@@ -105,6 +105,10 @@ class DeleteEmptyAccounts extends Maintenance {
 		$wgUser = $original;
 	}
 
+	/**
+	 * @param string $username
+	 * @param User $deleter
+	 */
 	private function process( $username, User $deleter ) {
 		$central = new CentralAuthUser( $username, IDBAccessObject::READ_LATEST );
 		if ( !$central->exists() ) {

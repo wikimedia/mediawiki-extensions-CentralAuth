@@ -99,6 +99,7 @@ class UsersToRenameDatabaseUpdates {
 			[ 'LIMIT' => $limit ]
 		);
 
-		return $rows; // @todo this shouldn't return prefixed field names
+		// @todo this shouldn't return prefixed field names
+		return $rows;
 	}
 }

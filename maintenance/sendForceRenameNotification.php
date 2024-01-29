@@ -112,6 +112,9 @@ class SendForceRenameNotification extends Maintenance {
 		}
 	}
 
+	/**
+	 * @return int
+	 */
 	protected function getQueuedCount() {
 		$group = MediaWikiServices::getInstance()->getJobQueueGroup();
 		$queue = $group->get( 'MassMessageServerSideJob' );
@@ -120,10 +123,14 @@ class SendForceRenameNotification extends Maintenance {
 		$abandoned = $queue->getAbandonedCount();
 		$active = max( $claimed - $abandoned, 0 );
 
-		$queued = $active + $pending;
-		return $queued;
+		return $active + $pending;
 	}
 
+	/**
+	 * @param string $dir
+	 *
+	 * @return string
+	 */
 	protected function getLocalizedText( $dir ) {
 		$langCode = $this->getConfig()->get( 'LanguageCode' );
 		$fallbacks = MediaWikiServices::getInstance()->getLanguageFallback()->getAll( $langCode );

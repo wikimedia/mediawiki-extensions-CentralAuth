@@ -68,6 +68,9 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 			->getMaintenanceConnectionRef( DB_PRIMARY, [], $this->currentWiki );
 	}
 
+	/**
+	 * @return array|null[]|string[]
+	 */
 	protected function getWikis() {
 		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
@@ -89,6 +92,11 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 		}
 	}
 
+	/**
+	 * @param string $wiki
+	 *
+	 * @return Generator
+	 */
 	protected function getUsers( $wiki ) {
 		if ( $this->user !== null ) {
 			$this->output( "\t ... querying '$this->user'\n" );

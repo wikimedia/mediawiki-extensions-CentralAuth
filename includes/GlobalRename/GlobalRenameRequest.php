@@ -357,4 +357,4 @@ class GlobalRenameRequest {
 		return $status;
 	}
 
-} // end GlobalRenameRequest
+}

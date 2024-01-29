@@ -109,7 +109,8 @@ class SpecialContributionsHookHandler implements
 			]
 		);
 
-		if ( $count === 0 ) { // we couldn't load the log entry
+		if ( $count === 0 ) {
+			// we couldn't load the log entry
 			$out->addHTML(
 				Html::warningBox(
 					$out->msg( 'centralauth-contribs-locked', $user )->parse(),

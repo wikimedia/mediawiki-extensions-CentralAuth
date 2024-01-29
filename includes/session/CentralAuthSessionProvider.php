@@ -242,7 +242,8 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$info += [
 			'userInfo' => UserInfo::newFromName( $userName, true ),
 			'provider' => $this,
-			'persisted' => true, // CA sessions are always persistent
+			// CA sessions are always persistent
+			'persisted' => true,
 			'remembered' => $tokenCookie !== null,
 			'metadata' => [
 				'CentralAuthSource' => 'CentralAuth',
@@ -536,9 +537,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		// duration in that case.
 
 		return min(
-			$this->getLoginCookieExpiration( 'User', /* $shouldRememberUser */ true ),
-			$this->getLoginCookieExpiration( 'Token', /* $shouldRememberUser */ true ),
-			$this->getLoginCookieExpiration( 'UserID', /* $shouldRememberUser */ true )
+			$this->getLoginCookieExpiration( 'User', true ),
+			$this->getLoginCookieExpiration( 'Token', true ),
+			$this->getLoginCookieExpiration( 'UserID', true )
 		) ?: null;
 	}
 }

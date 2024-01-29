@@ -275,7 +275,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 						$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
 						DeferredUpdates::addCallableUpdate( function () use ( $user ) {
 							if ( $this->readOnlyMode->isReadOnly() ) {
-								return; // not possible to save
+								// not possible to save
+								return;
 							}
 							$this->userOptionsManager->saveOptions( $user );
 						} );
@@ -371,7 +372,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// headers to prevent caching, just in case
 				$this->getOutput()->disableClientCache();
 
-				// Sanity check: If the loginwiki account isn't attached, things are broken (T137551)
+				// Check if the loginwiki account isn't attached, things are broken (T137551)
 				if ( !$centralUser->isAttached() ) {
 					$this->doFinalOutput( false,
 						'Account on central wiki is not attached (this shouldn\'t happen)',
@@ -731,7 +732,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		if ( $url === false ) {
 			$this->doFinalOutput( false, 'Invalid target wiki' );
 		} else {
-			$this->getOutput()->redirect( // expands to PROTO_CURRENT
+			// expands to PROTO_CURRENT
+			$this->getOutput()->redirect(
 				wfAppendQuery( $url, $params )
 			);
 		}

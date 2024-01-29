@@ -132,6 +132,7 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 		return md5( implode( ':', $parts ) );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'user' => [
@@ -142,7 +143,8 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 				ParamValidator::PARAM_TYPE => [
 					'lock',
 					'unlock',
-					'' // Unset - basically means 'do not modify lock status'
+					// Unset - basically means 'do not modify lock status'
+					''
 				]
 			],
 			'hidden' => [

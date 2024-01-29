@@ -533,7 +533,8 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 
 		$fromPrimary = $this->shouldUsePrimaryDB();
-		$db = $this->getSafeReadDB(); // matches $fromPrimary above
+		// matches $fromPrimary above
+		$db = $this->getSafeReadDB();
 
 		$queryInfo = self::selectQueryInfo();
 
@@ -855,7 +856,8 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $this->mHomeWiki === null || $this->mHomeWiki === '' ) {
 			// Still null... try harder.
 			$attached = $this->queryAttached();
-			$this->mHomeWiki = key( $attached ); // Make sure we always have some value
+			// Make sure we always have some value
+			$this->mHomeWiki = key( $attached );
 			$maxEdits = -1;
 			foreach ( $attached as $wiki => $acc ) {
 				if ( isset( $acc['editCount'] ) && $acc['editCount'] > $maxEdits ) {
@@ -996,10 +998,11 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_name' => $this->mName,
 			'gu_salt' => $salt,
 			'gu_password' => $hash,
-			'gu_auth_token' => MWCryptRand::generateHex( 32 ), // So it doesn't have to be done later
+			// So it doesn't have to be done later
+			'gu_auth_token' => MWCryptRand::generateHex( 32 ),
 			'gu_email' => $email,
 			'gu_email_authenticated' => $dbw->timestampOrNull( $emailAuth ),
-			'gu_registration' => $dbw->timestamp(), // hmmmm
+			'gu_registration' => $dbw->timestamp(),
 			'gu_locked' => 0,
 			'gu_hidden_level' => self::HIDDEN_LEVEL_NONE,
 		];
@@ -1202,11 +1205,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string|false &$home set to false if no permission to do checks
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
-	 * @param array &$methods on success, associative array of each wiki's attachment method	 *
+	 * @param array &$methods on success, associative array of each wiki's attachment method
 	 * @return Status
 	 */
 	public function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
-		$this->checkWriteMode(); // Because it messes with $this->mEmail and so on
+		// Because it messes with $this->mEmail and so on
+		$this->checkWriteMode();
 
 		$home = false;
 		$attached = [];
@@ -1682,9 +1686,20 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $wasSuppressed ) {
 			// "suppress/delete" is taken by core, so use "cadelete"
-			$this->logAction( 'cadelete', $deleter, $reason, [], /* $suppressLog = */ true );
+			$this->logAction(
+				'cadelete',
+				$deleter,
+				$reason,
+				[],
+				true
+			);
 		} else {
-			$this->logAction( 'delete', $deleter, $reason, [], /* $suppressLog = */ false );
+			$this->logAction(
+				'delete',
+				$deleter,
+				$reason,
+				[],
+			);
 		}
 		$this->invalidateCache();
 
@@ -2011,7 +2026,8 @@ class CentralAuthUser implements IDBAccessObject {
 		} else {
 			$affected = $blockStore->deleteBlocksMatchingConds( [
 				'bt_user' => $data['id'],
-				'bl_by' => null, // Our blocks don't have a user associated
+				// Our blocks don't have a user associated
+				'bl_by' => null,
 				'bl_deleted' => true,
 			] );
 
@@ -2309,7 +2325,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function listUnattached() {
 		if ( IPUtils::isIPAddress( $this->mName ) ) {
-			return []; // don't bother with primary database queries
+			// don't bother with primary database queries
+			return [];
 		}
 
 		return $this->doListUnattached();
@@ -2706,7 +2723,8 @@ class CentralAuthUser implements IDBAccessObject {
 			'registration' => wfTimestampOrNull( TS_MW, $row->user_registration ),
 			'password' => $row->user_password,
 			'editCount' => $row->user_editcount,
-			'groupMemberships' => [], // array of (group name => UserGroupMembership object)
+			// array of (group name => UserGroupMembership object)
+			'groupMemberships' => [],
 			'blocked' => false,
 		];
 
@@ -2966,7 +2984,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw->update(
 			'globaluser',
 			$toSet,
-			[ # WHERE
+			[
 				'gu_id' => $this->mGlobalId,
 				'gu_cas_token' => $this->mCasToken
 			],

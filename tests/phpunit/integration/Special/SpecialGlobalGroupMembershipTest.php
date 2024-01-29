@@ -33,7 +33,7 @@ use SpecialPageTestBase;
 use Xml;
 
 /**
- * @coversDefaultClass MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
+ * @coversDefaultClass \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
  * @group Database
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
@@ -72,7 +72,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$caUser->addToGlobalGroup( 'group-two' );
 		$caUser->addToGlobalGroup(
 			'group-three',
-			time() + 1800 // Some time in the future
+			// Some time in the future
+			time() + 1800
 		);
 		return $caUser;
 	}

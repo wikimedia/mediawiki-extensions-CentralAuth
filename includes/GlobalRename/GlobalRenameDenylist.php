@@ -125,13 +125,15 @@ class GlobalRenameDenylist {
 		$this->denylist = [];
 		foreach ( $rows as $row ) {
 			$trimmedRow = trim( $row );
-			if ( $trimmedRow === "" ) { // Empty line
+			// Empty line
+			if ( $trimmedRow === "" ) {
 				continue;
 			}
-			if ( $trimmedRow[0] === "#" ) { // Comment
+			// Comment
+			if ( $trimmedRow[0] === "#" ) {
 				continue;
 			}
-			// TODO: Check user existance, if applicable
+			// @TODO: Check user existence, if applicable
 			$this->denylist[] = $trimmedRow;
 		}
 	}
@@ -158,7 +160,8 @@ class GlobalRenameDenylist {
 			$row = preg_replace( '!(\\\\\\\\)*(\\\\)?/!', '$1\/', $row );
 			$regex = "/$row/u";
 			if ( !StringUtils::isValidPCRERegex( $regex ) ) {
-				continue; // Skip invalid regex
+				// Skip invalid regex
+				continue;
 			}
 			$regexRes = preg_match( $regex, $userName );
 			if ( $regexRes === 1 ) {

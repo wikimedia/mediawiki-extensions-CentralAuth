@@ -156,9 +156,9 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testAdminLockAndHide() {
 		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
-		$this->assertTrue( $caUser->exists() ); # sanity
-		$this->assertFalse( $caUser->isHidden() ); # sanity
-		$this->assertFalse( $caUser->isLocked() ); # sanity
+		$this->assertTrue( $caUser->exists() );
+		$this->assertFalse( $caUser->isHidden() );
+		$this->assertFalse( $caUser->isLocked() );
 
 		$caUser->adminLock();
 		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_LISTS );

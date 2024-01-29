@@ -65,6 +65,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $subpage ) {
 		if ( in_array( $subpage, [ 'start', 'complete' ], true ) ) {
 			$this->logger->debug( 'CentralLogin step {step}', [
@@ -73,7 +74,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		$this->setHeaders();
-		$this->getOutput()->disallowUserJs(); // just in case...
+		$this->getOutput()->disallowUserJs();
 
 		// Check session, if possible
 		$session = $this->getRequest()->getSession();
@@ -139,13 +140,18 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user, array $info ) {
-			if ( !$centralUser->exists() ) { // sanity
+			if ( !$centralUser->exists() ) {
 				return new Exception( "Global user '{$info['name']}' does not exist." );
-			} elseif ( $centralUser->getId() !== $info['guid'] ) { // sanity
+			}
+
+			if ( $centralUser->getId() !== $info['guid'] ) {
 				return new Exception( "Global user does not have ID '{$info['guid']}'." );
-			} elseif ( !$centralUser->isAttached() && $user->isRegistered() ) { // sanity
+			}
+
+			if ( !$centralUser->isAttached() && $user->isRegistered() ) {
 				return new Exception( "User '{$info['name']}' exists locally but is not attached." );
 			}
+
 			return null;
 		};
 
@@ -168,9 +174,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// If they do, then send the user back to the "login successful" page.
 		// We want to avoid overwriting any session that may already exist.
 		$createStubSession = true;
-		if ( isset( $session['user'] ) ) { // fully initialized session
+		if ( isset( $session['user'] ) ) {
+			// fully initialized session
 			if ( $session['user'] !== $centralUser->getName() ) {
-				// User is trying to switch accounts. Let them do so by
+				// If the User is trying to switch accounts. Let them do so by
 				// creating a new central session.
 			} else {
 				// They're already logged in to the target account, don't stomp
@@ -178,7 +185,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 				$createStubSession = false;
 			}
 		// If the user has a stub session, error out if the names do not match up
-		} elseif ( isset( $session['pending_name'] ) ) { // stub session
+		} elseif ( isset( $session['pending_name'] ) ) {
+			// stub session
 			if ( $session['pending_name'] !== $centralUser->getName() ) {
 				$this->showError( 'centralauth-error-token-wronguser' );
 				return;
@@ -210,7 +218,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$key = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
 		$data = [
 			'sessionId' => $newSessionId,
-			'secret'    => $info['secret'] // should match the login attempt secret
+			// should match the login attempt secret
+			'secret'    => $info['secret']
 		];
 		$tokenStore = $this->sessionManager->getTokenStore();
 		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
@@ -251,7 +260,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$tokenStore = $this->sessionManager->getTokenStore();
 
 		$key = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
-		$skey = 'CentralAuth:autologin:current-attempt'; // session key
+		$sessionKey = 'CentralAuth:autologin:current-attempt';
 
 		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
 
@@ -261,7 +270,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Get the user's current login attempt information
-		$attempt = $request->getSessionData( $skey );
+		$attempt = $request->getSessionData( $sessionKey );
 		if ( !isset( $attempt['secret'] ) ) {
 			$this->showError( 'centralauth-error-nologinattempt' );
 			return;
@@ -275,13 +284,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user ) {
-			if ( !$user->getId() ) { // sanity
+			if ( !$user->getId() ) {
 				return new Exception( "The user account logged into does not exist." );
 			}
-			if ( !$centralUser->getId() ) { // sanity
+			if ( !$centralUser->getId() ) {
 				return new Exception( "The central user account does not exist." );
 			}
-			if ( !$centralUser->isAttached() ) { // sanity
+			if ( !$centralUser->isAttached() ) {
 				return new Exception( "The user account is not attached." );
 			}
 			return null;
@@ -317,7 +326,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		ScopedCallback::consume( $delay );
 
 		// Remove the "current login attempt" information
-		$request->setSessionData( $skey, null );
+		$request->setSessionData( $sessionKey, null );
 
 		// Update the current user global $wgUser,
 		// bypassing deprecation warnings because CentralAuth is the one place outside
@@ -364,6 +373,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'extension' => 'CentralAuth',
 		] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
-		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' ); // JS only
+		// JS only
+		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' );
 	}
 }

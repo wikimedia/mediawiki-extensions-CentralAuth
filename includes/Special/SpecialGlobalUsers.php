@@ -48,7 +48,8 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$this->addHelpLink( 'Extension:CentralAuth' );
 
 		$context = new DerivativeContext( $this->getContext() );
-		$context->setTitle( $this->getPageTitle() ); // Remove subpage
+		// Remove subpage
+		$context->setTitle( $this->getPageTitle() );
 
 		$pg = new GlobalUsersPager(
 			$context,

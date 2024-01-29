@@ -355,7 +355,8 @@ class SpecialCentralAuth extends SpecialPage {
 		$legend = $this->msg( $this->mCanEdit ? 'centralauth-admin-manage' : 'centralauth-admin-view' )->text();
 
 		$context = new DerivativeContext( $this->getContext() );
-		$context->setTitle( $this->getPageTitle() ); // Remove subpage
+		// Remove subpage
+		$context->setTitle( $this->getPageTitle() );
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
 		$htmlForm
 			->setMethod( 'get' )
@@ -523,12 +524,18 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function listHeader() {
 		$columns = [
-			"localwiki",   // centralauth-admin-list-localwiki
-			"attached-on", // centralauth-admin-list-attached-on
-			"method",      // centralauth-admin-list-method
-			"blocked",     // centralauth-admin-list-blocked
-			"editcount",   // centralauth-admin-list-editcount
-			"groups",      // centralauth-admin-list-groups
+			// centralauth-admin-list-localwiki
+			"localwiki",
+			// centralauth-admin-list-attached-on
+			"attached-on",
+			// centralauth-admin-list-method
+			"method",
+			// centralauth-admin-list-blocked
+			"blocked",
+			// centralauth-admin-list-editcount
+			"editcount",
+			// centralauth-admin-list-groups
+			"groups",
 		];
 		$header = Xml::openElement( 'form', [
 			'method' => 'post',

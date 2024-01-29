@@ -330,8 +330,12 @@ class SpecialMergeAccount extends SpecialPage {
 			throw new Exception( "Submission error -- invalid input" );
 		}
 
-		$globalUser->storeAndMigrate( $passwords, /* $sendToRC = */ true,
-			/* $safe = */ false, /* $checkHome = */ true );
+		$globalUser->storeAndMigrate(
+			$passwords,
+			true,
+			false,
+			true
+		);
 		$this->clearWorkingPasswords();
 
 		$this->showCleanupForm();

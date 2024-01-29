@@ -163,6 +163,10 @@ class PopulateGlobalEditCount extends Maintenance {
 		$this->output( "Complete. Updated $numUpdated of $numGlobalAccounts edit counts.\n" );
 	}
 
+	/**
+	 * @param int $position
+	 * @param int $end
+	 */
 	private function showProgress( $position, $end ) {
 		$now = time();
 		if ( !$this->isQuiet() && $now - $this->lastReportTime >= 10 ) {

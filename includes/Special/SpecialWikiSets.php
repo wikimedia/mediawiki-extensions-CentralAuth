@@ -64,7 +64,8 @@ class SpecialWikiSets extends SpecialPage {
 				$this->showNoPermissionsView();
 			}
 
-			$subpage = substr( $subpage, 7 ); // Remove delete/ part
+			// Remove delete/ part
+			$subpage = substr( $subpage, 7 );
 
 			if ( is_numeric( $subpage ) ) {
 				if ( $tokenOk ) {

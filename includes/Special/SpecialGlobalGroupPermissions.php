@@ -549,7 +549,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				$addRights[] = $right;
 			} elseif ( $alreadyAssigned && !$checked ) {
 				$removeRights[] = $right;
-			} # Otherwise, do nothing.
+			}
 		}
 
 		// Disallow deleting existing groups with members in them

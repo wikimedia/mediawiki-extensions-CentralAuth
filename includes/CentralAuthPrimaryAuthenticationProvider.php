@@ -272,7 +272,8 @@ class CentralAuthPrimaryAuthenticationProvider
 				DeferredUpdates::addCallableUpdate( static function () use ( $user ) {
 					$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 					if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
-						return; // something major changed?
+						// something major changed?
+						return;
 					}
 
 					$user->setEmail( $centralUser->getEmail() );

@@ -62,6 +62,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'user' => [

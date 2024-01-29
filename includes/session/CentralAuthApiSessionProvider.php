@@ -86,7 +86,8 @@ class CentralAuthApiSessionProvider
 	 * @return bool
 	 */
 	public function onApiCheckCanExecute( $module, $user, &$message ) {
-		$token = $module->getMain()->getVal( 'centralauthtoken' ); # Mark used
+		// Mark used
+		$token = $module->getMain()->getVal( 'centralauthtoken' );
 
 		// NOTE: Call parent, because we override consumeToken() in this class
 		//       to operate indirectly via this hook.

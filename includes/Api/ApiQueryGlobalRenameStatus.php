@@ -30,6 +30,8 @@ use Wikimedia\ParamValidator\ParamValidator;
  * API module equivalent of Special:GlobalRenameStatus
  */
 class ApiQueryGlobalRenameStatus extends ApiQueryBase {
+
+	/** @inheritDoc */
 	public function __construct( ApiQuery $queryModule, $moduleName ) {
 		parent::__construct( $queryModule, $moduleName, 'grs' );
 	}
@@ -74,7 +76,7 @@ class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 	 * @see ApiBase::getAllowedParams()
 	 * @return array[]
 	 */
-	public function getAllowedParams( /* $flags = 0 */ ) {
+	public function getAllowedParams() {
 		return [
 			'user' => [
 				ParamValidator::PARAM_TYPE => 'user',

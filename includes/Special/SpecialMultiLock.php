@@ -134,7 +134,8 @@ class SpecialMultiLock extends SpecialPage {
 	private function getGlobalUsers( $usernames, $fromPrimaryDb = false ) {
 		$ret = [];
 		foreach ( $usernames as $username ) {
-			$username = str_replace( '_', ' ', $username ); // T270954
+			// T270954
+			$username = str_replace( '_', ' ', $username );
 			$username = trim( $username );
 			if ( $username === '' ) {
 				$ret[] = false;
@@ -526,7 +527,8 @@ class SpecialMultiLock extends SpecialPage {
 			'',
 			[
 				'conds' => [
-					'log_action' => 'setstatus' // T59253
+					// T59253
+					'log_action' => 'setstatus'
 				],
 				'showIfEmpty' => true
 			] );

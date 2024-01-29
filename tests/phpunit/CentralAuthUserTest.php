@@ -102,7 +102,8 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 					'foowiki' => [ 'attachedMethod' => 'primary', 'editCount' => 4 ],
 					'barwiki' => [ 'attachedMethod' => 'password', 'editCount' => 6 ]
 				],
-				'foowiki' // Primary account "wins" over edit count
+				// Primary account "wins" over edit count
+				'foowiki'
 			],
 			[
 				[
@@ -327,7 +328,8 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		$user->register( 'blabla', 'test@test.test' );
 		$this->assertSame( 'test@test.test', $user->getEmail() );
 
-		$user->getStateHash( true ); // reload
+		// reload
+		$user->getStateHash( true );
 		$this->assertSame( 'test@test.test', $user->getEmail() );
 	}
 }

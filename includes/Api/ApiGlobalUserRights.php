@@ -176,10 +176,12 @@ class ApiGlobalUserRights extends ApiBase {
 		return $status->value;
 	}
 
+	/** @inheritDoc */
 	public function mustBePosted() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
