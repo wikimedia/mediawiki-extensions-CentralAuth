@@ -741,51 +741,51 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	private function logFinished( $ok, $status, $type ): void {
 		switch ( $this->subpage ) {
-		// Extra steps, not part of the login process
-		case 'toolslist':
-		case 'refreshCookies':
-		case 'deleteCookies':
-			$this->logger->debug( "{$this->subpage} attempt", [
-				'successful' => $ok,
-				'status' => $status,
-			] );
-			break;
-
-		// Login process
-		default:
-			if ( !in_array( $type, [ 'icon', '1x1', 'redirect', 'script', 'error' ] ) ) {
-				// The type is included in metric names, so don't allow weird user-controlled values
-				$type = 'unknown';
-			}
-
-			// Distinguish edge logins and autologins. Conveniently, all edge logins
-			// (and only edge logins) set the otherwise mostly vestigial 'from' parameter,
-			// and it's passed through all steps.
-			if ( $this->getRequest()->getCheck( 'from' ) ) {
-				LoggerFactory::getInstance( 'authevents' )->info( 'Edge login attempt', [
-					'event' => 'edgelogin',
+			// Extra steps, not part of the login process
+			case 'toolslist':
+			case 'refreshCookies':
+			case 'deleteCookies':
+				$this->logger->debug( "{$this->subpage} attempt", [
 					'successful' => $ok,
 					'status' => $status,
-					// Log this so that we can differentiate between:
-					// - success page edge login (type=icon) [no longer used]
-					// - next pageview edge login (type=1x1)
-					'type' => $type,
-					'extension' => 'CentralAuth',
 				] );
-			} else {
-				LoggerFactory::getInstance( 'authevents' )->info( 'Central autologin attempt', [
-					'event' => 'centralautologin',
-					'successful' => $ok,
-					'status' => $status,
-					// Log this so that we can differentiate between:
-					// - top-level autologin (type=redirect)
-					// - JS subresource autologin (type=script)
-					// - no-JS subresource autologin (type=1x1) (likely rarely successful - check this)
-					'type' => $type,
-					'extension' => 'CentralAuth',
-				] );
-			}
-			break;
+				break;
+
+			// Login process
+			default:
+				if ( !in_array( $type, [ 'icon', '1x1', 'redirect', 'script', 'error' ] ) ) {
+					// The type is included in metric names, so don't allow weird user-controlled values
+					$type = 'unknown';
+				}
+
+				// Distinguish edge logins and autologins. Conveniently, all edge logins
+				// (and only edge logins) set the otherwise mostly vestigial 'from' parameter,
+				// and it's passed through all steps.
+				if ( $this->getRequest()->getCheck( 'from' ) ) {
+					LoggerFactory::getInstance( 'authevents' )->info( 'Edge login attempt', [
+						'event' => 'edgelogin',
+						'successful' => $ok,
+						'status' => $status,
+						// Log this so that we can differentiate between:
+						// - success page edge login (type=icon) [no longer used]
+						// - next pageview edge login (type=1x1)
+						'type' => $type,
+						'extension' => 'CentralAuth',
+					] );
+				} else {
+					LoggerFactory::getInstance( 'authevents' )->info( 'Central autologin attempt', [
+						'event' => 'centralautologin',
+						'successful' => $ok,
+						'status' => $status,
+						// Log this so that we can differentiate between:
+						// - top-level autologin (type=redirect)
+						// - JS subresource autologin (type=script)
+						// - no-JS subresource autologin (type=1x1) (likely rarely successful - check this)
+						'type' => $type,
+						'extension' => 'CentralAuth',
+					] );
+				}
+				break;
 		}
 	}
 

@@ -111,7 +111,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			return true;
 		}
 
-		list( $oldName, $newName ) = $names;
+		[ $oldName, $newName ] = $names;
 
 		$statuses = $this->renameuserStatus->getStatuses();
 

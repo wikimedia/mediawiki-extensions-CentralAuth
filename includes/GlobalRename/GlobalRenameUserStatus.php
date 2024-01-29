@@ -106,7 +106,7 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return string[]
 	 */
 	public function getStatuses( $flags = 0 ) {
-		list( $index, $options ) = DBAccessObjectUtils::getDBOptions( $flags );
+		[ $index, $options ] = DBAccessObjectUtils::getDBOptions( $flags );
 		$db = $this->getDB( $index );
 
 		$res = $db->newSelectQueryBuilder()

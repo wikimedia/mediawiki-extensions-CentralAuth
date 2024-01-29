@@ -893,7 +893,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function register( $password, $email ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		list( $salt, $hash ) = $this->saltedPassword( $password );
+		[ $salt, $hash ] = $this->saltedPassword( $password );
 		if ( !$this->mAuthToken ) {
 			$this->mAuthToken = MWCryptRand::generateHex( 32 );
 		}
@@ -1986,7 +1986,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->getDatabaseBlockStore( $wikiId );
 
 		if ( $suppress ) {
-			list( , $lang ) = $wgConf->siteFromDB( $wiki );
+			[ , $lang ] = $wgConf->siteFromDB( $wiki );
 			if ( !MediaWikiServices::getInstance()->getLanguageNameUtils()->isSupportedLanguage( $lang ) ) {
 				$lang = 'en';
 			}
@@ -2854,7 +2854,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// Make sure state is loaded before updating ->mPassword
 		$this->loadState();
 
-		list( $salt, $hash ) = $this->saltedPassword( $password );
+		[ $salt, $hash ] = $this->saltedPassword( $password );
 
 		$this->mPassword = $hash;
 		$this->mSalt = $salt;

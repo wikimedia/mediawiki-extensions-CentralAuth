@@ -96,7 +96,7 @@ class AttachAccount extends Maintenance {
 		if ( $file === false ) {
 			$this->fatalError( "ERROR - Could not open file: {$list}" );
 		}
-		// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
+		// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 		while ( strlen( $username = trim( fgets( $file ) ) ) ) {
 			$this->attach( $username );
 			if ( $this->total % $this->mBatchSize == 0 ) {

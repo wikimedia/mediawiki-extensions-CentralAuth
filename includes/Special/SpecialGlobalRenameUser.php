@@ -260,16 +260,16 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			!$this->overrideTitleBlacklist
 			&& ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' )
 		) {
-				$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
-					Title::makeTitleSafe( NS_USER, $newUser->getName() ),
-					'new-account'
+			$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
+				Title::makeTitleSafe( NS_USER, $newUser->getName() ),
+				'new-account'
+			);
+			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
+				return Status::newFatal(
+					$this->msg( 'centralauth-rename-titleblacklist-match' )
+						->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )
 				);
-				if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
-					return Status::newFatal(
-						$this->msg( 'centralauth-rename-titleblacklist-match' )
-							->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )
-					);
-				}
+			}
 		}
 
 		// Validate rename deny list

@@ -98,7 +98,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				exit( 1 );
 			}
 			$databaseManager = CentralAuthServices::getDatabaseManager();
-			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
+			// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 			while ( $username = fgets( $file ) ) {
 				// trim the \n
 				$username = trim( $username );

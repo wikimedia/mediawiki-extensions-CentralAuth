@@ -112,7 +112,7 @@ class MigrateAccount extends Maintenance {
 				exit( 1 );
 			}
 
-			// phpcs:ignore MediaWiki.ControlStructures.AssignmentInControlStructures
+			// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 			while ( strlen( $line = trim( fgets( $file ) ) ) ) {
 				$values = explode( "\t", $line );
 				switch ( count( $values ) ) {
