@@ -55,6 +55,7 @@ class CentralAuthApiSessionProvider
 		return parent::makeBogusSessionInfo( $code, $error );
 	}
 
+	/** @inheritDoc */
 	public function provideSessionInfo( WebRequest $request ) {
 		// Only relevant in the API
 		if ( !defined( 'MW_API' ) ) {

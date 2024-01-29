@@ -84,6 +84,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return $user->isAllowed( 'globalgrouppermissions' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $subpage ) {
 		$this->addHelpLink( 'Extension:CentralAuth' );
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
@@ -813,6 +814,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}

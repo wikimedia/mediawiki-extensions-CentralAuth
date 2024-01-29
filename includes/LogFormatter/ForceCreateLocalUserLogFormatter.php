@@ -10,6 +10,7 @@ use LogFormatter;
  */
 class ForceCreateLocalUserLogFormatter extends LogFormatter {
 
+	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-newusers-forcecreatelocal';
 	}

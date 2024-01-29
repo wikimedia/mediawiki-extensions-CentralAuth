@@ -104,10 +104,12 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$APIResult->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'prop' => [

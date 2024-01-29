@@ -29,6 +29,10 @@ use ErrorPageError;
  * @ingroup Exception
  */
 class CentralAuthReadOnlyError extends ErrorPageError {
+
+	/**
+	 * @param string $reason
+	 */
 	public function __construct( $reason ) {
 		parent::__construct(
 			'centralauth-readonly',

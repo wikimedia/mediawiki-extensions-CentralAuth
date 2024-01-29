@@ -38,10 +38,12 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 	public function __construct( $params = [] ) {
 	}
 
+	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
 		return [];
 	}
 
+	/** @inheritDoc */
 	public function beginSecondaryAuthentication( $user, array $reqs ) {
 		$centralUser = CentralAuthUser::getInstance( $user );
 
@@ -85,6 +87,7 @@ class CentralAuthSecondaryAuthenticationProvider extends AbstractSecondaryAuthen
 		return AuthenticationResponse::newAbstain();
 	}
 
+	/** @inheritDoc */
 	public function beginSecondaryAccountCreation( $user, $creator, array $reqs ) {
 		return AuthenticationResponse::newAbstain();
 	}

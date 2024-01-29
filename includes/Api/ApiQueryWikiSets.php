@@ -25,6 +25,7 @@
 namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
+use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
@@ -41,7 +42,12 @@ class ApiQueryWikiSets extends ApiQueryBase {
 	/** @var CentralAuthWikiListService */
 	private $wikiListService;
 
-	public function __construct( $query, $moduleName, CentralAuthWikiListService $wikiListService ) {
+	/**
+	 * @param ApiQuery $query
+	 * @param string $moduleName
+	 * @param CentralAuthWikiListService $wikiListService
+	 */
+	public function __construct( ApiQuery $query, $moduleName, CentralAuthWikiListService $wikiListService ) {
 		parent::__construct( $query, $moduleName, 'ws' );
 
 		$this->wikiListService = $wikiListService;
@@ -95,10 +101,12 @@ class ApiQueryWikiSets extends ApiQueryBase {
 		$APIResult->addValue( 'query', $this->getModuleName(), $data );
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		return 'public';
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'from' => null,

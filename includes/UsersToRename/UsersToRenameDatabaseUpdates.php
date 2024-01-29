@@ -3,11 +3,12 @@
 namespace MediaWiki\Extension\CentralAuth\UsersToRename;
 
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IResultWrapper;
 
 class UsersToRenameDatabaseUpdates {
 
 	/**
-	 * Notified via talk apge
+	 * Notified via talk page
 	 */
 	public const NOTIFIED = 4;
 	/**
@@ -28,6 +29,11 @@ class UsersToRenameDatabaseUpdates {
 		$this->db = $db;
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $wiki
+	 * @param int $status
+	 */
 	protected function updateStatus( $name, $wiki, $status ) {
 		$this->db->update(
 			'users_to_rename',
@@ -37,18 +43,34 @@ class UsersToRenameDatabaseUpdates {
 		);
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $wiki
+	 */
 	public function markNotified( $name, $wiki ) {
 		$this->updateStatus( $name, $wiki, self::NOTIFIED );
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $wiki
+	 */
 	public function markRenamed( $name, $wiki ) {
 		$this->updateStatus( $name, $wiki, self::RENAMED );
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $wiki
+	 */
 	public function markRedirectSkipped( $name, $wiki ) {
 		$this->updateStatus( $name, $wiki, self::REDIRECT );
 	}
 
+	/**
+	 * @param string $name
+	 * @param string $wiki
+	 */
 	public function remove( $name, $wiki ) {
 		$this->db->delete(
 			'users_to_rename',
@@ -90,16 +112,21 @@ class UsersToRenameDatabaseUpdates {
 		);
 	}
 
+	/**
+	 * @param string $wiki
+	 * @param int $status
+	 * @param int $limit
+	 *
+	 * @return IResultWrapper
+	 */
 	public function findUsers( $wiki, $status, $limit ) {
-		$rows = $this->db->select(
+		// @todo this shouldn't return prefixed field names
+		return $this->db->select(
 			'users_to_rename',
 			[ 'utr_name', 'utr_wiki' ],
 			[ 'utr_status' => $status, 'utr_wiki' => $wiki ],
 			__METHOD__,
 			[ 'LIMIT' => $limit ]
 		);
-
-		// @todo this shouldn't return prefixed field names
-		return $rows;
 	}
 }

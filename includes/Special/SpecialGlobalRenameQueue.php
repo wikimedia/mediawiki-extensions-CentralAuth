@@ -622,6 +622,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		return $status;
 	}
 
+	/**
+	 * @param bool $approved
+	 * @param array $data
+	 *
+	 * @return Status
+	 */
 	protected function doResolveRequest( $approved, $data ) {
 		$request = $this->globalRenameRequestStore->newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
@@ -797,10 +803,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		return UserMailer::send( $to, $from, $subject, $body );
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}
 
+	/** @inheritDoc */
 	public function getSubpagesForPrefixSearch() {
 		return [
 			self::PAGE_OPEN_QUEUE,

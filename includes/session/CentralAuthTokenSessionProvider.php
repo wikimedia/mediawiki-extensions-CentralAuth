@@ -4,6 +4,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\User\User;
@@ -75,6 +76,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 	 */
 	abstract protected function getTokenFromRequest( WebRequest $request );
 
+	/** @inheritDoc */
 	public function provideSessionInfo( WebRequest $request ) {
 		$oneTimeToken = $this->getTokenFromRequest( $request );
 		if ( $oneTimeToken === null ) {
@@ -193,16 +195,19 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function persistSession(
-		MediaWiki\Session\SessionBackend $session, WebRequest $request
+		SessionBackend $session, WebRequest $request
 	) {
 		// Nothing to do
 	}
 
+	/** @inheritDoc */
 	public function unpersistSession( WebRequest $request ) {
 		// Nothing to do
 	}
 
+	/** @inheritDoc */
 	public function invalidateSessionsForUser( User $user ) {
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->isRegistered() ) ) {
@@ -210,6 +215,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		}
 	}
 
+	/** @inheritDoc */
 	public function preventSessionsForUser( $username ) {
 		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {

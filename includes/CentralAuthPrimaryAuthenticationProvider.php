@@ -124,6 +124,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->antiSpoofAccounts = (bool)$params['antiSpoofAccounts'];
 	}
 
+	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
 		$ret = parent::getAuthenticationRequests( $action, $options );
 
@@ -147,6 +148,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		);
 	}
 
+	/** @inheritDoc */
 	public function beginPrimaryAuthentication( array $reqs ) {
 		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( !$req ) {
@@ -261,6 +263,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 	}
 
+	/** @inheritDoc */
 	public function postAuthentication( $user, AuthenticationResponse $response ) {
 		if ( $response->status === AuthenticationResponse::PASS ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
@@ -285,6 +288,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 	}
 
+	/** @inheritDoc */
 	public function testUserCanAuthenticate( $username ) {
 		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
@@ -306,6 +310,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			!$centralUser->getPasswordObject() instanceof InvalidPassword;
 	}
 
+	/** @inheritDoc */
 	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
 		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
@@ -316,6 +321,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		return $centralUser && $centralUser->exists();
 	}
 
+	/** @inheritDoc */
 	public function providerAllowsAuthenticationDataChange(
 		AuthenticationRequest $req, $checkData = true
 	) {
@@ -349,6 +355,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		return StatusValue::newGood( 'ignored' );
 	}
 
+	/** @inheritDoc */
 	public function providerChangeAuthenticationData( AuthenticationRequest $req ) {
 		$username = $req->username !== null
 			? $this->userNameUtils->getCanonical( $req->username, UserNameUtils::RIGOR_USABLE )
@@ -372,6 +379,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		return self::TYPE_CREATE;
 	}
 
+	/** @inheritDoc */
 	public function testUserForCreation( $user, $autocreate, array $options = [] ) {
 		global $wgCentralAuthEnableGlobalRenameRequest;
 
@@ -434,10 +442,12 @@ class CentralAuthPrimaryAuthenticationProvider
 	 */
 	private static function getAntiSpoofAuthenticationRequest( array $reqs ) {
 		return AuthenticationRequest::getRequestByClass(
-			$reqs, AntiSpoofAuthenticationRequest::class
+			$reqs,
+			AntiSpoofAuthenticationRequest::class
 		);
 	}
 
+	/** @inheritDoc */
 	public function testForAccountCreation( $user, $creator, array $reqs ) {
 		$req = self::getPasswordAuthenticationRequest( $reqs );
 
@@ -462,6 +472,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		return $ret;
 	}
 
+	/** @inheritDoc */
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
 		$req = self::getPasswordAuthenticationRequest( $reqs );
 		if ( $req ) {
@@ -487,6 +498,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		return AuthenticationResponse::newAbstain();
 	}
 
+	/** @inheritDoc */
 	public function finishAccountCreation( $user, $creator, AuthenticationResponse $response ) {
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
@@ -501,6 +513,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		return null;
 	}
 
+	/** @inheritDoc */
 	public function autoCreatedAccount( $user, $source ) {
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( !$centralUser->exists() ) {

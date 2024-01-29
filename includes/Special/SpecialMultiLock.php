@@ -63,6 +63,7 @@ class SpecialMultiLock extends SpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function execute( $subpage ) {
 		$this->setHeaders();
 		$this->checkPermissions();
@@ -477,10 +478,18 @@ class SpecialMultiLock extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param string $key
+	 * @param mixed ...$params
+	 */
 	private function showError( $key, ...$params ) {
 		$this->getOutput()->addHTML( Html::errorBox( $this->msg( $key, ...$params )->parse() ) );
 	}
 
+	/**
+	 * @param string $key
+	 * @param mixed ...$params
+	 */
 	private function showSuccess( $key, ...$params ) {
 		$this->getOutput()->addHTML( Html::successBox( $this->msg( $key, ...$params )->parse() ) );
 	}
@@ -539,6 +548,7 @@ class SpecialMultiLock extends SpecialPage {
 		}
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}

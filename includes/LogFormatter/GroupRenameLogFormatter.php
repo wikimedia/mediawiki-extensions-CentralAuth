@@ -13,6 +13,7 @@ use Message;
  */
 class GroupRenameLogFormatter extends LogFormatter {
 
+	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-gblrights-grouprename';
 	}

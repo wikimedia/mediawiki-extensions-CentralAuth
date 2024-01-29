@@ -229,6 +229,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 	}
 
+	/**
+	 * @return string
+	 */
 	private function getSuccessURL() {
 		return $this->getPageTitle( $this->mTarget )->getFullURL();
 	}

@@ -113,6 +113,7 @@ class SpecialCentralAuth extends SpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function execute( $subpage ) {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
@@ -327,10 +328,18 @@ class SpecialCentralAuth extends SpecialPage {
 		);
 	}
 
+	/**
+	 * @param string $key
+	 * @param mixed ...$params
+	 */
 	private function showError( $key, ...$params ) {
 		$this->getOutput()->addHTML( Html::errorBox( $this->msg( $key, ...$params )->parse() ) );
 	}
 
+	/**
+	 * @param string $key
+	 * @param mixed ...$params
+	 */
 	private function showSuccess( $key, ...$params ) {
 		$this->getOutput()->addHTML( Html::successBox( $this->msg( $key, ...$params )->parse() ) );
 	}
@@ -1167,6 +1176,7 @@ class SpecialCentralAuth extends SpecialPage {
 			->fetchFieldValues();
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}

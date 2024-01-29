@@ -14,6 +14,7 @@ class UserEditCountUpdateHookHandler implements UserEditCountUpdateHook {
 		$this->editCounter = $editCounter;
 	}
 
+	/** @inheritDoc */
 	public function onUserEditCountUpdate( $infos ): void {
 		foreach ( $infos as $info ) {
 			$centralUser = CentralAuthUser::getInstanceByName( $info->getUser()->getName() );

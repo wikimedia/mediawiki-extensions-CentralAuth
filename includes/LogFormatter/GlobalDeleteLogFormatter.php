@@ -11,6 +11,7 @@ use LogFormatter;
  */
 class GlobalDeleteLogFormatter extends LogFormatter {
 
+	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-globalauth-delete';
 	}

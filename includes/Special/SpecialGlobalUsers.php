@@ -43,6 +43,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
@@ -94,6 +95,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		);
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}

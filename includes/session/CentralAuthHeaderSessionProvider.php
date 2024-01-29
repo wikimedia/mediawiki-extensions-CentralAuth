@@ -15,6 +15,7 @@ use MediaWiki\Request\WebRequest;
  */
 class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 
+	/** @inheritDoc */
 	protected function getTokenFromRequest( WebRequest $request ) {
 		$authHeader = $request->getHeader( 'Authorization' );
 		if ( $authHeader === null ) {

@@ -48,6 +48,7 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 		return $this->msg( 'centralauth-createlocal-pretext' )->parse();
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->requireNamedUser();
 		$this->checkPermissions();

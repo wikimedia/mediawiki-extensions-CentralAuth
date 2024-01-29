@@ -182,6 +182,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		return $fields;
 	}
 
+	/** @inheritDoc */
 	protected function getSubpageField() {
 		return 'oldname';
 	}
@@ -333,6 +334,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$this->getOutput()->addHTML( $msg );
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'users';
 	}

@@ -253,6 +253,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return new SessionInfo( $this->priority, $info );
 	}
 
+	/** @inheritDoc */
 	public function refreshSessionInfo( SessionInfo $info, WebRequest $request, &$metadata ) {
 		// Sanity check on the metadata, to avoid T124409
 		if ( isset( $metadata['CentralAuthSource'] ) ) {
@@ -295,6 +296,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function sessionIdWasReset( SessionBackend $session, $oldId ) {
 		if ( !$this->enable ) {
 			return;
@@ -311,6 +313,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		$this->sessionManager->setCentralSession( $data, true, $s );
 	}
 
+	/** @inheritDoc */
 	protected function sessionDataToExport( $user ) {
 		$data = parent::sessionDataToExport( $user );
 
@@ -324,6 +327,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return $data;
 	}
 
+	/** @inheritDoc */
 	protected function cookieDataToExport( $user, $remember ) {
 		// If we're going to set CA cookies, don't remember in core cookies.
 		if ( $remember ) {
@@ -432,6 +436,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			[ 'prefix' => '' ] + $this->centralCookieOptions );
 	}
 
+	/** @inheritDoc */
 	public function invalidateSessionsForUser( User $user ) {
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->isRegistered() ) ) {
@@ -439,6 +444,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		}
 	}
 
+	/** @inheritDoc */
 	public function preventSessionsForUser( $username ) {
 		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
 		if ( !$username ) {
@@ -476,6 +482,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		// so this cookie is not needed.
 	}
 
+	/** @inheritDoc */
 	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
 		if ( $loggedOut + 86400 > time() &&
 			$loggedOut !== (int)$this->getCookie(
@@ -502,6 +509,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return $cookies;
 	}
 
+	/** @inheritDoc */
 	public function suggestLoginUsername( WebRequest $request ) {
 		$name = $this->getCookie( $request, 'User', $this->centralCookieOptions['prefix'] );
 		if ( $name !== null ) {
@@ -524,12 +532,14 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 		return $this->centralCookieOptions['domain'];
 	}
 
+	/** @inheritDoc */
 	protected function getExtendedLoginCookies() {
 		$cookies = parent::getExtendedLoginCookies();
 		$cookies[] = 'User';
 		return $cookies;
 	}
 
+	/** @inheritDoc */
 	public function getRememberUserDuration() {
 		// CentralAuth needs User and Token cookies to remember the user. The fallback to
 		// sessions needs UserID as well, so if that one has shorter expiration, the remember

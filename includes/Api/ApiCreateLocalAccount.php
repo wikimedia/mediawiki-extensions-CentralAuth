@@ -17,6 +17,11 @@ class ApiCreateLocalAccount extends ApiBase {
 	/** @var CentralAuthForcedLocalCreationService */
 	private $forcedLocalCreationService;
 
+	/**
+	 * @param ApiMain $mainModule
+	 * @param string $moduleName
+	 * @param CentralAuthForcedLocalCreationService $forcedLocalCreationService
+	 */
 	public function __construct(
 		ApiMain $mainModule,
 		$moduleName,
@@ -48,6 +53,7 @@ class ApiCreateLocalAccount extends ApiBase {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'username' => [

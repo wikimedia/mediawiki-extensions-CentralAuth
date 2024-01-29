@@ -719,6 +719,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 	}
 
+	/**
+	 * @param string $target
+	 * @param string $state
+	 * @param array $params
+	 */
 	private function do302Redirect( $target, $state, $params ) {
 		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
 		if ( WikiMap::getCurrentWikiId() == $this->loginWiki
@@ -739,6 +744,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 	}
 
+	/**
+	 * @param bool $ok
+	 * @param string $status
+	 * @param string $type
+	 */
 	private function logFinished( $ok, $status, $type ): void {
 		switch ( $this->subpage ) {
 			// Extra steps, not part of the login process
@@ -789,8 +799,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 	}
 
-	private function doFinalOutput( $ok, $status, $body = '', $type = false ) {
+	/**
+	 * @param bool $ok
+	 * @param string $status
+	 * @param string $body
+	 * @param string $type
+	 */
+	private function doFinalOutput( $ok, $status, $body = '', $type = '' ) {
 		$type = $type ?: $this->getRequest()->getVal( 'type', 'script' );
+		'@phan-var string $type';
 
 		if ( $type === 'redirect' ) {
 			$returnUrlToken = $this->getRequest()->getVal( 'returnUrlToken', '' );
@@ -851,6 +868,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 	}
 
+	/**
+	 * @param string &$wikiId
+	 *
+	 * @return bool
+	 */
 	private function checkIsCentralWiki( &$wikiId ) {
 		if ( WikiMap::getCurrentWikiId() !== $this->loginWiki ) {
 			$this->doFinalOutput( false, 'Not central wiki' );

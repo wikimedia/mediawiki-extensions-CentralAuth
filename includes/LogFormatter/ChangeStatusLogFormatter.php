@@ -21,6 +21,7 @@ class ChangeStatusLogFormatter extends LogFormatter {
 		return $this->msg( 'centralauth-log-status-none' )->text();
 	}
 
+	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-globalauth-setstatus';
 	}

@@ -186,6 +186,7 @@ class ApiGlobalUserRights extends ApiBase {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams( $flags = 0 ) {
 		$allGroups = $this->globalGroupLookup->getDefinedGroups();
 		if ( $flags & ApiBase::GET_VALUES_FOR_HELP ) {
@@ -231,6 +232,7 @@ class ApiGlobalUserRights extends ApiBase {
 		return 'userrights';
 	}
 
+	/** @inheritDoc */
 	protected function getWebUITokenSalt( array $params ) {
 		return $this->getCentralAuthUser( $params )->getName();
 	}
@@ -245,6 +247,7 @@ class ApiGlobalUserRights extends ApiBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHelpUrls() {
 		return 'https://www.mediawiki.org/wiki/Special:MyLanguage/API:User_group_membership';
 	}

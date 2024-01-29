@@ -16,6 +16,7 @@ class PermissionChangeLogFormatter extends LogFormatter {
 			: $this->msg( 'rightsnone' )->text();
 	}
 
+	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-gblrights-groupprms2';
 	}

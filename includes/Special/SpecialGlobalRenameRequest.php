@@ -74,6 +74,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function userCanExecute( User $user ) {
 		return $this->globalRenameDenylist->checkUser( $user->getName() );
 	}
@@ -355,6 +356,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		return false;
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'login';
 	}

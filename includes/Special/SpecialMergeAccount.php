@@ -60,6 +60,7 @@ class SpecialMergeAccount extends SpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function execute( $subpage ) {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
@@ -190,7 +191,10 @@ class SpecialMergeAccount extends SpecialPage {
 			gzinflate(
 				$this->xorString(
 					$data[$this->mSessionToken],
-					$this->mSessionKey ) ) );
+					$this->mSessionKey
+				)
+			)
+		);
 		AtEase::restoreWarnings();
 		if ( is_array( $passwords ) ) {
 			return $passwords;
@@ -711,6 +715,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'centralauth-disabled-dryrun' );
 	}
 
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'login';
 	}

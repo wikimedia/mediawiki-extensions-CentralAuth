@@ -270,6 +270,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		return $groupsOfUser;
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		$globalGroups = $this->globalGroupLookup->getDefinedGroups();
 		return [

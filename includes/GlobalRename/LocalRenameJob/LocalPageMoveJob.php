@@ -84,6 +84,10 @@ class LocalPageMoveJob extends Job {
 		return true;
 	}
 
+	/**
+	 * @param Title $oldPage
+	 * @param Title $newPage
+	 */
 	protected function movePage( Title $oldPage, Title $newPage ) {
 		$mp = MediaWikiServices::getInstance()->getMovePageFactory()->newMovePage( $oldPage, $newPage );
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );

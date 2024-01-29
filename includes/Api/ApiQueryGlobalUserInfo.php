@@ -25,6 +25,7 @@
 namespace MediaWiki\Extension\CentralAuth\Api;
 
 use ApiBase;
+use ApiQuery;
 use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
@@ -43,7 +44,12 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 	/** @var UserNameUtils */
 	private $userNameUtils;
 
-	public function __construct( $query, $moduleName, UserNameUtils $userNameUtils ) {
+	/**
+	 * @param ApiQuery $query
+	 * @param string $moduleName
+	 * @param UserNameUtils $userNameUtils
+	 */
+	public function __construct( ApiQuery $query, $moduleName, UserNameUtils $userNameUtils ) {
 		parent::__construct( $query, $moduleName, 'gui' );
 		$this->userNameUtils = $userNameUtils;
 	}
@@ -181,6 +187,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getCacheMode( $params ) {
 		if ( $params['user'] !== null || $params['id'] !== null ) {
 			// URL determines user, public caching is fine
@@ -191,6 +198,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'user' => [

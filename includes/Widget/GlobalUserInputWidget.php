@@ -13,10 +13,12 @@ class GlobalUserInputWidget extends TextInputWidget {
 		$this->addClasses( [ 'mw-widget-userInputWidget' ] );
 	}
 
+	/** @inheritDoc */
 	protected function getJavaScriptClassName() {
 		return 'mw.widgets.GlobalUserInputWidget';
 	}
 
+	/** @inheritDoc */
 	public function getConfig( &$config ) {
 		$config['$overlay'] = true;
 		return parent::getConfig( $config );

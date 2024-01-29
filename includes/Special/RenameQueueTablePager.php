@@ -92,6 +92,7 @@ class RenameQueueTablePager extends TablePager {
 		return $this->mPage === SpecialGlobalRenameQueue::PAGE_CLOSED_QUEUE;
 	}
 
+	/** @inheritDoc */
 	public function getQueryInfo() {
 		return [
 			'tables' => 'renameuser_queue',
@@ -112,6 +113,7 @@ class RenameQueueTablePager extends TablePager {
 		];
 	}
 
+	/** @inheritDoc */
 	protected function getQueryInfoConds() {
 		$conds = [];
 

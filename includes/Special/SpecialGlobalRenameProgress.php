@@ -32,6 +32,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$this->uiService = $uiService;
 	}
 
+	/** @inheritDoc */
 	public function getFormFields() {
 		return [
 			'username' => [
@@ -44,6 +45,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		];
 	}
 
+	/** @inheritDoc */
 	public function alterForm( HTMLForm $htmlForm ) {
 		$this->addHelpLink( 'Extension:CentralAuth' );
 		$htmlForm
@@ -87,6 +89,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$this->getOutput()->addHTML( $html );
 	}
 
+	/** @inheritDoc */
 	public function onSubmit( array $data ) {
 		if ( !isset( $data['username'] ) ) {
 			$this->showCurrentRenames();
@@ -174,6 +177,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		return false;
 	}
 
+	/** @inheritDoc */
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}

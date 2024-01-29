@@ -47,12 +47,18 @@ class GroupMembershipChangeLogFormatter extends LogFormatter {
 			: $this->msg( 'rightsnone' )->text();
 	}
 
+	/**
+	 * @param array $groups
+	 *
+	 * @return array|string
+	 */
 	private function makeGroupsListWithoutMetadata( array $groups ) {
 		return $groups !== []
 			? $this->formatParameterValue( 'list', $groups )
 			: $this->msg( 'rightsnone' )->text();
 	}
 
+	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-gblrights-usergroups';
 	}
@@ -77,6 +83,7 @@ class GroupMembershipChangeLogFormatter extends LogFormatter {
 		];
 	}
 
+	/** @inheritDoc */
 	protected function getMessageParameters() {
 		$params = parent::getMessageParameters();
 		// remove "User:" prefix

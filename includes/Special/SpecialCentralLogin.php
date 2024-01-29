@@ -365,6 +365,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$this->getOutput()->redirect( $redirectUrl );
 	}
 
+	/**
+	 * @param mixed ...$args
+	 */
 	protected function showError( ...$args ) {
 		LoggerFactory::getInstance( 'authevents' )->info( 'Central login attempt', [
 			'event' => 'centrallogin',

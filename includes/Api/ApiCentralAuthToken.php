@@ -102,9 +102,9 @@ class ApiCentralAuthToken extends ApiBase {
 		] );
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
-		return [
-		];
+		return [];
 	}
 
 	/** @inheritDoc */

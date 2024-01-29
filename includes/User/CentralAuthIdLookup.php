@@ -41,6 +41,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$this->databaseManager = $databaseManager;
 	}
 
+	/** @inheritDoc */
 	public function lookupCentralIds(
 		array $idToName, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): array {
@@ -78,6 +79,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		return $idToName;
 	}
 
+	/** @inheritDoc */
 	public function lookupUserNames(
 		array $nameToId, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): array {
@@ -113,12 +115,14 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		return $nameToId;
 	}
 
+	/** @inheritDoc */
 	public function isAttached( $user, $wikiId = UserIdentity::LOCAL ): bool {
 		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
 		$centralUser = CentralAuthUser::getInstance( $user );
 		return $centralUser->getId() != 0 && $centralUser->attachedOn( $wikiId );
 	}
 
+	/** @inheritDoc */
 	public function centralIdFromLocalUser(
 		$user, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): int {

@@ -92,6 +92,9 @@ abstract class LocalRenameJob extends Job {
 	 */
 	abstract protected function doRun( $fnameTrxOwner );
 
+	/**
+	 * @param GlobalRenameUserStatus $status
+	 */
 	protected function setRenameUserStatus( GlobalRenameUserStatus $status ) {
 		$this->renameuserStatus = $status;
 	}
@@ -141,6 +144,9 @@ abstract class LocalRenameJob extends Job {
 		$caNew->quickInvalidateCache();
 	}
 
+	/**
+	 * @param string $status
+	 */
 	protected function updateStatus( $status ) {
 		$this->renameuserStatus->updateStatus( WikiMap::getCurrentWikiId(), $status );
 	}
