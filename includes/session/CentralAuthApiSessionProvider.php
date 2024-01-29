@@ -19,7 +19,7 @@ use MediaWiki\User\User;
 class CentralAuthApiSessionProvider
 	extends CentralAuthTokenSessionProvider
 	implements ApiCheckCanExecuteHook
-	{
+{
 
 	/**
 	 * @param WebRequest $request
@@ -45,7 +45,7 @@ class CentralAuthApiSessionProvider
 	protected function makeBogusSessionInfo( $code, $error ) {
 		// Schedule the throwing of the exception for later when the API
 		// is ready to catch it.
-		$exception = \ApiUsageException::newWithMessage( null, $error, $code );
+		$exception = ApiUsageException::newWithMessage( null, $error, $code );
 		/** @return never */
 		$excepClosure = static function () use ( $exception ) {
 			throw $exception;
@@ -83,7 +83,7 @@ class CentralAuthApiSessionProvider
 	 * Consume the centralauthtoken
 	 * @param ApiBase $module
 	 * @param User $user
-	 * @param array &$message Error message key and params
+	 * @param IApiMessage|Message|string|array &$message Error message key and params
 	 * @return bool
 	 */
 	public function onApiCheckCanExecute( $module, $user, &$message ) {

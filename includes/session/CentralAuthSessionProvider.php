@@ -9,13 +9,14 @@ use MediaWiki\Password\PasswordError;
 use MediaWiki\Password\PasswordFactory;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Session\CookieSessionProvider;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
-use MediaWiki\User\UserNameUtils;
+use MediaWiki\User\UserRigorOptions;
 
 /**
  * CentralAuth cookie-based sessions.
@@ -26,7 +27,7 @@ use MediaWiki\User\UserNameUtils;
  *  sessions, this is somewhat complicated and is probably not a good example to
  *  copy if you're writing your own SessionProvider.
  */
-class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider {
+class CentralAuthSessionProvider extends CookieSessionProvider {
 
 	/** @var bool */
 	protected $enable = false;
@@ -122,7 +123,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 					'CentralAuthSource' => 'Local',
 				],
 			] );
-		} elseif ( $forceEmptyPersist ) {
+		}
+
+		if ( $forceEmptyPersist ) {
 			return new SessionInfo( $this->priority, [
 				'id' => null,
 				'provider' => $this,
@@ -132,9 +135,9 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 					'CentralAuthSource' => 'Local',
 				],
 			] );
-		} else {
-			return null;
 		}
+
+		return null;
 	}
 
 	/**
@@ -144,7 +147,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 	public function provideSessionInfo( WebRequest $request ) {
 		if ( !$this->enable ) {
 			$this->logger->debug( __METHOD__ . ': Not enabled, falling back to core sessions' );
-			return self::returnParentSessionInfo( $request );
+			return $this->returnParentSessionInfo( $request );
 		}
 
 		$info = [
@@ -181,28 +184,30 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			}
 		}
 		if ( $userName === null || $token === null ) {
-			return self::returnParentSessionInfo( $request );
+			return $this->returnParentSessionInfo( $request );
 		}
 
-		// Sanity check to avoid session ID collisions, as reported on T21158
+		// Check to avoid session ID collisions, as reported on T21158
 		if ( $userCookie === null ) {
 			$this->logger->debug(
 				__METHOD__ . ': no User cookie, so unable to check for session mismatch'
 			);
-			return self::returnParentSessionInfo( $request );
-		} elseif ( $userCookie != $userName ) {
+			return $this->returnParentSessionInfo( $request );
+		}
+
+		if ( $userCookie != $userName ) {
 			$this->logger->debug(
 				__METHOD__ . ': Session ID/User mismatch. Possible session collision. ' .
 					"Expected: $userName; actual: $userCookie"
 			);
-			return self::returnParentSessionInfo( $request );
+			return $this->returnParentSessionInfo( $request );
 		}
 
 		// Clean up username
-		$userName = $this->userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
+		$userName = $this->userNameUtils->getCanonical( $userName );
 		if ( !$userName ) {
 			$this->logger->debug( __METHOD__ . ': invalid username' );
-			return self::returnParentSessionInfo( $request );
+			return $this->returnParentSessionInfo( $request );
 		}
 		if ( !$this->userNameUtils->isUsable( $userName ) ) {
 			$this->logger->warning(
@@ -210,7 +215,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 					'username' => $userName,
 				]
 			);
-			return self::returnParentSessionInfo( $request, true );
+			return $this->returnParentSessionInfo( $request, true );
 		}
 
 		// Try the central user
@@ -226,13 +231,13 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 		if ( !$centralUser->exists() ) {
 			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
-			return self::returnParentSessionInfo( $request );
+			return $this->returnParentSessionInfo( $request );
 		}
 		if ( !$centralUser->isAttached() ) {
 			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $userName );
 			if ( $userIdentity && $userIdentity->isRegistered() ) {
 				$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
-				return self::returnParentSessionInfo( $request, true );
+				return $this->returnParentSessionInfo( $request, true );
 			}
 		}
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
@@ -259,41 +264,39 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	/** @inheritDoc */
 	public function refreshSessionInfo( SessionInfo $info, WebRequest $request, &$metadata ) {
-		// Sanity check on the metadata, to avoid T124409
+		// Check on the metadata, to avoid T124409
 		if ( isset( $metadata['CentralAuthSource'] ) ) {
 			$name = $info->getUserInfo()->getName();
-			if ( $name !== null ) {
-				if ( !$this->enable ) {
-					$source = 'Local';
-				} else {
-					$centralUser = CentralAuthUser::getInstanceByName( $name );
-					$centralUserExists = $centralUser->exists();
-					if ( $centralUserExists && $centralUser->isAttached() ) {
+			if ( $name === null ) {
+				return true;
+			}
+
+			$source = 'Local';
+			if ( $this->enable ) {
+				$centralUser = CentralAuthUser::getInstanceByName( $name );
+				$centralUserExists = $centralUser->exists();
+				if ( $centralUserExists && $centralUser->isAttached() ) {
+					$source = 'CentralAuth';
+				} elseif ( $centralUserExists ) {
+					$userIdentity = $this->userIdentityLookup->getUserIdentityByName(
+						$name,
+						IDBAccessObject::READ_LATEST
+					);
+					if ( !$userIdentity || !$userIdentity->isRegistered() ) {
 						$source = 'CentralAuth';
-					} elseif ( $centralUserExists ) {
-						$userIdentity = $this->userIdentityLookup
-							->getUserIdentityByName( $name, IDBAccessObject::READ_LATEST );
-						if ( !$userIdentity || !$userIdentity->isRegistered() ) {
-							$source = 'CentralAuth';
-						} else {
-							$source = 'Local';
-						}
-					} else {
-						$source = 'Local';
 					}
 				}
-				if ( $metadata['CentralAuthSource'] !== $source ) {
-					$this->logger->warning(
-						'Session "{session}": CentralAuth saved source {saved} ' .
-							'!= expected source {expected}',
-						[
-							'session' => $info->__toString(),
-							'saved' => $metadata['CentralAuthSource'],
-							'expected' => $source,
-						]
-					);
-					return false;
-				}
+			}
+			if ( $metadata['CentralAuthSource'] !== $source ) {
+				$this->logger->warning(
+					'Session "{session}": CentralAuth saved source {saved} != expected source {expected}', [
+						'session' => $info->__toString(),
+						'saved' => $metadata['CentralAuthSource'],
+						'expected' => $source,
+					]
+				);
+
+				return false;
 			}
 		}
 
@@ -450,7 +453,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 
 	/** @inheritDoc */
 	public function preventSessionsForUser( $username ) {
-		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_VALID );
+		$username = $this->userNameUtils->getCanonical( $username );
 		if ( !$username ) {
 			return;
 		}
@@ -460,7 +463,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 
-		// Reset the user's password to something invalid and reset the token,
+		// Reset the user's password to something invalid and reset the token
 		// if it's not already invalid.
 		$config = RequestContext::getMain()->getConfig();
 		$passwordFactory = new PasswordFactory(
@@ -474,7 +477,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			return;
 		}
 		if ( !$password instanceof InvalidPassword ) {
-			$centralUser->setPassword( null, true );
+			$centralUser->setPassword( null );
 		}
 	}
 
@@ -520,7 +523,7 @@ class CentralAuthSessionProvider extends MediaWiki\Session\CookieSessionProvider
 			if ( $this->userNameUtils->isTemp( $name ) ) {
 				$name = false;
 			} else {
-				$name = $this->userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_USABLE );
+				$name = $this->userNameUtils->getCanonical( $name, UserRigorOptions::RIGOR_USABLE );
 			}
 		}
 		return ( $name === false || $name === null )

@@ -6,6 +6,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\Session\SessionProvider;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
@@ -21,7 +22,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  * If the token is present but invalid, a CentralAuthTokenSessionProvider returns a
  * bogus SessionInfo to prevent other SessionProviders from establishing a session.
  */
-abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\SessionProvider {
+abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthSessionManager $sessionManager;
 	private CentralAuthUtilityService $utilityService;
@@ -106,7 +107,7 @@ abstract class CentralAuthTokenSessionProvider extends \MediaWiki\Session\Sessio
 		$authToken = $data['token'];
 
 		// Clean up username
-		$userName = $this->userNameUtils->getCanonical( $userName, UserNameUtils::RIGOR_VALID );
+		$userName = $this->userNameUtils->getCanonical( $userName );
 		if ( !$userName ) {
 			$this->logger->info( __METHOD__ . ': invalid username' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
