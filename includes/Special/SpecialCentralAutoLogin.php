@@ -202,520 +202,519 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		);
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
-		// Extra steps, not part of the login process
-		case 'toolslist':
-			// Return the contents of the user menu so autologin.js can sort-of refresh the skin
-			// without reloading the page. This results in lots of inconsistencies and brokenness,
-			// but at least the user sees they are logged in.
-			// Runs on the local wiki.
+			// Extra steps, not part of the login process
+			case 'toolslist':
+				// Return the contents of the user menu so autologin.js can sort-of refresh the skin
+				// without reloading the page. This results in lots of inconsistencies and brokenness,
+				// but at least the user sees they are logged in.
+				// Runs on the local wiki.
 
-			// Do not cache this, we want updated Echo numbers and such.
-			$this->getOutput()->disableClientCache();
+				// Do not cache this, we want updated Echo numbers and such.
+				$this->getOutput()->disableClientCache();
 
-			if ( !$this->checkSession( '', 'json' ) ) {
-				return;
-			}
-
-			$user = $this->getUser();
-			if ( $user->isRegistered() ) {
-				$skin = $this->getSkin();
-				if (
-					!CentralAuthHooks::isUIReloadRecommended( $user ) &&
-					$skin instanceof SkinTemplate
-				) {
-					$html = $skin->makePersonalToolsList();
-					$json = FormatJson::encode( [ 'toolslist' => $html ] );
-				} else {
-					$gender = $this->userOptionsManager->getOption( $this->getUser(), 'gender' );
-					if ( strval( $gender ) === '' ) {
-						$gender = 'unknown';
-					}
-					$json = FormatJson::encode( [
-						'notify' => [
-							'username' => $user->getName(),
-							'gender' => $gender
-						]
-					] );
+				if ( !$this->checkSession( '', 'json' ) ) {
+					return;
 				}
-				$this->doFinalOutput( true, 'OK', $json, 'json' );
-			} else {
-				$this->doFinalOutput( false, 'Not logged in', '', 'json' );
-			}
-			return;
 
-		case 'refreshCookies':
-			// Refresh cookies on the central login wiki at the end of a successful login,
-			// to fill in information that could not be set when those cookies where created
-			// (e.g. the 'remember me' token).
-			// Runs on the central login wiki.
-
-			// Do not cache this, we need to reset the cookies every time.
-			$this->getOutput()->disableClientCache();
-
-			if ( !$this->loginWiki ) {
-				$this->logger->debug( "refreshCookies: no login wiki" );
-				return;
-			}
-			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
-				return;
-			}
-			if ( !$this->checkSession() ) {
-				return;
-			}
-
-			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-			if ( $centralUser && $centralUser->getId() && $centralUser->isAttached() ) {
-				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
-
-				// Refresh 'remember me' preference
 				$user = $this->getUser();
-				$remember = (bool)$centralSession['remember'];
-				if ( $user->isNamed() &&
-					$remember !== $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' ) ) {
-					$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
-					DeferredUpdates::addCallableUpdate( function () use ( $user ) {
-						if ( $this->readOnlyMode->isReadOnly() ) {
-							return; // not possible to save
+				if ( $user->isRegistered() ) {
+					$skin = $this->getSkin();
+					if (
+						!CentralAuthHooks::isUIReloadRecommended( $user ) &&
+						$skin instanceof SkinTemplate
+					) {
+						$html = $skin->makePersonalToolsList();
+						$json = FormatJson::encode( [ 'toolslist' => $html ] );
+					} else {
+						$gender = $this->userOptionsManager->getOption( $this->getUser(), 'gender' );
+						if ( strval( $gender ) === '' ) {
+							$gender = 'unknown';
 						}
-						$this->userOptionsManager->saveOptions( $user );
-					} );
+						$json = FormatJson::encode( [
+							'notify' => [
+								'username' => $user->getName(),
+								'gender' => $gender
+							]
+						] );
+					}
+					$this->doFinalOutput( true, 'OK', $json, 'json' );
+				} else {
+					$this->doFinalOutput( false, 'Not logged in', '', 'json' );
+				}
+				return;
+
+			case 'refreshCookies':
+				// Refresh cookies on the central login wiki at the end of a successful login,
+				// to fill in information that could not be set when those cookies where created
+				// (e.g. the 'remember me' token).
+				// Runs on the central login wiki.
+
+				// Do not cache this, we need to reset the cookies every time.
+				$this->getOutput()->disableClientCache();
+
+				if ( !$this->loginWiki ) {
+					$this->logger->debug( "refreshCookies: no login wiki" );
+					return;
+				}
+				if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+					return;
+				}
+				if ( !$this->checkSession() ) {
+					return;
 				}
 
-				$delay = $this->session->delaySave();
-				$this->session->setRememberUser( $remember );
-				$this->session->persist();
-				ScopedCallback::consume( $delay );
-				$this->doFinalOutput( true, 'success' );
-			} else {
-				$this->doFinalOutput( false, 'Not logged in' );
-			}
-			return;
-
-		case 'deleteCookies':
-			// Delete CentralAuth-specific cookies on logout. (This is just cleanup, the backend
-			// session will be invalidated regardless of whether this succeeds.)
-			// Runs on the central login wiki and the edge wikis.
-
-			// Do not cache this, we need to reset the cookies every time.
-			$this->getOutput()->disableClientCache();
-
-			if ( !$this->checkSession() ) {
-				return;
-			}
-
-			if ( $this->getUser()->isRegistered() ) {
-				$this->doFinalOutput( false, 'Cannot delete cookies while still logged in' );
-				return;
-			}
-
-			$this->session->setUser( new User );
-			$this->session->persist();
-			$this->doFinalOutput( true, 'success' );
-			return;
-
-		// Login process
-		case 'start':
-			// Entry point for edge autologin: this is called on various wikis via an <img> URL
-			// to preemptively log the user in on that wiki, so their session exists by the time
-			// they first visit.  Sometimes it is also used as the entry point for local autologin;
-			// there probably isn't much point in that (it's an extra redirect). This endpoint
-			// doesn't do much, just redirects to /checkLoggedIn on the central login wiki.
-			// Runs on the local wiki and the edge wikis.
-
-			// Note this is safe to cache, because the cache already varies on
-			// the session cookies.
-			$this->getOutput()->setCdnMaxage( 1200 );
-
-			if ( !$this->checkIsLocalWiki() ) {
-				return;
-			}
-			if ( !$this->checkSession() ) {
-				return;
-			}
-
-			$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
-				'wikiid' => WikiMap::getCurrentWikiId(),
-			] + $params );
-			return;
-
-		case 'checkLoggedIn':
-			// Sometimes entry point for autologin, sometimes second step after /start.
-			// Runs on the central login wiki. Checks that the user has a valid session there,
-			// then redirects back to /createSession on the original wiki and passes the user ID
-			// (in the form of a lookup key for the shared token store, to prevent a malicious
-			// website from learning it).
-			// FIXME the indirection of user ID is supposedly for T59081, but unclear how that's
-			//   supposed to be a threat when the redirect URL has been validated via WikiMap.
-			// Runs on the central login wiki.
-
-			// Note this is safe to cache, because the cache already varies on
-			// the session cookies.
-			$this->getOutput()->setCdnMaxage( 1200 );
-
-			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
-				return;
-			}
-			if ( !$this->checkSession() ) {
-				return;
-			}
-
-			if ( $this->getUser()->isRegistered() ) {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-			} else {
-				$this->doFinalOutput( false, 'Not centrally logged in',
-					self::getInlineScript( 'anon-set.js' ) );
+				if ( $centralUser && $centralUser->getId() && $centralUser->isAttached() ) {
+					$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
+
+					// Refresh 'remember me' preference
+					$user = $this->getUser();
+					$remember = (bool)$centralSession['remember'];
+					if ( $user->isNamed() &&
+						$remember !== $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' ) ) {
+						$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
+						DeferredUpdates::addCallableUpdate( function () use ( $user ) {
+							if ( $this->readOnlyMode->isReadOnly() ) {
+								return; // not possible to save
+							}
+							$this->userOptionsManager->saveOptions( $user );
+						} );
+					}
+
+					$delay = $this->session->delaySave();
+					$this->session->setRememberUser( $remember );
+					$this->session->persist();
+					ScopedCallback::consume( $delay );
+					$this->doFinalOutput( true, 'success' );
+				} else {
+					$this->doFinalOutput( false, 'Not logged in' );
+				}
 				return;
-			}
 
-			// We're pretty sure this user is logged in, so pass back
-			// headers to prevent caching, just in case
-			$this->getOutput()->disableClientCache();
+			case 'deleteCookies':
+				// Delete CentralAuth-specific cookies on logout. (This is just cleanup, the backend
+				// session will be invalidated regardless of whether this succeeds.)
+				// Runs on the central login wiki and the edge wikis.
 
-			// Sanity check: If the loginwiki account isn't attached, things are broken (T137551)
-			if ( !$centralUser->isAttached() ) {
-				$this->doFinalOutput( false,
-					'Account on central wiki is not attached (this shouldn\'t happen)',
-					self::getInlineScript( 'anon-set.js' )
-				);
+				// Do not cache this, we need to reset the cookies every time.
+				$this->getOutput()->disableClientCache();
+
+				if ( !$this->checkSession() ) {
+					return;
+				}
+
+				if ( $this->getUser()->isRegistered() ) {
+					$this->doFinalOutput( false, 'Cannot delete cookies while still logged in' );
+					return;
+				}
+
+				$this->session->setUser( new User );
+				$this->session->persist();
+				$this->doFinalOutput( true, 'success' );
 				return;
-			}
 
-			$memcData = [ 'gu_id' => $centralUser->getId() ];
-			$token = MWCryptRand::generateHex( 32 );
-			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
-			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+			// Login process
+			case 'start':
+				// Entry point for edge autologin: this is called on various wikis via an <img> URL
+				// to preemptively log the user in on that wiki, so their session exists by the time
+				// they first visit.  Sometimes it is also used as the entry point for local autologin;
+				// there probably isn't much point in that (it's an extra redirect). This endpoint
+				// doesn't do much, just redirects to /checkLoggedIn on the central login wiki.
+				// Runs on the local wiki and the edge wikis.
 
-			$this->do302Redirect( $wikiid, 'createSession', [
-				'token' => $token,
-			] + $params );
-			return;
+				// Note this is safe to cache, because the cache already varies on
+				// the session cookies.
+				$this->getOutput()->setCdnMaxage( 1200 );
 
-		case 'createSession':
-			// Creates an unvalidated local session, and redirects back to the central login wiki
-			// to validate it.
-			// At this point we received the user ID from /checkLoggedIn but must ensure this is
-			// not a session fixation attack, so we set a session cookie for an anonymous session,
-			// set a random proof token in that session, stash the user's supposed identity
-			// under that token in the shared store, and pass the token back to the /validateSession
-			// endpoint of the central login wiki.
-			// Runs on the wiki where the autologin needs to log the user in (the local wiki,
-			// or the edge wikis, or both).
+				if ( !$this->checkIsLocalWiki() ) {
+					return;
+				}
+				if ( !$this->checkSession() ) {
+					return;
+				}
 
-			if ( !$this->checkIsLocalWiki() ) {
+				$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
+					'wikiid' => WikiMap::getCurrentWikiId(),
+				] + $params );
 				return;
-			}
-			if ( !$this->checkSession() ) {
-				return;
-			}
 
-			$token = $request->getVal( 'token', '' );
-			if ( $token !== '' ) {
-				// Load memc data
+			case 'checkLoggedIn':
+				// Sometimes entry point for autologin, sometimes second step after /start.
+				// Runs on the central login wiki. Checks that the user has a valid session there,
+				// then redirects back to /createSession on the original wiki and passes the user ID
+				// (in the form of a lookup key for the shared token store, to prevent a malicious
+				// website from learning it).
+				// FIXME the indirection of user ID is supposedly for T59081, but unclear how that's
+				//   supposed to be a threat when the redirect URL has been validated via WikiMap.
+				// Runs on the central login wiki.
+
+				// Note this is safe to cache, because the cache already varies on
+				// the session cookies.
+				$this->getOutput()->setCdnMaxage( 1200 );
+
+				if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+					return;
+				}
+				if ( !$this->checkSession() ) {
+					return;
+				}
+
+				if ( $this->getUser()->isRegistered() ) {
+					$centralUser = CentralAuthUser::getInstance( $this->getUser() );
+				} else {
+					$this->doFinalOutput( false, 'Not centrally logged in',
+						self::getInlineScript( 'anon-set.js' ) );
+					return;
+				}
+
+				// We're pretty sure this user is logged in, so pass back
+				// headers to prevent caching, just in case
+				$this->getOutput()->disableClientCache();
+
+				// Sanity check: If the loginwiki account isn't attached, things are broken (T137551)
+				if ( !$centralUser->isAttached() ) {
+					$this->doFinalOutput( false,
+						'Account on central wiki is not attached (this shouldn\'t happen)',
+						self::getInlineScript( 'anon-set.js' )
+					);
+					return;
+				}
+
+				$memcData = [ 'gu_id' => $centralUser->getId() ];
+				$token = MWCryptRand::generateHex( 32 );
 				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
+				$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+
+				$this->do302Redirect( $wikiid, 'createSession', [
+					'token' => $token,
+				] + $params );
+				return;
+
+			case 'createSession':
+				// Creates an unvalidated local session, and redirects back to the central login wiki
+				// to validate it.
+				// At this point we received the user ID from /checkLoggedIn but must ensure this is
+				// not a session fixation attack, so we set a session cookie for an anonymous session,
+				// set a random proof token in that session, stash the user's supposed identity
+				// under that token in the shared store, and pass the token back to the /validateSession
+				// endpoint of the central login wiki.
+				// Runs on the wiki where the autologin needs to log the user in (the local wiki,
+				// or the edge wikis, or both).
+
+				if ( !$this->checkIsLocalWiki() ) {
+					return;
+				}
+				if ( !$this->checkSession() ) {
+					return;
+				}
+
+				$token = $request->getVal( 'token', '' );
+				if ( $token !== '' ) {
+					// Load memc data
+					$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
+					$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
+						$this->sessionManager->getTokenStore(), $key
+					);
+
+					$tokenStore->delete( $key );
+
+					if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
+						$this->doFinalOutput( false, 'Invalid parameters' );
+						return;
+					}
+					$gu_id = intval( $memcData['gu_id'] );
+				} else {
+					$this->doFinalOutput( false, 'Invalid parameters' );
+					return;
+				}
+
+				if ( $gu_id <= 0 ) {
+					$this->doFinalOutput( false, 'Not centrally logged in',
+						self::getInlineScript( 'anon-set.js' ) );
+					return;
+				}
+
+				// At this point we can't cache anymore because we need to set
+				// cookies and memc each time.
+				$this->getOutput()->disableClientCache();
+
+				// Ensure that a session exists
+				$this->session->persist();
+
+				// Create memc token
+				$wikiid = WikiMap::getCurrentWikiId();
+				$memcData = [
+					'gu_id' => $gu_id,
+					'wikiid' => $wikiid,
+				];
+				$token = MWCryptRand::generateHex( 32 );
+				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+				$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+
+				// Save memc token for the 'setCookies' step
+				$request->setSessionData( 'centralautologin-token', $token );
+
+				$this->do302Redirect( $this->loginWiki, 'validateSession', [
+					'token' => $token,
+					'wikiid' => $wikiid,
+				] + $params );
+				return;
+
+			case 'validateSession':
+				// Validates the session created by /createSession by looking up the user ID in the
+				// shared store and comparing it to the actual user ID. Puts all extra information
+				// needed to create a logged-in session ("remember me" flag, ID of the central
+				// session etc.) under the same entry in the shared store that /createSession initiated.
+				// Runs on the central login wiki.
+
+				// Do not cache this, we need to reset the cookies and memc every time.
+				$this->getOutput()->disableClientCache();
+
+				if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+					return;
+				}
+				if ( !$this->checkSession() ) {
+					return;
+				}
+
+				if ( !$this->getUser()->isRegistered() ) {
+					$this->doFinalOutput( false, 'Not logged in' );
+					return;
+				}
+
+				// Validate params
+				$token = $request->getVal( 'token', '' );
+				if ( $token === '' ) {
+					$this->doFinalOutput( false, 'Invalid parameters' );
+					return;
+				}
+
+				// Load memc data
+				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
 				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
 					$this->sessionManager->getTokenStore(), $key
 				);
 
 				$tokenStore->delete( $key );
 
-				if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
+				// Check memc data
+				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
+				if ( !$memcData ||
+					$memcData['wikiid'] !== $wikiid ||
+					!$centralUser ||
+					!$centralUser->getId() ||
+					!$centralUser->isAttached() ||
+					$memcData['gu_id'] != $centralUser->getId()
+				) {
 					$this->doFinalOutput( false, 'Invalid parameters' );
 					return;
 				}
-				$gu_id = intval( $memcData['gu_id'] );
-			} else {
-				$this->doFinalOutput( false, 'Invalid parameters' );
+
+				// Write info for session creation into memc
+				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
+				$memcData += [
+					'userName' => $centralUser->getName(),
+					'token' => $centralUser->getAuthToken(),
+					'remember' => $centralSession['remember'],
+					'sessionId' => $centralSession['sessionId'],
+				];
+
+				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+				$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+
+				$this->do302Redirect( $wikiid, 'setCookies', $params );
 				return;
-			}
 
-			if ( $gu_id <= 0 ) {
-				$this->doFinalOutput( false, 'Not centrally logged in',
-					self::getInlineScript( 'anon-set.js' ) );
-				return;
-			}
+			case 'setCookies':
+				// Final step of the autologin sequence, replaces the unvalidated session with a real
+				// logged-in session. Also schedules an edge login for the next pageview, and for
+				// type=script autocreates the user so that mw.messages notices can be shown in the
+				// user language.
+				// If all went well, the data about the user's session on the central login wiki will
+				// be in the shared store, under a random key that's stored in the temporary,
+				// anonymous local session. The access to that key proves that this is the same device
+				// that visited /createSession before with a preliminary central user ID, and the
+				// fact that /validateSession updated the store data proves that the preliminary ID was
+				// in fact correct.
+				// Runs on the wiki where the autologin needs to log the user in (the local wiki,
+				// or the edge wikis, or both).
 
-			// At this point we can't cache anymore because we need to set
-			// cookies and memc each time.
-			$this->getOutput()->disableClientCache();
+				// Do not cache this, we need to reset the cookies and memc every time.
+				$this->getOutput()->disableClientCache();
 
-			// Ensure that a session exists
-			$this->session->persist();
+				if ( !$this->checkIsLocalWiki() ) {
+					return;
+				}
+				if ( !$this->checkSession() ) {
+					return;
+				}
 
-			// Create memc token
-			$wikiid = WikiMap::getCurrentWikiId();
-			$memcData = [
-				'gu_id' => $gu_id,
-				'wikiid' => $wikiid,
-			];
-			$token = MWCryptRand::generateHex( 32 );
-			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+				// Check saved memc token
+				$token = $this->getRequest()->getSessionData( 'centralautologin-token' );
+				if ( $token === null ) {
+					$this->doFinalOutput( false, 'Lost session' );
+					return;
+				}
 
-			// Save memc token for the 'setCookies' step
-			$request->setSessionData( 'centralautologin-token', $token );
+				// Load memc data
+				$wikiid = WikiMap::getCurrentWikiId();
+				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
+				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
+					$this->sessionManager->getTokenStore(), $key
+				);
 
-			$this->do302Redirect( $this->loginWiki, 'validateSession', [
-				'token' => $token,
-				'wikiid' => $wikiid,
-			] + $params );
-			return;
+				$tokenStore->delete( $key );
 
-		case 'validateSession':
-			// Validates the session created by /createSession by looking up the user ID in the
-			// shared store and comparing it to the actual user ID. Puts all extra information
-			// needed to create a logged-in session ("remember me" flag, ID of the central
-			// session etc.) under the same entry in the shared store that /createSession initiated.
-			// Runs on the central login wiki.
+				// Check memc data
+				if (
+					!is_array( $memcData ) ||
+					$memcData['wikiid'] !== $wikiid ||
+					!isset( $memcData['userName'] ) ||
+					!isset( $memcData['token'] )
+				) {
+					$this->doFinalOutput( false, 'Lost session' );
+					return;
+				}
 
-			// Do not cache this, we need to reset the cookies and memc every time.
-			$this->getOutput()->disableClientCache();
+				// Load and check CentralAuthUser. But don't check if it's
+				// attached, because then if the user is missing en.site they
+				// won't be auto logged in to any of the non-en versions either.
+				$centralUser = CentralAuthUser::getInstanceByName( $memcData['userName'] );
+				if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
+					$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
+					$this->logger->warning( __METHOD__ . ": $msg" );
+					$this->doFinalOutput( false, 'Lost session' );
+					return;
+				}
+				$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
+				if ( $loginResult != 'ok' ) {
+					$msg = "Bad token: $loginResult";
+					$this->logger->warning( __METHOD__ . ": $msg" );
+					$this->doFinalOutput( false, 'Lost session' );
+					return;
+				}
+				$localUser = User::newFromName( $centralUser->getName(), 'usable' );
+				if ( !$localUser ) {
+					$this->doFinalOutput( false, 'Invalid username' );
+					return;
+				}
+				if ( $localUser->isRegistered() && !$centralUser->isAttached() ) {
+					$this->doFinalOutput( false, 'Local user exists but is not attached' );
+					return;
+				}
 
-			if ( !$this->checkIsCentralWiki( $wikiid ) ) {
-				return;
-			}
-			if ( !$this->checkSession() ) {
-				return;
-			}
+				/** @var ScopedCallback|null $delay */
+				$delay = null;
 
-			if ( !$this->getUser()->isRegistered() ) {
-				$this->doFinalOutput( false, 'Not logged in' );
-				return;
-			}
+				$delay = $this->session->delaySave();
+				$this->session->resetId();
+				// FIXME what is the purpose of this (beyond storing the central session ID in the
+				//   local session, which we could do directly)? We have just read this data from
+				//   the central session one redirect hop ago.
+				$this->sessionManager->setCentralSession( [
+					'remember' => $memcData['remember'],
+				], $memcData['sessionId'], $this->session );
+				if ( $centralUser->isAttached() ) {
+					// Set the user on the session, if the user is already attached.
+					$this->session->setUser( User::newFromName( $centralUser->getName() ) );
+				}
+				$this->session->setRememberUser( $memcData['remember'] );
+				$this->session->persist();
 
-			// Validate params
-			$token = $request->getVal( 'token', '' );
-			if ( $token === '' ) {
-				$this->doFinalOutput( false, 'Invalid parameters' );
-				return;
-			}
+				// Now, figure out how to report this back to the user.
 
-			// Load memc data
-			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-				$this->sessionManager->getTokenStore(), $key
-			);
+				// First, set to redo the edge login on the next pageview
+				$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
+				$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 
-			$tokenStore->delete( $key );
+				// If it's not a script or redirect callback, just go for it.
+				if ( !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true ) ) {
+					ScopedCallback::consume( $delay );
+					$this->doFinalOutput( true, 'success' );
+					return;
+				}
 
-			// Check memc data
-			$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-			if ( !$memcData ||
-				$memcData['wikiid'] !== $wikiid ||
-				!$centralUser ||
-				!$centralUser->getId() ||
-				!$centralUser->isAttached() ||
-				$memcData['gu_id'] != $centralUser->getId()
-			) {
-				$this->doFinalOutput( false, 'Invalid parameters' );
-				return;
-			}
-
-			// Write info for session creation into memc
-			$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
-			$memcData += [
-				'userName' => $centralUser->getName(),
-				'token' => $centralUser->getAuthToken(),
-				'remember' => $centralSession['remember'],
-				'sessionId' => $centralSession['sessionId'],
-			];
-
-			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-			$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
-
-			$this->do302Redirect( $wikiid, 'setCookies', $params );
-			return;
-
-		case 'setCookies':
-			// Final step of the autologin sequence, replaces the unvalidated session with a real
-			// logged-in session. Also schedules an edge login for the next pageview, and for
-			// type=script autocreates the user so that mw.messages notices can be shown in the
-			// user language.
-			// If all went well, the data about the user's session on the central login wiki will
-			// be in the shared store, under a random key that's stored in the temporary,
-			// anonymous local session. The access to that key proves that this is the same device
-			// that visited /createSession before with a preliminary central user ID, and the
-			// fact that /validateSession updated the store data proves that the preliminary ID was
-			// in fact correct.
-			// Runs on the wiki where the autologin needs to log the user in (the local wiki,
-			// or the edge wikis, or both).
-
-			// Do not cache this, we need to reset the cookies and memc every time.
-			$this->getOutput()->disableClientCache();
-
-			if ( !$this->checkIsLocalWiki() ) {
-				return;
-			}
-			if ( !$this->checkSession() ) {
-				return;
-			}
-
-			// Check saved memc token
-			$token = $this->getRequest()->getSessionData( 'centralautologin-token' );
-			if ( $token === null ) {
-				$this->doFinalOutput( false, 'Lost session' );
-				return;
-			}
-
-			// Load memc data
-			$wikiid = WikiMap::getCurrentWikiId();
-			$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-			$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-				$this->sessionManager->getTokenStore(), $key
-			);
-
-			$tokenStore->delete( $key );
-
-			// Check memc data
-			if (
-				!is_array( $memcData ) ||
-				$memcData['wikiid'] !== $wikiid ||
-				!isset( $memcData['userName'] ) ||
-				!isset( $memcData['token'] )
-			) {
-				$this->doFinalOutput( false, 'Lost session' );
-				return;
-			}
-
-			// Load and check CentralAuthUser. But don't check if it's
-			// attached, because then if the user is missing en.site they
-			// won't be auto logged in to any of the non-en versions either.
-			$centralUser = CentralAuthUser::getInstanceByName( $memcData['userName'] );
-			if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
-				$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
-				$this->logger->warning( __METHOD__ . ": $msg" );
-				$this->doFinalOutput( false, 'Lost session' );
-				return;
-			}
-			$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
-			if ( $loginResult != 'ok' ) {
-				$msg = "Bad token: $loginResult";
-				$this->logger->warning( __METHOD__ . ": $msg" );
-				$this->doFinalOutput( false, 'Lost session' );
-				return;
-			}
-			$localUser = User::newFromName( $centralUser->getName(), 'usable' );
-			if ( !$localUser ) {
-				$this->doFinalOutput( false, 'Invalid username' );
-				return;
-			}
-			if ( $localUser->isRegistered() && !$centralUser->isAttached() ) {
-				$this->doFinalOutput( false, 'Local user exists but is not attached' );
-				return;
-			}
-
-			/** @var ScopedCallback|null $delay */
-			$delay = null;
-
-			$delay = $this->session->delaySave();
-			$this->session->resetId();
-			// FIXME what is the purpose of this (beyond storing the central session ID in the
-			//   local session, which we could do directly)? We have just read this data from
-			//   the central session one redirect hop ago.
-			$this->sessionManager->setCentralSession( [
-				'remember' => $memcData['remember'],
-			], $memcData['sessionId'], $this->session );
-			if ( $centralUser->isAttached() ) {
-				// Set the user on the session, if the user is already attached.
-				$this->session->setUser( User::newFromName( $centralUser->getName() ) );
-			}
-			$this->session->setRememberUser( $memcData['remember'] );
-			$this->session->persist();
-
-			// Now, figure out how to report this back to the user.
-
-			// First, set to redo the edge login on the next pageview
-			$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
-			$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
-
-			// If it's not a script or redirect callback, just go for it.
-			if ( !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true ) ) {
+				// If it is a script or redirect callback, then we do want to create the user
+				// if it doesn't already exist locally (and fail if that can't be done).
+				if ( !$localUser->isRegistered() ) {
+					$localUser = new User;
+					$localUser->setName( $centralUser->getName() );
+					if ( $this->centralAuthUtilityService->autoCreateUser( $localUser )->isGood() ) {
+						$centralUser->invalidateCache();
+						$centralUser = CentralAuthUser::getPrimaryInstanceByName( $centralUser->getName() );
+					}
+				}
+				if ( !$centralUser->isAttached() ) {
+					ScopedCallback::consume( $delay );
+					$this->doFinalOutput(
+						false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
+					return;
+				}
+				// Set the user on the session now that we know it exists.
+				$this->session->setUser( $localUser );
 				ScopedCallback::consume( $delay );
-				$this->doFinalOutput( true, 'success' );
-				return;
-			}
 
-			// If it is a script or redirect callback, then we do want to create the user
-			// if it doesn't already exist locally (and fail if that can't be done).
-			if ( !$localUser->isRegistered() ) {
-				$localUser = new User;
-				$localUser->setName( $centralUser->getName() );
-				if ( $this->centralAuthUtilityService->autoCreateUser( $localUser )->isGood() ) {
-					$centralUser->invalidateCache();
-					$centralUser = CentralAuthUser::getPrimaryInstanceByName( $centralUser->getName() );
-				}
-			}
-			if ( !$centralUser->isAttached() ) {
-				ScopedCallback::consume( $delay );
-				$this->doFinalOutput(
-					false, 'Local user is not attached', self::getInlineScript( 'anon-set.js' ) );
-				return;
-			}
-			// Set the user on the session now that we know it exists.
-			$this->session->setUser( $localUser );
-			ScopedCallback::consume( $delay );
+				$script = self::getInlineScript( 'anon-remove.js' );
 
-			$script = self::getInlineScript( 'anon-remove.js' );
+				// If we're returning to returnto, do that
+				if ( $request->getCheck( 'return' ) ) {
+					if ( $this->getConfig()->get( 'RedirectOnLogin' ) !== null ) {
+						$returnTo = $this->getConfig()->get( 'RedirectOnLogin' );
+						$returnToQuery = [];
+					} else {
+						$returnTo = $request->getVal( 'returnto', '' );
+						$returnToQuery = wfCgiToArray( $request->getVal( 'returntoquery', '' ) );
+					}
 
-			// If we're returning to returnto, do that
-			if ( $request->getCheck( 'return' ) ) {
-				if ( $this->getConfig()->get( 'RedirectOnLogin' ) !== null ) {
-					$returnTo = $this->getConfig()->get( 'RedirectOnLogin' );
-					$returnToQuery = [];
-				} else {
-					$returnTo = $request->getVal( 'returnto', '' );
-					$returnToQuery = wfCgiToArray( $request->getVal( 'returntoquery', '' ) );
+					$returnToTitle = Title::newFromText( $returnTo );
+					if ( !$returnToTitle ) {
+						$returnToTitle = Title::newMainPage();
+						$returnToQuery = [];
+					}
+
+					$redirectUrl = $returnToTitle->getFullUrlForRedirect( $returnToQuery );
+
+					$script .= "\n" . 'location.href = ' . Xml::encodeJsVar( $redirectUrl ) . ';';
+
+					$this->doFinalOutput( true, 'success', $script );
+					return;
 				}
 
-				$returnToTitle = Title::newFromText( $returnTo );
-				if ( !$returnToTitle ) {
-					$returnToTitle = Title::newMainPage();
-					$returnToQuery = [];
-				}
+				// Otherwise, we need to rewrite p-personal and maybe notify the user too
+				// Add a script to the page that will pull in the user's toolslist
+				// via ajax, and update the UI. Don't write out the tools here (T59081).
+				$code = $this->userOptionsManager->getOption( $localUser, 'language' );
+				$code = RequestContext::sanitizeLangCode( $code );
 
-				$redirectUrl = $returnToTitle->getFullUrlForRedirect( $returnToQuery );
+				$this->getHookRunner()->onUserGetLanguageObject( $localUser, $code, $this->getContext() );
 
-				$script .= "\n" . 'location.href = ' . Xml::encodeJsVar( $redirectUrl ) . ';';
+				$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
+					[
+						'centralauth-centralautologin-logged-in' =>
+							$this->msg( 'centralauth-centralautologin-logged-in' )
+								->inLanguage( $code )->plain(),
+
+						'centralautologin' =>
+							$this->msg( 'centralautologin' )
+								->inLanguage( $code )->plain(),
+					]
+				] );
+
+				$script .= "\n" . self::getInlineScript( 'autologin.js' );
+
+				// And for good measure, add the edge login HTML images to the page.
+				$this->logger->debug( 'Edge login triggered in CentralAutoLogin' );
+				// @phan-suppress-next-line SecurityCheck-DoubleEscaped
+				$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", [
+					CentralAuthHooks::getEdgeLoginHTML()
+				] );
 
 				$this->doFinalOutput( true, 'success', $script );
 				return;
-			}
 
-			// Otherwise, we need to rewrite p-personal and maybe notify the user too
-			// Add a script to the page that will pull in the user's toolslist
-			// via ajax, and update the UI. Don't write out the tools here (T59081).
-			$code = $this->userOptionsManager->getOption( $localUser, 'language' );
-			$code = RequestContext::sanitizeLangCode( $code );
-
-			$this->getHookRunner()->onUserGetLanguageObject( $localUser, $code, $this->getContext() );
-
-			$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
-				[
-					'centralauth-centralautologin-logged-in' =>
-						$this->msg( 'centralauth-centralautologin-logged-in' )
-							->inLanguage( $code )->plain(),
-
-					'centralautologin' =>
-						$this->msg( 'centralautologin' )
-							->inLanguage( $code )->plain(),
-				]
-			] );
-
-			$script .= "\n" . self::getInlineScript( 'autologin.js' );
-
-			// And for good measure, add the edge login HTML images to the page.
-			$this->logger->debug( 'Edge login triggered in CentralAutoLogin' );
-			// @phan-suppress-next-line SecurityCheck-DoubleEscaped
-			$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", [
-				CentralAuthHooks::getEdgeLoginHTML()
-			] );
-
-			$this->doFinalOutput( true, 'success', $script );
-			return;
-
-		default:
-			$this->setHeaders();
-			$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-desc' );
-			return;
+			default:
+				$this->setHeaders();
+				$this->getOutput()->addWikiMsg( 'centralauth-centralautologin-desc' );
 		}
 	}
 
