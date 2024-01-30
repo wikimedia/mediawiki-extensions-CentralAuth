@@ -18,7 +18,8 @@
 			"Trần Nguyễn Minh Huy",
 			"Vinhtantran",
 			"Flyplanevn27",
-			"Phjtieudoc"
+			"Phjtieudoc",
+			"Doraemonluonbentoi"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
@@ -265,7 +266,7 @@
 	"centralauth-listusers-nolocal": "chưa được liên kết hoặc chưa tồn tại địa phương",
 	"centralauth-log-entry-hide": "đã ẩn tài khoản toàn cục “$1”",
 	"centralauth-log-entry-lock": "đã khóa tài khoản toàn cục “$1”",
-	"centralauth-log-entry-lockandhide": "khóa và ẩn tài khoản chung “$1”",
+	"centralauth-log-entry-lockandhide": "đã khóa và ẩn tài khoản toàn cục “$1”",
 	"centralauth-log-entry-unhide": "đã hiện tài khoản toàn cục “$1”",
 	"centralauth-log-entry-unlock": "đã mở khóa tài khoản toàn cục “$1”",
 	"centralauth-log-gblrename-oldname": "Tên người dùng cũ",
