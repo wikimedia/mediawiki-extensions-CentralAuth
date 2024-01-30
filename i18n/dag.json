@@ -3,11 +3,13 @@
 		"authors": [
 			"Amire80",
 			"Chirifo",
+			"Kalakpagh",
 			"Khadijah Abubakari"
 		]
 	},
 	"centralauth-admin-blocklog": "Taɣibu",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pahigu|pahibu}} on $2",
 	"centralauth-foreign-link": "ŋun su $1 di zuɣu $2",
-	"centralauth-merge-method-login": "bɛ ni pun nam kpɛhibu shɛli"
+	"centralauth-merge-method-login": "bɛ ni pun nam kpɛhibu shɛli",
+	"centralauth-blocked-ip-reputation": "A IP address ŋɔ nyɛla bɛ ni kpihim shɛli saha ŋɔ dama bɛ mali la dihitabili ni di yoli tum la tun'biɛɣu."
 }
