@@ -14,7 +14,7 @@ use Wikimedia\ScopedCallback;
  * Job class to move a page
  *
  * Parameters:
- * 'session' - Array of session data for RequestContext::importScopedSession()
+ * 'session' - Array of session data from RequestContext::exportSession()
  * 'renamer' - Username of the user who should be attributed for the page move
  * 'pages' (deprecated) - Array of old page title => new page title
  * 'old' - array( namespace id, db key ) of old title
@@ -94,7 +94,12 @@ class LocalPageMoveJob extends Job {
 
 		$valid = $mp->isValidMove();
 		if ( !$valid->isOK() ) {
-			$logger->info( "Invalid page move: {$oldPage} -> {$newPage}" );
+			$logger->info( "Invalid page move: {oldPage} -> {newPage} ({error})", [
+				'oldPage' => $oldPage->getPrefixedText(),
+				'newPage' => $newPage->getPrefixedText(),
+				'component' => 'GlobalRename',
+				'error' => $valid->getWikiText( false, false, 'en' ),
+			] );
 			return;
 		}
 
@@ -110,7 +115,12 @@ class LocalPageMoveJob extends Job {
 			self::$moveInProgress = false;
 		}
 		if ( isset( $status ) && !$status->isOK() ) {
-			$logger->info( "Page move failed: {$oldPage} -> {$newPage}" );
+			$logger->info( "Page move failed: {oldPage} -> {newPage} ({error})", [
+				'oldPage' => $oldPage->getPrefixedText(),
+				'newPage' => $newPage->getPrefixedText(),
+				'component' => 'GlobalRename',
+				'error' => $status->getWikiText( false, false, 'en' ),
+			] );
 		}
 	}
 }

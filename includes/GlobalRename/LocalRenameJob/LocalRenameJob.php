@@ -20,6 +20,14 @@ use Wikimedia\ScopedCallback;
  * Base class for jobs that change a user's
  * name. Intended to be run on local wikis
  * indvidually.
+ *
+ * Parameters:
+ * - from: current username
+ * - to: new username to rename to
+ * - renamer: username of the performer
+ * - ignorestatus: when true, the rename will be done even if another job is supposed to be
+ *   already doing it. This should only be used for stuck renames.
+ * - session: array of session data from RequestContext::exportSession()
  */
 abstract class LocalRenameJob extends Job {
 	/**
@@ -56,9 +64,10 @@ abstract class LocalRenameJob extends Job {
 		if ( empty( $this->params['ignorestatus'] ) ) {
 			if ( $status !== 'queued' && $status !== 'failed' ) {
 				$logger = LoggerFactory::getInstance( 'CentralAuth' );
-				$logger->info( 'Skipping duplicate rename from {user}', [
-					'user' => $this->params['from'],
-					'to' => $this->params['to'],
+				$logger->info( 'Skipping duplicate rename from {oldName} to {newName}', [
+					'oldName' => $this->params['from'],
+					'newName' => $this->params['to'],
+					'component' => 'GlobalRename',
 					'status' => $status,
 				] );
 				return true;
@@ -85,9 +94,10 @@ abstract class LocalRenameJob extends Job {
 			$factory->commitPrimaryChanges( $fnameTrxOwner );
 			// Record job failure in CentralAuth channel (T217211)
 			$logger = LoggerFactory::getInstance( 'CentralAuth' );
-			$logger->error( 'Failed to rename {oldName} into {newName}. {error}', [
+			$logger->error( 'Failed to rename {oldName} to {newName} ({error})', [
 				'oldName' => $this->params['from'],
 				'newName' => $this->params['to'],
+				'component' => 'GlobalRename',
 				'error' => $e->getMessage()
 			] );
 			throw $e;
