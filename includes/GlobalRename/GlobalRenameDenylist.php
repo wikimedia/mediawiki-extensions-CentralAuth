@@ -112,11 +112,13 @@ class GlobalRenameDenylist {
 			$this->logger->debug( 'GlobalRenameDenylist is fetching denylist from the internet' );
 			if ( $this->file === null ) {
 				$this->logger->info( 'GlobalRenameDenylist is not specified, not fetching anything' );
+				$this->denylist = [];
 				return;
 			}
 			$text = $this->httpRequestFactory->get( $this->file, [], __METHOD__ );
 			if ( $text === null ) {
-				$this->logger->warning( 'GlobalRenameDenylist failed to fetch global rename denylist.' );
+				$this->logger->error( 'GlobalRenameDenylist failed to fetch global rename denylist.' );
+				$this->denylist = [];
 				return;
 			}
 		}
