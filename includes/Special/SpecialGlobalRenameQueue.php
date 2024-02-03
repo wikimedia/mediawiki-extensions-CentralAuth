@@ -734,9 +734,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 				if ( $notifyEmail !== null && $notifyEmail->address ) {
 					$type = $approved ? 'approval' : 'rejection';
-					$this->logger->info(
-						"Send $type email to User:{$oldUser->getName()}"
-					);
+					$this->logger->info( "Send $type email to User:{oldName}", [
+						'oldName' => $oldUser->getName(),
+						'component' => 'GlobalRename',
+					] );
 					$this->sendNotificationEmail( $notifyEmail, $subject, $body );
 				}
 			} else {
