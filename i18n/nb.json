@@ -138,7 +138,7 @@
 	"centralauth-complete": "Kontosammenslåingen er fullført!",
 	"centralauth-complete-text": "Du kan nå logge inn på enhver wiki som tilhører {{int:Centralauth-groupname}} uten å opprette en ny konto.",
 	"centralauth-completelogin-back": "Tilbake til forrige side.",
-	"centralauth-contribs-link": "globale kontoer",
+	"centralauth-contribs-link": "global konto",
 	"centralauth-contribs-locked": "Denne kontoen er låst globalt.\nSe [[Special:CentralAuth/$1|globale kontodetaljer]] for mer informasjon.",
 	"centralauth-contribs-locked-log": "Denne kontoen er låst globalt.\nDen siste låsingsloggoppføringen kan ses nedenfor.",
 	"centralauth-createlocal-already-exists": "Det er allerede en lokal konto for den gitte globale kontoen.",
@@ -488,5 +488,6 @@
 	"right-globalgrouppermissions": "Behandle av globale grupper",
 	"sessionprovider-centralauthsessionprovider": "sentrale informasjonskapselbaserte økter",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-økter",
-	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste."
+	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste.",
+	"centralauth-blocked-ip-reputation": "IP-adressen du bruker har blitt blokkert fordi den nylig har blitt brukt til å gjøre ødeleggende redigeringer."
 }

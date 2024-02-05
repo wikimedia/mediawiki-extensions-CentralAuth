@@ -7,6 +7,7 @@
 			"Reder"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Condegge de le cangiamiende globbale de l'utende",
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppe globbale addò l'utende stè jndre",
 	"action-centralauth-createlocal": "forze 'a ccrejazione de 'nu cunde locale",
 	"action-centralauth-lock": "blocche i sblocche le cunde globbale",
@@ -54,6 +55,7 @@
 	"centralauth-admin-info-registered": "Reggistrate:",
 	"centralauth-admin-info-unattached": "Numere du cunde staccate:",
 	"centralauth-admin-info-username": "Nome utende:",
+	"centralauth-admin-info-username-rename": "renomene",
 	"centralauth-admin-intro": "Quèste 'nderfazze pòte essere ausate pè l'amministrazione de cunde globbale.",
 	"centralauth-admin-list-attached-on": "Allegate a",
 	"centralauth-admin-list-blocked": "Bloccate",
