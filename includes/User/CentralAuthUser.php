@@ -2730,22 +2730,13 @@ class CentralAuthUser implements IDBAccessObject {
 
 		// Edit count field may not be initialized...
 		if ( $row->user_editcount === null ) {
-			$actorWhere = $mwServices->getActorMigration()->getWhere(
-				$db,
-				'rev_user',
-				User::newFromId( $data['id'] )
-			);
-			$data['editCount'] = 0;
-			foreach ( $actorWhere['orconds'] as $cond ) {
-				$data['editCount'] += $db->selectField(
-					[ 'revision' ] + $actorWhere['tables'],
-					'COUNT(*)',
-					$cond,
-					__METHOD__,
-					[],
-					$actorWhere['joins']
-				);
-			}
+			$data['editCount'] = $db->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'revision' )
+				->where( [ 'actor_user' => $data['id'] ] )
+				->join( 'actor', null, 'actor_id = rev_actor' )
+				->caller( __METHOD__ )
+				->fetchField();
 		}
 
 		// And we have to fetch groups separately, sigh...
