@@ -82,6 +82,9 @@ class CheckLocalUser extends Maintenance {
 		}
 	}
 
+	/**
+	 * @throws \MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError
+	 */
 	public function execute() {
 		$this->initialize();
 
@@ -115,7 +118,7 @@ class CheckLocalUser extends Maintenance {
 				continue;
 			}
 
-			$localdb = wfGetDB( DB_REPLICA, [], $wiki );
+			$localdb = CentralAuthServices::getDatabaseManager()->getLocalDB( DB_REPLICA, $wiki );
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {
