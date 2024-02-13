@@ -3050,19 +3050,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$rights = [];
 		$sets = [];
-		foreach ( $this->mRights as $right ) {
-			if ( $right['set'] ) {
-				$setId = $right['set'];
-				if ( !isset( $sets[$setId] ) ) {
-					$sets[$setId] = WikiSet::newFromID( $setId );
+		foreach ( $this->mRights as [ 'right' => $right, 'set' => $setId ] ) {
+			if ( $setId ) {
+				$sets[$setId] ??= WikiSet::newFromID( $setId );
+				if ( !$sets[$setId]->inSet() ) {
+					continue;
 				}
-				$set = $sets[$setId];
-				if ( $set->inSet() ) {
-					$rights[] = $right['right'];
-				}
-			} else {
-				$rights[] = $right['right'];
 			}
+			$rights[] = $right;
 		}
 		return $rights;
 	}
