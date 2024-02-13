@@ -13,7 +13,8 @@
 			"Ләйсән",
 			"Рустам Нурыев",
 			"ҒатаУлла",
-			"Sagan"
+			"Sagan",
+			"Bashkorttan"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Ҡатнашыусының глобаль төркөмдәре",
@@ -212,7 +213,7 @@
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|1=сәғәт|}} элек",
 	"centralauth-incomplete": "Иҫәп яҙмаларын берләштереү тамамланманы!",
 	"centralauth-incomplete-text": "Иҫәп яҙмаларын берләштереү тамамланғас, {{int:Centralauth-groupname}} һәр проектында айырым теркәлергә кәрәкмәйәсәк",
-	"centralauth-invalid-wiki": "Бындай викидата базаһы юҡ: $1.",
+	"centralauth-invalid-wiki": "Бындай вики мәғлүмәт базаһы юҡ: $1.",
 	"centralauth-list-attached": "Берҙәм иҫәп яҙмаһына {{PLURAL:$2|«$1» исемле иҫәп яҙмаһы автоматик рәүештә ҡушылды|«$1» исемле иҫәп яҙмалары автоматик рәүештә ҡушылды}}:",
 	"centralauth-list-attached-dryrun": "Берҙәм иҫәп яҙмаһына {{PLURAL:$2|был сайттағы «$1» иҫәп яҙмаһы  автоматик рәүештә ҡушылды|сайттарҙың һәр ҡайһыһындағы «$1» иҫәп яҙмаһы автоматик рәүештә ҡушылды}}:",
 	"centralauth-list-attached-title": "Берләштерелгән иҫәп яҙмалары",
