@@ -308,11 +308,11 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * instead, it ignores groups that the performer does not have permission to set.
 	 *
 	 * @param CentralAuthUser $user
-	 * @param array $add Array of groups to add
-	 * @param array $remove Array of groups to remove
+	 * @param string[] $add Array of groups to add
+	 * @param string[] $remove Array of groups to remove
 	 * @param string $reason Reason for group change
 	 * @param string[] $tags Array of change tags to add to the log entry
-	 * @param array $groupExpiries Associative array of (group name => expiry),
+	 * @param array<string,?string> $groupExpiries Associative array of (group name => expiry),
 	 *   containing only those groups that are to have new expiry values set
 	 * @return array Tuple of added, then removed groups
 	 */
@@ -869,6 +869,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 	/**
 	 * @return array[]
+	 * @phan-return array{add:list<string>,remove:list<string>,add-self:list<string>,remove-self:list<string>}
 	 */
 	private function changeableGroups() {
 		if ( $this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' ) ) {
