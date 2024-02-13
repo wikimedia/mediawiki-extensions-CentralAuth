@@ -158,7 +158,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	private const VERSION = 11;
+	private const VERSION = 12;
 
 	public const HIDDEN_LEVEL_NONE = 0;
 	public const HIDDEN_LEVEL_LISTS = 1;
@@ -465,14 +465,15 @@ class CentralAuthUser implements IDBAccessObject {
 		];
 
 		$resGroups = $db->newSelectQueryBuilder()
-			->select( [ 'gug_group', 'gug_expiry' ] )
+			->select( [ 'gug_group', 'gug_expiry', 'ggr_set' ] )
 			->from( 'global_user_groups' )
+			->leftJoin( 'global_group_restrictions', null, 'ggr_group=gug_group' )
 			->where( $userAndExpiryConds )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 		$this->mGroups = [];
 		foreach ( $resGroups as $row ) {
-			$this->mGroups[] = [ 'group' => $row->gug_group, 'expiry' => $row->gug_expiry ];
+			$this->mGroups[] = [ 'group' => $row->gug_group, 'expiry' => $row->gug_expiry, 'set' => $row->ggr_set ];
 		}
 
 		$resRights = $db->newSelectQueryBuilder()
@@ -3032,6 +3033,29 @@ class CentralAuthUser implements IDBAccessObject {
 		ksort( $groupExpirations );
 
 		return $groupExpirations;
+	}
+
+	/**
+	 * Return the user's groups that are active on the current wiki (according to WikiSet settings).
+	 *
+	 * @return string[]
+	 */
+	public function getActiveGlobalGroups() {
+		$this->loadGroups();
+
+		$groups = [];
+		$sets = [];
+		foreach ( $this->mGroups as [ 'group' => $group, 'set' => $setId ] ) {
+			if ( $setId ) {
+				$sets[$setId] ??= WikiSet::newFromID( $setId );
+				if ( !$sets[$setId]->inSet() ) {
+					continue;
+				}
+			}
+			$groups[] = $group;
+		}
+		sort( $groups );
+		return $groups;
 	}
 
 	/**
