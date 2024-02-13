@@ -62,9 +62,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 */
 	protected $mFetchedUser = null;
 
-	/** @var bool */
-	protected $isself = false;
-
 	private TitleFactory $titleFactory;
 
 	/** @var UserNamePrefixSearch */
@@ -118,10 +115,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$out->addModules( [ 'mediawiki.special.userrights' ] );
 
 		$this->mTarget = $par ?? $request->getVal( 'user' );
-
-		if ( $this->mTarget !== null && $this->mTarget === $user->getName() ) {
-			$this->isself = true;
-		}
 
 		$fetchedStatus = $this->mTarget === null ? Status::newFatal( 'nouserspecified' ) :
 			$this->fetchUser( $this->mTarget );
@@ -283,16 +276,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				if ( $groupExpiries[$group] && $groupExpiries[$group] < wfTimestampNow() ) {
 					return Status::newFatal( 'userrights-expiry-in-past', $group );
 				}
-
-				// if the user can only add this group (not remove it), the expiry time
-				// cannot be brought forward (T156784)
-				if ( !$this->canRemove( $group ) &&
-					isset( $existingGroups[$group] ) &&
-					( $existingGroups[$group] ?: 'infinity' ) >
-						( $groupExpiries[$group] ?: 'infinity' )
-				) {
-					return Status::newFatal( 'userrights-cannot-shorten-expiry', $group );
-				}
 			} else {
 				$removegroup[] = $group;
 			}
@@ -325,28 +308,15 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		array $groupExpiries = []
 	) {
 		// Validate input set...
-		$isself = $user->getName() == $this->getUser()->getName();
 		$groups = $user->getGlobalGroupsWithExpiration();
 		$changeable = $this->changeableGroups();
-		$addable = array_merge( $changeable['add'], $isself ? $changeable['add-self'] : [] );
-		$removable = array_merge( $changeable['remove'], $isself ? $changeable['remove-self'] : [] );
 
-		$remove = array_unique( array_intersect( $remove, $removable, array_keys( $groups ) ) );
-		$add = array_intersect( $add, $addable );
+		$remove = array_unique( array_intersect( $remove, $changeable, array_keys( $groups ) ) );
+		$add = array_intersect( $add, $changeable );
 
-		// add only groups that are not already present or that need their expiry updated,
-		// UNLESS the user can only add this group (not remove it) and the expiry time
-		// is being brought forward (T156784)
+		// add only groups that are not already present or that need their expiry updated
 		$add = array_filter( $add,
-			static function ( $group ) use ( $groups, $groupExpiries, $removable ) {
-				if ( isset( $groupExpiries[$group] ) &&
-					isset( $groups[$group] ) &&
-					!in_array( $group, $removable ) &&
-					( $groups[$group] ?: 'infinity' ) >
-						( $groupExpiries[$group] ?: 'infinity' )
-				) {
-					return false;
-				}
+			static function ( $group ) use ( $groups, $groupExpiries ) {
 				return !array_key_exists( $group, $groups ) || array_key_exists( $group, $groupExpiries );
 			} );
 
@@ -574,7 +544,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			Linker::TOOL_LINKS_EMAIL
 		);
 
-		[ $groupCheckboxes, $canChangeAny ] = $this->groupCheckboxes( $user );
+		$canChangeAny = $this->changeableGroups() !== [];
 		$this->getOutput()->addHTML(
 			Xml::openElement(
 				'form',
@@ -610,7 +580,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			$this->getOutput()->addHTML(
 				$this->msg( 'userrights-groups-help', $user->getName() )->parse() .
 				$grouplist .
-				$groupCheckboxes .
+				$this->groupCheckboxes( $user ) .
 				Xml::openElement( 'table', [ 'id' => 'mw-userrights-table-outer' ] ) .
 					"<tr>
 						<td class='mw-label'>" .
@@ -647,11 +617,12 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
-	 * Adds a table with checkboxes where you can select what groups to add/remove
+	 * Adds a table with checkboxes where you can select what groups to add/remove.
+	 *
+	 * This is only called when the user can change any of the groups.
 	 *
 	 * @param CentralAuthUser $user
-	 * @return array Array with 2 elements: the XHTML table element with checkxboes, and
-	 * whether any groups are changeable
+	 * @return string The HTML table element with checkboxes and expiry dropdowns
 	 */
 	private function groupCheckboxes( CentralAuthUser $user ) {
 		$allgroups = $this->globalGroupLookup->getDefinedGroups();
@@ -664,231 +635,100 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			? []
 			: XmlSelect::parseOptionsMessage( $expiryOptionsMsg->text() );
 
-		// Put all column info into an associative array so that extensions can
-		// more easily manage it.
-		$columns = [ 'unchangeable' => [], 'changeable' => [] ];
-
-		foreach ( $allgroups as $group ) {
-			$set = array_key_exists( $group, $currentGroups );
-			// Users who can add the group, but not remove it, can only lengthen
-			// expiries, not shorten them. So they should only see the expiry
-			// dropdown if the group currently has a finite expiry
-			$canOnlyLengthenExpiry = ( $set && $this->canAdd( $group ) &&
-				!$this->canRemove( $group ) && $currentGroups[$group] );
-			// Should the checkbox be disabled?
-			$disabledCheckbox = !(
-				( $set && $this->canRemove( $group ) ) ||
-				( !$set && $this->canAdd( $group ) ) );
-			// Should the expiry elements be disabled?
-			$disabledExpiry = $disabledCheckbox && !$canOnlyLengthenExpiry;
-			// Do we need to point out that this action is irreversible?
-			$irreversible = !$disabledCheckbox && (
-				( $set && !$this->canAdd( $group ) ) ||
-				( !$set && !$this->canRemove( $group ) ) );
-
-			$checkbox = [
-				'set' => $set,
-				'disabled' => $disabledCheckbox,
-				'disabled-expiry' => $disabledExpiry,
-				'irreversible' => $irreversible
-			];
-
-			if ( $disabledCheckbox && $disabledExpiry ) {
-				$columns['unchangeable'][$group] = $checkbox;
-			} else {
-				$columns['changeable'][$group] = $checkbox;
-			}
-		}
-
 		// Build the HTML table
 		$ret .= Xml::openElement( 'table', [ 'class' => 'mw-userrights-groups' ] ) .
 			"<tr>\n";
-		foreach ( $columns as $name => $column ) {
-			if ( $column === [] ) {
-				continue;
-			}
-			// Messages: userrights-changeable-col, userrights-unchangeable-col
-			$ret .= Xml::element(
-				'th',
-				null,
-				$this->msg( 'userrights-' . $name . '-col', count( $column ) )->text()
-			);
-		}
+		$ret .= Xml::element(
+			'th',
+			null,
+			$this->msg( 'userrights-changeable-col', count( $allgroups ) )->text()
+		);
 
 		$ret .= "</tr>\n<tr>\n";
 		$uiLanguage = $this->getLanguage();
-		foreach ( $columns as $column ) {
-			if ( $column === [] ) {
-				continue;
+
+		$ret .= "\t<td style='vertical-align:top;'>\n";
+		foreach ( $allgroups as $group ) {
+			$set = array_key_exists( $group, $currentGroups );
+
+			$attr = [ 'class' => 'mw-userrights-groupcheckbox' ];
+
+			$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
+			$checkboxHtml = Xml::checkLabel( $member, "wpGroup-" . $group,
+				"wpGroup-" . $group, $set, $attr );
+
+			$uiUser = $this->getUser();
+
+			$currentExpiry = $currentGroups[$group] ?? null;
+
+			$expiryHtml = Xml::element( 'span', null,
+				$this->msg( 'userrights-expiry' )->text() );
+			$expiryHtml .= Xml::openElement( 'span' );
+
+			// add a form element to set the expiry date
+			$expiryFormOptions = new XmlSelect(
+				"wpExpiry-$group",
+				// forward compatibility with HTMLForm
+				"mw-input-wpExpiry-$group",
+				$currentExpiry ? 'existing' : 'infinite'
+			);
+
+			if ( $currentExpiry ) {
+				$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
+				$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
+				$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
+				$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
+					$timestamp, $d, $t );
+				$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
 			}
-			$ret .= "\t<td style='vertical-align:top;'>\n";
-			foreach ( $column as $group => $checkbox ) {
-				$attr = [ 'class' => 'mw-userrights-groupcheckbox' ];
-				if ( $checkbox['disabled'] ) {
-					$attr['disabled'] = 'disabled';
-				}
 
-				$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
-				if ( $checkbox['irreversible'] ) {
-					$text = $this->msg( 'userrights-irreversible-marker', $member )->text();
-				} elseif ( $checkbox['disabled'] && !$checkbox['disabled-expiry'] ) {
-					$text = $this->msg( 'userrights-no-shorten-expiry-marker', $member )->text();
-				} else {
-					$text = $member;
-				}
-				$checkboxHtml = Xml::checkLabel( $text, "wpGroup-" . $group,
-					"wpGroup-" . $group, $checkbox['set'], $attr );
+			$expiryFormOptions->addOption(
+				$this->msg( 'userrights-expiry-none' )->text(),
+				'infinite'
+			);
+			$expiryFormOptions->addOption(
+				$this->msg( 'userrights-expiry-othertime' )->text(),
+				'other'
+			);
 
-				$uiUser = $this->getUser();
+			$expiryFormOptions->addOptions( $expiryOptions );
 
-				$currentExpiry = $currentGroups[$group] ?? null;
+			// Add expiry dropdown
+			$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
 
-				// If the user can't modify the expiry, print the current expiry below
-				// it in plain text. Otherwise provide UI to set/change the expiry
-				if ( $checkbox['set'] &&
-					( $checkbox['irreversible'] || $checkbox['disabled-expiry'] )
-				) {
-					if ( $currentExpiry ) {
-						$expiryFormatted = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-						$expiryFormattedD = $uiLanguage->userDate( $currentExpiry, $uiUser );
-						$expiryFormattedT = $uiLanguage->userTime( $currentExpiry, $uiUser );
-						$expiryHtml = Xml::element( 'span', null,
-							$this->msg( 'userrights-expiry-current' )->params(
-							$expiryFormatted, $expiryFormattedD, $expiryFormattedT )->text() );
-					} else {
-						$expiryHtml = Xml::element( 'span', null,
-							$this->msg( 'userrights-expiry-none' )->text() );
-					}
-					// T171345: Add a hidden form element so that other groups can still be manipulated,
-					// otherwise saving errors out with an invalid expiry time for this group.
-					$expiryHtml .= Html::hidden( "wpExpiry-$group",
-						$currentExpiry ? 'existing' : 'infinite' );
-					$expiryHtml .= "<br />\n";
-				} else {
-					$expiryHtml = Xml::element( 'span', null,
-						$this->msg( 'userrights-expiry' )->text() );
-					$expiryHtml .= Xml::openElement( 'span' );
+			// Add custom expiry field
+			$attribs = [
+				'id' => "mw-input-wpExpiry-$group-other",
+				'class' => 'mw-userrights-expiryfield',
+			];
+			$expiryHtml .= Xml::input( "wpExpiry-$group-other", 30, '', $attribs );
 
-					// add a form element to set the expiry date
-					$expiryFormOptions = new XmlSelect(
-						"wpExpiry-$group",
-						// forward compatibility with HTMLForm
-						"mw-input-wpExpiry-$group",
-						$currentExpiry ? 'existing' : 'infinite'
-					);
-					if ( $checkbox['disabled-expiry'] ) {
-						$expiryFormOptions->setAttribute( 'disabled', 'disabled' );
-					}
+			$expiryHtml .= Xml::closeElement( 'span' );
 
-					if ( $currentExpiry ) {
-						$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-						$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
-						$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
-						$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
-							$timestamp, $d, $t );
-						$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
-					}
+			$divAttribs = [
+				'id' => "mw-userrights-nested-wpGroup-$group",
+				'class' => 'mw-userrights-nested',
+			];
+			$checkboxHtml .= "\t\t\t" . Xml::tags( 'div', $divAttribs, $expiryHtml ) . "\n";
 
-					$expiryFormOptions->addOption(
-						$this->msg( 'userrights-expiry-none' )->text(),
-						'infinite'
-					);
-					$expiryFormOptions->addOption(
-						$this->msg( 'userrights-expiry-othertime' )->text(),
-						'other'
-					);
-
-					$expiryFormOptions->addOptions( $expiryOptions );
-
-					// Add expiry dropdown
-					$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
-
-					// Add custom expiry field
-					$attribs = [
-						'id' => "mw-input-wpExpiry-$group-other",
-						'class' => 'mw-userrights-expiryfield',
-					];
-					if ( $checkbox['disabled-expiry'] ) {
-						$attribs['disabled'] = 'disabled';
-					}
-					$expiryHtml .= Xml::input( "wpExpiry-$group-other", 30, '', $attribs );
-
-					// If the user group is set but the checkbox is disabled, mimic a
-					// checked checkbox in the form submission
-					if ( $checkbox['set'] && $checkbox['disabled'] ) {
-						$expiryHtml .= Html::hidden( "wpGroup-$group", 1 );
-					}
-
-					$expiryHtml .= Xml::closeElement( 'span' );
-				}
-
-				$divAttribs = [
-					'id' => "mw-userrights-nested-wpGroup-$group",
-					'class' => 'mw-userrights-nested',
-				];
-				$checkboxHtml .= "\t\t\t" . Xml::tags( 'div', $divAttribs, $expiryHtml ) . "\n";
-
-				$ret .= "\t\t" . ( ( $checkbox['disabled'] && $checkbox['disabled-expiry'] )
-					? Xml::tags( 'div', [ 'class' => 'mw-userrights-disabled' ], $checkboxHtml )
-					: Xml::tags( 'div', [], $checkboxHtml )
-				) . "\n";
-			}
-			$ret .= "\t</td>\n";
+			$ret .= "\t\t" . Xml::tags( 'div', [], $checkboxHtml
+			) . "\n";
 		}
+		$ret .= "\t</td>\n";
+
 		$ret .= Xml::closeElement( 'tr' ) . Xml::closeElement( 'table' );
 
-		return [ $ret, (bool)$columns['changeable'] ];
+		return $ret;
 	}
 
 	/**
-	 * @param string $group The name of the group to check
-	 * @return bool Can we remove the group?
-	 */
-	private function canRemove( $group ) {
-		$groups = $this->changeableGroups();
-
-		return in_array(
-			$group,
-			$groups['remove'] ) || ( $this->isself && in_array( $group, $groups['remove-self'] )
-		);
-	}
-
-	/**
-	 * @param string $group The name of the group to check
-	 * @return bool Can we add the group?
-	 */
-	private function canAdd( $group ) {
-		$groups = $this->changeableGroups();
-
-		return in_array(
-			$group,
-			$groups['add'] ) || ( $this->isself && in_array( $group, $groups['add-self'] )
-		);
-	}
-
-	/**
-	 * @return array[]
-	 * @phan-return array{add:list<string>,remove:list<string>,add-self:list<string>,remove-self:list<string>}
+	 * @return string[]
 	 */
 	private function changeableGroups() {
 		if ( $this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' ) ) {
-			$allGroups = $this->globalGroupLookup->getDefinedGroups();
-
-			# specify addself and removeself as empty arrays - T18098
-			return [
-				'add' => $allGroups,
-				'remove' => $allGroups,
-				'add-self' => [],
-				'remove-self' => []
-			];
+			return $this->globalGroupLookup->getDefinedGroups();
 		}
-
-		return [
-			'add' => [],
-			'remove' => [],
-			'add-self' => [],
-			'remove-self' => []
-		];
+		return [];
 	}
 
 	/**
