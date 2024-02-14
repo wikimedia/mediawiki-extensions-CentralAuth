@@ -13,11 +13,15 @@ use UnexpectedValueException;
  * - gblrights/setchange
  * - gblrights/setnewtype
  * - gblrights/setrename
+ *
+ * phan-taint-check gets very confused by $this->plaintext changing expected taint types everywhere,
+ * so manual annotations are needed. They should be correct for the non-plaintext mode (HTML output).
  */
 class WikiSetLogFormatter extends LogFormatter {
 
 	/**
 	 * @param string $name
+	 * @param-taint $name none
 	 * @return string wikitext or html
 	 * @return-taint onlysafefor_html
 	 */
@@ -39,6 +43,12 @@ class WikiSetLogFormatter extends LogFormatter {
 		return $this->msg( "centralauth-rightslog-set-$type" )->text();
 	}
 
+	/**
+	 * @param string[] $wikis
+	 * @param-taint $wikis none
+	 * @return string Plain text
+	 * @return-taint tainted
+	 */
 	private function formatWikis( array $wikis ): string {
 		if ( $wikis !== [] ) {
 			return $this->formatParameterValue( 'list', $wikis );
@@ -58,7 +68,6 @@ class WikiSetLogFormatter extends LogFormatter {
 			case 'deleteset':
 				return [
 					// 4::name
-					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
 				];
 			case 'newset':
@@ -68,11 +77,9 @@ class WikiSetLogFormatter extends LogFormatter {
 					: $this->entry->getParameters()['wikis'];
 				return [
 					// 4::name
-					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
 					// 5::type
 					4 => $this->formatType( $params[4] ),
-					// @phan-suppress-next-line SecurityCheck-XSS
 					5 => $this->formatWikis( $wikis ),
 					6 => Message::numParam( count( $wikis ) ),
 				];
@@ -85,11 +92,8 @@ class WikiSetLogFormatter extends LogFormatter {
 				}
 				return [
 					// 4::name
-					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
-					// @phan-suppress-next-line SecurityCheck-XSS
 					4 => $this->formatWikis( $added ),
-					// @phan-suppress-next-line SecurityCheck-XSS
 					5 => $this->formatWikis( $removed ),
 					6 => Message::numParam( count( $added ) ),
 					7 => Message::numParam( count( $removed ) ),
@@ -97,7 +101,6 @@ class WikiSetLogFormatter extends LogFormatter {
 			case 'setnewtype':
 				return [
 					// 4::name
-					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
 					// 5::oldType
 					4 => $this->formatType( $params[4] ),
@@ -107,7 +110,6 @@ class WikiSetLogFormatter extends LogFormatter {
 			case 'setrename':
 				return [
 					// 4::name
-					// @phan-suppress-next-line SecurityCheck-XSS,SecurityCheck-DoubleEscaped
 					3 => Message::rawParam( $this->formatWikiSetLink( $params[3] ) ),
 					// 5::oldName
 					4 => $params[4],

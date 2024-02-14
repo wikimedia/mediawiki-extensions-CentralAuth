@@ -9,26 +9,29 @@ use Message;
 
 /**
  * Format the gblrename/merge log entries
+ *
+ * phan-taint-check gets very confused by $this->plaintext changing expected taint types everywhere,
+ * so manual annotations are needed. They should be correct for the non-plaintext mode (HTML output).
  */
 class GlobalUserMergeLogFormatter extends LogFormatter {
 	protected function extractParameters() {
 		$lang = $this->context->getLanguage();
 		$params = parent::extractParameters();
 
+		$from = [];
+		foreach ( explode( '|', $params[3] ) as $name ) {
+			$from[] = $this->getCentralAuthLink( $name );
+		}
+
 		return [
-			// @phan-suppress-next-line SecurityCheck-XSS
-			3 => Message::rawParam( $lang->commaList(
-				array_map(
-					[ $this, 'getCentralAuthLink' ],
-					explode( '|', $params[3] )
-				)
-			) ),
+			3 => Message::rawParam( $lang->commaList( $from ) ),
 			4 => Message::rawParam( $this->getCentralAuthLink( $params[4] ) ),
 		];
 	}
 
 	/**
 	 * @param string $name
+	 * @param-taint $name none
 	 * @return string wikitext or html
 	 * @return-taint onlysafefor_html
 	 */
