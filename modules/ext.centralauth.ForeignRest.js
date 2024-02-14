@@ -62,9 +62,13 @@
 		} else if ( this.foreignLoginPromise ) {
 			tokenPromise = this.foreignLoginPromise.then(
 				// If succeeded, no 'centralauthtoken' needed
-				function () { return $.Deferred().reject(); },
+				function () {
+					return $.Deferred().reject();
+				},
 				// If failed, get the token
-				function () { return ( abortable = self.foreignActionApi.getCentralAuthToken() ); }
+				function () {
+					return ( abortable = self.foreignActionApi.getCentralAuthToken() );
+				}
 			);
 		} else {
 			tokenPromise = abortable = self.foreignActionApi.getCentralAuthToken();
