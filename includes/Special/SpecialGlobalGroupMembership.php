@@ -347,8 +347,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				) {
 					return false;
 				}
-				// @phan-suppress-next-line PhanTypeMismatchArgumentNullableInternal False positive
-				return !in_array( $group, $groups ) || array_key_exists( $group, $groupExpiries );
+				return !array_key_exists( $group, $groups ) || array_key_exists( $group, $groupExpiries );
 			} );
 
 		// Remove groups, then add new ones/update expiries of existing ones
