@@ -98,12 +98,16 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mAttachedList;
 	/** @var string */
 	private $mAuthenticationTimestamp;
-	/** @var string[]|null */
+	/**
+	 * @var array|null
+	 * @phan-var ?list<array{group:string,expiry:?string}>
+	 */
 	private $mGroups;
-	/** @var string[][] */
+	/**
+	 * @var array|null
+	 * @phan-var ?list<array{right:string,set:?int}>
+	 */
 	private $mRights;
-	/** @var array<string, string|null>|null */
-	private $mGroupExpirations;
 	/** @var string */
 	private $mPassword;
 	/** @var string */
@@ -143,7 +147,6 @@ class CentralAuthUser implements IDBAccessObject {
 		'mEmail',
 		'mAuthenticationTimestamp',
 		'mGroups',
-		'mGroupExpirations',
 		'mRights',
 		'mHomeWiki',
 		'mBeingRenamed',
@@ -155,7 +158,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	private const VERSION = 10;
+	private const VERSION = 11;
 
 	public const HIDDEN_LEVEL_NONE = 0;
 	public const HIDDEN_LEVEL_LISTS = 1;
@@ -405,7 +408,6 @@ class CentralAuthUser implements IDBAccessObject {
 	protected function resetState() {
 		$this->mGlobalId = null;
 		$this->mGroups = null;
-		$this->mGroupExpirations = null;
 		$this->mAttachedArray = null;
 		$this->mAttachedList = null;
 		$this->mHomeWiki = null;
@@ -490,16 +492,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$groups = [];
 
 		foreach ( $res as $row ) {
-			/** @var UserIdentity|bool $set */
-			$set = $sets[$row->ggp_group] ?? '';
-			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getId() : false ];
-			$groups[$row->ggp_group] = $row->gug_expiry;
+			$set = $sets[$row->ggp_group] ?? null;
+			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getId() : null ];
+			$groups[] = [ 'group' => $row->ggp_group, 'expiry' => $row->gug_expiry ];
 		}
-		ksort( $groups );
 
 		$this->mRights = $rights;
-		$this->mGroups = array_keys( $groups );
-		$this->mGroupExpirations = $groups;
+		$this->mGroups = $groups;
 	}
 
 	/**
@@ -507,13 +506,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * the next time in UNIX time, or null if this user has no temporary global group memberships.
 	 */
 	private function getClosestGlobalUserGroupExpiry(): ?int {
-		if ( !isset( $this->mGroupExpirations ) ) {
-			$this->loadGroups();
-		}
+		$this->loadGroups();
 
 		$closestExpiry = null;
 
-		foreach ( $this->mGroupExpirations as $expiration ) {
+		foreach ( $this->mGroups as [ 'expiry' => $expiration ] ) {
 			if ( !$expiration ) {
 				continue;
 			}
@@ -3028,18 +3025,22 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string[]
 	 */
 	public function getGlobalGroups() {
-		$this->loadGroups();
-
-		return $this->mGroups;
+		return array_keys( $this->getGlobalGroupsWithExpiration() );
 	}
 
 	/**
-	 * @return array<string, string|null> of [group name => expiration timestamp or null if permanent]
+	 * @return array<string,?string> of [group name => expiration timestamp or null if permanent]
 	 */
 	public function getGlobalGroupsWithExpiration() {
 		$this->loadGroups();
 
-		return $this->mGroupExpirations;
+		$groupExpirations = [];
+		foreach ( $this->mGroups as [ 'group' => $group, 'expiry' => $expiration ] ) {
+			$groupExpirations[ $group ] = $expiration;
+		}
+		ksort( $groupExpirations );
+
+		return $groupExpirations;
 	}
 
 	/**
