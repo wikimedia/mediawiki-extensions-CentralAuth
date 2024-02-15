@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
@@ -33,6 +34,7 @@ class FixStuckGlobalRename extends Maintenance {
 	public function execute() {
 		global $wgLocalDatabases;
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$databaseManager = CentralAuthServices::getDatabaseManager();
 
 		$oldName = $userNameUtils->getCanonical( $this->getArg( 0 ) );
 		$newName = $userNameUtils->getCanonical( $this->getArg( 1 ) );
@@ -46,7 +48,7 @@ class FixStuckGlobalRename extends Maintenance {
 			$this->fatalError( "{$ca->getName()} does not have a rename in progress on this wiki." );
 		}
 
-		$dbr = wfGetDB( DB_REPLICA, [], $this->getOption( 'logwiki' ) );
+		$dbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
 		$queryData = DatabaseLogEntry::getSelectQueryData();
 		$row = $dbr->newSelectQueryBuilder()
 			->tables( $queryData['tables'] )

@@ -1,7 +1,5 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
-
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
@@ -58,11 +56,9 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 	private function insert( array $rows ) {
 		$count = count( $rows );
 		$this->output( "Inserting $count rows into log_search\n" );
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		$dbw->insert( 'log_search', $rows, __METHOD__, [ 'IGNORE' ] );
-
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
-		$lbFactory->waitForReplication();
+		$this->waitForReplication();
 	}
 }
 
