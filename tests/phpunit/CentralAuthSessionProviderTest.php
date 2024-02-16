@@ -2,7 +2,7 @@
 
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Session\SessionProviderTestTrait;
+use MediaWiki\Tests\Session\SessionProviderTestTrait;
 
 /**
  * @covers CentralAuthSessionProvider

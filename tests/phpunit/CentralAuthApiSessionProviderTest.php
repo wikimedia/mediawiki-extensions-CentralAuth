@@ -6,7 +6,7 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
-use MediaWiki\Session\SessionProviderTestTrait;
+use MediaWiki\Tests\Session\SessionProviderTestTrait;
 use Psr\Log\NullLogger;
 
 /**
