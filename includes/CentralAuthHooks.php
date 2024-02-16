@@ -584,8 +584,10 @@ class CentralAuthHooks implements
 	 * @return bool true
 	 */
 	public function onOtherBlockLogLink( &$otherBlockLink, $user ) {
-		if ( IPUtils::isIPAddress( $user ) ) {
-			// Return if it is an IP as only usernames can be locked.
+		if ( IPUtils::isIPAddress( $user )
+			|| !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user )
+		) {
+			// Only usernames can be locked.
 			return true;
 		}
 
