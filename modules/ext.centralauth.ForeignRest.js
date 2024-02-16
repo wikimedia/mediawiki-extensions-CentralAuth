@@ -20,7 +20,7 @@
 	 */
 	function CentralAuthForeignRest( url, foreignActionApi, options ) {
 		// Call parent constructor
-		CentralAuthForeignRest.parent.call( this, url, foreignActionApi, options );
+		CentralAuthForeignRest.super.call( this, url, foreignActionApi, options );
 
 		if ( mw.config.get( 'wgUserName' ) === null || ( options && options.anonymous ) ) {
 			// Anonymous users cannot obtain a centralauthtoken
@@ -39,7 +39,7 @@
 	 */
 	CentralAuthForeignRest.prototype.abort = function () {
 		this.foreignActionApi.abort();
-		CentralAuthForeignRest.parent.prototype.abort.call( this );
+		CentralAuthForeignRest.super.prototype.abort.call( this );
 	};
 
 	/**
@@ -48,7 +48,7 @@
 	CentralAuthForeignRest.prototype.ajax = function ( path, ajaxOptions ) {
 		var tokenPromise,
 			self = this,
-			parent = CentralAuthForeignRest.parent.prototype.ajax,
+			parent = CentralAuthForeignRest.super.prototype.ajax,
 			abortedPromise = $.Deferred().reject(
 				'http',
 				{ textStatus: 'abort', exception: 'abort' }

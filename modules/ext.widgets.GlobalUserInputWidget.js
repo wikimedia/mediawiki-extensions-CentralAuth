@@ -16,7 +16,7 @@
 		config = $.extend( {}, config, { autocomplete: false } );
 
 		// Parent constructor
-		GlobalUserInputWidget.parent.call( this, config );
+		GlobalUserInputWidget.super.call( this, config );
 
 		// Mixin constructors
 		OO.ui.mixin.LookupElement.call( this, config );
@@ -56,7 +56,7 @@
 		this.setLookupsDisabled( true );
 
 		// Parent method
-		retval = GlobalUserInputWidget.parent.prototype.focus.apply( this, arguments );
+		retval = GlobalUserInputWidget.super.prototype.focus.apply( this, arguments );
 
 		this.setLookupsDisabled( false );
 

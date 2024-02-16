@@ -31,7 +31,7 @@
 	 */
 	function CentralAuthForeignApi( url, options ) {
 		// Call parent constructor
-		CentralAuthForeignApi.parent.call( this, url, options );
+		CentralAuthForeignApi.super.call( this, url, options );
 
 		// Properties
 		// mw.Api instance used for action=centralauthtoken requests
@@ -92,7 +92,7 @@
 		if ( this.foreignLoginPromise ) {
 			return this.foreignLoginPromise;
 		}
-		return CentralAuthForeignApi.parent.prototype.ajax.call(
+		return CentralAuthForeignApi.super.prototype.ajax.call(
 			this,
 			{ action: 'query', meta: 'userinfo|tokens' },
 			{ type: 'GET' }
@@ -114,7 +114,7 @@
 	 */
 	CentralAuthForeignApi.prototype.getToken = function ( type, assert ) {
 		var foreignApi = this,
-			parent = CentralAuthForeignApi.parent.prototype.getToken,
+			parent = CentralAuthForeignApi.super.prototype.getToken,
 			abortedPromise = $.Deferred().reject( 'http',
 				{ textStatus: 'abort', exception: 'abort' } ).promise(),
 			abortable,
@@ -152,7 +152,7 @@
 	CentralAuthForeignApi.prototype.badToken = function ( type ) {
 		// This may be a bit too aggressive, but that's better than not being aggressive enough
 		this.csrfTokenBad = true;
-		return CentralAuthForeignApi.parent.prototype.badToken.call( this, type );
+		return CentralAuthForeignApi.super.prototype.badToken.call( this, type );
 	};
 
 	/**
@@ -161,7 +161,7 @@
 	CentralAuthForeignApi.prototype.ajax = function ( parameters, ajaxOptions ) {
 		var tokenPromise,
 			foreignApi = this,
-			parent = CentralAuthForeignApi.parent.prototype.ajax,
+			parent = CentralAuthForeignApi.super.prototype.ajax,
 			abortedPromise = $.Deferred().reject(
 				'http',
 				{ textStatus: 'abort', exception: 'abort' }
