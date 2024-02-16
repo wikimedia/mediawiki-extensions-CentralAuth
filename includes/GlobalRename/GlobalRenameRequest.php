@@ -211,10 +211,7 @@ class GlobalRenameRequest {
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setRequested( $requested = null ) {
-		if ( $requested === null ) {
-			$requested = wfTimestampNow();
-		}
-		$this->requested = $requested;
+		$this->requested = $requested ?? wfTimestampNow();
 		return $this;
 	}
 
@@ -232,10 +229,7 @@ class GlobalRenameRequest {
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setCompleted( $completed = null ) {
-		if ( $completed === null ) {
-			$completed = wfTimestampNow();
-		}
-		$this->completed = $completed;
+		$this->completed = $completed ?? wfTimestampNow();
 		return $this;
 	}
 
