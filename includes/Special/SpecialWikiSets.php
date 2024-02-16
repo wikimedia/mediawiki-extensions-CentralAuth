@@ -251,7 +251,7 @@ class SpecialWikiSets extends SpecialPage {
 				->escaped();
 			$form['centralauth-editset-wikis'] = self::buildTableByList(
 				$sortedWikis, 3, [ 'style' => 'width:100%;' ]
-			);
+			) . '<hr>';
 			$form['centralauth-editset-restwikis'] = self::buildTableByList(
 				$restWikis, 3, [ 'style' => 'width:100%;' ]
 			);
