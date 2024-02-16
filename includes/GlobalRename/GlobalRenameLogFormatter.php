@@ -43,7 +43,7 @@ class GlobalRenameLogFormatter extends LogFormatter {
 	protected function getCentralAuthLink( $name ) {
 		$title = Title::makeTitle( NS_SPECIAL, 'CentralAuth/' . $name );
 		if ( $this->plaintext ) {
-			return "[[{$title->getPrefixedText()}]]";
+			return '[[' . $title->getPrefixedText() . ']]';
 		}
 
 		return $this->getLinkRenderer()->makeLink( $title, $name );

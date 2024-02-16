@@ -373,9 +373,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		if ( $renamer->isAttached() || $homewiki === null ) {
 			$renamerLink = Title::makeTitleSafe( NS_USER, $renamer->getName() )->getFullURL();
 		} else {
-			$renamerLink = WikiMap::getForeignURL(
-				$homewiki, "User:{$renamer->getName()}"
-			);
+			$renamerLink = WikiMap::getForeignURL( $homewiki, 'User:' . $renamer->getName() );
 		}
 
 		if ( strpos( $reason, "\n" ) !== false ) {
@@ -498,7 +496,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		if ( $homeWiki === null ) {
 			$homeLink = Title::makeTitleSafe( NS_USER, $req->getName() )->getFullURL();
 		} else {
-			$homeLink = WikiMap::getForeignURL( $homeWiki, "User:{$req->getName()}" );
+			$homeLink = WikiMap::getForeignURL( $homeWiki, 'User:' . $req->getName() );
 		}
 
 		$headerMsg = $this->msg( 'globalrenamequeue-request-header',
