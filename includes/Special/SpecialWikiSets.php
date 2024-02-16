@@ -26,8 +26,7 @@ class SpecialWikiSets extends SpecialPage {
 	/** @var bool */
 	private $mCanEdit;
 
-	/** @var CentralAuthWikiListService */
-	private $wikiListService;
+	private CentralAuthWikiListService $wikiListService;
 
 	public function __construct( CentralAuthWikiListService $wikiListService ) {
 		parent::__construct( 'WikiSets' );
@@ -122,11 +121,7 @@ class SpecialWikiSets extends SpecialPage {
 
 		// Give grep a chance to find the usages: centralauth-editset-item-rw,
 		// centralauth-editset-item-ro
-		$sets = WikiSet::getAllWikiSets();
-		/**
-		 * @var $set WikiSet
-		 */
-		foreach ( $sets as $set ) {
+		foreach ( WikiSet::getAllWikiSets() as $set ) {
 			$text = $this->msg( "centralauth-editset-item-{$msgPostfix}",
 				$set->getName(), $set->getID() )->parse();
 			$this->getOutput()->addHTML( "<li>{$text}</li>" );
@@ -149,7 +144,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param bool|string $error False or raw html to output as error
 	 * @param string|null $name (Optional) Name of WikiSet
 	 * @param string|null $type WikiSet::OPTIN or WikiSet::OPTOUT
-	 * @param array|null $wikis
+	 * @param string[]|null $wikis
 	 * @param string|null $reason
 	 */
 	private function buildSetView(
@@ -285,16 +280,12 @@ class SpecialWikiSets extends SpecialPage {
 	 *
 	 * Could in the future be replaced by CSS column-count.
 	 *
-	 * @param array $list
+	 * @param string[] $list
 	 * @param int $columns number of columns
 	 * @param array $tableAttribs <table> attributes
 	 * @return string Table
 	 */
-	private function buildTableByList( $list, $columns = 2, $tableAttribs = [] ) {
-		if ( !is_array( $list ) ) {
-			return '';
-		}
-
+	private function buildTableByList( array $list, int $columns = 2, array $tableAttribs = [] ): string {
 		$count = count( $list );
 		if ( $count === 0 ) {
 			return $this->msg( 'centralauth-editset-nowikis' )->parse();
@@ -303,12 +294,7 @@ class SpecialWikiSets extends SpecialPage {
 		# If there are less items than columns, limit the number of columns
 		$columns = $count < $columns ? $count : $columns;
 		$itemsPerCol = (int)ceil( $count / $columns );
-		$i = 0;
-		$splitLists = [];
-		while ( $i < $columns ) {
-			$splitLists[$i] = array_slice( $list, $itemsPerCol * $i, $itemsPerCol );
-			$i++;
-		}
+		$splitLists = array_chunk( $list, $itemsPerCol );
 
 		$body = '';
 		foreach ( $splitLists as $splitList ) {
@@ -337,15 +323,15 @@ class SpecialWikiSets extends SpecialPage {
 			return;
 		}
 
-		$legend = $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->escaped();
+		$legend = $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->text();
 		$form = [ 'centralauth-editset-reason' => Xml::input( 'wpReason' ) ];
-		$url = htmlspecialchars(
-			$this->getPageTitle( 'delete/' . $subpage )->getLocalUrl()
-		);
+		$url = $this->getPageTitle( 'delete/' . $subpage )->getLocalUrl();
 		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 
 		$this->getOutput()->addHTML(
-			"<fieldset><legend>{$legend}</legend><form action=\"{$url}\" method='post'>"
+			Html::openElement( 'fieldset' ) .
+			Html::element( 'legend', [], $legend ) .
+			Html::openElement( 'form', [ 'action' => $url, 'method' => 'post' ] )
 		);
 		$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit-delete' ) );
 		$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
