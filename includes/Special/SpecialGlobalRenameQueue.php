@@ -559,7 +559,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 
 		// Show a log entry of previous renames under the requesting user's username
-		$caTitle = Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $req->getName() );
+		$caTitle = SpecialPage::getTitleFor( 'CentralAuth', $req->getName() );
 		$extract = '';
 		$extractCount = LogEventsList::showLogExtract( $extract, 'gblrename', $caTitle, '', [
 			'showIfEmpty' => false,

@@ -133,7 +133,7 @@ class SpecialWikiSets extends SpecialPage {
 		}
 
 		if ( $this->mCanEdit ) {
-			$target = SpecialPage::getTitleFor( 'WikiSets', '0' );
+			$target = $this->getPageTitle( '0' );
 			$newlink = $this->getLinkRenderer()->makeLink(
 				$target,
 				$this->msg( 'centralauth-editset-new' )->text()
@@ -155,7 +155,7 @@ class SpecialWikiSets extends SpecialPage {
 	private function buildSetView(
 		?WikiSet $set, $error = false, $name = null, $type = null, $wikis = null, $reason = null
 	) {
-		$this->getOutput()->addBacklinkSubtitle( SpecialPage::getTitleFor( 'WikiSets' ) );
+		$this->getOutput()->addBacklinkSubtitle( $this->getPageTitle() );
 
 		if ( !$name ) {
 			$name = $set ? $set->getName() : '';
@@ -170,7 +170,7 @@ class SpecialWikiSets extends SpecialPage {
 		sort( $wikis );
 		$wikis = implode( "\n", $wikis );
 
-		$url = SpecialPage::getTitleFor( 'WikiSets', (string)( $set ? $set->getId() : 0 ) )
+		$url = $this->getPageTitle( (string)( $set ? $set->getId() : 0 ) )
 			->getLocalUrl();
 
 		if ( $this->mCanEdit ) {
@@ -329,7 +329,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $subpage
 	 */
 	private function buildDeleteView( $subpage ) {
-		$this->getOutput()->addBacklinkSubtitle( SpecialPage::getTitleFor( 'WikiSets' ) );
+		$this->getOutput()->addBacklinkSubtitle( $this->getPageTitle() );
 
 		$set = WikiSet::newFromID( $subpage );
 		if ( !$set ) {
@@ -340,7 +340,7 @@ class SpecialWikiSets extends SpecialPage {
 		$legend = $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->escaped();
 		$form = [ 'centralauth-editset-reason' => Xml::input( 'wpReason' ) ];
 		$url = htmlspecialchars(
-			SpecialPage::getTitleFor( 'WikiSets', "delete/{$subpage}" )->getLocalUrl()
+			$this->getPageTitle( 'delete/' . $subpage )->getLocalUrl()
 		);
 		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 
@@ -434,7 +434,7 @@ class SpecialWikiSets extends SpecialPage {
 		$set->saveToDB();
 
 		// Now logging
-		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
+		$title = $this->getPageTitle( (string)$set->getID() );
 		if ( !$oldname ) {
 			// New set
 			$this->addEntry(
@@ -510,7 +510,7 @@ class SpecialWikiSets extends SpecialPage {
 		$name = $set->getName();
 		$set->delete();
 
-		$title = SpecialPage::getTitleFor( 'WikiSets', (string)$set->getID() );
+		$title = $this->getPageTitle( (string)$set->getID() );
 		$this->addEntry( 'deleteset', $title, $reason, [ '4::name' => $name ] );
 
 		$this->buildMainView( Html::successBox( $this->msg( 'centralauth-editset-success-delete' )->escaped() ) );
@@ -520,7 +520,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @param string $number
 	 */
 	protected function showLogFragment( $number ) {
-		$title = SpecialPage::getTitleFor( 'WikiSets', $number );
+		$title = $this->getPageTitle( $number );
 		$logPage = new LogPage( 'gblrights' );
 		$out = $this->getOutput();
 		$out->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );

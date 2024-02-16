@@ -138,8 +138,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				'action' => $this->getConfig()->get( 'Script' ),
 				'name' => 'centralauth-globalgroups-newgroup'
 			] );
-			$html .= Html::hidden( 'title',
-				SpecialPage::getTitleFor( 'GlobalGroupPermissions' )->getPrefixedText() );
+			$html .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 
 			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Xml::input( 'wpGroup' ) ];
 
@@ -305,8 +304,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $editable ) {
 			$html .= Xml::openElement( 'form', [
 				'method' => 'post',
-				'action' =>
-					SpecialPage::getTitleFor( 'GlobalGroupPermissions', $group )->getLocalUrl(),
+				'action' => $this->getPageTitle( $group )->getLocalUrl(),
 				'name' => 'centralauth-globalgroups-newgroup'
 			] );
 			$html .= Html::hidden( 'wpGroup', $group );
