@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use ManualLogEntry;
-use MediaWiki\Title\Title;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserIdentity;
 
 /**
@@ -33,11 +33,7 @@ class GlobalRenameUserLogger {
 	public function log( $oldName, $newName, $options ) {
 		$logEntry = new ManualLogEntry( 'gblrename', 'rename' );
 		$logEntry->setPerformer( $this->performingUser );
-
-		$logEntry->setTarget(
-			Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $newName )
-		);
-
+		$logEntry->setTarget( SpecialPage::getTitleFor( 'CentralAuth', $newName ) );
 		$logEntry->setComment( $options['reason'] );
 		$logEntry->setParameters( [
 			'4::olduser' => $oldName,
@@ -65,11 +61,7 @@ class GlobalRenameUserLogger {
 	public function logPromotion( $oldName, $wiki, $newName, $reason ) {
 		$logEntry = new ManualLogEntry( 'gblrename', 'promote' );
 		$logEntry->setPerformer( $this->performingUser );
-
-		$logEntry->setTarget(
-			Title::makeTitleSafe( NS_SPECIAL, 'CentralAuth/' . $newName )
-		);
-
+		$logEntry->setTarget( SpecialPage::getTitleFor( 'CentralAuth', $newName ) );
 		$logEntry->setComment( $reason );
 		$logEntry->setParameters( [
 			'4::olduser' => $oldName,

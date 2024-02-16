@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use LogFormatter;
-use MediaWiki\Title\Title;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\WikiMap\WikiMap;
 use Message;
 
@@ -41,7 +41,7 @@ class GlobalRenameLogFormatter extends LogFormatter {
 	 * @return-taint onlysafefor_html
 	 */
 	protected function getCentralAuthLink( $name ) {
-		$title = Title::makeTitle( NS_SPECIAL, 'CentralAuth/' . $name );
+		$title = SpecialPage::getTitleFor( 'CentralAuth', $name );
 		if ( $this->plaintext ) {
 			return '[[' . $title->getPrefixedText() . ']]';
 		}

@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Title\Title;
 use Message;
 
 /**
@@ -36,13 +35,11 @@ class GlobalUserMergeLogFormatter extends LogFormatter {
 	 * @return-taint onlysafefor_html
 	 */
 	protected function getCentralAuthLink( $name ) {
+		$title = SpecialPage::getTitleFor( 'CentralAuth', $name );
 		if ( $this->plaintext ) {
-			return Title::newFromText( 'CentralAuth/' . $name, NS_SPECIAL )->getPrefixedText();
+			return $title->getPrefixedText();
 		} else {
-			return $this->getLinkRenderer()->makeKnownLink(
-				SpecialPage::getTitleFor( 'CentralAuth', $name ),
-				$name
-			);
+			return $this->getLinkRenderer()->makeKnownLink( $title, $name );
 		}
 	}
 }

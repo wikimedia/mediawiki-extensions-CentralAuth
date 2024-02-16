@@ -29,7 +29,6 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
@@ -100,10 +99,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 					$username, $wiki
 				);
 				if ( !$pending->exists() ) {
-					$this->getOutput()->redirect(
-						SpecialPage::getTitleFor( 'GlobalRenameRequest' )->getFullURL(),
-						'303'
-					);
+					$this->getOutput()->redirect( $this->getPageTitle()->getFullURL(), 303 );
 					return;
 				}
 				$out = $this->getOutput();
