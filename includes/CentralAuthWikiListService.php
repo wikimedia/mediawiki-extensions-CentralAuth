@@ -46,11 +46,7 @@ class CentralAuthWikiListService {
 
 			$this->hookRunner->onCentralAuthWikiList( $list );
 
-			if ( $list === null ) {
-				$list = $this->options->get( 'LocalDatabases' );
-			}
-
-			$this->wikiList = $list;
+			$this->wikiList = $list ?? $this->options->get( 'LocalDatabases' );
 		}
 
 		return $this->wikiList;

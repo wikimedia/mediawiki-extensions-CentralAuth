@@ -158,9 +158,7 @@ class CentralAuthSessionManager {
 	public function setCentralSession( array $data, $reset = false, $session = null ) {
 		$keepKeys = [ 'user' => true, 'token' => true, 'expiry' => true ];
 
-		if ( $session === null ) {
-			$session = SessionManager::getGlobalSession();
-		}
+		$session ??= SessionManager::getGlobalSession();
 		$id = $session->get( 'CentralAuth::centralSessionId' );
 
 		if ( $reset || $id === null ) {

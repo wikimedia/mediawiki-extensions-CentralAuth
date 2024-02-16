@@ -64,9 +64,7 @@ class CentralAuthAntiSpoofManager {
 	 * @return StatusValue
 	 */
 	public function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
-		if ( $logger === null ) {
-			$logger = $this->logger;
-		}
+		$logger ??= $this->logger;
 
 		if ( !$enable ) {
 			$mode = 'LOGGING ';
