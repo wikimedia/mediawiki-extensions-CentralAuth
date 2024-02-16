@@ -462,17 +462,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string escaped html
 	 */
 	protected function formatRight( $right ) {
-		$rightDesc = $this->msg(
-			'listgrouprights-right-display',
-			User::getRightDescription( $right ),
-			Html::element(
+		return $this->msg( 'listgrouprights-right-display' )
+			->params( User::getRightDescription( $right ) )
+			->rawParams( Html::element(
 				'span',
 				[ 'class' => 'mw-listgrouprights-right-name' ],
 				$right
-			)
-		)->parse();
-
-		return $rightDesc;
+			) )
+			->parse();
 	}
 
 	/**
