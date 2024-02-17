@@ -91,7 +91,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$this->displayRestrictionError();
 		}
 
-		$this->getOutput()->setPageTitle( $this->msg( 'globalgrouppermissions' ) );
+		$this->getOutput()->setPageTitleMsg( $this->msg( 'globalgrouppermissions' ) );
 
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );

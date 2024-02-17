@@ -125,7 +125,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mCanEdit = $this->mCanUnmerge || $this->mCanLock || $this->mCanSuppress;
 		$this->mCanChangeGroups = $authority->isAllowed( 'globalgroupmembership' );
 
-		$this->getOutput()->setPageTitle(
+		$this->getOutput()->setPageTitleMsg(
 			$this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' )
 		);
 		$this->getOutput()->addModules( 'ext.centralauth' );

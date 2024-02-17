@@ -103,7 +103,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 					return;
 				}
 				$out = $this->getOutput();
-				$out->setPageTitle(
+				$out->setPageTitleMsg(
 					$this->msg( 'globalrenamerequest-status-title' )
 				);
 				$out->addWikiMsg( 'globalrenamerequest-status-text',

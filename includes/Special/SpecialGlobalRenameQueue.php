@@ -155,7 +155,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$out = $this->getOutput();
 		$this->setHeaders();
 		$this->checkPermissions();
-		$out->setPageTitle( $this->msg( $titleMessage, $titleParams ) );
+		$out->setPageTitleMsg( $this->msg( $titleMessage, $titleParams ) );
 	}
 
 	/**

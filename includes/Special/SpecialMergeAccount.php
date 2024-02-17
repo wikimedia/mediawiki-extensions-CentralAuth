@@ -453,10 +453,10 @@ class SpecialMergeAccount extends SpecialPage {
 	private function showStatus( $merged, $remainder ) {
 		$remainderCount = count( $remainder );
 		if ( $remainderCount > 0 ) {
-			$this->getOutput()->setPageTitle( $this->msg( 'centralauth-incomplete' ) );
+			$this->getOutput()->setPageTitleMsg( $this->msg( 'centralauth-incomplete' ) );
 			$this->getOutput()->addWikiMsg( 'centralauth-incomplete-text' );
 		} else {
-			$this->getOutput()->setPageTitle( $this->msg( 'centralauth-complete' ) );
+			$this->getOutput()->setPageTitleMsg( $this->msg( 'centralauth-complete' ) );
 			$this->getOutput()->addWikiMsg( 'centralauth-complete-text' );
 		}
 		$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
