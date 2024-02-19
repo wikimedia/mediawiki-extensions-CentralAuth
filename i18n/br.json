@@ -120,6 +120,8 @@
 	"centralauth-complete": "Kendeuzet eo ar c'hontoù !",
 	"centralauth-complete-text": "Gallout a rit bremañ kevreañ ouzh ne vern pe raktres eus {{int:Centralauth-groupname}} hep bezañ rediet da grouiñ ur gont nevez.",
 	"centralauth-completelogin-back": "Distreiñ d'ar bajenn a-raok.",
+	"centralauth-contribs-locked": "Prennet eo ar gont-mañ en un doare hollek.\nMuioc’h a ditouroù a vo kavet e [[Special:CentralAuth/$1|munudoù ar gont hollek]].",
+	"centralauth-contribs-locked-log": "Prennet eo ar gont-mañ en un doare hollek.\nDindan emañ merket enmont diwezhañ marilh ar stankadennoù, d'ho kelaouiñ :",
 	"centralauth-createlocal-reason": "Abeg",
 	"centralauth-createlocal-username": "Anv ar gont hollek",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|devezh|devezh}} zo",
