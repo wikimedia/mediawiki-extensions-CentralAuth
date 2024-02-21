@@ -477,47 +477,38 @@ class CentralAuthUser implements IDBAccessObject {
 		// We need the user id from the database, but this should be checked by the getId accessor.
 		$db = $this->getSafeReadDB();
 
-		$res = $db->newSelectQueryBuilder()
-			->select( [ 'ggp_permission', 'ggp_group', 'gug_expiry' ] )
+		// Grab the user's rights/groups.
+		$userAndExpiryConds = [
+			'gug_user' => $this->getId(),
+			$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
+		];
+
+		$resGroups = $db->newSelectQueryBuilder()
+			->select( [ 'gug_group', 'gug_expiry' ] )
+			->from( 'global_user_groups' )
+			->where( $userAndExpiryConds )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+		$this->mGroups = [];
+		foreach ( $resGroups as $row ) {
+			$this->mGroups[] = [ 'group' => $row->gug_group, 'expiry' => $row->gug_expiry ];
+		}
+
+		$resRights = $db->newSelectQueryBuilder()
+			->select( [ 'ggp_permission', 'ggr_set' ] )
 			->from( 'global_group_permissions' )
 			->join( 'global_user_groups', null, 'ggp_group=gug_group' )
-			->where( [
-				'gug_user' => $this->getId(),
-				$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
-			] )
+			->leftJoin( 'global_group_restrictions', null, 'ggr_group=gug_group' )
+			->where( $userAndExpiryConds )
 			->caller( __METHOD__ )
 			->fetchResultSet();
-
-		$resSets = $db->newSelectQueryBuilder()
-			->select( [ 'ggr_group', 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
-			->from( 'global_user_groups' )
-			->join( 'global_group_restrictions', null, 'ggr_group=gug_group' )
-			->join( 'wikiset', null, 'ggr_set=ws_id' )
-			->where( [
-				$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
-				'gug_user' => $this->getId(),
-			] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-
-		$sets = [];
-		foreach ( $resSets as $row ) {
-			/* @var stdClass $row */
-			$sets[$row->ggr_group] = WikiSet::newFromRow( $row );
+		$this->mRights = [];
+		foreach ( $resRights as $row ) {
+			// Only store the set id here, and don't compute effective rights, because
+			// this is stored in a shared cache for all wikis (see loadFromCache()),
+			// which also isn't invalidated if the set is changed.
+			$this->mRights[] = [ 'right' => $row->ggp_permission, 'set' => $row->ggr_set ];
 		}
-
-		// Grab the user's rights/groups.
-		$rights = [];
-		$groups = [];
-
-		foreach ( $res as $row ) {
-			$set = $sets[$row->ggp_group] ?? null;
-			$rights[] = [ 'right' => $row->ggp_permission, 'set' => $set ? $set->getId() : null ];
-			$groups[] = [ 'group' => $row->ggp_group, 'expiry' => $row->gug_expiry ];
-		}
-
-		$this->mRights = $rights;
-		$this->mGroups = $groups;
 	}
 
 	/**
