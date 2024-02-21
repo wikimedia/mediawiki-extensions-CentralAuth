@@ -182,6 +182,12 @@ class SpecialCentralAuth extends SpecialPage {
 			)->plain()
 		) );
 
+		$canonUsername = $this->userNameUtils->getCanonical( $this->mUserName );
+		if ( $canonUsername === false ) {
+			$this->showNonexistentError();
+			return;
+		}
+
 		$globalUser = $this->getRequest()->wasPosted()
 			? CentralAuthUser::getPrimaryInstanceByName( $this->mUserName )
 			: CentralAuthUser::getInstanceByName( $this->mUserName );
