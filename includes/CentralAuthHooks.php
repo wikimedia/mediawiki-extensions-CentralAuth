@@ -511,7 +511,7 @@ class CentralAuthHooks implements
 		if ( $user->isRegistered() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			if ( $centralUser->exists() && $centralUser->isAttached() ) {
-				$vars['wgGlobalGroups'] = $centralUser->getGlobalGroups();
+				$vars['wgGlobalGroups'] = $centralUser->getActiveGlobalGroups();
 			}
 		}
 	}
