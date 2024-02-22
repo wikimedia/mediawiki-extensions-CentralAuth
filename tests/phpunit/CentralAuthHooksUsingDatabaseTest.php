@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
@@ -15,9 +14,65 @@ class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetEmailAuthenticationTimestamp
 	 */
 	public function testLockedEmailDisabled() {
-		$user = User::newFromName( 'GlobalLockedUser' );
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+		$user = $userFactory->newFromName( 'GlobalLockedUser' );
 		$this->assertFalse( $user->isEmailConfirmed() );
 		$this->assertFalse( $user->canReceiveEmail() );
+	}
+
+	/**
+	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onGetUserBlock
+	 */
+	public function testGetBlock() {
+		$u = new CentralAuthTestUser(
+			'GloballySuppressedUser',
+			'GLUP@ssword',
+			[
+				'gu_id' => '1004',
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+			],
+			[
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
+			]
+		);
+		$u->save( $this->db );
+
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+		$user = $userFactory->newFromName( 'GloballySuppressedUser' );
+		$this->assertTrue( $user->getBlock()->getHideName() );
+	}
+
+	/**
+	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onGetUserBlock
+	 */
+	public function testGetBlock_noLocalAccount() {
+		// This user doesn't exist locally, but we still surface the block.
+		$u = new CentralAuthTestUser(
+			'GloballySuppressedUser',
+			'GLUP@ssword',
+			[
+				'gu_id' => '1004',
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+			],
+			[],
+			false
+		);
+		$u->save( $this->db );
+
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+		$user = $userFactory->newFromName( 'GloballySuppressedUser' );
+		$this->assertTrue( $user->getBlock()->getHideName() );
+	}
+
+	/**
+	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onGetUserBlock
+	 */
+	public function testGetBlock_ipRange() {
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+		$user = $userFactory->newAnonymous();
+		// T358112: IP ranges (invalid usernames) should not cause an exception.
+		$user->setName( '127.0.0.1/24' );
+		$this->assertNull( $user->getBlock() );
 	}
 
 	/**

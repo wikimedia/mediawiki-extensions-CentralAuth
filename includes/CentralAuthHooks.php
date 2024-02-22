@@ -442,10 +442,8 @@ class CentralAuthHooks implements
 		if ( $block && $block->getHideName() ) {
 			return false;
 		}
-		if ( $user->getId() === 0
-			|| !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user->getName() )
-		) {
-			// Only usernames can be hidden by CentralAuth.
+		if ( !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user->getName() ) ) {
+			// Only valid usernames can be handled (and hidden) by CentralAuth.
 			return true;
 		}
 
