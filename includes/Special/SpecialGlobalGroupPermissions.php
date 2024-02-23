@@ -13,6 +13,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
+use InvalidArgumentException;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
@@ -251,7 +252,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $wikiset !== 0 ) {
 			$wikiset = WikiSet::newFromID( $wikiset );
 			if ( !$wikiset ) {
-				throw new Exception( "__METHOD__: $group with unknown wikiset." );
+				throw new InvalidArgumentException( "__METHOD__: $group with unknown wikiset." );
 			}
 			$info['wikiset'] = [
 				'id' => $wikiset->getId(),

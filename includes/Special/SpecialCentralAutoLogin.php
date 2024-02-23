@@ -28,6 +28,7 @@ use MobileContext;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
 use RequestContext;
+use RuntimeException;
 use SkinTemplate;
 use Wikimedia\Rdbms\ReadOnlyMode;
 use Wikimedia\ScopedCallback;
@@ -118,7 +119,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	protected static function getInlineScript( $name ) {
 		$filePath = __DIR__ . '/../../modules/inline/' . $name;
 		if ( !file_exists( $filePath ) ) {
-			throw new Exception( __METHOD__ . ": file not found: \"$filePath\"" );
+			throw new RuntimeException( __METHOD__ . ": file not found: \"$filePath\"" );
 		}
 		$rawScript = file_get_contents( $filePath );
 

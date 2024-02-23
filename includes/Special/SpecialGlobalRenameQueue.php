@@ -22,7 +22,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use Exception;
 use ExtensionRegistry;
 use HTMLForm;
 use LogEventsList;
@@ -47,6 +46,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use OOUI\MessageWidget;
+use RuntimeException;
 use UserMailer;
 use Wikimedia\Rdbms\LBFactory;
 use Xml;
@@ -364,7 +364,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		$renamer = CentralAuthUser::newFromId( $req->getPerformer() );
 		if ( $renamer === false ) {
-			throw new Exception(
+			throw new RuntimeException(
 				"The performer's global user id ({$req->getPerformer()}) " .
 					"does not exist in the database"
 			);

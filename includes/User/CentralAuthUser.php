@@ -21,12 +21,14 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use AbstractPbkdf2Password;
+use BadMethodCallException;
 use CentralAuthSessionProvider;
 use Exception;
 use FormattedRCFeed;
 use IContextSource;
 use IDBAccessObject;
 use InvalidArgumentException;
+use LogicException;
 use ManualLogEntry;
 use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
@@ -825,7 +827,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getHiddenLevel(): int {
 		// Have it like this for one train, then rename getHiddenLevelInt to this
-		throw new Exception( 'Nothing should call this!' );
+		throw new BadMethodCallException( 'Nothing should call this!' );
 	}
 
 	/**
@@ -1082,7 +1084,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function chooseHomeWiki( $migrationSet ) {
 		if ( !$migrationSet ) {
-			throw new Exception( 'Logic error -- empty migration set in chooseHomeWiki' );
+			throw new LogicException( 'Logic error -- empty migration set in chooseHomeWiki' );
 		}
 
 		// Sysops get priority
@@ -1541,7 +1543,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( count( $valid ) != count( $list ) ) {
 			// fixme: handle this gracefully
-			throw new Exception( "Invalid input" );
+			throw new RuntimeException( "Invalid input" );
 		}
 
 		return $valid;
@@ -3022,7 +3024,7 @@ class CentralAuthUser implements IDBAccessObject {
 				[
 					'globalId' => $this->mGlobalId,
 					'from' => $from,
-					'exception' => new Exception( 'CentralAuth gu_cas_token conflict' ),
+					'exception' => new RuntimeException,
 				]
 			);
 			return;

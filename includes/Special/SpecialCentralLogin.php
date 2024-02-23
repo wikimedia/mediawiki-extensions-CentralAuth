@@ -21,6 +21,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
+use RuntimeException;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -141,15 +142,15 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user, array $info ) {
 			if ( !$centralUser->exists() ) {
-				return new Exception( "Global user '{$info['name']}' does not exist." );
+				return new RuntimeException( "Global user '{$info['name']}' does not exist." );
 			}
 
 			if ( $centralUser->getId() !== $info['guid'] ) {
-				return new Exception( "Global user does not have ID '{$info['guid']}'." );
+				return new RuntimeException( "Global user does not have ID '{$info['guid']}'." );
 			}
 
 			if ( !$centralUser->isAttached() && $user->isRegistered() ) {
-				return new Exception( "User '{$info['name']}' exists locally but is not attached." );
+				return new RuntimeException( "User '{$info['name']}' exists locally but is not attached." );
 			}
 
 			return null;
@@ -285,13 +286,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user ) {
 			if ( !$user->getId() ) {
-				return new Exception( "The user account logged into does not exist." );
+				return new RuntimeException( "The user account logged into does not exist." );
 			}
 			if ( !$centralUser->getId() ) {
-				return new Exception( "The central user account does not exist." );
+				return new RuntimeException( "The central user account does not exist." );
 			}
 			if ( !$centralUser->isAttached() ) {
-				return new Exception( "The user account is not attached." );
+				return new RuntimeException( "The user account is not attached." );
 			}
 			return null;
 		};

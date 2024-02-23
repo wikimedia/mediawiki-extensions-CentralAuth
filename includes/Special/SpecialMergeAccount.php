@@ -13,6 +13,7 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
+use RuntimeException;
 use Wikimedia\AtEase\AtEase;
 use Xml;
 
@@ -331,7 +332,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$passwords = $this->getWorkingPasswords();
 		if ( !$passwords ) {
-			throw new Exception( "Submission error -- invalid input" );
+			throw new RuntimeException( "Submission error -- invalid input" );
 		}
 
 		$globalUser->storeAndMigrate(
@@ -349,11 +350,11 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
-			throw new Exception( "User doesn't exist -- race condition?" );
+			throw new RuntimeException( "User doesn't exist -- race condition?" );
 		}
 
 		if ( !$globalUser->isAttached() ) {
-			throw new Exception( "Can't cleanup merge if not already attached." );
+			throw new RuntimeException( "Can't cleanup merge if not already attached." );
 		}
 
 		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
@@ -381,7 +382,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
 		if ( !$globalUser->exists() ) {
-			throw new Exception( "User doesn't exist -- race condition?" );
+			throw new RuntimeException( "User doesn't exist -- race condition?" );
 		}
 
 		if ( $globalUser->isAttached() ) {
@@ -571,7 +572,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
-			throw new Exception( "Invalid wiki: $wikiID" );
+			throw new InvalidArgumentException( "Invalid wiki: $wikiID" );
 		}
 
 		$wikiname = $wiki->getDisplayName();

@@ -21,7 +21,6 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use BagOStuff;
-use Exception;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -36,6 +35,7 @@ use MWCryptRand;
 use Profiler;
 use Psr\Log\LoggerInterface;
 use RequestContext;
+use RuntimeException;
 use StatusValue;
 use Wikimedia\WaitConditionLoop;
 
@@ -200,7 +200,7 @@ class CentralAuthUtilityService {
 		$title = $this->titleFactory->makeTitleSafe( NS_USER, $name );
 
 		if ( !$title ) {
-			throw new Exception( "Failed to create title for user page of $name" );
+			throw new RuntimeException( "Failed to create title for user page of $name" );
 		}
 
 		foreach ( $this->config->get( 'CentralAuthAutoCreateWikis' ) as $wiki ) {

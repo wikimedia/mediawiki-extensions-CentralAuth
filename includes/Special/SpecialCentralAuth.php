@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use DerivativeContext;
 use Exception;
 use HTMLForm;
+use InvalidArgumentException;
 use LogEventsList;
 use MediaWiki\Block\Restriction\ActionRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
@@ -860,7 +861,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private function formatEditcount( $row ) {
 		$wiki = WikiMap::getWiki( $row['wiki'] );
 		if ( !$wiki ) {
-			throw new Exception( "Invalid wiki: {$row['wiki']}" );
+			throw new InvalidArgumentException( "Invalid wiki: {$row['wiki']}" );
 		}
 		$wikiname = $wiki->getDisplayName();
 		$editCount = $this->getLanguage()->formatNum( intval( $row['editCount'] ) );
@@ -916,7 +917,7 @@ class SpecialCentralAuth extends SpecialPage {
 		} else {
 			$wiki = WikiMap::getWiki( $wikiID );
 			if ( !$wiki ) {
-				throw new Exception( "Invalid wiki: $wikiID" );
+				throw new InvalidArgumentException( "Invalid wiki: $wikiID" );
 			}
 		}
 
@@ -940,7 +941,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private function foreignUserLink( $wikiID ) {
 		$wiki = WikiMap::getWiki( $wikiID );
 		if ( !$wiki ) {
-			throw new Exception( "Invalid wiki: $wikiID" );
+			throw new InvalidArgumentException( "Invalid wiki: $wikiID" );
 		}
 
 		$wikiname = $wiki->getDisplayName();

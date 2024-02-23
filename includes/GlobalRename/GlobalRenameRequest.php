@@ -22,8 +22,8 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use BadMethodCallException;
-use Exception;
 use IDBAccessObject;
+use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
@@ -185,13 +185,12 @@ class GlobalRenameRequest {
 
 	/**
 	 * @param string $newName
-	 * @throws Exception if an invalid username is provided
 	 * @return GlobalRenameRequest self, for message chaining
 	 */
 	public function setNewName( $newName ) {
 		$canonicalName = $this->userNameUtils->getCanonical( $newName, UserNameUtils::RIGOR_CREATABLE );
 		if ( $canonicalName === false ) {
-			throw new Exception( "Invalid username '{$newName}'" );
+			throw new InvalidArgumentException( "Invalid username '{$newName}'" );
 		}
 		$this->newName = $canonicalName;
 		return $this;

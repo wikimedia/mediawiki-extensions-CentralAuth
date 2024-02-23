@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
-use Exception;
+use LogicException;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\RenameUser\RenameuserSQL;
@@ -93,7 +93,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// This should never happen!
 			// If it does happen, the user will be locked out of their account
 			// until a sysadmin intervenes...
-			throw new Exception( 'RenameuserSQL::rename returned false.' );
+			throw new LogicException( 'RenameuserSQL::rename returned false.' );
 		}
 		if ( $this->params['reattach'] ) {
 			$caUser = CentralAuthUser::getInstanceByName( $this->params['to'] );
@@ -125,11 +125,11 @@ class LocalRenameUserJob extends LocalRenameJob {
 		if ( !$status->isOK() ) {
 			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
 				// Eh, what?
-				throw new Exception( "Tried to promote '$newName' to a global account except it " .
+				throw new LogicException( "Tried to promote '$newName' to a global account except it " .
 					"doesn't exist locally" );
 			} elseif ( $status->hasMessage( 'promote-already-exists' ) ) {
 				// Even more wtf.
-				throw new Exception( "Tried to prommote '$newName' to a global account except it " .
+				throw new LogicException( "Tried to prommote '$newName' to a global account except it " .
 					"already exists" );
 			}
 		}
