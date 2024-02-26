@@ -23,7 +23,7 @@
 	"apihelp-createlocalaccount-example-1": "Forçar a criação de uma conta local para [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motivo para criar a conta local.",
 	"apihelp-createlocalaccount-param-username": "Usuário para o qual criar a conta local.",
-	"apihelp-createlocalaccount-summary": "Forçar a criação de uma conta local",
+	"apihelp-createlocalaccount-summary": "Forçar a criação de uma conta local. Uma conta central deve existir.",
 	"apihelp-deleteglobalaccount-example-1": "Apagar conta global para [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Motivo para apagar o usuário.",
 	"apihelp-deleteglobalaccount-param-user": "Usuário para apagar.",
@@ -77,5 +77,5 @@
 	"apihelp-setglobalaccountstatus-param-reason": "Motivo para alterar o status do usuário.",
 	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional do atual <userid>:<hidden>:<locked>, para detectar conflitos de edição. Definir <locked> para 1 para bloqueado, 0 para desbloqueado.",
 	"apihelp-setglobalaccountstatus-param-user": "Usuário para o qual alterar status.",
-	"apihelp-setglobalaccountstatus-summary": "Definir o status de um usuário global."
+	"apihelp-setglobalaccountstatus-summary": "Ocultar ou bloquear (ou revelar ou desbloquear) uma conta de usuário global."
 }
