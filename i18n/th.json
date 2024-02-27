@@ -19,6 +19,7 @@
 			"Kaoavi"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "จำนวนการแก้ไขข้ามโครงการของผู้ใช้",
 	"abusefilter-edit-builder-vars-global-user-groups": "กลุ่มผู้ใช้ข้ามโครงการของผู้ใช้",
 	"action-centralauth-createlocal": "บังคับสร้างบัญชีผู้ใช้ท้องถิ่น",
 	"action-centralauth-lock": "ล็อกหรือปลดล็อกบัญชีในทุกโครงการ",
@@ -351,6 +352,7 @@
 	"globalrenamequeue-column-rq-status": "สถานะ",
 	"globalrenamequeue-column-rq-wiki": "วิกิท้องถิ่น",
 	"globalrenamequeue-form-status": "สถานะ:",
+	"globalrenamequeue-form-status-all": "ทั้งหมด",
 	"globalrenamequeue-form-username": "ชื่อผู้ใช้:",
 	"globalrenamequeue-nav-closedqueue": "คำขอที่ปิดแล้ว",
 	"globalrenamequeue-nav-openqueue": "คำขอที่เปิด",
