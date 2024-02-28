@@ -225,7 +225,7 @@
 	"centralauth-editset-legend-rw": "編輯或建立 Wiki 集合",
 	"centralauth-editset-legend-view": "wiki集合「$1」",
 	"centralauth-editset-name": "名稱：",
-	"centralauth-editset-new": "建立一個新集合",
+	"centralauth-editset-new": "新增集合",
 	"centralauth-editset-notfound": "未找到wiki集合「$1」。",
 	"centralauth-editset-nouse": "(無)",
 	"centralauth-editset-nowikis": "(無)",
