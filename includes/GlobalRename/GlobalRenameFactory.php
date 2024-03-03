@@ -89,7 +89,7 @@ class GlobalRenameFactory {
 			// TODO: this is only used for caching, maybe we can create a Factory service
 			// for CAUsers and related caching and inject that instead
 			CentralAuthUser::getInstance( $userNew ),
-			new GlobalRenameUserStatus( $userNew->getName() ),
+			$this->newGlobalRenameUserStatus( $userNew->getName() ),
 			$this->jobQueueGroupFactory,
 			new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
 			new GlobalRenameUserLogger( $performer ),
@@ -97,4 +97,10 @@ class GlobalRenameFactory {
 		);
 	}
 
+	public function newGlobalRenameUserStatus( string $username ): GlobalRenameUserStatus {
+		return new GlobalRenameUserStatus(
+			$this->databaseManager,
+			$username
+		);
+	}
 }

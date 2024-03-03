@@ -128,7 +128,8 @@
 				"UserNameUtils",
 				"UserRegistrationLookup",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.CentralAuthUIService"
+				"CentralAuth.CentralAuthUIService",
+				"CentralAuth.GlobalRenameFactory"
 			]
 		},
 		"CentralAutoLogin": {
@@ -216,7 +217,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalRenameProgress",
 			"services": [
 				"UserNameUtils",
-				"CentralAuth.CentralAuthUIService"
+				"CentralAuth.CentralAuthUIService",
+				"CentralAuth.GlobalRenameFactory"
 			]
 		}
 	},
@@ -355,7 +357,12 @@
 				"UserNameUtils"
 			]
 		},
-		"globalrenamestatus": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalRenameStatus"
+		"globalrenamestatus": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalRenameStatus",
+			"services": [
+				"CentralAuth.GlobalRenameFactory"
+			]
+		}
 	},
 	"APIListModules": {
 		"globalgroups": {

@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use ApiQuery;
 use ApiQueryBase;
 use ApiResult;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use Wikimedia\ParamValidator\ParamValidator;
 
@@ -31,9 +32,16 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 
+	private GlobalRenameFactory $globalRenameFactory;
+
 	/** @inheritDoc */
-	public function __construct( ApiQuery $queryModule, $moduleName ) {
+	public function __construct(
+		ApiQuery $queryModule,
+		$moduleName,
+		GlobalRenameFactory $globalRenameFactory
+	) {
 		parent::__construct( $queryModule, $moduleName, 'grs' );
+		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	/**
@@ -58,7 +66,7 @@ class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 	 * @param string $name Username (old or new)
 	 */
 	private function addUser( $name ) {
-		$statuses = new GlobalRenameUserStatus( $name );
+		$statuses = $this->globalRenameFactory->newGlobalRenameUserStatus( $name );
 		$names = $statuses->getNames();
 		if ( !$names ) {
 			return;

@@ -1,7 +1,6 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
@@ -121,13 +120,14 @@ class ForceRenameUsers extends Maintenance {
 		}
 		$this->log( "Renaming $name to {$newCAUser->getName()}." );
 
-		$statuses = new GlobalRenameUserStatus( $name );
-		$success = $statuses->setStatuses( [ [
-			'ru_wiki' => $wiki,
-			'ru_oldname' => $name,
-			'ru_newname' => $newCAUser->getName(),
-			'ru_status' => 'queued'
-		] ] );
+		$success = CentralAuthServices::getGlobalRenameFactory( $services )
+			->newGlobalRenameUserStatus( $name )
+			->setStatuses( [ [
+				'ru_wiki' => $wiki,
+				'ru_oldname' => $name,
+				'ru_newname' => $newCAUser->getName(),
+				'ru_status' => 'queued'
+			] ] );
 
 		if ( !$success ) {
 			$this->log( "WARNING: Race condition, renameuser_status already set for " .

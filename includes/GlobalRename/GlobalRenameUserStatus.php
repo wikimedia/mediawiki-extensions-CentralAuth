@@ -3,13 +3,14 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use IDBAccessObject;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
-use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\OrExpressionGroup;
 
 /**
@@ -22,39 +23,29 @@ use Wikimedia\Rdbms\OrExpressionGroup;
  */
 class GlobalRenameUserStatus {
 
-	/**
-	 * Either old or new name of the user
-	 *
-	 * @var string
-	 */
-	private $name;
+	private CentralAuthDatabaseManager $databaseManager;
+
+	private string $name;
 
 	/**
+	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param string $name Either old or new name of the user
 	 */
-	public function __construct( $name ) {
+	public function __construct(
+		CentralAuthDatabaseManager $databaseManager,
+		string $name
+	) {
+		$this->databaseManager = $databaseManager;
 		$this->name = $name;
-	}
-
-	/**
-	 * Get a Database object for the CentralAuth db
-	 *
-	 * @param int $type DB_REPLICA or DB_PRIMARY
-	 *
-	 * @return IDatabase
-	 */
-	protected function getDB( $type = DB_REPLICA ) {
-		return CentralAuthServices::getDatabaseManager()->getCentralDB( $type );
 	}
 
 	/**
 	 * Get the where clause to query rows by either old or new name
 	 *
-	 * @param IDatabase $db
-	 *
+	 * @param IReadableDatabase $db
 	 * @return IExpression
 	 */
-	private function getNameWhereClause( IDatabase $db ): IExpression {
+	private function getNameWhereClause( IReadableDatabase $db ): IExpression {
 		return $db->expr( 'ru_oldname', '=', $this->name )->or( 'ru_newname', '=', $this->name );
 	}
 
@@ -66,12 +57,16 @@ class GlobalRenameUserStatus {
 	 * whether it's the old or new name.
 	 *
 	 * @param string|null $wiki Only look for renames on the given wiki.
-	 * @param string|null $usePrimaryDb Set to 'primary' to query the primary db
+	 * @param int $recency IDBAccessObject flags
 	 *
 	 * @return string[] (oldname, newname)
 	 */
-	public function getNames( $wiki = null, $usePrimaryDb = null ) {
-		$db = $this->getDB( $usePrimaryDb === 'primary' ? DB_PRIMARY : DB_REPLICA );
+	public function getNames( ?string $wiki = null, int $recency = IDBAccessObject::READ_NORMAL ): array {
+		if ( ( IDBAccessObject::READ_LATEST & $recency ) == IDBAccessObject::READ_LATEST ) {
+			$db = $this->databaseManager->getCentralPrimaryDB();
+		} else {
+			$db = $this->databaseManager->getCentralReplicaDB();
+		}
 
 		$where = [ $this->getNameWhereClause( $db ) ];
 
@@ -83,6 +78,7 @@ class GlobalRenameUserStatus {
 			->select( [ 'ru_oldname', 'ru_newname' ] )
 			->from( 'renameuser_status' )
 			->where( $where )
+			->recency( $recency )
 			->caller( __METHOD__ )
 			->fetchRow();
 
@@ -100,23 +96,22 @@ class GlobalRenameUserStatus {
 	 * Get a user's rename status for all wikis.
 	 * Returns an array ( wiki => status )
 	 *
-	 * @param int $flags IDBAccessObject flags
+	 * @param int $recency IDBAccessObject flags
 	 *
 	 * @return string[]
 	 */
-	public function getStatuses( $flags = 0 ) {
-		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
-			$index = DB_PRIMARY;
+	public function getStatuses( int $recency = IDBAccessObject::READ_NORMAL ): array {
+		if ( ( IDBAccessObject::READ_LATEST & $recency ) == IDBAccessObject::READ_LATEST ) {
+			$db = $this->databaseManager->getCentralPrimaryDB();
 		} else {
-			$index = DB_REPLICA;
+			$db = $this->databaseManager->getCentralReplicaDB();
 		}
-		$db = $this->getDB( $index );
 
 		$res = $db->newSelectQueryBuilder()
 			->select( [ 'ru_wiki', 'ru_status' ] )
 			->from( 'renameuser_status' )
 			->where( [ $this->getNameWhereClause( $db ) ] )
-			->recency( $flags )
+			->recency( $recency )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
@@ -131,13 +126,13 @@ class GlobalRenameUserStatus {
 	/**
 	 * Get a user's rename status for the current wiki.
 	 *
-	 * @param int $flags IDBAccessObject flags
+	 * @param int $recency IDBAccessObject flags
 	 *
 	 * @return string|null Null means no rename pending for this user on the current wiki (possibly
 	 *   because it has finished already).
 	 */
-	public function getStatus( $flags = 0 ) {
-		$statuses = $this->getStatuses( $flags );
+	public function getStatus( int $recency = IDBAccessObject::READ_NORMAL ): ?string {
+		$statuses = $this->getStatuses( $recency );
 		return $statuses[WikiMap::getCurrentWikiId()] ?? null;
 	}
 
@@ -148,7 +143,7 @@ class GlobalRenameUserStatus {
 	 * @param string $status
 	 */
 	public function updateStatus( $wiki, $status ) {
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
@@ -169,8 +164,8 @@ class GlobalRenameUserStatus {
 	 *
 	 * @return bool
 	 */
-	public function setStatuses( array $rows ) {
-		$dbw = $this->getDB( DB_PRIMARY );
+	public function setStatuses( array $rows ): bool {
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		$dbw->startAtomic( __METHOD__ );
 		if ( $dbw->getType() === 'mysql' ) {
@@ -213,8 +208,8 @@ class GlobalRenameUserStatus {
 	 *
 	 * @param string $wiki
 	 */
-	public function done( $wiki ) {
-		$dbw = $this->getDB( DB_PRIMARY );
+	public function done( string $wiki ): void {
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
@@ -235,7 +230,7 @@ class GlobalRenameUserStatus {
 	 * @param Authority $performer User viewing the list, for permissions checks
 	 * @return string[] old username => new username
 	 */
-	public static function getInProgressRenames( Authority $performer ) {
+	public static function getInProgressRenames( Authority $performer ): array {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		$qb = $dbr->newSelectQueryBuilder();
