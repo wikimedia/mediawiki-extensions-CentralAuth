@@ -1,46 +1,20 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
+
+use CentralAuthTestUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\WikiMap\WikiMap;
+use MediaWikiIntegrationTestCase;
 
 /**
  * Basic tests for CentralAuthHooks
+ *
  * @group CentralAuthDB
  * @group Database
+ * @covers \MediaWiki\Extension\CentralAuth\CentralAuthHooks
  */
 class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
-
-	/**
-	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetEmailAuthenticationTimestamp
-	 */
 	public function testLockedEmailDisabled() {
-		$userFactory = $this->getServiceContainer()->getUserFactory();
-		$user = $userFactory->newFromName( 'GlobalLockedUser' );
-		$this->assertFalse( $user->isEmailConfirmed() );
-		$this->assertFalse( $user->canReceiveEmail() );
-	}
-
-	/**
-	 * Setup a fresh set of global users for each test.
-	 * Note: MediaWikiIntegrationTestCase::resetDB() will delete all tables between
-	 * test runs, so no explicite tearDown() is needed.
-	 */
-	protected function setUp(): void {
-		parent::setUp();
-
-		$u = new CentralAuthTestUser(
-			'GlobalUser',
-			'GUP@ssword',
-			[ 'gu_id' => '1001' ],
-			[
-				[ WikiMap::getCurrentWikiId(), 'primary' ],
-				[ 'enwiki', 'primary' ],
-				[ 'dewiki', 'login' ],
-				[ 'metawiki', 'password' ],
-			]
-		);
-		$u->save( $this->db );
-
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
 			'GLUP@ssword',
@@ -56,6 +30,10 @@ class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 			]
 		);
 		$u->save( $this->db );
-	}
 
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+		$user = $userFactory->newFromName( 'GlobalLockedUser' );
+		$this->assertFalse( $user->isEmailConfirmed() );
+		$this->assertFalse( $user->canReceiveEmail() );
+	}
 }
