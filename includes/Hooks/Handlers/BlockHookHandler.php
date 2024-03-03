@@ -27,9 +27,9 @@ use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Html\Html;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
+use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\IPUtils;
 
@@ -40,6 +40,12 @@ class BlockHookHandler implements
 	GetUserBlockHook,
 	OtherBlockLogLinkHook
 {
+	private UserNameUtils $userNameUtils;
+
+	public function __construct( UserNameUtils $userNameUtils ) {
+		$this->userNameUtils = $userNameUtils;
+	}
+
 	/**
 	 * Make sure a user is hidden if their global account is hidden.
 	 * If a user's global account is hidden (suppressed):
@@ -58,7 +64,7 @@ class BlockHookHandler implements
 		if ( $block && $block->getHideName() ) {
 			return false;
 		}
-		if ( !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user->getName() ) ) {
+		if ( !$this->userNameUtils->isValid( $user->getName() ) ) {
 			// Only valid usernames can be handled (and hidden) by CentralAuth.
 			return true;
 		}
@@ -101,8 +107,9 @@ class BlockHookHandler implements
 	 * @return bool true
 	 */
 	public function onOtherBlockLogLink( &$otherBlockLink, $user ) {
-		if ( IPUtils::isIPAddress( $user )
-			|| !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user )
+		if (
+			IPUtils::isIPAddress( $user )
+			|| !$this->userNameUtils->isValid( $user )
 		) {
 			// Only usernames can be locked.
 			return true;

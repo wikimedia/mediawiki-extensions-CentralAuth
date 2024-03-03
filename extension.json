@@ -519,7 +519,10 @@
 			]
 		},
 		"block": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\BlockHookHandler"
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\BlockHookHandler",
+			"services": [
+				"UserNameUtils"
+			]
 		},
 		"contentsecuritypolicy": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ContentSecurityPolicyHookHandler",
