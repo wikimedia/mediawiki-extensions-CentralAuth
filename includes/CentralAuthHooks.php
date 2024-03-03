@@ -23,10 +23,6 @@ namespace MediaWiki\Extension\CentralAuth;
 use CentralAuthSessionProvider;
 use ExtensionRegistry;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
-use MediaWiki\Block\AbstractBlock;
-use MediaWiki\Block\CompositeBlock;
-use MediaWiki\Block\Hook\GetUserBlockHook;
-use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
@@ -34,7 +30,6 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
 use MediaWiki\Hook\MakeGlobalVariablesScriptHook;
-use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Hook\TestCanonicalRedirectHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
@@ -65,19 +60,15 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserArrayFromResult;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
-use Message;
 use MobileContext;
 use OOUI\ButtonWidget;
 use OOUI\HorizontalLayout;
 use OOUI\IconWidget;
-use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthHooks implements
 	ApiQueryTokensRegisterTypesHook,
-	GetUserBlockHook,
 	MakeGlobalVariablesScriptHook,
-	OtherBlockLogLinkHook,
 	TestCanonicalRedirectHook,
 	UserGetRightsHook,
 	GetPreferencesHook,
@@ -425,60 +416,6 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Make sure a user is hidden if their global account is hidden.
-	 * If a user's global account is hidden (suppressed):
-	 * - if locally blocked and hidden, do nothing
-	 * - if not blocked, add a system block with a suppression
-	 * - if blocked but not hidden, make a new composite block
-	 *   containing the existing blocks plus a system block with a
-	 *   suppression
-	 *
-	 * @param User $user
-	 * @param string|null $ip
-	 * @param AbstractBlock|null &$block
-	 * @return bool
-	 */
-	public function onGetUserBlock( $user, $ip, &$block ) {
-		if ( $block && $block->getHideName() ) {
-			return false;
-		}
-		if ( !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user->getName() ) ) {
-			// Only valid usernames can be handled (and hidden) by CentralAuth.
-			return true;
-		}
-
-		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( $centralUser->exists()
-			&& ( $centralUser->isAttached() || !$user->isRegistered() )
-			&& $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED
-		) {
-			$hideUserBlock = new SystemBlock( [
-				'address' => $user,
-				'hideName' => true,
-				'systemBlock' => 'hideuser',
-			] );
-
-			if ( $block === null ) {
-				$block = $hideUserBlock;
-				return false;
-			}
-
-			$blocks = $block->toArray();
-
-			$blocks[] = $hideUserBlock;
-			$block = new CompositeBlock( [
-				'address' => $ip,
-				'reason' => new Message( 'blockedtext-composite-reason' ),
-				'originalBlocks' => $blocks,
-			] );
-
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
 	 * @param User $user
 	 * @param bool &$isBot
 	 * @return bool
@@ -579,31 +516,6 @@ class CentralAuthHooks implements
 		}
 
 		return $html;
-	}
-
-	/**
-	 * Creates a link to the global lock log
-	 * @param array &$otherBlockLink Message with a link to the global block log
-	 * @param string $user The username to be checked
-	 * @return bool true
-	 */
-	public function onOtherBlockLogLink( &$otherBlockLink, $user ) {
-		if ( IPUtils::isIPAddress( $user )
-			|| !MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $user )
-		) {
-			// Only usernames can be locked.
-			return true;
-		}
-
-		$caUser = CentralAuthUser::getInstanceByName( $user );
-		if ( $caUser->isLocked() && in_array( WikiMap::getCurrentWikiId(), $caUser->listAttached() ) ) {
-			$otherBlockLink[] = Html::rawElement(
-				'span',
-				[ 'class' => 'mw-centralauth-lock-loglink plainlinks' ],
-				wfMessage( 'centralauth-block-already-locked', $user )->parse()
-			);
-		}
-		return true;
 	}
 
 	/**

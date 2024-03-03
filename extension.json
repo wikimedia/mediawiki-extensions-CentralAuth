@@ -518,6 +518,9 @@
 				"MainConfig"
 			]
 		},
+		"block": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\BlockHookHandler"
+		},
 		"contentsecuritypolicy": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ContentSecurityPolicyHookHandler",
 			"services": [
@@ -641,7 +644,7 @@
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
 		"GetLogTypesOnUser": "default",
 		"GetPreferences": "default",
-		"GetUserBlock": "default",
+		"GetUserBlock": "block",
 		"getUserPermissionsErrorsExpensive": "permissions",
 		"ImportHandleUnknownUser": "importhandle",
 		"InvalidateEmailComplete": "default",
@@ -649,7 +652,7 @@
 		"LocalUserCreated": "usercreation",
 		"LogEventsListGetExtraInputs": "log",
 		"MakeGlobalVariablesScript": "default",
-		"OtherBlockLogLink": "default",
+		"OtherBlockLogLink": "block",
 		"PasswordPoliciesForUser": "passwordpolicies",
 		"RenameUserComplete": "rename",
 		"RenameUserPreRename": "rename",

@@ -21,61 +21,6 @@ class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onGetUserBlock
-	 */
-	public function testGetBlock() {
-		$u = new CentralAuthTestUser(
-			'GloballySuppressedUser',
-			'GLUP@ssword',
-			[
-				'gu_id' => '1004',
-				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
-			],
-			[
-				[ WikiMap::getCurrentWikiId(), 'primary' ],
-			]
-		);
-		$u->save( $this->db );
-
-		$userFactory = $this->getServiceContainer()->getUserFactory();
-		$user = $userFactory->newFromName( 'GloballySuppressedUser' );
-		$this->assertTrue( $user->getBlock()->getHideName() );
-	}
-
-	/**
-	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onGetUserBlock
-	 */
-	public function testGetBlock_noLocalAccount() {
-		// This user doesn't exist locally, but we still surface the block.
-		$u = new CentralAuthTestUser(
-			'GloballySuppressedUser',
-			'GLUP@ssword',
-			[
-				'gu_id' => '1004',
-				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
-			],
-			[],
-			false
-		);
-		$u->save( $this->db );
-
-		$userFactory = $this->getServiceContainer()->getUserFactory();
-		$user = $userFactory->newFromName( 'GloballySuppressedUser' );
-		$this->assertTrue( $user->getBlock()->getHideName() );
-	}
-
-	/**
-	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onGetUserBlock
-	 */
-	public function testGetBlock_ipRange() {
-		$userFactory = $this->getServiceContainer()->getUserFactory();
-		$user = $userFactory->newAnonymous();
-		// T358112: IP ranges (invalid usernames) should not cause an exception.
-		$user->setName( '127.0.0.1/24' );
-		$this->assertNull( $user->getBlock() );
-	}
-
-	/**
 	 * Setup a fresh set of global users for each test.
 	 * Note: MediaWikiIntegrationTestCase::resetDB() will delete all tables between
 	 * test runs, so no explicite tearDown() is needed.
