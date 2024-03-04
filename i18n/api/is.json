@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stefán Örvar Sigmundsson"
+		]
+	},
+	"apihelp-createlocalaccount-example-1": "Þvinga sköpun staðbundins aðgangs fyrir [[User:Example]].",
+	"apihelp-createlocalaccount-summary": "Þvinga sköpun staðbundins aðgangs. Hinn miðlægi aðgangur verður að vera til."
+}
