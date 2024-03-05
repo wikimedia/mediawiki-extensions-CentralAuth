@@ -38,7 +38,8 @@
 			"관인생략",
 			"밝은소년",
 			"아라",
-			"콩가루"
+			"콩가루",
+			"Dr1t jg"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "사용자의 전역 편집 수",
@@ -49,6 +50,7 @@
 	"action-centralauth-suppress": "통합 계정을 숨길",
 	"action-centralauth-rename": "전역 계정 이름 바꾸기",
 	"action-centralauth-unmerge": "통합 계정 분리하기",
+	"action-globalgroupmembership": "전역 그룹으로의 멤버십 편집",
 	"action-globalgrouppermissions": "전역 권한 그룹 관리",
 	"centralauth": "통합 계정 관리",
 	"centralauth-abortlogin-renamed": "당신의 계정 이름은 \"$1\"(으)로 바뀌었습니다. 해당 사용자 이름을 대신 사용해주시기 바랍니다.",
@@ -148,6 +150,7 @@
 	"centralauth-attach-text": "이 계정은 아직 통합 계정과 합쳐지지 않았습니다.\n통합 계정이 당신의 계정이라면, 통합 계정의 비밀번호를 입력하여 이 계정을 합칠 수 있습니다:",
 	"centralauth-attach-title": "계정 확인",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] 계정은(는) 이미 통합 계정이 잠겨 있습니다.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|동작|동작들}}",
 	"centralauth-block-editing-page": "{{PLURAL:$1|문서}} $1개",
 	"centralauth-block-editing-ns": "{{PLURAL:$1|이름공간}} $1개",
 	"centralauth-centralautologin-alreadyloggedinlocally": "이미 로컬에 로그인되어 있습니다.",
