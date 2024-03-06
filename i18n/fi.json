@@ -81,6 +81,7 @@
 	"centralauth-admin-info-registered": "Rekisteröity:",
 	"centralauth-admin-info-unattached": "Liittämättömien tunnusten lukumäärä:",
 	"centralauth-admin-info-username": "Käyttäjänimi:",
+	"centralauth-admin-info-username-rename": "nimeä uudelleen",
 	"centralauth-admin-intro": "Tätä käyttöliittymää voidaan käyttää järjestelmänlaajuisten tunnusten käsittelemiseen.",
 	"centralauth-admin-list-attached-on": "Liitoksen päiväys",
 	"centralauth-admin-list-blocked": "Estetty",
