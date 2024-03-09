@@ -246,7 +246,7 @@ class SpecialMultiLock extends SpecialPage {
 			);
 		}
 
-		$reasonList = Xml::listDropDown(
+		$reasonList = Xml::listDropdown(
 			'wpReasonList',
 			$this->msg( 'centralauth-admin-status-reasons' )->inContentLanguage()->text(),
 			$this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text()
