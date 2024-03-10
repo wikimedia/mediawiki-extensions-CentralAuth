@@ -1169,7 +1169,7 @@ class CentralAuthUser implements IDBAccessObject {
 					// Test passwords only once here as comparing hashes is very expensive
 					$passwordConfirmed[$wiki] = $this->matchHashes(
 						$passwords,
-						$this->getPasswordFromString( $local['password'],  $local['id'] )
+						$this->getPasswordFromString( $local['password'], $local['id'] )
 					);
 
 					if ( $passwordConfirmed[$wiki] ) {

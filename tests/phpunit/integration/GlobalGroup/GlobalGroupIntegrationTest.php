@@ -80,7 +80,7 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 		$caDbw->insert(
 			'global_user_groups',
 			[
-				[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-foos',  'gug_expiry' => null, ],
+				[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-foos', 'gug_expiry' => null, ],
 				[
 					'gug_user' => $caUser->getId(),
 					'gug_group' => 'global-bars',

@@ -40,7 +40,7 @@ class LocalRenameUserJobTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider provideEscapeReplacement
-	 * @covers LocalRenameUserJob::escapeReplacement
+	 * @covers \MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob::escapeReplacement
 	 */
 	public function testEscapeReplacement( $given, $expect ) {
 		$escaped = $this->escapeReplacement->invokeArgs( null, [ $given ] );

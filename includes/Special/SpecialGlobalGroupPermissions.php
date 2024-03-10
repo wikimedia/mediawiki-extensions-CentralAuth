@@ -351,7 +351,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-reason'] = Xml::input( 'wpReason', 60 );
 		}
 
-		$html .= Xml::buildForm( $fields,  $editable ? 'centralauth-editgroup-submit' : null );
+		$html .= Xml::buildForm( $fields, $editable ? 'centralauth-editgroup-submit' : null );
 
 		if ( $editable ) {
 			$html .= Xml::closeElement( 'form' );

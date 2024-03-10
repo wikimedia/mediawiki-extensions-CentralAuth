@@ -205,12 +205,12 @@ class AttachAccount extends Maintenance {
 			"\n";
 		$this->output( sprintf( $format,
 			wfTimestamp( TS_DB ),
-			$this->total,    $this->total / $delta,
-			$this->ok,       $this->reportPcnt( $this->ok ),
+			$this->total, $this->total / $delta,
+			$this->ok, $this->reportPcnt( $this->ok ),
 			$this->attached, $this->reportPcnt( $this->attached ),
-			$this->partial,  $this->reportPcnt( $this->partial ),
-			$this->failed,  $this->reportPcnt( $this->failed ),
-			$this->missing,  $this->reportPcnt( $this->missing )
+			$this->partial, $this->reportPcnt( $this->partial ),
+			$this->failed, $this->reportPcnt( $this->failed ),
+			$this->missing, $this->reportPcnt( $this->missing )
 		) );
 	}
 }

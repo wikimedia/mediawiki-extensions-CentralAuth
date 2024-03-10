@@ -54,7 +54,7 @@ class LocalPageMoveJob extends Job {
 
 		// Mark user page moves as bot on rename user process T97659
 		if ( !$permissionManager->userHasRight( $this->user, 'bot' ) ) {
-			$guard = $permissionManager->addTemporaryUserRights( $this->user,  'bot' );
+			$guard = $permissionManager->addTemporaryUserRights( $this->user, 'bot' );
 
 			// Remove it at the end of the job process
 			$this->addTeardownCallback( static function () use ( &$guard ) {
