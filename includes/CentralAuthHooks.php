@@ -273,6 +273,9 @@ class CentralAuthHooks implements
 		return $autoLoginWikis;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public static function isMobileDomain() {
 		return ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' )
 			&& MobileContext::singleton()->usingMobileDomain();

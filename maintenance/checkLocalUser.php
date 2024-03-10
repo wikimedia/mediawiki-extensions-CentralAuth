@@ -106,7 +106,7 @@ class CheckLocalUser extends Maintenance {
 							$conds['lu_name'] = $this->user;
 						}
 						$centralPrimaryDb->delete( 'localuser', $conds, __METHOD__ );
-						$this->deleted ++;
+						$this->deleted++;
 					} else {
 						$this->output(
 							"$wiki does not exist, use --delete-nowiki to delete entries...\n"
