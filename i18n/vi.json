@@ -25,6 +25,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
 	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục bao gồm thành viên",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Số sửa đổi toàn cục của thành viên (khi mở tài khoản)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Các nhóm toàn cục của thành viên (khi mở tài khoản)",
 	"action-centralauth-createlocal": "ép tạo tài khoản cục bộ",
 	"action-centralauth-lock": "khóa hoặc mở khóa tài khoản chung",
 	"action-centralauth-merge": "trộn tài khoản của họ",
@@ -492,5 +494,6 @@
 	"right-globalgrouppermissions": "Quản lý nhóm toàn cục",
 	"sessionprovider-centralauthsessionprovider": "phiên trung ương dựa trên cookie",
 	"sessionprovider-centralauthtokensessionprovider": "phiên dấu CentralAuth",
-	"centralauth-badaccess-blacklisted": "Bạn không thể yêu cầu đổi tên toàn cục, vì bạn đang nằm trong danh sách cấm."
+	"centralauth-badaccess-blacklisted": "Bạn không thể yêu cầu đổi tên toàn cục, vì bạn đang nằm trong danh sách cấm.",
+	"centralauth-blocked-ip-reputation": "Địa chỉ IP mà bạn đang sử dụng đã bị cấm vì nó được cho là đã được sử dụng vào mục đích lạm dụng gần đây."
 }

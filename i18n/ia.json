@@ -477,5 +477,6 @@
 	"right-globalgrouppermissions": "Gerer gruppos global",
 	"sessionprovider-centralauthsessionprovider": "sessiones basate sur cookies central",
 	"sessionprovider-centralauthtokensessionprovider": "sessiones centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre."
+	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre.",
+	"centralauth-blocked-ip-reputation": "Le adresse IP que tu usa actualmente ha essite blocate perque es credite que illo ha recentemente essite usate a fines abusive."
 }
