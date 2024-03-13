@@ -878,41 +878,6 @@
 			"description": "The amount of time to wait for tokens to appear in the session store, in seconds",
 			"value": 3
 		},
-		"CentralAuthIpoidUrl": {
-			"description": "URL to access ipoid service",
-			"value": null
-		},
-		"CentralAuthIpoidCheckAtAccountCreation": {
-			"description": "Feature flag to enable/disable denying account creation based on IP reputation data from ipoid service https://wikitech.wikimedia.org/wiki/Service/IPoid",
-			"value": false
-		},
-		"CentralAuthIpoidCheckAtAccountCreationLogOnly": {
-			"description": "If set to true, only log the block to Logstash, but don't actually deny account creation.",
-			"value": false
-		},
-		"CentralAuthIpoidRequestTimeoutSeconds": {
-			"description": "Number of seconds to use for timeout and connectTimeout options to HTTP request factory when calling ipoid",
-			"value": 2
-		},
-		"CentralAuthIpoidDenyAccountCreationRiskTypes": {
-			"description": "List of risk types that CentralAuth will deny account creation for, if ipoid says the IP is associated with the risk type. If any risk types in this array are present in the data from ipoid, we will deny account creation for that IP.",
-			"value": [
-				"UNKNOWN",
-				"CALLBACK_PROXY",
-				"GEO_MISMATCH",
-				"LOGIN_BRUTEFORCE",
-				"TUNNEL",
-				"WEB_SCRAPING"
-			]
-		},
-		"CentralAuthIpoidDenyAccountCreationTunnelTypes": {
-			"description": "List of tunnel types that CentralAuth will deny account creation for, if ipoid says the IP is associated with the tunnel type. If the IP has a TUNNEL risk type, and any of the tunnel types in this array are present in the data from ipoid, we will deny account creation for that IP.",
-			"value": [
-				"UNKNOWN",
-				"VPN",
-				"PROXY"
-			]
-		},
 		"CentralAuthRejectVanishUserNotification": {
 			"description": "User name to be notified when a global vanish request is rejected.",
 			"value": ""
@@ -1015,17 +980,6 @@
 				"services": [
 					"CentralAuth.FilteredRequestTracker"
 				]
-			},
-			"CentralAuthIpReputationPreAuthenticationProvider": {
-				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthIpReputationPreAuthenticationProvider",
-				"services": [
-					"FormatterFactory",
-					"HttpRequestFactory",
-					"MainWANObjectCache",
-					"PerDbNameStatsdDataFactory",
-					"PermissionManager"
-				],
-				"sort": 0
 			}
 		}
 	},

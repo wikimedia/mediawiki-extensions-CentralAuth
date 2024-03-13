@@ -54,12 +54,6 @@ class CAMainConfigNames {
 	public const GlobalRenameDenylist = 'GlobalRenameDenylist';
 	public const CentralAuthSessionCacheType = 'CentralAuthSessionCacheType';
 	public const CentralAuthTokenSessionTimeout = 'CentralAuthTokenSessionTimeout';
-	public const CentralAuthIpoidUrl = 'CentralAuthIpoidUrl';
-	public const CentralAuthIpoidCheckAtAccountCreation = 'CentralAuthIpoidCheckAtAccountCreation';
-	public const CentralAuthIpoidCheckAtAccountCreationLogOnly = 'CentralAuthIpoidCheckAtAccountCreationLogOnly';
-	public const CentralAuthIpoidRequestTimeoutSeconds = 'CentralAuthIpoidRequestTimeoutSeconds';
-	public const CentralAuthIpoidDenyAccountCreationRiskTypes = 'CentralAuthIpoidDenyAccountCreationRiskTypes';
-	public const CentralAuthIpoidDenyAccountCreationTunnelTypes = 'CentralAuthIpoidDenyAccountCreationTunnelTypes';
 	public const CentralAuthRejectVanishUserNotification = 'CentralAuthRejectVanishUserNotification';
 	public const CentralAuthAutomaticVanishPerformer = 'CentralAuthAutomaticVanishPerformer';
 	public const CentralAuthBlockAppealWikidataIds = 'CentralAuthBlockAppealWikidataIds';
