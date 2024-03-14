@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Athena in Wonderland",
 			"CaiusSPQR",
 			"Fúlvio",
@@ -34,7 +35,7 @@
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do utilizador",
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globais em que o utilizador está",
 	"abusefilter-edit-builder-vars-global-account-editcount": "Contagem global de edições do utilizador (aquando da criação da conta)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Grupos globais em que o utilizador se encontra  (aquando da criação da conta)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Grupos globais em que o utilizador se encontra (aquando da criação da conta)",
 	"action-centralauth-createlocal": "forçar a criação de uma conta local",
 	"action-centralauth-lock": "bloquear ou desbloquear contas globais",
 	"action-centralauth-merge": "fundir as suas contas",

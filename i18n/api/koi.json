@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Римма"
 		]
 	},
 	"apihelp-createlocalaccount-summary": "Тшӧктыны лӧсьӧтны аккаунт.Шӧр аккаунт должен лоны.",
-	"apihelp-setglobalaccountstatus-summary": "Дзебны или пӧднавны  (осьтны или лэдзны)вӧдитчисьлісь шӧр аккаунтсӧ."
+	"apihelp-setglobalaccountstatus-summary": "Дзебны или пӧднавны (осьтны или лэдзны) вӧдитчисьлісь шӧр аккаунтсӧ."
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Bjankuloski06",
 			"Vlad5250"
 		]
@@ -13,7 +14,7 @@
 	"apierror-centralauth-notloggedin": "Анонимните корисници да не можат да добијат шифра за Central Auth",
 	"apierror-centralauth-renameinprogress": "Корисникот е во тек на преименување, не може да се користи.",
 	"apihelp-centralauthtoken-example-1": "Дај шифра за централна најава",
-	"apihelp-centralauthtoken-extended-description": "Дава шифра која може да се користи за заверка на барањата до приложинкот  на други викија. За дополниелни барања до приложникот, ставете ги во GET-параметарот <var>centralauthtoken</var>. За REST-барања од приложинкот, додајте го заглавјето <code>Authorization: CentralAuthToken {token}</code>. Во логиката на предниот го план МедијаВики, можете да користите ResourceLoader-модулот <code>mediawiki.ForeignApi</code>.",
+	"apihelp-centralauthtoken-extended-description": "Дава шифра која може да се користи за заверка на барањата до приложинкот на други викија. За дополниелни барања до приложникот, ставете ги во GET-параметарот <var>centralauthtoken</var>. За REST-барања од приложинкот, додајте го заглавјето <code>Authorization: CentralAuthToken {token}</code>. Во логиката на предниот го план МедијаВики, можете да користите ResourceLoader-модулот <code>mediawiki.ForeignApi</code>.",
 	"apihelp-centralauthtoken-summary": "Дај шифра за централна најава за заверено барање до приврзано вики.",
 	"apihelp-createlocalaccount-example-1": "Принудно создавање на месна сметка за [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Причина за создавањето на месната сметка.",
