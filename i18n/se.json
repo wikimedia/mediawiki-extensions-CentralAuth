@@ -18,6 +18,7 @@
 	"centralauth-prefs-count-attached": "Du dovddaldat lea registrerejuvvon $1 {{PLURAL:$1|prošektii|prošeavttaide}}.",
 	"centralauth-prefs-status": "Váldodovddaldaga dilli:",
 	"centralauth-rename-progress-username": "Geavaheaddjinamma",
+	"centralauth-rename-table-status-failed": "Ii lihkostuvvan",
 	"centralloginsuccesful": "Leat čálihuvvon sisa",
 	"globalrenamequeue-action-view": "Čájet",
 	"globalrenamequeue-column-rq-name": "Geavaheaddjinamma",
