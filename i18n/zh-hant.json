@@ -4,6 +4,7 @@
 			"A2093064",
 			"Alexsh",
 			"Anakmalaysia",
+			"Arielyurusova",
 			"Bencmq",
 			"Chihongleegabriel",
 			"Cwlin0416",
@@ -517,5 +518,6 @@
 	"right-globalgrouppermissions": "管理全域群組",
 	"sessionprovider-centralauthsessionprovider": "基於 cookie 的中央 sessions",
 	"sessionprovider-centralauthtokensessionprovider": "中央驗證令牌 session",
-	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。"
+	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。",
+	"centralauth-blocked-ip-reputation": "您目前使用的 IP 位址已被阻止，因為據信該位址最近被用於濫用目的。"
 }
