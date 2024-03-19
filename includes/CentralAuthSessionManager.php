@@ -28,6 +28,7 @@ use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MWCryptRand;
 use ObjectCache;
+use Wikimedia\Stats\StatsFactory;
 
 class CentralAuthSessionManager {
 	/**
@@ -50,20 +51,24 @@ class CentralAuthSessionManager {
 
 	/** @var IBufferingStatsdDataFactory */
 	private $statsdDataFactory;
+	private StatsFactory $statsFactory;
 
 	/**
 	 * @param ServiceOptions $options
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
+	 * @param StatsFactory $statsFactory
 	 * @param BagOStuff $microStash
 	 */
 	public function __construct(
 		ServiceOptions $options,
 		IBufferingStatsdDataFactory $statsdDataFactory,
+		StatsFactory $statsFactory,
 		BagOStuff $microStash
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->statsdDataFactory = $statsdDataFactory;
+		$this->statsFactory = $statsFactory;
 		$this->tokenStore = $microStash;
 	}
 
@@ -143,7 +148,14 @@ class CentralAuthSessionManager {
 		$data = $this->getSessionStore()->get( $key ) ?: [];
 		$real = microtime( true ) - $stime;
 
+		// Stay backward compatible with the dashboard feeding on
+		// this data. NOTE: $real is in second with microsecond-level
+		// precision. This is reconciled on the grafana dashboard.
 		$this->statsdDataFactory->timing( 'centralauth.session.read', $real );
+
+		$this->statsFactory->withComponent( 'CentralAuth' )
+			->getTiming( 'session_read_seconds' )
+			->observe( $real * 1000 );
 
 		return $data;
 	}
@@ -186,7 +198,14 @@ class CentralAuthSessionManager {
 				$sessionStore::TTL_DAY
 			);
 			$real = microtime( true ) - $stime;
+			// Stay backward compatible with the dashboard feeding on
+			// this data. NOTE: $real is in second with microsecond-level
+			// precision. This is reconciled on the grafana dashboard.
 			$this->statsdDataFactory->timing( 'centralauth.session.write', $real );
+
+			$this->statsFactory->withComponent( 'CentralAuth' )
+				->getTiming( 'session_write_seconds' )
+				->observe( $real * 1000 );
 		}
 
 		if ( $session ) {

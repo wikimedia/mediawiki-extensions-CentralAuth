@@ -63,6 +63,7 @@ return [
 				$services->getMainConfig()
 			),
 			$services->getStatsdDataFactory(),
+			$services->getStatsFactory(),
 			$services->getMicroStash()
 		);
 	},
