@@ -1,9 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zainab Meher"
+			"Zainab Meher",
+			"Muhammad Shuaib"
 		]
 	},
+	"apihelp-centralauthtoken-example-1": "centralauthtoken اخذ کریں",
+	"apihelp-centralauthtoken-summary": "منسلک ویکی کو مصدقہ درخواست بھیجنے کے لیے centralauthtoken اخذ کرتا ہے۔",
+	"apihelp-deleteglobalaccount-summary": "عالمی صارف کو حذف کرتا ہے۔",
+	"apihelp-globaluserrights-summary": "عالمی حلقوں سے صارف کو ہٹاتا ہے یا ان میں شامل کرتا ہے۔",
+	"apihelp-main-param-centralauthtoken": "کراس ڈومین اجیکس رکویسٹ (CORS) کی مدد سے اےپی‌آئی تک پہنچنا ہو تو توثیق کے لیے اس پیرامیٹر کو حالیہ SUL صارف کی حیثیت سے استعمال کریں۔ نیز CORS کی درخواست بھیجنے سے قبل ٹوکن اخذ کرنے کے لیے اس ویکی پر <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> کا استعمال کریں۔ خیال رہے کہ ان تمام ٹوکنوں کو فقط ایک دفعہ استعمال کیا جا سکتا ہے اور دس سکنڈ میں ان کی میعاد تمام ہو جاتی ہے۔ کسی بھی pre-flight درخواست میں اس پیرامیٹر کی شمولیت لازمی ہے اور اسی بنا پر اسے یوآرآئی درخواست کا جز ہونا چاہیے (POST کا نہیں)۔",
 	"apihelp-query+globalrenamestatus-example-1": "موجودعالمی صارف کے متعلق معلومات حاصل کریں۔",
 	"apihelp-query+globalrenamestatus-param-user": "جس صارف کا نام تبدیل ھو رہاھے ۔انکے پرانے یا نۓ نام کا ھوسکتاھے۔"
 }
