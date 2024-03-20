@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use DBAccessObjectUtils;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -21,7 +20,7 @@ use Wikimedia\Rdbms\OrExpressionGroup;
  * @license GPL-2.0-or-later
  * @author Marius Hoch < hoo@online.de >
  */
-class GlobalRenameUserStatus implements IDBAccessObject {
+class GlobalRenameUserStatus {
 
 	/**
 	 * Either old or new name of the user
@@ -106,14 +105,18 @@ class GlobalRenameUserStatus implements IDBAccessObject {
 	 * @return string[]
 	 */
 	public function getStatuses( $flags = 0 ) {
-		[ $index, $options ] = DBAccessObjectUtils::getDBOptions( $flags );
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$index = DB_PRIMARY;
+		} else {
+			$index = DB_REPLICA;
+		}
 		$db = $this->getDB( $index );
 
 		$res = $db->newSelectQueryBuilder()
 			->select( [ 'ru_wiki', 'ru_status' ] )
 			->from( 'renameuser_status' )
 			->where( [ $this->getNameWhereClause( $db ) ] )
-			->options( $options )
+			->recency( $flags )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 

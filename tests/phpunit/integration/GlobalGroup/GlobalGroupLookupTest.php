@@ -59,9 +59,11 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testGetDefinedGroups( int $flags, int $readIndex ) {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDB' )
-			->with( $readIndex )
-			->willReturn( $this->db );
+		if ( $readIndex === DB_REPLICA ) {
+			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->db );
+		} else {
+			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->db );
+		}
 
 		$lookup = new GlobalGroupLookup( $dbManager );
 		$groups = $lookup->getDefinedGroups( $flags );
@@ -75,9 +77,11 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testGetRightsForGroup( int $flags, int $readIndex ) {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDB' )
-			->with( $readIndex )
-			->willReturn( $this->db );
+		if ( $readIndex === DB_REPLICA ) {
+			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->db );
+		} else {
+			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->db );
+		}
 
 		$lookup = new GlobalGroupLookup( $dbManager );
 		$stewardRights = $lookup->getRightsForGroup( 'steward', $flags );

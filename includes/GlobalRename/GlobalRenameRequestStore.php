@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use DBAccessObjectUtils;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\UserNameUtils;
@@ -150,16 +149,20 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function nameHasPendingRequest( string $newname, int $flags = IDBAccessObject::READ_NORMAL ) {
-		[ $dbIndex, $dbOptions ] = DBAccessObjectUtils::getDBOptions( $flags );
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$dbr = $this->dbManager->getCentralPrimaryDB();
+		} else {
+			$dbr = $this->dbManager->getCentralReplicaDB();
+		}
 
-		$res = $this->dbManager->getCentralDB( $dbIndex )->newSelectQueryBuilder()
+		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
 			->from( 'renameuser_queue' )
 			->where( [
 				'rq_newname' => $newname,
 				'rq_status'  => GlobalRenameRequest::PENDING,
 			] )
-			->options( $dbOptions )
+			->recency( $flags )
 			->caller( __METHOD__ )
 			->fetchField();
 
@@ -174,9 +177,13 @@ class GlobalRenameRequestStore {
 	 * @return stdClass|false Row as object or false if not found
 	 */
 	protected function fetchRowFromDB( array $where, int $flags = IDBAccessObject::READ_NORMAL ) {
-		[ $dbIndex, ] = DBAccessObjectUtils::getDBOptions( $flags );
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$dbr = $this->dbManager->getCentralPrimaryDB();
+		} else {
+			$dbr = $this->dbManager->getCentralReplicaDB();
+		}
 
-		return $this->dbManager->getCentralDB( $dbIndex )->newSelectQueryBuilder()
+		return $dbr->newSelectQueryBuilder()
 			->select( [
 				'id'        => 'rq_id',
 				'name'      => 'rq_name',

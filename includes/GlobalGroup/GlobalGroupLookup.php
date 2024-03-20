@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
-use DBAccessObjectUtils;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 
@@ -45,10 +44,12 @@ class GlobalGroupLookup {
 	 * @return string[]
 	 */
 	public function getDefinedGroups( int $flags = IDBAccessObject::READ_NORMAL ): array {
-		[ $dbIndex ] = DBAccessObjectUtils::getDBOptions( $flags );
-		return $this->dbManager
-			->getCentralDB( $dbIndex )
-			->newSelectQueryBuilder()
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$dbr = $this->dbManager->getCentralPrimaryDB();
+		} else {
+			$dbr = $this->dbManager->getCentralReplicaDB();
+		}
+		return $dbr->newSelectQueryBuilder()
 			->select( 'ggp_group' )
 			->distinct()
 			->from( 'global_group_permissions' )
@@ -64,10 +65,12 @@ class GlobalGroupLookup {
 	 * @return string[]
 	 */
 	public function getRightsForGroup( string $group, int $flags = IDBAccessObject::READ_NORMAL ): array {
-		[ $dbIndex, ] = DBAccessObjectUtils::getDBOptions( $flags );
-		return $this->dbManager
-			->getCentralDB( $dbIndex )
-			->newSelectQueryBuilder()
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$dbr = $this->dbManager->getCentralPrimaryDB();
+		} else {
+			$dbr = $this->dbManager->getCentralReplicaDB();
+		}
+		return $dbr->newSelectQueryBuilder()
 			->select( 'ggp_permission' )
 			->from( 'global_group_permissions' )
 			->where( [ 'ggp_group' => $group ] )
