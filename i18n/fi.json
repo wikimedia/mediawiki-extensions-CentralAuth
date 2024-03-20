@@ -23,6 +23,7 @@
 			"Pxos",
 			"Pyscowicz",
 			"SMAUG",
+			"Samoasambia",
 			"Silvonen",
 			"Str4nd",
 			"Stryn",
@@ -35,6 +36,8 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Käyttäjän järjestelmänlaajuinen muokkausmäärä",
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Käyttäjän järjestelmänlaajuinen muokkausmäärä (tiliä luotaessa)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on (tiliä luotaessa)",
 	"action-centralauth-createlocal": "pakottaa paikallisen käyttäjän luontia",
 	"action-centralauth-lock": "lukita tai avata järjestelmänlaajuisia tunnuksia",
 	"action-centralauth-merge": "yhdistää omaa tunnustasi",
@@ -495,5 +498,6 @@
 	"right-globalgrouppermissions": "Hallinnoida järjestelmänlaajuisia ryhmiä",
 	"sessionprovider-centralauthsessionprovider": "järjestelmänlaajuisia evästepohjaisia istuntoja",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-istuntoja",
-	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja."
+	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja.",
+	"centralauth-blocked-ip-reputation": "Tällä hetkellä käyttämäsi IP-osoite on estetty, koska sen uskotaan olevan käytetty väärinkäyttöön äskettäin."
 }

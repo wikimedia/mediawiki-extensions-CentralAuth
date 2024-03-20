@@ -69,7 +69,7 @@
 	"apihelp-query+globaluserinfo-summary": "מציג מידע על משתמש גלובלי",
 	"apihelp-query+wikisets-example-1": "רשימת ערכות ויקי",
 	"apihelp-query+wikisets-example-2": "הצגת ערכות ויקי עם סוגים",
-	"apihelp-query+wikisets-param-from": "של ערכת הוויקי הראשונה.",
+	"apihelp-query+wikisets-param-from": "שם ערכת הוויקי הראשונה.",
 	"apihelp-query+wikisets-param-limit": "כמה ערכות ויקי להחזיר.",
 	"apihelp-query+wikisets-param-orderbyname": "למיין את התוצאות לפי השם.",
 	"apihelp-query+wikisets-param-prop": "אילו פריטי מידע לכלול:",
@@ -82,7 +82,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "קביעה האם המשתמש הזה לא מוסתר, מוסתר מרשימת המשתמשים הגלובליים, או מועלם.",
 	"apihelp-setglobalaccountstatus-param-locked": "לשנות האם המשתמש נעול או לא.",
 	"apihelp-setglobalaccountstatus-param-reason": "הסיבה לשינוי מצב המשתמש הזה.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "קוד MD5 אופציונלי לשילוב הנוכחי הצפוי של <userid>:<username>:<hidden>:<locked>, כדי לזהות התנגשויות עריכה. יש להגדיר <locked> בתור 1 עבור נעול ו־0 עבור לא נעול.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "קוד MD5 אופציונלי לשילוב הנוכחי הצפוי של <userid>:<username>:<hidden>:<locked>, כדי לזהות התנגשויות עריכה. הערך של <locked> צריך להיות 1 עבור \"נעול\" ו־0 עבור לא נעול.",
 	"apihelp-setglobalaccountstatus-param-user": "מצב של איזה משתמש לשנות.",
 	"apihelp-setglobalaccountstatus-summary": "הסתרה או נעילה (או ביטול הסתרה או ביטול נעילה) של חשבון משתמש גלובלי."
 }
