@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Hannarosendeloitte",
 			"Lokal Profil",
 			"Magol",
@@ -72,7 +73,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Ändra om denna användaren inte är dold, dold från den globala användarlistan eller censurerad.",
 	"apihelp-setglobalaccountstatus-param-locked": "Ändra om användaren är låst eller inte.",
 	"apihelp-setglobalaccountstatus-param-reason": "Skäl för att ändra användarens status.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Valfri MD5 för den förväntade aktuella <username>:<hidden>:<locked>, för att upptäcka redigeringskonflikter. Ange <locked> till 1 för låst, 0 för olåst.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Valfri MD5 för den förväntade aktuella <userid>:<username>:<hidden>:<locked>, för att upptäcka redigeringskonflikter. Ange <locked> till 1 för låst, 0 för olåst.",
 	"apihelp-setglobalaccountstatus-param-user": "Användare att ändra statusen för.",
 	"apihelp-setglobalaccountstatus-summary": "Ändra en global användares status."
 }

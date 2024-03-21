@@ -3,6 +3,7 @@
 		"authors": [
 			"Abanima",
 			"Alshamiri1",
+			"Amire80",
 			"Meno25",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
@@ -73,7 +74,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "تغيير ما إذا كان هذا المستخدم غير مخفي أو مخفي من قائمة المستخدمين العالميين أو مزال.",
 	"apihelp-setglobalaccountstatus-param-locked": "تغيير ما إذا كان هذا المستخدم محميا أم لا.",
 	"apihelp-setglobalaccountstatus-param-reason": "سبب تغيير وضع المستخدم.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 اختياري للتيار المتوقع<userid> :<username> :<hidden> :<locked> ، لاكتشاف تعارضات التحرير. تعيين<locked> إلى 1 للقفل ، و 0 للفتح.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 اختياري للتيار المتوقع<userid>:<username>:<hidden>:<locked> ، لاكتشاف تعارضات التحرير. تعيين<locked> إلى 1 للقفل ، و 0 للفتح.",
 	"apihelp-setglobalaccountstatus-param-user": "مستخدم لتغيير حالته.",
 	"apihelp-setglobalaccountstatus-summary": "تعيين حالة مستخدم عالمي."
 }

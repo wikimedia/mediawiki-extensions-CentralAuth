@@ -44,6 +44,6 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Baliwan no daytoy nga agar-aramat ket nailemmeng, nailemmeng kadagiti listaan, wenno napasardeng.",
 	"apihelp-setglobalaccountstatus-param-locked": "Baliwan no daytoy nga agar-aramat ket naserraan wenno saan.",
 	"apihelp-setglobalaccountstatus-param-reason": "Rason para iti panagbaliw ti kasasaad ti agar-aramat.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Pagpilian ti MD5 iti nanamnama nga agdama a <username>:<hidden>:<locked>, tapno maduktalan kadagiti suppiat ti panagurnos. Isaad ti <locked> iti 1 para iti naserraan, 0 para iti nalukatan.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Pagpilian ti MD5 iti nanamnama nga agdama a <userid>:<username>:<hidden>:<locked>, tapno maduktalan kadagiti suppiat ti panagurnos. Isaad ti <locked> iti 1 para iti naserraan, 0 para iti nalukatan.",
 	"apihelp-setglobalaccountstatus-param-user": "Agar-aramat a baliwan iti kasasaad."
 }

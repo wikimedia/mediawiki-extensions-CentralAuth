@@ -45,6 +45,6 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Càgna sempe ca l'utente nun fosse annascunnuto, annascunnuto d' 'e liste, o luvàto.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cagna ntutte 'e mmode si l'utente è bloccato o no.",
 	"apihelp-setglobalaccountstatus-param-reason": "Mutivo pe' ne cagnà 'o stato utente.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Opzionale MD5 p' 'o <username>:<hidden>:<locked> 'e mmo' aspettato, pe' ne putè scummiglià cunflitte 'e cagnamiento. Mpustate <locked> a 1 pe' bluccà, 0 pe' sbluccà.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Opzionale MD5 p' 'o <userid>:<username>:<hidden>:<locked> 'e mmo' aspettato, pe' ne putè scummiglià cunflitte 'e cagnamiento. Mpustate <locked> a 1 pe' bluccà, 0 pe' sbluccà.",
 	"apihelp-setglobalaccountstatus-param-user": "Utente a se cagnà 'o stato."
 }

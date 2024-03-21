@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Fitoschido",
 			"Xuacu"
 		]
@@ -65,7 +66,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Cambiar si esti usuariu nun ta anubríu, ta anubríu na llista global d’usuarios o ta suprimíu.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cambiar si esti usuariu ta bloquiáu o non.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motivu pa cambiar l'estáu del usuariu.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional del <username>:<hidden>:<locked> actual esperáu, pa detectar conflictos d'edición. Define <locked> como 1 para bloquiáu, 0 pa desbloquiáu.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 opcional del <userid>:<username>:<hidden>:<locked> actual esperáu, pa detectar conflictos d'edición. Define <locked> como 1 para bloquiáu, 0 pa desbloquiáu.",
 	"apihelp-setglobalaccountstatus-param-user": "Usuariu del qu'hai que cambiar l'estáu.",
 	"apihelp-setglobalaccountstatus-summary": "Definir l'estáu d'un usuariu global."
 }

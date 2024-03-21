@@ -87,7 +87,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Ändert, ob dieser Benutzer nicht versteckt, in der Liste der globalen Benutzer ausgeblendet oder unterdrückt ist.",
 	"apihelp-setglobalaccountstatus-param-locked": "Ändert, ob dieser Benutzer gesperrt ist oder nicht.",
 	"apihelp-setglobalaccountstatus-param-reason": "Grund für die Änderung des Benutzerstatus.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Optionaler MD5-Hash des erwarteten aktuellen <userid>:<username>:<hidden>:<locked>, um Bearbeitungskonflikte festzustellen. Für gesperrt <locked> auf 1 festlegen, 0 für freigegeben.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Optionaler MD5 des erwarteten aktuellen <samp>userid:username:hidden:locked</samp>. Dies wird verwendet, um Bearbeitungskonflikte zu erkennen. Der Wert von <samp>hidden</samp> muss eine leere Zeichenfolge sein, wenn er nicht ausgeblendet ist oder die Zeichenfolgen <code>lists</code> oder <code>suppressed</code>. Der Wert von <samp>locked</samp> muss 1 für gesperrt und 0 für entsperrt sein. Beispiele: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>.",
 	"apihelp-setglobalaccountstatus-param-user": "Benutzer, dessen Status geändert werden soll.",
 	"apihelp-setglobalaccountstatus-summary": "Ein globales Benutzerkonto ausblenden oder sperren (bzw. einblenden oder entsperren)."
 }

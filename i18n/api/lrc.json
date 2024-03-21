@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Macofe",
 			"Mogoeilor"
 		]
@@ -41,6 +42,6 @@
 	"apihelp-setglobalaccountstatus-example-2": "واز کردن قلف و نهاگری یه گل حساو سرتاسری سی [[User:Example]] وا ای دلیل \"مه می تونم\"",
 	"apihelp-setglobalaccountstatus-param-locked": "ای پرسایشت نه که ای کاریار نهاگری بوئه یا نه آلشت بکیت.",
 	"apihelp-setglobalaccountstatus-param-reason": "دلیل آلشت دئن حال و بال کاریار.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "ام دی بی 5 دل وه حایی ایسنی قوول بی<username>:<hidden>:<locked>، سی دیارکاری ری وه ری کاریا ویرایشتی.<locked> نه سی 1 که قلف بیه میزونکاری بکید، 0 واز بیه.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "ام دی بی 5 دل وه حایی ایسنی قوول بی<userid>:<username>:<hidden>:<locked>، سی دیارکاری ری وه ری کاریا ویرایشتی.<locked> نه سی 1 که قلف بیه میزونکاری بکید، 0 واز بیه.",
 	"apihelp-setglobalaccountstatus-param-user": "کاریار سی آلشت دئن حال و بال."
 }

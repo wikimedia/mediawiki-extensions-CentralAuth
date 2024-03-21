@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Borichèt"
 		]
 	},
@@ -43,6 +44,6 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Cangé si st'utent a l'é nen ëstërmà, stërmà da le liste, o dëscancelà.",
 	"apihelp-setglobalaccountstatus-param-locked": "Cangé si s'utent a l'é blocà o pa.",
 	"apihelp-setglobalaccountstatus-param-reason": "Rason për modifiché lë stat ëd l'utent.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 facoltativ ëd l'atual <username>:<hidden>:<locked> spetà, për trové ij conflit ëd modìfica. Buté <locked> a 1 për blocà, 0 për dësbloché.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 facoltativ ëd l'atual <userid>:<username>:<hidden>:<locked> spetà, për trové ij conflit ëd modìfica. Buté <locked> a 1 për blocà, 0 për dësbloché.",
 	"apihelp-setglobalaccountstatus-param-user": "Utent dont lë stat a dev esse modificà."
 }

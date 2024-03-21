@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"BaRaN6161 TURK",
 			"Hedda",
 			"Incelemeelemani",
@@ -74,7 +75,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Bu kullanıcının genel kullanıcı listesinden gizlenip gizlenmeme durumunu değiştirin.",
 	"apihelp-setglobalaccountstatus-param-locked": "Bu kullanıcının kilitli olup olmadığını değiştirin.",
 	"apihelp-setglobalaccountstatus-param-reason": "Kullanıcının durumunu değiştirme nedeni.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Düzenleme çakışmalarını algılamak için beklenen <username>:<hidden>:<locked> öğesinin isteğe bağlı MD5'i. Kilitli için <locked> seçeneğini 1, kilitsiz için 0 olarak ayarlayın.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Düzenleme çakışmalarını algılamak için beklenen <userid>:<username>:<hidden>:<locked> öğesinin isteğe bağlı MD5'i. Kilitli için <locked> seçeneğini 1, kilitsiz için 0 olarak ayarlayın.",
 	"apihelp-setglobalaccountstatus-param-user": "Kullanıcı durumunu değiştirmek için.",
 	"apihelp-setglobalaccountstatus-summary": "Küresel bir kullanıcının durumu belirleyin."
 }
