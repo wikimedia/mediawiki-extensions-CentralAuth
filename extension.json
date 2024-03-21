@@ -123,7 +123,10 @@
 				"CommentFormatter",
 				"NamespaceInfo",
 				"ReadOnlyMode",
+				"TempUserConfig",
+				"UserFactory",
 				"UserNameUtils",
+				"UserRegistrationLookup",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService"
 			]

@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use DateInterval;
 use DerivativeContext;
 use Exception;
 use HTMLForm;
@@ -14,6 +15,7 @@ use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Html\Html;
@@ -21,9 +23,13 @@ use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\User\Registration\UserRegistrationLookup;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\Utils\MWTimestamp;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\WikiMap\WikiReference;
 use Wikimedia\Rdbms\IExpression;
@@ -69,27 +75,24 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var string[] */
 	private $mWikis;
 
-	/** @var CommentFormatter */
-	private $commentFormatter;
-
-	/** @var NamespaceInfo */
-	private $namespaceInfo;
-
-	/** @var ReadOnlyMode */
-	private $readOnlyMode;
-
-	/** @var UserNameUtils */
-	private $userNameUtils;
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-	/** @var CentralAuthUIService */
-	private $uiService;
+	private CommentFormatter $commentFormatter;
+	private NamespaceInfo $namespaceInfo;
+	private ReadOnlyMode $readOnlyMode;
+	private TempUserConfig $tempUserConfig;
+	private UserFactory $userFactory;
+	private UserNameUtils $userNameUtils;
+	private UserRegistrationLookup $userRegistrationLookup;
+	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthUIService $uiService;
 
 	/**
 	 * @param CommentFormatter $commentFormatter
 	 * @param NamespaceInfo $namespaceInfo
 	 * @param ReadOnlyMode $readOnlyMode
+	 * @param TempUserConfig $tempUserConfig
+	 * @param UserFactory $userFactory
 	 * @param UserNameUtils $userNameUtils
+	 * @param UserRegistrationLookup $userRegistrationLookup
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
 	 */
@@ -97,15 +100,21 @@ class SpecialCentralAuth extends SpecialPage {
 		CommentFormatter $commentFormatter,
 		NamespaceInfo $namespaceInfo,
 		ReadOnlyMode $readOnlyMode,
+		TempUserConfig $tempUserConfig,
+		UserFactory $userFactory,
 		UserNameUtils $userNameUtils,
+		UserRegistrationLookup $userRegistrationLookup,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService
 	) {
 		parent::__construct( 'CentralAuth' );
-		$this->userNameUtils = $userNameUtils;
 		$this->commentFormatter = $commentFormatter;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->readOnlyMode = $readOnlyMode;
+		$this->tempUserConfig = $tempUserConfig;
+		$this->userFactory = $userFactory;
+		$this->userNameUtils = $userNameUtils;
+		$this->userRegistrationLookup = $userRegistrationLookup;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 	}
@@ -459,6 +468,24 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->getContext(),
 				$globalUser->getHiddenLevelInt()
 			);
+		}
+
+		if ( $this->tempUserConfig->isTempName( $globalUser->getName() ) ) {
+			$localUser = $this->userFactory->newFromName( $globalUser->getName() );
+			// if the central user is valid, the local username is too, but Phan doesn't know that
+			'@phan-var User $localUser';
+			$registrationDate = $this->userRegistrationLookup
+				->getRegistration( $localUser, CentralAuthGlobalRegistrationProvider::TYPE );
+			$expirationDays = $this->tempUserConfig->getExpireAfterDays();
+			if ( $registrationDate && $expirationDays ) {
+				// Add one day to account for the expiration script running daily
+				$expirationDate = MWTimestamp::getInstance( $registrationDate )
+					->add( new DateInterval( 'P' . ( $expirationDays + 1 ) . 'D' ) );
+				if ( $expirationDate->getTimestamp() < MWTimestamp::time() ) {
+					$attribs['expired'] = htmlspecialchars( $this->getLanguage()
+						->userTimeAndDate( $expirationDate->timestamp, $localUser ) );
+				}
+			}
 		}
 
 		$groups = $globalUser->getGlobalGroupsWithExpiration();
