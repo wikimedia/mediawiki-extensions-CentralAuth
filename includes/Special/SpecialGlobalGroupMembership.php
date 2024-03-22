@@ -651,11 +651,13 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		foreach ( $allgroups as $group ) {
 			$set = array_key_exists( $group, $currentGroups );
 
-			$attr = [ 'class' => 'mw-userrights-groupcheckbox' ];
-
 			$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
-			$checkboxHtml = Xml::checkLabel( $member, "wpGroup-" . $group,
-				"wpGroup-" . $group, $set, $attr );
+			$id = "wpGroup-$group";
+			$checkboxHtml = Html::element( 'input', [
+				'class' => 'mw-userrights-groupcheckbox',
+				'type' => 'checkbox', 'value' => '1', 'checked' => $set,
+				'id' => $id, 'name' => $id,
+			] ) . '&nbsp;' . Html::label( $member, $id );
 
 			$uiUser = $this->getUser();
 

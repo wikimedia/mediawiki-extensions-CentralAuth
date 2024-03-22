@@ -5,6 +5,7 @@
 	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
+		<exclude-pattern>*/tests/*</exclude-pattern>
 	</rule>
 
 	<file>.</file>
