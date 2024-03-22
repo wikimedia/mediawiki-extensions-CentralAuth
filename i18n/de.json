@@ -76,6 +76,7 @@
 	"centralauth-admin-info-unattached": "Anzahl der nicht verbundenen Benutzerkonten:",
 	"centralauth-admin-info-username": "Benutzername:",
 	"centralauth-admin-info-username-rename": "umbenennen",
+	"centralauth-admin-info-expired": "Temporäres Konto abgelaufen:",
 	"centralauth-admin-intro": "Spezialseite zur Verwaltung globaler Benutzerkonten.",
 	"centralauth-admin-list-attached-on": "Verbunden seit",
 	"centralauth-admin-list-blocked": "Gesperrt",
@@ -494,5 +495,6 @@
 	"right-globalgrouppermissions": "Globale Gruppen verwalten",
 	"sessionprovider-centralauthsessionprovider": "zentralen cookiebasierten Sitzungen",
 	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen",
-	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Negativliste stehst."
+	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Negativliste stehst.",
+	"centralauth-blocked-ip-reputation": "Die von dir derzeit verwendete IP-Adresse wurde gesperrt, da angenommen wird, dass sie kürzlich für missbräuchliche Zwecke verwendet wurde."
 }

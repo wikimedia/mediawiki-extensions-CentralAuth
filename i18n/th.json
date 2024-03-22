@@ -390,7 +390,7 @@
 	"log-action-filter-suppress-cadelete": "การลบบัญชีกลาง",
 	"log-action-filter-suppress-setstatus": "การเปลี่ยนแปลงสถานะบัญชีกลาง",
 	"log-name-gblrename": "ปูมการเปลี่ยนชื่อข้ามโครงการ",
-	"logentry-gblrename-merge": "$1 {{GENDER:$2|ผสาน}}ข้ามโครงการ $4 เป็น $5",
+	"logentry-gblrename-merge": "$1 {{GENDER:$2|ผสาน}}ข้ามโครงการ $4 เข้ากับ $5",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|เปลี่ยนชื่อ}}ข้ามโครงการ $4 เป็น $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|เปลี่ยนชื่อ}}ข้ามโครงการ $4 เป็น $5",
 	"logentry-gblrights-deleteset": "$1 {{GENDER:$2|ลบ}}วิกิเซ็ต \"$4\"",

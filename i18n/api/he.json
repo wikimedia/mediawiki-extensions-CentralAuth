@@ -82,7 +82,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "קביעה האם המשתמש הזה לא מוסתר, מוסתר מרשימת המשתמשים הגלובליים, או מועלם.",
 	"apihelp-setglobalaccountstatus-param-locked": "לשנות האם המשתמש נעול או לא.",
 	"apihelp-setglobalaccountstatus-param-reason": "הסיבה לשינוי מצב המשתמש הזה.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "קוד MD5 אופציונלי לשילוב הנוכחי הצפוי של <userid>:<username>:<hidden>:<locked>, כדי לזהות התנגשויות עריכה. הערך של <locked> צריך להיות 1 עבור \"נעול\" ו־0 עבור לא נעול.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "קוד MD5 אופציונלי לשילוב הנוכחי הצפוי של <samp>userid:username:hidden:locked</samp> זה משמש לזיהוי התנגשויות עריכה. הערך של <samp>hidden</samp> חייב להיות מחרוזת ריקה אם המשתמש לא מוסתר או המחרוזות <code>lists</code> או <code>suppressed</code>. הערך של <samp>locked</samp> חייב להיות 1 עבור \"נעול\" ו־0 עבור \"לא נעול\". דוגמאות: <samp dir=\"ltr\">2128506:LeeSmith::0</samp>; <samp dir=\"ltr\">3839611:VandalGoblin:suppressed:1</samp>.",
 	"apihelp-setglobalaccountstatus-param-user": "מצב של איזה משתמש לשנות.",
 	"apihelp-setglobalaccountstatus-summary": "הסתרה או נעילה (או ביטול הסתרה או ביטול נעילה) של חשבון משתמש גלובלי."
 }
