@@ -1192,12 +1192,12 @@ class CentralAuthUser implements IDBAccessObject {
 				// Authenticated email addresses only to prevent merges with malicious users
 				$method = 'mail';
 			} elseif (
-				isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ||
-				!isset( $passwordConfirmed[$wiki] ) &&
+				( isset( $passwordConfirmed[$wiki] ) && $passwordConfirmed[$wiki] ) ||
+				( !isset( $passwordConfirmed[$wiki] ) &&
 					$this->matchHashes(
 						$passwords,
 						$this->getPasswordFromString( $local['password'], $local['id'] )
-					)
+					) )
 			) {
 				// Matches the pre-authenticated password, yay!
 				$method = 'password';
