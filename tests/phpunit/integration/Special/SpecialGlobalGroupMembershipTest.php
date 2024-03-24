@@ -30,7 +30,6 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
-use Xml;
 
 /**
  * @coversDefaultClass \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
@@ -145,29 +144,13 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		// Group one: not a member
 		// TODO: would be cool to not test the raw HTML structure here
 		$this->assertStringContainsString(
-			Xml::checkLabel(
-				$specialPage->msg( 'group-group-one-member', $user->getName() )
-					->inLanguage( 'qqx' )
-					->text(),
-				'wpGroup-group-one',
-				'wpGroup-group-one',
-				false,
-				[ 'class' => 'mw-userrights-groupcheckbox' ],
-			),
+			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" id="wpGroup-group-one" name="wpGroup-group-one">',
 			$html
 		);
 
 		// Group two: indefinite member
 		$this->assertStringContainsString(
-			Xml::checkLabel(
-				$specialPage->msg( 'group-group-two-member', $user->getName() )
-					->inLanguage( 'qqx' )
-					->text(),
-				'wpGroup-group-two',
-				'wpGroup-group-two',
-				true,
-				[ 'class' => 'mw-userrights-groupcheckbox' ],
-			),
+			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-two" name="wpGroup-group-two">',
 			$html
 		);
 		$this->assertStringContainsString(
@@ -183,15 +166,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Group three: temporary member
 		$this->assertStringContainsString(
-			Xml::checkLabel(
-				$specialPage->msg( 'group-group-three-member', $user->getName() )
-					->inLanguage( 'qqx' )
-					->text(),
-				'wpGroup-group-three',
-				'wpGroup-group-three',
-				true,
-				[ 'class' => 'mw-userrights-groupcheckbox' ],
-			),
+			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-three" name="wpGroup-group-three">',
 			$html
 		);
 		$this->assertStringContainsString(
