@@ -58,15 +58,16 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$to = $this->params['to'];
 
 		$this->updateStatus( 'inprogress' );
+		$services = MediaWikiServices::getInstance();
 		// Make the status update visible to all other transactions immediately
-		$factory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$factory = $services->getDBLoadBalancerFactory();
 		$factory->commitPrimaryChanges( $fnameTrxOwner );
 
 		if ( isset( $this->params['force'] ) && $this->params['force'] ) {
 			// If we're dealing with an invalid username, load the data ourselves to avoid
 			// any normalization at all done by User or Title.
 			$userQuery = User::getQueryInfo();
-			$row = wfGetDB( DB_PRIMARY )->newSelectQueryBuilder()
+			$row = $services->getConnectionProvider()->getPrimaryDatabase()->newSelectQueryBuilder()
 				->tables( $userQuery['tables'] )
 				->select( $userQuery['fields'] )
 				->where( [ 'user_name' => $from ] )
@@ -147,7 +148,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 
 		$fromDBkey = $oldUser->getUserPage()->getDBkey();
 		$toDBkey = Title::makeTitleSafe( NS_USER, $to )->getDBkey();
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_namespace', 'page_title' ] )
