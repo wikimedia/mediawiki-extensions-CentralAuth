@@ -17,7 +17,6 @@
 	"apierror-centralauth-notloggedin": "匿名使用者不可取得中央驗證令牌。",
 	"apierror-centralauth-renameinprogress": "使用者已被重新命名，不可使用。",
 	"apihelp-centralauthtoken-example-1": "取得中央驗證令牌",
-	"apihelp-centralauthtoken-extended-description": "傳回一個可用於驗證其他 wiki 上的 API 請求的令牌。對於操作 API 請求，請將其放入<var>centralauthtoken</var> GET 參數中。對於 REST API 請求，新增<code>Authorization: CentralAuthToken {token}</code>標頭。在 MediaWiki 前端邏輯中，您可以使用<code>mediawiki.ForeignApi</code> ResourceLoader 模組。",
 	"apihelp-centralauthtoken-summary": "取得中央驗證令牌來對已連結的 wiki 做已授權的請求。",
 	"apihelp-createlocalaccount-example-1": "強制替 [[User:Example]] 建立本地帳號。",
 	"apihelp-createlocalaccount-param-reason": "建立本地帳號的原因",

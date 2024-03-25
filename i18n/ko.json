@@ -91,6 +91,7 @@
 	"centralauth-admin-info-registered": "계정 등록:",
 	"centralauth-admin-info-unattached": "묶이지 않은 계정의 수:",
 	"centralauth-admin-info-username": "사용자 이름:",
+	"centralauth-admin-info-expired": "임시 계정 만료:",
 	"centralauth-admin-intro": "이 인터페이스는 통합 계정 관리에 사용됩니다.",
 	"centralauth-admin-list-attached-on": "통합된 시간",
 	"centralauth-admin-list-blocked": "차단 여부",

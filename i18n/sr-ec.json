@@ -62,6 +62,7 @@
 	"centralauth-admin-info-unattached": "Број неприкачених налога:",
 	"centralauth-admin-info-username": "Корисничко име:",
 	"centralauth-admin-info-username-rename": "преименуј",
+	"centralauth-admin-info-expired": "Привремени налог истекао:",
 	"centralauth-admin-intro": "Овај интерфејс може да се користи за администрацију глобалних налога.",
 	"centralauth-admin-list-attached-on": "Датум",
 	"centralauth-admin-list-blocked": "Блокаде",

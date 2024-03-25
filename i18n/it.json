@@ -78,6 +78,7 @@
 	"centralauth-admin-info-unattached": "Numero di utenze non collegate:",
 	"centralauth-admin-info-username": "Nome utente:",
 	"centralauth-admin-info-username-rename": "rinomina",
+	"centralauth-admin-info-expired": "Utenza temporanea scaduta:",
 	"centralauth-admin-intro": "Questa interfaccia può essere utilizzata per l'amministrazione delle utenze globali.",
 	"centralauth-admin-list-attached-on": "Collegata il",
 	"centralauth-admin-list-blocked": "Bloccato",
