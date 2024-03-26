@@ -353,7 +353,7 @@
 	"centralauth-rename-progress-list-header": "Зараз выконваюцца наступныя глабальныя перайменаванні:",
 	"centralauth-rename-progress-logs-fieldset": "Запісы журнала",
 	"centralauth-rename-progress-username": "Імя ўдзельніка",
-	"centralauth-rename-queued": "Заданні па змене імя $1 на $2 былі дададзеныя ў чаргу ў базе $3.\n\nГлядзіце поступ на старонцы [[Special:GlobalRenameProgress/$2]].",
+	"centralauth-rename-queued": "Заданні па змене імя $1 на $2 былі дададзеныя ў чаргу.\n\nГлядзіце поступ на старонцы [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Лакальны вікі-праект",
 	"centralauth-rename-table-status": "Стан",
 	"centralauth-rename-table-status-done": "Зроблена",
