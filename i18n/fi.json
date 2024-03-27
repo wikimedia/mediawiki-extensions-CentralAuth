@@ -30,11 +30,14 @@
 			"Tarmo",
 			"Valtlai",
 			"Valtlait",
-			"Veikk0.ma"
+			"Veikk0.ma",
+			"Samoasambia"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Käyttäjän järjestelmänlaajuinen muokkausmäärä",
 	"abusefilter-edit-builder-vars-global-user-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Käyttäjän järjestelmänlaajuinen muokkausmäärä (tiliä luotaessa)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Järjestelmänlaajuiset ryhmät, joissa käyttäjä on (tiliä luotaessa)",
 	"action-centralauth-createlocal": "pakottaa paikallisen käyttäjän luontia",
 	"action-centralauth-lock": "lukita tai avata järjestelmänlaajuisia tunnuksia",
 	"action-centralauth-merge": "yhdistää omaa tunnustasi",

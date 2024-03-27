@@ -68,7 +68,7 @@
 	"apihelp-query+globaluserinfo-summary": "מציג מידע על משתמש גלובלי",
 	"apihelp-query+wikisets-example-1": "רשימת ערכות ויקי",
 	"apihelp-query+wikisets-example-2": "הצגת ערכות ויקי עם סוגים",
-	"apihelp-query+wikisets-param-from": "של ערכת הוויקי הראשונה.",
+	"apihelp-query+wikisets-param-from": "שם ערכת הוויקי הראשונה.",
 	"apihelp-query+wikisets-param-limit": "כמה ערכות ויקי להחזיר.",
 	"apihelp-query+wikisets-param-orderbyname": "למיין את התוצאות לפי השם.",
 	"apihelp-query+wikisets-param-prop": "אילו פריטי מידע לכלול:",
