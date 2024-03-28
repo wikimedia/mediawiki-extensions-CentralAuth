@@ -67,6 +67,7 @@
 	"centralauth-admin-info-unattached": "Qoşulmamış hesabların sayı:",
 	"centralauth-admin-info-username": "İstifadəçinin adı:",
 	"centralauth-admin-info-username-rename": "adını dəyiş",
+	"centralauth-admin-info-expired": "Müvəqqəti hesabın bitmə müddəti:",
 	"centralauth-admin-intro": "Bu interfeys qlobal hesabların idarə edilməsi üçün istifadə edilə bilər.",
 	"centralauth-admin-list-attached-on": "Birləşdirilib",
 	"centralauth-admin-list-blocked": "Bloklanıb",
