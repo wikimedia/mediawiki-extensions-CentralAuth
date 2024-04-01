@@ -4,7 +4,8 @@
 			"BHARATHESHA ALASANDEMAJALU",
 			"Kiranpoojary",
 			"VASANTH S.N.",
-			"Vishwanatha Badikana"
+			"Vishwanatha Badikana",
+			"ChiK"
 		]
 	},
 	"centralauth-admin-blocklog": "ತಡೆಪತ್‍ನೈತ ದಾಕಲೆ",
@@ -29,5 +30,6 @@
 	"centralauth-foreign-link": "$2 ಡುಪ್ಪುನ $1 ಸದಸ್ಯೆರ್",
 	"centralauth-globalgroupperms-newgroupname": "ಪೊಸ ಗುಂಪುದ ಪುದರ್",
 	"centralauth-log-status-hidden": "ದೆಂಗಾದಿನ",
-	"centralauth-merge-method-login": "ಲಾಗಿನ್‍ ಆನಗ ಉಂಡಾತ್‌ಂಡ್"
+	"centralauth-merge-method-login": "ಲಾಗಿನ್‍ ಆನಗ ಉಂಡಾತ್‌ಂಡ್",
+	"centralauth-ro": "ಮಾತಾ ವಿಕಿ ಖಾತೆ ವಿವರೊ"
 }
