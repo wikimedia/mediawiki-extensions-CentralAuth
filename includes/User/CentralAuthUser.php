@@ -3127,18 +3127,16 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 
 		# Replace into the DB
-		$dbw->replace(
-			'global_user_groups',
-			[ [ 'gug_user', 'gug_group' ] ],
-			[
-				[
-					'gug_user' => $this->getId(),
-					'gug_group' => $group,
-					'gug_expiry' => $dbw->timestampOrNull( $expiry )
-				]
-			],
-			__METHOD__
-		);
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'global_user_groups' )
+			->uniqueIndexFields( [ 'gug_user', 'gug_group' ] )
+			->row( [
+				'gug_user' => $this->getId(),
+				'gug_group' => $group,
+				'gug_expiry' => $dbw->timestampOrNull( $expiry )
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->invalidateCache();
 	}
