@@ -4,5 +4,12 @@
 			"Stefán Örvar Sigmundsson"
 		]
 	},
-	"apihelp-createlocalaccount-example-1": "Þvinga sköpun staðbundins aðgangs fyrir [[User:Example]]."
+	"apihelp-createlocalaccount-example-1": "Þvinga sköpun staðbundins aðgangs fyrir [[User:Example]].",
+	"apihelp-query+wikisets-example-1": "Listi wiki-setta",
+	"apihelp-query+wikisets-example-2": "Sýna wiki-sett með gerðum",
+	"apihelp-query+wikisets-param-from": "Nafn wiki-settsins sem byrja skal frá.",
+	"apihelp-query+wikisets-param-limit": "Hversu mörgum wiki-settum skal skilað.",
+	"apihelp-query+wikisets-paramvalue-prop-wikisincluded": "Wiki sem eru innifalin í þessu wiki-setti.",
+	"apihelp-query+wikisets-paramvalue-prop-wikisnotincluded": "Wiki sem eru ekki innifalin í þessu wiki-setti.",
+	"apihelp-query+wikisets-summary": "Telja upp öll wiki-sett."
 }
