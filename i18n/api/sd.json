@@ -5,5 +5,7 @@
 		]
 	},
 	"apierror-centralauth-badusername": "واپرائيندڙنانءُ \"$1\" ھن وڪيپيڊيا تي استعمال جوڳو ناھي",
+	"apihelp-createlocalaccount-example-1": "[[User:Example]] لاءِ زبردستي مقامي کاتو کوليو.",
+	"apihelp-createlocalaccount-summary": "زبردستي ھڪ مقامي کاتو کوليو. مرڪزي کاتو موجود هجڻ ضروري آهي.",
 	"apihelp-query+globalrenamestatus-summary": "ھن وقت ھلندڙ عالمي نانءُمٽائن بابت معلومات ڏيکاريو."
 }
