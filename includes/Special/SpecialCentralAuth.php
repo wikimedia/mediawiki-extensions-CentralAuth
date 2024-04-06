@@ -14,7 +14,7 @@ use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
@@ -84,6 +84,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private UserRegistrationLookup $userRegistrationLookup;
 	private CentralAuthDatabaseManager $databaseManager;
 	private CentralAuthUIService $uiService;
+	private GlobalRenameFactory $globalRenameFactory;
 
 	/**
 	 * @param CommentFormatter $commentFormatter
@@ -95,6 +96,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @param UserRegistrationLookup $userRegistrationLookup
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUIService $uiService
+	 * @param GlobalRenameFactory $globalRenameFactory
 	 */
 	public function __construct(
 		CommentFormatter $commentFormatter,
@@ -105,7 +107,8 @@ class SpecialCentralAuth extends SpecialPage {
 		UserNameUtils $userNameUtils,
 		UserRegistrationLookup $userRegistrationLookup,
 		CentralAuthDatabaseManager $databaseManager,
-		CentralAuthUIService $uiService
+		CentralAuthUIService $uiService,
+		GlobalRenameFactory $globalRenameFactory
 	) {
 		parent::__construct( 'CentralAuth' );
 		$this->commentFormatter = $commentFormatter;
@@ -117,6 +120,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->userRegistrationLookup = $userRegistrationLookup;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
+		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	public function doesWrites() {
@@ -263,7 +267,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private function showRenameInProgressError() {
 		$this->showError( 'centralauth-admin-rename-in-progress', $this->mUserName );
-		$renameStatus = new GlobalRenameUserStatus( $this->mUserName );
+		$renameStatus = $this->globalRenameFactory->newGlobalRenameUserStatus( $this->mUserName );
 		$names = $renameStatus->getNames();
 		$this->uiService->showRenameLogExtract( $this->getContext(), $names[1] );
 	}

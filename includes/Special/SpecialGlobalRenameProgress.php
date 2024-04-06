@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use HTMLForm;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
@@ -20,16 +21,22 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 
 	/** @var CentralAuthUIService */
 	private $uiService;
+	private GlobalRenameFactory $globalRenameFactory;
 
 	/**
 	 * @var GlobalRenameUserStatus
 	 */
 	private $renameuserStatus;
 
-	public function __construct( UserNameUtils $userNameUtils, CentralAuthUIService $uiService ) {
+	public function __construct(
+		UserNameUtils $userNameUtils,
+		CentralAuthUIService $uiService,
+		GlobalRenameFactory $globalRenameFactory
+	) {
 		parent::__construct( 'GlobalRenameProgress' );
 		$this->userNameUtils = $userNameUtils;
 		$this->uiService = $uiService;
+		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	/** @inheritDoc */
@@ -104,7 +111,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$out = $this->getOutput();
 		$out->addBacklinkSubtitle( $this->getPageTitle() );
 
-		$this->renameuserStatus = new GlobalRenameUserStatus( $name );
+		$this->renameuserStatus = $this->globalRenameFactory->newGlobalRenameUserStatus( $name );
 		$names = $this->renameuserStatus->getNames();
 		if ( !$names ) {
 			$this->checkCachePurge( $name );

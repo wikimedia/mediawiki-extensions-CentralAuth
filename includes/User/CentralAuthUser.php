@@ -36,7 +36,6 @@ use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\LocalUserNotFoundException;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
 use MediaWiki\Extension\CentralAuth\WikiSet;
@@ -561,8 +560,12 @@ class CentralAuthUser implements IDBAccessObject {
 			$queryInfo['joinConds']
 		);
 
-		$renameUserStatus = new GlobalRenameUserStatus( $this->mName );
-		$renameUser = $renameUserStatus->getNames( null, $fromPrimary ? 'primary' : 'replica' );
+		$renameUser = CentralAuthServices::getGlobalRenameFactory()
+			->newGlobalRenameUserStatus( $this->mName )
+			->getNames(
+				null,
+				$fromPrimary ? IDBAccessObject::READ_LATEST : IDBAccessObject::READ_NORMAL
+			);
 
 		$this->loadFromRow( $row, $renameUser, $fromPrimary );
 	}
@@ -2531,19 +2534,16 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Not cached
 	 * @see CentralAuthUser::renameInProgress
 	 * @param string $wiki
-	 * @param int $flags Bitfield of IDBAccessObject::READ_* constants
+	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @return string[]|false
 	 */
-	public function renameInProgressOn( $wiki, $flags = 0 ) {
-		$renameState = new GlobalRenameUserStatus( $this->mName );
-
-		// Use primary database as this is being used for various critical things
-		$names = $renameState->getNames(
-			$wiki,
-			( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ? 'primary' : 'replica'
-		);
-
-		return $names ?: false;
+	public function renameInProgressOn( string $wiki, int $recency = IDBAccessObject::READ_NORMAL ) {
+		return CentralAuthServices::getGlobalRenameFactory()
+			->newGlobalRenameUserStatus( $this->mName )
+			->getNames(
+				$wiki,
+				$recency
+			) ?: false;
 	}
 
 	/**

@@ -47,7 +47,10 @@ abstract class LocalRenameJob extends Job {
 	 * @throws Exception
 	 */
 	public function run(): bool {
-		$this->setRenameUserStatus( new GlobalRenameUserStatus( $this->params['to'] ) );
+		$this->setRenameUserStatus(
+			CentralAuthServices::getGlobalRenameFactory()
+				->newGlobalRenameUserStatus( $this->params['to'] )
+		);
 
 		// Bail if it's already done or in progress. Use a locking read to block until the
 		// transaction adding this job is done, so we can see its changes. This is similar to
