@@ -258,17 +258,17 @@ class WikiSet {
 	public function saveToDB() {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->startAtomic( __METHOD__ );
-		$dbw->replace(
-			'wikiset',
-			'ws_id',
-			[
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'wikiset' )
+			->uniqueIndexFields( 'ws_id' )
+			->row( [
 				'ws_id' => $this->mId,
 				'ws_name' => $this->mName,
 				'ws_type' => $this->mType,
 				'ws_wikis' => implode( ',', $this->mWikis ),
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 		if ( !$this->mId ) {
 			$this->mId = $dbw->insertId();
 		}

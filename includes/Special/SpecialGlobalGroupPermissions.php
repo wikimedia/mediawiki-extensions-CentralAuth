@@ -655,12 +655,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		}
 
 		# Replace into the DB
-		$dbw->replace(
-			'global_group_permissions',
-			[ [ 'ggp_group', 'ggp_permission' ] ],
-			$insertRows,
-			__METHOD__
-		);
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'global_group_permissions' )
+			->uniqueIndexFields( [ 'ggp_group', 'ggp_permission' ] )
+			->rows( $insertRows )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -761,12 +761,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				__METHOD__
 			);
 		} else {
-			$dbw->replace(
-				'global_group_restrictions',
-				'ggr_group',
-				[ 'ggr_group' => $group, 'ggr_set' => $set, ],
-				__METHOD__
-			);
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( 'global_group_restrictions' )
+				->uniqueIndexFields( 'ggr_group' )
+				->row( [ 'ggr_group' => $group, 'ggr_set' => $set, ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 		return (bool)$dbw->affectedRows();
 	}
