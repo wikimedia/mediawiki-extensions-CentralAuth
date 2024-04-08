@@ -387,10 +387,15 @@ class CentralAuthHooks implements
 	 * @return bool
 	 */
 	public function onUserGetRights( $user, &$rights ) {
-		if ( $user->isRegistered() ) {
+		// checking rights not just for registered users but also for
+		// anon (local) users based on name only will allow autocreation of
+		// local account based on global rights, see T316303
+		$anonUserOK = MediaWikiServices::getInstance()->getMainConfig()->get( 'CentralAuthStrict' );
+		if ( $user->canExist() ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 
-			if ( $centralUser->exists() && $centralUser->isAttached() ) {
+			if ( $centralUser->exists()
+				 && ( $centralUser->isAttached() || ( $anonUserOK && !$user->isRegistered() ) ) ) {
 				$extraRights = $centralUser->getGlobalRights();
 
 				$rights = array_merge( $extraRights, $rights );
