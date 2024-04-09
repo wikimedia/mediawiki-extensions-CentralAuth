@@ -60,22 +60,17 @@
 	 * Get a 'centralauthtoken' from the local wiki for use on the foreign wiki.
 	 *
 	 * @private
+	 * @param {Object} [ajaxOptions]
 	 * @return {jQuery.Promise}
 	 */
-	CentralAuthForeignApi.prototype.getCentralAuthToken = function () {
-		var abortable = this.localApi.get( { action: 'centralauthtoken' } );
-
-		return abortable.then( function ( resp ) {
+	CentralAuthForeignApi.prototype.getCentralAuthToken = function ( ajaxOptions ) {
+		return this.localApi.get( { action: 'centralauthtoken' }, ajaxOptions ).then( function ( resp ) {
 			if ( resp.error ) {
 				return $.Deferred().reject( resp.error );
 			} else {
 				return resp.centralauthtoken.centralauthtoken;
 			}
-		} ).promise( { abort: function () {
-			if ( abortable && abortable.abort ) {
-				abortable.abort();
-			}
-		} } );
+		} );
 	};
 
 	/**
@@ -112,38 +107,25 @@
 	/**
 	 * @inheritdoc
 	 */
-	CentralAuthForeignApi.prototype.getToken = function ( type, assert ) {
-		var foreignApi = this,
-			parent = CentralAuthForeignApi.super.prototype.getToken,
-			abortedPromise = $.Deferred().reject( 'http',
-				{ textStatus: 'abort', exception: 'abort' } ).promise(),
-			abortable,
-			aborted;
+	CentralAuthForeignApi.prototype.getToken = function ( type, assert, ajaxOptions ) {
+		var foreignApi = this;
+		var parent = CentralAuthForeignApi.super.prototype.getToken;
 		if ( this.foreignLoginPromise && csrfTokenOldTypes.indexOf( type ) !== -1 ) {
+			ajaxOptions = ajaxOptions || {};
+			var abortable = foreignApi.makeAbortablePromise( ajaxOptions );
 			return this.foreignLoginPromise.then(
 				function () {
-					if ( aborted ) {
-						return abortedPromise;
-					}
 					if ( foreignApi.csrfToken && !foreignApi.csrfTokenBad ) {
 						return foreignApi.csrfToken;
 					}
-					return ( abortable = parent.call( foreignApi, type, assert ) );
+					return parent.call( foreignApi, type, assert, ajaxOptions );
 				},
 				function () {
-					if ( aborted ) {
-						return abortedPromise;
-					}
-					return ( abortable = parent.call( foreignApi, type, assert ) );
+					return parent.call( foreignApi, type, assert, ajaxOptions );
 				}
-			).promise( { abort: function () {
-				aborted = true;
-				if ( abortable && abortable.abort ) {
-					abortable.abort();
-				}
-			} } );
+			).promise( abortable );
 		}
-		return parent.call( this, type, assert );
+		return parent.call( this, type, assert, ajaxOptions );
 	};
 
 	/**
@@ -159,15 +141,12 @@
 	 * @inheritdoc
 	 */
 	CentralAuthForeignApi.prototype.ajax = function ( parameters, ajaxOptions ) {
+		ajaxOptions = ajaxOptions || {};
+		var abortable = this.makeAbortablePromise( ajaxOptions );
+
 		var tokenPromise,
 			foreignApi = this,
-			parent = CentralAuthForeignApi.super.prototype.ajax,
-			abortedPromise = $.Deferred().reject(
-				'http',
-				{ textStatus: 'abort', exception: 'abort' }
-			).promise(),
-			abortable,
-			aborted;
+			parent = CentralAuthForeignApi.super.prototype.ajax;
 
 		// If we know we can't get a 'centralauthtoken', or if one was provided, don't request it
 		if ( this.noTokenNeeded || hasOwnProperty.call( parameters, 'centralauthtoken' ) ) {
@@ -180,19 +159,16 @@
 				},
 				// If failed, get the token
 				function () {
-					return ( abortable = foreignApi.getCentralAuthToken() );
+					return foreignApi.getCentralAuthToken( ajaxOptions );
 				}
 			);
 		} else {
-			tokenPromise = abortable = this.getCentralAuthToken();
+			tokenPromise = this.getCentralAuthToken( ajaxOptions );
 		}
 
 		return tokenPromise.then(
 			function ( centralAuthToken ) {
 				var url, newParameters, newAjaxOptions;
-				if ( aborted ) {
-					return abortedPromise;
-				}
 
 				// Add 'centralauthtoken' query parameter
 				newParameters = Object.assign( { centralauthtoken: centralAuthToken }, parameters );
@@ -206,22 +182,14 @@
 					newAjaxOptions = ajaxOptions;
 				}
 
-				return ( abortable = parent.call( foreignApi, newParameters, newAjaxOptions ) );
+				return parent.call( foreignApi, newParameters, newAjaxOptions );
 			},
 			function () {
-				if ( aborted ) {
-					return abortedPromise;
-				}
 				// We couldn't get the token, but continue anyway. This is expected in some cases,
 				// like anonymous users.
-				return ( abortable = parent.call( foreignApi, parameters, ajaxOptions ) );
+				return parent.call( foreignApi, parameters, ajaxOptions );
 			}
-		).promise( { abort: function () {
-			aborted = true;
-			if ( abortable && abortable.abort ) {
-				abortable.abort();
-			}
-		} } );
+		).promise( abortable );
 	};
 
 	// Expose
