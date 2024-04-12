@@ -63,11 +63,11 @@ class PurgeExpiredGlobalRights extends Maintenance {
 					->and( 'gug_group', '=', $row->gug_group );
 			}
 
-			$dbw->delete(
-				'global_user_groups',
-				[ new OrExpressionGroup( ...$conds ) ],
-				__METHOD__
-			);
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'global_user_groups' )
+				->where( [ new OrExpressionGroup( ...$conds ) ] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$counter += $dbw->affectedRows();
 

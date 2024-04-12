@@ -631,11 +631,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		# Delete from the DB
-		$dbw->delete(
-			'global_group_permissions',
-			[ 'ggp_group' => $group, 'ggp_permission' => $rights ],
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'global_group_permissions' )
+			->where( [ 'ggp_group' => $group, 'ggp_permission' => $rights ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -755,11 +755,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	private function setRestrictions( $group, $set ) {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		if ( $set == 0 ) {
-			$dbw->delete(
-				'global_group_restrictions',
-				[ 'ggr_group' => $group ],
-				__METHOD__
-			);
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'global_group_restrictions' )
+				->where( [ 'ggr_group' => $group ] )
+				->caller( __METHOD__ )
+				->execute();
 		} else {
 			$dbw->newReplaceQueryBuilder()
 				->replaceInto( 'global_group_restrictions' )

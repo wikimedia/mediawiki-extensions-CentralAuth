@@ -125,14 +125,14 @@ class CheckLocalNames extends Maintenance {
 						$this->total++;
 						if ( !$this->dryrun ) {
 							// go ahead and delete the extraneous entry
-							$centralPrimaryDb->delete(
-								'localnames',
-								[
+							$centralPrimaryDb->newDeleteQueryBuilder()
+								->deleteFrom( 'localnames' )
+								->where( [
 									'ln_wiki' => $wiki,
 									'ln_name' => $u->ln_name
-								],
-								__METHOD__
-							);
+								] )
+								->caller( __METHOD__ )
+								->execute();
 							// TODO: is there anyway to check the success of the delete?
 							$this->deleted++;
 						}

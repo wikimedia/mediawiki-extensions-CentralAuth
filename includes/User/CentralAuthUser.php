@@ -1577,14 +1577,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 		foreach ( $valid as $wikiName ) {
 			# Delete the user from the central localuser table
-			$dbcw->delete(
-				'localuser',
-				[
+			$dbcw->newDeleteQueryBuilder()
+				->deleteFrom( 'localuser' )
+				->where( [
 					'lu_name' => $this->mName,
 					'lu_wiki' => $wikiName
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->execute();
 			if ( !$dbcw->affectedRows() ) {
 				$wiki = WikiMap::getWiki( $wikiName );
 				$status->error( 'centralauth-admin-already-unmerged', $wiki->getDisplayName() );
@@ -1696,15 +1696,27 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$centralDB->startAtomic( __METHOD__ );
 		# Delete and lock the globaluser row
-		$centralDB->delete( 'globaluser', [ 'gu_name' => $this->mName ], __METHOD__ );
+		$centralDB->newDeleteQueryBuilder()
+			->deleteFrom( 'globaluser' )
+			->where( [ 'gu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->execute();
 		if ( !$centralDB->affectedRows() ) {
 			$centralDB->endAtomic( __METHOD__ );
 			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
 		}
 		# Delete all global user groups for the user
-		$centralDB->delete( 'global_user_groups', [ 'gug_user' => $this->getId() ], __METHOD__ );
+		$centralDB->newDeleteQueryBuilder()
+			->deleteFrom( 'global_user_groups' )
+			->where( [ 'gug_user' => $this->getId() ] )
+			->caller( __METHOD__ )
+			->execute();
 		# Delete the localuser rows
-		$centralDB->delete( 'localuser', [ 'lu_name' => $this->mName ], __METHOD__ );
+		$centralDB->newDeleteQueryBuilder()
+			->deleteFrom( 'localuser' )
+			->where( [ 'lu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->execute();
 		$centralDB->endAtomic( __METHOD__ );
 
 		if ( $wasSuppressed ) {
@@ -2411,14 +2423,14 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function removeLocalName( $wikiID ) {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->delete(
-			'localnames',
-			[
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'localnames' )
+			->where( [
 				'ln_wiki' => $wikiID,
 				'ln_name' => $this->mName
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -3108,11 +3120,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 
 		# Delete from the DB
-		$dbw->delete(
-			'global_user_groups',
-			[ 'gug_user' => $this->getId(), 'gug_group' => $groups ],
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'global_user_groups' )
+			->where( [ 'gug_user' => $this->getId(), 'gug_group' => $groups ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->invalidateCache();
 	}

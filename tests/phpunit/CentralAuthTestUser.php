@@ -171,11 +171,11 @@ class CentralAuthTestUser {
 		);
 
 		// Attach global to local accounts
-		$db->delete(
-			'localuser',
-			[ 'lu_name' => $this->username ],
-			__METHOD__
-		);
+		$db->newDeleteQueryBuilder()
+			->deleteFrom( 'localuser' )
+			->where( [ 'lu_name' => $this->username ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		if ( count( $this->wikis ) ) {
 			foreach ( $this->wikis as &$wikiRows ) {
