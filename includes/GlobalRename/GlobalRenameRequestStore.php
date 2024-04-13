@@ -61,18 +61,18 @@ class GlobalRenameRequestStore {
 				->setRequested( wfTimestampNow() )
 				->setStatus( GlobalRenameRequest::PENDING );
 
-			$dbw->insert(
-				'renameuser_queue',
-				[
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'renameuser_queue' )
+				->row( [
 					'rq_name'         => $request->getName(),
 					'rq_wiki'         => $request->getWiki(),
 					'rq_newname'      => $request->getNewName(),
 					'rq_reason'       => $request->getReason(),
 					'rq_requested_ts' => $dbw->timestamp( $request->getRequested() ),
 					'rq_status'       => $request->getStatus(),
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$request->setId( $dbw->insertId() );
 		} else {

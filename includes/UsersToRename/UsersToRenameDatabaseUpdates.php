@@ -96,6 +96,10 @@ class UsersToRenameDatabaseUpdates {
 	 * @param array[] $info Array with array members that have 'name' and 'wiki' keys
 	 */
 	public function batchInsert( array $info ) {
+		if ( !$info ) {
+			return;
+		}
+
 		$rows = [];
 		foreach ( $info as $row ) {
 			$rows[] = [
@@ -104,12 +108,12 @@ class UsersToRenameDatabaseUpdates {
 			];
 		}
 
-		$this->db->insert(
-			'users_to_rename',
-			$rows,
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+		$this->db->newInsertQueryBuilder()
+			->insertInto( 'users_to_rename' )
+			->ignore()
+			->rows( $rows )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**

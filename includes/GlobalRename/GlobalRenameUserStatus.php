@@ -165,6 +165,10 @@ class GlobalRenameUserStatus {
 	 * @return bool
 	 */
 	public function setStatuses( array $rows ): bool {
+		if ( !$rows ) {
+			return false;
+		}
+
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		$dbw->startAtomic( __METHOD__ );
@@ -172,7 +176,11 @@ class GlobalRenameUserStatus {
 			// If there is duplicate key error, the RDBMs will rollback the INSERT statement.
 			// http://dev.mysql.com/doc/refman/5.7/en/innodb-error-handling.html
 			try {
-				$dbw->insert( 'renameuser_status', $rows, __METHOD__ );
+				$dbw->newInsertQueryBuilder()
+					->insertInto( 'renameuser_status' )
+					->rows( $rows )
+					->caller( __METHOD__ )
+					->execute();
 				$ok = true;
 			} catch ( DBQueryError $e ) {
 				$ok = false;
@@ -195,7 +203,11 @@ class GlobalRenameUserStatus {
 				->fetchField();
 			// (b) Insert the new rows if no conflicts were found
 			if ( $ok ) {
-				$dbw->insert( 'renameuser_status', $rows, __METHOD__ );
+				$dbw->newInsertQueryBuilder()
+					->insertInto( 'renameuser_status' )
+					->rows( $rows )
+					->caller( __METHOD__ )
+					->execute();
 			}
 		}
 		$dbw->endAtomic( __METHOD__ );

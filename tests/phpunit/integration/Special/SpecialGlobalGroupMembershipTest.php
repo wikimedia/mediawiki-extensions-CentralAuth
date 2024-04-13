@@ -43,15 +43,15 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
 			->getCentralPrimaryDB();
 
-		$caDbw->insert(
-			'global_group_permissions',
-			[
+		$caDbw->newInsertQueryBuilder()
+			->insertInto( 'global_group_permissions' )
+			->rows( [
 				[ 'ggp_group' => 'group-one', 'ggp_permission' => 'right-one' ],
 				[ 'ggp_group' => 'group-two', 'ggp_permission' => 'right-two' ],
 				[ 'ggp_group' => 'group-three', 'ggp_permission' => 'right-three' ],
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	protected function newSpecialPage(): SpecialGlobalGroupMembership {

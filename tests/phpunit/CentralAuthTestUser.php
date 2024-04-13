@@ -164,11 +164,11 @@ class CentralAuthTestUser {
 			'gu_email_authenticated' => $db->timestamp( $this->emailAuthenticated ),
 			'gu_home_db' => $this->homeDb,
 		];
-		$db->insert(
-			'globaluser',
-			$row,
-			__METHOD__
-		);
+		$db->newInsertQueryBuilder()
+			->insertInto( 'globaluser' )
+			->row( $row )
+			->caller( __METHOD__ )
+			->execute();
 
 		// Attach global to local accounts
 		$db->newDeleteQueryBuilder()
@@ -181,7 +181,11 @@ class CentralAuthTestUser {
 			foreach ( $this->wikis as &$wikiRows ) {
 				$wikiRows['lu_attached_timestamp'] = $db->timestamp( $wikiRows['lu_attached_timestamp'] );
 			}
-			$db->insert( 'localuser', $this->wikis, __METHOD__ );
+			$db->newInsertQueryBuilder()
+				->insertInto( 'localuser' )
+				->rows( $this->wikis )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		// Setup local wiki user

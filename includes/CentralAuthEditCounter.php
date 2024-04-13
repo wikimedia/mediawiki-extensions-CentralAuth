@@ -53,15 +53,15 @@ class CentralAuthEditCounter {
 
 		$dbw->startAtomic( __METHOD__ );
 		// Lock the row
-		$dbw->insert(
-			'global_edit_count',
-			[
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'global_edit_count' )
+			->ignore()
+			->row( [
 				'gec_user' => $userId,
 				'gec_count' => 0
-			],
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 		if ( !$dbw->affectedRows() ) {
 			// Try one more time after the lock wait
 			$dbw->endAtomic( __METHOD__ );

@@ -135,11 +135,11 @@ class PopulateGlobalEditCount extends Maintenance {
 			// Do the writes in small batches
 			foreach ( array_chunk( $inserts, $this->getBatchSize() ) as $insertBatch ) {
 				$this->beginTransaction( $dbcw, __METHOD__ );
-				$dbcw->insert(
-					'global_edit_count',
-					$insertBatch,
-					__METHOD__
-				);
+				$dbcw->newInsertQueryBuilder()
+					->insertInto( 'global_edit_count' )
+					->rows( $insertBatch )
+					->caller( __METHOD__ )
+					->execute();
 				$this->commitTransaction( $dbcw, __METHOD__ );
 			}
 

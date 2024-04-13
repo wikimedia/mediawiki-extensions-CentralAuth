@@ -42,15 +42,15 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
 			->getCentralPrimaryDB();
 
-		$caDbw->insert(
-			'global_group_permissions',
-			[
+		$caDbw->newInsertQueryBuilder()
+			->insertInto( 'global_group_permissions' )
+			->rows( [
 				[ 'ggp_group' => 'global-foos', 'ggp_permission' => 'some-global-right' ],
 				[ 'ggp_group' => 'global-bars', 'ggp_permission' => 'some-other-right' ],
 				[ 'ggp_group' => 'global-bazes', 'ggp_permission' => 'yet-another-right' ],
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	private function getRegisteredTestUser(): User {
@@ -77,9 +77,9 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 		$expiryFuture = time() + 1800;
 
 		$caDbw = CentralAuthServices::getDatabaseManager( $services )->getCentralPrimaryDB();
-		$caDbw->insert(
-			'global_user_groups',
-			[
+		$caDbw->newInsertQueryBuilder()
+			->insertInto( 'global_user_groups' )
+			->rows( [
 				[ 'gug_user' => $caUser->getId(), 'gug_group' => 'global-foos', 'gug_expiry' => null, ],
 				[
 					'gug_user' => $caUser->getId(),
@@ -91,9 +91,9 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 					'gug_group' => 'global-bazes',
 					'gug_expiry' => $caDbw->timestamp( '20201201121212' ),
 				],
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$caUser->invalidateCache();
 		$permissionManager->invalidateUsersRightsCache( $user );

@@ -31,14 +31,15 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->db->insert(
-			'global_group_permissions',
-			[
+		$this->db->newInsertQueryBuilder()
+			->insertInto( 'global_group_permissions' )
+			->rows( [
 				[ 'ggp_group' => 'steward', 'ggp_permission' => 'read' ],
 				[ 'ggp_group' => 'steward', 'ggp_permission' => 'delete' ],
 				[ 'ggp_group' => 'global-sysop', 'ggp_permission' => 'read' ],
-			]
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**

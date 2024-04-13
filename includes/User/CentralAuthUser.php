@@ -937,12 +937,12 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_registration' => $dbw->timestamp(),
 		];
 
-		$dbw->insert(
-			'globaluser',
-			$data,
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'globaluser' )
+			->ignore()
+			->row( $data )
+			->caller( __METHOD__ )
+			->execute();
 
 		$ok = $dbw->affectedRows() === 1;
 		$this->logger->info(
@@ -954,14 +954,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $ok ) {
 			// Avoid lazy initialisation of edit count
-			$dbw->insert(
-				'global_edit_count',
-				[
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'global_edit_count' )
+				->row( [
 					'gec_user' => $dbw->insertId(),
 					'gec_count' => 0
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		// Kill any cache entries saying we don't exist
@@ -991,18 +991,18 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->insert(
-			'globalnames',
-			$globalTuples,
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
-		$dbw->insert(
-			'localnames',
-			$tuples,
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'globalnames' )
+			->ignore()
+			->rows( $globalTuples )
+			->caller( __METHOD__ )
+			->execute();
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'localnames' )
+			->ignore()
+			->rows( $tuples )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -1029,12 +1029,11 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_hidden_level' => self::HIDDEN_LEVEL_NONE,
 		];
 
-		$dbw->insert(
-			'globaluser',
-			$data,
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'globaluser' )
+			->row( $data )
+			->caller( __METHOD__ )
+			->execute();
 
 		$this->resetState();
 		return $dbw->affectedRows() != 0;
@@ -2087,18 +2086,19 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->checkWriteMode();
 
 		$dbcw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbcw->insert(
-			'localuser',
-			[
+		$dbcw->newInsertQueryBuilder()
+			->insertInto( 'localuser' )
+			->ignore()
+			->row( [
 				'lu_wiki'               => $wikiID,
 				'lu_name'               => $this->mName,
 				'lu_attached_timestamp' => $dbcw->timestamp( $ts ),
 				'lu_attached_method'    => $method,
 				'lu_local_id'           => $this->getLocalId( $wikiID ),
-				'lu_global_id'          => $this->getId() ],
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+				'lu_global_id'          => $this->getId()
+			] )
+			->caller( __METHOD__ )
+			->execute();
 		$success = $dbcw->affectedRows() === 1;
 
 		if ( $wikiID === WikiMap::getCurrentWikiId() ) {
@@ -2407,15 +2407,15 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function addLocalName( $wikiID ) {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->insert(
-			'localnames',
-			[
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'localnames' )
+			->ignore()
+			->row( [
 				'ln_wiki' => $wikiID,
 				'ln_name' => $this->mName
-			],
-			__METHOD__,
-			[ 'IGNORE' ]
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -2475,19 +2475,19 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $rows || $this->exists() ) {
 			$dbw = $databaseManager->getCentralPrimaryDB();
 			$dbw->startAtomic( __METHOD__ );
-			$dbw->insert(
-				'globalnames',
-				[ 'gn_name' => $this->mName ],
-				__METHOD__,
-				[ 'IGNORE' ]
-			);
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'globalnames' )
+				->ignore()
+				->row( [ 'gn_name' => $this->mName ] )
+				->caller( __METHOD__ )
+				->execute();
 			if ( $rows ) {
-				$dbw->insert(
-					'localnames',
-					$rows,
-					__METHOD__,
-					[ 'IGNORE' ]
-				);
+				$dbw->newInsertQueryBuilder()
+					->insertInto( 'localnames' )
+					->ignore()
+					->rows( $rows )
+					->caller( __METHOD__ )
+					->execute();
 			}
 			$dbw->endAtomic( __METHOD__ );
 		}
