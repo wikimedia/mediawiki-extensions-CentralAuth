@@ -489,7 +489,6 @@
 	"globalrenamerequest-submit-text": "Form button text.",
 	"globalrenamerequest-username-label": "Form field label.",
 	"globalrenameuser": "{{doc-special|GlobalRenameUser}}",
-	"globalrenameuser-legend": "Label for fieldset around the form on Special:GlobalRenameUser",
 	"globalusers": "{{doc-special|GlobalUsers}}\nSee example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]",
 	"grant-createlocalaccount": "Name for grant \"createlocalaccount\".\n{{Related|Grant}}",
 	"grant-setglobalaccountstatus": "Name for grant \"setglobalaccountstatus\".\n{{Related|Grant}}",

@@ -9,6 +9,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\SpecialPage\FormSpecialPage;
@@ -110,12 +111,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	public function getFormFields() {
 		$fields = [
 			'oldname' => [
+				'class' => HTMLGlobalUserTextField::class,
 				'id' => 'mw-globalrenameuser-oldname',
 				'name' => 'oldname',
 				'label-message' => 'centralauth-rename-form-oldname',
 				'type' => 'text',
 				'required' => true,
-				'cssclass' => 'mw-autocomplete-global-user'
 			],
 			'newname' => [
 				'id' => 'mw-globalrenameuser-newname',
@@ -180,6 +181,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		return $fields;
+	}
+
+	/** @inheritDoc */
+	protected function getDisplayFormat() {
+		return 'ooui';
 	}
 
 	/** @inheritDoc */
