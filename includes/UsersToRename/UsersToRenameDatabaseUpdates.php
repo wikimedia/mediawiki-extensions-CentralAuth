@@ -72,11 +72,11 @@ class UsersToRenameDatabaseUpdates {
 	 * @param string $wiki
 	 */
 	public function remove( $name, $wiki ) {
-		$this->db->delete(
-			'users_to_rename',
-			[ 'utr_wiki' => $wiki, 'utr_name' => $name ],
-			__METHOD__
-		);
+		$this->db->newDeleteQueryBuilder()
+			->deleteFrom( 'users_to_rename' )
+			->where( [ 'utr_wiki' => $wiki, 'utr_name' => $name ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**

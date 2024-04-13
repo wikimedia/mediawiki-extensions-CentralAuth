@@ -214,11 +214,11 @@ class GlobalRenameUserStatus {
 
 		$dbw->onTransactionPreCommitOrIdle(
 			function () use ( $dbw, $wiki, $fname ) {
-				$dbw->delete(
-					'renameuser_status',
-					[ $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ],
-					$fname
-				);
+				$dbw->newDeleteQueryBuilder()
+					->deleteFrom( 'renameuser_status' )
+					->where( [ $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ] )
+					->caller( $fname )
+					->execute();
 			},
 			$fname
 		);

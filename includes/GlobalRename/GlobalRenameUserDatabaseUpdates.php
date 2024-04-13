@@ -36,11 +36,11 @@ class GlobalRenameUserDatabaseUpdates {
 			__METHOD__
 		);
 
-		$dbw->delete(
-			'localuser',
-			[ 'lu_name' => $oldname ],
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'localuser' )
+			->where( [ 'lu_name' => $oldname ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$dbw->endAtomic( __METHOD__ );
 	}

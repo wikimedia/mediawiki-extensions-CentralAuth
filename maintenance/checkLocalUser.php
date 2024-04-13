@@ -105,7 +105,11 @@ class CheckLocalUser extends Maintenance {
 						if ( $this->user ) {
 							$conds['lu_name'] = $this->user;
 						}
-						$centralPrimaryDb->delete( 'localuser', $conds, __METHOD__ );
+						$centralPrimaryDb->newDeleteQueryBuilder()
+							->deleteFrom( 'localuser' )
+							->where( $conds )
+							->caller( __METHOD__ )
+							->execute();
 						$this->deleted++;
 					} else {
 						$this->output(
@@ -139,14 +143,14 @@ class CheckLocalUser extends Maintenance {
 					$this->total++;
 					if ( !$this->dryrun ) {
 						// go ahead and delete the extraneous entry
-						$centralPrimaryDb->delete(
-							'localuser',
-							[
+						$centralPrimaryDb->newDeleteQueryBuilder()
+							->deleteFrom( 'localuser' )
+							->where( [
 								"lu_wiki" => $wiki,
 								"lu_name" => $username
-							],
-							__METHOD__
-						);
+							] )
+							->caller( __METHOD__ )
+							->execute();
 						// TODO: is there anyway to check the success of the delete?
 						$this->deleted++;
 					}

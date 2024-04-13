@@ -41,11 +41,11 @@ class UpdateUsersToRename extends Maintenance {
 			if ( $ids ) {
 				$count = count( $ids );
 				$this->output( "Deleting $count users...\n" );
-				$dbw->delete(
-					'users_to_rename',
-					[ 'utr_id' => $ids ],
-					__METHOD__
-				);
+				$dbw->newDeleteQueryBuilder()
+					->deleteFrom( 'users_to_rename' )
+					->where( [ 'utr_id' => $ids ] )
+					->caller( __METHOD__ )
+					->execute();
 				$total += $count;
 			}
 			$databaseManager->waitForReplication();
