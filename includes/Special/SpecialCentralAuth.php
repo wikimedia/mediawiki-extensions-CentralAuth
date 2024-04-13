@@ -143,7 +143,6 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' )
 		);
 		$this->getOutput()->addModules( 'ext.centralauth' );
-		$this->getOutput()->addModules( 'ext.centralauth.globaluserautocomplete' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
 		$this->getOutput()->addJsConfigVars(
 			'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions()

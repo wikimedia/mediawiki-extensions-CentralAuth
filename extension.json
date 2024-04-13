@@ -459,13 +459,6 @@
 				"ext.centralauth.globalrenameuser.css"
 			]
 		},
-		"ext.centralauth.globaluserautocomplete": {
-			"scripts": "ext.centralauth.globaluserautocomplete.js",
-			"dependencies": [
-				"jquery.suggestions",
-				"mediawiki.api"
-			]
-		},
 		"ext.centralauth.globalrenameuser": {
 			"scripts": "ext.centralauth.globalrenameuser.js",
 			"dependencies": [
