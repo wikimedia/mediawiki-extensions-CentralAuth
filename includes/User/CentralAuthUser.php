@@ -1594,15 +1594,15 @@ class CentralAuthUser implements IDBAccessObject {
 
 			# Touch the local user row, update the password
 			$dblw = $databaseManager->getLocalDB( DB_PRIMARY, $wikiName );
-			$dblw->update(
-				'user',
-				[
+			$dblw->newUpdateQueryBuilder()
+				->update( 'user' )
+				->set( [
 					'user_touched' => wfTimestampNow(),
 					'user_password' => $password
-				],
-				[ 'user_name' => $this->mName ],
-				__METHOD__
-			);
+				] )
+				->where( [ 'user_name' => $this->mName ] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$userRow = $dblw->newSelectQueryBuilder()
 				->select( [ 'user_id', 'user_editcount' ] )
@@ -1676,12 +1676,12 @@ class CentralAuthUser implements IDBAccessObject {
 		foreach ( $localUserRes as $wiki ) {
 			$this->logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
 			$localDB = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
-			$localDB->update(
-				'user',
-				[ 'user_password' => $password ],
-				[ 'user_name' => $this->mName ],
-				__METHOD__
-			);
+			$localDB->newUpdateQueryBuilder()
+				->update( 'user' )
+				->set( [ 'user_password' => $password ] )
+				->where( [ 'user_name' => $this->mName ] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$id = $localDB->newSelectQueryBuilder()
 				->select( 'user_id' )
@@ -1749,12 +1749,12 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminLock() {
 		$this->checkWriteMode();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->update(
-			'globaluser',
-			[ 'gu_locked' => 1 ],
-			[ 'gu_name' => $this->mName ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( [ 'gu_locked' => 1 ] )
+			->where( [ 'gu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->execute();
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
@@ -1774,12 +1774,12 @@ class CentralAuthUser implements IDBAccessObject {
 	public function adminUnlock() {
 		$this->checkWriteMode();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->update(
-			'globaluser',
-			[ 'gu_locked' => 0 ],
-			[ 'gu_name' => $this->mName ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( [ 'gu_locked' => 0 ] )
+			->where( [ 'gu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->execute();
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
@@ -1799,12 +1799,12 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->checkWriteMode();
 
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->update(
-			'globaluser',
-			[ 'gu_hidden_level' => $level ],
-			[ 'gu_name' => $this->mName ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( [ 'gu_hidden_level' => $level ] )
+			->where( [ 'gu_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->execute();
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-admin-unhide-nonexistent', $this->mName );
 		}
@@ -2440,12 +2440,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function updateLocalName( $wikiID, $newname ) {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$dbw->update(
-			'localnames',
-			[ 'ln_name' => $newname ],
-			[ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'localnames' )
+			->set( [ 'ln_name' => $newname ] )
+			->where( [ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -2894,15 +2894,15 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $this->getId() ) {
 			$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-			$dbw->update(
-				'globaluser',
-				[
+			$dbw->newUpdateQueryBuilder()
+				->update( 'globaluser' )
+				->set( [
 					'gu_salt'     => $salt,
 					'gu_password' => $hash,
-				],
-				[ 'gu_id' => $this->getId(), ],
-				__METHOD__
-			);
+				] )
+				->where( [ 'gu_id' => $this->getId(), ] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$this->logger->info( "Set global password for {user}", [ 'user' => $this->mName ] );
 		} else {
@@ -3014,15 +3014,15 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_cas_token' => $newCasToken
 		];
 
-		$dbw->update(
-			'globaluser',
-			$toSet,
-			[
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( $toSet )
+			->where( [
 				'gu_id' => $this->mGlobalId,
 				'gu_cas_token' => $this->mCasToken
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->execute();
 
 		if ( !$dbw->affectedRows() ) {
 			// Maybe the problem was a missed cache update; clear it to be safe

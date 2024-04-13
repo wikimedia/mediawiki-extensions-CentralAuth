@@ -115,12 +115,12 @@ class WrapOldPasswordHashes extends Maintenance {
 				if ( $update ) {
 					$count++;
 					$updateUsers[] = $user;
-					$dbw->update(
-						'globaluser',
-						[ 'gu_password' => $layeredPassword->toString() ],
-						[ 'gu_id' => $row->gu_id ],
-						__METHOD__
-					);
+					$dbw->newUpdateQueryBuilder()
+						->update( 'globaluser' )
+						->set( [ 'gu_password' => $layeredPassword->toString() ] )
+						->where( [ 'gu_id' => $row->gu_id ] )
+						->caller( __METHOD__ )
+						->execute();
 				}
 
 				$minUserId = $row->gu_id;

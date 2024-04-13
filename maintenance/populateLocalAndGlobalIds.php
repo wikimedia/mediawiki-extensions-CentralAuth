@@ -85,16 +85,16 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			foreach ( $globalUidToLocalName as $gid => $uname ) {
 				// Save progress so we know where to start our next batch
 				$lastGlobalId = $gid;
-				$result = $dbw->update(
-					'localuser',
-					[
+				$dbw->newUpdateQueryBuilder()
+					->update( 'localuser' )
+					->set( [
 						'lu_local_id' => $localNameToUid[$uname],
 						'lu_global_id' => $gid
-					],
-					[ 'lu_name' => $uname, 'lu_wiki' => $wiki ],
-					__METHOD__
-				);
-				if ( !$result ) {
+					] )
+					->where( [ 'lu_name' => $uname, 'lu_wiki' => $wiki ] )
+					->caller( __METHOD__ )
+					->execute();
+				if ( !$dbw->affectedRows() ) {
 					$this->output(
 						"Update failed for global user $lastGlobalId for wiki $wiki \n"
 					);

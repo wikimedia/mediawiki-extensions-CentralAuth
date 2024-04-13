@@ -148,12 +148,12 @@ class GlobalRenameUserStatus {
 
 		$dbw->onTransactionPreCommitOrIdle(
 			function () use ( $dbw, $status, $wiki, $fname ) {
-				$dbw->update(
-					'renameuser_status',
-					[ 'ru_status' => $status ],
-					[ $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ],
-					$fname
-				);
+				$dbw->newUpdateQueryBuilder()
+					->update( 'renameuser_status' )
+					->set( [ 'ru_status' => $status ] )
+					->where( [ $this->getNameWhereClause( $dbw ), 'ru_wiki' => $wiki ] )
+					->caller( $fname )
+					->execute();
 			},
 			$fname
 		);

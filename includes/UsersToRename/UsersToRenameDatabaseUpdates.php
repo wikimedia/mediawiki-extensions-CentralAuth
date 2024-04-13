@@ -35,12 +35,12 @@ class UsersToRenameDatabaseUpdates {
 	 * @param int $status
 	 */
 	protected function updateStatus( $name, $wiki, $status ) {
-		$this->db->update(
-			'users_to_rename',
-			[ 'utr_status' => $status ],
-			[ 'utr_wiki' => $wiki, 'utr_name' => $name ],
-			__METHOD__
-		);
+		$this->db->newUpdateQueryBuilder()
+			->update( 'users_to_rename' )
+			->set( [ 'utr_status' => $status ] )
+			->where( [ 'utr_wiki' => $wiki, 'utr_name' => $name ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**

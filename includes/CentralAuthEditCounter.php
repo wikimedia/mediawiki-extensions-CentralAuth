@@ -73,12 +73,12 @@ class CentralAuthEditCounter {
 		}
 		$count = $this->getCountFromWikis( $centralUser );
 
-		$dbw->update(
-			'global_edit_count',
-			[ 'gec_count' => $count ],
-			[ 'gec_user' => $userId ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'global_edit_count' )
+			->set( [ 'gec_count' => $count ] )
+			->where( [ 'gec_user' => $userId ] )
+			->caller( __METHOD__ )
+			->execute();
 		$dbw->endAtomic( __METHOD__ );
 		return $count;
 	}
@@ -125,12 +125,12 @@ class CentralAuthEditCounter {
 			return;
 		}
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
-		$dbw->update(
-			'global_edit_count',
-			[ 'gec_count = gec_count + ' . (int)$increment ],
-			[ 'gec_user' => $centralUser->getId() ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'global_edit_count' )
+			->set( [ 'gec_count = gec_count + ' . (int)$increment ] )
+			->where( [ 'gec_user' => $centralUser->getId() ] )
+			->caller( __METHOD__ )
+			->execute();
 		// No need to populate when affectedRows() = 0, we can just wait for
 		// getCount() to be called.
 	}

@@ -76,9 +76,9 @@ class GlobalRenameRequestStore {
 
 			$request->setId( $dbw->insertId() );
 		} else {
-			$dbw->update(
-				'renameuser_queue',
-				[
+			$dbw->newUpdateQueryBuilder()
+				->update( 'renameuser_queue' )
+				->set( [
 					'rq_name'         => $request->getName(),
 					'rq_wiki'         => $request->getWiki(),
 					'rq_newname'      => $request->getNewName(),
@@ -89,12 +89,12 @@ class GlobalRenameRequestStore {
 					'rq_deleted'      => $request->getDeleted(),
 					'rq_performer'    => $request->getPerformer(),
 					'rq_comments'     => $request->getComments(),
-				],
-				[
+				] )
+				->where( [
 					'rq_id' => $request->getId()
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		return $dbw->affectedRows() === 1;

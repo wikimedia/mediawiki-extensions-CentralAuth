@@ -146,12 +146,12 @@ class PopulateGlobalEditCount extends Maintenance {
 			foreach ( array_chunk( $updates, $this->getBatchSize(), true ) as $updateBatch ) {
 				$this->beginTransaction( $dbcw, __METHOD__ );
 				foreach ( $updateBatch as $id => $count ) {
-					$dbcw->update(
-						'global_edit_count',
-						[ 'gec_count' => $count ],
-						[ 'gec_user' => $id ],
-						__METHOD__
-					);
+					$dbcw->newUpdateQueryBuilder()
+						->update( 'global_edit_count' )
+						->set( [ 'gec_count' => $count ] )
+						->where( [ 'gec_user' => $id ] )
+						->caller( __METHOD__ )
+						->execute();
 				}
 				$this->commitTransaction( $dbcw, __METHOD__ );
 			}

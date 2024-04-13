@@ -52,25 +52,27 @@ class MigrateHiddenLevel extends Maintenance {
 			$max = $min + $this->getBatchSize();
 			$this->output( "Now processing global users with id between $min and $max...\n" );
 
-			$dbw->update(
-				'globaluser',
-				[ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_LISTS ],
-				[
+			$dbw->newUpdateQueryBuilder()
+				->update( 'globaluser' )
+				->set( [ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_LISTS ] )
+				->where( [
 					'gu_hidden' => 'lists',
-					"gu_id BETWEEN $min AND $max"
-				],
-				__METHOD__
-			);
+					$dbw->expr( 'gu_id', '>=', $min ),
+					$dbw->expr( 'gu_id', '<=', $max ),
+				] )
+				->caller( __METHOD__ )
+				->execute();
 
-			$dbw->update(
-				'globaluser',
-				[ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED ],
-				[
+			$dbw->newUpdateQueryBuilder()
+				->update( 'globaluser' )
+				->set( [ 'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED ] )
+				->where( [
 					'gu_hidden' => 'suppressed',
-					"gu_id BETWEEN $min AND $max"
-				],
-				__METHOD__
-			);
+					$dbw->expr( 'gu_id', '>=', $min ),
+					$dbw->expr( 'gu_id', '<=', $max ),
+				] )
+				->caller( __METHOD__ )
+				->execute();
 
 			$databaseManager->waitForReplication();
 		}

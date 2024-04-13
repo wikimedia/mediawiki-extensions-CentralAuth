@@ -582,12 +582,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			];
 
 			foreach ( $updates as $table => $field ) {
-				$dbw->update(
-					$table,
-					[ $field => $newname ],
-					[ $field => $group ],
-					__METHOD__
-				);
+				$dbw->newUpdateQueryBuilder()
+					->update( $table )
+					->set( [ $field => $newname ] )
+					->where( [ $field => $group ] )
+					->caller( __METHOD__ )
+					->execute();
 			}
 			$this->addRenameLog( $group, $newname, $reason );
 

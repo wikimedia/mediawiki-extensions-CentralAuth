@@ -29,12 +29,12 @@ class GlobalRenameUserDatabaseUpdates {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
 
 		$dbw->startAtomic( __METHOD__ );
-		$dbw->update(
-			'globaluser',
-			[ 'gu_name' => $newname ],
-			[ 'gu_name' => $oldname ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( [ 'gu_name' => $newname ] )
+			->where( [ 'gu_name' => $oldname ] )
+			->caller( __METHOD__ )
+			->execute();
 
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'localuser' )
