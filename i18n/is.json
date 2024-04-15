@@ -222,7 +222,7 @@
 	"centralauth-merge-method-password-desc": "Gefur til kynna að staðbundi aðgangurinn hafi verið sameinaður vegna þess að notandinn tilgreindi gilt aðgangsorð fyrir hann.",
 	"centralauth-merge-method-primary": "heimawiki",
 	"centralauth-merge-method-primary-desc": "Aðgangurinn var sameinaður á þessum wiki.\nAthugaðu að þetta er ekki það sama og heimawiki notandans.",
-	"centralauth-merge-no-accounts": "Engir aðgangar sem samsvara nafninu þínu fundust í miðlægu aðgangsrakningartöflunni!\nGagnagrunnurinn hlýtur að vera skemmdur.",
+	"centralauth-merge-no-accounts": "Engir aðgangar samsvarandi nafninu þínu fundust í miðlægu aðgangsrakningartöflunni!\nGagnagrunnurinn hlýtur að vera skemmdur.",
 	"centralauth-merge-notlogged": "Vinsamlegast <span class=\"plainlinks\">[$1 skráðu þig inn]</span> til að athuga hvort aðgangar þínir hafi verið að fullu samræmdir.",
 	"centralauth-merge-step1-detail": "Vinsamlegast ritaðu aðgangsorðið þitt.\nAðgangsorðið þitt og skráð tölvupóstfang verða athugað gagnvart aðgöngunum á öðrum wiki til að staðfesta að þau samsvarist.\nEngar breytingar verða gerðar fyrr en þú hefur staðfest að hlutirnir séu í lagi.",
 	"centralauth-merge-step1-submit": "Staðfesta innskráningarupplýsingar",
