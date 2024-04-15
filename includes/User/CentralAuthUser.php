@@ -1596,7 +1596,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$dblw->newUpdateQueryBuilder()
 				->update( 'user' )
 				->set( [
-					'user_touched' => wfTimestampNow(),
+					'user_touched' => $dblw->timestamp(),
 					'user_password' => $password
 				] )
 				->where( [ 'user_name' => $this->mName ] )
