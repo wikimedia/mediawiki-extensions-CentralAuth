@@ -388,7 +388,6 @@
 	"globalrenamerequest-submit-text": "Поднеси захтев",
 	"globalrenamerequest-username-label": "Тренутно корисничко име:",
 	"globalrenameuser": "Преименовање глобалних корисника",
-	"globalrenameuser-legend": "Преименовање глобалних корисника",
 	"globalusers": "Списак глобалних налога",
 	"grant-setglobalaccountstatus": "управљај стањем глобалног налога",
 	"log-action-filter-gblrights": "Врста измене:",

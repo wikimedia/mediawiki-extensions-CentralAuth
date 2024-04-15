@@ -375,7 +375,6 @@
 	"globalrenamerequest-submit-text": "แจ้งขอเปลี่ยนชื่อ",
 	"globalrenamerequest-username-label": "ชื่อผู้ใช้ปัจจุบัน:",
 	"globalrenameuser": "เปลี่ยนชื่อผู้ใช้ข้ามโครงการ",
-	"globalrenameuser-legend": "เปลี่ยนชื่อผู้ใช้ข้ามโครงการ",
 	"globalusers": "รายชื่อบัญชีกลาง",
 	"grant-createlocalaccount": "บังคับให้สร้างบัญชีท้องถิ่นสำหรับบัญชีกลาง",
 	"grant-setglobalaccountstatus": "จัดการสถานะบัญชีกลาง",

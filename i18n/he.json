@@ -447,7 +447,6 @@
 	"globalrenamerequest-submit-text": "בקשת שינוי שם",
 	"globalrenamerequest-username-label": "שם משתמש נוכחי:",
 	"globalrenameuser": "שינוי שם משתמש גלובלי",
-	"globalrenameuser-legend": "שינוי שם משתמש גלובלי",
 	"globalusers": "רשימת חשבונות גלובליים",
 	"grant-createlocalaccount": "כפיית יצירה של חשבון מקומי עבור חשבון גלובלי",
 	"grant-setglobalaccountstatus": "ניהול מצבים של חשבונות גלובליים",

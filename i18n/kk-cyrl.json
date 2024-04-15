@@ -314,7 +314,6 @@
 	"globalrenamerequest-submit-text": "Есім өзгертуді сұрау",
 	"globalrenamerequest-username-label": "Қазіргі қатысушы есімі:",
 	"globalrenameuser": "Ғаламдық қатысушыны атауын өзгерту",
-	"globalrenameuser-legend": "Ғаламдық қатысушыны атауын өзгерту",
 	"globalusers": "Ғаламдық тіркелгі тізімі",
 	"log-name-gblrename": "Ғаламдық есім өзгерту журналы",
 	"logentry-gblrename-merge": "$1 $4 дегенді $5 дегенге ғаламдық {{GENDER:$2|біріктірді}}",

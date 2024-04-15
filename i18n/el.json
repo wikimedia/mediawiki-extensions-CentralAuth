@@ -348,7 +348,6 @@
 	"globalrenamerequest-submit-text": "Αίτημα αλλαγής ονόματος",
 	"globalrenamerequest-username-label": "Τρέχον όνομα χρήστη:",
 	"globalrenameuser": "Μετονομασία καθολικού χρήστη",
-	"globalrenameuser-legend": "Μετονομασία καθολικού χρήστη",
 	"globalusers": "Κατάλογος καθολικών λογαριασμών",
 	"grant-setglobalaccountstatus": "Διαχείριση της κατάστασης του καθολικού λογαριασμού",
 	"log-action-filter-gblrights": "Τύπος αλλαγής:",

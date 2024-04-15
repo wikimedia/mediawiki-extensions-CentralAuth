@@ -497,7 +497,6 @@
 	"globalrenamerequest-submit-text": "申请用户名更改",
 	"globalrenamerequest-username-label": "当前用户名：",
 	"globalrenameuser": "重命名全域用户",
-	"globalrenameuser-legend": "重命名全域用户",
 	"globalusers": "全域账号列表",
 	"grant-createlocalaccount": "强制为全域账号创建本地账号",
 	"grant-setglobalaccountstatus": "管理全域账号状态",

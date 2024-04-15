@@ -466,7 +466,6 @@
 	"globalrenamerequest-submit-text": "طلب تغيير الاسم",
 	"globalrenamerequest-username-label": "اسم المستخدم الحالي:",
 	"globalrenameuser": "أعد تسمية اسم مستخدم موحد",
-	"globalrenameuser-legend": "أعد تسمية اسم مستخدم موحد",
 	"globalusers": "قائمة الحسابات العامة",
 	"grant-createlocalaccount": "إنشاء حساب محلي إجباري لحساب عالمي",
 	"grant-setglobalaccountstatus": "إدارة حالة الحساب العالمي",

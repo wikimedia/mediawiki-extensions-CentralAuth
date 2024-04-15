@@ -438,7 +438,6 @@
 	"globalrenamerequest-submit-text": "Побарај промена на името",
 	"globalrenamerequest-username-label": "Сегашно корисничко име:",
 	"globalrenameuser": "Преименување на глобален корисник",
-	"globalrenameuser-legend": "Преименување на глобален корисник",
 	"globalusers": "Список на сметки (глобален)",
 	"grant-createlocalaccount": "Принудно создавање на месна сметка за глобална сметка",
 	"grant-setglobalaccountstatus": "Раководење со глобални кориснички сметки",

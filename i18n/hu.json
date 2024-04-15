@@ -415,7 +415,6 @@
 	"globalrenamerequest-submit-text": "Névváltoztatás kérése",
 	"globalrenamerequest-username-label": "Jelenlegi szerkesztői név:",
 	"globalrenameuser": "Globális felhasználó átnevezése",
-	"globalrenameuser-legend": "Globális felhasználó átnevezése",
 	"globalusers": "Globális szerkesztőlista",
 	"log-action-filter-globalauth": "Változtatás típusa:",
 	"log-description-gblrename": "Ez a napló nyomon követi a felhasználók globális átnevezését.",

@@ -465,7 +465,6 @@
 	"globalrenamerequest-submit-text": "이름 바꾸기 요청",
 	"globalrenamerequest-username-label": "기존 사용자 이름:",
 	"globalrenameuser": "전역 사용자 이름 바꾸기",
-	"globalrenameuser-legend": "전역 사용자 이름 바꾸기",
 	"globalusers": "통합 계정 목록",
 	"grant-createlocalaccount": "통합 계정에 대해 로컬 계정을 강제로 생성하기",
 	"grant-setglobalaccountstatus": "통합 계정 상태 관리",

@@ -352,7 +352,6 @@
 	"globalrenamerequest-submit-text": "নাম পরিবর্তনের অনুরোধ করো",
 	"globalrenamerequest-username-label": "বর্তমান ব্যবহারকারী নাম:",
 	"globalrenameuser": "বৈশ্বিক ব্যবহারকারী নামান্তর",
-	"globalrenameuser-legend": "বৈশ্বিক ব্যবহারকারী নামান্তর",
 	"globalusers": "বৈশ্বিক অ্যাকাউন্টের তালিকা",
 	"grant-setglobalaccountstatus": "বৈশ্বিক অ্যাকাউন্টের অবস্থা নির্ধারণ করুন",
 	"log-action-filter-gblrights": "পরিবর্তনের ধরন:",

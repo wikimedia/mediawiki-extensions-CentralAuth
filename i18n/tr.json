@@ -465,7 +465,6 @@
 	"globalrenamerequest-submit-text": "İsim değişikliği talep edin",
 	"globalrenamerequest-username-label": "Mevcut kullanıcı adı:",
 	"globalrenameuser": "Küresel kullanıcı yeniden adlandırma",
-	"globalrenameuser-legend": "Küresel kullanıcı yeniden adlandırma",
 	"globalusers": "Küresel hesaplar listesi",
 	"grant-createlocalaccount": "Küresel bir hesap için zorla yerel bir hesap oluşturun",
 	"grant-setglobalaccountstatus": "Küresel hesap durumunu yönet",

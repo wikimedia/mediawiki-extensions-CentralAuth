@@ -475,7 +475,6 @@
 	"globalrenamerequest-submit-text": "請求變更名稱",
 	"globalrenamerequest-username-label": "目前的使用者名稱：",
 	"globalrenameuser": "重新命名全域使用者",
-	"globalrenameuser-legend": "重新命名全域使用者",
 	"globalusers": "全域帳號清單",
 	"grant-createlocalaccount": "強制為全域帳號建立本地帳號",
 	"grant-setglobalaccountstatus": "管理全域帳號狀態",

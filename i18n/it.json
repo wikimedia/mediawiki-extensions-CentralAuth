@@ -442,7 +442,6 @@
 	"globalrenamerequest-submit-text": "Richiedi il cambio del nome",
 	"globalrenamerequest-username-label": "Nome utente attuale:",
 	"globalrenameuser": "Rinomina globale utente",
-	"globalrenameuser-legend": "Rinomina globale utente",
 	"globalusers": "Elenco degli utenti globali",
 	"grant-setglobalaccountstatus": "Gestire lo stato dell'utenza globale",
 	"log-action-filter-gblrights": "Tipo di modifica:",

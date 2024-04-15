@@ -263,7 +263,6 @@
 	"globalrenameprogress": "Framgang på global omdøyping",
 	"globalrenameprogress-legend": "Sjå framgang på global omdøyping",
 	"globalrenameuser": "Døyp om global brukar",
-	"globalrenameuser-legend": "Døyp om global brukar",
 	"globalusers": "Global brukarliste",
 	"log-name-gblrename": "Logg for global namneendring",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|omnemna}} $4 til $5 globalt",

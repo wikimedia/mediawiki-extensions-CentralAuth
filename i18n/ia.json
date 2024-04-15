@@ -435,7 +435,6 @@
 	"globalrenamerequest-submit-text": "Demandar cambio de nomine",
 	"globalrenamerequest-username-label": "Nomine de usator actual:",
 	"globalrenameuser": "Renominar usator global",
-	"globalrenameuser-legend": "Renominar un usator global",
 	"globalusers": "Lista de contos global",
 	"grant-createlocalaccount": "Fortiar le creation de un conto local pro un conto global",
 	"grant-setglobalaccountstatus": "Gerer le stato del conto global",

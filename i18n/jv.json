@@ -289,7 +289,6 @@
 	"globalrenamequeue-request-title": "Ganti jeneng \"$1\"?",
 	"globalrenamequeue-request-userinfo-local": "* naraguna: [[Special:CentralAuth/$1|$1]]\n* wiki asal: $2\n* jeneng anyar: [[Special:CentralAuth/$3|$3]]",
 	"globalrenameuser": "Ganti jeneng naraguna global",
-	"globalrenameuser-legend": "Ganti jeneng naraguna global",
 	"globalusers": "Pratélan akun global",
 	"mergeaccount": "Status panggabungan log mlebu",
 	"right-centralauth-lock": "Gemboka utawa dhelikna akun global",

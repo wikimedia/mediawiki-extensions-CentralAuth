@@ -342,7 +342,6 @@
 	"globalrenamerequest-newname-label": "Ønsket brugernavn:",
 	"globalrenamerequest-username-label": "Nuværende brugernavn:",
 	"globalrenameuser": "Omdøb global bruger",
-	"globalrenameuser-legend": "Omdøb global bruger",
 	"globalusers": "Liste over globale brugerkonti",
 	"log-action-filter-gblrights": "Ændringstype:",
 	"log-action-filter-globalauth": "Ændringstype:",

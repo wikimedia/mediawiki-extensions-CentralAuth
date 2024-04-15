@@ -464,7 +464,6 @@
 	"globalrenamerequest-submit-text": "درخواست تغییر نام",
 	"globalrenamerequest-username-label": "نام کاربری فعلی:",
 	"globalrenameuser": "تغییرنام حساب سراسری",
-	"globalrenameuser-legend": "تغییرنام حساب سراسری",
 	"globalusers": "فهرست حساب‌های سراسری",
 	"grant-createlocalaccount": "ایجاد اجباری یک حساب محلی برای یک حساب سراسری",
 	"grant-setglobalaccountstatus": "تنظیم وضعیت حساب سراسری",

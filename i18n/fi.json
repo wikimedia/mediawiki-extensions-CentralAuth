@@ -458,7 +458,6 @@
 	"globalrenamerequest-submit-text": "Lähetä nimenvaihtopyyntö",
 	"globalrenamerequest-username-label": "Nykyinen käyttäjänimi:",
 	"globalrenameuser": "Vaihda järjestelmänlaajuisen käyttäjän tunnus",
-	"globalrenameuser-legend": "Vaihda järjestelmänlaajuisen käyttäjän nimi",
 	"globalusers": "Järjestelmänlaajuinen käyttäjäluettelo",
 	"grant-createlocalaccount": "Luoda paikallisia käyttäjiä järjestelmänlaajuisille tunnuksille",
 	"grant-setglobalaccountstatus": "Hallinnoida järjestelmänlaajuisen tunnuksen tilaa",

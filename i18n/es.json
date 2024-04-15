@@ -493,7 +493,6 @@
 	"globalrenamerequest-submit-text": "Solicitud de cambio de nombre",
 	"globalrenamerequest-username-label": "Nombre de usuario actual:",
 	"globalrenameuser": "Renombrar usuario global",
-	"globalrenameuser-legend": "Renombrar usuario global",
 	"globalusers": "Lista de usuarios globales",
 	"grant-createlocalaccount": "Crear forzosamente una cuenta local para una cuenta global",
 	"grant-setglobalaccountstatus": "Gestionar estado de cuenta global",

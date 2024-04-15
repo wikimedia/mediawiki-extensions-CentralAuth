@@ -371,7 +371,6 @@
 	"globalrenamerequest-submit-text": "Speir fer ae name chynge",
 	"globalrenamerequest-username-label": "The nou uisername:",
 	"globalrenameuser": "Rename global uiser",
-	"globalrenameuser-legend": "Rename global uiser",
 	"globalusers": "Global accoonts leet",
 	"log-description-gblrename": "This log tracks the global renamin o uisers.",
 	"log-name-gblrename": "Global rename log",

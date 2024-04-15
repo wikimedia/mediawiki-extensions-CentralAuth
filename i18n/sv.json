@@ -457,7 +457,6 @@
 	"globalrenamerequest-submit-text": "Begär ändring av namn",
 	"globalrenamerequest-username-label": "Nuvarande användarnamn:",
 	"globalrenameuser": "Byt namn på global användare",
-	"globalrenameuser-legend": "Byt namn på global användare",
 	"globalusers": "Lista över globala konton",
 	"grant-createlocalaccount": "Tvingas skapa ett lokalt konto för ett globalt konto",
 	"grant-setglobalaccountstatus": "Hantera status för globalt konto",

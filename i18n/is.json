@@ -310,7 +310,6 @@
 	"globalrenamerequest-pretext": "Biðja um nýtt notandanafn sem verður þekkt á öllum verkefnum.\n\nÖll fyrri framlög þín verða tengd þessu nýja notandanafni.\n\nListi yfir beiðnir sem gerðar eru með þessu eyðublaði verða aðgengilegar þeim notendum sem geta framkvæmt þessa aðgerð. Þú færð tilkynningu með tölvupósti þegar þessu ferli er lokið.\n\nEf beiðni þín tengist ósk um nafnleynd/friðhelgi, vinsamlegast hafðu í huga að varanleg skráning verður búin til með fyrra nafni þínu. Þú getur íhugað einfaldlega [[Special:CreateAccount|að búa til sérstakan og sjálfstæðan nýjan aðgang]] og látið núverandi aðgang þinn vera endurnefndan í eitthvað af handahófi og yfirgefið hann.",
 	"globalrenamerequest-username-label": "Núverandi notandanafn:",
 	"globalrenameuser": "Endurnefna altækan notanda",
-	"globalrenameuser-legend": "Endurnefna altækan notanda",
 	"globalusers": "Listi altækra aðganga",
 	"grant-createlocalaccount": "Þvinga sköpun staðbundins aðgangs fyrir altækan aðgang",
 	"log-action-filter-gblrights": "Tegund breytinga:",

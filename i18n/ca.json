@@ -405,7 +405,6 @@
 	"globalrenamerequest-submit-text": "Sol·licita el canvi de nom",
 	"globalrenamerequest-username-label": "Nom d'usuari actual:",
 	"globalrenameuser": "Canvi de nom d'usuari global",
-	"globalrenameuser-legend": "Canvi de nom d'usuari global",
 	"globalusers": "Llista global d'usuaris",
 	"log-action-filter-gblrights": "Tipus de canvi:",
 	"log-action-filter-gblrights-groupprms": "Canvi de grup d'usuari global",

@@ -451,7 +451,6 @@
 	"globalrenamerequest-submit-text": "Yêu cầu đổi tên",
 	"globalrenamerequest-username-label": "Tên người dùng hiện tại:",
 	"globalrenameuser": "Đổi tên thành viên toàn cục",
-	"globalrenameuser-legend": "Đổi tên thành viên toàn cục",
 	"globalusers": "Danh sách tài khoản toàn cục",
 	"grant-createlocalaccount": "Ép buộc mở một tài khoản cục bộ cho một tài khoản toàn cục",
 	"grant-setglobalaccountstatus": "Quản lý tình trạng tài khoản toàn cục",

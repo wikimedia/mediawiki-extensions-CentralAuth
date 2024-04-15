@@ -462,7 +462,6 @@
 	"globalrenamerequest-submit-text": "Зробити запит на зміну імені",
 	"globalrenamerequest-username-label": "Поточне ім'я користувача:",
 	"globalrenameuser": "Перейменувати глобального користувача",
-	"globalrenameuser-legend": "Перейменувати глобального користувача",
 	"globalusers": "Список глобальних облікових записів",
 	"grant-createlocalaccount": "Примусове створення локального облікового запису для глобального облікового запису",
 	"grant-setglobalaccountstatus": "Керувати статусом глобального облікового запису",
