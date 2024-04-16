@@ -41,7 +41,8 @@
 			"神樂坂秀吉",
 			"背番号4のエース",
 			"青子守歌",
-			"Anonymoususer12321"
+			"Anonymoususer12321",
+			"Waki285"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数",
@@ -189,6 +190,7 @@
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|編集]])",
 	"centralauth-editgroup-fieldset": "$1の権限",
 	"centralauth-editgroup-invalid-name": "指定したグローバルグループ名は無効です",
+	"centralauth-editgroup-invalid-name-lowercase": "グローバルグループ識別子はすべて小文字にする必要があります。",
 	"centralauth-editgroup-member": "グループメンバー名を地域化したもの:",
 	"centralauth-editgroup-member-edit": "$2 ([[MediaWiki:Group-$1-member|編集]])",
 	"centralauth-editgroup-members": "メンバー一覧:",
@@ -374,6 +376,7 @@
 	"centralauth-rename-form-reason": "理由",
 	"centralauth-rename-form-suppressredirects": "リダイレクトを作成しない",
 	"centralauth-rename-globaleditcount-threshold": "この利用者は$1回以上の{{PLURAL:$1|編集}}を行っています。この利用者の名前の変更を確認し、システム管理者はこの名前を確認して使用可能な名前であることを確認してください。",
+	"centralauth-rename-listed-on-denylist": "この利用者は、グローバル利用者名変更拒否リストに登録されています。この利用者の名前を変更するには、まず拒否リストを変更する必要があります。",
 	"centralauth-rename-movelog": "「[[Special:CentralAuth/$1|$1]]」から「[[Special:CentralAuth/$2|$2]]」への利用者名変更に伴い、自動的にページが移動されました。",
 	"centralauth-rename-notinprogress": "$1 に対して進行している利用者名の変更はありません。既に完了している可能性があります。",
 	"centralauth-rename-progress-fieldset": "ローカルアカウントの一覧",
@@ -382,6 +385,7 @@
 	"centralauth-rename-progress-logs-fieldset": "記録項目",
 	"centralauth-rename-progress-username": "利用者名",
 	"centralauth-rename-queued": "$1 から $2 に名前を変更するジョブはキューに追加されました。\n\n進行状況は [[Special:GlobalRenameProgress/$2]] で閲覧できます。",
+	"centralauth-rename-same-name": "要求された利用者名は既に利用者に付与されています。",
 	"centralauth-rename-table-domain": "ローカルウィキ",
 	"centralauth-rename-table-status": "状態",
 	"centralauth-rename-table-status-done": "完了",
@@ -466,6 +470,7 @@
 	"globalrenamerequest-email-why-explain": "このアカウントへのアクセスが失われないよう、このプロセス中はメールアドレスが必要です。<br />名前の変更プロセスが完了したら、メールアドレスを削除できます。",
 	"globalrenamerequest-email2-help": "確認のために上記で入力したものと同じメールアドレスを入力してください。",
 	"globalrenamerequest-email2-label": "メールアドレスの確認:",
+	"globalrenamerequest-forced": "このウィキファームは、すべてのプロジェクトで利用者名を統合しています。この利用者名は他のウィキで使用されていることが確認されたため、この統合を完了するには変更する必要があります。そのため、新しい利用者名を選択する必要があります。",
 	"globalrenamerequest-legend": "アカウント統一改名依頼",
 	"globalrenamerequest-newname-err-invalid": "有効なメールアドレスを指定していません。",
 	"globalrenamerequest-newname-err-taken": "入力した利用者名は既に使用されています。別の利用者名を指定してください。",
@@ -508,6 +513,7 @@
 	"logentry-gblrights-setrename": "$1 がウィキ集合 \"$5\" を \"$4\" に{{GENDER:$2|改名しました}}",
 	"logentry-gblrights-grouprename": "$1 がグループ $5 を $4 に{{GENDER:$2|改名しました}}",
 	"logentry-gblrights-groupprms2": "$1 が $3 のグローバルグループ権限を{{GENDER:$2|変更しました}}: $4 を追加; $5 を除去",
+	"logentry-gblrights-groupprms3": "$1 が $3 の制限付きウィキのグループを $4 から $5 に{{GENDER:$2|変更しました}}",
 	"logentry-gblrights-usergroups": "$1 が $3 のグローバル所属グループを $4 から $5 に{{GENDER:$2|変更しました}}。",
 	"logentry-globalauth-delete": "$1 がグローバルアカウント \"$3\"を{{GENDER:$2|削除しました}}",
 	"logentry-globalauth-setstatus": "$1 がグローバルアカウント \"$3\" のステータスを{{GENDER:$2|変更しました}}: 設定 $4; 設定解除 $5",
@@ -522,6 +528,8 @@
 	"right-centralauth-unmerge": "グローバルアカウントを統合解除",
 	"right-globalgroupmembership": "グローバルグループのメンバーを編集",
 	"right-globalgrouppermissions": "グローバルグループを管理",
+	"sessionprovider-centralauthsessionprovider": "中央のCookieベースのセッション",
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtokenセッション",
 	"sulrenamewarning-title": "{{GENDER:$1|あなた}}のアカウントは改名されました",
 	"sulrenamewarning-usenew": "今後ログインする際は、{{GENDER:$1|あなた}}の新しい利用者名'''$1'''を使用してください。",
 	"centralauth-badaccess-blacklisted": "あなたはブラックリストに登録されているため、グローバル利用者アカウントの改名を依頼できません。"
