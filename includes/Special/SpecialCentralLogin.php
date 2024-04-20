@@ -178,8 +178,18 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( isset( $session['user'] ) ) {
 			// fully initialized session
 			if ( $session['user'] !== $centralUser->getName() ) {
-				// If the User is trying to switch accounts. Let them do so by
-				// creating a new central session.
+				if ( $user->isNamed() ) {
+					// If the user is probably trying to switch accounts. Let them do so by
+					// creating a new central session.
+				} else {
+					// Temp users can't switch accounts since they have no way of logging in. If
+					// this is happening, the user ended up with different temp user identities on
+					// different wikis. Not much we can do about it but let's at least log it.
+					$this->logger->info( 'Temp user conflict: {old} / {new}', [
+						'old' => $session['user'],
+						'new' => $centralUser->getName(),
+					] );
+				}
 			} else {
 				// They're already logged in to the target account, don't stomp
 				// on the existing session! (T125139)
