@@ -44,7 +44,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 				->join( 'globaluser', null, 'gu_name = lu_name' )
 				->where( [
 					// Start from where we left off in last batch
-					'gu_id >= ' . $lastGlobalId,
+					$dbr->expr( 'gu_id', '>=', $lastGlobalId ),
 					'lu_wiki' => $wiki,
 					// Only pick records not already populated
 					'lu_local_id' => null

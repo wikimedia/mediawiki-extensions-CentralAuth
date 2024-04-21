@@ -26,7 +26,7 @@ class PopulateHomeDB extends Maintenance {
 				->select( 'gu_name' )
 				->from( 'globaluser' )
 				->where( $conds )
-				->andWhere( [ 'gu_home_db IS NULL OR gu_home_db = ""' ] )
+				->andWhere( $db->expr( 'gu_home_db', '=', null )->or( 'gu_home_db', '=', '' ) )
 				->orderBy( 'gu_name' )
 				->limit( $this->mBatchSize )
 				->caller( __METHOD__ )

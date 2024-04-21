@@ -84,8 +84,8 @@ class DeleteEmptyAccounts extends Maintenance {
 				->leftJoin( 'localuser', null, 'gu_name=lu_name' )
 				->where( [
 					'lu_name' => null,
-					"gu_id >= $cur",
-					'gu_id < ' . ( $cur + $this->mBatchSize ),
+					$dbr->expr( 'gu_id', '>=', $cur ),
+					$dbr->expr( 'gu_id', '<', $cur + $this->mBatchSize ),
 				] )
 				->orderBy( 'gu_id' )
 				->caller( __METHOD__ )

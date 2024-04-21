@@ -66,8 +66,9 @@ class PopulateGlobalEditCount extends Maintenance {
 				->join( 'localuser', null, [ 'lu_name=gu_name' ] )
 				->leftJoin( 'global_edit_count', null, [ 'gu_id=gec_user' ] )
 				->where( [
-					"gu_id BETWEEN $batchStartId AND $batchEndId",
-					"lu_global_id <> 0",
+					$dbcr->expr( 'gu_id', '>=', $batchStartId ),
+					$dbcr->expr( 'gu_id', '<=', $batchEndId ),
+					$dbcr->expr( 'lu_global_id', '!=', 0 ),
 				] )
 				->orderBy( [ 'gu_id', 'lu_wiki' ] )
 				->caller( __METHOD__ )

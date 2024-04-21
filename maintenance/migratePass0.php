@@ -54,7 +54,10 @@ class MigratePass0 extends Maintenance {
 			$result = $dbr->newSelectQueryBuilder()
 				->select( [ 'user_id', 'user_name' ] )
 				->from( 'user' )
-				->where( "user_id BETWEEN $min AND $max" )
+				->where( [
+					$dbr->expr( 'user_id', '>=', $min ),
+					$dbr->expr( 'user_id', '<=', $max ),
+				] )
 				->caller( __METHOD__ )
 				->fetchResultSet();
 
