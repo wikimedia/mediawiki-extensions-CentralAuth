@@ -10,7 +10,8 @@
 			"Okras",
 			"Stjn",
 			"Vlad5250",
-			"Ядерный Трамвай"
+			"Ядерный Трамвай",
+			"Dirruw'o"
 		]
 	},
 	"apierror-centralauth-badsession": "Токен можно получить только при использовании сессий CentralAuth.",
@@ -33,7 +34,7 @@
 	"apihelp-globaluserrights-example-1": "Добавить участника FooBot в глобальную группу «bot» (бот), и удалить из глобальных групп «sysop» (администратор) и «bureaucrat» (бюрократ)",
 	"apihelp-globaluserrights-example-2": "Добавить глобального участника с ID 123 в глобальную группу «bot» (бот), и удалить из глобальных групп «sysop» (администратор) и «bureaucrat» (бюрократ)",
 	"apihelp-globaluserrights-param-add": "Добавить участника в эти глобальные группы.",
-	"apihelp-globaluserrights-param-expiry": "В настоящий момент параметр не используется.",
+	"apihelp-globaluserrights-param-expiry": "Временная метка истечения. Может быть относительной (например, <kbd>5 months</kbd> или <kbd>2 weeks</kbd>) или абсолютной (например, <kbd>2014-09-18T12:34:56Z</kbd>). Если задана только одна временная метка, она будет использована для всех групп, переданных в параметре <var>$1add</var>. Используйте <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> или <kbd>never</kbd> для неистекаемой группы.",
 	"apihelp-globaluserrights-param-reason": "Причина для изменения.",
 	"apihelp-globaluserrights-param-remove": "Удалить участника из этих глобальных групп.",
 	"apihelp-globaluserrights-param-tags": "Этот параметр в настоящее время не используется.",

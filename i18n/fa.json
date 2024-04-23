@@ -163,7 +163,7 @@
 	"centralauth-complete": "یکی کردن حساب‌ها کامل شد!",
 	"centralauth-complete-text": "شما اکنون می‌توانید به هر سایت ویکی از {{int:Centralauth-groupname}} بدون ایجاد یک حساب جدیدی وارد شوید.",
 	"centralauth-completelogin-back": "بازگشت به صفحهٔ پیشین.",
-	"centralauth-contribs-locked": "این حساب به طور سراسری بسته‌شده است.\nبرای اطلاعات بیشتر [[Special:CentralAuth/$1|جزئیات حساب سراسری]] را ببینید.",
+	"centralauth-contribs-locked": "این حساب به طور سراسری بسته شده است.\nبرای اطلاعات بیشتر [[Special:CentralAuth/$1|جزئیات حساب سراسری]] را ببینید.",
 	"centralauth-contribs-locked-log": "این حساب به طور سراسری بسته شده است.\nآخرین مورد سیاهه قطع دسترسی در زیر آمده است:",
 	"centralauth-createlocal-already-exists": "یک حساب محلی از پیش برای حساب سراسری مشخص‌شده موجود است.",
 	"centralauth-createlocal-no-global-account": "چنین حساب سراسری موجود نیست.",
