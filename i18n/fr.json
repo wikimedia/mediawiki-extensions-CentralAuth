@@ -115,6 +115,7 @@
 	"centralauth-admin-info-unattached": "Nombre de comptes non attachés :",
 	"centralauth-admin-info-username": "Nom d’utilisateur :",
 	"centralauth-admin-info-username-rename": "renommer",
+	"centralauth-admin-info-expired": "Compte temporaire expiré:",
 	"centralauth-admin-intro": "Cette interface peut être utilisée pour administrer les comptes globaux.",
 	"centralauth-admin-list-attached-on": "Rattaché le",
 	"centralauth-admin-list-blocked": "Bloqué",
