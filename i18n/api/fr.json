@@ -8,7 +8,8 @@
 			"Tuxxic",
 			"Verdy p",
 			"Wladek92",
-			"Wnagxsi"
+			"Wnagxsi",
+			"Alien333"
 		]
 	},
 	"apierror-centralauth-badsession": "Un jeton central d’identification ne peut être obtenu qu’en utilisant des sessions d’authentification centrale.",
@@ -86,7 +87,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Modifier l’état de cet utilisateur qui indique s’il est caché ou pas dans les listes des utilisateurs globaux ou s’il est masqué.",
 	"apihelp-setglobalaccountstatus-param-locked": "Modifier l’état de cet utilisateur qui indique s’il est verrouillé ou pas.",
 	"apihelp-setglobalaccountstatus-param-reason": "Motif pour modifier l’état de l’utilisateur.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Hachage MD5 facultatif de l’actuel « <userid>:<username>:<hidden>:<locked> » attendu, pour détecter les conflits de modification. Mettre « <locked> » à 1 pour verrouillé, ou 0 pour déverrouillé.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Hachage MD5 facultatif de l’actuel <samp>userid:username:hidden:locked</samp> attendu, pour détecter les conflits de modification. La valeur de <samp>hidden</samp> doit être une chaîne vide si cachée ou les chaînes <code>lists</code> ou <code>suppressed</code>. La valeur de <samp>locked</samp> doit être 1 pour verrouillé, ou 0 pour déverrouillé. Exemples: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>.",
 	"apihelp-setglobalaccountstatus-param-user": "Utilisateur dont l’état doit être modifié.",
 	"apihelp-setglobalaccountstatus-summary": "Masque ou verrouille (ou affiche ou déverrouille) un compte utilisateur global."
 }
