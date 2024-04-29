@@ -78,20 +78,18 @@ class WrapOldPasswordHashes extends Maintenance {
 				$this->beginTransaction( $dbw, __METHOD__ );
 			}
 
-			$res = $dbw->select(
-				'globaluser',
-				[ 'gu_id', 'gu_name', 'gu_password' ],
-				[
+			$res = $dbw->newSelectQueryBuilder()
+				->select( [ 'gu_id', 'gu_name', 'gu_password' ] )
+				->from( 'globaluser' )
+				->where( [
 					$dbw->expr( 'gu_id', '>', $minUserId ),
 					$typeCond
-				],
-				__METHOD__,
-				[
-					'ORDER BY' => 'gu_id',
-					'LIMIT' => $this->getBatchSize(),
-					'LOCK IN SHARE MODE',
-				]
-			);
+				] )
+				->orderBy( 'gu_id' )
+				->limit( $this->getBatchSize() )
+				->lockInShareMode()
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			/** @var CentralAuthUser[] $updateUsers */
 			$updateUsers = [];

@@ -18,18 +18,17 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 
 	public function execute() {
 		$dbr = $this->getDB( DB_REPLICA );
-		$rows = $dbr->select(
-			[ 'logging', 'log_search' ],
-			[ 'log_id', 'log_params' ],
-			[
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'log_id', 'log_params' ] )
+			->from( 'logging' )
+			->leftJoin( 'log_search', null, 'log_id=ls_log_id' )
+			->where( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
-				'ls_field IS NULL'
-			],
-			__METHOD__,
-			[],
-			[ 'log_search' => [ 'LEFT JOIN', 'log_id=ls_log_id' ] ]
-		);
+				'ls_field' => null,
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 
 		$insert = [];
 
