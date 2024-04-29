@@ -3,6 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
+use MediaWiki\Message\Message;
+use MediaWiki\User\User;
 
 /**
  * Handles the following log types:
@@ -15,4 +17,12 @@ class ForceCreateLocalUserLogFormatter extends LogFormatter {
 		return 'logentry-newusers-forcecreatelocal';
 	}
 
+	/** @inheritDoc */
+	protected function getMessageParameters() {
+		$params = parent::getMessageParameters();
+		$target = User::newFromName( $this->entry->getTarget()->getText(), false );
+		$params[2] = Message::rawParam( $this->makeUserLink( $target ) );
+		$params[3] = $target->getName();
+		return $params;
+	}
 }
