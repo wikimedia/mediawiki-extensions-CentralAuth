@@ -585,6 +585,9 @@
 		"permissions": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PermissionsHookHandler"
 		},
+		"loginredirect": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler"
+		},
 		"securepoll": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler",
 			"services": [
@@ -661,6 +664,7 @@
 		"ApiCheckCanExecute": "sso",
 		"ApiQueryTokensRegisterTypes": "default",
 		"APIGetAllowedParams": "api",
+		"AuthPreserveQueryParams": "loginredirect",
 		"BeforePageDisplay": "pagedisplay",
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
@@ -677,6 +681,7 @@
 		"MakeGlobalVariablesScript": "default",
 		"OtherBlockLogLink": "block",
 		"PasswordPoliciesForUser": "passwordpolicies",
+		"PostLoginRedirect": "loginredirect",
 		"RenameUserComplete": "rename",
 		"RenameUserPreRename": "rename",
 		"RenameUserWarning": "rename",
@@ -883,6 +888,10 @@
 		"CentralAuthFallbackAppealTitle": {
 			"description": "Fallback title to use on the fallback URL.",
 			"value": "Wikipedia:Appealing a block"
+		},
+		"CentralAuthEnableSul3": {
+			"description": "Tells MediaWiki if we are in SUL3 mode or not. This is used for testing the SUL2 to SUL3 migration.",
+			"value": false
 		}
 	},
 	"AuthManagerAutoConfig": {
@@ -899,6 +908,10 @@
 					"CentralAuth.CentralAuthUtilityService",
 					"CentralAuth.GlobalRenameRequestStore"
 				]
+			},
+			"CentralAuthRedirectingPrimaryAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthRedirectingPrimaryAuthenticationProvider",
+				"sort": 0
 			}
 		},
 		"secondaryauth": {

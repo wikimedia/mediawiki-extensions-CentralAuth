@@ -48,6 +48,8 @@ use Wikimedia\Rdbms\ReadOnlyMode;
 class CentralAuthPrimaryAuthenticationProvider
 	extends AbstractPasswordPrimaryAuthenticationProvider
 {
+	use CentralAuthenticationProviderTrait;
+
 	/** @var string The internal ID of this provider. */
 	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
@@ -126,6 +128,12 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
+		if ( $this->isSul3Enabled( $this->config, $this->manager->getRequest() ) &&
+			!$this->isSharedDomain()
+		) {
+			return [];
+		}
+
 		$ret = parent::getAuthenticationRequests( $action, $options );
 
 		if ( $this->antiSpoofAccounts && $action === AuthManager::ACTION_CREATE ) {
@@ -312,13 +320,11 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
-		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
-		if ( $username === false ) {
+		if ( !$this->isSharedDomain() ) {
 			return false;
 		}
 
-		$centralUser = CentralAuthUser::getInstanceByName( $username );
-		return $centralUser && $centralUser->exists();
+		return $this->testUserExistsInternal( $username, $this->userNameUtils );
 	}
 
 	/** @inheritDoc */
