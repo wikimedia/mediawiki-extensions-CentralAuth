@@ -21,6 +21,7 @@
 			"Raimond Spekking",
 			"Revolus",
 			"ThePiscin",
+			"TomatoCake",
 			"Umherirrender",
 			"Vogone",
 			"Wnme"
@@ -158,7 +159,7 @@
 	"centralauth-createlocal-username": "Name des globalen Benutzerkontos",
 	"centralauth-days-ago": "Vor $1 {{PLURAL:$1|Tag|Tagen}}",
 	"centralauth-delete-empty-account": "Leeres Benutzerkonto",
-	"centralauth-desc": "Konto über Wikis der {{int:Centralauth-groupname}} [[Special:MergeAccount|zusammenführen]]",
+	"centralauth-desc": "Konto über Wikis {{int:Centralauth-groupname}} [[Special:MergeAccount|zusammenführen]]",
 	"centralauth-disabled-dryrun": "Die Benutzerkontozusammenführung befindet sich gegenwärtig in einem Demonstrations-/Fehlersuchmodus. Zusammenführungsaktionen sind daher deaktiviert.",
 	"centralauth-editgroup-delete-removemembers": "Vor dem Löschen einer Gruppe müssen alle Mitglieder aus der Gruppe entfernt werden.",
 	"centralauth-editgroup-display": "Lokalisierter Name der Gruppe:",
