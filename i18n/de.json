@@ -22,7 +22,8 @@
 			"ThePiscin",
 			"Umherirrender",
 			"Vogone",
-			"Wnme"
+			"Wnme",
+			"Justman10000"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globale Bearbeitungsanzahl des Benutzers",
@@ -162,7 +163,7 @@
 	"centralauth-createlocal-username": "Name des globalen Benutzerkontos",
 	"centralauth-days-ago": "Vor $1 {{PLURAL:$1|Tag|Tagen}}",
 	"centralauth-delete-empty-account": "Leeres Benutzerkonto",
-	"centralauth-desc": "Erweitert das Wiki um eine [[Special:MergeAccount|Spezialseite]] zum Zusammenführen von Benutzerkonten in Wikis {{int:Centralauth-groupname}}",
+	"centralauth-desc": "Konto über Wikis der {{int:Centralauth-groupname}} [[Special:MergeAccount|zusammenführen]]",
 	"centralauth-disabled-dryrun": "Die Benutzerkontozusammenführung befindet sich gegenwärtig in einem Demonstrations-/Fehlersuchmodus. Zusammenführungsaktionen sind daher deaktiviert.",
 	"centralauth-editgroup-delete-removemembers": "Vor dem Löschen einer Gruppe müssen alle Mitglieder aus der Gruppe entfernt werden.",
 	"centralauth-editgroup-display": "Lokalisierter Name der Gruppe:",
@@ -249,7 +250,7 @@
 	"centralauth-globalgroupperms-nogroups": "Es wurden keine globalen Gruppen definiert.",
 	"centralauth-globalgroupperms-rights": "Rechte",
 	"centralauth-globalgroupperms-wikiset-none": "Diese Gruppe ist auf allen Wikis aktiv.",
-	"centralauth-groupname": "diese Wiki-Farm",
+	"centralauth-groupname": "dieser Wiki-Farm",
 	"centralauth-hidden-blockreason": "global versteckt durch $1 am $2. Grund: $3",
 	"centralauth-hours-ago": "Vor $1 {{PLURAL:$1|Stunde|Stunden}}",
 	"centralauth-incomplete": "Zusammenführung unvollständig!",
