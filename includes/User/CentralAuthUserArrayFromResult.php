@@ -50,20 +50,17 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		$res->rewind();
 
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
-		$caRes = $dbr->select(
-			[ 'localuser', 'globaluser', 'renameuser_status' ],
-			'*',
-			[
+		$caRes = $dbr->newSelectQueryBuilder()
+			->select( '*' )
+			->from( 'localuser' )
+			->join( 'globaluser', null, 'lu_name=gu_name' )
+			->leftJoin( 'renameuser_status', null, 'ru_oldname=gu_name OR ru_newname=gu_name' )
+			->where( [
 				'gu_name' => $names,
-				'lu_name=gu_name',
 				'lu_wiki' => WikiMap::getCurrentWikiId()
-			],
-			__METHOD__,
-			[],
-			[
-				'renameuser_status' => [ 'LEFT OUTER JOIN', 'ru_oldname=gu_name OR ru_newname=gu_name' ]
-			]
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		$this->globalData = [];
 		foreach ( $caRes as $row ) {
 			$this->globalData[$row->gu_name] = $row;

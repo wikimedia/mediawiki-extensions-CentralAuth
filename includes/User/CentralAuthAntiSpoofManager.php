@@ -137,19 +137,18 @@ class CentralAuthAntiSpoofManager {
 			$this->options->get( 'CentralAuthOldNameAntiSpoofWiki' )
 		);
 
-		$newNameOfUser = $dbrLogWiki->selectField(
-			[ 'logging', 'log_search' ],
-			'log_title',
-			[
+		$newNameOfUser = $dbrLogWiki->newSelectQueryBuilder()
+			->select( 'log_title' )
+			->from( 'logging' )
+			->join( 'log_search', null, 'ls_log_id=log_id' )
+			->where( [
 				'ls_field' => 'oldname',
 				'ls_value' => $name,
 				'log_type' => 'gblrename',
 				'log_namespace' => NS_SPECIAL
-			],
-			__METHOD__,
-			[],
-			[ 'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ] ]
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
 		$slashPos = strpos( $newNameOfUser ?: '', '/' );
 		if ( $newNameOfUser && $slashPos ) {
 			// We have to remove the Special:CentralAuth prefix.

@@ -551,14 +551,15 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$queryInfo = self::selectQueryInfo();
 
-		$row = $db->selectRow(
-			$queryInfo['tables'],
-			$queryInfo['fields'],
-			[ 'gu_name' => $this->mName ] + $queryInfo['where'],
-			__METHOD__,
-			$queryInfo['options'],
-			$queryInfo['joinConds']
-		);
+		$row = $db->newSelectQueryBuilder()
+			->tables( $queryInfo['tables'] )
+			->fields( $queryInfo['fields'] )
+			->where( [ 'gu_name' => $this->mName ] )
+			->andWhere( $queryInfo['where'] )
+			->caller( __METHOD__ )
+			->options( $queryInfo['options'] )
+			->joinConds( $queryInfo['joinConds'] )
+			->fetchRow();
 
 		$renameUser = CentralAuthServices::getGlobalRenameFactory()
 			->newGlobalRenameUserStatus( $this->mName )
@@ -2375,19 +2376,13 @@ class CentralAuthUser implements IDBAccessObject {
 			? $databaseManager->getCentralPrimaryDB()
 			: $this->getSafeReadDB();
 
-		$result = $db->selectFieldValues(
-			[ 'localnames', 'localuser' ],
-			'ln_wiki',
-			[ 'ln_name' => $this->mName, 'lu_name IS NULL' ],
-			__METHOD__,
-			[],
-			[
-				'localuser' => [
-					'LEFT OUTER JOIN',
-					[ 'ln_wiki=lu_wiki', 'ln_name=lu_name' ]
-				]
-			]
-		);
+		$result = $db->newSelectQueryBuilder()
+			->select( 'ln_wiki' )
+			->from( 'localnames' )
+			->leftJoin( 'localuser', null, [ 'ln_wiki=lu_wiki', 'ln_name=lu_name' ] )
+			->where( [ 'ln_name' => $this->mName, 'lu_name' => null ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		$wikis = [];
 		foreach ( $result as $wiki ) {

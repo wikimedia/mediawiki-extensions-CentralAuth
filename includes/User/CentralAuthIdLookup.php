@@ -57,14 +57,15 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 
-		$res = $db->select(
-			$queryInfo['tables'],
-			$queryInfo['fields'],
-			[ 'gu_id' => array_map( 'intval', array_keys( $idToName ) ) ] + $queryInfo['where'],
-			__METHOD__,
-			$queryInfo['options'],
-			$queryInfo['joinConds']
-		);
+		$res = $db->newSelectQueryBuilder()
+			->tables( $queryInfo['tables'] )
+			->fields( $queryInfo['fields'] )
+			->where( [ 'gu_id' => array_map( 'intval', array_keys( $idToName ) ) ] )
+			->andWhere( $queryInfo['where'] )
+			->caller( __METHOD__ )
+			->options( $queryInfo['options'] )
+			->joinConds( $queryInfo['joinConds'] )
+			->fetchResultSet();
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			if ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE
@@ -95,14 +96,15 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$queryInfo = CentralAuthUser::selectQueryInfo();
 
-		$res = $db->select(
-			$queryInfo['tables'],
-			$queryInfo['fields'],
-			[ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] + $queryInfo['where'],
-			__METHOD__,
-			$queryInfo['options'],
-			$queryInfo['joinConds']
-		);
+		$res = $db->newSelectQueryBuilder()
+			->tables( $queryInfo['tables'] )
+			->fields( $queryInfo['fields'] )
+			->where( [ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] )
+			->andWhere( $queryInfo['where'] )
+			->caller( __METHOD__ )
+			->options( $queryInfo['options'] )
+			->joinConds( $queryInfo['joinConds'] )
+			->fetchResultSet();
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			if ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE

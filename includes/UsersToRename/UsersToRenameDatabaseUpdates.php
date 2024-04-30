@@ -125,12 +125,12 @@ class UsersToRenameDatabaseUpdates {
 	 */
 	public function findUsers( $wiki, $status, $limit ) {
 		// @todo this shouldn't return prefixed field names
-		return $this->db->select(
-			'users_to_rename',
-			[ 'utr_name', 'utr_wiki' ],
-			[ 'utr_status' => $status, 'utr_wiki' => $wiki ],
-			__METHOD__,
-			[ 'LIMIT' => $limit ]
-		);
+		return $this->db->newSelectQueryBuilder()
+			->select( [ 'utr_name', 'utr_wiki' ] )
+			->from( 'users_to_rename' )
+			->where( [ 'utr_status' => $status, 'utr_wiki' => $wiki ] )
+			->limit( $limit )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 	}
 }
