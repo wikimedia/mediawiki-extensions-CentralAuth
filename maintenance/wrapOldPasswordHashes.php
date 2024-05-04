@@ -19,11 +19,15 @@
  * @ingroup Maintenance
  */
 
-require_once __DIR__ . '/Maintenance.php';
-
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+
+$IP = getenv( 'MW_INSTALL_PATH' );
+if ( $IP === false ) {
+	$IP = __DIR__ . '/../../..';
+}
+require_once "$IP/maintenance/Maintenance.php";
 
 /**
  * CentralAuth version of WrapOldPasswords
