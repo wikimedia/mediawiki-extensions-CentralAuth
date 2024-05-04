@@ -129,6 +129,7 @@ class WrapOldPasswordHashes extends Maintenance {
 
 				$minUserId = $row->gu_id;
 			}
+			$this->output( "$count...\n" );
 
 			if ( $update ) {
 				$this->commitTransaction( $dbw, __METHOD__ );
