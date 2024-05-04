@@ -71,7 +71,6 @@ class EmailableUser extends User {
 	 * @return Status
 	 */
 	public function sendConfirmAndMigrateMail() {
-		global $wgLang;
 		// 14 days
 		$tokenLife = 14 * 24 * 60 * 60;
 
@@ -102,12 +101,16 @@ class EmailableUser extends User {
 			wfMessage( "centralauth-finishglobaliseemail_body",
 				$this->getRequest()->getIP(),
 				$this->getName(),
-				$mergeAccountUrl,
-				$wgLang->timeanddate( $expiration, false ),
-				$invalidateURL,
-				$wgLang->date( $expiration, false ),
-				$wgLang->time( $expiration, false )
-			)->text()
+				$mergeAccountUrl
+				)->dateTimeParams(
+					$expiration
+				)->params(
+					$invalidateURL
+				)->dateParams(
+					$expiration
+				)->timeParams(
+					$expiration
+				)->text()
 		);
 	}
 }
