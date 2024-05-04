@@ -139,7 +139,7 @@ class WrapOldPasswordHashes extends Maintenance {
 				}
 			}
 
-			$this->output( "$minUserId...\n" );
+			$this->output( "Last id processed: $minUserId; Actually updated: $count...\n" );
 			$delta = microtime( true ) - $start;
 			$this->output( sprintf(
 				"%4d passwords wrapped in %6.2fms (%6.2fms each)\n",
