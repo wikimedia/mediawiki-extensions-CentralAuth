@@ -74,6 +74,7 @@ class WrapOldPasswordHashes extends Maintenance {
 		// Get a list of password types that are applicable
 		$dbw = $databaseManager->getCentralPrimaryDB();
 		$typeCond = $dbw->expr( 'gu_password', IExpression::LIKE, new LikeValue( ":$firstType:", $dbw->anyString() ) );
+		$batchSize = $this->getBatchSize();
 
 		$count = 0;
 		$minUserId = 0;
@@ -82,6 +83,7 @@ class WrapOldPasswordHashes extends Maintenance {
 				$this->beginTransaction( $dbw, __METHOD__ );
 			}
 
+			$start = microtime( true );
 			$res = $dbw->select(
 				'globaluser',
 				[ 'gu_id', 'gu_name', 'gu_password' ],
@@ -92,7 +94,7 @@ class WrapOldPasswordHashes extends Maintenance {
 				__METHOD__,
 				[
 					'ORDER BY' => 'gu_id',
-					'LIMIT' => $this->getBatchSize(),
+					'LIMIT' => $batchSize,
 					'LOCK IN SHARE MODE',
 				]
 			);
@@ -129,7 +131,6 @@ class WrapOldPasswordHashes extends Maintenance {
 
 				$minUserId = $row->gu_id;
 			}
-			$this->output( "$count...\n" );
 
 			if ( $update ) {
 				$this->commitTransaction( $dbw, __METHOD__ );
@@ -140,6 +141,15 @@ class WrapOldPasswordHashes extends Maintenance {
 					$user->invalidateCache();
 				}
 			}
+
+			$this->output( "$minUserId...\n" );
+			$delta = microtime( true ) - $start;
+			$this->output( sprintf(
+				"%4d passwords wrapped in %6.2fms (%6.2fms each)\n",
+				$batchSize,
+				$delta * 1000.0,
+				( $delta / $batchSize ) * 1000.0
+			) );
 		} while ( $res->numRows() );
 
 		if ( $update ) {
