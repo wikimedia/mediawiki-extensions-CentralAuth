@@ -67,10 +67,10 @@
 			"飞舞回堂前"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑次数",
-	"abusefilter-edit-builder-vars-global-user-groups": "该用户的全域用户组",
-	"abusefilter-edit-builder-vars-global-account-editcount": "用户的全域编辑数（账号创建后）",
-	"abusefilter-edit-builder-vars-global-account-groups": "用户所属的全域用户组（账号创建后）",
+	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑数（$1）",
+	"abusefilter-edit-builder-vars-global-user-groups": "用户所属的全域用户组（$1）",
+	"abusefilter-edit-builder-vars-global-account-editcount": "用户账号创建后的全域编辑数（$1）",
+	"abusefilter-edit-builder-vars-global-account-groups": "用户账号创建后所属的全域用户组（$1）",
 	"action-centralauth-createlocal": "强制创建本地账号",
 	"action-centralauth-lock": "锁定或解锁全域账号",
 	"action-centralauth-merge": "合并其账号",

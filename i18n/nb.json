@@ -19,10 +19,10 @@
 			"Stigmj"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Antall redigeringer av brukeren globalt",
-	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper som brukeren tilhører",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Global redigeringsteller for brukeren (ved kontoopprettelsen)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Globale grupper brukeren er i (ved kontoopprettelsen)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Antall redigeringer av brukeren globalt ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Globale grupper som brukeren tilhører ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Global redigeringsteller for brukeren ved kontoopprettelsen ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Globale grupper brukeren er i ved kontoopprettelsen ($1)",
 	"action-centralauth-createlocal": "påtvinge opprettelse av lokal konto",
 	"action-centralauth-lock": "låse eller frigjøre globale kontoer",
 	"action-centralauth-merge": "slå sammen kontoen din",

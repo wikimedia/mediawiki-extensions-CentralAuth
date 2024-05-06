@@ -20,7 +20,7 @@
 			"Сербијана"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Глобалне групе којима корисник припада",
+	"abusefilter-edit-builder-vars-global-user-groups": "Глобалне групе којима корисник припада ($1)",
 	"action-centralauth-lock": "закључавате или откључавате глобалне налоге",
 	"action-centralauth-rename": "преименујете глобалне налоге",
 	"action-centralauth-unmerge": "раздвајате глобале налоге",
