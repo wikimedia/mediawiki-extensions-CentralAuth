@@ -34,7 +34,7 @@
 			"Wim b"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
+	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente ($1)",
 	"action-centralauth-createlocal": "forzare la creazione di un'utenza locale",
 	"action-centralauth-lock": "bloccare o sbloccare le utenze globali",
 	"action-centralauth-suppress": "sopprimere o nascondere utenze globali",

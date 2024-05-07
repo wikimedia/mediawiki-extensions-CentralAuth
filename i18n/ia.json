@@ -8,10 +8,10 @@
 			"McDutchie"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Numero global de modificationes del usator",
-	"abusefilter-edit-builder-vars-global-user-groups": "Gruppos global al quales le usator pertine",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Numero global de modificationes del usator (al momento del creation del conto)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Gruppos global del quales le usator es membro (al momento del creation del conto)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Numero global de modificationes del usator ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Gruppos global al quales le usator pertine ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Numero global de modificationes del usator al momento del creation del conto ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Gruppos global al quales le usator pertine al momento del creation del conto ($1)",
 	"action-centralauth-createlocal": "fortiar le creation de un conto local",
 	"action-centralauth-lock": "serrar o disserrar contos global",
 	"action-centralauth-merge": "fusionar su conto",
