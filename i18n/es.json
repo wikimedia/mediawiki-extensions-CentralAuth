@@ -67,7 +67,7 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Recuento de ediciones globales del usuario ($1)",
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupos globales en los que se encuentra el usuario ($1)",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Recuento global de ediciones del usuario (al crear la cuenta)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Recuento de ediciones globales del usuario al crear la cuenta ($1)",
 	"abusefilter-edit-builder-vars-global-account-groups": "Grupos globales en los que se encuentra el usuario al crear la cuenta ($1)",
 	"action-centralauth-createlocal": "crear manualmente una cuenta local",
 	"action-centralauth-lock": "bloquear o desbloquear cuentas globales",
