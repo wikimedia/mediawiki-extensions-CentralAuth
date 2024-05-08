@@ -41,7 +41,7 @@ class WrapOldPasswordHashes extends Maintenance {
 			'Password type to wrap passwords in (must inherit LayeredParameterizedPassword)', true, true );
 		$this->addOption( 'verbose', 'Enables verbose output', false, false, 'v' );
 		$this->addOption( 'update', 'Actually wrap passwords', false, false, 'u' );
-		$this->setBatchSize( 100 );
+		$this->setBatchSize( 3 );
 		$this->requireExtension( 'CentralAuth' );
 	}
 
