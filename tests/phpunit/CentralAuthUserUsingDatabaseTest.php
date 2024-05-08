@@ -137,16 +137,15 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 			'2003' => 'StoreMigrationDataUser 3',
 		];
 		CentralAuthUser::storeMigrationData( 'smdwiki', $caUsers );
-		$this->assertSelect(
-			'localnames',
-			'ln_name',
-			[ 'ln_wiki' => 'smdwiki' ],
-			[
+		$this->newSelectQueryBuilder()
+			->select( 'ln_name' )
+			->from( 'localnames' )
+			->where( [ 'ln_wiki' => 'smdwiki' ] )
+			->assertResultSet( [
 				[ 'StoreMigrationDataUser 1' ],
 				[ 'StoreMigrationDataUser 2' ],
 				[ 'StoreMigrationDataUser 3' ],
-			]
-		);
+			] );
 	}
 
 	/**
@@ -164,14 +163,13 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_LISTS );
 
 		// Check the DB
-		$this->assertSelect(
-			'globaluser',
-			[ 'gu_name', 'gu_locked', 'gu_hidden_level' ],
-			[ 'gu_name' => 'GlobalUser' ],
-			[
+		$this->newSelectQueryBuilder()
+			->select( [ 'gu_name', 'gu_locked', 'gu_hidden_level' ] )
+			->from( 'globaluser' )
+			->where( [ 'gu_name' => 'GlobalUser' ] )
+			->assertResultSet( [
 				[ 'GlobalUser', '1', CentralAuthUser::HIDDEN_LEVEL_LISTS ]
-			]
-		);
+			] );
 
 		// Check that the instance was reloaded from the DB
 		$this->assertTrue( $caUser->exists() );
