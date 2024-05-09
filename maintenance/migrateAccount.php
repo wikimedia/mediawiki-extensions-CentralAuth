@@ -38,8 +38,11 @@ class MigrateAccount extends Maintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
-		$this->addDescription( 'Migrates the specified usernames to a global account if email ' .
-			'matches and there are no conflicts' );
+		$this->addDescription( <<<'TEXT'
+			Migrates the specified usernames to a global account if email matches
+			and there are no conflicts. Assumes the localuser and globaluser tables
+			are up to date (e.g. migratePass0 has been run).
+			TEXT );
 		$this->start = microtime( true );
 		$this->partial = 0;
 		$this->migrated = 0;
