@@ -18,8 +18,8 @@
 			"Чаховіч Уладзіслаў"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Глабальная колькасць правак удзельніка",
-	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Глабальная колькасць правак удзельніка ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Глабальныя групы, у якія ўваходзіць удзельнік ($1)",
 	"action-centralauth-createlocal": "прымусова стварыць лакальны ўліковы запіс",
 	"action-centralauth-lock": "блакіраваць ці разблакіроўваць глабальныя ўліковыя запісы",
 	"action-centralauth-merge": "аб’яднаць гэты ўліковы запіс",

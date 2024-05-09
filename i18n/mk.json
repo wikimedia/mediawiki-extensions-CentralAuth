@@ -9,10 +9,10 @@
 			"Vlad5250"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Глобален број на уредувања на корисникот",
-	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи во кои членува корисникот",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Глобален број на уредувања на овој корисник (при создавање на сметката)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Глобални групи во кои членува овој корисник (при создавање на сметката)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Глобален број на уредувања на корисникот ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи во кои членува корисникот ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Глобален број на уредувања на овој корисник при создавање на сметката ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Глобални групи во кои членува овој корисник при создавање на сметката ($1)",
 	"action-centralauth-createlocal": "принудно создавање на месна сметка",
 	"action-centralauth-lock": "заклучување или отклучување на глобални сметки",
 	"action-centralauth-merge": "спојување на сметката",
