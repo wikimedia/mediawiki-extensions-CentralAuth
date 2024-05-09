@@ -91,6 +91,7 @@
 	"centralauth-admin-info-unattached": "Aantal niet-verbonden accounts:",
 	"centralauth-admin-info-username": "Gebruikersnaam:",
 	"centralauth-admin-info-username-rename": "hernoemen",
+	"centralauth-admin-info-expired": "Tijdelijk account verlopen:",
 	"centralauth-admin-intro": "Deze interface kan gebruikt worden voor het beheer van globale gebruikers.",
 	"centralauth-admin-list-attached-on": "Gekoppeld op",
 	"centralauth-admin-list-blocked": "Geblokkeerd",
@@ -509,5 +510,6 @@
 	"right-globalgrouppermissions": "Globale groepen beheren",
 	"sessionprovider-centralauthsessionprovider": "centrale op cookies gebaseerde sessies",
 	"sessionprovider-centralauthtokensessionprovider": "op CentralAuthToken gebaseerde sessies",
-	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat."
+	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat.",
+	"centralauth-blocked-ip-reputation": "Het IP-adres dat u momenteel gebruikt, is geblokkeerd omdat wordt aangenomen dat het onlangs voor onrechtmatige doeleinden is gebruikt."
 }
