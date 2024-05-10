@@ -78,7 +78,7 @@ class WrapOldPasswordHashes extends Maintenance {
 
 		$count = 0;
 		$minUserId = 0;
-		do {
+		while ( true ) {
 			if ( $update ) {
 				$this->beginTransaction( $dbw, __METHOD__ );
 			}
@@ -95,6 +95,13 @@ class WrapOldPasswordHashes extends Maintenance {
 				->lockInShareMode()
 				->caller( __METHOD__ )
 				->fetchResultSet();
+
+			if ( $res->numRows() === 0 ) {
+				if ( $update ) {
+					$this->commitTransaction( $dbw, __METHOD__ );
+				}
+				break;
+			}
 
 			/** @var CentralAuthUser[] $updateUsers */
 			$updateUsers = [];
@@ -131,7 +138,6 @@ class WrapOldPasswordHashes extends Maintenance {
 
 			if ( $update ) {
 				$this->commitTransaction( $dbw, __METHOD__ );
-				$databaseManager->waitForReplication();
 
 				// Clear memcached so old passwords are wiped out
 				foreach ( $updateUsers as $user ) {
@@ -143,11 +149,11 @@ class WrapOldPasswordHashes extends Maintenance {
 			$delta = microtime( true ) - $start;
 			$this->output( sprintf(
 				"%4d passwords wrapped in %6.2fms (%6.2fms each)\n",
-				$batchSize,
+				$res->numRows(),
 				$delta * 1000.0,
-				( $delta / $batchSize ) * 1000.0
+				( $delta / $res->numRows() ) * 1000.0
 			) );
-		} while ( $res->numRows() );
+		}
 
 		if ( $update ) {
 			$this->output( "$count users rows updated.\n" );
