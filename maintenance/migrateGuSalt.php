@@ -56,6 +56,7 @@ class MigrateGuSalt extends Maintenance {
 		$minUserId = 0;
 		while ( true ) {
 			$start = microtime( true );
+			$this->beginTransaction( $dbw, __METHOD__ );
 			$res = $dbw->newSelectQueryBuilder()
 				->select( [ 'gu_id', 'gu_password', 'gu_salt' ] )
 				->from( 'globaluser' )
@@ -68,6 +69,7 @@ class MigrateGuSalt extends Maintenance {
 				->fetchResultSet();
 
 			if ( $res->numRows() === 0 ) {
+				$this->commitTransaction( $dbw, __METHOD__ );
 				break;
 			}
 
@@ -85,7 +87,7 @@ class MigrateGuSalt extends Maintenance {
 					->execute();
 			}
 
-			$databaseManager->waitForReplication();
+			$this->commitTransaction( $dbw, __METHOD__ );
 
 			$this->output( "Last id processed: $minUserId; Actually updated: $count...\n" );
 			$delta = microtime( true ) - $start;
