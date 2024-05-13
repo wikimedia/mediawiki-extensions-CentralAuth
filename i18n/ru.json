@@ -54,7 +54,7 @@
 			"Ядерный Трамвай"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника",
+	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника ($1)",
 	"action-centralauth-createlocal": "принудительное создание локальной учётной записи",
 	"action-centralauth-lock": "отключение и включение глобальных учётных записей",
 	"action-centralauth-merge": "Объединение глобальных учётных записей",

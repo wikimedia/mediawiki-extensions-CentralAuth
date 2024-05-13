@@ -11,10 +11,10 @@
 			"Yerpo"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število uporabnikovih urejanj",
-	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Globalno število urejanj uporabnika (ob ustvaritvi računa)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Globalne skupine, v katerih je uporabnik (ob ustvaritvi računa)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno število uporabnikovih urejanj ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Globalne skupine, v katere je uvrščen uporabnik ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Globalno število urejanj uporabnika ob ustvaritvi računa ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Globalne skupine, v katerih je uporabnik ob ustvaritvi računa ($1)",
 	"action-centralauth-createlocal": "prisilno ustvarjanje lokalnih računov",
 	"action-centralauth-lock": "zakleni ali odkleni globalni račun",
 	"action-centralauth-merge": "spoji računa",
@@ -62,6 +62,7 @@
 	"centralauth-admin-info-unattached": "Število nepriključenih lokalnih računov:",
 	"centralauth-admin-info-username": "Uporabniško ime:",
 	"centralauth-admin-info-username-rename": "preimenuj",
+	"centralauth-admin-info-expired": "Začasni račun je potekel:",
 	"centralauth-admin-intro": "Ta vmesnik se lahko uporablja za upravljanje globalnih računov.",
 	"centralauth-admin-list-attached-on": "Priključen",
 	"centralauth-admin-list-blocked": "Blokiran",

@@ -40,10 +40,10 @@
 			"Whaledad"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Globaal aantal bewerkingen van de gebruiker",
-	"abusefilter-edit-builder-vars-global-user-groups": "Globale groepen waar de gebruiker lid van is",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Globaal aantal bewerkingen van de gebruiker (bij het aanmaken van het account)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Globale groepen waarin de gebruiker zich bevindt (bij het aanmaken van het account)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globaal aantal bewerkingen van de gebruiker ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Globale groepen waar de gebruiker lid van is ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Globaal aantal bewerkingen van de gebruiker bij het aanmaken van het account ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Globale groepen waarin de gebruiker zich bevindt bij het aanmaken van het account ($1)",
 	"action-centralauth-createlocal": "geforceerd een lokaal account aan te maken",
 	"action-centralauth-lock": "globale gebruikers te ver- of ontgrendelen",
 	"action-centralauth-merge": "accounts samen te voegen",
