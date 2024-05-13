@@ -16,7 +16,8 @@
 			"Patriccck",
 			"Patrik L.",
 			"Polda18",
-			"Robins7"
+			"Robins7",
+			"Pavreh"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globální počet editací uživatele",
@@ -264,7 +265,7 @@
 	"centralauth-log-status-hidden": "skrytý",
 	"centralauth-log-status-locked": "zamčený",
 	"centralauth-log-status-none": "(nic)",
-	"centralauth-log-status-oversighted": "skryt",
+	"centralauth-log-status-oversighted": "utajený",
 	"centralauth-login-error-locked": "Nemůžete se přihlásit, protože {{GENDER:$1|váš}} účet byl globálně uzamčen.",
 	"centralauth-login-no-others": "{{GENDER:|Byl|Byla|Byl}} jste automaticky {{GENDER:|přihlášen|přihlášena|přihlášen}} na ostatní projekty {{grammar:2sg|{{int:Centralauth-groupname}}}}.",
 	"centralauth-login-progress": "Přihlašujeme vás na {{PLURAL:$2|wiki}} {{grammar:2sg|{{int:Centralauth-groupname}}}}:",
@@ -470,6 +471,7 @@
 	"logentry-gblrename-merge": "$1 globálně {{GENDER:$2|sloučil|sloučila}} uživatele $4 do {{GENDER:$5|uživatele|uživatelky}} $5",
 	"logentry-gblrename-promote": "$1 globálně {{GENDER:$2|přejmenoval|přejmenovala}} uživatelský účet $4 na $5",
 	"logentry-gblrename-rename": "$1 globálně {{GENDER:$2|přejmenoval|přejmenovala}} uživatelský účet $4 na $5",
+	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|změnil|změnila}} stav globálního účtu „$3“: nastaveno $4; zrušeno $5",
 	"mergeaccount": "Stav sjednocení přihlašovacích účtů",
 	"multilock": "Hromadné zamčení globálních účtů",
 	"right-centralauth-lock": "Zamykání a odemykání globálních účtů",
