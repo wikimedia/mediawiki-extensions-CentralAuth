@@ -32,11 +32,6 @@ class CentralAuthTestUser {
 	private $passHash;
 
 	/**
-	 * @var string gu_salt
-	 */
-	private $salt;
-
-	/**
 	 * @var string gu_auth_token
 	 */
 	private $authToken;
@@ -109,7 +104,6 @@ class CentralAuthTestUser {
 		$attrs += [
 			'gu_id' => '1000',
 			'gu_password' => $passwordFactory->newFromPlaintext( $password )->toString(),
-			'gu_salt' => '',
 			'gu_auth_token' => '1234',
 			'gu_locked' => 0,
 			'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
@@ -121,7 +115,6 @@ class CentralAuthTestUser {
 
 		$this->guId = $attrs['gu_id'];
 		$this->passHash = $attrs['gu_password'];
-		$this->salt = $attrs['gu_salt'];
 		$this->authToken = $attrs['gu_auth_token'];
 		$this->locked = $attrs['gu_locked'];
 		$this->hiddenLevel = $attrs['gu_hidden_level'];
@@ -155,7 +148,6 @@ class CentralAuthTestUser {
 			'gu_name' => $this->username,
 			'gu_id' => $this->guId,
 			'gu_password' => $this->passHash,
-			'gu_salt' => $this->salt,
 			'gu_auth_token' => $this->authToken,
 			'gu_locked' => $this->locked,
 			'gu_hidden_level' => $this->hiddenLevel,
