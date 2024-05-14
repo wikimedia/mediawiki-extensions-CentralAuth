@@ -92,7 +92,7 @@ class MigrateGuSalt extends Maintenance {
 			$this->output( "Last id processed: $minUserId; Actually updated: $count...\n" );
 			$delta = microtime( true ) - $start;
 			$this->output( sprintf(
-				"%4d passwords wrapped in %6.2fms (%6.2fms each)\n",
+				"%4d password salts migrated in %6.2fms (%6.2fms each)\n",
 				$res->numRows(),
 				$delta * 1000.0,
 				( $delta / $res->numRows() ) * 1000.0
