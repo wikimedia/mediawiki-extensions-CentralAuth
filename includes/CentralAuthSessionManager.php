@@ -24,10 +24,10 @@ use BagOStuff;
 use CachedBagOStuff;
 use IBufferingStatsdDataFactory;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MWCryptRand;
-use ObjectCache;
 use Wikimedia\Stats\StatsFactory;
 
 class CentralAuthSessionManager {
@@ -102,7 +102,7 @@ class CentralAuthSessionManager {
 		if ( !$this->sessionStore ) {
 			$sessionCacheType = $this->options->get( 'CentralAuthSessionCacheType' )
 				?? $this->options->get( 'SessionCacheType' );
-			$cache = ObjectCache::getInstance( $sessionCacheType );
+			$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( $sessionCacheType );
 			$this->sessionStore = $cache instanceof CachedBagOStuff
 				? $cache : new CachedBagOStuff( $cache );
 		}
