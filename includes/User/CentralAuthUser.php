@@ -115,8 +115,6 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mPassword;
 	/** @var string */
 	private $mAuthToken;
-	/** @var string */
-	private $mSalt;
 	/** @var int|null */
 	private $mGlobalId;
 	/** @var bool */
@@ -141,7 +139,6 @@ class CentralAuthUser implements IDBAccessObject {
 	/** @var string[] */
 	private static $mCacheVars = [
 		'mGlobalId',
-		'mSalt',
 		'mPassword',
 		'mAuthToken',
 		'mLocked',
@@ -161,7 +158,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	private const VERSION = 12;
+	private const VERSION = 13;
 
 	public const HIDDEN_LEVEL_NONE = 0;
 	public const HIDDEN_LEVEL_LISTS = 1;
@@ -344,7 +341,7 @@ class CentralAuthUser implements IDBAccessObject {
 		return [
 			'tables' => [ 'globaluser', 'localuser' ],
 			'fields' => [
-				'gu_id', 'gu_name', 'lu_wiki', 'gu_salt', 'gu_password', 'gu_auth_token',
+				'gu_id', 'gu_name', 'lu_wiki', 'gu_password', 'gu_auth_token',
 				'gu_locked', 'gu_hidden_level', 'gu_registration', 'gu_email',
 				'gu_email_authenticated', 'gu_home_db', 'gu_cas_token'
 			],
@@ -582,7 +579,6 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
 			$this->mIsAttached = ( $row->lu_wiki !== null );
-			$this->mSalt = $row->gu_salt;
 			$this->mPassword = $row->gu_password;
 			$this->mAuthToken = $row->gu_auth_token;
 			$this->mLocked = $row->gu_locked;
@@ -751,7 +747,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getPasswordObject() {
 		$this->loadState();
-		return $this->getPasswordFromString( $this->mPassword, $this->mSalt );
+		return $this->getPasswordFromString( $this->mPassword, '' );
 	}
 
 	/**
@@ -916,7 +912,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function register( $password, $email ) {
 		$this->checkWriteMode();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		[ $salt, $hash ] = $this->saltedPassword( $password );
+		$hash = $this->saltedPassword( $password );
 		if ( !$this->mAuthToken ) {
 			$this->mAuthToken = MWCryptRand::generateHex( 32 );
 		}
@@ -927,7 +923,6 @@ class CentralAuthUser implements IDBAccessObject {
 			'gu_email' => $email,
 			'gu_email_authenticated' => null,
 
-			'gu_salt'     => $salt,
 			'gu_password' => $hash,
 
 			'gu_auth_token' => $this->mAuthToken,
@@ -1019,7 +1014,6 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$data = [
 			'gu_name' => $this->mName,
-			'gu_salt' => $salt,
 			'gu_password' => $hash,
 			// So it doesn't have to be done later
 			'gu_auth_token' => MWCryptRand::generateHex( 32 ),
@@ -2855,7 +2849,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Salt and hash a new plaintext password.
 	 * @param string|null $password plaintext
-	 * @return string[] Two-element array with salt and hash
+	 * @return string Password in the form :<TYPE>:<PARAM1>:<PARAM2>:...:<HASH>
 	 */
 	protected function saltedPassword( $password ) {
 		$config = RequestContext::getMain()->getConfig();
@@ -2864,10 +2858,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$config->get( MainConfigNames::PasswordDefault )
 		);
 
-		return [
-			'',
-			$passwordFactory->newFromPlaintext( $password )->toString()
-		];
+		return $passwordFactory->newFromPlaintext( $password )->toString();
 	}
 
 	/**
@@ -2882,19 +2873,15 @@ class CentralAuthUser implements IDBAccessObject {
 		// Make sure state is loaded before updating ->mPassword
 		$this->loadState();
 
-		[ $salt, $hash ] = $this->saltedPassword( $password );
+		$hash = $this->saltedPassword( $password );
 
 		$this->mPassword = $hash;
-		$this->mSalt = $salt;
 
 		if ( $this->getId() ) {
 			$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 			$dbw->newUpdateQueryBuilder()
 				->update( 'globaluser' )
-				->set( [
-					'gu_salt'     => $salt,
-					'gu_password' => $hash,
-				] )
+				->set( [ 'gu_password' => $hash ] )
 				->where( [ 'gu_id' => $this->getId(), ] )
 				->caller( __METHOD__ )
 				->execute();
@@ -2919,9 +2906,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getPassword() {
 		$this->loadState();
-		if ( substr( $this->mPassword, 0, 1 ) != ':' ) {
-			$this->mPassword = ':B:' . $this->mSalt . ':' . $this->mPassword;
-		}
 		return $this->mPassword;
 	}
 
@@ -2998,7 +2982,6 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$toSet = [
 			'gu_password' => $this->mPassword,
-			'gu_salt' => $this->mSalt,
 			'gu_auth_token' => $this->mAuthToken,
 			'gu_locked' => $this->mLocked,
 			'gu_hidden_level' => $this->getHiddenLevelInt(),
