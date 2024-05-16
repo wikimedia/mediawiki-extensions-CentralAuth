@@ -62,6 +62,7 @@
 	"centralauth-admin-info-unattached": "Število nepriključenih lokalnih računov:",
 	"centralauth-admin-info-username": "Uporabniško ime:",
 	"centralauth-admin-info-username-rename": "preimenuj",
+	"centralauth-admin-info-expired": "Začasni račun je potekel:",
 	"centralauth-admin-intro": "Ta vmesnik se lahko uporablja za upravljanje globalnih računov.",
 	"centralauth-admin-list-attached-on": "Priključen",
 	"centralauth-admin-list-blocked": "Blokiran",
