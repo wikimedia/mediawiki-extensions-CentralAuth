@@ -7,7 +7,6 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\WikiMap\WikiMap;
 use ReadOnlyError;
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\Rdbms\ReadOnlyMode;
@@ -21,7 +20,6 @@ use Wikimedia\Rdbms\ReadOnlyMode;
 class CentralAuthDatabaseManager {
 	/** @internal Only public for service wiring use */
 	public const CONSTRUCTOR_OPTIONS = [
-		'CentralAuthDatabase',
 		'CentralAuthReadOnly',
 	];
 
@@ -47,12 +45,12 @@ class CentralAuthDatabaseManager {
 	}
 
 	/**
-	 * Returns a database load balancer that can be used to access the shared CentralAuth database.
-	 * @return ILoadBalancer
+	 * Determine the database domain for this CentralAuth instance.
+	 *
+	 * @return false|string
 	 */
-	public function getLoadBalancer(): ILoadBalancer {
-		$database = $this->options->get( 'CentralAuthDatabase' );
-		return $this->lbFactory->getMainLB( $database );
+	private function resolveDatabaseDomain() {
+		return $this->lbFactory->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
 	}
 
 	/**
@@ -62,7 +60,6 @@ class CentralAuthDatabaseManager {
 	 */
 	public function assertNotReadOnly() {
 		if ( $this->readOnlyMode->isReadOnly() ) {
-			// ReadOnlyError gets its reason text from the global ReadOnlyMode
 			throw new ReadOnlyError;
 		}
 		$reason = $this->getCentralReadOnlyReason();
@@ -97,17 +94,15 @@ class CentralAuthDatabaseManager {
 			return $configReason;
 		}
 
-		$database = $this->options->get( 'CentralAuthDatabase' );
-		$lb = $this->getLoadBalancer();
-
-		return $lb->getReadOnlyReason( $database );
+		return $this->readOnlyMode->getReason( $this->resolveDatabaseDomain() );
 	}
 
 	/**
 	 * Wait for the CentralAuth DB replicas to catch up
+	 * @deprecated use LBFactory::waitForReplication or Maintenance::waitForReplication instead
 	 */
 	public function waitForReplication(): void {
-		$this->lbFactory->waitForReplication( [ 'domain' => $this->options->get( 'CentralAuthDatabase' ) ] );
+		$this->lbFactory->waitForReplication();
 	}
 
 	/**
@@ -115,46 +110,30 @@ class CentralAuthDatabaseManager {
 	 */
 	public function getCentralPrimaryDB(): IDatabase {
 		$this->assertNotReadOnly();
-		return $this->lbFactory->getPrimaryDatabase(
-			$this->options->get( 'CentralAuthDatabase' )
-		);
+		return $this->lbFactory->getPrimaryDatabase( 'virtual-centralauth' );
 	}
 
 	/**
 	 * @return IReadableDatabase a connection to a CentralAuth database replica
 	 */
 	public function getCentralReplicaDB(): IReadableDatabase {
-		return $this->lbFactory->getReplicaDatabase(
-			$this->options->get( 'CentralAuthDatabase' )
-		);
+		return $this->lbFactory->getReplicaDatabase( 'virtual-centralauth' );
 	}
 
 	/**
-	 * Gets a database connection to the CentralAuth database.
 	 *
 	 * @param int $index DB_PRIMARY or DB_REPLICA
 	 * @deprecated use {@link ::getCentralPrimaryDB}
 	 * 			   or {@link ::getCentralReplicaDB} instead
-	 *
 	 * @return IDatabase
-	 * @throws CentralAuthReadOnlyError
-	 * @throws InvalidArgumentException
 	 */
 	public function getCentralDB( int $index ): IDatabase {
 		if ( $index === DB_PRIMARY ) {
 			return $this->getCentralPrimaryDB();
+		} else {
+			// @phan-suppress-next-line PhanTypeMismatchReturnSuperType
+			return $this->getCentralReplicaDB();
 		}
-
-		if ( $index === DB_REPLICA ) {
-			return $this->getLoadBalancer()
-				->getConnection(
-					DB_REPLICA,
-					[],
-					$this->options->get( 'CentralAuthDatabase' )
-				);
-		}
-
-		throw new InvalidArgumentException( "Unknown index $index, expected DB_PRIMARY or DB_REPLICA" );
 	}
 
 	/**
@@ -188,6 +167,7 @@ class CentralAuthDatabaseManager {
 	 * @return bool
 	 */
 	public function centralLBHasRecentPrimaryChanges() {
-		return $this->getLoadBalancer()->hasOrMadeRecentPrimaryChanges();
+		return $this->lbFactory->getLoadBalancer( 'virtual-centralauth' )->hasOrMadeRecentPrimaryChanges();
 	}
+
 }

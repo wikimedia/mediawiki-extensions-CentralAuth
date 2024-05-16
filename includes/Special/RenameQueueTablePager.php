@@ -69,7 +69,7 @@ class RenameQueueTablePager extends TablePager {
 	) {
 		$this->setContext( $context );
 		$this->mPage = $page;
-		$this->mDb = $databaseManager->getCentralDB( DB_REPLICA );
+		$this->mDb = $databaseManager->getCentralReplicaDB();
 		$this->userNameUtils = $userNameUtils;
 
 		$limit = $this->getRequest()->getInt( 'limit', 25 );

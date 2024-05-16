@@ -4,7 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\Rdbms\ReadOnlyMode;
 
@@ -25,42 +25,12 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 				new ServiceOptions(
 					CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 					[
-						'CentralAuthDatabase' => 'centralauth',
 						'CentralAuthReadOnly' => false,
 					]
 				),
 				$this->createMock( LBFactory::class ),
 				$this->createMock( ReadOnlyMode::class )
 			)
-		);
-	}
-
-	/**
-	 * @covers ::getLoadBalancer
-	 */
-	public function testGetLoadBalancer() {
-		$loadBalancer = $this->createMock( ILoadBalancer::class );
-		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( 'getMainLB' )->with( 'centralauth' )->willReturn( $loadBalancer );
-
-		$roMode = $this->createMock( ReadOnlyMode::class );
-		$roMode->method( 'isReadOnly' )->willReturn( false );
-
-		$manager = new CentralAuthDatabaseManager(
-			new ServiceOptions(
-				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
-				[
-					'CentralAuthDatabase' => 'centralauth',
-					'CentralAuthReadOnly' => false,
-				]
-			),
-			$lbFactory,
-			$roMode
-		);
-
-		$this->assertEquals(
-			$loadBalancer,
-			$manager->getLoadBalancer()
 		);
 	}
 
@@ -87,7 +57,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthDatabase' => 'centralauth',
 					'CentralAuthReadOnly' => false,
 				]
 			),
@@ -107,20 +76,17 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 	public function testGetReadOnlyReasonDatabase() {
 		$roReason = 'replace this with the real reason before the maintenance window';
 
-		$loadBalancer = $this->createMock( ILoadBalancer::class );
-		$loadBalancer->method( 'getReadOnlyReason' )->willReturn( $roReason );
-
 		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( 'getMainLB' )->with( 'centralauth' )->willReturn( $loadBalancer );
 
 		$roMode = $this->createMock( ReadOnlyMode::class );
+
 		$roMode->method( 'isReadOnly' )->willReturn( false );
+		$roMode->method( 'getReason' )->willReturn( $roReason );
 
 		$manager = new CentralAuthDatabaseManager(
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthDatabase' => 'centralauth',
 					'CentralAuthReadOnly' => false,
 				]
 			),
@@ -138,20 +104,17 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 	 * @covers ::isReadOnly
 	 */
 	public function testGetReadOnlyReasonWriteable() {
-		$loadBalancer = $this->createMock( ILoadBalancer::class );
-		$loadBalancer->method( 'getReadOnlyReason' )->willReturn( false );
-
 		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( 'getMainLB' )->with( 'centralauth' )->willReturn( $loadBalancer );
 
 		$roMode = $this->createMock( ReadOnlyMode::class );
+
 		$roMode->method( 'isReadOnly' )->willReturn( false );
+		$roMode->method( 'getReason' )->willReturn( false );
 
 		$manager = new CentralAuthDatabaseManager(
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthDatabase' => 'centralauth',
 					'CentralAuthReadOnly' => false,
 				]
 			),
@@ -169,8 +132,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 	public function testWaitForReplication() {
 		$lbFactory = $this->createMock( LBFactory::class );
 		$lbFactory->expects( $this->once() )
-			->method( 'waitForReplication' )
-			->with( [ 'domain' => 'centralauth' ] );
+			->method( 'waitForReplication' );
 
 		$roMode = $this->createMock( ReadOnlyMode::class );
 		$roMode->method( 'isReadOnly' )->willReturn( false );
@@ -179,7 +141,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthDatabase' => 'centralauth',
 					'CentralAuthReadOnly' => false,
 				]
 			),
@@ -191,80 +152,13 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::getCentralDB
-	 * @dataProvider provideValidIndexes
-	 */
-	public function testGetCentralDBValidIndexes( int $index ) {
-		$loadBalancer = $this->createMock( ILoadBalancer::class );
-
-		$database = $this->createMock( IDatabase::class );
-		$loadBalancer->method( 'getConnection' )
-			->with( $index, [], 'centralauth' )
-			->willReturn( $database );
-
-		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( 'getMainLB' )->with( 'centralauth' )->willReturn( $loadBalancer );
-
-		$lbFactory->method( 'getPrimaryDatabase' )
-			->with( 'centralauth' )
-			->willReturn( $database );
-		$lbFactory->method( 'getReplicaDatabase' )
-			->with( 'centralauth' )
-			->willReturn( $database );
-
-		$roMode = $this->createMock( ReadOnlyMode::class );
-		$roMode->method( 'isReadOnly' )->willReturn( false );
-
-		$manager = new CentralAuthDatabaseManager(
-			new ServiceOptions(
-				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
-				[
-					'CentralAuthDatabase' => 'centralauth',
-					'CentralAuthReadOnly' => false,
-				]
-			),
-			$lbFactory,
-			$roMode
-		);
-
-		$this->assertEquals( $database, $manager->getCentralDB( $index ) );
-	}
-
-	public static function provideValidIndexes(): Generator {
-		yield 'DB_PRIMARY' => [ DB_PRIMARY ];
-		yield 'DB_REPLICA' => [ DB_REPLICA ];
-	}
-
-	/**
-	 * @covers ::getCentralDB
-	 */
-	public function testGetCentralDBInvalidIndex() {
-		$lbFactory = $this->createNoOpMock( LBFactory::class );
-
-		$roMode = $this->createMock( ReadOnlyMode::class );
-		$roMode->method( 'isReadOnly' )->willReturn( false );
-
-		$manager = new CentralAuthDatabaseManager(
-			new ServiceOptions(
-				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
-				[
-					'CentralAuthDatabase' => 'centralauth',
-					'CentralAuthReadOnly' => false,
-				]
-			),
-			$lbFactory,
-			$roMode
-		);
-
-		$this->expectException( InvalidArgumentException::class );
-		$manager->getCentralDB( 1337 );
-	}
-
-	/**
-	 * @covers ::getCentralDB
+	 * @covers ::getCentralPrimaryDB
 	 */
 	public function testGetCentralDBPrimaryReadOnly() {
+		$database = $this->createMock( IDatabase::class );
+
 		$lbFactory = $this->createNoOpMock( LBFactory::class );
+		$lbFactory->method( 'getPrimaryDatabase' )->with( 'virtual-centralauth' )->willReturn( $database );
 
 		$roMode = $this->createMock( ReadOnlyMode::class );
 		$roMode->method( 'isReadOnly' )->willReturn( false );
@@ -273,7 +167,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthDatabase' => 'centralauth',
 					'CentralAuthReadOnly' => true,
 				]
 			),
@@ -282,22 +175,17 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		);
 
 		$this->expectException( CentralAuthReadOnlyError::class );
-		$manager->getCentralDB( DB_PRIMARY );
+		$manager->getCentralPrimaryDB();
 	}
 
 	/**
-	 * @covers ::getCentralDB
+	 * @covers ::getCentralReplicaDB
 	 */
 	public function testGetCentralDBReplicaReadOnly() {
-		$loadBalancer = $this->createMock( ILoadBalancer::class );
-
-		$database = $this->createMock( IDatabase::class );
-		$loadBalancer->method( 'getConnection' )
-			->with( DB_REPLICA, [], 'centralauth' )
-			->willReturn( $database );
+		$database = $this->createMock( IReadableDatabase::class );
 
 		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( 'getMainLB' )->with( 'centralauth' )->willReturn( $loadBalancer );
+		$lbFactory->method( 'getReplicaDatabase' )->with( 'virtual-centralauth' )->willReturn( $database );
 
 		$roMode = $this->createMock( ReadOnlyMode::class );
 		$roMode->method( 'isReadOnly' )->willReturn( false );
@@ -306,7 +194,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthDatabase' => 'centralauth',
 					'CentralAuthReadOnly' => true,
 				]
 			),
@@ -314,6 +201,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			$roMode
 		);
 
-		$this->assertEquals( $database, $manager->getCentralDB( DB_REPLICA ) );
+		$this->assertEquals( $database, $manager->getCentralReplicaDB() );
 	}
 }

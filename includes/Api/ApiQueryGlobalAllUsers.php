@@ -11,8 +11,8 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
-use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -70,13 +70,13 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 * Get the Query database connection (read-only)
 	 *
 	 * @see ApiQueryBase::getDB
-	 * @return IDatabase
+	 * @return IReadableDatabase
 	 */
 	protected function getDB() {
 		static $db = null;
 
 		if ( $db === null ) {
-			$db = $this->databaseManager->getCentralDB( DB_REPLICA );
+			$db = $this->databaseManager->getCentralReplicaDB();
 		}
 		return $db;
 	}

@@ -64,7 +64,7 @@ use WANObjectCache;
 use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\Database;
-use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthUser implements IDBAccessObject {
 	/** @var MapCacheLRU Cache of loaded CentralAuthUsers */
@@ -301,13 +301,15 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @return IDatabase Primary database or replica based on shouldUsePrimaryDB()
+	 * @return IReadableDatabase Primary database or replica based on shouldUsePrimaryDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
 	protected function getSafeReadDB() {
-		return CentralAuthServices::getDatabaseManager()->getCentralDB(
-			$this->shouldUsePrimaryDB() ? DB_PRIMARY : DB_REPLICA
-		);
+		if ( $this->shouldUsePrimaryDB() ) {
+			return CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		} else {
+			return CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		}
 	}
 
 	/**
