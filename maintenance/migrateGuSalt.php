@@ -19,7 +19,6 @@
  * @ingroup Maintenance
  */
 
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -29,7 +28,7 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-class MigrateGuSalt extends Maintenance {
+class MigrateGuSalt extends LoggedUpdateMaintenance {
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription(
@@ -41,11 +40,24 @@ class MigrateGuSalt extends Maintenance {
 		$this->requireExtension( 'CentralAuth' );
 	}
 
-	public function execute() {
-		$databaseManager = CentralAuthServices::getDatabaseManager();
+	/**
+	 * @inheritDoc
+	 */
+	protected function getUpdateKey() {
+		return 'MigrateGuSalt';
+	}
 
-		// Get a list of password types that are applicable
-		$dbw = $databaseManager->getCentralPrimaryDB();
+	/**
+	 * @inheritDoc
+	 */
+	public function doDBUpdates() {
+		$dbw = $this->getDB( DB_PRIMARY );
+
+		if ( !$dbw->tableExists( 'globaluser', __METHOD__ ) ) {
+			$this->output( "The globaluser table does not seem to exist.\n" );
+			return true;
+		}
+
 		$typeCond = [
 			$dbw->expr( 'gu_salt', '!=', '' ),
 			$dbw->expr( 'gu_password', IExpression::NOT_LIKE, new LikeValue( ':', $dbw->anyString() ) ),
@@ -100,6 +112,7 @@ class MigrateGuSalt extends Maintenance {
 		}
 
 		$this->output( "$count users rows updated.\n" );
+		return true;
 	}
 }
 

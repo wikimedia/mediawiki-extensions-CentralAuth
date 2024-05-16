@@ -24,6 +24,7 @@ use DatabaseUpdater;
 use MediaWiki\Hook\MediaWikiServicesHook;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 use MediaWiki\MediaWikiServices;
+use MigrateGuSalt;
 
 /**
  * This handler is used in hooks which are outside the normal dependency injection scope.
@@ -35,17 +36,30 @@ class NoServicesHookHandler implements
 {
 
 	/**
-	 * Create databases for WMF Jenkins unit tests
 	 * @param DatabaseUpdater $updater
 	 * @return void
 	 */
 	public function onLoadExtensionSchemaUpdates( $updater ) {
+		$baseDir = dirname( __DIR__, 3 );
+
 		if ( defined( 'MW_QUIBBLE_CI' ) ) {
+			# Create databases for WMF Jenkins unit tests
 			$dbType = $updater->getDB()->getType();
-			$updater->addExtensionTable(
-				'globaluser', __DIR__ . '/../../../schema/' . $dbType . '/tables-generated.sql'
-			);
+			$updater->addExtensionUpdateOnVirtualDomain( [
+				'virtual-centralauth',
+				'addTable',
+				'globaluser',
+				"$baseDir/schema/$dbType/tables-generated.sql",
+				true
+			] );
 		}
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'runMaintenance',
+			MigrateGuSalt::class,
+			"$baseDir/maintenance/migrateGuSalt.php"
+		] );
 	}
 
 	/**
