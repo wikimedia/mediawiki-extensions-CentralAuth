@@ -314,12 +314,13 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 		$session = $this->createNoOpMock(
 			Session::class,
-			[ 'getProvider', 'getSessionId', 'get', 'canSetUser', 'isPersistent' ]
+			[ 'getProvider', 'getSessionId', 'get', 'canSetUser', 'isPersistent', 'getUser' ]
 		);
 		$session->method( 'getProvider' )->willReturn( $provider );
 		$session->method( 'getSessionId' )->willReturn( 23 );
 		$session->method( 'get' )->willReturn( null );
 		$session->method( 'isPersistent' )->willReturn( true );
+		$session->method( 'getUser' )->willReturn( $this->getTestUser()->getUser() );
 
 		/** @var MockObject|WebRequest $request */
 		$request = $this->getMockBuilder( FauxRequest::class )
