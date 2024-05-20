@@ -46,7 +46,7 @@
 	"centralauth-merge-dryrun-or": "неда",
 	"centralauth-merge-method-empty": "къошум джокъ",
 	"centralauth-merge-method-login": "системагъа киргенде къуралгъанды",
-	"centralauth-merge-method-new": "джангы тергеу джазыу",
+	"centralauth-merge-method-new": "джангы хыйсаб",
 	"centralauth-merge-method-primary": "«юй» вики-проект",
 	"centralauth-merge-step3-title": "Бирикген аккаунт къурау",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|минут}} алгъа",
