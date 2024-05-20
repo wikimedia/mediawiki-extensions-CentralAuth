@@ -21,10 +21,17 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use DatabaseUpdater;
+use MediaWiki\Hook\MediaWikiServicesHook;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
+use MediaWiki\MediaWikiServices;
 
+/**
+ * This handler is used in hooks which are outside the normal dependency injection scope.
+ * It must not have any service dependencies.
+ */
 class NoServicesHookHandler implements
-	LoadExtensionSchemaUpdatesHook
+	LoadExtensionSchemaUpdatesHook,
+	MediaWikiServicesHook
 {
 
 	/**
@@ -40,4 +47,19 @@ class NoServicesHookHandler implements
 			);
 		}
 	}
+
+	/**
+	 * Compatibility fallback for virtual domain name mapping.
+	 * @param MediaWikiServices $services
+	 */
+	public function onMediaWikiServices( $services ) {
+		global $wgCentralAuthDatabase, $wgVirtualDomainsMapping;
+
+		if ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] )
+			&& isset( $wgCentralAuthDatabase )
+		) {
+			$wgVirtualDomainsMapping['virtual-centralauth'] = [ 'db' => $wgCentralAuthDatabase ];
+		}
+	}
+
 }
