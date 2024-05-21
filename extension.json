@@ -658,6 +658,7 @@
 		"LocalUserCreated": "usercreation",
 		"LogEventsListGetExtraInputs": "log",
 		"MakeGlobalVariablesScript": "default",
+		"MediaWikiServices": "noservices",
 		"OtherBlockLogLink": "block",
 		"PasswordPoliciesForUser": "passwordpolicies",
 		"RenameUserComplete": "rename",
@@ -695,6 +696,10 @@
 		"CentralAuth": "GlobalVarConfig::newInstance"
 	},
 	"config": {
+		"CentralAuthDatabase": {
+			"description": "Used as the namespace for the session store, useful in case multiple CentralAuth clusters coexist in it. Historically also used to identify the CentralAuth database; that use is deprecated. Configure the virtual-centralauth virtual domain instead.",
+			"value": "centralauth"
+		},
 		"CentralAuthAutoMigrate": {
 			"description": "If true, existing unattached accounts will be automatically migrated if possible at first login. Any new account creations will be required to attach. If false, unattached accounts will not be harassed unless the individual account has opted in to migration.",
 			"value": false
