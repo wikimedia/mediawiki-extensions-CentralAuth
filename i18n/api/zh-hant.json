@@ -5,7 +5,9 @@
 			"Kly",
 			"LNDDYL",
 			"Winston Sung",
-			"SunAfterRain"
+			"SunAfterRain",
+			"Arielyurusova",
+			"Umherirrender"
 		]
 	},
 	"apierror-centralauth-badsession": "當使用中央認證 session 時無法取得中央驗證令牌。",
@@ -58,7 +60,7 @@
 	"apihelp-query+globalrenamestatus-param-user": "正被重新命名的使用者，可以是他們的舊名稱或新名稱。",
 	"apihelp-query+globalrenamestatus-summary": "顯示有關進行中的全域重新命名相關訊息。",
 	"apihelp-query+globaluserinfo-example-1": "取得目前全域使用者的資訊",
-	"apihelp-query+globaluserinfo-example-2": "取得全域使用者 [[User:Example|Example]] 的資訊　",
+	"apihelp-query+globaluserinfo-example-2": "取得全域使用者 [[User:Example|Example]] 的資訊",
 	"apihelp-query+globaluserinfo-param-id": "要取得相關訊息的全域使用者 ID。如果 <var>$1user</var> 與 <var>$1id</var> 皆被省略，將會預設為目前的使用者。",
 	"apihelp-query+globaluserinfo-param-prop": "要取得的屬性：",
 	"apihelp-query+globaluserinfo-paramvalue-prop-groups": "取得此使用者屬於的全域組列表。",
