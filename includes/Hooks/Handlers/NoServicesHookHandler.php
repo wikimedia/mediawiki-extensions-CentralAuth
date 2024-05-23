@@ -72,6 +72,15 @@ class NoServicesHookHandler implements
 				MigrateInitialAccounts::class,
 			] );
 		}
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'dropField',
+			'globaluser',
+			'gu_salt',
+			"$baseDir/schema/$dbType/patch-drop-gu_salt.sql",
+			true
+		] );
 	}
 
 }
