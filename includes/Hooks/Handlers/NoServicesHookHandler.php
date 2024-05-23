@@ -41,18 +41,15 @@ class NoServicesHookHandler implements
 	 */
 	public function onLoadExtensionSchemaUpdates( $updater ) {
 		$baseDir = dirname( __DIR__, 3 );
+		$dbType = $updater->getDB()->getType();
 
-		if ( defined( 'MW_QUIBBLE_CI' ) ) {
-			# Create databases for WMF Jenkins unit tests
-			$dbType = $updater->getDB()->getType();
-			$updater->addExtensionUpdateOnVirtualDomain( [
-				'virtual-centralauth',
-				'addTable',
-				'globaluser',
-				"$baseDir/schema/$dbType/tables-generated.sql",
-				true
-			] );
-		}
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'addTable',
+			'globaluser',
+			"$baseDir/schema/$dbType/tables-generated.sql",
+			true
+		] );
 
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-centralauth',
