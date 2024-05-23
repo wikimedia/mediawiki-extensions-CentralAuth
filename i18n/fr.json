@@ -57,6 +57,7 @@
 			"Thibaut120094",
 			"Tititou36",
 			"Tuxxic",
+			"U.T.",
 			"Urhixidur",
 			"Verdy p",
 			"Weft",
@@ -65,7 +66,7 @@
 			"Yasten"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur ($1)",
 	"abusefilter-edit-builder-vars-global-user-groups": "Groupes globaux auxquels appartient l’utilisateur ($1)",
 	"abusefilter-edit-builder-vars-global-account-editcount": "Nombre global de modifications de l’utilisateur (sur création de compte) ($1)",
 	"abusefilter-edit-builder-vars-global-account-groups": "Groupes globaux auxquels appartient l’utilisateur (sur création de compte) ($1)",
