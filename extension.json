@@ -697,8 +697,8 @@
 	},
 	"config": {
 		"CentralAuthDatabase": {
-			"description": "Used as the namespace for the session store, useful in case multiple CentralAuth clusters coexist in it. Historically also used to identify the CentralAuth database; that use is deprecated. Configure the virtual-centralauth virtual domain instead.",
-			"value": "centralauth"
+			"description": "Used to identify the CentralAuth database and for SessionStore entries; its use is deprecated. Configure the virtual-centralauth virtual domain instead.",
+			"value": null
 		},
 		"CentralAuthAutoMigrate": {
 			"description": "If true, existing unattached accounts will be automatically migrated if possible at first login. Any new account creations will be required to attach. If false, unattached accounts will not be harassed unless the individual account has opted in to migration.",
