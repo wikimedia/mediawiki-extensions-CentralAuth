@@ -58,6 +58,11 @@ class MigrateGuSalt extends LoggedUpdateMaintenance {
 			return true;
 		}
 
+		if ( !$dbw->fieldExists( 'globaluser', 'gu_salt', __METHOD__ ) ) {
+			$this->output( "The gu_salt column does not seem to exist.\n" );
+			return true;
+		}
+
 		$typeCond = [
 			$dbw->expr( 'gu_salt', '!=', '' ),
 			$dbw->expr( 'gu_password', IExpression::NOT_LIKE, new LikeValue( ':', $dbw->anyString() ) ),
