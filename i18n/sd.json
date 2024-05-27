@@ -43,6 +43,7 @@
 	"centralauth-attach-list-attached": "\" $1 \" نالي مرڪزي کاتي ۾ هيٺيان کاتا شامل آهن:",
 	"centralauth-attach-title": "کاتي جي پڪ ڪريو",
 	"centralauth-complete": "مرڪزي طور داخل ٿيڻ مڪمل!",
+	"centralauth-createlocal-username": "عالمی کاتي جو نالو",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|ڏينھن}} اڳ",
 	"centralauth-editgroup-noset": "(ڪوبہ نہ)",
 	"centralauth-editgroup-success": "عالمي گروھ بدلايو ويو",
