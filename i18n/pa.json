@@ -3,6 +3,7 @@
 		"authors": [
 			"Aalam",
 			"Babanwalia",
+			"Cabal",
 			"Gman124",
 			"Jimidar",
 			"Kuldeepburjbhalaike",
@@ -116,7 +117,7 @@
 	"centralauth-foreign-contributions": "$2 ਉੱਤੇ $1 {{PLURAL:$1|ਯੋਗਦਾਨ}}",
 	"centralauth-foreign-link": "$2 ਉੱਤੇ ਵਰਤੋਂਕਾਰ $1",
 	"centralauth-globalgroupperms-creategroup-submit": "ਅਧਿਕਾਰ ਨਿਰਧਾਰਤ ਕਰੋ",
-	"centralauth-globalgroupperms-group": "ਸਮੂਹ",
+	"centralauth-globalgroupperms-group": "ਟੋਲੀਆਂ",
 	"centralauth-globalgroupperms-group-listmembers": "ਮੈਂਬਰਾਂ ਦੀ ਸੂਚੀ",
 	"centralauth-globalgroupperms-newgroupname": "ਨਵਾਂ ਸਮੂਹ ਨਾਮ",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ਘੰਟਾ|ਘੰਟੇ}} ਪਹਿਲਾਂ",
