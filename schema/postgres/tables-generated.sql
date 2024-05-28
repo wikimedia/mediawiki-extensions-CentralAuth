@@ -23,7 +23,6 @@ CREATE TABLE globaluser (
   gu_home_db TEXT DEFAULT NULL,
   gu_email TEXT DEFAULT NULL,
   gu_email_authenticated TIMESTAMPTZ DEFAULT NULL,
-  gu_salt TEXT DEFAULT NULL,
   gu_password TEXT DEFAULT NULL,
   gu_locked SMALLINT DEFAULT 0 NOT NULL,
   gu_hidden_level INT DEFAULT 0 NOT NULL,

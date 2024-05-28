@@ -22,7 +22,6 @@ CREATE TABLE /*_*/globaluser (
   gu_home_db VARBINARY(255) DEFAULT NULL,
   gu_email VARBINARY(255) DEFAULT NULL,
   gu_email_authenticated BINARY(14) DEFAULT NULL,
-  gu_salt VARBINARY(16) DEFAULT NULL,
   gu_password TINYBLOB DEFAULT NULL,
   gu_locked TINYINT(1) DEFAULT 0 NOT NULL,
   gu_hidden_level INT DEFAULT 0 NOT NULL,

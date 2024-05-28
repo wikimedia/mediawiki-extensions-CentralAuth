@@ -71,12 +71,6 @@
 				"options": { "notnull": false }
 			},
 			{
-				"name": "gu_salt",
-				"comment": "Salt. For migrated passwords, the salt is the local user_id.",
-				"type": "binary",
-				"options": { "notnull": false, "length": 16 }
-			},
-			{
 				"name": "gu_password",
 				"comment": "hashed password",
 				"type": "blob",
