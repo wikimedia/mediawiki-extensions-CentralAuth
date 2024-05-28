@@ -659,7 +659,6 @@
 		"LocalUserCreated": "usercreation",
 		"LogEventsListGetExtraInputs": "log",
 		"MakeGlobalVariablesScript": "default",
-		"MediaWikiServices": "noservices",
 		"OtherBlockLogLink": "block",
 		"PasswordPoliciesForUser": "passwordpolicies",
 		"RenameUserComplete": "rename",

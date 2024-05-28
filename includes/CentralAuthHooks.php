@@ -92,12 +92,14 @@ class CentralAuthHooks implements
 	 * Called right after configuration variables have been set.
 	 */
 	public static function onRegistration() {
-		global $wgCentralAuthDatabase, $wgDBname, $wgSessionProviders,
-			$wgCentralIdLookupProvider;
+		global $wgCentralAuthDatabase, $wgSessionProviders,
+			$wgCentralIdLookupProvider, $wgVirtualDomainsMapping;
 
-		// Override $wgCentralAuthDatabase for Wikimedia Jenkins.
-		if ( defined( 'MW_QUIBBLE_CI' ) ) {
-			$wgCentralAuthDatabase = $wgDBname;
+		// Note that Wikimedia Jenkins needs special handling so we skip it here.
+		if ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] )
+			&& isset( $wgCentralAuthDatabase ) && !defined( 'MW_QUIBBLE_CI' )
+		) {
+			$wgVirtualDomainsMapping['virtual-centralauth'] = [ 'db' => $wgCentralAuthDatabase ];
 		}
 
 		// CentralAuthSessionProvider is supposed to replace core

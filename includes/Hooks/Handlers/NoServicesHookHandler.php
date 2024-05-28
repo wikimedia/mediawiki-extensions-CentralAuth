@@ -21,9 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use DatabaseUpdater;
-use MediaWiki\Hook\MediaWikiServicesHook;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
-use MediaWiki\MediaWikiServices;
 use MigrateGuSalt;
 
 /**
@@ -31,8 +29,7 @@ use MigrateGuSalt;
  * It must not have any service dependencies.
  */
 class NoServicesHookHandler implements
-	LoadExtensionSchemaUpdatesHook,
-	MediaWikiServicesHook
+	LoadExtensionSchemaUpdatesHook
 {
 
 	/**
@@ -57,20 +54,6 @@ class NoServicesHookHandler implements
 			MigrateGuSalt::class,
 			"$baseDir/maintenance/migrateGuSalt.php"
 		] );
-	}
-
-	/**
-	 * Compatibility fallback for virtual domain name mapping.
-	 * @param MediaWikiServices $services
-	 */
-	public function onMediaWikiServices( $services ) {
-		global $wgCentralAuthDatabase, $wgVirtualDomainsMapping;
-
-		if ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] )
-			&& isset( $wgCentralAuthDatabase )
-		) {
-			$wgVirtualDomainsMapping['virtual-centralauth'] = [ 'db' => $wgCentralAuthDatabase ];
-		}
 	}
 
 }
