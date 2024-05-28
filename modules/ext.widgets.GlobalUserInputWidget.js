@@ -9,7 +9,7 @@
 	 *
 	 * @constructor
 	 * @param {Object} [config] Configuration options
-	 * @cfg {number} [limit=10] Number of results to show
+	 * @param {number} [config.limit=10] Number of results to show
 	 */
 	function GlobalUserInputWidget( config ) {
 		// Config initialization
