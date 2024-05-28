@@ -33,18 +33,6 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers ::__construct
-	 */
-	public function testConstructor() {
-		$this->assertInstanceOf(
-			GlobalRenameRequestStore::class,
-			new GlobalRenameRequestStore(
-				$this->createMock( CentralAuthDatabaseManager::class ),
-				$this->createMock( UserNameUtils::class )
-			)
-		);
-	}
-
-	/**
 	 * @covers ::save
 	 */
 	public function testSave(): void {

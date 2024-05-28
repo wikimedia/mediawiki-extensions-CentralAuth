@@ -12,17 +12,6 @@ use MediaWiki\WikiMap\WikiMap;
 class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @covers ::__construct
-	 */
-	public function testConstructor() {
-		$this->assertInstanceOf(
-			CentralAuthUIService::class,
-			new CentralAuthUIService(
-				$this->createMock( TitleFactory::class )
-			)
-		);
-	}
-
-	/**
 	 * @covers ::formatHiddenLevel
 	 * @dataProvider provideValidHiddenLevels
 	 */
