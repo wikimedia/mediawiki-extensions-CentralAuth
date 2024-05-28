@@ -3,10 +3,12 @@
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 
+/**
+ * @covers MediaWiki\Extension\CentralAuth\CentralAuthWikiListService
+ */
 class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 	/**
 	 * @dataProvider provideConfigValues
-	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthWikiListService::getWikiList
 	 */
 	public function testGetWikiListFromConfig( array $configValue ) {
 		$wikiListService = new CentralAuthWikiListService(
@@ -29,7 +31,6 @@ class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideHooks
-	 * @covers MediaWiki\Extension\CentralAuth\CentralAuthWikiListService::getWikiList
 	 */
 	public function testGetWikiListFromHook( array $hooks, array $expected ) {
 		$hookContainer = $this->createHookContainer();

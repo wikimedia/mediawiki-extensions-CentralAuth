@@ -27,9 +27,7 @@ use Wikimedia\TestingAccessWrapper;
 /**
  * Tests to make sure the whole global group membership flow works correctly.
  *
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::getGlobalRights
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::loadGroups
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::getClosestGlobalUserGroupExpiry
+ * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetRights
  *
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
@@ -109,9 +107,6 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 		$this->assertEquals( $expiryFuture, $caUser->getClosestGlobalUserGroupExpiry() );
 	}
 
-	/**
-	 * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser::addToGlobalGroup
-	 */
 	public function testAddToGlobalGroups() {
 		$user = $this->getRegisteredTestUser();
 		$caUser = CentralAuthUser::getPrimaryInstance( $user );

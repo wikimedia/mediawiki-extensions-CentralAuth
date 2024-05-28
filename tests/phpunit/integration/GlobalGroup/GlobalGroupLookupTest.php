@@ -22,7 +22,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 
 /**
- * @coversDefaultClass MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup
+ * @covers MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
@@ -43,8 +43,6 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::__construct
-	 * @covers ::getDefinedGroups
 	 * @dataProvider provideFlags
 	 */
 	public function testGetDefinedGroups( int $flags, int $readIndex ) {
@@ -62,7 +60,6 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::getRightsForGroup
 	 * @dataProvider provideFlags
 	 */
 	public function testGetRightsForGroup( int $flags, int $readIndex ) {

@@ -8,7 +8,7 @@ use MediaWiki\WikiMap\WikiMap;
 
 /**
  * @author Taavi "Majavah" Väänänen
- * @covers MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount::onSubmit
+ * @covers MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount
  * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
  * @group Database
  */

@@ -6,20 +6,11 @@ use MediaWiki\WikiMap\WikiMap;
 /**
  * Setup database tests for centralauth
  *
- * @coversDefaultClass MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+ * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group CentralAuthDB
  * @group Database
  */
 class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
-	/**
-	 * @covers ::exists
-	 * @covers ::getId
-	 * @covers ::getName
-	 * @covers ::getHomeWiki
-	 * @covers ::isAttached
-	 * @covers ::getRegistration
-	 * @covers ::getStateHash
-	 */
 	public function testBasicAttrs() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
@@ -39,10 +30,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/**
-	 * @covers ::loadStateNoCache
-	 * @covers ::loadState
-	 */
 	public function testLoadFromDB() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$caUser->loadStateNoCache();
@@ -50,9 +37,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( 1001, $caUser->getId() );
 	}
 
-	/**
-	 * @covers ::listAttached
-	 */
 	public function testLoadAttached() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertArrayEquals(
@@ -66,10 +50,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/**
-	 * @covers ::getAuthToken
-	 * @covers ::resetAuthToken
-	 */
 	public function testGetAuthToken() {
 		$caUserUnattached = CentralAuthUser::newUnattached(
 			'UnattachedUser',
@@ -79,9 +59,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( 1, preg_match( '/^[0-9a-f]{32}$/', $token ) );
 	}
 
-	/**
-	 * @covers ::newFromId
-	 */
 	public function testNewFromId() {
 		$ca = CentralAuthUser::newFromId( 1001 );
 		$this->assertSame( 'GlobalUser', $ca->getName() );
@@ -90,9 +67,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $caBad );
 	}
 
-	/**
-	 * @covers ::register
-	 */
 	public function testRegister() {
 		$caUserNew = CentralAuthUser::getPrimaryInstanceByName( 'RegTest' );
 		$ok = $caUserNew->register( "R3gT3stP@ssword", "user@localhost" );
@@ -105,20 +79,12 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $caUserNew->register( "R3gT3stP@ssword", "user@localhost" ) );
 	}
 
-	/**
-	 * @covers ::isLocked
-	 */
 	public function testLocked() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalLockedUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isLocked() );
 	}
 
-	/**
-	 * @covers ::isHidden
-	 * @covers ::isSuppressed
-	 * @covers ::getHiddenLevelInt
-	 */
 	public function testHidden() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalSuppressedUser' );
 		$this->assertTrue( $caUser->exists() );
@@ -127,9 +93,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, $caUser->getHiddenLevelInt() );
 	}
 
-	/**
-	 * @covers ::storeMigrationData
-	 */
 	public function testStoreMigrationData() {
 		$caUsers = [
 			'2001' => 'StoreMigrationDataUser 1',
@@ -148,11 +111,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 			] );
 	}
 
-	/**
-	 * @covers ::adminLock
-	 * @covers ::adminUnlock
-	 * @covers ::adminSetHidden
-	 */
 	public function testAdminLockAndHide() {
 		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
@@ -195,9 +153,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $caUser->isLocked() );
 	}
 
-	/**
-	 * @covers ::attach
-	 */
 	public function testAttach() {
 		$caUser = new class( 'GlobalUser' ) extends CentralAuthUser {
 			protected function addLocalEdits( $wikiID ) {

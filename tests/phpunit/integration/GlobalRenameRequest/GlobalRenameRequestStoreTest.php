@@ -25,16 +25,12 @@ use MediaWiki\User\UserNameUtils;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @coversDefaultClass MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore
+ * @covers MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
-	/**
-	 * @covers ::__construct
-	 * @covers ::save
-	 */
 	public function testSave(): void {
 		$store = new GlobalRenameRequestStore(
 			$this->getMockDbManager(),
@@ -73,9 +69,6 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	/**
-	 * @covers ::newBlankRequest
-	 */
 	public function testGetBlankRequest() {
 		$userNameUtils = $this->createMock( UserNameUtils::class );
 		$store = new GlobalRenameRequestStore(
@@ -91,9 +84,6 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::newForUser
-	 * @covers ::fetchRowFromDB
-	 * @covers ::newFromRow
 	 * @dataProvider provideWiki
 	 */
 	public function testNewForUser( $wiki ) {
@@ -111,9 +101,6 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::newFromId
-	 * @covers ::fetchRowFromDB
-	 * @covers ::newFromRow
 	 * @dataProvider provideWiki
 	 */
 	public function testNewFromId( $wiki ) {
@@ -134,9 +121,6 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
-	/**
-	 * @covers ::nameHasPendingRequest
-	 */
 	public function testNameHasPendingRequest() {
 		$store = new GlobalRenameRequestStore(
 			$this->getMockDbManager(),
