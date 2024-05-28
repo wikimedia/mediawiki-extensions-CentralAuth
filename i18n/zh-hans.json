@@ -540,5 +540,5 @@
 	"sessionprovider-centralauthsessionprovider": "基于中心cookie的会话",
 	"sessionprovider-centralauthtokensessionprovider": "中心验证令牌会话",
 	"centralauth-badaccess-blacklisted": "由于您在黑名单上，故无法申请全域更名。",
-	"centralauth-blocked-ip-reputation": "您当前使用的IP地址已被封禁，因为据信该地址最近被用于滥用目的。"
+	"centralauth-blocked-ip-reputation": "您当前使用的IP地址已受到封禁，因为该地址据信近期用于过滥用目的。"
 }
