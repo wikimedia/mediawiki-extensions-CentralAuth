@@ -17,24 +17,6 @@ use Wikimedia\Rdbms\ReadOnlyMode;
 class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @covers ::__construct
-	 */
-	public function testConstructor() {
-		$this->assertInstanceOf(
-			CentralAuthDatabaseManager::class,
-			new CentralAuthDatabaseManager(
-				new ServiceOptions(
-					CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
-					[
-						'CentralAuthReadOnly' => false,
-					]
-				),
-				$this->createMock( LBFactory::class ),
-				$this->createMock( ReadOnlyMode::class )
-			)
-		);
-	}
-
-	/**
 	 * @covers ::getCentralReadOnlyReason
 	 * @covers ::isReadOnly
 	 */

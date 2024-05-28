@@ -44,17 +44,6 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @covers ::__construct
-	 */
-	public function testConstructor() {
-		$this->assertInstanceOf(
-			GlobalGroupLookup::class,
-			new GlobalGroupLookup(
-				$this->createMock( CentralAuthDatabaseManager::class )
-			)
-		);
-	}
-
-	/**
 	 * @covers ::getDefinedGroups
 	 * @dataProvider provideFlags
 	 */

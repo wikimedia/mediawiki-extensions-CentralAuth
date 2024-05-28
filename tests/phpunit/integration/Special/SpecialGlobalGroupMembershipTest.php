@@ -79,17 +79,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	/**
 	 * @covers ::__construct
-	 */
-	public function testConstructor() {
-		$this->assertInstanceOf(
-			SpecialGlobalGroupMembership::class,
-			$this->newSpecialPage()
-		);
-	}
-
-	/**
-	 * @dataProvider provideFetchUserGood
 	 * @covers ::fetchUser
+	 * @dataProvider provideFetchUserGood
 	 */
 	public function testFetchUserGood( $inputFunction ) {
 		$user = $this->getRegisteredTestUser();
