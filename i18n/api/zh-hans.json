@@ -9,13 +9,14 @@
 			"Liuxinyu970226",
 			"Shizhao",
 			"Tranve",
-			"SunAfterRain"
+			"SunAfterRain",
+			"LittlePaw365"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
 	"apierror-centralauth-badtoken": "centralauthtoken无效。",
 	"apierror-centralauth-badusername": "用户名“$1”在此wiki不可用",
-	"apierror-centralauth-editconflict": "检测到编辑冲突，操作终止。",
+	"apierror-centralauth-editconflict": "检测到编辑冲突，正在中止。",
 	"apierror-centralauth-notattached": "不能通过已附加的全域账号获得centralauthtoken。",
 	"apierror-centralauth-notloggedin": "匿名用户不能获得centralauthtoken。",
 	"apierror-centralauth-renameinprogress": "用户已被重命名，不能使用。",
