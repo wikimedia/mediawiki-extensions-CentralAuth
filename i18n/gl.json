@@ -69,6 +69,7 @@
 	"centralauth-admin-info-unattached": "Número de contas non adxuntas:",
 	"centralauth-admin-info-username": "Nome de usuario:",
 	"centralauth-admin-info-username-rename": "renomear",
+	"centralauth-admin-info-expired": "Conta temporal caducada:",
 	"centralauth-admin-intro": "Esta interface pode empregarse para a administración de contas globais.",
 	"centralauth-admin-list-attached-on": "Relacionadas en",
 	"centralauth-admin-list-blocked": "Bloqueado",
@@ -137,7 +138,7 @@
 	"centralauth-complete": "Completouse a unificación do rexistro!",
 	"centralauth-complete-text": "Agora pode acceder ao sistema de calquera wiki {{int:Centralauth-groupname}} sen crear unha conta nova.",
 	"centralauth-completelogin-back": "Volver á páxina anterior.",
-	"centralauth-contribs-link": "contas globais",
+	"centralauth-contribs-link": "conta global",
 	"centralauth-contribs-locked": "Esta conta está bloqueada globalmente.\nVexa os [[Special:CentralAuth/$1|detalles globais da conta]] para máis información.",
 	"centralauth-contribs-locked-log": "Esta conta está bloqueada globalmente.\nA última entrada no rexistro de bloqueos amósase aquí para a súa referencia:",
 	"centralauth-createlocal-already-exists": "Xa existe unha conta local para a conta global especificada.",
@@ -488,5 +489,6 @@
 	"right-globalgrouppermissions": "Xestionar os grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está incluído nunha lista negra."
+	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está incluído nunha lista negra.",
+	"centralauth-blocked-ip-reputation": "O enderezo IP que estás a usar actualmente bloqueouse porque se utilizou recentemente con fins abusivos."
 }
