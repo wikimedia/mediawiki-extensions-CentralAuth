@@ -182,6 +182,7 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 
 		return $this->actorStore->newSelectQueryBuilder()
 			->whereUserIds( $localUserIds )
+			->caller( $this->getCaller() )
 			->fetchUserIdentities();
 	}
 }
