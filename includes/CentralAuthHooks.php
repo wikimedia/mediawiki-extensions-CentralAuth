@@ -95,10 +95,16 @@ class CentralAuthHooks implements
 		global $wgCentralAuthDatabase, $wgSessionProviders,
 			$wgCentralIdLookupProvider, $wgVirtualDomainsMapping;
 
-		// Note that Wikimedia Jenkins needs special handling so we skip it here.
-		if ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] )
-			&& isset( $wgCentralAuthDatabase ) && !defined( 'MW_QUIBBLE_CI' )
+		if (
+			// Test against the local database
+			defined( 'MW_PHPUNIT_TEST' )
+			// Install tables to the local database in CI
+			// TODO: configure this in CI
+			|| defined( 'MW_QUIBBLE_CI' )
 		) {
+			$wgCentralAuthDatabase = false;
+			unset( $wgVirtualDomainsMapping['virtual-centralauth'] );
+		} elseif ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] ) ) {
 			$wgVirtualDomainsMapping['virtual-centralauth'] = [ 'db' => $wgCentralAuthDatabase ];
 		}
 
