@@ -46,6 +46,9 @@ class GlobalRenameRequest {
 	public const APPROVED = 'approved';
 	public const REJECTED = 'rejected';
 
+	public const RENAME = 0;
+	public const VANISH = 1;
+
 	/** @var int|null */
 	protected $id;
 	/** @var string|null */

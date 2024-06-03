@@ -229,6 +229,17 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					$lang->formatNum( 100 ) => 100,
 				],
 			],
+			'type' => [
+				'type' => 'select',
+				'name' => 'type',
+				'label-message' => 'globalrenamequeue-form-type',
+				'options-messages' => [
+					'globalrenamequeue-form-type-all' => 'all',
+					'globalrenamequeue-form-type-rename' => GlobalRenameRequest::RENAME,
+					'globalrenamequeue-form-type-vanish' => GlobalRenameRequest::VANISH,
+				],
+				'default' => 'all',
+			],
 		];
 	}
 
