@@ -22,6 +22,7 @@
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 
 /**
+ * @covers \MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob
  * @copyright © 2018 Wikimedia Foundation and contributors
  */
 class LocalRenameUserJobTest extends PHPUnit\Framework\TestCase {
@@ -40,7 +41,6 @@ class LocalRenameUserJobTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @dataProvider provideEscapeReplacement
-	 * @covers \MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob::escapeReplacement
 	 */
 	public function testEscapeReplacement( $given, $expect ) {
 		$escaped = $this->escapeReplacement->invokeArgs( null, [ $given ] );

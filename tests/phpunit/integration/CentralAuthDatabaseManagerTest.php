@@ -9,17 +9,12 @@ use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
- * @coversDefaultClass \MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager
+ * @covers \MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager
  * @todo Convert to a pure unit test. Currently testGetCentralDBPrimaryReadOnly() needs global
  * state, as it creates the CentralAuthReadOnlyError, which as an ErrorPageError creates the
  * translations for it using global state (wfMessage()). This is tracked as T281935.
  */
 class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
-	/**
-	 * @covers ::__construct
-	 * @covers ::getCentralReadOnlyReason
-	 * @covers ::isReadOnly
-	 */
 	public function testGetReadOnlyReasonReadOnlyMode() {
 		$roReason = 'Database switchover script broke and left everything read only';
 		$roMode = $this->createMock( ReadOnlyMode::class );
@@ -51,10 +46,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$manager->assertNotReadOnly();
 	}
 
-	/**
-	 * @covers ::getCentralReadOnlyReason
-	 * @covers ::isReadOnly
-	 */
 	public function testGetReadOnlyReasonDatabase() {
 		$roReason = 'replace this with the real reason before the maintenance window';
 
@@ -81,10 +72,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$manager->assertNotReadOnly();
 	}
 
-	/**
-	 * @covers ::getCentralReadOnlyReason
-	 * @covers ::isReadOnly
-	 */
 	public function testGetReadOnlyReasonWriteable() {
 		$lbFactory = $this->createMock( LBFactory::class );
 
@@ -108,9 +95,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$manager->assertNotReadOnly();
 	}
 
-	/**
-	 * @covers ::waitForReplication
-	 */
 	public function testWaitForReplication() {
 		$lbFactory = $this->createMock( LBFactory::class );
 		$lbFactory->expects( $this->once() )
@@ -133,9 +117,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$manager->waitForReplication();
 	}
 
-	/**
-	 * @covers ::getCentralPrimaryDB
-	 */
 	public function testGetCentralDBPrimaryReadOnly() {
 		$database = $this->createMock( IDatabase::class );
 
@@ -160,9 +141,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$manager->getCentralPrimaryDB();
 	}
 
-	/**
-	 * @covers ::getCentralReplicaDB
-	 */
 	public function testGetCentralDBReplicaReadOnly() {
 		$database = $this->createMock( IReadableDatabase::class );
 

@@ -6,13 +6,11 @@ use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
- * @coversDefaultClass MediaWiki\Extension\CentralAuth\CentralAuthUIService
+ * @covers MediaWiki\Extension\CentralAuth\CentralAuthUIService
  * @group Database
  */
 class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 	/**
-	 * @covers ::__construct
-	 * @covers ::formatHiddenLevel
 	 * @dataProvider provideValidHiddenLevels
 	 */
 	public function testFormatHiddenLevelValid( int $level, string $msg ) {
@@ -38,9 +36,6 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 		yield 'HIDDEN_NORMALIZE_SUPPRESSED' => [ CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'hidden-oversight' ];
 	}
 
-	/**
-	 * @covers ::formatHiddenLevel
-	 */
 	public function testFormatHiddenLevelInvalid() {
 		$localizer = $this->createMock( MessageLocalizer::class );
 		$localizer->expects( $this->never() )
@@ -52,7 +47,6 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @covers ::prettyTimespan
 	 * @dataProvider providePrettyTimespan
 	 */
 	public function testPrettyTimespan( int $seconds, int $amount, string $unit ) {
@@ -97,9 +91,6 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 		yield '10 years ago' => [ 3651 * 24 * 60 * 60, 10, 'years' ];
 	}
 
-	/**
-	 * @covers ::processAntiSpoofConflicts
-	 */
 	public function testProcessAntiSpoofConflicts() {
 		$u = new CentralAuthTestUser(
 			'Existing',

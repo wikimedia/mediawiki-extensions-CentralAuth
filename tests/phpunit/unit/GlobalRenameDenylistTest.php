@@ -41,7 +41,6 @@ class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 
 	/**
 	 * @dataProvider provideCheckUser
-	 * @covers MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist::checkUser
 	 */
 	public function testCheckUser( $pageText, $userName, $expected ) {
 		// Current tests are only for the case when a Title is provided, not when a url

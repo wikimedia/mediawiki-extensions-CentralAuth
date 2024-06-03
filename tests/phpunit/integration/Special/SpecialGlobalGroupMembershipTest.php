@@ -32,7 +32,7 @@ use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
 
 /**
- * @coversDefaultClass \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
+ * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
  * @group Database
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
@@ -78,8 +78,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * @covers ::__construct
-	 * @covers ::fetchUser
 	 * @dataProvider provideFetchUserGood
 	 */
 	public function testFetchUserGood( $inputFunction ) {
@@ -100,7 +98,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	/**
 	 * @dataProvider provideFetchUserNonexistent
-	 * @covers ::fetchUser
 	 */
 	public function testFetchUserNonexistent( string $input, string $error ) {
 		$status = $this->newSpecialPage()->fetchUser( $input );
@@ -114,12 +111,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		yield 'ID' => [ '#12345678', 'noname' ];
 	}
 
-	/**
-	 * @covers ::execute
-	 * @covers ::editUserGroupsForm
-	 * @covers ::showEditUserGroupsForm
-	 * @covers ::groupCheckboxes
-	 */
 	public function testRenderFormForPrivilegedUser() {
 		$user = $this->getRegisteredTestUser();
 		[ $html, ] = $this->executeSpecialPage(
@@ -186,11 +177,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		);
 	}
 
-	/**
-	 * @covers ::execute
-	 * @covers ::editUserGroupsForm
-	 * @covers ::showEditUserGroupsForm
-	 */
 	public function testRenderFormReadOnly() {
 		$user = $this->getRegisteredTestUser();
 		[ $html, ] = $this->executeSpecialPage(
@@ -214,12 +200,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		);
 	}
 
-	/**
-	 * @covers ::execute
-	 * @covers ::saveUserGroups
-	 * @covers ::doSaveUserGroups
-	 * @covers ::addLogEntry
-	 */
 	public function testSave() {
 		$user = $this->getRegisteredTestUser();
 		$originalExpiry = $user->getGlobalGroupsWithExpiration()['group-three'];
