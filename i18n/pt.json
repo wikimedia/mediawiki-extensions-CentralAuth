@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			555,
 			"Amire80",
 			"Athena in Wonderland",
 			"CaiusSPQR",
@@ -28,8 +29,7 @@
 			"Tks4Fish",
 			"Vitorvicentevalente",
 			"Waldir",
-			"Waldyrious",
-			555
+			"Waldyrious"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do utilizador",
