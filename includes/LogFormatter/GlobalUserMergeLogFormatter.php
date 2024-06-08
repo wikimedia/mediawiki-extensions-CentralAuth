@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
-use Message;
 
 /**
  * Format the gblrename/merge log entries

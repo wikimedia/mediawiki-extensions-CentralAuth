@@ -6,8 +6,10 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Message\Message;
 use MediaWiki\User\User;
 
 class DeleteEmptyAccounts extends Maintenance {

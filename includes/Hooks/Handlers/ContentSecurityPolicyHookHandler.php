@@ -21,11 +21,11 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Hook\ContentSecurityPolicyDefaultSourceHook;
 use MediaWiki\Hook\ContentSecurityPolicyScriptSourceHook;
 use MediaWiki\WikiMap\WikiMap;
-use RequestContext;
 
 class ContentSecurityPolicyHookHandler implements
 	ContentSecurityPolicyDefaultSourceHook,

@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use HTMLForm;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\User\UserNameUtils;

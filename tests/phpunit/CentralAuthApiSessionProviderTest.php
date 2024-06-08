@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;

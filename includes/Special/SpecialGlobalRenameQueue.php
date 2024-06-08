@@ -23,7 +23,6 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use ExtensionRegistry;
-use HTMLForm;
 use LogEventsList;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
@@ -37,6 +36,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\SpecialPage;

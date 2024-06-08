@@ -28,6 +28,7 @@ use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -38,7 +39,6 @@ use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Psr\Log\NullLogger;
-use RequestContext;
 use StatusValue;
 use Wikimedia\Rdbms\ReadOnlyMode;
 

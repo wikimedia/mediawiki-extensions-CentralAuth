@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Message\Message;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
 

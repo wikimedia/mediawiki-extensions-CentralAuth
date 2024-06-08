@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use Message;
 
 /**
  * Handles the following log types:

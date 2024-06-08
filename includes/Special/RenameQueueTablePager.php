@@ -22,7 +22,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;

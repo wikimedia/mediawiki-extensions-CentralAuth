@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
-use Message;
+use MediaWiki\Message\Message;
 use UnexpectedValueException;
 
 /**

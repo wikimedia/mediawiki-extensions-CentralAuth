@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Widget;
 
-use HTMLUserTextField;
+use MediaWiki\HTMLForm\Field\HTMLUserTextField;
 
 /**
  * Implements a text input field for usernames.
