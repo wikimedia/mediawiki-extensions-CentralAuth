@@ -1,0 +1,198 @@
+{
+	"before": {
+		"name": "renameuser_queue",
+		"comment": "Request queue for global account renames. Used to power special pages for requesting a global rename from a user's home wiki and a work queue of pending renames for stewards.",
+		"columns": [
+			{
+				"name": "rq_id",
+				"comment": "Internal unique ID for the authentication server",
+				"type": "integer",
+				"options": { "autoincrement": true, "notnull": false }
+			},
+			{
+				"name": "rq_name",
+				"comment": "User requesting to be renamed. Not a gu_id because user may not be global yet",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "rq_wiki",
+				"comment": "WikiID of home wiki for requesting user. Will be null if user is a CentralAuth account",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "rq_newname",
+				"comment": "New name being requested",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "rq_reason",
+				"comment": "Reason given by the user for the rename request",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			},
+			{
+				"name": "rq_requested_ts",
+				"comment": "Request timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_status",
+				"comment": "Current state of the request",
+				"type": "mwenum",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"enum_values": [ "pending", "approved", "rejected" ]
+					}
+				}
+			},
+			{
+				"name": "rq_completed_ts",
+				"comment": "Completion timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_deleted",
+				"comment": "Delete/suppress flag",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "rq_performer",
+				"comment": "User who completed the request (foreign key to globaluser.gu_id)",
+				"type": "integer",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_comments",
+				"comment": "Steward's comments on the request",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "rq_oldstatus",
+				"columns": [ "rq_name", "rq_wiki", "rq_status" ],
+				"unique": false
+			},
+			{
+				"name": "rq_newstatus",
+				"columns": [ "rq_newname", "rq_status" ],
+				"unique": false
+			},
+			{
+				"name": "rq_requested_ts",
+				"columns": [ "rq_requested_ts" ],
+				"unique": false
+			}
+		],
+		"pk": [ "rq_id" ]
+	},
+	"after": {
+		"name": "renameuser_queue",
+		"comment": "Request queue for global account renames. Used to power special pages for requesting a global rename from a user's home wiki and a work queue of pending renames for stewards.",
+		"columns": [
+			{
+				"name": "rq_id",
+				"comment": "Internal unique ID for the authentication server",
+				"type": "integer",
+				"options": { "autoincrement": true, "notnull": false }
+			},
+			{
+				"name": "rq_name",
+				"comment": "User requesting to be renamed. Not a gu_id because user may not be global yet",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "rq_wiki",
+				"comment": "WikiID of home wiki for requesting user. Will be null if user is a CentralAuth account",
+				"type": "binary",
+				"options": { "notnull": false, "length": 255 }
+			},
+			{
+				"name": "rq_newname",
+				"comment": "New name being requested",
+				"type": "binary",
+				"options": { "notnull": true, "length": 255 }
+			},
+			{
+				"name": "rq_reason",
+				"comment": "Reason given by the user for the rename request",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			},
+			{
+				"name": "rq_requested_ts",
+				"comment": "Request timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_status",
+				"comment": "Current state of the request",
+				"type": "mwenum",
+				"options": {
+					"notnull": true,
+					"CustomSchemaOptions": {
+						"enum_values": [ "pending", "approved", "rejected" ]
+					}
+				}
+			},
+			{
+				"name": "rq_completed_ts",
+				"comment": "Completion timestamp",
+				"type": "mwtimestamp",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_deleted",
+				"comment": "Delete/suppress flag",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			},
+			{
+				"name": "rq_performer",
+				"comment": "User who completed the request (foreign key to globaluser.gu_id)",
+				"type": "integer",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "rq_comments",
+				"comment": "Steward's comments on the request",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			},
+			{
+				"name": "rq_type",
+				"comment": "The type of rename request being made (0 = rename, 1 = vanish)",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "rq_oldstatus",
+				"columns": [ "rq_name", "rq_wiki", "rq_status" ],
+				"unique": false
+			},
+			{
+				"name": "rq_newstatus",
+				"columns": [ "rq_newname", "rq_status" ],
+				"unique": false
+			},
+			{
+				"name": "rq_requested_ts",
+				"columns": [ "rq_requested_ts" ],
+				"unique": false
+			}
+		],
+		"pk": [ "rq_id" ]
+	}
+}

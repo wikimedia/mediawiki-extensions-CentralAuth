@@ -119,6 +119,7 @@ CREATE TABLE renameuser_queue (
   rq_deleted SMALLINT DEFAULT 0 NOT NULL,
   rq_performer INT DEFAULT NULL,
   rq_comments TEXT DEFAULT NULL,
+  rq_type SMALLINT DEFAULT 0 NOT NULL,
   PRIMARY KEY(rq_id)
 );
 

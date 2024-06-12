@@ -441,6 +441,12 @@
 				"comment": "Steward's comments on the request",
 				"type": "blob",
 				"options": { "notnull": false, "length": 65530 }
+			},
+			{
+				"name": "rq_type",
+				"comment": "The type of rename request being made (0 = rename, 1 = vanish)",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "unsigned": true, "default": 0 }
 			}
 		],
 		"indexes": [
