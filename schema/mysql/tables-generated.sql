@@ -119,6 +119,7 @@ CREATE TABLE /*_*/renameuser_queue (
   rq_deleted TINYINT UNSIGNED DEFAULT 0 NOT NULL,
   rq_performer INT DEFAULT NULL,
   rq_comments BLOB DEFAULT NULL,
+  rq_type TINYINT UNSIGNED DEFAULT 0 NOT NULL,
   INDEX rq_oldstatus (rq_name, rq_wiki, rq_status),
   INDEX rq_newstatus (rq_newname, rq_status),
   INDEX rq_requested_ts (rq_requested_ts),

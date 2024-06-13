@@ -54,6 +54,15 @@ class NoServicesHookHandler implements
 			MigrateGuSalt::class,
 			"$baseDir/maintenance/migrateGuSalt.php"
 		] );
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'addField',
+			'renameuser_queue',
+			'rq_type',
+			"$baseDir/schema/$dbType/patch-rq_type.sql",
+			true
+		] );
 	}
 
 }

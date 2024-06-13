@@ -109,7 +109,7 @@ CREATE TABLE /*_*/renameuser_queue (
   rq_status TEXT NOT NULL, rq_completed_ts BLOB DEFAULT NULL,
   rq_deleted SMALLINT UNSIGNED DEFAULT 0 NOT NULL,
   rq_performer INTEGER DEFAULT NULL,
-  rq_comments BLOB DEFAULT NULL
+  rq_comments BLOB DEFAULT NULL, rq_type SMALLINT UNSIGNED DEFAULT 0 NOT NULL
 );
 
 CREATE INDEX rq_oldstatus ON /*_*/renameuser_queue (rq_name, rq_wiki, rq_status);
