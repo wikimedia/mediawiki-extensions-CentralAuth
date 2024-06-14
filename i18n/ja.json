@@ -45,10 +45,10 @@
 			"青子守歌"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数",
-	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ",
-	"abusefilter-edit-builder-vars-global-account-editcount": "利用者のグローバル編集回数 (アカウント作成時)",
-	"abusefilter-edit-builder-vars-global-account-groups": "利用者が所属するグローバルグループ (アカウント作成時)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数 ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "利用者の所属グローバルグループ ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "利用者のグローバル編集回数 (アカウント作成時) ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "利用者が所属するグローバルグループ (アカウント作成時) ($1)",
 	"action-centralauth-createlocal": "強制的なローカルアカウントの作成",
 	"action-centralauth-lock": "グローバルアカウントのロックまたはロック解除",
 	"action-centralauth-merge": "自分のアカウントの統合",
