@@ -23,6 +23,7 @@ $specialPageAliases['en'] = [
 	'GlobalRenameProgress' => [ 'GlobalRenameProgress' ],
 	'GlobalRenameRequest' => [ 'GlobalRenameRequest' ],
 	'GlobalRenameQueue' => [ 'GlobalRenameQueue' ],
+	'GlobalVanishRequest' => [ 'GlobalVanishRequest' ],
 ];
 
 /** Afrikaans (Afrikaans) */
