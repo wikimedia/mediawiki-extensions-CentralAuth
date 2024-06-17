@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 use Exception;
 use IDBAccessObject;
 use Job;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -13,7 +14,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use RequestContext;
 use Wikimedia\ScopedCallback;
 
 /**

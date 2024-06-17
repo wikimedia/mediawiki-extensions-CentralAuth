@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use DatabaseUpdater;
+use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 use MigrateGuSalt;
 
@@ -53,6 +53,15 @@ class NoServicesHookHandler implements
 			'runMaintenance',
 			MigrateGuSalt::class,
 			"$baseDir/maintenance/migrateGuSalt.php"
+		] );
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'addField',
+			'renameuser_queue',
+			'rq_type',
+			"$baseDir/schema/$dbType/patch-rq_type.sql",
+			true
 		] );
 	}
 

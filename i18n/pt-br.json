@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"555",
 			"Agripinoduarte",
 			"Albertoleoncio",
 			"Araceletorres",
@@ -39,8 +40,7 @@
 			"Tks4Fish",
 			"Tuliouel",
 			"VasbXBR",
-			"YuriNikolai",
-			555
+			"YuriNikolai"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do usuário",

@@ -21,6 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralLogin;
@@ -35,7 +36,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
-use RequestContext;
 
 class LoginCompleteHookHandler implements
 	UserLoginCompleteHook,

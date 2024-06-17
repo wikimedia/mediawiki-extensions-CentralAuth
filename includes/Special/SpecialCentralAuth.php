@@ -3,15 +3,14 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use DateInterval;
-use DerivativeContext;
 use Exception;
-use HTMLForm;
 use InvalidArgumentException;
 use LogEventsList;
 use MediaWiki\Block\Restriction\ActionRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\CommentFormatter\CommentFormatter;
+use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -19,6 +18,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;

@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use HTMLForm;
 use LogEventsList;
 use LogPage;
 use ManualLogEntry;
@@ -29,6 +28,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;

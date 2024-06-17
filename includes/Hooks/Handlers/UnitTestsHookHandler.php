@@ -79,9 +79,6 @@ class UnitTestsHookHandler implements
 	 * @param string $prefix
 	 */
 	public function onUnitTestsAfterDatabaseSetup( $db, $prefix ) {
-		global $wgCentralAuthDatabase;
-		$wgCentralAuthDatabase = false;
-
 		$originalPrefix = $db->tablePrefix();
 		$db->tablePrefix( $prefix );
 		if ( !$db->tableExists( 'globaluser', __METHOD__ ) ) {

@@ -18,8 +18,12 @@
  * @file
  */
 
+use MediaWiki\Context\IContextSource;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\UltimateAuthority;
+use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 /**
  * Locks a specific global account.
@@ -89,7 +93,7 @@ class LockUser extends Maintenance {
 				$this->fatalError( "No user '$username' found!" );
 			}
 
-			'@phan-var \MediaWiki\User\User $user';
+			'@phan-var User $user';
 			$context->setUser( $user );
 		} else {
 			$context->setUser( User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) );

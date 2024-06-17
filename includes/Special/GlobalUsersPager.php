@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use HTMLForm;
-use IContextSource;
 use MediaWiki\Cache\LinkBatchFactory;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Pager\AlphabeticPager;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserGroupMembership;

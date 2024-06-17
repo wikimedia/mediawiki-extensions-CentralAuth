@@ -12,13 +12,13 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
+use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserRigorOptions;
-use Message;
 
 class SpecialGlobalRenameUser extends FormSpecialPage {
 

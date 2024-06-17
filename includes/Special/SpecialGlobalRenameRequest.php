@@ -21,19 +21,19 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use HTMLForm;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Message\Message;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use Message;
 use PermissionsError;
 
 /**
