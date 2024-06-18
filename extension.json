@@ -396,7 +396,8 @@
 		"SpecialCentralAuthAliasesNoTranslate": "CentralAuth.notranslate-alias.php"
 	},
 	"AutoloadNamespaces": {
-		"MediaWiki\\Extension\\CentralAuth\\": "includes/"
+		"MediaWiki\\Extension\\CentralAuth\\": "includes/",
+		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\": "maintenance/"
 	},
 	"AutoloadClasses": {
 		"CentralAuthSessionProvider": "includes/session/CentralAuthSessionProvider.php",
