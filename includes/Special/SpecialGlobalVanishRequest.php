@@ -21,14 +21,15 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use HTMLForm;
+use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
-use MediaWiki\WikiMap\WikiMap;
 use PermissionsError;
 
 /**
@@ -54,34 +55,61 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
-	public function doesWrites() {
-		return true;
+	/** @inheritDoc */
+	public function onSubmit( array $data ): Status {
+		$newUsername = $this->generateUsername();
+		if ( !$newUsername ) {
+			return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+		}
+
+		// Verify that the user is a global user.
+		$causer = $this->getGlobalUser();
+		if ( !$causer ) {
+			return Status::newFatal( $this->msg( 'globalvanishrequest-globaluser-error' ) );
+		}
+
+		// Disallow for users that have blocks on any connected wikis.
+		if ( $causer->isBlocked() ) {
+			return Status::newFatal( $this->msg( 'globalvanishrequest-blocked-error' ) );
+		}
+
+		// Disallow duplicate rename / vanish requests.
+		$username = $this->getUser()->getName();
+		if ( $this->globalRenameRequestStore->currentNameHasPendingRequest( $username ) ) {
+			return Status::newFatal( $this->msg( 'globalvanishrequest-pending-request-error' ) );
+		}
+
+		$request = $this->globalRenameRequestStore
+			->newBlankRequest()
+			->setName( $username )
+			->setNewName( $newUsername )
+			->setReason( $data['reason'] ?? null )
+			->setType( GlobalRenameRequest::VANISH );
+
+		// Save the vanish request to the database.
+		if ( !$this->globalRenameRequestStore->save( $request ) ) {
+			return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+		}
+
+		return Status::newGood();
+	}
+
+	public function onSuccess(): void {
+		$this->getOutput()->redirect(
+			$this->getPageTitle( 'status' )->getFullURL(), '303'
+		);
 	}
 
 	/** @inheritDoc */
-	public function userCanExecute( User $user ) {
-		return $this->globalRenameDenylist->checkUser( $user->getName() );
-	}
-
-	public function displayRestrictionError() {
-		throw new PermissionsError( null, [ 'centralauth-badaccess-blacklisted' ] );
-	}
-
-	/**
-	 * @param string|null $par Subpage string if one was specified
-	 */
-	public function execute( $par ) {
+	public function execute( $subPage ): void {
 		$this->requireNamedUser();
 
-		$user = $this->getUser();
-		$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
-		$pending = $this->globalRenameRequestStore->newForUser(
-			$user->getName(), $wiki
-		);
+		$username = $this->getUser()->getName();
+		$hasPending = $this->globalRenameRequestStore->currentNameHasPendingRequest( $username );
 
-		if ( $par === 'status' ) {
+		if ( $subPage === 'status' ) {
 			$out = $this->getOutput();
-			if ( !$pending->exists() ) {
+			if ( !$hasPending ) {
 				$out->redirect( $this->getPageTitle()->getFullURL(), '303' );
 				return;
 			}
@@ -89,52 +117,19 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			$out->setPageTitle( $this->msg( 'globalvanishrequest-status-title' ) );
 			$out->addWikiMsg( 'globalvanishrequest-status-text' );
 		} else {
-			if ( $pending->exists() ) {
+			if ( $hasPending ) {
 				$out = $this->getOutput();
 				$out->redirect( $this->getPageTitle( 'status' )->getFullURL(), '303' );
 				return;
 			}
 
-			parent::execute( $par );
+			parent::execute( $subPage );
 		}
 	}
 
-	/**
-	 * Is the current user a global user?
-	 * @return bool
-	 */
-	protected function isGlobalUser() {
-		$user = $this->getUser();
-		$causer = CentralAuthUser::getInstance( $user );
-		return $causer->exists() && $causer->isAttached();
-	}
-
-	/**
-	 * @param HTMLForm $form
-	 */
-	protected function alterForm( HTMLForm $form ) {
-		$form->setSubmitTextMsg( 'globalvanishrequest-submit-text' );
-	}
-
-	/**
-	 * @return string
-	 */
-	protected function getDisplayFormat() {
-		return 'ooui';
-	}
-
-	/**
-	 * @return string
-	 */
-	protected function preHtml() {
-		return $this->msg( 'globalvanishrequest-pretext' )->parse();
-	}
-
-	/**
-	 * @return array[]
-	 */
-	public function getFormFields() {
-		$fields = [
+	/** @inheritDoc */
+	public function getFormFields(): array {
+		return [
 			'username' => [
 				'cssclass'      => 'mw-globalvanishrequest-field',
 				'default'       => $this->getUser()->getName(),
@@ -143,65 +138,92 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				'type'          => 'text',
 				'disabled'      => true,
 			],
-			'email' => [
+			'reason' => [
 				'cssclass'      => 'mw-globalvanishrequest-field',
-				'id'            => 'mw-vanishrequest-email',
-				'label-message' => 'globalvanishrequest-email-label',
-				'name'          => 'email',
-				'placeholder'   => 'username@example.com',
-				'required'      => true,
-				'type'          => 'email',
-			],
-			'subject' => [
-				'cssclass'      => 'mw-globalvanishrequest-field',
-				'id'            => 'mw-vanishrequest-subject',
-				'label-message' => 'globalvanishrequest-subject-label',
-				'name'          => 'subject',
-				'type'          => 'text',
-			],
-			'message' => [
-				'cssclass'      => 'mw-globalvanishrequest-field',
-				'id'            => 'mw-vanishrequest-message',
-				'label-message' => 'globalvanishrequest-message-label',
-				'name'          => 'message',
+				'id'            => 'mw-vanishrequest-reason',
+				'label-message' => 'globalvanishrequest-reason-label',
+				'name'          => 'reason',
 				'rows'          => 3,
 				'type'          => 'textarea',
 			],
-			'copy' => [
-				'cssclass'      => 'mw-globalvanishrequest-field',
-				'id'            => 'mw-vanishrequest-copy',
-				'label-message' => 'globalvanishrequest-copy-label',
-				'name'          => 'copy',
-				'type'          => 'check',
-			],
 		];
+	}
 
-		return $fields;
+	/** @inheritDoc */
+	public function doesWrites(): bool {
+		return true;
 	}
 
 	/**
-	 * @param array $data
-	 * @return Status
-	 */
-	public function onSubmit( array $data ) {
-		// Logic for the submit will be done in a separate ticket
-		return Status::newGood();
-	}
-
-	public function onSuccess() {
-		// Logic for the success will be done in a separate ticket
-	}
-
-	/**
-	 * Blocked users should not be able to request vanish
+	 * Blocked users should not be able to request a vanish.
 	 * @return bool
 	 */
-	public function requiresUnblock() {
+	public function requiresUnblock(): bool {
 		return true;
 	}
 
 	/** @inheritDoc */
-	protected function getGroupName() {
+	public function userCanExecute( User $user ): bool {
+		return $this->globalRenameDenylist->checkUser( $user->getName() );
+	}
+
+	/** @inheritDoc */
+	public function displayRestrictionError(): void {
+		throw new PermissionsError( null, [ 'centralauth-badaccess-blacklisted' ] );
+	}
+
+	/** @inheritDoc */
+	protected function alterForm( HTMLForm $form ): void {
+		$form->setSubmitTextMsg( 'globalvanishrequest-submit-text' );
+	}
+
+	/** @inheritDoc */
+	protected function getDisplayFormat(): string {
+		return 'ooui';
+	}
+
+	/** @inheritDoc */
+	protected function preHtml(): string {
+		return $this->msg( 'globalvanishrequest-pretext' )->parse();
+	}
+
+	/** @inheritDoc */
+	protected function getGroupName(): string {
 		return 'login';
+	}
+
+	/**
+	 * Return the global user if the authenticated user has a global account.
+	 * @return CentralAuthUser|false
+	 */
+	private function getGlobalUser() {
+		$user = $this->getUser();
+		$causer = CentralAuthUser::getInstance( $user );
+
+		if ( $causer->exists() && $causer->isAttached() ) {
+			return $causer;
+		}
+		return false;
+	}
+
+	/**
+	 * Generate a random username that the user requesting a vanish would be
+	 * renamed to if the request is accepted.
+	 *
+	 * @return string|false contains a string if successful
+	 */
+	private function generateUsername() {
+		$attempts = 0;
+
+		do {
+			$random = wfRandomString();
+			$candidate = "Vanished user {$random}";
+			if ( GlobalRenameRequest::isNameAvailable( $candidate, IDBAccessObject::READ_NORMAL )->isOK() ) {
+				return $candidate;
+			}
+			$attempts++;
+		} while ( $attempts < 5 );
+
+		return false;
 	}
 }
