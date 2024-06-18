@@ -9,7 +9,8 @@
 			"Matma Rex",
 			"McDutchie",
 			"Нұрлан Рахымжанов",
-			"СеніңШешең"
+			"СеніңШешең",
+			"Casserium"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Қатысушы бар ғаламдық топтар",
@@ -231,7 +232,7 @@
 	"centralauth-prefs-detail-unattached": "Бұл жоба торабы ғаламдық тіркелгіге тәң деп құпталмаған.",
 	"centralauth-prefs-manage": "Ғаламдық тіркелгіңізді реттеу",
 	"centralauth-prefs-not-managed": "Біріздендірілген тіркелгі қолданбайды",
-	"centralauth-prefs-status": "Ғаламдық тіркелгі күйі:",
+	"centralauth-prefs-status": "Ғаламдық тіркелгі:",
 	"centralauth-prefs-unattached": "Құпталмаған",
 	"centralauth-prefs-view": "Глобалды тіркелгіңіздің ақпаратын көру",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Бір аккаунтты қолдану''' қызметі туралы көбірек біліңіз]]...''",
@@ -324,6 +325,7 @@
 	"globalrenameuser": "Ғаламдық қатысушыны атауын өзгерту",
 	"globalrenameuser-legend": "Ғаламдық қатысушыны атауын өзгерту",
 	"globalusers": "Ғаламдық тіркелгі тізімі",
+	"log-action-filter-newusers-forcecreatelocal": "Локальды аккаунтты күштеп тіркеу",
 	"log-name-gblrename": "Ғаламдық есім өзгерту журналы",
 	"logentry-gblrename-merge": "$1 $4 дегенді $5 дегенге ғаламдық {{GENDER:$2|біріктірді}}",
 	"logentry-gblrename-promote": "$1 $4 дегенді $5 дегенге ғаламдық {{GENDER:$2|атын өзгертті}}",
