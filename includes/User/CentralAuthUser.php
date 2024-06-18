@@ -2440,53 +2440,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Troll through the full set of local databases and list those
-	 * which exist into the 'localnames' table.
-	 *
-	 * @return bool whether any results were found
-	 */
-	public function importLocalNames() {
-		$rows = [];
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
-
-		foreach ( $wikiList as $wikiID ) {
-			$dbr = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
-			$known = (bool)$dbr->newSelectQueryBuilder()
-				->select( '1' )
-				->from( 'user' )
-				->where( [ 'user_name' => $this->mName ] )
-				->caller( __METHOD__ )
-				->fetchField();
-			if ( $known ) {
-				$rows[] = [ 'ln_wiki' => $wikiID, 'ln_name' => $this->mName ];
-			}
-		}
-
-		if ( $rows || $this->exists() ) {
-			$dbw = $databaseManager->getCentralPrimaryDB();
-			$dbw->startAtomic( __METHOD__ );
-			$dbw->newInsertQueryBuilder()
-				->insertInto( 'globalnames' )
-				->ignore()
-				->row( [ 'gn_name' => $this->mName ] )
-				->caller( __METHOD__ )
-				->execute();
-			if ( $rows ) {
-				$dbw->newInsertQueryBuilder()
-					->insertInto( 'localnames' )
-					->ignore()
-					->rows( $rows )
-					->caller( __METHOD__ )
-					->execute();
-			}
-			$dbw->endAtomic( __METHOD__ );
-		}
-
-		return (bool)$rows;
-	}
-
-	/**
 	 * Load the list of databases where this account has been successfully
 	 * attached
 	 */
