@@ -52,7 +52,6 @@ class NoServicesHookHandler implements
 			'virtual-centralauth',
 			'runMaintenance',
 			MigrateGuSalt::class,
-			"$baseDir/maintenance/migrateGuSalt.php"
 		] );
 
 		$updater->addExtensionUpdateOnVirtualDomain( [
