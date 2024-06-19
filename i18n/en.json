@@ -474,6 +474,8 @@
 	"globalvanishrequest-copy-label": "Email me a copy of my message",
 	"globalvanishrequest-message-label": "Message",
 	"globalvanishrequest-submit-text": "Send",
+	"globalvanishrequest-status-title": "Vanish request pending approval",
+	"globalvanishrequest-status-text": "Your username vanish request is currently in progress and awaiting approval by those able to perform this operation. You will be notified by email when the request is processed.",
 	"globalusers": "Global accounts list",
 	"grant-createlocalaccount": "Forcibly create a local account for a global account",
 	"grant-setglobalaccountstatus": "Manage global account status",

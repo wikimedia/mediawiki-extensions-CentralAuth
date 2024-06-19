@@ -500,6 +500,8 @@
 	"globalvanishrequest-copy-label": "Form field label.",
 	"globalvanishrequest-message-label": "Form field label.",
 	"globalvanishrequest-submit-text": "Form button text.",
+	"globalvanishrequest-status-title": "Page title when request is pending.",
+	"globalvanishrequest-status-text": "Pending request description.",
 	"globalusers": "{{doc-special|GlobalUsers}}\nSee example: [[w:Special:GlobalUsers]] and [[w:Special:SpecialPages]]",
 	"grant-createlocalaccount": "Name for grant \"createlocalaccount\".\n{{Related|Grant}}",
 	"grant-setglobalaccountstatus": "Name for grant \"setglobalaccountstatus\".\n{{Related|Grant}}",

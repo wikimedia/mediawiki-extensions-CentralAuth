@@ -23,10 +23,12 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use HTMLForm;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
+use MediaWiki\WikiMap\WikiMap;
 use PermissionsError;
 
 /**
@@ -37,12 +39,19 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	/** @var GlobalRenameDenylist */
 	private $globalRenameDenylist;
 
+	/** @var GlobalRenameRequestStore */
+	private $globalRenameRequestStore;
+
 	/**
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 */
-	public function __construct( GlobalRenameDenylist $globalRenameDenylist ) {
+	public function __construct(
+		GlobalRenameDenylist $globalRenameDenylist,
+		GlobalRenameRequestStore $globalRenameRequestStore
+	) {
 		parent::__construct( 'GlobalVanishRequest' );
 		$this->globalRenameDenylist = $globalRenameDenylist;
+		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
 	public function doesWrites() {
@@ -64,7 +73,30 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	public function execute( $par ) {
 		$this->requireNamedUser();
 
-		parent::execute( $par );
+		$user = $this->getUser();
+		$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
+		$pending = $this->globalRenameRequestStore->newForUser(
+			$user->getName(), $wiki
+		);
+
+		if ( $par === 'status' ) {
+			$out = $this->getOutput();
+			if ( !$pending->exists() ) {
+				$out->redirect( $this->getPageTitle()->getFullURL(), '303' );
+				return;
+			}
+
+			$out->setPageTitle( $this->msg( 'globalvanishrequest-status-title' ) );
+			$out->addWikiMsg( 'globalvanishrequest-status-text' );
+		} else {
+			if ( $pending->exists() ) {
+				$out = $this->getOutput();
+				$out->redirect( $this->getPageTitle( 'status' )->getFullURL(), '303' );
+				return;
+			}
+
+			parent::execute( $par );
+		}
 	}
 
 	/**

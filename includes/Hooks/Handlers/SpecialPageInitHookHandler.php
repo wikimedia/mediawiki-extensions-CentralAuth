@@ -69,6 +69,7 @@ class SpecialPageInitHookHandler implements
 				'class' => SpecialGlobalVanishRequest::class,
 				'services' => [
 					'CentralAuth.GlobalRenameDenylist',
+					'CentralAuth.GlobalRenameRequestStore',
 				]
 			];
 		}
