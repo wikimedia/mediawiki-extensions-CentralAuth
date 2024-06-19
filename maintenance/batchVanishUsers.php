@@ -159,16 +159,25 @@ class BatchVanishUsers extends Maintenance {
 			return false;
 		}
 
-		$newName = null;
-		$attempts = 0;
+		$parsedLink = parse_url( $request[ 'globalRenamersLink' ] ?? '', PHP_URL_QUERY );
+		parse_str( $parsedLink, $globalRenamersQueryParams );
+		$reason = urldecode( $globalRenamersQueryParams[ 'reason' ] ?? '' );
+		$decodedNewName = urldecode( $globalRenamersQueryParams[ 'newname' ] ?? '' );
+		$newName = $decodedNewName === '' ? null : $decodedNewName;
 
-		do {
-			$candidate = wfRandomString();
-			if ( GlobalRenameRequest::isNameAvailable( $candidate )->isGood() ) {
-				$newName = $candidate;
-			}
-			$attempts++;
-		} while ( !isset( $newName ) && $attempts < 5 );
+		// If new name couldn't be extracted, generate a random one
+		// Format should be `Vanished user <some_random_string>`
+		if ( !isset( $newName ) ) {
+			$attempts = 0;
+			do {
+				$candidate = wfRandomString();
+				if ( GlobalRenameRequest::isNameAvailable( $candidate )->isGood() ) {
+					$newName = "Vanished user $candidate";
+					$this->output( "New name not present in global_renamers_link. Generated '$newName' \n" );
+				}
+				$attempts++;
+			} while ( !isset( $newName ) && $attempts < 5 );
+		}
 
 		if ( !isset( $newName ) ) {
 			$this->output( "Skipping user {$username} as max attempts reached generating username.\n" );
@@ -179,6 +188,7 @@ class BatchVanishUsers extends Maintenance {
 			->newBlankRequest()
 			->setName( $username )
 			->setNewName( $newName )
+			->setReason( $reason )
 			->setComments( "Added automatically by maintenance/batchVanishUsers.php" )
 			->setType( GlobalRenameRequest::VANISH );
 
