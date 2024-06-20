@@ -48,6 +48,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 				'rq_newname' => 'Test',
 				'rq_reason' => 'I ate too many bananas.',
 				'rq_status' => GlobalRenameRequest::PENDING,
+				'rq_type' => GlobalRenameRequest::RENAME,
 			] )
 			->caller( __METHOD__ )
 			->fetchField();
@@ -144,6 +145,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 		$request->setWiki( $wiki );
 		$request->setNewName( 'Test' );
 		$request->setReason( 'I ate too many bananas.' );
+		$request->setType( GlobalRenameRequest::RENAME );
 		$store->save( $request );
 		return $request;
 	}

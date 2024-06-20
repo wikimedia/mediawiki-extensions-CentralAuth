@@ -822,6 +822,64 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Returns true if the account has any blocks on any wikis.
+	 * @throws LocalUserNotFoundException
+	 * @return bool
+	 */
+	public function isBlocked(): bool {
+		$mwServices = MediaWikiServices::getInstance();
+		$dbm = CentralAuthServices::getDatabaseManager();
+
+		$wikis = $this->queryAttachedBasic();
+		foreach ( $wikis as $wikiId => $_ ) {
+			$db = $dbm->getLocalDB( DB_REPLICA, $wikiId );
+			$fields = [ 'user_id' ];
+			$conds = [ 'user_name' => $this->mName ];
+
+			$row = $db->newSelectQueryBuilder()
+				->select( $fields )
+				->from( 'user' )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->fetchRow();
+			if ( !$row ) {
+				# Row missing from replica, try the primary database instead
+				$db = $dbm->getLocalDB( DB_PRIMARY, $wikiId );
+				$row = $db->newSelectQueryBuilder()
+					->select( $fields )
+					->from( 'user' )
+					->where( $conds )
+					->caller( __METHOD__ )
+					->fetchRow();
+			}
+			if ( !$row ) {
+				$ex = new LocalUserNotFoundException(
+					"Could not find local user data for {$this->mName}@{$wikiId}"
+				);
+				$this->logger->warning(
+					'Could not find local user data for {username}@{wikiId}',
+					[
+						'username' => $this->mName,
+						'wikiId' => $wikiId,
+						'exception' => $ex,
+					]
+				);
+				throw $ex;
+			}
+
+			$blockStore = $mwServices
+				->getDatabaseBlockStoreFactory()
+				->getDatabaseBlockStore( $wikiId );
+			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->id ] );
+			if ( count( $blocks ) > 0 ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Returns the hidden level of the account.
 	 * @throws Exception for now
 	 * @return never

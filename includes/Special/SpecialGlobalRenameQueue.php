@@ -229,6 +229,17 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					$lang->formatNum( 100 ) => 100,
 				],
 			],
+			'type' => [
+				'type' => 'select',
+				'name' => 'type',
+				'label-message' => 'globalrenamequeue-form-type',
+				'options-messages' => [
+					'globalrenamequeue-form-type-all' => 'all',
+					'globalrenamequeue-form-type-rename' => GlobalRenameRequest::RENAME,
+					'globalrenamequeue-form-type-vanish' => GlobalRenameRequest::VANISH,
+				],
+				'default' => 'all',
+			],
 		];
 	}
 
@@ -409,9 +420,26 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param GlobalRenameRequest $req Pending request
 	 */
 	protected function doShowProcessForm( GlobalRenameRequest $req ) {
-		$this->commonPreamble(
-			'globalrenamequeue-request-title', [ $req->getName() ]
-		);
+		$isVanishRequest = $req->getType() === GlobalRenameRequest::VANISH;
+
+		// Set up message keys according to request type (rename/vanish)
+		if ( $isVanishRequest ) {
+			$commonPreambleMsg = 'globalrenamequeue-request-vanish-title';
+			$approveButtonMsg = 'globalrenamequeue-request-vanish-approve-text';
+			$denyButtonMsg = 'globalrenamequeue-request-vanish-deny-text';
+			$globalUserInfoMsg = 'globalrenamequeue-request-vanish-userinfo';
+			$headerMsgKey = 'globalrenamequeue-request-vanish-header';
+			$reasonMsg = 'globalrenamequeue-request-vanish-reason';
+		} else {
+			$commonPreambleMsg = 'globalrenamequeue-request-title';
+			$approveButtonMsg = 'globalrenamequeue-request-approve-text';
+			$denyButtonMsg = 'globalrenamequeue-request-deny-text';
+			$globalUserInfoMsg = 'globalrenamequeue-request-userinfo-global';
+			$headerMsgKey = 'globalrenamequeue-request-header';
+			$reasonMsg = 'globalrenamequeue-request-reason';
+		}
+
+		$this->commonPreamble( $commonPreambleMsg, [ $req->getName() ] );
 
 		$htmlForm = HTMLForm::factory( 'ooui',
 			[
@@ -450,18 +478,20 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'name'          => 'movepages',
 						'label-message' => 'globalrenamequeue-request-movepages',
 						'type'          => 'check',
-						'default'       => 1,
+						'default'       => $isVanishRequest ? 0 : 1,
 					],
 					'suppressredirects' => [
 						'id'            => 'mw-renamequeue-suppressredirects',
 						'name'          => 'suppressredirects',
 						'label-message' => 'globalrenamequeue-request-suppressredirects',
 						'type'          => 'check',
+						'default'       => $isVanishRequest ? 1 : 0,
+						'disabled'      => $isVanishRequest ? 1 : 0,
 					],
 				] )
 				->addButton( [
 					'name' => 'approve',
-					'value' => $this->msg( 'globalrenamequeue-request-approve-text' )->text(),
+					'value' => $this->msg( $approveButtonMsg )->text(),
 					'id' => 'mw-renamequeue-approve',
 					'flags' => [ 'primary', 'progressive' ],
 					'framed' => true
@@ -472,7 +502,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			->suppressDefaultSubmit()
 			->addButton( [
 				'name' => 'deny',
-				'value' => $this->msg( 'globalrenamequeue-request-deny-text' )->text(),
+				'value' => $this->msg( $denyButtonMsg )->text(),
 				'id' => 'mw-renamequeue-deny',
 				'flags' => [ 'destructive' ],
 				'framed' => true
@@ -487,7 +517,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		if ( $req->userIsGlobal() ) {
 			$globalUser = CentralAuthUser::getInstanceByName( $req->getName() );
 			$homeWiki = $globalUser->getHomeWiki();
-			$infoMsgKey = 'globalrenamequeue-request-userinfo-global';
+			$infoMsgKey = $globalUserInfoMsg;
 		} else {
 			$homeWiki = $req->getWiki();
 			$infoMsgKey = 'globalrenamequeue-request-userinfo-local';
@@ -499,7 +529,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$homeLink = WikiMap::getForeignURL( $homeWiki, 'User:' . $req->getName() );
 		}
 
-		$headerMsg = $this->msg( 'globalrenamequeue-request-header',
+		$headerMsg = $this->msg(
+			$headerMsgKey,
 			$homeLink,
 			$req->getName(),
 			$req->getNewName()
@@ -508,16 +539,26 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			'</span>' );
 
 		$homeWikiWiki = $homeWiki ? WikiMap::getWiki( $homeWiki ) : null;
-		$infoMsg = $this->msg( $infoMsgKey,
+		$infoMsgArgs = [
+			$infoMsgKey,
 			$req->getName(),
 			// homeWikiWiki shouldn't ever be null except in
 			// a development/testing environment.
 			( $homeWikiWiki ? $homeWikiWiki->getDisplayName() : $homeWiki ),
-			$req->getNewName()
-		);
+		];
+		// Rename requests need the new username into the info message
+		if ( !$isVanishRequest ) {
+			$infoMsgArgs[] = $req->getNewName();
+		}
+		$infoMsg = $this->msg( ...$infoMsgArgs );
 
 		if ( isset( $globalUser ) ) {
 			$infoMsg->numParams( $globalUser->getGlobalEditCount() );
+			$infoMsg->params( $this->msg(
+				$globalUser->isBlocked() ?
+					'globalrenamequeue-request-vanish-user-blocked' :
+					'globalrenamequeue-request-vanish-user-not-blocked'
+			) );
 		}
 
 		$htmlForm->addHeaderHtml( $infoMsg->parseAsBlock() );
@@ -573,7 +614,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
 		)->parseAsBlock();
-		$htmlForm->addHeaderHtml( $this->msg( 'globalrenamequeue-request-reason',
+		$htmlForm->addHeaderHtml( $this->msg( $reasonMsg,
 			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>"
 		)->parseAsBlock() );
 
