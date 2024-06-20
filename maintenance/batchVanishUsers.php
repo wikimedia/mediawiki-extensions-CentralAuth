@@ -172,8 +172,8 @@ class BatchVanishUsers extends Maintenance {
 			do {
 				$candidate = wfRandomString();
 				if ( GlobalRenameRequest::isNameAvailable( $candidate )->isGood() ) {
-					$newName = "Vanished user $candidate";
-					$this->output( "New name not present in global_renamers_link. Generated '$newName' \n" );
+					$newName = "Vanished user {$candidate}";
+					$this->output( "New name not present in global_renamers_link. Generated '{$newName}' \n" );
 				}
 				$attempts++;
 			} while ( !isset( $newName ) && $attempts < 5 );
