@@ -8,9 +8,14 @@
 			"Waki285"
 		]
 	},
+	"apierror-centralauth-badsession": "CentralAuth セッションを使用する場合にのみ centralauthtoken を取得できます。",
+	"apierror-centralauth-badtoken": "centralauthtoken が無効です。",
 	"apierror-centralauth-badusername": "利用者名「$1」はこのウィキでは使用できません",
 	"apierror-centralauth-editconflict": "編集競合が検出され、中止されました。",
+	"apierror-centralauth-notattached": "グローバル アカウントが接続されていないと、centralauthtoken を取得できません。",
+	"apierror-centralauth-notloggedin": "匿名利用者は centralauthtoken を取得できません。",
 	"apierror-centralauth-renameinprogress": "利用者が名前を変更されているため、使用できません。",
+	"apihelp-centralauthtoken-example-1": "centralauthtokenを取得",
 	"apihelp-deleteglobalaccount-example-1": "[[User:Example]] のグローバル アカウントを削除する",
 	"apihelp-deleteglobalaccount-param-reason": "利用者を削除する理由。",
 	"apihelp-deleteglobalaccount-param-user": "削除対象の利用者。",
