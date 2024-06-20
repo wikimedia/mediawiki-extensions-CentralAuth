@@ -13,7 +13,7 @@
 	 */
 	function GlobalUserInputWidget( config ) {
 		// Config initialization
-		config = $.extend( {}, config, { autocomplete: false } );
+		config = Object.assign( {}, config, { autocomplete: false } );
 
 		// Parent constructor
 		GlobalUserInputWidget.super.call( this, config );

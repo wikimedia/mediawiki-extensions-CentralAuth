@@ -195,13 +195,13 @@
 				}
 
 				// Add 'centralauthtoken' query parameter
-				newParameters = $.extend( { centralauthtoken: centralAuthToken }, parameters );
+				newParameters = Object.assign( { centralauthtoken: centralAuthToken }, parameters );
 				// It must be part of the request URI, and not just POST request body
 				if ( ajaxOptions.type !== 'GET' ) {
 					url = ( ajaxOptions && ajaxOptions.url ) || foreignApi.defaults.ajax.url;
 					url += ( url.indexOf( '?' ) !== -1 ? '&' : '?' ) +
 						'centralauthtoken=' + encodeURIComponent( centralAuthToken );
-					newAjaxOptions = $.extend( {}, ajaxOptions, { url: url } );
+					newAjaxOptions = Object.assign( {}, ajaxOptions, { url: url } );
 				} else {
 					newAjaxOptions = ajaxOptions;
 				}

@@ -81,8 +81,8 @@
 					return abortedPromise;
 				}
 
-				newAjaxOptions = $.extend( {}, ajaxOptions );
-				newAjaxOptions.headers = $.extend( {}, newAjaxOptions.headers, {
+				newAjaxOptions = Object.assign( {}, ajaxOptions );
+				newAjaxOptions.headers = Object.assign( {}, newAjaxOptions.headers, {
 					Authorization: 'CentralAuthToken ' + centralAuthToken
 				} );
 				return ( abortable = parent.call( self, path, newAjaxOptions ) );
