@@ -731,35 +731,48 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$request->setComments( $data['comments'] );
 
 			if ( $this->globalRenameRequestStore->save( $request ) ) {
+				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
+					$emailSubjectApprovedMsg = 'globalrenamequeue-vanish-email-subject-approved';
+					$emailBodyApprovedMsg = 'globalrenamequeue-vanish-email-body-approved';
+					$emailBodyApprovedWithNoteMsg = 'globalrenamequeue-vanish-email-body-approved-with-note';
+					$emailSubjectRejectedMsg = 'globalrenamequeue-vanish-email-subject-rejected';
+					$emailBodyRejectedMsg = 'globalrenamequeue-vanish-email-body-rejected';
+					$emailBodyMsgArgs = [
+						$oldUser->getName(),
+						$request->getComments()
+					];
+				} else {
+					$emailSubjectApprovedMsg = 'globalrenamequeue-email-subject-approved';
+					$emailBodyApprovedMsg = 'globalrenamequeue-email-body-approved';
+					$emailBodyApprovedWithNoteMsg = 'globalrenamequeue-email-body-approved-with-note';
+					$emailSubjectRejectedMsg = 'globalrenamequeue-email-subject-rejected';
+					$emailBodyRejectedMsg = 'globalrenamequeue-email-body-rejected';
+					$emailBodyMsgArgs = [
+						$oldUser->getName(),
+						$newUser->getName(),
+						$request->getComments(),
+					];
+				}
+
 				// Send email to the user about the change in status.
 				if ( $approved ) {
 					$subject = $this->msg(
-						'globalrenamequeue-email-subject-approved'
+						$emailSubjectApprovedMsg
 					)->inContentLanguage()->text();
 					if ( $request->getComments() === '' ) {
-						$msgKey = 'globalrenamequeue-email-body-approved';
+						$msgKey = $emailBodyApprovedMsg;
 					} else {
-						$msgKey = 'globalrenamequeue-email-body-approved-with-note';
+						$msgKey = $emailBodyApprovedWithNoteMsg;
 					}
 					$body = $this->msg(
-						$msgKey,
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-							$request->getComments(),
-						]
+						$msgKey, $emailBodyMsgArgs
 					)->inContentLanguage()->text();
 				} else {
 					$subject = $this->msg(
-						'globalrenamequeue-email-subject-rejected'
+						$emailSubjectRejectedMsg
 					)->inContentLanguage()->text();
 					$body = $this->msg(
-						'globalrenamequeue-email-body-rejected',
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-							$request->getComments(),
-						]
+						$emailBodyRejectedMsg, $emailBodyMsgArgs
 					)->inContentLanguage()->text();
 				}
 
