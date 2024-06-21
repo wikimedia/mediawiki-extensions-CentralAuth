@@ -108,6 +108,7 @@ class RenameQueueTablePager extends TablePager {
 				# 'rq_deleted', not implemented yet
 				'rq_performer',
 				'rq_comments',
+				'rq_type',
 			],
 			'conds' => $this->getQueryInfoConds(),
 		];
@@ -127,6 +128,11 @@ class RenameQueueTablePager extends TablePager {
 		$newname = $this->userNameUtils->getCanonical( $newname );
 		if ( $newname ) {
 			$conds['rq_newname'] = $newname;
+		}
+
+		$type = $this->getRequest()->getVal( 'type', 'all' );
+		if ( $type !== 'all' ) {
+			$conds['rq_type'] = $type;
 		}
 
 		if ( $this->showOpenRequests() ) {
@@ -168,6 +174,7 @@ class RenameQueueTablePager extends TablePager {
 			case 'rq_status':
 			case 'rq_completed_ts':
 			case 'rq_performer':
+			case 'rq_type':
 				$sortable = true;
 		}
 		return $sortable;
@@ -179,7 +186,7 @@ class RenameQueueTablePager extends TablePager {
 	 * @return string HTML to place inside table cell
 	 */
 	public function formatValue( $name, $value ) {
-		$formatted = htmlspecialchars( $value );
+		$formatted = htmlspecialchars( $value ?? '' );
 		switch ( $name ) {
 			case 'rq_requested_ts':
 			case 'rq_completed_ts':
@@ -199,6 +206,9 @@ class RenameQueueTablePager extends TablePager {
 					$renamer->getName()
 				) . '</span>';
 				break;
+			case 'rq_type':
+				$formatted = $this->formatTypeValue( (int)$value );
+				break;
 			case 'row_actions':
 				$formatted = $this->formatActionValue( $this->mCurrentRow );
 				break;
@@ -214,6 +224,16 @@ class RenameQueueTablePager extends TablePager {
 		return htmlspecialchars(
 			$this->getLanguage()->userTimeAndDate( $value, $this->getUser() )
 		);
+	}
+
+	/**
+	 * @param int $type
+	 * @return string Formatted and translated table cell contents
+	 */
+	protected function formatTypeValue( $type ) {
+		return $type === GlobalRenameRequest::VANISH
+			? $this->msg( 'globalrenamequeue-type-vanish' )->text()
+			: $this->msg( 'globalrenamequeue-type-rename' )->text();
 	}
 
 	/**
@@ -258,6 +278,7 @@ class RenameQueueTablePager extends TablePager {
 				'rq_wiki' => $this->msg( 'globalrenamequeue-column-rq-wiki' )->text(),
 				'rq_requested_ts' =>
 					$this->msg( 'globalrenamequeue-column-rq-requested-ts' )->text(),
+				'rq_type' => $this->msg( 'globalrenamequeue-column-rq-type' )->text(),
 				'row_actions' => $this->msg( 'globalrenamequeue-column-row-actions' )->text(),
 			];
 
