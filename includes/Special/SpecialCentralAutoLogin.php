@@ -641,7 +641,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				if ( !$localUser->isRegistered() ) {
 					$localUser = new User;
 					$localUser->setName( $centralUser->getName() );
-					if ( $this->centralAuthUtilityService->autoCreateUser( $localUser )->isGood() ) {
+					if ( $this->centralAuthUtilityService->autoCreateUser(
+						$localUser, true, $localUser
+					)->isGood() ) {
 						$centralUser->invalidateCache();
 						$centralUser = CentralAuthUser::getPrimaryInstanceByName( $centralUser->getName() );
 					}
