@@ -2684,7 +2684,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return array[]
 	 */
-	protected function queryAttachedBasic() {
+	public function queryAttachedBasic() {
 		if ( $this->mAttachedInfo !== null ) {
 			return $this->mAttachedInfo;
 		}
