@@ -495,6 +495,12 @@
 		},
 		"ext.centralauth.globalrenamequeue.styles": {
 			"styles": "ext.centralauth.globalrenamequeue.less"
+		},
+		"ext.centralauth.globalvanishrequest": {
+			"scripts": "ext.centralauth.globalvanishrequest.js",
+			"messages": [
+				"centralauth-vanish-confirm"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -843,6 +849,10 @@
 		"CentralAuthRejectVanishUserNotification": {
 			"description": "User name to be notified when a global vanish request is rejected.",
 			"value": ""
+		},
+		"CentralAuthAutomaticVanishPerformer": {
+			"description": "Username of a global user to set as the performer for vanish requests that get fulfilled automatically. If this is left unset, then automatic vanishing will be disabled.",
+			"value": null
 		}
 	},
 	"AuthManagerAutoConfig": {
