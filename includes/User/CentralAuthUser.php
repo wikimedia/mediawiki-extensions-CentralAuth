@@ -870,7 +870,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockStore = $mwServices
 				->getDatabaseBlockStoreFactory()
 				->getDatabaseBlockStore( $wikiId );
-			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->id ] );
+			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->user_id ] );
 			if ( count( $blocks ) > 0 ) {
 				return true;
 			}
