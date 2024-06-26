@@ -147,7 +147,8 @@ class GlobalRenameUser {
 		// runs.
 		$this->databaseUpdates->update(
 			$this->oldUser->getName(),
-			$this->newUser->getName()
+			$this->newUser->getName(),
+			$options[ 'requestType' ] ?? GlobalRenameRequest::RENAME
 		);
 
 		// Update CA's AntiSpoof
@@ -238,6 +239,7 @@ class GlobalRenameUser {
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
 			'force' => isset( $options['force'] ) && $options['force'],
+			'requestType' => $options[ 'requestType' ] ?? GlobalRenameRequest::RENAME,
 		];
 		if ( $this->session !== null ) {
 			$params['session'] = $this->session;

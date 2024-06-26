@@ -681,8 +681,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			}
 
 			if ( $request->userIsGlobal() ) {
-				// Trigger a global rename job
+				$renameOptions = $data;
+				$renameOptions[ 'requestType' ] = $request->getType();
 
+				// Trigger a global rename job
 				$status = $this->globalRenameFactory
 					->newGlobalRenameUser(
 						$this->getUser(),
@@ -690,7 +692,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						$request->getNewName()
 					)
 					->withSession( $session )
-					->rename( $data );
+					->rename( $renameOptions );
 			} else {
 				// If the user is local-only:
 				// * rename the local user using LocalRenameUserJob
@@ -706,6 +708,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'promotetoglobal' => true,
 						'reason' => $data['reason'],
 						'session' => $session,
+						'requestType' => $request->getType(),
 					]
 				);
 				$this->jobQueueGroupFactory->makeJobQueueGroup( $request->getWiki() )->push( $job );
