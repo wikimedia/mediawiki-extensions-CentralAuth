@@ -117,6 +117,8 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 		);
 		$u->save( $this->db );
 
+		// Make sure we have a named user set with the request.
+		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
 		$result = $this->specialCreateLocalAccount->onSubmit( [
 			'username' => $name,
 			'reason' => 'Test reason',
