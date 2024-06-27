@@ -39,7 +39,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 		$request = $this->createSampleRequest( $store, 'abcwiki' );
 
-		$id = $this->db->newSelectQueryBuilder()
+		$id = $this->getDb()->newSelectQueryBuilder()
 			->select( 'rq_id' )
 			->from( 'renameuser_queue' )
 			->where( [
@@ -60,7 +60,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertEquals(
 			GlobalRenameRequest::REJECTED,
-			$this->db->newSelectQueryBuilder()
+			$this->getDb()->newSelectQueryBuilder()
 				->select( 'rq_status' )
 				->from( 'renameuser_queue' )
 				->where( [ 'rq_id' => $request->getId() ] )
@@ -151,11 +151,11 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 	private function getMockDbManager(): CentralAuthDatabaseManager {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		$dbManager->method( 'getCentralPrimaryDB' )
-			->willReturn( $this->db );
+			->willReturn( $this->getDb() );
 		$dbManager->method( 'getCentralReplicaDB' )
-			->willReturn( $this->db );
+			->willReturn( $this->getDb() );
 		$dbManager->method( 'getCentralDB' )
-			->willReturn( $this->db );
+			->willReturn( $this->getDb() );
 		return $dbManager;
 	}
 

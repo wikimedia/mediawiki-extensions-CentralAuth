@@ -31,7 +31,7 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->db->newInsertQueryBuilder()
+		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_group_permissions' )
 			->rows( [
 				[ 'ggp_group' => 'steward', 'ggp_permission' => 'read' ],
@@ -48,9 +48,9 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	public function testGetDefinedGroups( int $flags, int $readIndex ) {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		if ( $readIndex === DB_REPLICA ) {
-			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->db );
+			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->getDb() );
 		} else {
-			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->db );
+			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->getDb() );
 		}
 
 		$lookup = new GlobalGroupLookup( $dbManager );
@@ -65,9 +65,9 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	public function testGetRightsForGroup( int $flags, int $readIndex ) {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		if ( $readIndex === DB_REPLICA ) {
-			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->db );
+			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->getDb() );
 		} else {
-			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->db );
+			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->getDb() );
 		}
 
 		$lookup = new GlobalGroupLookup( $dbManager );

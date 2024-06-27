@@ -43,7 +43,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'password' ],
 			]
 		);
-		$user->save( $this->db );
+		$user->save( $this->getDb() );
 
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
@@ -59,7 +59,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$u = new CentralAuthTestUser(
 			'GlobalSuppressedUser',
@@ -75,7 +75,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 	}
 
 	private function newLookup(): CentralIdLookup {

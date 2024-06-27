@@ -20,7 +20,7 @@ class CentralAuthEditCounterTest extends MediaWikiIntegrationTestCase {
 			[],
 			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
 		);
-		$testUser->save( $this->db );
+		$testUser->save( $this->getDb() );
 		$user = MediaWikiServices::getInstance()->getUserFactory()
 			->newFromName( 'CentralAuthEditCounterTest' );
 		$caUser = CentralAuthUser::getInstance( $user );

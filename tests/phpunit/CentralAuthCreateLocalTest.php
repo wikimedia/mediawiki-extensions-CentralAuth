@@ -70,7 +70,7 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 			],
 			false
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$result = $this->specialCreateLocalAccount->onSubmit( [
 			'username' => $name,
@@ -92,7 +92,7 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$result = $this->specialCreateLocalAccount->onSubmit( [
 			'username' => $name,
@@ -115,7 +115,7 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 			],
 			false
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$result = $this->specialCreateLocalAccount->onSubmit( [
 			'username' => $name,
