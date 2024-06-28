@@ -46,6 +46,9 @@ class GlobalRenameRequest {
 	public const APPROVED = 'approved';
 	public const REJECTED = 'rejected';
 
+	public const RENAME = 0;
+	public const VANISH = 1;
+
 	/** @var int|null */
 	protected $id;
 	/** @var string|null */
@@ -68,6 +71,8 @@ class GlobalRenameRequest {
 	protected $performer;
 	/** @var string|null */
 	protected $comments;
+	/** @var int|null */
+	protected $type;
 
 	/**
 	 * @internal Use GlobalRenameRequestStore::newBlankRequest instead
@@ -152,6 +157,13 @@ class GlobalRenameRequest {
 	 */
 	public function getComments() {
 		return $this->comments;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getType() {
+		return $this->type;
 	}
 
 	/**
@@ -260,6 +272,15 @@ class GlobalRenameRequest {
 	}
 
 	/**
+	 * @param int $type
+	 * @return GlobalRenameRequest self, for message chaining
+	 */
+	public function setType( $type ) {
+		$this->type = $type;
+		return $this;
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function exists() {
@@ -296,6 +317,7 @@ class GlobalRenameRequest {
 		$this->deleted = $row->deleted;
 		$this->performer = $row->performer;
 		$this->comments = $row->comments;
+		$this->type = (int)$row->type;
 	}
 
 	/**

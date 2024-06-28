@@ -70,6 +70,9 @@ class GlobalRenameRequestStore {
 					'rq_reason'       => $request->getReason(),
 					'rq_requested_ts' => $dbw->timestamp( $request->getRequested() ),
 					'rq_status'       => $request->getStatus(),
+					'rq_performer'    => $request->getPerformer(),
+					'rq_comments'     => $request->getComments(),
+					'rq_type'         => $request->getType() || GlobalRenameRequest::RENAME,
 				] )
 				->caller( __METHOD__ )
 				->execute();
@@ -89,6 +92,7 @@ class GlobalRenameRequestStore {
 					'rq_deleted'      => $request->getDeleted(),
 					'rq_performer'    => $request->getPerformer(),
 					'rq_comments'     => $request->getComments(),
+					'rq_type'         => $request->getType() || GlobalRenameRequest::RENAME,
 				] )
 				->where( [
 					'rq_id' => $request->getId()
@@ -170,6 +174,34 @@ class GlobalRenameRequestStore {
 	}
 
 	/**
+	 * Check to see if there is a pending rename request to the given (current) name.
+	 *
+	 * @param string $name
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
+	 * @return bool
+	 */
+	public function currentNameHasPendingRequest( string $name, int $flags = IDBAccessObject::READ_NORMAL ) {
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$dbr = $this->dbManager->getCentralPrimaryDB();
+		} else {
+			$dbr = $this->dbManager->getCentralReplicaDB();
+		}
+
+		$res = $dbr->newSelectQueryBuilder()
+			->select( 'rq_id' )
+			->from( 'renameuser_queue' )
+			->where( [
+				'rq_name' => $name,
+				'rq_status'  => GlobalRenameRequest::PENDING,
+			] )
+			->recency( $flags )
+			->caller( __METHOD__ )
+			->fetchField();
+
+		return $res !== false;
+	}
+
+	/**
 	 * Fetch a single request from the database.
 	 *
 	 * @param array $where Where clause criteria
@@ -196,6 +228,7 @@ class GlobalRenameRequestStore {
 				'deleted'   => 'rq_deleted',
 				'performer' => 'rq_performer',
 				'comments'  => 'rq_comments',
+				'type'      => 'rq_type',
 			] )
 			->from( 'renameuser_queue' )
 			->where( $where )
