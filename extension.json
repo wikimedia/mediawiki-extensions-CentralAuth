@@ -838,6 +838,10 @@
 				"VPN",
 				"PROXY"
 			]
+		},
+		"CentralAuthRejectVanishUserNotification": {
+			"description": "User name to be notified when a global vanish request is rejected.",
+			"value": ""
 		}
 	},
 	"AuthManagerAutoConfig": {
