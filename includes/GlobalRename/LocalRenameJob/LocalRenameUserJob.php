@@ -108,6 +108,8 @@ class LocalRenameUserJob extends LocalRenameJob {
 			if ( $renamedUser ) {
 				$renamedUser->invalidateEmail();
 				$renamedUser->saveSettings();
+
+				User::newSystemUser( $renamedUser->getName(), [ 'steal' => true ] );
 			}
 		}
 
