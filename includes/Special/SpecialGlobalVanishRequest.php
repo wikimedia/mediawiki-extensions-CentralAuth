@@ -28,12 +28,17 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use PermissionsError;
+use RuntimeException;
 use UserMailer;
 
 /**
@@ -53,13 +58,17 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	/** @var GlobalRenameFactory */
 	private $globalRenameFactory;
 
+	/** @var HttpRequestFactory */
+	private $httpRequestFactory;
+
 	/**
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 */
 	public function __construct(
 		GlobalRenameDenylist $globalRenameDenylist,
 		GlobalRenameRequestStore $globalRenameRequestStore,
-		GlobalRenameFactory $globalRenameFactory
+		GlobalRenameFactory $globalRenameFactory,
+		HttpRequestFactory $httpRequestFactory
 	) {
 		parent::__construct( 'GlobalVanishRequest' );
 
@@ -67,6 +76,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->globalRenameFactory = $globalRenameFactory;
+		$this->httpRequestFactory = $httpRequestFactory;
 	}
 
 	/** @inheritDoc */
@@ -174,17 +184,54 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 			$out->setPageTitle( $this->msg( 'globalvanishrequest-status-title' ) );
 			$out->addWikiMsg( 'globalvanishrequest-status-text' );
-		} else {
-			if ( $hasPending ) {
-				$out = $this->getOutput();
-				$out->redirect( $this->getPageTitle( 'status' )->getFullURL(), '303' );
-				return;
+			return;
+		}
+
+		// Preemptively check if the user has any blocks, and if so prevent the
+		// form from rendering and give them a link to appeal.
+		$causer = $this->getGlobalUser();
+		if ( $causer ) {
+			$blockedWikiIds = [];
+			foreach ( $causer->getBlocks() as $wikiId => $blocks ) {
+				if ( count( $blocks ) > 0 ) {
+					$blockedWikiIds[] = $wikiId;
+				}
 			}
 
-			$out->addModules( 'ext.centralauth.globalvanishrequest' );
+			if ( count( $blockedWikiIds ) > 0 ) {
+				$out->setPageTitle( $this->msg( 'globalvanishrequest-blocked-title' ) );
 
-			parent::execute( $subPage );
+				$sitelinks = $this->getUserBlockAppealSitelinks( $blockedWikiIds );
+				if ( count( $sitelinks ) > 0 ) {
+					$out->addWikiMsg( 'globalvanishrequest-blocked-text' );
+				} else {
+					$out->addWikiMsg( 'globalvanishrequest-blocked-text-minimal' );
+				}
+
+				// Create an unordered list of appeal links that are relevant to
+				// the user. For each wiki that the user is blocked in, the
+				// relevant appeal page on that wiki is added.
+				$appealListItems = array_map(
+					fn ( $sitelink ) => Html::rawElement( 'li', [],
+						Parser::stripOuterParagraph( $out->parseAsContent( $sitelink ) )
+					),
+					$sitelinks
+				);
+				$out->addHTML( Html::rawElement( 'ul', [], implode( '', $appealListItems ) ) );
+
+				return;
+			}
 		}
+
+		if ( $hasPending ) {
+			$out = $this->getOutput();
+			$out->redirect( $this->getPageTitle( 'status' )->getFullURL(), '303' );
+			return;
+		}
+
+		$out->addModules( 'ext.centralauth.globalvanishrequest' );
+
+		parent::execute( $subPage );
 	}
 
 	/** @inheritDoc */
@@ -353,5 +400,97 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		if ( !$emailSendResult->isOK() ) {
 			$this->logger->error( $emailSendResult->getValue() );
 		}
+	}
+
+	/**
+	 * Retrieve the block appeal links most relevant for the user.
+	 *
+	 * For each wiki the user is blocked on, the appeal link for that wiki will
+	 * be returned. If that page is not available, then fallback pages will be
+	 * attempted as well if configured.
+	 *
+	 * @param array $wikiIds a list of wikis to fetch links from
+	 * @return array sitelinks to the most relevant appeal pages for the user
+	 */
+	private function getUserBlockAppealSitelinks( array $wikiIds ): array {
+		$sitelinks = [];
+
+		$entityIds = $this->getConfig()->get( 'CentralAuthBlockAppealWikidataIds' );
+		if ( isset( $entityIds ) && count( $entityIds ) > 0 ) {
+			// Fetch block appeal and block policy pages from the Wikidata API.
+			$parameters = [
+				"action" => "wbgetentities",
+				"format" => "json",
+				"ids" => implode( '|', $entityIds ),
+				"props" => "sitelinks|sitelinks/urls",
+				"formatversion" => "2",
+			];
+			$wikidataResult = $this->queryWikidata( $parameters );
+			if ( !$wikidataResult->isGood() ) {
+				return [];
+			}
+			$wikidataResponse = $wikidataResult->getValue();
+			$entities = $wikidataResponse['entities'];
+
+			// Iterate through every wiki with blocks and find the most
+			// relevant page for appealing blocks on an account.
+			foreach ( $wikiIds as $wikiId ) {
+				foreach ( $entityIds as $entityId ) {
+					if ( isset( $entities[$entityId]['sitelinks'][$wikiId]['url'] ) ) {
+						$sitelink = $entities[$entityId]['sitelinks'][$wikiId];
+						$sitelinks[] = "[{$sitelink['url']} {$sitelink['title']}]";
+						break;
+					}
+				}
+			}
+		}
+
+		// Fallback to showing a fallback URL (if configured) in the event that
+		// no appeal links were able to be found from the Wikidata API.
+		if ( count( $sitelinks ) === 0 ) {
+			$appealUrl = $this->getConfig()->get( 'CentralAuthFallbackAppealUrl' );
+			$appealTitle = $this->getConfig()->get( 'CentralAuthFallbackAppealTitle' );
+
+			if ( isset( $appealUrl ) && isset( $appealTitle ) ) {
+				$sitelinks[] = "[{$appealUrl} {$appealTitle}]";
+			}
+		}
+
+		return $sitelinks;
+	}
+
+	/**
+	 * Retrieve entity data from the Wikidata API.
+	 *
+	 * @param array $parameters
+	 * @return Status
+	 */
+	private function queryWikidata( array $parameters ): Status {
+		$options = [
+			'method' => 'GET',
+			'userAgent' => "{$this->httpRequestFactory->getUserAgent()} CentralAuth",
+		];
+		$url = $this->getConfig()->get( 'CentralAuthWikidataApiUrl' );
+		if ( !isset( $url ) ) {
+			return Status::newFatal(
+				'Cannot make Wikidata request for entities as $wgCentralAuthWikidataApiUrl is unset.'
+			);
+		}
+		$encodedParameters = wfArrayToCgi( $parameters );
+		$request = $this->httpRequestFactory->create( "{$url}?{$encodedParameters}", $options, __METHOD__ );
+
+		$httpResult = $request->execute();
+		if ( $httpResult->isOK() ) {
+			$httpResult->merge( FormatJson::parse( $request->getContent(), FormatJson::FORCE_ASSOC ), true );
+		}
+
+		[ $errorsOnlyStatus, $warningsOnlyStatus ] = $httpResult->splitByErrorType();
+		if ( !$warningsOnlyStatus->isGood() ) {
+			LoggerFactory::getInstance( 'CentralAuth' )->warning(
+				$warningsOnlyStatus->getWikiText( false, false, 'en' ),
+				[ 'exception' => new RuntimeException ]
+			);
+		}
+		return $errorsOnlyStatus;
 	}
 }

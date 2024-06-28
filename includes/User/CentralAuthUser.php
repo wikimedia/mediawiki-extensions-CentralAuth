@@ -822,11 +822,13 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Returns true if the account has any blocks on any wikis.
+	 * Returns an array of blocks per wiki the user is attached to.
 	 * @throws LocalUserNotFoundException
-	 * @return bool
+	 * @return array
 	 */
-	public function isBlocked(): bool {
+	public function getBlocks(): array {
+		$blocksByWikiId = [];
+
 		$mwServices = MediaWikiServices::getInstance();
 		$dbm = CentralAuthServices::getDatabaseManager();
 
@@ -870,7 +872,23 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockStore = $mwServices
 				->getDatabaseBlockStoreFactory()
 				->getDatabaseBlockStore( $wikiId );
-			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->user_id ] );
+			$blocksByWikiId[$wikiId] = $blockStore->newListFromConds(
+				[ 'bt_user' => $row->user_id ]
+			);
+		}
+
+		return $blocksByWikiId;
+	}
+
+	/**
+	 * Returns true if the account has any blocks on any wikis.
+	 * @throws LocalUserNotFoundException
+	 * @return bool
+	 */
+	public function isBlocked(): bool {
+		$blocksByWikiId = $this->getBlocks();
+
+		foreach ( $blocksByWikiId as $wikiId => $blocks ) {
 			if ( count( $blocks ) > 0 ) {
 				return true;
 			}
