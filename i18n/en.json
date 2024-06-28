@@ -344,6 +344,7 @@
 	"centralauth-rename-badusername": "The requested username is not valid.",
 	"centralauth-rename-cannotself": "You cannot rename yourself.",
 	"centralauth-rename-confirm": "Do you really want to globally rename this user?",
+	"centralauth-rename-confirm-vanish": "Do you really want to globally vanish this user?",
 	"centralauth-rename-conflict-hidden": "username hidden",
 	"centralauth-rename-deny": "Do you really want to deny this request?",
 	"centralauth-rename-doesnotexist": "The provided account does not exist.",

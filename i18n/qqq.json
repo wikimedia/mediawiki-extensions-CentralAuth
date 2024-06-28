@@ -370,6 +370,7 @@
 	"centralauth-rename-badusername": "Error message if the new username is not valid.",
 	"centralauth-rename-cannotself": "Error message if the user tries renaming themselves.",
 	"centralauth-rename-confirm": "Confirmation text asking whether the global account should really be renamed.",
+	"centralauth-rename-confirm-vanish": "Confirmation text asking whether the global account should really be vanished.",
 	"centralauth-rename-conflict-hidden": "Text displayed instead of the username if the user has been hidden",
 	"centralauth-rename-deny": "Confirm text asking whether the global rename request should really be denied.",
 	"centralauth-rename-doesnotexist": "Error message if the account provided does not exist.",

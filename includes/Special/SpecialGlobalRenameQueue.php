@@ -430,6 +430,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$globalUserInfoMsg = 'globalrenamequeue-request-vanish-userinfo';
 			$headerMsgKey = 'globalrenamequeue-request-vanish-header';
 			$reasonMsg = 'globalrenamequeue-request-vanish-reason';
+			$approveConfirmation = 'mw-renamequeue-approve-vanish';
 		} else {
 			$commonPreambleMsg = 'globalrenamequeue-request-title';
 			$approveButtonMsg = 'globalrenamequeue-request-approve-text';
@@ -437,6 +438,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$globalUserInfoMsg = 'globalrenamequeue-request-userinfo-global';
 			$headerMsgKey = 'globalrenamequeue-request-header';
 			$reasonMsg = 'globalrenamequeue-request-reason';
+			$approveConfirmation = 'mw-renamequeue-approve';
 		}
 
 		$this->commonPreamble( $commonPreambleMsg, [ $req->getName() ] );
@@ -492,7 +494,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				->addButton( [
 					'name' => 'approve',
 					'value' => $this->msg( $approveButtonMsg )->text(),
-					'id' => 'mw-renamequeue-approve',
+					'id' => $approveConfirmation,
 					'flags' => [ 'primary', 'progressive' ],
 					'framed' => true
 				] );

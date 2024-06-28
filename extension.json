@@ -489,6 +489,7 @@
 			"scripts": "ext.centralauth.globalrenamequeue.js",
 			"messages": [
 				"centralauth-rename-confirm",
+				"centralauth-rename-confirm-vanish",
 				"centralauth-rename-deny"
 			]
 		},
