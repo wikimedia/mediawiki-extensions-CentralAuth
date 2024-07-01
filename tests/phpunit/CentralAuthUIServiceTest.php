@@ -101,7 +101,7 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$u = new CentralAuthTestUser(
 			'Conflict',
@@ -111,7 +111,7 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$u = new CentralAuthTestUser(
 			'SuppressedConflict',
@@ -124,7 +124,7 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$message = $this->createMock( Message::class );
 		$message->expects( $this->once() )

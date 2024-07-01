@@ -29,7 +29,7 @@ class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$userFactory = $this->getServiceContainer()->getUserFactory();
 		$user = $userFactory->newFromName( 'GlobalLockedUser' );

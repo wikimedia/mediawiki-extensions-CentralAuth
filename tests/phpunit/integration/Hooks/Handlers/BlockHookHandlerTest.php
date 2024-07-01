@@ -43,7 +43,7 @@ class BlockHookHandlerTest extends MediaWikiIntegrationTestCase {
 				[ WikiMap::getCurrentWikiId(), 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$userFactory = $this->getServiceContainer()->getUserFactory();
 		$user = $userFactory->newFromName( 'GloballySuppressedUser' );
@@ -62,7 +62,7 @@ class BlockHookHandlerTest extends MediaWikiIntegrationTestCase {
 			[],
 			false
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$userFactory = $this->getServiceContainer()->getUserFactory();
 		$user = $userFactory->newFromName( 'GloballySuppressedUser' );

@@ -26,7 +26,7 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiIntegrationTest
 			[ 'gu_id' => 1001 ],
 			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
 		);
-		$user->save( $this->db );
+		$user->save( $this->getDb() );
 
 		$this->assertSame(
 			'20130627183537',

@@ -182,7 +182,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'password' ],
 			]
 		);
-		$user->save( $this->db );
+		$user->save( $this->getDb() );
 
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',
@@ -198,7 +198,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 
 		$u = new CentralAuthTestUser(
 			'GlobalSuppressedUser',
@@ -214,7 +214,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 				[ 'metawiki', 'primary' ],
 			]
 		);
-		$u->save( $this->db );
+		$u->save( $this->getDb() );
 	}
 
 }
