@@ -127,6 +127,7 @@
 	"centralauth-complete": "ანგარიშის გაერთიანება დასრულებულია!",
 	"centralauth-complete-text": "ახლა თქვენ უკვე შეგიძლიათ {{int:Centralauth-groupname}} ვიკი-გვერდებზე შესვლა ახალი ანგარიშის გახსნის გარეშე",
 	"centralauth-completelogin-back": "დაბრუნდი წინა გვერდზე.",
+	"centralauth-createlocal-username": "გლობალური ანგარიშის სახელი",
 	"centralauth-days-ago": "$1 დღის წინ",
 	"centralauth-delete-empty-account": "ანგარიშის რედაქტირება",
 	"centralauth-desc": "[[Special:MergeAccount|ანგარიშის გაერთიანება]] ფონდ „ვიდიმედიას“ ყველა ვიკი-პროექტში",
