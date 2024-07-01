@@ -365,9 +365,19 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param GlobalRenameRequest $req
 	 */
 	protected function doViewRequest( GlobalRenameRequest $req ) {
-		$this->commonPreamble( 'globalrenamequeue-request-status-title',
-			[ $req->getName(), $req->getNewName() ]
-		);
+		$isVanishRequest = $req->getType() === GlobalRenameRequest::VANISH;
+
+		if ( $isVanishRequest ) {
+			$this->commonPreamble(
+				'globalrenamequeue-request-vanish-status-title',
+				[ $req->getName() ]
+			);
+		} else {
+			$this->commonPreamble(
+				'globalrenamequeue-request-status-title',
+				[ $req->getName(), $req->getNewName() ]
+			);
+		}
 
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
@@ -393,24 +403,54 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$reason = ': ' . $reason;
 		}
 
+		$status = $req->getStatus();
+		$causerName = $status === GlobalRenameRequest::APPROVED
+			? $req->getNewName()
+			: $req->getName();
+
+		$causer = CentralAuthUser::getInstanceByName( $causerName );
+		$attachedWikis = $causer->exists() && $causer->isAttached()
+			? implode( ', ', array_keys( $causer->queryAttachedBasic() ) )
+			: '';
+
 		// Done as one big message so that admins can create a local
 		// translation to customize the output as they see fit.
 		// @TODO: Do that actually in here... this is not how we do interfaces in 2015.
-		$viewMsg = $this->msg( 'globalrenamequeue-view',
-			$req->getName(),
-			$req->getNewName(),
-			$reason,
-			$this->msg( 'globalrenamequeue-view-' . $req->getStatus() )->text(),
-			$this->getLanguage()->userTimeAndDate(
-				$req->getRequested(), $this->getUser()
-			),
-			$this->getLanguage()->userTimeAndDate(
-				$req->getCompleted(), $this->getUser()
-			),
-			$renamerLink,
-			$renamer->getName(),
-			$req->getComments()
-		)->parseAsBlock();
+		if ( $isVanishRequest ) {
+			$viewMsg = $this->msg( 'globalrenamequeue-vanish-view',
+				$req->getName(),
+				$reason,
+				$this->msg( 'globalrenamequeue-view-' . $status )->text(),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getRequested(), $this->getUser()
+				),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getCompleted(), $this->getUser()
+				),
+				$attachedWikis,
+				$renamerLink,
+				$renamer->getName(),
+				$req->getComments()
+			)->parseAsBlock();
+		} else {
+			$viewMsg = $this->msg( 'globalrenamequeue-view',
+				$req->getName(),
+				$req->getNewName(),
+				$reason,
+				$this->msg( 'globalrenamequeue-view-' . $status )->text(),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getRequested(), $this->getUser()
+				),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getCompleted(), $this->getUser()
+				),
+				$attachedWikis,
+				$renamerLink,
+				$renamer->getName(),
+				$req->getComments()
+			)->parseAsBlock();
+		}
+
 		$this->getOutput()->addHtml( '<div class="plainlinks">' . $viewMsg . '</div>' );
 	}
 
