@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Akansha",
 			"Anoop rao",
 			"Ansumang",
@@ -337,6 +338,7 @@
 	"globalrenamequeue": "वैश्विक पुनःनामकरण निवेदन कतार",
 	"globalrenamequeue-action-address": "पता",
 	"globalrenamequeue-action-view": "देखें",
+	"globalrenamequeue-type-rename": "नाम बदलें",
 	"globalrenamequeue-column-row-actions": "कार्यवाही",
 	"globalrenamequeue-column-rq-completed-ts": "बन्द तिथि",
 	"globalrenamequeue-column-rq-name": "सदस्यनाम",
@@ -368,6 +370,7 @@
 	"globalrenamequeue-request-unknown-title": "निवेदन प्राप्त नहीं",
 	"globalrenamequeue-request-userinfo-global": "* वर्तमान सदस्य नाम: [[Special:CentralAuth/$1|$1]]\n* विकि घर: $2\n* नया सदस्य नाम: [[Special:CentralAuth/$3|$3]]\n* वैश्विक सम्पादन संख्या: $4",
 	"globalrenamequeue-request-userinfo-local": "* सदस्य: [[Special:CentralAuth/$1|$1]]\n* प्रारंभिक विकि: $2 \n* नया सदस्यनाम: [[Special:CentralAuth/$3|$3]]",
+	"globalrenamequeue-request-vanish-user-blocked": "हाँ",
 	"globalrenamequeue-view": ";से:\n:[[Special:CentralAuth/$1|$1]]\n;तक:\n:[[Special:CentralAuth/$2|$2]]\n;कारण:\n$3\n;स्थिति:\n:$4\n;निवेदन किया गया:\n:$5\n;पूरा किया गया:\n:$6\n;द्वारा किया गया:\n:[$7 $8]\n;टिप्पणियाँ:\n:$9",
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "रद्द",
