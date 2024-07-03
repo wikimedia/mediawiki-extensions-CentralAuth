@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
 use LogicException;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\RenameUser\RenameuserSQL;
@@ -48,9 +47,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 		}
 		if ( !isset( $params['reattach'] ) ) {
 			$params['reattach'] = false;
-		}
-		if ( !isset( $params[ 'requestType' ] ) ) {
-			$params[ 'requestType' ] = GlobalRenameRequest::RENAME;
 		}
 
 		parent::__construct( $title, $params );
@@ -100,19 +96,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 			// until a sysadmin intervenes...
 			throw new LogicException( 'RenameuserSQL::rename returned false.' );
 		}
-
-		if ( $this->params[ 'requestType' ] === GlobalRenameRequest::VANISH ) {
-			// $renamedUser should always be truthy, otherwise the exception
-			// above would be thrown
-			$renamedUser = $services->getUserFactory()->newFromName( $to );
-			if ( $renamedUser ) {
-				$renamedUser->invalidateEmail();
-				$renamedUser->saveSettings();
-
-				User::newSystemUser( $renamedUser->getName(), [ 'steal' => true ] );
-			}
-		}
-
 		if ( $this->params['reattach'] ) {
 			$caUser = CentralAuthUser::getInstanceByName( $this->params['to'] );
 			$wikiId = WikiMap::getCurrentWikiId();

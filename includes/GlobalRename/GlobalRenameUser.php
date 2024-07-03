@@ -142,19 +142,12 @@ class GlobalRenameUser {
 			return $status;
 		}
 
-		if ( $options[ 'requestType' ] === GlobalRenameRequest::VANISH ) {
-			$password = wfRandomString();
-			// "Invalidate" password and reset token
-			$this->oldCAUser->setPassword( $password );
-		}
-
 		// Rename the user centrally and unattach the old user from all
 		// attached wikis. Each will be reattached as its LocalRenameUserJob
 		// runs.
 		$this->databaseUpdates->update(
 			$this->oldUser->getName(),
-			$this->newUser->getName(),
-			$options[ 'requestType' ] ?? GlobalRenameRequest::RENAME
+			$this->newUser->getName()
 		);
 
 		// Update CA's AntiSpoof
@@ -245,7 +238,6 @@ class GlobalRenameUser {
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
 			'force' => isset( $options['force'] ) && $options['force'],
-			'requestType' => $options[ 'requestType' ] ?? GlobalRenameRequest::RENAME,
 		];
 		if ( $this->session !== null ) {
 			$params['session'] = $this->session;
