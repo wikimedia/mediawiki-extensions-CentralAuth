@@ -167,7 +167,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$out = $this->getOutput();
 
 		if ( $subPage === 'vanished' ) {
-			$out->setPageTitle( $this->msg( 'globalvanishrequest-vanished-title' ) );
+			$out->setPageTitleMsg( $this->msg( 'globalvanishrequest-vanished-title' ) );
 			$out->addWikiMsg( 'globalvanishrequest-vanished-text' );
 			return;
 		}
@@ -182,7 +182,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				return;
 			}
 
-			$out->setPageTitle( $this->msg( 'globalvanishrequest-status-title' ) );
+			$out->setPageTitleMsg( $this->msg( 'globalvanishrequest-status-title' ) );
 			$out->addWikiMsg( 'globalvanishrequest-status-text' );
 			return;
 		}
@@ -199,7 +199,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			}
 
 			if ( count( $blockedWikiIds ) > 0 ) {
-				$out->setPageTitle( $this->msg( 'globalvanishrequest-blocked-title' ) );
+				$out->setPageTitleMsg( $this->msg( 'globalvanishrequest-blocked-title' ) );
 
 				$sitelinks = $this->getUserBlockAppealSitelinks( $blockedWikiIds );
 				if ( count( $sitelinks ) > 0 ) {

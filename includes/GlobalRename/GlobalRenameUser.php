@@ -142,6 +142,10 @@ class GlobalRenameUser {
 			return $status;
 		}
 
+		if ( $options[ 'type' ] === GlobalRenameRequest::VANISH ) {
+			$this->oldCAUser->adminLock();
+		}
+
 		// Rename the user centrally and unattach the old user from all
 		// attached wikis. Each will be reattached as its LocalRenameUserJob
 		// runs.
