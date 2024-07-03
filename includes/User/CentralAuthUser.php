@@ -866,11 +866,15 @@ class CentralAuthUser implements IDBAccessObject {
 				);
 				throw $ex;
 			}
+			// if the current wiki is the local wiki, then the BlockStore expect "WikiAwareEntity::LOCAL" as value;
+			if ( $wikiId === WikiMap::getCurrentWikiId() ) {
+				$wikiId = WikiAwareEntity::LOCAL;
+			}
 
 			$blockStore = $mwServices
 				->getDatabaseBlockStoreFactory()
 				->getDatabaseBlockStore( $wikiId );
-			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->id ] );
+			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->user_id ] );
 			if ( count( $blocks ) > 0 ) {
 				return true;
 			}
