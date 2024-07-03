@@ -880,6 +880,50 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Returns true if the account has any public logs.
+	 *
+	 * By default this method ignores 'newusers' logs as almost all users will
+	 * have a log record of that type.
+	 *
+	 * @param array $excludeTypes is an array of log types to ignore
+	 * @return bool
+	 */
+	public function hasPublicLogs( $excludeTypes = [ 'newusers' ] ): bool {
+		$services = MediaWikiServices::getInstance();
+		$dbm = CentralAuthServices::getDatabaseManager();
+
+		$user = $services->getUserIdentityLookup()->getUserIdentityByName( $this->getName() );
+		if ( !$user ) {
+			return false;
+		}
+
+		$wikis = $this->queryAttachedBasic();
+		foreach ( $wikis as $wikiId => $_ ) {
+			$dbr = $dbm->getLocalDB( DB_REPLICA, $wikiId );
+			$actorId = $services->getActorNormalization()->acquireActorId( $user, $dbr );
+
+			$conds = array_merge(
+				[ 'log_actor' => $actorId ],
+				array_map(
+					fn ( $type ) => 'log_type != ' . $dbr->addQuotes( $type ),
+					$excludeTypes,
+				)
+			);
+			$row = $dbr->newSelectQueryBuilder()
+				->select( [ 'log_id' ] )
+				->from( 'logging' )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->fetchRow();
+			if ( $row ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
 	 * Returns the hidden level of the account.
 	 * @throws Exception for now
 	 * @return never

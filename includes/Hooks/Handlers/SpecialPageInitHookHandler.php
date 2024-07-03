@@ -70,6 +70,7 @@ class SpecialPageInitHookHandler implements
 				'services' => [
 					'CentralAuth.GlobalRenameDenylist',
 					'CentralAuth.GlobalRenameRequestStore',
+					'CentralAuth.GlobalRenameFactory',
 				]
 			];
 		}

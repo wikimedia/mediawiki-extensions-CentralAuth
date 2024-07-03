@@ -22,20 +22,27 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use IDBAccessObject;
+use MailAddress;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use PermissionsError;
+use UserMailer;
 
 /**
  * Request an account vanish.
  */
 class SpecialGlobalVanishRequest extends FormSpecialPage {
+
+	/** @var \Psr\Log\LoggerInterface */
+	private $logger;
 
 	/** @var GlobalRenameDenylist */
 	private $globalRenameDenylist;
@@ -43,16 +50,23 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	/** @var GlobalRenameRequestStore */
 	private $globalRenameRequestStore;
 
+	/** @var GlobalRenameFactory */
+	private $globalRenameFactory;
+
 	/**
 	 * @param GlobalRenameDenylist $globalRenameDenylist
 	 */
 	public function __construct(
 		GlobalRenameDenylist $globalRenameDenylist,
-		GlobalRenameRequestStore $globalRenameRequestStore
+		GlobalRenameRequestStore $globalRenameRequestStore,
+		GlobalRenameFactory $globalRenameFactory
 	) {
 		parent::__construct( 'GlobalVanishRequest' );
+
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
+		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	/** @inheritDoc */
@@ -86,29 +100,73 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			->setReason( $data['reason'] ?? null )
 			->setType( GlobalRenameRequest::VANISH );
 
-		// Save the vanish request to the database.
+		$automaticVanishPerformerName = $this->getConfig()->get( 'CentralAuthAutomaticVanishPerformer' );
+		$automaticVanishPerformer = $automaticVanishPerformerName !== null
+			? CentralAuthUser::getInstanceByName( $automaticVanishPerformerName )
+			: null;
+
+		// Immediately start the vanish if we already know that the user is
+		// eligible for approval without a review.
+		if (
+			isset( $automaticVanishPerformer ) &&
+			$automaticVanishPerformer->exists() &&
+			$automaticVanishPerformer->isAttached() &&
+			$this->eligibleForAutomaticVanish()
+		) {
+			$renameResult = $this->globalRenameFactory
+				->newGlobalRenameUser( $this->getUser(), $causer, $request->getNewName() )
+				->withSession( $this->getContext()->exportSession() )
+				->rename( $request->toArray() );
+
+			if ( !$renameResult->isGood() ) {
+				return $renameResult;
+			}
+
+			// We still want to leave a record that this happened, so change
+			// the status over to 'approved' for the subsequent save.
+			$request
+				->setPerformer( $automaticVanishPerformer->getId() )
+				->setStatus( GlobalRenameRequest::APPROVED );
+		}
+
+		// Save the request to the database for it to be processed later.
 		if ( !$this->globalRenameRequestStore->save( $request ) ) {
 			return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 		}
 
+		$this->sendVanishingSuccessfulEmail( $request );
+
 		return Status::newGood();
 	}
 
+	/** @inheritDoc */
 	public function onSuccess(): void {
+		$isVanished = $this->globalRenameRequestStore
+			->currentNameHasApprovedVanish(
+				$this->getUser()->getName(), IDBAccessObject::READ_LATEST );
+
+		$destination = $isVanished ? 'vanished' : 'status';
+
 		$this->getOutput()->redirect(
-			$this->getPageTitle( 'status' )->getFullURL(), '303'
+			$this->getPageTitle( $destination )->getFullURL(), '303'
 		);
 	}
 
 	/** @inheritDoc */
 	public function execute( $subPage ): void {
-		$this->requireNamedUser();
+		$out = $this->getOutput();
 
+		if ( $subPage === 'vanished' ) {
+			$out->setPageTitle( $this->msg( 'globalvanishrequest-vanished-title' ) );
+			$out->addWikiMsg( 'globalvanishrequest-vanished-text' );
+			return;
+		}
+
+		$this->requireNamedUser();
 		$username = $this->getUser()->getName();
 		$hasPending = $this->globalRenameRequestStore->currentNameHasPendingRequest( $username );
 
 		if ( $subPage === 'status' ) {
-			$out = $this->getOutput();
 			if ( !$hasPending ) {
 				$out->redirect( $this->getPageTitle()->getFullURL(), '303' );
 				return;
@@ -122,6 +180,8 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				$out->redirect( $this->getPageTitle( 'status' )->getFullURL(), '303' );
 				return;
 			}
+
+			$out->addModules( 'ext.centralauth.globalvanishrequest' );
 
 			parent::execute( $subPage );
 		}
@@ -174,7 +234,9 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ): void {
-		$form->setSubmitTextMsg( 'globalvanishrequest-submit-text' );
+		$form
+			->setSubmitTextMsg( 'globalvanishrequest-submit-text' )
+			->setSubmitID( 'mw-vanishrequest-submit' );
 	}
 
 	/** @inheritDoc */
@@ -225,5 +287,71 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		} while ( $attempts < 5 );
 
 		return false;
+	}
+
+	/**
+	 * Checks if the currently authenticated user is eligible for automatic vanishing.
+	 * @return bool
+	 */
+	private function eligibleForAutomaticVanish(): bool {
+		$causer = $this->getGlobalUser();
+		if ( !$causer ) {
+			return false;
+		}
+
+		return $causer->getGlobalEditCount() === 0 &&
+			!$causer->isBlocked() &&
+			!$causer->hasPublicLogs();
+	}
+
+	/**
+	 * Attempt to send a success email to the user whose vanish was fulfilled.
+	 * TODO: https://phabricator.wikimedia.org/T369134 - refactor email sending
+	 * @param GlobalRenameRequest $request
+	 * @return void
+	 */
+	private function sendVanishingSuccessfulEmail( GlobalRenameRequest $request ): void {
+		$causer = $this->getGlobalUser();
+		if ( !$causer ) {
+			return;
+		}
+
+		$bodyKey = $request->getComments() === ''
+			? 'globalrenamequeue-vanish-email-body-approved'
+			: 'globalrenamequeue-vanish-email-body-approved-with-note';
+
+		$subject = $this->msg( 'globalrenamequeue-vanish-email-subject-approved' )
+			->inContentLanguage()
+			->text();
+		$body = $this->msg( $bodyKey, [ $request->getName(), $request->getComments() ] )
+			->inContentLanguage()
+			->text();
+
+		$from = new MailAddress(
+			$this->getConfig()->get( 'PasswordSender' ),
+			$this->msg( 'emailsender' )->inContentLanguage()->text()
+		);
+		$to = new MailAddress( $causer->getEmail(), $causer->getName(), '' );
+
+		// Users don't always have email addresses. Since this is acceptable
+		// and expected behavior, bail out with a warning if there isn't one.
+		if ( !$to->address ) {
+			$this->logger->info(
+				"Unable to sent approval email to User:{oldName} as there is no email address to send to.",
+				[ 'oldName' => $request->getName(), 'component' => 'GlobalVanish' ]
+			);
+			return;
+		}
+
+		$this->logger->info( 'Send approval email to User:{oldName}', [
+			'oldName' => $request->getName(),
+			'component' => 'GlobalVanish',
+		] );
+
+		// Attempt to send the email, and log an error if this fails.
+		$emailSendResult = UserMailer::send( $to, $from, $subject, $body );
+		if ( !$emailSendResult->isOK() ) {
+			$this->logger->error( $emailSendResult->getValue() );
+		}
 	}
 }
