@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"BadDog"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globalni broj izmjena korisnika",
@@ -268,7 +269,7 @@
 	"centralauth-prefs-not-managed": "Ne koristi globalni nalog",
 	"centralauth-prefs-status": "Globalni račun:",
 	"centralauth-prefs-unattached": "Nije u potpunosti sjedinjen",
-	"centralauth-prefs-view": "Podaci o vašem globalnom računu",
+	"centralauth-prefs-view": "Podaci o globalnom računu",
 	"centralauth-rename-conflict-hidden": "korisničko ime sakriveno",
 	"centralauth-rename-form-movepages": "Premještanje korisničkih stranica",
 	"centralauth-rename-form-newname": "Novo korisničko ime",

@@ -97,6 +97,7 @@
 	"centralauth-admin-info-unattached": "未連結的帳號數量：",
 	"centralauth-admin-info-username": "使用者名稱：",
 	"centralauth-admin-info-username-rename": "重新命名",
+	"centralauth-admin-info-expired": "臨時帳號已過期：",
 	"centralauth-admin-intro": "此介面可用來管理全域帳號。",
 	"centralauth-admin-list-attached-on": "連結時間",
 	"centralauth-admin-list-blocked": "已封鎖",
@@ -518,5 +519,6 @@
 	"right-globalgrouppermissions": "管理全域群組",
 	"sessionprovider-centralauthsessionprovider": "基於 cookie 的中央 sessions",
 	"sessionprovider-centralauthtokensessionprovider": "中央驗證令牌 session",
-	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。"
+	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。",
+	"centralauth-blocked-ip-reputation": "您目前使用的 IP 位址遭到封鎖，因為此位址近期似乎有濫用的行為。"
 }
