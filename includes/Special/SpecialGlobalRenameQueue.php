@@ -45,11 +45,11 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use MediaWiki\Xml\Xml;
 use OOUI\MessageWidget;
 use RuntimeException;
 use UserMailer;
 use Wikimedia\Rdbms\LBFactory;
-use Xml;
 
 /**
  * Process account rename requests made via [[Special:GlobalRenameRequest]].

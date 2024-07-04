@@ -10,9 +10,9 @@ use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 use PermissionsError;
-use Xml;
-use XmlSelect;
 
 /**
  * Special page to allow to edit "wikisets" which are used to restrict

@@ -12,10 +12,10 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
+use MediaWiki\Xml\Xml;
 use MWCryptRand;
 use RuntimeException;
 use Wikimedia\AtEase\AtEase;
-use Xml;
 
 class SpecialMergeAccount extends SpecialPage {
 	/** @var string */

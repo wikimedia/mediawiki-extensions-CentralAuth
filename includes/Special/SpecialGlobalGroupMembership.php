@@ -38,10 +38,10 @@ use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 use PermissionsError;
 use UserBlockedError;
-use Xml;
-use XmlSelect;
 
 /**
  * Equivalent of Special:Userrights for global groups.

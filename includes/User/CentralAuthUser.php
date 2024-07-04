@@ -20,11 +20,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use AbstractPbkdf2Password;
 use BadMethodCallException;
 use CentralAuthSessionProvider;
 use Exception;
-use FormattedRCFeed;
 use IDBAccessObject;
 use InvalidArgumentException;
 use LogicException;
@@ -43,6 +41,12 @@ use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Password\AbstractPbkdf2Password;
+use MediaWiki\Password\Password;
+use MediaWiki\Password\PasswordError;
+use MediaWiki\Password\PasswordFactory;
+use MediaWiki\RCFeed\FormattedRCFeed;
+use MediaWiki\RCFeed\RCFeed;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
@@ -53,10 +57,6 @@ use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptHash;
 use MWCryptRand;
-use Password;
-use PasswordError;
-use PasswordFactory;
-use RCFeed;
 use RevisionDeleteUser;
 use RuntimeException;
 use stdClass;

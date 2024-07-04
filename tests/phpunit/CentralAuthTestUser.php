@@ -3,6 +3,7 @@
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Password\PasswordFactory;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IDatabase;

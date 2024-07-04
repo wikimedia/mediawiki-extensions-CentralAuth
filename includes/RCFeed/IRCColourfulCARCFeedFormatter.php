@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\RCFeed;
 
-use IRCColourfulRCFeedFormatter;
+use MediaWiki\RCFeed\IRCColourfulRCFeedFormatter;
 use MediaWiki\Title\Title;
 
 /**

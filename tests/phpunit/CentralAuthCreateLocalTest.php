@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;

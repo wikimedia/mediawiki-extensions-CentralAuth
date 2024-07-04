@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Password\Password;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use PHPUnit\Framework\MockObject\MockObject;

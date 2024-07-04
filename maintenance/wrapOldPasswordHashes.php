@@ -22,6 +22,8 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Password\LayeredParameterizedPassword;
+use MediaWiki\Password\ParameterizedPassword;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 

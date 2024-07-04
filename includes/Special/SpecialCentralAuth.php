@@ -32,10 +32,10 @@ use MediaWiki\User\UserNameUtils;
 use MediaWiki\Utils\MWTimestamp;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\WikiMap\WikiReference;
+use MediaWiki\Xml\Xml;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 use Wikimedia\Rdbms\ReadOnlyMode;
-use Xml;
 
 class SpecialCentralAuth extends SpecialPage {
 	/** @var string */

@@ -24,8 +24,8 @@ use Exception;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PasswordPoliciesForUserHook;
+use MediaWiki\Password\UserPasswordPolicy;
 use MediaWiki\User\User;
-use UserPasswordPolicy;
 
 class PasswordPoliciesHookHandler implements
 	PasswordPoliciesForUserHook

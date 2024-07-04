@@ -29,8 +29,8 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
-use Xml;
-use XmlSelect;
+use MediaWiki\Xml\Xml;
+use MediaWiki\Xml\XmlSelect;
 
 /**
  * Special page to allow managing global groups

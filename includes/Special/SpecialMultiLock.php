@@ -8,9 +8,9 @@ use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Xml\Xml;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
-use Xml;
 
 /**
  * Special page to allow locking and hiding multiple users

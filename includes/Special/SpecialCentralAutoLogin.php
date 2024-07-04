@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use CentralAuthSessionProvider;
 use Exception;
 use ExtensionRegistry;
-use FormatJson;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
@@ -15,6 +14,7 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
+use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\ResourceLoader\ResourceLoader;
@@ -25,6 +25,7 @@ use MediaWiki\User\Options\UserOptionsManager;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
+use MediaWiki\Xml\Xml;
 use MobileContext;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
@@ -32,7 +33,6 @@ use RuntimeException;
 use SkinTemplate;
 use Wikimedia\Rdbms\ReadOnlyMode;
 use Wikimedia\ScopedCallback;
-use Xml;
 
 /**
  * Unlisted special page that handles central autologin and edge login, and some related

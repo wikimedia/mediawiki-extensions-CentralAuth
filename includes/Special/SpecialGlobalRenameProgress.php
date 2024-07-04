@@ -12,7 +12,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use Xml;
+use MediaWiki\Xml\Xml;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
 

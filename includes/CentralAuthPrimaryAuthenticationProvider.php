@@ -22,7 +22,6 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use IDBAccessObject;
-use InvalidPassword;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
@@ -34,6 +33,7 @@ use MediaWiki\Extension\AntiSpoof\AntiSpoofAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Password\InvalidPassword;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
