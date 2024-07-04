@@ -31,6 +31,7 @@
 	"globalrenamequeue-column-rq-status": "Կարգավիճակ",
 	"globalrenamequeue-form-newname": "Մասնակցային անվան հայտ:",
 	"globalrenamequeue-form-status-all": "լրիվ",
+	"globalrenamequeue-form-type-rename": "Վերանվանել",
 	"globalrenamequeue-form-username": "Մասնակցի անուն:",
 	"globalrenamequeue-request-cancel-text": "Չեղարկել"
 }

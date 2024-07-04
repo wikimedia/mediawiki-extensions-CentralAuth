@@ -14,5 +14,7 @@
 	"centralauth-foreign-link": "$2էն $1 մասնակից",
 	"centralauth-merge-dryrun-or": "'''կամ'''",
 	"centralauth-merge-method-login": "Մուտքի ատեն ստեղծուած",
-	"globalrenamequeue-column-row-actions": "Գործողություն"
+	"globalrenamequeue-column-row-actions": "Գործողություն",
+	"globalrenamequeue-request-vanish-user-blocked": "այո",
+	"globalrenamequeue-request-vanish-user-not-blocked": "ոչ"
 }
