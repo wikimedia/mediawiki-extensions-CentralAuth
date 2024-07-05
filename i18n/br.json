@@ -12,7 +12,8 @@
 			"Y-M D"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Strolladoù hollek m'emañ an implijer",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Niver a zegasadennoù hollek an implijer ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Strolladoù hollek emañ an implijer enno ($1)",
 	"action-centralauth-lock": "prennañ pe dibrennañ kontoù hollek",
 	"action-centralauth-rename": "adenvel kontoù hollek",
 	"centralauth": "Merer ar c'hontoù hollek",
