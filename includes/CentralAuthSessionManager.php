@@ -35,7 +35,6 @@ class CentralAuthSessionManager {
 	 * @internal Only public for service wiring use
 	 */
 	public const CONSTRUCTOR_OPTIONS = [
-		'CentralAuthDatabase',
 		'CentralAuthSessionCacheType',
 		'SessionCacheType',
 	];
@@ -73,13 +72,24 @@ class CentralAuthSessionManager {
 	}
 
 	/**
+	 * @return string db name, for session key creation
+	 * Note that if there is more than one CentralAuth database
+	 * in use for the same session key store, the database names
+	 * MUST be unique.
+	 */
+	private function getCentralAuthDBForSessionKey() {
+		return MediaWikiServices::getInstance()
+			->getDBLoadBalancerFactory()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
+	}
+
+	/**
 	 * @param string $keygroup
 	 * @param string ...$components
 	 * @return string The global session key (with proper escaping)
 	 */
 	public function makeSessionKey( string $keygroup, ...$components ): string {
 		return $this->getSessionStore()->makeGlobalKey(
-			$keygroup, $this->options->get( 'CentralAuthDatabase' ), ...$components
+			$keygroup, $this->getCentralAuthDBForSessionKey(), ...$components
 		);
 	}
 
@@ -90,7 +100,7 @@ class CentralAuthSessionManager {
 	 */
 	public function makeTokenKey( string $keygroup, ...$components ): string {
 		return $this->getTokenStore()->makeGlobalKey(
-			$keygroup, $this->options->get( 'CentralAuthDatabase' ), ...$components
+			$keygroup, $this->getCentralAuthDBForSessionKey(), ...$components
 		);
 	}
 

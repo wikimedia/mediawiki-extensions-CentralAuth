@@ -104,8 +104,10 @@ class CentralAuthHooks implements
 		) {
 			$wgCentralAuthDatabase = false;
 			unset( $wgVirtualDomainsMapping['virtual-centralauth'] );
-		} elseif ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] ) ) {
-			$wgVirtualDomainsMapping['virtual-centralauth'] = [ 'db' => $wgCentralAuthDatabase ];
+		} else {
+			if ( !isset( $wgVirtualDomainsMapping['virtual-centralauth'] ) ) {
+				$wgVirtualDomainsMapping['virtual-centralauth'] = [ 'db' => $wgCentralAuthDatabase ?? false ];
+			}
 		}
 
 		// CentralAuthSessionProvider is supposed to replace core
