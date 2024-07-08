@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zolgoyo"
+		]
+	},
+	"globalrenamequeue-type-rename": "Atını deñĭştĭr",
+	"globalrenamequeue-form-type-all": "Epĭsĭ",
+	"globalrenamequeue-form-type-rename": "Atını deñĭştĭr",
+	"globalrenamequeue-request-vanish-user-blocked": "ya",
+	"globalrenamequeue-request-vanish-user-not-blocked": "yoq"
+}
