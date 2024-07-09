@@ -24,7 +24,11 @@ use ErrorPageError;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthenticationProviderTrait;
+use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Hook\PostLoginRedirectHook;
+use MediaWiki\MediaWikiServices;
 use RuntimeException;
 
 class RedirectingLoginHookHandler implements
@@ -32,6 +36,23 @@ class RedirectingLoginHookHandler implements
 	AuthPreserveQueryParamsHook
 {
 	use CentralAuthenticationProviderTrait;
+
+	/**
+	 * @internal For use by CentralAuth only.
+	 * @var string Storage key prefix for the token when continuing the login
+	 *    in the local wiki.
+	 */
+	public const LOGIN_CONTINUE_USERNAME_KEY_PREFIX = 'centralauth-post-login-redirect-username';
+
+	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthUtilityService $caUtilityService;
+
+	public function __construct(
+		CentralAuthSessionManager $sessionManager, CentralAuthUtilityService $utility
+	) {
+		$this->sessionManager = $sessionManager;
+		$this->caUtilityService = $utility;
+	}
 
 	/** @inheritDoc */
 	public function onPostLoginRedirect( &$returnTo, &$returnToQuery, &$type ) {
@@ -42,7 +63,7 @@ class RedirectingLoginHookHandler implements
 
 		$context = RequestContext::getMain();
 		$request = $context->getRequest();
-		$url = $request->getRawVal( 'returnurl' );
+		$url = $request->getRawVal( 'returnUrlToken' );
 
 		if ( !$url ) {
 			throw new ErrorPageError(
@@ -54,8 +75,24 @@ class RedirectingLoginHookHandler implements
 			throw new \LogicException( 'This account is not a registered user' );
 		}
 
+		$returnUrlToken = $request->getRawVal( 'returnUrlToken' );
+
 		if ( $this->isSul3Enabled( $context->getConfig(), $request ) ) {
-			$url = wfAppendQuery( $url, [ 'token' => $context->getUser()->getName() ] );
+			$token = $this->caUtilityService->tokenize(
+				$context->getUser()->getName(),
+				self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
+				$this->sessionManager
+			);
+			$url = wfAppendQuery(
+				$this->caUtilityService->detokenize(
+					$returnUrlToken,
+					CentralAuthRedirectingPrimaryAuthenticationProvider::RETURN_URL_TOKEN_KEY_PREFIX,
+					MediaWikiServices::getInstance()->getService(
+						'CentralAuth.CentralAuthSessionManager'
+					)
+				),
+				[ 'token' => $token ]
+			);
 
 			// We have a return URL from the login wiki, we're fine.
 			$context->getOutput()->redirect( $url );
@@ -74,7 +111,7 @@ class RedirectingLoginHookHandler implements
 		$request = $context->getRequest();
 
 		$params += [
-			'returnurl' => $request->getRawVal( 'returnurl' ),
+			'returnUrlToken' => $request->getRawVal( 'returnUrlToken' ),
 			'wikiid' => $request->getRawVal( 'wikiid' ),
 			'usesul3' => $request->getRawVal( 'usesul3' ),
 		];
