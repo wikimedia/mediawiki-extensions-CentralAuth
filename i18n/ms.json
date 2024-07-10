@@ -10,7 +10,8 @@
 			"Macofe",
 			"Matma Rex",
 			"Pizza1016",
-			"Tofeiku"
+			"Tofeiku",
+			"Hakimi97"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Kumpulan sejagat yang disertai oleh pengguna ini",
@@ -236,7 +237,7 @@
 	"centralauth-merge-dryrun-or": "'''atau'''",
 	"centralauth-merge-home-password": "Wiki rumah bagi akaun ini (disenaraikan di bawah) mempunyai kata lalun yang berbeza dengan yang anda masukkan.\nSila masukkan kata laluan bagi wiki rumah tersebut.",
 	"centralauth-merge-method-admin": "akaun digabungkan oleh penyelia",
-	"centralauth-merge-method-admin-desc": "Menunjukkan bahawa akaun tempatan digabungkan secara manual oleh steward.\nCiri itu dimatkan sekarang atas sebab-sebab keselamatan.",
+	"centralauth-merge-method-admin-desc": "Menunjukkan bahawa akaun tempatan digabungkan secara manual oleh pengelola.\nCiri tersebut kini telah dimatikan atas masalah keselamatan.",
 	"centralauth-merge-method-empty": "tiada sumbangan",
 	"centralauth-merge-method-empty-desc": "Menunjukkan bahawa akaun tempatan digabungkan kerana tiada suntingan.",
 	"centralauth-merge-method-login": "dicipta ketika log masuk",
