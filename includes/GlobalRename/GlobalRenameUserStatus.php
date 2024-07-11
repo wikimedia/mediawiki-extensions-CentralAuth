@@ -11,7 +11,6 @@ use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
-use Wikimedia\Rdbms\OrExpressionGroup;
 
 /**
  * Status handler for CentralAuth users being renamed.
@@ -197,7 +196,7 @@ class GlobalRenameUserStatus {
 			$ok = !$dbw->newSelectQueryBuilder()
 				->select( '1' )
 				->from( 'renameuser_status' )
-				->where( new OrExpressionGroup( ...$keyConds ) )
+				->where( $dbw->orExpr( $keyConds ) )
 				->forUpdate()
 				->caller( __METHOD__ )
 				->fetchField();
