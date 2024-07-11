@@ -93,9 +93,9 @@ class CentralAuthUtilityService {
 
 		$result = ( new WaitConditionLoop(
 			static function () use ( $store, $key, &$value ) {
-				$store->clearLastError();
+				$watchPoint = $store->watchErrors();
 				$value = $store->get( $key );
-				$error = $store->getLastError();
+				$error = $store->getLastError( $watchPoint );
 				if ( $value !== false ) {
 					return WaitConditionLoop::CONDITION_REACHED;
 				} elseif ( $error === $store::ERR_NONE ) {
