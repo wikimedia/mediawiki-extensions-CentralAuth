@@ -42,7 +42,8 @@
 			"神樂坂秀吉",
 			"背番号4のエース",
 			"青子守歌",
-			"Waki285"
+			"Waki285",
+			"Apple TD"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数",
@@ -73,8 +74,8 @@
 	"centralauth-admin-already-unmerged": "既に統合解除されている$1をスキップ",
 	"centralauth-admin-bad-input": "マージの選択が無効です。",
 	"centralauth-admin-blocked-reason": "理由: $1",
-	"centralauth-admin-blocked2": "$2 $3 まで投稿ブロック中。",
-	"centralauth-admin-blocked2-indef": "無期限ブロック",
+	"centralauth-admin-blocked2": "$2 $3 までブロック中。",
+	"centralauth-admin-blocked2-indef": "無期限ブロック。",
 	"centralauth-admin-blocklog": "ブロック記録",
 	"centralauth-admin-delete-button": "このアカウントを削除",
 	"centralauth-admin-delete-confirm": "このアカウントを本当に削除しますか?",
