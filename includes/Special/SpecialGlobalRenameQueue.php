@@ -22,6 +22,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use Exception;
 use ExtensionRegistry;
 use LogEventsList;
 use MailAddress;
@@ -365,9 +366,19 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param GlobalRenameRequest $req
 	 */
 	protected function doViewRequest( GlobalRenameRequest $req ) {
-		$this->commonPreamble( 'globalrenamequeue-request-status-title',
-			[ $req->getName(), $req->getNewName() ]
-		);
+		$isVanishRequest = $req->getType() === GlobalRenameRequest::VANISH;
+
+		if ( $isVanishRequest ) {
+			$this->commonPreamble(
+				'globalrenamequeue-request-vanish-status-title',
+				[ $req->getName() ]
+			);
+		} else {
+			$this->commonPreamble(
+				'globalrenamequeue-request-status-title',
+				[ $req->getName(), $req->getNewName() ]
+			);
+		}
 
 		$reason = $req->getReason() ?: $this->msg(
 			'globalrenamequeue-request-reason-sul'
@@ -393,24 +404,54 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$reason = ': ' . $reason;
 		}
 
+		$status = $req->getStatus();
+		$causerName = $status === GlobalRenameRequest::APPROVED
+			? $req->getNewName()
+			: $req->getName();
+
+		$causer = CentralAuthUser::getInstanceByName( $causerName );
+		$attachedWikis = $causer->exists() && $causer->isAttached()
+			? implode( ', ', array_keys( $causer->queryAttachedBasic() ) )
+			: '';
+
 		// Done as one big message so that admins can create a local
 		// translation to customize the output as they see fit.
 		// @TODO: Do that actually in here... this is not how we do interfaces in 2015.
-		$viewMsg = $this->msg( 'globalrenamequeue-view',
-			$req->getName(),
-			$req->getNewName(),
-			$reason,
-			$this->msg( 'globalrenamequeue-view-' . $req->getStatus() )->text(),
-			$this->getLanguage()->userTimeAndDate(
-				$req->getRequested(), $this->getUser()
-			),
-			$this->getLanguage()->userTimeAndDate(
-				$req->getCompleted(), $this->getUser()
-			),
-			$renamerLink,
-			$renamer->getName(),
-			$req->getComments()
-		)->parseAsBlock();
+		if ( $isVanishRequest ) {
+			$viewMsg = $this->msg( 'globalrenamequeue-vanish-view',
+				$req->getName(),
+				$reason,
+				$this->msg( 'globalrenamequeue-view-' . $status )->text(),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getRequested(), $this->getUser()
+				),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getCompleted(), $this->getUser()
+				),
+				$attachedWikis,
+				$renamerLink,
+				$renamer->getName(),
+				$req->getComments()
+			)->parseAsBlock();
+		} else {
+			$viewMsg = $this->msg( 'globalrenamequeue-view',
+				$req->getName(),
+				$req->getNewName(),
+				$reason,
+				$this->msg( 'globalrenamequeue-view-' . $status )->text(),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getRequested(), $this->getUser()
+				),
+				$this->getLanguage()->userTimeAndDate(
+					$req->getCompleted(), $this->getUser()
+				),
+				$attachedWikis,
+				$renamerLink,
+				$renamer->getName(),
+				$req->getComments()
+			)->parseAsBlock();
+		}
+
 		$this->getOutput()->addHtml( '<div class="plainlinks">' . $viewMsg . '</div>' );
 	}
 
@@ -430,6 +471,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$globalUserInfoMsg = 'globalrenamequeue-request-vanish-userinfo';
 			$headerMsgKey = 'globalrenamequeue-request-vanish-header';
 			$reasonMsg = 'globalrenamequeue-request-vanish-reason';
+			$approveConfirmation = 'mw-renamequeue-approve-vanish';
 		} else {
 			$commonPreambleMsg = 'globalrenamequeue-request-title';
 			$approveButtonMsg = 'globalrenamequeue-request-approve-text';
@@ -437,6 +479,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$globalUserInfoMsg = 'globalrenamequeue-request-userinfo-global';
 			$headerMsgKey = 'globalrenamequeue-request-header';
 			$reasonMsg = 'globalrenamequeue-request-reason';
+			$approveConfirmation = 'mw-renamequeue-approve';
 		}
 
 		$this->commonPreamble( $commonPreambleMsg, [ $req->getName() ] );
@@ -492,7 +535,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				->addButton( [
 					'name' => 'approve',
 					'value' => $this->msg( $approveButtonMsg )->text(),
-					'id' => 'mw-renamequeue-approve',
+					'id' => $approveConfirmation,
 					'flags' => [ 'primary', 'progressive' ],
 					'framed' => true
 				] );
@@ -681,8 +724,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			}
 
 			if ( $request->userIsGlobal() ) {
-				// Trigger a global rename job
+				$data['type'] = $request->getType();
 
+				// Trigger a global rename job
 				$status = $this->globalRenameFactory
 					->newGlobalRenameUser(
 						$this->getUser(),
@@ -706,6 +750,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'promotetoglobal' => true,
 						'reason' => $data['reason'],
 						'session' => $session,
+						'type' => $request->getType(),
 					]
 				);
 				$this->jobQueueGroupFactory->makeJobQueueGroup( $request->getWiki() )->push( $job );
@@ -731,35 +776,53 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$request->setComments( $data['comments'] );
 
 			if ( $this->globalRenameRequestStore->save( $request ) ) {
+				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
+					$emailSubjectApprovedMsg = 'globalrenamequeue-vanish-email-subject-approved';
+					$emailBodyApprovedMsg = 'globalrenamequeue-vanish-email-body-approved';
+					$emailBodyApprovedWithNoteMsg = 'globalrenamequeue-vanish-email-body-approved-with-note';
+					$emailSubjectRejectedMsg = 'globalrenamequeue-vanish-email-subject-rejected';
+					$emailBodyRejectedMsg = 'globalrenamequeue-vanish-email-body-rejected';
+					$emailBodyMsgArgs = [
+						$oldUser->getName(),
+						$request->getComments()
+					];
+				} else {
+					$emailSubjectApprovedMsg = 'globalrenamequeue-email-subject-approved';
+					$emailBodyApprovedMsg = 'globalrenamequeue-email-body-approved';
+					$emailBodyApprovedWithNoteMsg = 'globalrenamequeue-email-body-approved-with-note';
+					$emailSubjectRejectedMsg = 'globalrenamequeue-email-subject-rejected';
+					$emailBodyRejectedMsg = 'globalrenamequeue-email-body-rejected';
+					$emailBodyMsgArgs = [
+						$oldUser->getName(),
+						$newUser->getName(),
+						$request->getComments(),
+					];
+				}
+
 				// Send email to the user about the change in status.
 				if ( $approved ) {
 					$subject = $this->msg(
-						'globalrenamequeue-email-subject-approved'
+						$emailSubjectApprovedMsg
 					)->inContentLanguage()->text();
 					if ( $request->getComments() === '' ) {
-						$msgKey = 'globalrenamequeue-email-body-approved';
+						$msgKey = $emailBodyApprovedMsg;
 					} else {
-						$msgKey = 'globalrenamequeue-email-body-approved-with-note';
+						$msgKey = $emailBodyApprovedWithNoteMsg;
 					}
 					$body = $this->msg(
-						$msgKey,
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-							$request->getComments(),
-						]
+						$msgKey, $emailBodyMsgArgs
 					)->inContentLanguage()->text();
 				} else {
+					$recipientConfig = $this->getConfig()->get( 'CentralAuthRejectVanishUserNotification' );
+					if ( $recipientConfig ) {
+						$status = $this->sendEmailForRejectionOfVanishRequest( $request, $recipientConfig );
+					}
+
 					$subject = $this->msg(
-						'globalrenamequeue-email-subject-rejected'
+						$emailSubjectRejectedMsg
 					)->inContentLanguage()->text();
 					$body = $this->msg(
-						'globalrenamequeue-email-body-rejected',
-						[
-							$oldUser->getName(),
-							$newUser->getName(),
-							$request->getComments(),
-						]
+						$emailBodyRejectedMsg, $emailBodyMsgArgs
 					)->inContentLanguage()->text();
 				}
 
@@ -841,6 +904,82 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->msg( 'emailsender' )->inContentLanguage()->text()
 		);
 		return UserMailer::send( $to, $from, $subject, $body );
+	}
+
+	/**
+	 * Send an email on account vanishing rejection to the provided recipient.
+	 *
+	 * @param GlobalRenameRequest $request
+	 * @param string $recipientUserName
+	 * @return Status
+	 */
+	protected function sendEmailForRejectionOfVanishRequest( GlobalRenameRequest $request, $recipientUserName ) {
+		// Email to legal is only sent when it's a vanish request
+		if ( $request->getType() !== GlobalRenameRequest::VANISH ) {
+			return Status::newGood();
+		}
+
+		if ( $request->userIsGlobal() ) {
+			$globalUser = CentralAuthUser::getInstanceByName( $request->getName() );
+			$homeWiki = $globalUser->getHomeWiki();
+			$globalEditCount = $globalUser->getGlobalEditCount();
+			$isBlocked = $globalUser->isBlocked() ?
+				'globalrenamequeue-request-vanish-user-blocked' :
+				'globalrenamequeue-request-vanish-user-not-blocked';
+		} else {
+			$homeWiki = $request->getWiki();
+			$globalEditCount = '';
+			$isBlocked = 'globalrenamequeue-request-vanish-user-not-blocked';
+		}
+		// This should never be null except in dev/testing environment.
+		$homeWikiWiki = $homeWiki ? WikiMap::getWiki( $homeWiki ) : null;
+		$rejector = CentralAuthUser::newFromId( $request->getPerformer() );
+		$rejectorName = $rejector ? $rejector->getName() : $request->getPerformer();
+
+		$subject = $this->msg(
+			'globalvanishrequest-rejected-subject-notification',
+			$request->getName(),
+		)->inContentLanguage()->text();
+		$isBlockedMsg = $this->msg( $isBlocked )->inContentLanguage()->text();
+		$bodyMessage = $this->msg(
+			'globalvanishrequest-rejected-body-notification',
+			$request->getName(),
+			( $homeWikiWiki ? $homeWikiWiki->getDisplayName() : $homeWiki ),
+			$globalEditCount,
+			$isBlockedMsg,
+			$request->getReason(),
+			$rejectorName,
+			$request->getComments(),
+			$this->getLanguage()->userTimeAndDate(
+				$request->getRequested(), $this->getUser()
+			),
+			$this->getLanguage()->userTimeAndDate(
+				$request->getCompleted(), $this->getUser()
+			),
+		)->inContentLanguage()->text();
+
+		try {
+			$contactRecipientUser = User::newFromName( $recipientUserName );
+			$contactRecipientAddress = MailAddress::newFromUser( $contactRecipientUser );
+			$contactSenderAddress = new MailAddress(
+				$this->getConfig()->get( 'PasswordSender' ),
+				$this->msg( 'emailsender' )->inContentLanguage()->text()
+			);
+
+			$userMailerStatus = UserMailer::send(
+				$contactRecipientAddress,
+				$contactSenderAddress,
+				$subject,
+				$bodyMessage,
+			);
+			if ( $userMailerStatus->isGood() ) {
+				return Status::newGood();
+			} else {
+				return Status::newFatal( 'globalvanishrequest-rejected-notification-error' );
+			}
+		} catch ( Exception $e ) {
+			return Status::newFatal( 'globalvanishrequest-rejected-notification-error' );
+		}
 	}
 
 	/** @inheritDoc */

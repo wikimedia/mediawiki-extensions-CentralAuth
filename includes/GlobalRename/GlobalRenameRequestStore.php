@@ -57,23 +57,39 @@ class GlobalRenameRequestStore {
 	public function save( GlobalRenameRequest $request ): bool {
 		$dbw = $this->dbManager->getCentralPrimaryDB();
 		if ( $request->getId() === null ) {
-			$request
-				->setRequested( wfTimestampNow() )
-				->setStatus( GlobalRenameRequest::PENDING );
+			$request->setRequested( wfTimestampNow() );
+
+			// Default to pending if unspecified, but otherwise use the
+			// provided status. This is needed for automatic account vanishing
+			// record keeping.
+			if ( $request->getStatus() === null ) {
+				$request->setStatus( GlobalRenameRequest::PENDING );
+			}
+
+			$row = [
+				'rq_name'         => $request->getName(),
+				'rq_wiki'         => $request->getWiki(),
+				'rq_newname'      => $request->getNewName(),
+				'rq_reason'       => $request->getReason(),
+				'rq_requested_ts' => $dbw->timestamp( $request->getRequested() ),
+				'rq_status'       => $request->getStatus(),
+				'rq_performer'    => $request->getPerformer(),
+				'rq_comments'     => $request->getComments(),
+				'rq_type'         => $request->getType() || GlobalRenameRequest::RENAME,
+			];
+
+			// Ensure there's a completed timestamp if a pre-approved request
+			// is being saved to the database.
+			if ( $request->getStatus() === GlobalRenameRequest::APPROVED ) {
+				if ( $request->getCompleted() === null ) {
+					$request->setCompleted( wfTimestampNow() );
+				}
+				$row['rq_completed_ts'] = $dbw->timestamp( $request->getCompleted() );
+			}
 
 			$dbw->newInsertQueryBuilder()
 				->insertInto( 'renameuser_queue' )
-				->row( [
-					'rq_name'         => $request->getName(),
-					'rq_wiki'         => $request->getWiki(),
-					'rq_newname'      => $request->getNewName(),
-					'rq_reason'       => $request->getReason(),
-					'rq_requested_ts' => $dbw->timestamp( $request->getRequested() ),
-					'rq_status'       => $request->getStatus(),
-					'rq_performer'    => $request->getPerformer(),
-					'rq_comments'     => $request->getComments(),
-					'rq_type'         => $request->getType() || GlobalRenameRequest::RENAME,
-				] )
+				->row( $row )
 				->caller( __METHOD__ )
 				->execute();
 
@@ -193,6 +209,35 @@ class GlobalRenameRequestStore {
 			->where( [
 				'rq_name' => $name,
 				'rq_status'  => GlobalRenameRequest::PENDING,
+			] )
+			->recency( $flags )
+			->caller( __METHOD__ )
+			->fetchField();
+
+		return $res !== false;
+	}
+
+	/**
+	 * Check to see if there is an approved vanish request for the given (previous) name.
+	 *
+	 * @param string $name
+	 * @param int $flags One of the IDBAccessObject::READ_* constants
+	 * @return bool
+	 */
+	public function currentNameHasApprovedVanish( string $name, int $flags = IDBAccessObject::READ_NORMAL ) {
+		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+			$dbr = $this->dbManager->getCentralPrimaryDB();
+		} else {
+			$dbr = $this->dbManager->getCentralReplicaDB();
+		}
+
+		$res = $dbr->newSelectQueryBuilder()
+			->select( 'rq_id' )
+			->from( 'renameuser_queue' )
+			->where( [
+				'rq_name' => $name,
+				'rq_status' => GlobalRenameRequest::APPROVED,
+				'rq_type' => GlobalRenameRequest::VANISH,
 			] )
 			->recency( $flags )
 			->caller( __METHOD__ )

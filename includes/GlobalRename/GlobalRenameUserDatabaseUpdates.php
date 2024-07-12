@@ -24,14 +24,21 @@ class GlobalRenameUserDatabaseUpdates {
 	/**
 	 * @param string $oldname
 	 * @param string $newname
+	 * @param int|null $type
 	 */
-	public function update( $oldname, $newname ) {
+	public function update( $oldname, $newname, $type = GlobalRenameRequest::RENAME ) {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
+
+		$data = [ 'gu_name' => $newname ];
+		if ( $type === GlobalRenameRequest::VANISH ) {
+			// Vanish requests need to remove user's email
+			$data[ 'gu_email' ] = '';
+		}
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
-			->set( [ 'gu_name' => $newname ] )
+			->set( $data )
 			->where( [ 'gu_name' => $oldname ] )
 			->caller( __METHOD__ )
 			->execute();

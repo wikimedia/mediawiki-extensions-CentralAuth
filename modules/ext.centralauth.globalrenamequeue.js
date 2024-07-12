@@ -7,6 +7,10 @@
 			// TODO: Convert this to OOUI.
 			return confirm( mw.msg( 'centralauth-rename-confirm' ) );
 		} );
+		$( '#mw-renamequeue-approve-vanish' ).on( 'click', function () {
+			// TODO: Convert this to OOUI.
+			return confirm( mw.msg( 'centralauth-rename-confirm-vanish' ) );
+		} );
 		$( '#mw-renamequeue-deny' ).on( 'click', function () {
 			// TODO: Convert this to OOUI.
 			return confirm( mw.msg( 'centralauth-rename-deny' ) );

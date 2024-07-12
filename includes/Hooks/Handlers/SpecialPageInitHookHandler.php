@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
+use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalVanishRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPage_initListHook;
 
 class SpecialPageInitHookHandler implements
@@ -63,6 +64,15 @@ class SpecialPageInitHookHandler implements
 					'CentralAuth.CentralAuthAntiSpoofManager',
 					'CentralAuth.GlobalRenameFactory',
 				],
+			];
+			$list['GlobalVanishRequest'] = [
+				'class' => SpecialGlobalVanishRequest::class,
+				'services' => [
+					'CentralAuth.GlobalRenameDenylist',
+					'CentralAuth.GlobalRenameRequestStore',
+					'CentralAuth.GlobalRenameFactory',
+					'HttpRequestFactory',
+				]
 			];
 		}
 	}
