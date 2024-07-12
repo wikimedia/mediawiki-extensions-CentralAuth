@@ -321,6 +321,27 @@ class GlobalRenameRequest {
 	}
 
 	/**
+	 * @internal
+	 * @return array array representation of the rename request
+	 */
+	public function toArray(): array {
+		return [
+			'id' => $this->id,
+			'name' => $this->name,
+			'wiki' => $this->wiki,
+			'newname' => $this->newName,
+			'reason' => $this->reason,
+			'requested' => $this->requested,
+			'status' => $this->status,
+			'completed' => $this->completed,
+			'deleted' => $this->deleted,
+			'performer' => $this->performer,
+			'comments' => $this->comments,
+			'type' => $this->type,
+		];
+	}
+
+	/**
 	 * Check to see if a given username is available for use via CentralAuth.
 	 *
 	 * Note that this is not a definitive check. It does not include checking

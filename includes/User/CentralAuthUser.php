@@ -822,11 +822,13 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Returns true if the account has any blocks on any wikis.
+	 * Returns an array of blocks per wiki the user is attached to.
 	 * @throws LocalUserNotFoundException
-	 * @return bool
+	 * @return array
 	 */
-	public function isBlocked(): bool {
+	public function getBlocks(): array {
+		$blocksByWikiId = [];
+
 		$mwServices = MediaWikiServices::getInstance();
 		$dbm = CentralAuthServices::getDatabaseManager();
 
@@ -874,8 +876,68 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockStore = $mwServices
 				->getDatabaseBlockStoreFactory()
 				->getDatabaseBlockStore( $wikiId );
-			$blocks = $blockStore->newListFromConds( [ 'bt_user' => $row->user_id ] );
+			$blocksByWikiId[$wikiId] = $blockStore->newListFromConds(
+				[ 'bt_user' => $row->user_id ]
+			);
+		}
+
+		return $blocksByWikiId;
+	}
+
+	/**
+	 * Returns true if the account has any blocks on any wikis.
+	 * @throws LocalUserNotFoundException
+	 * @return bool
+	 */
+	public function isBlocked(): bool {
+		$blocksByWikiId = $this->getBlocks();
+
+		foreach ( $blocksByWikiId as $wikiId => $blocks ) {
 			if ( count( $blocks ) > 0 ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Returns true if the account has any public logs.
+	 *
+	 * By default this method ignores 'newusers' logs as almost all users will
+	 * have a log record of that type.
+	 *
+	 * @param array $excludeTypes is an array of log types to ignore
+	 * @return bool
+	 */
+	public function hasPublicLogs( $excludeTypes = [ 'newusers' ] ): bool {
+		$services = MediaWikiServices::getInstance();
+		$dbm = CentralAuthServices::getDatabaseManager();
+
+		$user = $services->getUserIdentityLookup()->getUserIdentityByName( $this->getName() );
+		if ( !$user ) {
+			return false;
+		}
+
+		$wikis = $this->queryAttachedBasic();
+		foreach ( $wikis as $wikiId => $_ ) {
+			$dbr = $dbm->getLocalDB( DB_REPLICA, $wikiId );
+			$actorId = $services->getActorNormalization()->acquireActorId( $user, $dbr );
+
+			$conds = array_merge(
+				[ 'log_actor' => $actorId ],
+				array_map(
+					fn ( $type ) => 'log_type != ' . $dbr->addQuotes( $type ),
+					$excludeTypes,
+				)
+			);
+			$row = $dbr->newSelectQueryBuilder()
+				->select( [ 'log_id' ] )
+				->from( 'logging' )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->fetchRow();
+			if ( $row ) {
 				return true;
 			}
 		}
@@ -2641,7 +2703,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return array[]
 	 */
-	protected function queryAttachedBasic() {
+	public function queryAttachedBasic() {
 		if ( $this->mAttachedInfo !== null ) {
 			return $this->mAttachedInfo;
 		}

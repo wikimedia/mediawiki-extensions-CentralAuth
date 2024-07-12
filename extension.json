@@ -490,11 +490,18 @@
 			"scripts": "ext.centralauth.globalrenamequeue.js",
 			"messages": [
 				"centralauth-rename-confirm",
+				"centralauth-rename-confirm-vanish",
 				"centralauth-rename-deny"
 			]
 		},
 		"ext.centralauth.globalrenamequeue.styles": {
 			"styles": "ext.centralauth.globalrenamequeue.less"
+		},
+		"ext.centralauth.globalvanishrequest": {
+			"scripts": "ext.centralauth.globalvanishrequest.js",
+			"messages": [
+				"centralauth-vanish-confirm"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -839,6 +846,30 @@
 				"VPN",
 				"PROXY"
 			]
+		},
+		"CentralAuthRejectVanishUserNotification": {
+			"description": "User name to be notified when a global vanish request is rejected.",
+			"value": ""
+		},
+		"CentralAuthAutomaticVanishPerformer": {
+			"description": "Username of a global user to set as the performer for vanish requests that get fulfilled automatically. If this is left unset, then automatic vanishing will be disabled.",
+			"value": null
+		},
+		"CentralAuthBlockAppealWikidataIds": {
+			"description": "List of Wikidata ids associated with content relevant to appealing blocked accounts.",
+			"value": [ "Q13360396", "Q175291" ]
+		},
+		"CentralAuthWikidataApiUrl": {
+			"description": "URL to the Wikidata API used to find content.",
+			"value": "https://www.wikidata.org/w/api.php"
+		},
+		"CentralAuthFallbackAppealUrl": {
+			"description": "Fallback URL to use in the event that a wiki doesn't have a page for appealing blocked accounts.",
+			"value": "https://en.wikipedia.org/wiki/Wikipedia:Appealing_a_block"
+		},
+		"CentralAuthFallbackAppealTitle": {
+			"description": "Fallback title to use on the fallback URL.",
+			"value": "Wikipedia:Appealing a block"
 		}
 	},
 	"AuthManagerAutoConfig": {

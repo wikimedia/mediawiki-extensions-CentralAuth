@@ -26,6 +26,7 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\UserIdentity;
 
 class BatchVanishUsers extends Maintenance {
 
@@ -35,7 +36,8 @@ class BatchVanishUsers extends Maintenance {
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( 'Vanish users that are in a CSV containing vanish requests.' );
 		$this->addOption( 'data', 'Path to the file containing the vanish request data.', true, true, 'd' );
-		$this->addOption( 'performer', 'Performer of the vanish action.', false, true, 'p' );
+		$this->addOption( 'performer', 'Performer of the vanish action.', true, true, 'p' );
+		$this->addOption( 'output', 'Path for the generated report. (default: output.csv)', false, true, 'o' );
 		$this->addOption( 'dry-run', 'Don\'t actually vanish the users, just report what it would do.' );
 	}
 
@@ -43,18 +45,22 @@ class BatchVanishUsers extends Maintenance {
 		$csvPath = $this->getOption( 'data' );
 		$performer = $this->getOption( 'performer' );
 		$isDryRun = $this->getOption( 'dry-run' );
+		$outputPath = $this->getOption( 'output', 'output.csv' );
 
 		$services = $this->getServiceContainer();
 		if ( !$services->getCentralIdLookupFactory()->getNonLocalLookup() ) {
 			$this->fatalError( 'This script cannot be run when CentralAuth is disabled.' );
 		}
 
-		$performerUser = null;
-		if ( isset( $performer ) ) {
-			$performerUser = CentralAuthUser::getInstanceByName( $performer );
-			if ( $performerUser->getId() === 0 ) {
-				$this->output( "Performer with username {$performer} cannot be found.\n" );
-			}
+		$performerUser = CentralAuthUser::getInstanceByName( $performer );
+		if ( $performerUser->getId() === 0 ) {
+			$this->fatalError( "Performer with username {$performer} cannot be found.\n" );
+		}
+		// Fetching UserIdentity from performer because GlobalRenameFactory uses both CA and UI
+		$performerIdentity = $services->getUserIdentityLookup()->getUserIdentityByName( $performer );
+		// This error should never happen, we already found the CentralAuth performer
+		if ( !$performerIdentity || !$performerIdentity->isRegistered() ) {
+			$this->fatalError( "Performed with username {$performer} cannot be found in UserIdentityLookup. \n" );
 		}
 
 		// Load and parse CSV containing vanish requests from file.
@@ -65,6 +71,8 @@ class BatchVanishUsers extends Maintenance {
 		$vanishRequests = $this->parseUserVanishRequests( $handle );
 		fclose( $handle );
 
+		$outputHandle = fopen( $outputPath, 'w' );
+		fputcsv( $outputHandle, [ 'ticketId', 'result' ] );
 		$vanishRequestCount = count( $vanishRequests );
 		$successCount = 0;
 		$failureCount = 0;
@@ -78,16 +86,22 @@ class BatchVanishUsers extends Maintenance {
 				: "({$current}/{$vanishRequestCount}) ";
 			$this->output( "{$messagePrefix}Submitting vanish request for user {$request['username']}\n" );
 
-			if ( $this->requestUserVanish( $request, $performerUser ) ) {
+			$requestResult = $this->requestUserVanish( $request, $performerUser, $performerIdentity );
+
+			if ( $requestResult[ 'success' ] ) {
 				$successCount++;
 			} else {
+				fputcsv( $outputHandle, [ $request[ 'ticketLink' ], $requestResult[ 'message' ] ] );
 				$failureCount++;
 			}
 		}
 
+		fclose( $outputHandle );
+
 		// Print success and failure counts.
 		$this->output( "\nSucessfully submitted {$successCount} vanish requests.\n" );
 		$this->output( "Failed to submit {$failureCount} vanish requests.\n" );
+		$this->output( "Report produced - output.csv\n" );
 	}
 
 	/**
@@ -130,35 +144,50 @@ class BatchVanishUsers extends Maintenance {
 	 * Submit a user vanish using provided information in the request.
 	 *
 	 * @param array $request
-	 * @param CentralAuthUser|null $performer
-	 * @return bool true if the vanish action was successful, and false otherwise
+	 * @param CentralAuthUser $performer
+	 * @param UserIdentity $uiPerformer
+	 * @return array with keys:
+	 *  - "success" (bool) if the vanish action was successful
+	 *  - "message" (string) detail of the operation
 	 */
-	private function requestUserVanish( array $request, ?CentralAuthUser $performer ): bool {
+	private function requestUserVanish( array $request, CentralAuthUser $performer, UserIdentity $uiPerformer ): array {
 		$isDryRun = $this->getOption( 'dry-run', false );
 
 		try {
 			$username = $request['username'];
 			$causer = CentralAuthUser::getInstanceByName( $username );
 		} catch ( InvalidArgumentException $ex ) {
-			$this->output( "Skipping user {$username} as that username is invalid.\n" );
-			return false;
+			$errorMessage = "Skipping user {$username} as that username is invalid.";
+			$this->output( $errorMessage . "\n" );
+			return [ "success" => false, "message" => "no-user" ];
 		}
 
 		if ( !$causer->exists() || !$causer->isAttached() ) {
-			$this->output( "Skipping user {$username} as there is no CentralAuth user with that username.\n" );
-			return false;
+			$errorMessage = "Skipping user {$username} as there is no CentralAuth user with that username.";
+			$this->output( $errorMessage . "\n" );
+			return [ "success" => false, "message" => "no-user" ];
+		}
+
+		// isBlocked() is an expensive operation
+		// It is needed here and below to evaluate if the request is eligible for auto-vanish
+		// Whatever change in this also impacts the condition for auto-vanish below
+		$causerIsBlocked = $causer->isBlocked();
+		if ( $causerIsBlocked ) {
+			$errorMessage = "{$username} - has blocks.";
+			$this->output( $errorMessage . "\n" );
+			return [ "success" => false, "message" => "blocked" ];
 		}
 
 		$services = $this->getServiceContainer();
 		$globalRenameRequestStore = $services->get( 'CentralAuth.GlobalRenameRequestStore' );
 
 		if ( $globalRenameRequestStore->currentNameHasPendingRequest( $username ) ) {
-			$this->output(
-				"Skipping user {$username} as there is already a pending rename or vanish request for them.\n"
-			);
-			return false;
+			$errorMessage = "Skipping user {$username} - there is already a pending rename or vanish request for them.";
+			$this->output( $errorMessage . "\n" );
+			return [ "success" => false, "message" => "duplicate" ];
 		}
 
+		$globalRenamersQueryParams = null;
 		$parsedLink = parse_url( $request[ 'globalRenamersLink' ] ?? '', PHP_URL_QUERY );
 		parse_str( $parsedLink, $globalRenamersQueryParams );
 		$reason = urldecode( $globalRenamersQueryParams[ 'reason' ] ?? '' );
@@ -180,8 +209,9 @@ class BatchVanishUsers extends Maintenance {
 		}
 
 		if ( !isset( $newName ) ) {
-			$this->output( "Skipping user {$username} as max attempts reached generating username.\n" );
-			return false;
+			$errorMessage = "Skipping user {$username} as max attempts reached generating username.";
+			$this->output( $errorMessage . "\n" );
+			return [ "success" => false, "message" => "error" ];
 		}
 
 		$request = $globalRenameRequestStore
@@ -190,22 +220,109 @@ class BatchVanishUsers extends Maintenance {
 			->setNewName( $newName )
 			->setReason( $reason )
 			->setComments( "Added automatically by maintenance/batchVanishUsers.php" )
+			->setPerformer( $performer->getId() )
 			->setType( GlobalRenameRequest::VANISH );
 
-		if ( isset( $performer ) ) {
-			$request->setPerformer( $performer->getId() );
+		// If request can be auto-vanished, don't add to the queue
+		// - no edits, not blocked, and no logs
+		if (
+			$causer->getGlobalEditCount() === 0 &&
+			// Commented because of lint, if causer has block(s) the function returns early (code above)
+			// $causerIsBlocked === false &&
+			!$causer->hasPublicLogs()
+		) {
+			if ( $isDryRun ) {
+				return [ "success" => true, "message" => "dry-auto-vanished" ];
+			}
+
+			$globalRenameFactory = $services->get( 'CentralAuth.GlobalRenameFactory' );
+			$requestArray = $request->toArray();
+
+			// We need to add this two fields that are usually being provided by the Form
+			$requestArray['movepages'] = false;
+			$requestArray['suppressredirects'] = true;
+
+			$renameResult = $globalRenameFactory
+				->newGlobalRenameUser( $uiPerformer, $causer, $newName )
+				->rename( $requestArray );
+			if ( !$renameResult->isGood() ) {
+				$errorMessage = "Skipping user {$username} as there was a problem in the auto-vanish process.";
+				$this->output( $errorMessage . "\n" );
+				return [ "success" => false, "message" => "error" ];
+			}
+
+			// We still want to leave a record that this happened, so change
+			// the status over to 'approved' for the subsequent save.
+			$request
+				->setPerformer( $performer->getId() )
+				->setComments( "Your username vanish request was processed successfully." )
+				->setStatus( GlobalRenameRequest::APPROVED );
+
+			// Save the request to the database for it to be processed later.
+			if ( !$globalRenameRequestStore->save( $request ) ) {
+				$errorMessage = "Skipping user {$username} as there was a problem in the auto-vanish process.";
+				$this->output( $errorMessage . "\n" );
+				return [ "success" => false, "message" => "error" ];
+			}
+
+			$this->sendVanishingSuccessfulEmail( $causer, $request );
+
+			return [ "success" => true, "message" => "auto-vanished" ];
 		}
 
 		// Save the vanish request to the database as all validation has
 		// passed, but only if we're not in dry run mode.
 		if ( !$isDryRun && !$globalRenameRequestStore->save( $request ) ) {
-			$this->output(
-				"Skipping user {$username} as there was a problem saving the vanish request to the queue.\n"
-			);
-			return false;
+			$errorMessage = "Skipping user {$username} as there was a problem saving the vanish request to the queue.";
+			$this->output( $errorMessage . "\n" );
+			return [ "success" => false, "message" => "error" ];
 		}
 
-		return true;
+		return [ "success" => true, "message" => "vanished" ];
+	}
+
+	/**
+	 * Attempt to send a success email to the user whose vanish was fulfilled.
+	 *
+	 * TODO: https://phabricator.wikimedia.org/T369134 - refactor email sending
+	 *
+	 * @param CentralAuthUser $causer
+	 * @param GlobalRenameRequest $request
+	 * @return void
+	 */
+	private function sendVanishingSuccessfulEmail( CentralAuthUser $causer, GlobalRenameRequest $request ): void {
+		$bodyKey = 'globalrenamequeue-vanish-email-body-approved-with-note';
+
+		$subject = $this->msg( 'globalrenamequeue-vanish-email-subject-approved' );
+		$body = $this->msg( $bodyKey, [ $request->getName(), $request->getComments() ] );
+
+		$from = new MailAddress(
+			$this->getConfig()->get( 'PasswordSender' ),
+			$this->msg( 'emailsender' )
+		);
+		$to = new MailAddress( $causer->getEmail(), $causer->getName(), '' );
+
+		// Users don't always have email addresses.
+		if ( !$to->address ) {
+			return;
+		}
+
+		// Attempt to send the email, and log an error if this fails.
+		$emailSendResult = UserMailer::send( $to, $from, $subject, $body );
+		if ( !$emailSendResult->isOK() ) {
+			$this->output( $emailSendResult->getValue() . "\n" );
+		}
+	}
+
+	/**
+	 * Get translated messages.
+	 *
+	 * @param string|string[]|MessageSpecifier $key
+	 * @param mixed ...$params
+	 * @return string
+	 */
+	private function msg( $key, ...$params ): string {
+		return wfMessage( $key, ...$params )->inLanguage( 'en' )->text();
 	}
 
 }

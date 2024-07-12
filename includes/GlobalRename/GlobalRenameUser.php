@@ -142,12 +142,17 @@ class GlobalRenameUser {
 			return $status;
 		}
 
+		if ( $options['type'] === GlobalRenameRequest::VANISH ) {
+			$this->oldCAUser->adminLock();
+		}
+
 		// Rename the user centrally and unattach the old user from all
 		// attached wikis. Each will be reattached as its LocalRenameUserJob
 		// runs.
 		$this->databaseUpdates->update(
 			$this->oldUser->getName(),
-			$this->newUser->getName()
+			$this->newUser->getName(),
+			$options['type'] ?? GlobalRenameRequest::RENAME
 		);
 
 		// Update CA's AntiSpoof
