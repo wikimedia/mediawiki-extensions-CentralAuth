@@ -898,7 +898,7 @@
 			"value": "Wikipedia:Appealing a block"
 		},
 		"CentralAuthEnableSul3": {
-			"description": "Tells MediaWiki if we are in SUL3 mode or not. This is used for testing the SUL2 to SUL3 migration.",
+			"description": "Enables SUL3 mode (T348388). Experimental, do not use. Allowed values: false, 'always', 'query-flag' (enabled when the URL has a 'usesul3=1' query parameter).",
 			"value": false
 		}
 	},
