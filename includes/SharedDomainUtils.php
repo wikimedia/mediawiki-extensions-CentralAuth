@@ -3,7 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Utils\UrlUtils;
+use Wikimedia\Assert\Assert;
 
 /**
  * Utilities for handling the shared domain name used for SUL3 login.
@@ -47,6 +49,55 @@ class SharedDomainUtils {
 		)['host'] ?? null;
 		$this->isSharedDomain = $sharedDomain && $currentDomain === $sharedDomain;
 		return $this->isSharedDomain;
+	}
+
+	/**
+	 * Detects if we're in SUL3 mode. Returns true if that is the case
+	 * and false otherwise.
+	 *
+	 * @param WebRequest $request
+	 *
+	 * @return bool
+	 */
+	public function isSul3Enabled( WebRequest $request ): bool {
+		return $this->config->get( 'CentralAuthEnableSul3' ) && $request->getCheck( 'usesul3' );
+	}
+
+	/**
+	 * Assert that the SUL3 mode is set.
+	 *
+	 * @param WebRequest $request
+	 *
+	 * @return void
+	 */
+	public function assertSul3Enabled( WebRequest $request ) {
+		Assert::precondition(
+			$this->isSul3Enabled( $request ),
+			'SUL3 is not enabled. Set $wgCentralAuthEnableSul3 to boolean true.'
+		);
+	}
+
+	/**
+	 * Assert that we're on the shared login domain.
+	 * @return void
+	 */
+	public function assertIsSharedDomain() {
+		Assert::precondition(
+			$this->isSharedDomain(),
+			'This action is not allowed because the domain is not the shared login domain.'
+		);
+	}
+
+	/**
+	 * Assert that we're not on the shared login domain.
+	 *
+	 * @return void
+	 */
+	public function assertIsNotSharedDomain() {
+		Assert::precondition(
+			!( $this->isSharedDomain() ),
+			'This action is not allowed because the domain is not the shared login domain.'
+		);
 	}
 
 }

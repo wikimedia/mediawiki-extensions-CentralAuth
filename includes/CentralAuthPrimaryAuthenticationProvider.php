@@ -48,8 +48,6 @@ use Wikimedia\Rdbms\ReadOnlyMode;
 class CentralAuthPrimaryAuthenticationProvider
 	extends AbstractPasswordPrimaryAuthenticationProvider
 {
-	use CentralAuthenticationProviderTrait;
-
 	/** @var string The internal ID of this provider. */
 	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
@@ -59,13 +57,13 @@ class CentralAuthPrimaryAuthenticationProvider
 	private CentralAuthDatabaseManager $databaseManager;
 	private CentralAuthUtilityService $utilityService;
 	private GlobalRenameRequestStore $globalRenameRequestStore;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	/** @var bool Whether to auto-migrate non-merged accounts on login */
 	protected $autoMigrate = null;
 
 	/** @var bool Whether to auto-migrate non-global accounts on login */
 	protected $autoMigrateNonGlobalAccounts = null;
-
 	/** @var bool Whether to check for spoofed user names */
 	protected $antiSpoofAccounts = null;
 
@@ -77,6 +75,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUtilityService $utilityService
 	 * @param GlobalRenameRequestStore $globalRenameRequestStore
+	 * @param SharedDomainUtils $sharedDomainUtils
 	 * @param array $params Settings. All are optional, defaulting to the
 	 *  similarly-named $wgCentralAuth* globals.
 	 *  - autoMigrate: If true, attempt to auto-migrate local accounts on other
@@ -94,6 +93,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUtilityService $utilityService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
+		SharedDomainUtils $sharedDomainUtils,
 		$params = []
 	) {
 		global $wgCentralAuthAutoMigrate,
@@ -111,6 +111,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->databaseManager = $databaseManager;
 		$this->utilityService = $utilityService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 
 		$params += [
 			'autoMigrate' => $wgCentralAuthAutoMigrate,
@@ -128,8 +129,8 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
-		if ( $this->isSul3Enabled( $this->config, $this->manager->getRequest() ) &&
-			!$this->isSharedDomain()
+		if ( $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() ) &&
+			!$this->sharedDomainUtils->isSharedDomain()
 		) {
 			return [];
 		}
@@ -320,11 +321,17 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( !$this->isSharedDomain() ) {
+		if ( !$this->sharedDomainUtils->isSharedDomain() ) {
 			return false;
 		}
 
-		return $this->testUserExistsInternal( $username, $this->userNameUtils );
+		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
+		if ( $username === false ) {
+			return false;
+		}
+
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
+		return $centralUser && $centralUser->exists();
 	}
 
 	/** @inheritDoc */

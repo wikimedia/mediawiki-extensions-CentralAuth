@@ -23,10 +23,10 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use ErrorPageError;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Extension\CentralAuth\CentralAuthenticationProviderTrait;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\PostLoginRedirectHook;
 use MediaWiki\MediaWikiServices;
 use RuntimeException;
@@ -35,8 +35,6 @@ class RedirectingLoginHookHandler implements
 	PostLoginRedirectHook,
 	AuthPreserveQueryParamsHook
 {
-	use CentralAuthenticationProviderTrait;
-
 	/**
 	 * @internal For use by CentralAuth only.
 	 * @var string Storage key prefix for the token when continuing the login
@@ -46,17 +44,21 @@ class RedirectingLoginHookHandler implements
 
 	private CentralAuthSessionManager $sessionManager;
 	private CentralAuthUtilityService $caUtilityService;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	public function __construct(
-		CentralAuthSessionManager $sessionManager, CentralAuthUtilityService $utility
+		CentralAuthSessionManager $sessionManager,
+		CentralAuthUtilityService $utility,
+		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->sessionManager = $sessionManager;
 		$this->caUtilityService = $utility;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/** @inheritDoc */
 	public function onPostLoginRedirect( &$returnTo, &$returnToQuery, &$type ) {
-		if ( !$this->isSharedDomain() ) {
+		if ( !$this->sharedDomainUtils->isSharedDomain() ) {
 			// We're not on the central login wiki, so do nothing.
 			return;
 		}
@@ -77,7 +79,7 @@ class RedirectingLoginHookHandler implements
 
 		$returnUrlToken = $request->getRawVal( 'returnUrlToken' );
 
-		if ( $this->isSul3Enabled( $context->getConfig(), $request ) ) {
+		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
 			$token = $this->caUtilityService->tokenize(
 				$context->getUser()->getName(),
 				self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
