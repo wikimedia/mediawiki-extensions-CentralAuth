@@ -24,6 +24,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\TempUserCreatedRedirectHook;
@@ -41,28 +42,27 @@ class LoginCompleteHookHandler implements
 	UserLoginCompleteHook,
 	TempUserCreatedRedirectHook
 {
-	/** @var Config */
-	private $config;
-
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
-
-	/** @var CentralAuthHookRunner */
-	private $caHookRunner;
+	private Config $config;
+	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthHookRunner $caHookRunner;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param HookContainer $hookContainer
 	 * @param Config $config
 	 * @param CentralAuthSessionManager $sessionManager
+	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
 		Config $config,
-		CentralAuthSessionManager $sessionManager
+		CentralAuthSessionManager $sessionManager,
+		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
 		$this->config = $config;
 		$this->sessionManager = $sessionManager;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**
@@ -77,8 +77,9 @@ class LoginCompleteHookHandler implements
 	 * @see SpecialCentralLogin
 	 */
 	public function onUserLoginComplete( $user, &$inject_html, $direct = null ) {
-		if ( !$this->config->get( 'CentralAuthCookies' ) ||
-			!$this->config->get( 'CentralAuthLoginWiki' )
+		if ( !$this->config->get( 'CentralAuthCookies' )
+			|| !$this->config->get( 'CentralAuthLoginWiki' )
+			|| $this->sharedDomainUtils->isSul3Enabled( RequestContext::getMain()->getRequest() )
 		) {
 			// Use local sessions only.
 			return true;

@@ -564,7 +564,9 @@
 			"services": [
 				"HookContainer",
 				"MainConfig",
-				"CentralAuth.CentralAuthSessionManager"
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.SharedDomainUtils"
+
 			]
 		},
 		"noservices": {
@@ -618,7 +620,8 @@
 				"AuthManager",
 				"MainConfig",
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.SharedDomainUtils"
 			]
 		},
 		"sso": {
