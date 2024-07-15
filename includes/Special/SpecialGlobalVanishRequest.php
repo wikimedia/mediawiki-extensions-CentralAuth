@@ -37,6 +37,7 @@ use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
+use MediaWiki\User\UserIdentityLookup;
 use PermissionsError;
 use RuntimeException;
 use UserMailer;
@@ -61,14 +62,22 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	/** @var HttpRequestFactory */
 	private $httpRequestFactory;
 
+	/** @var UserIdentityLookup */
+	private $userIdentityLookup;
+
 	/**
 	 * @param GlobalRenameDenylist $globalRenameDenylist
+	 * @param GlobalRenameRequestStore $globalRenameRequestStore
+	 * @param GlobalRenameFactory $globalRenameFactory
+	 * @param HttpRequestFactory $httpRequestFactory
+	 * @param UserIdentityLookup $userIdentityLookup
 	 */
 	public function __construct(
 		GlobalRenameDenylist $globalRenameDenylist,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		GlobalRenameFactory $globalRenameFactory,
-		HttpRequestFactory $httpRequestFactory
+		HttpRequestFactory $httpRequestFactory,
+		UserIdentityLookup $userIdentityLookup
 	) {
 		parent::__construct( 'GlobalVanishRequest' );
 
@@ -77,6 +86,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->globalRenameFactory = $globalRenameFactory;
 		$this->httpRequestFactory = $httpRequestFactory;
+		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	/** @inheritDoc */
@@ -114,6 +124,8 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$automaticVanishPerformer = $automaticVanishPerformerName !== null
 			? CentralAuthUser::getInstanceByName( $automaticVanishPerformerName )
 			: null;
+		$localAutomaticVanishPerformer = $this->userIdentityLookup
+			->getUserIdentityByName( $automaticVanishPerformerName );
 
 		// Immediately start the vanish if we already know that the user is
 		// eligible for approval without a review.
@@ -121,8 +133,10 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			isset( $automaticVanishPerformer ) &&
 			$automaticVanishPerformer->exists() &&
 			$automaticVanishPerformer->isAttached() &&
+			isset( $localAutomaticVanishPerformer ) &&
 			$this->eligibleForAutomaticVanish()
 		) {
+			$request->setPerformer( $automaticVanishPerformer->getId() );
 			$requestArray = $request->toArray();
 
 			// We need to add this two fields that are usually being provided by the Form
@@ -130,7 +144,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			$requestArray['suppressredirects'] = true;
 
 			$renameResult = $this->globalRenameFactory
-				->newGlobalRenameUser( $this->getUser(), $causer, $request->getNewName() )
+				->newGlobalRenameUser( $localAutomaticVanishPerformer, $causer, $request->getNewName() )
 				->withSession( $this->getContext()->exportSession() )
 				->rename( $requestArray );
 
@@ -141,7 +155,6 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			// We still want to leave a record that this happened, so change
 			// the status over to 'approved' for the subsequent save.
 			$request
-				->setPerformer( $automaticVanishPerformer->getId() )
 				->setComments( $this->msg( 'globalvanishrequest-autoapprove-note' ) )
 				->setStatus( GlobalRenameRequest::APPROVED );
 

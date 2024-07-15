@@ -72,6 +72,7 @@ class SpecialPageInitHookHandler implements
 					'CentralAuth.GlobalRenameRequestStore',
 					'CentralAuth.GlobalRenameFactory',
 					'HttpRequestFactory',
+					'UserIdentityLookup',
 				]
 			];
 		}
