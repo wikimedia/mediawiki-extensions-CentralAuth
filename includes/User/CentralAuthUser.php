@@ -914,15 +914,16 @@ class CentralAuthUser implements IDBAccessObject {
 		$services = MediaWikiServices::getInstance();
 		$dbm = CentralAuthServices::getDatabaseManager();
 
-		$user = $services->getUserIdentityLookup()->getUserIdentityByName( $this->getName() );
-		if ( !$user ) {
-			return false;
-		}
-
 		$wikis = $this->queryAttachedBasic();
 		foreach ( $wikis as $wikiId => $_ ) {
 			$dbr = $dbm->getLocalDB( DB_REPLICA, $wikiId );
-			$actorId = $services->getActorNormalization()->acquireActorId( $user, $dbr );
+
+			$actorStore = $services->getActorStoreFactory()->getActorStore( $wikiId );
+			$user = $actorStore->getUserIdentityByName( $this->getName() );
+			if ( !$user ) {
+				continue;
+			}
+			$actorId = $actorStore->acquireActorId( $user, $dbr );
 
 			$conds = array_merge(
 				[ 'log_actor' => $actorId ],
