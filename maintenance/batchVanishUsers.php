@@ -72,7 +72,12 @@ class BatchVanishUsers extends Maintenance {
 		fclose( $handle );
 
 		$outputHandle = fopen( $outputPath, 'w' );
-		fputcsv( $outputHandle, [ 'ticketId', 'result' ] );
+		if ( !$outputHandle ) {
+			$this->fatalError( "Unable to create output file: {$outputPath}" );
+		}
+		if ( !fputcsv( $outputHandle, [ 'ticketId', 'result' ] ) ) {
+			$this->fatalError( "Unable to write to output file: {$outputPath}" );
+		}
 		$vanishRequestCount = count( $vanishRequests );
 		$successCount = 0;
 		$failureCount = 0;
@@ -101,7 +106,7 @@ class BatchVanishUsers extends Maintenance {
 		// Print success and failure counts.
 		$this->output( "\nSucessfully submitted {$successCount} vanish requests.\n" );
 		$this->output( "Failed to submit {$failureCount} vanish requests.\n" );
-		$this->output( "Report produced - output.csv\n" );
+		$this->output( "Report produced - {$outputPath}\n" );
 	}
 
 	/**
