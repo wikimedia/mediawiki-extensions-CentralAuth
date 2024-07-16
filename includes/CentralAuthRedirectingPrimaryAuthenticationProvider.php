@@ -10,7 +10,6 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -35,13 +34,19 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	public const RETURN_URL_TOKEN_KEY_PREFIX = 'centralauth-homewiki-return-url-token';
 
 	private TitleFactory $titleFactory;
+	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthUtilityService $centralAuthUtility;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	public function __construct(
 		TitleFactory $titleFactory,
+		CentralAuthSessionManager $sessionManager,
+		CentralAuthUtilityService $centralAuthUtility,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->titleFactory = $titleFactory;
+		$this->sessionManager = $sessionManager;
+		$this->centralAuthUtility = $centralAuthUtility;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -54,28 +59,6 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			return [ new CentralAuthRedirectingAuthenticationRequest() ];
 		}
 		return [];
-	}
-
-	/**
-	 * Lazily fetch us an instance of the CentralAuthUtility service.
-	 *
-	 * @return CentralAuthUtilityService
-	 */
-	private function getCentralAuthUtility(): CentralAuthUtilityService {
-		return MediaWikiServices::getInstance()->getService(
-			'CentralAuth.CentralAuthUtilityService'
-		);
-	}
-
-	/**
-	 * Lazily fetch us an instance of the CentralAuthSessionManager service.
-	 *
-	 * @return CentralAuthSessionManager
-	 */
-	private function getSessionManager(): CentralAuthSessionManager {
-		return MediaWikiServices::getInstance()->getService(
-			'CentralAuth.CentralAuthSessionManager'
-		);
 	}
 
 	/** @inheritDoc */
@@ -92,8 +75,8 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );
 		$this->sharedDomainUtils->assertIsNotSharedDomain();
 
-		$returnUrlToken = $this->getCentralAuthUtility()->tokenize(
-			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX, $this->getSessionManager()
+		$returnUrlToken = $this->centralAuthUtility->tokenize(
+			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX, $this->sessionManager
 		);
 
 		$url = wfAppendQuery(
@@ -116,10 +99,10 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			throw new LogicException( 'Local authentication failed, please try again.' );
 		}
 
-		$username = $this->getCentralAuthUtility()->detokenize(
+		$username = $this->centralAuthUtility->detokenize(
 			$req->token,
 			RedirectingLoginHookHandler::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
-			$this->getSessionManager()
+			$this->sessionManager
 		);
 
 		if ( !$username ) {
