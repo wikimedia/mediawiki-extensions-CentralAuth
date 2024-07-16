@@ -156,6 +156,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			// the status over to 'approved' for the subsequent save.
 			$request
 				->setComments( $this->msg( 'globalvanishrequest-autoapprove-note' ) )
+				->setReason( $this->msg( 'globalvanishrequest-autoapprove-note' ) )
 				->setStatus( GlobalRenameRequest::APPROVED );
 
 			$this->sendVanishingSuccessfulEmail( $request );
