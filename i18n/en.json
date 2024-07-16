@@ -502,7 +502,7 @@
 	"globalvanishrequest-status-text": "Your username vanish request is currently in progress and awaiting approval by those able to perform this operation. You will be notified by email when the request is processed.",
 	"globalvanishrequest-vanished-title": "Vanish request successful",
 	"globalvanishrequest-vanished-text": "Your username vanish request was processed successfully.",
-	"globalvanishrequest-blocked-title": "Global user account vanish request blocked",
+	"globalvanishrequest-blocked-title": "Global user account vanish request rejected because your account is blocked",
 	"globalvanishrequest-blocked-text": "You are currently blocked from one or more wikis and cannot vanish your account. You can appeal blocks on your account. See the following link(s) for information on how to appeal for each respective wiki that you're blocked from. To learn more about account vanishing, visit the [[m:Special:MyLanguage/Right_to_vanish|Right to Vanish]] information page.",
 	"globalvanishrequest-blocked-text-minimal": "You are currently blocked from one or more wikis and cannot vanish your account. To learn more about account vanishing, visit the [[m:Special:MyLanguage/Right_to_vanish|Right to Vanish]] information page.",
 	"globalvanishrequest-reason-label": "Reason for request",
