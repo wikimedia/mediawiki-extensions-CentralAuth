@@ -8,6 +8,9 @@ use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
+use MediaWiki\MediaWikiServices;
+use RuntimeException;
 use StatusValue;
 
 /**
@@ -22,6 +25,13 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 	public const NON_LOGIN_WIKI_BUTTONREQUEST_NAME = 'non-loginwiki';
 
+	/**
+	 * @internal
+	 * @var string The storage key prefix for the URL token used for continuing
+	 *   authentication in the central login wiki.
+	 */
+	public const RETURN_URL_TOKEN_KEY_PREFIX = 'centralauth-homewiki-return-url-token';
+
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
 		if ( $action === AuthManager::ACTION_LOGIN
@@ -31,6 +41,28 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			return [ new CentralAuthRedirectingAuthenticationRequest() ];
 		}
 		return [];
+	}
+
+	/**
+	 * Lazily fetch us an instance of the CentralAuthUtility service.
+	 *
+	 * @return CentralAuthUtilityService
+	 */
+	private function getCentralAuthUtility(): CentralAuthUtilityService {
+		return MediaWikiServices::getInstance()->getService(
+			'CentralAuth.CentralAuthUtilityService'
+		);
+	}
+
+	/**
+	 * Lazily fetch us an instance of the CentralAuthSessionManager service.
+	 *
+	 * @return CentralAuthSessionManager
+	 */
+	private function getSessionManager(): CentralAuthSessionManager {
+		return MediaWikiServices::getInstance()->getService(
+			'CentralAuth.CentralAuthSessionManager'
+		);
 	}
 
 	/** @inheritDoc */
@@ -47,8 +79,12 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		$this->assertSul3Enabled( $this->config, $this->manager->getRequest() );
 		$this->assertIsNotSharedDomain();
 
+		$returnUrlToken = $this->getCentralAuthUtility()->tokenize(
+			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX, $this->getSessionManager()
+		);
+
 		$url = wfAppendQuery(
-			$this->getCentralLoginUrl(), [ 'returnurl' => $req->returnToUrl ]
+			$this->getCentralLoginUrl(), [ 'returnUrlToken' => $returnUrlToken ]
 		);
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
@@ -66,7 +102,17 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			throw new LogicException( 'Local authentication failed, please try again.' );
 		}
 
-		return AuthenticationResponse::newPass( $req->token );
+		$token = $this->getCentralAuthUtility()->detokenize(
+			$req->token,
+			RedirectingLoginHookHandler::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
+			$this->getSessionManager()
+		);
+
+		if ( !$token ) {
+			throw new RuntimeException( 'Invalid user token, try to login again' );
+		}
+
+		return AuthenticationResponse::newPass( $token );
 	}
 
 	/** @inheritDoc */

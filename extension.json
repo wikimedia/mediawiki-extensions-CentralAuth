@@ -586,7 +586,11 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PermissionsHookHandler"
 		},
 		"loginredirect": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler"
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler",
+			"services": [
+				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthUtilityService"
+			]
 		},
 		"securepoll": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SecurePollHookHandler",
