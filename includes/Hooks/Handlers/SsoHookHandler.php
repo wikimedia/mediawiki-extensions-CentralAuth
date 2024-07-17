@@ -45,7 +45,7 @@ class SsoHookHandler implements
 				return false;
 			}
 			// FIXME this should be an extension attribute eventually
-			$allowlist = [ 'Userlogin', 'Userlogout', 'CreateAccount' ];
+			$allowlist = [ 'Userlogin', 'Userlogout', 'CreateAccount', 'PasswordReset', 'Captcha' ];
 			foreach ( $allowlist as $name ) {
 				if ( $title->isSpecial( $name ) ) {
 					return true;
@@ -61,8 +61,16 @@ class SsoHookHandler implements
 		if ( $this->sharedDomainUtils->isSharedDomain() ) {
 			// FIXME this should be an extension attribute eventually
 			$allowlist = [
-				'clientlogin', 'createaccount', 'validatepassword', 'siteinfo', 'authmanagerinfo',
-				'userinfo', 'globaluserinfo', 'tokens', 'webauthn',
+				// needed for allowing any query API, even if we only want meta modules; it can be
+				// used to check page existence (which is unwanted functionality on the SSO domain),
+				// which is unfortunate but permissions will still be checked, so it's not a risk.
+				'query',
+				// allow login/signup directly via the API + help for those APIs
+				'clientlogin', 'createaccount', 'authmanagerinfo', 'paraminfo', 'help',
+				// APIs used during web login
+				'validatepassword', 'userinfo', 'webauthn', 'fancycaptchareload',
+				// generic meta APIs, there's a good chance something somewhere will use them
+				'siteinfo', 'globaluserinfo', 'tokens',
 			];
 
 			if ( !in_array( $module->getModuleName(), $allowlist ) ) {
