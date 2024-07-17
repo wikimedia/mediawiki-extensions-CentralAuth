@@ -381,6 +381,7 @@
 		"globalallusers": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers",
 			"services": [
+				"TempUserConfig",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.GlobalGroupLookup"
 			]

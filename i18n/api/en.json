@@ -43,6 +43,8 @@
 	"apihelp-query+globalallusers-param-from": "The username to start enumerating from.",
 	"apihelp-query+globalallusers-param-group": "Limit users to given global groups.",
 	"apihelp-query+globalallusers-param-limit": "How many total usernames to return.",
+	"apihelp-query+globalallusers-param-excludenamed": "Exclude users of named accounts.",
+	"apihelp-query+globalallusers-param-excludetemp": "Exclude users of temporary accounts.",
 	"apihelp-query+globalallusers-param-prefix": "Search for all users that begin with this value.",
 	"apihelp-query+globalallusers-param-prop": "What pieces of information to include:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Whether the user account is locked.",

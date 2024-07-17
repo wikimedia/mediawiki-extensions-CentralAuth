@@ -19,6 +19,14 @@ class HTMLGlobalUserTextField extends HTMLUserTextField {
 
 	/** @inheritDoc */
 	protected function getInputWidget( $params ) {
+		if ( isset( $this->mParams['excludenamed'] ) ) {
+			$params['excludenamed'] = $this->mParams['excludenamed'];
+		}
+
+		if ( isset( $this->mParams['excludetemp'] ) ) {
+			$params['excludetemp'] = $this->mParams['excludetemp'];
+		}
+
 		return new GlobalUserInputWidget( $params );
 	}
 

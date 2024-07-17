@@ -46,6 +46,8 @@
 	"apihelp-query+globalallusers-param-from": "{{doc-apihelp-param|query+globalallusers|from}}",
 	"apihelp-query+globalallusers-param-group": "{{doc-apihelp-param|query+globalallusers|group}}",
 	"apihelp-query+globalallusers-param-limit": "{{doc-apihelp-param|query+globalallusers|limit}}",
+	"apihelp-query+globalallusers-param-excludenamed": "{{doc-apihelp-param|query+globalallusers|excludenamed}}",
+	"apihelp-query+globalallusers-param-excludetemp": "{{doc-apihelp-param|query+globalallusers|excludetemp}}",
 	"apihelp-query+globalallusers-param-prefix": "{{doc-apihelp-param|query+globalallusers|prefix}}",
 	"apihelp-query+globalallusers-param-prop": "{{doc-apihelp-param|query+globalallusers|prop}}",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "{{doc-apihelp-paramvalue|query+globalallusers|prop|lockinfo}}",

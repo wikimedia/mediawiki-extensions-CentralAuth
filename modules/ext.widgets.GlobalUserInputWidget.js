@@ -10,6 +10,8 @@
 	 * @constructor
 	 * @param {Object} [config] Configuration options
 	 * @param {number} [config.limit=10] Number of results to show
+	 * @param {boolean} [config.excludenamed] Whether to exclude named users or not
+	 * @param {boolean} [config.excludetemp] Whether to exclude temporary users or not
 	 */
 	function GlobalUserInputWidget( config ) {
 		// Config initialization
@@ -23,6 +25,8 @@
 
 		// Properties
 		this.limit = config.limit || 10;
+		this.excludeNamed = config.excludenamed || false;
+		this.excludeTemp = config.excludetemp || false;
 
 		// Initialization
 		this.$element.addClass( 'mw-widget-userInputWidget' );
@@ -75,7 +79,9 @@
 			// Prefix of list=globalallusers is case sensitive. Normalise first
 			// character to uppercase so that "fo" may yield "Foo".
 			aguprefix: inputValue[ 0 ].toUpperCase() + inputValue.slice( 1 ),
-			agulimit: this.limit
+			agulimit: this.limit,
+			aguexcludenamed: this.excludeNamed,
+			aguexcludetemp: this.excludeTemp
 		} );
 	};
 

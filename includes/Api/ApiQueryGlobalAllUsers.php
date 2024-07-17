@@ -8,6 +8,7 @@ use ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\IntegerDef;
@@ -43,16 +44,19 @@ use Wikimedia\Rdbms\LikeValue;
  */
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
+	private TempUserConfig $tempUserConfig;
 	private CentralAuthDatabaseManager $databaseManager;
 	private GlobalGroupLookup $globalGroupLookup;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
+		TempUserConfig $tempUserConfig,
 		CentralAuthDatabaseManager $databaseManager,
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $query, $moduleName, 'agu' );
+		$this->tempUserConfig = $tempUserConfig;
 		$this->databaseManager = $databaseManager;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
@@ -156,6 +160,22 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				'localuser' =>
 				[ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ]
 			] );
+		}
+
+		$excludeNamed = $params['excludenamed'];
+		$excludeTemp = $params['excludetemp'];
+
+		if ( $this->tempUserConfig->isKnown() ) {
+			if ( $excludeTemp ) {
+				$this->addWhere(
+					$this->tempUserConfig->getMatchCondition( $db, 'gu_name', IExpression::NOT_LIKE )
+				);
+			}
+			if ( $excludeNamed ) {
+				$this->addWhere(
+					$this->tempUserConfig->getMatchCondition( $db, 'gu_name', IExpression::LIKE )
+				);
+			}
 		}
 
 		$this->addOption( 'LIMIT', $limit );
@@ -298,7 +318,13 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				IntegerDef::PARAM_MIN => 1,
 				IntegerDef::PARAM_MAX => ApiBase::LIMIT_BIG1,
 				IntegerDef::PARAM_MAX2 => ApiBase::LIMIT_BIG2
-			]
+			],
+			'excludenamed' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
+			],
+			'excludetemp' => [
+				ParamValidator::PARAM_TYPE => 'boolean',
+			],
 		];
 	}
 
