@@ -923,6 +923,8 @@
 				"sort": 0,
 				"services": [
 					"TitleFactory",
+					"CentralAuth.CentralAuthSessionManager",
+					"CentralAuth.CentralAuthUtilityService",
 					"CentralAuth.SharedDomainUtils"
 				]
 			}
