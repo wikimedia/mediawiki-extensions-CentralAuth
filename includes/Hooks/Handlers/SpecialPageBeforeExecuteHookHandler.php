@@ -7,6 +7,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -49,23 +50,27 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 
 	/** @var CentralAuthUtilityService */
 	private CentralAuthUtilityService $centralAuthUtilityService;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param AuthManager $authManager
 	 * @param Config $config
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
+	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		AuthManager $authManager,
 		Config $config,
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $centralAuthUtilityService
+		CentralAuthUtilityService $centralAuthUtilityService,
+		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
 		$this->config = $config;
 		$this->sessionManager = $sessionManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**
@@ -94,6 +99,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			|| $this->authManager->getAuthenticationSessionData( $amKey )
 			// elevated-security reauthentication of already logged-in user
 			|| $request->getBool( 'force' )
+			|| $this->sharedDomainUtils->isSul3Enabled( $request )
 			|| !$this->config->get( 'CentralAuthLoginWiki' )
 			|| $this->config->get( 'CentralAuthLoginWiki' ) === WikiMap::getCurrentWikiId()
 		) {
