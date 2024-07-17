@@ -28,8 +28,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\PostLoginRedirectHook;
-use MediaWiki\MediaWikiServices;
-use RuntimeException;
 
 class RedirectingLoginHookHandler implements
 	PostLoginRedirectHook,
@@ -56,54 +54,49 @@ class RedirectingLoginHookHandler implements
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
-	/** @inheritDoc */
+	/**
+	 * After a SUL3 login on the shared login domain, redirect the user back to the
+	 * original wiki and indicate the result of the login.
+	 * @inheritDoc
+	 */
 	public function onPostLoginRedirect( &$returnTo, &$returnToQuery, &$type ) {
-		if ( !$this->sharedDomainUtils->isSharedDomain() ) {
-			// We're not on the central login wiki, so do nothing.
+		$context = RequestContext::getMain();
+		$request = $context->getRequest();
+		if (
+			!$this->sharedDomainUtils->isSharedDomain()
+			|| !$this->sharedDomainUtils->isSul3Enabled( $request )
+		) {
 			return;
 		}
 
-		$context = RequestContext::getMain();
-		$request = $context->getRequest();
-		$url = $request->getRawVal( 'returnUrlToken' );
-
-		if ( !$url ) {
-			throw new ErrorPageError(
-				'centralauth-error-badtoken', 'centralauth-error-badtoken'
+		$returnUrlToken = $request->getRawVal( 'returnUrlToken' );
+		if ( $returnUrlToken ) {
+			$returnUrl = $this->caUtilityService->detokenize(
+				$returnUrlToken,
+				CentralAuthRedirectingPrimaryAuthenticationProvider::RETURN_URL_TOKEN_KEY_PREFIX,
+				$this->sessionManager
 			);
+		} else {
+			$returnUrl = false;
+		}
+		if ( !$returnUrl ) {
+			throw new ErrorPageError( 'centralauth-error-badtoken', 'centralauth-error-badtoken' );
 		}
 
 		if ( !$context->getUser()->isRegistered() ) {
 			throw new \LogicException( 'This account is not a registered user' );
 		}
 
-		$returnUrlToken = $request->getRawVal( 'returnUrlToken' );
+		$userToken = $this->caUtilityService->tokenize(
+			$context->getUser()->getName(),
+			self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
+			$this->sessionManager
+		);
+		$url = wfAppendQuery( $returnUrl, [ 'token' => $userToken ] );
 
-		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
-			$token = $this->caUtilityService->tokenize(
-				$context->getUser()->getName(),
-				self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
-				$this->sessionManager
-			);
-			$url = wfAppendQuery(
-				$this->caUtilityService->detokenize(
-					$returnUrlToken,
-					CentralAuthRedirectingPrimaryAuthenticationProvider::RETURN_URL_TOKEN_KEY_PREFIX,
-					MediaWikiServices::getInstance()->getService(
-						'CentralAuth.CentralAuthSessionManager'
-					)
-				),
-				[ 'token' => $token ]
-			);
-
-			// We have a return URL from the login wiki, we're fine.
-			$context->getOutput()->redirect( $url );
-			$type = 'success';
-		} else {
-			// This should not happen as the authentication workflow should know where
-			// to go back to in order to complete the login process.
-			throw new RuntimeException( 'Invalid return URL, login aborted' );
-		}
+		// We have a return URL from the login wiki, we're fine.
+		$context->getOutput()->redirect( $url );
+		$type = 'success';
 
 		return true;
 	}

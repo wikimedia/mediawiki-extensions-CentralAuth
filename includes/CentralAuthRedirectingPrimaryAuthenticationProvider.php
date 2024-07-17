@@ -116,17 +116,17 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			throw new LogicException( 'Local authentication failed, please try again.' );
 		}
 
-		$token = $this->getCentralAuthUtility()->detokenize(
+		$username = $this->getCentralAuthUtility()->detokenize(
 			$req->token,
 			RedirectingLoginHookHandler::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
 			$this->getSessionManager()
 		);
 
-		if ( !$token ) {
+		if ( !$username ) {
 			throw new RuntimeException( 'Invalid user token, try to login again' );
 		}
 
-		return AuthenticationResponse::newPass( $token );
+		return AuthenticationResponse::newPass( $username );
 	}
 
 	/** @inheritDoc */
