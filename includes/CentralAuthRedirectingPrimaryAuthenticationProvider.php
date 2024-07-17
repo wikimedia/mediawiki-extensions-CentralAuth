@@ -9,7 +9,11 @@ use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\TitleFactory;
+use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use RuntimeException;
 use StatusValue;
 
@@ -21,8 +25,6 @@ use StatusValue;
 class CentralAuthRedirectingPrimaryAuthenticationProvider
 	extends AbstractPrimaryAuthenticationProvider
 {
-	use CentralAuthenticationProviderTrait;
-
 	public const NON_LOGIN_WIKI_BUTTONREQUEST_NAME = 'non-loginwiki';
 
 	/**
@@ -32,11 +34,22 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	 */
 	public const RETURN_URL_TOKEN_KEY_PREFIX = 'centralauth-homewiki-return-url-token';
 
+	private TitleFactory $titleFactory;
+	private SharedDomainUtils $sharedDomainUtils;
+
+	public function __construct(
+		TitleFactory $titleFactory,
+		SharedDomainUtils $sharedDomainUtils
+	) {
+		$this->titleFactory = $titleFactory;
+		$this->sharedDomainUtils = $sharedDomainUtils;
+	}
+
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
 		if ( $action === AuthManager::ACTION_LOGIN
-			&& $this->isSul3Enabled( $this->config, $this->manager->getRequest() )
-			&& !$this->isSharedDomain()
+			&& $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() )
+			&& !$this->sharedDomainUtils->isSharedDomain()
 		) {
 			return [ new CentralAuthRedirectingAuthenticationRequest() ];
 		}
@@ -76,23 +89,24 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			return AuthenticationResponse::newAbstain();
 		}
 
-		$this->assertSul3Enabled( $this->config, $this->manager->getRequest() );
-		$this->assertIsNotSharedDomain();
+		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );
+		$this->sharedDomainUtils->assertIsNotSharedDomain();
 
 		$returnUrlToken = $this->getCentralAuthUtility()->tokenize(
 			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX, $this->getSessionManager()
 		);
 
 		$url = wfAppendQuery(
-			$this->getCentralLoginUrl(), [ 'returnUrlToken' => $returnUrlToken ]
+			$this->getCentralLoginUrl(),
+			[ 'returnUrlToken' => $returnUrlToken ]
 		);
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
 
 	/** @inheritDoc */
 	public function continuePrimaryAuthentication( array $reqs ) {
-		$this->assertSul3Enabled( $this->config, $this->manager->getRequest() );
-		$this->assertIsNotSharedDomain();
+		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );
+		$this->sharedDomainUtils->assertIsNotSharedDomain();
 
 		$req = AuthenticationRequest::getRequestByClass(
 			$reqs, CentralAuthReturnRequest::class
@@ -127,11 +141,17 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( $this->isSharedDomain() ) {
+		if ( $this->sharedDomainUtils->isSharedDomain() ) {
 			return false;
 		}
 
-		return $this->testUserExistsInternal( $username, $this->userNameUtils );
+		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
+		if ( $username === false ) {
+			return false;
+		}
+
+		$centralUser = CentralAuthUser::getInstanceByName( $username );
+		return $centralUser && $centralUser->exists();
 	}
 
 	/** @inheritDoc */
@@ -152,4 +172,24 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
 		return AuthenticationResponse::newAbstain();
 	}
+
+	/**
+	 * Get the login URL on the shared login domain wiki.
+	 *
+	 * @return string
+	 */
+	private function getCentralLoginUrl(): string {
+		$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
+		$url = $this->config->get( 'CentralAuthSsoUrlPrefix' ) . $localUrl;
+
+		return wfAppendQuery( $url, [
+			// At this point, we should just be leaving the local
+			// wiki before hitting the loginwiki.
+			'wikiid' => WikiMap::getCurrentWikiId(),
+			// TODO: Fix T369467
+			'returnto' => 'Main_Page',
+			'usesul3' => '1',
+		] );
+	}
+
 }

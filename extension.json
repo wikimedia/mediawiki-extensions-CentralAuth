@@ -589,7 +589,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler",
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.SharedDomainUtils"
 			]
 		},
 		"securepoll": {
@@ -910,12 +911,17 @@
 					"CentralAuth.CentralAuthAntiSpoofManager",
 					"CentralAuth.CentralAuthDatabaseManager",
 					"CentralAuth.CentralAuthUtilityService",
-					"CentralAuth.GlobalRenameRequestStore"
+					"CentralAuth.GlobalRenameRequestStore",
+					"CentralAuth.SharedDomainUtils"
 				]
 			},
 			"CentralAuthRedirectingPrimaryAuthenticationProvider": {
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthRedirectingPrimaryAuthenticationProvider",
-				"sort": 0
+				"sort": 0,
+				"services": [
+					"TitleFactory",
+					"CentralAuth.SharedDomainUtils"
+				]
 			}
 		},
 		"secondaryauth": {
