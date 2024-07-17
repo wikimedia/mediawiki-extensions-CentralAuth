@@ -60,7 +60,14 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
-		return $this->config->get( 'CentralAuthEnableSul3' ) && $request->getCheck( 'usesul3' );
+		$configFlag = $this->config->get( 'CentralAuthEnableSul3' );
+		if ( $configFlag === 'always' ) {
+			return true;
+		} elseif ( $configFlag === 'query-flag' ) {
+			return $request->getCheck( 'usesul3' );
+		} else {
+			return false;
+		}
 	}
 
 	/**
