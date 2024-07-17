@@ -53,7 +53,8 @@
 			"Xiplus",
 			"Yekrats",
 			"Zabe",
-			"דולב"
+			"דולב",
+			"Tacsipacsi"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Global edit count of the user. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.\n\nSee also:\n* {{msg-mw|Abusefilter-edit-builder-vars-user-editcount}}.",
@@ -477,7 +478,7 @@
 	"globalrenamequeue-request-unknown-title": "Page title when an invalud URL is requested.",
 	"globalrenamequeue-request-userinfo-global": "Message expected to be configured per-wiki via MediaWiki:Globalrenamequeue-request-userinfo-global.\n\n* $1 is the requesting user's name.\n* $2 is the domain name of the requesting user's home wiki.\n* $3 is the requested username.\n* $4 is the number of edits by the global account.",
 	"globalrenamequeue-request-userinfo-local": "Message expected to be configured per-wiki via MediaWiki:Globalrenamequeue-request-userinfo-local.\n\n* $1 is the requesting user's name.\n* $2 is the domain name of the requesting user's home wiki.\n* $3 is the requested username.",
-	"globalrenamequeue-view": "Display a completed request.\n\n* $1 is the original username.\n* $2 is the requested username.\n* $3 is the reason for the rename request.\n* $4 is the status of the request.\n* $5 is the date and time the request was made.\n* $6 is the date and time the request was processed.\n* $7 is a link to the user page of the steward who processed the request.\n* $8 is the username of the steward who processed the request.\n* $9 is notes made by the steward.",
+	"globalrenamequeue-view": "Display a completed request.\n\n* $1 is the original username.\n* $2 is the requested username.\n* $3 is the reason for the rename request.\n* $4 is the status of the request.\n* $5 is the date and time the request was made.\n* $6 is the date and time the request was processed.\n* $7 is a link to the user page of the renamer who processed the request.\n* $8 is the username of the renamer who processed the request.\n* $9 is notes made by the renamer.",
 	"globalrenamequeue-view-approved": "Display text for an approved request.\n{{Identical|Approved}}",
 	"globalrenamequeue-view-rejected": "Display text for a rejected request.\n{{Identical|Rejected}}",
 	"globalrenamerequest": "{{doc-special|GlobalRenameRequest}}",
