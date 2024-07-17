@@ -324,6 +324,7 @@
 	"centralauth-renameuser-global-inprogress": "Глобално преименовање за $1 је већ [[Special:GlobalRenameProgress/$1|у току]].",
 	"centralauth-renameuser-merged": "Корисник $1 је прешао на систем за пријављивање с уједињеним налогом.\nПреименовање ће узроковати да се локални налог одвоји од глобалног.",
 	"centralauth-renameuser-reserved": "Корисничко име $2 је резервисано за глобални налог.",
+	"centralauth-vanish-confirm": "Да ли заиста желите да нестанете? Захтев за нестанак је неопозив.",
 	"centralauth-rightslog-entry-groupperms": "је променио дозволе групе $1 из $2 у $3",
 	"centralauth-rightslog-header": "Оваj дневник садржи операције о глобалним групама: промене у чланству и дозволама.",
 	"centralauth-rightslog-name": "Дневник глобалних права",
@@ -356,6 +357,8 @@
 	"globalrenamequeue-email-body-rejected": "Захтев за преименовање „{{GENDER:$1|$1}}” у „{{GENDER:$1|$2}}” је одбијен.\n\nНапомена: $3",
 	"globalrenamequeue-email-subject-approved": "Преименовање налога одобрено",
 	"globalrenamequeue-email-subject-rejected": "Преименовање налога одбијено",
+	"globalrenamequeue-vanish-email-subject-approved": "Нестанак налога одобрен",
+	"globalrenamequeue-vanish-email-subject-rejected": "Нестанак налога одбијен",
 	"globalrenamequeue-form-newname": "Жељено корисничко име:",
 	"globalrenamequeue-form-status": "Статус:",
 	"globalrenamequeue-form-status-all": "све",
@@ -399,6 +402,12 @@
 	"globalrenamerequest-submit-text": "Поднеси захтев",
 	"globalrenamerequest-username-label": "Тренутно корисничко име:",
 	"globalrenameuser": "Преименовање глобалних корисника",
+	"globalvanishrequest": "Захтев за нестанак",
+	"globalvanishrequest-text": "'''Пошаљи захтев за нестанак'''",
+	"globalvanishrequest-pretext": "Нестајање је '''последња опција''' и треба је користити само '''када желите заувек престати с’ уређивањем''' и такође да сакријете што више Ваших пређашњих повезивања. Брисање налога се врши преименовањем Вашег налога тако да други не могу да препознају Ваше доприносе. '''Нестајање не гарантује потпуну анонимност нити уклања Ваше доприносе на пројектима'''.\n\nДа покренете захтев за нестајање попуните образац испод.",
+	"globalvanishrequest-username-label": "Корисничко име захтеваоца",
+	"globalvanishrequest-reason-label": "Разлог",
+	"globalvanishrequest-submit-text": "Захтевај нестанак",
 	"globalusers": "Списак глобалних налога",
 	"grant-setglobalaccountstatus": "управљај стањем глобалног налога",
 	"log-action-filter-gblrights": "Врста измене:",
@@ -425,5 +434,6 @@
 	"right-centralauth-rename": "преименовање глобалних налога",
 	"right-centralauth-unmerge": "раздвајање глобалних налога",
 	"right-globalgroupmembership": "измена чланства у глобалним групама",
-	"right-globalgrouppermissions": "управљање глобалним групама"
+	"right-globalgrouppermissions": "управљање глобалним групама",
+	"centralauth-blocked-ip-reputation": "IP адреса коју тренутно користите је блокирана зато што је претходно коришћена за вандализам."
 }
