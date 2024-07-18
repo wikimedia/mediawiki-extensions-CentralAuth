@@ -232,7 +232,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied user.
 	 *
 	 * @param string $username A valid username. (Since 1.42 it does not have to be in the
-	 *   canonical form anymore.) IP adresses and external usernames are also accepted for B/C
+	 *   canonical form anymore). IP addresses and external usernames are also accepted for B/C
 	 *   but discouraged; they will be handled like a non-registered username.
 	 * @return CentralAuthUser
 	 * @throws InvalidArgumentException on invalid usernames.
