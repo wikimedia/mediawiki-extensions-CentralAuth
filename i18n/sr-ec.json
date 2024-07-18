@@ -415,5 +415,6 @@
 	"right-centralauth-rename": "преименовање глобалних налога",
 	"right-centralauth-unmerge": "раздвајање глобалних налога",
 	"right-globalgroupmembership": "измена чланства у глобалним групама",
-	"right-globalgrouppermissions": "управљање глобалним групама"
+	"right-globalgrouppermissions": "управљање глобалним групама",
+	"centralauth-blocked-ip-reputation": "IP адреса коју тренутно користите је блокирана зато што је претходно коришћена за вандализам."
 }

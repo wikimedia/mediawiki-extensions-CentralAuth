@@ -51,7 +51,8 @@
 			"Александр Сигачёв",
 			"Краснорядцева Елена",
 			"Тест",
-			"Ядерный Трамвай"
+			"Ядерный Трамвай",
+			"Умар"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника",
@@ -438,7 +439,7 @@
 	"globalrenamequeue-request-status-title": "Переименовать с «$1» на «$2»",
 	"globalrenamequeue-request-suppressredirects": "Запретить создание перенаправлений",
 	"globalrenamequeue-request-title": "Переименовать «$1»?",
-	"globalrenamequeue-request-titleblacklist": "<stong>Выбранное имя учётной записи соответствует названию из «чёрного списка»: $1</strong>",
+	"globalrenamequeue-request-titleblacklist": "<strong>Выбранное имя учётной записи соответствует названию из «чёрного списка»:</strong> $1",
 	"globalrenamequeue-request-unknown-body": "Запрос на переименование не был найден.",
 	"globalrenamequeue-request-unknown-title": "Запрос не найден",
 	"globalrenamequeue-request-userinfo-global": "* текущее имя участника: [[Special:CentralAuth/$1|$1]]\n* основная вики: $2\n* новое имя участника: [[Special:CentralAuth/$3|$3]]\n* глобальное количество правок: $4",
