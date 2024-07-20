@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use BagOStuff;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
@@ -32,12 +31,10 @@ use MediaWiki\Permissions\Authority;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use MWCryptRand;
 use Profiler;
-use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
-use Wikimedia\WaitConditionLoop;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Utility services that are useful in many parts of CentralAuth.
@@ -46,38 +43,24 @@ use Wikimedia\WaitConditionLoop;
  */
 class CentralAuthUtilityService {
 
-	/** @var Config */
-	private $config;
-
-	/** @var AuthManager */
-	private $authManager;
-
-	/** @var TitleFactory */
-	private $titleFactory;
-
-	/** @var JobQueueGroupFactory */
-	private $jobQueueGroupFactory;
-
-	/** @var JobFactory */
-	private $jobFactory;
-
-	/** @var LoggerInterface */
-	private $logger;
+	private Config $config;
+	private AuthManager $authManager;
+	private TitleFactory $titleFactory;
+	private JobQueueGroupFactory $jobQueueGroupFactory;
+	private JobFactory $jobFactory;
 
 	public function __construct(
 		Config $config,
 		AuthManager $authManager,
 		TitleFactory $titleFactory,
 		JobQueueGroupFactory $jobQueueGroupFactory,
-		JobFactory $jobFactory,
-		LoggerInterface $logger
+		JobFactory $jobFactory
 	) {
 		$this->config = $config;
 		$this->authManager = $authManager;
 		$this->titleFactory = $titleFactory;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->jobFactory = $jobFactory;
-		$this->logger = $logger;
 	}
 
 	/**
@@ -89,72 +72,8 @@ class CentralAuthUtilityService {
 	 * @return mixed Key value; false if not found or on error
 	 */
 	public function getKeyValueUponExistence( BagOStuff $store, $key, $timeout = 3 ) {
-		$value = false;
-
-		$result = ( new WaitConditionLoop(
-			static function () use ( $store, $key, &$value ) {
-				$watchPoint = $store->watchErrors();
-				$value = $store->get( $key );
-				$error = $store->getLastError( $watchPoint );
-				if ( $value !== false ) {
-					return WaitConditionLoop::CONDITION_REACHED;
-				} elseif ( $error === $store::ERR_NONE ) {
-					return WaitConditionLoop::CONDITION_CONTINUE;
-				} else {
-					return WaitConditionLoop::CONDITION_ABORTED;
-				}
-			},
-			$timeout
-		) )->invoke();
-
-		if ( $result === WaitConditionLoop::CONDITION_REACHED ) {
-			$this->logger->info( "Expected key {key} found.", [ 'key' => $key ] );
-		} elseif ( $result === WaitConditionLoop::CONDITION_TIMED_OUT ) {
-			$this->logger->error( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
-		} else {
-			$this->logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
-		}
-
-		return $value;
-	}
-
-	/**
-	 * Store a value for a short time via the shared token store, and return the random key it's
-	 * stored under. This can be used to replace an URL parameter (used to pass information between
-	 * wikis via redirect chains) with a random placeholder, to avoid sniffing or tampering.
-	 * @param string $value The value to store.
-	 * @param string $keyPrefix Namespace in the token store.
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @return string The random key (without the prefix).
-	 */
-	public function tokenize(
-		string $value,
-		string $keyPrefix,
-		CentralAuthSessionManager $sessionManager
-	): string {
-		$tokenStore = $sessionManager->getTokenStore();
-		$token = MWCryptRand::generateHex( 16 );
-		$key = $sessionManager->makeTokenKey( $keyPrefix, $token );
-
-		$tokenStore->set( $key, $value, $tokenStore::TTL_MINUTE );
-		return $token;
-	}
-
-	/**
-	 * Recover the value concealed with tokenize().
-	 * @param string $token The random key returned by tokenize().
-	 * @param string $keyPrefix Namespace in the token store.
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @return string|false The value, or false if it was not found.
-	 */
-	public function detokenize(
-		string $token,
-		string $keyPrefix,
-		CentralAuthSessionManager $sessionManager
-	) {
-		$key = $sessionManager->makeTokenKey( $keyPrefix, $token );
-
-		return $this->getKeyValueUponExistence( $sessionManager->getTokenStore(), $key );
+		// FIXME remove once nothing calls this
+		return CentralAuthServices::getTokenManager()->getKeyValueUponExistence( $key, $timeout );
 	}
 
 	/**

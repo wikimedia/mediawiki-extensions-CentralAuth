@@ -34,19 +34,16 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	public const RETURN_URL_TOKEN_KEY_PREFIX = 'centralauth-homewiki-return-url-token';
 
 	private TitleFactory $titleFactory;
-	private CentralAuthSessionManager $sessionManager;
-	private CentralAuthUtilityService $centralAuthUtility;
+	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	public function __construct(
 		TitleFactory $titleFactory,
-		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $centralAuthUtility,
+		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->titleFactory = $titleFactory;
-		$this->sessionManager = $sessionManager;
-		$this->centralAuthUtility = $centralAuthUtility;
+		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -75,8 +72,8 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );
 		$this->sharedDomainUtils->assertIsNotSharedDomain();
 
-		$returnUrlToken = $this->centralAuthUtility->tokenize(
-			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX, $this->sessionManager
+		$returnUrlToken = $this->tokenManager->tokenize(
+			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX
 		);
 
 		$url = wfAppendQuery(
@@ -99,10 +96,8 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			throw new LogicException( 'Local authentication failed, please try again.' );
 		}
 
-		$username = $this->centralAuthUtility->detokenize(
-			$req->token,
-			RedirectingLoginHookHandler::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
-			$this->sessionManager
+		$username = $this->tokenManager->detokenize(
+			$req->token, RedirectingLoginHookHandler::LOGIN_CONTINUE_USERNAME_KEY_PREFIX
 		);
 
 		if ( !$username ) {

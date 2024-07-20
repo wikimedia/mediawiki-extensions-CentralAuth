@@ -24,8 +24,7 @@ use ErrorPageError;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
-use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\PostLoginRedirectHook;
 use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
@@ -42,17 +41,14 @@ class RedirectingLoginHookHandler implements
 	 */
 	public const LOGIN_CONTINUE_USERNAME_KEY_PREFIX = 'centralauth-post-login-redirect-username';
 
-	private CentralAuthSessionManager $sessionManager;
-	private CentralAuthUtilityService $caUtilityService;
+	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	public function __construct(
-		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $utility,
+		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils
 	) {
-		$this->sessionManager = $sessionManager;
-		$this->caUtilityService = $utility;
+		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -73,10 +69,9 @@ class RedirectingLoginHookHandler implements
 
 		$returnUrlToken = $request->getRawVal( 'returnUrlToken' );
 		if ( $returnUrlToken ) {
-			$returnUrl = $this->caUtilityService->detokenize(
+			$returnUrl = $this->tokenManager->detokenize(
 				$returnUrlToken,
-				CentralAuthRedirectingPrimaryAuthenticationProvider::RETURN_URL_TOKEN_KEY_PREFIX,
-				$this->sessionManager
+				CentralAuthRedirectingPrimaryAuthenticationProvider::RETURN_URL_TOKEN_KEY_PREFIX
 			);
 		} else {
 			$returnUrl = false;
@@ -89,10 +84,9 @@ class RedirectingLoginHookHandler implements
 			throw new \LogicException( 'This account is not a registered user' );
 		}
 
-		$userToken = $this->caUtilityService->tokenize(
+		$userToken = $this->tokenManager->tokenize(
 			$context->getUser()->getName(),
-			self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX,
-			$this->sessionManager
+			self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX
 		);
 		$url = wfAppendQuery( $returnUrl, [ 'token' => $userToken ] );
 

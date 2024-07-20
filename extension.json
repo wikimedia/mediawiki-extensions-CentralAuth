@@ -138,6 +138,7 @@
 				"LanguageFactory",
 				"UserOptionsManager",
 				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
@@ -589,8 +590,7 @@
 		"loginredirect": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler",
 			"services": [
-				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.SharedDomainUtils"
 			]
 		},
@@ -618,8 +618,7 @@
 			"services": [
 				"AuthManager",
 				"MainConfig",
-				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.SharedDomainUtils"
 			]
 		},
@@ -931,8 +930,7 @@
 				"sort": 0,
 				"services": [
 					"TitleFactory",
-					"CentralAuth.CentralAuthSessionManager",
-					"CentralAuth.CentralAuthUtilityService",
+					"CentralAuth.CentralAuthTokenManager",
 					"CentralAuth.SharedDomainUtils"
 				]
 			}

@@ -8,6 +8,7 @@ use ExtensionRegistry;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
@@ -61,20 +62,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	private ExtensionRegistry $extensionRegistry;
 
-	/** @var LanguageFactory */
-	private $languageFactory;
-
-	/** @var UserOptionsManager */
-	private $userOptionsManager;
-
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
-
-	/** @var CentralAuthUtilityService */
-	private $centralAuthUtilityService;
-
-	/** @var LoggerInterface */
-	private $logger;
+	private LanguageFactory $languageFactory;
+	private UserOptionsManager $userOptionsManager;
+	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthTokenManager $tokenManager;
+	private CentralAuthUtilityService $centralAuthUtilityService;
+	private LoggerInterface $logger;
 
 	private string $subpage;
 
@@ -82,12 +75,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @param LanguageFactory $languageFactory
 	 * @param UserOptionsManager $userOptionsManager
 	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthTokenManager $tokenManager
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 */
 	public function __construct(
 		LanguageFactory $languageFactory,
 		UserOptionsManager $userOptionsManager,
 		CentralAuthSessionManager $sessionManager,
+		CentralAuthTokenManager $tokenManager,
 		CentralAuthUtilityService $centralAuthUtilityService
 	) {
 		parent::__construct( 'CentralAutoLogin' );
@@ -96,6 +91,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->languageFactory = $languageFactory;
 		$this->userOptionsManager = $userOptionsManager;
 		$this->sessionManager = $sessionManager;
+		$this->tokenManager = $tokenManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
@@ -791,8 +787,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		if ( $type === 'redirect' ) {
 			$returnUrlToken = $this->getRequest()->getVal( 'returnUrlToken', '' );
-			$returnUrl = $this->centralAuthUtilityService->detokenize( $returnUrlToken,
-				'centralautologin-returnurl', $this->sessionManager );
+			$returnUrl = $this->tokenManager->detokenize(
+				$returnUrlToken,
+				'centralautologin-returnurl'
+			);
 			if ( $returnUrl === false ) {
 				$type = 'error';
 				$status = 'invalid returnUrlToken';

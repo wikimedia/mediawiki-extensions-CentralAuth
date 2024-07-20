@@ -5,8 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
-use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
@@ -39,37 +38,26 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	/** Query parameter used to return error messages from SpecialCentralAutoLogin. */
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
-	/** @var AuthManager */
 	private AuthManager $authManager;
-
-	/** @var Config */
 	private Config $config;
-
-	/** @var CentralAuthSessionManager */
-	private CentralAuthSessionManager $sessionManager;
-
-	/** @var CentralAuthUtilityService */
-	private CentralAuthUtilityService $centralAuthUtilityService;
+	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param AuthManager $authManager
 	 * @param Config $config
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthUtilityService $centralAuthUtilityService
+	 * @param CentralAuthTokenManager $tokenManager
 	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		AuthManager $authManager,
 		Config $config,
-		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $centralAuthUtilityService,
+		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
 		$this->config = $config;
-		$this->sessionManager = $sessionManager;
-		$this->centralAuthUtilityService = $centralAuthUtilityService;
+		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -144,8 +132,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 				// domain, but we do want to preserve that
 				$returnUrl = MobileContext::singleton()->getMobileUrl( $returnUrl );
 			}
-			$returnUrlToken = $this->centralAuthUtilityService->tokenize( $returnUrl,
-				'centralautologin-returnurl', $this->sessionManager );
+			$returnUrlToken = $this->tokenManager->tokenize( $returnUrl, 'centralautologin-returnurl' );
 			$url = wfAppendQuery( $url, [
 				'type' => 'redirect',
 				'returnUrlToken' => $returnUrlToken,

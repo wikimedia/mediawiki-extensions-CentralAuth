@@ -2,7 +2,6 @@
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
@@ -25,9 +24,6 @@ use Wikimedia\TestingAccessWrapper;
  */
 abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrationTestCase {
 
-	/** @var CentralAuthSessionManager */
-	protected $sessionManager;
-
 	/** @var BagOStuff */
 	protected $sessionStore;
 
@@ -45,7 +41,7 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 		$this->setUserLang( 'qqx' );
 
 		$this->sessionStore = new HashBagOStuff();
-		$this->patchSessionStore();
+		$this->patchStores();
 
 		// CentralAuthTokenSessionProvider registers hooks dynamically.
 		// Make sure the original hooks are restored before the next test.
@@ -55,11 +51,14 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 	/**
 	 * Patch our modified session store into CentralAuthSessionManager
 	 */
-	private function patchSessionStore() {
-		$manager = CentralAuthServices::getSessionManager( $this->getServiceContainer() );
-		$this->sessionManager = TestingAccessWrapper::newFromObject( $manager );
-		$this->sessionManager->sessionStore = $this->sessionStore;
-		$this->sessionManager->tokenStore = $this->sessionStore;
+	private function patchStores() {
+		$sessionManager = CentralAuthServices::getSessionManager( $this->getServiceContainer() );
+		$wrappedSessionManager = TestingAccessWrapper::newFromObject( $sessionManager );
+		$wrappedSessionManager->sessionStore = $this->sessionStore;
+
+		$tokenManager = CentralAuthServices::getTokenManager( $this->getServiceContainer() );
+		$wrappedTokenManager = TestingAccessWrapper::newFromObject( $tokenManager );
+		$wrappedTokenManager->tokenStore = $this->sessionStore;
 	}
 
 	protected function assertSessionInfoError(
@@ -146,7 +145,7 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 			$this->setService( 'UserFactory', $userFactory );
 			// setService resets existing objects, so make sure our sessionStore patch will be there
-			$this->patchSessionStore();
+			$this->patchStores();
 		}
 
 		$this->userObjects[ $name ] = $user;

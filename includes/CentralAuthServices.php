@@ -95,6 +95,17 @@ class CentralAuthServices {
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
 	 *
+	 * @return CentralAuthTokenManager
+	 */
+	public static function getTokenManager( ContainerInterface $services = null ): CentralAuthTokenManager {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthTokenManager' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
 	 * @return CentralAuthUIService
 	 */
 	public static function getUIService( ContainerInterface $services = null ): CentralAuthUIService {

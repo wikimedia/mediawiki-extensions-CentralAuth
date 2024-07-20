@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use BagOStuff;
 use CachedBagOStuff;
 use IBufferingStatsdDataFactory;
 use MediaWiki\Config\ServiceOptions;
@@ -28,6 +27,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MWCryptRand;
+use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Stats\StatsFactory;
 
 class CentralAuthSessionManager {
@@ -42,9 +42,6 @@ class CentralAuthSessionManager {
 	/** @var BagOStuff|null Session cache */
 	private $sessionStore = null;
 
-	/** @var BagOStuff|null Token cache */
-	private $tokenStore = null;
-
 	/** @var ServiceOptions */
 	private $options;
 
@@ -56,19 +53,16 @@ class CentralAuthSessionManager {
 	 * @param ServiceOptions $options
 	 * @param IBufferingStatsdDataFactory $statsdDataFactory
 	 * @param StatsFactory $statsFactory
-	 * @param BagOStuff $microStash
 	 */
 	public function __construct(
 		ServiceOptions $options,
 		IBufferingStatsdDataFactory $statsdDataFactory,
-		StatsFactory $statsFactory,
-		BagOStuff $microStash
+		StatsFactory $statsFactory
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->statsdDataFactory = $statsdDataFactory;
 		$this->statsFactory = $statsFactory;
-		$this->tokenStore = $microStash;
 	}
 
 	/**
@@ -99,9 +93,8 @@ class CentralAuthSessionManager {
 	 * @return string The global token key (with proper escaping)
 	 */
 	public function makeTokenKey( string $keygroup, ...$components ): string {
-		return $this->getTokenStore()->makeGlobalKey(
-			$keygroup, $this->getCentralAuthDBForSessionKey(), ...$components
-		);
+		// FIXME move to TokenManager
+		return CentralAuthServices::getTokenManager()->makeTokenKey( $keygroup, ...$components );
 	}
 
 	/**
@@ -125,7 +118,8 @@ class CentralAuthSessionManager {
 	 * @return BagOStuff
 	 */
 	public function getTokenStore(): BagOStuff {
-		return $this->tokenStore;
+		// FIXME move to TokenManager
+		return CentralAuthServices::getTokenManager()->getTokenStore();
 	}
 
 	/**
