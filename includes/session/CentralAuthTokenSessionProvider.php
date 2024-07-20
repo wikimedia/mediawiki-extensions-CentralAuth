@@ -1,7 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionBackend;
@@ -25,22 +25,22 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthSessionManager $sessionManager;
-	private CentralAuthUtilityService $utilityService;
+	private CentralAuthTokenManager $tokenManager;
 
 	/**
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthUtilityService $utilityService
+	 * @param CentralAuthTokenManager $tokenManager
 	 */
 	public function __construct(
 		UserIdentityLookup $userIdentityLookup,
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $utilityService
+		CentralAuthTokenManager $tokenManager
 	) {
 		parent::__construct();
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->sessionManager = $sessionManager;
-		$this->utilityService = $utilityService;
+		$this->tokenManager = $tokenManager;
 	}
 
 	/**
@@ -86,12 +86,8 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
 
-		$key = $this->sessionManager->makeTokenKey( 'api-token', $oneTimeToken );
 		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
-
-		$data = $this->utilityService->getKeyValueUponExistence(
-			$this->sessionManager->getTokenStore(), $key, $timeout
-		);
+		$data = $this->tokenManager->detokenize( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
 
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
@@ -177,14 +173,10 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	 * @return bool
 	 */
 	protected function consumeToken( $token ) {
-		$tokenStore = $this->sessionManager->getTokenStore();
-		$key = $this->sessionManager->makeTokenKey( 'api-token', $token );
-
-		if ( !$tokenStore->changeTTL( $key, time() - 3600 ) ) {
+		if ( !$this->tokenManager->consume( $token, 'api-token' ) ) {
 			$this->logger->error( 'Raced out trying to mark the token as expired' );
 			return false;
 		}
-
 		return true;
 	}
 

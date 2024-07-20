@@ -27,7 +27,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use ApiBase;
 use ApiMain;
 use CentralAuthSessionProvider;
-use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\WikiMap\WikiMap;
@@ -43,21 +43,20 @@ use MWCryptRand;
  * @see \CentralAuthHeaderSessionProvider
  */
 class ApiCentralAuthToken extends ApiBase {
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
+	private CentralAuthTokenManager $tokenManager;
 
 	/**
 	 * @param ApiMain $main
 	 * @param string $moduleName
-	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthTokenManager $tokenManager
 	 */
 	public function __construct(
 		ApiMain $main,
 		$moduleName,
-		CentralAuthSessionManager $sessionManager
+		CentralAuthTokenManager $tokenManager
 	) {
 		parent::__construct( $main, $moduleName );
-		$this->sessionManager = $sessionManager;
+		$this->tokenManager = $tokenManager;
 	}
 
 	public function execute() {
@@ -89,13 +88,8 @@ class ApiCentralAuthToken extends ApiBase {
 			'origin' => WikiMap::getCurrentWikiId(),
 			'originSessionId' => $id,
 		];
-
 		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
-
-		$key = $this->sessionManager->makeTokenKey( 'api-token', $loginToken );
-		$this->sessionManager->getTokenStore()->set(
-			$key, $data, $this->sessionManager->getTokenStore()::TTL_MINUTE
-		);
+		$this->tokenManager->tokenize( $data, 'api-token', [ 'token' => $loginToken ] );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'centralauthtoken' => $loginToken

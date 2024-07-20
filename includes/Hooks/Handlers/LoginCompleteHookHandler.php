@@ -22,7 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralLogin;
@@ -43,25 +43,25 @@ class LoginCompleteHookHandler implements
 	TempUserCreatedRedirectHook
 {
 	private Config $config;
-	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthTokenManager $tokenManager;
 	private CentralAuthHookRunner $caHookRunner;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param HookContainer $hookContainer
 	 * @param Config $config
-	 * @param CentralAuthSessionManager $sessionManager
+	 * @param CentralAuthTokenManager $tokenManager
 	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
 		Config $config,
-		CentralAuthSessionManager $sessionManager,
+		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
 		$this->config = $config;
-		$this->sessionManager = $sessionManager;
+		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -209,9 +209,6 @@ class LoginCompleteHookHandler implements
 		] );
 
 		// Create a new token to pass to Special:CentralLogin/start (central wiki)
-		$tokenStore = $this->sessionManager->getTokenStore();
-		$token = MWCryptRand::generateHex( 32 );
-		$key = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
 		$data = [
 			'secret'	=> $secret,
 			'name'	  => $centralUser->getName(),
@@ -219,10 +216,9 @@ class LoginCompleteHookHandler implements
 			'wikiId'	=> WikiMap::getCurrentWikiId(),
 		];
 		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
-		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
+		$token = $this->tokenManager->tokenize( $data, 'central-login-start-token' );
 
 		$query = [ 'token' => $token ];
-
 		$wiki = WikiMap::getWiki( $this->config->get( 'CentralAuthLoginWiki' ) );
 		return wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralLogin/start' ), $query );
 	}

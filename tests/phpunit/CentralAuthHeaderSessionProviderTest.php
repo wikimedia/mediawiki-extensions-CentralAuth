@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\HashConfig;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
@@ -37,8 +38,8 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 
 		$provider = new CentralAuthHeaderSessionProvider(
 			$services->getUserIdentityLookup(),
-			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
-			$services->get( 'CentralAuth.CentralAuthUtilityService' )
+			CentralAuthServices::getSessionManager( $services ),
+			CentralAuthServices::getTokenManager( $services )
 		);
 		$this->initProvider(
 			$provider, null, $config, $manager, $hookContainer, $services->getUserNameUtils()

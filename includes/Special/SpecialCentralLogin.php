@@ -6,7 +6,7 @@ use CentralAuthSessionProvider;
 use Exception;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\LoginCompleteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -19,7 +19,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
-use MWCryptRand;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Wikimedia\ScopedCallback;
@@ -40,29 +39,23 @@ use Wikimedia\ScopedCallback;
  */
 class SpecialCentralLogin extends UnlistedSpecialPage {
 
-	/** @var Session */
-	protected $session = null;
+	protected ?Session $session = null;
 
-	/** @var CentralAuthSessionManager */
-	private $sessionManager;
-
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
-	/** @var LoggerInterface */
-	private $logger;
+	private CentralAuthSessionManager $sessionManager;
+	private CentralAuthTokenManager $tokenManager;
+	private LoggerInterface $logger;
 
 	/**
 	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthUtilityService $utilityService
+	 * @param CentralAuthTokenManager $tokenManager
 	 */
 	public function __construct(
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthUtilityService $utilityService
+		CentralAuthTokenManager $tokenManager
 	) {
 		parent::__construct( 'CentralLogin' );
 		$this->sessionManager = $sessionManager;
-		$this->utilityService = $utilityService;
+		$this->tokenManager = $tokenManager;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -131,10 +124,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @see SpecialCentralAutoLogin
 	 */
 	protected function doLoginStart( $token ) {
-		$tokenStore = $this->sessionManager->getTokenStore();
-
-		$key = $this->sessionManager->makeTokenKey( 'central-login-start-token', $token );
-		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
+		$info = $this->tokenManager->detokenize( $token, 'central-login-start-token' );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -205,7 +195,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$tokenStore->delete( $key );
+		$this->tokenManager->delete( $token, 'central-login-start-token' );
 
 		if ( $createStubSession ) {
 			// Start an unusable placeholder session stub and send a cookie.
@@ -225,15 +215,12 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Create a new token to pass to Special:CentralLogin/complete (local wiki).
-		$token = MWCryptRand::generateHex( 32 );
-		$key = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
 		$data = [
 			'sessionId' => $newSessionId,
 			// should match the login attempt secret
 			'secret'    => $info['secret']
 		];
-		$tokenStore = $this->sessionManager->getTokenStore();
-		$tokenStore->set( $key, $data, $tokenStore::TTL_MINUTE );
+		$token = $this->tokenManager->tokenize( $data, 'central-login-complete-token' );
 
 		$query = [ 'token' => $token ];
 
@@ -268,12 +255,9 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 */
 	protected function doLoginComplete( $token ) {
 		$request = $this->getRequest();
-		$tokenStore = $this->sessionManager->getTokenStore();
 
-		$key = $this->sessionManager->makeTokenKey( 'central-login-complete-token', $token );
 		$sessionKey = 'CentralAuth:autologin:current-attempt';
-
-		$info = $this->utilityService->getKeyValueUponExistence( $tokenStore, $key );
+		$info = $this->tokenManager->detokenize( $token, 'central-login-complete-token' );
 
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
@@ -320,7 +304,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		// Delete the temporary token
-		$tokenStore->delete( $key );
+		$this->tokenManager->delete( $token, 'central-login-complete-token' );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		// This is a bit tricky. We start with a stub session with 'pending_name' and no 'user'.
