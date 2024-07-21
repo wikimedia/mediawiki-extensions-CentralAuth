@@ -925,13 +925,10 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 			$actorId = $actorStore->acquireActorId( $user, $dbr );
 
-			$conds = array_merge(
-				[ 'log_actor' => $actorId ],
-				array_map(
-					fn ( $type ) => 'log_type != ' . $dbr->addQuotes( $type ),
-					$excludeTypes,
-				)
-			);
+			$conds = [
+				'log_actor' => $actorId,
+				$dbr->expr( 'log_type', '!=', $excludeTypes ),
+			];
 			$row = $dbr->newSelectQueryBuilder()
 				->select( [ 'log_id' ] )
 				->from( 'logging' )
