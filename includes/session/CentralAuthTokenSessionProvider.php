@@ -87,7 +87,7 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
 
 		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
-		$data = $this->tokenManager->detokenize( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
+		$data = $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
 
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
@@ -159,25 +159,7 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 			'forceUse' => true,
 		];
 
-		if ( !$this->consumeToken( $oneTimeToken ) ) {
-			// Raced out trying to mark the token as expired
-			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
-		}
-
 		return new SessionInfo( SessionInfo::MAX_PRIORITY, $info );
-	}
-
-	/**
-	 * @param string $token
-	 *
-	 * @return bool
-	 */
-	protected function consumeToken( $token ) {
-		if ( !$this->tokenManager->consume( $token, 'api-token' ) ) {
-			$this->logger->error( 'Raced out trying to mark the token as expired' );
-			return false;
-		}
-		return true;
 	}
 
 	public function persistsSessionId() {

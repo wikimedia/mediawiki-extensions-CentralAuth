@@ -133,33 +133,6 @@ class CentralAuthTokenManager {
 	}
 
 	/**
-	 * Delete a value from the token store.
-	 * @param string $token The random key returned by tokenize().
-	 * @param string|array $keyPrefix Namespace in the token store.
-	 * @return bool Whether the value was found and deleted.
-	 */
-	public function delete( string $token, $keyPrefix ): bool {
-		// FIXME remove this
-		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		return $this->tokenStore->delete( $key );
-	}
-
-	/**
-	 * Delete a value from the token store.
-	 * The difference from delete() is that this uses a lock to ensure the value is
-	 * actually found and deleted. Callers must check the return value and fail the
-	 * operation if it's false.
-	 * @param string $token The random key returned by tokenize().
-	 * @param string|array $keyPrefix Namespace in the token store.
-	 * @return bool Whether the value was found and deleted. Might return false when
-	 *   it could not obtain a lock.
-	 */
-	public function consume( string $token, $keyPrefix ): bool {
-		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		return $this->tokenStore->changeTTL( $key, time() - 3600 );
-	}
-
-	/**
 	 * Wait for and return the value of a key which is expected to exist from a store
 	 *
 	 * @param string $key A key that will only have one value while it exists

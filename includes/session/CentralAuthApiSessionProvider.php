@@ -1,9 +1,7 @@
 <?php
 
-use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
-use MediaWiki\User\User;
 
 /**
  * Session provider for CentralAuth API centralauthtoken
@@ -16,10 +14,7 @@ use MediaWiki\User\User;
  *
  * @see \MediaWiki\Extension\CentralAuth\Api\ApiCentralAuthToken
  */
-class CentralAuthApiSessionProvider
-	extends CentralAuthTokenSessionProvider
-	implements ApiCheckCanExecuteHook
-{
+class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 
 	/**
 	 * @param WebRequest $request
@@ -63,46 +58,6 @@ class CentralAuthApiSessionProvider
 		}
 
 		return parent::provideSessionInfo( $request );
-	}
-
-	/**
-	 * Overridden to defer actual consumption of the token until the ApiCheckCanExecute
-	 * hook is called.
-	 *
-	 * @param string $token
-	 *
-	 * @return bool
-	 */
-	protected function consumeToken( $token ) {
-		// Delete the token once it's actually used
-		$this->getHookContainer()->register( 'ApiCheckCanExecute', $this );
-		return true;
-	}
-
-	/**
-	 * Consume the centralauthtoken
-	 * @param ApiBase $module
-	 * @param User $user
-	 * @param IApiMessage|Message|string|array &$message Error message key and params
-	 * @return bool
-	 */
-	public function onApiCheckCanExecute( $module, $user, &$message ) {
-		// Mark used
-		$token = $module->getMain()->getVal( 'centralauthtoken' );
-
-		// NOTE: Call parent, because we override consumeToken() in this class
-		//       to operate indirectly via this hook.
-		if ( !parent::consumeToken( $token ) ) {
-			// Raced out trying to mark the token as expired
-			$message = ApiMessage::create(
-				'apierror-centralauth-badtoken',
-				'badtoken'
-			);
-
-			return false;
-		}
-
-		return true;
 	}
 
 }

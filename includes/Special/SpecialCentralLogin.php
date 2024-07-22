@@ -124,7 +124,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @see SpecialCentralAutoLogin
 	 */
 	protected function doLoginStart( $token ) {
-		$info = $this->tokenManager->detokenize( $token, 'central-login-start-token' );
+		$info = $this->tokenManager->detokenizeAndDelete( $token, 'central-login-start-token' );
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
 			return;
@@ -194,9 +194,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			}
 		}
 
-		// Delete the temporary token
-		$this->tokenManager->delete( $token, 'central-login-start-token' );
-
 		if ( $createStubSession ) {
 			// Start an unusable placeholder session stub and send a cookie.
 			// The cookie will not be usable until the session is unstubbed.
@@ -257,7 +254,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$request = $this->getRequest();
 
 		$sessionKey = 'CentralAuth:autologin:current-attempt';
-		$info = $this->tokenManager->detokenize( $token, 'central-login-complete-token' );
+		$info = $this->tokenManager->detokenizeAndDelete( $token, 'central-login-complete-token' );
 
 		if ( !is_array( $info ) ) {
 			$this->showError( 'centralauth-error-badtoken' );
@@ -302,9 +299,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 				throw $e;
 			}
 		}
-
-		// Delete the temporary token
-		$this->tokenManager->delete( $token, 'central-login-complete-token' );
 
 		// Fully initialize the stub central user session and send the domain cookie.
 		// This is a bit tricky. We start with a stub session with 'pending_name' and no 'user'.
