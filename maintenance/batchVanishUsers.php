@@ -244,7 +244,7 @@ class BatchVanishUsers extends Maintenance {
 			$requestArray = $request->toArray();
 
 			// We need to add this two fields that are usually being provided by the Form
-			$requestArray['movepages'] = false;
+			$requestArray['movepages'] = true;
 			$requestArray['suppressredirects'] = true;
 
 			$renameResult = $globalRenameFactory

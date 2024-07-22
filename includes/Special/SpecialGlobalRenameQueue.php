@@ -521,7 +521,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						'name'          => 'movepages',
 						'label-message' => 'globalrenamequeue-request-movepages',
 						'type'          => 'check',
-						'default'       => $isVanishRequest ? 0 : 1,
+						'default'       => 1,
 					],
 					'suppressredirects' => [
 						'id'            => 'mw-renamequeue-suppressredirects',
