@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\RawSQLValue;
 
 class CentralAuthEditCounter {
 	/** @var CentralAuthDatabaseManager */
@@ -127,7 +128,7 @@ class CentralAuthEditCounter {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'global_edit_count' )
-			->set( [ 'gec_count = gec_count + ' . (int)$increment ] )
+			->set( [ 'gec_count' => new RawSQLValue( 'gec_count + ' . (int)$increment ) ] )
 			->where( [ 'gec_user' => $centralUser->getId() ] )
 			->caller( __METHOD__ )
 			->execute();

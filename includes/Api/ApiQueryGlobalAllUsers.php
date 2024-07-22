@@ -145,7 +145,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				[ 'LEFT OUTER JOIN', [ 'gug2.gug_user = gu_id', 'gug2.gug_group' => $params['excludegroup'] ] ]
 			] );
 
-			$this->addWhere( 'gug2.gug_user IS NULL' );
+			$this->addWhere( [ 'gug2.gug_user' => null ] );
 			$this->addWhere( [
 				$this->getDB()->expr( 'gug2.gug_expiry', '=', null )
 					->or( 'gug2.gug_expiry', '>=', $this->getDB()->timestamp() )
