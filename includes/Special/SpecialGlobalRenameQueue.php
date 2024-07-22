@@ -445,7 +445,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				$this->getLanguage()->userTimeAndDate(
 					$req->getCompleted(), $this->getUser()
 				),
-				$attachedWikis,
 				$renamerLink,
 				$renamer->getName(),
 				$req->getComments()
