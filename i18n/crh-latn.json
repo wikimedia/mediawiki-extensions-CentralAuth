@@ -2,20 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"Don Alessandro",
-			"TayfunEt."
+			"TayfunEt.",
+			"Zolgoyo"
 		]
 	},
-	"centralauth-days-ago": "$1 {{PLURAL:$1|kün}} önce",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat}} önce",
-	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqqa}} önce",
-	"centralauth-months-ago": "$1 {{PLURAL:$1|ay}} önce",
+	"centralauth-days-ago": "$1 {{PLURAL:$1|kün}} evel",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat}} evel",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqqa}} evel",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|ay}} evel",
 	"centralauth-prefs-count-attached": "Esabıñız $1 {{PLURAL:$1|vikide}} faaldir.",
 	"centralauth-prefs-count-unattached": "Adıñıznı taşığan tasdıqlanmağan esaplar $1 {{PLURAL:$1|vikide}} qalıp tura.",
 	"centralauth-prefs-manage": "Global esapnı idare et",
-	"centralauth-prefs-not-managed": "Global esap qullanılmamaqta",
+	"centralauth-prefs-not-managed": "Birdem esap qullanılmay",
 	"centralauth-prefs-status": "Global esap alı:",
 	"centralauth-prefs-unattached": "Tasdıqlanmağan",
-	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniye}} önce",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl}} önce",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniye}} evel",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl}} evel",
 	"centralloginsuccesful": "İçkerdesiñiz"
 }
