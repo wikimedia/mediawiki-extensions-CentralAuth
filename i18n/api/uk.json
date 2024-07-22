@@ -15,6 +15,7 @@
 	"apierror-centralauth-notloggedin": "Анонімні користувачі не можуть отримати centralauthtoken.",
 	"apierror-centralauth-renameinprogress": "Цей користувач перебуває в процесі перейменування, не можна використати.",
 	"apihelp-centralauthtoken-example-1": "Отримати centralauthtoken",
+	"apihelp-centralauthtoken-extended-description": "Видає токен, який можна використовувати для автентифікації API-запитів в інших вікі. Для API-запитів на дії, вставте його у параметр GET <var>centralauthtoken</var>. Для API-запитів REST, додайте заголовок <code>Authorization: CentralAuthToken {token}</code>. У логіці фронтенду MediaWiki, ви можете використовувати модуль <code>mediawiki.ForeignApi</code> ResourceLoader.",
 	"apihelp-centralauthtoken-summary": "Отримати centralauthtoken для виконання автентифікованого запиту до прикріпленої вікі.",
 	"apihelp-createlocalaccount-example-1": "Примусово створити локальний обліковий запис для [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Причина для створення локального облікового запису.",

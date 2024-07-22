@@ -490,7 +490,7 @@
 	"globalvanishrequest-status-title": "Bestätigung der Auflösungsanfrage ausstehend",
 	"globalvanishrequest-status-text": "Dein Antrag auf Auflösung des Benutzernamens ist derzeit in Bearbeitung und wartet auf die Genehmigung derjenigen, die diese Operation durchführen können. Du wirst per E-Mail benachrichtigt, wenn der Antrag bearbeitet wurde.",
 	"globalvanishrequest-vanished-title": "Antrag auf Auflösung erfolgreich",
-	"globalvanishrequest-vanished-text": "Dein Antrag auf Auflösung deines Benutzerkontos wurde erfolgreich durchgeführt.",
+	"globalvanishrequest-vanished-text": "Dein Antrag auf Auflösung deines Benutzerkontos wurde erfolgreich bearbeitet.",
 	"globalvanishrequest-blocked-title": "Globale Auflösung des Benutzerkontos gesperrt",
 	"globalvanishrequest-blocked-text": "Du bist derzeit in einem oder mehreren Wikis gesperrt und kannst dein Konto deshalb nicht auflösen. Du kannst die Sperrung deines Kontos anfechten. Unter dem/den folgenden Link(s) findest du Informationen darüber, wie du der Sperre für jedes Wiki, für das du gesperrt bist, widersprechen kannst. Um mehr über die Auflösung von Konten zu erfahren, besuche die Informationsseite [[m:Special:MyLanguage/Right_to_vanish|Recht zu gehen]].",
 	"globalvanishrequest-blocked-text-minimal": "Du bist derzeit in einem oder mehreren Wikis gesperrt und kannst dein Konto deshalb nicht auflösen. Um mehr über das Auflösen von Konten zu erfahren, besuche die Informationsseite [[m:Special:MyLanguage/Right_to_vanish|Recht zu gehen]].",

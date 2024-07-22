@@ -500,6 +500,7 @@
 	"globalvanishrequest-vanished-title": "隱退請求成功",
 	"globalvanishrequest-reason-label": "請求原因",
 	"globalvanishrequest-submit-text": "請求隱退",
+	"globalvanishrequest-save-error": "儲存請求失敗，請再試一次。",
 	"globalvanishrequest-rejected-subject-notification": "帳號隱退請求遭拒（$1）",
 	"globalvanishrequest-rejected-body-notification": "帳號隱退請求遭拒，詳細資訊如下：\n\n使用者名稱：$1\n所在wiki：$2\n全域編輯次數：$3\n被封鎖：$4\n隱退請求原因：$5\n拒絕者：$6\n拒絕原因：$7\n請求日期：$8\n完成日期：$9",
 	"globalusers": "全域帳號清單",

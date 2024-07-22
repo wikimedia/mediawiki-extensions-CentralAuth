@@ -269,6 +269,7 @@
 	"globalrenamequeue-request-vanish-user-blocked": "હા",
 	"globalrenamequeue-request-vanish-user-not-blocked": "ના",
 	"globalrenamerequest-username-label": "હાલનું સભ્યનામ:",
+	"globalvanishrequest-username-label": "વિનંતી કરનારનું સભ્યનામ",
 	"globalusers": "વૈશ્વિક ખાતાની યાદી",
 	"mergeaccount": "લૉગિન એકીકરણ સ્થિતિ",
 	"multilock": "એકથી વધુ વૈશ્વિક ખાતાઓને તાળું મારો",
