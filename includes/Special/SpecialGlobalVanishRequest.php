@@ -136,16 +136,24 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			isset( $localAutomaticVanishPerformer ) &&
 			$this->eligibleForAutomaticVanish()
 		) {
-			$request->setPerformer( $automaticVanishPerformer->getId() );
+			$request
+				->setPerformer( $automaticVanishPerformer->getId() )
+				->setComments( $this->msg( 'globalvanishrequest-autoapprove-public-note' ) );
 			$requestArray = $request->toArray();
 
 			// We need to add this two fields that are usually being provided by the Form
 			$requestArray['movepages'] = true;
 			$requestArray['suppressredirects'] = true;
 
+			// Scrub the "reason". In the context of GlobalRenameUser, reason
+			// is the public log entry, not the private reason stated by the
+			// user. That value should never be logged.
+			$requestArray['reason'] = $this->msg( 'globalvanishrequest-autoapprove-public-note' );
+
 			$renameResult = $this->globalRenameFactory
 				->newGlobalRenameUser( $localAutomaticVanishPerformer, $causer, $request->getNewName() )
 				->withSession( $this->getContext()->exportSession() )
+				->withLockPerformingUser( $localAutomaticVanishPerformer )
 				->rename( $requestArray );
 
 			if ( !$renameResult->isGood() ) {
@@ -154,10 +162,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 			// We still want to leave a record that this happened, so change
 			// the status over to 'approved' for the subsequent save.
-			$request
-				->setComments( $this->msg( 'globalvanishrequest-autoapprove-note' ) )
-				->setReason( $this->msg( 'globalvanishrequest-autoapprove-note' ) )
-				->setStatus( GlobalRenameRequest::APPROVED );
+			$request->setStatus( GlobalRenameRequest::APPROVED );
 
 			$this->sendVanishingSuccessfulEmail( $request );
 		}

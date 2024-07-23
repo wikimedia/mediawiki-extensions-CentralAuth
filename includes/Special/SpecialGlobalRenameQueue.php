@@ -44,6 +44,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\Xml\Xml;
@@ -83,6 +84,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	private GlobalRenameFactory $globalRenameFactory;
 
+	private UserIdentityLookup $userIdentityLookup;
+
 	/** @var \Psr\Log\LoggerInterface */
 	private $logger;
 
@@ -101,7 +104,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		JobQueueGroupFactory $jobQueueGroupFactory,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		GlobalRenameFactory $globalRenameFactory
+		GlobalRenameFactory $globalRenameFactory,
+		UserIdentityLookup $userIdentityLookup
 	) {
 		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
 		$this->userNameUtils = $userNameUtils;
@@ -112,6 +116,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->globalRenameFactory = $globalRenameFactory;
+		$this->userIdentityLookup = $userIdentityLookup;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -725,15 +730,32 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			if ( $request->userIsGlobal() ) {
 				$data['type'] = $request->getType();
 
-				// Trigger a global rename job
-				$status = $this->globalRenameFactory
+				$globalRenameUser = $this->globalRenameFactory
 					->newGlobalRenameUser(
 						$this->getUser(),
 						CentralAuthUser::getInstanceByName( $request->getName() ),
 						$request->getNewName()
 					)
-					->withSession( $session )
-					->rename( $data );
+					->withSession( $session );
+
+				// Credit the vanish performer with account locking logs for
+				// vanish requests. Renamers cannot normally perform locks and
+				// thus should not be associated with them.
+				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
+					$vanishPerformerName = $this->getConfig()->get( 'CentralAuthAutomaticVanishPerformer' );
+
+					if ( isset( $vanishPerformerName ) ) {
+						$localVanishPerformer = $this->userIdentityLookup
+							->getUserIdentityByName( $vanishPerformerName );
+
+						if ( isset( $localVanishPerformer ) ) {
+							$globalRenameUser = $globalRenameUser->withLockPerformingUser( $localVanishPerformer );
+						}
+					}
+				}
+
+				// Trigger a global rename job
+				$status = $globalRenameUser->rename( $data );
 			} else {
 				// If the user is local-only:
 				// * rename the local user using LocalRenameUserJob
