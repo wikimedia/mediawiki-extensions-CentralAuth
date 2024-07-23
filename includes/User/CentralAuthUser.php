@@ -1150,6 +1150,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'globaluser' )
+			->ignore()
 			->row( $data )
 			->caller( __METHOD__ )
 			->execute();
