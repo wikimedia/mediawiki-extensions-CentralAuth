@@ -20,6 +20,12 @@ use MediaWiki\MediaWikiServices;
 
 return [
 
+	'CentralAuth.FilteredRequestTracker' => static function (
+		MediaWikiServices $services
+	): FilteredRequestTracker {
+		return new FilteredRequestTracker();
+	},
+
 	'CentralAuth.CentralAuthAntiSpoofManager' => static function (
 		MediaWikiServices $services
 	): CentralAuthAntiSpoofManager {
