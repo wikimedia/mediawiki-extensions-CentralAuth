@@ -672,6 +672,7 @@
 		"ApiCheckCanExecute": "sso",
 		"ApiQueryTokensRegisterTypes": "default",
 		"APIGetAllowedParams": "api",
+		"AuthChangeFormFields": "loginredirect",
 		"AuthPreserveQueryParams": "loginredirect",
 		"BeforePageDisplay": "pagedisplay",
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
