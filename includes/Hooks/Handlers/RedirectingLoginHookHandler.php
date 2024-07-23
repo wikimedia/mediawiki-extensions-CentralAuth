@@ -28,10 +28,12 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\PostLoginRedirectHook;
+use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
 
 class RedirectingLoginHookHandler implements
 	PostLoginRedirectHook,
-	AuthPreserveQueryParamsHook
+	AuthPreserveQueryParamsHook,
+	AuthChangeFormFieldsHook
 {
 	/**
 	 * @internal For use by CentralAuth only.
@@ -110,5 +112,19 @@ class RedirectingLoginHookHandler implements
 			'wikiid' => $request->getRawVal( 'wikiid' ),
 			'usesul3' => $request->getRawVal( 'usesul3' ),
 		];
+	}
+
+	/**
+	 * Move the redirect button below the normal login button. Displaying the normal login form
+	 * is prevented elsewhere, but just in case, if that fails, avoid this button being the
+	 * default form control that gets submitted when the user types into the username/password
+	 * field and presses Enter.
+	 * @inheritDoc
+	 */
+	public function onAuthChangeFormFields( $requests, $fieldInfo, &$formDescriptor, $action ) {
+		$formFieldName = CentralAuthRedirectingPrimaryAuthenticationProvider::NON_LOGIN_WIKI_BUTTONREQUEST_NAME;
+		if ( isset( $formDescriptor[$formFieldName] ) ) {
+			$formDescriptor[$formFieldName]['weight'] = 101;
+		}
 	}
 }
