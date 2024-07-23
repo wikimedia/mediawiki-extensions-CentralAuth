@@ -25,7 +25,6 @@ use MediaWiki\User\Options\UserOptionsManager;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
-use MediaWiki\Xml\Xml;
 use MobileContext;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
@@ -678,7 +677,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 					$redirectUrl = $returnToTitle->getFullUrlForRedirect( $returnToQuery );
 
-					$script .= "\n" . 'location.href = ' . Xml::encodeJsVar( $redirectUrl ) . ';';
+					$script .= "\n" . 'location.href = ' . Html::encodeJsVar( $redirectUrl ) . ';';
 
 					$this->doFinalOutput( true, 'success', $script );
 					return;
@@ -692,7 +691,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$this->getHookRunner()->onUserGetLanguageObject( $localUser, $code, $this->getContext() );
 
-				$script .= "\n" . Xml::encodeJsCall( 'mw.messages.set', [
+				$script .= "\n" . Html::encodeJsCall( 'mw.messages.set', [
 					[
 						'centralauth-centralautologin-logged-in' =>
 							$this->msg( 'centralauth-centralautologin-logged-in' )
@@ -709,7 +708,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// And for good measure, add the edge login HTML images to the page.
 				$this->logger->debug( 'Edge login triggered in CentralAutoLogin' );
 				// @phan-suppress-next-line SecurityCheck-DoubleEscaped
-				$script .= "\n" . Xml::encodeJsCall( "jQuery( 'body' ).append", [
+				$script .= "\n" . Html::encodeJsCall( "jQuery( 'body' ).append", [
 					CentralAuthHooks::getEdgeLoginHTML()
 				] );
 
