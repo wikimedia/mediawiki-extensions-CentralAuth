@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"MAL MALDIVE"
+		]
+	},
+	"centralauth-non-login-wiki-buttonlabel": "ސެންޓްރަލް ލޮގިން",
+	"centralauth-rename-confirm-vanish": "ހަގީގަތުގައި މި ޔޫޒަރ ބައިނަލްއަގުވާމީކޮށް ނެތިގެން ދާން ބޭނުން ހެއްޔެވެ؟",
+	"centralauth-vanish-confirm": "އަސްލުވެސް ބޭނުންވަނީ ތިޔަބޭފުޅާގެ އެކައުންޓް ގެއްލިގެން ނުވަތަ ފޮހިގެން ދާން ހެއްޔެވެ؟ މި ޢަމަލަކީ އަނބުރައި ނުލިބޭނެ އަމަލެކެވެ.",
+	"globalrenamequeue-vanish-email-body-rejected": "ނެތިގެން ދިއުމަށް އެދުނު \"{{GENDER:$1|$1}}\" ގެ އެދުން ބާތިލް ކުރެވިއްޖެއެވެ.",
+	"globalrenamequeue-request-vanish-status-title": "\"$1\" އިން ގެއްލޭ.",
+	"globalvanishrequest-username-label": "އެދުނު ފަރާތުގެ ޔޫޒަރނޭމް",
+	"globalvanishrequest-save-error": "ތިޔަ އެދުނު ކަން ރައްކަލައް ނުކުރެވުނެވެ. އަނެއްކާވެސް މަސައްކަތް ކުރައްވާށެވެ."
+}

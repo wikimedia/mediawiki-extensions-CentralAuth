@@ -3,6 +3,7 @@
 		"authors": [
 			"Liuxinyu970226",
 			"LuciferianThomas",
+			"SunAfterRain",
 			"捍粵者"
 		]
 	},
@@ -16,5 +17,7 @@
 	"globalrenamerequest-newname-label": "請求的用戶名：",
 	"globalrenamerequest-pretext": "請求一個能在所有專案使用的新用戶名。\n\n您先前全部的貢獻都會改連結至新用戶名。\n\n用此表單建立的請求清單會給予能執行此操作的用戶。完成處理後，您會收到電郵通知。\n\n請注意：生成的紀錄會註明您的舊名，若您的請求與匿名／私隱有關，可考慮直接[[Special:CreateAccount|另建新帳]]，並將您現有帳號改成隨機名稱後捨棄。",
 	"globalrenamerequest-reason-label": "送出更名申請",
-	"globalrenamerequest-username-label": "目前的用戶名："
+	"globalrenamerequest-username-label": "目前的用戶名：",
+	"globalvanishrequest": "全域用戶帳號隱退請求",
+	"globalvanishrequest-username-label": "請求者的用戶名"
 }
