@@ -167,6 +167,12 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			throw new RuntimeException( 'User ID mismatch' );
 		}
 
+		// Refresh the local wiki's "remember me" state based on the
+		// corresponding state from the central domain.
+		if ( $data['rememberMe'] ) {
+			$this->manager->setAuthenticationSessionData( AuthManager::REMEMBER_ME, true );
+		}
+
 		return AuthenticationResponse::newPass( $data['username'] );
 	}
 
