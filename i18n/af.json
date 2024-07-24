@@ -14,6 +14,7 @@
 			"පසිඳු කාවින්ද"
 		]
 	},
+	"action-centralauth-rename": "hernoem globale gebruikers",
 	"centralauth": "Global Gebruikers Bestuur",
 	"centralauth-account-exists": "Kan nie rekening skep: die gevraagde gebruikersnaam is reeds in die Unified login.",
 	"centralauth-admin-already-unmerged": "$1 oorgeslaan. Is reeds nie meer saamgevoeg nie.",
@@ -76,6 +77,7 @@
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|aksie|aksies}}",
 	"centralauth-complete": "Samevoeging van gebruikers is voltooi!",
 	"centralauth-complete-text": "U kan nou by enige wiki van {{int:Centralauth-groupname}} inteken sonder om 'n nuwe rekening te skep.",
+	"centralauth-createlocal-username": "Globale rekening-naam",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dag|dae}} gelede",
 	"centralauth-desc": "[[Special:MergeAccount|Versmelt rekeninge]] oor{{int:Centralauth-groupname}} se wikis",
 	"centralauth-disabled-dryrun": "Rekening eenwording is tans in 'n ​​demo / Ontfouting af, sodat werklike samesmelting bedrywighede is gestremdes.\nJammer!",
@@ -216,6 +218,7 @@
 	"right-centralauth-lock": "Blokkeer of versteek globale gebruiker",
 	"right-centralauth-merge": "Versmelt gebruikers",
 	"right-centralauth-suppress": "Onderdruk globale gebruiker",
+	"right-centralauth-rename": "Hernoem globale gebruikers",
 	"right-centralauth-unmerge": "Ontknoop globale gebruiker",
 	"right-globalgroupmembership": "Wysig lidmaatskap aan globale groepe",
 	"right-globalgrouppermissions": "Bestuur globale groepe",
