@@ -756,7 +756,7 @@
 			"value": false
 		},
 		"CentralAuthSsoUrlPrefix": {
-			"description": "Experimental, do not use unless you know what you are doing. Might be removed without notice. URL prefix for the SSO domain. This should use the same domain and scheme on every wiki of the CentralAuth wiki farm, with a path prefix that specifies the current wiki. A local URL appended to this prefix must be routed the same way as a local URL on the current wiki. This is used to share a central cookie between wikis while allowing the cookie-related UI (such as the login and signup page) to behave like any specific wiki in the farm. If unset, this mechanism will not be used.",
+			"description": "Experimental, do not use unless you know what you are doing. Might be removed without notice. URL prefix for the SSO domain without a trailing slash. This should use the same domain and scheme on every wiki of the CentralAuth wiki farm, with a path prefix that specifies the current wiki. A local URL appended to this prefix must be routed the same way as a local URL on the current wiki. This is used to share a central cookie between wikis while allowing the cookie-related UI (such as the login and signup page) to behave like any specific wiki in the farm. If unset, this mechanism will not be used.",
 			"value": false
 		},
 		"CentralAuthCookieDomain": {
