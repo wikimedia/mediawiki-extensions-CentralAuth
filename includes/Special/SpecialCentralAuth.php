@@ -19,6 +19,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Message\Message;
 use MediaWiki\Parser\Sanitizer;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
@@ -403,12 +404,10 @@ class SpecialCentralAuth extends SpecialPage {
 		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
 		// centralauth-admin-info-hidden, centralauth-admin-info-groups
 		$content = Xml::openElement( "ul" );
-		foreach ( $attribs as $tag => $data ) {
+		foreach ( $attribs as [ 'label' => $msg, 'data' => $data ] ) {
 			$content .= Xml::openElement( "li" ) . Xml::openElement( "strong" );
-			$msg = $this->msg( "centralauth-admin-info-$tag" );
-			if ( $tag === 'groups' ) {
-				// @TODO: This special case is ugly
-				$msg->numParams( count( $this->mGlobalUser->getGlobalGroups() ) );
+			if ( is_string( $msg ) ) {
+				$msg = $this->msg( $msg );
 			}
 			$content .= $msg->escaped();
 			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
@@ -423,7 +422,10 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @return array Content is already escaped
+	 * @return array Array of arrays where each array has two keys: 'label' containing the message
+	 *   key or Message object to be used as the label, and 'data' which is the already HTML escaped
+	 *   value that is associated with the label.
+	 * @phan-return array<string,array{label:string|Message,data:string}>
 	 */
 	private function getInfoFields() {
 		$globalUser = $this->mGlobalUser;
@@ -491,6 +493,16 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 		}
 
+		// Convert the values of the existing $attribs array into arrays, where the value is placed in the 'data'
+		// key and the 'label' is the message key generated from the associated key.
+		$attribsWithMessageKeys = [];
+		foreach ( $attribs as $key => $value ) {
+			$attribsWithMessageKeys[] = [
+				'label' => "centralauth-admin-info-$key",
+				'data' => $value,
+			];
+		}
+
 		$groups = $globalUser->getGlobalGroupsWithExpiration();
 		if ( $groups ) {
 			$groupLinks = [];
@@ -525,12 +537,18 @@ class SpecialCentralAuth extends SpecialPage {
 				$groupLinks[] = $link;
 			}
 
-			$attribs['groups'] = $uiLanguage->commaList( $groupLinks );
+			$attribsWithMessageKeys['groups'] = [
+				'label' => $this->msg( 'centralauth-admin-info-groups' )->numParams( count( $groups ) ),
+				'data' => $uiLanguage->commaList( $groupLinks ),
+			];
 		}
 
 		if ( $this->mCanChangeGroups ) {
-			if ( !isset( $attribs['groups'] ) ) {
-				$attribs['groups'] = $this->msg( 'rightsnone' )->escaped();
+			if ( !isset( $attribsWithMessageKeys['groups'] ) ) {
+				$attribsWithMessageKeys['groups'] = [
+					'label' => $this->msg( 'centralauth-admin-info-groups' )->numParams( 0 ),
+					'data' => $this->msg( 'rightsnone' )->escaped(),
+				];
 			}
 
 			$manageGroupsLink = $this->getLinkRenderer()->makeKnownLink(
@@ -538,11 +556,12 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->msg( 'centralauth-admin-info-groups-manage' )->text()
 			);
 
-			$attribs['groups'] .= $this->msg( 'word-separator' )->escaped();
-			$attribs['groups'] .= $this->msg( 'parentheses' )->rawParams( $manageGroupsLink )->escaped();
+			$attribsWithMessageKeys['groups']['data'] .= $this->msg( 'word-separator' )->escaped();
+			$attribsWithMessageKeys['groups']['data'] .= $this->msg( 'parentheses' )
+				->rawParams( $manageGroupsLink )->escaped();
 		}
 
-		return $attribs;
+		return $attribsWithMessageKeys;
 	}
 
 	private function showWikiLists() {
