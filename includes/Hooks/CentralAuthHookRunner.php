@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks;
 
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\User\User;
@@ -17,7 +18,8 @@ class CentralAuthHookRunner implements
 	CentralAuthPostLoginRedirectHook,
 	CentralAuthLoginRedirectDataHook,
 	CentralAuthSilentLoginRedirectHook,
-	CentralAuthWikiListHook
+	CentralAuthWikiListHook,
+	CentralAuthInfoFieldsHook
 {
 	/** @var HookContainer */
 	private $hookContainer;
@@ -82,6 +84,18 @@ class CentralAuthHookRunner implements
 		$this->hookContainer->run(
 			'CentralAuthWikiList',
 			[ &$wikiList ]
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onCentralAuthInfoFields(
+		CentralAuthUser $centralAuthUser, IContextSource $context, array &$attribs
+	) {
+		$this->hookContainer->run(
+			'CentralAuthInfoFields',
+			[ $centralAuthUser, $context, &$attribs ]
 		);
 	}
 }

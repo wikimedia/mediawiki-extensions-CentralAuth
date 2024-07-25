@@ -14,6 +14,7 @@ use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
@@ -406,10 +407,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$content = Xml::openElement( "ul" );
 		foreach ( $attribs as [ 'label' => $msg, 'data' => $data ] ) {
 			$content .= Xml::openElement( "li" ) . Xml::openElement( "strong" );
-			if ( is_string( $msg ) ) {
-				$msg = $this->msg( $msg );
-			}
-			$content .= $msg->escaped();
+			$content .= $this->msg( $msg )->escaped();
 			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
 		}
 		$content .= Xml::closeElement( "ul" );
@@ -424,7 +422,8 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @return array Array of arrays where each array has two keys: 'label' containing the message
 	 *   key or Message object to be used as the label, and 'data' which is the already HTML escaped
-	 *   value that is associated with the label.
+	 *   value that is associated with the label. The first dimension keys are field names, but are currently
+	 *   not used in the UI or for generating messages.
 	 * @phan-return array<string,array{label:string|Message,data:string}>
 	 */
 	private function getInfoFields() {
@@ -497,7 +496,7 @@ class SpecialCentralAuth extends SpecialPage {
 		// key and the 'label' is the message key generated from the associated key.
 		$attribsWithMessageKeys = [];
 		foreach ( $attribs as $key => $value ) {
-			$attribsWithMessageKeys[] = [
+			$attribsWithMessageKeys[$key] = [
 				'label' => "centralauth-admin-info-$key",
 				'data' => $value,
 			];
@@ -552,6 +551,9 @@ class SpecialCentralAuth extends SpecialPage {
 			$attribsWithMessageKeys['groups']['data'] .= $this->msg( 'parentheses' )
 				->rawParams( $manageGroupsLink )->escaped();
 		}
+
+		$caHookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
+		$caHookRunner->onCentralAuthInfoFields( $globalUser, $this->getContext(), $attribsWithMessageKeys );
 
 		return $attribsWithMessageKeys;
 	}
