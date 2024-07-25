@@ -627,7 +627,11 @@
 		"sso": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SsoHookHandler",
 			"services": [
+				"UrlUtils",
 				"CentralAuth.SharedDomainUtils"
+			],
+			"optional_services": [
+				"MobileFrontend.Context"
 			]
 		},
 		"rename": {
@@ -694,6 +698,7 @@
 		"RenameUserPreRename": "rename",
 		"RenameUserWarning": "rename",
 		"ResourceLoaderForeignApiModules": "default",
+		"ResourceLoaderModifyStartupSourceUrls": "sso",
 		"SecurePoll_GetUserParams": "securepoll",
 		"SetupAfterCache": "sso",
 		"SessionCheckInfo": "default",
