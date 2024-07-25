@@ -85,6 +85,8 @@
 	"centralauth-admin-info-registered": "Зареєстрований:",
 	"centralauth-admin-info-unattached": "Кількість неприєднаних облікових записів:",
 	"centralauth-admin-info-username": "Ім'я користувача:",
+	"centralauth-admin-info-username-rename": "перейменувати",
+	"centralauth-admin-info-expired": "Термін дії тимчасової обліковки завершився:",
 	"centralauth-admin-intro": "Цей інтерфейс може використовуватися для управління глобальними обліковими записами.",
 	"centralauth-admin-list-attached-on": "Приєднаний",
 	"centralauth-admin-list-blocked": "Заблоковані",
@@ -505,5 +507,6 @@
 	"right-globalgrouppermissions": "Керування глобальними групами",
 	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
 	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в чорному списку."
+	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в чорному списку.",
+	"centralauth-blocked-ip-reputation": "IP-адреса, яку ви зараз використовуєте, була заблокована, бо є підстави вважати, що її нещодавно використовували для зловживань."
 }

@@ -20,7 +20,8 @@
 			"Skye Darcy",
 			"Tryvix1509",
 			"Trần Nguyễn Minh Huy",
-			"Vinhtantran"
+			"Vinhtantran",
+			"Phungminh141"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
@@ -74,6 +75,7 @@
 	"centralauth-admin-info-unattached": "Số tài khoản chưa đính kèm:",
 	"centralauth-admin-info-username": "Tên người dùng:",
 	"centralauth-admin-info-username-rename": "đổi tên",
+	"centralauth-admin-info-expired": "Tài khoản tạm thời đã hết hạn:",
 	"centralauth-admin-intro": "Trang này để quản lý các tài khoản toàn hệ thống.",
 	"centralauth-admin-list-attached-on": "Ngày đính kèm",
 	"centralauth-admin-list-blocked": "Cấm",
