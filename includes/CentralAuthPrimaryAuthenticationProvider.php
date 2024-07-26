@@ -70,7 +70,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	/**
 	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserIdentityLookup $userIdentityLookup
-	 * @param UserNameUtils $userNameUtils
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param CentralAuthDatabaseManager $databaseManager
 	 * @param CentralAuthUtilityService $utilityService
@@ -88,7 +87,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	public function __construct(
 		ReadOnlyMode $readOnlyMode,
 		UserIdentityLookup $userIdentityLookup,
-		UserNameUtils $userNameUtils,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUtilityService $utilityService,
@@ -102,11 +100,6 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		$this->readOnlyMode = $readOnlyMode;
 		$this->userIdentityLookup = $userIdentityLookup;
-		// AbstractAuthenticationProvider::$userNameUtils is protected
-		// TODO this is probably unneeded since AbstractAuthenticationProvider::init
-		// will be called and that will set the $userNameUtils, no need to even inject
-		// into this class
-		$this->userNameUtils = $userNameUtils;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->databaseManager = $databaseManager;
 		$this->utilityService = $utilityService;

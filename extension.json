@@ -911,7 +911,6 @@
 				"services": [
 					"ReadOnlyMode",
 					"UserIdentityLookup",
-					"UserNameUtils",
 					"CentralAuth.CentralAuthAntiSpoofManager",
 					"CentralAuth.CentralAuthDatabaseManager",
 					"CentralAuth.CentralAuthUtilityService",
