@@ -321,10 +321,6 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function testUserExists( $username, $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( !$this->sharedDomainUtils->isSharedDomain() ) {
-			return false;
-		}
-
 		$username = $this->userNameUtils->getCanonical( $username, UserNameUtils::RIGOR_USABLE );
 		if ( $username === false ) {
 			return false;
