@@ -678,7 +678,7 @@
 		"ApiQueryTokensRegisterTypes": "default",
 		"APIGetAllowedParams": "api",
 		"AuthChangeFormFields": "loginredirect",
-		"AuthManagerFilterProviders": "sso",
+		"AuthManagerFilterProviders": [ "default", "sso" ],
 		"AuthManagerVerifyAuthentication": "sso",
 		"AuthPreserveQueryParams": "loginredirect",
 		"BeforePageDisplay": "pagedisplay",
@@ -921,6 +921,23 @@
 	},
 	"AuthManagerAutoConfig": {
 		"primaryauth": {
+			"CentralAuthTemporaryPasswordPrimaryAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthTemporaryPasswordPrimaryAuthenticationProvider",
+				"sort": -1,
+				"args": [
+					{ "authoritative": false }
+				],
+				"services": [
+					"ConnectionProvider",
+					"Emailer",
+					"LanguageNameUtils",
+					"UserIdentityLookup",
+					"UserOptionsLookup",
+					"CentralAuth.CentralAuthDatabaseManager",
+					"CentralAuth.CentralAuthUtilityService",
+					"CentralAuth.SharedDomainUtils"
+				]
+			},
 			"CentralAuthPrimaryAuthenticationProvider": {
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthPrimaryAuthenticationProvider",
 				"sort": 10,
