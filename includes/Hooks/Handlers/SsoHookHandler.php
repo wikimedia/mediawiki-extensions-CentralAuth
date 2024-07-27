@@ -31,7 +31,7 @@ class SsoHookHandler implements
 			//   should be needed for login and signup so we can just throw unconditionally,
 			//   but this should be improved in the future.
 			// FIXME should not log a production error
-			if ( !in_array( MW_ENTRY_POINT, [ 'index', 'api', 'load' ], true ) ) {
+			if ( !in_array( MW_ENTRY_POINT, [ 'index', 'api' ], true ) ) {
 				throw new \RuntimeException( MW_ENTRY_POINT . ' endpoint is not allowed on the SSO domain' );
 			}
 		}
