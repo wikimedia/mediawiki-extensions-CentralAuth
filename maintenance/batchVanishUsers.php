@@ -27,6 +27,7 @@ require_once "$IP/maintenance/Maintenance.php";
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserIdentity;
+use Wikimedia\Message\MessageSpecifier;
 
 class BatchVanishUsers extends Maintenance {
 
