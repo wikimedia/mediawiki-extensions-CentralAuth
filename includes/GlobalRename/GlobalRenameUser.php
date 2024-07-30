@@ -70,6 +70,11 @@ class GlobalRenameUser {
 	private ?array $session = null;
 
 	/**
+	 * @var UserIdentity|null
+	 */
+	private ?UserIdentity $lockPerformingUser;
+
+	/**
 	 * @param UserIdentity $performingUser
 	 * @param UserIdentity $oldUser
 	 * @param CentralAuthUser $oldCAUser
@@ -117,6 +122,17 @@ class GlobalRenameUser {
 	}
 
 	/**
+	 * Override the performer to be credited with account locking for vanishes.
+	 *
+	 * @param UserIdentity $lockPerformingUser
+	 * @return GlobalRenameUser
+	 */
+	public function withLockPerformingUser( UserIdentity $lockPerformingUser ): GlobalRenameUser {
+		$this->lockPerformingUser = $lockPerformingUser;
+		return $this;
+	}
+
+	/**
 	 * Rename a global user (this assumes that the data has been verified before
 	 * and that $newUser is being a creatable user)!
 	 *
@@ -142,8 +158,18 @@ class GlobalRenameUser {
 			return $status;
 		}
 
-		if ( $options['type'] === GlobalRenameRequest::VANISH ) {
+		if ( $options['type'] === GlobalRenameRequest::VANISH && !$this->oldCAUser->isLocked() ) {
 			$this->oldCAUser->adminLock();
+			$this->oldCAUser->logAction(
+				'setstatus',
+				$this->lockPerformingUser ?? $this->performingUser,
+				// Reason in this context should be the public log entry, not
+				// the private reason stated by the user.
+				$options['reason'] ?? '',
+				[ 'added' => [ 'locked' ], 'removed' => [] ],
+				false,
+				false
+			);
 		}
 
 		// Rename the user centrally and unattach the old user from all

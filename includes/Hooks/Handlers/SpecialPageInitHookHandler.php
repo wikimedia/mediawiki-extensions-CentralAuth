@@ -63,6 +63,7 @@ class SpecialPageInitHookHandler implements
 					'JobQueueGroupFactory',
 					'CentralAuth.CentralAuthAntiSpoofManager',
 					'CentralAuth.GlobalRenameFactory',
+					'UserIdentityLookup',
 				],
 			];
 			$list['GlobalVanishRequest'] = [
