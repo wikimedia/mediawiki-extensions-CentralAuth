@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
@@ -79,8 +80,8 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function newLookup(): CentralIdLookup {
-		$this->setMwGlobals( [
-			'CentralIdLookupProviders' => [
+		$this->overrideConfigValues( [
+			MainConfigNames::CentralIdLookupProviders => [
 				'central' => [
 					'class' => CentralAuthIdLookup::class,
 					'services' => [
@@ -88,7 +89,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 					],
 				],
 			],
-			'CentralIdLookupProvider' => 'central',
+			MainConfigNames::CentralIdLookupProvider => 'central',
 		] );
 		return $this->getServiceContainer()->getCentralIdLookupFactory()->getLookup();
 	}
