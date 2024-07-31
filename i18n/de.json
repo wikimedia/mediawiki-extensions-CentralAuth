@@ -501,6 +501,7 @@
 	"globalvanishrequest-pending-request-error": "Es gibt bereits eine aktive Anfrage zur Auflösung deines Benutzerkontos. Auf der [[Special:GlobalVanishRequest/status|Statusseite]] findest du weitere Informationen.",
 	"globalvanishrequest-save-error": "Anfrage konnte nicht gespeichert werden. Bitte erneut versuchen.",
 	"globalvanishrequest-autoapprove-note": "Die Auflösung deines Benutzerkontos wurde erfolgreich durchgeführt.",
+	"globalvanishrequest-autoapprove-public-note": "Dieser Antrag auf Auflösung des Benutzers wurde automatisch genehmigt.",
 	"globalvanishrequest-rejected-subject-notification": "Anfrage zur Auflösung des Benutzerkontos abgelehnt ($1)",
 	"globalvanishrequest-rejected-body-notification": "Eine Anfrage zur Auflösung des Benutzerkontos wurde abgelehnt, siehe nachstehende Details:\n\nBenutzername: $1\nHeimatwiki: $2\nGlobaler Bearbeitungszähler: $3\nIst gesperrt: $4\nGrund für die Ablehnung des Antrags auf Auflösung: $5\nAbgelehnt durch: $6\nHinweise zur Ablehnung: $7\nAngefragt: $8\nAbgeschlossen: $9",
 	"globalvanishrequest-rejected-notification-error": "Das Rechtsteam kann nicht automatisch benachrichtigt werden. Bitte sende ihnen manuell eine E-Mail bezüglich der Ablehnung des Antrags auf Kontoauflösung. Die Ablehnung des Antrags ist abgeschlossen.",
