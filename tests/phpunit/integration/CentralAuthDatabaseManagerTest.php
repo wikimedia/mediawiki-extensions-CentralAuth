@@ -95,28 +95,6 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 		$manager->assertNotReadOnly();
 	}
 
-	public function testWaitForReplication() {
-		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->expects( $this->once() )
-			->method( 'waitForReplication' );
-
-		$roMode = $this->createMock( ReadOnlyMode::class );
-		$roMode->method( 'isReadOnly' )->willReturn( false );
-
-		$manager = new CentralAuthDatabaseManager(
-			new ServiceOptions(
-				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
-				[
-					'CentralAuthReadOnly' => false,
-				]
-			),
-			$lbFactory,
-			$roMode
-		);
-
-		$manager->waitForReplication();
-	}
-
 	public function testGetCentralDBPrimaryReadOnly() {
 		$database = $this->createMock( IDatabase::class );
 

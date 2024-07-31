@@ -106,7 +106,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			$this->output(
 				"Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n"
 			);
-			$databaseManager->waitForReplication();
+			$this->waitForReplication();
 		} while ( $numRows >= $this->mBatchSize );
 		$this->output( "Completed $wiki \n" );
 	}

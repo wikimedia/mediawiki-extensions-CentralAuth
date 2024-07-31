@@ -48,7 +48,7 @@ class UpdateUsersToRename extends Maintenance {
 					->execute();
 				$total += $count;
 			}
-			$databaseManager->waitForReplication();
+			$this->waitForReplication();
 		} while ( $rows->numRows() >= $this->mBatchSize );
 		$this->output( "Removed $total users in total.\n" );
 	}

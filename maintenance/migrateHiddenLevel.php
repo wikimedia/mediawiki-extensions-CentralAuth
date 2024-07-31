@@ -74,7 +74,7 @@ class MigrateHiddenLevel extends Maintenance {
 				->caller( __METHOD__ )
 				->execute();
 
-			$databaseManager->waitForReplication();
+			$this->waitForReplication();
 		}
 
 		$this->output( "Done.\n" );

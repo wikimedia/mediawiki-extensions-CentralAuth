@@ -106,7 +106,7 @@ class ResetGlobalUserTokens extends Maintenance {
 				$max = $maxid;
 			}
 
-			$databaseManager->waitForReplication();
+			$this->waitForReplication();
 
 		} while ( $min < $maxid );
 	}

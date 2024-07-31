@@ -25,7 +25,6 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 /**
@@ -83,8 +82,6 @@ class AttachAccount extends Maintenance {
 	}
 
 	public function execute() {
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-
 		$this->dryRun = $this->hasOption( 'dry-run' );
 		$this->quiet = $this->hasOption( 'quiet' );
 
@@ -101,7 +98,7 @@ class AttachAccount extends Maintenance {
 			$this->attach( $username );
 			if ( $this->total % $this->mBatchSize == 0 ) {
 				$this->output( "Waiting for replicas to catch up ... " );
-				$databaseManager->waitForReplication();
+				$this->waitForReplication();
 				$this->output( "done\n" );
 			}
 		}

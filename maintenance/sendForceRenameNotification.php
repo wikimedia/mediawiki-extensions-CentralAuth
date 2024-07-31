@@ -48,7 +48,6 @@ class SendForceRenameNotification extends Maintenance {
 		];
 
 		$services = MediaWikiServices::getInstance();
-		$lbFactory = $services->getDBLoadBalancerFactory();
 		$namespaceInfo = $services->getNamespaceInfo();
 		$jobQueueGroup = $services->getJobQueueGroup();
 		$linkBatchFactory = $services->getLinkBatchFactory();
@@ -97,10 +96,7 @@ class SendForceRenameNotification extends Maintenance {
 				$updates->markNotified( $row->utr_name, $row->utr_wiki );
 			}
 			$this->output( "Waiting for replicas..." );
-			// users_to_rename
-			$databaseManager->waitForReplication();
-			// And on the local wiki!
-			$lbFactory->waitForReplication();
+			$this->waitForReplication();
 
 			$this->output( " done.\n" );
 			$queued = $this->getQueuedCount();

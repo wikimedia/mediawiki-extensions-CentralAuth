@@ -39,7 +39,7 @@ class PopulateHomeDB extends Maintenance {
 				$count++;
 			}
 			$this->output( "$count\n" );
-			CentralAuthServices::getDatabaseManager()->waitForReplication();
+			$this->waitForReplication();
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;
 			}

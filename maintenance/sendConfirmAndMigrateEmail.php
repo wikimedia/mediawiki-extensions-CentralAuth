@@ -6,7 +6,6 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\EmailableUser;
 use MediaWiki\WikiMap\WikiMap;
@@ -97,7 +96,6 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				$this->output( "ERROR - Could not open file: $list\n" );
 				exit( 1 );
 			}
-			$databaseManager = CentralAuthServices::getDatabaseManager();
 			// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
 			while ( $username = fgets( $file ) ) {
 				// trim the \n
@@ -113,7 +111,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				if ( $this->total % $this->mBatchSize == 0 ) {
 					$this->output( "Waiting for replicas to catch up ... " );
 					if ( !$this->dryrun ) {
-						$databaseManager->waitForReplication();
+						$this->waitForReplication();
 					}
 					$this->output( "done\n" );
 				}
