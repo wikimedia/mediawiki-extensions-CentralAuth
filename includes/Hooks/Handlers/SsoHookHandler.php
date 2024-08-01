@@ -6,6 +6,10 @@ use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\SetupAfterCacheHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
+use MediaWiki\ResourceLoader\Context;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyStartupSourceUrlsHook;
+use MediaWiki\Utils\UrlUtils;
+use MobileContext;
 
 /**
  * Ensure that the SSO domain cannot be used for anything that is unrelated to its purpose.
@@ -13,15 +17,22 @@ use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 class SsoHookHandler implements
 	SetupAfterCacheHook,
 	GetUserPermissionsErrorsHook,
-	ApiCheckCanExecuteHook
+	ApiCheckCanExecuteHook,
+	ResourceLoaderModifyStartupSourceUrlsHook
 {
 
+	private UrlUtils $urlUtils;
 	private SharedDomainUtils $sharedDomainUtils;
+	private ?MobileContext $mobileContext;
 
 	public function __construct(
-		SharedDomainUtils $sharedDomainUtils
+		UrlUtils $urlUtils,
+		SharedDomainUtils $sharedDomainUtils,
+		MobileContext $mobileContext = null
 	) {
+		$this->urlUtils = $urlUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
+		$this->mobileContext = $mobileContext;
 	}
 
 	/** @inheritDoc */
@@ -80,4 +91,18 @@ class SsoHookHandler implements
 		}
 	}
 
+	/**
+	 * @inheritDoc
+	 * @phan-param array{local:string} $urls
+	 */
+	public function onResourceLoaderModifyStartupSourceUrls( array &$urls, Context $context ): void {
+		$local = $urls['local'];
+		$local = $this->urlUtils->expand( $local, PROTO_CURRENT );
+		// reassure Phan that expand() won't return null
+		'@phan-var string $local';
+		if ( $this->mobileContext && $this->mobileContext->usingMobileDomain() ) {
+			$local = $this->mobileContext->getMobileUrl( $local );
+		}
+		$urls['local'] = $local;
+	}
 }
