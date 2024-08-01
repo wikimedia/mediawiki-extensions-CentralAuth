@@ -176,7 +176,7 @@
 	"centralauth-finish-login": "Login",
 	"centralauth-finish-noconfirms": "Nae accoonts coud be confirmed uisin this passwaird.",
 	"centralauth-finish-password": "Passwaird:",
-	"centralauth-finish-problems": "Ar ye haein troable, or ar ye na the ainer o thir ither accoonts?\n[[m:Special:MyLanguage/Help:Unified login|Hou tae fynd heelp]]…",
+	"centralauth-finish-problems": "Ar ye haein trouble or ar ye nae the awner o thae ither accoonts?\n[[m:Special:MyLanguage/Help:Unified login|Hou tae find help]]…",
 	"centralauth-finish-send-confirmation": "Email passwaird",
 	"centralauth-finish-text": "Gif thir accoonts dae belang til ye, than ye can finish the login uneefeecation process simplie bi typin the passwairds fer the ither accoonts here:",
 	"centralauth-finish-title": "Finish merge",
