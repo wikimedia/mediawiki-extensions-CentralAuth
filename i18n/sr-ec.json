@@ -408,6 +408,7 @@
 	"globalvanishrequest-username-label": "Корисничко име захтеваоца",
 	"globalvanishrequest-reason-label": "Разлог",
 	"globalvanishrequest-submit-text": "Захтевај нестанак",
+	"globalvanishrequest-autoapprove-public-note": "Захтев за нестанак овог корисника је аутоматски одобрен.",
 	"globalusers": "Списак глобалних налога",
 	"grant-setglobalaccountstatus": "управљај стањем глобалног налога",
 	"log-action-filter-gblrights": "Врста измене:",

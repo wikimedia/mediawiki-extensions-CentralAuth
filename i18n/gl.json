@@ -493,6 +493,7 @@
 	"globalvanishrequest-pending-request-error": "Xa tes unha solicitude activa para esvaecer a túa conta. Accede á [[Special:GlobalVanishRequest/status|páxina de estado]] para obter máis información.",
 	"globalvanishrequest-save-error": "Erro ao gardar a solicitude. Inténtao de novo.",
 	"globalvanishrequest-autoapprove-note": "A túa solicitude de esvaecemento de usuario procesouse correctamente.",
+	"globalvanishrequest-autoapprove-public-note": "A solicitude de esvaecemento deste usuario aprobouse automaticamente.",
 	"globalvanishrequest-rejected-subject-notification": "Solicitude de esvaecemento de conta rexeitado ($1)",
 	"globalvanishrequest-rejected-body-notification": "Rexeitouse unha solicitude de esvaecemento da conta. Detalles:\n\nNome de usuario: $1\nWiki principal: $2\nNúmero de edicións globais: $3\nEstá bloqueado: $4\nMotivo para solicitar o esvaecemento: $5\nRexeitado por: $6\nNotas do rexeitamento: $7\nSolicitado o: $8\nCompletado o: $9",
 	"globalvanishrequest-rejected-notification-error": "Non se puido notificar automaticamente ao equipo legal. Envía manualmente un correo electrónico sobre o rexeitamento da solicitude de esvaecemento da conta. A solicitude de rexeitamento está completa.",

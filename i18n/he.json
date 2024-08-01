@@ -494,6 +494,7 @@
 	"globalvanishrequest-pending-request-error": "כבר יש לך בקשה פעילה להעלים את החשבון. נא לגשת ל[[Special:GlobalVanishRequest/status|דף המצב]] למידע נוסף.",
 	"globalvanishrequest-save-error": "הבקשה לא נשמרה. נא לנסות שוב.",
 	"globalvanishrequest-autoapprove-note": "הבקשה שלך להעלים שם משתמש עובדה בהצלחה.",
+	"globalvanishrequest-autoapprove-public-note": "בקשת העלמת משתמש אושרה אוטומטית.",
 	"globalvanishrequest-rejected-subject-notification": "בקשת העלמת החשבון נדחתה ($1)",
 	"globalvanishrequest-rejected-body-notification": "בקשת העלמת חשבון נדחתה, הפרטים להלן:\n\nשם המשתמש: $1\nויקי הבית: $2\nמספר העריכות הגלובלי: $3\nחסום: $4\nסיבה לבקשת העלמה: $5\nהבקשה נדחתה על־ידי: $6\nהערות דחייה: $7\nתאריך הבקשה: $8\nתאריך ההשלמה: $9",
 	"globalvanishrequest-rejected-notification-error": "לא ניתן להודיע לצוות המשפטי אוטומטית. נא לשלוח להם דוא\"ל ידנית על דחיית בקשת העלמת חשבון. דחיית הבקשה הושלמה.",
