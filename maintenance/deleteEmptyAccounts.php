@@ -97,7 +97,7 @@ class DeleteEmptyAccounts extends Maintenance {
 				$this->process( $row->gu_name, $user );
 			}
 			if ( $this->fix ) {
-				CentralAuthServices::getDatabaseManager()->waitForReplication();
+				$this->waitForReplication();
 			}
 		}
 

@@ -98,14 +98,6 @@ class CentralAuthDatabaseManager {
 	}
 
 	/**
-	 * Wait for the CentralAuth DB replicas to catch up
-	 * @deprecated use LBFactory::waitForReplication or Maintenance::waitForReplication instead
-	 */
-	public function waitForReplication(): void {
-		$this->lbFactory->waitForReplication();
-	}
-
-	/**
 	 * @return IDatabase a connection to the CentralAuth database primary.
 	 */
 	public function getCentralPrimaryDB(): IDatabase {

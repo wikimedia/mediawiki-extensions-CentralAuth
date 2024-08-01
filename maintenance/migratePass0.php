@@ -10,7 +10,6 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 /**
@@ -81,7 +80,7 @@ class MigratePass0 extends Maintenance {
 
 			if ( ( $min + $chunkSize ) % ( $chunkSize * 10 ) == 0 ) {
 				$this->output( "Waiting for replicas to catch up ... " );
-				CentralAuthServices::getDatabaseManager()->waitForReplication();
+				$this->waitForReplication();
 				$this->output( "done\n" );
 			}
 		}

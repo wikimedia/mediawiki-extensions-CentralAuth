@@ -71,7 +71,7 @@ class PurgeExpiredGlobalRights extends Maintenance {
 			$counter += $dbw->affectedRows();
 
 			$this->output( "Purged $counter expired group memberships so far... waiting for replication to catch up." );
-			$databaseManager->waitForReplication();
+			$this->waitForReplication();
 			$this->output( ".. done.\n" );
 		}
 
