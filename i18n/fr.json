@@ -506,6 +506,7 @@
 	"globalvanishrequest-pretext": "''Demander à disparaître'' est une solution de '''dernier recours''' qui est à envisager uniquement si les deux conditions suivantes sont remplies :\n# '''vous souhaitez arrêter <u>définitivement</u> de contribuer''' ;\n# '''vous souhaitez cacher vos collaborations passées'''.\n\nFaire « disparaître » un compte consiste à le renommer afin que les autres ne puissent plus associer le nom du compte aux contributions passées. Cette méthode '''ne garantit pas''' un anonymat complet et '''ne supprime pas''' les contributions aux projets.\n\nPour procéder à l'initiation du processus de disparition, veuillez remplir le formulaire de demande de disparition de compte ci-dessous.",
 	"globalvanishrequest-username-label": "Nom d’utilisateur du demandeur",
 	"globalvanishrequest-reason-label": "Raison de la demande",
+	"globalvanishrequest-autoapprove-public-note": "Cette demande de disparition d'un utilisateur a été automatiquement approuvée",
 	"globalusers": "Liste des comptes globaux",
 	"grant-createlocalaccount": "Créer de force un compte local pour un compte global",
 	"grant-setglobalaccountstatus": "Gérer l’état du compte global",
