@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agam Riyandana",
 			"Ahdan",
 			"Aldnonymous",
 			"Bagas Chrisara",
@@ -445,6 +446,7 @@
 	"globalrenamerequest-submit-text": "Mintakan perubahan nama",
 	"globalrenamerequest-username-label": "Nama pengguna saat ini:",
 	"globalrenameuser": "Mengubah nama pengguna global",
+	"globalvanishrequest-autoapprove-public-note": "Permintaan pengguna menghilang telah disetujui secara otomatis.",
 	"globalusers": "Daftar pengguna global",
 	"grant-createlocalaccount": "Buat akun lokal secara paksa untuk akun global",
 	"grant-setglobalaccountstatus": "Mengelola status akun global",
