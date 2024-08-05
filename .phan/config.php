@@ -7,6 +7,7 @@ $cfg['directory_list'] = array_merge(
 	[
 		'../../extensions/AbuseFilter',
 		'../../extensions/AntiSpoof',
+		'../../extensions/CheckUser',
 		'../../extensions/GlobalBlocking',
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
@@ -20,6 +21,7 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 	[
 		'../../extensions/AbuseFilter',
 		'../../extensions/AntiSpoof',
+		'../../extensions/CheckUser',
 		'../../extensions/GlobalBlocking',
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
