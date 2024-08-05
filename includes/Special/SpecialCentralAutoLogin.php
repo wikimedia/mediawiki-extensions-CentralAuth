@@ -6,7 +6,6 @@ use CentralAuthSessionProvider;
 use Exception;
 use ExtensionRegistry;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
@@ -30,7 +29,6 @@ use MWCryptRand;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use SkinTemplate;
-use Wikimedia\Rdbms\ReadOnlyMode;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -66,9 +64,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/** @var LanguageFactory */
 	private $languageFactory;
 
-	/** @var ReadOnlyMode */
-	private $readOnlyMode;
-
 	/** @var UserOptionsManager */
 	private $userOptionsManager;
 
@@ -85,14 +80,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	/**
 	 * @param LanguageFactory $languageFactory
-	 * @param ReadOnlyMode $readOnlyMode
 	 * @param UserOptionsManager $userOptionsManager
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 */
 	public function __construct(
 		LanguageFactory $languageFactory,
-		ReadOnlyMode $readOnlyMode,
 		UserOptionsManager $userOptionsManager,
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthUtilityService $centralAuthUtilityService
@@ -101,7 +94,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		$this->extensionRegistry = ExtensionRegistry::getInstance();
 		$this->languageFactory = $languageFactory;
-		$this->readOnlyMode = $readOnlyMode;
 		$this->userOptionsManager = $userOptionsManager;
 		$this->sessionManager = $sessionManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
@@ -267,21 +259,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				if ( $centralUser && $centralUser->getId() && $centralUser->isAttached() ) {
 					$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
 
-					// Refresh 'remember me' preference
-					$user = $this->getUser();
 					$remember = (bool)$centralSession['remember'];
-					if ( $user->isNamed() &&
-						$remember !== $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' ) ) {
-						$this->userOptionsManager->setOption( $user, 'rememberpassword', $remember ? 1 : 0 );
-						DeferredUpdates::addCallableUpdate( function () use ( $user ) {
-							if ( $this->readOnlyMode->isReadOnly() ) {
-								// not possible to save
-								return;
-							}
-							$this->userOptionsManager->saveOptions( $user );
-						} );
-					}
-
 					$delay = $this->session->delaySave();
 					$this->session->setRememberUser( $remember );
 					$this->session->persist();
@@ -913,9 +891,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$centralSession = $this->sessionManager->getCentralSession( $this->session );
 		$request = $this->getRequest();
 
-		// If there's no "remember", pull from the user preference.
 		if ( !isset( $centralSession['remember'] ) ) {
-			$centralSession['remember'] = $this->userOptionsManager->getBoolOption( $user, 'rememberpassword' );
+			$centralSession['remember'] = false;
 		}
 
 		// Make sure there's a session id by creating a session if necessary.
