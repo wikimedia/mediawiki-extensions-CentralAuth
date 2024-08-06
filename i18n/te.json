@@ -14,6 +14,7 @@
 	"action-centralauth-createlocal": "బలవంతంగా స్థానిక ఖాతా సృష్టించే",
 	"action-centralauth-lock": "సార్వత్రిక ఖాతాలకు తాళం వేసే లేదా తీసే",
 	"action-centralauth-suppress": "సార్వత్రిక ఖాతాను అణచి పెట్టు లేదా దాచు",
+	"action-centralauth-rename": "సార్వత్రిక ఖాతాల పేరుమార్చే",
 	"centralauth": "సార్వత్రిక ఖాతా నిర్వహణ",
 	"centralauth-abortlogin-renamed": "మీ వాడుకరిపేరును \"$1\" గా మార్చాం. ఆ పేరునే వాడండి.",
 	"centralauth-account-exists": "ఖాతాను సృష్టించలేకున్నాం: మీరడిగిన వాడుకరిపేరుని ఏకీకృత ప్రవేశ వ్యవస్థలో ఈసరికే తీసేసుకున్నారు.",
@@ -310,6 +311,7 @@
 	"right-centralauth-lock": "సార్వత్రిక ఖాతాకు తాళం వెయ్యి లేదా దాచు",
 	"right-centralauth-merge": "వారి ఖాతాలను విలీనం చెయ్యి",
 	"right-centralauth-suppress": "సార్వత్రిక ఖాతాను అణచి పెట్టు లేదా దాచు",
+	"right-centralauth-rename": "సార్వత్రిక ఖాతాల పేరుమార్పు",
 	"right-centralauth-unmerge": "సార్వత్రిక ఖాతాను విడదీయి",
 	"right-globalgroupmembership": "సార్వత్రిక ఖాతా సభ్యత్వాన్ని మార్చు",
 	"right-globalgrouppermissions": "సార్వత్రిక గుంపులను నిర్వహించు"
