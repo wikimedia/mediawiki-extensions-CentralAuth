@@ -37,7 +37,7 @@ class SsoHookHandler implements
 
 	/** @inheritDoc */
 	public function onSetupAfterCache() {
-		if ( $this->sharedDomainUtils->isSharedDomain() ) {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			// FIXME The REST API does not provide a hook for disabling APIs. No rest APIs
 			//   should be needed for login and signup so we can just throw unconditionally,
 			//   but this should be improved in the future.
@@ -50,7 +50,7 @@ class SsoHookHandler implements
 
 	/** @inheritDoc */
 	public function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
-		if ( $this->sharedDomainUtils->isSharedDomain() ) {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			if ( !$title->isSpecialPage() ) {
 				$result = wfMessage( 'badaccess-group0' );
 				return false;
@@ -69,7 +69,7 @@ class SsoHookHandler implements
 
 	/** @inheritDoc */
 	public function onApiCheckCanExecute( $module, $user, &$message ) {
-		if ( $this->sharedDomainUtils->isSharedDomain() ) {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			// FIXME this should be an extension attribute eventually
 			$allowlist = [
 				// needed for allowing any query API, even if we only want meta modules; it can be

@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Utils\UrlUtils;
 use Wikimedia\Assert\Assert;
@@ -49,6 +50,22 @@ class SharedDomainUtils {
 		)['host'] ?? null;
 		$this->isSharedDomain = $sharedDomain && $currentDomain === $sharedDomain;
 		return $this->isSharedDomain;
+	}
+
+	/**
+	 * True when the current domain is an authentication-only "fake" domain and all
+	 * non-authentication-related actions should be prevented.
+	 *
+	 * SUL3 login supports both using a dedicated login wiki for the domain where the central
+	 * session cookies are stored, and a shared domain which can be served by any wiki. In the
+	 * latter case, we want to prevent non-authentication actions to prevent complications like
+	 * cache splits. This flag differentiates between the two setups.
+	 *
+	 * @return bool
+	 * @see SsoHookHandler
+	 */
+	public function shouldRestrictCurrentDomain(): bool {
+		return $this->isSharedDomain() && $this->config->get( 'CentralAuthRestrictSsoDomain' );
 	}
 
 	/**
