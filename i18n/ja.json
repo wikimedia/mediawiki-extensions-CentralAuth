@@ -374,7 +374,7 @@
 	"centralauth-rename-movelog": "「[[Special:CentralAuth/$1|$1]]」から「[[Special:CentralAuth/$2|$2]]」への利用者名変更に伴い、自動的にページが移動されました。",
 	"centralauth-rename-notinprogress": "$1 に対して進行している利用者名の変更はありません。既に完了している可能性があります。",
 	"centralauth-rename-progress-fieldset": "ローカルアカウントの一覧",
-	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ビューの進行状況]])",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|進行状況を表示]])",
 	"centralauth-rename-progress-list-header": "次のグローバルな名前変更が現在進行中です:",
 	"centralauth-rename-progress-logs-fieldset": "記録項目",
 	"centralauth-rename-progress-username": "利用者名",
