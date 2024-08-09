@@ -158,7 +158,11 @@ class GlobalRenameUser {
 			return $status;
 		}
 
-		if ( $options['type'] === GlobalRenameRequest::VANISH && !$this->oldCAUser->isLocked() ) {
+		if (
+			isset( $options['type'] ) &&
+			$options['type'] === GlobalRenameRequest::VANISH &&
+			!$this->oldCAUser->isLocked()
+		) {
 			$this->oldCAUser->adminLock();
 			$this->oldCAUser->logAction(
 				'setstatus',
