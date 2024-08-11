@@ -64,9 +64,6 @@ class ApiQueryWikiSets extends ApiQueryBase {
 
 		$wikiList = $this->wikiListService->getWikiList();
 
-		/**
-		 * @var $wikiSet WikiSet
-		 */
 		foreach (
 			WikiSet::getAllWikiSets( $from, $params['limit'], $params['orderbyname'] ) as $wikiSet
 		) {
