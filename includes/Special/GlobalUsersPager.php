@@ -191,15 +191,7 @@ class GlobalUsersPager extends AlphabeticPager {
 		foreach ( $this->globalIDGroups as $user => &$groups ) {
 			// Ensure temporary groups are displayed first, to avoid ambiguity like
 			// "first, second (expires at some point)" (unclear if only second expires or if both expire)
-			uasort( $groups, static function ( $first, $second ) {
-				if ( !$first && $second ) {
-					return 1;
-				} elseif ( $first && !$second ) {
-					return -1;
-				} else {
-					return 0;
-				}
-			} );
+			uasort( $groups, static fn ( $first, $second ) => (bool)$second <=> (bool)$first );
 		}
 
 		if ( count( $allGroups ) > 0 ) {
