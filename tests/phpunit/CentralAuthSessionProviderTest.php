@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\HashConfig;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
 
@@ -16,16 +17,16 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 			'CentralAuthCookiePrefix' => 'central_',
 			'CentralAuthCookiePath' => '/',
 			'CentralAuthCookieDomain' => '',
-			'CookieExpiration' => 100,
-			'ExtendedLoginCookieExpiration' => 200,
+			MainConfigNames::CookieExpiration => 100,
+			MainConfigNames::ExtendedLoginCookieExpiration => 200,
 			// these are needed by CookieSessionProvider::getConfig
-			'SessionName' => null,
-			'CookiePrefix' => '',
-			'CookiePath' => '',
-			'CookieDomain' => 'example.com',
-			'CookieSecure' => true,
-			'CookieHttpOnly' => true,
-			'CookieSameSite' => '',
+			MainConfigNames::SessionName => null,
+			MainConfigNames::CookiePrefix => '',
+			MainConfigNames::CookiePath => '',
+			MainConfigNames::CookieDomain => 'example.com',
+			MainConfigNames::CookieSecure => true,
+			MainConfigNames::CookieHttpOnly => true,
+			MainConfigNames::CookieSameSite => '',
 		] );
 	}
 

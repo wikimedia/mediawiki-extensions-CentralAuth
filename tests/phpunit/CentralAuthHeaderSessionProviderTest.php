@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Config\HashConfig;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionManager;
@@ -18,7 +19,7 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 
 	protected function newSessionProvider() {
 		$config = new HashConfig( [
-			'SecretKey' => 'hunter2',
+			MainConfigNames::SecretKey => 'hunter2',
 			'CentralAuthTokenSessionTimeout' => 0
 		] );
 
