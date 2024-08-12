@@ -43,7 +43,8 @@
 			"背番号4のエース",
 			"Anonymoususer12321",
 			"Waki285",
-			"Apple TD"
+			"Apple TD",
+			"ひまり"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数",
@@ -383,7 +384,7 @@
 	"centralauth-rename-notinprogress": "$1 に対して進行している利用者名の変更はありません。既に完了している可能性があります。",
 	"centralauth-rename-notinstalled": "Renameuser 拡張機能がインストールされていません。",
 	"centralauth-rename-progress-fieldset": "ローカルアカウントの一覧",
-	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|ビューの進行状況]])",
+	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|進行状況を表示]])",
 	"centralauth-rename-progress-list-header": "次のグローバルな名前変更が現在進行中です:",
 	"centralauth-rename-progress-logs-fieldset": "記録項目",
 	"centralauth-rename-progress-username": "利用者名",
@@ -486,7 +487,7 @@
 	"globalrenamerequest-save-error": "変更の保存に失敗しました。もう一度試行してください",
 	"globalrenamerequest-self-error": "自分のアカウントの名前を変更することは許可されていないため、このリクエストを承認することはできません。",
 	"globalrenamerequest-self-warning": "自分のアカウントの名前を変更することは許可されていないため、このリクエストを拒否することしかできません。",
-	"globalrenamerequest-status-text": "あなたの利用者名変更依頼は現在進行中で、権限のある利用者による承認を待っています。承認された場合、メールで通知します。\n\n;現在の利用者名:\n:$1\n;希望利用者名:\n:$2",
+	"globalrenamerequest-status-text": "あなたの利用者名変更依頼は現在進行中で、権限のある利用者による承認を待っています。依頼が処理された場合、メールで通知します。\n\n;現在の利用者名:\n:$1\n;希望利用者名:\n:$2",
 	"globalrenamerequest-status-title": "改名依頼の承認待ち",
 	"globalrenamerequest-submit-text": "改名を依頼",
 	"globalrenamerequest-username-label": "現在の利用者名:",
