@@ -10,9 +10,12 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use MWCryptRand;
 use RuntimeException;
 use StatusValue;
 
@@ -20,18 +23,15 @@ use StatusValue;
  * Redirect-based provider which sends the user to another domain, assumed to be
  * served by the same wiki farm, to log in, and expects to receive the result of
  * that authentication process when the user returns.
+ *
+ * @see RedirectingLoginHookHandler
  */
 class CentralAuthRedirectingPrimaryAuthenticationProvider
 	extends AbstractPrimaryAuthenticationProvider
 {
 	public const NON_LOGIN_WIKI_BUTTONREQUEST_NAME = 'non-loginwiki';
-
-	/**
-	 * @internal
-	 * @var string The storage key prefix for the URL token used for continuing
-	 *   authentication in the central login wiki.
-	 */
-	public const RETURN_URL_TOKEN_KEY_PREFIX = 'centralauth-homewiki-return-url-token';
+	public const START_TOKEN_KEY_PREFIX = 'centralauth-sul3-start';
+	public const COMPLETE_TOKEN_KEY_PREFIX = 'centralauth-sul3-complete';
 
 	private TitleFactory $titleFactory;
 	private CentralAuthTokenManager $tokenManager;
@@ -58,7 +58,13 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		return [];
 	}
 
-	/** @inheritDoc */
+	/**
+	 * Store a random secret in the session and redirect the user to the central login wiki,
+	 * passing the secret and the return URL via the token store. The secret will be used on
+	 * return to prevent a session fixation attack.
+	 *
+	 * @inheritDoc
+	 */
 	public function beginPrimaryAuthentication( array $reqs ) {
 		$req = CentralAuthRedirectingAuthenticationRequest::getRequestByName(
 			$reqs,
@@ -72,18 +78,32 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );
 		$this->sharedDomainUtils->assertIsNotSharedDomain();
 
-		$returnUrlToken = $this->tokenManager->tokenize(
-			$req->returnToUrl, self::RETURN_URL_TOKEN_KEY_PREFIX
+		$secret = MWCryptRand::generateHex( 32 );
+		$this->manager->setAuthenticationSessionData( 'CentralAuth:sul3-login:pending', [
+			'secret' => $secret,
+		] );
+
+		$data = [
+			'secret' => $secret,
+			'returnUrl' => $req->returnToUrl,
+		];
+		// ObjectCacheSessionExpiry will limit how long the local login process, which relies
+		// on the session, can be finished. Sync the expiry of this token (which will be used
+		// when central login ends) with that.
+		$expiry = $this->config->get( MainConfigNames::ObjectCacheSessionExpiry );
+		$token = $this->tokenManager->tokenize(
+			$data, self::START_TOKEN_KEY_PREFIX, [ 'expiry' => $expiry ]
 		);
 
-		$url = wfAppendQuery(
-			$this->getCentralLoginUrl(),
-			[ 'returnUrlToken' => $returnUrlToken ]
-		);
+		$url = wfAppendQuery( $this->getCentralLoginUrl(), [ 'centralauthLoginToken' => $token ] );
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
 
-	/** @inheritDoc */
+	/**
+	 * Verify the secret and log the user in.
+	 *
+	 * @inheritDoc
+	 */
 	public function continuePrimaryAuthentication( array $reqs ) {
 		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );
 		$this->sharedDomainUtils->assertIsNotSharedDomain();
@@ -93,18 +113,50 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		);
 
 		if ( !$req ) {
-			throw new LogicException( 'Local authentication failed, please try again.' );
+			throw new LogicException( 'CentralAuthReturnRequest not found' );
 		}
 
-		$username = $this->tokenManager->detokenize(
-			$req->token, RedirectingLoginHookHandler::LOGIN_CONTINUE_USERNAME_KEY_PREFIX
+		$data = $this->tokenManager->detokenizeAndDelete(
+			$req->centralauthLoginToken, self::COMPLETE_TOKEN_KEY_PREFIX
 		);
-
-		if ( !$username ) {
-			throw new RuntimeException( 'Invalid user token, try to login again' );
+		$sessionData = $this->manager->getAuthenticationSessionData( 'CentralAuth:sul3-login:pending' );
+		if ( $data === false || $sessionData === false ) {
+			// TODO this will happen if the user spends too much time on the login form.
+			//   We should make sure the message is user-friendly.
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-badtoken' ) );
+		}
+		foreach ( [ 'secret', 'username' ] as $key ) {
+			if ( !isset( $data[$key] ) ) {
+				throw new LogicException( "$key not found in return data" );
+			}
+		}
+		if ( !isset( $sessionData['secret'] ) ) {
+			throw new LogicException( 'Secret not found in session data' );
 		}
 
-		return AuthenticationResponse::newPass( $username );
+		// Only the user who started the authentication process can have the secret in their local
+		// session. There is no way to guarantee that the person entering their credentials on the
+		// login form on the shared domain is the same; if an attacker initiates a login flow,
+		// tricks a victim into visiting the redirect URL returned by beginPrimaryAuthentication(),
+		// and then is somehow able to obtain the URL the victim would be redirected back to after
+		// submitting the login form, they would get logged in as the victim locally. But there is
+		// no way to do that without fundamentally compromising browser, site or network security.
+		if ( !$data['secret'] || $data['secret'] !== $sessionData['secret'] ) {
+			LoggerFactory::getInstance( 'security' )->error( __CLASS__ . ': Secret mismatch',
+				[
+					'username' => $data['username'],
+				]
+			);
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-badtoken' ) );
+		}
+
+		$centralUser = CentralAuthUser::getInstanceByName( $data['username'] );
+		if ( $centralUser->getId() !== $data['userId'] ) {
+			// Extremely unlikely but technically possible with global rename race conditions
+			throw new RuntimeException( 'User ID mismatch' );
+		}
+
+		return AuthenticationResponse::newPass( $data['username'] );
 	}
 
 	/** @inheritDoc */

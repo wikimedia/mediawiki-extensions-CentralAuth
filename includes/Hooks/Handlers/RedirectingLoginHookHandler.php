@@ -21,26 +21,26 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use ErrorPageError;
+use LogicException;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PostLoginRedirectHook;
 use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
 
+/**
+ * Hook handler for hooks related to SUL3 login.
+ *
+ * @see CentralAuthRedirectingPrimaryAuthenticationProvider
+ */
 class RedirectingLoginHookHandler implements
 	PostLoginRedirectHook,
 	AuthPreserveQueryParamsHook,
 	AuthChangeFormFieldsHook
 {
-	/**
-	 * @internal For use by CentralAuth only.
-	 * @var string Storage key prefix for the token when continuing the login
-	 *    in the local wiki.
-	 */
-	public const LOGIN_CONTINUE_USERNAME_KEY_PREFIX = 'centralauth-post-login-redirect-username';
-
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 
@@ -67,30 +67,41 @@ class RedirectingLoginHookHandler implements
 			return;
 		}
 
-		$returnUrlToken = $request->getRawVal( 'returnUrlToken' );
-		if ( $returnUrlToken ) {
-			$returnUrl = $this->tokenManager->detokenize(
-				$returnUrlToken,
-				CentralAuthRedirectingPrimaryAuthenticationProvider::RETURN_URL_TOKEN_KEY_PREFIX
+		$token = $request->getRawVal( 'centralauthLoginToken' );
+		$inputData = null;
+		if ( $token ) {
+			$inputData = $this->tokenManager->detokenizeAndDelete(
+				$token,
+				CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
 			);
-		} else {
-			$returnUrl = false;
 		}
-		if ( !$returnUrl ) {
+		if ( !$token || !$inputData ) {
 			throw new ErrorPageError( 'centralauth-error-badtoken', 'centralauth-error-badtoken' );
 		}
+		$returnUrl = $inputData['returnUrl'];
 
 		if ( !$context->getUser()->isRegistered() ) {
-			throw new \LogicException( 'This account is not a registered user' );
+			throw new LogicException( 'Unregistered user at end of login' );
+		}
+		$centralUser = CentralAuthUser::getInstanceByName( $context->getUser()->getName() );
+		if ( !$centralUser->exists() ) {
+			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $context->getUser()->getName() );
+		}
+		if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
+			throw new LogicException( 'Unattached user at end of login' );
 		}
 
-		$userToken = $this->tokenManager->tokenize(
-			$context->getUser()->getName(),
-			self::LOGIN_CONTINUE_USERNAME_KEY_PREFIX
+		$outputData = $inputData + [
+			'username' => $centralUser->getName(),
+			'userId' => $centralUser->getId(),
+		];
+		$token = $this->tokenManager->tokenize(
+			$outputData,
+			CentralAuthRedirectingPrimaryAuthenticationProvider::COMPLETE_TOKEN_KEY_PREFIX
 		);
-		$url = wfAppendQuery( $returnUrl, [ 'token' => $userToken ] );
 
 		// We have a return URL from the login wiki, we're fine.
+		$url = wfAppendQuery( $returnUrl, [ 'centralauthLoginToken' => $token ] );
 		$context->getOutput()->redirect( $url );
 		$type = 'success';
 
@@ -102,7 +113,7 @@ class RedirectingLoginHookHandler implements
 		$request = $context->getRequest();
 
 		$params += [
-			'returnUrlToken' => $request->getRawVal( 'returnUrlToken' ),
+			'centralauthLoginToken' => $request->getRawVal( 'centralauthLoginToken' ),
 			'wikiid' => $request->getRawVal( 'wikiid' ),
 			'usesul3' => $request->getRawVal( 'usesul3' ),
 		];
