@@ -94,6 +94,7 @@
 	"centralauth-merge-step3-title": "Ulah akun tunggal",
 	"centralauth-merge-welcome": "'''Akun pamakai Pian balum dimigrasiakan ka dalam sistim akun galubal {{int:Centralauth-groupname}}.'''\n\nAmun Pian mamilih gasan mamigrasiakan akun Pian, Pian kawa mamakai ngaran pamakai wan kata sandi nang sama gasan babuat log ka samua pruyik wiki {{int:Centralauth-groupname}} di samua bahasa nang tasadia.\n\nAmun urang lain sudah mamakai ngaran pamakai Pian di situs lain, hal nang kada cagar mangganggunya, tagal Pian kira-kira parlu gasan manuntungakan masalah naya lawan inya atawa salah sabuting pangurus (pambakal).",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Panggabungan babarapa akun]] gasan Sistem Pamakai Tunggal",
+	"centralauth-prefs-view": "Janaki maklumat akun global Pian",
 	"centralauth-rename-antispoofconflicts2": "Ngaran pamakai nang dipilih talalu mahirip lawan {{PLURAL:$2|ngaran pamakai nang sudah ada}} atawa suah dipakai ulih urang lain nang sudah maubah ngaran pamakainya: $1",
 	"centralauth-rename-confirm": "Apakah Pian yakin handak maubah ngaran pamakai ini sacara global?",
 	"centralauth-rename-form-allowhigheditcount": "Tagasakan amun handak maubah ngaran pamakai lawan labih matan $1 {{PLURAL:$1|babakan}}",
