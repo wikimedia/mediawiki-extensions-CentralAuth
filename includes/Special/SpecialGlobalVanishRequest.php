@@ -137,18 +137,29 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			$this->eligibleForAutomaticVanish()
 		) {
 			$request
+				->setStatus( GlobalRenameRequest::APPROVED )
 				->setPerformer( $automaticVanishPerformer->getId() )
-				->setComments( $this->msg( 'globalvanishrequest-autoapprove-public-note' ) );
+				->setComments(
+					$this->msg( 'globalvanishrequest-autoapprove-public-note' )
+						->inContentLanguage()->text() );
+
+			// Save the rename request to the queue before initiating the job.
+			if ( !$this->globalRenameRequestStore->save( $request ) ) {
+				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+			}
+
+			// Scrub the "reason". In the context of GlobalRenameUser, reason
+			// is the public log entry, not the private reason stated by the
+			// user. That value should never be logged.
+			$request->setReason(
+				$this->msg( 'globalvanishrequest-autoapprove-public-note' )
+					->inContentLanguage()->text() );
+
 			$requestArray = $request->toArray();
 
 			// We need to add this two fields that are usually being provided by the Form
 			$requestArray['movepages'] = true;
 			$requestArray['suppressredirects'] = true;
-
-			// Scrub the "reason". In the context of GlobalRenameUser, reason
-			// is the public log entry, not the private reason stated by the
-			// user. That value should never be logged.
-			$requestArray['reason'] = $this->msg( 'globalvanishrequest-autoapprove-public-note' );
 
 			$renameResult = $this->globalRenameFactory
 				->newGlobalRenameUser( $localAutomaticVanishPerformer, $causer, $request->getNewName() )
@@ -160,16 +171,12 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				return $renameResult;
 			}
 
-			// We still want to leave a record that this happened, so change
-			// the status over to 'approved' for the subsequent save.
-			$request->setStatus( GlobalRenameRequest::APPROVED );
-
 			$this->sendVanishingSuccessfulEmail( $request );
-		}
-
-		// Save the request to the database for it to be processed later.
-		if ( !$this->globalRenameRequestStore->save( $request ) ) {
-			return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+		} else {
+			// Save the request to the database for it to be processed later.
+			if ( !$this->globalRenameRequestStore->save( $request ) ) {
+				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+			}
 		}
 
 		return Status::newGood();
