@@ -130,7 +130,7 @@
 	"centralauth-complete-text": "Сега можете да се најавите на сите вики-проекти на {{int:Centralauth-groupname}} без да треба да правите нови сметки.",
 	"centralauth-completelogin-back": "Врати се на претходната страница.",
 	"centralauth-contribs-link": "глобална сметка",
-	"centralauth-contribs-locked": "Оваа сметка е глобално заклучена.\nПовеќе информации ќе најдете во [[Special:CentralAuth/$1|подробностите за глобалната сметка]].",
+	"centralauth-contribs-locked": "Оваа сметка е глобално заклучена.\nПовеќе информации ќе најдете во [[Special:CentralAuth/$1|поединостите за глобалната сметка]].",
 	"centralauth-contribs-locked-log": "Оваа сметка е глобално заклучена.\nПодолу е прикажана последната ставка во дневникот на заклучувања, за ваша информација:",
 	"centralauth-createlocal-already-exists": "Веќе постои месна сметка за укажаната глобална сметка.",
 	"centralauth-createlocal-no-global-account": "Нема таква глобална сметка.",

@@ -89,6 +89,7 @@
 	"centralauth-admin-info-unattached": "Liczba nieprzyłączonych kont:",
 	"centralauth-admin-info-username": "Nazwa użytkownika:",
 	"centralauth-admin-info-username-rename": "zmień nazwę",
+	"centralauth-admin-info-expired": "Konto tymczasowe wygasło:",
 	"centralauth-admin-intro": "Interfejs służy do zarządzania kontami uniwersalnymi.",
 	"centralauth-admin-list-attached-on": "Czas dołączenia",
 	"centralauth-admin-list-blocked": "Zablokowany",
