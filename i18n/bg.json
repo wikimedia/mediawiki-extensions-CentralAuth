@@ -17,8 +17,8 @@
 			"Лорд Бъмбъри"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Глобален брой редакции на потребителя",
-	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи, към които принадлежи потребителят",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Глобален брой редакции на потребителя ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Глобални групи, към които принадлежи потребителят ($1)",
 	"action-centralauth-createlocal": "изрично създаване на локална потребителска сметка",
 	"action-centralauth-lock": "заключване или отключване на глобални сметки",
 	"action-centralauth-merge": "сливане на тяхната сметка",
