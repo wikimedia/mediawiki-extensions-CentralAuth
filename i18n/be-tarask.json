@@ -14,10 +14,10 @@
 			"Zedlik"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "Глябальная колькасьць рэдагаваньняў удзельніка",
-	"abusefilter-edit-builder-vars-global-user-groups": "Глябальныя групы, у якія ўваходзіць удзельнік",
-	"abusefilter-edit-builder-vars-global-account-editcount": "Глябальная колькасьць рэдагаваньняў карыстальніка (пры стварэньні ўліковага запісу)",
-	"abusefilter-edit-builder-vars-global-account-groups": "Глябальны групы, да якіх належыць карыстальнік (пры стварэньні ўліковага запісу)",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Глябальная колькасьць рэдагаваньняў удзельніка ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Глябальныя групы, у якія ўваходзіць удзельнік ($1)",
+	"abusefilter-edit-builder-vars-global-account-editcount": "Глябальная колькасьць рэдагаваньняў карыстальніка пры стварэньні ўліковага запісу ($1)",
+	"abusefilter-edit-builder-vars-global-account-groups": "Глябальныя групы, да якіх належыць карыстальнік пры стварэньні ўліковага запісу ($1)",
 	"action-centralauth-createlocal": "прымусова стварыць лякальны рахунак",
 	"action-centralauth-lock": "блякаваць ці разблякоўваць глябальныя рахункі",
 	"action-centralauth-merge": "аб’яднаньне іхніх уліковых запісаў",
