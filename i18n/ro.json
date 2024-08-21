@@ -20,7 +20,8 @@
 			"XXN"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Grupuri globale de care aparține utilizatorul",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Numărul de editări globale ale utilizatorului ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Grupuri globale de care aparține utilizatorul ($1)",
 	"action-centralauth-lock": "blocați sau să deblocați conturi globale",
 	"action-centralauth-rename": "redenumiți conturi globale",
 	"centralauth": "Administrare cont global",
