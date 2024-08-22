@@ -15,6 +15,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use PHPUnit\Framework\MockObject\MockObject;
+use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -108,10 +109,12 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 		$loginToken = 'testtoken' . ++$this->idCounter;
 
-		$sessionManager = CentralAuthServices::getSessionManager();
-		$key = $sessionManager->makeTokenKey( 'api-token', $loginToken );
-		$sessionManager->getTokenStore()->set( $key, $data, 60 * 60 );
-
+		$tokenManager = CentralAuthServices::getTokenManager( $this->getServiceContainer() );
+		$tokenManager->tokenize(
+			$data,
+			'api-token',
+			[ 'token' => $loginToken, 'expiry' => ExpirationAwareness::TTL_HOUR ]
+		);
 		return $loginToken;
 	}
 

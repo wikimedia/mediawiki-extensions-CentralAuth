@@ -26,7 +26,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
-use MWCryptRand;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use SkinTemplate;
@@ -152,7 +151,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->subpage = $par ?? '';
 
 		$request = $this->getRequest();
-		$tokenStore = $this->sessionManager->getTokenStore();
 
 		$this->loginWiki = $this->getConfig()->get( 'CentralAuthLoginWiki' );
 		if ( !$this->loginWiki ) {
@@ -356,9 +354,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				$memcData = [ 'gu_id' => $centralUser->getId() ];
-				$token = MWCryptRand::generateHex( 32 );
-				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
-				$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+				$token = $this->tokenManager->tokenize( $memcData, 'centralautologin-token' );
 
 				$this->do302Redirect( $wikiid, 'createSession', [
 					'token' => $token,
@@ -385,14 +381,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$token = $request->getVal( 'token', '' );
 				if ( $token !== '' ) {
-					// Load memc data
-					$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token );
-					$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-						$this->sessionManager->getTokenStore(), $key
-					);
-
-					$tokenStore->delete( $key );
-
+					$memcData = $this->tokenManager->detokenizeAndDelete( $token, 'centralautologin-token' );
 					if ( !$memcData || !isset( $memcData['gu_id'] ) ) {
 						$this->doFinalOutput( false, 'Invalid parameters' );
 						return;
@@ -422,9 +411,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'gu_id' => $gu_id,
 					'wikiid' => $wikiid,
 				];
-				$token = MWCryptRand::generateHex( 32 );
-				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-				$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+				$token = $this->tokenManager->tokenize( $memcData, [ 'centralautologin-token', $wikiid ] );
 
 				// Save memc token for the 'setCookies' step
 				$request->setSessionData( 'centralautologin-token', $token );
@@ -465,12 +452,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				// Load memc data
-				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-					$this->sessionManager->getTokenStore(), $key
-				);
-
-				$tokenStore->delete( $key );
+				$memcData = $this->tokenManager->detokenizeAndDelete( $token, [ 'centralautologin-token', $wikiid ] );
 
 				// Check memc data
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
@@ -494,9 +476,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					'sessionId' => $centralSession['sessionId'],
 				];
 
-				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-				$tokenStore->set( $key, $memcData, $tokenStore::TTL_MINUTE );
+				$this->tokenManager->tokenize(
+					$memcData,
+					[ 'centralautologin-token', $wikiid ],
+					[ 'token' => $token ]
+				);
 
+				// No need to pass the token, the initiating wiki has it in its session.
 				$this->do302Redirect( $wikiid, 'setCookies', $params );
 				return;
 
@@ -533,12 +519,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				// Load memc data
 				$wikiid = WikiMap::getCurrentWikiId();
-				$key = $this->sessionManager->makeTokenKey( 'centralautologin-token', $token, $wikiid );
-				$memcData = $this->centralAuthUtilityService->getKeyValueUponExistence(
-					$this->sessionManager->getTokenStore(), $key
-				);
-
-				$tokenStore->delete( $key );
+				$memcData = $this->tokenManager->detokenizeAndDelete( $token, [ 'centralautologin-token', $wikiid ] );
 
 				// Check memc data
 				if (

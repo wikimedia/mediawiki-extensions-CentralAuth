@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
@@ -78,8 +79,8 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 
 		$provider = new CentralAuthApiSessionProvider(
 			$services->getUserIdentityLookup(),
-			$services->get( 'CentralAuth.CentralAuthSessionManager' ),
-			$services->get( 'CentralAuth.CentralAuthUtilityService' )
+			CentralAuthServices::getSessionManager( $services ),
+			CentralAuthServices::getTokenManager( $services )
 		);
 
 		$this->initProvider(

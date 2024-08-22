@@ -6,6 +6,7 @@ use MediaWiki\MediaWikiServices;
 use MWCryptRand;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Wikimedia\Assert\Assert;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\WaitConditionLoop;
@@ -28,24 +29,32 @@ class CentralAuthTokenManager {
 	}
 
 	/**
-	 * Get a cache for storage of temporary cross-site tokens
-	 * @return BagOStuff
-	 */
-	public function getTokenStore(): BagOStuff {
-		// FIXME remove callers and make private
-		return $this->tokenStore;
-	}
-
-	/**
 	 * @param string $keygroup
 	 * @param string ...$components
 	 * @return string The global token key (with proper escaping)
 	 */
-	public function makeTokenKey( string $keygroup, ...$components ): string {
-		// FIXME remove callers and make private
-		return $this->getTokenStore()->makeGlobalKey(
+	private function makeTokenKey( string $keygroup, ...$components ): string {
+		return $this->tokenStore->makeGlobalKey(
 			$keygroup, $this->getCentralAuthDBForSessionKey(), ...$components
 		);
+	}
+
+	/**
+	 * Some existing keys both pre- and postfix the token.
+	 *
+	 * @param string|array $namespace Key parts; the first goes before the token, the rest go after.
+	 * @param string $token
+	 * @return string
+	 */
+	private function makeLegacyTokenKey( $namespace, $token ): string {
+		if ( is_array( $namespace ) ) {
+			$head = array_shift( $namespace );
+			$tail = $namespace;
+		} else {
+			$head = $namespace;
+			$tail = [];
+		}
+		return $this->makeTokenKey( $head, $token, ...$tail );
 	}
 
 	/**
@@ -57,32 +66,97 @@ class CentralAuthTokenManager {
 	 * following the redirect, tricking a victim to follow it, e.g. to set up a session fixation
 	 * attack. It is the caller's responsibility to handle this threat.
 	 *
-	 * @param string $value The value to store.
-	 * @param string $keyPrefix Namespace in the token store.
+	 * @param mixed $data The value to store. Must be serializable and can't be boolean false.
+	 * @param string|array $keyPrefix Namespace in the token store.
+	 * @param array $options Options:
+	 *   - expiry (int, default 60): Expiration time of the token store record in seconds.
+	 *   - token(string): Reuse the given token (presumably one from an earlier tokenize()
+	 *     call) instead of generating a new random token.
 	 * @return string The random key (without the prefix).
 	 */
 	public function tokenize(
-		string $value,
-		string $keyPrefix
+		$data,
+		$keyPrefix,
+		array $options = []
 	): string {
-		$token = MWCryptRand::generateHex( 32 );
-		$key = $this->makeTokenKey( $keyPrefix, $token );
-		$this->getTokenStore()->set( $key, $value, ExpirationAwareness::TTL_MINUTE );
+		Assert::parameter( $data !== false, '$data', 'cannot be boolean false' );
+		$expiry = $options['expiry'] ?? ExpirationAwareness::TTL_MINUTE;
+		$token = $options['token'] ?? MWCryptRand::generateHex( 32 );
+		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
+		$this->tokenStore->set( $key, $data, $expiry );
 		return $token;
 	}
 
 	/**
 	 * Recover the value concealed with tokenize().
+	 *
+	 * The value is left in the store. It is the caller's responsibility to prevent replay attacks.
+	 *
 	 * @param string $token The random key returned by tokenize().
-	 * @param string $keyPrefix Namespace in the token store.
-	 * @return string|false The value, or false if it was not found.
+	 * @param string|array $keyPrefix Namespace in the token store.
+	 * @param array $options Options:
+	 *   - timeout (int, default 3): Seconds to wait for the token store record to be created
+	 *     by another thread, when the first lookup doesn't find it.
+	 * @return mixed|false The value, or false if it was not found.
 	 */
 	public function detokenize(
 		string $token,
-		string $keyPrefix
+		$keyPrefix,
+		array $options = []
 	) {
-		$key = $this->makeTokenKey( $keyPrefix, $token );
-		return $this->getKeyValueUponExistence( $key );
+		$timeout = $options['timeout'] ?? 3;
+		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
+		return $this->getKeyValueUponExistence( $key, $timeout );
+	}
+
+	/**
+	 * Recover the value concealed with tokenize(), and delete it from the store.
+	 *
+	 * @param string $token The random key returned by tokenize().
+	 * @param string|array $keyPrefix Namespace in the token store.
+	 * @param array $options Options:
+	 * *   - timeout (int, default 3): Seconds to wait for the token store record to be created
+	 * *     by another thread, when the first lookup doesn't find it.
+	 * @return mixed|false The value, or false if it was not found.
+	 */
+	public function detokenizeAndDelete(
+		string $token,
+		$keyPrefix,
+		array $options = []
+	) {
+		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
+		$value = $this->detokenize( $token, $keyPrefix, $options );
+		if ( $value !== false ) {
+			$this->tokenStore->delete( $key );
+		}
+		return $value;
+	}
+
+	/**
+	 * Delete a value from the token store.
+	 * @param string $token The random key returned by tokenize().
+	 * @param string|array $keyPrefix Namespace in the token store.
+	 * @return bool Whether the value was found and deleted.
+	 */
+	public function delete( string $token, $keyPrefix ): bool {
+		// FIXME remove this
+		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
+		return $this->tokenStore->delete( $key );
+	}
+
+	/**
+	 * Delete a value from the token store.
+	 * The difference from delete() is that this uses a lock to ensure the value is
+	 * actually found and deleted. Callers must check the return value and fail the
+	 * operation if it's false.
+	 * @param string $token The random key returned by tokenize().
+	 * @param string|array $keyPrefix Namespace in the token store.
+	 * @return bool Whether the value was found and deleted. Might return false when
+	 *   it could not obtain a lock.
+	 */
+	public function consume( string $token, $keyPrefix ): bool {
+		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
+		return $this->tokenStore->changeTTL( $key, time() - 3600 );
 	}
 
 	/**
@@ -92,13 +166,12 @@ class CentralAuthTokenManager {
 	 * @param int $timeout
 	 * @return mixed Key value; false if not found or on error
 	 */
-	public function getKeyValueUponExistence( $key, $timeout = 3 ) {
-		// FIXME make this private
+	private function getKeyValueUponExistence( $key, $timeout = 3 ) {
 		$value = false;
 
 		$result = ( new WaitConditionLoop(
 			function () use ( $key, &$value ) {
-				$store = $this->getTokenStore();
+				$store = $this->tokenStore;
 				$watchPoint = $store->watchErrors();
 				$value = $store->get( $key );
 				$error = $store->getLastError( $watchPoint );

@@ -88,16 +88,6 @@ class CentralAuthSessionManager {
 	}
 
 	/**
-	 * @param string $keygroup
-	 * @param string ...$components
-	 * @return string The global token key (with proper escaping)
-	 */
-	public function makeTokenKey( string $keygroup, ...$components ): string {
-		// FIXME move to TokenManager
-		return CentralAuthServices::getTokenManager()->makeTokenKey( $keygroup, ...$components );
-	}
-
-	/**
 	 * Get a cache for storage of central sessions
 	 * @return BagOStuff
 	 */
@@ -111,15 +101,6 @@ class CentralAuthSessionManager {
 		}
 
 		return $this->sessionStore;
-	}
-
-	/**
-	 * Get a cache for storage of temporary cross-site tokens
-	 * @return BagOStuff
-	 */
-	public function getTokenStore(): BagOStuff {
-		// FIXME move to TokenManager
-		return CentralAuthServices::getTokenManager()->getTokenStore();
 	}
 
 	/**

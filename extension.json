@@ -95,7 +95,7 @@
 			"services": [
 				"UserIdentityLookup",
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthTokenManager"
 			]
 		},
 		"CentralAuthHeaderSessionProvider": {
@@ -104,7 +104,7 @@
 			"services": [
 				"UserIdentityLookup",
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthTokenManager"
 			]
 		}
 	},
@@ -146,7 +146,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralLogin",
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthTokenManager"
 			]
 		},
 		"CreateLocalAccount": {
@@ -337,7 +337,7 @@
 		"centralauthtoken": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCentralAuthToken",
 			"services": [
-				"CentralAuth.CentralAuthSessionManager"
+				"CentralAuth.CentralAuthTokenManager"
 			]
 		},
 		"globaluserrights": {
@@ -564,7 +564,7 @@
 			"services": [
 				"HookContainer",
 				"MainConfig",
-				"CentralAuth.CentralAuthSessionManager",
+				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.SharedDomainUtils"
 
 			]

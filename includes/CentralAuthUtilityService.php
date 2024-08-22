@@ -34,7 +34,6 @@ use MediaWiki\WikiMap\WikiMap;
 use Profiler;
 use RuntimeException;
 use StatusValue;
-use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Utility services that are useful in many parts of CentralAuth.
@@ -61,19 +60,6 @@ class CentralAuthUtilityService {
 		$this->titleFactory = $titleFactory;
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->jobFactory = $jobFactory;
-	}
-
-	/**
-	 * Wait for and return the value of a key which is expected to exist from a store
-	 *
-	 * @param BagOStuff $store
-	 * @param string $key A key that will only have one value while it exists
-	 * @param int $timeout
-	 * @return mixed Key value; false if not found or on error
-	 */
-	public function getKeyValueUponExistence( BagOStuff $store, $key, $timeout = 3 ) {
-		// FIXME remove once nothing calls this
-		return CentralAuthServices::getTokenManager()->getKeyValueUponExistence( $key, $timeout );
 	}
 
 	/**
