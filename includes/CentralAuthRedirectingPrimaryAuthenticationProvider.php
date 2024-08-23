@@ -177,7 +177,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		}
 
 		$centralUser = CentralAuthUser::getInstanceByName( $username );
-		return $centralUser && $centralUser->exists();
+		return $centralUser->exists();
 	}
 
 	/** @inheritDoc */

@@ -224,7 +224,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param UserIdentity $user
 	 * @return CentralAuthUser
 	 */
-	public static function getInstance( UserIdentity $user ) {
+	public static function getInstance( UserIdentity $user ): self {
 		return self::getInstanceByName( $user->getName() );
 	}
 
@@ -237,7 +237,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthUser
 	 * @throws InvalidArgumentException on invalid usernames.
 	 */
-	public static function getInstanceByName( $username ) {
+	public static function getInstanceByName( $username ): self {
 		if ( IPUtils::isValid( $username ) ) {
 			$canonUsername = IPUtils::sanitizeIP( $username );
 		} elseif ( ExternalUserNames::isExternal( $username ) ) {
@@ -267,7 +267,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthUser
 	 * @since 1.37
 	 */
-	public static function getPrimaryInstance( UserIdentity $user ) {
+	public static function getPrimaryInstance( UserIdentity $user ): self {
 		return self::getPrimaryInstanceByName( $user->getName() );
 	}
 
@@ -278,7 +278,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return CentralAuthUser
 	 * @since 1.37
 	 */
-	public static function getPrimaryInstanceByName( $username ) {
+	public static function getPrimaryInstanceByName( $username ): self {
 		$cache = self::getUserCache();
 		$ret = $cache->get( $username );
 		if ( !$ret || !$ret->mFromPrimary ) {
@@ -402,7 +402,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param bool $fromPrimary
 	 * @return CentralAuthUser
 	 */
-	public static function newFromRow( $row, $renameUser, $fromPrimary = false ) {
+	public static function newFromRow( $row, $renameUser, $fromPrimary = false ): self {
 		$caUser = new self( $row->gu_name );
 		$caUser->loadFromRow( $row, $renameUser, $fromPrimary );
 		return $caUser;
@@ -414,7 +414,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param bool $fromPrimary
 	 * @return CentralAuthUser
 	 */
-	public static function newUnattached( $name, $fromPrimary = false ) {
+	public static function newUnattached( $name, $fromPrimary = false ): self {
 		$caUser = new self( $name );
 		$caUser->loadFromRow( false, [], $fromPrimary );
 		return $caUser;

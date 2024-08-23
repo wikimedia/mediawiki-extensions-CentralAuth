@@ -307,7 +307,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 		$centralUser = CentralAuthUser::getInstanceByName( $username );
 		$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $username );
-		return $centralUser && $centralUser->exists() &&
+		return $centralUser->exists() &&
 			( $centralUser->isAttached() || !$userIdentity || !$userIdentity->isRegistered() ) &&
 			!$centralUser->getPasswordObject() instanceof InvalidPassword;
 	}
@@ -320,7 +320,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 
 		$centralUser = CentralAuthUser::getInstanceByName( $username );
-		return $centralUser && $centralUser->exists();
+		return $centralUser->exists();
 	}
 
 	/** @inheritDoc */

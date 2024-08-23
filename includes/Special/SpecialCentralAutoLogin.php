@@ -250,7 +250,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-				if ( $centralUser && $centralUser->getId() && $centralUser->isAttached() ) {
+				if ( $centralUser->getId() && $centralUser->isAttached() ) {
 					$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
 
 					$remember = (bool)$centralSession['remember'];
@@ -458,7 +458,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 				if ( !$memcData ||
 					$memcData['wikiid'] !== $wikiid ||
-					!$centralUser ||
 					!$centralUser->getId() ||
 					!$centralUser->isAttached() ||
 					$memcData['gu_id'] != $centralUser->getId()

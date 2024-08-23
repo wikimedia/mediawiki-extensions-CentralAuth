@@ -30,10 +30,10 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $user->getName(), $caUser->getName() );
 		$this->assertSame( $cache->get( $user->getName() ), $caUser );
 		// Now test it just reads from the cache, no matter what
-		// @todo: Really?
 		$user2 = User::newFromName( 'BazBarFoo' );
-		$cache->set( $user2->getName(), 'blahblahblah' );
-		$this->assertSame( 'blahblahblah', CentralAuthUser::getInstance( $user2 ) );
+		$centraluser2 = new CentralAuthUser( 'BazBarFoo' );
+		$cache->set( $user2->getName(), $centraluser2 );
+		$this->assertSame( $centraluser2, CentralAuthUser::getInstance( $user2 ) );
 	}
 
 	public function testGetInstanceByNameNonCanonicalForm() {
