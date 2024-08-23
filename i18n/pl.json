@@ -512,7 +512,7 @@
 	"globalvanishrequest-pending-request-error": "Masz już otwarty wniosek o zniknięcie konta. Przejdź na [[Special:GlobalVanishRequest/status|stronę statusu]], aby uzyskać więcej informacji.",
 	"globalvanishrequest-save-error": "Nie udało się zapisać wniosku. Spróbuj jeszcze raz.",
 	"globalvanishrequest-autoapprove-note": "Twoja prośba o zniknięcie konta została rozpatrzona pozytywnie.",
-	"globalvanishrequest-autoapprove-public-note": "Twoja prośba o zniknięcie konta została automatycznie zatwierdzona.",
+	"globalvanishrequest-autoapprove-public-note": "Prośba o zniknięcie tego konta została automatycznie zatwierdzona.",
 	"globalvanishrequest-rejected-subject-notification": "Wniosek o zniknięcie konta odrzucony ($1)",
 	"globalvanishrequest-rejected-body-notification": "Wniosek o zniknięcie konta został odrzucony, szczegóły poniżej:\n\nNazwa użytkownika: $1\nWiki domowa: $2\nGlobalna liczba edycji: $3\nZablokowany: $4\nPowód zniknięcia: $5\nOdrzucone przez: $6\nUwagi odrzucającego: $7\nZawnioskowano: $8\nRozpatrzono: $9",
 	"globalvanishrequest-rejected-notification-error": "Nie udało się automatycznie powiadomić zespołu prawnego. Prosimy o przesłanie do nich maila, związanego z odrzuceniem wniosku o zniknięcie. Wniosek zakończył się jego odrzuceniem.",
