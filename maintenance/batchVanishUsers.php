@@ -201,13 +201,13 @@ class BatchVanishUsers extends Maintenance {
 		$newName = $decodedNewName === '' ? null : $decodedNewName;
 
 		// If new name couldn't be extracted, generate a random one
-		// Format should be `Vanished user <some_random_string>`
+		// Format should be `Renamed user <some_random_string>`
 		if ( !isset( $newName ) ) {
 			$attempts = 0;
 			do {
 				$candidate = wfRandomString();
 				if ( GlobalRenameRequest::isNameAvailable( $candidate )->isGood() ) {
-					$newName = "Vanished user {$candidate}";
+					$newName = "Renamed user {$candidate}";
 					$this->output( "New name not present in global_renamers_link. Generated '{$newName}' \n" );
 				}
 				$attempts++;
