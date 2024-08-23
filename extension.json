@@ -112,6 +112,7 @@
 		"CentralAuth": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthIdLookup",
 			"services": [
+				"MainConfig",
 				"CentralAuth.CentralAuthDatabaseManager"
 			]
 		}
