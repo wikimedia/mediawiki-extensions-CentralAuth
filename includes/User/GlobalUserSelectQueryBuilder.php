@@ -55,11 +55,7 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 			return;
 		}
 
-		// HACK: SelectQueryBuilder::queryInfo expects join conditions to be at the join_conds
-		// key, but CentralAuthUser::selectQueryInfo exposes them as joinConds
-		$queryInfo = CentralAuthUser::selectQueryInfo();
-		$queryInfo['join_conds'] = $queryInfo['joinConds'];
-		$this->queryInfo( $queryInfo );
+		$this->queryInfo( CentralAuthUser::selectQueryInfo() );
 
 		$this->initRan = true;
 	}

@@ -334,9 +334,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array (
 	 *   'tables' => array,
 	 *   'fields' => array,
-	 *   'where' => array,
+	 *   'conds' => array,
 	 *   'options' => array,
-	 *   'joinConds' => array,
+	 *   'join_conds' => array,
 	 *  )
 	 */
 	public static function selectQueryInfo() {
@@ -347,9 +347,9 @@ class CentralAuthUser implements IDBAccessObject {
 				'gu_locked', 'gu_hidden_level', 'gu_registration', 'gu_email',
 				'gu_email_authenticated', 'gu_home_db', 'gu_cas_token'
 			],
-			'where' => [],
+			'conds' => [],
 			'options' => [],
-			'joinConds' => [
+			'join_conds' => [
 				'localuser' => [ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ]
 			],
 		];
@@ -548,16 +548,10 @@ class CentralAuthUser implements IDBAccessObject {
 		// matches $fromPrimary above
 		$db = $this->getSafeReadDB();
 
-		$queryInfo = self::selectQueryInfo();
-
 		$row = $db->newSelectQueryBuilder()
-			->tables( $queryInfo['tables'] )
-			->fields( $queryInfo['fields'] )
+			->queryInfo( self::selectQueryInfo() )
 			->where( [ 'gu_name' => $this->mName ] )
-			->andWhere( $queryInfo['where'] )
 			->caller( __METHOD__ )
-			->options( $queryInfo['options'] )
-			->joinConds( $queryInfo['joinConds'] )
 			->fetchRow();
 
 		$renameUser = CentralAuthServices::getGlobalRenameFactory()

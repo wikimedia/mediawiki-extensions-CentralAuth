@@ -55,16 +55,10 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
 		);
 
-		$queryInfo = CentralAuthUser::selectQueryInfo();
-
 		$res = $db->newSelectQueryBuilder()
-			->tables( $queryInfo['tables'] )
-			->fields( $queryInfo['fields'] )
+			->queryInfo( CentralAuthUser::selectQueryInfo() )
 			->where( [ 'gu_id' => array_map( 'intval', array_keys( $idToName ) ) ] )
-			->andWhere( $queryInfo['where'] )
 			->caller( __METHOD__ )
-			->options( $queryInfo['options'] )
-			->joinConds( $queryInfo['joinConds'] )
 			->fetchResultSet();
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
@@ -94,16 +88,10 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
 		);
 
-		$queryInfo = CentralAuthUser::selectQueryInfo();
-
 		$res = $db->newSelectQueryBuilder()
-			->tables( $queryInfo['tables'] )
-			->fields( $queryInfo['fields'] )
+			->queryInfo( CentralAuthUser::selectQueryInfo() )
 			->where( [ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] )
-			->andWhere( $queryInfo['where'] )
 			->caller( __METHOD__ )
-			->options( $queryInfo['options'] )
-			->joinConds( $queryInfo['joinConds'] )
 			->fetchResultSet();
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
