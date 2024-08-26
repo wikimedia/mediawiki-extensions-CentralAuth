@@ -402,7 +402,9 @@ class CentralAuthPrimaryAuthenticationProvider
 			return $status;
 		}
 
-		if ( $autocreate !== $this->getUniqueId() ) {
+		$centralAuthPrimaryProviderIds = [ $this->getUniqueId(),
+			CentralAuthRedirectingPrimaryAuthenticationProvider::class ];
+		if ( !in_array( $autocreate, $centralAuthPrimaryProviderIds ) ) {
 			// Prevent creation if the user exists centrally
 			if ( $centralUser->exists() &&
 				$autocreate !== AuthManager::AUTOCREATE_SOURCE_SESSION
