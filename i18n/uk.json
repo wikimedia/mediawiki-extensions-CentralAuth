@@ -33,12 +33,13 @@
 			"Vlad5250",
 			"Ата",
 			"Максим Підліснюк",
-			"Тест"
+			"Тест",
+			"Mykola7"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Глобальне число редагувань користувача",
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальні групи, у яких знаходиться користувач",
-	"action-centralauth-createlocal": "примусово створити локальний обліковий запис",
+	"action-centralauth-createlocal": "примусове створення локального облікового запису",
 	"action-centralauth-lock": "закриття або відкриття глобальних облікових записів",
 	"action-centralauth-merge": "об'єднання власних облікових записів",
 	"action-centralauth-suppress": "повне або часткове приховування глобальних облікових записів",
@@ -514,7 +515,7 @@
 	"logentry-newusers-forcecreatelocal": "$1 примусово {{GENDER:$2|створив|створила}} локальний обліковий запис для $3",
 	"mergeaccount": "Стан об'єднання облікових записів",
 	"multilock": "Блокування глобальних облікових записів",
-	"right-centralauth-createlocal": "Примусово створювати локальні облікові записи для глобального облікового запису",
+	"right-centralauth-createlocal": "Примусове створення локальних облікових записів для глобального облікового запису",
 	"right-centralauth-lock": "Закриття або відкриття глобального облікового запису",
 	"right-centralauth-merge": "Об'єднання власних облікових записів",
 	"right-centralauth-suppress": "Повне або часткове приховування глобальних облікових записів",

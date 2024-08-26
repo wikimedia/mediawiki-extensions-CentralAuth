@@ -74,6 +74,7 @@
 	"centralauth-incomplete-text": "Kande vua 'login' unigesos, vu povos konektar su ad omna siti Wiki de {{int:Centralauth-groupname}}, sen krear nova konto",
 	"centralauth-list-attached": "La {{PLURAL:$2|konto nomizita \"$1\" en ca sito|konti nomizita \"$1\" en la sequanta siti}} automatale ligesis a ca unigata konto:",
 	"centralauth-listusers-nolocal": "ne ligata, o ne existas lokale",
+	"centralauth-log-name": "Registro por administro di globala konti",
 	"centralauth-log-status-locked": "klozata",
 	"centralauth-log-status-none": "(nula)",
 	"centralauth-login-progress": "Facante 'log in' en {{PLURAL:$2|la wiki|omna wiki}} de {{int:Centralauth-groupname}}:",

@@ -342,11 +342,11 @@
 	"log-name-gblrename": "Qlobal addəyişmə jurnalı",
 	"logentry-globalauth-setstatus": "$1 \"$3\" istifadəçisinin qlobal hesab statusunu {{GENDER:$2|dəyişdi}}; $4 tətbiq olundu; $5 ləğv olundu",
 	"mergeaccount": "Giriş birləşdirilməsi statusu",
-	"right-centralauth-lock": "Qlobal istifadəçi hesabını blokla və ya bloku aç",
-	"right-centralauth-merge": "Hesabları birləşdir",
-	"right-centralauth-suppress": "Qlobal hesabı bağla və ya gizlə",
-	"right-centralauth-unmerge": "Qlobal hesabı aç",
-	"right-globalgroupmembership": "Qlobal qruplarda hüquqları dəyişdir",
-	"right-globalgrouppermissions": "Qlobal qrupları düzəlt",
+	"right-centralauth-lock": "Qlobal istifadəçi hesabını bloklamaq və ya bloku açmaq",
+	"right-centralauth-merge": "Öz hesablarını birləşdirmək",
+	"right-centralauth-suppress": "Qlobal hesabı gizlətmək",
+	"right-centralauth-unmerge": "Qlobal hesabı ayırmaq",
+	"right-globalgroupmembership": "Qlobal qruplarda üzvlüyü dəyişdirmək",
+	"right-globalgrouppermissions": "Qlobal qrupları idarə etmək",
 	"centralauth-badaccess-blacklisted": "Qlobal ad dəyişdirilməsini tələb edə bilməzsiniz, çünki qara siyahıdasınız."
 }
