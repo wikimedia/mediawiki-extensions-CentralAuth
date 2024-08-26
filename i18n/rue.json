@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Constraque",
 			"Gazeb",
 			"Gramo6",
 			"KHMELNYTSKYIA",
@@ -228,7 +229,7 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|рік|рокы|років}} тому",
 	"globalgroupmembership": "Членство у ґлобалных ґрупах",
 	"globalgrouppermissions": "Адміністрація ґлобалных ґруп",
-	"globalrenamerequest-newname-help-basic": "Задайте новоє хосновачськоє имня, котроє хочете хосновати.",
+	"globalrenamerequest-newname-help-basic": "Задайте нове хосновательске мено, котре хочете хосновати.",
 	"globalusers": "Список ґлобалных конт",
 	"mergeaccount": "Статус зъєдинїня",
 	"right-centralauth-lock": "Блокованя і одблокованя ґлобалных конт",
