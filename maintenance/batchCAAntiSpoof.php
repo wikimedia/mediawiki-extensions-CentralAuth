@@ -1,6 +1,9 @@
 <?php
 // Go through all usernames and calculate and record spoof thingies
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use BatchAntiSpoof;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthSpoofUser;
 use Wikimedia\Rdbms\IReadableDatabase;

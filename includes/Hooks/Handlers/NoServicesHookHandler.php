@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use MediaWiki\Extension\CentralAuth\Maintenance\MigrateGuSalt;
 use MediaWiki\Extension\CentralAuth\Maintenance\MigrateInitialAccounts;
 use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
-use MigrateGuSalt;
 
 /**
  * This handler is used in hooks which are outside the normal dependency injection scope.

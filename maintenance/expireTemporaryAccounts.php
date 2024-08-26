@@ -1,5 +1,10 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use ExpireTemporaryAccounts;
+use Iterator;
+use LogicException;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilder;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;

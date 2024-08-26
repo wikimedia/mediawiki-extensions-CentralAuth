@@ -1,5 +1,10 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use LogEntryBase;
+use Maintenance;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';

@@ -18,6 +18,9 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use Maintenance;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
