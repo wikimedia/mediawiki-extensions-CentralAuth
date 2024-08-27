@@ -417,7 +417,7 @@
 	"globalrenamequeue-request-userinfo-local": "* usator: [[Special:CentralAuth/$1|$1]]\n* wiki de origine: $2\n* nove nomine: [[Special:CentralAuth/$3|$3]]",
 	"globalrenamequeue-request-vanish-approve-text": "Acceptar le disparition",
 	"globalrenamequeue-request-vanish-deny-text": "Refusar le disparition",
-	"globalrenamequeue-request-vanish-header": "<strong>[$1 $2]</strong> requesta de facer disparer le conto <strong>$3</strong>.",
+	"globalrenamequeue-request-vanish-header": "<strong>[$1 $2]</strong> requesta un disparition verso <strong>$3</strong>.",
 	"globalrenamequeue-request-vanish-reason": "<strong>Motivo pro requestar le disparition</strong>\n$1",
 	"globalrenamequeue-request-vanish-title": "Facer disparer “$1”?",
 	"globalrenamequeue-request-vanish-userinfo": "* nomine de usator actual: [[Special:CentralAuth/$1|$1]]\n* wiki principal: $2\n* numero global de modificationes: $3\n* es blocate: $4",
