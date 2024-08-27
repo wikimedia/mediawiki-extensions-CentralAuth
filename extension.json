@@ -626,6 +626,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SsoHookHandler",
 			"services": [
 				"UrlUtils",
+				"CentralAuth.FilteredRequestTracker",
 				"CentralAuth.SharedDomainUtils"
 			],
 			"optional_services": [
@@ -675,6 +676,8 @@
 		"ApiQueryTokensRegisterTypes": "default",
 		"APIGetAllowedParams": "api",
 		"AuthChangeFormFields": "loginredirect",
+		"AuthManagerFilterProviders": "sso",
+		"AuthManagerVerifyAuthentication": "sso",
 		"AuthPreserveQueryParams": "loginredirect",
 		"BeforePageDisplay": "pagedisplay",
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
@@ -942,6 +945,12 @@
 			}
 		},
 		"preauth": {
+			"CentralAuthSsoPreAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthSsoPreAuthenticationProvider",
+				"services": [
+					"CentralAuth.FilteredRequestTracker"
+				]
+			},
 			"CentralAuthIpReputationPreAuthenticationProvider": {
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthIpReputationPreAuthenticationProvider",
 				"services": [

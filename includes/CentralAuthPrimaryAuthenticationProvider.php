@@ -22,6 +22,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use IDBAccessObject;
+use LogicException;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
@@ -38,6 +39,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use MWExceptionHandler;
 use Psr\Log\NullLogger;
 use StatusValue;
 use Wikimedia\Rdbms\ReadOnlyMode;
@@ -169,6 +171,19 @@ class CentralAuthPrimaryAuthenticationProvider
 		$status = $this->checkPasswordValidity( $username, $req->password );
 		if ( !$status->isOK() ) {
 			return $this->getFatalPasswordErrorResponse( $username, $status );
+		}
+
+		if ( $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() )
+			&& !$this->sharedDomainUtils->isSharedDomain()
+		) {
+			// We are in SUL3 mode on the local domain, we should not have gotten here,
+			// it should have been handled by the redirect provider. It is important to
+			// prevent authentication as SsoHookHandler might have disabled important checks.
+			// But it's relatively easy to get here by accident, if the brittle logic in
+			// SsoHookHandler::onAuthManagerFilterProviders fails to disable some provider
+			// that generates a password form, so we should fail in some user-comprehensible way.
+			MWExceptionHandler::logException( new LogicException( 'Invoked SUL2 provider in SUL3 mode' ) );
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-login-error-usesul3' ) );
 		}
 
 		// First, check normal login

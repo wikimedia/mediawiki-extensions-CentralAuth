@@ -2,14 +2,27 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use LogicException;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
+use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\Auth\AuthManager;
+use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
+use MediaWiki\Auth\Hook\AuthManagerVerifyAuthenticationHook;
+use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
+use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\SetupAfterCacheHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\ResourceLoader\Context;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyStartupSourceUrlsHook;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MobileContext;
+use MWExceptionHandler;
+use Wikimedia\NormalizedException\NormalizedException;
 
 /**
  * Ensure that the SSO domain cannot be used for anything that is unrelated to its purpose.
@@ -18,19 +31,62 @@ class SsoHookHandler implements
 	SetupAfterCacheHook,
 	GetUserPermissionsErrorsHook,
 	ApiCheckCanExecuteHook,
-	ResourceLoaderModifyStartupSourceUrlsHook
+	ResourceLoaderModifyStartupSourceUrlsHook,
+	AuthManagerFilterProvidersHook,
+	AuthManagerVerifyAuthenticationHook
 {
+	// Allowlists of things a user can do on the SSO domain.
+	// FIXME these should be configurable and/or come from extension attributes
+	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api' ];
+	private const ALLOWED_SPECIAL_PAGES = [ 'Userlogin', 'Userlogout', 'CreateAccount',
+		'PasswordReset', 'Captcha' ];
+	private const ALLOWED_API_MODULES = [
+		// needed for allowing any query API, even if we only want meta modules; it can be
+		// used to check page existence (which is unwanted functionality on the SSO domain),
+		// which is unfortunate but permissions will still be checked, so it's not a risk.
+		'query',
+		// allow login/signup directly via the API + help for those APIs
+		'clientlogin', 'createaccount', 'authmanagerinfo', 'paraminfo', 'help',
+		// APIs used during web login
+		'validatepassword', 'userinfo', 'webauthn', 'fancycaptchareload',
+		// generic meta APIs, there's a good chance something somewhere will use them
+		'siteinfo', 'globaluserinfo', 'tokens',
+	];
+
+	// List of authentication providers which should be skipped on the local login page in
+	// SUL3 mode, because they will be done on the shared domain instead.
+	// This is somewhat fragile, e.g. in case of class renamespacing. We inherit that from
+	// AuthManager and can't do much about it. It fails in the safe direction, though - on
+	// provider key mismatch there will be unnecessary extra checks.
+	private const DISALLOWED_LOCAL_PROVIDERS = [
+		// FIXME what about preauth providers like AbuseFilter which don't generate a form
+		//   but might prevent login and then the user ends up on a confusing login page?
+		// FIXME what about providers (if any) which generate a form but also do something else?
+		'preauth' => [
+			'CaptchaPreAuthenticationProvider',
+		],
+		'primaryauth' => [
+			TemporaryPasswordPrimaryAuthenticationProvider::class,
+			LocalPasswordPrimaryAuthenticationProvider::class,
+		],
+		'secondaryauth' => [
+			'OATHSecondaryAuthenticationProvider',
+		],
+	];
 
 	private UrlUtils $urlUtils;
+	private FilteredRequestTracker $filteredRequestTracker;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
 		UrlUtils $urlUtils,
+		FilteredRequestTracker $filteredRequestTracker,
 		SharedDomainUtils $sharedDomainUtils,
 		MobileContext $mobileContext = null
 	) {
 		$this->urlUtils = $urlUtils;
+		$this->filteredRequestTracker = $filteredRequestTracker;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->mobileContext = $mobileContext;
 	}
@@ -42,7 +98,7 @@ class SsoHookHandler implements
 			//   should be needed for login and signup so we can just throw unconditionally,
 			//   but this should be improved in the future.
 			// FIXME should not log a production error
-			if ( !in_array( MW_ENTRY_POINT, [ 'index', 'api' ], true ) ) {
+			if ( !in_array( MW_ENTRY_POINT, self::ALLOWED_ENTRY_POINTS, true ) ) {
 				throw new \RuntimeException( MW_ENTRY_POINT . ' endpoint is not allowed on the SSO domain' );
 			}
 		}
@@ -55,9 +111,7 @@ class SsoHookHandler implements
 				$result = wfMessage( 'badaccess-group0' );
 				return false;
 			}
-			// FIXME this should be an extension attribute eventually
-			$allowlist = [ 'Userlogin', 'Userlogout', 'CreateAccount', 'PasswordReset', 'Captcha' ];
-			foreach ( $allowlist as $name ) {
+			foreach ( self::ALLOWED_SPECIAL_PAGES as $name ) {
 				if ( $title->isSpecial( $name ) ) {
 					return true;
 				}
@@ -70,21 +124,7 @@ class SsoHookHandler implements
 	/** @inheritDoc */
 	public function onApiCheckCanExecute( $module, $user, &$message ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
-			// FIXME this should be an extension attribute eventually
-			$allowlist = [
-				// needed for allowing any query API, even if we only want meta modules; it can be
-				// used to check page existence (which is unwanted functionality on the SSO domain),
-				// which is unfortunate but permissions will still be checked, so it's not a risk.
-				'query',
-				// allow login/signup directly via the API + help for those APIs
-				'clientlogin', 'createaccount', 'authmanagerinfo', 'paraminfo', 'help',
-				// APIs used during web login
-				'validatepassword', 'userinfo', 'webauthn', 'fancycaptchareload',
-				// generic meta APIs, there's a good chance something somewhere will use them
-				'siteinfo', 'globaluserinfo', 'tokens',
-			];
-
-			if ( !in_array( $module->getModuleName(), $allowlist ) ) {
+			if ( !in_array( $module->getModuleName(), self::ALLOWED_API_MODULES ) ) {
 				$message = 'apierror-moduledisabled';
 				return false;
 			}
@@ -105,4 +145,62 @@ class SsoHookHandler implements
 		}
 		$urls['local'] = $local;
 	}
+
+	/**
+	 * If we are not on the shared domain and SUL3 is enabled, remove some authentication
+	 * providers. They will run after the redirect on shared domain, so it's not necessary to
+	 * run them locally, and on the local domain they would generate a login form, and we
+	 * don't want that.
+	 * @inheritDoc
+	 * @note
+	 */
+	public function onAuthManagerFilterProviders( array &$providers ): void {
+		$request = RequestContext::getMain()->getRequest();
+		if ( $this->sharedDomainUtils->isSul3Enabled( $request )
+			 && !$this->sharedDomainUtils->isSharedDomain()
+		) {
+			// We'll rely on CentralAuthSsoPreAuthenticationProvider to make sure filtering does not
+			// happen at the wrong time so make sure it's in place.
+			if ( !isset( $providers['preauth']['CentralAuthSsoPreAuthenticationProvider'] ) ) {
+				throw new LogicException( 'CentralAuthSsoPreAuthenticationProvider not found during SUL3 login' );
+			}
+
+			foreach ( self::DISALLOWED_LOCAL_PROVIDERS as $stage => $disallowedProviders ) {
+				foreach ( $disallowedProviders as $disallowedProvider ) {
+					unset( $providers[$stage][$disallowedProvider] );
+				}
+			}
+			// This is security-critical code. If these providers are removed but some
+			// non-redirect-based login is still possible, or the providers are erroneously
+			// removed on the shared domain as well, that would circumvent important security
+			// checks. To prevent mistakes, we sync with the behavior of the
+			// AuthManagerVerifyAuthentication hook.
+			$this->filteredRequestTracker->markRequestAsFiltered( $request );
+		}
+	}
+
+	/** @inheritDoc */
+	public function onAuthManagerVerifyAuthentication(
+		?UserIdentity $user,
+		AuthenticationResponse &$response,
+		AuthManager $authManager,
+		array $info
+	) {
+		if ( $this->filteredRequestTracker->isCurrentAuthenticationFlowFiltered( $authManager )
+			&& $info['primaryId'] !== CentralAuthRedirectingPrimaryAuthenticationProvider::class
+		) {
+			// If providers were filtered, but then authentication wasn't handled by redirecting,
+			// report and interrupt.
+			MWExceptionHandler::logException( new NormalizedException(
+				'Providers were filtered but redirecting provider was not the primary',
+				[
+					'user' => $user->getName(),
+					'result' => $response->status,
+				] + $info
+			) );
+			$response = AuthenticationResponse::newFail( wfMessage( 'internalerror' ) );
+			return false;
+		}
+	}
+
 }
