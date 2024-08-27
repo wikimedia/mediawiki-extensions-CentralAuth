@@ -19,6 +19,9 @@
  * @ingroup Maintenance
  */
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use LoggedUpdateMaintenance;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 

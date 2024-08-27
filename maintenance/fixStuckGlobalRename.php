@@ -1,5 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use DatabaseLogEntry;
+use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;

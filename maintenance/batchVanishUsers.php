@@ -18,15 +18,21 @@
  * @file
  */
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
 
+use InvalidArgumentException;
+use MailAddress;
+use Maintenance;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserIdentity;
+use UserMailer;
 use Wikimedia\Message\MessageSpecifier;
 
 class BatchVanishUsers extends Maintenance {

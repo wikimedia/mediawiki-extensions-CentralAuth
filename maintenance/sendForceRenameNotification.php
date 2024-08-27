@@ -1,5 +1,8 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;

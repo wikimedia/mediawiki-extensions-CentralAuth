@@ -19,6 +19,9 @@
  * @ingroup Maintenance
  */
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;

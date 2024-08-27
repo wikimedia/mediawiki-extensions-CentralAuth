@@ -1,5 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\CentralAuth\Maintenance;
+
+use Generator;
+use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;

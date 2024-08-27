@@ -404,7 +404,7 @@
 		"CentralAuthApiSessionProvider": "includes/session/CentralAuthApiSessionProvider.php",
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
 		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php",
-		"MigrateGuSalt": "maintenance/migrateGuSalt.php"
+		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\MigrateGuSalt": "maintenance/migrateGuSalt.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php",
