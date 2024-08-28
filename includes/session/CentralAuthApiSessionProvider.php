@@ -92,7 +92,8 @@ class CentralAuthApiSessionProvider
 
 		// NOTE: Call parent, because we override consumeToken() in this class
 		//       to operate indirectly via this hook.
-		if ( !parent::consumeToken( $token ) ) {
+		// (null check for T373507)
+		if ( $token === null || !parent::consumeToken( $token ) ) {
 			// Raced out trying to mark the token as expired
 			$message = ApiMessage::create(
 				'apierror-centralauth-badtoken',
