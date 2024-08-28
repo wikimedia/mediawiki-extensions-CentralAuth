@@ -267,6 +267,7 @@
 	"centralauth-log-status-none": "(כלום)",
 	"centralauth-log-status-oversighted": "העלמה",
 	"centralauth-login-error-locked": "אינך {{GENDER:$1|יכול|יכולה}} להיכנס כי חשבונך נעול גלובלית.",
+	"centralauth-login-error-usesul3": "לא ניתן להמשיך בהתחברות בשל תצורה שגויה. זאת שגיאת תוכנה והיא דווחה. נא להשתמש במקום זאת בכפתור {{int:centralauth-non-login-wiki-buttonlabel}}.",
 	"centralauth-logout-no-others": "הוּצאת באופן אוטומטי מהחשבון במיזמים האחרים של {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "מתבצעת יציאה מהחשבון {{PLURAL:$2|באתר אחר|באתרים אחרים}} של {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''בודק האם הסיסמאות שניתנו תואמות לחשבונות הנותרים שלא מוזגו...'''",
