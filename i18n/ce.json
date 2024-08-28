@@ -397,7 +397,7 @@
 	"globalrenamequeue-nav-openqueue": "Делина дехарш",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>Хаьржина аккаунтан цӀе тӀех тера йу хӀинцале а {{PLURAL:$2|йолуш йолу цӀерах}} йа цӀе хийциначу декъашхочун йу иза:</strong> $1",
 	"globalrenamequeue-request-approve-text": "ЦӀе хийцар тӀеэца",
-	"globalrenamequeue-request-cancel-text": "Цаоьшу",
+	"globalrenamequeue-request-cancel-text": "ДӀадаккхар",
 	"globalrenamequeue-request-comments-label": "Тидамбарш/комментареш",
 	"globalrenamequeue-request-deny-text": "ЦӀе хийца реза ма хила",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> цӀе хийцар доьху <strong>$3</strong> аьлла.",
