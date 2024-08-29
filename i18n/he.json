@@ -71,7 +71,7 @@
 	"centralauth-admin-info-unattached": "מספר החשבונות הבלתי־משויכים:",
 	"centralauth-admin-info-username": "שם משתמש:",
 	"centralauth-admin-info-username-rename": "שינוי שם",
-	"centralauth-admin-info-expired": "תוקף החשבון הזמני פג:",
+	"centralauth-admin-info-expired": "תוקף החשבון החולף פג:",
 	"centralauth-admin-intro": "הממשק הזה יכול לשמש לניהול חשבונות גלובליים.",
 	"centralauth-admin-list-attached-on": "שויך בתאריך",
 	"centralauth-admin-list-blocked": "מצב חסימה",
