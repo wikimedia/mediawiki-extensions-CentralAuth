@@ -286,6 +286,7 @@
 	"centralauth-log-status-none": "(هیچ)",
 	"centralauth-log-status-oversighted": "فرونشانی‌شده",
 	"centralauth-login-error-locked": "{{GENDER:$1|شما}} نمی‌توانید وارد شوید چون {{GENDER:$1|حسابتان}} به طور سراسری قفل شده است.",
+	"centralauth-login-error-usesul3": "ادامه دادن به روند ورود به‌دلیل پیکربندی نادرست امکان‌پذیر نیست. این یک خطای نرم‌افزاری است و گزارش نیز شده است. لطفاً در عوض از دکمهٔ {{int:centralauth-non-login-wiki-buttonlabel}} استفاده کنید.",
 	"centralauth-logout-no-others": "به طور خودکار از سایر پروژه‌های {{int:Centralauth-groupname}} خارج شده‌اید.",
 	"centralauth-logout-progress": "خارج‌سازی شما از دیگر {{PLURAL:$2|ویکی|ویکی‌های}} {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''مطابقت دادن رمز عبور واردشده با حساب‌های ادغام‌نشدهٔ باقی‌مانده...'''",

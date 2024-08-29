@@ -258,6 +258,7 @@
 	"centralauth-log-status-none": "(нема)",
 	"centralauth-log-status-oversighted": "притаен",
 	"centralauth-login-error-locked": "Не {{GENDER:$1|можете}} да се најавите бидејќи сметката {{GENDER:$1|ви}} е глобално заклучена.",
+	"centralauth-login-error-usesul3": "Не можам да продолжам со најавата заради погрешна поставеност. Ова е програмска грешка и истата е веќе пријавена. Наместо тоа, послужете се со копчето {{int:centralauth-non-login-wiki-buttonlabel}}.",
 	"centralauth-logout-no-others": "Автоматски сте одјавени од другите проекти на {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Ве одјавувам од {{PLURAL:$2|другото вики|другите викија}} на {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Проверка на наведената лозинка кај останатите неспоени сметки…'''",
