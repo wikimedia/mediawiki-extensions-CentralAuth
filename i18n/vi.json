@@ -25,7 +25,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
-	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục mà thành viên này có mặt",
+	"abusefilter-edit-builder-vars-global-user-groups": "Các nhóm toàn cục mà thành viên này có mặt tại ($1)",
 	"abusefilter-edit-builder-vars-global-account-editcount": "Số sửa đổi toàn cục của thành viên (khi mở tài khoản)",
 	"abusefilter-edit-builder-vars-global-account-groups": "Các nhóm toàn cục của thành viên (khi mở tài khoản)",
 	"action-centralauth-createlocal": "ép tạo tài khoản cục bộ",
