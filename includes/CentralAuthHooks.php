@@ -307,6 +307,9 @@ class CentralAuthHooks implements
 	 * @return bool
 	 */
 	public function onUserGetEmail( $user, &$email ) {
+		if ( MediaWikiServices::getInstance()->getUserNameUtils()->getCanonical( $user->getName() ) === false ) {
+			return true;
+		}
 		$ca = CentralAuthUser::getInstance( $user );
 		if ( $ca->isAttached() ) {
 			$email = $ca->getEmail();
@@ -401,7 +404,7 @@ class CentralAuthHooks implements
 		// anon (local) users based on name only will allow autocreation of
 		// local account based on global rights, see T316303
 		$anonUserOK = MediaWikiServices::getInstance()->getMainConfig()->get( 'CentralAuthStrict' );
-		if ( $user->canExist() ) {
+		if ( MediaWikiServices::getInstance()->getUserNameUtils()->getCanonical( $user->getName() ) !== false ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 
 			if ( $centralUser->exists()
