@@ -124,8 +124,9 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
-		if ( $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() ) &&
-			!$this->sharedDomainUtils->isSharedDomain()
+		if ( $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() )
+			&& !$this->sharedDomainUtils->isSharedDomain()
+			&& in_array( $action, [ AuthManager::ACTION_LOGIN, AuthManager::ACTION_CREATE ], true )
 		) {
 			return [];
 		}
