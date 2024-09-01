@@ -156,7 +156,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 			->willReturn( $this->getDb() );
 		$dbManager->method( 'getCentralReplicaDB' )
 			->willReturn( $this->getDb() );
-		$dbManager->method( 'getCentralDB' )
+		$dbManager->method( 'getCentralDBFromRecency' )
 			->willReturn( $this->getDb() );
 		return $dbManager;
 	}

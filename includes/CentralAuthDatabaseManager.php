@@ -2,6 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use DBAccessObjectUtils;
+use IDBAccessObject;
 use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\WikiMap\WikiMap;
@@ -113,17 +115,13 @@ class CentralAuthDatabaseManager {
 	}
 
 	/**
-	 *
-	 * @param int $index DB_PRIMARY or DB_REPLICA
-	 * @deprecated use {@link ::getCentralPrimaryDB}
-	 * 			   or {@link ::getCentralReplicaDB} instead
-	 * @return IDatabase
+	 * @param int $recency IDBAccessObject::READ_* constant
+	 * @return IReadableDatabase
 	 */
-	public function getCentralDB( int $index ): IDatabase {
-		if ( $index === DB_PRIMARY ) {
+	public function getCentralDBFromRecency( int $recency ): IReadableDatabase {
+		if ( DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST ) ) {
 			return $this->getCentralPrimaryDB();
 		} else {
-			// @phan-suppress-next-line PhanTypeMismatchReturnSuperType
 			return $this->getCentralReplicaDB();
 		}
 	}

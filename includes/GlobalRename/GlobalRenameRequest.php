@@ -22,6 +22,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use BadMethodCallException;
+use DBAccessObjectUtils;
 use IDBAccessObject;
 use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
@@ -372,7 +373,7 @@ class GlobalRenameRequest {
 		// New user creation checks against local wiki only using an API
 		// request, but we need to check against the central user table instead
 
-		if ( $flags & IDBAccessObject::READ_LATEST ) {
+		if ( DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST ) ) {
 			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $safe );
 		} else {
 			$centralUser = CentralAuthUser::getInstanceByName( $safe );
