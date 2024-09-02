@@ -18,6 +18,7 @@
 	"apierror-centralauth-notloggedin": "匿名使用者不可取得中央驗證令牌。",
 	"apierror-centralauth-renameinprogress": "使用者已被重新命名，不可使用。",
 	"apihelp-centralauthtoken-example-1": "取得中央驗證令牌",
+	"apihelp-centralauthtoken-extended-description": "傳回一個可用於驗證其他 wiki 上 API 請求的權杖。對於 API 請求的操作，請將其放入在 <var>centralauthtoken</var> GET 參數中。對於 REST API 請求，請新增<code>Authorization: CentralAuthToken {token}</code> 標頭。在 MediaWiki 前端邏輯裡，您可以使用<code>mediawiki.ForeignApi</code> ResourceLoader 模組。",
 	"apihelp-centralauthtoken-summary": "取得中央驗證令牌來對已連結的 wiki 做已授權的請求。",
 	"apihelp-createlocalaccount-example-1": "強制替 [[User:Example]] 建立本地帳號。",
 	"apihelp-createlocalaccount-param-reason": "建立本地帳號的原因",
@@ -37,7 +38,7 @@
 	"apihelp-globaluserrights-param-user": "全域使用者名稱。",
 	"apihelp-globaluserrights-param-userid": "全域使用者 ID。",
 	"apihelp-globaluserrights-summary": "加入/移除一位使用者至/從全域群組。",
-	"apihelp-main-param-centralauthtoken": "當使用跨網域 AJAX 請求（cross-domain AJAX request、CORS）來存取 API 時，使用此來認證目前的 SUL 使用者。在建立 CORS 請求前，於此 wiki 使用 <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> 來索取令牌。任一令牌每次只可使用一次，並且會在 10 秒後逾期。此僅可包含在任何預先請求，並也應該包含所請求的 URI 裡（而不是 POST 主體）。",
+	"apihelp-main-param-centralauthtoken": "當使用跨網域 AJAX 請求（cross-domain AJAX request、CORS）來存取 API 時，使用此來認證目前的 SUL 使用者。在建立 CORS 請求前，於此 wiki 使用 <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> 來索取權杖。任一令牌每次只可使用一次，並且會在 10 秒後逾期。此僅可包含在任何預先請求，並也應該包含所請求的 URI 裡（而不是 POST 主體）。",
 	"apihelp-query+globalallusers-example-1": "全域使用者清單",
 	"apihelp-query+globalallusers-example-2": "顯示以\"ABC\"為開頭全域使用者的一些訊息",
 	"apihelp-query+globalallusers-param-dir": "排序的方向。",
@@ -85,7 +86,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "更改此使用者的隱藏狀態，從全域使用者清單中隱藏或者禁止顯示。",
 	"apihelp-setglobalaccountstatus-param-locked": "變更此使用者的鎖定狀態。",
 	"apihelp-setglobalaccountstatus-param-reason": "變更使用者狀態的原因。",
-	"apihelp-setglobalaccountstatus-param-statecheck": "預期目前的<userid>:<username>:<hidden>:<locked>的可選MD5，以檢測編輯衝突。如果封鎖，設定<locked>為1，未封鎖則設定為0。",
+	"apihelp-setglobalaccountstatus-param-statecheck": "預期目前的 <samp>userid:username:hidden:locked</samp> 可選MD5。這可用來檢測編輯衝突。若未隱藏，則 <samp>hidden</samp> 的值必須為空字串或字串<code>lists</code> 或 <code>suppressed</code>。<samp>locked</samp> 的值為 1 代表封鎖，0 代表解封。例如：<samp>2128506:LeeSmith::0</samp> 或<samp>3839611:VandalGoblin:suppressed:1</samp>。",
 	"apihelp-setglobalaccountstatus-param-user": "欲變更狀態的使用者。",
 	"apihelp-setglobalaccountstatus-summary": "隱藏/鎖定（以及解除隱藏/鎖定）全域使用者帳號。"
 }
