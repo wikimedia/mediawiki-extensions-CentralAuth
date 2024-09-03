@@ -935,6 +935,9 @@
 					"TitleFactory",
 					"CentralAuth.CentralAuthTokenManager",
 					"CentralAuth.SharedDomainUtils"
+				],
+				"optional_services": [
+					"MobileFrontend.Context"
 				]
 			}
 		},

@@ -15,6 +15,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use MobileContext;
 use MWCryptRand;
 use RuntimeException;
 use StatusValue;
@@ -36,15 +37,18 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	private TitleFactory $titleFactory;
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
+	private ?MobileContext $mobileContext;
 
 	public function __construct(
 		TitleFactory $titleFactory,
 		CentralAuthTokenManager $tokenManager,
-		SharedDomainUtils $sharedDomainUtils
+		SharedDomainUtils $sharedDomainUtils,
+		?MobileContext $mobileContext
 	) {
 		$this->titleFactory = $titleFactory;
 		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
+		$this->mobileContext = $mobileContext;
 	}
 
 	/** @inheritDoc */
@@ -83,9 +87,16 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			'secret' => $secret,
 		] );
 
+		// For the most part, MediaWiki is not aware of mobile domains and uses the standard
+		// domain in all URLs it generates; they must be adjusted manually.
+		$returnToUrl = $req->returnToUrl;
+		if ( $this->mobileContext && $this->mobileContext->usingMobileDomain() ) {
+			$returnToUrl = $this->mobileContext->getMobileUrl( $returnToUrl );
+		}
+
 		$data = [
 			'secret' => $secret,
-			'returnUrl' => $req->returnToUrl,
+			'returnUrl' => $returnToUrl,
 		];
 		// ObjectCacheSessionExpiry will limit how long the local login process, which relies
 		// on the session, can be finished. Sync the expiry of this token (which will be used
