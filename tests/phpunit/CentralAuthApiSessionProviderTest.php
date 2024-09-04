@@ -145,4 +145,24 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$this->assertArrayHasKey( 'centralauthtoken', $params );
 	}
 
+	public function testOptionsRequestReuseToken() {
+		$user = $this->makeCentralAuthUser( 'Frank' );
+		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
+		$provider = $this->newSessionProvider();
+
+		$request = new class( [ 'centralauthtoken' => $token ] ) extends FauxRequest {
+			public function getMethod() {
+				return 'OPTIONS';
+			}
+		};
+
+		$result = $provider->provideSessionInfo( $request );
+		$this->assertSessionInfoOk( $result );
+
+		// The token should not have been consumed by the OPTIONS request,
+		// and using it again should succeed
+		$result = $provider->provideSessionInfo( $request );
+		$this->assertSessionInfoOk( $result );
+	}
+
 }
