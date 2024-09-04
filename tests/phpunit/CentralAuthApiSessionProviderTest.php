@@ -89,47 +89,6 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		return $provider;
 	}
 
-	private function runApiCheckCanExecute( WebRequest $request ) {
-		$user = $this->makeUser( 0, 'anon' );
-
-		$context = new RequestContext();
-		$context->setRequest( $request );
-		$context->setUser( $user );
-
-		$main = new ApiMain();
-		$main->setContext( $context );
-
-		$module = $this->getMockBuilder( ApiBase::class )
-			->setConstructorArgs( [ $main, 'test', '' ] )
-			->onlyMethods( [ 'execute' ] )
-			->getMock();
-
-		$message = 'hookaborted';
-		$ok = $this->hookContainer->run( 'ApiCheckCanExecute', [ $module, $user, &$message ] );
-
-		$this->assertTrue( $ok );
-	}
-
-	/**
-	 * Overridden to trigger deferred consumption of token
-	 */
-	public function testCannotReuseToken() {
-		$user = $this->makeCentralAuthUser( 'Frank' );
-		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
-		$provider = $this->newSessionProvider();
-
-		$request = new FauxRequest( [ 'centralauthtoken' => $token ] );
-		$result = $provider->provideSessionInfo( $request );
-		$this->assertSessionInfoOk( $result );
-
-		// consume token!
-		$this->runApiCheckCanExecute( $request );
-
-		// the token should now be unknown
-		$result = $provider->provideSessionInfo( $request );
-		$this->assertSessionInfoError( $request, $result, 'apierror-centralauth-badtoken', 'badtoken' );
-	}
-
 	/**
 	 * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\ApiHookHandler::onAPIGetAllowedParams
 	 */
