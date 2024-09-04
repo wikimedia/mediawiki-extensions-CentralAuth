@@ -21,11 +21,11 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use CentralAuthTestUser;
-use FauxRequest;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;

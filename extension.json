@@ -566,7 +566,6 @@
 				"MainConfig",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.SharedDomainUtils"
-
 			]
 		},
 		"noservices": {
@@ -894,7 +893,10 @@
 		},
 		"CentralAuthBlockAppealWikidataIds": {
 			"description": "List of Wikidata ids associated with content relevant to appealing blocked accounts.",
-			"value": [ "Q13360396", "Q175291" ]
+			"value": [
+				"Q13360396",
+				"Q175291"
+			]
 		},
 		"CentralAuthWikidataApiUrl": {
 			"description": "URL to the Wikidata API used to find content.",
