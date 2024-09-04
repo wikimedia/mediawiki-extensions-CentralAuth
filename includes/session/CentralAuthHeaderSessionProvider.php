@@ -16,7 +16,7 @@ use MediaWiki\Request\WebRequest;
 class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 
 	/** @inheritDoc */
-	protected function getTokenFromRequest( WebRequest $request ) {
+	protected function getTokenDataFromRequest( WebRequest $request ) {
 		$authHeader = $request->getHeader( 'Authorization' );
 		if ( $authHeader === null ) {
 			return null;
@@ -26,7 +26,13 @@ class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 			return null;
 		}
 
-		return $match[1];
+		$oneTimeToken = $match[1];
+		if ( $oneTimeToken === null ) {
+			return null;
+		}
+
+		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
+		return $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
 	}
 
 	/**
