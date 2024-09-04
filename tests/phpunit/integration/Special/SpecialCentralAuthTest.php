@@ -21,6 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use CentralAuthTestUser;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth;
@@ -31,6 +32,8 @@ use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
 use TestUserRegistry;
+use Wikimedia\Parsoid\Utils\DOMCompat;
+use Wikimedia\Parsoid\Utils\DOMUtils;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -225,7 +228,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
 		);
 		$targetUser->save( $this->getDb() );
-		$this->verifyForExistingGlobalAccount( $targetUsername, false, false );
+		// Return the HTML for the executed special page for tests which extend this to make further assertions.
+		return $this->verifyForExistingGlobalAccount( $targetUsername, false, false );
 	}
 
 	public function testViewForExistingGlobalTemporaryAccount() {
@@ -243,5 +247,29 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, false, false );
 		// Verify that the temporary account is marked as expired.
 		$this->assertStringContainsString( '(centralauth-admin-info-expired', $html );
+	}
+
+	public function testViewForExistingGlobalAccountWithCustomInfoFields() {
+		// Set a custom hook handler for the CentralAuthInfoFields hook to test that items are correctly added by it.
+		$this->setTemporaryHook(
+			'CentralAuthInfoFields',
+			function ( CentralAuthUser $centralAuthUser, IContextSource $context, &$attribs ) {
+				$this->assertIsArray( $attribs );
+				$attribs[] = [
+					'label' => 'centralauth-custom-info-field-for-test',
+					'data' => 'Custom Info Field Data',
+				];
+			}
+		);
+		$html = $this->testViewForExistingGlobalAccount();
+		// Verify that the custom field data was added to the info fieldset.
+		$specialPageDocument = DOMUtils::parseHTML( $html );
+		$centralAuthInfoElement = DOMCompat::getElementById( $specialPageDocument, 'mw-centralauth-info' );
+		$this->assertStringContainsString(
+			'(centralauth-custom-info-field-for-test', $centralAuthInfoElement->textContent
+		);
+		$this->assertStringContainsString(
+			'Custom Info Field Data', $centralAuthInfoElement->textContent
+		);
 	}
 }
