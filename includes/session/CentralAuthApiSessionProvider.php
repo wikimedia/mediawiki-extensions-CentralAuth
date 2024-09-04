@@ -16,18 +16,30 @@ use MediaWiki\Session\SessionInfo;
  */
 class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 
-	/**
-	 * @param WebRequest $request
-	 *
-	 * @return string|null
-	 */
-	protected function getTokenFromRequest( WebRequest $request ) {
+	/** @inheritDoc */
+	protected function getTokenDataFromRequest( WebRequest $request ) {
 		// Only relevant in the API
 		if ( !defined( 'MW_API' ) ) {
 			return null;
 		}
 
-		return $request->getVal( 'centralauthtoken' );
+		$oneTimeToken = $request->getVal( 'centralauthtoken' );
+		if ( $oneTimeToken === null ) {
+			return null;
+		}
+
+		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
+
+		if ( $request->getMethod() === 'OPTIONS' ) {
+			// Do not delete the tokenized data on OPTIONS requests, as they are generated automatically
+			// by the browser as part of the CORS preflight mechanism, with the same URL as the real
+			// GET/POST request (including the 'centralauthtoken' parameter). Deleting it here would cause
+			// the subsequent real request to fail. There is no way to avoid that.
+			// https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests
+			return $this->tokenManager->detokenize( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
+		} else {
+			return $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
+		}
 	}
 
 	/**

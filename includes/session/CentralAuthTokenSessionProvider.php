@@ -25,7 +25,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthSessionManager $sessionManager;
-	private CentralAuthTokenManager $tokenManager;
+	protected CentralAuthTokenManager $tokenManager;
 
 	/**
 	 * @param UserIdentityLookup $userIdentityLookup
@@ -72,22 +72,19 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 
 	/**
 	 * @param WebRequest $request
-	 *
-	 * @return string|null
+	 * @return mixed `null` indicates that no token was provided, `false` indicates an invalid token,
+	 *   any other value is detokenized data
 	 */
-	abstract protected function getTokenFromRequest( WebRequest $request );
+	abstract protected function getTokenDataFromRequest( WebRequest $request );
 
 	/** @inheritDoc */
 	public function provideSessionInfo( WebRequest $request ) {
-		$oneTimeToken = $this->getTokenFromRequest( $request );
-		if ( $oneTimeToken === null ) {
+		$data = $this->getTokenDataFromRequest( $request );
+		if ( $data === null ) {
 			return null;
 		}
 
 		$this->logger->debug( __METHOD__ . ': Found a token!' );
-
-		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
-		$data = $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
 
 		if ( !is_array( $data ) ||
 			!isset( $data['userName'] ) ||
