@@ -45,13 +45,9 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @dataProvider provideFlags
 	 */
-	public function testGetDefinedGroups( int $flags, int $readIndex ) {
+	public function testGetDefinedGroups( int $flags ) {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		if ( $readIndex === DB_REPLICA ) {
-			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->getDb() );
-		} else {
-			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->getDb() );
-		}
+		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $this->getDb() );
 
 		$lookup = new GlobalGroupLookup( $dbManager );
 		$groups = $lookup->getDefinedGroups( $flags );
@@ -62,13 +58,9 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * @dataProvider provideFlags
 	 */
-	public function testGetRightsForGroup( int $flags, int $readIndex ) {
+	public function testGetRightsForGroup( int $flags ) {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		if ( $readIndex === DB_REPLICA ) {
-			$dbManager->method( 'getCentralReplicaDB' )->willReturn( $this->getDb() );
-		} else {
-			$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->getDb() );
-		}
+		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $this->getDb() );
 
 		$lookup = new GlobalGroupLookup( $dbManager );
 		$stewardRights = $lookup->getRightsForGroup( 'steward', $flags );
@@ -82,8 +74,8 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideFlags(): array {
 		return [
-			'READ_NORMAL' => [ IDBAccessObject::READ_NORMAL, DB_REPLICA ],
-			'READ_LATEST' => [ IDBAccessObject::READ_LATEST, DB_PRIMARY ],
+			'READ_NORMAL' => [ IDBAccessObject::READ_NORMAL ],
+			'READ_LATEST' => [ IDBAccessObject::READ_LATEST ],
 		];
 	}
 }

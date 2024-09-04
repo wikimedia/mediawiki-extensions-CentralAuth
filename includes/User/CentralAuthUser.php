@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use BadMethodCallException;
 use CentralAuthSessionProvider;
+use DBAccessObjectUtils;
 use Exception;
 use IDBAccessObject;
 use InvalidArgumentException;
@@ -192,7 +193,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function __construct( $username, $flags = 0 ) {
 		$this->mName = $username;
 		$this->resetState();
-		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
+		if ( DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST ) ) {
 			$this->mFromPrimary = true;
 		}
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );

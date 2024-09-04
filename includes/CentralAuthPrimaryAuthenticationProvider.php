@@ -21,6 +21,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use DBAccessObjectUtils;
 use IDBAccessObject;
 use LogicException;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
@@ -408,7 +409,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			return $status;
 		}
 
-		$centralUser = ( $options['flags'] & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST
+		$centralUser = DBAccessObjectUtils::hasFlags( $options['flags'], IDBAccessObject::READ_LATEST )
 			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
 

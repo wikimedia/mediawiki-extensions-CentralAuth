@@ -169,11 +169,7 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function nameHasPendingRequest( string $newname, int $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
-			$dbr = $this->dbManager->getCentralPrimaryDB();
-		} else {
-			$dbr = $this->dbManager->getCentralReplicaDB();
-		}
+		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
@@ -197,11 +193,7 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function currentNameHasPendingRequest( string $name, int $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
-			$dbr = $this->dbManager->getCentralPrimaryDB();
-		} else {
-			$dbr = $this->dbManager->getCentralReplicaDB();
-		}
+		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
@@ -225,11 +217,7 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function currentNameHasApprovedVanish( string $name, int $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
-			$dbr = $this->dbManager->getCentralPrimaryDB();
-		} else {
-			$dbr = $this->dbManager->getCentralReplicaDB();
-		}
+		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
@@ -254,11 +242,7 @@ class GlobalRenameRequestStore {
 	 * @return stdClass|false Row as object or false if not found
 	 */
 	protected function fetchRowFromDB( array $where, int $flags = IDBAccessObject::READ_NORMAL ) {
-		if ( ( $flags & IDBAccessObject::READ_LATEST ) == IDBAccessObject::READ_LATEST ) {
-			$dbr = $this->dbManager->getCentralPrimaryDB();
-		} else {
-			$dbr = $this->dbManager->getCentralReplicaDB();
-		}
+		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
 
 		return $dbr->newSelectQueryBuilder()
 			->select( [

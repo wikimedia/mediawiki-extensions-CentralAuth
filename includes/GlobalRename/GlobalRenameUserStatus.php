@@ -61,11 +61,7 @@ class GlobalRenameUserStatus {
 	 * @return string[] (oldname, newname)
 	 */
 	public function getNames( ?string $wiki = null, int $recency = IDBAccessObject::READ_NORMAL ): array {
-		if ( ( IDBAccessObject::READ_LATEST & $recency ) == IDBAccessObject::READ_LATEST ) {
-			$db = $this->databaseManager->getCentralPrimaryDB();
-		} else {
-			$db = $this->databaseManager->getCentralReplicaDB();
-		}
+		$db = $this->databaseManager->getCentralDBFromRecency( $recency );
 
 		$where = [ $this->getNameWhereClause( $db ) ];
 
@@ -100,11 +96,7 @@ class GlobalRenameUserStatus {
 	 * @return string[]
 	 */
 	public function getStatuses( int $recency = IDBAccessObject::READ_NORMAL ): array {
-		if ( ( IDBAccessObject::READ_LATEST & $recency ) == IDBAccessObject::READ_LATEST ) {
-			$db = $this->databaseManager->getCentralPrimaryDB();
-		} else {
-			$db = $this->databaseManager->getCentralReplicaDB();
-		}
+		$db = $this->databaseManager->getCentralDBFromRecency( $recency );
 
 		$res = $db->newSelectQueryBuilder()
 			->select( [ 'ru_wiki', 'ru_status' ] )

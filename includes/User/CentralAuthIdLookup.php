@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
+use DBAccessObjectUtils;
 use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
@@ -50,10 +51,8 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromPrimaryDb = ( $flags & IDBAccessObject::READ_LATEST ) === IDBAccessObject::READ_LATEST;
-		$db = $this->databaseManager->getCentralDB(
-			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
-		);
+		$fromPrimaryDb = DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST );
+		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
 
 		$res = $db->newSelectQueryBuilder()
 			->queryInfo( CentralAuthUser::selectQueryInfo() )
@@ -83,10 +82,8 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromPrimaryDb = ( $flags & IDBAccessObject::READ_LATEST ) === IDBAccessObject::READ_LATEST;
-		$db = $this->databaseManager->getCentralDB(
-			$fromPrimaryDb ? DB_PRIMARY : DB_REPLICA
-		);
+		$fromPrimaryDb = DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST );
+		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
 
 		$res = $db->newSelectQueryBuilder()
 			->queryInfo( CentralAuthUser::selectQueryInfo() )
