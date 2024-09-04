@@ -125,7 +125,7 @@ class SsoHookHandler implements
 	public function onApiCheckCanExecute( $module, $user, &$message ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			if ( !in_array( $module->getModuleName(), self::ALLOWED_API_MODULES ) ) {
-				$message = 'apierror-moduledisabled';
+				$message = [ 'apierror-moduledisabled', $module->getModuleName() ];
 				return false;
 			}
 		}
