@@ -103,16 +103,18 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	}
 
 	/** @inheritDoc */
-	public function isAttached( $user, $wikiId = UserIdentity::LOCAL ): bool {
+	public function isAttached( UserIdentity $user, $wikiId = UserIdentity::LOCAL ): bool {
 		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
 		$centralUser = CentralAuthUser::getInstance( $user );
-		return $centralUser->getId() != 0 && $centralUser->attachedOn( $wikiId );
+		return $centralUser->exists() && $centralUser->attachedOn( $wikiId );
 	}
 
 	/** @inheritDoc */
 	public function centralIdFromLocalUser(
-		$user, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
+		UserIdentity $user, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): int {
+		// This is only an optimization to take advantage of cache in CentralAuthUser.
+		// The result should be the same as calling the parent method.
 		return $this->isAttached( $user ) ? CentralAuthUser::getInstance( $user )->getId() : 0;
 	}
 
