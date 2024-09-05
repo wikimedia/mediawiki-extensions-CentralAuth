@@ -7,7 +7,6 @@ use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
@@ -194,9 +193,9 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 		return [
 			[ 'GlobalUser', 'enwiki', true ],
 			[ 'GlobalUser', 'foowiki', false ],
-			[ 'GlobalUser', UserIdentityValue::LOCAL, true ],
-			[ 'UTSysop', UserIdentityValue::LOCAL, false ],
-			[ 'DoesNotExist', UserIdentityValue::LOCAL, false ],
+			[ 'GlobalUser', null, true ],
+			[ 'UTSysop', null, false ],
+			[ 'DoesNotExist', null, false ],
 		];
 	}
 
@@ -207,7 +206,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 	 * @param bool $succeed
 	 */
 	public function testIsAttached( $username, $wikiId, $succeed ) {
-		$user = new UserIdentityValue( 0, $username, $wikiId );
+		$user = User::newFromName( $username );
 		$lookup = $this->newLookup();
 		$this->assertSame( $succeed, $lookup->isAttached( $user, $wikiId ) );
 	}
