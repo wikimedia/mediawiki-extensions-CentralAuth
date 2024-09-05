@@ -103,22 +103,16 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	}
 
 	/** @inheritDoc */
-	public function isAttached( UserIdentity $user, $wikiId = UserIdentity::LOCAL ): bool {
-		// Not sure what it would mean to have different wiki IDs in the UserIdentity object and
-		// provided here, but probably nothing good.
-		$user->assertWiki( $wikiId );
-
+	public function isAttached( $user, $wikiId = UserIdentity::LOCAL ): bool {
 		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
 		$centralUser = CentralAuthUser::getInstance( $user );
-		return $centralUser->exists() && $centralUser->attachedOn( $wikiId );
+		return $centralUser->getId() != 0 && $centralUser->attachedOn( $wikiId );
 	}
 
 	/** @inheritDoc */
 	public function centralIdFromLocalUser(
-		UserIdentity $user, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
+		$user, $audience = self::AUDIENCE_PUBLIC, $flags = IDBAccessObject::READ_NORMAL
 	): int {
-		// This is only an optimization to take advantage of cache in CentralAuthUser.
-		// The result should be the same as calling the parent method.
 		return $this->isAttached( $user ) ? CentralAuthUser::getInstance( $user )->getId() : 0;
 	}
 
