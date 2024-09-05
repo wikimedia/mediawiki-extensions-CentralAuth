@@ -2136,7 +2136,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $suppress ) {
 			[ , $lang ] = $wgConf->siteFromDB( $wiki );
-			if ( !MediaWikiServices::getInstance()->getLanguageNameUtils()->isSupportedLanguage( $lang ) ) {
+			if ( !MediaWikiServices::getInstance()->getLanguageNameUtils()->isSupportedLanguage( $lang ?? '' ) ) {
 				$lang = 'en';
 			}
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )

@@ -26,7 +26,9 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
@@ -34,6 +36,7 @@ use SpecialPageTestBase;
 use TestUserRegistry;
 use Wikimedia\Parsoid\Utils\DOMCompat;
 use Wikimedia\Parsoid\Utils\DOMUtils;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -129,7 +132,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		);
 		$targetUser->save( $this->getDb() );
 		if ( $hasSuppressRight ) {
-			$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, false );
+			$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, false, false );
 			// Verify that Special:CentralAuth says the account is suppressed
 			$this->assertStringContainsString( '(centralauth-admin-hidden-oversight', $html );
 		} else {
@@ -189,37 +192,105 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	/**
+	 * Calls DOMCompat::getElementById, expects that it returns a valid Element object and then returns
+	 * the HTML of that Element.
+	 *
+	 * @param string $html The HTML to search through
+	 * @param string $id The ID to search for, excluding the "#" character
+	 * @return string
+	 */
+	private function assertAndGetByElementId( string $html, string $id ): string {
+		$specialPageDocument = DOMUtils::parseHTML( $html );
+		$element = DOMCompat::getElementById( $specialPageDocument, $id );
+		$this->assertNotNull( $element, "Could not find element with ID $id in $html" );
+		return DOMCompat::getInnerHTML( $element );
+	}
+
+	/**
+	 * Verifies that the list of local accounts (wiki lists) is present on the Special:CentralAuth page.
+	 *
+	 * @param string $html The HTML of the executed special page
+	 * @param bool $userCanLock Whether the user has the centralauth-lock right.
+	 */
+	private function verifyStatusFormShownIfUserHasRightsToView(
+		string $html, bool $userCanLock, bool $userCanSuppress
+	) {
+		if ( !$userCanLock ) {
+			// Verify that the status form is not shown
+			$this->assertStringNotContainsString( '(centralauth-admin-status', $html );
+			return;
+		}
+
+		// Verify that the status form heading and intro is present
+		$this->assertStringContainsString( '(centralauth-admin-status', $html );
+		$this->assertStringContainsString( '(centralauth-admin-status-intro)', $html );
+		// Check that the "locked" field and radio options are present
+		$lockedField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-status-locked' );
+		$this->assertStringContainsString( '(centralauth-admin-status-locked-no', $lockedField );
+		$this->assertStringContainsString( '(centralauth-admin-status-locked-yes', $lockedField );
+		// Check that the "hidden" field and radio options are present
+		$hiddenField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-status-hidden' );
+		$this->assertStringContainsString( '(centralauth-admin-status-hidden-no', $hiddenField );
+		// The hidden-list and hidden-oversight options should be present only if the user has the suppress right
+		if ( $userCanSuppress ) {
+			$this->assertStringContainsString( '(centralauth-admin-status-hidden-list', $hiddenField );
+			$this->assertStringContainsString( '(centralauth-admin-status-hidden-oversight', $hiddenField );
+		} else {
+			$this->assertStringNotContainsString( '(centralauth-admin-status-hidden-list', $hiddenField );
+			$this->assertStringNotContainsString( '(centralauth-admin-status-hidden-oversight', $hiddenField );
+		}
+		// Check that the reason field is there
+		$reasonDropdownField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-reason' );
+		$this->assertStringContainsString( '(centralauth-admin-status-reasons', $reasonDropdownField );
+		$this->assertStringContainsString( '(centralauth-admin-reason-other-select', $reasonDropdownField );
+		$this->assertAndGetByElementId( $html, 'mw-centralauth-admin-reason-other' );
+	}
+
+	/**
 	 * @param string $targetUsername The target parameter value specified when loading Special:CentralAuth
 	 * @param bool $userCanSuppress Whether the viewing authority has the centralauth-suppress right
-	 * @param bool $userCanMerge Whether the viewing authority has the centralauth-unmerge right
+	 * @param bool $userCanUnmerge Whether the viewing authority has the centralauth-unmerge right
+	 * @param bool $userCanLock Whether the viewing authority has the centralauth-lock right
+	 * @param WebRequest|null $request The request to use when loading the special page. Optional.
 	 * @return string
 	 */
 	private function verifyForExistingGlobalAccount(
-		string $targetUsername, bool $userCanSuppress, bool $userCanMerge
+		string $targetUsername, bool $userCanSuppress, bool $userCanUnmerge, bool $userCanLock,
+		?WebRequest $request = null
 	): string {
+		// Explicitly set the user's language as qqx as some messages look at the user's language and not the request
+		// language.
+		$this->setUserLang( 'qqx' );
+		// Prevent the content langauge being used for the reason fields (so that we can assert against the
+		// message key using the qqx language).
+		$this->overrideConfigValue( MainConfigNames::ForceUIMsgAsContentMsg, [
+			'centralauth-admin-status-reasons',
+			'centralauth-admin-reason-other-select',
+		] );
 		$authorityRights = [];
 		if ( $userCanSuppress ) {
 			$authorityRights[] = 'centralauth-suppress';
 		}
-		if ( $userCanMerge ) {
+		if ( $userCanUnmerge ) {
 			$authorityRights[] = 'centralauth-unmerge';
+		}
+		if ( $userCanLock ) {
+			$authorityRights[] = 'centralauth-lock';
 		}
 		$authority = $this->mockRegisteredAuthorityWithPermissions( $authorityRights );
 		// Execute the special page with the username specified via the target parameter
-		$fauxRequest = new FauxRequest();
-		$fauxRequest->setVal( 'target', $targetUsername );
-		[ $html ] = $this->executeSpecialPage( '', $fauxRequest, null, $authority );
-		// Verify that the username form is shown
-		$this->verifyUsernameFormPresent( $html, $userCanSuppress || $userCanMerge );
-		// Verify that the wiki list is present
-		$this->verifyWikiListPresent( $html, $userCanMerge );
-		// Verify that the info fieldset is present
+		$request = $request ?? new FauxRequest();
+		$request->setVal( 'target', $targetUsername );
+		[ $html ] = $this->executeSpecialPage( '', $request, null, $authority );
+		// Verify that the fieldsets for the page are there
+		$this->verifyUsernameFormPresent( $html, $userCanSuppress || $userCanUnmerge || $userCanLock );
+		$this->verifyStatusFormShownIfUserHasRightsToView( $html, $userCanLock, $userCanSuppress );
+		$this->verifyWikiListPresent( $html, $userCanUnmerge );
 		$this->verifyInfoFieldsetPresent( $html );
 		return $html;
 	}
 
-	public function testViewForExistingGlobalAccount() {
-		// Create a test CentralAuth user for the test if no username was provided to the method.
+	private function getTestCentralAuthUser() {
 		$targetUsername = 'GlobalTestUser' . TestUserRegistry::getNextId();
 		$targetUser = new CentralAuthTestUser(
 			$targetUsername, 'GUP@ssword',
@@ -227,8 +298,24 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
 		);
 		$targetUser->save( $this->getDb() );
+		return $targetUsername;
+	}
+
+	/** @dataProvider provideViewForExistingGlobalAccount */
+	public function testViewForExistingGlobalAccount( $userCanSuppress, $userCanUnmerge, $userCanLock ) {
+		$targetUsername = $this->getTestCentralAuthUser();
 		// Return the HTML for the executed special page for tests which extend this to make further assertions.
-		return $this->verifyForExistingGlobalAccount( $targetUsername, false, false );
+		return $this->verifyForExistingGlobalAccount(
+			$targetUsername, $userCanSuppress, $userCanUnmerge, $userCanLock
+		);
+	}
+
+	public static function provideViewForExistingGlobalAccount() {
+		return [
+			'User cannot suppress, merge, or lock' => [ false, false, false ],
+			'User can lock, but not merge or suppress' => [ false, false, true ],
+			'User can merge, suppress, and lock' => [ true, true, true ],
+		];
 	}
 
 	public function testViewForExistingGlobalTemporaryAccount() {
@@ -243,7 +330,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
 		);
 		$targetUser->save( $this->getDb() );
-		$html = $this->verifyForExistingGlobalAccount( $targetUsername, false, false );
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, false, false, false );
 		// Verify that the temporary account is marked as expired.
 		$this->assertStringContainsString( '(centralauth-admin-info-expired', $html );
 	}
@@ -260,7 +347,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 				];
 			}
 		);
-		$html = $this->testViewForExistingGlobalAccount();
+		$html = $this->testViewForExistingGlobalAccount( false, false, false );
 		// Verify that the custom field data was added to the info fieldset.
 		$specialPageDocument = DOMUtils::parseHTML( $html );
 		$centralAuthInfoElement = DOMCompat::getElementById( $specialPageDocument, 'mw-centralauth-info' );
@@ -270,5 +357,183 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertStringContainsString(
 			'Custom Info Field Data', $centralAuthInfoElement->textContent
 		);
+	}
+
+	private function verifyForExistingGlobalAccountOnFormSubmission(
+		string $targetUsername, array $requestData, bool $userCanSuppress, bool $userCanUnmerge, bool $userCanLock
+	): string {
+		// Add fields to the request and set that the request was posted
+		$fauxRequest = new FauxRequest( $requestData, true );
+		return $this->verifyForExistingGlobalAccount(
+			$targetUsername, $userCanSuppress, $userCanUnmerge, $userCanLock, $fauxRequest
+		);
+	}
+
+	/** @dataProvider provideAdminStatusFormSubmissionForUserWithoutNecessaryRights */
+	public function testAdminStatusFormSubmissionForUserWithoutNecessaryRights(
+		$userCanLock, $wpStatusHiddenValue, $expectedErrorMessageKey
+	) {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$userStateBeforeExecution = $targetUser->getStateHash( true );
+		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
+			$targetUsername,
+			[
+				'wpReason' => 'test',
+				'wpReasonList' => 'other',
+				'wpMethod' => 'set-status',
+				'wpStatusLocked' => 1,
+				'wpStatusHidden' => $wpStatusHiddenValue,
+				'wpUserState' => $userStateBeforeExecution,
+			],
+			false,
+			true,
+			$userCanLock
+		);
+		$this->assertStringContainsString( $expectedErrorMessageKey, $html );
+		$this->assertSame(
+			$targetUser->getStateHash( true ), $userStateBeforeExecution,
+			"Form should have not submitted successfully"
+		);
+	}
+
+	public static function provideAdminStatusFormSubmissionForUserWithoutNecessaryRights() {
+		return [
+			'User does not have rights to lock' => [
+				false, CentralAuthUser::HIDDEN_LEVEL_NONE, '(centralauth-admin-bad-input',
+			],
+			'User does not have rights to suppress' => [
+				true, CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, '(centralauth-admin-not-authorized)',
+			],
+		];
+	}
+
+	public function testSetStatusFormForStateCheckMismatch() {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$userStateBeforeExecution = $targetUser->getStateHash( true );
+		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
+			$targetUsername,
+			[
+				'wpReason' => 'test',
+				'wpReasonList' => 'other',
+				'wpMethod' => 'set-status',
+				'wpStatusLocked' => 1,
+				'wpStatusHidden' => 0,
+				'wpUserState' => 'abcdef',
+			],
+			false,
+			true,
+			true
+		);
+		$this->assertStringContainsString( '(centralauth-state-mismatch)', $html );
+		$this->assertSame(
+			$targetUser->getStateHash( true ), $userStateBeforeExecution,
+			"Form should have not submitted successfully"
+		);
+	}
+
+	private function commonSubmitStatusFormForSuccess(
+		CentralAuthUser $targetCentralAuthUser, array $requestData
+	): string {
+		$userState = $targetCentralAuthUser->getStateHash( true );
+		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
+			$targetCentralAuthUser->getName(),
+			$requestData,
+			true,
+			true,
+			true
+		);
+		// The state hash should change if the form was submitted successfully.
+		$this->assertNotSame(
+			$targetCentralAuthUser->getStateHash( true ), $userState,
+			"Form should have been submitted successfully"
+		);
+		return $html;
+	}
+
+	/**
+	 * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+	 */
+	public function testSetStatusFormForLockingUserThenUnlockingUser() {
+		// Get our testing global account
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		// First use the special page to lock a user
+		$htmlForLockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
+			'wpReason' => 'test',
+			'wpReasonList' => 'other',
+			'wpMethod' => 'set-status',
+			'wpStatusLocked' => 1,
+			'wpUserState' => $targetUser->getStateHash( true ),
+		] );
+		// Assert that the "global account changes" fieldset is shown to the user. It is hidden if the request did not
+		// actually perform any status changes.
+		$this->assertStringContainsString( '(centralauth-admin-logsnippet', $htmlForLockSubmission );
+		// Verify that user is actually locked, both by checking the special page information and the user itself
+		$lockedInfoField = $this->assertAndGetByElementId( $htmlForLockSubmission, 'mw-centralauth-admin-info-locked' );
+		$this->assertStringContainsString( '(centralauth-admin-yes)', $lockedInfoField );
+		$targetUser->invalidateCache();
+		$this->assertTrue( $targetUser->isLocked() );
+		// Check that the reason used for the lock is as expected
+		$this->newSelectQueryBuilder()
+			->select( 'comment_text' )
+			->from( 'logging' )
+			->join( 'comment', null, 'comment_id=log_comment_id' )
+			->where( [ 'log_action' => 'setstatus' ] )
+			->assertFieldValue( 'test' );
+		// Use the special page to unlock the user
+		$htmlForUnlockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
+			'wpReason' => 'abc',
+			'wpReasonList' => 'Testingabc',
+			'wpMethod' => 'set-status',
+			'wpStatusLocked' => 0,
+			'wpUserState' => $targetUser->getStateHash( true ),
+		] );
+		// Verify that user is actually locked, both by checking the special page information and the user itself
+		$this->assertNull( DOMCompat::getElementById(
+			DOMUtils::parseHTML( $htmlForUnlockSubmission ), 'mw-centralauth-admin-info-locked'
+		) );
+		$targetUser->invalidateCache();
+		$this->assertFalse( $targetUser->isLocked() );
+		// Check that the reason used for the unlock is as expected
+		$this->newSelectQueryBuilder()
+			->select( 'comment_text' )
+			->from( 'logging' )
+			->join( 'comment', null, 'comment_id=log_comment_id' )
+			->where( [ 'log_action' => 'setstatus' ] )
+			->orderBy( 'log_timestamp', SelectQueryBuilder::SORT_DESC )
+			->limit( 1 )
+			->assertFieldValue( 'Testingabc: abc' );
+	}
+
+	/**
+	 * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+	 */
+	public function testSetStatusFormForSuppressingUser() {
+		// Get our testing global account
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		// Use the special page to suppress the account
+		$htmlForLockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
+			'wpReason' => 'test',
+			'wpReasonList' => 'other',
+			'wpMethod' => 'set-status',
+			'wpStatusLocked' => 0,
+			'wpStatusHidden' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+			'wpUserState' => $targetUser->getStateHash( true ),
+		] );
+		// Verify that user is actually suppressed, both by checking the special page information and the user itself
+		$hiddenFieldInfo = $this->assertAndGetByElementId( $htmlForLockSubmission, 'mw-centralauth-admin-info-hidden' );
+		$this->assertStringContainsString( '(centralauth-admin-hidden-oversight)', $hiddenFieldInfo );
+		$targetUser->invalidateCache();
+		$this->assertTrue( $targetUser->isSuppressed() );
+		// Check that the reason used for the suppress is as expected
+		$this->newSelectQueryBuilder()
+			->select( 'comment_text' )
+			->from( 'logging' )
+			->join( 'comment', null, 'comment_id=log_comment_id' )
+			->where( [ 'log_action' => 'setstatus' ] )
+			->assertFieldValue( 'test' );
 	}
 }
