@@ -5,6 +5,10 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Title\TitleFactory;
+use MediaWiki\WikiMap\WikiMap;
+use MobileContext;
+use RuntimeException;
 use Wikimedia\Assert\Assert;
 
 /**
@@ -14,13 +18,18 @@ use Wikimedia\Assert\Assert;
 class SharedDomainUtils {
 
 	private Config $config;
-
+	private TitleFactory $titleFactory;
 	private bool $isSharedDomain;
+	private ?MobileContext $mobileContext = null;
 
 	public function __construct(
-		Config $config
+		Config $config,
+		TitleFactory $titleFactory,
+		?MobileContext $mobileContext = null
 	) {
 		$this->config = $config;
+		$this->titleFactory = $titleFactory;
+		$this->mobileContext = $mobileContext;
 	}
 
 	/**
@@ -120,6 +129,46 @@ class SharedDomainUtils {
 			!( $this->isSharedDomain() ),
 			'This action is not allowed because the domain is not the shared login domain.'
 		);
+	}
+
+	/**
+	 * Get the login/signup URL on the shared login domain wiki.
+	 *
+	 * @param string $action 'login' or 'signup' action
+	 * @return string
+	 */
+	public function getUrlForSharedDomainAction( string $action ): string {
+		switch ( $action ) {
+			case 'login':
+				$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
+				break;
+			case 'signup':
+				$localUrl = $this->titleFactory->newFromText( 'Special:CreateAccount' )->getLocalURL();
+				break;
+			default:
+				throw new RuntimeException( 'Unknown action: ' . $action );
+		}
+
+		$url = $this->config->get( 'CentralAuthSsoUrlPrefix' ) . $localUrl;
+
+		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
+			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );
+		} else {
+			// This is not supposed to happen on the SSO domain but if we're
+			// in a situation where the shared domain is in mobile view and the
+			// user is coming from a desktop view, let's inherit that experience
+			// to the shared domain.
+			$url = wfAppendQuery( $url, [ 'useformat' => 'desktop' ] );
+		}
+
+		return wfAppendQuery( $url, [
+			// At this point, we should just be leaving the local
+			// wiki before hitting the loginwiki.
+			'wikiid' => WikiMap::getCurrentWikiId(),
+			// TODO: Fix T369467
+			'returnto' => 'Main_Page',
+			'usesul3' => '1',
+		] );
 	}
 
 }

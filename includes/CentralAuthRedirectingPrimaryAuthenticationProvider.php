@@ -12,9 +12,7 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNameUtils;
-use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use MWCryptRand;
 use RuntimeException;
@@ -35,18 +33,15 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	public const START_TOKEN_KEY_PREFIX = 'centralauth-sul3-start';
 	public const COMPLETE_TOKEN_KEY_PREFIX = 'centralauth-sul3-complete';
 
-	private TitleFactory $titleFactory;
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
-		TitleFactory $titleFactory,
 		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils,
 		?MobileContext $mobileContext
 	) {
-		$this->titleFactory = $titleFactory;
 		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->mobileContext = $mobileContext;
@@ -54,11 +49,16 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function getAuthenticationRequests( $action, array $options ) {
-		if ( $action === AuthManager::ACTION_LOGIN
-			&& $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() )
+		if ( $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() )
 			&& !$this->sharedDomainUtils->isSharedDomain()
 		) {
-			return [ new CentralAuthRedirectingAuthenticationRequest() ];
+			switch ( $action ) {
+				case AuthManager::ACTION_LOGIN:
+				case AuthManager::ACTION_CREATE:
+					return [ new CentralAuthRedirectingAuthenticationRequest() ];
+				default:
+					return [];
+			}
 		}
 		return [];
 	}
@@ -107,7 +107,18 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			$data, self::START_TOKEN_KEY_PREFIX, [ 'expiry' => $expiry ]
 		);
 
-		$url = wfAppendQuery( $this->getCentralLoginUrl(), [ 'centralauthLoginToken' => $token ] );
+		if ( $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup' ) {
+			$url = wfAppendQuery(
+				$this->sharedDomainUtils->getUrlForSharedDomainAction( 'signup' ),
+				[ 'centralauthLoginToken' => $token ]
+			);
+		} else {
+			$url = wfAppendQuery(
+				$this->sharedDomainUtils->getUrlForSharedDomainAction( 'login' ),
+				[ 'centralauthLoginToken' => $token ]
+			);
+		}
+
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
 
@@ -216,34 +227,4 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	public function beginPrimaryAccountCreation( $user, $creator, array $reqs ) {
 		return AuthenticationResponse::newAbstain();
 	}
-
-	/**
-	 * Get the login URL on the shared login domain wiki.
-	 *
-	 * @return string
-	 */
-	private function getCentralLoginUrl(): string {
-		$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
-		$url = $this->config->get( 'CentralAuthSsoUrlPrefix' ) . $localUrl;
-
-		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
-			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );
-		} else {
-			// This is not supposed to happen on the SSO domain but if we're
-			// in a situation where the shared domain is in mobile view and the
-			// user is coming from a desktop view, let's inherit that experience
-			// to the shared domain.
-			$url = wfAppendQuery( $url, [ 'useformat' => 'desktop' ] );
-		}
-
-		return wfAppendQuery( $url, [
-			// At this point, we should just be leaving the local
-			// wiki before hitting the loginwiki.
-			'wikiid' => WikiMap::getCurrentWikiId(),
-			// TODO: Fix T369467
-			'returnto' => 'Main_Page',
-			'usesul3' => '1',
-		] );
-	}
-
 }

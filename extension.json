@@ -938,7 +938,6 @@
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthRedirectingPrimaryAuthenticationProvider",
 				"sort": 0,
 				"services": [
-					"TitleFactory",
 					"CentralAuth.CentralAuthTokenManager",
 					"CentralAuth.SharedDomainUtils"
 				],

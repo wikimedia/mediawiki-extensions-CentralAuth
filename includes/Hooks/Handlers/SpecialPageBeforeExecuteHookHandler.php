@@ -75,6 +75,21 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$request = $special->getRequest();
 		$amKey = 'AuthManagerSpecialPage:return:' . $special->getName();
 
+		// In SUL3 mode, let's trigger a central mechanism for account creation.
+		if ( $special->getName() === 'CreateAccount'
+			&& $this->sharedDomainUtils->isSul3Enabled( $request )
+			&& !$this->sharedDomainUtils->isSharedDomain()
+		) {
+			$this->sharedDomainUtils->assertSul3Enabled( $request );
+			$this->sharedDomainUtils->assertIsNotSharedDomain();
+
+			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
+
+			$url = wfAppendQuery( $localLoginUrl, [ 'sul3-action' => 'signup' ] );
+			$special->getOutput()->redirect( $url );
+			return true;
+		}
+
 		// Only attempt top-level autologin if the user is about to log in, the login isn't
 		// already in progress, it is a normal login, and there is a central login wiki to use.
 		// This check will also pass if the user just finished (successfully or not) the autologin.

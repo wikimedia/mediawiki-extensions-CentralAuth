@@ -21,7 +21,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
-			$services->getUrlUtils()
+			$services->getTitleFactory(),
+			$services->get( "MobileFrontend.Context" )
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertTrue( $wrappedHandler->isSharedDomain() );
@@ -35,7 +36,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
-			$services->getUrlUtils()
+			$services->getTitleFactory(),
+			$services->get( "MobileFrontend.Context" )
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertFalse( $wrappedHandler->isSharedDomain() );
