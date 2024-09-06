@@ -116,6 +116,7 @@ class RedirectingLoginHookHandler implements
 			'centralauthLoginToken' => $request->getRawVal( 'centralauthLoginToken' ),
 			'wikiid' => $request->getRawVal( 'wikiid' ),
 			'usesul3' => $request->getRawVal( 'usesul3' ),
+			'useformat' => $request->getRawVal( 'useformat' ),
 		];
 	}
 
