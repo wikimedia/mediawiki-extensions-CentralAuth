@@ -683,6 +683,7 @@
 		"BeforePageDisplay": "pagedisplay",
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
+		"GetLocalURL": "sso",
 		"GetLogTypesOnUser": "default",
 		"GetPreferences": "default",
 		"GetUserBlock": "block",
