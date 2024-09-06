@@ -247,6 +247,26 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	/**
+	 * Verifies that the info fieldset is present on the Special:CentralAuth page.
+	 *
+	 * @param string $html The HTML of the executed special page
+	 */
+	private function verifyDeleteAccountFormShownIfUserHasRightsToView( string $html, bool $userCanUnmerge ) {
+		if ( !$userCanUnmerge ) {
+			// Verify that the delete form is not shown if the user is missing the centralauth-unmerge right
+			$this->assertStringNotContainsString( '(centralauth-admin-delete-title', $html );
+			return;
+		}
+		// Verify the fieldset header is present if the user does have the centralauth-unmerge right
+		$this->assertStringContainsString( '(centralauth-admin-delete-title', $html );
+		// Verify that the expected form fields are present
+		$deleteForm = $this->assertAndGetByElementId( $html, 'mw-centralauth-delete' );
+		$this->assertStringContainsString( '(centralauth-admin-delete-description', $deleteForm );
+		$this->assertStringContainsString( '(centralauth-admin-reason', $deleteForm );
+		$this->assertStringContainsString( '(centralauth-admin-delete-button', $deleteForm );
+	}
+
+	/**
 	 * @param string $targetUsername The target parameter value specified when loading Special:CentralAuth
 	 * @param bool $userCanSuppress Whether the viewing authority has the centralauth-suppress right
 	 * @param bool $userCanUnmerge Whether the viewing authority has the centralauth-unmerge right
@@ -285,6 +305,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Verify that the fieldsets for the page are there
 		$this->verifyUsernameFormPresent( $html, $userCanSuppress || $userCanUnmerge || $userCanLock );
 		$this->verifyStatusFormShownIfUserHasRightsToView( $html, $userCanLock, $userCanSuppress );
+		$this->verifyDeleteAccountFormShownIfUserHasRightsToView( $html, $userCanUnmerge );
 		$this->verifyWikiListPresent( $html, $userCanUnmerge );
 		$this->verifyInfoFieldsetPresent( $html );
 		return $html;
@@ -535,5 +556,72 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			->join( 'comment', null, 'comment_id=log_comment_id' )
 			->where( [ 'log_action' => 'setstatus' ] )
 			->assertFieldValue( 'test' );
+	}
+
+	public function testAccountDeleteForm() {
+		// Get our testing global account
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$this->assertTrue( $targetUser->exists() );
+		// Use the special page to delete the global account
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-unmerge' ] );
+		// Execute the special page with the username specified via the target parameter
+		$request = new FauxRequest( [
+			'reason' => 'test',
+			'wpMethod' => 'delete',
+		], true );
+		$request->setVal( 'target', $targetUsername );
+		[ $html ] = $this->executeSpecialPage( '', $request, null, $authority );
+		// Verify that global user has been deleted
+		$this->assertStringContainsString( '(centralauth-admin-delete-success', $html );
+		$this->assertStringContainsString( '(centralauth-admin-nonexistent', $html );
+		$this->verifyUsernameFormPresent( $html, true );
+		$targetUser->invalidateCache();
+		$this->assertFalse( $targetUser->exists() );
+		// Check that the reason used for the suppress is as expected
+		$this->newSelectQueryBuilder()
+			->select( 'comment_text' )
+			->from( 'logging' )
+			->join( 'comment', null, 'comment_id=log_comment_id' )
+			->where( [ 'log_action' => 'delete' ] )
+			->assertFieldValue( 'test' );
+	}
+
+	/** @dataProvider provideWpMethodValues */
+	public function testFormSubmissionWithInvalidEditToken( $method ) {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$userStateBeforeExecution = $targetUser->getStateHash( true );
+		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
+			$targetUsername,
+			[
+				// Add all the possible fields used by the forms, but get the wpEditToken incorrect
+				'wpEditToken' => 'invalidtoken',
+				'wpReason' => 'test',
+				'reason' => 'test',
+				'wpReasonList' => 'other',
+				'wpMethod' => $method,
+				'wpStatusLocked' => 1,
+				'wpStatusHidden' => 0,
+				'wpWikis' => [ 'enwiki', 'dewiki' ],
+				'wpUserState' => 'abcdef',
+			],
+			false,
+			true,
+			true
+		);
+		$this->assertStringContainsString( '(centralauth-token-mismatch)', $html );
+		$this->assertSame(
+			$targetUser->getStateHash( true ), $userStateBeforeExecution,
+			"Form should have not submitted successfully"
+		);
+	}
+
+	public static function provideWpMethodValues() {
+		return [
+			'wpMethod is "set-status"' => [ 'set-status' ],
+			'wpMethod is "delete"' => [ 'delete' ],
+			'wpMethod is "unmerge"' => [ 'unmerge' ],
+		];
 	}
 }
