@@ -122,7 +122,6 @@
 			"services": [
 				"CommentFormatter",
 				"NamespaceInfo",
-				"ReadOnlyMode",
 				"TempUserConfig",
 				"UserFactory",
 				"UserNameUtils",

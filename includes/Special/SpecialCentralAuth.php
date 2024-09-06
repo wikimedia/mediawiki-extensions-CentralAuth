@@ -37,7 +37,6 @@ use MediaWiki\WikiMap\WikiReference;
 use MediaWiki\Xml\Xml;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
-use Wikimedia\Rdbms\ReadOnlyMode;
 
 class SpecialCentralAuth extends SpecialPage {
 	/** @var string */
@@ -79,7 +78,6 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private CommentFormatter $commentFormatter;
 	private NamespaceInfo $namespaceInfo;
-	private ReadOnlyMode $readOnlyMode;
 	private TempUserConfig $tempUserConfig;
 	private UserFactory $userFactory;
 	private UserNameUtils $userNameUtils;
@@ -91,7 +89,6 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @param CommentFormatter $commentFormatter
 	 * @param NamespaceInfo $namespaceInfo
-	 * @param ReadOnlyMode $readOnlyMode
 	 * @param TempUserConfig $tempUserConfig
 	 * @param UserFactory $userFactory
 	 * @param UserNameUtils $userNameUtils
@@ -103,7 +100,6 @@ class SpecialCentralAuth extends SpecialPage {
 	public function __construct(
 		CommentFormatter $commentFormatter,
 		NamespaceInfo $namespaceInfo,
-		ReadOnlyMode $readOnlyMode,
 		TempUserConfig $tempUserConfig,
 		UserFactory $userFactory,
 		UserNameUtils $userNameUtils,
@@ -115,7 +111,6 @@ class SpecialCentralAuth extends SpecialPage {
 		parent::__construct( 'CentralAuth' );
 		$this->commentFormatter = $commentFormatter;
 		$this->namespaceInfo = $namespaceInfo;
-		$this->readOnlyMode = $readOnlyMode;
 		$this->tempUserConfig = $tempUserConfig;
 		$this->userFactory = $userFactory;
 		$this->userNameUtils = $userNameUtils;

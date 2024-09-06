@@ -49,7 +49,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		return new SpecialCentralAuth(
 			$this->getServiceContainer()->getCommentFormatter(),
 			$this->getServiceContainer()->getNamespaceInfo(),
-			$this->getServiceContainer()->getReadOnlyMode(),
 			$this->getServiceContainer()->getTempUserConfig(),
 			$this->getServiceContainer()->getUserFactory(),
 			$this->getServiceContainer()->getUserNameUtils(),
