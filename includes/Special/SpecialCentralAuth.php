@@ -400,8 +400,9 @@ class SpecialCentralAuth extends SpecialPage {
 		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
 		// centralauth-admin-info-hidden, centralauth-admin-info-groups
 		$content = Xml::openElement( "ul" );
-		foreach ( $attribs as [ 'label' => $msg, 'data' => $data ] ) {
-			$content .= Xml::openElement( "li" ) . Xml::openElement( "strong" );
+		foreach ( $attribs as $key => [ 'label' => $msg, 'data' => $data ] ) {
+			$content .= Xml::openElement( "li", [ 'id' => "mw-centralauth-admin-info-$key" ] ) .
+				Xml::openElement( "strong" );
 			$content .= $this->msg( $msg )->escaped();
 			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
 		}
