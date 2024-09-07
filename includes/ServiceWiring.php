@@ -171,8 +171,7 @@ return [
 
 	'CentralAuth.SharedDomainUtils' => static function ( MediaWikiServices $services ): SharedDomainUtils {
 		return new SharedDomainUtils(
-			$services->getMainConfig(),
-			$services->getUrlUtils()
+			$services->getMainConfig()
 		);
 	},
 
