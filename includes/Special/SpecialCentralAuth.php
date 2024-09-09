@@ -36,6 +36,7 @@ use MediaWiki\Utils\MWTimestamp;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\WikiMap\WikiReference;
 use MediaWiki\Xml\Xml;
+use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
@@ -560,30 +561,62 @@ class SpecialCentralAuth extends SpecialPage {
 		return $attribsWithMessageKeys;
 	}
 
+	/**
+	 * Generates a {@link FieldLayout} that can be used in a HTMLFormInfo field instance when 'rawrow' is true.
+	 * This is useful in the case that the HTML contains elements which cannot appear inside a label element.
+	 *
+	 * @param string $html The HTML that we want to use in the 'info' field
+	 * @return FieldLayout An instance suitable for use in an 'info' field with 'rawrow' set to true
+	 */
+	private function getFieldLayoutForHtmlContent( string $html ): FieldLayout {
+		return new FieldLayout( new Widget( [ 'content' => new HtmlSnippet( $html ) ] ) );
+	}
+
 	private function showWikiLists() {
-		$merged = $this->mAttachedLocalAccounts;
-		$remainder = $this->mUnattachedLocalAccounts;
+		$showUnmergeCheckboxes = $this->mCanUnmerge && $this->mGlobalUser->exists();
 
-		$legend = $this->mCanUnmerge && $this->mGlobalUser->exists() ?
-			$this->msg( 'centralauth-admin-list-legend-rw' )->text() :
-			$this->msg( 'centralauth-admin-list-legend-ro' )->text();
+		$formDescriptor = [
+			'wikilist' => [
+				'type' => 'info',
+				'raw' => true,
+				// We need to use a "rawrow" here to prevent the table element being wrapped by a label element.
+				'rawrow' => true,
+				// When using "rawrow" we need to provide the HTML content via a FieldLayout.
+				'default' => $this->getFieldLayoutForHtmlContent( $this->getWikiListsTable( $showUnmergeCheckboxes ) ),
+			],
+			'Method' => [
+				'type' => 'hidden',
+				'default' => 'unmerge',
+			],
+		];
 
-		$this->getOutput()->addHTML( Xml::fieldset( $legend ) );
-		$this->getOutput()->addHTML( $this->listHeader() );
-		$this->getOutput()->addHTML( $this->listAccounts( $merged ) );
-		if ( $remainder ) {
-			$this->getOutput()->addHTML( $this->listAccounts( $remainder ) );
+		if ( $showUnmergeCheckboxes ) {
+			$formDescriptor['submit'] = [
+				'type' => 'submit',
+				'buttonlabel-message' => 'centralauth-admin-unmerge',
+				'flags' => [ 'progressive' ],
+			];
 		}
-		$this->getOutput()->addHTML( $this->listFooter() );
-		$this->getOutput()->addHTML( Xml::closeElement( 'fieldset' ) );
-		$this->getOutput()->addModuleStyles( 'jquery.tablesorter.styles' );
-		$this->getOutput()->addModules( 'jquery.tablesorter' );
+
+		$context = new DerivativeContext( $this->getContext() );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
+		$htmlForm
+			->setAction( $this->getPageTitle()->getFullURL( [ 'target' => $this->mUserName ] ) )
+			->suppressDefaultSubmit()
+			->setWrapperLegendMsg(
+				$showUnmergeCheckboxes ? 'centralauth-admin-list-legend-rw' : 'centralauth-admin-list-legend-ro'
+			)
+			->setId( 'mw-centralauth-merged' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
-	 * @return string
+	 * @param bool $showUnmergeCheckboxes Whether the checkboxes to allow the user to unmerge a local account should
+	 *   be shown in the table.
+	 * @return string The HTML for the table of local accounts
 	 */
-	private function listHeader() {
+	private function getWikiListsTable( bool $showUnmergeCheckboxes ): string {
 		$columns = [
 			// centralauth-admin-list-localwiki
 			"localwiki",
@@ -598,98 +631,76 @@ class SpecialCentralAuth extends SpecialPage {
 			// centralauth-admin-list-groups
 			"groups",
 		];
-		$header = Xml::openElement( 'form', [
-			'method' => 'post',
-			'action' =>
-			$this->getPageTitle( $this->mUserName )->getLocalUrl( 'action=submit' ),
-			'id' => 'mw-centralauth-merged'
-		] );
-		$header .= Html::hidden( 'wpMethod', 'unmerge' ) .
-			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-			Xml::openElement(
-				'table', [ 'class' => 'wikitable sortable mw-centralauth-wikislist' ] ) .
-			"\n" . Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
-		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
-			$header .= Xml::openElement( 'th' ) . Xml::closeElement( 'th' );
+
+		$header = Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
+		if ( $showUnmergeCheckboxes ) {
+			$header .= Html::element( 'th', [ 'class' => 'unsortable' ] );
 		}
 		foreach ( $columns as $c ) {
-			$header .= Xml::openElement( 'th' ) .
-				$this->msg( "centralauth-admin-list-$c" )->escaped() .
-				Xml::closeElement( 'th' );
+			$header .= Html::element( 'th', [], $this->msg( "centralauth-admin-list-$c" )->text() );
 		}
-		$header .= Xml::closeElement( 'tr' ) .
-			Xml::closeElement( 'thead' ) .
-			Xml::openElement( 'tbody' );
+		$header .= Xml::closeElement( 'tr' ) . Xml::closeElement( 'thead' );
 
-		return $header;
+		$body = Html::rawElement(
+			'tbody', [],
+			$this->listAccounts( $this->mAttachedLocalAccounts, $showUnmergeCheckboxes ) .
+			$this->listAccounts( $this->mUnattachedLocalAccounts, $showUnmergeCheckboxes )
+		);
+
+		return Html::rawElement(
+			'table',
+			[ 'class' => 'wikitable sortable mw-centralauth-wikislist' ],
+			$header . $body
+		);
 	}
 
 	/**
-	 * @return string
+	 * @param array[] $list The result of {@link CentralAuthUser::queryAttached} or
+	 *   {@link CentralAuthUser::queryUnattached()}
+	 * @return string The HTML body table rows
 	 */
-	private function listFooter() {
-		$footer = Xml::closeElement( 'tbody' ) .
-			Xml::closeElement( 'table' );
-
-		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
-			$footer .= Xml::submitButton( $this->msg( 'centralauth-admin-unmerge' )->text() );
-		}
-
-		return $footer . Xml::closeElement( 'form' );
-	}
-
-	/**
-	 * @param array $list
-	 * @return string
-	 */
-	private function listAccounts( array $list ) {
+	private function listAccounts( array $list, bool $showUnmergeCheckboxes ): string {
 		ksort( $list );
-		return implode( "\n", array_map( [ $this, 'listWikiItem' ], $list ) );
+		return implode( "\n", array_map( function ( $row ) use ( $showUnmergeCheckboxes ) {
+			return $this->listWikiItem( $row, $showUnmergeCheckboxes );
+		}, $list ) );
 	}
 
 	/**
-	 * @param array $row
-	 * @return string
+	 * @param array $row The an item from an array returned by either {@link CentralAuthUser::queryAttached} or
+	 *    {@link CentralAuthUser::queryUnattached()}
+	 * @return string The HTML row that represents the provided array
 	 */
-	private function listWikiItem( array $row ) {
+	private function listWikiItem( array $row, bool $showUnmergeCheckboxes ): string {
 		$html = Xml::openElement( 'tr' );
 
-		if ( $this->mCanUnmerge && $this->mGlobalUser->exists() ) {
+		if ( $showUnmergeCheckboxes ) {
 			if ( !empty( $row['attachedMethod'] ) ) {
-				$html .= Xml::openElement( 'td' ) .
-					$this->adminCheck( $row['wiki'] ) .
-					Xml::closeElement( 'td' );
+				$html .= Html::rawElement( 'td', [], $this->adminCheck( $row['wiki'] ) );
 			} else {
 				// Account is unattached, don't show checkbox to detach
 				$html .= Xml::element( 'td' );
 			}
 		}
 
-		$html .= Xml::openElement( 'td' ) .
-			$this->foreignUserLink( $row['wiki'] ) .
-			Xml::closeElement( 'td' );
+		$html .= Html::rawElement( 'td', [], $this->foreignUserLink( $row['wiki'] ) );
 
 		$attachedTimestamp = $row['attachedTimestamp'] ?? '';
 
-		$html .= $this->getAttachedTimestampField( $attachedTimestamp ) .
-			Xml::openElement( 'td', [ 'style' => "text-align: center;" ] );
+		$html .= $this->getAttachedTimestampField( $attachedTimestamp );
 
 		if ( empty( $row['attachedMethod'] ) ) {
-			$html .= $this->msg( 'centralauth-admin-unattached' )->parse();
+			$attachedMethod = $this->msg( 'centralauth-admin-unattached' )->parse();
 		} else {
-			$html .= $this->formatMergeMethod( $row['attachedMethod'] );
+			$attachedMethod = $this->formatMergeMethod( $row['attachedMethod'] );
 		}
+		$html .= Html::rawElement( 'td', [ 'class' => 'mw-centralauth-wikislist-method' ], $attachedMethod );
 
-		$html .= Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td' ) .
-			$this->formatBlockStatus( $row ) .
-			Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td', [ 'style' => "text-align: right;" ] ) .
-			$this->formatEditcount( $row ) .
-			Xml::closeElement( 'td' ) .
-			Xml::openElement( 'td' ) .
-			$this->formatGroups( $row ) .
-			Xml::closeElement( 'td' ) .
+		$html .= Html::rawElement( 'td', [], $this->formatBlockStatus( $row ) ) .
+			Html::rawElement(
+				'td', [ 'class' => 'mw-centralauth-wikislist-editcount' ], $this->formatEditcount( $row )
+			) .
+			Html::rawElement( 'td', [], $this->formatGroups( $row ) ) .
 			Xml::closeElement( 'tr' );
 
 		return $html;
