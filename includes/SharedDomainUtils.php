@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler;
 use MediaWiki\Request\WebRequest;
-use MediaWiki\Utils\UrlUtils;
 use Wikimedia\Assert\Assert;
 
 /**
@@ -15,51 +14,52 @@ use Wikimedia\Assert\Assert;
 class SharedDomainUtils {
 
 	private Config $config;
-	private UrlUtils $urlUtils;
 
 	private bool $isSharedDomain;
 
 	public function __construct(
-		Config $config,
-		UrlUtils $urlUtils
+		Config $config
 	) {
 		$this->config = $config;
-		$this->urlUtils = $urlUtils;
 	}
 
 	/**
-	 * Check if the current domain is the shared domain used for SUL3 login
-	 * (i.e. the domain in $CentralAuthSsoUrlPrefix). Assumes that $wgCanonicalServer
-	 * is set to the shared domain when the wiki is accessed via that domain.
+	 * Whether the current request is to the shared domain used for SUL3 login.
+	 *
+	 * This assumes:
+	 * - $wgCentralAuthSsoUrlPrefix contains the shared domain.
+	 * - $wgCanonicalServer is set in site configuration to the current domain
+	 *   (instead of the actual canonical domain) for requests to the shared domain.
+	 *
 	 * @return bool
 	 */
 	public function isSharedDomain(): bool {
 		// @phan-suppress-next-line PhanRedundantCondition
-		if ( isset( $this->isSharedDomain ) ) {
-			return $this->isSharedDomain;
+		if ( !isset( $this->isSharedDomain ) ) {
+			$centralAuthSsoUrlPrefix = $this->config->get( 'CentralAuthSsoUrlPrefix' );
+			if ( !$centralAuthSsoUrlPrefix ) {
+				$this->isSharedDomain = false;
+			} else {
+				$sharedDomain = parse_url( $centralAuthSsoUrlPrefix, PHP_URL_HOST );
+				$currentDomain = parse_url( $this->config->get( 'CanonicalServer' ), PHP_URL_HOST );
+				$this->isSharedDomain = $sharedDomain && $currentDomain === $sharedDomain;
+			}
 		}
-
-		$centralAuthSsoUrlPrefix = $this->config->get( 'CentralAuthSsoUrlPrefix' );
-		if ( !$centralAuthSsoUrlPrefix ) {
-			$this->isSharedDomain = false;
-			return $this->isSharedDomain;
-		}
-		$sharedDomain = $this->urlUtils->parse( $centralAuthSsoUrlPrefix )['host'] ?? null;
-		$currentDomain = $this->urlUtils->parse(
-			$this->urlUtils->getServer( PROTO_CANONICAL ) ?? ''
-		)['host'] ?? null;
-		$this->isSharedDomain = $sharedDomain && $currentDomain === $sharedDomain;
 		return $this->isSharedDomain;
 	}
 
 	/**
-	 * True when the current domain is an authentication-only "fake" domain and all
-	 * non-authentication-related actions should be prevented.
+	 * Whether the current request must deny non-auth actions.
+	 *
+	 * If $wgCentralAuthRestrictSsoDomain is enabled, then requests to the "fake"
+	 * shared domain within $wgCentralAuthSsoUrlPrefix must only be for authentication
+	 * purposes. All non-authentication-related actions should be prevented.
 	 *
 	 * SUL3 login supports both using a dedicated login wiki for the domain where the central
-	 * session cookies are stored, and a shared domain which can be served by any wiki. In the
-	 * latter case, we want to prevent non-authentication actions to prevent complications like
-	 * cache splits. This flag differentiates between the two setups.
+	 * session cookies are stored, and a shared domain which serve any wiki (from a virtual
+	 * sub directory). In the latter case, we want to prevent non-authentication actions
+	 * to prevent complications like cache splits. This flag differentiates between the two
+	 * setups.
 	 *
 	 * @return bool
 	 * @see SsoHookHandler
@@ -69,11 +69,9 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * Detects if we're in SUL3 mode. Returns true if that is the case
-	 * and false otherwise.
+	 * Whether SUL3 mode is enabled on this wiki and this request.
 	 *
 	 * @param WebRequest $request
-	 *
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
@@ -88,10 +86,9 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * Assert that the SUL3 mode is set.
+	 * Assert that the SUL3 mode is allowed.
 	 *
 	 * @param WebRequest $request
-	 *
 	 * @return void
 	 */
 	public function assertSul3Enabled( WebRequest $request ) {
@@ -103,6 +100,7 @@ class SharedDomainUtils {
 
 	/**
 	 * Assert that we're on the shared login domain.
+	 *
 	 * @return void
 	 */
 	public function assertIsSharedDomain() {
