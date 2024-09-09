@@ -359,7 +359,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 		do {
 			$random = wfRandomString();
-			$candidate = "Vanished user {$random}";
+			$candidate = "Renamed user {$random}";
 			if ( GlobalRenameRequest::isNameAvailable( $candidate, IDBAccessObject::READ_NORMAL )->isOK() ) {
 				return $candidate;
 			}
