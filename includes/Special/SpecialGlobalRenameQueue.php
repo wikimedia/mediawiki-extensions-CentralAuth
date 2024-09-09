@@ -385,9 +385,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
-		$reason = $req->getReason() ?: $this->msg(
-			'globalrenamequeue-request-reason-sul'
-		)->parseAsBlock();
+		$reason = $req->getReason() ?: '';
 
 		$renamer = CentralAuthUser::newFromId( $req->getPerformer() );
 		if ( $renamer === false ) {
@@ -658,9 +656,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
-		$reason = $req->getReason() ?: $this->msg(
-			'globalrenamequeue-request-reason-sul'
-		)->parseAsBlock();
+		$reason = $req->getReason() ?: '';
+
 		$htmlForm->addHeaderHtml( $this->msg( $reasonMsg,
 			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>"
 		)->parseAsBlock() );

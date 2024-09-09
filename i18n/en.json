@@ -447,7 +447,6 @@
 	"globalrenamequeue-request-previous-renames": "Previous {{PLURAL:$1|rename|renames}}",
 	"globalrenamequeue-request-reason": "<strong>Reason for requesting rename</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Public log entry comment (if accepting)",
-	"globalrenamequeue-request-reason-sul": "User notified of global name conflict in preparation for SUL finalization.",
 	"globalrenamequeue-request-savefailed": "Failure saving change to request status.",
 	"globalrenamequeue-request-status-title": "Rename from \"$1\" to \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Suppress creation of redirects",

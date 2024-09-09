@@ -473,7 +473,6 @@
 	"globalrenamequeue-request-previous-renames": "Text for fieldset label surrounding log entries of the requesting username's previous renames. $1 is the number of log entries for PLURAL.",
 	"globalrenamequeue-request-reason": "Display for reason provided by user for rename.\n\n* $1 is reason text given by user. It will be parsed as wikitext.",
 	"globalrenamequeue-request-reason-label": "Label for field that will be used as the log comment in the public rename log",
-	"globalrenamequeue-request-reason-sul": "Default reason for SUL rename requests.",
 	"globalrenamequeue-request-savefailed": "Error message.",
 	"globalrenamequeue-request-status-title": "Page title when viewing processed request.",
 	"globalrenamequeue-request-suppressredirects": "Form checkbox label text.",
