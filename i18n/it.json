@@ -31,7 +31,8 @@
 			"Toadino2",
 			"Wim b",
 			"Pierpao",
-			"Superpes15"
+			"Superpes15",
+			"Dream Indigo"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente",
@@ -341,7 +342,7 @@
 	"centralauth-rename-antispoofconflicts2": "Il nome utente scelto è troppo simile a {{PLURAL:$2|un nome utente esistente|nomi utente esistenti}} o è stato utilizzato da qualche altro utente che è stato poi rinominato: $1.",
 	"centralauth-rename-badusername": "Il nome utente richiesto non è valido.",
 	"centralauth-rename-cannotself": "Non puoi rinominare te stesso.",
-	"centralauth-rename-confirm": "Vuoi davvero rinominare globalmente questo utente?",
+	"centralauth-rename-confirm": "Vuoi davvero rinominare globalmente quest'utente?",
 	"centralauth-rename-conflict-hidden": "nome utente nascosto",
 	"centralauth-rename-deny": "Sei sicuro di voler rifiutare la rinomina?",
 	"centralauth-rename-desc": "Consente di rinominare le utenze globali",
