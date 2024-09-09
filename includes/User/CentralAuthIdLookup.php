@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use DBAccessObjectUtils;
 use IDBAccessObject;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
@@ -32,13 +33,11 @@ use MediaWiki\WikiMap\WikiMap;
  */
 class CentralAuthIdLookup extends CentralIdLookup {
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
+	private Config $config;
+	private CentralAuthDatabaseManager $databaseManager;
 
-	/**
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 */
-	public function __construct( CentralAuthDatabaseManager $databaseManager ) {
+	public function __construct( Config $config, CentralAuthDatabaseManager $databaseManager ) {
+		$this->config = $config;
 		$this->databaseManager = $databaseManager;
 	}
 
@@ -107,6 +106,23 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
 		$centralUser = CentralAuthUser::getInstance( $user );
 		return $centralUser->exists() && $centralUser->attachedOn( $wikiId );
+	}
+
+	/** @inheritDoc */
+	public function isOwned( UserIdentity $user, $wikiId = UserIdentity::LOCAL ): bool {
+		$user->assertWiki( $wikiId );
+
+		$centralUser = CentralAuthUser::getInstance( $user );
+
+		$strictMode = $this->config->get( 'CentralAuthStrict' );
+		if ( $centralUser->exists() && !$user->isRegistered() && $strictMode ) {
+			// Even if the user doesn't exist locally, the username is reserved for the central user, as
+			// it will be automatically attached on login, and can't be taken by any other user (T371340).
+			// CentralAuthPrimaryAuthenticationProvider guarantees this.
+			return true;
+		}
+
+		return $this->isAttached( $user, $wikiId );
 	}
 
 	/** @inheritDoc */

@@ -24,6 +24,8 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 		'GlobalUser' => 1001,
 		'GlobalLockedUser' => 1003,
 		'GlobalSuppressedUser' => 1004,
+		'GlobalUserUnattached' => 1007,
+		'GlobalUserConflict' => 1008,
 	];
 
 	/**
@@ -78,14 +80,39 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 			]
 		);
 		$u->save( $this->getDb() );
+
+		$user = new CentralAuthTestUser(
+			'GlobalUserUnattached',
+			'GUUP@ssword',
+			[ 'gu_id' => '1007' ],
+			[
+				[ 'metawiki', 'primary' ],
+			],
+			false
+		);
+		$user->save( $this->getDb() );
+
+		$user = new CentralAuthTestUser(
+			'GlobalUserConflict',
+			'GUCP@ssword',
+			[ 'gu_id' => '1008' ],
+			[
+				[ 'metawiki', 'primary' ],
+			],
+			false
+		);
+		$user->save( $this->getDb() );
+		( new TestUser( 'GlobalUserConflict' ) );
 	}
 
-	private function newLookup(): CentralIdLookup {
+	private function newLookup( $strict = true ): CentralIdLookup {
 		$this->overrideConfigValues( [
+			'CentralAuthStrict' => $strict,
 			MainConfigNames::CentralIdLookupProviders => [
 				'central' => [
 					'class' => CentralAuthIdLookup::class,
 					'services' => [
+						'MainConfig',
 						'CentralAuth.CentralAuthDatabaseManager',
 					],
 				],
@@ -192,24 +219,57 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideIsAttached() {
 		return [
-			[ 'GlobalUser', 'enwiki', true ],
-			[ 'GlobalUser', 'foowiki', false ],
-			[ 'GlobalUser', UserIdentityValue::LOCAL, true ],
-			[ 'UTSysop', UserIdentityValue::LOCAL, false ],
-			[ 'DoesNotExist', UserIdentityValue::LOCAL, false ],
+			[
+				1, 'GlobalUser', 'enwiki',
+				true
+			],
+			[
+				1, 'GlobalUser', 'foowiki',
+				false
+			],
+
+			'Local user exists and is attached to the global user' => [
+				1, 'GlobalUser', UserIdentityValue::LOCAL,
+				true
+			],
+			'Local user exists and IS NOT attached to the global user' => [
+				1, 'GlobalUserConflict', UserIdentityValue::LOCAL,
+				false
+			],
+			'Local user DOES NOT exist, so can not be attached, but is owned by the global user' => [
+				0, 'GlobalUserUnattached', UserIdentityValue::LOCAL,
+				false, true, true
+			],
+			'Local user DOES NOT exist, so can not be attached, and IS NOT owned by the global user' => [
+				0, 'GlobalUserUnattached', UserIdentityValue::LOCAL,
+				false, false, false
+			],
+
+			[
+				1, 'UTSysop', UserIdentityValue::LOCAL,
+				false
+			],
+			[
+				0, 'DoesNotExist', UserIdentityValue::LOCAL,
+				false
+			],
 		];
 	}
 
 	/**
 	 * @dataProvider provideIsAttached
+	 * @param int $id
 	 * @param string $username
 	 * @param string $wikiId
-	 * @param bool $succeed
+	 * @param bool $isAttached
+	 * @param bool|null $isOwned
+	 * @param bool $strict
 	 */
-	public function testIsAttached( $username, $wikiId, $succeed ) {
-		$user = new UserIdentityValue( 0, $username, $wikiId );
-		$lookup = $this->newLookup();
-		$this->assertSame( $succeed, $lookup->isAttached( $user, $wikiId ) );
+	public function testIsAttached( $id, $username, $wikiId, $isAttached, $isOwned = null, $strict = true ) {
+		$user = new UserIdentityValue( $id, $username, $wikiId );
+		$lookup = $this->newLookup( $strict );
+		$this->assertSame( $isAttached, $lookup->isAttached( $user, $wikiId ) );
+		$this->assertSame( $isOwned ?? $isAttached, $lookup->isOwned( $user, $wikiId ) );
 	}
 
 }
