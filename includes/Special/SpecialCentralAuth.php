@@ -10,6 +10,7 @@ use MediaWiki\Block\Restriction\ActionRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\CommentFormatter\CommentFormatter;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
@@ -35,6 +36,10 @@ use MediaWiki\Utils\MWTimestamp;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\WikiMap\WikiReference;
 use MediaWiki\Xml\Xml;
+use OOUI\FieldsetLayout;
+use OOUI\HtmlSnippet;
+use OOUI\PanelLayout;
+use OOUI\Widget;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -149,6 +154,15 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod' );
 		$this->mWikis = (array)$this->getRequest()->getArray( 'wpWikis' );
 
+		// If wpReasonList is specified then for backwards compatability with the old format of the admin status form,
+		// the value of wpReason needs to be moved to wpReason-other and the value of wpReasonList needs to be moved
+		// to wpReason.
+		if ( $this->getRequest()->getVal( 'wpReasonList' ) ) {
+			$this->getRequest()->setVal( 'wpReason-other', $this->getRequest()->getVal( 'wpReason' ) );
+			$this->getRequest()->setVal( 'wpReason', $this->getRequest()->getVal( 'wpReasonList' ) );
+			$this->getRequest()->unsetVal( 'wpReasonList' );
+		}
+
 		// Possible demo states
 
 		// success, all accounts merged
@@ -235,7 +249,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->showStatusForm();
 			}
 			if ( $this->mCanUnmerge ) {
-				$this->showActionForm( 'delete' );
+				$this->showDeleteGlobalAccountForm();
 			}
 			$this->showLogExtract();
 			$this->showWikiLists();
@@ -293,8 +307,8 @@ class SpecialCentralAuth extends SpecialPage {
 		} elseif ( $this->mMethod == 'set-status' && $this->mCanLock ) {
 			$setLocked = $request->getBool( 'wpStatusLocked' );
 			$setHidden = $request->getInt( 'wpStatusHidden', -1 );
-			$reason = $request->getText( 'wpReasonList' );
-			$reasonDetail = $request->getText( 'wpReason' );
+			$reason = $request->getText( 'wpReason' );
+			$reasonDetail = $request->getText( 'wpReason-other' );
 
 			if ( $reason == 'other' ) {
 				$reason = $reasonDetail;
@@ -391,18 +405,20 @@ class SpecialCentralAuth extends SpecialPage {
 		// centralauth-admin-info-hidden, centralauth-admin-info-groups
 		$content = Xml::openElement( "ul" );
 		foreach ( $attribs as $key => [ 'label' => $msg, 'data' => $data ] ) {
-			$content .= Xml::openElement( "li", [ 'id' => "mw-centralauth-admin-info-$key" ] ) .
-				Xml::openElement( "strong" );
-			$content .= $this->msg( $msg )->escaped();
-			$content .= Xml::closeElement( "strong" ) . ' ' . $data . Xml::closeElement( "li" );
+			$content .= Html::rawElement(
+				'li',
+				[ 'id' => "mw-centralauth-admin-info-$key" ],
+				$this->msg( 'centralauth-admin-info-line' )
+					->params( $this->msg( $msg )->escaped() )
+					->rawParams( $data )
+					->parse()
+			);
 		}
 		$content .= Xml::closeElement( "ul" );
-		$out = Xml::fieldset(
-			$this->msg( 'centralauth-admin-info-header' )->text(),
-			$content,
-			[ "id" => "mw-centralauth-info" ]
-		);
-		$this->getOutput()->addHTML( $out );
+
+		$this->getOutput()->addHTML( $this->getFramedFieldsetLayout(
+			$content, 'centralauth-admin-info-header', 'mw-centralauth-info'
+		) );
 	}
 
 	/**
@@ -991,109 +1007,145 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param string $action Only 'delete' supported
+	 * Generates a form for managing deleting a global account which contains a description, a reason field
+	 * and destructive submit button.
 	 */
-	private function showActionForm( $action ) {
-		$this->getOutput()->addHTML(
-			# to be able to find messages: centralauth-admin-delete-title,
-			# centralauth-admin-delete-description, centralauth-admin-delete-button
-			Xml::fieldset( $this->msg( "centralauth-admin-{$action}-title" )->text() ) .
-			Xml::openElement( 'form', [
-				'method' => 'POST',
-				'action' => $this->getPageTitle()->getFullUrl(
-					'target=' . urlencode( $this->mUserName )
-				),
-				'id' => "mw-centralauth-$action" ] ) .
-			Html::hidden( 'wpMethod', $action ) .
-			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-				$this->msg( "centralauth-admin-{$action}-description" )->parseAsBlock() .
-			Xml::buildForm(
-				[ 'centralauth-admin-reason' => Xml::input( 'reason',
-					false, false, [ 'id' => "{$action}-reason" ] ) ],
-				"centralauth-admin-{$action}-button"
-			) . Xml::closeElement( 'form' ) . Xml::closeElement( 'fieldset' ) );
+	private function showDeleteGlobalAccountForm() {
+		$formDescriptor = [
+			'info' => [
+				'type' => 'info',
+				'raw' => true,
+				'default' => $this->msg( 'centralauth-admin-delete-description' )->parseAsBlock(),
+				'cssclass' => 'mw-centralauth-admin-delete-intro',
+			],
+			'reason' => [
+				'type' => 'text',
+				'label-message' => 'centralauth-admin-reason',
+				'id' => "delete-reason",
+				'name' => 'reason',
+			],
+			'Method' => [
+				'type' => 'hidden',
+				'default' => 'delete',
+			],
+			'submit' => [
+				'type' => 'submit',
+				'buttonlabel-message' => 'centralauth-admin-delete-button',
+				'flags' => [ 'progressive', 'destructive' ]
+			],
+		];
+
+		$context = new DerivativeContext( $this->getContext() );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
+		$htmlForm
+			->setAction( $this->getPageTitle()->getFullURL( [ 'target' => $this->mUserName ] ) )
+			->suppressDefaultSubmit()
+			->setWrapperLegendMsg( 'centralauth-admin-delete-title' )
+			->setId( 'mw-centralauth-delete' )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	private function showStatusForm() {
 		// Allows locking, hiding, locking and hiding.
-		$form = '';
-		$form .= Xml::fieldset( $this->msg( 'centralauth-admin-status' )->text() );
-		$form .= Html::hidden( 'wpMethod', 'set-status' );
-		$form .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$form .= Html::hidden( 'wpUserState', $this->mGlobalUser->getStateHash( false ) );
-		$form .= $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock();
+		$formDescriptor = [
+			'intro' => [
+				'type' => 'info',
+				'raw' => true,
+				'default' => $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock(),
+				'cssclass' => 'mw-centralauth-admin-status-intro',
+				'section' => 'intro',
+			],
+			'StatusLocked' => [
+				'type' => 'radio',
+				'label-message' => 'centralauth-admin-status-locked',
+				'options-messages' => [
+					'centralauth-admin-status-locked-no' => 0,
+					'centralauth-admin-status-locked-yes' => 1,
+				],
+				'default' => (int)$this->mGlobalUser->isLocked(),
+				'id' => 'mw-centralauth-admin-status-locked',
+				'section' => 'lockedhidden',
+			],
+			'StatusHidden' => [
+				'type' => 'radio',
+				'label-message' => 'centralauth-admin-status-hidden',
+				'options-messages' => [
+					'centralauth-admin-status-hidden-no' => CentralAuthUser::HIDDEN_LEVEL_NONE,
+				],
+				'default' => $this->mGlobalUser->getHiddenLevelInt(),
+				'id' => 'mw-centralauth-admin-status-hidden',
+				'section' => 'lockedhidden',
+			],
+			'Reason' => [
+				'type' => 'selectandother',
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
+				'label-message' => 'centralauth-admin-reason',
+				'options-message' => 'centralauth-admin-status-reasons',
+				'other-message' => 'centralauth-admin-reason-other-select',
+				'id' => 'mw-centralauth-admin-reason',
+			],
+			'Method' => [
+				'type' => 'hidden',
+				'default' => 'set-status',
+			],
+			'UserState' => [
+				'type' => 'hidden',
+				'default' => $this->mGlobalUser->getStateHash( false ),
+			],
+			'submit' => [
+				'type' => 'submit',
+				'buttonlabel-message' => 'centralauth-admin-status-submit',
+				'flags' => [ 'progressive' ],
+			],
+		];
 
-		// Radio buttons
-		$radioLocked =
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-locked-no' )->text(),
-				'wpStatusLocked',
-				'0',
-				'mw-centralauth-status-locked-no',
-				!$this->mGlobalUser->isLocked() ) .
-			'<br />' .
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-locked-yes' )->text(),
-				'wpStatusLocked',
-				'1',
-				'mw-centralauth-status-locked-yes',
-				$this->mGlobalUser->isLocked() );
-
-		$radioHidden =
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-status-hidden-no' )->text(),
-				'wpStatusHidden',
-				(string)CentralAuthUser::HIDDEN_LEVEL_NONE,
-				'mw-centralauth-status-hidden-no',
-				$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_NONE );
 		if ( $this->mCanSuppress ) {
-			$radioHidden .= '<br />' .
-				Xml::radioLabel(
-					$this->msg( 'centralauth-admin-status-hidden-list' )->text(),
-					'wpStatusHidden',
-					(string)CentralAuthUser::HIDDEN_LEVEL_LISTS,
-					'mw-centralauth-status-hidden-list',
-					$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_LISTS
-				) .
-				'<br />' .
-				Xml::radioLabel(
-					$this->msg( 'centralauth-admin-status-hidden-oversight' )->text(),
-					'wpStatusHidden',
-					(string)CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
-					'mw-centralauth-status-hidden-oversight',
-					$this->mGlobalUser->getHiddenLevelInt() == CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED
-				);
+			$formDescriptor['StatusHidden']['options-messages'] += [
+				'centralauth-admin-status-hidden-list' => CentralAuthUser::HIDDEN_LEVEL_LISTS,
+				'centralauth-admin-status-hidden-oversight' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+			];
 		}
 
-		$reasonList = Xml::listDropdown(
-			'wpReasonList',
-			$this->msg( 'centralauth-admin-status-reasons' )->inContentLanguage()->text(),
-			$this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text()
-		);
-		$reasonField = Xml::input( 'wpReason', 45, false );
+		$context = new DerivativeContext( $this->getContext() );
+		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $context );
+		$htmlForm
+			->setAction( $this->getPageTitle()->getFullURL( [ 'target' => $this->mUserName ] ) )
+			->suppressDefaultSubmit()
+			->setId( 'mw-centralauth-admin-status' )
+			->setWrapperLegendMsg( 'centralauth-admin-status' )
+			->prepareForm()
+			->displayForm( false );
+	}
 
-		$form .= Xml::buildForm(
-			[
-				'centralauth-admin-status-locked' => $radioLocked,
-				'centralauth-admin-status-hidden' => $radioHidden,
-				'centralauth-admin-reason' => $reasonList,
-				'centralauth-admin-reason-other' => $reasonField
+	/**
+	 * Gets a framed and padded fieldset that contains the given HTML.
+	 *
+	 * Used over HTMLForm as we need to avoid adding hidden fields like "wpEditToken" and form elements to parts of
+	 * the page that are not forms.
+	 *
+	 * @param string $html The HTML to be wrapped with the fieldset
+	 * @param string|\MessageSpecifier $fieldsetLegendMsg The message to use as the fieldset legend
+	 * @param string|null $fieldsetId The ID for the fieldset, or null for no ID
+	 * @return string HTML
+	 */
+	private function getFramedFieldsetLayout( string $html, $fieldsetLegendMsg, ?string $fieldsetId = null ): string {
+		$fieldset = new FieldsetLayout( [
+			'label' => $this->msg( $fieldsetLegendMsg )->text(),
+			'items' => [
+				new Widget( [
+					'content' => new HtmlSnippet( $html ),
+				] ),
 			],
-			'centralauth-admin-status-submit'
-		);
-
-		$form .= Xml::closeElement( 'fieldset' );
-		$form = Xml::tags(
-			'form',
-			[
-				'method' => 'POST',
-				'action' => $this->getPageTitle()->getFullURL(
-					[ 'target' => $this->mUserName ]
-				),
-			],
-			$form
-		);
-		$this->getOutput()->addHTML( $form );
+			'id' => $fieldsetId,
+		] );
+		return new PanelLayout( [
+			'classes' => [ 'mw-htmlform-ooui-wrapper' ],
+			'expanded' => false,
+			'padded' => true,
+			'framed' => true,
+			'content' => $fieldset,
+		] );
 	}
 
 	private function showLogExtract() {
@@ -1108,19 +1160,17 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( $this->mCanSuppress ) {
 			$logTypes[] = 'suppress';
 		}
-		$text = '';
+		$html = '';
 		$numRows = LogEventsList::showLogExtract(
-			$text,
+			$html,
 			$logTypes,
 			$title->getPrefixedText(),
 			'',
-			[ 'showIfEmpty' => true ] );
+			[ 'showIfEmpty' => true ]
+		);
 
 		if ( $numRows ) {
-			$this->getOutput()->addHTML( Xml::fieldset(
-				$this->msg( 'centralauth-admin-logsnippet' )->text(),
-				$text
-			) );
+			$this->getOutput()->addHTML( $this->getFramedFieldsetLayout( $html, 'centralauth-admin-logsnippet' ) );
 
 			return;
 		}
