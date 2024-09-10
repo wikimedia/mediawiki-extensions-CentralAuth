@@ -29,6 +29,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
@@ -47,6 +48,19 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 
 	use MockAuthorityTrait;
 	use TempUserTestTrait;
+
+	protected function setUp(): void {
+		parent::setUp();
+		// We need to set wgLocalDatabases for the CentralAuthWikiListService
+		$this->overrideConfigValue( MainConfigNames::LocalDatabases, [ WikiMap::getCurrentWikiId() ] );
+		// Add the current site to the SiteStore to allow it to appear in the attached local accounts list.
+		$sitesTable = $this->getServiceContainer()->getSiteStore();
+		$site = $sitesTable->getSite( WikiMap::getCurrentWikiId() ) ?? new MediaWikiSite();
+		$site->setGlobalId( WikiMap::getCurrentWikiId() );
+		// We need to set a page path, otherwise this is not considered a valid site. Use enwiki's path as a mock value.
+		$site->setPath( MediaWikiSite::PATH_PAGE, "https://en.wikipedia.org/wiki/$1" );
+		$sitesTable->saveSite( $site );
+	}
 
 	protected function newSpecialPage(): SpecialCentralAuth {
 		return new SpecialCentralAuth(
@@ -287,6 +301,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			'centralauth-admin-status-reasons',
 			'centralauth-admin-reason-other-select',
 		] );
+		// Generate the rights the authority loading the page should have
 		$authorityRights = [];
 		if ( $userCanSuppress ) {
 			$authorityRights[] = 'centralauth-suppress';
@@ -339,6 +354,14 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		];
 	}
 
+	private function getRowInWikiListTable( string $html ): string {
+		$wikiListHtml = $this->assertAndGetByElementId( $html, 'mw-centralauth-merged' );
+		$tbody = DOMCompat::getElementsByTagName( DOMUtils::parseHTML( $wikiListHtml ), 'tbody' )[0];
+		$rowTags = DOMCompat::getElementsByTagName( $tbody, 'tr' );
+		$this->assertCount( 1, $rowTags, 'One row in the wiki list table was expected.' );
+		return DOMCompat::getInnerHTML( $rowTags[0] );
+	}
+
 	public function testViewForExistingGlobalTemporaryAccount() {
 		ConvertibleTimestamp::setFakeTime( '20240505050505' );
 		$this->enableAutoCreateTempUser( [ 'expireAfterDays' => 2 ] );
@@ -352,8 +375,10 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		);
 		$targetUser->save( $this->getDb() );
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, false, false, false );
-		// Verify that the temporary account is marked as expired.
+		// Verify that the temporary account is marked as expired, not blocked, and that the attached timestamp is
+		// correct
 		$this->assertStringContainsString( '(centralauth-admin-info-expired', $html );
+		$this->assertStringContainsString( '(centralauth-admin-notblocked', $this->getRowInWikiListTable( $html ) );
 	}
 
 	public function testViewForExistingGlobalAccountWithCustomInfoFields() {
@@ -378,6 +403,58 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertStringContainsString(
 			'Custom Info Field Data', $centralAuthInfoElement->textContent
 		);
+		// Check that the unmerge checkbox is not present
+		$rowInWikiList = $this->getRowInWikiListTable( $html );
+		$checkboxElement = DOMCompat::querySelector( DOMUtils::parseHTML( $rowInWikiList ), "input[type=checkbox]" );
+		$this->assertNull( $checkboxElement );
+	}
+
+	public function testViewForLocallyBlockedGlobalAccount() {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetLocalUser = $this->getServiceContainer()->getUserFactory()->newFromName( $targetUsername );
+		// Make an edit on behalf of the target username, give it a local group, and then block it
+		$this->editPage(
+			$this->getExistingTestPage(), 'testing1234', '', NS_MAIN, $targetLocalUser
+		);
+		$this->getServiceContainer()->getUserGroupManager()->addUserToGroup( $targetLocalUser, 'sysop' );
+		$this->getServiceContainer()->getBlockUserFactory()
+			->newBlockUser(
+				$targetUsername, $this->mockRegisteredUltimateAuthority(), 'indefinite', 'Test reason1234'
+			)
+			->placeBlock();
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		// Verify that the user is marked as locally blocked, has the correct edit count, and is in the sysop group
+		// Check that one row is present in the table
+		$rowInWikiList = $this->getRowInWikiListTable( $html );
+		$this->assertStringContainsString( '(centralauth-admin-blocked2-indef', $rowInWikiList );
+		$this->assertStringContainsString( '(centralauth-foreign-contributions: 1, en.wikipedia.org', $rowInWikiList );
+		$this->assertStringContainsString( 'Test reason1234', $rowInWikiList );
+		$this->assertStringContainsString( 'sysop', $rowInWikiList );
+		// Check that the merge method is correct
+		$this->assertStringContainsString( "(centralauth-merge-method-primary)", $rowInWikiList );
+		// Check that the unmerge checkbox is present
+		$checkboxElement = DOMCompat::querySelector( DOMUtils::parseHTML( $rowInWikiList ), "input[type=checkbox]" );
+		$this->assertNotNull( $checkboxElement );
+		$this->assertSame( 'wpWikis[]', $checkboxElement->getAttribute( 'name' ) );
+		$this->assertSame( WikiMap::getCurrentWikiId(), $checkboxElement->getAttribute( 'value' ) );
+	}
+
+	public function testViewForGlobalAccountWithUnattachedAccount() {
+		$targetUsername = $this->getTestCentralAuthUser();
+		// Unattach the local account from the global account for the test
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$targetUser->addLocalName( WikiMap::getCurrentWikiId() );
+		$targetUser->adminUnattach( [ WikiMap::getCurrentWikiId() ] );
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		// Check that one row is present in the table
+		$rowInWikiList = $this->getRowInWikiListTable( $html );
+		$this->assertStringContainsString( '(centralauth-admin-unattached)', $rowInWikiList );
+		// Check that the unmerge checkbox is not present, as the user is not attached
+		$checkboxElement = DOMCompat::querySelector( DOMUtils::parseHTML( $rowInWikiList ), "input[type=checkbox]" );
+		$this->assertNull( $checkboxElement );
+		// Check that the "unattached" info item is present in the "Global account information" box (which indicates
+		// at least one unattached account).
+		$this->assertStringContainsString( '(centralauth-admin-info-unattached)', $html );
 	}
 
 	private function verifyForExistingGlobalAccountOnFormSubmission(
@@ -623,5 +700,28 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			'wpMethod is "delete"' => [ 'delete' ],
 			'wpMethod is "unmerge"' => [ 'unmerge' ],
 		];
+	}
+
+	public function testUnmergeForm() {
+		// Get our testing global account, and check that it's attached to the local account.
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$targetUser->addLocalName( WikiMap::getCurrentWikiId() );
+		$this->assertTrue( $targetUser->attachedOn( WikiMap::getCurrentWikiId() ) );
+		// Use the special page to unmerge the local account from the global account
+		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
+			$targetUsername,
+			[ 'wpMethod' => 'unmerge', 'wpWikis' => [ WikiMap::getCurrentWikiId() ] ],
+			true,
+			true,
+			true
+		);
+		// Verify that local user has been unmerged from the global user
+		$this->assertStringContainsString( '(centralauth-admin-unmerge-success', $html );
+		$targetUser->invalidateCache();
+		$this->assertFalse( $targetUser->attachedOn( WikiMap::getCurrentWikiId() ) );
+		// Check the wiki list row says the local account is unattached
+		$rowInWikiList = $this->getRowInWikiListTable( $html );
+		$this->assertStringContainsString( '(centralauth-admin-unattached)', $rowInWikiList );
 	}
 }
