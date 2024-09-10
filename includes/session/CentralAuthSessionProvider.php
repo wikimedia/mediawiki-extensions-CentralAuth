@@ -337,7 +337,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	/** @inheritDoc */
 	protected function cookieDataToExport( $user, $remember ) {
 		// If we're going to set CA cookies, don't remember in core cookies.
-		if ( $remember ) {
+		if ( $this->enable && $remember ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 			$remember = !$centralUser->isAttached();
 		}
