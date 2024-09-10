@@ -158,24 +158,6 @@ class GlobalRenameUser {
 			return $status;
 		}
 
-		if (
-			isset( $options['type'] ) &&
-			$options['type'] === GlobalRenameRequest::VANISH &&
-			!$this->oldCAUser->isLocked()
-		) {
-			$this->oldCAUser->adminLock();
-			$this->oldCAUser->logAction(
-				'setstatus',
-				$this->lockPerformingUser ?? $this->performingUser,
-				// Reason in this context should be the public log entry, not
-				// the private reason stated by the user.
-				$options['reason'] ?? '',
-				[ 'added' => [ 'locked' ], 'removed' => [] ],
-				false,
-				false
-			);
-		}
-
 		// Rename the user centrally and unattach the old user from all
 		// attached wikis. Each will be reattached as its LocalRenameUserJob
 		// runs.
@@ -189,6 +171,24 @@ class GlobalRenameUser {
 		$this->caAntiSpoofManager
 			->getSpoofUser( $this->newUser->getName() )
 			->update( $this->oldUser->getName() );
+
+		if (
+			isset( $options['type'] ) &&
+			$options['type'] === GlobalRenameRequest::VANISH &&
+			!$this->newCAUser->isLocked()
+		) {
+			$this->newCAUser->adminLock();
+			$this->newCAUser->logAction(
+				'setstatus',
+				$this->lockPerformingUser ?? $this->performingUser,
+				// Reason in this context should be the public log entry, not
+				// the private reason stated by the user.
+				$options['reason'] ?? '',
+				[ 'added' => [ 'locked' ], 'removed' => [] ],
+				false,
+				false
+			);
+		}
 
 		// From this point on all code using CentralAuthUser
 		// needs to use the new username, except for
