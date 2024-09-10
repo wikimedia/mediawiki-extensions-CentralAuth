@@ -26,6 +26,16 @@
 }
 
 .mw-special-CentralAuth {
+	// Fix spacing around tables, so that they are consistent with the normal spacing for OOUI fields.
+	.mw-centralauth-wikislist,
+	.mw-centralauth-globalblock-exempt-list-table {
+		margin: 1em 0 0;
+	}
+
+	#mw-centralauth-globalblock-exempt-list .oo-ui-fieldsetLayout-header {
+		margin-bottom: 1em;
+	}
+
 	#mw-centralauth-admin-status {
 		// Remove the styling for the form sections added to allow grouping the "Locked" and "Hidden" radio inputs into
 		// a wrapping element.
@@ -66,10 +76,7 @@
 		}
 	}
 
-	// Remove the unnecessary bottom margin on the wikitext table, as it is added by OOUI.
 	.mw-centralauth-wikislist {
-		margin: 1em 0 0;
-
 		.mw-centralauth-wikislist-method {
 			text-align: center;
 		}

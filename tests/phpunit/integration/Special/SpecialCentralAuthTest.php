@@ -26,6 +26,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
@@ -454,6 +455,42 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Check that the "unattached" info item is present in the "Global account information" box (which indicates
 		// at least one unattached account).
 		$this->assertStringContainsString( '(centralauth-admin-info-unattached)', $html );
+	}
+
+	public function testViewForGloballyBlockedUserWithGlobalBlockLocallyDisabled() {
+		$this->markTestSkippedIfExtensionNotLoaded( 'GlobalBlocking' );
+		$targetUsername = $this->getTestCentralAuthUser();
+		// Globally block the target user and then disable it on the local wiki
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockingServices->getGlobalBlockManager()
+			->block(
+				$targetUsername, 'testing', 'indefinite',
+				$this->getTestUser( [ 'steward' ] )->getUserIdentity()
+			);
+		$globalBlockingServices->getGlobalBlockLocalStatusManager()
+			->locallyDisableBlock(
+				$targetUsername, 'Test reason for local disable',
+				$this->getTestSysop()->getUserIdentity()
+			);
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		// Verify that the global block exempt table is present
+		$globalBlockExemptFieldset = $this->assertAndGetByElementId(
+			$html, 'mw-centralauth-globalblock-exempt-list'
+		);
+		$this->assertStringContainsString( '(centralauth-admin-globalblock-exempt-list', $globalBlockExemptFieldset );
+		$this->assertStringContainsString(
+			'(centralauth-admin-globalblock-exempt-list-reason-heading', $globalBlockExemptFieldset
+		);
+		$this->assertStringContainsString(
+			'(centralauth-admin-globalblock-exempt-list-wiki-heading', $globalBlockExemptFieldset
+		);
+		// Check that there is one row in the global block exempt list and that it contains the correct data
+		$tbody = DOMCompat::getElementsByTagName( DOMUtils::parseHTML( $globalBlockExemptFieldset ), 'tbody' )[0];
+		$rowTags = DOMCompat::getElementsByTagName( $tbody, 'tr' );
+		$this->assertCount( 1, $rowTags, 'One row in the global block exempt list table was expected.' );
+		$rowHtml = DOMCompat::getInnerHTML( $rowTags[0] );
+		$this->assertStringContainsString( '(centralauth-foreign-link', $rowHtml );
+		$this->assertStringContainsString( 'Test reason for local disable', $rowHtml );
 	}
 
 	private function verifyForExistingGlobalAccountOnFormSubmission(

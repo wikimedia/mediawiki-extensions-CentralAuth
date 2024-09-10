@@ -19,10 +19,14 @@ use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
+use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Parser\Sanitizer;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
@@ -246,6 +250,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->showUsernameForm();
 		if ( $continue && $globalUser->exists() ) {
 			$this->showInfo();
+			$this->showGlobalBlockingExemptWikisList();
 			if ( $this->mCanLock ) {
 				$this->showStatusForm();
 			}
@@ -559,6 +564,70 @@ class SpecialCentralAuth extends SpecialPage {
 		$caHookRunner->onCentralAuthInfoFields( $globalUser, $this->getContext(), $attribsWithMessageKeys );
 
 		return $attribsWithMessageKeys;
+	}
+
+	private function showGlobalBlockingExemptWikisList() {
+		$tableRows = $this->getGlobalBlockingExemptWikiTableRows();
+		if ( !$tableRows ) {
+			return;
+		}
+
+		$header = Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
+		$header .= Html::element(
+			'th',
+			[],
+			$this->msg( 'centralauth-admin-globalblock-exempt-list-wiki-heading' )->text()
+		);
+		$header .= Html::element(
+			'th',
+			[ 'class' => 'unsortable' ],
+			$this->msg( 'centralauth-admin-globalblock-exempt-list-reason-heading' )->text()
+		);
+		$header .= Xml::closeElement( 'tr' ) . Xml::closeElement( 'thead' );
+
+		$body = Html::rawElement( 'tbody', [], $tableRows );
+
+		$tableHtml = Html::rawElement(
+			'table',
+			[ 'class' => 'wikitable sortable mw-centralauth-globalblock-exempt-list-table' ],
+			$header . $body
+		);
+		$this->getOutput()->addHTML( $this->getFramedFieldsetLayout(
+			$tableHtml, 'centralauth-admin-globalblock-exempt-list',
+			'mw-centralauth-globalblock-exempt-list'
+		) );
+	}
+
+	private function getGlobalBlockingExemptWikiTableRows(): string {
+		// There can be no global blocks if the GlobalBlocking extension is not loaded.
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'GlobalBlocking' ) ) {
+			return '';
+		}
+
+		$globalBlockingServices = GlobalBlockingServices::wrap( MediaWikiServices::getInstance() );
+		$globalBlock = $globalBlockingServices->getGlobalBlockLookup()
+			->getGlobalBlockingBlock( null, $this->mGlobalUser->getId(), GlobalBlockLookup::SKIP_LOCAL_DISABLE_CHECK );
+		// If the user is not globally blocked, then their global block cannot be locally disabled (so there will be
+		// no rows to display).
+		if ( $globalBlock === null ) {
+			return '';
+		}
+
+		$html = '';
+		$queryWikis = array_merge( $this->mAttachedLocalAccounts, $this->mUnattachedLocalAccounts );
+		foreach ( $queryWikis as $wiki ) {
+			// Check if the global block is disabled on the given wiki, and if it is then add it to the table HTML.
+			$localBlockStatus = $globalBlockingServices->getGlobalBlockLocalStatusLookup()
+				->getLocalWhitelistInfo( $globalBlock->gb_id, null, $wiki['wiki'] );
+			if ( $localBlockStatus === false ) {
+				continue;
+			}
+
+			$row = Html::rawElement( 'td', [], $this->foreignUserLink( $wiki['wiki'] ) ) .
+				Html::element( 'td', [], $localBlockStatus['reason'] );
+			$html .= Html::rawElement( 'tr', [], $row );
+		}
+		return $html;
 	}
 
 	/**
