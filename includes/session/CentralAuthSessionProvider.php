@@ -14,6 +14,7 @@ use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Session\UserInfo;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserRigorOptions;
@@ -37,8 +38,10 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthSessionManager $sessionManager;
+	private TempUserConfig $tempUserConfig;
 
 	/**
+	 * @param TempUserConfig $tempUserConfig
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param array $params In addition to the parameters for
@@ -58,12 +61,14 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	 *     - sameSite: Cookie SameSite attribute, defaults to $wgCookieSameSite
 	 */
 	public function __construct(
+		TempUserConfig $tempUserConfig,
 		UserIdentityLookup $userIdentityLookup,
 		CentralAuthSessionManager $sessionManager,
 		$params = []
 	) {
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->sessionManager = $sessionManager;
+		$this->tempUserConfig = $tempUserConfig;
 
 		$params += [
 			'centralCookieOptions' => [],
@@ -210,11 +215,15 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 			return $this->returnParentSessionInfo( $request );
 		}
 		if ( !$this->userNameUtils->isUsable( $userName ) ) {
-			$this->logger->warning(
-				__METHOD__ . ': username {username} is not usable on this wiki', [
-					'username' => $userName,
-				]
-			);
+			// Log a warning if the username is not usable, except if the name is reserved by the temporary account
+			// system to avoid spamming the logs (T373827).
+			if ( !$this->tempUserConfig->isReservedName( $userName ) ) {
+				$this->logger->warning(
+					__METHOD__ . ': username {username} is not usable on this wiki', [
+						'username' => $userName,
+					]
+				);
+			}
 			return $this->returnParentSessionInfo( $request, true );
 		}
 
