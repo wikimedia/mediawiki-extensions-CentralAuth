@@ -454,7 +454,6 @@
 	"globalrenamequeue-request-previous-renames": "以前の{{PLURAL:$1|利用者名変更}}",
 	"globalrenamequeue-request-reason": "<strong>改名したい理由</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "公開記録項目のコメント (承認する場合)",
-	"globalrenamequeue-request-reason-sul": "統一ログインへの完全移行に伴い、利用者名の衝突に関する連絡を受けたため",
 	"globalrenamequeue-request-savefailed": "依頼ステータスの変更の保存に失敗しました。",
 	"globalrenamequeue-request-status-title": "「$1」から「$2」への改名",
 	"globalrenamequeue-request-suppressredirects": "リダイレクトを作成しない",

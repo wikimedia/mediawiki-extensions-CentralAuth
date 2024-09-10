@@ -448,7 +448,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Попереднє перейменування|Попередні перейменування}}",
 	"globalrenamequeue-request-reason": "<strong>Причина перейменування</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Коментар запису у публічному журналі (якщо приймається)",
-	"globalrenamequeue-request-reason-sul": "Користувачу повідомлено про глобальний конфлікт імен у ході встановлення єдиного облікового запису (SUL).",
 	"globalrenamequeue-request-savefailed": "Збій збереження змін до стану запиту.",
 	"globalrenamequeue-request-status-title": "Перейменування із «$1» на «$2»",
 	"globalrenamequeue-request-suppressredirects": "Не створювати перенаправлення",

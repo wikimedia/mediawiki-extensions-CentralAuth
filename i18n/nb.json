@@ -409,7 +409,6 @@
 	"globalrenamequeue-request-previous-renames": "Forrige {{PLURAL:$1|navneendring|navneendringer}}",
 	"globalrenamequeue-request-reason": "<strong>Årsak for navneendringsforespørselen</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Offentlig loggoppføringskommentar (om godkjent)",
-	"globalrenamequeue-request-reason-sul": "Brukeren varslet om global navnekonflikt under forbereding av SUL-fullføring.",
 	"globalrenamequeue-request-savefailed": "Lagring av endring av forespørselens status mislyktes.",
 	"globalrenamequeue-request-status-title": "Endre navn fra «$1» til «$2»",
 	"globalrenamequeue-request-suppressredirects": "Forhindre oppretting av omdirigeringer",

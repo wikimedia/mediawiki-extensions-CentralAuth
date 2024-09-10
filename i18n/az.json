@@ -427,7 +427,6 @@
 	"globalrenamequeue-request-previous-renames": "Əvvəlki {{PLURAL:$1|addəyişmə|addəyişmələr}}",
 	"globalrenamequeue-request-reason": "<strong>Addəyişmə sorğusunun səbəbi</strong> \n$1",
 	"globalrenamequeue-request-reason-label": "İctimai jurnal qeydində şərh (əgər qəbul edilirsə)",
-	"globalrenamequeue-request-reason-sul": "İstifadəçi SUL-nin yekunlaşdırılmasına hazırlıq üçün qlobal ad münaqişəsi barədə məlumatlandırılıb.",
 	"globalrenamequeue-request-savefailed": "Sorğu statusuna dəyişiklik yadda saxlanılmadı.",
 	"globalrenamequeue-request-status-title": "\"$1\" adının \"$2\" olaraq dəyişdirilməsi",
 	"globalrenamequeue-request-suppressredirects": "Yönləndirmələr yaratma",

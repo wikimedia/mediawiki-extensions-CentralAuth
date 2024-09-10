@@ -415,7 +415,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|precedente|precedenti}} {{PLURAL:$1|rinomina|rinomine}}",
 	"globalrenamequeue-request-reason": "<strong>Motivazione della richiesta di rinomina</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Commento pubblico visualizzato nei log (se accetti)",
-	"globalrenamequeue-request-reason-sul": "Utente avvisato del conflitto del nome globale in preparazione della finalizzazione SUL.",
 	"globalrenamequeue-request-savefailed": "Fallito il salvataggio del cambiamento di stato della richiesta.",
 	"globalrenamequeue-request-status-title": "Rinomina da \"$1\" a \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Sopprimi la creazione di redirect",

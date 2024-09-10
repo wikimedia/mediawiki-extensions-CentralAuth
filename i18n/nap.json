@@ -357,7 +357,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Precedente}} {{PLURAL:$1|rinommena|rinommene}}",
 	"globalrenamequeue-request-reason": "<strong>Mutivo 'e richiesta 'e renommena</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Commento pubbreco visto dint' 'e riggistre (si accettate)",
-	"globalrenamequeue-request-reason-sul": "Utente accuorto d' 'o conflitto d' 'o nomme globbale 'n abbiamento d' 'a fernì c' 'a SUL.",
 	"globalrenamequeue-request-savefailed": "Nun s'è pututo fà 'o sarvà 'o cagnamiento 'e stato d' 'a richiesta.",
 	"globalrenamequeue-request-status-title": "Rinommena 'a \"$1\" a \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Stuta 'a funzione e criazione 'e redirect",

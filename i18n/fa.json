@@ -434,7 +434,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|تغییر نام|تغییر نام‌های}} قبلی",
 	"globalrenamequeue-request-reason": "<strong>علت درخواست تغییر نام</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "توضیحات سیاههٔ عمومی (در صورت پذیرفتن)",
-	"globalrenamequeue-request-reason-sul": "کاربر برای آماده شدن جهت تکمیل ادغام حساب‌، از تداخل نام سراسری آگاه شد.",
 	"globalrenamequeue-request-savefailed": "ناتوان از ذخیرهٔ تغییرات در وضعیت درخواست.",
 	"globalrenamequeue-request-status-title": "تغییر نام از \"$1\" به \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "از به وجود آمدن تغییرمسیر جلوگیری کن",

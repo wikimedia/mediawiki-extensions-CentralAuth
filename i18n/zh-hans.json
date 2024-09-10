@@ -477,7 +477,6 @@
 	"globalrenamequeue-request-previous-renames": "上次{{PLURAL:$1|更名}}",
 	"globalrenamequeue-request-reason": "<strong>重命名请求原因</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "公开日志记录评论（如果接受）",
-	"globalrenamequeue-request-reason-sul": "告知用户全域用户名冲突以为SUL工作完成做准备。",
 	"globalrenamequeue-request-savefailed": "保存请求状态更改失败。",
 	"globalrenamequeue-request-status-title": "从“$1”重命名至“$2”",
 	"globalrenamequeue-request-suppressredirects": "阻止重定向创建",

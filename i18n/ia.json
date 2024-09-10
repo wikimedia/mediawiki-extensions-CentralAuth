@@ -405,7 +405,6 @@
 	"globalrenamequeue-request-previous-renames": "Renomination{{PLURAL:$1||es}} precedente",
 	"globalrenamequeue-request-reason": "<strong>Ration pro requestar renomination</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Commento de entrata de registro public (si acceptate)",
-	"globalrenamequeue-request-reason-sul": "Le usator ha essite notificate de un conflicto de nomine global in preparation pro le finalisation del unification de contos (SUL).",
 	"globalrenamequeue-request-savefailed": "Un error ha occurrite durante le salveguarda del cambiamento del stato del requesta.",
 	"globalrenamequeue-request-status-title": "Renomination de \"$1\" a \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Non crear redirectiones",

@@ -374,7 +374,6 @@
 	"globalrenamequeue-request-movepages": "Trasllada les pàgines d'usuari",
 	"globalrenamequeue-request-reason": "<strong>Motiu de la sol·licitud de canvi de nom</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Comentari de l'entrada pública del registre (si l'accepteu)",
-	"globalrenamequeue-request-reason-sul": "Usuari informat de conflicte de nom global en preparació de la finalització SUL.",
 	"globalrenamequeue-request-status-title": "Canvi de nom de «$1» a «$2»",
 	"globalrenamequeue-request-suppressredirects": "Suprimeix la creació de redireccions",
 	"globalrenamequeue-request-title": "Canviar el nom de «$1»?",

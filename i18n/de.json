@@ -438,7 +438,6 @@
 	"globalrenamequeue-request-previous-renames": "Vorherige {{PLURAL:$1|Umbenennung|Umbenennungen}}",
 	"globalrenamequeue-request-reason": "<strong>Grund für die Umbenennungsanfrage</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Öffentlicher Kommentar eines Logbucheintrags (falls akzeptiert)",
-	"globalrenamequeue-request-reason-sul": "Benutzer über den globalen Namenskonflikt in Vorbereitung der SUL-Finalisierung benachrichtigt.",
 	"globalrenamequeue-request-savefailed": "Fehler beim Speichern der Änderung des Anfragenstatus.",
 	"globalrenamequeue-request-status-title": "„$1“ in „$2“ umbenennen",
 	"globalrenamequeue-request-suppressredirects": "Erstellung von Weiterleitungen unterdrücken",

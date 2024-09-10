@@ -348,7 +348,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Dati a panaginagan manen|Dagiti dati a panaginagan manen}}",
 	"globalrenamequeue-request-reason": "<strong>Rason para iti panagkiddaw iti pananginagan manen</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Komentario ti naikabil a listaan ti publiko (no agaw-awat)",
-	"globalrenamequeue-request-reason-sul": "Ti agar-aramat ket napakdaaran iti suppiat ti global a panaginagan manen iti panangisagana para iti panagtungpal iti SUL.",
 	"globalrenamequeue-request-savefailed": "Napaay ti panangidulin ti panagbaliw ti kasaad ti kiddaw.",
 	"globalrenamequeue-request-status-title": "Nanaganan manen manipud iti \"$1\" iti \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Pasardengen ti panagpartuat kadagiti baw-ing",

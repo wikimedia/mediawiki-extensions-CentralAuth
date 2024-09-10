@@ -361,7 +361,6 @@
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> निवेदन कर रहा है कि पुनः नामकरण किया जाए <strong>$3</strong> पर।",
 	"globalrenamequeue-request-movepages": "सदस्य पृष्ठों को स्थानांतरित करें",
 	"globalrenamequeue-request-reason": "<strong>पुनःनामकरण निवेदन का कारण </strong>\n$1",
-	"globalrenamequeue-request-reason-sul": "एस०यू०एल० के अंतिम चरण की तय्यारी में वैश्विक नाम के विवाद के बारे में सदस्य को सूचित किया गया है।",
 	"globalrenamequeue-request-savefailed": "निवेदन स्थिति पर बदलाव जमा करना असफल रहा।",
 	"globalrenamequeue-request-status-title": "पुनःनामकरण \"$1\" से \"$2\" तक करें",
 	"globalrenamequeue-request-suppressredirects": "अनुप्रेषित कड़ियों के बनने पर रोक लगाएँ",

@@ -432,7 +432,6 @@
 	"globalrenamequeue-request-previous-renames": "Önceki {{PLURAL:$1|yeniden adlandırma|yeniden adlandırma}}",
 	"globalrenamequeue-request-reason": "<strong>Yeniden adlandırma isteğinde bulunma nedeni</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Genel günlük girişi yorumu (kabul ediliyorsa)",
-	"globalrenamequeue-request-reason-sul": "Kullanıcı, SUL kesinleşmesine hazırlanırken küresel ad çakışması konusunda bilgilendirildi.",
 	"globalrenamequeue-request-savefailed": "İstek durumuna değişiklik kaydedilemedi.",
 	"globalrenamequeue-request-status-title": "\"$1\" yerine \"$2\" olarak yeniden adlandırın",
 	"globalrenamequeue-request-suppressredirects": "Yönlendirmelerin oluşturulmasını bastırın",

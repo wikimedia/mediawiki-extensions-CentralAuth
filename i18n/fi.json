@@ -422,7 +422,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Edellinen nimenvaihto|Edelliset nimenvaihdot}}",
 	"globalrenamequeue-request-reason": "<strong>Syy nimen vaihtamiselle</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Kommentti julkista lokimerkintää varten (hyväksyttäessä)",
-	"globalrenamequeue-request-reason-sul": "Käyttäjälle on ilmoitettu järjestelmänlaajuisesta nimikonfliktista SUL-viimeistelyä valmisteltaessa.",
 	"globalrenamequeue-request-savefailed": "Pyynnön tilannetta koskevan muutoksen tallentaminen ei onnistunut.",
 	"globalrenamequeue-request-status-title": "Käyttäjätunnuksen ”$1” siirto nimelle ”$2”",
 	"globalrenamequeue-request-suppressredirects": "Älä luo uudelleenohjauksia sivuista",

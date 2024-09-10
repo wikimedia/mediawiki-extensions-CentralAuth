@@ -401,7 +401,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Папярэдняе перайменаванне|Папярэднія перайменаванні}}",
 	"globalrenamequeue-request-reason": "<strong>Прычына запыту перайменавання</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Агульнадаступны каментарый",
-	"globalrenamequeue-request-reason-sul": "Удзельнік быў апавешчаны пра глабальны канфлікт імёнаў у рамках падрыхтоўкі да завяршэння SUL.",
 	"globalrenamequeue-request-savefailed": "Не атрымалася захаваць змены ў статусе запыту.",
 	"globalrenamequeue-request-status-title": "Змена імя «$1» на «$2»",
 	"globalrenamequeue-request-suppressredirects": "Не ствараць перанакіравання",

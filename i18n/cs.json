@@ -397,7 +397,6 @@
 	"globalrenamequeue-request-previous-renames": "Předchozí {{PLURAL:$1|přejmenování}}",
 	"globalrenamequeue-request-reason": "<strong>Zdůvodnění žádosti o přejmenování</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Komentář do veřejného protokolu (při schválení)",
-	"globalrenamequeue-request-reason-sul": "Uživatel informován o konfliktu globálních jmen před dokončením SUL.",
 	"globalrenamequeue-request-savefailed": "Nepodařilo se uložit změnu stavu žádosti.",
 	"globalrenamequeue-request-status-title": "Přejmenování z „$1“ na „$2“",
 	"globalrenamequeue-request-suppressredirects": "Nevytvářet přesměrování",

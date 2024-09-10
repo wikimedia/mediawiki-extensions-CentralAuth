@@ -447,7 +447,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Poprzednia zmiana nazwy|Poprzednie zmiany nazw}}",
 	"globalrenamequeue-request-reason": "<strong>Powód zmiany nazwy</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Komentarz do wpisu w logu (widoczny publicznie)",
-	"globalrenamequeue-request-reason-sul": "Użytkownik został powiadomiony o konflikcie globalnej nazwy podczas przygotowania do finalizacji SUL.",
 	"globalrenamequeue-request-savefailed": "Nie udało się zapisać zmiany statusu wniosku.",
 	"globalrenamequeue-request-status-title": "Zmiana nazwy z „$1” na „$2”",
 	"globalrenamequeue-request-suppressredirects": "Pomiń tworzenie przekierowań",

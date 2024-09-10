@@ -460,7 +460,6 @@
 	"globalrenamequeue-request-previous-renames": "上一次的{{PLURAL:$1|重新命名|重新命名}}",
 	"globalrenamequeue-request-reason": "<strong>請求重新命名的原因</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "公開日誌項目評論 (若請求被接受)",
-	"globalrenamequeue-request-reason-sul": "通知使用者在準備 SUL 最終化時發生全域名稱衝突。",
 	"globalrenamequeue-request-savefailed": "請求狀態變更儲存失敗。",
 	"globalrenamequeue-request-status-title": "重新命名 \"$1\" 為 \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "禁止建立重新導向",

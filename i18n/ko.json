@@ -428,7 +428,6 @@
 	"globalrenamequeue-request-previous-renames": "과거 {{PLURAL:$1|계정명 변경}}",
 	"globalrenamequeue-request-reason": "<strong>이름 바꾸기를 요청하는 이유</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "(승인 시) 공개되는 로그 코멘트",
-	"globalrenamequeue-request-reason-sul": "SUL 마무리 조치를 위한 통합 계정 이름 충돌에 대해 사용자가 알림을 받으",
 	"globalrenamequeue-request-savefailed": "요청 상태 변경을 저장하는 데 실패했습니다.",
 	"globalrenamequeue-request-status-title": "\"$1\"에서 \"$2\"(으)로 이름을 바꿈",
 	"globalrenamequeue-request-suppressredirects": "넘겨주기 만들기를 막기",

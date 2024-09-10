@@ -377,7 +377,6 @@
 	"globalrenamequeue-request-previous-renames": "\n{{PLURAL:$1|آلشت نوم|آلشت نومؽا}} نوئایی",
 	"globalrenamequeue-request-reason": "<strong>دلٛیلٛ دٱرهاست آلشت نوم</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "پهرستنومٱ عمۊمی ڤیر ۉ باڤٱر(د سۊرٱت قبۊل کردن)",
-	"globalrenamequeue-request-reason-sul": "مؽنتۏر سی آمایٱ بیئن سی کامل کردن اْدغام هساو، د تٱداخول نوم سراسری ڤارٱسنیٱ بی.",
 	"globalrenamequeue-request-savefailed": "ناتڤوݩ د زٱخیرٱ کردن آلشتؽا د هال ۉ بال دٱرهاست.",
 	"globalrenamequeue-request-status-title": "آلشت نوم د\"$1\" ڤ \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "پاکساگری ساخت ڤاگٱردونیا",

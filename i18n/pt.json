@@ -421,7 +421,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Alteração anterior do nome|Alterações anteriores do nome}}",
 	"globalrenamequeue-request-reason": "<strong>Motivo para o pedido de alteração do nome</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Comentário público da entrada de registo (se aceitou)",
-	"globalrenamequeue-request-reason-sul": "Utilizador notificado de conflito do nome global, em preparação para a finalização SUL.",
 	"globalrenamequeue-request-savefailed": "Falha ao gravar pedido de alteração do estado.",
 	"globalrenamequeue-request-status-title": "Alterar o nome de \"$1\" para \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Suprimir a criação de redirecionamentos",

@@ -430,7 +430,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|שינוי שם קודם|שינויי שם קודמים}}",
 	"globalrenamequeue-request-reason": "<strong>סיבה לבקשת שינוי שם</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "הערה על שורת יומן ציבורית (אם זה מתקבל)",
-	"globalrenamequeue-request-reason-sul": "המשתמש קיבל הודעה על התגשות גלובלית בשם המשתמש בהכנה להשלמת מיזוג החשבונות.",
 	"globalrenamequeue-request-savefailed": "שמירת השינוי לבקשה לא הצליחה.",
 	"globalrenamequeue-request-status-title": "שינוי מהשם \"$1\" על השם \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "לא ליצור הפניות",

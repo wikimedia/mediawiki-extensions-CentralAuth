@@ -340,7 +340,6 @@
 	"globalrenamequeue-request-movepages": "Tramudé le pàgine prinsipaj ëd j'utent",
 	"globalrenamequeue-request-reason": "<strong>Rason për ciamé ël cangiament ëd nòm</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Coment a la vos dl'argistr pùblich (si acetà)",
-	"globalrenamequeue-request-reason-sul": "Utent avisà ëd conflit ëd nòm global an vista dla finalisassion dla SUL.",
 	"globalrenamequeue-request-savefailed": "Faliment a argistré ël cangiament a lë stat dl'arcesta.",
 	"globalrenamequeue-request-status-title": "Arnominé da «$1» a «$2»",
 	"globalrenamequeue-request-suppressredirects": "Eliminé la creassion ëd ridiression",

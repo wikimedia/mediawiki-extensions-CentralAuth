@@ -420,7 +420,6 @@
 	"globalrenamequeue-request-previous-renames": "Tidigare {{PLURAL:$1|namnbyte|namnbyten}}",
 	"globalrenamequeue-request-reason": "<strong>Anledgning till begäran om namnbyte</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Kommentar för den publika loggen (om accepterat)",
-	"globalrenamequeue-request-reason-sul": "Användare meddelad om global namnkonflikt i förberedelse för SUL-slutförande.",
 	"globalrenamequeue-request-savefailed": "Fel när ändringen av status för förfrågan skulle sparas.",
 	"globalrenamequeue-request-status-title": "Byt namn från \"$1\" till \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Förhindra att omdirigeringar skapas",

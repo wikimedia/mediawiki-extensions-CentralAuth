@@ -392,7 +392,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Renomenamende|Renomenaminde}} d'apprime",
 	"globalrenamequeue-request-reason": "<strong>Mutive pa richieste de cange</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Commende pubbleche sus a vôsce de l'archivije (ce accettate)",
-	"globalrenamequeue-request-reason-sul": "Utende avvisate d'u conflitte d'u nome globbale in preparazzione d'a finalizzazzione SUL.",
 	"globalrenamequeue-request-savefailed": "Reggistrazione d'u cangiamende sciute a male pu state richieste.",
 	"globalrenamequeue-request-status-title": "Renomine da \"$1\" a \"$2",
 	"globalrenamequeue-request-suppressredirects": "Scitte 'a ccrejazione de redirezionaminde",

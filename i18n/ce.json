@@ -396,7 +396,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Хьалха цӀе хийцар|Хьалха цӀерш хийцарш}}",
 	"globalrenamequeue-request-reason": "<strong>ЦӀе хийцаран дехаран бахьана</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Массо тӀекхочу комментареш",
-	"globalrenamequeue-request-reason-sul": "Декъашхочунна хаам бина глобалан цӀеран конфликт хиларх лаьцна, SUL чекхйаккха кечлуш.",
 	"globalrenamequeue-request-savefailed": "Дехаран статусехь хийцамаш Ӏалашбаран гӀалат.",
 	"globalrenamequeue-request-status-title": "ЦӀе хийца «$1» → «$2»",
 	"globalrenamequeue-request-suppressredirects": "ДӀасахьажораш кхолларан бехкам бе",

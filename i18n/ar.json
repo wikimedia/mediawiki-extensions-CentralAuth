@@ -430,7 +430,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|تغيير الاسم السابق|تغييرات الأسماء السابقة}}",
 	"globalrenamequeue-request-reason": "<strong>سبب طلب إعادة التسمية</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "تعليق للسجل العام (في حال القبول)",
-	"globalrenamequeue-request-reason-sul": "تم إخطار المستخدم عن تضارب أسماء الحسابات الموحدة تحضيراً لإتمام حسابات الدخول الموحد.",
 	"globalrenamequeue-request-savefailed": "فشل في حفظ التغييرات لطلب الوضع.",
 	"globalrenamequeue-request-status-title": "غيِّر الاسم من «$1» إلى «$2»",
 	"globalrenamequeue-request-suppressredirects": "امنع إنشاء التحويلات",

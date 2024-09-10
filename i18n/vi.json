@@ -425,7 +425,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Lần đổi tên|Các lần đổi tên}} trước đây",
 	"globalrenamequeue-request-reason": "<strong>Lý do yêu cầu đổi tên</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Tóm lược cho nhật trình công khai (nếu chấp nhận)",
-	"globalrenamequeue-request-reason-sul": "Thành viên được thông báo về xung đột tên toàn cục để chuẩn bị hoàn thành hệ thống tài khoản hợp nhất.",
 	"globalrenamequeue-request-savefailed": "Thất bại khi lưu thay đổi trạng thái yêu cầu.",
 	"globalrenamequeue-request-status-title": "Đổi tên “$1” thành “$2”",
 	"globalrenamequeue-request-suppressredirects": "Tắt các trang đổi hướng",

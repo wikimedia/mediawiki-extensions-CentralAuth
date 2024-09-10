@@ -421,7 +421,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|Претходно преименување|Претходни преименувања}}",
 	"globalrenamequeue-request-reason": "<strong>Причина за барањето</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Јавен коментар во дневнички запис (ако е за прифаќање)",
-	"globalrenamequeue-request-reason-sul": "Корисникот е известен во подготовка на конечното спроведување на SUL.",
 	"globalrenamequeue-request-savefailed": "Не успеав да ја зачува измената во статусот на барањето.",
 	"globalrenamequeue-request-status-title": "Преименување на „$1“ во „$2“",
 	"globalrenamequeue-request-suppressredirects": "Потисни создавање на пренасочувања",

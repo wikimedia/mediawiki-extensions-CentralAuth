@@ -482,7 +482,6 @@
 	"globalrenamequeue-request-previous-renames": "{{PLURAL:$1|renommage|renommages}} précédents",
 	"globalrenamequeue-request-reason": "<strong>Raison pour demander le changement de nom</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Commentaire de l’entrée du journal public (si accepté)",
-	"globalrenamequeue-request-reason-sul": "Utilisateur avisé de conflit de nom global en vue de la finalisation de la SUL.",
 	"globalrenamequeue-request-savefailed": "Échec d’enregistrement de la modification de l’état de la demande.",
 	"globalrenamequeue-request-status-title": "Renommer de « $1 » en « $2 »",
 	"globalrenamequeue-request-suppressredirects": "Supprimer la création de redirections",
