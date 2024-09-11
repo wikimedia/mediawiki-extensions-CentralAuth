@@ -225,6 +225,10 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
 		$url = $this->config->get( 'CentralAuthSsoUrlPrefix' ) . $localUrl;
 
+		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
+			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );
+		}
+
 		return wfAppendQuery( $url, [
 			// At this point, we should just be leaving the local
 			// wiki before hitting the loginwiki.
