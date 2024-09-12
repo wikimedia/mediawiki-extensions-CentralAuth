@@ -224,6 +224,10 @@ class SsoHookHandler implements
 			// even when $wgServer etc. were overridden for the SSO domain.
 			$currentWiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
 			$url = wfAppendQuery( $currentWiki->getCanonicalUrl( $title->getPrefixedText() ), $query );
+
+			if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
+				$url = $this->mobileContext->getMobileUrl( $url );
+			}
 		}
 	}
 }
