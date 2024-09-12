@@ -30,24 +30,24 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserNameUtils;
 
 class SpecialContributionsHookHandler implements
 	ContributionsToolLinksHook,
 	SpecialContributionsBeforeMainOutputHook
 {
-	/** @var NamespaceInfo */
-	private $namespaceInfo;
-
-	/** @var UserFactory */
+	private NamespaceInfo $namespaceInfo;
 	private UserFactory $userFactory;
+	private UserNameUtils $userNameUtils;
 
-	/**
-	 * @param NamespaceInfo $namespaceInfo
-	 * @param UserFactory $userFactory
-	 */
-	public function __construct( NamespaceInfo $namespaceInfo, UserFactory $userFactory ) {
+	public function __construct(
+		NamespaceInfo $namespaceInfo,
+		UserFactory $userFactory,
+		UserNameUtils $userNameUtils
+	) {
 		$this->namespaceInfo = $namespaceInfo;
 		$this->userFactory = $userFactory;
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**
@@ -60,6 +60,9 @@ class SpecialContributionsHookHandler implements
 	public function onContributionsToolLinks( $id, Title $title, array &$tools, SpecialPage $sp ) {
 		$user = $this->userFactory->newFromId( $id );
 		if ( !$user->isRegistered() ) {
+			return true;
+		}
+		if ( $this->userNameUtils->getCanonical( $user->getName() ) === false ) {
 			return true;
 		}
 		$centralUser = CentralAuthUser::getInstance( $user );
@@ -82,6 +85,9 @@ class SpecialContributionsHookHandler implements
 	 */
 	public function onSpecialContributionsBeforeMainOutput( $id, $user, $sp ) {
 		if ( !$user->isRegistered() ) {
+			return true;
+		}
+		if ( $this->userNameUtils->getCanonical( $user->getName() ) === false ) {
 			return true;
 		}
 

@@ -7,6 +7,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Xml\Xml;
 use Wikimedia\Rdbms\IExpression;
@@ -135,15 +136,15 @@ class SpecialMultiLock extends SpecialPage {
 	private function getGlobalUsers( $usernames, $fromPrimaryDb = false ) {
 		$ret = [];
 		foreach ( $usernames as $username ) {
-			// T270954
-			$username = str_replace( '_', ' ', $username );
 			$username = trim( $username );
 			if ( $username === '' ) {
 				$ret[] = false;
 				continue;
 			}
-			$username = $this->getLanguage()->ucfirst( $username );
-
+			if ( MediaWikiServices::getInstance()->getUserNameUtils()->getCanonical( $username ) === false ) {
+				$ret[] = $this->msg( 'htmlform-user-not-valid', $username )->parse();
+				continue;
+			}
 			$globalUser = $fromPrimaryDb
 				? CentralAuthUser::getPrimaryInstanceByName( $username )
 				: CentralAuthUser::getInstanceByName( $username );
