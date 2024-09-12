@@ -87,17 +87,6 @@ class SpecialCentralAuth extends SpecialPage {
 	private CentralAuthUIService $uiService;
 	private GlobalRenameFactory $globalRenameFactory;
 
-	/**
-	 * @param CommentFormatter $commentFormatter
-	 * @param NamespaceInfo $namespaceInfo
-	 * @param TempUserConfig $tempUserConfig
-	 * @param UserFactory $userFactory
-	 * @param UserNameUtils $userNameUtils
-	 * @param UserRegistrationLookup $userRegistrationLookup
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param CentralAuthUIService $uiService
-	 * @param GlobalRenameFactory $globalRenameFactory
-	 */
 	public function __construct(
 		CommentFormatter $commentFormatter,
 		NamespaceInfo $namespaceInfo,

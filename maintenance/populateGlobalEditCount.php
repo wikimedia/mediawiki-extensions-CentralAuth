@@ -18,8 +18,7 @@ class PopulateGlobalEditCount extends Maintenance {
 
 	private const READ_BATCH_SIZE = 1000;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
+	private CentralAuthDatabaseManager $databaseManager;
 
 	/** @var int */
 	private $lastReportTime = 0;

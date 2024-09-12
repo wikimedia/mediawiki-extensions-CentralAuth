@@ -33,16 +33,9 @@ class LogHookHandler implements
 	SpecialLogAddLogSearchRelationsHook
 {
 
-	/** @var LBFactory */
-	private $lbFactory;
+	private LBFactory $lbFactory;
+	private UserNameUtils $userNameUtils;
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/**
-	 * @param LBFactory $lbFactory
-	 * @param UserNameUtils $userNameUtils
-	 */
 	public function __construct(
 		LBFactory $lbFactory,
 		UserNameUtils $userNameUtils

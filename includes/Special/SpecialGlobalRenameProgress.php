@@ -16,11 +16,8 @@ use MediaWiki\Xml\Xml;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/** @var CentralAuthUIService */
-	private $uiService;
+	private UserNameUtils $userNameUtils;
+	private CentralAuthUIService $uiService;
 	private GlobalRenameFactory $globalRenameFactory;
 
 	/**

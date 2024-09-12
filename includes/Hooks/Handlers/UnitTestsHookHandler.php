@@ -46,12 +46,8 @@ class UnitTestsHookHandler implements
 		'users_to_rename',
 	];
 
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	private ILoadBalancer $loadBalancer;
 
-	/**
-	 * @param ILoadBalancer $loadBalancer
-	 */
 	public function __construct( ILoadBalancer $loadBalancer ) {
 		$this->loadBalancer = $loadBalancer;
 	}

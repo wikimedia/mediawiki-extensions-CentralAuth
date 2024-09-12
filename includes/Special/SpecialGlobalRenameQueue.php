@@ -49,6 +49,7 @@ use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\Xml\Xml;
 use OOUI\MessageWidget;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 use UserMailer;
 use Wikimedia\Rdbms\LBFactory;
@@ -62,32 +63,16 @@ use Wikimedia\Rdbms\LBFactory;
  */
 class SpecialGlobalRenameQueue extends SpecialPage {
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/** @var LBFactory */
-	private $lbFactory;
-
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/** @var CentralAuthUIService */
-	private $uiService;
-
-	/** @var GlobalRenameRequestStore */
-	private $globalRenameRequestStore;
-
-	/** @var JobQueueGroupFactory */
-	private $jobQueueGroupFactory;
-
+	private UserNameUtils $userNameUtils;
+	private LBFactory $lbFactory;
+	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthUIService $uiService;
+	private GlobalRenameRequestStore $globalRenameRequestStore;
+	private JobQueueGroupFactory $jobQueueGroupFactory;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-
 	private GlobalRenameFactory $globalRenameFactory;
-
 	private UserIdentityLookup $userIdentityLookup;
-
-	/** @var \Psr\Log\LoggerInterface */
-	private $logger;
+	private LoggerInterface $logger;
 
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';

@@ -34,10 +34,9 @@ class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 
 	private GlobalRenameFactory $globalRenameFactory;
 
-	/** @inheritDoc */
 	public function __construct(
 		ApiQuery $queryModule,
-		$moduleName,
+		string $moduleName,
 		GlobalRenameFactory $globalRenameFactory
 	) {
 		parent::__construct( $queryModule, $moduleName, 'grs' );

@@ -44,20 +44,10 @@ use PermissionsError;
  */
 class SpecialGlobalRenameRequest extends FormSpecialPage {
 
-	/** @var GlobalRenameDenylist */
-	private $globalRenameDenylist;
+	private GlobalRenameDenylist $globalRenameDenylist;
+	private UserNameUtils $userNameUtils;
+	private GlobalRenameRequestStore $globalRenameRequestStore;
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/** @var GlobalRenameRequestStore */
-	private $globalRenameRequestStore;
-
-	/**
-	 * @param GlobalRenameDenylist $globalRenameDenylist
-	 * @param UserNameUtils $userNameUtils
-	 * @param GlobalRenameRequestStore $globalRenameRequestStore
-	 */
 	public function __construct(
 		GlobalRenameDenylist $globalRenameDenylist,
 		UserNameUtils $userNameUtils,

@@ -43,15 +43,10 @@ class SpecialMultiLock extends SpecialPage {
 	private $mReason;
 	/** @var string[] */
 	private $mActionUserNames;
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-	/** @var CentralAuthUIService */
-	private $uiService;
 
-	/**
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param CentralAuthUIService $uiService
-	 */
+	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthUIService $uiService;
+
 	public function __construct(
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService

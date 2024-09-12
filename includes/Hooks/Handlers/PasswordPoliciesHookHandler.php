@@ -29,12 +29,8 @@ use MediaWiki\User\User;
 
 class PasswordPoliciesHookHandler implements PasswordPoliciesForUserHook {
 
-	/** @var Config */
-	private $config;
+	private Config $config;
 
-	/**
-	 * @param Config $config
-	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
 	}

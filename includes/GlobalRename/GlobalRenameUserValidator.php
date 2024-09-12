@@ -15,12 +15,8 @@ use MediaWiki\User\UserNameUtils;
  */
 class GlobalRenameUserValidator {
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
+	private UserNameUtils $userNameUtils;
 
-	/**
-	 * @param UserNameUtils $userNameUtils
-	 */
 	public function __construct( UserNameUtils $userNameUtils ) {
 		$this->userNameUtils = $userNameUtils;
 	}

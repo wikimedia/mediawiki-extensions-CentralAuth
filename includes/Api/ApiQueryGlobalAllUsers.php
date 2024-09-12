@@ -43,21 +43,12 @@ use Wikimedia\Rdbms\LikeValue;
  */
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
+	private CentralAuthDatabaseManager $databaseManager;
+	private GlobalGroupLookup $globalGroupLookup;
 
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
-
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 */
 	public function __construct(
-		$query,
-		$moduleName,
+		ApiQuery $query,
+		string $moduleName,
 		CentralAuthDatabaseManager $databaseManager,
 		GlobalGroupLookup $globalGroupLookup
 	) {

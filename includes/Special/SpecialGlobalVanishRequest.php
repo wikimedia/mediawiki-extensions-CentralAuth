@@ -39,6 +39,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use PermissionsError;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 use UserMailer;
 
@@ -47,31 +48,13 @@ use UserMailer;
  */
 class SpecialGlobalVanishRequest extends FormSpecialPage {
 
-	/** @var \Psr\Log\LoggerInterface */
-	private $logger;
+	private LoggerInterface $logger;
+	private GlobalRenameDenylist $globalRenameDenylist;
+	private GlobalRenameRequestStore $globalRenameRequestStore;
+	private GlobalRenameFactory $globalRenameFactory;
+	private HttpRequestFactory $httpRequestFactory;
+	private UserIdentityLookup $userIdentityLookup;
 
-	/** @var GlobalRenameDenylist */
-	private $globalRenameDenylist;
-
-	/** @var GlobalRenameRequestStore */
-	private $globalRenameRequestStore;
-
-	/** @var GlobalRenameFactory */
-	private $globalRenameFactory;
-
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
-
-	/** @var UserIdentityLookup */
-	private $userIdentityLookup;
-
-	/**
-	 * @param GlobalRenameDenylist $globalRenameDenylist
-	 * @param GlobalRenameRequestStore $globalRenameRequestStore
-	 * @param GlobalRenameFactory $globalRenameFactory
-	 * @param HttpRequestFactory $httpRequestFactory
-	 * @param UserIdentityLookup $userIdentityLookup
-	 */
 	public function __construct(
 		GlobalRenameDenylist $globalRenameDenylist,
 		GlobalRenameRequestStore $globalRenameRequestStore,

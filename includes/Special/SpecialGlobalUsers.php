@@ -13,24 +13,11 @@ use MediaWiki\Title\Title;
 
 class SpecialGlobalUsers extends IncludableSpecialPage {
 
-	/** @var Language */
-	private $contentLanguage;
+	private Language $contentLanguage;
+	private LinkBatchFactory $linkBatchFactory;
+	private CentralAuthDatabaseManager $dbManager;
+	private GlobalGroupLookup $globalGroupLookup;
 
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
-
-	/** @var CentralAuthDatabaseManager */
-	private $dbManager;
-
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
-
-	/**
-	 * @param Language $contentLanguage
-	 * @param LinkBatchFactory $linkBatchFactory
-	 * @param CentralAuthDatabaseManager $dbManager
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 */
 	public function __construct(
 		Language $contentLanguage,
 		LinkBatchFactory $linkBatchFactory,

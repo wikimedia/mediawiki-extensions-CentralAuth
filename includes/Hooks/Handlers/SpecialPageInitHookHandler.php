@@ -28,12 +28,8 @@ use MediaWiki\SpecialPage\Hook\SpecialPage_initListHook;
 
 class SpecialPageInitHookHandler implements SpecialPage_initListHook {
 
-	/** @var Config */
-	private $config;
+	private Config $config;
 
-	/**
-	 * @param Config $config
-	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
 	}

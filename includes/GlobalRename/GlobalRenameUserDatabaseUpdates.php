@@ -12,12 +12,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
  */
 class GlobalRenameUserDatabaseUpdates {
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
+	private CentralAuthDatabaseManager $databaseManager;
 
-	/**
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 */
 	public function __construct( CentralAuthDatabaseManager $databaseManager ) {
 		$this->databaseManager = $databaseManager;
 	}

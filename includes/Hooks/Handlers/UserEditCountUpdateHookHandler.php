@@ -8,8 +8,7 @@ use MediaWiki\Hook\UserEditCountUpdateHook;
 
 class UserEditCountUpdateHookHandler implements UserEditCountUpdateHook {
 
-	/** @var CentralAuthEditCounter */
-	private $editCounter;
+	private CentralAuthEditCounter $editCounter;
 
 	public function __construct( CentralAuthEditCounter $editCounter ) {
 		$this->editCounter = $editCounter;

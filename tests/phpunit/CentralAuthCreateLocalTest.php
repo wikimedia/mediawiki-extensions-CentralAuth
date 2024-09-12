@@ -15,8 +15,7 @@ use MediaWiki\WikiMap\WikiMap;
  */
 class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 
-	/** @var SpecialCreateLocalAccount */
-	private $specialCreateLocalAccount;
+	private SpecialCreateLocalAccount $specialCreateLocalAccount;
 
 	private const USERNAME_NONEXISTENT = 'AccountThatDoesNotExist';
 

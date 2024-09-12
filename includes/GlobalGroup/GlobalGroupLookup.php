@@ -29,12 +29,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
  */
 class GlobalGroupLookup {
 
-	/** @var CentralAuthDatabaseManager */
-	private $dbManager;
+	private CentralAuthDatabaseManager $dbManager;
 
-	/**
-	 * @param CentralAuthDatabaseManager $dbManager
-	 */
 	public function __construct( CentralAuthDatabaseManager $dbManager ) {
 		$this->dbManager = $dbManager;
 	}

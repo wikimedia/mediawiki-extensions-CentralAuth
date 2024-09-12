@@ -43,14 +43,9 @@ class GlobalRenameDenylist {
 	/** @var string[]|null Content of the denylist */
 	private $denylist = null;
 
-	/** @var LoggerInterface */
-	private $logger;
-
-	/** @var HttpRequestFactory */
-	private $httpRequestFactory;
-
-	/** @var WikiPageFactory */
-	private $wikiPageFactory;
+	private LoggerInterface $logger;
+	private HttpRequestFactory $httpRequestFactory;
+	private WikiPageFactory $wikiPageFactory;
 
 	/**
 	 * @param LoggerInterface $logger

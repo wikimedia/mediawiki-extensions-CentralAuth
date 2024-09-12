@@ -25,8 +25,7 @@ use Wikimedia\TestingAccessWrapper;
  */
 abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrationTestCase {
 
-	/** @var BagOStuff */
-	protected $sessionStore;
+	protected BagOStuff $sessionStore;
 
 	/** @var int */
 	private $idCounter = 0;

@@ -37,17 +37,11 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiQueryGlobalGroups extends ApiQueryBase {
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
+	private CentralAuthDatabaseManager $databaseManager;
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 */
 	public function __construct(
-		$query,
-		$moduleName,
+		ApiQuery $query,
+		string $moduleName,
 		CentralAuthDatabaseManager $databaseManager
 	) {
 		parent::__construct( $query, $moduleName, 'ggp' );

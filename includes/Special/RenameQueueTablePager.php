@@ -40,8 +40,7 @@ use stdClass;
  */
 class RenameQueueTablePager extends TablePager {
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
+	private UserNameUtils $userNameUtils;
 
 	/**
 	 * @var string
@@ -53,13 +52,6 @@ class RenameQueueTablePager extends TablePager {
 	 */
 	protected $mFieldNames;
 
-	/**
-	 * @param IContextSource $context
-	 * @param LinkRenderer $linkRenderer
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param UserNameUtils $userNameUtils
-	 * @param string $page Subpage
-	 */
 	public function __construct(
 		IContextSource $context,
 		LinkRenderer $linkRenderer,

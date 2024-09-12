@@ -41,15 +41,13 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
+	private UserNameUtils $userNameUtils;
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 * @param UserNameUtils $userNameUtils
-	 */
-	public function __construct( ApiQuery $query, $moduleName, UserNameUtils $userNameUtils ) {
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		UserNameUtils $userNameUtils
+	) {
 		parent::__construct( $query, $moduleName, 'gui' );
 		$this->userNameUtils = $userNameUtils;
 	}

@@ -16,12 +16,8 @@ use MessageLocalizer;
  */
 class CentralAuthUIService {
 
-	/** @var TitleFactory */
-	private $titleFactory;
+	private TitleFactory $titleFactory;
 
-	/**
-	 * @param TitleFactory $titleFactory
-	 */
 	public function __construct( TitleFactory $titleFactory ) {
 		$this->titleFactory = $titleFactory;
 	}

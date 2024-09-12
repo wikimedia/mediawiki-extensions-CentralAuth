@@ -64,22 +64,10 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	protected $mFetchedUser = null;
 
 	private TitleFactory $titleFactory;
+	private UserNamePrefixSearch $userNamePrefixSearch;
+	private UserNameUtils $userNameUtils;
+	private GlobalGroupLookup $globalGroupLookup;
 
-	/** @var UserNamePrefixSearch */
-	private $userNamePrefixSearch;
-
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
-
-	/**
-	 * @param TitleFactory $titleFactory
-	 * @param UserNamePrefixSearch $userNamePrefixSearch
-	 * @param UserNameUtils $userNameUtils
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 */
 	public function __construct(
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,

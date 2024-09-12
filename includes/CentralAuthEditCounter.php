@@ -3,20 +3,18 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use WANObjectCache;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\RawSQLValue;
 
 class CentralAuthEditCounter {
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/** @var \WANObjectCache */
-	private $wanCache;
+	private CentralAuthDatabaseManager $databaseManager;
+	private WANObjectCache $wanCache;
 
 	public function __construct(
 		CentralAuthDatabaseManager $databaseManager,
-		\WANObjectCache $wanCache
+		WANObjectCache $wanCache
 	) {
 		$this->databaseManager = $databaseManager;
 		$this->wanCache = $wanCache;

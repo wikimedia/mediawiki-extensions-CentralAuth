@@ -31,18 +31,9 @@ use MediaWiki\WikiMap\WikiMap;
 class UserCreationHookHandler implements LocalUserCreatedHook {
 
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthUtilityService $utilityService;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/** @var CentralAuthUtilityService */
-	private $utilityService;
-
-	/**
-	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param CentralAuthUtilityService $utilityService
-	 */
 	public function __construct(
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthDatabaseManager $databaseManager,

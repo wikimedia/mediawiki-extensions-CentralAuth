@@ -15,17 +15,11 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiCreateLocalAccount extends ApiBase {
 
-	/** @var CentralAuthForcedLocalCreationService */
-	private $forcedLocalCreationService;
+	private CentralAuthForcedLocalCreationService $forcedLocalCreationService;
 
-	/**
-	 * @param ApiMain $mainModule
-	 * @param string $moduleName
-	 * @param CentralAuthForcedLocalCreationService $forcedLocalCreationService
-	 */
 	public function __construct(
 		ApiMain $mainModule,
-		$moduleName,
+		string $moduleName,
 		CentralAuthForcedLocalCreationService $forcedLocalCreationService
 	) {
 		parent::__construct( $mainModule, $moduleName );

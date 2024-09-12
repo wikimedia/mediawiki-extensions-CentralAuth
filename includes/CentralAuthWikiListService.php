@@ -14,11 +14,8 @@ use MediaWiki\HookContainer\HookContainer;
  */
 class CentralAuthWikiListService {
 
-	/** @var ServiceOptions */
-	private $options;
-
-	/** @var CentralAuthHookRunner */
-	private $hookRunner;
+	private ServiceOptions $options;
+	private CentralAuthHookRunner $hookRunner;
 
 	/** @var string[]|null Cached array of known wikis. */
 	private $wikiList = null;

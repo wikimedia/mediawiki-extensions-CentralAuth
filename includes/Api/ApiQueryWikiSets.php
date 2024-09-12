@@ -40,17 +40,14 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  */
 class ApiQueryWikiSets extends ApiQueryBase {
 
-	/** @var CentralAuthWikiListService */
-	private $wikiListService;
+	private CentralAuthWikiListService $wikiListService;
 
-	/**
-	 * @param ApiQuery $query
-	 * @param string $moduleName
-	 * @param CentralAuthWikiListService $wikiListService
-	 */
-	public function __construct( ApiQuery $query, $moduleName, CentralAuthWikiListService $wikiListService ) {
+	public function __construct(
+		ApiQuery $query,
+		string $moduleName,
+		CentralAuthWikiListService $wikiListService
+	) {
 		parent::__construct( $query, $moduleName, 'ws' );
-
 		$this->wikiListService = $wikiListService;
 	}
 

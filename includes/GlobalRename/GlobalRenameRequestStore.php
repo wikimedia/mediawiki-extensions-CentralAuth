@@ -32,16 +32,9 @@ use stdClass;
  */
 class GlobalRenameRequestStore {
 
-	/** @var CentralAuthDatabaseManager */
-	private $dbManager;
+	private CentralAuthDatabaseManager $dbManager;
+	private UserNameUtils $userNameUtils;
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/**
-	 * @param CentralAuthDatabaseManager $dbManager
-	 * @param UserNameUtils $userNameUtils
-	 */
 	public function __construct(
 		CentralAuthDatabaseManager $dbManager,
 		UserNameUtils $userNameUtils

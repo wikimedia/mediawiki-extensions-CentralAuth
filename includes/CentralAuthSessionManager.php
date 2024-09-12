@@ -43,18 +43,10 @@ class CentralAuthSessionManager {
 	/** @var BagOStuff|null Session cache */
 	private $sessionStore = null;
 
-	/** @var ServiceOptions */
-	private $options;
-
-	/** @var IBufferingStatsdDataFactory */
-	private $statsdDataFactory;
+	private ServiceOptions $options;
+	private IBufferingStatsdDataFactory $statsdDataFactory;
 	private StatsFactory $statsFactory;
 
-	/**
-	 * @param ServiceOptions $options
-	 * @param IBufferingStatsdDataFactory $statsdDataFactory
-	 * @param StatsFactory $statsFactory
-	 */
 	public function __construct(
 		ServiceOptions $options,
 		IBufferingStatsdDataFactory $statsdDataFactory,

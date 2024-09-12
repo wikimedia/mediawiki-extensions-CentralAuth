@@ -49,31 +49,16 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 	private UserNameUtils $userNameUtils;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-
-	/** @var CentralAuthUIService */
-	private $uiService;
-
-	/** @var GlobalRenameDenylist */
-	private $globalRenameDenylist;
-
+	private CentralAuthUIService $uiService;
+	private GlobalRenameDenylist $globalRenameDenylist;
 	private GlobalRenameFactory $globalRenameFactory;
-
-	/** @var GlobalRenameUserValidator */
-	private $globalRenameUserValidator;
+	private GlobalRenameUserValidator $globalRenameUserValidator;
 
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
 	private const EDITCOUNT_THRESHOLD = 100000;
 
-	/**
-	 * @param UserNameUtils $userNameUtils
-	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
-	 * @param CentralAuthUIService $uiService
-	 * @param GlobalRenameDenylist $globalRenameDenylist
-	 * @param GlobalRenameFactory $globalRenameFactory
-	 * @param GlobalRenameUserValidator $globalRenameUserValidator
-	 */
 	public function __construct(
 		UserNameUtils $userNameUtils,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,

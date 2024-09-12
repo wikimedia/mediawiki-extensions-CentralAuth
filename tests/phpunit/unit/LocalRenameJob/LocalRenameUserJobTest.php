@@ -31,10 +31,7 @@ use ReflectionMethod;
  */
 class LocalRenameUserJobTest extends \PHPUnit\Framework\TestCase {
 
-	/**
-	 * @var ReflectionMethod
-	 */
-	protected $escapeReplacement;
+	protected ReflectionMethod $escapeReplacement;
 
 	protected function setUp(): void {
 		parent::setUp();

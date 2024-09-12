@@ -29,12 +29,8 @@ use MediaWiki\WikiMap\WikiMap;
 
 class SecurePollHookHandler implements SecurePoll_GetUserParamsHook {
 
-	/** @var NamespaceInfo */
-	private $namespaceInfo;
+	private NamespaceInfo $namespaceInfo;
 
-	/**
-	 * @param NamespaceInfo $namespaceInfo
-	 */
 	public function __construct( NamespaceInfo $namespaceInfo ) {
 		$this->namespaceInfo = $namespaceInfo;
 	}

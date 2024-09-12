@@ -34,19 +34,10 @@ class SpecialMergeAccount extends SpecialPage {
 	/** @var string */
 	protected $mSessionKey;
 
-	/** @var NamespaceInfo */
-	private $namespaceInfo;
-	/** @var UserFactory */
-	private $userFactory;
+	private NamespaceInfo $namespaceInfo;
+	private UserFactory $userFactory;
+	private CentralAuthDatabaseManager $databaseManager;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/**
-	 * @param NamespaceInfo $namespaceInfo
-	 * @param UserFactory $userFactory
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 */
 	public function __construct(
 		NamespaceInfo $namespaceInfo,
 		UserFactory $userFactory,

@@ -28,12 +28,8 @@ use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiHookHandler implements APIGetAllowedParamsHook {
 
-	/** @var Config */
-	private $config;
+	private Config $config;
 
-	/**
-	 * @param Config $config
-	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
 	}

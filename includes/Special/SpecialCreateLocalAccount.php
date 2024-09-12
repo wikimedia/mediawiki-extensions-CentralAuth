@@ -16,8 +16,7 @@ use MediaWiki\Status\Status;
  */
 class SpecialCreateLocalAccount extends FormSpecialPage {
 
-	/** @var CentralAuthForcedLocalCreationService */
-	private $forcedLocalCreationService;
+	private CentralAuthForcedLocalCreationService $forcedLocalCreationService;
 
 	public function __construct( CentralAuthForcedLocalCreationService $forcedLocalCreationService ) {
 		parent::__construct( 'CreateLocalAccount', 'centralauth-createlocal' );

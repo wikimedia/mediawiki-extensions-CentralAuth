@@ -46,14 +46,9 @@ class ApiCentralAuthToken extends ApiBase {
 
 	private CentralAuthTokenManager $tokenManager;
 
-	/**
-	 * @param ApiMain $main
-	 * @param string $moduleName
-	 * @param CentralAuthTokenManager $tokenManager
-	 */
 	public function __construct(
 		ApiMain $main,
-		$moduleName,
+		string $moduleName,
 		CentralAuthTokenManager $tokenManager
 	) {
 		parent::__construct( $main, $moduleName );

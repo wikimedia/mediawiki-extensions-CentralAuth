@@ -6,8 +6,7 @@ use MediaWiki\User\TempUser\DBSerialProvider;
 
 class CentralAuthTempUserSerialProvider extends DBSerialProvider {
 
-	/** @var CentralAuthDatabaseManager */
-	private $dbManager;
+	private CentralAuthDatabaseManager $dbManager;
 
 	/**
 	 * @param array $config

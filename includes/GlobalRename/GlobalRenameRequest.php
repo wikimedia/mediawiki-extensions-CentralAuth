@@ -40,8 +40,7 @@ use stdClass;
  */
 class GlobalRenameRequest {
 
-	/** @var UserNameUtils */
-	private $userNameUtils;
+	private UserNameUtils $userNameUtils;
 
 	public const PENDING = 'pending';
 	public const APPROVED = 'approved';

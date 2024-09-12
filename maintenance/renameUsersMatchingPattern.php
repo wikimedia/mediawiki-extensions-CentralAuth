@@ -24,16 +24,10 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class RenameUsersMatchingPattern extends Maintenance {
 
-	/** @var CentralAuthDatabaseManager */
-	private $dbManager;
-
-	/** @var UserFactory */
-	private $userFactory;
-
+	private CentralAuthDatabaseManager $dbManager;
+	private UserFactory $userFactory;
 	private GlobalRenameFactory $globalRenameFactory;
-
-	/** @var GlobalRenameUserValidator */
-	private $validator;
+	private GlobalRenameUserValidator $validator;
 
 	/** @var User */
 	private $performer;

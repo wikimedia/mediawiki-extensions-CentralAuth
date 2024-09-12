@@ -42,20 +42,10 @@ use MediaWiki\Xml\XmlSelect;
 
 class SpecialGlobalGroupPermissions extends SpecialPage {
 
-	/** @var PermissionManager */
-	private $permissionManager;
+	private PermissionManager $permissionManager;
+	private CentralAuthDatabaseManager $databaseManager;
+	private GlobalGroupLookup $globalGroupLookup;
 
-	/** @var CentralAuthDatabaseManager */
-	private $databaseManager;
-
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
-
-	/**
-	 * @param PermissionManager $permissionManager
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 */
 	public function __construct(
 		PermissionManager $permissionManager,
 		CentralAuthDatabaseManager $databaseManager,

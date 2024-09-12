@@ -26,20 +26,10 @@ class CentralAuthDatabaseManager {
 		'CentralAuthReadOnly',
 	];
 
-	/** @var ServiceOptions */
-	private $options;
+	private ServiceOptions $options;
+	private LBFactory $lbFactory;
+	private ReadOnlyMode $readOnlyMode;
 
-	/** @var LBFactory */
-	private $lbFactory;
-
-	/** @var ReadOnlyMode */
-	private $readOnlyMode;
-
-	/**
-	 * @param ServiceOptions $options
-	 * @param LBFactory $lbFactory
-	 * @param ReadOnlyMode $readOnlyMode
-	 */
 	public function __construct( ServiceOptions $options, LBFactory $lbFactory, ReadOnlyMode $readOnlyMode ) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;

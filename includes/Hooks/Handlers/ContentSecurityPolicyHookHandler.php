@@ -32,12 +32,8 @@ class ContentSecurityPolicyHookHandler implements
 	ContentSecurityPolicyScriptSourceHook
 {
 
-	/** @var Config */
-	private $config;
+	private Config $config;
 
-	/**
-	 * @param Config $config
-	 */
 	public function __construct( Config $config ) {
 		$this->config = $config;
 	}

@@ -27,17 +27,9 @@ class GlobalUsersPager extends AlphabeticPager {
 	/** @var string[] */
 	private $localWikisets = [];
 
-	/** @var GlobalGroupLookup */
-	private $globalGroupLookup;
-	/** @var LinkBatchFactory */
-	private $linkBatchFactory;
+	private GlobalGroupLookup $globalGroupLookup;
+	private LinkBatchFactory $linkBatchFactory;
 
-	/**
-	 * @param IContextSource $context
-	 * @param CentralAuthDatabaseManager $dbManager
-	 * @param GlobalGroupLookup $globalGroupLookup
-	 * @param LinkBatchFactory $linkBatchFactory
-	 */
 	public function __construct(
 		IContextSource $context,
 		CentralAuthDatabaseManager $dbManager,

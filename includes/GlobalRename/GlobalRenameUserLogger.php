@@ -14,14 +14,8 @@ use MediaWiki\User\UserIdentity;
  */
 class GlobalRenameUserLogger {
 
-	/**
-	 * @var UserIdentity
-	 */
-	private $performingUser;
+	private UserIdentity $performingUser;
 
-	/**
-	 * @param UserIdentity $performingUser
-	 */
 	public function __construct( UserIdentity $performingUser ) {
 		$this->performingUser = $performingUser;
 	}
