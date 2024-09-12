@@ -264,7 +264,7 @@
 	"centralauth-prefs-status": "Global accoont status:",
 	"centralauth-prefs-unattached": "Onconfirmed",
 	"centralauth-prefs-view": "See global accoont info",
-	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Read mair aneat '''uneefied login''']]…''",
+	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Read mair anent '''unified login''']]…''",
 	"centralauth-readonly": "CentralAuth database lockt",
 	"centralauth-readonlytext": "The CentralAuth database is nou lockt til new entries n ither modeefeecations, proablie fer routine database maintenance, efter this it will be back til normal.",
 	"centralauth-rename-abortlogin": "Yer accoont is nou bein renamed or merged. [[Special:GlobalRenameProgress/$1|see the status]].",

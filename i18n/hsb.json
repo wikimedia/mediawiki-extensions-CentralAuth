@@ -188,7 +188,7 @@
 	"centralauth-hidden-blockreason": "wot $1 $2 ze slědowaceje přičiny globalnje schowany: $3",
 	"centralauth-hours-ago": "před $1 {{PLURAL:$1|hodźinu|hodźinomaj|hodźinami|hodźinami}}",
 	"centralauth-incomplete": "Wužiwarske konta <b>njejsu</b> so dospołnje zjednoćili!",
-	"centralauth-incomplete-text": "Tak ruče kaž waše přizjewjenje je so zjednoćiło, móžeš so do někajkeho wikijoweho sydła na {{int:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.",
+	"centralauth-incomplete-text": "Ručež je so twoje přizjewjenje zjednoćiło, móžeš so do kóždeho wikijoweho sydła na {{int:Centralauth-groupname}} přizjewić, bjeztoho zo ty dyrbjał nowe konto załožić.",
 	"centralauth-invalid-wiki": "Tajka wikijowa datowa banka njeeksistuje: $1",
 	"centralauth-list-attached": "Konta z mjenom \"$1\" na slědowacych sydłach su so awtomatisce zjednoćenemu kontu přidali.",
 	"centralauth-list-attached-dryrun": "Konta z mjenom \"$1\" na slědowacych sydłach budu so awtomatisće zjednoćenemu kontu přidać:",
