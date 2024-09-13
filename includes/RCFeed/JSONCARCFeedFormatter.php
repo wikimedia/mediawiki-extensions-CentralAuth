@@ -24,6 +24,7 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Title\Title;
 
 class JSONCARCFeedFormatter implements CARCFeedFormatter {
+
 	/**
 	 * Generates a user unification/creation entry that can be easily interpreted by a machine.
 	 * @param Title $userpage

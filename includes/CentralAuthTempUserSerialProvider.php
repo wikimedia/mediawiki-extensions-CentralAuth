@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\User\TempUser\DBSerialProvider;
 
 class CentralAuthTempUserSerialProvider extends DBSerialProvider {
+
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 

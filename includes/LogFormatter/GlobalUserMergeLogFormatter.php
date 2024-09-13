@@ -13,6 +13,7 @@ use MediaWiki\SpecialPage\SpecialPage;
  * so manual annotations are needed. They should be correct for the non-plaintext mode (HTML output).
  */
 class GlobalUserMergeLogFormatter extends LogFormatter {
+
 	protected function extractParameters() {
 		$lang = $this->context->getLanguage();
 		$params = parent::extractParameters();

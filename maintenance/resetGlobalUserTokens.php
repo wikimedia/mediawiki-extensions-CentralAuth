@@ -44,6 +44,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  * @ingroup Maintenance
  */
 class ResetGlobalUserTokens extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

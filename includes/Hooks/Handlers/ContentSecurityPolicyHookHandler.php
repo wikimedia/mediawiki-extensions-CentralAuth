@@ -31,6 +31,7 @@ class ContentSecurityPolicyHookHandler implements
 	ContentSecurityPolicyDefaultSourceHook,
 	ContentSecurityPolicyScriptSourceHook
 {
+
 	/** @var Config */
 	private $config;
 

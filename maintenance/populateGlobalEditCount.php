@@ -15,6 +15,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class PopulateGlobalEditCount extends Maintenance {
+
 	private const READ_BATCH_SIZE = 1000;
 
 	/** @var CentralAuthDatabaseManager */

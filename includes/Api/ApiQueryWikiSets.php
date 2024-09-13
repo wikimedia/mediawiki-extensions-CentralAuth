@@ -39,6 +39,7 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  * @ingroup Extensions
  */
 class ApiQueryWikiSets extends ApiQueryBase {
+
 	/** @var CentralAuthWikiListService */
 	private $wikiListService;
 

@@ -12,6 +12,7 @@ use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
 
 class SpecialGlobalUsers extends IncludableSpecialPage {
+
 	/** @var Language */
 	private $contentLanguage;
 

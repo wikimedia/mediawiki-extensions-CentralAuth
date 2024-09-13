@@ -26,9 +26,8 @@ use MediaWiki\Api\Hook\APIGetAllowedParamsHook;
 use MediaWiki\Config\Config;
 use Wikimedia\ParamValidator\ParamValidator;
 
-class ApiHookHandler implements
-	APIGetAllowedParamsHook
-{
+class ApiHookHandler implements APIGetAllowedParamsHook {
+
 	/** @var Config */
 	private $config;
 

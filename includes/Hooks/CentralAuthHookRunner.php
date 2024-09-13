@@ -21,6 +21,7 @@ class CentralAuthHookRunner implements
 	CentralAuthWikiListHook,
 	CentralAuthInfoFieldsHook
 {
+
 	/** @var HookContainer */
 	private $hookContainer;
 

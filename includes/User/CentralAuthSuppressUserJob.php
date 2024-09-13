@@ -30,6 +30,7 @@ use MediaWiki\Logger\LoggerFactory;
  * $wgCentralAuthWikisPerSuppressJob.
  */
 class CentralAuthSuppressUserJob extends Job {
+
 	/**
 	 * @param array $params Job parameters
 	 */

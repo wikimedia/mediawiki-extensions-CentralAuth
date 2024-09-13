@@ -33,6 +33,7 @@ class GlobalRenameHookHandler implements
 	RenameUserPreRenameHook,
 	RenameUserWarningHook
 {
+
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 
 	/**

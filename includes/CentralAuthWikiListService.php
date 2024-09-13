@@ -13,6 +13,7 @@ use MediaWiki\HookContainer\HookContainer;
  * @author Taavi "Majavah" Väänänen
  */
 class CentralAuthWikiListService {
+
 	/** @var ServiceOptions */
 	private $options;
 

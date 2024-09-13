@@ -35,6 +35,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup Extensions
  */
 class ApiSetGlobalAccountStatus extends ApiBase {
+
 	/** @var array<string, int> Mapping for string hidden values to the new int "level" values. */
 	private const HIDDEN_LEVEL_MAPPING = [
 		''           => CentralAuthUser::HIDDEN_LEVEL_NONE,

@@ -15,6 +15,7 @@ use Wikimedia\Rdbms\ReadOnlyMode;
  * translations for it using global state (wfMessage()). This is tracked as T281935.
  */
 class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
+
 	public function testGetReadOnlyReasonReadOnlyMode() {
 		$roReason = 'Database switchover script broke and left everything read only';
 		$roMode = $this->createMock( ReadOnlyMode::class );

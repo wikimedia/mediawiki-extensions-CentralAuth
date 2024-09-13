@@ -35,6 +35,7 @@ class SsoHookHandler implements
 	AuthManagerFilterProvidersHook,
 	AuthManagerVerifyAuthenticationHook
 {
+
 	// Allowlists of things a user can do on the SSO domain.
 	// FIXME these should be configurable and/or come from extension attributes
 	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api' ];

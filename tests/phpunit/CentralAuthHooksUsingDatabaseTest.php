@@ -14,6 +14,7 @@ use MediaWikiIntegrationTestCase;
  * @covers \MediaWiki\Extension\CentralAuth\CentralAuthHooks
  */
 class CentralAuthHooksUsingDatabaseTest extends MediaWikiIntegrationTestCase {
+
 	public function testLockedEmailDisabled() {
 		$u = new CentralAuthTestUser(
 			'GlobalLockedUser',

@@ -22,6 +22,7 @@ use Wikimedia\Rdbms\LikeValue;
  */
 
 class SpecialMultiLock extends SpecialPage {
+
 	/** @var bool */
 	private $mCanSuppress;
 	/** @var string[] */

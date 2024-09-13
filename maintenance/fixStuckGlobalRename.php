@@ -24,6 +24,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * but failed for whatever reason
  */
 class FixStuckGlobalRename extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

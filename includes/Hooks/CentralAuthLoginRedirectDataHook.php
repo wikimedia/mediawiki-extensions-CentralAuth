@@ -31,6 +31,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  * @author Taavi "Majavah" Väänänen
  */
 interface CentralAuthLoginRedirectDataHook {
+
 	/**
 	 * This hook is called after a user has logged in to a single wiki during the login process,
 	 * when saving any required data to the token store before redirecting to the login wiki.

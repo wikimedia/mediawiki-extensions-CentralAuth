@@ -26,6 +26,7 @@ use MediaWiki\Title\Title;
  * Interface for CentralAuth RC feed formatters
  */
 interface CARCFeedFormatter {
+
 	/**
 	 * Generate an IRC line corresponding to user unification/creation
 	 * @param Title $userpage

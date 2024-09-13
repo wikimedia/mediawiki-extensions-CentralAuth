@@ -18,6 +18,7 @@ use RuntimeException;
 use Wikimedia\AtEase\AtEase;
 
 class SpecialMergeAccount extends SpecialPage {
+
 	/** @var string */
 	protected $mUserName;
 	/** @var bool */

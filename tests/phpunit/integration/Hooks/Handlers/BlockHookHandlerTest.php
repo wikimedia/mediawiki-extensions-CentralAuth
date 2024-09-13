@@ -31,6 +31,7 @@ use MediaWikiIntegrationTestCase;
  * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\BlockHookHandler
  */
 class BlockHookHandlerTest extends MediaWikiIntegrationTestCase {
+
 	public function testGetBlock() {
 		$u = new CentralAuthTestUser(
 			'GloballySuppressedUser',

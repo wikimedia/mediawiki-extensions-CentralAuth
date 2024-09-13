@@ -18,6 +18,7 @@ use Wikimedia\Rdbms\LikeValue;
  * This is intended to be run on each wiki individually
  */
 class LocalRenameUserJob extends LocalRenameJob {
+
 	/**
 	 * @param Title $title
 	 * @param array $params An associative array of options:

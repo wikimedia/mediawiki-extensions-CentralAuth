@@ -11,6 +11,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserDatabaseUpdates {
+
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 

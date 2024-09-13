@@ -14,6 +14,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @since 1.36
  */
 class ApiCreateLocalAccount extends ApiBase {
+
 	/** @var CentralAuthForcedLocalCreationService */
 	private $forcedLocalCreationService;
 

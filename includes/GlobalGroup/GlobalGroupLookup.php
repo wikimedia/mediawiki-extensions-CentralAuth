@@ -28,6 +28,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class GlobalGroupLookup {
+
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 

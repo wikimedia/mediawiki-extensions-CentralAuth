@@ -36,6 +36,7 @@ use WikitextContent;
  * @copyright © 2020 Martin Urbanec
  */
 class GlobalRenameDenylist {
+
 	/** @var string|Title|null Source of the denylist, url to fetch it from, or null */
 	private $file = null;
 

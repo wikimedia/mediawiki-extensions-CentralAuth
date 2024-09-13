@@ -13,6 +13,7 @@ use Wikimedia\ScopedCallback;
  * @group Database
  */
 class CentralAuthEditCounterTest extends MediaWikiIntegrationTestCase {
+
 	public function testEdit() {
 		$testUser = new CentralAuthTestUser(
 			'CentralAuthEditCounterTest',

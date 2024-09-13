@@ -29,6 +29,7 @@ class UnitTestsHookHandler implements
 	UnitTestsAfterDatabaseSetupHook,
 	UnitTestsBeforeDatabaseTeardownHook
 {
+
 	public const CENTRALAUTH_TABLES = [
 		'global_edit_count',
 		'global_group_permissions',

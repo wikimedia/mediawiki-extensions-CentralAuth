@@ -7,6 +7,9 @@
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
 		<exclude-pattern>*/tests/*</exclude-pattern>
 	</rule>
+	<rule ref="Squiz.WhiteSpace.FunctionSpacing.BeforeFirst">
+		<severity>5</severity>
+	</rule>
 
 	<file>.</file>
 	<arg name="extensions" value="php"/>

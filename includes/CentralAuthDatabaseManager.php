@@ -20,6 +20,7 @@ use Wikimedia\Rdbms\ReadOnlyMode;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class CentralAuthDatabaseManager {
+
 	/** @internal Only public for service wiring use */
 	public const CONSTRUCTOR_OPTIONS = [
 		'CentralAuthReadOnly',

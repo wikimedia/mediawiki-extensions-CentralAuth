@@ -15,6 +15,7 @@ use MediaWiki\Status\Status;
  * @since 1.36
  */
 class SpecialCreateLocalAccount extends FormSpecialPage {
+
 	/** @var CentralAuthForcedLocalCreationService */
 	private $forcedLocalCreationService;
 

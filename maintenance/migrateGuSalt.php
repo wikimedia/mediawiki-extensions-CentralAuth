@@ -32,6 +32,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class MigrateGuSalt extends LoggedUpdateMaintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription(

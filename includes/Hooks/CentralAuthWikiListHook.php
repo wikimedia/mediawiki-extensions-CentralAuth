@@ -11,6 +11,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks;
  * @author Taavi "Majavah" Väänänen
  */
 interface CentralAuthWikiListHook {
+
 	/**
 	 * This hook is called when discovering the list of other wikis on this wiki farm.
 	 *

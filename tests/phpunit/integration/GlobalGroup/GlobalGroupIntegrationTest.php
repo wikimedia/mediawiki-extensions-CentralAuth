@@ -34,6 +34,7 @@ use Wikimedia\TestingAccessWrapper;
  * @group Database
  */
 class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
+
 	protected function setUp(): void {
 		parent::setUp();
 

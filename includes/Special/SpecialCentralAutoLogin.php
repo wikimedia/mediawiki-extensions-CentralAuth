@@ -53,6 +53,7 @@ use Wikimedia\ScopedCallback;
  * @see https://www.mediawiki.org/wiki/Extension:CentralAuth/authentication
  */
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
+
 	/** @var string */
 	private $loginWiki;
 

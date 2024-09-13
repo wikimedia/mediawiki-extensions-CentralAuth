@@ -15,6 +15,7 @@ use MessageLocalizer;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class CentralAuthUIService {
+
 	/** @var TitleFactory */
 	private $titleFactory;
 

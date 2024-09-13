@@ -12,6 +12,7 @@ use StatusValue;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 class CentralAuthAntiSpoofManager {
+
 	/** @internal Only public for service wiring use. */
 	public const CONSTRUCTOR_OPTIONS = [
 		'CentralAuthOldNameAntiSpoofWiki',

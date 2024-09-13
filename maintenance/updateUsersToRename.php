@@ -16,6 +16,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
  * table
  */
 class UpdateUsersToRename extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

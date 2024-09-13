@@ -37,6 +37,7 @@ use Wikimedia\ScopedCallback;
  * @see $wgCentralAuthAutoCreateWikis
  */
 class CentralAuthCreateLocalAccountJob extends Job {
+
 	/**
 	 * @param array $params name => user name, from => wiki where the job is created,
 	 *   [session] => session data from RequestContext::exportSession()

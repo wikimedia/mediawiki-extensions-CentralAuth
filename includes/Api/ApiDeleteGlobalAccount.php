@@ -35,6 +35,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup Extensions
  */
 class ApiDeleteGlobalAccount extends ApiBase {
+
 	public function execute() {
 		// Heavily based on code from SpecialCentralAuth::doSubmit
 		$this->checkUserRightsAny( 'centralauth-unmerge' );

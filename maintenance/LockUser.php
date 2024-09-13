@@ -34,6 +34,7 @@ use MediaWiki\User\User;
  * @author Taavi Väänänen <taavi@wikimedia.org>
  */
 class LockUser extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 

@@ -8,6 +8,7 @@ use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthSpoofUser extends SpoofUser {
+
 	private CentralAuthDatabaseManager $centralAuthDatabaseManager;
 
 	/**

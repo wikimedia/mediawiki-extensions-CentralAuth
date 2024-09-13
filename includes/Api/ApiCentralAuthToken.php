@@ -43,6 +43,7 @@ use MWCryptRand;
  * @see \CentralAuthHeaderSessionProvider
  */
 class ApiCentralAuthToken extends ApiBase {
+
 	private CentralAuthTokenManager $tokenManager;
 
 	/**

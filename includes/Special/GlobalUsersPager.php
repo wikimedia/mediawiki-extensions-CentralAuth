@@ -17,6 +17,7 @@ use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 
 class GlobalUsersPager extends AlphabeticPager {
+
 	/** @var string|false */
 	protected $requestedGroup = false;
 	/** @var string|false */

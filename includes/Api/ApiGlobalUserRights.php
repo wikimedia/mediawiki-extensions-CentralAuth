@@ -43,6 +43,7 @@ use Wikimedia\ParamValidator\ParamValidator;
  * @ingroup API
  */
 class ApiGlobalUserRights extends ApiBase {
+
 	private ?CentralAuthUser $user = null;
 
 	private TitleFactory $titleFactory;

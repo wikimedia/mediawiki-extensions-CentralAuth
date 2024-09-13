@@ -40,6 +40,7 @@ require_once "$IP/maintenance/Maintenance.php";
  * CentralAuth version of WrapOldPasswords
  */
 class WrapOldPasswordHashes extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription( 'Wrap all passwords of a certain type in a new layered type. '

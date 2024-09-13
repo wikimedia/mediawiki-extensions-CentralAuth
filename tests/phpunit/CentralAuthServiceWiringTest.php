@@ -7,6 +7,7 @@ use MediaWiki\MediaWikiServices;
  * @group Database
  */
 class CentralAuthServiceWiringTest extends MediaWikiIntegrationTestCase {
+
 	/**
 	 * @dataProvider provideService
 	 */

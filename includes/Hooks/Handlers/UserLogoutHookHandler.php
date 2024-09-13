@@ -34,6 +34,7 @@ class UserLogoutHookHandler implements
 	UserLogoutCompleteHook,
 	UserLogoutHook
 {
+
 	/** @var Config */
 	private $config;
 

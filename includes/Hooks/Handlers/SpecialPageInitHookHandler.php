@@ -26,9 +26,8 @@ use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalVanishRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPage_initListHook;
 
-class SpecialPageInitHookHandler implements
-	SpecialPage_initListHook
-{
+class SpecialPageInitHookHandler implements SpecialPage_initListHook {
+
 	/** @var Config */
 	private $config;
 

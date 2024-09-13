@@ -68,6 +68,7 @@ use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthUser implements IDBAccessObject {
+
 	/** @var MapCacheLRU Cache of loaded CentralAuthUsers */
 	private static $loadedUsers = null;
 

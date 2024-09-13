@@ -32,6 +32,7 @@ class LogHookHandler implements
 	LogEventsListGetExtraInputsHook,
 	SpecialLogAddLogSearchRelationsHook
 {
+
 	/** @var LBFactory */
 	private $lbFactory;
 
