@@ -26,21 +26,21 @@ use MediaWiki\Hook\LogEventsListGetExtraInputsHook;
 use MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\User\UserNameUtils;
-use Wikimedia\Rdbms\LBFactory;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 class LogHookHandler implements
 	LogEventsListGetExtraInputsHook,
 	SpecialLogAddLogSearchRelationsHook
 {
 
-	private LBFactory $lbFactory;
+	private IConnectionProvider $dbProvider;
 	private UserNameUtils $userNameUtils;
 
 	public function __construct(
-		LBFactory $lbFactory,
+		IConnectionProvider $dbProvider,
 		UserNameUtils $userNameUtils
 	) {
-		$this->lbFactory = $lbFactory;
+		$this->dbProvider = $dbProvider;
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -66,9 +66,7 @@ class LogHookHandler implements
 				}
 
 				if ( $hiddenBits ) {
-					$bitfield = $this->lbFactory
-						->getMainLB()
-						->getConnection( DB_REPLICA )
+					$bitfield = $this->dbProvider->getReplicaDatabase()
 						->bitAnd( 'log_deleted', $hiddenBits );
 					$qc[] = "$bitfield != $hiddenBits";
 				}
