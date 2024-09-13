@@ -150,6 +150,7 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	private function getLogProvider(): Spi {
 		return new class() implements Spi {
+
 			public $logs = [];
 
 			public function getLogger( $channel ) {

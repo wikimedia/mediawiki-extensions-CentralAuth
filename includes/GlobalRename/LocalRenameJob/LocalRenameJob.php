@@ -30,6 +30,7 @@ use Wikimedia\ScopedCallback;
  * - session: array of session data from RequestContext::exportSession()
  */
 abstract class LocalRenameJob extends Job {
+
 	/**
 	 * @var GlobalRenameUserStatus
 	 */

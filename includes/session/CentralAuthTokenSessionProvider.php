@@ -23,6 +23,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
  * bogus SessionInfo to prevent other SessionProviders from establishing a session.
  */
 abstract class CentralAuthTokenSessionProvider extends SessionProvider {
+
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthSessionManager $sessionManager;
 	protected CentralAuthTokenManager $tokenManager;
