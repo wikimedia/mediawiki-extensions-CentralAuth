@@ -23,6 +23,7 @@ use PermissionsError;
  */
 
 class SpecialWikiSets extends SpecialPage {
+
 	/** @var bool */
 	private $mCanEdit;
 

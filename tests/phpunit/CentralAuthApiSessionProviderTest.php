@@ -110,6 +110,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$provider = $this->newSessionProvider();
 
 		$request = new class( [ 'centralauthtoken' => $token ] ) extends FauxRequest {
+
 			public function getMethod() {
 				return 'OPTIONS';
 			}

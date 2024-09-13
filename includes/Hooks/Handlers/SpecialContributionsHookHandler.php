@@ -36,6 +36,7 @@ class SpecialContributionsHookHandler implements
 	ContributionsToolLinksHook,
 	SpecialContributionsBeforeMainOutputHook
 {
+
 	private NamespaceInfo $namespaceInfo;
 	private UserFactory $userFactory;
 	private UserNameUtils $userNameUtils;

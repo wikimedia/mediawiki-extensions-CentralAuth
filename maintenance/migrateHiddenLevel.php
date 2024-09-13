@@ -34,6 +34,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class MigrateHiddenLevel extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 

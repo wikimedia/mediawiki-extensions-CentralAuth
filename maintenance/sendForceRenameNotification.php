@@ -27,6 +27,7 @@ require_once "$IP/maintenance/Maintenance.php";
  *     A file for "en" must exist as it is the base fallback.
  */
 class SendForceRenameNotification extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 

@@ -27,6 +27,7 @@ use WANObjectCache;
 use Wikimedia\Rdbms\Database;
 
 class WikiSet {
+
 	public const OPTIN = 'optin';
 	public const OPTOUT = 'optout';
 

@@ -37,6 +37,7 @@ use SpecialPageTestBase;
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
 class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
+
 	protected function setUp(): void {
 		parent::setUp();
 

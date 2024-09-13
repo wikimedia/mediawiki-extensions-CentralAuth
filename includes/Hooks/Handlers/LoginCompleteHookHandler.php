@@ -42,6 +42,7 @@ class LoginCompleteHookHandler implements
 	UserLoginCompleteHook,
 	TempUserCreatedRedirectHook
 {
+
 	private Config $config;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralAuthHookRunner $caHookRunner;

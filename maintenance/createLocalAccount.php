@@ -13,6 +13,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Status\Status;
 
 class CreateLocalAccount extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

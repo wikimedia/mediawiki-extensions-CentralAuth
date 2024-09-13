@@ -24,6 +24,7 @@ use Wikimedia\ScopedCallback;
  * 'suppressredirects' - Whether redirects should be suppressed
  */
 class LocalPageMoveJob extends Job {
+
 	/**
 	 * Static flag for when we're moving a page; this is currently only read by the
 	 * AbuseFilterShouldFilterAction hook handler to avoid filtering our page moves.

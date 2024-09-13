@@ -33,9 +33,8 @@ use MediaWiki\ResourceLoader\Module;
 use MediaWiki\WikiMap\WikiMap;
 use Skin;
 
-class PageDisplayHookHandler implements
-	BeforePageDisplayHook
-{
+class PageDisplayHookHandler implements BeforePageDisplayHook {
+
 	private Config $config;
 
 	/**

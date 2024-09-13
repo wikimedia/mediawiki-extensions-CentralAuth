@@ -12,6 +12,7 @@ use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 
 class GetCentralAuthDBInfo extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

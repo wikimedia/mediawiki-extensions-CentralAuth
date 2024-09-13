@@ -35,6 +35,7 @@ use MediaWiki\User\UserFactory;
  * @author Taavi "Majavah" Väänänen
  */
 class CentralAuthForcedLocalCreationService {
+
 	/** @var UserFactory */
 	private $userFactory;
 

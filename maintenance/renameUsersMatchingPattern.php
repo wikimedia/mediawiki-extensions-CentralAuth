@@ -23,6 +23,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 class RenameUsersMatchingPattern extends Maintenance {
+
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 

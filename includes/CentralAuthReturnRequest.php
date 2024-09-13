@@ -31,6 +31,7 @@ use MediaWiki\Auth\AuthenticationRequest;
  * @see CentralAuthRedirectingPrimaryAuthenticationProvider
  */
 class CentralAuthReturnRequest extends AuthenticationRequest {
+
 	/**
 	 * Token store key used to pass information from RedirectingLoginHookHandler to
 	 * CentralAuthRedirectingPrimaryAuthenticationProvider.

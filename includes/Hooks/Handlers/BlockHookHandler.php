@@ -40,6 +40,7 @@ class BlockHookHandler implements
 	GetUserBlockHook,
 	OtherBlockLogLinkHook
 {
+
 	private UserNameUtils $userNameUtils;
 
 	public function __construct( UserNameUtils $userNameUtils ) {

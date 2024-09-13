@@ -33,6 +33,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class PurgeExpiredGlobalRights extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );

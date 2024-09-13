@@ -25,9 +25,8 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\ImportHandleUnknownUserHook;
 use MediaWiki\User\UserFactory;
 
-class ImportHandleHookHandler implements
-	ImportHandleUnknownUserHook
-{
+class ImportHandleHookHandler implements ImportHandleUnknownUserHook {
+
 	/** @var UserFactory */
 	private $userFactory;
 

@@ -29,6 +29,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks;
  * @author Taavi "Majavah" Väänänen
  */
 interface CentralAuthPostLoginRedirectHook {
+
 	/**
 	 * This hook is called after the user has been redirected back to
 	 * the content wiki after completing the cross-wiki login process.

@@ -11,6 +11,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @group Database
  */
 class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
+
 	public function testBasicAttrs() {
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
@@ -155,6 +156,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 
 	public function testAttach() {
 		$caUser = new class( 'GlobalUser' ) extends CentralAuthUser {
+
 			protected function addLocalEdits( $wikiID ) {
 				// This test can't connect to anotherwiki to fetch edit counts
 			}

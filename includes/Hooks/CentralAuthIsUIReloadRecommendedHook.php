@@ -31,6 +31,7 @@ use MediaWiki\User\User;
  * @author Taavi "Majavah" Väänänen
  */
 interface CentralAuthIsUIReloadRecommendedHook {
+
 	/**
 	 * This hook is called after a cross-wiki auto login to figure out
 	 * if the users preferences are customized enough that they should

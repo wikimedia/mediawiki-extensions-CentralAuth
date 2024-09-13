@@ -13,6 +13,7 @@ use MediaWiki\User\UserIdentity;
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserLogger {
+
 	/**
 	 * @var UserIdentity
 	 */

@@ -28,6 +28,7 @@ use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
 class SecurePollHookHandler implements SecurePoll_GetUserParamsHook {
+
 	/** @var NamespaceInfo */
 	private $namespaceInfo;
 

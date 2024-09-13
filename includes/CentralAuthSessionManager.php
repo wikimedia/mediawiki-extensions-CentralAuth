@@ -31,6 +31,7 @@ use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Stats\StatsFactory;
 
 class CentralAuthSessionManager {
+
 	/**
 	 * @internal Only public for service wiring use
 	 */

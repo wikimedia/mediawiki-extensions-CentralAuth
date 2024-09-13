@@ -18,6 +18,7 @@ require_once "$IP/maintenance/includes/DeleteLocalPasswords.php";
 
 // @phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
+
 	/** @var string|null Wiki to run on, or null for all. */
 	protected $wiki;
 

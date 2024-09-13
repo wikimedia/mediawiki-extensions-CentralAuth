@@ -25,9 +25,8 @@ use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsExpensiveHook;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
-class PermissionsHookHandler implements
-	GetUserPermissionsErrorsExpensiveHook
-{
+class PermissionsHookHandler implements GetUserPermissionsErrorsExpensiveHook {
+
 	/**
 	 * @param Title $title
 	 * @param User $user

@@ -14,6 +14,7 @@ use MediaWiki\User\UserNameUtils;
  * @author Marius Hoch < hoo@online.de >
  */
 class GlobalRenameUserValidator {
+
 	/** @var UserNameUtils */
 	private $userNameUtils;
 

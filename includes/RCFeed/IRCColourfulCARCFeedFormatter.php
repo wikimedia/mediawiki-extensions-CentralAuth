@@ -27,6 +27,7 @@ use MediaWiki\Title\Title;
  * Generates a colourful notification intended for humans on IRC.
  */
 class IRCColourfulCARCFeedFormatter implements CARCFeedFormatter {
+
 	/**
 	 * Generate an IRC line corresponding to user unification/creation
 	 * @param Title $userpage

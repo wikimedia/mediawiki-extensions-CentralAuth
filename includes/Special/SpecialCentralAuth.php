@@ -39,6 +39,7 @@ use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
 class SpecialCentralAuth extends SpecialPage {
+
 	/** @var string */
 	private $mUserName;
 	/** @var bool */

@@ -27,9 +27,8 @@ use MediaWiki\Hook\PasswordPoliciesForUserHook;
 use MediaWiki\Password\UserPasswordPolicy;
 use MediaWiki\User\User;
 
-class PasswordPoliciesHookHandler implements
-	PasswordPoliciesForUserHook
-{
+class PasswordPoliciesHookHandler implements PasswordPoliciesForUserHook {
+
 	/** @var Config */
 	private $config;
 

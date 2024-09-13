@@ -49,6 +49,7 @@ use UserBlockedError;
  * @ingroup Extensions
  */
 class SpecialGlobalGroupMembership extends SpecialPage {
+
 	/**
 	 * The target of the local right-adjuster's interest.  Can be gotten from
 	 * either a GET parameter or a subpage-style parameter, so have a member

@@ -11,6 +11,7 @@ use MediaWiki\WikiMap\WikiMap;
  * @group Database
  */
 class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
+
 	/**
 	 * @dataProvider provideValidHiddenLevels
 	 */

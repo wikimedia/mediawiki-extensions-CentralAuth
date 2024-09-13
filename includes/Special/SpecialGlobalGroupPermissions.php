@@ -41,6 +41,7 @@ use MediaWiki\Xml\XmlSelect;
  */
 
 class SpecialGlobalGroupPermissions extends SpecialPage {
+
 	/** @var PermissionManager */
 	private $permissionManager;
 

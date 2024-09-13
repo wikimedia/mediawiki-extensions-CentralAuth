@@ -31,6 +31,7 @@ use stdClass;
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
 class GlobalRenameRequestStore {
+
 	/** @var CentralAuthDatabaseManager */
 	private $dbManager;
 

@@ -28,9 +28,8 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
-class UserCreationHookHandler implements
-	LocalUserCreatedHook
-{
+class UserCreationHookHandler implements LocalUserCreatedHook {
+
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 
 	/** @var CentralAuthDatabaseManager */

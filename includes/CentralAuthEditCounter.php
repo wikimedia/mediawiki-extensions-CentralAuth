@@ -7,6 +7,7 @@ use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\RawSQLValue;
 
 class CentralAuthEditCounter {
+
 	/** @var CentralAuthDatabaseManager */
 	private $databaseManager;
 

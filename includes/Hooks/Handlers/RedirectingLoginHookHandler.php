@@ -41,6 +41,7 @@ class RedirectingLoginHookHandler implements
 	AuthPreserveQueryParamsHook,
 	AuthChangeFormFieldsHook
 {
+
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 

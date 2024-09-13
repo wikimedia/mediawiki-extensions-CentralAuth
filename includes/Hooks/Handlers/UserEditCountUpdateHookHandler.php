@@ -7,6 +7,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserEditCountUpdateHook;
 
 class UserEditCountUpdateHookHandler implements UserEditCountUpdateHook {
+
 	/** @var CentralAuthEditCounter */
 	private $editCounter;
 

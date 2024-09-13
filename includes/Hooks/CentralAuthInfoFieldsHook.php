@@ -32,6 +32,7 @@ use MediaWiki\Message\Message;
  * @ingroup Hooks
  */
 interface CentralAuthInfoFieldsHook {
+
 	/**
 	 * Use this hook to modify the information displayed in the 'Global account information' fieldset on
 	 * Special:CentralAuth.
