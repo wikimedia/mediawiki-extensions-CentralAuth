@@ -14,12 +14,14 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
+use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\ResourceLoader\Context;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyStartupSourceUrlsHook;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
+use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use MWExceptionHandler;
 use Wikimedia\NormalizedException\NormalizedException;
@@ -28,6 +30,7 @@ use Wikimedia\NormalizedException\NormalizedException;
  * Ensure that the SSO domain cannot be used for anything that is unrelated to its purpose.
  */
 class SsoHookHandler implements
+	GetLocalURLHook,
 	SetupAfterCacheHook,
 	GetUserPermissionsErrorsHook,
 	ApiCheckCanExecuteHook,
@@ -205,4 +208,24 @@ class SsoHookHandler implements
 		}
 	}
 
+	/** @inheritDoc */
+	public function onGetLocalURL( $title, &$url, $query ) {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
+			// Only allow links to auth-related special pages on the SSO domain.
+			// Point all other links to the normal wiki domain.
+			foreach ( self::ALLOWED_SPECIAL_PAGES as $name ) {
+				if ( $title->isSpecial( $name ) ) {
+					return;
+				}
+			}
+			if ( $title->getInterwiki() !== '' ) {
+				return;
+			}
+
+			// WikiMap entry for the current wiki points to the normal wiki domain,
+			// even when $wgServer etc. were overridden for the SSO domain.
+			$currentWiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
+			$url = wfAppendQuery( $currentWiki->getCanonicalUrl( $title->getPrefixedText() ), $query );
+		}
+	}
 }
