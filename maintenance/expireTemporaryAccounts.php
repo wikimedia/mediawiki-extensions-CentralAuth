@@ -8,7 +8,6 @@ use LogicException;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilder;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -47,7 +46,7 @@ class CentralAuthExpireTemporaryAccounts extends ExpireTemporaryAccounts {
 			), true )
 			->whereRegisteredTimestamp( wfTimestamp(
 				TS_MW,
-				$registeredBeforeUnix - ExpirationAwareness::TTL_DAY * $frequencyDays
+				$registeredBeforeUnix - ( $frequencyDays * 24 * 3600 )
 			), false );
 	}
 

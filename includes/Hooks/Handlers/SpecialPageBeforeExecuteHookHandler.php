@@ -19,7 +19,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
  * Triggers a server-side (top-level) central autologin attempt on Special:Userlogin.
@@ -165,8 +164,8 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			$request->response()->setCookie(
 				self::AUTOLOGIN_TRIED_COOKIE,
 				'1',
-				// use 1 day like anon-set.js
-				time() + ExpirationAwareness::TTL_DAY,
+				// add 1 day, like in anon-set.js
+				time() + ( 24 * 3600 ),
 				// match the behavior of the CentralAuthAnon cookie
 				[ 'prefix' => '', 'httpOnly' => false ]
 			);

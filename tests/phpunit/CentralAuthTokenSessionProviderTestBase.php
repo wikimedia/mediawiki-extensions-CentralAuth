@@ -13,7 +13,6 @@ use MediaWiki\Session\SessionInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use PHPUnit\Framework\MockObject\MockObject;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\HashBagOStuff;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -113,7 +112,7 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 		$tokenManager->tokenize(
 			$data,
 			'api-token',
-			[ 'token' => $loginToken, 'expiry' => ExpirationAwareness::TTL_HOUR ]
+			[ 'token' => $loginToken, 'expiry' => BagOStuff::TTL_HOUR ]
 		);
 		return $loginToken;
 	}

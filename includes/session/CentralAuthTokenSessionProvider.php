@@ -11,7 +11,7 @@ use MediaWiki\Session\UserInfo;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
-use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\ObjectCache\BagOStuff;
 
 /**
  * Base class for token based CentralAuth SessionProviders for use with different kinds of APIs.
@@ -205,7 +205,7 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 		// permanently block the user.
 		$sessionStore = $this->sessionManager->getSessionStore();
 		$key = $this->sessionManager->makeSessionKey( 'api-token-blacklist', (string)$centralUser->getId() );
-		$sessionStore->set( $key, true, ExpirationAwareness::TTL_DAY );
+		$sessionStore->set( $key, true, BagOStuff::TTL_DAY );
 	}
 
 }
