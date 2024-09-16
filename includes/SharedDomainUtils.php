@@ -135,9 +135,12 @@ class SharedDomainUtils {
 	 * Get the login/signup URL on the shared login domain wiki.
 	 *
 	 * @param string $action 'login' or 'signup' action
+	 * @param WebRequest|null $request There could be more to look at
+	 *    in the request like if we're coming from a campaign link.
+	 *
 	 * @return string
 	 */
-	public function getUrlForSharedDomainAction( string $action ): string {
+	public function getUrlForSharedDomainAction( string $action, ?WebRequest $request = null ): string {
 		switch ( $action ) {
 			case 'login':
 				$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
@@ -168,6 +171,7 @@ class SharedDomainUtils {
 			// TODO: Fix T369467
 			'returnto' => 'Main_Page',
 			'usesul3' => '1',
+			'campaign' => $request ? $request->getRawVal( 'campaign' ) : null,
 		] );
 	}
 

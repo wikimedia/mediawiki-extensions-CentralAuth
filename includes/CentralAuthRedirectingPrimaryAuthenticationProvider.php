@@ -108,10 +108,11 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		);
 
 		if ( $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup' ) {
-			$url = wfAppendQuery(
-				$this->sharedDomainUtils->getUrlForSharedDomainAction( 'signup' ),
-				[ 'centralauthLoginToken' => $token ]
+			$sharedDomainUrl = $this->sharedDomainUtils->getUrlForSharedDomainAction(
+				'signup',
+				$this->manager->getRequest()
 			);
+			$url = wfAppendQuery( $sharedDomainUrl, [ 'centralauthLoginToken' => $token ] );
 		} else {
 			$url = wfAppendQuery(
 				$this->sharedDomainUtils->getUrlForSharedDomainAction( 'login' ),

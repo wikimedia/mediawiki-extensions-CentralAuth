@@ -86,6 +86,13 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
 
 			$url = wfAppendQuery( $localLoginUrl, [ 'sul3-action' => 'signup' ] );
+			// If the account creation is coming from a campaign identifier,
+			// forward that as well in SUL3 mode.
+			$campaignParam = $request->getRawVal( 'campaign' );
+			if ( $campaignParam ) {
+				$url = wfAppendQuery( $url, [ 'campaign' => $campaignParam ] );
+			}
+
 			$special->getOutput()->redirect( $url );
 			return true;
 		}
