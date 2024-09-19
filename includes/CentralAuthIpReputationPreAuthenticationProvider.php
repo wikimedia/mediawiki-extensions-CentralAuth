@@ -152,6 +152,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 	 * @return array|null iPoid data for the specific address, or null if there is no data
 	 */
 	private function getIpoidDataFor( UserIdentity $user, string $ip ): ?array {
+		$fname = __METHOD__;
 		$data = $this->cache->getWithSetCallback(
 			$this->cache->makeGlobalKey( 'centralauth-ipoid', $ip ),
 			// ipoid data is refreshed every 24 hours and roughly 10% of its IPs drop out
@@ -160,7 +161,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 			// and also means that IPs for e.g. residential proxies are updated in our cache
 			// relatively quickly.
 			$this->cache::TTL_HOUR,
-			function () use ( $ip, $user ) {
+			function () use ( $ip, $user, $fname ) {
 				// If ipoid URL isn't configured, don't do any checks, let the user proceed.
 				$baseUrl = $this->config->get( 'CentralAuthIpoidUrl' );
 				if ( !$baseUrl ) {
@@ -178,7 +179,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 					'method' => 'GET',
 					'timeout' => $timeout,
 					'connectTimeout' => 1,
-				] );
+				], $fname );
 				$response = $request->execute();
 				if ( !$response->isOK() ) {
 					// Probably a 404, which means ipoid doesn't know about the IP.
