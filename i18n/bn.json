@@ -17,7 +17,8 @@
 			"Zaheen",
 			"আজিজ",
 			"আফতাবুজ্জামান",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"RiazACU"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "ব্যবহারকারীর বৈশ্বিক সম্পাদনা গণনা",
@@ -227,8 +228,10 @@
 	"centralauth-merge-method-empty": "কোনো অবদান নাই",
 	"centralauth-merge-method-empty-desc": "স্থানীয় উইকির অ্যাকাউন্টটি মার্জ করা হয়েছে কারণ সেখান থেকে কোনো সম্পাদনা করা হয়নি।",
 	"centralauth-merge-method-login": "প্রবেশের উপর ভিত্তি করে তৈরি",
+	"centralauth-merge-method-login-desc": "ইঙ্গিত করে যে ব্যবহারকারী এখানে প্রবেশ করলে স্থানীয় অ্যাকাউন্টটি স্বয়ংক্রিয়ভাবে তৈরি হয়েছিল।",
 	"centralauth-merge-method-mail": "ইমেইল দ্বারা নিশ্চিত করা হয়েছে",
 	"centralauth-merge-method-new": "নতুন অ্যাকাউন্ট",
+	"centralauth-merge-method-new-desc": "ইঙ্গিত করে যে এই স্থানীয় অ্যাকাউন্টটি তৈরির সময় বৈশ্বিক অ্যাকাউন্টটি স্বয়ংক্রিয়ভাবে তৈরি হয়েছিল।",
 	"centralauth-merge-method-password": "পাসওয়ার্ড দ্বারা নিশ্চিত করা হয়েছে",
 	"centralauth-merge-method-primary": "প্রধান উইকি",
 	"centralauth-merge-method-primary-desc": "এই উইকি থেকে প্রথমিক অবস্থায় অ্যাকাউন্ট মার্জ করা হয়েছিলো।\nমনে রাখবেন এটি ব্যবহারকারীর মূল উইকি থেকে আলাদা হতে পারে।",
