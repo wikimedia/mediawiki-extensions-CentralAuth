@@ -414,7 +414,6 @@
 	"ResourceModules": {
 		"ext.centralauth": {
 			"scripts": "ext.centralauth.js",
-			"styles": "ext.centralauth.css",
 			"dependencies": [
 				"mediawiki.util",
 				"jquery.spinner"
@@ -456,6 +455,7 @@
 		},
 		"ext.centralauth.misc.styles": {
 			"styles": [
+				"ext.centralauth.less",
 				"ext.centralauth.noflash.css",
 				"ext.centralauth.globalusers.css",
 				"ext.centralauth.globalgrouppermissions.css",

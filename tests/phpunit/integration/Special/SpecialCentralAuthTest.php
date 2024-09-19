@@ -257,7 +257,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$reasonDropdownField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-reason' );
 		$this->assertStringContainsString( '(centralauth-admin-status-reasons', $reasonDropdownField );
 		$this->assertStringContainsString( '(centralauth-admin-reason-other-select', $reasonDropdownField );
-		$this->assertAndGetByElementId( $html, 'mw-centralauth-admin-reason-other' );
 	}
 
 	/**
@@ -477,8 +476,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
 			$targetUsername,
 			[
-				'wpReason' => 'test',
-				'wpReasonList' => 'other',
+				'wpReason-other' => 'test',
+				'wpReason' => 'other',
 				'wpMethod' => 'set-status',
 				'wpStatusLocked' => 1,
 				'wpStatusHidden' => $wpStatusHiddenValue,
@@ -513,8 +512,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$html = $this->verifyForExistingGlobalAccountOnFormSubmission(
 			$targetUsername,
 			[
-				'wpReason' => 'test',
-				'wpReasonList' => 'other',
+				'wpReason-other' => 'test',
+				'wpReason' => 'other',
 				'wpMethod' => 'set-status',
 				'wpStatusLocked' => 1,
 				'wpStatusHidden' => 0,
@@ -557,7 +556,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Get our testing global account
 		$targetUsername = $this->getTestCentralAuthUser();
 		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
-		// First use the special page to lock a user
+		// First use the special page to lock a user using the old names for the reason fields to test the B/C code.
 		$htmlForLockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
 			'wpReason' => 'test',
 			'wpReasonList' => 'other',
@@ -582,8 +581,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			->assertFieldValue( 'test' );
 		// Use the special page to unlock the user
 		$htmlForUnlockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
-			'wpReason' => 'abc',
-			'wpReasonList' => 'Testingabc',
+			'wpReason-other' => 'abc',
+			'wpReason' => 'Testingabc',
 			'wpMethod' => 'set-status',
 			'wpStatusLocked' => 0,
 			'wpUserState' => $targetUser->getStateHash( true ),
@@ -614,8 +613,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
 		// Use the special page to suppress the account
 		$htmlForLockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
-			'wpReason' => 'test',
-			'wpReasonList' => 'other',
+			'wpReason-other' => 'test',
+			'wpReason' => 'other',
 			'wpMethod' => 'set-status',
 			'wpStatusLocked' => 0,
 			'wpStatusHidden' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
@@ -674,9 +673,9 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			[
 				// Add all the possible fields used by the forms, but get the wpEditToken incorrect
 				'wpEditToken' => 'invalidtoken',
-				'wpReason' => 'test',
+				'wpReason-other' => 'test',
 				'reason' => 'test',
-				'wpReasonList' => 'other',
+				'wpReason' => 'other',
 				'wpMethod' => $method,
 				'wpStatusLocked' => 1,
 				'wpStatusHidden' => 0,

@@ -1,0 +1,66 @@
+@import 'mediawiki.skin.variables.less';
+@import 'mediawiki.mixins.less';
+
+.merge-method-help-div {
+	position: absolute;
+	z-index: 3;
+	cursor: pointer;
+	width: 15em;
+	border: 1px solid #000;
+	background-color: #ff9;
+	padding: 0.5em;
+}
+
+.merge-method-help-name {
+	font-weight: bold;
+}
+
+/* Hide them when JavaScript fails or isn't enabled */
+.client-nojs .mw-centralauth-wikislist .merge-method-help {
+	display: none;
+}
+
+.mw-centralauth-admin-status-intro,
+.mw-centralauth-admin-delete-intro {
+	color: @color-subtle;
+}
+
+.mw-special-CentralAuth #mw-centralauth-admin-status {
+	// Remove the styling for the form sections added to allow grouping the "Locked" and "Hidden" radio inputs into
+	// a wrapping element.
+	.oo-ui-panelLayout-framed,
+	.oo-ui-panelLayout-padded {
+		border: 0;
+		padding: 0;
+
+		.oo-ui-fieldsetLayout-header {
+			display: none;
+		}
+	}
+
+	// Make the "Locked" and "Hidden" radio inputs appear next to each other
+	#mw-htmlform-lockedhidden {
+		display: flex;
+
+		>:first-child {
+			margin-right: 5%;
+		}
+
+		>:not( :first-child ) {
+			margin-top: 0;
+		}
+	}
+
+	// Make the "other reason" field appear below the dropdown in a similar way to Special:Block.
+	.mw-htmlform-select-and-other-field {
+		.oo-ui-textInputWidget,
+		.oo-ui-dropdownInputWidget {
+			display: block;
+			max-width: 50em;
+		}
+
+		.oo-ui-textInputWidget {
+			margin-top: 0.5em;
+		}
+	}
+}
