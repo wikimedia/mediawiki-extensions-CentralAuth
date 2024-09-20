@@ -9,7 +9,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\User\TempUser\Pattern;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
@@ -64,7 +63,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 	}
 
 	private function initServices() {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$this->dbManager = CentralAuthServices::getDatabaseManager();
 		$this->userFactory = $services->getUserFactory();
 		$this->globalRenameFactory = $services->get( 'CentralAuth.GlobalRenameFactory' );

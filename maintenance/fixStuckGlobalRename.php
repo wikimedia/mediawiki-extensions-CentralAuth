@@ -7,7 +7,6 @@ use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
@@ -38,7 +37,7 @@ class FixStuckGlobalRename extends Maintenance {
 
 	public function execute() {
 		global $wgLocalDatabases;
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$userNameUtils = $this->getServiceContainer()->getUserNameUtils();
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
 		$oldName = $userNameUtils->getCanonical( $this->getArg( 0 ) );

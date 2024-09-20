@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\MediaWikiServices;
 use RuntimeException;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -33,7 +32,7 @@ class PopulateGlobalEditCount extends Maintenance {
 	}
 
 	private function init() {
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$this->databaseManager = CentralAuthServices::getDatabaseManager( $services );
 	}
 
