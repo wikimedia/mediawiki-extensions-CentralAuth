@@ -25,6 +25,7 @@ use ExtensionRegistry;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -57,8 +58,10 @@ use MediaWiki\User\Hook\UserIsLockedHook;
 use MediaWiki\User\Hook\UserSaveSettingsHook;
 use MediaWiki\User\Hook\UserSetEmailAuthenticationTimestampHook;
 use MediaWiki\User\Hook\UserSetEmailHook;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserArrayFromResult;
+use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use OOUI\ButtonWidget;
@@ -88,6 +91,20 @@ class CentralAuthHooks implements
 	UserSetEmailAuthenticationTimestampHook,
 	UserSetEmailHook
 {
+
+	private Config $config;
+	private UserNameUtils $userNameUtils;
+	private UserOptionsLookup $userOptionsLookup;
+
+	public function __construct(
+		Config $config,
+		UserNameUtils $userNameUtils,
+		UserOptionsLookup $userOptionsLookup
+	) {
+		$this->config = $config;
+		$this->userNameUtils = $userNameUtils;
+		$this->userOptionsLookup = $userOptionsLookup;
+	}
 
 	/**
 	 * Called right after configuration variables have been set.
@@ -211,8 +228,6 @@ class CentralAuthHooks implements
 	 * @return bool
 	 */
 	public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
-		$optionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-
 		$usersByName = [];
 		foreach ( $users as $user ) {
 			$usersByName[ $user->getName() ] = $user;
@@ -227,7 +242,7 @@ class CentralAuthHooks implements
 				// TODO: Use UserIdentity instead, once allowed by the hook
 				$user = User::newFromName( $centralUser->getName() );
 				if (
-					!$optionsLookup->getBoolOption( $user, 'requireemail' ) ||
+					!$this->userOptionsLookup->getBoolOption( $user, 'requireemail' ) ||
 					$centralUser->getEmail() === $data['Email']
 				) {
 					// Email is not required to request a reset, or the correct email was provided
@@ -253,7 +268,7 @@ class CentralAuthHooks implements
 				// Skip users whose preference 'requireemail' is on since username was not submitted
 				// (If the local user doesn't exist, the preference is looked up in GlobalPreferences,
 				// to ensure users can't be harassed with password resets coming from other wikis)
-				if ( $optionsLookup->getBoolOption( $localUser, 'requireemail' ) ) {
+				if ( $this->userOptionsLookup->getBoolOption( $localUser, 'requireemail' ) ) {
 					continue;
 				}
 
@@ -272,8 +287,7 @@ class CentralAuthHooks implements
 	 * @inheritDoc
 	 */
 	public function onAuthManagerFilterProviders( array &$providers ): void {
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-		if ( $config->get( 'CentralAuthStrict' ) ) {
+		if ( $this->config->get( 'CentralAuthStrict' ) ) {
 			unset( $providers['primaryauth'][TemporaryPasswordPrimaryAuthenticationProvider::class] );
 		}
 	}
@@ -359,7 +373,7 @@ class CentralAuthHooks implements
 	 * @return bool
 	 */
 	public function onUserGetEmail( $user, &$email ) {
-		if ( MediaWikiServices::getInstance()->getUserNameUtils()->getCanonical( $user->getName() ) === false ) {
+		if ( $this->userNameUtils->getCanonical( $user->getName() ) === false ) {
 			return true;
 		}
 		$ca = CentralAuthUser::getInstance( $user );
@@ -455,8 +469,8 @@ class CentralAuthHooks implements
 		// checking rights not just for registered users but also for
 		// anon (local) users based on name only will allow autocreation of
 		// local account based on global rights, see T316303
-		$anonUserOK = MediaWikiServices::getInstance()->getMainConfig()->get( 'CentralAuthStrict' );
-		if ( MediaWikiServices::getInstance()->getUserNameUtils()->getCanonical( $user->getName() ) !== false ) {
+		$anonUserOK = $this->config->get( 'CentralAuthStrict' );
+		if ( $this->userNameUtils->getCanonical( $user->getName() ) !== false ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 
 			if ( $centralUser->exists()

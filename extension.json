@@ -201,6 +201,7 @@
 		"MultiLock": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMultiLock",
 			"services": [
+				"UserNameUtils",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService"
 			]
@@ -547,7 +548,12 @@
 			]
 		},
 		"default": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks"
+			"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks",
+			"services": [
+				"MainConfig",
+				"UserNameUtils",
+				"UserOptionsLookup"
+			]
 		},
 		"importhandle": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\ImportHandleHookHandler",

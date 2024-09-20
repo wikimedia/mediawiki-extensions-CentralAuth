@@ -7,8 +7,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\User\UserNameUtils;
 use MediaWiki\Xml\Xml;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
@@ -44,14 +44,17 @@ class SpecialMultiLock extends SpecialPage {
 	/** @var string[] */
 	private $mActionUserNames;
 
+	private UserNameUtils $userNameUtils;
 	private CentralAuthDatabaseManager $databaseManager;
 	private CentralAuthUIService $uiService;
 
 	public function __construct(
+		UserNameUtils $userNameUtils,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService
 	) {
 		parent::__construct( 'MultiLock', 'centralauth-lock' );
+		$this->userNameUtils = $userNameUtils;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 	}
@@ -137,7 +140,7 @@ class SpecialMultiLock extends SpecialPage {
 				$ret[] = false;
 				continue;
 			}
-			if ( MediaWikiServices::getInstance()->getUserNameUtils()->getCanonical( $username ) === false ) {
+			if ( $this->userNameUtils->getCanonical( $username ) === false ) {
 				$ret[] = $this->msg( 'htmlform-user-not-valid', $username )->parse();
 				continue;
 			}
