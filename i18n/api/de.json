@@ -49,6 +49,8 @@
 	"apihelp-query+globalallusers-param-from": "Der Benutzername, bei dem die Auflistung beginnen soll.",
 	"apihelp-query+globalallusers-param-group": "Benutzer auf die angegebenen globalen Gruppen beschränken.",
 	"apihelp-query+globalallusers-param-limit": "Welche Gesamtanzahl an Benutzernamen zurückgegeben werden soll.",
+	"apihelp-query+globalallusers-param-excludenamed": "Benutzer benannter Konten ausschließen.",
+	"apihelp-query+globalallusers-param-excludetemp": "Benutzer mit temporären Konten ausschließen.",
 	"apihelp-query+globalallusers-param-prefix": "Sucht nach allen Benutzern, die mit diesem Wert beginnen.",
 	"apihelp-query+globalallusers-param-prop": "Welche Informationen enthalten sein sollen:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Ob das Benutzerkonto gesperrt ist.",
