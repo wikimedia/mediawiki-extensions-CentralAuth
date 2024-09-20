@@ -228,6 +228,12 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
 			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );
+		} else {
+			// This is not supposed to happen on the SSO domain but if we're
+			// in a situation where the shared domain is in mobile view and the
+			// user is coming from a desktop view, let's inherit that experience
+			// to the shared domain.
+			$url = wfAppendQuery( $url, [ 'useformat' => 'desktop' ] );
 		}
 
 		return wfAppendQuery( $url, [
