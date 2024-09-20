@@ -10,9 +10,11 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
@@ -21,8 +23,9 @@ use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
-use MediaWiki\User\Options\UserOptionsManager;
+use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use Psr\Log\LoggerInterface;
@@ -61,8 +64,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	private ExtensionRegistry $extensionRegistry;
 
+	private HookContainer $hookContainer;
 	private LanguageFactory $languageFactory;
-	private UserOptionsManager $userOptionsManager;
+	private UserFactory $userFactory;
+	private UserOptionsLookup $userOptionsLookup;
 	private CentralAuthSessionManager $sessionManager;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralAuthUtilityService $centralAuthUtilityService;
@@ -71,15 +76,19 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private string $subpage;
 
 	/**
+	 * @param HookContainer $hookContainer
 	 * @param LanguageFactory $languageFactory
-	 * @param UserOptionsManager $userOptionsManager
+	 * @param UserFactory $userFactory
+	 * @param UserOptionsLookup $userOptionsLookup
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthTokenManager $tokenManager
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
 	 */
 	public function __construct(
+		HookContainer $hookContainer,
 		LanguageFactory $languageFactory,
-		UserOptionsManager $userOptionsManager,
+		UserFactory $userFactory,
+		UserOptionsLookup $userOptionsLookup,
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthTokenManager $tokenManager,
 		CentralAuthUtilityService $centralAuthUtilityService
@@ -87,8 +96,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		parent::__construct( 'CentralAutoLogin' );
 
 		$this->extensionRegistry = ExtensionRegistry::getInstance();
+		$this->hookContainer = $hookContainer;
 		$this->languageFactory = $languageFactory;
-		$this->userOptionsManager = $userOptionsManager;
+		$this->userFactory = $userFactory;
+		$this->userOptionsLookup = $userOptionsLookup;
 		$this->sessionManager = $sessionManager;
 		$this->tokenManager = $tokenManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
@@ -133,6 +144,29 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 		$this->session = $session;
 		return true;
+	}
+
+	/**
+	 * Check whether the user's preferences are such that a UI reload is
+	 * recommended.
+	 * @param User $user
+	 * @return bool
+	 */
+	private function isUIReloadRecommended( User $user ) {
+		foreach ( $this->getConfig()->get( 'CentralAuthPrefsForUIReload' ) as $pref ) {
+			if (
+				$this->userOptionsLookup->getOption( $user, $pref ) !==
+				$this->userOptionsLookup->getDefaultOption( $pref, $this->userFactory->newAnonymous() )
+			) {
+				return true;
+			}
+		}
+
+		$hookRunner = new CentralAuthHookRunner( $this->hookContainer );
+
+		$recommendReload = false;
+		$hookRunner->onCentralAuthIsUIReloadRecommended( $user, $recommendReload );
+		return $recommendReload;
 	}
 
 	/**
@@ -206,13 +240,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				if ( $user->isRegistered() ) {
 					$skin = $this->getSkin();
 					if (
-						!CentralAuthHooks::isUIReloadRecommended( $user ) &&
+						!$this->isUIReloadRecommended( $user ) &&
 						$skin instanceof SkinTemplate
 					) {
 						$html = $skin->makePersonalToolsList();
 						$json = FormatJson::encode( [ 'toolslist' => $html ] );
 					} else {
-						$gender = $this->userOptionsManager->getOption( $this->getUser(), 'gender' );
+						$gender = $this->userOptionsLookup->getOption( $this->getUser(), 'gender' );
 						if ( strval( $gender ) === '' ) {
 							$gender = 'unknown';
 						}
@@ -638,7 +672,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Otherwise, we need to rewrite p-personal and maybe notify the user too
 				// Add a script to the page that will pull in the user's toolslist
 				// via ajax, and update the UI. Don't write out the tools here (T59081).
-				$code = $this->userOptionsManager->getOption( $localUser, 'language' );
+				$code = $this->userOptionsLookup->getOption( $localUser, 'language' );
 				$code = RequestContext::sanitizeLangCode( $code );
 
 				$this->getHookRunner()->onUserGetLanguageObject( $localUser, $code, $this->getContext() );

@@ -25,7 +25,6 @@ use ExtensionRegistry;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
-use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -590,33 +589,6 @@ class CentralAuthHooks implements
 		}
 
 		return $html;
-	}
-
-	/**
-	 * Check whether the user's preferences are such that a UI reload is
-	 * recommended.
-	 * @param User $user
-	 * @return bool
-	 */
-	public static function isUIReloadRecommended( User $user ) {
-		global $wgCentralAuthPrefsForUIReload;
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
-		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
-
-		foreach ( $wgCentralAuthPrefsForUIReload as $pref ) {
-			if (
-				$userOptionsLookup->getOption( $user, $pref ) !==
-				$userOptionsLookup->getDefaultOption( $pref, $userFactory->newAnonymous() )
-			) {
-				return true;
-			}
-		}
-
-		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
-
-		$recommendReload = false;
-		$hookRunner->onCentralAuthIsUIReloadRecommended( $user, $recommendReload );
-		return $recommendReload;
 	}
 
 	/**
