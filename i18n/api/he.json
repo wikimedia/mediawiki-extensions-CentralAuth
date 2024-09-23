@@ -42,6 +42,8 @@
 	"apihelp-query+globalallusers-param-from": "מאיזה שם משתמש להתחיל למנות.",
 	"apihelp-query+globalallusers-param-group": "להגביל את המשתמשים לקבוצות גלובליות.",
 	"apihelp-query+globalallusers-param-limit": "כמה שמות משתמש להחזיר בסך הכול.",
+	"apihelp-query+globalallusers-param-excludenamed": "לא לכלול משתמשים של חשבונות בעלי שם.",
+	"apihelp-query+globalallusers-param-excludetemp": "לא לכלול משתמשים של חשבונות חולפים.",
 	"apihelp-query+globalallusers-param-prefix": "חיפוש כל המשתמשים במתחילים בערך הזה.",
 	"apihelp-query+globalallusers-param-prop": "אילו פריטי מידע לכלול:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "האם חשבון המשתמש נעול.",

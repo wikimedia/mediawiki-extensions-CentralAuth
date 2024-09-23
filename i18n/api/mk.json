@@ -42,6 +42,8 @@
 	"apihelp-query+globalallusers-param-from": "Од кое корисничко име да почне набројувањето.",
 	"apihelp-query+globalallusers-param-group": "Ограничи корисници на дадени глобални групи.",
 	"apihelp-query+globalallusers-param-limit": "Колку вкупно кориснички имиња да се дадат.",
+	"apihelp-query+globalallusers-param-excludenamed": "Изземи корисници на именувани сметки.",
+	"apihelp-query+globalallusers-param-excludetemp": "Изземи корисници на привремени сметки.",
 	"apihelp-query+globalallusers-param-prefix": "Пребарај ги сите корисници што почнуваат со оваа вредност.",
 	"apihelp-query+globalallusers-param-prop": "Кои информации да се содржат:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Дали корисничката сметка е заклучена.",

@@ -4,10 +4,13 @@
 			"Amire80",
 			"Chirifo",
 			"Kalakpagh",
-			"Khadijah Abubakari"
+			"Khadijah Abubakari",
+			"Munkaila Sulemana"
 		]
 	},
 	"centralauth-admin-blocklog": "Taɣibu",
+	"centralauth-admin-reason-other-select": "Daliri din pahi",
+	"centralauth-admin-globalblock-exempt-list-reason-heading": "Daliri",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|pahigu|pahibu}} on $2",
 	"centralauth-foreign-link": "ŋun su $1 di zuɣu $2",
 	"centralauth-merge-method-login": "bɛ ni pun nam kpɛhibu shɛli",

@@ -91,7 +91,7 @@
 	"centralauth-admin-permission": "Само стјуарди могу да спајају налоге других корисника.",
 	"centralauth-admin-reason": "Разлог:",
 	"centralauth-admin-reason-other": "Други/додатни разлог:",
-	"centralauth-admin-reason-other-select": "Други разлог:",
+	"centralauth-admin-reason-other-select": "Други разлог",
 	"centralauth-admin-rename-in-progress": "Овај налог се тренутно преименује. Можете да [[Special:GlobalRenameProgress/$1|погледате ток]] преименовања. Дневник глобалног преименовања овог корисника је наведен испод.",
 	"centralauth-admin-setstatus-success": "Променили сте стање овог глобалног налога.",
 	"centralauth-admin-status": "Постави стање глобалног налога",

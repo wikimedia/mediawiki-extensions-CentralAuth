@@ -17,6 +17,7 @@
 			"Rsocol",
 			"Stelistcristi",
 			"Strainu",
+			"Trotinel Iftode",
 			"WebSourceContentRO",
 			"XXN"
 		]
@@ -89,7 +90,7 @@
 	"centralauth-admin-permission": "Numai stewarzii pot asimila conturile pentru alți utilizatori.",
 	"centralauth-admin-reason": "Motiv:",
 	"centralauth-admin-reason-other": "Motiv diferit/suplimentar:",
-	"centralauth-admin-reason-other-select": "Alt motiv:",
+	"centralauth-admin-reason-other-select": "Alt motiv",
 	"centralauth-admin-setstatus-success": "Ați schimbat statutul acestui cont global.",
 	"centralauth-admin-status": "Modifică statutul contului global",
 	"centralauth-admin-status-hidden": "Ascuns:",
