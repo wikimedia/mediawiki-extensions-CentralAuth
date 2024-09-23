@@ -23,6 +23,8 @@ namespace MediaWiki\Extension\CentralAuth;
 use CentralAuthSessionProvider;
 use ExtensionRegistry;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
+use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
+use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
@@ -58,7 +60,6 @@ use MediaWiki\User\Hook\UserSetEmailAuthenticationTimestampHook;
 use MediaWiki\User\Hook\UserSetEmailHook;
 use MediaWiki\User\User;
 use MediaWiki\User\UserArrayFromResult;
-use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use OOUI\ButtonWidget;
@@ -68,6 +69,7 @@ use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthHooks implements
 	ApiQueryTokensRegisterTypesHook,
+	AuthManagerFilterProvidersHook,
 	MakeGlobalVariablesScriptHook,
 	TestCanonicalRedirectHook,
 	UserGetRightsHook,
@@ -201,29 +203,80 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Show a nicer error when the user account does not exist on the local wiki, but
+	 * Allow password reset when the user account does not exist on the local wiki, but
 	 * does exist globally
+	 *
 	 * @param User[] &$users
 	 * @param array $data
 	 * @param string &$error
 	 * @return bool
 	 */
 	public function onSpecialPasswordResetOnSubmit( &$users, $data, &$error ) {
-		$firstUser = reset( $users );
-		if ( !( $firstUser instanceof UserIdentity ) ) {
-			// We can't handle this
-			return true;
+		$optionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+
+		$usersByName = [];
+		foreach ( $users as $user ) {
+			$usersByName[ $user->getName() ] = $user;
 		}
 
-		if ( !$firstUser->getId() ) {
-			$centralUser = CentralAuthUser::getInstance( $firstUser );
-			if ( $centralUser->exists() ) {
-				$error = [ 'centralauth-account-exists-reset', $centralUser->getName() ];
-				return false;
+		if ( $data['Username'] !== null ) {
+			// PasswordReset ensures that the username is valid before calling the hook.
+			// CentralAuthUser canonicalizes the provided username.
+			$centralUser = CentralAuthUser::getInstanceByName( $data['Username'] );
+			if ( $centralUser->exists() && $centralUser->getEmail() ) {
+				// User that does not exist locally is okay, if it exists globally
+				// TODO: Use UserIdentity instead, once allowed by the hook
+				$user = User::newFromName( $centralUser->getName() );
+				if (
+					!$optionsLookup->getBoolOption( $user, 'requireemail' ) ||
+					$centralUser->getEmail() === $data['Email']
+				) {
+					// Email is not required to request a reset, or the correct email was provided
+					$usersByName[ $centralUser->getName() ] ??= $user;
+				}
+			}
+
+		} elseif ( $data['Email'] !== null ) {
+			// PasswordReset ensures that the email is valid before calling the hook.
+			/** @var iterable<CentralAuthUser> $centralUsers */
+			$centralUsers = CentralAuthServices::getGlobalUserSelectQueryBuilderFactory()
+				->newGlobalUserSelectQueryBuilder()
+				->where( [ 'gu_email' => $data['Email'] ] )
+				->caller( __METHOD__ )
+				->fetchCentralAuthUsers();
+
+			foreach ( $centralUsers as $centralUser ) {
+				if ( isset( $usersByName[ $centralUser->getName() ] ) ) {
+					continue;
+				}
+				$localUser = User::newFromName( $centralUser->getName() );
+
+				// Skip users whose preference 'requireemail' is on since username was not submitted
+				// (If the local user doesn't exist, the preference is looked up in GlobalPreferences,
+				// to ensure users can't be harassed with password resets coming from other wikis)
+				if ( $optionsLookup->getBoolOption( $localUser, 'requireemail' ) ) {
+					continue;
+				}
+
+				$usersByName[ $centralUser->getName() ] = $localUser;
 			}
 		}
 
+		$users = array_values( $usersByName );
+
 		return true;
+	}
+
+	/**
+	 * Disable core password reset if we're running in strict mode.
+	 * This is independent of SUL3 (although we also do it in SUL3 mode).
+	 * @inheritDoc
+	 */
+	public function onAuthManagerFilterProviders( array &$providers ): void {
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if ( $config->get( 'CentralAuthStrict' ) ) {
+			unset( $providers['primaryauth'][TemporaryPasswordPrimaryAuthenticationProvider::class] );
+		}
 	}
 
 	/**
