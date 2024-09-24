@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 use Generator;
 use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -77,7 +76,7 @@ class CheckLocalUser extends Maintenance {
 
 		$user = $this->getOption( 'user', false );
 		if ( $user !== false ) {
-			$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+			$userNameUtils = $this->getServiceContainer()->getUserNameUtils();
 			$this->user = $userNameUtils->getCanonical( $user );
 		}
 

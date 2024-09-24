@@ -3,7 +3,6 @@
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ScopedCallback;
 
@@ -22,7 +21,7 @@ class CentralAuthEditCounterTest extends MediaWikiIntegrationTestCase {
 			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
 		);
 		$testUser->save( $this->getDb() );
-		$user = MediaWikiServices::getInstance()->getUserFactory()
+		$user = $this->getServiceContainer()->getUserFactory()
 			->newFromName( 'CentralAuthEditCounterTest' );
 		$caUser = CentralAuthUser::getInstance( $user );
 		$editCounter = CentralAuthServices::getEditCounter();

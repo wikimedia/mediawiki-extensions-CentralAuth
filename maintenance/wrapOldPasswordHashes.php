@@ -24,7 +24,6 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Password\LayeredParameterizedPassword;
 use MediaWiki\Password\ParameterizedPassword;
 use Wikimedia\Rdbms\IExpression;
@@ -54,7 +53,7 @@ class WrapOldPasswordHashes extends Maintenance {
 	}
 
 	public function execute() {
-		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
+		$passwordFactory = $this->getServiceContainer()->getPasswordFactory();
 
 		$typeInfo = $passwordFactory->getTypes();
 		$layeredType = $this->getOption( 'type' );

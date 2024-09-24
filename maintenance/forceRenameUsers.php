@@ -9,7 +9,6 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJ
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
@@ -96,7 +95,7 @@ class ForceRenameUsers extends Maintenance {
 	protected function rename( $row, IDatabase $dbw ) {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$userNameUtils = $services->getUserNameUtils();
 		$newNamePrefix = $userNameUtils->getCanonical(
 			// Some database names have _'s in them, replace with dashes -
@@ -172,7 +171,7 @@ class ForceRenameUsers extends Maintenance {
 		$rows = $updates->findUsers(
 			$wiki, UsersToRenameDatabaseUpdates::NOTIFIED, $this->mBatchSize
 		);
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$userNameUtils = $this->getServiceContainer()->getUserNameUtils();
 
 		foreach ( $rows as $row ) {
 			$user = User::newFromName( $row->utr_name );

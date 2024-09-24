@@ -6,7 +6,6 @@ use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
@@ -51,7 +50,7 @@ class SendForceRenameNotification extends Maintenance {
 			'subject' => $this->getLocalizedText( $this->getOption( 'subject' ) ),
 		];
 
-		$services = MediaWikiServices::getInstance();
+		$services = $this->getServiceContainer();
 		$namespaceInfo = $services->getNamespaceInfo();
 		$jobQueueGroup = $services->getJobQueueGroup();
 		$linkBatchFactory = $services->getLinkBatchFactory();
@@ -116,7 +115,7 @@ class SendForceRenameNotification extends Maintenance {
 	 * @return int
 	 */
 	protected function getQueuedCount() {
-		$group = MediaWikiServices::getInstance()->getJobQueueGroup();
+		$group = $this->getServiceContainer()->getJobQueueGroup();
 		$queue = $group->get( 'MassMessageServerSideJob' );
 		$pending = $queue->getSize();
 		$claimed = $queue->getAcquiredCount();
@@ -133,7 +132,7 @@ class SendForceRenameNotification extends Maintenance {
 	 */
 	protected function getLocalizedText( $dir ) {
 		$langCode = $this->getConfig()->get( 'LanguageCode' );
-		$fallbacks = MediaWikiServices::getInstance()->getLanguageFallback()->getAll( $langCode );
+		$fallbacks = $this->getServiceContainer()->getLanguageFallback()->getAll( $langCode );
 		array_unshift( $fallbacks, $langCode );
 		foreach ( $fallbacks as $code ) {
 			if ( file_exists( "$dir/$code.txt" ) ) {
