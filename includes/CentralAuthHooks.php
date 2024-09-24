@@ -273,12 +273,7 @@ class CentralAuthHooks implements
 	 */
 	public function onAuthManagerFilterProviders( array &$providers ): void {
 		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		// Disable this temporarily to allow core password reset functionality
-		// to handle previously requested temporary passwords. (T151012#10167927)
-		// It can be re-enabled after 7 days (temporary password expiry time).
-		// @phan-suppress-next-line PhanImpossibleCondition
-		if ( false && $config->get( 'CentralAuthStrict' ) ) {
+		if ( $config->get( 'CentralAuthStrict' ) ) {
 			unset( $providers['primaryauth'][TemporaryPasswordPrimaryAuthenticationProvider::class] );
 		}
 	}
