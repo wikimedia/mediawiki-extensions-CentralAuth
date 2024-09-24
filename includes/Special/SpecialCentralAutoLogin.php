@@ -23,7 +23,6 @@ use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsManager;
 use MediaWiki\User\User;
-use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use Psr\Log\LoggerInterface;
@@ -252,9 +251,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 				if ( $centralUser->getId() && $centralUser->isAttached() ) {
-					$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
-
-					$remember = (bool)$centralSession['remember'];
+					$remember = (bool)$this->getCentralSession()['remember'];
 					$delay = $this->session->delaySave();
 					$this->session->setRememberUser( $remember );
 					$this->session->persist();
@@ -468,7 +465,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				// Write info for session creation into memc
-				$centralSession = $this->getCentralSession( $centralUser, $this->getUser() );
+				$centralSession = $this->getCentralSession();
 				$memcData += [
 					'userName' => $centralUser->getName(),
 					'token' => $centralUser->getAuthToken(),
@@ -862,13 +859,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param CentralAuthUser $centralUser
-	 * @param UserIdentity $user
 	 * @return array
 	 */
-	private function getCentralSession( $centralUser, $user ) {
+	private function getCentralSession() {
 		$centralSession = $this->sessionManager->getCentralSession( $this->session );
-		$request = $this->getRequest();
 
 		if ( !isset( $centralSession['remember'] ) ) {
 			$centralSession['remember'] = false;
