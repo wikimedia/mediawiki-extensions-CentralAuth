@@ -136,8 +136,10 @@
 		"CentralAutoLogin": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAutoLogin",
 			"services": [
+				"HookContainer",
 				"LanguageFactory",
-				"UserOptionsManager",
+				"UserFactory",
+				"UserOptionsLookup",
 				"CentralAuth.CentralAuthSessionManager",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralAuthUtilityService"
