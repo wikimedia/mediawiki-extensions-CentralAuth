@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pragathi. BH"
+		]
+	},
+	"apihelp-query+globalallusers-param-excludenamed": "ಪುದರ್ ದೀತಿನ ಖಾತೆಲೆನ ಬಳಕೆದಾರೆರೆನ್ ಬುಡುಗಡೆ ಮಲ್ಪುಲೆ.",
+	"apihelp-query+globalallusers-param-excludetemp": "ತಾತ್ಕಾಲಿಕ ಖಾತೆಲೆನ ಬಳಕೆದಾರೆರೆನ್ ಬುಡುಗಡೆ ಮಲ್ಪುಲೆ."
+}

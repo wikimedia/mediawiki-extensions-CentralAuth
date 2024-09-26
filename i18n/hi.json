@@ -116,6 +116,7 @@
 	"centralauth-admin-username": "सदस्यनाम:",
 	"centralauth-admin-view": "खाता जानकारी देखें",
 	"centralauth-admin-yes": "हाँ",
+	"centralauth-admin-globalblock-exempt-list-reason-heading": "कारण",
 	"centralauth-attach-list-attached": "\"$1\" नाम के एकत्रित खाते में निम्नलिखित खाते हैं:",
 	"centralauth-attach-submit": "खाता स्थलांतरित करें",
 	"centralauth-attach-success": "खाता एकत्रित खाते से जोड़ दिया गया है।",
