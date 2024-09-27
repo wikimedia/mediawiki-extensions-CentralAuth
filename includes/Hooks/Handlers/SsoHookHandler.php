@@ -17,8 +17,7 @@ use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
-use MediaWiki\ResourceLoader\Context;
-use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyStartupSourceUrlsHook;
+use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -34,7 +33,7 @@ class SsoHookHandler implements
 	SetupAfterCacheHook,
 	GetUserPermissionsErrorsHook,
 	ApiCheckCanExecuteHook,
-	ResourceLoaderModifyStartupSourceUrlsHook,
+	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	AuthManagerFilterProvidersHook,
 	AuthManagerVerifyAuthenticationHook
 {
@@ -140,7 +139,7 @@ class SsoHookHandler implements
 	 * @inheritDoc
 	 * @phan-param array{local:string} $urls
 	 */
-	public function onResourceLoaderModifyStartupSourceUrls( array &$urls, Context $context ): void {
+	public function onResourceLoaderModifyEmbeddedSourceUrls( array &$urls ): void {
 		$local = $urls['local'];
 		$local = $this->urlUtils->expand( $local, PROTO_CURRENT );
 		// reassure Phan that expand() won't return null
