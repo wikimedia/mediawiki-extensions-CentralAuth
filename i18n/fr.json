@@ -547,7 +547,7 @@
 	"globalvanishrequest-save-error": "L'enregistrement de la demande a échoué. Veuillez réessayer.",
 	"globalvanishrequest-autoapprove-note": "Votre demande de disparition de nom d'utilisateur a été traitée avec succès.",
 	"globalvanishrequest-autoapprove-public-note": "Cette demande de disparition d'un utilisateur a été automatiquement approuvée",
-	"globalvanishrequest-rejected-body-notification": "Une demande de disparition de compte a été rejetée, détails ci-dessous: \n\n Nom d'utilisateur: $1 Wiki d'accueil: $2 Compte de modification global: $3 Bloqué: $4 Motifs de demande disparaître: $5 Rejeté par: $6 Notes de rejet: $7 Rejeté: $8 Complé: $9",
+	"globalvanishrequest-rejected-body-notification": "Une demande de disparition de compte a été rejetée, détails ci-dessous: \n\nNom d'utilisateur : $1\nWiki d'accueil : $2\nNombre global de modifications : $3\nBloqué : $4\nRaison pour la demande de disparition : $5\nRejeté par : $6\nNotes de rejet : $7\nDemandé : $8\nTerminé : $9",
 	"globalvanishrequest-rejected-notification-error": "Impossible d'informer automatiquement l'équipe juridique. Veuillez leur envoyer manuellement un courriel concernant le refus de la demande de disparition du compte. Le refus de la demande est complété.",
 	"globalusers": "Liste des comptes globaux",
 	"grant-createlocalaccount": "Créer de force un compte local pour un compte global",

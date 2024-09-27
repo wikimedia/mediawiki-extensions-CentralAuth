@@ -46,6 +46,8 @@
 	"apihelp-query+globalallusers-param-from": "起始列舉的使用者名稱。",
 	"apihelp-query+globalallusers-param-group": "限制使用者至指定的全域群組。",
 	"apihelp-query+globalallusers-param-limit": "要回傳的使用者名稱總數。",
+	"apihelp-query+globalallusers-param-excludenamed": "排除指名帳號的使用者。",
+	"apihelp-query+globalallusers-param-excludetemp": "排除臨時帳號的使用者。",
 	"apihelp-query+globalallusers-param-prefix": "搜尋以此值為開頭的所有使用者。",
 	"apihelp-query+globalallusers-param-prop": "要包含的資訊束：",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "使用者帳號是否被鎖定。",
