@@ -117,6 +117,7 @@
 	"centralauth-admin-username": "Корисничко име:",
 	"centralauth-admin-view": "Приказ података о налогу",
 	"centralauth-admin-yes": "да",
+	"centralauth-admin-globalblock-exempt-list-reason-heading": "Разлог",
 	"centralauth-attach-list-attached": "Обједињени налог „$1“ садржи следеће налоге:",
 	"centralauth-attach-submit": "Пренеси налог",
 	"centralauth-attach-success": "Налог је премештен у обједињени налог.",
