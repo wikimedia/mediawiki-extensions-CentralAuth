@@ -923,8 +923,8 @@
 			"value": "Wikipedia:Appealing a block"
 		},
 		"CentralAuthEnableSul3": {
-			"description": "Enables SUL3 mode (T348388). Experimental, do not use. Allowed values: false, 'always', 'query-flag' (enabled when the URL has a 'usesul3=1' query parameter).",
-			"value": false
+			"description": "Enables SUL3 mode (T348388 and T375787). Experimental, do not use. Defaults to empty array but allowed values within the array are: 'always' (always SUL3 mode), 'query-flag' (enabled when the URL has a 'usesul3=1' query parameter), and 'cookie' (enabled when there is a 'sul3OptIn=1' cookie). The query flag is used to pass on the SUL3 flag during redirect chains, so unless SUL3 is always or never enabled, 'query-flag' should always be included.",
+			"value": []
 		}
 	},
 	"AuthManagerAutoConfig": {

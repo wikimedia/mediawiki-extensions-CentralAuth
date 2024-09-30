@@ -17,6 +17,7 @@ use Wikimedia\Assert\Assert;
  */
 class SharedDomainUtils {
 
+	private const SUL3_COOKIE_FLAG = 'sul3OptIn';
 	private Config $config;
 	private TitleFactory $titleFactory;
 	private bool $isSharedDomain;
@@ -78,16 +79,39 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * Whether SUL3 mode is enabled on this wiki and this request.
+	 * Whether SUL3 mode is enabled on this wiki and/or this request.
+	 *
+	 * In order to facilitate testing of SUL3 migration, this method
+	 * provides mechanisms for testing the SUL3 feature including a
+	 * cookie-based feature flag.
+	 *
+	 * SUL3 mode is enabled if any of the following conditions is true:
+	 * - $wgCentralAuthEnableSul3 contains 'always'
+	 * - $wgCentralAuthEnableSul3 contains 'cookie' and there is a
+	 *   cookie named 'sul3OptIn' with the value '1'
+	 * - $wgCentralAuthEnableSul3 contains 'query-flag' and the URL has
+	 *   a query parameter 'usesul3' with a truthy value
 	 *
 	 * @param WebRequest $request
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
-		$configFlag = $this->config->get( 'CentralAuthEnableSul3' );
-		if ( $configFlag === 'always' ) {
+		$sul3Config = $this->config->get( 'CentralAuthEnableSul3' );
+
+		// For B/C, this config was a string before. Now that we're moving
+		// to an array based value, we need to support both while migrating.
+		// TEMPORARY: Remove this code below once migration is complete.
+		if ( $sul3Config === false ) {
+			$sul3Config = [];
+		} elseif ( !is_array( $sul3Config ) ) {
+			$sul3Config = [ $sul3Config ];
+		}
+
+		if ( in_array( 'always', $sul3Config, true ) ) {
 			return true;
-		} elseif ( $configFlag === 'query-flag' ) {
+		} elseif ( in_array( 'cookie', $sul3Config, true ) ) {
+			return $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) === '1';
+		} elseif ( in_array( 'query-flag', $sul3Config, true ) ) {
 			return $request->getCheck( 'usesul3' );
 		} else {
 			return false;
