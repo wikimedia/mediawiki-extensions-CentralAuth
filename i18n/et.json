@@ -85,7 +85,7 @@
 	"centralauth-admin-permission": "Ainult stjuuardid võivad teiste inimeste palvel nende kontosid ühendada.",
 	"centralauth-admin-reason": "Põhjus:",
 	"centralauth-admin-reason-other": "Muu või täiendav põhjus:",
-	"centralauth-admin-reason-other-select": "Muu põhjus:",
+	"centralauth-admin-reason-other-select": "Muu põhjus",
 	"centralauth-admin-rename-in-progress": "Selle konto ümbernimetamine on praegu pooleli. Saad [[Special:GlobalRenameProgress/$1|vaadata ümbernimetamise edenemist]]. Allpool on toodud globaalse ümbernimetamise logi sissekanded selle kasutaja kohta.",
 	"centralauth-admin-setstatus-success": "Globaalse konto seisund on muudetud.",
 	"centralauth-admin-status": "Globaalse konto seisundi määramine",
