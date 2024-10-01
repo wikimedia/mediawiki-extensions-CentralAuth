@@ -109,10 +109,14 @@ class SharedDomainUtils {
 
 		if ( in_array( 'always', $sul3Config, true ) ) {
 			return true;
-		} elseif ( in_array( 'cookie', $sul3Config, true ) ) {
-			return $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) === '1';
-		} elseif ( in_array( 'query-flag', $sul3Config, true ) ) {
-			return $request->getCheck( 'usesul3' );
+		} elseif ( in_array( 'cookie', $sul3Config, true )
+			&& $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) === '1'
+		) {
+			return true;
+		} elseif ( in_array( 'query-flag', $sul3Config, true )
+			&& $request->getCheck( 'usesul3' )
+		) {
+			return true;
 		} else {
 			return false;
 		}
