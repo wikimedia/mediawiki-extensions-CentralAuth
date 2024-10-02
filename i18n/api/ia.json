@@ -40,6 +40,8 @@
 	"apihelp-query+globalallusers-param-from": "Le nomine de usator a partir del qual comenciar le enumeration.",
 	"apihelp-query+globalallusers-param-group": "Limitar usatores al gruppos global date.",
 	"apihelp-query+globalallusers-param-limit": "Quante nomines de usator restituer in total.",
+	"apihelp-query+globalallusers-param-excludenamed": "Excluder le usatores del contos nominate.",
+	"apihelp-query+globalallusers-param-excludetemp": "Excluder le usatores de contos temporari.",
 	"apihelp-query+globalallusers-param-prefix": "Cercar tote le usatores comenciante con iste valor.",
 	"apihelp-query+globalallusers-param-prop": "Qual pecias de information includer:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Si le conto del usator es blocate.",

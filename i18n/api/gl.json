@@ -43,6 +43,8 @@
 	"apihelp-query+globalallusers-param-from": "Nome de usuario para comezar a enumeración.",
 	"apihelp-query+globalallusers-param-group": "Limitar os usuarios ós grupos globais indicados.",
 	"apihelp-query+globalallusers-param-limit": "Número total de nomes de usuario a devolver.",
+	"apihelp-query+globalallusers-param-excludenamed": "Excluír os usuarios de contas nomeadas.",
+	"apihelp-query+globalallusers-param-excludetemp": "Excluír os usuarios de contas temporais.",
 	"apihelp-query+globalallusers-param-prefix": "Procurar tódolos nomes de usuario que comezan con este valor.",
 	"apihelp-query+globalallusers-param-prop": "Pezas de información a incluír:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Se a conta de usuario está bloqueada.",
