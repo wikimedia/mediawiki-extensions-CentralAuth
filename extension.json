@@ -711,7 +711,7 @@
 		"RenameUserPreRename": "rename",
 		"RenameUserWarning": "rename",
 		"ResourceLoaderForeignApiModules": "default",
-		"ResourceLoaderModifyStartupSourceUrls": "sso",
+		"ResourceLoaderModifyEmbeddedSourceUrls": "sso",
 		"SecurePoll_GetUserParams": "securepoll",
 		"SetupAfterCache": "sso",
 		"SessionCheckInfo": "default",
