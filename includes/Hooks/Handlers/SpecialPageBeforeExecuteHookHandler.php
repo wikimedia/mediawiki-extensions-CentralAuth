@@ -187,7 +187,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		if ( $special->getUser()->isAnon()
 			&& $request->getCheck( self::AUTOLOGIN_TRIED_QUERY_PARAM )
 		) {
-			$error = $request->getRawVal( self::AUTOLOGIN_ERROR_QUERY_PARAM, 'unknown error' );
+			$error = $request->getRawVal( self::AUTOLOGIN_ERROR_QUERY_PARAM ) ?? 'unknown error';
 			$this->log( "Top-level autologin failed: $error", $special, $isMobile );
 		} elseif ( $special->getUser()->isAnon()
 			&& $request->getCookie( self::AUTOLOGIN_TRIED_COOKIE, '' )
