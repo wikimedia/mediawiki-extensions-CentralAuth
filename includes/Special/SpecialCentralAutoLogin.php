@@ -759,6 +759,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Distinguish edge logins and autologins. Conveniently, all edge logins
 				// (and only edge logins) set the otherwise mostly vestigial 'from' parameter,
 				// and it's passed through all steps.
+				$accountType = 'anon';
+				if ( $this->getUser()->isRegistered() ) {
+					$accountType = $this->getUser()->isNamed() ? 'named' : 'temp';
+				}
 				if ( $this->getRequest()->getCheck( 'from' ) ) {
 					LoggerFactory::getInstance( 'authevents' )->info( 'Edge login attempt', [
 						'event' => 'edgelogin',
@@ -768,6 +772,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 						// - success page edge login (type=icon) [no longer used]
 						// - next pageview edge login (type=1x1)
 						'type' => $type,
+						'accountType' => $accountType,
 						'extension' => 'CentralAuth',
 					] );
 				} else {
@@ -781,6 +786,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 						// - no-JS subresource autologin (type=1x1) (likely rarely successful - check this)
 						'type' => $type,
 						'extension' => 'CentralAuth',
+						'accountType' => $accountType,
 					] );
 				}
 				break;
