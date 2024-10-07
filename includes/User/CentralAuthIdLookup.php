@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 use DBAccessObjectUtils;
 use IDBAccessObject;
 use MediaWiki\Config\Config;
+use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
@@ -103,9 +104,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 	/** @inheritDoc */
 	public function isAttached( UserIdentity $user, $wikiId = UserIdentity::LOCAL ): bool {
-		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
-		$centralUser = CentralAuthUser::getInstance( $user );
-		return $centralUser->exists() && $centralUser->attachedOn( $wikiId );
+		return self::isAttachedOn( $user, $wikiId, IDBAccessObject::READ_NORMAL );
 	}
 
 	/** @inheritDoc */
@@ -122,7 +121,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			return true;
 		}
 
-		return $this->isAttached( $user, $wikiId );
+		return self::isAttachedOn( $user, $wikiId, IDBAccessObject::READ_NORMAL );
 	}
 
 	/** @inheritDoc */
@@ -131,7 +130,42 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	): int {
 		// This is only an optimization to take advantage of cache in CentralAuthUser.
 		// The result should be the same as calling the parent method.
-		return $this->isAttached( $user ) ? CentralAuthUser::getInstance( $user )->getId() : 0;
+		if ( self::isAttachedOn( $user, WikiAwareEntity::LOCAL, $flags ) ) {
+			return self::getCentralUserInstance( $user, $flags )->getId();
+		}
+
+		return 0;
+	}
+
+	/**
+	 * Check whether an user is attached on the given wiki, reading from the primary DB if needed.
+	 *
+	 * @param UserIdentity $user The user whose attachment status to look up.
+	 * @param string|false $wikiId The DB name of the wiki to check, or `false` to use the local wiki.
+	 * @param int $flags Bitmask of IDBAccessObject::READ_* constants.
+	 *
+	 * @return bool `true` if the given user is attached to a central user on the given wiki,
+	 * `false` otherwise.
+	 */
+	private static function isAttachedOn( UserIdentity $user, $wikiId, int $flags ): bool {
+		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
+		$centralUser = self::getCentralUserInstance( $user, $flags );
+
+		return $centralUser->exists() && $centralUser->attachedOn( $wikiId );
+	}
+
+	/**
+	 * Get a potentially cached central user instance for the given user, reading from the primary DB if needed.
+	 *
+	 * @param UserIdentity $user The user to fetch the corresponding central user for.
+	 * @param int $flags Bitmask of IDBAccessObject::READ_* constants.
+	 *
+	 * @return CentralAuthUser
+	 */
+	private static function getCentralUserInstance( UserIdentity $user, int $flags ): CentralAuthUser {
+		return $flags & IDBAccessObject::READ_LATEST
+			? CentralAuthUser::getPrimaryInstance( $user )
+			: CentralAuthUser::getInstance( $user );
 	}
 
 }
