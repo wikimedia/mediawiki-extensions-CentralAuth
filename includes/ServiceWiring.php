@@ -178,6 +178,14 @@ return [
 		);
 	},
 
+	'CentralAuth.CentralDomainUtils' => static function ( MediaWikiServices $services ): CentralDomainUtils {
+		return new CentralDomainUtils(
+			$services->getMainConfig(),
+			$services->getTitleFactory(),
+			$services->get( 'CentralAuth.SharedDomainUtils' )
+		);
+	},
+
 	'CentralAuth.SharedDomainUtils' => static function ( MediaWikiServices $services ): SharedDomainUtils {
 		return new SharedDomainUtils(
 			$services->getMainConfig(),

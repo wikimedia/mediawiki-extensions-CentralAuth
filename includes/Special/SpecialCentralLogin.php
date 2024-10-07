@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\LoginCompleteHookHandler;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
@@ -44,18 +45,22 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	private CentralAuthSessionManager $sessionManager;
 	private CentralAuthTokenManager $tokenManager;
 	private LoggerInterface $logger;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthTokenManager $tokenManager
+	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		CentralAuthSessionManager $sessionManager,
-		CentralAuthTokenManager $tokenManager
+		CentralAuthTokenManager $tokenManager,
+		SharedDomainUtils $sharedDomainUtils
 	) {
 		parent::__construct( 'CentralLogin' );
 		$this->sessionManager = $sessionManager;
 		$this->tokenManager = $tokenManager;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -219,7 +224,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		];
 		$token = $this->tokenManager->tokenize( $data, 'central-login-complete-token' );
 
-		$query = [ 'token' => $token ];
+		$query = [
+			'token' => $token,
+			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $this->getRequest() ) ? 1 : 0,
+		];
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		$url = $wiki->getCanonicalUrl( 'Special:CentralLogin/complete' );
@@ -348,7 +356,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		);
 
 		// Mark the session to include the edge login imgs on the next pageview
-		$this->logger->debug( 'Edge login on the next pageview after CentralLogin' );
+		$this->logger->debug( 'Edge login on the next pageview after Special:CentralLogin' );
 		$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 
 		$returnToTitle = Title::newFromText( $attempt['returnTo'] ) ?: Title::newMainPage();

@@ -9,11 +9,11 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
-use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -62,6 +62,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	/** @var Session|null */
 	protected $session = null;
+
 	private HookContainer $hookContainer;
 	private LanguageFactory $languageFactory;
 	private UserFactory $userFactory;
@@ -69,10 +70,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private CentralAuthSessionManager $sessionManager;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralAuthUtilityService $centralAuthUtilityService;
+	private CentralDomainUtils $centralDomainUtils;
 	private LoggerInterface $logger;
-
 	private string $subpage;
-	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param HookContainer $hookContainer
@@ -82,6 +82,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param CentralAuthTokenManager $tokenManager
 	 * @param CentralAuthUtilityService $centralAuthUtilityService
+	 * @param CentralDomainUtils $centralDomainUtils
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
@@ -91,7 +92,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthTokenManager $tokenManager,
 		CentralAuthUtilityService $centralAuthUtilityService,
-		SharedDomainUtils $sharedDomainUtils
+		CentralDomainUtils $centralDomainUtils
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
@@ -102,7 +103,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->sessionManager = $sessionManager;
 		$this->tokenManager = $tokenManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
-		$this->sharedDomainUtils = $sharedDomainUtils;
+		$this->centralDomainUtils = $centralDomainUtils;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -186,7 +187,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 
-		$this->loginWiki = $this->getConfig()->get( CAMainConfigNames::CentralAuthLoginWiki );
+		// TODO: If/when we no longer have a dedicated central login wiki,
+		//       this should point to the configured shared domain.
+		$this->loginWiki = $this->centralDomainUtils->getLoginWikiId( $request );
 		if ( !$this->loginWiki ) {
 			// Ugh, no central wiki. If we're coming from an edge login, make
 			// the logged-into wiki the de-facto central wiki for this request
@@ -274,7 +277,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					$this->logger->debug( "refreshCookies: no login wiki" );
 					return;
 				}
-				if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				if ( !$this->assertIsCentralDomain() ) {
 					return;
 				}
 				if ( !$this->checkSession() ) {
@@ -329,14 +332,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// the session cookies.
 				$this->getOutput()->setCdnMaxage( 1200 );
 
-				if ( !$this->checkIsLocalWiki() ) {
+				if ( !$this->assertIsLocalDomain() ) {
 					return;
 				}
 				if ( !$this->checkSession() ) {
 					return;
 				}
 
-				$this->do302Redirect( $this->loginWiki, 'checkLoggedIn', [
+				$this->do302Redirect( CentralDomainUtils::CENTRAL_DOMAIN_ID, 'checkLoggedIn', [
 					'wikiid' => WikiMap::getCurrentWikiId(),
 				] + $params );
 				return;
@@ -355,7 +358,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// the session cookies.
 				$this->getOutput()->setCdnMaxage( 1200 );
 
-				if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				$wikiid = $this->getRequest()->getRawVal( 'wikiid' );
+				if ( !$this->assertIsCentralDomain() || !$this->assertLocalWikiIsValid( $wikiid ) ) {
 					return;
 				}
 				if ( !$this->checkSession() ) {
@@ -388,7 +392,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$this->do302Redirect( $wikiid, 'createSession', [
 					'token' => $token,
-				] + $params );
+					] + $params );
 				return;
 
 			case 'createSession':
@@ -402,7 +406,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Runs on the wiki where the autologin needs to log the user in (the local wiki,
 				// or the edge wikis, or both).
 
-				if ( !$this->checkIsLocalWiki() ) {
+				if ( !$this->assertIsLocalDomain() ) {
 					return;
 				}
 				if ( !$this->checkSession() ) {
@@ -446,7 +450,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Save memc token for the 'setCookies' step
 				$request->setSessionData( 'centralautologin-token', $token );
 
-				$this->do302Redirect( $this->loginWiki, 'validateSession', [
+				$this->do302Redirect( CentralDomainUtils::CENTRAL_DOMAIN_ID, 'validateSession', [
 					'token' => $token,
 					'wikiid' => $wikiid,
 				] + $params );
@@ -462,7 +466,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Do not cache this, we need to reset the cookies and memc every time.
 				$this->getOutput()->disableClientCache();
 
-				if ( !$this->checkIsCentralWiki( $wikiid ) ) {
+				$wikiid = $this->getRequest()->getRawVal( 'wikiid' );
+				if ( !$this->assertIsCentralDomain() || !$this->assertLocalWikiIsValid( $wikiid ) ) {
 					return;
 				}
 				if ( !$this->checkSession() ) {
@@ -482,7 +487,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				// Load memc data
-				$memcData = $this->tokenManager->detokenizeAndDelete( $token, [ 'centralautologin-token', $wikiid ] );
+				$memcData = $this->tokenManager->detokenizeAndDelete(
+					$token, [ 'centralautologin-token', $wikiid ]
+				);
 
 				// Check memc data
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
@@ -532,7 +539,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Do not cache this, we need to reset the cookies and memc every time.
 				$this->getOutput()->disableClientCache();
 
-				if ( !$this->checkIsLocalWiki() ) {
+				if ( !$this->assertIsLocalDomain() ) {
 					return;
 				}
 				if ( !$this->checkSession() ) {
@@ -676,16 +683,16 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->getHookRunner()->onUserGetLanguageObject( $localUser, $code, $this->getContext() );
 
 				$script .= "\n" . Html::encodeJsCall( 'mw.messages.set', [
-					[
-						'centralauth-centralautologin-logged-in' =>
-							$this->msg( 'centralauth-centralautologin-logged-in' )
-								->inLanguage( $code )->plain(),
+						[
+							'centralauth-centralautologin-logged-in' =>
+								$this->msg( 'centralauth-centralautologin-logged-in' )
+									->inLanguage( $code )->plain(),
 
-						'centralautologin' =>
-							$this->msg( 'centralautologin' )
-								->inLanguage( $code )->plain(),
-					]
-				] );
+							'centralautologin' =>
+								$this->msg( 'centralautologin' )
+									->inLanguage( $code )->plain(),
+						]
+					] );
 
 				$script .= "\n" . self::getInlineScript( 'autologin.js' );
 
@@ -693,8 +700,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$this->logger->debug( 'Edge login triggered in CentralAutoLogin' );
 				// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 				$script .= "\n" . Html::encodeJsCall( "jQuery( 'body' ).append", [
-					CentralAuthHooks::getEdgeLoginHTML()
-				] );
+						CentralAuthHooks::getEdgeLoginHTML()
+					] );
 
 				$this->doFinalOutput( true, 'success', $script );
 				return;
@@ -706,17 +713,30 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	/**
+	 * Do a redirect hop to the target wiki and execute the appropriate sub-page
+	 * endpoint. Target wikis are in the form of a wiki ID for example: 'loginwiki',
+	 * 'enwiki', 'frwiki' etc.
+	 *
 	 * @param string $target
 	 * @param string $state
 	 * @param array $params
+	 *
+	 * @phan-assert string $target
 	 */
 	private function do302Redirect( $target, $state, $params ) {
-		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
+		// If we don't have a target wiki, we'll use the "from" wiki as the
+		// central login domain for authentication.
+		if ( !$this->loginWiki && $params['from'] !== null && WikiMap::getWiki( $params['from'] ) ) {
+			$this->loginWiki = $params['from'];
+		}
 
-		if ( $url === false ) {
+		$url = $this->centralDomainUtils->getUrl(
+			$target ?? $this->loginWiki, "Special:CentralAutoLogin/$state", $this->getRequest(), $params
+		);
+
+		if ( !$url ) {
 			$this->doFinalOutput( false, 'Invalid target wiki' );
 		} else {
-			$url = $this->sharedDomainUtils->makeUrlDeviceCompliant( $url );
 			// expands to PROTO_CURRENT
 			$this->getOutput()->redirect( wfAppendQuery( $url, $params ) );
 		}
@@ -855,21 +875,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param string &$wikiId
+	 * @param string|null $wikiId
 	 *
 	 * @return bool
 	 */
-	private function checkIsCentralWiki( &$wikiId ) {
-		if ( WikiMap::getCurrentWikiId() !== $this->loginWiki ) {
-			$this->doFinalOutput( false, 'Not central wiki' );
-			return false;
-		}
-
-		$wikiId = $this->getRequest()->getVal( 'wikiid' );
-		if ( $wikiId === $this->loginWiki ) {
-			$this->doFinalOutput( false, 'Specified local wiki is the central wiki' );
-			return false;
-		}
+	private function assertLocalWikiIsValid( ?string $wikiId ) {
 		$wiki = WikiMap::getWiki( $wikiId );
 		if ( !$wiki ) {
 			$this->doFinalOutput( false, 'Specified local wiki not found' );
@@ -879,13 +889,29 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return true;
 	}
 
-	private function checkIsLocalWiki() {
-		if ( WikiMap::getCurrentWikiId() === $this->loginWiki ) {
-			$this->doFinalOutput( false, 'Is central wiki, should be local' );
-			return false;
+	/**
+	 * @return bool
+	 */
+	private function assertIsCentralDomain() {
+		$isCentralDomain = $this->centralDomainUtils->isCentralDomain( $this->getRequest(), $this->loginWiki );
+
+		if ( !$isCentralDomain ) {
+			$this->doFinalOutput( false, 'Not central wiki' );
+			return $isCentralDomain;
 		}
 
-		return true;
+		return $isCentralDomain;
+	}
+
+	private function assertIsLocalDomain() {
+		$isLocalDomain = !$this->centralDomainUtils->isCentralDomain( $this->getRequest(), $this->loginWiki );
+
+		if ( !$isLocalDomain ) {
+			$this->doFinalOutput( false, 'Is central wiki, should be local' );
+			return $isLocalDomain;
+		}
+
+		return $isLocalDomain;
 	}
 
 	/**

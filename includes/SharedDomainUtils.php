@@ -164,7 +164,12 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * Get the login/signup URL on the shared login domain wiki.
+	 * Get the login/signup URL on the shared domain in SUL3 mode.
+	 *
+	 * @note This utility method supports URLs for SUL3 mode only. It
+	 *       doesn't have any concept of SUL2 mode. For shared domain
+	 *       URLs that support SUL2 and SUL3, see get the generic method
+	 *       CentralDomainUtils::getCentralDomainURL().
 	 *
 	 * @param string $action 'login' or 'signup' action
 	 * @param WebRequest|null $request There could be more to look at

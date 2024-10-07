@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
-use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
@@ -43,6 +43,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	private HookRunner $hookRunner;
 	private Config $config;
 	private CentralAuthTokenManager $tokenManager;
+	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
@@ -50,6 +51,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	 * @param HookContainer $hookContainer
 	 * @param Config $config
 	 * @param CentralAuthTokenManager $tokenManager
+	 * @param CentralDomainUtils $centralDomainUtils
 	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
@@ -57,12 +59,14 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		HookContainer $hookContainer,
 		Config $config,
 		CentralAuthTokenManager $tokenManager,
+		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
 		$this->hookRunner = new HookRunner( $hookContainer );
 		$this->config = $config;
 		$this->tokenManager = $tokenManager;
+		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -113,9 +117,8 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			|| $this->authManager->getAuthenticationSessionData( $amKey )
 			// elevated-security reauthentication of already logged-in user
 			|| $request->getBool( 'force' )
-			|| $this->sharedDomainUtils->isSul3Enabled( $request )
-			|| !$this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
-			|| $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) === WikiMap::getCurrentWikiId()
+			|| !$this->centralDomainUtils->centralDomainExists( $request )
+			|| $this->centralDomainUtils->isCentralDomain( $request )
 		) {
 			return true;
 		}
@@ -130,14 +133,11 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			 && !$request->getCookie( self::AUTOLOGIN_TRIED_COOKIE, '' )
 			 && !$request->getCheck( self::AUTOLOGIN_TRIED_QUERY_PARAM )
 		) {
-			$url = WikiMap::getForeignURL(
-				$this->config->get( CAMainConfigNames::CentralAuthLoginWiki ),
-				'Special:CentralAutoLogin/checkLoggedIn'
+			$url = $this->centralDomainUtils->getUrl(
+				CentralDomainUtils::CENTRAL_DOMAIN_ID,
+				'Special:CentralAutoLogin/checkLoggedIn',
+				$request
 			);
-			if ( $url === false ) {
-				// WikiMap misconfigured?
-				return true;
-			}
 
 			$this->log( 'Top-level autologin started', $special, $isMobile );
 
@@ -159,6 +159,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 				'type' => 'redirect',
 				'returnUrlToken' => $returnUrlToken,
 				'wikiid' => WikiMap::getCurrentWikiId(),
+				'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request ) ? 1 : 0,
 			] );
 
 			$special->getOutput()->redirect( $this->sharedDomainUtils->makeUrlDeviceCompliant( $url ) );

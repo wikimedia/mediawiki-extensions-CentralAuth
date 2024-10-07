@@ -25,6 +25,7 @@ use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
@@ -299,8 +300,14 @@ class CentralAuthHooks implements
 		}
 	}
 
-	private static function getSharedDomainUtils(): SharedDomainUtils {
-		return MediaWikiServices::getInstance()->get( 'CentralAuth.SharedDomainUtils' );
+	private static function getImageElementForInvisiblePixel( string $url, string $type ): string {
+		return Html::element( 'img', [
+			'src' => $url,
+			'alt' => '',
+			'width' => $type === '1x1' ? 1 : 20,
+			'height' => $type === '1x1' ? 1 : 20,
+			'style' => $type === '1x1' ? 'border: none; position: absolute;' : 'border: 1px solid #ccc;',
+		] );
 	}
 
 	/**
@@ -317,25 +324,17 @@ class CentralAuthHooks implements
 	public static function getAuthIconHtml(
 		string $wikiID, string $page, array $params, ?ContentSecurityPolicy $csp
 	): string {
-		// Use WikiMap to avoid localization of the 'Special' namespace, see T56195.
-		$wiki = WikiMap::getWiki( $wikiID );
-		$url = wfAppendQuery( $wiki->getCanonicalUrl( $page ), $params );
+		$centralDomainUtils = self::getCentralDomainUtils();
+		$request = RequestContext::getMain()->getRequest();
 
-		$sharedDomainUtils = self::getSharedDomainUtils();
-		$url = $sharedDomainUtils->makeUrlDeviceCompliant( $url );
+		$url = $centralDomainUtils->getUrl( $wikiID, $page, $request, $params );
 
 		if ( $csp ) {
 			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
 		}
 
 		$type = $params['type'];
-		return Html::element( 'img', [
-			'src' => $url,
-			'alt' => '',
-			'width' => $type === '1x1' ? 1 : 20,
-			'height' => $type === '1x1' ? 1 : 20,
-			'style' => $type === '1x1' ? 'border: none; position: absolute;' : 'border: 1px solid #ccc;',
-		] );
+		return self::getImageElementForInvisiblePixel( $url, $type );
 	}
 
 	/**
@@ -567,13 +566,22 @@ class CentralAuthHooks implements
 		return $data;
 	}
 
+	private static function getCentralDomainUtils(): CentralDomainUtils {
+		return MediaWikiServices::getInstance()->get( 'CentralAuth.CentralDomainUtils' );
+	}
+
+	private static function getSharedDomainUtils(): SharedDomainUtils {
+		return MediaWikiServices::getInstance()->get( 'CentralAuth.SharedDomainUtils' );
+	}
+
 	/**
-	 * Get a HTML fragment that will trigger central autologin, i.e. try to log in the user on
+	 * Get a HTML fragment that will trigger edge login, i.e. try to log in the user on
 	 * each of $wgCentralAuthAutoLoginWikis in the background by embedding invisible pixel images
 	 * which point to Special:CentralAutoLogin on each of those wikis.
 	 *
 	 * It also calls Special:CentralAutoLogin/refreshCookies on the central wiki, to refresh
-	 * central session cookies if needed (e.g. because the "remember me" setting changed).
+	 * central session cookies if needed (because the "remember me" setting changed, or we are
+	 * right after central login and central cookies couldn't be fully set due to session stubbing).
 	 *
 	 * This is typically used on the next page view after a successful login (by setting the
 	 * CentralAuthDoEdgeLogin session flag).
@@ -585,22 +593,37 @@ class CentralAuthHooks implements
 	 */
 	public static function getEdgeLoginHTML() {
 		global $wgCentralAuthLoginWiki;
+		$context = RequestContext::getMain();
+		$sharedDomainUtils = self::getSharedDomainUtils();
+		$sul3Enabled = $sharedDomainUtils->isSul3Enabled( $context->getRequest() );
+		$useSul3 = $sul3Enabled ? 1 : 0;
 
 		$html = '';
-
-		foreach ( self::getAutoLoginWikis() as $domain => $wikiID ) {
+		foreach ( self::getAutoLoginWikis() as $wikiID ) {
 			$params = [
 				'type' => '1x1',
 				'from' => WikiMap::getCurrentWikiId(),
+				'usesul3' => $useSul3,
 			];
 			$html .= self::getAuthIconHtml( $wikiID, 'Special:CentralAutoLogin/start', $params, null );
 		}
 
-		if ( $wgCentralAuthLoginWiki ) {
-			$html .= self::getAuthIconHtml( $wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/refreshCookies', [
-				'type' => '1x1',
-				'wikiid' => WikiMap::getCurrentWikiId(),
-			], null );
+		// Refresh central cookies if we rely on Special:CentralLogin for creating them;
+		// that is, when using SUL2 or when the user is a temp user.
+		$refreshCookies =
+			( $sul3Enabled && $context->getUser()->isTemp() )
+			|| ( !$sul3Enabled && $wgCentralAuthLoginWiki );
+
+		if ( $refreshCookies ) {
+			$html .= self::getAuthIconHtml(
+				CentralDomainUtils::CENTRAL_DOMAIN_ID,
+				'Special:CentralAutoLogin/refreshCookies', [
+					'type' => '1x1',
+					'wikiid' => WikiMap::getCurrentWikiId(),
+					'usesul3' => $useSul3,
+				],
+				null
+			);
 		}
 
 		return $html;

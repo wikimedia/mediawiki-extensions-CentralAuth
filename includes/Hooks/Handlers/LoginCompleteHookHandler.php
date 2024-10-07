@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -47,23 +48,27 @@ class LoginCompleteHookHandler implements
 	private Config $config;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralAuthHookRunner $caHookRunner;
+	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param HookContainer $hookContainer
 	 * @param Config $config
 	 * @param CentralAuthTokenManager $tokenManager
+	 * @param CentralDomainUtils $centralDomainUtils
 	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		HookContainer $hookContainer,
 		Config $config,
 		CentralAuthTokenManager $tokenManager,
+		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
 		$this->config = $config;
 		$this->tokenManager = $tokenManager;
+		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
@@ -80,7 +85,7 @@ class LoginCompleteHookHandler implements
 	 */
 	public function onUserLoginComplete( $user, &$inject_html, $direct = null ) {
 		if ( !$this->config->get( CAMainConfigNames::CentralAuthCookies )
-			|| !$this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+			|| !$this->centralDomainUtils->centralDomainExists( $user->getRequest() )
 			|| $this->sharedDomainUtils->isSul3Enabled( RequestContext::getMain()->getRequest() )
 		) {
 			// Use local sessions only.
@@ -220,8 +225,16 @@ class LoginCompleteHookHandler implements
 		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
 		$token = $this->tokenManager->tokenize( $data, 'central-login-start-token' );
 
-		$query = [ 'token' => $token ];
-		$wiki = WikiMap::getWiki( $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) );
-		return wfAppendQuery( $wiki->getCanonicalUrl( 'Special:CentralLogin/start' ), $query );
+		$query = [
+			'token' => $token,
+			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $session->getRequest() ) ? 1 : 0,
+		];
+		$url = $this->centralDomainUtils->getUrl(
+			CentralDomainUtils::CENTRAL_DOMAIN_ID,
+			'Special:CentralLogin/start',
+			$session->getRequest()
+		);
+
+		return wfAppendQuery( $url, $query );
 	}
 }

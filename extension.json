@@ -143,6 +143,7 @@
 				"CentralAuth.CentralAuthSessionManager",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"
 			]
 		},
@@ -150,7 +151,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralLogin",
 			"services": [
 				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthTokenManager"
+				"CentralAuth.CentralAuthTokenManager",
+				"CentralAuth.SharedDomainUtils"
 			]
 		},
 		"CreateLocalAccount": {
@@ -581,6 +583,7 @@
 				"HookContainer",
 				"MainConfig",
 				"CentralAuth.CentralAuthTokenManager",
+				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"
 			]
 		},
@@ -590,7 +593,8 @@
 		"pagedisplay": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\PageDisplayHookHandler",
 			"services": [
-				"MainConfig"
+				"CentralAuth.CentralDomainUtils",
+				"CentralAuth.SharedDomainUtils"
 			]
 		},
 		"passwordpolicies": {
@@ -636,6 +640,7 @@
 				"HookContainer",
 				"MainConfig",
 				"CentralAuth.CentralAuthTokenManager",
+				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"
 			]
 		},
@@ -679,7 +684,9 @@
 		"userlogout": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserLogoutHookHandler",
 			"services": [
-				"MainConfig"
+				"MainConfig",
+				"CentralAuth.CentralDomainUtils",
+				"CentralAuth.SharedDomainUtils"
 			]
 		}
 	},

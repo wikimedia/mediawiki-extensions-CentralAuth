@@ -21,9 +21,9 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use CentralAuthTokenSessionProvider;
-use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
-use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
@@ -31,18 +31,23 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\ResourceLoader\Module;
-use MediaWiki\WikiMap\WikiMap;
 use Skin;
 
 class PageDisplayHookHandler implements BeforePageDisplayHook {
 
-	private Config $config;
+	private CentralDomainUtils $centralDomainUtils;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
-	 * @param Config $config
+	 * @param CentralDomainUtils $centralDomainUtils
+	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
-	public function __construct( Config $config ) {
-		$this->config = $config;
+	public function __construct(
+		CentralDomainUtils $centralDomainUtils,
+		SharedDomainUtils $sharedDomainUtils
+	) {
+		$this->centralDomainUtils = $centralDomainUtils;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**
@@ -71,29 +76,28 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 		}
 
 		if ( !$out->getUser()->isRegistered() ) {
-			$wikiId = WikiMap::getCurrentWikiId();
-			$loginWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
-			if ( $loginWikiId && $wikiId !== $loginWikiId ) {
-
+			if ( $this->centralDomainUtils->centralDomainExists( $out->getRequest() ) &&
+				!$this->centralDomainUtils->isCentralDomain( $out->getRequest() )
+			) {
 				$logger->debug( 'CentralAutoLogin triggered in BeforePageDisplay' );
 
 				$out->addModules( 'ext.centralauth.centralautologin' );
 
-				$wiki = WikiMap::getWiki( $wikiId );
-				$loginWiki = WikiMap::getWiki( $loginWikiId );
-				if ( $wiki->getCanonicalServer() !== $loginWiki->getCanonicalServer() ) {
-					$out->addHeadItem( 'centralauth-dns-prefetch', Html::element( 'link', [
-						'rel' => 'dns-prefetch',
-						'href' => preg_replace( '/^https?:/', '', $loginWiki->getCanonicalServer() ),
-					] ) );
-				}
+				$out->addHeadItem( 'centralauth-dns-prefetch', Html::element( 'link', [
+					'rel' => 'dns-prefetch',
+					'href' => $this->centralDomainUtils->getCentralDomainHost( $out->getRequest() ),
+				] ) );
 
 				// For non-JS clients.
 				$params = [
 					'type' => '1x1',
+					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $out->getRequest() ) ? 1 : 0,
 				];
 				$out->addHTML( '<noscript>' . CentralAuthHooks::getAuthIconHtml(
-					$loginWikiId, 'Special:CentralAutoLogin/start', $params, null
+					CentralDomainUtils::CENTRAL_DOMAIN_ID,
+					'Special:CentralAutoLogin/start',
+					$params,
+					null
 				) . '</noscript>' );
 			}
 		} else {

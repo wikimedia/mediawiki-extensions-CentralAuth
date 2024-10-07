@@ -306,6 +306,10 @@ class CentralAuthPrimaryAuthenticationProvider
 					$user->saveSettings();
 				} );
 			}
+
+			// Mark the session to include the edge login imgs on the next pageview
+			$this->logger->debug( 'Edge login on the next pageview after central login on shared domain' );
+			$this->manager->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', true );
 		}
 	}
 

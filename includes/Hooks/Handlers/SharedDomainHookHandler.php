@@ -48,7 +48,7 @@ class SharedDomainHookHandler implements
 	// 'static' is WMF's custom static.php entry point, serving some files on the shared domain (T374286)
 	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api', 'static', 'cli' ];
 	private const ALLOWED_SPECIAL_PAGES = [ 'Userlogin', 'Userlogout', 'CreateAccount',
-		'PasswordReset', 'Captcha' ];
+		'PasswordReset', 'Captcha', 'CentralAutoLogin', 'CentralLogin' ];
 	private const ALLOWED_API_MODULES = [
 		// needed for allowing any query API, even if we only want meta modules; it can be
 		// used to check page existence (which is unwanted functionality on the shared domain),

@@ -24,7 +24,9 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
@@ -37,9 +39,17 @@ class UserLogoutHookHandler implements
 {
 
 	private Config $config;
+	private CentralDomainUtils $centralDomainUtils;
+	private SharedDomainUtils $sharedDomainUtils;
 
-	public function __construct( Config $config ) {
+	public function __construct(
+		Config $config,
+		CentralDomainUtils $centralDomainUtils,
+		SharedDomainUtils $sharedDomainUtils
+	) {
 		$this->config = $config;
+		$this->centralDomainUtils = $centralDomainUtils;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**
@@ -80,6 +90,13 @@ class UserLogoutHookHandler implements
 			$wikis[$loginWiki] = $loginWiki;
 		}
 
+		if ( !$this->sharedDomainUtils->isSharedDomain() &&
+			$this->sharedDomainUtils->isSul3Enabled( $user->getRequest() )
+		) {
+			$wikis[CentralDomainUtils::CENTRAL_DOMAIN_ID] = CentralDomainUtils::CENTRAL_DOMAIN_ID;
+		}
+
+		$request = RequestContext::getMain()->getRequest();
 		$csp = RequestContext::getMain()->getOutput()->getCSP();
 		// No other domains
 		if ( !$wikis ) {
@@ -93,6 +110,7 @@ class UserLogoutHookHandler implements
 			foreach ( $wikis as $wikiID ) {
 				$params = [
 					'type' => 'icon',
+					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request ) ? 1 : 0,
 				];
 				$inject_html .= CentralAuthHooks::getAuthIconHtml(
 					$wikiID, 'Special:CentralAutoLogin/deleteCookies', $params, $csp
