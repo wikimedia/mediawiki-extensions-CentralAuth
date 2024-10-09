@@ -113,7 +113,7 @@
 	"centralauth-list-attached-title": "已經附加嘅戶口",
 	"centralauth-list-home-dryrun": "你響呢個wiki嘅密碼同電郵地址會用來做你嘅統一戶口，同時你響呢度嘅用戶頁會由其它嘅wiki度自動連結過來。",
 	"centralauth-list-home-title": "自家wiki",
-	"centralauth-list-unattached": "根據{{PLURAL:$2|site|sites}}嘅原因，\"$1\"戶口唔可以自動噉合併；好有可能佢哋嘅密碼同你嘅主戶口唔同：",
+	"centralauth-list-unattached": "唔能夠自動確認以下{{PLURAL:$2|網站}}嘅{{PLURAL:$2|戶口}}「$1」係你嘅；好有可能係{{PLURAL:$2|嗰個|嗰啲}}密碼同你嘅主戶口嘅唔同：",
 	"centralauth-list-unattached-title": "未附加嘅戶口",
 	"centralauth-listusers-attached": "[[User:$1|響本地存在]]",
 	"centralauth-listusers-locked": "鎖咗",
