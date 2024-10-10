@@ -540,7 +540,7 @@
 	"globalvanishrequest-blocked-text": "Vous êtes actuellement bloqué sur un ou plusieurs wikis et vous ne pouvez pas supprimer votre compte. Vous pouvez faire appel des blocages de votre compte. Consultez le(s) lien(s) suivant(s) pour savoir comment faire appel pour chaque wiki dont vous êtes bloqué. Pour en savoir plus sur la disparition d'un compte, consultez la page[[m:Special:MyLanguage/Right_to_vanish|Right to Vanish]] page d'information",
 	"globalvanishrequest-blocked-text-minimal": "Vous êtes actuellement bloqué(e) sur un ou plusieurs wikis et vous ne pouvez pas supprimer votre compte. Pour en savoir plus sur la suppression de compte, consultez la page [[m:Special:Ma langue/Droit à l'oubli|Droit à l'oubli]]page d'information.",
 	"globalvanishrequest-reason-label": "Raison de la demande",
-	"globalvanishrequest-submit-text": "La demande est annulée",
+	"globalvanishrequest-submit-text": "Demander à disparaître",
 	"globalvanishrequest-globaluser-error": "Pas enregistré la demande. Le compte utilisateur n'est pas un compte utilisateur mondial.",
 	"globalvanishrequest-blocked-error": "Votre compte est bloqué et ne peut pas disparaître.",
 	"globalvanishrequest-pending-request-error": "Vous avez déjà une demande active de suppression de votre compte. Accédez au [[Special:GlobalVanishRequest/status|status page]]pour plus d'informations.",
