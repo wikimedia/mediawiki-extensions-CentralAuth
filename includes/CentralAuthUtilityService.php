@@ -87,6 +87,7 @@ class CentralAuthUtilityService {
 			'event' => 'autocreate',
 			'successful' => $sv->isGood(),
 			'status' => ( $sv->getErrorsArray() ?: $sv->getWarningsArray() )[0][0] ?? '-',
+			'accountType' => $user->isNamed() ? 'named' : 'temp',
 			'extension' => 'CentralAuth',
 		] );
 		return $sv;

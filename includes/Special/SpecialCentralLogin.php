@@ -331,6 +331,7 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 			'event' => 'centrallogin',
 			'successful' => true,
 			'extension' => 'CentralAuth',
+			'accountType' => $user->isNamed() ? 'named' : 'temp',
 		] );
 
 		$unusedReference = '';
@@ -358,11 +359,17 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 * @param mixed ...$args
 	 */
 	protected function showError( ...$args ) {
+		$accountType = 'anon';
+		if ( $this->getUser()->isRegistered() ) {
+			$accountType = $this->getUser()->isNamed() ? 'named' : 'temp';
+		}
+
 		LoggerFactory::getInstance( 'authevents' )->info( 'Central login attempt', [
 			'event' => 'centrallogin',
 			'successful' => false,
 			'status' => $args[0],
 			'extension' => 'CentralAuth',
+			'accountType' => $accountType
 		] );
 		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
 		// JS only
