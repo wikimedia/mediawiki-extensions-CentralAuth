@@ -1880,6 +1880,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$user = User::newFromName( $this->mName );
 		SessionManager::singleton()->invalidateSessionsForUser( $user );
 
+		// T375870: Track rate of locks for monitoring of anti-abuse tool usage.
+		MediaWikiServices::getInstance()->getStatsFactory()->withComponent( 'CentralAuth' )
+			->getCounter( 'account_lock' )
+			->increment();
+
 		return Status::newGood();
 	}
 
