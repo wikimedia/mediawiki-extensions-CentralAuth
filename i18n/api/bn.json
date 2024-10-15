@@ -10,7 +10,7 @@
 	"apihelp-createlocalaccount-summary": "জোর করে একটি স্থানীয় অ্যাকাউন্ট তৈরি করুন। কেন্দ্রীয় অ্যাকাউন্ট থাকতে হবে।",
 	"apihelp-globaluserrights-param-tags": "এই প্যারামিটারটি বর্তমানে অব্যবহৃত।",
 	"apihelp-query+globalallusers-example-1": "বৈশ্বিক ব্যবহারকারীদের তালিকা",
-	"apihelp-query+globalallusers-param-excludenamed": "নামযুক্ত অ্যাকাউন্টের ব্যবহারকারীদের বাদ দিন।",
-	"apihelp-query+globalallusers-param-excludetemp": "অস্থায়ী অ্যাকাউন্টের ব্যবহারকারীদের বাদ দিন।",
+	"apihelp-query+globalallusers-param-excludenamed": "নামযুক্ত অ্যাকাউন্টের ব্যবহারকারীদের বাদ দেয়।",
+	"apihelp-query+globalallusers-param-excludetemp": "অস্থায়ী অ্যাকাউন্টের ব্যবহারকারীদের বাদ দেয়।",
 	"apihelp-query+globalgroups-example-1": "বৈশ্বিক দলের তালিকা"
 }
