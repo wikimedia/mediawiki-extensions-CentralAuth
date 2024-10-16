@@ -430,8 +430,9 @@ class CentralAuthPrimaryAuthenticationProvider
 				return $status;
 			}
 
-			// Prevent creation if the user exists anywhere else we know about
-			if ( $centralUser->listUnattached() ) {
+			// Prevent creation of a new account that would create a global account
+			// if it'd steal the global name of existing unattached local accounts
+			if ( $centralUser->listUnattached() && $autocreate === false ) {
 				$status->fatal( 'centralauth-account-unattached-exists' );
 				return $status;
 			}
