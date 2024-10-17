@@ -10,6 +10,12 @@ use MediaWiki\Auth\ButtonAuthenticationRequest;
  */
 class CentralAuthRedirectingAuthenticationRequest extends ButtonAuthenticationRequest {
 
+	/**
+	 * Property name must match CentralAuthRedirectingPrimaryAuthenticationProvider::NON_LOGIN_WIKI_BUTTONREQUEST_NAME.
+	 * Set to true by loadFromSubmission() if the button was used.
+	 */
+	public bool $nonloginwiki = false;
+
 	public function __construct() {
 		parent::__construct(
 			CentralAuthRedirectingPrimaryAuthenticationProvider::NON_LOGIN_WIKI_BUTTONREQUEST_NAME,
