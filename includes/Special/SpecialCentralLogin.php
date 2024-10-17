@@ -61,11 +61,17 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	/** @inheritDoc */
 	public function execute( $subpage ) {
-		if ( in_array( $subpage, [ 'start', 'complete' ], true ) ) {
-			$this->logger->debug( 'CentralLogin step {step}', [
-				'step' => $subpage,
-			] );
+		$token = $this->getRequest()->getVal( 'token' );
+		if ( $token === null || !in_array( $subpage, [ 'start', 'complete' ], true ) ) {
+			// invalid request
+			$title = SpecialPage::getTitleFor( 'Userlogin' );
+			$this->getOutput()->redirect( $title->getLocalURL() );
+			return;
 		}
+
+		$this->logger->debug( 'CentralLogin step {step}', [
+			'step' => $subpage,
+		] );
 
 		$this->setHeaders();
 		$this->getOutput()->disallowUserJs();
@@ -81,20 +87,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 		$this->session = $session;
 
-		$token = $this->getRequest()->getVal( 'token' );
-
-		if ( $subpage === 'start' ) {
-			$this->doLoginStart( $token );
-		} elseif ( $subpage === 'complete' ) {
-			$this->doLoginComplete( $token );
-		} else {
-			// invalid request
-			$title = SpecialPage::getTitleFor( 'Userlogin' );
-			$this->getOutput()->redirect( $title->getLocalURL() );
-		}
-
 		// Auto-submit and back links
 		$this->getOutput()->addModules( 'ext.centralauth' );
+
+		if ( $subpage === 'complete' ) {
+			$this->doLoginComplete( $token );
+			return;
+		}
+		$this->doLoginStart( $token );
 	}
 
 	/**
