@@ -29,7 +29,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	extends AbstractPrimaryAuthenticationProvider
 {
 
-	public const NON_LOGIN_WIKI_BUTTONREQUEST_NAME = 'non-loginwiki';
+	public const NON_LOGIN_WIKI_BUTTONREQUEST_NAME = 'nonloginwiki';
 	public const START_TOKEN_KEY_PREFIX = 'centralauth-sul3-start';
 	public const COMPLETE_TOKEN_KEY_PREFIX = 'centralauth-sul3-complete';
 
