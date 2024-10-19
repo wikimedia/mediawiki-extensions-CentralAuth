@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use DeleteLocalPasswords;
 use Generator;
 use LogicException;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Maintenance\DeleteLocalPasswords;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 

@@ -20,14 +20,14 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use DBAccessObjectUtils;
-use IDBAccessObject;
 use MediaWiki\Config\Config;
 use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Look up central IDs using CentralAuth

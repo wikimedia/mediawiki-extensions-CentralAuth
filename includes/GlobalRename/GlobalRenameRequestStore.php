@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\User\UserNameUtils;
 use stdClass;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Stores and loads GlobalRenameRequest objects in a database.

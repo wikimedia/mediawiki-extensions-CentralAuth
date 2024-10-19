@@ -20,8 +20,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
-use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @since 1.37

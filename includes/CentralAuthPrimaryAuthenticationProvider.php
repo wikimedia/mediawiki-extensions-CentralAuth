@@ -21,8 +21,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use DBAccessObjectUtils;
-use IDBAccessObject;
 use LogicException;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
@@ -43,6 +41,8 @@ use MediaWiki\WikiMap\WikiMap;
 use MWExceptionHandler;
 use Psr\Log\NullLogger;
 use StatusValue;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**

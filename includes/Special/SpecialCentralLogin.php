@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthSessionProvider;
 use Exception;
-use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
@@ -21,6 +20,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\ScopedCallback;
 
 /**

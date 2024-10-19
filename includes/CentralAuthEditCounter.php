@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\RawSQLValue;
 

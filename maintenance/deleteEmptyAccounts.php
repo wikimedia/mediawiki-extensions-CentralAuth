@@ -9,13 +9,13 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use Exception;
-use IDBAccessObject;
-use Maintenance;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 class DeleteEmptyAccounts extends Maintenance {
 

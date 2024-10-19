@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Maintenance\Maintenance;
 use RuntimeException;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

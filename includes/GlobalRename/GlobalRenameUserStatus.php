@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use IDBAccessObject;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\DBQueryError;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
 

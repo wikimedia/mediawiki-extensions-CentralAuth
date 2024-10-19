@@ -18,6 +18,7 @@
  * @file
  */
 
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Tests\ExtensionJsonTestBase;
 
 /**

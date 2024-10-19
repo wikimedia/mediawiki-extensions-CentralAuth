@@ -22,9 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use BadMethodCallException;
 use CentralAuthSessionProvider;
-use DBAccessObjectUtils;
 use Exception;
-use IDBAccessObject;
 use InvalidArgumentException;
 use LogicException;
 use ManualLogEntry;
@@ -61,10 +59,12 @@ use MWCryptRand;
 use RevisionDeleteUser;
 use RuntimeException;
 use stdClass;
-use WANObjectCache;
 use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\Database;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthUser implements IDBAccessObject {

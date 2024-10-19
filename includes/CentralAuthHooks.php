@@ -21,7 +21,6 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use CentralAuthSessionProvider;
-use ExtensionRegistry;
 use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
@@ -38,6 +37,7 @@ use MediaWiki\Output\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\Hook\UserGetRightsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\ContentSecurityPolicy;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader as RL;

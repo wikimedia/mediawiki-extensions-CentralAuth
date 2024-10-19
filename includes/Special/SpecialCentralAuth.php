@@ -45,6 +45,7 @@ use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
+use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -1205,7 +1206,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * the page that are not forms.
 	 *
 	 * @param string $html The HTML to be wrapped with the fieldset
-	 * @param string|\MessageSpecifier $fieldsetLegendMsg The message to use as the fieldset legend
+	 * @param string|MessageSpecifier $fieldsetLegendMsg The message to use as the fieldset legend
 	 * @param string|null $fieldsetId The ID for the fieldset, or null for no ID
 	 * @return string HTML
 	 */

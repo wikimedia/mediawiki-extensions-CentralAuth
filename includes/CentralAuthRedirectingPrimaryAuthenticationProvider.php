@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use IDBAccessObject;
 use LogicException;
 use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
@@ -17,6 +16,7 @@ use MobileContext;
 use MWCryptRand;
 use RuntimeException;
 use StatusValue;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Redirect-based provider which sends the user to another domain, assumed to be

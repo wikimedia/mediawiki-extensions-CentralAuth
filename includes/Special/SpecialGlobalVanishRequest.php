@@ -21,7 +21,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use IDBAccessObject;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -42,6 +41,7 @@ use PermissionsError;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use UserMailer;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Request an account vanish.

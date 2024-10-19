@@ -24,11 +24,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
-use ApiMain;
-use ApiResult;
 use ChangeTags;
-use IDBAccessObject;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
+use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -38,6 +37,7 @@ use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @ingroup API

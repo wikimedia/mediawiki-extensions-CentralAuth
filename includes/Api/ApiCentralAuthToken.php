@@ -24,9 +24,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
-use ApiMain;
 use CentralAuthSessionProvider;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionManager;

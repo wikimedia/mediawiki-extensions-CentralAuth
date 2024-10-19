@@ -24,9 +24,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
-use ApiQuery;
-use ApiQueryBase;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use Wikimedia\ParamValidator\ParamValidator;

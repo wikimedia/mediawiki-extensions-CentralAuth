@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use Maintenance;
+use MediaWiki\Maintenance\Maintenance;
 use MWCryptRand;
 
 class MigrateInitialAccounts extends Maintenance {

@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
-use HashBagOStuff;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Extension\CentralAuth\CentralAuthIpReputationPreAuthenticationProvider;
@@ -14,7 +13,8 @@ use MediaWikiIntegrationTestCase;
 use MockHttpTrait;
 use MWHttpRequest;
 use StatusValue;
-use WANObjectCache;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\CentralAuthIpReputationPreAuthenticationProvider
