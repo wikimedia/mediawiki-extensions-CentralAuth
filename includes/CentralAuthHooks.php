@@ -209,7 +209,6 @@ class CentralAuthHooks implements
 		if ( isset( $message ) ) {
 			$messageIconWidget = (string)new IconWidget( [
 				'icon' => 'alert',
-				'flags' => [ 'destructive' ]
 			] );
 			$preferences['globalaccountstatus']['default'] = $messageIconWidget
 				. "$message<br>$manageLinkList";
