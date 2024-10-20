@@ -20,9 +20,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiQuery;
-use ApiQueryBase;
-use ApiResult;
+use MediaWiki\Api\ApiQuery;
+use MediaWiki\Api\ApiQueryBase;
+use MediaWiki\Api\ApiResult;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use Wikimedia\ParamValidator\ParamValidator;

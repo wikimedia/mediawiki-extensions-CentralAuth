@@ -24,7 +24,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use Wikimedia\ParamValidator\ParamValidator;
 

@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;

@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use ExtensionRegistry;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -13,6 +12,7 @@ use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\Message\Message;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;

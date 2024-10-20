@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use ApiMessage;
 use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
+use MediaWiki\Api\ApiMessage;
 use MediaWiki\Auth\AbstractPreAuthenticationProvider;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Http\HttpRequestFactory;
@@ -12,8 +12,8 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserIdentity;
 use StatusValue;
-use WANObjectCache;
 use Wikimedia\IPUtils;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 /**
  * PreAuthentication provider that checks if an IP address is known to ipoid

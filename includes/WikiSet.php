@@ -23,7 +23,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
-use WANObjectCache;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\Database;
 
 class WikiSet {

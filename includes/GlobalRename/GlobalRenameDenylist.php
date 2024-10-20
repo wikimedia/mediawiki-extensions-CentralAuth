@@ -22,12 +22,12 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use BadMethodCallException;
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Title\Title;
 use Psr\Log\LoggerInterface;
 use StringUtils;
-use WikitextContent;
 
 /**
  * Utility class to deal with global rename denylist.

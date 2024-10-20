@@ -26,9 +26,9 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Maintenance\Maintenance;
 
 /**
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>

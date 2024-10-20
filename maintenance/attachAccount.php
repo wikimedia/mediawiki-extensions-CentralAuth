@@ -28,9 +28,9 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use Exception;
-use IDBAccessObject;
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Maintenance\Maintenance;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @copyright © 2016 Wikimedia Foundation and contributors.

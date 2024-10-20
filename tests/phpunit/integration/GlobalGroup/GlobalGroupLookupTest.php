@@ -20,6 +20,7 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * @covers MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup

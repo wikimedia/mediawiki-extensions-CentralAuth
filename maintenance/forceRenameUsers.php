@@ -2,19 +2,19 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use IDBAccessObject;
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {

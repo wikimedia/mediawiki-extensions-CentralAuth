@@ -18,6 +18,7 @@ use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserRigorOptions;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * CentralAuth cookie-based sessions.

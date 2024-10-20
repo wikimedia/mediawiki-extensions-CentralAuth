@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use HashBagOStuff;
-use IDBAccessObject;
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
+use MediaWiki\Maintenance\Maintenance;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IResultWrapper;
 
 $IP = getenv( 'MW_INSTALL_PATH' );

@@ -16,6 +16,9 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
+use Wikimedia\ObjectCache\BagOStuff;
+use Wikimedia\ObjectCache\HashBagOStuff;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\TestingAccessWrapper;
 
 /**

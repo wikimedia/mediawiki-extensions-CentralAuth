@@ -8,8 +8,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Status\Status;
 
 class CreateLocalAccount extends Maintenance {

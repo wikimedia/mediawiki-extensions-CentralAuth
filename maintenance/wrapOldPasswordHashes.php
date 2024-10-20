@@ -21,9 +21,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Password\LayeredParameterizedPassword;
 use MediaWiki\Password\ParameterizedPassword;
 use Wikimedia\Rdbms\IExpression;

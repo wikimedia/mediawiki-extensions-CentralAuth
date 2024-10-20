@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
 

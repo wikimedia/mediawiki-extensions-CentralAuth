@@ -18,6 +18,7 @@
  * @file
  */
 
+use MediaWiki\Content\WikitextContent;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;

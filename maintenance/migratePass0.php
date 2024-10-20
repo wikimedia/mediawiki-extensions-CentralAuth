@@ -12,8 +12,8 @@ if ( $IP === false ) {
 }
 require_once "$IP/maintenance/Maintenance.php";
 
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Maintenance\Maintenance;
 
 /**
  * Copy user data for this wiki into the globalnames and localnames table

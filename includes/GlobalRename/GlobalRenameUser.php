@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use IDBAccessObject;
 use Job;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
@@ -11,6 +10,7 @@ use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Rename a global user

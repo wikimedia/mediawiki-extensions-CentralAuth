@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ApiBase;
-use ApiMain;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use Wikimedia\ParamValidator\ParamValidator;
 

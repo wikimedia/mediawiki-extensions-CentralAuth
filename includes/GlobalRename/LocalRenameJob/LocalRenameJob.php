@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob;
 
 use Exception;
-use IDBAccessObject;
 use Job;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
@@ -14,6 +13,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\ScopedCallback;
 
 /**

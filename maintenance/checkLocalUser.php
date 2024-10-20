@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
 use Generator;
-use Maintenance;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 

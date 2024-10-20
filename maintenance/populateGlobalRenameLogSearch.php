@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
 use LogEntryBase;
-use Maintenance;
+use MediaWiki\Maintenance\Maintenance;
 
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {

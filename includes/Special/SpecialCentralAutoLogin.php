@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use CentralAuthSessionProvider;
 use Exception;
-use ExtensionRegistry;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
@@ -19,6 +18,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;

@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use DBAccessObjectUtils;
-use IDBAccessObject;
 use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\WikiMap\WikiMap;
 use ReadOnlyError;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\Rdbms\ReadOnlyMode;

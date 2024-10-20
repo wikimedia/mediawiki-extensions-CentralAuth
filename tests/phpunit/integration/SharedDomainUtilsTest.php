@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handle
 
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Request\FauxRequest;
 use MediaWikiIntegrationTestCase;
 use Wikimedia\TestingAccessWrapper;
 
@@ -82,7 +83,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testIsSul3Enabled( $configFlag, $requestParams, $cookies, $expected ) {
 		$this->overrideConfigValue( 'CentralAuthEnableSul3', $configFlag );
-		$fauxRequest = new \FauxRequest( $requestParams );
+		$fauxRequest = new FauxRequest( $requestParams );
 		if ( $cookies ) {
 			$fauxRequest->setCookies( $cookies, '' );
 		}

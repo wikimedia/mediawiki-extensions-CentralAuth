@@ -21,7 +21,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use LoggedUpdateMaintenance;
+use MediaWiki\Maintenance\LoggedUpdateMaintenance;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 

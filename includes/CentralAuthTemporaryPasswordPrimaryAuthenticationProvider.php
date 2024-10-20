@@ -21,8 +21,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use ExtensionRegistry;
-use IDBAccessObject;
 use MailAddress;
 use MediaWiki\Auth\AbstractTemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
@@ -34,6 +32,7 @@ use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Mail\Emailer;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Password\Password;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
@@ -42,6 +41,7 @@ use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * A primary authentication provider that uses the temporary password field in
