@@ -45,7 +45,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $wrappedHandler->isSharedDomain() );
 	}
 
-	public function provideTestData() {
+	public static function provideTestData() {
 		$noCookies = [];
 		$noParams = [];
 		$paramSet = [ 'usesul3' => '1' ];
