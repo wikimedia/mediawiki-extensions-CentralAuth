@@ -418,11 +418,12 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			$this->getExistingTestPage(), 'testing1234', '', NS_MAIN, $targetLocalUser
 		);
 		$this->getServiceContainer()->getUserGroupManager()->addUserToGroup( $targetLocalUser, 'sysop' );
-		$this->getServiceContainer()->getBlockUserFactory()
+		$status = $this->getServiceContainer()->getBlockUserFactory()
 			->newBlockUser(
 				$targetUsername, $this->mockRegisteredUltimateAuthority(), 'indefinite', 'Test reason1234'
 			)
 			->placeBlock();
+		$this->assertStatusGood( $status );
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
 		// Verify that the user is marked as locally blocked, has the correct edit count, and is in the sysop group
 		// Check that one row is present in the table
