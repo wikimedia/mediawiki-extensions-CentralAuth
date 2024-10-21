@@ -97,8 +97,11 @@ class CentralAuthSessionManager {
 	}
 
 	/**
-	 * Get the central session data
-	 * @param Session|null $session
+	 * Get the central session data associated with the given local session.
+	 *
+	 * When the session is not centrally logged in, an empty array is returned.
+	 *
+	 * @param Session|null $session The local session. If omitted, uses the global session.
 	 * @return array
 	 */
 	public function getCentralSession( $session = null ) {
@@ -115,7 +118,22 @@ class CentralAuthSessionManager {
 	}
 
 	/**
-	 * Get the central session data
+	 * Get the central session data.
+	 *
+	 * The shape of the data is not enforced by this class, but in practice it will contain these keys:
+	 * - sessionId: string, the central session ID
+	 * - expiry: int, timestamp when the session expires
+	 * - user: string, the username
+	 * - token: string, the central token (gu_auth_token)
+	 * - remember: bool, the "keep me logged in" flag.
+	 *
+	 * When $id is not found in the central session store, an empty array is returned.
+	 *
+	 * During central login, the session is a provisional "stub session" (which will be seen
+	 * by the session provider as an anonymous session) with the following keys:
+	 * - pending_name: string, the username
+	 * - pending_guid: string, the central user ID
+	 * - sessionId, expiry: as above
 	 * @param string $id
 	 * @return array
 	 */
@@ -139,10 +157,19 @@ class CentralAuthSessionManager {
 	}
 
 	/**
-	 * Set data in the central session
-	 * @param array $data
+	 * Set data in the central session. Uses the central session ID stored in the local session
+	 * to find the data; if not present (or $reset is used), creates a new object under a new ID
+	 * and stores the ID in the local session.
+	 *
+	 * When not overridden in $data, the following keys in the central session data are preserved:
+	 * expiry, user, token. (Expiry will be extended if the session is beyond half its lifetime.)
+	 * sessionId will be updated as needed. Other data (ie. the remember flag or the stub session
+	 * fields) will be lost if not explicitly included in $data. This is true regardless of whether
+	 * $reset is used.
+	 *
+	 * @param array $data New session data.
 	 * @param bool|string $reset Reset the session ID. If a string, this is the new ID.
-	 * @param Session|null $session
+	 * @param Session|null $session Local session. When omitted, uses the global session.
 	 * @return string|null Session ID
 	 */
 	public function setCentralSession( array $data, $reset = false, $session = null ) {
