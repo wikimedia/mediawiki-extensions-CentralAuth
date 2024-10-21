@@ -95,7 +95,7 @@ class RedirectingLoginHookHandler implements
 		$outputData = $inputData + [
 			'username' => $centralUser->getName(),
 			'userId' => $centralUser->getId(),
-			'rememberMe' => $request->getPostValues()['wpRemember'] ?? null,
+			'rememberMe' => $request->getSession()->shouldRememberUser(),
 		];
 		$token = $this->tokenManager->tokenize(
 			$outputData,
