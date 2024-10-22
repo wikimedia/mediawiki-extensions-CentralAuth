@@ -147,6 +147,23 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	}
 
 	/**
+	 * Determine whether $request has a valid CentralAuth session.
+	 *
+	 * The following requests are considered to have a valid CentralAuth session:
+	 * - A request with a centralauth_User and centralauth_Token cookie (prefix is configurable)
+	 *   that match the data in the globaluser table.
+	 * - A request with a centralauth_Session cookie where the referenced data exists in the
+	 *   central session store, and the username and token in the central session object match
+	 *   the data in the globaluser table.
+	 *
+	 * The following requests are considered to have a valid local session (marked with
+	 * CentralAuthSource => Local in the session metadata):
+	 * - A request with a centralauth_Session cookie where the referenced data exists in the
+	 *   central session store, but is a stub (has pending_name or pending_guid fields).
+	 * - Anything that CookieSessionProvider considers valid, if the session is anonymous or for
+	 *   a local user that's not attached to the global CentralAuth user.
+	 * - When $wgCentralAuthCookies is disabled, falls back to CookieSessionProvider entirely.
+	 *
 	 * @param WebRequest $request
 	 * @return SessionInfo|null
 	 */
@@ -356,6 +373,15 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	}
 
 	/**
+	 * Sets CentralAuth and core authentication cookies.
+	 *
+	 * - For authenticated sessions where the local account is owned by the corresponding central
+	 *   account, the core <wiki>UserToken cookie is not set, the centralauth_Session,
+	 *   centralauth_User, and (if the session is remembered) centralauth_Token cookies are set,
+	 *   and a new central session object is created in the central session store if there wasn't
+	 *   already a centralauth_Session cookie pointing at a valid object.
+	 * - Otherwise (including stub central sessions), behavior is identical to CookieSessionProvider.
+	 *
 	 * @param SessionBackend $session
 	 * @param WebRequest $request
 	 */
@@ -430,6 +456,8 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	}
 
 	/**
+	 * Deletes CentralAuth and core authentication cookies.
+	 *
 	 * @param WebRequest $request
 	 */
 	public function unpersistSession( WebRequest $request ) {
