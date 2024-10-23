@@ -48,32 +48,46 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	public static function provideTestData() {
 		$noCookies = [];
 		$noParams = [];
-		$paramSet = [ 'usesul3' => '1' ];
+		$paramSetToZero = [ 'usesul3' => '0' ];
+		$paramSetToOne = [ 'usesul3' => '1' ];
 		$cookieSet = [ 'sul3OptIn' => '1' ];
 
 		return [
 			'config disabled, no params' => [ [], $noParams, $noCookies, false ],
-			'config disabled, param present' => [ [], $paramSet, $noCookies, false ],
+			'config disabled, param present' => [ [], $paramSetToOne, $noCookies, false ],
 			'config disabled, cookie present' => [ [], $noParams, $cookieSet, false ],
 
-			// config flag set to always, should always log
+			// config flag set to always, should always enable SUL3 mode.
 			'config always, no params' => [ [ 'always' ], $noParams, $noCookies, true ],
-			'config always, param zero' => [ [ 'always' ], [ 'usesul3' => 0 ], $noCookies, true ],
+			'config always and no query-flag, param set to zero' => [
+				[ 'always' ], $paramSetToZero, $noCookies, true
+			],
 
-			// config flag set to url, only if param is set
+			// Enable SUL3 if config flag set to query-param, and query param is set to 1
 			'queryFlag, no params' => [ [ 'query-flag' ], $noParams, $noCookies, false ],
-			'queryFlag, param set' => [ [ 'query-flag' ], $paramSet, $noCookies, true ],
+			'queryFlag, param set' => [ [ 'query-flag' ], $paramSetToOne, $noCookies, true ],
 			'queryFlag, cookie set' => [ [ 'query-flag' ], $noParams, $cookieSet, false ],
 
 			// config flag set to cookie, only when cookie is present
 			'cookie, no params' => [ [ 'cookie' ], $noParams, $noCookies, false ],
-			'cookie, params set' => [ [ 'cookie' ], $paramSet, $noCookies, false ],
+			'cookie and no query-flag, params set' => [ [ 'cookie' ], $paramSetToOne, $noCookies, false ],
 			'cookie, cookie set' => [ [ 'cookie' ], $noParams, $cookieSet, true ],
 
 			// multiple configs
 			'both, no params' => [ [ 'cookie', 'query-flag' ], $noParams, $noCookies, false ],
-			'both, param set' => [ [ 'cookie', 'query-flag' ], $paramSet, $noCookies, true ],
-			'both, cookie set' => [ [ 'cookie', 'query-flag' ], $paramSet, $cookieSet, true ],
+			'both, param set' => [ [ 'cookie', 'query-flag' ], $paramSetToOne, $noCookies, true ],
+			'both, param set to 0' => [
+				[ 'cookie', 'query-flag' ], $paramSetToZero, $noCookies, false
+			],
+			'cookie and query-flag, cookie set, param set to 1' => [
+				[ 'cookie', 'query-flag' ], $paramSetToOne, $cookieSet, true
+			],
+			'cookie and query-flag, cookie set, param set to 0' => [
+				[ 'cookie', 'query-flag' ], $paramSetToZero, $cookieSet, false
+			],
+			'config always and query-flag, param set to zero' => [
+				[ 'always', 'query-flag' ], $paramSetToZero, $noCookies, false
+			],
 		];
 	}
 

@@ -90,7 +90,8 @@ class SharedDomainUtils {
 	 * - $wgCentralAuthEnableSul3 contains 'cookie' and there is a
 	 *   cookie named 'sul3OptIn' with the value '1'
 	 * - $wgCentralAuthEnableSul3 contains 'query-flag' and the URL has
-	 *   a query parameter 'usesul3' with a truthy value
+	 *   a query parameter 'usesul3' with the value "1". The value "0"
+	 *   means switch off SUL3 mode.
 	 *
 	 * @param WebRequest $request
 	 * @return bool
@@ -98,15 +99,15 @@ class SharedDomainUtils {
 	public function isSul3Enabled( WebRequest $request ): bool {
 		$sul3Config = $this->config->get( 'CentralAuthEnableSul3' );
 
-		if ( in_array( 'always', $sul3Config, true ) ) {
-			return true;
+		if ( in_array( 'query-flag', $sul3Config, true )
+			&& $request->getCheck( 'usesul3' )
+		) {
+			return $request->getFuzzyBool( 'usesul3' );
 		} elseif ( in_array( 'cookie', $sul3Config, true )
 			&& $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) === '1'
 		) {
 			return true;
-		} elseif ( in_array( 'query-flag', $sul3Config, true )
-			&& $request->getCheck( 'usesul3' )
-		) {
+		} elseif ( in_array( 'always', $sul3Config, true ) ) {
 			return true;
 		} else {
 			return false;
