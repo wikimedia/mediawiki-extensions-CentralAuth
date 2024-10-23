@@ -26,7 +26,6 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
-use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
@@ -81,16 +80,7 @@ class CentralAuthUtilityService {
 		if ( !$this->authManager->getAuthenticationProvider( $source ) ) {
 			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
 		}
-		$sv = $this->authManager->autoCreateUser( $user, $source, false, $log, $performer );
-
-		LoggerFactory::getInstance( 'authevents' )->info( 'Central autocreation attempt', [
-			'event' => 'autocreate',
-			'successful' => $sv->isGood(),
-			'status' => ( $sv->getErrorsArray() ?: $sv->getWarningsArray() )[0][0] ?? '-',
-			'accountType' => $user->isNamed() ? 'named' : 'temp',
-			'extension' => 'CentralAuth',
-		] );
-		return $sv;
+		return $this->authManager->autoCreateUser( $user, $source, false, $log, $performer );
 	}
 
 	/**
