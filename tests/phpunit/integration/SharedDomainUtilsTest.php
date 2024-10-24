@@ -52,9 +52,9 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$cookieSet = [ 'sul3OptIn' => '1' ];
 
 		return [
-			'config disabled, no params' => [ null, $noParams, $noCookies, false ],
-			'config disabled, param present' => [ null, $paramSet, $noCookies, false ],
-			'config disabled, cookie present' => [ null, $noParams, $cookieSet, false ],
+			'config disabled, no params' => [ [], $noParams, $noCookies, false ],
+			'config disabled, param present' => [ [], $paramSet, $noCookies, false ],
+			'config disabled, cookie present' => [ [], $noParams, $cookieSet, false ],
 
 			// config flag set to always, should always log
 			'config always, no params' => [ [ 'always' ], $noParams, $noCookies, true ],
@@ -63,7 +63,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			// config flag set to url, only if param is set
 			'queryFlag, no params' => [ [ 'query-flag' ], $noParams, $noCookies, false ],
 			'queryFlag, param set' => [ [ 'query-flag' ], $paramSet, $noCookies, true ],
-			'queryFlag, cookie set' => [ 'query-flag', $noParams, $cookieSet, false ],
+			'queryFlag, cookie set' => [ [ 'query-flag' ], $noParams, $cookieSet, false ],
 
 			// config flag set to cookie, only when cookie is present
 			'cookie, no params' => [ [ 'cookie' ], $noParams, $noCookies, false ],
