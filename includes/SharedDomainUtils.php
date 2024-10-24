@@ -98,15 +98,6 @@ class SharedDomainUtils {
 	public function isSul3Enabled( WebRequest $request ): bool {
 		$sul3Config = $this->config->get( 'CentralAuthEnableSul3' );
 
-		// For B/C, this config was a string before. Now that we're moving
-		// to an array based value, we need to support both while migrating.
-		// TEMPORARY: Remove this code below once migration is complete.
-		if ( $sul3Config === false ) {
-			$sul3Config = [];
-		} elseif ( !is_array( $sul3Config ) ) {
-			$sul3Config = [ $sul3Config ];
-		}
-
 		if ( in_array( 'always', $sul3Config, true ) ) {
 			return true;
 		} elseif ( in_array( 'cookie', $sul3Config, true )
