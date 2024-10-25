@@ -413,10 +413,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	public function testViewForLocallyBlockedGlobalAccount() {
 		$targetUsername = $this->getTestCentralAuthUser();
 		$targetLocalUser = $this->getServiceContainer()->getUserFactory()->newFromName( $targetUsername );
-		// Make an edit on behalf of the target username, give it a local group, and then block it
-		$this->editPage(
-			$this->getExistingTestPage(), 'testing1234', '', NS_MAIN, $targetLocalUser
-		);
+		// Give the local user a group, a local block, and an edit to test all the properties in the table.
 		$this->getServiceContainer()->getUserGroupManager()->addUserToGroup( $targetLocalUser, 'sysop' );
 		$status = $this->getServiceContainer()->getBlockUserFactory()
 			->newBlockUser(
@@ -424,6 +421,9 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			)
 			->placeBlock();
 		$this->assertStatusGood( $status );
+		$this->editPage(
+			$this->getExistingTestPage(), 'testing1234', '', NS_MAIN, $targetLocalUser
+		);
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
 		// Verify that the user is marked as locally blocked, has the correct edit count, and is in the sysop group
 		// Check that one row is present in the table
