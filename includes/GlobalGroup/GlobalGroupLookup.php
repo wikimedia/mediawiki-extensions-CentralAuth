@@ -67,4 +67,23 @@ class GlobalGroupLookup {
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 	}
+
+	/**
+	 * Returns all global groups with a specified permission.
+	 *
+	 * @since 1.44
+	 * @param string $permission
+	 * @param int $flags {@link IDBAccessObject} flags
+	 * @return string[] internal global group names with the given permission
+	 */
+	public function getGroupsWithPermission( string $permission, int $flags = IDBAccessObject::READ_NORMAL ): array {
+		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		return $dbr->newSelectQueryBuilder()
+			->select( 'ggp_group' )
+			->from( 'global_group_permissions' )
+			->where( [ 'ggp_permission' => $permission ] )
+			->recency( $flags )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
+	}
 }

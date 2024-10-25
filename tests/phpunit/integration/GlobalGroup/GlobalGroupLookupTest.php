@@ -29,20 +29,6 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 
-	protected function setUp(): void {
-		parent::setUp();
-
-		$this->getDb()->newInsertQueryBuilder()
-			->insertInto( 'global_group_permissions' )
-			->rows( [
-				[ 'ggp_group' => 'steward', 'ggp_permission' => 'read' ],
-				[ 'ggp_group' => 'steward', 'ggp_permission' => 'delete' ],
-				[ 'ggp_group' => 'global-sysop', 'ggp_permission' => 'read' ],
-			] )
-			->caller( __METHOD__ )
-			->execute();
-	}
-
 	/**
 	 * @dataProvider provideFlags
 	 */
@@ -73,10 +59,39 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 		$this->assertArrayEquals( [], $nonexistentGroupRights );
 	}
 
+	/** @dataProvider provideFlags */
+	public function testGetGroupsWithPermission( int $flags ) {
+		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$dbManager->method( 'getCentralDBFromRecency' )
+			->with( $flags )
+			->willReturn( $this->getDb() );
+
+		$lookup = new GlobalGroupLookup( $dbManager );
+		$groupsWithReadRight = $lookup->getGroupsWithPermission( 'read', $flags );
+		$groupsWithDeleteRight = $lookup->getGroupsWithPermission( 'delete', $flags );
+		$groupsWithNonExistentRight = $lookup->getGroupsWithPermission( 'does-not-exist', $flags );
+
+		$this->assertArrayEquals( [ 'steward', 'global-sysop' ], $groupsWithReadRight );
+		$this->assertArrayEquals( [ 'steward' ], $groupsWithDeleteRight );
+		$this->assertCount( 0, $groupsWithNonExistentRight );
+	}
+
 	public static function provideFlags(): array {
 		return [
 			'READ_NORMAL' => [ IDBAccessObject::READ_NORMAL ],
 			'READ_LATEST' => [ IDBAccessObject::READ_LATEST ],
 		];
+	}
+
+	public function addDBDataOnce() {
+		$this->getDb()->newInsertQueryBuilder()
+			->insertInto( 'global_group_permissions' )
+			->rows( [
+				[ 'ggp_group' => 'steward', 'ggp_permission' => 'read' ],
+				[ 'ggp_group' => 'steward', 'ggp_permission' => 'delete' ],
+				[ 'ggp_group' => 'global-sysop', 'ggp_permission' => 'read' ],
+			] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 }
