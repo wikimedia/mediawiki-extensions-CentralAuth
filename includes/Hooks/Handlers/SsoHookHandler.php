@@ -16,6 +16,7 @@ use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
+use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
 use MediaWiki\User\UserIdentity;
@@ -29,13 +30,14 @@ use Wikimedia\NormalizedException\NormalizedException;
  * Ensure that the SSO domain cannot be used for anything that is unrelated to its purpose.
  */
 class SsoHookHandler implements
-	GetLocalURLHook,
-	SetupAfterCacheHook,
-	GetUserPermissionsErrorsHook,
 	ApiCheckCanExecuteHook,
-	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	AuthManagerFilterProvidersHook,
-	AuthManagerVerifyAuthenticationHook
+	AuthManagerVerifyAuthenticationHook,
+	BeforePageDisplayHook,
+	GetLocalURLHook,
+	GetUserPermissionsErrorsHook,
+	ResourceLoaderModifyEmbeddedSourceUrlsHook,
+	SetupAfterCacheHook
 {
 
 	// Allowlists of things a user can do on the SSO domain.
@@ -132,6 +134,13 @@ class SsoHookHandler implements
 				$message = [ 'apierror-moduledisabled', $module->getModuleName() ];
 				return false;
 			}
+		}
+	}
+
+	/** @inheritDoc */
+	public function onBeforePageDisplay( $out, $skin ): void {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
+			$out->disallowUserJs();
 		}
 	}
 
