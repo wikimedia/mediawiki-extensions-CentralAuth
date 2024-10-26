@@ -8,10 +8,12 @@ use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Api\Hook\ApiQueryCheckCanExecuteHook;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Auth\CheckBlocksSecondaryAuthenticationProvider;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\Hook\AuthManagerVerifyAuthenticationHook;
 use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Auth\ThrottlePreAuthenticationProvider;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
@@ -100,13 +102,23 @@ class SharedDomainHookHandler implements
 		],
 		self::DISALLOWED_LOCAL_PROVIDERS => [
 			'preauth' => [
+				'AbuseFilterPreAuthenticationProvider',
+				'AntiSpoofPreAuthenticationProvider',
 				'CaptchaPreAuthenticationProvider',
+				'IPReputationPreAuthenticationProvider',
+				'SpamBlacklistPreAuthenticationProvider',
+				ThrottlePreAuthenticationProvider::class,
+				'TitleBlacklistPreAuthenticationProvider',
 			],
 			'primaryauth' => [
-				TemporaryPasswordPrimaryAuthenticationProvider::class,
+				// CentralAuthPrimaryAuthenticationProvider is needed for autocreation, so it
+				//   handles ignoring SUL3 local requests internally.
 				LocalPasswordPrimaryAuthenticationProvider::class,
+				TemporaryPasswordPrimaryAuthenticationProvider::class,
 			],
 			'secondaryauth' => [
+				CheckBlocksSecondaryAuthenticationProvider::class,
+				'CentralAuthSecondaryAuthenticationProvider',
 				'OATHSecondaryAuthenticationProvider',
 			],
 		],
