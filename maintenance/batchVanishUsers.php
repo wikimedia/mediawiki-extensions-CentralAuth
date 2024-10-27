@@ -208,7 +208,7 @@ class BatchVanishUsers extends Maintenance {
 
 		// If new name couldn't be extracted, generate a random one
 		// Format should be `Renamed user <some_random_string>`
-		if ( !isset( $newName ) ) {
+		if ( $newName === null ) {
 			$attempts = 0;
 			do {
 				$candidate = wfRandomString();
@@ -217,10 +217,10 @@ class BatchVanishUsers extends Maintenance {
 					$this->output( "New name not present in global_renamers_link. Generated '{$newName}' \n" );
 				}
 				$attempts++;
-			} while ( !isset( $newName ) && $attempts < 5 );
+			} while ( $newName === null && $attempts < 5 );
 		}
 
-		if ( !isset( $newName ) ) {
+		if ( $newName === null ) {
 			$errorMessage = "Skipping user {$username} as max attempts reached generating username.";
 			$this->output( $errorMessage . "\n" );
 			return [ "success" => false, "message" => "error" ];

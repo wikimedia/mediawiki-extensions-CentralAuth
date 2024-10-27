@@ -256,7 +256,7 @@ class MigrateAccount extends Maintenance {
 				$this->output( "Email addresses match and are confirmed for: $username\n" );
 				$central->storeAndMigrate( [], !$this->suppressRC );
 			} else {
-				if ( isset( $central->mHomeWiki ) || $this->autoMigrate ) {
+				if ( $central->mHomeWiki !== null || $this->autoMigrate ) {
 					$central->storeAndMigrate( [], !$this->suppressRC );
 				} else {
 					$this->output( "ERROR: Auto migration is disabled and email addresses do " .

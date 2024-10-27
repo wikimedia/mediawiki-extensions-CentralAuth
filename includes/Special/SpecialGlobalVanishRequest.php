@@ -113,10 +113,10 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		// Immediately start the vanish if we already know that the user is
 		// eligible for approval without a review.
 		if (
-			isset( $automaticVanishPerformer ) &&
+			$automaticVanishPerformer !== null &&
 			$automaticVanishPerformer->exists() &&
 			$automaticVanishPerformer->isAttached() &&
-			isset( $localAutomaticVanishPerformer ) &&
+			$localAutomaticVanishPerformer !== null &&
 			$this->eligibleForAutomaticVanish()
 		) {
 			$request
@@ -432,7 +432,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$sitelinks = [];
 
 		$entityIds = $this->getConfig()->get( 'CentralAuthBlockAppealWikidataIds' );
-		if ( isset( $entityIds ) && count( $entityIds ) > 0 ) {
+		if ( $entityIds !== null && count( $entityIds ) > 0 ) {
 			// Fetch block appeal and block policy pages from the Wikidata API.
 			$parameters = [
 				"action" => "wbgetentities",
@@ -467,7 +467,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			$appealUrl = $this->getConfig()->get( 'CentralAuthFallbackAppealUrl' );
 			$appealTitle = $this->getConfig()->get( 'CentralAuthFallbackAppealTitle' );
 
-			if ( isset( $appealUrl ) && isset( $appealTitle ) ) {
+			if ( $appealUrl !== null && $appealTitle !== null ) {
 				$sitelinks[] = "[{$appealUrl} {$appealTitle}]";
 			}
 		}
@@ -487,7 +487,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			'userAgent' => "{$this->httpRequestFactory->getUserAgent()} CentralAuth",
 		];
 		$url = $this->getConfig()->get( 'CentralAuthWikidataApiUrl' );
-		if ( !isset( $url ) ) {
+		if ( $url === null ) {
 			return Status::newFatal(
 				'Cannot make Wikidata request for entities as $wgCentralAuthWikidataApiUrl is unset.'
 			);
