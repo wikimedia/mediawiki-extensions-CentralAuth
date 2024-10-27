@@ -41,7 +41,7 @@ class SsoHookHandler implements
 	// Allowlists of things a user can do on the SSO domain.
 	// FIXME these should be configurable and/or come from extension attributes
 	// 'static' is WMF's custom static.php entry point, serving some files on the SSO domain (T374286)
-	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api', 'static' ];
+	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api', 'static', 'cli' ];
 	private const ALLOWED_SPECIAL_PAGES = [ 'Userlogin', 'Userlogout', 'CreateAccount',
 		'PasswordReset', 'Captcha' ];
 	private const ALLOWED_API_MODULES = [
