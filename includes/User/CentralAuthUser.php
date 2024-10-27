@@ -115,7 +115,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mRights;
 	/** @var string */
 	private $mPassword;
-	/** @var string */
+	/** @var string|null */
 	private $mAuthToken;
 	/** @var int|null */
 	private $mGlobalId;
@@ -450,7 +450,7 @@ class CentralAuthUser implements IDBAccessObject {
 	protected function loadState( $recache = false ) {
 		if ( $recache ) {
 			$this->resetState();
-		} elseif ( isset( $this->mGlobalId ) ) {
+		} elseif ( $this->mGlobalId !== null ) {
 			// Already loaded
 			return;
 		}
@@ -469,7 +469,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param bool $force Set to true to load even when already loaded.
 	 */
 	protected function loadGroups( bool $force = false ) {
-		if ( isset( $this->mGroups ) && !$force ) {
+		if ( $this->mGroups !== null && !$force ) {
 			// Already loaded
 			return;
 		}
@@ -759,7 +759,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->loadState();
 
-		if ( !isset( $this->mAuthToken ) || !$this->mAuthToken ) {
+		if ( !$this->mAuthToken ) {
 			$this->resetAuthToken();
 		}
 
@@ -1485,7 +1485,7 @@ class CentralAuthUser implements IDBAccessObject {
 			return false;
 		}
 
-		if ( isset( $this->mHomeWiki ) ) {
+		if ( $this->mHomeWiki !== null ) {
 			if ( !array_key_exists( $this->mHomeWiki, $migrationSet ) ) {
 				$logger->info(
 					'Invalid home wiki specification \'{user}@{home}\'',
@@ -2570,12 +2570,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * attached
 	 */
 	public function loadAttached() {
-		if ( isset( $this->mAttachedArray ) ) {
+		if ( $this->mAttachedArray !== null ) {
 			// Already loaded
 			return;
 		}
 
-		if ( isset( $this->mAttachedList ) && $this->mAttachedList !== '' ) {
+		if ( $this->mAttachedList !== null && $this->mAttachedList !== '' ) {
 			// We have a list already, probably from the cache.
 			$this->mAttachedArray = explode( "\n", $this->mAttachedList );
 

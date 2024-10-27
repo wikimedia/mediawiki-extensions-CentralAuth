@@ -726,11 +726,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
 					$vanishPerformerName = $this->getConfig()->get( 'CentralAuthAutomaticVanishPerformer' );
 
-					if ( isset( $vanishPerformerName ) ) {
+					if ( $vanishPerformerName !== null ) {
 						$localVanishPerformer = $this->userIdentityLookup
 							->getUserIdentityByName( $vanishPerformerName );
 
-						if ( isset( $localVanishPerformer ) ) {
+						if ( $localVanishPerformer !== null ) {
 							$globalRenameUser = $globalRenameUser->withLockPerformingUser( $localVanishPerformer );
 						}
 					}

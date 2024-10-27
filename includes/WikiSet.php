@@ -236,7 +236,7 @@ class WikiSet {
 	private function getDataForCache() {
 		$data = [];
 		foreach ( self::$mCacheVars as $var ) {
-			if ( isset( $this->$var ) ) {
+			if ( $this->$var !== null ) {
 				$data[$var] = $this->$var;
 			}
 		}
