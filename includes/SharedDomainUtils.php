@@ -20,7 +20,7 @@ class SharedDomainUtils {
 	private const SUL3_COOKIE_FLAG = 'sul3OptIn';
 	private Config $config;
 	private TitleFactory $titleFactory;
-	private bool $isSharedDomain;
+	private ?bool $isSharedDomain = null;
 	private ?MobileContext $mobileContext = null;
 
 	public function __construct(
@@ -44,8 +44,7 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function isSharedDomain(): bool {
-		// @phan-suppress-next-line PhanRedundantCondition
-		if ( !isset( $this->isSharedDomain ) ) {
+		if ( $this->isSharedDomain === null ) {
 			$centralAuthSsoUrlPrefix = $this->config->get( 'CentralAuthSsoUrlPrefix' );
 			if ( !$centralAuthSsoUrlPrefix ) {
 				$this->isSharedDomain = false;
