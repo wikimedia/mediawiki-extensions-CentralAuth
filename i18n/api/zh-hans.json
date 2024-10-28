@@ -10,7 +10,8 @@
 			"Liuxinyu970226",
 			"Shizhao",
 			"SunAfterRain",
-			"Tranve"
+			"Tranve",
+			"沈澄心"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
@@ -48,6 +49,7 @@
 	"apihelp-query+globalallusers-param-from": "枚举的起始用户名。",
 	"apihelp-query+globalallusers-param-group": "限定用户至指定的全域用户组。",
 	"apihelp-query+globalallusers-param-limit": "返回的总计用户数。",
+	"apihelp-query+globalallusers-param-excludetemp": "排除临时账号的用户。",
 	"apihelp-query+globalallusers-param-prefix": "搜索所有以此值开头的用户。",
 	"apihelp-query+globalallusers-param-prop": "要包含的信息束：",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "用户账号是否被锁定。",
