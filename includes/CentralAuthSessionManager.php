@@ -21,6 +21,8 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
@@ -86,8 +88,8 @@ class CentralAuthSessionManager {
 	 */
 	public function getSessionStore(): BagOStuff {
 		if ( !$this->sessionStore ) {
-			$sessionCacheType = $this->options->get( 'CentralAuthSessionCacheType' )
-				?? $this->options->get( 'SessionCacheType' );
+			$sessionCacheType = $this->options->get( CAMainConfigNames::CentralAuthSessionCacheType )
+				?? $this->options->get( MainConfigNames::SessionCacheType );
 			$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( $sessionCacheType );
 			$this->sessionStore = $cache instanceof CachedBagOStuff
 				? $cache : new CachedBagOStuff( $cache );

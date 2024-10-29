@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 use MediaWiki\Config\Config;
 use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
@@ -113,7 +114,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 
-		$strictMode = $this->config->get( 'CentralAuthStrict' );
+		$strictMode = $this->config->get( CAMainConfigNames::CentralAuthStrict );
 		if ( $centralUser->exists() && !$user->isRegistered() && $strictMode ) {
 			// Even if the user doesn't exist locally, the username is reserved for the central user, as
 			// it will be automatically attached on login, and can't be taken by any other user (T371340).

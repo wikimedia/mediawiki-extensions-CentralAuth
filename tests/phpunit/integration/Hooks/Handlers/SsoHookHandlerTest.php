@@ -7,6 +7,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\UsernameAuthenticationRequest;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
@@ -187,7 +188,7 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 	private function getSharedDomainUtils( array $config ): SharedDomainUtils {
 		$isSharedDomain = $config['shared'];
 		$isSul3Enabled = $config['sul3'];
-		$this->overrideConfigValue( 'CentralAuthRestrictSsoDomain', true );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthRestrictSsoDomain, true );
 		$sharedDomainUtils = $this->getMockBuilder( SharedDomainUtils::class )
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),

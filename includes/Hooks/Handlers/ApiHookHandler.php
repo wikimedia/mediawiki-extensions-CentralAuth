@@ -24,6 +24,7 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\Hook\APIGetAllowedParamsHook;
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use Wikimedia\ParamValidator\ParamValidator;
 
 class ApiHookHandler implements APIGetAllowedParamsHook {
@@ -42,7 +43,7 @@ class ApiHookHandler implements APIGetAllowedParamsHook {
 	 * @return bool
 	 */
 	public function onAPIGetAllowedParams( $module, &$params, $flags ) {
-		if ( !$this->config->get( 'CentralAuthCookies' ) ) {
+		if ( !$this->config->get( CAMainConfigNames::CentralAuthCookies ) ) {
 			return true;
 		}
 

@@ -30,6 +30,7 @@ use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\SpecialUserRights;
@@ -480,7 +481,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			->setMethod( 'get' )
 			// Strip subpage
 			->setTitle( $this->getPageTitle() )
-			->setAction( $this->getConfig()->get( 'Script' ) )
+			->setAction( $this->getConfig()->get( MainConfigNames::Script ) )
 			->setId( 'mw-userrights-form1' )
 			->setName( 'uluser' )
 			->setSubmitTextMsg( 'editusergroup' )

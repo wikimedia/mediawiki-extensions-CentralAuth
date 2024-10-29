@@ -27,6 +27,7 @@ use LogEventsList;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -39,6 +40,7 @@ use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
@@ -724,7 +726,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				// vanish requests. Renamers cannot normally perform locks and
 				// thus should not be associated with them.
 				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
-					$vanishPerformerName = $this->getConfig()->get( 'CentralAuthAutomaticVanishPerformer' );
+					$vanishPerformerName = $this->getConfig()
+						->get( CAMainConfigNames::CentralAuthAutomaticVanishPerformer );
 
 					if ( $vanishPerformerName !== null ) {
 						$localVanishPerformer = $this->userIdentityLookup
@@ -816,7 +819,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						$msgKey, $emailBodyMsgArgs
 					)->inContentLanguage()->text();
 				} else {
-					$recipientConfig = $this->getConfig()->get( 'CentralAuthRejectVanishUserNotification' );
+					$recipientConfig = $this->getConfig()
+						->get( CAMainConfigNames::CentralAuthRejectVanishUserNotification );
 					if ( $recipientConfig ) {
 						$status = $this->sendEmailForRejectionOfVanishRequest( $request, $recipientConfig );
 					}
@@ -903,7 +907,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 */
 	protected function sendNotificationEmail( MailAddress $to, $subject, $body ) {
 		$from = new MailAddress(
-			$this->getConfig()->get( 'PasswordSender' ),
+			$this->getConfig()->get( MainConfigNames::PasswordSender ),
 			$this->msg( 'emailsender' )->inContentLanguage()->text()
 		);
 		return UserMailer::send( $to, $from, $subject, $body );
@@ -965,7 +969,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$contactRecipientUser = User::newFromName( $recipientUserName );
 			$contactRecipientAddress = MailAddress::newFromUser( $contactRecipientUser );
 			$contactSenderAddress = new MailAddress(
-				$this->getConfig()->get( 'PasswordSender' ),
+				$this->getConfig()->get( MainConfigNames::PasswordSender ),
 				$this->msg( 'emailsender' )->inContentLanguage()->text()
 			);
 

@@ -30,6 +30,7 @@ use InvalidArgumentException;
 use MailAddress;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\User\UserIdentity;
 use UserMailer;
@@ -309,7 +310,7 @@ class BatchVanishUsers extends Maintenance {
 		$body = $this->msg( $bodyKey, [ $request->getName(), $request->getComments() ] );
 
 		$from = new MailAddress(
-			$this->getConfig()->get( 'PasswordSender' ),
+			$this->getConfig()->get( MainConfigNames::PasswordSender ),
 			$this->msg( 'emailsender' )
 		);
 		$to = new MailAddress( $causer->getEmail(), $causer->getName(), '' );

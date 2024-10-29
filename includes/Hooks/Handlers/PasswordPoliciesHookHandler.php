@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use Exception;
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PasswordPoliciesForUserHook;
 use MediaWiki\Password\UserPasswordPolicy;
@@ -48,12 +49,12 @@ class PasswordPoliciesHookHandler implements PasswordPoliciesForUserHook {
 
 		if ( $central->exists() ) {
 			$localPolicyGroups = array_intersect(
-				array_keys( $this->config->get( 'CentralAuthGlobalPasswordPolicies' ) ),
+				array_keys( $this->config->get( CAMainConfigNames::CentralAuthGlobalPasswordPolicies ) ),
 				$central->getLocalGroups()
 			);
 
 			$effectivePolicy = UserPasswordPolicy::getPoliciesForGroups(
-				$this->config->get( 'CentralAuthGlobalPasswordPolicies' ),
+				$this->config->get( CAMainConfigNames::CentralAuthGlobalPasswordPolicies ),
 				array_merge( $central->getGlobalGroups(), $localPolicyGroups ),
 				$effectivePolicy
 			);

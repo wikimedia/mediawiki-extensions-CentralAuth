@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use CentralAuthTokenSessionProvider;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
@@ -71,7 +72,7 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 
 		if ( !$out->getUser()->isRegistered() ) {
 			$wikiId = WikiMap::getCurrentWikiId();
-			$loginWikiId = $this->config->get( 'CentralAuthLoginWiki' );
+			$loginWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
 			if ( $loginWikiId && $wikiId !== $loginWikiId ) {
 				// Let the frontend know if this is a mobile domain, T100413
 				$out->addJsConfigVars(

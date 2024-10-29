@@ -5,6 +5,7 @@ use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
@@ -98,7 +99,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		// hook is registered dynamically when creating the SessionProvider
 		$this->newSessionProvider();
 
-		$this->overrideConfigValue( 'CentralAuthCookies', true );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthCookies, true );
 
 		$main = new ApiMain();
 

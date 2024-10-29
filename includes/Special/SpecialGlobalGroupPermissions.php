@@ -22,6 +22,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -127,7 +128,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
 			$html .= Xml::openElement( 'form', [
 				'method' => 'post',
-				'action' => $this->getConfig()->get( 'Script' ),
+				'action' => $this->getConfig()->get( MainConfigNames::Script ),
 				'name' => 'centralauth-globalgroups-newgroup'
 			] );
 			$html .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
