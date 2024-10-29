@@ -537,6 +537,8 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function autoCreatedAccount( $user, $source ) {
+		$centralAuthPrimaryProviderIds = [ $this->getUniqueId(),
+			CentralAuthRedirectingPrimaryAuthenticationProvider::class ];
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( !$centralUser->exists() ) {
 			$this->logger->warning(
@@ -545,7 +547,9 @@ class CentralAuthPrimaryAuthenticationProvider
 					'user' => $user->getName(),
 				]
 			);
-		} elseif ( $source !== $this->getUniqueId() && $centralUser->listUnattached() ) {
+		} elseif ( !in_array( $source, $centralAuthPrimaryProviderIds, true )
+			&& $centralUser->listUnattached()
+		) {
 			$this->logger->warning(
 				'Not centralizing auto-created user {username}, unattached accounts exist',
 				[
