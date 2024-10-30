@@ -291,7 +291,6 @@
 	"centralauth-renameuser-reserved": "Používateľ $2 je vyhradený pre globálny účet.",
 	"centralauth-rightslog-entry-groupperms": "oprávnenia skupiny $1 zmenené z $2 na $3",
 	"centralauth-rightslog-header": "Tento záznam obsahuje operácie na globálnych účtoch: zmeny členstva v skupinách a oprávnení",
-	"centralauth-rightslog-name": "Záznam globálnych blokovaní",
 	"centralauth-rightslog-set-optin": "iba určené",
 	"centralauth-rightslog-set-optout": "všetky okrem určených",
 	"centralauth-ro": "Informácia o globálnom účte",
