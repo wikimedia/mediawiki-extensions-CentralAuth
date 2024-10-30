@@ -67,8 +67,8 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 	protected function assertSessionInfoError(
 		WebRequest $request,
 		?SessionInfo $result,
-		string $error = null,
-		string $code = null
+		?string $error = null,
+		?string $code = null
 	) {
 		$this->assertNotNull( $result );
 

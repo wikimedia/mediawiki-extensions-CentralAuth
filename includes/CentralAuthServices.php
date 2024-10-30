@@ -44,7 +44,7 @@ class CentralAuthServices {
 	 * @return CentralAuthAntiSpoofManager
 	 * @since 1.41
 	 */
-	public static function getAntiSpoofManager( ContainerInterface $services = null ): CentralAuthAntiSpoofManager {
+	public static function getAntiSpoofManager( ?ContainerInterface $services = null ): CentralAuthAntiSpoofManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthAntiSpoofManager' );
 	}
@@ -56,13 +56,13 @@ class CentralAuthServices {
 	 * @return CentralAuthDatabaseManager
 	 * @since 1.37
 	 */
-	public static function getDatabaseManager( ContainerInterface $services = null ): CentralAuthDatabaseManager {
+	public static function getDatabaseManager( ?ContainerInterface $services = null ): CentralAuthDatabaseManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthDatabaseManager' );
 	}
 
 	public static function getEditCounter(
-		ContainerInterface $services = null
+		?ContainerInterface $services = null
 	): CentralAuthEditCounter {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthEditCounter' );
@@ -75,7 +75,7 @@ class CentralAuthServices {
 	 * @return CentralAuthForcedLocalCreationService
 	 */
 	public static function getForcedLocalCreationService(
-		ContainerInterface $services = null
+		?ContainerInterface $services = null
 	): CentralAuthForcedLocalCreationService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthForcedLocalCreationService' );
@@ -87,7 +87,7 @@ class CentralAuthServices {
 	 *
 	 * @return CentralAuthSessionManager
 	 */
-	public static function getSessionManager( ContainerInterface $services = null ): CentralAuthSessionManager {
+	public static function getSessionManager( ?ContainerInterface $services = null ): CentralAuthSessionManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthSessionManager' );
 	}
@@ -98,7 +98,7 @@ class CentralAuthServices {
 	 *
 	 * @return CentralAuthTokenManager
 	 */
-	public static function getTokenManager( ContainerInterface $services = null ): CentralAuthTokenManager {
+	public static function getTokenManager( ?ContainerInterface $services = null ): CentralAuthTokenManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthTokenManager' );
 	}
@@ -109,7 +109,7 @@ class CentralAuthServices {
 	 *
 	 * @return CentralAuthUIService
 	 */
-	public static function getUIService( ContainerInterface $services = null ): CentralAuthUIService {
+	public static function getUIService( ?ContainerInterface $services = null ): CentralAuthUIService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthUIService' );
 	}
@@ -119,7 +119,7 @@ class CentralAuthServices {
 	 * MediaWikiServices::getInstance() will be used instead.
 	 * @return CentralAuthUtilityService
 	 */
-	public static function getUtilityService( ContainerInterface $services = null ): CentralAuthUtilityService {
+	public static function getUtilityService( ?ContainerInterface $services = null ): CentralAuthUtilityService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthUtilityService' );
 	}
@@ -130,12 +130,12 @@ class CentralAuthServices {
 	 * @return CentralAuthWikiListService
 	 * @since 1.37
 	 */
-	public static function getWikiListService( ContainerInterface $services = null ): CentralAuthWikiListService {
+	public static function getWikiListService( ?ContainerInterface $services = null ): CentralAuthWikiListService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.CentralAuthWikiListService' );
 	}
 
-	public static function getGlobalGroupLookup( ContainerInterface $services = null ): GlobalGroupLookup {
+	public static function getGlobalGroupLookup( ?ContainerInterface $services = null ): GlobalGroupLookup {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalGroupLookup' );
 	}
@@ -146,7 +146,7 @@ class CentralAuthServices {
 	 * @return GlobalRenameFactory
 	 */
 	public static function getGlobalRenameFactory(
-		ContainerInterface $services = null
+		?ContainerInterface $services = null
 	): GlobalRenameFactory {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalRenameFactory' );
@@ -158,7 +158,7 @@ class CentralAuthServices {
 	 * @return GlobalRenameRequestStore
 	 */
 	public static function getGlobalRenameRequestStore(
-		ContainerInterface $services = null
+		?ContainerInterface $services = null
 	): GlobalRenameRequestStore {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalRenameRequestStore' );
@@ -170,7 +170,7 @@ class CentralAuthServices {
 	 * @return GlobalUserSelectQueryBuilderFactory
 	 */
 	public static function getGlobalUserSelectQueryBuilderFactory(
-		ContainerInterface $services = null
+		?ContainerInterface $services = null
 	): GlobalUserSelectQueryBuilderFactory {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalUserSelectQueryBuilderFactory' );
