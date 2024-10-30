@@ -42,8 +42,8 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	protected function assertSessionInfoError(
 		WebRequest $request,
 		?SessionInfo $result,
-		string $error = null,
-		string $code = null
+		?string $error = null,
+		?string $code = null
 	) {
 		parent::assertSessionInfoError( $request, $result, $error, $code );
 		$this->assertErrorFromApiBeforeMain( $request, $error );

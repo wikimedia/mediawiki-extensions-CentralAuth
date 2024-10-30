@@ -56,7 +56,7 @@ class CentralAuthForcedLocalCreationService {
 	 */
 	public function attemptAutoCreateLocalUserFromName(
 		string $username,
-		Authority $performer = null,
+		?Authority $performer = null,
 		$reason = null
 	): Status {
 		$user = $this->userFactory->newFromName( $username );

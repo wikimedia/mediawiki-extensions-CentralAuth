@@ -106,7 +106,7 @@ class SpecialWikiSets extends SpecialPage {
 	/**
 	 * @param string|null $msg Output directly as HTML. Caller must escape.
 	 */
-	private function buildMainView( string $msg = null ) {
+	private function buildMainView( ?string $msg = null ) {
 		// Give grep a chance to find the usages: centralauth-editset-legend-rw,
 		// centralauth-editset-legend-ro
 		$msgPostfix = $this->mCanEdit ? 'rw' : 'ro';

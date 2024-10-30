@@ -87,7 +87,7 @@ class SsoHookHandler implements
 		UrlUtils $urlUtils,
 		FilteredRequestTracker $filteredRequestTracker,
 		SharedDomainUtils $sharedDomainUtils,
-		MobileContext $mobileContext = null
+		?MobileContext $mobileContext = null
 	) {
 		$this->urlUtils = $urlUtils;
 		$this->filteredRequestTracker = $filteredRequestTracker;

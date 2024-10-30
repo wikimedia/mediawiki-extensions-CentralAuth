@@ -22,7 +22,7 @@ class CentralAuthTokenManager {
 	 */
 	public function __construct(
 		BagOStuff $tokenStore,
-		LoggerInterface $logger = null
+		?LoggerInterface $logger = null
 	) {
 		$this->tokenStore = $tokenStore;
 		$this->logger = $logger ?? new NullLogger();
