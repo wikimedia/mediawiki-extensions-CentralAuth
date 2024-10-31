@@ -690,7 +690,7 @@
 		"AuthManagerFilterProviders": [ "default", "sso" ],
 		"AuthManagerVerifyAuthentication": "sso",
 		"AuthPreserveQueryParams": "loginredirect",
-		"BeforePageDisplay": "pagedisplay",
+		"BeforePageDisplay": [ "pagedisplay", "sso" ],
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
 		"GetLocalURL": "sso",

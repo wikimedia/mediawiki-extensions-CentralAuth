@@ -6,14 +6,21 @@ use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\UsernameAuthenticationRequest;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Site\HashSiteStore;
+use MediaWiki\Site\MediaWikiSite;
+use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
+use MWExceptionRenderer;
+use PermissionsError;
 use Psr\Log\LogLevel;
 use StatusValue;
 use TestLogger;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group Database
@@ -132,6 +139,49 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 			'Providers were filtered but redirecting provider was not the primary' );
 	}
 
+	/** @dataProvider provideOnBeforePageDisplay */
+	public function testOnBeforePageDisplay( $isSul3SharedDomain, $shouldLoadSiteModule ) {
+		$exceptionRenderer = TestingAccessWrapper::newFromClass( MWExceptionRenderer::class );
+		// Need to set a title to make MWExceptionRenderer::reportHTML() use OutputPage
+		RequestContext::getMain()->setTitle( $this->getServiceContainer()->getTitleFactory()->newFromText( 'Test' ) );
+		// The test doesn't involve authentication but OutputPage calls the skin, the skin calls
+		// AuthManager::canCreateAccounts() which loads providers, and SsoHookHandler::onAuthManagerFilterProviders()
+		// will error if it does not see CentralAuthSsoPreAuthenticationProvider, which it wouldn't because
+		// by default integration tests use a minimal provider configuration.
+		$oldConfig = $this->getServiceContainer()->getMainConfig()->get( MainConfigNames::AuthManagerAutoConfig );
+		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, [
+			'preauth' => [
+				'CentralAuthSsoPreAuthenticationProvider'
+					=> $oldConfig['preauth']['CentralAuthSsoPreAuthenticationProvider'],
+			],
+			'primaryauth' => [],
+			'secondaryauth' => [],
+		] );
+		$this->mockWikiMap();
+		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
+			'shared' => $isSul3SharedDomain,
+			'sul3' => $isSul3SharedDomain,
+		] ) );
+
+		$error = new PermissionsError( 'read' );
+		ob_start();
+		$exceptionRenderer->reportHTML( $error );
+		ob_get_clean();
+		static::assertThat( RequestContext::getMain()->getOutput()->getModules( true ),
+			$shouldLoadSiteModule
+				? static::containsIdentical( 'site' )
+				: static::logicalNot( static::containsIdentical( 'site' ) )
+		);
+	}
+
+	public function provideOnBeforePageDisplay() {
+		return [
+			// isSul3SharedDomain, shouldLoadSiteModule
+			[ false, true ],
+			[ true, false ],
+		];
+	}
+
 	private function getSharedDomainUtils( array $config ): SharedDomainUtils {
 		$isSharedDomain = $config['shared'];
 		$isSul3Enabled = $config['sul3'];
@@ -175,6 +225,18 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 		}
 		$this->fail( "Expected log message '$expectedLogMessage' not found in '$channel' logs; actual:\n"
 			. print_r( $logs, true ) );
+	}
+
+	/**
+	 * SsoHookHandler::onGetLocalURL() uses WikiMap which by default isn't test-friendly.
+	 * Set up a mock which doesn't return null for the current wiki.
+	 * @return void
+	 */
+	private function mockWikiMap() {
+		$currentSite = new MediaWikiSite();
+		$currentSite->setGlobalId( WikiMap::getCurrentWikiId() );
+		$currentSite->setPath( MediaWikiSite::PATH_PAGE, 'https://example.com/wiki/$1' );
+		$this->setService( 'SiteLookup', new HashSiteStore( [ $currentSite ] ) );
 	}
 
 }
