@@ -1,7 +1,6 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
 			"Beginneruser",
 			"Ebraminio",
 			"FarsiNevis",
@@ -9,7 +8,8 @@
 			"Ladsgroup",
 			"Mehran",
 			"Mjbmr",
-			"Reza1615"
+			"Reza1615",
+			"Ebrahim"
 		]
 	},
 	"apierror-centralauth-badtoken": "بلیط ورود سراسری معتبر نیست.",

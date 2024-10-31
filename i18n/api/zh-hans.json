@@ -10,7 +10,8 @@
 			"Shizhao",
 			"SunAfterRain",
 			"Tranve",
-			"LittlePaw365"
+			"LittlePaw365",
+			"沈澄心"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
@@ -21,6 +22,7 @@
 	"apierror-centralauth-notloggedin": "匿名用户不能获得centralauthtoken。",
 	"apierror-centralauth-renameinprogress": "用户已被重命名，不能使用。",
 	"apihelp-centralauthtoken-example-1": "取得一个centralauthtoken",
+	"apihelp-centralauthtoken-extended-description": "返回可用于验证其他wiki上的API请求的令牌。对于操作API请求，请将其放入<var>centralauthtoken</var>GET参数中。对于REST API请求，请添加<code>Authorization: CentralAuthToken {token}</code>标头。在MediaWiki前端逻辑中，您可以使用<code>mediawiki.ForeignApi</code>ResourceLoader模块。",
 	"apihelp-centralauthtoken-summary": "取得centralauthtoken用于已认证的一个附加到wiki的请求。",
 	"apihelp-createlocalaccount-example-1": "强行为[[User:Example]]创建本地账号。",
 	"apihelp-createlocalaccount-param-reason": "创建本地账号的原因。",
