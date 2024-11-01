@@ -363,7 +363,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	public function testViewForExistingGlobalTemporaryAccount() {
-		$this->markTestSkipped( 'T377197' );
 		ConvertibleTimestamp::setFakeTime( '20240505050505' );
 		$this->enableAutoCreateTempUser( [ 'expireAfterDays' => 2 ] );
 		// Create a test CentralAuth user which is a temporary account username
