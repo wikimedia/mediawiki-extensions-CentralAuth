@@ -26,7 +26,6 @@ use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
-use MediaWiki\Extension\CentralAuth\Maintenance\BackfillLocalAccounts;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
@@ -92,6 +91,8 @@ class CentralAuthHooks implements
 	UserSetEmailAuthenticationTimestampHook,
 	UserSetEmailHook
 {
+
+	public const BACKFILL_ACCOUNT_CREATOR = "MediaWikiAccountBackfiller";
 
 	private Config $config;
 	private UserNameUtils $userNameUtils;
@@ -624,7 +625,7 @@ class CentralAuthHooks implements
 	 */
 	public function onUserGetReservedNames( &$reservedUsernames ) {
 		$reservedUsernames[] = 'Global rename script';
-		$reservedUsernames[] = BackfillLocalAccounts::ACCOUNT_CREATOR;
+		$reservedUsernames[] = self::BACKFILL_ACCOUNT_CREATOR;
 	}
 
 	/**

@@ -33,6 +33,7 @@ use ExtensionRegistry;
 use Maintenance;
 use MediaWiki\CheckUser\Services\AccountCreationDetailsLookup;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Status\Status;
@@ -58,7 +59,6 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  * Errors will be shown if a missing account cannot be created.
  */
 class BackfillLocalAccounts extends Maintenance {
-	public const ACCOUNT_CREATOR = "MediaWikiAccountBackfiller";
 	private const DEFAULT_USER_AGENT = '';
 	private const DEFAULT_IP = "127.0.0.1";
 
@@ -317,9 +317,11 @@ class BackfillLocalAccounts extends Maintenance {
 		$date = new ConvertibleTimestamp( strtotime( $this->getOption( 'startdate' ) ) );
 		$this->startdate = $date->getTimestamp( TS_MW );
 
-		$this->performer = User::newSystemUser( self::ACCOUNT_CREATOR, [ 'steal' => true ] );
+		$this->performer = User::newSystemUser( CentralAuthHooks::BACKFILL_ACCOUNT_CREATOR, [ 'steal' => true ] );
 		if ( !$this->performer ) {
-			$this->fatalError( "ERROR - unable to get/create system user " . self::ACCOUNT_CREATOR );
+			$this->fatalError(
+				"ERROR - unable to get/create system user " . CentralAuthHooks::BACKFILL_ACCOUNT_CREATOR
+			);
 		}
 
 		$cadb = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
