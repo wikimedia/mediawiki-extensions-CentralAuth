@@ -2,8 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Volvox",
-			"Amire80"
+			"Volvox"
 		]
 	},
 	"apierror-centralauth-badusername": "De Benotzernumm \"$1\" kann op dëser Wiki net benotzt ginn",

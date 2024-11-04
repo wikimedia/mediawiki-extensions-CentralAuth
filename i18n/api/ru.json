@@ -10,7 +10,8 @@
 			"Okras",
 			"Stjn",
 			"Vlad5250",
-			"Ядерный Трамвай"
+			"Ядерный Трамвай",
+			"Dirruw'o"
 		]
 	},
 	"apierror-centralauth-badsession": "Токен можно получить только при использовании сессий CentralAuth.",

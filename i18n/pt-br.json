@@ -38,7 +38,9 @@
 			555,
 			"Gito da Ana",
 			"Mello25",
-			"Re demz"
+			"Re demz",
+			"Stephanyb76",
+			"VasbXBR"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do usuário",
@@ -321,7 +323,6 @@
 	"centralauth-merge-method-password-desc": "Indica que a conta local foi unificada porque o usuário especificou uma senha válida para isso.",
 	"centralauth-merge-method-primary": "wiki local",
 	"centralauth-merge-method-primary-desc": "Este é o wiki a partir do qual a conta foi unificada inicialmente.\nNote que pode ser diferente do wiki local do usuário.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "Nenhuma conta correspondente ao seu nome foi encontrada na tabela central de rastreio de contas!\nTalvez o banco de dados esteja corrompido.",
 	"centralauth-merge-notlogged": "<span class=\"plainlinks\">[$1 Autentique-se]</span> para verificar se as suas contas foram unificadas corretamente.",
 	"centralauth-merge-step1-detail": "Insira a senha de sua conta.\nSua senha e endereço de e-mail registrado serão comparados com os de contas de outras wikis, para confirmar se coincidem.\nNão serão feitas alterações até que se confirme estar tudo correto.",

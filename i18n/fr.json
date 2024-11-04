@@ -59,7 +59,18 @@
 			"Wyz",
 			"Yasten",
 			"Alien333",
-			"Jeeputer"
+			"Jeeputer",
+			"Daniel236",
+			"Funkytoast",
+			"Goombiis",
+			"Iketsi",
+			"Jules*",
+			"LD",
+			"Mahabarata",
+			"Méthodes Bulebe Hangi",
+			"SleaY",
+			"Terio legale",
+			"U.T."
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur",
@@ -342,7 +353,6 @@
 	"centralauth-merge-method-password-desc": "Indique que le compte local a été fusionné parce que l’utilisateur a fourni le bon mot de passe pour ce compte.",
 	"centralauth-merge-method-primary": "wiki principal",
 	"centralauth-merge-method-primary-desc": "Ceci est le wiki où le compte a été initialement fusionné.\nNotez qu’il peut être différent du wiki principal de cet utilisateur.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "Aucun compte correspondant à votre nom n’a été trouvé dans la table centrale de suivi des comptes !\nLa base de donnée peut être corrompue.",
 	"centralauth-merge-notlogged": "Veuillez <span class=\"plainlinks\">[$1 vous connecter]</span> pour vérifier si vos comptes ont été complètement fusionnés.",
 	"centralauth-merge-step1-detail": "Veuillez entrer ici le mot de passe de votre compte.\nVotre mot de passe et votre adresse courriel enregistrée vont être comparés avec ceux des comptes homonymes sur les autres wikis pour vérifier qu’ils correspondent.\nAucun changement ne sera effectué tant que vous n’aurez pas donné votre accord et confirmé que tout se passe bien sur ces comptes.",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Minh Nguyen"
+			"Minh Nguyen",
+			"Nguyenphutrong2"
 		]
 	},
 	"apihelp-centralauthtoken-example-1": "Lấy một centralauthtoken",

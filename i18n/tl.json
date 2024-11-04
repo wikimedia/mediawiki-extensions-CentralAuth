@@ -196,7 +196,6 @@
 	"centralauth-merge-method-password-desc": "Nagpapahiwatig na ang katutubong account ay isinanib dahil tumukoy ang tagagamit ng isang tanggap na password para rito.",
 	"centralauth-merge-method-primary": "tahanang wiki",
 	"centralauth-merge-method-primary-desc": "Ito ang wiki kung saan unang isinanib ang account.\nTandaan na maaaring kaiba ito mula sa totoong tahanang wiki ng tagagamit na iyan.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "Walang mga account ang natagpuan sa sentral na account tracking table na tumutugma sa iyong pangalan!\nMaaring nasira ang database.",
 	"centralauth-merge-notlogged": "Mangyaring <span class=\"plainlinks\">[$1 maglogin]</span> upang masuri kung ang mga account mo ay buo ang naging pagsasanib.",
 	"centralauth-merge-step1-detail": "Pakipasok dito ang password ng iyong account.\nSusuriin ang iyong password at nakatalang email address sa pamamagitan ng paghahambing sa mga account na nasa iba pang mga wiki upang mapatunayang nagtutugma sila.\nWalang mga pagbabagong gagawin hangga't hindi ka pa nagbibigay ng kasagutan na sa tingin mo ay maayos naman ang lahat.",

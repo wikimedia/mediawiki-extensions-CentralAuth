@@ -327,7 +327,6 @@
 	"centralauth-merge-method-password-desc": "利用者が有効なパスワードを入力したため、ローカルアカウントが統合されたことを示しています。",
 	"centralauth-merge-method-primary": "ホームウィキ",
 	"centralauth-merge-method-primary-desc": "これはアカウントが最初に統合されたウィキです。\nアカウント保有者の実際のホームウィキとは異なる可能性があります。",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "アカウント中央管理システムのデータベースで、あなたの利用者名と一致するアカウントが見つかりませんでした!\nデータベースが破損しています。",
 	"centralauth-merge-notlogged": "アカウントが完全に統合されたかどうか、<span class=\"plainlinks\">[$1 ログイン]</span>して確認してください。",
 	"centralauth-merge-step1-detail": "あなたのアカウントのパスワードを入力してください。\nパスワードと登録済みのメールアドレスが他のウィキのものと一致するか確認します。\n確認が済むまでは、いかなる変更も実行されません。",

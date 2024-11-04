@@ -51,7 +51,6 @@
 	"action-centralauth-suppress": "통합 계정을 숨길",
 	"action-centralauth-rename": "전역 계정 이름 바꾸기",
 	"action-centralauth-unmerge": "통합 계정 분리하기",
-	"action-globalgroupmembership": "전역 그룹으로의 멤버십 편집",
 	"action-globalgrouppermissions": "전역 권한 그룹 관리",
 	"centralauth": "통합 계정 관리",
 	"centralauth-abortlogin-renamed": "당신의 계정 이름은 \"$1\"(으)로 바뀌었습니다. 해당 사용자 이름을 대신 사용해주시기 바랍니다.",
