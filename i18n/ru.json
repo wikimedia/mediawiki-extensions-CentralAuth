@@ -495,6 +495,7 @@
 	"logentry-gblrename-merge": "$1 глобально {{GENDER:$2|объединён|объединена}} с $4 в $5",
 	"logentry-gblrename-promote": "$1 глобально переименовал{{GENDER:$2||а}} $4 в $5",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2}} глобально переименовал $4 в $5",
+	"logentry-globalauth-delete": "$1 {{GENDER:$2|удалил|удалила}} глобальную учётную запись «$3»",
 	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|изменил|изменила}} статус глобальной учётной записи «$3»: установлен статус $4; снят статус $5",
 	"mergeaccount": "Состояние объединения учётных записей",
 	"multilock": "Массово отключить учётные записи",
