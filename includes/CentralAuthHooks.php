@@ -143,6 +143,11 @@ class CentralAuthHooks implements
 		if ( $wgCentralIdLookupProvider === 'local' ) {
 			$wgCentralIdLookupProvider = 'CentralAuth';
 		}
+
+		// The prefix for the constant is the numbers 6765, which are the ASCII codes for "C" and "A" to stand
+		// for CentralAuth. This method is used here, like in the FlaggedRevs extension, to ensure that the
+		// constant is not used by any other APCOND.
+		define( 'APCOND_CA_INGLOBALGROUPS', 67651 );
 	}
 
 	/**
