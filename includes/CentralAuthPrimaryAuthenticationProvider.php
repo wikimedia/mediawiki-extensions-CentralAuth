@@ -21,6 +21,8 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use CentralAuthSessionProvider;
+use CentralAuthTokenSessionProvider;
 use LogicException;
 use MediaWiki\Auth\AbstractPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
@@ -419,13 +421,9 @@ class CentralAuthPrimaryAuthenticationProvider
 			return $status;
 		}
 
-		$centralAuthPrimaryProviderIds = [ $this->getUniqueId(),
-			CentralAuthRedirectingPrimaryAuthenticationProvider::class ];
-		if ( !in_array( $autocreate, $centralAuthPrimaryProviderIds, true ) ) {
+		if ( !$this->isAutoCreatedByCentralAuth( $user, $autocreate ) ) {
 			// Prevent creation if the user exists centrally
-			if ( $centralUser->exists() &&
-				$autocreate !== AuthManager::AUTOCREATE_SOURCE_SESSION
-			) {
+			if ( $centralUser->exists() ) {
 				$status->fatal( 'centralauth-account-exists' );
 				return $status;
 			}
@@ -537,8 +535,6 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	public function autoCreatedAccount( $user, $source ) {
-		$centralAuthPrimaryProviderIds = [ $this->getUniqueId(),
-			CentralAuthRedirectingPrimaryAuthenticationProvider::class ];
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( !$centralUser->exists() ) {
 			// For named accounts, this is a bug. beginPrimaryAccountCreation() should have created
@@ -553,7 +549,7 @@ class CentralAuthPrimaryAuthenticationProvider
 					]
 				);
 			}
-		} elseif ( !in_array( $source, $centralAuthPrimaryProviderIds, true )
+		} elseif ( !$this->isAutoCreatedByCentralAuth( $user, $source )
 			&& $centralUser->listUnattached()
 		) {
 			$this->logger->warning(
@@ -577,6 +573,33 @@ class CentralAuthPrimaryAuthenticationProvider
 				$user->setEmail( $centralUser->getEmail() );
 				$user->mEmailAuthenticated = $centralUser->getEmailAuthenticationTimestamp();
 			}
+		}
+	}
+
+	/**
+	 * @param User $user
+	 * @param string $source Autocreation source - the $autocreate parameter passed to
+	 *   testUserForCreation(), or the $source parameter passed to autoCreatedAccount().
+	 * @return bool
+	 */
+	private function isAutoCreatedByCentralAuth( User $user, string $source ): bool {
+		if ( $source === AuthManager::AUTOCREATE_SOURCE_SESSION ) {
+			// True if the autocreating session provider belongs to CentralAuth.
+			// There isn't a clean way to obtain the session, but since we are autocreating
+			// from the session, $user should be the session user.
+			$sessionProvider = $user->getRequest()->getSession()->getProvider();
+			return $sessionProvider instanceof CentralAuthSessionProvider
+				|| $sessionProvider instanceof CentralAuthTokenSessionProvider;
+		} elseif ( $source ) {
+			// True if the autocreating authentication provider belongs to CentralAuth.
+			$centralAuthPrimaryProviderIds = [
+				$this->getUniqueId(),
+				CentralAuthRedirectingPrimaryAuthenticationProvider::class,
+			];
+			return in_array( $source, $centralAuthPrimaryProviderIds, true );
+		} else {
+			// Not an autocreation at all.
+			return false;
 		}
 	}
 }
