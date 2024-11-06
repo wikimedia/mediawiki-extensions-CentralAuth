@@ -29,10 +29,6 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	public function setUp(): void {
 		parent::setUp();
 
-		if ( !defined( 'MW_API' ) ) {
-			define( 'MW_API', 'TEST' );
-		}
-
 		$this->hookContainer = $this->createHookContainer();
 	}
 

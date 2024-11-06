@@ -142,8 +142,6 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideOnBeforePageDisplay */
 	public function testOnBeforePageDisplay( $isSul3SharedDomain, $shouldLoadSiteModule ) {
-		// FIXME
-		$this->markTestSkipped( 'T378881' );
 		$exceptionRenderer = TestingAccessWrapper::newFromClass( MWExceptionRenderer::class );
 		// Need to set a title to make MWExceptionRenderer::reportHTML() use OutputPage
 		RequestContext::getMain()->setTitle( $this->getServiceContainer()->getTitleFactory()->newFromText( 'Test' ) );
