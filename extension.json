@@ -693,7 +693,7 @@
 		"AuthManagerFilterProviders": [ "default", "sso" ],
 		"AuthManagerVerifyAuthentication": "sso",
 		"AuthPreserveQueryParams": "loginredirect",
-		"AutopromoteConditionHook": "autopromotecondition",
+		"AutopromoteCondition": "autopromotecondition",
 		"BeforePageDisplay": [ "pagedisplay", "sso" ],
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
