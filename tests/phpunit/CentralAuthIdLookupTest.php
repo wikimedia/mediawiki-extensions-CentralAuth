@@ -32,7 +32,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 	/**
 	 * Setup a fresh set of global users for each test.
 	 * Note: MediaWikiIntegrationTestCase::resetDB() will delete all tables between
-	 * test runs, so no explicite tearDown() is needed.
+	 * test runs, so no explicit tearDown() is needed.
 	 */
 	protected function setUp(): void {
 		parent::setUp();

@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handle
 
 use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationResponse;
-use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\UsernameAuthenticationRequest;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
@@ -36,14 +36,18 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 		// remove TestSetup override
 		// FIXME once SharedDomainHookHandler::DISALLOWED_LOCAL_PROVIDERS is configurable, reconfigure it
 		//   to match TestSetup config
-		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, null );
+		$this->overrideConfigValues( [
+			MainConfigNames::AuthManagerConfig => null,
+			CAMainConfigNames::CentralAuthStrict => true,
+		] );
+
 		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
 			'shared' => $isSharedDomain,
 			'sul3' => $isSul3Enabled,
 		] ) );
 		$authManager = $this->getServiceContainer()->getAuthManager();
 		static::assertThat(
-			$authManager->getAuthenticationProvider( TemporaryPasswordPrimaryAuthenticationProvider::class ),
+			$authManager->getAuthenticationProvider( LocalPasswordPrimaryAuthenticationProvider::class ),
 			$expectOathProvider ? static::logicalNot( static::isNull() ) : static::isNull()
 		);
 	}
