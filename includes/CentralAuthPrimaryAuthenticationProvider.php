@@ -541,12 +541,18 @@ class CentralAuthPrimaryAuthenticationProvider
 			CentralAuthRedirectingPrimaryAuthenticationProvider::class ];
 		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( !$centralUser->exists() ) {
-			$this->logger->warning(
-				'Not centralizing auto-created user {username}, central account doesn\'t exist',
-				[
-					'user' => $user->getName(),
-				]
-			);
+			// For named accounts, this is a bug. beginPrimaryAccountCreation() should have created
+			// the central account.
+			// For temp accounts, it is normal. The central account gets created by
+			// UserCreationHookHandler, but this method gets called first.
+			if ( $user->isNamed() ) {
+				$this->logger->warning(
+					'Not centralizing auto-created user {username}, central account doesn\'t exist',
+					[
+						'user' => $user->getName(),
+					]
+				);
+			}
 		} elseif ( !in_array( $source, $centralAuthPrimaryProviderIds, true )
 			&& $centralUser->listUnattached()
 		) {
