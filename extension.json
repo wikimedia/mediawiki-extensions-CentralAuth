@@ -410,7 +410,8 @@
 		"CentralAuthHeaderSessionProvider": "includes/session/CentralAuthHeaderSessionProvider.php",
 		"CentralAuthTokenSessionProvider": "includes/session/CentralAuthTokenSessionProvider.php",
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\BackfillLocalAccounts": "maintenance/backfillLocalAccounts.php",
-		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\MigrateGuSalt": "maintenance/migrateGuSalt.php"
+		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\MigrateGuSalt": "maintenance/migrateGuSalt.php",
+		"MWCU": "includes/MWCU.php"
 	},
 	"TestAutoloadClasses": {
 		"CentralAuthTestUser": "tests/phpunit/CentralAuthTestUser.php",
