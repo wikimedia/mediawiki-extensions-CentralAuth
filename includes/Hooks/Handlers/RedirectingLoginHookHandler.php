@@ -29,6 +29,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PostLoginRedirectHook;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
 
 /**
@@ -76,7 +77,15 @@ class RedirectingLoginHookHandler implements
 				CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
 			);
 		}
-		if ( !$token || !$inputData ) {
+		if ( !$inputData ) {
+			LoggerFactory::getInstance( 'authevents' )
+				->warning( 'Authentication request with bad token', [
+					'event' => ( $type === 'signup' ) ? 'accountcreation' : 'login',
+					'successful' => false,
+					'extension' => 'CentralAuth',
+					'accountType' => $context->getUser()->isNamed() ? 'named' : 'temp',
+					'status' => 'badtoken'
+				] );
 			throw new ErrorPageError( 'centralauth-error-badtoken', 'centralauth-error-badtoken' );
 		}
 		$returnUrl = $inputData['returnUrl'];
