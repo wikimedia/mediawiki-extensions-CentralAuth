@@ -25,6 +25,7 @@ use MediaWiki\Api\Hook\ApiQueryTokensRegisterTypesHook;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -293,7 +294,7 @@ class CentralAuthHooks implements
 	 * @inheritDoc
 	 */
 	public function onAuthManagerFilterProviders( array &$providers ): void {
-		if ( $this->config->get( 'CentralAuthStrict' ) ) {
+		if ( $this->config->get( CAMainConfigNames::CentralAuthStrict ) ) {
 			unset( $providers['primaryauth'][TemporaryPasswordPrimaryAuthenticationProvider::class] );
 		}
 	}
@@ -475,7 +476,7 @@ class CentralAuthHooks implements
 		// checking rights not just for registered users but also for
 		// anon (local) users based on name only will allow autocreation of
 		// local account based on global rights, see T316303
-		$anonUserOK = $this->config->get( 'CentralAuthStrict' );
+		$anonUserOK = $this->config->get( CAMainConfigNames::CentralAuthStrict );
 		if ( $this->userNameUtils->getCanonical( $user->getName() ) !== false ) {
 			$centralUser = CentralAuthUser::getInstance( $user );
 

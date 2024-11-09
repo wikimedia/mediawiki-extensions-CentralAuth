@@ -23,6 +23,7 @@ use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Parser\Sanitizer;
@@ -810,7 +811,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$html =
 			Html::element(
 				'img', [
-					'src' => $this->getConfig()->get( 'ExtensionAssetsPath' )
+					'src' => $this->getConfig()->get( MainConfigNames::ExtensionAssetsPath )
 						. "/CentralAuth/images/icons/merged-{$method}.png",
 					'alt' => $brief,
 					'title' => $brief,

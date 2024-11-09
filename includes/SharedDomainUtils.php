@@ -3,7 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
@@ -45,12 +47,14 @@ class SharedDomainUtils {
 	 */
 	public function isSharedDomain(): bool {
 		if ( $this->isSharedDomain === null ) {
-			$centralAuthSsoUrlPrefix = $this->config->get( 'CentralAuthSsoUrlPrefix' );
+			$centralAuthSsoUrlPrefix = $this->config->get( CAMainConfigNames::CentralAuthSsoUrlPrefix );
 			if ( !$centralAuthSsoUrlPrefix ) {
 				$this->isSharedDomain = false;
 			} else {
 				$sharedDomain = parse_url( $centralAuthSsoUrlPrefix, PHP_URL_HOST );
-				$currentDomain = parse_url( $this->config->get( 'CanonicalServer' ), PHP_URL_HOST );
+				$currentDomain = parse_url(
+					$this->config->get( MainConfigNames::CanonicalServer ), PHP_URL_HOST
+				);
 				$this->isSharedDomain = $sharedDomain && $currentDomain === $sharedDomain;
 			}
 		}
@@ -74,7 +78,7 @@ class SharedDomainUtils {
 	 * @see SsoHookHandler
 	 */
 	public function shouldRestrictCurrentDomain(): bool {
-		return $this->isSharedDomain() && $this->config->get( 'CentralAuthRestrictSsoDomain' );
+		return $this->isSharedDomain() && $this->config->get( CAMainConfigNames::CentralAuthRestrictSsoDomain );
 	}
 
 	/**
@@ -96,7 +100,7 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
-		$sul3Config = $this->config->get( 'CentralAuthEnableSul3' );
+		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
 
 		if ( in_array( 'query-flag', $sul3Config, true )
 			&& $request->getCheck( 'usesul3' )
@@ -171,7 +175,7 @@ class SharedDomainUtils {
 				throw new RuntimeException( 'Unknown action: ' . $action );
 		}
 
-		$url = $this->config->get( 'CentralAuthSsoUrlPrefix' ) . $localUrl;
+		$url = $this->config->get( CAMainConfigNames::CentralAuthSsoUrlPrefix ) . $localUrl;
 
 		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
 			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );

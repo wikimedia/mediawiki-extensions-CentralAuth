@@ -22,6 +22,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use MailAddress;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
@@ -103,7 +104,8 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			->setReason( $data['reason'] ?? null )
 			->setType( GlobalRenameRequest::VANISH );
 
-		$automaticVanishPerformerName = $this->getConfig()->get( 'CentralAuthAutomaticVanishPerformer' );
+		$automaticVanishPerformerName = $this->getConfig()
+			->get( CAMainConfigNames::CentralAuthAutomaticVanishPerformer );
 		$automaticVanishPerformer = $automaticVanishPerformerName !== null
 			? CentralAuthUser::getInstanceByName( $automaticVanishPerformerName )
 			: null;
@@ -431,7 +433,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	private function getUserBlockAppealSitelinks( array $wikiIds ): array {
 		$sitelinks = [];
 
-		$entityIds = $this->getConfig()->get( 'CentralAuthBlockAppealWikidataIds' );
+		$entityIds = $this->getConfig()->get( CAMainConfigNames::CentralAuthBlockAppealWikidataIds );
 		if ( $entityIds !== null && count( $entityIds ) > 0 ) {
 			// Fetch block appeal and block policy pages from the Wikidata API.
 			$parameters = [
@@ -464,8 +466,8 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		// Fallback to showing a fallback URL (if configured) in the event that
 		// no appeal links were able to be found from the Wikidata API.
 		if ( count( $sitelinks ) === 0 ) {
-			$appealUrl = $this->getConfig()->get( 'CentralAuthFallbackAppealUrl' );
-			$appealTitle = $this->getConfig()->get( 'CentralAuthFallbackAppealTitle' );
+			$appealUrl = $this->getConfig()->get( CAMainConfigNames::CentralAuthFallbackAppealUrl );
+			$appealTitle = $this->getConfig()->get( CAMainConfigNames::CentralAuthFallbackAppealTitle );
 
 			if ( $appealUrl !== null && $appealTitle !== null ) {
 				$sitelinks[] = "[{$appealUrl} {$appealTitle}]";
@@ -486,7 +488,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 			'method' => 'GET',
 			'userAgent' => "{$this->httpRequestFactory->getUserAgent()} CentralAuth",
 		];
-		$url = $this->getConfig()->get( 'CentralAuthWikidataApiUrl' );
+		$url = $this->getConfig()->get( CAMainConfigNames::CentralAuthWikidataApiUrl );
 		if ( $url === null ) {
 			return Status::newFatal(
 				'Cannot make Wikidata request for entities as $wgCentralAuthWikidataApiUrl is unset.'

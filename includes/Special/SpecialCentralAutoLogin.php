@@ -9,6 +9,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
@@ -18,6 +19,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
@@ -153,7 +155,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	private function isUIReloadRecommended( User $user ) {
-		foreach ( $this->getConfig()->get( 'CentralAuthPrefsForUIReload' ) as $pref ) {
+		foreach ( $this->getConfig()->get( CAMainConfigNames::CentralAuthPrefsForUIReload ) as $pref ) {
 			if (
 				$this->userOptionsLookup->getOption( $user, $pref ) !==
 				$this->userOptionsLookup->getDefaultOption( $pref, $this->userFactory->newAnonymous() )
@@ -186,7 +188,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 
-		$this->loginWiki = $this->getConfig()->get( 'CentralAuthLoginWiki' );
+		$this->loginWiki = $this->getConfig()->get( CAMainConfigNames::CentralAuthLoginWiki );
 		if ( !$this->loginWiki ) {
 			// Ugh, no central wiki. If we're coming from an edge login, make
 			// the logged-into wiki the de-facto central wiki for this request
@@ -647,8 +649,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				// If we're returning to returnto, do that
 				if ( $request->getCheck( 'return' ) ) {
-					if ( $this->getConfig()->get( 'RedirectOnLogin' ) !== null ) {
-						$returnTo = $this->getConfig()->get( 'RedirectOnLogin' );
+					if ( $this->getConfig()->get( MainConfigNames::RedirectOnLogin ) !== null ) {
+						$returnTo = $this->getConfig()->get( MainConfigNames::RedirectOnLogin );
 						$returnToQuery = [];
 					} else {
 						$returnTo = $request->getVal( 'returnto', '' );
@@ -825,8 +827,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			header( 'Content-Type: image/png' );
 			header( "X-CentralAuth-Status: $status" );
 
-			if ( $ok && $this->getConfig()->get( 'CentralAuthLoginIcon' ) && $type === 'icon' ) {
-				readfile( $this->getConfig()->get( 'CentralAuthLoginIcon' ) );
+			if ( $ok && $this->getConfig()->get( CAMainConfigNames::CentralAuthLoginIcon ) && $type === 'icon' ) {
+				readfile( $this->getConfig()->get( CAMainConfigNames::CentralAuthLoginIcon ) );
 			} else {
 				readfile( __DIR__ . '/../../images/1x1.png' );
 			}

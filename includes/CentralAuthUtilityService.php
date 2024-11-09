@@ -23,6 +23,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
@@ -99,7 +100,7 @@ class CentralAuthUtilityService {
 			throw new RuntimeException( "Failed to create title for user page of $name" );
 		}
 
-		foreach ( $this->config->get( 'CentralAuthAutoCreateWikis' ) as $wiki ) {
+		foreach ( $this->config->get( CAMainConfigNames::CentralAuthAutoCreateWikis ) as $wiki ) {
 			if ( $wiki === $thisWiki ) {
 				continue;
 			}

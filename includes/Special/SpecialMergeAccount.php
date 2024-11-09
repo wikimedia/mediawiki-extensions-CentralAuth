@@ -6,6 +6,7 @@ use ErrorPageError;
 use Exception;
 use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -249,7 +250,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
+		if ( $this->getConfig()->get( CAMainConfigNames::CentralAuthDryRun ) ) {
 			$this->getOutput()->addHTML(
 				Html::successBox(
 					$this->msg( 'centralauth-notice-dryrun' )->parseAsBlock()
@@ -311,7 +312,7 @@ class SpecialMergeAccount extends SpecialPage {
 	private function doInitialMerge() {
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
-		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
+		if ( $this->getConfig()->get( CAMainConfigNames::CentralAuthDryRun ) ) {
 			$this->dryRunError();
 			return;
 		}
@@ -349,7 +350,7 @@ class SpecialMergeAccount extends SpecialPage {
 			throw new RuntimeException( "Can't cleanup merge if not already attached." );
 		}
 
-		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
+		if ( $this->getConfig()->get( CAMainConfigNames::CentralAuthDryRun ) ) {
 			$this->dryRunError();
 			return;
 		}
@@ -383,7 +384,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
+		if ( $this->getConfig()->get( CAMainConfigNames::CentralAuthDryRun ) ) {
 			$this->dryRunError();
 			return;
 		}
@@ -402,7 +403,7 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	private function showWelcomeForm() {
-		if ( $this->getConfig()->get( 'CentralAuthDryRun' ) ) {
+		if ( $this->getConfig()->get( CAMainConfigNames::CentralAuthDryRun ) ) {
 			$this->getOutput()->addHTML(
 				Html::successBox(
 					$this->msg( 'centralauth-notice-dryrun' )->parseAsBlock()

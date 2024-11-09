@@ -24,6 +24,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
@@ -46,7 +47,7 @@ class UserLogoutHookHandler implements
 	 * @return bool
 	 */
 	public function onUserLogout( $user ) {
-		if ( !$this->config->get( 'CentralAuthCookies' ) ) {
+		if ( !$this->config->get( CAMainConfigNames::CentralAuthCookies ) ) {
 			// Use local sessions only.
 			return true;
 		}
@@ -69,12 +70,12 @@ class UserLogoutHookHandler implements
 	 * @return bool
 	 */
 	public function onUserLogoutComplete( $user, &$inject_html, $oldName ) {
-		if ( !$this->config->get( 'CentralAuthCookies' ) ) {
+		if ( !$this->config->get( CAMainConfigNames::CentralAuthCookies ) ) {
 			return true;
 		}
 
 		$wikis = CentralAuthHooks::getAutoLoginWikis();
-		$loginWiki = $this->config->get( 'CentralAuthLoginWiki' );
+		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
 		if ( $loginWiki && $loginWiki !== WikiMap::getCurrentWikiId() ) {
 			$wikis[$loginWiki] = $loginWiki;
 		}

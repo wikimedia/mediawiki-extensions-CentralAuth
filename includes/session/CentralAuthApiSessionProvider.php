@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Api\ApiUsageException;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
 
@@ -29,7 +30,7 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 			return null;
 		}
 
-		$timeout = $this->getConfig()->get( 'CentralAuthTokenSessionTimeout' );
+		$timeout = $this->getConfig()->get( CAMainConfigNames::CentralAuthTokenSessionTimeout );
 
 		if ( $request->getMethod() === 'OPTIONS' ) {
 			// Do not delete the tokenized data on OPTIONS requests, as they are generated automatically

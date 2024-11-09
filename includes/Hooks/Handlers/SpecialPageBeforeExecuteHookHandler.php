@@ -6,6 +6,7 @@ use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
@@ -110,8 +111,8 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			// elevated-security reauthentication of already logged-in user
 			|| $request->getBool( 'force' )
 			|| $this->sharedDomainUtils->isSul3Enabled( $request )
-			|| !$this->config->get( 'CentralAuthLoginWiki' )
-			|| $this->config->get( 'CentralAuthLoginWiki' ) === WikiMap::getCurrentWikiId()
+			|| !$this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+			|| $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) === WikiMap::getCurrentWikiId()
 		) {
 			return true;
 		}
@@ -127,7 +128,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			 && !$request->getCheck( self::AUTOLOGIN_TRIED_QUERY_PARAM )
 		) {
 			$url = WikiMap::getForeignURL(
-				$this->config->get( 'CentralAuthLoginWiki' ),
+				$this->config->get( CAMainConfigNames::CentralAuthLoginWiki ),
 				'Special:CentralAutoLogin/checkLoggedIn'
 			);
 			if ( $url === false ) {

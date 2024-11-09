@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handlers;
 
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
@@ -17,7 +18,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValues( [
 			MainConfigNames::Server => '//sso.wikimedia.org',
 			MainConfigNames::CanonicalServer => 'https://sso.wikimedia.org',
-			'CentralAuthSsoUrlPrefix' => 'https://sso.wikimedia.org',
+			CAMainConfigNames::CentralAuthSsoUrlPrefix => 'https://sso.wikimedia.org',
 		] );
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
@@ -32,7 +33,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValues( [
 			MainConfigNames::Server => '//en.wikipedia.org',
 			MainConfigNames::CanonicalServer => 'https://en.wikipedia.org',
-			'CentralAuthSsoUrlPrefix' => 'https://sso.wikimedia.org',
+			CAMainConfigNames::CentralAuthSsoUrlPrefix => 'https://sso.wikimedia.org',
 		] );
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
@@ -96,7 +97,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 * @return void
 	 */
 	public function testIsSul3Enabled( $configFlag, $requestParams, $cookies, $expected ) {
-		$this->overrideConfigValue( 'CentralAuthEnableSul3', $configFlag );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, $configFlag );
 		$fauxRequest = new FauxRequest( $requestParams );
 		if ( $cookies ) {
 			$fauxRequest->setCookies( $cookies, '' );

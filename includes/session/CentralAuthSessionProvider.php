@@ -2,6 +2,7 @@
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Password\InvalidPassword;
@@ -91,16 +92,17 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		parent::postInitSetup();
 
 		$this->centralCookieOptions += [
-			'prefix' => $this->getConfig()->get( 'CentralAuthCookiePrefix' ),
-			'path' => $this->getConfig()->get( 'CentralAuthCookiePath' ),
-			'domain' => $this->getConfig()->get( 'CentralAuthCookieDomain' ),
-			'secure' => $this->getConfig()->get( 'CookieSecure' ) || $this->getConfig()->get( 'ForceHTTPS' ),
-			'httpOnly' => $this->getConfig()->get( 'CookieHttpOnly' ),
-			'sameSite' => $this->getConfig()->get( 'CookieSameSite' )
+			'prefix' => $this->getConfig()->get( CAMainConfigNames::CentralAuthCookiePrefix ),
+			'path' => $this->getConfig()->get( CAMainConfigNames::CentralAuthCookiePath ),
+			'domain' => $this->getConfig()->get( CAMainConfigNames::CentralAuthCookieDomain ),
+			'secure' => $this->getConfig()->get( MainConfigNames::CookieSecure ) ||
+				$this->getConfig()->get( MainConfigNames::ForceHTTPS ),
+			'httpOnly' => $this->getConfig()->get( MainConfigNames::CookieHttpOnly ),
+			'sameSite' => $this->getConfig()->get( MainConfigNames::CookieSameSite )
 		];
 
 		$params = [
-			'enable' => $this->getConfig()->get( 'CentralAuthCookies' ),
+			'enable' => $this->getConfig()->get( CAMainConfigNames::CentralAuthCookies ),
 			'centralSessionName' => $this->centralCookieOptions['prefix'] . 'Session',
 		];
 		$this->params += $params;

@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\MainConfigNames;
 
 /**
  * Handle knowledge of other wikis in this CentralAuth farm.
@@ -22,7 +23,7 @@ class CentralAuthWikiListService {
 
 	/** @internal Only public for ServiceWiring use */
 	public const CONSTRUCTOR_OPTIONS = [
-		'LocalDatabases',
+		MainConfigNames::LocalDatabases,
 	];
 
 	/**
@@ -44,7 +45,7 @@ class CentralAuthWikiListService {
 
 			$this->hookRunner->onCentralAuthWikiList( $list );
 
-			$this->wikiList = $list ?? $this->options->get( 'LocalDatabases' );
+			$this->wikiList = $list ?? $this->options->get( MainConfigNames::LocalDatabases );
 		}
 
 		return $this->wikiList;

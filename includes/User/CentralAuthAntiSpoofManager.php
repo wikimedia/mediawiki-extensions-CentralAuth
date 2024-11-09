@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
@@ -15,7 +16,7 @@ class CentralAuthAntiSpoofManager {
 
 	/** @internal Only public for service wiring use. */
 	public const CONSTRUCTOR_OPTIONS = [
-		'CentralAuthOldNameAntiSpoofWiki',
+		CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki,
 	];
 
 	private ServiceOptions $options;
@@ -135,7 +136,7 @@ class CentralAuthAntiSpoofManager {
 			// If nobody has set this variable, it will be false,
 			// which will mean the current wiki, which sounds like as
 			// good a default as we can get.
-			$this->options->get( 'CentralAuthOldNameAntiSpoofWiki' )
+			$this->options->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki )
 		);
 
 		$newNameOfUser = $dbrLogWiki->newSelectQueryBuilder()

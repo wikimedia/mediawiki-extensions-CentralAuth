@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\WikiMap\WikiMap;
 use ReadOnlyError;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
@@ -80,7 +81,7 @@ class CentralAuthDatabaseManager {
 	 * @return bool|string
 	 */
 	private function getCentralReadOnlyReason() {
-		$configReason = $this->options->get( 'CentralAuthReadOnly' );
+		$configReason = $this->options->get( CAMainConfigNames::CentralAuthReadOnly );
 		if ( $configReason === true ) {
 			return '(no reason given)';
 		} elseif ( $configReason ) {

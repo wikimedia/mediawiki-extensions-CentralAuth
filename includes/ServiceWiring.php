@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -122,7 +123,7 @@ return [
 			LoggerFactory::getInstance( 'CentralAuth' ),
 			$services->getHttpRequestFactory(),
 			$services->getWikiPageFactory(),
-			$config->get( 'GlobalRenameDenylist' )
+			$config->get( CAMainConfigNames::GlobalRenameDenylist )
 		);
 	},
 

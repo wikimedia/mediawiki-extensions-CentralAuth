@@ -6,6 +6,7 @@ use Liuggio\StatsdClient\Factory\StatsdDataFactoryInterface;
 use MediaWiki\Api\ApiMessage;
 use MediaWiki\Auth\AbstractPreAuthenticationProvider;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Logger\LoggerFactory;
@@ -44,7 +45,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 	/** @inheritDoc */
 	public function testForAccountCreation( $user, $creator, array $reqs ) {
 		// If feature flag is off, don't do any checks, let the user proceed.
-		if ( !$this->config->get( 'CentralAuthIpoidCheckAtAccountCreation' ) ) {
+		if ( !$this->config->get( CAMainConfigNames::CentralAuthIpoidCheckAtAccountCreation ) ) {
 			return StatusValue::newGood();
 		}
 
@@ -67,7 +68,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 			return StatusValue::newGood();
 		}
 
-		$shouldLogOnly = $this->config->get( 'CentralAuthIpoidCheckAtAccountCreationLogOnly' );
+		$shouldLogOnly = $this->config->get( CAMainConfigNames::CentralAuthIpoidCheckAtAccountCreationLogOnly );
 
 		if ( !isset( $data['risks'] ) || !$data['risks'] ) {
 			// 'risks' should always be set and populated, but if not set to 'UNKNOWN'.
@@ -79,8 +80,8 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 			$data['tunnels'] = [];
 		}
 
-		$risksToBlock = $this->config->get( 'CentralAuthIpoidDenyAccountCreationRiskTypes' );
-		$tunnelTypesToBlock = $this->config->get( 'CentralAuthIpoidDenyAccountCreationTunnelTypes' );
+		$risksToBlock = $this->config->get( CAMainConfigNames::CentralAuthIpoidDenyAccountCreationRiskTypes );
+		$tunnelTypesToBlock = $this->config->get( CAMainConfigNames::CentralAuthIpoidDenyAccountCreationTunnelTypes );
 
 		$risks = $data['risks'];
 		sort( $risks );
@@ -163,7 +164,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 			$this->cache::TTL_HOUR,
 			function () use ( $ip, $user, $fname ) {
 				// If ipoid URL isn't configured, don't do any checks, let the user proceed.
-				$baseUrl = $this->config->get( 'CentralAuthIpoidUrl' );
+				$baseUrl = $this->config->get( CAMainConfigNames::CentralAuthIpoidUrl );
 				if ( !$baseUrl ) {
 					$this->logger->warning(
 						'Configured to check IP reputation on signup, but no iPoid URL configured'
@@ -172,7 +173,7 @@ class CentralAuthIpReputationPreAuthenticationProvider extends AbstractPreAuthen
 					return false;
 				}
 
-				$timeout = $this->config->get( 'CentralAuthIpoidRequestTimeoutSeconds' );
+				$timeout = $this->config->get( CAMainConfigNames::CentralAuthIpoidRequestTimeoutSeconds );
 				// Convert IPv6 to lowercase, to match ipoid storage format.
 				$url = $baseUrl . '/feed/v1/ip/' . IPUtils::prettifyIP( $ip );
 				$request = $this->httpRequestFactory->create( $url, [

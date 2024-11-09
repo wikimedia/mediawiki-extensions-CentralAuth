@@ -21,6 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalVanishRequest;
@@ -38,7 +39,7 @@ class SpecialPageInitHookHandler implements SpecialPage_initListHook {
 	 * @param array &$list
 	 */
 	public function onSpecialPage_initList( &$list ) {
-		if ( $this->config->get( 'CentralAuthEnableGlobalRenameRequest' ) ) {
+		if ( $this->config->get( CAMainConfigNames::CentralAuthEnableGlobalRenameRequest ) ) {
 			$list['GlobalRenameRequest'] = [
 				'class' => SpecialGlobalRenameRequest::class,
 				'services' => [

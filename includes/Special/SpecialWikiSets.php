@@ -8,6 +8,7 @@ use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\Xml\Xml;
@@ -204,7 +205,7 @@ class SpecialWikiSets extends SpecialPage {
 		# Make an array of the opposite list of wikis
 		# (all databases *excluding* the defined ones)
 		$restWikis = [];
-		foreach ( $this->getConfig()->get( 'LocalDatabases' ) as $wiki ) {
+		foreach ( $this->getConfig()->get( MainConfigNames::LocalDatabases ) as $wiki ) {
 			if ( !in_array( $wiki, $sortedWikis ) ) {
 				$restWikis[] = $wiki;
 			}

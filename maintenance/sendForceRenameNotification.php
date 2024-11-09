@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\UsersToRename\UsersToRenameDatabaseUpdates;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\Title\Title;
@@ -131,7 +132,7 @@ class SendForceRenameNotification extends Maintenance {
 	 * @return string
 	 */
 	protected function getLocalizedText( $dir ) {
-		$langCode = $this->getConfig()->get( 'LanguageCode' );
+		$langCode = $this->getConfig()->get( MainConfigNames::LanguageCode );
 		$fallbacks = $this->getServiceContainer()->getLanguageFallback()->getAll( $langCode );
 		array_unshift( $fallbacks, $langCode );
 		foreach ( $fallbacks as $code ) {

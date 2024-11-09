@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
@@ -107,7 +108,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 
 	private function newLookup( $strict = true ): CentralIdLookup {
 		$this->overrideConfigValues( [
-			'CentralAuthStrict' => $strict,
+			CAMainConfigNames::CentralAuthStrict => $strict,
 			MainConfigNames::CentralIdLookupProviders => [
 				'central' => [
 					'class' => CentralAuthIdLookup::class,
