@@ -1,5 +1,5 @@
 ( function () {
-	var url, params, len, param, i;
+	var url, params, len, param, i, data;
 	// Are we already logged in?
 	if ( mw.config.get( 'wgUserName' ) !== null ) {
 		return;
@@ -33,7 +33,14 @@
 	// The referenced URL will redirect a few times (HTTP 302) and then respond
 	// with JavaScript code that completes the login.
 	// The data comes from CentralAuthHooks::getCentralautologinJsData().
-	url = require( './data.json' ).checkLoggedInURL;
+	data = require( './data.json' );
+
+	if ( data.startURL ) {
+		url = data.startURL;
+	} else {
+		url = data.checkLoggedInURL;
+	}
+
 	if ( url ) {
 		if ( mw.config.get( 'wgCentralAuthMobileDomain' ) === true ) {
 			url += '&mobile=1';

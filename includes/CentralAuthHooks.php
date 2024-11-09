@@ -551,21 +551,38 @@ class CentralAuthHooks implements
 	public static function getCentralautologinJsData() {
 		global $wgCentralAuthLoginWiki;
 		$data = [];
-		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== WikiMap::getCurrentWikiId() ) {
-			$url = WikiMap::getForeignURL(
+
+		$wikiId = WikiMap::getCurrentWikiId();
+		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== $wikiId ) {
+			$startUrl = WikiMap::getForeignURL( $wikiId, 'Special:CentralAutoLogin/start' );
+
+			if ( $startUrl !== false ) {
+				$params = [ 'type' => 'script' ];
+				if ( self::isMobileDomain() ) {
+					$params['mobile'] = 1;
+				}
+				$data['startURL'] = wfAppendQuery( $startUrl, $params );
+			}
+
+			// B/C: Retain for backward compatibility for at least a week after the
+			// train fully goes out on all wikis and everything is using startURL.
+			// TODO: Remove after a full weekly train ride.
+			$checkLoggedInUrl = WikiMap::getForeignURL(
 				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
 			);
-			if ( $url !== false ) {
+
+			if ( $checkLoggedInUrl !== false ) {
 				$params = [
 					'type' => 'script',
-					'wikiid' => WikiMap::getCurrentWikiId(),
+					'wikiid' => $wikiId,
 				];
 				if ( self::isMobileDomain() ) {
 					$params['mobile'] = 1;
 				}
-				$data['checkLoggedInURL'] = wfAppendQuery( $url, $params );
+				$data['checkLoggedInURL'] = wfAppendQuery( $checkLoggedInUrl, $params );
 			}
 		}
+
 		return $data;
 	}
 
