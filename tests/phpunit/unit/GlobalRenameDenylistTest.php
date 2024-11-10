@@ -36,8 +36,8 @@ class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 		yield 'Good user does not match bad' => [ 'BadUser', 'GoodUser', true ];
 		yield 'Bad user matches bad' => [ 'BadUser', 'BadUser', false ];
 		yield 'Bad user does not match empty' => [ '', 'BadUser', true ];
-		yield 'Bad user matches bad regex' => [ '^Bad[A-za-z]+$', 'BadUser', false ];
-		yield 'Good user does not match bad regex' => [ '^Bad[A-za-z]+$', 'GoodUser', true ];
+		yield 'Bad user matches bad regex' => [ '^Bad[A-Za-z]+$', 'BadUser', false ];
+		yield 'Good user does not match bad regex' => [ '^Bad[A-Za-z]+$', 'GoodUser', true ];
 	}
 
 	/**
