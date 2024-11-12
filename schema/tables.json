@@ -166,7 +166,7 @@
 			},
 			{
 				"name": "lu_attached_method",
-				"comment": "Migration status/logging information, to help diagnose issues",
+				"comment": "Migration status/logging information, to help diagnose issues. See CentralAuthUser::attach().",
 				"type": "mwenum",
 				"options": {
 					"notnull": false,

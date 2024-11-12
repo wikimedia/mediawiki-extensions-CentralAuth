@@ -2196,8 +2196,22 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Add a local account record for the given wiki to the central database.
 	 * @param string $wikiID
-	 * @param string $method
-	 * @param bool $sendToRC
+	 * @param string $method Migration method. Will be displayed on Special:CentralAuth. One of:
+	 *   - primary: This account existed before central accounts were introduced, and got
+	 *     picked as the central account owner. (See {@link CentralAuthUser::chooseHomeWiki()}.)
+	 *   - new: Created during signup (ie. the user registered when central accounts were already
+	 *     enabled, and this is their first account).
+	 *   - empty: Not used anymore - probably accounts with zero edits that got merged into the
+	 *     global account by the same name, regardless of email etc?
+	 *   - mail: Merged because it had the same email as the central account, or a connected
+	 *     local account.
+	 *   - password: Merged (on login or via Special:MergeAccount) because it had the same
+	 *     password as the central account. (Or in some historical edge cases because it had no
+	 *     password - T63876.)
+	 *   - admin: Merged by an admin.
+	 *   - login: Autocreated when the central user visited a wiki with no local account.
+	 *   See also {@link \MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth::formatMergeMethod()}.
+	 * @param bool $sendToRC Whether to send to the IRC recent changes feed
 	 * @param string|int $ts MediaWiki timestamp or 0 for current time
 	 *
 	 * Prerequisites:
@@ -2663,7 +2677,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return array[] Map of database name to property table with members:
 	 *    wiki                  The wiki ID (database name)
 	 *    attachedTimestamp     The MW timestamp when the account was attached
-	 *    attachedMethod        Attach method: password, mail or primary
+	 *    attachedMethod        Attach method: see {@link CentralAuthUser::attach()}.
 	 *    ...                   All information returned by localUserData()
 	 */
 	public function queryAttached() {

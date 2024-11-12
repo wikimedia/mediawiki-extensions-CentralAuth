@@ -800,6 +800,7 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @param string $method
 	 * @return string
+	 * @see CentralAuthUser::attach()
 	 */
 	private function formatMergeMethod( $method ) {
 		// Give grep a chance to find the usages:
