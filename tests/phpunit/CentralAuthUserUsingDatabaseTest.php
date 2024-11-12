@@ -161,6 +161,8 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 				// This test can't connect to anotherwiki to fetch edit counts
 			}
 		};
+		$this->assertNotContains( 'anotherwiki', $caUser->listAttached() );
+
 		$caUser->attach( 'anotherwiki', 'admin', false );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertContains( 'anotherwiki', $caUser->listAttached() );
