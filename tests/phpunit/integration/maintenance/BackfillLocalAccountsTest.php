@@ -40,14 +40,13 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 	}
 
 	protected function setBackfillerReturns( $mockBackfiller ) {
+		$results = [];
+		foreach ( range( 1, 5 ) as $uid ) {
+			$results[] = [ 'gu_name' => "Fake user $uid", 'gu_id' => strval( 100 + $uid ) ];
+		}
 		$mockBackfiller->method( 'getGlobalUserBatch' )
 			->willReturnOnConsecutiveCalls(
-				[ 106, new FakeResultWrapper( [
-					[ 'gu_name' => 'Fake user 1', 'gu_id' => '101' ],
-					[ 'gu_name' => 'Fake user 2', 'gu_id' => '102' ],
-					[ 'gu_name' => 'Fake user 3', 'gu_id' => '103' ],
-					[ 'gu_name' => 'Fake user 4', 'gu_id' => '104' ],
-					[ 'gu_name' => 'Fake user 5', 'gu_id' => '105' ] ] ) ],
+				[ 106, new FakeResultWrapper( $results ) ],
 				[ 111, new FakeResultWrapper( [] ) ]
 			);
 
@@ -58,17 +57,16 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 	protected function getMockAccountLookup( $db ) {
 		$mockLookup = $this->createMock( AccountCreationDetailsLookup::class );
-		$mockLookup->method( 'getAccountCreationIPAndUserAgent' )->willReturnMap(
-			[
-				[ 'Fake User 1', $db,
-				  [ 'ip' => '192.168.1.5', 'agent' => 'Fake user agent 1' ] ],
-				[ 'Fake User 2', $db,
-				  [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 2' ] ],
-				[ 'Fake User 4', $db,
-				  [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 4' ] ],
-				[ 'Fake User 5', $db,
-				  [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 5' ] ],
-			] );
+		$mockLookup->method( 'getAccountCreationIPAndUserAgent' )->willReturnCallback(
+			static function ( $username ) {
+				return [
+					'Fake user 1' => [ 'ip' => '192.168.1.5', 'agent' => 'Fake user agent 1' ],
+					'Fake user 2' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 2' ],
+					'Fake user 3' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 3' ],
+					'Fake user 5' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 5' ]
+				][ $username ];
+			}
+		);
 		return $mockLookup;
 	}
 
@@ -152,7 +150,7 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 			$this->createMock( LBFactory::class ),
 			$dryrun, $verbose,
 			$startGlobalUID, $maxGlobalUID,
-			$localWiki
+			$localWiki, null
 		);
 
 		$this->expectOutputString(
@@ -172,9 +170,10 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 		$db = $this->getDb();
 
 		$cadb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$uids = [ 1, 2, 3, 5 ];
+
+		$good_uids = [ 1, 2, 3, 5 ];
 		$homeWikis = [ 'testwiki', 'elwiki', 'testwiki', 'none', 'testwiki' ];
-		$this->makeCAGlobalUserEntries( $cadb, $uids, $homeWikis );
+		$this->makeCAGlobalUserEntries( $cadb, $good_uids, $homeWikis );
 
 		$dryrun = false;
 		$verbose = true;
@@ -193,13 +192,13 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 		);
 
 		$this->expectOutputString(
-			"Using ip 127.0.0.1 and agent  \n" .
+			"Using ip 192.168.1.5 and agent Fake user agent 1 \n" .
 			"User 'Fake user 1' created\n" .
-			"Using ip 127.0.0.1 and agent  \n" .
+			"Using ip 192.168.1.6 and agent Fake user agent 2 \n" .
 			"User 'Fake user 2' created\n" .
-			"Using ip 127.0.0.1 and agent  \n" .
+			"Using ip 192.168.1.6 and agent Fake user agent 3 \n" .
 			"User 'Fake user 3' created\n" .
-			"Using ip 127.0.0.1 and agent  \n" .
+			"Using ip 192.168.1.6 and agent Fake user agent 5 \n" .
 			"User 'Fake user 5' created\n" .
 			"Created users: 4, done.\n"
 		);
