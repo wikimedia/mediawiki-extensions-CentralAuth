@@ -3,7 +3,6 @@
 		"authors": [
 			"Abanima",
 			"Alshamiri1",
-			"Amire80",
 			"Meno25",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
@@ -21,7 +20,7 @@
 	"apihelp-createlocalaccount-example-1": "إنشاء حساب محلي بالقوة لـ [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "سبب إنشاء الحساب المحلي.",
 	"apihelp-createlocalaccount-param-username": "مستخدم لإنشاء الحساب المحلي لـ.",
-	"apihelp-createlocalaccount-summary": "إنشاء حساب محلي بالقوة",
+	"apihelp-createlocalaccount-summary": "إقناع إقامة حساب محلي يجب أن يكون هناك حساب مركزي",
 	"apihelp-deleteglobalaccount-example-1": "احذف حساب الدخول الموحد الخاص بـ[[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "سبب حذف المستخدم.",
 	"apihelp-deleteglobalaccount-param-user": "المستخدم الذي يجب حذفه.",
@@ -45,7 +44,7 @@
 	"apihelp-query+globalallusers-param-group": "حد المستخدمين إلى مجموعات عالمية معينة.",
 	"apihelp-query+globalallusers-param-limit": "العدد الإجمالي لأسماء المستخدمين في النتائج.",
 	"apihelp-query+globalallusers-param-prefix": "ابحث عن جميع المستخدمين الذين تبدأ أسماؤهم بهذه القيمة.",
-	"apihelp-query+globalallusers-param-prop": "ما هي أجزاء المعلومات يجب تضمينها:\n;معلومات المنع: ما إذا كان حساب المستخدم ممنوعا. \n;المجموعات: يسرد المجموعات العالمية التي يوجد فيها ذلك المستخدم، يستخدم هذا المزيد من موارد الخادم وقد يعرض نتائج أقل من الحد. \n;موجود محليا: يضيف المعلومات إذا كان المستخدم موجودا محليا.",
+	"apihelp-query+globalallusers-param-prop": "ما هي المعلومات التي يجب تضمينها:",
 	"apihelp-query+globalallusers-param-to": "اسم المستخدم الذي يتوقف التعداد عنده.",
 	"apihelp-query+globalallusers-summary": "تعداد جميع المستخدمين العالميين.",
 	"apihelp-query+globalgroups-example-1": "إدراج المجموعات العالمية",
@@ -58,7 +57,7 @@
 	"apihelp-query+globaluserinfo-example-1": "احصل على المعلومات عن حساب الدخول الموحد",
 	"apihelp-query+globaluserinfo-example-2": "الحصول على معلومات حول المستخدم العالمي [[User:Example|مثال]]",
 	"apihelp-query+globaluserinfo-param-id": "المستخدم للحصول على معلومات عنه، إذا تم حذف كل من <var>$1user</var> و<var>$1id</var>، فسيتم افتراضها للمستخدم الحالي.",
-	"apihelp-query+globaluserinfo-param-prop": "الخصائص التي يمكن الحصول عليها \n;المجموعات: احصل على قائمة بالمجموعات العالمية التي ينتمي إليها هذا المستخدم.\n;الصلاحيات: الحصول على قائمة بالصلاحيات العالمية لهذا المستخدم.\n;دمج: الحصول على قائمة بالحسابات المدمجة.\n;غير المرفقة: الحصول على قائمة الحسابات غير المرفقة.\n;عدد التحرير:الحصول على عدد تحرير المستخدم العالمي.",
+	"apihelp-query+globaluserinfo-param-prop": "ما هي الخصائص التي يجب الحصول عليها:",
 	"apihelp-query+globaluserinfo-paramvalue-prop-editcount": "الحصول على عدد التعديلات العالمي للمستخدم.",
 	"apihelp-query+globaluserinfo-param-user": "المستخدم للحصول على معلومات عنه، إذا تم حذف كل من <var>$1user</var> و<var>$1id</var>، فسيتم افتراضها للمستخدم الحالي.",
 	"apihelp-query+globaluserinfo-summary": "عرض معلومات حول مستخدم عالمي.",
@@ -67,14 +66,14 @@
 	"apihelp-query+wikisets-param-from": "اسم مجموعة ويكي للبدء منه.",
 	"apihelp-query+wikisets-param-limit": "كم عدد مجموعات الويكي للعودة.",
 	"apihelp-query+wikisets-param-orderbyname": "رتب النتائج وفق الاسم.",
-	"apihelp-query+wikisets-param-prop": "أية قطعة من المعلومات يجب تضمينها:\n;النوع: تمكين الاشتراك (يتضمن الويكيات المحددة فقط) أو الاختيار الضمني القائم (يشمل جميع الويكيات باستثناء المحددة).\n;الويكيات المضمنة: الويكيات التي يتم تضمينها في مجموعة الويكي هذه.\n;الويكيات غير المضمنة: الويكيات التي لم يتم تضمينها في مجموعة الويكي هذه.",
+	"apihelp-query+wikisets-param-prop": "ما هي المعلومات التي يجب تضمينها:",
 	"apihelp-query+wikisets-summary": "تعداد كافة مجموعات الويكي.",
 	"apihelp-setglobalaccountstatus-example-1": "منع الحساب العالمي لـ[[User:Example]] بسبب \"سخام\"",
 	"apihelp-setglobalaccountstatus-example-2": "منع وقمع الحساب العالمي لـ[[User:Example]] بسبب \"أستطيع\"",
 	"apihelp-setglobalaccountstatus-param-hidden": "تغيير ما إذا كان هذا المستخدم غير مخفي أو مخفي من قائمة المستخدمين العالميين أو مزال.",
 	"apihelp-setglobalaccountstatus-param-locked": "تغيير ما إذا كان هذا المستخدم محميا أم لا.",
 	"apihelp-setglobalaccountstatus-param-reason": "سبب تغيير وضع المستخدم.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 اختياري للتيار المتوقع<userid>:<username>:<hidden>:<locked> ، لاكتشاف تعارضات التحرير. تعيين<locked> إلى 1 للقفل ، و 0 للفتح.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 اختياري من المتوقع اسم المستخدم الحالي:اسم المستخدم: مخفي: مغلق. يستخدم هذا للكشف عن صراعات التحرير. يجب أن تكون قيمة <samp>مخفية</samp> سلسلة فارغة إذا لم تكن مخفية أو القوائم قائمة أو قمع. يجب أن تكون قيمة <samp>مقفل</samp> 1 بالنسبة للمقفلة و 0 بالنسبة للمفتوحة. أمثلة: <samp>2128506: لي سميث::0</samp>; 3839611: فاندال غوبلين: قُلِب:1.",
 	"apihelp-setglobalaccountstatus-param-user": "مستخدم لتغيير حالته.",
-	"apihelp-setglobalaccountstatus-summary": "تعيين حالة مستخدم عالمي."
+	"apihelp-setglobalaccountstatus-summary": "إخفاء أو قفل (أو إظهار أو إلغاء قفل) حساب مستخدم عالمي."
 }

@@ -364,7 +364,7 @@
 	"centralauth-rename-badusername": "請求的使用者名稱無效。",
 	"centralauth-rename-cannotself": "您無法重新命名您自己。",
 	"centralauth-rename-confirm": "您是否要全域重新命名此使用者？",
-	"centralauth-rename-confirm-vanish": "您是否要全域隱退此名使用者？",
+	"centralauth-rename-confirm-vanish": "您是否要全域隱退此使用者？",
 	"centralauth-rename-conflict-hidden": "已隱藏使用者名稱",
 	"centralauth-rename-deny": "您確定要拒絕此請求？",
 	"centralauth-rename-doesnotexist": "提供的帳號不存在。",

@@ -10,7 +10,8 @@
 			"Tuxxic",
 			"Verdy p",
 			"Wladek92",
-			"Wnagxsi"
+			"Wnagxsi",
+			"Mahabarata"
 		]
 	},
 	"apierror-centralauth-badsession": "Un jeton central d’identification ne peut être obtenu qu’en utilisant des sessions d’authentification centrale.",
@@ -21,6 +22,7 @@
 	"apierror-centralauth-notloggedin": "Les utilisateurs anonymes ne peuvent pas obtenir de jeton central d’authentification.",
 	"apierror-centralauth-renameinprogress": "L’utilisateur est en cours de renommage, utilisation impossible.",
 	"apihelp-centralauthtoken-example-1": "Récupérer un jeton central d’authentification",
+	"apihelp-centralauthtoken-extended-description": "Renvoie un jeton qui peut être utilisé pour authentifier les requêtes API sur d'autres wikis. Pour les requêtes API d'action, placez-le dans le paramètre GET <var>centralauthtoken</var> . Pour les requêtes API REST, ajoutez un en-tête <code>Authorization: CentralAuthToken {token}</code> . Dans la logique frontale MediaWiki, vous pouvez utiliser le module <code>mediawiki.ForeignApi</code> ResourceLoader.",
 	"apihelp-centralauthtoken-summary": "Récupérer un jeton central d’authentification pour faire une requête authentifiée vers un wiki attaché.",
 	"apihelp-createlocalaccount-example-1": "Forcer la création d’un compte local pour [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Motif de création du compte local.",
