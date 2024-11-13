@@ -41,8 +41,11 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 	protected function setBackfillerReturns( $mockBackfiller ) {
 		$results = [];
+		$registrationDate = '20241118165540';
 		foreach ( range( 1, 5 ) as $uid ) {
-			$results[] = [ 'gu_name' => "Fake user $uid", 'gu_id' => strval( 100 + $uid ) ];
+			$results[] = [ 'gu_name' => "Fake user $uid",
+			'gu_id' => strval( 100 + $uid ),
+			'gu_registration' => $registrationDate ];
 		}
 		$mockBackfiller->method( 'getGlobalUserBatch' )
 			->willReturnOnConsecutiveCalls(
@@ -62,7 +65,7 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 				return [
 					'Fake user 1' => [ 'ip' => '192.168.1.5', 'agent' => 'Fake user agent 1' ],
 					'Fake user 2' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 2' ],
-					'Fake user 3' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 3' ],
+					'Fake user 3' => null,
 					'Fake user 5' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 5' ]
 				][ $username ];
 			}
@@ -80,12 +83,13 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 		);
 		$passwordHash = $passwordFactory->newFromPlaintext( "Fake password here" )->toString();
 
+		$registrationDate = '20241118165540';
 		$row = [
 			'gu_password' => $passwordHash,
 			'gu_locked' => 0,
 			'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
-			'gu_registration' => '20240805084012',
-			'gu_email_authenticated' => '20240826093105',
+			'gu_registration' => $registrationDate,
+			'gu_email_authenticated' => $registrationDate,
 		];
 
 		foreach ( $ids as $id ) {
@@ -105,9 +109,12 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 	protected function makeCALocalUserEntries( $cadb, $ids ) {
 		// we will have the same 'Fake User 1', 2,3,5 with luids 151, 152, etc
+		// we probably don't care about the attached date yet, but put something
+		// real in there just in case.
 		// the rest of the fields we can still just shove arbitrary things into
 		$localWiki = WikiMap::getCurrentWikiId();
 
+		$attachedDate = '20241118165540';
 		foreach ( $ids as $id ) {
 			$row = [
 				'lu_wiki' => $localWiki,
@@ -115,7 +122,7 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 				'lu_local_id' => 150 + $id,
 				'lu_global_id' => 100 + $id,
 				'lu_attached_method' => 'new',
-				'lu_attached_timestamp' => '20240805084012',
+				'lu_attached_timestamp' => $attachedDate,
 				'lu_attachment_method' => null,
 			];
 
@@ -196,11 +203,10 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 			"User 'Fake user 1' created\n" .
 			"Using ip 192.168.1.6 and agent Fake user agent 2 \n" .
 			"User 'Fake user 2' created\n" .
-			"Using ip 192.168.1.6 and agent Fake user agent 3 \n" .
-			"User 'Fake user 3' created\n" .
+			"Skipping user Fake user 3 creation, no IP/UA info available\n" .
 			"Using ip 192.168.1.6 and agent Fake user agent 5 \n" .
 			"User 'Fake user 5' created\n" .
-			"Created users: 4, done.\n"
+			"Created users: 3, done.\n"
 		);
 	}
 
@@ -232,9 +238,9 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 		$rows = [];
 		$expectedRows = [
-			0 => (object)[ 'gu_name' => 'Fake user 2', 'gu_id' => '102' ],
-			1 => (object)[ 'gu_name' => 'Fake user 4', 'gu_id' => '104' ],
-			2 => (object)[ 'gu_name' => 'Fake user 5', 'gu_id' => '105' ]
+			0 => (object)[ 'gu_name' => 'Fake user 2', 'gu_id' => '102', 'gu_registration' => '20241118165540' ],
+			1 => (object)[ 'gu_name' => 'Fake user 4', 'gu_id' => '104', 'gu_registration' => '20241118165540' ],
+			2 => (object)[ 'gu_name' => 'Fake user 5', 'gu_id' => '105', 'gu_registration' => '20241118165540' ]
 		];
 		foreach ( $results as $i => $row ) {
 			$rows[$i] = $row;
