@@ -28,6 +28,7 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 
 use Exception;
+use Generator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -37,32 +38,32 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class AttachAccount extends Maintenance {
 
-	/** @var float */
-	protected $start;
+	/** Starting microtimestamp */
+	protected float $start;
+
+	/** Number of accounts which weren't found */
+	protected int $missing;
+
+	/** Number of accounts which were partially attached (ie. some wikis succeeded, some failed) */
+	protected int $partial;
+
+	/** Number of accounts for which all attach attempts failed */
+	protected int $failed;
 
 	/** @var int */
-	protected $missing;
+	protected int $attached;
 
 	/** @var int */
-	protected $partial;
+	protected int $ok;
 
 	/** @var int */
-	protected $failed;
-
-	/** @var int */
-	protected $attached;
-
-	/** @var int */
-	protected $ok;
-
-	/** @var int */
-	protected $total;
+	protected int $total;
 
 	/** @var bool */
-	protected $dryRun;
+	protected bool $dryRun;
 
 	/** @var bool */
-	protected $quiet;
+	protected bool $quiet;
 
 	public function __construct() {
 		parent::__construct();
@@ -79,7 +80,9 @@ class AttachAccount extends Maintenance {
 		$this->quiet = false;
 
 		$this->addOption( 'userlist',
-			'File with the list of usernames to attach, one per line', true, true );
+			'File with the list of usernames to attach, one per line, on every possible wiki', false, true );
+		$this->addOption( 'wiki-user-list',
+			'Tab-separated file of whom/where to attach, wiki ID then username, one per line', false, true );
 		$this->addOption( 'dry-run', 'Do not update database' );
 		$this->addOption( 'quiet',
 			'Only report database changes and final statistics' );
@@ -90,24 +93,24 @@ class AttachAccount extends Maintenance {
 		$this->dryRun = $this->hasOption( 'dry-run' );
 		$this->quiet = $this->hasOption( 'quiet' );
 
-		$list = $this->getOption( 'userlist' );
-		if ( !is_file( $list ) ) {
-			$this->fatalError( "ERROR - File not found: {$list}" );
-		}
-		$file = fopen( $list, 'r' );
-		if ( $file === false ) {
-			$this->fatalError( "ERROR - Could not open file: {$list}" );
-		}
-		// phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition
-		while ( strlen( $username = trim( fgets( $file ) ) ) ) {
-			$this->attach( $username );
-			if ( $this->total % $this->mBatchSize == 0 ) {
-				$this->output( "Waiting for replicas to catch up ... " );
-				$this->waitForReplication();
-				$this->output( "done\n" );
+		if ( $this->hasOption( 'wiki-user-list' ) ) {
+			foreach ( $this->readFileByLine( $this->getOption( 'wiki-user-list' ) ) as $line ) {
+				if ( count( explode( "\t", $line ) ) !== 2 ) {
+					$this->fatalError( "ERROR: Invalid line in wiki-user-list: {$line}" );
+				}
+				[ $wiki, $username ] = array_map( 'trim', explode( "\t", $line ) );
+				$this->attach( $username, $wiki );
+				$this->maybeWaitForReplication();
 			}
+		} elseif ( $this->hasOption( 'userlist' ) ) {
+			foreach ( $this->readFileByLine( $this->getOption( 'userlist' ) ) as $line ) {
+				$username = trim( $line );
+				$this->attach( $username );
+				$this->maybeWaitForReplication();
+			}
+		} else {
+			$this->fatalError( 'ERROR: Either --userlist or --wiki-user-list is required' );
 		}
-		fclose( $file );
 
 		$this->report();
 		$this->output( "done.\n" );
@@ -115,8 +118,9 @@ class AttachAccount extends Maintenance {
 
 	/**
 	 * @param string $username
+	 * @param string|null $wiki Wiki ID, or null for all available wikis
 	 */
-	protected function attach( $username ) {
+	protected function attach( string $username, ?string $wiki = null ) {
 		$this->total++;
 		if ( !$this->quiet ) {
 			$this->output( "CentralAuth account attach for: {$username}\n" );
@@ -142,7 +146,9 @@ class AttachAccount extends Maintenance {
 			return;
 		}
 
-		if ( count( $unattached ) === 0 ) {
+		if ( count( $unattached ) === 0
+			 || ( $wiki !== null && !in_array( $wiki, $unattached ) )
+		) {
 			$this->ok++;
 			if ( !$this->quiet ) {
 				$this->output( "OK: {$username}\n" );
@@ -150,7 +156,8 @@ class AttachAccount extends Maintenance {
 			return;
 		}
 
-		foreach ( $unattached as $wikiID ) {
+		$wikisToAttach = $wiki !== null ? [ $wiki ] : $unattached;
+		foreach ( $wikisToAttach as $wikiID ) {
 			$this->output( "ATTACHING: {$username}@{$wikiID}\n" );
 			if ( !$this->dryRun ) {
 				$central->attach(
@@ -166,20 +173,20 @@ class AttachAccount extends Maintenance {
 			return;
 		}
 
-		$unattachedAfter = $central->listUnattached();
-		$numUnattached = count( $unattachedAfter );
-		if ( $numUnattached === 0 ) {
-			$this->attached++;
-		} elseif ( $numUnattached == count( $unattached ) ) {
+		$numUnattachedAfter = count( $central->listUnattached() );
+		$numNewlyAttached = count( $unattached ) - $numUnattachedAfter;
+		if ( $numNewlyAttached === 0 ) {
 			$this->failed++;
 			$this->output(
 				"WARN: No accounts attached for {$username}; " .
-				"({$numUnattached} unattached)\n" );
+				"({$numUnattachedAfter} unattached)\n" );
+		} elseif ( $numNewlyAttached == count( $wikisToAttach ) ) {
+			$this->attached++;
 		} else {
 			$this->partial++;
 			$this->output(
 				"INFO: Incomplete attachment for {$username}; " .
-				"({$numUnattached} unattached)\n" );
+				"({$numUnattachedAfter} unattached)\n" );
 		}
 	}
 
@@ -214,6 +221,33 @@ class AttachAccount extends Maintenance {
 			$this->failed, $this->reportPcnt( $this->failed ),
 			$this->missing, $this->reportPcnt( $this->missing )
 		) );
+	}
+
+	/**
+	 * @return Generator<string>
+	 */
+	private function readFileByLine( string $filename ): Generator {
+		if ( !is_file( $filename ) ) {
+			$this->fatalError( "ERROR - File not found: {$filename}" );
+		}
+		$file = fopen( $filename, 'r' );
+		if ( $file === false ) {
+			$this->fatalError( "ERROR - Could not open file: {$filename}" );
+		}
+		while ( true ) {
+			$line = fgets( $file );
+			if ( $line === false ) {
+				break;
+			}
+			yield $line;
+		}
+		fclose( $file );
+	}
+
+	private function maybeWaitForReplication(): void {
+		if ( $this->total % $this->mBatchSize === 0 ) {
+			$this->waitForReplication();
+		}
 	}
 }
 
