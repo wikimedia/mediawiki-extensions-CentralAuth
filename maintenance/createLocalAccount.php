@@ -10,7 +10,9 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Status\Status;
+use MediaWiki\User\User;
 
 class CreateLocalAccount extends Maintenance {
 
@@ -24,7 +26,10 @@ class CreateLocalAccount extends Maintenance {
 	public function execute() {
 		$username = $this->getArg( 0 );
 		$status = CentralAuthServices::getForcedLocalCreationService()
-			->attemptAutoCreateLocalUserFromName( $username );
+			->attemptAutoCreateLocalUserFromName(
+				$username,
+				new UltimateAuthority( User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] ) )
+			);
 
 		if ( !$status->isGood() ) {
 			$this->error( "autoCreateUser failed for $username: " .
