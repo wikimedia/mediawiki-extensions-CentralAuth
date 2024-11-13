@@ -1021,5 +1021,11 @@
 	"DatabaseVirtualDomains": [
 		"virtual-centralauth"
 	],
+	"InstallerTasks": [
+		{
+			"class": "MediaWiki\\Extension\\CentralAuth\\MigrateInitialAccountsTask",
+			"profile": "installer"
+		}
+	],
 	"manifest_version": 2
 }

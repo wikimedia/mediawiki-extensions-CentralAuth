@@ -1,28 +1,42 @@
 <?php
 
-namespace MediaWiki\Extension\CentralAuth\Maintenance;
+namespace MediaWiki\Extension\CentralAuth;
 
-use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Status\Status;
 use MWCryptRand;
 
-class MigrateInitialAccounts extends Maintenance {
+class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 
-	public function __construct() {
-		parent::__construct();
-		$this->requireExtension( 'CentralAuth' );
-		$this->addDescription( "Globalize all user accounts, assuming all default config options.\n" .
-			"This script is intended to only be used during MediaWiki installation." );
+	/**
+	 * @return string
+	 */
+	public function getName() {
+		return 'centralauth-migrate-accounts';
 	}
 
-	public function execute() {
-		if ( !defined( 'MEDIAWIKI_INSTALL' ) ) {
-			$this->fatalError( "This script is intended to only be used during MediaWiki installation." );
+	/**
+	 * @return string
+	 */
+	public function getDescription() {
+		return '[CentralAuth] Globalizing initial user';
+	}
+
+	/**
+	 * @return string[]
+	 */
+	public function getDependencies() {
+		return [ 'created-user-names', 'extension-tables', 'services' ];
+	}
+
+	public function execute(): Status {
+		$services = $this->getServices();
+		$dbw = $services->getConnectionProvider()->getPrimaryDatabase( 'virtual-centralauth' );
+
+		$names = $this->getContext()->getProvision( 'created-user-names' );
+		if ( !$names ) {
+			return Status::newGood();
 		}
 
-		// Assume that CentralAuth database is the same as the local wiki's database.
-		$dbw = $this->getPrimaryDB();
-
-		// Assume that no global users exist, and all local users can be migrated.
 		// Assume that there are very few users, so we don't need batching.
 		$users = $dbw->newSelectQueryBuilder()
 			->from( 'user' )
@@ -34,6 +48,7 @@ class MigrateInitialAccounts extends Maintenance {
 				'user_password',
 				'user_registration',
 			] )
+			->where( [ 'user_name' => $names ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
@@ -85,8 +100,6 @@ class MigrateInitialAccounts extends Maintenance {
 			} );
 		}
 
-		$count = count( $users );
-		$this->output( "Globalized $count accounts\n" );
-		return true;
+		return Status::newGood();
 	}
 }

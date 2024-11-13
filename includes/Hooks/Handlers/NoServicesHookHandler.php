@@ -21,7 +21,6 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\Maintenance\MigrateGuSalt;
-use MediaWiki\Extension\CentralAuth\Maintenance\MigrateInitialAccounts;
 use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 
@@ -63,15 +62,6 @@ class NoServicesHookHandler implements
 			"$baseDir/schema/$dbType/patch-rq_type.sql",
 			true
 		] );
-
-		if ( defined( 'MEDIAWIKI_INSTALL' ) ) {
-			// Globalize any existing accounts during installation, but not updates (T358985)
-			$updater->addExtensionUpdateOnVirtualDomain( [
-				'virtual-centralauth',
-				'runMaintenance',
-				MigrateInitialAccounts::class,
-			] );
-		}
 
 		$updater->addExtensionUpdateOnVirtualDomain( [
 			'virtual-centralauth',
