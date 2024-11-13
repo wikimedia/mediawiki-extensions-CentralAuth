@@ -270,6 +270,7 @@
 	"log-name-gblrename": "Logg for global namneendring",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|omnemna}} $4 til $5 globalt",
 	"logentry-gblrename-rename": "$1 {{GENDER:$2|omnemna}} $4 til $5 globalt",
+	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|endra}} status for den globale kontoen «$3»: la til $4, fjerna $5",
 	"mergeaccount": "Status for samanslåing av kontoar",
 	"right-centralauth-merge": "Slå saman kontoane sine",
 	"right-centralauth-rename": "Døypa om globale kontoar",
