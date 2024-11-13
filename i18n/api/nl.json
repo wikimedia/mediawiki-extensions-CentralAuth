@@ -43,6 +43,8 @@
 	"apihelp-query+globalallusers-param-from": "De gebruikersnaam die als eerste weergegeven moet worden.",
 	"apihelp-query+globalallusers-param-group": "Weer te geven gebruikers beperken tot leden van de opgegeven globale groepen.",
 	"apihelp-query+globalallusers-param-limit": "Hoeveel gebruikersnamen te rapporteren.",
+	"apihelp-query+globalallusers-param-excludenamed": "Gebruikers van genoemde accounts uitsluiten.",
+	"apihelp-query+globalallusers-param-excludetemp": "Gebruikers van tijdelijke accounts uitsluiten.",
 	"apihelp-query+globalallusers-param-prefix": "Zoeken naar alle gebruikers die met deze waarde beginnen.",
 	"apihelp-query+globalallusers-param-prop": "Welke gegevens moeten worden opgenomen:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Of het gebruikersaccount is vergrendeld.",
