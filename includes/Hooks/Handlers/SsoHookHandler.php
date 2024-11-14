@@ -27,7 +27,7 @@ use MWExceptionHandler;
 use Wikimedia\NormalizedException\NormalizedException;
 
 /**
- * Ensure that the SSO domain cannot be used for anything that is unrelated to its purpose.
+ * Ensure that the shared domain cannot be used for anything that is unrelated to its purpose.
  */
 class SsoHookHandler implements
 	ApiCheckCanExecuteHook,
@@ -40,15 +40,15 @@ class SsoHookHandler implements
 	SetupAfterCacheHook
 {
 
-	// Allowlists of things a user can do on the SSO domain.
+	// Allowlists of things a user can do on the shared domain.
 	// FIXME these should be configurable and/or come from extension attributes
-	// 'static' is WMF's custom static.php entry point, serving some files on the SSO domain (T374286)
+	// 'static' is WMF's custom static.php entry point, serving some files on the shared domain (T374286)
 	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api', 'static', 'cli' ];
 	private const ALLOWED_SPECIAL_PAGES = [ 'Userlogin', 'Userlogout', 'CreateAccount',
 		'PasswordReset', 'Captcha' ];
 	private const ALLOWED_API_MODULES = [
 		// needed for allowing any query API, even if we only want meta modules; it can be
-		// used to check page existence (which is unwanted functionality on the SSO domain),
+		// used to check page existence (which is unwanted functionality on the shared domain),
 		// which is unfortunate but permissions will still be checked, so it's not a risk.
 		'query',
 		// allow login/signup directly via the API + help for those APIs
@@ -105,7 +105,9 @@ class SsoHookHandler implements
 			//   but this should be improved in the future.
 			// FIXME should not log a production error
 			if ( !in_array( MW_ENTRY_POINT, self::ALLOWED_ENTRY_POINTS, true ) ) {
-				throw new \RuntimeException( MW_ENTRY_POINT . ' endpoint is not allowed on the SSO domain' );
+				throw new \RuntimeException(
+					MW_ENTRY_POINT . ' endpoint is not allowed on the shared domain'
+				);
 			}
 		}
 	}
@@ -219,7 +221,7 @@ class SsoHookHandler implements
 	/** @inheritDoc */
 	public function onGetLocalURL( $title, &$url, $query ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
-			// Only allow links to auth-related special pages on the SSO domain.
+			// Only allow links to auth-related special pages on the shared domain.
 			// Point all other links to the normal wiki domain.
 			foreach ( self::ALLOWED_SPECIAL_PAGES as $name ) {
 				if ( $title->isSpecial( $name ) ) {
@@ -231,7 +233,7 @@ class SsoHookHandler implements
 			}
 
 			// WikiMap entry for the current wiki points to the normal wiki domain,
-			// even when $wgServer etc. were overridden for the SSO domain.
+			// even when $wgServer etc. were overridden for the shared domain.
 			$currentWiki = WikiMap::getWiki( WikiMap::getCurrentWikiId() );
 			$url = wfAppendQuery( $currentWiki->getCanonicalUrl( $title->getPrefixedText() ), $query );
 
