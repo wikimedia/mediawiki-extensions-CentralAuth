@@ -485,12 +485,12 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * @param string $set
+	 * @param string $setId
 	 */
-	private function doDelete( $set ) {
-		$set = WikiSet::newFromID( $set );
+	private function doDelete( $setId ) {
+		$set = WikiSet::newFromID( $setId );
 		if ( !$set ) {
-			$this->buildMainView( Html::errorBox( $this->msg( 'centralauth-editset-notfound', $set )->escaped() ) );
+			$this->buildMainView( Html::errorBox( $this->msg( 'centralauth-editset-notfound', $setId )->escaped() ) );
 			return;
 		}
 
