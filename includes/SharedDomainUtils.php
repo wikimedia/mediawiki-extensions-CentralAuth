@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
-use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
@@ -75,7 +75,7 @@ class SharedDomainUtils {
 	 * setups.
 	 *
 	 * @return bool
-	 * @see SsoHookHandler
+	 * @see SharedDomainHookHandler
 	 */
 	public function shouldRestrictCurrentDomain(): bool {
 		return $this->isSharedDomain() && $this->config->get( CAMainConfigNames::CentralAuthRestrictSsoDomain );

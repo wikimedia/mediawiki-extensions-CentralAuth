@@ -25,16 +25,16 @@ use Wikimedia\TestingAccessWrapper;
 
 /**
  * @group Database
- * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler
+ * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler
  */
-class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
+class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @dataProvider provideAuthManagerFilterProviders
 	 */
 	public function testOnAuthManagerFilterProviders( $isSharedDomain, $isSul3Enabled, $expectOathProvider ) {
 		// remove TestSetup override
-		// FIXME once SsoHookHandler::DISALLOWED_LOCAL_PROVIDERS is configurable, reconfigure it
+		// FIXME once SharedDomainHookHandler::DISALLOWED_LOCAL_PROVIDERS is configurable, reconfigure it
 		//   to match TestSetup config
 		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, null );
 		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
@@ -148,7 +148,7 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 		// Need to set a title to make MWExceptionRenderer::reportHTML() use OutputPage
 		RequestContext::getMain()->setTitle( $this->getServiceContainer()->getTitleFactory()->newFromText( 'Test' ) );
 		// The test doesn't involve authentication but OutputPage calls the skin, the skin calls
-		// AuthManager::canCreateAccounts() which loads providers, and SsoHookHandler::onAuthManagerFilterProviders()
+		// AuthManager::canCreateAccounts() which loads providers, and SharedDomainHookHandler::onAuthManagerFilterProviders()
 		// will error if it does not see CentralAuthSsoPreAuthenticationProvider, which it wouldn't because
 		// by default integration tests use a minimal provider configuration.
 		$oldConfig = $this->getServiceContainer()->getMainConfig()->get( MainConfigNames::AuthManagerAutoConfig );
@@ -231,7 +231,7 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * SsoHookHandler::onGetLocalURL() uses WikiMap which by default isn't test-friendly.
+	 * SharedDomainHookHandler::onGetLocalURL() uses WikiMap which by default isn't test-friendly.
 	 * Set up a mock which doesn't return null for the current wiki.
 	 * @return void
 	 */

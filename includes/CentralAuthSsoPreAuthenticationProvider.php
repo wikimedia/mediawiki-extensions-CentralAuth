@@ -3,12 +3,13 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Auth\AbstractPreAuthenticationProvider;
-use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use StatusValue;
 
 /**
- * Helper for SsoHookHandler to persist state across multiple authentication requests.
- * @see SsoHookHandler::onAuthManagerVerifyAuthentication()
+ * Helper for SharedDomainHookHandler to persist state across multiple authentication requests.
+ *
+ * @see SharedDomainHookHandler::onAuthManagerVerifyAuthentication()
  */
 class CentralAuthSsoPreAuthenticationProvider extends AbstractPreAuthenticationProvider {
 
