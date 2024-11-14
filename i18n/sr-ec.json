@@ -398,6 +398,7 @@
 	"log-action-filter-globalauth": "Врста измене:",
 	"log-action-filter-globalauth-delete": "Брисање глобалног налога",
 	"log-action-filter-globalauth-setstatus": "Промена статуса глобалног налога",
+	"log-action-filter-newusers-forcecreatelocal": "принудно отворен локални налог",
 	"log-action-filter-suppress-cadelete": "Брисање глобалног налога",
 	"log-action-filter-suppress-setstatus": "Промена статуса глобалног налога",
 	"log-description-gblrename": "Оваj дневник прати глобално преименовање корисника.",
