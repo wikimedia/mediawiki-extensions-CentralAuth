@@ -94,7 +94,9 @@ class CentralAuthForcedLocalCreationService {
 			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
 			$logEntry->setPerformer( $performer->getUser() );
 			$logEntry->setTarget( $user->getUserPage() );
-			$logEntry->setComment( $reason );
+			if ( $reason !== null ) {
+				$logEntry->setComment( $reason );
+			}
 			$logEntry->setParameters( [
 				'4::userid' => $user->getId(),
 			] );
