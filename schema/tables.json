@@ -178,6 +178,7 @@
 			{
 				"name": "lu_attachment_method",
 				"type": "mwtinyint",
+				"comment": "Part of a pending schema migration for lu_attached_method (T304015).",
 				"options": { "notnull": false, "unsigned": true }
 			},
 			{
