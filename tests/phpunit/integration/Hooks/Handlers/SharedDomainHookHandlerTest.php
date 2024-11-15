@@ -68,8 +68,8 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 		];
 		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, [
 			'preauth' => [
-				'CentralAuthSsoPreAuthenticationProvider'
-				=> $oldConfig['preauth']['CentralAuthSsoPreAuthenticationProvider'],
+				'CentralAuthSharedDomainPreAuthenticationProvider'
+				=> $oldConfig['preauth']['CentralAuthSharedDomainPreAuthenticationProvider'],
 			],
 			'primaryauth' => [
 				'mockPrimary' => [ 'factory' => function () use ( &$primaryConfig ) {
@@ -105,8 +105,8 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 		];
 		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, [
 			'preauth' => [
-				'CentralAuthSsoPreAuthenticationProvider'
-				=> $oldConfig['preauth']['CentralAuthSsoPreAuthenticationProvider'],
+				'CentralAuthSharedDomainPreAuthenticationProvider'
+				=> $oldConfig['preauth']['CentralAuthSharedDomainPreAuthenticationProvider'],
 			],
 			'primaryauth' => [
 				'mockPrimary' => [ 'factory' => function () use ( &$primaryConfig ) {
@@ -149,13 +149,13 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 		RequestContext::getMain()->setTitle( $this->getServiceContainer()->getTitleFactory()->newFromText( 'Test' ) );
 		// The test doesn't involve authentication but OutputPage calls the skin, the skin calls
 		// AuthManager::canCreateAccounts() which loads providers, and SharedDomainHookHandler::onAuthManagerFilterProviders()
-		// will error if it does not see CentralAuthSsoPreAuthenticationProvider, which it wouldn't because
+		// will error if it does not see CentralAuthSharedDomainPreAuthenticationProvider, which it wouldn't because
 		// by default integration tests use a minimal provider configuration.
 		$oldConfig = $this->getServiceContainer()->getMainConfig()->get( MainConfigNames::AuthManagerAutoConfig );
 		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, [
 			'preauth' => [
-				'CentralAuthSsoPreAuthenticationProvider'
-					=> $oldConfig['preauth']['CentralAuthSsoPreAuthenticationProvider'],
+				'CentralAuthSharedDomainPreAuthenticationProvider'
+					=> $oldConfig['preauth']['CentralAuthSharedDomainPreAuthenticationProvider'],
 			],
 			'primaryauth' => [],
 			'secondaryauth' => [],
