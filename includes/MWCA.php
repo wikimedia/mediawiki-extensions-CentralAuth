@@ -9,7 +9,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  * @see MW
  * @internal must not be used in code, anywhere
  */
-class MWCU {
+class MWCA {
 
 	public static function user( string $username ): CentralAuthUser {
 		$cu = CentralAuthUser::getPrimaryInstanceByName( $username );
