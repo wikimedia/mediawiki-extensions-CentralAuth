@@ -174,10 +174,12 @@ class SharedDomainHookHandler implements
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request )
 			 && !$this->sharedDomainUtils->isSharedDomain()
 		) {
-			// We'll rely on CentralAuthSsoPreAuthenticationProvider to make sure filtering does not
+			// We'll rely on CentralAuthSharedDomainPreAuthenticationProvider to make sure filtering does not
 			// happen at the wrong time so make sure it's in place.
-			if ( !isset( $providers['preauth']['CentralAuthSsoPreAuthenticationProvider'] ) ) {
-				throw new LogicException( 'CentralAuthSsoPreAuthenticationProvider not found during SUL3 login' );
+			if ( !isset( $providers['preauth']['CentralAuthSharedDomainPreAuthenticationProvider'] ) ) {
+				throw new LogicException(
+					'CentralAuthSharedDomainPreAuthenticationProvider not found during SUL3 login'
+				);
 			}
 
 			foreach ( self::DISALLOWED_LOCAL_PROVIDERS as $stage => $disallowedProviders ) {

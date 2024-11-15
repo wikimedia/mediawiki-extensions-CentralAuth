@@ -984,8 +984,8 @@
 			}
 		},
 		"preauth": {
-			"CentralAuthSsoPreAuthenticationProvider": {
-				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthSsoPreAuthenticationProvider",
+			"CentralAuthSharedDomainPreAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthSharedDomainPreAuthenticationProvider",
 				"services": [
 					"CentralAuth.FilteredRequestTracker"
 				]

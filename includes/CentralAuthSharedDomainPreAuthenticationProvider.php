@@ -11,7 +11,7 @@ use StatusValue;
  *
  * @see SharedDomainHookHandler::onAuthManagerVerifyAuthentication()
  */
-class CentralAuthSsoPreAuthenticationProvider extends AbstractPreAuthenticationProvider {
+class CentralAuthSharedDomainPreAuthenticationProvider extends AbstractPreAuthenticationProvider {
 
 	private FilteredRequestTracker $filteredRequestTracker;
 
