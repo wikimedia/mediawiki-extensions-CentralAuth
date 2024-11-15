@@ -9,12 +9,12 @@ use MWExceptionHandler;
 
 /**
  * A trivial service to track whether authentication providers have been filtered in the current
- * request, used as shared state between SsoHookHandler (which does the filtering, and needs to
- * know at the end of the authentication whether filtering was done, but can't easily preserve
- * that information through a multi-request authentication process) and
+ * request, used as shared state between SharedDomainHookHandler (which does the filtering, and
+ * needs to know at the end of the authentication whether filtering was done, but can't easily
+ * preserve that information through a multi-request authentication process) and
  * CentralAuthSsoPreAuthenticationProvider (which can use AuthManager to preserve state during an
  * authentication flow).
- * @see \MediaWiki\Extension\CentralAuth\Hooks\Handlers\SsoHookHandler
+ * @see \MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler
  * @see \MediaWiki\Extension\CentralAuth\CentralAuthSsoPreAuthenticationProvider
  */
 class FilteredRequestTracker {

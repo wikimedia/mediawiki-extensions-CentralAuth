@@ -29,7 +29,7 @@ use Wikimedia\NormalizedException\NormalizedException;
 /**
  * Ensure that the shared domain cannot be used for anything that is unrelated to its purpose.
  */
-class SsoHookHandler implements
+class SharedDomainHookHandler implements
 	ApiCheckCanExecuteHook,
 	AuthManagerFilterProvidersHook,
 	AuthManagerVerifyAuthenticationHook,

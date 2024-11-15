@@ -182,9 +182,9 @@ class CentralAuthPrimaryAuthenticationProvider
 		) {
 			// We are in SUL3 mode on the local domain, we should not have gotten here,
 			// it should have been handled by the redirect provider. It is important to
-			// prevent authentication as SsoHookHandler might have disabled important checks.
+			// prevent authentication as SharedDomainHookHandler might have disabled important checks.
 			// But it's relatively easy to get here by accident, if the brittle logic in
-			// SsoHookHandler::onAuthManagerFilterProviders fails to disable some provider
+			// SharedDomainHookHandler::onAuthManagerFilterProviders fails to disable some provider
 			// that generates a password form, so we should fail in some user-comprehensible way.
 			MWExceptionHandler::logException( new LogicException( 'Invoked SUL2 provider in SUL3 mode' ) );
 			return AuthenticationResponse::newFail( wfMessage( 'centralauth-login-error-usesul3' ) );
