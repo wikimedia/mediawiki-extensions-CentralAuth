@@ -31,8 +31,8 @@ class CAMainConfigNames {
 	public const CentralAuthDryRun = 'CentralAuthDryRun';
 	public const CentralAuthCookies = 'CentralAuthCookies';
 	public const CentralAuthLoginWiki = 'CentralAuthLoginWiki';
-	public const CentralAuthSsoUrlPrefix = 'CentralAuthSsoUrlPrefix';
-	public const CentralAuthRestrictSsoDomain = 'CentralAuthRestrictSsoDomain';
+	public const CentralAuthSharedDomainPrefix = 'CentralAuthSharedDomainPrefix';
+	public const CentralAuthRestrictSharedDomain = 'CentralAuthRestrictSharedDomain';
 	public const CentralAuthCookieDomain = 'CentralAuthCookieDomain';
 	public const CentralAuthCookiePrefix = 'CentralAuthCookiePrefix';
 	public const CentralAuthCookiePath = 'CentralAuthCookiePath';

@@ -188,7 +188,7 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 	private function getSharedDomainUtils( array $config ): SharedDomainUtils {
 		$isSharedDomain = $config['shared'];
 		$isSul3Enabled = $config['sul3'];
-		$this->overrideConfigValue( CAMainConfigNames::CentralAuthRestrictSsoDomain, true );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthRestrictSharedDomain, true );
 		$sharedDomainUtils = $this->getMockBuilder( SharedDomainUtils::class )
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),

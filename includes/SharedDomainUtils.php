@@ -39,7 +39,7 @@ class SharedDomainUtils {
 	 * Whether the current request is to the shared domain used for SUL3 login.
 	 *
 	 * This assumes:
-	 * - $wgCentralAuthSsoUrlPrefix contains the shared domain.
+	 * - $wgCentralAuthSharedDomainPrefix contains the shared domain.
 	 * - $wgCanonicalServer is set in site configuration to the current domain
 	 *   (instead of the actual canonical domain) for requests to the shared domain.
 	 *
@@ -47,11 +47,11 @@ class SharedDomainUtils {
 	 */
 	public function isSharedDomain(): bool {
 		if ( $this->isSharedDomain === null ) {
-			$centralAuthSsoUrlPrefix = $this->config->get( CAMainConfigNames::CentralAuthSsoUrlPrefix );
-			if ( !$centralAuthSsoUrlPrefix ) {
+			$sharedDomainPrefix = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix );
+			if ( !$sharedDomainPrefix ) {
 				$this->isSharedDomain = false;
 			} else {
-				$sharedDomain = parse_url( $centralAuthSsoUrlPrefix, PHP_URL_HOST );
+				$sharedDomain = parse_url( $sharedDomainPrefix, PHP_URL_HOST );
 				$currentDomain = parse_url(
 					$this->config->get( MainConfigNames::CanonicalServer ), PHP_URL_HOST
 				);
@@ -64,8 +64,8 @@ class SharedDomainUtils {
 	/**
 	 * Whether the current request must deny non-auth actions.
 	 *
-	 * If $wgCentralAuthRestrictSsoDomain is enabled, then requests to the "fake"
-	 * shared domain within $wgCentralAuthSsoUrlPrefix must only be for authentication
+	 * If $wgCentralAuthRestrictSharedDomain is enabled, then requests to the "fake"
+	 * shared domain within $wgCentralAuthSharedDomainPrefix must only be for authentication
 	 * purposes. All non-authentication-related actions should be prevented.
 	 *
 	 * SUL3 login supports both using a dedicated login wiki for the domain where the central
@@ -78,7 +78,7 @@ class SharedDomainUtils {
 	 * @see SharedDomainHookHandler
 	 */
 	public function shouldRestrictCurrentDomain(): bool {
-		return $this->isSharedDomain() && $this->config->get( CAMainConfigNames::CentralAuthRestrictSsoDomain );
+		return $this->isSharedDomain() && $this->config->get( CAMainConfigNames::CentralAuthRestrictSharedDomain );
 	}
 
 	/**
@@ -175,7 +175,7 @@ class SharedDomainUtils {
 				throw new RuntimeException( 'Unknown action: ' . $action );
 		}
 
-		$url = $this->config->get( CAMainConfigNames::CentralAuthSsoUrlPrefix ) . $localUrl;
+		$url = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl;
 
 		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
 			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );

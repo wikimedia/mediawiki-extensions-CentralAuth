@@ -18,7 +18,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValues( [
 			MainConfigNames::Server => '//auth.wikimedia.org',
 			MainConfigNames::CanonicalServer => 'https://auth.wikimedia.org',
-			CAMainConfigNames::CentralAuthSsoUrlPrefix => 'https://auth.wikimedia.org',
+			CAMainConfigNames::CentralAuthSharedDomainPrefix => 'https://auth.wikimedia.org',
 		] );
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
@@ -33,7 +33,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValues( [
 			MainConfigNames::Server => '//en.wikipedia.org',
 			MainConfigNames::CanonicalServer => 'https://en.wikipedia.org',
-			CAMainConfigNames::CentralAuthSsoUrlPrefix => 'https://auth.wikimedia.org',
+			CAMainConfigNames::CentralAuthSharedDomainPrefix => 'https://auth.wikimedia.org',
 		] );
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
