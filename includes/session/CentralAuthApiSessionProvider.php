@@ -20,8 +20,8 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 
 	/** @inheritDoc */
 	protected function getTokenDataFromRequest( WebRequest $request ) {
-		// Only relevant in the API
-		if ( !defined( 'MW_API' ) ) {
+		// Only applied to api.php and unit tests
+		if ( !defined( 'MW_API' ) && !defined( 'MW_PHPUNIT_TEST' ) ) {
 			return null;
 		}
 
@@ -66,8 +66,8 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 
 	/** @inheritDoc */
 	public function provideSessionInfo( WebRequest $request ) {
-		// Only relevant in the API
-		if ( !defined( 'MW_API' ) ) {
+		// Only applied to api.php and unit tests
+		if ( !defined( 'MW_API' ) && !defined( 'MW_PHPUNIT_TEST' ) ) {
 			return null;
 		}
 
