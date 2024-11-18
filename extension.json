@@ -778,12 +778,12 @@
 			"description": "Database name of a central login wiki. This is an alternative to directly setting cross-domain cookies for each wiki in $wgCentralAuthAutoLoginWikis. If set, a single login wiki will use a session/cookie to handle unified login sessions across wikis. On login, users will be redirected to the login wiki's Special:CentralLogin/login page and then redirected to Special:CentralLogin back on the originating wiki. In the process, the central login wiki cookie and session will be set. As the user accesses other wikis, the login wiki will be checked via JavaScript to check login status and set the local session and cookies. This requires $wgCentralAuthCookies.",
 			"value": false
 		},
-		"CentralAuthSsoUrlPrefix": {
-			"description": "Experimental, do not use unless you know what you are doing. Might be removed without notice. URL prefix for the SSO domain without a trailing slash. This should use the same domain and scheme on every wiki of the CentralAuth wiki farm, with a path prefix that specifies the current wiki. A local URL appended to this prefix must be routed the same way as a local URL on the current wiki. This is used to share a central cookie between wikis while allowing the cookie-related UI (such as the login and signup page) to behave like any specific wiki in the farm. If unset, this mechanism will not be used.",
+		"CentralAuthSharedDomainPrefix": {
+			"description": "Experimental, do not use unless you know what you are doing. Might be removed without notice. URL prefix for the shared authentication domain without a trailing slash. This should use the same domain and scheme on every wiki of the CentralAuth wiki farm, with a path prefix that specifies the current wiki. A local URL appended to this prefix must be routed the same way as a local URL on the current wiki. This is used to share a central cookie between wikis while allowing the cookie-related UI (such as the login and signup page) to behave like any specific wiki in the farm. If unset, this mechanism will not be used.",
 			"value": false
 		},
-		"CentralAuthRestrictSsoDomain": {
-			"description": "Experimental, has no effect unless CentralAuthSsoUrlPrefix is set. Restrict wiki functionality to authentication only when the current domain matches the domain of CentralAuthSsoUrlPrefix. Enable when using a shared login domain. Disable when the login domain is a standalone wiki.",
+		"CentralAuthRestrictSharedDomain": {
+			"description": "Experimental, has no effect unless CentralAuthSharedDomainPrefix is set. Restrict wiki functionality to authentication only when the current domain matches the domain of CentralAuthSharedDomainPrefix. Enable when using a shared login domain. Disable when the login domain is a standalone wiki.",
 			"value": true
 		},
 		"CentralAuthCookieDomain": {
