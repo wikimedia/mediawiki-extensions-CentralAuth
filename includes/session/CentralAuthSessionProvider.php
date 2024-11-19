@@ -429,6 +429,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 			} else {
 				$data['user'] = $centralUser->getName();
 				$data['token'] = $centralUser->getAuthToken();
+				$data['remember'] = $remember;
 			}
 			$centralSessionId = $this->sessionManager->setCentralSession( $data, false, $s );
 
