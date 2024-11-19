@@ -423,7 +423,10 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 
 			// We only save the user into the central session if it's not a
 			// "pending" session, but we still need the ID to set the cookie.
-			$data = $this->sessionManager->getCentralSession( $s );
+			$centralSessionId = $s->get( 'CentralAuth::centralSessionId' )
+				?: $this->getCookie( $request, $this->params['centralSessionName'], '' )
+				?: false;
+			$data = $centralSessionId ? $this->sessionManager->getCentralSessionById( $centralSessionId ) : [];
 			if ( isset( $data['pending_name'] ) ) {
 				$remember = false;
 			} else {
@@ -431,7 +434,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 				$data['token'] = $centralUser->getAuthToken();
 				$data['remember'] = $remember;
 			}
-			$centralSessionId = $this->sessionManager->setCentralSession( $data, false, $s );
+			$centralSessionId = $this->sessionManager->setCentralSession( $data, $centralSessionId, $s );
 
 			$cookies = [
 				'User' => (string)$centralUser->getName(),
