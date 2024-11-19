@@ -317,6 +317,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		// CentralAuthSessionManager::setCentralSession() preserves most of the previous data,
 		// but drops 'pending_name'. CentralAuthSessionProvider::persistSession() then sets 'user'
 		// because it doesn't see 'pending_name'.
+		// FIXME what are all these session changes for? The session was already set during login,
+		//   all these should be noops, only setting the central session is needed.
 		$delay = $this->session->delaySave();
 		$this->session->setUser( User::newFromName( $centralUser->getName() ) );
 		$this->session->setRememberUser( (bool)$attempt['remember'] );
