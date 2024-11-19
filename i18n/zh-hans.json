@@ -68,7 +68,8 @@
 			"阿pp",
 			"阿南之人",
 			"飞舞回堂前",
-			"沈澄心"
+			"沈澄心",
+			"WiiUf"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑数（$1）",
@@ -323,7 +324,7 @@
 	"centralauth-log-status-none": "（无）",
 	"centralauth-log-status-oversighted": "已屏蔽",
 	"centralauth-login-error-locked": "{{GENDER:$1|您}}目前无法登录，因为{{GENDER:$1|您的}}账户已被全域锁定。",
-	"centralauth-login-error-usesul3": "由于配置错误，无法继续登录。这是软件错误，已报告。请使用{{int:centralauth-non-login-wiki-buttonlabel}}按钮。",
+	"centralauth-login-error-usesul3": "由于软件错误，无法继续登录。我们已报告此错误。请使用{{int:centralauth-non-login-wiki-buttonlabel}}按钮以登录。",
 	"centralauth-logout-no-others": "您已经自动登出{{int:Centralauth-groupname}}的其他项目。",
 	"centralauth-logout-progress": "正在为您退出{{int:Centralauth-groupname}}的其他{{PLURAL:$2|wiki}}：",
 	"centralauth-merge-attempt": "'''检查未合并账号的密码……'''",
