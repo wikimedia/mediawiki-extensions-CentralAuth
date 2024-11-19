@@ -202,20 +202,20 @@ class LoginCompleteHookHandler implements
 		// the login request that spawned that token server-side.
 		$secret = MWCryptRand::generateHex( 32 );
 		$session->set( 'CentralAuth:autologin:current-attempt', [
-			'secret'	=> $secret,
-			'remember'      => $remember,
-			'returnTo'      => $returnTo,
+			'secret' => $secret,
+			'remember' => $remember,
+			'returnTo' => $returnTo,
 			'returnToQuery' => $returnToQuery,
 			'returnToAnchor' => $returnToAnchor,
-			'type'	  => $loginType
+			'type' => $loginType
 		] );
 
 		// Create a new token to pass to Special:CentralLogin/start (central wiki)
 		$data = [
-			'secret'	=> $secret,
-			'name'	  => $centralUser->getName(),
-			'guid'	  => $centralUser->getId(),
-			'wikiId'	=> WikiMap::getCurrentWikiId(),
+			'secret' => $secret,
+			'name' => $centralUser->getName(),
+			'guid' => $centralUser->getId(),
+			'wikiId' => WikiMap::getCurrentWikiId(),
 		];
 		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
 		$token = $this->tokenManager->tokenize( $data, 'central-login-start-token' );
