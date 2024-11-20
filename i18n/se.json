@@ -24,6 +24,7 @@
 	"centralauth-prefs-count-attached": "Du dovddaldat lea anus $1 {{PLURAL:$1|wikis}}.",
 	"centralauth-prefs-status": "Vuogádatviidosaš dovddaldat:",
 	"centralauth-rename-conflict-hidden": "geavaheaddjinamma čihkkon",
+	"centralauth-rename-form-newname": "Ođđa geavaheaddjinamma",
 	"centralauth-rename-progress-username": "Geavaheaddjinamma",
 	"centralauth-rename-table-status-failed": "Ii lihkostuvvan",
 	"centralloginsuccesful": "Leat čálihuvvon sisa",
