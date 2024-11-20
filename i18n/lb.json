@@ -310,7 +310,7 @@
 	"centralauth-rename-table-status-done": "Fäerdeg",
 	"centralauth-rename-table-status-failed": "Huet net funktionéiert",
 	"centralauth-rename-table-status-inprogress": "Am Gaang",
-	"centralauth-rename-unattached-intheway": "Et gëtt net verbonne Benotzerkonten déi den ugefrote Benotzernumm benotzen.",
+	"centralauth-rename-unattached-intheway": "Et gëtt net verbonne Benotzerkonten, déi den ugefrote Benotzernumm benotzen.",
 	"centralauth-rename-viewprogress": "Progressioun weisen",
 	"centralauth-renameuser-merged": "De Benotzer $1 gouf schonn an de globale Benotzerkonte-System migréiert.\nEng Ëmbenennung hëlt de lokale Benotzerkont aus dem globale Benotzerkonte-System eraus.",
 	"centralauth-renameuser-reserved": "Benotzernumm $2 ass fir e globale Benotzerkont reservéiert.",
