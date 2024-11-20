@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
@@ -219,6 +221,103 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 			]
 		);
 		$u->save( $this->getDb() );
+	}
+
+	public function testGetEmail() {
+		$user = new CentralAuthUser( __METHOD__ );
+		$this->assertSame( '', $user->getEmail() );
+		$user->setEmail( 'test@test.test' );
+		$this->assertSame( 'test@test.test', $user->getEmail() );
+
+		$user->register( 'blabla', 'test@test.test' );
+		$this->assertSame( 'test@test.test', $user->getEmail() );
+
+		// reload
+		$user->getStateHash( true );
+		$this->assertSame( 'test@test.test', $user->getEmail() );
+	}
+
+	/** T370779 */
+	public function testShouldHandleDuplicatesDuringMigration(): void {
+		$testUserOne = $this->getMutableTestUser()->getUserIdentity();
+		$testUserTwo = $this->getMutableTestUser()->getUserIdentity();
+
+		$firstBatch = [
+			$testUserOne,
+			$testUserTwo
+		];
+
+		$secondBatch = [
+			$testUserOne,
+			new UserIdentityValue( $testUserTwo->getId(), 'OtherUser' )
+		];
+
+		$firstBatchResults = $this->simulateMigration( $firstBatch );
+		$secondBatchResults = $this->simulateMigration( $secondBatch );
+
+		foreach ( $firstBatchResults as $result ) {
+			$this->assertTrue(
+				$result,
+				'Pass 1 migration should have succeeded for all users in the first batch'
+			);
+		}
+
+		$this->assertFalse(
+			$secondBatchResults[$testUserOne->getId()],
+			"Pass 1 migration should have failed for \"{$testUserOne->getName()}\" as a corresponding global user exists"
+		);
+		$this->assertTrue(
+			$secondBatchResults[$testUserTwo->getId()],
+			"Pass 1 migration should have succeeded for \"{$testUserTwo->getName()}\""
+		);
+	}
+
+	/**
+	 * Simulate Pass 0 and Pass 1 migrations for a batch of users.
+	 *
+	 * @param UserIdentity[] $users Users to simulate migrations for.
+	 * @return bool[] Pass 1 migration statuses by user ID.
+	 */
+	private function simulateMigration( array $users ): array {
+		// A more realistic test would run each migration for a separate wiki ID,
+		// but this is not really feasible in CI as there's no mechanism to setup
+		// multiple test databases.
+		$wikiId = WikiMap::getCurrentWikiId();
+
+		// Pass 0 migration
+		CentralAuthUser::storeMigrationData( $wikiId, $users );
+
+		// Pass 1 migration
+		$results = [];
+		foreach ( $users as $user ) {
+			$userId = $user->getId();
+			$userName = $user->getName();
+
+			$cu = $this->getMockBuilder( CentralAuthUser::class )
+				->onlyMethods( [ 'queryUnattached' ] )
+				->setConstructorArgs( [ $userName ] )
+				->getMock();
+
+			$cu->method( 'queryUnattached' )
+				->willReturn( [
+					$wikiId => [
+						'wiki' => $wikiId,
+						'id' => $userId,
+						'name' => $userName,
+						'email' => 'test@example.com',
+						'emailAuthenticated' => wfTimestampNow(),
+						'registration' => wfTimestampNow(),
+						'password' => '',
+						'editCount' => 1,
+						'groupMemberships' => [],
+						'blocked' => false,
+					]
+				] );
+
+			$results[$userId] = $cu->storeAndMigrate();
+		}
+
+		return $results;
 	}
 
 }
