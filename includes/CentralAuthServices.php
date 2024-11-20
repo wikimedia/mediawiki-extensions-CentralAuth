@@ -53,6 +53,20 @@ class CentralAuthServices {
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
 	 *
+	 * @return CentralAuthApiTokenGenerator
+	 * @since 1.44
+	 */
+	public static function getApiTokenGenerator(
+		?ContainerInterface $services = null
+	): CentralAuthApiTokenGenerator {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthApiTokenGenerator' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
 	 * @return CentralAuthDatabaseManager
 	 * @since 1.37
 	 */

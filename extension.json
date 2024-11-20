@@ -341,7 +341,7 @@
 		"centralauthtoken": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiCentralAuthToken",
 			"services": [
-				"CentralAuth.CentralAuthTokenManager"
+				"CentralAuth.CentralAuthApiTokenGenerator"
 			]
 		},
 		"globaluserrights": {

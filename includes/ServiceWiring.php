@@ -38,6 +38,14 @@ return [
 		);
 	},
 
+	'CentralAuth.CentralAuthApiTokenGenerator' => static function (
+		MediaWikiServices $services
+	): CentralAuthApiTokenGenerator {
+		return new CentralAuthApiTokenGenerator(
+			CentralAuthServices::getTokenManager( $services )
+		);
+	},
+
 	'CentralAuth.CentralAuthDatabaseManager' => static function (
 		MediaWikiServices $services
 	): CentralAuthDatabaseManager {
