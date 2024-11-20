@@ -93,6 +93,7 @@
 	"centralauth-admin-delete-confirm": "Confirmation text asking whether the global account should really be deleted",
 	"centralauth-admin-delete-description": "Description text on Special:CentralAuth. See [[:File:CentralAuth admin.png]] for a screenshot.",
 	"centralauth-admin-delete-nonexistent": "Used as error message. Parameters:\n* $1 - global account's name",
+	"centralauth-admin-cannot-lock-temporary-account": "Used as an error message when a user tries to lock a global account that is a temporary account.",
 	"centralauth-admin-delete-success": "Used as success message in Special:CentralAuth. Parameters:\n* $1 - username",
 	"centralauth-admin-delete-title": "Used as a fieldset legend. See [[:File:CentralAuth admin.png]].",
 	"centralauth-admin-group-temporary": "Displayed to indicate that the user belongs to this group for a limited period of time.\n\nParameters:\n* $1 - internal group name",
