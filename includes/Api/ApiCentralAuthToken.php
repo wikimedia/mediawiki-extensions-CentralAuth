@@ -27,11 +27,10 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use CentralAuthSessionProvider;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
-use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthApiTokenGenerator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\WikiMap\WikiMap;
-use MWCryptRand;
 
 /**
  * Module to fetch the centralauthtoken for cross-wiki queries.
@@ -44,15 +43,15 @@ use MWCryptRand;
  */
 class ApiCentralAuthToken extends ApiBase {
 
-	private CentralAuthTokenManager $tokenManager;
+	private CentralAuthApiTokenGenerator $tokenGenerator;
 
 	public function __construct(
 		ApiMain $main,
 		string $moduleName,
-		CentralAuthTokenManager $tokenManager
+		CentralAuthApiTokenGenerator $tokenGenerator
 	) {
 		parent::__construct( $main, $moduleName );
-		$this->tokenManager = $tokenManager;
+		$this->tokenGenerator = $tokenGenerator;
 	}
 
 	public function execute() {
@@ -78,14 +77,7 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieWithError( 'apierror-centralauth-notattached', 'notattached' );
 		}
 
-		$data = [
-			'userName' => $user->getName(),
-			'token' => $centralUser->getAuthToken(),
-			'origin' => WikiMap::getCurrentWikiId(),
-			'originSessionId' => $id,
-		];
-		$loginToken = MWCryptRand::generateHex( 32 ) . dechex( $centralUser->getId() );
-		$this->tokenManager->tokenize( $data, 'api-token', [ 'token' => $loginToken ] );
+		$loginToken = $this->tokenGenerator->getToken( $user, $id, WikiMap::getCurrentWikiId() );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'centralauthtoken' => $loginToken
