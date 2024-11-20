@@ -595,6 +595,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			$centralAuthPrimaryProviderIds = [
 				$this->getUniqueId(),
 				CentralAuthRedirectingPrimaryAuthenticationProvider::class,
+				CentralAuthTemporaryPasswordPrimaryAuthenticationProvider::class,
 			];
 			return in_array( $source, $centralAuthPrimaryProviderIds, true );
 		} else {
