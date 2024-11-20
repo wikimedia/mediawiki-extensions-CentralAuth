@@ -78,7 +78,7 @@ class GlobalRenameFactory {
 
 		$userNew = $this->userFactory->newFromName( $newName, UserRigorOptions::RIGOR_CREATABLE );
 		if ( !$userNew ) {
-			throw new InvalidArgumentException( 'Name old the new user is not creatable' );
+			throw new InvalidArgumentException( 'Name of the new user is not creatable' );
 		}
 
 		return new GlobalRenameUser(
@@ -86,9 +86,7 @@ class GlobalRenameFactory {
 			$userOld,
 			$userToRename,
 			$userNew,
-			// TODO: this is only used for caching, maybe we can create a Factory service
-			// for CAUsers and related caching and inject that instead
-			CentralAuthUser::getInstance( $userNew ),
+			CentralAuthUser::getPrimaryInstance( $userNew ),
 			$this->newGlobalRenameUserStatus( $userNew->getName() ),
 			$this->jobQueueGroupFactory,
 			new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
