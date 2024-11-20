@@ -78,7 +78,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		if ( !$this->getUser()->isRegistered() ) {
+		if ( !$this->getUser()->isNamed() ) {
 			$loginpage = SpecialPage::getTitleFor( 'Userlogin' );
 			$loginurl = $loginpage->getFullUrl(
 				[ 'returnto' => $this->getPageTitle()->getPrefixedText() ]
