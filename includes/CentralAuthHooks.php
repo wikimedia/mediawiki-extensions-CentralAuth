@@ -564,24 +564,6 @@ class CentralAuthHooks implements
 				}
 				$data['startURL'] = wfAppendQuery( $startUrl, $params );
 			}
-
-			// B/C: Retain for backward compatibility for at least a week after the
-			// train fully goes out on all wikis and everything is using startURL.
-			// TODO: Remove after a full weekly train ride.
-			$checkLoggedInUrl = WikiMap::getForeignURL(
-				$wgCentralAuthLoginWiki, 'Special:CentralAutoLogin/checkLoggedIn'
-			);
-
-			if ( $checkLoggedInUrl !== false ) {
-				$params = [
-					'type' => 'script',
-					'wikiid' => $wikiId,
-				];
-				if ( self::isMobileDomain() ) {
-					$params['mobile'] = 1;
-				}
-				$data['checkLoggedInURL'] = wfAppendQuery( $checkLoggedInUrl, $params );
-			}
 		}
 
 		return $data;
