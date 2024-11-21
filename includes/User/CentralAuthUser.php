@@ -213,6 +213,16 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Clears the internal cache of CentralAuthUser instances.
+	 *
+	 * @internal Only for use in CentralAuth tests.
+	 * @return void
+	 */
+	public static function clearUserCache() {
+		self::$loadedUsers->clear();
+	}
+
+	/**
 	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
 	 * @param UserIdentity $user
 	 * @param CentralAuthUser $caUser
@@ -1869,7 +1879,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_locked' => 1 ] )
-			->where( [ 'gu_name' => $this->mName ] )
+			->where( [
+				'gu_name' => $this->mName,
+				// Necessary so that the call to IDatabase::affectedRows will return 0 if no update was made.
+				'gu_locked' => 0,
+			] )
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
@@ -1899,7 +1913,11 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_locked' => 0 ] )
-			->where( [ 'gu_name' => $this->mName ] )
+			->where( [
+				'gu_name' => $this->mName,
+				// Necessary so that the call to IDatabase::affectedRows will return 0 if no update was made.
+				'gu_locked' => 1,
+			] )
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
@@ -1924,11 +1942,15 @@ class CentralAuthUser implements IDBAccessObject {
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_hidden_level' => $level ] )
-			->where( [ 'gu_name' => $this->mName ] )
+			->where( [
+				'gu_name' => $this->mName,
+				// Necessary so that the call to IDatabase::affectedRows will return 0 if no update was made.
+				$dbw->expr( 'gu_hidden_level', '!=', $level ),
+			] )
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
-			return Status::newFatal( 'centralauth-admin-unhide-nonexistent', $this->mName );
+			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
 
 		$this->invalidateCache();
@@ -2006,31 +2028,34 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $oldHiddenLevel != $setHidden ) {
 			$hideStatus = $this->adminSetHidden( $setHidden );
-			switch ( $setHidden ) {
-				case self::HIDDEN_LEVEL_NONE:
-					$removed[] = $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ?
-						'oversighted' :
-						'hidden';
-					break;
-				case self::HIDDEN_LEVEL_LISTS:
-					$added[] = 'hidden';
-					if ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
-						$removed[] = 'oversighted';
-					}
-					break;
-				case self::HIDDEN_LEVEL_SUPPRESSED:
-					$added[] = 'oversighted';
-					if ( $oldHiddenLevel === self::HIDDEN_LEVEL_LISTS ) {
-						$removed[] = 'hidden';
-					}
-					break;
-			}
 
-			$userName = $user->getName();
-			if ( $setHidden === self::HIDDEN_LEVEL_SUPPRESSED ) {
-				$this->suppress( $userName, $reason );
-			} elseif ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
-				$this->unsuppress( $userName, $reason );
+			if ( $hideStatus->isGood() ) {
+				switch ( $setHidden ) {
+					case self::HIDDEN_LEVEL_NONE:
+						$removed[] = $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ?
+							'oversighted' :
+							'hidden';
+						break;
+					case self::HIDDEN_LEVEL_LISTS:
+						$added[] = 'hidden';
+						if ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
+							$removed[] = 'oversighted';
+						}
+						break;
+					case self::HIDDEN_LEVEL_SUPPRESSED:
+						$added[] = 'oversighted';
+						if ( $oldHiddenLevel === self::HIDDEN_LEVEL_LISTS ) {
+							$removed[] = 'hidden';
+						}
+						break;
+				}
+
+				$userName = $user->getName();
+				if ( $setHidden === self::HIDDEN_LEVEL_SUPPRESSED ) {
+					$this->suppress( $userName, $reason );
+				} elseif ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
+					$this->unsuppress( $userName, $reason );
+				}
 			}
 		}
 
