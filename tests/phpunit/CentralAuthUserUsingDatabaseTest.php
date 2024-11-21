@@ -15,6 +15,7 @@ use MediaWiki\WikiMap\WikiMap;
 class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 
 	public function testBasicAttrs() {
+		$this->createCentralAccountForGlobalUser();
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertSame( 1001, $caUser->getId() );
@@ -34,6 +35,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testLoadFromDB() {
+		$this->createCentralAccountForGlobalUser();
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$caUser->loadStateNoCache();
 		$this->assertTrue( $caUser->exists() );
@@ -41,6 +43,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testLoadAttached() {
+		$this->createCentralAccountForGlobalUser();
 		$caUser = CentralAuthUser::getInstanceByName( 'GlobalUser' );
 		$this->assertArrayEquals(
 			[
@@ -63,6 +66,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testNewFromId() {
+		$this->createCentralAccountForGlobalUser();
 		$ca = CentralAuthUser::newFromId( 1001 );
 		$this->assertSame( 'GlobalUser', $ca->getName() );
 
@@ -83,13 +87,15 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testLocked() {
-		$caUser = CentralAuthUser::getInstanceByName( 'GlobalLockedUser' );
+		$caUser = CentralAuthUser::getInstanceByName( $this->getTestCentralAuthUserWithExistingLocalWikis() );
+		$caUser->adminLock();
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isLocked() );
 	}
 
 	public function testHidden() {
-		$caUser = CentralAuthUser::getInstanceByName( 'GlobalSuppressedUser' );
+		$caUser = CentralAuthUser::getInstanceByName( $this->getTestCentralAuthUserWithExistingLocalWikis() );
+		$caUser->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isHidden() );
 		$this->assertTrue( $caUser->isSuppressed() );
@@ -115,7 +121,8 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testAdminLockAndHide() {
-		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
+		$globalAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( $globalAccountUsername );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertFalse( $caUser->isHidden() );
 		$this->assertFalse( $caUser->isLocked() );
@@ -127,17 +134,15 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->newSelectQueryBuilder()
 			->select( [ 'gu_name', 'gu_locked', 'gu_hidden_level' ] )
 			->from( 'globaluser' )
-			->where( [ 'gu_name' => 'GlobalUser' ] )
-			->assertResultSet( [
-				[ 'GlobalUser', '1', CentralAuthUser::HIDDEN_LEVEL_LISTS ]
-			] );
+			->where( [ 'gu_name' => $globalAccountUsername ] )
+			->assertRowValue( [ $globalAccountUsername, '1', CentralAuthUser::HIDDEN_LEVEL_LISTS ] );
 
 		// Check that the instance was reloaded from the DB
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isLocked() );
 		$this->assertTrue( $caUser->isHidden() );
 		// Ignore cache, read from DB for new instance
-		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( $globalAccountUsername );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertTrue( $caUser->isLocked() );
 		$this->assertTrue( $caUser->isHidden() );
@@ -150,14 +155,14 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $caUser->isHidden() );
 		$this->assertFalse( $caUser->isLocked() );
 		// Ignore cache, read from DB for new instance
-		$caUser = CentralAuthUser::getPrimaryInstanceByName( 'GlobalUser' );
+		$caUser = CentralAuthUser::getPrimaryInstanceByName( $globalAccountUsername );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertFalse( $caUser->isHidden() );
 		$this->assertFalse( $caUser->isLocked() );
 	}
 
 	public function testAttach() {
-		$caUser = new class( 'GlobalUser' ) extends CentralAuthUser {
+		$caUser = new class( $this->getTestCentralAuthUserWithExistingLocalWikis() ) extends CentralAuthUser {
 
 			protected function addLocalEdits( $wikiID ) {
 				// This test can't connect to anotherwiki to fetch edit counts
@@ -168,59 +173,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$caUser->attach( 'anotherwiki', 'admin', false );
 		$this->assertTrue( $caUser->exists() );
 		$this->assertContains( 'anotherwiki', $caUser->listAttached() );
-	}
-
-	/**
-	 * Setup a fresh set of global users for each test.
-	 * Note: MediaWikiIntegrationTestCase::resetDB() will delete all tables between
-	 * test runs, so no explicite tearDown() is needed.
-	 */
-	protected function setUp(): void {
-		parent::setUp();
-		$user = new CentralAuthTestUser(
-			'GlobalUser',
-			'GUP@ssword',
-			[ 'gu_id' => '1001' ],
-			[
-				[ WikiMap::getCurrentWikiId(), 'primary' ],
-				[ 'enwiki', 'primary' ],
-				[ 'dewiki', 'login' ],
-				[ 'metawiki', 'password' ],
-			]
-		);
-		$user->save( $this->getDb() );
-
-		$u = new CentralAuthTestUser(
-			'GlobalLockedUser',
-			'GLUP@ssword',
-			[
-				'gu_id' => '1003',
-				'gu_locked' => 1,
-				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
-				'gu_email' => 'testlocked@localhost',
-				'gu_home_db' => 'metawiki',
-			],
-			[
-				[ 'metawiki', 'primary' ],
-			]
-		);
-		$u->save( $this->getDb() );
-
-		$u = new CentralAuthTestUser(
-			'GlobalSuppressedUser',
-			'GSUP@ssword',
-			[
-				'gu_id' => '1004',
-				'gu_locked' => 1,
-				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
-				'gu_email' => 'testsuppressed@localhost',
-				'gu_home_db' => 'metawiki',
-			],
-			[
-				[ 'metawiki', 'primary' ],
-			]
-		);
-		$u->save( $this->getDb() );
 	}
 
 	public function testGetEmail() {
@@ -320,4 +272,29 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		return $results;
 	}
 
+	private function createCentralAccountForGlobalUser(): void {
+		$user = new CentralAuthTestUser(
+			'GlobalUser',
+			'GUP@ssword',
+			[ 'gu_id' => '1001' ],
+			[
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
+				[ 'enwiki', 'primary' ],
+				[ 'dewiki', 'login' ],
+				[ 'metawiki', 'password' ],
+			]
+		);
+		$user->save( $this->getDb() );
+	}
+
+	private function getTestCentralAuthUserWithExistingLocalWikis(): string {
+		$targetUsername = 'GlobalTestUser' . TestUserRegistry::getNextId();
+		$targetUser = new CentralAuthTestUser(
+			$targetUsername, 'GUP@ssword',
+			[ 'gu_id' => '123' ],
+			[ [ WikiMap::getCurrentWikiId(), 'primary' ] ]
+		);
+		$targetUser->save( $this->getDb() );
+		return $targetUsername;
+	}
 }
