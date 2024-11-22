@@ -13,6 +13,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -20,7 +21,6 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
@@ -29,7 +29,6 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
-use MobileContext;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use SkinTemplate;
@@ -63,9 +62,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	/** @var Session|null */
 	protected $session = null;
-
-	private ExtensionRegistry $extensionRegistry;
-
 	private HookContainer $hookContainer;
 	private LanguageFactory $languageFactory;
 	private UserFactory $userFactory;
@@ -76,6 +72,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private LoggerInterface $logger;
 
 	private string $subpage;
+	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param HookContainer $hookContainer
@@ -93,11 +90,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		UserOptionsLookup $userOptionsLookup,
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthTokenManager $tokenManager,
-		CentralAuthUtilityService $centralAuthUtilityService
+		CentralAuthUtilityService $centralAuthUtilityService,
+		SharedDomainUtils $sharedDomainUtils
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
-		$this->extensionRegistry = ExtensionRegistry::getInstance();
 		$this->hookContainer = $hookContainer;
 		$this->languageFactory = $languageFactory;
 		$this->userFactory = $userFactory;
@@ -105,6 +102,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->sessionManager = $sessionManager;
 		$this->tokenManager = $tokenManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -216,8 +214,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'return',
 			'returnto',
 			'returntoquery',
-			// Whether the request that initiated autologin was to the mobile domain.
-			'mobile',
 			// also used:
 			// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
 			// 'token': Random store key, used to pass information in a secure manner.
@@ -716,21 +712,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 */
 	private function do302Redirect( $target, $state, $params ) {
 		$url = WikiMap::getForeignURL( $target, "Special:CentralAutoLogin/$state" );
-		if ( WikiMap::getCurrentWikiId() == $this->loginWiki
-			&& $this->extensionRegistry->isLoaded( 'MobileFrontend' )
-			&& isset( $params['mobile'] )
-			&& $params['mobile']
-		) {
-			$url = MobileContext::singleton()->getMobileUrl( $url );
-		}
 
 		if ( $url === false ) {
 			$this->doFinalOutput( false, 'Invalid target wiki' );
 		} else {
+			$url = $this->sharedDomainUtils->makeUrlDeviceCompliant( $url );
 			// expands to PROTO_CURRENT
-			$this->getOutput()->redirect(
-				wfAppendQuery( $url, $params )
-			);
+			$this->getOutput()->redirect( wfAppendQuery( $url, $params ) );
 		}
 	}
 

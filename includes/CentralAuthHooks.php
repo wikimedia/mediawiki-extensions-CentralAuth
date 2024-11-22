@@ -299,6 +299,10 @@ class CentralAuthHooks implements
 		}
 	}
 
+	private static function getSharedDomainUtils(): SharedDomainUtils {
+		return MediaWikiServices::getInstance()->get( 'CentralAuth.SharedDomainUtils' );
+	}
+
 	/**
 	 * Get the HTML for an <img> element used to perform edge login, autologin (no-JS), or central logout.
 	 *
@@ -306,7 +310,6 @@ class CentralAuthHooks implements
 	 * @param string $page Target page, should be a Special:CentralAutoLogin subpage
 	 * @param array $params URL query parameters. Some also affect the generated HTML:
 	 *   - 'type': when set to '1x1', generate an invisible pixel image, instead of a visible icon
-	 *   - 'mobile': when set, use target wiki's mobile domain URL instead of canonical URL
 	 * @param ContentSecurityPolicy|null $csp If provided, it will be modified to allow requests to
 	 *   the target wiki. Otherwise, that must be done in 'ContentSecurityPolicyDefaultSource' hook.
 	 * @return string HTML
@@ -316,14 +319,11 @@ class CentralAuthHooks implements
 	): string {
 		// Use WikiMap to avoid localization of the 'Special' namespace, see T56195.
 		$wiki = WikiMap::getWiki( $wikiID );
-		$url = wfAppendQuery(
-			$wiki->getCanonicalUrl( $page ),
-			$params
-		);
-		if ( isset( $params['mobile'] ) ) {
-			// Do autologin on the mobile domain for each wiki
-			$url = MobileContext::singleton()->getMobileUrl( $url );
-		}
+		$url = wfAppendQuery( $wiki->getCanonicalUrl( $page ), $params );
+
+		$sharedDomainUtils = self::getSharedDomainUtils();
+		$url = $sharedDomainUtils->makeUrlDeviceCompliant( $url );
+
 		if ( $csp ) {
 			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
 		}
@@ -559,9 +559,7 @@ class CentralAuthHooks implements
 
 			if ( $startUrl !== false ) {
 				$params = [ 'type' => 'script' ];
-				if ( self::isMobileDomain() ) {
-					$params['mobile'] = 1;
-				}
+				$startUrl = self::getSharedDomainUtils()->makeUrlDeviceCompliant( $startUrl );
 				$data['startURL'] = wfAppendQuery( $startUrl, $params );
 			}
 		}
@@ -595,9 +593,6 @@ class CentralAuthHooks implements
 				'type' => '1x1',
 				'from' => WikiMap::getCurrentWikiId(),
 			];
-			if ( self::isMobileDomain() ) {
-				$params['mobile'] = 1;
-			}
 			$html .= self::getAuthIconHtml( $wikiID, 'Special:CentralAutoLogin/start', $params, null );
 		}
 

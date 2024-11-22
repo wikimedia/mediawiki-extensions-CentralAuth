@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Config\Config;
-use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -15,7 +14,6 @@ use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
-use MobileContext;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
 /**
@@ -122,7 +120,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			return true;
 		}
 
-		$isMobile = CentralAuthHooks::isMobileDomain();
+		$isMobile = $this->sharedDomainUtils->shouldUseMobile();
 
 		// Do a top-level autologin if the user needs to log in. Use a cookie to prevent
 		// unnecessary autologin attempts if we already know they will fail, and a query parameter
@@ -155,19 +153,15 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			$returnUrl = wfAppendQuery( $request->getFullRequestURL(), [
 				self::AUTOLOGIN_TRIED_QUERY_PARAM => 1,
 			] );
-			if ( CentralAuthHooks::isMobileDomain() ) {
-				// WebRequest::getFullRequestURL() uses $wgServer, not the actual request
-				// domain, but we do want to preserve that
-				$returnUrl = MobileContext::singleton()->getMobileUrl( $returnUrl );
-			}
+			$returnUrl = $this->sharedDomainUtils->makeUrlDeviceCompliant( $returnUrl );
 			$returnUrlToken = $this->tokenManager->tokenize( $returnUrl, 'centralautologin-returnurl' );
 			$url = wfAppendQuery( $url, [
 				'type' => 'redirect',
 				'returnUrlToken' => $returnUrlToken,
 				'wikiid' => WikiMap::getCurrentWikiId(),
-				'mobile' => $isMobile ? 1 : null,
 			] );
-			$special->getOutput()->redirect( $url );
+
+			$special->getOutput()->redirect( $this->sharedDomainUtils->makeUrlDeviceCompliant( $url ) );
 
 			return false;
 		}

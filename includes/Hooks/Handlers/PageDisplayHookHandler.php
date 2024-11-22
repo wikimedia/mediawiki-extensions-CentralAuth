@@ -74,11 +74,6 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 			$wikiId = WikiMap::getCurrentWikiId();
 			$loginWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
 			if ( $loginWikiId && $wikiId !== $loginWikiId ) {
-				// Let the frontend know if this is a mobile domain, T100413
-				$out->addJsConfigVars(
-					'wgCentralAuthMobileDomain',
-					CentralAuthHooks::isMobileDomain()
-				);
 
 				$logger->debug( 'CentralAutoLogin triggered in BeforePageDisplay' );
 
@@ -97,9 +92,6 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 				$params = [
 					'type' => '1x1',
 				];
-				if ( CentralAuthHooks::isMobileDomain() ) {
-					$params['mobile'] = 1;
-				}
 				$out->addHTML( '<noscript>' . CentralAuthHooks::getAuthIconHtml(
 					$loginWikiId, 'Special:CentralAutoLogin/start', $params, null
 				) . '</noscript>' );

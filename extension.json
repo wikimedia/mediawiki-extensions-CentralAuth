@@ -142,7 +142,8 @@
 				"UserOptionsLookup",
 				"CentralAuth.CentralAuthSessionManager",
 				"CentralAuth.CentralAuthTokenManager",
-				"CentralAuth.CentralAuthUtilityService"
+				"CentralAuth.CentralAuthUtilityService",
+				"CentralAuth.SharedDomainUtils"
 			]
 		},
 		"CentralLogin": {
