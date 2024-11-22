@@ -36,9 +36,6 @@
 	url = require( './data.json' ).startURL;
 
 	if ( url ) {
-		if ( mw.config.get( 'wgCentralAuthMobileDomain' ) === true ) {
-			url += '&mobile=1';
-		}
 		if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
 			url += '&return=1';
 
