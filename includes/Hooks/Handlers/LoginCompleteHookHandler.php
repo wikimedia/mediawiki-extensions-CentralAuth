@@ -142,7 +142,7 @@ class LoginCompleteHookHandler implements
 		}
 
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
-		$centralUser = CentralAuthUser::getInstance( $user );
+		$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 
 		$logger->debug( 'CentralLogin triggered in TempUserCreatedRedirect' );
 		$redirectUrl = $this->getRedirectUrl(
