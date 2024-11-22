@@ -175,17 +175,9 @@ class SharedDomainUtils {
 				throw new RuntimeException( 'Unknown action: ' . $action );
 		}
 
-		$url = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl;
-
-		if ( $this->mobileContext && $this->mobileContext->shouldDisplayMobileView() ) {
-			$url = wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );
-		} else {
-			// This is not supposed to happen on the shared domain but if we're
-			// in a situation where the shared domain is in mobile view and the
-			// user is coming from a desktop view, let's inherit that experience
-			// to the shared domain.
-			$url = wfAppendQuery( $url, [ 'useformat' => 'desktop' ] );
-		}
+		$url = $this->makeUrlDeviceCompliant(
+			$this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl
+		);
 
 		return wfAppendQuery( $url, [
 			// At this point, we should just be leaving the local
@@ -196,6 +188,51 @@ class SharedDomainUtils {
 			'usesul3' => '1',
 			'campaign' => $request ? $request->getRawVal( 'campaign' ) : null,
 		] );
+	}
+
+	/**
+	 * @return bool True if on mobile device
+	 */
+	public function shouldUseMobile(): bool {
+		return $this->mobileContext && $this->mobileContext->shouldDisplayMobileView();
+	}
+
+	/**
+	 * Check the URL and apply transformation based on the device
+	 * that is currently looking at it. If mobile, apply the mobile
+	 * transformation to the URL so we view the correct rendering.
+	 *
+	 * Get the mobile domain (m.) version of the URL if available
+	 * configured (in that WMF is currently configured to have separate
+	 * domain for mobile and desktop versions of sites) and we want that
+	 * instead of just appending a `useformat` query parameter, if the
+	 * domain is a mobile domain, just return it but if it's not, we
+	 * detect that and append a `useformat` query param..
+	 *
+	 * @param string $url
+	 *
+	 * @return string
+	 */
+	public function makeUrlDeviceCompliant( string $url ): string {
+		// Assume either all or none of the wikis in the farm have MobileFrontend
+		if ( !$this->mobileContext ) {
+			return $url;
+		}
+
+		$mobileUrl = $this->mobileContext->getMobileUrl( $url );
+		// Some wikis don't have separate mobile and desktop versions at different URLs,
+		// in which case getMobileUrl() is a no-op.
+		$hasMobileUrl = ( $mobileUrl !== $url );
+
+		if ( $this->mobileContext->shouldDisplayMobileView() ) {
+			return $hasMobileUrl ? $mobileUrl : wfAppendQuery( $url, [ 'useformat' => 'mobile' ] );
+		} else {
+			// useformat=desktop is the default, and so we don't really need to set it,
+			// but we want to consider the possibility that the user has previously used
+			// the central domain and set it to mobile mode via a cookie. In that case,
+			// we want to prioritize the consistency of the current mode over that setting.
+			return $hasMobileUrl ? $url : wfAppendQuery( $url, [ 'useformat' => 'desktop' ] );
+		}
 	}
 
 }

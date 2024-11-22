@@ -94,9 +94,6 @@ class UserLogoutHookHandler implements
 				$params = [
 					'type' => 'icon',
 				];
-				if ( CentralAuthHooks::isMobileDomain() ) {
-					$params['mobile'] = 1;
-				}
 				$inject_html .= CentralAuthHooks::getAuthIconHtml(
 					$wikiID, 'Special:CentralAutoLogin/deleteCookies', $params, $csp
 				);
