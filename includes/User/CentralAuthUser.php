@@ -1662,21 +1662,17 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @throws Exception
 	 * @param string[] $list
-	 * @return string[]
+	 * @return array An associative array containing the valid and invalid entries.
 	 */
 	protected static function validateList( $list ) {
 		$unique = array_unique( $list );
 		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
 		$valid = array_intersect( $unique, $wikiList );
+		$invalid = array_diff( $unique, $valid );
 
-		if ( count( $valid ) != count( $list ) ) {
-			// fixme: handle this gracefully
-			throw new RuntimeException( "Invalid input" );
-		}
-
-		return $valid;
+		// Return valid and invalid entries
+		return [ 'valid' => $valid, 'invalid' => $invalid ];
 	}
 
 	/**
@@ -1686,24 +1682,28 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminUnattach( $list ) {
 		$this->checkWriteMode();
-
 		if ( !count( $list ) ) {
 			return Status::newFatal( 'centralauth-admin-none-selected' );
 		}
+
 		$status = new Status;
-		$valid = $this->validateList( $list );
-		$invalid = array_diff( $list, $valid );
+
+		// Get valid and invalid wikis
+		[ 'valid' => $valid, 'invalid' => $invalid ] = $this->validateList( $list );
+
+		// Handle invalid wikis
 		foreach ( $invalid as $wikiName ) {
 			$status->error( 'centralauth-invalid-wiki', $wikiName );
 			$status->failCount++;
 		}
 
+		// Proceed with valid wikis
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 		$dbcw = $databaseManager->getCentralPrimaryDB();
 		$password = $this->getPassword();
 
 		foreach ( $valid as $wikiName ) {
-			# Delete the user from the central localuser table
+			// Delete the user from the central localuser table
 			$dbcw->newDeleteQueryBuilder()
 				->deleteFrom( 'localuser' )
 				->where( [
@@ -1712,6 +1712,7 @@ class CentralAuthUser implements IDBAccessObject {
 				] )
 				->caller( __METHOD__ )
 				->execute();
+
 			if ( !$dbcw->affectedRows() ) {
 				$wiki = WikiMap::getWiki( $wikiName );
 				$status->error( 'centralauth-admin-already-unmerged', $wiki->getDisplayName() );
@@ -1719,7 +1720,7 @@ class CentralAuthUser implements IDBAccessObject {
 				continue;
 			}
 
-			# Touch the local user row, update the password
+			// Touch the local user row, update the password
 			$dblw = $databaseManager->getLocalDB( DB_PRIMARY, $wikiName );
 			$dblw->newUpdateQueryBuilder()
 				->update( 'user' )
@@ -1738,12 +1739,10 @@ class CentralAuthUser implements IDBAccessObject {
 				->caller( __METHOD__ )
 				->fetchRow();
 
-			# Remove the edits from the global edit count
+			// Remove the edits from the global edit count
 			$counter = CentralAuthServices::getEditCounter();
 			$counter->increment( $this, -(int)$userRow->user_editcount );
-
 			$this->clearLocalUserCache( $wikiName, $userRow->user_id );
-
 			$status->successCount++;
 		}
 
@@ -1752,7 +1751,6 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$this->invalidateCache();
-
 		return $status;
 	}
 
