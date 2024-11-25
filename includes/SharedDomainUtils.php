@@ -8,7 +8,6 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
-use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
 use Wikimedia\Assert\Assert;
@@ -188,9 +187,6 @@ class SharedDomainUtils {
 		}
 
 		return wfAppendQuery( $url, [
-			// At this point, we should just be leaving the local
-			// wiki before hitting the loginwiki.
-			'wikiid' => WikiMap::getCurrentWikiId(),
 			// TODO: Fix T369467
 			'returnto' => 'Main_Page',
 			'usesul3' => '1',
