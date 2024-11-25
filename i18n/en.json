@@ -66,6 +66,7 @@
 	"centralauth-admin-delete-confirm": "Do you really want to delete this account?",
 	"centralauth-admin-delete-description": "Deleting the global account will detach all local accounts, and leave the global name free for another user to take.\nAll local accounts will continue to exist.",
 	"centralauth-admin-delete-nonexistent": "Error: the global account \"<nowiki>$1</nowiki>\" does not exist.",
+	"centralauth-admin-cannot-lock-temporary-account": "You cannot lock temporary accounts, as locking them will just allow them to get a new temporary account on their next edit.",
 	"centralauth-admin-delete-success": "The global account for \"<nowiki>$1</nowiki>\" was deleted",
 	"centralauth-admin-delete-title": "Delete account",
 	"centralauth-admin-group-temporary": "$1 ''(temporary)''",

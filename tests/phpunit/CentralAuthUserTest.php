@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Password\Password;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -15,6 +16,8 @@ use Wikimedia\TestingAccessWrapper;
  * @group CentralAuth
  */
 class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
+
+	use TempUserTestTrait;
 
 	public function testGetInstance() {
 		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
@@ -52,6 +55,14 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		$this->assertInstanceOf( CentralAuthUser::class, $ca );
 		$this->assertSame( 'FooBar', $ca->getName() );
 		$this->assertFalse( $ca->isAttached() );
+	}
+
+	public function testAdminLockForTemporaryAccount() {
+		$this->enableAutoCreateTempUser();
+		$ca = CentralAuthUser::newUnattached( '~2024-1' );
+		$this->assertInstanceOf( CentralAuthUser::class, $ca );
+		$this->assertSame( '~2024-1', $ca->getName() );
+		$this->assertStatusError( 'centralauth-admin-cannot-lock-temporary-account', $ca->adminLock() );
 	}
 
 	/**

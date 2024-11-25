@@ -1873,7 +1873,13 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminLock() {
 		$this->checkWriteMode();
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+
+		$services = MediaWikiServices::getInstance();
+		if ( $services->getTempUserConfig()->isTempName( $this->mName ) ) {
+			return Status::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
+		}
+
+		$dbw = CentralAuthServices::getDatabaseManager( $services )->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_locked' => 1 ] )
@@ -1893,7 +1899,7 @@ class CentralAuthUser implements IDBAccessObject {
 		SessionManager::singleton()->invalidateSessionsForUser( $user );
 
 		// T375870: Track rate of locks for monitoring of anti-abuse tool usage.
-		MediaWikiServices::getInstance()->getStatsFactory()->withComponent( 'CentralAuth' )
+		$services->getStatsFactory()->withComponent( 'CentralAuth' )
 			->getCounter( 'account_lock' )
 			->increment();
 
