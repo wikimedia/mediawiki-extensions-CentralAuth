@@ -230,6 +230,7 @@
 	"globalrenameuser": "Maubah ngaran pamakai global",
 	"log-description-gblrename": "Catatan ini mancatat paubahan ngaran pamakai global.",
 	"log-name-gblrename": "Log paubahan ngaran global",
+	"logentry-newusers-forcecreatelocal": "$1 sacara paksa {{GENDER:$2|maulah}} akun lokal gasan $3",
 	"mergeaccount": "Satatus panggabungan babuat log",
 	"right-centralauth-lock": "Kunci atawa buka kunci akun global",
 	"right-centralauth-merge": "Gabungakan akun mereka",
