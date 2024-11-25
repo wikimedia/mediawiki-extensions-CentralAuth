@@ -632,6 +632,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialPageBeforeExecuteHookHandler",
 			"services": [
 				"AuthManager",
+				"HookContainer",
 				"MainConfig",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.SharedDomainUtils"
