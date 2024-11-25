@@ -1972,11 +1972,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return Status
 	 */
 	public function adminLockHide(
-		$setLocked, ?int $setHidden, $reason, IContextSource $context, bool $markAsBot = false
+		?bool $setLocked, ?int $setHidden, string $reason, IContextSource $context, bool $markAsBot = false
 	) {
 		$isLocked = $this->isLocked();
 		$oldHiddenLevel = $this->getHiddenLevelInt();
-		$lockStatus = $hideStatus = null;
+		$lockStatus = null;
 		$added = [];
 		$removed = [];
 		$user = $context->getUser();
@@ -2024,44 +2024,60 @@ class CentralAuthUser implements IDBAccessObject {
 			$removed[] = 'locked';
 		}
 
+		// Return early if the locked state of the user was requested to be changed, but this operation failed as we
+		// do not want to perform any status change for the global account if any of the changes fail (T380421).
+		if ( $lockStatus && !$lockStatus->isGood() ) {
+			return $lockStatus;
+		}
+
 		if ( $oldHiddenLevel != $setHidden ) {
 			$hideStatus = $this->adminSetHidden( $setHidden );
 
-			if ( $hideStatus->isGood() ) {
-				switch ( $setHidden ) {
-					case self::HIDDEN_LEVEL_NONE:
-						$removed[] = $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ?
-							'oversighted' :
-							'hidden';
-						break;
-					case self::HIDDEN_LEVEL_LISTS:
-						$added[] = 'hidden';
-						if ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
-							$removed[] = 'oversighted';
-						}
-						break;
-					case self::HIDDEN_LEVEL_SUPPRESSED:
-						$added[] = 'oversighted';
-						if ( $oldHiddenLevel === self::HIDDEN_LEVEL_LISTS ) {
-							$removed[] = 'hidden';
-						}
-						break;
+			// Return early if the locked state of the user was requested to be changed, but this operation failed
+			// as we do not want to perform any status change for the global account if any of the changes fail
+			// (T380421).
+			if ( !$hideStatus->isGood() ) {
+				// Undo any changes to the locked status of the global account if the suppression failed as we won't
+				// be creating a log entry for the change.
+				if ( !$isLocked && $setLocked ) {
+					$this->adminUnlock();
+				} elseif ( $isLocked && !$setLocked ) {
+					$this->adminLock();
 				}
 
-				$userName = $user->getName();
-				if ( $setHidden === self::HIDDEN_LEVEL_SUPPRESSED ) {
-					$this->suppress( $userName, $reason );
-				} elseif ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
-					$this->unsuppress( $userName, $reason );
-				}
+				return $hideStatus;
+			}
+
+			switch ( $setHidden ) {
+				case self::HIDDEN_LEVEL_NONE:
+					$removed[] = $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ?
+						'oversighted' :
+						'hidden';
+					break;
+				case self::HIDDEN_LEVEL_LISTS:
+					$added[] = 'hidden';
+					if ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
+						$removed[] = 'oversighted';
+					}
+					break;
+				case self::HIDDEN_LEVEL_SUPPRESSED:
+					$added[] = 'oversighted';
+					if ( $oldHiddenLevel === self::HIDDEN_LEVEL_LISTS ) {
+						$removed[] = 'hidden';
+					}
+					break;
+			}
+
+			$userName = $user->getName();
+			if ( $setHidden === self::HIDDEN_LEVEL_SUPPRESSED ) {
+				$this->suppress( $userName, $reason );
+			} elseif ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
+				$this->unsuppress( $userName, $reason );
 			}
 		}
 
-		$good = ( !$lockStatus || $lockStatus->isGood() ) &&
-			( !$hideStatus || $hideStatus->isGood() );
-
 		// Setup Status object to return all of the information for logging
-		if ( $good && ( $added || $removed ) ) {
+		if ( count( $added ) || count( $removed ) ) {
 			$returnStatus->successCount = count( $added ) + count( $removed );
 			$this->logAction(
 				'setstatus',
@@ -2071,13 +2087,6 @@ class CentralAuthUser implements IDBAccessObject {
 				$setHidden !== self::HIDDEN_LEVEL_NONE,
 				$markAsBot
 			);
-		} elseif ( !$good ) {
-			if ( $lockStatus !== null && !$lockStatus->isGood() ) {
-				$returnStatus->merge( $lockStatus );
-			}
-			if ( $hideStatus !== null && !$hideStatus->isGood() ) {
-				$returnStatus->merge( $hideStatus );
-			}
 		}
 
 		return $returnStatus;

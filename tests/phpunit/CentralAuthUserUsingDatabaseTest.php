@@ -355,7 +355,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 			->assertEmptyResult();
 	}
 
-	public function testAdminLockHideForSuppressWhenSuppressFails() {
+	public function testAdminLockHideForLockAndSuppressWhenSuppressFails() {
 		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
 		// Get the central account instance and load the global account status data for it
 		$caUser1 = CentralAuthUser::getInstanceByName( $centralAccountUsername );
@@ -369,9 +369,41 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$context = new DerivativeContext( RequestContext::getMain() );
 		$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
 		$adminLockHideStatus = $caUser1->adminLockHide(
-			null, CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'test', $context
+			true, CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'test', $context
 		);
 		$this->assertStatusError( 'centralauth-state-mismatch', $adminLockHideStatus );
+		$caUser1->invalidateCache();
+		$this->assertFalse( $caUser1->isLocked() );
+		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, $caUser1->getHiddenLevelInt() );
+		// Check that the call to ::adminLockHide did not create a log entry, as no change was made by it.
+		$this->newSelectQueryBuilder()
+			->select( '1' )
+			->from( 'logging' )
+			->where( [ 'log_type' => [ 'suppress', 'globalauth' ] ] )
+			->caller( __METHOD__ )
+			->assertEmptyResult();
+	}
+
+	public function testAdminLockHideForUnLockAndHideWhenHideFails() {
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		// Get the central account instance and load the global account status data for it
+		$caUser1 = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$caUser1->adminLock();
+		// Suppress the global account using a different CentralAuthUser instance, so that we can simulate a
+		// race condition using the outdated first instance.
+		CentralAuthUser::clearUserCache();
+		$caUser2 = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$caUser2->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_LISTS );
+		// Now try to lock the global account using the first instance.
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
+		$adminLockHideStatus = $caUser1->adminLockHide(
+			false, CentralAuthUser::HIDDEN_LEVEL_LISTS, 'test', $context
+		);
+		$this->assertStatusError( 'centralauth-state-mismatch', $adminLockHideStatus );
+		$caUser1->invalidateCache();
+		$this->assertTrue( $caUser1->isLocked() );
+		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_LISTS, $caUser1->getHiddenLevelInt() );
 		// Check that the call to ::adminLockHide did not create a log entry, as no change was made by it.
 		$this->newSelectQueryBuilder()
 			->select( '1' )
