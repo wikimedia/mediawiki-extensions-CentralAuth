@@ -8,6 +8,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
+use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -40,23 +42,27 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
 	private AuthManager $authManager;
+	private HookRunner $hookRunner;
 	private Config $config;
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	/**
 	 * @param AuthManager $authManager
+	 * @param HookContainer $hookContainer
 	 * @param Config $config
 	 * @param CentralAuthTokenManager $tokenManager
 	 * @param SharedDomainUtils $sharedDomainUtils
 	 */
 	public function __construct(
 		AuthManager $authManager,
+		HookContainer $hookContainer,
 		Config $config,
 		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
+		$this->hookRunner = new HookRunner( $hookContainer );
 		$this->config = $config;
 		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
@@ -76,23 +82,22 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$request = $special->getRequest();
 		$amKey = 'AuthManagerSpecialPage:return:' . $special->getName();
 
-		// In SUL3 mode, let's trigger a central mechanism for account creation.
+		// In SUL3 mode, account creation is seen locally as a login, so redirect
+		// there. The 'sul3-action' flag will ensure that the user ends up on the
+		// account creation page once on the central domain.
 		if ( $special->getName() === 'CreateAccount'
 			&& $this->sharedDomainUtils->isSul3Enabled( $request )
 			&& !$this->sharedDomainUtils->isSharedDomain()
 		) {
-			$this->sharedDomainUtils->assertSul3Enabled( $request );
-			$this->sharedDomainUtils->assertIsNotSharedDomain();
-
 			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
-
-			$url = wfAppendQuery( $localLoginUrl, [ 'sul3-action' => 'signup' ] );
-			// If the account creation is coming from a campaign identifier,
-			// forward that as well in SUL3 mode.
-			$campaignParam = $request->getRawVal( 'campaign' );
-			if ( $campaignParam ) {
-				$url = wfAppendQuery( $url, [ 'campaign' => $campaignParam ] );
-			}
+			$params = [
+				'sul3-action' => 'signup',
+				// If the account creation has a campaign identifier, forward that as well.
+				'campaign' => $request->getRawVal( 'campaign' ),
+			];
+			// Add generic preserved params (most importantly, the usesul3 flag).
+			$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'reset' => true ] );
+			$url = wfAppendQuery( $localLoginUrl, $params );
 
 			$special->getOutput()->redirect( $url );
 			return true;
