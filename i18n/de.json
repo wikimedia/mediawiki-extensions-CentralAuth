@@ -63,6 +63,7 @@
 	"centralauth-admin-delete-confirm": "Bist du sicher, dass du dieses Konto löschen möchtest?",
 	"centralauth-admin-delete-description": "Die Löschung des globalen Benutzerkontos wird alle lokalen Benutzerkonten abspalten und den globalen Namen für einen anderen Benutzer freilassen.\nAlle lokalen Benutzerkonten bleiben vorhanden.",
 	"centralauth-admin-delete-nonexistent": "Fehler: Es gibt kein globales Benutzerkonto „<nowiki>$1</nowiki>“.",
+	"centralauth-admin-cannot-lock-temporary-account": "Du kannst temporäre Konten nicht sperren, da die Sperrung dazu führt, dass die Benutzer bei ihrer nächsten Bearbeitung lediglich ein neues temporäres Konto erhalten.",
 	"centralauth-admin-delete-success": "Das globale Benutzerkonto „<nowiki>$1</nowiki>“ wurde erfolgreich gelöscht.",
 	"centralauth-admin-delete-title": "Benutzerkonto löschen",
 	"centralauth-admin-group-temporary": "$1 ''(temporär)''",

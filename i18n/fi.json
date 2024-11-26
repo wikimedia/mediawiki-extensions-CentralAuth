@@ -69,6 +69,7 @@
 	"centralauth-admin-delete-confirm": "Haluatko todella poistaa tämän tunnuksen?",
 	"centralauth-admin-delete-description": "Järjestelmänlaajuisen käyttäjätunnuksen purkaminen irrottaa kaikki paikalliset käyttäjätunnukset ja vapauttaa käyttäjätunnuksen kaikille käyttäjille.\nKaikki paikalliset käyttäjätunnukset pysyvät olemassa.",
 	"centralauth-admin-delete-nonexistent": "Järjestelmänlaajuista käyttäjätunnusta ”<nowiki>$1</nowiki>” ei ole olemassa.",
+	"centralauth-admin-cannot-lock-temporary-account": "Et voi lukita tilapäisiä tunnuksia, koska niiden lukitseminen antaisi niille vain mahdollisuuden avata uuden tilapäisen tunnuksen seuraavalla muokkauksellaan.",
 	"centralauth-admin-delete-success": "Järjestelmänlaajuinen käyttäjätunnus ”<nowiki>$1</nowiki>” poistettiin.",
 	"centralauth-admin-delete-title": "Poista käyttäjätunnus",
 	"centralauth-admin-group-temporary": "$1 ''(väliaikainen)''",
