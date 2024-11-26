@@ -196,6 +196,7 @@ class SharedDomainHookHandlerTest extends MediaWikiIntegrationTestCase {
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getTitleFactory(),
 				$this->getServiceContainer()->get( "MobileFrontend.Context" ),
+				false
 			] )
 			->onlyMethods( [ 'isSharedDomain', 'isSul3Enabled' ] )
 			->getMock();

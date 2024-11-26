@@ -22,16 +22,19 @@ class SharedDomainUtils {
 	private Config $config;
 	private TitleFactory $titleFactory;
 	private ?bool $isSharedDomain = null;
-	private ?MobileContext $mobileContext = null;
+	private ?MobileContext $mobileContext;
+	private bool $isApiRequest;
 
 	public function __construct(
 		Config $config,
 		TitleFactory $titleFactory,
-		?MobileContext $mobileContext = null
+		?MobileContext $mobileContext,
+		bool $isApiRequest
 	) {
 		$this->config = $config;
 		$this->titleFactory = $titleFactory;
 		$this->mobileContext = $mobileContext;
+		$this->isApiRequest = $isApiRequest;
 	}
 
 	/**
@@ -102,7 +105,7 @@ class SharedDomainUtils {
 		// T379816: `clientlogin` API should still work in SUL3 mode as if we're
 		//    in SUL2 mode regardless of whether SUL3 is enabled or not. This provider
 		//    should operate the same in both modes when the request is an API request.
-		if ( MW_ENTRY_POINT === 'api' && !$this->isSharedDomain() ) {
+		if ( $this->isApiRequest && !$this->isSharedDomain() ) {
 			return false;
 		}
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handlers;
+namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -24,7 +24,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
-			$services->get( "MobileFrontend.Context" )
+			null,
+			false
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertTrue( $wrappedHandler->isSharedDomain() );
@@ -39,14 +40,15 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
-			$services->get( "MobileFrontend.Context" )
+			null,
+			false
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertFalse( $wrappedHandler->isSharedDomain() );
 		$this->assertFalse( $wrappedHandler->isSharedDomain() );
 	}
 
-	public static function provideTestData() {
+	public static function provideIsSul3Enabled() {
 		$noCookies = [];
 		$noParams = [];
 		$paramSetToZero = [ 'usesul3' => '0' ];
@@ -93,7 +95,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/**
-	 * @dataProvider provideTestData
+	 * @dataProvider provideIsSul3Enabled
 	 * @return void
 	 */
 	public function testIsSul3Enabled( $configFlag, $requestParams, $cookies, $expected ) {
@@ -106,6 +108,37 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 		/** @var SharedDomainUtils $sut */
 		$sut = $this->getServiceContainer()->get( 'CentralAuth.SharedDomainUtils' );
+		$this->assertSame( $expected, $sut->isSul3Enabled( $fauxRequest ) );
+	}
+
+	public function provideIsSul3Enabled_Api() {
+		return [
+			// are we on the shared domain?, is this an API request?, should SUL3 be enabled?
+			[ true, true, true ],
+			[ true, false, true ],
+			[ false, true, false ],
+			[ false, false, true ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideIsSul3Enabled_Api
+	 * @return void
+	 */
+	public function testIsSul3Enabled_Api( $isSharedDomain, $isAPiRequest, $expected ) {
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'query-flag' ] );
+		$fauxRequest = new FauxRequest( [ 'usesul3' => '1' ] );
+		/** @var SharedDomainUtils $sut */
+		$sut = $this->getMockBuilder( SharedDomainUtils::class )
+			->setConstructorArgs( [
+				$this->getServiceContainer()->getMainConfig(),
+				$this->getServiceContainer()->getTitleFactory(),
+				null,
+				$isAPiRequest
+			] )
+			->onlyMethods( [ 'isSharedDomain' ] )
+			->getMock();
+		$sut->expects( $this->any() )->method( 'isSharedDomain' )->willReturn( $isSharedDomain );
 		$this->assertSame( $expected, $sut->isSul3Enabled( $fauxRequest ) );
 	}
 }

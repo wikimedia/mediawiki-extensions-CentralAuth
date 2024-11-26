@@ -182,7 +182,8 @@ return [
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
-			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null
+			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
+			defined( 'MW_API' ) || defined( 'MW_REST_API' )
 		);
 	},
 
