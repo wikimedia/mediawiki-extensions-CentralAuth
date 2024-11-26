@@ -405,6 +405,7 @@
 	"globalrenamequeue": "통합 계정 이름 바꾸기 요청 대기열",
 	"globalrenamequeue-action-address": "주소",
 	"globalrenamequeue-action-view": "보기",
+	"globalrenamequeue-type-rename": "이름 바꾸기",
 	"globalrenamequeue-column-row-actions": "행위",
 	"globalrenamequeue-column-rq-completed-ts": "닫힌 날짜",
 	"globalrenamequeue-column-rq-name": "사용자 이름",

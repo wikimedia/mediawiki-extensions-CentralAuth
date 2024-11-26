@@ -28,7 +28,8 @@
 			"Tks4Fish",
 			"Vitorvicentevalente",
 			"Waldir",
-			"Waldyrious"
+			"Waldyrious",
+			"Mbs262"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do utilizador",
@@ -110,7 +111,7 @@
 	"centralauth-admin-permission": "Só os ''stewards'' podem fundir as contas de outras pessoas.",
 	"centralauth-admin-reason": "Motivo:",
 	"centralauth-admin-reason-other": "Motivo adicional ou outro:",
-	"centralauth-admin-reason-other-select": "Outro motivo:",
+	"centralauth-admin-reason-other-select": "Outro motivo",
 	"centralauth-admin-rename-in-progress": "O nome de utilizador desta conta está a ser alterado. Pode [[Special:GlobalRenameProgress/$1|ver o progresso]] da alteração. O registo de alteração global do nome deste utilizador é apresentado abaixo.",
 	"centralauth-admin-setstatus-success": "Alterou o estado desta conta global.",
 	"centralauth-admin-status": "Definir o estado da conta global",
