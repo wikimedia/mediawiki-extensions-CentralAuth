@@ -99,6 +99,13 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
+		// T379816: `clientlogin` API should still work in SUL3 mode as if we're
+		//    in SUL2 mode regardless of whether SUL3 is enabled or not. This provider
+		//    should operate the same in both modes when the request is an API request.
+		if ( MW_ENTRY_POINT === 'api' && !$this->isSharedDomain() ) {
+			return false;
+		}
+
 		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
 
 		if ( in_array( 'query-flag', $sul3Config, true )
