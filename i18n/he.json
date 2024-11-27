@@ -55,6 +55,7 @@
 	"centralauth-admin-delete-confirm": "האם ברצונך באמת למחוק את החשבון הזה?",
 	"centralauth-admin-delete-description": "מחיקת החשבון הגלובלי תנתק את כל החשבונות המקומיים ותשאיר את השם הגלובלי לאחרים.\nכל החשבונות המקומיים ימשיכו להתקיים.",
 	"centralauth-admin-delete-nonexistent": "שגיאה: החשבון הגלובלי \"<nowiki>$1</nowiki>\" אינו קיים.",
+	"centralauth-admin-cannot-lock-temporary-account": "לא ניתן לנעול חשבונות חולפים, מכיוון שנעילתם רק תאפשר להם לקבל חשבון חולף חדש בעריכה הבאה.",
 	"centralauth-admin-delete-success": "החשבון הראשי \"<nowiki>$1</nowiki>\" נמחק",
 	"centralauth-admin-delete-title": "מחיקת חשבון",
 	"centralauth-admin-group-temporary": "$1 ''(זמני)''",

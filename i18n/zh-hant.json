@@ -82,6 +82,7 @@
 	"centralauth-admin-delete-confirm": "您確定要刪除此帳號？",
 	"centralauth-admin-delete-description": "刪除全域帳號會分離所有本地帳號，並會釋放全域名稱可供其他使用者使用。\n所有的本地帳號仍會存在。",
 	"centralauth-admin-delete-nonexistent": "錯誤：全域帳號 \"<nowiki>$1</nowiki>\" 不存在。",
+	"centralauth-admin-cannot-lock-temporary-account": "您無法鎖定臨時帳號，因為鎖定他們只會讓他們在下次編輯時獲得新的臨時帳號。",
 	"centralauth-admin-delete-success": "已刪除 \"<nowiki>$1</nowiki>\" 的全域帳號",
 	"centralauth-admin-delete-title": "刪除帳號",
 	"centralauth-admin-group-temporary": "$1（臨時）",

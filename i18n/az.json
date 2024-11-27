@@ -52,6 +52,7 @@
 	"centralauth-admin-delete-confirm": "Bu hesabı həqiqətən silmək istəyirsiniz?",
 	"centralauth-admin-delete-description": "Qlobal hesabın silinməsi bütün lokal hesabları ayıracaq və qlobal adı başqa istifadəçi üçün açıq edəcək.\nBütün lokal hesablar mövcud olmağa davam edəcək.",
 	"centralauth-admin-delete-nonexistent": "Xəta: qlobal hesab \"<nowiki> $1</nowiki>\" mövcud deyil.",
+	"centralauth-admin-cannot-lock-temporary-account": "Siz müvəqqəti hesabları kilidləyə bilməzsiniz, çünki onların kilidlənməsi onlara növbəti redaktədə yeni müvəqqəti hesab əldə etməyə imkan verəcək.",
 	"centralauth-admin-delete-success": "\"<nowiki>$1</nowiki>\" hesabının qlobal hesabı silinmişdir",
 	"centralauth-admin-delete-title": "Silinmiş hesab",
 	"centralauth-admin-group-temporary": "$1 ''(müvəqqəti)''",

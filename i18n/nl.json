@@ -74,6 +74,7 @@
 	"centralauth-admin-delete-confirm": "Weet u zeker dat u deze gebruiker wilt verwijderen?",
 	"centralauth-admin-delete-description": "Door het verwijderen van de globale account worden alle lokale accounts losgekoppeld, en kan de globale naam ingenomen worden door een andere gebruiker.\nAlle lokale accounts blijven bestaan.",
 	"centralauth-admin-delete-nonexistent": "Fout: de globale gebruiker \"<nowiki>$1</nowiki>\" bestaat niet.",
+	"centralauth-admin-cannot-lock-temporary-account": "Tijdelijke accounts kunnen niet worden vergrendeld, want bij de volgende bewerking kan altijd een nieuw tijdelijk account worden aangemaakt.",
 	"centralauth-admin-delete-success": "De globale gebruiker \"<nowiki>$1</nowiki>\" is verwijderd",
 	"centralauth-admin-delete-title": "Account verwijderen",
 	"centralauth-admin-group-temporary": "$1 ''(tijdelijk)''",
