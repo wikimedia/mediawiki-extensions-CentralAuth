@@ -69,6 +69,7 @@ class SpecialMultiLock extends SpecialPage {
 		$this->checkPermissions();
 
 		$this->mCanSuppress = $this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' );
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod', '' );

@@ -58,6 +58,7 @@ class SpecialMergeAccount extends SpecialPage {
 	public function execute( $subpage ) {
 		$this->setHeaders();
 		$this->addHelpLink( 'Extension:CentralAuth' );
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 
 		if ( $subpage !== null && preg_match( "/^[0-9a-zA-Z]{32}$/", $subpage ) ) {
 			$user = $this->userFactory->newFromConfirmationCode( $subpage );

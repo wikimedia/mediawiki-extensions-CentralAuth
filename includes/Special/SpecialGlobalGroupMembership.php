@@ -102,6 +102,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$session = $request->getSession();
 		$out = $this->getOutput();
 
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 		$out->addModules( [ 'mediawiki.special.userrights' ] );
 
 		$this->mTarget = $par ?? $request->getVal( 'user' );
