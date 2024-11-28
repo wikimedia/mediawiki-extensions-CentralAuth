@@ -36,7 +36,7 @@
 	"centralauth-admin-delete-confirm": "Wëllt Dir dëse Kont wierklech läschen?",
 	"centralauth-admin-delete-description": "Wann dir de globale Benotzerkont läscht da ginn all lokal Benotzerkonte nees onofhängeg vuneneen, an den Numm vum globale Benotzerkont ka vun engem anere Benotzer benotzt ginn.\nAll lokal Benotzerkonte besti weider.",
 	"centralauth-admin-delete-nonexistent": "Feeler: de globale Benotzerkont \"<nowiki>$1</nowiki>\" gëtt et net.",
-	"centralauth-admin-delete-success": "De globale Benotzerkont \"<nowiki>$1</nowiki>\" gouf geläscht",
+	"centralauth-admin-delete-success": "De globale Benotzerkont „<nowiki>$1</nowiki>“ gouf geläscht",
 	"centralauth-admin-delete-title": "Kont läschen",
 	"centralauth-admin-group-temporary": "$1 ''(temporär)''",
 	"centralauth-admin-hidden-list": "vun der Lëscht vun de globale Benotzer",
