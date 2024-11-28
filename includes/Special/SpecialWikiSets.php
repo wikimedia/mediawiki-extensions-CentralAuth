@@ -48,6 +48,7 @@ class SpecialWikiSets extends SpecialPage {
 	 * @return void
 	 */
 	public function execute( $subpage ) {
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 		$this->mCanEdit = $this->getContext()->getAuthority()->isAllowed( 'globalgrouppermissions' );
 		$req = $this->getRequest();
 		$tokenOk = $req->wasPosted()

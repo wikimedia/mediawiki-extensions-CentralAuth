@@ -100,6 +100,7 @@ class SpecialContributionsHookHandler implements
 		}
 
 		$out = $sp->getOutput();
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 		$count = LogEventsList::showLogExtract(
 			$out,
 			[ 'globalauth' ],

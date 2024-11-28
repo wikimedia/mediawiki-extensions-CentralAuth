@@ -141,6 +141,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->getOutput()->setPageTitleMsg(
 			$this->msg( $this->mCanEdit ? 'centralauth' : 'centralauth-ro' )
 		);
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 		$this->getOutput()->addModules( 'ext.centralauth' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
 		$this->getOutput()->addJsConfigVars(
