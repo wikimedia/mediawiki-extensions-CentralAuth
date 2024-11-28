@@ -290,11 +290,9 @@ class SpecialMergeAccount extends SpecialPage {
 		} else {
 			// Show error message from status
 			$out = $this->getOutput();
-			$out->addHTML(
-				Html::errorBox(
-					$out->parseAsInterface( $status->getWikiText() )
-				)
-			);
+			foreach ( $status->getMessages() as $msg ) {
+				$out->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
+			}
 
 			// Show wiki list if required
 			if ( $status->hasMessage( 'centralauth-merge-home-password' ) ) {

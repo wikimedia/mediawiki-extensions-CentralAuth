@@ -86,6 +86,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$this->getOutput()->setPageTitleMsg( $this->msg( 'globalgrouppermissions' ) );
 
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
 		$this->getOutput()->addModuleStyles( 'ext.centralauth.misc.styles' );
 		$this->getOutput()->setRobotPolicy( "noindex,nofollow" );
 		$this->getOutput()->setArticleRelated( false );
@@ -270,16 +271,18 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			// if the group doesn't exist and the user can not manage the global groups,
 			// an error message should be shown instead of the permission list box.
 			if ( !$editable ) {
-				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
-					[ 'centralauth-editgroup-nonexistent', $group ] );
+				$this->getOutput()->addHTML( Html::errorBox(
+					$this->msg( 'centralauth-editgroup-nonexistent', $group )->parse()
+				) );
 				$this->showLogFragment( $group, $this->getOutput() );
 				return;
 			}
 
 			$nameValidationResult = $this->validateGroupName( $group );
 			if ( !$nameValidationResult->isGood() ) {
-				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
-					$nameValidationResult->getMessage() );
+				foreach ( $nameValidationResult->getMessages() as $msg ) {
+					$this->getOutput()->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
+				}
 				$this->showLogFragment( $group, $this->getOutput() );
 				return;
 			}
@@ -506,8 +509,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		) {
 			$nameValidationResult = $this->validateGroupName( $newname );
 			if ( !$nameValidationResult->isGood() ) {
-				$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>',
-					$nameValidationResult->getMessage() );
+				foreach ( $nameValidationResult->getMessages() as $msg ) {
+					$this->getOutput()->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
+				}
 				return;
 			}
 		}

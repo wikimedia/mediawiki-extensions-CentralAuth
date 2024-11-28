@@ -10,6 +10,8 @@ use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\Xml\Xml;
+use StatusValue;
+use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -25,7 +27,7 @@ class SpecialMultiLock extends SpecialPage {
 
 	/** @var bool */
 	private $mCanSuppress;
-	/** @var string[] */
+	/** @var (CentralAuthUser|MessageSpecifier|false)[] */
 	private $mGlobalUsers;
 	/** @var string[]|string|null */
 	private $mUserNames;
@@ -131,7 +133,7 @@ class SpecialMultiLock extends SpecialPage {
 	 *
 	 * @param string[] $usernames
 	 * @param bool $fromPrimaryDb
-	 * @return (CentralAuthUser|string|false)[] User object, a HTML error string, or false.
+	 * @return (CentralAuthUser|MessageSpecifier|false)[] User object, an error message, or false.
 	 */
 	private function getGlobalUsers( $usernames, $fromPrimaryDb = false ) {
 		$ret = [];
@@ -142,7 +144,7 @@ class SpecialMultiLock extends SpecialPage {
 				continue;
 			}
 			if ( $this->userNameUtils->getCanonical( $username ) === false ) {
-				$ret[] = $this->msg( 'htmlform-user-not-valid', $username )->parse();
+				$ret[] = $this->msg( 'htmlform-user-not-valid', $username );
 				continue;
 			}
 			$globalUser = $fromPrimaryDb
@@ -152,7 +154,7 @@ class SpecialMultiLock extends SpecialPage {
 				|| ( !$this->mCanSuppress &&
 					( $globalUser->isSuppressed() || $globalUser->isHidden() ) )
 			) {
-				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username )->parse();
+				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username );
 			} else {
 				$ret[] = $globalUser;
 			}
@@ -361,7 +363,7 @@ class SpecialMultiLock extends SpecialPage {
 				$rowtext .= Html::rawElement(
 					'td',
 					[ 'colspan' => 8 ],
-					$globalUser
+					$this->msg( $globalUser )->parse()
 				);
 			}
 
@@ -446,7 +448,7 @@ class SpecialMultiLock extends SpecialPage {
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 			if ( !$globalUser instanceof CentralAuthUser ) {
 				// Somehow the user submitted a bad user name
-				$this->showStatusError( $globalUser );
+				$this->showError( $this->msg( $globalUser )->parse() );
 				continue;
 			}
 
@@ -459,27 +461,21 @@ class SpecialMultiLock extends SpecialPage {
 			);
 
 			if ( !$status->isGood() ) {
-				$this->showStatusError( $status->getWikiText() );
+				$this->showStatusError( $status );
 			} elseif ( $status->successCount > 0 ) {
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $globalUser->getName() );
 			}
 		}
 	}
 
-	/**
-	 * @param string $wikitext
-	 */
-	private function showStatusError( $wikitext ) {
-		$out = $this->getOutput();
-		$out->addHTML(
-			Html::errorBox(
-				$out->parseAsInterface( $wikitext )
-			)
-		);
+	private function showStatusError( StatusValue $status ) {
+		foreach ( $status->getMessages() as $msg ) {
+			$this->showError( $msg );
+		}
 	}
 
 	/**
-	 * @param string $key
+	 * @param string|MessageSpecifier $key
 	 * @param mixed ...$params
 	 */
 	private function showError( $key, ...$params ) {
@@ -487,7 +483,7 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	/**
-	 * @param string $key
+	 * @param string|MessageSpecifier $key
 	 * @param mixed ...$params
 	 */
 	private function showSuccess( $key, ...$params ) {

@@ -68,7 +68,7 @@ class GlobalRenameHookHandler implements
 			$warnings[] = [ 'centralauth-renameuser-global-inprogress', $newUsername ];
 			// Can potentially be renaming two accounts into the same name, so throw an error
 			throw new ErrorPageError(
-				'error', 'centralauth-renameuser-global-inprogress', [ $newUsername ]
+				'errorpagetitle', 'centralauth-renameuser-global-inprogress', [ $newUsername ]
 			);
 		}
 	}

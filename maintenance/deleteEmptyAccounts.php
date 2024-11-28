@@ -13,7 +13,6 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
-use MediaWiki\Message\Message;
 use MediaWiki\User\User;
 use Wikimedia\Rdbms\IDBAccessObject;
 
@@ -144,10 +143,7 @@ class DeleteEmptyAccounts extends Maintenance {
 			$reason = wfMessage( 'centralauth-delete-empty-account' )->inContentLanguage()->text();
 			$status = $central->adminDelete( $reason, $deleter );
 			if ( !$status->isGood() ) {
-				$msg = $status->getErrors()[0]['message'];
-				if ( $msg instanceof Message ) {
-					$msg = $msg->getKey();
-				}
+				$msg = $status->getMessages()[0]->getKey();
 				$this->output( "ERROR: [$username] Delete failed ($msg)\n" );
 				return;
 			}

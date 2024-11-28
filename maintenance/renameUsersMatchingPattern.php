@@ -147,8 +147,8 @@ class RenameUsersMatchingPattern extends Maintenance {
 
 		$status = $this->validator->validate( $oldUser, $newUser );
 		if ( !$status->isOK() ) {
-			$this->output( "Unable to rename \"$oldName\" to \"$newName\": " .
-				$status->getWikiText() . "\n" );
+			$this->output( "Unable to rename \"$oldName\" to \"$newName\": " );
+			$this->error( $status );
 			return false;
 		}
 
@@ -176,8 +176,8 @@ class RenameUsersMatchingPattern extends Maintenance {
 				$this->output( "Successfully queued rename of \"$oldName\" to \"$newName\"\n" );
 				return true;
 			} else {
-				$this->output( "Error renaming \"$oldName\" to \"$newName\": " .
-					$status->getWikiText( false, false, 'en' ) . "\n" );
+				$this->output( "Error renaming \"$oldName\" to \"$newName\": " );
+				$this->error( $status );
 				return false;
 			}
 		}

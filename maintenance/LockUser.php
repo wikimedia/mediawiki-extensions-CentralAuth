@@ -76,12 +76,7 @@ class LockUser extends Maintenance {
 			return;
 		}
 
-		$this->fatalError(
-			$this->getServiceContainer()
-				->getFormatterFactory()
-				->getStatusFormatter( $context )
-				->getWikiText( $status )
-		);
+		$this->fatalError( $status );
 	}
 
 	private function getContext(): IContextSource {

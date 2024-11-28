@@ -46,6 +46,7 @@ use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
 use OOUI\PanelLayout;
 use OOUI\Widget;
+use StatusValue;
 use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
@@ -297,7 +298,7 @@ class SpecialCentralAuth extends SpecialPage {
 		} elseif ( $this->mMethod == 'unmerge' && $this->mCanUnmerge ) {
 			$status = $globalUser->adminUnattach( $this->mWikis );
 			if ( !$status->isGood() ) {
-				$this->showStatusError( $status->getWikiText() );
+				$this->showStatusError( $status );
 			} else {
 				$this->showSuccess( 'centralauth-admin-unmerge-success',
 					$this->getLanguage()->formatNum( $status->successCount ),
@@ -306,7 +307,7 @@ class SpecialCentralAuth extends SpecialPage {
 		} elseif ( $this->mMethod == 'delete' && $this->mCanUnmerge ) {
 			$status = $globalUser->adminDelete( $request->getVal( 'reason' ), $this->getUser() );
 			if ( !$status->isGood() ) {
-				$this->showStatusError( $status->getWikiText() );
+				$this->showStatusError( $status );
 			} else {
 				$this->showSuccess( 'centralauth-admin-delete-success', $this->mUserName );
 				$deleted = true;
@@ -335,7 +336,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 			// Tell the user what happened
 			if ( !$status->isGood() ) {
-				$this->showStatusError( $status->getWikiText() );
+				$this->showStatusError( $status );
 			} elseif ( $status->successCount > 0 ) {
 				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
 			}
@@ -345,20 +346,14 @@ class SpecialCentralAuth extends SpecialPage {
 		return !$deleted;
 	}
 
-	/**
-	 * @param string $wikitext
-	 */
-	private function showStatusError( $wikitext ) {
-		$out = $this->getOutput();
-		$out->addHTML(
-			Html::errorBox(
-				$out->parseAsInterface( $wikitext )
-			)
-		);
+	private function showStatusError( StatusValue $status ) {
+		foreach ( $status->getMessages() as $msg ) {
+			$this->showError( $msg );
+		}
 	}
 
 	/**
-	 * @param string $key
+	 * @param string|MessageSpecifier $key
 	 * @param mixed ...$params
 	 */
 	private function showError( $key, ...$params ) {
@@ -366,7 +361,7 @@ class SpecialCentralAuth extends SpecialPage {
 	}
 
 	/**
-	 * @param string $key
+	 * @param string|MessageSpecifier $key
 	 * @param mixed ...$params
 	 */
 	private function showSuccess( $key, ...$params ) {
