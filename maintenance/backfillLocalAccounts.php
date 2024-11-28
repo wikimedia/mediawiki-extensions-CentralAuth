@@ -55,15 +55,13 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  * wiki this script is run on, and attempt to create them,
  * using the user agent and ip address from the creation
  * of the local account on their home wiki, if that info
- * is available, or falling back to some default values otherwise.
+ * is available, or skipping the account creation otherwise.
  * Errors will be shown if a missing account cannot be created.
  */
 class BackfillLocalAccounts extends Maintenance {
-	private const DEFAULT_USER_AGENT = '';
-	private const DEFAULT_IP = "127.0.0.1";
 
 	/** @var string */
-	private $startdate;
+	private $startdateTS;
 
 	/** @var UserFactory */
 	private $userFactory;
@@ -167,39 +165,46 @@ class BackfillLocalAccounts extends Maintenance {
 
 	/**
 	 * return session info containing the ip address and user agent for the specified
-	 * user name, if found, or default info as a fallback
+	 * user name, if found, or null otherwise
 	 *
 	 * @param AccountCreationDetailsLookup $accountLookup
 	 * @param IReadableDatabase $dbr
 	 * @param string $gu_name
+	 * @param string $gu_registration
 	 * @param bool $verbose
 	 *
-	 * @return array{userId: 0, ip: string, headers: array, sessionId: ''}
+	 * @return array{userId: 0, ip: string, headers: array, sessionId: ''}|null
 	 */
-	private function getFakeSession( $accountLookup, $dbr, $gu_name, $verbose ) {
-		$fakeSession = [
-			// can't put a real user id in there, we don't have one on the local wiki yet!
-			'userId' => 0,
-			// there's no session id so...
-			'sessionId' => ''
-		];
+	private function getFakeSession( $accountLookup, $dbr, $gu_name, $gu_registration, $verbose ) {
+		$fakeSession = null;
 
 		$accountInfo = null;
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'CheckUser' ) ) {
 			$accountInfo = $accountLookup->getAccountCreationIPAndUserAgent( $gu_name, $dbr );
+			if ( $accountInfo == null ) {
+				// maybe this account was created by someone else; we'll try to get the
+				// performer info instead
+				[ $performer, $logId ] = $accountLookup->findPerformerAndLogId( $dbr, $gu_name, $gu_registration );
+				if ( $performer ) {
+					$accountInfo = $accountLookup->getAccountCreationIPAndUserAgent(
+						$performer, $dbr, $logId );
+				}
+			}
 		}
 
-		if ( $accountInfo == null ) {
-			$fakeSession['ip'] = self::DEFAULT_IP;
-			$fakeSession['headers'] = [ 'User-Agent' => self::DEFAULT_USER_AGENT ];
-		} else {
-			$fakeSession['ip'] = $accountInfo['ip'];
-			$fakeSession['headers'] = [ 'User-Agent' => $accountInfo['agent'] ];
+		if ( $accountInfo != null ) {
+			$fakeSession = [
+				// no user in the local wiki, no session either
+				'userId' => 0,
+				'sessionId' => '',
+				// the useful bits are here
+				'ip' => $accountInfo['ip'],
+				'headers' => [ 'User-Agent' => $accountInfo['agent'] ] ];
+			if ( $verbose ) {
+				$this->output( "Using ip {$fakeSession['ip']} and agent {$fakeSession['headers']['User-Agent']} \n" );
+			}
 		}
 
-		if ( $verbose ) {
-			$this->output( "Using ip {$fakeSession['ip']} and agent {$fakeSession['headers']['User-Agent']} \n" );
-		}
 		return $fakeSession;
 	}
 
@@ -221,7 +226,7 @@ class BackfillLocalAccounts extends Maintenance {
 		$result = null;
 		do {
 			$result = $cadb->newSelectQueryBuilder()
-				->select( [ 'gu_name', 'gu_id' ] )
+				->select( [ 'gu_name', 'gu_id', 'gu_registration' ] )
 				->from( 'globaluser' )
 				->where( $cadb->expr( 'gu_id', '>=', $batchStartUID ) )
 				->andWhere( $cadb->expr( 'gu_id', '<', $batchStartUID + $this->mBatchSize ) )
@@ -245,7 +250,7 @@ class BackfillLocalAccounts extends Maintenance {
 	 * range, and if we can find their home wiki, create a
 	 * local user on the wiki where this script runs, with the
 	 * user's ip and user agent from account creation on their
-	 * home wiki if available, otherwise with default values
+	 * home wiki if available, otherwise skip
 	 *
 	 * @param IReadableDatabase $cadb
 	 * @param UserFactory $userFactory
@@ -256,9 +261,9 @@ class BackfillLocalAccounts extends Maintenance {
 	 * @param int $startGlobalUID
 	 * @param int $maxGlobalUID
 	 * @param string $wikiID
-	 *
 	 */
-	public function checkAndCreateAccounts( $cadb, $userFactory, $accountLookup, $lbFactory,
+	public function checkAndCreateAccounts(
+		$cadb, $userFactory, $accountLookup, $lbFactory,
 		$dryrun, $verbose,
 		$startGlobalUID, $maxGlobalUID, $wikiID ) {
 		$createdUsers = 0;
@@ -276,9 +281,8 @@ class BackfillLocalAccounts extends Maintenance {
 				}
 
 				// get the user agent and ip address with which the user account was created on
-				// their home wiki, if available, or default values otherwise, and create a local
-				// account for that user, with that user agent and ip
-
+				// their home wiki, if available, and create a local account for that user,
+				// with that user agent and ip
 				$dbr = $lbFactory->getReplicaDatabase( $homeWiki );
 
 				if ( $dryrun ) {
@@ -286,8 +290,15 @@ class BackfillLocalAccounts extends Maintenance {
 						. strval( $row->gu_id ) . " and home wiki "
 						. "$homeWiki\n" );
 				} else {
-					$fakeSession = $this->getFakeSession( $accountLookup, $dbr, $row->gu_name, $verbose );
+					$fakeSession = $this->getFakeSession(
+						$accountLookup, $dbr, $row->gu_name, $row->gu_registration, $verbose );
 
+					if ( !$fakeSession ) {
+						if ( $verbose ) {
+							$this->output( "Skipping user $row->gu_name creation, no IP/UA info available\n" );
+						}
+						continue;
+					}
 					$callback = RequestContext::importScopedSession( $fakeSession );
 					// Dig down far enough and this uses User::addToDatabase() which relies on
 					// MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase()
@@ -315,7 +326,9 @@ class BackfillLocalAccounts extends Maintenance {
 		$verbose = $this->hasOption( 'verbose' );
 
 		$date = new ConvertibleTimestamp( strtotime( $this->getOption( 'startdate' ) ) );
-		$this->startdate = $date->getTimestamp( TS_MW );
+		$this->startdateTS = $date->getTimestamp( TS_MW );
+		$enddate = new ConvertibleTimestamp( strtotime( 'now' ) );
+		$enddateTS = $enddate->getTimestamp( TS_MW );
 
 		$this->performer = User::newSystemUser( CentralAuthHooks::BACKFILL_ACCOUNT_CREATOR, [ 'steal' => true ] );
 		if ( !$this->performer ) {
@@ -327,7 +340,7 @@ class BackfillLocalAccounts extends Maintenance {
 		$cadb = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		$maxGlobalUID = $this->getMaxUID( $cadb );
-		$startGlobalUID = $this->getStartUID( $cadb, $this->startdate );
+		$startGlobalUID = $this->getStartUID( $cadb, $this->startdateTS );
 		if ( !$maxGlobalUID || !$startGlobalUID ) {
 			$this->output( "No accounts eligible for autocreation\n" );
 			return;
