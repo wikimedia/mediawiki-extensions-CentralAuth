@@ -81,6 +81,23 @@ $specialPageAliases['av'] = [
 	'GlobalUsers' => [ 'Глобальные_участники' ],
 ];
 
+/** Azerbaijani (Azərbaycanca) */
+$specialPageAliases['az'] = [
+	'CentralAuth' => [ 'MərkəziAutentifikasiya' ],
+	'CreateLocalAccount' => [ 'LokalHesabYarat' ],
+	'MergeAccount' => [ 'HesabıBirləşdir' ],
+	'GlobalGroupMembership' => [ 'QlobalİstifadəçiQrupları' ],
+	'GlobalGroupPermissions' => [ 'QlobalQrupHüquqları' ],
+	'WikiSets' => [ 'VikiDəstlər' ],
+	'GlobalUsers' => [ 'Qlobalİstifadəçilər' ],
+	'MultiLock' => [ 'ÇoxluKilid' ],
+	'GlobalRenameUser' => [ 'QlobalAddəyiş' ],
+	'GlobalRenameProgress' => [ 'QlobalAddəyişməProsesi' ],
+	'GlobalRenameRequest' => [ 'QlobalAddəyişməMüraciəti' ],
+	'GlobalRenameQueue' => [ 'QlobalAddəyişməSırası' ],
+	'GlobalVanishRequest' => [ 'QlobalSilinməMüraciəti' ],
+];
+
 /** Bashkir (башҡортса) */
 $specialPageAliases['ba'] = [
 	'GlobalGroupMembership' => [ 'GlobalUserRights' ],
