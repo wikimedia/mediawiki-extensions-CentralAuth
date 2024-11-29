@@ -16,9 +16,12 @@ use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
+use MediaWiki\Html\Html;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
+use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -143,6 +146,33 @@ class SharedDomainHookHandler implements
 	public function onBeforePageDisplay( $out, $skin ): void {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			$out->disallowUserJs();
+		}
+
+		if ( $this->sharedDomainUtils->isSharedDomain() ) {
+			// Override some global `mw.config` items defined by ResourceLoader::getSiteConfigSettings()
+			// (used by 'mediawiki.base'), because the load.php request that normally sets them is served
+			// from the normal domain, giving wrong values for page views on the shared domain. (T380552)
+			// This can't use the 'MakeGlobalVariablesScript' hook to set page-specific `mw.config` items,
+			// because global items with identical names override them. There is therefore a very small
+			// risk of race conditions where another inline script reads `mw.config` before we can set it.
+			$conf = $out->getConfig();
+			$vars = [
+				'wgArticlePath' => $conf->get( MainConfigNames::ArticlePath ),
+				'wgScriptPath' => $conf->get( MainConfigNames::ScriptPath ),
+				'wgScript' => $conf->get( MainConfigNames::Script ),
+				'wgVariantArticlePath' => $conf->get( MainConfigNames::VariantArticlePath ),
+				'wgServer' => $conf->get( MainConfigNames::Server ),
+				'wgActionPaths' => (object)$conf->get( MainConfigNames::ActionPaths ),
+			];
+			$out->addHeadItem(
+				'CentralAuth-SharedDomain-Variables',
+				// We must wait until after 'mediawiki.base' sets the global `mw.config` items
+				Html::inlineScript( ResourceLoader::makeInlineCodeWithModule(
+					// Implicit dependency on 'mediawiki.base'
+					[],
+					ResourceLoader::makeConfigSetScript( $vars )
+				) )
+			);
 		}
 	}
 
