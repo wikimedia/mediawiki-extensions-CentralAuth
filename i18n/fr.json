@@ -108,6 +108,7 @@
 	"centralauth-admin-delete-confirm": "Voulez-vous vraiment supprimer ce compte ?",
 	"centralauth-admin-delete-description": "La suppression du compte global détachera l’ensemble des comptes locaux, et laissera le nom global disponible pour tout autre utilisateur.\nTous les comptes locaux continueront à exister.",
 	"centralauth-admin-delete-nonexistent": "Erreur : il n’existe pas de compte global nommé « <nowiki>$1</nowiki> ».",
+	"centralauth-admin-cannot-lock-temporary-account": "Vous ne pouvez pas verrouiller les comptes temporaires car leur verrouillage entraînera simplement la création d'un nouveau compte temporaire lors de leurs prochaines modifications.",
 	"centralauth-admin-delete-success": "Le compte global pour « <nowiki>$1</nowiki> » a été supprimé",
 	"centralauth-admin-delete-title": "Supprimer le compte",
 	"centralauth-admin-group-temporary": "$1 ''(temporaire)''",
