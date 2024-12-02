@@ -366,6 +366,7 @@
 	"globalrenamerequest-submit-text": "Podnesi zahtev",
 	"globalrenamerequest-username-label": "Trenutno korisničko ime:",
 	"globalrenameuser": "Preimenovanje globalnih korisnika",
+	"globalvanishrequest-pretext": "Nestajanje je '''poslednja opcija''' i treba je koristiti samo '''kada želite zauvek prestati sa uređivanjem''' i da sakrijete što više pređašnjih povezivanja. Brisanje naloga se vrši preimenovanjem naloga, tako da drugi ne mogu da prepoznaju vaše doprinose. '''Nestajanje ne garantuje potpunu anonimnost, niti uklanja doprinose na projektima'''.\n\nDa pokrenete zahtev za nestajanje popunite obrazac ispod.",
 	"globalusers": "Spisak globalnih naloga",
 	"grant-setglobalaccountstatus": "upravljaj stanjem globalnog naloga",
 	"log-action-filter-gblrights": "Vrsta izmene:",
