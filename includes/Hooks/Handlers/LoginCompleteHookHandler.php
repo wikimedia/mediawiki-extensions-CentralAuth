@@ -142,7 +142,7 @@ class LoginCompleteHookHandler implements
 		string $returnToAnchor,
 		&$redirectUrl
 	) {
-		if ( !$this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) ) {
+		if ( !$this->centralDomainUtils->centralDomainExists( $session->getRequest() ) ) {
 			return true;
 		}
 
