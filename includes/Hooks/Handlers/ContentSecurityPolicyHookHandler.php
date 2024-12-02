@@ -56,11 +56,14 @@ class ContentSecurityPolicyHookHandler implements
 		$mode
 	) {
 		$out = RequestContext::getMain()->getOutput();
-		// So possibilities:
-		// * We are doing edge login because initial login was via API and this is next request.
-		// * We are doing edge login because JS loaded Special:CentralAutoLogin/start or /checkCookies
-		//   and user is logged in on a different wiki, which eventually loads edge html.
+
+		// Allow-list edge login domains if an edge login is about to happen.
 		if (
+			// If this is an anonymous request, we need the allowlist because whether an autologin
+			// (and then an edge login) happens depends on the CentralAuthAnon cookie and the
+			// edge cache doesn't vary on that.
+			// If we are logged in, we don't need to worry about caching, and can just check
+			// whether an edge login is scheduled to happen on this request.
 			!$out->getUser()->isRegistered() ||
 				$out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' )
 		) {
@@ -74,8 +77,10 @@ class ContentSecurityPolicyHookHandler implements
 			}
 		}
 
+		// Allow-list the central domain if autologin might be about to happen.
+		// As with edge login, we can't rely on anything that caching doesn't vary on.
 		if ( !$out->getUser()->isRegistered() && $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) ) {
-			// For the non-js case, there is local image loaded, but it redirects to
+			// For the non-js case, there is a local image loaded, but it redirects to the
 			// central wiki, so include it.
 			$loginWiki = WikiMap::getWiki( $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) );
 			$url = $loginWiki->getCanonicalServer();
