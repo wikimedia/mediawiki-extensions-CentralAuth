@@ -57,9 +57,6 @@ use Wikimedia\ScopedCallback;
  */
 class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
-	/** @var string */
-	private $loginWiki;
-
 	/** @var Session|null */
 	protected $session = null;
 
@@ -187,16 +184,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 
-		// TODO: If/when we no longer have a dedicated central login wiki,
-		//       this should point to the configured shared domain.
-		$this->loginWiki = $this->centralDomainUtils->getLoginWikiId( $request );
-		if ( !$this->loginWiki ) {
-			// Ugh, no central wiki. If we're coming from an edge login, make
-			// the logged-into wiki the de-facto central wiki for this request
-			// so auto-login still works.
+		if ( !$this->centralDomainUtils->getLoginWikiId( $this->getRequest() ) ) {
 			$fromwiki = $request->getVal( 'from' );
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
-				$this->loginWiki = $fromwiki;
+				$this->centralDomainUtils = $this->centralDomainUtils->withFallbackLoginWikiId( $fromwiki );
 			}
 		}
 
@@ -207,7 +198,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// is formatted, in some cases might affect the logic in other ways as well.
 			'type',
 			// The wiki that started the autologin process. Not necessarily the wiki where the
-			// user is supposed to be logged in, because of edge autologin. Probably vestigial.
+			// user is supposed to be logged in, because of edge autologin. Used as a fallback
+			// "central" wiki when no dedicated central wiki is configured.
 			'from',
 			// Token for the final return URL for type=redirect
 			'returnUrlToken',
@@ -273,7 +265,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Do not cache this, we need to reset the cookies every time.
 				$this->getOutput()->disableClientCache();
 
-				if ( !$this->loginWiki ) {
+				if ( !$this->centralDomainUtils->centralDomainExists( $this->getRequest() ) ) {
 					$this->logger->debug( "refreshCookies: no login wiki" );
 					return;
 				}
@@ -717,29 +709,18 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * endpoint. Target wikis are in the form of a wiki ID for example: 'loginwiki',
 	 * 'enwiki', 'frwiki' etc.
 	 *
-	 * @param string $target
-	 * @param string $state
-	 * @param array $params
+	 * @param string $target Wiki ID or CENTRAL_DOMAIN_ID.
+	 * @param string $stage The autologin stage (subpage name).
+	 * @param array $params Query parameters to add.
 	 *
 	 * @phan-assert string $target
 	 */
-	private function do302Redirect( $target, $state, $params ) {
-		// If we don't have a target wiki, we'll use the "from" wiki as the
-		// central login domain for authentication.
-		if ( !$this->loginWiki && $params['from'] !== null && WikiMap::getWiki( $params['from'] ) ) {
-			$this->loginWiki = $params['from'];
-		}
-
+	private function do302Redirect( string $target, string $stage, array $params ) {
 		$url = $this->centralDomainUtils->getUrl(
-			$target ?? $this->loginWiki, "Special:CentralAutoLogin/$state", $this->getRequest(), $params
+			$target, "Special:CentralAutoLogin/$stage", $this->getRequest(), $params
 		);
-
-		if ( !$url ) {
-			$this->doFinalOutput( false, 'Invalid target wiki' );
-		} else {
-			// expands to PROTO_CURRENT
-			$this->getOutput()->redirect( wfAppendQuery( $url, $params ) );
-		}
+		// expands to PROTO_CURRENT
+		$this->getOutput()->redirect( wfAppendQuery( $url, $params ) );
 	}
 
 	/**
@@ -893,7 +874,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	private function assertIsCentralDomain() {
-		$isCentralDomain = $this->centralDomainUtils->isCentralDomain( $this->getRequest(), $this->loginWiki );
+		$isCentralDomain = $this->centralDomainUtils->isCentralDomain( $this->getRequest() );
 
 		if ( !$isCentralDomain ) {
 			$this->doFinalOutput( false, 'Not central wiki' );
@@ -904,7 +885,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	private function assertIsLocalDomain() {
-		$isLocalDomain = !$this->centralDomainUtils->isCentralDomain( $this->getRequest(), $this->loginWiki );
+		$isLocalDomain = !$this->centralDomainUtils->isCentralDomain( $this->getRequest() );
 
 		if ( !$isLocalDomain ) {
 			$this->doFinalOutput( false, 'Is central wiki, should be local' );

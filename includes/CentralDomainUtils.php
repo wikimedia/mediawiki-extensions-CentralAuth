@@ -27,6 +27,9 @@ class CentralDomainUtils {
 	private TitleFactory $titleFactory;
 	private SharedDomainUtils $sharedDomainUtils;
 
+	/** Wiki where the user has a logged-in session. Only used when loginwiki isn't configured. */
+	private ?string $fallbackLoginWikiId = null;
+
 	public function __construct(
 		Config $config,
 		TitleFactory $titleFactory,
@@ -54,7 +57,8 @@ class CentralDomainUtils {
 				$localUrl = $this->titleFactory->newFromText( $page )->getLocalURL();
 				$url = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl;
 			} else {
-				$centralWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
+				$centralWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+					?? $this->fallbackLoginWikiId;
 				$url = WikiMap::getWiki( $centralWikiId )->getCanonicalUrl( $page );
 			}
 		} else {
@@ -65,20 +69,16 @@ class CentralDomainUtils {
 	}
 
 	/**
-	 * Check if we're on the central domain in SUL2 mode. $wgCentralAuthLoginWiki is
-	 * setup to be the central login wiki in SUL2. Is the current wiki the central
-	 * login wiki? Or on SUL3, we check if SUL3 mode is enabled and if we're on the
-	 * shared domain. Otherwise, we're not on the central domain.
+	 * Check if we're on the central domain.
+	 * In SUL2 mode, this means the current wiki is $wgCentralAuthLoginWiki (or the fallback).
+	 * In SUL3 mode, this means we're using the shared domain.
 	 *
 	 * @param WebRequest $request
-	 * @param string|null $loginWiki
-	 *
 	 * @return bool
 	 */
-	public function isCentralDomain( WebRequest $request, ?string $loginWiki = null ): bool {
-		if ( $loginWiki === null ) {
-			$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
-		}
+	public function isCentralDomain( WebRequest $request ): bool {
+		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+			?? $this->fallbackLoginWikiId;
 
 		return ( !$this->sharedDomainUtils->isSul3Enabled( $request ) && WikiMap::getCurrentWikiId() === $loginWiki )
 			|| ( $this->sharedDomainUtils->isSul3Enabled( $request ) && $this->sharedDomainUtils->isSharedDomain() );
@@ -111,12 +111,9 @@ class CentralDomainUtils {
 			return self::CENTRAL_DOMAIN_ID;
 		}
 
-		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
-		if ( $loginWiki ) {
-			return $loginWiki;
-		}
-
-		return false;
+		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+			?? $this->fallbackLoginWikiId;
+		return $loginWiki ?: false;
 	}
 
 	/**
@@ -125,7 +122,8 @@ class CentralDomainUtils {
 	 * @return string The canonical server of the central domain
 	 */
 	public function getCentralDomainHost( WebRequest $request ): string {
-		$loginWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
+		$loginWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+			?? $this->fallbackLoginWikiId;
 		$sharedDomainUrl = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix );
 
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
@@ -138,6 +136,18 @@ class CentralDomainUtils {
 		// If we're hitting this, then something is likely wrong with our configuration. SUL2 should set
 		// $wgCentralAuthLoginWiki or SUL3 should set $wgCentralAuthSharedDomainPrefix
 		throw new \RuntimeException( __METHOD__ . " must not be called when there is no central domain" );
+	}
+
+	/**
+	 * Get a new instance of CentralDomainUtils with a fallback login wiki ID set.
+	 * @param string $fallbackLoginWikiId A wiki where the user has a logged-in session.
+	 *   Used as fallback when loginwiki isn't configured.
+	 */
+	public function withFallbackLoginWikiId( string $fallbackLoginWikiId ): self {
+		$centralDomainUtilsWithFallback = new self( $this->config, $this->titleFactory,
+			$this->sharedDomainUtils );
+		$centralDomainUtilsWithFallback->fallbackLoginWikiId = $fallbackLoginWikiId;
+		return $centralDomainUtilsWithFallback;
 	}
 
 }
