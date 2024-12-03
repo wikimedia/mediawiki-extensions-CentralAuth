@@ -549,11 +549,11 @@ class CentralAuthHooks implements
 	 * @return array
 	 */
 	public static function getCentralautologinJsData() {
-		global $wgCentralAuthLoginWiki;
 		$data = [];
+		$centralDomainUtils = self::getCentralDomainUtils();
 
 		$wikiId = WikiMap::getCurrentWikiId();
-		if ( $wgCentralAuthLoginWiki && $wgCentralAuthLoginWiki !== $wikiId ) {
+		if ( !$centralDomainUtils->isCentralDomain( RequestContext::getMain()->getRequest() ) ) {
 			$startUrl = WikiMap::getForeignURL( $wikiId, 'Special:CentralAutoLogin/start' );
 
 			if ( $startUrl !== false ) {

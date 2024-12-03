@@ -20,23 +20,24 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
-use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Hook\ContentSecurityPolicyDefaultSourceHook;
 use MediaWiki\Hook\ContentSecurityPolicyScriptSourceHook;
-use MediaWiki\WikiMap\WikiMap;
+use MediaWiki\Utils\UrlUtils;
 
 class ContentSecurityPolicyHookHandler implements
 	ContentSecurityPolicyDefaultSourceHook,
 	ContentSecurityPolicyScriptSourceHook
 {
 
-	private Config $config;
+	private UrlUtils $urlUtils;
+	private CentralDomainUtils $centralDomainUtils;
 
-	public function __construct( Config $config ) {
-		$this->config = $config;
+	public function __construct( UrlUtils $urlUtils, CentralDomainUtils $centralDomainUtils ) {
+		$this->urlUtils = $urlUtils;
+		$this->centralDomainUtils = $centralDomainUtils;
 	}
 
 	/**
@@ -68,26 +69,20 @@ class ContentSecurityPolicyHookHandler implements
 				$out->getRequest()->getSessionData( 'CentralAuthDoEdgeLogin' )
 		) {
 			foreach ( CentralAuthHooks::getAutoLoginWikis() as $wikiID ) {
-				$wiki = WikiMap::getWiki( $wikiID );
-				$url = $wiki->getCanonicalServer();
-				if ( CentralAuthHooks::isMobileDomain() ) {
-					$url = \MobileContext::singleton()->getMobileUrl( $url );
-				}
-				$defaultSrc[] = wfParseUrl( $url )['host'];
+				$url = $this->centralDomainUtils->getUrl( $wikiID, 'Special:BadTitle', $out->getRequest() );
+				// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
+				$defaultSrc[] = $this->urlUtils->parse( $url )['host'];
 			}
 		}
 
 		// Allow-list the central domain if autologin might be about to happen.
 		// As with edge login, we can't rely on anything that caching doesn't vary on.
-		if ( !$out->getUser()->isRegistered() && $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) ) {
-			// For the non-js case, there is a local image loaded, but it redirects to the
+		if ( !$out->getUser()->isRegistered() &&
+			$this->centralDomainUtils->centralDomainExists( $out->getRequest() )
+		) {
+			// For the non-js case, there is local image loaded, but it redirects to
 			// central wiki, so include it.
-			$loginWiki = WikiMap::getWiki( $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) );
-			$url = $loginWiki->getCanonicalServer();
-			if ( CentralAuthHooks::isMobileDomain() ) {
-				$url = \MobileContext::singleton()->getMobileUrl( $url );
-			}
-			$defaultSrc[] = wfParseUrl( $url )['host'];
+			$defaultSrc[] = $this->centralDomainUtils->getCentralDomainHost( $out->getRequest() );
 		}
 	}
 
@@ -111,9 +106,10 @@ class ContentSecurityPolicyHookHandler implements
 		$mode
 	) {
 		$out = RequestContext::getMain()->getOutput();
-		if ( $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) && !$out->getUser()->isRegistered() ) {
-			$loginWiki = WikiMap::getWiki( $this->config->get( CAMainConfigNames::CentralAuthLoginWiki ) );
-			$scriptSrc[] = wfParseUrl( $loginWiki->getCanonicalServer() )['host'];
+		if ( $this->centralDomainUtils->centralDomainExists( $out->getRequest() ) &&
+			!$out->getUser()->isRegistered()
+		) {
+			$scriptSrc[] = $this->centralDomainUtils->getCentralDomainHost( $out->getRequest() );
 		}
 	}
 }
