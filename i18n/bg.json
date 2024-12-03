@@ -87,7 +87,7 @@
 	"centralauth-admin-permission": "Само стюарди могат да сливат потребителските сметки на други потребители.",
 	"centralauth-admin-reason": "Причина:",
 	"centralauth-admin-reason-other": "Друга/допълнителна причина:",
-	"centralauth-admin-reason-other-select": "Друга причина:",
+	"centralauth-admin-reason-other-select": "Друга причина",
 	"centralauth-admin-setstatus-success": "Успешно променихте статуса на тази глобална сметка.",
 	"centralauth-admin-status": "Установяване на статус на глобална сметка",
 	"centralauth-admin-status-hidden": "Скрита:",
