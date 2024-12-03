@@ -143,8 +143,8 @@ class DeleteEmptyAccounts extends Maintenance {
 			$reason = wfMessage( 'centralauth-delete-empty-account' )->inContentLanguage()->text();
 			$status = $central->adminDelete( $reason, $deleter );
 			if ( !$status->isGood() ) {
-				$msg = $status->getMessages()[0]->getKey();
-				$this->output( "ERROR: [$username] Delete failed ($msg)\n" );
+				$this->output( "ERROR: [$username] Delete failed:\n" );
+				$this->error( $status );
 				return;
 			}
 			$this->output( "DELETE: [$username] Deleted\n" );
