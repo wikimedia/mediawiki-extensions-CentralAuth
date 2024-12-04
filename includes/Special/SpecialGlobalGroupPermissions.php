@@ -672,6 +672,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addPermissionLog( $group, $addRights, $removeRights, $reason ) {
+		// The following message is generated here:
+		// * logentry-gblrename-groupprms2
+		// * log-action-filter-gblrename-groupprms2
 		$entry = new ManualLogEntry( 'gblrights', 'groupprms2' );
 		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $group ) );
 		$entry->setPerformer( $this->getUser() );
@@ -692,6 +695,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addRenameLog( $oldName, $newName, $reason ) {
+		// The following message is generated here:
+		// * logentry-gblrename-grouprename
+		// * log-action-filter-gblrename-grouprename
 		$entry = new ManualLogEntry( 'gblrights', 'grouprename' );
 		// This has to point to 'Special:GlobalUsers so that self::showLogFragment can find it
 		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $newName ) );
@@ -714,6 +720,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @param string $reason
 	 */
 	private function addWikiSetLog( $group, $old, $new, $reason ) {
+		// The following message is generated here:
+		// * logentry-gblrename-groupprms3
+		// * log-action-filter-gblrename-groupprms3
 		$entry = new ManualLogEntry( 'gblrights', 'groupprms3' );
 		$entry->setTarget( SpecialPage::getTitleFor( 'GlobalUsers', $group ) );
 		$entry->setPerformer( $this->getUser() );

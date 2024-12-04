@@ -14,6 +14,10 @@ class ChangeStatusLogFormatter extends LogFormatter {
 	private function formatStatuses( array $array ): string {
 		if ( $array !== [] ) {
 			$values = array_map( function ( $key ) {
+				// The following messages are generated here (see CentralAuthUser#adminLockHide):
+				// * centralauth-log-status-locked
+				// * centralauth-log-status-oversighted
+				// * centralauth-log-status-hidden
 				return $this->msg( 'centralauth-log-status-' . $key )->text();
 			}, $array );
 			return $this->formatParameterValue( 'list', $values );

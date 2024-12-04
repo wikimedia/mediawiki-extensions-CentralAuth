@@ -26,6 +26,8 @@ class GlobalRenameUserLogger {
 	 * @param array $options
 	 */
 	public function log( $oldName, $newName, $options ) {
+		// The following message is generated here:
+		// * logentry-gblrename-rename
 		$logEntry = new ManualLogEntry( 'gblrename', 'rename' );
 		$logEntry->setPerformer( $this->performingUser );
 		$logEntry->setTarget( SpecialPage::getTitleFor( 'CentralAuth', $newName ) );
@@ -54,6 +56,8 @@ class GlobalRenameUserLogger {
 	 * @param string $reason
 	 */
 	public function logPromotion( $oldName, $wiki, $newName, $reason ) {
+		// The following message is generated here:
+		// * logentry-gblrename-promote
 		$logEntry = new ManualLogEntry( 'gblrename', 'promote' );
 		$logEntry->setPerformer( $this->performingUser );
 		$logEntry->setTarget( SpecialPage::getTitleFor( 'CentralAuth', $newName ) );

@@ -966,6 +966,10 @@ class SpecialCentralAuth extends SpecialPage {
 				self::foreignLink(
 					$row['wiki'],
 					'Special:BlockList/' . $row['name'],
+					// The following messages are generated here:
+					// * centralauth-block-editing-page
+					// * centralauth-block-editing-ns
+					// * centralauth-block-editing-action
 					$this->msg( 'centralauth-block-editing-' . $type, $value )->text()
 				)
 			);
