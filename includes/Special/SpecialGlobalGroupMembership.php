@@ -169,9 +169,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 			// save settings
 			if ( !$fetchedStatus->isOK() ) {
-				$this->getOutput()->addWikiTextAsInterface(
-					$fetchedStatus->getWikiText( false, false, $this->getLanguage() )
-				);
+				foreach ( $fetchedStatus->getMessages() as $msg ) {
+					$this->getOutput()->addWikiMsg( $msg );
+				}
 
 				return;
 			}
@@ -200,9 +200,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 					return;
 				} else {
 					// Print an error message and redisplay the form
-					$out->wrapWikiTextAsInterface(
-						'error', $status->getWikiText( false, false, $this->getLanguage() )
-					);
+					foreach ( $status->getMessages() as $msg ) {
+						$this->getOutput()->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
+					}
 				}
 			}
 		}
@@ -393,9 +393,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	private function editUserGroupsForm( $username ) {
 		$status = $this->fetchUser( $username );
 		if ( !$status->isOK() ) {
-			$this->getOutput()->addWikiTextAsInterface(
-				$status->getWikiText( false, false, $this->getLanguage() )
-			);
+			foreach ( $status->getMessages() as $msg ) {
+				$this->getOutput()->addWikiMsg( $msg );
+			}
 
 			return;
 		}

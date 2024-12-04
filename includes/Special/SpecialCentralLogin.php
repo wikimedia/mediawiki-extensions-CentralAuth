@@ -10,6 +10,7 @@ use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\LoginCompleteHookHandler;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Html\Html;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -21,6 +22,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\ScopedCallback;
 
@@ -366,9 +368,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param mixed ...$args
+	 * @param string|MessageSpecifier $key
+	 * @param mixed ...$params
 	 */
-	protected function showError( ...$args ) {
+	private function showError( $key, ...$params ) {
 		$accountType = 'anon';
 		if ( $this->getUser()->isRegistered() ) {
 			$accountType = $this->getUser()->isNamed() ? 'named' : 'temp';
@@ -377,12 +380,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		LoggerFactory::getInstance( 'authevents' )->info( 'Central login attempt', [
 			'event' => 'centrallogin',
 			'successful' => false,
-			'status' => $args[0],
+			'status' => $key instanceof MessageSpecifier ? $key->getKey() : $key,
 			'extension' => 'CentralAuth',
 			'accountType' => $accountType
 		] );
-		$this->getOutput()->wrapWikiMsg( '<div class="error">$1</div>', $args );
+		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$this->getOutput()->addHTML( Html::errorBox( $this->msg( $key, ...$params )->parse() ) );
 		// JS only
-		$this->getOutput()->addHtml( '<p id="centralauth-backlink-section"></p>' );
+		$this->getOutput()->addHTML( '<p id="centralauth-backlink-section"></p>' );
 	}
 }

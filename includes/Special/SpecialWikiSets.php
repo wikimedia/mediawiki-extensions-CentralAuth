@@ -84,7 +84,7 @@ class SpecialWikiSets extends SpecialPage {
 		if ( $subpage !== '0' ) {
 			$set = is_numeric( $subpage ) ? WikiSet::newFromId( $subpage ) : WikiSet::newFromName( $subpage );
 			if ( !$set ) {
-				$this->getOutput()->setPageTitleMsg( $this->msg( 'error' ) );
+				$this->getOutput()->setPageTitleMsg( $this->msg( 'errorpagetitle' ) );
 				$error = $this->msg( 'centralauth-editset-notfound', $subpage )->escaped();
 				$this->buildMainView( Html::errorBox( $error ) );
 				return;

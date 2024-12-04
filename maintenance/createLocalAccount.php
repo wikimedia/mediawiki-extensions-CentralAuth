@@ -11,7 +11,6 @@ require_once "$IP/maintenance/Maintenance.php";
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Permissions\UltimateAuthority;
-use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 
 class CreateLocalAccount extends Maintenance {
@@ -32,8 +31,8 @@ class CreateLocalAccount extends Maintenance {
 			);
 
 		if ( !$status->isGood() ) {
-			$this->error( "autoCreateUser failed for $username: " .
-				Status::wrap( $status )->getWikiText( false, false, 'en' ) );
+			$this->error( "autoCreateUser failed for $username:" );
+			$this->error( $status );
 			return;
 		}
 

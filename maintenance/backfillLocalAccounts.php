@@ -36,7 +36,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Registration\ExtensionRegistry;
-use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
@@ -128,8 +127,8 @@ class BackfillLocalAccounts extends Maintenance {
 				"Backfilled by autocreation script" );
 
 		if ( !$status->isGood() ) {
-			$this->error( "autoCreateUser failed for $username: " .
-				Status::wrap( $status )->getWikiText( false, false, 'en' ) );
+			$this->error( "autoCreateUser failed for $username:" );
+			$this->error( $status );
 			return;
 		}
 
