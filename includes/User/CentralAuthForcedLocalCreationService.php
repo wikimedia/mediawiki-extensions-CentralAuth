@@ -91,6 +91,8 @@ class CentralAuthForcedLocalCreationService {
 
 		// Add log entry
 		if ( $performer ) {
+			// The following message is generated here:
+			// * logentry-newusers-forcecreatelocal
 			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
 			$logEntry->setPerformer( $performer->getUser() );
 			$logEntry->setTarget( $user->getUserPage() );

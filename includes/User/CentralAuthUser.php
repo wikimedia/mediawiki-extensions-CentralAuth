@@ -3373,6 +3373,19 @@ class CentralAuthUser implements IDBAccessObject {
 			->getCanonicalName( NS_USER );
 		// Not centralauth because of some weird length limitations
 		$logType = $suppressLog ? 'suppress' : 'globalauth';
+		// The following messages are generated here:
+		// * logentry-globalauth-cadelete
+		// * logentry-globalauth-delete
+		// * logentry-globalauth-setstatus
+		// * logentry-suppress-cadelete
+		// * logentry-suppress-delete
+		// * logentry-suppress-setstatus
+		// * log-action-filter-globalauth-cadelete
+		// * log-action-filter-globalauth-delete
+		// * log-action-filter-globalauth-setstatus
+		// * log-action-filter-suppress-cadelete
+		// * log-action-filter-suppress-delete
+		// * log-action-filter-suppress-setstatus
 		$entry = new ManualLogEntry( $logType, $action );
 		$entry->setTarget( Title::newFromText( "$nsUser:{$this->mName}@global" ) );
 		$entry->setPerformer( $user );

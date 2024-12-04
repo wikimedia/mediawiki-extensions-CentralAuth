@@ -372,6 +372,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			$newGroupMetadata[] = [ 'expiry' => $value ];
 		}
 
+		// The following message is generated here:
+		// * logentry-gblrename-usergroups
+		// * log-action-filter-gblrename-usergroups
 		$entry = new ManualLogEntry( 'gblrights', 'usergroups' );
 		$entry->setTarget( $this->titleFactory->makeTitle( NS_USER, $user->getName() ) );
 		$entry->setPerformer( $this->getUser() );
