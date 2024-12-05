@@ -648,6 +648,7 @@
 		"shareddomain": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SharedDomainHookHandler",
 			"services": [
+				"MainConfig",
 				"UrlUtils",
 				"CentralAuth.FilteredRequestTracker",
 				"CentralAuth.SharedDomainUtils"
@@ -698,6 +699,7 @@
 		"AbuseFilter-generateUserVars": "abusefilter",
 		"AbuseFilterShouldFilterAction": "abusefilter",
 		"ApiCheckCanExecute": "shareddomain",
+		"ApiQueryCheckCanExecute": "shareddomain",
 		"ApiQueryTokensRegisterTypes": "default",
 		"APIGetAllowedParams": "api",
 		"AuthChangeFormFields": "loginredirect",
@@ -941,6 +943,20 @@
 		"CentralAuthEnableSul3": {
 			"description": "Enables SUL3 mode (T348388 and T375787). Experimental, do not use. Defaults to empty array but allowed values within the array are: 'always' (always SUL3 mode), 'query-flag' (enabled when the URL has a 'usesul3=1' query parameter), and 'cookie' (enabled when there is a 'sul3OptIn=1' cookie). The query flag is used to pass on the SUL3 flag during redirect chains, so unless SUL3 is always or never enabled, 'query-flag' should always be included.",
 			"value": []
+		},
+		"CentralAuthSul3SharedDomainRestrictions": {
+			"description": "Additional allowed/disallowed features when on the SUL3 central login domain. See SharedDomainHookHandler constants. Note: this configuration setting actually uses an array_merge_recursive style merge strategy, but the defaults are stored in SharedDomainHookHandler::DEFAULT_RESTRICTIONS.",
+			"value": {
+				"allowedEntryPoints": [],
+				"allowedSpecialPages": [],
+				"allowedActionApiModules": [],
+				"disallowedLocalProviders": {
+					"preauth": [],
+					"primaryauth": [],
+					"secondaryauth": []
+				}
+			},
+			"merge_strategy": "array_replace_recursive"
 		}
 	},
 	"AuthManagerAutoConfig": {

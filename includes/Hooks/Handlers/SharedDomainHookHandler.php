@@ -3,15 +3,19 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use LogicException;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
+use MediaWiki\Api\Hook\ApiQueryCheckCanExecuteHook;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\Hook\AuthManagerVerifyAuthenticationHook;
 use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
+use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
@@ -34,6 +38,7 @@ use Wikimedia\NormalizedException\NormalizedException;
  */
 class SharedDomainHookHandler implements
 	ApiCheckCanExecuteHook,
+	ApiQueryCheckCanExecuteHook,
 	AuthManagerFilterProvidersHook,
 	AuthManagerVerifyAuthenticationHook,
 	BeforePageDisplayHook,
@@ -42,58 +47,85 @@ class SharedDomainHookHandler implements
 	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	SetupAfterCacheHook
 {
+	/**
+	 * List of entry points that are allowed on the shared domain.
+	 * @see MW_ENTRY_POINT
+	 */
+	private const ALLOWED_ENTRY_POINTS = 'allowedEntryPoints';
+	/**
+	 * List of the special pages that are allowed on the shared domain.
+	 */
+	private const ALLOWED_SPECIAL_PAGES = 'allowedSpecialPages';
+	/**
+	 * List of action API modules that are allowed on the shared domain.
+	 * @see ApiBase::getModulePath()
+	 */
+	private const ALLOWED_ACTION_API_MODULES = 'allowedActionApiModules';
+	/**
+	 * List of authentication providers which should be skipped on the local login page in
+	 * SUL3 mode, because they will be applied on the shared domain instead.
+	 * The values are they keys of $wgAuthManagerAutoConfig - usually but not always the
+	 * provider class name.
+	 * @see MainConfigNames::AuthManagerAutoConfig
+	 * @note This is somewhat fragile, e.g. in case of class renamespacing. We inherit that from
+	 * AuthManager and can't do much about it. It fails in the safe direction, though - on
+	 * provider key mismatch there will be unnecessary extra checks.
+	 */
+	private const DISALLOWED_LOCAL_PROVIDERS = 'disallowedLocalProviders';
 
-	// Allowlists of things a user can do on the shared domain.
-	// FIXME these should be configurable and/or come from extension attributes
-	// 'static' is WMF's custom static.php entry point, serving some files on the shared domain (T374286)
-	private const ALLOWED_ENTRY_POINTS = [ 'index', 'api', 'static', 'cli' ];
-	private const ALLOWED_SPECIAL_PAGES = [ 'Userlogin', 'Userlogout', 'CreateAccount',
-		'PasswordReset', 'Captcha', 'CentralAutoLogin', 'CentralLogin' ];
-	private const ALLOWED_API_MODULES = [
-		// needed for allowing any query API, even if we only want meta modules; it can be
-		// used to check page existence (which is unwanted functionality on the shared domain),
-		// which is unfortunate but permissions will still be checked, so it's not a risk.
-		'query',
-		// allow login/signup directly via the API + help for those APIs
-		'clientlogin', 'createaccount', 'authmanagerinfo', 'paraminfo', 'help',
-		// APIs used during web login
-		'validatepassword', 'userinfo', 'webauthn', 'fancycaptchareload',
-		// generic meta APIs, there's a good chance something somewhere will use them
-		'siteinfo', 'globaluserinfo', 'tokens',
+	/**
+	 * Default restrictions for the shared domain. These values will be merged with the contents of
+	 * $wgCentralAuthSul3SharedDomainRestrictions.
+	 * Stored here rather than in extension.json because 1) can use comments and statically checked
+	 * class constants this way; 2) MediaWiki doesn't have an array_merge_recursive strategy anymore,
+	 * but for list items required for correct functionality, like these, you always want to add
+	 * and not replace.
+	 */
+	private const DEFAULT_RESTRICTIONS = [
+		// 'static' is WMF's custom static.php entry point, serving some files on the shared domain (T374286)
+		self::ALLOWED_ENTRY_POINTS => [ 'index', 'api', 'static', 'cli' ],
+		self::ALLOWED_SPECIAL_PAGES => [ 'Userlogin', 'Userlogout', 'CreateAccount',
+			'PasswordReset', 'Captcha', 'CentralAutoLogin', 'CentralLogin' ],
+		self::ALLOWED_ACTION_API_MODULES => [
+			// needed for allowing any query API, even if we only want meta modules; it can be
+			// used to check page existence, which is unwanted functionality on the shared domain,
+			// but permissions will still be checked, so it's not a risk.
+			'query',
+			// allow login/signup directly via the API + help for those APIs
+			'clientlogin', 'createaccount', 'query+authmanagerinfo', 'paraminfo', 'help',
+			// APIs used during web login
+			'validatepassword', 'query+userinfo', 'webauthn', 'fancycaptchareload',
+			// generic meta APIs, there's a good chance something somewhere will use them
+			'query+tokens', 'query+siteinfo', 'query+globaluserinfo',
+		],
+		self::DISALLOWED_LOCAL_PROVIDERS => [
+			'preauth' => [
+				'CaptchaPreAuthenticationProvider',
+			],
+			'primaryauth' => [
+				TemporaryPasswordPrimaryAuthenticationProvider::class,
+				LocalPasswordPrimaryAuthenticationProvider::class,
+			],
+			'secondaryauth' => [
+				'OATHSecondaryAuthenticationProvider',
+			],
+		],
 	];
 
-	// List of authentication providers which should be skipped on the local login page in
-	// SUL3 mode, because they will be done on the shared domain instead.
-	// This is somewhat fragile, e.g. in case of class renamespacing. We inherit that from
-	// AuthManager and can't do much about it. It fails in the safe direction, though - on
-	// provider key mismatch there will be unnecessary extra checks.
-	private const DISALLOWED_LOCAL_PROVIDERS = [
-		// FIXME what about preauth providers like AbuseFilter which don't generate a form
-		//   but might prevent login and then the user ends up on a confusing login page?
-		// FIXME what about providers (if any) which generate a form but also do something else?
-		'preauth' => [
-			'CaptchaPreAuthenticationProvider',
-		],
-		'primaryauth' => [
-			TemporaryPasswordPrimaryAuthenticationProvider::class,
-			LocalPasswordPrimaryAuthenticationProvider::class,
-		],
-		'secondaryauth' => [
-			'OATHSecondaryAuthenticationProvider',
-		],
-	];
-
+	private Config $config;
 	private UrlUtils $urlUtils;
 	private FilteredRequestTracker $filteredRequestTracker;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
+		Config $config,
 		UrlUtils $urlUtils,
 		FilteredRequestTracker $filteredRequestTracker,
 		SharedDomainUtils $sharedDomainUtils,
 		?MobileContext $mobileContext = null
 	) {
+		$this->config = $config;
 		$this->urlUtils = $urlUtils;
 		$this->filteredRequestTracker = $filteredRequestTracker;
 		$this->sharedDomainUtils = $sharedDomainUtils;
@@ -107,10 +139,9 @@ class SharedDomainHookHandler implements
 			//   should be needed for login and signup so we can just throw unconditionally,
 			//   but this should be improved in the future.
 			// FIXME should not log a production error
-			if ( !in_array( MW_ENTRY_POINT, self::ALLOWED_ENTRY_POINTS, true ) ) {
-				throw new \RuntimeException(
-					MW_ENTRY_POINT . ' endpoint is not allowed on the shared domain'
-				);
+			$allowedEntryPoints = $this->getRestrictions( self::ALLOWED_ENTRY_POINTS );
+			if ( !in_array( MW_ENTRY_POINT, $allowedEntryPoints, true ) ) {
+				throw new \RuntimeException( MW_ENTRY_POINT . ' endpoint is not allowed on the shared domain' );
 			}
 		}
 	}
@@ -122,7 +153,8 @@ class SharedDomainHookHandler implements
 				$result = wfMessage( 'badaccess-group0' );
 				return false;
 			}
-			foreach ( self::ALLOWED_SPECIAL_PAGES as $name ) {
+			$allowedSpecialPages = $this->getRestrictions( self::ALLOWED_SPECIAL_PAGES );
+			foreach ( $allowedSpecialPages as $name ) {
 				if ( $title->isSpecial( $name ) ) {
 					return true;
 				}
@@ -135,9 +167,23 @@ class SharedDomainHookHandler implements
 	/** @inheritDoc */
 	public function onApiCheckCanExecute( $module, $user, &$message ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
-			if ( !in_array( $module->getModuleName(), self::ALLOWED_API_MODULES ) ) {
-				$message = [ 'apierror-moduledisabled', $module->getModuleName() ];
+			$allowedActionApiModules = $this->getRestrictions( self::ALLOWED_ACTION_API_MODULES );
+			if ( !in_array( $module->getModulePath(), $allowedActionApiModules ) ) {
+				$message = [ 'apierror-moduledisabled', $module->getModulePath() ];
 				return false;
+			}
+		}
+	}
+
+	/** @inheritDoc */
+	public function onApiQueryCheckCanExecute( $modules, $authority, &$message ) {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
+			$allowedActionApiModules = $this->getRestrictions( self::ALLOWED_ACTION_API_MODULES );
+			foreach ( $modules as $module ) {
+				if ( !in_array( $module->getModulePath(), $allowedActionApiModules ) ) {
+					$message = [ 'apierror-moduledisabled', $module->getModulePath() ];
+					return false;
+				}
 			}
 		}
 	}
@@ -212,8 +258,9 @@ class SharedDomainHookHandler implements
 				);
 			}
 
-			foreach ( self::DISALLOWED_LOCAL_PROVIDERS as $stage => $disallowedProviders ) {
-				foreach ( $disallowedProviders as $disallowedProvider ) {
+			$disallowedProviders = $this->getRestrictions( self::DISALLOWED_LOCAL_PROVIDERS );
+			foreach ( $disallowedProviders as $stage => $disallowedProvidersAtStage ) {
+				foreach ( $disallowedProvidersAtStage as $disallowedProvider ) {
 					unset( $providers[$stage][$disallowedProvider] );
 				}
 			}
@@ -255,7 +302,8 @@ class SharedDomainHookHandler implements
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			// Only allow links to auth-related special pages on the shared domain.
 			// Point all other links to the normal wiki domain.
-			foreach ( self::ALLOWED_SPECIAL_PAGES as $name ) {
+			$allowedSpecialPages = $this->getRestrictions( self::ALLOWED_SPECIAL_PAGES );
+			foreach ( $allowedSpecialPages as $name ) {
 				if ( $title->isSpecial( $name ) ) {
 					return;
 				}
@@ -273,5 +321,26 @@ class SharedDomainHookHandler implements
 				$url = $this->mobileContext->getMobileUrl( $url );
 			}
 		}
+	}
+
+	private function getRestrictions( string $type ): array {
+		$allRestrictions = $this->config->get( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions );
+		if ( $type === self::DISALLOWED_LOCAL_PROVIDERS ) {
+			$disallowedLocalProvidersConstant = self::DEFAULT_RESTRICTIONS[$type];
+			$disallowedLocalProvidersGlobal = $allRestrictions[$type] ?? [];
+			$restrictions = [];
+			foreach ( $disallowedLocalProvidersConstant as $providerStage => $_ ) {
+				$restrictions[$providerStage] = array_merge(
+					$disallowedLocalProvidersConstant[$providerStage],
+					$disallowedLocalProvidersGlobal[$providerStage] ?? []
+				);
+			}
+		} else {
+			$restrictions = array_merge(
+				self::DEFAULT_RESTRICTIONS[$type],
+				$allRestrictions[$type] ?? []
+			);
+		}
+		return $restrictions;
 	}
 }
