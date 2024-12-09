@@ -32,6 +32,8 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use RecentChange;
 
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 class AbuseFilterHookHandler implements
 	AbuseFilterAlterVariablesHook,
 	AbuseFilterBuilderHook,
