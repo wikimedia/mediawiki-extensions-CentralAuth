@@ -330,7 +330,8 @@ class CentralAuthHooks implements
 		$url = $centralDomainUtils->getUrl( $wikiID, $page, $request, $params );
 
 		if ( $csp ) {
-			$csp->addDefaultSrc( wfParseUrl( $url )['host'] );
+			$urlHost = parse_url( $url, PHP_URL_HOST );
+			$csp->addDefaultSrc( $urlHost );
 		}
 
 		$type = $params['type'];
