@@ -107,6 +107,7 @@
 	"centralauth-admin-delete-confirm": "确实要删除此账号吗？",
 	"centralauth-admin-delete-description": "删除全域账号会分离所有本地账号，并保留全域名称给另一位用户使用。\n全部的本地账号将继续存在。",
 	"centralauth-admin-delete-nonexistent": "错误：该全域账号“<nowiki>$1</nowiki>”不存在。",
+	"centralauth-admin-cannot-lock-temporary-account": "您无法锁定临时账号，因为锁定他们只会让他们在下次编辑时获得新的临时账号。",
 	"centralauth-admin-delete-success": "已经删除“<nowiki>$1</nowiki>”的全域账号",
 	"centralauth-admin-delete-title": "删除账号",
 	"centralauth-admin-group-temporary": "$1（临时）",
