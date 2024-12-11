@@ -192,7 +192,6 @@
 	"centralauth-finish-title": "خاتمه ادغام",
 	"centralauth-finishglobaliseemail_body": "آدرس ایمیل شما با توجه به حساب شما «$2» در تمامی پروژه ها هماهنگ شده است. حساب اصلی شما نیز در {{SITENAME}} قرار دارد.\n\nبرای تأیید آنکه این حساب واقعاً به شما تعلق دارد. البته توجه داشته باشید که ادغام حساب‌های کاربری نمی‌تواند به صورت خودکار انجام شود.\nهمچنین اگر شما گذرواژهٔ حساب خودتان را گم کرده‌اید می‌توانید از پیوند زیر استفاده نمایید.\n\n$3\n\nاگر این حساب متعلق به شما نیست، لطفاً وارد پیوند زیر شده تا این درخواست منقضی گردد.\n\n$5\n\nاین درخواست در تاریخ $6 ساعت $7 منقضی می‌شود.",
 	"centralauth-finishglobaliseemail_subject": "تأیید حساب {{SITENAME}}",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|contribution|contributions}} on $2",
 	"centralauth-foreign-link": "حساب کاربری $1 در $2",
 	"centralauth-globalgroupperms-creategroup-submit": "تعیین اختیارات",
 	"centralauth-globalgroupperms-group": "داکووکە(گروو)",
