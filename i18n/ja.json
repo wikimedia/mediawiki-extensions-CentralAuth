@@ -572,6 +572,5 @@
 	"right-globalgrouppermissions": "グローバルグループを管理",
 	"sessionprovider-centralauthsessionprovider": "中央のCookieベースのセッション",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtokenセッション",
-	"centralauth-badaccess-blacklisted": "あなたはブラックリストに登録されているため、グローバル利用者アカウントの改名を依頼できません。",
-	"centralauth-blocked-ip-reputation": "現在使用している IP アドレスは、最近不正な目的で使用されたと考えられるため、ブロックされています。"
+	"centralauth-badaccess-blacklisted": "あなたはブラックリストに登録されているため、グローバル利用者アカウントの改名を依頼できません。"
 }

@@ -487,6 +487,5 @@
 	"right-globalgrouppermissions": "Behandle av globale grupper",
 	"sessionprovider-centralauthsessionprovider": "sentrale informasjonskapselbaserte økter",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-økter",
-	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste.",
-	"centralauth-blocked-ip-reputation": "IP-adressen du bruker har blitt blokkert fordi den nylig har blitt brukt til å gjøre ødeleggende redigeringer."
+	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste."
 }

@@ -526,6 +526,5 @@
 	"right-globalgrouppermissions": "Quản lý nhóm toàn cục",
 	"sessionprovider-centralauthsessionprovider": "phiên trung ương dựa trên cookie",
 	"sessionprovider-centralauthtokensessionprovider": "phiên dấu CentralAuth",
-	"centralauth-badaccess-blacklisted": "Bạn không thể yêu cầu đổi tên toàn cục, vì bạn đang nằm trong danh sách cấm.",
-	"centralauth-blocked-ip-reputation": "Địa chỉ IP mà bạn đang sử dụng đã bị cấm vì nó được cho là đã được sử dụng vào mục đích lạm dụng gần đây."
+	"centralauth-badaccess-blacklisted": "Bạn không thể yêu cầu đổi tên toàn cục, vì bạn đang nằm trong danh sách cấm."
 }

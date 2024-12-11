@@ -574,6 +574,5 @@
 	"right-globalgrouppermissions": "管理全域群組",
 	"sessionprovider-centralauthsessionprovider": "基於 cookie 的中央 sessions",
 	"sessionprovider-centralauthtokensessionprovider": "中央驗證令牌 session",
-	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。",
-	"centralauth-blocked-ip-reputation": "您目前使用的 IP 位址遭到封鎖，因為此位址近期似乎有濫用的行為。"
+	"centralauth-badaccess-blacklisted": "因為您在黑名單中，您不能請求一個全域的重新命名。"
 }

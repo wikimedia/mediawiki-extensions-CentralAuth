@@ -31,7 +31,8 @@
 			"Tarmo",
 			"Valtlai",
 			"Valtlait",
-			"Veikk0.ma"
+			"Veikk0.ma",
+			"Yupik"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Käyttäjän järjestelmänlaajuinen muokkausmäärä ($1)",
@@ -73,7 +74,7 @@
 	"centralauth-admin-delete-success": "Järjestelmänlaajuinen käyttäjätunnus ”<nowiki>$1</nowiki>” poistettiin.",
 	"centralauth-admin-delete-title": "Poista käyttäjätunnus",
 	"centralauth-admin-group-temporary": "$1 ''(väliaikainen)''",
-	"centralauth-admin-hidden-list": "järjestelmänlaajuisten tilien listasta",
+	"centralauth-admin-hidden-list": "järjestelmänlaajuisten tunnusten listasta",
 	"centralauth-admin-hidden-oversight": "häivytetty",
 	"centralauth-admin-info-attached": "Liitettyjen tunnusten lukumäärä:",
 	"centralauth-admin-info-editcount": "Muokkauksia yhteensä:",
@@ -544,6 +545,5 @@
 	"right-globalgrouppermissions": "Hallinnoida järjestelmänlaajuisia ryhmiä",
 	"sessionprovider-centralauthsessionprovider": "järjestelmänlaajuisia evästepohjaisia istuntoja",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-istuntoja",
-	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja.",
-	"centralauth-blocked-ip-reputation": "Tällä hetkellä käyttämäsi IP-osoite on estetty, koska sen uskotaan olevan käytetty väärinkäyttöön viime aikoina."
+	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja."
 }

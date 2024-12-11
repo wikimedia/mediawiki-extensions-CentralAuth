@@ -599,6 +599,5 @@
 	"right-globalgrouppermissions": "Gérer les groupes globaux",
 	"sessionprovider-centralauthsessionprovider": "sessions basées sur les témoins (''cookies'') centraux",
 	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, parce que vous êtes en liste noire.",
-	"centralauth-blocked-ip-reputation": "L'adresse IP que vous utilisez actuellement a été bloquée car elle a été récemment utilisée à des fins abusives."
+	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, parce que vous êtes en liste noire."
 }

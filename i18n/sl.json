@@ -482,6 +482,5 @@
 	"right-globalgrouppermissions": "Upravljanje globalnih skupin",
 	"sessionprovider-centralauthsessionprovider": "centralna seja z uporabo piškotkov",
 	"sessionprovider-centralauthtokensessionprovider": "seja s centralnim avtentikacijskim žetonom",
-	"centralauth-badaccess-blacklisted": "Globalnega preimenovanja ne morete zahtevati, ker ste na črnem seznamu.",
-	"centralauth-blocked-ip-reputation": "IP-naslov, ki ga trenutno uporabljate, je bil blokiran, ker naj bi bil pred kratkim uporabljen za zlorabe."
+	"centralauth-badaccess-blacklisted": "Globalnega preimenovanja ne morete zahtevati, ker ste na črnem seznamu."
 }

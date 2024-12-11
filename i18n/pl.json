@@ -561,6 +561,5 @@
 	"right-globalgrouppermissions": "Zarządzanie grupami globalnymi",
 	"sessionprovider-centralauthsessionprovider": "centralnych sesji opartych na ciasteczkach",
 	"sessionprovider-centralauthtokensessionprovider": "sesji opartych o parametr „centralauthtoken”",
-	"centralauth-badaccess-blacklisted": "Nie możesz poprosić o globalną zmianę nazwy, ponieważ znajdujesz się na czarnej liście.",
-	"centralauth-blocked-ip-reputation": "Wykorzystywany przez ciebie adres IP został zablokowany, gdyż prawdopodobnie został niedawno wykorzystany do nadużyć."
+	"centralauth-badaccess-blacklisted": "Nie możesz poprosić o globalną zmianę nazwy, ponieważ znajdujesz się na czarnej liście."
 }

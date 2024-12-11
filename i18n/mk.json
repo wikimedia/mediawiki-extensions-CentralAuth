@@ -534,6 +534,5 @@
 	"right-globalgrouppermissions": "Раководење со глобални групи",
 	"sessionprovider-centralauthsessionprovider": "централни седници со колачиња",
 	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра",
-	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на црн список.",
-	"centralauth-blocked-ip-reputation": "IP-адресата што тековно ја користите е блокирана бидејќи се смета дека неодамна е употребена во злоупотреба."
+	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на црн список."
 }

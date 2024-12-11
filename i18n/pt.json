@@ -499,6 +499,5 @@
 	"right-globalgrouppermissions": "Administrar grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sessões centrais com <i>cookies</i>",
 	"sessionprovider-centralauthtokensessionprovider": "sessões centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Não pode pedir uma alteração global de nome, porque está numa lista negra.",
-	"centralauth-blocked-ip-reputation": "O endereço IP que está a usar neste momento foi bloqueado porque se acredita que tenha sido usado recentemente com fins abusivos."
+	"centralauth-badaccess-blacklisted": "Não pode pedir uma alteração global de nome, porque está numa lista negra."
 }
