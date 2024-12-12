@@ -3223,7 +3223,9 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param string $groups
+	 * Removes global group(s) from a CentralAuth user. Does not cause a log entry.
+	 *
+	 * @param string|string[] $groups The global group or group(s)
 	 * @return void
 	 */
 	public function removeFromGlobalGroups( $groups ) {
@@ -3241,15 +3243,22 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * @param string $group
+	 * Adds a CentralAuth user to a given global group. Does not cause a log entry.
+	 *
+	 * @param string $group The global group
 	 * @param string|null $expiry Timestamp of membership expiry in TS_MW format, or null if no expiry
-	 * @return void
+	 * @return Status
 	 */
-	public function addToGlobalGroup( string $group, ?string $expiry = null ) {
+	public function addToGlobalGroup( string $group, ?string $expiry = null ): Status {
 		$this->checkWriteMode();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 
-		# Replace into the DB
+		$services = MediaWikiServices::getInstance();
+		if ( $services->getTempUserConfig()->isTempName( $this->mName ) ) {
+			return Status::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
+		}
+
+		// Replace into the DB so any updates to the membership expiry take effect.
 		$dbw->newReplaceQueryBuilder()
 			->replaceInto( 'global_user_groups' )
 			->uniqueIndexFields( [ 'gug_user', 'gug_group' ] )
@@ -3262,6 +3271,8 @@ class CentralAuthUser implements IDBAccessObject {
 			->execute();
 
 		$this->invalidateCache();
+
+		return Status::newGood();
 	}
 
 	/**

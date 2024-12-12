@@ -28,6 +28,8 @@ use MediaWiki\Html\Html;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionManager;
+use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
 
@@ -37,6 +39,9 @@ use SpecialPageTestBase;
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
 class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
+
+	use TempUserTestTrait;
+	use MockAuthorityTrait;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -79,9 +84,9 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * @dataProvider provideFetchUserGood
+	 * @dataProvider provideFetchUserForGoodStatus
 	 */
-	public function testFetchUserGood( $inputFunction ) {
+	public function testFetchUserForGoodStatus( $inputFunction ) {
 		$user = $this->getRegisteredTestUser();
 		$status = $this->newSpecialPage()->fetchUser( $inputFunction( $user ) );
 
@@ -91,25 +96,41 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$this->assertEquals( $user->getId(), $value->getId() );
 	}
 
-	public static function provideFetchUserGood(): Generator {
+	public static function provideFetchUserForGoodStatus(): Generator {
 		yield 'Username' => [ fn ( CentralAuthUser $user ) => $user->getName() ];
 		yield 'Non-canonical username' => [ fn ( CentralAuthUser $user ) => lcfirst( $user->getName() ) ];
 		yield 'ID' => [ fn ( CentralAuthUser $user ) => '#' . $user->getId() ];
 	}
 
 	/**
-	 * @dataProvider provideFetchUserNonexistent
+	 * @dataProvider provideFetchUserForFatalStatus
 	 */
-	public function testFetchUserNonexistent( string $input, string $error ) {
+	public function testFetchUserForFatalStatus( string $input, string $error ) {
 		$status = $this->newSpecialPage()->fetchUser( $input );
 		$this->assertStatusError( $error, $status );
 	}
 
-	public static function provideFetchUserNonexistent() {
+	public static function provideFetchUserForFatalStatus() {
 		yield 'Blank' => [ '', 'nouserspecified' ];
 		yield 'Username' => [ 'Not in use', 'nosuchusershort' ];
 		yield 'Invalid username' => [ 'Invalid@username', 'nosuchusershort' ];
 		yield 'ID' => [ '#12345678', 'noname' ];
+	}
+
+	public function testFetchUserForTemporaryAccount() {
+		$this->enableAutoCreateTempUser();
+		$this->testFetchUserForFatalStatus(
+			$this->getServiceContainer()->getTempUserCreator()
+				->create( null, new FauxRequest() )->getUser()->getName(),
+			'userrights-no-group'
+		);
+	}
+
+	public function testViewSpecialPageForTemporaryAccountTarget() {
+		$this->enableAutoCreateTempUser();
+		$user = $this->getServiceContainer()->getTempUserCreator()->create( null, new FauxRequest() )->getUser();
+		[ $html ] = $this->executeSpecialPage( $user->getName() );
+		$this->assertStringContainsString( '(userrights-no-group)', $html );
 	}
 
 	public function testRenderFormForPrivilegedUser() {
@@ -199,6 +220,46 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 				->text(),
 			$html
 		);
+	}
+
+	public function testSaveForTemporaryAccount() {
+		$this->enableAutoCreateTempUser();
+		$user = $this->getServiceContainer()->getTempUserCreator()->create( null, new FauxRequest() )->getUser();
+		$caUser = CentralAuthUser::getPrimaryInstance( $user );
+		$caUser->register( 'SpecialPageTest@12345', null );
+		$caUser->attach( WikiMap::getCurrentWikiId() );
+
+		[ $html ] = $this->executeSpecialPage(
+			$user->getName(),
+			new FauxRequest(
+				[
+					'user' => $user->getName(),
+					'saveusergroups' => '1',
+					'wpEditToken' => SessionManager::getGlobalSession()->getToken( $user->getName() ),
+					'conflictcheck-originalgroups' => '',
+					'wpGroup-group-one' => '1',
+					'wpExpiry-group-one' => 'infinite',
+					'wpGroup-group-three' => '1',
+					'wpExpiry-group-three' => '1 month',
+					'user-reason' => 'test',
+				],
+				true
+			),
+			null,
+			$this->mockRegisteredUltimateAuthority()
+		);
+
+		$this->assertStringContainsString( '(userrights-no-group)', $html );
+
+		$caUser->invalidateCache();
+		$this->assertArrayEquals( [], $caUser->getGlobalGroups() );
+
+		$this->newSelectQueryBuilder()
+			->select( '1' )
+			->from( 'logging' )
+			->where( [ 'log_type' => 'gblrights' ] )
+			->caller( __METHOD__ )
+			->assertEmptyResult();
 	}
 
 	public function testSave() {

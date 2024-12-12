@@ -5,9 +5,11 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * Setup database tests for centralauth
@@ -19,6 +21,7 @@ use MediaWiki\WikiMap\WikiMap;
 class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 
 	use MockAuthorityTrait;
+	use TempUserTestTrait;
 
 	public function testBasicAttrs() {
 		$this->createCentralAccountForGlobalUser();
@@ -452,6 +455,59 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	/** @dataProvider provideAddToGlobalGroup */
+	public function testAddToGlobalGroup( $group, $expiry ) {
+		ConvertibleTimestamp::setFakeTime( '20240405060708' );
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$this->assertStatusGood( $caUser->addToGlobalGroup( $group, $expiry ) );
+		$this->assertArrayEquals( [ $group => $expiry ], $caUser->getGlobalGroupsWithExpiration() );
+		$this->assertArrayEquals( [ $group ], $caUser->getGlobalGroups() );
+	}
+
+	public static function provideAddToGlobalGroup() {
+		return [
+			'Group is granted indefinitely' => [ 'global-test', null ],
+			'Group is granted for a week' => [ 'global-test-2', '20240412060708' ],
+		];
+	}
+
+	/** @dataProvider provideAddToGlobalGroup */
+	public function testAddToGlobalGroupWhenUserIsTemporaryAccount( $group, $expiry ) {
+		$this->enableAutoCreateTempUser();
+		$tempAccountName = $this->getServiceContainer()->getTempUserCreator()
+			->acquireAndStashName( RequestContext::getMain()->getRequest()->getSession() );
+		$this->getTestCentralAuthUserWithExistingLocalWikis( $tempAccountName );
+		$caUser = CentralAuthUser::getInstanceByName( $tempAccountName );
+		$this->assertStatusError(
+			'centralauth-admin-cannot-lock-temporary-account',
+			$caUser->addToGlobalGroup( $group, $expiry )
+		);
+	}
+
+	/** @dataProvider provideRemoveFromGlobalGroups */
+	public function testRemoveFromGlobalGroups( $groupsArgument, $groupsAfterCall ) {
+		// Get a test user with the global group 'global-test'
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$this->assertStatusGood( $caUser->addToGlobalGroup( 'global-test' ) );
+		$this->assertArrayEquals( [ 'global-test' ], $caUser->getGlobalGroups() );
+
+		// Call ::removeFromGlobalGroups with $groups and check that the global groups of the user is as expected.
+		$caUser->removeFromGlobalGroups( $groupsArgument );
+		$this->assertArrayEquals( $groupsAfterCall, $caUser->getGlobalGroups() );
+	}
+
+	public static function provideRemoveFromGlobalGroups() {
+		return [
+			'Removing a group the CentralAuth user has' => [ 'global-test', [] ],
+			'Removing a group the CentralAuth user does not have' => [ 'global-test-unassigned', [ 'global-test' ] ],
+			'Removing a group the CentralAuth user has and does not have' => [
+				[ 'global-test', 'global-test-unassigned' ], [],
+			],
+		];
+	}
+
 	private function createCentralAccountForGlobalUser(): void {
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
@@ -467,8 +523,10 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$user->save( $this->getDb() );
 	}
 
-	private function getTestCentralAuthUserWithExistingLocalWikis(): string {
-		$targetUsername = 'GlobalTestUser' . TestUserRegistry::getNextId();
+	private function getTestCentralAuthUserWithExistingLocalWikis( $targetUsername = null ): string {
+		if ( !$targetUsername ) {
+			$targetUsername = 'GlobalTestUser' . TestUserRegistry::getNextId();
+		}
 		$targetUser = new CentralAuthTestUser(
 			$targetUsername, 'GUP@ssword',
 			[ 'gu_id' => '123' ],

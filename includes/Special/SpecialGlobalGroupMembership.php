@@ -234,7 +234,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		// associative array of (group name => expiry)
 		$groupExpiries = [];
 		$removegroup = [];
-		$existingGroups = $user->getGlobalGroupsWithExpiration();
 
 		// This could possibly create a highly unlikely race condition if permissions are changed between
 		//  when the form is loaded and when the form is saved. Ignoring it for the moment.
@@ -460,6 +459,10 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			}
 		}
 
+		if ( $this->userNameUtils->isTemp( $globalUser->getName() ) ) {
+			return Status::newFatal( 'userrights-no-group' );
+		}
+
 		return Status::newGood( $globalUser );
 	}
 
@@ -476,6 +479,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				'id' => 'username',
 				'label-message' => 'userrights-user-editname',
 				'size' => 30,
+				'excludetemp' => true,
 				'default' => $this->mTarget,
 			]
 		];
