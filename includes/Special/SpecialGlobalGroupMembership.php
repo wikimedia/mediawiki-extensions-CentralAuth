@@ -24,6 +24,7 @@ use LogEventsList;
 use LogPage;
 use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
@@ -67,18 +68,21 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	private TitleFactory $titleFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
+	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
 	private GlobalGroupLookup $globalGroupLookup;
 
 	public function __construct(
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
+		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
 		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
+		$this->automaticGroupManager = $automaticGroupManager;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
@@ -304,6 +308,21 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$remove = array_unique( array_intersect( $remove, $changeable, array_keys( $groups ) ) );
 		$add = array_intersect( $add, $changeable );
 
+		// Add or remove automatic global groups, based on:
+		// - existing global groups
+		// - existing local groups
+		// - groups we are about to add
+		// - groups we are about to remove
+		$assignedGroups = array_diff(
+			array_merge( array_keys( $groups ), $user->getLocalGroups(), $add ),
+			$remove
+		);
+		$this->automaticGroupManager->handleAutomaticGlobalGroups(
+			$assignedGroups,
+			$add,
+			$remove
+		);
+
 		// add only groups that are not already present or that need their expiry updated
 		$add = array_filter( $add,
 			static function ( $group ) use ( $groups, $groupExpiries ) {
@@ -328,6 +347,8 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		// Ensure that caches are cleared
 		$user->invalidateCache();
 
+		$reason = $this->getLogReason( $reason, $add, $remove );
+
 		// Only add a log entry if something actually changed
 		if ( $groups !== $newGroups ) {
 			$this->addLogEntry(
@@ -340,6 +361,40 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 
 		return [ $add, $remove ];
+	}
+
+	/**
+	 * Update the reason if any automatic global groups were changed, unless the
+	 * reason already explains an automatic update due to a local group change.
+	 *
+	 * @param string $reason The given reason
+	 * @param string[] $addedGroups
+	 * @param string[] $removedGroups
+	 * @return string The updated reason
+	 */
+	private function getLogReason(
+		string $reason,
+		array $addedGroups,
+		array $removedGroups
+	) {
+		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
+		$localReason = $this->msg( 'centralauth-automatic-global-groups-reason-local' )
+			->inContentLanguage()
+			->text();
+
+		if ( $reason !== $localReason ) {
+			foreach ( $automaticGroups as $automaticGroup ) {
+				if (
+					in_array( $automaticGroup, $addedGroups ) ||
+					in_array( $automaticGroup, $removedGroups )
+				) {
+					$reason = $this->msg( 'centralauth-automatic-global-groups-reason-global', $reason )->text();
+					break;
+				}
+			}
+		}
+
+		return $reason;
 	}
 
 	/**

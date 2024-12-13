@@ -176,6 +176,7 @@
 				"TitleFactory",
 				"UserNamePrefixSearch",
 				"UserNameUtils",
+				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
 				"CentralAuth.GlobalGroupLookup"
 			]
 		},
@@ -352,6 +353,7 @@
 				"TitleFactory",
 				"UserNamePrefixSearch",
 				"UserNameUtils",
+				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
 				"CentralAuth.GlobalGroupLookup"
 			]
 		}

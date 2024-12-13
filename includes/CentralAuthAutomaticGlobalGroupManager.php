@@ -44,8 +44,7 @@ class CentralAuthAutomaticGlobalGroupManager {
 		array &$groupsToAdd,
 		array &$groupsToRemove
 	): void {
-		$config = $this->options->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
-		$automaticGroups = array_unique( array_merge( ...array_values( $config ) ) );
+		$automaticGroups = $this->getAutomaticGlobalGroups();
 		foreach ( $automaticGroups as $automaticGroup ) {
 			$shouldHaveAutomaticGroup = $this->shouldHaveAutomaticGroup(
 				$automaticGroup,
@@ -98,4 +97,13 @@ class CentralAuthAutomaticGlobalGroupManager {
 		return $shouldHaveGlobalGroup;
 	}
 
+	/**
+	 * Get the names of the global groups that are added and removed automatically.
+	 *
+	 * @return string[] The automatic global groups
+	 */
+	public function getAutomaticGlobalGroups() {
+		$config = $this->options->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
+		return array_unique( array_merge( ...array_values( $config ) ) );
+	}
 }

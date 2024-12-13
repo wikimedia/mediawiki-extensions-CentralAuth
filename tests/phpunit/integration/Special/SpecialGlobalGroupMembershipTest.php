@@ -28,10 +28,12 @@ use MediaWiki\Html\Html;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionManager;
+use MediaWiki\Tests\MockWikiMapTrait;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
@@ -42,6 +44,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	use TempUserTestTrait;
 	use MockAuthorityTrait;
+	use MockWikiMapTrait;
 
 	protected function setUp(): void {
 		parent::setUp();
@@ -65,11 +68,12 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			$this->getServiceContainer()->getTitleFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),
+			CentralAuthServices::getAutomaticGlobalGroupManager( $this->getServiceContainer() ),
 			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
 		);
 	}
 
-	private function getRegisteredTestUser(): CentralAuthUser {
+	private function getRegisteredTestUser(): array {
 		$testUser = $this->getMutableTestUser();
 		$caUser = CentralAuthUser::getPrimaryInstance( $testUser->getUser() );
 		$caUser->register( $testUser->getPassword(), null );
@@ -80,14 +84,14 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			// Some time in the future
 			time() + 1800
 		);
-		return $caUser;
+		return [ $caUser, $testUser->getUser() ];
 	}
 
 	/**
 	 * @dataProvider provideFetchUserForGoodStatus
 	 */
 	public function testFetchUserForGoodStatus( $inputFunction ) {
-		$user = $this->getRegisteredTestUser();
+		[ $user, ] = $this->getRegisteredTestUser();
 		$status = $this->newSpecialPage()->fetchUser( $inputFunction( $user ) );
 
 		$this->assertStatusGood( $status );
@@ -134,7 +138,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	}
 
 	public function testRenderFormForPrivilegedUser() {
-		$user = $this->getRegisteredTestUser();
+		[ $user, ] = $this->getRegisteredTestUser();
 		[ $html, ] = $this->executeSpecialPage(
 			// test against a non-canonical username form (T344495)
 			lcfirst( $user->getName() ),
@@ -200,7 +204,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	}
 
 	public function testRenderFormReadOnly() {
-		$user = $this->getRegisteredTestUser();
+		[ $user, ] = $this->getRegisteredTestUser();
 		[ $html, ] = $this->executeSpecialPage(
 			$user->getName(),
 		);
@@ -263,7 +267,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	}
 
 	public function testSave() {
-		$user = $this->getRegisteredTestUser();
+		[ $user, ] = $this->getRegisteredTestUser();
 		$originalExpiry = $user->getGlobalGroupsWithExpiration()['group-three'];
 
 		// test against a non-canonical username form (T344495)
@@ -319,5 +323,132 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			],
 			$logData
 		);
+	}
+
+	/** @dataProvider provideSaveWithAutomaticGroup */
+	public function testSaveWithAutomaticGroup( $localGroup, $expected ) {
+		$this->overrideConfigValue( 'CentralAuthAutomaticGlobalGroups', [
+			'localgroup' => [ 'group-one' ],
+			'group-two' => [ 'group-one' ],
+		] );
+
+		$this->mockWikiMap();
+
+		[ $caUser, $user ] = $this->getRegisteredTestUser();
+		$username = $user->getName();
+		$performer = new UltimateAuthority( $this->getTestSysop()->getUser() );
+
+		if ( $localGroup ) {
+			$this->getServiceContainer()->getUserGroupManager()->addUserToGroup(
+				$user,
+				$localGroup
+			);
+		}
+
+		$this->executeSpecialPage(
+			$username,
+			new FauxRequest(
+				[
+					'user' => $username,
+					'saveusergroups' => '1',
+					'wpEditToken' => SessionManager::getGlobalSession()->getToken( $username ),
+					'conflictcheck-originalgroups' => 'group-three,group-two',
+					'wpGroup-group-two' => '1',
+					'wpExpiry-group-two' => 'infinite',
+					'user-reason' => 'test',
+				],
+				true
+			),
+			null,
+			$performer
+		);
+
+		$caUser->invalidateCache();
+
+		// The automatic global group is added
+		$this->assertEquals( [ 'group-one', 'group-two' ], $caUser->getGlobalGroups() );
+
+		$this->executeSpecialPage(
+			$username,
+			new FauxRequest(
+				[
+					'user' => $username,
+					'saveusergroups' => '1',
+					'wpEditToken' => SessionManager::getGlobalSession()->getToken( $username ),
+					'conflictcheck-originalgroups' => 'group-one,group-two',
+					'wpGroup-group-one' => '1',
+					'wpExpiry-group-one' => 'infinite',
+					'user-reason' => 'test',
+				],
+				true
+			),
+			null,
+			$performer
+		);
+
+		$caUser->invalidateCache();
+
+		// The automatic global group is removed or not, depending on the local group
+		$this->assertEquals( $expected, $caUser->getGlobalGroups() );
+	}
+
+	public function provideSaveWithAutomaticGroup() {
+		return [
+			'Automatic global group is not removed if user has a local group' => [
+				'localgroup',
+				[ 'group-one' ]
+			],
+			'Automatic global group is removed if user has no other groups' => [
+				null,
+				[]
+			],
+		];
+	}
+
+	/** @dataProvider provideGetLogReason */
+	public function testGetLogReason( $expected, $reason, $added, $removed ) {
+		$this->overrideConfigValue( 'CentralAuthAutomaticGlobalGroups', [
+			'global-group-1' => [ 'automatic-group-1' ],
+			'global-group-2' => [ 'automatic-group-2' ],
+		] );
+
+		$this->setUserLang( 'qqx' );
+		$this->setContentLang( 'qqx' );
+
+		$specialPage = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
+
+		$this->assertSame(
+			$expected,
+			$specialPage->getLogReason( $reason, $added, $removed )
+		);
+	}
+
+	public function provideGetLogReason() {
+		return [
+			'No automatic groups are changed, reason is unchanged' => [
+				'Test reason',
+				'Test reason',
+				[ 'global-group-1' ],
+				[ 'global-group-2' ],
+			],
+			'Automatic groups are added, reason is updated' => [
+				'(centralauth-automatic-global-groups-reason-global: Test reason)',
+				'Test reason',
+				[ 'automatic-group-1', 'automatic-group-2' ],
+				[],
+			],
+			'Automatic groups are added, reason is updated' => [
+				'(centralauth-automatic-global-groups-reason-global: Test reason)',
+				'Test reason',
+				[],
+				[ 'automatic-group-1', 'automatic-group-2' ],
+			],
+			'Automatic groups are added after local change, reason unchanged' => [
+				'(centralauth-automatic-global-groups-reason-local)',
+				'(centralauth-automatic-global-groups-reason-local)',
+				[ 'automatic-group-1', 'automatic-group-2' ],
+				[],
+			],
+		];
 	}
 }
