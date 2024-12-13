@@ -53,20 +53,15 @@ class FixStuckGlobalRename extends Maintenance {
 		}
 
 		$dbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
-		$queryData = DatabaseLogEntry::getSelectQueryData();
-		$row = $dbr->newSelectQueryBuilder()
-			->tables( $queryData['tables'] )
-			->select( $queryData['fields'] )
-			->where( $queryData['conds'] )
-			->andWhere( [
+		$dbLogEntrySqb = DatabaseLogEntry::newSelectQueryBuilder( $dbr );
+		$row = $dbLogEntrySqb
+			->where( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
 				'log_namespace' => NS_SPECIAL,
 				'log_title' => $logTitle->getDBkey(),
 			] )
-			->options( $queryData['options'] )
 			->orderBy( 'log_timestamp', SelectQueryBuilder::SORT_DESC )
-			->joinConds( $queryData['join_conds'] )
 			->caller( __METHOD__ )
 			->fetchRow();
 
