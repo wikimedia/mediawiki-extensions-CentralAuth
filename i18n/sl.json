@@ -439,6 +439,7 @@
 	"globalrenamerequest-submit-text": "Pošlji prošnjo za preimenovanje",
 	"globalrenamerequest-username-label": "Trenutno uporabniško ime:",
 	"globalrenameuser": "Preimenuj globalnega uporabnika",
+	"globalvanishrequest-pretext": "Izginotje je '''zadnja možnost''', uporabili naj bi ga '''le, ko želite za vedno prenehati z urejanjem''', pa tudi da skrijete čim več svojih preteklih povezav. Uporabniški račun se izbriše tako, da se spremeni njegovo ime do nerazpoznavnosti v procesu, imenovanem izginotje računa. '''Izginotje ne odstrani prispevkov na projektih in ne zagotavlja popolne anonimnosti'''.\n\nČe želite nadaljevati s postopkom izginotja, izpolnite spodnji obrazec za zahtevo za izginotje računa.",
 	"globalvanishrequest-autoapprove-public-note": "Ta zahtevek uporabnika za izginotje je bil samodejno odobren.",
 	"globalusers": "Seznam globalnih računov",
 	"grant-createlocalaccount": "Prisilno ustvari lokalni račun za globalni račun",
