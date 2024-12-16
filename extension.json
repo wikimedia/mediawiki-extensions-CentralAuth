@@ -639,7 +639,6 @@
 			"services": [
 				"AuthManager",
 				"HookContainer",
-				"MainConfig",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"

@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -41,7 +40,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 
 	private AuthManager $authManager;
 	private HookRunner $hookRunner;
-	private Config $config;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
@@ -49,7 +47,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	/**
 	 * @param AuthManager $authManager
 	 * @param HookContainer $hookContainer
-	 * @param Config $config
 	 * @param CentralAuthTokenManager $tokenManager
 	 * @param CentralDomainUtils $centralDomainUtils
 	 * @param SharedDomainUtils $sharedDomainUtils
@@ -57,14 +54,12 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public function __construct(
 		AuthManager $authManager,
 		HookContainer $hookContainer,
-		Config $config,
 		CentralAuthTokenManager $tokenManager,
 		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
 		$this->hookRunner = new HookRunner( $hookContainer );
-		$this->config = $config;
 		$this->tokenManager = $tokenManager;
 		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
