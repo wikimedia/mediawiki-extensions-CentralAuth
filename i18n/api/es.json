@@ -27,7 +27,7 @@
 	"apihelp-createlocalaccount-example-1": "Forzar la creación de una cuenta local para [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Razón para crear la cuenta local.",
 	"apihelp-createlocalaccount-param-username": "Usuario para el que se crea la cuenta local.",
-	"apihelp-createlocalaccount-summary": "Forcibly create a local account",
+	"apihelp-createlocalaccount-summary": "Forzar la creación de una cuenta local. La cuenta central debe existir.",
 	"apihelp-deleteglobalaccount-example-1": "Eliminar la cuenta global de [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Razón para borrar al usuario.",
 	"apihelp-deleteglobalaccount-param-user": "Cuenta de usuario que se borrará.",
