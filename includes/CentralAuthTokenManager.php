@@ -162,7 +162,7 @@ class CentralAuthTokenManager {
 		if ( $result === WaitConditionLoop::CONDITION_REACHED ) {
 			$this->logger->info( "Expected key {key} found.", [ 'key' => $key ] );
 		} elseif ( $result === WaitConditionLoop::CONDITION_TIMED_OUT ) {
-			$this->logger->error( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
+			$this->logger->info( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
 		} else {
 			$this->logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
 		}
