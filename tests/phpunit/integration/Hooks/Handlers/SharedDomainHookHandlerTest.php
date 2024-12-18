@@ -18,10 +18,8 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Site\HashSiteStore;
-use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Api\ApiTestCase;
-use MediaWiki\WikiMap\WikiMap;
+use MediaWiki\Tests\MockWikiMapTrait;
 use MWExceptionRenderer;
 use PermissionsError;
 use Psr\Log\LogLevel;
@@ -34,6 +32,7 @@ use Wikimedia\TestingAccessWrapper;
  * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler
  */
 class SharedDomainHookHandlerTest extends ApiTestCase {
+	use MockWikiMapTrait;
 
 	public function provideSharedDomainRestrictions() {
 		return [
@@ -388,18 +387,6 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		}
 		$this->fail( "Expected log message '$expectedLogMessage' not found in '$channel' logs; actual:\n"
 			. print_r( $logs, true ) );
-	}
-
-	/**
-	 * SharedDomainHookHandler::onGetLocalURL() uses WikiMap which by default isn't test-friendly.
-	 * Set up a mock which doesn't return null for the current wiki.
-	 * @return void
-	 */
-	private function mockWikiMap() {
-		$currentSite = new MediaWikiSite();
-		$currentSite->setGlobalId( WikiMap::getCurrentWikiId() );
-		$currentSite->setPath( MediaWikiSite::PATH_PAGE, 'https://example.com/wiki/$1' );
-		$this->setService( 'SiteLookup', new HashSiteStore( [ $currentSite ] ) );
 	}
 
 }
