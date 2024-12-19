@@ -23,7 +23,6 @@ namespace MediaWiki\Extension\CentralAuth\User;
 use BadMethodCallException;
 use CentralAuthSessionProvider;
 use Exception;
-use InvalidArgumentException;
 use LogicException;
 use ManualLogEntry;
 use MapCacheLRU;
@@ -61,6 +60,7 @@ use RuntimeException;
 use stdClass;
 use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
+use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
@@ -247,7 +247,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *   canonical form anymore). IP addresses/ranges and external usernames are also accepted
 	 *   for B/C but discouraged; they will be handled like a non-registered username.
 	 * @return CentralAuthUser
-	 * @throws InvalidArgumentException on invalid usernames.
+	 * @throws NormalizedException on invalid usernames.
 	 */
 	public static function getInstanceByName( $username ): self {
 		if ( IPUtils::isValid( $username ) ) {
@@ -262,7 +262,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		if ( $canonUsername === false || $canonUsername === null ) {
-			throw new InvalidArgumentException( "Invalid username: $username" );
+			throw new NormalizedException( 'Invalid username: {username}', [ 'username' => $username ] );
 		}
 
 		$cache = self::getUserCache();
