@@ -67,6 +67,20 @@ class CentralAuthServices {
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
 	 *
+	 * @return CentralAuthAutomaticGlobalGroupManager
+	 * @since 1.44
+	 */
+	public static function getAutomaticGlobalGroupManager(
+		?ContainerInterface $services = null
+	): CentralAuthAutomaticGlobalGroupManager {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
 	 * @return CentralAuthDatabaseManager
 	 * @since 1.37
 	 */

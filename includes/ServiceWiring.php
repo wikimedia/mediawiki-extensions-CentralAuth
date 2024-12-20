@@ -46,6 +46,17 @@ return [
 		);
 	},
 
+	'CentralAuth.CentralAuthAutomaticGlobalGroupManager' => static function (
+		MediaWikiServices $services
+	): CentralAuthAutomaticGlobalGroupManager {
+		return new CentralAuthAutomaticGlobalGroupManager(
+			new ServiceOptions(
+				CentralAuthAutomaticGlobalGroupManager::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			)
+		);
+	},
+
 	'CentralAuth.CentralAuthDatabaseManager' => static function (
 		MediaWikiServices $services
 	): CentralAuthDatabaseManager {

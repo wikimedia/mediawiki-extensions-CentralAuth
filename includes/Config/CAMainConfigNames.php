@@ -40,6 +40,7 @@ class CAMainConfigNames {
 	public const CentralAuthAutoLoginWikis = 'CentralAuthAutoLoginWikis';
 	public const CentralAuthAutoCreateWikis = 'CentralAuthAutoCreateWikis';
 	public const CentralAuthLoginIcon = 'CentralAuthLoginIcon';
+	public const CentralAuthAutomaticGlobalGroups = 'CentralAuthAutomaticGlobalGroups';
 	public const CentralAuthPrefsForUIReload = 'CentralAuthPrefsForUIReload';
 	/** @note Used as a global variable */
 	public const CentralAuthRC = 'CentralAuthRC';
