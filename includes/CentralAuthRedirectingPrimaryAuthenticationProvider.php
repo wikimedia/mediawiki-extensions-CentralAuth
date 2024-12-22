@@ -145,9 +145,9 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		);
 		$sessionData = $this->manager->getAuthenticationSessionData( 'CentralAuth:sul3-login:pending' );
 		if ( $data === false || $sessionData === false ) {
-			// TODO this will happen if the user spends too much time on the login form.
-			//   We should make sure the message is user-friendly.
-			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-badtoken' ) );
+			// Central login/signup was succesful but the local login session has expired.
+			// TODO maybe just do a top-level autologin?
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-sul3-expired' ) );
 		}
 		foreach ( [ 'secret', 'username' ] as $key ) {
 			if ( !isset( $data[$key] ) ) {

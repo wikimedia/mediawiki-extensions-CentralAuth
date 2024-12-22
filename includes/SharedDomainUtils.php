@@ -194,7 +194,10 @@ class SharedDomainUtils {
 		);
 
 		return wfAppendQuery( $url, [
-			// TODO: Fix T369467
+			// In the future maybe we'll want to use a more robust redirection mechanism instead of
+			// relying on PostLoginRedirect (see also T369467). For now, we just add a fake 'returnto'
+			// parameter, which is enough to make sure PostLoginRedirect is called even when the user
+			// is already logged in.
 			'returnto' => 'Main_Page',
 			'usesul3' => '1',
 			'campaign' => $request ? $request->getRawVal( 'campaign' ) : null,

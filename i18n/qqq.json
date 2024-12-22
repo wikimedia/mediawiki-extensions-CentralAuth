@@ -257,6 +257,7 @@
 	"centralauth-editset-zerowikis": "Used as error message on Special:WikiSets.",
 	"centralauth-error-badtoken": "Used as error message.",
 	"centralauth-error-badtoken-title": "Used as error message title.",
+	"centralauth-error-sul3-expired": "Used as error message.",
 	"centralauth-error-locked": "Message displayed while account unification is not possible because the acting user's account is locked.\n\nSee also:\n* {{msg-mw|Centralauth-login-error-locked}}",
 	"centralauth-error-nologinattempt": "Used as error message.",
 	"centralauth-error-token-wrongattempt": "Used as error message.",
