@@ -230,6 +230,7 @@
 	"centralauth-editset-zerowikis": "No wikis specified.",
 	"centralauth-error-badtoken": "The provided authentication token is either expired or invalid.",
 	"centralauth-error-badtoken-title": "Invalid return URL token",
+	"centralauth-error-sul3-expired": "Authentication was successful but your session has expired. Please click \"{{int:pt-login}}\" to recover it.",
 	"centralauth-error-locked": "You cannot edit because your account is locked.",
 	"centralauth-error-nologinattempt": "No active login attempt is in progress for your session.",
 	"centralauth-error-token-wrongattempt": "The authentication token does not belong to your current login attempt.\nSomeone might be trying to log you in under a malicious account.",
