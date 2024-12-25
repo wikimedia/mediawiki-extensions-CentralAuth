@@ -268,6 +268,7 @@
 	"centralauth-editset-zerowikis": "Aucun wiki spécifié.",
 	"centralauth-error-badtoken": "Le jeton d’authentification fourni est soit expiré, soit non valide.",
 	"centralauth-error-badtoken-title": "Tone d' URL de retour invalide",
+	"centralauth-error-sul3-expired": "L'authentification a réussi mais votre session a expiré. Veuillez cliquer sur « {{int:pt-login}} » pour la récupérer.",
 	"centralauth-error-locked": "Vous ne pouvez effectuer aucune modification parce que votre compte est verrouillé.",
 	"centralauth-error-nologinattempt": "Aucune tentative de connexion active n’est en cours pour votre session.",
 	"centralauth-error-token-wrongattempt": "Le jeton d’authentification n’appartient pas à votre tentative de connexion actuelle. Quelqu’un pourrait essayer de vous connecter avec un compte malveillant.",

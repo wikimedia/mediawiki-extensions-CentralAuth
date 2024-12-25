@@ -216,6 +216,7 @@
 	"centralauth-editset-wikis": "Wiki:",
 	"centralauth-editset-zerowikis": "Nessun wiki specificato.",
 	"centralauth-error-badtoken": "Il token di autenticazione fornito è scaduto o non valido.",
+	"centralauth-error-sul3-expired": "L'autenticazione è riuscita ma la sessione è scaduta. Clicca su \"{{int:pt-login}}\" per recuperarla.",
 	"centralauth-error-locked": "Non puoi fare modifiche perché la tua utenza globale è bloccata.",
 	"centralauth-error-nologinattempt": "Nessun tentativo di accesso attivo è in corso per la sessione.",
 	"centralauth-error-token-wrongattempt": "Il token di autenticazione non appartiene al tuo tentativo di accesso corrente.\nQualcuno potrebbe star cercando di farti accedere con un account manipolato.",

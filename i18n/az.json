@@ -211,6 +211,7 @@
 	"centralauth-editset-zerowikis": "Heç bir viki göstərilməyib.",
 	"centralauth-error-badtoken": "Təqdim olunan autentifikasiya açarının vaxtı keçmişdir və ya etibarsızdır.",
 	"centralauth-error-badtoken-title": "Etibarsız qayıdış URL açarı",
+	"centralauth-error-sul3-expired": "Doğrulama uğurlu oldu, lakin sessiyanızın vaxtı bitib. Onu bərpa etmək üçün \"{{int:pt-login}}\" düyməsinə klikləyin.",
 	"centralauth-error-locked": "Hesabınız bloklandığına görə redaktə edə bilməzsiniz.",
 	"centralauth-error-nologinattempt": "Sessiyanız üçün heç bir aktiv giriş cəhdi davam etmir.",
 	"centralauth-error-token-wrongattempt": "Doğrulama açarı cari giriş cəhdinizə aid deyil.\nKimsə sizi zərərli hesaba daxil etməyə cəhd edə bilər.",

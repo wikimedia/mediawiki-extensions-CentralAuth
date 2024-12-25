@@ -213,6 +213,7 @@
 	"centralauth-editset-zerowikis": "Non se especificaron wikis.",
 	"centralauth-error-badtoken": "O pase de autenticación achegado caducou ou non é válido.",
 	"centralauth-error-badtoken-title": "O pase do enderezo URL de retorno non é válido",
+	"centralauth-error-sul3-expired": "A autenticación foi correcta pero a súa sesión caducou. Faga clic en \"{{int:pt-login}}\" para recuperala.",
 	"centralauth-error-locked": "Non pode editar porque a súa conta está bloqueada.",
 	"centralauth-error-nologinattempt": "Non hai ningún intento de acceso activo para a súa sesión.",
 	"centralauth-error-token-wrongattempt": "O pase de autenticación non pertence ao seu intento actual de acceso.\nSe cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.",

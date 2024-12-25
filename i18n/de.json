@@ -222,6 +222,7 @@
 	"centralauth-editset-zerowikis": "Keine Wikis angegeben.",
 	"centralauth-error-badtoken": "Der angegebene Authentifizierungstoken ist entweder abgelaufen oder ungültig.",
 	"centralauth-error-badtoken-title": "Ungültiges Token in der Rückgabe-URL",
+	"centralauth-error-sul3-expired": "Die Authentifizierung war erfolgreich, aber deine Sitzung ist abgelaufen. Klicke bitte auf „{{int:pt-login}}“, um sie wiederherzustellen.",
 	"centralauth-error-locked": "Du darfst keine Seiten bearbeiten, da dein Benutzerkonto global gesperrt ist.",
 	"centralauth-error-nologinattempt": "Es ist kein aktiver Anmeldeversuch für deine Sitzung in Gang.",
 	"centralauth-error-token-wrongattempt": "Der Authentifikationstoken gehört nicht zu deinem aktuellen Anmeldeversuch.\nEin anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.",
