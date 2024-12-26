@@ -203,6 +203,7 @@
 	"centralauth-editset-zerowikis": "Нема назначено вики.",
 	"centralauth-error-badtoken": "Укажаната шифра за заверка е истечена или неважечка.",
 	"centralauth-error-badtoken-title": "Неважечка повратна шифра за URL",
+	"centralauth-error-sul3-expired": "Заверката е успешна, но седницата ви е истечена. Стиснете на „{{int:pt-login}}“ за да ја повратите.",
 	"centralauth-error-locked": "Не можете да уредувате бидејќи вашата сметка е заклучена.",
 	"centralauth-error-nologinattempt": "Нема тековен обид за најава во вашата седница.",
 	"centralauth-error-token-wrongattempt": "Шифрата за заверка не му припаѓа на вашиот тековен обид за најава.\nНекој можеби сака да ве најави со штетна/злонамерна сметка.",
