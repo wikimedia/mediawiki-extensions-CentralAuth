@@ -258,7 +258,7 @@
 	"centralauth-merge-step3-detail": "Prest oc'h bremañ da grouiñ ur gont unvan evit ar wikioù-mañ :",
 	"centralauth-merge-step3-submit": "Kendeuziñ ar c'hontoù",
 	"centralauth-merge-step3-title": "Krouiñ ur gont unvan",
-	"centralauth-merge-welcome": "'''N'eo ket bet treuzkaset ho kontoù implijer davet reizhiad emlugañ unvan {{int:Centralauth-groupname}} c'hoazh.'''\n\nMa tibabit treuzkas ho kontoù e viot gouest da implijout an hevelep anv implijer ha ger-tremen hed-ha-hed holl raktresoù {{int:Centralauth-groupname}} en holl yezhoù a c'haller kaout.\n\nMa ra tud all gant an hevelep anv ha c'hwi war lec'hiennoù all, ne vint ket direnket gant se, met reiñ a ra ur chañs deoc'h da vont e darempred ganto evit klask en em renkañ ganto pe gant ur merour diwezhatoc'h.",
+	"centralauth-merge-welcome": "'''N'eo ket bet treuzkaset ho kontoù implijer d’ar reizhiad dilesañ unvan {{int:Centralauth-groupname}} c'hoazh.'''\n\nMa tibabit treuzkas ho kontoù e c’halloc’h implijout an hevelep anv implijer ha ger-tremen en holl wikioù {{int:Centralauth-groupname}} en holl yezhoù hegerz.\n\nMa ra tud all gant an hevelep anv ha c'hwi war lec'hiennoù all, ne vint ket direnket gant se, met reiñ a ra ur chañs deoc'h da vont e darempred ganto evit klask en em renkañ ganto pe gant ur merour diwezhatoc'h.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Kendeuziñ a ra meur a gont]] evit ur marilhañ unvan",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|munut|munut}} zo",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|miz|miz}} zo",
