@@ -185,7 +185,7 @@
 	"centralauth-error-badtoken": "Déi Authentifizéierung, déi Dir uginn hutt, ass entweder ofgelaf oder net valabel.",
 	"centralauth-error-locked": "Dir kënnt näischt ännere well Dir gespaart sidd.",
 	"centralauth-error-unmerged": "Dir kënnt näischt ännere well Äre Benotzerkont net zesummegeluecht ass.",
-	"centralauth-error-wrongprovider": "Dës Spezialsäit ass net disponibel wann Dir $1 benotzt.",
+	"centralauth-error-wrongprovider": "Dës Spezialsäit ass net disponibel, wann Dir $1 benotzt.",
 	"centralauth-finish-incomplete": "E puer Benotzerkonte goufe mat Hëllef vun dësem Passwuert zesummegeféiert.\nAner Benotzerkonte sinn nach net confirméiert.",
 	"centralauth-finish-login": "Umeldung",
 	"centralauth-finish-noconfirms": "Kee Benotzerkont konnt mat dësem Passwuert confirméiert ginn.",
