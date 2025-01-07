@@ -864,7 +864,8 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 			if ( !$row ) {
 				$ex = new LocalUserNotFoundException(
-					"Could not find local user data for {$this->mName}@{$wikiId}"
+					'Could not find local user data for {username}@{wikiId}',
+					[ 'username' => $this->mName, 'wikiId' => $wikiId ]
 				);
 				$this->logger->warning(
 					'Could not find local user data for {username}@{wikiId}',
@@ -2865,7 +2866,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 		if ( !$row ) {
 			$ex = new LocalUserNotFoundException(
-				"Could not find local user data for {$this->mName}@{$wikiID}"
+				'Could not find local user data for {username}@{wikiId}',
+				[ 'username' => $this->mName, 'wikiId' => $wikiID ]
 			);
 			$this->logger->warning(
 				'Could not find local user data for {username}@{wikiId}',
