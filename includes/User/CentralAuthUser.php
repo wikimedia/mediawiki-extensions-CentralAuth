@@ -226,8 +226,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
 	 * @param UserIdentity $user
 	 * @param CentralAuthUser $caUser
+	 * @internal Only for CentralAuthUserArrayFromResult.
 	 */
 	public static function setInstance( UserIdentity $user, CentralAuthUser $caUser ) {
+		// No need to canonicalize, $user is straight from the database.
 		self::getUserCache()->set( $user->getName(), $caUser );
 	}
 
@@ -241,15 +243,11 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Create a (cached) CentralAuthUser object corresponding to the supplied user.
-	 *
-	 * @param string $username A valid username. (Since 1.42 it does not have to be in the
-	 *   canonical form anymore). IP addresses/ranges and external usernames are also accepted
-	 *   for B/C but discouraged; they will be handled like a non-registered username.
-	 * @return CentralAuthUser
+	 * @param string $username A valid username, or an IP address/range in a format understood
+	 *   by IPUtils.
 	 * @throws NormalizedException on invalid usernames.
 	 */
-	public static function getInstanceByName( $username ): self {
+	private static function normalizeUsername( string $username ): string {
 		if ( IPUtils::isValid( $username ) ) {
 			$canonUsername = IPUtils::sanitizeIP( $username );
 		} elseif ( IPUtils::isValidRange( $username ) ) {
@@ -264,7 +262,20 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $canonUsername === false || $canonUsername === null ) {
 			throw new NormalizedException( 'Invalid username: {username}', [ 'username' => $username ] );
 		}
+		return $canonUsername;
+	}
 
+	/**
+	 * Create a (cached) CentralAuthUser object corresponding to the supplied user.
+	 *
+	 * @param string $username A valid username. (Since 1.42 it does not have to be in the
+	 *   canonical form anymore.) IP addresses/ranges and external usernames are also accepted
+	 *   for B/C but discouraged; they will be handled like a non-registered username.
+	 * @return CentralAuthUser
+	 * @throws NormalizedException on invalid usernames.
+	 */
+	public static function getInstanceByName( $username ): self {
+		$canonUsername = self::normalizeUsername( $username );
 		$cache = self::getUserCache();
 		$ret = $cache->get( $canonUsername );
 		if ( !$ret ) {
@@ -288,16 +299,20 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * This object will use DB_PRIMARY.
-	 * @param string $username Must be validated and canonicalized by the caller
+	 * @param string $username A valid username. (Since 1.44 it does not have to be in the
+	 *   canonical form anymore.) IP addresses/ranges and external usernames are also accepted
+	 *   for B/C but discouraged; they will be handled like a non-registered username.
 	 * @return CentralAuthUser
 	 * @since 1.37
+	 * @throws NormalizedException on invalid usernames.
 	 */
 	public static function getPrimaryInstanceByName( $username ): self {
+		$canonUsername = self::normalizeUsername( $username );
 		$cache = self::getUserCache();
-		$ret = $cache->get( $username );
+		$ret = $cache->get( $canonUsername );
 		if ( !$ret || !$ret->mFromPrimary ) {
-			$ret = new self( $username, IDBAccessObject::READ_LATEST );
-			$cache->set( $username, $ret );
+			$ret = new self( $canonUsername, IDBAccessObject::READ_LATEST );
+			$cache->set( $canonUsername, $ret );
 		}
 		return $ret;
 	}
@@ -424,12 +439,14 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Create a CentralAuthUser object for a user who is known to be unattached.
-	 * @param string $name The user name
+	 * @param string $name A valid username. (Since 1.44 it does not have to be in the
+	 *   canonical form anymore).
 	 * @param bool $fromPrimary
 	 * @return CentralAuthUser
 	 */
 	public static function newUnattached( $name, $fromPrimary = false ): self {
-		$caUser = new self( $name );
+		$canonicalName = self::normalizeUsername( $name );
+		$caUser = new self( $canonicalName );
 		$caUser->loadFromRow( false, [], $fromPrimary );
 		return $caUser;
 	}
