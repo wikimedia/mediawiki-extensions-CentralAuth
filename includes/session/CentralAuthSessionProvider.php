@@ -190,6 +190,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		$userCookie = $this->getCookie( $request, 'User', $prefix );
 		$tokenCookie = $this->getCookie( $request, 'Token', $prefix );
 		if ( $userCookie !== null && $tokenCookie !== null ) {
+			// "Keep me logged in" route, can authenticate against gu_auth_token.
 			$userName = $userCookie;
 			$token = $tokenCookie;
 			$from = 'cookies';
@@ -198,13 +199,20 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 			if ( $id !== null ) {
 				$data = $this->sessionManager->getCentralSessionById( $id );
 				if ( isset( $data['pending_name'] ) || isset( $data['pending_guid'] ) ) {
-					$this->logger->debug( __METHOD__ . ': uninitialized session' );
+					// Stub session, should be treated as an anonymous session. See
+					// SpecialCentralLogin::doLoginStart().
+					$this->logger->info( __METHOD__ . ': stub session for {username}',
+						[ 'username' => $data['pending_name'] ?? '', 'gu_id' => $data['pending_guid'] ?? '' ] );
 				} elseif ( isset( $data['token'] ) && isset( $data['user'] ) ) {
 					$token = $data['token'];
 					$userName = $data['user'];
 					$from = 'session';
+					$this->logger->debug( __METHOD__ . ': loaded central session for {username}',
+						[ 'username' => $userName ] );
 				} else {
-					$this->logger->debug( __METHOD__ . ': uninitialized session' );
+					// Central session not found in store, probably expired. Since there is no
+					// token cookie, treat it as an anonymous session.
+					$this->logger->debug( __METHOD__ . ': central session not found' );
 				}
 			}
 		}
@@ -215,15 +223,16 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		// Check to avoid session ID collisions, as reported on T21158
 		if ( $userCookie === null ) {
 			$this->logger->debug(
-				__METHOD__ . ': no User cookie, so unable to check for session mismatch'
+				__METHOD__ . ': no User cookie for {username}, so unable to check for session mismatch',
+				[ 'username' => $userName ]
 			);
 			return $this->returnParentSessionInfo( $request );
 		}
-
 		if ( $userCookie != $userName ) {
-			$this->logger->debug(
-				__METHOD__ . ': Session ID/User mismatch. Possible session collision. ' .
-					"Expected: $userName; actual: $userCookie"
+			$this->logger->warning(
+				__METHOD__ . ': Session ID and username cookies mismatch. Possible session collision. ' .
+					'Username from cookie: {username_cookie}; from session data: {username_session}',
+				[ 'username_cookie' => $userCookie, 'username_session' => $userName ]
 			);
 			return $this->returnParentSessionInfo( $request );
 		}
@@ -231,7 +240,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		// Clean up username
 		$userName = $this->userNameUtils->getCanonical( $userName );
 		if ( !$userName ) {
-			$this->logger->debug( __METHOD__ . ': invalid username' );
+			$this->logger->info( __METHOD__ . ': invalid username: {username}', [ 'username' => $userName ] );
 			return $this->returnParentSessionInfo( $request );
 		}
 		if ( !$this->userNameUtils->isUsable( $userName ) ) {
@@ -252,25 +261,29 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 
 		// Skip if they're being renamed
 		if ( $centralUser->renameInProgress() ) {
-			$this->logger->debug( __METHOD__ . ': rename in progress' );
+			$this->logger->info( __METHOD__ . ': rename in progress for {username}', [ 'username' => $userName ] );
 			// No fallback here, just fail it because our SessionCheckMetadata
 			// hook will do so anyway.
 			return null;
 		}
 
+		// If the claimed user account is not migrated to CentralAuth, leave handling it to the parent class.
 		if ( !$centralUser->exists() ) {
-			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist' );
+			$this->logger->debug( __METHOD__ . ': global account doesn\'t exist for {username}',
+				[ 'username' => $userName ] );
 			return $this->returnParentSessionInfo( $request );
 		}
 		if ( !$centralUser->isAttached() ) {
 			$userIdentity = $this->userIdentityLookup->getUserIdentityByName( $userName );
 			if ( $userIdentity && $userIdentity->isRegistered() ) {
-				$this->logger->debug( __METHOD__ . ': not attached and local account exists' );
+				$this->logger->debug( __METHOD__ . ': unattached local account exists for {username}',
+					[ 'username' => $userName ] );
 				return $this->returnParentSessionInfo( $request, true );
 			}
 		}
+
 		if ( $centralUser->authenticateWithToken( $token ) != 'ok' ) {
-			$this->logger->debug( __METHOD__ . ': token mismatch' );
+			$this->logger->warning( __METHOD__ . ': token mismatch for {username}', [ 'username' => $userName ] );
 			// At this point, don't log in with a local session anymore
 			return null;
 		}
@@ -317,11 +330,14 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 				}
 			}
 			if ( $metadata['CentralAuthSource'] !== $source ) {
+				// A CentralAuth session but the user is not actually owned by CentralAuth, or
+				// an authenticated non-CA session but the user is owned by CA.
 				$this->logger->warning(
 					'Session "{session}": CentralAuth saved source {saved} != expected source {expected}', [
 						'session' => $info->__toString(),
 						'saved' => $metadata['CentralAuthSource'],
 						'expected' => $source,
+						'username' => $name,
 					]
 				);
 
@@ -476,7 +492,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		$response = $request->response();
 		if ( $response->headersSent() ) {
 			// Can't do anything now
-			$this->logger->debug( __METHOD__ . ': Headers already sent' );
+			$this->logger->warning( __METHOD__ . ': Headers already sent' );
 			return;
 		}
 
