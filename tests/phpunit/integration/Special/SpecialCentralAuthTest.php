@@ -423,6 +423,9 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->editPage(
 			$this->getExistingTestPage(), 'testing1234', '', NS_MAIN, $targetLocalUser
 		);
+		// Other extensions may run code which causes a CentralAuthUser to create an instance cache with stale data.
+		// Clear the cache to avoid test failures (T377714).
+		CentralAuthUser::clearUserCache();
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
 		// Verify that the user is marked as locally blocked, has the correct edit count, and is in the sysop group
 		// Check that one row is present in the table
