@@ -105,7 +105,12 @@ class SharedDomainUtils {
 		// T379816: `clientlogin` API should still work in SUL3 mode as if we're
 		//    in SUL2 mode regardless of whether SUL3 is enabled or not. This provider
 		//    should operate the same in both modes when the request is an API request.
-		if ( $this->isApiRequest && !$this->isSharedDomain() ) {
+		// T383812: This should be ignored for temp accounts and the request should be
+		// allowed to check the SUL mode that is active rather than just bailing.
+		if ( $this->isApiRequest &&
+			!$this->isSharedDomain() &&
+			!$request->getSession()->getUser()->isTemp()
+		) {
 			return false;
 		}
 
