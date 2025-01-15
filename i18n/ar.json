@@ -76,6 +76,7 @@
 	"centralauth-admin-delete-confirm": "هل تريد فعلا حذف هذا الحساب؟",
 	"centralauth-admin-delete-description": "حذف الحساب العالمي سيفصل ارتباط كل الحسابات المحلية، ويترك الاسم العالمي شاغراً يمكن لأي مستخدم أن يأخذه.\n\nكل الحسابات المحلية ستستمر في الوجود.",
 	"centralauth-admin-delete-nonexistent": "خطأ: الحساب العام «<nowiki>$1</nowiki>» غير موجود.",
+	"centralauth-admin-cannot-lock-temporary-account": "لا يمكنك قفل الحسابات المؤقتة، حيث أن قفلها سيسمح لها بالحصول على حساب مؤقت جديد عند تحريرها التالي.",
 	"centralauth-admin-delete-success": "تم حذف الحساب العالمي لـ«<nowiki>$1</nowiki>» بنجاح",
 	"centralauth-admin-delete-title": "حذف الحساب",
 	"centralauth-admin-group-temporary": "$1 ''(مؤقت)''",
