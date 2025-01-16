@@ -14,6 +14,7 @@ use MediaWiki\Auth\Hook\AuthManagerVerifyAuthenticationHook;
 use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\ThrottlePreAuthenticationProvider;
+use MediaWiki\CheckUser\Api\Rest\Handler\UserAgentClientHintsHandler;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
@@ -28,11 +29,18 @@ use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
 use MediaWiki\ResourceLoader\ResourceLoader;
+use MediaWiki\Rest\Handler;
+use MediaWiki\Rest\Hook\RestCheckCanExecuteHook;
+use MediaWiki\Rest\HttpException;
+use MediaWiki\Rest\LocalizedHttpException;
+use MediaWiki\Rest\Module\Module;
+use MediaWiki\Rest\RequestInterface;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use MWExceptionHandler;
+use Wikimedia\Message\MessageValue;
 use Wikimedia\NormalizedException\NormalizedException;
 
 /**
@@ -47,6 +55,7 @@ class SharedDomainHookHandler implements
 	GetLocalURLHook,
 	GetUserPermissionsErrorsHook,
 	ResourceLoaderModifyEmbeddedSourceUrlsHook,
+	RestCheckCanExecuteHook,
 	SetupAfterCacheHook
 {
 	/**
@@ -63,6 +72,11 @@ class SharedDomainHookHandler implements
 	 * @see ApiBase::getModulePath()
 	 */
 	private const ALLOWED_ACTION_API_MODULES = 'allowedActionApiModules';
+	/**
+	 * List of REST API handler classes that are allowed on the shared domain.
+	 * Each value is an array in the form of [ 'handler' => <handler class name> ].
+	 */
+	private const ALLOWED_REST_API_ENDPOINTS = 'allowedRestApiEndpoints';
 	/**
 	 * List of authentication providers which should be skipped on the local login page in
 	 * SUL3 mode, because they will be applied on the shared domain instead.
@@ -87,7 +101,7 @@ class SharedDomainHookHandler implements
 		// 'static' is used by WMF's custom entry points (static.php, favicon.php etc), serving some
 		// files on the shared domain (T374286). 'fatal-error' is WMF's custom entry point
 		// (fatal-error.php) used for testing.
-		self::ALLOWED_ENTRY_POINTS => [ 'index', 'api', 'static', 'cli', 'fatal-error' ],
+		self::ALLOWED_ENTRY_POINTS => [ 'index', 'rest', 'api', 'static', 'cli', 'fatal-error' ],
 		self::ALLOWED_SPECIAL_PAGES => [ 'Userlogin', 'Userlogout', 'CreateAccount',
 			'PasswordReset', 'Captcha', 'CentralAutoLogin', 'CentralLogin' ],
 		self::ALLOWED_ACTION_API_MODULES => [
@@ -101,6 +115,10 @@ class SharedDomainHookHandler implements
 			'validatepassword', 'query+users', 'webauthn', 'fancycaptchareload',
 			// generic meta APIs, there's a good chance something somewhere will use them
 			'query+tokens', 'query+siteinfo', 'query+globaluserinfo',
+		],
+		self::ALLOWED_REST_API_ENDPOINTS => [
+			// used by CheckUser to collect data about authentication attempts
+			[ 'handler' => UserAgentClientHintsHandler::class ]
 		],
 		self::DISALLOWED_LOCAL_PROVIDERS => [
 			'preauth' => [
@@ -200,6 +218,27 @@ class SharedDomainHookHandler implements
 				}
 			}
 		}
+	}
+
+	public function onRestCheckCanExecute(
+		Module $module,
+		Handler $handler,
+		string $path,
+		RequestInterface $request,
+		?HttpException &$error
+	): bool {
+		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
+			$allowedRestApiEndpoints = $this->getRestrictions( self::ALLOWED_REST_API_ENDPOINTS );
+			foreach ( $allowedRestApiEndpoints as $allowedEndpoint ) {
+				if ( $handler instanceof $allowedEndpoint['handler'] ) {
+					return true;
+				}
+			}
+			$msg = new MessageValue( 'centralauth-action-forbidden-shared-domain' );
+			$error = new LocalizedHttpException( $msg, 403 );
+			return false;
+		}
+		return true;
 	}
 
 	/** @inheritDoc */

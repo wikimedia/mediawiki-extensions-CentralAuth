@@ -729,6 +729,7 @@
 		"RenameUserWarning": "rename",
 		"ResourceLoaderForeignApiModules": "default",
 		"ResourceLoaderModifyEmbeddedSourceUrls": "shareddomain",
+		"RestCheckCanExecute": "shareddomain",
 		"SecurePoll_GetUserParams": "securepoll",
 		"SetupAfterCache": "shareddomain",
 		"SessionCheckInfo": "default",
@@ -918,6 +919,7 @@
 				"allowedEntryPoints": [],
 				"allowedSpecialPages": [],
 				"allowedActionApiModules": [],
+				"allowedRestApiEndpoints": [],
 				"disallowedLocalProviders": {
 					"preauth": [],
 					"primaryauth": [],
