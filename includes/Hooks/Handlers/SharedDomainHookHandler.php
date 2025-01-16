@@ -84,8 +84,10 @@ class SharedDomainHookHandler implements
 	 * and not replace.
 	 */
 	private const DEFAULT_RESTRICTIONS = [
-		// 'static' is WMF's custom static.php entry point, serving some files on the shared domain (T374286)
-		self::ALLOWED_ENTRY_POINTS => [ 'index', 'api', 'static', 'cli' ],
+		// 'static' is used by WMF's custom entry points (static.php, favicon.php etc), serving some
+		// files on the shared domain (T374286). 'fatal-error' is WMF's custom entry point
+		// (fatal-error.php) used for testing.
+		self::ALLOWED_ENTRY_POINTS => [ 'index', 'api', 'static', 'cli', 'fatal-error' ],
 		self::ALLOWED_SPECIAL_PAGES => [ 'Userlogin', 'Userlogout', 'CreateAccount',
 			'PasswordReset', 'Captcha', 'CentralAutoLogin', 'CentralLogin' ],
 		self::ALLOWED_ACTION_API_MODULES => [
