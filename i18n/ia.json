@@ -356,7 +356,7 @@
 	"centralauth-rename-titleblacklist-match": "Le nove usator corresponde al sequente entrata del lista de titulos prohibite (TitleBlacklist): $1",
 	"centralauth-rename-unattached-intheway": "Il ha contos non attachate que usa le nomine de usator requestate.",
 	"centralauth-rename-viewprogress": "Vider progresso",
-	"centralauth-renameuser-global-inprogress": "Il ha jam un renomination [[Special:GlobalRenameProgress/$1|in curso]] pro $1.",
+	"centralauth-renameuser-global-inprogress": "Un renomination global pro $1 es ja in curso. [[Special:GlobalRenameProgress/$1|Consultar stato]]",
 	"centralauth-renameuser-merged": "Le usator $1 ha essite migrate verso le systema de contos unificate.\nRenominar lo causara que le conto local se distacha del global.",
 	"centralauth-renameuser-reserved": "Le nomine de usator $2 es reservate pro un conto global.",
 	"centralauth-vanish-confirm": "Vole tu vermente facer disparer tu conto? Iste action es irreversibile.",

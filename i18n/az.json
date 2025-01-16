@@ -365,7 +365,7 @@
 	"centralauth-rename-titleblacklist-match": "Yeni istifadəçi adı aşağıdakı TitleBlacklist elementinə uyğun gəlir: $1",
 	"centralauth-rename-unattached-intheway": "Tələb olunan istifadəçi adından istifadə edən birləşdirilməmiş hesablar var.",
 	"centralauth-rename-viewprogress": "Prosesə bax",
-	"centralauth-renameuser-global-inprogress": "$1 üçün istifadəçinin adının dəyişdirilməsi [[Special:GlobalRenameProgress/$1|prosesi]] onsuz da mövcuddur.",
+	"centralauth-renameuser-global-inprogress": "$1 üçün istifadəçinin qloba adddəyişmə prosesi onsuz da mövcuddur. [[Special:GlobalRenameProgress/$1|Statusu yoxla]]",
 	"centralauth-renameuser-merged": "İstifadəçi $1 vahid giriş sisteminə köçürülüb.\nAdının dəyişdirilməsi lokal hesabın qlobal hesabdan ayrılmasına səbəb olacaq.",
 	"centralauth-renameuser-reserved": "$2 istifadəçi adı qlobal hesab üçün bron edilib.",
 	"centralauth-vanish-confirm": "Həqiqətən hesabınızı silmək istəyirsiniz? Bu hərəkət geri qaytarıla bilməz.",
