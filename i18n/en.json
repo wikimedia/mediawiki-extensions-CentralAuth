@@ -564,5 +564,6 @@
 	"right-globalgrouppermissions": "Manage global groups",
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
-	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a blacklist."
+	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a blacklist.",
+	"centralauth-action-forbidden-shared-domain": "You are not allowed to perform this action on the shared authentication domain."
 }
