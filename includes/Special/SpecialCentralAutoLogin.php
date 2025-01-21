@@ -720,7 +720,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			$target, "Special:CentralAutoLogin/$stage", $this->getRequest(), $params
 		);
 		// expands to PROTO_CURRENT
-		$this->getOutput()->redirect( wfAppendQuery( $url, $params ) );
+		$this->getOutput()->redirect( $url );
 	}
 
 	/**
