@@ -358,9 +358,9 @@
 	"centralauth-rename-titleblacklist-match": "Новото корисничко име се совпаѓа со следниов запис на црниот список: $1",
 	"centralauth-rename-unattached-intheway": "Има неприврзани сметки што го користат побараното корисничко име.",
 	"centralauth-rename-viewprogress": "Погл. напредокот",
-	"centralauth-renameuser-global-inprogress": "Корисникот $1 веќе е [[Special:GlobalRenameProgress/$1|во тек на преименување]].",
-	"centralauth-renameuser-merged": "Корисникот $1 е присоединет кон системот за најавување со обединета сметка.\nПреименувањето ќе предизвика месната сметка да се одвои од глобалната.",
-	"centralauth-renameuser-reserved": "Корисничкото име $2 е резервирано за глобална сметка.",
+	"centralauth-renameuser-global-inprogress": "Веќе е во тек глобалното преименување на {{GENDER:$1|$1}}. [[Special:GlobalRenameProgress/$1|Проверете го статусот]].",
+	"centralauth-renameuser-merged": "Корисникот {{GENDER:$1|$1}} е присоединет кон системот за најавување со обединета сметка.\nПреименувањето ќе предизвика месната сметка да се одвои од глобалната.",
+	"centralauth-renameuser-reserved": "Корисничкото име {{GENDER:$2|$2}} е резервирано за глобална сметка.",
 	"centralauth-vanish-confirm": "Дали навистина сакате да ја згаснете вашата сметка? Ова дејство е неповратно.",
 	"centralauth-return-username-token": "Корисничката шифра која е дел од повратната URL.",
 	"centralauth-return-username-token-help": "Корисничка шифра која се придодава кон повратната URL откако корисникот успешно ќе направи централна најава.",
@@ -535,5 +535,6 @@
 	"right-globalgrouppermissions": "Раководење со глобални групи",
 	"sessionprovider-centralauthsessionprovider": "централни седници со колачиња",
 	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра",
-	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на црн список."
+	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на црн список.",
+	"centralauth-action-forbidden-shared-domain": "Не ви е дозволено да го извршите ова дејство на споделениот домен за заверка."
 }

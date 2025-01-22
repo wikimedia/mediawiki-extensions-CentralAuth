@@ -533,5 +533,6 @@
 	"right-globalgrouppermissions": "Gerer gruppos global",
 	"sessionprovider-centralauthsessionprovider": "sessiones basate sur cookies central",
 	"sessionprovider-centralauthtokensessionprovider": "sessiones centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre."
+	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre.",
+	"centralauth-action-forbidden-shared-domain": "Tu non es autorisate a exequer iste action sur le dominio condividite de authentication."
 }

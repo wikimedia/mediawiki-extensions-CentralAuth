@@ -553,5 +553,6 @@
 	"right-globalgrouppermissions": "Globale Gruppen verwalten",
 	"sessionprovider-centralauthsessionprovider": "zentralen cookiebasierten Sitzungen",
 	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen",
-	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Negativliste stehst."
+	"centralauth-badaccess-blacklisted": "Du kannst keine globale Umbenennung beantragen, weil du auf einer Negativliste stehst.",
+	"centralauth-action-forbidden-shared-domain": "Du bist nicht berechtigt, diese Aktion in der gemeinsam genutzten Authentifizierungsdomäne durchzuführen."
 }

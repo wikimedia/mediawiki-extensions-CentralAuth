@@ -545,5 +545,6 @@
 	"right-globalgrouppermissions": "ניהול קבוצות גלובליות",
 	"sessionprovider-centralauthsessionprovider": "התחברויות מרכזיות מבוססות־עוגיות",
 	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken",
-	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה."
+	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה.",
+	"centralauth-action-forbidden-shared-domain": "אין לך הרשאה לעשות את הפעולה הזאת בתחום האימות המשותף."
 }
