@@ -123,6 +123,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialCentralAuth",
 			"services": [
 				"CommentFormatter",
+				"ConnectionProvider",
 				"NamespaceInfo",
 				"TempUserConfig",
 				"UserFactory",

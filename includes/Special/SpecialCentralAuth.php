@@ -48,6 +48,7 @@ use OOUI\PanelLayout;
 use OOUI\Widget;
 use StatusValue;
 use Wikimedia\Message\MessageSpecifier;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -91,6 +92,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private $mWikis;
 
 	private CommentFormatter $commentFormatter;
+	private IConnectionProvider $dbProvider;
 	private NamespaceInfo $namespaceInfo;
 	private TempUserConfig $tempUserConfig;
 	private UserFactory $userFactory;
@@ -102,6 +104,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 	public function __construct(
 		CommentFormatter $commentFormatter,
+		IConnectionProvider $dbProvider,
 		NamespaceInfo $namespaceInfo,
 		TempUserConfig $tempUserConfig,
 		UserFactory $userFactory,
@@ -113,6 +116,7 @@ class SpecialCentralAuth extends SpecialPage {
 	) {
 		parent::__construct( 'CentralAuth' );
 		$this->commentFormatter = $commentFormatter;
+		$this->dbProvider = $dbProvider;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->tempUserConfig = $tempUserConfig;
 		$this->userFactory = $userFactory;
@@ -1233,27 +1237,50 @@ class SpecialCentralAuth extends SpecialPage {
 
 	private function showLogExtract() {
 		$user = $this->mGlobalUser->getName();
-		$title = Title::newFromText( $this->namespaceInfo->getCanonicalName( NS_USER ) . ":{$user}@global" );
-		if ( !$title ) {
+		$globalTitle = Title::newFromText( $this->namespaceInfo->getCanonicalName( NS_USER ) . ":{$user}@global" );
+		if ( !$globalTitle ) {
 			// Don't fatal even if a Title couldn't be generated
 			// because we've invalid usernames too :/
 			return;
 		}
+
+		$localDbr = $this->dbProvider->getReplicaDatabase();
+
+		// Construct the conditions needed to lookup CentralAuth account changes logs
 		$logTypes = [ 'globalauth' ];
 		if ( $this->mCanSuppress ) {
 			$logTypes[] = 'suppress';
 		}
+		$relevantLogsExpr = $localDbr->expr( 'log_type', '=', $logTypes )
+			->and( 'log_namespace', '=', $globalTitle->getNamespace() )
+			->and( 'log_title', '=', $globalTitle->getDBkey() );
+
+		// If GlobalBlocking is installed, also show the logs for removing and adding global blocks in
+		// the log extract as these are changes to the status of the global account.
+		if ( ExtensionRegistry::getInstance()->isLoaded( 'GlobalBlocking' ) ) {
+			$globalBlockingLogsTitle = Title::makeTitleSafe( NS_USER, $user );
+			if ( $globalBlockingLogsTitle ) {
+				$globalBlockingLogsExpr = $localDbr->expr( 'log_type', '=', 'gblblock' )
+					->and( 'log_action', '=', [ 'gunblock', 'gblock', 'gblock2', 'modify' ] )
+					->and( 'log_namespace', '=', $globalBlockingLogsTitle->getNamespace() )
+					->and( 'log_title', '=', $globalBlockingLogsTitle->getDBkey() );
+
+				$relevantLogsExpr = $localDbr->orExpr( [
+					$relevantLogsExpr,
+					$globalBlockingLogsExpr
+				] );
+			}
+		}
+
 		$html = '';
 		$numRows = LogEventsList::showLogExtract(
-			$html,
-			$logTypes,
-			$title->getPrefixedText(),
-			'',
-			[ 'showIfEmpty' => true ]
+			$html, [], '', '', [ 'showIfEmpty' => true, 'conds' => [ $relevantLogsExpr ] ]
 		);
 
 		if ( $numRows ) {
-			$this->getOutput()->addHTML( $this->getFramedFieldsetLayout( $html, 'centralauth-admin-logsnippet' ) );
+			$this->getOutput()->addHTML( $this->getFramedFieldsetLayout(
+				$html, 'centralauth-admin-logsnippet', 'mw-centralauth-admin-logsnippet'
+			) );
 
 			return;
 		}
