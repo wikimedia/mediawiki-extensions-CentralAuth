@@ -293,7 +293,7 @@
 	"centralauth-rename-alreadyexists": "Den ugefrote Benotzernumm gëtt et schonn.",
 	"centralauth-rename-alreadyinprogress": "Et ass schonn eng ëmbennung fir dëse Benotzer [[Special:GlobalRenameProgress/$1|am Gaang]].",
 	"centralauth-rename-antispoofconflicts2": "De gewielte Benotzernumm gläicht {{PLURAL:$2|engem anere Benotzernumm|anere Benotzernimm}} ze vill: $1.",
-	"centralauth-rename-badusername": "Den ugefrote Benotzernumm ass net valabel.",
+	"centralauth-rename-badusername": "Den ugefrote Benotzernumm ass ongülteg.",
 	"centralauth-rename-cannotself": "Dir kënnt Iech net selwer ëmbenennen.",
 	"centralauth-rename-confirm": "Wëllt Dir dëse Benotzer wierklech global ëmbenennen?",
 	"centralauth-rename-conflict-hidden": "Benotzernumm verstoppt",
