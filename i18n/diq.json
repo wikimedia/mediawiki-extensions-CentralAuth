@@ -308,7 +308,7 @@
 	"centralauth-rename-table-status-inprogress": "Rameno",
 	"centralauth-rename-table-status-queued": "Rêzdeyo",
 	"centralauth-rename-viewprogress": "Ramıtışi bıvêne",
-	"centralauth-renameuser-merged": "Belki karbe $1 sistemé cikewtişé zewira transfer biyo.\nReyna name dayış belki ena karber sistemé globali ra wedarneno.",
+	"centralauth-renameuser-merged": "Karber $1 tranfer biyo be sistemé cıkewtışê yewıne.\nReyna namekerdış karberi sistemé globali ra dareno we.",
 	"centralauth-renameuser-reserved": "$2 namey karberi zew hesabdé globaliré abıryayayo",
 	"centralauth-rightslog-entry-groupperms": "qe $1 ra $2 rê $3, desturê grupî vurne",
 	"centralauth-rightslog-header": "Ena qeyd de operasyonê grup ê globalî esto: ezayê u vurnayîşê desturî",
