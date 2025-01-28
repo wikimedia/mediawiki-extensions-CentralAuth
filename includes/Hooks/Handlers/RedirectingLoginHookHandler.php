@@ -124,9 +124,16 @@ class RedirectingLoginHookHandler implements
 		$request = $context->getRequest();
 
 		$params += [
+			// used to prevent hijacking attacks when switching between the domains,
+			// needs to round-trip to be verified
 			'centralauthLoginToken' => $request->getRawVal( 'centralauthLoginToken' ),
+			// keep opt-in state consistent during an authentication flow
 			'usesul3' => $request->getRawVal( 'usesul3' ),
+			// keep choice of desktop/mobile view consistent during an authentication flow
 			'useformat' => $request->getRawVal( 'useformat' ),
+			// needed to fake some aspects of post-signup behavior rather than post-login
+			// behavior on the local domain, when on the central domain we did a login
+			'sul3-action' => $request->getRawVal( 'sul3-action' ),
 		];
 	}
 
