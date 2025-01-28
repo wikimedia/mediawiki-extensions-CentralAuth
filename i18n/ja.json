@@ -82,6 +82,7 @@
 	"centralauth-admin-delete-confirm": "このアカウントを本当に削除しますか?",
 	"centralauth-admin-delete-description": "グローバルアカウントを削除すると、ローカルアカウントがすべて統合解除され、他の利用者がこの利用者名のグローバルアカウントを取得できるようになります。\nローカルアカウントはすべて存続します。",
 	"centralauth-admin-delete-nonexistent": "エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。",
+	"centralauth-admin-cannot-lock-temporary-account": "臨時アカウントをロックすることはできません。(ロックしても、次回の編集時に新しい臨時アカウントを取得できるようになるだけだからです)",
 	"centralauth-admin-delete-success": "グローバルアカウント「<nowiki>$1</nowiki>」を削除しました",
 	"centralauth-admin-delete-title": "アカウントの削除",
 	"centralauth-admin-group-temporary": "$1 ''(一時的な権限)''",
@@ -241,6 +242,7 @@
 	"centralauth-editset-zerowikis": "ウィキが指定されていません。",
 	"centralauth-error-badtoken": "指定された認証トークンは期限切れまたは無効です。",
 	"centralauth-error-badtoken-title": "返されたURLトークンが無効です",
+	"centralauth-error-sul3-expired": "認証は成功しましたが、セッションの有効期限が切れています。回復するには「{{int:pt-login}}」をクリックしてください。",
 	"centralauth-error-locked": "あなたのアカウントはロックされているため、編集はできません。",
 	"centralauth-error-nologinattempt": "あなたのセッションに関して現在ログインの試行は行われていません。",
 	"centralauth-error-token-wrongattempt": "認証トークンは現在のログインの試行に属していません。\n誰かがあなたを悪意のあるアカウントにログインさせようとしている可能性があります。",
@@ -395,9 +397,9 @@
 	"centralauth-rename-titleblacklist-match": "新しい利用者名は以下のTitleBlacklist項目と一致します: $1",
 	"centralauth-rename-unattached-intheway": "対象のアカウントには未統合のアカウントが存在します。",
 	"centralauth-rename-viewprogress": "進捗の表示",
-	"centralauth-renameuser-global-inprogress": "$1 に対するグローバル利用者名の変更が[[Special:GlobalRenameProgress/$1|progress進行]]しています。",
-	"centralauth-renameuser-merged": "利用者 $1 は統一ログインシステムに移行済みです。\n利用者名を変更すると、ローカルアカウントがグローバルアカウントから切り離されます。",
-	"centralauth-renameuser-reserved": "利用者名 $2 はグローバルアカウントとして使用されています。",
+	"centralauth-renameuser-global-inprogress": "{{GENDER:$1|$1}} のグローバル利用者名変更はすでに進行中です。([[Special:GlobalRenameProgress/$1|ステータスを確認]])",
+	"centralauth-renameuser-merged": "利用者 {{GENDER:$1|$1}} は統一ログインシステムに移行済みです。\n利用者名を変更すると、ローカルアカウントがグローバルアカウントから切り離されます。",
+	"centralauth-renameuser-reserved": "利用者名 {{GENDER:$2|$2}} はグローバルアカウントとして使用されています。",
 	"centralauth-vanish-confirm": "本当にアカウントを抹消したいですか?この操作は元に戻せません。",
 	"centralauth-return-username-token": "返されるURLの一部である利用者名トークン。",
 	"centralauth-return-username-token-help": "利用者が中央ログインウィキに正常にログインした後に、返されるURLに追加される利用者名トークン。",
@@ -572,5 +574,6 @@
 	"right-globalgrouppermissions": "グローバルグループを管理",
 	"sessionprovider-centralauthsessionprovider": "中央のCookieベースのセッション",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtokenセッション",
-	"centralauth-badaccess-blacklisted": "あなたはブラックリストに登録されているため、グローバル利用者アカウントの改名を依頼できません。"
+	"centralauth-badaccess-blacklisted": "あなたはブラックリストに登録されているため、グローバル利用者アカウントの改名を依頼できません。",
+	"centralauth-action-forbidden-shared-domain": "共有認証ドメインでこの操作を実行することは許可されていません。"
 }

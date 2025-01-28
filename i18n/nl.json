@@ -564,5 +564,6 @@
 	"right-globalgrouppermissions": "Globale groepen beheren",
 	"sessionprovider-centralauthsessionprovider": "centrale op cookies gebaseerde sessies",
 	"sessionprovider-centralauthtokensessionprovider": "op CentralAuthToken gebaseerde sessies",
-	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat."
+	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat.",
+	"centralauth-action-forbidden-shared-domain": "U mag deze handeling niet verrichten op het gedeelde authenticatiedomein."
 }
