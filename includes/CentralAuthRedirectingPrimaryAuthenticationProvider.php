@@ -7,8 +7,10 @@ use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\User\UserNameUtils;
@@ -33,15 +35,20 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	public const START_TOKEN_KEY_PREFIX = 'centralauth-sul3-start';
 	public const COMPLETE_TOKEN_KEY_PREFIX = 'centralauth-sul3-complete';
 
+	private const SESSION_DATA_FLAG = 'centralauth-login-method-was-sul3';
+
+	private HookContainer $hookContainer;
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
+		HookContainer $hookContainer,
 		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils,
 		?MobileContext $mobileContext
 	) {
+		$this->hookContainer = $hookContainer;
 		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->mobileContext = $mobileContext;
@@ -186,7 +193,39 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			$this->manager->setAuthenticationSessionData( AuthManager::REMEMBER_ME, true );
 		}
 
+		// Flag this login session as being the local leg of a SUL3 login, so we can run
+		// CentralAuthPostLoginRedirect afterward.
+		$this->manager->setAuthenticationSessionData( self::SESSION_DATA_FLAG, true );
+
 		return AuthenticationResponse::newPass( $data['username'] );
+	}
+
+	/** @inheritDoc */
+	public function postAuthentication( $user, AuthenticationResponse $response ) {
+		if ( $response->status === AuthenticationResponse::PASS &&
+			 $this->manager->getAuthenticationSessionData( self::SESSION_DATA_FLAG )
+		) {
+			// HACK: CentralAuth replaces the core PostLoginRedirect hook with its own variant,
+			// CentralAuthPostLoginRedirect. In SUL2 this is because we can't allow other extensions
+			// to redirect before we could do central login. In SUL3 setting the central session is
+			// part of the normal login process, so letting extensions redirect on PostLoginRedirect
+			// would be fine, but most extensions which support CentralAuth skip that hook when they
+			// see CentralAuth is installed, so fire CentralAuthPostLoginRedirect for them.
+			// See T384829 for solving this better in the future.
+			$this->hookContainer->register( 'PostLoginRedirect', function ( &$returnTo, &$returnToQuery, &$type ) {
+				$hookRunner = new CentralAuthHookRunner( $this->hookContainer );
+				$caReturnToQuery = wfArrayToCgi( $returnToQuery );
+				// As seen by MediaWiki on a local domain, the action is always a login, even when
+				// the user is actually signing up. Use the URL flag to differentiate.
+				$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
+				$caType = $isSignup ? 'signup' : '';
+				$unused = '';
+				$retval = $hookRunner->onCentralAuthPostLoginRedirect( $returnTo,
+					$caReturnToQuery, false, $caType, $unused );
+				$returnToQuery = wfCgiToArray( $caReturnToQuery );
+				return $retval;
+			} );
+		}
 	}
 
 	/** @inheritDoc */

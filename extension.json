@@ -969,6 +969,7 @@
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthRedirectingPrimaryAuthenticationProvider",
 				"sort": 0,
 				"services": [
+					"HookContainer",
 					"CentralAuth.CentralAuthTokenManager",
 					"CentralAuth.SharedDomainUtils"
 				],
