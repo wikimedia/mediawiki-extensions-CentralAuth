@@ -38,7 +38,8 @@
 			"مشعل الحربي",
 			"وهراني",
 			"NEHAOUA",
-			"Cigaryno"
+			"Cigaryno",
+			"XIDME"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "عدد التحرير العمومي للمستخدم",
@@ -64,7 +65,7 @@
 	"centralauth-admin-action-hide-oversight": "أخف الحسابات المختارة تماماً",
 	"centralauth-admin-action-lock-lock": "أغلق الحسابات المختارة",
 	"centralauth-admin-action-lock-nochange": "لا تغير الإغلاق",
-	"centralauth-admin-action-lock-unlock": "ألغ إغلاق الحسابات المختارة",
+	"centralauth-admin-action-lock-unlock": "فتح الحسابات المحددة",
 	"centralauth-admin-already-unmerged": "تجاوز $1، غير مدمج بالفعل",
 	"centralauth-admin-bad-input": "اختيار دمج غير صالح",
 	"centralauth-admin-blocked-reason": "السبب: $1",

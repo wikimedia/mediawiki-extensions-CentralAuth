@@ -40,7 +40,8 @@
 			"Tuliouel",
 			"VasbXBR",
 			"YuriNikolai",
-			555
+			555,
+			"Fúlvio"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do usuário",
@@ -152,6 +153,7 @@
 	"centralauth-attach-text": "Esta conta ainda não foi unificada à conta global.\nSe a conta global também for sua, você pode associa-lá nesta conta inserindo a senha da conta global:",
 	"centralauth-attach-title": "Confirmar conta",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] já está bloqueada globalmente.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|ação|ações}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|página|páginas}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espaço nominal|espaços nominais}}",
 	"centralauth-centralautologin-alreadyloggedinlocally": "Sua sessão já está autenticada localmente.",
@@ -181,7 +183,7 @@
 	"centralauth-createlocal-username": "Nome da conta global",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dia|dias}} atrás",
 	"centralauth-delete-empty-account": "Conta vazia",
-	"centralauth-desc": "[[Special:MergeAccount|Fundir contas]] nos wikis da {{int:Centralauth-groupname}}",
+	"centralauth-desc": "[[Special:MergeAccount|Fundir contas]] entre as wikis da {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas.\nDesculpe-nos!",
 	"centralauth-editgroup-delete-removemembers": "Tem de remover todos os membros de um grupo antes de eliminar esse grupo.",
 	"centralauth-editgroup-display": "Nome localizado do grupo:",
