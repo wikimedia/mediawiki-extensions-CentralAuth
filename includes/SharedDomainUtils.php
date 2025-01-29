@@ -102,16 +102,24 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
-		// T379816: `clientlogin` API should still work in SUL3 mode as if we're
-		//    in SUL2 mode regardless of whether SUL3 is enabled or not. This provider
-		//    should operate the same in both modes when the request is an API request.
-		// T383812: This should be ignored for temp accounts and the request should be
-		// allowed to check the SUL mode that is active rather than just bailing.
-		if ( $this->isApiRequest &&
-			!$this->isSharedDomain() &&
-			!$request->getSession()->getUser()->isTemp()
-		) {
-			return false;
+		// T379816: The `clientlogin` API should still work in SUL3 mode as if
+		//    we're in SUL2 mode regardless of whether SUL3 is enabled or not.
+		//    There are some edge-cases handled below like:
+		//       - edits coming from VisualEditor that will trigger CentralLogin
+		//         via the action API. Shouldn't really happen because we don't
+		//         have VE enabled for anon users in production today but let's
+		//         handle these;
+		//       - a user trying to authenticate (login/signup) with their permanent
+		//         account with a temporary account session active.
+		if ( $this->isApiRequest && !$this->isSharedDomain() ) {
+			// T384523, T383812: Users sometimes will try to authenticate (login/signup)
+			//     with an existing temporary session active. When this happens, we want
+			//     to still assume SUL2 mode rather than try to trigger SUL3 login flow.
+			//     This can happen for mobile apps (iOS for example) users.
+			$user = $request->getSession()->getUser();
+			if ( $user->isTemp() || $user->isAnon() ) {
+				return false;
+			}
 		}
 
 		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
