@@ -530,6 +530,9 @@
 		]
 	},
 	"callback": "MediaWiki\\Extension\\CentralAuth\\CentralAuthHooks::onRegistration",
+	"ExtensionFunctions": [
+		"MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SharedDomainHookHandler::onExtensionFunctions"
+	],
 	"HookHandlers": {
 		"abusefilter": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\AbuseFilterHookHandler"

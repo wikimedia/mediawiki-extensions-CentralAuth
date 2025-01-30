@@ -124,6 +124,17 @@ class CentralAuthServices {
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
 	 *
+	 * @return SharedDomainUtils
+	 */
+	public static function getSharedDomainUtils( ?ContainerInterface $services = null ): SharedDomainUtils {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.SharedDomainUtils' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 *
 	 * @return CentralAuthTokenManager
 	 */
 	public static function getTokenManager( ?ContainerInterface $services = null ): CentralAuthTokenManager {
