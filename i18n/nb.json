@@ -357,7 +357,7 @@
 	"centralauth-rename-titleblacklist-match": "Det nye brukernavnet matcher følgende oppføring i tittelsvartelista: $1",
 	"centralauth-rename-unattached-intheway": "Det er utilkoblede kontoer som bruker det forespurte brukernavnet.",
 	"centralauth-rename-viewprogress": "Vis framgang",
-	"centralauth-renameuser-global-inprogress": "Det er allerede en navneendring [[Special:GlobalRenameProgress/$1|på gang]] for $1.",
+	"centralauth-renameuser-global-inprogress": "Global navneendring for {{GENDER:$1|$1}} er allerede i gang. [[Special:GlobalRenameProgress/$1|Sjekk status]].",
 	"centralauth-renameuser-merged": "Bruker $1 er flyttet over til det globale brukerkontosystemet. Å endre navnet på brukerkontoen vil føre til at den lokale brukerkontoen skilles fra den globale brukerkontoen.",
 	"centralauth-renameuser-reserved": "Brukernavnet $2 er reservert for en global brukerkonto.",
 	"centralauth-rightslog-entry-groupperms": "endret gruppetillatelser for $1 fra $2 til $3",
