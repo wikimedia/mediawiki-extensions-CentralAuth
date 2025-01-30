@@ -40,7 +40,8 @@
 			"Tuliouel",
 			"VasbXBR",
 			"YuriNikolai",
-			555
+			555,
+			"Fúlvio"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do usuário",
@@ -92,6 +93,7 @@
 	"centralauth-admin-info-unattached": "Número de contas não-ligadas:",
 	"centralauth-admin-info-username": "Nome de usuário:",
 	"centralauth-admin-info-username-rename": "Renomear",
+	"centralauth-admin-info-expired": "Conta temporária expirada:",
 	"centralauth-admin-intro": "Esta interface pode ser usada para administração de contas globais.",
 	"centralauth-admin-list-attached-on": "Unificada em",
 	"centralauth-admin-list-blocked": "Bloqueado",
@@ -152,6 +154,7 @@
 	"centralauth-attach-text": "Esta conta ainda não foi unificada à conta global.\nSe a conta global também for sua, você pode associa-lá nesta conta inserindo a senha da conta global:",
 	"centralauth-attach-title": "Confirmar conta",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] já está bloqueada globalmente.",
+	"centralauth-block-editing-action": "$1 {{PLURAL:$1|ação|ações}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|página|páginas}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espaço nominal|espaços nominais}}",
 	"centralauth-centralautologin-desc": "Esta página especial é usada internamente pelo MediaWiki. \nQuando você visita um domínio vinculado enquanto não está conectado, o sistema de autenticação central usa esta página para determinar se você está autenticado no domínio central. Se solicitou esta página sem fornecer quaisquer dados de autenticação, ela não faz nada.",
@@ -171,7 +174,7 @@
 	"centralauth-createlocal-username": "Nome da conta global",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|dia|dias}} atrás",
 	"centralauth-delete-empty-account": "Conta vazia",
-	"centralauth-desc": "[[Special:MergeAccount|Fundir contas]] nos wikis da {{int:Centralauth-groupname}}",
+	"centralauth-desc": "[[Special:MergeAccount|Fundir contas]] entre as wikis da {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "A unificação de contas está neste momento em modo de demonstração e testes, por isso as operações de unificação foram impossibilitadas.\nDesculpe-nos!",
 	"centralauth-editgroup-delete-removemembers": "Tem de remover todos os membros de um grupo antes de eliminar esse grupo.",
 	"centralauth-editgroup-display": "Nome localizado do grupo:",
