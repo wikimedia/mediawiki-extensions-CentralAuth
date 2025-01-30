@@ -18,6 +18,7 @@ use MediaWiki\CheckUser\Api\Rest\Handler\UserAgentClientHintsHandler;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -272,6 +273,19 @@ class SharedDomainHookHandler implements
 					ResourceLoader::makeConfigSetScript( $vars )
 				) )
 			);
+		}
+	}
+
+	public static function onExtensionFunctions(): void {
+		// Duplicate the disallowUserJs() call from BeforePageDisplay for good measure.
+		// While in theory it can be called at any time before output is generated,
+		// some extensions check OutputPage::getAllowedModules() directly to decide whether
+		// to do things functionally equivalent to running user JS, and our BeforePageDisplay
+		// handler might only run after that.
+		$sharedDomainUtils = CentralAuthServices::getSharedDomainUtils();
+		if ( $sharedDomainUtils->shouldRestrictCurrentDomain() ) {
+			$out = RequestContext::getMain()->getOutput();
+			$out->disallowUserJs();
 		}
 	}
 
