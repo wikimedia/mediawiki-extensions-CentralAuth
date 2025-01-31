@@ -146,7 +146,9 @@
 
 		var tokenPromise,
 			foreignApi = this,
-			parent = CentralAuthForeignApi.super.prototype.ajax;
+			parent = CentralAuthForeignApi.super.prototype.ajax,
+			// some mw.Api calls modify ajaxOptions, make sure not to reuse it
+			tokenAjaxOptions = Object.assign( {}, ajaxOptions );
 
 		// If we know we can't get a 'centralauthtoken', or if one was provided, don't request it
 		if ( this.noTokenNeeded || hasOwnProperty.call( parameters, 'centralauthtoken' ) ) {
@@ -159,11 +161,11 @@
 				},
 				// If failed, get the token
 				function () {
-					return foreignApi.getCentralAuthToken( ajaxOptions );
+					return foreignApi.getCentralAuthToken( tokenAjaxOptions );
 				}
 			);
 		} else {
-			tokenPromise = this.getCentralAuthToken( ajaxOptions );
+			tokenPromise = this.getCentralAuthToken( tokenAjaxOptions );
 		}
 
 		return tokenPromise.then(
