@@ -97,9 +97,9 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	}
 
 	public static function provideFetchUserForGoodStatus(): Generator {
-		yield 'Username' => [ fn ( CentralAuthUser $user ) => $user->getName() ];
-		yield 'Non-canonical username' => [ fn ( CentralAuthUser $user ) => lcfirst( $user->getName() ) ];
-		yield 'ID' => [ fn ( CentralAuthUser $user ) => '#' . $user->getId() ];
+		yield 'Username' => [ static fn ( CentralAuthUser $user ) => $user->getName() ];
+		yield 'Non-canonical username' => [ static fn ( CentralAuthUser $user ) => lcfirst( $user->getName() ) ];
+		yield 'ID' => [ static fn ( CentralAuthUser $user ) => '#' . $user->getId() ];
 	}
 
 	/**
