@@ -230,7 +230,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				// the user. For each wiki that the user is blocked in, the
 				// relevant appeal page on that wiki is added.
 				$appealListItems = array_map(
-					fn ( $sitelink ) => Html::rawElement( 'li', [],
+					static fn ( $sitelink ) => Html::rawElement( 'li', [],
 						Parser::stripOuterParagraph( $out->parseAsContent( $sitelink ) )
 					),
 					$sitelinks

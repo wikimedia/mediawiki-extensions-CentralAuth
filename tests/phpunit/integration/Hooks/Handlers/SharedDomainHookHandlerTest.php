@@ -157,7 +157,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		// dependencies, get if from the TestSetup.php config
 		$testSetupAuthManagerConfig = $GLOBALS['wgAuthManagerConfig'];
 		$tmp = array_filter( $testSetupAuthManagerConfig['primaryauth'],
-			fn ( $cnf ) => $cnf['class'] === LocalPasswordPrimaryAuthenticationProvider::class );
+			static fn ( $cnf ) => $cnf['class'] === LocalPasswordPrimaryAuthenticationProvider::class );
 		$localPwdProviderConfig = reset( $tmp );
 		$this->overrideConfigValues( [
 			MainConfigNames::AuthManagerConfig => [
