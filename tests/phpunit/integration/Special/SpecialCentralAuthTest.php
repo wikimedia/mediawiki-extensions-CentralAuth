@@ -21,6 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use CentralAuthTestUser;
+use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
@@ -66,6 +67,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	protected function newSpecialPage(): SpecialCentralAuth {
 		return new SpecialCentralAuth(
 			$this->getServiceContainer()->getCommentFormatter(),
+			$this->getServiceContainer()->getConnectionProvider(),
 			$this->getServiceContainer()->getNamespaceInfo(),
 			$this->getServiceContainer()->getTempUserConfig(),
 			$this->getServiceContainer()->getUserFactory(),
@@ -599,7 +601,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
 		// First use the special page to lock a user using the old names for the reason fields to test the B/C code.
 		$htmlForLockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
-			'wpReason' => 'test',
+			'wpReason' => 'Locking user for test',
 			'wpReasonList' => 'other',
 			'wpMethod' => 'set-status',
 			'wpStatusLocked' => 1,
@@ -619,30 +621,38 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			->from( 'logging' )
 			->join( 'comment', null, 'comment_id=log_comment_id' )
 			->where( [ 'log_action' => 'setstatus' ] )
-			->assertFieldValue( 'test' );
+			->assertFieldValue( 'Locking user for test' );
 		// Use the special page to unlock the user
 		$htmlForUnlockSubmission = $this->commonSubmitStatusFormForSuccess( $targetUser, [
-			'wpReason-other' => 'abc',
+			'wpReason-other' => 'Unlocking user for test',
 			'wpReason' => 'Testingabc',
 			'wpMethod' => 'set-status',
 			'wpStatusLocked' => 0,
 			'wpUserState' => $targetUser->getStateHash( true ),
 		] );
-		// Verify that user is actually locked, both by checking the special page information and the user itself
+		// Verify that user is actually unlocked, both by checking the special page information and the user itself
 		$this->assertNull( DOMCompat::getElementById(
 			DOMUtils::parseHTML( $htmlForUnlockSubmission ), 'mw-centralauth-admin-info-locked'
 		) );
 		$targetUser->invalidateCache();
 		$this->assertFalse( $targetUser->isLocked() );
 		// Check that the reason used for the unlock is as expected
-		$this->newSelectQueryBuilder()
+		$reasonForSecondLogEntry = $this->getDb()->newSelectQueryBuilder()
 			->select( 'comment_text' )
 			->from( 'logging' )
 			->join( 'comment', null, 'comment_id=log_comment_id' )
 			->where( [ 'log_action' => 'setstatus' ] )
-			->orderBy( 'log_timestamp', SelectQueryBuilder::SORT_DESC )
+			->orderBy( 'log_id', SelectQueryBuilder::SORT_DESC )
 			->limit( 1 )
-			->assertFieldValue( 'Testingabc: abc' );
+			->fetchField();
+		$this->assertSame( 'Testingabc: Unlocking user for test', $reasonForSecondLogEntry );
+		// Check the structure of the log snippet is as expected (contains a log entry for locking and then
+		// unlocking).
+		$logSnippet = $this->assertAndGetByElementId( $htmlForUnlockSubmission, 'mw-centralauth-admin-logsnippet' );
+		$this->assertStringContainsString( '(centralauth-admin-logsnippet', $logSnippet );
+		$this->assertStringContainsString( 'Locking user for test', $logSnippet );
+		$this->assertStringContainsString( 'Unlocking user for test', $logSnippet );
+		$this->assertStringContainsString( $targetUsername, $logSnippet );
 	}
 
 	/**
@@ -763,5 +773,31 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Check the wiki list row says the local account is unattached
 		$rowInWikiList = $this->getRowInWikiListTable( $html );
 		$this->assertStringContainsString( '(centralauth-admin-unattached)', $rowInWikiList );
+	}
+
+	public function testLogExtractWhenGlobalBlockingLogsPresent() {
+		$this->markTestSkippedIfExtensionNotLoaded( 'GlobalBlocking' );
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		// Globally lock the target
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
+		$this->assertStatusGood(
+			$targetUser->adminLockHide( true, null, 'Test global lock', $context )
+		);
+		// Also globally block the target
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$this->assertStatusGood( $globalBlockingServices->getGlobalBlockManager()->block(
+			$targetUsername, 'Test global block', 'indefinite',
+			$this->getTestUser( [ 'steward' ] )->getUserIdentity()
+		) );
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		// Verify that that the log snippet is present and that is contains the log entries for the lock
+		// and global block.
+		$logSnippet = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-logsnippet' );
+		$this->assertStringContainsString( '(centralauth-admin-logsnippet', $logSnippet );
+		$this->assertStringContainsString( 'Test global block', $logSnippet );
+		$this->assertStringContainsString( 'Test global lock', $logSnippet );
+		$this->assertStringContainsString( $targetUsername, $logSnippet );
 	}
 }
