@@ -3,85 +3,64 @@
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
 use LogFormatter;
+use RightsLogFormatter;
 
 /**
  * Handles the following log types:
  * - gblrights/usergroups
  */
-class GroupMembershipChangeLogFormatter extends LogFormatter {
-
-	private function makeGroupsList( array $groups, array $metadata ): string {
-		$groupNames = [];
-
-		$groups = array_combine( $groups, $metadata );
-
-		// Ensure temporary groups are displayed first, to avoid ambiguity like
-		// "first, second (expires at some point)" (unclear if only second expires or if both expire)
-		uasort( $groups,
-			static fn ( $first, $second ) => (bool)$second['expiry'] <=> (bool)$first['expiry']
-		);
-
-		$language = $this->context->getLanguage();
-		$user = $this->context->getUser();
-
-		foreach ( $groups as $group => $metadata ) {
-			$name = $group;
-
-			if ( $metadata['expiry'] ) {
-				$name = $this->msg( 'rightslogentry-temporary-group' )
-					->params( $name, $language->userTimeAndDate( $metadata['expiry'], $user ) )
-					->escaped();
-			}
-
-			$groupNames[] = $name;
-		}
-
-		return $groups !== []
-			? $this->formatParameterValue( 'list', $groupNames )
-			: $this->msg( 'rightsnone' )->text();
-	}
-
-	/**
-	 * @param array $groups
-	 *
-	 * @return array|string
-	 */
-	private function makeGroupsListWithoutMetadata( array $groups ) {
-		return $groups !== []
-			? $this->formatParameterValue( 'list', $groups )
-			: $this->msg( 'rightsnone' )->text();
-	}
+class GroupMembershipChangeLogFormatter extends RightsLogFormatter {
 
 	/** @inheritDoc */
 	protected function getMessageKey() {
 		return 'logentry-gblrights-usergroups';
 	}
 
-	protected function extractParameters() {
-		if ( $this->entry->isLegacy() ) {
-			return parent::extractParameters();
-		}
-
-		$params = $this->entry->getParameters();
-
-		if ( isset( $params['oldMetadata'] ) ) {
-			return [
-				3 => $this->makeGroupsList( $params['oldGroups'], $params['oldMetadata'] ),
-				4 => $this->makeGroupsList( $params['newGroups'], $params['newMetadata'] ),
-			];
-		}
-
-		return [
-			3 => $this->makeGroupsListWithoutMetadata( $params['oldGroups'] ),
-			4 => $this->makeGroupsListWithoutMetadata( $params['newGroups'] ),
-		];
+	/** @inheritDoc */
+	protected function shouldProcessParams( $params ) {
+		return true;
 	}
 
 	/** @inheritDoc */
-	protected function getMessageParameters() {
-		$params = parent::getMessageParameters();
-		// remove "User:" prefix
-		$params[2] = $this->formatParameterValue( 'user-link', $this->entry->getTarget()->getText() );
-		return $params;
+	protected function getOldGroups( $params ) {
+		$allParams = $this->entry->getParameters();
+
+		$groupNames = $allParams['oldGroups'] ?? $params[3] ?? [];
+		$metadata = $allParams['oldMetadata'] ?? [];
+
+		$groups = $this->joinGroupsWithExpiries( $groupNames, $metadata );
+		// Legacy entries had (none) literal as a placeholder
+		unset( $groups['(none)'] );
+		return $groups;
+	}
+
+	/** @inheritDoc */
+	protected function getNewGroups( $params ) {
+		$allParams = $this->entry->getParameters();
+
+		$groupNames = $allParams['newGroups'] ?? $params[4] ?? [];
+		$metadata = $allParams['newMetadata'] ?? [];
+
+		$groups = $this->joinGroupsWithExpiries( $groupNames, $metadata );
+		unset( $groups['(none)'] );
+		return $groups;
+	}
+
+	/** @inheritDoc */
+	protected function replaceGroupsWithMemberNames( &$groupNames ) {
+		// Do nothing, to display the internal group ids
+	}
+
+	/** @inheritDoc */
+	protected function getParametersForApi() {
+		// gblrights/usergroups log entries are returned in a raw form from
+		// the database, without trying to normalize legacy ones. Keep that
+		// behavior by pinpointing to the base LogFormatter class.
+		return LogFormatter::getParametersForApi();
+	}
+
+	/** @inheritDoc */
+	public function formatParametersForApi() {
+		return LogFormatter::formatParametersForApi();
 	}
 }
