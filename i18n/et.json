@@ -329,7 +329,7 @@
 	"centralauth-rename-table-status-queued": "Järjekorras",
 	"centralauth-rename-unattached-intheway": "Leidub ühendamata kontosid, mis kasutavad soovitud kasutajanime.",
 	"centralauth-rename-viewprogress": "Vaata seisu",
-	"centralauth-renameuser-global-inprogress": "Kasutaja $1 ümbernimetamine juba [[Special:GlobalRenameProgress/$1|käib]].",
+	"centralauth-renameuser-global-inprogress": "Kasutaja $1 globaalne ümbernimetamine on juba pooleli. [[Special:GlobalRenameProgress/$1|Kontrolli seisu]].",
 	"centralauth-renameuser-merged": "Kasutaja $1 on ühendatud ühtse sisselogimissüsteemiga.\nKui kasutajanime muuta, eraldatakse kohalik konto globaalsest.",
 	"centralauth-renameuser-reserved": "Kasutajanime $2 hoitakse globaalse konto jaoks.",
 	"centralauth-rightslog-entry-groupperms": "muutis rühma $1 kasutajaõigused $2 õigusteks $3",
