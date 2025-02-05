@@ -114,18 +114,14 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			$data, self::START_TOKEN_KEY_PREFIX, [ 'expiry' => $expiry ]
 		);
 
-		if ( $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup' ) {
-			$sharedDomainUrl = $this->sharedDomainUtils->getUrlForSharedDomainAction(
-				'signup',
+		$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
+		$url = wfAppendQuery(
+			$this->sharedDomainUtils->getUrlForSharedDomainAction(
+				$isSignup ? 'signup' : 'login',
 				$this->manager->getRequest()
-			);
-			$url = wfAppendQuery( $sharedDomainUrl, [ 'centralauthLoginToken' => $token ] );
-		} else {
-			$url = wfAppendQuery(
-				$this->sharedDomainUtils->getUrlForSharedDomainAction( 'login' ),
-				[ 'centralauthLoginToken' => $token ]
-			);
-		}
+			),
+			[ 'centralauthLoginToken' => $token ]
+		);
 
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
