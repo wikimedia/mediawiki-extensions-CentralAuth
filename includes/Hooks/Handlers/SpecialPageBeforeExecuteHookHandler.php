@@ -87,13 +87,9 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			&& !$this->sharedDomainUtils->isSharedDomain()
 		) {
 			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
-			$params = [
-				'sul3-action' => 'signup',
-				// If the account creation has a campaign identifier, forward that as well.
-				'campaign' => $request->getRawVal( 'campaign' ),
-			];
-			// Add generic preserved params (most importantly, the usesul3 flag).
-			$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'reset' => true ] );
+			$params = [];
+			$this->hookRunner->onAuthPreserveQueryParams( $params, [] );
+			$params['sul3-action'] = 'signup';
 			$url = wfAppendQuery( $localLoginUrl, $params );
 
 			$special->getOutput()->redirect( $url );

@@ -12,6 +12,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
+use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -201,6 +202,7 @@ return [
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
+			new HookRunner( $services->getHookContainer() ),
 			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
 			defined( 'MW_API' ) || defined( 'MW_REST_API' )
 		);
