@@ -115,7 +115,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param string|null $par Subpage string if one was specified
 	 */
 	public function execute( $par ) {
-		$navigation = explode( '/', $par );
+		$navigation = explode( '/', $par ?? '' );
 		$action = array_shift( $navigation );
 
 		$this->outputHeader();
