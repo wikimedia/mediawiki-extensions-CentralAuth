@@ -48,7 +48,7 @@ class CentralAuthHookRunner implements
 		string $type,
 		string &$unused2
 	) {
-		$this->hookContainer->run(
+		return $this->hookContainer->run(
 			'CentralAuthPostLoginRedirect',
 			[ &$returnTo, &$returnToQuery, $unused, $type, &$unused2 ]
 		);
