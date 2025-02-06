@@ -44,7 +44,8 @@
 			"列维劳德",
 			"捍粵者",
 			"飞舞回堂前",
-			"Cookai1205"
+			"Cookai1205",
+			"SunAfterRain"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "使用者的全域編輯計數",
@@ -308,8 +309,8 @@
 	"centralauth-merge-method-admin-desc": "表示該本地帳號己由管理員手動合併。\n此功能因安全性問題，目前己停用。",
 	"centralauth-merge-method-empty": "沒有任何貢獻",
 	"centralauth-merge-method-empty-desc": "表示該本地帳號己合併，因該帳號無任何編輯。",
-	"centralauth-merge-method-login": "已建立於登入時",
-	"centralauth-merge-method-login-desc": "表示本地帳號己在使用者登入時自動建立。",
+	"centralauth-merge-method-login": "已於登入時建立",
+	"centralauth-merge-method-login-desc": "表示本地帳號已在使用者登入時自動建立。",
 	"centralauth-merge-method-mail": "已由電子郵件確認",
 	"centralauth-merge-method-mail-desc": "表示該本地帳號己合併，因電子郵件地址與主要帳號相符。",
 	"centralauth-merge-method-new": "新帳號",

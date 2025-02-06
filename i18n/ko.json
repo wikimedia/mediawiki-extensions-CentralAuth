@@ -310,7 +310,6 @@
 	"centralauth-merge-method-password-desc": "사용자가 로컬 계정의 비밀번호를 입력하여 계정이 병합되었음을 의미합니다.",
 	"centralauth-merge-method-primary": "주 위키",
 	"centralauth-merge-method-primary-desc": "계정이 처음 병합된 위키입니다.\n해당 사용자의 실제 주 위키와 다를 수 있습니다.",
-	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-no-accounts": "통합 계정 테이블에 당신의 이름과 일치하는 계정을 찾지 못했습니다!\n데이터베이스가 잘못되었을 수 있습니다.",
 	"centralauth-merge-notlogged": "계정이 완전히 합쳐졌는지 확인하기 위해<span class=\"plainlinks\">[$1 로그인]</span>해 주세요.",
 	"centralauth-merge-step1-detail": "여기에 계정의 비밀번호를 입력해 주세요.\n위키 사이의 비밀번호와 등록된 이메일이 같은지 확인합니다.\n모든 것을 확인하기 전까지 아무 것도 바뀌지 않습니다.",
