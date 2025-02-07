@@ -213,7 +213,7 @@ class SharedDomainUtils {
 		);
 
 		$params = [];
-		$this->hookRunner->onAuthPreserveQueryParams( $params, [] );
+		$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
 		// already handled in makeUrlDeviceCompliant()
 		unset( $params['useformat'] );
 		// these will be preserved via the 'centralauthLoginToken' parameter, but we don't
