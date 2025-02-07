@@ -133,6 +133,14 @@ class RedirectingLoginHookHandler implements
 			// keep choice of desktop/mobile view consistent during an authentication flow
 			'useformat' => $request->getRawVal( 'useformat' ),
 		];
+
+		if ( !( $options['reset'] ?? false ) ) {
+			$params += [
+				// needed to fake some aspects of post-signup behavior rather than post-login
+				// behavior on the local domain, when on the central domain we did a login
+				'sul3-action' => $request->getRawVal( 'sul3-action' ),
+			];
+		}
 	}
 
 	/**
