@@ -367,9 +367,9 @@
 	"centralauth-rename-titleblacklist-match": "O novo nome de usuario coincide coa seguinte entrada de TitleBlacklistː $1",
 	"centralauth-rename-unattached-intheway": "Existen contas de usuario non adxuntas que xa empregan o nome de usuario solicitado.",
 	"centralauth-rename-viewprogress": "Ver progreso",
-	"centralauth-renameuser-global-inprogress": "Xa existe unha petición global [[Special:GlobalRenameProgress/$1|en progreso]] para cambiar o nome de este usuario.",
-	"centralauth-renameuser-merged": "O usuario \"$1\" foi trasladado ao sistema de rexistro unificado.\nUn cambio de nome provocará que a conta local se separe da global.",
-	"centralauth-renameuser-reserved": "O nome de usuario \"$2\" está reservado para unha conta global.",
+	"centralauth-renameuser-global-inprogress": "Xa hai en curso unha petición global para cambiar o nome de {{GENDER:$1|$1}}. [[Special:GlobalRenameProgress/$1|Comprobar o estado]].",
+	"centralauth-renameuser-merged": "{{GENDER:$1|O usuario|A usuaria}} \"$1\" foi {{GENDER:$1|trasladado|trasladada}} ao sistema de rexistro unificado.\nUn cambio de nome provocará que a conta local se separe da global.",
+	"centralauth-renameuser-reserved": "O nome de {{GENDER:$2|usuario|usuaria}} \"$2\" está reservado para unha conta global.",
 	"centralauth-vanish-confirm": "Queres esvaecer a túa conta? Esta acción é irreversible.",
 	"centralauth-return-username-token": "Pase de usuario que é parte do enderezo URL de retorno.",
 	"centralauth-return-username-token-help": "Pase de usuario que se engade ao enderezo URL de retorno tras iniciar sesión correctamente no wiki de rexistro central.",
@@ -534,7 +534,7 @@
 	"logentry-newusers-forcecreatelocal": "$1 {{GENDER:$2|creou}} á forza unha conta local para \"$3\"",
 	"mergeaccount": "Estado da unificación do rexistro",
 	"multilock": "Bloquear varias contas globais",
-	"right-centralauth-createlocal": "Forar a creación dunha conta local para unha conta global",
+	"right-centralauth-createlocal": "Forzar a creación dunha conta local para unha conta global",
 	"right-centralauth-lock": "Bloquear ou desbloquear unha conta global",
 	"right-centralauth-merge": "Fusionar a conta propia",
 	"right-centralauth-suppress": "Suprimir ou agochar unha conta global",
@@ -544,5 +544,6 @@
 	"right-globalgrouppermissions": "Xestionar os grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está incluído nunha lista negra."
+	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está nunha lista negra.",
+	"centralauth-action-forbidden-shared-domain": "Non ten permiso para realizar esta acción no dominio de autenticación compartido."
 }
