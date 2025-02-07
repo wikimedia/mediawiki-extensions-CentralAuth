@@ -131,10 +131,15 @@ class RedirectingLoginHookHandler implements
 			'usesul3' => $request->getRawVal( 'usesul3' ),
 			// keep choice of desktop/mobile view consistent during an authentication flow
 			'useformat' => $request->getRawVal( 'useformat' ),
-			// needed to fake some aspects of post-signup behavior rather than post-login
-			// behavior on the local domain, when on the central domain we did a login
-			'sul3-action' => $request->getRawVal( 'sul3-action' ),
 		];
+
+		if ( !( $options['reset'] ?? false ) ) {
+			$params += [
+				// needed to fake some aspects of post-signup behavior rather than post-login
+				// behavior on the local domain, when on the central domain we did a login
+				'sul3-action' => $request->getRawVal( 'sul3-action' ),
+			];
+		}
 	}
 
 	/**
