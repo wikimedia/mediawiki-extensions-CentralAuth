@@ -67,7 +67,7 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	 * @return $this
 	 */
 	public function whereGlobalUserIds( $globalUserIds ): self {
-		Assert::parameterType( 'integer|array', $globalUserIds, '$globalUserIds' );
+		Assert::parameterType( [ 'integer', 'array' ], $globalUserIds, '$globalUserIds' );
 
 		$this->conds( [ 'gu_id' => $globalUserIds ] );
 		return $this;
@@ -80,7 +80,7 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	 * @return $this
 	 */
 	public function whereUserNames( $userNames ): self {
-		Assert::parameterType( 'string|array', $userNames, '$userIds' );
+		Assert::parameterType( [ 'string', 'array' ], $userNames, '$userIds' );
 
 		$userNames = array_map( function ( $name ) {
 			return $this->userNameUtils->getCanonical( (string)$name );
