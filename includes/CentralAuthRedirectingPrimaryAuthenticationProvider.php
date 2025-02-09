@@ -191,16 +191,17 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 		// Flag this login session as being the local leg of a SUL3 login, so we can run
 		// CentralAuthPostLoginRedirect afterward.
-		$this->manager->setAuthenticationSessionData( self::SESSION_DATA_FLAG, true );
+		$this->manager->setAuthenticationSessionData( self::SESSION_DATA_FLAG, [
+			'isSignup' => $data['isSignup'],
+		] );
 
 		return AuthenticationResponse::newPass( $data['username'] );
 	}
 
 	/** @inheritDoc */
 	public function postAuthentication( $user, AuthenticationResponse $response ) {
-		if ( $response->status === AuthenticationResponse::PASS &&
-			 $this->manager->getAuthenticationSessionData( self::SESSION_DATA_FLAG )
-		) {
+		$data = $this->manager->getAuthenticationSessionData( self::SESSION_DATA_FLAG );
+		if ( $data && $response->status === AuthenticationResponse::PASS ) {
 			// HACK: CentralAuth replaces the core PostLoginRedirect hook with its own variant,
 			// CentralAuthPostLoginRedirect. In SUL2 this is because we can't allow other extensions
 			// to redirect before we could do central login. In SUL3 setting the central session is
@@ -208,19 +209,20 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			// would be fine, but most extensions which support CentralAuth skip that hook when they
 			// see CentralAuth is installed, so fire CentralAuthPostLoginRedirect for them.
 			// See T384829 for solving this better in the future.
-			$this->hookContainer->register( 'PostLoginRedirect', function ( &$returnTo, &$returnToQuery, &$type ) {
-				$hookRunner = new CentralAuthHookRunner( $this->hookContainer );
-				$caReturnToQuery = wfArrayToCgi( $returnToQuery );
-				// As seen by MediaWiki on a local domain, the action is always a login, even when
-				// the user is actually signing up. Use the URL flag to differentiate.
-				$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
-				$caType = $isSignup ? 'signup' : '';
-				$unused = '';
-				$retval = $hookRunner->onCentralAuthPostLoginRedirect( $returnTo,
-					$caReturnToQuery, false, $caType, $unused );
-				$returnToQuery = wfCgiToArray( $caReturnToQuery );
-				return $retval;
-			} );
+			$this->hookContainer->register( 'PostLoginRedirect',
+				function ( &$returnTo, &$returnToQuery, &$type ) use ( $data ) {
+					$hookRunner = new CentralAuthHookRunner( $this->hookContainer );
+					$caReturnToQuery = wfArrayToCgi( $returnToQuery );
+					// As seen by MediaWiki on a local domain, the action is always a login, even when
+					// the user is actually signing up. Use the URL flag to differentiate.
+					$caType = $data['isSignup'] ? 'signup' : '';
+					$unused = '';
+					$retval = $hookRunner->onCentralAuthPostLoginRedirect( $returnTo,
+						$caReturnToQuery, false, $caType, $unused );
+					$returnToQuery = wfCgiToArray( $caReturnToQuery );
+					return $retval;
+				}
+			);
 		}
 	}
 
