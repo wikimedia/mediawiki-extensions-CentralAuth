@@ -28,6 +28,7 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
@@ -114,8 +115,9 @@ class CentralAuthHooks implements
 	 * Called right after configuration variables have been set.
 	 */
 	public static function onRegistration() {
-		global $wgCentralAuthDatabase, $wgSessionProviders,
-			$wgCentralIdLookupProvider, $wgVirtualDomainsMapping;
+		global $wgCentralAuthDatabase, $wgSessionProviders, $wgCentralIdLookupProvider,
+			// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgHooks
+			$wgVirtualDomainsMapping, $wgHooks;
 
 		if (
 			// Test against the local database
@@ -150,6 +152,15 @@ class CentralAuthHooks implements
 		// for CentralAuth. This method is used here, like in the FlaggedRevs extension, to ensure that the
 		// constant is not used by any other APCOND.
 		define( 'APCOND_CA_INGLOBALGROUPS', 67651 );
+
+		// Register the AuthManagerLoginAuthenticateAudit hook and try to make sure it is called
+		// first. This relies on the implementation detail that $wgHooks handlers are called before
+		// extension.json handlers and HookContainer::register() handlers.
+		if ( !isset( $wgHooks['AuthManagerLoginAuthenticateAudit'] ) ) {
+			$wgHooks['AuthManagerLoginAuthenticateAudit'] = [];
+		}
+		array_unshift( $wgHooks['AuthManagerLoginAuthenticateAudit'],
+			[ RedirectingLoginHookHandler::class, 'onAuthManagerLoginAuthenticateAudit' ] );
 	}
 
 	/**
