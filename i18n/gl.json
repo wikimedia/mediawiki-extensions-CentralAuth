@@ -494,7 +494,7 @@
 	"logentry-newusers-forcecreatelocal": "$1 {{GENDER:$2|creou}} á forza unha conta local para \"$3\"",
 	"mergeaccount": "Estado da unificación do rexistro",
 	"multilock": "Bloquear varias contas globais",
-	"right-centralauth-createlocal": "Forar a creación dunha conta local para unha conta global",
+	"right-centralauth-createlocal": "Forzar a creación dunha conta local para unha conta global",
 	"right-centralauth-lock": "Bloquear ou desbloquear unha conta global",
 	"right-centralauth-merge": "Fusionar a conta propia",
 	"right-centralauth-suppress": "Suprimir ou agochar unha conta global",
@@ -508,5 +508,5 @@
 	"sulrenamewarning-renamed": "A {{GENDER:$2|súa}} conta '''$1''' foi renomeada a '''$2''' durante a migración automática ó sistema de conta unificada de {{int:Centralauth-groupname}}.",
 	"sulrenamewarning-title": "{{GENDER:$1|A súa conta}} foi cambiada de nome",
 	"sulrenamewarning-usenew": "Por favor, use o seu nome de {{GENDER:$1|usuario|usuaria|usuario/a}} \"$1\" para iniciar a sesión a partires de agora.",
-	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está incluído nunha lista negra."
+	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está nunha lista negra."
 }
