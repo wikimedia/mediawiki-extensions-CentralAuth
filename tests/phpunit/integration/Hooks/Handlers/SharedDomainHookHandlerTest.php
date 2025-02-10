@@ -14,6 +14,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSharedDomainPreAuthenticationProv
 use MediaWiki\Extension\CentralAuth\CentralAuthTemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
+use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
@@ -351,6 +352,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getTitleFactory(),
+				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				$this->getServiceContainer()->get( "MobileFrontend.Context" ),
 				false
 			] )
