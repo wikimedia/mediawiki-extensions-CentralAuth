@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
+use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
@@ -19,8 +20,10 @@ use Wikimedia\Assert\Assert;
 class SharedDomainUtils {
 
 	private const SUL3_COOKIE_FLAG = 'sul3OptIn';
+
 	private Config $config;
 	private TitleFactory $titleFactory;
+	private HookRunner $hookRunner;
 	private ?bool $isSharedDomain = null;
 	private ?MobileContext $mobileContext;
 	private bool $isApiRequest;
@@ -28,11 +31,13 @@ class SharedDomainUtils {
 	public function __construct(
 		Config $config,
 		TitleFactory $titleFactory,
+		HookRunner $hookRunner,
 		?MobileContext $mobileContext,
 		bool $isApiRequest
 	) {
 		$this->config = $config;
 		$this->titleFactory = $titleFactory;
+		$this->hookRunner = $hookRunner;
 		$this->mobileContext = $mobileContext;
 		$this->isApiRequest = $isApiRequest;
 	}
@@ -177,7 +182,8 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * Get the login/signup URL on the shared domain in SUL3 mode.
+	 * Get the login/signup URL on the shared domain in SUL3 mode. Should only be called during
+	 * authentication.
 	 *
 	 * @note This utility method supports URLs for SUL3 mode only. It
 	 *       doesn't have any concept of SUL2 mode. For shared domain
@@ -185,12 +191,12 @@ class SharedDomainUtils {
 	 *       CentralDomainUtils::getCentralDomainURL().
 	 *
 	 * @param string $action 'login' or 'signup' action
-	 * @param WebRequest|null $request There could be more to look at
+	 * @param WebRequest $request There could be more to look at
 	 *    in the request like if we're coming from a campaign link.
 	 *
 	 * @return string
 	 */
-	public function getUrlForSharedDomainAction( string $action, ?WebRequest $request = null ): string {
+	public function getUrlForSharedDomainAction( string $action, WebRequest $request ): string {
 		switch ( $action ) {
 			case 'login':
 				$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
@@ -206,15 +212,22 @@ class SharedDomainUtils {
 			$this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl
 		);
 
-		return wfAppendQuery( $url, [
-			// In the future maybe we'll want to use a more robust redirection mechanism instead of
-			// relying on PostLoginRedirect (see also T369467). For now, we just add a fake 'returnto'
-			// parameter, which is enough to make sure PostLoginRedirect is called even when the user
-			// is already logged in.
-			'returnto' => 'Main_Page',
-			'usesul3' => '1',
-			'campaign' => $request ? $request->getRawVal( 'campaign' ) : null,
-		] );
+		$params = [];
+		$this->hookRunner->onAuthPreserveQueryParams( $params, [] );
+		// already handled in makeUrlDeviceCompliant()
+		unset( $params['useformat'] );
+		// these will be preserved via the 'centralauthLoginToken' parameter, but we don't
+		// actually want to return anywhere while on the login domain
+		unset( $params['returnto'], $params['returntoquery'], $params['returntoanchor'] );
+		unset( $params['sul3-action'] );
+		$params['usesul3'] = '1';
+		// In the future maybe we'll want to use a more robust redirection mechanism instead of
+		// relying on PostLoginRedirect (see also T369467). For now, we just add a fake 'returnto'
+		// parameter, which is enough to make sure PostLoginRedirect is called even when the user
+		// is already logged in.
+		$params['returnto'] = 'Main_Page';
+
+		return wfAppendQuery( $url, $params );
 	}
 
 	/**
