@@ -88,7 +88,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		) {
 			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
 			$params = [];
-			$this->hookRunner->onAuthPreserveQueryParams( $params, [] );
+			$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
 			$params['sul3-action'] = 'signup';
 			$url = wfAppendQuery( $localLoginUrl, $params );
 
