@@ -219,7 +219,6 @@ class SharedDomainUtils {
 		// these will be preserved via the 'centralauthLoginToken' parameter, but we don't
 		// actually want to return anywhere while on the login domain
 		unset( $params['returnto'], $params['returntoquery'], $params['returntoanchor'] );
-		unset( $params['sul3-action'] );
 		$params['usesul3'] = '1';
 		// In the future maybe we'll want to use a more robust redirection mechanism instead of
 		// relying on PostLoginRedirect (see also T369467). For now, we just add a fake 'returnto'
