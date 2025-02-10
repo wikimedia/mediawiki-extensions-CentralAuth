@@ -46,7 +46,7 @@ class GroupMembershipChangeLogFormatterTest extends LogFormatterTestCase {
 					],
 				],
 				[
-					'text' => 'Sysop changed global group membership for User: granted: group1 '
+					'text' => 'Sysop changed global group membership for User: granted group1 '
 						. '(temporary, until 12:34, 1 January 2016) and steward',
 					'api' => [
 						'oldGroups' => [],
@@ -77,7 +77,7 @@ class GroupMembershipChangeLogFormatterTest extends LogFormatterTestCase {
 				],
 				[
 					'legacy' => true,
-					'text' => 'Sysop changed global group membership for User: granted: '
+					'text' => 'Sysop changed global group membership for User: granted '
 						. 'steward and group1',
 					'api' => [
 						'(none)',
