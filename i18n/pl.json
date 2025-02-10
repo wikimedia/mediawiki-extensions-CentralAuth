@@ -386,9 +386,9 @@
 	"centralauth-rename-titleblacklist-match": "Nowa nawa użytkownika pasuje do następującego wpisu Czarnej Listy Tytułów: $1",
 	"centralauth-rename-unattached-intheway": "Istnieją niepowiązane konta korzystające z żądanej nazwy użytkownika.",
 	"centralauth-rename-viewprogress": "Wyświetl postęp",
-	"centralauth-renameuser-global-inprogress": "Jest już [[Special:GlobalRenameProgress/$1|trwający proces]] globalnej zmiany nazwy dla $1.",
-	"centralauth-renameuser-merged": "Użytkownik $1 został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalne konto zostanie odłączone od globalnego.",
-	"centralauth-renameuser-reserved": "Nazwa użytkownika $2 jest zajęta dla konta uniwersalnego.",
+	"centralauth-renameuser-global-inprogress": "Globalna zmiana nazwy dla {{GENDER:$1|$1}} jest już w toku. [[Special:GlobalRenameProgress/$1|Zobacz status]].",
+	"centralauth-renameuser-merged": "Użytkownik {{GENDER:$1|$1}} został przeniesiony do systemu ujednoliconej nazwy użytkownika. Zmiana nazwy spowoduje, że lokalne konto zostanie odłączone od globalnego.",
+	"centralauth-renameuser-reserved": "Nazwa użytkownika {{GENDER:$2|$2}} jest zajęta dla konta uniwersalnego.",
 	"centralauth-vanish-confirm": "Czy na pewno chcesz poprosić o wymazanie swojego konta? Ta akcja jest nieodwracalna.",
 	"centralauth-return-username-token": "Token nazwy użytkownika, który jest częścią adresu powrotnego URL.",
 	"centralauth-return-username-token-help": "Token nazwy użytkownika, który jest dołączany do powrotnego adresu URL, kiedy użytkownik pomyślnie zaloguje się na wiki logowania centralnego.",
@@ -547,7 +547,7 @@
 	"logentry-gblrights-grouprename": "$1 {{GENDER:$2|zmienił|zmieniła}} nazwę grupy $5 na $4",
 	"logentry-gblrights-groupprms2": "$1 {{GENDER:$2|zmienił|zmieniła|zmienił(a)}} uprawnienia grupy $3: dodano $4; usunięto $5",
 	"logentry-gblrights-groupprms3": "$1 {{GENDER:$2|zmienił|zmieniła|zmienił(-a)}} zastrzeżony zbiór wiki dla $3 z $4 na $5",
-	"logentry-gblrights-usergroups": "$1 {{GENDER:$2|zmienił|zmieniła|zmienił(a)}} przynależność $3 z grupy $4 do $5",
+	"logentry-gblrights-usergroups": "$1 {{GENDER:$2|zmienił|zmieniła|zmienił(a)}} globalne uprawnienia {{GENDER:$6|$3}}: $7",
 	"logentry-globalauth-delete": "$1 {{GENDER:$2|usunął|usunęła}} konto uniwersalne \"$3\"",
 	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|zmienił|zmieniła}} status konta uniwersalnego \"$3\": {{GENDER:$2|ustawił|ustawiła}} status $4; {{GENDER:$2|zdjął|zdjęła}} status $5",
 	"logentry-newusers-forcecreatelocal": "$1 {{GENDER:$2|wymusił|wymusiła}} utworzenie lokalnego konta użytkownika $3",
@@ -563,5 +563,6 @@
 	"right-globalgrouppermissions": "Zarządzanie grupami globalnymi",
 	"sessionprovider-centralauthsessionprovider": "centralnych sesji opartych na ciasteczkach",
 	"sessionprovider-centralauthtokensessionprovider": "sesji opartych o parametr „centralauthtoken”",
-	"centralauth-badaccess-blacklisted": "Nie możesz poprosić o globalną zmianę nazwy, ponieważ znajdujesz się na czarnej liście."
+	"centralauth-badaccess-blacklisted": "Nie możesz poprosić o globalną zmianę nazwy, ponieważ znajdujesz się na czarnej liście.",
+	"centralauth-action-forbidden-shared-domain": "Nie masz uprawnień do wykonania tej czynności w domenie współdzielonego uwierzytelniania."
 }
