@@ -503,6 +503,7 @@
 	"globalvanishrequest-submit-text": "Pyydä hävittämistä",
 	"globalvanishrequest-globaluser-error": "Pyynnön tallennus epäonnistui. Käyttäjätunnus ei ole järjestelmänlaajuinen tunnus.",
 	"globalvanishrequest-blocked-error": "Tunnuksellasi on estoja eikä sitä voida hävittää",
+	"globalvanishrequest-pending-request-error": "Sinulla on jo vireillä tunnuksesi hävittämispyyntö. Siirry [[Special:GlobalVanishRequest/status|tilasivulle]] saadaksesi lisätietoja.",
 	"globalvanishrequest-save-error": "Pyynnön tallentaminen epäonnistui. Yritä uudestaan.",
 	"globalvanishrequest-autoapprove-note": "Käyttätunnuksesi hävittämispyyntö hyväksyttiin.",
 	"globalvanishrequest-autoapprove-public-note": "Tämän käyttäjän hävittämispyyntö on automaattisesti hyväksytty.",

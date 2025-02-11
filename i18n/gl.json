@@ -532,7 +532,7 @@
 	"logentry-newusers-forcecreatelocal": "$1 {{GENDER:$2|creou}} á forza unha conta local para \"$3\"",
 	"mergeaccount": "Estado da unificación do rexistro",
 	"multilock": "Bloquear varias contas globais",
-	"right-centralauth-createlocal": "Forar a creación dunha conta local para unha conta global",
+	"right-centralauth-createlocal": "Forzar a creación dunha conta local para unha conta global",
 	"right-centralauth-lock": "Bloquear ou desbloquear unha conta global",
 	"right-centralauth-merge": "Fusionar a conta propia",
 	"right-centralauth-suppress": "Suprimir ou agochar unha conta global",
@@ -542,6 +542,6 @@
 	"right-globalgrouppermissions": "Xestionar os grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está incluído nunha lista negra.",
+	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está nunha lista negra.",
 	"centralauth-blocked-ip-reputation": "O enderezo IP que estás a usar actualmente bloqueouse porque se utilizou recentemente con fins abusivos."
 }
