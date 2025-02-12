@@ -21,6 +21,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобалне групе којима корисник припада",
+	"action-centralauth-createlocal": "принудно направите локални налог",
 	"action-centralauth-lock": "закључавате или откључавате глобалне налоге",
 	"action-centralauth-rename": "преименујете глобалне налоге",
 	"action-centralauth-unmerge": "раздвајате глобале налоге",
@@ -343,6 +344,7 @@
 	"centralautologin": "Централна пријава",
 	"centrallogin": "Централна корисничка пријава",
 	"centralloginsuccesful": "Успешно пријављивање",
+	"createlocalaccount": "Принудно направи локални налог",
 	"globalgroupmembership": "Чланство у глобалним групама",
 	"globalgrouppermissions": "Управљање глобалним групама",
 	"globalrenameprogress": "Стање глобалног преименовања",
