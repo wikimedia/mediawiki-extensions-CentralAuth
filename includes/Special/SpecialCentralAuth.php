@@ -620,7 +620,7 @@ class SpecialCentralAuth extends SpecialPage {
 		foreach ( $queryWikis as $wiki ) {
 			// Check if the global block is disabled on the given wiki, and if it is then add it to the table HTML.
 			$localBlockStatus = $globalBlockingServices->getGlobalBlockLocalStatusLookup()
-				->getLocalWhitelistInfo( $globalBlock->gb_id, null, $wiki['wiki'] );
+				->getLocalStatusInfo( $globalBlock->gb_id, $wiki['wiki'] );
 			if ( $localBlockStatus === false ) {
 				continue;
 			}
