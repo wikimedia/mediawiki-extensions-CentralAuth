@@ -1004,7 +1004,12 @@
 	},
 	"UserRegistrationProviders": {
 		"centralauth": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthGlobalRegistrationProvider"
+			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthGlobalRegistrationProvider",
+			"services": [
+				"CentralAuth.GlobalUserSelectQueryBuilderFactory",
+				"CentralAuth.CentralAuthDatabaseManager",
+				"UserNameUtils"
+			]
 		}
 	},
 	"ServiceWiringFiles": [
