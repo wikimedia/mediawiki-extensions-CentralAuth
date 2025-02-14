@@ -39,8 +39,6 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiIntegrationTest
 	}
 
 	public function testFetchRegistrationBatch(): void {
-		$this->markTestSkipped( 'Skipped until IUserRegistrationProvider::fetchRegistrationBatch exists in core' );
-
 		// Use a consistent timestamp for local registrations.
 		$curTime = '20250101000000';
 		ConvertibleTimestamp::setFakeTime( $curTime );
