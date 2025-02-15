@@ -22,8 +22,10 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use ErrorPageError;
 use LogicException;
+use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -31,6 +33,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PostLoginRedirectHook;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
+use MediaWiki\User\User;
 
 /**
  * Hook handler for hooks related to SUL3 login.
@@ -42,6 +45,8 @@ class RedirectingLoginHookHandler implements
 	AuthPreserveQueryParamsHook,
 	AuthChangeFormFieldsHook
 {
+
+	public const SUPPRESS_HOOK_SESSION_FLAG = 'CentralAuth-suppressAuthManagerLoginAuthenticateAudit';
 
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
@@ -146,6 +151,43 @@ class RedirectingLoginHookHandler implements
 		$formFieldName = CentralAuthRedirectingPrimaryAuthenticationProvider::NON_LOGIN_WIKI_BUTTONREQUEST_NAME;
 		if ( isset( $formDescriptor[$formFieldName] ) ) {
 			$formDescriptor[$formFieldName]['weight'] = 101;
+		}
+	}
+
+	/**
+	 * Prevent other AuthManagerLoginAuthenticateAudit hooks from running twice.
+	 *
+	 * Called when we are continuing SUL3 authentication locally, after having returned from the
+	 * central domain. The hook has already run on the central domain, it breaks the assumptions of
+	 * some handlers if it gets called again.
+	 *
+	 * FIXME this is a messy hack, but there didn't seem to be a cleaner way.
+	 *
+	 * @param AuthenticationResponse $response Response in either a PASS or FAIL state
+	 * @param User|null $user User being authenticated against, or null if authentication
+	 *   failed before getting that far
+	 * @param string|null $username A guess at the username being authenticated, or null if we can't
+	 *   even determine that. When $user is not null, it can be in the form of
+	 *   <username>@<more info> (e.g. for bot passwords).
+	 * @param string[] $extraData Array (string => string) with extra information, intended to be
+	 *   added to log contexts. Fields it might include:
+	 *   - appId: application ID, only if the login was with a bot password
+	 *   - performer: the user performing the login authentication request
+	 * @return bool|void True or no return value to continue or false to abort
+	 *
+	 * @see CentralAuthHooks::onRegistration()
+	 * @see CentralAuthRedirectingPrimaryAuthenticationProvider::continuePrimaryAuthentication()
+	 */
+	public static function onAuthManagerLoginAuthenticateAudit( $response, $user, $username, $extraData ) {
+		// The session seems like the least bad way of communicating between the primary authentication
+		// provider and this hook. The hook has to be a static method since that's the only way to
+		// register it early enough; using a static variable would be troublesome for tests; the
+		// authentication session (as in AuthManager::getAuthenticationSessionData()) is already
+		// removed by this point; none of the parameters of this hook are easy to attach information to.
+		// So we'll have to use the request context.
+		$session = RequestContext::getMain()->getRequest()->getSession();
+		if ( $session->get( self::SUPPRESS_HOOK_SESSION_FLAG ) ) {
+			return false;
 		}
 	}
 }

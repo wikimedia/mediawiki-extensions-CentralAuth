@@ -149,6 +149,10 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			throw new LogicException( 'CentralAuthReturnRequest not found' );
 		}
 
+		// Suppress the AuthManagerLoginAuthenticateAudit hook from running.
+		$session = $this->manager->getRequest()->getSession();
+		$session->set( RedirectingLoginHookHandler::SUPPRESS_HOOK_SESSION_FLAG, true );
+
 		$data = $this->tokenManager->detokenizeAndDelete(
 			$req->centralauthLoginToken, self::COMPLETE_TOKEN_KEY_PREFIX
 		);
