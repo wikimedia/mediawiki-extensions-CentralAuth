@@ -280,7 +280,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 	private function logAuthenticationAttempt( string $step, bool $isSignup ) {
 		$verb = $isSignup ? 'signup' : 'login';
-		$this->logger->notice( "CentralAuth SUL3 $verb attempt $step" );
+		$this->logger->info( "CentralAuth SUL3 $verb attempt $step" );
 		$this->statsFactory->withComponent( 'CentralAuth' )
 			// Metrics used:
 			// * sul3_authentication_start_total
