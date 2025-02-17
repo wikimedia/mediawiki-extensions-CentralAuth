@@ -83,7 +83,7 @@ class BatchVanishUsers extends Maintenance {
 		if ( !$outputHandle ) {
 			$this->fatalError( "Unable to create output file: {$outputPath}" );
 		}
-		if ( !fputcsv( $outputHandle, [ 'ticketId', 'result' ] ) ) {
+		if ( !fputcsv( $outputHandle, [ 'ticketId', 'result' ], ',', '"', "\\" ) ) {
 			$this->fatalError( "Unable to write to output file: {$outputPath}" );
 		}
 		$vanishRequestCount = count( $vanishRequests );
@@ -104,7 +104,7 @@ class BatchVanishUsers extends Maintenance {
 			if ( $requestResult[ 'success' ] ) {
 				$successCount++;
 			} else {
-				fputcsv( $outputHandle, [ $request[ 'ticketLink' ], $requestResult[ 'message' ] ] );
+				fputcsv( $outputHandle, [ $request[ 'ticketLink' ], $requestResult[ 'message' ] ], ',', '"', "\\" );
 				$failureCount++;
 			}
 		}
@@ -133,7 +133,7 @@ class BatchVanishUsers extends Maintenance {
 		}
 
 		do {
-			$data = fgetcsv( $handle, 4096, ',' );
+			$data = fgetcsv( $handle, 4096, ',', '"', "\\" );
 			if ( $data !== false ) {
 				$vanishRequests[] = [
 					'createdDate' => $data[0],
