@@ -381,6 +381,7 @@
 	"logentry-gblrename-merge": "$1 বৈশ্বিকভাবে $4 কে $5-এর সাথে {{GENDER:$2|একত্রিত করেছেন}}",
 	"logentry-gblrename-promote": "$1 বৈশ্বিকভাবে $4 কে $5 নামে {{GENDER:$2|নামান্তরিত করেছেন}}",
 	"logentry-gblrename-rename": "$1 বৈশ্বিকভাবে $4 কে $5 নামে {{GENDER:$2|নামান্তরিত করেছেন}}",
+	"logentry-gblrights-usergroups": "$1 {{GENDER:$6|$3}}-এর বৈশ্বিক দলীয় সদস্যপদ {{GENDER:$2|পরিবর্তন}} করেছেন: $7",
 	"mergeaccount": "প্রবেশ একত্রীকরণ অবস্থা",
 	"multilock": "একাধিক বৈশ্বিক অ্যাকাউন্ট তালাবদ্ধ করুন",
 	"right-centralauth-createlocal": "জোরপূর্বক একটি বৈশ্বিক অ্যাকাউন্টের স্থানীয় অ্যাকাউন্ট তৈরি করুন",
