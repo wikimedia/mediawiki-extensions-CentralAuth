@@ -481,6 +481,7 @@
 	"globalvanishrequest-blocked-title": "계정이 차단되었기 때문에 전역 사용자 계정 버리기 요청이 거부되었습니다",
 	"globalvanishrequest-reason-label": "요청 이유",
 	"globalvanishrequest-submit-text": "버리기 요청",
+	"globalvanishrequest-autoapprove-public-note": "이 사용자 버리기 요청은 자동으로 승인되었습니다.",
 	"globalusers": "통합 계정 목록",
 	"grant-createlocalaccount": "통합 계정에 대해 로컬 계정을 강제로 생성하기",
 	"grant-setglobalaccountstatus": "통합 계정 상태 관리",

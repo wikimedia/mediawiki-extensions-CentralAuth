@@ -12,7 +12,7 @@
 			"Þjarkur"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Altækir hópar sem þessi notandi er í",
+	"abusefilter-edit-builder-vars-global-user-groups": "Altækir hópar sem þessi notandi er í ($1)",
 	"action-centralauth-createlocal": "þvinga sköpun staðbundins aðgangs",
 	"action-centralauth-lock": "læsa eða aflæsa altækum aðgöngum",
 	"action-centralauth-rename": "endurnefna altæka aðganga",
@@ -42,7 +42,9 @@
 	"centralauth-admin-info-hidden": "Falinn:",
 	"centralauth-admin-info-locked": "Læst:",
 	"centralauth-admin-info-registered": "Skráð:",
+	"centralauth-admin-info-unattached": "Fjöldi tengdra reikninga:",
 	"centralauth-admin-info-username": "Notandanafn:",
+	"centralauth-admin-info-expired": "Tímabundinn aðgangur rann út:",
 	"centralauth-admin-intro": "Þetta viðmót er hægt að nota til að stjórna altækum aðgöngum.",
 	"centralauth-admin-list-attached-on": "Tengdist þann",
 	"centralauth-admin-list-blocked": "Hindraður",
@@ -257,7 +259,7 @@
 	"centralauth-rename-progress-fieldset": "Listi yfir staðbundna aðganga",
 	"centralauth-rename-progress-logs-fieldset": "Færsluskrá",
 	"centralauth-rename-progress-username": "Notandanafn",
-	"centralauth-rename-queued": "Verk til að endurnefna $1 í $2 hafa verið sett í biðröð.\n\nSkoðaðu framvinduna á [[Special:GlobalRenameProgress/ $2 ]].",
+	"centralauth-rename-queued": "Verk til að endurnefna $1 í $2 hafa verið sett í biðröð.\n\nSkoðaðu framvinduna á [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "Staðbundinn wiki",
 	"centralauth-rename-table-status": "Staða",
 	"centralauth-rename-table-status-done": "Lokið",
