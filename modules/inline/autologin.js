@@ -1,15 +1,13 @@
 ( function () {
-	mw.loader.using( 'web2017-polyfills', function () {
-		var current, login;
-
+	mw.loader.using( 'web2017-polyfills', () => {
 		// Set returnto and returntoquery so the logout link in the returned
 		// html is correct.
-		current = new URL( location.href );
+		const current = new URL( location.href );
 		current.searchParams.delete( 'title' );
 		current.searchParams.delete( 'returnto' );
 		current.searchParams.delete( 'returntoquery' );
 
-		login = new URL(
+		const login = new URL(
 			mw.config.get( 'wgArticlePath' ).replace( '$1', 'Special:CentralAutoLogin/toolslist' ),
 			location.href
 		);
@@ -17,7 +15,7 @@
 		login.searchParams.set( 'returntoquery', current.search.slice( 1 ) );
 
 		$.getJSON( login.toString() )
-			.then( function ( data ) {
+			.then( ( data ) => {
 				if ( data.toolslist ) {
 					// eslint-disable-next-line no-jquery/no-global-selector
 					$( '#p-personal ul' ).html( data.toolslist );

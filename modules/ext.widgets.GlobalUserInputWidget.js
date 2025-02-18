@@ -54,13 +54,11 @@
 	 * @inheritdoc
 	 */
 	GlobalUserInputWidget.prototype.focus = function () {
-		var retval;
-
 		// Prevent programmatic focus from opening the menu
 		this.setLookupsDisabled( true );
 
 		// Parent method
-		retval = GlobalUserInputWidget.super.prototype.focus.apply( this, arguments );
+		const retval = GlobalUserInputWidget.super.prototype.focus.apply( this, arguments );
 
 		this.setLookupsDisabled( false );
 
@@ -71,7 +69,7 @@
 	 * @inheritdoc
 	 */
 	GlobalUserInputWidget.prototype.getLookupRequest = function () {
-		var inputValue = this.value;
+		const inputValue = this.value;
 
 		return new mw.Api().get( {
 			action: 'query',
@@ -103,11 +101,10 @@
 	 * @return {OO.ui.MenuOptionWidget[]} Menu items
 	 */
 	GlobalUserInputWidget.prototype.getLookupMenuOptionsFromData = function ( data ) {
-		var len, i, user,
-			items = [];
+		const items = [];
 
-		for ( i = 0, len = data.length; i < len; i++ ) {
-			user = data[ i ] || {};
+		for ( let i = 0, len = data.length; i < len; i++ ) {
+			const user = data[ i ] || {};
 			items.push( new OO.ui.MenuOptionWidget( {
 				label: user.name,
 				data: user.name

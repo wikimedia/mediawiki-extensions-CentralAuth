@@ -1,8 +1,8 @@
-$( function () {
+$( () => {
 	// Confirm renames
-	mw.util.$content.find( 'form' ).first().on( 'submit', function () {
+	mw.util.$content.find( 'form' ).first().on( 'submit',
 		// TODO: Convert this to OOUI.
 		// eslint-disable-next-line no-alert
-		return confirm( mw.msg( 'centralauth-rename-confirm' ) );
-	} );
+		() => confirm( mw.msg( 'centralauth-rename-confirm' ) )
+	);
 } );

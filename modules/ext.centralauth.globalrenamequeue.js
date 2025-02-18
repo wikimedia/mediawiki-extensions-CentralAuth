@@ -1,20 +1,20 @@
 ( function () {
 	'use strict';
 	/* eslint-disable no-alert, no-jquery/no-global-selector */
-	$( function () {
+	$( () => {
 		// Confirm renames
-		$( '#mw-renamequeue-approve' ).on( 'click', function () {
+		$( '#mw-renamequeue-approve' ).on( 'click',
 			// TODO: Convert this to OOUI.
-			return confirm( mw.msg( 'centralauth-rename-confirm' ) );
-		} );
-		$( '#mw-renamequeue-approve-vanish' ).on( 'click', function () {
+			() => confirm( mw.msg( 'centralauth-rename-confirm' ) )
+		);
+		$( '#mw-renamequeue-approve-vanish' ).on( 'click',
 			// TODO: Convert this to OOUI.
-			return confirm( mw.msg( 'centralauth-rename-confirm-vanish' ) );
-		} );
-		$( '#mw-renamequeue-deny' ).on( 'click', function () {
+			() => confirm( mw.msg( 'centralauth-rename-confirm-vanish' ) )
+		);
+		$( '#mw-renamequeue-deny' ).on( 'click',
 			// TODO: Convert this to OOUI.
-			return confirm( mw.msg( 'centralauth-rename-deny' ) );
-		} );
+			() => confirm( mw.msg( 'centralauth-rename-deny' ) )
+		);
 	} );
 	/* eslint-enable no-alert, no-jquery/no-global-selector */
 }() );

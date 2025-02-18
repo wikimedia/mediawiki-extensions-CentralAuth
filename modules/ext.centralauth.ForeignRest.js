@@ -46,13 +46,13 @@
 	 * @inheritdoc
 	 */
 	CentralAuthForeignRest.prototype.ajax = function ( path, ajaxOptions ) {
-		var tokenPromise,
-			self = this,
+		const self = this,
 			parent = CentralAuthForeignRest.super.prototype.ajax,
 			abortedPromise = $.Deferred().reject(
 				'http',
 				{ textStatus: 'abort', exception: 'abort' }
-			).promise(),
+			).promise();
+		let tokenPromise,
 			abortable,
 			aborted;
 
@@ -62,32 +62,27 @@
 		} else if ( this.foreignLoginPromise ) {
 			tokenPromise = this.foreignLoginPromise.then(
 				// If succeeded, no 'centralauthtoken' needed
-				function () {
-					return $.Deferred().reject();
-				},
+				() => $.Deferred().reject(),
 				// If failed, get the token
-				function () {
-					return ( abortable = self.foreignActionApi.getCentralAuthToken() );
-				}
+				() => ( abortable = self.foreignActionApi.getCentralAuthToken() )
 			);
 		} else {
 			tokenPromise = abortable = self.foreignActionApi.getCentralAuthToken();
 		}
 
 		return tokenPromise.then(
-			function ( centralAuthToken ) {
-				var newAjaxOptions;
+			( centralAuthToken ) => {
 				if ( aborted ) {
 					return abortedPromise;
 				}
 
-				newAjaxOptions = Object.assign( {}, ajaxOptions );
+				const newAjaxOptions = Object.assign( {}, ajaxOptions );
 				newAjaxOptions.headers = Object.assign( {}, newAjaxOptions.headers, {
 					Authorization: 'CentralAuthToken ' + centralAuthToken
 				} );
 				return ( abortable = parent.call( self, path, newAjaxOptions ) );
 			},
-			function () {
+			() => {
 				if ( aborted ) {
 					return abortedPromise;
 				}
