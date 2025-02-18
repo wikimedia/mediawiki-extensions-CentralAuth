@@ -197,7 +197,7 @@
 	"centralauth-error-token-wronguser": "Хьан сесси декъашхочун цӀарца йогӀуш йац.\nЦхьаъ зуламан дӀайаздарца болх боло гӀерташ хила мега.\nХьой кхечу дӀайаздарца болх боло гӀертахь, дехар до, цӀа хьалха хӀара сеанс дӀайерзайе.",
 	"centralauth-error-wrongprovider": "ХӀара белхан агӀо тӀекхочуш йац, $1 лелича.",
 	"centralauth-finish-incomplete": "Масех аккаунт цхьаьнатоьхна оцу парольца.\nКхин йолу аккаунташ цкъачунна тӀечӀагӀйина йац.",
-	"centralauth-finish-login": "ЧугӀо",
+	"centralauth-finish-login": "Вовзийта",
 	"centralauth-finish-noconfirms": "ХӀокху паролца бакъдан луш дӀайаздарш дац.",
 	"centralauth-finish-password": "Пароль:",
 	"centralauth-finish-problems": "Нагахь санна проблемаш йелахь йа билгалйаьхна аккаунташ хьайн долахь йацахь [[m:Special:MyLanguage/Help:Unified login|хьажа гӀоьнан информаци]]...",
