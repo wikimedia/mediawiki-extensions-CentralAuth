@@ -100,36 +100,36 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$amKey = 'AuthManagerSpecialPage:return:' . $special->getName();
 
 		// default assumption is that we're not doing SUL3
-		$state = SharedDomainUtils::SUL3_ROLLOUT_OFF;
-
+		$isSul3Enabled = false;
 		if ( !$this->sharedDomainUtils->isSharedDomain()
-			&& ( $special->getName() === 'CreateAccount' || $special->getName() === 'Userlogin' ) ) {
-			$state = $this->sharedDomainUtils->isSul3Enabled( $request );
-			if ( $state == SharedDomainUtils::SUL3_ROLLOUT_STATUS_UNSET ) {
+			&& ( $special->getName() === 'CreateAccount' || $special->getName() === 'Userlogin' )
+		) {
+			$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request, $isSul3StateUnset );
+			if ( $isSul3StateUnset ) {
 				// we will either:
 				// set an sul3 wanted cookie for IP users because IP matches a cutoff
 				// set an sul3 wanted cookie for IP users because sul3 is enabled for everyone on the wiki
 				// set SUL3 rollout global pref for user from UserName cookie
 				// and the next call to isSul3Enabled will indicate SUL3RolloutParticipating
-				$state = $this->checkSUL3RolloutParticipation( $request, $special->getName() );
+				$isSul3Enabled = $this->checkSUL3RolloutParticipation( $request, $special->getName() );
 			}
 		}
-		if ( $special->getName() === 'CreateAccount' ) {
-			if ( $state == SharedDomainUtils::SUL3_ROLLOUT_ON ) {
-				// In SUL3 mode, account creation is seen locally as a login, so redirect
-				// there. The 'sul3-action' flag will ensure that the user ends up on the
-				// account creation page once on the central domain.
-				if ( !$this->sharedDomainUtils->isSharedDomain() ) {
-					$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
-					$params = [];
-					$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
-					$params['sul3-action'] = 'signup';
-					$url = wfAppendQuery( $localLoginUrl, $params );
 
-					$special->getOutput()->redirect( $url );
-					return true;
-				}
-			}
+		// In SUL3 mode, account creation is seen locally as a login, so redirect
+		// there. The 'sul3-action' flag will ensure that the user ends up on the
+		// account creation page once on the central domain.
+		if ( $special->getName() === 'CreateAccount'
+			&& $isSul3Enabled
+			&& !$this->sharedDomainUtils->isSharedDomain()
+		) {
+			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
+			$params = [];
+			$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
+			$params['sul3-action'] = 'signup';
+			$url = wfAppendQuery( $localLoginUrl, $params );
+
+			$special->getOutput()->redirect( $url );
+			return false;
 		}
 
 		// Only attempt top-level autologin if the user is about to log in, the login isn't
@@ -239,29 +239,27 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	}
 
 	/**
+	 * Given a user who isn't in either the SUL2 or SUL3 cohort yet, select a cohort for them.
 	 * @param WebRequest $request
 	 * @param string $specialPageName
-	 * @return bool|null
+	 * @return bool True if the user is in the SUL3 cohort.
 	 */
-	private function checkSUL3RolloutParticipation( $request, $specialPageName ) {
-		$isSignup = false;
-		if ( $specialPageName === 'CreateAccount' ) {
-			$isSignup = true;
-		}
+	private function checkSUL3RolloutParticipation( $request, $specialPageName ): bool {
+		$isSignup = ( $specialPageName === 'CreateAccount' );
 		$user = RequestContext::getMain()->getUser();
 		if ( $isSignup ) {
 			if ( $this->shouldSetSUL3RolloutCookie( $request, $user ) ) {
 				$this->sharedDomainUtils->setSUL3RolloutCookie( $request );
-				return SharedDomainUtils::SUL3_ROLLOUT_ON;
+				return true;
 			}
 		} elseif ( $this->sharedDomainUtils->shouldSetSUL3RolloutGlobalPref( $request, $user ) ) {
 			// note that we don't check first to see if the pref
 			// is already set, and skip in that case; should we?
 			// same for the above call to this method
 			$this->testresults = $this->sharedDomainUtils->setSUL3RolloutGlobalPref( $user, true );
-			return SharedDomainUtils::SUL3_ROLLOUT_ON;
+			return true;
 		}
-		return SharedDomainUtils::SUL3_ROLLOUT_OFF;
+		return false;
 	}
 
 	/**
