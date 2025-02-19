@@ -354,9 +354,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				$this->getServiceContainer()->getTitleFactory(),
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				$this->getServiceContainer()->get( "MobileFrontend.Context" ),
-				false,
-				null,
-				$this->getServiceContainer()->getUserNameUtils()
+				false
 			] )
 			->onlyMethods( [ 'isSharedDomain', 'isSul3Enabled' ] )
 			->getMock();
