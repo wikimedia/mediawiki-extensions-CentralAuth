@@ -165,18 +165,12 @@ class CentralAuthHooks implements
 
 	/**
 	 * Add a little pretty to the preferences user info section
-	 * and add a global preference for SUL3 rollout
 	 *
 	 * @param User $user
 	 * @param array &$preferences
 	 * @return bool
 	 */
 	public function onGetPreferences( $user, &$preferences ) {
-		// for SUL3 rollout, a hidden preference unrelated to everything else
-		$preferences[SharedDomainUtils::SUL3_GLOBAL_PREF] = [
-			'type' => 'api'
-		];
-
 		// Possible states:
 		// - account not merged at all
 		// - global accounts exists, but this local account is unattached
