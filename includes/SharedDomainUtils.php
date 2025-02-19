@@ -32,11 +32,6 @@ class SharedDomainUtils {
 	// used to mark an IP user for the SUL3 rollout
 	public const SUL3_WANTED_COOKIE = 'sul3wanted';
 
-	// status values for isSul3Enabled()
-	public const SUL3_ROLLOUT_OFF = false;
-	public const SUL3_ROLLOUT_ON = true;
-	public const SUL3_ROLLOUT_STATUS_UNSET = null;
-
 	private Config $config;
 	private TitleFactory $titleFactory;
 	private HookRunner $hookRunner;
@@ -137,9 +132,15 @@ class SharedDomainUtils {
 	 *   keeping the login process consistent for each user... more or less.
 	 *
 	 * @param WebRequest $request
-	 * @return bool|null
+	 * @param bool|null &$isUnset Set to true if the SUL3 status is unset
+	 *   (neither explicitly opted in nor opted out, so the user's cohort
+	 *   still needs to be determined). The return value will be false in
+	 *   that case.
+	 * @return bool
 	 */
-	public function isSul3Enabled( WebRequest $request ): ?bool {
+	public function isSul3Enabled( WebRequest $request, &$isUnset = null ): bool {
+		$isUnset = false;
+
 		// T379816: The `clientlogin` API should still work in SUL3 mode as if
 		//    we're in SUL2 mode regardless of whether SUL3 is enabled or not.
 		//    There are some edge-cases handled below like:
@@ -156,7 +157,7 @@ class SharedDomainUtils {
 			//     This can happen for mobile apps (iOS for example) users.
 			$user = $request->getSession()->getUser();
 			if ( $user->isTemp() || $user->isAnon() ) {
-				return self::SUL3_ROLLOUT_OFF;
+				return false;
 			}
 		}
 
@@ -166,23 +167,22 @@ class SharedDomainUtils {
 		if ( in_array( 'query-flag', $sul3Config, true )
 			&& $request->getCheck( 'usesul3' )
 		) {
-			if ( !$request->getFuzzyBool( 'usesul3' ) ) {
-				return self::SUL3_ROLLOUT_OFF;
-			}
-			return self::SUL3_ROLLOUT_ON;
+			return $request->getFuzzyBool( 'usesul3' );
 		} elseif ( in_array( 'cookie', $sul3Config, true )
-			&& $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) === '1'
+			&& $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) !== null
 		) {
-			return self::SUL3_ROLLOUT_ON;
+			return (bool)$request->getCookie( self::SUL3_COOKIE_FLAG, '' );
 		} elseif ( in_array( 'always', $sul3Config, true ) ) {
-			return self::SUL3_ROLLOUT_ON;
+			return true;
 		}
 
 		// don't do any looking at users and sessions and the like, if
 		// we're not supposed to (note that User::getName() will
 		// likely try to loadFromSession() which will explode otherwise)
 		if ( !$user->isSafeToLoad() ) {
-			return self::SUL3_ROLLOUT_STATUS_UNSET;
+			// we don't really know whether the user has an unset status, let's go with yes
+			$isUnset = true;
+			return false;
 		}
 
 		// we have not gotten a rollout setting for the user previously.
@@ -192,19 +192,15 @@ class SharedDomainUtils {
 
 		if ( $config->get( CAMainConfigNames::Sul3RolloutSignupCookie ) ) {
 			if ( self::hasSUL3WantedCookie( $request ) ) {
-				return self::SUL3_ROLLOUT_ON;
+				return true;
 			}
 		}
 
 		// get prefs the expected way for named users, but if the user is an IP
 		// with a UserName cookie, we will get the prefs for the user from the cookie
 		$flag = $this->getUserSUL3RolloutFlag( $user, $request );
-		if ( $flag === false ) {
-			return self::SUL3_ROLLOUT_OFF;
-		} elseif ( $flag === true ) {
-			return self::SUL3_ROLLOUT_ON;
-		}
-		return self::SUL3_ROLLOUT_STATUS_UNSET;
+		$isUnset = ( $flag === null );
+		return (bool)$flag;
 	}
 
 	/**
@@ -248,43 +244,40 @@ class SharedDomainUtils {
 	 * @return bool|null
 	 */
 	private function getUserSUL3RolloutFlag( $user, $request ) {
+		$noPrefsAvailable = null;
+
+		// check the session's UserName cookie for IP users
+		$prefsUser = IPUtils::isIPAddress( $user->getName() )
+			? ( self::getLastUser( $user, $request ) ?: $user )
+			: $user;
+
 		// if we have an IP user, this will always fall through
-		$userFlag = null;
-		if ( isset( $this->userSUL3RolloutFlags[ $user->getName() ] ) ) {
-			$userFlag = $this->userSUL3RolloutFlags[ $user->getName() ];
-		}
-		if ( $userFlag === false ) {
-			return self::SUL3_ROLLOUT_OFF;
-		} elseif ( $userFlag === true ) {
-			return self::SUL3_ROLLOUT_ON;
+		if ( isset( $this->userSUL3RolloutFlags[ $prefsUser->getName() ] ) ) {
+			return $this->userSUL3RolloutFlags[ $prefsUser->getName() ];
+		} elseif ( isset( $this->noPrefsAvailable[ $prefsUser->getName() ] ) ) {
+			return $noPrefsAvailable;
 		}
 
 		$globalPreferencesFactory = $this->getGlobalPreferencesFactory();
 
-		$noPrefsAvailable = null;
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'GlobalPreferences' )
 			|| !$globalPreferencesFactory
 		) {
 			return $noPrefsAvailable;
 		}
-		// check the session's UserName cookie for IP users
-		$prefsUser = self::getLastUser( $user, $request ) ?: $user;
 
-		if ( !$prefsUser || IPUtils::isIPAddress( $prefsUser->getName() ) ) {
+		if ( IPUtils::isIPAddress( $prefsUser->getName() ) ) {
 			return $noPrefsAvailable;
 		}
-		if ( isset( $this->noPrefsAvailable[ $prefsUser->getName() ] ) ) {
-			return $noPrefsAvailable;
-		}
+
 		$prefs = $globalPreferencesFactory->getGlobalPreferencesValues( $prefsUser );
 		if ( !$prefs || !isset( $prefs[ self::SUL3_GLOBAL_PREF ] ) ) {
 			$this->noPrefsAvailable[ $prefsUser->getName() ] = true;
 			return $noPrefsAvailable;
 		}
 
-		unset( $this->noPrefsAvailable[ $prefsUser->getName() ] );
 		$flag = (bool)$prefs[ self::SUL3_GLOBAL_PREF ];
-		$this->userSUL3RolloutFlags[ $user->getName() ] = $flag;
+		$this->userSUL3RolloutFlags[ $prefsUser->getName() ] = $flag;
 		return $flag;
 	}
 
@@ -438,7 +431,7 @@ class SharedDomainUtils {
 	 */
 	public function assertSul3Enabled( WebRequest $request ) {
 		Assert::precondition(
-			(bool)$this->isSul3Enabled( $request ),
+			$this->isSul3Enabled( $request ),
 			'SUL3 is not enabled. Set $wgCentralAuthEnableSul3 to boolean true.'
 		);
 	}

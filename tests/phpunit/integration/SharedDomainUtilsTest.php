@@ -124,7 +124,12 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 		/** @var SharedDomainUtils $sut */
 		$sut = $this->getServiceContainer()->get( 'CentralAuth.SharedDomainUtils' );
-		$this->assertSame( $expected, $sut->isSul3Enabled( $fauxRequest ) );
+		$actual = $sut->isSul3Enabled( $fauxRequest, $isUnset );
+		if ( $isUnset ) {
+			$this->assertNull( $expected );
+		} else {
+			$this->assertSame( $expected, $actual );
+		}
 	}
 
 	public function provideIsSul3Enabled_Api() {
@@ -161,7 +166,12 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->onlyMethods( [ 'isSharedDomain' ] )
 			->getMock();
 		$sut->expects( $this->any() )->method( 'isSharedDomain' )->willReturn( $isSharedDomain );
-		$this->assertSame( $expected, $sut->isSul3Enabled( $fauxRequest ) );
+		$actual = $sut->isSul3Enabled( $fauxRequest, $isUnset );
+		if ( $isUnset ) {
+			$this->assertNull( $expected );
+		} else {
+			$this->assertSame( $expected, $actual );
+		}
 	}
 
 	public static function provideIsSul3EnabledWithGlobalPref() {
@@ -229,6 +239,11 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			static fn () => $services->getPreferencesFactory(),
 			$services->getTempUserConfig()
 		);
-		$this->assertSame( $expected, $sharedDomainUtils->isSul3Enabled( $fauxRequest ) );
+		$actual = $sharedDomainUtils->isSul3Enabled( $fauxRequest, $isUnset );
+		if ( $isUnset ) {
+			$this->assertNull( $expected );
+		} else {
+			$this->assertSame( $expected, $actual );
+		}
 	}
 }
