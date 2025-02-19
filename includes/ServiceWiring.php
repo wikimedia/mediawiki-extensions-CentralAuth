@@ -200,18 +200,23 @@ return [
 	},
 
 	'CentralAuth.SharedDomainUtils' => static function ( MediaWikiServices $services ): SharedDomainUtils {
-		$preferencesFactory = $services->getPreferencesFactory();
-		if ( !( $preferencesFactory instanceof GlobalPreferencesFactory ) ) {
-			$preferencesFactory = null;
-		}
+		// work around early access of GlobalPreferencesFactory perturbing service
+		// instantiation order and breaking Wikibase (T386836)
+		$preferencesFactoryFactory = static function () use ( $services ): ?GlobalPreferencesFactory {
+			$preferencesFactory = $services->getPreferencesFactory();
+			if ( !( $preferencesFactory instanceof GlobalPreferencesFactory ) ) {
+				$preferencesFactory = null;
+			}
+			return $preferencesFactory;
+		};
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
 			new HookRunner( $services->getHookContainer() ),
 			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
 			defined( 'MW_API' ) || defined( 'MW_REST_API' ),
-			$preferencesFactory,
-			$services->getUserNameUtils()
+			$preferencesFactoryFactory,
+			$services->getTempUserConfig()
 		);
 	},
 

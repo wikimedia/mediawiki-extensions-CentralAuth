@@ -12,12 +12,13 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
+use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
-use MediaWiki\User\UserNameUtils;
 use MobileContext;
 use RuntimeException;
 use UnexpectedValueException;
 use Wikimedia\Assert\Assert;
+use Wikimedia\IPUtils;
 
 /**
  * Utilities for handling the shared domain name used for SUL3 login.
@@ -42,8 +43,11 @@ class SharedDomainUtils {
 	private ?bool $isSharedDomain = null;
 	private ?MobileContext $mobileContext;
 	private bool $isApiRequest;
-	private ?GlobalPreferencesFactory $globalPreferencesFactory;
-	private UserNameUtils $userNameUtils;
+	/** @var GlobalPreferencesFactory|null|false */
+	private $globalPreferencesFactory = false;
+	/** @var callable():(?GlobalPreferencesFactory) */
+	private $globalPreferencesFactoryFactory;
+	private TempUserConfig $tempUserConfig;
 	private array $userSUL3RolloutFlags = [];
 	private array $noPrefsAvailable = [];
 
@@ -53,16 +57,16 @@ class SharedDomainUtils {
 		HookRunner $hookRunner,
 		?MobileContext $mobileContext,
 		bool $isApiRequest,
-		?GlobalPreferencesFactory $globalPreferencesFactory,
-		UserNameUtils $userNameUtils
+		callable $globalPreferencesFactoryFactory,
+		TempUserConfig $tempUserConfig
 	) {
 		$this->config = $config;
 		$this->titleFactory = $titleFactory;
 		$this->hookRunner = $hookRunner;
 		$this->mobileContext = $mobileContext;
 		$this->isApiRequest = $isApiRequest;
-		$this->globalPreferencesFactory = $globalPreferencesFactory;
-		$this->userNameUtils = $userNameUtils;
+		$this->globalPreferencesFactoryFactory = $globalPreferencesFactoryFactory;
+		$this->tempUserConfig = $tempUserConfig;
 	}
 
 	/**
@@ -209,13 +213,12 @@ class SharedDomainUtils {
 	 *
 	 * @param User $user
 	 * @param WebRequest $request
-	 * @param UserNameUtils $userNameUtils
 	 * @return User|null
 	 */
-	public static function getLastUser( $user, $request, $userNameUtils ) {
+	public static function getLastUser( $user, $request ) {
 		$noUser = null;
 
-		if ( !$userNameUtils->isIP( $user->getName() ) ) {
+		if ( !IPUtils::isIPAddress( $user->getName() ) ) {
 			return $noUser;
 		}
 
@@ -224,6 +227,13 @@ class SharedDomainUtils {
 			return $noUser;
 		}
 		return User::newFromName( $sessionUserName ) ?: $noUser;
+	}
+
+	private function getGlobalPreferencesFactory(): ?GlobalPreferencesFactory {
+		if ( $this->globalPreferencesFactory === false ) {
+			$this->globalPreferencesFactory = ( $this->globalPreferencesFactoryFactory )();
+		}
+		return $this->globalPreferencesFactory;
 	}
 
 	/**
@@ -249,21 +259,24 @@ class SharedDomainUtils {
 			return self::SUL3_ROLLOUT_ON;
 		}
 
+		$globalPreferencesFactory = $this->getGlobalPreferencesFactory();
+
 		$noPrefsAvailable = null;
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'GlobalPreferences' )
-			|| ( !$this->globalPreferencesFactory ) ) {
+			|| !$globalPreferencesFactory
+		) {
 			return $noPrefsAvailable;
 		}
 		// check the session's UserName cookie for IP users
-		$prefsUser = self::getLastUser( $user, $request, $this->userNameUtils ) ?: $user;
+		$prefsUser = self::getLastUser( $user, $request ) ?: $user;
 
-		if ( !$prefsUser || $this->userNameUtils->isIP( $prefsUser->getName() ) ) {
+		if ( !$prefsUser || IPUtils::isIPAddress( $prefsUser->getName() ) ) {
 			return $noPrefsAvailable;
 		}
 		if ( isset( $this->noPrefsAvailable[ $prefsUser->getName() ] ) ) {
 			return $noPrefsAvailable;
 		}
-		$prefs = $this->globalPreferencesFactory->getGlobalPreferencesValues( $prefsUser );
+		$prefs = $globalPreferencesFactory->getGlobalPreferencesValues( $prefsUser );
 		if ( !$prefs || !isset( $prefs[ self::SUL3_GLOBAL_PREF ] ) ) {
 			$this->noPrefsAvailable[ $prefsUser->getName() ] = true;
 			return $noPrefsAvailable;
@@ -360,8 +373,8 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function shouldSetSUL3RolloutGlobalPref( $request, $user ) {
-		if ( $this->userNameUtils->isIP( $user->getName() )
-			|| $this->userNameUtils->isTemp( $user->getName() ) ) {
+		if ( IPUtils::isIPAddress( $user->getName() )
+			|| $this->tempUserConfig->isTempName( $user->getName() ) ) {
 			return false;
 		}
 		if ( $this->sul3AlwaysEnabledHere() ) {
@@ -393,8 +406,10 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function setSUL3RolloutGlobalPref( $user, $value ) {
+		$globalPreferencesFactory = $this->getGlobalPreferencesFactory();
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'GlobalPreferences' )
-			|| ( !$this->globalPreferencesFactory ) ) {
+			|| !$globalPreferencesFactory
+		) {
 			return false;
 		}
 
@@ -403,8 +418,7 @@ class SharedDomainUtils {
 		unset( $this->noPrefsAvailable[ $user->getName() ] );
 
 		// read them, add/update the new one, write them all back. sigh
-		$currentPrefs = $this->globalPreferencesFactory->getGlobalPreferencesValues(
-			$user );
+		$currentPrefs = $globalPreferencesFactory->getGlobalPreferencesValues( $user );
 		// no global user id, apparently. let's just bail in that case
 		if ( $currentPrefs === false ) {
 			return false;
@@ -412,8 +426,7 @@ class SharedDomainUtils {
 
 		$prefs = array_merge( $currentPrefs, [ self::SUL3_GLOBAL_PREF => $value ] );
 
-		$this->globalPreferencesFactory->setGlobalPreferences(
-			$user, $prefs, RequestContext::getMain() );
+		$globalPreferencesFactory->setGlobalPreferences( $user, $prefs, RequestContext::getMain() );
 		return true;
 	}
 
