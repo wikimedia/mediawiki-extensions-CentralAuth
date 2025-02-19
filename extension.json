@@ -674,6 +674,17 @@
 				"DBLoadBalancer"
 			]
 		},
+		"usergroups": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserGroupsHookHandler",
+			"services": [
+				"MainConfig",
+				"TitleFactory",
+				"UserNamePrefixSearch",
+				"UserNameUtils",
+				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
+				"CentralAuth.GlobalGroupLookup"
+			]
+		},
 		"usercreation": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserCreationHookHandler",
 			"services": [
@@ -755,6 +766,7 @@
 		"UserGetEmailAuthenticationTimestamp": "default",
 		"UserGetReservedNames": "default",
 		"UserGetRights": "default",
+		"UserGroupsChanged": "usergroups",
 		"UserIsBot": "default",
 		"UserIsLocked": "default",
 		"UserLoginComplete": "logincomplete",
@@ -855,7 +867,7 @@
 		},
 		"CentralAuthAutomaticGlobalGroups": {
 			"value": [],
-			"description": "Global groups that a user is automatically promoted to if they belong to another group. Array keys are a local or global group, and array values are global groups with automatic membership. The user belongs to a global group if and only if at least one of their other groups promotes them to it."
+			"description": "Global groups that a user is automatically promoted to if they belong to another group. Array keys are a local or global group, and array values are global groups with automatic membership. The user belongs to a global group if and only if at least one of their other groups promotes them to it. Prerequisites for using this config: the automatic global groups need to be created, and must not have the same name as a local group. Note that automatic global groups will be updated even in response to local groups being updated by a user who does not have the `globalgroupmembership` right."
 		},
 		"CentralAuthWikisPerSuppressJob": {
 			"description": "Size of wikis handled in one suppress user job. Keep in mind that one wiki requires ~10 queries.",

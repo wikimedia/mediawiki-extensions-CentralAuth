@@ -180,6 +180,7 @@
 	"centralauth-attach-success": "Used as success message.",
 	"centralauth-attach-text": "Used in the form which is titled {{msg-mw|Centralauth-attach-title}}.\n\nSee also:\n* {{msg-mw|Centralauth-attach-submit}}",
 	"centralauth-attach-title": "Used as title for the form.\n\nSee also:\n* {{msg-mw|Centralauth-attach-text}}\n* {{msg-mw|Centralauth-attach-submit}}",
+	"centralauth-automatic-global-groups-reason": "Reason given in the gblrights/usergroups log when a global group is updated automatically due to an update of local or global groups.",
 	"centralauth-block-already-locked": "{{gender}}\nShown at [[Special:Block]] when the user is already globally locked. Parameters:\n* $1 - the requested username",
 	"centralauth-block-editing-action": "Link text to link user to the local block list when there are actions. Parameters: \n* $1 - Number of actions.",
 	"centralauth-block-editing-page": "Link text to link user to the local block list when there are pages. Parameters: \n* $1 - Number of pages.",
