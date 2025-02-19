@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
@@ -199,12 +200,18 @@ return [
 	},
 
 	'CentralAuth.SharedDomainUtils' => static function ( MediaWikiServices $services ): SharedDomainUtils {
+		$preferencesFactory = $services->getPreferencesFactory();
+		if ( !( $preferencesFactory instanceof GlobalPreferencesFactory ) ) {
+			$preferencesFactory = null;
+		}
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
 			new HookRunner( $services->getHookContainer() ),
 			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
-			defined( 'MW_API' ) || defined( 'MW_REST_API' )
+			defined( 'MW_API' ) || defined( 'MW_REST_API' ),
+			$preferencesFactory,
+			$services->getUserNameUtils()
 		);
 	},
 
