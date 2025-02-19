@@ -3,15 +3,21 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
+use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 
@@ -39,14 +45,21 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
 	private AuthManager $authManager;
+	private Config $config;
 	private HookRunner $hookRunner;
+	private UserNameUtils $userNameUtils;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
+	/** @internal For use in tests only */
+	public bool $testresults;
+
 	/**
 	 * @param AuthManager $authManager
 	 * @param HookContainer $hookContainer
+	 * @param Config $config
+	 * @param UserNameUtils $userNameUtils
 	 * @param CentralAuthTokenManager $tokenManager
 	 * @param CentralDomainUtils $centralDomainUtils
 	 * @param SharedDomainUtils $sharedDomainUtils
@@ -54,15 +67,22 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public function __construct(
 		AuthManager $authManager,
 		HookContainer $hookContainer,
+		Config $config,
+		UserNameUtils $userNameUtils,
 		CentralAuthTokenManager $tokenManager,
 		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
 		$this->hookRunner = new HookRunner( $hookContainer );
+		$this->config = $config;
+		$this->userNameUtils = $userNameUtils;
 		$this->tokenManager = $tokenManager;
 		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
+
+		// used only for integration testing
+		$this->testresults = false;
 	}
 
 	/**
@@ -79,21 +99,37 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$request = $special->getRequest();
 		$amKey = 'AuthManagerSpecialPage:return:' . $special->getName();
 
-		// In SUL3 mode, account creation is seen locally as a login, so redirect
-		// there. The 'sul3-action' flag will ensure that the user ends up on the
-		// account creation page once on the central domain.
-		if ( $special->getName() === 'CreateAccount'
-			&& $this->sharedDomainUtils->isSul3Enabled( $request )
-			&& !$this->sharedDomainUtils->isSharedDomain()
-		) {
-			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
-			$params = [];
-			$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
-			$params['sul3-action'] = 'signup';
-			$url = wfAppendQuery( $localLoginUrl, $params );
+		// default assumption is that we're not doing SUL3
+		$state = SharedDomainUtils::SUL3_ROLLOUT_OFF;
 
-			$special->getOutput()->redirect( $url );
-			return true;
+		if ( !$this->sharedDomainUtils->isSharedDomain()
+			&& ( $special->getName() === 'CreateAccount' || $special->getName() === 'Userlogin' ) ) {
+			$state = $this->sharedDomainUtils->isSul3Enabled( $request );
+			if ( $state == SharedDomainUtils::SUL3_ROLLOUT_STATUS_UNSET ) {
+				// we will either:
+				// set an sul3 wanted cookie for IP users because IP matches a cutoff
+				// set an sul3 wanted cookie for IP users because sul3 is enabled for everyone on the wiki
+				// set SUL3 rollout global pref for user from UserName cookie
+				// and the next call to isSul3Enabled will indicate SUL3RolloutParticipating
+				$state = $this->checkSUL3RolloutParticipation( $request, $special->getName() );
+			}
+		}
+		if ( $special->getName() === 'CreateAccount' ) {
+			if ( $state == SharedDomainUtils::SUL3_ROLLOUT_ON ) {
+				// In SUL3 mode, account creation is seen locally as a login, so redirect
+				// there. The 'sul3-action' flag will ensure that the user ends up on the
+				// account creation page once on the central domain.
+				if ( !$this->sharedDomainUtils->isSharedDomain() ) {
+					$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
+					$params = [];
+					$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
+					$params['sul3-action'] = 'signup';
+					$url = wfAppendQuery( $localLoginUrl, $params );
+
+					$special->getOutput()->redirect( $url );
+					return true;
+				}
+			}
 		}
 
 		// Only attempt top-level autologin if the user is about to log in, the login isn't
@@ -202,4 +238,60 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		] );
 	}
 
+	/**
+	 * @param WebRequest $request
+	 * @param string $specialPageName
+	 * @return bool|null
+	 */
+	private function checkSUL3RolloutParticipation( $request, $specialPageName ) {
+		$isSignup = false;
+		if ( $specialPageName === 'CreateAccount' ) {
+			$isSignup = true;
+		}
+		$user = RequestContext::getMain()->getUser();
+		if ( $isSignup ) {
+			if ( $this->shouldSetSUL3RolloutCookie( $request, $user ) ) {
+				$this->sharedDomainUtils->setSUL3RolloutCookie( $request );
+				return SharedDomainUtils::SUL3_ROLLOUT_ON;
+			}
+		} elseif ( $this->sharedDomainUtils->shouldSetSUL3RolloutGlobalPref( $request, $user ) ) {
+			// note that we don't check first to see if the pref
+			// is already set, and skip in that case; should we?
+			// same for the above call to this method
+			$this->testresults = $this->sharedDomainUtils->setSUL3RolloutGlobalPref( $user, true );
+			return SharedDomainUtils::SUL3_ROLLOUT_ON;
+		}
+		return SharedDomainUtils::SUL3_ROLLOUT_OFF;
+	}
+
+	/**
+	 * check if we should set SUL3 wanted cookie:
+	 * is the user an IP address? is the cookie already set?
+	 * does the IP address meet the conditions for participation
+	 * in the rollout?
+	 * alternatively, is the local wiki set to always be sul3 enabled?
+	 * return true if so, false otherwise
+	 *
+	 * @param Webrequest $request
+	 * @param User $user
+	 * @return bool
+	 */
+	private function shouldSetSUL3RolloutCookie( $request, $user ) {
+		if ( !$this->config->get( CAMainConfigNames::Sul3RolloutSignupCookie ) ) {
+			return false;
+		}
+		$name = $user->getName();
+		if ( !$this->userNameUtils->isIP( $name ) ) {
+			return false;
+		}
+		if ( $this->sharedDomainUtils->sul3AlwaysEnabledHere() ) {
+			return true;
+		}
+		$sul3RolloutAnonUserConfig = $this->config->get( CAMainConfigNames::Sul3RolloutAnonSignupPercentage );
+		if ( $this->sharedDomainUtils->checkPercentage(
+			$user, $sul3RolloutAnonUserConfig, 'Sul3RolloutAnonSignupPercentage' ) ) {
+			return true;
+		}
+		return false;
+	}
 }
