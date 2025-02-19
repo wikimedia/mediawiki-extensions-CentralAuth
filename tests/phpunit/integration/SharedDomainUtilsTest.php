@@ -11,6 +11,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWikiIntegrationTestCase;
 use TestUser;
+use Wikimedia\IPUtils;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -32,8 +33,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
-			$services->getPreferencesFactory(),
-			$services->getUserNameUtils(),
+			static fn () => $services->getPreferencesFactory(),
+			$services->getTempUserConfig(),
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertTrue( $wrappedHandler->isSharedDomain() );
@@ -51,8 +52,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
-			$services->getPreferencesFactory(),
-			$services->getUserNameUtils()
+			static fn () => $services->getPreferencesFactory(),
+			$services->getTempUserConfig()
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertFalse( $wrappedHandler->isSharedDomain() );
@@ -154,8 +155,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
 				$isAPiRequest,
-				$this->getServiceContainer()->getPreferencesFactory(),
-				$this->getServiceContainer()->getUserNameUtils(),
+				fn () => $this->getServiceContainer()->getPreferencesFactory(),
+				$this->getServiceContainer()->getTempUserConfig(),
 			] )
 			->onlyMethods( [ 'isSharedDomain' ] )
 			->getMock();
@@ -205,7 +206,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->willReturn( [ 'centralauth-use-sul3' => $prefValue ] );
 		$this->setService( 'PreferencesFactory', $globalPreferencesFactory );
 
-		if ( $this->getServiceContainer()->getUserNameUtils()->isIP( $userOrIP ) ) {
+		if ( IPUtils::isIPAddress( $userOrIP ) ) {
 			$user = $this->getServiceContainer()->getUserFactory()->newAnonymous( $userOrIP );
 		} else {
 			$user = ( new TestUser( $userOrIP ) )->getUser();
@@ -225,8 +226,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
-			$services->getPreferencesFactory(),
-			$services->getUserNameUtils()
+			static fn () => $services->getPreferencesFactory(),
+			$services->getTempUserConfig()
 		);
 		$this->assertSame( $expected, $sharedDomainUtils->isSul3Enabled( $fauxRequest ) );
 	}
