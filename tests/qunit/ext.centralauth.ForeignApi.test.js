@@ -8,14 +8,14 @@ QUnit.module( 'ext.centralauth.ForeignApi', QUnit.newMwEnvironment( {
 QUnit.test( 'Anonymous users do not get centralauthtoken', function ( assert ) {
 	mw.config.set( 'wgUserName', null );
 
-	this.server.respond( function ( request ) {
+	this.server.respond( ( request ) => {
 		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-	var api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	var spy = this.sandbox.spy( api, 'getCentralAuthToken' );
+	const api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
+	const spy = this.sandbox.spy( api, 'getCentralAuthToken' );
 
-	return api.get( {} ).then( function () {
+	return api.get( {} ).then( () => {
 		assert.false( spy.called, 'Not called' );
 	} );
 } );
@@ -27,16 +27,16 @@ QUnit.test( 'Logged in users get centralauthtoken if not logged in remotely', fu
 		$.Deferred().reject()
 	);
 
-	this.server.respond( function ( request ) {
+	this.server.respond( ( request ) => {
 		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-	var api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	var spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
+	const api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
+	const spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
 		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
 	);
 
-	return api.get( {} ).then( function () {
+	return api.get( {} ).then( () => {
 		assert.true( spy.called, 'Called' );
 	} );
 } );
@@ -48,16 +48,16 @@ QUnit.test( 'Logged in users do not get centralauthtoken if logged in remotely',
 		$.Deferred().resolve()
 	);
 
-	this.server.respond( function ( request ) {
+	this.server.respond( ( request ) => {
 		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-	var api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	var spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
+	const api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
+	const spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
 		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
 	);
 
-	return api.get( {} ).then( function () {
+	return api.get( {} ).then( () => {
 		assert.false( spy.called, 'Called' );
 	} );
 } );

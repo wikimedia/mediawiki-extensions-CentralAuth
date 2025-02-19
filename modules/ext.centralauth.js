@@ -1,5 +1,5 @@
 ( function () {
-	var $methodHint;
+	let $methodHint;
 
 	function showMethodHint( methodName, e ) {
 		if ( !$methodHint ) {
@@ -38,14 +38,14 @@
 			.fadeIn();
 	}
 
-	$( function () {
+	$( () => {
 		// Back link for CentralLogin/start
 		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '#centralauth-backlink-section' ).append(
 			$( '<a>' )
 				.attr( 'href', '#' )
 				.text( mw.msg( 'centralauth-completelogin-back' ) )
-				.on( 'click', function ( e ) {
+				.on( 'click', ( e ) => {
 					e.preventDefault();
 					parent.history.back();
 				} )
@@ -59,10 +59,10 @@
 
 		// Confirm account deletions
 		// eslint-disable-next-line no-jquery/no-global-selector
-		$( '#mw-centralauth-delete input[type="submit"]' ).on( 'click', function () {
+		$( '#mw-centralauth-delete input[type="submit"]' ).on( 'click',
 			// TODO: Convert this to OOUI.
 			// eslint-disable-next-line no-alert
-			return confirm( mw.msg( 'centralauth-admin-delete-confirm' ) );
-		} );
+			() => confirm( mw.msg( 'centralauth-admin-delete-confirm' ) )
+		);
 	} );
 }() );

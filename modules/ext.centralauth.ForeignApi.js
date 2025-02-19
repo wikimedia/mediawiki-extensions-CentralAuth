@@ -1,6 +1,6 @@
 ( function () {
 
-	var
+	const
 		hasOwnProperty = Object.prototype.hasOwnProperty,
 		// Names of old token types which can be mapped to 'csrf' token now
 		csrfTokenOldTypes = [ 'csrf', 'edit', 'delete', 'protect', 'move', 'block', 'unblock',
@@ -64,7 +64,7 @@
 	 * @return {jQuery.Promise}
 	 */
 	CentralAuthForeignApi.prototype.getCentralAuthToken = function ( ajaxOptions ) {
-		return this.localApi.get( { action: 'centralauthtoken' }, ajaxOptions ).then( function ( resp ) {
+		return this.localApi.get( { action: 'centralauthtoken' }, ajaxOptions ).then( ( resp ) => {
 			if ( resp.error ) {
 				return $.Deferred().reject( resp.error );
 			} else {
@@ -83,7 +83,7 @@
 	 * @return {jQuery.Promise}
 	 */
 	CentralAuthForeignApi.prototype.checkForeignLogin = function () {
-		var foreignApi = this;
+		const foreignApi = this;
 		if ( this.foreignLoginPromise ) {
 			return this.foreignLoginPromise;
 		}
@@ -92,8 +92,8 @@
 			{ action: 'query', meta: 'userinfo|tokens' },
 			{ type: 'GET' }
 		)
-			.then( function ( resp ) {
-				var userinfo = resp.query.userinfo;
+			.then( ( resp ) => {
+				const userinfo = resp.query.userinfo;
 				if ( userinfo.anon === undefined && userinfo.name === mw.config.get( 'wgUserName' ) ) {
 					// We are logged in on the foreign wiki
 					foreignApi.noTokenNeeded = true;
@@ -108,21 +108,19 @@
 	 * @inheritdoc
 	 */
 	CentralAuthForeignApi.prototype.getToken = function ( type, assert, ajaxOptions ) {
-		var foreignApi = this;
-		var parent = CentralAuthForeignApi.super.prototype.getToken;
+		const foreignApi = this;
+		const parent = CentralAuthForeignApi.super.prototype.getToken;
 		if ( this.foreignLoginPromise && csrfTokenOldTypes.indexOf( type ) !== -1 ) {
 			ajaxOptions = ajaxOptions || {};
-			var abortable = foreignApi.makeAbortablePromise( ajaxOptions );
+			const abortable = foreignApi.makeAbortablePromise( ajaxOptions );
 			return this.foreignLoginPromise.then(
-				function () {
+				() => {
 					if ( foreignApi.csrfToken && !foreignApi.csrfTokenBad ) {
 						return foreignApi.csrfToken;
 					}
 					return parent.call( foreignApi, type, assert, ajaxOptions );
 				},
-				function () {
-					return parent.call( foreignApi, type, assert, ajaxOptions );
-				}
+				() => parent.call( foreignApi, type, assert, ajaxOptions )
 			).promise( abortable );
 		}
 		return parent.call( this, type, assert, ajaxOptions );
@@ -142,38 +140,34 @@
 	 */
 	CentralAuthForeignApi.prototype.ajax = function ( parameters, ajaxOptions ) {
 		ajaxOptions = ajaxOptions || {};
-		var abortable = this.makeAbortablePromise( ajaxOptions );
+		const abortable = this.makeAbortablePromise( ajaxOptions );
 
-		var tokenPromise,
-			foreignApi = this,
+		const foreignApi = this,
 			parent = CentralAuthForeignApi.super.prototype.ajax,
 			// some mw.Api calls modify ajaxOptions, make sure not to reuse it
 			tokenAjaxOptions = Object.assign( {}, ajaxOptions );
 
+		let tokenPromise;
 		// If we know we can't get a 'centralauthtoken', or if one was provided, don't request it
 		if ( this.noTokenNeeded || hasOwnProperty.call( parameters, 'centralauthtoken' ) ) {
 			tokenPromise = $.Deferred().reject();
 		} else if ( this.foreignLoginPromise ) {
 			tokenPromise = this.foreignLoginPromise.then(
 				// If succeeded, no 'centralauthtoken' needed
-				function () {
-					return $.Deferred().reject();
-				},
+				() => $.Deferred().reject(),
 				// If failed, get the token
-				function () {
-					return foreignApi.getCentralAuthToken( tokenAjaxOptions );
-				}
+				() => foreignApi.getCentralAuthToken( tokenAjaxOptions )
 			);
 		} else {
 			tokenPromise = this.getCentralAuthToken( tokenAjaxOptions );
 		}
 
 		return tokenPromise.then(
-			function ( centralAuthToken ) {
-				var url, newParameters, newAjaxOptions;
+			( centralAuthToken ) => {
+				let url, newAjaxOptions;
 
 				// Add 'centralauthtoken' query parameter
-				newParameters = Object.assign( { centralauthtoken: centralAuthToken }, parameters );
+				const newParameters = Object.assign( { centralauthtoken: centralAuthToken }, parameters );
 				// It must be part of the request URI, and not just POST request body
 				if ( ajaxOptions.type !== 'GET' ) {
 					url = ( ajaxOptions && ajaxOptions.url ) || foreignApi.defaults.ajax.url;
@@ -186,11 +180,9 @@
 
 				return parent.call( foreignApi, newParameters, newAjaxOptions );
 			},
-			function () {
-				// We couldn't get the token, but continue anyway. This is expected in some cases,
-				// like anonymous users.
-				return parent.call( foreignApi, parameters, ajaxOptions );
-			}
+			// We couldn't get the token, but continue anyway. This is expected in some cases,
+			// like anonymous users.
+			() => parent.call( foreignApi, parameters, ajaxOptions )
 		).promise( abortable );
 	};
 

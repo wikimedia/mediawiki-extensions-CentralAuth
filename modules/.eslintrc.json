@@ -1,15 +1,11 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/client-es5",
+		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
 	],
 	"env": {
 		"commonjs": true
-	},
-	"rules": {
-		"no-jquery/no-extend": "warn",
-		"es-x/no-object-assign": "warn"
 	}
 }

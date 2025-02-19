@@ -1,5 +1,4 @@
 ( function () {
-	var url, params, len, param, i;
 	// Are we already logged in?
 	if ( mw.config.get( 'wgUserName' ) !== null ) {
 		return;
@@ -33,17 +32,16 @@
 	// The referenced URL will redirect a few times (HTTP 302) and then respond
 	// with JavaScript code that completes the login.
 	// The data comes from CentralAuthHooks::getCentralautologinJsData().
-	url = require( './data.json' ).startURL;
+	let url = require( './data.json' ).startURL;
 
 	if ( url ) {
 		if ( mw.config.get( 'wgCanonicalSpecialPageName' ) === 'Userlogin' ) {
 			url += '&return=1';
 
-			params = location.search.slice( 1 ).split( '&' );
-			len = params.length;
-			for ( i = 0; i < len; i++ ) {
-				param = params[ i ].split( '=' );
-				param = decodeURIComponent( param[ 0 ] );
+			const params = location.search.slice( 1 ).split( '&' );
+			for ( let i = 0, len = params.length; i < len; i++ ) {
+				const paramParts = params[ i ].split( '=' );
+				const param = decodeURIComponent( paramParts[ 0 ] );
 				if ( param === 'returnto' || param === 'returntoquery' ) {
 					url += '&' + params[ i ];
 				}
