@@ -114,7 +114,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthIdLookup",
 			"services": [
 				"MainConfig",
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthUserCache"
 			]
 		}
 	},
