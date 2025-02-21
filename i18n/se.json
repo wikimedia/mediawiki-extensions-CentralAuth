@@ -59,8 +59,6 @@
 	"centralauth-finish-password": "Beassansátni:",
 	"centralauth-globalgroupperms-newgroupname": "Joavkku ođđa namma:",
 	"centralauth-listusers-locked": "lássejuvvon",
-	"centralauth-log-entry-lock": "lássii vuogádatviidosaš dovddaldaga \"$1\"",
-	"centralauth-log-entry-lockandhide": "lássii ja čiegai vuogádatviidosaš dovddaldaga \"$1\"",
 	"centralauth-log-status-hidden": "čihkkon",
 	"centralauth-log-status-locked": "lássejuvvon",
 	"centralauth-login-error-locked": "{{GENDER:$1|Don}} it sáhte čálihit sisa, daningo {{GENDER:$1|du}} dovddaldat leat lássejuvvon vuogádatviidosaččat.",

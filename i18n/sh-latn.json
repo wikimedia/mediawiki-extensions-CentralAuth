@@ -290,7 +290,6 @@
 	"centralauth-rename-table-status-queued": "Na čekanju",
 	"centralauth-rename-viewprogress": "Prikaži tok",
 	"centralauth-renameuser-merged": "{{GENDER:$1|Korisnik je prešao|Korisnica je prešla|Korisnik je prešao}} na sistem za prijavljivanje s ujedinjenim nalogom.\nPreimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.",
-	"centralauth-rightslog-entry-groupperms": "{{GENDER:|je promenio|je promenila|je promenio}} dozvole grupe za $1 iz $2 u $3",
 	"centralauth-rightslog-header": "Ovaj dnevnik sadrži operacije o globalnim grupama: promjene u članstvu i dozvolama",
 	"centralauth-rightslog-name": "Evidencija globalnih prava",
 	"centralauth-rightslog-set-optin": "zasnovan na pristajanju",

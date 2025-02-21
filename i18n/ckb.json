@@ -123,6 +123,7 @@
 	"globalrenamerequest-submit-text": "داواکارییەکە پاشەکەوت بکە",
 	"globalrenamerequest-username-label": "ناوی بەکارھێنەری ئێستا:",
 	"globalusers": "پێڕستی ھەژمارە سەرانسەرییەکان",
+	"logentry-gblrights-usergroups": "$1 ئەندامێتیی سەرانسەریی بۆ {{GENDER:$6|$3}} {{GENDER:$2|گۆڕی}}: $7",
 	"mergeaccount": "ڕەوشی یەکگرتووکردنی چوونەژوورەوە",
 	"right-centralauth-lock": "داخستن یان کردنەوەی ھەژماری جیھانی",
 	"right-centralauth-merge": "کردنەیەکی ھەژمارەکەیان",

@@ -205,7 +205,6 @@
 	"centralauth-readonly": "CentralAuth Databasis gesluit",
 	"centralauth-readonlytext": "Die CentralAuth databasis is tans gesluit vir nuwe artikelwysigings en ​​ander veranderinge, waarskynlik vir roetine databasisonderhoud, waarna dit terug na normaal.",
 	"centralauth-rename-form-newname": "Nuwe gebruikersnaam",
-	"centralauth-rightslog-entry-groupperms": "Verander groepsregte vir $1 van $2 na $3",
 	"centralauth-rightslog-header": "Hierdie log-bedrywighede op die globale groepe: lidmaatskap en regte veranderinge",
 	"centralauth-rightslog-name": "Logboek van globale regte",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|sekonde|sekondes}} gelede",
