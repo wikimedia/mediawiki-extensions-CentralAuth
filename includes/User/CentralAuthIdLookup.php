@@ -31,6 +31,7 @@ use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Services\DestructibleService;
 
 /**
@@ -55,8 +56,8 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromPrimaryDb = DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST );
-		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
+		$fromPrimaryDb = $this->shouldUsePrimary( $flags );
+		$db = $this->getCentralDB( $flags );
 
 		$res = $db->newSelectQueryBuilder()
 			->queryInfo( CentralAuthUser::selectQueryInfo() )
@@ -86,7 +87,7 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 		}
 
 		$audience = $this->checkAudience( $audience );
-		$fromPrimaryDb = DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST );
+		$fromPrimaryDb = $this->shouldUsePrimary( $flags );
 
 		$centralUserArray = [];
 		if ( count( $nameToId ) === 1 ) {
@@ -109,7 +110,7 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 				);
 			}
 		} else {
-			$db = $this->databaseManager->getCentralDBFromRecency( $flags );
+			$db = $this->getCentralDB( $flags );
 			$res = $db->newSelectQueryBuilder()
 				->queryInfo( CentralAuthUser::selectQueryInfo() )
 				->where( [ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] )
@@ -134,14 +135,14 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 
 	/** @inheritDoc */
 	public function isAttached( UserIdentity $user, $wikiId = UserIdentity::LOCAL ): bool {
-		return self::isAttachedOn( $user, $wikiId, IDBAccessObject::READ_NORMAL );
+		return $this->isAttachedOn( $user, $wikiId, IDBAccessObject::READ_NORMAL );
 	}
 
 	/** @inheritDoc */
 	public function isOwned( UserIdentity $user, $wikiId = UserIdentity::LOCAL ): bool {
 		$user->assertWiki( $wikiId );
 
-		$centralUser = CentralAuthUser::getInstance( $user );
+		$centralUser = $this->getCentralUserInstance( $user );
 
 		$strictMode = $this->config->get( CAMainConfigNames::CentralAuthStrict );
 		if ( $centralUser->exists() && !$user->isRegistered() && $strictMode ) {
@@ -151,7 +152,7 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 			return true;
 		}
 
-		return self::isAttachedOn( $user, $wikiId, IDBAccessObject::READ_NORMAL );
+		return $this->isAttachedOn( $user, $wikiId, IDBAccessObject::READ_NORMAL );
 	}
 
 	/** @inheritDoc */
@@ -160,8 +161,8 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 	): int {
 		// This is only an optimization to take advantage of cache in CentralAuthUser.
 		// The result should be the same as calling the parent method.
-		if ( self::isAttachedOn( $user, WikiAwareEntity::LOCAL, $flags ) ) {
-			return self::getCentralUserInstance( $user, $flags )->getId();
+		if ( $this->isAttachedOn( $user, WikiAwareEntity::LOCAL, $flags ) ) {
+			return $this->getCentralUserInstance( $user, $flags )->getId();
 		}
 
 		return 0;
@@ -177,11 +178,22 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 	 * @return bool `true` if the given user is attached to a central user on the given wiki,
 	 * `false` otherwise.
 	 */
-	private static function isAttachedOn( UserIdentity $user, $wikiId, int $flags ): bool {
+	private function isAttachedOn( UserIdentity $user, $wikiId, int $flags ): bool {
 		$wikiId = $wikiId ?: WikiMap::getCurrentWikiId();
-		$centralUser = self::getCentralUserInstance( $user, $flags );
+		$centralUser = $this->getCentralUserInstance( $user, $flags );
 
 		return $centralUser->exists() && $centralUser->attachedOn( $wikiId );
+	}
+
+	private function shouldUsePrimary( int $flags ): bool {
+		return DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST )
+			|| $this->databaseManager->centralLBHasRecentPrimaryChanges();
+	}
+
+	private function getCentralDB( int $flags ): IReadableDatabase {
+		return $this->shouldUsePrimary( $flags )
+			? $this->databaseManager->getCentralPrimaryDB()
+			: $this->databaseManager->getCentralReplicaDB();
 	}
 
 	/**
@@ -192,8 +204,11 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 	 *
 	 * @return CentralAuthUser
 	 */
-	private static function getCentralUserInstance( UserIdentity $user, int $flags ): CentralAuthUser {
-		return $flags & IDBAccessObject::READ_LATEST
+	private function getCentralUserInstance(
+		UserIdentity $user,
+		int $flags = IDBAccessObject::READ_NORMAL
+	): CentralAuthUser {
+		return $this->shouldUsePrimary( $flags )
 			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
 	}
