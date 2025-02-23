@@ -24,16 +24,19 @@ use MediaWiki\Config\Config;
 use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Services\DestructibleService;
 
 /**
  * Look up central IDs using CentralAuth
  */
-class CentralAuthIdLookup extends CentralIdLookup {
+class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService {
 
 	private Config $config;
 	private CentralAuthDatabaseManager $databaseManager;
@@ -84,22 +87,48 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$audience = $this->checkAudience( $audience );
 		$fromPrimaryDb = DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST );
-		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
 
-		$res = $db->newSelectQueryBuilder()
-			->queryInfo( CentralAuthUser::selectQueryInfo() )
-			->where( [ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-		foreach ( $res as $row ) {
-			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
-			if ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE
-				|| $audience === null || $audience->isAllowed( 'centralauth-suppress' )
-			) {
-				$nameToId[$centralUser->getName()] = $centralUser->getId();
+		$centralUserArray = [];
+		if ( count( $nameToId ) === 1 ) {
+			// Use cache in the common case of looking up a single user
+			$name = array_key_first( $nameToId );
+			try {
+				$centralUser = $fromPrimaryDb
+					? CentralAuthUser::getPrimaryInstanceByName( $name )
+					: CentralAuthUser::getInstanceByName( $name );
+				// The batch path ignores non-canonical usernames, do the same for consistency
+				if ( $centralUser->getName() === $name ) {
+					$centralUserArray[$name] = $centralUser;
+				}
+			} catch ( NormalizedException $e ) {
+				// Usernames are supposed to be valid, but in the past this has not been enforced
+				// and CentralAuthUser throws on invalid usernames, so log and swallow the exception
+				LoggerFactory::getInstance( 'CentralAuth' )->warning(
+					__METHOD__ . ': invalid username: {name}',
+					[ 'name' => $name ]
+				);
+			}
+		} else {
+			$db = $this->databaseManager->getCentralDBFromRecency( $flags );
+			$res = $db->newSelectQueryBuilder()
+				->queryInfo( CentralAuthUser::selectQueryInfo() )
+				->where( [ 'gu_name' => array_map( 'strval', array_keys( $nameToId ) ) ] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+			foreach ( $res as $row ) {
+				$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
+				$centralUserArray[$centralUser->getName()] = $centralUser;
 			}
 		}
 
+		foreach ( $centralUserArray as $name => $centralUser ) {
+			if ( $centralUser->exists()
+				&& ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE
+					|| $audience === null || $audience->isAllowed( 'centralauth-suppress' ) )
+			) {
+				$nameToId[$name] = $centralUser->getId();
+			}
+		}
 		return $nameToId;
 	}
 
@@ -167,6 +196,13 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		return $flags & IDBAccessObject::READ_LATEST
 			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
+	}
+
+	/** @inheritDoc */
+	public function destroy() {
+		if ( defined( 'MW_PHPUNIT_TEST' ) ) {
+			CentralAuthUser::clearUserCache();
+		}
 	}
 
 }
