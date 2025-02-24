@@ -207,7 +207,7 @@
 	"centralauth-error-unmerged": "Хьа таро йац хийцамаш бан, ахьа йукъара аккаунт кхоллар кхочушдина ца хилар бахьнехь.",
 	"centralauth-error-wrongprovider": "ХӀара белхан агӀо тӀекхочуш йац, $1 лелича.",
 	"centralauth-finish-incomplete": "Масех аккаунт цхьаьнатоьхна оцу парольца.\nКхин йолу аккаунташ цкъачунна тӀечӀагӀйина йац.",
-	"centralauth-finish-login": "ЧугӀо",
+	"centralauth-finish-login": "Вовзийта",
 	"centralauth-finish-noconfirms": "ХӀокху паролца бакъдан луш дӀайаздарш дац.",
 	"centralauth-finish-password": "Пароль:",
 	"centralauth-finish-problems": "Нагахь санна проблемаш йелахь йа билгалйаьхна аккаунташ хьайн долахь йацахь [[m:Special:MyLanguage/Help:Unified login|хьажа гӀоьнан информаци]]...",

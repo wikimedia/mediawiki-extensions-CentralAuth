@@ -42,6 +42,7 @@
 	"centralauth-admin-info-hidden": "Falinn:",
 	"centralauth-admin-info-locked": "Læst:",
 	"centralauth-admin-info-registered": "Skráð:",
+	"centralauth-admin-info-unattached": "Fjöldi tengdra reikninga:",
 	"centralauth-admin-info-username": "Notandanafn:",
 	"centralauth-admin-intro": "Þetta viðmót er hægt að nota til að stjórna altækum aðgöngum.",
 	"centralauth-admin-list-attached-on": "Tengdist þann",
