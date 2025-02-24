@@ -41,7 +41,7 @@ class EmailableUser extends User {
 	 *   - RIGOR_USABLE      Valid for batch processes and login
 	 *   - RIGOR_CREATABLE   Valid for batch processes, login and account creation
 	 *
-	 * @return EmailableUser|false EmailableUser object, or false if the
+	 * @return self|false EmailableUser object, or false if the
 	 *    username is invalid (e.g. if it contains illegal characters or is an IP address).
 	 *    If the username is not present in the database, the result will be a EmailableUser
 	 *    object with a name, zero user ID and default settings.
@@ -56,7 +56,7 @@ class EmailableUser extends User {
 			return false;
 		} else {
 			# Create unloaded user object
-			$u = new EmailableUser;
+			$u = new self();
 			$u->mName = $name;
 			$u->mFrom = 'name';
 			$u->setItemLoaded( 'name' );

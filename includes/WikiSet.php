@@ -124,13 +124,13 @@ class WikiSet {
 
 	/**
 	 * @param stdClass|bool $row
-	 * @return null|WikiSet
+	 * @return self|null
 	 */
-	public static function newFromRow( $row ) {
+	public static function newFromRow( $row ): ?self {
 		if ( !$row ) {
 			return null;
 		}
-		return new WikiSet(
+		return new self(
 			$row->ws_name,
 			$row->ws_type,
 			explode( ',', $row->ws_wikis ),
@@ -140,9 +140,9 @@ class WikiSet {
 
 	/**
 	 * @param string $name
-	 * @return null|WikiSet
+	 * @return self|null
 	 */
-	public static function newFromName( $name ) {
+	public static function newFromName( $name ): ?self {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
 
@@ -178,7 +178,7 @@ class WikiSet {
 			return null;
 		}
 
-		$wikiSet = new WikiSet();
+		$wikiSet = new self();
 		$wikiSet->loadFromCachedData( $data );
 
 		return $wikiSet;
@@ -186,9 +186,9 @@ class WikiSet {
 
 	/**
 	 * @param string|int $id
-	 * @return null|WikiSet
+	 * @return self|null
 	 */
-	public static function newFromID( $id ) {
+	public static function newFromID( $id ): ?self {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
 
@@ -224,7 +224,7 @@ class WikiSet {
 			return null;
 		}
 
-		$wikiSet = new WikiSet();
+		$wikiSet = new self();
 		$wikiSet->loadFromCachedData( $data );
 
 		return $wikiSet;
