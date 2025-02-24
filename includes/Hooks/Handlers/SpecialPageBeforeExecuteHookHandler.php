@@ -52,9 +52,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
-	/** @internal For use in tests only */
-	public bool $testresults;
-
 	/**
 	 * @param AuthManager $authManager
 	 * @param HookContainer $hookContainer
@@ -80,9 +77,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$this->tokenManager = $tokenManager;
 		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
-
-		// used only for integration testing
-		$this->testresults = false;
 	}
 
 	/**
@@ -256,7 +250,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			// note that we don't check first to see if the pref
 			// is already set, and skip in that case; should we?
 			// same for the above call to this method
-			$this->testresults = $this->sharedDomainUtils->setSUL3RolloutGlobalPref( $user, true );
 			return true;
 		}
 		return false;
