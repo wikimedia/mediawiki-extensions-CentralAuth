@@ -522,7 +522,7 @@
 	"grant-createlocalaccount": "Forcibly create a local account for a global account",
 	"grant-setglobalaccountstatus": "Manage global account status",
 	"log-action-filter-gblrights": "Type of change:",
-	"log-action-filter-gblrights-groupprms": "Global user group change",
+	"log-action-filter-gblrights-groupprms": "Global user group rights change",
 	"log-action-filter-gblrights-setmodify": "Wiki set change",
 	"log-action-filter-gblrights-usergroups": "Global user rights change",
 	"log-action-filter-globalauth": "Type of change:",
