@@ -2,18 +2,18 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
+use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserOptionsManager;
 use MobileContext;
 use RuntimeException;
 use UnexpectedValueException;
@@ -34,33 +34,30 @@ class SharedDomainUtils {
 
 	private Config $config;
 	private TitleFactory $titleFactory;
+	/** @var callable():UserOptionsManager */
+	private $userOptionsManagerCallback;
+	private UserOptionsManager $userOptionsManager;
 	private HookRunner $hookRunner;
 	private ?bool $isSharedDomain = null;
 	private ?MobileContext $mobileContext;
 	private bool $isApiRequest;
-	/** @var GlobalPreferencesFactory|null|false */
-	private $globalPreferencesFactory = false;
-	/** @var callable():(?GlobalPreferencesFactory) */
-	private $globalPreferencesFactoryFactory;
 	private TempUserConfig $tempUserConfig;
-	private array $userSUL3RolloutFlags = [];
-	private array $noPrefsAvailable = [];
 
 	public function __construct(
 		Config $config,
 		TitleFactory $titleFactory,
+		callable $userOptionsManagerCallback,
 		HookRunner $hookRunner,
 		?MobileContext $mobileContext,
 		bool $isApiRequest,
-		callable $globalPreferencesFactoryFactory,
 		TempUserConfig $tempUserConfig
 	) {
 		$this->config = $config;
 		$this->titleFactory = $titleFactory;
+		$this->userOptionsManagerCallback = $userOptionsManagerCallback;
 		$this->hookRunner = $hookRunner;
 		$this->mobileContext = $mobileContext;
 		$this->isApiRequest = $isApiRequest;
-		$this->globalPreferencesFactoryFactory = $globalPreferencesFactoryFactory;
 		$this->tempUserConfig = $tempUserConfig;
 	}
 
@@ -204,14 +201,10 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * if the user is an IP, check for a UserName cookie (via session trickery)
-	 * and return the user corresponding to that, if any. Otherwise return null
-	 *
-	 * @param User $user
-	 * @param WebRequest $request
-	 * @return User|null
+	 * If the user is an IP, check for a UserName cookie (via session trickery)
+	 * and return the user corresponding to that, if any. Otherwise, return null.
 	 */
-	public static function getLastUser( $user, $request ) {
+	public static function getLastUser( UserIdentity $user, WebRequest $request ): ?UserIdentity {
 		$noUser = null;
 
 		if ( !IPUtils::isIPAddress( $user->getName() ) ) {
@@ -225,60 +218,23 @@ class SharedDomainUtils {
 		return User::newFromName( $sessionUserName ) ?: $noUser;
 	}
 
-	private function getGlobalPreferencesFactory(): ?GlobalPreferencesFactory {
-		if ( $this->globalPreferencesFactory === false ) {
-			$this->globalPreferencesFactory = ( $this->globalPreferencesFactoryFactory )();
-		}
-		return $this->globalPreferencesFactory;
+	private function getUserOptionsManager(): UserOptionsManager {
+		$this->userOptionsManager ??= ( $this->userOptionsManagerCallback )();
+		return $this->userOptionsManager;
 	}
 
 	/**
-	 * try to retrieve global preferences for the user, using
+	 * Try to retrieve global preferences for the user, using
 	 * the session cookie UserName if the user is an IP, or the
-	 * user name otherwise
-	 * return the SUL3 rollout flag value if it exists, or
-	 * null otherwise
-	 *
-	 * @param User $user
-	 * @param WebRequest $request
-	 * @return bool|null
+	 * username otherwise.
+	 * @return ?bool The SUL3 rollout flag value if it exists, or null otherwise.
 	 */
-	private function getUserSUL3RolloutFlag( $user, $request ) {
-		$noPrefsAvailable = null;
-
+	private function getUserSUL3RolloutFlag( UserIdentity $user, WebRequest $request ): ?bool {
 		// check the session's UserName cookie for IP users
-		$prefsUser = IPUtils::isIPAddress( $user->getName() )
-			? ( self::getLastUser( $user, $request ) ?: $user )
-			: $user;
+		$prefsUser = self::getLastUser( $user, $request ) ?: $user;
 
-		// if we have an IP user, this will always fall through
-		if ( isset( $this->userSUL3RolloutFlags[ $prefsUser->getName() ] ) ) {
-			return $this->userSUL3RolloutFlags[ $prefsUser->getName() ];
-		} elseif ( isset( $this->noPrefsAvailable[ $prefsUser->getName() ] ) ) {
-			return $noPrefsAvailable;
-		}
-
-		$globalPreferencesFactory = $this->getGlobalPreferencesFactory();
-
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'GlobalPreferences' )
-			|| !$globalPreferencesFactory
-		) {
-			return $noPrefsAvailable;
-		}
-
-		if ( IPUtils::isIPAddress( $prefsUser->getName() ) ) {
-			return $noPrefsAvailable;
-		}
-
-		$prefs = $globalPreferencesFactory->getGlobalPreferencesValues( $prefsUser );
-		if ( !$prefs || !isset( $prefs[ self::SUL3_GLOBAL_PREF ] ) ) {
-			$this->noPrefsAvailable[ $prefsUser->getName() ] = true;
-			return $noPrefsAvailable;
-		}
-
-		$flag = (bool)$prefs[ self::SUL3_GLOBAL_PREF ];
-		$this->userSUL3RolloutFlags[ $prefsUser->getName() ] = $flag;
-		return $flag;
+		$flag = $this->getUserOptionsManager()->getOption( $prefsUser, self::SUL3_GLOBAL_PREF );
+		return $flag === null ? null : (bool)$flag;
 	}
 
 	/**
@@ -390,37 +346,14 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * set the SUL3 rollout preference for the specified user;
-	 * caller should ensure that the user is not an IP address
-	 * returns true if the preference was set, false otherwise
-	 *
-	 * @param User $user
-	 * @param bool $value
-	 * @return bool
+	 * Set the SUL3 rollout preference for the specified user;
+	 * caller should ensure that the user is not an IP address.
 	 */
-	public function setSUL3RolloutGlobalPref( $user, $value ) {
-		$globalPreferencesFactory = $this->getGlobalPreferencesFactory();
-		if ( !ExtensionRegistry::getInstance()->isLoaded( 'GlobalPreferences' )
-			|| !$globalPreferencesFactory
-		) {
-			return false;
-		}
-
-		// remove record of any older misses
-		unset( $this->userSUL3RolloutFlags[ $user->getName() ] );
-		unset( $this->noPrefsAvailable[ $user->getName() ] );
-
-		// read them, add/update the new one, write them all back. sigh
-		$currentPrefs = $globalPreferencesFactory->getGlobalPreferencesValues( $user );
-		// no global user id, apparently. let's just bail in that case
-		if ( $currentPrefs === false ) {
-			return false;
-		}
-
-		$prefs = array_merge( $currentPrefs, [ self::SUL3_GLOBAL_PREF => $value ] );
-
-		$globalPreferencesFactory->setGlobalPreferences( $user, $prefs, RequestContext::getMain() );
-		return true;
+	public function setSUL3RolloutGlobalPref( UserIdentity $user, bool $value ): void {
+		$userOptionsManager = $this->getUserOptionsManager();
+		$userOptionsManager->setOption( $user, self::SUL3_GLOBAL_PREF, $value ? '1' : '0',
+			UserOptionsManager::GLOBAL_CREATE );
+		$userOptionsManager->saveOptions( $user );
 	}
 
 	/**

@@ -777,9 +777,6 @@
 	"ConfigRegistry": {
 		"CentralAuth": "GlobalVarConfig::newInstance"
 	},
-	"DefaultUserOptions": {
-		"centralauth-use-sul3": false
-	},
 	"config": {
 		"CentralAuthDatabase": {
 			"description": "Used to identify the CentralAuth database and for SessionStore entries; its use is deprecated. Configure the virtual-centralauth virtual domain instead.",

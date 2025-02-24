@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
-use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\User\UserOptionsManager;
 use MediaWikiIntegrationTestCase;
 use TestUser;
 use Wikimedia\IPUtils;
@@ -30,10 +30,10 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
+			static fn () => $services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
-			static fn () => $services->getPreferencesFactory(),
 			$services->getTempUserConfig(),
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
@@ -49,10 +49,10 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
+			static fn () => $services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
-			static fn () => $services->getPreferencesFactory(),
 			$services->getTempUserConfig()
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
@@ -157,10 +157,10 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getTitleFactory(),
+				fn () => $this->getServiceContainer()->getUserOptionsManager(),
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
 				$isAPiRequest,
-				fn () => $this->getServiceContainer()->getPreferencesFactory(),
 				$this->getServiceContainer()->getTempUserConfig(),
 			] )
 			->onlyMethods( [ 'isSharedDomain' ] )
@@ -176,27 +176,24 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideIsSul3EnabledWithGlobalPref() {
 		$noCookies = [];
-		$prefix = RequestContext::getMain()->getConfig()->get( CAMainConfigNames::CentralAuthCookiePrefix );
-		$prefCookieSet = [ $prefix . 'sul3wanted' => '1' ];
-
+		$userNameCookieSet = [ 'UserName' => 'CentralAuthRolloutTestUser1' ];
+		$noPrefs = [];
+		$user1PrefTrue = [ 'CentralAuthRolloutTestUser1' => [ 'centralauth-use-sul3' => '1' ] ];
+		$user1PrefFalse = [ 'CentralAuthRolloutTestUser1' => [ 'centralauth-use-sul3' => '0' ] ];
+		$user2PrefTrue = [ 'CentralAuthRolloutTestUser2' => [ 'centralauth-use-sul3' => '1' ] ];
+		$user2PrefFalse = [ 'CentralAuthRolloutTestUser2' => [ 'centralauth-use-sul3' => '0' ] ];
 		$anonUser = '192.168.1.25';
 		$namedUser = 'CentralAuthRolloutTestUser2';
 
 		return [
-			'no cookie, IP user, no pref set' => [
-				$noCookies, $anonUser, false, null ],
-			'pref cookie, IP user, no pref set' => [
-				$prefCookieSet, $anonUser, false, true ],
-			'pref cookie, IP user, pref set' => [
-				$prefCookieSet, $anonUser, true, true ],
+			'IP user, no UserName cookie,' => [ $noCookies, $anonUser, $noPrefs, null ],
+			'IP user, UserName cookie, no pref set' => [ $userNameCookieSet, $anonUser, $noPrefs, null ],
+			'IP user, UserName cookie, pref true' => [ $userNameCookieSet, $anonUser, $user1PrefTrue, true ],
+			'IP user, UserName cookie, pref false' => [ $userNameCookieSet, $anonUser, $user1PrefFalse, false ],
 
-			'no cookie, named user, pref not set' => [
-				$noCookies, $namedUser, false, false ],
-			'pref cookie, named user, pref not set' => [
-				$prefCookieSet, $namedUser, false, true ],
-			'no cookie, named user, pref set' => [
-				$noCookies, $namedUser, true, true ],
-
+			'named user, pref not set' => [ $noCookies, $namedUser, $noPrefs, null ],
+			'named user, pref true' => [ $noCookies, $namedUser, $user2PrefTrue, true ],
+			'named user, pref false' => [ $noCookies, $namedUser, $user2PrefFalse, false ],
 		];
 	}
 
@@ -204,17 +201,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideIsSul3EnabledWithGlobalPref
 	 * @return void
 	 */
-	public function testIsSul3EnabledWithGlobalPref( $cookies, $userOrIP, $prefValue, $expected ) {
-		$this->markTestSkippedIfExtensionNotLoaded( 'GlobalPreferences' );
-
-		$configFlag = [];
-		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, $configFlag );
-		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutSignupCookie, true );
-
-		$globalPreferencesFactory = $this->createMock( GlobalPreferencesFactory::class );
-		$globalPreferencesFactory->method( 'getGlobalPreferencesValues' )
-			->willReturn( [ 'centralauth-use-sul3' => $prefValue ] );
-		$this->setService( 'PreferencesFactory', $globalPreferencesFactory );
+	public function testIsSul3EnabledWithGlobalPref( $cookies, $userOrIP, $prefValues, $expected ) {
+		// note: this test will use a different code path when GlobalPreferences is enabled
 
 		if ( IPUtils::isIPAddress( $userOrIP ) ) {
 			$user = $this->getServiceContainer()->getUserFactory()->newAnonymous( $userOrIP );
@@ -225,7 +213,71 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$fauxRequest = new FauxRequest();
 
 		if ( $cookies ) {
-			$fauxRequest->setCookies( $cookies, '' );
+			$fauxRequest->setCookies( $cookies );
+		}
+		$this->setRequest( $fauxRequest );
+
+		if ( $prefValues ) {
+			$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
+			foreach ( $prefValues as $username => $values ) {
+				$prefUser = $this->getServiceContainer()->getUserFactory()->newFromName( $username );
+				foreach ( $values as $name => $value ) {
+					$userOptionsManager->setOption( $prefUser, $name, $value, UserOptionsManager::GLOBAL_CREATE );
+				}
+				$userOptionsManager->saveOptions( $prefUser );
+			}
+		}
+
+		$services = $this->getServiceContainer();
+		$sharedDomainUtils = new SharedDomainUtils(
+			$services->getMainConfig(),
+			$services->getTitleFactory(),
+			static fn () => $services->getUserOptionsManager(),
+			new HookRunner( $services->getHookContainer() ),
+			null,
+			false,
+			$services->getTempUserConfig()
+		);
+		$actual = $sharedDomainUtils->isSul3Enabled( $fauxRequest, $isUnset );
+		if ( $isUnset ) {
+			$this->assertNull( $expected );
+		} else {
+			$this->assertSame( $expected, $actual );
+		}
+	}
+
+	public static function provideIsSul3EnabledWithPrefCookie() {
+		$noCookies = [];
+		$prefCookieSet = [ 'sul3wanted' => '1' ];
+
+		$anonUser = '192.168.1.25';
+		$namedUser = 'CentralAuthRolloutTestUser2';
+
+		return [
+			'no cookie, IP user' => [ $noCookies, $anonUser, null ],
+			'cookie, IP user' => [ $prefCookieSet, $anonUser, true ],
+			'no cookie, named user' => [ $noCookies, $namedUser, null ],
+			'cookie, named user' => [ $prefCookieSet, $namedUser, true ],
+		];
+	}
+
+	/**
+	 * @dataProvider provideIsSul3EnabledWithPrefCookie
+	 * @return void
+	 */
+	public function testIsSul3EnabledWithPrefCookie( $cookies, $userOrIP, $expected ) {
+		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutSignupCookie, true );
+
+		if ( IPUtils::isIPAddress( $userOrIP ) ) {
+			$user = $this->getServiceContainer()->getUserFactory()->newAnonymous( $userOrIP );
+		} else {
+			$user = ( new TestUser( $userOrIP ) )->getUser();
+		}
+		RequestContext::getMain()->setUser( $user );
+		$fauxRequest = new FauxRequest();
+
+		if ( $cookies ) {
+			$fauxRequest->setCookies( $cookies, $this->getConfVar( CAMainConfigNames::CentralAuthCookiePrefix ) );
 		}
 		$this->setRequest( $fauxRequest );
 
@@ -233,10 +285,10 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
+			static fn () => $services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
-			static fn () => $services->getPreferencesFactory(),
 			$services->getTempUserConfig()
 		);
 		$actual = $sharedDomainUtils->isSul3Enabled( $fauxRequest, $isUnset );
