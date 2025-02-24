@@ -68,8 +68,6 @@ class GlobalRenameDenylist {
 
 	/**
 	 * Is global rename denylist enabled?
-	 *
-	 * @return bool
 	 */
 	private function isEnabled(): bool {
 		return $this->file !== null;

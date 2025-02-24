@@ -150,8 +150,6 @@ class SpecialMergeAccount extends SpecialPage {
 
 	/**
 	 * Pick which form to show for a user that already exists
-	 *
-	 * @param CentralAuthUser $globalUser
 	 */
 	private function showFormForExistingUsers( CentralAuthUser $globalUser ) {
 		if ( $globalUser->isAttached() ) {

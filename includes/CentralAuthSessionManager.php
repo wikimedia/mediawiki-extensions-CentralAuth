@@ -84,7 +84,6 @@ class CentralAuthSessionManager {
 
 	/**
 	 * Get a cache for storage of central sessions
-	 * @return BagOStuff
 	 */
 	public function getSessionStore(): BagOStuff {
 		if ( !$this->sessionStore ) {

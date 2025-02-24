@@ -11,10 +11,6 @@ class CentralAuthSpoofUser extends SpoofUser {
 
 	private CentralAuthDatabaseManager $centralAuthDatabaseManager;
 
-	/**
-	 * @param string $name
-	 * @param CentralAuthDatabaseManager $centralAuthDatabaseManager
-	 */
 	public function __construct( string $name, CentralAuthDatabaseManager $centralAuthDatabaseManager ) {
 		parent::__construct( $name );
 		$this->centralAuthDatabaseManager = $centralAuthDatabaseManager;

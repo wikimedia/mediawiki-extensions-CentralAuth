@@ -66,8 +66,6 @@ class CentralAuthDatabaseManager {
 	 * Determine if either the local or the shared CentralAuth database is
 	 * read only. This should determine whether assertNotReadOnly() would
 	 * throw.
-	 *
-	 * @return bool
 	 */
 	public function isReadOnly(): bool {
 		return $this->readOnlyMode->isReadOnly()

@@ -116,9 +116,6 @@ abstract class LocalRenameJob extends Job {
 	 */
 	abstract protected function doRun( $fnameTrxOwner );
 
-	/**
-	 * @param GlobalRenameUserStatus $status
-	 */
 	protected function setRenameUserStatus( GlobalRenameUserStatus $status ) {
 		$this->renameuserStatus = $status;
 	}

@@ -24,7 +24,6 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	private UserNameUtils $userNameUtils;
 	private TempUserConfig $tempUserConfig;
 
-	/** @var bool */
 	private bool $initRan = false;
 
 	/**

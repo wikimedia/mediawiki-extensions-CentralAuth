@@ -87,7 +87,6 @@ class CentralAuthUtilityService {
 	/**
 	 * Sets up jobs to create and attach a local account for the given user on every wiki listed in
 	 * $wgCentralAuthAutoCreateWikis.
-	 * @param CentralAuthUser $centralUser
 	 */
 	public function scheduleCreationJobs( CentralAuthUser $centralUser ) {
 		$name = $centralUser->getName();

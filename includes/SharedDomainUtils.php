@@ -71,8 +71,6 @@ class SharedDomainUtils {
 	 * - $wgCentralAuthSharedDomainPrefix contains the shared domain.
 	 * - $wgCanonicalServer is set in site configuration to the current domain
 	 *   (instead of the actual canonical domain) for requests to the shared domain.
-	 *
-	 * @return bool
 	 */
 	public function isSharedDomain(): bool {
 		if ( $this->isSharedDomain === null ) {

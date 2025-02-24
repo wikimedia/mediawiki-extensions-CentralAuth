@@ -238,8 +238,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	/**
 	 * Initialize and output the HTMLForm used for filtering.
-	 *
-	 * @param array $formDescriptor
 	 */
 	private function outputFilterForm( array $formDescriptor ) {
 		$htmlForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() );
@@ -354,8 +352,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	/**
 	 * Display a request.
-	 *
-	 * @param GlobalRenameRequest $req
 	 */
 	protected function doViewRequest( GlobalRenameRequest $req ) {
 		$isVanishRequest = $req->getType() === GlobalRenameRequest::VANISH;

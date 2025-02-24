@@ -140,7 +140,6 @@ class CentralAuthTestUser {
 
 	/**
 	 * Save the user into a centralauth database
-	 * @param IDatabase $db
 	 */
 	public function save( IDatabase $db ) {
 		$user = User::newFromName( $this->username );

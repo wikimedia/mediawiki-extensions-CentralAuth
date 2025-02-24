@@ -49,11 +49,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	private LoggerInterface $logger;
 	private SharedDomainUtils $sharedDomainUtils;
 
-	/**
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthTokenManager $tokenManager
-	 * @param SharedDomainUtils $sharedDomainUtils
-	 */
 	public function __construct(
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthTokenManager $tokenManager,

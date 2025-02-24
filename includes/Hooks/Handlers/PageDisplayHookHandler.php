@@ -38,10 +38,6 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
-	/**
-	 * @param CentralDomainUtils $centralDomainUtils
-	 * @param SharedDomainUtils $sharedDomainUtils
-	 */
 	public function __construct(
 		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
