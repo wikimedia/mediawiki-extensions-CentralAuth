@@ -281,7 +281,6 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 	/**
 	 * Blocked users should not be able to request a vanish.
-	 * @return bool
 	 */
 	public function requiresUnblock(): bool {
 		return true;
@@ -356,7 +355,6 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 	/**
 	 * Checks if the currently authenticated user is eligible for automatic vanishing.
-	 * @return bool
 	 */
 	private function eligibleForAutomaticVanish(): bool {
 		$causer = $this->getGlobalUser();

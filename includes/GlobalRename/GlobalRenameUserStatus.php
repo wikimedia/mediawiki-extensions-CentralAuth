@@ -150,11 +150,6 @@ class GlobalRenameUserStatus {
 		);
 	}
 
-	/**
-	 * @param array $rows
-	 *
-	 * @return bool
-	 */
 	public function setStatuses( array $rows ): bool {
 		if ( !$rows ) {
 			return false;
@@ -208,8 +203,6 @@ class GlobalRenameUserStatus {
 
 	/**
 	 * Mark the process as done for a wiki (=> delete the renameuser_status row)
-	 *
-	 * @param string $wiki
 	 */
 	public function done( string $wiki ): void {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();

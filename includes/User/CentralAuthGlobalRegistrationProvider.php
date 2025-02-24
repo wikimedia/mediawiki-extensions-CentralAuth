@@ -9,7 +9,6 @@ use MediaWiki\User\UserNameUtils;
 
 class CentralAuthGlobalRegistrationProvider implements IUserRegistrationProvider {
 
-	/** @var string */
 	public const TYPE = 'centralauth';
 
 	private GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory;

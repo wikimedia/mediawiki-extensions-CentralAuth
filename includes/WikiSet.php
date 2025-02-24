@@ -244,9 +244,6 @@ class WikiSet {
 		return $data;
 	}
 
-	/**
-	 * @param array $data
-	 */
 	private function loadFromCachedData( array $data ) {
 		foreach ( $data as $key => $val ) {
 			$this->$key = $val;

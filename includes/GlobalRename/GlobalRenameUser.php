@@ -65,14 +65,8 @@ class GlobalRenameUser {
 
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 
-	/**
-	 * @var array|null
-	 */
 	private ?array $session = null;
 
-	/**
-	 * @var UserIdentity|null
-	 */
 	private ?UserIdentity $lockPerformingUser;
 
 	/**

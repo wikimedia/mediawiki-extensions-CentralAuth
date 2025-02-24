@@ -37,7 +37,6 @@ class FilteredRequestTracker {
 	/**
 	 * Store filtered state in the authentication session. Must be invoked inside the
 	 * authentication flow.
-	 * @param AuthManager $authManager
 	 */
 	public function saveState( AuthManager $authManager ): void {
 		$arePreviousRequestsFiltered = $authManager->getAuthenticationSessionData( self::SESSION_KEY, false );

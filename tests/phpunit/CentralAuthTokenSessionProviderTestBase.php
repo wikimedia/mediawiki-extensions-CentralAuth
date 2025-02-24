@@ -127,7 +127,6 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 	 * @return MockObject|User
 	 */
 	protected function makeUser( $id, $name ) {
-		/** @var MockObject|CentralAuthUser $caUser */
 		$user = $this->createNoOpMock( User::class, [
 			'getName', 'getId', 'isAnon'
 		] );

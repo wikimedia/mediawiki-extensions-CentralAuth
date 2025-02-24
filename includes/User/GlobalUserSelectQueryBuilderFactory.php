@@ -9,13 +9,10 @@ use Wikimedia\Rdbms\IReadableDatabase;
 
 class GlobalUserSelectQueryBuilderFactory {
 
-	/** @var IReadableDatabase */
 	private IReadableDatabase $db;
 
-	/** @var ActorStore */
 	private ActorStore $actorStore;
 
-	/** @var UserNameUtils */
 	private UserNameUtils $userNameUtils;
 
 	private TempUserConfig $tempUserConfig;
@@ -38,9 +35,6 @@ class GlobalUserSelectQueryBuilderFactory {
 		$this->tempUserConfig = $tempUserConfig;
 	}
 
-	/**
-	 * @return GlobalUserSelectQueryBuilder
-	 */
 	public function newGlobalUserSelectQueryBuilder(): GlobalUserSelectQueryBuilder {
 		return new GlobalUserSelectQueryBuilder(
 			$this->db,

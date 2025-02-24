@@ -399,9 +399,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	 *   and a new central session object is created in the central session store if there wasn't
 	 *   already a centralauth_Session cookie pointing at a valid object.
 	 * - Otherwise (including stub central sessions), behavior is identical to CookieSessionProvider.
-	 *
-	 * @param SessionBackend $session
-	 * @param WebRequest $request
 	 */
 	public function persistSession( SessionBackend $session, WebRequest $request ) {
 		parent::persistSession( $session, $request );
@@ -479,8 +476,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 
 	/**
 	 * Deletes CentralAuth and core authentication cookies.
-	 *
-	 * @param WebRequest $request
 	 */
 	public function unpersistSession( WebRequest $request ) {
 		parent::unpersistSession( $request );

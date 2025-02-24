@@ -43,10 +43,6 @@ class CentralAuthAntiSpoofManager {
 		$this->databaseManager = $databaseManager;
 	}
 
-	/**
-	 * @param string $name
-	 * @return CentralAuthSpoofUser
-	 */
 	public function getSpoofUser( string $name ): CentralAuthSpoofUser {
 		return new CentralAuthSpoofUser(
 			$name,

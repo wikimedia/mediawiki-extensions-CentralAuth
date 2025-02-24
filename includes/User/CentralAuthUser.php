@@ -672,8 +672,6 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Load user state from a cached array.
-	 *
-	 * @param array $object
 	 */
 	protected function loadFromCacheObject( array $object ) {
 		$this->logger->debug(
@@ -2956,9 +2954,6 @@ class CentralAuthUser implements IDBAccessObject {
 		return $data;
 	}
 
-	/**
-	 * @return string
-	 */
 	public function getEmail(): string {
 		$this->loadState();
 		return $this->mEmail ?? '';
@@ -3061,9 +3056,6 @@ class CentralAuthUser implements IDBAccessObject {
 		return $this->mPassword;
 	}
 
-	/**
-	 * @return CentralAuthSessionProvider
-	 */
 	private static function getSessionProvider(): CentralAuthSessionProvider {
 		// @phan-suppress-next-line PhanTypeMismatchReturnSuperType
 		return SessionManager::singleton()->getProvider( CentralAuthSessionProvider::class );

@@ -166,9 +166,6 @@ class GlobalRenameRequest {
 		return $this->type;
 	}
 
-	/**
-	 * @param int $id
-	 */
 	public function setId( int $id ) {
 		if ( $this->id !== null ) {
 			throw new BadMethodCallException( "Can't replace id when already set" );

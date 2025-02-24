@@ -116,7 +116,6 @@ class GlobalRenameRequestStore {
 
 	/**
 	 * Creates a new GlobalRenameRequest object without any filled data.
-	 * @return GlobalRenameRequest
 	 */
 	public function newBlankRequest(): GlobalRenameRequest {
 		return new GlobalRenameRequest( $this->userNameUtils );

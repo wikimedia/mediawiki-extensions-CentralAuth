@@ -55,9 +55,6 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 		}
 	}
 
-	/**
-	 * @param array $rows
-	 */
 	private function insert( array $rows ) {
 		$count = count( $rows );
 		$this->output( "Inserting $count rows into log_search\n" );

@@ -141,10 +141,6 @@ class ApiGlobalUserRights extends ApiBase {
 		$result->addValue( null, $this->getModuleName(), $r );
 	}
 
-	/**
-	 * @param array $params
-	 * @return CentralAuthUser
-	 */
 	private function getCentralAuthUser( array $params ): CentralAuthUser {
 		if ( $this->user !== null ) {
 			return $this->user;
