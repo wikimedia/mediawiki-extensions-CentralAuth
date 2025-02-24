@@ -71,12 +71,12 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	}
 
 	/**
-	 * @param stdClass|bool $row
+	 * @param stdClass|null|false $row
 	 */
 	public function setCurrent( $row ) {
 		parent::setCurrent( $row );
 
-		if ( $row !== false ) {
+		if ( $row instanceof stdClass ) {
 			if ( isset( $this->globalData[$row->user_name] ) ) {
 				$caRow = $this->globalData[$row->user_name];
 
