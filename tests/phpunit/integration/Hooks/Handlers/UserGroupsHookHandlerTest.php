@@ -30,14 +30,13 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 			->execute();
 	}
 
-	private function getHandler( $globalGroupManager = null ) {
+	private function getHandler() {
 		return new UserGroupsHookHandler(
 			$this->getServiceContainer()->getMainConfig(),
 			$this->getServiceContainer()->getTitleFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),
-			$globalGroupManager ??
-				CentralAuthServices::getAutomaticGlobalGroupManager( $this->getServiceContainer() ),
+			CentralAuthServices::getAutomaticGlobalGroupManager( $this->getServiceContainer() ),
 			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
 		);
 	}
@@ -128,12 +127,11 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testOnUserGroupsChangedNonexistentUser() {
-		$handler = $this->getHandler(
-			$this->createNoOpMock( CentralAuthAutomaticGlobalGroupManager::class )
-		);
+		$globalGroupManager = $this->createNoOpMock( CentralAuthAutomaticGlobalGroupManager::class );
+		$this->setService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager', $globalGroupManager );
 
 		// Simulate running the hook with a local user without a global user
-		$handler->onUserGroupsChanged(
+		$this->getHandler()->onUserGroupsChanged(
 			$this->getTestUser()->getUser(),
 			[],
 			[],
