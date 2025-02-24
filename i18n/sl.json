@@ -117,6 +117,7 @@
 	"centralauth-admin-username": "Uporabniško ime:",
 	"centralauth-admin-view": "Globalni račun uporabnika",
 	"centralauth-admin-yes": "da",
+	"centralauth-admin-globalblock-exempt-list": "Vikiji, ki so izvzeti iz globalnega blokiranja",
 	"centralauth-attach-list-attached": "Poenoten račun imenovan »$1« vključuje naslednje račune:",
 	"centralauth-attach-submit": "Preseli račun",
 	"centralauth-attach-success": "Račun je bil združen z enotnim računom.",
