@@ -109,9 +109,9 @@ class GlobalRenameUser {
 	 * Set session data to use with this rename.
 	 *
 	 * @param array $session
-	 * @return GlobalRenameUser
+	 * @return self
 	 */
-	public function withSession( array $session ): GlobalRenameUser {
+	public function withSession( array $session ): self {
 		$this->session = $session;
 		return $this;
 	}
@@ -120,9 +120,9 @@ class GlobalRenameUser {
 	 * Override the performer to be credited with account locking for vanishes.
 	 *
 	 * @param UserIdentity $lockPerformingUser
-	 * @return GlobalRenameUser
+	 * @return self
 	 */
-	public function withLockPerformingUser( UserIdentity $lockPerformingUser ): GlobalRenameUser {
+	public function withLockPerformingUser( UserIdentity $lockPerformingUser ): self {
 		$this->lockPerformingUser = $lockPerformingUser;
 		return $this;
 	}

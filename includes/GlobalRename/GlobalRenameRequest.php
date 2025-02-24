@@ -176,27 +176,27 @@ class GlobalRenameRequest {
 
 	/**
 	 * @param string $name
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setName( $name ) {
+	public function setName( $name ): self {
 		$this->name = $name;
 		return $this;
 	}
 
 	/**
 	 * @param string $wiki
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setWiki( $wiki ) {
+	public function setWiki( $wiki ): self {
 		$this->wiki = $wiki;
 		return $this;
 	}
 
 	/**
 	 * @param string $newName
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setNewName( $newName ) {
+	public function setNewName( $newName ): self {
 		$canonicalName = $this->userNameUtils->getCanonical( $newName, UserNameUtils::RIGOR_CREATABLE );
 		if ( $canonicalName === false ) {
 			throw new InvalidArgumentException( "Invalid username '{$newName}'" );
@@ -207,72 +207,72 @@ class GlobalRenameRequest {
 
 	/**
 	 * @param string $reason
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setReason( $reason ) {
+	public function setReason( $reason ): self {
 		$this->reason = $reason;
 		return $this;
 	}
 
 	/**
 	 * @param string|null $requested MW timestamp, null for now
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setRequested( $requested = null ) {
+	public function setRequested( $requested = null ): self {
 		$this->requested = $requested ?? wfTimestampNow();
 		return $this;
 	}
 
 	/**
 	 * @param string $status
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setStatus( $status ) {
+	public function setStatus( $status ): self {
 		$this->status = $status;
 		return $this;
 	}
 
 	/**
 	 * @param string|null $completed MW timestamp, null for now
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setCompleted( $completed = null ) {
+	public function setCompleted( $completed = null ): self {
 		$this->completed = $completed ?? wfTimestampNow();
 		return $this;
 	}
 
 	/**
 	 * @param int $deleted Bitmask
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setDeleted( $deleted ) {
+	public function setDeleted( $deleted ): self {
 		$this->deleted = $deleted;
 		return $this;
 	}
 
 	/**
 	 * @param int $performer
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setPerformer( $performer ) {
+	public function setPerformer( $performer ): self {
 		$this->performer = $performer;
 		return $this;
 	}
 
 	/**
 	 * @param string $comments
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setComments( $comments ) {
+	public function setComments( $comments ): self {
 		$this->comments = $comments;
 		return $this;
 	}
 
 	/**
 	 * @param int $type
-	 * @return GlobalRenameRequest self, for message chaining
+	 * @return self for message chaining
 	 */
-	public function setType( $type ) {
+	public function setType( $type ): self {
 		$this->type = $type;
 		return $this;
 	}

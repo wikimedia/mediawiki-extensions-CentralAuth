@@ -225,10 +225,10 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
 	 * @param UserIdentity $user
-	 * @param CentralAuthUser $caUser
+	 * @param self $caUser
 	 * @internal Only for CentralAuthUserArrayFromResult.
 	 */
-	public static function setInstance( UserIdentity $user, CentralAuthUser $caUser ) {
+	public static function setInstance( UserIdentity $user, self $caUser ): void {
 		// No need to canonicalize, $user is straight from the database.
 		self::getUserCache()->set( $user->getName(), $caUser );
 	}
@@ -236,7 +236,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * @param UserIdentity $user
-	 * @return CentralAuthUser
+	 * @return self
 	 */
 	public static function getInstance( UserIdentity $user ): self {
 		return self::getInstanceByName( $user->getName() );
@@ -271,7 +271,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $username A valid username. (Since 1.42 it does not have to be in the
 	 *   canonical form anymore.) IP addresses/ranges and external usernames are also accepted
 	 *   for B/C but discouraged; they will be handled like a non-registered username.
-	 * @return CentralAuthUser
+	 * @return self
 	 * @throws NormalizedException on invalid usernames.
 	 */
 	public static function getInstanceByName( $username ): self {
@@ -289,7 +289,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * This object will use DB_PRIMARY.
 	 * @param UserIdentity $user
-	 * @return CentralAuthUser
+	 * @return self
 	 * @since 1.37
 	 */
 	public static function getPrimaryInstance( UserIdentity $user ): self {
@@ -302,7 +302,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $username A valid username. (Since 1.44 it does not have to be in the
 	 *   canonical form anymore.) IP addresses/ranges and external usernames are also accepted
 	 *   for B/C but discouraged; they will be handled like a non-registered username.
-	 * @return CentralAuthUser
+	 * @return self
 	 * @since 1.37
 	 * @throws NormalizedException on invalid usernames.
 	 */
@@ -388,7 +388,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Get a CentralAuthUser object from a user's id
 	 *
 	 * @param int $id
-	 * @return CentralAuthUser|bool false if no user exists with that id
+	 * @return self|bool false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
 		$name = CentralAuthServices::getDatabaseManager()
@@ -407,7 +407,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Get a primary CentralAuthUser object from a user's id
 	 *
 	 * @param int $id
-	 * @return CentralAuthUser|bool false if no user exists with that id
+	 * @return self|bool false if no user exists with that id
 	 * @since 1.37
 	 */
 	public static function newPrimaryInstanceFromId( $id ) {
@@ -429,7 +429,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param stdClass $row
 	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromPrimary
-	 * @return CentralAuthUser
+	 * @return self
 	 */
 	public static function newFromRow( $row, $renameUser, $fromPrimary = false ): self {
 		$caUser = new self( $row->gu_name );
@@ -442,7 +442,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $name A valid username. (Since 1.44 it does not have to be in the
 	 *   canonical form anymore).
 	 * @param bool $fromPrimary
-	 * @return CentralAuthUser
+	 * @return self
 	 */
 	public static function newUnattached( $name, $fromPrimary = false ): self {
 		$canonicalName = self::normalizeUsername( $name );
@@ -2421,7 +2421,7 @@ class CentralAuthUser implements IDBAccessObject {
 							return;
 						}
 
-						$centralUser = CentralAuthUser::newPrimaryInstanceFromId( $this->getId() );
+						$centralUser = self::newPrimaryInstanceFromId( $this->getId() );
 						if ( $centralUser ) {
 							// Don't bother resetting the auth token for a hash
 							// upgrade. It's not really a password *change*, and
@@ -2682,7 +2682,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Same as $this->renameInProgress, but only checks one wiki
 	 * Not cached
-	 * @see CentralAuthUser::renameInProgress
+	 * @see self::renameInProgress
 	 * @param string $wiki
 	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @return string[]|false
