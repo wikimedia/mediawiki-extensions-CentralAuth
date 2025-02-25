@@ -127,9 +127,9 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mRegistration;
 	/** @var int */
 	private $mGlobalEditCount;
-	/** @var string */
+	/** @var string|null */
 	private $mBeingRenamed;
-	/** @var string[] */
+	/** @var string[]|null */
 	private $mBeingRenamedArray;
 	/** @var array[]|null */
 	protected $mAttachedInfo;
@@ -427,7 +427,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Create a CentralAuthUser object from a joined globaluser/localuser row
 	 *
 	 * @param stdClass $row
-	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
+	 * @param string[] $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromPrimary
 	 * @return self
 	 */
@@ -599,7 +599,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Load user state from a joined globaluser/localuser row
 	 *
 	 * @param stdClass|bool $row
-	 * @param array $renameUser Empty if no rename is going on, else (oldname, newname)
+	 * @param string[] $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromPrimary
 	 */
 	protected function loadFromRow( $row, $renameUser, $fromPrimary = false ) {
