@@ -114,7 +114,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, $configFlag );
 		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutUserPercentage, '0' );
 		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutAnonSignupPercentage, '0' );
-		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutSignupCookie, false );
 
 		$fauxRequest = new FauxRequest( $requestParams );
 		if ( $cookies ) {
@@ -150,7 +149,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'query-flag' ] );
 		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutUserPercentage, '0' );
 		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutAnonSignupPercentage, '0' );
-		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutSignupCookie, false );
+
 		$fauxRequest = new FauxRequest( [ 'usesul3' => '1' ] );
 		/** @var SharedDomainUtils $sut */
 		$sut = $this->getMockBuilder( SharedDomainUtils::class )
@@ -204,6 +203,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	public function testIsSul3EnabledWithGlobalPref( $cookies, $userOrIP, $prefValues, $expected ) {
 		// note: this test will use a different code path when GlobalPreferences is enabled
 
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'global-pref' ] );
+
 		if ( IPUtils::isIPAddress( $userOrIP ) ) {
 			$user = $this->getServiceContainer()->getUserFactory()->newAnonymous( $userOrIP );
 		} else {
@@ -248,7 +249,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 	public static function provideIsSul3EnabledWithPrefCookie() {
 		$noCookies = [];
-		$prefCookieSet = [ 'sul3wanted' => '1' ];
+		$prefCookieSet = [ 'sul3OptIn' => '1' ];
 
 		$anonUser = '192.168.1.25';
 		$namedUser = 'CentralAuthRolloutTestUser2';
@@ -266,7 +267,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 * @return void
 	 */
 	public function testIsSul3EnabledWithPrefCookie( $cookies, $userOrIP, $expected ) {
-		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutSignupCookie, true );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'cookie' ] );
 
 		if ( IPUtils::isIPAddress( $userOrIP ) ) {
 			$user = $this->getServiceContainer()->getUserFactory()->newAnonymous( $userOrIP );
@@ -277,7 +278,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$fauxRequest = new FauxRequest();
 
 		if ( $cookies ) {
-			$fauxRequest->setCookies( $cookies, $this->getConfVar( CAMainConfigNames::CentralAuthCookiePrefix ) );
+			$fauxRequest->setCookies( $cookies, '' );
 		}
 		$this->setRequest( $fauxRequest );
 

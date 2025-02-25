@@ -26,11 +26,13 @@ use Wikimedia\IPUtils;
  */
 class SharedDomainUtils {
 
-	public const SUL3_GLOBAL_PREF = 'centralauth-use-sul3';
-	private const SUL3_COOKIE_FLAG = 'sul3OptIn';
+	public const SUL3_OPTIN_GLOBAL_PREF_NAME = 'centralauth-use-sul3';
+	private const SUL3_OPTIN_COOKIE_NAME = 'sul3OptIn';
 
-	// used to mark an IP user for the SUL3 rollout
-	public const SUL3_WANTED_COOKIE = 'sul3wanted';
+	public const SUL3_ENABLED_QUERY_FLAG = 'query-flag';
+	public const SUL3_ENABLED_GLOBAL_PREF = 'global-pref';
+	public const SUL3_ENABLED_COOKIE = 'cookie';
+	public const SUL3_ENABLED_ALWAYS = 'always';
 
 	private Config $config;
 	private TitleFactory $titleFactory;
@@ -161,15 +163,15 @@ class SharedDomainUtils {
 		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
 		$user = RequestContext::getMain()->getUser();
 
-		if ( in_array( 'query-flag', $sul3Config, true )
+		if ( in_array( self::SUL3_ENABLED_QUERY_FLAG, $sul3Config, true )
 			&& $request->getCheck( 'usesul3' )
 		) {
 			return $request->getFuzzyBool( 'usesul3' );
-		} elseif ( in_array( 'cookie', $sul3Config, true )
-			&& $request->getCookie( self::SUL3_COOKIE_FLAG, '' ) !== null
+		} elseif ( in_array( self::SUL3_ENABLED_COOKIE, $sul3Config, true )
+			&& $request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' ) !== null
 		) {
-			return (bool)$request->getCookie( self::SUL3_COOKIE_FLAG, '' );
-		} elseif ( in_array( 'always', $sul3Config, true ) ) {
+			return (bool)$request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' );
+		} elseif ( in_array( self::SUL3_ENABLED_ALWAYS, $sul3Config, true ) ) {
 			return true;
 		}
 
@@ -182,22 +184,17 @@ class SharedDomainUtils {
 			return false;
 		}
 
-		// we have not gotten a rollout setting for the user previously.
-		// determine one now if possible, from either an sul wanted cookie
-		// or a global preference from a UserName cookie
-		$config = RequestContext::getMain()->getConfig();
-
-		if ( $config->get( CAMainConfigNames::Sul3RolloutSignupCookie ) ) {
-			if ( self::hasSUL3WantedCookie( $request ) ) {
-				return true;
+		if ( in_array( self::SUL3_ENABLED_GLOBAL_PREF, $sul3Config, true ) ) {
+			// get prefs the expected way for named users, but if the user is an IP
+			// with a UserName cookie, we will get the prefs for the user from the cookie
+			$flag = $this->getUserSUL3RolloutFlag( $user, $request );
+			if ( $flag !== null ) {
+				return $flag;
 			}
 		}
 
-		// get prefs the expected way for named users, but if the user is an IP
-		// with a UserName cookie, we will get the prefs for the user from the cookie
-		$flag = $this->getUserSUL3RolloutFlag( $user, $request );
-		$isUnset = ( $flag === null );
-		return (bool)$flag;
+		$isUnset = true;
+		return false;
 	}
 
 	/**
@@ -233,7 +230,7 @@ class SharedDomainUtils {
 		// check the session's UserName cookie for IP users
 		$prefsUser = self::getLastUser( $user, $request ) ?: $user;
 
-		$flag = $this->getUserOptionsManager()->getOption( $prefsUser, self::SUL3_GLOBAL_PREF );
+		$flag = $this->getUserOptionsManager()->getOption( $prefsUser, self::SUL3_OPTIN_GLOBAL_PREF_NAME );
 		return $flag === null ? null : (bool)$flag;
 	}
 
@@ -245,12 +242,7 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public static function hasSUL3WantedCookie( $request ) {
-		$prefix = RequestContext::getMain()->getConfig()->get( CAMainConfigNames::CentralAuthCookiePrefix );
-		$cookie = $request->getCookie( self::SUL3_WANTED_COOKIE, $prefix );
-		if ( $cookie === '1' ) {
-			return true;
-		}
-		return false;
+		return (bool)$request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' );
 	}
 
 	/**
@@ -261,11 +253,9 @@ class SharedDomainUtils {
 	 * @return void
 	 */
 	public function setSUL3RolloutCookie( $request ) {
-		$prefix = RequestContext::getMain()->getConfig()->get( CAMainConfigNames::CentralAuthCookiePrefix );
 		$expiry = time() + 300;
-
 		$request->response()->setCookie(
-			self::SUL3_WANTED_COOKIE, '1', $expiry, [ 'prefix' => $prefix ] );
+			self::SUL3_OPTIN_COOKIE_NAME, '1', $expiry, [ 'prefix' => '' ] );
 	}
 
 	/**
@@ -300,14 +290,12 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * if the local wiki is configured to always have SUL3 enabled,
-	 * return true, false otherwise
-	 *
-	 * @return bool
+	 * Check if $wgCentralAuthEnableSul3 has the given SUL3-enabled flag
+	 * ('query-flag', 'cookie' etc.) on the local wiki.
 	 */
-	public function sul3AlwaysEnabledHere() {
+	public function hasSul3EnabledFlag( string $flag ): bool {
 		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
-		return in_array( 'always', $sul3Config, true );
+		return in_array( $flag, $sul3Config, true );
 	}
 
 	/**
@@ -326,7 +314,7 @@ class SharedDomainUtils {
 			|| $this->tempUserConfig->isTempName( $user->getName() ) ) {
 			return false;
 		}
-		if ( $this->sul3AlwaysEnabledHere() ) {
+		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
 		}
 
@@ -336,7 +324,7 @@ class SharedDomainUtils {
 			return true;
 		}
 
-		if ( $this->config->get( CAMainConfigNames::Sul3RolloutSignupCookie ) ) {
+		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_COOKIE ) ) {
 			// the user got the sul3 wanted cookie earlier from being at the signup page
 			if ( self::hasSUL3WantedCookie( $request ) ) {
 				return true;
@@ -351,7 +339,7 @@ class SharedDomainUtils {
 	 */
 	public function setSUL3RolloutGlobalPref( UserIdentity $user, bool $value ): void {
 		$userOptionsManager = $this->getUserOptionsManager();
-		$userOptionsManager->setOption( $user, self::SUL3_GLOBAL_PREF, $value ? '1' : '0',
+		$userOptionsManager->setOption( $user, self::SUL3_OPTIN_GLOBAL_PREF_NAME, $value ? '1' : '0',
 			UserOptionsManager::GLOBAL_CREATE );
 		$userOptionsManager->saveOptions( $user );
 	}

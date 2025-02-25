@@ -268,14 +268,14 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	 * @return bool
 	 */
 	private function shouldSetSUL3RolloutCookie( $request, $user ) {
-		if ( !$this->config->get( CAMainConfigNames::Sul3RolloutSignupCookie ) ) {
+		if ( !$this->sharedDomainUtils->hasSul3EnabledFlag( SharedDomainUtils::SUL3_ENABLED_COOKIE ) ) {
 			return false;
 		}
 		$name = $user->getName();
 		if ( !$this->userNameUtils->isIP( $name ) ) {
 			return false;
 		}
-		if ( $this->sharedDomainUtils->sul3AlwaysEnabledHere() ) {
+		if ( $this->sharedDomainUtils->hasSul3EnabledFlag( SharedDomainUtils::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
 		}
 		$sul3RolloutAnonUserConfig = $this->config->get( CAMainConfigNames::Sul3RolloutAnonSignupPercentage );
