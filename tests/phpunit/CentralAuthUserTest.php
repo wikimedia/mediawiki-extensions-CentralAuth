@@ -1,12 +1,12 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Password\Password;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use PHPUnit\Framework\MockObject\MockObject;
-use Wikimedia\TestingAccessWrapper;
 
 /**
  * Only for tests that do not require the database to be
@@ -20,10 +20,10 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	use TempUserTestTrait;
 
 	public function testGetInstance() {
-		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
+		$cache = CentralAuthServices::getUserCache();
 
 		$user = User::newFromName( 'FooBarBaz' );
-		$cache->clear( $user->getName() );
+		$cache->delete( $user->getName() );
 		$caUser = CentralAuthUser::getInstance( $user );
 		$this->assertInstanceOf( CentralAuthUser::class, $caUser );
 		$this->assertSame( $user->getName(), $caUser->getName() );
@@ -31,18 +31,18 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		// Now test it just reads from the cache, no matter what
 		$user2 = User::newFromName( 'BazBarFoo' );
 		$centraluser2 = new CentralAuthUser( 'BazBarFoo' );
-		$cache->set( $user2->getName(), $centraluser2 );
+		$cache->set( $centraluser2 );
 		$this->assertSame( $centraluser2, CentralAuthUser::getInstance( $user2 ) );
 	}
 
 	public function testGetInstanceByNameNonCanonicalForm() {
-		$cache = TestingAccessWrapper::newFromClass( CentralAuthUser::class )->getUserCache();
+		$cache = CentralAuthServices::getUserCache();
 		$userFactory = $this->getServiceContainer()->getUserFactory();
 
 		// Username in non-canonical form
 		$username = 'Example_user';
 		$canonicalUsername = $this->getServiceContainer()->getUserNameUtils()->getCanonical( $username );
-		$cache->clear( $username );
+		$cache->delete( $username );
 		$caUser = CentralAuthUser::getInstance( $userFactory->newFromName( $username ) );
 		$this->assertInstanceOf( CentralAuthUser::class, $caUser );
 		// Assert that the username is in canonical form

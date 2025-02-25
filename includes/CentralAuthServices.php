@@ -156,6 +156,17 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
+	 *
+	 * @return CentralAuthUserCache
+	 */
+	public static function getUserCache( ?ContainerInterface $services = null ): CentralAuthUserCache {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthUserCache' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
 	 * @return CentralAuthUtilityService
 	 */
 	public static function getUtilityService( ?ContainerInterface $services = null ): CentralAuthUtilityService {

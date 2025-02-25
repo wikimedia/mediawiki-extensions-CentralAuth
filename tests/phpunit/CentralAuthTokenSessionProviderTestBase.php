@@ -11,9 +11,7 @@ use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
-use MediaWiki\User\UserIdentity;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\BagOStuff;
@@ -147,9 +145,9 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 				return $this->userObjects[ $name ] ?? null;
 			} );
 
-			$this->setService( 'UserFactory', $userFactory );
-			// setService resets existing objects, so make sure our sessionStore patch will be there
-			$this->patchStores();
+			$services = $this->getServiceContainer();
+			$services->resetServiceForTesting( 'UserFactory' );
+			$services->redefineService( 'UserFactory', static fn () => $userFactory );
 		}
 
 		$this->userObjects[ $name ] = $user;
@@ -173,7 +171,8 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 			'renameInProgress',
 			'exists',
 			'isAttached',
-			'authenticateWithToken'
+			'authenticateWithToken',
+			'isFromPrimary'
 		];
 
 		/** @var MockObject|CentralAuthUser $caUser */
@@ -190,15 +189,14 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 			'exists' => true,
 			'isAttached' => true,
 			'authenticateWithToken' => 'ok',
+			'isFromPrimary' => true,
 		];
 
 		foreach ( $return as $method => $value ) {
 			$caUser->method( $method )->willReturn( $value );
 		}
 
-		$user = $this->createMock( UserIdentity::class );
-		$user->method( 'getName' )->willReturn( $name );
-		CentralAuthUser::setInstance( $user, $caUser );
+		CentralAuthServices::getUserCache()->set( $caUser );
 
 		$this->makeUser( $id, $name );
 
