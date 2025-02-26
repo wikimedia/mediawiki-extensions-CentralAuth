@@ -502,7 +502,7 @@
 	"grant-createlocalaccount": "כפיית יצירה של חשבון מקומי עבור חשבון גלובלי",
 	"grant-setglobalaccountstatus": "ניהול מצבים של חשבונות גלובליים",
 	"log-action-filter-gblrights": "סוג השינויים:",
-	"log-action-filter-gblrights-groupprms": "שינויים בקבוצות גלובליות",
+	"log-action-filter-gblrights-groupprms": "שינויים בהרשאות של קבוצות משתמשים גלובליות",
 	"log-action-filter-gblrights-setmodify": "שינוי קבוצת אתרי ויקי",
 	"log-action-filter-gblrights-usergroups": "שינויים בהרשאות גלובליות של משתמשים",
 	"log-action-filter-globalauth": "סוג השינויים:",

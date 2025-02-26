@@ -410,7 +410,7 @@
 	"globalusers": "Списак глобалних налога",
 	"grant-setglobalaccountstatus": "управљај стањем глобалног налога",
 	"log-action-filter-gblrights": "Врста измене:",
-	"log-action-filter-gblrights-groupprms": "Промена глобалне групе корисника",
+	"log-action-filter-gblrights-groupprms": "Промена права глобалне групе",
 	"log-action-filter-gblrights-setmodify": "Промена скупа викија",
 	"log-action-filter-gblrights-usergroups": "Промена глобалних корисничких права",
 	"log-action-filter-globalauth": "Врста измене:",

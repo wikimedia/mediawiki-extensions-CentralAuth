@@ -532,7 +532,7 @@
 	"grant-createlocalaccount": "強制為全域帳號建立本地帳號",
 	"grant-setglobalaccountstatus": "管理全域帳號狀態",
 	"log-action-filter-gblrights": "變更類型：",
-	"log-action-filter-gblrights-groupprms": "變更全域使用者群組",
+	"log-action-filter-gblrights-groupprms": "變更全域使用者群組權限",
 	"log-action-filter-gblrights-setmodify": "變更wiki集合",
 	"log-action-filter-gblrights-usergroups": "變更全域使用者權限",
 	"log-action-filter-globalauth": "變更類型：",
