@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use GlobalPreferences\GlobalPreferencesFactory;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
@@ -16,6 +15,7 @@ use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\Options\UserOptionsManager;
 
 // PHPUnit does not understand coverage for this file.
 // It is covered though, see CentralAuthServiceWiringTest.
@@ -200,22 +200,18 @@ return [
 	},
 
 	'CentralAuth.SharedDomainUtils' => static function ( MediaWikiServices $services ): SharedDomainUtils {
-		// work around early access of GlobalPreferencesFactory perturbing service
+		// work around early access of UserOptionsManager perturbing service
 		// instantiation order and breaking Wikibase (T386836)
-		$preferencesFactoryFactory = static function () use ( $services ): ?GlobalPreferencesFactory {
-			$preferencesFactory = $services->getPreferencesFactory();
-			if ( !( $preferencesFactory instanceof GlobalPreferencesFactory ) ) {
-				$preferencesFactory = null;
-			}
-			return $preferencesFactory;
+		$userOptionsManagerCallback = static function () use ( $services ): UserOptionsManager {
+			return $services->getUserOptionsManager();
 		};
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getTitleFactory(),
+			$userOptionsManagerCallback,
 			new HookRunner( $services->getHookContainer() ),
 			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
 			defined( 'MW_API' ) || defined( 'MW_REST_API' ),
-			$preferencesFactoryFactory,
 			$services->getTempUserConfig()
 		);
 	},
