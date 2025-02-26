@@ -219,7 +219,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return void
 	 */
 	public static function clearUserCache() {
-		self::$loadedUsers->clear();
+		self::getUserCache()->clear();
 	}
 
 	/**

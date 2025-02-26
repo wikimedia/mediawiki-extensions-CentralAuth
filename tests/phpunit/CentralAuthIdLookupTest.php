@@ -174,6 +174,17 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expect, $lookup->lookupUserNames( $arg, CentralIdLookup::AUDIENCE_RAW ) );
 		$this->assertSame( $expect, $lookup->lookupUserNames( $arg, $permitted ) );
 		$this->assertSame( $expect2, $lookup->lookupUserNames( $arg, $nonPermitted ) );
+
+		// test looking up a single name, which uses a different code path
+		foreach ( $expect as $name => $id ) {
+			$this->assertSame( [ $name => $id ], $lookup->lookupUserNames( [ $name => 'X' ],
+				CentralIdLookup::AUDIENCE_RAW ) );
+			$this->assertSame( [ $name => $id ], $lookup->lookupUserNames( [ $name => 'X' ], $permitted ) );
+		}
+		foreach ( $expect2 as $name => $id ) {
+			$this->assertSame( [ $name => $id ], $lookup->lookupUserNames( [ $name => 'X' ] ) );
+			$this->assertSame( [ $name => $id ], $lookup->lookupUserNames( [ $name => 'X' ], $nonPermitted ) );
+		}
 	}
 
 	public static function provideLocalUsers() {
