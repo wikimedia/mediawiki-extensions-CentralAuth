@@ -28,16 +28,13 @@ use Wikimedia\Rdbms\IResultWrapper;
 
 class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 
-	/** @var stdClass[] */
-	private $globalData;
+	/** @var array<string,stdClass> */
+	private array $globalData = [];
 
-	/**
-	 * @param IResultWrapper $res
-	 */
 	public function __construct( IResultWrapper $res ) {
 		parent::__construct( $res );
 
-		if ( $res->numRows() == 0 ) {
+		if ( !$res->numRows() ) {
 			return;
 		}
 
@@ -62,7 +59,6 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 			] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
-		$this->globalData = [];
 		foreach ( $caRes as $row ) {
 			$this->globalData[$row->gu_name] = $row;
 		}
@@ -76,9 +72,10 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 	public function setCurrent( $row ) {
 		parent::setCurrent( $row );
 
-		if ( $row instanceof stdClass ) {
-			if ( isset( $this->globalData[$row->user_name] ) ) {
-				$caRow = $this->globalData[$row->user_name];
+		if ( $this->valid() ) {
+			$user = $this->current();
+			if ( isset( $this->globalData[$user->getName()] ) ) {
+				$caRow = $this->globalData[$user->getName()];
 
 				// Like taken from GlobalRenameUserStatus::getNames
 				$renameUser = [];
@@ -87,11 +84,11 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 				}
 
 				CentralAuthUser::setInstance(
-					$this->current, CentralAuthUser::newFromRow( $caRow, $renameUser )
+					$user, CentralAuthUser::newFromRow( $caRow, $renameUser )
 				);
 			} else {
 				CentralAuthUser::setInstance(
-					$this->current, CentralAuthUser::newUnattached( $row->user_name )
+					$user, CentralAuthUser::newUnattached( $user->getName() )
 				);
 			}
 		}
