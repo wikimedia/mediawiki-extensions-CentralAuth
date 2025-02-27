@@ -173,7 +173,7 @@ class CentralAuthHooks implements
 	 */
 	public function onGetPreferences( $user, &$preferences ) {
 		// for SUL3 rollout, a hidden preference unrelated to everything else
-		$preferences[SharedDomainUtils::SUL3_GLOBAL_PREF] = [
+		$preferences[SharedDomainUtils::SUL3_OPTIN_GLOBAL_PREF_NAME] = [
 			'type' => 'api'
 		];
 
