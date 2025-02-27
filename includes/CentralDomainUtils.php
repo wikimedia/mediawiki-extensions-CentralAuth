@@ -7,6 +7,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\NormalizedException\NormalizedException;
 
 /**
  * Utilities for handling the central domain (during SUL2 login, the central login
@@ -22,6 +23,16 @@ class CentralDomainUtils {
 	 * @see CentralDomainUtils::getUrl()
 	 */
 	public const CENTRAL_DOMAIN_ID = '#central#';
+
+	/**
+	 * @internal
+	 * Pseudo-wiki-ID for the "other" central domain (the shared login domain
+	 * in SUL2 mode, the central login wiki in SUL3 mode).
+	 *
+	 * Should only be passed to methods that explicitly document accepting it.
+	 * @see CentralDomainUtils::getUrl()
+	 */
+	public const PASSIVE_CENTRAL_DOMAIN_ID = '#passive-central#';
 
 	private Config $config;
 	private TitleFactory $titleFactory;
@@ -45,27 +56,40 @@ class CentralDomainUtils {
 	 * preserve the current mobile mode (determined via MobileContext
 	 * or the presence of a 'mobile' flag in $params).
 	 *
-	 * @param string $wikiId Wiki ID or CENTRAL_DOMAIN_ID
+	 * @param string $wikiId Wiki ID or CentralDomainUtils pseudo-wiki-ID
 	 * @param string $page Title of the page the URL should point to.
 	 * @param WebRequest $request
 	 * @param array $params Query parameters to apply to the URL.
 	 * @return string
 	 */
 	public function getUrl( string $wikiId, string $page, WebRequest $request, array $params = [] ): string {
-		if ( $wikiId === self::CENTRAL_DOMAIN_ID ) {
-			if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
+		if ( $wikiId === self::CENTRAL_DOMAIN_ID || $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID ) {
+			$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request );
+			$useSul3Domain = ( $isSul3Enabled && $wikiId === self::CENTRAL_DOMAIN_ID )
+				|| ( !$isSul3Enabled && $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID );
+			if ( $useSul3Domain ) {
 				$localUrl = $this->titleFactory->newFromText( $page )->getLocalURL();
 				$url = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl;
 			} else {
 				$centralWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
 					?? $this->fallbackLoginWikiId;
-				$url = WikiMap::getWiki( $centralWikiId )->getCanonicalUrl( $page );
+				$url = $this->getWikiPageUrl( $centralWikiId, $page );
 			}
 		} else {
-			$url = WikiMap::getWiki( $wikiId )->getCanonicalUrl( $page );
+			$url = $this->getWikiPageUrl( $wikiId, $page );
 		}
 
 		return wfAppendQuery( $this->sharedDomainUtils->makeUrlDeviceCompliant( $url ), $params );
+	}
+
+	private function getWikiPageUrl( string $wikiId, string $page ): string {
+		$wiki = WikiMap::getWiki( $wikiId );
+		if ( $wiki ) {
+			return $wiki->getCanonicalUrl( $page );
+		} else {
+			throw new NormalizedException( __METHOD__ . ': Invalid wiki ID: {wikiId}',
+				[ 'wikiId' => $wikiId ] );
+		}
 	}
 
 	/**

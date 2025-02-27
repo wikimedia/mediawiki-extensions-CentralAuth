@@ -330,7 +330,7 @@ class CentralAuthHooks implements
 	/**
 	 * Get the HTML for an <img> element used to perform edge login, autologin (no-JS), or central logout.
 	 *
-	 * @param string $wikiID Target wiki
+	 * @param string $wikiID Target wiki or CentralDomainUtils pseudo-wiki-ID
 	 * @param string $page Target page, should be a Special:CentralAutoLogin subpage
 	 * @param array $params URL query parameters. Some also affect the generated HTML:
 	 *   - 'type': when set to '1x1', generate an invisible pixel image, instead of a visible icon
@@ -358,10 +358,11 @@ class CentralAuthHooks implements
 	/**
 	 * Get autologin wikis, in the same format as $wgCentralAuthAutoLoginWikis, but with the
 	 * current domain removed.
-	 * @return string[]
+	 * @return string[] List of wiki IDs and CentralDomainUtils pseudo-wiki-IDs
 	 */
 	public static function getAutoLoginWikis(): array {
-		global $wgServer, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
+		global $wgServer, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis,
+			$wgCentralAuthSharedDomainPrefix, $wgCentralAuthCookieDomain;
 		$autoLoginWikis = $wgCentralAuthAutoLoginWikis;
 		if ( $wgCentralAuthCookieDomain ) {
 			unset( $autoLoginWikis[$wgCentralAuthCookieDomain] );
@@ -369,6 +370,10 @@ class CentralAuthHooks implements
 			$serverParts = MediaWikiServices::getInstance()->getUrlUtils()->parse( $wgServer );
 			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			unset( $autoLoginWikis[ $serverParts['host'] ] );
+		}
+		// When both the SUL2 and the SUL3 central domain is configured, autologin on both.
+		if ( $wgCentralAuthLoginWiki && $wgCentralAuthSharedDomainPrefix ) {
+			array_push( $autoLoginWikis, CentralDomainUtils::PASSIVE_CENTRAL_DOMAIN_ID );
 		}
 		return $autoLoginWikis;
 	}
