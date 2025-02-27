@@ -162,7 +162,7 @@ class AttachAccount extends Maintenance {
 			if ( !$this->dryRun ) {
 				$central->attach(
 					$wikiID,
-					'login',
+					'admin',
 					false
 				);
 			}
