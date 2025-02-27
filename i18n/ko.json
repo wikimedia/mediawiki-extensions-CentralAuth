@@ -480,7 +480,7 @@
 	"grant-createlocalaccount": "통합 계정에 대해 로컬 계정을 강제로 생성하기",
 	"grant-setglobalaccountstatus": "통합 계정 상태 관리",
 	"log-action-filter-gblrights": "변경 유형:",
-	"log-action-filter-gblrights-groupprms": "전역 사용자 그룹 변경",
+	"log-action-filter-gblrights-groupprms": "전역 사용자 그룹 권한 변경",
 	"log-action-filter-gblrights-setmodify": "위키 집합 변경",
 	"log-action-filter-gblrights-usergroups": "전역 사용자 권한 변경",
 	"log-action-filter-globalauth": "변경 유형:",
