@@ -53,13 +53,17 @@ class CentralAuthAutomaticGlobalGroupManager {
 			);
 
 			if ( $shouldHaveAutomaticGroup ) {
-				$groupsToAdd[] = $automaticGroup;
+				if ( !in_array( $automaticGroup, $assignedGroups ) ) {
+					$groupsToAdd[] = $automaticGroup;
+				}
 				$key = array_search( $automaticGroup, $groupsToRemove );
 				if ( $key !== false ) {
 					unset( $groupsToRemove[$key] );
 				}
 			} else {
-				$groupsToRemove[] = $automaticGroup;
+				if ( in_array( $automaticGroup, $assignedGroups ) ) {
+					$groupsToRemove[] = $automaticGroup;
+				}
 				$key = array_search( $automaticGroup, $groupsToAdd );
 				if ( $key !== false ) {
 					unset( $groupsToAdd[$key] );

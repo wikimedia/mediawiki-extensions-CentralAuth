@@ -42,7 +42,7 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				[],
 			],
 			'Not having a group causes an automatic group to be removed' => [
-				[],
+				[ 'automatic-group' ],
 				[ 'test-group' => [ 'automatic-group' ] ],
 				[],
 				[ 'automatic-group' ],
@@ -90,7 +90,7 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				[
 					'test-group' => [ 'automatic-group' ],
 				],
-				[ 'automatic-group' ],
+				[],
 				[],
 			],
 			'An automatic group cannot be manually added if it should not be present' => [
@@ -101,7 +101,7 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 					'test-group' => [ 'automatic-group' ]
 				],
 				[],
-				[ 'automatic-group' ],
+				[],
 			],
 		];
 	}
