@@ -160,18 +160,17 @@ class SharedDomainUtils {
 			}
 		}
 
-		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
 		$user = RequestContext::getMain()->getUser();
 
-		if ( in_array( self::SUL3_ENABLED_QUERY_FLAG, $sul3Config, true )
+		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_QUERY_FLAG )
 			&& $request->getCheck( 'usesul3' )
 		) {
 			return $request->getFuzzyBool( 'usesul3' );
-		} elseif ( in_array( self::SUL3_ENABLED_COOKIE, $sul3Config, true )
+		} elseif ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_COOKIE )
 			&& $request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' ) !== null
 		) {
 			return (bool)$request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' );
-		} elseif ( in_array( self::SUL3_ENABLED_ALWAYS, $sul3Config, true ) ) {
+		} elseif ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
 		}
 
@@ -184,7 +183,7 @@ class SharedDomainUtils {
 			return false;
 		}
 
-		if ( in_array( self::SUL3_ENABLED_GLOBAL_PREF, $sul3Config, true ) ) {
+		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_GLOBAL_PREF ) ) {
 			// get prefs the expected way for named users, but if the user is an IP
 			// with a UserName cookie, we will get the prefs for the user from the cookie
 			$flag = $this->getUserSUL3RolloutFlag( $user, $request );
