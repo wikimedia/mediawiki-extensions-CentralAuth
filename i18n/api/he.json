@@ -78,7 +78,7 @@
 	"apihelp-query+wikisets-paramvalue-prop-wikisnotincluded": "אתרי הוויקי שאינם כלולים בערכת הוויקי הזאת.",
 	"apihelp-query+wikisets-summary": "למנות את כל ערכות הוויקי.",
 	"apihelp-setglobalaccountstatus-example-1": "לנעול את החשבון הגלובלי של [[User:Example]] עם הסיבה \"Spam\".",
-	"apihelp-setglobalaccountstatus-example-2": "לבטל את הנעילה ולהעלים את החשבון הגלובלי של [[User:Example]] עם הסיבה \"I can\"",
+	"apihelp-setglobalaccountstatus-example-2": "לבטל את הנעילה של החשבון הגלובלי של [[User:Example]] ולהעלים אותו עם הסיבה \"I can\"",
 	"apihelp-setglobalaccountstatus-param-hidden": "קביעה האם המשתמש הזה לא מוסתר, מוסתר מרשימת המשתמשים הגלובליים, או מועלם.",
 	"apihelp-setglobalaccountstatus-param-locked": "לשנות האם המשתמש נעול או לא.",
 	"apihelp-setglobalaccountstatus-param-reason": "הסיבה לשינוי מצב המשתמש הזה.",
