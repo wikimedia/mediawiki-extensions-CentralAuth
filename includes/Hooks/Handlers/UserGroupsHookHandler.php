@@ -57,20 +57,6 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 			return;
 		}
 
-		$globalGroupsToAdd = [];
-		$globalGroupsToRemove = [];
-
-		$assignedGroups = array_merge(
-			$globalUser->getLocalGroups(),
-			$globalUser->getGlobalGroups()
-		);
-
-		$this->automaticGroupManager->handleAutomaticGlobalGroups(
-			$assignedGroups,
-			$globalGroupsToAdd,
-			$globalGroupsToRemove
-		);
-
 		// To do: Have a service that the special page, APIs and hook handler call: T270857
 		$specialPage = new SpecialGlobalGroupMembership(
 			$this->titleFactory,
@@ -94,8 +80,8 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 			->text();
 		$specialPage->doSaveUserGroups(
 			$globalUser,
-			$globalGroupsToAdd,
-			$globalGroupsToRemove,
+			[],
+			[],
 			$reason
 		);
 	}
