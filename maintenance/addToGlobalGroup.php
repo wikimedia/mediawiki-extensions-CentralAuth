@@ -38,6 +38,7 @@ class AddToGlobalGroup extends Maintenance {
 			$this->getServiceContainer()->getTitleFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),
+			CentralAuthServices::getAutomaticGlobalGroupManager( $this->getServiceContainer() ),
 			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
 		);
 

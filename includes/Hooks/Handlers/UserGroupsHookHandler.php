@@ -76,6 +76,7 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 			$this->titleFactory,
 			$this->userNamePrefixSearch,
 			$this->userNameUtils,
+			$this->automaticGroupManager,
 			$this->globalGroupLookup
 		);
 
@@ -87,8 +88,10 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		$context->setAuthority( new UltimateAuthority( $performer ) );
 		$specialPage->setContext( $context );
 
-		$reason = Message::newFromKey( 'centralauth-automatic-global-groups-reason' )
-			->inContentLanguage();
+		// Automatic global groups are managed in ::doSaveUserGroups.
+		$reason = Message::newFromKey( 'centralauth-automatic-global-groups-reason-local' )
+			->inContentLanguage()
+			->text();
 		$specialPage->doSaveUserGroups(
 			$globalUser,
 			$globalGroupsToAdd,

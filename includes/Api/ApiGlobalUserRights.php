@@ -28,6 +28,7 @@ use ChangeTags;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
+use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -49,6 +50,7 @@ class ApiGlobalUserRights extends ApiBase {
 	private TitleFactory $titleFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
+	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
 	private GlobalGroupLookup $globalGroupLookup;
 
 	public function __construct(
@@ -57,12 +59,14 @@ class ApiGlobalUserRights extends ApiBase {
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
+		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
 		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
+		$this->automaticGroupManager = $automaticGroupManager;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
@@ -71,6 +75,7 @@ class ApiGlobalUserRights extends ApiBase {
 			$this->titleFactory,
 			$this->userNamePrefixSearch,
 			$this->userNameUtils,
+			$this->automaticGroupManager,
 			$this->globalGroupLookup
 		);
 	}
