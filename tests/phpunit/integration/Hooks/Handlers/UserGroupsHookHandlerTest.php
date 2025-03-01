@@ -126,6 +126,24 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 		];
 	}
 
+	public function testOnUserGroupsChangedForAutopromotion() {
+		$this->overrideConfigValue( 'CentralAuthAutomaticGlobalGroups', [
+			'new-local-group' => [ 'automatic-global-group' ],
+			'existing-global-group' => [ 'automatic-global-group' ],
+		] );
+		$globalGroupManager = $this->createNoOpMock( CentralAuthAutomaticGlobalGroupManager::class );
+		$this->setService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager', $globalGroupManager );
+		$this->getHandler()->onUserGroupsChanged(
+			$this->getTargetUser(),
+			[],
+			[],
+			false,
+			'Test reason',
+			[],
+			[]
+		);
+	}
+
 	public function testOnUserGroupsChangedNonexistentUser() {
 		$globalGroupManager = $this->createNoOpMock( CentralAuthAutomaticGlobalGroupManager::class );
 		$this->setService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager', $globalGroupManager );
