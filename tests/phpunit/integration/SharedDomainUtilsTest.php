@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -9,6 +10,7 @@ use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\User\UserOptionsManager;
+use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use TestUser;
 use Wikimedia\IPUtils;
@@ -20,11 +22,38 @@ use Wikimedia\TestingAccessWrapper;
  */
 class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
+	public function testGetSharedDomainPrefix() {
+		$getSharedDomainUtils = function ( $sharedDomainCallback ) {
+			$services = $this->getServiceContainer();
+			return new SharedDomainUtils(
+				new HashConfig( [
+					CAMainConfigNames::CentralAuthSharedDomainCallback => $sharedDomainCallback
+				] ),
+				$services->getTitleFactory(),
+				static fn () => $services->getUserOptionsManager(),
+				new HookRunner( $services->getHookContainer() ),
+				null,
+				false,
+				$services->getTempUserConfig(),
+			);
+		};
+
+		$currentWikiId = WikiMap::getCurrentWikiId();
+		$sharedDomainUtils = $getSharedDomainUtils( static fn ( $wikiId ) => "https://auth.wikimedia.org/$wikiId" );
+		$this->assertSame( "https://auth.wikimedia.org/$currentWikiId", $sharedDomainUtils->getSharedDomainPrefix() );
+		$this->assertSame( 'https://auth.wikimedia.org/foowiki',
+			$sharedDomainUtils->getSharedDomainPrefix( 'foowiki' ) );
+
+		$sharedDomainUtils = $getSharedDomainUtils( false );
+		$this->assertNull( $sharedDomainUtils->getSharedDomainPrefix() );
+		$this->assertNull( $sharedDomainUtils->getSharedDomainPrefix( 'foowiki' ) );
+	}
+
 	public function testIsSharedDomain() {
 		$this->overrideConfigValues( [
 			MainConfigNames::Server => '//auth.wikimedia.org',
 			MainConfigNames::CanonicalServer => 'https://auth.wikimedia.org',
-			CAMainConfigNames::CentralAuthSharedDomainPrefix => 'https://auth.wikimedia.org',
+			CAMainConfigNames::CentralAuthSharedDomainCallback => static fn () => 'https://auth.wikimedia.org/foowiki',
 		] );
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
@@ -43,7 +72,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValues( [
 			MainConfigNames::Server => '//en.wikipedia.org',
 			MainConfigNames::CanonicalServer => 'https://en.wikipedia.org',
-			CAMainConfigNames::CentralAuthSharedDomainPrefix => 'https://auth.wikimedia.org',
+			CAMainConfigNames::CentralAuthSharedDomainCallback => static fn () => 'https://auth.wikimedia.org/foowiki',
 		] );
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
