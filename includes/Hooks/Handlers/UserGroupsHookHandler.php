@@ -52,6 +52,12 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		$oldUGMs,
 		$newUGMs
 	) {
+		// T387523: Return if no performer is set to avoid throwing an exception.
+		// TODO: Remove and replace with the use of a system user in this case.
+		if ( !$performer ) {
+			return;
+		}
+
 		$globalUser = CentralAuthUser::getPrimaryInstance( $user );
 		if ( !( $globalUser->exists() && $globalUser->isAttached() ) ) {
 			return;
