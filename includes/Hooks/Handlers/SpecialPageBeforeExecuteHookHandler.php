@@ -155,7 +155,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			 && !$request->getCheck( self::AUTOLOGIN_TRIED_QUERY_PARAM )
 		) {
 			$url = $this->centralDomainUtils->getUrl(
-				CentralDomainUtils::CENTRAL_DOMAIN_ID,
+				CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID,
 				'Special:CentralAutoLogin/checkLoggedIn',
 				$request
 			);

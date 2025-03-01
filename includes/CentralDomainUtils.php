@@ -7,6 +7,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
+use RuntimeException;
 use Wikimedia\NormalizedException\NormalizedException;
 
 /**
@@ -19,6 +20,9 @@ class CentralDomainUtils {
 	 * Pseudo-wiki-ID for the central domain (the central login wiki
 	 * in SUL2 mode, the shared login domain in SUL3 mode).
 	 *
+	 * In SUL3 mode, the generated shared domain URL will resolve to the current wiki. Titles
+	 * are localized.
+	 *
 	 * Should only be passed to methods that explicitly document accepting it.
 	 * @see CentralDomainUtils::getUrl()
 	 */
@@ -26,8 +30,23 @@ class CentralDomainUtils {
 
 	/**
 	 * @internal
+	 * Pseudo-wiki-ID for the central domain (the central login wiki
+	 * in SUL2 mode, the shared login domain in SUL3 mode).
+	 *
+	 * In SUL3 mode, the generated shared domain URL will resolve to the central autologin wiki.
+	 * Titles are not localized.
+	 *
+	 * Should only be passed to methods that explicitly document accepting it.
+	 * @see CentralDomainUtils::getUrl()
+	 * @see https://phabricator.wikimedia.org/T387357
+	 */
+	public const AUTOLOGIN_CENTRAL_DOMAIN_ID = '#autologin_central#';
+
+	/**
+	 * @internal
 	 * Pseudo-wiki-ID for the "other" central domain (the shared login domain
-	 * in SUL2 mode, the central login wiki in SUL3 mode).
+	 * in SUL2 mode, the central login wiki in SUL3 mode), the opposite of
+	 * CentralDomainUtils::CENTRAL_DOMAIN_ID.
 	 *
 	 * Should only be passed to methods that explicitly document accepting it.
 	 * @see CentralDomainUtils::getUrl()
@@ -63,13 +82,34 @@ class CentralDomainUtils {
 	 * @return string
 	 */
 	public function getUrl( string $wikiId, string $page, WebRequest $request, array $params = [] ): string {
-		if ( $wikiId === self::CENTRAL_DOMAIN_ID || $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID ) {
+		if ( $wikiId === self::CENTRAL_DOMAIN_ID
+			|| $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID
+			|| $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID
+		) {
 			$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request );
-			$useSul3Domain = ( $isSul3Enabled && $wikiId === self::CENTRAL_DOMAIN_ID )
-				|| ( !$isSul3Enabled && $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID );
+			$usePassiveDomain = $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID;
+			$useSul3Domain = ( $isSul3Enabled && !$usePassiveDomain ) || ( !$isSul3Enabled && $usePassiveDomain );
 			if ( $useSul3Domain ) {
-				$localUrl = $this->titleFactory->newFromText( $page )->getLocalURL();
-				$url = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl;
+				$sharedDomainWikiId = null;
+				if ( $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID ) {
+					$sharedDomainWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+						?: WikiMap::getCurrentWikiId();
+
+					// The shared domain will parse this URL with the configuration of a different
+					// wiki, possibly in a different language; everything must be canonical.
+					$normalUrl = WikiMap::getWiki( $sharedDomainWikiId )->getCanonicalUrl( $page );
+					$parts = parse_url( $normalUrl );
+					$localUrl = wfAppendQuery( $parts['path'] ?? '', $parts['query'] ?? '' );
+				} else {
+					// The shared domain will parse this URL with the configuration of the current
+					// wiki; use a localized title to spare an extra redirect.
+					$localUrl = $this->titleFactory->newFromText( $page )->getLocalURL();
+				}
+				$sharedDomainPrefix = $this->sharedDomainUtils->getSharedDomainPrefix( $sharedDomainWikiId );
+				if ( !$sharedDomainPrefix ) {
+					throw new RuntimeException( 'SUL3 enabled but $wgCentralAuthSharedDomainCallback not set' );
+				}
+				$url = $sharedDomainPrefix . $localUrl;
 			} else {
 				$centralWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
 					?? $this->fallbackLoginWikiId;
@@ -113,31 +153,17 @@ class CentralDomainUtils {
 	 * the request. Central domain is either the central login wiki in SUL2
 	 * or the shared domain in SUL3 mode.
 	 *
-	 * @param WebRequest $webRequest
+	 * @param WebRequest $request
 	 *
 	 * @return bool
 	 */
-	public function centralDomainExists( WebRequest $webRequest ): bool {
-		return $this->getLoginWikiId( $webRequest ) !== false;
-	}
-
-	/**
-	 * In SUL2 mode, the login wiki will be $wgCentralAuthLoginWiki or false
-	 * depending on the configuration but in SUL3 mode, this will be the fake
-	 * central domain ID.
-	 *
-	 * @param WebRequest $request
-	 *
-	 * @return string|false
-	 */
-	public function getLoginWikiId( WebRequest $request ) {
+	public function centralDomainExists( WebRequest $request ): bool {
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
-			return self::CENTRAL_DOMAIN_ID;
+			return true;
 		}
-
 		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
 			?? $this->fallbackLoginWikiId;
-		return $loginWiki ?: false;
+		return (bool)$loginWiki;
 	}
 
 	/**
@@ -148,9 +174,9 @@ class CentralDomainUtils {
 	public function getCentralDomainHost( WebRequest $request ): string {
 		$loginWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
 			?? $this->fallbackLoginWikiId;
-		$sharedDomainUrl = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix );
+		$sharedDomainUrl = $this->sharedDomainUtils->getSharedDomainPrefix();
 
-		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
+		if ( $sharedDomainUrl && $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
 			return parse_url( $sharedDomainUrl, PHP_URL_HOST );
 		} elseif ( $loginWikiId ) {
 			$centralDomainUrl = WikiMap::getWiki( $loginWikiId )->getCanonicalServer();
@@ -158,7 +184,7 @@ class CentralDomainUtils {
 		}
 
 		// If we're hitting this, then something is likely wrong with our configuration. SUL2 should set
-		// $wgCentralAuthLoginWiki or SUL3 should set $wgCentralAuthSharedDomainPrefix
+		// $wgCentralAuthLoginWiki or SUL3 should set $wgCentralAuthSharedDomainCallback.
 		throw new \RuntimeException( __METHOD__ . " must not be called when there is no central domain" );
 	}
 

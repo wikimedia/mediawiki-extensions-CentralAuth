@@ -184,7 +184,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 		$request = $this->getRequest();
 
-		if ( !$this->centralDomainUtils->getLoginWikiId( $this->getRequest() ) ) {
+		if ( !$this->centralDomainUtils->centralDomainExists( $this->getRequest() ) ) {
 			$fromwiki = $request->getVal( 'from' );
 			if ( $fromwiki !== null && WikiMap::getWiki( $fromwiki ) ) {
 				$this->centralDomainUtils = $this->centralDomainUtils->withFallbackLoginWikiId( $fromwiki );
@@ -331,7 +331,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					return;
 				}
 
-				$this->do302Redirect( CentralDomainUtils::CENTRAL_DOMAIN_ID, 'checkLoggedIn', [
+				$this->do302Redirect( CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID, 'checkLoggedIn', [
 					'wikiid' => WikiMap::getCurrentWikiId(),
 				] + $params );
 				return;
@@ -442,7 +442,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Save memc token for the 'setCookies' step
 				$request->setSessionData( 'centralautologin-token', $token );
 
-				$this->do302Redirect( CentralDomainUtils::CENTRAL_DOMAIN_ID, 'validateSession', [
+				$this->do302Redirect( CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID, 'validateSession', [
 					'token' => $token,
 					'wikiid' => $wikiid,
 				] + $params );

@@ -90,7 +90,7 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $out->getRequest() ) ? 1 : 0,
 				];
 				$out->addHTML( '<noscript>' . CentralAuthHooks::getAuthIconHtml(
-					CentralDomainUtils::CENTRAL_DOMAIN_ID,
+					CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID,
 					'Special:CentralAutoLogin/start',
 					$params,
 					null

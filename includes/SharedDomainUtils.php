@@ -14,6 +14,7 @@ use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserOptionsManager;
+use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
 use UnexpectedValueException;
@@ -64,16 +65,33 @@ class SharedDomainUtils {
 	}
 
 	/**
+	 * Return the URL prefix for using the shared authentication domain. The server will
+	 * handle a request to this URL mostly the same as a request to the specified wiki.
+	 * The returned prefix is equivalent to $wgCanonicalServer in how it should be used to
+	 * construct URLs.
+	 *
+	 * @param ?string $wikiId The ID of the wiki which should be used for configuration when the
+	 *   shared domain URL is processed. Defaults to the current wiki ID.
+	 * @return string|null URL prefix for the shared authentication domain, without a trailing
+	 *   slash; or null if the shared domain is not configured.
+	 */
+	public function getSharedDomainPrefix( ?string $wikiId = null ): ?string {
+		$wikiId ??= WikiMap::getCurrentWikiId();
+		$sharedDomainCallback = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainCallback );
+		return $sharedDomainCallback ? $sharedDomainCallback( $wikiId ) : null;
+	}
+
+	/**
 	 * Whether the current request is to the shared domain used for SUL3 login.
 	 *
 	 * This assumes:
-	 * - $wgCentralAuthSharedDomainPrefix contains the shared domain.
+	 * - $wgCentralAuthSharedDomainCallback contains the shared domain.
 	 * - $wgCanonicalServer is set in site configuration to the current domain
 	 *   (instead of the actual canonical domain) for requests to the shared domain.
 	 */
 	public function isSharedDomain(): bool {
 		if ( $this->isSharedDomain === null ) {
-			$sharedDomainPrefix = $this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix );
+			$sharedDomainPrefix = $this->getSharedDomainPrefix();
 			if ( !$sharedDomainPrefix ) {
 				$this->isSharedDomain = false;
 			} else {
@@ -91,12 +109,12 @@ class SharedDomainUtils {
 	 * Whether the current request must deny non-auth actions.
 	 *
 	 * If $wgCentralAuthRestrictSharedDomain is enabled, then requests to the "fake"
-	 * shared domain within $wgCentralAuthSharedDomainPrefix must only be for authentication
+	 * shared domain within $wgCentralAuthSharedDomainCallback must only be for authentication
 	 * purposes. All non-authentication-related actions should be prevented.
 	 *
 	 * SUL3 login supports both using a dedicated login wiki for the domain where the central
 	 * session cookies are stored, and a shared domain which serve any wiki (from a virtual
-	 * sub directory). In the latter case, we want to prevent non-authentication actions
+	 * subdirectory). In the latter case, we want to prevent non-authentication actions
 	 * to prevent complications like cache splits. This flag differentiates between the two
 	 * setups.
 	 *
@@ -406,9 +424,11 @@ class SharedDomainUtils {
 				throw new RuntimeException( 'Unknown action: ' . $action );
 		}
 
-		$url = $this->makeUrlDeviceCompliant(
-			$this->config->get( CAMainConfigNames::CentralAuthSharedDomainPrefix ) . $localUrl
-		);
+		$sharedDomainPrefix = $this->getSharedDomainPrefix();
+		if ( !$sharedDomainPrefix ) {
+			throw new RuntimeException( 'SUL3 action used but $wgCentralAuthSharedDomainCallback not configured' );
+		}
+		$url = $this->makeUrlDeviceCompliant( $sharedDomainPrefix . $localUrl );
 
 		$params = [];
 		$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );

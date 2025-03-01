@@ -362,7 +362,7 @@ class CentralAuthHooks implements
 	 */
 	public static function getAutoLoginWikis(): array {
 		global $wgServer, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis,
-			$wgCentralAuthSharedDomainPrefix, $wgCentralAuthCookieDomain;
+			$wgCentralAuthSharedDomainCallback, $wgCentralAuthCookieDomain;
 		$autoLoginWikis = $wgCentralAuthAutoLoginWikis;
 		if ( $wgCentralAuthCookieDomain ) {
 			unset( $autoLoginWikis[$wgCentralAuthCookieDomain] );
@@ -372,7 +372,7 @@ class CentralAuthHooks implements
 			unset( $autoLoginWikis[ $serverParts['host'] ] );
 		}
 		// When both the SUL2 and the SUL3 central domain is configured, autologin on both.
-		if ( $wgCentralAuthLoginWiki && $wgCentralAuthSharedDomainPrefix ) {
+		if ( $wgCentralAuthLoginWiki && $wgCentralAuthSharedDomainCallback ) {
 			array_push( $autoLoginWikis, CentralDomainUtils::PASSIVE_CENTRAL_DOMAIN_ID );
 		}
 		return $autoLoginWikis;
@@ -639,7 +639,7 @@ class CentralAuthHooks implements
 
 		if ( $refreshCookies ) {
 			$html .= self::getAuthIconHtml(
-				CentralDomainUtils::CENTRAL_DOMAIN_ID,
+				CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID,
 				'Special:CentralAutoLogin/refreshCookies', [
 					'type' => '1x1',
 					'wikiid' => WikiMap::getCurrentWikiId(),
