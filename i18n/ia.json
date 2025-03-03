@@ -123,7 +123,6 @@
 	"centralauth-attach-success": "Le conto ha essite migrate al conto unificate.",
 	"centralauth-attach-text": "Iste conto non ha ancora essite migrate al conto unificate.\nSi le conto global es etiam tue, tu pote fusionar iste conto si tu entra le contrasigno del conto global:",
 	"centralauth-attach-title": "Confirmar conto",
-	"centralauth-automatic-global-groups-reason": "Gruppos global actualisate automaticamente a causa de un cambio de gruppos local o global.",
 	"centralauth-block-already-locked": "Le conto [[Special:CentralAuth/$1|$1]] es jam blocate globalmente.",
 	"centralauth-block-editing-action": "$1 action{{PLURAL:$1||es}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|paginas}}",

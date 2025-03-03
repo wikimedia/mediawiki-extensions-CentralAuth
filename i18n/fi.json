@@ -509,7 +509,7 @@
 	"grant-createlocalaccount": "Luoda paikallisia käyttäjiä järjestelmänlaajuisille tunnuksille",
 	"grant-setglobalaccountstatus": "Hallinnoida järjestelmänlaajuisen tunnuksen tilaa",
 	"log-action-filter-gblrights": "Muutostyyppi:",
-	"log-action-filter-gblrights-groupprms": "Järjestelmänlaajuinen käyttäjän ryhmän vaihdos",
+	"log-action-filter-gblrights-groupprms": "Järjestelmänlaajuinen käyttäjäryhmän oikeuksien muutos",
 	"log-action-filter-gblrights-setmodify": "Wikijoukon muutos",
 	"log-action-filter-gblrights-usergroups": "Järjestelmänlaajuinen käyttäjän oikeuksien vaihdos",
 	"log-action-filter-globalauth": "Muutoksen tyyppi:",

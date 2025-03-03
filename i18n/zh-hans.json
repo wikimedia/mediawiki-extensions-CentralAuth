@@ -188,7 +188,6 @@
 	"centralauth-attach-success": "该账号已被迁移到整合账号中。",
 	"centralauth-attach-text": "此账号还未被迁移到整合账号中。如果您已经拥有了一个整合账号，您可以在此输入该整合账号的密码来并入此账号：",
 	"centralauth-attach-title": "确认账号",
-	"centralauth-automatic-global-groups-reason": "由于本地或全域组变化而自动更新全域组。",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]]的账号已被全域锁定。",
 	"centralauth-block-editing-action": "$1个{{PLURAL:$1|操作}}",
 	"centralauth-block-editing-page": "$1{{PLURAL:$1|个页面|个页面}}",
