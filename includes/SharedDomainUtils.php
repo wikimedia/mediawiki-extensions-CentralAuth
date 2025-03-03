@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\TempUser\TempUserConfig;
@@ -412,12 +413,14 @@ class SharedDomainUtils {
 	 * @return string
 	 */
 	public function getUrlForSharedDomainAction( string $action, WebRequest $request ): string {
+		// FIXME inject this once we don't have to jump through hoops to not break Wikibase
+		$specialPageFactory = MediaWikiServices::getInstance()->getSpecialPageFactory();
 		switch ( $action ) {
 			case 'login':
-				$localUrl = $this->titleFactory->newFromText( 'Special:UserLogin' )->getLocalURL();
+				$localUrl = $specialPageFactory->getTitleForAlias( 'Userlogin' )->getLocalURL();
 				break;
 			case 'signup':
-				$localUrl = $this->titleFactory->newFromText( 'Special:CreateAccount' )->getLocalURL();
+				$localUrl = $specialPageFactory->getTitleForAlias( 'CreateAccount' )->getLocalURL();
 				break;
 			default:
 				throw new RuntimeException( 'Unknown action: ' . $action );
