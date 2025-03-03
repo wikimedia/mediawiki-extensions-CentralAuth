@@ -53,8 +53,8 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		$newUGMs
 	) {
 		// T387523: Return if no performer is set to avoid throwing an exception, which occurs when
-		// the user is autopromoted into a group through $wgAutopromoteOnce
-		// TODO: Remove and replace with the use of a system user in this case.
+		// the user is autopromoted into a group through $wgAutopromoteOnce. Updating automatic
+		// global groups on autopromote is not supported.
 		if ( !$performer ) {
 			return;
 		}
