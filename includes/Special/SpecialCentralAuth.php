@@ -1274,7 +1274,12 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$html = '';
 		$numRows = LogEventsList::showLogExtract(
-			$html, [], '', '', [ 'showIfEmpty' => true, 'conds' => [ $relevantLogsExpr ] ]
+			$html,
+			// Hack for T387178: LogPager::limitType hides suppression logs if no types are filtered.
+			// However, we are filtering types using custom conditions which is not recognised and
+			// therefore we need to define them again.
+			array_merge( $logTypes, [ 'gblblock' ] ),
+			'', '', [ 'showIfEmpty' => true, 'conds' => [ $relevantLogsExpr ] ]
 		);
 
 		if ( $numRows ) {

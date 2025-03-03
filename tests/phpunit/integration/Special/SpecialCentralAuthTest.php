@@ -34,6 +34,7 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
+use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
 use TestUserRegistry;
@@ -799,5 +800,83 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Test global block', $logSnippet );
 		$this->assertStringContainsString( 'Test global lock', $logSnippet );
 		$this->assertStringContainsString( $targetUsername, $logSnippet );
+	}
+
+	public function testLogExtractWithSuppressionLog() {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		// Globally lock the target with suppression enabled
+		$context = RequestContext::getMain();
+		$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
+		$this->assertStatusGood( $targetUser->adminLockHide(
+			true, CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'Test global suppression', $context
+		) );
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		// Verify that that the log snippet is present and contains the global suppression entry.
+		$logSnippet = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-logsnippet' );
+		$this->assertStringContainsString( 'Test global suppression', $logSnippet );
+		$this->assertStringContainsString( $targetUsername, $logSnippet );
+	}
+
+	public function testLogExtractWithSuppressionLogWhenAuthorityLacksSuppressionLogRight() {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		// Set the performing user to have all rights except the ability to see suppression logs
+		$context = RequestContext::getMain();
+		$context->setAuthority( $this->mockRegisteredAuthorityWithoutPermissions( [ 'suppressionlog' ] ) );
+
+		// Globally lock the target with suppression enabled
+		$this->assertStatusGood( $targetUser->adminLockHide(
+			true, CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, 'Test global suppression', $context
+		) );
+
+		// Verify that that the log snippet is not present and the global suppression log is
+		// not present in the page.
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		$specialPageDocument = DOMUtils::parseHTML( $html );
+		$logSnippet = DOMCompat::getElementById( $specialPageDocument, 'mw-centralauth-admin-logsnippet' );
+		$this->assertNull(
+			$logSnippet, 'Should not have found log snippet element as logs cannot be seen by the authority'
+		);
+	}
+
+	/**
+	 * Calls DOMCompat::querySelectorAll, expects that it returns one valid Element object and then returns
+	 * the HTML of that Element.
+	 *
+	 * @param string $html The HTML to search through
+	 * @param string $class The CSS class to search for, excluding the "." character
+	 * @return string
+	 */
+	private function assertAndGetByElementClass( string $html, string $class ): string {
+		$specialPageDocument = DOMUtils::parseHTML( $html );
+		$element = DOMCompat::querySelectorAll( $specialPageDocument, '.' . $class );
+		$this->assertCount( 1, $element, "Could not find only one element with CSS class $class in $html" );
+		return DOMCompat::getOuterHTML( $element[0] );
+	}
+
+	public function testLogExtractMissingWhenUserIsLocked() {
+		// Define the MediaWiki:Centralauth-admin-log-otherwiki page to override the associated message.
+		$this->getServiceContainer()->getMessageCache()->enable();
+		$this->editPage(
+			Title::newFromText( 'centralauth-admin-log-otherwiki', NS_MEDIAWIKI ),
+			'Test warning',
+			'test',
+			NS_MEDIAWIKI,
+			$this->getTestSysop()->getAuthority()
+		);
+
+		// Globally lock the target using a method which does not create a log entry
+		$targetUsername = $this->getTestCentralAuthUser();
+		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$this->assertStatusGood( $targetUser->adminLock() );
+
+		// Load the special page for the target, and verify that the "centralauth-admin-log-otherwiki" message
+		// is shown along with the associated target username in the message.
+		RequestContext::getMain()->setAuthority( $this->mockRegisteredUltimateAuthority() );
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		$otherWikiLogsWarning = $this->assertAndGetByElementClass( $html, 'centralauth-admin-log-otherwiki' );
+		$this->assertStringContainsString( "(centralauth-admin-log-otherwiki", $otherWikiLogsWarning );
+		$this->assertStringContainsString( $targetUsername, $otherWikiLogsWarning );
 	}
 }
