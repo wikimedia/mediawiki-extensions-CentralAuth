@@ -7,12 +7,10 @@ use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Tests\Site\TestSites;
 use MediaWikiIntegrationTestCase;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\CentralDomainUtils
- * @group Database
  */
 class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
@@ -24,24 +22,25 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			'wgServer' => [
 				'foowiki' => 'https://foowiki.example.org',
 				'loginwiki' => 'https://login.example.org',
+				'enwiktionary' => 'https://en.wiktionary.org',
 			],
 			'wgArticlePath' => [
 				'foowiki' => '/wiki/$1',
 				'loginwiki' => '/wiki/$1',
+				'enwiktionary' => '/wiki/$1',
 			],
 		];
-		$conf->suffixes = [ 'wiki' ];
+		$conf->suffixes = [ 'wiki', 'wiktionary' ];
 		$this->setMwGlobals( 'wgConf', $conf );
 		$this->overrideConfigValues( [
-			MainConfigNames::LocalDatabases => [ 'foowiki', 'loginwiki' ],
+			MainConfigNames::LocalDatabases => [ 'foowiki', 'loginwiki', 'enwiktionary' ],
 			MainConfigNames::CanonicalServer => 'https://foowiki.example.org',
 			MainConfigNames::DBname => 'foowiki',
 			MainConfigNames::DBprefix => null,
 			CAMainConfigNames::CentralAuthLoginWiki => 'loginwiki',
-			CAMainConfigNames::CentralAuthSharedDomainPrefix => 'https://auth.example.org',
+			CAMainConfigNames::CentralAuthSharedDomainCallback
+				=> static fn ( $wikiId ) => "https://auth.example.org/$wikiId",
 		] );
-
-		TestSites::insertIntoDb();
 	}
 
 	private function getCentralDomainUtils(): CentralDomainUtils {
@@ -71,6 +70,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 	public function provideGetUrlData() {
 		$centralDomain = CentralDomainUtils::CENTRAL_DOMAIN_ID;
+		$autologinDomain = CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID;
 		$passiveDomain = CentralDomainUtils::PASSIVE_CENTRAL_DOMAIN_ID;
 		return [
 			// $isSul3Enabled, $wikiId, $page, $params, $expectedUrl
@@ -78,12 +78,16 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				'https://login.example.org/wiki/Main_Page?useformat=desktop' ],
 			[ false, $centralDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
+			[ false, $autologinDomain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
+				'https://login.example.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ false, $passiveDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
-				'https://auth.example.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
+				'https://auth.example.org/foowiki/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 			[ false, 'enwiktionary', 'Special:UserLogin', [ 'foo' => 'bar' ],
 				'https://en.wiktionary.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 			[ true, $centralDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
-				'https://auth.example.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
+				'https://auth.example.org/foowiki/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
+			[ true, $autologinDomain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
+				'https://auth.example.org/loginwiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ true, $passiveDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 			[ true, 'enwiktionary', 'Special:UserLogin', [ 'foo' => 'bar' ],
