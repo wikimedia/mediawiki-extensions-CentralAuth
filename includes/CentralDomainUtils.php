@@ -71,15 +71,25 @@ class CentralDomainUtils {
 	}
 
 	/**
-	 * Returns a URL for the given wiki and page. The URL will
-	 * preserve the current mobile mode (determined via MobileContext
-	 * or the presence of a 'mobile' flag in $params).
+	 * Returns a URL for the given wiki and page.
+	 *
+	 * The URL is guaranteed to have the following properties:
+	 * - Preserves the current mobile mode, even if the target wiki does not have a mobile mode (so
+	 *   that at the end of the redirect chain the user is still in the same mode they started with).
+	 * - Uses a nice URL (no index.php). This simplifies URL pattern recognition at the edge cache.
+	 * - When using CENTRAL_DOMAIN_ID or PASSIVE_CENTRAL_DOMAIN_ID, and it resolves to the SUL3
+	 *   domain, the namespace will be formatted like in a local URL.
+	 *   In all other cases, it uses the page name as it was passed (does not localize namespaces).
+	 *   This can be important for identifying authentication-related cross-wiki requests at the
+	 *   edge cache level.
 	 *
 	 * @param string $wikiId Wiki ID or CentralDomainUtils pseudo-wiki-ID
-	 * @param string $page Title of the page the URL should point to.
+	 * @param string $page Title of the page the URL should point to; must be the normalized,
+	 *   canonical form.
 	 * @param WebRequest $request
 	 * @param array $params Query parameters to apply to the URL.
 	 * @return string
+	 * @see CentralAuthHooks::onTestCanonicalRedirect()
 	 */
 	public function getUrl( string $wikiId, string $page, WebRequest $request, array $params = [] ): string {
 		if ( $wikiId === self::CENTRAL_DOMAIN_ID

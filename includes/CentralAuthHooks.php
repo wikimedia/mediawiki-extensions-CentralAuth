@@ -653,16 +653,20 @@ class CentralAuthHooks implements
 	}
 
 	/**
-	 * Prevent "canonicalization" of Special:CentralAutoLogin to a localized
-	 * Special namespace name. See T56195.
+	 * T56195: prevent "canonicalization" of Special:CentralLogin and Special:CentralAutoLogin.
 	 * @param WebRequest $request
 	 * @param Title $title
 	 * @param OutputPage $output
 	 * @return bool
 	 */
 	public function onTestCanonicalRedirect( $request, $title, $output ) {
-		return $title->getNamespace() !== NS_SPECIAL ||
-			!str_starts_with( $request->getVal( 'title', '' ), 'Special:CentralAutoLogin/' );
+		// This prevents converting the namespace prefix and special page name to their localized form
+		// (and also conversion between nice URLs and index.php URLs, although we don't need that).
+		// In practice this is probably unnecessary, because ActionEntryPoint::tryNormaliseRedirect()
+		// will ignore URLs with nonstandard query parameters, and these pages will always have those.
+		// No harm in making sure, though.
+		return $title->getNamespace() !== NS_SPECIAL
+			|| !in_array( $title->getDBkey(), [ 'CentralLogin', 'CentralAutoLogin' ] );
 	}
 
 	/**
