@@ -3,6 +3,7 @@
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
@@ -318,7 +319,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$caUser1->loadStateNoCache();
 		// Lock the global account using a different CentralAuthUser instance, so that we can simulate a race condition
 		// using the outdated first instance.
-		CentralAuthUser::clearUserCache();
+		CentralAuthServices::getUserCache()->clear();
 		$caUser2 = CentralAuthUser::getInstanceByName( $centralAccountUsername );
 		$caUser2->adminLock();
 		// Now try to lock the global account using the first instance.
@@ -343,7 +344,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$caUser1->loadStateNoCache();
 		// Lock the global account using a different CentralAuthUser instance, so that we can simulate a race condition
 		// using the outdated first instance by unlocking the account.
-		CentralAuthUser::clearUserCache();
+		CentralAuthServices::getUserCache()->clear();
 		$caUser2 = CentralAuthUser::getInstanceByName( $globalAccountUsername );
 		$caUser2->adminUnlock();
 		// Now try to lock the global account using the first instance.
@@ -367,7 +368,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$caUser1->loadStateNoCache();
 		// Suppress the global account using a different CentralAuthUser instance, so that we can simulate a
 		// race condition using the outdated first instance.
-		CentralAuthUser::clearUserCache();
+		CentralAuthServices::getUserCache()->clear();
 		$caUser2 = CentralAuthUser::getInstanceByName( $centralAccountUsername );
 		$caUser2->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED );
 		// Now try to lock the global account using the first instance.
@@ -396,7 +397,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$caUser1->adminLock();
 		// Suppress the global account using a different CentralAuthUser instance, so that we can simulate a
 		// race condition using the outdated first instance.
-		CentralAuthUser::clearUserCache();
+		CentralAuthServices::getUserCache()->clear();
 		$caUser2 = CentralAuthUser::getInstanceByName( $centralAccountUsername );
 		$caUser2->adminSetHidden( CentralAuthUser::HIDDEN_LEVEL_LISTS );
 		// Now try to lock the global account using the first instance.

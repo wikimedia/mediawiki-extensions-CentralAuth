@@ -83,12 +83,12 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 					$renameUser = [ $caRow->ru_oldname, $caRow->ru_newname ];
 				}
 
-				CentralAuthUser::setInstance(
-					$user, CentralAuthUser::newFromRow( $caRow, $renameUser )
+				CentralAuthServices::getUserCache()->set(
+					CentralAuthUser::newFromRow( $caRow, $renameUser )
 				);
 			} else {
-				CentralAuthUser::setInstance(
-					$user, CentralAuthUser::newUnattached( $user->getName() )
+				CentralAuthServices::getUserCache()->set(
+					CentralAuthUser::newUnattached( $user->getName() )
 				);
 			}
 		}

@@ -25,7 +25,6 @@ use CentralAuthSessionProvider;
 use Exception;
 use LogicException;
 use ManualLogEntry;
-use MapCacheLRU;
 use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
@@ -68,9 +67,6 @@ use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthUser implements IDBAccessObject {
-
-	/** @var MapCacheLRU Cache of loaded CentralAuthUsers */
-	private static $loadedUsers = null;
 
 	/**
 	 * The username of the current user.
@@ -201,39 +197,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Fetch the cache
-	 * @return MapCacheLRU
-	 */
-	private static function getUserCache() {
-		if ( self::$loadedUsers === null ) {
-			// Limit of 20 is arbitrary
-			self::$loadedUsers = new MapCacheLRU( 20 );
-		}
-		return self::$loadedUsers;
-	}
-
-	/**
-	 * Clears the internal cache of CentralAuthUser instances.
-	 *
-	 * @internal Only for use in CentralAuth tests.
-	 * @return void
-	 */
-	public static function clearUserCache() {
-		self::getUserCache()->clear();
-	}
-
-	/**
-	 * Explicitly set the (cached) CentralAuthUser object corresponding to the supplied User.
-	 * @param UserIdentity $user
-	 * @param self $caUser
-	 * @internal Only for CentralAuthUserArrayFromResult.
-	 */
-	public static function setInstance( UserIdentity $user, self $caUser ): void {
-		// No need to canonicalize, $user is straight from the database.
-		self::getUserCache()->set( $user->getName(), $caUser );
-	}
-
-	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * @param UserIdentity $user
 	 * @return self
@@ -276,11 +239,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public static function getInstanceByName( $username ): self {
 		$canonUsername = self::normalizeUsername( $username );
-		$cache = self::getUserCache();
+		$cache = CentralAuthServices::getUserCache();
 		$ret = $cache->get( $canonUsername );
 		if ( !$ret ) {
 			$ret = new self( $canonUsername );
-			$cache->set( $canonUsername, $ret );
+			$cache->set( $ret );
 		}
 		return $ret;
 	}
@@ -308,11 +271,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public static function getPrimaryInstanceByName( $username ): self {
 		$canonUsername = self::normalizeUsername( $username );
-		$cache = self::getUserCache();
-		$ret = $cache->get( $canonUsername );
-		if ( !$ret || !$ret->mFromPrimary ) {
+		$cache = CentralAuthServices::getUserCache();
+		$ret = $cache->get( $canonUsername, true );
+		if ( !$ret ) {
 			$ret = new self( $canonUsername, IDBAccessObject::READ_LATEST );
-			$cache->set( $canonUsername, $ret );
+			$cache->set( $ret );
 		}
 		return $ret;
 	}
@@ -327,6 +290,15 @@ class CentralAuthUser implements IDBAccessObject {
 				[ 'exception' => new RuntimeException() ]
 			);
 		}
+	}
+
+	/**
+	 * Whether the data was loaded from the primary database
+	 *
+	 * @return bool
+	 */
+	public function isFromPrimary() {
+		return $this->mFromPrimary;
 	}
 
 	/**

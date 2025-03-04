@@ -32,12 +32,11 @@ use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
-use Wikimedia\Services\DestructibleService;
 
 /**
  * Look up central IDs using CentralAuth
  */
-class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService {
+class CentralAuthIdLookup extends CentralIdLookup {
 
 	private Config $config;
 	private CentralAuthDatabaseManager $databaseManager;
@@ -211,13 +210,6 @@ class CentralAuthIdLookup extends CentralIdLookup implements DestructibleService
 		return $this->shouldUsePrimary( $flags )
 			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
-	}
-
-	/** @inheritDoc */
-	public function destroy() {
-		if ( defined( 'MW_PHPUNIT_TEST' ) ) {
-			CentralAuthUser::clearUserCache();
-		}
 	}
 
 }

@@ -85,7 +85,7 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 		);
 
 		// Re-fetch the global user with the new groups
-		CentralAuthUser::clearUserCache();
+		CentralAuthServices::getUserCache()->clear();
 		$globalUser = CentralAuthUser::getPrimaryInstanceByName( $user->getName() );
 
 		$this->assertSame( [ 'automatic-global-group' ], $globalUser->getGlobalGroups() );
@@ -110,7 +110,7 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 		);
 
 		// Re-fetch the global user with the new groups
-		CentralAuthUser::clearUserCache();
+		CentralAuthServices::getUserCache()->clear();
 		$globalUser = CentralAuthUser::getPrimaryInstanceByName( $user->getName() );
 
 		$this->assertSame(

@@ -117,6 +117,12 @@ return [
 		);
 	},
 
+	'CentralAuth.CentralAuthUserCache' => static function (
+		MediaWikiServices $services
+	): CentralAuthUserCache {
+		return new CentralAuthUserCache();
+	},
+
 	'CentralAuth.CentralAuthUtilityService' => static function (
 		MediaWikiServices $services
 	): CentralAuthUtilityService {
