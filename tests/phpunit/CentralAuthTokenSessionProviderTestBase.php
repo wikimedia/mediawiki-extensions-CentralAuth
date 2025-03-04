@@ -157,15 +157,16 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 	/**
 	 * @param string $name
-	 * @param array $return
-	 * @param array $methods
+	 * @param array<string,mixed> $return Array of methods to call, mapped to their expected values
+	 * @param list<string> $methods List of extra methods that may be called during the test
 	 *
 	 * @return MockObject|CentralAuthUser
 	 */
 	protected function makeCentralAuthUser( $name, $return = [], $methods = [] ) {
 		$id = ++$this->idCounter;
 
-		$methods += [
+		$methods = [
+			...$methods,
 			'getId',
 			'getName',
 			'renameInProgress',
