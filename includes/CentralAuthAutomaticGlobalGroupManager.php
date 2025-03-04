@@ -48,7 +48,8 @@ class CentralAuthAutomaticGlobalGroupManager {
 		foreach ( $automaticGroups as $automaticGroup ) {
 			$shouldHaveAutomaticGroup = $this->shouldHaveAutomaticGroup(
 				$automaticGroup,
-				$assignedGroups
+				$assignedGroups,
+				$automaticGroups
 			);
 
 			if ( $shouldHaveAutomaticGroup ) {
@@ -74,20 +75,23 @@ class CentralAuthAutomaticGlobalGroupManager {
 	/**
 	 * @param string $automaticGroup
 	 * @param string[] $assignedGroups
+	 * @param string[] $automaticGroups The automatic global groups
 	 * @return bool The user should have the automatic group. They should have the group
 	 *  if and only if at least one of their assigned groups promotes them to it.
 	 */
 	private function shouldHaveAutomaticGroup(
 		string $automaticGroup,
-		array $assignedGroups
-	) {
+		array $assignedGroups,
+		array $automaticGroups
+	): bool {
 		$config = $this->options->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
 		$shouldHaveGlobalGroup = false;
 
 		foreach ( $assignedGroups as $assignedGroup ) {
 			if (
 				isset( $config[$assignedGroup] ) &&
-				in_array( $automaticGroup, $config[$assignedGroup] )
+				in_array( $automaticGroup, $config[$assignedGroup] ) &&
+				!in_array( $assignedGroup, $automaticGroups )
 			) {
 				$shouldHaveGlobalGroup = true;
 				break;

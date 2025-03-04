@@ -56,6 +56,24 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				[ 'automatic-group' ],
 				[],
 			],
+			'Having an automatic group does not cause another automatic group to be updated' => [
+				[ 'test-group', 'automatic-group-1' ],
+				[
+					'test-group' => [ 'automatic-group-1' ],
+					'automatic-group-1' => [ 'automatic-group-2' ],
+				],
+				[],
+				[],
+			],
+			'Adding an automatic group does not cause another automatic group to be updated' => [
+				[ 'test-group' ],
+				[
+					'test-group' => [ 'automatic-group-1' ],
+					'automatic-group-1' => [ 'automatic-group-2' ],
+				],
+				[ 'automatic-group-1' ],
+				[],
+			],
 		];
 	}
 
