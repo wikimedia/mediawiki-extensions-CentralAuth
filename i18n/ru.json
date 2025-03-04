@@ -479,6 +479,7 @@
 	"globalrenamerequest-submit-text": "Запросить переименование",
 	"globalrenamerequest-username-label": "Текущее имя учётной записи:",
 	"globalrenameuser": "Переименование глобального участника",
+	"globalvanishrequest": "Запрос на удаление глобальной учётной записи",
 	"globalusers": "Глобальный список участников",
 	"grant-createlocalaccount": "Принудительное создание локальной учётной записи для глобальной учётной записи",
 	"grant-setglobalaccountstatus": "Управление состоянием глобальной учётной записи",
