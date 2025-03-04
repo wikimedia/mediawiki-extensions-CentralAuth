@@ -59,6 +59,7 @@ class CAMainConfigNames {
 	public const CentralAuthTokenSessionTimeout = 'CentralAuthTokenSessionTimeout';
 	public const CentralAuthRejectVanishUserNotification = 'CentralAuthRejectVanishUserNotification';
 	public const CentralAuthAutomaticVanishPerformer = 'CentralAuthAutomaticVanishPerformer';
+	public const CentralAuthAutomaticVanishWiki = 'CentralAuthAutomaticVanishWiki';
 	public const CentralAuthBlockAppealWikidataIds = 'CentralAuthBlockAppealWikidataIds';
 	public const CentralAuthWikidataApiUrl = 'CentralAuthWikidataApiUrl';
 	public const CentralAuthFallbackAppealUrl = 'CentralAuthFallbackAppealUrl';

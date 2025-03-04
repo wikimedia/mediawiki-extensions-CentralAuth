@@ -245,6 +245,10 @@
 		"CentralAuthUnattachUserJob": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthUnattachUserJob",
 			"needsPage": false
+		},
+		"GlobalVanishJob": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\GlobalRename\\GlobalRenameJob\\GlobalVanishJob",
+			"needsPage": false
 		}
 	},
 	"LogTypes": [
@@ -909,6 +913,10 @@
 		},
 		"CentralAuthAutomaticVanishPerformer": {
 			"description": "Username of a global user to set as the performer for vanish requests that get fulfilled automatically. If this is left unset, then automatic vanishing will be disabled.",
+			"value": null
+		},
+		"CentralAuthAutomaticVanishWiki": {
+			"description": "The id of the wiki to execute automatic vanish requests on. If left unset then the wiki that the request was created on will process the request.",
 			"value": null
 		},
 		"CentralAuthBlockAppealWikidataIds": {

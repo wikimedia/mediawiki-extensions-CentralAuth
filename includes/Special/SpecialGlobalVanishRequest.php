@@ -21,16 +21,17 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use MailAddress;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameJob\GlobalVanishJob;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Parser\Parser;
@@ -38,10 +39,10 @@ use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
+use MediaWiki\WikiMap\WikiMap;
 use PermissionsError;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use UserMailer;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -53,6 +54,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	private GlobalRenameDenylist $globalRenameDenylist;
 	private GlobalRenameRequestStore $globalRenameRequestStore;
 	private GlobalRenameFactory $globalRenameFactory;
+	private JobQueueGroupFactory $jobQueueGroupFactory;
 	private HttpRequestFactory $httpRequestFactory;
 	private UserIdentityLookup $userIdentityLookup;
 
@@ -60,6 +62,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		GlobalRenameDenylist $globalRenameDenylist,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		GlobalRenameFactory $globalRenameFactory,
+		JobQueueGroupFactory $jobQueueGroupFactory,
 		HttpRequestFactory $httpRequestFactory,
 		UserIdentityLookup $userIdentityLookup
 	) {
@@ -69,6 +72,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->globalRenameFactory = $globalRenameFactory;
+		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->httpRequestFactory = $httpRequestFactory;
 		$this->userIdentityLookup = $userIdentityLookup;
 	}
@@ -133,30 +137,20 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 			}
 
-			// Scrub the "reason". In the context of GlobalRenameUser, reason
-			// is the public log entry, not the private reason stated by the
-			// user. That value should never be logged.
-			$request->setReason(
-				$this->msg( 'globalvanishrequest-autoapprove-public-note' )
-					->inContentLanguage()->text() );
+			// Determine which wiki to run the job on. If the config var is
+			// defined then we use that wiki, otherwise the wiki that the
+			// request is being made on is used as a fallback.
+			$vanishWiki = $this->getConfig()
+				->get( CAMainConfigNames::CentralAuthAutomaticVanishWiki )
+					?? WikiMap::getCurrentWikiId();
 
-			$requestArray = $request->toArray();
-
-			// We need to add this two fields that are usually being provided by the Form
-			$requestArray['movepages'] = true;
-			$requestArray['suppressredirects'] = true;
-
-			$renameResult = $this->globalRenameFactory
-				->newGlobalRenameUser( $localAutomaticVanishPerformer, $causer, $request->getNewName() )
-				->withSession( $this->getContext()->exportSession() )
-				->withLockPerformingUser( $localAutomaticVanishPerformer )
-				->rename( $requestArray );
-
-			if ( !$renameResult->isGood() ) {
-				return $renameResult;
-			}
-
-			$this->sendVanishingSuccessfulEmail( $request );
+			$job = new GlobalVanishJob( [
+				'requestId' => $request->getId(),
+				'renamer' => $automaticVanishPerformerName,
+			] );
+			$this->jobQueueGroupFactory
+				->makeJobQueueGroup( $vanishWiki )
+				->push( $job );
 		} else {
 			// Save the request to the database for it to be processed later.
 			if ( !$this->globalRenameRequestStore->save( $request ) ) {
@@ -365,57 +359,6 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		return $causer->getGlobalEditCount() === 0 &&
 			!$causer->isBlocked() &&
 			!$causer->hasPublicLogs();
-	}
-
-	/**
-	 * Attempt to send a success email to the user whose vanish was fulfilled.
-	 * TODO: https://phabricator.wikimedia.org/T369134 - refactor email sending
-	 * @param GlobalRenameRequest $request
-	 * @return void
-	 */
-	private function sendVanishingSuccessfulEmail( GlobalRenameRequest $request ): void {
-		$causer = $this->getGlobalUser();
-		if ( !$causer ) {
-			return;
-		}
-
-		$bodyKey = $request->getComments() === ''
-			? 'globalrenamequeue-vanish-email-body-approved'
-			: 'globalrenamequeue-vanish-email-body-approved-with-note';
-
-		$subject = $this->msg( 'globalrenamequeue-vanish-email-subject-approved' )
-			->inContentLanguage()
-			->text();
-		$body = $this->msg( $bodyKey, [ $request->getName(), $request->getComments() ] )
-			->inContentLanguage()
-			->text();
-
-		$from = new MailAddress(
-			$this->getConfig()->get( 'PasswordSender' ),
-			$this->msg( 'emailsender' )->inContentLanguage()->text()
-		);
-		$to = new MailAddress( $causer->getEmail(), $causer->getName(), '' );
-
-		// Users don't always have email addresses. Since this is acceptable
-		// and expected behavior, bail out with a warning if there isn't one.
-		if ( !$to->address ) {
-			$this->logger->info(
-				"Unable to sent approval email to User:{oldName} as there is no email address to send to.",
-				[ 'oldName' => $request->getName(), 'component' => 'GlobalVanish' ]
-			);
-			return;
-		}
-
-		$this->logger->info( 'Send approval email to User:{oldName}', [
-			'oldName' => $request->getName(),
-			'component' => 'GlobalVanish',
-		] );
-
-		// Attempt to send the email, and log an error if this fails.
-		$emailSendResult = UserMailer::send( $to, $from, $subject, $body );
-		if ( !$emailSendResult->isOK() ) {
-			$this->logger->error( $emailSendResult->getValue() );
-		}
 	}
 
 	/**
