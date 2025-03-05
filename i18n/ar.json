@@ -157,6 +157,8 @@
 	"centralauth-attach-success": "الحساب تم دمجه مع الحساب الموحد.",
 	"centralauth-attach-text": "هذا الحساب لم يتم دمجه بعد مع الحساب الموحد.\nإذ كان الحساب العام لك أيضا، يمكنك دمج هذا الحساب إذا كتبت كلمة سر الحساب العام:",
 	"centralauth-attach-title": "تأكيد الحساب",
+	"centralauth-automatic-global-groups-reason-local": "يتم تحديث المجموعات العالمية تلقائيًا بسبب تغيير المجموعة المحلية.",
+	"centralauth-automatic-global-groups-reason-global": "$1 تم تحديث المجموعات العالمية تلقائيًا بسبب تغيير المجموعة العالمية.",
 	"centralauth-block-already-locked": "الحساب [[Special:CentralAuth/$1|$1]] مقفل بالفعل على المستوى العام.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1| عمل | إجراءات}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|صفحة|صفحات}}",
