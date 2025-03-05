@@ -296,7 +296,7 @@
 	"centralauth-merge-step3-detail": "Siz aşağıdakı vikiləri birləşdirməklə vahid hesabınızı yaratmağa hazırsınız:",
 	"centralauth-merge-step3-submit": "Hesabları birləşdir",
 	"centralauth-merge-step3-title": "Vahid hesab aç",
-	"centralauth-merge-welcome": "'''İstifadəçi hesabınız hələ {{int:Centralauth-groupname}}nın vahid giriş sisteminə köçürülməyib.'''\n\nHesablarınızı köçürməyi seçsəniz, {{int:Centralauth-groupname}}nın bütün mövcud dillərdəki bütün vikilərinə daxil olmaq üçün eyni istifadəçi adı və paroldan istifadə edə biləcəksiniz.\n\nƏgər başqası istifadəçi adınızı başqa saytda götürübsə, bu, onları narahat etməyəcək, lakin bu sizə daha sonra onlarla və ya idarəçi ilə əlaqəyə keçmək şansı verəcək.",
+	"centralauth-merge-welcome": "'''İstifadəçi hesabınız hələ {{int:Centralauth-groupname}}nın vahid giriş sisteminə köçürülməyib.'''\n\nHesablarınızı köçürməyi seçsəniz, {{int:Centralauth-groupname}}nın bütün mövcud dillərdəki bütün vikilərinə daxil olmaq üçün eyni istifadəçi adı və paroldan istifadə edə biləcəksiniz.\n\nƏgər başqası istifadəçi adınızı başqa saytda götürübsə, bu, onları narahat etməyəcək, lakin bu sizə daha sonra onlarla və ya inzibatçı ilə əlaqəyə keçmək şansı verəcək.",
 	"centralauth-mergeaccount-desc": "Tək İstifadəçi Girişi üçün [[Special:MergeAccount|birdən çox hesabı birləşdirir]]",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|dəqiqə|dəqiqə}} əvvəl",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|ay|ay}} əvvəl",

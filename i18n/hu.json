@@ -73,6 +73,7 @@
 	"centralauth-admin-info-registered": "Regisztráció ideje:",
 	"centralauth-admin-info-unattached": "Nem csatolt fiókok száma:",
 	"centralauth-admin-info-username": "Felhasználónév:",
+	"centralauth-admin-info-username-rename": "átnevezés",
 	"centralauth-admin-intro": "Ezen a felületen adminisztrálhatóak a globális felhasználói fiókok.",
 	"centralauth-admin-list-attached-on": "Csatolás dátuma",
 	"centralauth-admin-list-blocked": "Blokkolva",

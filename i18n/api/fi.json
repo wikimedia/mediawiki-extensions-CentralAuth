@@ -8,7 +8,8 @@
 			"Surjection",
 			"Valtlai",
 			"Valtlait",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Samoasambia"
 		]
 	},
 	"apierror-centralauth-badsession": "centralauthtoken on saatavilla vain CentralAuth-istunnoissa.",
@@ -25,7 +26,7 @@
 	"apihelp-deleteglobalaccount-param-user": "Poistettava käyttäjätunnus.",
 	"apihelp-deleteglobalaccount-summary": "Poista järjestelmänlaajuinen käyttäjätunnus.",
 	"apihelp-globaluserrights-example-1": "Lisää käyttäjätunnus FooBot järjestelmänlaajuiseen ryhmään ”bot” ja poista se järjestelmänlaajuisista ryhmistä ”sysop” ja ”bureaucrat”",
-	"apihelp-globaluserrights-example-2": "Lisää tunnisteella 123 varustettu järjestelmänlaajuinen käyttäjätunnus globaaliin ryhmään ”bot” ja poista se järjestelmänlaajuisista ryhmistä ”sysop” ja ”bureaucrat”",
+	"apihelp-globaluserrights-example-2": "Lisää tunnisteella 123 varustettu järjestelmänlaajuinen käyttäjätunnus järjestelmänlaajuiseen ryhmään ”bot” ja poista se järjestelmänlaajuisista ryhmistä ”sysop” ja ”bureaucrat”",
 	"apihelp-globaluserrights-param-add": "Lisää käyttäjä näihin järjestelmänlaajuisiin ryhmiin.",
 	"apihelp-globaluserrights-param-expiry": "Tätä parametria ei tällä hetkellä käytetä.",
 	"apihelp-globaluserrights-param-reason": "Syy muutokselle.",

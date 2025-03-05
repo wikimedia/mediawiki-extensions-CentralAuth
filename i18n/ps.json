@@ -59,7 +59,7 @@
 	"centralauth-admin-status-locked-no": "گڼون تړلی نه دی",
 	"centralauth-admin-status-locked-yes": "گڼون د سمون له چارې بې برخې دی",
 	"centralauth-admin-status-nonexistent": "تېروتنه: د \"<nowiki>$1</nowiki>\" په نامه نړېوال گڼون نشته.",
-	"centralauth-admin-status-reasons": "* د بنديز ټولگړي سببونه\n** يوازې ورانکاری گڼون\n** يوازې سپام گڼون\n* د تړلو او پټولو ټولگړي سببونه\n** د سپکاوي ډک کارن‌نوم\n** ناسم شخصي مالومات",
+	"centralauth-admin-status-reasons": "* د بنديز ټولگړي لاملونه\n** يوازې ورانکاری گڼون\n** يوازې بې‌کارليک گڼون\n* د تړلو او پټولو ټولگړي لاملونه\n** ښکنځونکی کارن‌نوم\n** ناسم شخصي مالومات",
 	"centralauth-admin-status-submit": "دريځ غوره کول",
 	"centralauth-admin-unhide-nonexistent": "تېروتنه: د \"<nowiki>$1</nowiki>\" په نامه نړېوال گڼون نشته.",
 	"centralauth-admin-unmerge": "ټاکلي نااخږل",
