@@ -191,6 +191,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			}
 		}
 
+		// Parameters which should be preserved across autologin steps.
 		$params = $request->getValues(
 			// The method by which autologin is initiated: 'script' (as the src of a <script> tag),
 			// 'json' (via AJAX), '1x1' (as the src of an invisible pixel), 'icon' (as the src of
@@ -209,10 +210,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			'return',
 			'returnto',
 			'returntoquery',
-			// also used:
-			// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
-			// 'token': Random store key, used to pass information in a secure manner.
+			// SUL3 opt-in flag to make sure a sequence of central autologin steps all use the
+			// same mechanism on a wiki farm that is in the middle of SUL3 rollout
+			'usesul3',
 		);
+		// Other parameters that that are not always preserved:
+		// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
+		// 'token': Random store key, used to pass information in a secure manner.
+
 		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
 			// Extra steps, not part of the login process
