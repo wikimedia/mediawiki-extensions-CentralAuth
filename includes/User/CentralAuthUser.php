@@ -97,6 +97,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @var string|null As string, it is "\n"-imploded
 	 */
 	private $mAttachedList;
+	/** @var bool|null Whether a local account of this name exists */
+	private $mExistsLocally;
 	/** @var string */
 	private $mAuthenticationTimestamp;
 	/**
@@ -341,17 +343,19 @@ class CentralAuthUser implements IDBAccessObject {
 	 *  )
 	 */
 	public static function selectQueryInfo() {
+		$wikiId = WikiMap::getCurrentWikiId();
 		return [
-			'tables' => [ 'globaluser', 'localuser' ],
+			'tables' => [ 'globaluser', 'localuser', 'localnames' ],
 			'fields' => [
-				'gu_id', 'gu_name', 'lu_wiki', 'gu_password', 'gu_auth_token',
+				'gu_id', 'gu_name', 'lu_wiki', 'ln_wiki', 'gu_password', 'gu_auth_token',
 				'gu_locked', 'gu_hidden_level', 'gu_registration', 'gu_email',
 				'gu_email_authenticated', 'gu_home_db', 'gu_cas_token'
 			],
 			'conds' => [],
 			'options' => [],
 			'join_conds' => [
-				'localuser' => [ 'LEFT OUTER JOIN', [ 'gu_name=lu_name', 'lu_wiki' => WikiMap::getCurrentWikiId() ] ]
+				'localuser' => [ 'LEFT JOIN', [ 'gu_name=lu_name', 'lu_wiki' => $wikiId ] ],
+				'localnames' => [ 'LEFT JOIN', [ 'gu_name=ln_name', 'ln_wiki' => $wikiId ] ],
 			],
 		];
 	}
@@ -578,6 +582,8 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
 			$this->mIsAttached = ( $row->lu_wiki !== null );
+			$this->mExistsLocally =
+				property_exists( $row, 'ln_wiki' ) ? ( $row->ln_wiki !== null ) : null;
 			$this->mPassword = $row->gu_password;
 			$this->mAuthToken = $row->gu_auth_token;
 			$this->mLocked = $row->gu_locked;
@@ -591,6 +597,7 @@ class CentralAuthUser implements IDBAccessObject {
 		} else {
 			$this->mGlobalId = 0;
 			$this->mIsAttached = false;
+			$this->mExistsLocally = null;
 			$this->mLocked = false;
 			$this->mHiddenLevel = self::HIDDEN_LEVEL_NONE;
 			$this->mCasToken = 0;
@@ -783,6 +790,39 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function exists() {
 		return (bool)$this->getId();
+	}
+
+	/**
+	 * Check if a user with this name exists locally, whether or not it is attached
+	 * @return bool
+	 */
+	public function existsLocally() {
+		if ( $this->mExistsLocally === null ) {
+			if ( $this->isAttached() ) {
+				$this->mExistsLocally = true;
+			} else {
+				$db = CentralAuthServices::getDatabaseManager()->getLocalDB(
+					$this->mFromPrimary ? DB_PRIMARY : DB_REPLICA,
+					WikiMap::getCurrentWikiId()
+				);
+				$this->mExistsLocally = (bool)$db->newSelectQueryBuilder()
+					->select( 'user_id' )
+					->from( 'user' )
+					->where( [ 'user_name' => $this->getName() ] )
+					->caller( __METHOD__ )
+					->fetchField();
+			}
+		}
+		return $this->mExistsLocally;
+	}
+
+	/**
+	 * Determine whether local existence status is loaded
+	 *
+	 * @return bool
+	 */
+	public function isLocalExistenceLoaded() {
+		return $this->mIsAttached === true || $this->mExistsLocally !== null;
 	}
 
 	/**

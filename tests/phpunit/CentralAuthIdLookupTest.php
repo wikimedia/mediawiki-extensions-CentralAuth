@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -10,6 +11,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * Setup database tests for centralauth
@@ -20,93 +22,85 @@ use MediaWiki\WikiMap\WikiMap;
 class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 	use MockAuthorityTrait;
 
-	/** @var int[] */
-	private $centralUsers = [
-		'GlobalUser' => 1001,
-		'GlobalLockedUser' => 1003,
-		'GlobalSuppressedUser' => 1004,
-		'GlobalUserUnattached' => 1007,
-		'GlobalUserConflict' => 1008,
-	];
+	/** @var array<string,int>|null A map of user name to central ID */
+	private static $centralIds;
 
 	/**
-	 * Setup a fresh set of global users for each test.
-	 * Note: MediaWikiIntegrationTestCase::resetDB() will delete all tables between
-	 * test runs, so no explicit tearDown() is needed.
+	 * Users with these properties will be available in the database for all
+	 * tests in this class
+	 *
+	 * @var array[]
 	 */
-	protected function setUp(): void {
-		parent::setUp();
-
-		$user = new CentralAuthTestUser(
-			'GlobalUser',
-			'GUP@ssword',
-			[ 'gu_id' => '1001' ],
-			[
-				[ WikiMap::getCurrentWikiId(), 'primary' ],
+	private static $userInfos = [
+		'GlobalUser' => [
+			'id' => 1001,
+			'wikis' => [
+				[ '**LOCAL**', 'primary' ],
 				[ 'enwiki', 'primary' ],
 				[ 'dewiki', 'login' ],
 				[ 'metawiki', 'password' ],
-			]
-		);
-		$user->save( $this->getDb() );
-
-		$u = new CentralAuthTestUser(
-			'GlobalLockedUser',
-			'GLUP@ssword',
-			[
-				'gu_id' => '1003',
+			],
+		],
+		'GlobalLockedUser' => [
+			'id' => 1003,
+			'attrs' => [
 				'gu_locked' => 1,
 				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'gu_email' => 'testlocked@localhost',
 				'gu_home_db' => 'metawiki',
 			],
-			[
+			'wikis' => [
 				[ 'metawiki', 'primary' ],
 			]
-		);
-		$u->save( $this->getDb() );
-
-		$u = new CentralAuthTestUser(
-			'GlobalSuppressedUser',
-			'GSUP@ssword',
-			[
-				'gu_id' => '1004',
+		],
+		'GlobalSuppressedUser' => [
+			'id' => 1004,
+			'attrs' => [
 				'gu_locked' => 1,
 				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
 				'gu_email' => 'testsuppressed@localhost',
 				'gu_home_db' => 'metawiki',
 			],
-			[
+			'wikis' => [
 				[ 'metawiki', 'primary' ],
 			]
-		);
-		$u->save( $this->getDb() );
-
-		$user = new CentralAuthTestUser(
-			'GlobalUserUnattached',
-			'GUUP@ssword',
-			[ 'gu_id' => '1007' ],
-			[
+		],
+		'GlobalUserUnattached' => [
+			'id' => 1007,
+			'wikis' => [
 				[ 'metawiki', 'primary' ],
 			],
-			false
-		);
-		$user->save( $this->getDb() );
-
-		$user = new CentralAuthTestUser(
-			'GlobalUserConflict',
-			'GUCP@ssword',
-			[ 'gu_id' => '1008' ],
-			[
+			'createLocal' => false
+		],
+		'GlobalUserConflict' => [
+			'id' => 1008,
+			'wikis' => [
 				[ 'metawiki', 'primary' ],
 			],
-			false
-		);
-		$user->save( $this->getDb() );
-		( new TestUser( 'GlobalUserConflict' ) );
+			'createLocal' => false
+		],
+	];
+
+	public function addDBDataOnce() {
+		$centralIds = [];
+		foreach ( self::$userInfos as $userName => $userInfo ) {
+			$id = $userInfo['id'];
+			$centralIds[$userName] = $id;
+			$wikis = $userInfo['wikis'];
+			$wikis[0] = str_replace( '**LOCAL**', WikiMap::getCurrentWikiId(), $wikis[0] );
+			$user = new CentralAuthTestUser(
+				$userName,
+				'GUCP@ssword',
+				[ 'gu_id' => (string)$id ] + ( $userInfo['attrs'] ?? [] ),
+				$wikis,
+				$userInfo['createLocal'] ?? true
+			);
+			$user->save( $this->getDb() );
+		}
+		self::$centralIds = $centralIds;
 	}
 
-	private function newLookup( $strict = true ): CentralIdLookup {
+	private function newLookup( $strict = true ): CentralAuthIdLookup {
 		$this->overrideConfigValues( [
 			CAMainConfigNames::CentralAuthStrict => $strict,
 			MainConfigNames::CentralIdLookupProviders => [
@@ -115,12 +109,30 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 					'services' => [
 						'MainConfig',
 						'CentralAuth.CentralAuthDatabaseManager',
+						'CentralAuth.CentralAuthUserCache',
 					],
 				],
 			],
 			MainConfigNames::CentralIdLookupProvider => 'central',
 		] );
 		return $this->getServiceContainer()->getCentralIdLookupFactory()->getLookup();
+	}
+
+	/**
+	 * Disable database access in a given lookup object
+	 *
+	 * @param CentralAuthIdLookup|TestingAccessWrapper $lookup
+	 */
+	private function disableDatabase( $lookup ) {
+		if ( !( $lookup instanceof TestingAccessWrapper ) ) {
+			$lookup = TestingAccessWrapper::newFromObject( $lookup );
+		}
+		$mock = $this->createNoOpMock( CentralAuthDatabaseManager::class,
+			[ 'centralLBHasRecentPrimaryChanges' ] );
+		$mock
+			->method( 'centralLBHasRecentPrimaryChanges' )
+			->willReturn( false );
+		$lookup->databaseManager = $mock;
 	}
 
 	public function testRegistration() {
@@ -139,12 +151,12 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertSame( [], $lookup->lookupCentralIds( [] ) );
 
-		$expect = array_flip( $this->centralUsers );
+		$expect = array_flip( self::$centralIds );
 		$expect[123] = 'X';
 		ksort( $expect );
 
 		$expect2 = $expect;
-		$expect2[$this->centralUsers['GlobalSuppressedUser']] = '';
+		$expect2[self::$centralIds['GlobalSuppressedUser']] = '';
 
 		$arg = array_fill_keys( array_keys( $expect ), 'X' );
 
@@ -161,7 +173,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertSame( [], $lookup->lookupUserNames( [] ) );
 
-		$expect = $this->centralUsers;
+		$expect = self::$centralIds;
 		$expect['UTDoesNotExist'] = 'X';
 		ksort( $expect );
 
@@ -185,6 +197,172 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 			$this->assertSame( [ $name => $id ], $lookup->lookupUserNames( [ $name => 'X' ] ) );
 			$this->assertSame( [ $name => $id ], $lookup->lookupUserNames( [ $name => 'X' ], $nonPermitted ) );
 		}
+	}
+
+	public static function provideLookupUserNamesWithFilter() {
+		return [
+			'none' => [
+				CentralIdLookup::FILTER_NONE,
+				false,
+				'permitted',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalSuppressedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			],
+			'none suppressed' => [
+				CentralIdLookup::FILTER_NONE,
+				false,
+				'not-permitted',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			],
+			'none raw' => [
+				CentralIdLookup::FILTER_NONE,
+				false,
+				'raw',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalSuppressedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			],
+			'local attached' => [
+				CentralIdLookup::FILTER_ATTACHED,
+				false,
+				'permitted',
+				[
+					'GlobalUser',
+				]
+			],
+			'foreign attached metawiki' => [
+				CentralIdLookup::FILTER_ATTACHED,
+				'metawiki',
+				'permitted',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalSuppressedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			],
+			'foreign attached dewiki' => [
+				CentralIdLookup::FILTER_ATTACHED,
+				'dewiki',
+				'permitted',
+				[
+					'GlobalUser',
+				]
+			],
+			'foreign attached suppressed' => [
+				CentralIdLookup::FILTER_ATTACHED,
+				'metawiki',
+				'not-permitted',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			],
+			'owned' => [
+				CentralIdLookup::FILTER_OWNED,
+				false,
+				'permitted',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalSuppressedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			],
+			'foreign owned' => [
+				CentralIdLookup::FILTER_OWNED,
+				'dewiki',
+				'permitted',
+				[
+					'GlobalUser',
+					'GlobalLockedUser',
+					'GlobalSuppressedUser',
+					'GlobalUserUnattached',
+					'GlobalUserConflict',
+				]
+			]
+		];
+	}
+
+	/**
+	 * @dataProvider provideLookupUserNamesWithFilter
+	 */
+	public function testLookupUserNamesWithFilter( $filter, $wikiId, $auth, $expectedExistingUsers ) {
+		/** @var CentralAuthIdLookup $lookup */
+		$lookup = TestingAccessWrapper::newFromObject( $this->newLookup() );
+
+		if ( $auth === 'permitted' ) {
+			$audience = $this->mockAnonAuthorityWithPermissions( [ 'centralauth-suppress' ] );
+		} elseif ( $auth === 'not-permitted' ) {
+			$audience = $this->mockAnonAuthorityWithoutPermissions( [ 'centralauth-suppress' ] );
+		} elseif ( $auth === 'raw' ) {
+			$audience = CentralIdLookup::AUDIENCE_RAW;
+		} else {
+			throw new \InvalidArgumentException( 'auth must be permitted or not-permitted' );
+		}
+
+		$inputUsers = array_keys( self::$centralIds );
+		$inputUsers[] = 'UTDoesNotExist';
+		$inputUsers[] = '';
+		$arg = array_fill_keys( $inputUsers, 'X' );
+
+		$expect = [];
+		foreach ( $inputUsers as $userName ) {
+			$expect[$userName] = in_array( $userName, $expectedExistingUsers )
+				? (string)self::$centralIds[$userName] : 'X';
+		}
+
+		// Test with an empty array
+		$this->assertSame( [], $lookup->lookupUserNamesWithFilter(
+			[], $filter, $audience, IDBAccessObject::READ_NORMAL, $wikiId ) );
+
+		// Test with a variety of different kinds of users
+		$result = $lookup->lookupUserNamesWithFilter(
+			$arg, $filter, $audience, IDBAccessObject::READ_NORMAL, $wikiId );
+
+		$this->assertArrayEquals( $expect, $result, false, true );
+
+		// The local modes have caching, so it should be possible to load the same
+		// data again without accessing the database
+		if ( $wikiId === false ) {
+			$this->disableDatabase( $lookup );
+			$result = $lookup->lookupUserNamesWithFilter(
+				$arg, $filter, $audience, IDBAccessObject::READ_NORMAL, $wikiId );
+			$this->assertArrayEquals( $expect, $result, false, true );
+		}
+	}
+
+	/**
+	 * Confirm that lookupUserNames shares its cache with CentralAuth::getInstance()
+	 */
+	public function testLookupCacheSharing() {
+		$lookup = $this->newLookup();
+		$this->disableDatabase( $lookup );
+
+		$expectedId = self::$centralIds['GlobalUser'];
+		$id = CentralAuthUser::getInstance( new UserIdentityValue( 1, 'GlobalUser' ) )
+			->getId();
+		$this->assertSame( $expectedId, $id );
+		$result = $lookup->lookupUserNames( [ 'GlobalUser' => 'X' ] );
+		$this->assertSame( [ 'GlobalUser' => $expectedId ], $result );
 	}
 
 	public static function provideLocalUsers() {
