@@ -68,6 +68,7 @@ class SpecialPageInitHookHandler implements SpecialPage_initListHook {
 					'CentralAuth.GlobalRenameDenylist',
 					'CentralAuth.GlobalRenameRequestStore',
 					'CentralAuth.GlobalRenameFactory',
+					'JobQueueGroupFactory',
 					'HttpRequestFactory',
 					'UserIdentityLookup',
 				]
