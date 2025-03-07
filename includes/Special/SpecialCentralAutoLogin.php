@@ -866,6 +866,11 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	 * @return bool
 	 */
 	private function assertLocalWikiIsValid( ?string $wikiId ) {
+		if ( $wikiId === null ) {
+			$this->doFinalOutput( false, 'Missing wiki ID' );
+			return false;
+		}
+
 		$wiki = WikiMap::getWiki( $wikiId );
 		if ( !$wiki ) {
 			$this->doFinalOutput( false, 'Specified local wiki not found' );
