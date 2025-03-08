@@ -16,8 +16,8 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\User\UserNameUtils;
 use MobileContext;
 use MWCryptRand;
-use RuntimeException;
 use StatusValue;
+use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Stats\StatsFactory;
 
@@ -189,8 +189,12 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 		$centralUser = CentralAuthUser::getInstanceByName( $data['username'] );
 		if ( $centralUser->getId() !== $data['userId'] ) {
-			// Extremely unlikely but technically possible with global rename race conditions
-			throw new RuntimeException( 'User ID mismatch' );
+			$msg = "User ID: {centralUserId} mismatch with {storedUserId} for user: {username}";
+			throw new NormalizedException( $msg, [
+				'centralUserId' => $centralUser->getId(),
+				'storedUserId' => $data['userId'],
+				'username' => $data['username'],
+			] );
 		}
 
 		$this->logAuthenticationAttempt( 'end', $data['isSignup'] );
