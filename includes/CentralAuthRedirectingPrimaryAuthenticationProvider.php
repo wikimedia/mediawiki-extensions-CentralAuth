@@ -106,11 +106,9 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			$returnToUrl = $this->mobileContext->getMobileUrl( $returnToUrl );
 		}
 
-		// T388067: In addition to the device format, we want to also stick the SUL mode
-		// in the return URL that goes back to the local wiki.
-		$sul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $this->manager->getRequest() );
+		// Make sure SUL3 opt-in state is preserved, e.g. in case of the user changing networks
 		// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
-		$returnToUrl = wfAppendQuery( $returnToUrl, [ 'usesul3' => $sul3Enabled ] );
+		$returnToUrl = wfAppendQuery( $returnToUrl, [ 'usesul3' => 1 ] );
 
 		$data = [
 			'secret' => $secret,
