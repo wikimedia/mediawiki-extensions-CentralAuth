@@ -41,7 +41,7 @@
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globalna liczba edycji użytkownika",
 	"abusefilter-edit-builder-vars-global-user-groups": "Grupy globalne, do których należy użytkownik",
 	"action-centralauth-createlocal": "wymuszonego tworzenia lokalnych kont",
-	"action-centralauth-lock": "zablokuj lub odblokuj konta globalne",
+	"action-centralauth-lock": "blokowania lub odblokowywania kont globalnych",
 	"action-centralauth-merge": "łączenia swojego konta",
 	"action-centralauth-suppress": "utajniania konta uniwersalnego",
 	"action-centralauth-rename": "zmiany nazwy kont uniwersalnych",

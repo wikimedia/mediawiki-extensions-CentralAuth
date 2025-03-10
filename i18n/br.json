@@ -190,7 +190,7 @@
 	"centralauth-finish-text": "Mard oc'h perc'henn war ar c'hontoù-se e c'hallit echuiñ an c'hendeuziñ en ur verkañ ar gerioù-tremen evito amañ dindan :",
 	"centralauth-finish-title": "Echuiñ ar c'hendeuziñ",
 	"centralauth-finishglobaliseemail_subject": "Kadarnaat ar gont {{SITENAME}}",
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|degasadenn|degasadenn}} diwar $2",
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|degasadenn}} diwar $2",
 	"centralauth-foreign-link": "Implijer $1 war $2",
 	"centralauth-globalgroupperms-creategroup-submit": "Dereiñ aotreoù",
 	"centralauth-globalgroupperms-newgroupname": "Anv ar strollad nevez :",
