@@ -103,7 +103,7 @@ class CentralDomainUtils {
 				$sharedDomainWikiId = null;
 				if ( $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID ) {
 					$sharedDomainWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
-						?: WikiMap::getCurrentWikiId();
+						?? WikiMap::getCurrentWikiId();
 
 					// The shared domain will parse this URL with the configuration of a different
 					// wiki, possibly in a different language; everything must be canonical.
