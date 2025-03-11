@@ -25,7 +25,6 @@ use CentralAuthSessionProvider;
 use Exception;
 use LogicException;
 use ManualLogEntry;
-use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\DAO\WikiAwareEntity;
@@ -2216,9 +2215,8 @@ class CentralAuthUser implements IDBAccessObject {
 			$blockReason = wfMessage( 'centralauth-admin-suppressreason', $by, $reason )
 				->inLanguage( $lang )->text();
 
-			// TODO DatabaseBlock is not @newable
-			$block = new DatabaseBlock( [
-				'address' => UserIdentityValue::newRegistered( $data['id'], $this->mName, $wikiId ),
+			$block = $blockStore->newUnsaved( [
+				'targetUser' => UserIdentityValue::newRegistered( $data['id'], $this->mName, $wikiId ),
 				'wiki' => $wikiId,
 				'reason' => $blockReason,
 				'timestamp' => wfTimestampNow(),
