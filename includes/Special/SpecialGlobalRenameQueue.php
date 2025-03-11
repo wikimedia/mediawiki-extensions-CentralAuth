@@ -477,22 +477,29 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		$this->commonPreamble( $commonPreambleMsg, [ $req->getName() ] );
 
-		$htmlForm = HTMLForm::factory( 'ooui',
-			[
-				'rid' => [
-					'default' => $req->getId(),
-					'name'    => 'rid',
-					'type'    => 'hidden',
-				],
-				'comments' => [
-					'default'       => $this->getRequest()->getVal( 'comments' ),
-					'id'            => 'mw-renamequeue-comments',
-					'label-message' => 'globalrenamequeue-request-comments-label',
-					'name'          => 'comments',
-					'type'          => 'textarea',
-					'rows'          => 5,
-				],
+		$formDescriptor = [
+			'rid' => [
+				'default' => $req->getId(),
+				'name'    => 'rid',
+				'type'    => 'hidden',
 			],
+			'comments' => [
+				'default'       => $this->getRequest()->getVal( 'comments' ),
+				'id'            => 'mw-renamequeue-comments',
+				'label-message' => 'globalrenamequeue-request-comments-label',
+				'name'          => 'comments',
+				'type'          => 'textarea',
+				'rows'          => 5,
+			],
+		];
+
+		if ( $isVanishRequest ) {
+			$formDescriptor[ 'comments' ][ 'help-message' ] =
+				'globalrenamequeue-request-comments-help-message';
+		}
+
+		$htmlForm = HTMLForm::factory( 'ooui',
+			$formDescriptor,
 			$this->getContext(),
 			'globalrenamequeue'
 		);
@@ -775,6 +782,19 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 
 		if ( $status->isGood() ) {
+			$requestType = $request->getType();
+
+			// Require a rejection reason if the rename request is a vanish
+			// request that's being rejected. This is not needed for approved
+			// requests (T388522)
+			if (
+				!$approved &&
+				$requestType === GlobalRenameRequest::VANISH &&
+				trim( $data['comments'] ?? '' ) === ''
+			) {
+				return Status::newFatal( 'globalrenamequeue-request-vanish-no-reason' );
+			}
+
 			$request->setStatus(
 				$approved ? GlobalRenameRequest::APPROVED : GlobalRenameRequest::REJECTED
 			);
@@ -785,7 +805,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$request->setComments( $data['comments'] );
 
 			if ( $this->globalRenameRequestStore->save( $request ) ) {
-				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
+				if ( $requestType === GlobalRenameRequest::VANISH ) {
 					$emailSubjectApprovedMsg = 'globalrenamequeue-vanish-email-subject-approved';
 					$emailBodyApprovedMsg = 'globalrenamequeue-vanish-email-body-approved';
 					$emailBodyApprovedWithNoteMsg = 'globalrenamequeue-vanish-email-body-approved-with-note';
