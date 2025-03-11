@@ -164,6 +164,7 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	 * @return Iterator<UserIdentity>
 	 */
 	public function fetchLocalUserIdentitites(): Iterator {
+		wfDeprecated( __METHOD__, '1.44' );
 		return $this->fetchLocalUserIdentities();
 	}
 
