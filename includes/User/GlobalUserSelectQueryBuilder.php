@@ -168,7 +168,10 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 		$result = $this->fetchResultSet();
 		$localUserIds = [];
 		foreach ( $result as $row ) {
-			$localUserIds[] = $row->lu_local_id;
+			// Only attempt to fetch attached local users (T388125).
+			if ( $row->lu_local_id !== null ) {
+				$localUserIds[] = $row->lu_local_id;
+			}
 		}
 
 		if ( $localUserIds === [] ) {
