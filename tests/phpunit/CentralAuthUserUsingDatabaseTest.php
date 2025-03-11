@@ -454,6 +454,11 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 			[ 'added' => [ 'locked', 'oversighted' ], 'removed' => [] ],
 			LogEntryBase::extractParams( $logParams )
 		);
+		// Check that the local block exists
+		$blocks = $this->getServiceContainer()->getDatabaseBlockStore()
+			->newListFromTarget( $centralAccountUsername );
+		$this->assertCount( 1, $blocks );
+		$this->assertTrue( $blocks[0]->getHideName() );
 	}
 
 	/** @dataProvider provideAddToGlobalGroup */
