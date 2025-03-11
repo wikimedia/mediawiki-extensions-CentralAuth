@@ -56,7 +56,7 @@ class CentralAuthExpireTemporaryAccounts extends ExpireTemporaryAccounts {
 	 */
 	protected function queryBuilderToUserIdentities( SelectQueryBuilder $queryBuilder ): Iterator {
 		if ( $queryBuilder instanceof GlobalUserSelectQueryBuilder ) {
-			return $queryBuilder->fetchLocalUserIdentitites();
+			return $queryBuilder->fetchLocalUserIdentities();
 		}
 
 		// not expected to happen; might be caused by an error in core's expireTemporaryAccounts.php?

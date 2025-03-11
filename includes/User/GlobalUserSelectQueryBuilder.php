@@ -159,9 +159,22 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	/**
 	 * Fetch UserIdentities for the current wiki
 	 *
+	 * @deprecated since 1.44; use {@link GlobalUserSelectQueryBuilder::fetchLocalUserIdentities()} instead.
+	 *
 	 * @return Iterator<UserIdentity>
 	 */
 	public function fetchLocalUserIdentitites(): Iterator {
+		return $this->fetchLocalUserIdentities();
+	}
+
+	/**
+	 * Fetch local users for global users matching the query
+	 * that have an attached local account on the current wiki.
+	 *
+	 * @since 1.44
+	 * @return Iterator<UserIdentity>
+	 */
+	public function fetchLocalUserIdentities(): Iterator {
 		$this->init();
 		$this->field( 'lu_local_id' );
 

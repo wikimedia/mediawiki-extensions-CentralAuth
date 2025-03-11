@@ -83,7 +83,7 @@ class GlobalUserSelectQueryBuilderTest extends MediaWikiIntegrationTestCase {
 		$result = $this->queryBuilder
 			->whereUserNames( array_map( static fn ( $user ) => $user->getName(), $localUsers ) )
 			->caller( __METHOD__ )
-			->fetchLocalUserIdentitites();
+			->fetchLocalUserIdentities();
 
 		$result = iterator_to_array( $result );
 
