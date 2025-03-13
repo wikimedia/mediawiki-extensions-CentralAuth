@@ -307,9 +307,12 @@ class CentralAuthPrimaryAuthenticationProvider
 				} );
 			}
 
-			// Mark the session to include the edge login imgs on the next pageview
-			$this->logger->debug( 'Edge login on the next pageview after central login on shared domain' );
-			$this->manager->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', true );
+			// Trigger edge login on the next pageview, except in SUL3 mode, when this is
+			// the wrong domain / session.
+			if ( !$this->sharedDomainUtils->isSharedDomain() ) {
+				$this->logger->debug( 'Edge login on the next pageview after central login on shared domain' );
+				$this->manager->getRequest()->setSessionData( 'CentralAuthDoEdgeLogin', true );
+			}
 		}
 	}
 
