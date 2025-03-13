@@ -612,9 +612,12 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				// Now, figure out how to report this back to the user.
 
-				// First, set to redo the edge login on the next pageview
-				$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
-				$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+				// First, set to redo the edge login on the next pageview (unless we are one of the
+				// central domains during a PASSIVE_CENTRAL_DOMAIN edge login).
+				if ( !$this->centralDomainUtils->isActiveOrPassiveCentralDomain( $request ) ) {
+					$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
+					$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
+				}
 
 				// If it's not a script or redirect callback, just go for it.
 				if ( !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true ) ) {
