@@ -103,8 +103,13 @@ class SharedDomainHookHandler implements
 		// files on the shared domain (T374286). 'fatal-error' is WMF's custom entry point
 		// (fatal-error.php) used for testing.
 		self::ALLOWED_ENTRY_POINTS => [ 'index', 'rest', 'api', 'static', 'cli', 'fatal-error' ],
-		self::ALLOWED_SPECIAL_PAGES => [ 'Userlogin', 'Userlogout', 'CreateAccount',
-			'PasswordReset', 'Captcha', 'CentralAutoLogin', 'CentralLogin' ],
+		self::ALLOWED_SPECIAL_PAGES => [
+			// authentication
+			'Userlogin', 'Userlogout', 'CreateAccount', 'CentralAutoLogin', 'CentralLogin', 'Captcha',
+			// credentials change
+			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
+			'LinkAccounts', 'UnlinkAccounts',
+		],
 		self::ALLOWED_ACTION_API_MODULES => [
 			// needed for allowing any query API, even if we only want meta modules; it can be
 			// used to check page existence, which is unwanted functionality on the shared domain,
