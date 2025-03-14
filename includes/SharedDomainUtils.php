@@ -8,9 +8,8 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\WebRequest;
-use MediaWiki\Title\TitleFactory;
+use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
@@ -37,9 +36,7 @@ class SharedDomainUtils {
 	public const SUL3_ENABLED_ALWAYS = 'always';
 
 	private Config $config;
-	private TitleFactory $titleFactory;
-	/** @var callable():UserOptionsManager */
-	private $userOptionsManagerCallback;
+	private SpecialPageFactory $specialPageFactory;
 	private UserOptionsManager $userOptionsManager;
 	private HookRunner $hookRunner;
 	private ?bool $isSharedDomain = null;
@@ -49,16 +46,16 @@ class SharedDomainUtils {
 
 	public function __construct(
 		Config $config,
-		TitleFactory $titleFactory,
-		callable $userOptionsManagerCallback,
+		SpecialPageFactory $specialPageFactory,
+		UserOptionsManager $userOptionsManager,
 		HookRunner $hookRunner,
 		?MobileContext $mobileContext,
 		bool $isApiRequest,
 		TempUserConfig $tempUserConfig
 	) {
 		$this->config = $config;
-		$this->titleFactory = $titleFactory;
-		$this->userOptionsManagerCallback = $userOptionsManagerCallback;
+		$this->specialPageFactory = $specialPageFactory;
+		$this->userOptionsManager = $userOptionsManager;
 		$this->hookRunner = $hookRunner;
 		$this->mobileContext = $mobileContext;
 		$this->isApiRequest = $isApiRequest;
@@ -231,11 +228,6 @@ class SharedDomainUtils {
 		return User::newFromName( $sessionUserName ) ?: $noUser;
 	}
 
-	private function getUserOptionsManager(): UserOptionsManager {
-		$this->userOptionsManager ??= ( $this->userOptionsManagerCallback )();
-		return $this->userOptionsManager;
-	}
-
 	/**
 	 * Try to retrieve global preferences for the user, using
 	 * the session cookie UserName if the user is an IP, or the
@@ -246,7 +238,7 @@ class SharedDomainUtils {
 		// check the session's UserName cookie for IP users
 		$prefsUser = self::getLastUser( $user, $request ) ?: $user;
 
-		$flag = $this->getUserOptionsManager()->getOption( $prefsUser, self::SUL3_OPTIN_GLOBAL_PREF_NAME );
+		$flag = $this->userOptionsManager->getOption( $prefsUser, self::SUL3_OPTIN_GLOBAL_PREF_NAME );
 		return $flag === null ? null : (bool)$flag;
 	}
 
@@ -354,10 +346,9 @@ class SharedDomainUtils {
 	 * caller should ensure that the user is not an IP address.
 	 */
 	public function setSUL3RolloutGlobalPref( UserIdentity $user, bool $value ): void {
-		$userOptionsManager = $this->getUserOptionsManager();
-		$userOptionsManager->setOption( $user, self::SUL3_OPTIN_GLOBAL_PREF_NAME, $value ? '1' : '0',
+		$this->userOptionsManager->setOption( $user, self::SUL3_OPTIN_GLOBAL_PREF_NAME, $value ? '1' : '0',
 			UserOptionsManager::GLOBAL_CREATE );
-		$userOptionsManager->saveOptions( $user );
+		$this->userOptionsManager->saveOptions( $user );
 	}
 
 	/**
@@ -413,14 +404,12 @@ class SharedDomainUtils {
 	 * @return string
 	 */
 	public function getUrlForSharedDomainAction( string $action, WebRequest $request ): string {
-		// FIXME inject this once we don't have to jump through hoops to not break Wikibase
-		$specialPageFactory = MediaWikiServices::getInstance()->getSpecialPageFactory();
 		switch ( $action ) {
 			case 'login':
-				$localUrl = $specialPageFactory->getTitleForAlias( 'Userlogin' )->getLocalURL();
+				$localUrl = $this->specialPageFactory->getTitleForAlias( 'Userlogin' )->getLocalURL();
 				break;
 			case 'signup':
-				$localUrl = $specialPageFactory->getTitleForAlias( 'CreateAccount' )->getLocalURL();
+				$localUrl = $this->specialPageFactory->getTitleForAlias( 'CreateAccount' )->getLocalURL();
 				break;
 			default:
 				throw new RuntimeException( 'Unknown action: ' . $action );

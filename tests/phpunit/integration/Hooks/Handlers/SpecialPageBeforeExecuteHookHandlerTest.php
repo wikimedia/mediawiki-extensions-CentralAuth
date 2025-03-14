@@ -151,8 +151,8 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 			->onlyMethods( [ 'isSharedDomain', 'isSul3Enabled' ] )
 			->setConstructorArgs( [
 				$services->getMainConfig(),
-				$services->getTitleFactory(),
-				static fn () => $services->getUserOptionsManager(),
+				$services->getSpecialPageFactory(),
+				$services->getUserOptionsManager(),
 				new HookRunner( $services->getHookContainer() ),
 				null,
 				false,
