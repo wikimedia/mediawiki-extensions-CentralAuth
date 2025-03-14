@@ -29,8 +29,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				new HashConfig( [
 					CAMainConfigNames::CentralAuthSharedDomainCallback => $sharedDomainCallback
 				] ),
-				$services->getTitleFactory(),
-				static fn () => $services->getUserOptionsManager(),
+				$services->getSpecialPageFactory(),
+				$services->getUserOptionsManager(),
 				new HookRunner( $services->getHookContainer() ),
 				null,
 				false,
@@ -58,8 +58,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
-			$services->getTitleFactory(),
-			static fn () => $services->getUserOptionsManager(),
+			$services->getSpecialPageFactory(),
+			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
@@ -77,8 +77,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
-			$services->getTitleFactory(),
-			static fn () => $services->getUserOptionsManager(),
+			$services->getSpecialPageFactory(),
+			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
@@ -184,8 +184,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sut = $this->getMockBuilder( SharedDomainUtils::class )
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
-				$this->getServiceContainer()->getTitleFactory(),
-				fn () => $this->getServiceContainer()->getUserOptionsManager(),
+				$this->getServiceContainer()->getSpecialPageFactory(),
+				$this->getServiceContainer()->getUserOptionsManager(),
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
 				$isAPiRequest,
@@ -261,8 +261,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
-			$services->getTitleFactory(),
-			static fn () => $services->getUserOptionsManager(),
+			$services->getSpecialPageFactory(),
+			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
@@ -314,8 +314,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$services = $this->getServiceContainer();
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
-			$services->getTitleFactory(),
-			static fn () => $services->getUserOptionsManager(),
+			$services->getSpecialPageFactory(),
+			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,

@@ -351,8 +351,8 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		$sharedDomainUtils = $this->getMockBuilder( SharedDomainUtils::class )
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
-				$this->getServiceContainer()->getTitleFactory(),
-				fn () => $this->getServiceContainer()->getUserOptionsManager(),
+				$this->getServiceContainer()->getSpecialPageFactory(),
+				$this->getServiceContainer()->getUserOptionsManager(),
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				$this->getServiceContainer()->get( "MobileFrontend.Context" ),
 				false,
