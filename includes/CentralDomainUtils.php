@@ -17,60 +17,47 @@ use Wikimedia\NormalizedException\NormalizedException;
 class CentralDomainUtils {
 	/**
 	 * @internal
-	 * Pseudo-wiki-ID for the central domain (the central login wiki
-	 * in SUL2 mode, the shared login domain in SUL3 mode).
+	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * In SUL3 mode, the generated shared domain URL will resolve to the current wiki. Titles
-	 * are localized.
-	 *
-	 * Should only be passed to methods that explicitly document accepting it.
-	 * @see CentralDomainUtils::getUrl()
+	 * Resolves to a central domain:
+	 * - In SUL2 mode, the central login wiki.
+	 * - In SUL3 mode, the current wiki on the shared login domain. Titles are localized.
 	 */
 	public const CENTRAL_DOMAIN_ID = '#central#';
 
 	/**
 	 * @internal
-	 * Pseudo-wiki-ID for the central domain (the central login wiki
-	 * in SUL2 mode, the shared login domain in SUL3 mode).
+	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * In SUL3 mode, the generated shared domain URL will resolve to the central autologin wiki.
-	 * Titles are not localized.
-	 *
-	 * Should only be passed to methods that explicitly document accepting it.
-	 * @see CentralDomainUtils::getUrl()
-	 * @see https://phabricator.wikimedia.org/T387357
+	 * Resolves to a central domain suitable for autologin (see T387357):
+	 * - In SUL2 mode, the central login wiki.
+	 * - In SUL3 mode, the central login wiki on the shared login domain. Titles are not localized.
 	 */
 	public const AUTOLOGIN_CENTRAL_DOMAIN_ID = '#autologin_central#';
 
 	/**
 	 * @internal
-	 * Pseudo-wiki-ID for the "other" central domain (the shared login domain
-	 * in SUL2 mode, the central login wiki in SUL3 mode), the opposite of
-	 * CentralDomainUtils::CENTRAL_DOMAIN_ID.
+	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * Should only be passed to methods that explicitly document accepting it.
-	 * @see CentralDomainUtils::getUrl()
+	 * Resolves to the "other" central domain, the opposite of CentralDomainUtils::CENTRAL_DOMAIN_ID.
+	 * Use this only when both SUL2 and SUL3 are configured, as it may throw otherwise.
 	 */
 	public const PASSIVE_CENTRAL_DOMAIN_ID = '#passive-central#';
 
 	/**
 	 * @internal
-	 * Pseudo-wiki-ID for the SUL2 central domain (the central login wiki).
+	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * Should only be passed to methods that explicitly document accepting it.
-	 * @see CentralDomainUtils::getUrl()
+	 * Resolves to the SUL2 central login wiki.
 	 */
 	public const SUL2_CENTRAL_DOMAIN_ID = '#sul2-central#';
 
 	/**
 	 * @internal
-	 * Pseudo-wiki-ID for the SUL3 central domain (the shared login domain).
+	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * It has the same behavior as AUTOLOGIN_CENTRAL_DOMAIN_ID in terms of what
-	 * wiki it resolves to.
-	 *
-	 * Should only be passed to methods that explicitly document accepting it.
-	 * @see CentralDomainUtils::getUrl()
+	 * Resolves to the central login wiki on the SUL3 shared login domain. Titles are not localized.
+	 * This is suitable for autologin, same as CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID.
 	 */
 	public const SUL3_CENTRAL_DOMAIN_ID = '#sul3-central#';
 
