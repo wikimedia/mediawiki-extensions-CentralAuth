@@ -53,6 +53,27 @@ class CentralDomainUtils {
 	 */
 	public const PASSIVE_CENTRAL_DOMAIN_ID = '#passive-central#';
 
+	/**
+	 * @internal
+	 * Pseudo-wiki-ID for the SUL2 central domain (the central login wiki).
+	 *
+	 * Should only be passed to methods that explicitly document accepting it.
+	 * @see CentralDomainUtils::getUrl()
+	 */
+	public const SUL2_CENTRAL_DOMAIN_ID = '#sul2-central#';
+
+	/**
+	 * @internal
+	 * Pseudo-wiki-ID for the SUL3 central domain (the shared login domain).
+	 *
+	 * It has the same behavior as AUTOLOGIN_CENTRAL_DOMAIN_ID in terms of what
+	 * wiki it resolves to.
+	 *
+	 * Should only be passed to methods that explicitly document accepting it.
+	 * @see CentralDomainUtils::getUrl()
+	 */
+	public const SUL3_CENTRAL_DOMAIN_ID = '#sul3-central#';
+
 	private Config $config;
 	private TitleFactory $titleFactory;
 	private SharedDomainUtils $sharedDomainUtils;
@@ -95,13 +116,21 @@ class CentralDomainUtils {
 		if ( $wikiId === self::CENTRAL_DOMAIN_ID
 			|| $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID
 			|| $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID
+			|| $wikiId === self::SUL2_CENTRAL_DOMAIN_ID
+			|| $wikiId === self::SUL3_CENTRAL_DOMAIN_ID
 		) {
-			$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request );
-			$usePassiveDomain = $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID;
-			$useSul3Domain = ( $isSul3Enabled && !$usePassiveDomain ) || ( !$isSul3Enabled && $usePassiveDomain );
+			if ( $wikiId === self::SUL2_CENTRAL_DOMAIN_ID ) {
+				$useSul3Domain = false;
+			} elseif ( $wikiId === self::SUL3_CENTRAL_DOMAIN_ID ) {
+				$useSul3Domain = true;
+			} else {
+				$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request );
+				$usePassiveDomain = $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID;
+				$useSul3Domain = ( $isSul3Enabled && !$usePassiveDomain ) || ( !$isSul3Enabled && $usePassiveDomain );
+			}
 			if ( $useSul3Domain ) {
 				$sharedDomainWikiId = null;
-				if ( $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID ) {
+				if ( $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID || $wikiId === self::SUL3_CENTRAL_DOMAIN_ID ) {
 					$sharedDomainWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
 						?? WikiMap::getCurrentWikiId();
 
