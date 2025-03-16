@@ -36,6 +36,7 @@ use MediaWiki\Rest\HttpException;
 use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\Module\Module;
 use MediaWiki\Rest\RequestInterface;
+use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -57,7 +58,8 @@ class SharedDomainHookHandler implements
 	GetUserPermissionsErrorsHook,
 	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	RestCheckCanExecuteHook,
-	SetupAfterCacheHook
+	SetupAfterCacheHook,
+	SpecialPageBeforeExecuteHook
 {
 	/**
 	 * List of entry points that are allowed on the shared domain.
@@ -68,6 +70,14 @@ class SharedDomainHookHandler implements
 	 * List of the special pages that are allowed on the shared domain.
 	 */
 	private const ALLOWED_SPECIAL_PAGES = 'allowedSpecialPages';
+	/**
+	 * List of the special pages that are only allowed on the shared domain
+	 * (the user should be redirected when trying to access them on the local domain).
+	 * In practice, these will be the credentials change related pages.
+	 * Authentication-related pages are not included here - even though the user will only
+	 * see them on the central domain, they need special handling locally.
+	 */
+	private const CENTRAL_SPECIAL_PAGES = 'centralSpecialPages';
 	/**
 	 * List of action API modules that are allowed on the shared domain.
 	 * @see ApiBase::getModulePath()
@@ -109,6 +119,10 @@ class SharedDomainHookHandler implements
 			// credentials change
 			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
 			'LinkAccounts', 'UnlinkAccounts',
+		],
+		self::CENTRAL_SPECIAL_PAGES => [
+			// credentials change
+			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials',
 		],
 		self::ALLOWED_ACTION_API_MODULES => [
 			// needed for allowing any query API, even if we only want meta modules; it can be
@@ -393,6 +407,33 @@ class SharedDomainHookHandler implements
 				$url = $this->mobileContext->getMobileUrl( $url );
 			}
 		}
+	}
+
+	/**
+	 * Redirect credentials change special pages to the shared domain if SUL3 is enabled.
+	 *
+	 * Note that this hook runs before SpecialPage::beforeExecute (which tends to handle security
+	 * reauthentication), so reauthentication will happen fully on the shared domain.
+	 *
+	 * @inheritDoc
+	 *
+	 * @see SpecialPageBeforeExecuteHookHandler::onSpecialPageBeforeExecute()
+	 */
+	public function onSpecialPageBeforeExecute( $special, $subPage ) {
+		$request = $special->getRequest();
+		$credentialsChangeSpecialPages = $this->getRestrictions( self::CENTRAL_SPECIAL_PAGES );
+
+		if ( $this->sharedDomainUtils->isSul3Enabled( $request )
+			 && !$this->sharedDomainUtils->isSharedDomain()
+			 && in_array( $special->getName(), $credentialsChangeSpecialPages, true )
+		) {
+			$url = $this->sharedDomainUtils->getSharedDomainPrefix() . $request->getRequestURL();
+			$url = $this->sharedDomainUtils->makeUrlDeviceCompliant( $url );
+			$special->getOutput()->redirect( $url );
+			return false;
+		}
+
+		return true;
 	}
 
 	private function getRestrictions( string $type ): array {

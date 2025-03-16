@@ -83,11 +83,10 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	 * Triggers top-level central autologin attempt on Special:Userlogin, and handles the
 	 * outcome of such an attempt at the end of the redirect chain.
 	 *
-	 * @param SpecialPage $special
-	 * @param string|null $subPage
-	 * @return bool
+	 * @inheritDoc
 	 *
 	 * @see SpecialCentralAutoLogin
+	 * @see SharedDomainHookHandler::onSpecialPageBeforeExecute()
 	 */
 	public function onSpecialPageBeforeExecute( $special, $subPage ) {
 		$request = $special->getRequest();

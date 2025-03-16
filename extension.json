@@ -759,7 +759,7 @@
 		"ContributionsToolLinks": "specialcontributions",
 		"SpecialLogAddLogSearchRelations": "log",
 		"SpecialPage_initList": "specialpageinit",
-		"SpecialPageBeforeExecute": "specialpagebeforeexecute",
+		"SpecialPageBeforeExecute": [ "specialpagebeforeexecute", "shareddomain" ],
 		"SpecialPasswordResetOnSubmit": "default",
 		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",
@@ -957,6 +957,7 @@
 			"value": {
 				"allowedEntryPoints": [],
 				"allowedSpecialPages": [],
+				"centralSpecialPages": [],
 				"allowedActionApiModules": [],
 				"allowedRestApiEndpoints": [],
 				"disallowedLocalProviders": {
