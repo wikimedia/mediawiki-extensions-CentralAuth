@@ -771,12 +771,26 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::rawElement(
 				'td', [ 'class' => 'mw-centralauth-wikislist-editcount' ], $this->formatEditcount( $row )
 			) .
-			Html::rawElement( 'td', [], $this->formatGroups( $row ) ) .
+			$this->getWikiBayersGroupsField( $row ) .
 			Xml::closeElement( 'tr' );
 
 		return $html;
 	}
+	
+	private function getWikiBayersGroupsField( array $row ): string {
 
+	    $groupMemberships = $row['groupMemberships'] ?? [];
+	    $groupCount = count( $groupMemberships );
+
+	    $formattedGroups = $this->formatGroups( $row );
+
+	    $html = Html::rawElement(
+	        'td',
+	        [ 'data-sort-value' => $groupCount ],
+	        $formattedGroups
+	    );
+	    return $html;
+	}
 	/**
 	 * @param string|null $attachedTimestamp
 	 *
