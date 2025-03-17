@@ -565,6 +565,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// Runs on the wiki where the autologin needs to log the user in (the local wiki,
 				// or the edge wikis, or both).
 
+				// This is a bit inaccurate: it could also be a no-JS autologin. But good enough for our
+				// purposes.
+				$isEdgeLogin = !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true );
+
 				// Do not cache this, we need to reset the cookies and memc every time.
 				$this->getOutput()->disableClientCache();
 
@@ -644,15 +648,15 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				// Now, figure out how to report this back to the user.
 
-				// First, set to redo the edge login on the next pageview (unless we are one of the
-				// central domains during a PASSIVE_CENTRAL_DOMAIN edge login).
-				if ( !$this->centralDomainUtils->isActiveOrPassiveCentralDomain( $request ) ) {
+				// First, do an edge login on the next pageview (unless we are already doing one,
+				// or we are on a central domain).
+				if ( !$this->centralDomainUtils->isActiveOrPassiveCentralDomain( $request ) && !$isEdgeLogin ) {
 					$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
 					$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 				}
 
-				// If it's not a script or redirect callback, just go for it.
-				if ( !in_array( $request->getVal( 'type' ), [ 'script', 'redirect' ], true ) ) {
+				// Do not autocreate during edge login, only if the user is actually interacting with the wiki.
+				if ( $isEdgeLogin ) {
 					ScopedCallback::consume( $delay );
 					$this->doFinalOutput( true, 'success' );
 					return;
