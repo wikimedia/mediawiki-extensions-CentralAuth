@@ -559,7 +559,7 @@
 	"grant-createlocalaccount": "Créer de force un compte local pour un compte global",
 	"grant-setglobalaccountstatus": "Gérer l’état du compte global",
 	"log-action-filter-gblrights": "Type de modification :",
-	"log-action-filter-gblrights-groupprms": "Changement des droits d'utilisateurs globaux",
+	"log-action-filter-gblrights-groupprms": "Changement des droits des groupes d'utilisateurs globaux",
 	"log-action-filter-gblrights-setmodify": "Modification de l’ensemble des wikis",
 	"log-action-filter-gblrights-usergroups": "Changement des droits d'utilisateurs globaux",
 	"log-action-filter-globalauth": "Type de modification :",

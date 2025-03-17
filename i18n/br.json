@@ -282,7 +282,7 @@
 	"centralauth-rename-table-status-queued": "Lakaet el lostennad",
 	"centralauth-rename-unattached-intheway": "N'eus ket kontoù ha n'int ket stag hag a implij an anv implijer goulennet.",
 	"centralauth-rename-viewprogress": "Gwelet ar mont war-raok",
-	"centralauth-renameuser-merged": "An implijer $1 a zo emdizhet war-du ar reizhiad kevreañ unvanet.\nAdenvel anezhañ a zistago ar gont lec’hel d'an hini unvanet.",
+	"centralauth-renameuser-merged": "Dilec’hiet eo bet an {{GENDER:$1|implijer|implijerez}} $1 war-du ar reizhiad kevreañ unvanet.\nAdenvel {{GENDER:$1|anezhañ|anezhi}} a zistago ar gont lec’hel d'an hini unvanet.",
 	"centralauth-renameuser-reserved": "Miret eo an anv implijer {{GENDER:$2|$2}} evit ur gont hollek.",
 	"centralauth-rightslog-header": "Ar marilh-mañ a zo ennañ oberoù war strolladoù hollek : kemmoù war an implijerien hag an aotreoù roet da bep strollad",
 	"centralauth-rightslog-name": "Marilh ar gwirioù hollek",

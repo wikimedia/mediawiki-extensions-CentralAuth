@@ -155,7 +155,7 @@
 	"centralauth-attach-text": "Dit account is nog niet gemigreerd naar een samengevoegd account.\nAls het overkoepelende account ook van u is, dan kunt u dit account samenvoegen als u het wachtwoord voor het overkoepelende account ingeeft:",
 	"centralauth-attach-title": "Account bevestigen",
 	"centralauth-automatic-global-groups-reason-local": "De globale groepen zijn automatisch bijgewerkt als gevolg van lokale groepswijzigingen.",
-	"centralauth-automatic-global-groups-reason-global": "$1 heeft de globale groepen automatisch bijgewerkt als gevolg van lokale groepswijzigingen.",
+	"centralauth-automatic-global-groups-reason-global": "$1 De globale groepen zijn automatisch bijgewerkt als gevolg van lokale groepswijzigingen.",
 	"centralauth-block-already-locked": "De gebruiker [[Special:CentralAuth/$1|$1]] is al globaal geblokkeerd.",
 	"centralauth-block-editing-action": "$1 handeling{{PLURAL:$1||en}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|pagina's}}",

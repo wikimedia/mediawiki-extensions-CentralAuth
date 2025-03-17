@@ -65,7 +65,7 @@
 	"centralauth-admin-delete-nonexistent": "Errore: l'utenza globale \"<nowiki>$1</nowiki>\" non esiste.",
 	"centralauth-admin-cannot-lock-temporary-account": "Non puoi bloccare le utenze temporanee, poiché il blocco consentirà loro di ottenere una nuova utenza temporanea alla successiva modifica.",
 	"centralauth-admin-delete-success": "L'utenza globale per \"<nowiki>$1</nowiki>\" è stata cancellata",
-	"centralauth-admin-delete-title": "Elimina l'utenza",
+	"centralauth-admin-delete-title": "Cancella utenza",
 	"centralauth-admin-group-temporary": "$1 ''(temporaneo)''",
 	"centralauth-admin-hidden-list": "dall'elenco globale degli utenti",
 	"centralauth-admin-hidden-oversight": "soppresso",
