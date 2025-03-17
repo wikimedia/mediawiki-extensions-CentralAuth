@@ -580,7 +580,11 @@ class CentralAuthHooks implements
 			$startUrl = WikiMap::getForeignURL( $wikiId, 'Special:CentralAutoLogin/start' );
 
 			if ( $startUrl !== false ) {
-				$params = [ 'type' => 'script' ];
+				$params = [
+					'type' => 'script',
+					// Can't depend on the user in a ResourceLoader callback.
+					'usesul3' => 0,
+				];
 				$startUrl = self::getSharedDomainUtils()->makeUrlDeviceCompliant( $startUrl );
 				$data['startURL'] = wfAppendQuery( $startUrl, $params );
 			}

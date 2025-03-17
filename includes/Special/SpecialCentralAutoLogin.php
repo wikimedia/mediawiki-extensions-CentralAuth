@@ -336,8 +336,17 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					return;
 				}
 
-				$this->do302Redirect( CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID, 'checkLoggedIn', [
+				// Do not use isSul3Enabled() since this response will be cached, and so we don't
+				// want it to depend on the user. In practice, it would probably be fine since at
+				// this point we should have an explicit 'usesul3' URL parameter which splits the
+				// cache, but it's better to be safe.
+				$useSul3 = $request->getBool( 'usesul3' ) ? 1 : 0;
+				$domain = $useSul3
+					? CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID
+					: CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID;
+				$this->do302Redirect( $domain, 'checkLoggedIn', [
 					'wikiid' => WikiMap::getCurrentWikiId(),
+					'usesul3' => $useSul3,
 				] + $params );
 				return;
 
@@ -363,17 +372,40 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					return;
 				}
 
-				if ( $this->getUser()->isRegistered() ) {
-					$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-				} else {
-					$this->doFinalOutput( false, 'Not centrally logged in',
-						self::getInlineScript( 'anon-set.js' ) );
-					return;
+				if ( !$this->getUser()->isRegistered() ) {
+					// Try /checkLoggedIn on both the SUL2 and SUL3 central domains: if it didn't
+					// work on the current one, redirect to the other one.
+					// At this point, requests without a session cookie still need to be cacheable,
+					// and changes to the code won't immediately affect cached responses, so this
+					// needs to be managed carefully to avoid e.g. redirect loops.
+					$triedSul3Fallback = $this->getRequest()->getCheck( 'triedSul3Fallback' );
+					if ( !$triedSul3Fallback ) {
+						// Make sure we have a deterministic, URL-based opt-in flag, like in /start.
+						// This is the opposite of the actual URL parameter, since we want to switch.
+						$useSul3 = $request->getBool( 'usesul3' ) ? 0 : 1;
+						$domain = $useSul3
+							? CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID
+							: CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID;
+						$this->do302Redirect( $domain, 'checkLoggedIn', [
+							'wikiid' => $wikiid,
+							'usesul3' => $useSul3,
+							'triedSul3Fallback' => 1,
+						] + $params );
+						return;
+					} else {
+						$this->doFinalOutput( false, 'Not centrally logged in',
+							self::getInlineScript( 'anon-set.js' ) );
+						return;
+					}
 				}
 
-				// We're pretty sure this user is logged in, so pass back
-				// headers to prevent caching, just in case
+				// If we got here, the user is probably logged in, and responses will contain
+				// information specific to them; prevent further caching. The cache is split
+				// on cookies, and isRegistered() couldn't be passed if there weren't any, so
+				// this is OK.
 				$this->getOutput()->disableClientCache();
+
+				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 
 				// Check if the loginwiki account isn't attached, things are broken (T137551)
 				if ( !$centralUser->isAttached() ) {
