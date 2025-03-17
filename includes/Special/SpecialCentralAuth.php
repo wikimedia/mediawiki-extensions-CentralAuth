@@ -771,7 +771,10 @@ class SpecialCentralAuth extends SpecialPage {
 			Html::rawElement(
 				'td', [ 'class' => 'mw-centralauth-wikislist-editcount' ], $this->formatEditcount( $row )
 			) .
-			Html::rawElement( 'td', [], $this->formatGroups( $row ) ) .
+			Html::rawElement( 'td',
+				[ 'data-sort-value' => count( $row['groupMemberships'] ) ],
+				$this->formatGroups( $row )
+			) .
 			Xml::closeElement( 'tr' );
 
 		return $html;
