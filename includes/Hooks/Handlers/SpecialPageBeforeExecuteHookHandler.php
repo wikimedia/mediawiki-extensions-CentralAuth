@@ -138,7 +138,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			// elevated-security reauthentication of already logged-in user
 			|| $request->getBool( 'force' )
 			|| !$this->centralDomainUtils->centralDomainExists( $request )
-			|| $this->centralDomainUtils->isCentralDomain( $request )
+			|| $this->centralDomainUtils->isActiveOrPassiveCentralDomain( $request )
 		) {
 			return true;
 		}

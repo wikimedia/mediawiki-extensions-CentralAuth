@@ -576,7 +576,7 @@ class CentralAuthHooks implements
 		$centralDomainUtils = self::getCentralDomainUtils();
 
 		$wikiId = WikiMap::getCurrentWikiId();
-		if ( !$centralDomainUtils->isCentralDomain( RequestContext::getMain()->getRequest() ) ) {
+		if ( !$centralDomainUtils->isActiveOrPassiveCentralDomain( RequestContext::getMain()->getRequest() ) ) {
 			$startUrl = WikiMap::getForeignURL( $wikiId, 'Special:CentralAutoLogin/start' );
 
 			if ( $startUrl !== false ) {
