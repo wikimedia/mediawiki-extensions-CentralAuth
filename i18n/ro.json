@@ -19,7 +19,8 @@
 			"Strainu",
 			"Trotinel Iftode",
 			"WebSourceContentRO",
-			"XXN"
+			"XXN",
+			"Valentin JJ."
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Numărul de editări globale ale utilizatorului ($1)",
@@ -62,6 +63,7 @@
 	"centralauth-admin-info-registered": "Înregistrat la:",
 	"centralauth-admin-info-unattached": "Număr de conturi neatașate:",
 	"centralauth-admin-info-username": "Nume de utilizator:",
+	"centralauth-admin-info-expired": "Contul temporar a expirat:",
 	"centralauth-admin-intro": "Această interfață poate fi folosită pentru administrarea de conturi globale.",
 	"centralauth-admin-list-attached-on": "Atașat la",
 	"centralauth-admin-list-blocked": "Blocat",

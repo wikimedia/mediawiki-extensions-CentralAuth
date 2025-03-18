@@ -5,5 +5,5 @@
 		]
 	},
 	"apierror-centralauth-editconflict": "Á̱ ta̱taat zok njhyuk, á̱ fwan nyia̱.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "MD5 ku yet khai nfwuo <username>:<hidden>:<locked> a̱ni, nang á̱ ba̱ng fwuo mi̱ di̱ yong huni, na tyai zók di̱ nta̱m jhyuk. Nyia̱-seti a tyia̱ <locked> nat 1 ka̱nang á̱ nyim, a̱wot 0 ka̱nang á̱ nwai nyim."
+	"apihelp-setglobalaccountstatus-param-statecheck": "Á̱ <samp>userid:username:hidden:locked</samp> MD5 khai-fwuo nang á̱ fwuong bai nhu mi̱ di̱ yong huni. Á̱ nyian ta̱m ma̱ng si̱ huni á̱ zop zók njhyuk ja. Ta hwa a̱fi̱ng <samp>hidden</samp> ka ka̱ yet a̱ywan ka̱ sangkyang a̱mami a̱ni ka̱nang á̱ ta̱kup nka bah ku <code>lists</code> ywan hu ku <code>suppressed</code>. Ta hwa a̱fi̱ng <samp>locked</samp> ka ka̱ yet 1 da̱nian si̱ nang á̱ nyim a̱ni, a̱wot 0 mat si̱ nang á̱ nwai nyim a̱ni. Kídee: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>."
 }
