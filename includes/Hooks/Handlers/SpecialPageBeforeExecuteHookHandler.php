@@ -240,20 +240,15 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	private function checkSUL3RolloutParticipation( $request, $specialPageName ): bool {
 		$isSignup = ( $specialPageName === 'CreateAccount' );
 		$user = RequestContext::getMain()->getUser();
-		$setSul3Flag = false;
 		if ( $isSignup ) {
 			if ( $this->shouldSetSUL3RolloutCookie( $request, $user ) ) {
-				$setSul3Flag = true;
+				$this->sharedDomainUtils->setSUL3RolloutCookie( $request );
+				return true;
 			}
 		} elseif ( $this->sharedDomainUtils->shouldSetSUL3RolloutGlobalPref( $request, $user ) ) {
-			$setSul3Flag = true;
-		}
-
-		if ( $setSul3Flag ) {
-			// Set a short-lived cookie just to make sure future checks are consistent.
-			$this->sharedDomainUtils->setSUL3RolloutCookie( $request );
-			// Also make sure checks in the current request are affected.
-			$request->setVal( 'usesul3', 1 );
+			// note that we don't check first to see if the pref
+			// is already set, and skip in that case; should we?
+			// same for the above call to this method
 			return true;
 		}
 		return false;
