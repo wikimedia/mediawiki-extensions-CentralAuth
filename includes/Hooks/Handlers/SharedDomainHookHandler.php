@@ -109,6 +109,8 @@ class SharedDomainHookHandler implements
 			// credentials change
 			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
 			'LinkAccounts', 'UnlinkAccounts',
+			// debugging
+			'WikimediaDebug',
 		],
 		self::ALLOWED_ACTION_API_MODULES => [
 			// needed for allowing any query API, even if we only want meta modules; it can be
