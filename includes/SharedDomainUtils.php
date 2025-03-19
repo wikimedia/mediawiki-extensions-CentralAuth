@@ -318,14 +318,14 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function shouldSetSUL3RolloutGlobalPref( $request, $user ) {
-		if ( IPUtils::isIPAddress( $user->getName() )
-			|| $this->tempUserConfig->isTempName( $user->getName() ) ) {
+		if ( $this->tempUserConfig->isTempName( $user->getName() ) ) {
 			return false;
 		}
 		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
 		}
 
+		$user = self::getLastUser( $user, $request ) ?: $user;
 		$sul3RolloutNamedUserConfig = $this->config->get( CAMainConfigNames::Sul3RolloutUserPercentage );
 		if ( $this->checkPercentage(
 			$user, $sul3RolloutNamedUserConfig, 'Sul3RolloutUserPercentage' ) ) {
