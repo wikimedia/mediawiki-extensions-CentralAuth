@@ -144,13 +144,9 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 				->get( CAMainConfigNames::CentralAuthAutomaticVanishWiki )
 					?? WikiMap::getCurrentWikiId();
 
-			$job = new GlobalVanishJob( [
-				'requestId' => $request->getId(),
-				'renamer' => $automaticVanishPerformerName,
-			] );
 			$this->jobQueueGroupFactory
 				->makeJobQueueGroup( $vanishWiki )
-				->push( $job );
+				->push( GlobalVanishJob::newSpec( $request, $automaticVanishPerformerName ) );
 		} else {
 			// Save the request to the database for it to be processed later.
 			if ( !$this->globalRenameRequestStore->save( $request ) ) {

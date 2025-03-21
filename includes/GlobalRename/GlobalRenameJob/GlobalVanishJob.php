@@ -27,6 +27,8 @@ use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\IJobSpecification;
+use MediaWiki\JobQueue\JobSpecification;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
@@ -44,12 +46,40 @@ use UserMailer;
 class GlobalVanishJob extends Job {
 
 	/**
+	 * The type of this job, as registered in wgJobTypeConf.
+	 */
+	public const TYPE = 'GlobalVanishJob';
+
+	/**
 	 * @param array $params an associative array of options:
-	 *   requestId - an id that corresponds to a global rename request record
+	 *   globalRenameRequestId - an id that corresponds to a global rename request record
 	 *   renamer - the name of the account that will be attributed with the vanish being fulfilled
 	 */
 	public function __construct( array $params ) {
-		parent::__construct( 'GlobalVanishJob', $params );
+		parent::__construct( self::TYPE, $params );
+	}
+
+	/**
+	 * Create a new job specification for globally vanishing a user.
+	 *
+	 * @param GlobalRenameRequest $request The GlobalRenameRequest to process via a job. Should have the
+	 *   vanishing type.
+	 * @param string $renamer The username to attribute the vanish to
+	 * @return IJobSpecification
+	 */
+	public static function newSpec(
+		GlobalRenameRequest $request,
+		string $renamer
+	): IJobSpecification {
+		return new JobSpecification(
+			self::TYPE,
+			[
+				'globalRenameRequestId' => $request->getId(),
+				'renamer' => $renamer,
+			],
+			[],
+			null
+		);
 	}
 
 	/**
@@ -62,7 +92,7 @@ class GlobalVanishJob extends Job {
 
 		// Fetch the rename request that should have already been created by
 		// the special page that made the request.
-		$request = $globalRenameRequestStore->newFromId( $this->params['requestId'] );
+		$request = $globalRenameRequestStore->newFromId( $this->params['globalRenameRequestId'] );
 		if ( !$request->getName() || !$request->getNewName() ) {
 			$error = 'Vanish request is invalid or doesn\'t exist';
 			$logger->warning( 'Failed to global rename ({error})', [

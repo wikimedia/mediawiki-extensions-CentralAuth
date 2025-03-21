@@ -79,12 +79,14 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		$testUser = $this->mockCentralAuthUser( '1001', 'TestUser' );
 		$performer = $this->mockCentralAuthUser( '1002', 'Performer' );
 
-		$this->store->method( 'newFromId' )->willReturn(
-			$this->store->newBlankRequest()
-				->setName( $testUser->getName() )
-				->setNewName( 'Renamed user 1efab4f82efc59fa57da58612428420b' )
-				->setReason( 'User provided reason.' )
-				->setType( GlobalRenameRequest::VANISH ) );
+		$request = $this->store->newBlankRequest()
+			->setName( $testUser->getName() )
+			->setNewName( 'Renamed user 1efab4f82efc59fa57da58612428420b' )
+			->setReason( 'User provided reason.' )
+			->setType( GlobalRenameRequest::VANISH );
+		$request->setId( 1000 );
+
+		$this->store->method( 'newFromId' )->with( 1000 )->willReturn( $request );
 
 		// Expect a rename to be attempted as all of the data being fed into
 		// the job is valid.
@@ -92,11 +94,10 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		$this->globalRenameUser->method( 'rename' )->willReturn( Status::newGood() );
 		$this->globalRenameUser->expects( $this->once() )->method( 'rename' );
 
-		$job = new GlobalVanishJob( [
-			'requestId' => 1000,
-			'renamer' => $performer->getName(),
-		] );
-		$this->assertTrue( $job->run() );
+		$this->getServiceContainer()->getJobQueueGroup()->push(
+			GlobalVanishJob::newSpec( $request, $performer->getName() )
+		);
+		$this->runJobs();
 	}
 
 	/**
@@ -113,7 +114,7 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		$this->globalRenameUser->expects( $this->never() )->method( 'rename' );
 
 		$job = new GlobalVanishJob( [
-			'requestId' => 1000,
+			'globalRenameRequestId' => 1000,
 			'renamer' => $performer->getName(),
 		] );
 		$this->assertFalse( $job->run() );
