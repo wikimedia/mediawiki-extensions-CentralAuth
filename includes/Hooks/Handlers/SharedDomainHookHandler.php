@@ -287,11 +287,11 @@ class SharedDomainHookHandler implements
 			];
 			$out->addHeadItem(
 				'CentralAuth-SharedDomain-Variables',
-				// We must wait until after 'mediawiki.base' sets the global `mw.config` items
+				// We must do our override after 'mediawiki.base' sets the initial `mw.config` data
 				Html::inlineScript( ResourceLoader::makeInlineCodeWithModule(
 					// Implicit dependency on 'mediawiki.base'
 					[],
-					ResourceLoader::makeConfigSetScript( $vars )
+					'mw.config.set(' . json_encode( $vars, JSON_THROW_ON_ERROR ) . ');'
 				) )
 			);
 		}
