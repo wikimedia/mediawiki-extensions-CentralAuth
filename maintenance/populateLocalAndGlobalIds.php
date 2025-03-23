@@ -47,11 +47,19 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 				->from( 'localuser' )
 				->join( 'globaluser', null, 'gu_name = lu_name' )
 				->where( [
-					// Start from where we left off in last batch
+					// Start from where we left off in the last batch
 					$dbr->expr( 'gu_id', '>=', $lastGlobalId ),
 					'lu_wiki' => $wiki,
-					// Only pick records not already populated
-					'lu_local_id' => null
+					$dbr->orExpr(
+						[
+							// Pick records not already populated
+							$dbr->expr( 'lu_local_id', '=', null ),
+							// T303590 for other irregular cases
+							$dbr->expr( 'lu_local_id', '=', 0 ),
+							$dbr->expr( 'lu_global_id', '=', 0 ),
+							$dbr->expr( 'lu_global_id', '=', null ),
+						]
+					)
 				] )
 				->orderBy( 'gu_id', SelectQueryBuilder::SORT_ASC )
 				->limit( $this->mBatchSize )
@@ -103,7 +111,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 						"Update failed for global user $lastGlobalId for wiki $wiki \n"
 					);
 				} else {
-					// Count number of records actually updated
+					// Count the number of records actually updated
 					$updated++;
 				}
 			}
