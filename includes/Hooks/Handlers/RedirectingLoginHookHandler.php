@@ -70,8 +70,18 @@ class RedirectingLoginHookHandler implements
 		if (
 			!$this->sharedDomainUtils->isSharedDomain()
 			|| !$this->sharedDomainUtils->isSul3Enabled( $request )
+			// There are two kinds of security reauthentications:
+			// 1. the user goes to a credential change page, gets redirected to the shared domain
+			//    and then to security reauthentication there. After successful login, they need
+			//    to return to the credential change special page on the shared domain, ie. normal
+			//    core 'returnto' handling.
+			// 2. The user goes to some other page requiring elevated security, gets redirected to
+			//    local login and then the redirecting primary provider sends them to the shared
+			//    domain. They do need to be sent back by this hook; the 'force' parameter is not
+			//    forwarded to the shared domain, so that will work.
+			|| $request->getBool( 'force' )
 		) {
-			return;
+			return true;
 		}
 
 		$token = $request->getRawVal( 'centralauthLoginToken' );
