@@ -148,7 +148,7 @@
 	"centralauth-admin-reason-other": "{{Identical|Other/additional reason}}",
 	"centralauth-admin-reason-other-select": "Shown on the [[Special:CentralAuth]] form in the drop down menu.\n\nSee also:\n* {{msg-mw|Centralauth-admin-status-reasons}}\n{{Identical|Other reason}}",
 	"centralauth-admin-rename-in-progress": "Shown on [[Special:CentralAuth]] when the account is currently being renamed. Parameters:\n* $1 - global account's name",
-	"centralauth-admin-setstatus-success": "Used as success message in [[Special:CentralAuth]] and [[Special:MultiLock]].",
+	"centralauth-admin-setstatus-success": "Used as success message in [[Special:CentralAuth]] and [[Special:MultiLock]]. Parameters:\n* $1 - global account's name",
 	"centralauth-admin-status": "This message is used as label of fieldset.",
 	"centralauth-admin-status-hidden": "Label of radio button. Options are:\n*{{msg-mw|Centralauth-admin-status-hidden-no}}\n*{{msg-mw|Centralauth-admin-status-hidden-list}}\n*{{msg-mw|Centralauth-admin-status-hidden-oversight}}\n{{Identical|Hidden}}",
 	"centralauth-admin-status-hidden-list": "Radio button\n*{{msg-mw|Centralauth-admin-status-hidden-no}}\n*{{msg-mw|Centralauth-admin-status-hidden-list}}\n*{{msg-mw|Centralauth-admin-status-hidden-oversight}}",
