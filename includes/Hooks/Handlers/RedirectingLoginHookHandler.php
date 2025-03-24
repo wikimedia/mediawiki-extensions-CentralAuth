@@ -75,13 +75,14 @@ class RedirectingLoginHookHandler implements
 		}
 
 		$token = $request->getRawVal( 'centralauthLoginToken' );
-		$inputData = null;
-		if ( $token ) {
-			$inputData = $this->tokenManager->detokenizeAndDelete(
-				$token,
-				CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
-			);
+		if ( !$token ) {
+			return true;
 		}
+
+		$inputData = $this->tokenManager->detokenizeAndDelete(
+			$token,
+			CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
+		);
 		if ( !$inputData ) {
 			LoggerFactory::getInstance( 'authevents' )
 				->warning( 'Authentication request with bad token', [
