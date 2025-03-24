@@ -29,7 +29,7 @@ class SpecialMultiLock extends SpecialPage {
 	private $mCanSuppress;
 	/** @var (CentralAuthUser|MessageSpecifier|false)[] */
 	private $mGlobalUsers;
-	/** @var string[]|string|null */
+	/** @var string[] */
 	private $mUserNames;
 	/** @var string */
 	private $mPrefixSearch;
@@ -70,30 +70,33 @@ class SpecialMultiLock extends SpecialPage {
 		$this->setHeaders();
 		$this->checkPermissions();
 
+		$out = $this->getOutput();
+		$req = $this->getRequest();
+
 		$this->mCanSuppress = $this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' );
-		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
-		$this->getOutput()->addModules( 'ext.centralauth' );
-		$this->getOutput()->addModuleStyles( 'ext.centralauth.noflash' );
-		$this->mMethod = $this->getRequest()->getVal( 'wpMethod', '' );
-		$this->mActionLock = $this->getRequest()->getVal( 'wpActionLock', 'nochange' );
-		$this->mActionHide = $this->getRequest()->getInt( 'wpActionHide', -1 );
-		$this->mUserNames = $this->getRequest()->getVal( 'wpTarget', '' );
-		$this->mPrefixSearch = $this->getRequest()->getVal( 'wpSearchTarget', '' );
-		$this->mActionUserNames = $this->getRequest()->getArray( 'wpActionTarget' );
-		$this->mPosted = $this->getRequest()->wasPosted();
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$out->addModules( 'ext.centralauth' );
+		$out->addModuleStyles( 'ext.centralauth.noflash' );
+		$this->mMethod = $req->getVal( 'wpMethod', '' );
+		$this->mActionLock = $req->getVal( 'wpActionLock', 'nochange' );
+		$this->mActionHide = $req->getInt( 'wpActionHide', -1 );
+		$this->mPrefixSearch = $req->getVal( 'wpSearchTarget', '' );
+		$this->mActionUserNames = $req->getArray( 'wpActionTarget' );
+		$this->mPosted = $req->wasPosted();
 
-		$this->mReason = $this->getRequest()->getText( 'wpReasonList' );
-		$reasonDetail = $this->getRequest()->getText( 'wpReason' );
+		$this->mReason = $req->getText( 'wpReasonList' );
+		$reasonDetail = $req->getText( 'wpReason' );
 
-		if ( $this->mReason == 'other' ) {
+		if ( $this->mReason === 'other' ) {
 			$this->mReason = $reasonDetail;
 		} elseif ( $reasonDetail ) {
 			$this->mReason .= $this->msg( 'colon-separator' )->inContentLanguage()->text() .
 				$reasonDetail;
 		}
 
-		if ( $this->mUserNames !== '' ) {
-			$this->mUserNames = explode( "\n", $this->mUserNames );
+		$userNames = $req->getVal( 'wpTarget', '' );
+		if ( $userNames !== '' ) {
+			$this->mUserNames = explode( "\n", $userNames );
 		} else {
 			$this->mUserNames = [];
 		}
@@ -103,7 +106,7 @@ class SpecialMultiLock extends SpecialPage {
 		}
 
 		if ( $this->mMethod === '' ) {
-			$this->getOutput()->addWikiMsg( 'centralauth-admin-multi-intro' );
+			$out->addWikiMsg( 'centralauth-admin-multi-intro' );
 			$this->showUsernameForm();
 			return;
 		} elseif ( $this->mPosted && $this->mMethod == 'search' && count( $this->mUserNames ) > 0 ) {
@@ -150,9 +153,12 @@ class SpecialMultiLock extends SpecialPage {
 			$globalUser = $fromPrimaryDb
 				? CentralAuthUser::getPrimaryInstanceByName( $username )
 				: CentralAuthUser::getInstanceByName( $username );
-			if ( !$globalUser->exists()
-				|| ( !$this->mCanSuppress &&
-					( $globalUser->isSuppressed() || $globalUser->isHidden() ) )
+			if (
+				!$globalUser->exists() ||
+				(
+					!$this->mCanSuppress &&
+					( $globalUser->isSuppressed() || $globalUser->isHidden() )
+				)
 			) {
 				$ret[] = $this->msg( 'centralauth-admin-nonexistent', $username );
 			} else {
@@ -201,21 +207,24 @@ class SpecialMultiLock extends SpecialPage {
 				'wpActionLock',
 				'nochange',
 				'mw-centralauth-status-locked-no',
-				true ) .
+				true
+			) .
 			'<br />' .
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-lock-unlock' )->text(),
 				'wpActionLock',
 				'unlock',
 				'centralauth-admin-action-lock-unlock',
-				false ) .
+				false
+			) .
 			'<br />' .
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-lock-lock' )->text(),
 				'wpActionLock',
 				'lock',
 				'centralauth-admin-action-lock-lock',
-				false );
+				false
+			);
 
 		$radioHidden =
 			Xml::radioLabel(
@@ -223,7 +232,8 @@ class SpecialMultiLock extends SpecialPage {
 				'wpActionHide',
 				'-1',
 				'mw-centralauth-status-hidden-nochange',
-				true ) .
+				true
+			) .
 			'<br />';
 		if ( $this->mCanSuppress ) {
 			$radioHidden .= Xml::radioLabel(
@@ -231,14 +241,16 @@ class SpecialMultiLock extends SpecialPage {
 				'wpActionHide',
 				(string)CentralAuthUser::HIDDEN_LEVEL_NONE,
 				'mw-centralauth-status-hidden-no',
-				false ) .
+				false
+				) .
 			'<br />' .
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-lists' )->text(),
 				'wpActionHide',
 				(string)CentralAuthUser::HIDDEN_LEVEL_LISTS,
 				'mw-centralauth-status-hidden-list',
-				false ) .
+				false
+			) .
 			'<br />' .
 			Xml::radioLabel(
 				$this->msg( 'centralauth-admin-action-hide-oversight' )->text(),
@@ -269,11 +281,11 @@ class SpecialMultiLock extends SpecialPage {
 			'centralauth-admin-status-submit'
 		);
 
-		$searchlist = $this->mUserNames;
+		$searchList = $this->mUserNames;
 		if ( is_array( $this->mUserNames ) ) {
-			$searchlist = implode( "\n", $this->mUserNames );
+			$searchList = implode( "\n", $this->mUserNames );
 		}
-		$form .= Html::hidden( 'wpTarget', $searchlist );
+		$form .= Html::hidden( 'wpTarget', $searchList );
 
 		$form .= '</fieldset></form>';
 
@@ -304,29 +316,30 @@ class SpecialMultiLock extends SpecialPage {
 			[ 'class' => 'wikitable sortable mw-centralauth-wikislist' ]
 		);
 
+		$context = $out->getContext();
 		$header .= '<thead><tr>' .
-				'<th></th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-username' )->escaped() .
-				'</th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-info-registered' )->escaped() .
-				'</th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-info-locked' )->escaped() .
-				'</th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-info-hidden' )->escaped() .
-				'</th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-info-editcount' )->escaped() .
-				'</th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-admin-info-attached' )->escaped() .
-				'</th>' .
-				'<th>' .
-				$out->getContext()->msg( 'centralauth-multilock-homewiki' )->escaped() .
-				'</th>' .
+			'<th></th>' .
+			'<th>' .
+			$context->msg( 'centralauth-admin-username' )->escaped() .
+			'</th>' .
+			'<th>' .
+			$context->msg( 'centralauth-admin-info-registered' )->escaped() .
+			'</th>' .
+			'<th>' .
+			$context->msg( 'centralauth-admin-info-locked' )->escaped() .
+			'</th>' .
+			'<th>' .
+			$context->msg( 'centralauth-admin-info-hidden' )->escaped() .
+			'</th>' .
+			'<th>' .
+			$context->msg( 'centralauth-admin-info-editcount' )->escaped() .
+			'</th>' .
+			'<th>' .
+			$context->msg( 'centralauth-admin-info-attached' )->escaped() .
+			'</th>' .
+			'<th>' .
+			$context->msg( 'centralauth-multilock-homewiki' )->escaped() .
+			'</th>' .
 			'</tr></thead>' .
 			'<tbody>';
 
@@ -343,32 +356,33 @@ class SpecialMultiLock extends SpecialPage {
 			$this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR
 		);
 
-		$out = $this->getOutput();
-
 		if ( count( $this->mGlobalUsers ) < 1 ) {
 			$this->showError( 'centralauth-admin-multi-notfound' );
 			return;
 		}
 
+		$out = $this->getOutput();
 		$this->showTableHeader();
 
 		foreach ( $this->mGlobalUsers as $globalUser ) {
-			$rowtext = Xml::openElement( 'tr' );
-
 			if ( $globalUser === false ) {
 				continue;
-			} elseif ( $globalUser instanceof CentralAuthUser ) {
-				$rowtext .= $this->getUserTableRow( $globalUser );
+			}
+
+			$rowText = Xml::openElement( 'tr' );
+
+			if ( $globalUser instanceof CentralAuthUser ) {
+				$rowText .= $this->getUserTableRow( $globalUser );
 			} else {
-				$rowtext .= Html::rawElement(
+				$rowText .= Html::rawElement(
 					'td',
 					[ 'colspan' => 8 ],
 					$this->msg( $globalUser )->parse()
 				);
 			}
 
-			$rowtext .= Xml::closeElement( 'tr' );
-			$out->addHTML( $rowtext );
+			$rowText .= Xml::closeElement( 'tr' );
+			$out->addHTML( $rowText );
 		}
 
 		$out->addHTML( '</tbody></table>' );
@@ -435,19 +449,20 @@ class SpecialMultiLock extends SpecialPage {
 		}
 
 		$setLocked = null;
-		$setHidden = null;
 
 		if ( $this->mActionLock != 'nochange' ) {
 			$setLocked = ( $this->mActionLock == 'lock' );
 		}
 
-		if ( $this->mActionHide !== -1 ) {
-			$setHidden = $this->mActionHide;
-		}
+		$setHidden = $this->mActionHide !== -1
+			? $this->mActionHide
+			: null;
 
+		$context = $this->getContext();
+		$markAsBot = $this->getRequest()->getCheck( 'markasbot' );
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 			if ( !$globalUser instanceof CentralAuthUser ) {
-				// Somehow the user submitted a bad user name
+				// Somehow the user submitted a bad username
 				$this->showError( $this->msg( $globalUser )->parse() );
 				continue;
 			}
@@ -456,8 +471,8 @@ class SpecialMultiLock extends SpecialPage {
 				$setLocked,
 				$setHidden,
 				$this->mReason,
-				$this->getContext(),
-				$this->getRequest()->getCheck( 'markasbot' )
+				$context,
+				$markAsBot,
 			);
 
 			if ( !$status->isGood() ) {
@@ -491,10 +506,6 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	private function showUsernameForm() {
-		if ( is_array( $this->mUserNames ) ) {
-			$this->mUserNames = implode( "\n", $this->mUserNames );
-		}
-
 		$form = Xml::tags( 'form',
 			[
 				'method' => 'post',
@@ -507,7 +518,7 @@ class SpecialMultiLock extends SpecialPage {
 					$this->msg( 'centralauth-admin-multi-username' )->text()
 				) .
 				Xml::textarea( 'wpTarget',
-					( $this->mPrefixSearch ? '' : $this->mUserNames ), 25, 20 ) .
+					( $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ) ), 25, 20 ) .
 				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
 				) .
@@ -536,7 +547,8 @@ class SpecialMultiLock extends SpecialPage {
 					'log_action' => 'setstatus'
 				],
 				'showIfEmpty' => true
-			] );
+			]
+		);
 		if ( $numRows ) {
 			$this->getOutput()->addHTML(
 				Xml::fieldset( $this->msg( 'centralauth-admin-logsnippet' )->text(), $text )
