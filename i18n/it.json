@@ -64,7 +64,7 @@
 	"centralauth-admin-delete-description": "La cancellazione dell'utenza globale scollegherà tutte le utenze locali, e lascerà il nome globale libero per essere usato da un altro utente.\nTutte le utenze locali continueranno ad esistere.",
 	"centralauth-admin-delete-nonexistent": "Errore: l'utenza globale \"<nowiki>$1</nowiki>\" non esiste.",
 	"centralauth-admin-delete-success": "L'utenza globale per \"<nowiki>$1</nowiki>\" è stata cancellata",
-	"centralauth-admin-delete-title": "Elimina l'utenza",
+	"centralauth-admin-delete-title": "Cancella utenza",
 	"centralauth-admin-group-temporary": "$1 ''(temporaneo)''",
 	"centralauth-admin-hidden-list": "dall'elenco globale degli utenti",
 	"centralauth-admin-hidden-oversight": "soppresso",
