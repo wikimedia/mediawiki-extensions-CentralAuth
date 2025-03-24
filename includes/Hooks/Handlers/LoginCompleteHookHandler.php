@@ -87,6 +87,7 @@ class LoginCompleteHookHandler implements
 		if ( !$this->config->get( CAMainConfigNames::CentralAuthCookies )
 			|| !$this->centralDomainUtils->centralDomainExists( $user->getRequest() )
 			|| $this->sharedDomainUtils->isSul3Enabled( RequestContext::getMain()->getRequest() )
+			|| $this->sharedDomainUtils->isSharedDomain()
 		) {
 			// Use local sessions only.
 			return true;
