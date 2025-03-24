@@ -335,7 +335,7 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} elseif ( $status->successCount > 0 ) {
-				$this->showSuccess( 'centralauth-admin-setstatus-success', $this->mUserName );
+				$this->showSuccess( 'centralauth-admin-setstatus-success', wfEscapeWikitext( $this->mUserName ) );
 			}
 		} else {
 			$this->showError( 'centralauth-admin-bad-input' );

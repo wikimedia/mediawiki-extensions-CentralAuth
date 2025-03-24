@@ -116,7 +116,7 @@
 	"centralauth-admin-reason-other": "Other/additional reason:",
 	"centralauth-admin-reason-other-select": "Other reason",
 	"centralauth-admin-rename-in-progress": "This account is currently being renamed. You can [[Special:GlobalRenameProgress/$1|view the progress]] of the rename. The global rename log for this user is provided below.",
-	"centralauth-admin-setstatus-success": "You have changed the status of this global account.",
+	"centralauth-admin-setstatus-success": "You have changed the status of the global account \"$1\".",
 	"centralauth-admin-status": "Set global account status",
 	"centralauth-admin-status-hidden": "Hidden:",
 	"centralauth-admin-status-hidden-list": "Account is hidden from the global users list",

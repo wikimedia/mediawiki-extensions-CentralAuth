@@ -460,7 +460,7 @@ class SpecialMultiLock extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status->getWikiText() );
 			} elseif ( $status->successCount > 0 ) {
-				$this->showSuccess( 'centralauth-admin-setstatus-success', $globalUser->getName() );
+				$this->showSuccess( 'centralauth-admin-setstatus-success', wfEscapeWikitext( $globalUser->getName() ) );
 			}
 		}
 	}
