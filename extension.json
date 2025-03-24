@@ -911,10 +911,6 @@
 			"description": "If set, this will be used instead of $wgSessionCacheType for session storage",
 			"value": null
 		},
-		"CentralAuthTokenSessionTimeout": {
-			"description": "The amount of time to wait for tokens to appear in the session store, in seconds",
-			"value": 3
-		},
 		"CentralAuthRejectVanishUserNotification": {
 			"description": "User name to be notified when a global vanish request is rejected.",
 			"value": ""
