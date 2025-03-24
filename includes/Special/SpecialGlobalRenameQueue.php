@@ -41,6 +41,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
@@ -261,7 +262,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->userNameUtils,
 			self::PAGE_OPEN_QUEUE
 		);
-		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
+		$this->getOutput()->addParserOutputContent(
+			$pager->getFullOutput(),
+			ParserOptions::newFromContext( $this->getContext() )
+		);
 	}
 
 	/**
@@ -294,7 +298,10 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->userNameUtils,
 			self::PAGE_CLOSED_QUEUE
 		);
-		$this->getOutput()->addParserOutputContent( $pager->getFullOutput() );
+		$this->getOutput()->addParserOutputContent(
+			$pager->getFullOutput(),
+			ParserOptions::newFromContext( $this->getContext() )
+		);
 	}
 
 	/**
