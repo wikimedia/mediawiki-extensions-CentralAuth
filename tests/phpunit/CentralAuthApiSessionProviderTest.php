@@ -62,7 +62,6 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	protected function newSessionProvider() {
 		$config = new HashConfig( [
 			MainConfigNames::SecretKey => 'hunter2',
-			'CentralAuthTokenSessionTimeout' => 0
 		] );
 
 		$logger = new NullLogger();
