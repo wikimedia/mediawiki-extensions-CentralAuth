@@ -40,7 +40,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 
 		$ldbr = $databaseManager->getLocalDB( DB_REPLICA, $wiki );
 
-		$this->output( "Populating fields for wiki $wiki... \n" );
+		$this->output( "Populating fields for wiki $wiki...\n" );
 		do {
 			$rows = $dbr->newSelectQueryBuilder()
 				->select( [ 'lu_name', 'gu_id' ] )
@@ -72,7 +72,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			foreach ( $rows as $row ) {
 				if ( in_array( $row->lu_name, $globalRenames ) ) {
 					$this->output(
-						"User " . $row->lu_name . " not migrated (pending rename)\n"
+						"User " . $row->lu_name . " not migrated (pending rename).\n"
 					);
 					continue;
 				}
@@ -97,18 +97,27 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			foreach ( $globalUidToLocalName as $gid => $uname ) {
 				// Save progress so we know where to start our next batch
 				$lastGlobalId = $gid;
+
+				$set = [
+					'lu_global_id' => $gid
+				];
+				if ( !isset( $localNameToUid[$uname] ) ) {
+					$this->output(
+						"No local name to user id mapping for \"$uname\" on $wiki.\n"
+					);
+				} else {
+					$set['lu_local_id'] = $localNameToUid[$uname];
+				}
+
 				$dbw->newUpdateQueryBuilder()
 					->update( 'localuser' )
-					->set( [
-						'lu_local_id' => $localNameToUid[$uname],
-						'lu_global_id' => $gid
-					] )
+					->set( $set )
 					->where( [ 'lu_name' => $uname, 'lu_wiki' => $wiki ] )
 					->caller( __METHOD__ )
 					->execute();
 				if ( !$dbw->affectedRows() ) {
 					$this->output(
-						"Update failed for global user $lastGlobalId for wiki $wiki \n"
+						"Update failed for global user $lastGlobalId for wiki $wiki.\n"
 					);
 				} else {
 					// Count the number of records actually updated
@@ -116,11 +125,11 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 				}
 			}
 			$this->output(
-				"Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki \n"
+				"Updated $updated records. Last user: $lastGlobalId; Wiki: $wiki.\n"
 			);
 			$this->waitForReplication();
 		} while ( $numRows >= $this->mBatchSize );
-		$this->output( "Completed $wiki \n" );
+		$this->output( "Completed $wiki.\n" );
 	}
 
 }
