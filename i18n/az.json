@@ -100,7 +100,7 @@
 	"centralauth-admin-reason-other": "Digər/əlavə səbəb:",
 	"centralauth-admin-reason-other-select": "Digər səbəb",
 	"centralauth-admin-rename-in-progress": "Hazırda bu hesabın adı dəyişdirilir. Siz [[Special:GlobalRenameProgress/$1|adın dəyişməsi prosesinə baxa bilərsiniz]]. Bu istifadəçi üçün qlobal adının dəyişdirilməsi jurnalı aşağıda verilmişdir.",
-	"centralauth-admin-setstatus-success": "Siz bu qlobal hesabın statusunu dəyişdiniz.",
+	"centralauth-admin-setstatus-success": "Siz \"$1\" qlobal hesabının statusunu dəyişdiniz.",
 	"centralauth-admin-status": "Qlobal hesab statusunu təyin edin",
 	"centralauth-admin-status-hidden": "Gizli:",
 	"centralauth-admin-status-hidden-list": "Hesab qlobal istifadəçilər siyahısından gizlədilib",

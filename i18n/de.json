@@ -111,7 +111,7 @@
 	"centralauth-admin-reason-other": "Anderer/ergänzender Grund:",
 	"centralauth-admin-reason-other-select": "Anderer Grund",
 	"centralauth-admin-rename-in-progress": "Dieses Benutzerkonto wird derzeit umbenannt. Du kannst [[Special:GlobalRenameProgress/$1|den Fortschritt der Umbenennung ansehen]]. Das globale Umbenennungs-Logbuch für diesen Benutzer wird unten angezeigt.",
-	"centralauth-admin-setstatus-success": "Du hast den Status für dieses globale Benutzerkonto erfolgreich geändert.",
+	"centralauth-admin-setstatus-success": "Du hast den Status für das globale Benutzerkonto „$1“ geändert.",
 	"centralauth-admin-status": "Globalen Kontenstatus ändern",
 	"centralauth-admin-status-hidden": "Versteckt:",
 	"centralauth-admin-status-hidden-list": "Das Benutzerkonto ist in der Liste der globalen Benutzer ausgeblendet",
