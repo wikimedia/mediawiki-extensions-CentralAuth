@@ -91,7 +91,7 @@
 	"centralauth-admin-reason-other": "Altere/additional motivo:",
 	"centralauth-admin-reason-other-select": "Altere motivo",
 	"centralauth-admin-rename-in-progress": "Iste conto es in le processo de renomination. Tu pote [[Special:GlobalRenameProgress/$1|vider le progresso]] del cambio de nomine. Le registro global de renominationes pro iste usator es fornite infra.",
-	"centralauth-admin-setstatus-success": "Tu ha cambiate le stato global de iste conto.",
+	"centralauth-admin-setstatus-success": "Tu ha cambiate le stato del conto global “$1”.",
 	"centralauth-admin-status": "Configurar le stato del conto global",
 	"centralauth-admin-status-hidden": "Celate:",
 	"centralauth-admin-status-hidden-list": "Le conto es celate in le lista de usatores global",

@@ -125,7 +125,7 @@
 	"centralauth-admin-reason-other": "سبب آخر/إضافي:",
 	"centralauth-admin-reason-other-select": "سبب آخر",
 	"centralauth-admin-rename-in-progress": "تتم إعادة تسمية هذا الحساب حاليا، يمكنك [[Special:GlobalRenameProgress/$1|عرض تقدم]] إعادة التسمية، سجل إعادة التسمية العالمي لهذا المستخدم موضح أدناه.",
-	"centralauth-admin-setstatus-success": "أنت غيرت  حالة هذا الحساب العام.",
+	"centralauth-admin-setstatus-success": "لقد قمت بتغيير حالة الحساب العالمي \"$1\".",
 	"centralauth-admin-status": "ضبط حالة الحساب العام",
 	"centralauth-admin-status-hidden": "مخفي:",
 	"centralauth-admin-status-hidden-list": "الحساب مخفي من قائمة المستخدمين العالميين",
