@@ -43,6 +43,7 @@ class LockUser extends Maintenance {
 		$this->addOption( 'actor', 'Username to log with', false, true );
 		$this->addOption( 'reason', 'Reason to use', false, true );
 		$this->addOption( 'bot', 'Mark as bot in RC', false, false );
+		$this->addOption( 'unlock', 'Unlock instead of locking', false, false );
 	}
 
 	public function execute() {
@@ -58,13 +59,18 @@ class LockUser extends Maintenance {
 			$this->fatalError( "User '$username' does not exist" );
 		}
 
-		if ( $user->isLocked() ) {
+		if ( $user->isLocked() && !$this->getOption( 'unlock', false ) ) {
 			$this->output( "User '$username' is already locked" . PHP_EOL );
 			return;
 		}
 
+		if ( !$user->isLocked() && $this->getOption( 'unlock', false ) ) {
+			$this->output( "User '$username' is not locked" . PHP_EOL );
+			return;
+		}
+
 		$status = $user->adminLockHide(
-			/* setLocked */ true,
+			/* setLocked */ !$this->getOption( 'unlock', false ),
 			/* setHidden */ null,
 			$this->getOption( 'reason', '' ),
 			$context,
@@ -72,7 +78,7 @@ class LockUser extends Maintenance {
 		);
 
 		if ( $status->isGood() ) {
-			$this->output( "Locked user '$username'" . PHP_EOL );
+			$this->output( "(Un)locked user '$username'" . PHP_EOL );
 			return;
 		}
 
