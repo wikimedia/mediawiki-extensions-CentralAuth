@@ -63,6 +63,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		array $params,
 		string $expectedUrl
 	) {
+		$this->markTestSkippedIfExtensionNotLoaded( 'MobileFrontend' );
 		$this->overrideConfigValues( [
 			MainConfigNames::LanguageCode => 'de',
 			CAMainConfigNames::CentralAuthEnableSul3 => $isSul3Enabled ? [ 'always' ] : [],
