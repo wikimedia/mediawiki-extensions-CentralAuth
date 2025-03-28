@@ -151,6 +151,7 @@ class SharedDomainHookHandler implements
 				'SpamBlacklistPreAuthenticationProvider',
 				ThrottlePreAuthenticationProvider::class,
 				'TitleBlacklistPreAuthenticationProvider',
+				'login-notify-known-ip',
 			],
 			'primaryauth' => [
 				// CentralAuthPrimaryAuthenticationProvider is needed for autocreation, so it
