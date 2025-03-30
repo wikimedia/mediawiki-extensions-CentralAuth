@@ -2413,7 +2413,8 @@ class CentralAuthUser implements IDBAccessObject {
 			return [ $canAuthenticate ];
 		}
 
-		$passwordMatchStatus = $this->matchHash( $password, $this->getPasswordObject() );
+		$passwordObject = $this->getPasswordObject();
+		$passwordMatchStatus = $this->matchHash( $password, $passwordObject );
 
 		if ( $canAuthenticate === true ) {
 			if ( $passwordMatchStatus->isGood() ) {
@@ -2425,14 +2426,17 @@ class CentralAuthUser implements IDBAccessObject {
 					$config->get( MainConfigNames::PasswordDefault )
 				);
 
-				if ( $passwordFactory->needsUpdate( $passwordMatchStatus->getValue() ) ) {
-					DeferredUpdates::addCallableUpdate( function () use ( $password ) {
+				if ( $passwordFactory->needsUpdate( $passwordObject ) ) {
+					DeferredUpdates::addCallableUpdate( function () use ( $password, $passwordObject ) {
 						if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
 							return;
 						}
 
 						$centralUser = self::newPrimaryInstanceFromId( $this->getId() );
 						if ( $centralUser ) {
+							$scope = LoggerFactory::getContext()->addScoped( [
+								'context.passwordHashUpgrade_from' => $passwordObject->getType(),
+							] );
 							// Don't bother resetting the auth token for a hash
 							// upgrade. It's not really a password *change*, and
 							// since this is being done post-send it'll cause the
@@ -2505,7 +2509,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		if ( $matched ) {
-			return Status::newGood( $password );
+			return Status::newGood();
 		} else {
 			return Status::newFatal( 'bad' );
 		}
