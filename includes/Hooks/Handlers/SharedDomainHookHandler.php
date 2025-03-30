@@ -162,6 +162,7 @@ class SharedDomainHookHandler implements
 			'secondaryauth' => [
 				CheckBlocksSecondaryAuthenticationProvider::class,
 				'CentralAuthSecondaryAuthenticationProvider',
+				'EmailAuthSecondaryAuthenticationProvider',
 				'OATHSecondaryAuthenticationProvider',
 			],
 		],
