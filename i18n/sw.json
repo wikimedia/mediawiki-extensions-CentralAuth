@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Edwingudfriend",
+			"Joeamj",
 			"Killy95",
 			"Kipala",
 			"Kwisha",
@@ -123,6 +124,7 @@
 	"centralauth-years-ago": "{{PLURAL:$1|mwaka $1 ulio|miaka $1 iliyo}}pita",
 	"globalrenamerequest-self-error": "Labda hauwezi kuidhinisha ombi hili kwa kuwa huruhusiwi kubadilisha jina la akaunti yako mwenyewe.",
 	"globalrenamerequest-self-warning": "Unaweza kukataa tu ombi hili kwa kuwa huruhusiwi kubadilisha jina la akaunti yako mwenyewe.",
+	"globalvanishrequest-rejected-body-notification": "Ombi la kutoweka kwa akaunti lilikataliwa, maelezo hapa chini:\n\nJina la mtumiaji: $1 \nWiki ya nyumbani: $2 \nIdadi ya mabadiliko ya kimataifa: $3 \nImezuiwa: $4 \nSababu ya kuomba kutoweka: $5 \nImekataliwa na: $6 \nImekataliwa! $7 N!Maelezo ya kukataliwa! $8 N! $9",
 	"mergeaccount": "Kuunganishwa kwa hali ya kuingia",
 	"right-centralauth-merge": "Shikanisha akaunti yao"
 }

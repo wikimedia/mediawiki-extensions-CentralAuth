@@ -211,7 +211,7 @@
 	"log-action-filter-globalauth": "ਬਦਲਾਅ ਦੀ ਕਿਸਮ",
 	"log-action-filter-globalauth-delete": "ਵਿਆਪਕ ਖਾਤਾ ਮਿਟਾਉਣਾ",
 	"log-action-filter-suppress-cadelete": "ਵਿਆਪਕ ਖਾਤਾ ਮਿਟਾਉਣਾ",
-	"logentry-gblrights-usergroups": "$1 ਨੇ $3 ਲਈ $4 ਤੋਂ $5 ਗਲੋਬਲ ਸਮੂਹ ਮੈਂਬਰਸ਼ਿਪ {{GENDER:$2|ਬਦਲੀ}}",
+	"logentry-gblrights-usergroups": "{{GENDER:$6|$3}} ਲਈ ਵਿਸ਼ਵ-ਪੱਧਰੀ ਟੋਲੀਆਂ ਦੀ ਮੈਂਬਰੀ $1 ਨੇ {{GENDER:$2|ਬਦਲੀ}}: $7",
 	"mergeaccount": "ਦਾਖ਼ਲਾ ਏਕੀਕਰਨ ਸਥਿਤੀ",
 	"multilock": "ਕਈ ਵਿਸ਼ਵ-ਵਿਆਪੀ ਖਾਤਿਆਂ ਨੂੰ ਤਾਲੇਬੰਦ ਕਰੋ",
 	"right-centralauth-lock": "ਵਿਸ਼ਵ-ਵਿਆਪੀ ਖਾਤਿਆਂ ਨੂੰ ਤਾਲੇਬੰਦ ਕਰੋ ਜਾਂ ਖੋਲੋ",
