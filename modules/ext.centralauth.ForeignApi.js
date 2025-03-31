@@ -110,7 +110,7 @@
 	CentralAuthForeignApi.prototype.getToken = function ( type, assert, ajaxOptions ) {
 		const foreignApi = this;
 		const parent = CentralAuthForeignApi.super.prototype.getToken;
-		if ( this.foreignLoginPromise && csrfTokenOldTypes.indexOf( type ) !== -1 ) {
+		if ( this.foreignLoginPromise && csrfTokenOldTypes.includes( type ) ) {
 			ajaxOptions = ajaxOptions || {};
 			const abortable = foreignApi.makeAbortablePromise( ajaxOptions );
 			return this.foreignLoginPromise.then(
@@ -171,7 +171,7 @@
 				// It must be part of the request URI, and not just POST request body
 				if ( ajaxOptions.type !== 'GET' ) {
 					url = ( ajaxOptions && ajaxOptions.url ) || foreignApi.defaults.ajax.url;
-					url += ( url.indexOf( '?' ) !== -1 ? '&' : '?' ) +
+					url += ( url.includes( '?' ) ? '&' : '?' ) +
 						'centralauthtoken=' + encodeURIComponent( centralAuthToken );
 					newAjaxOptions = Object.assign( {}, ajaxOptions, { url: url } );
 				} else {
