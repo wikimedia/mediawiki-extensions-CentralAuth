@@ -191,7 +191,16 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-badtoken' ) );
 		}
 
+		// T388177 - after account creation, we want to avoid any immediate lags, and read
+		// the user data from the primary DB during login (immediately after signups), hence
+		// ::getPrimaryInstanceByName(). But for a regular login, let's read from replica
+		// so we don't increase load on the DB for every single authentication which is
+		// needless.
 		$centralUser = CentralAuthUser::getInstanceByName( $data['username'] );
+		if ( !$centralUser->exists() ) {
+			$centralUser = CentralAuthUser::getPrimaryInstanceByName( $data['username'] );
+		}
+
 		if ( $centralUser->getId() !== $data['userId'] ) {
 			$msg = "User ID: {centralUserId} mismatch with {storedUserId} for user: {username}";
 			throw new NormalizedException( $msg, [
