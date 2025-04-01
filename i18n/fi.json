@@ -117,7 +117,7 @@
 	"centralauth-admin-reason-other": "Muu syy tai tarkennus:",
 	"centralauth-admin-reason-other-select": "Muu syy",
 	"centralauth-admin-rename-in-progress": "Tämän tunnuksen nimen vaihto on käynnissä. Voit [[Special:GlobalRenameProgress/$1|näyttää edistymisen]]. Järjestelmänlaajuinen nimenvaihtoloki on alla.",
-	"centralauth-admin-setstatus-success": "Olet muuttanut tämän järjestelmänlaajuisen tunnuksen tilaa.",
+	"centralauth-admin-setstatus-success": "Olet muuttanut järjestelmänlaajuisen tunnuksen ”$1” tilaa.",
 	"centralauth-admin-status": "Aseta järjestelmänlaajuisen tunnuksen tila",
 	"centralauth-admin-status-hidden": "Piilotettu:",
 	"centralauth-admin-status-hidden-list": "Tunnus on piilotettu järjestelmänlaajuisten käyttäjien listasta",

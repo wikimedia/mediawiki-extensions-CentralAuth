@@ -121,7 +121,7 @@
 	"centralauth-admin-reason-other": "Andere/aanvullende reden:",
 	"centralauth-admin-reason-other-select": "Andere reden",
 	"centralauth-admin-rename-in-progress": "Deze account wordt op het moment hernoemd. U kunt de [[Special:GlobalRenameProgress/$1|huidige voortgang bekijken]]. Hieronder wordt het logboek globale hernoemingen voor deze gebruiker weergegeven.",
-	"centralauth-admin-setstatus-success": "De status van deze globale gebruiker is gewijzigd.",
+	"centralauth-admin-setstatus-success": "U hebt de status van het globale account “$1“ gewijzigd.",
 	"centralauth-admin-status": "Globale gebruikerstatus instellen",
 	"centralauth-admin-status-hidden": "Verborgen:",
 	"centralauth-admin-status-hidden-list": "Gebruiker is verborgen van de globale gebruikerslijst",

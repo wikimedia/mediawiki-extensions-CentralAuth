@@ -102,7 +102,7 @@
 	"centralauth-admin-reason-other": "סיבה אחרת/נוספת:",
 	"centralauth-admin-reason-other-select": "סיבה אחרת",
 	"centralauth-admin-rename-in-progress": "שם החשבון הזה משתנה ברגעים אלה. באפשרותך [[Special:GlobalRenameProgress/$1|לראות את מצב ההתקדמות]] של שינוי השם. יומן שינוי השם הגלובלי מוצג להלן.",
-	"centralauth-admin-setstatus-success": "שינית את מצב החשבון הגלובלי.",
+	"centralauth-admin-setstatus-success": "שינית את מצב החשבון הגלובלי \"$1\".",
 	"centralauth-admin-status": "שינוי מצב החשבון הגלובלי",
 	"centralauth-admin-status-hidden": "מוסתר:",
 	"centralauth-admin-status-hidden-list": "החשבון מוסתר מרשימת המשתמשים הגלובליים",

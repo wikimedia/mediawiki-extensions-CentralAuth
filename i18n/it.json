@@ -110,7 +110,7 @@
 	"centralauth-admin-reason-other": "Altri motivi/dettagli:",
 	"centralauth-admin-reason-other-select": "Altro motivo",
 	"centralauth-admin-rename-in-progress": "Questa utenza sta per essere rinominata. Puoi [[Special:GlobalRenameProgress/$1|visualizzare lo stato di avanzamento]] della rinomina. Il registro delle rinomine globali per questo utente è riportato di seguito.",
-	"centralauth-admin-setstatus-success": "Hai modificato lo stato di questa utenza globale.",
+	"centralauth-admin-setstatus-success": "Hai modificato lo stato dell'utenza globale \"$1\".",
 	"centralauth-admin-status": "Impostare lo stato dell'utenza globale",
 	"centralauth-admin-status-hidden": "Nascosto:",
 	"centralauth-admin-status-hidden-list": "L'account è nascosto dall'elenco globale degli utenti",

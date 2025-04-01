@@ -155,7 +155,7 @@
 	"centralauth-admin-reason-other": "其他/附加原因：",
 	"centralauth-admin-reason-other-select": "其他原因",
 	"centralauth-admin-rename-in-progress": "此账户目前正在被重命名。您可以[[Special:GlobalRenameProgress/$1|查看]]重命名过程。此用户的全域更名日志在下方提供。",
-	"centralauth-admin-setstatus-success": "您已经改变了这个全域账号的状态。",
+	"centralauth-admin-setstatus-success": "您已更改全域账号“$1”的状态。",
 	"centralauth-admin-status": "设置全域账号状态",
 	"centralauth-admin-status-hidden": "隐藏:",
 	"centralauth-admin-status-hidden-list": "账号在全域用户列表是隐藏的",
