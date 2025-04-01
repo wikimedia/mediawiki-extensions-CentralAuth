@@ -361,8 +361,7 @@ class CentralAuthHooks implements
 	 * @return string[] List of wiki IDs and CentralDomainUtils pseudo-wiki-IDs
 	 */
 	public static function getAutoLoginWikis(): array {
-		global $wgServer, $wgCentralAuthLoginWiki, $wgCentralAuthAutoLoginWikis,
-			$wgCentralAuthSharedDomainCallback, $wgCentralAuthCookieDomain;
+		global $wgServer, $wgCentralAuthAutoLoginWikis, $wgCentralAuthCookieDomain;
 		$autoLoginWikis = $wgCentralAuthAutoLoginWikis;
 		if ( $wgCentralAuthCookieDomain ) {
 			unset( $autoLoginWikis[$wgCentralAuthCookieDomain] );
@@ -371,10 +370,7 @@ class CentralAuthHooks implements
 			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			unset( $autoLoginWikis[ $serverParts['host'] ] );
 		}
-		// When both the SUL2 and the SUL3 central domain is configured, autologin on both.
-		if ( $wgCentralAuthLoginWiki && $wgCentralAuthSharedDomainCallback ) {
-			array_push( $autoLoginWikis, CentralDomainUtils::PASSIVE_CENTRAL_DOMAIN_ID );
-		}
+
 		return $autoLoginWikis;
 	}
 

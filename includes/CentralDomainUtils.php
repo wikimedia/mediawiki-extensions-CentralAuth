@@ -39,15 +39,6 @@ class CentralDomainUtils {
 	 * @internal
 	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * Resolves to the "other" central domain, the opposite of CentralDomainUtils::CENTRAL_DOMAIN_ID.
-	 * Use this only when both SUL2 and SUL3 are configured, as it may throw otherwise.
-	 */
-	public const PASSIVE_CENTRAL_DOMAIN_ID = '#passive-central#';
-
-	/**
-	 * @internal
-	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
-	 *
 	 * Resolves to the SUL2 central login wiki.
 	 */
 	public const SUL2_CENTRAL_DOMAIN_ID = '#sul2-central#';
@@ -102,19 +93,16 @@ class CentralDomainUtils {
 	public function getUrl( string $wikiId, string $page, WebRequest $request, array $params = [] ): string {
 		if ( $wikiId === self::CENTRAL_DOMAIN_ID
 			|| $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID
-			|| $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID
 			|| $wikiId === self::SUL2_CENTRAL_DOMAIN_ID
 			|| $wikiId === self::SUL3_CENTRAL_DOMAIN_ID
 		) {
 			if ( $wikiId === self::SUL2_CENTRAL_DOMAIN_ID ) {
 				$useSul3Domain = false;
-			} elseif ( $wikiId === self::SUL3_CENTRAL_DOMAIN_ID ) {
-				$useSul3Domain = true;
 			} else {
-				$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request );
-				$usePassiveDomain = $wikiId === self::PASSIVE_CENTRAL_DOMAIN_ID;
-				$useSul3Domain = ( $isSul3Enabled && !$usePassiveDomain ) || ( !$isSul3Enabled && $usePassiveDomain );
+				$useSul3Domain = $this->sharedDomainUtils->isSul3Enabled( $request ) ||
+					$wikiId === self::SUL3_CENTRAL_DOMAIN_ID;
 			}
+
 			if ( $useSul3Domain ) {
 				$sharedDomainWikiId = null;
 				if ( $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID || $wikiId === self::SUL3_CENTRAL_DOMAIN_ID ) {
