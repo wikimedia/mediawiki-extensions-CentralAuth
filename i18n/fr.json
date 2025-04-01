@@ -157,7 +157,7 @@
 	"centralauth-admin-reason-other": "Motif autre ou supplémentaire :",
 	"centralauth-admin-reason-other-select": "Autre raison :",
 	"centralauth-admin-rename-in-progress": "Ce compte va être renommé. Cliquez [[Special:GlobalRenameProgress/$1|ici]] pour voir l'état actuel d’avancement. L’historique global du renommage est fourni ci-après.",
-	"centralauth-admin-setstatus-success": "Vous avez modifié l’état de ce compte global.",
+	"centralauth-admin-setstatus-success": "Vous avez modifié le statut du compte global « $1 ».",
 	"centralauth-admin-status": "Changer le statut du compte global",
 	"centralauth-admin-status-hidden": "Masqué :",
 	"centralauth-admin-status-hidden-list": "Le compte est masqué dans les listes des utilisateurs globaux",
