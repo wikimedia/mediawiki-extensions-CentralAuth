@@ -56,7 +56,6 @@ class CAMainConfigNames {
 	public const CentralAuthOldNameAntiSpoofWiki = 'CentralAuthOldNameAntiSpoofWiki';
 	public const GlobalRenameDenylist = 'GlobalRenameDenylist';
 	public const CentralAuthSessionCacheType = 'CentralAuthSessionCacheType';
-	public const CentralAuthTokenSessionTimeout = 'CentralAuthTokenSessionTimeout';
 	public const CentralAuthRejectVanishUserNotification = 'CentralAuthRejectVanishUserNotification';
 	public const CentralAuthAutomaticVanishPerformer = 'CentralAuthAutomaticVanishPerformer';
 	public const CentralAuthAutomaticVanishWiki = 'CentralAuthAutomaticVanishWiki';
