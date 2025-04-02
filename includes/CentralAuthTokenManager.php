@@ -8,7 +8,6 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Wikimedia\Assert\Assert;
 use Wikimedia\ObjectCache\BagOStuff;
-use Wikimedia\WaitConditionLoop;
 
 class CentralAuthTokenManager {
 
@@ -94,19 +93,10 @@ class CentralAuthTokenManager {
 	 *
 	 * @param string $token The random key returned by tokenize().
 	 * @param string|array $keyPrefix Namespace in the token store.
-	 * @param array $options Options:
-	 *   - timeout (int, default 3): Seconds to wait for the token store record to be created
-	 *     by another thread, when the first lookup doesn't find it.
 	 * @return mixed|false The value, or false if it was not found.
 	 */
-	public function detokenize(
-		string $token,
-		$keyPrefix,
-		array $options = []
-	) {
-		$timeout = $options['timeout'] ?? 3;
-		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		return $this->getKeyValueUponExistence( $key, $timeout );
+	public function detokenize( string $token, $keyPrefix ) {
+		return $this->tokenStore->get( $this->makeLegacyTokenKey( $keyPrefix, $token ) );
 	}
 
 	/**
@@ -114,18 +104,11 @@ class CentralAuthTokenManager {
 	 *
 	 * @param string $token The random key returned by tokenize().
 	 * @param string|array $keyPrefix Namespace in the token store.
-	 * @param array $options Options:
-	 * *   - timeout (int, default 3): Seconds to wait for the token store record to be created
-	 * *     by another thread, when the first lookup doesn't find it.
 	 * @return mixed|false The value, or false if it was not found.
 	 */
-	public function detokenizeAndDelete(
-		string $token,
-		$keyPrefix,
-		array $options = []
-	) {
+	public function detokenizeAndDelete( string $token, $keyPrefix ) {
 		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		$value = $this->detokenize( $token, $keyPrefix, $options );
+		$value = $this->detokenize( $token, $keyPrefix );
 		if ( $value !== false ) {
 			$this->tokenStore->delete( $key );
 		}
@@ -133,46 +116,9 @@ class CentralAuthTokenManager {
 	}
 
 	/**
-	 * Wait for and return the value of a key which is expected to exist from a store
+	 * @return string Database name, for session key creation
 	 *
-	 * @param string $key A key that will only have one value while it exists
-	 * @param int $timeout
-	 * @return mixed Key value; false if not found or on error
-	 */
-	private function getKeyValueUponExistence( $key, $timeout = 3 ) {
-		$value = false;
-
-		$result = ( new WaitConditionLoop(
-			function () use ( $key, &$value ) {
-				$store = $this->tokenStore;
-				$watchPoint = $store->watchErrors();
-				$value = $store->get( $key );
-				$error = $store->getLastError( $watchPoint );
-				if ( $value !== false ) {
-					return WaitConditionLoop::CONDITION_REACHED;
-				} elseif ( $error === $store::ERR_NONE ) {
-					return WaitConditionLoop::CONDITION_CONTINUE;
-				} else {
-					return WaitConditionLoop::CONDITION_ABORTED;
-				}
-			},
-			$timeout
-		) )->invoke();
-
-		if ( $result === WaitConditionLoop::CONDITION_REACHED ) {
-			$this->logger->debug( "Expected key {key} found.", [ 'key' => $key ] );
-		} elseif ( $result === WaitConditionLoop::CONDITION_TIMED_OUT ) {
-			$this->logger->info( "Expected key {key} not found due to timeout.", [ 'key' => $key ] );
-		} else {
-			$this->logger->error( "Expected key {key} not found due to I/O error.", [ 'key' => $key ] );
-		}
-
-		return $value;
-	}
-
-	/**
-	 * @return string db name, for session key creation
-	 * Note that if there is more than one CentralAuth database
+	 * NOTE: If there is more than one CentralAuth database
 	 * in use for the same session key store, the database names
 	 * MUST be unique.
 	 */
