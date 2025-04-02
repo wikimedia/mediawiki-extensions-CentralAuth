@@ -50,6 +50,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->databaseManager = $databaseManager;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

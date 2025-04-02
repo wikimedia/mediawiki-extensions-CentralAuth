@@ -160,10 +160,12 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 		return new SessionInfo( SessionInfo::MAX_PRIORITY, $info );
 	}
 
+	/** @inheritDoc */
 	public function persistsSessionId() {
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function canChangeUser() {
 		return false;
 	}

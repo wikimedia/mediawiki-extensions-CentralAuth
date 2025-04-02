@@ -216,6 +216,7 @@ class ApiGlobalUserRights extends ApiBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'userrights';
 	}

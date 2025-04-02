@@ -14,6 +14,7 @@ use MediaWiki\SpecialPage\SpecialPage;
  */
 class GlobalUserMergeLogFormatter extends LogFormatter {
 
+	/** @inheritDoc */
 	protected function extractParameters() {
 		$lang = $this->context->getLanguage();
 		$params = parent::extractParameters();

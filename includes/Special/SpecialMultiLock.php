@@ -61,6 +61,7 @@ class SpecialMultiLock extends SpecialPage {
 		$this->uiService = $uiService;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

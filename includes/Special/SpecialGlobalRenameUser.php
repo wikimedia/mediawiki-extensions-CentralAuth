@@ -76,6 +76,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$this->globalRenameUserValidator = $globalRenameUserValidator;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

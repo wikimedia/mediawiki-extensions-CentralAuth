@@ -76,11 +76,11 @@ class RenameQueueTablePager extends TablePager {
 		parent::__construct( null, $linkRenderer );
 	}
 
-	protected function showOpenRequests() {
+	protected function showOpenRequests(): bool {
 		return $this->mPage === SpecialGlobalRenameQueue::PAGE_OPEN_QUEUE;
 	}
 
-	protected function showClosedRequests() {
+	protected function showClosedRequests(): bool {
 		return $this->mPage === SpecialGlobalRenameQueue::PAGE_CLOSED_QUEUE;
 	}
 

@@ -70,6 +70,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 		$this->validator = $services->get( 'CentralAuth.GlobalRenameUserValidator' );
 	}
 
+	/** @inheritDoc */
 	public function execute() {
 		$this->initServices();
 

@@ -18,6 +18,7 @@ class GroupRenameLogFormatter extends LogFormatter {
 		return 'logentry-gblrights-grouprename';
 	}
 
+	/** @inheritDoc */
 	protected function extractParameters() {
 		if ( $this->entry->isLegacy() ) {
 			$params = parent::extractParameters();

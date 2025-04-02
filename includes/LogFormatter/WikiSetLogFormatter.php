@@ -56,6 +56,7 @@ class WikiSetLogFormatter extends LogFormatter {
 		return $this->msg( 'rightsnone' )->text();
 	}
 
+	/** @inheritDoc */
 	protected function extractParameters() {
 		$params = parent::extractParameters();
 		$action = $this->entry->getSubtype();

@@ -48,6 +48,7 @@ class LocalPageMoveJob extends Job {
 		);
 	}
 
+	/** @inheritDoc */
 	public function run() {
 		$this->user = User::newFromName( $this->params['renamer'] );
 		$permissionManager = MediaWikiServices::getInstance()

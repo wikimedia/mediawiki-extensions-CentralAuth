@@ -933,7 +933,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		return $isCentralDomain;
 	}
 
-	private function assertIsLocalDomain() {
+	private function assertIsLocalDomain(): bool {
 		$isLocalDomain = !$this->centralDomainUtils->isCentralDomain( $this->getRequest() );
 
 		if ( !$isLocalDomain ) {

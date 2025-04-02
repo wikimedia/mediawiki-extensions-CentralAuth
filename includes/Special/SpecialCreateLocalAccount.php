@@ -44,6 +44,7 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 		return 'ooui';
 	}
 
+	/** @inheritDoc */
 	protected function preHtml() {
 		return $this->msg( 'centralauth-createlocal-pretext' )->parse();
 	}

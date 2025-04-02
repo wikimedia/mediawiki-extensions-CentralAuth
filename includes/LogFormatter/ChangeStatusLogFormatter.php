@@ -30,6 +30,7 @@ class ChangeStatusLogFormatter extends LogFormatter {
 		return 'logentry-globalauth-setstatus';
 	}
 
+	/** @inheritDoc */
 	protected function extractParameters() {
 		if ( $this->entry->isLegacy() ) {
 			return parent::extractParameters();

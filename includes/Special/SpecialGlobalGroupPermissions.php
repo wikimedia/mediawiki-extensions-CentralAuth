@@ -58,6 +58,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

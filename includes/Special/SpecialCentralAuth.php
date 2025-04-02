@@ -127,6 +127,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

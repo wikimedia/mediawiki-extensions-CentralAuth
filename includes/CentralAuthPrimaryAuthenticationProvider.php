@@ -403,6 +403,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		}
 	}
 
+	/** @inheritDoc */
 	public function accountCreationType() {
 		return self::TYPE_CREATE;
 	}

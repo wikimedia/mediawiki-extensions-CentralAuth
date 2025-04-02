@@ -173,10 +173,12 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function requiresWrite() {
 		return false;
 	}
 
+	/** @inheritDoc */
 	public function requiresUnblock() {
 		return false;
 	}

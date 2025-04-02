@@ -59,6 +59,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}

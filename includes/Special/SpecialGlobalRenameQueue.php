@@ -108,6 +108,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
