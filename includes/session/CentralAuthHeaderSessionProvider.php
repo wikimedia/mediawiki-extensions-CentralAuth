@@ -1,6 +1,5 @@
 <?php
 
-use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Request\WebRequest;
 
 /**
@@ -32,8 +31,7 @@ class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 			return null;
 		}
 
-		$timeout = $this->getConfig()->get( CAMainConfigNames::CentralAuthTokenSessionTimeout );
-		return $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token', [ 'timeout' => $timeout ] );
+		return $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token' );
 	}
 
 	/**
