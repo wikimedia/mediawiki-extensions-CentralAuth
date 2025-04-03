@@ -606,15 +606,18 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// won't be auto logged in to any of the non-en versions either.
 				$centralUser = CentralAuthUser::getInstanceByName( $memcData['userName'] );
 				if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
-					$msg = "Wrong user: expected {$memcData['gu_id']}, got {$centralUser->getId()}";
-					$this->logger->warning( __METHOD__ . ": $msg" );
+					$this->logger->warning( __METHOD__ . ": Wrong user: expected {gu_id}, got {cu_id}", [
+						'gu_id' => $memcData['gu_id'],
+						'cu_id' => $centralUser->getId(),
+					] );
 					$this->doFinalOutput( false, 'Lost session' );
 					return;
 				}
 				$loginResult = $centralUser->authenticateWithToken( $memcData['token'] );
 				if ( $loginResult != 'ok' ) {
-					$msg = "Bad token: $loginResult";
-					$this->logger->warning( __METHOD__ . ": $msg" );
+					$this->logger->warning( __METHOD__ . ": Bad token: {loginResult}", [
+						'loginResult' => $loginResult,
+					] );
 					$this->doFinalOutput( false, 'Lost session' );
 					return;
 				}
