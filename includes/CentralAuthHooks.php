@@ -40,7 +40,6 @@ use MediaWiki\Output\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\Hook\UserGetRightsHook;
 use MediaWiki\Preferences\Hook\GetPreferencesHook;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\ContentSecurityPolicy;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader as RL;
@@ -66,7 +65,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserArrayFromResult;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use MobileContext;
 use OOUI\ButtonWidget;
 use OOUI\HorizontalLayout;
 use OOUI\IconWidget;
@@ -376,14 +374,6 @@ class CentralAuthHooks implements
 			array_push( $autoLoginWikis, CentralDomainUtils::PASSIVE_CENTRAL_DOMAIN_ID );
 		}
 		return $autoLoginWikis;
-	}
-
-	/**
-	 * @return bool
-	 */
-	public static function isMobileDomain() {
-		return ExtensionRegistry::getInstance()->isLoaded( 'MobileFrontend' )
-			&& MobileContext::singleton()->usingMobileDomain();
 	}
 
 	/**
