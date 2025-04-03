@@ -6,6 +6,7 @@
 			"Zolgoyo"
 		]
 	},
+	"centralauth-admin-reason-other": "Başqa/qoşumça sebep:",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|kün}} evel",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat}} evel",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|daqqa}} evel",
@@ -14,8 +15,9 @@
 	"centralauth-prefs-count-unattached": "Adıñıznı taşığan tasdıqlanmağan qullanıcı esapları $1 {{PLURAL:$1|vikide}} qalıp tura.",
 	"centralauth-prefs-manage": "Global qullanıcı esabıñıznı idare etüv",
 	"centralauth-prefs-not-managed": "Birdem qullanıcı esabı qullanılmay",
-	"centralauth-prefs-status": "Global esap alı:",
+	"centralauth-prefs-status": "Global esap:",
 	"centralauth-prefs-unattached": "Tasdıqlanmağan",
+	"centralauth-prefs-view": "Global esabıñız malümatına baqıñ",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|saniye}} evel",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|yıl}} evel"
 }
