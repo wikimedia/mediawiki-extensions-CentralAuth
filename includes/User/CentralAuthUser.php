@@ -2661,7 +2661,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$this->logger->debug(
-			"Loading attached wiki list for global user {$this->mName} from DB"
+			"Loading attached wiki list for global user {user} from DB",
+			[ 'user' => $this->mName ]
 		);
 
 		$db = $this->getSafeReadDB();
@@ -3306,7 +3307,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 	public function invalidateCache() {
 		if ( !$this->mDelayInvalidation ) {
-			$this->logger->debug( "Updating cache for global user {$this->mName}" );
+			$this->logger->debug(
+				"Updating cache for global user {user}",
+				[ 'user' => $this->mName ]
+			);
 			// Purge the cache
 			$this->quickInvalidateCache();
 			// Reload the state
@@ -3321,7 +3325,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function quickInvalidateCache() {
 		$this->logger->debug(
-			"Quick cache invalidation for global user {$this->mName}"
+			"Quick cache invalidation for global user {user}",
+			[ 'user' => $this->mName ]
 		);
 
 		CentralAuthServices::getDatabaseManager()
