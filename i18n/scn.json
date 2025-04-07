@@ -126,6 +126,8 @@
 	"globalrenamerequest-legend": "Addumannata di rinòmina unificata",
 	"globalrenamerequest-username-label": "Nomu utenti attuali:",
 	"globalusers": "Lista dî cunti glubbali",
+	"logentry-gblrename-promote": "$1 {{GENDER:$2|rinuminau}} glubbalmenti $4 'n $5",
+	"logentry-gblrename-rename": "$1 {{GENDER:$2|rinuminau}} glubbalmenti  $4 'n $5",
 	"logentry-globalauth-delete": "$1 {{GENDER:$2|cancillau}} lu cuntu glubbali \"$3\"",
 	"mergeaccount": "Prucessu d'unificazzioni di l'utenzi - status"
 }
