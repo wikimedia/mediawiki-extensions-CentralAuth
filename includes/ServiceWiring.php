@@ -15,7 +15,6 @@ use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\User\Options\UserOptionsManager;
 
 // PHPUnit does not understand coverage for this file.
 // It is covered though, see CentralAuthServiceWiringTest.
@@ -206,11 +205,6 @@ return [
 	},
 
 	'CentralAuth.SharedDomainUtils' => static function ( MediaWikiServices $services ): SharedDomainUtils {
-		// work around early access of UserOptionsManager perturbing service
-		// instantiation order and breaking Wikibase (T386836)
-		$userOptionsManagerCallback = static function () use ( $services ): UserOptionsManager {
-			return $services->getUserOptionsManager();
-		};
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
