@@ -135,7 +135,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			return [];
 		}
 
-		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
+		$db = $this->getCentralDB( $flags );
 		$qb = $db->newSelectQueryBuilder()
 			->select( [ 'gu_name', 'gu_id', 'gu_hidden_level' ] )
 			->from( 'globaluser' )
@@ -225,7 +225,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			return $nameToId;
 		}
 
-		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
+		$db = $this->getCentralDB( $flags );
 		$res = $db->newSelectQueryBuilder()
 			->queryInfo( CentralAuthUser::selectQueryInfo() )
 			->where( [ 'gu_name' => $namesToLoad ] )
