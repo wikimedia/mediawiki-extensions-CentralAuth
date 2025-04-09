@@ -23,17 +23,19 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use LogicException;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
-use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\PostLoginRedirectHook;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
 use MediaWiki\User\User;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Hook handler for hooks related to SUL3 login.
@@ -49,14 +51,34 @@ class RedirectingLoginHookHandler implements
 	public const SUPPRESS_HOOK_SESSION_FLAG = 'CentralAuth-suppressAuthManagerLoginAuthenticateAudit';
 
 	private CentralAuthTokenManager $tokenManager;
+	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
 	public function __construct(
 		CentralAuthTokenManager $tokenManager,
+		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->tokenManager = $tokenManager;
+		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
+	}
+
+	/**
+	 * When the local leg of the authentication flow fails due to an expired
+	 * or invalid token, rather than throw an exception, retry the local step
+	 * by redirecting to the origin wiki's Special:UserLogin page.
+	 *
+	 * @param IContextSource $context
+	 * @return void
+	 */
+	private function redoLocalAuthentication( IContextSource $context ): void {
+		$wikiId = WikiMap::getCurrentWikiId();
+		$originWikiUrl = $this->centralDomainUtils->getUrl(
+			$wikiId, 'Special:Userlogin', $context->getRequest()
+		);
+
+		$context->getOutput()->redirect( $originWikiUrl );
 	}
 
 	/**
@@ -102,7 +124,12 @@ class RedirectingLoginHookHandler implements
 					'accountType' => $context->getUser()->isNamed() ? 'named' : 'temp',
 					'status' => 'badtoken'
 				] );
-			throw new ErrorPageError( 'centralauth-error-badtoken', 'centralauth-error-badtoken' );
+
+			// This means centralauthLoginToken expired or is invalid, so do a retry.
+			// The central session already succeeded and we just need to gain a local session.
+			$this->redoLocalAuthentication( $context );
+			$type = 'success';
+			return true;
 		}
 		$returnUrl = $inputData['returnUrl'];
 
