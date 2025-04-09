@@ -81,7 +81,6 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	public function provideGetUrlData() {
 		$centralDomain = CentralDomainUtils::CENTRAL_DOMAIN_ID;
 		$autologinDomain = CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID;
-		$passiveDomain = CentralDomainUtils::PASSIVE_CENTRAL_DOMAIN_ID;
 		$sul2Domain = CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID;
 		$sul3Domain = CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID;
 		return [
@@ -92,8 +91,6 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				'https://login.example.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 			[ false, $autologinDomain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
-			[ false, $passiveDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
-				'https://auth.example.org/foowiki/wiki/Spezial:UserLogin?useformat=desktop&foo=bar' ],
 			[ false, $sul2Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ false, $sul3Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
@@ -104,8 +101,6 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				'https://auth.example.org/foowiki/wiki/Spezial:UserLogin?useformat=desktop&foo=bar' ],
 			[ true, $autologinDomain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
 				'https://auth.example.org/loginwiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
-			[ true, $passiveDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
-				'https://login.example.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 			[ true, $sul2Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ true, $sul3Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
