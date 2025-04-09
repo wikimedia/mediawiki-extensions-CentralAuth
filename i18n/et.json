@@ -236,7 +236,7 @@
 	"centralauth-list-attached-title": "Ühendatud kontod",
 	"centralauth-list-home-dryrun": "Ühendkonto hakkab kasutama selles vikis kasutusel olevat parooli ja e-posti aadressi.",
 	"centralauth-list-home-title": "Koduviki",
-	"centralauth-list-unattached": "{{PLURAL:$2|Järgmises võrgukohas|Järgmistes võrgukohtades}} ei saa {{PLURAL:$2|konto|kontode}} nimega $1 sinule kuulumist automaatselt kindlaks teha;\ntõenäoliselt on {{PLURAL:$2|sellel|neil}} sinu peamisest kontost erinev parool:",
+	"centralauth-list-unattached": "{{PLURAL:$2|Järgmises võrgukohas|Järgmistes võrgukohtades}} ei saa {{PLURAL:$2|konto|kontode}} nimega $1 sinule kuulumist automaatselt kindlaks teha;\ntõenäoliselt on {{PLURAL:$2|sellel|neil}} sinu peamise konto paroolist erinev parool:",
 	"centralauth-list-unattached-title": "Ühendamata kontod",
 	"centralauth-listusers-attached": "[[User:$1|siinne konto olemas]]",
 	"centralauth-listusers-locked": "lukustatud",

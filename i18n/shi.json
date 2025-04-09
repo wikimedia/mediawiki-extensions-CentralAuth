@@ -4,13 +4,14 @@
 			"Amara-Amaziɣ",
 			"Ayour2002",
 			"Lhoussine AIT TAYFST",
-			"Zanatos"
+			"Zanatos",
+			"AguzulH"
 		]
 	},
 	"centralauth-admin-blocklog": "Sbdd aɣmis",
 	"centralauth-admin-no": "Uhu",
 	"centralauth-admin-yes": "Yah",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|tdrawt|tdrawin}} ɣ $2",
-	"centralauth-foreign-link": "Asmras $1 f $2",
+	"centralauth-foreign-link": "Ansmras $1 ɣ $2",
 	"centralauth-merge-method-login": "Ittsnulfa f wassaɣ n usmras"
 }

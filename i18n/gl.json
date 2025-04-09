@@ -98,7 +98,7 @@
 	"centralauth-admin-reason": "Motivo:",
 	"centralauth-admin-reason-other": "Outro motivo:",
 	"centralauth-admin-reason-other-select": "Outro motivo:",
-	"centralauth-admin-rename-in-progress": "Esta conta está a ser renomeada. Vostede pode [[Special:GlobalRenameProgress/$1|ver aquí o progreso]] desta acción. O rexisto de renomeado global deste usuario móstrase abaixo.",
+	"centralauth-admin-rename-in-progress": "Esta conta está a ser renomeada. Vostede pode [[Special:GlobalRenameProgress/$1|ver aquí o progreso]] desta acción. O rexistro de renomeado global deste usuario móstrase abaixo.",
 	"centralauth-admin-setstatus-success": "Cambiou o estado desta conta global.",
 	"centralauth-admin-status": "Establecer o estado da conta global",
 	"centralauth-admin-status-hidden": "Agochado:",
