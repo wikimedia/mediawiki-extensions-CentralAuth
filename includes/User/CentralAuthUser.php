@@ -2863,6 +2863,19 @@ class CentralAuthUser implements IDBAccessObject {
 		$mwServices = MediaWikiServices::getInstance();
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
+		$knownDBs = $mwServices->getMainConfig()->get( 'LocalDatabases' );
+		// (T391511) Don't explode if the wiki isn't found, but treat it as "user not found" and warn for clean-up
+		if ( !WikiMap::isCurrentWikiDbDomain( $wikiID ) && !in_array( $wikiID, $knownDBs ) ) {
+			$this->logger->warning(
+				"Requested to load user data for unknown wiki {wikiId}. Was it deleted without data migration?",
+				[
+					'exception' => new RuntimeException(),
+					'wikiId' => $wikiID
+				]
+			);
+			throw new LocalUserNotFoundException( 'Could not find {wikiId}', [ 'wikiId' => $wikiID ] );
+		}
+
 		$db = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
 		$fields = [
 			'user_id',
