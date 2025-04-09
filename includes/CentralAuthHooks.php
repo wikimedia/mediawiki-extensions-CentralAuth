@@ -555,6 +555,7 @@ class CentralAuthHooks implements
 	public static function getCentralautologinJsData() {
 		$data = [];
 		$centralDomainUtils = self::getCentralDomainUtils();
+		$sharedDomainUtils = self::getSharedDomainUtils();
 
 		$wikiId = WikiMap::getCurrentWikiId();
 		if ( !$centralDomainUtils->isActiveOrPassiveCentralDomain() ) {
@@ -564,9 +565,11 @@ class CentralAuthHooks implements
 				$params = [
 					'type' => 'script',
 					// Can't depend on the user in a ResourceLoader callback.
-					'usesul3' => 0,
+					'usesul3' => $sharedDomainUtils->getSharedDomainPrefix() ? 1 : 0,
+					// Bypass edge cache
+					'urlversion' => 2,
 				];
-				$startUrl = self::getSharedDomainUtils()->makeUrlDeviceCompliant( $startUrl );
+				$startUrl = $sharedDomainUtils->makeUrlDeviceCompliant( $startUrl );
 				$data['startURL'] = wfAppendQuery( $startUrl, $params );
 			}
 		}

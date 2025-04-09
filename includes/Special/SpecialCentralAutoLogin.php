@@ -218,6 +218,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// SUL3 opt-in flag to make sure a sequence of central autologin steps all use the
 			// same mechanism on a wiki farm that is in the middle of SUL3 rollout
 			'usesul3',
+			// Edge cache busting parameter
+			'urlversion',
 		);
 		// Other parameters that that are not always preserved:
 		// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
