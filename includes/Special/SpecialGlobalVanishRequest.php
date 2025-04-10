@@ -172,6 +172,8 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 	/** @inheritDoc */
 	public function execute( $subPage ): void {
+		$this->addHelpLink( 'Help:Extension:CentralAuth/Global Vanishing' );
+
 		$out = $this->getOutput();
 
 		if ( $subPage === 'vanished' ) {
