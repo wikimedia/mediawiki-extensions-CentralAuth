@@ -166,7 +166,7 @@ class CentralDomainUtils {
 	 * Check if we are either on the SUL2 or the SUL3 central domain, ignoring which is the
 	 * "correct" one for the user's SUL3 opt-in flag.
 	 */
-	public function isActiveOrPassiveCentralDomain( WebRequest $request ): bool {
+	public function isActiveOrPassiveCentralDomain(): bool {
 		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
 			?? $this->fallbackLoginWikiId;
 		return WikiMap::getCurrentWikiId() === $loginWiki || $this->sharedDomainUtils->isSharedDomain();

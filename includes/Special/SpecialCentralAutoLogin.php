@@ -653,7 +653,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				// First, do an edge login on the next pageview (unless we are already doing one,
 				// or we are on a central domain).
-				if ( !$this->centralDomainUtils->isActiveOrPassiveCentralDomain( $request ) && !$isEdgeLogin ) {
+				if ( !$this->centralDomainUtils->isActiveOrPassiveCentralDomain() && !$isEdgeLogin ) {
 					$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
 					$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 				}
