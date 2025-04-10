@@ -31,6 +31,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\ResourceLoader\Module;
+use MediaWiki\WikiMap\WikiMap;
 use Skin;
 
 class PageDisplayHookHandler implements BeforePageDisplayHook {
@@ -90,7 +91,7 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $out->getRequest() ) ? 1 : 0,
 				];
 				$out->addHTML( '<noscript>' . CentralAuthHooks::getAuthIconHtml(
-					CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID,
+					WikiMap::getCurrentWikiId(),
 					'Special:CentralAutoLogin/start',
 					$params,
 					null
