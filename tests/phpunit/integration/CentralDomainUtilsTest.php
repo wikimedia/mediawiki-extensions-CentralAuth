@@ -66,7 +66,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->markTestSkippedIfExtensionNotLoaded( 'MobileFrontend' );
 		$this->overrideConfigValues( [
 			MainConfigNames::LanguageCode => 'de',
-			CAMainConfigNames::CentralAuthEnableSul3 => $isSul3Enabled ? [ 'always' ] : [],
+			CAMainConfigNames::CentralAuthEnableSul3 => $isSul3Enabled,
 		] );
 
 		// Test that test actually tests not localizing URLs.
@@ -112,7 +112,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetUrl_mobile() {
 		$this->markTestSkippedIfExtensionNotLoaded( 'MobileFrontend' );
-		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'always' ] );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, true );
 		$this->setRequest( new FauxRequest( [ 'useformat' => 'mobile' ] ) );
 		MobileContext::resetInstanceForTesting();
 
@@ -127,7 +127,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		// SUL2 setup for central domain.
 		$this->overrideConfigValues( [
 			MainConfigNames::DBname => 'loginwiki',
-			CAMainConfigNames::CentralAuthEnableSul3 => [ 'query-flag' ],
+			CAMainConfigNames::CentralAuthSharedDomainCallback => false,
 		] );
 		$centralDomainUtils = $this->getCentralDomainUtils();
 

@@ -89,26 +89,15 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 		return [
 			'config disabled, no params' =>
-				[ [], $noParams, false ],
-			'config disabled, param present' =>
-				[ [], $paramSetToOne, false ],
-
-			// config flag set to always, should always enable SUL3 mode.
-			'config always, no params' =>
-				[ [ 'always' ], $noParams, true ],
-			'config always and no query-flag, param set to zero' =>
-				[ [ 'always' ], $paramSetToZero, true ],
-
-			// Enable SUL3 if config flag set to query-param, and query param is set to 1
-			'queryFlag, no params' =>
-				[ [ 'query-flag' ], $noParams, false ],
-			'queryFlag, param set' =>
-				[ [ 'query-flag' ], $paramSetToOne, true ],
-
-			'queryFlag, param set to 0' =>
-				[ [ 'query-flag' ], $paramSetToZero, false ],
-			'config always and query-flag, param set to zero' =>
-				[ [ 'always', 'query-flag' ], $paramSetToZero, false ],
+				[ false, $noParams, false ],
+			'config enabled, no params' =>
+				[ true, $noParams, true ],
+			'config disabled, param set' =>
+				[ false, $paramSetToOne, true ],
+			'config disabled, param set to zero' =>
+				[ false, $paramSetToZero, false ],
+			'config enabled, param set to zero' =>
+				[ true, $paramSetToZero, false ],
 		];
 	}
 
@@ -117,7 +106,10 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 * @return void
 	 */
 	public function testIsSul3Enabled( $configFlag, $requestParams, $expected ) {
-		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, $configFlag );
+		$this->overrideConfigValues( [
+			CAMainConfigNames::CentralAuthSharedDomainCallback => static fn () => 'https://auth.wikimedia.org/foowiki',
+			CAMainConfigNames::CentralAuthEnableSul3 => $configFlag,
+		] );
 
 		$fauxRequest = new FauxRequest( $requestParams );
 		$this->setRequest( $fauxRequest );
@@ -142,10 +134,13 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 * @dataProvider provideIsSul3Enabled_Api
 	 * @return void
 	 */
-	public function testIsSul3Enabled_Api( $isSharedDomain, $isAPiRequest, $expected ) {
-		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'query-flag' ] );
+	public function testIsSul3Enabled_Api( $isSharedDomain, $isApiRequest, $expected ) {
+		$this->overrideConfigValues( [
+			CAMainConfigNames::CentralAuthSharedDomainCallback => static fn () => 'https://auth.wikimedia.org/foowiki',
+			CAMainConfigNames::CentralAuthEnableSul3 => true,
+		] );
 
-		$fauxRequest = new FauxRequest( [ 'usesul3' => '1' ] );
+		$fauxRequest = new FauxRequest();
 		/** @var SharedDomainUtils $sut */
 		$sut = $this->getMockBuilder( SharedDomainUtils::class )
 			->setConstructorArgs( [
@@ -153,7 +148,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				$this->getServiceContainer()->getSpecialPageFactory(),
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
-				$isAPiRequest,
+				$isApiRequest,
 				$this->getServiceContainer()->getTempUserConfig(),
 			] )
 			->onlyMethods( [ 'isSharedDomain' ] )

@@ -21,9 +21,6 @@ use Wikimedia\Assert\Assert;
  */
 class SharedDomainUtils {
 
-	public const SUL3_ENABLED_QUERY_FLAG = 'query-flag';
-	public const SUL3_ENABLED_ALWAYS = 'always';
-
 	private Config $config;
 	private SpecialPageFactory $specialPageFactory;
 	private HookRunner $hookRunner;
@@ -115,11 +112,10 @@ class SharedDomainUtils {
 	 * In order to facilitate testing and rollout of SUL3 migration,
 	 * this method provides mechanisms for testing the SUL3 feature.
 	 *
-	 * SUL3 mode is enabled if any of the following conditions is true:
-	 * - $wgCentralAuthEnableSul3 contains 'always'
-	 * - $wgCentralAuthEnableSul3 contains 'query-flag' and the URL has
-	 *   a query parameter 'usesul3' with the value "1". The value "0"
-	 *   means switch off SUL3 mode.
+	 * SUL3 mode is available if $wgCentralAuthSharedDomainCallback is configured.
+	 * It's enabled or disabled by default using $wgCentralAuthEnableSul3,
+	 * which can be overridden by the user by setting the 'usesul3'
+	 * URL query parameter to "1" or "0" (or other fuzzy bool values).
 	 *
 	 * @param WebRequest $request
 	 * @return bool
@@ -145,24 +141,16 @@ class SharedDomainUtils {
 			}
 		}
 
-		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_QUERY_FLAG )
-			&& $request->getCheck( 'usesul3' )
-		) {
-			return $request->getFuzzyBool( 'usesul3' );
-		} elseif ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
-			return true;
+		if ( !$this->config->get( CAMainConfigNames::CentralAuthSharedDomainCallback ) ) {
+			// SUL3 not configured, can't be enabled
+			return false;
 		}
 
-		return false;
-	}
+		if ( $request->getCheck( 'usesul3' ) ) {
+			return $request->getFuzzyBool( 'usesul3' );
+		}
 
-	/**
-	 * Check if $wgCentralAuthEnableSul3 has the given SUL3-enabled flag
-	 * ('query-flag' etc.) on the local wiki.
-	 */
-	public function hasSul3EnabledFlag( string $flag ): bool {
-		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
-		return in_array( $flag, $sul3Config, true );
+		return (bool)$this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
 	}
 
 	/**
