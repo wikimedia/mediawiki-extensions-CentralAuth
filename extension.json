@@ -939,7 +939,7 @@
 			"value": "Wikipedia:Appealing a block"
 		},
 		"CentralAuthEnableSul3": {
-			"description": "Enables SUL3 mode (T348388 and T375787). Experimental, do not use. Defaults to empty array but allowed values within the array are: 'always' (always SUL3 mode), 'query-flag' (enabled when the URL has a 'usesul3=1' query parameter), 'cookie' (enabled when there is a 'sul3OptIn=1' cookie), 'global-pref' (enabled when there is a 'centralauth-use-sul3=1' global preference). The query flag and cookie are used internally to preserve the value of the SUL3 flag during redirect chains, so unless SUL3 is always or never enabled, 'query-flag' and 'cookie' should probably be included.",
+			"description": "Enables SUL3 mode (T348388 and T375787). Experimental, do not use. Defaults to empty array but allowed values within the array are: 'always' (always SUL3 mode), 'query-flag' (enabled when the URL has a 'usesul3=1' query parameter), 'cookie' (enabled when there is a 'sul3OptIn=1' cookie). The query flag and cookie are used internally to preserve the value of the SUL3 flag during redirect chains, so unless SUL3 is always or never enabled, 'query-flag' and 'cookie' should probably be included.",
 			"value": []
 		},
 		"Sul3RolloutUserPercentage": {

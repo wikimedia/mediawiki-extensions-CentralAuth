@@ -538,11 +538,6 @@ class CentralAuthPrimaryAuthenticationProvider
 			},
 			__METHOD__
 		);
-		// if we're doing an SUL3 account creation, now that we have a user name,
-		// set global pref for the user to participate in the rollout
-		if ( $this->sharedDomainUtils->isSharedDomain() ) {
-			$this->sharedDomainUtils->setSUL3RolloutGlobalPref( $user, true );
-		}
 		return null;
 	}
 

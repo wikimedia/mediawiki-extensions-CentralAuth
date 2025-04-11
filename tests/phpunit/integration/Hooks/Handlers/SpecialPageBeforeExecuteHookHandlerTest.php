@@ -152,7 +152,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 			->setConstructorArgs( [
 				$services->getMainConfig(),
 				$services->getSpecialPageFactory(),
-				$services->getUserOptionsManager(),
 				new HookRunner( $services->getHookContainer() ),
 				null,
 				false,

@@ -170,11 +170,6 @@ class CentralAuthHooks implements
 	 * @return bool
 	 */
 	public function onGetPreferences( $user, &$preferences ) {
-		// for SUL3 rollout, a hidden preference unrelated to everything else
-		$preferences[SharedDomainUtils::SUL3_OPTIN_GLOBAL_PREF_NAME] = [
-			'type' => 'api'
-		];
-
 		// Possible states:
 		// - account not merged at all
 		// - global accounts exists, but this local account is unattached

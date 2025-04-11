@@ -9,7 +9,6 @@ use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\User\UserOptionsManager;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use TestUser;
@@ -30,7 +29,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 					CAMainConfigNames::CentralAuthSharedDomainCallback => $sharedDomainCallback
 				] ),
 				$services->getSpecialPageFactory(),
-				$services->getUserOptionsManager(),
 				new HookRunner( $services->getHookContainer() ),
 				null,
 				false,
@@ -59,7 +57,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
-			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
@@ -78,7 +75,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
-			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,
@@ -185,7 +181,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getSpecialPageFactory(),
-				$this->getServiceContainer()->getUserOptionsManager(),
 				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
 				$isAPiRequest,
@@ -195,80 +190,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->getMock();
 		$sut->expects( $this->any() )->method( 'isSharedDomain' )->willReturn( $isSharedDomain );
 		$actual = $sut->isSul3Enabled( $fauxRequest, $isUnset );
-		if ( $isUnset ) {
-			$this->assertNull( $expected );
-		} else {
-			$this->assertSame( $expected, $actual );
-		}
-	}
-
-	public static function provideIsSul3EnabledWithGlobalPref() {
-		$noCookies = [];
-		$userNameCookieSet = [ 'UserName' => 'CentralAuthRolloutTestUser1' ];
-		$noPrefs = [];
-		$user1PrefTrue = [ 'CentralAuthRolloutTestUser1' => [ 'centralauth-use-sul3' => '1' ] ];
-		$user1PrefFalse = [ 'CentralAuthRolloutTestUser1' => [ 'centralauth-use-sul3' => '0' ] ];
-		$user2PrefTrue = [ 'CentralAuthRolloutTestUser2' => [ 'centralauth-use-sul3' => '1' ] ];
-		$user2PrefFalse = [ 'CentralAuthRolloutTestUser2' => [ 'centralauth-use-sul3' => '0' ] ];
-		$anonUser = '192.168.1.25';
-		$namedUser = 'CentralAuthRolloutTestUser2';
-
-		return [
-			'IP user, no UserName cookie,' => [ $noCookies, $anonUser, $noPrefs, null ],
-			'IP user, UserName cookie, no pref set' => [ $userNameCookieSet, $anonUser, $noPrefs, null ],
-			'IP user, UserName cookie, pref true' => [ $userNameCookieSet, $anonUser, $user1PrefTrue, true ],
-			'IP user, UserName cookie, pref false' => [ $userNameCookieSet, $anonUser, $user1PrefFalse, false ],
-
-			'named user, pref not set' => [ $noCookies, $namedUser, $noPrefs, null ],
-			'named user, pref true' => [ $noCookies, $namedUser, $user2PrefTrue, true ],
-			'named user, pref false' => [ $noCookies, $namedUser, $user2PrefFalse, false ],
-		];
-	}
-
-	/**
-	 * @dataProvider provideIsSul3EnabledWithGlobalPref
-	 * @return void
-	 */
-	public function testIsSul3EnabledWithGlobalPref( $cookies, $userOrIP, $prefValues, $expected ) {
-		// note: this test will use a different code path when GlobalPreferences is enabled
-
-		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'global-pref' ] );
-
-		if ( IPUtils::isIPAddress( $userOrIP ) ) {
-			$user = $this->getServiceContainer()->getUserFactory()->newAnonymous( $userOrIP );
-		} else {
-			$user = ( new TestUser( $userOrIP ) )->getUser();
-		}
-		RequestContext::getMain()->setUser( $user );
-		$fauxRequest = new FauxRequest();
-
-		if ( $cookies ) {
-			$fauxRequest->setCookies( $cookies );
-		}
-		$this->setRequest( $fauxRequest );
-
-		if ( $prefValues ) {
-			$userOptionsManager = $this->getServiceContainer()->getUserOptionsManager();
-			foreach ( $prefValues as $username => $values ) {
-				$prefUser = $this->getServiceContainer()->getUserFactory()->newFromName( $username );
-				foreach ( $values as $name => $value ) {
-					$userOptionsManager->setOption( $prefUser, $name, $value, UserOptionsManager::GLOBAL_CREATE );
-				}
-				$userOptionsManager->saveOptions( $prefUser );
-			}
-		}
-
-		$services = $this->getServiceContainer();
-		$sharedDomainUtils = new SharedDomainUtils(
-			$services->getMainConfig(),
-			$services->getSpecialPageFactory(),
-			$services->getUserOptionsManager(),
-			new HookRunner( $services->getHookContainer() ),
-			null,
-			false,
-			$services->getTempUserConfig()
-		);
-		$actual = $sharedDomainUtils->isSul3Enabled( $fauxRequest, $isUnset );
 		if ( $isUnset ) {
 			$this->assertNull( $expected );
 		} else {
@@ -315,7 +236,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
-			$services->getUserOptionsManager(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
 			false,

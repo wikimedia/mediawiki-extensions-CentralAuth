@@ -13,7 +13,6 @@ use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
-use MediaWiki\User\UserOptionsManager;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
@@ -27,17 +26,14 @@ use Wikimedia\IPUtils;
  */
 class SharedDomainUtils {
 
-	public const SUL3_OPTIN_GLOBAL_PREF_NAME = 'centralauth-use-sul3';
 	private const SUL3_OPTIN_COOKIE_NAME = 'sul3OptIn';
 
 	public const SUL3_ENABLED_QUERY_FLAG = 'query-flag';
-	public const SUL3_ENABLED_GLOBAL_PREF = 'global-pref';
 	public const SUL3_ENABLED_COOKIE = 'cookie';
 	public const SUL3_ENABLED_ALWAYS = 'always';
 
 	private Config $config;
 	private SpecialPageFactory $specialPageFactory;
-	private UserOptionsManager $userOptionsManager;
 	private HookRunner $hookRunner;
 	private ?bool $isSharedDomain = null;
 	private ?MobileContext $mobileContext;
@@ -47,7 +43,6 @@ class SharedDomainUtils {
 	public function __construct(
 		Config $config,
 		SpecialPageFactory $specialPageFactory,
-		UserOptionsManager $userOptionsManager,
 		HookRunner $hookRunner,
 		?MobileContext $mobileContext,
 		bool $isApiRequest,
@@ -55,7 +50,6 @@ class SharedDomainUtils {
 	) {
 		$this->config = $config;
 		$this->specialPageFactory = $specialPageFactory;
-		$this->userOptionsManager = $userOptionsManager;
 		$this->hookRunner = $hookRunner;
 		$this->mobileContext = $mobileContext;
 		$this->isApiRequest = $isApiRequest;
@@ -138,11 +132,6 @@ class SharedDomainUtils {
 	 * - $wgCentralAuthEnableSul3 contains 'query-flag' and the URL has
 	 *   a query parameter 'usesul3' with the value "1". The value "0"
 	 *   means switch off SUL3 mode.
-	 * - a global preference has been set for the user based on rollout
-	 *   configuration settings.
-	 * - $wgCentralAuthEnableSul3 contained 'always' for another wiki
-	 *   and global preferences were set for the user on that basis,
-	 *   keeping the login process consistent for each user... more or less.
 	 *
 	 * @param WebRequest $request
 	 * @param bool|null &$isUnset Set to true if the SUL3 status is unset
@@ -197,15 +186,6 @@ class SharedDomainUtils {
 			return false;
 		}
 
-		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_GLOBAL_PREF ) ) {
-			// get prefs the expected way for named users, but if the user is an IP
-			// with a UserName cookie, we will get the prefs for the user from the cookie
-			$flag = $this->getUserSUL3RolloutFlag( $user, $request );
-			if ( $flag !== null ) {
-				return $flag;
-			}
-		}
-
 		$isUnset = true;
 		return false;
 	}
@@ -226,20 +206,6 @@ class SharedDomainUtils {
 			return $noUser;
 		}
 		return User::newFromName( $sessionUserName ) ?: $noUser;
-	}
-
-	/**
-	 * Try to retrieve global preferences for the user, using
-	 * the session cookie UserName if the user is an IP, or the
-	 * username otherwise.
-	 * @return ?bool The SUL3 rollout flag value if it exists, or null otherwise.
-	 */
-	private function getUserSUL3RolloutFlag( UserIdentity $user, WebRequest $request ): ?bool {
-		// check the session's UserName cookie for IP users
-		$prefsUser = self::getLastUser( $user, $request ) ?: $user;
-
-		$flag = $this->userOptionsManager->getOption( $prefsUser, self::SUL3_OPTIN_GLOBAL_PREF_NAME );
-		return $flag === null ? null : (bool)$flag;
 	}
 
 	/**
@@ -339,16 +305,6 @@ class SharedDomainUtils {
 			}
 		}
 		return false;
-	}
-
-	/**
-	 * Set the SUL3 rollout preference for the specified user;
-	 * caller should ensure that the user is not an IP address.
-	 */
-	public function setSUL3RolloutGlobalPref( UserIdentity $user, bool $value ): void {
-		$this->userOptionsManager->setOption( $user, self::SUL3_OPTIN_GLOBAL_PREF_NAME, $value ? '1' : '0',
-			UserOptionsManager::GLOBAL_CREATE );
-		$this->userOptionsManager->saveOptions( $user );
 	}
 
 	/**
