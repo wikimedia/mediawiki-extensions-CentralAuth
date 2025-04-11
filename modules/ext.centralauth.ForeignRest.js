@@ -80,6 +80,13 @@
 				newAjaxOptions.headers = Object.assign( {}, newAjaxOptions.headers, {
 					Authorization: 'CentralAuthToken ' + centralAuthToken
 				} );
+				// Do not send browser credentials (cookies). The 'Authorization' header serves as
+				// authentication, and sending cookies to the REST API causes MediaWiki errors by
+				// default, unless $wgRestAllowCrossOriginCookieAuth is enabled. (T391180)
+				newAjaxOptions.xhrFields = Object.assign( {}, newAjaxOptions.xhrFields, {
+					withCredentials: false
+				} );
+
 				return ( abortable = parent.call( self, path, newAjaxOptions ) );
 			},
 			() => {
