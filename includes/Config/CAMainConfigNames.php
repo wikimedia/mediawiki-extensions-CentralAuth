@@ -63,6 +63,5 @@ class CAMainConfigNames {
 	public const CentralAuthFallbackAppealTitle = 'CentralAuthFallbackAppealTitle';
 	public const CentralAuthEnableSul3 = 'CentralAuthEnableSul3';
 	public const Sul3RolloutUserPercentage = 'Sul3RolloutUserPercentage';
-	public const Sul3RolloutAnonSignupPercentage = 'Sul3RolloutAnonSignupPercentage';
 	public const CentralAuthSul3SharedDomainRestrictions = 'CentralAuthSul3SharedDomainRestrictions';
 }

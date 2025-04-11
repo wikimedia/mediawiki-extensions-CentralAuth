@@ -30,12 +30,10 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 		bool $isSharedDomain,
 		?bool $isSul3Enabled,
 		array $centralAuthEnableSul3,
-		int $sul3RolloutAnonSignupPercentage,
 		bool $expectRedirect
 	) {
 		$this->overrideConfigValues( [
 			CAMainConfigNames::CentralAuthEnableSul3 => $centralAuthEnableSul3,
-			CAMainConfigNames::Sul3RolloutAnonSignupPercentage => $sul3RolloutAnonSignupPercentage,
 		] );
 
 		$requestContext = RequestContext::getMain();
@@ -76,7 +74,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isSharedDomain' => false,
 				'isSul3Enabled' => true,
 				'centralAuthEnableSul3' => [],
-				'sul3RolloutAnonSignupPercentage' => 100,
 				'expectRedirect' => true
 			],
 			'...but not when on a shared domain' => [
@@ -85,7 +82,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isSharedDomain' => true,
 				'isSul3Enabled' => true,
 				'centralAuthEnableSul3' => [],
-				'sul3RolloutAnonSignupPercentage' => 100,
 				'expectRedirect' => false
 			],
 			'...or when SUL3 is disabled' => [
@@ -94,7 +90,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isSharedDomain' => false,
 				'isSul3Enabled' => false,
 				'centralAuthEnableSul3' => [],
-				'sul3RolloutAnonSignupPercentage' => 100,
 				'expectRedirect' => false
 			],
 			'...or from login' => [
@@ -103,43 +98,30 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isSharedDomain' => false,
 				'isSul3Enabled' => true,
 				'centralAuthEnableSul3' => [],
-				'sul3RolloutAnonSignupPercentage' => 100,
 				'expectRedirect' => false
 			],
-			'use percentage when SUL3 enabled flag is neutral (0%)' => [
+			[
 				'page' => 'CreateAccount',
 				'isLoggedIn' => false,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => null,
 				'centralAuthEnableSul3' => [ 'cookie' ],
-				'sul3RolloutAnonSignupPercentage' => 0,
 				'expectRedirect' => false
 			],
-			'use percentage when SUL3 enabled flag is neutral (100%)' => [
-				'page' => 'CreateAccount',
-				'isLoggedIn' => false,
-				'isSharedDomain' => false,
-				'isSul3Enabled' => null,
-				'centralAuthEnableSul3' => [ 'cookie' ],
-				'sul3RolloutAnonSignupPercentage' => 100,
-				'expectRedirect' => true
-			],
-			'dont use percentage when cookies are disabled' => [
+			[
 				'page' => 'CreateAccount',
 				'isLoggedIn' => false,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => null,
 				'centralAuthEnableSul3' => [],
-				'sul3RolloutAnonSignupPercentage' => 100,
 				'expectRedirect' => false
 			],
-			'dont use percentage when logged in' => [
+			[
 				'page' => 'CreateAccount',
 				'isLoggedIn' => true,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => null,
 				'centralAuthEnableSul3' => [],
-				'sul3RolloutAnonSignupPercentage' => 100,
 				'expectRedirect' => false
 			],
 		];

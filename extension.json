@@ -946,10 +946,6 @@
 			"description": "Switch SUL3 use on for named users whose hash meets the specified percentage cutoff, given as a string value of 0 to 100. If '0' is specified, no named users will be included, and if 100 is specified, all named users will be included.",
 			"value": "0"
 		},
-		"Sul3RolloutAnonSignupPercentage": {
-			"description": "Switch SUL3 use on for IP users signing up, whose hash meets the specified percentage cutoff, given as a string value of 0 to 100. If '0' is specified, no IP users will be included, and if 100 is specified, all IP users will be included.",
-			"value": "0"
-		},
 		"CentralAuthSul3SharedDomainRestrictions": {
 			"description": "Additional allowed/disallowed features when on the SUL3 central login domain. See SharedDomainHookHandler constants. Note: this configuration setting actually uses an array_merge_recursive style merge strategy, but the defaults are stored in SharedDomainHookHandler::DEFAULT_RESTRICTIONS.",
 			"value": {

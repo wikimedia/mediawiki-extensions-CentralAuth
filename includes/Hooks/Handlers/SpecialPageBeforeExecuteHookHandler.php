@@ -7,7 +7,6 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
-use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
@@ -279,11 +278,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			return false;
 		}
 		if ( $this->sharedDomainUtils->hasSul3EnabledFlag( SharedDomainUtils::SUL3_ENABLED_ALWAYS ) ) {
-			return true;
-		}
-		$sul3RolloutAnonUserConfig = $this->config->get( CAMainConfigNames::Sul3RolloutAnonSignupPercentage );
-		if ( $this->sharedDomainUtils->checkPercentage(
-			$user, $sul3RolloutAnonUserConfig, 'Sul3RolloutAnonSignupPercentage' ) ) {
 			return true;
 		}
 		return false;
