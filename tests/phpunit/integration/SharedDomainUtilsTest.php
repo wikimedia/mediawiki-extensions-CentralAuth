@@ -137,7 +137,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testIsSul3Enabled( $configFlag, $requestParams, $cookies, $expected ) {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, $configFlag );
-		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutUserPercentage, '0' );
 
 		$fauxRequest = new FauxRequest( $requestParams );
 		if ( $cookies ) {
@@ -171,7 +170,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 	 */
 	public function testIsSul3Enabled_Api( $isSharedDomain, $isAPiRequest, $expected ) {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, [ 'query-flag' ] );
-		$this->overrideConfigValue( CAMainConfigNames::Sul3RolloutUserPercentage, '0' );
 
 		$fauxRequest = new FauxRequest( [ 'usesul3' => '1' ] );
 		/** @var SharedDomainUtils $sut */

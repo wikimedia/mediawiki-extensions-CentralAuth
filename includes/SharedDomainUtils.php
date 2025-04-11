@@ -12,13 +12,10 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
-use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
-use UnexpectedValueException;
 use Wikimedia\Assert\Assert;
-use Wikimedia\IPUtils;
 
 /**
  * Utilities for handling the shared domain name used for SUL3 login.
@@ -191,24 +188,6 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * If the user is an IP, check for a UserName cookie (via session trickery)
-	 * and return the user corresponding to that, if any. Otherwise, return null.
-	 */
-	public static function getLastUser( UserIdentity $user, WebRequest $request ): ?UserIdentity {
-		$noUser = null;
-
-		if ( !IPUtils::isIPAddress( $user->getName() ) ) {
-			return $noUser;
-		}
-
-		$sessionUserName = $request->getSession()->suggestLoginUsername();
-		if ( !$sessionUserName ) {
-			return $noUser;
-		}
-		return User::newFromName( $sessionUserName ) ?: $noUser;
-	}
-
-	/**
 	 * return true if the short-term sul3 wanted cookie is set,
 	 * false otherwise
 	 *
@@ -230,37 +209,6 @@ class SharedDomainUtils {
 		$expiry = time() + 300;
 		$request->response()->setCookie(
 			self::SUL3_OPTIN_COOKIE_NAME, '1', $expiry, [ 'prefix' => '' ] );
-	}
-
-	/**
-	 * see if the user name (IP or otherwise) when hashed maps to
-	 * lower than the cutoff the percentage requested; return
-	 * true if so, false otherwise
-	 *
-	 * @param User $user
-	 * @param string $settingValue
-	 * @param string $settingName
-	 * @return bool
-	 * @throws UnexpectedValueException
-	 */
-	public function checkPercentage( $user, $settingValue, $settingName ) {
-		$percentage = intval( $settingValue );
-		if ( $percentage < 0 || $percentage > 100 ) {
-			throw new UnexpectedValueException(
-				$settingName . ' setting must be an integer from 0 to 100' );
-		}
-		if ( $percentage == 0 ) {
-			return false;
-		} elseif ( $percentage == 100 ) {
-			return true;
-		}
-
-		// cheap hash, we don't care about collisions
-		$userHash = hash( 'crc32', $user->getName(), false );
-		if ( hexdec( $userHash ) % 100 <= $percentage ) {
-			return true;
-		}
-		return false;
 	}
 
 	/**
@@ -288,13 +236,6 @@ class SharedDomainUtils {
 			return false;
 		}
 		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
-			return true;
-		}
-
-		$user = self::getLastUser( $user, $request ) ?: $user;
-		$sul3RolloutNamedUserConfig = $this->config->get( CAMainConfigNames::Sul3RolloutUserPercentage );
-		if ( $this->checkPercentage(
-			$user, $sul3RolloutNamedUserConfig, 'Sul3RolloutUserPercentage' ) ) {
 			return true;
 		}
 
