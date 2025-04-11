@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handle
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookRunner;
@@ -28,14 +27,9 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 		string $page,
 		bool $isLoggedIn,
 		bool $isSharedDomain,
-		?bool $isSul3Enabled,
-		array $centralAuthEnableSul3,
+		bool $isSul3Enabled,
 		bool $expectRedirect
 	) {
-		$this->overrideConfigValues( [
-			CAMainConfigNames::CentralAuthEnableSul3 => $centralAuthEnableSul3,
-		] );
-
 		$requestContext = RequestContext::getMain();
 		$requestContext->setUser( $isLoggedIn ? User::newFromName( 'Foo' ) : new User() );
 		$request = new FauxRequest();
@@ -73,7 +67,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isLoggedIn' => false,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => true,
-				'centralAuthEnableSul3' => [],
 				'expectRedirect' => true
 			],
 			'...but not when on a shared domain' => [
@@ -81,7 +74,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isLoggedIn' => false,
 				'isSharedDomain' => true,
 				'isSul3Enabled' => true,
-				'centralAuthEnableSul3' => [],
 				'expectRedirect' => false
 			],
 			'...or when SUL3 is disabled' => [
@@ -89,7 +81,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isLoggedIn' => false,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => false,
-				'centralAuthEnableSul3' => [],
 				'expectRedirect' => false
 			],
 			'...or from login' => [
@@ -97,31 +88,13 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isLoggedIn' => false,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => true,
-				'centralAuthEnableSul3' => [],
 				'expectRedirect' => false
 			],
-			[
-				'page' => 'CreateAccount',
-				'isLoggedIn' => false,
-				'isSharedDomain' => false,
-				'isSul3Enabled' => null,
-				'centralAuthEnableSul3' => [],
-				'expectRedirect' => false
-			],
-			[
-				'page' => 'CreateAccount',
-				'isLoggedIn' => false,
-				'isSharedDomain' => false,
-				'isSul3Enabled' => null,
-				'centralAuthEnableSul3' => [],
-				'expectRedirect' => false
-			],
-			[
+			'...or when logged in' => [
 				'page' => 'CreateAccount',
 				'isLoggedIn' => true,
 				'isSharedDomain' => false,
-				'isSul3Enabled' => null,
-				'centralAuthEnableSul3' => [],
+				'isSul3Enabled' => false,
 				'expectRedirect' => false
 			],
 		];
@@ -141,17 +114,7 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 			] )
 			->getMock();
 		$sharedDomainUtils->method( 'isSharedDomain' )->willReturn( $config['isSharedDomain'] );
-		$sharedDomainUtils->method( 'isSul3Enabled' )->willReturnCallback(
-			static function ( $request, &$isUnset = null ) use ( $config ) {
-				if ( $config['isSul3Enabled'] === null ) {
-					$isUnset = true;
-					return false;
-				} else {
-					$isUnset = false;
-					return $config['isSul3Enabled'];
-				}
-			}
-		);
+		$sharedDomainUtils->method( 'isSul3Enabled' )->willReturn( $config['isSul3Enabled'] );
 		return new SpecialPageBeforeExecuteHookHandler(
 			$services->getAuthManager(),
 			$services->getHookContainer(),

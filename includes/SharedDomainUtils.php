@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\Config;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\HookContainer\HookRunner;
@@ -11,7 +10,6 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPageFactory;
 use MediaWiki\User\TempUser\TempUserConfig;
-use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
@@ -115,9 +113,7 @@ class SharedDomainUtils {
 	 * Whether SUL3 mode is enabled on this wiki and/or this request.
 	 *
 	 * In order to facilitate testing and rollout of SUL3 migration,
-	 * this method provides mechanisms for testing the SUL3 feature
-	 * and for per-wiki or percentage-based rollout, including a
-	 * cookie-based feature flag.
+	 * this method provides mechanisms for testing the SUL3 feature.
 	 *
 	 * SUL3 mode is enabled if any of the following conditions is true:
 	 * - $wgCentralAuthEnableSul3 contains 'always'
@@ -126,15 +122,9 @@ class SharedDomainUtils {
 	 *   means switch off SUL3 mode.
 	 *
 	 * @param WebRequest $request
-	 * @param bool|null &$isUnset Set to true if the SUL3 status is unset
-	 *   (neither explicitly opted in nor opted out, so the user's cohort
-	 *   still needs to be determined). The return value will be false in
-	 *   that case.
 	 * @return bool
 	 */
-	public function isSul3Enabled( WebRequest $request, &$isUnset = null ): bool {
-		$isUnset = false;
-
+	public function isSul3Enabled( WebRequest $request ): bool {
 		// T379816: The `clientlogin` API should still work in SUL3 mode as if
 		//    we're in SUL2 mode regardless of whether SUL3 is enabled or not.
 		//    There are some edge-cases handled below like:
@@ -155,8 +145,6 @@ class SharedDomainUtils {
 			}
 		}
 
-		$user = RequestContext::getMain()->getUser();
-
 		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_QUERY_FLAG )
 			&& $request->getCheck( 'usesul3' )
 		) {
@@ -165,16 +153,6 @@ class SharedDomainUtils {
 			return true;
 		}
 
-		// don't do any looking at users and sessions and the like, if
-		// we're not supposed to (note that User::getName() will
-		// likely try to loadFromSession() which will explode otherwise)
-		if ( !$user->isSafeToLoad() ) {
-			// we don't really know whether the user has an unset status, let's go with yes
-			$isUnset = true;
-			return false;
-		}
-
-		$isUnset = true;
 		return false;
 	}
 
@@ -185,27 +163,6 @@ class SharedDomainUtils {
 	public function hasSul3EnabledFlag( string $flag ): bool {
 		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
 		return in_array( $flag, $sul3Config, true );
-	}
-
-	/**
-	 * check if we should set SUL3 rollout global pref:
-	 * is the user a named (not temp) user? does the user name
-	 * meet the conditions for participation in the rollout?
-	 * alternatively, is the local wiki set to always be sul3 enabled?
-	 * return true if so, false otherwise
-	 *
-	 * @param Webrequest $request
-	 * @param User $user
-	 * @return bool
-	 */
-	public function shouldSetSUL3RolloutGlobalPref( $request, $user ) {
-		if ( $this->tempUserConfig->isTempName( $user->getName() ) ) {
-			return false;
-		}
-		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
-			return true;
-		}
-		return false;
 	}
 
 	/**

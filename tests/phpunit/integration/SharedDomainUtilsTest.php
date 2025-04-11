@@ -89,9 +89,9 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 		return [
 			'config disabled, no params' =>
-				[ [], $noParams, null ],
+				[ [], $noParams, false ],
 			'config disabled, param present' =>
-				[ [], $paramSetToOne, null ],
+				[ [], $paramSetToOne, false ],
 
 			// config flag set to always, should always enable SUL3 mode.
 			'config always, no params' =>
@@ -101,7 +101,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 			// Enable SUL3 if config flag set to query-param, and query param is set to 1
 			'queryFlag, no params' =>
-				[ [ 'query-flag' ], $noParams, null ],
+				[ [ 'query-flag' ], $noParams, false ],
 			'queryFlag, param set' =>
 				[ [ 'query-flag' ], $paramSetToOne, true ],
 
@@ -124,12 +124,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 		/** @var SharedDomainUtils $sut */
 		$sut = $this->getServiceContainer()->get( 'CentralAuth.SharedDomainUtils' );
-		$actual = $sut->isSul3Enabled( $fauxRequest, $isUnset );
-		if ( $isUnset ) {
-			$this->assertNull( $expected );
-		} else {
-			$this->assertSame( $expected, $actual );
-		}
+		$actual = $sut->isSul3Enabled( $fauxRequest );
+		$this->assertSame( $expected, $actual );
 	}
 
 	public function provideIsSul3Enabled_Api() {
@@ -163,11 +159,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->onlyMethods( [ 'isSharedDomain' ] )
 			->getMock();
 		$sut->expects( $this->any() )->method( 'isSharedDomain' )->willReturn( $isSharedDomain );
-		$actual = $sut->isSul3Enabled( $fauxRequest, $isUnset );
-		if ( $isUnset ) {
-			$this->assertNull( $expected );
-		} else {
-			$this->assertSame( $expected, $actual );
-		}
+		$actual = $sut->isSul3Enabled( $fauxRequest );
+		$this->assertSame( $expected, $actual );
 	}
 }

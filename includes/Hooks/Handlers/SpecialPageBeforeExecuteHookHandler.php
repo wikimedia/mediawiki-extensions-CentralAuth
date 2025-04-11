@@ -3,14 +3,12 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -84,15 +82,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		if ( !$this->sharedDomainUtils->isSharedDomain()
 			&& ( $special->getName() === 'CreateAccount' || $special->getName() === 'Userlogin' )
 		) {
-			$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request, $isSul3StateUnset );
-			if ( $isSul3StateUnset ) {
-				// we will either:
-				// set an sul3 wanted cookie for IP users because IP matches a cutoff
-				// set an sul3 wanted cookie for IP users because sul3 is enabled for everyone on the wiki
-				// set SUL3 rollout global pref for user from UserName cookie
-				// and the next call to isSul3Enabled will indicate SUL3RolloutParticipating
-				$isSul3Enabled = $this->checkSUL3RolloutParticipation( $request, $special->getName() );
-			}
+			$isSul3Enabled = $this->sharedDomainUtils->isSul3Enabled( $request );
 		}
 
 		// In SUL3 mode, account creation is seen locally as a login, so redirect
@@ -216,29 +206,5 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			'username' => $special->getUser()->isRegistered() ? $special->getUser()->getName() : '',
 			'suggestedLoginUsername' => $request->getSession()->suggestLoginUsername(),
 		] );
-	}
-
-	/**
-	 * Given a user who isn't in either the SUL2 or SUL3 cohort yet, select a cohort for them.
-	 * @param WebRequest $request
-	 * @param string $specialPageName
-	 * @return bool True if the user is in the SUL3 cohort.
-	 */
-	private function checkSUL3RolloutParticipation( $request, $specialPageName ): bool {
-		$isSignup = ( $specialPageName === 'CreateAccount' );
-		$user = RequestContext::getMain()->getUser();
-		$setSul3Flag = false;
-		if ( $isSignup ) {
-			// Do nothing
-		} elseif ( $this->sharedDomainUtils->shouldSetSUL3RolloutGlobalPref( $request, $user ) ) {
-			$setSul3Flag = true;
-		}
-
-		if ( $setSul3Flag ) {
-			// Make sure future checks in the current request are consistent.
-			$request->setVal( 'usesul3', 1 );
-			return true;
-		}
-		return false;
 	}
 }
