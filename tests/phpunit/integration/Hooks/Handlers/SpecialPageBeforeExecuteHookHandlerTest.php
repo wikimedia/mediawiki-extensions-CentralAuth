@@ -105,7 +105,7 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 				'isLoggedIn' => false,
 				'isSharedDomain' => false,
 				'isSul3Enabled' => null,
-				'centralAuthEnableSul3' => [ 'cookie' ],
+				'centralAuthEnableSul3' => [],
 				'expectRedirect' => false
 			],
 			[
@@ -155,8 +155,6 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 		return new SpecialPageBeforeExecuteHookHandler(
 			$services->getAuthManager(),
 			$services->getHookContainer(),
-			$services->getMainConfig(),
-			$services->getUserNameUtils(),
 			CentralAuthServices::getTokenManager( $services ),
 			$services->get( 'CentralAuth.CentralDomainUtils' ),
 			$sharedDomainUtils

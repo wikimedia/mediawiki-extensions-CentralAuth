@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
@@ -15,8 +14,6 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
-use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
@@ -43,9 +40,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
 	private AuthManager $authManager;
-	private Config $config;
 	private HookRunner $hookRunner;
-	private UserNameUtils $userNameUtils;
 	private CentralAuthTokenManager $tokenManager;
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
@@ -53,8 +48,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	/**
 	 * @param AuthManager $authManager
 	 * @param HookContainer $hookContainer
-	 * @param Config $config
-	 * @param UserNameUtils $userNameUtils
 	 * @param CentralAuthTokenManager $tokenManager
 	 * @param CentralDomainUtils $centralDomainUtils
 	 * @param SharedDomainUtils $sharedDomainUtils
@@ -62,16 +55,12 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public function __construct(
 		AuthManager $authManager,
 		HookContainer $hookContainer,
-		Config $config,
-		UserNameUtils $userNameUtils,
 		CentralAuthTokenManager $tokenManager,
 		CentralDomainUtils $centralDomainUtils,
 		SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->authManager = $authManager;
 		$this->hookRunner = new HookRunner( $hookContainer );
-		$this->config = $config;
-		$this->userNameUtils = $userNameUtils;
 		$this->tokenManager = $tokenManager;
 		$this->centralDomainUtils = $centralDomainUtils;
 		$this->sharedDomainUtils = $sharedDomainUtils;
@@ -240,44 +229,14 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		$user = RequestContext::getMain()->getUser();
 		$setSul3Flag = false;
 		if ( $isSignup ) {
-			if ( $this->shouldSetSUL3RolloutCookie( $request, $user ) ) {
-				$setSul3Flag = true;
-			}
+			// Do nothing
 		} elseif ( $this->sharedDomainUtils->shouldSetSUL3RolloutGlobalPref( $request, $user ) ) {
 			$setSul3Flag = true;
 		}
 
 		if ( $setSul3Flag ) {
-			// Set a short-lived cookie just to make sure future checks are consistent.
-			$this->sharedDomainUtils->setSUL3RolloutCookie( $request );
-			// Also make sure checks in the current request are affected.
+			// Make sure future checks in the current request are consistent.
 			$request->setVal( 'usesul3', 1 );
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * check if we should set SUL3 wanted cookie:
-	 * is the user an IP address? is the cookie already set?
-	 * does the IP address meet the conditions for participation
-	 * in the rollout?
-	 * alternatively, is the local wiki set to always be sul3 enabled?
-	 * return true if so, false otherwise
-	 *
-	 * @param Webrequest $request
-	 * @param User $user
-	 * @return bool
-	 */
-	private function shouldSetSUL3RolloutCookie( $request, $user ) {
-		if ( !$this->sharedDomainUtils->hasSul3EnabledFlag( SharedDomainUtils::SUL3_ENABLED_COOKIE ) ) {
-			return false;
-		}
-		$name = $user->getName();
-		if ( !$this->userNameUtils->isIP( $name ) ) {
-			return false;
-		}
-		if ( $this->sharedDomainUtils->hasSul3EnabledFlag( SharedDomainUtils::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
 		}
 		return false;

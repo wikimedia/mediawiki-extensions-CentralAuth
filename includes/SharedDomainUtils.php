@@ -23,10 +23,7 @@ use Wikimedia\Assert\Assert;
  */
 class SharedDomainUtils {
 
-	private const SUL3_OPTIN_COOKIE_NAME = 'sul3OptIn';
-
 	public const SUL3_ENABLED_QUERY_FLAG = 'query-flag';
-	public const SUL3_ENABLED_COOKIE = 'cookie';
 	public const SUL3_ENABLED_ALWAYS = 'always';
 
 	private Config $config;
@@ -124,8 +121,6 @@ class SharedDomainUtils {
 	 *
 	 * SUL3 mode is enabled if any of the following conditions is true:
 	 * - $wgCentralAuthEnableSul3 contains 'always'
-	 * - $wgCentralAuthEnableSul3 contains 'cookie' and there is a
-	 *   cookie named 'sul3OptIn' with the value '1'
 	 * - $wgCentralAuthEnableSul3 contains 'query-flag' and the URL has
 	 *   a query parameter 'usesul3' with the value "1". The value "0"
 	 *   means switch off SUL3 mode.
@@ -166,10 +161,6 @@ class SharedDomainUtils {
 			&& $request->getCheck( 'usesul3' )
 		) {
 			return $request->getFuzzyBool( 'usesul3' );
-		} elseif ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_COOKIE )
-			&& $request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' ) !== null
-		) {
-			return (bool)$request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' );
 		} elseif ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
 		}
@@ -188,32 +179,8 @@ class SharedDomainUtils {
 	}
 
 	/**
-	 * return true if the short-term sul3 wanted cookie is set,
-	 * false otherwise
-	 *
-	 * @param WebRequest $request
-	 * @return bool
-	 */
-	public static function hasSUL3WantedCookie( $request ) {
-		return (bool)$request->getCookie( self::SUL3_OPTIN_COOKIE_NAME, '' );
-	}
-
-	/**
-	 * set SUL3 wanted cookie; caller should ensure that the user is
-	 * an IP address, and that no cookie is already set
-	 *
-	 * @param Webrequest $request
-	 * @return void
-	 */
-	public function setSUL3RolloutCookie( $request ) {
-		$expiry = time() + 300;
-		$request->response()->setCookie(
-			self::SUL3_OPTIN_COOKIE_NAME, '1', $expiry, [ 'prefix' => '' ] );
-	}
-
-	/**
 	 * Check if $wgCentralAuthEnableSul3 has the given SUL3-enabled flag
-	 * ('query-flag', 'cookie' etc.) on the local wiki.
+	 * ('query-flag' etc.) on the local wiki.
 	 */
 	public function hasSul3EnabledFlag( string $flag ): bool {
 		$sul3Config = $this->config->get( CAMainConfigNames::CentralAuthEnableSul3 );
@@ -237,13 +204,6 @@ class SharedDomainUtils {
 		}
 		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_ALWAYS ) ) {
 			return true;
-		}
-
-		if ( $this->hasSul3EnabledFlag( self::SUL3_ENABLED_COOKIE ) ) {
-			// the user got the sul3 wanted cookie earlier from being at the signup page
-			if ( self::hasSUL3WantedCookie( $request ) ) {
-				return true;
-			}
 		}
 		return false;
 	}
