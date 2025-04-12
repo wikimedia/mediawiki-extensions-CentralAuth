@@ -27,7 +27,7 @@ class SpecialMultiLock extends SpecialPage {
 
 	/** @var bool */
 	private $mCanSuppress;
-	/** @var (CentralAuthUser|MessageSpecifier|false)[] */
+	/** @var (CentralAuthUser|MessageSpecifier)[] */
 	private $mGlobalUsers;
 	/** @var string[] */
 	private $mUserNames;
@@ -137,14 +137,13 @@ class SpecialMultiLock extends SpecialPage {
 	 *
 	 * @param string[] $usernames
 	 * @param bool $fromPrimaryDb
-	 * @return (CentralAuthUser|MessageSpecifier|false)[] User object, an error message, or false.
+	 * @return (CentralAuthUser|MessageSpecifier)[] User object, or an error message.
 	 */
 	private function getGlobalUsers( $usernames, $fromPrimaryDb = false ) {
 		$ret = [];
 		foreach ( $usernames as $username ) {
 			$username = trim( $username );
 			if ( $username === '' ) {
-				$ret[] = false;
 				continue;
 			}
 			if ( $this->userNameUtils->getCanonical( $username ) === false ) {
@@ -366,10 +365,6 @@ class SpecialMultiLock extends SpecialPage {
 		$this->showTableHeader();
 
 		foreach ( $this->mGlobalUsers as $globalUser ) {
-			if ( $globalUser === false ) {
-				continue;
-			}
-
 			$rowText = Xml::openElement( 'tr' );
 
 			if ( $globalUser instanceof CentralAuthUser ) {
