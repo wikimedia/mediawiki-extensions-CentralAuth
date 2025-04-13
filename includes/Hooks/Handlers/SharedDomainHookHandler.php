@@ -131,8 +131,8 @@ class SharedDomainHookHandler implements
 			// used to check page existence, which is unwanted functionality on the shared domain,
 			// but permissions will still be checked, so it's not a risk.
 			'query',
-			// allow login/signup directly via the API + help for those APIs
-			'clientlogin', 'createaccount', 'query+authmanagerinfo', 'paraminfo', 'help',
+			// allow login/logout/signup directly via the API + help for those APIs
+			'clientlogin', 'logout', 'createaccount', 'query+authmanagerinfo', 'paraminfo', 'help',
 			// APIs used during web login
 			'validatepassword', 'query+users', 'webauthn', 'fancycaptchareload',
 			// generic meta APIs, there's a good chance something somewhere will use them
