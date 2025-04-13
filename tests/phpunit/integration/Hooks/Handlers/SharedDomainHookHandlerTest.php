@@ -10,8 +10,8 @@ use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\UsernameAuthenticationRequest;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\CentralAuth\CentralAuthSecondaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthSharedDomainPreAuthenticationProvider;
-use MediaWiki\Extension\CentralAuth\CentralAuthTemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookRunner;
@@ -153,7 +153,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	/**
 	 * @dataProvider provideAuthManagerFilterProviders
 	 */
-	public function testOnAuthManagerFilterProviders( $isSharedDomain, $isSul3Enabled, $expectLocalPwdProvider ) {
+	public function testOnAuthManagerFilterProviders( $isSharedDomain, $isSul3Enabled, $expectLocalProviders ) {
 		// Rather than having to keep track of LocalPasswordPrimaryAuthenticationProvider's
 		// dependencies, get if from the TestSetup.php config
 		$testSetupAuthManagerConfig = $GLOBALS['wgAuthManagerConfig'];
@@ -172,33 +172,15 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				],
 				'primaryauth' => [
 					LocalPasswordPrimaryAuthenticationProvider::class => $localPwdProviderConfig,
-					'CentralAuthTemporaryPasswordPrimaryAuthenticationProvider' => [
-						'class' => CentralAuthTemporaryPasswordPrimaryAuthenticationProvider::class,
-						'services' => [
-							'ConnectionProvider',
-							'Emailer',
-							'LanguageNameUtils',
-							'UserIdentityLookup',
-							'UserOptionsLookup',
-							'CentralAuth.CentralAuthDatabaseManager',
-							'CentralAuth.CentralAuthUtilityService',
-							'CentralAuth.SharedDomainUtils'
-						],
-						'args' => [ [
-							'authoritative' => true,
-						] ],
+				],
+				'secondaryauth' => [
+					'CentralAuthSecondaryAuthenticationProvider' => [
+						'class' => CentralAuthSecondaryAuthenticationProvider::class,
 					],
 				],
-				'secondaryauth' => [],
 			],
 			CAMainConfigNames::CentralAuthStrict => true,
-			CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions => [
-				'disallowedLocalProviders' => [
-					'primaryauth' => [
-						'CentralAuthTemporaryPasswordPrimaryAuthenticationProvider',
-					],
-				],
-			],
+			CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions => [],
 		] );
 		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
 			'shared' => $isSharedDomain,
@@ -208,18 +190,31 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		// Check SharedDomainHookHandler defaults
 		static::assertThat(
 			$authManager->getAuthenticationProvider( LocalPasswordPrimaryAuthenticationProvider::class ),
-			$expectLocalPwdProvider ? static::logicalNot( static::isNull() ) : static::isNull()
+			$expectLocalProviders ? static::logicalNot( static::isNull() ) : static::isNull()
 		);
 		// Check $wgCentralAuthSul3SharedDomainRestrictions
 		static::assertThat(
-			$authManager->getAuthenticationProvider( CentralAuthTemporaryPasswordPrimaryAuthenticationProvider::class ),
-			$expectLocalPwdProvider ? static::logicalNot( static::isNull() ) : static::isNull()
+			$authManager->getAuthenticationProvider( CentralAuthSecondaryAuthenticationProvider::class ),
+			$expectLocalProviders ? static::logicalNot( static::isNull() ) : static::isNull()
+		);
+
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions, [
+			'allowedLocalProviders' => [
+				'secondaryauth' => [
+					'CentralAuthSecondaryAuthenticationProvider',
+				],
+			],
+		] );
+		$this->getServiceContainer()->resetServiceForTesting( 'AuthManager' );
+		$authManager = $this->getServiceContainer()->getAuthManager();
+		$this->assertNotNull(
+			$authManager->getAuthenticationProvider( CentralAuthSecondaryAuthenticationProvider::class )
 		);
 	}
 
 	public function provideAuthManagerFilterProviders() {
 		return [
-			// shared, sul3, expect provider
+			// shared, sul3, expect local providers
 			[ false, false, true ],
 			[ true, false, true ],
 			[ false, true, false ],
@@ -246,6 +241,11 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				} ],
 			],
 			'secondaryauth' => [],
+		] );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions, [
+			'allowedLocalProviders' => [
+				'primaryauth' => [ 'mockPrimary' ],
+			],
 		] );
 		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
 			'shared' => false,
@@ -283,6 +283,11 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				} ],
 			],
 			'secondaryauth' => [],
+		] );
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions, [
+			'allowedLocalProviders' => [
+				'primaryauth' => [ 'mockPrimary' ],
+			],
 		] );
 		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
 			'shared' => false,

@@ -8,12 +8,8 @@ use MediaWiki\Api\Hook\ApiCheckCanExecuteHook;
 use MediaWiki\Api\Hook\ApiQueryCheckCanExecuteHook;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
-use MediaWiki\Auth\CheckBlocksSecondaryAuthenticationProvider;
 use MediaWiki\Auth\Hook\AuthManagerFilterProvidersHook;
 use MediaWiki\Auth\Hook\AuthManagerVerifyAuthenticationHook;
-use MediaWiki\Auth\LocalPasswordPrimaryAuthenticationProvider;
-use MediaWiki\Auth\TemporaryPasswordPrimaryAuthenticationProvider;
-use MediaWiki\Auth\ThrottlePreAuthenticationProvider;
 use MediaWiki\CheckUser\Api\Rest\Handler\UserAgentClientHintsHandler;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
@@ -89,16 +85,15 @@ class SharedDomainHookHandler implements
 	 */
 	private const ALLOWED_REST_API_ENDPOINTS = 'allowedRestApiEndpoints';
 	/**
-	 * List of authentication providers which should be skipped on the local login page in
-	 * SUL3 mode, because they will be applied on the shared domain instead.
+	 * List of authentication providers which should *not* be skipped on the local login page in
+	 * SUL3 mode. Every other provider will be ignored (they will be applied on the shared domain,
+	 * and we want to avoid double-applying providers, or show authentication-related UI on the
+	 * local domain).
 	 * The values are they keys of $wgAuthManagerAutoConfig - usually but not always the
 	 * provider class name.
 	 * @see MainConfigNames::AuthManagerAutoConfig
-	 * @note This is somewhat fragile, e.g. in case of class renamespacing. We inherit that from
-	 * AuthManager and can't do much about it. It fails in the safe direction, though - on
-	 * provider key mismatch there will be unnecessary extra checks.
 	 */
-	private const DISALLOWED_LOCAL_PROVIDERS = 'disallowedLocalProviders';
+	private const ALLOWED_LOCAL_PROVIDERS = 'allowedLocalProviders';
 
 	/**
 	 * Default restrictions for the shared domain. These values will be merged with the contents of
@@ -142,29 +137,20 @@ class SharedDomainHookHandler implements
 			// used by CheckUser to collect data about authentication attempts
 			[ 'handler' => UserAgentClientHintsHandler::class ]
 		],
-		self::DISALLOWED_LOCAL_PROVIDERS => [
+		self::ALLOWED_LOCAL_PROVIDERS => [
 			'preauth' => [
-				'AbuseFilterPreAuthenticationProvider',
-				'AntiSpoofPreAuthenticationProvider',
-				'CaptchaPreAuthenticationProvider',
-				'IPReputationPreAuthenticationProvider',
-				'SpamBlacklistPreAuthenticationProvider',
-				ThrottlePreAuthenticationProvider::class,
-				'TitleBlacklistPreAuthenticationProvider',
-				'login-notify-known-ip',
+				// makes sure that during logins that we can't accidentally mix up SUL2 and SUL3
+				// authentication, which would have security consequences
+				'CentralAuthSharedDomainPreAuthenticationProvider',
 			],
 			'primaryauth' => [
-				// CentralAuthPrimaryAuthenticationProvider is needed for autocreation, so it
-				//   handles ignoring SUL3 local requests internally.
-				LocalPasswordPrimaryAuthenticationProvider::class,
-				TemporaryPasswordPrimaryAuthenticationProvider::class,
+				'CentralAuthRedirectingPrimaryAuthenticationProvider',
+				// handles various non-login things, e.g. autocreation
+				'CentralAuthPrimaryAuthenticationProvider',
+				// FIXME probably not really needed
+				'CentralAuthTemporaryPasswordPrimaryAuthenticationProvider',
 			],
-			'secondaryauth' => [
-				CheckBlocksSecondaryAuthenticationProvider::class,
-				'CentralAuthSecondaryAuthenticationProvider',
-				'EmailAuthSecondaryAuthenticationProvider',
-				'OATHSecondaryAuthenticationProvider',
-			],
+			'secondaryauth' => [],
 		],
 	];
 
@@ -340,6 +326,15 @@ class SharedDomainHookHandler implements
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request )
 			 && !$this->sharedDomainUtils->isSharedDomain()
 		) {
+			$allowedProviders = $this->getRestrictions( self::ALLOWED_LOCAL_PROVIDERS );
+			foreach ( $providers as $stage => $providersAtStage ) {
+				foreach ( $providersAtStage as $provider => $_ ) {
+					if ( !in_array( $provider, $allowedProviders[$stage], true ) ) {
+						$providers[$stage][$provider] = false;
+					}
+				}
+			}
+
 			// We'll rely on CentralAuthSharedDomainPreAuthenticationProvider to make sure filtering does not
 			// happen at the wrong time so make sure it's in place.
 			if ( !isset( $providers['preauth']['CentralAuthSharedDomainPreAuthenticationProvider'] ) ) {
@@ -348,13 +343,7 @@ class SharedDomainHookHandler implements
 				);
 			}
 
-			$disallowedProviders = $this->getRestrictions( self::DISALLOWED_LOCAL_PROVIDERS );
-			foreach ( $disallowedProviders as $stage => $disallowedProvidersAtStage ) {
-				foreach ( $disallowedProvidersAtStage as $disallowedProvider ) {
-					unset( $providers[$stage][$disallowedProvider] );
-				}
-			}
-			// This is security-critical code. If these providers are removed but some
+			// This is security-critical code. If the providers are removed but some
 			// non-redirect-based login is still possible, or the providers are erroneously
 			// removed on the shared domain as well, that would circumvent important security
 			// checks. To prevent mistakes, we sync with the behavior of the
@@ -442,14 +431,14 @@ class SharedDomainHookHandler implements
 
 	private function getRestrictions( string $type ): array {
 		$allRestrictions = $this->config->get( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions );
-		if ( $type === self::DISALLOWED_LOCAL_PROVIDERS ) {
-			$disallowedLocalProvidersConstant = self::DEFAULT_RESTRICTIONS[$type];
-			$disallowedLocalProvidersGlobal = $allRestrictions[$type] ?? [];
+		if ( $type === self::ALLOWED_LOCAL_PROVIDERS ) {
+			$allowedLocalProvidersConstant = self::DEFAULT_RESTRICTIONS[$type];
+			$allowedLocalProvidersGlobal = $allRestrictions[$type] ?? [];
 			$restrictions = [];
-			foreach ( $disallowedLocalProvidersConstant as $providerStage => $_ ) {
+			foreach ( $allowedLocalProvidersConstant as $providerStage => $_ ) {
 				$restrictions[$providerStage] = array_merge(
-					$disallowedLocalProvidersConstant[$providerStage],
-					$disallowedLocalProvidersGlobal[$providerStage] ?? []
+					$allowedLocalProvidersConstant[$providerStage],
+					$allowedLocalProvidersGlobal[$providerStage] ?? []
 				);
 			}
 		} else {
