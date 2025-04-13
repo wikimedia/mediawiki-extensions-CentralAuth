@@ -399,6 +399,8 @@
 	"centralauth-state-mismatch": "Error: The state of this user account has changed in the meantime. Please verify the current state and try again, if needed.",
 	"centralauth-token-mismatch": "Sorry, we could not process your form submission due to a loss of session data.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|year|years}} ago",
+	"centralauth-sul3-oathmanage-sitenotice-local": "To set up new WebAuthn passkeys, please use [$1 the central domain].",
+	"centralauth-sul3-oathmanage-sitenotice-central": "To remove old WebAuthn passkeys, please use [$1 the domain on which they were set up].",
 	"centralautologin": "Central login",
 	"centrallogin": "Central user log in",
 	"createlocalaccount": "Forcibly create a local account",

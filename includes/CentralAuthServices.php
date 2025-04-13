@@ -77,6 +77,13 @@ class CentralAuthServices {
 			->getService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager' );
 	}
 
+	public static function getCentralDomainUtils(
+		?ContainerInterface $services = null
+	): CentralDomainUtils {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralDomainUtils' );
+	}
+
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
@@ -94,6 +101,13 @@ class CentralAuthServices {
 	): CentralAuthEditCounter {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->getService( 'CentralAuth.CentralAuthEditCounter' );
+	}
+
+	public static function getFilteredRequestTracker(
+		?ContainerInterface $services = null
+	): FilteredRequestTracker {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.FilteredRequestTracker' );
 	}
 
 	/**

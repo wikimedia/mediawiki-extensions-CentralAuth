@@ -657,8 +657,10 @@
 		"shareddomain": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SharedDomainHookHandler",
 			"services": [
+				"ExtensionRegistry",
 				"MainConfig",
 				"UrlUtils",
+				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.FilteredRequestTracker",
 				"CentralAuth.SharedDomainUtils"
 			],
@@ -765,6 +767,7 @@
 		"SpecialPage_initList": "specialpageinit",
 		"SpecialPageBeforeExecute": [ "specialpagebeforeexecute", "shareddomain" ],
 		"SpecialPasswordResetOnSubmit": "default",
+		"SiteNoticeBefore": "shareddomain",
 		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",
 		"UnitTestsAfterDatabaseSetup": "unittests",

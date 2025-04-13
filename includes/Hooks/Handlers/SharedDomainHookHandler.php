@@ -15,15 +15,18 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
+use MediaWiki\Hook\SiteNoticeBeforeHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Rest\Handler;
@@ -32,6 +35,7 @@ use MediaWiki\Rest\HttpException;
 use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\Module\Module;
 use MediaWiki\Rest\RequestInterface;
+use MediaWiki\Skin\Skin;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
@@ -55,6 +59,7 @@ class SharedDomainHookHandler implements
 	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	RestCheckCanExecuteHook,
 	SetupAfterCacheHook,
+	SiteNoticeBeforeHook,
 	SpecialPageBeforeExecuteHook
 {
 	/**
@@ -154,21 +159,27 @@ class SharedDomainHookHandler implements
 		],
 	];
 
+	private ExtensionRegistry $extensionRegistry;
 	private Config $config;
 	private UrlUtils $urlUtils;
+	private CentralDomainUtils $centralDomainUtils;
 	private FilteredRequestTracker $filteredRequestTracker;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
+		ExtensionRegistry $extensionRegistry,
 		Config $config,
 		UrlUtils $urlUtils,
+		CentralDomainUtils $centralDomainUtils,
 		FilteredRequestTracker $filteredRequestTracker,
 		SharedDomainUtils $sharedDomainUtils,
 		?MobileContext $mobileContext = null
 	) {
+		$this->extensionRegistry = $extensionRegistry;
 		$this->config = $config;
 		$this->urlUtils = $urlUtils;
+		$this->centralDomainUtils = $centralDomainUtils;
 		$this->filteredRequestTracker = $filteredRequestTracker;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->mobileContext = $mobileContext;
@@ -429,6 +440,30 @@ class SharedDomainHookHandler implements
 		return true;
 	}
 
+	/**
+	 * Disallow sitenotices on the shared domain. Also, show a notice on the WebAuthn management
+	 * interface (which the user might need to access both on the local domain and the central one).
+	 * @inheritDoc
+	 */
+	public function onSiteNoticeBefore( &$siteNotice, $skin ) {
+		if ( $this->sharedDomainUtils->isSul3Enabled( $skin->getRequest() )
+			&& $this->extensionRegistry->isLoaded( 'WebAuthn' )
+			&& $skin->getTitle()
+			&& $skin->getTitle()->isSpecial( 'OATHManage' )
+		) {
+			$siteNotice = $this->getWebAuthnSiteNotice( $skin, $this->sharedDomainUtils->isSharedDomain() );
+			return false;
+		}
+
+		if ( $this->sharedDomainUtils->isSharedDomain()
+			// check whether we are on the SUL2 central wiki for some non-authentication-related reason
+			&& $this->sharedDomainUtils->isSul3Enabled( $skin->getRequest() )
+		) {
+			$siteNotice = '';
+			return false;
+		}
+	}
+
 	private function getRestrictions( string $type ): array {
 		$allRestrictions = $this->config->get( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions );
 		if ( $type === self::ALLOWED_LOCAL_PROVIDERS ) {
@@ -449,4 +484,18 @@ class SharedDomainHookHandler implements
 		}
 		return $restrictions;
 	}
+
+	private function getWebAuthnSiteNotice( Skin $skin, bool $isSharedDomain ): string {
+		if ( $isSharedDomain ) {
+			$localUrl = $this->centralDomainUtils->getUrl( WikiMap::getCurrentWikiId(),
+				$skin->getTitle()->getPrefixedText(), $skin->getRequest() );
+			$siteNotice = $skin->msg( 'centralauth-sul3-oathmanage-sitenotice-central', $localUrl );
+		} else {
+			$centralUrl = $this->centralDomainUtils->getUrl( CentralDomainUtils::CENTRAL_DOMAIN_ID,
+				$skin->getTitle()->getPrefixedText(), $skin->getRequest() );
+			$siteNotice = $skin->msg( 'centralauth-sul3-oathmanage-sitenotice-local', $centralUrl );
+		}
+		return Html::noticeBox( $siteNotice->parseAsBlock(), 'mw-centralauth-webauthn-notice' );
+	}
+
 }

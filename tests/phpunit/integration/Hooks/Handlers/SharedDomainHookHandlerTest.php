@@ -11,16 +11,20 @@ use MediaWiki\Auth\UsernameAuthenticationRequest;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthSecondaryAuthenticationProvider;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\CentralAuthSharedDomainPreAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Skin\Skin;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Tests\MockWikiMapTrait;
+use MediaWiki\Title\Title;
 use MWExceptionRenderer;
 use PermissionsError;
 use Psr\Log\LogLevel;
@@ -347,6 +351,99 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				? static::containsIdentical( 'site' )
 				: static::logicalNot( static::containsIdentical( 'site' ) )
 		);
+	}
+
+	/**
+	 * @dataProvider provideOnSiteNoticeBefore
+	 * @param bool $isSul3SharedDomain
+	 * @param bool $isSul3Enabled
+	 * @param bool $isOathManageSpecialPage
+	 * @param string|null $expectedSiteNoticeSnippet Part of the sitenotice, or the empty string
+	 *   to assert that no sitenotice won't be shown, or null to assert that the normal sitenotice
+	 *   will be shown.
+	 */
+	public function testOnSiteNoticeBefore(
+		bool $isSul3SharedDomain,
+		bool $isSul3Enabled,
+		bool $isOathManageSpecialPage,
+		?string $expectedSiteNoticeSnippet
+	): void {
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSharedDomainCallback,
+			static fn () => 'https://example.org' );
+		$this->mockWikiMap();
+		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
+			'shared' => $isSul3SharedDomain,
+			'sul3' => $isSul3Enabled,
+		] ) );
+
+		$title = $this->createNoOpMock( Title::class, [ 'isSpecial', 'getPrefixedText' ] );
+		$title->method( 'isSpecial' )->willReturnCallback(
+			static fn ( $specialPageName ) => $isOathManageSpecialPage ? ( $specialPageName == 'OATHManage' ) : false
+		);
+		$title->expects( $isOathManageSpecialPage ? $this->any() : $this->never() )
+			->method( 'getPrefixedText' )->willReturn( 'Special:OATHManage' );
+		$skin = $this->createNoOpMock( Skin::class, [ 'getRequest', 'getTitle', 'msg' ] );
+		$skin->method( 'getRequest' )->willReturn( new FauxRequest() );
+		$skin->method( 'getTitle' )->willReturn( $title );
+		$skin->method( 'msg' )->willReturnCallback( fn ( $key ) => $this->getMockMessage( $key ) );
+
+		$container = $this->getServiceContainer();
+		$handler = new SharedDomainHookHandler(
+			$container->getExtensionRegistry(),
+			$container->getMainConfig(),
+			$container->getUrlUtils(),
+			CentralAuthServices::getCentralDomainUtils( $container ),
+			CentralAuthServices::getFilteredRequestTracker( $container ),
+			CentralAuthServices::getSharedDomainUtils( $container ),
+			null
+		);
+
+		$siteNotice = 'Old sitenotice';
+		$handler->onSiteNoticeBefore( $siteNotice, $skin );
+
+		if ( $expectedSiteNoticeSnippet ) {
+			$this->assertStringNotContainsString( 'Old sitenotice', $siteNotice );
+			$this->assertStringContainsString( $expectedSiteNoticeSnippet, $siteNotice );
+		} elseif ( $expectedSiteNoticeSnippet === '' ) {
+			$this->assertSame( '', $siteNotice );
+		} else {
+			$this->assertSame( 'Old sitenotice', $siteNotice );
+		}
+	}
+
+	public function provideOnSiteNoticeBefore() {
+		return [
+			'does nothing in SUL2 mode' => [
+				'isSul3SharedDomain' => false,
+				'isSul3Enabled' => false,
+				'isOathManageSpecialPage' => true,
+				'expectedSiteNoticeSnippet' => null,
+			],
+			'does nothing on the local domain when not on the special page' => [
+				'isSul3SharedDomain' => false,
+				'isSul3Enabled' => true,
+				'isOathManageSpecialPage' => false,
+				'expectedSiteNoticeSnippet' => null,
+			],
+			'disables the site notice on the shared domain' => [
+				'isSul3SharedDomain' => true,
+				'isSul3Enabled' => true,
+				'isOathManageSpecialPage' => false,
+				'expectedSiteNoticeSnippet' => '',
+			],
+			'links to central on local Special:OATHManager' => [
+				'isSul3SharedDomain' => false,
+				'isSul3Enabled' => true,
+				'isOathManageSpecialPage' => true,
+				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-local',
+			],
+			'links to local on central Special:OATHManager' => [
+				'isSul3SharedDomain' => true,
+				'isSul3Enabled' => true,
+				'isOathManageSpecialPage' => true,
+				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-central',
+			],
+		];
 	}
 
 	private function getSharedDomainUtils( array $config ): SharedDomainUtils {
