@@ -26,6 +26,7 @@ QUnit.test( 'Logged in users get centralauthtoken if not logged in remotely', fu
 
 	this.server.respond( ( request ) => {
 		assert.strictEqual( request.requestHeaders.Authorization, 'CentralAuthToken CENTRALAUTHTOKEN', 'Should pass Authorization header' );
+		assert.strictEqual( request.withCredentials, false, 'Should not pass browser credentials' );
 		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
@@ -48,6 +49,7 @@ QUnit.test( 'Logged in users do not get centralauthtoken if logged in remotely',
 	mw.config.set( 'wgUserName', 'User' );
 
 	this.server.respond( ( request ) => {
+		assert.strictEqual( request.withCredentials, true, 'Should pass browser credentials' );
 		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
