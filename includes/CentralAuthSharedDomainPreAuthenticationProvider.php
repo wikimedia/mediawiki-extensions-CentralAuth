@@ -9,6 +9,7 @@ use StatusValue;
 /**
  * Helper for SharedDomainHookHandler to persist state across multiple authentication requests.
  *
+ * @see SharedDomainHookHandler::onAuthManagerFilterProviders()
  * @see SharedDomainHookHandler::onAuthManagerVerifyAuthentication()
  */
 class CentralAuthSharedDomainPreAuthenticationProvider extends AbstractPreAuthenticationProvider {

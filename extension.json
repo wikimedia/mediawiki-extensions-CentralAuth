@@ -948,7 +948,7 @@
 				"centralSpecialPages": [],
 				"allowedActionApiModules": [],
 				"allowedRestApiEndpoints": [],
-				"disallowedLocalProviders": {
+				"allowedLocalProviders": {
 					"preauth": [],
 					"primaryauth": [],
 					"secondaryauth": []
