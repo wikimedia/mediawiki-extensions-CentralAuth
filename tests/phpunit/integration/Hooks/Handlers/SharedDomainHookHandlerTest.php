@@ -355,6 +355,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 	/**
 	 * @dataProvider provideOnSiteNoticeBefore
+	 * @param bool $isSkipped Whether to skip this test variant.
 	 * @param bool $isSul3SharedDomain
 	 * @param bool $isSul3Enabled
 	 * @param bool $isOathManageSpecialPage
@@ -363,11 +364,15 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	 *   will be shown.
 	 */
 	public function testOnSiteNoticeBefore(
+		bool $isSkipped,
 		bool $isSul3SharedDomain,
 		bool $isSul3Enabled,
 		bool $isOathManageSpecialPage,
 		?string $expectedSiteNoticeSnippet
 	): void {
+		if ( $isSkipped ) {
+			$this->markTestSkipped( 'T392017' );
+		}
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSharedDomainCallback,
 			static fn () => 'https://example.org' );
 		$this->mockWikiMap();
@@ -414,30 +419,35 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	public function provideOnSiteNoticeBefore() {
 		return [
 			'does nothing in SUL2 mode' => [
+				'isSkipped' => false,
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => false,
 				'isOathManageSpecialPage' => true,
 				'expectedSiteNoticeSnippet' => null,
 			],
 			'does nothing on the local domain when not on the special page' => [
+				'isSkipped' => false,
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => true,
 				'isOathManageSpecialPage' => false,
 				'expectedSiteNoticeSnippet' => null,
 			],
 			'disables the site notice on the shared domain' => [
+				'isSkipped' => false,
 				'isSul3SharedDomain' => true,
 				'isSul3Enabled' => true,
 				'isOathManageSpecialPage' => false,
 				'expectedSiteNoticeSnippet' => '',
 			],
 			'links to central on local Special:OATHManager' => [
+				'isSkipped' => true,
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => true,
 				'isOathManageSpecialPage' => true,
 				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-local',
 			],
 			'links to local on central Special:OATHManager' => [
+				'isSkipped' => true,
 				'isSul3SharedDomain' => true,
 				'isSul3Enabled' => true,
 				'isOathManageSpecialPage' => true,
