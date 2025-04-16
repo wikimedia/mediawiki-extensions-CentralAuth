@@ -124,31 +124,36 @@ class SharedDomainUtils {
 	 * URL query parameter to "1" or "0" (or other fuzzy bool values).
 	 *
 	 * @param WebRequest $request
+	 * @param bool $excludeApiRequest Whether to exclude this API request from the
+	 *    SUL3 mode.
+	 *
 	 * @return bool
 	 */
-	public function isSul3Enabled( WebRequest $request ): bool {
+	public function isSul3Enabled( WebRequest $request, bool $excludeApiRequest = true ): bool {
 		if ( !$this->canSul3BeEnabled() ) {
 			return false;
 		}
 
 		// T379816: The `clientlogin` API should still work in SUL3 mode as if
-		//    we're in SUL2 mode regardless of whether SUL3 is enabled or not.
-		//    There are some edge-cases handled below like:
+		//     we're in SUL2 mode regardless of whether SUL3 is enabled or not.
+		//     There are some edge-cases handled below like:
 		//       - edits coming from VisualEditor that will trigger CentralLogin
 		//         via the action API. Shouldn't really happen because we don't
 		//         have VE enabled for anon users in production today but let's
 		//         handle these;
 		//       - a user trying to authenticate (login/signup) with their permanent
 		//         account with a temporary account session active.
-		if ( $this->isApiRequest && !$this->isSharedDomain() ) {
-			// T384523, T383812: Users sometimes will try to authenticate (login/signup)
-			//     with an existing temporary session active. When this happens, we want
-			//     to still assume SUL2 mode rather than try to trigger SUL3 login flow.
-			//     This can happen for mobile apps (iOS for example) users.
-			$user = $request->getSession()->getUser();
-			if ( $user->isTemp() || $user->isAnon() ) {
-				return false;
-			}
+		// T384523, T383812: Users sometimes will try to authenticate (login/signup)
+		//     with an existing temporary session active. When this happens, we want
+		//     to still assume SUL2 mode rather than try to trigger SUL3 login flow.
+		//     This can happen for mobile apps (iOS for example) users.
+		// T390751: There is a special case where we want to create an account on-behalf
+		//     of another user and mail them the temp password. In this case, the user
+		//     that is creating the account is authenticated (API or regular web request).
+		//     So in all cases, where we're using the API, regardless of the user (temp,
+		//     anon or named), we want to just disable SUL3 and fallback to SUL2.
+		if ( $this->isApiRequest && $excludeApiRequest && !$this->isSharedDomain() ) {
+			return false;
 		}
 
 		if ( $request->getCheck( 'usesul3' ) ) {
