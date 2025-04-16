@@ -388,6 +388,8 @@
 	"centralauth-state-mismatch": "Fehler: Der Status dieses Benutzerkontos hat sich inzwischen geändert. Bitte überprüfe den aktuellen Status und versuche es bei Bedarf erneut.",
 	"centralauth-token-mismatch": "Entschuldigung, aber die Formulareingaben konnten nicht verarbeitet werden, da deine Sitzungsdaten verloren gegangen sind.",
 	"centralauth-years-ago": "Vor $1 {{PLURAL:$1|Jahr|Jahren}}",
+	"centralauth-sul3-oathmanage-sitenotice-local": "Um neue WebAuthn-Passkeys einzurichten, verwende bitte [$1 die zentrale Domain].",
+	"centralauth-sul3-oathmanage-sitenotice-central": "Um alte WebAuthn-Passkeys zu entfernen, verwenden bitte [$1 die Domain, auf der sie eingerichtet wurden].",
 	"centralautologin": "Zentrale Anmeldung",
 	"centrallogin": "Zentrale Benutzeranmeldung",
 	"createlocalaccount": "Erstellung eines lokalen Benutzerkontos erzwingen",
