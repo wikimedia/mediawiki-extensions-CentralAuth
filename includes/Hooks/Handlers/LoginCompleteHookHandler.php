@@ -108,10 +108,12 @@ class LoginCompleteHookHandler implements
 			$redirectUrl = $this->getRedirectUrl(
 				$request->getSession(),
 				$centralUser,
-				$request->getVal( 'returnto', '' ),
-				$request->getVal( 'returntoquery', '' ),
-				'',
-				$title->isSpecial( 'CreateAccount' ) ? 'signup' : ''
+				[
+					'returnto' => $request->getVal( 'returnto', '' ),
+					'returntoquery' => $request->getVal( 'returntoquery', '' ),
+					'returntoanchor' => '',
+					'loginType' => $title->isSpecial( 'CreateAccount' ) ? 'signup' : '',
+				]
 			);
 			$context->getOutput()->redirect( $redirectUrl );
 			// Set $inject_html to some text to bypass the LoginForm redirection
@@ -154,10 +156,13 @@ class LoginCompleteHookHandler implements
 		$redirectUrl = $this->getRedirectUrl(
 			$session,
 			$centralUser,
-			$returnTo,
-			$returnToQuery,
-			$returnToAnchor,
-			'signup'
+			[
+				'returnto' => $returnTo,
+				'returntoquery' => $returnToQuery,
+				'returntoanchor' => $returnToAnchor,
+				'loginType' => 'signup',
+			],
+			false,
 		);
 		return false;
 	}
@@ -173,10 +178,14 @@ class LoginCompleteHookHandler implements
 	 *
 	 * @param Session $session
 	 * @param CentralAuthUser $centralUser
-	 * @param string $returnTo
-	 * @param string $returnToQuery
-	 * @param string $returnToAnchor
-	 * @param string $loginType 'signup' or the empty string for normal login
+	 * @param array $queryParams Various parameters to use in the redirect URL like
+	 *     - (string) returnto: where to return to after the redirect
+	 *     - (string) returntoquery: other URL query parameters
+	 *     - (string) returntoanchor
+	 *     - (string) loginType: authentication type e.g. 'signup' or the empty
+	 *       string for normal login
+	 * @param bool $excludeApiRequest
+	 *
 	 * @return string
 	 *
 	 * @see SpecialCentralLogin
@@ -184,19 +193,17 @@ class LoginCompleteHookHandler implements
 	private function getRedirectUrl(
 		Session $session,
 		CentralAuthUser $centralUser,
-		$returnTo,
-		$returnToQuery,
-		$returnToAnchor,
-		$loginType
+		array $queryParams,
+		bool $excludeApiRequest = true
 	) {
 		// User will be redirected to Special:CentralLogin/start (central wiki),
 		// then redirected back to Special:CentralLogin/complete (this wiki).
 		// Sanity check that "returnto" is not one of the central login pages. If it
 		// is, then clear the "returnto" options (LoginForm will use the main page).
-		$returnToTitle = Title::newFromText( $returnTo );
+		$returnToTitle = Title::newFromText( $queryParams['returnto'] );
 		if ( $returnToTitle && $returnToTitle->isSpecial( 'CentralLogin' ) ) {
-			$returnTo = '';
-			$returnToQuery = '';
+			$queryParams['returnto'] = '';
+			$queryParams['returntoquery'] = '';
 		}
 
 		$remember = $session->shouldRememberUser();
@@ -210,10 +217,10 @@ class LoginCompleteHookHandler implements
 		$session->set( 'CentralAuth:autologin:current-attempt', [
 			'secret' => $secret,
 			'remember' => $remember,
-			'returnTo' => $returnTo,
-			'returnToQuery' => $returnToQuery,
-			'returnToAnchor' => $returnToAnchor,
-			'type' => $loginType
+			'returnTo' => $queryParams['returnto'],
+			'returnToQuery' => $queryParams['returntoquery'],
+			'returnToAnchor' => $queryParams['returntoanchor'],
+			'type' => $queryParams['loginType']
 		] );
 
 		// Create a new token to pass to Special:CentralLogin/start (central wiki)
@@ -228,7 +235,7 @@ class LoginCompleteHookHandler implements
 
 		$query = [
 			'token' => $token,
-			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $session->getRequest() ) ? 1 : 0,
+			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $session->getRequest(), $excludeApiRequest ) ? 1 : 0,
 		];
 		$url = $this->centralDomainUtils->getUrl(
 			CentralDomainUtils::CENTRAL_DOMAIN_ID,
