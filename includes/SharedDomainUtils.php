@@ -9,7 +9,6 @@ use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPageFactory;
-use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
@@ -27,22 +26,19 @@ class SharedDomainUtils {
 	private ?bool $isSharedDomain = null;
 	private ?MobileContext $mobileContext;
 	private bool $isApiRequest;
-	private TempUserConfig $tempUserConfig;
 
 	public function __construct(
 		Config $config,
 		SpecialPageFactory $specialPageFactory,
 		HookRunner $hookRunner,
 		?MobileContext $mobileContext,
-		bool $isApiRequest,
-		TempUserConfig $tempUserConfig
+		bool $isApiRequest
 	) {
 		$this->config = $config;
 		$this->specialPageFactory = $specialPageFactory;
 		$this->hookRunner = $hookRunner;
 		$this->mobileContext = $mobileContext;
 		$this->isApiRequest = $isApiRequest;
-		$this->tempUserConfig = $tempUserConfig;
 	}
 
 	/**

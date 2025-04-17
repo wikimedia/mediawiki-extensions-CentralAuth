@@ -210,8 +210,7 @@ return [
 			$services->getSpecialPageFactory(),
 			new HookRunner( $services->getHookContainer() ),
 			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
-			defined( 'MW_API' ) || defined( 'MW_REST_API' ),
-			$services->getTempUserConfig()
+			defined( 'MW_API' ) || defined( 'MW_REST_API' )
 		);
 	},
 
