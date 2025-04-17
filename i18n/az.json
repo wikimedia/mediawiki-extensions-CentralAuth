@@ -377,6 +377,8 @@
 	"centralauth-state-mismatch": "Xəta: Bu istifadəçi hesabının statusu dəyişdi. Xahiş edirik, mövcud statusu yoxlayın və lazım gələrsə yenidən cəhd edin.",
 	"centralauth-token-mismatch": "Üzr istəyirik, sessiya datasının itməsi səbəbindən formu emal edə bilmədik.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|il|il}} əvvəl",
+	"centralauth-sul3-oathmanage-sitenotice-local": "Yeni WebAuthn keçid açarlarını quraşdırmaq üçün [$1 mərkəzi domeni] istifadə edin.",
+	"centralauth-sul3-oathmanage-sitenotice-central": "Köhnə WebAuthn keçid açarlarını silmək üçün [$1 onların qurulduğu domeni] istifadə edin.",
 	"centralautologin": "Mərkəzi giriş",
 	"centrallogin": "Mərkəzi istifadəçi girişi",
 	"createlocalaccount": "Məcburi lokal hesab yaratmaq",

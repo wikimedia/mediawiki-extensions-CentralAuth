@@ -150,6 +150,8 @@
 	"centralauth-attach-success": "Tunnus liitettiin yhdistettyyn käyttäjätunnukseen.",
 	"centralauth-attach-text": "Tätä tunnusta ei ole vielä liitetty yhdistettyyn käyttäjätunnukseen.\nJos myös järjestelmänlaajuinen tunnus kuuluu sinulle, voit yhdistää tämän tunnuksen siihen antamalla järjestelmänlaajuisen tunnuksen salasanan:",
 	"centralauth-attach-title": "Vahvista käyttäjätunnus",
+	"centralauth-automatic-global-groups-reason-local": "Järjestelmänlaajuiset ryhmät päivitetty automaattisesti paikallisen ryhmämuutoksen vuoksi.",
+	"centralauth-automatic-global-groups-reason-global": "$1 Järjestelmänlaajuiset ryhmät päivitetty automaattisesti paikallisen ryhmämuutoksen vuoksi.",
 	"centralauth-block-already-locked": "Käyttäjä [[Special:CentralAuth/$1|$1]] on jo estetty järjestelmänlaajuisesti.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|toiminto|toimintoa}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|sivu|sivua}}",

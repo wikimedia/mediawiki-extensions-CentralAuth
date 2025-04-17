@@ -368,6 +368,8 @@
 	"centralauth-state-mismatch": "Error: Le stato de iste conto de usator ha cambiate intertanto. Verifica le stato actual e essaya lo de novo si es necessari.",
 	"centralauth-token-mismatch": "Pardono, nos non poteva processar tu submission del formulario a causa de un perdita de datos del session.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|annos}} retro",
+	"centralauth-sul3-oathmanage-sitenotice-local": "Pro definir nove claves de accesso WebAuthn, per favor usa [$1 le dominio central].",
+	"centralauth-sul3-oathmanage-sitenotice-central": "Pro remover ancian claves de accesso WebAuthn, per favor usa [$1 le dominio in le qual illos ha essite configurate].",
 	"centralautologin": "Authentication central",
 	"centrallogin": "Authentication central de usatores",
 	"createlocalaccount": "Fortiar le creation de un conto local",
