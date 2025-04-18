@@ -436,6 +436,8 @@
 	"centralauth-state-mismatch": "Erreur : l′état de ce compte utilisateur a été modifié entre-temps. Merci de vérifier l′état actuel avant d′essayer à nouveau.",
 	"centralauth-token-mismatch": "Désolé, nous ne pouvons soumettre votre formulaire, suite à la perte ou l’expiration des données de votre session.",
 	"centralauth-years-ago": "depuis $1 {{PLURAL:$1|an|ans}}",
+	"centralauth-sul3-oathmanage-sitenotice-local": "Pour configurer de nouvelles clés d'accès WebAuthn, veuillez utiliser [$1 le domaine central].",
+	"centralauth-sul3-oathmanage-sitenotice-central": "Pour supprimer les anciennes clés d'accès WebAuthn, veuillez utiliser [$1 le domaine sur lequel elles ont été configurées].",
 	"centralautologin": "Connexion centralisée",
 	"centrallogin": "Connexion utilisateur centralisée",
 	"createlocalaccount": "Créer de force un compte local",
