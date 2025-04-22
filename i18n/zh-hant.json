@@ -130,7 +130,7 @@
 	"centralauth-admin-reason-other": "其它/額外的原因：",
 	"centralauth-admin-reason-other-select": "其他原因",
 	"centralauth-admin-rename-in-progress": "此帳戶目前正被重新命名。你可以[[Special:GlobalRenameProgress/$1|查看]]重命名過程。此用戶的全域更名日誌如下：",
-	"centralauth-admin-setstatus-success": "您已變更此全域帳號的狀態。",
+	"centralauth-admin-setstatus-success": "您已變更全域帳號「$1」的狀態。",
 	"centralauth-admin-status": "設定全域帳號狀態",
 	"centralauth-admin-status-hidden": "已隱藏：",
 	"centralauth-admin-status-hidden-list": "帳號在全域使用者清單中為隱藏",

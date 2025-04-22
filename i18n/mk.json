@@ -90,7 +90,7 @@
 	"centralauth-admin-reason-other": "Друга/дополнителна причина:",
 	"centralauth-admin-reason-other-select": "Друга причина",
 	"centralauth-admin-rename-in-progress": "Оваа сметка е во тек на преименување. Можете да го [[Special:GlobalRenameProgress/$1|погледате напредокот]] на преименувањето. Подолу е наведен глобалниот дневник на преименувања.",
-	"centralauth-admin-setstatus-success": "Го променивте статусот на оваа глобална сметка.",
+	"centralauth-admin-setstatus-success": "Го променивте статусот на глобалната сметка „$1“.",
 	"centralauth-admin-status": "Постави статус на глобална корисничка сметка",
 	"centralauth-admin-status-hidden": "Скриена:",
 	"centralauth-admin-status-hidden-list": "Сметката е скриена од списокот на глобални корисници",
