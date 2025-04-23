@@ -154,15 +154,21 @@ class SpecialCentralAuth extends SpecialPage {
 			'wgMergeMethodDescriptions', $this->getMergeMethodDescriptions()
 		);
 
-		$this->mUserName = trim(
-			str_replace(
-				'_',
-				' ',
-				$this->getRequest()->getText( 'target', $subpage ?? '' )
-			)
-		);
+		$this->mUserName = $this->getRequest()->getText( 'target', $subpage ?? '' );
+		if ( $this->mUserName === '' ) {
+			# First time through
+			$this->getOutput()->addWikiMsg( 'centralauth-admin-intro' );
+			$this->showUsernameForm();
+			return;
+		}
 
-		$this->mUserName = $this->getContentLanguage()->ucfirst( $this->mUserName );
+		$canonUsername = $this->userNameUtils->getCanonical( $this->mUserName );
+		if ( $canonUsername === false ) {
+			$this->showNonexistentError();
+			return;
+		}
+		// Use the canonical username from this point on, so that all links etc. work right (T392340)
+		$this->mUserName = $canonUsername;
 
 		$this->mPosted = $this->getRequest()->wasPosted();
 		$this->mMethod = $this->getRequest()->getVal( 'wpMethod' );
@@ -188,16 +194,9 @@ class SpecialCentralAuth extends SpecialPage {
 		// did / did not merge some accounts
 		// do / don't have more accounts to merge
 
-		if ( $this->mUserName === '' ) {
-			# First time through
-			$this->getOutput()->addWikiMsg( 'centralauth-admin-intro' );
-			$this->showUsernameForm();
-			return;
-		}
-
 		$userPage = Title::makeTitleSafe( NS_USER, $this->mUserName );
 		if ( $userPage ) {
-			$localUser = User::newFromName( $userPage->getText(), false );
+			$localUser = User::newFromName( $this->mUserName, false );
 			$this->getSkin()->setRelevantUser( $localUser );
 		}
 
@@ -209,12 +208,6 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->mUserName
 			)->plain()
 		) );
-
-		$canonUsername = $this->userNameUtils->getCanonical( $this->mUserName );
-		if ( $canonUsername === false ) {
-			$this->showNonexistentError();
-			return;
-		}
 
 		$globalUser = $this->getRequest()->wasPosted()
 			? CentralAuthUser::getPrimaryInstanceByName( $this->mUserName )
