@@ -20,10 +20,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use LogEventsList;
-use LogPage;
 use MediaWiki\Hook\LogEventsListGetExtraInputsHook;
 use MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook;
+use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IConnectionProvider;

@@ -21,7 +21,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use Job;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\User\User;
 
 /**

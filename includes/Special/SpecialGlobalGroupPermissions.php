@@ -14,14 +14,14 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
 use InvalidArgumentException;
-use LogEventsList;
-use LogPage;
-use ManualLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Logging\LogPage;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;

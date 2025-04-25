@@ -11,6 +11,7 @@ use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\ObjectCache\BagOStuff;

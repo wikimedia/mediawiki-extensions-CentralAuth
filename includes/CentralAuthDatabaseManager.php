@@ -4,9 +4,9 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use InvalidArgumentException;
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Exception\ReadOnlyError;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\WikiMap\WikiMap;
-use ReadOnlyError;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IDBAccessObject;

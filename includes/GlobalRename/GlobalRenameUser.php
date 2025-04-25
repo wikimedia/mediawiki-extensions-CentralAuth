@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use Job;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;

@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use ErrorPageError;
+use MediaWiki\Exception\ErrorPageError;
 
 /**
  * Show an error when the CentralAuth database is locked/read-only

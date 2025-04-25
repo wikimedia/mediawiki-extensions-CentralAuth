@@ -21,9 +21,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use ManualLogEntry;
 use MediaWiki\Deferred\SiteStatsUpdate;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Status\Status;
 use MediaWiki\User\UserFactory;

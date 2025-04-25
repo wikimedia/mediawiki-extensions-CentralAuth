@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
-use LogFormatter;
-use RightsLogFormatter;
+use MediaWiki\Logging\LogFormatter;
+use MediaWiki\Logging\RightsLogFormatter;
 
 /**
  * Handles the following log types:

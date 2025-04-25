@@ -31,8 +31,8 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\ResourceLoader\Module;
+use MediaWiki\Skin\Skin;
 use MediaWiki\WikiMap\WikiMap;
-use Skin;
 
 class PageDisplayHookHandler implements BeforePageDisplayHook {
 

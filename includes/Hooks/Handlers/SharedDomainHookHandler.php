@@ -13,6 +13,7 @@ use MediaWiki\Auth\Hook\AuthManagerVerifyAuthenticationHook;
 use MediaWiki\CheckUser\Api\Rest\Handler\UserAgentClientHintsHandler;
 use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\MWExceptionHandler;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
@@ -41,7 +42,6 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
-use MWExceptionHandler;
 use Wikimedia\Message\MessageValue;
 use Wikimedia\NormalizedException\NormalizedException;
 

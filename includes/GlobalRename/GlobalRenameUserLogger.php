@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use ManualLogEntry;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserIdentity;
 

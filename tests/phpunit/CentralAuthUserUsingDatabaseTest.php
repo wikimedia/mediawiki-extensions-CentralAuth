@@ -5,6 +5,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Logging\LogEntryBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\UserIdentity;

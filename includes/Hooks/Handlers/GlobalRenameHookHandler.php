@@ -20,7 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use ErrorPageError;
+use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\RenameUser\Hook\RenameUserCompleteHook;

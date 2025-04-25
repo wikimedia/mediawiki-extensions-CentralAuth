@@ -2,18 +2,18 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use LogEventsList;
-use LogPage;
-use ManualLogEntry;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Logging\LogPage;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\Xml\Xml;
 use MediaWiki\Xml\XmlSelect;
-use PermissionsError;
 
 /**
  * Special page to allow to edit "wikisets" which are used to restrict

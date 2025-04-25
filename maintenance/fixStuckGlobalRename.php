@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use DatabaseLogEntry;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Logging\DatabaseLogEntry;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

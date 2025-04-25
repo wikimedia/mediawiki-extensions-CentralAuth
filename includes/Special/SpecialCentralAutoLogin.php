@@ -23,6 +23,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
+use MediaWiki\Skin\SkinTemplate;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
@@ -31,7 +32,6 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use SkinTemplate;
 use Wikimedia\ScopedCallback;
 
 /**

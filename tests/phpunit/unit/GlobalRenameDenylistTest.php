@@ -21,6 +21,7 @@
 use MediaWiki\Content\WikitextContent;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Http\HttpRequestFactory;
+use MediaWiki\Page\WikiPage;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Title\Title;
 use Psr\Log\NullLogger;

@@ -24,10 +24,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Api;
 
-use ChangeTags;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
+use MediaWiki\ChangeTags\ChangeTags;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;

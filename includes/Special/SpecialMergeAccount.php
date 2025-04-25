@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use ErrorPageError;
 use Exception;
 use InvalidArgumentException;
+use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;

@@ -22,9 +22,9 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use Exception;
-use Job;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\JobQueue\Job;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;

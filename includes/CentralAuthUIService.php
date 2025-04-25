@@ -2,10 +2,10 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use LogEventsList;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Title\TitleFactory;
 use MessageLocalizer;
 

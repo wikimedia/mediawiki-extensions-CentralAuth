@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use LogicException;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Exception\MWExceptionHandler;
 use MediaWiki\Request\WebRequest;
-use MWExceptionHandler;
 
 /**
  * A trivial service to track whether authentication providers have been filtered in the current

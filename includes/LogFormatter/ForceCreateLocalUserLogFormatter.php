@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\LogFormatter;
 
-use LogFormatter;
+use MediaWiki\Logging\LogFormatter;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
 

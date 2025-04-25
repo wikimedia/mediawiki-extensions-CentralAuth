@@ -28,9 +28,9 @@ use MediaWiki\Extension\AbuseFilter\Hooks\AbuseFilterShouldFilterActionHook;
 use MediaWiki\Extension\AbuseFilter\Variables\VariableHolder;
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalPageMoveJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use RecentChange;
 
 // phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
 

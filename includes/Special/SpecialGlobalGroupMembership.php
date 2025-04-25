@@ -20,10 +20,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use LogEventsList;
-use LogPage;
-use ManualLogEntry;
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -31,6 +30,9 @@ use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
+use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Logging\LogPage;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -42,8 +44,6 @@ use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\Xml\Xml;
 use MediaWiki\Xml\XmlSelect;
-use PermissionsError;
-use UserBlockedError;
 
 /**
  * Equivalent of Special:Userrights for global groups.

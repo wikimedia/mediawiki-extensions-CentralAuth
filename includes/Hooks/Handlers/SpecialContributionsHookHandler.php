@@ -20,11 +20,11 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use LogEventsList;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\ContributionsToolLinksHook;
 use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
+use MediaWiki\Logging\LogEventsList;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;

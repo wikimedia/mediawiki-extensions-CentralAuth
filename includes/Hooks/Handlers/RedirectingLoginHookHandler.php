@@ -20,11 +20,11 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use ErrorPageError;
 use LogicException;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;

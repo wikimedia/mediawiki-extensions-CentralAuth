@@ -21,6 +21,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -40,7 +41,6 @@ use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\WikiMap\WikiMap;
-use PermissionsError;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Wikimedia\Rdbms\IDBAccessObject;

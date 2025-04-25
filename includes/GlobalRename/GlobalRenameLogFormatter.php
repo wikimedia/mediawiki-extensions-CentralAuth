@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use LogFormatter;
+use MediaWiki\Logging\LogFormatter;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\WikiMap\WikiMap;
