@@ -33,7 +33,7 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 		$this->assertSame( $expectedGroupsToRemove, $groupsToRemove );
 	}
 
-	public function provideHandleAutomaticGlobalGroups() {
+	public static function provideHandleAutomaticGlobalGroups() {
 		return [
 			'Having a group causes an automatic group to be added' => [
 				[ 'test-group' ],
@@ -99,7 +99,7 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 		$this->assertSame( $expectedGroupsToRemove, $groupsToRemove );
 	}
 
-	public function provideHandleAutomaticGlobalGroupsManually() {
+	public static function provideHandleAutomaticGlobalGroupsManually() {
 		return [
 			'An automatic group cannot be manually removed if it should be present' => [
 				[ 'test-group', 'automatic-group' ],

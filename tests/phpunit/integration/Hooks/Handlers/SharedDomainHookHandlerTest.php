@@ -39,7 +39,7 @@ use Wikimedia\TestingAccessWrapper;
 class SharedDomainHookHandlerTest extends ApiTestCase {
 	use MockWikiMapTrait;
 
-	public function provideSharedDomainRestrictions() {
+	public static function provideSharedDomainRestrictions() {
 		return [
 			// is SUL3 shared domain, should restrict
 			[ false, true ],
@@ -216,7 +216,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		);
 	}
 
-	public function provideAuthManagerFilterProviders() {
+	public static function provideAuthManagerFilterProviders() {
 		return [
 			// shared, sul3, expect local providers
 			[ false, false, true ],
@@ -416,7 +416,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		}
 	}
 
-	public function provideOnSiteNoticeBefore() {
+	public static function provideOnSiteNoticeBefore() {
 		return [
 			'does nothing in SUL2 mode' => [
 				'isSkipped' => false,

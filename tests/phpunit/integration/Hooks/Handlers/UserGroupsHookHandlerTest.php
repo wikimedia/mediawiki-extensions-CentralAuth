@@ -119,7 +119,7 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
-	public function provideGlobalGroupMembershipPermission() {
+	public static function provideGlobalGroupMembershipPermission() {
 		return [
 			'Groups are updated when the performer has permission' => [ true ],
 			'Groups are updated when the performer does not have permission' => [ false ],

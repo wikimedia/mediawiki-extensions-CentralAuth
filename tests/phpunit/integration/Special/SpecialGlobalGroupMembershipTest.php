@@ -392,7 +392,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		$this->assertEquals( $expected, $caUser->getGlobalGroups() );
 	}
 
-	public function provideSaveWithAutomaticGroup() {
+	public static function provideSaveWithAutomaticGroup() {
 		return [
 			'Automatic global group is not removed if user has a local group' => [
 				'localgroup',
@@ -423,7 +423,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		);
 	}
 
-	public function provideGetLogReason() {
+	public static function provideGetLogReason() {
 		return [
 			'No automatic groups are changed, reason is unchanged' => [
 				'Test reason',

@@ -109,7 +109,7 @@ class ApiGlobalUserRightsTest extends ApiTestCase {
 		);
 	}
 
-	public function provideExecuteWithAutomaticGlobalGroupsAndLocalGroup() {
+	public static function provideExecuteWithAutomaticGlobalGroupsAndLocalGroup() {
 		return [
 			'Automatic global group is not removed if user has a local group' => [
 				'localgroup',

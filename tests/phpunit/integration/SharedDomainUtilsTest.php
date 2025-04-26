@@ -120,7 +120,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expected, $actual );
 	}
 
-	public function provideIsSul3Enabled_Api() {
+	public static function provideIsSul3Enabled_Api() {
 		return [
 			// are we on the shared domain?, is this an API request?, should SUL3 be enabled?
 			[ true, true, true ],

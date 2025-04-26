@@ -78,7 +78,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedUrl, $actualUrl );
 	}
 
-	public function provideGetUrlData() {
+	public static function provideGetUrlData() {
 		$centralDomain = CentralDomainUtils::CENTRAL_DOMAIN_ID;
 		$autologinDomain = CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID;
 		$sul2Domain = CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID;
