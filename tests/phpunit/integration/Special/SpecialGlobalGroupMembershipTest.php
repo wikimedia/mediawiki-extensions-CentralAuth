@@ -437,7 +437,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 				[ 'automatic-group-1', 'automatic-group-2' ],
 				[],
 			],
-			'Automatic groups are added, reason is updated' => [
+			'Automatic groups are removed, reason is updated' => [
 				'(centralauth-automatic-global-groups-reason-global: Test reason)',
 				'Test reason',
 				[],
