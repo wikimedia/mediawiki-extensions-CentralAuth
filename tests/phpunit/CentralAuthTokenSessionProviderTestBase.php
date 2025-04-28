@@ -113,7 +113,7 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 		$tokenManager->tokenize(
 			$data,
 			'api-token',
-			[ 'token' => $loginToken, 'expiry' => BagOStuff::TTL_HOUR ]
+			[ 'token' => $loginToken ]
 		);
 		return $loginToken;
 	}

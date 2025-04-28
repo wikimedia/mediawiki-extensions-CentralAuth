@@ -12,7 +12,6 @@ use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
-use MediaWiki\MainConfigNames;
 use MediaWiki\ResourceLoader\ClientHtml;
 use MediaWiki\User\UserNameUtils;
 use MobileContext;
@@ -117,13 +116,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			'returnUrl' => $returnToUrl,
 			'clientPref' => $clientPref,
 		];
-		// ObjectCacheSessionExpiry will limit how long the local login process, which relies
-		// on the session, can be finished. Sync the expiry of this token (which will be used
-		// when central login ends) with that.
-		$expiry = $this->config->get( MainConfigNames::ObjectCacheSessionExpiry );
-		$token = $this->tokenManager->tokenize(
-			$data, self::START_TOKEN_KEY_PREFIX, [ 'expiry' => $expiry ]
-		);
+		$token = $this->tokenManager->tokenize( $data, self::START_TOKEN_KEY_PREFIX );
 
 		$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
 		$url = wfAppendQuery(
