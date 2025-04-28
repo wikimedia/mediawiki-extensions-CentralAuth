@@ -94,7 +94,7 @@
 	"centralauth-admin-reason": "Прычына:",
 	"centralauth-admin-reason-other": "Іншая/дадатковая прычына:",
 	"centralauth-admin-reason-other-select": "Іншая прычына",
-	"centralauth-admin-setstatus-success": "Вы зьмянілі статус гэтага глябальнага рахунку.",
+	"centralauth-admin-setstatus-success": "Вы зьмянілі статус глябальнага рахунку „$1“.",
 	"centralauth-admin-status": "Устанавіць статус глябальнага рахунку",
 	"centralauth-admin-status-hidden": "Схаваны:",
 	"centralauth-admin-status-hidden-list": "Рахунак схаваны з глябальнага сьпісу ўдзельнікаў",
