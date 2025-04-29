@@ -130,7 +130,7 @@
 	"centralauth-admin-reason-other": "その他の理由:",
 	"centralauth-admin-reason-other-select": "その他の理由",
 	"centralauth-admin-rename-in-progress": "このアカウントは現在名前を変更中です。名前の変更の[[Special:GlobalRenameProgress/$1|進捗状況を閲覧]]できます。この利用者のグローバル名変更記録は以下に表示されます。",
-	"centralauth-admin-setstatus-success": "このグローバルアカウントの状態を変更しました。",
+	"centralauth-admin-setstatus-success": "グローバルアカウント「$1」の状態を変更しました。",
 	"centralauth-admin-status": "グローバルアカウントの状態の設定",
 	"centralauth-admin-status-hidden": "秘匿:",
 	"centralauth-admin-status-hidden-list": "アカウントはグローバル利用者一覧から秘匿されています",
