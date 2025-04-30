@@ -295,7 +295,7 @@
 	"centralauth-logout-no-others": "Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.",
 	"centralauth-logout-progress": "Kirjaudutaan ulos {{PLURAL:$2|muusta|muista}} {{int:Centralauth-groupname}} -{{PLURAL:$2|wikistä|wikeistä}}:",
 	"centralauth-merge-attempt": "'''Verrataan annettua salasanaa jäljellä oleviin liittämättömiin tunnuksiin...'''",
-	"centralauth-merge-denied": "Et ole oikeutettu käyttämään tätä sivua.",
+	"centralauth-merge-denied": "Sinulla ei ole oikeutta päästä käyttämään tätä sivua.",
 	"centralauth-merge-dryrun-complete": "Kaikki käyttäjätunnuksesi voidaan yhdistää automaattisesti.\n\nMitään muutoksia ei ole vielä tehty.",
 	"centralauth-merge-dryrun-home": "Järjestelmä ei pystynyt varmentamaan, että sinä olet kotiwikisi käyttäjätunnuksen omistaja tällä käyttäjänimellä.\n\nKäyttäjänimesi kotiwikiksi on arvioitu toinen wiki; napsauta seuraavaa linkkiä ja kirjaudu sisään viimeistelläksesi käyttäjätunnuksien yhdistämisen.",
 	"centralauth-merge-dryrun-incomplete": "Olet valmis jatkamaan, mutta kaikkia tunnuksia ei voitu varmistaa automaattisesti, joten niitä ei yhdistetä heti.\nSinulle tulee myöhemmin mahdollisuus yhdistää ne.\n\nMitään muutoksia ei ole vielä tehty.",
