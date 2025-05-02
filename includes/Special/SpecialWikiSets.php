@@ -230,9 +230,16 @@ class SpecialWikiSets extends SpecialPage {
 				$form['centralauth-editset-usage'] = $usage;
 			}
 			$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
-			$form['centralauth-editset-wikis'] = Xml::textarea( 'wpWikis', $wikis );
-			$form['centralauth-editset-restwikis'] = Xml::textarea( 'wpRestWikis',
-				implode( "\n", $restWikis ), 40, 5, [ 'readonly' => true ] );
+			$form['centralauth-editset-wikis'] = Html::element(
+					'textarea',
+					[ 'name' => 'wpWikis', 'cols' => 40, 'rows' => 5 ],
+					$wikis
+				) .
+			$form['centralauth-editset-restwikis'] = Html::element(
+					'textarea',
+					[ 'name' => 'wpRestWikis', 'cols' => 40, 'rows' => 5, 'readonly' => true ],
+					implode( "\n", $restWikis )
+				) .
 			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason ?? '' );
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );

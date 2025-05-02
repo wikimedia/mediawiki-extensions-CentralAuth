@@ -513,8 +513,11 @@ class SpecialMultiLock extends SpecialPage {
 				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-username' )->text()
 				) .
-				Xml::textarea( 'wpTarget',
-					( $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ) ), 25, 20 ) .
+				Html::element(
+					'textarea',
+					[ 'name' => 'wpTarget', 'cols' => 25, 'rows' => 20 ],
+					( $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ) )
+				) .
 				Xml::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
 				) .
