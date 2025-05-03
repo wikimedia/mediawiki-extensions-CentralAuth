@@ -454,7 +454,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'centralauth-readmore-text' );
 
 		if ( $merged ) {
-			$this->getOutput()->addHTML( Xml::element( 'hr' ) );
+			$this->getOutput()->addHTML( Html::element( 'hr' ) );
 			$this->getOutput()->addWikiMsg(
 				'centralauth-list-attached',
 				$this->mUserName,
@@ -464,7 +464,7 @@ class SpecialMergeAccount extends SpecialPage {
 		}
 
 		if ( $remainder ) {
-			$this->getOutput()->addHTML( Xml::element( 'hr' ) );
+			$this->getOutput()->addHTML( Html::element( 'hr' ) );
 			$this->getOutput()->addWikiMsg(
 				'centralauth-list-unattached',
 				$this->mUserName,
@@ -587,7 +587,7 @@ class SpecialMergeAccount extends SpecialPage {
 				[
 					'method' => 'post',
 					'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ] ) .
-			Xml::element( 'h2', [], $title ) .
+			Html::element( 'h2', [], $title ) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'wpMergeAction', $action ) .
 			Html::hidden( 'wpMergeSessionToken', $this->mSessionToken ) .
@@ -596,7 +596,7 @@ class SpecialMergeAccount extends SpecialPage {
 			$text .
 
 			Html::closeElement( 'form' ) .
-			Xml::element( 'br', [ 'clear' => 'all' ] ) .
+			Html::element( 'br', [ 'clear' => 'all' ] ) .
 			Html::closeElement( 'div' );
 	}
 

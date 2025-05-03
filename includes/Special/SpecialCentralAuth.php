@@ -744,7 +744,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$html .= Html::rawElement( 'td', [], $this->adminCheck( $row['wiki'] ) );
 			} else {
 				// Account is unattached, don't show checkbox to detach
-				$html .= Xml::element( 'td' );
+				$html .= Html::element( 'td' );
 			}
 		}
 
@@ -1054,7 +1054,7 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( $params ) {
 			$url .= '?' . $params;
 		}
-		return Xml::element( 'a',
+		return Html::element( 'a',
 			[
 				'href' => $url,
 				'title' => $hint,

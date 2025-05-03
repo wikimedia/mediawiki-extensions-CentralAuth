@@ -508,9 +508,9 @@ class SpecialMultiLock extends SpecialPage {
 				'action' => $this->getPageTitle()->getLocalUrl()
 			],
 			Xml::tags( 'fieldset', [],
-				Xml::element( 'legend', [], $this->msg( 'centralauth-admin-manage' )->text() ) .
+				Html::element( 'legend', [], $this->msg( 'centralauth-admin-manage' )->text() ) .
 				Html::hidden( 'wpMethod', 'search' ) .
-				Xml::element( 'p', [],
+				Html::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-username' )->text()
 				) .
 				Html::element(
@@ -518,7 +518,7 @@ class SpecialMultiLock extends SpecialPage {
 					[ 'name' => 'wpTarget', 'cols' => 25, 'rows' => 20 ],
 					( $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ) )
 				) .
-				Xml::element( 'p', [],
+				Html::element( 'p', [],
 					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
 				) .
 				Html::input( 'wpSearchTarget', $this->mPrefixSearch ) .

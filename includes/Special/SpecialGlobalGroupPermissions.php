@@ -664,7 +664,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	protected function showLogFragment( $group, $output ) {
 		$title = SpecialPage::getTitleFor( 'GlobalUsers', $group );
 		$logPage = new LogPage( 'gblrights' );
-		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
+		$output->addHTML( Html::element( 'h2', [], $logPage->getName()->text() . "\n" ) );
 		LogEventsList::showLogExtract( $output, 'gblrights', $title->getPrefixedText() );
 	}
 

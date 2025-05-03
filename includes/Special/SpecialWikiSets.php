@@ -519,7 +519,7 @@ class SpecialWikiSets extends SpecialPage {
 		$title = $this->getPageTitle( $number );
 		$logPage = new LogPage( 'gblrights' );
 		$out = $this->getOutput();
-		$out->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
+		$out->addHTML( Html::element( 'h2', [], $logPage->getName()->text() . "\n" ) );
 		LogEventsList::showLogExtract( $out, 'gblrights', $title->getPrefixedText() );
 	}
 

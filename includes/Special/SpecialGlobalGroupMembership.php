@@ -616,7 +616,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				implode( ',', $user->getGlobalGroups() )
 			) .
 			Html::openElement( 'fieldset' ) .
-			Xml::element(
+			Html::element(
 				'legend',
 				[],
 				$this->msg(
@@ -691,9 +691,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		// Build the HTML table
 		$ret .= Html::openElement( 'table', [ 'class' => 'mw-userrights-groups' ] ) .
 			"<tr>\n";
-		$ret .= Xml::element(
+		$ret .= Html::element(
 			'th',
-			null,
+			[],
 			$this->msg( 'userrights-changeable-col', count( $allgroups ) )->text()
 		);
 
@@ -716,7 +716,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 			$currentExpiry = $currentGroups[$group] ?? null;
 
-			$expiryHtml = Xml::element( 'span', null,
+			$expiryHtml = Html::element( 'span', [],
 				$this->msg( 'userrights-expiry' )->text() );
 			$expiryHtml .= Html::openElement( 'span' );
 
@@ -792,7 +792,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 */
 	private function showLogFragment( $user, $output ) {
 		$logPage = new LogPage( 'gblrights' );
-		$output->addHTML( Xml::element( 'h2', null, $logPage->getName()->text() . "\n" ) );
+		$output->addHTML( Html::element( 'h2', [], $logPage->getName()->text() . "\n" ) );
 		LogEventsList::showLogExtract(
 			$output,
 			'gblrights',
