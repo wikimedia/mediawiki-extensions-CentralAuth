@@ -524,12 +524,12 @@ class SpecialMergeAccount extends SpecialPage {
 			$itemMethods[] = $methods[$item] ?? '';
 		}
 
-		$html = Xml::openElement( 'ul' ) . "\n";
+		$html = Html::openElement( 'ul' ) . "\n";
 		$list = array_map( $callback, $items, $itemMethods );
 		foreach ( $list as $item ) {
 			$html .= Html::rawElement( 'li', [], $item ) . "\n";
 		}
-		$html .= Xml::closeElement( 'ul' ) . "\n";
+		$html .= Html::closeElement( 'ul' ) . "\n";
 
 		return $html;
 	}
@@ -582,8 +582,8 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string HTML of form
 	 */
 	private function actionForm( $action, $title, $text ) {
-		return Xml::openElement( 'div', [ 'id' => "userloginForm" ] ) .
-			Xml::openElement( 'form',
+		return Html::openElement( 'div', [ 'id' => "userloginForm" ] ) .
+			Html::openElement( 'form',
 				[
 					'method' => 'post',
 					'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ] ) .
@@ -595,9 +595,9 @@ class SpecialMergeAccount extends SpecialPage {
 
 			$text .
 
-			Xml::closeElement( 'form' ) .
+			Html::closeElement( 'form' ) .
 			Xml::element( 'br', [ 'clear' => 'all' ] ) .
-			Xml::closeElement( 'div' );
+			Html::closeElement( 'div' );
 	}
 
 	/**

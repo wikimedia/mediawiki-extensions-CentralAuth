@@ -128,7 +128,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			// @todo Move this out of main view to a separate page
 			$html = Xml::fieldset( $this->msg( 'centralauth-newgroup-legend' )->text() );
 			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
-			$html .= Xml::openElement( 'form', [
+			$html .= Html::openElement( 'form', [
 				'method' => 'post',
 				'action' => $this->getConfig()->get( MainConfigNames::Script ),
 				'name' => 'centralauth-globalgroups-newgroup'
@@ -138,8 +138,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Xml::input( 'wpGroup' ) ];
 
 			$html .= Xml::buildForm( $fields, 'centralauth-globalgroupperms-creategroup-submit' );
-			$html .= Xml::closeElement( 'form' );
-			$html .= Xml::closeElement( 'fieldset' );
+			$html .= Html::closeElement( 'form' );
+			$html .= Html::closeElement( 'fieldset' );
 
 			$out->addHTML( $html );
 		}
@@ -299,7 +299,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		);
 
 		if ( $editable ) {
-			$html .= Xml::openElement( 'form', [
+			$html .= Html::openElement( 'form', [
 				'method' => 'post',
 				'action' => $this->getPageTitle( $group )->getLocalUrl(),
 				'name' => 'centralauth-globalgroups-newgroup'
@@ -350,10 +350,10 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$html .= Xml::buildForm( $fields, $editable ? 'centralauth-editgroup-submit' : null );
 
 		if ( $editable ) {
-			$html .= Xml::closeElement( 'form' );
+			$html .= Html::closeElement( 'form' );
 		}
 
-		$html .= Xml::closeElement( 'fieldset' );
+		$html .= Html::closeElement( 'fieldset' );
 
 		$this->getOutput()->addHTML( $html );
 

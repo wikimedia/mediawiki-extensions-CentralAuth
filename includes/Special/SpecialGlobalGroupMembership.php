@@ -599,7 +599,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 		$canChangeAny = $this->changeableGroups() !== [];
 		$this->getOutput()->addHTML(
-			Xml::openElement(
+			Html::openElement(
 				'form',
 				[
 					'method' => 'post',
@@ -615,7 +615,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				'conflictcheck-originalgroups',
 				implode( ',', $user->getGlobalGroups() )
 			) .
-			Xml::openElement( 'fieldset' ) .
+			Html::openElement( 'fieldset' ) .
 			Xml::element(
 				'legend',
 				[],
@@ -634,7 +634,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				$this->msg( 'userrights-groups-help', $user->getName() )->parse() .
 				$grouplist .
 				$this->groupCheckboxes( $user ) .
-				Xml::openElement( 'table', [ 'id' => 'mw-userrights-table-outer' ] ) .
+				Html::openElement( 'table', [ 'id' => 'mw-userrights-table-outer' ] ) .
 					"<tr>
 						<td class='mw-label'>" .
 							Xml::label( $this->msg( 'userrights-reason' )->text(), 'wpReason' ) .
@@ -658,14 +658,14 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 							) .
 						"</td>
 					</tr>" .
-				Xml::closeElement( 'table' ) . "\n"
+				Html::closeElement( 'table' ) . "\n"
 			);
 		} else {
 			$this->getOutput()->addHTML( $grouplist );
 		}
 		$this->getOutput()->addHTML(
-			Xml::closeElement( 'fieldset' ) .
-			Xml::closeElement( 'form' ) . "\n"
+			Html::closeElement( 'fieldset' ) .
+			Html::closeElement( 'form' ) . "\n"
 		);
 	}
 
@@ -689,7 +689,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			: XmlSelect::parseOptionsMessage( $expiryOptionsMsg->text() );
 
 		// Build the HTML table
-		$ret .= Xml::openElement( 'table', [ 'class' => 'mw-userrights-groups' ] ) .
+		$ret .= Html::openElement( 'table', [ 'class' => 'mw-userrights-groups' ] ) .
 			"<tr>\n";
 		$ret .= Xml::element(
 			'th',
@@ -718,7 +718,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 			$expiryHtml = Xml::element( 'span', null,
 				$this->msg( 'userrights-expiry' )->text() );
-			$expiryHtml .= Xml::openElement( 'span' );
+			$expiryHtml .= Html::openElement( 'span' );
 
 			// add a form element to set the expiry date
 			$expiryFormOptions = new XmlSelect(
@@ -758,7 +758,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			];
 			$expiryHtml .= Xml::input( "wpExpiry-$group-other", 30, '', $attribs );
 
-			$expiryHtml .= Xml::closeElement( 'span' );
+			$expiryHtml .= Html::closeElement( 'span' );
 
 			$divAttribs = [
 				'id' => "mw-userrights-nested-wpGroup-$group",
@@ -771,7 +771,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		}
 		$ret .= "\t</td>\n";
 
-		$ret .= Xml::closeElement( 'tr' ) . Xml::closeElement( 'table' );
+		$ret .= Html::closeElement( 'tr' ) . Html::closeElement( 'table' );
 
 		return $ret;
 	}

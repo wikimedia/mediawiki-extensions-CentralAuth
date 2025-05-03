@@ -298,7 +298,7 @@ class SpecialMultiLock extends SpecialPage {
 	private function showTableHeader() {
 		$out = $this->getOutput();
 
-		$header = Xml::openElement(
+		$header = Html::openElement(
 			'form',
 			[
 				'method' => 'POST',
@@ -311,7 +311,7 @@ class SpecialMultiLock extends SpecialPage {
 		$header .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 		$header .= $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock();
 
-		$header .= Xml::openElement(
+		$header .= Html::openElement(
 			'table',
 			[ 'class' => 'wikitable sortable mw-centralauth-wikislist' ]
 		);
@@ -365,7 +365,7 @@ class SpecialMultiLock extends SpecialPage {
 		$this->showTableHeader();
 
 		foreach ( $this->mGlobalUsers as $globalUser ) {
-			$rowText = Xml::openElement( 'tr' );
+			$rowText = Html::openElement( 'tr' );
 
 			if ( $globalUser instanceof CentralAuthUser ) {
 				$rowText .= $this->getUserTableRow( $globalUser );
@@ -377,7 +377,7 @@ class SpecialMultiLock extends SpecialPage {
 				);
 			}
 
-			$rowText .= Xml::closeElement( 'tr' );
+			$rowText .= Html::closeElement( 'tr' );
 			$out->addHTML( $rowText );
 		}
 

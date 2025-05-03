@@ -405,7 +405,7 @@ class SpecialCentralAuth extends SpecialPage {
 		// centralauth-admin-info-username, centralauth-admin-info-registered,
 		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
 		// centralauth-admin-info-hidden, centralauth-admin-info-groups
-		$content = Xml::openElement( "ul" );
+		$content = Html::openElement( "ul" );
 		foreach ( $attribs as $key => [ 'label' => $msg, 'data' => $data ] ) {
 			$content .= Html::rawElement(
 				'li',
@@ -416,7 +416,7 @@ class SpecialCentralAuth extends SpecialPage {
 					->parse()
 			);
 		}
-		$content .= Xml::closeElement( "ul" );
+		$content .= Html::closeElement( "ul" );
 
 		$this->getOutput()->addHTML( $this->getFramedFieldsetLayout(
 			$content, 'centralauth-admin-info-header', 'mw-centralauth-info'
@@ -568,7 +568,7 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
-		$header = Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
+		$header = Html::openElement( 'thead' ) . Html::openElement( 'tr' );
 		$header .= Html::element(
 			'th',
 			[],
@@ -579,7 +579,7 @@ class SpecialCentralAuth extends SpecialPage {
 			[ 'class' => 'unsortable' ],
 			$this->msg( 'centralauth-admin-globalblock-exempt-list-reason-heading' )->text()
 		);
-		$header .= Xml::closeElement( 'tr' ) . Xml::closeElement( 'thead' );
+		$header .= Html::closeElement( 'tr' ) . Html::closeElement( 'thead' );
 
 		$body = Html::rawElement( 'tbody', [], $tableRows );
 
@@ -697,14 +697,14 @@ class SpecialCentralAuth extends SpecialPage {
 			"groups",
 		];
 
-		$header = Xml::openElement( 'thead' ) . Xml::openElement( 'tr' );
+		$header = Html::openElement( 'thead' ) . Html::openElement( 'tr' );
 		if ( $showUnmergeCheckboxes ) {
 			$header .= Html::element( 'th', [ 'class' => 'unsortable' ] );
 		}
 		foreach ( $columns as $c ) {
 			$header .= Html::element( 'th', [], $this->msg( "centralauth-admin-list-$c" )->text() );
 		}
-		$header .= Xml::closeElement( 'tr' ) . Xml::closeElement( 'thead' );
+		$header .= Html::closeElement( 'tr' ) . Html::closeElement( 'thead' );
 
 		$body = Html::rawElement(
 			'tbody', [],
@@ -737,7 +737,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string The HTML row that represents the provided array
 	 */
 	private function listWikiItem( array $row, bool $showUnmergeCheckboxes ): string {
-		$html = Xml::openElement( 'tr' );
+		$html = Html::openElement( 'tr' );
 
 		if ( $showUnmergeCheckboxes ) {
 			if ( !empty( $row['attachedMethod'] ) ) {
@@ -769,7 +769,7 @@ class SpecialCentralAuth extends SpecialPage {
 				[ 'data-sort-value' => count( $row['groupMemberships'] ) ],
 				$this->formatGroups( $row )
 			) .
-			Xml::closeElement( 'tr' );
+			Html::closeElement( 'tr' );
 
 		return $html;
 	}
@@ -781,16 +781,16 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function getAttachedTimestampField( $attachedTimestamp ) {
 		if ( !$attachedTimestamp ) {
-			$html = Xml::openElement( 'td', [ 'data-sort-value' => '0' ] ) .
+			$html = Html::openElement( 'td', [ 'data-sort-value' => '0' ] ) .
 				$this->msg( 'centralauth-admin-unattached' )->parse();
 		} else {
-			$html = Xml::openElement( 'td',
+			$html = Html::openElement( 'td',
 				[ 'data-sort-value' => $attachedTimestamp ] ) .
 				// visible date and time in users preference
 				htmlspecialchars( $this->getLanguage()->timeanddate( $attachedTimestamp, true ) );
 		}
 
-		$html .= Xml::closeElement( 'td' );
+		$html .= Html::closeElement( 'td' );
 		return $html;
 	}
 
