@@ -420,7 +420,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			$desc = $this->formatRight( $right );
 
-			$checkbox = Xml::check( "wpRightAssigned-$right", $checked,
+			$checkbox = Html::check( "wpRightAssigned-$right", $checked,
 				array_merge( $attribs, [ 'id' => "wpRightAssigned-$right" ] ) );
 			$label = Xml::tags( 'label', [ 'for' => "wpRightAssigned-$right" ],
 					$desc );

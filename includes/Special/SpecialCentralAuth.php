@@ -40,7 +40,6 @@ use MediaWiki\User\UserNameUtils;
 use MediaWiki\Utils\MWTimestamp;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\WikiMap\WikiReference;
-use MediaWiki\Xml\Xml;
 use OOUI\FieldLayout;
 use OOUI\FieldsetLayout;
 use OOUI\HtmlSnippet;
@@ -1087,7 +1086,7 @@ class SpecialCentralAuth extends SpecialPage {
 	 * @return string
 	 */
 	private function adminCheck( $wikiID ) {
-		return Xml::check( 'wpWikis[]', false, [ 'value' => $wikiID ] );
+		return Html::check( 'wpWikis[]', false, [ 'value' => $wikiID ] );
 	}
 
 	/**

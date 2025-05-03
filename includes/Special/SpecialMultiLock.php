@@ -267,7 +267,7 @@ class SpecialMultiLock extends SpecialPage {
 			$this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text()
 		);
 		$reasonField = Xml::input( 'wpReason', 45, false );
-		$botField = Xml::check( 'markasbot' ) .
+		$botField = Html::check( 'markasbot' ) .
 			$this->msg( 'centralauth-admin-multi-botcheck' )->parse();
 
 		$form .= Xml::buildForm(
