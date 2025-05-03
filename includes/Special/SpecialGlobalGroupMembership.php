@@ -652,7 +652,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 					<tr>
 						<td></td>
 						<td class='mw-submit'>" .
-							Xml::submitButton( $this->msg( 'saveusergroups', $user->getName() )->text(),
+							Html::submitButton( $this->msg( 'saveusergroups', $user->getName() )->text(),
 								[ 'name' => 'saveusergroups' ] +
 									Linker::tooltipAndAccesskeyAttribs( 'userrights-set' )
 							) .

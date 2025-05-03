@@ -523,7 +523,7 @@ class SpecialMultiLock extends SpecialPage {
 				) .
 				Html::input( 'wpSearchTarget', $this->mPrefixSearch ) .
 				Xml::tags( 'p', [],
-					Xml::submitButton( $this->msg( 'centralauth-admin-lookup-ro' )->text() )
+					Html::submitButton( $this->msg( 'centralauth-admin-lookup-ro' )->text() )
 				)
 			)
 		);

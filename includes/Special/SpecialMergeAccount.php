@@ -625,7 +625,7 @@ class SpecialMergeAccount extends SpecialPage {
 			Html::rawElement( 'tr', [],
 				Html::rawElement( 'td' ) .
 				Html::rawElement( 'td', [],
-					Xml::submitButton( $submit, [ 'name' => 'wpLogin' ] )
+					Html::submitButton( $submit, [ 'name' => 'wpLogin' ] )
 				)
 			)
 		);
@@ -681,7 +681,7 @@ class SpecialMergeAccount extends SpecialPage {
 
 		$html .= $this->listAttached( $attached, $methods ) .
 			Html::rawElement( 'p', [],
-				Xml::submitButton( $this->msg( 'centralauth-merge-step3-submit' )->text(),
+				Html::submitButton( $this->msg( 'centralauth-merge-step3-submit' )->text(),
 					[ 'name' => 'wpLogin' ] )
 			);
 
