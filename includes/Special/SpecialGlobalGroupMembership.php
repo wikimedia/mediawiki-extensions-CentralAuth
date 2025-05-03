@@ -42,7 +42,6 @@ use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
-use MediaWiki\Xml\Xml;
 use MediaWiki\Xml\XmlSelect;
 
 /**
@@ -637,7 +636,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				Html::openElement( 'table', [ 'id' => 'mw-userrights-table-outer' ] ) .
 					"<tr>
 						<td class='mw-label'>" .
-							Xml::label( $this->msg( 'userrights-reason' )->text(), 'wpReason' ) .
+							Html::label( $this->msg( 'userrights-reason' )->text(), 'wpReason' ) .
 						"</td>
 						<td class='mw-input'>" .
 							Html::input( 'user-reason', $this->getRequest()->getVal( 'user-reason' ) ?? false, 'text', [
@@ -766,9 +765,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				'id' => "mw-userrights-nested-wpGroup-$group",
 				'class' => 'mw-userrights-nested',
 			];
-			$checkboxHtml .= "\t\t\t" . Xml::tags( 'div', $divAttribs, $expiryHtml ) . "\n";
+			$checkboxHtml .= "\t\t\t" . Html::rawElement( 'div', $divAttribs, $expiryHtml ) . "\n";
 
-			$ret .= "\t\t" . Xml::tags( 'div', [], $checkboxHtml
+			$ret .= "\t\t" . Html::rawElement( 'div', [], $checkboxHtml
 			) . "\n";
 		}
 		$ret .= "\t</td>\n";

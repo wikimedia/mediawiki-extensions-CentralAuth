@@ -13,7 +13,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
-use MediaWiki\Xml\Xml;
 use MWCryptRand;
 use RuntimeException;
 use Wikimedia\AtEase\AtEase;
@@ -611,7 +610,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$table = Html::rawElement( 'table', [],
 			Html::rawElement( 'tr', [],
 				Html::rawElement( 'td', [],
-					Xml::label(
+					Html::label(
 						$this->msg( 'centralauth-finish-password' )->text(),
 						'wpPassword1'
 					)

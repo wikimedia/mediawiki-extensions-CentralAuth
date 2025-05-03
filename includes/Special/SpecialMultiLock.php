@@ -502,12 +502,12 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	private function showUsernameForm() {
-		$form = Xml::tags( 'form',
+		$form = Html::rawElement( 'form',
 			[
 				'method' => 'post',
 				'action' => $this->getPageTitle()->getLocalUrl()
 			],
-			Xml::tags( 'fieldset', [],
+			Html::rawElement( 'fieldset', [],
 				Html::element( 'legend', [], $this->msg( 'centralauth-admin-manage' )->text() ) .
 				Html::hidden( 'wpMethod', 'search' ) .
 				Html::element( 'p', [],
@@ -522,7 +522,7 @@ class SpecialMultiLock extends SpecialPage {
 					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
 				) .
 				Html::input( 'wpSearchTarget', $this->mPrefixSearch ) .
-				Xml::tags( 'p', [],
+					Html::rawElement( 'p', [],
 					Html::submitButton( $this->msg( 'centralauth-admin-lookup-ro' )->text() )
 				)
 			)
