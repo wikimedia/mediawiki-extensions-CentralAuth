@@ -135,7 +135,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			] );
 			$html .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
 
-			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Xml::input( 'wpGroup' ) ];
+			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Html::input( 'wpGroup' ) ];
 
 			$html .= Xml::buildForm( $fields, 'centralauth-globalgroupperms-creategroup-submit' );
 			$html .= Html::closeElement( 'form' );
@@ -311,7 +311,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$fields = [];
 
 		if ( $editable ) {
-			$fields['centralauth-editgroup-name'] = Xml::input( 'wpGlobalGroupName', 50, $group );
+			$fields['centralauth-editgroup-name'] = Html::input(
+				'wpGlobalGroupName', $group, 'text', [ 'size' => 50 ]
+			);
 		} else {
 			$fields['centralauth-editgroup-name'] = htmlspecialchars( $group );
 		}
@@ -344,7 +346,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes( $group );
 
 		if ( $editable ) {
-			$fields['centralauth-editgroup-reason'] = Xml::input( 'wpReason', 60 );
+			$fields['centralauth-editgroup-reason'] = Html::input( 'wpReason', '', 'text', [ 'size' => 60 ] );
 		}
 
 		$html .= Xml::buildForm( $fields, $editable ? 'centralauth-editgroup-submit' : null );

@@ -225,7 +225,7 @@ class SpecialWikiSets extends SpecialPage {
 			);
 
 			$form = [];
-			$form['centralauth-editset-name'] = Xml::input( 'wpName', false, $name );
+			$form['centralauth-editset-name'] = Html::input( 'wpName', $name );
 			if ( $usage ) {
 				$form['centralauth-editset-usage'] = $usage;
 			}
@@ -240,7 +240,7 @@ class SpecialWikiSets extends SpecialPage {
 					[ 'name' => 'wpRestWikis', 'cols' => 40, 'rows' => 5, 'readonly' => true ],
 					implode( "\n", $restWikis )
 				) .
-			$form['centralauth-editset-reason'] = Xml::input( 'wpReason', 50, $reason ?? '' );
+			$form['centralauth-editset-reason'] = Html::input( 'wpReason', $reason ?? '', 'text', [ 'size' => 50 ] );
 
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
 
@@ -334,7 +334,7 @@ class SpecialWikiSets extends SpecialPage {
 		}
 
 		$legend = $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->text();
-		$form = [ 'centralauth-editset-reason' => Xml::input( 'wpReason' ) ];
+		$form = [ 'centralauth-editset-reason' => Html::input( 'wpReason' ) ];
 		$url = $this->getPageTitle( 'delete/' . $subpage )->getLocalUrl();
 		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
 

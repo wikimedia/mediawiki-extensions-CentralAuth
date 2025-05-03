@@ -617,9 +617,10 @@ class SpecialMergeAccount extends SpecialPage {
 					)
 				) .
 				Html::rawElement( 'td', [],
-					Xml::input(
-						'wpPassword', 20, '',
-						[ 'type' => 'password', 'id' => 'wpPassword1' ] )
+					Html::input(
+						'wpPassword', '', 'text',
+						[ 'type' => 'password', 'id' => 'wpPassword1', 'size' => 20 ]
+					)
 				)
 			) .
 			Html::rawElement( 'tr', [],

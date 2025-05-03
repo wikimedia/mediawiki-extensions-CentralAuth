@@ -640,8 +640,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 							Xml::label( $this->msg( 'userrights-reason' )->text(), 'wpReason' ) .
 						"</td>
 						<td class='mw-input'>" .
-							Xml::input( 'user-reason', 60, $this->getRequest()->getVal( 'user-reason' ) ?? false, [
+							Html::input( 'user-reason', $this->getRequest()->getVal( 'user-reason' ) ?? false, 'text', [
 								'id' => 'wpReason',
+								'size' => 60,
 								// HTML maxlength uses "UTF-16 code units", which means that characters outside BMP
 								// (e.g. emojis) count for two each. This limit is overridden in JS to instead count
 								// Unicode codepoints.
@@ -755,8 +756,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			$attribs = [
 				'id' => "mw-input-wpExpiry-$group-other",
 				'class' => 'mw-userrights-expiryfield',
+				'size' => 30,
 			];
-			$expiryHtml .= Xml::input( "wpExpiry-$group-other", 30, '', $attribs );
+			$expiryHtml .= Html::input( "wpExpiry-$group-other", '', 'text', $attribs );
 
 			$expiryHtml .= Html::closeElement( 'span' );
 
