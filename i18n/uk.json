@@ -118,7 +118,7 @@
 	"centralauth-admin-reason-other": "Інша/додаткова причина:",
 	"centralauth-admin-reason-other-select": "Інша причина",
 	"centralauth-admin-rename-in-progress": "Цей обліковий запис наразі в процесі перейменування. Ви можете [[Special:GlobalRenameProgress/$1|переглянути прогрес]] перейменування. Журнал глобальних перейменувань для цього користувача наведено нижче.",
-	"centralauth-admin-setstatus-success": "Ви змінили стан цього глобального облікового запису.",
+	"centralauth-admin-setstatus-success": "Ви змінили статус глобального облікового запису «$1».",
 	"centralauth-admin-status": "Установити стан глобального облікового запису",
 	"centralauth-admin-status-hidden": "Прихований:",
 	"centralauth-admin-status-hidden-list": "Обліковий запис прихований зі списку глобальних користувачів",

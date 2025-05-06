@@ -433,7 +433,7 @@
 	"globalrenamequeue-request-deny-text": "이름 바꾸기 거부",
 	"globalrenamequeue-request-header": "<strong> [$1 $2]</strong>님이 <strong>$3</strong>(으)로 이름을 바꾸는 것을 요청하고 있습니다.",
 	"globalrenamequeue-request-movepages": "사용자 문서 이동",
-	"globalrenamequeue-request-previous-renames": "과거 {{PLURAL:$1|계정명 변경}}",
+	"globalrenamequeue-request-previous-renames": "과거 {{PLURAL:$1|사용자 이름 변경}}",
 	"globalrenamequeue-request-reason": "<strong>이름 바꾸기를 요청하는 이유</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "(승인 시) 공개되는 로그 코멘트",
 	"globalrenamequeue-request-savefailed": "요청 상태 변경을 저장하는 데 실패했습니다.",
