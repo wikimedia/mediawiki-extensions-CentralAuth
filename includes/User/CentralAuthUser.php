@@ -457,6 +457,15 @@ class CentralAuthUser implements IDBAccessObject {
 			return;
 		}
 
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$tempUserConfig = MediaWikiServices::getInstance()->getTempUserConfig();
+		if ( $userNameUtils->isIP( $this->mName )
+			|| ( $tempUserConfig->isEnabled() && $this->mName === $tempUserConfig->getPlaceholderName() )
+		) {
+			$this->loadFromRow( false, [], true );
+			return;
+		}
+
 		// Check the cache (unless the primary database was requested via READ_LATEST)
 		if ( !$recache && $this->mFromPrimary !== true ) {
 			$this->loadFromCache();
