@@ -2416,9 +2416,21 @@ class CentralAuthUser implements IDBAccessObject {
 		$passwordObject = $this->getPasswordObject();
 		$passwordMatchStatus = $this->matchHash( $password, $passwordObject );
 
+		// Log a few bits of the password to differentiate between broken bot sand brute-force attacks.
+		$siteSecret = RequestContext::getMain()->getConfig()->get( 'SecretKey' );
+		$passwordHashKey = 'random long arbitrary unique prefix' . $siteSecret . $this->mName . $this->mGlobalId;
+		$passwordHashFragment = substr( MWCryptHash::hmac( $password, $passwordHashKey, false ), 0, 1 );
+		$request = RequestContext::getMain()->getRequest();
+		$logData = [
+			'user' => $this->mName,
+			'clientip' => $request->getIP(),
+			'ua' => $request->getHeader( 'User-Agent' ),
+			'passwordHashFragment' => $passwordHashFragment,
+		];
+
 		if ( $canAuthenticate === true ) {
 			if ( $passwordMatchStatus->isGood() ) {
-				$this->logger->info( "authentication for '{user}' succeeded", [ 'user' => $this->mName ] );
+				$this->logger->info( "authentication for '{user}' succeeded", $logData );
 
 				$config = RequestContext::getMain()->getConfig();
 				$passwordFactory = new PasswordFactory(
@@ -2450,21 +2462,15 @@ class CentralAuthUser implements IDBAccessObject {
 
 				return [ self::AUTHENTICATE_OK ];
 			} else {
-				$this->logger->info( "authentication for '{user}' failed, bad pass", [ 'user' => $this->mName ] );
+				$this->logger->info( "authentication for '{user}' failed, bad pass", $logData );
 				return [ self::AUTHENTICATE_BAD_PASSWORD ];
 			}
 		} else {
 			if ( $passwordMatchStatus->isGood() ) {
-				$this->logger->info(
-					"authentication for '{user}' failed, correct pass but locked",
-					[ 'user' => $this->mName ]
-				);
+				$this->logger->info( "authentication for '{user}' failed, correct pass but locked", $logData );
 				return [ self::AUTHENTICATE_LOCKED ];
 			} else {
-				$this->logger->info(
-					"authentication for '{user}' failed, locked with wrong password",
-					[ 'user' => $this->mName ]
-				);
+				$this->logger->info( "authentication for '{user}' failed, locked with wrong password", $logData );
 				return [ self::AUTHENTICATE_BAD_PASSWORD, self::AUTHENTICATE_LOCKED ];
 			}
 		}
