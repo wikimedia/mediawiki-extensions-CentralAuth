@@ -96,7 +96,9 @@ class CentralDomainUtils {
 			|| $wikiId === self::SUL2_CENTRAL_DOMAIN_ID
 			|| $wikiId === self::SUL3_CENTRAL_DOMAIN_ID
 		) {
-			if ( $wikiId === self::SUL2_CENTRAL_DOMAIN_ID ) {
+			if ( $wikiId === self::SUL2_CENTRAL_DOMAIN_ID
+				|| !$this->sharedDomainUtils->canSul3BeEnabled()
+			) {
 				$useSul3Domain = false;
 			} else {
 				$useSul3Domain = $this->sharedDomainUtils->isSul3Enabled( $request ) ||
