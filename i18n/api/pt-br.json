@@ -8,7 +8,8 @@
 			"McDutchie",
 			"Stephanyb76",
 			"TheEduGobi",
-			"YuriNikolai"
+			"YuriNikolai",
+			"EGobi"
 		]
 	},
 	"apierror-centralauth-badsession": "Só pode obter um token central ao usar as sessões do CentralAuth.",
