@@ -14,6 +14,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -21,6 +22,7 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\Skin\SkinTemplate;
@@ -68,6 +70,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private CentralAuthTokenManager $tokenManager;
 	private CentralAuthUtilityService $centralAuthUtilityService;
 	private CentralDomainUtils $centralDomainUtils;
+	private SharedDomainUtils $sharedDomainUtils;
 	private LoggerInterface $logger;
 	private string $subpage;
 
@@ -89,7 +92,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		CentralAuthSessionManager $sessionManager,
 		CentralAuthTokenManager $tokenManager,
 		CentralAuthUtilityService $centralAuthUtilityService,
-		CentralDomainUtils $centralDomainUtils
+		CentralDomainUtils $centralDomainUtils,
+		SharedDomainUtils $sharedDomainUtils
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
@@ -101,6 +105,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		$this->tokenManager = $tokenManager;
 		$this->centralAuthUtilityService = $centralAuthUtilityService;
 		$this->centralDomainUtils = $centralDomainUtils;
+		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
@@ -372,7 +377,9 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					return;
 				}
 
-				if ( !$this->getUser()->isRegistered() ) {
+				if ( !$this->getUser()->isRegistered()
+					&& $this->hasDifferentDomainForSul3( $request )
+				) {
 					// Try /checkLoggedIn on both the SUL2 and SUL3 central domains: if it didn't
 					// work on the current one, redirect to the other one.
 					// At this point, requests without a session cookie still need to be cacheable,
@@ -979,5 +986,14 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 
 		return $centralSession;
+	}
+
+	private function hasDifferentDomainForSul3( WebRequest $request ): bool {
+		if ( !$this->sharedDomainUtils->canSul3BeEnabled() ) {
+			return false;
+		}
+		$sul2Url = $this->centralDomainUtils->getUrl( CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID, 'X', $request );
+		$sul3Url = $this->centralDomainUtils->getUrl( CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID, 'X', $request );
+		return parse_url( $sul2Url, PHP_URL_HOST ) !== parse_url( $sul3Url, PHP_URL_HOST );
 	}
 }
