@@ -221,6 +221,12 @@ class SharedDomainUtils {
 
 		$params = [];
 		$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
+		// replicate the non-hook part of LoginSignupSpecialPage::getPreservedParams()
+		$params += [
+			'display' => $request->getRawVal( 'display' ),
+			'uselang' => $request->getRawVal( 'uselang' ),
+			'variant' => $request->getRawVal( 'variant' ),
+		];
 		// already handled in makeUrlDeviceCompliant()
 		unset( $params['useformat'] );
 		// these will be preserved via the 'centralauthLoginToken' parameter, but we don't
