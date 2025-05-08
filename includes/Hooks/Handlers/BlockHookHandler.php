@@ -21,13 +21,13 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Block\AbstractBlock;
+use MediaWiki\Block\BlockTargetFactory;
 use MediaWiki\Block\CompositeBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
 use MediaWiki\Html\Html;
-use MediaWiki\Message\Message;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -41,9 +41,11 @@ class BlockHookHandler implements
 	OtherBlockLogLinkHook
 {
 
+	private BlockTargetFactory $blockTargetFactory;
 	private UserNameUtils $userNameUtils;
 
-	public function __construct( UserNameUtils $userNameUtils ) {
+	public function __construct( BlockTargetFactory $blockTargetFactory, UserNameUtils $userNameUtils ) {
+		$this->blockTargetFactory = $blockTargetFactory;
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -76,7 +78,7 @@ class BlockHookHandler implements
 			&& $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED
 		) {
 			$hideUserBlock = new SystemBlock( [
-				'address' => $user,
+				'target' => $this->blockTargetFactory->newFromUser( $user ),
 				'hideName' => true,
 				'systemBlock' => 'hideuser',
 			] );
@@ -89,11 +91,7 @@ class BlockHookHandler implements
 			$blocks = $block->toArray();
 
 			$blocks[] = $hideUserBlock;
-			$block = new CompositeBlock( [
-				'address' => $ip,
-				'reason' => new Message( 'blockedtext-composite-reason' ),
-				'originalBlocks' => $blocks,
-			] );
+			$block = CompositeBlock::createFromBlocks( ...$blocks );
 
 			return false;
 		}
