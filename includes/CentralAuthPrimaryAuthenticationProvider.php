@@ -551,7 +551,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			// UserCreationHookHandler, but this method gets called first.
 			if ( $user->isNamed() ) {
 				$this->logger->warning(
-					'Not centralizing auto-created user {username}, central account doesn\'t exist',
+					'Not centralizing auto-created user {user}, central account doesn\'t exist',
 					[
 						'user' => $user->getName(),
 					]
@@ -561,7 +561,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			&& $centralUser->listUnattached()
 		) {
 			$this->logger->warning(
-				'Not centralizing auto-created user {username}, unattached accounts exist',
+				'Not centralizing auto-created user {user}, unattached accounts exist',
 				[
 					'user' => $user->getName(),
 					'source' => $source,
@@ -569,7 +569,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			);
 		} else {
 			$this->logger->info(
-				'Centralizing auto-created user {username}',
+				'Centralizing auto-created user {user}',
 				[
 					'user' => $user->getName(),
 				]
