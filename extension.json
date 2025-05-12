@@ -556,6 +556,7 @@
 		"block": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\BlockHookHandler",
 			"services": [
+				"BlockTargetFactory",
 				"UserNameUtils"
 			]
 		},
