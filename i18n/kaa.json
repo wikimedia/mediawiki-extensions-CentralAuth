@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Ajiniyaz Nurniyazov",
+			"Janabaevazizbek",
 			"Nurlan"
 		]
 	},
 	"centralauth": "Globallıq akkaunt menedjeri",
-	"centralauth-admin-info-attached": "Tirkelgen akkauntlar sanı:",
+	"centralauth-admin-info-attached": "Dizimnen ótken akkauntlar sanı:",
 	"centralauth-admin-info-editcount": "Ulıwma redaktorlawlar sanı:",
 	"centralauth-admin-info-header": "Globallıq akkaunt maǵlıwmatı",
 	"centralauth-admin-info-registered": "Registraciyadan ótken:",
