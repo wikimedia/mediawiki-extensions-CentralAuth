@@ -103,6 +103,16 @@ class SharedDomainUtils {
 	}
 
 	/**
+	 * Whether the wiki supports SUL3 at all. This does not necessarily mean SUL3 is enabled on
+	 * the wiki; but at a minimum, when this function is true, it can be enabled for a given
+	 * request by using the usesul3=1 URL parameter.
+	 *
+	 */
+	public function canSul3BeEnabled(): bool {
+		return (bool)$this->config->get( CAMainConfigNames::CentralAuthSharedDomainCallback );
+	}
+
+	/**
 	 * Whether SUL3 mode is enabled on this wiki and/or this request.
 	 *
 	 * In order to facilitate testing and rollout of SUL3 migration,
@@ -117,6 +127,10 @@ class SharedDomainUtils {
 	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request ): bool {
+		if ( !$this->canSul3BeEnabled() ) {
+			return false;
+		}
+
 		// T379816: The `clientlogin` API should still work in SUL3 mode as if
 		//    we're in SUL2 mode regardless of whether SUL3 is enabled or not.
 		//    There are some edge-cases handled below like:
@@ -135,11 +149,6 @@ class SharedDomainUtils {
 			if ( $user->isTemp() || $user->isAnon() ) {
 				return false;
 			}
-		}
-
-		if ( !$this->config->get( CAMainConfigNames::CentralAuthSharedDomainCallback ) ) {
-			// SUL3 not configured, can't be enabled
-			return false;
 		}
 
 		if ( $request->getCheck( 'usesul3' ) ) {
