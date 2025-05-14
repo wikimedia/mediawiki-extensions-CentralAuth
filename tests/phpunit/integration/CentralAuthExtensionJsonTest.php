@@ -28,14 +28,14 @@ use MediaWiki\Tests\ExtensionJsonTestBase;
 class CentralAuthExtensionJsonTest extends ExtensionJsonTestBase {
 
 	/** @inheritDoc */
-	protected string $extensionJsonPath = __DIR__ . '/../../../extension.json';
+	protected static string $extensionJsonPath = __DIR__ . '/../../../extension.json';
 
 	/** @inheritDoc */
 	protected ?string $serviceNamePrefix = 'CentralAuth.';
 
-	public function provideHookHandlerNames(): iterable {
+	public static function provideHookHandlerNames(): iterable {
 		$registry = ExtensionRegistry::getInstance();
-		foreach ( $this->getExtensionJson()['HookHandlers'] ?? [] as $hookHandlerName => $specification ) {
+		foreach ( self::getExtensionJson()['HookHandlers'] ?? [] as $hookHandlerName => $specification ) {
 			if ( $hookHandlerName === 'abusefilter' && !$registry->isLoaded( 'Abuse Filter' ) ) {
 				continue;
 			}
