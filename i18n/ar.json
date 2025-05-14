@@ -405,6 +405,8 @@
 	"centralauth-state-mismatch": "خطأ: تغيرت حالة حساب المستخدم هذا في الوقت الحالي. يرجى التحقق من الحالة الحالية والمحاولة مرة أخرى ، إذا لزم الأمر.",
 	"centralauth-token-mismatch": "عذرا، لم نستطع معالجة طلبك نتيجة لفقد بيانات الجلسة.",
 	"centralauth-years-ago": "قبل {{PLURAL:$1||سنة واحدة|سنتين|$1 سنين|$1 سنة}}",
+	"centralauth-sul3-oathmanage-sitenotice-local": "لإعداد مفاتيح مرور WebAuthn جديدة، يرجى استخدام [$1 المجال المركزي].",
+	"centralauth-sul3-oathmanage-sitenotice-central": "لإزالة مفاتيح المرور القديمة لـ WebAuthn، يرجى استخدام [$1 المجال الذي تم إعدادها عليه].",
 	"centralautologin": "الدخول الموحد",
 	"centrallogin": "تسجيل دخول مركزي",
 	"createlocalaccount": "إنشاء حساب محلي بالقوة",

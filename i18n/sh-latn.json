@@ -2,7 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
-			"Winston Sung"
+			"Winston Sung",
+			"Aca",
+			"Vlad5250"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globalni broj izmjena korisnika",
@@ -219,7 +221,7 @@
 	"centralauth-listusers-nolocal": "neprivezan ili ne postoji lokalno",
 	"centralauth-log-gblrename-oldname": "Prethodno korisničko ime:",
 	"centralauth-log-header": "Ova evidencija sadrži zapise o operacijama pod globalnim računima: brisanja, zaključavanja i otključavanja.",
-	"centralauth-log-name": "Evidencija globalnih računa",
+	"centralauth-log-name": "Dnevnik globalnih računa",
 	"centralauth-log-status-hidden": "sakriven",
 	"centralauth-log-status-locked": "zaključan",
 	"centralauth-log-status-none": "(ništa)",
@@ -280,7 +282,7 @@
 	"centralauth-rename-progress-fieldset": "Spisak lokalnih računa",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|prikaži tok]])",
 	"centralauth-rename-progress-list-header": "U toku su sljedeća globalna preimenovanja:",
-	"centralauth-rename-progress-logs-fieldset": "Stavke u evidencijama",
+	"centralauth-rename-progress-logs-fieldset": "Stavke u dnevnicima",
 	"centralauth-rename-progress-username": "Korisničko ime",
 	"centralauth-rename-table-domain": "Lokalni wiki",
 	"centralauth-rename-table-status": "Status",
@@ -291,7 +293,7 @@
 	"centralauth-rename-viewprogress": "Prikaži tok",
 	"centralauth-renameuser-merged": "{{GENDER:$1|Korisnik je prešao|Korisnica je prešla|Korisnik je prešao}} na sistem za prijavljivanje s ujedinjenim nalogom.\nPreimenovanje će uzrokovati da se lokalni korisnik odvoji od globalnog.",
 	"centralauth-rightslog-header": "Ovaj dnevnik sadrži operacije o globalnim grupama: promjene u članstvu i dozvolama",
-	"centralauth-rightslog-name": "Evidencija globalnih prava",
+	"centralauth-rightslog-name": "Dnevnik globalnih prava",
 	"centralauth-rightslog-set-optin": "zasnovan na pristajanju",
 	"centralauth-rightslog-set-optout": "zasnovan na odustajanju",
 	"centralauth-ro": "Informacije o globalnom računu",
@@ -319,7 +321,7 @@
 	"grant-createlocalaccount": "Prisilno stvaranje lokalnoga računa za globalni račun",
 	"grant-setglobalaccountstatus": "Upravljanje globalnim korisničkim računima",
 	"log-action-filter-gblrights": "Vrsta promjene:",
-	"log-action-filter-gblrights-groupprms": "Globalna izmjena korisničke grupe",
+	"log-action-filter-gblrights-groupprms": "Izmjena prava globalne korisničke grupe",
 	"log-action-filter-gblrights-setmodify": "Izmjena wikiskupa",
 	"log-action-filter-gblrights-usergroups": "Globalna izmjena korisničkih prava",
 	"log-action-filter-globalauth": "Vrsta promjene:",
@@ -329,7 +331,7 @@
 	"log-action-filter-suppress-cadelete": "Brisanje globalnoga računa",
 	"log-action-filter-suppress-setstatus": "Izmjena statusa globalnog računa",
 	"log-description-gblrename": "Ova evidencija prikazuje globalno preimenovane korisnike.",
-	"log-name-gblrename": "Evidencija globalnih preimenovanja",
+	"log-name-gblrename": "Dnevnik globalnih preimenovanja",
 	"mergeaccount": "Stanje objedinjavanja prijave",
 	"multilock": "Zaključaj više globalnih računa",
 	"right-centralauth-createlocal": "Prisilno stvaranje lokalnoga računa za globalni račun",
