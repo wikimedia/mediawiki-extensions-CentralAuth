@@ -131,7 +131,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			[ 'centralauthLoginToken' => $token ]
 		);
 
-		$this->logAuthenticationAttempt( 'start', $isSignup );
+		$this->recordAuthenticationAttempt( 'start', $isSignup );
 
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
@@ -210,7 +210,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			] );
 		}
 
-		$this->logAuthenticationAttempt( 'end', $data['isSignup'] );
+		$this->recordAuthenticationAttempt( 'end', $data['isSignup'] );
 
 		// Refresh the local wiki's "remember me" state based on the
 		// corresponding state from the central domain.
@@ -295,9 +295,8 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		return AuthenticationResponse::newAbstain();
 	}
 
-	private function logAuthenticationAttempt( string $step, bool $isSignup ) {
+	private function recordAuthenticationAttempt( string $step, bool $isSignup ) {
 		$verb = $isSignup ? 'signup' : 'login';
-		$this->logger->info( "CentralAuth SUL3 $verb attempt $step" );
 		$this->statsFactory->withComponent( 'CentralAuth' )
 			// Metrics used:
 			// * sul3_authentication_start_total
