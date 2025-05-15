@@ -36,43 +36,43 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 	public static function provideHandleAutomaticGlobalGroups() {
 		return [
 			'Having a group causes an automatic group to be added' => [
-				[ 'test-group' ],
-				[ 'test-group' => [ 'automatic-group' ] ],
-				[ 'automatic-group' ],
-				[],
+				'assignedGroups' => [ 'test-group' ],
+				'config' => [ 'test-group' => [ 'automatic-group' ] ],
+				'expectedGroupsToAdd' => [ 'automatic-group' ],
+				'expectedGroupsToRemove' => [],
 			],
 			'Not having a group causes an automatic group to be removed' => [
-				[ 'automatic-group' ],
-				[ 'test-group' => [ 'automatic-group' ] ],
-				[],
-				[ 'automatic-group' ],
+				'assignedGroups' => [ 'automatic-group' ],
+				'config' => [ 'test-group' => [ 'automatic-group' ] ],
+				'expectedGroupsToAdd' => [],
+				'expectedGroupsToRemove' => [ 'automatic-group' ],
 			],
 			'If two local groups add the same global group, only having one adds the automatic group' => [
-				[ 'test-group-1' ],
-				[
+				'assignedGroups' => [ 'test-group-1' ],
+				'config' => [
 					'test-group-1' => [ 'automatic-group' ],
 					'test-group-2' => [ 'automatic-group' ]
 				],
-				[ 'automatic-group' ],
-				[],
+				'expectedGroupsToAdd' => [ 'automatic-group' ],
+				'expectedGroupsToRemove' => [],
 			],
 			'Having an automatic group does not cause another automatic group to be updated' => [
-				[ 'test-group', 'automatic-group-1' ],
-				[
+				'assignedGroups' => [ 'test-group', 'automatic-group-1' ],
+				'config' => [
 					'test-group' => [ 'automatic-group-1' ],
 					'automatic-group-1' => [ 'automatic-group-2' ],
 				],
-				[],
-				[],
+				'expectedGroupsToAdd' => [],
+				'expectedGroupsToRemove' => [],
 			],
 			'Adding an automatic group does not cause another automatic group to be updated' => [
-				[ 'test-group' ],
-				[
+				'assignedGroups' => [ 'test-group' ],
+				'config' => [
 					'test-group' => [ 'automatic-group-1' ],
 					'automatic-group-1' => [ 'automatic-group-2' ],
 				],
-				[ 'automatic-group-1' ],
-				[],
+				'expectedGroupsToAdd' => [ 'automatic-group-1' ],
+				'expectedGroupsToRemove' => [],
 			],
 		];
 	}
@@ -102,24 +102,24 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 	public static function provideHandleAutomaticGlobalGroupsManually() {
 		return [
 			'An automatic group cannot be manually removed if it should be present' => [
-				[ 'test-group', 'automatic-group' ],
-				[],
-				[ 'automatic-group' ],
-				[
+				'assignedGroups' => [ 'test-group', 'automatic-group' ],
+				'groupsToAdd' => [],
+				'groupsToRemove' => [ 'automatic-group' ],
+				'config' => [
 					'test-group' => [ 'automatic-group' ],
 				],
-				[],
-				[],
+				'expectedGroupsToAdd' => [],
+				'expectedGroupsToRemove' => [],
 			],
 			'An automatic group cannot be manually added if it should not be present' => [
-				[],
-				[ 'automatic-group' ],
-				[],
-				[
+				'assignedGroups' => [],
+				'groupsToAdd' => [ 'automatic-group' ],
+				'groupsToRemove' => [],
+				'config' => [
 					'test-group' => [ 'automatic-group' ]
 				],
-				[],
-				[],
+				'expectedGroupsToAdd' => [],
+				'expectedGroupsToRemove' => [],
 			],
 		];
 	}
