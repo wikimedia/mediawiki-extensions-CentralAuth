@@ -31,7 +31,9 @@ use MediaWiki\Session\SessionManager;
 use MediaWiki\Tests\MockWikiMapTrait;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
+use MediaWiki\User\UserGroupMembership;
 use MediaWiki\WikiMap\WikiMap;
+use ReflectionClass;
 use SpecialPageTestBase;
 use Wikimedia\TestingAccessWrapper;
 
@@ -403,6 +405,54 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 				[]
 			],
 		];
+	}
+
+	public function testAdjustForAutomaticGlobalGroups() {
+		$localGroup = 'localGroup';
+		$this->overrideConfigValue( 'CentralAuthAutomaticGlobalGroups', [
+			$localGroup => [ 'group-one' ],
+		] );
+
+		$specialPage = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
+
+		$localGroupMembership = $this->createMock( UserGroupMembership::class );
+		$localGroupMembership->method( 'getGroup' )
+			->willReturn( $localGroup );
+		$localGroupMembership->method( 'getExpiry' )
+			->willReturn( '20230405060707' );
+
+		$externalGroupMembership = $this->createMock( UserGroupMembership::class );
+		$externalGroupMembership->method( 'getGroup' )
+			->willReturn( $localGroup );
+		$externalGroupMembership->method( 'getExpiry' )
+			->willReturn( '20240405060707' );
+
+		$user = $this->createMock( CentralAuthUser::class );
+		$user->method( 'queryAttached' )
+			->willReturn( [
+				'localWiki' => [
+					'groupMemberships' => [ $localGroupMembership ],
+				],
+				'externalWiki' => [
+					'groupMemberships' => [ $externalGroupMembership ],
+				]
+			] );
+
+		$assignedGroups = [];
+		$add = [];
+		$remove = [];
+		$groupExpiries = [];
+		// T287318 - TestingAccessWrapper::__call does not support pass-by-reference
+		$classReflection = new ReflectionClass( $specialPage->object );
+		$methodReflection = $classReflection->getMethod( 'adjustForAutomaticGlobalGroups' );
+		$methodReflection->setAccessible( true );
+		$methodReflection->invokeArgs( $specialPage->object, [
+			$user, $assignedGroups, &$add, &$remove, &$groupExpiries,
+		] );
+
+		$this->assertEquals( [ 'group-one' ], $add );
+		$this->assertEquals( [], $remove );
+		$this->assertEquals( [ 'group-one' => '20240405060707' ], $groupExpiries );
 	}
 
 	/** @dataProvider provideGetLogReason */
