@@ -1000,7 +1000,6 @@
 				"sort": 0,
 				"services": [
 					"HookContainer",
-					"StatsFactory",
 					"CentralAuth.CentralAuthTokenManager",
 					"CentralAuth.SharedDomainUtils"
 				],
