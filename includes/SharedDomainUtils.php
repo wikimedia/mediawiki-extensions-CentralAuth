@@ -240,18 +240,26 @@ class SharedDomainUtils {
 			'display' => $request->getRawVal( 'display' ),
 			'uselang' => $request->getRawVal( 'uselang' ),
 			'variant' => $request->getRawVal( 'variant' ),
+			'returnto' => $request->getRawVal( 'returnto' ),
+			'returntoquery' => $request->getRawVal( 'returntoquery' ),
+			'returntoanchor' => $request->getRawVal( 'returntoanchor' ),
+			'redoLocalAuthentication' => $request->getRawVal( 'redoLocalAuthentication' ),
 		];
 		// already handled in makeUrlDeviceCompliant()
 		unset( $params['useformat'] );
-		// these will be preserved via the 'centralauthLoginToken' parameter, but we don't
-		// actually want to return anywhere while on the login domain
-		unset( $params['returnto'], $params['returntoquery'], $params['returntoanchor'] );
+
+		// Make sure SUL3 opt-in state is preserved, e.g. in case of the user changing networks
 		$params['usesul3'] = '1';
-		// In the future maybe we'll want to use a more robust redirection mechanism instead of
-		// relying on PostLoginRedirect (see also T369467). For now, we just add a fake 'returnto'
-		// parameter, which is enough to make sure PostLoginRedirect is called even when the user
-		// is already logged in.
-		$params['returnto'] = 'Main_Page';
+
+		// Skip the login form if the user is already logged in on the central domain.
+		// See LoginSignupSpecialPage: "In the case where the user is already logged in"...
+		if ( ( $params['returnto'] ?? '' ) === '' && ( $params['returntoquery'] ?? '' ) === '' ) {
+			// This is enough to pass the check in LoginSignupSpecialPage and make sure
+			// PostLoginRedirect is called even when the user is already logged in.
+			$params['returntoquery'] = '?';
+			// In the future maybe we'll want to use a more robust redirection mechanism instead of
+			// relying on PostLoginRedirect (see also T369467).
+		}
 
 		return wfAppendQuery( $url, $params );
 	}
