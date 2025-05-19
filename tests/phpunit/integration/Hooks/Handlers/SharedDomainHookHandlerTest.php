@@ -22,6 +22,7 @@ use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Skin\Skin;
 use MediaWiki\Tests\Api\ApiTestCase;
@@ -355,24 +356,19 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 	/**
 	 * @dataProvider provideOnSiteNoticeBefore
-	 * @param bool $isSkipped Whether to skip this test variant.
 	 * @param bool $isSul3SharedDomain
 	 * @param bool $isSul3Enabled
-	 * @param bool $isOathManageSpecialPage
+	 * @param bool $isWebAuthnOATHManage
 	 * @param string|null $expectedSiteNoticeSnippet Part of the sitenotice, or the empty string
 	 *   to assert that no sitenotice won't be shown, or null to assert that the normal sitenotice
 	 *   will be shown.
 	 */
 	public function testOnSiteNoticeBefore(
-		bool $isSkipped,
 		bool $isSul3SharedDomain,
 		bool $isSul3Enabled,
-		bool $isOathManageSpecialPage,
+		bool $isWebAuthnOATHManage,
 		?string $expectedSiteNoticeSnippet
 	): void {
-		if ( $isSkipped ) {
-			$this->markTestSkipped( 'T392017' );
-		}
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSharedDomainCallback,
 			static fn () => 'https://example.org' );
 		$this->mockWikiMap();
@@ -381,11 +377,14 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			'sul3' => $isSul3Enabled,
 		] ) );
 
+		$extReg = $this->createMock( ExtensionRegistry::class );
+		$extReg->method( 'isLoaded' )->with( 'WebAuthn' )->willReturn( $isWebAuthnOATHManage );
+
 		$title = $this->createNoOpMock( Title::class, [ 'isSpecial', 'getPrefixedText' ] );
 		$title->method( 'isSpecial' )->willReturnCallback(
-			static fn ( $specialPageName ) => $isOathManageSpecialPage ? ( $specialPageName == 'OATHManage' ) : false
+			static fn ( $specialPageName ) => $isWebAuthnOATHManage ? ( $specialPageName == 'OATHManage' ) : false
 		);
-		$title->expects( $isOathManageSpecialPage ? $this->any() : $this->never() )
+		$title->expects( $isWebAuthnOATHManage ? $this->any() : $this->never() )
 			->method( 'getPrefixedText' )->willReturn( 'Special:OATHManage' );
 		$skin = $this->createNoOpMock( Skin::class, [ 'getRequest', 'getTitle', 'msg' ] );
 		$skin->method( 'getRequest' )->willReturn( new FauxRequest() );
@@ -394,7 +393,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 		$container = $this->getServiceContainer();
 		$handler = new SharedDomainHookHandler(
-			$container->getExtensionRegistry(),
+			$extReg,
 			$container->getMainConfig(),
 			$container->getUrlUtils(),
 			CentralAuthServices::getCentralDomainUtils( $container ),
@@ -419,38 +418,33 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	public static function provideOnSiteNoticeBefore() {
 		return [
 			'does nothing in SUL2 mode' => [
-				'isSkipped' => false,
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => false,
-				'isOathManageSpecialPage' => true,
+				'isWebAuthnOATHManage' => true,
 				'expectedSiteNoticeSnippet' => null,
 			],
 			'does nothing on the local domain when not on the special page' => [
-				'isSkipped' => false,
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => true,
-				'isOathManageSpecialPage' => false,
+				'isWebAuthnOATHManage' => false,
 				'expectedSiteNoticeSnippet' => null,
 			],
 			'disables the site notice on the shared domain' => [
-				'isSkipped' => false,
 				'isSul3SharedDomain' => true,
 				'isSul3Enabled' => true,
-				'isOathManageSpecialPage' => false,
+				'isWebAuthnOATHManage' => false,
 				'expectedSiteNoticeSnippet' => '',
 			],
 			'links to central on local Special:OATHManager' => [
-				'isSkipped' => true,
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => true,
-				'isOathManageSpecialPage' => true,
+				'isWebAuthnOATHManage' => true,
 				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-local',
 			],
 			'links to local on central Special:OATHManager' => [
-				'isSkipped' => true,
 				'isSul3SharedDomain' => true,
 				'isSul3Enabled' => true,
-				'isOathManageSpecialPage' => true,
+				'isWebAuthnOATHManage' => true,
 				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-central',
 			],
 		];
