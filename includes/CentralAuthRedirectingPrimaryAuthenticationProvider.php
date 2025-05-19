@@ -19,7 +19,6 @@ use MWCryptRand;
 use StatusValue;
 use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\Rdbms\IDBAccessObject;
-use Wikimedia\Stats\StatsFactory;
 
 /**
  * Redirect-based provider which sends the user to another domain, assumed to be
@@ -39,20 +38,17 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	private const SESSION_DATA_FLAG = 'centralauth-login-method-was-sul3';
 
 	private HookContainer $hookContainer;
-	private StatsFactory $statsFactory;
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
 		HookContainer $hookContainer,
-		StatsFactory $statsFactory,
 		CentralAuthTokenManager $tokenManager,
 		SharedDomainUtils $sharedDomainUtils,
 		?MobileContext $mobileContext
 	) {
 		$this->hookContainer = $hookContainer;
-		$this->statsFactory = $statsFactory;
 		$this->tokenManager = $tokenManager;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->mobileContext = $mobileContext;
@@ -131,8 +127,6 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			[ 'centralauthLoginToken' => $token ]
 		);
 
-		$this->recordAuthenticationAttempt( 'start', $isSignup );
-
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
 	}
 
@@ -209,8 +203,6 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 				'username' => $data['username'],
 			] );
 		}
-
-		$this->recordAuthenticationAttempt( 'end', $data['isSignup'] );
 
 		// Refresh the local wiki's "remember me" state based on the
 		// corresponding state from the central domain.
@@ -295,14 +287,4 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		return AuthenticationResponse::newAbstain();
 	}
 
-	private function recordAuthenticationAttempt( string $step, bool $isSignup ) {
-		$verb = $isSignup ? 'signup' : 'login';
-		$this->statsFactory->withComponent( 'CentralAuth' )
-			// Metrics used:
-			// * sul3_authentication_start_total
-			// * sul3_authentication_end_total
-			->getCounter( "sul3_authentication_{$step}_total" )
-			->setLabel( 'type', $verb )
-			->increment();
-	}
 }
