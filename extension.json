@@ -827,7 +827,7 @@
 		},
 		"CentralAuthRestrictSharedDomain": {
 			"description": "Experimental, has no effect unless CentralAuthSharedDomainCallback is set. Restrict wiki functionality to authentication only when the current domain matches the domain of CentralAuthSharedDomainCallback. Enable when using a shared login domain. Disable when the login domain is a standalone wiki.",
-			"value": true
+			"value": false
 		},
 		"CentralAuthCookieDomain": {
 			"description": "Domain to set global cookies for. For instance, '.wikipedia.org' to work on all wikipedia.org subdomains instead of just the current one. Leave blank to set the cookie for the current domain only, such as if all your wikis are hosted on the same subdomain.",
