@@ -25,6 +25,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
@@ -70,12 +71,18 @@ class RedirectingLoginHookHandler implements
 	 * by redirecting to the origin wiki's Special:UserLogin page.
 	 *
 	 * @param IContextSource $context
+	 * @param string $returnTo
+	 * @param array $returnToQuery
 	 * @return void
 	 */
-	private function redoLocalAuthentication( IContextSource $context ): void {
+	private function redoLocalAuthentication( IContextSource $context, $returnTo, $returnToQuery ): void {
 		$wikiId = WikiMap::getCurrentWikiId();
 		$originWikiUrl = $this->centralDomainUtils->getUrl(
-			$wikiId, 'Special:Userlogin', $context->getRequest()
+			$wikiId, 'Special:Userlogin', $context->getRequest(), [
+				'returnto' => $returnTo,
+				'returntoquery' => wfArrayToCgi( $returnToQuery ),
+				'redoLocalAuthentication' => 1,
+			]
 		);
 
 		$context->getOutput()->redirect( $originWikiUrl );
@@ -125,9 +132,14 @@ class RedirectingLoginHookHandler implements
 					'status' => 'badtoken'
 				] );
 
+			if ( $request->getRawVal( 'redoLocalAuthentication' ) !== null ) {
+				// We're in a loop
+				throw new ErrorPageError( 'centralauth-error-badtoken', 'centralauth-error-badtoken' );
+			}
+
 			// This means centralauthLoginToken expired or is invalid, so do a retry.
 			// The central session already succeeded and we just need to gain a local session.
-			$this->redoLocalAuthentication( $context );
+			$this->redoLocalAuthentication( $context, $returnTo, $returnToQuery );
 			$type = 'success';
 			return true;
 		}
