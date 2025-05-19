@@ -82,13 +82,7 @@ class CentralAuthTokenManager {
 		$expiry = $options['expiry'] ?? BagOStuff::TTL_MINUTE;
 		$token = $options['token'] ?? MWCryptRand::generateHex( 32 );
 		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		$success = $this->tokenStore->set( $key, $data, $expiry );
-		if ( !$success ) {
-			$this->logger->warning( "Failed to set {keyPrefix} token {token}", [
-				'keyPrefix' => $keyPrefix,
-				'token' => $token,
-			] );
-		}
+		$this->tokenStore->set( $key, $data, $expiry );
 		return $token;
 	}
 
@@ -116,13 +110,7 @@ class CentralAuthTokenManager {
 		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
 		$value = $this->detokenize( $token, $keyPrefix );
 		if ( $value !== false ) {
-			$success = $this->tokenStore->delete( $key );
-			if ( !$success ) {
-				$this->logger->warning( "Failed to delete {keyPrefix} token {token}", [
-					'keyPrefix' => $keyPrefix,
-					'token' => $token,
-				] );
-			}
+			$this->tokenStore->delete( $key );
 		}
 		return $value;
 	}
