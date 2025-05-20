@@ -478,7 +478,7 @@
 	"grant-createlocalaccount": "Принудительное создание локальной учётной записи для глобальной учётной записи",
 	"grant-setglobalaccountstatus": "Управление состоянием глобальной учётной записи",
 	"log-action-filter-gblrights": "Тип изменения:",
-	"log-action-filter-gblrights-groupprms": "изменение глобальной группы участников",
+	"log-action-filter-gblrights-groupprms": "Изменение прав глобальной группы участников",
 	"log-action-filter-gblrights-setmodify": "изменение набора вики",
 	"log-action-filter-gblrights-usergroups": "изменение глобальных прав участника",
 	"log-action-filter-globalauth": "Тип изменения:",
