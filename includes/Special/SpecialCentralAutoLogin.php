@@ -288,7 +288,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
 				if ( $centralUser->getId() && $centralUser->isAttached() ) {
-					$remember = (bool)$this->getCentralSession( 'refreshCookies' )['remember'];
+					$remember = (bool)$this->getCentralSession()['remember'];
 					$delay = $this->session->delaySave();
 					$this->session->setRememberUser( $remember );
 					$this->session->persist();
@@ -540,7 +540,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				// Write info for session creation into memc
-				$centralSession = $this->getCentralSession( 'validateSession' );
+				$centralSession = $this->getCentralSession();
 				$memcData += [
 					'userName' => $centralUser->getName(),
 					'token' => $centralUser->getAuthToken(),
@@ -955,25 +955,10 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param string $caller
 	 * @return array
 	 */
-	private function getCentralSession( string $caller ) {
+	private function getCentralSession() {
 		$centralSession = $this->sessionManager->getCentralSession( $this->session );
-
-		// FIXME temporary logging for T372702
-		//   eventually we should probably just return [] here and have the caller do error handling
-		if ( !isset( $centralSession['sessionId'] ) ) {
-			$this->logger->warning( 'No central session found', [
-				'user' => $this->session->getUser()->getName(),
-				'sessionId' => $this->session->getSessionId(),
-				'centralSessionId' => $this->session->get( 'CentralAuth::centralSessionId' ),
-				'persisted' => $this->session->isPersistent(),
-				'remembered' => $this->session->shouldRememberUser(),
-				'isCentral' => ( $this->session->getProviderMetadata()['CentralAuthSource'] ?? '' ) === 'CentralAuth',
-				'caller' => $caller,
-			] );
-		}
 
 		if ( !isset( $centralSession['remember'] ) ) {
 			$centralSession['remember'] = false;
