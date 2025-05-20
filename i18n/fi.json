@@ -285,6 +285,7 @@
 	"centralauth-log-status-none": "(ei mitään)",
 	"centralauth-log-status-oversighted": "häivytetty",
 	"centralauth-login-error-locked": "Et voi kirjautua sisään, koska {{GENDER:$1|tunnuksesi}} on lukittu järjestelmänlaajuisesti.",
+	"centralauth-login-error-usesul3": "Kirjautumista ei voida jatkaa virheellisen määrittelyn vuoksi. Tämä on ohjelmistovirhe ja siitä on ilmoitettu eteenpäin. Käytä sen sijaan {{int:centralauth-non-login-wiki-buttonlabel}} -painiketta.",
 	"centralauth-logout-no-others": "Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.",
 	"centralauth-logout-progress": "Kirjaudutaan ulos {{PLURAL:$2|muusta|muista}} {{int:Centralauth-groupname}} -{{PLURAL:$2|wikistä|wikeistä}}:",
 	"centralauth-merge-attempt": "'''Verrataan annettua salasanaa jäljellä oleviin liittämättömiin tunnuksiin...'''",
