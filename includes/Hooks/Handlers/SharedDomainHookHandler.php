@@ -147,6 +147,9 @@ class SharedDomainHookHandler implements
 		],
 		self::ALLOWED_LOCAL_PROVIDERS => [
 			'preauth' => [
+				// T393473: Don't disable abuse filter provider on shared
+				// domain during autocreation on local domain.
+				'AbuseFilterPreAuthenticationProvider',
 				// makes sure that during logins that we can't accidentally mix up SUL2 and SUL3
 				// authentication, which would have security consequences
 				'CentralAuthSharedDomainPreAuthenticationProvider',
