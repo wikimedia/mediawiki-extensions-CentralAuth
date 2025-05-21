@@ -64,7 +64,7 @@
 	"centralauth-admin-bad-input": "Liitosvalinta ei kelpaa.",
 	"centralauth-admin-blocked-reason": "Syy: $1",
 	"centralauth-admin-blocked2": "Estetty, esto päättyy $2 klo $3.",
-	"centralauth-admin-blocked2-indef": "Estetty pysyvästi.",
+	"centralauth-admin-blocked2-indef": "Estetty ikuisesti.",
 	"centralauth-admin-blocklog": "estoloki",
 	"centralauth-admin-delete-button": "Poista tämä tunnus",
 	"centralauth-admin-delete-confirm": "Haluatko todella poistaa tämän tunnuksen?",
@@ -284,6 +284,7 @@
 	"centralauth-log-status-none": "(ei mitään)",
 	"centralauth-log-status-oversighted": "häivytetty",
 	"centralauth-login-error-locked": "Et voi kirjautua sisään, koska {{GENDER:$1|tunnuksesi}} on lukittu järjestelmänlaajuisesti.",
+	"centralauth-login-error-usesul3": "Kirjautumista ei voida jatkaa virheellisen määrittelyn vuoksi. Tämä on ohjelmistovirhe ja siitä on ilmoitettu eteenpäin. Käytä sen sijaan {{int:centralauth-non-login-wiki-buttonlabel}} -painiketta.",
 	"centralauth-logout-no-others": "Sinut on automaattisesti kirjattu ulos muista {{int:Centralauth-groupname}} -hankkeista.",
 	"centralauth-logout-progress": "Kirjaudutaan ulos {{PLURAL:$2|muusta|muista}} {{int:Centralauth-groupname}} -{{PLURAL:$2|wikistä|wikeistä}}:",
 	"centralauth-merge-attempt": "'''Verrataan annettua salasanaa jäljellä oleviin liittämättömiin tunnuksiin...'''",
@@ -391,6 +392,8 @@
 	"centralauth-state-mismatch": "Virhe: Tämän käyttäjätunnuksen tila on muuttunut tällä välin. Tarkista nykyinen tila ja yritä tarvittaessa uudelleen.",
 	"centralauth-token-mismatch": "Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|vuosi|vuotta}} sitten",
+	"centralauth-sul3-oathmanage-sitenotice-local": "Asettaaksesi uudet WebAuthn-todennusavaimet käytä [$1 keskityttyä verkkotunnusta].",
+	"centralauth-sul3-oathmanage-sitenotice-central": "Poistaaksesi vanhat WebAuthn-todennusavaimet käytä [$1 verkkotunnusta, jossa ne on asetettu].",
 	"centralautologin": "Keskitetty kirjautuminen",
 	"centrallogin": "Keskitetty kirjautuminen",
 	"createlocalaccount": "Pakota paikallisen käyttäjän luonti",
@@ -497,6 +500,8 @@
 	"globalvanishrequest-vanished-title": "Hävittämispyyntö onnistui",
 	"globalvanishrequest-vanished-text": "Käyttätunnuksesi hävittämispyyntö hyväksyttiin.",
 	"globalvanishrequest-blocked-title": "Järjestelmänlaajuisen tunnuksen hävittämispyyntö hylättiin, koska tunnuksei on estetty",
+	"globalvanishrequest-blocked-text": "Olet tällä estettynä yhdessä tai useammassa wikissä etkä siksi voi hävittää käyttäjätunnustasi. Voit valittaa tunnuksesi estoista. Tutustu seuraavaan linkkiin tai linkkeihin saadaksesi tietoja siitä, kuinka voit valittaa estosta kussakin wikissä, jossa olet estetty. Lisätietoja tunnuksen hävittämisestä löytyy [[m:Special:MyLanguage/Account vanishing|tunnusten hävittämisen]] tietosivulta.",
+	"globalvanishrequest-blocked-text-minimal": "Olet tällä estettynä yhdessä tai useammassa wikissä etkä siksi voi hävittää käyttäjätunnustasi. Lisätietoja tunnuksen hävittämisestä löytyy [[m:Special:MyLanguage/Account vanishing|tunnusten hävittämisen]] tietosivulta.",
 	"globalvanishrequest-reason-label": "Pyynnön perustelut",
 	"globalvanishrequest-submit-text": "Pyydä hävittämistä",
 	"globalvanishrequest-globaluser-error": "Pyynnön tallennus epäonnistui. Käyttäjätunnus ei ole järjestelmänlaajuinen tunnus.",
@@ -551,5 +556,6 @@
 	"right-globalgrouppermissions": "Hallinnoida järjestelmänlaajuisia ryhmiä",
 	"sessionprovider-centralauthsessionprovider": "järjestelmänlaajuisia evästepohjaisia istuntoja",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-istuntoja",
-	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja."
+	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja.",
+	"centralauth-action-forbidden-shared-domain": "Sinulla ei ole oikeutta suorittaa tätä toimintoa jaetulla tunnistautumisverkkotunnuksella."
 }
