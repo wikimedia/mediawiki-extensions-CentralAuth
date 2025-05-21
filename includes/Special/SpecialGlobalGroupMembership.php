@@ -280,6 +280,65 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	}
 
 	/**
+	 * Add or remove automatic global groups, or update expiries, based on:
+	 * - existing global groups
+	 * - existing local groups
+	 * - groups we are about to add
+	 * - groups we are about to remove
+	 * - groups whose expiries we are about to change
+	 *
+	 * @param CentralAuthUser $user
+	 * @param array<string,?string> $globalGroups Associative array of (group name => expiry),
+	 *   representing global groups that $user already has
+	 * @param string[] &$add Array of groups to add
+	 * @param string[] &$remove Array of groups to remove
+	 * @param array<string,?string> &$groupExpiries Associative array of (group name => expiry),
+	 *   containing only those groups that are to have new expiry values set
+	 */
+	private function adjustForAutomaticGlobalGroups(
+		CentralAuthUser $user,
+		array $globalGroups,
+		array &$add,
+		array &$remove,
+		array &$groupExpiries
+	) {
+		// Get the user's local groups and their expiries. If the user has the same group on
+		// multiple wikis, add the latest expiry (with null representing no expiry).
+		$userInfo = $user->queryAttached();
+		$localGroups = [];
+		foreach ( $userInfo as $info ) {
+			foreach ( $info['groupMemberships'] as $groupMembership ) {
+				$group = $groupMembership->getGroup();
+				$expiry = $groupMembership->getExpiry();
+				if ( $expiry === null ) {
+					$localGroups[$group] = null;
+				} elseif (
+					!array_key_exists( $group, $localGroups ) ||
+					( $localGroups[$group] !== null && $localGroups[$group] < $expiry )
+				) {
+					$localGroups[$group] = $expiry;
+				}
+			}
+		}
+
+		$addGroupsWithExpiries = array_intersect_key(
+			$groupExpiries,
+			array_fill_keys( $add, null )
+		);
+		$assignedGroups = array_diff_key(
+			array_merge( $globalGroups, $localGroups, $addGroupsWithExpiries ),
+			array_fill_keys( $remove, null )
+		);
+
+		$this->automaticGroupManager->handleAutomaticGlobalGroups(
+			$assignedGroups,
+			$add,
+			$remove,
+			$groupExpiries
+		);
+	}
+
+	/**
 	 * Save user groups changes in the database. This function does not throw errors;
 	 * instead, it ignores groups that the performer does not have permission to set.
 	 *
@@ -307,20 +366,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$remove = array_unique( array_intersect( $remove, $changeable, array_keys( $groups ) ) );
 		$add = array_intersect( $add, $changeable );
 
-		// Add or remove automatic global groups, based on:
-		// - existing global groups
-		// - existing local groups
-		// - groups we are about to add
-		// - groups we are about to remove
-		$assignedGroups = array_diff(
-			array_merge( array_keys( $groups ), $user->getLocalGroups(), $add ),
-			$remove
-		);
-		$this->automaticGroupManager->handleAutomaticGlobalGroups(
-			$assignedGroups,
-			$add,
-			$remove
-		);
+		$this->adjustForAutomaticGlobalGroups( $user, $groups, $add, $remove, $groupExpiries );
 
 		// add only groups that are not already present or that need their expiry updated
 		$add = array_filter( $add,
