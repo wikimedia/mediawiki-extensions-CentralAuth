@@ -395,7 +395,7 @@
 	"centralauth-rename-titleblacklist-match": "新しい利用者名は以下のTitleBlacklist項目と一致します: $1",
 	"centralauth-rename-unattached-intheway": "対象のアカウントには未統合のアカウントが存在します。",
 	"centralauth-rename-viewprogress": "進捗の表示",
-	"centralauth-renameuser-global-inprogress": "{{GENDER:$1|$1}} のグローバル利用者名変更はすでに進行中です。([[Special:GlobalRenameProgress/$1|ステータスを確認]])",
+	"centralauth-renameuser-global-inprogress": "{{GENDER:$1|$1}} のグローバル利用者名変更は既に進行中です。([[Special:GlobalRenameProgress/$1|状態を確認]])",
 	"centralauth-renameuser-merged": "利用者 {{GENDER:$1|$1}} は統一ログインシステムに移行済みです。\n利用者名を変更すると、ローカルアカウントがグローバルアカウントから切り離されます。",
 	"centralauth-renameuser-reserved": "利用者名 {{GENDER:$2|$2}} はグローバルアカウントとして使用されています。",
 	"centralauth-vanish-confirm": "本当にアカウントを抹消したいですか?この操作は元に戻せません。",
