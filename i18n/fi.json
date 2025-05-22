@@ -64,7 +64,7 @@
 	"centralauth-admin-bad-input": "Liitosvalinta ei kelpaa.",
 	"centralauth-admin-blocked-reason": "Syy: $1",
 	"centralauth-admin-blocked2": "Estetty, esto päättyy $2 klo $3.",
-	"centralauth-admin-blocked2-indef": "Estetty pysyvästi.",
+	"centralauth-admin-blocked2-indef": "Estetty ikuisesti.",
 	"centralauth-admin-blocklog": "estoloki",
 	"centralauth-admin-delete-button": "Poista tämä tunnus",
 	"centralauth-admin-delete-confirm": "Haluatko todella poistaa tämän tunnuksen?",
