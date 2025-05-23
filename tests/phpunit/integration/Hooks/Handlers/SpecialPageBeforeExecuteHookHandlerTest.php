@@ -17,6 +17,7 @@ use PHPUnit\Framework\Constraint\StringContains;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler
+ * @group Database
  */
 class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCase {
 

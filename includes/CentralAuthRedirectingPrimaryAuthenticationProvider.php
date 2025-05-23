@@ -13,6 +13,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
+use MediaWiki\ResourceLoader\ClientHtml;
 use MediaWiki\User\UserNameUtils;
 use MobileContext;
 use MWCryptRand;
@@ -106,9 +107,15 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
 		$returnToUrl = wfAppendQuery( $returnToUrl, [ 'usesul3' => 1 ] );
 
+		// Record client preference e.g. in dark mode, we want to make sure
+		// the shared domain presents authentication pages in dark mode.
+		$clientPrefsCookieName = ClientHtml::CLIENT_PREFS_COOKIE_NAME;
+		$clientPref = $this->manager->getRequest()->getCookie( $clientPrefsCookieName );
+
 		$data = [
 			'secret' => $secret,
 			'returnUrl' => $returnToUrl,
+			'clientPref' => $clientPref,
 		];
 		// ObjectCacheSessionExpiry will limit how long the local login process, which relies
 		// on the session, can be finished. Sync the expiry of this token (which will be used

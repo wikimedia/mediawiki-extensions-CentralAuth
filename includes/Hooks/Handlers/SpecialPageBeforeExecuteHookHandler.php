@@ -3,12 +3,15 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Request\WebRequest;
+use MediaWiki\ResourceLoader\ClientHtml;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
@@ -100,6 +103,10 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 
 			$special->getOutput()->redirect( $url );
 			return false;
+		}
+
+		if ( $special->getUser()->isAnon() && $this->sharedDomainUtils->isSharedDomain() ) {
+			$this->setClientPreferences( $request );
 		}
 
 		// Only attempt top-level autologin if the user is about to log in, the login isn't
@@ -206,5 +213,47 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			'username' => $special->getUser()->isRegistered() ? $special->getUser()->getName() : '',
 			'suggestedLoginUsername' => $request->getSession()->suggestLoginUsername(),
 		] );
+	}
+
+	/**
+	 * When anonymous clients set their preferences, they should be
+	 * applied to the shared domain during authentication. For example
+	 * when anon users set their theme to dark mode, it should be carried
+	 * across during the authentication flow.
+	 *
+	 * @param WebRequest $request
+	 *
+	 * @return void
+	 */
+	private function setClientPreferences( WebRequest $request ): void {
+		$token = $request->getRawVal( 'centralauthLoginToken' );
+
+		if ( !$token ) {
+			return;
+		}
+
+		$inputData = $this->tokenManager->detokenize(
+			$token,
+			CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
+		);
+
+		if ( !$inputData ) {
+			// This will be bad if we find ourselves here during an actual
+			// authentication and the user's preferences is not applied. In
+			// the worse case, let's just default to whatever mode was already
+			// used previously or whatever we have on the shared domain for
+			// this client.
+			return;
+		}
+
+		if ( $inputData['clientPref'] ) {
+			$cookieName = ClientHtml::CLIENT_PREFS_COOKIE_NAME;
+			$request->response()->setCookie(
+				$cookieName,
+				$inputData['clientPref'],
+				0,
+				[ 'httpOnly' => false ]
+			);
+		}
 	}
 }
