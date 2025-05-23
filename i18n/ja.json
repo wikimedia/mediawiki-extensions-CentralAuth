@@ -524,7 +524,7 @@
 	"globalvanishrequest-submit-text": "抹消を依頼",
 	"globalvanishrequest-globaluser-error": "依頼を保存できませんでした。利用者アカウントはグローバル利用者アカウントではありません。",
 	"globalvanishrequest-blocked-error": "あなたのアカウントに有効なブロックが存在しており、抹消できません",
-	"globalvanishrequest-pending-request-error": "アカウント抹消依頼はすでに有効です。詳細については、[[Special:GlobalVanishRequest/status|ステータスページ]]にアクセスしてください。",
+	"globalvanishrequest-pending-request-error": "アカウントの抹消依頼は既に有効です。詳細については、[[Special:GlobalVanishRequest/status|ステータスページ]]を参照してください。",
 	"globalvanishrequest-save-error": "変更の保存に失敗しました。もう一度試行してください。",
 	"globalvanishrequest-autoapprove-note": "利用者名抹消依頼が正常に処理されました。",
 	"globalvanishrequest-autoapprove-public-note": "この利用者の抹消依頼は自動的に承認されました。",
