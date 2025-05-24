@@ -54,8 +54,14 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		// We need to set wgLocalDatabases for the CentralAuthWikiListService
-		$this->overrideConfigValue( MainConfigNames::LocalDatabases, [ WikiMap::getCurrentWikiId() ] );
+
+		$this->overrideConfigValues( [
+			// We need to set wgLocalDatabases for the CentralAuthWikiListService
+			MainConfigNames::LocalDatabases => [ WikiMap::getCurrentWikiId() ],
+			// Testing the GlobalBlocking integration requires using CentralAuth's central ID provider.
+			MainConfigNames::CentralIdLookupProvider => 'CentralAuth',
+		] );
+
 		// Add the current site to the SiteStore to allow it to appear in the attached local accounts list.
 		$sitesTable = $this->getServiceContainer()->getSiteStore();
 		$site = $sitesTable->getSite( WikiMap::getCurrentWikiId() ) ?? new MediaWikiSite();
