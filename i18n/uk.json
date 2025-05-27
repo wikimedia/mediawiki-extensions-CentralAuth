@@ -142,6 +142,8 @@
 	"centralauth-admin-username": "Ім'я користувача:",
 	"centralauth-admin-view": "Перегляд інформації про обліковий запис",
 	"centralauth-admin-yes": "так",
+	"centralauth-admin-globalblock-exempt-list-wiki-heading": "Вікіпроєкт",
+	"centralauth-admin-globalblock-exempt-list-reason-heading": "Причина",
 	"centralauth-attach-list-attached": "Єдиний обліковий запис «$1» включає такі облікові записи:",
 	"centralauth-attach-submit": "Перенести обліковий запис",
 	"centralauth-attach-success": "Обліковий запис був перенесений до системи єдиного облікового запису.",
