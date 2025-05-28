@@ -293,6 +293,8 @@
 	"centralauth-globalgroupperms-nogroups": "Message shown on Special:GlobalGroupPermissions when there is no existing global groups.",
 	"centralauth-globalgroupperms-rights": "Message used on column header at the table on Special:GlobalGroupPermissions. See also {{msg-mw|centralauth-globalgroupperms-group}}.\n{{Identical|Right}}",
 	"centralauth-globalgroupperms-wikiset-none": "Message used on Special:GlobalGroupPermissions table when a group does not belong to any wikiset.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Reason explaining why an automatic global group cannot be changed manually, displayed on [[Special:GlobalUserRights]].",
+	"centralauth-globalgroupperms-automatic-group-info": "Explains which global groups will be automatically assigned when assigning a given group, displayed next to the group name on [[Special:GlobalUserRights]].\n\nParameters:\n* $1 List of automatic global groups that will be assigned",
 	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-logout-progress}}",
 	"centralauth-hidden-blockreason": "Unused at this time. Parameters:\n* $1 - username\n* $2 - ...\n* $3 - reason",
 	"centralauth-hours-ago": "Parameters:\n* $1 - number of hours\n{{Related|Centralauth-ago}}",

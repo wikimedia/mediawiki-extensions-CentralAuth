@@ -106,9 +106,7 @@ class CentralAuthAutomaticGlobalGroupManager {
 
 				if ( !array_key_exists( $automaticGroup, $assignedGroups ) ) {
 					$groupsToAdd[] = $automaticGroup;
-					if ( $expiry !== null ) {
-						$expiriesToChange[$automaticGroup] = $expiry;
-					}
+					$expiriesToChange[$automaticGroup] = $expiry;
 				} elseif ( !$this->expiryEquals( $assignedGroups[$automaticGroup], $expiry ) ) {
 					$groupsToAdd[] = $automaticGroup;
 					$expiriesToChange[$automaticGroup] = $expiry;

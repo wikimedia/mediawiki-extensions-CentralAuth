@@ -474,6 +474,7 @@
 				"ext.centralauth.less",
 				"ext.centralauth.noflash.css",
 				"ext.centralauth.globalusers.css",
+				"ext.centralauth.globalgroupmembership.css",
 				"ext.centralauth.globalgrouppermissions.css",
 				"ext.centralauth.globalrenameuser.css"
 			]

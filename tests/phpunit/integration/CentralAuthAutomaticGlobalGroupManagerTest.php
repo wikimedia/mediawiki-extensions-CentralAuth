@@ -45,7 +45,9 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				'config' => [ 'test-group' => [ 'automatic-group' ] ],
 				'expectedGroupsToAdd' => [ 'automatic-group' ],
 				'expectedGroupsToRemove' => [],
-				'expectedExpiriesToChange' => [],
+				'expectedExpiriesToChange' => [
+					'automatic-group' => null,
+				],
 			],
 			'Not having a group causes an automatic group to be removed' => [
 				'assignedGroups' => [ 'automatic-group' => null ],
@@ -62,7 +64,9 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				],
 				'expectedGroupsToAdd' => [ 'automatic-group' ],
 				'expectedGroupsToRemove' => [],
-				'expectedExpiriesToChange' => [],
+				'expectedExpiriesToChange' => [
+					'automatic-group' => null,
+				],
 			],
 			'Having an automatic group does not cause another automatic group to be updated' => [
 				'assignedGroups' => [ 'test-group' => null, 'automatic-group-1' => null ],
@@ -82,7 +86,9 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				],
 				'expectedGroupsToAdd' => [ 'automatic-group-1' ],
 				'expectedGroupsToRemove' => [],
-				'expectedExpiriesToChange' => [],
+				'expectedExpiriesToChange' => [
+					'automatic-group-1' => null,
+				],
 			],
 			'Having a group with an expiry adds the automatic group with the expiry' => [
 				'assignedGroups' => [ 'test-group' => '20230405060707' ],
@@ -115,7 +121,9 @@ class CentralAuthAutomaticGlobalGroupManagerTest extends MediaWikiIntegrationTes
 				],
 				'expectedGroupsToAdd' => [ 'automatic-group' ],
 				'expectedGroupsToRemove' => [],
-				'expectedExpiriesToChange' => [],
+				'expectedExpiriesToChange' => [
+					'automatic-group' => null,
+				],
 			],
 			'Updating the expiry of a group updates the expiry of the automatic group' => [
 				'assignedGroups' => [

@@ -60,6 +60,9 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 				[ 'ggp_group' => 'group-one', 'ggp_permission' => 'right-one' ],
 				[ 'ggp_group' => 'group-two', 'ggp_permission' => 'right-two' ],
 				[ 'ggp_group' => 'group-three', 'ggp_permission' => 'right-three' ],
+				[ 'ggp_group' => 'group-auto-one', 'ggp_permission' => 'right-auto-one' ],
+				[ 'ggp_group' => 'group-auto-two', 'ggp_permission' => 'right-auto-two' ],
+				[ 'ggp_group' => 'group-auto-three', 'ggp_permission' => 'right-auto-three' ],
 			] )
 			->caller( __METHOD__ )
 			->execute();
@@ -190,9 +193,13 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			$html
 		);
 
+		// No automatic groups
+		$this->assertStringNotContainsString( '(userrights-unchangeable-col)', $html );
+		$this->assertStringNotContainsString( '(centralauth-globalgroupperms-automatic-group-info)', $html );
+
 		// Can save
 		$this->assertStringContainsString(
-			$specialPage->msg( 'userrights-changeable-col', 3 )
+			$specialPage->msg( 'userrights-changeable-col', 6 )
 				->inLanguage( 'qqx' )
 				->text(),
 			$html
@@ -201,6 +208,81 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			$specialPage->msg( 'saveusergroups', $user->getName() )
 				->inLanguage( 'qqx' )
 				->text(),
+			$html
+		);
+	}
+
+	public function testRenderFormForPrivilegedUserWithAutomaticGroups() {
+		$this->overrideConfigValue( 'CentralAuthAutomaticGlobalGroups', [
+			'group-one' => [ 'group-auto-one' ],
+			'group-two' => [ 'group-auto-two' ],
+			'group-three' => [ 'group-auto-three' ],
+		] );
+
+		$expiry = time() + 86400;
+		$testUser = $this->getMutableTestUser();
+		$caUser = CentralAuthUser::getPrimaryInstance( $testUser->getUser() );
+		$caUser->register( $testUser->getPassword(), null );
+		$caUser->attach( WikiMap::getCurrentWikiId() );
+		$caUser->addToGlobalGroup( 'group-two' );
+		$caUser->addToGlobalGroup( 'group-auto-two' );
+
+		// Manually add the user to the automatic groups, since we won't hit a code path that does this for us.
+		$caUser->addToGlobalGroup( 'group-three', $expiry );
+		$caUser->addToGlobalGroup( 'group-auto-three', $expiry );
+
+		[ $html, ] = $this->executeSpecialPage(
+			$caUser->getName(),
+			null,
+			null,
+			new UltimateAuthority( $this->getTestSysop()->getUser() )
+		);
+
+		$specialPage = $this->newSpecialPage();
+
+		// Checkboxes are divided into columns
+		$this->assertStringContainsString(
+			$specialPage->msg( 'userrights-changeable-col', 3 )
+				->inLanguage( 'qqx' )
+				->text(),
+			$html
+		);
+		$this->assertStringContainsString(
+			$specialPage->msg( 'userrights-unchangeable-col', 3 )
+				->inLanguage( 'qqx' )
+				->text(),
+			$html
+		);
+
+		// Messages are added
+		$this->assertStringContainsString( '(centralauth-globalgroupperms-automatic-group-info: (group-group-auto-one-member', $html );
+		$this->assertStringContainsString( '(centralauth-globalgroupperms-automatic-group-info: (group-group-auto-two-member', $html );
+		$this->assertStringContainsString( '(centralauth-globalgroupperms-automatic-group-info: (group-group-auto-three-member', $html );
+		$this->assertStringContainsString( '(centralauth-globalgroupperms-automatic-group-reason)', $html );
+
+		// Automatic group one: not a member
+		$this->assertStringContainsString(
+			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" id="wpGroup-group-auto-one" name="wpGroup-group-auto-one" disabled="">',
+			$html
+		);
+
+		// Automatic group two: indefinite member
+		$this->assertStringContainsString(
+			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-auto-two" name="wpGroup-group-auto-two" disabled="">',
+			$html
+		);
+		$this->assertStringContainsString(
+			'<span>(userrights-expiry-none)</span>',
+			$html
+		);
+
+		// Automatic group three: temporary member
+		$this->assertStringContainsString(
+			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-auto-three" name="wpGroup-group-auto-three" disabled="">',
+			$html
+		);
+		$this->assertStringContainsString(
+			'<span>(userrights-expiry-current',
 			$html
 		);
 	}

@@ -24,6 +24,7 @@ use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
@@ -34,6 +35,7 @@ use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\SpecialUserRights;
@@ -106,6 +108,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$out = $this->getOutput();
 
 		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$out->addModuleStyles( 'ext.centralauth.misc.styles' );
 		$out->addModules( [ 'mediawiki.special.userrights' ] );
 
 		$this->mTarget = $par ?? $request->getVal( 'user' );
@@ -720,12 +723,18 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 *
 	 * This is only called when the user can change any of the groups.
 	 *
+	 * This is very similar to SpecialUserRights::groupCheckboxes (T395365).
+	 *
 	 * @param CentralAuthUser $user
 	 * @return string The HTML table element with checkboxes and expiry dropdowns
 	 */
 	private function groupCheckboxes( CentralAuthUser $user ) {
 		$allgroups = $this->globalGroupLookup->getDefinedGroups();
 		$currentGroups = $user->getGlobalGroupsWithExpiration();
+		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
+		$automaticGroupsConfig = $this->getConfig()->get(
+			CAMainConfigNames::CentralAuthAutomaticGlobalGroups
+		);
 		$ret = '';
 
 		// Get the list of preset expiry times from the system message
@@ -734,87 +743,156 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			? []
 			: XmlSelect::parseOptionsMessage( $expiryOptionsMsg->text() );
 
+		$columns = [ 'unchangeable' => [], 'changeable' => [] ];
+
+		foreach ( $allgroups as $group ) {
+			$set = array_key_exists( $group, $currentGroups );
+
+			// The checkbox should be disabled if the group is automatic
+			$groupIsAutomatic = array_search( $group, $automaticGroups ) !== false;
+			$checkbox = [
+				'set' => $set,
+				'disabled' => $groupIsAutomatic,
+			];
+
+			if ( $groupIsAutomatic ) {
+				$columns['unchangeable'][$group] = $checkbox;
+			} else {
+				$columns['changeable'][$group] = $checkbox;
+			}
+		}
+
 		// Build the HTML table
 		$ret .= Html::openElement( 'table', [ 'class' => 'mw-userrights-groups' ] ) .
 			"<tr>\n";
-		$ret .= Html::element(
-			'th',
-			[],
-			$this->msg( 'userrights-changeable-col', count( $allgroups ) )->text()
-		);
+		$columns = array_filter( $columns, static function ( $column ) {
+			return $column !== [];
+		} );
+		foreach ( $columns as $name => $column ) {
+			// Messages: userrights-changeable-col, userrights-unchangeable-col
+			$ret .= Html::element(
+				'th',
+				[],
+				$this->msg( 'userrights-' . $name . '-col', count( $column ) )->text()
+			);
+		}
 
 		$ret .= "</tr>\n<tr>\n";
 		$uiLanguage = $this->getLanguage();
 
-		$ret .= "\t<td style='vertical-align:top;'>\n";
-		foreach ( $allgroups as $group ) {
-			$set = array_key_exists( $group, $currentGroups );
+		foreach ( $columns as $column ) {
+			$ret .= "\t<td style='vertical-align:top;'>\n";
+			foreach ( $column as $group => $checkbox ) {
+				$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
+				$id = "wpGroup-$group";
 
-			$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
-			$id = "wpGroup-$group";
-			$checkboxHtml = Html::element( 'input', [
-				'class' => 'mw-userrights-groupcheckbox',
-				'type' => 'checkbox', 'value' => '1', 'checked' => $set,
-				'id' => $id, 'name' => $id,
-			] ) . '&nbsp;' . Html::label( $member, $id );
+				$checkboxHtml = Html::element( 'input', [
+					'class' => 'mw-userrights-groupcheckbox',
+					'type' => 'checkbox', 'value' => '1', 'checked' => $checkbox['set'],
+					'id' => $id, 'name' => $id,
+					'disabled' => $checkbox['disabled'],
+				] ) . '&nbsp;' . Html::label( $member, $id );
 
-			$uiUser = $this->getUser();
+				if ( $checkbox['disabled'] ) {
+					$checkboxHtml .= Html::rawElement(
+						'div',
+						[ 'class' => 'mw-userrights-unaddable-reason' ],
+						$this->msg( 'centralauth-globalgroupperms-automatic-group-reason' )->parse()
+					);
+				} elseif ( isset( $automaticGroupsConfig[$group] ) && $automaticGroupsConfig[$group] ) {
+					$groupNames = array_map(
+						static function ( $automaticGroup ) use ( $uiLanguage, $user ) {
+							return $uiLanguage->getGroupMemberName( $automaticGroup, $user->getName() );
+						},
+						$automaticGroupsConfig[$group]
+					);
+					$checkboxHtml .= Html::rawElement(
+						'div',
+						[ 'class' => 'mw-centralauth-globalgroupmembership-disabled ' .
+							'mw-centralauth-globalgroupmembership-group-info' ],
+						$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
+							->params( Message::listParam( $groupNames ) )
+							->parse()
+					);
+				}
 
-			$currentExpiry = $currentGroups[$group] ?? null;
+				$uiUser = $this->getUser();
 
-			$expiryHtml = Html::element( 'span', [],
-				$this->msg( 'userrights-expiry' )->text() );
-			$expiryHtml .= Html::openElement( 'span' );
+				$currentExpiry = $currentGroups[$group] ?? null;
 
-			// add a form element to set the expiry date
-			$expiryFormOptions = new XmlSelect(
-				"wpExpiry-$group",
-				// forward compatibility with HTMLForm
-				"mw-input-wpExpiry-$group",
-				$currentExpiry ? 'existing' : 'infinite'
-			);
+				if ( $checkbox['disabled'] ) {
+					if ( $currentExpiry ) {
+						$expiryFormatted = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
+						$expiryFormattedD = $uiLanguage->userDate( $currentExpiry, $uiUser );
+						$expiryFormattedT = $uiLanguage->userTime( $currentExpiry, $uiUser );
+						$expiryHtml = Html::element( 'span', [],
+							$this->msg( 'userrights-expiry-current' )->params(
+								$expiryFormatted, $expiryFormattedD, $expiryFormattedT
+							)->text()
+						);
+					} else {
+						$expiryHtml = Html::element( 'span', [],
+							$this->msg( 'userrights-expiry-none' )->text() );
+					}
+				} else {
+					$expiryHtml = Html::element( 'span', [],
+						$this->msg( 'userrights-expiry' )->text() );
+					$expiryHtml .= Html::openElement( 'span' );
 
-			if ( $currentExpiry ) {
-				$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-				$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
-				$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
-				$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
-					$timestamp, $d, $t );
-				$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
+					// add a form element to set the expiry date
+					$expiryFormOptions = new XmlSelect(
+						"wpExpiry-$group",
+						// forward compatibility with HTMLForm
+						"mw-input-wpExpiry-$group",
+						$currentExpiry ? 'existing' : 'infinite'
+					);
+
+					if ( $currentExpiry ) {
+						$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
+						$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
+						$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
+						$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
+							$timestamp, $d, $t );
+						$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
+					}
+
+					$expiryFormOptions->addOption(
+						$this->msg( 'userrights-expiry-none' )->text(),
+						'infinite'
+					);
+					$expiryFormOptions->addOption(
+						$this->msg( 'userrights-expiry-othertime' )->text(),
+						'other'
+					);
+
+					$expiryFormOptions->addOptions( $expiryOptions );
+
+					// Add expiry dropdown
+					$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
+
+					// Add custom expiry field
+					$attribs = [
+						'id' => "mw-input-wpExpiry-$group-other",
+						'class' => 'mw-userrights-expiryfield',
+						'size' => 30,
+					];
+					$expiryHtml .= Html::input( "wpExpiry-$group-other", '', 'text', $attribs );
+
+					$expiryHtml .= Html::closeElement( 'span' );
+				}
+
+				$divAttribs = [
+					'id' => "mw-userrights-nested-wpGroup-$group",
+					'class' => 'mw-userrights-nested',
+				];
+				$checkboxHtml .= "\t\t\t" . Html::rawElement( 'div', $divAttribs, $expiryHtml ) . "\n";
+
+				$ret .= "\t\t" . (
+					$checkbox['disabled'] ?
+					Html::rawElement( 'div', [ 'class' => 'mw-userrights-disabled' ], $checkboxHtml ) :
+					Html::rawElement( 'div', [], $checkboxHtml )
+				) . "\n";
 			}
-
-			$expiryFormOptions->addOption(
-				$this->msg( 'userrights-expiry-none' )->text(),
-				'infinite'
-			);
-			$expiryFormOptions->addOption(
-				$this->msg( 'userrights-expiry-othertime' )->text(),
-				'other'
-			);
-
-			$expiryFormOptions->addOptions( $expiryOptions );
-
-			// Add expiry dropdown
-			$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
-
-			// Add custom expiry field
-			$attribs = [
-				'id' => "mw-input-wpExpiry-$group-other",
-				'class' => 'mw-userrights-expiryfield',
-				'size' => 30,
-			];
-			$expiryHtml .= Html::input( "wpExpiry-$group-other", '', 'text', $attribs );
-
-			$expiryHtml .= Html::closeElement( 'span' );
-
-			$divAttribs = [
-				'id' => "mw-userrights-nested-wpGroup-$group",
-				'class' => 'mw-userrights-nested',
-			];
-			$checkboxHtml .= "\t\t\t" . Html::rawElement( 'div', $divAttribs, $expiryHtml ) . "\n";
-
-			$ret .= "\t\t" . Html::rawElement( 'div', [], $checkboxHtml
-			) . "\n";
 		}
 		$ret .= "\t</td>\n";
 
