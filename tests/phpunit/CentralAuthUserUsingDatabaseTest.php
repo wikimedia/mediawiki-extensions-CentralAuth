@@ -1,11 +1,14 @@
 <?php
 
+use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\Auth\PasswordAuthenticationRequest;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logging\LogEntryBase;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\UserIdentity;
@@ -513,6 +516,66 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 				[ 'global-test', 'global-test-unassigned' ], [],
 			],
 		];
+	}
+
+	public function testScramble() {
+		$extensionJson = file_get_contents( __DIR__ . '/../../extension.json' );
+		$originalConfig = json_decode( $extensionJson, true )['AuthManagerAutoConfig'];
+		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, [
+			'preauth' => [],
+			'primaryauth' => [
+				$originalConfig['primaryauth']['CentralAuthPrimaryAuthenticationProvider'],
+			],
+			'secondaryauth' => [],
+		] );
+
+		$password = 'GUP@ssword';
+		$caUser = CentralAuthUser::getInstanceByName( $this->getTestCentralAuthUserWithExistingLocalWikis() );
+		$authManager = $this->getServiceContainer()->getAuthManager();
+
+		$this->assertFalse( $caUser->hasScrambledPassword() );
+		$this->assertNull( $caUser->getScrambledPasswordReason() );
+		$this->assertSame( [ CentralAuthUser::AUTHENTICATE_OK ], $caUser->authenticate( $password ) );
+		$this->assertFalse( $caUser->getScrambledPasswordOriginalPasswordObject()->verify( $password ) );
+		$this->assertFalse( $caUser->unscramblePassword( 'foo' ), 'Unscrambling non-scrambled password should fail' );
+
+		$this->assertTrue( $caUser->scramblePassword( 'foo' ) );
+		$this->assertTrue( $caUser->hasScrambledPassword() );
+		$this->assertSame( 'foo', $caUser->getScrambledPasswordReason() );
+		$this->assertSame( [ CentralAuthUser::AUTHENTICATE_BAD_PASSWORD ], $caUser->authenticate( $password ) );
+		$this->assertTrue( $caUser->getScrambledPasswordOriginalPasswordObject()->verify( $password ) );
+		$this->assertFalse( $caUser->getScrambledPasswordOriginalPasswordObject()->verify( 'notThePassword' ) );
+		$this->assertFalse( $caUser->scramblePassword( 'bar' ) );
+		$this->assertFalse( $caUser->unscramblePassword( 'bar' ), 'Unscrambling with different reason should fail' );
+
+		$oldPassword = new PasswordAuthenticationRequest();
+		$oldPassword->username = $caUser->getName();
+		$oldPassword->password = $password;
+		$response = $authManager->beginAuthentication( [ $oldPassword ], 'http://example.org' );
+		$this->assertSame( AuthenticationResponse::FAIL, $response->status );
+		$this->assertSame( 'centralauth-scrambled-reason-foo', $response->message->getKey() );
+
+		$caUser->setEmail( '' );
+		$response = $authManager->beginAuthentication( [ $oldPassword ], 'http://example.org' );
+		$this->assertSame( AuthenticationResponse::FAIL, $response->status );
+		$this->assertSame( 'centralauth-scrambled-noemail-reason-foo', $response->message->getKey() );
+
+		$wrongPassword = new PasswordAuthenticationRequest();
+		$wrongPassword->username = $caUser->getName();
+		$wrongPassword->password = '123';
+		$response = $authManager->beginAuthentication( [ $wrongPassword ], 'http://example.org' );
+		$this->assertSame( AuthenticationResponse::FAIL, $response->status );
+		$this->assertSame( 'wrongpassword', $response->message->getKey() );
+
+		$newPassword = new PasswordAuthenticationRequest();
+		$newPassword->username = $caUser->getName();
+		$newPassword->password = $newPassword->retype = $password;
+		$status = $authManager->allowsAuthenticationDataChange( $newPassword, true );
+		$this->assertStatusError( 'centralauth-scrambled-cannotusesame', $status );
+
+		$this->assertTrue( $caUser->unscramblePassword( 'foo' ) );
+		$this->assertFalse( $caUser->hasScrambledPassword() );
+		$this->assertSame( [ CentralAuthUser::AUTHENTICATE_OK ], $caUser->authenticate( $password ) );
 	}
 
 	private function createCentralAccountForGlobalUser(): void {

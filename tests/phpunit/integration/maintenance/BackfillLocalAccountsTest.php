@@ -7,8 +7,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Maintenance\BackfillLocalAccounts;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MainConfigNames;
-use MediaWiki\Password\PasswordFactory;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Tests\Maintenance\MaintenanceBaseTestCase;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\FakeResultWrapper;
@@ -77,10 +76,7 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 		// we will have 'Fake User 1', 2,3,5 with guids 101, 102, etc
 		// the rest of the fields we can just shove arbitrary things into
 		$config = RequestContext::getMain()->getConfig();
-		$passwordFactory = new PasswordFactory(
-			$config->get( MainConfigNames::PasswordConfig ),
-			$config->get( MainConfigNames::PasswordDefault )
-		);
+		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 		$passwordHash = $passwordFactory->newFromPlaintext( "Fake password here" )->toString();
 
 		$registrationDate = '20241118165540';
