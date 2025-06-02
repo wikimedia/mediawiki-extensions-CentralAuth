@@ -35,6 +35,7 @@ class AddToGlobalGroup extends Maintenance {
 	public function execute() {
 		$userFactory = $this->getServiceContainer()->getUserFactory();
 		$specialPage = new SpecialGlobalGroupMembership(
+			$this->getServiceContainer()->getHookContainer(),
 			$this->getServiceContainer()->getTitleFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),

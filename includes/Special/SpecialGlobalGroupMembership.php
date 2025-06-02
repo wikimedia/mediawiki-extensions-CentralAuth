@@ -25,8 +25,10 @@ use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
@@ -64,6 +66,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 */
 	protected $mFetchedUser = null;
 
+	private HookContainer $hookContainer;
 	private TitleFactory $titleFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
@@ -71,6 +74,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	private GlobalGroupLookup $globalGroupLookup;
 
 	public function __construct(
+		HookContainer $hookContainer,
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
@@ -78,6 +82,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
+		$this->hookContainer = $hookContainer;
 		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
@@ -396,6 +401,9 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 
 		// Only add a log entry if something actually changed
 		if ( $groups !== $newGroups ) {
+			// Allow other extensions to respond to changes in global group membership
+			$caHookRunner = new CentralAuthHookRunner( $this->hookContainer );
+			$caHookRunner->onCentralAuthGlobalUserGroupMembershipChanged( $user, $groups, $newGroups );
 			$this->addLogEntry(
 				$user,
 				$groups,

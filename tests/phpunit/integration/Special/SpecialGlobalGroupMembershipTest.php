@@ -67,6 +67,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	protected function newSpecialPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
+			$this->getServiceContainer()->getHookContainer(),
 			$this->getServiceContainer()->getTitleFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),
@@ -272,6 +273,15 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		[ $user, ] = $this->getRegisteredTestUser();
 		$originalExpiry = $user->getGlobalGroupsWithExpiration()['group-three'];
 
+		$hookWasRun = false;
+		$this->clearHook( 'CentralAuthGlobalUserGroupMembershipChanged' );
+		$this->setTemporaryHook(
+			'CentralAuthGlobalUserGroupMembershipChanged',
+			static function () use ( &$hookWasRun ) {
+				$hookWasRun = true;
+			}
+		);
+
 		// test against a non-canonical username form (T344495)
 		$username = lcfirst( $user->getName() );
 		$this->executeSpecialPage(
@@ -325,6 +335,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			],
 			$logData
 		);
+
+		$this->assertTrue( $hookWasRun, 'The CentralAuthGlobalUserGroupMembershipChanged hook should have run' );
 	}
 
 	/** @dataProvider provideSaveWithAutomaticGroup */
