@@ -237,7 +237,9 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
 		);
 
-		if ( !$inputData ) {
+		// T395957 - If we have input data and clientPref param is
+		// not set, let's just return and use the default preference.
+		if ( !$inputData || !isset( $inputData['clientPref'] ) ) {
 			// This will be bad if we find ourselves here during an actual
 			// authentication and the user's preferences is not applied. In
 			// the worse case, let's just default to whatever mode was already
