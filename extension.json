@@ -622,6 +622,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler",
 			"services": [
 				"CentralAuth.CentralAuthTokenManager",
+				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"
 			]
 		},
