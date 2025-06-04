@@ -11,15 +11,17 @@ require_once "$IP/maintenance/Maintenance.php";
 // @codeCoverageIgnoreEnd
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Extension\CentralAuth\User\EmailableUser;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Status\Status;
+use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
  * This maintenance script is used to resend confirmation emails to users with
  * unattached accounts in the hopes that we will then be able to automatically
- * attach some unattached accounts.  In addition, by using an EmailableUser object
- * we are able to override the contents of the email and send them to Special:MergeAccount
+ * attach some unattached accounts.
+ * We also override the contents of the email and send them to Special:MergeAccount
  * instead of Special:ConfirmEmail and thus put them right into the workflow to attach
  * accounts by password.
  *
@@ -142,8 +144,10 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->output( "Sending confirmation email for: '$username@$wikiID'\n" );
 
 		// we want to start with the local user
-		$user = EmailableUser::newFromName( $username );
-		if ( $user === false ) {
+		$user = $this->getServiceContainer()
+			->getUserFactory()
+			->newFromName( $username );
+		if ( $user === null ) {
 			$this->output( "ERROR: $username is an invalid username\n" );
 			return;
 		}
@@ -178,7 +182,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			return;
 		}
 
-		if ( $user->sendConfirmAndMigrateMail() ) {
+		if ( $this->sendConfirmAndMigrateMail( $user ) ) {
 			$this->output( "Sent email to $username\n" );
 			$this->sent++;
 			sleep( $this->sleep );
@@ -187,6 +191,51 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 				"ERROR: Sending confirm and migrate email failed for '$username@$wikiID'\n"
 			);
 		}
+	}
+
+	/**
+	 * Generate a new e-mail confirmation token and send a confirmation/invalidation
+	 * mail to the user's given address.
+	 *
+	 * @param User $user The user to send the confirmation email to
+	 * @return Status
+	 */
+	private function sendConfirmAndMigrateMail( User $user ) {
+		// we want this token to last a little bit longer (14 days) since we are cold-emailing
+		// users and we really want as many responses as possible
+		$tokenLife = 14 * 24 * 60 * 60;
+
+		$token = $user->getConfirmationToken( $expiration, $tokenLife );
+
+		if ( $user->isEmailConfirmed() ) {
+			// Hack to bypass localization of 'Special:'
+			// @see User::getTokenUrl
+			$mergeAccountUrl = Title::makeTitle( NS_MAIN, 'Special:MergeAccount' )->getCanonicalURL();
+		} else {
+			// create a "token url" for MergeAccount since we have added email
+			// confirmation there
+			$mergeAccountUrl = $user->getTokenUrl( 'MergeAccount', $token );
+		}
+
+		$invalidateURL = $user->getInvalidationTokenUrl( $token );
+		$user->saveSettings();
+
+		return $user->sendMail(
+			wfMessage( 'centralauth-finishglobaliseemail_subject' )->text(),
+			wfMessage( "centralauth-finishglobaliseemail_body",
+				$user->getRequest()->getIP(),
+				$user->getName(),
+				$mergeAccountUrl
+			)->dateTimeParams(
+				$expiration
+			)->params(
+				$invalidateURL
+			)->dateParams(
+				$expiration
+			)->timeParams(
+				$expiration
+			)->text()
+		);
 	}
 
 	private function report() {

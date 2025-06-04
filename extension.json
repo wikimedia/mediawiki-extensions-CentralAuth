@@ -423,6 +423,7 @@
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\BackfillLocalAccounts": "maintenance/backfillLocalAccounts.php",
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\CentralAuthExpireTemporaryAccounts": "maintenance/expireTemporaryAccounts.php",
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\MigrateGuSalt": "maintenance/migrateGuSalt.php",
+		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\SendConfirmAndMigrateEmail": "maintenance/sendConfirmAndMigrateEmail.php",
 		"MWCA": "includes/MWCA.php"
 	},
 	"TestAutoloadClasses": {
