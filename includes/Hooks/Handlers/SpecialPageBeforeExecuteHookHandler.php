@@ -216,18 +216,22 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	}
 
 	/**
-	 * When anonymous clients set their preferences, they should be
-	 * applied to the shared domain during authentication. For example
-	 * when anon users set their theme to dark mode, it should be carried
-	 * across during the authentication flow.
+	 * When anonymous clients set their preferences, these preferences
+	 * should be memorized and applied onto the shared domain during
+	 * authentication to retain browsing experience across domains.
+	 *
+	 * For example when anon users set their theme to dark mode, it
+	 * should be applied to the shared domain and render in dark mode.
 	 *
 	 * @param WebRequest $request
-	 *
 	 * @return void
 	 */
 	private function setClientPreferences( WebRequest $request ): void {
 		$token = $request->getRawVal( 'centralauthLoginToken' );
 
+		// A user can try to fake a request to the shared domain without a
+		// centralauthLoginToken. Don't try to do anything, they can apply
+		// preferences manually on the interface there if they desire.
 		if ( !$token ) {
 			return;
 		}
@@ -237,14 +241,18 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
 		);
 
-		// T395957 - If we have input data and clientPref param is
-		// not set, let's just return and use the default preference.
+		// T395957 - If we have valid input data but no client preferences
+		// set in the data, is let's just return and use the default preference
+		// on this domain. This happened when users were about the login in
+		// between train deploys and the `clientPref` parameter was unset. So
+		// to protect against this, let's check to make sure we have preferences
+		// to apply before we even attempt to apply them.
 		if ( !$inputData || !isset( $inputData['clientPref'] ) ) {
-			// This will be bad if we find ourselves here during an actual
-			// authentication and the user's preferences is not applied. In
-			// the worse case, let's just default to whatever mode was already
-			// used previously or whatever we have on the shared domain for
-			// this client.
+			// No valid input data will be bad if we find ourselves here during
+			// an actual authentication flow and the user's preferences is not
+			// applied. In the worse case, let's just default to whatever mode
+			// was already used previously by this client or whatever we have on
+			// the shared domain for this client.
 			return;
 		}
 
