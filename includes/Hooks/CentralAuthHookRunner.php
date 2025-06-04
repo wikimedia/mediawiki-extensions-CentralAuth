@@ -19,7 +19,8 @@ class CentralAuthHookRunner implements
 	CentralAuthLoginRedirectDataHook,
 	CentralAuthSilentLoginRedirectHook,
 	CentralAuthWikiListHook,
-	CentralAuthInfoFieldsHook
+	CentralAuthInfoFieldsHook,
+	CentralAuthGlobalUserGroupMembershipChangedHook
 {
 
 	private HookContainer $hookContainer;
@@ -93,6 +94,18 @@ class CentralAuthHookRunner implements
 		$this->hookContainer->run(
 			'CentralAuthInfoFields',
 			[ $centralAuthUser, $context, &$attribs ]
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onCentralAuthGlobalUserGroupMembershipChanged(
+		CentralAuthUser $centralAuthUser, array $oldGroups, array $newGroups
+	) {
+		$this->hookContainer->run(
+			'CentralAuthGlobalUserGroupMembershipChanged',
+			[ $centralAuthUser, $oldGroups, $newGroups ]
 		);
 	}
 }

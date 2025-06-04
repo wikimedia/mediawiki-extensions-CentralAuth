@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Message\Message;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Title\TitleFactory;
@@ -17,6 +18,7 @@ use MediaWiki\User\UserNameUtils;
 
 class UserGroupsHookHandler implements UserGroupsChangedHook {
 
+	private HookContainer $hookContainer;
 	private TitleFactory $titleFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
@@ -24,6 +26,7 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 	private GlobalGroupLookup $globalGroupLookup;
 
 	public function __construct(
+		HookContainer $hookContainer,
 		Config $config,
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
@@ -31,6 +34,7 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
 		GlobalGroupLookup $globalGroupLookup
 	) {
+		$this->hookContainer = $hookContainer;
 		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
@@ -66,6 +70,7 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 
 		// To do: Have a service that the special page, APIs and hook handler call: T270857
 		$specialPage = new SpecialGlobalGroupMembership(
+			$this->hookContainer,
 			$this->titleFactory,
 			$this->userNamePrefixSearch,
 			$this->userNameUtils,

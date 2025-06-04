@@ -32,6 +32,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Title\TitleFactory;
@@ -47,6 +48,7 @@ class ApiGlobalUserRights extends ApiBase {
 
 	private ?CentralAuthUser $user = null;
 
+	private HookContainer $hookContainer;
 	private TitleFactory $titleFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
@@ -56,6 +58,7 @@ class ApiGlobalUserRights extends ApiBase {
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
+		HookContainer $hookContainer,
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
@@ -63,6 +66,7 @@ class ApiGlobalUserRights extends ApiBase {
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
+		$this->hookContainer = $hookContainer;
 		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
@@ -72,6 +76,7 @@ class ApiGlobalUserRights extends ApiBase {
 
 	private function getUserRightsPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
+			$this->hookContainer,
 			$this->titleFactory,
 			$this->userNamePrefixSearch,
 			$this->userNameUtils,
