@@ -263,7 +263,7 @@
 	"centralauth-globalgroupperms-rights": "Rights",
 	"centralauth-globalgroupperms-wikiset-none": "This group is active on all wikis.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Automatically assigned",
-	"centralauth-globalgroupperms-automatic-group-info": "User will be automatically assigned the following groups: $1",
+	"centralauth-globalgroupperms-automatic-group-info": "User will be automatically assigned: $1",
 	"centralauth-groupname": "this wiki farm",
 	"centralauth-hidden-blockreason": "globally hidden by $1 at $2 with following reason: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|hour|hours}} ago",
