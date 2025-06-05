@@ -114,6 +114,7 @@
 	"centralauth-complete": "Penggabungan akaun selesai!",
 	"centralauth-complete-text": "Sekarang anda boleh log masuk ke dalam mana-mana wiki kelolaan {{int:Centralauth-groupname}} tanpa membuka akaun baru.",
 	"centralauth-completelogin-back": "Kembali ke halaman sebelumnya.",
+	"centralauth-contribs-link": "akaun sejagat",
 	"centralauth-days-ago": "$1 hari yang lalu",
 	"centralauth-desc": "[[Special:MergeAccount|Gabungkan Akaun]] di semua wiki kelolaan {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Pada masa sekarang, penggabungan akaun sedang dalam mod demonstrasi, oleh itu operasi penggabungan sebenar tidak dilakukan. Harap maaf!",

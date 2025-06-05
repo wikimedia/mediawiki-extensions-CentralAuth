@@ -106,6 +106,7 @@
 	"centralauth-complete": "Zjednotenie prihlasovacích účtov dokončené!",
 	"centralauth-complete-text": "Teraz sa môžete prihlásiť na ľubovoľnú wiki {{int:Centralauth-groupname}} bez toho, aby ste si museli vytvárať nový účet.",
 	"centralauth-completelogin-back": "Späť na predošlú stránku.",
+	"centralauth-contribs-link": "globálny účet",
 	"centralauth-days-ago": "{{PLURAL:$1|včera|pred $1 dňami}}",
 	"centralauth-desc": "[[Special:MergeAccount|Zlúčenie účtov]] na jednotlivých wiki {{int:Centralauth-groupname}}",
 	"centralauth-disabled-dryrun": "Zjednotenie účtov prebieha momentálne iba v demonštračnom / ladiacom režime, takže samotné operácie spojenia sú vypnuté. Prepáčte!",
