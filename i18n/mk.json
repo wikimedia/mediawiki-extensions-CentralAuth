@@ -234,6 +234,8 @@
 	"centralauth-globalgroupperms-nogroups": "Нема определено глобални групи.",
 	"centralauth-globalgroupperms-rights": "Права",
 	"centralauth-globalgroupperms-wikiset-none": "Групава е активна на сите викија.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Автоматски доделено",
+	"centralauth-globalgroupperms-automatic-group-info": "на корисникот автоматски ќе му бидат доделени следниве групи: $1",
 	"centralauth-groupname": "оваа викифарма",
 	"centralauth-hidden-blockreason": "глобално скриен од $1 во $2 од следнава причина: $3",
 	"centralauth-hours-ago": "пред {{PLURAL:$1|еден час|$1 часа}}",

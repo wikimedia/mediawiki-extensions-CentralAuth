@@ -242,6 +242,8 @@
 	"centralauth-globalgroupperms-nogroups": "Qlobal qrup tapılmadı.",
 	"centralauth-globalgroupperms-rights": "Hüquqlar",
 	"centralauth-globalgroupperms-wikiset-none": "Bu qrup bütün vikilərdə aktivdir.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Avtomatik olaraq təyin olunub",
+	"centralauth-globalgroupperms-automatic-group-info": "İstifadəçiyə avtomatik olaraq aşağıdakı qruplar təyin olunacaq: $1",
 	"centralauth-groupname": "bu viki ferması",
 	"centralauth-hidden-blockreason": "qlobal olaraq $1 tərəfindən $2 tarixində aşağıdakı səbəblə gizlədilib: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} əvvəl",

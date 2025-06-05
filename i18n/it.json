@@ -245,6 +245,8 @@
 	"centralauth-globalgroupperms-nogroups": "Non è stato definito alcun gruppo globale.",
 	"centralauth-globalgroupperms-rights": "Diritti",
 	"centralauth-globalgroupperms-wikiset-none": "Questo gruppo è attivo su tutti i wiki.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Assegnato automaticamente",
+	"centralauth-globalgroupperms-automatic-group-info": "L'utente sarà assegnato automaticamente ai seguenti gruppi: $1",
 	"centralauth-groupname": "questa wiki farm",
 	"centralauth-hidden-blockreason": "Globalmente nascosto da $1 su $2 con la ragione: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ora|ore}} fa",

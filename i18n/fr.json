@@ -300,6 +300,8 @@
 	"centralauth-globalgroupperms-nogroups": "Aucun groupe global n’a été défini.",
 	"centralauth-globalgroupperms-rights": "Droits",
 	"centralauth-globalgroupperms-wikiset-none": "Ce groupe est actif sur tous les wikis.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Attribué automatiquement",
+	"centralauth-globalgroupperms-automatic-group-info": "L'utilisateur sera automatiquement attribué aux groupes suivants: $1",
 	"centralauth-groupname": "cette ferme de wikis",
 	"centralauth-hidden-blockreason": "masqué globalement par $1 sur $2 pour le motif suivant : $3",
 	"centralauth-hours-ago": "depuis $1 {{PLURAL:$1|heure|heures}}",

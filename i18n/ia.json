@@ -233,6 +233,8 @@
 	"centralauth-globalgroupperms-nogroups": "Nulle gruppo global es definite.",
 	"centralauth-globalgroupperms-rights": "Derectos",
 	"centralauth-globalgroupperms-wikiset-none": "Iste gruppo es active in tote le wikis.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Assignate automaticamente",
+	"centralauth-globalgroupperms-automatic-group-info": "Le usator essera assignate automaticamente al sequente gruppos: $1",
 	"centralauth-groupname": "iste ferma de wikis",
 	"centralauth-hidden-blockreason": "celate globalmente per $1 a $2 pro le motivo sequente: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|hora|horas}} retro",

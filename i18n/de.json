@@ -253,6 +253,8 @@
 	"centralauth-globalgroupperms-nogroups": "Es wurden keine globalen Gruppen definiert.",
 	"centralauth-globalgroupperms-rights": "Rechte",
 	"centralauth-globalgroupperms-wikiset-none": "Diese Gruppe ist auf allen Wikis aktiv.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Automatisch zugewiesen",
+	"centralauth-globalgroupperms-automatic-group-info": "Der Benutzer wird automatisch den folgenden Gruppen zugewiesen: $1",
 	"centralauth-groupname": "dieser Wiki-Farm",
 	"centralauth-hidden-blockreason": "global versteckt durch $1 am $2. Grund: $3",
 	"centralauth-hours-ago": "Vor $1 {{PLURAL:$1|Stunde|Stunden}}",
