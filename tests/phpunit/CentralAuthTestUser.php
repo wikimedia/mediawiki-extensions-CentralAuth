@@ -154,7 +154,7 @@ class CentralAuthTestUser {
 			'gu_hidden_level' => $this->hiddenLevel,
 			'gu_registration' => $db->timestamp( $this->registration ),
 			'gu_email' => $this->email,
-			'gu_email_authenticated' => $db->timestamp( $this->emailAuthenticated ),
+			'gu_email_authenticated' => $db->timestampOrNull( $this->emailAuthenticated ),
 			'gu_home_db' => $this->homeDb,
 		];
 		$db->newInsertQueryBuilder()
@@ -188,6 +188,10 @@ class CentralAuthTestUser {
 				TestUser::setPasswordForUser( $user, $this->password );
 			}
 		}
+
+		// Clear stale CentralAuthUser instances for this user.
+		CentralAuthUser::getInstance( $user )
+			->loadStateNoCache();
 	}
 
 }
