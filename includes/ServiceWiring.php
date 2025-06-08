@@ -19,14 +19,8 @@ use MediaWiki\MediaWikiServices;
 // PHPUnit does not understand coverage for this file.
 // It is covered though, see CentralAuthServiceWiringTest.
 // @codeCoverageIgnoreStart
-
+/** @phpcs-require-sorted-array */
 return [
-
-	'CentralAuth.FilteredRequestTracker' => static function (
-		MediaWikiServices $services
-	): FilteredRequestTracker {
-		return new FilteredRequestTracker();
-	},
 
 	'CentralAuth.CentralAuthAntiSpoofManager' => static function (
 		MediaWikiServices $services
@@ -143,6 +137,26 @@ return [
 		);
 	},
 
+	'CentralAuth.CentralDomainUtils' => static function ( MediaWikiServices $services ): CentralDomainUtils {
+		return new CentralDomainUtils(
+			$services->getMainConfig(),
+			$services->getTitleFactory(),
+			$services->get( 'CentralAuth.SharedDomainUtils' )
+		);
+	},
+
+	'CentralAuth.FilteredRequestTracker' => static function (
+		MediaWikiServices $services
+	): FilteredRequestTracker {
+		return new FilteredRequestTracker();
+	},
+
+	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {
+		return new GlobalGroupLookup(
+			CentralAuthServices::getDatabaseManager( $services )
+		);
+	},
+
 	'CentralAuth.GlobalRenameDenylist' => static function ( MediaWikiServices $services ): GlobalRenameDenylist {
 		$config = $services->getMainConfig();
 		return new GlobalRenameDenylist(
@@ -150,6 +164,15 @@ return [
 			$services->getHttpRequestFactory(),
 			$services->getWikiPageFactory(),
 			$config->get( CAMainConfigNames::GlobalRenameDenylist )
+		);
+	},
+
+	'CentralAuth.GlobalRenameFactory' => static function ( MediaWikiServices $services ): GlobalRenameFactory {
+		return new GlobalRenameFactory(
+			$services->getJobQueueGroupFactory(),
+			$services->getUserFactory(),
+			CentralAuthServices::getAntiSpoofManager( $services ),
+			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},
 
@@ -170,21 +193,6 @@ return [
 		);
 	},
 
-	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {
-		return new GlobalGroupLookup(
-			CentralAuthServices::getDatabaseManager( $services )
-		);
-	},
-
-	'CentralAuth.GlobalRenameFactory' => static function ( MediaWikiServices $services ): GlobalRenameFactory {
-		return new GlobalRenameFactory(
-			$services->getJobQueueGroupFactory(),
-			$services->getUserFactory(),
-			CentralAuthServices::getAntiSpoofManager( $services ),
-			CentralAuthServices::getDatabaseManager( $services )
-		);
-	},
-
 	'CentralAuth.GlobalUserSelectQueryBuilderFactory' => static function (
 		MediaWikiServices $services
 	): GlobalUserSelectQueryBuilderFactory {
@@ -193,14 +201,6 @@ return [
 			$services->getActorStore(),
 			$services->getUserNameUtils(),
 			$services->getTempUserConfig()
-		);
-	},
-
-	'CentralAuth.CentralDomainUtils' => static function ( MediaWikiServices $services ): CentralDomainUtils {
-		return new CentralDomainUtils(
-			$services->getMainConfig(),
-			$services->getTitleFactory(),
-			$services->get( 'CentralAuth.SharedDomainUtils' )
 		);
 	},
 
