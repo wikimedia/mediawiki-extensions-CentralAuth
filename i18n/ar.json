@@ -270,6 +270,7 @@
 	"centralauth-globalgroupperms-rights": "الصلاحيات",
 	"centralauth-globalgroupperms-wikiset-none": "هذه المجموعة نشطة في جميع الويكيات.",
 	"centralauth-globalgroupperms-automatic-group-reason": "عُينت تلقائيًا",
+	"centralauth-globalgroupperms-automatic-group-info": "سيتم تعيين المستخدم تلقائيًا: $1",
 	"centralauth-groupname": "مزرعة الويكي هذه",
 	"centralauth-hidden-blockreason": "البيانات الشاملة تم إخفائها بواسطة $1 في $2 نتيجة للسبب التالي:$3",
 	"centralauth-hours-ago": "قبل {{PLURAL:$1|ساعة|ساعتين|$1 ساعات|$1 ساعة}}",
@@ -576,6 +577,6 @@
 	"right-globalgrouppermissions": "إدارة المجموعات العامة",
 	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)",
 	"sessionprovider-centralauthtokensessionprovider": "جلسات centralauthtoken",
-	"centralauth-badaccess-blacklisted": "لا يمكنك طلب عملية إعادة تسمية عالمية، لأنك على قائمة سوداء.",
+	"centralauth-badaccess-blacklisted": "لا يمكنك طلب إعادة تسمية عالمية، لأنك موجود في قائمة الرفض.",
 	"centralauth-action-forbidden-shared-domain": "لا يُسمح لك بتنفيذ هذا الإجراء على نطاق المصادقة المشترك."
 }

@@ -607,6 +607,6 @@
 	"right-globalgrouppermissions": "Gérer les groupes globaux",
 	"sessionprovider-centralauthsessionprovider": "sessions basées sur les témoins (''cookies'') centraux",
 	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, parce que vous êtes en liste noire.",
+	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, car vous êtes sur une liste de refus.",
 	"centralauth-action-forbidden-shared-domain": "Vous n'êtes pas autorisé à effectuer cette action sur le domaine d'authentification partagé."
 }

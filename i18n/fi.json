@@ -261,7 +261,7 @@
 	"centralauth-globalgroupperms-rights": "Oikeudet",
 	"centralauth-globalgroupperms-wikiset-none": "Tämä ryhmä on aktiivinen kaikissa wikeissä.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Automaattisesti lisätty",
-	"centralauth-globalgroupperms-automatic-group-info": "Käyttäjä lisätään automaattisesti seuraaviin ryhmiin: $1",
+	"centralauth-globalgroupperms-automatic-group-info": "Käyttäjälle lisätään automaattisesti: $1",
 	"centralauth-groupname": "tämä wikistö",
 	"centralauth-hidden-blockreason": "piilotettiin järjestelmänlaajuisesti käyttäjän $1 toimesta aikana $2 seuraavasta syystä johtuen: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|tunti|tuntia}} sitten",

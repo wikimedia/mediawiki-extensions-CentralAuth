@@ -234,7 +234,7 @@
 	"centralauth-globalgroupperms-rights": "Derectos",
 	"centralauth-globalgroupperms-wikiset-none": "Iste gruppo es active in tote le wikis.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Assignate automaticamente",
-	"centralauth-globalgroupperms-automatic-group-info": "Le usator essera assignate automaticamente al sequente gruppos: $1",
+	"centralauth-globalgroupperms-automatic-group-info": "Al usator essera assignate automaticamente: $1",
 	"centralauth-groupname": "iste ferma de wikis",
 	"centralauth-hidden-blockreason": "celate globalmente per $1 a $2 pro le motivo sequente: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|hora|horas}} retro",
@@ -539,6 +539,6 @@
 	"right-globalgrouppermissions": "Gerer gruppos global",
 	"sessionprovider-centralauthsessionprovider": "sessiones basate sur cookies central",
 	"sessionprovider-centralauthtokensessionprovider": "sessiones centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista nigre.",
+	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista de refusa.",
 	"centralauth-action-forbidden-shared-domain": "Tu non es autorisate a exequer iste action sur le dominio condividite de authentication."
 }

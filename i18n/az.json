@@ -243,7 +243,7 @@
 	"centralauth-globalgroupperms-rights": "Hüquqlar",
 	"centralauth-globalgroupperms-wikiset-none": "Bu qrup bütün vikilərdə aktivdir.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Avtomatik olaraq təyin olunub",
-	"centralauth-globalgroupperms-automatic-group-info": "İstifadəçiyə avtomatik olaraq aşağıdakı qruplar təyin olunacaq: $1",
+	"centralauth-globalgroupperms-automatic-group-info": "İstifadəçiyə avtomatik olaraq təyin olunacaq: $1",
 	"centralauth-groupname": "bu viki ferması",
 	"centralauth-hidden-blockreason": "qlobal olaraq $1 tərəfindən $2 tarixində aşağıdakı səbəblə gizlədilib: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat|saat}} əvvəl",
@@ -548,6 +548,6 @@
 	"right-globalgrouppermissions": "Qlobal qrupları idarə etmək",
 	"sessionprovider-centralauthsessionprovider": "mərkəzi kuki əsaslı sessiyalar",
 	"sessionprovider-centralauthtokensessionprovider": "centerauthtoken sessiyaları",
-	"centralauth-badaccess-blacklisted": "Qlobal ad dəyişdirilməsini tələb edə bilməzsiniz, çünki qara siyahıdasınız.",
+	"centralauth-badaccess-blacklisted": "Qlobal ad dəyişdirilməsini tələb edə bilməzsiniz, çünki siz qara siyahıdasınız.",
 	"centralauth-action-forbidden-shared-domain": "Paylaşılan autentifikasiya domenində bu əməliyyatı yerinə yetirmək icazəniz yoxdur."
 }

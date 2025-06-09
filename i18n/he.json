@@ -246,6 +246,8 @@
 	"centralauth-globalgroupperms-nogroups": "לא הוגדרו קבוצות גלובליות.",
 	"centralauth-globalgroupperms-rights": "הרשאות",
 	"centralauth-globalgroupperms-wikiset-none": "הקבוצה הזאת פעילה בכל אתרי הוויקי.",
+	"centralauth-globalgroupperms-automatic-group-reason": "מוקצית אוטומטית",
+	"centralauth-globalgroupperms-automatic-group-info": "החשבון יוקצה אוטומטית: $1",
 	"centralauth-groupname": "חוות הוויקי הזאת",
 	"centralauth-hidden-blockreason": "הוסתר באופן גלובלי על־ידי $1 ב־$2 מהסיבה הבאה: $3",
 	"centralauth-hours-ago": "לפני {{PLURAL:$1|שעה|שעתיים|$1 שעות}}",
@@ -550,6 +552,6 @@
 	"right-globalgrouppermissions": "ניהול קבוצות גלובליות",
 	"sessionprovider-centralauthsessionprovider": "התחברויות מרכזיות מבוססות־עוגיות",
 	"sessionprovider-centralauthtokensessionprovider": "התחברויות centralauthtoken",
-	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימה שחורה.",
+	"centralauth-badaccess-blacklisted": "אין באפשרותך לבקש שינוי שם גלובלי בשל הימצאותך ברשימת דחייה.",
 	"centralauth-action-forbidden-shared-domain": "אין לך הרשאה לעשות את הפעולה הזאת בתחום האימות המשותף."
 }
