@@ -67,8 +67,6 @@ class CentralAuthTokenManager {
 	 * @param mixed $data The value to store. Must be serializable and can't be boolean false.
 	 * @param string|array $keyPrefix Namespace in the token store.
 	 * @param array $options Options:
-	 *   - expiry (int, default 60): Expiration time of the token store record in seconds,
-	 *     or a BagOStuff::TTL_ constant.
 	 *   - token(string): Reuse the given token (presumably one from an earlier tokenize()
 	 *     call) instead of generating a new random token.
 	 * @return string The random key (without the prefix).
@@ -79,10 +77,9 @@ class CentralAuthTokenManager {
 		array $options = []
 	): string {
 		Assert::parameter( $data !== false, '$data', 'cannot be boolean false' );
-		$expiry = $options['expiry'] ?? BagOStuff::TTL_MINUTE;
 		$token = $options['token'] ?? MWCryptRand::generateHex( 32 );
 		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		$this->tokenStore->set( $key, $data, $expiry );
+		$this->tokenStore->set( $key, $data, BagOStuff::TTL_MINUTE );
 		return $token;
 	}
 
