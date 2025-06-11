@@ -59,7 +59,8 @@
 			"Xiplus",
 			"Yekrats",
 			"Zabe",
-			"דולב"
+			"דולב",
+			"Aca"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Global edit count of the user. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.\n\nParameters:\n* $1 - text that will be inserted into the filter code editor\n\nSee also:\n* {{msg-mw|Abusefilter-edit-builder-vars-user-editcount}}",
@@ -555,9 +556,9 @@
 	"grant-createlocalaccount": "Name for grant \"createlocalaccount\".\n{{Related|Grant}}",
 	"grant-setglobalaccountstatus": "Name for grant \"setglobalaccountstatus\".\n{{Related|Grant}}",
 	"log-action-filter-gblrights": "{{doc-log-action-filter-action|gblrights}}",
-	"log-action-filter-gblrights-groupprms": "{{doc-log-action-filter-action|gblrights|groupprms}}",
+	"log-action-filter-gblrights-groupprms": "{{Cannot be the same as|log-action-filter-gblrights-usergroups}}\n{{doc-log-action-filter-action|gblrights|groupprms}}",
 	"log-action-filter-gblrights-setmodify": "{{doc-log-action-filter-action|gblrights|setmodify}}",
-	"log-action-filter-gblrights-usergroups": "{{doc-log-action-filter-action|gblrights|usergroups}}",
+	"log-action-filter-gblrights-usergroups": "{{Cannot be the same as|log-action-filter-gblrights-groupprms}}\n{{doc-log-action-filter-action|gblrights|usergroups}}",
 	"log-action-filter-globalauth": "{{doc-log-action-filter-type|globalauth}}\n{{Related|Log-action-filter}}",
 	"log-action-filter-globalauth-delete": "{{doc-log-action-filter-action|globalauth|delete}}",
 	"log-action-filter-globalauth-setstatus": "{{doc-log-action-filter-action|globalauth|setstatus}}",
