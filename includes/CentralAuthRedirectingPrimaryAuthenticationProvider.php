@@ -118,13 +118,23 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		];
 		$token = $this->tokenManager->tokenize( $data, self::START_TOKEN_KEY_PREFIX );
 
+		$queryParams = [
+			'centralauthLoginToken' => $token,
+		];
+		if ( $this->manager->getRequest()->getRawVal( 'force' ) ) {
+			$queryParams += [
+				'force' => RedirectingLoginHookHandler::SECURITY_OP,
+				'forceOriginal' => $this->manager->getRequest()->getRawVal( 'force' ),
+			];
+		}
+
 		$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
 		$url = wfAppendQuery(
 			$this->sharedDomainUtils->getUrlForSharedDomainAction(
 				$isSignup ? 'signup' : 'login',
 				$this->manager->getRequest()
 			),
-			[ 'centralauthLoginToken' => $token ]
+			$queryParams
 		);
 
 		return AuthenticationResponse::newRedirect( [ new CentralAuthReturnRequest() ], $url );
@@ -208,6 +218,11 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		// corresponding state from the central domain.
 		if ( $data['rememberMe'] ) {
 			$this->manager->setAuthenticationSessionData( AuthManager::REMEMBER_ME, true );
+		}
+
+		if ( array_key_exists( 'loginWasInteractive', $data ) ) {
+			 $this->manager->setAuthenticationSessionData( AuthManager::LOGIN_WAS_INTERACTIVE,
+				 $data['loginWasInteractive'] );
 		}
 
 		// Flag this login session as being the local leg of a SUL3 login, so we can run
