@@ -22,7 +22,9 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use LogicException;
 use MediaWiki\Auth\AuthenticationResponse;
+use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
+use MediaWiki\Auth\Hook\SecuritySensitiveOperationStatusHook;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
@@ -42,11 +44,13 @@ use MediaWiki\User\User;
  */
 class RedirectingLoginHookHandler implements
 	PostLoginRedirectHook,
+	SecuritySensitiveOperationStatusHook,
 	AuthPreserveQueryParamsHook,
 	AuthChangeFormFieldsHook
 {
 
 	public const SUPPRESS_HOOK_SESSION_FLAG = 'CentralAuth-suppressAuthManagerLoginAuthenticateAudit';
+	public const SECURITY_OP = 'local';
 
 	private CentralAuthTokenManager $tokenManager;
 	private SharedDomainUtils $sharedDomainUtils;
@@ -77,9 +81,14 @@ class RedirectingLoginHookHandler implements
 			//    core 'returnto' handling.
 			// 2. The user goes to some other page requiring elevated security, gets redirected to
 			//    local login and then the redirecting primary provider sends them to the shared
-			//    domain. They do need to be sent back by this hook; the 'force' parameter is not
-			//    forwarded to the shared domain, so that will work.
-			|| $request->getBool( 'force' )
+			//    domain. They do need to be sent back by this hook. We still need to force the
+			//    login page to appear in this case (because of T389010) so we have
+			//    CentralAuthRedirectingPrimaryAuthenticationProvider set 'force' to a special
+			//    value which we can ignore here.
+			|| (
+				$request->getBool( 'force' )
+				&& $request->getRawVal( 'force' ) !== self::SECURITY_OP
+			)
 		) {
 			return true;
 		}
@@ -117,11 +126,16 @@ class RedirectingLoginHookHandler implements
 			throw new LogicException( 'Unattached user at end of login' );
 		}
 
+		$lastAuthTimestamp = $request->getSession()->get( 'AuthManager:lastAuthTimestamp', 0 );
 		$outputData = $inputData + [
 			'username' => $centralUser->getName(),
 			'userId' => $centralUser->getId(),
 			'rememberMe' => $request->getSession()->shouldRememberUser(),
 			'isSignup' => $type === 'signup',
+			// There isn't really a way to tell whether PostLoginRedirect was called after a
+			// successful login or an already-logged-in visit to the login page, but checking for
+			// a recent login is good enough.
+			'loginWasInteractive' => ( time() - $lastAuthTimestamp ) < 10,
 		];
 		$token = $this->tokenManager->tokenize(
 			$outputData,
@@ -134,6 +148,16 @@ class RedirectingLoginHookHandler implements
 		$type = 'success';
 
 		return true;
+	}
+
+	/** @inheritDoc */
+	public function onSecuritySensitiveOperationStatus( &$status, $operation, $session, $timeSinceAuth ) {
+		if (
+			$operation === self::SECURITY_OP
+			&& $this->sharedDomainUtils->isSharedDomain()
+		) {
+			$status = AuthManager::SEC_REAUTH;
+		}
 	}
 
 	public function onAuthPreserveQueryParams( array &$params, array $options ) {

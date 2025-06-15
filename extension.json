@@ -759,6 +759,7 @@
 		"ResourceLoaderModifyEmbeddedSourceUrls": "shareddomain",
 		"RestCheckCanExecute": "shareddomain",
 		"SecurePoll_GetUserParams": "securepoll",
+		"SecuritySensitiveOperationStatus": "loginredirect",
 		"SetupAfterCache": "shareddomain",
 		"SessionCheckInfo": "default",
 		"SpecialContributionsBeforeMainOutput": "specialcontributions",
