@@ -7,6 +7,8 @@
 		]
 	},
 	"centralauth": "Globallıq akkaunt menedjeri",
+	"centralauth-admin-blocklog": "bloklanıw jurnalı",
+	"centralauth-admin-group-temporary": "$1 ''(waqıtsha)''",
 	"centralauth-admin-info-attached": "Dizimnen ótken akkauntlar sanı:",
 	"centralauth-admin-info-editcount": "Ulıwma redaktorlawlar sanı:",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|topar|toparlar}}:",
@@ -38,6 +40,8 @@
 	"centralauth-merge-denied": "Keshirersiz, sizde bul betke kiriw ushın ruqsat joq.",
 	"centralauth-merge-method-new": "jańa akkaunt",
 	"centralauth-merge-method-new-desc": "Globallıq akkaunttıń jergilikli akkaunt jartılǵan waqıtta avtomatlıq tárizde jaratılǵanlıǵın bildiredi.",
+	"centralauth-merge-method-password": "jasırın sóz benen tastıyıqlandı",
+	"centralauth-merge-method-questionmark": "(?)",
 	"centralauth-merge-notlogged": "Esap betlerińiz tolıq biriktirilgenin tekseriw ushın <span class=\" plainlinks\" >[$1 sistemaǵa kirińiz].",
 	"centralauth-merge-welcome": "'''Siziń paydalanıwshı esap betińiz ele {{int:Centralauth-groupname}} saytlarına kiriwdiń birden-bir sistemasına ótkerilmegen.'''\n\nEger esap betlerińizdi birden-bir sistemaǵa ótkeriwdi tańlasańız, {{int:Centralauth-groupname}} joybarlarında bar tillerdegi barlıq wikilerge kiriw ushın birdey paydalanıwshı atınan hám jasırın sózden paydalanıwıńız múmkin boladı.\n\nEger birew(ler) siziń paydalanıwshı atıńızdı basqa saytta sizden aldın iyelegen bolsa, ol paydalanıwshı at(lar)ına tiyilmeydi, biraq siz bul jaǵdaydı sol paydalanıwshı(lar) yamasa administrator menen pikirlesiw arqalı sheship alıwıńız múmkin.",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minut|minut}} burın",
