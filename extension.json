@@ -775,6 +775,7 @@
 		"SpecialPageBeforeExecute": [ "specialpagebeforeexecute", "shareddomain" ],
 		"SpecialPasswordResetOnSubmit": "default",
 		"SiteNoticeBefore": "shareddomain",
+		"SiteNoticeAfter": "shareddomain",
 		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",
 		"UnitTestsAfterDatabaseSetup": "unittests",

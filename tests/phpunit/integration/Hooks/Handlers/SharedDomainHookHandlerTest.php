@@ -355,7 +355,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	}
 
 	/**
-	 * @dataProvider provideOnSiteNoticeBefore
+	 * @dataProvider provideOnSiteNoticeBeforeAfter
 	 * @param bool $isSul3SharedDomain
 	 * @param bool $isSul3Enabled
 	 * @param bool $isWebAuthnOATHManage
@@ -363,7 +363,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	 *   to assert that no sitenotice won't be shown, or null to assert that the normal sitenotice
 	 *   will be shown.
 	 */
-	public function testOnSiteNoticeBefore(
+	public function testOnSiteNoticeBeforeAfter(
 		bool $isSul3SharedDomain,
 		bool $isSul3Enabled,
 		bool $isWebAuthnOATHManage,
@@ -404,6 +404,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 		$siteNotice = 'Old sitenotice';
 		$handler->onSiteNoticeBefore( $siteNotice, $skin );
+		$handler->onSiteNoticeAfter( $siteNotice, $skin );
 
 		if ( $expectedSiteNoticeSnippet ) {
 			$this->assertStringNotContainsString( 'Old sitenotice', $siteNotice );
@@ -415,7 +416,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		}
 	}
 
-	public static function provideOnSiteNoticeBefore() {
+	public static function provideOnSiteNoticeBeforeAfter() {
 		return [
 			'does nothing in SUL2 mode' => [
 				'isSul3SharedDomain' => false,
