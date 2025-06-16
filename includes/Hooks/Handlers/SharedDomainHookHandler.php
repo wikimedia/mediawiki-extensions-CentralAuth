@@ -22,6 +22,7 @@ use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
+use MediaWiki\Hook\SiteNoticeAfterHook;
 use MediaWiki\Hook\SiteNoticeBeforeHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
@@ -63,6 +64,7 @@ class SharedDomainHookHandler implements
 	RestCheckCanExecuteHook,
 	SetupAfterCacheHook,
 	SiteNoticeBeforeHook,
+	SiteNoticeAfterHook,
 	SpecialPageBeforeExecuteHook
 {
 	/**
@@ -486,25 +488,31 @@ class SharedDomainHookHandler implements
 	}
 
 	/**
-	 * Disallow sitenotices on the shared domain. Also, show a notice on the WebAuthn management
-	 * interface (which the user might need to access both on the local domain and the central one).
+	 * Disallow sitenotices on the shared domain.
 	 * @inheritDoc
 	 */
 	public function onSiteNoticeBefore( &$siteNotice, $skin ) {
+		if ( $this->sharedDomainUtils->isSharedDomain()
+			// check whether we are on the SUL2 central wiki for some non-authentication-related reason
+			&& $this->sharedDomainUtils->isSul3Enabled( $skin->getRequest() )
+		) {
+			$siteNotice = '';
+			return false;
+		}
+	}
+
+	/**
+	 * Show a notice on the WebAuthn management
+	 * interface (which the user might need to access both on the local domain and the central one).
+	 * @inheritDoc
+	 */
+	public function onSiteNoticeAfter( &$siteNotice, $skin ) {
 		if ( $this->sharedDomainUtils->isSul3Enabled( $skin->getRequest() )
 			&& $this->extensionRegistry->isLoaded( 'WebAuthn' )
 			&& $skin->getTitle()
 			&& $skin->getTitle()->isSpecial( 'OATHManage' )
 		) {
 			$siteNotice = $this->getWebAuthnSiteNotice( $skin, $this->sharedDomainUtils->isSharedDomain() );
-			return false;
-		}
-
-		if ( $this->sharedDomainUtils->isSharedDomain()
-			// check whether we are on the SUL2 central wiki for some non-authentication-related reason
-			&& $this->sharedDomainUtils->isSul3Enabled( $skin->getRequest() )
-		) {
-			$siteNotice = '';
 			return false;
 		}
 	}
