@@ -746,6 +746,7 @@
 		"GetLocalURL": "shareddomain",
 		"GetLogTypesOnUser": "default",
 		"GetPreferences": "default",
+		"GetSecurityLogContext": "default",
 		"GetUserBlock": "block",
 		"getUserPermissionsErrors": "shareddomain",
 		"getUserPermissionsErrorsExpensive": "permissions",

@@ -33,6 +33,7 @@ use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAutoLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserArrayFromResult;
 use MediaWiki\Hook\GetLogTypesOnUserHook;
+use MediaWiki\Hook\GetSecurityLogContextHook;
 use MediaWiki\Hook\TestCanonicalRedirectHook;
 use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
@@ -73,19 +74,20 @@ use Wikimedia\Rdbms\IResultWrapper;
 class CentralAuthHooks implements
 	ApiQueryTokensRegisterTypesHook,
 	AuthManagerFilterProvidersHook,
-	MakeGlobalVariablesScriptHook,
-	TestCanonicalRedirectHook,
-	UserGetRightsHook,
 	GetPreferencesHook,
+	GetLogTypesOnUserHook,
+	GetSecurityLogContextHook,
+	InvalidateEmailCompleteHook,
+	MakeGlobalVariablesScriptHook,
 	ResourceLoaderForeignApiModulesHook,
 	SessionCheckInfoHook,
-	GetLogTypesOnUserHook,
-	InvalidateEmailCompleteHook,
 	SpecialPasswordResetOnSubmitHook,
+	TestCanonicalRedirectHook,
 	UserArrayFromResultHook,
 	UserGetEmailAuthenticationTimestampHook,
 	UserGetEmailHook,
 	UserGetReservedNamesHook,
+	UserGetRightsHook,
 	UserIsBotHook,
 	UserIsLockedHook,
 	UserSaveSettingsHook,
@@ -723,5 +725,16 @@ class CentralAuthHooks implements
 	 */
 	public function onGetLogTypesOnUser( &$types ) {
 		$types[] = 'gblrights';
+	}
+
+	/** @inheritDoc */
+	public function onGetSecurityLogContext( array $info, array &$context ): void {
+		if ( isset( $info['user'] ) ) {
+			$caUser = CentralAuthUser::getInstance( $info['user'] );
+			$context += [
+				'user_exists_centrally' => $caUser->exists(),
+				'user_is_attached' => $caUser->isAttached(),
+			];
+		}
 	}
 }
