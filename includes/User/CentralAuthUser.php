@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use BadMethodCallException;
 use CentralAuthSessionProvider;
+use DomainException;
 use Exception;
 use LogicException;
 use MediaWiki\Context\IContextSource;
@@ -32,10 +33,10 @@ use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\LocalUserNotFoundException;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
+use MediaWiki\Extension\CentralAuth\ScrambledPassword;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\ManualLogEntry;
-use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Password\AbstractPbkdf2Password;
 use MediaWiki\Password\Password;
@@ -2442,11 +2443,7 @@ class CentralAuthUser implements IDBAccessObject {
 				$this->logger->info( "authentication for '{user}' succeeded", $logData );
 
 				$config = RequestContext::getMain()->getConfig();
-				$passwordFactory = new PasswordFactory(
-					$config->get( MainConfigNames::PasswordConfig ),
-					$config->get( MainConfigNames::PasswordDefault )
-				);
-
+				$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 				if ( $passwordFactory->needsUpdate( $passwordObject ) ) {
 					DeferredUpdates::addCallableUpdate( function () use ( $password, $passwordObject ) {
 						if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
@@ -2554,11 +2551,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @throws PasswordError
 	 */
 	private function getPasswordFromString( $encrypted, $salt ) {
-		$config = RequestContext::getMain()->getConfig();
-		$passwordFactory = new PasswordFactory(
-			$config->get( MainConfigNames::PasswordConfig ),
-			$config->get( MainConfigNames::PasswordDefault )
-		);
+		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 
 		if ( preg_match( '/^[0-9a-f]{32}$/', $encrypted ) ) {
 			$encrypted = ":B:{$salt}:{$encrypted}";
@@ -3043,11 +3036,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	protected function saltedPassword( $password ) {
 		$config = RequestContext::getMain()->getConfig();
-		$passwordFactory = new PasswordFactory(
-			$config->get( MainConfigNames::PasswordConfig ),
-			$config->get( MainConfigNames::PasswordDefault )
-		);
-
+		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 		return $passwordFactory->newFromPlaintext( $password )->toString();
 	}
 
@@ -3476,4 +3465,96 @@ class CentralAuthUser implements IDBAccessObject {
 	private function clearLocalUserCache( $wikiId, $userId ) {
 		User::purge( $wikiId, $userId );
 	}
+
+	/**
+	 * True if the user's password has been scrambled with scramblePassword().
+	 */
+	public function hasScrambledPassword(): bool {
+		return $this->getPasswordObject() instanceof ScrambledPassword;
+	}
+
+	/**
+	 * Returns the reason given as the --task parameter of ScramblePassword.php.
+	 * Returns null if the user doesn't have a scrambled password, or it's corrupted somehow.
+	 */
+	public function getScrambledPasswordReason(): ?string {
+		return $this->hasScrambledPassword() ? ( explode( ':', $this->getPassword() )[2] ?? null ) : null;
+	}
+
+	/**
+	 * For a password scrambled with scramblePassword(), returns the Password object from before
+	 * the scrambling. Returns an InvalidPassword if something goes wrong (e.g. the password is
+	 * not actually scrambled).
+	 */
+	public function getScrambledPasswordOriginalPasswordObject(): Password {
+		if ( !$this->hasScrambledPassword() ) {
+			return PasswordFactory::newInvalidPassword();
+		}
+
+		// hash format is ':scrambled:<reason>:<original-hash>'
+		$originalPasswordString = explode( ':', $this->getPassword(), 4 )[3] ?? null;
+		if ( $originalPasswordString !== null ) {
+			$originalPasswordString = ':' . $originalPasswordString;
+		}
+		return MediaWikiServices::getInstance()->getPasswordFactory()->newFromCiphertext( $originalPasswordString );
+	}
+
+	/**
+	 * Replace the user's password with an invalid one in a reversible manner.
+	 * It is the caller's responsibility to invalidate sessions.
+	 * @param string $reason The reason for the scrambling, typically a Phabricator task ID.
+	 *   Must be a single ASCII alphanumeric word.
+	 * @return bool Success flag. False could mean the account does not exist or the password
+	 *   has already been scrambled.
+	 */
+	public function scramblePassword( string $reason ): bool {
+		if ( !preg_match( '/^[a-zA-Z0-9]+$/', $reason ) ) {
+			throw new DomainException( '$reason must be ASCII alphanumeric, got: ' . $reason );
+		} elseif ( $this->getPasswordObject() instanceof ScrambledPassword ) {
+			return false;
+		}
+
+		// Make sure old-style password hashes get converted, we'll rely on the hash starting with ':'.
+		$originalPasswordHash = $this->getPasswordObject()->toString();
+		$scrambledPasswordHash = ":scrambled:$reason$originalPasswordHash";
+
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( [ 'gu_password' => $scrambledPasswordHash ] )
+			->where( [ 'gu_id' => $this->getId(), ] )
+			->caller( __METHOD__ )
+			->execute();
+		$success = ( $dbw->affectedRows() > 0 );
+
+		$this->invalidateCache();
+		return $success;
+	}
+
+	/**
+	 * Undo an earlier scramblePassword() call.
+	 * @param string $reason Must be exactly the same as the reason given for scramblePassword().
+	 * @return bool Success flag. False could mean the account does not exist or the password
+	 *   wasn't scrambled or was scrambled with a different reason.
+	 */
+	public function unscramblePassword( string $reason ): bool {
+		$scrambledPasswordHash = $this->getPassword();
+		if ( !str_starts_with( $scrambledPasswordHash, ":scrambled:$reason:" ) ) {
+			return false;
+		}
+		$originalPasswordHash = substr( $scrambledPasswordHash, strlen( ":scrambled:$reason" ) );
+
+		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw->newUpdateQueryBuilder()
+			->update( 'globaluser' )
+			->set( [ 'gu_password' => $originalPasswordHash ] )
+			->where( [ 'gu_id' => $this->getId(), ] )
+			->caller( __METHOD__ )
+			->execute();
+		$success = ( $dbw->affectedRows() > 0 );
+
+		$this->invalidateCache();
+		return $success;
+	}
+
 }

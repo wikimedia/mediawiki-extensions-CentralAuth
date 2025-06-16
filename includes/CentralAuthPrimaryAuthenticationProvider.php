@@ -212,6 +212,32 @@ class CentralAuthPrimaryAuthenticationProvider
 			);
 		}
 
+		if ( $centralUser->hasScrambledPassword() ) {
+			$passwordWasCorrect = $centralUser->getScrambledPasswordOriginalPasswordObject()->verify( $req->password );
+			$reason = $centralUser->getScrambledPasswordReason();
+			$this->logger->info( 'Login attempt with scrambled password by {user}', [
+				'user' => $centralUser->getName(),
+				'scrambleReason' => $reason,
+				'passwordWasCorrect' => $passwordWasCorrect,
+			] );
+			if ( $passwordWasCorrect ) {
+				if ( $centralUser->getEmail() ) {
+					$message = wfMessage( [
+						'centralauth-scrambled-reason-' . $reason,
+						'centralauth-scrambled',
+					] );
+				} else {
+					$message = wfMessage( [
+						'centralauth-scrambled-noemail-reason-' . $reason,
+						'centralauth-scrambled-noemail',
+					] );
+				}
+				return AuthenticationResponse::newFail( $message );
+			}
+			// If the password wasn't correct, just continue. Scrambled passwords never pass authenticate()
+			// so we'll just end up showing the normal wrong password error.
+		}
+
 		// If we don't have a central account, see if all local accounts match
 		// the password and can be globalized. (bug T72392)
 		if ( !$centralUser->exists() ) {
@@ -373,6 +399,14 @@ class CentralAuthPrimaryAuthenticationProvider
 							$sv->fatal( 'badretype' );
 						} else {
 							$sv->merge( $this->checkPasswordValidity( $username, $req->password ) );
+						}
+
+						if ( $centralUser->getScrambledPasswordOriginalPasswordObject()->verify( $req->password ) ) {
+							$this->logger->info( '{user} tried to restore scrambled password to compromised state', [
+								'user' => $username,
+								'scrambleReason' => $centralUser->getScrambledPasswordReason() ?? '',
+							] );
+							$sv->fatal( 'centralauth-scrambled-cannotusesame' );
 						}
 					}
 					return $sv;

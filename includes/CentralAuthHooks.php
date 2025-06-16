@@ -117,7 +117,7 @@ class CentralAuthHooks implements
 	public static function onRegistration() {
 		global $wgCentralAuthDatabase, $wgSessionProviders, $wgCentralIdLookupProvider,
 			// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgHooks
-			$wgVirtualDomainsMapping, $wgHooks;
+			$wgVirtualDomainsMapping, $wgHooks, $wgPasswordConfig;
 
 		if (
 			// Test against the local database
@@ -161,6 +161,8 @@ class CentralAuthHooks implements
 		}
 		array_unshift( $wgHooks['AuthManagerLoginAuthenticateAudit'],
 			[ RedirectingLoginHookHandler::class, 'onAuthManagerLoginAuthenticateAudit' ] );
+
+		$wgPasswordConfig['scrambled'] = [ 'class' => ScrambledPassword::class ];
 	}
 
 	/**
