@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\ScrambledPassword;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Password\InvalidPassword;
 
 /**
  * "Scramble" (or unscramble) passwords for a given set of users. Users with scrambled passwords
@@ -125,6 +126,8 @@ class ScramblePassword extends Maintenance {
 		} else {
 			if ( $centralUser->hasScrambledPassword() ) {
 				$this->error( "Can't scramble password which is already scrambled for $userName" );
+			} elseif ( $centralUser->getPasswordObject() instanceof InvalidPassword ) {
+				$this->output( "Skipping $userName with no password\n" );
 			} else {
 				if ( !$dryRun ) {
 					$success = $this->scramble( $centralUser );

@@ -39,6 +39,7 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Password\AbstractPbkdf2Password;
+use MediaWiki\Password\InvalidPassword;
 use MediaWiki\Password\Password;
 use MediaWiki\Password\PasswordError;
 use MediaWiki\Password\PasswordFactory;
@@ -111,7 +112,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @phan-var ?list<array{right:string,set:?int}>
 	 */
 	private $mRights;
-	/** @var string */
+	/** @var string|null Null when uninitialized, or when the central user doesn't exist */
 	private $mPassword;
 	/** @var string|null */
 	private $mAuthToken;
@@ -760,7 +761,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getPasswordObject() {
 		$this->loadState();
-		return $this->getPasswordFromString( $this->mPassword, '' );
+		return $this->mPassword === null
+			? PasswordFactory::newInvalidPassword()
+			: $this->getPasswordFromString( $this->getPassword(), '' );
 	}
 
 	/**
@@ -2545,7 +2548,8 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * @param string $encrypted Fully salted and hashed database crypto text from db.
-	 * @param string $salt The hash "salt", eg a local id for migrated passwords.
+	 * @param string $salt The hash "salt", eg a local id for migrated passwords. Not used
+	 *   outside of migrations since T364435.
 	 *
 	 * @return Password
 	 * @throws PasswordError
@@ -3085,7 +3089,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getPassword() {
 		$this->loadState();
-		return $this->mPassword;
+		return $this->mPassword ?? '';
 	}
 
 	private static function getSessionProvider(): CentralAuthSessionProvider {
@@ -3510,7 +3514,10 @@ class CentralAuthUser implements IDBAccessObject {
 	public function scramblePassword( string $reason ): bool {
 		if ( !preg_match( '/^[a-zA-Z0-9]+$/', $reason ) ) {
 			throw new DomainException( '$reason must be ASCII alphanumeric, got: ' . $reason );
-		} elseif ( $this->getPasswordObject() instanceof ScrambledPassword ) {
+		} elseif (
+			$this->getPasswordObject() instanceof InvalidPassword
+			|| $this->getPasswordObject() instanceof ScrambledPassword
+		) {
 			return false;
 		}
 
