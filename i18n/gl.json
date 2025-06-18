@@ -245,7 +245,7 @@
 	"centralauth-globalgroupperms-rights": "Dereitos",
 	"centralauth-globalgroupperms-wikiset-none": "Este grupo está activo en todos os wikis.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Asignado automaticamente",
-	"centralauth-globalgroupperms-automatic-group-info": "Asignaráselle automaticamente ao usuario os seguintes grupos: $1",
+	"centralauth-globalgroupperms-automatic-group-info": "Asignaráselle automaticamente ao usuario: $1",
 	"centralauth-groupname": "esta granxa wiki",
 	"centralauth-hidden-blockreason": "agochada globalmente por $1 en $2 polo seguinte motivo: $3",
 	"centralauth-hours-ago": "hai {{PLURAL:$1|unha hora|$1 horas}}",
@@ -360,7 +360,7 @@
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
 	"centralauth-rename-table-status-done": "Feito",
-	"centralauth-rename-table-status-failed": "Fallado",
+	"centralauth-rename-table-status-failed": "Fallou",
 	"centralauth-rename-table-status-inprogress": "En progreso",
 	"centralauth-rename-table-status-queued": "Na cola",
 	"centralauth-rename-titleblacklist-match": "O novo nome de usuario coincide coa seguinte entrada de TitleBlacklistː $1",
@@ -383,6 +383,9 @@
 	"centralauth-years-ago": "hai {{PLURAL:$1|un ano|$1 anos}}",
 	"centralauth-sul3-oathmanage-sitenotice-local": "Para configurar novas claves de acceso de WebAuthn, utiliza [$1 o dominio central].",
 	"centralauth-sul3-oathmanage-sitenotice-central": "Para eliminar as claves de acceso de WebAuthn vellas, utiliza [$1 o dominio no que se configuraron].",
+	"centralauth-scrambled": "Desactivouse a túa conta debido a un acceso ilexítimo. [[Special:PasswordReset|Restablece o teu contrasinal]] para recuperala.",
+	"centralauth-scrambled-noemail": "Desactivouse a túa conta debido a un acceso ilexítimo.",
+	"centralauth-scrambled-cannotusesame": "Utiliza un contrasinal diferente.",
 	"centralautologin": "Rexistro central",
 	"centrallogin": "Acceso central ao sistema",
 	"createlocalaccount": "Forzar a creación dunha conta local",
@@ -550,6 +553,6 @@
 	"right-globalgrouppermissions": "Xestionar os grupos globais",
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está nunha lista negra.",
-	"centralauth-action-forbidden-shared-domain": "Non ten permiso para realizar esta acción no dominio de autenticación compartido."
+	"centralauth-badaccess-blacklisted": "Non podes solicitar un cambio de nome global xa que estás nunha lista de rexeitamentos.",
+	"centralauth-action-forbidden-shared-domain": "Non tes permiso para realizar esta acción no dominio de autenticación compartido."
 }

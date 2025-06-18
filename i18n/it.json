@@ -374,6 +374,7 @@
 	"centralauth-state-mismatch": "Errore: lo stato di questo utente è cambiato nel frattempo. Verifica lo stato attuale e riprova, se necessario.",
 	"centralauth-token-mismatch": "Spiacente, non possiamo processare la tua sottoscrizione del form per una perdita dei dati di sessione.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|anno|anni}} fa",
+	"centralauth-scrambled-noemail": "A causa di un accesso illegittimo, la tua utenza è stato disattivata.",
 	"centralautologin": "Accesso centrale",
 	"centrallogin": "Accesso centrale utente",
 	"createlocalaccount": "Forza la creazione di un'utenza locale",
