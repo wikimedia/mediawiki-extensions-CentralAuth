@@ -95,7 +95,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 				'reason' => $this->params['reason'],
 			]
 		);
-		if ( !$rename->rename() ) {
+		if ( !$rename->renameUser()->isOk() ) {
 			// This should never happen!
 			// If it does happen, the user will be locked out of their account
 			// until a sysadmin intervenes...
