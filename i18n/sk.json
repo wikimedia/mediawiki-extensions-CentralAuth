@@ -295,6 +295,7 @@
 	"centralauth-state-mismatch": "Chyba: Pri tomto používateľovi bol detekovaný editačný konflikt. Skontrolujte svoje úpravy a skúste to znova.",
 	"centralauth-token-mismatch": "Je nám ľúto, nebolo možné spracovať údaje formulára, ktoré ste poslali, z dôvodu straty informácií o vašej relácii.",
 	"centralauth-years-ago": "{{PLURAL:$1|pred rokom|pred $1 rokmi}}",
+	"centralautologin": "Centrálne prihlásenie",
 	"centrallogin": "Centrálne prihlásenie používateľa",
 	"globalgroupmembership": "Členstvo v globálnych skupinách",
 	"globalgrouppermissions": "Správa globálnych skupín",

@@ -351,7 +351,7 @@
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
 	"centralauth-rename-table-status-done": "Feito",
-	"centralauth-rename-table-status-failed": "Fallado",
+	"centralauth-rename-table-status-failed": "Fallou",
 	"centralauth-rename-table-status-inprogress": "En progreso",
 	"centralauth-rename-table-status-queued": "Na cola",
 	"centralauth-rename-titleblacklist-match": "O novo nome de usuario coincide coa seguinte entrada de TitleBlacklistː $1",

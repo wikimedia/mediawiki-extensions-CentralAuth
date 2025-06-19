@@ -23,7 +23,7 @@
 	"apihelp-globaluserrights-example-1": "グローバル利用者 FooBot に、グローバルグループ “bot” を追加し、この利用者からグローバルグループ “sysop” と “bureaucrat”を除去する。",
 	"apihelp-globaluserrights-example-2": "ID が 123 であるグローバル利用者に、グローバルグループ “bot” を追加し、この利用者からグローバルグループ “sysop” と “bureaucrat”を除去する。",
 	"apihelp-globaluserrights-param-add": "これらのグローバルグループに利用者を追加します。",
-	"apihelp-globaluserrights-param-expiry": "有効期限のタイムスタンプ。相対的 (例: <kbd>5か月</kbd>または<kbd>2週間</kbd>) または絶対的 (例: <kbd>2014-09-18T12:34:56Z</kbd> ) にすることができます。タイムスタンプが1つだけ設定されている場合、 <var>$1add</var>パラメータに渡されるすべてのグループに使用されます。有効期限のないユーザー グループの場合は、<kbd>infinite</kbd> 、 <kbd>indefinite</kbd> 、 <kbd>infinity</kbd> 、または<kbd>never</kbd>を使用します。",
+	"apihelp-globaluserrights-param-expiry": "有効期限のタイムスタンプ。相対指定 (例: <kbd>5か月</kbd> や <kbd>2週間</kbd>) または絶対指定 (例: <kbd>2014-09-18T12:34:56Z</kbd>) にできます。タイムスタンプが 1 つだけ設定されている場合は、<var>$1add</var> パラメーターに渡されるすべてのグループに対して使用されます。有効期限が無期限の利用者グループには、<kbd>infinite</kbd>、<kbd>indefinite</kbd>、<kbd>infinity</kbd>、<kbd>never</kbd> のいずれかを使用します。",
 	"apihelp-globaluserrights-param-reason": "変更の理由。",
 	"apihelp-globaluserrights-param-remove": "これらのグローバルグループから利用者を削除します。",
 	"apihelp-globaluserrights-param-tags": "このパラメーターは現在使用されていません。",
