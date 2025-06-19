@@ -294,6 +294,7 @@
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|সেকেন্ড}} পূর্বে",
 	"centralauth-token-mismatch": "দুঃখিত, সেশন তথ্য হারিয়ে ফেলায় আমরা আপনার পেশ করা ফরম প্রক্রিয়াজাত করতে পারছি না।",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|বছর|বছর}} পূর্বে",
+	"centralauth-scrambled-cannotusesame": "অনুগ্রহ করে একটি ভিন্ন পাসওয়ার্ড ব্যবহার করুন।",
 	"centralautologin": "কেন্দ্রীয় প্রবেশ",
 	"centrallogin": "কেন্দ্রীয়ভাবে ব্যবহারকারীর প্রবেশ",
 	"createlocalaccount": "জোরপূর্বক একটি স্থানীয় অ্যাকাউন্ট তৈরি করুন",
