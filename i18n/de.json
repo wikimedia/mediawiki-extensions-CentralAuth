@@ -392,7 +392,7 @@
 	"centralauth-years-ago": "Vor $1 {{PLURAL:$1|Jahr|Jahren}}",
 	"centralauth-sul3-oathmanage-sitenotice-local": "Um neue WebAuthn-Passkeys einzurichten, verwende bitte [$1 die zentrale Domain].",
 	"centralauth-sul3-oathmanage-sitenotice-central": "Um alte WebAuthn-Passkeys zu entfernen, verwenden bitte [$1 die Domain, auf der sie eingerichtet wurden].",
-	"centralauth-scrambled": "Aufgrund eines unberechtigten Zugriffs auf dein Konto wurde dein Konto deaktiviert. Bitte [[Special:PasswordReset|setzen dein Passwort zurück]], um es wieder zu aktivieren.",
+	"centralauth-scrambled": "Aufgrund eines unberechtigten Zugriffs auf dein Konto wurde dein Konto deaktiviert. Bitte [[Special:PasswordReset|setze dein Passwort zurück]], um es wieder zu aktivieren.",
 	"centralauth-scrambled-noemail": "Aufgrund eines unrechtmäßigen Zugriffs auf dein Konto wurde dein Konto deaktiviert.",
 	"centralauth-scrambled-cannotusesame": "Bitte verwende ein anderes Passwort.",
 	"centralautologin": "Zentrale Anmeldung",
