@@ -6,10 +6,10 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserNameUtils;
-use MediaWiki\Xml\Xml;
 use StatusValue;
 use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IExpression;
@@ -86,7 +86,7 @@ class SpecialMultiLock extends SpecialPage {
 		$this->mPosted = $req->wasPosted();
 
 		$this->mReason = $req->getText( 'wpReasonList' );
-		$reasonDetail = $req->getText( 'wpReason' );
+		$reasonDetail = $req->getText( 'wpReasonList-other' );
 
 		if ( $this->mReason === 'other' ) {
 			$this->mReason = $reasonDetail;
@@ -197,127 +197,92 @@ class SpecialMultiLock extends SpecialPage {
 
 	/**
 	 * Show the Lock and/or Hide form, appropriate for this admin user's rights.
-	 * The <form> and <fieldset> were started in showTableHeader()
 	 */
-	private function showStatusForm() {
-		$form = '';
-		$radioLocked =
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-lock-nochange' )->text(),
-				'wpActionLock',
-				'nochange',
-				'mw-centralauth-status-locked-no',
-				true
-			) .
-			'<br />' .
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-lock-unlock' )->text(),
-				'wpActionLock',
-				'unlock',
-				'centralauth-admin-action-lock-unlock',
-				false
-			) .
-			'<br />' .
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-lock-lock' )->text(),
-				'wpActionLock',
-				'lock',
-				'centralauth-admin-action-lock-lock',
-				false
-			);
-
-		$radioHidden =
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-nochange' )->text(),
-				'wpActionHide',
-				'-1',
-				'mw-centralauth-status-hidden-nochange',
-				true
-			) .
-			'<br />';
-		if ( $this->mCanSuppress ) {
-			$radioHidden .= Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-none' )->text(),
-				'wpActionHide',
-				(string)CentralAuthUser::HIDDEN_LEVEL_NONE,
-				'mw-centralauth-status-hidden-no',
-				false
-				) .
-			'<br />' .
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-lists' )->text(),
-				'wpActionHide',
-				(string)CentralAuthUser::HIDDEN_LEVEL_LISTS,
-				'mw-centralauth-status-hidden-list',
-				false
-			) .
-			'<br />' .
-			Xml::radioLabel(
-				$this->msg( 'centralauth-admin-action-hide-oversight' )->text(),
-				'wpActionHide',
-				(string)CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
-				'mw-centralauth-status-hidden-oversight',
-				false
-			);
-		}
-
-		$reasonList = Xml::listDropdown(
-			'wpReasonList',
-			$this->msg( 'centralauth-admin-status-reasons' )->inContentLanguage()->text(),
-			$this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text()
-		);
-		$reasonField = Html::input( 'wpReason', '', 'text', [ 'size' => 45 ] );
-		$botField = Html::check( 'markasbot' ) .
-			$this->msg( 'centralauth-admin-multi-botcheck' )->parse();
-
-		$form .= Xml::buildForm(
-			[
-				'centralauth-admin-status-locked' => $radioLocked,
-				'centralauth-admin-status-hidden' => $radioHidden,
-				'centralauth-admin-reason' => $reasonList,
-				'centralauth-admin-reason-other' => $reasonField,
-				'centralauth-admin-multi-bot' => $botField
+	private function showStatusForm( string $introTable ) {
+		$form = HTMLForm::factory( 'table', [
+			'Intro' => [
+				'type' => 'info',
+				'raw' => true,
+				'rawrow' => true,
+				'default' => Html::rawElement( 'tr', [], Html::rawElement( 'td', [ 'colspan' => 2 ], $introTable ) ),
 			],
-			'centralauth-admin-status-submit'
-		);
+			'ActionLock' => [
+				'type' => 'radio',
+				'label-message' => 'centralauth-admin-status-locked',
+				'options-messages' => [
+					'centralauth-admin-action-lock-nochange' => 'nochange',
+					'centralauth-admin-action-lock-unlock' => 'unlock',
+					'centralauth-admin-action-lock-lock' => 'lock',
+				],
+				'default' => 'nochange',
+			],
+			'ActionHide' => [
+				'type' => 'radio',
+				'label-message' => 'centralauth-admin-status-hidden',
+				'options-messages' => [
+					'centralauth-admin-action-hide-nochange' => '-1',
+					...( $this->mCanSuppress ? [
+						'centralauth-admin-action-hide-none' => (string)CentralAuthUser::HIDDEN_LEVEL_NONE,
+						'centralauth-admin-action-hide-lists' => (string)CentralAuthUser::HIDDEN_LEVEL_LISTS,
+						'centralauth-admin-action-hide-oversight' => (string)CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+					] : [] ),
+				],
+				'default' => '-1',
+			],
+			'ReasonList' => [
+				'type' => 'selectorother',
+				'label-message' => 'centralauth-admin-reason',
+				'options-message' => 'centralauth-admin-status-reasons',
+				'other' => $this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text(),
+				'size' => 45,
+			],
+			'markasbot' => [
+				'name' => 'markasbot',
+				'type' => 'check',
+				'label-message' => 'centralauth-admin-multi-botcheck',
+			],
+		], $this->getContext() )
+			->setMethod( 'post' )
+			->setTitle( $this->getPageTitle() )
+			->setWrapperLegendMsg( 'centralauth-admin-status' )
+			->setSubmitTextMsg( 'centralauth-admin-status-submit' )
+			->addHiddenField( 'wpMethod', 'set-status' );
 
 		$searchList = $this->mUserNames;
 		if ( is_array( $this->mUserNames ) ) {
 			$searchList = implode( "\n", $this->mUserNames );
 		}
-		$form .= Html::hidden( 'wpTarget', $searchList );
+		$form->addHiddenField( 'wpTarget', $searchList );
 
-		$form .= '</fieldset></form>';
-
-		$this->getOutput()->addHTML( $form );
+		$form->prepareForm()->displayForm( false );
 	}
 
 	/**
-	 * Start admin <form>, and start the table listing usernames to take action on
+	 * Build the table of users to lock and/or hide
 	 */
-	private function showTableHeader() {
-		$out = $this->getOutput();
-
-		$header = Html::openElement(
-			'form',
-			[
-				'method' => 'POST',
-				'action' => $this->getPageTitle()->getFullUrl()
-			]
+	private function showUserTable() {
+		$this->mGlobalUsers = array_unique(
+			$this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR
 		);
 
-		$header .= Xml::fieldset( $this->msg( 'centralauth-admin-status' )->text() );
-		$header .= Html::hidden( 'wpMethod', 'set-status' );
-		$header .= Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-		$header .= $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock();
+		if ( count( $this->mGlobalUsers ) < 1 ) {
+			$this->showError( 'centralauth-admin-multi-notfound' );
+			return;
+		}
 
-		$header .= Html::openElement(
+		$out = $this->getOutput();
+		$out->addModuleStyles( 'jquery.tablesorter.styles' );
+		$out->addModules( 'jquery.tablesorter' );
+
+		$table = $this->msg( 'centralauth-admin-status-intro' )->parseAsBlock();
+
+		$table .= Html::openElement(
 			'table',
 			[ 'class' => 'wikitable sortable mw-centralauth-wikislist' ]
 		);
 
 		$context = $out->getContext();
-		$header .= '<thead><tr>' .
+		$table .= '<thead><tr>' .
 			'<th></th>' .
 			'<th>' .
 			$context->msg( 'centralauth-admin-username' )->escaped() .
@@ -343,27 +308,6 @@ class SpecialMultiLock extends SpecialPage {
 			'</tr></thead>' .
 			'<tbody>';
 
-		$out->addHTML( $header );
-		$out->addModuleStyles( 'jquery.tablesorter.styles' );
-		$out->addModules( 'jquery.tablesorter' );
-	}
-
-	/**
-	 * Build the table of users to lock and/or hide
-	 */
-	private function showUserTable() {
-		$this->mGlobalUsers = array_unique(
-			$this->getGlobalUsers( $this->mUserNames ), SORT_REGULAR
-		);
-
-		if ( count( $this->mGlobalUsers ) < 1 ) {
-			$this->showError( 'centralauth-admin-multi-notfound' );
-			return;
-		}
-
-		$out = $this->getOutput();
-		$this->showTableHeader();
-
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 			$rowText = Html::openElement( 'tr' );
 
@@ -378,11 +322,11 @@ class SpecialMultiLock extends SpecialPage {
 			}
 
 			$rowText .= Html::closeElement( 'tr' );
-			$out->addHTML( $rowText );
+			$table .= $rowText;
 		}
 
-		$out->addHTML( '</tbody></table>' );
-		$this->showStatusForm();
+		$table .= '</tbody></table>';
+		$this->showStatusForm( $table );
 	}
 
 	/**
@@ -502,32 +446,27 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	private function showUsernameForm() {
-		$form = Html::rawElement( 'form',
-			[
-				'method' => 'post',
-				'action' => $this->getPageTitle()->getLocalUrl()
+		$form = HTMLForm::factory( 'div', [
+			'Target' => [
+				'type' => 'textarea',
+				'label-message' => 'centralauth-admin-multi-username',
+				'cols' => 25,
+				'rows' => 20,
+				'default' => $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ),
 			],
-			Html::rawElement( 'fieldset', [],
-				Html::element( 'legend', [], $this->msg( 'centralauth-admin-manage' )->text() ) .
-				Html::hidden( 'wpMethod', 'search' ) .
-				Html::element( 'p', [],
-					$this->msg( 'centralauth-admin-multi-username' )->text()
-				) .
-				Html::element(
-					'textarea',
-					[ 'name' => 'wpTarget', 'cols' => 25, 'rows' => 20 ],
-					( $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ) )
-				) .
-				Html::element( 'p', [],
-					$this->msg( 'centralauth-admin-multi-searchprefix' )->text()
-				) .
-				Html::input( 'wpSearchTarget', $this->mPrefixSearch ) .
-					Html::rawElement( 'p', [],
-					Html::submitButton( $this->msg( 'centralauth-admin-lookup-ro' )->text() )
-				)
-			)
-		);
-		$this->getOutput()->addHTML( $form );
+			'SearchTarget' => [
+				'type' => 'text',
+				'label-message' => 'centralauth-admin-multi-searchprefix',
+				'default' => $this->mPrefixSearch,
+			],
+		], $this->getContext() )
+			->setMethod( 'post' )
+			->setTitle( $this->getPageTitle() )
+			->setWrapperLegendMsg( 'centralauth-admin-manage' )
+			->setSubmitTextMsg( 'centralauth-admin-lookup-ro' )
+			->addHiddenField( 'wpMethod', 'search' );
+
+		$form->prepareForm()->displayForm( false );
 	}
 
 	/**
@@ -549,9 +488,8 @@ class SpecialMultiLock extends SpecialPage {
 			]
 		);
 		if ( $numRows ) {
-			$this->getOutput()->addHTML(
-				Xml::fieldset( $this->msg( 'centralauth-admin-logsnippet' )->text(), $text )
-			);
+			$legend = Html::element( 'legend', [], $this->msg( 'centralauth-admin-logsnippet' )->text() );
+			$this->getOutput()->addHTML( Html::rawElement( 'fieldset', [], $legend . $text ) );
 		}
 	}
 
