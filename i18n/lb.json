@@ -329,6 +329,7 @@
 	"centralauth-state-mismatch": "Feeler: En Ännerungskonflikt fir dëse Benotzer gouf fonnt. Kuckt wgl. Är Ännerung no a probéiert nach eng Kéier.",
 	"centralauth-token-mismatch": "Pardon, mir konnten d'Donnéeë vun ärer Demande (Formulaire) net verschaffe wëll Date vun ärer Sessioun verluer gi sinn.",
 	"centralauth-years-ago": "{{PLURAL:$1|virun|viru(n)}} $1 Joer",
+	"centralauth-scrambled-cannotusesame": "Benotzt wgl. en anert Passwuert.",
 	"centralautologin": "Zentrale Login",
 	"centrallogin": "Zentrale Login",
 	"globalgroupmembership": "Member a globale Gruppen",
