@@ -58,7 +58,6 @@
 	"centralauth-admin-nonexistent": "Det finst ingen global konto for «<nowiki>$1</nowiki>»",
 	"centralauth-admin-permission": "Berre forvaltarar kan slå saman kontoane til andre for dei.",
 	"centralauth-admin-reason": "Årsak:",
-	"centralauth-admin-reason-other": "Anna/tilleggsårsak:",
 	"centralauth-admin-setstatus-success": "Du har lukkast i å endra statusen for denne globale kontoen.",
 	"centralauth-admin-status": "Set status for global konto",
 	"centralauth-admin-status-hidden": "Løynd:",

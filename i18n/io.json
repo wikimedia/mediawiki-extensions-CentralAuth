@@ -38,7 +38,6 @@
 	"centralauth-admin-nonexistent": "Existas nula globala konto por \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-permission": "Nur super-administreri povas kunfuzar la konti de altra personi, por li.",
 	"centralauth-admin-reason": "Motivo:",
-	"centralauth-admin-reason-other": "Altra/suplementala motivo:",
 	"centralauth-admin-reason-other-select": "Altra motivo:",
 	"centralauth-admin-status-reasons": "* Ordinara motivi por klozado\n** konto nur uzata por vandalismo\n** konto nur uzata por ''spam''\n* Ordinara motivi por klozado e celado\n** misuzala uzero-nomo\n** neapta informo personala",
 	"centralauth-admin-title-ro": "Informo globala pri la konti de $1",

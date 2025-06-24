@@ -50,7 +50,6 @@
 	"centralauth-admin-nonexistent": "Ma jeżisti l-ebda kont globali għal \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-permission": "L-istwetti biss jistgħu jwaħħdu l-kontijiet ta' nies oħra għalihom",
 	"centralauth-admin-reason": "Raġuni:",
-	"centralauth-admin-reason-other": "Raġuni oħra/addizzjonali:",
 	"centralauth-admin-reason-other-select": "Raġuni oħra:",
 	"centralauth-admin-setstatus-success": "Għadek kif biddilt l-istat ta' dan il-kont globali.",
 	"centralauth-admin-status": "Agħżel l-istat tal-kont globali",

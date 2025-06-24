@@ -56,7 +56,6 @@
 	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" සඳහා ගෝලීය ගිණුමක් නොමැත",
 	"centralauth-admin-permission": "ඔවුන් වෙනුවෙන් අනෙකුන්ගේ ගිණුම් ඒකාබද්ධ කල හැක්කේ භාරකරුවන්ට පමණි.",
 	"centralauth-admin-reason": "හේතුව:",
-	"centralauth-admin-reason-other": "වෙනත්/වැඩිදුර හේතු:",
 	"centralauth-admin-setstatus-success": "ඔබ සාර්ථකව මෙම ගෝලීය ගිණුමේ තත්වය වෙනස්කොට ඇත.",
 	"centralauth-admin-status": "ගෝලීය ගිණුම් තත්වය සකසන්න",
 	"centralauth-admin-status-hidden": "සඟවනලද:",

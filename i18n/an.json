@@ -50,7 +50,6 @@
 	"centralauth-admin-not-authorized": "No tiens permisos ta fer ista acción",
 	"centralauth-admin-permission": "Nomás os stewards pueden unificar as cuentas d'atros usuario por els.",
 	"centralauth-admin-reason": "Razón:",
-	"centralauth-admin-reason-other": "Belatra razón:",
 	"centralauth-admin-setstatus-success": "Puet usar iste formulario ta cambiar o status d'ista cuenta global",
 	"centralauth-admin-status": "Cambiar o status d'a cuenta global",
 	"centralauth-admin-status-hidden": "Amagau:",

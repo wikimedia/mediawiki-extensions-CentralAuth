@@ -68,7 +68,6 @@
 	"centralauth-admin-nonexistent": "Ne postoji globalni račun za \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-permission": "Samo stjuardi mogu spajati suradničke račune umjesto njih.",
 	"centralauth-admin-reason": "Razlog:",
-	"centralauth-admin-reason-other": "Drugi/dodatni razlog:",
 	"centralauth-admin-setstatus-success": "Promijenili ste status ovog globalnog računa.",
 	"centralauth-admin-status": "Postavi status globalnog računa",
 	"centralauth-admin-status-hidden": "Skriven:",

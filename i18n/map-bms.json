@@ -34,7 +34,6 @@
 	"centralauth-admin-none-selected": "Ora ana akun sing dipilih nggo diowaih.",
 	"centralauth-admin-nonexistent": "Ora ana akun global kanggo \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-reason": "Alesan:",
-	"centralauth-admin-reason-other": "Alesan liyane/tambahan:",
 	"centralauth-admin-setstatus-success": "Rika wis sukses gole ngganti statuse akun global kiye.",
 	"centralauth-admin-status": "Nyetel status akun global",
 	"centralauth-admin-status-hidden": "Diumpetna:",

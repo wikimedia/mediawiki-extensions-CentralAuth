@@ -48,7 +48,6 @@
 	"centralauth-admin-nonexistent": "Walang pandaigdigang account para kay \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-permission": "Mga bandahali (''steward'') lamang ang maaaring magsanib ng mga account ng ibang mga tao para sa kanila.",
 	"centralauth-admin-reason": "Dahilan:",
-	"centralauth-admin-reason-other": "Iba pa/karagdagang dahilan:",
 	"centralauth-admin-setstatus-success": "Matagumpay mong nabago ang kalagayan ng pandaigdigang account na ito.",
 	"centralauth-admin-status": "Itakda ang kalagayang pandaigdigang account",
 	"centralauth-admin-status-hidden": "Nakatago:",

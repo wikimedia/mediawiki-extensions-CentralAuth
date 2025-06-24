@@ -43,7 +43,6 @@
 	"centralauth-admin-nonexistent": "S git kei wältwyt Benutzerkonto „<nowiki>$1</nowiki>“.",
 	"centralauth-admin-permission": "Benutzerkonte fir anderi Benutzer zämmefiere chenne nume Stewards.",
 	"centralauth-admin-reason": "Grund:",
-	"centralauth-admin-reason-other": "Andere/Zuesätzlige Grund:",
 	"centralauth-admin-setstatus-success": "Du hesch dr Status vu däm wältwyte Benutzerkonto erfolgryych gänderet.",
 	"centralauth-admin-status": "Dr Status vun eme wältwyte Benutzerkonto feschtsetze",
 	"centralauth-admin-status-hidden": "Versteckt:",

@@ -53,7 +53,6 @@
 	"centralauth-admin-nonexistent": "Nuk ka llogari globale për \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-permission": "Vetëm kujdestarët mund të shkrijnë llogaritë e njerëzve të tjerë pë ta.",
 	"centralauth-admin-reason": "Arsyeja:",
-	"centralauth-admin-reason-other": "Arsye tjetër/shtesë:",
 	"centralauth-admin-reason-other-select": "Arsye tjetër:",
 	"centralauth-admin-setstatus-success": "Ndryshuat gjendjen e kësaj llogarie globale.",
 	"centralauth-admin-status": "Vendosni statusin e llogarisë globale",

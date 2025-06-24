@@ -46,7 +46,6 @@
 	"centralauth-admin-nonexistent": "Ґлобалне конто „<nowiki>$1</nowiki>“ не єствує.",
 	"centralauth-admin-permission": "Лем стеварды можуть злучовати конта іншых хоснователїв.",
 	"centralauth-admin-reason": "Причіна:",
-	"centralauth-admin-reason-other": "Інша/далша причіна:",
 	"centralauth-admin-setstatus-success": "Успішно сьте {{gender:|змінив|змінила|змінили}} статус того ґлобалного конта.",
 	"centralauth-admin-status": "Змінити став ґлобалного конта",
 	"centralauth-admin-status-hidden": "Схованый:",

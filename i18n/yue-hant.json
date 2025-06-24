@@ -46,7 +46,6 @@
 	"centralauth-admin-nonexistent": "呢度無\"<nowiki>$1</nowiki>\"嘅全域戶口",
 	"centralauth-admin-permission": "只有執行員先至可以為用戶合併其它人嘅戶口。",
 	"centralauth-admin-reason": "原因:",
-	"centralauth-admin-reason-other": "其它／第啲理由：",
 	"centralauth-admin-reason-other-select": "其它理由：",
 	"centralauth-admin-status": "全域戶口狀態：",
 	"centralauth-admin-status-hidden": "收埋：",

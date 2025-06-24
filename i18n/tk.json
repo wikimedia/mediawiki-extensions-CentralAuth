@@ -40,7 +40,6 @@
 	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" üçin hiç hili global hasap ýok",
 	"centralauth-admin-permission": "Diňe stýuardlar başga kişileriň hasaplaryny olar üçin birleşdirip bilýär.",
 	"centralauth-admin-reason": "Sebäp:",
-	"centralauth-admin-reason-other": "Başga/goşmaça sebäp:",
 	"centralauth-admin-setstatus-success": "Bu global hasabyň statusyny şowly üýtgetdiňiz",
 	"centralauth-admin-status": "Global hasap statusyny belle",
 	"centralauth-admin-status-hidden": "Gizlenilgi:",

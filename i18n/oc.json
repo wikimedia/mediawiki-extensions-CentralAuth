@@ -52,7 +52,6 @@
 	"centralauth-admin-nonexistent": "Existís pas cap de compte global per « <nowiki>$1</nowiki> »",
 	"centralauth-admin-permission": "Sols los stewards pòdon acampar los comptes d’autras personas a lor plaça.",
 	"centralauth-admin-reason": "Motiu :",
-	"centralauth-admin-reason-other": "Autra rason:",
 	"centralauth-admin-reason-other-select": "Autra rason :",
 	"centralauth-admin-setstatus-success": "Avètz cambiat l'estatut d'aqueste compte global.",
 	"centralauth-admin-status": "Cambiar l'estatut del compte global",

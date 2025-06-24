@@ -47,7 +47,6 @@
 	"centralauth-admin-nonexistent": "\"<nowiki>$1</nowiki>\" इत्येतस्य वैश्विकाभिलेखः न विद्यते ।",
 	"centralauth-admin-permission": "प्रबन्धकैः अन्येषाम् अभिलेखानां संयोजनं शक्यते ।",
 	"centralauth-admin-reason": "कारणम् :",
-	"centralauth-admin-reason-other": "अपरम्/अतिरिक्तं कारणम् :",
 	"centralauth-admin-reason-other-select": "अन्यं कारणम् :",
 	"centralauth-admin-setstatus-success": "अस्य वैश्विकाभिलेखस्य स्थितेः परिवर्तनं समीचीनतया कृतं भवता ।",
 	"centralauth-admin-status": "वैश्विकाभिलेखस्थितिः नियोज्यताम्",
