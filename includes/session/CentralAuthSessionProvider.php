@@ -490,7 +490,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 			return;
 		}
 
-		$expiry = time() - 86400;
 		$response->clearCookie( 'User', $this->centralCookieOptions );
 		$response->clearCookie( 'Token', $this->centralCookieOptions );
 		$response->clearCookie( $this->params['centralSessionName'],
