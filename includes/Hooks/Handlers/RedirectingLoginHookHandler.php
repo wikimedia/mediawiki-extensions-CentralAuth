@@ -73,9 +73,10 @@ class RedirectingLoginHookHandler implements
 	 * @param IContextSource $context
 	 * @param string $returnTo
 	 * @param array $returnToQuery
+	 * @param string $type
 	 * @return void
 	 */
-	private function redoLocalAuthentication( IContextSource $context, $returnTo, $returnToQuery ): void {
+	private function redoLocalAuthentication( IContextSource $context, $returnTo, $returnToQuery, $type ): void {
 		$wikiId = WikiMap::getCurrentWikiId();
 		$originWikiUrl = $this->centralDomainUtils->getUrl(
 			$wikiId, 'Special:Userlogin', $context->getRequest(), [
@@ -84,6 +85,15 @@ class RedirectingLoginHookHandler implements
 				'redoLocalAuthentication' => 1,
 			]
 		);
+
+		LoggerFactory::getInstance( 'authevents' )
+			->notice( 'Retrying local authentication', [
+				'event' => ( $type === 'signup' ) ? 'retry-accountcreation' : 'retry-login',
+				'successful' => false,
+				'extension' => 'CentralAuth',
+				'accountType' => $context->getUser()->isNamed() ? 'named' : 'temp',
+				'status' => 'badtoken'
+			] );
 
 		$context->getOutput()->redirect( $originWikiUrl );
 	}
@@ -123,23 +133,14 @@ class RedirectingLoginHookHandler implements
 			CentralAuthRedirectingPrimaryAuthenticationProvider::START_TOKEN_KEY_PREFIX
 		);
 		if ( !$inputData ) {
-			LoggerFactory::getInstance( 'authevents' )
-				->warning( 'Authentication request with bad token', [
-					'event' => ( $type === 'signup' ) ? 'accountcreation' : 'login',
-					'successful' => false,
-					'extension' => 'CentralAuth',
-					'accountType' => $context->getUser()->isNamed() ? 'named' : 'temp',
-					'status' => 'badtoken'
-				] );
-
 			if ( $request->getRawVal( 'redoLocalAuthentication' ) !== null ) {
 				// We're in a loop
 				throw new ErrorPageError( 'centralauth-error-badtoken', 'centralauth-error-badtoken' );
 			}
 
 			// This means centralauthLoginToken expired or is invalid, so do a retry.
-			// The central session already succeeded and we just need to gain a local session.
-			$this->redoLocalAuthentication( $context, $returnTo, $returnToQuery );
+			// The central session already succeeded, and we just need to gain a local session.
+			$this->redoLocalAuthentication( $context, $returnTo, $returnToQuery, $type );
 			$type = 'success';
 			return true;
 		}
