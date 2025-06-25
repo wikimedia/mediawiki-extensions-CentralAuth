@@ -454,7 +454,7 @@
 	"log-action-filter-newusers-forcecreatelocal": "Pembuatan akun lokal yang dipaksakan",
 	"log-action-filter-suppress-cadelete": "Penghapusan akun global",
 	"log-action-filter-suppress-setstatus": "Perubahan status akun global",
-	"log-description-gblrename": "Catatan ini mencatat pengubahan nama pengguna global.",
+	"log-description-gblrename": "Log ini mencatat pengubahan nama pengguna global.",
 	"log-name-gblrename": "Log pengubahan nama global",
 	"logentry-gblrename-merge": "$1 {{GENDER:$2|menggabungkan}} secara global $4 ke dalam $5",
 	"logentry-gblrename-promote": "$1 {{GENDER:$2|mengubah}} nama $4 secara global menjadi $5",

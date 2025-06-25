@@ -72,7 +72,7 @@
 	"centralauth-admin-info-username-rename": "renomear",
 	"centralauth-admin-info-expired": "Conta temporal caducada:",
 	"centralauth-admin-intro": "Esta interface pode empregarse para a administración de contas globais.",
-	"centralauth-admin-list-attached-on": "Relacionadas en",
+	"centralauth-admin-list-attached-on": "Unificadas o",
 	"centralauth-admin-list-blocked": "Bloqueado",
 	"centralauth-admin-list-editcount": "Contador de edicións",
 	"centralauth-admin-list-groups": "Grupos",
@@ -358,7 +358,7 @@
 	"centralauth-rename-table-domain": "Wiki local",
 	"centralauth-rename-table-status": "Estado",
 	"centralauth-rename-table-status-done": "Feito",
-	"centralauth-rename-table-status-failed": "Fallado",
+	"centralauth-rename-table-status-failed": "Fallou",
 	"centralauth-rename-table-status-inprogress": "En progreso",
 	"centralauth-rename-table-status-queued": "Na cola",
 	"centralauth-rename-titleblacklist-match": "O novo nome de usuario coincide coa seguinte entrada de TitleBlacklistː $1",
@@ -549,5 +549,5 @@
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Non pode solicitar un cambio de nome global xa que está nunha lista negra.",
-	"centralauth-action-forbidden-shared-domain": "Non ten permiso para realizar esta acción no dominio de autenticación compartido."
+	"centralauth-action-forbidden-shared-domain": "Non tes permiso para realizar esta acción no dominio de autenticación compartido."
 }
