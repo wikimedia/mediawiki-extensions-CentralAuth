@@ -556,6 +556,6 @@
 	"right-globalgrouppermissions": "Керування глобальними групами",
 	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
 	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в чорному списку.",
+	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в заборонному списку.",
 	"centralauth-action-forbidden-shared-domain": "Вам не дозволено виконувати цю дію на спільному домені автентифікації."
 }
