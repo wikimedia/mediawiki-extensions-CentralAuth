@@ -64,15 +64,6 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 			MainConfigNames::SecretKey => 'hunter2',
 		] );
 
-		$logger = new NullLogger();
-
-		$manager = new SessionManager( [
-			'config' => $config,
-			'logger' => $logger,
-			'store' => $this->sessionStore,
-			'hookContainer' => $this->hookContainer
-		] );
-
 		$services = $this->getServiceContainer();
 
 		$provider = new CentralAuthApiSessionProvider(
@@ -81,8 +72,19 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 			CentralAuthServices::getTokenManager( $services )
 		);
 
+		$manager = SessionManager::singleton();
+		$manager->setConfig( new MultiConfig( [ $config, $services->getMainConfig() ] ) );
+		$manager->setLogger( new NullLogger() );
+		$manager->setSessionStore( new \Wikimedia\ObjectCache\CachedBagOStuff( $this->sessionStore ) );
+		$manager->setHookContainer( $this->hookContainer );
+
 		$this->initProvider(
-			$provider, null, $config, $manager, $this->hookContainer, $services->getUserNameUtils()
+			$provider,
+			null,
+			$config,
+			$manager,
+			$this->hookContainer,
+			$services->getUserNameUtils()
 		);
 		return $provider;
 	}
