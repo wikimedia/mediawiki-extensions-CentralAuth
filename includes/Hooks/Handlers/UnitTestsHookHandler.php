@@ -30,22 +30,6 @@ class UnitTestsHookHandler implements
 	UnitTestsBeforeDatabaseTeardownHook
 {
 
-	public const CENTRALAUTH_TABLES = [
-		'global_edit_count',
-		'global_group_permissions',
-		'global_group_restrictions',
-		'global_user_autocreate_serial',
-		'global_user_groups',
-		'globalnames',
-		'globaluser',
-		'localnames',
-		'localuser',
-		'wikiset',
-		'renameuser_status',
-		'renameuser_queue',
-		'users_to_rename',
-	];
-
 	private ILoadBalancer $loadBalancer;
 
 	public function __construct( ILoadBalancer $loadBalancer ) {
@@ -57,8 +41,13 @@ class UnitTestsHookHandler implements
 	 * Cleans up tables created by onUnitTestsAfterDatabaseSetup() above
 	 */
 	public function onUnitTestsBeforeDatabaseTeardown() {
+		$schema = json_decode(
+			file_get_contents( __DIR__ . '/../../../schema/tables.json' ), true
+		);
+		$tables = array_map( static fn ( $tableSchema ) => $tableSchema['name'], $schema );
+
 		$dbw = $this->loadBalancer->getMaintenanceConnectionRef( DB_PRIMARY );
-		foreach ( self::CENTRALAUTH_TABLES as $table ) {
+		foreach ( $tables as $table ) {
 			$dbw->dropTable( $table );
 		}
 	}
@@ -66,7 +55,7 @@ class UnitTestsHookHandler implements
 	/**
 	 * UnitTestsAfterDatabaseSetup hook handler
 	 *
-	 * Setup the centralauth tables in the current DB, so we don't have
+	 * Set up the centralauth tables in the current DB, so we don't have
 	 * to worry about rights on another database. The first time it's called
 	 * we have to set the DB prefix ourselves, and reset it back to the original
 	 * so that CloneDatabase will work. On subsequent runs, the prefix is already
