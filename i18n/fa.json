@@ -121,7 +121,7 @@
 	"centralauth-admin-reason-other": "دلیل دیگر/اضافی:",
 	"centralauth-admin-reason-other-select": "دلیل دیگر",
 	"centralauth-admin-rename-in-progress": "این حساب در حال تغییر نام است. شما می‌توانید [[Special:GlobalRenameProgress/$1|پیشرفت کار تغییر نام را ببینید]]. سیاههٔ سراسری تغییرنام برای این حساب در زیر آمده است.",
-	"centralauth-admin-setstatus-success": "شما وضعیت این حساب سراسری را تغییر دادید.",
+	"centralauth-admin-setstatus-success": "شما وضعیت حساب سراسری «$1» را تغییر دادید.",
 	"centralauth-admin-status": "تنظیم وضعیت حساب سراسری",
 	"centralauth-admin-status-hidden": "پنهان:",
 	"centralauth-admin-status-hidden-list": "حساب از فهرست‌ سراسری کاربران پنهان است",

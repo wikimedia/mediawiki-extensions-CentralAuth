@@ -356,6 +356,8 @@
 	"globalrenamequeue-email-body-rejected": "Taotlus panna konto \"$1\" uueks nimeks \"$2\" on tagasi lükatud.\n\nMärkus: $3",
 	"globalrenamequeue-email-subject-approved": "Konto ümbernimetamise taotlus heakskiidetud",
 	"globalrenamequeue-email-subject-rejected": "Konto ümbernimetamise taotlus tagasi lükatud",
+	"globalrenamequeue-nav-closedqueue": "Suletud taotlused",
+	"globalrenamequeue-nav-openqueue": "Avatud taotlused",
 	"globalrenamequeue-request-cancel-text": "Loobu",
 	"globalrenamerequest": "Ühendkonto ümbernimetamise taotlus",
 	"globalrenamerequest-email-invalid": "Esitati vigane e-posti aadress.",
