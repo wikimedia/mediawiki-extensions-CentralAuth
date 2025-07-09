@@ -63,7 +63,8 @@
 			"Toliño",
 			"Translationista",
 			"Tusca",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"JorgeElias2302"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Recuento de ediciones globales del usuario ($1)",
@@ -497,6 +498,8 @@
 	"globalrenamerequest-submit-text": "Solicitud de cambio de nombre",
 	"globalrenamerequest-username-label": "Nombre de usuario actual:",
 	"globalrenameuser": "Renombrar usuario global",
+	"globalvanishrequest": "Solicitud de desaparición de cuenta de usuario global",
+	"globalvanishrequest-blocked-title": "Solicitud de desaparición de cuenta de usuario global rechazada porque su cuenta está bloqueada",
 	"globalusers": "Lista de usuarios globales",
 	"grant-createlocalaccount": "Crear forzosamente una cuenta local para una cuenta global",
 	"grant-setglobalaccountstatus": "Gestionar estado de cuenta global",
