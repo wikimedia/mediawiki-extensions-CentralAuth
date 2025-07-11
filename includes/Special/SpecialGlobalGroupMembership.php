@@ -458,8 +458,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @param array $oldGroups
 	 * @param array $newGroups
 	 * @param string $reason
-	 * @param array $tags Not currently used
-	 * @suppress PhanUnusedPrivateMethodParameter Planned for later use(?)
+	 * @param array $tags
 	 */
 	private function addLogEntry(
 		CentralAuthUser $user,
@@ -496,6 +495,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			'oldMetadata' => $oldGroupMetadata,
 			'newMetadata' => $newGroupMetadata,
 		] );
+		$entry->addTags( $tags );
 		$logid = $entry->insert();
 		$entry->publish( $logid );
 	}
