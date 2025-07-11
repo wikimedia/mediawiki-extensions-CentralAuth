@@ -459,6 +459,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 * @param array $newGroups
 	 * @param string $reason
 	 * @param array $tags Not currently used
+	 * @suppress PhanUnusedPrivateMethodParameter Planned for later use(?)
 	 */
 	private function addLogEntry(
 		CentralAuthUser $user,

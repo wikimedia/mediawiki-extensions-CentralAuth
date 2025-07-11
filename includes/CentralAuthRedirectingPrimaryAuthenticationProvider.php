@@ -144,6 +144,7 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 	 * Verify the secret and log the user in.
 	 *
 	 * @inheritDoc
+	 * @throws NormalizedException
 	 */
 	public function continuePrimaryAuthentication( array $reqs ) {
 		$this->sharedDomainUtils->assertSul3Enabled( $this->manager->getRequest() );

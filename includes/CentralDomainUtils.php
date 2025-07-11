@@ -138,6 +138,9 @@ class CentralDomainUtils {
 		return wfAppendQuery( $this->sharedDomainUtils->makeUrlDeviceCompliant( $url ), $params );
 	}
 
+	/**
+	 * @throws NormalizedException
+	 */
 	private function getWikiPageUrl( string $wikiId, string $page ): string {
 		$wiki = WikiMap::getWiki( $wikiId );
 		if ( $wiki ) {

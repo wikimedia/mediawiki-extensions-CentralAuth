@@ -168,7 +168,7 @@ class GlobalRenameUserStatus {
 					->caller( __METHOD__ )
 					->execute();
 				$ok = true;
-			} catch ( DBQueryError $e ) {
+			} catch ( DBQueryError ) {
 				$ok = false;
 			}
 		} else {

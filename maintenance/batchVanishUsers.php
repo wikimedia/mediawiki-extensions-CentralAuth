@@ -169,7 +169,7 @@ class BatchVanishUsers extends Maintenance {
 		try {
 			$username = $request['username'];
 			$causer = CentralAuthUser::getInstanceByName( $username );
-		} catch ( InvalidArgumentException $ex ) {
+		} catch ( InvalidArgumentException ) {
 			$errorMessage = "Skipping user {$username} as that username is invalid.";
 			$this->output( $errorMessage . "\n" );
 			return [ "success" => false, "message" => "no-user" ];

@@ -2777,7 +2777,7 @@ class CentralAuthUser implements IDBAccessObject {
 			try {
 				$localUser = $this->localUserData( $wikiId );
 				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
-			} catch ( LocalUserNotFoundException $e ) {
+			} catch ( LocalUserNotFoundException ) {
 				// T119736: localuser table told us that the user was attached
 				// from $wikiId but there is no data in the primary database or replicas
 				// that corroborates that.
@@ -2854,7 +2854,7 @@ class CentralAuthUser implements IDBAccessObject {
 		foreach ( $wikiIDs as $wikiID ) {
 			try {
 				$items[$wikiID] = $this->localUserData( $wikiID );
-			} catch ( LocalUserNotFoundException $e ) {
+			} catch ( LocalUserNotFoundException ) {
 				// T119736: localnames table told us that the name was
 				// unattached on $wikiId but there is no data in the primary database
 				// or replicas that corroborates that.

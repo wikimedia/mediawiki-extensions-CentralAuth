@@ -137,7 +137,7 @@ class AttachAccount extends Maintenance {
 
 		try {
 			$unattached = $central->listUnattached();
-		} catch ( Exception $e ) {
+		} catch ( Exception ) {
 			// This might happen due to localnames inconsistencies (T69350)
 			$this->missing++;
 			$this->output(

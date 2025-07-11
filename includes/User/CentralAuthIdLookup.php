@@ -253,7 +253,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 			try {
 				$centralUser = CentralAuthUser::newUnattached( $name, $fromPrimaryDb );
 				$this->userCache->set( $centralUser );
-			} catch ( NormalizedException $e ) {
+			} catch ( NormalizedException ) {
 				$this->badNameCache[$name] = true;
 			}
 		}

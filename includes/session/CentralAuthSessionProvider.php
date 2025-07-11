@@ -521,7 +521,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 		try {
 			$password = $passwordFactory->newFromCiphertext( $centralUser->getPassword() );
-		} catch ( PasswordError $e ) {
+		} catch ( PasswordError ) {
 			return;
 		}
 		if ( !$password instanceof InvalidPassword ) {

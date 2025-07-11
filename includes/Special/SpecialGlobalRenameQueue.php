@@ -988,7 +988,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			} else {
 				return Status::newFatal( 'globalvanishrequest-rejected-notification-error' );
 			}
-		} catch ( Exception $e ) {
+		} catch ( Exception ) {
 			return Status::newFatal( 'globalvanishrequest-rejected-notification-error' );
 		}
 	}
