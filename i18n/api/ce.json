@@ -4,7 +4,13 @@
 			"Умар"
 		]
 	},
+	"apihelp-centralauthtoken-example-1": "CentralAuth токен схьаэца",
+	"apihelp-deleteglobalaccount-param-reason": "Декъашхо дӀаваккхаран бахьана.",
 	"apihelp-deleteglobalaccount-param-user": "Декъашхо дӀадаккхарна",
+	"apihelp-deleteglobalaccount-summary": "ДӀаваккха глобалан декъашхо.",
+	"apihelp-globaluserrights-param-reason": "Хийцаран бахьана.",
 	"apihelp-globaluserrights-param-user": "Декъашхочун глобалан цӀе.",
-	"apihelp-globaluserrights-param-userid": "Декъашхочун глобалан ID."
+	"apihelp-globaluserrights-param-userid": "Декъашхочун глобалан ID.",
+	"apihelp-query+globalallusers-param-dir": "Къепе листар.",
+	"apihelp-query+globaluserinfo-summary": "Глобалан декъашхочух лаьцна информаци гайтар."
 }
