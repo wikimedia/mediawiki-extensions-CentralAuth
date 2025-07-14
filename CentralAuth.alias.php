@@ -953,37 +953,60 @@ $specialPageAliases['yi'] = [
 	'GlobalUsers' => [ 'גלאבאלע_באניצער' ],
 ];
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = [
+	'CentralAuth' => [ 'CentralAuth', 'GlobalAccount', 'CA' ],
+	'CreateLocalAccount' => [ 'CreateLocalAccount' ],
+	'MergeAccount' => [ 'MergeAccount' ],
+	'GlobalGroupMembership' => [ 'GlobalUserRights', 'GlobalGroupMembership' ],
+	'GlobalGroupPermissions' => [ 'GlobalGroupPermissions' ],
+	'WikiSets' => [ 'WikiSets', 'EditWikiSets' ],
+	'GlobalUsers' => [ 'GlobalUsers' ],
+	'MultiLock' => [ 'MultiLock' ],
+	'GlobalRenameUser' => [ 'GlobalRenameUser' ],
+	'GlobalRenameProgress' => [ 'GlobalRenameProgress' ],
+	'GlobalRenameRequest' => [ 'GlobalRenameRequest' ],
+	'GlobalRenameQueue' => [ 'GlobalRenameQueue' ],
+	'GlobalVanishRequest' => [ 'GlobalVanishRequest' ],
+];
+
 /** Simplified Chinese (中文（简体）) */
 $specialPageAliases['zh-hans'] = [
-	'CentralAuth' => [ '中央认证' ],
-	'MergeAccount' => [ '合并账户', '整合账户' ],
+	'CentralAuth' => [ '中央认证', '全域账号' ],
+	'CreateLocalAccount' => [ '创建本地账号' ],
+	'MergeAccount' => [ '合并账号', '合并账户', '整合账户' ],
 	'GlobalGroupMembership' => [ '全域用户权限', '全域组成员资格' ],
 	'GlobalGroupPermissions' => [ '全域组权限' ],
 	'WikiSets' => [ 'Wiki集合', '编辑wiki集合' ],
 	'GlobalUsers' => [ '全域用户' ],
 	'MultiLock' => [ '批量锁定' ],
 	'GlobalRenameUser' => [ '全域重命名用户' ],
-	'GlobalRenameProgress' => [ '全域重命名状态' ],
+	'GlobalRenameProgress' => [ '全域重命名进度', '全域重命名状态' ],
 	'GlobalRenameRequest' => [ '全域重命名申请' ],
 	'GlobalRenameQueue' => [ '全域重命名队列' ],
+	'GlobalVanishRequest' => [ '全域隐退申请' ],
 ];
 
 /** Traditional Chinese (中文（繁體）) */
 $specialPageAliases['zh-hant'] = [
-	'CentralAuth' => [ '中央認證' ],
+	'CentralAuth' => [ '中央認證', '全域帳號' ],
+	'CreateLocalAccount' => [ '建立本地帳號' ],
 	'MergeAccount' => [ '合併帳號' ],
-	'GlobalGroupMembership' => [ '全域使用者權限' ],
+	'GlobalGroupMembership' => [ '全域使用者權限', '全域群組成員資格' ],
 	'GlobalGroupPermissions' => [ '全域群組權限' ],
-	'WikiSets' => [ 'Wiki_集合', '編輯Wiki集合' ],
+	'WikiSets' => [ 'Wiki集合', '編輯wiki集合' ],
 	'GlobalUsers' => [ '全域使用者' ],
 	'MultiLock' => [ '批次鎖定' ],
 	'GlobalRenameUser' => [ '全域重新命名使用者' ],
 	'GlobalRenameProgress' => [ '全域重新命名進度' ],
-	'GlobalRenameRequest' => [ '全域重命名申請' ],
-	'GlobalRenameQueue' => [ '全域重命名佇列' ],
+	'GlobalRenameRequest' => [ '全域重新命名申請', '全域重命名申請' ],
+	'GlobalRenameQueue' => [ '全域重新命名佇列', '全域重命名佇列' ],
+	'GlobalVanishRequest' => [ '全域隱退申請' ],
 ];
 
 /** Chinese (Hong Kong) (中文（香港）) */
 $specialPageAliases['zh-hk'] = [
 	'GlobalGroupMembership' => [ '全域用戶權限' ],
+	'GlobalUsers' => [ '全域用戶' ],
+	'GlobalRenameUser' => [ '全域重新命名用戶' ],
 ];
