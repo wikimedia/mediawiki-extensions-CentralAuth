@@ -5,11 +5,13 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 use MediaWiki\Logging\LogEntryBase;
 use MediaWiki\Maintenance\Maintenance;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * Script to back-populate log_search for global rename entries
@@ -69,5 +71,7 @@ class PopulateGlobalRenameLogSearch extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = PopulateGlobalRenameLogSearch::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

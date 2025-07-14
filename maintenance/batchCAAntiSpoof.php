@@ -8,11 +8,13 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthSpoofUser;
 use Wikimedia\Rdbms\IReadableDatabase;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/extensions/AntiSpoof/maintenance/BatchAntiSpoofClass.php";
+// @codeCoverageIgnoreEnd
 
 class BatchCAAntiSpoof extends BatchAntiSpoof {
 
@@ -62,5 +64,7 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = BatchCAAntiSpoof::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

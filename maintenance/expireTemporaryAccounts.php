@@ -10,12 +10,14 @@ use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilder;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 
 require_once "$IP/maintenance/expireTemporaryAccounts.php";
+// @codeCoverageIgnoreEnd
 
 // @phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class CentralAuthExpireTemporaryAccounts extends ExpireTemporaryAccounts {
@@ -63,5 +65,7 @@ class CentralAuthExpireTemporaryAccounts extends ExpireTemporaryAccounts {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = CentralAuthExpireTemporaryAccounts::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

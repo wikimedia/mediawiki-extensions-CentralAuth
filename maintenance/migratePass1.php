@@ -6,11 +6,13 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -81,5 +83,7 @@ class MigratePass1 extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = MigratePass1::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

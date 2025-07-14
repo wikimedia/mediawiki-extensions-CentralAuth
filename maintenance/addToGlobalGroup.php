@@ -12,11 +12,13 @@ use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\User\User;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 class AddToGlobalGroup extends Maintenance {
 
@@ -93,5 +95,7 @@ class AddToGlobalGroup extends Maintenance {
 
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = AddToGlobalGroup::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

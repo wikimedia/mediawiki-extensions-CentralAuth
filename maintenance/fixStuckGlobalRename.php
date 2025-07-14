@@ -12,11 +12,13 @@ use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * Script to run global renames that are stuck in the status table with "queued" or "in progress"
@@ -120,5 +122,7 @@ class FixStuckGlobalRename extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = FixStuckGlobalRename::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

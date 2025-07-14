@@ -2,11 +2,13 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 use Exception;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -297,5 +299,7 @@ class MigrateAccount extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = MigrateAccount::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

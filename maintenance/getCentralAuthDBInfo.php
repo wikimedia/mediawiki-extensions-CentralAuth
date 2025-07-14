@@ -2,11 +2,13 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Maintenance\Maintenance;
@@ -26,5 +28,7 @@ class GetCentralAuthDBInfo extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = GetCentralAuthDBInfo::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

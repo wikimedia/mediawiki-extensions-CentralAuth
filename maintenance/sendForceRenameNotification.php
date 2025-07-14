@@ -10,11 +10,13 @@ use MediaWiki\MassMessage\Job\MassMessageServerSideJob;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * Script to notify users listed in the users_to_rename table
@@ -145,5 +147,7 @@ class SendForceRenameNotification extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = SendForceRenameNotification::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

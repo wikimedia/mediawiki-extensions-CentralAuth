@@ -10,11 +10,13 @@ use Wikimedia\ObjectCache\HashBagOStuff;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IResultWrapper;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * Populates the users_to_rename table.
@@ -131,5 +133,7 @@ class PopulateListOfUsersToRename extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = PopulateListOfUsersToRename::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

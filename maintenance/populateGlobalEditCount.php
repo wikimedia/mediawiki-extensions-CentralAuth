@@ -7,11 +7,13 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Maintenance\Maintenance;
 use RuntimeException;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 class PopulateGlobalEditCount extends Maintenance {
 
@@ -181,5 +183,7 @@ class PopulateGlobalEditCount extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = PopulateGlobalEditCount::class;
 require RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

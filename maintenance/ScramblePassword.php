@@ -231,5 +231,7 @@ class ScramblePassword extends Maintenance {
 
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = ScramblePassword::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

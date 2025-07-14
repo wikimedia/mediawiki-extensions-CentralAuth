@@ -29,11 +29,13 @@ use MediaWiki\Password\ParameterizedPassword;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
+// @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
 if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/maintenance/Maintenance.php";
+// @codeCoverageIgnoreEnd
 
 /**
  * CentralAuth version of WrapOldPasswords
@@ -169,5 +171,7 @@ class WrapOldPasswordHashes extends Maintenance {
 	}
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = WrapOldPasswordHashes::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd
