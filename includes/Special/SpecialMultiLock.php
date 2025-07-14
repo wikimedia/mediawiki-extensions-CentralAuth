@@ -230,11 +230,10 @@ class SpecialMultiLock extends SpecialPage {
 				'default' => '-1',
 			],
 			'ReasonList' => [
-				'type' => 'selectorother',
+				'type' => 'selectandother',
 				'label-message' => 'centralauth-admin-reason',
 				'options-message' => 'centralauth-admin-status-reasons',
 				'other' => $this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text(),
-				'size' => 45,
 			],
 			'markasbot' => [
 				'name' => 'markasbot',
