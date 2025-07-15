@@ -22,7 +22,7 @@
 	 * @extends mw.ForeignApi
 	 *
 	 * @constructor
-	 * @param {string|mw.Uri} url URL pointing to another wiki's `api.php` endpoint.
+	 * @param {string} url URL pointing to another wiki's `api.php` endpoint.
 	 * @param {Object} [options] See mw.Api.
 	 * @param {Object} [options.anonymous=false] See mw.ForeignApi.
 	 *

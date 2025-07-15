@@ -13,7 +13,7 @@
 	 * @extends mw.ForeignRest
 	 *
 	 * @constructor
-	 * @param {string|mw.Uri} url URL pointing to another wiki's `rest.php` endpoint.
+	 * @param {string} url URL pointing to another wiki's `rest.php` endpoint.
 	 * @param {mw.ForeignApi} foreignActionApi used for action=centralauthtoken requests
 	 * @param {Object} [options] See mw.RestApi.
 	 * @param {Object} [options.anonymous=false] See mw.ForeignRestApi.
