@@ -346,6 +346,7 @@
 	"globalrenamerequest-submit-text": "Заявка за преименуване",
 	"globalrenamerequest-username-label": "Настоящо потребителско име:",
 	"globalrenameuser": "Преименуване на глобален потребител",
+	"globalvanishrequest": "Заявка за глобално заличаване на потребителската сметка",
 	"globalusers": "Списък на глобални сметки",
 	"grant-createlocalaccount": "Изрично създаване на локална потребителска сметка към глобална потребителска сметка",
 	"grant-setglobalaccountstatus": "Управление на глобални потребителски сметки",
