@@ -320,6 +320,13 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		return 0;
 	}
 
+	/** @inheritDoc */
+	public function getScope(): string {
+		// We could add the central DB name, but it's unlikely anyone would run two separate
+		// CentralAuth clusters on the same wiki farm.
+		return $this->getProviderId() . ':';
+	}
+
 	/**
 	 * Check whether an user is attached on the given wiki, reading from the primary DB if needed.
 	 *
