@@ -4,6 +4,8 @@
 			"Умар"
 		]
 	},
+	"apierror-centralauth-badusername": "Декъашхочун цӀе «$1» лело мегар дац хӀокху вики тӀехь",
+	"apierror-centralauth-editconflict": "Редакцин конфликт гучуйаьлла. ДӀадаьккхина.",
 	"apihelp-centralauthtoken-example-1": "CentralAuth токен схьаэца",
 	"apihelp-deleteglobalaccount-param-reason": "Декъашхо дӀаваккхаран бахьана.",
 	"apihelp-deleteglobalaccount-param-user": "Декъашхо дӀадаккхарна",
@@ -12,5 +14,7 @@
 	"apihelp-globaluserrights-param-user": "Декъашхочун глобалан цӀе.",
 	"apihelp-globaluserrights-param-userid": "Декъашхочун глобалан ID.",
 	"apihelp-query+globalallusers-param-dir": "Къепе листар.",
-	"apihelp-query+globaluserinfo-summary": "Глобалан декъашхочух лаьцна информаци гайтар."
+	"apihelp-query+globalgroups-example-1": "Глобалан тобанаш гайта",
+	"apihelp-query+globaluserinfo-summary": "Глобалан декъашхочух лаьцна информаци гайтар.",
+	"apihelp-query+wikisets-example-1": "Вики-кхаьжнийн могӀам"
 }
