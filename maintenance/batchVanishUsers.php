@@ -29,13 +29,13 @@ require_once "$IP/maintenance/Maintenance.php";
 // @codeCoverageIgnoreEnd
 
 use InvalidArgumentException;
-use MailAddress;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Mail\MailAddress;
+use MediaWiki\Mail\UserMailer;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\User\UserIdentity;
-use UserMailer;
 use Wikimedia\Message\MessageSpecifier;
 
 class BatchVanishUsers extends Maintenance {

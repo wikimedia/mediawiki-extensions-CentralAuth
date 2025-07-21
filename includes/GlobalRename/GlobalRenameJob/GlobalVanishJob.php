@@ -22,7 +22,6 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameJob;
 
 use Exception;
-use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -30,10 +29,11 @@ use MediaWiki\JobQueue\IJobSpecification;
 use MediaWiki\JobQueue\Job;
 use MediaWiki\JobQueue\JobSpecification;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Mail\MailAddress;
+use MediaWiki\Mail\UserMailer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
 use RuntimeException;
-use UserMailer;
 
 /**
  * This job vanishes global user accounts.

@@ -21,7 +21,6 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use MailAddress;
 use MediaWiki\Auth\AbstractTemporaryPasswordPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
@@ -30,6 +29,7 @@ use MediaWiki\Auth\TemporaryPasswordAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Languages\LanguageNameUtils;
 use MediaWiki\Mail\Emailer;
+use MediaWiki\Mail\MailAddress;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Password\Password;
 use MediaWiki\Registration\ExtensionRegistry;

@@ -23,7 +23,6 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
-use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
@@ -40,6 +39,8 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Mail\MailAddress;
+use MediaWiki\Mail\UserMailer;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Registration\ExtensionRegistry;
@@ -54,7 +55,6 @@ use MediaWiki\Xml\Xml;
 use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
-use UserMailer;
 use Wikimedia\Rdbms\LBFactory;
 
 /**
