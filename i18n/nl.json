@@ -262,6 +262,8 @@
 	"centralauth-globalgroupperms-nogroups": "Er zijn geen globale groepen gedefinieerd.",
 	"centralauth-globalgroupperms-rights": "Rechten",
 	"centralauth-globalgroupperms-wikiset-none": "Deze groep is actief op alle wiki's.",
+	"centralauth-globalgroupperms-automatic-group-reason": "Automatisch toegewezen",
+	"centralauth-globalgroupperms-automatic-group-info": "Gebruiker wordt automatisch toegewezen: $1",
 	"centralauth-groupname": "deze wikifarm",
 	"centralauth-hidden-blockreason": "globaal verborgen door $1 op $2 met reden: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur|uur}} geleden",
@@ -399,6 +401,9 @@
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jaar|jaar}} geleden",
 	"centralauth-sul3-oathmanage-sitenotice-local": "Om nieuwe WebAuthn-wachtwoorden in te stellen gebruikt u [$1 het centrale domein].",
 	"centralauth-sul3-oathmanage-sitenotice-central": "Om oude WebAuthn-wachtwoorden te verwijderen gebruikt u [$1 het domein waarop ze zijn ingesteld].",
+	"centralauth-scrambled": "Vanwege onrechtmatige toegang tot uw account is uw account uitgeschakeld. [[Special:PasswordReset|Stel uw wachtwoord opnieuw in]] om het te herstellen.",
+	"centralauth-scrambled-noemail": "Vanwege onrechtmatige toegang tot uw account is uw account uitgeschakeld.",
+	"centralauth-scrambled-cannotusesame": "Gebruik een ander wachtwoord.",
 	"centralautologin": "Centraal aanmelden",
 	"centrallogin": "Centraal aanmelden",
 	"createlocalaccount": "Geforceerd een lokaal account aanmaken",
@@ -566,6 +571,6 @@
 	"right-globalgrouppermissions": "Globale groepen beheren",
 	"sessionprovider-centralauthsessionprovider": "centrale op cookies gebaseerde sessies",
 	"sessionprovider-centralauthtokensessionprovider": "op CentralAuthToken gebaseerde sessies",
-	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een zwarte lijst staat.",
+	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een weigeringslijst staat.",
 	"centralauth-action-forbidden-shared-domain": "U mag deze handeling niet verrichten op het gedeelde authenticatiedomein."
 }
