@@ -48,6 +48,7 @@
 	"centralauth-abortlogin-renamed": "Your account was renamed to \"$1\". Please use that username instead.",
 	"centralauth-account-exists": "Cannot create account: The requested username is already taken by a user on another wiki.",
 	"centralauth-account-exists-reset": "The username $1 is not registered on this wiki, but you can reset its password on [[Special:CentralAuth/$1|a wiki where it is]].",
+	"centralauth-account-expired": "Cannot auto-create temporary account: The requested username is used by an expired temporary account.",
 	"centralauth-account-rename-exists": "Cannot create account: The username is already in use. Please pick another name.",
 	"centralauth-account-unattached-exists": "Cannot create account: The username is already in use. Please pick another name.",
 	"centralauth-admin-action-hide-lists": "Hide selected accounts from the global users list",

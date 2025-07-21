@@ -37,6 +37,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Password\InvalidPassword;
+use MediaWiki\User\TempUser\TempUserDetailsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
@@ -57,6 +58,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
 	private ReadOnlyMode $readOnlyMode;
+	private TempUserDetailsLookup $tempUserDetailsLookup;
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 	private CentralAuthDatabaseManager $databaseManager;
@@ -74,6 +76,7 @@ class CentralAuthPrimaryAuthenticationProvider
 
 	/**
 	 * @param ReadOnlyMode $readOnlyMode
+	 * @param TempUserDetailsLookup $tempUserDetailsLookup
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
 	 * @param CentralAuthDatabaseManager $databaseManager
@@ -91,6 +94,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 */
 	public function __construct(
 		ReadOnlyMode $readOnlyMode,
+		TempUserDetailsLookup $tempUserDetailsLookup,
 		UserIdentityLookup $userIdentityLookup,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthDatabaseManager $databaseManager,
@@ -104,6 +108,7 @@ class CentralAuthPrimaryAuthenticationProvider
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
 
 		$this->readOnlyMode = $readOnlyMode;
+		$this->tempUserDetailsLookup = $tempUserDetailsLookup;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->databaseManager = $databaseManager;
@@ -456,6 +461,21 @@ class CentralAuthPrimaryAuthenticationProvider
 		$centralUser = DBAccessObjectUtils::hasFlags( $options['flags'], IDBAccessObject::READ_LATEST )
 			? CentralAuthUser::getPrimaryInstance( $user )
 			: CentralAuthUser::getInstance( $user );
+		$centralUserName = $centralUser->getName();
+
+		// Prevent a new local account from being created for a temporary account that
+		// should be expired (T399049)
+		if (
+			$this->userNameUtils->isTemp( $centralUserName ) &&
+			$this->tempUserDetailsLookup->getExpirationState( $centralUser->getRegistration() )
+		) {
+			$this->logger->info(
+				'attempted to create account for expired temporary user "{user}"',
+				[ 'user' => $centralUserName ]
+			);
+			$status->fatal( 'centralauth-account-expired', $centralUserName );
+			return $status;
+		}
 
 		// Rename in progress?
 		if ( $centralUser->renameInProgressOn( WikiMap::getCurrentWikiId(), $options['flags'] ) ) {

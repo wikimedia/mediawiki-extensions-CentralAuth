@@ -79,6 +79,7 @@
 	"centralauth-abortlogin-renamed": "Error message shown when the user's account was renamed, and they need to login with their new name\n\n* $1 is the new username they should use.",
 	"centralauth-account-exists": "Used as error message.",
 	"centralauth-account-exists-reset": "Used as error message.\n\nParameters:\n* $1 - global user's name",
+	"centralauth-account-expired": "Used as error message on attempting to auto-create an expired temporary account.",
 	"centralauth-account-rename-exists": "Used as error message.",
 	"centralauth-account-unattached-exists": "Used as error message.",
 	"centralauth-admin-action-hide-lists": "Radio button, hide accounts.\n{{Related|Centralauth-admin-action}}",
