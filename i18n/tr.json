@@ -37,7 +37,8 @@
 			"Uncitoyen",
 			"Violetanka",
 			"Vito Genovese",
-			"LisafBia"
+			"LisafBia",
+			"Leo"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Kullanıcının ($1) küresel düzenleme sayısı",
@@ -472,8 +473,14 @@
 	"globalvanishrequest-text": "Kaybolma isteğini gönderin",
 	"globalvanishrequest-pretext": "Kaybolma '''son çare'''dir ve '''sadece düzenlemeyi sonsuza dek durdurmak istediğinizde''' ve ayrıca mümkün olduğunca çok sayıda geçmiş ilişkinizi gizlemek için kullanılmalıdır. Hesap silme, hesap adınızı değiştirerek başkalarının katkılarınızı hesap kaybolması adı verilen bir işlemle tanımasını önleyerek yapılır. '''Kaybolma, projelere yapılan katkıları tamamen anonimleştirmeyi veya kaldırmayı garanti etmez'''.\n\nKaybolma sürecini başlatmak için lütfen aşağıdaki talep formunu doldurun.",
 	"globalvanishrequest-username-label": "Talep eden kullanıcı adı",
+	"globalvanishrequest-status-title": "Onay bekleyen kaybolma isteği",
+	"globalvanishrequest-status-text": "Kaybolma talebiniz şu anda devam ediyor ve bu işlemi gerçekleştirebilecek kişilerin onayını bekliyor. Talep işleme alındığında e-posta yoluyla bilgilendirileceksiniz.",
+	"globalvanishrequest-blocked-title": "Hesabınız engellendiği için küresel kullanıcı hesabı kaybolma isteği reddedildi",
 	"globalvanishrequest-reason-label": "Kaybolma nedeni",
 	"globalvanishrequest-submit-text": "Kaybolma isteği gönder",
+	"globalvanishrequest-globaluser-error": "İstek kaydedilemedi. Kullanıcı hesabı küresel bir kullanıcı hesabı değil.",
+	"globalvanishrequest-blocked-error": "Hesabınızda engeller var ve kaybolamıyor",
+	"globalvanishrequest-save-error": "İstek kaydedilemedi. Lütfen tekrar deneyin.",
 	"globalusers": "Küresel hesaplar listesi",
 	"grant-createlocalaccount": "Küresel bir hesap için zorla yerel bir hesap oluşturun",
 	"grant-setglobalaccountstatus": "Küresel hesap durumunu yönet",
