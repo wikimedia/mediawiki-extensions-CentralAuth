@@ -9,6 +9,7 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
+use MediaWiki\Session\SessionId;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -320,14 +321,14 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 			[ 'getProvider', 'getSessionId', 'get', 'canSetUser', 'isPersistent', 'getUser' ]
 		);
 		$session->method( 'getProvider' )->willReturn( $provider );
-		$session->method( 'getSessionId' )->willReturn( 23 );
+		$session->method( 'getSessionId' )->willReturn( new SessionId( 23 ) );
 		$session->method( 'get' )->willReturn( null );
 		$session->method( 'isPersistent' )->willReturn( true );
 		$session->method( 'getUser' )->willReturn( $this->getTestUser()->getUser() );
 
 		/** @var MockObject|WebRequest $request */
 		$request = $this->getMockBuilder( FauxRequest::class )
-			->setConstructorArgs( [], false, $session )
+			->setConstructorArgs( [ [], false, $session ] )
 			->onlyMethods( [ 'getSession' ] )
 			->getMock();
 		$request->method( 'getSession' )->willReturn( $session );
