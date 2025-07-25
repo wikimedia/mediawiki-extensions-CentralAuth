@@ -11,9 +11,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
-use MediaWiki\Session\SessionManager;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
-use Psr\Log\NullLogger;
 
 /**
  * @covers CentralAuthApiSessionProvider
@@ -72,17 +70,11 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 			CentralAuthServices::getTokenManager( $services )
 		);
 
-		$manager = SessionManager::singleton();
-		$manager->setConfig( new MultiConfig( [ $config, $services->getMainConfig() ] ) );
-		$manager->setLogger( new NullLogger() );
-		$manager->setSessionStore( new \Wikimedia\ObjectCache\CachedBagOStuff( $this->sessionStore ) );
-		$manager->setHookContainer( $this->hookContainer );
-
 		$this->initProvider(
 			$provider,
 			null,
 			$config,
-			$manager,
+			$services->getSessionManager(),
 			$this->hookContainer,
 			$services->getUserNameUtils()
 		);

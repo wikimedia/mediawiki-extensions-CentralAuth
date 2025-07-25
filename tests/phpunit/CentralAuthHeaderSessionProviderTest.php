@@ -5,10 +5,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
-use MediaWiki\Session\SessionManager;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
 use PHPUnit\Framework\MockObject\MockObject;
-use Psr\Log\NullLogger;
 
 /**
  * @covers CentralAuthHeaderSessionProvider
@@ -32,17 +30,11 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 			CentralAuthServices::getTokenManager( $services )
 		);
 
-		$manager = SessionManager::singleton();
-		$manager->setConfig( new MultiConfig( [ $config, $services->getMainConfig() ] ) );
-		$manager->setLogger( new NullLogger() );
-		$manager->setSessionStore( new \Wikimedia\ObjectCache\CachedBagOStuff( $this->sessionStore ) );
-		$manager->setHookContainer( $hookContainer );
-
 		$this->initProvider(
 			$provider,
 			null,
 			$config,
-			$manager,
+			$services->getSessionManager(),
 			$hookContainer,
 			$services->getUserNameUtils()
 		);
