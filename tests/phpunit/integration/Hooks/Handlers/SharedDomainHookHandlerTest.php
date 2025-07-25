@@ -28,6 +28,7 @@ use MediaWiki\Skin\Skin;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Tests\MockWikiMapTrait;
 use MediaWiki\Title\Title;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LogLevel;
 use StatusValue;
 use TestLogger;
@@ -294,10 +295,11 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				'primaryauth' => [ 'mockPrimary' ],
 			],
 		] );
-		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
+		$sharedDomainUtils = $this->getSharedDomainUtils( [
 			'shared' => false,
 			'sul3' => true,
-		] ) );
+		] );
+		$this->setService( 'CentralAuth.SharedDomainUtils', $sharedDomainUtils );
 		$logProvider = $this->getLogProvider();
 		LoggerFactory::registerProvider( $logProvider );
 
@@ -307,10 +309,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 		$this->getServiceContainer()->get( 'CentralAuth.FilteredRequestTracker' )->reset();
 		// attacker disables SUL3 flag for second step of login
-		$this->setService( 'CentralAuth.SharedDomainUtils', $this->getSharedDomainUtils( [
-			'shared' => false,
-			'sul3' => false,
-		] ) );
+		$sharedDomainUtils->method( 'isSul3Enabled' )->willReturn( false );
 
 		$response = $authManager->continueAuthentication( [ new UsernameAuthenticationRequest() ] );
 		$this->assertSame( AuthenticationResponse::FAIL, $response->status );
@@ -451,7 +450,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		];
 	}
 
-	private function getSharedDomainUtils( array $config ): SharedDomainUtils {
+	private function getSharedDomainUtils( array $config ): SharedDomainUtils&MockObject {
 		$isSharedDomain = $config['shared'];
 		$isSul3Enabled = $config['sul3'];
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthRestrictSharedDomain, true );
