@@ -23,25 +23,28 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 			MainConfigNames::SecretKey => 'hunter2',
 		] );
 
-		$logger = new NullLogger();
-
 		$services = $this->getServiceContainer();
-		$hookContainer = $services->getHookContainer();
-
-		$manager = new SessionManager( [
-			'config' => $config,
-			'logger' => $logger,
-			'store' => $this->sessionStore,
-			'hookContainer' => $hookContainer
-		] );
+		$hookContainer = $this->createHookContainer();
 
 		$provider = new CentralAuthHeaderSessionProvider(
 			$services->getUserIdentityLookup(),
 			CentralAuthServices::getSessionManager( $services ),
 			CentralAuthServices::getTokenManager( $services )
 		);
+
+		$manager = SessionManager::singleton();
+		$manager->setConfig( new MultiConfig( [ $config, $services->getMainConfig() ] ) );
+		$manager->setLogger( new NullLogger() );
+		$manager->setSessionStore( new \Wikimedia\ObjectCache\CachedBagOStuff( $this->sessionStore ) );
+		$manager->setHookContainer( $hookContainer );
+
 		$this->initProvider(
-			$provider, null, $config, $manager, $hookContainer, $services->getUserNameUtils()
+			$provider,
+			null,
+			$config,
+			$manager,
+			$hookContainer,
+			$services->getUserNameUtils()
 		);
 		return $provider;
 	}
