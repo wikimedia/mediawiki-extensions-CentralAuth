@@ -473,7 +473,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	private function getLogProvider(): Spi {
 		return new class() implements Spi {
 
-			public $logs = [];
+			public array $logs = [];
 
 			public function getLogger( $channel ) {
 				$this->logs[$channel] ??= new TestLogger( true );
