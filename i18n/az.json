@@ -33,6 +33,7 @@
 	"centralauth-abortlogin-renamed": "Hesabınızın adı \"$1\" olaraq dəyişdirildi. Zəhmət olmasa bundan sonra bu istifadəçi adını istifadə edin.",
 	"centralauth-account-exists": "Hesab yaratmaq mümkün deyil: Tələb olunan istifadəçi adı artıq başqa vikidəki istifadəçi tərəfindən götürülüb.",
 	"centralauth-account-exists-reset": "$1 istifadəçi adı bu vikidə qeydiyyatdan keçməyib, lakin siz onun parolunu [[Special:CentralAuth/$1|qeydiyyatda olduğu vikidə]] sıfırlaya bilərsiniz.",
+	"centralauth-account-expired": "Müvəqqəti hesabı avtomatik olaraq yaratmaq mümkün deyil: tələb olunan istifadəçi adı vaxtı keçmiş müvəqqəti hesab tərəfindən istifadə olunur.",
 	"centralauth-account-rename-exists": "Hesab yaratmaq mümkün deyil: İstifadəçi adı artıq istifadə olunur. Başqa ad seçin.",
 	"centralauth-account-unattached-exists": "Hesab yaratmaq mümkün deyil: İstifadəçi adı artıq istifadə olunur. Başqa ad seçin.",
 	"centralauth-admin-action-hide-lists": "Qlobal istifadəçilər siyahısından seçilmiş hesabları gizlədin",

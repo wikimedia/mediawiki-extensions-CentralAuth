@@ -55,6 +55,7 @@
 	"centralauth-abortlogin-renamed": "Uw gebruikersnaam is hernoemd tot “$1”. Gebruik vanaf nu die gebruikersnaam.",
 	"centralauth-account-exists": "Deze gebruiker kan niet worden aangemaakt: de gebruikersnaam is al in gebruik op een ander project.",
 	"centralauth-account-exists-reset": "De gebruikersnaam $1 is niet geregistreerd op deze wiki, maar u kunt het wachtwoord opnieuw instellen op de  [[Special:CentralAuth/$1|wiki waar het geregistreerd is]].",
+	"centralauth-account-expired": "Het tijdelijke account niet automatisch aangemaakt worden: de gevraagde gebruikersnaam wordt gebruikt door een verlopen tijdelijk account.",
 	"centralauth-account-rename-exists": "Kan dit account niet aanmaken: de gebruikersnaam is al in gebruik. Kies een andere naam.",
 	"centralauth-account-unattached-exists": "Kan dit account niet aanmaken: de gebruikersnaam is al in gebruik. Kies een andere naam.",
 	"centralauth-admin-action-hide-lists": "Geselecteerde gebruikers verbergen in de lijst met globale gebruikers",

@@ -51,6 +51,7 @@
 	"centralauth-abortlogin-renamed": "Käyttäjätunnuksesi siirrettiin nimelle ”$1”. Käytäthän jatkossa kyseistä käyttäjänimeä.",
 	"centralauth-account-exists": "Tunnusta ei voi luoda: Pyydetty käyttäjänimi on jo toisen käyttäjän käytössä toisessa wikissä.",
 	"centralauth-account-exists-reset": "Käyttäjänimeä $1 ei ole rekisteröity tässä wikissä, mutta voit tyhjentää sen salasanan [[Special:CentralAuth/$1|wikissä, jossa tunnus on]].",
+	"centralauth-account-expired": "Tilapäisen tunnuksen automaattinen luominen ei onnistunut: pyydetty käyttäjänimeä käyttää vanhentunut tilapäinen tunnus.",
 	"centralauth-account-rename-exists": "Tunnuksen luominen ei onnistu: pyydetty käyttäjänimi on jo käytössä. Valitse toinen käyttäjänimi.",
 	"centralauth-account-unattached-exists": "Tunnuksen luominen ei onnistu: pyydetty käyttäjänimi on jo käytössä. Valitse toinen käyttäjänimi.",
 	"centralauth-admin-action-hide-lists": "Piilota valitut tunnukset järjestelmänlaajuisten tilien listasta",

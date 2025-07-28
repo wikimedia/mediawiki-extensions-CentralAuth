@@ -44,6 +44,7 @@
 	"centralauth-abortlogin-renamed": "Dein Benutzerkonto wurde in „$1“ umbenannt. Bitte verwende stattdessen diesen Benutzernamen.",
 	"centralauth-account-exists": "Das Benutzerkonto konnte nicht erstellt werden: Der gewünschte Benutzername wird bereits von einem anderen Benutzer auf einem anderen Wiki verwendet.",
 	"centralauth-account-exists-reset": "Der Benutzername $1 ist nicht auf diesem Wiki registriert, allerdings kannst du das Passwort auf [[Special:CentralAuth/$1|einem Wiki zurücksetzen, wo er vorhanden ist]].",
+	"centralauth-account-expired": "Automatisches Erstellen eines temporären Kontos nicht möglich: Der angeforderte Benutzername wird von einem abgelaufenen temporären Konto verwendet.",
 	"centralauth-account-rename-exists": "Das Benutzerkonto konnte nicht erstellt werden: Der Benutzername ist bereits in Verwendung. Bitte wähle einen anderen Namen.",
 	"centralauth-account-unattached-exists": "Das Benutzerkonto konnte nicht erstellt werden: Der Benutzername ist bereits in Verwendung. Bitte wähle einen anderen Namen.",
 	"centralauth-admin-action-hide-lists": "Ausgewählte Benutzerkonten von der Liste der globalen Benutzer verstecken",
