@@ -833,11 +833,11 @@
 			"value": null
 		},
 		"CentralAuthSharedDomainCallback": {
-			"description": "Experimental, do not use unless you know what you are doing. Might be removed without notice. Callback that takes a wiki ID and returns the URL prefix for the shared authentication domain without a trailing slash. This should use the same domain and scheme on every wiki of the CentralAuth wiki farm, with a path prefix that specifies the given wiki. A local URL appended to this prefix must be routed the same way as a local URL on the current wiki. This is used to share a central cookie between wikis while allowing the cookie-related UI (such as the login and signup page) to behave like any specific wiki in the farm. If unset, this mechanism will not be used.",
+			"description": "Callback that takes a wiki ID and returns the URL prefix for the shared authentication domain without a trailing slash. This should use the same domain and scheme on every wiki of the CentralAuth wiki farm, with a path prefix that specifies the given wiki. A local URL appended to this prefix must be routed the same way as a local URL on the current wiki. This is used to share a central cookie between wikis while allowing the cookie-related UI (such as the login and signup page) to behave like any specific wiki in the farm. If unset, this mechanism will not be used.",
 			"value": false
 		},
 		"CentralAuthRestrictSharedDomain": {
-			"description": "Experimental, has no effect unless CentralAuthSharedDomainCallback is set. Restrict wiki functionality to authentication only when the current domain matches the domain of CentralAuthSharedDomainCallback. Enable when using a shared login domain. Disable when the login domain is a standalone wiki.",
+			"description": "Restrict wiki functionality to authentication only when the current domain matches the domain of CentralAuthSharedDomainCallback. Enable when using a shared login domain. Disable when the login domain is a standalone wiki.",
 			"value": false
 		},
 		"CentralAuthCookieDomain": {
@@ -952,7 +952,7 @@
 			"value": "Wikipedia:Appealing a block"
 		},
 		"CentralAuthEnableSul3": {
-			"description": "Enables SUL3 mode (T348388 and T375787). Experimental, do not use. Requires CentralAuthSharedDomainCallback to be configured first.",
+			"description": "Enables SUL3 mode (https://www.mediawiki.org/wiki/SUL3). Requires CentralAuthSharedDomainCallback to be configured first.",
 			"value": false
 		},
 		"CentralAuthSul3SharedDomainRestrictions": {
