@@ -13,6 +13,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
+use Psr\Log\LoggerInterface;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\ScopedCallback;
 
@@ -36,12 +37,17 @@ abstract class LocalRenameJob extends Job {
 	 */
 	private $renameuserStatus;
 
+	private LoggerInterface $logger;
+
+	private bool $markedAsDone = false;
+
 	/**
 	 * @param Title $title
 	 * @param array $params
 	 */
 	public function __construct( Title $title, $params ) {
 		parent::__construct( $this->command, $title, $params );
+		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
 	/**
@@ -67,8 +73,7 @@ abstract class LocalRenameJob extends Job {
 
 		if ( empty( $this->params['ignorestatus'] ) ) {
 			if ( $status !== 'queued' && $status !== 'failed' ) {
-				$logger = LoggerFactory::getInstance( 'CentralAuth' );
-				$logger->info( 'Skipping duplicate rename from {oldName} to {newName}', [
+				$this->logger->info( 'Skipping duplicate rename from {oldName} to {newName}', [
 					'oldName' => $this->params['from'],
 					'newName' => $this->params['to'],
 					'component' => 'GlobalRename',
@@ -97,8 +102,7 @@ abstract class LocalRenameJob extends Job {
 			$this->updateStatus( 'failed' );
 			$factory->commitPrimaryChanges( $fnameTrxOwner );
 			// Record job failure in CentralAuth channel (T217211)
-			$logger = LoggerFactory::getInstance( 'CentralAuth' );
-			$logger->error( 'Failed to rename {oldName} to {newName} ({error})', [
+			$this->logger->error( 'Failed to rename {oldName} to {newName} ({error})', [
 				'oldName' => $this->params['from'],
 				'newName' => $this->params['to'],
 				'component' => 'GlobalRename',
@@ -160,6 +164,7 @@ abstract class LocalRenameJob extends Job {
 
 	protected function done() {
 		$this->renameuserStatus->done( WikiMap::getCurrentWikiId() );
+		$this->markedAsDone = true;
 
 		$caNew = CentralAuthUser::getInstanceByName( $this->params['to'] );
 		$caNew->quickInvalidateCache();
@@ -177,12 +182,26 @@ abstract class LocalRenameJob extends Job {
 	 */
 	protected function scheduleNextWiki( $status ) {
 		if ( $status === false ) {
-			// This will lock the user out of their account until a sysadmin intervenes.
-			$this->updateStatus( 'failed' );
-			// Bail out just in case the error would affect all renames and continuing would
-			// just put all wikis of the user in failure state. Running the rename for this
-			// wiki again (e.g. with fixStuckGlobalRename.php) will resume the job chain.
-			return;
+			if ( !$this->markedAsDone ) {
+				// This will lock the user out of their account until a sysadmin intervenes.
+				$this->updateStatus( 'failed' );
+				// Bail out just in case the error would affect all renames and continuing would
+				// just put all wikis of the user in failure state. Running the rename for this
+				// wiki again (e.g. with fixStuckGlobalRename.php) will resume the job chain.
+				return;
+			} else {
+				// The rename was completed, but some follow-up step failed (e.g. a deferred update or an
+				// onTransactionCommitOrIdle() callback), potentially leaving the user in an inconsistent
+				// state. This sucks, but we have no way to rollback the rename or to un-mark it as done.
+				// We also have no way to know *what* failed at this point, all we get is a boolean
+				// true/false $status, but the exception should have been recorded by the job entry point.
+				// Log a warning and continue renaming on the other wikis. (T399090)
+				$this->logger->warning( 'Renamed {oldName} to {newName}, but some follow-up step failed', [
+					'oldName' => $this->params['from'],
+					'newName' => $this->params['to'],
+					'component' => 'GlobalRename',
+				] );
+			}
 		}
 
 		$job = new static( $this->getTitle(), $this->getParams() );
