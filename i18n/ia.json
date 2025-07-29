@@ -24,6 +24,7 @@
 	"centralauth-abortlogin-renamed": "Tu conto ha essite renominate a \"$1\". Per favor usa ora ille nomine de usator.",
 	"centralauth-account-exists": "Non pote crear conto: Le nomine de usator requestate es jam prendite per un usator in un altere wiki.",
 	"centralauth-account-exists-reset": "Le nomine de usator $1 non es registrate in iste wiki, ma tu pote reinitialisar su contrasigno in [[Special:CentralAuth/$1|un wiki in que illo es presente]].",
+	"centralauth-account-expired": "Le conto temporari non pote esser create automaticamente: le nomine de usator requestate es usate per un conto temporari expirate.",
 	"centralauth-account-rename-exists": "Non pote crear conto: Le nomine de usator es jam in uso. Per favor, elige un altere nomine.",
 	"centralauth-account-unattached-exists": "Non pote crear conto: Le nomine de usator es jam in uso. Per favor, elige un altere nomine.",
 	"centralauth-admin-action-hide-lists": "Celar le contos seligite in le lista de usatores global",
