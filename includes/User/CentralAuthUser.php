@@ -1717,6 +1717,9 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Unattach a list of local accounts from the global account
+	 *
+	 * NOTE: Keep in sync with bulk unattach in GlobalRenameUserDatabaseUpdates.
+	 *
 	 * @param array $list List of wiki names
 	 * @return Status
 	 */
@@ -1780,6 +1783,8 @@ class CentralAuthUser implements IDBAccessObject {
 				->fetchRow();
 
 			// Remove the edits from the global edit count
+			// These may be added back to the same (or a different) global user
+			// in ::attach() by ::addLocalEdits()
 			$counter = CentralAuthServices::getEditCounter();
 			$counter->increment( $this, -(int)$userRow->user_editcount );
 			$this->clearLocalUserCache( $wikiName, $userRow->user_id );
