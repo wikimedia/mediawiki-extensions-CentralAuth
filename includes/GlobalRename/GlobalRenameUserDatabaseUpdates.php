@@ -32,7 +32,9 @@ class GlobalRenameUserDatabaseUpdates {
 			$data[ 'gu_email' ] = '';
 		}
 
+		// NOTE: This is essentially a bulk version of CentralAuthUser::adminUnattach.
 		$dbw->startAtomic( __METHOD__ );
+
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( $data )
@@ -43,6 +45,21 @@ class GlobalRenameUserDatabaseUpdates {
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'localuser' )
 			->where( [ 'lu_name' => $oldname ] )
+			->caller( __METHOD__ )
+			->execute();
+
+		// We've unattaching all local users, so clear the global edit count (T313900).
+		// It will be recalculated when we re-attach the renamed user in LocalRenameUserJob.
+		$id = $dbw->newSelectQueryBuilder()
+			->select( 'gu_id' )
+			->from( 'globaluser' )
+			->where( [ 'gu_name' => $oldname ] )
+			->caller( __METHOD__ )
+			->fetchField();
+		$dbw->newUpdateQueryBuilder()
+			->update( 'global_edit_count' )
+			->set( [ 'gec_count' => 0 ] )
+			->where( [ 'gec_user' => $id ] )
 			->caller( __METHOD__ )
 			->execute();
 
