@@ -20,30 +20,32 @@ SELECT
   gu_auth_token,
   gu_cas_token
 FROM /*_*/globaluser;
+
 DROP TABLE /*_*/globaluser;
 
 
 CREATE TABLE /*_*/globaluser (
-    gu_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    gu_name BLOB DEFAULT NULL, gu_home_db BLOB DEFAULT NULL,
-    gu_email BLOB DEFAULT NULL, gu_email_authenticated BLOB DEFAULT NULL,
-    gu_salt BLOB DEFAULT NULL, gu_password BLOB DEFAULT NULL,
-    gu_locked SMALLINT DEFAULT 0 NOT NULL,
-    gu_hidden BLOB DEFAULT '' NOT NULL,
-    gu_hidden_level INTEGER DEFAULT 0 NOT NULL,
-    gu_registration BLOB DEFAULT NULL,
-    gu_password_reset_key BLOB DEFAULT NULL,
-    gu_password_reset_expiration BLOB DEFAULT NULL,
-    gu_auth_token BLOB DEFAULT NULL, gu_cas_token INTEGER UNSIGNED DEFAULT 1 NOT NULL
-  );
+  gu_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  gu_name BLOB DEFAULT NULL, gu_home_db BLOB DEFAULT NULL,
+  gu_email BLOB DEFAULT NULL, gu_email_authenticated BLOB DEFAULT NULL,
+  gu_salt BLOB DEFAULT NULL, gu_password BLOB DEFAULT NULL,
+  gu_locked SMALLINT DEFAULT 0 NOT NULL,
+  gu_hidden BLOB DEFAULT '' NOT NULL,
+  gu_hidden_level INTEGER DEFAULT 0 NOT NULL,
+  gu_registration BLOB DEFAULT NULL,
+  gu_password_reset_key BLOB DEFAULT NULL,
+  gu_password_reset_expiration BLOB DEFAULT NULL,
+  gu_auth_token BLOB DEFAULT NULL, gu_cas_token INTEGER UNSIGNED DEFAULT 1 NOT NULL
+);
+
 INSERT INTO /*_*/globaluser (
-    gu_id, gu_name, gu_home_db, gu_email,
-    gu_email_authenticated, gu_salt,
-    gu_password, gu_locked, gu_hidden,
-    gu_hidden_level, gu_registration,
-    gu_password_reset_key, gu_password_reset_expiration,
-    gu_auth_token, gu_cas_token
-  )
+  gu_id, gu_name, gu_home_db, gu_email,
+  gu_email_authenticated, gu_salt,
+  gu_password, gu_locked, gu_hidden,
+  gu_hidden_level, gu_registration,
+  gu_password_reset_key, gu_password_reset_expiration,
+  gu_auth_token, gu_cas_token
+)
 SELECT
   gu_id,
   gu_name,
@@ -62,6 +64,7 @@ SELECT
   gu_cas_token
 FROM
   /*_*/__temp__globaluser;
+
 DROP TABLE /*_*/__temp__globaluser;
 
 CREATE UNIQUE INDEX gu_name ON /*_*/globaluser (gu_name);

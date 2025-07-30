@@ -9,19 +9,21 @@ SELECT
   ru_wiki,
   ru_status
 FROM /*_*/renameuser_status;
+
 DROP TABLE /*_*/renameuser_status;
 
 
 CREATE TABLE /*_*/renameuser_status (
-    ru_oldname BLOB NOT NULL,
-    ru_wiki BLOB NOT NULL,
-    ru_newname BLOB NOT NULL,
-    ru_status TEXT DEFAULT NULL,
-    PRIMARY KEY(ru_oldname, ru_wiki)
-  );
+  ru_oldname BLOB NOT NULL,
+  ru_wiki BLOB NOT NULL,
+  ru_newname BLOB NOT NULL,
+  ru_status TEXT DEFAULT NULL,
+  PRIMARY KEY(ru_oldname, ru_wiki)
+);
+
 INSERT INTO /*_*/renameuser_status (
-    ru_oldname, ru_newname, ru_wiki, ru_status
-  )
+  ru_oldname, ru_newname, ru_wiki, ru_status
+)
 SELECT
   ru_oldname,
   ru_newname,
@@ -29,4 +31,5 @@ SELECT
   ru_status
 FROM
   /*_*/__temp__renameuser_status;
+
 DROP TABLE /*_*/__temp__renameuser_status;

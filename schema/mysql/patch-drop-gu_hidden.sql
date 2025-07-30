@@ -3,5 +3,6 @@
 -- Do not modify this file directly.
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 DROP INDEX gu_hidden ON /*_*/globaluser;
+
 ALTER TABLE /*_*/globaluser
   DROP gu_hidden;

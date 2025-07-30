@@ -25,7 +25,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "primary", "empty", "mail", "password", "admin", "new", "login" ]
 					}
 				}
@@ -76,7 +76,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "primary", "empty", "mail", "password", "admin", "new", "login" ]
 					}
 				}

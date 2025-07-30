@@ -170,7 +170,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "primary", "empty", "mail", "password", "admin", "new", "login" ]
 					}
 				}
@@ -220,7 +220,7 @@
 				"type": "mwtimestamp",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": { "allowInfinite": true }
+					"PlatformOptions": { "allowInfinite": true }
 				}
 			}
 		],
@@ -284,7 +284,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "optin", "optout" ]
 					}
 				}
@@ -359,7 +359,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "queued", "inprogress", "failed" ]
 					}
 				}
@@ -414,7 +414,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": true,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "pending", "approved", "rejected" ]
 					}
 				}

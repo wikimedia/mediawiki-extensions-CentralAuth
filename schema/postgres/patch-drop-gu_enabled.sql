@@ -4,5 +4,6 @@
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 ALTER TABLE globaluser
   DROP gu_enabled;
+
 ALTER TABLE globaluser
   DROP gu_enabled_method;

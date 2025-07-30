@@ -4,7 +4,9 @@
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
 ALTER TABLE global_user_autocreate_serial
   DROP CONSTRAINT global_user_autocreate_serial_pkey;
+
 ALTER TABLE global_user_autocreate_serial
   ADD uas_year SMALLINT NOT NULL;
+
 ALTER TABLE global_user_autocreate_serial
   ADD PRIMARY KEY (uas_shard, uas_year);

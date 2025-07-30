@@ -28,7 +28,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "queued", "inprogress", "failed" ]
 					}
 				}
@@ -70,7 +70,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": false,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "queued", "inprogress", "failed" ]
 					}
 				}

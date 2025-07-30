@@ -45,7 +45,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": true,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "pending", "approved", "rejected" ]
 					}
 				}
@@ -140,7 +140,7 @@
 				"type": "mwenum",
 				"options": {
 					"notnull": true,
-					"CustomSchemaOptions": {
+					"PlatformOptions": {
 						"enum_values": [ "pending", "approved", "rejected" ]
 					}
 				}
