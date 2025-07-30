@@ -1,17 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Olve Utne"
+			"Olve Utne",
+			"Yupik"
 		]
 	},
 	"centralauth-admin-blocklog": "buđđusimlåggå",
+	"centralauth-admin-info-username": "Adnejnamma:",
 	"centralauth-admin-list-blocked": "Buđđusam",
+	"centralauth-admin-username": "Adnejnamma:",
 	"centralauth-finish-login": "Luggi sisa",
+	"centralauth-finish-password": "Biessambáhko:",
 	"centralauth-foreign-link": "Adnej $1 $2 sinne",
 	"centralauth-rename-form-movepages": "Sirde adnejbelijt",
+	"centralauth-rename-form-newname": "Åđđå adnejnamma",
+	"centralauth-rename-progress-username": "Adnejnamma",
 	"centralauth-rename-table-status-done": "Ållånam",
 	"centralautologin": "Guovdálatj sisluggim",
 	"centrallogin": "Guovdálatj adnejsisluggim",
+	"globalrenamequeue-column-rq-name": "Adnejnamma",
+	"globalrenamequeue-form-username": "Adnejnamma:",
 	"globalrenamequeue-request-movepages": "Sirde adnejbelijt",
 	"globalrenamerequest-newname-err-taken": "Juo lä adnej dajn adnejnamajna. Vällji ietjá adnejnamav."
 }
