@@ -72,7 +72,9 @@ class FixStuckGlobalRename extends Maintenance {
 		$suppressredirects = false;
 		if ( $row ) {
 			$logEntry = DatabaseLogEntry::newFromRow( $row );
-			$renamer = $logEntry->getPerformerIdentity()->getName();
+			// Do not use $logEntry->getPerformerIdentity() on a log entry loaded from a different wiki,
+			// as it will poison global actor cache with actor IDs from that wiki (T398177)
+			$renamer = $row->log_user_text;
 			$comment = $logEntry->getComment();
 			$logParams = $logEntry->getParameters();
 			if ( isset( $logParams['movepages'] ) ) {
