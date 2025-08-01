@@ -4,9 +4,7 @@ use MediaWiki\Config\HashConfig;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Request\WebRequest;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
-use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * @covers CentralAuthHeaderSessionProvider
@@ -42,19 +40,8 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 	}
 
 	protected function makeRequest( $token ) {
-		$authorization = "CentralAuthToken $token";
-
-		/** @var MockObject|WebRequest $request */
-		$request = $this->getMockBuilder( FauxRequest::class )
-			->setConstructorArgs( [] )
-			->onlyMethods( [ 'getHeader' ] )
-			->getMock();
-		$request->method( 'getHeader' )->willReturnCallback(
-			static function ( $name ) use ( $authorization ) {
-				return $name === 'Authorization' ? $authorization : null;
-			}
-		);
-
+		$request = new FauxRequest();
+		$request->setHeader( 'Authorization', "CentralAuthToken $token" );
 		return $request;
 	}
 
