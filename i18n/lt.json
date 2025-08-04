@@ -95,7 +95,7 @@
 	"centralauth-admin-not-authorized": "Neturite leidimo atlikti šį veiksmą.",
 	"centralauth-admin-permission": "Tik ūkvedžiai gali sujungti kitų žmonių paskyras.",
 	"centralauth-admin-reason": "Priežastis:",
-	"centralauth-admin-reason-other-select": "Kita priežastis:",
+	"centralauth-admin-reason-other-select": "Kita priežastis",
 	"centralauth-admin-rename-in-progress": "Ši paskyra šiuo metu yra pervadinama. Galite [[Special:GlobalRenameProgress/$1|peržiūrėti]] pervadinimo progresą. Šio vartotojo visuotinis pervadinimo žurnalas pateiktas žemiau.",
 	"centralauth-admin-setstatus-success": "Jūs pakeitėte šios visuotinės paskyros būseną.",
 	"centralauth-admin-status": "Nustatyti bendrosios paskyros būseną",
