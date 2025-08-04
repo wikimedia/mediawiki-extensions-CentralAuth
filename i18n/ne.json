@@ -193,6 +193,7 @@
 	"log-action-filter-globalauth-delete": "ग्लोबल खाता मेटिएको",
 	"log-action-filter-globalauth-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
 	"log-action-filter-suppress-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
+	"log-name-gblrename": "विश्वव्यापी नाम परिवर्तन अभिलेख",
 	"mergeaccount": "प्रवेश एकीकरण स्थिति",
 	"right-centralauth-unmerge": "नमिलाइएको प्रयोगकर्ता खाता"
 }

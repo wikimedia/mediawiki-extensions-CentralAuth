@@ -239,7 +239,7 @@
 	"centralauth-finish-incomplete": "Tätä salasanaa käyttäen yhdistettiin useita käyttäjätunnuksia. Muut tunnukset ovat vielä varmentamattomia.",
 	"centralauth-finish-login": "Kirjaudu sisään",
 	"centralauth-finish-noconfirms": "Tällä salasanalla ei voitu varmentaa yhtään käyttäjätunnusta.",
-	"centralauth-finish-password": "Salasana",
+	"centralauth-finish-password": "Salasana:",
 	"centralauth-finish-problems": "Ongelmia? Etkö omista näitä tunnuksia? [[m:Special:MyLanguage/Help:Unified login|Apua voi etsiä täältä]]...",
 	"centralauth-finish-send-confirmation": "Lähetä salasana sähköpostitse",
 	"centralauth-finish-text": "Jos nämä käyttäjätunnukset kuuluvat sinulle, voit suorittaa käyttäjätunnusten yhdistämisen kirjoittamalla toisten käyttäjätunnusten salasanat:",
