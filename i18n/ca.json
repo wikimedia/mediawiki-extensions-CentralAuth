@@ -25,7 +25,8 @@
 			"Solde",
 			"Ssola",
 			"Toniher",
-			"Vriullop"
+			"Vriullop",
+			"Yupik"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Grups globals als que pertany l'usuari",
@@ -365,6 +366,7 @@
 	"globalrenamequeue-email-body-rejected": "La sol·licitud per canviar el nom \"{{GENDER:$1|$1}}\" a \"{{GENDER:$1|$2}}\" ha estat rebutjada. \n\nNota: $3",
 	"globalrenamequeue-email-subject-approved": "Sol·licitud de canvi de nom de compte aprovada",
 	"globalrenamequeue-email-subject-rejected": "Sol·licitud de canvi de nom de compte rebutjada",
+	"globalrenamequeue-form-username": "Nom d'usuari:",
 	"globalrenamequeue-nav-closedqueue": "Sol·licituds tancades",
 	"globalrenamequeue-nav-openqueue": "Sol·licituds obertes",
 	"globalrenamequeue-request-approve-text": "Accepta el canvi de nom",
