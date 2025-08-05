@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"H78c67c",
+			"Ktchankt",
 			"Winston Sung"
 		]
 	},
@@ -87,6 +88,8 @@
 	"centralauth-editgroup-submit": "儲存全域用戶組改動",
 	"centralauth-editgroup-success": "改咗全域用戶組",
 	"centralauth-editgroup-success-text": "你已經成功噉改咗$1組嘅組許可。[[Special:GlobalGroupPermissions|返去組管理]]",
+	"centralauth-editset": "維基集",
+	"centralauth-editset-legend-ro": "維基集清單",
 	"centralauth-editset-reason": "原因：",
 	"centralauth-editset-submit": "遞交",
 	"centralauth-editset-submit-delete": "剷走",
@@ -181,11 +184,21 @@
 	"centrallogin": "中央用戶簽到",
 	"globalgroupmembership": "響全域組嘅成員",
 	"globalgrouppermissions": "全域組管理",
+	"globalrenameprogress": "全域改名進度",
+	"globalrenameprogress-legend": "睇全域改名進度",
 	"globalrenamequeue-action-address": "搞掂",
 	"globalrenamequeue-action-view": "睇",
+	"globalrenamequeue-type-vanish": "收山",
 	"globalrenamequeue-column-row-actions": "動作",
 	"globalrenamequeue-form-status-all": "全部",
+	"globalrenamequeue-form-type-vanish": "收山",
 	"globalrenamequeue-form-username": "用戶名：",
+	"globalrenamequeue-request-vanish-user-blocked": "係",
+	"globalrenamequeue-request-vanish-user-not-blocked": "唔係",
+	"globalrenamerequest": "全域用戶戶口改名請求",
+	"globalvanishrequest": "全域用戶戶口收山請求",
+	"globalvanishrequest-blocked-title": "全域用戶戶口收山請求被拒絕咗，因為你個戶口禁鎖咗",
+	"globalvanishrequest-submit-text": "請求收山",
 	"globalusers": "全域戶口一覽",
 	"log-name-gblrename": "全域改名日誌",
 	"mergeaccount": "登入統一狀態",
