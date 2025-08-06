@@ -3,6 +3,8 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Json\JwtCodec;
+use MediaWiki\Json\JwtException;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Password\InvalidPassword;
@@ -18,6 +20,8 @@ use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserRigorOptions;
+use MediaWiki\Utils\UrlUtils;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -37,12 +41,10 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	/** @var array */
 	protected $centralCookieOptions = [];
 
-	private UserIdentityLookup $userIdentityLookup;
-	private CentralAuthSessionManager $sessionManager;
-	private TempUserConfig $tempUserConfig;
-
 	/**
+	 * @param JwtCodec $jwtCodec
 	 * @param TempUserConfig $tempUserConfig
+	 * @param UrlUtils $urlUtils
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthSessionManager $sessionManager
 	 * @param array $params In addition to the parameters for
@@ -62,15 +64,13 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	 *     - sameSite: Cookie SameSite attribute, defaults to $wgCookieSameSite
 	 */
 	public function __construct(
-		TempUserConfig $tempUserConfig,
-		UserIdentityLookup $userIdentityLookup,
-		CentralAuthSessionManager $sessionManager,
-		$params = []
+		JwtCodec $jwtCodec,
+		private readonly TempUserConfig $tempUserConfig,
+		UrlUtils $urlUtils,
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly CentralAuthSessionManager $sessionManager,
+		array $params = []
 	) {
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->sessionManager = $sessionManager;
-		$this->tempUserConfig = $tempUserConfig;
-
 		$params += [
 			'centralCookieOptions' => [],
 		];
@@ -84,7 +84,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		$this->centralCookieOptions = $params['centralCookieOptions'];
 		unset( $params['centralCookieOptions'] );
 
-		parent::__construct( $params );
+		parent::__construct( $jwtCodec, $urlUtils, $params );
 	}
 
 	protected function postInitSetup() {
@@ -298,8 +298,18 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 				'CentralAuthSource' => 'CentralAuth',
 			],
 		];
+		$sessionInfo = new SessionInfo( $this->priority, $info );
 
-		return new SessionInfo( $this->priority, $info );
+		if ( $this->useJwtCookie() ) {
+			try {
+				$this->verifyJwtCookie( $request, $sessionInfo );
+			} catch ( JwtException $e ) {
+				$this->logger->info( 'JWT validation failed: ' . $e->getNormalizedMessage(), $e->getMessageContext() );
+				return null;
+			}
+		}
+
+		return $sessionInfo;
 	}
 
 	/** @inheritDoc */
@@ -606,4 +616,20 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 			$this->getLoginCookieExpiration( 'UserID', true )
 		) ?: null;
 	}
+
+	protected function getJwtClaimOverrides( int $expirationDuration ): array {
+		$issuerWiki = $this->config->get( CAMainConfigNames::CentralAuthCentralWiki );
+		if ( !$issuerWiki ) {
+			return parent::getJwtClaimOverrides( $expirationDuration );
+		}
+		$issuer = WikiMap::getWiki( $issuerWiki )->getCanonicalServer();
+		return [
+			'iss' => $issuer,
+		] + parent::getJwtClaimOverrides( $expirationDuration );
+	}
+
+	protected function getJwtCookieOptions(): array {
+		return [ 'prefix' => '' ] + $this->centralCookieOptions;
+	}
+
 }

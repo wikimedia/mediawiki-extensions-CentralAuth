@@ -78,6 +78,21 @@ class CentralAuthTestUser {
 	 */
 	private $createLocal;
 
+	public static function newFromTestUser( TestUser $testUser ): self {
+		$user = $testUser->getUser();
+		return new self(
+			username: $user->getName(),
+			password: $testUser->getPassword(),
+			attrs: [
+				'gu_registration' => $user->getRegistration(),
+				'gu_email' => $user->getEmail(),
+				'gu_email_authenticated' => $user->getEmailAuthenticationTimestamp(),
+			],
+			wikis: [ [ WikiMap::getCurrentWikiId(), 'new' ] ],
+			createLocal: false
+		);
+	}
+
 	/**
 	 * @param string $username
 	 * @param string $password password for the account
@@ -135,7 +150,7 @@ class CentralAuthTestUser {
 	/**
 	 * Save the user into a centralauth database
 	 */
-	public function save( IDatabase $db ) {
+	public function save( IDatabase $db ): self {
 		$user = User::newFromName( $this->username );
 
 		// Setup global user
@@ -186,6 +201,12 @@ class CentralAuthTestUser {
 		// Clear stale CentralAuthUser instances for this user.
 		CentralAuthUser::getInstance( $user )
 			->loadStateNoCache();
+
+		return $this;
+	}
+
+	public function getCentralUser(): CentralAuthUser {
+		return CentralAuthUser::getPrimaryInstanceByName( $this->username );
 	}
 
 }
