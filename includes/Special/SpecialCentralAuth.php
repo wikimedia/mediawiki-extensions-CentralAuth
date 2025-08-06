@@ -437,16 +437,21 @@ class SpecialCentralAuth extends SpecialPage {
 			$this->getContext(),
 			(int)wfTimestamp( TS_UNIX ) - (int)wfTimestamp( TS_UNIX, $reg )
 		);
+		$editCountCached = $globalUser->getGlobalEditCount();
 		$attribs = [
 			'username' => htmlspecialchars( $globalUser->getName() ),
 			'registered' => htmlspecialchars(
 				$this->getLanguage()->timeanddate( $reg, true ) . " ($age)" ),
 			'editcount' => htmlspecialchars(
-				$this->getLanguage()->formatNum( $this->evaluateTotalEditcount() ) ),
-			'attached' => htmlspecialchars(
-				$this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) ),
+				$this->getLanguage()->formatNum( $editCountCached ) ),
 		];
-
+		$editCountSummed = $this->evaluateTotalEditcount();
+		if ( $editCountCached !== $editCountSummed ) {
+			$attribs['editcountsum'] = htmlspecialchars(
+				$this->getLanguage()->formatNum( $editCountSummed ) );
+		}
+		$attribs['attached'] = htmlspecialchars(
+			$this->getLanguage()->formatNum( count( $this->mAttachedLocalAccounts ) ) );
 		if (
 			// Renaming self is not allowed.
 			$globalUser->getName() !== $this->getContext()->getUser()->getName()
