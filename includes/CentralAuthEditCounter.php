@@ -130,4 +130,24 @@ class CentralAuthEditCounter {
 		// No need to populate when affectedRows() = 0, we can just wait for
 		// getCount() to be called.
 	}
+
+	public function recalculate( CentralAuthUser $centralUser ): int {
+		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$currentCount = $this->getCountFromDB( $dbw, $centralUser->getId() );
+		if ( $currentCount === false ) {
+			// Edit count is not cached, no need to do anything
+			return 0;
+		}
+		$newCount = $this->getCountFromWikis( $centralUser );
+		if ( $newCount === $currentCount ) {
+			return $currentCount;
+		}
+		$dbw->newUpdateQueryBuilder()
+			->update( 'global_edit_count' )
+			->set( [ 'gec_count' => $newCount ] )
+			->where( [ 'gec_user' => $centralUser->getId() ] )
+			->caller( __METHOD__ )
+			->execute();
+		return $newCount;
+	}
 }
